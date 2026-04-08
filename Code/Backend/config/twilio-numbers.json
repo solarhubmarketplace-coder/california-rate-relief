@@ -1,0 +1,90 @@
+{
+  "fallbackNumber": "+19516251343",
+  "localPresenceNumbers": [
+    {
+      "number": "+19495299133",
+      "areaCodes": [
+        "949",
+        "714",
+        "657"
+      ],
+      "region": "Orange County",
+      "cities": [
+        "Irvine",
+        "Orange",
+        "Santa Ana",
+        "Anaheim"
+      ]
+    },
+    {
+      "number": "+16193892032",
+      "areaCodes": [
+        "619"
+      ],
+      "region": "San Diego",
+      "cities": [
+        "San Diego",
+        "Chula Vista",
+        "Oceanside"
+      ]
+    },
+    {
+      "number": "+16192688273",
+      "areaCodes": [
+        "619"
+      ],
+      "region": "San Diego",
+      "cities": [
+        "San Diego",
+        "Dulzura"
+      ]
+    },
+    {
+      "number": "+19516251343",
+      "areaCodes": [
+        "951",
+        "909",
+        "760",
+        "442"
+      ],
+      "region": "Inland Empire",
+      "cities": [
+        "Riverside",
+        "Corona",
+        "Moreno Valley",
+        "Temecula"
+      ]
+    },
+    {
+      "number": "+19259402132",
+      "areaCodes": [
+        "925",
+        "415",
+        "628",
+        "650",
+        "408",
+        "669",
+        "510",
+        "341",
+        "707"
+      ],
+      "region": "Bay Area",
+      "cities": [
+        "Walnut Creek",
+        "Concord",
+        "Antioch",
+        "Oakland"
+      ]
+    },
+    {
+      "number": "+16199036205",
+      "areaCodes": [
+        "619"
+      ],
+      "region": "San Diego",
+      "cities": [
+        "San Diego"
+      ]
+    }
+  ]
+}
