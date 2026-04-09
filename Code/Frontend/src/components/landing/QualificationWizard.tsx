@@ -41,6 +41,8 @@ interface FormData {
   phone: string;
   email: string;
   address: string;
+  lat: number | null;
+  lng: number | null;
 }
 
 // Tracking parameters from URL (hidden fields)
@@ -141,6 +143,8 @@ export function QualificationWizard() {
     phone: '',
     email: '',
     address: '',
+    lat: null,
+    lng: null,
   });
 
   const updateFormData = (
@@ -336,6 +340,8 @@ export function QualificationWizard() {
                     phone: '',
                     email: '',
                     address: '',
+                    lat: null,
+                    lng: null,
                   });
                 }}
                 variant='outline'
@@ -606,6 +612,7 @@ export function QualificationWizard() {
                         <User className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
                         <Input
                           id='name'
+                          name='name'
                           type='text'
                           placeholder='John Smith'
                           value={formData.name}
@@ -613,6 +620,7 @@ export function QualificationWizard() {
                             updateFormData('name', e.target.value)
                           }
                           required
+                          autoComplete='name'
                           className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
                         />
                       </div>
@@ -629,6 +637,7 @@ export function QualificationWizard() {
                         <Phone className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
                         <Input
                           id='phone'
+                          name='phone'
                           type='tel'
                           placeholder='(555) 123-4567'
                           value={formData.phone}
@@ -637,6 +646,7 @@ export function QualificationWizard() {
                             updateFormData('phone', formatted);
                           }}
                           required
+                          autoComplete='tel'
                           className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
                         />
                       </div>
@@ -656,6 +666,7 @@ export function QualificationWizard() {
                         <Mail className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
                         <Input
                           id='email'
+                          name='email'
                           type='email'
                           placeholder='john@example.com'
                           value={formData.email}
@@ -663,6 +674,7 @@ export function QualificationWizard() {
                             updateFormData('email', e.target.value)
                           }
                           required
+                          autoComplete='email'
                           className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
                         />
                       </div>
@@ -681,6 +693,7 @@ export function QualificationWizard() {
                           <>
                             <Input
                               id='address'
+                              name='address'
                               type='text'
                               placeholder='123 Main St, City, CA 90210'
                               value={placesValue}
@@ -690,7 +703,7 @@ export function QualificationWizard() {
                               }}
                               required
                               className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
-                              autoComplete='off'
+                              autoComplete='street-address'
                             />
                             {status === 'OK' && data.length > 0 && (
                               <div className='absolute z-50 w-full mt-1 bg-white border-2 border-border rounded-lg shadow-lg max-h-60 overflow-y-auto'>
@@ -703,12 +716,11 @@ export function QualificationWizard() {
                                       updateFormData('address', description);
                                       clearSuggestions();
                                       
-                                      // Get full address details
+                                      // Get full address details + coordinates for Street View
                                       try {
                                         const results = await getGeocode({ address: description });
                                         const { lat, lng } = await getLatLng(results[0]);
-                                        // Store full address with coordinates if needed
-                                        updateFormData('address', description);
+                                          setFormData(prev => ({ ...prev, address: description, lat, lng }));
                                       } catch (error) {
                                         console.error('Error getting address details:', error);
                                       }
@@ -724,6 +736,7 @@ export function QualificationWizard() {
                         ) : (
                           <Input
                             id='address'
+                            name='address'
                             type='text'
                             placeholder='123 Main St, City, CA 90210'
                             value={formData.address}
@@ -731,6 +744,7 @@ export function QualificationWizard() {
                               updateFormData('address', e.target.value)
                             }
                             required
+                            autoComplete='street-address'
                             className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
                           />
                         )}
@@ -740,6 +754,28 @@ export function QualificationWizard() {
                       </p>
                     </div>
                   </div>
+
+                  {/* Street View image of selected home */}
+                  {formData.lat && formData.lng && (
+                    <div className='mt-2 rounded-xl overflow-hidden border-2 border-teal-200 shadow-md'>
+                      <div className='relative'>
+                        <img
+                          src={`https://maps.googleapis.com/maps/api/streetview?size=800x400&location=${formData.lat},${formData.lng}&fov=90&pitch=5&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`}
+                          alt='Street view of your home'
+                          className='w-full h-48 md:h-56 object-cover'
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).style.display = 'none';
+                          }}
+                        />
+                        <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3'>
+                          <p className='text-white text-sm font-semibold flex items-center gap-2'>
+                            <Home className='h-4 w-4' />
+                            We found your home
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   <div className='pt-2'>
                     <Button
