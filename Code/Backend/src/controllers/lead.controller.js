@@ -40,6 +40,9 @@ const ingestLead = async (req, res, next) => {
             utm_campaign,
             utm_content
         });
+        if (lead._retriggered) {
+            return res.apiResponse(200, 'Lead already exists — call re-triggered', lead);
+        }
         return res.apiResponse(201, 'Lead created successfully', lead);
     } catch (error) {
         next(error);
