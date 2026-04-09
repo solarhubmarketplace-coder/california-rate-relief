@@ -55,7 +55,7 @@ class LeadService {
 
       // Re-trigger a voice call for the existing lead
       const queueService = require("./queue.service");
-      await queueService.createHotLeadTasks({ ...existingLead, ...updateFields });
+      await queueService.createTasksForLead({ ...existingLead, ...updateFields });
 
       console.log(
         `[LeadService] Duplicate phone ${phone} — re-triggered call for existing lead ${existingLead.id}`
