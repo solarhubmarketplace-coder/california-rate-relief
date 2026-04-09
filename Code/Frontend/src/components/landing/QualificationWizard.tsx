@@ -755,23 +755,45 @@ export function QualificationWizard() {
                     </div>
                   </div>
 
-                  {/* Street View image of selected home */}
+                  {/* Satellite roof view + Street View of selected home */}
                   {formData.lat && formData.lng && (
-                    <div className='mt-2 rounded-xl overflow-hidden border-2 border-teal-200 shadow-md'>
-                      <div className='relative'>
-                        <img
-                          src={`https://maps.googleapis.com/maps/api/streetview?size=800x400&location=${formData.lat},${formData.lng}&fov=90&pitch=5&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`}
-                          alt='Street view of your home'
-                          className='w-full h-48 md:h-56 object-cover'
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = 'none';
-                          }}
-                        />
-                        <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3'>
-                          <p className='text-white text-sm font-semibold flex items-center gap-2'>
-                            <Home className='h-4 w-4' />
-                            We found your home
-                          </p>
+                    <div className='mt-2 space-y-3'>
+                      {/* Satellite / Aerial Roof View */}
+                      <div className='rounded-xl overflow-hidden border-2 border-teal-200 shadow-md'>
+                        <div className='relative'>
+                          <img
+                            src={`https://maps.googleapis.com/maps/api/staticmap?center=${formData.lat},${formData.lng}&zoom=20&size=800x400&maptype=satellite&markers=color:red%7C${formData.lat},${formData.lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`}
+                            alt='Satellite view of your roof'
+                            className='w-full h-48 md:h-56 object-cover'
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).parentElement!.parentElement!.style.display = 'none';
+                            }}
+                          />
+                          <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3'>
+                            <p className='text-white text-sm font-semibold flex items-center gap-2'>
+                              <Home className='h-4 w-4' />
+                              Your roof from above
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Street View */}
+                      <div className='rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm'>
+                        <div className='relative'>
+                          <img
+                            src={`https://maps.googleapis.com/maps/api/streetview?size=800x300&location=${formData.lat},${formData.lng}&fov=90&pitch=5&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`}
+                            alt='Street view of your home'
+                            className='w-full h-36 md:h-44 object-cover'
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).parentElement!.parentElement!.style.display = 'none';
+                            }}
+                          />
+                          <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent px-4 py-2'>
+                            <p className='text-white text-xs font-medium flex items-center gap-1.5'>
+                              <MapPin className='h-3 w-3' />
+                              Street view
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>

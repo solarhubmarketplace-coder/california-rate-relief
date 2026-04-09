@@ -93,7 +93,7 @@ export function Footer() {
                   >
                     Privacy Policy
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      â
+                      →
                     </span>
                   </a>
                 </li>
@@ -104,7 +104,7 @@ export function Footer() {
                   >
                     Terms of Service
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      â
+                      →
                     </span>
                   </a>
                 </li>
@@ -115,7 +115,7 @@ export function Footer() {
                   >
                     CPUC Consumer Information
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      â
+                      →
                     </span>
                   </a>
                 </li>
@@ -126,7 +126,7 @@ export function Footer() {
                   >
                     Do Not Sell My Information
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      â
+                      →
                     </span>
                   </a>
                 </li>
@@ -138,7 +138,7 @@ export function Footer() {
           <div className='pt-8 border-t border-white/10'>
             <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
               <p className='text-white/80 text-sm font-medium'>
-                Â© {currentYear} California Rate Relief Program. All rights reserved.
+                © {currentYear} California Rate Relief Program. All rights reserved.
               </p>
             </div>
           </div>

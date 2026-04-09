@@ -115,7 +115,7 @@ export default function LoginPage() {
                 </h2>
                 <p className='text-white/80 text-base leading-relaxed'>
                   Manage leads, automate calls with AI voice agents, and
-                  schedule appointmentsâall from one powerful platform.
+                  schedule appointments—all from one powerful platform.
                 </p>
               </div>
 
