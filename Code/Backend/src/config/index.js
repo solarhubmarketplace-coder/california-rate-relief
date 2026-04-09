@@ -1,4 +1,4 @@
-hrequire('dotenv').config();
+require('dotenv').config();
 
 const getEnv = (key, fallback = null) => {
     const value = process.env[key];
