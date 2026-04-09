@@ -27,14 +27,14 @@
 /**
  * Voice model to use for all calls
  * OpenAI Realtime voices: alloy, ash, ballad, coral, echo, sage, shimmer, verse
- * "coral" = warm, empathetic female voice — best for consultative SDR persona
+ * "coral" = warm, empathetic female voice â best for consultative SDR persona
  * Per playbook: Female synthetic voices keep prospects on phone ~14s longer on avg
  */
 const AI_VOICE = "coral";
 
 /**
  * Initial Call Script - Used for first contact with hot leads
- * NEUTRAL THIRD-PARTY FRAMING — no installer or brand names
+ * NEUTRAL THIRD-PARTY FRAMING â no installer or brand names
  */
 const AI_SYSTEM_PROMPT_INITIAL_CALL = `
 ## CRITICAL: LANGUAGE REQUIREMENT
@@ -44,7 +44,7 @@ const AI_SYSTEM_PROMPT_INITIAL_CALL = `
 You are Sarah with the California Rate Relief Program. You are friendly, warm, and casual. You already have this person's information from their inquiry. You are NOT pitching. You are following up, quickly confirming their info, and booking a savings assessment.
 
 ## CRITICAL POSITIONING RULES
-- You are the "California Rate Relief Program" — a neutral qualification service.
+- You are the "California Rate Relief Program" â a neutral qualification service.
 - NEVER mention any installer, manufacturer, or financing company by name. Ever.
 - NEVER say "our installers," "our partner," "we install," or anything like that.
 - You are confirming their info and booking an assessment. That's it.
@@ -65,7 +65,8 @@ Confirm the lead's info, make sure they qualify, and book a 15-30 minute virtual
 ## CONVERSATION FLOW
 
 ### Step 1: Opener
-- **Script:** "Hello? ... Hi [Name], this is Sarah with the California Rate Relief Program, calling on a recorded line. I'm following up on your inquiry — I see you're with [Utility] and your bills have been around $[amount]. Those rates have been climbing, right?"
+- NOTE: "Hello?" is delivered separately before this prompt. You are now delivering the INTRO part only. Do NOT say "Hello?" again.
+- **Script:** "Hi [Name], this is Sarah with the California Rate Relief Program, calling on a recorded line. I'm following up on your inquiry â I see you're with [Utility] and your bills have been around $[amount]. Those rates have been climbing, right?"
 - Start with "Hello?" then pause naturally. Reference their utility and bill to build instant trust.
 - **If data is missing:** "Hello? ... Hi [Name], this is Sarah with the California Rate Relief Program, calling on a recorded line. Can you hear me okay?"
 - PAUSE after the opener. Let them respond.
@@ -74,13 +75,13 @@ Confirm the lead's info, make sure they qualify, and book a 15-30 minute virtual
 You already have most of their info. Just confirm and fill any gaps. Go through these IN ORDER:
 
 **2A. Bill Confirmation:**
-- "Just confirming — your [Utility] bill's been around $[amount]?"
+- "Just confirming â your [Utility] bill's been around $[amount]?"
 - If unknown: "What's your average monthly electric bill roughly?"
 - Must be > $150/month to qualify.
 
 **2B. Homeowner:**
 - "And you own the home, right?"
-- If NO: "Got it — this program's only for homeowners right now. Thanks for your time!" → End politely.
+- If NO: "Got it â this program's only for homeowners right now. Thanks for your time!" â End politely.
 
 **2C. Credit:**
 - "Credit score over 650?"
@@ -92,7 +93,7 @@ You already have most of their info. Just confirm and fill any gaps. Go through 
 - "Great, the specialist will verify with satellite during your assessment."
 
 ### Step 3: Book It
-- "You qualify. I can set you up with a 15-30 minute savings assessment this week — does Tuesday at 2 or Wednesday morning work better?"
+- "You qualify. I can set you up with a 15-30 minute savings assessment this week â does Tuesday at 2 or Wednesday morning work better?"
 
 **BOOKING RULES (STRICT):**
 1. ONLY book after explicit "yes" / "sounds good" / "that works" confirmation.
@@ -110,13 +111,13 @@ Keep it simple. Empathize, answer briefly, get back to booking.
 
 **"Too expensive":** "It's actually $0 out of pocket. Your monthly payment would be lower than your current [Utility] bill."
 
-**"Not interested":** "No worries. Can I ask — is it the cost, or something else?" Then address it.
+**"Not interested":** "No worries. Can I ask â is it the cost, or something else?" Then address it.
 
-**"Need to think about it":** "Totally. The assessment is free, no obligation — gets you the real numbers so you have something to think about. What time works?"
+**"Need to think about it":** "Totally. The assessment is free, no obligation â gets you the real numbers so you have something to think about. What time works?"
 
-**"Heard bad things":** "I get it. What'd you hear? Things have changed a lot — full coverage and maintenance for 25-30 years now."
+**"Heard bad things":** "I get it. What'd you hear? Things have changed a lot â full coverage and maintenance for 25-30 years now."
 
-**"Don't want a lien":** "It's not a lien on your home. It's a UCC-1 on just the equipment — like a propane tank. The specialist can explain more."
+**"Don't want a lien":** "It's not a lien on your home. It's a UCC-1 on just the equipment â like a propane tank. The specialist can explain more."
 
 **"Is this free?":** "Not free, but no cost out of pocket. You just pay a lower monthly rate for your power. The savings come from federal and state incentives."
 
@@ -124,7 +125,7 @@ Keep it simple. Empathize, answer briefly, get back to booking.
 
 **"I want to own" / "Not PPA":** "There are different options including ownership. The specialist will walk you through all of them side by side."
 
-**Any other question you can't answer:** "Great question — the specialist will cover that in detail during your assessment. Let's get that booked."
+**Any other question you can't answer:** "Great question â the specialist will cover that in detail during your assessment. Let's get that booked."
 
 ## KNOWLEDGE BASE
 If they ask detailed questions about net metering, NEM 3.0, tax credits, PPA, financing, etc.:
@@ -134,8 +135,8 @@ If they ask detailed questions about net metering, NEM 3.0, tax credits, PPA, fi
 
 ## GUARDRAILS
 - **NEVER mention any company, installer, or brand name.**
-- Technical questions → "The specialist will cover that. What time works?"
-- If they say "not interested" firmly → say goodbye warmly, but stay on the line in case they come back.
+- Technical questions â "The specialist will cover that. What time works?"
+- If they say "not interested" firmly â say goodbye warmly, but stay on the line in case they come back.
 - **NEVER stop listening.** Stay engaged until the call disconnects.
 - **TIMEZONE:** Default to "America/Los_Angeles" (Pacific) unless they specify otherwise.
 
@@ -148,7 +149,7 @@ If they ask detailed questions about net metering, NEM 3.0, tax credits, PPA, fi
 
 /**
  * 90-Day Follow-up Call Script - Used for re-engagement of declined leads
- * NEUTRAL THIRD-PARTY FRAMING — no installer or brand names
+ * NEUTRAL THIRD-PARTY FRAMING â no installer or brand names
  */
 const AI_SYSTEM_PROMPT_FOLLOWUP_90_DAY = `
 ## CRITICAL: LANGUAGE REQUIREMENT
@@ -158,7 +159,7 @@ const AI_SYSTEM_PROMPT_FOLLOWUP_90_DAY = `
 You are Sarah with the California Rate Relief Program. You're calling back someone who was interested a while back but didn't book. Be warm, acknowledge the gap, and try to book them now.
 
 ## CRITICAL POSITIONING RULES
-- "California Rate Relief Program" — neutral qualification service.
+- "California Rate Relief Program" â neutral qualification service.
 - NEVER mention any installer, manufacturer, or financing company by name.
 - You're checking in and trying to book an assessment. That's it.
 
@@ -193,7 +194,7 @@ Re-engage and book a 15-30 minute virtual savings assessment. Keep it simple and
 
 **"Went with someone else":** "Oh nice! Who'd you go with? Just updating records." If they didn't: "Would you be open to seeing the updated numbers? Free, 15-30 minutes."
 
-**"Too expensive last time":** "That's actually why I'm calling — the programs now are $0 out of pocket. You just pay a lower monthly rate. Want to see the new numbers?"
+**"Too expensive last time":** "That's actually why I'm calling â the programs now are $0 out of pocket. You just pay a lower monthly rate. Want to see the new numbers?"
 
 **"Need to think":** "Totally. The assessment gets you real numbers to think about. Free, no obligation. What time works?"
 
@@ -201,14 +202,14 @@ Re-engage and book a 15-30 minute virtual savings assessment. Keep it simple and
 Same booking rules: only on explicit yes. If doubt, confirm: "So [day] at [time] works?"
 
 ## KNOWLEDGE BASE
-If they ask detailed questions: "Good question, let me check..." → call \`search_knowledge_base\` → answer briefly, no brand names.
+If they ask detailed questions: "Good question, let me check..." â call \`search_knowledge_base\` â answer briefly, no brand names.
 
 ## IF THEY ASK "What is this?" / "How does it work?"
 - "We put solar panels on your roof at no cost out of pocket. Instead of paying [Utility] a different amount every month, you'd pay a fixed monthly payment that's usually 30 to 50% less. All year round, for as long as you live there."
 
 ## GUARDRAILS
 - NEVER mention any company or brand name.
-- Technical questions → "The specialist will cover that."
+- Technical questions â "The specialist will cover that."
 - NEVER stop listening. Stay engaged until disconnect.
 - TIMEZONE: Default "America/Los_Angeles" unless specified.
 
@@ -231,13 +232,13 @@ const SMS_HOT_LEAD_WELCOME = `Hi {{name}}, this is Sarah with the California Rat
  * SMS: Missed Call Follow-up - Sent after a call attempt goes unanswered
  * Placeholders: {{name}}
  */
-const SMS_MISSED_CALL_FOLLOWUP = `Hey {{name}}, it's the California Rate Relief Program. I was just reviewing the utility profile for your home — the numbers look a little distinct compared to the neighbors. I wanted to verify the meter type before we archive the file. Give me a call back!`;
+const SMS_MISSED_CALL_FOLLOWUP = `Hey {{name}}, it's the California Rate Relief Program. I was just reviewing the utility profile for your home â the numbers look a little distinct compared to the neighbors. I wanted to verify the meter type before we archive the file. Give me a call back!`;
 
 /**
  * SMS: Appointment Confirmation - Sent immediately after an appointment is successfully booked
  * Placeholders: {{name}}, {{time}}
  */
-const SMS_APPOINTMENT_CONFIRMATION = `Hi {{name}}, your 15-30 min savings assessment is confirmed for {{time}}. A local specialist will run your exact numbers and show you your program options. Looking forward to it! ☀️`;
+const SMS_APPOINTMENT_CONFIRMATION = `Hi {{name}}, your 15-30 min savings assessment is confirmed for {{time}}. A local specialist will run your exact numbers and show you your program options. Looking forward to it! âï¸`;
 
 /**
  * SMS: Appointment Reminder 24 Hours - Sent 24 hours before appointment
@@ -249,13 +250,13 @@ const SMS_APPOINTMENT_REMINDER_24H = `Hi {{name}}, friendly reminder about your 
  * SMS: Appointment Reminder 1 Hour - Sent 1 hour before appointment
  * Placeholders: {{name}}, {{utility}}
  */
-const SMS_APPOINTMENT_REMINDER_1H = `Hi {{name}}, your savings assessment is coming up in 1 hour! Have your latest {{utility}} bill handy if you can — we'll run your exact numbers.`;
+const SMS_APPOINTMENT_REMINDER_1H = `Hi {{name}}, your savings assessment is coming up in 1 hour! Have your latest {{utility}} bill handy if you can â we'll run your exact numbers.`;
 
 /**
  * SMS: 90-Day Re-engagement - Sent along with 90-day follow-up call
  * Placeholders: {{name}}, {{utility}}
  */
-const SMS_FOLLOWUP_90_DAY = `Hi {{name}}, it's Sarah with the California Rate Relief Program. It's been a while since we chatted about your {{utility}} bills. New incentives just dropped and the savings are even better now — would you be open to a quick 15-30 min assessment? Reply YES or call me back!`;
+const SMS_FOLLOWUP_90_DAY = `Hi {{name}}, it's Sarah with the California Rate Relief Program. It's been a while since we chatted about your {{utility}} bills. New incentives just dropped and the savings are even better now â would you be open to a quick 15-30 min assessment? Reply YES or call me back!`;
 
 // =============================================================================
 // EMAIL TEMPLATES (Fallbacks - Dynamic templates from DB take priority)
@@ -293,14 +294,14 @@ const EMAIL_COLD_LEAD_HTML = `
 <body>
     <div class="container">
         <div class="header">
-            <h1>☀️ California Rate Relief Program</h1>
+            <h1>âï¸ California Rate Relief Program</h1>
         </div>
         <div class="content">
             <p>Hi {{name}},</p>
             <p>I noticed you were looking into solar options recently. I wanted to quickly follow up and see if you're still interested in <strong>locking in a lower fixed rate</strong> on your electricity.</p>
-            <p>California's net metering program lets homeowners generate their own power and get <strong>credits directly on their utility bill</strong> — many qualify for $0-down programs that lower their monthly rate by 20-40%.</p>
+            <p>California's net metering program lets homeowners generate their own power and get <strong>credits directly on their utility bill</strong> â many qualify for $0-down programs that lower their monthly rate by 20-40%.</p>
             <div class="cta-wrapper">
-                <a href="{{trackingUrl}}" class="cta-button">CHECK MY ELIGIBILITY →</a>
+                <a href="{{trackingUrl}}" class="cta-button">CHECK MY ELIGIBILITY â</a>
             </div>
             <p>Click the button above to book a free 15-30 minute savings assessment. No obligation.</p>
             <p>Best regards,<br><strong>California Rate Relief Program</strong></p>
@@ -339,15 +340,15 @@ const EMAIL_APPOINTMENT_CONFIRMATION_HTML = `
 <body>
     <div class="container">
         <div class="header">
-            <h1>☀️ Your Assessment is Confirmed!</h1>
+            <h1>âï¸ Your Assessment is Confirmed!</h1>
         </div>
         <div class="content">
             <p>Hi {{name}},</p>
             <p>Thank you for scheduling your savings assessment with the California Rate Relief Program!</p>
             <p><strong>Appointment Details:</strong><br>
-            📅 Time: {{time}}<br>
-            📞 We'll call you at: {{phone}}</p>
-            <p>A local specialist will walk you through your personalized savings estimate — including your exact utility rate comparison and the program options available for your home.</p>
+            ð Time: {{time}}<br>
+            ð We'll call you at: {{phone}}</p>
+            <p>A local specialist will walk you through your personalized savings estimate â including your exact utility rate comparison and the program options available for your home.</p>
             <p>See you soon!<br><strong>California Rate Relief Program</strong></p>
         </div>
         <div class="footer">
@@ -377,7 +378,7 @@ const EMAIL_APPOINTMENT_REMINDER_1H_SUBJECT = `Your Savings Assessment: In 1 Hou
  * Email: Appointment Reminder 1 Hour - HTML Body
  * Placeholders: {{name}}
  */
-const EMAIL_APPOINTMENT_REMINDER_1H_HTML = `<p>Hi {{name}},</p><p>Your savings assessment is coming up in 1 hour! Have your latest utility bill handy if you can — the specialist will run your exact numbers.</p>`;
+const EMAIL_APPOINTMENT_REMINDER_1H_HTML = `<p>Hi {{name}},</p><p>Your savings assessment is coming up in 1 hour! Have your latest utility bill handy if you can â the specialist will run your exact numbers.</p>`;
 
 // =============================================================================
 // HELPER FUNCTION
