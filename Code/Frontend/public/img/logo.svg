@@ -1,0 +1,33 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lightning bolt with sun rays -->
+  <defs>
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#084F5A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#38737F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6099A5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer sun rays -->
+  <circle cx="60" cy="60" r="50" fill="url(#sunGradient)" opacity="0.1"/>
+  <circle cx="60" cy="60" r="40" fill="url(#sunGradient)" opacity="0.2"/>
+  
+  <!-- Main circle -->
+  <circle cx="60" cy="60" r="32" fill="url(#sunGradient)"/>
+  
+  <!-- Lightning bolt -->
+  <path d="M65 35 L50 60 L58 60 L55 85 L70 55 L62 55 L65 35 Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+  
+  <!-- Sun rays -->
+  <g stroke="url(#sunGradient)" stroke-width="4" stroke-linecap="round">
+    <line x1="60" y1="10" x2="60" y2="20" />
+    <line x1="60" y1="100" x2="60" y2="110" />
+    <line x1="10" y1="60" x2="20" y2="60" />
+    <line x1="100" y1="60" x2="110" y2="60" />
+    <line x1="25" y1="25" x2="32" y2="32" />
+    <line x1="88" y1="88" x2="95" y2="95" />
+    <line x1="25" y1="95" x2="32" y2="88" />
+    <line x1="88" y1="32" x2="95" y2="25" />
+  </g>
+</svg>
+
