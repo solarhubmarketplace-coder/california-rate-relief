@@ -1,4 +1,4 @@
-require('dotenv').config();
+hrequire('dotenv').config();
 
 const getEnv = (key, fallback = null) => {
     const value = process.env[key];
@@ -40,7 +40,7 @@ module.exports = {
     QUEUE_CHECK_INTERVAL: parseInt(getEnv('QUEUE_CHECK_INTERVAL', '10000'), 10),
 
     // Quiet Hours
-    QUIET_HOURS_ENABLED: getEnv('QUIET_HOURS_ENABLED', 'true'),
+    QUIET_HOURS_ENABLED: getEnv('QUIET_HOURS_ENABLED', 'false'),
 
     // Live Transfer
     LIVE_TRANSFER_NUMBER: getEnv('LIVE_TRANSFER_NUMBER', '951-972-1902'),
