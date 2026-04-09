@@ -210,7 +210,8 @@ const handleConnection = (connection, req) => {
   let vadResetPending = false; // â¨ FIX: Prevent multiple rapid VAD resets
   let vadResetTimeout = null; // â¨ FIX: Debounce VAD resets
   let greetingInProgress = false; // â¨ FIX: Protect greeting audio from being cleared by early VAD detection
-  let greetingPart1Done = false; // Track two-part greeting: "Hello?" then pause then full intro
+  let greetingPart1Done = false; // Track two-part greeting: "Hello?" then listen then full intro
+  let greetingPart2Timer = null; // Fallback timer for intro if no speech detected after "Hello?"
 
   // â¨ PHASE 2: Conversation transcript & context
 
@@ -275,7 +276,7 @@ const handleConnection = (connection, req) => {
 
   try {
     openAI = new WebSocket(
-      "wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-12-17",
+      "wss://api.openai.com/v1/realtime?model=gpt-realtime-1.5",
 
       {
         headers: {
@@ -390,25 +391,19 @@ const handleConnection = (connection, req) => {
           openAIAudioChunks = [];
 
           if (openAI.readyState === WebSocket.OPEN && connection.readyState === WebSocket.OPEN) {
-            // Two-part greeting: "Hello?" first, then pause, then full intro
+            // Two-part greeting: "Hello?" first, then LISTEN, then intro
+            // Instead of a blind timer, we enable VAD after "Hello?" finishes
+            // and wait for the person to respond. If silence for 2.5s, fire intro.
             logger.log(LOG_PREFIX.STATE, "Triggering greeting part 1: Hello?");
             openAI.send(JSON.stringify({
               type: "response.create",
               response: {
                 modalities: ["text", "audio"],
-                instructions: 'Say only "Hello?" in a warm, natural tone. Nothing else. Just "Hello?" as if you just picked up the phone and are checking if someone is there.',
+                instructions: 'Say only "Hello?" in a relaxed, natural tone. Nothing else. Just "Hello?" like you just picked up and are checking if someone is there. Keep it casual, not overly cheerful.',
               },
             }));
-
-            // After 1.5 seconds, trigger the full intro
-            setTimeout(() => {
-              if (openAI.readyState === WebSocket.OPEN) {
-                logger.log(LOG_PREFIX.STATE, "Triggering greeting part 2: Full intro");
-                openAI.send(JSON.stringify({
-                  type: "response.create",
-                }));
-              }
-            }, 1500);
+            // Part 2 (full intro) is triggered in the response.completed handler
+            // after VAD detects speech OR a 2.5s silence fallback fires.
           }
         }
       }
@@ -513,19 +508,47 @@ const handleConnection = (connection, req) => {
 
         if (response.response?.status === "completed") {
           if (greetingInProgress) {
-            // Two-part greeting: first completion is "Hello?", keep protection on
-            // Second completion is the full intro, NOW we enable VAD
             if (!greetingPart1Done) {
+              // "Hello?" just finished — now LISTEN for a response
               greetingPart1Done = true;
-              logger.log(LOG_PREFIX.STATE, "Greeting part 1 complete (Hello?) - keeping VAD off for intro");
-              // Don't enable VAD yet, don't reset â wait for part 2
+              logger.log(LOG_PREFIX.STATE, "Greeting part 1 complete (Hello?) - enabling VAD to listen");
+
+              // Enable VAD so we can hear them respond
+              if (openAI.readyState === WebSocket.OPEN) {
+                openAI.send(JSON.stringify({
+                  type: "session.update",
+                  session: {
+                    turn_detection: {
+                      type: "server_vad",
+                      threshold: 0.4,
+                      prefix_padding_ms: 300,
+                      silence_duration_ms: 800, // Shorter silence = quicker pickup of their response
+                    },
+                  },
+                }));
+              }
+
+              // Fallback: if nobody says anything for 2.5s, fire the intro anyway
+              greetingPart2Timer = setTimeout(() => {
+                if (openAI.readyState === WebSocket.OPEN && greetingInProgress) {
+                  logger.log(LOG_PREFIX.STATE, "No response after Hello? - triggering intro (silence fallback)");
+                  openAI.send(JSON.stringify({
+                    type: "response.create",
+                  }));
+                }
+              }, 2500);
+
               return;
             }
+
+            // Part 2 (full intro) just finished — greeting sequence complete
             greetingInProgress = false;
-            // Re-enable VAD after full greeting (both parts) completes
+            if (greetingPart2Timer) { clearTimeout(greetingPart2Timer); greetingPart2Timer = null; }
+            logger.log(LOG_PREFIX.STATE, "Greeting complete - VAD active for conversation");
+
+            // Ensure VAD is set to conversation mode
             if (openAI.readyState === WebSocket.OPEN) {
-              logger.log(LOG_PREFIX.STATE, "Greeting complete - enabling VAD");
-              const enableVAD = {
+              openAI.send(JSON.stringify({
                 type: "session.update",
                 session: {
                   turn_detection: {
@@ -535,10 +558,10 @@ const handleConnection = (connection, req) => {
                     silence_duration_ms: 1000,
                   },
                 },
-              };
-              openAI.send(JSON.stringify(enableVAD));
+              }));
             }
           }
+
 
           // Debounce VAD resets for non-greeting responses
           clearTimeout(vadResetTimeout);
@@ -891,11 +914,18 @@ const handleConnection = (connection, req) => {
       // ========================================
 
       if (eventType === "input_audio_buffer.speech_started") {
-        if (greetingInProgress) {
-          // Protect greeting audio from early VAD detection
-        } else {
+        if (greetingInProgress && greetingPart1Done) {
+          // Person responded after "Hello?" — cancel the silence fallback timer
+          // VAD will handle the turn naturally and trigger the intro response
+          if (greetingPart2Timer) {
+            clearTimeout(greetingPart2Timer);
+            greetingPart2Timer = null;
+            logger.log(LOG_PREFIX.STATE, "Speech detected after Hello? - letting VAD handle turn");
+          }
+        } else if (!greetingInProgress) {
           handleSpeechStarted(connection, streamSid, logger);
         }
+        // During part 1 (Hello? still playing), ignore speech detection
       }
 
       if (
@@ -1362,7 +1392,7 @@ const sendSessionUpdate = (openAI, logger, customInstructions = null, { disableV
         model: "whisper-1",
       },
 
-      temperature: 0.6,
+      temperature: 0.75,
 
       turn_detection: disableVAD ? null : {
         type: "server_vad",
