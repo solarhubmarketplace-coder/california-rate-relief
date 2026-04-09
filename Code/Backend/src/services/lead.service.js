@@ -23,10 +23,10 @@ class LeadService {
     utm_campaign,
     utm_content
   }) {
-    // Deduplication Check
+    // Deduplication Check — if lead exists, update their info and re-trigger a call
     const { data: existingLeads, error: dedupError } = await supabaseAdmin
       .from("leads")
-      .select("id")
+      .select("*")
       .eq("phone", phone)
       .limit(1);
 
@@ -35,10 +35,33 @@ class LeadService {
     }
 
     if (existingLeads && existingLeads.length > 0) {
-      throw {
-        statusCode: 409,
-        message: "Lead with this phone number already exists",
-      };
+      const existingLead = existingLeads[0];
+
+      // Update lead with any new info provided
+      const updateFields = {};
+      if (name) updateFields.name = name;
+      if (email) updateFields.email = email;
+      if (address) updateFields.address = address;
+      if (bill_amount) updateFields.bill_amount = bill_amount;
+      if (utility_provider) updateFields.utility_provider = utility_provider;
+      if (credit_score) updateFields.credit_score = credit_score;
+
+      if (Object.keys(updateFields).length > 0) {
+        await supabaseAdmin
+          .from("leads")
+          .update(updateFields)
+          .eq("id", existingLead.id);
+      }
+
+      // Re-trigger a voice call for the existing lead
+      const queueService = require("./queue.service");
+      await queueService.createHotLeadTasks({ ...existingLead, ...updateFields });
+
+      console.log(
+        `[LeadService] Duplicate phone ${phone} — re-triggered call for existing lead ${existingLead.id}`
+      );
+
+      return { ...existingLead, ...updateFields, _retriggered: true };
     }
 
     // Prepare lead data (including tracking fields)
