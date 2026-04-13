@@ -30,7 +30,7 @@
  * "coral" = warm, empathetic female voice â best for consultative SDR persona
  * Per playbook: Female synthetic voices keep prospects on phone ~14s longer on avg
  */
-const AI_VOICE = "coral";
+const AI_VOICE = "ash";
 
 /**
  * Initial Call Script - Used for first contact with hot leads
