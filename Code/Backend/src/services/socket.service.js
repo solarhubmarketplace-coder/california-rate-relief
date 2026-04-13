@@ -119,7 +119,7 @@ class DebugLogger {
 
     const elapsed = Date.now() - this.startTime;
 
-    let logLine = `[${timestamp}] [+${elapsed}ms] ${LOG_PREFIX.ERROR} â ${message}`;
+    let logLine = `[${timestamp}] [+${elapsed}ms] ${LOG_PREFIX.ERROR} ❌ ${message}`;
 
     if (error) {
       logLine += ` | ERROR: ${error.message || error}`;
@@ -200,20 +200,19 @@ const handleConnection = (connection, req) => {
   let twilioAudioChunks = [];
   let isCollectingAudio = false;
   let openAIAudioChunks = []; // Keep for response completion tracking
-  let audioBuffer = []; // â¨ FIX: Buffer audio chunks before OpenAI is ready
+  let audioBuffer = []; // ✨ FIX: Buffer audio chunks before OpenAI is ready
 
-  // â¨ PHASE 3: Context loading state
+  // ✨ PHASE 3: Context loading state
   let contextualSystemMessage = null; // Will be set when context loads
   let contextLoadingComplete = false; // Flag to track if context loading finished
   let greetingTriggered = false; // Prevent double greeting
   let waitingForContextUpdate = false; // Wait for session update before greeting
-  let vadResetPending = false; // â¨ FIX: Prevent multiple rapid VAD resets
-  let vadResetTimeout = null; // â¨ FIX: Debounce VAD resets
-  let greetingInProgress = false; // â¨ FIX: Protect greeting audio from being cleared by early VAD detection
-  let greetingPart1Done = false; // Track two-part greeting: "Hello?" then listen then full intro
-  let greetingPart2Timer = null; // Fallback timer for intro if no speech detected after "Hello?"
+  let vadResetPending = false; // ✨ FIX: Prevent multiple rapid VAD resets
+  let vadResetTimeout = null; // ✨ FIX: Debounce VAD resets
+  let greetingInProgress = false; // ✨ FIX: Protect greeting audio from being cleared by early VAD detection
+  let greetingPart1Done = false; // Track two-part greeting: "Hello?" then pause then full intro
 
-  // â¨ PHASE 2: Conversation transcript & context
+  // ✨ PHASE 2: Conversation transcript & context
 
   let conversationTranscript = [];
 
@@ -230,7 +229,7 @@ const handleConnection = (connection, req) => {
 
     call_outcome: "incomplete",
 
-    // â¨ Session Memory: Qualification state tracking
+    // ✨ Session Memory: Qualification state tracking
     qualification: {
       homeowner: null,       // true/false/null
       bill_amount: null,     // extracted dollar amount
@@ -240,7 +239,7 @@ const handleConnection = (connection, req) => {
     },
   };
 
-  // â¨ COST TRACKING: Track all OpenAI API usage and costs
+  // ✨ COST TRACKING: Track all OpenAI API usage and costs
 
   let costTracking = {
     realtime_tokens: 0,
@@ -276,7 +275,7 @@ const handleConnection = (connection, req) => {
 
   try {
     openAI = new WebSocket(
-      "wss://api.openai.com/v1/realtime?model=gpt-realtime-1.5",
+      "wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-12-17",
 
       {
         headers: {
@@ -289,7 +288,7 @@ const handleConnection = (connection, req) => {
 
     logger.log(LOG_PREFIX.OPENAI, "WebSocket created, waiting for connection...");
 
-    // â¨ FIX: 10s connection timeout - terminate if OpenAI never connects
+    // ✨ FIX: 10s connection timeout - terminate if OpenAI never connects
     var openAIConnectTimeout = setTimeout(() => {
       if (!isOpenAIConnected) {
         logger.error("OpenAI WebSocket connection timed out after 10s");
@@ -363,7 +362,7 @@ const handleConnection = (connection, req) => {
         sessionConfigured = true;
         logger.log(LOG_PREFIX.OPENAI, `Session configured (voice: ${response.session?.voice}, tools: ${response.session?.tools?.length || 0})`);
 
-        // â¨ FIX: Send any buffered audio chunks now that session is configured
+        // ✨ FIX: Send any buffered audio chunks now that session is configured
         if (audioBuffer.length > 0 && openAI.readyState === WebSocket.OPEN) {
           for (const bufferedAudio of audioBuffer) {
             openAI.send(
@@ -391,19 +390,21 @@ const handleConnection = (connection, req) => {
           openAIAudioChunks = [];
 
           if (openAI.readyState === WebSocket.OPEN && connection.readyState === WebSocket.OPEN) {
-            // Two-part greeting: "Hello?" first, then LISTEN, then intro
-            // Instead of a blind timer, we enable VAD after "Hello?" finishes
-            // and wait for the person to respond. If silence for 2.5s, fire intro.
+            // ========================================
+            // RESPONSE-DRIVEN GREETING (not timer-based)
+            // 1. Say "Hello?" with VAD off
+            // 2. After "Hello?" audio finishes, enable VAD to listen
+            // 3. If person speaks within 2.5s → OpenAI responds naturally using system prompt
+            // 4. If silence for 2.5s → force-trigger the intro as fallback
+            // ========================================
             logger.log(LOG_PREFIX.STATE, "Triggering greeting part 1: Hello?");
             openAI.send(JSON.stringify({
               type: "response.create",
               response: {
                 modalities: ["text", "audio"],
-                instructions: 'Say only "Hello?" in a relaxed, natural tone. Nothing else. Just "Hello?" like you just picked up and are checking if someone is there. Keep it casual, not overly cheerful.',
+                instructions: 'Say only "Hello?" in a warm, natural tone. Nothing else. Just "Hello?" as if you just picked up the phone and are checking if someone is there.',
               },
             }));
-            // Part 2 (full intro) is triggered in the response.completed handler
-            // after VAD detects speech OR a 2.5s silence fallback fires.
           }
         }
       }
@@ -489,7 +490,7 @@ const handleConnection = (connection, req) => {
         // Clear audio chunks (no longer saving locally)
         openAIAudioChunks = [];
 
-        // â¨ PHASE 2: Analyze conversation context after each response
+        // ✨ PHASE 2: Analyze conversation context after each response
         if (conversationTranscript.length > 0) {
           conversationContext = analyzeConversationContext(
             conversationTranscript
@@ -509,59 +510,49 @@ const handleConnection = (connection, req) => {
         if (response.response?.status === "completed") {
           if (greetingInProgress) {
             if (!greetingPart1Done) {
-              // "Hello?" just finished — now LISTEN for a response
+              // ========================================
+              // "Hello?" just finished. Now listen for the person's response.
+              // Enable VAD so we can hear them. If they speak, OpenAI will
+              // generate the intro naturally as a response to what they said.
+              // If silence for 2.5s, force-trigger the intro.
+              // ========================================
               greetingPart1Done = true;
-              logger.log(LOG_PREFIX.STATE, "Greeting part 1 complete (Hello?) - enabling VAD to listen");
+              greetingInProgress = false; // Allow interruption now
+              logger.log(LOG_PREFIX.STATE, "Greeting part 1 complete (Hello?) - enabling VAD, waiting for response or 2.5s silence");
 
-              // Enable VAD so we can hear them respond
               if (openAI.readyState === WebSocket.OPEN) {
+                // Enable VAD to listen for their "hello" or "yeah"
                 openAI.send(JSON.stringify({
                   type: "session.update",
                   session: {
                     turn_detection: {
                       type: "server_vad",
-                      threshold: 0.4,
+                      threshold: 0.35,
                       prefix_padding_ms: 300,
-                      silence_duration_ms: 800, // Shorter silence = quicker pickup of their response
+                      silence_duration_ms: 650,
                     },
                   },
                 }));
+
+                // Silence fallback: if nobody speaks within 2.5s, trigger the intro
+                setTimeout(() => {
+                  // Only fire if we haven't already gotten a response from the person
+                  // (check if transcript is still empty — no user speech detected yet)
+                  const userHasSpoken = conversationTranscript.some(t => t.role === "user");
+                  if (!userHasSpoken && openAI.readyState === WebSocket.OPEN) {
+                    logger.log(LOG_PREFIX.STATE, "No response after Hello? — triggering intro as fallback");
+                    openAI.send(JSON.stringify({
+                      type: "response.create",
+                    }));
+                  }
+                }, 2500);
               }
-
-              // Fallback: if nobody says anything for 2.5s, fire the intro anyway
-              greetingPart2Timer = setTimeout(() => {
-                if (openAI.readyState === WebSocket.OPEN && greetingInProgress) {
-                  logger.log(LOG_PREFIX.STATE, "No response after Hello? - triggering intro (silence fallback)");
-                  openAI.send(JSON.stringify({
-                    type: "response.create",
-                  }));
-                }
-              }, 2500);
-
               return;
             }
-
-            // Part 2 (full intro) just finished — greeting sequence complete
+            // Part 2 (full intro) just finished — VAD is already on
             greetingInProgress = false;
-            if (greetingPart2Timer) { clearTimeout(greetingPart2Timer); greetingPart2Timer = null; }
-            logger.log(LOG_PREFIX.STATE, "Greeting complete - VAD active for conversation");
-
-            // Ensure VAD is set to conversation mode
-            if (openAI.readyState === WebSocket.OPEN) {
-              openAI.send(JSON.stringify({
-                type: "session.update",
-                session: {
-                  turn_detection: {
-                    type: "server_vad",
-                    threshold: 0.4,
-                    prefix_padding_ms: 300,
-                    silence_duration_ms: 1000,
-                  },
-                },
-              }));
-            }
+            logger.log(LOG_PREFIX.STATE, "Greeting intro complete - conversation active");
           }
-
 
           // Debounce VAD resets for non-greeting responses
           clearTimeout(vadResetTimeout);
@@ -574,9 +565,9 @@ const handleConnection = (connection, req) => {
                 session: {
                   turn_detection: {
                     type: "server_vad",
-                    threshold: 0.4,
+                    threshold: 0.35,
                     prefix_padding_ms: 300,
-                    silence_duration_ms: 1000,
+                    silence_duration_ms: 650,
                   },
                 },
               };
@@ -625,7 +616,7 @@ const handleConnection = (connection, req) => {
               `Available slots: ${JSON.stringify(result)}`
             );
 
-            // â¨ EXPLICIT STATE: Scheduling/Qualified
+            // ✨ EXPLICIT STATE: Scheduling/Qualified
             await supabaseAdmin
               .from("leads")
               .update({ call_state: "qualified" })
@@ -645,7 +636,7 @@ const handleConnection = (connection, req) => {
               );
             }
 
-            // â¨ CRITICAL FIX: Validate explicit confirmation before booking
+            // ✨ CRITICAL FIX: Validate explicit confirmation before booking
             // Check recent conversation for explicit refusal or lack of confirmation
             const recentUserMessages = conversationTranscript
               .filter((msg) => msg.role === "user")
@@ -671,7 +662,7 @@ const handleConnection = (connection, req) => {
             if (hasRefusal) {
               const errorMsg =
                 "User explicitly refused this time. Do NOT book. Ask for alternative time instead.";
-              logger.log(LOG_PREFIX.TOOL, `â ${errorMsg}`);
+              logger.log(LOG_PREFIX.TOOL, `❌ ${errorMsg}`);
               throw new Error(errorMsg);
             }
 
@@ -695,7 +686,7 @@ const handleConnection = (connection, req) => {
               // If conversation is well underway but no clear confirmation, warn
               logger.log(
                 LOG_PREFIX.TOOL,
-                `â ï¸ No explicit confirmation found in recent messages. Proceeding but user should have confirmed.`
+                `⚠️ No explicit confirmation found in recent messages. Proceeding but user should have confirmed.`
               );
             }
 
@@ -709,7 +700,7 @@ const handleConnection = (connection, req) => {
               leadId: leadId,
 
               time: parsedArgs.time,
-              timezone: parsedArgs.timezone, // â¨ FIX: Pass timezone for correction
+              timezone: parsedArgs.timezone, // ✨ FIX: Pass timezone for correction
             });
 
             logger.log(
@@ -732,10 +723,10 @@ const handleConnection = (connection, req) => {
               const leadName = lead ? lead.name : "Unknown Lead";
               const leadPhone = lead ? lead.phone : "N/A";
 
-              // 2. Calculate End Time (15 mins)
+              // 2. Calculate End Time (30 mins — blocks full assessment window)
               const startTime = new Date(parsedArgs.time);
               const endTime = new Date(
-                startTime.getTime() + 15 * 60000
+                startTime.getTime() + 30 * 60000
               ).toISOString();
 
               // 3. Create Event
@@ -746,9 +737,9 @@ const handleConnection = (connection, req) => {
                 endTime: endTime,
               });
 
-              logger.log(LOG_PREFIX.TOOL, "ð Google Calendar event created!");
+              logger.log(LOG_PREFIX.TOOL, "📅 Google Calendar event created!");
             } catch (err) {
-              logger.error(`â Google Calendar Sync Failed: ${err.message}`);
+              logger.error(`❌ Google Calendar Sync Failed: ${err.message}`);
               // Don't throw - allow call to continue
             }
 
@@ -772,7 +763,7 @@ const handleConnection = (connection, req) => {
           } else if (name === "search_knowledge_base") {
             // ========================================
 
-            // ð SERVER-SIDE RAG: Search Knowledge Base
+            // 🔍 SERVER-SIDE RAG: Search Knowledge Base
 
             // ========================================
 
@@ -816,7 +807,7 @@ const handleConnection = (connection, req) => {
               logger.log(
                 LOG_PREFIX.TOOL,
 
-                `[RAG] â Found relevant information (${result.content.length} chars)`
+                `[RAG] ✅ Found relevant information (${result.content.length} chars)`
               );
 
               logger.log(
@@ -825,7 +816,7 @@ const handleConnection = (connection, req) => {
                 `[RAG] Preview: ${result.content.substring(0, 150)}...`
               );
             } else {
-              logger.log(LOG_PREFIX.TOOL, `[RAG] â ï¸ No results found`);
+              logger.log(LOG_PREFIX.TOOL, `[RAG] ⚠️ No results found`);
             }
           } else if (name === "transferCall") {
             // ... existing transfer logic ...
@@ -847,10 +838,10 @@ const handleConnection = (connection, req) => {
 
                 await voiceService.transferCall(callSid, LIVE_TRANSFER_NUMBER);
 
-                // â¨ CRITICAL FIX: Stop AI interaction immediately
+                // ✨ CRITICAL FIX: Stop AI interaction immediately
                 logger.log(
                   LOG_PREFIX.TOOL,
-                  "â Transfer initiated - Closing AI session to prevent audio race conditions"
+                  "✅ Transfer initiated - Closing AI session to prevent audio race conditions"
                 );
 
                 // Close connections explicitly
@@ -859,7 +850,7 @@ const handleConnection = (connection, req) => {
                 if (connection && connection.readyState === WebSocket.OPEN)
                   connection.close();
 
-                return; // â EXIT FUNCTION - do not send tool output or response.create
+                return; // ⛔ EXIT FUNCTION - do not send tool output or response.create
               } catch (err) {
                 logger.error("Transfer failed", err);
                 result = {
@@ -888,7 +879,7 @@ const handleConnection = (connection, req) => {
         } catch (toolError) {
           logger.error("Tool execution failed", toolError);
 
-          // â¨ FIX: Report error back to AI so it can tell the user
+          // ✨ FIX: Report error back to AI so it can tell the user
           if (openAI.readyState === WebSocket.OPEN) {
             const errorOutput = {
               type: "conversation.item.create",
@@ -914,18 +905,11 @@ const handleConnection = (connection, req) => {
       // ========================================
 
       if (eventType === "input_audio_buffer.speech_started") {
-        if (greetingInProgress && greetingPart1Done) {
-          // Person responded after "Hello?" — cancel the silence fallback timer
-          // VAD will handle the turn naturally and trigger the intro response
-          if (greetingPart2Timer) {
-            clearTimeout(greetingPart2Timer);
-            greetingPart2Timer = null;
-            logger.log(LOG_PREFIX.STATE, "Speech detected after Hello? - letting VAD handle turn");
-          }
-        } else if (!greetingInProgress) {
+        if (greetingInProgress) {
+          // Protect greeting audio from early VAD detection
+        } else {
           handleSpeechStarted(connection, streamSid, logger);
         }
-        // During part 1 (Hello? still playing), ignore speech detection
       }
 
       if (
@@ -1002,7 +986,7 @@ const handleConnection = (connection, req) => {
 
           logger.log(LOG_PREFIX.TWILIO, `Stream started (call: ${callSid}, stream: ${streamSid})`);
 
-          // â¨ FIX: Send clear event first to initialize Twilio's audio output buffer
+          // ✨ FIX: Send clear event first to initialize Twilio's audio output buffer
           // In working calls, user speech triggers a 'clear' event which seems to initialize
           // the audio output path. Sending clear first may help establish the buffer.
           try {
@@ -1045,9 +1029,9 @@ const handleConnection = (connection, req) => {
                 // in generateContextualSystemMessage below (with lead data injected)
               }
 
-              // â¨ PHASE 3: Load previous call context and update session
+              // ✨ PHASE 3: Load previous call context and update session
 
-              // â¨ SPEED FIX: Load context with PARALLEL DB queries
+              // ✨ SPEED FIX: Load context with PARALLEL DB queries
               (async () => {
                 const contextStartTime = Date.now();
                 try {
@@ -1062,7 +1046,7 @@ const handleConnection = (connection, req) => {
 
                   const contextMs = Date.now() - contextStartTime;
 
-                  // â¨ CRITICAL FIX: Always build leadInfo and inject into prompt
+                  // ✨ CRITICAL FIX: Always build leadInfo and inject into prompt
                   // Even for new leads (first call), the personalized opener needs
                   // utility/bill/address data to drive 35% higher conversions.
                   let leadInfo = null;
@@ -1091,7 +1075,7 @@ const handleConnection = (connection, req) => {
                     logger.log(LOG_PREFIX.STATE, `Context loaded in ${contextMs}ms (new lead, injecting form data for personalized opener)`);
                   }
 
-                  // Always generate contextual message â even for new leads
+                  // Always generate contextual message — even for new leads
                   // so the AI can personalize with utility/bill data from the form
                   contextualSystemMessage =
                     contextService.generateContextualSystemMessage(
@@ -1143,7 +1127,7 @@ const handleConnection = (connection, req) => {
             logger.log(LOG_PREFIX.AUDIO, "First audio chunk received from Twilio");
           }
 
-          // â¨ FIX: Buffer audio chunks if OpenAI not ready, then forward when ready
+          // ✨ FIX: Buffer audio chunks if OpenAI not ready, then forward when ready
           if (openAI.readyState === WebSocket.OPEN && sessionConfigured) {
             // Send current chunk
             const audioAppend = {
@@ -1164,7 +1148,7 @@ const handleConnection = (connection, req) => {
               audioBuffer = [];
             }
           } else {
-            // â¨ FIX: Buffer audio chunks instead of dropping them
+            // ✨ FIX: Buffer audio chunks instead of dropping them
             if (audioBuffer.length < 100) {
               // Limit buffer size to prevent memory issues
               audioBuffer.push(data.media.payload);
@@ -1197,13 +1181,13 @@ const handleConnection = (connection, req) => {
 
     logger.log(LOG_PREFIX.TWILIO, `Connection closed (rx: ${audioChunksReceived}, tx: ${audioChunksSent} audio chunks)`);
 
-    // â¨ PHASE 2: Save transcript and context to database
+    // ✨ PHASE 2: Save transcript and context to database
 
     if (conversationTranscript.length > 0 && callSid) {
       try {
         logger.log(LOG_PREFIX.STATE, `Saving transcript (${conversationTranscript.length} messages)...`);
 
-        // â¨ SHORT-TERM ENHANCEMENT: Use AI-powered analysis (gpt-4o-mini)
+        // ✨ SHORT-TERM ENHANCEMENT: Use AI-powered analysis (gpt-4o-mini)
 
         // Falls back to keyword-based if AI fails
 
@@ -1213,7 +1197,7 @@ const handleConnection = (connection, req) => {
 
         // Try AI analysis first (if enabled via env var)
 
-        if (process.env.USE_AI_ANALYSIS === "true") {
+        if (process.env.USE_AI_ANALYSIS !== "false") {
 
           const aiResult = await aiAnalysisService.analyzeConversationWithAI(
             conversationTranscript
@@ -1278,7 +1262,7 @@ const handleConnection = (connection, req) => {
 
         logger.log(LOG_PREFIX.STATE, "Call data saved");
 
-        // â¨ COST TRACKING: Calculate and log total cost
+        // ✨ COST TRACKING: Calculate and log total cost
 
         costTracking.total_cost =
           costTracking.realtime_cost +
@@ -1392,13 +1376,13 @@ const sendSessionUpdate = (openAI, logger, customInstructions = null, { disableV
         model: "whisper-1",
       },
 
-      temperature: 0.75,
+      temperature: 0.7,
 
       turn_detection: disableVAD ? null : {
         type: "server_vad",
-        threshold: 0.4,
+        threshold: 0.35,
         prefix_padding_ms: 300,
-        silence_duration_ms: 1000,
+        silence_duration_ms: 650,
       },
 
       tools: tools,
@@ -1428,7 +1412,7 @@ const handleSpeechStarted = (connection, streamSid, logger) => {
 
 /**
   
-   * â¨ PHASE 2: Analyze conversation context
+   * ✨ PHASE 2: Analyze conversation context
   
    * Extracts customer interests, objections, sentiment from transcript
   
@@ -1627,7 +1611,7 @@ const analyzeConversationContext = (transcript) => {
     context.call_outcome = "discussion_completed";
   }
 
-  // â¨ Session Memory: Extract qualification data from conversation
+  // ✨ Session Memory: Extract qualification data from conversation
   const userText = transcript
     .filter((msg) => msg.role === "user")
     .map((msg) => msg.content)
@@ -1679,7 +1663,7 @@ const analyzeConversationContext = (transcript) => {
 
 /**
  
- * â¨ PHASE 2: Generate call summary
+ * ✨ PHASE 2: Generate call summary
  
  * Creates readable summary from transcript and context
  

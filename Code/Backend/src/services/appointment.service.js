@@ -308,7 +308,14 @@ class AppointmentService {
       }
 
       if (!busyTimes.has(slotUtc.toISOString())) {
-        slots.push(slotUtc.toISOString());
+        // Return both ISO (for booking) and human-readable (for speaking)
+        const humanTime = slotUtc.toLocaleString('en-US', {
+          timeZone: tz,
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true,
+        });
+        slots.push({ iso: slotUtc.toISOString(), display: humanTime });
       }
     }
 

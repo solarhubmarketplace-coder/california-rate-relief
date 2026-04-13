@@ -36,11 +36,11 @@ module.exports = {
     QUEUE_SMS_DELAY: parseInt(getEnv('QUEUE_SMS_DELAY', '30'), 10),
     QUEUE_VOICE_DELAY: parseInt(getEnv('QUEUE_VOICE_DELAY', '60'), 10),
     QUEUE_RETRY_DELAY: parseInt(getEnv('QUEUE_RETRY_DELAY', '30'), 10),
-    QUEUE_MAX_ATTEMPTS: parseInt(getEnv('QUEUE_MAX_ATTEMPTS', '2'), 10),
+    QUEUE_MAX_ATTEMPTS: parseInt(getEnv('QUEUE_MAX_ATTEMPTS', '3'), 10),
     QUEUE_CHECK_INTERVAL: parseInt(getEnv('QUEUE_CHECK_INTERVAL', '10000'), 10),
 
-    // Quiet Hours
-    QUIET_HOURS_ENABLED: getEnv('QUIET_HOURS_ENABLED', 'false'),
+    // Quiet Hours (8 PM - 9 AM Pacific, auto-skips weekends)
+    QUIET_HOURS_ENABLED: getEnv('QUIET_HOURS_ENABLED', 'true'),
 
     // Live Transfer
     LIVE_TRANSFER_NUMBER: getEnv('LIVE_TRANSFER_NUMBER', '951-972-1902'),

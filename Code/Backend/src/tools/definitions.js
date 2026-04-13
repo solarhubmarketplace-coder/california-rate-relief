@@ -2,14 +2,14 @@ const tools = [
   {
     type: "function",
     name: "checkAvailability",
-    description: "Check available appointment slots for a given date",
+    description: "Check available appointment slots for a given date. Call this BEFORE offering times to the customer — never guess. Use when the customer says a preferred day or when you're about to suggest times for the savings assessment.",
     parameters: {
       type: "object",
       properties: {
         date: {
           type: "string",
           description:
-            "The date to check availability for (ISO 8601 format, e.g. 2023-10-27)",
+            "The date to check availability for (ISO 8601 format, e.g. 2025-10-27). Use Pacific Time dates.",
         },
       },
       required: ["date"],
@@ -32,10 +32,10 @@ const tools = [
         },
         timezone: {
           type: "string",
-          description: "The IANA timezone of the lead (e.g. 'America/New_York', 'Asia/Karachi'). REQUIRED if known.",
+          description: "The IANA timezone of the lead. Default to 'America/Los_Angeles' for California leads. Always pass this.",
         },
       },
-      required: ["leadId", "time"],
+      required: ["leadId", "time", "timezone"],
     },
   },
   {
