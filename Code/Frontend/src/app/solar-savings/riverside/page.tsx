@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import SavingsCalculator from '@/components/SavingsCalculator';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -460,6 +461,9 @@ export default function RiversideSolarPage() {
                 With 5.7 peak sun hours per day, RPU rates at 28 cents (lower than SCE), and average bills around $260/month, Riverside is still an excellent city for solar savings — though the economics are slightly different than SCE territory. The lower utility rates mean your payback period is longer (approximately 6.5 years for a cash purchase vs. 5.5-6 for high-rate SCE areas), but you still come out ahead in the long term. Start with the free stuff — optimize your RPU rate plan and check for LIRA eligibility. Then evaluate whether a cash purchase, loan, or PPA makes sense for your situation. Your HOA can&apos;t stop you, the sun is on your side in the Inland Empire, and the math still works in your favor.
               </p>
             </div>
+
+            {/* Savings Calculator */}
+            <SavingsCalculator defaultUtility="rpu" cityName="Riverside" />
 
             {/* CTA */}
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>

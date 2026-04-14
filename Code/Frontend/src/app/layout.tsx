@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 import { Providers } from './providers';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const BASE_URL = 'https://ratereliefca.com';
 
@@ -173,6 +174,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        <GoogleAnalytics />
         {googlePlacesApiKey && (
           <Script
             src={`https://maps.googleapis.com/maps/api/js?key=${googlePlacesApiKey}&libraries=places`}

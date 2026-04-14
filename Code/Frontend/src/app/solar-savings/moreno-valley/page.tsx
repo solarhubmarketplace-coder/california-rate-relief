@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import SavingsCalculator from '@/components/SavingsCalculator';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -702,6 +703,9 @@ export default function MorenoValleySolarPage() {
                 your situation.
               </p>
             </div>
+
+            {/* Savings Calculator */}
+            <SavingsCalculator defaultUtility="mvu" cityName="Moreno Valley" />
 
             {/* CTA */}
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
