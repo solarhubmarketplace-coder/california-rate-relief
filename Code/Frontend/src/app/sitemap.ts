@@ -62,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'beaumont',
     'fallbrook',
     'escondido',
+    'moreno-valley',
   ].map((city) => ({
     url: `${BASE_URL}/solar-savings/${city}`,
     lastModified: new Date('2026-04-14'),
