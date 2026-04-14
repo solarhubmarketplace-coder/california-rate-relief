@@ -61,6 +61,15 @@ const blogPosts = [
     readTime: '10 min read',
     category: 'Utility Rates',
   },
+  {
+    slug: 'prepaid-ppa-california-2026',
+    title: 'Prepaid Solar PPA in California: How It Works, What It Costs, and Who It\'s Best For (2026)',
+    excerpt:
+      'Prepaid PPAs are surging after the residential tax credit expired. Learn how they work, what they cost vs. buying or leasing, and whether this option fits your situation.',
+    date: '2026-04-14',
+    readTime: '9 min read',
+    category: 'Solar Savings',
+  },
 ];
 
 export default function BlogPage() {

@@ -38,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'solar-tax-credit-expired-2026-options',
     'nem-3-california-still-worth-it',
     'pge-vs-sce-vs-sdge-rates-compared',
+    'prepaid-ppa-california-2026',
   ].map((slug) => ({
     url: `${BASE_URL}/blog/${slug}`,
     lastModified: new Date('2026-04-14'),
@@ -45,14 +46,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // City pages will be added here as they are built
-  // Example format:
-  // {
-  //   url: `${BASE_URL}/solar-savings/temecula`,
-  //   lastModified: new Date(),
-  //   changeFrequency: 'monthly',
-  //   priority: 0.8,
-  // },
+  // City pages
+  const cityPages: MetadataRoute.Sitemap = [
+    'temecula',
+  ].map((city) => ({
+    url: `${BASE_URL}/solar-savings/${city}`,
+    lastModified: new Date('2026-04-14'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
 
-  return [...staticPages, ...blogPosts];
+  return [...staticPages, ...blogPosts, ...cityPages];
 }
