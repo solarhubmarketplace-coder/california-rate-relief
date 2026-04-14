@@ -71,7 +71,7 @@ const getTwiml = async (req, res) => {
     const response = new VoiceResponse();
 
     // TCPA/FCC Compliance: Recording disclosure is handled by the AI's
-    // opening script ("Hi, this is Sarah calling on a recorded line...")
+    // opening script ("Hi, this is Ray calling on a recorded line...")
     // The AI opener is legally required and immutable per scripts.js Step 1.
 
     // Create the WebSocket stream connection for AI conversation
