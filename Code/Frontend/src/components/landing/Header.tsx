@@ -28,8 +28,14 @@ export function Header() {
             </div>
           </div>
 
-          {/* CTA */}
+          {/* Nav + CTA */}
           <div className='flex items-center gap-4'>
+            <Link
+              href='/blog'
+              className='hidden sm:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'
+            >
+              Blog
+            </Link>
             <Link href='#qualify'>
               <Button
                 size='sm'

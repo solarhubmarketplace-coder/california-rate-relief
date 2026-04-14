@@ -7,10 +7,15 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
+  "repository": "git+https://github.com/solarhubmarketplace-coder/california-rate-relief.git",
   "keywords": [],
-  "author": "",
+  "author": "khizarali07 <khizarali.cs@gmail.com>",
   "license": "ISC",
-  "description": "California Rate Relief CRM Backend",
+  "bugs": {
+    "url": "https://github.com/mujtabashamas/sun-speed-crm-backend/issues"
+  },
+  "homepage": "https://github.com/mujtabashamas/sun-speed-crm-backend#readme",
+  "description": "",
   "dependencies": {
     "@supabase/supabase-js": "^2.88.0",
     "axios": "^1.13.2",

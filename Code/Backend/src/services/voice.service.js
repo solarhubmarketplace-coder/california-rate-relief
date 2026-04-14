@@ -272,7 +272,7 @@ const processRecording = async (leadId, twilioUrl, recordingSid, callSid) => {
         model: "whisper-1",
         language: "en", // Force English directly
         prompt:
-          "California Rate Relief Program solar qualification call. Manager Chad. Customer discussion about net metering and solar PPA program.", // Context to prevent hallucinations
+          "California Rate Relief Program solar qualification call. Sarah the AI agent speaks with a homeowner about net metering, solar PPA, utility rates, and scheduling an assessment.", // Context to prevent hallucinations
       });
 
       fullTranscriptText = transcription.text;

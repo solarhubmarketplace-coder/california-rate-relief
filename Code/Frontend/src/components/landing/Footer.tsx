@@ -89,6 +89,17 @@ export function Footer() {
               <ul className='space-y-3'>
                 <li>
                   <Link
+                    href='/blog'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Blog
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
+                      &rarr;
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href='/privacy-policy'
                     className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
                   >
