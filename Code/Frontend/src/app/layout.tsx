@@ -7,6 +7,9 @@ const BASE_URL = 'https://ratereliefca.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  verification: {
+    google: 'alM4ttazO_TNjm-jjscGnlwFakwTWXiAqA0xaZy9umg',
+  },
   title: 'California Rate Relief Program | Cut Your Electric Bill by 50%',
   description:
     'Qualify for the 2026 Rate Relief Program. California homeowners can swap their high utility rate for a lower, fixed solar rate. No loans, no debt, $0 down.',
