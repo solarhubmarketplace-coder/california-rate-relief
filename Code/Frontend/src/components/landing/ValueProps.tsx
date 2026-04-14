@@ -1,5 +1,3 @@
-'use client';
-
 import { Home, Zap, Shield, ArrowRight } from 'lucide-react';
 
 const programFeatures = [

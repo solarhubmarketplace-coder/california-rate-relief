@@ -41,8 +41,6 @@ interface FormData {
   phone: string;
   email: string;
   address: string;
-  lat: number | null;
-  lng: number | null;
 }
 
 // Tracking parameters from URL (hidden fields)
@@ -143,8 +141,6 @@ export function QualificationWizard() {
     phone: '',
     email: '',
     address: '',
-    lat: null,
-    lng: null,
   });
 
   const updateFormData = (
@@ -312,9 +308,9 @@ export function QualificationWizard() {
               <div className='w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6'>
                 <XCircle className='h-8 w-8 text-amber-600' />
               </div>
-              <h2 className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
+              <h3 className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
                 Program Requires Homeownership
-              </h2>
+              </h3>
               <p className='text-slate-600 mb-6'>
                 Unfortunately, the Rate Relief Program is only available to
                 homeowners. However, we can help you find other ways to save on
@@ -340,8 +336,6 @@ export function QualificationWizard() {
                     phone: '',
                     email: '',
                     address: '',
-                    lat: null,
-                    lng: null,
                   });
                 }}
                 variant='outline'
@@ -365,9 +359,9 @@ export function QualificationWizard() {
             <div className='w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
               <CheckCircle className='h-8 w-8 text-green-600' />
             </div>
-            <h2 className='text-2xl font-bold text-slate-900 mb-4'>
+            <h3 className='text-2xl font-bold text-slate-900 mb-4'>
               You&apos;re Pre-Qualified!
-            </h2>
+            </h3>
             <p className='text-slate-600 mb-6'>
               Great news! Based on your answers, you may be eligible for
               significant savings on your monthly electric bill. Our team will
@@ -417,9 +411,9 @@ export function QualificationWizard() {
                   <div className='w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <Zap className='h-6 w-6 text-teal-600' />
                   </div>
-                  <h2 className='text-3xl md:text-4xl font-extrabold text-foreground mb-3 tracking-tight'>
+                  <h3 className='text-3xl md:text-4xl font-extrabold text-foreground mb-3 tracking-tight'>
                     Who is your current electric provider?
-                  </h2>
+                  </h3>
                   <p className='text-base text-muted-foreground font-medium'>
                     Select your utility company to check available programs
                   </p>
@@ -470,9 +464,9 @@ export function QualificationWizard() {
                   <div className='w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <DollarSign className='h-6 w-6 text-teal-600' />
                   </div>
-                  <h2 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
+                  <h3 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
                     What is your average monthly bill?
-                  </h2>
+                  </h3>
                   <p className='text-base text-muted-foreground font-medium'>
                     This helps us estimate your potential savings
                   </p>
@@ -506,9 +500,9 @@ export function QualificationWizard() {
                   <div className='w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <Home className='h-6 w-6 text-teal-600' />
                   </div>
-                  <h2 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
+                  <h3 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
                     Do you own your home?
-                  </h2>
+                  </h3>
                   <p className='text-base text-muted-foreground font-medium'>
                     Homeownership is required for this program
                   </p>
@@ -544,9 +538,9 @@ export function QualificationWizard() {
                   <div className='w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <CreditCard className='h-7 w-7 text-primary' />
                   </div>
-                  <h2 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
+                  <h3 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
                     Is your credit score above 650?
-                  </h2>
+                  </h3>
                   <p className='text-base text-muted-foreground font-medium'>
                     This helps determine program eligibility
                   </p>
@@ -585,9 +579,9 @@ export function QualificationWizard() {
                   <div className='w-16 h-16 bg-status-success/10 rounded-full flex items-center justify-center mx-auto mb-5'>
                     <CheckCircle className='h-8 w-8 text-status-success' />
                   </div>
-                  <h2 className='text-2xl md:text-2xl lg:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
+                  <h3 className='text-2xl md:text-2xl lg:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
                     Great! We found potential savings for your area.
-                  </h2>
+                  </h3>
                   <p className='text-lg md:text-xl text-muted-foreground font-medium'>
                     Enter your details to check your final eligibility
                   </p>
@@ -612,7 +606,6 @@ export function QualificationWizard() {
                         <User className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
                         <Input
                           id='name'
-                          name='name'
                           type='text'
                           placeholder='John Smith'
                           value={formData.name}
@@ -620,7 +613,6 @@ export function QualificationWizard() {
                             updateFormData('name', e.target.value)
                           }
                           required
-                          autoComplete='name'
                           className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
                         />
                       </div>
@@ -637,7 +629,6 @@ export function QualificationWizard() {
                         <Phone className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
                         <Input
                           id='phone'
-                          name='phone'
                           type='tel'
                           placeholder='(555) 123-4567'
                           value={formData.phone}
@@ -646,7 +637,6 @@ export function QualificationWizard() {
                             updateFormData('phone', formatted);
                           }}
                           required
-                          autoComplete='tel'
                           className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
                         />
                       </div>
@@ -666,7 +656,6 @@ export function QualificationWizard() {
                         <Mail className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
                         <Input
                           id='email'
-                          name='email'
                           type='email'
                           placeholder='john@example.com'
                           value={formData.email}
@@ -674,7 +663,6 @@ export function QualificationWizard() {
                             updateFormData('email', e.target.value)
                           }
                           required
-                          autoComplete='email'
                           className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
                         />
                       </div>
@@ -693,7 +681,6 @@ export function QualificationWizard() {
                           <>
                             <Input
                               id='address'
-                              name='address'
                               type='text'
                               placeholder='123 Main St, City, CA 90210'
                               value={placesValue}
@@ -703,7 +690,7 @@ export function QualificationWizard() {
                               }}
                               required
                               className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
-                              autoComplete='street-address'
+                              autoComplete='off'
                             />
                             {status === 'OK' && data.length > 0 && (
                               <div className='absolute z-50 w-full mt-1 bg-white border-2 border-border rounded-lg shadow-lg max-h-60 overflow-y-auto'>
@@ -716,11 +703,12 @@ export function QualificationWizard() {
                                       updateFormData('address', description);
                                       clearSuggestions();
                                       
-                                      // Get full address details + coordinates for Street View
+                                      // Get full address details
                                       try {
                                         const results = await getGeocode({ address: description });
                                         const { lat, lng } = await getLatLng(results[0]);
-                                          setFormData(prev => ({ ...prev, address: description, lat, lng }));
+                                        // Store full address with coordinates if needed
+                                        updateFormData('address', description);
                                       } catch (error) {
                                         console.error('Error getting address details:', error);
                                       }
@@ -736,7 +724,6 @@ export function QualificationWizard() {
                         ) : (
                           <Input
                             id='address'
-                            name='address'
                             type='text'
                             placeholder='123 Main St, City, CA 90210'
                             value={formData.address}
@@ -744,7 +731,6 @@ export function QualificationWizard() {
                               updateFormData('address', e.target.value)
                             }
                             required
-                            autoComplete='street-address'
                             className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
                           />
                         )}
@@ -754,50 +740,6 @@ export function QualificationWizard() {
                       </p>
                     </div>
                   </div>
-
-                  {/* Satellite roof view + Street View of selected home */}
-                  {formData.lat && formData.lng && (
-                    <div className='mt-2 space-y-3'>
-                      {/* Satellite / Aerial Roof View */}
-                      <div className='rounded-xl overflow-hidden border-2 border-teal-200 shadow-md'>
-                        <div className='relative'>
-                          <img
-                            src={`https://maps.googleapis.com/maps/api/staticmap?center=${formData.lat},${formData.lng}&zoom=20&size=800x400&maptype=satellite&markers=color:red%7C${formData.lat},${formData.lng}&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`}
-                            alt='Satellite view of your roof'
-                            className='w-full h-48 md:h-56 object-cover'
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).parentElement!.parentElement!.style.display = 'none';
-                            }}
-                          />
-                          <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3'>
-                            <p className='text-white text-sm font-semibold flex items-center gap-2'>
-                              <Home className='h-4 w-4' />
-                              Your roof from above
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      {/* Street View */}
-                      <div className='rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm'>
-                        <div className='relative'>
-                          <img
-                            src={`https://maps.googleapis.com/maps/api/streetview?size=800x300&location=${formData.lat},${formData.lng}&fov=90&pitch=5&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`}
-                            alt='Street view of your home'
-                            className='w-full h-36 md:h-44 object-cover'
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).parentElement!.parentElement!.style.display = 'none';
-                            }}
-                          />
-                          <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent px-4 py-2'>
-                            <p className='text-white text-xs font-medium flex items-center gap-1.5'>
-                              <MapPin className='h-3 w-3' />
-                              Street view
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
 
                   <div className='pt-2'>
                     <Button

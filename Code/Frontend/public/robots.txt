@@ -1,8 +1,20 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /dashboard
+Disallow: /dashboard/*
+Disallow: /login
+Disallow: /reset-password
+Disallow: /testing-guide
+Disallow: /testing
 
 User-agent: Bingbot
 Allow: /
+Disallow: /dashboard
+Disallow: /dashboard/*
+Disallow: /login
+Disallow: /reset-password
+Disallow: /testing-guide
+Disallow: /testing
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +24,11 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /dashboard
+Disallow: /dashboard/*
+Disallow: /login
+Disallow: /reset-password
+Disallow: /testing-guide
+Disallow: /testing
+
+Sitemap: https://ratereliefca.com/sitemap.xml

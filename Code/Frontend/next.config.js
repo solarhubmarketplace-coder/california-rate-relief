@@ -12,7 +12,7 @@ const nextConfig = {
         hostname: '*.googleusercontent.com',
       }
     ],
-    unoptimized: true,
+    unoptimized: false,
   },
   eslint: {
     ignoreDuringBuilds: false,
@@ -23,3 +23,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+

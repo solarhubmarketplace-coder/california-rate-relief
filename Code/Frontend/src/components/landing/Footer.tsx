@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Mail, MapPin, Shield } from 'lucide-react';
 
 export function Footer() {
@@ -87,48 +88,50 @@ export function Footer() {
               </h4>
               <ul className='space-y-3'>
                 <li>
-                  <a
-                    href='#'
+                  <Link
+                    href='/privacy-policy'
                     className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
                   >
                     Privacy Policy
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      →
+                      &rarr;
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href='#'
+                  <Link
+                    href='/terms-of-service'
                     className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
                   >
                     Terms of Service
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      →
+                      &rarr;
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
-                    href='#'
+                    href='https://www.cpuc.ca.gov/consumer-support/consumer-programs-az/solar-energy'
+                    target='_blank'
+                    rel='noopener noreferrer'
                     className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
                   >
                     CPUC Consumer Information
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      →
+                      &rarr;
                     </span>
                   </a>
                 </li>
                 <li>
-                  <a
-                    href='#'
+                  <Link
+                    href='/privacy-policy#california-privacy-rights'
                     className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
                   >
                     Do Not Sell My Information
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      →
+                      &rarr;
                     </span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -138,7 +141,7 @@ export function Footer() {
           <div className='pt-8 border-t border-white/10'>
             <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
               <p className='text-white/80 text-sm font-medium'>
-                © {currentYear} California Rate Relief Program. All rights reserved.
+                &copy; {currentYear} California Rate Relief Program. All rights reserved.
               </p>
             </div>
           </div>
