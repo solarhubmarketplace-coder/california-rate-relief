@@ -49,6 +49,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // City pages
   const cityPages: MetadataRoute.Sitemap = [
     'temecula',
+    'murrieta',
+    'menifee',
+    'lake-elsinore',
+    'wildomar',
+    'winchester',
+    'hemet',
+    'san-jacinto',
+    'perris',
+    'riverside',
+    'corona',
+    'beaumont',
+    'fallbrook',
+    'escondido',
   ].map((city) => ({
     url: `${BASE_URL}/solar-savings/${city}`,
     lastModified: new Date('2026-04-14'),
