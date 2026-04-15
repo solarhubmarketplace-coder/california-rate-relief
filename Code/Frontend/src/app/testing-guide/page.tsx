@@ -257,7 +257,7 @@ function TestingGuideContent() {
           expectedResults: [
             "Twilio initiates call to lead's phone",
             "AI greets immediately (no 'Hold on a minute' delay)",
-            "AI uses FCC-compliant opener: 'Hi, this is Sarah, an AI assistant on a recorded line with Sun Speed Solar. Can you hear me okay?'",
+            "AI uses disarming opener: 'Hello?' + pause, then 'Hi [Name], this is Sarah with the California Rate Relief Program, calling on a recorded line.'",
             "AI follows 'Golden Path' qualification script",
             "AI conversation flows naturally",
             "AI can book appointments using bookAppointment tool",
@@ -769,7 +769,7 @@ function TestingGuideContent() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-            Sun Speed CRM Testing Guide
+            CRM Testing Guide
           </h1>
           <p className="text-lg text-muted-foreground">
             Comprehensive testing guide for all API endpoints and integrations
@@ -798,13 +798,13 @@ function TestingGuideContent() {
                     Email:
                   </span>
                   <code className="text-sm bg-card px-2 py-1 rounded">
-                    admin@sunspeed.com
+                    admin@ratereliefca.com
                   </code>
                   <Button
                     variant="ghost"
                     size="sm"
                     className="h-6 w-6 p-0"
-                    onClick={() => copyToClipboard("admin@sunspeed.com", "email")}
+                    onClick={() => copyToClipboard("admin@ratereliefca.com", "email")}
                   >
                     {copiedEmail ? (
                       <Check className="h-3 w-3" />
@@ -1178,7 +1178,7 @@ function TestingGuideContent() {
         {/* Footer */}
         <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
           <p>
-            Sun Speed CRM Testing Guide • Last Updated:{" "}
+            CRM Testing Guide • Last Updated:{" "}
             {new Date().toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",

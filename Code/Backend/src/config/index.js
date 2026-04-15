@@ -19,7 +19,7 @@ module.exports = {
 
     // Resend Email
     RESEND_API_KEY: getEnv('RESEND_API_KEY'),
-    EMAIL_FROM: getEnv('EMAIL_FROM', 'Sun Speed <noreply@sunspeed.com>'),
+    EMAIL_FROM: getEnv('EMAIL_FROM', 'California Rate Relief <noreply@ratereliefca.com>'),
     COLD_EMAIL_FROM: getEnv('COLD_EMAIL_FROM'), // Optional: Special sender for cold leads
 
     // Public URL (ngrok or production domain) - used for Twilio callbacks

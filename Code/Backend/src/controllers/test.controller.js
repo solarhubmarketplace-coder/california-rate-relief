@@ -145,7 +145,7 @@ const testSms = async (req, res, next) => {
     }
 
     // Send test SMS (SMS service will normalize again, but we pass normalized for consistency)
-    const messageBody = `Hi! This is a test message from Sun Speed Solar. 
+    const messageBody = `Hi! This is a test message from California Rate Relief.
 Your system is working correctly! ☀️
 
 If you received this, SMS functionality is operational.
@@ -210,7 +210,7 @@ const testEmail = async (req, res, next) => {
     }
 
     // Send test email
-    const subject = "☀️ Test Email from Sun Speed Solar";
+    const subject = "☀️ Test Email from California Rate Relief";
     const htmlBody = `
 <!DOCTYPE html>
 <html>
@@ -231,15 +231,15 @@ const testEmail = async (req, res, next) => {
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .header { 
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8c00 100%); 
+        .header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); 
             padding: 40px 20px; 
             text-align: center; 
         }
-        .header h1 { 
-            color: #ffffff; 
-            margin: 0; 
-            font-size: 32px; 
+        .header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 28px;
         }
         .content { 
             padding: 40px 30px; 
@@ -257,7 +257,7 @@ const testEmail = async (req, res, next) => {
         }
         .info-box {
             background: #f8f9fa;
-            border-left: 4px solid #ff6b35;
+            border-left: 4px solid #3b82f6;
             padding: 15px 20px;
             margin: 25px 0;
         }
@@ -291,13 +291,13 @@ const testEmail = async (req, res, next) => {
 <body>
     <div class="container">
         <div class="header">
-            <h1>☀️ Sun Speed Solar</h1>
+            <h1>☀️ California Rate Relief</h1>
         </div>
         <div class="content">
             <h2>Test Email - System Check ✅</h2>
             <span class="success-badge">✓ EMAIL SYSTEM WORKING</span>
             <p>Hello!</p>
-            <p>This is a <strong>test email</strong> from your Sun Speed CRM system. If you're reading this, your email functionality is working correctly!</p>
+            <p>This is a <strong>test email</strong> from your CRM system. If you're reading this, your email functionality is working correctly!</p>
             
             <div class="info-box">
                 <p><strong>Sent at:</strong> ${new Date().toLocaleString()}</p>
@@ -315,10 +315,10 @@ const testEmail = async (req, res, next) => {
 
             <p>You're all set to send emails to your leads!</p>
             
-            <p>Best regards,<br><strong>The Sun Speed CRM Team</strong></p>
+            <p>Best regards,<br><strong>The California Rate Relief Team</strong></p>
         </div>
         <div class="footer">
-            <p>Sun Speed Solar CRM | Email Testing System</p>
+            <p>California Rate Relief CRM | Email Testing System</p>
             <p>This is an automated test message.</p>
         </div>
     </div>

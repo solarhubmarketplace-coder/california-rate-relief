@@ -79,7 +79,7 @@ function BookingConfirmationContent() {
             email for the correct link or contact us for assistance.
           </p>
           <div className="text-sm text-gray-500 mt-8">
-            Sun Speed Solar - Powering Your Future ☀️
+            California Rate Relief Program ☀️
           </div>
         </div>
       </div>
@@ -236,7 +236,7 @@ function BookingConfirmationContent() {
 
         {/* Footer */}
         <div className="text-sm text-gray-500 mt-12">
-          Sun Speed Solar - Powering Your Future ☀️
+          California Rate Relief Program ☀️
         </div>
       </div>
 
