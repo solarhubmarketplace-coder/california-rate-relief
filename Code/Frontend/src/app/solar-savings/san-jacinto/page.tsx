@@ -154,7 +154,7 @@ export default function SanJacintoSolarPage() {
                 The city sits in one of the hottest regions in the Inland Empire,
                 with summer temperatures regularly exceeding 105°F. That heat
                 drives high air conditioning usage and higher-than-average
-                electricity costs — with SCE rates up 12.9% in 2026 alone,
+                electricity costs — with rates among the highest in the nation at 34.5¢/kWh with summer peaks reaching 58-74¢,
                 San Jacinto homeowners are feeling real pressure on their bills.
                 Here&apos;s a complete breakdown of what&apos;s happening and what
                 you can actually do about it.
@@ -175,7 +175,7 @@ export default function SanJacintoSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s average residential rate is currently around 34.5
                 cents per kWh, but that&apos;s an average across all hours.
-                During peak time-of-use hours (4-9 PM), rates jump to 44-50
+                During peak time-of-use hours (4-9 PM), rates jump to 58-74
                 cents per kWh. In San Jacinto, where AC demand peaks in the
                 afternoon and evening, most homes hit those peak rates during
                 their heaviest usage periods. If you&apos;re running cooling
@@ -186,7 +186,7 @@ export default function SanJacintoSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 On top of per-kWh charges, there&apos;s now a $24.15 monthly
                 fixed charge on every SCE bill regardless of usage. Combined with
-                the 12.9% rate increase in 2026 and multi-year increases already
+                rates among the highest in the nation and multi-year increases already
                 approved through 2028, a typical San Jacinto household using 950+
                 kWh per month can expect summer bills of $340 to $390 or higher.
               </p>
@@ -569,8 +569,8 @@ export default function SanJacintoSolarPage() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                With 5.9 peak sun hours per day, SCE rates at 34.5 cents and
-                climbing 12.9% in 2026, and average bills around $318/month,
+                With 5.9 peak sun hours per day, SCE rates among the highest in the nation at 34.5 cents with summer peaks reaching 58-74 cents,
+                and average bills around $318/month,
                 San Jacinto is one of the best cities in California for solar
                 savings. Start with the free stuff — optimize your SCE rate plan,
                 check for CARE/FERA eligibility, and run your address through

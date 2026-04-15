@@ -176,14 +176,14 @@ export default function WildomarSolarPage() {
                 SCE&apos;s average residential rate for Wildomar is around 33 cents per kWh,
                 but as with all of SCE&apos;s territory, that&apos;s an average that masks
                 the real cost structure. During peak time-of-use hours (4-9 PM), rates jump
-                to 44-50 cents per kWh. For a larger home running AC during those hours,
+                to 58-74 cents per kWh. For a larger home running AC during those hours,
                 peak-period consumption can double your per-kWh cost.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 There&apos;s also a $24.15 monthly fixed charge on every SCE bill,
                 regardless of usage. For a typical Wildomar home using 1,000+ kWh per
-                month, combined with SCE&apos;s 12.9% rate hike in 2026 and multi-year
+                month, combined with rates among the highest in the nation and multi-year
                 increases already approved through 2028, expect summer bills of $380-$450
                 and winter bills of $280-$350.
               </p>
@@ -525,8 +525,8 @@ export default function WildomarSolarPage() {
                 Wildomar homes tend to be larger than average and sit on bigger lots, which
                 means higher overall electricity consumption. Many properties also have barns,
                 stables, or outbuildings with additional electrical loads. Combined with SCE&apos;s
-                high rates (34.5¢/kWh average, 44-50¢ during peak hours) and the 12.9% rate
-                increase in 2026, bills are significantly higher than the national average.
+                high rates (34.5¢/kWh average, 58-74¢ during peak hours) and rates among the highest in the nation,
+                bills are significantly higher than the national average.
               </p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>
@@ -573,7 +573,7 @@ export default function WildomarSolarPage() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 With 5.8 peak sun hours per day, higher-than-average electricity consumption,
-                SCE rates at 34.5 cents and climbing 12.9% in 2026, and average bills around
+                SCE rates among the highest in the nation at 34.5 cents with summer peaks reaching 58-74 cents, and average bills around
                 $360/month, Wildomar is an excellent solar market — especially for equestrian
                 and multi-structure properties. Start with the free wins: optimize your SCE rate
                 plan, check CARE/FERA eligibility, and shift loads to off-peak hours. Then

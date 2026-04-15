@@ -159,7 +159,7 @@ export default function NEM3StillWorthIt() {
                 overnight. The logic is straightforward: instead of sending excess
                 solar to the grid during the day at 5 to 8 cents per kWh, store
                 it in a battery and use it yourself in the evening when utility
-                rates peak at 40 to 55 cents per kWh.
+                rates can peak at 58-74 cents per kWh (on SCE) or even higher on other utilities.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -301,9 +301,9 @@ export default function NEM3StillWorthIt() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you&apos;re with SDG&E (45+ cents/kWh), the case is strongest
+                If you&apos;re with SDG&E (45.7 cents/kWh), the case is strongest
                 because the gap between the utility rate and the solar rate is
-                widest. SCE and PG&E customers (34-36 cents/kWh) also see strong
+                widest. SCE customers (34.5 cents/kWh) and PG&E customers (41.5 cents/kWh) also see strong
                 returns, particularly with rate increases in the pipeline through
                 2028.
               </p>

@@ -136,7 +136,7 @@ export default function UtilityRatesCompared() {
                         Avg. Residential Rate
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~36¢/kWh
+                        ~41.5¢/kWh
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
                         ~34.5¢/kWh
@@ -181,10 +181,10 @@ export default function UtilityRatesCompared() {
                         ~−5% (temporary)
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        +12.9%
+                        −2 to −3%
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        +6-8%
+                        +11.4%
                       </td>
                     </tr>
                     <tr className='border-b border-border'>
@@ -192,10 +192,10 @@ export default function UtilityRatesCompared() {
                         Peak TOU Rate
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~48-54¢/kWh
+                        ~48-61¢/kWh
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~44-50¢/kWh
+                        ~58-74¢/kWh
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
                         ~55-65¢/kWh
@@ -292,8 +292,8 @@ export default function UtilityRatesCompared() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Even with the temporary dip, PG&E&apos;s average rate of ~36
-                cents per kWh is still roughly double the national average.
+                Even with the temporary dip, PG&E&apos;s average rate of ~41.5
+                cents per kWh is still roughly double the national average of 18 cents.
                 PG&E&apos;s fixed charge of ~$24.15/month took effect in March
                 2026.
               </p>
@@ -321,19 +321,11 @@ export default function UtilityRatesCompared() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE sits in the middle on per-kWh rates (~34.5 cents) but has the
-                steepest rate increase in 2026 at 12.9%. SCE serves the greater
-                Los Angeles area, the Inland Empire, and parts of Central
-                California — some of the hottest regions in the state, where air
-                conditioning drives heavy summer usage.
+                SCE sits in the middle on per-kWh rates (~34.5 cents) but surprised many with a 2-3% rate decrease in January 2026 instead of the projected increase. However, with peak TOU rates reaching 58-74 cents per kWh, the savings are offset by extremely high peak charges. SCE serves the greater Los Angeles area, the Inland Empire, and parts of Central California — some of the hottest regions in the state, where air conditioning drives heavy summer usage.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Why rising so fast?</strong> SCE is in the middle of a
-                massive wildfire mitigation program, undergrounding thousands of
-                miles of power lines in high-fire-risk areas. These are
-                multi-billion-dollar capital projects that get added to the rate
-                base over decades.
+                <strong>The rate surprise:</strong> Unlike PG&E and SDG&E, SCE rates actually decreased 2-3% as of January 1, 2026, despite being in the middle of a massive wildfire mitigation program. The company is undergrounding thousands of miles of power lines in high-fire-risk areas — multi-billion-dollar capital projects that typically get added to the rate base. However, the 2026 decrease was due to specific regulatory adjustments. Going forward, expect rates to resume their upward trajectory.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -557,15 +549,14 @@ export default function UtilityRatesCompared() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 All three California utilities charge rates far above the national
-                average, but SDG&E is the most expensive at nearly 46 cents/kWh,
-                followed by PG&E at 36 cents and SCE at 34.5 cents (though SCE
-                has the steepest 2026 increase). Before considering solar or any
-                major change, start with the free stuff: check your rate plan,
-                apply for CARE or FERA if eligible, and shift heavy usage
-                off-peak. Those three steps alone can save 10-30% with zero
-                investment. For longer-term protection against rates that keep
-                climbing, solar with battery storage delivers the most meaningful
-                savings across all three utility territories.
+                average of 18 cents/kWh. SDG&E is the most expensive at 45.7 cents/kWh,
+                followed by PG&E at 41.5 cents and SCE at 34.5 cents. While SCE posted a
+                surprising 2-3% decrease in 2026, all three utilities have rate increases already
+                approved through 2028. Before considering solar or any major change, start with
+                the free stuff: check your rate plan, apply for CARE or FERA if eligible, and
+                shift heavy usage off-peak. Those three steps alone can save 10-30% with zero
+                investment. For longer-term protection against rates that keep climbing, solar
+                with battery storage delivers the most meaningful savings across all three utility territories.
               </p>
             </div>
 

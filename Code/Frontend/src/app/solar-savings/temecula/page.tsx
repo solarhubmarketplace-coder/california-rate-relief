@@ -152,8 +152,8 @@ export default function TemeculaSolarPage() {
                 Temecula is one of the fastest-growing cities in Riverside County,
                 with a population of around 112,000 and a housing market that&apos;s
                 been booming for years. It&apos;s also in the heart of Southern
-                California Edison territory, where electricity rates are climbing
-                sharply — up 12.9% in 2026 alone. If you&apos;re a Temecula
+                California Edison territory, where rates remain among the highest
+                in the nation at 34.5¢/kWh with summer peaks reaching 58-74¢. If you&apos;re a Temecula
                 homeowner watching your electric bill creep higher every year,
                 here&apos;s a complete breakdown of what&apos;s going on and what
                 you can actually do about it.
@@ -174,7 +174,7 @@ export default function TemeculaSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s average residential rate is currently around 34.5 cents
                 per kWh, but that&apos;s an average across all hours. During peak
-                time-of-use hours (4-9 PM), rates jump to 44-50 cents per kWh.
+                time-of-use hours (4-9 PM), rates jump to 58-74 cents per kWh.
                 If you&apos;re running your AC during those hours — which most
                 Temecula households are during summer — you&apos;re paying the
                 highest rate.
@@ -183,7 +183,7 @@ export default function TemeculaSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 On top of per-kWh charges, there&apos;s now a $24.15 monthly
                 fixed charge on every SCE bill regardless of usage. Combined with
-                the 12.9% rate increase in 2026 and multi-year increases already
+                rates remaining among the highest in the nation and multi-year increases already
                 approved through 2028, a typical Temecula household using 900+
                 kWh per month can expect bills of $330 to $380 during summer
                 months.
@@ -565,8 +565,8 @@ export default function TemeculaSolarPage() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                With 5.8 peak sun hours per day, SCE rates at 34.5 cents and
-                climbing 12.9% in 2026, and average bills around $319/month,
+                With 5.8 peak sun hours per day, SCE rates among the highest in the nation at 34.5 cents
+                with summer peaks reaching 58-74 cents, and average bills around $319/month,
                 Temecula is one of the best cities in California for solar
                 savings. Start with the free stuff — optimize your SCE rate plan
                 and check for CARE/FERA eligibility. Then evaluate whether a

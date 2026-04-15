@@ -156,8 +156,8 @@ export default function CoronaSolarPage() {
                 Inland Empire&apos;s most vibrant communities — with higher home
                 values than most neighboring cities and a strong population of
                 dual-income professional families. You&apos;re also squarely in
-                Southern California Edison territory, where electricity rates
-                climbed 12.9% in 2026 alone. If you&apos;re a Corona homeowner
+                Southern California Edison territory, where rates remain among the highest in the nation at 34.5¢/kWh with summer peaks reaching 58-74¢.
+                If you&apos;re a Corona homeowner
                 watching your electric bill creep toward $400 or beyond,
                 here&apos;s what&apos;s driving that and what you can actually
                 do about it.
@@ -178,7 +178,7 @@ export default function CoronaSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s average residential rate is currently around 34.5
                 cents per kWh, but that&apos;s an average across all hours.
-                During peak time-of-use hours (4-9 PM), rates jump to 44-50
+                During peak time-of-use hours (4-9 PM), rates jump to 58-74
                 cents per kWh. If you&apos;re running your AC during those
                 hours — which nearly every Corona household is during summer
                 afternoons and evenings — you&apos;re paying the premium rate
@@ -188,7 +188,7 @@ export default function CoronaSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 On top of per-kWh charges, there&apos;s now a $24.15 monthly
                 fixed charge on every SCE bill regardless of usage. Combined with
-                the 12.9% rate increase in 2026 and additional increases already
+                rates among the highest in the nation and additional increases already
                 approved through 2028, a typical Corona household using 1,050+
                 kWh per month can expect summer bills of $370 to $420. And
                 that&apos;s before rates go up again next year.
@@ -587,8 +587,8 @@ export default function CoronaSolarPage() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                With 5.6 peak sun hours per day, SCE rates at 34.5 cents and
-                climbing 12.9% in 2026, and average bills around $357/month,
+                With 5.6 peak sun hours per day, SCE rates among the highest in the nation at 34.5 cents with summer peaks reaching 58-74 cents,
+                and average bills around $357/month,
                 Corona is one of the best cities in California for solar savings.
                 Start with the free stuff — optimize your SCE rate plan and check
                 for CARE/FERA eligibility. Then evaluate whether a cash purchase,

@@ -315,8 +315,7 @@ export default function FixedChargeExplained() {
                 To put it in perspective: without solar, a typical SCE household
                 pays about $3,000 to $4,500 per year in electricity. With solar
                 (assuming 70-90% offset), you&apos;d pay the $290 annual fixed
-                charge plus perhaps $300 to $900 in remaining grid charges, plus
-                your solar payment. The fixed charge is a real cost but not a
+                charge plus perhaps $300 to $900 in remaining grid charges. The fixed charge is a real cost but not a
                 deal-breaker for solar economics.
               </p>
 

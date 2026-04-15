@@ -175,7 +175,7 @@ export default function MenifeeeSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s blended residential rate is 34.5 cents per kWh, with a
                 $24.15 monthly fixed charge regardless of usage. During peak
-                time-of-use hours (4-9 PM), rates jump to 44-50 cents per kWh. For
+                time-of-use hours (4-9 PM), rates jump to 58-74 cents per kWh. For
                 Menifee, where summer air conditioning is a necessity, this peak
                 pricing window is exactly when demand is highest. A typical Menifee
                 home uses 700-750 kWh per month, and summer bills can easily reach
@@ -184,8 +184,8 @@ export default function MenifeeeSolarPage() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The critical factor: SCE has secured regulatory approval for rate
-                increases through 2028. The 12.9% increase in 2026 is just the
-                beginning. If you do nothing, a current $247/month bill will likely
+                increases through 2028. Rates remain among the highest in the nation, climbing further each year.
+                If you do nothing, a current $247/month bill will likely
                 hit $295+ per month by 2028. Over a decade, that adds tens of
                 thousands to your lifetime utility costs.
               </p>
@@ -598,8 +598,8 @@ export default function MenifeeeSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Menifee is one of California&apos;s best locations for solar — 3,200
                 hours of sunshine per year, flat terrain, solar-ready new
-                construction, and an average bill of $247/month on 34.5-cent rates
-                climbing 12.9% in 2026. Start with the free wins: optimize your SCE
+                construction, and an average bill of $247/month on rates among the highest in the nation at 34.5¢/kWh with summer peaks reaching 58-74¢.
+                Start with the free wins: optimize your SCE
                 rate plan and check CARE/FERA eligibility. Then evaluate whether a
                 cash purchase, loan, or PPA makes sense for your situation. Your
                 newer home likely has solar-ready infrastructure that reduces costs,

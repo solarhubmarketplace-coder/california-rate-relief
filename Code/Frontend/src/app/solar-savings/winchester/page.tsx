@@ -157,8 +157,8 @@ export default function WinchesterSolarPage() {
                 and relative affordability compared to neighboring cities. It&apos;s
                 also experiencing rapid growth, with new housing developments
                 changing the landscape. If you live in Winchester and are watching
-                your electricity bills climb — with SCE rates up 12.9% in 2026
-                alone — here&apos;s a complete breakdown of what&apos;s happening
+                your electricity bills climb — with rates among the highest in the nation at 34.5¢/kWh with summer peaks reaching 58-74¢
+                — here&apos;s a complete breakdown of what&apos;s happening
                 and what you can do about it.
               </p>
 
@@ -177,7 +177,7 @@ export default function WinchesterSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s average residential rate is currently around 34.5 cents
                 per kWh, but that&apos;s an average across all hours. During peak
-                time-of-use hours (4-9 PM), rates jump to 44-50 cents per kWh.
+                time-of-use hours (4-9 PM), rates jump to 58-74 cents per kWh.
                 If you&apos;re running your AC during those hours — which most
                 Winchester households are during summer — you&apos;re paying the
                 highest rate. Winchester residents who maintain larger properties
@@ -188,7 +188,7 @@ export default function WinchesterSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 On top of per-kWh charges, there&apos;s now a $24.15 monthly
                 fixed charge on every SCE bill regardless of usage. Combined with
-                the 12.9% rate increase in 2026 and multi-year increases already
+                rates among the highest in the nation and multi-year increases already
                 approved through 2028, a typical Winchester household using 1,000+
                 kWh per month (common with larger homes and acreage) can expect
                 summer bills of $340 to $400.
@@ -608,8 +608,8 @@ export default function WinchesterSolarPage() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                With 5.7 peak sun hours per day, SCE rates at 34.5 cents and
-                climbing 12.9% in 2026, and average bills around $311/month,
+                With 5.7 peak sun hours per day, SCE rates among the highest in the nation at 34.5 cents with summer peaks reaching 58-74 cents,
+                and average bills around $311/month,
                 Winchester is one of the best areas in Riverside County for solar
                 savings. The larger lot sizes and acreage that make Winchester
                 attractive also give you unique solar advantages — rooftop,

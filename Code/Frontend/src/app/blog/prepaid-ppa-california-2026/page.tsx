@@ -170,7 +170,7 @@ export default function PrepaidPPAGuide() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Let&apos;s use a concrete example for a Riverside County
-                household with SCE, using 900 kWh/month (~$319/month bill).
+                household with SCE, using 900 kWh/month (~$310/month bill at 34.5 cents/kWh).
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

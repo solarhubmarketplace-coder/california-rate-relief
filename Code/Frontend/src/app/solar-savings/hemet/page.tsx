@@ -177,7 +177,7 @@ export default function HemetSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s average residential rate is currently around 34.5 cents
                 per kWh, but that&apos;s an average across all hours. During peak
-                time-of-use hours (4-9 PM), rates jump to 44-50 cents per kWh.
+                time-of-use hours (4-9 PM), rates jump to 58-74 cents per kWh.
                 In Hemet, where people are cooling their homes during the
                 hottest time of day (peak afternoon), peak-hour rates hit directly
                 when you need them most. Hemet residents running AC in the 4-9 PM
@@ -188,7 +188,7 @@ export default function HemetSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 On top of per-kWh charges, there&apos;s now a $24.15 monthly
                 fixed charge on every SCE bill regardless of usage. Combined with
-                the 12.9% rate increase in 2026 and multi-year increases already
+                rates among the highest in the nation and multi-year increases already
                 approved through 2028, a typical Hemet household using 750-900 kWh
                 per month (high due to AC) can expect summer bills of $300 to $380
                 in the coming years.
@@ -612,7 +612,7 @@ export default function HemetSolarPage() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 With 5.9 peak sun hours per day (among the highest in the nation),
-                SCE rates at 34.5 cents and climbing 12.9% in 2026, and average
+                SCE rates among the highest in the nation at 34.5 cents with summer peaks reaching 58-74 cents, and average
                 bills around $280/month, Hemet is one of the absolute best cities
                 in California for solar savings. The San Jacinto Valley&apos;s
                 intense sun is literally a resource that sits on your roof year-

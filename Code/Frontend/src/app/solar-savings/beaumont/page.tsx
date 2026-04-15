@@ -155,8 +155,8 @@ export default function BeaumontSolarPage() {
                 a family-oriented city with strong population growth,
                 developments like Tournament Hills and Sundance attracting young
                 professionals and families. You&apos;re squarely in Southern
-                California Edison territory, where electricity rates have climbed
-                12.9% in 2026 alone. If you&apos;re a Beaumont homeowner watching
+                California Edison territory, where rates remain among the highest in the nation at 34.5¢/kWh with summer peaks reaching 58-74¢.
+                If you&apos;re a Beaumont homeowner watching
                 your electric bill rise and wondering if solar makes sense at
                 this elevation with the pass winds nearby, here&apos;s what you
                 need to know.
@@ -177,7 +177,7 @@ export default function BeaumontSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s average residential rate is currently around 34.5
                 cents per kWh, but that&apos;s an average across all hours.
-                During peak time-of-use hours (4-9 PM), rates jump to 44-50
+                During peak time-of-use hours (4-9 PM), rates jump to 58-74
                 cents per kWh. If you&apos;re running your AC during those
                 hours, you&apos;re paying the premium rate — and Beaumont
                 residents do need cooling in summer, though slightly less
@@ -187,7 +187,7 @@ export default function BeaumontSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 On top of per-kWh charges, there&apos;s now a $24.15 monthly
                 fixed charge on every SCE bill regardless of usage. Combined with
-                the 12.9% rate increase in 2026 and additional increases already
+                rates among the highest in the nation and additional increases already
                 approved through 2028, a typical Beaumont household using 850+
                 kWh per month can expect bills of $310 to $360 during summer
                 months.
@@ -596,7 +596,8 @@ export default function BeaumontSolarPage() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 With 5.8 peak sun hours per day, higher elevation efficiency,
-                SCE rates at 34.5 cents and climbing 12.9% in 2026, and average
+                SCE rates among the highest in the nation at 34.5 cents with summer peaks reaching 58-74 cents,
+                and average
                 bills around $299/month, Beaumont is one of the best cities in
                 California for solar savings. The higher elevation actually works
                 in your favor for solar production, and cooler summers mean lower

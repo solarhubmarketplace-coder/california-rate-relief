@@ -7,17 +7,17 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'SCE Rate Increase 2026: What Southern California Edison Customers Need to Know',
+    'SCE Rates Decreased in January 2026, But Remain Extremely High',
   description:
-    'SCE rates are projected to rise 12.9% in 2026. Learn exactly why, how to check your rate plan, steps to lower your bill, and whether solar makes sense for your situation.',
+    'SCE rates actually decreased 2-3% as of January 1, 2026, but remain among the highest in the country at 34.5¢/kWh. Learn why rates are still crushing bills, what you can do, and whether solar makes sense.',
   alternates: {
     canonical: '/blog/sce-rate-increase-2026',
   },
   openGraph: {
     title:
-      'SCE Rate Increase 2026: What Southern California Edison Customers Need to Know',
+      'SCE Rates Decreased in January 2026, But Remain Extremely High',
     description:
-      'SCE rates are projected to rise 12.9% in 2026. Here\'s exactly why, what you can do, and how to check if you\'re on the cheapest rate plan.',
+      'SCE rates fell 2-3% in January 2026, but bills are still crushing. Here\'s what to do about it.',
     type: 'article',
     publishedTime: '2026-04-14T00:00:00Z',
   },
@@ -27,9 +27,9 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'SCE Rate Increase 2026: What Southern California Edison Customers Need to Know',
+    'SCE Rates Decreased in January 2026, But Remain Extremely High',
   description:
-    'SCE rates are projected to rise 12.9% in 2026. Learn exactly why, how to check your rate plan, and steps to lower your bill.',
+    'SCE rates decreased 2-3% as of January 1, 2026, but remain among the highest in the nation. Learn why, and what you can do.',
   datePublished: '2026-04-14',
   dateModified: '2026-04-14',
   author: {
@@ -80,8 +80,7 @@ export default function SCERateIncrease2026() {
                 Utility Rates
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                SCE Rate Increase 2026: What Southern California Edison Customers
-                Need to Know
+                SCE Rates Decreased in January 2026, But Remain Extremely High
               </h1>
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
@@ -98,12 +97,7 @@ export default function SCERateIncrease2026() {
             {/* Article Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Southern California Edison has proposed rate increases that would
-                push residential electricity rates up by an estimated 12.9% in
-                2026. If you&apos;re an SCE customer, this article breaks down
-                exactly what&apos;s happening, why, and what you can actually do
-                about it — including steps you can take this week that don&apos;t
-                cost anything.
+                Contrary to earlier projections, Southern California Edison rates actually decreased by approximately 2-3% as of January 1, 2026. However, don&apos;t celebrate too soon — SCE&apos;s rates remain among the highest in the country at 34.5 cents per kilowatt-hour, with peak time-of-use rates reaching 58-74 cents. For most SCE customers, the rate decrease barely offsets inflationary pressures, and with multi-year rate increases already approved through 2028, the relief is temporary. If you&apos;re an SCE customer, this article breaks down what&apos;s really happening, why rates are still crushing, and what you can actually do about it.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -113,10 +107,8 @@ export default function SCERateIncrease2026() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE residential rates currently average around 34.5 cents per
                 kilowatt-hour (kWh). For context, the national average is roughly
-                17 cents per kWh, meaning SCE customers are already paying about
-                double what most Americans pay for electricity. With the proposed
-                12.9% increase, that average would climb to approximately 39 cents
-                per kWh.
+                18 cents per kWh, meaning SCE customers are already paying roughly
+                double what most Americans pay for electricity. The 2-3% rate decrease that went into effect January 1 knocked the average down slightly from 35.5 cents, but this relief is temporary and modest. What matters more for your pocketbook are the peak TOU rates, which can reach 58-74 cents per kWh during evening hours.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -230,7 +222,7 @@ export default function SCERateIncrease2026() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s TOU rates swing dramatically — from around 20 cents per
-                kWh off-peak to 44-50 cents during peak evening hours. Shifting
+                kWh off-peak to 58-74 cents during peak evening hours. Shifting
                 heavy electricity use away from 4-9 PM makes a real difference.
                 Practical moves include setting your thermostat to pre-cool the
                 house by 3:30 PM, running the dishwasher and laundry before 4 PM
@@ -404,13 +396,14 @@ export default function SCERateIncrease2026() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE rates are going up 12.9% in 2026, with more increases already
-                in the pipeline through 2028. The cheapest thing you can do right
-                now is log into your SCE account and make sure you&apos;re on the
-                optimal rate plan — that&apos;s free and takes 10 minutes. After
-                that, check if you qualify for CARE or FERA discounts. For
-                longer-term protection, evaluate whether solar (purchased or PPA),
-                energy efficiency upgrades, or community solar makes sense for
+                SCE rates decreased 2-3% as of January 1, 2026, but that&apos;s a
+                brief respite. More increases are already in the pipeline through 2028,
+                and at current rates of 34.5 cents per kWh, you need immediate action.
+                The cheapest thing you can do right now is log into your SCE account
+                and make sure you&apos;re on the optimal rate plan — that&apos;s free
+                and takes 10 minutes. After that, check if you qualify for CARE or FERA
+                discounts. For longer-term protection, evaluate whether solar (purchased
+                or PPA), energy efficiency upgrades, or community solar makes sense for
                 your specific situation. The right answer depends on your home,
                 your bill, and how long you plan to stay.
               </p>

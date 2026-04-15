@@ -153,8 +153,8 @@ export default function LakeElsinoreSolarPage() {
                 75,000 known for scorching summers, outdoor recreation, and some of
                 the hottest electricity bills in Southern California Edison territory.
                 During summer months, air conditioning runs nearly 24/7, and those bills
-                can shock even long-time residents. With SCE rates climbing 12.9% in
-                2026 alone, Lake Elsinore homeowners are paying more than ever. This
+                can shock even long-time residents. With rates among the highest in the nation at 34.5¢/kWh with summer peaks reaching 58-74¢,
+                Lake Elsinore homeowners are paying more than ever. This
                 guide breaks down your rates, solar economics, and every realistic option
                 to take control of your energy costs.
               </p>
@@ -176,7 +176,7 @@ export default function LakeElsinoreSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s average residential rate is currently around 34.5 cents per
                 kWh, but that average masks the real cost structure. During peak time-of-use
-                hours (4-9 PM), rates jump to 44-50 cents per kWh. If you&apos;re running
+                hours (4-9 PM), rates jump to 58-74 cents per kWh. If you&apos;re running
                 your AC to cool your home before evening (and pre-cooling is exactly what
                 you need to do in Lake Elsinore heat), you&apos;re often paying the peak rate.
               </p>
@@ -185,7 +185,7 @@ export default function LakeElsinoreSolarPage() {
                 There&apos;s also a $24.15 monthly fixed charge on every SCE bill,
                 regardless of how little or how much electricity you use. For a Lake
                 Elsinore household using 1,100+ kWh per month (common for summer months),
-                combined with the 12.9% rate hike in 2026 and additional increases
+                combined with rates among the highest in the nation and additional increases
                 already approved through 2028, summer bills can easily reach $380-$450.
                 Winter bills are lower but still $250+.
               </p>
@@ -555,7 +555,7 @@ export default function LakeElsinoreSolarPage() {
                 Lake Elsinore is one of the hottest cities in Riverside County. Summer
                 temperatures routinely exceed 100°F, driving heavy air conditioning usage from
                 May through October. Combined with SCE&apos;s high rates (34.5¢/kWh average,
-                44-50¢ during peak hours) and the 12.9% rate increase in 2026, bills are
+                58-74¢ during peak hours) and rates among the highest in the nation, bills are
                 significantly above the national average. Solar + battery is especially
                 effective here.
               </p>
@@ -582,8 +582,8 @@ export default function LakeElsinoreSolarPage() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                With 6.2 peak sun hours per day, SCE rates at 34.5 cents and climbing 12.9%
-                in 2026, and average bills around $324/month (often exceeding $400 in summer),
+                With 6.2 peak sun hours per day, SCE rates among the highest in the nation at 34.5 cents with summer peaks reaching 58-74 cents,
+                and average bills around $324/month (often exceeding $400 in summer),
                 Lake Elsinore is one of the strongest solar markets in California. The extreme
                 heat that drives your electric bills is the same thing that makes solar incredibly
                 productive. Start with the free wins: optimize your SCE rate plan, check for

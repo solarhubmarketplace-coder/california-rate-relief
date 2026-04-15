@@ -23,9 +23,9 @@ const UTILITY_DATA: Record<
   },
   pge: {
     name: 'Pacific Gas & Electric',
-    rate: 0.368,
-    annualIncrease: 0.065,
-    label: 'PG&E — 36.8¢/kWh',
+    rate: 0.415,
+    annualIncrease: 0.055,
+    label: 'PG&E — 41.5¢/kWh',
   },
   mvu: {
     name: 'Moreno Valley Utility',

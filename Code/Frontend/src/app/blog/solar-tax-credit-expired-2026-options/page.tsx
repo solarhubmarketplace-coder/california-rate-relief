@@ -291,7 +291,7 @@ export default function SolarTaxCreditExpired() {
 
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Typical PPA rate:</strong> 18 to 25 cents per kWh,
-                compared to 34 to 46 cents per kWh from California utilities.
+                compared to 34.5 to 46 cents per kWh from California utilities.
                 Some PPAs have annual escalators; some offer flat rates for the
                 full term. Flat-rate PPAs provide the most predictable savings.
               </p>

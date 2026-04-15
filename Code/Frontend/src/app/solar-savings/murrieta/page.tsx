@@ -153,8 +153,8 @@ export default function MurrietaSolarPage() {
                 bedroom community. Adjacent to Temecula and closer to Camp
                 Pendleton, Murrieta attracts young families, military service
                 members, and retirees alike. Like all of Southern California Edison
-                territory, your electricity bills are climbing — up 12.9% in 2026
-                alone. If you&apos;re paying SCE&apos;s rising rates, here&apos;s
+                territory, rates remain among the highest in the nation at 34.5¢/kWh with summer peaks reaching 58-74¢.
+                If you&apos;re paying SCE&apos;s rising rates, here&apos;s
                 everything you need to know about what solar can do for your wallet.
               </p>
 
@@ -173,7 +173,7 @@ export default function MurrietaSolarPage() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SCE&apos;s blended rate is 34.5 cents per kWh, but peak
-                time-of-use hours (4-9 PM, when most people are home) cost 44-50
+                time-of-use hours (4-9 PM, when most people are home) cost 58-74
                 cents per kWh. In summer, when your AC runs hardest during peak
                 hours, you&apos;re paying the maximum rate for exactly when you
                 need electricity most. A typical Murrieta home uses 750-800 kWh
@@ -570,8 +570,8 @@ export default function MurrietaSolarPage() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Murrieta is one of Southern California&apos;s best locations for
                 solar — 3,200 hours of sun per year, flat terrain, and homes built
-                for solar installations. With SCE rates at 34.5 cents (up 12.9% in
-                2026) and average monthly bills around $271, your payback math is
+                for solar installations. With SCE rates among the highest in the nation at 34.5 cents (with summer peaks reaching 58-74 cents)
+                and average monthly bills around $271, your payback math is
                 excellent. Start with the free wins: optimize your rate plan on SCE
                 My Account, check CARE/FERA eligibility, and use Google Project
                 Sunroof to evaluate your home. Then decide whether a cash purchase,

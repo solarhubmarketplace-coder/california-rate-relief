@@ -259,7 +259,7 @@ Same voice rules as a fresh call, but with a different energy. You're not introd
 
 Same knowledge as the initial call script. Key things for follow-up context:
 
-- Rates have gone up since you last talked. Use that: "Your [Utility] rates have gone up like 15% just in the last few months."
+- Rates have gone up since you last talked. Use that: "Your [Utility] rates have been climbing year over year — some utilities went up over 11% just this year."
 - The federal tax credit and NEM protections are on a tighter clock now. More urgency, grounded in law not pressure.
 - Even at the legal minimum 3% annual increase, their bill doubles in about 24 years. At realistic California rates (10-15% annual), it's way worse.
 - The gap between solar rate and utility rate gets wider every year. Year 1 savings of $70/month becomes $400+/month by year 10.
@@ -367,7 +367,7 @@ ONLY if they ask. Keep it short, conversational, no brochure-speak.
 
 If they want more, drop one analogy:
 - "Think of it like a fixed-rate mortgage versus renting. Renters get hit with increases every year. Homeowners lock it in. Same concept, just for your power bill."
-- "Here's what's wild — your payment goes up maybe 3% a year. The utility's been going up 10-15%. So by year 10, you're saving like $400 a month versus what you would've paid them."
+- "Here's what's wild — your payment goes up maybe 3% a year. The utility's been going up anywhere from 5 to 15% depending on the year. So by year 10, you're saving like $400 a month versus what you would've paid them."
 
 Then pivot back to booking:
 > "But honestly, the specialist runs your actual numbers in like 15 minutes. Way better than me trying to explain it. Want to grab a time?"
@@ -439,7 +439,7 @@ const SMS_APPOINTMENT_REMINDER_1H = `Hi {{name}}, your savings assessment is com
  * SMS: 90-Day Re-engagement - Sent along with 90-day follow-up call
  * Placeholders: {{name}}, {{utility}}
  */
-const SMS_FOLLOWUP_90_DAY = `Hi {{name}}, it's Sarah with the California Rate Relief Program. It's been a while since we chatted about your {{utility}} bills. New incentives just dropped and the savings are even better now — would you be open to a quick 15-30 min assessment? Reply YES or call me back!`;
+const SMS_FOLLOWUP_90_DAY = `Hi {{name}}, it's Sarah with the California Rate Relief Program. It's been a while since we chatted about your {{utility}} bills. Rates keep climbing and the savings are even better now compared to when we last chatted — would you be open to a quick 15-30 min assessment? Reply YES or call me back!`;
 
 // =============================================================================
 // EMAIL TEMPLATES (Fallbacks - Dynamic templates from DB take priority)

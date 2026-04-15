@@ -151,8 +151,8 @@ export default function PerrisSolarPage() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Perris is a rapidly growing city in western Riverside County,
                 driven by the logistics and warehouse boom. The city sits in
-                Southern California Edison territory, where electricity rates are
-                climbing year after year — up 12.9% in 2026 alone. Perris has a
+                Southern California Edison territory, where rates remain among the highest in the nation with summer peaks reaching 58-74¢.
+                Perris has a
                 lower-than-average electric bill compared to neighboring areas,
                 but that's relative; with more jobs and growth, property values
                 are rising, and more homeowners are looking at long-term housing
@@ -177,7 +177,7 @@ export default function PerrisSolarPage() {
                 Your actual rate depends on your specific SCE rate plan and your
                 usage pattern. Perris residents on average pay around 23 cents per
                 kWh, but rates vary significantly by time of use. During peak
-                time-of-use hours (4-9 PM), rates jump to 44-50 cents per kWh.
+                time-of-use hours (4-9 PM), rates jump to 58-74 cents per kWh.
                 Most households experience their peak usage during summer afternoons
                 and early evenings, meaning they're paying the highest rates when
                 they use the most electricity.
@@ -185,7 +185,7 @@ export default function PerrisSolarPage() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 There's also a $24.15 monthly fixed charge on every SCE bill
-                regardless of usage. Combined with the 12.9% rate increase in 2026
+                regardless of usage. Combined with rates among the highest in the nation
                 and multi-year increases already approved through 2028, a typical
                 Perris household using 700-800 kWh per month can expect bills of
                 $260 to $310 or higher in summer months.
