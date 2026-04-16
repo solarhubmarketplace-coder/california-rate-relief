@@ -40,9 +40,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'nem-3-california-still-worth-it',
     'pge-vs-sce-vs-sdge-rates-compared',
     'prepaid-ppa-california-2026',
+    'how-long-do-solar-panels-last',
+    'solar-panel-inspection-california',
+    'solar-panel-removal-reinstall-cost',
+    'solar-panel-maintenance-cost',
+    'solar-panel-bird-proofing',
+    'commercial-solar-financing-california',
+    'what-size-solar-system-do-i-need',
+    'how-to-lower-electric-bill-california',
+    'is-solar-worth-it-california-2026',
+    'solar-ppa-vs-lease-california',
+    'free-solar-panels-california',
+    'are-solar-panels-a-scam',
+    'why-is-my-pge-bill-so-high',
+    'sdge-time-of-use-rates-2026',
+    'solar-ppa-explained-california',
   ].map((slug) => ({
     url: `${BASE_URL}/blog/${slug}`,
-    lastModified: new Date('2026-04-14'),
+    lastModified: new Date('2026-04-16'),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
@@ -51,10 +66,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Add a city to cities-data.ts and it appears here automatically
   const cityPages: MetadataRoute.Sitemap = getAllCitySlugs().map((slug) => ({
     url: `${BASE_URL}/solar-savings/${slug}`,
-    lastModified: new Date('2026-04-15'),
+    lastModified: new Date('2026-04-16'),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));
 
-  return [...staticPages, ...blogPosts, ...cityPages];
+  // Regional hub pages
+  const regionalHubs: MetadataRoute.Sitemap = [
+    'orange-county',
+    'bay-area',
+    'inland-empire',
+    'san-diego-county',
+    'central-valley',
+  ].map((slug) => ({
+    url: `${BASE_URL}/solar-savings/${slug}`,
+    lastModified: new Date('2026-04-16'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...blogPosts, ...cityPages, ...regionalHubs];
 }
