@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { getAllCitySlugs } from '@/data/cities-data';
 
 const BASE_URL = 'https://ratereliefca.com';
 
@@ -46,26 +47,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // City pages
-  const cityPages: MetadataRoute.Sitemap = [
-    'temecula',
-    'murrieta',
-    'menifee',
-    'lake-elsinore',
-    'wildomar',
-    'winchester',
-    'hemet',
-    'san-jacinto',
-    'perris',
-    'riverside',
-    'corona',
-    'beaumont',
-    'fallbrook',
-    'escondido',
-    'moreno-valley',
-  ].map((city) => ({
-    url: `${BASE_URL}/solar-savings/${city}`,
-    lastModified: new Date('2026-04-14'),
+  // City pages — auto-generated from cities-data.ts
+  // Add a city to cities-data.ts and it appears here automatically
+  const cityPages: MetadataRoute.Sitemap = getAllCitySlugs().map((slug) => ({
+    url: `${BASE_URL}/solar-savings/${slug}`,
+    lastModified: new Date('2026-04-15'),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));
