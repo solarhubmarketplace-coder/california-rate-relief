@@ -35,7 +35,7 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     name: 'Southern California Edison',
     shortName: 'SCE',
     ratePerKwh: 0.345,
-    peakTouRate: '58-74¢',
+    peakTouRate: '58–74¢',
     annualIncrease: 0.06,
     fixedCharge: 24.15,
     accountUrl: 'https://www.sce.com/mysce/myaccount',
@@ -45,15 +45,15 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     nemVersion: 'NEM 3.0 (Net Billing)',
     exportRate: '5-8¢/kWh',
     rateIncreaseHistory:
-      'SCE rates have remained among the highest in the nation with multi-year increases already approved through 2028.',
+      'SCE rates rose ~25% cumulatively from 2022–2025 with a slight 2.3% decrease in Jan 2026. Overall ~41% higher than 2023 levels, with multi-year increases already approved through 2028.',
   },
   sdge: {
     code: 'sdge',
     name: 'San Diego Gas & Electric',
     shortName: 'SDG&E',
     ratePerKwh: 0.457,
-    peakTouRate: '60-80¢',
-    annualIncrease: 0.07,
+    peakTouRate: '47–70¢',
+    annualIncrease: 0.08,
     fixedCharge: 24.15,
     accountUrl: 'https://myaccount.sdge.com',
     careFeraUrl: 'https://www.sdge.com/residential/pay-bill/get-payment-bill-assistance/assistance-programs',
@@ -62,14 +62,14 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     nemVersion: 'NEM 3.0 (Net Billing)',
     exportRate: '5-8¢/kWh',
     rateIncreaseHistory:
-      'SDG&E has the highest residential rates of the three major California IOUs, with continued increases approved by the CPUC.',
+      'SDG&E approved an 11.4% bundled increase in Jan 2026 — the highest cumulative among California IOUs at ~76% over the past decade. SDG&E consistently has the highest residential rates of any major utility in the nation.',
   },
   pge: {
     code: 'pge',
     name: 'Pacific Gas & Electric',
     shortName: 'PG&E',
     ratePerKwh: 0.4146,
-    peakTouRate: '55-67¢',
+    peakTouRate: '40–48¢',
     annualIncrease: 0.055,
     fixedCharge: 24.00,
     accountUrl: 'https://www.pge.com/en/account/log-in.html',
@@ -79,7 +79,7 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     nemVersion: 'NEM 3.0 (Net Billing)',
     exportRate: '5-8¢/kWh',
     rateIncreaseHistory:
-      'PG&E rates decreased slightly from 44.36¢ to 41.46¢/kWh in January 2026, but remain among the highest in the nation. The $24 Base Services Charge took effect March 2026.',
+      'PG&E rates decreased slightly from 44.36¢ to 41.46¢/kWh in January 2026 after ~13% increases in 2023 and additional surcharges in 2024–2025. The $24 Base Services Charge took effect March 2026. Rates remain ~70% higher than 2020 levels.',
   },
   rpu: {
     code: 'rpu',
@@ -96,7 +96,7 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     nemVersion: 'RPU Net Metering',
     exportRate: '~retail rate (varies)',
     rateIncreaseHistory:
-      'RPU rates are significantly lower than the investor-owned utilities, though modest increases have been approved.',
+      'RPU rates are significantly lower than the investor-owned utilities with minimal recent increases — municipal stability keeps rates predictable year to year.',
   },
   mvu: {
     code: 'mvu',
@@ -113,14 +113,14 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     nemVersion: 'MVU Net Metering (15-year grandfathering)',
     exportRate: '~retail rate (varies)',
     rateIncreaseHistory:
-      'MVU rates have seen modest increases but remain below the major investor-owned utilities.',
+      'MVU rates have seen minimal recent increases, maintaining municipal stability well below SCE territory rates that surround Moreno Valley.',
   },
   smud: {
     code: 'smud',
     name: 'Sacramento Municipal Utility District',
     shortName: 'SMUD',
     ratePerKwh: 0.19,
-    peakTouRate: '22-30¢',
+    peakTouRate: '18–38¢',
     annualIncrease: 0.03,
     fixedCharge: 0,
     accountUrl: 'https://www.smud.org/en/Customer-Support/My-Account',
@@ -130,7 +130,7 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     nemVersion: 'SMUD Net Metering',
     exportRate: '~retail rate (varies)',
     rateIncreaseHistory:
-      'SMUD approved a 3% rate increase for 2026, but rates remain far below the investor-owned utilities at roughly 16-22¢/kWh.',
+      'SMUD caps annual increases at ~3% (inflation-aligned), keeping rates remarkably stable at 16–22¢/kWh. In 2026 rates remain roughly 50–60% lower than the investor-owned utilities.',
   },
   gwp: {
     code: 'gwp',
@@ -290,7 +290,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3279,
     population: '112K',
     systemSizeKw: 9.4,
-    systemCostCash: 22500,
+    systemCostCash: 28200,
     introText:
       'Temecula is one of the fastest-growing cities in Riverside County, with a population of around 112,000 and a housing market that has been booming for years. It is also in the heart of Southern California Edison territory, where rates remain among the highest in the nation. If you are a Temecula homeowner watching your electric bill creep higher every year, here is a complete breakdown of what is going on and what you can actually do about it.',
     electricitySection:
@@ -332,7 +332,7 @@ export const CITIES: CityData[] = [
       {
         question: 'Can my HOA block solar panels in Temecula?',
         answer:
-          'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot prohibit solar panel installation. They can impose reasonable aesthetic restrictions, but any restriction that increases system cost by more than $1,000 or reduces efficiency by more than 10% is legally unenforceable.',
+          'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Temecula, major communities like Redhawk, Wolf Creek, and Harveston have already adapted post-AB 2188 and approve systems routinely — often with fast turnarounds. Battery add-ons are common in these neighborhoods. If your HOA pushes back, the law is firmly on your side.',
       },
       {
         question: 'How many hours of sun does Temecula get?',
@@ -363,7 +363,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '111K',
     systemSizeKw: 8.6,
-    systemCostCash: 20176,
+    systemCostCash: 25800,
     introText:
       'Murrieta is one of the safest and fastest-growing cities in Riverside County, with a population of around 111,000 and a strong military-connected community thanks to its proximity to Camp Pendleton. Like most of the Inland Empire, Murrieta sits in SCE territory where electricity rates are among the highest in the nation. Here is what Murrieta homeowners need to know about their electric bills and solar options.',
     electricitySection:
@@ -381,9 +381,14 @@ export const CITIES: CityData[] = [
         content:
           'Many Murrieta neighborhoods were built after 2010 with solar-ready electrical panels and conduit. If your home was built after 2020, it likely already has builder-installed solar — check your closing documents to see if you own it or if it is under a lease/PPA.',
       },
+      {
+        title: 'Military solar financing:',
+        content:
+          'Military families in Murrieta often qualify for VA-backed solar financing with favorable terms. Many installers specialize in VA-financed solar systems, and the fast approval process works well with military timeframes.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, you are renting, your roof has heavy north-facing shade, or you plan to sell within 1-2 years, solar may not be the best fit right now. For military families expecting PCS within a year, a PPA is usually better than a purchase since it transfers to the next homeowner.',
+      'Solar may not be the best fit if you rent, if your roof is heavily shaded by mature trees in older Murrieta neighborhoods, if your credit score is below 650 (most PPA programs require this minimum), or if you are planning to sell your home within the next 2-3 years and cannot transfer the agreement.',
     bottomLine:
       'With SCE rates among the highest in the nation and strong sunshine year-round, Murrieta homeowners are well-positioned for solar savings. Start by checking your SCE rate plan and CARE/FERA eligibility, then evaluate your options.',
     faqs: [
@@ -400,7 +405,7 @@ export const CITIES: CityData[] = [
       {
         question: 'Can my HOA block solar panels in Murrieta?',
         answer:
-          'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot prohibit solar panel installation. They can impose reasonable aesthetic restrictions, but any restriction that increases system cost by more than $1,000 or reduces efficiency by more than 10% is legally unenforceable.',
+          'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Murrieta, communities like Greer Ranch and The Oaks are deeply military-friendly and have streamlined solar approval processes. HOAs in military-connected communities actively encourage renewable energy for cost savings on a fixed military salary. The law protects you regardless.',
       },
       {
         question: 'How many hours of sun does Murrieta get?',
@@ -431,7 +436,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '115K',
     systemSizeKw: 8.5,
-    systemCostCash: 19965,
+    systemCostCash: 25500,
     introText:
       'Menifee is one of the newest incorporated cities in Riverside County, with a population of around 115,000 and some of the fastest growth in Southern California. Many of its homes are brand new, and its mix of young families and active adult communities makes it unique in the IE. Like the rest of the region, Menifee is in SCE territory where rates are among the highest in the nation.',
     electricitySection:
@@ -449,9 +454,14 @@ export const CITIES: CityData[] = [
         content:
           'Menifee\'s 55+ communities (like Sun City) often have lower electricity usage due to smaller homes, but the savings from solar can still be significant. PPAs work well for retirees since there is no upfront cost and payments are predictable.',
       },
+      {
+        title: 'Master-planned solar readiness:',
+        content:
+          'Audie Murphy Ranch and Menifee\'s newer master plans have solar-ready electrical panels pre-installed on many homes. Check if your panel already has the capacity for solar — this reduces installation cost and complexity significantly.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your roof has heavy shade, or you are planning to sell within 1-2 years, solar may not be the best fit. For active adult community residents, check your CC&Rs but remember the Solar Rights Act protects your right to install.',
+      'Solar may not make sense if you rent your home, if your monthly SCE bill is consistently under $150 (the savings margin shrinks), if your roof needs replacement within the next 5 years, or if heavy shade from structures or terrain in parts of central Menifee blocks south-facing exposure.',
     bottomLine:
       'Menifee\'s newer housing stock, excellent sun exposure, and SCE\'s high rates make it a strong candidate for solar. Check your rate plan, look into CARE/FERA discounts, and evaluate whether a PPA or purchase makes sense for your situation.',
     faqs: [
@@ -468,7 +478,7 @@ export const CITIES: CityData[] = [
       {
         question: 'Can my HOA block solar panels in Menifee?',
         answer:
-          'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot prohibit solar panel installation.',
+          'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Menifee, newer master-planned communities like Audie Murphy Ranch have solar-aware covenants and fast approval timelines built into their original design. The law is clear, and Menifee\'s newer developments embrace solar.',
       },
       {
         question: 'How many hours of sun does Menifee get?',
@@ -499,7 +509,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3300,
     population: '75K',
     systemSizeKw: 9.5,
-    systemCostCash: 22000,
+    systemCostCash: 28500,
     introText:
       'Lake Elsinore is a growing city in western Riverside County with a population of around 75,000, known for its lakefront recreation and affordable housing. It also has some of the hottest summers in the IE, which means serious AC usage and higher electricity bills. Like the rest of the Inland Empire, Lake Elsinore is in SCE territory.',
     electricitySection:
@@ -517,9 +527,14 @@ export const CITIES: CityData[] = [
         content:
           'If you are near the lake, you may have additional electricity needs for boat lifts, outdoor lighting, or pool/spa equipment. These are perfect candidates for solar offset since they add consistent, predictable load.',
       },
+      {
+        title: 'Lake effect cooling advantage:',
+        content:
+          'Lake Elsinore\'s proximity to the lake provides some cooling effect compared to deeper Inland Empire cities. While summers are still hot, the lake moderates temperatures slightly and reduces your AC load — making your solar ROI faster than in hotter valley areas.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your roof has heavy shade from the surrounding hills, or you plan to sell within 1-2 years. Hillside properties on the north-facing slopes may have limited solar exposure — always check Google Project Sunroof first.',
+      'Solar may not be ideal if you rent, if your home sits in one of the canyon areas with significant hillside shading in the mornings, if your credit score is below 650, or if your average bill is already low due to a small home or minimal AC use.',
     bottomLine:
       'Lake Elsinore\'s extreme sunshine (6.2 peak hours) and high AC-driven bills make it one of the best solar markets in the IE. The same heat that drives your bills up is what makes solar produce the most.',
     faqs: [
@@ -536,7 +551,7 @@ export const CITIES: CityData[] = [
       {
         question: 'Can my HOA block solar panels in Lake Elsinore?',
         answer:
-          'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot prohibit solar panel installation.',
+          'No. Under California\'s Solar Rights Act (Civil Code 714), all Lake Elsinore HOAs — including Tuscany Hills, Canyon Hills, and others — must comply with state law. HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. California law is your protection.',
       },
       {
         question: 'How many hours of sun does Lake Elsinore get?',
@@ -567,7 +582,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3250,
     population: '37K',
     systemSizeKw: 10.0,
-    systemCostCash: 23500,
+    systemCostCash: 30000,
     introText:
       'Wildomar is a small but growing city in Riverside County with a population of around 37,000. Known for its larger lots and equestrian properties, Wildomar residents tend to have higher-than-average electricity usage. The city sits in SCE territory where rates are among the highest in the nation.',
     electricitySection:
@@ -585,9 +600,14 @@ export const CITIES: CityData[] = [
         content:
           'Many Wildomar properties have guest houses, ADUs, or detached workshops on the same meter. Make sure your solar system is sized for your total property usage, not just the main house.',
       },
+      {
+        title: 'Rural lot advantages:',
+        content:
+          'Wildomar\'s larger rural lots mean more rooftop space and viable ground-mount options. You have flexibility that suburban homeowners do not — size your system generously for total property needs.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your property has heavy tree cover, or you plan to sell within 1-2 years. For equestrian properties, make sure your total electrical load is captured when sizing a system.',
+      'Solar may not work if you rent, if your property has significant oak tree shading common in rural Wildomar parcels, if you plan to sell within 2-3 years, or if your monthly bill stays below $150 — though that is rare given Wildomar\'s summer heat.',
     bottomLine:
       'Wildomar\'s higher-than-average electricity usage, strong sunshine, and large lots make it an excellent candidate for solar — especially for properties with additional structures or agricultural use.',
     faqs: [
@@ -604,7 +624,7 @@ export const CITIES: CityData[] = [
       {
         question: 'Can my HOA block solar panels in Wildomar?',
         answer:
-          'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot prohibit solar panel installation.',
+          'No. Under California\'s Solar Rights Act (Civil Code 714), Wildomar\'s smaller rural HOAs — which are fewer than in more metro areas — still must comply with state law. HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. You have the law on your side.',
       },
       {
         question: 'How many hours of sun does Wildomar get?',
@@ -634,7 +654,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '35K',
     systemSizeKw: 9.2,
-    systemCostCash: 21600,
+    systemCostCash: 27600,
     introText:
       'Winchester is an unincorporated community in Riverside County with a population of around 35,000, known for its rural character, larger lots, and growing residential development. Situated in SCE territory, Winchester residents face the same high electricity rates as the rest of the Inland Empire.',
     electricitySection:
@@ -652,9 +672,14 @@ export const CITIES: CityData[] = [
         content:
           'Properties with acreage often have higher electricity usage from well pumps, shop lighting, and outbuildings. Size your solar system for total property usage to maximize savings.',
       },
+      {
+        title: 'Agricultural incentives:',
+        content:
+          'Winchester\'s agricultural properties may qualify for additional state and federal solar incentives beyond residential tax credits. Check with your installer about farm-specific programs.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your property has heavy tree cover, or you plan to sell within 1-2 years.',
+      'Solar may not be right if you rent, if your roof is north-facing with no viable south or west exposure, if you plan to move within 2-3 years, or if your agricultural property has structures that shade the main roof during peak sun hours.',
     bottomLine:
       'Winchester\'s rural character, strong sunshine, and SCE\'s high rates make solar a compelling option — especially for larger properties where ground-mount systems are viable.',
     faqs: [
@@ -668,7 +693,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels in Winchester?',
-        answer: 'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot prohibit solar panel installation.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), Winchester\'s master-planned communities like French Valley must comply with state law. Newer covenants are already solar-aware. HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%.',
       },
       {
         question: 'How many hours of sun does Winchester get?',
@@ -695,7 +720,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3300,
     population: '92.6K',
     systemSizeKw: 8.0,
-    systemCostCash: 18800,
+    systemCostCash: 24000,
     introText:
       'Hemet is a city of around 92,600 in the San Jacinto Valley, known for its retirement communities and affordable housing. Extreme summer heat and SCE\'s high rates make electricity a major household expense here.',
     electricitySection:
@@ -713,9 +738,14 @@ export const CITIES: CityData[] = [
         content:
           'Pre-cooling before 4 PM and using ceiling fans to reduce AC reliance during peak hours can save $30-50/month even without solar. Combined with solar, the savings compound significantly.',
       },
+      {
+        title: 'Fixed-income solar benefits:',
+        content:
+          'For retirees on fixed income, a PPA locks in a predictable monthly payment that protects you from future SCE rate increases. This stability is more valuable than cash savings on a pension.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your roof needs replacement soon, or you plan to move within 1-2 years. For older homes, check roof condition before committing to any solar option.',
+      'Solar may not make sense if you rent, if you are in a manufactured home park that restricts roof modifications, if your roof is at end of life and needs replacement first, or if heavy tree shading on your property blocks most direct sunlight. For Hemet retirement community residents on CARE/FERA discounts, the savings margin may be smaller — run the numbers carefully.',
     bottomLine:
       'Hemet\'s excellent sunshine, extreme heat-driven electricity usage, and SCE\'s high rates make it a strong solar market — especially for retirement communities looking to stabilize energy costs.',
     faqs: [
@@ -729,7 +759,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels in Hemet?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs in Hemet\'s retirement communities like Four Seasons and Hemet West must comply with state law. HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. Solar is protected for all Hemet homeowners.',
       },
       {
         question: 'How many hours of sun does Hemet get?',
@@ -756,7 +786,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3300,
     population: '55K',
     systemSizeKw: 9.3,
-    systemCostCash: 21800,
+    systemCostCash: 27900,
     introText:
       'San Jacinto is a city of around 55,000 in the San Jacinto Valley, known for its affordable housing and growing residential development. Extreme summer heat and SCE rates make electricity a significant expense.',
     electricitySection:
@@ -774,9 +804,14 @@ export const CITIES: CityData[] = [
         content:
           'While extreme heat increases your electricity usage, it also means more solar production. San Jacinto\'s 5.9 peak sun hours translate to excellent energy generation for solar systems.',
       },
+      {
+        title: 'Battery storage premium value:',
+        content:
+          'San Jacinto\'s valley-floor extreme heat makes battery storage especially valuable — you can store solar energy and run AC during peak evening hours on stored power instead of grid electricity at 58-74¢/kWh.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, you rent your home, or your roof needs replacement. For manufactured homes on leased lots, verify your right to install before proceeding.',
+      'Solar may not work well if you rent, if your San Jacinto Valley home has heavy west-side mountain shading in the afternoons, if your credit score is below 650, or if you plan to relocate within the next 2-3 years.',
     bottomLine:
       'San Jacinto\'s high electricity costs, extreme sunshine, and growing community make it a strong candidate for solar savings.',
     faqs: [
@@ -789,8 +824,8 @@ export const CITIES: CityData[] = [
         answer: 'San Jacinto residents pay approximately $318 per month on average.',
       },
       {
-        question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        question: 'Can my HOA block solar panels in San Jacinto?',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), San Jacinto HOAs in newer developments cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. The law is clear and protects all San Jacinto homeowners.',
       },
       {
         question: 'How many hours of sun does San Jacinto get?',
@@ -817,7 +852,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3250,
     population: '68K',
     systemSizeKw: 7.0,
-    systemCostCash: 16500,
+    systemCostCash: 21000,
     introText:
       'Perris is a growing city of around 68,000 in Riverside County, known for its affordability and proximity to March Air Reserve Base. In SCE territory, Perris homeowners face rising electricity costs that solar can help offset.',
     electricitySection:
@@ -835,9 +870,14 @@ export const CITIES: CityData[] = [
         content:
           'Much of Perris\'s recent growth has been in new housing developments. If your home was built after 2020, check whether it came with builder-installed solar.',
       },
+      {
+        title: 'Military base proximity benefits:',
+        content:
+          'Perris\'s location near March Air Reserve Base means military families and service members may qualify for military solar programs with accelerated financing and special rates.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+      'Solar is not ideal if you rent, if your Perris home has a flat or low-pitch roof with drainage issues that should be resolved first, if you plan to sell within 2 years, or if your bill is consistently under $150 — though given Perris summers, that is uncommon.',
     bottomLine:
       'Perris offers solid solar potential with good sunshine and rising utility costs. Even with somewhat lower rates than neighboring cities, the long-term savings from solar are significant.',
     faqs: [
@@ -850,8 +890,8 @@ export const CITIES: CityData[] = [
         answer: 'Perris residents pay approximately $241 per month on average.',
       },
       {
-        question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        question: 'Can my HOA block solar panels in Perris?',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), newer Perris subdivisions have fewer HOA restrictions than Temecula or Murrieta. HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. The law protects you.',
       },
       {
         question: 'How many hours of sun does Perris get?',
@@ -878,7 +918,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3150,
     population: '157K',
     systemSizeKw: 7.3,
-    systemCostCash: 17000,
+    systemCostCash: 21900,
     introText:
       'Corona is one of the largest cities in western Riverside County with a population of around 157,000. Situated in SCE territory at the gateway between the IE and Orange County, Corona homeowners face high electricity rates compounded by hot summers.',
     electricitySection:
@@ -896,9 +936,14 @@ export const CITIES: CityData[] = [
         content:
           'Pool pumps running during peak hours can add $50-$80/month. Switch your pool pump to morning hours and size your solar system to include pool energy usage.',
       },
+      {
+        title: 'Installer competition advantage:',
+        content:
+          'Corona\'s I-15 corridor location and large commercial solar growth means abundant local installer options and competitive pricing. Shop multiple quotes — you have leverage.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+      'Solar may not be the best fit if you rent, if your Corona Hills home has significant north-facing roof area with no south or west exposure, if your roof is over 20 years old and needs replacement first, or if you are on a SCE CARE discount that already reduces your bill below $150/month.',
     bottomLine:
       'Corona\'s high average bills ($357/month), strong sunshine, and growing EV adoption make it one of the best solar markets in western Riverside County.',
     faqs: [
@@ -911,8 +956,8 @@ export const CITIES: CityData[] = [
         answer: 'Corona residents pay approximately $357 per month on average, or about $4,284 per year.',
       },
       {
-        question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        question: 'Can my HOA block solar panels in Corona?',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), larger Corona HOAs like Dos Lagos, Sierra Del Oro, and Eagle Glen must comply with state law. All must allow solar installations — restrictions that increase costs by more than $1,000 or reduce system output by more than 10% are legally unenforceable.',
       },
       {
         question: 'How many hours of sun does Corona get?',
@@ -940,7 +985,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3250,
     population: '55K',
     systemSizeKw: 8.5,
-    systemCostCash: 20000,
+    systemCostCash: 25500,
     introText:
       'Beaumont is a rapidly growing city of around 55,000 in the San Gorgonio Pass, known for its higher elevation (2,600 ft) and newer master-planned communities. Located in SCE territory, Beaumont residents face the same high rates as the rest of the Inland Empire.',
     electricitySection:
@@ -958,9 +1003,14 @@ export const CITIES: CityData[] = [
         content:
           'The pass winds help keep panels cool and clean (less dust accumulation). This is a minor but real advantage for long-term solar production.',
       },
+      {
+        title: 'Lower AC load benefit:',
+        content:
+          'Beaumont\'s 2,500+ foot elevation reduces AC load compared to valley-floor IE cities, meaning your solar ROI is faster — you need less generation to offset a smaller cooling bill.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+      'Solar may not make sense if you rent, if your home at Beaumont\'s higher elevation (2,500+ ft) has unusual wind exposure that requires special mounting, if your roof is heavily shaded, or if your credit score prevents PPA qualification. Note that Beaumont\'s slightly cooler temperatures mean lower AC bills — if your bill is already modest, verify the savings math.',
     bottomLine:
       'Beaumont\'s higher elevation, efficient panel performance, and SCE\'s high rates make it a great market for solar. The wind-cooled panels actually produce more than valley-floor installations.',
     faqs: [
@@ -973,8 +1023,8 @@ export const CITIES: CityData[] = [
         answer: 'Beaumont residents pay approximately $299 per month on average.',
       },
       {
-        question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        question: 'Can my HOA block solar panels in Beaumont?',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), Beaumont\'s newer master-planned communities like Tournament Hills and Fairway Canyon have streamlined solar approvals built into their original covenants. All HOAs must comply with state law protecting your right to install solar.',
       },
       {
         question: 'How many hours of sun does Beaumont get?',
@@ -1004,7 +1054,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '320K',
     systemSizeKw: 11.15,
-    systemCostCash: 25786,
+    systemCostCash: 33500,
     introText:
       'Riverside is the county seat and largest city in Riverside County with a population of around 320,000. Unlike most of its neighbors, Riverside has its own municipal utility — Riverside Public Utilities (RPU) — which means different rates, different net metering rules, and different solar economics than SCE territory.',
     electricitySection:
@@ -1022,9 +1072,14 @@ export const CITIES: CityData[] = [
         content:
           'Riverside\'s older neighborhoods (Wood Streets, Mission Inn district, Arlington) often have large mature trees that can significantly impact solar production. Always check Google Project Sunroof and consider tree trimming options before sizing a system.',
       },
+      {
+        title: 'UC Riverside innovation:',
+        content:
+          'UC Riverside\'s solar research programs drive local installer quality and innovation. Riverside benefits from a deep pool of certified solar professionals who know the local permitting process inside and out.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month (more possible with RPU\'s lower rates), your property has heavy mature tree shade, or you plan to sell within 1-2 years. RPU\'s lower rates also mean slightly longer payback periods for purchased systems.',
+      'Solar may not be ideal if you rent, if you are an RPU customer with already-lower municipal rates and your bill stays under $150/month, if your older Riverside home needs a roof replacement first, or if heavy tree canopy in established neighborhoods like Wood Streets blocks most direct sun.',
     bottomLine:
       'Riverside\'s municipal utility means lower rates than SCE, but solar still makes strong financial sense — especially for higher-usage households. The key difference is RPU\'s net metering may be more favorable than SCE\'s NEM 3.0.',
     faqs: [
@@ -1038,7 +1093,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Riverside, communities like Canyon Crest, La Sierra, and Alessandro Heights have a wide variety of HOAs — but all are bound by state law. If your HOA pushes back, the law is firmly on your side.',
       },
       {
         question: 'How many hours of sun does Riverside get?',
@@ -1066,7 +1121,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '214K',
     systemSizeKw: 9.3,
-    systemCostCash: 21900,
+    systemCostCash: 27900,
     introText:
       'Moreno Valley is the second-largest city in Riverside County with a population of around 214,000. Served by its own municipal utility (MVU), Moreno Valley residents have a unique situation compared to SCE or RPU territory — including a 15-year net metering grandfathering period that makes solar particularly attractive.',
     electricitySection:
@@ -1084,9 +1139,14 @@ export const CITIES: CityData[] = [
         content:
           'Moreno Valley regularly sees temperatures above 105°F in summer. Pre-cooling before peak hours and using smart thermostats can reduce peak demand by 20-30%, saving significantly even before solar is added.',
       },
+      {
+        title: 'MVU advantage:',
+        content:
+          'Moreno Valley Electric Utility (MVU) is a municipal utility with its own net metering program — different terms than SCE, and potentially more favorable for solar. Verify your MVU net metering eligibility before sizing your system.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+      'Solar may not work well if you rent, if you are on MVU\'s municipal utility with lower rates and your bill is under $200/month (the savings margin narrows), if your home has significant north-facing roof only, or if you plan to move within 2-3 years.',
     bottomLine:
       'Moreno Valley\'s municipal utility with 15-year NEM grandfathering, extreme sunshine, and high heat-driven usage make it one of the strongest solar markets in the IE.',
     faqs: [
@@ -1100,7 +1160,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Moreno Valley, communities like Moreno Valley Ranch and Hidden Springs must comply with state law regardless of their CC&Rs. If your HOA pushes back, the law is firmly on your side.',
       },
       {
         question: 'How many hours of sun does Moreno Valley get?',
@@ -1130,7 +1190,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3100,
     population: '32K',
     systemSizeKw: 5.0,
-    systemCostCash: 11444,
+    systemCostCash: 16800,
     introText:
       'Fallbrook is an unincorporated community in northern San Diego County with a population of around 32,000, known as the "Avocado Capital of the World." Served by SDG&E — the most expensive utility in California — Fallbrook residents face some of the highest electricity rates in the nation.',
     electricitySection:
@@ -1148,9 +1208,14 @@ export const CITIES: CityData[] = [
         content:
           'Fallbrook is in a high fire-risk area. Solar + battery storage provides backup power during PSPS (Public Safety Power Shutoff) events when SDG&E cuts power to reduce fire risk. This is a significant practical benefit beyond just savings.',
       },
+      {
+        title: 'Agrivoltaics opportunity:',
+        content:
+          'Fallbrook\'s avocado and citrus growers are increasingly exploring agrivoltaics — combining solar panels with crop production. Rural properties with large lots are ideal for ground-mount systems that serve both residential and agricultural needs.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $80/month (possible in Fallbrook\'s mild climate), your property has heavy oak tree shade, or you plan to sell within 1-2 years.',
+      'Solar may not be right if you rent, if your Fallbrook property sits in a deep valley with significant hillside shading, if heavy avocado grove canopy shades your roof, or if your SDG&E bill is already low due to coastal climate moderation. That said, SDG&E\'s extreme rates mean even moderate bills benefit from solar.',
     bottomLine:
       'Fallbrook\'s SDG&E rates (the highest in California) make even modest systems produce excellent returns. The agricultural community and fire resilience benefits add extra value beyond pure bill savings.',
     faqs: [
@@ -1164,7 +1229,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. Many Fallbrook properties are rural or semi-rural with no HOA at all — and those that do have HOAs cannot restrict solar under state law. If your HOA pushes back, the law is firmly on your side.',
       },
       {
         question: 'How many hours of sun does Fallbrook get?',
@@ -1191,7 +1256,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3100,
     population: '151K',
     systemSizeKw: 4.6,
-    systemCostCash: 11000,
+    systemCostCash: 15400,
     introText:
       'Escondido is a city of around 151,000 in northern San Diego County, known for its diverse neighborhoods and inland valley heat. Served by SDG&E — the most expensive utility in California — Escondido residents face some of the highest electricity rates in the nation.',
     electricitySection:
@@ -1209,9 +1274,14 @@ export const CITIES: CityData[] = [
         content:
           'Escondido has many homes with pools or hot tubs. These add significant electrical load that solar can offset. Size your system to include pool/spa equipment usage.',
       },
+      {
+        title: 'Inland ROI:',
+        content:
+          'Escondido\'s inland position means higher summer temperatures and bigger AC bills than coastal San Diego cities — combined with SDG&E\'s highest-in-the-nation rates, solar ROI here is among the fastest in the county.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $80/month, your property has heavy hillside shade, or you plan to sell within 1-2 years.',
+      'Solar may not make sense if you rent, if your older Escondido home in the established downtown area has heavy tree shading, if you plan to sell within 2 years, or if your roof needs replacement. However, SDG&E\'s highest-in-the-nation rates mean the savings bar is low — even $150/month bills see meaningful savings.',
     bottomLine:
       'Escondido\'s SDG&E rates (highest in California) and inland valley sunshine make solar an excellent investment. Even small systems produce strong returns at 45.7 cents per kWh.',
     faqs: [
@@ -1225,7 +1295,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Escondido, established HOA communities are already complying with AB 2188, and SDG&E\'s high rates make solar adoption a priority across the board. If your HOA pushes back, the law is firmly on your side.',
       },
       {
         question: 'How many hours of sun does Escondido get?',
@@ -1260,7 +1330,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '1.0M',
     systemSizeKw: 7.5,
-    systemCostCash: 17600,
+    systemCostCash: 24400,
     introText:
       'San Jose is the largest city in the Bay Area and the heart of Silicon Valley, with a population of over one million. Served by PG&E, San Jose residents face some of the highest electricity rates in the nation at 41.5¢/kWh. With a strong tech economy and high home values, solar is both a financial and property value play for San Jose homeowners.',
     electricitySection:
@@ -1278,9 +1348,14 @@ export const CITIES: CityData[] = [
         content:
           'If you work from home (common in the Bay Area), your daytime electricity usage is higher than average. This actually makes solar even more beneficial since you are using the energy as it is produced.',
       },
+      {
+        title: 'Santa Clara County streamlined permitting:',
+        content:
+          'Santa Clara County offers streamlined solar permitting via an online portal, with approvals often granted in 2-3 weeks. This is significantly faster than most Bay Area counties.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your roof has heavy shade from trees or neighboring buildings, or you plan to sell within 1-2 years. In dense San Jose neighborhoods, check Google Project Sunroof to verify your specific roof exposure.',
+      'Solar may not be the right fit if you rent, if your South San Jose townhome has a small or heavily shaded roof, if your credit score is below 650, or if you are in a PG&E CARE/FERA program with bills already under $150/month. For condos, check with your HOA about shared roof access — it is possible but requires board coordination.',
     bottomLine:
       'San Jose is the #1 priority solar city in California by search volume. With PG&E rates at 41.5¢/kWh, strong sunshine, and high EV adoption, the savings case is compelling for most homeowners.',
     faqs: [
@@ -1294,7 +1369,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels in San Jose?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In San Jose, high-density communities like Evergreen, Silver Creek, and Almaden Valley have all adapted post-AB 2188 and enforce strict solar rights—Santa Clara County has some of the most aggressive solar enforcement in the state. If your HOA pushes back, the law is firmly on your side.',
       },
       {
         question: 'How many hours of sun does San Jose get?',
@@ -1322,7 +1397,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 2600,
     population: '808K',
     systemSizeKw: 5.5,
-    systemCostCash: 13000,
+    systemCostCash: 17900,
     introText:
       'San Francisco is a compact, densely built city of about 808,000 people on PG&E territory. While the city gets less sun than inland California, PG&E\'s high rates at 41.5¢/kWh mean even smaller solar systems produce strong returns. The city\'s older housing stock and fog patterns create unique considerations for solar.',
     electricitySection:
@@ -1340,9 +1415,19 @@ export const CITIES: CityData[] = [
         content:
           'Many SF homes have older roofs. If your roof needs replacement in the next 3-5 years, handle that first. Some solar installers offer combined roof + solar packages.',
       },
+      {
+        title: 'Coastal fog microclimate:',
+        content:
+          'San Francisco\'s coastal fog reduces solar output by approximately 10-15% compared to inland Bay Area locations. However, west-facing panels often outperform south-facing panels due to afternoon cloud clearing. Plan your panel orientation carefully.',
+      },
+      {
+        title: 'Community solar programs:',
+        content:
+          'SF has strong community solar and multi-unit building solar programs. If you live in a condo or apartment, you may qualify for shared solar arrangements that provide bill credits without rooftop installation.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your roof is heavily shaded or north-facing, you are in a high-fog neighborhood, your roof needs replacement soon, or your bill is under $80/month. SF\'s mild climate means some households have genuinely low bills.',
+      'Solar may not work well if you rent, if your Victorian or Edwardian home has a north-facing roof with no viable south or west exposure, if heavy fog in the Outer Sunset or Outer Richmond reduces your production below viable levels, or if you live in a multi-unit building without roof access. San Francisco\'s fog patterns vary dramatically by neighborhood — homes in the Mission, Potrero Hill, or Bayview often get 20-30% more sun than the west side.',
     bottomLine:
       'Despite the fog reputation, San Francisco\'s high PG&E rates make solar financially compelling in many neighborhoods. The key is checking your specific roof exposure.',
     faqs: [
@@ -1356,7 +1441,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In San Francisco, condo associations make up the majority of residential buildings, but solar rights still apply to common areas with board approval. SF\'s planning codes are very favorable to solar, especially on multi-unit buildings. If your HOA pushes back, the law is firmly on your side.',
       },
       {
         question: 'Does solar work with San Francisco fog?',
@@ -1384,7 +1469,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3350,
     population: '545K',
     systemSizeKw: 8.5,
-    systemCostCash: 20000,
+    systemCostCash: 25900,
     introText:
       'Fresno is the largest city in the Central Valley with a population of about 545,000. Known for extreme summer heat and an agricultural economy, Fresno homeowners face high electricity bills driven by PG&E rates at 41.5¢/kWh and heavy AC usage. The Central Valley\'s exceptional sunshine makes it one of the best solar markets in California.',
     electricitySection:
@@ -1402,9 +1487,19 @@ export const CITIES: CityData[] = [
         content:
           'Fresno has many properties with agricultural uses or larger lots. Ground-mount solar systems are a good option when roof space is limited or roof condition is a concern.',
       },
+      {
+        title: 'AC bills are the biggest expense:',
+        content:
+          'In Fresno\'s extreme summer heat, air conditioning accounts for 40%+ of residential electric bills. Solar is specifically designed to offset this peak load—your highest usage hours align perfectly with peak sun hours.',
+      },
+      {
+        title: 'Agricultural property incentives:',
+        content:
+          'If you own agricultural property near Fresno, you may qualify for additional state solar incentives and ground-mount solar options. Check with local agricultural extension offices.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+      'Solar may not make sense if you rent, if your home is heavily shaded by mature trees (common in older Tower District and Fig Garden neighborhoods), or if your credit score prevents PPA qualification. Given Fresno\'s extreme summer heat and $300+ bills, it is rare for a homeowner to not benefit — but verify your roof condition and shading first.',
     bottomLine:
       'Fresno\'s combination of extreme sunshine, high PG&E rates, and heat-driven electricity usage makes it one of the strongest solar markets in California.',
     faqs: [
@@ -1418,7 +1513,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Fresno, newer north Fresno communities like Copper River and the Woodward Park area are increasingly solar-friendly, and Central Valley heat makes solar a near-universal priority. If your HOA pushes back, the law is firmly on your side.',
       },
       {
         question: 'How many hours of sun does Fresno get?',
@@ -1446,7 +1541,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3250,
     population: '525K',
     systemSizeKw: 7.0,
-    systemCostCash: 16500,
+    systemCostCash: 21400,
     introText:
       'Sacramento is the state capital with a population of about 525,000. Unlike most California cities, Sacramento is served by SMUD — a municipal utility with rates roughly half of PG&E. While rates are lower, Sacramento\'s extreme summer heat still drives significant electricity bills, and solar remains a strong option.',
     electricitySection:
@@ -1457,16 +1552,21 @@ export const CITIES: CityData[] = [
       {
         title: 'SMUD advantage:',
         content:
-          'SMUD\'s lower rates mean longer payback periods for purchased systems compared to PG&E territory. However, PPAs are still attractive because the fixed rate can still be lower than SMUD rates, and you lock in protection against future increases.',
+          'SMUD rates are 50-60% lower than PG&E/SCE, so your solar payback timeline is longer — but you\'re also hedging against future increases with a locked-in rate.',
       },
       {
         title: 'Extreme summer heat:',
         content:
           'Sacramento summers regularly top 100°F. Even with SMUD\'s lower rates, summer bills can spike. Solar + battery storage helps manage peak demand charges.',
       },
+      {
+        title: 'New construction:',
+        content:
+          'Natomas and Elk Grove homes built since 2020 are Title 24 solar-ready with pre-wired electrical panels, making installation faster and cheaper.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $80/month (more common with SMUD\'s lower rates), your roof has heavy shade from Sacramento\'s mature trees, or you plan to sell within 1-2 years.',
+      'Solar may not be the best fit if you rent, if your SMUD bills are already well under $100/month (SMUD\'s low rates narrow the savings margin), or if your midtown Sacramento home has heavy tree canopy shading. SMUD territory requires different math than PG&E — the payback is longer but you are still hedging against future increases.',
     bottomLine:
       'Sacramento\'s SMUD rates are lower than PG&E, but the extreme summer heat still makes solar a smart investment — especially for higher-usage households looking to lock in predictable payments.',
     faqs: [
@@ -1480,7 +1580,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Sacramento, communities in Natomas, Elk Grove, and the Folsom area all must comply — and with SMUD\'s low rates making solar economics tighter, HOAs have even less ground to stand on. If your HOA pushes back, the law is firmly on your side.',
       },
       {
         question: 'How does SMUD compare to PG&E for solar?',
@@ -1508,7 +1608,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 2900,
     population: '430K',
     systemSizeKw: 6.0,
-    systemCostCash: 14100,
+    systemCostCash: 19500,
     introText:
       'Oakland is the largest city in the East Bay with a population of around 430,000. On PG&E territory at 41.5¢/kWh, Oakland homeowners face high rates despite a relatively mild climate. The city\'s diverse neighborhoods range from sunny flatlands to foggy hills, creating varied solar potential.',
     electricitySection:
@@ -1521,15 +1621,25 @@ export const CITIES: CityData[] = [
         content:
           'Oakland Hills gets more fog than the flatlands. Neighborhoods like Fruitvale, East Oakland, and the Laurel District tend to get the best solar exposure.',
       },
+      {
+        title: 'Streamlined permitting:',
+        content:
+          'Oakland offers streamlined solar permitting with approval in 3-5 business days — one of the fastest in the Bay Area.',
+      },
+      {
+        title: 'EV pairing:',
+        content:
+          'Oakland has one of the highest EV adoption rates in the East Bay. Pairing solar with an EV charger maximizes your savings and qualifies for additional PG&E EV rate plans.',
+      },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $80/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+      'Solar may not work well if you rent, if your Oakland Hills home has dense tree cover reducing south-facing exposure, if you live in a multi-unit building without roof access, or if your bill is under $150/month on PG&E CARE rates. Microclimate matters — East Oakland and San Leandro border areas get notably more sun than foggy upper hills.',
     bottomLine:
       'Oakland\'s high PG&E rates make solar a strong financial move, especially in the sunnier flatland neighborhoods.',
     faqs: [
       { question: 'How much does solar cost in Oakland in 2026?', answer: 'A typical 6.0 kW system costs approximately $14,100 before incentives. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Oakland?', answer: 'Oakland residents on PG&E pay approximately $240 per month on average.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Oakland, Hills-area HOAs often overlay fire zone requirements — but those actually encourage solar+battery combos for resilience rather than restricting them. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Oakland get?', answer: 'Oakland averages approximately 2,900 hours of sunshine per year with 5.0 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Oakland, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1553,7 +1663,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '320K',
     systemSizeKw: 8.0,
-    systemCostCash: 18800,
+    systemCostCash: 24400,
     introText:
       'Stockton is a Central Valley city of about 320,000 on PG&E territory. With summer heat rivaling the Inland Empire and PG&E rates at 41.5¢/kWh, Stockton homeowners face some of the highest electricity costs in Northern California.',
     electricitySection:
@@ -1561,14 +1671,17 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'Stockton averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day. The Central Valley climate provides excellent, consistent solar production year-round.',
     localTips: [
-      { title: 'Central Valley heat:', content: 'Stockton\'s extreme summer heat makes solar + battery storage particularly valuable. Store daytime solar and use it during expensive peak evening hours when you need AC most.' },
+      { title: 'Central Valley heat:', content: 'Summer temperatures regularly exceed 100°F — 40%+ of your annual electricity bill goes to cooling. Solar offsets this biggest single expense.' },
+      { title: 'Wildfire resilience:', content: 'Growing interest in solar+battery systems for backup power during PSPS (Public Safety Power Shutoff) events that affect the Central Valley.' },
+      { title: 'PSPS resilience:', content: 'PG&E Public Safety Power Shutoff (PSPS) events affect the Central Valley during wildfire season. Solar+battery systems provide backup power during outages — increasingly important for Stockton homeowners.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork:
+      'Solar may not work well if you rent, if your Stockton home needs a roof replacement first, or if your credit score prevents PPA qualification. Given Stockton\'s Central Valley heat and growing PG&E rates, it is uncommon for a homeowner with a viable roof to not benefit from solar.',
     bottomLine: 'Stockton\'s extreme heat, high PG&E rates, and excellent sunshine make it one of the strongest solar markets in the Central Valley.',
     faqs: [
       { question: 'How much does solar cost in Stockton in 2026?', answer: 'A typical 8.0 kW system costs approximately $18,800 before incentives. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Stockton?', answer: 'Stockton residents pay approximately $295 per month on average on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Stockton, communities like Brookside and Spanos Park have newer developments with solar-ready architecture and fast approval processes. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Stockton get?', answer: 'Stockton averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Stockton, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1592,7 +1705,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 2900,
     population: '116K',
     systemSizeKw: 6.0,
-    systemCostCash: 14100,
+    systemCostCash: 19500,
     introText:
       'Richmond is a diverse city of about 116,000 in the East Bay on PG&E territory. With rates at 41.5¢/kWh and a mix of older and newer housing, solar offers significant savings potential for Richmond homeowners.',
     electricitySection:
@@ -1601,13 +1714,15 @@ export const CITIES: CityData[] = [
       'Richmond averages approximately 2,900 hours of sunshine per year with 5.0 peak sun hours per day. The city gets good sun exposure, especially in the inland areas away from the waterfront.',
     localTips: [
       { title: 'Older housing stock:', content: 'Many Richmond homes have older roofs. Verify roof condition before installing solar — some installers offer combined roof + solar packages.' },
+      { title: 'Community Choice Energy:', content: 'MCE (Marin Clean Energy) serves Richmond as a CCA — you may qualify for additional export bonuses or community solar programs beyond standard PG&E net billing.' },
+      { title: 'New development:', content: 'Hilltop-area redevelopment projects include strong Title 24 solar-ready codes, making new Richmond homes easier and cheaper to equip with solar.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your roof needs replacement, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not be ideal if you rent, if your Richmond home faces north with no viable south or west exposure, if Bay fog significantly reduces your sun hours (varies by neighborhood — Point Richmond and the marina get less sun than Hilltop), or if your PG&E bill on CARE/FERA is already under $120/month.',
     bottomLine: 'Richmond\'s high PG&E rates make solar a strong investment for homeowners with good roof exposure.',
     faqs: [
       { question: 'How much does solar cost in Richmond in 2026?', answer: 'A typical 6.0 kW system costs approximately $14,100. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Richmond?', answer: 'Richmond residents pay approximately $230 per month on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Richmond, Hilltop-area communities and other Bay Area HOAs are aggressively complying with solar rights post-AB 2188, and most approvals take under 30 days. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Richmond get?', answer: 'Richmond averages approximately 2,900 hours of sunshine per year with 5.0 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Richmond, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1631,7 +1746,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3100,
     population: '82K',
     systemSizeKw: 7.5,
-    systemCostCash: 17600,
+    systemCostCash: 24400,
     introText:
       'Pleasanton is an affluent Tri-Valley city of about 82,000 on PG&E territory. With higher home values, larger homes, and PG&E rates at 41.5¢/kWh, Pleasanton homeowners have both the financial incentive and property value benefit from solar.',
     electricitySection:
@@ -1639,14 +1754,17 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'Pleasanton averages approximately 3,100 hours of sunshine per year with 5.4 peak sun hours per day. The Tri-Valley gets more sun than the coast, making it a strong solar market.',
     localTips: [
-      { title: 'High home values:', content: 'Pleasanton\'s high property values mean solar adds significant resale value. Homes with solar sell for an average premium, making it both a savings and investment play.' },
+      { title: 'High home values:', content: 'Pleasanton\'s median home price means solar adds a significant resale premium — studies show $15-20K+ in added home value for owned solar systems.' },
+      { title: 'Tri-Valley co-ops:', content: 'Tri-Valley solar co-op programs can reduce per-watt costs by grouping neighborhood installations — ask your installer about current group-buy options.' },
+      { title: 'Resale premium:', content: 'Pleasanton\'s high median home values mean solar adds a significant resale premium — studies show owned solar systems add $15-20K or more in home value, making the investment pay off even if you sell.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork:
+      'Solar may not work well if you rent a home in Pleasanton, if mature oak trees common in older Pleasanton neighborhoods heavily shade your roof, or if you plan to sell within 2 years. For Pleasanton\'s higher home values, owned solar systems typically add $15-20K+ in resale value — so even a near-term sale may pencil out.',
     bottomLine: 'Pleasanton\'s high PG&E rates, warm summers, and affluent housing market make solar an excellent investment for homeowners.',
     faqs: [
       { question: 'How much does solar cost in Pleasanton in 2026?', answer: 'A typical 7.5 kW system costs approximately $17,600. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Pleasanton?', answer: 'Pleasanton residents pay approximately $290 per month on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Pleasanton, even high-end communities like Ruby Hill, Stoneridge, and Castlewood — known for strict aesthetic standards — must comply with state solar rights. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Pleasanton get?', answer: 'Pleasanton averages approximately 3,100 hours of sunshine per year with 5.4 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Pleasanton, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1670,7 +1788,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 2900,
     population: '65K',
     systemSizeKw: 5.5,
-    systemCostCash: 13000,
+    systemCostCash: 18200,
     introText:
       'Santa Cruz is a coastal city of about 65,000 on PG&E territory. Despite the mild coastal climate, PG&E\'s 41.5¢/kWh rate means even moderate electricity usage results in significant bills.',
     electricitySection:
@@ -1679,13 +1797,15 @@ export const CITIES: CityData[] = [
       'Santa Cruz averages approximately 2,900 hours of sunshine per year with 5.0 peak sun hours per day. Coastal areas get some marine layer influence, but inland neighborhoods and south-facing slopes get excellent exposure.',
     localTips: [
       { title: 'Coastal vs. inland:', content: 'Santa Cruz neighborhoods closer to the coast get more fog than those in the hills or toward Scotts Valley. Check your specific roof exposure before sizing a system.' },
+      { title: 'Coastal fog adjustment:', content: 'Santa Cruz\'s coastal fog microclimate reduces solar output roughly 15% compared to inland areas. Batteries can compensate for afternoon fog drop-offs and shift your self-consumption to evening hours.' },
+      { title: 'Rooftop preferred:', content: 'Coastal Commission restrictions may affect ground-mount solar in some areas near the coast. Rooftop systems are generally exempt — plan your installation accordingly.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your property is heavily shaded by redwood trees, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not be ideal if you rent, if your west-side Santa Cruz home gets heavy coastal fog reducing viable sun hours below 4 per day, if you live in an apartment without roof access, or if your bill is already low due to mild coastal temperatures. East-side Santa Cruz and Scotts Valley get meaningfully more sun — location within the city matters significantly.',
     bottomLine: 'Santa Cruz\'s high PG&E rates make solar worthwhile despite the coastal climate. The environmentally conscious community also values the green energy benefit.',
     faqs: [
       { question: 'How much does solar cost in Santa Cruz in 2026?', answer: 'A typical 5.5 kW system costs approximately $13,000. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Santa Cruz?', answer: 'Santa Cruz residents pay approximately $210 per month on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Santa Cruz, coastal HOAs sometimes raise Coastal Commission concerns — but those restrictions apply to ground-mount systems in some areas, not rooftop solar. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Santa Cruz get?', answer: 'Santa Cruz averages approximately 2,900 hours of sunshine per year with 5.0 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Santa Cruz, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1709,7 +1829,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3000,
     population: '180K',
     systemSizeKw: 6.5,
-    systemCostCash: 15300,
+    systemCostCash: 21500,
     introText:
       'Santa Rosa is the largest city in Sonoma County with a population of about 180,000, on PG&E territory. The city\'s wine country location provides good solar potential, and PG&E\'s high rates at 41.5¢/kWh make solar a compelling option.',
     electricitySection:
@@ -1718,13 +1838,15 @@ export const CITIES: CityData[] = [
       'Santa Rosa averages approximately 3,000 hours of sunshine per year with 5.2 peak sun hours per day. The inland wine country location gets more sun than the Sonoma Coast.',
     localTips: [
       { title: 'Fire resilience:', content: 'After the devastating fires in Sonoma County, many Santa Rosa homeowners value solar + battery storage for backup power during PSPS shutoffs. This is a practical safety benefit beyond bill savings.' },
+      { title: 'Post-fire solar-ready:', content: 'Fountaingrove and Coffey Park rebuilds after the 2017 Tubbs Fire include solar-ready construction — pre-wired panels and reinforced roof mounts cut installation time and cost.' },
+      { title: 'Wine country agrivoltaics:', content: 'Sonoma County vineyards and agricultural properties are increasingly exploring agrivoltaics — combining solar panels with crop production for dual income and energy savings.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your property has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not make sense if you rent, if your Santa Rosa home in a heavily wooded area (common near Annadel or Bennett Valley) has dense canopy shading, or if you are rebuilding post-fire and want to wait until your new roof is complete before adding solar. Post-fire rebuilds often include solar-ready wiring — factor installation into your rebuild timeline for the best economics.',
     bottomLine: 'Santa Rosa\'s PG&E rates, wine country sunshine, and fire resilience needs make solar both a financial and practical investment.',
     faqs: [
       { question: 'How much does solar cost in Santa Rosa in 2026?', answer: 'A typical 6.5 kW system costs approximately $15,300. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Santa Rosa?', answer: 'Santa Rosa residents pay approximately $250 per month on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Santa Rosa, communities like Fountaingrove and Skyhawk — many rebuilt after the 2017 fires — often include solar-ready construction, and HOAs actively support solar+battery for wildfire resilience. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Santa Rosa get?', answer: 'Santa Rosa averages approximately 3,000 hours of sunshine per year with 5.2 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Santa Rosa, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1748,7 +1870,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '218K',
     systemSizeKw: 7.5,
-    systemCostCash: 17600,
+    systemCostCash: 22900,
     introText:
       'Modesto is a Central Valley city of about 218,000 on PG&E territory. Extreme summer heat and PG&E\'s high rates at 41.5¢/kWh make electricity a major household expense for Modesto homeowners.',
     electricitySection:
@@ -1757,13 +1879,16 @@ export const CITIES: CityData[] = [
       'Modesto averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day. The Central Valley climate is excellent for solar production.',
     localTips: [
       { title: 'Agricultural community:', content: 'Modesto\'s agricultural roots mean many properties have larger lots and outbuildings. Ground-mount solar systems are an option for properties where roof space is limited.' },
+      { title: 'Check your utility:', content: 'Some Modesto-area homes are served by Modesto Irrigation District (MID) rather than PG&E — MID has different rates and net metering terms. Verify which utility serves your address before sizing your system.' },
+      { title: 'Fastest ROI in NorCal:', content: 'Central Valley heat makes Modesto\'s solar ROI among the fastest in Northern California — high AC usage means your system offsets premium peak-rate electricity.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork:
+      'Solar may not work well if you rent, if your Modesto Irrigation District (MID) rates are lower than PG&E and your bill is already modest, or if your older downtown Modesto home needs a roof replacement first. Confirm whether you are on MID or PG&E service — the economics differ significantly.',
     bottomLine: 'Modesto\'s Central Valley heat, high PG&E rates, and excellent sunshine make it a strong solar market.',
     faqs: [
       { question: 'How much does solar cost in Modesto in 2026?', answer: 'A typical 7.5 kW system costs approximately $17,600. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Modesto?', answer: 'Modesto residents pay approximately $280 per month on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Modesto, communities like Village One and Creekside have fast solar approval processes, and the Central Valley heat makes solar adoption a near-universal priority. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Modesto get?', answer: 'Modesto averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Modesto, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1787,7 +1912,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3100,
     population: '47K',
     systemSizeKw: 5.5,
-    systemCostCash: 13000,
+    systemCostCash: 18200,
     introText:
       'San Luis Obispo is a Central Coast city of about 47,000 on PG&E territory. With a mild climate, college-town vibe, and PG&E rates at 41.5¢/kWh, SLO homeowners have a strong financial case for solar.',
     electricitySection:
@@ -1796,13 +1921,15 @@ export const CITIES: CityData[] = [
       'San Luis Obispo averages approximately 3,100 hours of sunshine per year with 5.5 peak sun hours per day. The area gets excellent sun exposure, especially inland from the immediate coast.',
     localTips: [
       { title: 'Central Coast climate:', content: 'SLO\'s mild climate means smaller solar systems can cover your needs. Lower usage + high rates per kWh = excellent economics even with modest-sized systems.' },
+      { title: 'Cal Poly influence:', content: 'Cal Poly\'s solar research programs and engineering graduates influence local installer quality — SLO has a higher concentration of certified solar professionals per capita than most California cities.' },
+      { title: 'Fast-tracked permits:', content: 'The City of San Luis Obispo fast-tracks residential solar permits, and strict coastal permitting in nearby areas does not apply to standard rooftop installations.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not be ideal if you rent, if your SLO home sits in a fog-prone valley that reduces sun hours, if you plan to move within 2 years, or if your mild coastal climate keeps your PG&E bill under $150/month. That said, PG&E\'s 41.46¢/kWh rate means even moderate usage translates to meaningful savings.',
     bottomLine: 'San Luis Obispo\'s high PG&E rates and excellent sunshine make solar a smart investment despite the mild climate.',
     faqs: [
       { question: 'How much does solar cost in San Luis Obispo in 2026?', answer: 'A typical 5.5 kW system costs approximately $13,000. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in SLO?', answer: 'SLO residents pay approximately $220 per month on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In San Luis Obispo, communities like San Luis Ranch and those near Edna Valley are generally solar-supportive, with the city fast-tracking solar permits. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does SLO get?', answer: 'San Luis Obispo averages approximately 3,100 hours of sunshine per year with 5.5 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in San Luis Obispo, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1826,7 +1953,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3050,
     population: '230K',
     systemSizeKw: 7.0,
-    systemCostCash: 16500,
+    systemCostCash: 22800,
     introText:
       'Fremont is a large East Bay city of about 230,000 on PG&E territory. Home to Tesla\'s factory and a tech-savvy population, Fremont has one of the highest EV adoption rates in the state — making solar + EV charging a particularly strong play.',
     electricitySection:
@@ -1834,14 +1961,17 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'Fremont averages approximately 3,050 hours of sunshine per year with 5.3 peak sun hours per day. The East Bay location gets more sun than San Francisco, with warm inland summers.',
     localTips: [
-      { title: 'Tesla territory:', content: 'With the Tesla factory in town, Fremont has extremely high EV adoption. Solar + EV charging is one of the strongest financial cases for solar — you eliminate both your electric bill and fuel costs.' },
+      { title: 'Tesla territory:', content: 'With Tesla HQ in Fremont, the city has one of the highest EV adoption rates in Alameda County. Pairing solar with an EV charger is the norm here — and PG&E offers EV-specific rate plans that boost your savings.' },
+      { title: 'Combo permits:', content: 'Fremont offers streamlined EV+solar combination permits that save 1-2 weeks compared to separate applications — ask your installer about the combined process.' },
+      { title: 'EV combo permits:', content: 'Fremont offers streamlined EV+solar combination permits that save 1-2 weeks compared to separate applications. With Tesla HQ in town and one of the highest EV adoption rates in the Bay Area, solar+EV is standard here.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork:
+      'Solar may not work well if you rent a Fremont townhome or condo without roof access, if your property has significant shading from adjacent multi-story buildings in the Warm Springs or Irvington areas, or if your PG&E CARE bill is already under $130/month. For Fremont homeowners with EVs — which is a large percentage — the combined solar+EV savings almost always make the math work.',
     bottomLine: 'Fremont\'s high EV adoption, PG&E rates, and tech-savvy population make it an excellent solar market.',
     faqs: [
       { question: 'How much does solar cost in Fremont in 2026?', answer: 'A typical 7.0 kW system costs approximately $16,500. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Fremont?', answer: 'Fremont residents pay approximately $270 per month on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Fremont, tech-forward communities like Mission San Jose and Warm Springs have some of the highest solar adoption rates in Alameda County — HOAs there are well past the debate. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Fremont get?', answer: 'Fremont averages approximately 3,050 hours of sunshine per year with 5.3 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Fremont, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1865,7 +1995,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 2900,
     population: '30K',
     systemSizeKw: 5.0,
-    systemCostCash: 11750,
+    systemCostCash: 16500,
     introText:
       'Monterey is a coastal city of about 30,000 on PG&E territory. The mild coastal climate keeps AC usage low, but PG&E\'s 41.5¢/kWh rate means even moderate usage adds up.',
     electricitySection:
@@ -1874,13 +2004,15 @@ export const CITIES: CityData[] = [
       'Monterey averages approximately 2,900 hours of sunshine per year with 5.0 peak sun hours per day. Coastal fog affects production, but inland-facing roofs and sunny microclimates perform well.',
     localTips: [
       { title: 'Coastal considerations:', content: 'Monterey\'s salt air requires corrosion-resistant mounting hardware. Most modern solar installations use aluminum or marine-grade materials that handle this well.' },
+      { title: 'Fog factor:', content: 'Monterey\'s coastal fog reduces solar output roughly 15% compared to the Salinas Valley just inland. Batteries pay off faster here by storing midday production for evening use when fog rolls in.' },
+      { title: 'Eco-tourism incentives:', content: 'Tourism-driven sustainability programs in Monterey offer green certification for businesses that install solar — and residential adoption is increasing as the community embraces its environmental identity.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your roof faces north into fog, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not make sense if you rent, if your Monterey home gets heavy afternoon fog that drops daily sun hours below 4 (common along Cannery Row and the waterfront), if you live in a condo without roof access, or if your mild coastal climate keeps bills under $150. Inland areas like Ryan Ranch and Highway 68 corridor get notably more sun.',
     bottomLine: 'Monterey\'s high PG&E rates make solar worthwhile despite the coastal climate. Even smaller systems produce strong returns at 41.5¢/kWh.',
     faqs: [
       { question: 'How much does solar cost in Monterey in 2026?', answer: 'A typical 5.0 kW system costs approximately $11,750. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Monterey?', answer: 'Monterey residents pay approximately $200 per month on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Monterey, coastal aesthetic guidelines exist in some HOAs near Monterey Pines and Pacific Grove, but they cannot effectively block rooftop solar under state law. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Monterey get?', answer: 'Monterey averages approximately 2,900 hours of sunshine per year with 5.0 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Monterey, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1904,7 +2036,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3250,
     population: '145K',
     systemSizeKw: 8.0,
-    systemCostCash: 18800,
+    systemCostCash: 24400,
     introText:
       'Visalia is a Central Valley city of about 145,000 in Tulare County on SCE territory. Extreme summer heat and SCE\'s high rates make electricity a major expense for Visalia homeowners.',
     electricitySection:
@@ -1912,14 +2044,17 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'Visalia averages approximately 3,250 hours of sunshine per year with 5.7 peak sun hours per day. The Central Valley\'s hot, dry climate is excellent for solar production.',
     localTips: [
-      { title: 'Agricultural community:', content: 'Visalia\'s agricultural properties often have larger lots suited for ground-mount systems. Agricultural solar can offset well pump and equipment costs.' },
+      { title: 'Central Valley heat:', content: 'Summer temperatures regularly exceed 100°F in Visalia — over 40% of your annual electricity goes to cooling. Solar offsets this biggest single expense and locks in a predictable payment.' },
+      { title: 'Agricultural options:', content: 'Properties near Visalia\'s agricultural areas may qualify for ground-mount systems and additional ag solar programs — larger lots and rural zoning make oversized systems feasible.' },
+      { title: 'Sequoia gateway:', content: 'Visalia\'s position as the gateway to Sequoia National Park drives eco-tourism and green building adoption — solar is increasingly standard for both residential and hospitality properties in Tulare County.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork:
+      'Solar may not be ideal if you rent, if your older downtown Visalia home has heavy tree shading from mature valley oaks, or if your credit score prevents PPA qualification. Central Valley heat drives strong solar economics — most Visalia homeowners with viable roofs see excellent returns.',
     bottomLine: 'Visalia\'s Central Valley heat, SCE rates, and excellent sunshine make it a strong solar market.',
     faqs: [
       { question: 'How much does solar cost in Visalia in 2026?', answer: 'A typical 8.0 kW system costs approximately $18,800. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Visalia?', answer: 'Visalia residents pay approximately $270 per month on SCE.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Visalia, newer north Visalia developments are embracing solar with fast approval processes, and Central Valley heat makes the investment especially compelling. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Visalia get?', answer: 'Visalia averages approximately 3,250 hours of sunshine per year with 5.7 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Visalia, CA: 2026 SCE Rates, Costs & Your Options',
@@ -1943,7 +2078,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '90K',
     systemSizeKw: 7.5,
-    systemCostCash: 17600,
+    systemCostCash: 22900,
     introText:
       'Manteca is a growing Central Valley city of about 90,000 on PG&E territory. Hot summers and PG&E rates at 41.5¢/kWh make solar a compelling option for Manteca homeowners.',
     electricitySection:
@@ -1952,13 +2087,16 @@ export const CITIES: CityData[] = [
       'Manteca averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day. The Central Valley climate provides excellent solar production.',
     localTips: [
       { title: 'Growing community:', content: 'Manteca is one of the fastest-growing cities in the Central Valley. Newer homes often have solar-ready electrical infrastructure, reducing installation complexity.' },
+      { title: 'New subdivisions:', content: 'Manteca\'s fast growth means many newer subdivisions (Union Ranch area and beyond) are built solar-ready with pre-wired electrical panels and reinforced roof structures.' },
+      { title: 'Agricultural programs:', content: 'Properties near the San Joaquin Delta may qualify for agricultural solar programs — ground-mount systems on larger lots can offset both residential and ag water-pumping electricity costs.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork:
+      'Solar may not work well if you rent, if your older Manteca home needs a roof replacement first, or if your credit score prevents PPA qualification. Given Manteca\'s Central Valley heat and growing PG&E rates, it is uncommon for a homeowner with a viable roof to not benefit from solar.',
     bottomLine: 'Manteca\'s Central Valley heat, PG&E rates, and growing community make solar a smart investment.',
     faqs: [
       { question: 'How much does solar cost in Manteca in 2026?', answer: 'A typical 7.5 kW system costs approximately $17,600. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Manteca?', answer: 'Manteca residents pay approximately $285 per month on PG&E.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Manteca, fast-growing communities in the Union Ranch area feature newer solar-ready construction, and HOA approval is typically straightforward. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Manteca get?', answer: 'Manteca averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Manteca, CA: 2026 PG&E Rates, Costs & Your Options',
@@ -1984,7 +2122,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3300,
     population: '1.4M',
     systemSizeKw: 5.0,
-    systemCostCash: 11750,
+    systemCostCash: 16800,
     introText:
       'San Diego is California\'s second-largest city with 1.4 million residents, served by SDG&E — the most expensive utility in the state at 45.7¢/kWh. Despite lower usage thanks to the mild coastal climate, SDG&E\'s extreme rates make solar one of the fastest-payback investments in the country.',
     electricitySection:
@@ -1994,13 +2132,15 @@ export const CITIES: CityData[] = [
     localTips: [
       { title: 'Highest rates in California:', content: 'At 45.7¢/kWh, SDG&E customers get the fastest payback on solar in the state. Even a modest 5 kW system produces dramatic savings.' },
       { title: 'Coastal vs. inland:', content: 'San Diego neighborhoods vary significantly. Inland areas (El Cajon, Santee, Poway) are hotter with higher AC usage. Coastal areas have lower bills but still benefit from the high per-kWh rate.' },
+      { title: 'SDG&E has the highest rates in the nation:', content: 'Solar ROI is fastest here — even small systems provide strong returns.' },
+      { title: 'Military base proximity:', content: 'MCAS Miramar and Naval Base San Diego nearby — VA solar financing options may be available to eligible veterans.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $70/month (possible in very mild coastal areas with minimal usage), your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not be ideal if you rent, if your coastal San Diego home (La Jolla, Ocean Beach, Point Loma) gets persistent marine layer fog reducing sun hours, or if you live in a condo without roof access. That said, SDG&E\'s extreme rates — the highest of any major utility in the nation — mean even modest usage of $150/month sees significant savings. Almost every San Diego homeowner with a viable roof benefits.',
     bottomLine: 'San Diego is arguably the best solar market in California — highest utility rates in the state combined with excellent sunshine. Even small systems produce strong returns.',
     faqs: [
       { question: 'How much does solar cost in San Diego in 2026?', answer: 'A typical 5.0 kW system costs approximately $11,750. With a PPA, there is no upfront cost — you pay a fixed rate far below SDG&E\'s 45.7¢/kWh.' },
       { question: 'What is the average electric bill in San Diego?', answer: 'San Diego residents on SDG&E pay approximately $195 per month on average.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In San Diego, communities like Scripps Ranch, Carmel Valley, and Rancho Bernardo must comply — coastal view concerns are acknowledged but solar rights prevail. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does San Diego get?', answer: 'San Diego averages approximately 3,300 hours of sunshine per year with 5.7 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in San Diego, CA: 2026 SDG&E Rates, Costs & Your Options',
@@ -2024,7 +2164,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3250,
     population: '275K',
     systemSizeKw: 5.5,
-    systemCostCash: 13000,
+    systemCostCash: 18400,
     introText:
       'Chula Vista is the second-largest city in San Diego County with a population of about 275,000, on SDG&E territory. With SDG&E\'s rates at 45.7¢/kWh — the highest in California — Chula Vista homeowners have an exceptionally strong case for solar.',
     electricitySection:
@@ -2033,13 +2173,15 @@ export const CITIES: CityData[] = [
       'Chula Vista averages approximately 3,250 hours of sunshine per year with 5.6 peak sun hours per day. The South Bay location provides excellent solar production.',
     localTips: [
       { title: 'South Bay growth:', content: 'Chula Vista is one of the fastest-growing cities in San Diego County. Many newer homes in the eastern neighborhoods have solar-ready infrastructure.' },
+      { title: 'Highest EV adoption in San Diego County:', content: 'Chula Vista leads in EV adoption — solar+EV charging combos are increasingly standard.' },
+      { title: 'Community solar pilot programs:', content: 'Multi-unit housing residents can access community solar options for shared benefits.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $70/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not work well if you rent, if your west Chula Vista home near the bayfront gets more coastal fog than the Eastlake or Otay Ranch areas inland, or if your credit score prevents PPA qualification. SDG&E\'s extreme rates make the savings threshold very low — even $150/month bills see meaningful returns.',
     bottomLine: 'Chula Vista\'s SDG&E rates (highest in California) and strong sunshine make solar one of the best investments available to homeowners.',
     faqs: [
       { question: 'How much does solar cost in Chula Vista in 2026?', answer: 'A typical 5.5 kW system costs approximately $13,000. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Chula Vista?', answer: 'Chula Vista residents on SDG&E pay approximately $210 per month on average.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Chula Vista, communities like Eastlake and Otay Ranch must comply. With the highest EV adoption in San Diego County, these HOAs are increasingly encouraging solar+EV combos. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Chula Vista get?', answer: 'Chula Vista averages approximately 3,250 hours of sunshine per year with 5.6 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Chula Vista, CA: 2026 SDG&E Rates, Costs & Your Options',
@@ -2063,7 +2205,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3300,
     population: '107K',
     systemSizeKw: 6.0,
-    systemCostCash: 14100,
+    systemCostCash: 20100,
     introText:
       'El Cajon is an inland San Diego County city of about 107,000 on SDG&E territory. Being inland means hotter summers and more AC usage than coastal San Diego, combined with SDG&E\'s highest-in-state rates of 45.7¢/kWh.',
     electricitySection:
@@ -2071,14 +2213,16 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'El Cajon averages approximately 3,300 hours of sunshine per year with 5.8 peak sun hours per day. The inland valley gets more sun and heat than the coast, which means both higher bills and higher solar production.',
     localTips: [
-      { title: 'Inland heat advantage:', content: 'El Cajon\'s hotter climate drives higher electricity usage, but it also means more solar production. The combination of highest-in-state rates + high usage + high production creates an exceptional solar ROI.' },
+      { title: 'Inland heat advantage:', content: 'El Cajon\'s inland position means higher summer temperatures and bigger AC bills than coastal San Diego — but it also means more peak sun hours and faster solar payback.' },
+      { title: 'Military community:', content: 'With nearby military installations, El Cajon has a strong military community. VA-backed solar financing and military-specific solar programs can provide additional savings pathways.' },
+      { title: 'SDG&E rate leader:', content: 'SDG&E has the highest residential rates of any major utility in the nation. El Cajon homeowners paying 45+ cents per kWh see some of the fastest solar ROI in California.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not make sense if you rent, if your older El Cajon home in the established downtown area needs a roof replacement first, or if dense tree shading blocks southern exposure. Given El Cajon\'s inland heat and SDG&E\'s highest-in-the-nation rates, it is rare for a homeowner to not benefit.',
     bottomLine: 'El Cajon\'s inland heat, SDG&E\'s highest-in-California rates, and excellent sunshine create one of the best solar markets in the state.',
     faqs: [
       { question: 'How much does solar cost in El Cajon in 2026?', answer: 'A typical 6.0 kW system costs approximately $14,100. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in El Cajon?', answer: 'El Cajon residents on SDG&E pay approximately $240 per month on average.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In El Cajon, established east county HOAs must comply — inland heat makes solar especially popular and HOA approvals are typically fast. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does El Cajon get?', answer: 'El Cajon averages approximately 3,300 hours of sunshine per year with 5.8 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in El Cajon, CA: 2026 SDG&E Rates, Costs & Your Options',
@@ -2102,7 +2246,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '63K',
     systemSizeKw: 4.5,
-    systemCostCash: 10600,
+    systemCostCash: 15100,
     introText:
       'Encinitas is an affluent coastal city of about 63,000 in northern San Diego County on SDG&E territory. With high home values and SDG&E\'s 45.7¢/kWh rate, solar is both a savings play and a property value enhancement.',
     electricitySection:
@@ -2110,14 +2254,16 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'Encinitas averages approximately 3,200 hours of sunshine per year with 5.5 peak sun hours per day. The coastal location provides consistent, reliable solar production.',
     localTips: [
-      { title: 'High property values:', content: 'Encinitas homes command premium prices. Solar adds to property value and is a selling point in this environmentally conscious community.' },
+      { title: 'Coastal sunshine:', content: 'Despite being coastal, Encinitas gets surprisingly high sun hours with minimal fog compared to north county coast locations. Your solar production will be strong year-round.' },
+      { title: 'Eco-conscious community:', content: 'Encinitas has one of the highest per-capita solar adoption rates in San Diego County — the community actively supports renewable energy and local installers are experienced with the permitting process.' },
+      { title: 'SDG&E rate relief:', content: 'SDG&E customers in Encinitas pay some of the highest per-kWh rates in the nation. Even with moderate coastal usage, solar provides immediate bill relief and protection against continued rate increases.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $70/month, your roof has heavy shade from mature trees, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not be ideal if you rent, if your Encinitas home has a small or heavily shaded roof, or if coastal commission rules affect a planned ground-mount system (rooftop is generally exempt). Despite being coastal, Encinitas gets surprisingly good sun — and SDG&E\'s extreme rates make the savings math work for almost everyone.',
     bottomLine: 'Encinitas\'s SDG&E rates, affluent housing market, and coastal sunshine make solar an excellent investment.',
     faqs: [
       { question: 'How much does solar cost in Encinitas in 2026?', answer: 'A typical 4.5 kW system costs approximately $10,600. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Encinitas?', answer: 'Encinitas residents on SDG&E pay approximately $190 per month on average.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Encinitas, coastal HOAs are subject to strong anti-HOA solar rights enforcement in this eco-conscious community. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Encinitas get?', answer: 'Encinitas averages approximately 3,200 hours of sunshine per year with 5.5 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Encinitas, CA: 2026 SDG&E Rates, Costs & Your Options',
@@ -2141,7 +2287,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3150,
     population: '65K',
     systemSizeKw: 7.0,
-    systemCostCash: 16500,
+    systemCostCash: 22100,
     introText:
       'San Clemente is a coastal Orange County city of about 65,000 on SCE territory. Known as the "Spanish Village by the Sea," San Clemente homeowners face SCE rates at 34.5¢/kWh with excellent coastal sunshine.',
     electricitySection:
@@ -2149,14 +2295,16 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'San Clemente averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day. The south-facing coastal exposure provides reliable solar production.',
     localTips: [
-      { title: 'Coastal Orange County:', content: 'San Clemente\'s mild climate and south-facing coastal orientation make it ideal for solar. Less AC usage means smaller systems can cover your needs effectively.' },
+      { title: 'Pool owners:', content: 'San Clemente has high pool ownership — pairing solar with a pool heater or heat pump dramatically increases your savings and extends your swimming season without the utility bill spike.' },
+      { title: 'Coastal protection:', content: 'AB 2188 overrides any aesthetic HOA restrictions on solar in San Clemente. Beach community guidelines cannot effectively prevent you from installing panels on your roof.' },
+      { title: 'Coastal climate bonus:', content: 'San Clemente\'s mild coastal temperatures mean lower AC bills than inland Orange County — but SCE\'s high per-kWh rates still make solar worthwhile, especially if you have a pool or EV charger adding to your baseline usage.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not work well if you rent, if your beachfront San Clemente home has a roof orientation that faces entirely north or east, or if your monthly SCE bill is under $150 due to coastal temperature moderation. For most San Clemente homeowners — especially those with pools — solar pencils out clearly.',
     bottomLine: 'San Clemente\'s SCE rates, coastal sunshine, and high home values make solar a strong investment.',
     faqs: [
       { question: 'How much does solar cost in San Clemente in 2026?', answer: 'A typical 7.0 kW system costs approximately $16,500. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in San Clemente?', answer: 'San Clemente residents pay approximately $250 per month on SCE.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In San Clemente, beach community HOAs with strict aesthetics must comply — AB 2188 overrides any effective solar prohibition. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does San Clemente get?', answer: 'San Clemente averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in San Clemente, CA: 2026 SCE Rates, Costs & Your Options',
@@ -2182,7 +2330,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '138K',
     systemSizeKw: 6.0,
-    systemCostCash: 14100,
+    systemCostCash: 18900,
     introText:
       'Pasadena is a city of about 138,000 in LA County, served by its own municipal utility — Glendale Water & Power (GWP) rates are used as a proxy for Pasadena Water & Power. Municipal utility rates are significantly lower than SCE or PG&E, but solar still makes sense for many homeowners.',
     electricitySection:
@@ -2191,13 +2339,15 @@ export const CITIES: CityData[] = [
       'Pasadena averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day. The San Gabriel Valley location provides excellent solar production.',
     localTips: [
       { title: 'Municipal utility:', content: 'Pasadena\'s municipal utility offers lower rates than SCE, but solar PPAs can still undercut these rates. Check with Pasadena Water & Power for their current net metering terms.' },
+      { title: 'GWP municipal utility export credits:', content: 'GWP offers more favorable export credits than SCE — better solar economics.' },
+      { title: 'Historic districts have solar-friendly variances:', content: 'Don\'t let old architecture deter you — state law protects your solar rights.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your property has heavy shade from Pasadena\'s mature trees, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not be the best fit if you rent, if your historic Pasadena home has a roof that cannot support panel weight without reinforcement, or if your GWP municipal rates keep your bill under $120/month. GWP\'s lower rates mean longer payback than SCE territory — but you are still hedging against future increases and locking in a predictable payment.',
     bottomLine: 'Pasadena\'s municipal rates are lower than SCE, but the excellent sunshine and rising energy costs still make solar a worthwhile investment.',
     faqs: [
       { question: 'How much does solar cost in Pasadena in 2026?', answer: 'A typical 6.0 kW system costs approximately $14,100. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Pasadena?', answer: 'Pasadena residents pay approximately $180 per month on average.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Pasadena, historic district HOAs must comply — GWP municipal utility offers extra export credits making solar attractive even in older neighborhoods. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Pasadena get?', answer: 'Pasadena averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Pasadena, CA: 2026 Rates, Costs & Your Options',
@@ -2221,7 +2371,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3150,
     population: '466K',
     systemSizeKw: 6.5,
-    systemCostCash: 15300,
+    systemCostCash: 20500,
     introText:
       'Long Beach is one of the largest cities in LA County with a population of about 466,000 on SCE territory. The port city\'s mix of older and newer housing, combined with SCE\'s high rates, creates strong solar potential.',
     electricitySection:
@@ -2229,14 +2379,16 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'Long Beach averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day. The coastal location provides consistent solar production year-round.',
     localTips: [
-      { title: 'Port city diversity:', content: 'Long Beach has a huge range of housing types — from bungalows to high-rises. Single-family homes with good roof exposure are the best candidates for rooftop solar.' },
+      { title: 'Port sustainability:', content: 'The Port of Long Beach\'s massive solar+storage projects are setting a citywide green precedent — residential solar adoption is growing as the city commits to sustainability goals.' },
+      { title: 'Multifamily access:', content: 'Long Beach has increasing multifamily solar mandates. If you own a condo, check with your association about shared rooftop solar access — the city is actively promoting these programs.' },
+      { title: 'Coastal with SCE rates:', content: 'Long Beach combines mild coastal temperatures (lower AC bills) with SCE\'s high per-kWh rates. Even moderate usage translates to meaningful savings — and EV ownership is growing fast in the port city.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, you live in a multi-unit building, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not work well if you rent, if your older Long Beach bungalow has a small roof with limited south-facing exposure, if you live in a multi-unit building downtown without roof access, or if your SCE CARE rate keeps bills under $130/month. For Long Beach homeowners with pool pumps or EV chargers, the savings math is especially strong.',
     bottomLine: 'Long Beach\'s SCE rates, coastal sunshine, and diverse housing market make solar a strong option for single-family homeowners.',
     faqs: [
       { question: 'How much does solar cost in Long Beach in 2026?', answer: 'A typical 6.5 kW system costs approximately $15,300. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Long Beach?', answer: 'Long Beach residents pay approximately $250 per month on SCE.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Long Beach, the diverse HOA landscape from downtown condos to Belmont Shore means solar rights apply to all. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Long Beach get?', answer: 'Long Beach averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Long Beach, CA: 2026 SCE Rates, Costs & Your Options',
@@ -2260,7 +2412,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '350K',
     systemSizeKw: 7.0,
-    systemCostCash: 16500,
+    systemCostCash: 22100,
     introText:
       'Anaheim is one of the largest cities in Orange County with a population of about 350,000 on SCE territory. Home to Disneyland and a mix of residential neighborhoods, Anaheim homeowners face SCE\'s high rates at 34.5¢/kWh.',
     electricitySection:
@@ -2268,14 +2420,16 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'Anaheim averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day. Orange County\'s climate provides excellent, reliable solar production.',
     localTips: [
-      { title: 'Orange County sunshine:', content: 'Anaheim\'s inland Orange County location gets warmer than coastal OC cities, meaning more AC usage but also better solar production. The math works in your favor.' },
+      { title: 'Green initiatives:', content: 'Anaheim\'s municipal sustainability goals, influenced by the Disneyland Resort area\'s green commitments, are driving strong Title 24 compliance in newer developments like Platinum Triangle.' },
+      { title: 'Anaheim Hills heat:', content: 'If you\'re in Anaheim Hills, summer temperatures push AC costs significantly higher than flatland Anaheim — solar payback is faster in the hills where you need it most.' },
+      { title: 'Orange County solar market:', content: 'Anaheim benefits from a competitive Orange County solar installer market — multiple established companies serve the area, which keeps pricing competitive and installation quality high.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not be ideal if you rent, if your Anaheim flat-top apartment building has shared roof access issues, or if your SCE CARE bill is already under $150/month. Most Anaheim single-family homeowners — especially in Anaheim Hills where summer heat drives AC costs — see strong returns from solar.',
     bottomLine: 'Anaheim\'s SCE rates, Orange County sunshine, and warm summers make solar a strong financial move.',
     faqs: [
       { question: 'How much does solar cost in Anaheim in 2026?', answer: 'A typical 7.0 kW system costs approximately $16,500. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Anaheim?', answer: 'Anaheim residents pay approximately $260 per month on SCE.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Anaheim Hills, HOAs near the Disneyland area are embracing solar due to green image and tourism considerations — Title 24 compliance is strong. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Anaheim get?', answer: 'Anaheim averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Anaheim, CA: 2026 SCE Rates, Costs & Your Options',
@@ -2299,7 +2453,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '196K',
     systemSizeKw: 5.5,
-    systemCostCash: 13000,
+    systemCostCash: 17300,
     introText:
       'Glendale is a city of about 196,000 in LA County, served by Glendale Water & Power (GWP) — a municipal utility with rates significantly lower than SCE. At roughly 22¢/kWh, GWP customers still benefit from solar, especially those with higher usage.',
     electricitySection:
@@ -2307,14 +2461,16 @@ export const CITIES: CityData[] = [
     solarPotentialText:
       'Glendale averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day. The San Fernando Valley-adjacent location provides excellent solar exposure.',
     localTips: [
-      { title: 'GWP 36-cent advantage:', content: 'At ~22¢/kWh, GWP rates are much lower than SCE. Solar payback is longer than in SCE territory, but PPAs can still undercut GWP rates for immediate savings.' },
+      { title: 'GWP advantage:', content: 'Glendale Water & Power municipal rates are roughly 36¢/kWh lower than neighboring SCE territory — solar still makes sense as a hedge against future increases and for payment predictability.' },
+      { title: 'Historic compatibility:', content: 'Glendale\'s historic districts in Verdugo Woodlands and Montrose have solar-friendly variances under state law — don\'t let older architecture discourage you from going solar.' },
+      { title: 'Municipal net metering:', content: 'GWP has its own net metering program separate from NEM 3.0 — export rates may be more favorable than SCE/PG&E territory. Check with GWP directly for current export credit rates before sizing your system.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $70/month (more likely with GWP\'s lower rates), your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not make sense if you rent, if your older Glendale home near the Verdugo Mountains has heavy hillside shading, or if your GWP bill is already under $120/month. Municipal rates are lower than SCE — but they are still rising, and a locked-in solar payment gives you predictability.',
     bottomLine: 'Glendale\'s municipal utility keeps rates lower than SCE, but solar PPAs can still offer savings. Higher-usage households benefit the most.',
     faqs: [
       { question: 'How much does solar cost in Glendale in 2026?', answer: 'A typical 5.5 kW system costs approximately $13,000. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Glendale?', answer: 'Glendale residents on GWP pay approximately $170 per month on average.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Glendale, historic HOAs in Verdugo Woodlands and Montrose have solar-friendly variances under state law. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Glendale get?', answer: 'Glendale averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Glendale, CA: 2026 GWP Rates, Costs & Your Options',
@@ -2338,7 +2494,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3200,
     population: '126K',
     systemSizeKw: 7.5,
-    systemCostCash: 17600,
+    systemCostCash: 23600,
     introText:
       'Thousand Oaks is an affluent city of about 126,000 in Ventura County on SCE territory. With high home values, warm inland valleys, and SCE rates at 34.5¢/kWh, solar is both a savings and property value play.',
     electricitySection:
@@ -2347,13 +2503,15 @@ export const CITIES: CityData[] = [
       'Thousand Oaks averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day. The inland valley location provides excellent solar exposure.',
     localTips: [
       { title: 'High home values:', content: 'Thousand Oaks homes command premium prices. Solar adds to resale value and signals environmental responsibility in this affluent community.' },
+      { title: 'Ventura County fire zone:', content: 'Solar+battery systems are heavily incentivized for grid resilience.' },
+      { title: 'Conejo Valley temperatures:', content: 'High AC usage makes solar payback faster.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $100/month, your roof has heavy shade from hillside trees, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not work well if you rent, if your Thousand Oaks home in a canyon area gets significant morning or afternoon hillside shading, or if you are planning to sell within 2 years. Ventura County fire zone incentives for solar+battery make the investment especially compelling for backup power during PSPS events.',
     bottomLine: 'Thousand Oaks\'s SCE rates, warm climate, and high home values make solar an excellent investment.',
     faqs: [
       { question: 'How much does solar cost in Thousand Oaks in 2026?', answer: 'A typical 7.5 kW system costs approximately $17,600. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Thousand Oaks?', answer: 'Thousand Oaks residents pay approximately $280 per month on SCE.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Thousand Oaks, HOAs like Dos Vientos and Lang Ranch must comply — Ventura County fire zone means solar+battery systems are heavily incentivized. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Thousand Oaks get?', answer: 'Thousand Oaks averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Thousand Oaks, CA: 2026 SCE Rates, Costs & Your Options',
@@ -2377,7 +2535,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3250,
     population: '228K',
     systemSizeKw: 8.0,
-    systemCostCash: 18800,
+    systemCostCash: 25200,
     introText:
       'Santa Clarita is one of the largest cities in LA County with a population of about 228,000 on SCE territory. Hot Santa Clarita Valley summers and SCE\'s high rates make electricity a major household expense.',
     electricitySection:
@@ -2386,13 +2544,16 @@ export const CITIES: CityData[] = [
       'Santa Clarita averages approximately 3,250 hours of sunshine per year with 5.7 peak sun hours per day. The valley location provides excellent solar production.',
     localTips: [
       { title: 'Valley heat:', content: 'Santa Clarita\'s hot summers drive some of the highest SCE bills in LA County. Pre-cooling before peak hours and solar + battery storage are the most effective strategies.' },
+      { title: 'LA County fire zone resilience:', content: 'Solar+battery systems are heavily incentivized for resilience.' },
+      { title: 'Santa Clarita Valley heat:', content: '35%+ of annual electricity goes to cooling — solar payback is faster.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork:
+      'Solar may not make sense if you rent, if your Santa Clarita home in a tight Saugus or Canyon Country canyon gets significant shading, or if your SCE CARE bill is under $150. Santa Clarita Valley summer heat pushes most households to $250-350/month bills — at that level, solar savings are substantial.',
     bottomLine: 'Santa Clarita\'s valley heat, high SCE bills, and excellent sunshine make it a top solar market in LA County.',
     faqs: [
       { question: 'How much does solar cost in Santa Clarita in 2026?', answer: 'A typical 8.0 kW system costs approximately $18,800. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Santa Clarita?', answer: 'Santa Clarita residents pay approximately $290 per month on SCE.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Santa Clarita, Valencia, Saugus, and Newhall HOAs must comply — LA County fire zone means solar+battery systems are heavily incentivized for resilience. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Santa Clarita get?', answer: 'Santa Clarita averages approximately 3,250 hours of sunshine per year with 5.7 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Santa Clarita, CA: 2026 SCE Rates, Costs & Your Options',
@@ -2416,7 +2577,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3150,
     population: '310K',
     systemSizeKw: 6.5,
-    systemCostCash: 15300,
+    systemCostCash: 20500,
     introText:
       'Santa Ana is the county seat of Orange County with a population of about 310,000 on SCE territory. As one of the most densely populated cities in California, Santa Ana homeowners face SCE\'s high rates in a competitive housing market.',
     electricitySection:
@@ -2425,13 +2586,15 @@ export const CITIES: CityData[] = [
       'Santa Ana averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day. Orange County\'s reliable sunshine provides consistent solar production.',
     localTips: [
       { title: 'Dense housing:', content: 'Santa Ana\'s higher density means some homes have smaller roofs or shading from neighboring buildings. Verify your specific roof\'s solar potential before sizing a system.' },
+      { title: 'Dense urban core potential:', content: 'Strong rooftop solar potential — newer flat-roof commercial buildings ideal.' },
+      { title: 'Lower installation costs:', content: 'Less competition means more affordable solar due to lower installer overhead.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your roof is too small or heavily shaded, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not be ideal if you rent, if your older central Santa Ana home has a small or flat roof with drainage issues, or if you are in a multi-unit building without roof access. For single-family homeowners, Santa Ana\'s position as one of Orange County\'s most affordable solar markets means competitive installer pricing.',
     bottomLine: 'Santa Ana\'s SCE rates and Orange County sunshine make solar a smart move for homeowners with adequate roof exposure.',
     faqs: [
       { question: 'How much does solar cost in Santa Ana in 2026?', answer: 'A typical 6.5 kW system costs approximately $15,300. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Santa Ana?', answer: 'Santa Ana residents pay approximately $245 per month on SCE.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Santa Ana, established Orange County HOAs must comply — rooftop solar is fully protected by state law even in dense neighborhoods. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Santa Ana get?', answer: 'Santa Ana averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Santa Ana, CA: 2026 SCE Rates, Costs & Your Options',
@@ -2455,7 +2618,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3150,
     population: '80K',
     systemSizeKw: 6.5,
-    systemCostCash: 15300,
+    systemCostCash: 20500,
     introText:
       'Lakewood is a city of about 80,000 in southeast LA County on SCE territory. A classic post-war suburban community, Lakewood homeowners face SCE\'s high rates with a housing stock that\'s well-suited for solar.',
     electricitySection:
@@ -2464,13 +2627,15 @@ export const CITIES: CityData[] = [
       'Lakewood averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day. The flat terrain and single-story homes common in Lakewood provide good solar exposure.',
     localTips: [
       { title: 'Post-war housing:', content: 'Lakewood\'s mid-century homes often have simple roof designs ideal for solar. Check roof condition — some may need updating before installation.' },
+      { title: 'Mid-century housing exposure:', content: 'Good south-facing roof exposure for solar.' },
+      { title: 'Close to Long Beach sustainability:', content: 'Community solar expanding — port sustainability initiatives drive regional green adoption.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $80/month, your roof needs replacement, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not work well if you rent, if your mid-century Lakewood home has a small hip roof with limited panel space, or if your SCE CARE rate keeps bills under $140/month. Many Lakewood homes from the 1950s-60s have excellent south-facing exposure — the roof age is the main factor to verify first.',
     bottomLine: 'Lakewood\'s SCE rates and suburban housing stock make solar a straightforward value proposition.',
     faqs: [
       { question: 'How much does solar cost in Lakewood in 2026?', answer: 'A typical 6.5 kW system costs approximately $15,300. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Lakewood?', answer: 'Lakewood residents pay approximately $240 per month on SCE.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Lakewood, Lakewood Mutual (one of California\'s largest HOAs) must comply with solar rights protections despite its size. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Lakewood get?', answer: 'Lakewood averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day.' },
     ],
     metaTitle: 'Solar Savings in Lakewood, CA: 2026 SCE Rates, Costs & Your Options',
@@ -2494,7 +2659,7 @@ export const CITIES: CityData[] = [
     annualSunshineHours: 3500,
     population: '48K',
     systemSizeKw: 10.0,
-    systemCostCash: 23500,
+    systemCostCash: 31500,
     introText:
       'Palm Springs is a desert resort city of about 48,000 in Riverside County on SCE territory. With some of the best sunshine in the entire country and extreme summer heat driving massive AC bills, Palm Springs is an exceptional solar market.',
     electricitySection:
@@ -2504,13 +2669,15 @@ export const CITIES: CityData[] = [
     localTips: [
       { title: 'Desert climate:', content: 'Palm Springs gets more sun than almost anywhere in California. The extreme heat that drives your AC bills also produces maximum solar energy. Solar + battery storage is the optimal setup for the desert.' },
       { title: 'Vacation homes:', content: 'If your Palm Springs property is a vacation home or rental, solar still works. PPAs transfer with the property and reduce operating costs for rental properties.' },
+      { title: 'Desert peak sun hours:', content: '6.5 peak sun hours is among the best in California.' },
+      { title: 'Extreme summer AC bills:', content: 'Bills reach $400-500+, making solar payback the fastest in the state.' },
     ],
-    whenSolarDoesntWork: 'If your bill is under $100/month (unlikely in Palm Springs), your roof has shade issues, or you plan to sell within 1-2 years.',
+    whenSolarDoesntWork: 'Solar may not make sense if you rent, if your mid-century Palm Springs home has a flat roof that needs re-coating first, or if your winter-only residency means you are not there during the highest-production months. For full-time residents, Palm Springs is one of the best solar locations in the entire country — 6.5 peak sun hours and extreme summer bills make payback among the fastest anywhere.',
     bottomLine: 'Palm Springs has some of the best solar economics in the entire country — extreme sunshine, extreme heat-driven bills, and high SCE rates. If you own a home here, solar is nearly a no-brainer.',
     faqs: [
       { question: 'How much does solar cost in Palm Springs in 2026?', answer: 'A typical 10.0 kW system costs approximately $23,500. With a PPA, there is no upfront cost.' },
       { question: 'What is the average electric bill in Palm Springs?', answer: 'Palm Springs residents pay approximately $350 per month on SCE, with summer bills often exceeding $500.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. Under California\'s Solar Rights Act (Civil Code 714), HOAs cannot effectively prohibit solar panels or impose restrictions that increase costs by more than $1,000 or reduce system output by more than 10%. In Palm Springs, mid-century modern HOAs have aesthetic guidelines but cannot effectively block solar under AB 2188. If your HOA pushes back, the law is firmly on your side.' },
       { question: 'How many hours of sun does Palm Springs get?', answer: 'Palm Springs averages approximately 3,500 hours of sunshine per year with 6.5 peak sun hours per day — among the highest in the US.' },
     ],
     metaTitle: 'Solar Savings in Palm Springs, CA: 2026 SCE Rates, Costs & Your Options',
