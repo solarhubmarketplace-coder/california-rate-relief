@@ -91,6 +91,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'ecoflow-delta-pro-3-review',
     'anker-solix-f3800-review',
     'bluetti-ac500-review',
+    'jackery-explorer-2000-plus-review',
+    'bluetti-ac200l-review',
+    'best-electric-bikes',
+    'best-mini-split-ac',
+    'best-electric-lawn-mower',
+    'best-smart-thermostat',
+    'best-whole-house-generator',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-16'),

@@ -8,7 +8,7 @@ import { Battery, Zap, Star, ChevronRight, Search } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Product Reviews & Comparisons | California Rate Relief',
   description:
-    'Best portable power stations, solar generator reviews, and power station reviews 2026. Expert comparisons of EcoFlow, Anker SOLIX, Bluetti, and more.',
+    'Expert product reviews and buying guides for portable power stations, e-bikes, mini splits, electric lawn mowers, smart thermostats, and whole house generators. Tested and verified for 2026.',
   alternates: {
     canonical: '/reviews',
   },
@@ -55,6 +55,64 @@ const reviews: ReviewCard[] = [
       'The most modular power station with 3,000W solar input and expandability up to 18,432 Wh.',
     badge: 'Product Review',
     rating: 4.5,
+  },
+  {
+    slug: 'jackery-explorer-2000-plus-review',
+    title: 'Jackery Explorer 2000 Plus Review',
+    description:
+      'The most portable power station in its class at 61.5 lbs. Now under $1,000 with LFP battery and 4,000-cycle lifespan.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'bluetti-ac200l-review',
+    title: 'Bluetti AC200L Review',
+    description:
+      'The best portable power station under $1,000. 2,048 Wh, fast charging (0-80% in 45 min), and expandable to 8,192 Wh.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-bikes',
+    title: 'Best Electric Bikes 2026',
+    description:
+      'Aventon vs Rad Power vs Lectric \u2014 top e-bikes from $799 to $1,999 compared. Fat tire, folding, and city commuter picks.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-mini-split-ac',
+    title: 'Best Mini Split AC 2026',
+    description:
+      'MrCool DIY mini splits reviewed. Save $3,000-$8,000 on installation with pre-charged QuickConnect line sets. Up to 22.7 SEER2.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-lawn-mower',
+    title: 'Best Electric Lawn Mower 2026',
+    description:
+      'EGO Select Cut vs Greenworks 80V vs Ryobi 40V. Battery platforms compared for every yard size.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-smart-thermostat',
+    title: 'Best Smart Thermostat 2026',
+    description:
+      'Ecobee Premium vs Google Nest 4th Gen. Save up to 26% on energy with smart scheduling and TOU optimization.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-whole-house-generator',
+    title: 'Best Whole House Generator 2026',
+    description:
+      'Generac Guardian 22kW vs 24kW vs 26kW, plus Kohler and Champion. Sizing guide, installation costs, and fuel comparison.',
+    badge: 'Comparison Guide',
+    icon: 'battery',
   },
 ];
 
@@ -132,9 +190,9 @@ export default function ReviewsPage() {
                 Product Reviews & Buying Guides
               </h1>
               <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-                Expert reviews and comparisons of portable power stations, solar
-                generators, and home backup systems — tested and verified for
-                2026.
+                Expert reviews and comparisons of portable power stations, e-bikes,
+                mini splits, electric lawn mowers, smart thermostats, generators,
+                and more — tested and verified for 2026.
               </p>
             </div>
 
