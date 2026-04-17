@@ -55,14 +55,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'why-is-my-pge-bill-so-high',
     'sdge-time-of-use-rates-2026',
     'solar-ppa-explained-california',
-    'california-public-utilities-commission',
-    'california-energy-commission',
-    'california-solar-tax-credit-2026',
-    'solar-tax-credit-2026',
-    'commercial-solar-installation-cost-california',
-    'solar-powered-ev-charger',
-    'nem-2-vs-nem-3',
-    'solar-ev-charging-california',
   ].map((slug) => ({
     url: `${BASE_URL}/blog/${slug}`,
     lastModified: new Date('2026-04-16'),
@@ -93,5 +85,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...blogPosts, ...cityPages, ...regionalHubs];
+  // Review / affiliate pages
+  const reviewPages: MetadataRoute.Sitemap = [
+    'best-portable-power-stations',
+    'ecoflow-delta-pro-3-review',
+    'anker-solix-f3800-review',
+    'bluetti-ac500-review',
+  ].map((slug) => ({
+    url: `${BASE_URL}/reviews/${slug}`,
+    lastModified: new Date('2026-04-16'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  // Reviews index page
+  const reviewIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/reviews`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+  ];
+
+  return [...staticPages, ...blogPosts, ...reviewIndex, ...reviewPages, ...cityPages, ...regionalHubs];
 }
