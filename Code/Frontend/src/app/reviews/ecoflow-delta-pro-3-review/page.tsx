@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
+import { ReviewLayout } from '@/components/reviews/ReviewLayout';
+import { ReviewHeader } from '@/components/reviews/ReviewHeader';
+import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import {
   ArrowLeft,
   ArrowRight,
@@ -45,12 +45,12 @@ const reviewSchema = {
   datePublished: '2026-04-16',
   author: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -138,8 +138,8 @@ const faqSchema = {
 
 export default function EcoFlowDeltaPro3Review() {
   return (
-    <PublicLayout>
-      <Header />
+    <ReviewLayout>
+      <ReviewHeader />
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
@@ -148,7 +148,7 @@ export default function EcoFlowDeltaPro3Review() {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className='py-16 bg-background'>
+      <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
             {/* Breadcrumb */}
@@ -1011,18 +1011,18 @@ export default function EcoFlowDeltaPro3Review() {
 
               <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center'>
                 <h3 className='text-lg font-bold text-foreground mb-2'>
-                  California Homeowner?
+                  Explore More Power Station Reviews
                 </h3>
                 <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
-                  A portable power station is a great backup tool, but rooftop
-                  solar with a PPA can eliminate your peak-rate bill entirely —
-                  at no upfront cost. Check if you qualify in 60 seconds.
+                  See how the Delta Pro 3 stacks up against other top-rated
+                  portable power stations, home batteries, and solar generators
+                  in our full review index.
                 </p>
                 <Link
-                  href='/solar-savings'
+                  href='/reviews'
                   className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
                 >
-                  Check My Savings
+                  Browse All Reviews
                   <ArrowRight className='h-4 w-4' />
                 </Link>
               </div>
@@ -1048,7 +1048,7 @@ export default function EcoFlowDeltaPro3Review() {
           </article>
         </div>
       </main>
-      <Footer />
-    </PublicLayout>
+      <ReviewFooter />
+    </ReviewLayout>
   );
 }

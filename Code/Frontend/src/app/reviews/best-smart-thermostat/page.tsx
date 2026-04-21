@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
+import { ReviewLayout } from '@/components/reviews/ReviewLayout';
+import { ReviewHeader } from '@/components/reviews/ReviewHeader';
+import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import {
   ArrowLeft,
   Star,
@@ -46,12 +46,12 @@ const articleSchema = {
   dateModified: '2026-04-17',
   author: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -180,8 +180,8 @@ const thermostats: Thermostat[] = [
 
 export default function BestSmartThermostatPage() {
   return (
-    <PublicLayout>
-      <Header />
+    <ReviewLayout>
+      <ReviewHeader />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -190,7 +190,7 @@ export default function BestSmartThermostatPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="py-16 bg-background">
+      <main className="py-16" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="container mx-auto px-4">
           <article className="max-w-4xl mx-auto">
             {/* Breadcrumb */}
@@ -844,14 +844,14 @@ export default function BestSmartThermostatPage() {
                 </div>
                 <div className="text-center">
                   <p className="text-foreground/80 mb-4">
-                    Curious if your home qualifies for a solar program with no out-of-pocket
-                    cost? California homeowners with PG&E, SCE, or SDG&E may be eligible.
+                    Looking for more ways to cut your energy costs? Browse our full library
+                    of independent green energy product reviews.
                   </p>
                   <Link
-                    href="/solar-savings"
+                    href="/reviews"
                     className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
                   >
-                    Check If You Qualify for Solar Savings
+                    Browse All GreenVerdict Reviews
                     <ChevronRight className="h-5 w-5" />
                   </Link>
                 </div>
@@ -996,23 +996,21 @@ export default function BestSmartThermostatPage() {
             {/* ========== FINAL CTA ========== */}
             <section className="mb-8">
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 text-center">
-                <Sun className="h-10 w-10 text-primary mx-auto mb-4" />
+                <Zap className="h-10 w-10 text-primary mx-auto mb-4" />
                 <h2 className="text-2xl font-bold text-foreground mb-3">
-                  Ready to Maximize Your Energy Savings?
+                  Want More Independent Energy Product Reviews?
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  A smart thermostat is a great first step, but the biggest savings come from
-                  pairing it with rooftop solar. California homeowners can qualify for
-                  programs that put solar on your roof at no cost out of pocket, with fixed
-                  monthly payments typically 30-50% less than your current utility bill. Add
-                  a smart thermostat to optimize your solar self-consumption and you could
-                  cut your energy costs by 60-80%.
+                  GreenVerdict publishes hands-on, data-driven reviews of smart home energy
+                  products, portable power stations, e-bikes, and more. Every review includes
+                  real specs, honest pros and cons, and no manufacturer influence. Browse our
+                  full review library to find the best products for your home.
                 </p>
                 <Link
-                  href="/solar-savings"
+                  href="/reviews"
                   className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >
-                  Check If You Qualify
+                  Explore All GreenVerdict Reviews
                   <ChevronRight className="h-5 w-5" />
                 </Link>
               </div>
@@ -1021,7 +1019,7 @@ export default function BestSmartThermostatPage() {
           </article>
         </div>
       </main>
-      <Footer />
-    </PublicLayout>
+      <ReviewFooter />
+    </ReviewLayout>
   );
 }

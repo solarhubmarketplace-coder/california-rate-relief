@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
+import { ReviewLayout } from '@/components/reviews/ReviewLayout';
+import { ReviewHeader } from '@/components/reviews/ReviewHeader';
+import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import {
   ArrowLeft,
   Battery,
@@ -46,12 +46,12 @@ const articleSchema = {
   dateModified: '2026-04-17',
   author: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -191,8 +191,8 @@ const mowers: Mower[] = [
 
 export default function BestElectricLawnMower() {
   return (
-    <PublicLayout>
-      <Header />
+    <ReviewLayout>
+      <ReviewHeader />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -201,7 +201,7 @@ export default function BestElectricLawnMower() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="py-16 bg-background">
+      <main className="py-16" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="container mx-auto px-4">
           <article className="max-w-4xl mx-auto">
             {/* Breadcrumb */}
@@ -1227,23 +1227,21 @@ export default function BestElectricLawnMower() {
             {/* ========== FINAL CTA ========== */}
             <section className="mb-8">
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 text-center">
-                <Sun className="h-10 w-10 text-primary mx-auto mb-4" />
+                <Zap className="h-10 w-10 text-primary mx-auto mb-4" />
                 <h2 className="text-2xl font-bold text-foreground mb-3">
-                  Power Your Lawn (and Your Home) With Solar
+                  Explore More Green Energy Reviews
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  An electric lawn mower is a smart first step toward cleaner, cheaper energy. But
-                  the biggest savings come from putting solar on your roof. California homeowners
-                  can qualify for programs that install solar panels at no cost out of pocket, with
-                  fixed monthly payments typically 30&ndash;50% less than your current utility bill.
-                  Charge your mower, power your home, and lock in lower rates &mdash; all from
-                  sunlight.
+                  GreenVerdict reviews the best clean energy products so you can make informed
+                  decisions. From portable power stations to e-bikes and smart home tech, we test
+                  and compare so you don&apos;t have to. Browse all our in-depth reviews and
+                  comparison guides.
                 </p>
                 <Link
-                  href="/solar-savings"
+                  href="/reviews"
                   className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >
-                  Check If You Qualify
+                  Browse All Reviews
                   <ChevronRight className="h-5 w-5" />
                 </Link>
               </div>
@@ -1252,7 +1250,7 @@ export default function BestElectricLawnMower() {
           </article>
         </div>
       </main>
-      <Footer />
-    </PublicLayout>
+      <ReviewFooter />
+    </ReviewLayout>
   );
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
+import { ReviewLayout } from '@/components/reviews/ReviewLayout';
+import { ReviewHeader } from '@/components/reviews/ReviewHeader';
+import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import {
   ArrowLeft,
   ArrowRight,
@@ -46,12 +46,12 @@ const reviewSchema = {
   dateModified: '2026-04-16',
   author: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -139,8 +139,8 @@ const faqSchema = {
 
 export default function AnkerSolixF3800Review() {
   return (
-    <PublicLayout>
-      <Header />
+    <ReviewLayout>
+      <ReviewHeader />
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{
@@ -153,7 +153,7 @@ export default function AnkerSolixF3800Review() {
           __html: JSON.stringify(faqSchema),
         }}
       />
-      <main className='py-16 bg-background'>
+      <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
             {/* Breadcrumb */}
@@ -904,30 +904,29 @@ export default function AnkerSolixF3800Review() {
               </div>
 
               {/* CTA Section */}
-              <div className='bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-8 text-center mt-12 mb-8'>
+              <div className='bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 border border-emerald-500/20 rounded-2xl p-8 text-center mt-12 mb-8'>
                 <h2 className='text-2xl font-bold text-foreground mb-3'>
-                  Want to Eliminate Your Electric Bill Instead?
+                  Explore More GreenVerdict Reviews
                 </h2>
                 <p className='text-foreground/70 mb-6 max-w-lg mx-auto'>
-                  A portable power station is great for backup. But if you
-                  want to cut your monthly electric bill by 30-50%
-                  permanently, check if your home qualifies for
-                  California&apos;s net metering program.
+                  We test and compare the best portable power stations,
+                  solar products, e-bikes, and smart home gear so you can
+                  buy with confidence.
                 </p>
                 <div className='flex flex-col sm:flex-row gap-4 justify-center'>
                   <Link
-                    href='/'
-                    className='inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
+                    href='/reviews'
+                    className='inline-flex items-center justify-center gap-2 bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors'
                   >
-                    Check If You Qualify
+                    Browse All Reviews
                     <ArrowRight className='h-4 w-4' />
                   </Link>
                   <Link
-                    href='/blog'
+                    href='/reviews/best-portable-power-stations'
                     className='inline-flex items-center justify-center gap-2 border border-border text-foreground px-8 py-3 rounded-lg font-semibold hover:bg-muted transition-colors'
                   >
                     <ArrowLeft className='h-4 w-4' />
-                    More Articles
+                    Power Station Rankings
                   </Link>
                 </div>
               </div>
@@ -936,7 +935,7 @@ export default function AnkerSolixF3800Review() {
               <p className='text-xs text-muted-foreground mt-8 leading-relaxed'>
                 This review is based on publicly available specifications,
                 verified pricing as of April 2026, and aggregated user
-                feedback. The California Rate Relief Program is not
+                feedback. GreenVerdict is not
                 affiliated with Anker, EcoFlow, Bluetti, or any power
                 station manufacturer. Product specifications and pricing
                 may change. SGIP rebate amounts are estimates — verify
@@ -946,7 +945,7 @@ export default function AnkerSolixF3800Review() {
           </article>
         </div>
       </main>
-      <Footer />
-    </PublicLayout>
+      <ReviewFooter />
+    </ReviewLayout>
   );
 }

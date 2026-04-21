@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
+import { ReviewLayout } from '@/components/reviews/ReviewLayout';
+import { ReviewHeader } from '@/components/reviews/ReviewHeader';
+import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import {
   ArrowLeft,
   Battery,
@@ -46,12 +46,12 @@ const articleSchema = {
   dateModified: '2026-04-17',
   author: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -203,8 +203,8 @@ const generators: Generator[] = [
 
 export default function BestWholeHouseGenerator() {
   return (
-    <PublicLayout>
-      <Header />
+    <ReviewLayout>
+      <ReviewHeader />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -213,7 +213,7 @@ export default function BestWholeHouseGenerator() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="py-16 bg-background">
+      <main className="py-16" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="container mx-auto px-4">
           <article className="max-w-4xl mx-auto">
             {/* Breadcrumb */}
@@ -1198,22 +1198,20 @@ export default function BestWholeHouseGenerator() {
             {/* ========== FINAL CTA ========== */}
             <section className="mb-8">
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 text-center">
-                <Sun className="h-10 w-10 text-primary mx-auto mb-4" />
+                <Zap className="h-10 w-10 text-primary mx-auto mb-4" />
                 <h2 className="text-2xl font-bold text-foreground mb-3">
-                  Ready to Go Solar in California?
+                  Explore More Green Energy Reviews
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  A whole house generator keeps the lights on during outages, but rooftop solar
-                  paired with battery storage can slash your utility bill by 30-50% every single
-                  month. California homeowners can qualify for programs that put solar on your roof
-                  at no cost out of pocket, with fixed monthly payments that are typically less
-                  than what you are paying your utility today.
+                  GreenVerdict independently reviews portable power stations, solar products,
+                  e-bikes, and more to help you find the right gear for your home and lifestyle.
+                  Browse our full review library for unbiased, data-driven buying guides.
                 </p>
                 <Link
-                  href="/solar-savings"
+                  href="/reviews"
                   className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >
-                  Check If You Qualify
+                  Browse All Reviews
                   <ChevronRight className="h-5 w-5" />
                 </Link>
               </div>
@@ -1222,7 +1220,7 @@ export default function BestWholeHouseGenerator() {
           </article>
         </div>
       </main>
-      <Footer />
-    </PublicLayout>
+      <ReviewFooter />
+    </ReviewLayout>
   );
 }

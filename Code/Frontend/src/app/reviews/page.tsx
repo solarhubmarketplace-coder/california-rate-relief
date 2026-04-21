@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
+import { ReviewLayout } from '@/components/reviews/ReviewLayout';
+import { ReviewHeader } from '@/components/reviews/ReviewHeader';
+import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { Battery, Zap, Star, ChevronRight, Search } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Product Reviews & Comparisons | California Rate Relief',
+  title: 'Product Reviews & Comparisons | GreenVerdict',
   description:
     'Expert product reviews and buying guides for portable power stations, e-bikes, mini splits, electric lawn mowers, smart thermostats, and whole house generators. Tested and verified for 2026.',
   alternates: {
@@ -140,7 +140,7 @@ function StarRating({ rating }: { rating: number }) {
       {Array.from({ length: emptyStars }).map((_, i) => (
         <Star key={`empty-${i}`} className='h-4 w-4 text-gray-300' />
       ))}
-      <span className='ml-1 text-sm font-semibold text-foreground'>
+      <span className='ml-1 text-sm font-semibold' style={{ color: '#f5f5f5' }}>
         {rating}/5
       </span>
     </div>
@@ -155,6 +155,11 @@ function buildCollectionSchema() {
     description:
       'Expert reviews and comparisons of portable power stations, solar generators, and home backup systems for 2026.',
     url: 'https://ratereliefca.com/reviews',
+    publisher: {
+      '@type': 'Organization',
+      name: 'GreenVerdict',
+      url: 'https://ratereliefca.com/reviews',
+    },
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: reviews.map((review, index) => ({
@@ -171,13 +176,13 @@ export default function ReviewsPage() {
   const jsonLd = buildCollectionSchema();
 
   return (
-    <PublicLayout>
-      <Header />
+    <ReviewLayout>
+      <ReviewHeader />
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className='py-16 bg-background'>
+      <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>
           <div className='max-w-5xl mx-auto'>
             {/* Page Header */}
@@ -186,10 +191,10 @@ export default function ReviewsPage() {
                 <Search className='h-4 w-4' />
                 Reviews & Guides
               </div>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 tracking-tight'>
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight' style={{ color: '#f5f5f5' }}>
                 Product Reviews & Buying Guides
               </h1>
-              <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
+              <p className='text-lg max-w-2xl mx-auto' style={{ color: '#a1a1aa' }}>
                 Expert reviews and comparisons of portable power stations, e-bikes,
                 mini splits, electric lawn mowers, smart thermostats, generators,
                 and more — tested and verified for 2026.
@@ -204,7 +209,7 @@ export default function ReviewsPage() {
                   href={`/reviews/${review.slug}`}
                   className='group block'
                 >
-                  <div className='bg-white rounded-xl shadow-sm border border-border p-6 hover:shadow-md hover:border-primary/30 transition-all duration-300 h-full flex flex-col'>
+                  <div className='rounded-xl shadow-sm border p-6 hover:shadow-md hover:border-primary/30 transition-all duration-300 h-full flex flex-col' style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
                     {/* Badge & Icon Row */}
                     <div className='flex items-center justify-between mb-4'>
                       <span
@@ -217,14 +222,14 @@ export default function ReviewsPage() {
                         {review.badge}
                       </span>
                       {review.icon === 'battery' ? (
-                        <Battery className='h-5 w-5 text-muted-foreground' />
+                        <Battery className='h-5 w-5' style={{ color: '#a1a1aa' }} />
                       ) : (
-                        <Zap className='h-5 w-5 text-muted-foreground' />
+                        <Zap className='h-5 w-5' style={{ color: '#a1a1aa' }} />
                       )}
                     </div>
 
                     {/* Title */}
-                    <h2 className='text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors tracking-tight'>
+                    <h2 className='text-xl font-bold mb-2 group-hover:text-primary transition-colors tracking-tight' style={{ color: '#f5f5f5' }}>
                       {review.title}
                     </h2>
 
@@ -236,7 +241,7 @@ export default function ReviewsPage() {
                     )}
 
                     {/* Description */}
-                    <p className='text-foreground/70 leading-relaxed mb-4 flex-grow'>
+                    <p className='leading-relaxed mb-4 flex-grow' style={{ color: '#a1a1aa' }}>
                       {review.description}
                     </p>
 
@@ -251,28 +256,29 @@ export default function ReviewsPage() {
             </div>
 
             {/* CTA Section */}
-            <div className='bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center'>
-              <Zap className='h-8 w-8 text-primary mx-auto mb-3' />
-              <h2 className='text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight'>
-                California Homeowner?
+            <div className='rounded-2xl border p-8 md:p-10 text-center' style={{ backgroundColor: '#132a15', borderColor: '#22c55e33' }}>
+              <Search className='h-8 w-8 mx-auto mb-3' style={{ color: '#22c55e' }} />
+              <h2 className='text-2xl md:text-3xl font-bold mb-3 tracking-tight' style={{ color: '#f5f5f5' }}>
+                Looking for More?
               </h2>
-              <p className='text-muted-foreground mb-6 max-w-xl mx-auto'>
-                Skip the portable power station — go straight to whole-home
-                solar. Check if you qualify for the California Rate Relief
-                Program and cut your electric bill by 30-50%.
+              <p className='mb-6 max-w-xl mx-auto' style={{ color: '#a1a1aa' }}>
+                We test and review the latest in green energy tech — from
+                portable power stations to smart home devices. New reviews
+                every week.
               </p>
               <Link
-                href='/solar-savings'
-                className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
+                href='/reviews'
+                className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
+                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
               >
-                See Solar Savings in Your City
+                Browse All Reviews
                 <ChevronRight className='h-4 w-4' />
               </Link>
             </div>
           </div>
         </div>
       </main>
-      <Footer />
-    </PublicLayout>
+      <ReviewFooter />
+    </ReviewLayout>
   );
 }

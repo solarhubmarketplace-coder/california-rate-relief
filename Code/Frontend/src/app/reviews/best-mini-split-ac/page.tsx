@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
+import { ReviewLayout } from '@/components/reviews/ReviewLayout';
+import { ReviewHeader } from '@/components/reviews/ReviewHeader';
+import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import {
   ArrowLeft,
   ArrowRight,
@@ -50,12 +50,12 @@ const articleSchema = {
   dateModified: '2026-04-17',
   author: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -194,8 +194,8 @@ const models: MiniSplitModel[] = [
 
 export default function BestMiniSplitACPage() {
   return (
-    <PublicLayout>
-      <Header />
+    <ReviewLayout>
+      <ReviewHeader />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -204,7 +204,7 @@ export default function BestMiniSplitACPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="min-h-screen bg-background py-12 px-4">
+      <main className="min-h-screen py-12 px-4" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="max-w-4xl mx-auto">
           <article>
 
@@ -1160,18 +1160,17 @@ export default function BestMiniSplitACPage() {
 
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
                 <h3 className="text-xl font-bold text-foreground mb-2">
-                  See How Much You Could Save with Solar
+                  More Energy-Saving Product Reviews
                 </h3>
                 <p className="text-foreground/70 mb-4 text-sm">
-                  California homeowners can qualify for programs that put solar on your roof at
-                  no cost out of pocket, with a fixed monthly payment that is typically 30-50%
-                  less than your current utility bill.
+                  GreenVerdict independently reviews the best green energy products — from portable
+                  power stations to e-bikes to smart HVAC. Find the right product for your home.
                 </p>
                 <Link
-                  href="/solar-savings"
+                  href="/reviews"
                   className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
                 >
-                  Check If You Qualify
+                  Browse All Reviews
                   <ChevronRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -1328,22 +1327,20 @@ export default function BestMiniSplitACPage() {
             {/* ========== FINAL CTA ========== */}
             <section className="mb-8">
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 text-center">
-                <Sun className="h-10 w-10 text-primary mx-auto mb-4" />
+                <Zap className="h-10 w-10 text-primary mx-auto mb-4" />
                 <h2 className="text-2xl font-bold text-foreground mb-3">
-                  Ready to Go Solar in California?
+                  Find the Best Green Energy Products for Your Home
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  A mini split cuts your cooling costs by up to 42%, but pairing it with rooftop
-                  solar can eliminate most of your electricity bill entirely. California homeowners
-                  can qualify for programs that put solar on your roof at no cost out of pocket,
-                  with fixed monthly payments that are typically 30-50% less than your current
-                  utility bill.
+                  GreenVerdict independently reviews portable power stations, e-bikes, smart
+                  thermostats, electric lawn equipment, and more. Every review includes real specs,
+                  honest pros and cons, and energy savings math so you can buy with confidence.
                 </p>
                 <Link
-                  href="/solar-savings"
+                  href="/reviews"
                   className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >
-                  Check If You Qualify
+                  Explore All GreenVerdict Reviews
                   <ChevronRight className="h-5 w-5" />
                 </Link>
               </div>
@@ -1352,7 +1349,7 @@ export default function BestMiniSplitACPage() {
           </article>
         </div>
       </main>
-      <Footer />
-    </PublicLayout>
+      <ReviewFooter />
+    </ReviewLayout>
   );
 }

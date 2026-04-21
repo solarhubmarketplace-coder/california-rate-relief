@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
+import { ReviewLayout } from '@/components/reviews/ReviewLayout';
+import { ReviewHeader } from '@/components/reviews/ReviewHeader';
+import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import {
   ArrowLeft,
   ArrowRight,
@@ -46,12 +46,12 @@ const reviewSchema = {
   dateModified: '2026-04-17',
   author: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'GreenVerdict',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -145,8 +145,8 @@ const faqSchema = {
 
 export default function BluettiAC200LReview() {
   return (
-    <PublicLayout>
-      <Header />
+    <ReviewLayout>
+      <ReviewHeader />
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{
@@ -159,7 +159,7 @@ export default function BluettiAC200LReview() {
           __html: JSON.stringify(faqSchema),
         }}
       />
-      <main className='py-16 bg-background'>
+      <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
             {/* Breadcrumb */}
@@ -958,22 +958,20 @@ export default function BluettiAC200LReview() {
               {/* CTA Section */}
               <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mt-10 mb-8'>
                 <h2 className='text-2xl font-bold text-foreground mb-3'>
-                  Thinking About Solar for Your California Home?
+                  Find the Right Power Station for You
                 </h2>
                 <p className='text-foreground/80 leading-relaxed mb-6'>
-                  A portable power station is a great backup solution, but it
-                  does not reduce your monthly electric bill. If your PG&E, SCE,
-                  or SDG&E bills have been climbing and you want to lock in a
-                  fixed rate that is 30-50% less than what you pay now, check if
-                  you qualify for the California Rate Relief Program. It takes 30
-                  seconds and there is no obligation.
+                  The Bluetti AC200L is a standout value pick, but it is not the
+                  only option worth considering. Browse all of our independently
+                  researched reviews to find the portable power station, e-bike,
+                  or green energy product that fits your needs and budget.
                 </p>
                 <div className='flex flex-col sm:flex-row gap-4'>
                   <Link
-                    href='/#qualify'
+                    href='/reviews'
                     className='inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
                   >
-                    Check If You Qualify
+                    Browse All Reviews
                     <ArrowRight className='h-4 w-4' />
                   </Link>
                   <Link
@@ -989,7 +987,7 @@ export default function BluettiAC200LReview() {
           </article>
         </div>
       </main>
-      <Footer />
-    </PublicLayout>
+      <ReviewFooter />
+    </ReviewLayout>
   );
 }
