@@ -552,7 +552,7 @@ export default function BluettiAC200LReview() {
                 insurance do you need, and how much should you pay for it? The
                 AC200L makes that math easy.
               </p>
-              <div className='bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6'>
+              <div className='bg-card border border-border rounded-lg p-4 mb-6'>
                 <h3 className='font-semibold text-foreground mb-3'>
                   What 2,048 Wh Actually Powers
                 </h3>

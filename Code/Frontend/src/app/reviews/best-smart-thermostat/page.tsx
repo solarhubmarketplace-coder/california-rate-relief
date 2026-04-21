@@ -242,7 +242,7 @@ export default function BestSmartThermostatPage() {
             </div>
 
             {/* ========== QUICK PICKS ========== */}
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 md:p-8 mb-12">
+            <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-12">
               <div className="flex items-center gap-2 mb-4">
                 <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
                 <h2 className="text-xl font-bold text-foreground">Quick Picks: Our Top 4 Smart Thermostats</h2>
@@ -805,7 +805,7 @@ export default function BestSmartThermostatPage() {
                   panels it becomes a game-changer for California homeowners. Here is why:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
-                  <div className="bg-white/80 rounded-lg p-4">
+                  <div className="bg-card/80 rounded-lg p-4">
                     <h4 className="font-semibold text-foreground mb-2">Peak Shaving</h4>
                     <p className="text-sm text-muted-foreground">
                       Your solar panels generate the most power at midday. A smart thermostat
@@ -814,7 +814,7 @@ export default function BestSmartThermostatPage() {
                       peak TOU hours.
                     </p>
                   </div>
-                  <div className="bg-white/80 rounded-lg p-4">
+                  <div className="bg-card/80 rounded-lg p-4">
                     <h4 className="font-semibold text-foreground mb-2">Load Shifting</h4>
                     <p className="text-sm text-muted-foreground">
                       Under NEM 3.0, the value of exported solar energy has dropped
@@ -823,7 +823,7 @@ export default function BestSmartThermostatPage() {
                       panels produce.
                     </p>
                   </div>
-                  <div className="bg-white/80 rounded-lg p-4">
+                  <div className="bg-card/80 rounded-lg p-4">
                     <h4 className="font-semibold text-foreground mb-2">Pre-Cooling Strategy</h4>
                     <p className="text-sm text-muted-foreground">
                       Set your smart thermostat to pre-cool your home to 72-74 degrees
@@ -832,7 +832,7 @@ export default function BestSmartThermostatPage() {
                       stays comfortable while you avoid peak rates entirely.
                     </p>
                   </div>
-                  <div className="bg-white/80 rounded-lg p-4">
+                  <div className="bg-card/80 rounded-lg p-4">
                     <h4 className="font-semibold text-foreground mb-2">Combined Savings</h4>
                     <p className="text-sm text-muted-foreground">
                       Solar alone can reduce your bill by 30-50%. A smart thermostat adds

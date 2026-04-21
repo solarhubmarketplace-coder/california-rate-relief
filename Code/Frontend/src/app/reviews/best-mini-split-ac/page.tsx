@@ -252,13 +252,13 @@ export default function BestMiniSplitACPage() {
 
             {/* ========== QUICK PICKS ========== */}
             <section className="mb-10">
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+              <div className="bg-card border border-border rounded-xl p-6">
                 <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
                   <Zap className="h-5 w-5 text-primary" />
                   Quick Picks
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="bg-white border border-slate-200 rounded-lg p-4">
+                  <div className="bg-card border border-border rounded-lg p-4">
                     <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">Best DIY Install</span>
                     <h3 className="font-bold text-foreground mt-1">MrCool DIY 4th Gen</h3>
                     <p className="text-sm text-foreground/70 mt-1">From $1,549. No HVAC tools or certification needed. Pre-charged QuickConnect line sets.</p>
@@ -266,7 +266,7 @@ export default function BestMiniSplitACPage() {
                       Read review <ArrowRight className="h-3 w-3" />
                     </Link>
                   </div>
-                  <div className="bg-white border border-slate-200 rounded-lg p-4">
+                  <div className="bg-card border border-border rounded-lg p-4">
                     <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Newest Model</span>
                     <h3 className="font-bold text-foreground mt-1">MrCool DIY 5th Gen</h3>
                     <p className="text-sm text-foreground/70 mt-1">Low-GWP R-454B refrigerant. Up to 22.7 SEER2. Same easy DIY install.</p>
@@ -274,7 +274,7 @@ export default function BestMiniSplitACPage() {
                       Read review <ArrowRight className="h-3 w-3" />
                     </Link>
                   </div>
-                  <div className="bg-white border border-slate-200 rounded-lg p-4">
+                  <div className="bg-card border border-border rounded-lg p-4">
                     <span className="text-xs font-semibold text-purple-600 uppercase tracking-wider">Best Performance</span>
                     <h3 className="font-bold text-foreground mt-1">MrCool Easy Pro</h3>
                     <p className="text-sm text-foreground/70 mt-1">Top efficiency in the lineup. Outperforms DIY and Advantage in cooling tests.</p>
@@ -282,7 +282,7 @@ export default function BestMiniSplitACPage() {
                       Read review <ArrowRight className="h-3 w-3" />
                     </Link>
                   </div>
-                  <div className="bg-white border border-slate-200 rounded-lg p-4">
+                  <div className="bg-card border border-border rounded-lg p-4">
                     <span className="text-xs font-semibold text-amber-600 uppercase tracking-wider">Best Budget</span>
                     <h3 className="font-bold text-foreground mt-1">MrCool Advantage</h3>
                     <p className="text-sm text-foreground/70 mt-1">Lowest price in the lineup. Requires professional install but great value.</p>
@@ -313,7 +313,7 @@ export default function BestMiniSplitACPage() {
                 in cooling energy consumption. At California electricity rates, that gap
                 translates to hundreds of dollars every year.
               </p>
-              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
+              <div className="bg-card border border-border rounded-lg p-4 mb-4">
                 <p className="text-foreground/80 text-sm leading-relaxed">
                   <strong className="text-amber-800">The math:</strong> With PG&amp;E peak TOU rates
                   at $0.40-$0.48/kWh, those 783 saved kWh equal <strong>$313-$376 in annual
@@ -336,7 +336,7 @@ export default function BestMiniSplitACPage() {
                 Head-to-Head Comparison
               </h2>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm border border-slate-200 rounded-lg overflow-hidden">
+                <table className="w-full text-sm border border-border rounded-lg overflow-hidden">
                   <thead>
                     <tr className="bg-slate-100">
                       <th className="text-left p-3 font-semibold text-foreground">Spec</th>
@@ -349,49 +349,49 @@ export default function BestMiniSplitACPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-t border-slate-200">
+                    <tr className="border-t border-border">
                       <td className="p-3 font-medium text-foreground">Price</td>
                       {models.map((m) => (
                         <td key={m.name} className="p-3 text-foreground/80">{m.price}</td>
                       ))}
                     </tr>
-                    <tr className="border-t border-slate-200 bg-slate-50">
+                    <tr className="border-t border-border bg-card">
                       <td className="p-3 font-medium text-foreground">Efficiency</td>
                       {models.map((m) => (
                         <td key={m.name} className="p-3 text-foreground/80">{m.seer2}</td>
                       ))}
                     </tr>
-                    <tr className="border-t border-slate-200">
+                    <tr className="border-t border-border">
                       <td className="p-3 font-medium text-foreground">BTU Range</td>
                       {models.map((m) => (
                         <td key={m.name} className="p-3 text-foreground/80">{m.btuRange}</td>
                       ))}
                     </tr>
-                    <tr className="border-t border-slate-200 bg-slate-50">
+                    <tr className="border-t border-border bg-card">
                       <td className="p-3 font-medium text-foreground">Heating Min Temp</td>
                       {models.map((m) => (
                         <td key={m.name} className="p-3 text-foreground/80">{m.heatingMin}</td>
                       ))}
                     </tr>
-                    <tr className="border-t border-slate-200">
+                    <tr className="border-t border-border">
                       <td className="p-3 font-medium text-foreground">Refrigerant</td>
                       {models.map((m) => (
                         <td key={m.name} className="p-3 text-foreground/80">{m.refrigerant}</td>
                       ))}
                     </tr>
-                    <tr className="border-t border-slate-200 bg-slate-50">
+                    <tr className="border-t border-border bg-card">
                       <td className="p-3 font-medium text-foreground">Installation</td>
                       {models.map((m) => (
                         <td key={m.name} className="p-3 text-foreground/80">{m.install}</td>
                       ))}
                     </tr>
-                    <tr className="border-t border-slate-200">
+                    <tr className="border-t border-border">
                       <td className="p-3 font-medium text-foreground">Warranty</td>
                       {models.map((m) => (
                         <td key={m.name} className="p-3 text-foreground/80">{m.warranty}</td>
                       ))}
                     </tr>
-                    <tr className="border-t border-slate-200 bg-slate-50">
+                    <tr className="border-t border-border bg-card">
                       <td className="p-3 font-medium text-foreground">Multi-Zone</td>
                       {models.map((m) => (
                         <td key={m.name} className="p-3 text-foreground/80">{m.multiZone}</td>
@@ -404,8 +404,8 @@ export default function BestMiniSplitACPage() {
 
             {/* ========== DETAILED REVIEW: DIY 4TH GEN ========== */}
             <section id="mrcool-diy-4th-gen" className="mb-10 scroll-mt-20">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
-                <div className="bg-blue-50 border-b border-slate-200 p-6">
+              <div className="border border-border rounded-xl overflow-hidden">
+                <div className="bg-card border-b border-border p-6">
                   <div className="flex items-start justify-between flex-wrap gap-3">
                     <div>
                       <span className="inline-block bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full mb-2">
@@ -486,7 +486,7 @@ export default function BestMiniSplitACPage() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4">
+                  <div className="bg-card rounded-lg p-4">
                     <h4 className="font-semibold text-foreground text-sm mb-2">Key Specs</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                       <div>
@@ -523,8 +523,8 @@ export default function BestMiniSplitACPage() {
 
             {/* ========== DETAILED REVIEW: DIY 5TH GEN ========== */}
             <section id="mrcool-diy-5th-gen" className="mb-10 scroll-mt-20">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
-                <div className="bg-green-50 border-b border-slate-200 p-6">
+              <div className="border border-border rounded-xl overflow-hidden">
+                <div className="bg-green-50 border-b border-border p-6">
                   <div className="flex items-start justify-between flex-wrap gap-3">
                     <div>
                       <span className="inline-block bg-green-600 text-white text-xs font-bold px-2.5 py-1 rounded-full mb-2">
@@ -601,7 +601,7 @@ export default function BestMiniSplitACPage() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4">
+                  <div className="bg-card rounded-lg p-4">
                     <h4 className="font-semibold text-foreground text-sm mb-2">Key Specs</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                       <div>
@@ -638,8 +638,8 @@ export default function BestMiniSplitACPage() {
 
             {/* ========== DETAILED REVIEW: EASY PRO ========== */}
             <section id="mrcool-easy-pro" className="mb-10 scroll-mt-20">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
-                <div className="bg-purple-50 border-b border-slate-200 p-6">
+              <div className="border border-border rounded-xl overflow-hidden">
+                <div className="bg-purple-50 border-b border-border p-6">
                   <div className="flex items-start justify-between flex-wrap gap-3">
                     <div>
                       <span className="inline-block bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded-full mb-2">
@@ -714,7 +714,7 @@ export default function BestMiniSplitACPage() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4">
+                  <div className="bg-card rounded-lg p-4">
                     <h4 className="font-semibold text-foreground text-sm mb-2">Key Specs</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                       <div>
@@ -751,8 +751,8 @@ export default function BestMiniSplitACPage() {
 
             {/* ========== DETAILED REVIEW: ADVANTAGE ========== */}
             <section id="mrcool-advantage" className="mb-10 scroll-mt-20">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
-                <div className="bg-amber-50 border-b border-slate-200 p-6">
+              <div className="border border-border rounded-xl overflow-hidden">
+                <div className="bg-card border-b border-border p-6">
                   <div className="flex items-start justify-between flex-wrap gap-3">
                     <div>
                       <span className="inline-block bg-amber-600 text-white text-xs font-bold px-2.5 py-1 rounded-full mb-2">
@@ -832,7 +832,7 @@ export default function BestMiniSplitACPage() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4">
+                  <div className="bg-card rounded-lg p-4">
                     <h4 className="font-semibold text-foreground text-sm mb-2">Key Specs</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                       <div>
@@ -878,7 +878,7 @@ export default function BestMiniSplitACPage() {
                 yourself. Here is exactly what that involves — no sugarcoating.
               </p>
 
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-6">
+              <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <h3 className="font-bold text-foreground mb-4">Tools You Need</h3>
                 <div className="grid sm:grid-cols-2 gap-3">
                   <div className="flex items-start gap-2">
@@ -908,7 +908,7 @@ export default function BestMiniSplitACPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-6 mb-6">
+              <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <h3 className="font-bold text-foreground mb-4">Installation Steps (Simplified)</h3>
                 <div className="space-y-4">
                   <div className="flex gap-4">
@@ -979,10 +979,10 @@ export default function BestMiniSplitACPage() {
                 is how the numbers play out in real California energy costs.
               </p>
 
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-6">
+              <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <h3 className="font-bold text-foreground mb-4">Summer Cooling Season Comparison</h3>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-200">
+                  <div className="flex items-center justify-between p-3 bg-card rounded-lg border border-border">
                     <div>
                       <div className="font-semibold text-foreground">Old Central AC (14 SEER)</div>
                       <div className="text-sm text-foreground/60">Typical system installed before 2015</div>
@@ -992,7 +992,7 @@ export default function BestMiniSplitACPage() {
                       <div className="text-sm text-foreground/60">per summer</div>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-200">
+                  <div className="flex items-center justify-between p-3 bg-card rounded-lg border border-border">
                     <div>
                       <div className="font-semibold text-foreground">Modern Central AC (20 SEER)</div>
                       <div className="text-sm text-foreground/60">Current high-efficiency central</div>
@@ -1002,7 +1002,7 @@ export default function BestMiniSplitACPage() {
                       <div className="text-sm text-foreground/60">per summer</div>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-200">
+                  <div className="flex items-center justify-between p-3 bg-card rounded-lg border border-border">
                     <div>
                       <div className="font-semibold text-foreground">MrCool DIY 5th Gen (22.7 SEER2)</div>
                       <div className="text-sm text-foreground/60">Best-in-class mini split</div>
@@ -1015,12 +1015,12 @@ export default function BestMiniSplitACPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-6 mb-6">
+              <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <h3 className="font-bold text-foreground mb-4">Annual Savings at California Rates</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-slate-200">
+                      <tr className="border-b border-border">
                         <th className="text-left p-2 font-semibold">Utility</th>
                         <th className="text-left p-2 font-semibold">Peak Rate</th>
                         <th className="text-left p-2 font-semibold">kWh Saved vs 14 SEER</th>
@@ -1076,22 +1076,22 @@ export default function BestMiniSplitACPage() {
                 the square footage of the space you are conditioning. Here is a general guide:
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+                <div className="bg-card border border-border rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold text-primary">9K BTU</div>
                   <div className="text-sm text-foreground/70 mt-1">Up to 350 sq ft</div>
                   <div className="text-xs text-foreground/50 mt-1">Bedroom, home office</div>
                 </div>
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+                <div className="bg-card border border-border rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold text-primary">12K BTU</div>
                   <div className="text-sm text-foreground/70 mt-1">350-550 sq ft</div>
                   <div className="text-xs text-foreground/50 mt-1">Large bedroom, studio</div>
                 </div>
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+                <div className="bg-card border border-border rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold text-primary">18K BTU</div>
                   <div className="text-sm text-foreground/70 mt-1">550-800 sq ft</div>
                   <div className="text-xs text-foreground/50 mt-1">Living room, open plan</div>
                 </div>
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+                <div className="bg-card border border-border rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold text-primary">24K-36K BTU</div>
                   <div className="text-sm text-foreground/70 mt-1">800-1,500 sq ft</div>
                   <div className="text-xs text-foreground/50 mt-1">Great room, multi-zone</div>
@@ -1117,7 +1117,7 @@ export default function BestMiniSplitACPage() {
               </p>
 
               <div className="space-y-4 mb-6">
-                <div className="bg-white border border-slate-200 rounded-lg p-4">
+                <div className="bg-card border border-border rounded-lg p-4">
                   <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Zap className="h-4 w-4 text-primary" />
                     TOU Rate Arbitrage
@@ -1130,7 +1130,7 @@ export default function BestMiniSplitACPage() {
                     $0.40-$0.48/kWh. Solar electricity costs you nothing once the panels are paid for.
                   </p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-lg p-4">
+                <div className="bg-card border border-border rounded-lg p-4">
                   <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Battery className="h-4 w-4 text-primary" />
                     Pre-Cool Strategy
@@ -1143,7 +1143,7 @@ export default function BestMiniSplitACPage() {
                     during peak hours. You stay comfortable while barely touching the grid.
                   </p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-lg p-4">
+                <div className="bg-card border border-border rounded-lg p-4">
                   <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <DollarSign className="h-4 w-4 text-primary" />
                     Combined Savings
@@ -1182,7 +1182,7 @@ export default function BestMiniSplitACPage() {
                 Which Mini Split Should You Buy?
               </h2>
               <div className="space-y-4">
-                <div className="bg-white border border-slate-200 rounded-lg p-4">
+                <div className="bg-card border border-border rounded-lg p-4">
                   <h3 className="font-semibold text-foreground mb-1">You want to save the most money overall</h3>
                   <p className="text-sm text-foreground/80">
                     <ArrowRight className="h-3 w-3 inline text-primary mr-1" />
@@ -1191,7 +1191,7 @@ export default function BestMiniSplitACPage() {
                     Best all-around value.
                   </p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-lg p-4">
+                <div className="bg-card border border-border rounded-lg p-4">
                   <h3 className="font-semibold text-foreground mb-1">You want the latest technology</h3>
                   <p className="text-sm text-foreground/80">
                     <ArrowRight className="h-3 w-3 inline text-primary mr-1" />
@@ -1200,7 +1200,7 @@ export default function BestMiniSplitACPage() {
                     for single-room applications.
                   </p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-lg p-4">
+                <div className="bg-card border border-border rounded-lg p-4">
                   <h3 className="font-semibold text-foreground mb-1">You want maximum performance and do not mind paying more</h3>
                   <p className="text-sm text-foreground/80">
                     <ArrowRight className="h-3 w-3 inline text-primary mr-1" />
@@ -1209,7 +1209,7 @@ export default function BestMiniSplitACPage() {
                     (SDG&amp;E) where every efficiency point saves real money.
                   </p>
                 </div>
-                <div className="bg-white border border-slate-200 rounded-lg p-4">
+                <div className="bg-card border border-border rounded-lg p-4">
                   <h3 className="font-semibold text-foreground mb-1">You are hiring an HVAC tech anyway</h3>
                   <p className="text-sm text-foreground/80">
                     <ArrowRight className="h-3 w-3 inline text-primary mr-1" />
@@ -1227,8 +1227,8 @@ export default function BestMiniSplitACPage() {
                 Frequently Asked Questions
               </h2>
               <div className="space-y-3">
-                <details className="border border-slate-200 rounded-lg group" open>
-                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-slate-50 transition-colors rounded-lg">
+                <details className="border border-border rounded-lg group" open>
+                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-card transition-colors rounded-lg">
                     Can I really install a mini split myself?
                   </summary>
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
@@ -1240,8 +1240,8 @@ export default function BestMiniSplitACPage() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-slate-50 transition-colors rounded-lg">
+                <details className="border border-border rounded-lg group">
+                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-card transition-colors rounded-lg">
                     How much will I save on my energy bill?
                   </summary>
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
@@ -1253,8 +1253,8 @@ export default function BestMiniSplitACPage() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-slate-50 transition-colors rounded-lg">
+                <details className="border border-border rounded-lg group">
+                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-card transition-colors rounded-lg">
                     What is the difference between the DIY 4th Gen and 5th Gen?
                   </summary>
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
@@ -1266,8 +1266,8 @@ export default function BestMiniSplitACPage() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-slate-50 transition-colors rounded-lg">
+                <details className="border border-border rounded-lg group">
+                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-card transition-colors rounded-lg">
                     How long does a mini split last?
                   </summary>
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
@@ -1279,8 +1279,8 @@ export default function BestMiniSplitACPage() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-slate-50 transition-colors rounded-lg">
+                <details className="border border-border rounded-lg group">
+                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-card transition-colors rounded-lg">
                     Do mini splits work in cold weather?
                   </summary>
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
@@ -1293,8 +1293,8 @@ export default function BestMiniSplitACPage() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-slate-50 transition-colors rounded-lg">
+                <details className="border border-border rounded-lg group">
+                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-card transition-colors rounded-lg">
                     Can I pair a mini split with solar panels?
                   </summary>
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
@@ -1308,8 +1308,8 @@ export default function BestMiniSplitACPage() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-slate-50 transition-colors rounded-lg">
+                <details className="border border-border rounded-lg group">
+                  <summary className="p-4 font-semibold text-foreground cursor-pointer hover:bg-card transition-colors rounded-lg">
                     Is a mini split better than a window AC unit?
                   </summary>
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">

@@ -554,7 +554,7 @@ export default function BluettiAC500Review() {
                 well-suited to this use case because you can right-size your
                 investment to the risk:
               </p>
-              <div className='bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6'>
+              <div className='bg-card border border-border rounded-lg p-4 mb-6'>
                 <h3 className='font-semibold text-foreground mb-3'>
                   PSPS Backup Sizing Guide
                 </h3>

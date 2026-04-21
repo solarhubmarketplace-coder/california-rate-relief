@@ -502,7 +502,7 @@ export default function JackeryExplorer2000PlusReview() {
                 in a closet, grab it when the lights go out, and set it up in
                 your kitchen in under a minute.
               </p>
-              <div className='bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6'>
+              <div className='bg-card border border-border rounded-lg p-4 mb-6'>
                 <h3 className='font-semibold text-foreground mb-3'>
                   What 2,042 Wh Actually Powers
                 </h3>

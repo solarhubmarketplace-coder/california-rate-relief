@@ -266,7 +266,7 @@ export default function BestWholeHouseGenerator() {
             </div>
 
             {/* Quick Verdict Box */}
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 md:p-8 mb-12">
+            <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-12">
               <div className="flex items-center gap-2 mb-4">
                 <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
                 <h2 className="text-xl font-bold text-foreground">Quick Picks: Our Top 3</h2>
@@ -553,7 +553,7 @@ export default function BestWholeHouseGenerator() {
             {/* ========== DETAILED REVIEW: Generac 26kW ========== */}
             <section className="mb-16">
               <div className="border-l-4 border-blue-400 pl-6">
-                <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded uppercase">
+                <span className="text-xs font-bold text-blue-700 bg-card px-2 py-1 rounded uppercase">
                   Best for Large Homes
                 </span>
                 <h2 className="text-2xl font-bold text-foreground mt-3 mb-2">
@@ -1032,7 +1032,7 @@ export default function BestWholeHouseGenerator() {
                 ))}
               </ul>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-5">
+              <div className="bg-card border border-border rounded-lg p-5">
                 <p className="text-sm text-blue-900">
                   <strong>California note:</strong> Most California cities and counties require a
                   building permit for standby generator installation. The permit process typically

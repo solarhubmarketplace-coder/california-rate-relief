@@ -254,7 +254,7 @@ export default function BestElectricLawnMower() {
             </div>
 
             {/* ========== QUICK PICKS ========== */}
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 md:p-8 mb-12">
+            <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-12">
               <div className="flex items-center gap-2 mb-4">
                 <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
                 <h2 className="text-xl font-bold text-foreground">Quick Picks: Our Top 3</h2>
@@ -1161,7 +1161,7 @@ export default function BestElectricLawnMower() {
                 you&apos;d ever need to keep your mower running all season.
               </p>
 
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-6">
+              <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <div className="flex items-center gap-2 mb-3">
                   <Sun className="h-5 w-5 text-amber-600" />
                   <h3 className="font-bold text-foreground">The Math on Solar-Powered Mowing</h3>

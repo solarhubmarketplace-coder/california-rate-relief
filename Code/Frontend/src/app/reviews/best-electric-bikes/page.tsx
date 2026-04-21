@@ -286,7 +286,7 @@ export default function BestElectricBikes() {
             </div>
 
             {/* Quick Verdict Box */}
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 md:p-8 mb-12">
+            <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-12">
               <div className="flex items-center gap-2 mb-4">
                 <Star className="h-5 w-5 text-yellow-500 fill-yellow-500" />
                 <h2 className="text-xl font-bold text-foreground">Quick Picks: Our Top 3 E-Bikes</h2>
@@ -344,9 +344,9 @@ export default function BestElectricBikes() {
                 <table className="w-full min-w-[800px] border-collapse text-sm">
                   <thead>
                     <tr className="bg-slate-100">
-                      <th className="text-left p-3 font-semibold text-foreground border-b-2 border-slate-200">Spec</th>
+                      <th className="text-left p-3 font-semibold text-foreground border-b-2 border-border">Spec</th>
                       {bikes.map((b) => (
-                        <th key={b.name} className="text-left p-3 font-semibold text-foreground border-b-2 border-slate-200">
+                        <th key={b.name} className="text-left p-3 font-semibold text-foreground border-b-2 border-border">
                           <div>{b.name}</div>
                           <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
                             {b.badge}
@@ -362,7 +362,7 @@ export default function BestElectricBikes() {
                         <td key={b.name} className="p-3 text-foreground">{b.price}</td>
                       ))}
                     </tr>
-                    <tr className="border-b border-slate-100 bg-slate-50">
+                    <tr className="border-b border-slate-100 bg-card">
                       <td className="p-3 font-medium text-foreground">Motor</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.motor}</td>
@@ -374,7 +374,7 @@ export default function BestElectricBikes() {
                         <td key={b.name} className="p-3 text-foreground">{b.battery}</td>
                       ))}
                     </tr>
-                    <tr className="border-b border-slate-100 bg-slate-50">
+                    <tr className="border-b border-slate-100 bg-card">
                       <td className="p-3 font-medium text-foreground">Range</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.range}</td>
@@ -386,7 +386,7 @@ export default function BestElectricBikes() {
                         <td key={b.name} className="p-3 text-foreground">{b.topSpeed}</td>
                       ))}
                     </tr>
-                    <tr className="border-b border-slate-100 bg-slate-50">
+                    <tr className="border-b border-slate-100 bg-card">
                       <td className="p-3 font-medium text-foreground">Tires</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.tires}</td>
@@ -407,7 +407,7 @@ export default function BestElectricBikes() {
 
             {/* 1. Aventon Aventure 3 */}
             <section className="mb-16">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
+              <div className="border border-border rounded-xl overflow-hidden">
                 <div className="bg-yellow-50 border-b border-yellow-200 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
@@ -425,22 +425,22 @@ export default function BestElectricBikes() {
                 <div className="p-6">
                   {/* Specs Grid */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Motor</div>
                       <div className="font-semibold text-sm text-foreground">750W Hub</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Battery className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Battery</div>
                       <div className="font-semibold text-sm text-foreground">733Wh (36V 20Ah)</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Shield className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Range</div>
                       <div className="font-semibold text-sm text-foreground">Up to 65 mi</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Top Speed</div>
                       <div className="font-semibold text-sm text-foreground">28 mph (Class 3)</div>
@@ -489,7 +489,7 @@ export default function BestElectricBikes() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4 mb-4">
+                  <div className="bg-card rounded-lg p-4 mb-4">
                     <p className="text-sm text-foreground/80">
                       <span className="font-semibold">Best for:</span> All-terrain riders, commuters who want versatility, anyone who values theft protection and connected features. If you want one bike that does everything, this is it.
                     </p>
@@ -508,8 +508,8 @@ export default function BestElectricBikes() {
 
             {/* 2. Rad Power RadRover 6 Plus */}
             <section className="mb-16">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
-                <div className="bg-blue-50 border-b border-blue-200 p-6">
+              <div className="border border-border rounded-xl overflow-hidden">
+                <div className="bg-card border-b border-border p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
                       <span className="text-xs font-semibold text-blue-700 bg-blue-200 px-3 py-1 rounded-full uppercase">
@@ -524,22 +524,22 @@ export default function BestElectricBikes() {
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Motor</div>
                       <div className="font-semibold text-sm text-foreground">750W Geared Hub</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Battery className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Battery</div>
                       <div className="font-semibold text-sm text-foreground">589-672Wh</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Shield className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Range</div>
                       <div className="font-semibold text-sm text-foreground">25-45 mi</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Top Speed</div>
                       <div className="font-semibold text-sm text-foreground">20 mph (Class 2)</div>
@@ -587,7 +587,7 @@ export default function BestElectricBikes() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4 mb-4">
+                  <div className="bg-card rounded-lg p-4 mb-4">
                     <p className="text-sm text-foreground/80">
                       <span className="font-semibold">Best for:</span> First-time e-bike buyers, casual commuters, riders who prioritize comfort and customer support over cutting-edge specs. Rad Power&apos;s service network is unmatched.
                     </p>
@@ -606,7 +606,7 @@ export default function BestElectricBikes() {
 
             {/* 3. Rad Power RadExpand 5 Plus */}
             <section className="mb-16">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
+              <div className="border border-border rounded-xl overflow-hidden">
                 <div className="bg-purple-50 border-b border-purple-200 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
@@ -622,22 +622,22 @@ export default function BestElectricBikes() {
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Motor</div>
                       <div className="font-semibold text-sm text-foreground">750W</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Battery className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Battery</div>
                       <div className="font-semibold text-sm text-foreground">~672Wh</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Shield className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Range</div>
                       <div className="font-semibold text-sm text-foreground">25-45 mi</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Top Speed</div>
                       <div className="font-semibold text-sm text-foreground">20 mph (Class 2)</div>
@@ -683,7 +683,7 @@ export default function BestElectricBikes() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4 mb-4">
+                  <div className="bg-card rounded-lg p-4 mb-4">
                     <p className="text-sm text-foreground/80">
                       <span className="font-semibold">Best for:</span> Apartment dwellers with limited storage, RV and boat owners, anyone who needs to transport their e-bike by car regularly, and multimodal commuters (bike + train/bus).
                     </p>
@@ -702,7 +702,7 @@ export default function BestElectricBikes() {
 
             {/* 4. Lectric XP 3.0 */}
             <section className="mb-16">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
+              <div className="border border-border rounded-xl overflow-hidden">
                 <div className="bg-green-50 border-b border-green-200 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
@@ -719,22 +719,22 @@ export default function BestElectricBikes() {
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Motor</div>
                       <div className="font-semibold text-sm text-foreground">500W / 750W</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Battery className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Battery</div>
                       <div className="font-semibold text-sm text-foreground">Varies by model</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Shield className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Range</div>
                       <div className="font-semibold text-sm text-foreground">Up to 60+ mi</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Top Speed</div>
                       <div className="font-semibold text-sm text-foreground">Up to 28 mph</div>
@@ -780,7 +780,7 @@ export default function BestElectricBikes() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4 mb-4">
+                  <div className="bg-card rounded-lg p-4 mb-4">
                     <p className="text-sm text-foreground/80">
                       <span className="font-semibold">Best for:</span> Budget-conscious buyers who want a capable, versatile e-bike without spending $2,000. Commuters, students, and anyone who wants to try e-biking without a huge financial commitment.
                     </p>
@@ -799,7 +799,7 @@ export default function BestElectricBikes() {
 
             {/* 5. Aventon Soltera.2 */}
             <section className="mb-16">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
+              <div className="border border-border rounded-xl overflow-hidden">
                 <div className="bg-sky-50 border-b border-sky-200 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
@@ -815,22 +815,22 @@ export default function BestElectricBikes() {
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Motor</div>
                       <div className="font-semibold text-sm text-foreground">500W</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Battery className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Battery</div>
                       <div className="font-semibold text-sm text-foreground">~345Wh</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Shield className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Range</div>
                       <div className="font-semibold text-sm text-foreground">30-55 mi</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Top Speed</div>
                       <div className="font-semibold text-sm text-foreground">20 mph (Class 2)</div>
@@ -878,7 +878,7 @@ export default function BestElectricBikes() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4 mb-4">
+                  <div className="bg-card rounded-lg p-4 mb-4">
                     <p className="text-sm text-foreground/80">
                       <span className="font-semibold">Best for:</span> Pure city commuters who ride on paved roads and bike lanes, riders who want a lightweight and stylish e-bike, and anyone who prefers a traditional bicycle look and feel with electric assist.
                     </p>
@@ -897,7 +897,7 @@ export default function BestElectricBikes() {
 
             {/* 6. Lectric XP Lite 2.0 */}
             <section className="mb-16">
-              <div className="border border-slate-200 rounded-xl overflow-hidden">
+              <div className="border border-border rounded-xl overflow-hidden">
                 <div className="bg-orange-50 border-b border-orange-200 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
@@ -914,22 +914,22 @@ export default function BestElectricBikes() {
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Motor</div>
                       <div className="font-semibold text-sm text-foreground">300W / 819W peak</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Battery className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Battery</div>
                       <div className="font-semibold text-sm text-foreground">~375Wh</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Shield className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Range</div>
                       <div className="font-semibold text-sm text-foreground">25-40 mi</div>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-3 text-center">
+                    <div className="bg-card rounded-lg p-3 text-center">
                       <Zap className="h-5 w-5 text-primary mx-auto mb-1" />
                       <div className="text-xs text-muted-foreground">Top Speed</div>
                       <div className="font-semibold text-sm text-foreground">20 mph (Class 2)</div>
@@ -976,7 +976,7 @@ export default function BestElectricBikes() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4 mb-4">
+                  <div className="bg-card rounded-lg p-4 mb-4">
                     <p className="text-sm text-foreground/80">
                       <span className="font-semibold">Best for:</span> First-time e-bike buyers on a budget, students, short-distance commuters, and anyone who wants to dip their toes into electric biking without spending over $1,000.
                     </p>
@@ -1002,7 +1002,7 @@ export default function BestElectricBikes() {
 
               <div className="space-y-8">
                 {/* Motor Power */}
-                <div className="border border-slate-200 rounded-xl p-6">
+                <div className="border border-border rounded-xl p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
                     <Zap className="h-5 w-5 text-primary" />
                     Motor Power: How Much Do You Need?
@@ -1012,21 +1012,21 @@ export default function BestElectricBikes() {
                     and better hill-climbing ability. Here&apos;s a rough guide:
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-slate-50 rounded-lg p-4">
+                    <div className="bg-card rounded-lg p-4">
                       <div className="font-semibold text-foreground mb-1">250-350W</div>
                       <p className="text-sm text-muted-foreground">
                         Fine for flat terrain commuting. Will struggle on steep hills. Lightest
                         bikes in this range.
                       </p>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-4">
+                    <div className="bg-card rounded-lg p-4">
                       <div className="font-semibold text-foreground mb-1">500W</div>
                       <p className="text-sm text-muted-foreground">
                         The sweet spot for most commuters. Handles moderate hills and headwinds
                         well. Good balance of power and efficiency.
                       </p>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-4">
+                    <div className="bg-card rounded-lg p-4">
                       <div className="font-semibold text-foreground mb-1">750W</div>
                       <p className="text-sm text-muted-foreground">
                         Maximum legal in most US states. Tackles steep hills, heavier riders, and
@@ -1037,7 +1037,7 @@ export default function BestElectricBikes() {
                 </div>
 
                 {/* Battery & Range */}
-                <div className="border border-slate-200 rounded-xl p-6">
+                <div className="border border-border rounded-xl p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
                     <Battery className="h-5 w-5 text-primary" />
                     Battery & Range: Understanding Watt-Hours
@@ -1063,27 +1063,27 @@ export default function BestElectricBikes() {
                 </div>
 
                 {/* Tire Types */}
-                <div className="border border-slate-200 rounded-xl p-6">
+                <div className="border border-border rounded-xl p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
                     <Shield className="h-5 w-5 text-primary" />
                     Tire Types: Fat, Standard, or Narrow?
                   </h3>
                   <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-slate-50 rounded-lg p-4">
+                    <div className="bg-card rounded-lg p-4">
                       <div className="font-semibold text-foreground mb-1">Fat Tires (4&quot;+)</div>
                       <p className="text-sm text-muted-foreground">
                         Maximum stability and traction. Handle sand, snow, gravel, and mud. More
                         comfortable over bumps. Heavier and slower on pavement.
                       </p>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-4">
+                    <div className="bg-card rounded-lg p-4">
                       <div className="font-semibold text-foreground mb-1">Standard (2-3&quot;)</div>
                       <p className="text-sm text-muted-foreground">
                         Good all-around compromise. Handles light gravel and paved roads well.
                         Most folding e-bikes use this width.
                       </p>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-4">
+                    <div className="bg-card rounded-lg p-4">
                       <div className="font-semibold text-foreground mb-1">Narrow (1.5-2&quot;)</div>
                       <p className="text-sm text-muted-foreground">
                         Fastest and most efficient on pavement. Lightest weight. Not suitable for
@@ -1094,7 +1094,7 @@ export default function BestElectricBikes() {
                 </div>
 
                 {/* E-Bike Classes */}
-                <div className="border border-slate-200 rounded-xl p-6">
+                <div className="border border-border rounded-xl p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
                     <Zap className="h-5 w-5 text-primary" />
                     E-Bike Classes Explained (1, 2, and 3)
@@ -1104,7 +1104,7 @@ export default function BestElectricBikes() {
                     classes matters because they affect where you can legally ride.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <div className="bg-card border border-border rounded-lg p-4">
                       <div className="font-semibold text-blue-900 mb-1">Class 1</div>
                       <p className="text-sm text-blue-800">
                         Pedal-assist only, up to 20 mph. No throttle. Allowed on most bike paths
@@ -1134,12 +1134,12 @@ export default function BestElectricBikes() {
                 </div>
 
                 {/* Frame Style */}
-                <div className="border border-slate-200 rounded-xl p-6">
+                <div className="border border-border rounded-xl p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     Folding vs. Non-Folding: Which Frame Style?
                   </h3>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-slate-50 rounded-lg p-4">
+                    <div className="bg-card rounded-lg p-4">
                       <div className="font-semibold text-foreground mb-2">Folding</div>
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" /> Fits in car trunks, closets, under desks</li>
@@ -1149,7 +1149,7 @@ export default function BestElectricBikes() {
                         <li className="flex items-start gap-2"><X className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" /> Folding mechanism adds weight and complexity</li>
                       </ul>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-4">
+                    <div className="bg-card rounded-lg p-4">
                       <div className="font-semibold text-foreground mb-2">Non-Folding</div>
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" /> More stable and comfortable at speed</li>
@@ -1218,7 +1218,7 @@ export default function BestElectricBikes() {
                   </p>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-6">
+                <div className="bg-card border border-border rounded-xl p-6 mb-6">
                   <h3 className="text-lg font-bold text-foreground mb-3">
                     Solar-Charged E-Bikes: How It Works
                   </h3>
@@ -1247,7 +1247,7 @@ export default function BestElectricBikes() {
                   </ul>
                 </div>
 
-                <div className="border border-slate-200 rounded-xl p-6">
+                <div className="border border-border rounded-xl p-6">
                   <h3 className="text-lg font-bold text-foreground mb-3">
                     Environmental Impact
                   </h3>
@@ -1256,19 +1256,19 @@ export default function BestElectricBikes() {
                     highest-impact individual actions for reducing carbon emissions:
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-slate-50 rounded-lg p-4 text-center">
+                    <div className="bg-card rounded-lg p-4 text-center">
                       <div className="text-2xl font-bold text-primary mb-1">90%+</div>
                       <p className="text-sm text-muted-foreground">
                         Reduction in per-mile CO2 emissions vs. gasoline car
                       </p>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-4 text-center">
+                    <div className="bg-card rounded-lg p-4 text-center">
                       <div className="text-2xl font-bold text-primary mb-1">~0g</div>
                       <p className="text-sm text-muted-foreground">
                         Per-mile emissions when charged with solar energy
                       </p>
                     </div>
-                    <div className="bg-slate-50 rounded-lg p-4 text-center">
+                    <div className="bg-card rounded-lg p-4 text-center">
                       <div className="text-2xl font-bold text-primary mb-1">1-2 tons</div>
                       <p className="text-sm text-muted-foreground">
                         CO2 saved per year replacing a 10-mile daily car commute
@@ -1286,8 +1286,8 @@ export default function BestElectricBikes() {
                 Frequently Asked Questions
               </h2>
               <div className="space-y-3">
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-slate-50 transition-colors list-none flex items-center justify-between">
+                <details className="border border-border rounded-lg group">
+                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-card transition-colors list-none flex items-center justify-between">
                     What is the best electric bike in 2026?
                     <ChevronRight className="h-5 w-5 text-muted-foreground group-open:rotate-90 transition-transform" />
                   </summary>
@@ -1300,8 +1300,8 @@ export default function BestElectricBikes() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-slate-50 transition-colors list-none flex items-center justify-between">
+                <details className="border border-border rounded-lg group">
+                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-card transition-colors list-none flex items-center justify-between">
                     What is the difference between Class 1, Class 2, and Class 3 e-bikes?
                     <ChevronRight className="h-5 w-5 text-muted-foreground group-open:rotate-90 transition-transform" />
                   </summary>
@@ -1314,8 +1314,8 @@ export default function BestElectricBikes() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-slate-50 transition-colors list-none flex items-center justify-between">
+                <details className="border border-border rounded-lg group">
+                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-card transition-colors list-none flex items-center justify-between">
                     How far can an electric bike go on a single charge?
                     <ChevronRight className="h-5 w-5 text-muted-foreground group-open:rotate-90 transition-transform" />
                   </summary>
@@ -1327,8 +1327,8 @@ export default function BestElectricBikes() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-slate-50 transition-colors list-none flex items-center justify-between">
+                <details className="border border-border rounded-lg group">
+                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-card transition-colors list-none flex items-center justify-between">
                     Are electric bikes worth it for commuting?
                     <ChevronRight className="h-5 w-5 text-muted-foreground group-open:rotate-90 transition-transform" />
                   </summary>
@@ -1341,8 +1341,8 @@ export default function BestElectricBikes() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-slate-50 transition-colors list-none flex items-center justify-between">
+                <details className="border border-border rounded-lg group">
+                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-card transition-colors list-none flex items-center justify-between">
                     Can I charge an electric bike with solar panels?
                     <ChevronRight className="h-5 w-5 text-muted-foreground group-open:rotate-90 transition-transform" />
                   </summary>
@@ -1355,8 +1355,8 @@ export default function BestElectricBikes() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-slate-50 transition-colors list-none flex items-center justify-between">
+                <details className="border border-border rounded-lg group">
+                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-card transition-colors list-none flex items-center justify-between">
                     How long do electric bike batteries last?
                     <ChevronRight className="h-5 w-5 text-muted-foreground group-open:rotate-90 transition-transform" />
                   </summary>
@@ -1369,8 +1369,8 @@ export default function BestElectricBikes() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-slate-50 transition-colors list-none flex items-center justify-between">
+                <details className="border border-border rounded-lg group">
+                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-card transition-colors list-none flex items-center justify-between">
                     Do I need a license to ride an e-bike in California?
                     <ChevronRight className="h-5 w-5 text-muted-foreground group-open:rotate-90 transition-transform" />
                   </summary>
@@ -1383,8 +1383,8 @@ export default function BestElectricBikes() {
                   </div>
                 </details>
 
-                <details className="border border-slate-200 rounded-lg group">
-                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-slate-50 transition-colors list-none flex items-center justify-between">
+                <details className="border border-border rounded-lg group">
+                  <summary className="cursor-pointer p-4 font-semibold text-foreground hover:bg-card transition-colors list-none flex items-center justify-between">
                     What is the best budget electric bike?
                     <ChevronRight className="h-5 w-5 text-muted-foreground group-open:rotate-90 transition-transform" />
                   </summary>
@@ -1404,7 +1404,7 @@ export default function BestElectricBikes() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Link
                   href="/reviews"
-                  className="border border-slate-200 rounded-lg p-4 hover:border-primary/40 hover:bg-primary/5 transition-colors group"
+                  className="border border-border rounded-lg p-4 hover:border-primary/40 hover:bg-primary/5 transition-colors group"
                 >
                   <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
                     All Product Reviews
@@ -1416,7 +1416,7 @@ export default function BestElectricBikes() {
                 </Link>
                 <Link
                   href="/reviews/best-portable-power-stations"
-                  className="border border-slate-200 rounded-lg p-4 hover:border-primary/40 hover:bg-primary/5 transition-colors group"
+                  className="border border-border rounded-lg p-4 hover:border-primary/40 hover:bg-primary/5 transition-colors group"
                 >
                   <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
                     Best Portable Power Stations (2026)
