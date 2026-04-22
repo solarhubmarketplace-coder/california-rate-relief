@@ -104,6 +104,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'generac-guardian-24kw-review',
     'aventon-aventure-3-review',
     'ecoflow-delta-pro-ultra-review',
+    'ego-snow-blower-review',
+    'ryobi-40v-lawn-mower-review',
+    'mitsubishi-mini-split-review',
+    'best-tankless-water-heater',
+    'milwaukee-chainsaw-review',
+    'best-electric-dirt-bike-adults',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-21'),

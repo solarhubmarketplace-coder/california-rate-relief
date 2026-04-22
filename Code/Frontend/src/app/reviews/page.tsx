@@ -168,6 +168,58 @@ const reviews: ReviewCard[] = [
     rating: 4.7,
     icon: 'battery',
   },
+  {
+    slug: 'ego-snow-blower-review',
+    title: 'EGO SNT2114 Snow Blower Review',
+    description:
+      'Peak Power technology, 21" clearing width, up to 50-foot throw distance. The best electric snow blower for residential use.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'ryobi-40v-lawn-mower-review',
+    title: 'Ryobi 40V HP Lawn Mower Review',
+    description:
+      'The best budget electric mower at $399. 21" deck, self-propelled, 48-minute runtime. Part of the Ryobi 40V platform with 40+ tools.',
+    badge: 'Product Review',
+    rating: 4.4,
+    icon: 'zap',
+  },
+  {
+    slug: 'mitsubishi-mini-split-review',
+    title: 'Mitsubishi Mini Split Review',
+    description:
+      'The #1 selling mini split brand in North America. Hyper-Heating down to -13°F, 19 dB whisper-quiet, 12-year compressor warranty.',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'zap',
+  },
+  {
+    slug: 'best-tankless-water-heater',
+    title: 'Best Tankless Water Heater 2026',
+    description:
+      'Rinnai vs Rheem vs Navien vs Noritz — full comparison with sizing guide, installation costs, and annual savings breakdown.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'milwaukee-chainsaw-review',
+    title: 'Milwaukee M18 FUEL Chainsaw Review',
+    description:
+      '16" bar, 6,600 RPM, up to 150 cuts per charge. The pro-grade battery chainsaw built on the M18 platform with 250+ tools.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-dirt-bike-adults',
+    title: 'Best Electric Dirt Bikes for Adults 2026',
+    description:
+      'Sur-Ron vs KTM vs Stark Varg vs Zero FX. Electric dirt bikes from $4,500 to $12,000 compared — performance, range, and street legality.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {
