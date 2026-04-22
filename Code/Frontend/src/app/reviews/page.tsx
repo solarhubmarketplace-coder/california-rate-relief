@@ -220,6 +220,56 @@ const reviews: ReviewCard[] = [
     badge: 'Comparison Guide',
     icon: 'zap',
   },
+  {
+    slug: 'daikin-mini-split-review',
+    title: 'Daikin Mini Split Review',
+    description:
+      'World\'s largest HVAC manufacturer. Up to 20.6 SEER2, R-32 refrigerant, 19 dB whisper-quiet. 12-year compressor + parts warranty.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-leaf-blower',
+    title: 'Best Electric Leaf Blower 2026',
+    description:
+      'EGO vs Milwaukee vs DeWalt vs Ryobi vs Greenworks. CFM, MPH, noise, runtime, and battery platform compared.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-chainsaw',
+    title: 'Best Electric Chainsaw 2026',
+    description:
+      'EGO vs DeWalt vs Milwaukee vs Ryobi vs Stihl vs Makita. Bar length guide, battery platforms, and electric vs gas breakdown.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-scooter-with-seat',
+    title: 'Best Electric Scooters with Seats 2026',
+    description:
+      'Segway vs EMOVE vs NIU vs Hiboy vs Razor. Seated electric scooters from $450 to $1,400 compared for commuting and comfort.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'greenworks-80v-lawn-mower-review',
+    title: 'Greenworks 80V Lawn Mower Review',
+    description:
+      'Smart Cut auto-adjusting power, 80V brushless motor, 60-minute runtime. The mid-range electric mower with the best platform value.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'best-induction-cooktop',
+    title: 'Best Induction Cooktop & Range 2026',
+    description:
+      'GE Profile vs Samsung vs Bosch vs LG vs Duxtop. Cooktops and ranges compared — energy savings, cookware compatibility, and smart features.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {

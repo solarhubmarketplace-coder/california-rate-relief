@@ -110,6 +110,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-tankless-water-heater',
     'milwaukee-chainsaw-review',
     'best-electric-dirt-bike-adults',
+    'daikin-mini-split-review',
+    'best-electric-leaf-blower',
+    'best-electric-chainsaw',
+    'best-electric-scooter-with-seat',
+    'greenworks-80v-lawn-mower-review',
+    'best-induction-cooktop',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-21'),
