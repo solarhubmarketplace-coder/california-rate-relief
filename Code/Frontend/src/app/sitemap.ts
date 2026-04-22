@@ -122,6 +122,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'ecoflow-delta-2-review',
     'best-electric-dirt-bike-kids',
     'best-solar-attic-fan',
+    'ryobi-snow-blower-review',
+    'dewalt-lawn-mower-review',
+    'milwaukee-lawn-mower-review',
+    'pioneer-mini-split-review',
+    'honeywell-smart-thermostat-review',
+    'trek-electric-bike-review',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-21'),

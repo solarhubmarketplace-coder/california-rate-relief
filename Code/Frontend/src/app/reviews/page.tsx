@@ -319,6 +319,60 @@ const reviews: ReviewCard[] = [
     badge: 'Comparison Guide',
     icon: 'zap',
   },
+  {
+    slug: 'ryobi-snow-blower-review',
+    title: 'Ryobi 40V Snow Blower Review',
+    description:
+      'The best budget battery snow blower at $449. 21" clearing width, brushless motor, and Ryobi 40V platform compatibility.',
+    badge: 'Product Review',
+    rating: 4.3,
+    icon: 'zap',
+  },
+  {
+    slug: 'dewalt-lawn-mower-review',
+    title: 'DeWalt 20V MAX Lawn Mower Review',
+    description:
+      'Steel deck durability meets the massive 20V MAX ecosystem. Best for existing DeWalt tool owners upgrading from gas.',
+    badge: 'Product Review',
+    rating: 4.3,
+    icon: 'zap',
+  },
+  {
+    slug: 'milwaukee-lawn-mower-review',
+    title: 'Milwaukee M18 FUEL Lawn Mower Review',
+    description:
+      'Professional-grade POWERSTATE motor with M18 platform compatibility. The most powerful battery mower for thick grass and tough yards.',
+    badge: 'Product Review',
+    rating: 4.4,
+    icon: 'zap',
+  },
+  {
+    slug: 'pioneer-mini-split-review',
+    title: 'Pioneer Mini Split Review',
+    description:
+      'The best budget mini split starting at $750. Diamante series with up to 20.5 SEER2 efficiency and 5-year compressor warranty.',
+    badge: 'Product Review',
+    rating: 4.0,
+    icon: 'zap',
+  },
+  {
+    slug: 'honeywell-smart-thermostat-review',
+    title: 'Honeywell Home T9 Smart Thermostat Review',
+    description:
+      'Room sensors, geofencing, and smart scheduling at $169. The best mid-range smart thermostat for multi-room comfort.',
+    badge: 'Product Review',
+    rating: 4.3,
+    icon: 'zap',
+  },
+  {
+    slug: 'trek-electric-bike-review',
+    title: 'Trek Allant+ E-Bike Review',
+    description:
+      'Bosch Performance Line CX motor, 500Wh battery, premium components. The best commuter e-bike for riders who want dealer support.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {
