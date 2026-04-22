@@ -270,6 +270,55 @@ const reviews: ReviewCard[] = [
     badge: 'Comparison Guide',
     icon: 'zap',
   },
+  {
+    slug: 'best-electric-moped',
+    title: 'Best Electric Mopeds 2026',
+    description:
+      'NIU vs Segway vs CSC vs ONYX — top electric mopeds from $2,000 to $4,500 compared. Range, speed, and city commuting picks.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-solar-pool-heater',
+    title: 'Best Solar Pool Heaters 2026',
+    description:
+      'Fafco vs SunHeater vs SmartPool vs Game — solar pool heating panels compared. Cut pool heating costs by 50-70%.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-scooter',
+    title: 'Best Electric Scooters 2026',
+    description:
+      'Segway vs Apollo vs EMOVE vs Kaabo — adult electric scooters from $400 to $2,500 compared. Commuter, off-road, and premium picks.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'ecoflow-delta-2-review',
+    title: 'EcoFlow Delta 2 Review',
+    description:
+      '1,024 Wh LFP battery with 1,800W output. The best mid-range portable power station for camping and light home backup.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-dirt-bike-kids',
+    title: 'Best Electric Dirt Bikes for Kids 2026',
+    description:
+      'STACYC vs KTM vs Razor vs Sur-Ron — kids electric dirt bikes from $200 to $3,000. Age-appropriate picks for 3-16 year olds.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-solar-attic-fan',
+    title: 'Best Solar Attic Fans 2026',
+    description:
+      'Remington vs Natural Light vs QuietCool vs iLIVING — solar attic fans compared. Cut cooling costs 10-30% with zero operating cost.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {

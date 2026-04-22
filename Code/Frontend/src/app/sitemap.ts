@@ -116,6 +116,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-electric-scooter-with-seat',
     'greenworks-80v-lawn-mower-review',
     'best-induction-cooktop',
+    'best-electric-moped',
+    'best-solar-pool-heater',
+    'best-electric-scooter',
+    'ecoflow-delta-2-review',
+    'best-electric-dirt-bike-kids',
+    'best-solar-attic-fan',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-21'),
