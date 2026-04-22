@@ -519,6 +519,54 @@ const reviews: ReviewCard[] = [
     badge: 'Comparison Guide',
     icon: 'zap',
   },
+  {
+    slug: 'best-air-purifier',
+    title: 'Best Air Purifiers 2026',
+    description:
+      'Coway vs Blueair vs Levoit vs Winix vs Dyson — HEPA air purifiers compared by CADR, noise, energy cost, and room coverage.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-space-heater',
+    title: 'Best Space Heaters 2026',
+    description:
+      'Dyson vs De\'Longhi vs Lasko vs Vornado vs Dr Infrared — ceramic, oil-filled, and infrared heaters for every room size.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-bike-for-seniors',
+    title: 'Best Electric Bikes for Seniors 2026',
+    description:
+      'Step-through e-bikes from Rad Power, Aventon, Lectric, Pedego, and Gazelle — comfort, safety, and easy-mount designs.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-solar-security-camera',
+    title: 'Best Solar Security Cameras 2026',
+    description:
+      'Ring vs Reolink vs eufy vs Arlo vs Wyze vs Blink — wire-free solar cameras with local and cloud storage options.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-riding-mower',
+    title: 'Best Electric Riding Mowers 2026',
+    description:
+      'EGO Z6 vs Ryobi 80V vs Greenworks vs Cub Cadet vs John Deere — battery zero-turn and riding mowers from $3K to $8.5K.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-portable-heater',
+    title: 'Best Portable Heaters 2026',
+    description:
+      'Mr. Heater Buddy vs DeWalt vs Lasko vs Dr. Infrared — propane and electric portable heaters for camping, garages, and patios.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {

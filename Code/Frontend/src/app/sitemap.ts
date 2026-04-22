@@ -146,6 +146,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-dehumidifier',
     'jackery-solar-generator-1000-review',
     'best-electric-weed-eater',
+    'best-air-purifier',
+    'best-space-heater',
+    'best-electric-bike-for-seniors',
+    'best-solar-security-camera',
+    'best-electric-riding-mower',
+    'best-portable-heater',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-21'),
