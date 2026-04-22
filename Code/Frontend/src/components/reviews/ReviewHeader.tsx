@@ -54,7 +54,7 @@ export function ReviewHeader() {
                 key={cat.href}
                 href={cat.href}
                 className='text-sm font-medium px-3 py-1.5 rounded-md transition-colors'
-                style={{ color: '#a1a1aa' }}
+                style={{ color: '#d4d4d8' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = '#f5f5f5';
                   e.currentTarget.style.backgroundColor = '#1a1a1a';

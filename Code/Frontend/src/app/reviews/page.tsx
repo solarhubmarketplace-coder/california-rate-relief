@@ -248,7 +248,7 @@ export default function ReviewsPage() {
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight' style={{ color: '#f5f5f5' }}>
                 Product Reviews & Buying Guides
               </h1>
-              <p className='text-lg max-w-2xl mx-auto' style={{ color: '#a1a1aa' }}>
+              <p className='text-lg max-w-2xl mx-auto' style={{ color: '#d4d4d8' }}>
                 Expert reviews and comparisons of portable power stations, e-bikes,
                 mini splits, electric lawn mowers, smart thermostats, generators,
                 and more — tested and verified for 2026.
@@ -276,9 +276,9 @@ export default function ReviewsPage() {
                         {review.badge}
                       </span>
                       {review.icon === 'battery' ? (
-                        <Battery className='h-5 w-5' style={{ color: '#a1a1aa' }} />
+                        <Battery className='h-5 w-5' style={{ color: '#d4d4d8' }} />
                       ) : (
-                        <Zap className='h-5 w-5' style={{ color: '#a1a1aa' }} />
+                        <Zap className='h-5 w-5' style={{ color: '#d4d4d8' }} />
                       )}
                     </div>
 
@@ -295,7 +295,7 @@ export default function ReviewsPage() {
                     )}
 
                     {/* Description */}
-                    <p className='leading-relaxed mb-4 flex-grow' style={{ color: '#a1a1aa' }}>
+                    <p className='leading-relaxed mb-4 flex-grow' style={{ color: '#d4d4d8' }}>
                       {review.description}
                     </p>
 
@@ -315,7 +315,7 @@ export default function ReviewsPage() {
               <h2 className='text-2xl md:text-3xl font-bold mb-3 tracking-tight' style={{ color: '#f5f5f5' }}>
                 Looking for More?
               </h2>
-              <p className='mb-6 max-w-xl mx-auto' style={{ color: '#a1a1aa' }}>
+              <p className='mb-6 max-w-xl mx-auto' style={{ color: '#d4d4d8' }}>
                 We test and review the latest in green energy tech — from
                 portable power stations to smart home devices. New reviews
                 every week.

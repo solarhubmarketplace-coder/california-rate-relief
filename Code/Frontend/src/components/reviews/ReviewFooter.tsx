@@ -40,7 +40,7 @@ export function ReviewFooter() {
               </Link>
               <p
                 className='text-sm leading-relaxed font-medium'
-                style={{ color: '#a1a1aa' }}
+                style={{ color: '#d4d4d8' }}
               >
                 Independent, hands-on reviews of portable power stations,
                 e-bikes, smart home devices, lawn equipment, and everything
@@ -88,7 +88,7 @@ export function ReviewFooter() {
                     <Link
                       href={link.href}
                       className='font-medium transition-colors inline-flex items-center gap-2 group'
-                      style={{ color: '#a1a1aa' }}
+                      style={{ color: '#d4d4d8' }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.color = '#22c55e';
                       }}
@@ -128,7 +128,7 @@ export function ReviewFooter() {
                       <a
                         href={link.href}
                         className='font-medium transition-colors inline-flex items-center gap-2 group'
-                        style={{ color: '#a1a1aa' }}
+                        style={{ color: '#d4d4d8' }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.color = '#22c55e';
                         }}
@@ -145,7 +145,7 @@ export function ReviewFooter() {
                       <Link
                         href={link.href}
                         className='font-medium transition-colors inline-flex items-center gap-2 group'
-                        style={{ color: '#a1a1aa' }}
+                        style={{ color: '#d4d4d8' }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.color = '#22c55e';
                         }}
