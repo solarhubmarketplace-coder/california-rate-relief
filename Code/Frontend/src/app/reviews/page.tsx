@@ -421,6 +421,55 @@ const reviews: ReviewCard[] = [
     badge: 'Comparison Guide',
     icon: 'battery',
   },
+  {
+    slug: 'best-robot-lawn-mower',
+    title: 'Best Robot Lawn Mowers 2026',
+    description:
+      'Husqvarna vs Worx vs EcoVacs vs Mammotion vs Robomow — autonomous mowers from $600 to $3,500. Wire, RTK, and vision navigation compared.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'lectric-xp-3-review',
+    title: 'Lectric XP 3.0 Review',
+    description:
+      'The best folding e-bike under $1,000. 750W motor, 60-mile range, fat tires, and a massive accessory ecosystem.',
+    badge: 'Product Review',
+    rating: 4.4,
+    icon: 'zap',
+  },
+  {
+    slug: 'best-outdoor-solar-lights',
+    title: 'Best Outdoor Solar Lights 2026',
+    description:
+      'Path lights, security floods, string lights, and step lights — the best solar-powered outdoor lighting from $15 to $80.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-snow-shovel',
+    title: 'Best Electric Snow Shovels 2026',
+    description:
+      'EGO vs Greenworks vs Snow Joe vs Toro vs Ryobi — battery-powered snow shovels for decks, walkways, and light accumulation.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-solar-panel-kit',
+    title: 'Best Solar Panel Kits 2026',
+    description:
+      'Renogy vs BougeRV vs Rich Solar vs ECO-WORTHY — DIY solar panel kits for RVs, sheds, cabins, and off-grid setups.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-hedge-trimmer',
+    title: 'Best Electric Hedge Trimmers 2026',
+    description:
+      'EGO vs Milwaukee vs DeWalt vs Makita vs BLACK+DECKER — battery hedge trimmers for every yard size and budget.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {

@@ -134,6 +134,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-battery-pressure-washer',
     'best-electric-skateboard',
     'best-solar-generator',
+    'best-robot-lawn-mower',
+    'lectric-xp-3-review',
+    'best-outdoor-solar-lights',
+    'best-electric-snow-shovel',
+    'best-solar-panel-kit',
+    'best-electric-hedge-trimmer',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-21'),
