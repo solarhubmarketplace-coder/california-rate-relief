@@ -373,6 +373,54 @@ const reviews: ReviewCard[] = [
     rating: 4.5,
     icon: 'zap',
   },
+  {
+    slug: 'best-electric-fireplace-tv-stand',
+    title: 'Best Electric Fireplace TV Stands 2026',
+    description:
+      'Walker Edison vs Ameriwood vs Twin Star vs SEI Furniture vs Real Flame — electric fireplace entertainment centers from $235 to $899.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'heat-pump-vs-furnace',
+    title: 'Heat Pump vs Furnace: Which Is Better?',
+    description:
+      'Complete comparison of heat pumps vs gas furnaces — efficiency, costs, climate zones, and when each makes sense for your home.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-solar-charge-controller',
+    title: 'Best Solar Charge Controllers 2026',
+    description:
+      'Victron vs Renogy vs EPEver vs Rich Solar vs BougeRV — MPPT and PWM controllers compared for off-grid and DIY solar setups.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-battery-pressure-washer',
+    title: 'Best Battery Pressure Washers 2026',
+    description:
+      'EGO vs Greenworks vs Ryobi vs DeWalt vs Sun Joe — cordless pressure washers from 600 to 3,200 PSI compared.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-skateboard',
+    title: 'Best Electric Skateboards 2026',
+    description:
+      'Boosted vs Evolve vs Meepo vs WowGo vs Exway vs Backfire — electric skateboards from $400 to $2,000+ compared.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-solar-generator',
+    title: 'Best Solar Generators 2026',
+    description:
+      'EcoFlow vs Bluetti vs Jackery vs Goal Zero vs Anker — complete solar generator bundles for home backup, camping, and off-grid.',
+    badge: 'Comparison Guide',
+    icon: 'battery',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {

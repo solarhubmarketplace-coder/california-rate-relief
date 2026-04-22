@@ -128,6 +128,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'pioneer-mini-split-review',
     'honeywell-smart-thermostat-review',
     'trek-electric-bike-review',
+    'best-electric-fireplace-tv-stand',
+    'heat-pump-vs-furnace',
+    'best-solar-charge-controller',
+    'best-battery-pressure-washer',
+    'best-electric-skateboard',
+    'best-solar-generator',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-21'),
