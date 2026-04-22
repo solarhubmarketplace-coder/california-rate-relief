@@ -152,6 +152,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-solar-security-camera',
     'best-electric-riding-mower',
     'best-portable-heater',
+    'best-ev-charger',
+    'best-solar-water-heater',
+    'best-electric-pressure-washer',
+    'best-heat-pump-water-heater',
+    'best-ebike-rack',
+    'best-electric-smoker',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-21'),

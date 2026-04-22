@@ -567,6 +567,54 @@ const reviews: ReviewCard[] = [
     badge: 'Comparison Guide',
     icon: 'zap',
   },
+  {
+    slug: 'best-ev-charger',
+    title: 'Best Home EV Chargers 2026',
+    description:
+      'ChargePoint vs Emporia vs Grizzl-E vs JuiceBox vs Wallbox vs Tesla — Level 2 home EV chargers from $400 to $700.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-solar-water-heater',
+    title: 'Best Solar Water Heaters 2026',
+    description:
+      'Duda Solar vs SunEarth vs Rheem vs A.O. Smith — active and passive solar water heating systems compared.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-pressure-washer',
+    title: 'Best Electric Pressure Washers 2026',
+    description:
+      'Sun Joe vs Greenworks vs Ryobi vs Karcher vs Westinghouse — corded electric power washers from 1,500 to 3,500 PSI.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-heat-pump-water-heater',
+    title: 'Best Heat Pump Water Heaters 2026',
+    description:
+      'Rheem ProTerra vs A.O. Smith Voltex vs GE GeoSpring — hybrid heat pump water heaters with 3-4x efficiency and $2,000+ tax credits.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-ebike-rack',
+    title: 'Best E-Bike Racks 2026',
+    description:
+      '1UP USA vs Thule vs Kuat vs Saris — hitch-mounted e-bike racks rated for 60-75 lb heavy electric bikes.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-smoker',
+    title: 'Best Electric Smokers 2026',
+    description:
+      'Masterbuilt vs Weber vs Traeger vs Pit Boss vs Bradley — electric, pellet, and digital smokers for set-it-and-forget-it BBQ.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {
