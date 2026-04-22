@@ -114,6 +114,60 @@ const reviews: ReviewCard[] = [
     badge: 'Comparison Guide',
     icon: 'battery',
   },
+  {
+    slug: 'rad-power-radrover-6-plus-review',
+    title: 'Rad Power RadRover 6 Plus Review',
+    description:
+      '750W motor, 672Wh battery, 26×4" fat tires. The best-selling all-terrain e-bike for commuters and adventure riders.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'aventon-aventure-3-review',
+    title: 'Aventon Aventure 3 Review',
+    description:
+      'Class 3 speed (28 mph), torque sensor, 720Wh battery with 40-60 mile range. The premium all-terrain e-bike.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'mrcool-diy-4th-gen-review',
+    title: 'MrCool DIY 4th Gen Mini Split Review',
+    description:
+      'Install your own mini split — no HVAC tech needed. 12K-36K BTU, up to 22 SEER2. Save $3,000-$8,000 on installation.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'ego-select-cut-mower-review',
+    title: 'EGO Select Cut XP Mower Review',
+    description:
+      'The best electric lawn mower for gas switchers. 21" deck, 3 swappable blade types, 56V battery platform with 70+ compatible tools.',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'zap',
+  },
+  {
+    slug: 'generac-guardian-24kw-review',
+    title: 'Generac Guardian 24kW Review',
+    description:
+      'The best-selling whole house standby generator. 24kW output, automatic transfer switch, Mobile Link monitoring. Full install cost breakdown.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'battery',
+  },
+  {
+    slug: 'ecoflow-delta-pro-ultra-review',
+    title: 'EcoFlow Delta Pro Ultra Review',
+    description:
+      'The bridge between portable power and whole-home backup. 6,144Wh expandable to 90kWh, 7,200W output, LFP battery.',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'battery',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {

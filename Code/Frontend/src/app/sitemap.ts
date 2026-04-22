@@ -98,9 +98,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-electric-lawn-mower',
     'best-smart-thermostat',
     'best-whole-house-generator',
+    'rad-power-radrover-6-plus-review',
+    'mrcool-diy-4th-gen-review',
+    'ego-select-cut-mower-review',
+    'generac-guardian-24kw-review',
+    'aventon-aventure-3-review',
+    'ecoflow-delta-pro-ultra-review',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
-    lastModified: new Date('2026-04-16'),
+    lastModified: new Date('2026-04-21'),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
