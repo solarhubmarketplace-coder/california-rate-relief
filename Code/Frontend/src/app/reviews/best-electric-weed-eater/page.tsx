@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -254,6 +256,8 @@ export default function BestElectricWeedEater() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -473,14 +477,13 @@ export default function BestElectricWeedEater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{EGO_ST1623T_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — EGO ST1623T
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="ego-select-cut-mower"
+                source="best-electric-weed-eater"
+                variant="primary"
+                label="Check Price — EGO ST1623T"
+                showPrice
+              />
             </section>
 
             {/* 2. Milwaukee M18 FUEL */}
@@ -570,14 +573,13 @@ export default function BestElectricWeedEater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{MILWAUKEE_M18_FUEL_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Milwaukee M18 FUEL
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="milwaukee-lawn-mower"
+                source="best-electric-weed-eater"
+                variant="primary"
+                label="Check Price — Milwaukee M18 FUEL"
+                showPrice
+              />
             </section>
 
             {/* 3. DeWalt 60V MAX */}
@@ -669,14 +671,13 @@ export default function BestElectricWeedEater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{DEWALT_60V_MAX_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — DeWalt 60V MAX
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="dewalt-lawn-mower"
+                source="best-electric-weed-eater"
+                variant="primary"
+                label="Check Price — DeWalt 60V MAX"
+                showPrice
+              />
             </section>
 
             {/* 4. Greenworks 80V */}
@@ -769,14 +770,13 @@ export default function BestElectricWeedEater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{GREENWORKS_80V_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Greenworks 80V Pro
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="greenworks-80v-lawn-mower"
+                source="best-electric-weed-eater"
+                variant="primary"
+                label="Check Price — Greenworks 80V Pro"
+                showPrice
+              />
             </section>
 
             {/* 5. Ryobi 40V Expand-It */}
@@ -868,14 +868,13 @@ export default function BestElectricWeedEater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{RYOBI_40V_EXPAND_IT_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Ryobi 40V Expand-It
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="ryobi-40v-lawn-mower"
+                source="best-electric-weed-eater"
+                variant="primary"
+                label="Check Price — Ryobi 40V Expand-It"
+                showPrice
+              />
             </section>
 
             {/* 6. BLACK+DECKER 20V MAX */}
@@ -966,14 +965,13 @@ export default function BestElectricWeedEater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{BLACK_DECKER_20V_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — BLACK+DECKER 20V MAX
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="black-decker-20v-max"
+                source="best-electric-weed-eater"
+                variant="primary"
+                label="Check Price — BLACK+DECKER 20V MAX"
+                showPrice
+              />
             </section>
 
             {/* ========== ATTACHMENT CAPABILITY GUIDE ========== */}

@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowRight,
   Battery,
@@ -175,6 +179,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'greenworks-80v-lawn-mower';
+
 export default function Greenworks80VLawnMowerReview() {
   return (
     <ReviewLayout>
@@ -235,6 +241,27 @@ export default function Greenworks80VLawnMowerReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate Disclosure + Top CTA */}
+            <AffiliateDisclosure compact />
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Best Mid-Range Value'
+              rating={4.5}
+              verdict='80V brushless, Smart Cut auto power adjust, 60 min runtime, 21-inch deck. More power than 40V, $300 less than EGO.'
+              pros={[
+                '80V torque handles thick, wet grass',
+                'Smart Cut auto-adjusts motor power',
+                '60 min runtime on 4.0Ah battery',
+                'LED headlights included',
+              ]}
+              cons={[
+                'Smaller tool ecosystem than EGO or DeWalt',
+                'Single blade — no swappable cuts',
+              ]}
+              source='greenworks-80v-lawn-mower'
+              variant='top'
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -312,13 +339,12 @@ export default function Greenworks80VLawnMowerReview() {
                   $499 with 4.0Ah battery + charger
                 </p>
               </div>
-              <a
-                href='#'
-                className='bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity flex items-center gap-2'
-              >
-                Check Price
-                <ArrowRight className='h-4 w-4' />
-              </a>
+              <BuyButton
+                productKey={PRODUCT_KEY}
+                source='greenworks-80v-lawn-mower-spec'
+                variant='primary'
+                showPrice
+              />
             </div>
 
             {/* Overview */}
@@ -706,6 +732,15 @@ export default function Greenworks80VLawnMowerReview() {
               </p>
             </section>
 
+            {/* Mid-content CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Ready to buy?'
+              verdict='The mower that makes the most people happy — enough power for thick grass, smart enough to save battery, and $300 less than the premium.'
+              source='greenworks-80v-lawn-mower'
+              variant='mid'
+            />
+
             {/* Greenworks vs EGO vs Ryobi */}
             <section className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -1029,15 +1064,33 @@ export default function Greenworks80VLawnMowerReview() {
                   three, and covers them well. At $499, this is the mower that
                   makes the most people happy.
                 </p>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity'
-                >
-                  Check Price on Amazon
-                  <ArrowRight className='h-4 w-4' />
-                </a>
+                <BuyButton
+                  productKey={PRODUCT_KEY}
+                  source='greenworks-80v-lawn-mower-verdict'
+                  variant='primary'
+                  showPrice
+                />
               </div>
             </section>
+
+            {/* Final CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Final Verdict'
+              verdict='The mid-range value king — 80V Smart Cut that cuts like a flagship at mid-range pricing.'
+              source='greenworks-80v-lawn-mower'
+              variant='final'
+            />
+            <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+              <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+              <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                See how Greenworks 80V compares against EGO, DeWalt, Ryobi, and other top electric mowers.
+              </p>
+              <Link href='/reviews/best-electric-lawn-mower' className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'>
+                Best Electric Lawn Mowers 2026
+                <ArrowRight className='h-4 w-4' />
+              </Link>
+            </div>
 
             {/* Related Content CTAs */}
             <section className='mb-10'>
@@ -1080,20 +1133,12 @@ export default function Greenworks80VLawnMowerReview() {
               </div>
             </section>
 
-            {/* Affiliate Disclosure */}
-            <div className='border-t border-border pt-6 text-xs text-muted-foreground leading-relaxed'>
-              <p>
-                <strong className='text-foreground/60'>Affiliate Disclosure:</strong>{' '}
-                GreenVerdict may earn a commission if you purchase through links on
-                this page. This does not affect our editorial independence — all
-                opinions are our own and we only recommend products we believe
-                deliver genuine value.
-              </p>
-            </div>
+            <AffiliateDisclosure />
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source='greenworks-80v-lawn-mower' />
     </ReviewLayout>
   );
 }

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Check,
@@ -262,6 +264,8 @@ export default function BestDehumidifier() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -555,14 +559,13 @@ export default function BestDehumidifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{FRIGIDAIRE_FFAD5033W1_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Frigidaire FFAD5033W1
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="frigidaire-ffad5033w1"
+                source="dehumidifier-hub"
+                variant="primary"
+                label="Check Price — Frigidaire FFAD5033W1"
+                showPrice
+              />
             </section>
 
             {/* 2. hOmeLabs HME020031N */}
@@ -653,14 +656,13 @@ export default function BestDehumidifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{HOMELABS_HME020031N_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — hOmeLabs HME020031N
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="homelabs-hme020031n"
+                source="dehumidifier-hub"
+                variant="primary"
+                label="Check Price — hOmeLabs HME020031N"
+                showPrice
+              />
             </section>
 
             {/* 3. GE ADEW50LW */}
@@ -752,14 +754,13 @@ export default function BestDehumidifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{GE_ADEW50LW_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — GE ADEW50LW
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="ge-adew50lw"
+                source="dehumidifier-hub"
+                variant="primary"
+                label="Check Price — GE ADEW50LW"
+                showPrice
+              />
             </section>
 
             {/* 4. LG PuriCare UD501KOG5 */}
@@ -851,14 +852,13 @@ export default function BestDehumidifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{LG_PURICARE_UD501KOG5_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — LG PuriCare UD501KOG5
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="lg-puricare-ud501kog5"
+                source="dehumidifier-hub"
+                variant="primary"
+                label="Check Price — LG PuriCare UD501KOG5"
+                showPrice
+              />
             </section>
 
             {/* 5. Midea MAD50S1QWT */}
@@ -948,14 +948,13 @@ export default function BestDehumidifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{MIDEA_MAD50S1QWT_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Midea MAD50S1QWT
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="midea-mad50s1qwt"
+                source="dehumidifier-hub"
+                variant="primary"
+                label="Check Price — Midea MAD50S1QWT"
+                showPrice
+              />
             </section>
 
             {/* 6. Tosot 50-Pint */}
@@ -1046,14 +1045,13 @@ export default function BestDehumidifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{TOSOT_50_PINT_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Tosot 50-Pint
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="tosot-50-pint"
+                source="dehumidifier-hub"
+                variant="primary"
+                label="Check Price — Tosot 50-Pint"
+                showPrice
+              />
             </section>
 
             {/* ========== SIZING GUIDE ========== */}

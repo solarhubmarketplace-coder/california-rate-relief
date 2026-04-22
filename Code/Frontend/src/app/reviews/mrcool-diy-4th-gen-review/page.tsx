@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowRight,
   Calendar,
@@ -192,6 +196,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'mrcool-diy-4th-gen';
+
 export default function MrCoolDIY4thGenReview() {
   return (
     <ReviewLayout>
@@ -258,6 +264,25 @@ export default function MrCoolDIY4thGenReview() {
               </div>
             </header>
 
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Best DIY Install"
+              rating={4.6}
+              verdict="MrCool DIY 4th Gen — the only true DIY mini split. Pre-charged QuickConnect line sets, 22 SEER2 efficiency, heats down to -13°F, built-in WiFi. Save $3,000-$8,000 vs pro install."
+              pros={[
+                'Homeowners skipping HVAC contractor costs',
+                'Garages, additions, bonus rooms, ADUs',
+                'Single-zone heating and cooling',
+              ]}
+              cons={['Whole-home multi-zone (single only)', 'Renters or condo owners']}
+              source="mrcool-diy-4th-gen"
+              variant="top"
+            />
+
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
               <div className='flex items-center gap-3 mb-4'>
@@ -323,30 +348,6 @@ export default function MrCoolDIY4thGenReview() {
                     </li>
                   </ul>
                 </div>
-              </div>
-            </div>
-
-            {/* Buy Box */}
-            <div className='bg-card border border-border rounded-xl p-6 mb-10'>
-              <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4'>
-                <div>
-                  <p className='text-sm text-muted-foreground mb-1'>
-                    MrCool DIY 4th Gen 24K BTU
-                  </p>
-                  <p className='text-2xl font-bold text-foreground'>
-                    $1,899 - $2,199
-                  </p>
-                  <p className='text-sm text-muted-foreground'>
-                    + $0 installation (you do it yourself)
-                  </p>
-                </div>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
-                >
-                  Check Latest Price
-                  <ArrowRight className='h-4 w-4' />
-                </a>
               </div>
             </div>
 
@@ -851,6 +852,15 @@ export default function MrCoolDIY4thGenReview() {
                 </div>
               </div>
             </section>
+
+            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              headline="Ready to buy?"
+              verdict="MrCool DIY 4th Gen is stocked at Home Depot and major retailers — check current pricing on all BTU sizes."
+              source="mrcool-diy-4th-gen"
+              variant="mid"
+            />
 
             {/* Performance Section */}
             <section className='mb-12'>
@@ -1388,13 +1398,6 @@ export default function MrCoolDIY4thGenReview() {
                   the most cost-effective way to add high-efficiency heating and
                   cooling to any space.
                 </p>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
-                >
-                  Check Latest Price — MrCool DIY 24K BTU
-                  <ArrowRight className='h-4 w-4' />
-                </a>
               </div>
             </section>
 
@@ -1465,29 +1468,28 @@ export default function MrCoolDIY4thGenReview() {
               </div>
             </section>
 
-            {/* Bottom Buy Box */}
-            <div className='bg-card border border-border rounded-xl p-6 mb-8'>
-              <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4'>
-                <div>
-                  <p className='text-sm text-muted-foreground mb-1'>
-                    MrCool DIY 4th Gen — All Sizes
-                  </p>
-                  <p className='text-2xl font-bold text-foreground'>
-                    $1,899 - $2,499
-                  </p>
-                  <p className='text-sm text-muted-foreground'>
-                    12K / 18K / 24K / 36K BTU models available
-                  </p>
-                </div>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
+            {/* Final Affiliate CTA */}
+            <section className='mb-10'>
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                headline='Ready to buy the MrCool DIY 4th Gen?'
+                verdict='The only true DIY mini split — skip HVAC contractor costs and save thousands. Check current pricing on all BTU sizes.'
+                source='mrcool-diy-4th-gen'
+                variant='final'
+              />
+              <div className='mt-6 text-center'>
+                <p className='text-sm text-muted-foreground mb-2'>
+                  Still comparing?
+                </p>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline'
                 >
-                  Check Latest Price
-                  <ArrowRight className='h-4 w-4' />
-                </a>
+                  Browse All Reviews
+                  <ArrowRight className='h-3 w-3' />
+                </Link>
               </div>
-            </div>
+            </section>
 
             {/* Back to Reviews */}
             <div className='text-center'>
@@ -1503,6 +1505,7 @@ export default function MrCoolDIY4thGenReview() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="mrcool-diy-4th-gen" />
     </ReviewLayout>
   );
 }

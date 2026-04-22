@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -156,6 +160,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'ecoflow-delta-2';
+
 export default function EcoFlowDelta2Review() {
   return (
     <ReviewLayout>
@@ -212,6 +218,27 @@ export default function EcoFlowDelta2Review() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate Disclosure + Top CTA */}
+            <AffiliateDisclosure compact />
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Best Mid-Range'
+              rating={4.5}
+              verdict='1,024 Wh LFP, 1,800W output with X-Boost to 2,200W, 27 lbs, expandable to 3,072 Wh. The sweet spot between portability and power.'
+              pros={[
+                'Fast 0-80% AC charge in 50 min',
+                'LFP chemistry — 3,000+ cycles',
+                'Expandable to 3,072 Wh',
+                '27 lbs, easy to carry',
+              ]}
+              cons={[
+                'Fan audible under heavy loads',
+                'Not enough for whole-home backup',
+              ]}
+              source='ecoflow-delta-2'
+              variant='top'
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -778,6 +805,15 @@ export default function EcoFlowDelta2Review() {
               </p>
             </div>
 
+            {/* Mid-content CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Ready to buy?'
+              verdict='The Delta 2 hits the sweet spot for camping, tailgates, and emergency backup.'
+              source='ecoflow-delta-2'
+              variant='mid'
+            />
+
             {/* Competitor Comparison */}
             <div className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -1093,39 +1129,23 @@ export default function EcoFlowDelta2Review() {
               </div>
             </div>
 
-            {/* CTAs */}
-            <div className='mt-12 space-y-4'>
-              <div className='bg-muted/30 border border-border rounded-2xl p-6 text-center'>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-foreground hover:bg-foreground/90 text-background px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                >
-                  Check Price on EcoFlow.com
-                  <ArrowRight className='h-4 w-4' />
-                </a>
-                <p className='text-xs text-muted-foreground mt-3'>
-                  Affiliate links may be added in the future. Currently no
-                  affiliate relationship.
-                </p>
-              </div>
-
-              <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center'>
-                <h3 className='text-lg font-bold text-foreground mb-2'>
-                  Compare All Power Stations
-                </h3>
-                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
-                  See how the Delta 2 compares to every major portable power
-                  station in our full comparison guide — from budget picks
-                  under $500 to whole-home backup systems.
-                </p>
-                <Link
-                  href='/reviews/best-portable-power-stations'
-                  className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                >
-                  Best Portable Power Stations 2026
-                  <ArrowRight className='h-4 w-4' />
-                </Link>
-              </div>
+            {/* Final CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Final Verdict'
+              verdict='The portable power station that actually earns the word portable — 1,024 Wh of LFP capacity you can carry in one hand.'
+              source='ecoflow-delta-2'
+              variant='final'
+            />
+            <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+              <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+              <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                See how the Delta 2 compares against every major portable power station in our full review.
+              </p>
+              <Link href='/reviews/best-portable-power-stations' className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'>
+                Best Portable Power Stations 2026
+                <ArrowRight className='h-4 w-4' />
+              </Link>
             </div>
 
             {/* Navigation */}
@@ -1149,6 +1169,7 @@ export default function EcoFlowDelta2Review() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source='ecoflow-delta-2' />
     </ReviewLayout>
   );
 }

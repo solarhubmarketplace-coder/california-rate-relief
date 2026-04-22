@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -268,6 +270,8 @@ export default function BestElectricBikeForSeniors() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -514,9 +518,13 @@ export default function BestElectricBikeForSeniors() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
-                      Check Price at Rad Power Bikes <ChevronRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="rad-power-radcity-5-plus"
+                      source="electric-bike-for-seniors-hub"
+                      variant="primary"
+                      label="Check Price — Rad Power RadCity 5 Plus"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -586,9 +594,13 @@ export default function BestElectricBikeForSeniors() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
-                      Check Price at Aventon <ChevronRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="aventon-pace-500-3"
+                      source="electric-bike-for-seniors-hub"
+                      variant="primary"
+                      label="Check Price — Aventon Pace 500.3"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -658,9 +670,13 @@ export default function BestElectricBikeForSeniors() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
-                      Check Price at Lectric eBikes <ChevronRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="lectric-xp-lite-2-0"
+                      source="electric-bike-for-seniors-hub"
+                      variant="primary"
+                      label="Check Price — Lectric XP Lite 2.0"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -730,9 +746,13 @@ export default function BestElectricBikeForSeniors() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
-                      Check Price at Pedego <ChevronRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="pedego-boomerang-plus"
+                      source="electric-bike-for-seniors-hub"
+                      variant="primary"
+                      label="Check Price — Pedego Boomerang Plus"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -803,9 +823,13 @@ export default function BestElectricBikeForSeniors() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
-                      Check Price at Gazelle <ChevronRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="gazelle-medeo-t9"
+                      source="electric-bike-for-seniors-hub"
+                      variant="primary"
+                      label="Check Price — Gazelle Medeo T9"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -875,9 +899,13 @@ export default function BestElectricBikeForSeniors() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity">
-                      Check Price at Blix <ChevronRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="blix-sol-eclipse"
+                      source="electric-bike-for-seniors-hub"
+                      variant="primary"
+                      label="Check Price — Blix Sol Eclipse"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -255,6 +257,8 @@ export default function BestHeatPumpWaterHeaters() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -468,14 +472,13 @@ export default function BestHeatPumpWaterHeaters() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="rheem-proterra-plug-in"
+                source="best-heat-pump-water-heater"
+                variant="primary"
+                label="Check Price — Rheem ProTerra Plug-In"
+                showPrice
+              />
             </section>
 
             {/* 2. A.O. Smith Voltex */}
@@ -558,14 +561,13 @@ export default function BestHeatPumpWaterHeaters() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="ao-smith-voltex-hybrid"
+                source="best-heat-pump-water-heater"
+                variant="primary"
+                label="Check Price — A.O. Smith Voltex Hybrid"
+                showPrice
+              />
             </section>
 
             {/* 3. GE GeoSpring */}
@@ -648,14 +650,13 @@ export default function BestHeatPumpWaterHeaters() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="ge-geospring-hybrid"
+                source="best-heat-pump-water-heater"
+                variant="primary"
+                label="Check Price — GE GeoSpring Hybrid"
+                showPrice
+              />
             </section>
 
             {/* 4. Bradford White AeroTherm */}
@@ -738,14 +739,13 @@ export default function BestHeatPumpWaterHeaters() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Find a Pro Installer
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="stiebel-eltron-accelera-300"
+                source="best-heat-pump-water-heater"
+                variant="primary"
+                label="Check Price — Stiebel Eltron Accelera 300"
+                showPrice
+              />
             </section>
 
             {/* 5. Stiebel Eltron Accelera 300 */}
@@ -830,14 +830,13 @@ export default function BestHeatPumpWaterHeaters() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="bradford-white-aerotherm"
+                source="best-heat-pump-water-heater"
+                variant="primary"
+                label="Check Price — Bradford White AeroTherm"
+                showPrice
+              />
             </section>
 
             {/* 6. State Premier */}
@@ -920,14 +919,13 @@ export default function BestHeatPumpWaterHeaters() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Find a Distributor
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="state-premier-hybrid"
+                source="best-heat-pump-water-heater"
+                variant="primary"
+                label="Check Price — State Premier Hybrid"
+                showPrice
+              />
             </section>
 
             {/* ========== HOW HEAT PUMP WATER HEATERS WORK ========== */}

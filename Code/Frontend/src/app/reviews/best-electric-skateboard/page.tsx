@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -271,6 +273,8 @@ export default function BestElectricSkateboard() {
                 across range, speed, hill climbing, ride comfort, and build quality.
               </p>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* ========== TABLE OF CONTENTS ========== */}
             <section className="mb-12">
@@ -560,13 +564,13 @@ export default function BestElectricSkateboard() {
                 </div>
 
                 <div className="flex gap-3">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="boosted-stealth"
+                    source="electric-skateboard-hub"
+                    variant="primary"
+                    label="Check Price — Boosted Stealth"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -677,13 +681,13 @@ export default function BestElectricSkateboard() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="evolve-gtr"
+                  source="electric-skateboard-hub"
+                  variant="primary"
+                  label="Check Price — Evolve GTR"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -798,13 +802,13 @@ export default function BestElectricSkateboard() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="meepo-hurricane"
+                  source="electric-skateboard-hub"
+                  variant="primary"
+                  label="Check Price — Meepo Hurricane"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -919,13 +923,13 @@ export default function BestElectricSkateboard() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="wowgo-2s-max"
+                  source="electric-skateboard-hub"
+                  variant="primary"
+                  label="Check Price — WowGo 2S Max"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1040,13 +1044,13 @@ export default function BestElectricSkateboard() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="exway-x1-max"
+                  source="electric-skateboard-hub"
+                  variant="primary"
+                  label="Check Price — Exway X1 Max"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1161,13 +1165,13 @@ export default function BestElectricSkateboard() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="backfire-zealot-s2"
+                  source="electric-skateboard-hub"
+                  variant="primary"
+                  label="Check Price — Backfire Zealot S2"
+                  showPrice
+                />
               </div>
             </section>
 

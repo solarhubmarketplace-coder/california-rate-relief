@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -144,6 +148,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'rad-power-radrover-6-plus';
+
 export default function RadPowerRadRover6PlusReview() {
   return (
     <ReviewLayout>
@@ -200,6 +206,25 @@ export default function RadPowerRadRover6PlusReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Best Fat Tire Value"
+              rating={4.3}
+              verdict="Rad Power RadRover 6 Plus — America's best-selling e-bike brand. 750W geared hub motor, 4-inch Kenda fat tires, hydraulic disc brakes, up to 45-mile range."
+              pros={[
+                'First-time e-bike buyers',
+                'Mixed terrain commuters (paved + gravel)',
+                'Hunting, beach, and adventure riders',
+              ]}
+              cons={['Experienced riders wanting mid-drive', 'Lightweight performance focus']}
+              source="rad-power-radrover-6-plus"
+              variant="top"
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -787,6 +812,17 @@ export default function RadPowerRadRover6PlusReview() {
                 </div>
               </div>
 
+              {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+              <div className='my-10'>
+                <AffiliateCTABox
+                  productKey={PRODUCT_KEY}
+                  headline="Ready to buy?"
+                  verdict="Rad Power's RadRover 6 Plus ships direct with a 14-day test ride guarantee — check current pricing and promotions."
+                  source="rad-power-radrover-6-plus"
+                  variant="mid"
+                />
+              </div>
+
               {/* How It Compares */}
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 How the RadRover 6 Plus Compares
@@ -1238,46 +1274,26 @@ export default function RadPowerRadRover6PlusReview() {
               </p>
             </div>
 
-            {/* CTA */}
-            <div className='mt-12 space-y-4'>
-              <div className='bg-muted/30 border border-border rounded-2xl p-6 text-center'>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-foreground hover:bg-foreground/90 text-background px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
+            {/* Final Affiliate CTA */}
+            <div className='mt-12'>
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                headline='Ready to buy the Rad Power RadRover 6 Plus?'
+                verdict='One of the safest bets in the e-bike market. Ships direct from Rad Power with a 14-day test ride guarantee — check current pricing.'
+                source='rad-power-radrover-6-plus'
+                variant='final'
+              />
+              <div className='mt-6 text-center'>
+                <p className='text-sm text-muted-foreground mb-2'>
+                  Still comparing?
+                </p>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline'
                 >
-                  Check Price on RadPowerBikes.com
-                  <ArrowRight className='h-4 w-4' />
-                </a>
-                <p className='text-xs text-muted-foreground mt-3'>
-                  Affiliate links may be added in the future. Currently no
-                  affiliate relationship.
-                </p>
-              </div>
-
-              <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center'>
-                <h3 className='text-lg font-bold text-foreground mb-2'>
-                  Explore More E-Bike Reviews
-                </h3>
-                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
-                  See how the RadRover 6 Plus stacks up against other top-rated
-                  electric bikes in our full comparison guide.
-                </p>
-                <div className='flex flex-col sm:flex-row gap-3 justify-center'>
-                  <Link
-                    href='/reviews/best-electric-bikes'
-                    className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                  >
-                    Best Electric Bikes 2026
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                  <Link
-                    href='/reviews'
-                    className='inline-flex items-center gap-2 bg-muted hover:bg-muted/80 text-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                  >
-                    Browse All Reviews
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                </div>
+                  Browse All Reviews
+                  <ArrowRight className='h-3 w-3' />
+                </Link>
               </div>
             </div>
 
@@ -1302,6 +1318,7 @@ export default function RadPowerRadRover6PlusReview() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="rad-power-radrover-6-plus" />
     </ReviewLayout>
   );
 }

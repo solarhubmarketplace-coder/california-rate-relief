@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -175,6 +179,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'trek-electric-bike';
+
 export default function TrekElectricBikeReview() {
   return (
     <ReviewLayout>
@@ -242,6 +248,25 @@ export default function TrekElectricBikeReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Premium Pick — LBS Support"
+              rating={4.5}
+              verdict="Trek Allant+ 7 and 9S — Bosch Performance Line CX motor, integrated 500Wh battery, premium components, and the largest independent bike shop network in North America for lifetime service."
+              pros={[
+                'Serious commuters wanting best-in-class service',
+                'Riders who value mid-drive Bosch motor power',
+                'Buyers prioritizing long-term LBS support',
+              ]}
+              cons={['Budget shoppers (look at Lectric or Rad Power)', 'First-time e-bike buyers on a tight budget']}
+              source="trek-electric-bike"
+              variant="top"
+            />
 
             {/* Quick Verdict */}
             <div
@@ -936,6 +961,17 @@ export default function TrekElectricBikeReview() {
                 the price — and you can always upgrade components later.
               </p>
 
+              {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+              <div className='my-10'>
+                <AffiliateCTABox
+                  productKey={PRODUCT_KEY}
+                  headline="Ready to buy?"
+                  verdict="Trek Allant+ is available at 1,700+ independent bike shops across North America — check current pricing and request a test ride."
+                  source="trek-electric-bike"
+                  variant="mid"
+                />
+              </div>
+
               {/* Comparison */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>
                 How the Trek Allant+ Compares
@@ -1335,45 +1371,25 @@ export default function TrekElectricBikeReview() {
               </p>
             </div>
 
-            {/* CTA */}
-            <div className='mt-12 space-y-4'>
-              <div
-                className='rounded-2xl p-6 text-center border'
-                style={{ backgroundColor: '#141414', borderColor: '#333' }}
-              >
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                  style={{ backgroundColor: '#f5f5f5', color: '#0a0a0a' }}
-                >
-                  Check Price on Trek.com
-                  <ArrowRight className='h-4 w-4' />
-                </a>
-                <p className='text-xs mt-3' style={{ color: '#a1a1aa' }}>
-                  Affiliate links may be added in the future. Currently no
-                  affiliate relationship.
-                </p>
-              </div>
-
-              <div
-                className='rounded-2xl p-6 text-center border'
-                style={{ backgroundColor: '#141414', borderColor: 'rgba(34, 197, 94, 0.2)' }}
-              >
-                <h3 className='text-lg font-bold mb-2' style={{ color: '#f5f5f5' }}>
-                  Explore More E-Bike &amp; Green Energy Reviews
-                </h3>
-                <p className='mb-4 max-w-lg mx-auto text-sm' style={{ color: '#a1a1aa' }}>
-                  See how the Trek Allant+ compares to other top-rated electric bikes,
-                  portable power stations, and green energy products in our full review
-                  index.
+            {/* Final Affiliate CTA */}
+            <div className='mt-12'>
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                headline='Ready to buy the Trek Allant+?'
+                verdict='One of the best-riding e-bikes you can buy, backed by 1,700+ independent bike shops for lifetime service. Check current pricing and dealer availability.'
+                source='trek-electric-bike'
+                variant='final'
+              />
+              <div className='mt-6 text-center'>
+                <p className='text-sm text-muted-foreground mb-2'>
+                  Still comparing?
                 </p>
                 <Link
                   href='/reviews'
-                  className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
+                  className='inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline'
                 >
                   Browse All Reviews
-                  <ArrowRight className='h-4 w-4' />
+                  <ArrowRight className='h-3 w-3' />
                 </Link>
               </div>
             </div>
@@ -1401,6 +1417,7 @@ export default function TrekElectricBikeReview() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="trek-electric-bike" />
     </ReviewLayout>
   );
 }

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Check,
@@ -261,6 +263,8 @@ export default function BestEbikeRack() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -678,14 +682,13 @@ export default function BestEbikeRack() {
                     </div>
                   </div>
                   <div className="mt-6 text-center">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                      style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                    >
-                      Check Price on 1UP USA
-                      <ChevronRight className="h-5 w-5" />
-                    </a>
+                    <BuyButton
+                      productKey="1up-usa-heavy-duty-double"
+                      source="ebike-rack-hub"
+                      variant="primary"
+                      label="Check Price — 1UP USA Heavy Duty Double"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -799,14 +802,13 @@ export default function BestEbikeRack() {
                     </div>
                   </div>
                   <div className="mt-6 text-center">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                      style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                    >
-                      Check Price on Thule
-                      <ChevronRight className="h-5 w-5" />
-                    </a>
+                    <BuyButton
+                      productKey="thule-easyfold-xt2"
+                      source="ebike-rack-hub"
+                      variant="primary"
+                      label="Check Price — Thule EasyFold XT2"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -918,14 +920,13 @@ export default function BestEbikeRack() {
                     </div>
                   </div>
                   <div className="mt-6 text-center">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                      style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                    >
-                      Check Price on Kuat
-                      <ChevronRight className="h-5 w-5" />
-                    </a>
+                    <BuyButton
+                      productKey="kuat-nv-2-0"
+                      source="ebike-rack-hub"
+                      variant="primary"
+                      label="Check Price — Kuat NV 2.0"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -1038,14 +1039,13 @@ export default function BestEbikeRack() {
                     </div>
                   </div>
                   <div className="mt-6 text-center">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                      style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                    >
-                      Check Price on Saris
-                      <ChevronRight className="h-5 w-5" />
-                    </a>
+                    <BuyButton
+                      productKey="saris-superclamp-ex"
+                      source="ebike-rack-hub"
+                      variant="primary"
+                      label="Check Price — Saris SuperClamp EX"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -1159,14 +1159,13 @@ export default function BestEbikeRack() {
                     </div>
                   </div>
                   <div className="mt-6 text-center">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                      style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                    >
-                      Check Price on Hollywood Racks
-                      <ChevronRight className="h-5 w-5" />
-                    </a>
+                    <BuyButton
+                      productKey="hollywood-racks-sport-rider-se2"
+                      source="ebike-rack-hub"
+                      variant="primary"
+                      label="Check Price — Hollywood Racks Sport Rider SE2"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -1279,14 +1278,13 @@ export default function BestEbikeRack() {
                     </div>
                   </div>
                   <div className="mt-6 text-center">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                      style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                    >
-                      Check Price on QuietKat
-                      <ChevronRight className="h-5 w-5" />
-                    </a>
+                    <BuyButton
+                      productKey="quietkat-single-bike-rack"
+                      source="ebike-rack-hub"
+                      variant="primary"
+                      label="Check Price — QuietKat Single Bike Rack"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>

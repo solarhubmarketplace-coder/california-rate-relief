@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -17,6 +21,8 @@ import {
   Shield,
   ChevronRight,
 } from 'lucide-react';
+
+const PRODUCT_KEY = 'ecoflow-delta-pro-3';
 
 export const metadata: Metadata = {
   title:
@@ -192,6 +198,25 @@ export default function EcoFlowDeltaPro3Review() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Our Top Pick"
+              rating={4.7}
+              verdict="The EcoFlow Delta Pro 3 is the most well-rounded portable power station of 2026 — 4,096 Wh LFP, 4,000W output, 0-80% charge in 50 min, and Smart Home Panel support."
+              pros={[
+                'Home backup during PSPS outages',
+                'TOU arbitrage at peak rates',
+                'Off-grid + RV with solar charging',
+              ]}
+              cons={['Portability-focused camping (114 lbs)', 'Budgets under $1,000']}
+              source="delta-pro-3"
+              variant="top"
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -715,6 +740,15 @@ export default function EcoFlowDeltaPro3Review() {
                 </div>
               </div>
 
+              {/* Mid-content CTA — placed after pros/cons where buy intent peaks */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Ready to buy?"
+                verdict="Delta Pro 3 is in stock at EcoFlow.com with free shipping — check the current price and any promos."
+                source="delta-pro-3"
+                variant="mid"
+              />
+
               {/* How It Compares */}
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 How It Compares
@@ -993,39 +1027,31 @@ export default function EcoFlowDeltaPro3Review() {
               </p>
             </div>
 
-            {/* CTA */}
-            <div className='mt-12 space-y-4'>
-              <div className='bg-muted/30 border border-border rounded-2xl p-6 text-center'>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-foreground hover:bg-foreground/90 text-background px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                >
-                  Check Price on EcoFlow.com
-                  <ArrowRight className='h-4 w-4' />
-                </a>
-                <p className='text-xs text-muted-foreground mt-3'>
-                  Affiliate links may be added in the future. Currently no
-                  affiliate relationship.
-                </p>
-              </div>
+            {/* Final CTA — real buy button replacing the old placeholder */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Final Verdict"
+              verdict="If you're in California with PSPS risk and peak TOU rates north of 45¢/kWh, the Delta Pro 3 pays off on its own. Check current price and promos at EcoFlow."
+              source="delta-pro-3"
+              variant="final"
+            />
 
-              <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center'>
-                <h3 className='text-lg font-bold text-foreground mb-2'>
-                  Explore More Power Station Reviews
-                </h3>
-                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
-                  See how the Delta Pro 3 stacks up against other top-rated
-                  portable power stations, home batteries, and solar generators
-                  in our full review index.
-                </p>
-                <Link
-                  href='/reviews'
-                  className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                >
-                  Browse All Reviews
-                  <ArrowRight className='h-4 w-4' />
-                </Link>
-              </div>
+            {/* Explore more reviews — navigational, not monetization */}
+            <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+              <h3 className='text-lg font-bold text-foreground mb-2'>
+                Still comparing?
+              </h3>
+              <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                See how the Delta Pro 3 stacks up against Anker SOLIX F3800,
+                Bluetti AC500, and Jackery 2000 Plus in our full comparison.
+              </p>
+              <Link
+                href='/reviews/best-portable-power-stations'
+                className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'
+              >
+                See The Full Ranking
+                <ArrowRight className='h-4 w-4' />
+              </Link>
             </div>
 
             {/* Navigation */}
@@ -1049,6 +1075,7 @@ export default function EcoFlowDeltaPro3Review() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="delta-pro-3" />
     </ReviewLayout>
   );
 }

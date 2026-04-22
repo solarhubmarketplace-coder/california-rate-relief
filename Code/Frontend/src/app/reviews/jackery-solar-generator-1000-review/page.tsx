@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -20,6 +24,8 @@ import {
   XCircle,
   Zap,
 } from 'lucide-react';
+
+const PRODUCT_KEY = 'jackery-solar-generator-1000';
 
 export const metadata: Metadata = {
   title:
@@ -254,6 +260,25 @@ export default function JackerySolarGenerator1000Review() {
                   </div>
                 </div>
               </header>
+
+              {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+              <AffiliateDisclosure compact />
+
+              {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Best Solar Bundle"
+                rating={4.2}
+                verdict="A complete 1,002 Wh portable solar bundle with the SolarSaga 100W panel included. Genuinely portable at 22 lbs and ready to deploy out of the box."
+                pros={[
+                  'Camping, overlanding, van life',
+                  'Tailgating and outdoor events',
+                  'CPAP and medical device backup',
+                ]}
+                cons={['Whole-home or extended outage backup', 'High-wattage appliances']}
+                source="jackery-1000"
+                variant="top"
+              />
 
               {/* Quick Verdict */}
               <div
@@ -807,6 +832,15 @@ export default function JackerySolarGenerator1000Review() {
                   </div>
                 </div>
 
+                {/* Mid-content CTA — placed after pros/cons where buy intent peaks */}
+                <AffiliateCTABox
+                  productKey={PRODUCT_KEY}
+                  badge="Ready to buy?"
+                  verdict="The Explorer 1000 + SolarSaga 100W bundle is regularly discounted at Jackery — check today's price."
+                  source="jackery-1000"
+                  variant="mid"
+                />
+
                 {/* Comparison Table */}
                 <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>
                   How It Compares
@@ -1181,47 +1215,27 @@ export default function JackerySolarGenerator1000Review() {
                 </p>
               </div>
 
-              {/* CTA */}
-              <div className='mt-12 space-y-4'>
-                <div
-                  className='rounded-2xl p-6 text-center border'
-                  style={{ backgroundColor: '#171717', borderColor: '#333' }}
-                >
-                  <a
-                    href='#'
-                    className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                    style={{ backgroundColor: '#f5f5f5', color: '#0a0a0a' }}
-                  >
-                    Check Price on Jackery.com
-                    <ArrowRight className='h-4 w-4' />
-                  </a>
-                  <p className='text-xs mt-3' style={{ color: '#a1a1aa' }}>
-                    Affiliate links may be added in the future. Currently no
-                    affiliate relationship.
-                  </p>
-                </div>
+              {/* Final CTA — real buy button replacing the old placeholder */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Final Verdict"
+                verdict="If you want a one-box solar bundle you can actually carry and deploy anywhere, the Jackery Solar Generator 1000 is the benchmark. Check today's price."
+                source="jackery-1000"
+                variant="final"
+              />
 
-                <div
-                  className='rounded-2xl p-6 text-center border'
-                  style={{ backgroundColor: '#141414', borderColor: 'rgba(34,197,94,0.2)' }}
+              <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+                <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                  See how this compares against other top options in our full review.
+                </p>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'
                 >
-                  <h3 className='text-lg font-bold mb-2' style={{ color: '#f5f5f5' }}>
-                    Explore More Power Station Reviews
-                  </h3>
-                  <p className='mb-4 max-w-lg mx-auto text-sm' style={{ color: '#a1a1aa' }}>
-                    See how the Jackery Explorer 1000 stacks up against other
-                    top-rated portable power stations and solar generators in
-                    our full review index.
-                  </p>
-                  <Link
-                    href='/reviews'
-                    className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Browse All Reviews
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                </div>
+                  Browse All Reviews
+                  <ArrowRight className='h-4 w-4' />
+                </Link>
               </div>
 
               {/* Navigation */}
@@ -1251,6 +1265,7 @@ export default function JackerySolarGenerator1000Review() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="jackery-1000" />
     </ReviewLayout>
   );
 }

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -272,6 +274,8 @@ export default function BestSolarChargeControllerPage() {
                 efficiency, features, build quality, and value.
               </p>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* ========== TABLE OF CONTENTS ========== */}
             <nav
@@ -609,14 +613,13 @@ export default function BestSolarChargeControllerPage() {
                   </ul>
                 </div>
               </div>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price on Amazon
-                <ChevronRight className="h-5 w-5" />
-              </a>
+              <BuyButton
+                productKey="victron-smartsolar-mppt-100-50"
+                source="best-solar-charge-controller"
+                variant="primary"
+                label="Check Price — Victron SmartSolar MPPT 100/50 Review"
+                showPrice
+              />
             </section>
 
             {/* ========== RENOGY REVIEW ========== */}
@@ -709,14 +712,13 @@ export default function BestSolarChargeControllerPage() {
                   </ul>
                 </div>
               </div>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price on Amazon
-                <ChevronRight className="h-5 w-5" />
-              </a>
+              <BuyButton
+                productKey="renogy-rover-40a-mppt"
+                source="best-solar-charge-controller"
+                variant="primary"
+                label="Check Price — Renogy Rover 40A MPPT Review"
+                showPrice
+              />
             </section>
 
             {/* ========== EPEVER REVIEW ========== */}
@@ -810,14 +812,13 @@ export default function BestSolarChargeControllerPage() {
                   </ul>
                 </div>
               </div>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price on Amazon
-                <ChevronRight className="h-5 w-5" />
-              </a>
+              <BuyButton
+                productKey="epever-tracer-4210an"
+                source="best-solar-charge-controller"
+                variant="primary"
+                label="Check Price — EPEver Tracer 4210AN Review"
+                showPrice
+              />
             </section>
 
             {/* ========== RICH SOLAR REVIEW ========== */}
@@ -911,14 +912,13 @@ export default function BestSolarChargeControllerPage() {
                   </ul>
                 </div>
               </div>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price on Amazon
-                <ChevronRight className="h-5 w-5" />
-              </a>
+              <BuyButton
+                productKey="rich-solar-60a-mppt"
+                source="best-solar-charge-controller"
+                variant="primary"
+                label="Check Price — Rich Solar 60A MPPT Review"
+                showPrice
+              />
             </section>
 
             {/* ========== BOUGERV REVIEW ========== */}
@@ -1012,14 +1012,13 @@ export default function BestSolarChargeControllerPage() {
                   </ul>
                 </div>
               </div>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price on Amazon
-                <ChevronRight className="h-5 w-5" />
-              </a>
+              <BuyButton
+                productKey="bougerv-40a-mppt"
+                source="best-solar-charge-controller"
+                variant="primary"
+                label="Check Price — BougeRV 40A MPPT Review"
+                showPrice
+              />
             </section>
 
             {/* ========== SIZING GUIDE ========== */}

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   ArrowRight,
@@ -277,6 +279,8 @@ export default function BestElectricChainsaw() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* ========== OVERVIEW ========== */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -486,13 +490,13 @@ export default function BestElectricChainsaw() {
                 </div>
               </div>
               <div className="mt-4">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Check Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ego-cs1804"
+                  source="electric-chainsaw-hub"
+                  variant="primary"
+                  label="Check Price — EGO CS1804"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -589,13 +593,13 @@ export default function BestElectricChainsaw() {
                 </div>
               </div>
               <div className="mt-4">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Check Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="dewalt-dccs670x1"
+                  source="electric-chainsaw-hub"
+                  variant="primary"
+                  label="Check Price — DeWalt DCCS670X1"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -693,13 +697,13 @@ export default function BestElectricChainsaw() {
                 </div>
               </div>
               <div className="mt-4">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Check Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="milwaukee-m18-fuel"
+                  source="electric-chainsaw-hub"
+                  variant="primary"
+                  label="Check Price — Milwaukee M18 FUEL"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -797,13 +801,13 @@ export default function BestElectricChainsaw() {
                 </div>
               </div>
               <div className="mt-4">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Check Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ryobi-40v-hp"
+                  source="electric-chainsaw-hub"
+                  variant="primary"
+                  label="Check Price — Ryobi 40V HP"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -900,13 +904,13 @@ export default function BestElectricChainsaw() {
                 </div>
               </div>
               <div className="mt-4">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Check Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="stihl-msa-220-c-b"
+                  source="electric-chainsaw-hub"
+                  variant="primary"
+                  label="Check Price — Stihl MSA 220 C-B"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1004,13 +1008,13 @@ export default function BestElectricChainsaw() {
                 </div>
               </div>
               <div className="mt-4">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Check Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="makita-xcu11sm1"
+                  source="electric-chainsaw-hub"
+                  variant="primary"
+                  label="Check Price — Makita XCU11SM1"
+                  showPrice
+                />
               </div>
             </section>
 

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -268,6 +270,8 @@ export default function BestElectricBikes() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -495,13 +499,13 @@ export default function BestElectricBikes() {
                     </p>
                   </div>
 
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="aventon-aventure-3"
+                    source="electric-bikes-hub"
+                    variant="primary"
+                    label="Check Price — Aventon Aventure 3"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -593,13 +597,13 @@ export default function BestElectricBikes() {
                     </p>
                   </div>
 
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="rad-power-radrover-6-plus"
+                    source="electric-bikes-hub"
+                    variant="primary"
+                    label="Check Price — Rad Power RadRover 6 Plus"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -689,13 +693,13 @@ export default function BestElectricBikes() {
                     </p>
                   </div>
 
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="rad-power-radexpand-5-plus"
+                    source="electric-bikes-hub"
+                    variant="primary"
+                    label="Check Price — Rad Power RadExpand 5 Plus"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -786,13 +790,13 @@ export default function BestElectricBikes() {
                     </p>
                   </div>
 
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="lectric-xp-3-0"
+                    source="electric-bikes-hub"
+                    variant="primary"
+                    label="Check Price — Lectric XP 3.0"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -884,13 +888,13 @@ export default function BestElectricBikes() {
                     </p>
                   </div>
 
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="aventon-soltera-2"
+                    source="electric-bikes-hub"
+                    variant="primary"
+                    label="Check Price — Aventon Soltera.2"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -982,13 +986,13 @@ export default function BestElectricBikes() {
                     </p>
                   </div>
 
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="lectric-xp-lite-2-0"
+                    source="electric-bikes-hub"
+                    variant="primary"
+                    label="Check Price — Lectric XP Lite 2.0"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

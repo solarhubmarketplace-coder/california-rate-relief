@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -235,6 +237,8 @@ export default function BestElectricLawnMower() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -465,13 +469,13 @@ export default function BestElectricLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ego-power-select-cut-xp"
+                  source="electric-lawn-mower-hub"
+                  variant="primary"
+                  label="Check Price — EGO Power+ Select Cut XP"
+                  showPrice
+                  />
               </div>
 
               {/* === EGO LM2114SP === */}
@@ -567,13 +571,13 @@ export default function BestElectricLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ego-power-lm2114sp"
+                  source="electric-lawn-mower-hub"
+                  variant="primary"
+                  label="Check Price — EGO Power+ LM2114SP"
+                  showPrice
+                  />
               </div>
 
               {/* === Greenworks 80V Pro === */}
@@ -670,13 +674,13 @@ export default function BestElectricLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="greenworks-80v-pro-21"
+                  source="electric-lawn-mower-hub"
+                  variant="primary"
+                  label="Check Price — Greenworks 80V Pro 21"
+                  showPrice
+                  />
               </div>
 
               {/* === Greenworks 80V Self-Propelled === */}
@@ -773,13 +777,13 @@ export default function BestElectricLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="greenworks-80v-21-self-propelled"
+                  source="electric-lawn-mower-hub"
+                  variant="primary"
+                  label="Check Price — Greenworks 80V 21 Self-Propelled"
+                  showPrice
+                  />
               </div>
 
               {/* === Ryobi 40V === */}
@@ -880,13 +884,13 @@ export default function BestElectricLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ryobi-40v-21-self-propelled"
+                  source="electric-lawn-mower-hub"
+                  variant="primary"
+                  label="Check Price — Ryobi 40V 21 Self-Propelled"
+                  showPrice
+                  />
               </div>
             </section>
 

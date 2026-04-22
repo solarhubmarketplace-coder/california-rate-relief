@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -15,6 +19,8 @@ import {
   XCircle,
   Zap,
 } from 'lucide-react';
+
+const PRODUCT_KEY = 'jackery-explorer-2000-plus';
 
 export const metadata: Metadata = {
   title:
@@ -206,6 +212,25 @@ export default function JackeryExplorer2000PlusReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Best Value Pick"
+              rating={4.5}
+              verdict="The lightest LFP power station in its class at 61.5 lbs, with 4,000-cycle battery life and modular expansion to 12,000 Wh. Massive price drops now make it the best value in the category."
+              pros={[
+                'Grab-and-go PSPS backup',
+                'Camping and outdoor use',
+                'Budget-conscious homeowners',
+              ]}
+              cons={['Heavy loads over 3,000W', 'Large solar arrays']}
+              source="jackery-2000-plus"
+              variant="top"
+            />
 
             {/* Quick Verdict Box */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -629,6 +654,15 @@ export default function JackeryExplorer2000PlusReview() {
                 </div>
               </div>
 
+              {/* Mid-content CTA — placed after pros/cons where buy intent peaks */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Ready to buy?"
+                verdict="Explorer 2000 Plus is shipping today at Jackery with the latest sale pricing — check current discounts."
+                source="jackery-2000-plus"
+                variant="mid"
+              />
+
               {/* Comparison Table */}
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 How It Compares
@@ -901,39 +935,34 @@ export default function JackeryExplorer2000PlusReview() {
                 </div>
               </div>
 
-              {/* CTA Section */}
-              <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mt-10 mb-8'>
-                <h2 className='text-2xl font-bold text-foreground mb-3'>
-                  Explore More Green Energy Reviews
-                </h2>
-                <p className='text-foreground/80 leading-relaxed mb-6'>
-                  GreenVerdict independently reviews portable power stations,
-                  solar products, e-bikes, and smart home energy gear so you can
-                  make informed decisions. Browse all of our hands-on reviews and
-                  comparison guides.
+              {/* Final CTA — real buy button replacing the old placeholder */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Final Verdict"
+                verdict="If you want the most portable LFP power station with a 4,000-cycle battery and the lowest price in its class, the Explorer 2000 Plus is the call. Check today's price at Jackery."
+                source="jackery-2000-plus"
+                variant="final"
+              />
+
+              <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+                <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                  See how this compares against other top options in our full review.
                 </p>
-                <div className='flex flex-col sm:flex-row gap-4'>
-                  <Link
-                    href='/reviews'
-                    className='inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
-                  >
-                    Browse All Reviews
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                  <Link
-                    href='/reviews/best-portable-power-stations'
-                    className='inline-flex items-center justify-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted/50 transition-colors'
-                  >
-                    <ArrowLeft className='h-4 w-4' />
-                    All Power Station Reviews
-                  </Link>
-                </div>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'
+                >
+                  Browse All Reviews
+                  <ArrowRight className='h-4 w-4' />
+                </Link>
               </div>
             </div>
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="jackery-2000-plus" />
     </ReviewLayout>
   );
 }

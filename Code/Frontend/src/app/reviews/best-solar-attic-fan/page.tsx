@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Sun,
@@ -264,6 +266,8 @@ export default function BestSolarAtticFan() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* ========== OVERVIEW ========== */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -472,14 +476,13 @@ export default function BestSolarAtticFan() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="remington-solar-30w-solar-attic-fan"
+                    source="best-solar-attic-fan"
+                    variant="primary"
+                    label="Check Price — Remington Solar 30W Solar Attic Fan"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -536,14 +539,13 @@ export default function BestSolarAtticFan() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="natural-light-safg-solar-attic-fan"
+                    source="best-solar-attic-fan"
+                    variant="primary"
+                    label="Check Price — Natural Light SAFG Solar Attic Fan"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -600,14 +602,13 @@ export default function BestSolarAtticFan() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="iliving-ilg8sf301-solar-attic-fan"
+                    source="best-solar-attic-fan"
+                    variant="primary"
+                    label="Check Price — iLiving ILG8SF301 Solar Attic Fan"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -663,14 +664,13 @@ export default function BestSolarAtticFan() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="quietcool-30w-solar-attic-fan"
+                    source="best-solar-attic-fan"
+                    variant="primary"
+                    label="Check Price — QuietCool 30W Solar Attic Fan"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -726,14 +726,13 @@ export default function BestSolarAtticFan() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="broan-nutone-345soww-solar-attic-fan"
+                    source="best-solar-attic-fan"
+                    variant="primary"
+                    label="Check Price — Broan-NuTone 345SOWW Solar Attic Fan"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

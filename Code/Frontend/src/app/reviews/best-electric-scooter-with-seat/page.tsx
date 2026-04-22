@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -275,6 +277,8 @@ export default function BestElectricScooterWithSeat() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Overview / Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -452,15 +456,13 @@ export default function BestElectricScooterWithSeat() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="segway-ninebot-p100s"
+                    source="electric-scooter-with-seat-hub"
+                    variant="primary"
+                    label="Check Price — Segway Ninebot P100S"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -551,15 +553,13 @@ export default function BestElectricScooterWithSeat() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="niu-kqi3-sport"
+                    source="electric-scooter-with-seat-hub"
+                    variant="primary"
+                    label="Check Price — NIU KQi3 Sport"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -650,15 +650,13 @@ export default function BestElectricScooterWithSeat() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="hiboy-s2-pro"
+                    source="electric-scooter-with-seat-hub"
+                    variant="primary"
+                    label="Check Price — Hiboy S2 Pro"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -749,15 +747,13 @@ export default function BestElectricScooterWithSeat() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="emove-cruiser"
+                    source="electric-scooter-with-seat-hub"
+                    variant="primary"
+                    label="Check Price — EMOVE Cruiser"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -845,15 +841,13 @@ export default function BestElectricScooterWithSeat() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="razor-ecosmart-metro"
+                    source="electric-scooter-with-seat-hub"
+                    variant="primary"
+                    label="Check Price — Razor EcoSmart Metro"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

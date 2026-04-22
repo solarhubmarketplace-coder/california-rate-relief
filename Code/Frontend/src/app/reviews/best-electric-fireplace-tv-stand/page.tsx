@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Check,
@@ -289,6 +291,8 @@ export default function BestElectricFireplaceTvStand() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -466,14 +470,13 @@ export default function BestElectricFireplaceTvStand() {
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price on Amazon
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="walker-edison-wren-classic-fireplace-tv-stand"
+                    source="electric-fireplace-tv-stand-hub"
+                    variant="primary"
+                    label="Check Price — Walker Edison Wren Classic Fireplace TV Stand"
+                    showPrice
+                    />
                 </div>
               </div>
 
@@ -532,14 +535,13 @@ export default function BestElectricFireplaceTvStand() {
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price on Amazon
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="ameriwood-home-chicago-fireplace-tv-console"
+                    source="electric-fireplace-tv-stand-hub"
+                    variant="primary"
+                    label="Check Price — Ameriwood Home Chicago Fireplace TV Console"
+                    showPrice
+                    />
                 </div>
               </div>
 
@@ -600,14 +602,13 @@ export default function BestElectricFireplaceTvStand() {
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price on Amazon
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="twin-star-classicflame-cabaret-tv-stand"
+                    source="electric-fireplace-tv-stand-hub"
+                    variant="primary"
+                    label="Check Price — Twin Star ClassicFlame Cabaret TV Stand"
+                    showPrice
+                    />
                 </div>
               </div>
 
@@ -667,14 +668,13 @@ export default function BestElectricFireplaceTvStand() {
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price on Amazon
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="sei-furniture-torlington-marble-fireplace-tv-stand"
+                    source="electric-fireplace-tv-stand-hub"
+                    variant="primary"
+                    label="Check Price — SEI Furniture Torlington Marble Fireplace TV Stand"
+                    showPrice
+                    />
                 </div>
               </div>
 
@@ -737,14 +737,13 @@ export default function BestElectricFireplaceTvStand() {
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price on Amazon
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="real-flame-tracey-grand-entertainment-unit"
+                    source="electric-fireplace-tv-stand-hub"
+                    variant="primary"
+                    label="Check Price — Real Flame Tracey Grand Entertainment Unit"
+                    showPrice
+                    />
                 </div>
               </div>
 
@@ -803,14 +802,13 @@ export default function BestElectricFireplaceTvStand() {
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price on Amazon
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="walker-edison-ashland-farmhouse-fireplace-tv-stand"
+                    source="electric-fireplace-tv-stand-hub"
+                    variant="primary"
+                    label="Check Price — Walker Edison Ashland Farmhouse Fireplace TV Stand"
+                    showPrice
+                    />
                 </div>
               </div>
 
@@ -868,14 +866,13 @@ export default function BestElectricFireplaceTvStand() {
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price on Amazon
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="ameriwood-home-barrow-creek-fireplace-console"
+                    source="electric-fireplace-tv-stand-hub"
+                    variant="primary"
+                    label="Check Price — Ameriwood Home Barrow Creek Fireplace Console"
+                    showPrice
+                    />
                 </div>
               </div>
             </section>

@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -17,6 +21,8 @@ import {
   X,
   Sun,
 } from 'lucide-react';
+
+const PRODUCT_KEY = 'anker-solix-f3800';
 
 export const metadata: Metadata = {
   title:
@@ -201,6 +207,25 @@ export default function AnkerSolixF3800Review() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Best Value"
+              rating={4.6}
+              verdict="At $1,799 promo pricing, the Anker SOLIX F3800 delivers 6,000W continuous output, 3,840Wh of LFP storage, and a built-in NEMA 14-50 240V outlet — the best price-per-watt-hour in its class."
+              pros={[
+                'California PSPS / wildfire backup',
+                'EV charging without a transfer switch',
+                'Whole-home essential circuit backup',
+              ]}
+              cons={['Portable camping use (132 lbs)', 'Smaller brand track record in this category']}
+              source="anker-f3800"
+              variant="top"
+            />
 
             {/* Quick Verdict Box */}
             <div className='bg-primary/5 border border-primary/20 rounded-xl p-6 mb-10'>
@@ -652,6 +677,15 @@ export default function AnkerSolixF3800Review() {
                 </div>
               </div>
 
+              {/* Mid-content CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Ready to buy?"
+                verdict="The $1,799 promo is live at Anker.com right now — check current price before it reverts to $3,999 MSRP."
+                source="anker-f3800"
+                variant="mid"
+              />
+
               {/* Comparison */}
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 How It Compares
@@ -903,41 +937,33 @@ export default function AnkerSolixF3800Review() {
                 </div>
               </div>
 
-              {/* CTA Section */}
-              <div className='bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 border border-emerald-500/20 rounded-2xl p-8 text-center mt-12 mb-8'>
-                <h2 className='text-2xl font-bold text-foreground mb-3'>
-                  Explore More GreenVerdict Reviews
-                </h2>
-                <p className='text-foreground/70 mb-6 max-w-lg mx-auto'>
-                  We test and compare the best portable power stations,
-                  solar products, e-bikes, and smart home gear so you can
-                  buy with confidence.
+              {/* Final CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Final Verdict"
+                verdict="At $1,799 promo, the F3800 is the clearest value proposition in portable power today — 6,000W output, built-in 240V outlet, LFP cells. Lock it in before the promo ends."
+                source="anker-f3800"
+                variant="final"
+              />
+              <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+                <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                  See how this compares against other top options in our full review.
                 </p>
-                <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-                  <Link
-                    href='/reviews'
-                    className='inline-flex items-center justify-center gap-2 bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors'
-                  >
-                    Browse All Reviews
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                  <Link
-                    href='/reviews/best-portable-power-stations'
-                    className='inline-flex items-center justify-center gap-2 border border-border text-foreground px-8 py-3 rounded-lg font-semibold hover:bg-muted transition-colors'
-                  >
-                    <ArrowLeft className='h-4 w-4' />
-                    Power Station Rankings
-                  </Link>
-                </div>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'
+                >
+                  Browse All Reviews
+                  <ArrowRight className='h-4 w-4' />
+                </Link>
               </div>
 
               {/* Disclaimer */}
               <p className='text-xs text-muted-foreground mt-8 leading-relaxed'>
                 This review is based on publicly available specifications,
                 verified pricing as of April 2026, and aggregated user
-                feedback. GreenVerdict is not
-                affiliated with Anker, EcoFlow, Bluetti, or any power
-                station manufacturer. Product specifications and pricing
+                feedback. Product specifications and pricing
                 may change. SGIP rebate amounts are estimates — verify
                 current rates and eligibility with your utility provider.
               </p>
@@ -946,6 +972,7 @@ export default function AnkerSolixF3800Review() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="anker-f3800" />
     </ReviewLayout>
   );
 }

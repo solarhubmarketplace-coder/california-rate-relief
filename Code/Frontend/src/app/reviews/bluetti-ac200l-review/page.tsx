@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -15,6 +19,8 @@ import {
   XCircle,
   Zap,
 } from 'lucide-react';
+
+const PRODUCT_KEY = 'bluetti-ac200l';
 
 export const metadata: Metadata = {
   title:
@@ -205,6 +211,25 @@ export default function BluettiAC200LReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Best Budget Pick"
+              rating={4.5}
+              verdict="At $799, the Bluetti AC200L delivers 2,048 Wh LFP, 2,400W output, a 30A RV plug, and 0-80% charge in 45 minutes — the best portable power station value under $1,000."
+              pros={[
+                'Budget-conscious PSPS backup',
+                'RV and camping (30A TT-30 plug)',
+                'Fastest charging in class',
+              ]}
+              cons={['No 240V output', 'No built-in wheels (62 lbs)']}
+              source="bluetti-ac200l"
+              variant="top"
+            />
 
             {/* Quick Verdict Box */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -683,6 +708,15 @@ export default function BluettiAC200LReview() {
                 </div>
               </div>
 
+              {/* Mid-content CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Ready to buy?"
+                verdict="In stock at Bluetti.com — check current $799 price and any bundle promos before they end."
+                source="bluetti-ac200l"
+                variant="mid"
+              />
+
               {/* Comparison Table */}
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 How It Compares
@@ -955,39 +989,33 @@ export default function BluettiAC200LReview() {
                 </div>
               </div>
 
-              {/* CTA Section */}
-              <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mt-10 mb-8'>
-                <h2 className='text-2xl font-bold text-foreground mb-3'>
-                  Find the Right Power Station for You
-                </h2>
-                <p className='text-foreground/80 leading-relaxed mb-6'>
-                  The Bluetti AC200L is a standout value pick, but it is not the
-                  only option worth considering. Browse all of our independently
-                  researched reviews to find the portable power station, e-bike,
-                  or green energy product that fits your needs and budget.
+              {/* Final CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Final Verdict"
+                verdict="If your budget is under $1,000 and you want LFP-based PSPS backup that charges fast and includes a 30A RV plug — the AC200L has no real competition."
+                source="bluetti-ac200l"
+                variant="final"
+              />
+              <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+                <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                  See how this compares against other top options in our full review.
                 </p>
-                <div className='flex flex-col sm:flex-row gap-4'>
-                  <Link
-                    href='/reviews'
-                    className='inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
-                  >
-                    Browse All Reviews
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                  <Link
-                    href='/reviews/best-portable-power-stations'
-                    className='inline-flex items-center justify-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted/50 transition-colors'
-                  >
-                    <ArrowLeft className='h-4 w-4' />
-                    All Power Station Reviews
-                  </Link>
-                </div>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'
+                >
+                  Browse All Reviews
+                  <ArrowRight className='h-4 w-4' />
+                </Link>
               </div>
             </div>
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="bluetti-ac200l" />
     </ReviewLayout>
   );
 }

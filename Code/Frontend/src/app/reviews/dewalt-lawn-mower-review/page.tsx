@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowRight,
   Battery,
@@ -175,6 +179,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'dewalt-lawn-mower';
+
 export default function DewaltLawnMowerReview() {
   return (
     <ReviewLayout>
@@ -235,6 +241,27 @@ export default function DewaltLawnMowerReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate Disclosure + Top CTA */}
+            <AffiliateDisclosure compact />
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Best for DeWalt Owners'
+              rating={4.3}
+              verdict='The 21.5-inch DCMWP233U2 taps into the 300+ tool 20V MAX ecosystem. Same batteries powering your drills and saws now cut your yard.'
+              pros={[
+                'Largest cordless platform (300+ tools)',
+                '21.5-inch steel deck, brushless motor',
+                '$449 tool-only for existing DeWalt owners',
+                '5-year warranty',
+              ]}
+              cons={[
+                '35-45 min real-world runtime',
+                'Bogs in thick or wet grass vs 56V/80V rivals',
+              ]}
+              source='dewalt-lawn-mower'
+              variant='top'
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -914,6 +941,15 @@ export default function DewaltLawnMowerReview() {
               </div>
             </section>
 
+            {/* Mid-content CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Ready to buy?'
+              verdict='If you already own DeWalt 20V batteries, this is the cheapest premium electric mower on the market.'
+              source='dewalt-lawn-mower'
+              variant='mid'
+            />
+
             {/* Competitor Comparison */}
             <section className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -1286,54 +1322,24 @@ export default function DewaltLawnMowerReview() {
               </div>
             </section>
 
-            {/* Buy Links */}
-            <section className='mb-10'>
-              <h2 className='text-2xl font-bold text-foreground mb-4'>
-                Where to Buy
-              </h2>
-              <div className='grid md:grid-cols-2 gap-4'>
-                <a
-                  href='#'
-                  className='flex items-center justify-between rounded-xl border border-border p-5 hover:border-primary/50 transition-colors'
-                  style={{ backgroundColor: '#141414' }}
-                >
-                  <div>
-                    <p className='font-semibold text-foreground'>
-                      DeWalt DCMWP233U2 Kit
-                    </p>
-                    <p className='text-sm text-muted-foreground'>
-                      Mower + 2x 10Ah batteries + charger
-                    </p>
-                  </div>
-                  <div className='text-right'>
-                    <p className='font-bold text-foreground'>$599</p>
-                    <span className='text-xs text-primary flex items-center gap-1'>
-                      Check price <ArrowRight className='h-3 w-3' />
-                    </span>
-                  </div>
-                </a>
-                <a
-                  href='#'
-                  className='flex items-center justify-between rounded-xl border border-border p-5 hover:border-primary/50 transition-colors'
-                  style={{ backgroundColor: '#141414' }}
-                >
-                  <div>
-                    <p className='font-semibold text-foreground'>
-                      DeWalt DCMWP233U2 Tool Only
-                    </p>
-                    <p className='text-sm text-muted-foreground'>
-                      Mower only — bring your own 20V batteries
-                    </p>
-                  </div>
-                  <div className='text-right'>
-                    <p className='font-bold text-foreground'>$449</p>
-                    <span className='text-xs text-primary flex items-center gap-1'>
-                      Check price <ArrowRight className='h-3 w-3' />
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </section>
+            {/* Final CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Final Verdict'
+              verdict='The best mower for anyone already on the 20V MAX platform. One battery system for your entire garage — workshop and yard.'
+              source='dewalt-lawn-mower'
+              variant='final'
+            />
+            <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+              <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+              <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                See how this compares against other top options in our full review.
+              </p>
+              <Link href='/reviews' className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'>
+                Browse All Reviews
+                <ArrowRight className='h-4 w-4' />
+              </Link>
+            </div>
 
             {/* Related Reviews */}
             <section className='mb-10'>
@@ -1391,20 +1397,12 @@ export default function DewaltLawnMowerReview() {
               </div>
             </section>
 
-            {/* Affiliate Disclosure */}
-            <div className='border-t border-border pt-6 text-xs text-muted-foreground leading-relaxed'>
-              <p>
-                <strong className='text-foreground/60'>Affiliate Disclosure:</strong>{' '}
-                GreenVerdict may earn a commission if you purchase through links on
-                this page. This does not affect our editorial independence — all
-                opinions are our own and we only recommend products we believe
-                deliver genuine value.
-              </p>
-            </div>
+            <AffiliateDisclosure />
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source='dewalt-lawn-mower' />
     </ReviewLayout>
   );
 }

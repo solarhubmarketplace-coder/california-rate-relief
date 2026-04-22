@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -275,6 +277,8 @@ export default function BestElectricMoped() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Overview / Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -474,15 +478,13 @@ export default function BestElectricMoped() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="niu-nqi-gts-sport"
+                    source="electric-moped-hub"
+                    variant="primary"
+                    label="Check Price — NIU NQi GTS Sport"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -588,15 +590,13 @@ export default function BestElectricMoped() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="super-soco-cpx"
+                    source="electric-moped-hub"
+                    variant="primary"
+                    label="Check Price — Super Soco CPx"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -702,15 +702,13 @@ export default function BestElectricMoped() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="csc-monterey"
+                    source="electric-moped-hub"
+                    variant="primary"
+                    label="Check Price — CSC Monterey"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -818,15 +816,13 @@ export default function BestElectricMoped() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="vespa-elettrica"
+                    source="electric-moped-hub"
+                    variant="primary"
+                    label="Check Price — Vespa Elettrica"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -933,15 +929,13 @@ export default function BestElectricMoped() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="genze-200"
+                    source="electric-moped-hub"
+                    variant="primary"
+                    label="Check Price — GenZe 200"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

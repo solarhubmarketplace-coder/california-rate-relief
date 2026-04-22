@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   ArrowRight,
@@ -249,6 +251,8 @@ export default function BestMiniSplitACPage() {
                 </span>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* ========== QUICK PICKS ========== */}
             <section className="mb-10">
@@ -509,13 +513,13 @@ export default function BestMiniSplitACPage() {
                   </div>
 
                   <div className="mt-4">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                    >
-                      Check Price at Home Depot
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="mrcool-diy-4th-gen"
+                      source="best-mini-split-ac"
+                      variant="primary"
+                      label="Check Price — MrCool DIY 4th Gen"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -624,13 +628,13 @@ export default function BestMiniSplitACPage() {
                   </div>
 
                   <div className="mt-4">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                    >
-                      Check Price at Costco
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="mrcool-diy-5th-gen"
+                      source="best-mini-split-ac"
+                      variant="primary"
+                      label="Check Price — MrCool DIY 5th Gen"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -737,13 +741,13 @@ export default function BestMiniSplitACPage() {
                   </div>
 
                   <div className="mt-4">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                    >
-                      Check Current Price
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="mrcool-easy-pro"
+                      source="best-mini-split-ac"
+                      variant="primary"
+                      label="Check Price — MrCool Easy Pro"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -855,13 +859,13 @@ export default function BestMiniSplitACPage() {
                   </div>
 
                   <div className="mt-4">
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                    >
-                      Check Current Price
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="mrcool-advantage"
+                      source="best-mini-split-ac"
+                      variant="primary"
+                      label="Check Price — MrCool Advantage"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>

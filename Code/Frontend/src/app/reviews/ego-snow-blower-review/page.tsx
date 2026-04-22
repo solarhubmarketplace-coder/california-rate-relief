@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -169,6 +173,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'ego-snow-blower';
+
 export default function EgoSnowBlowerReview() {
   return (
     <ReviewLayout>
@@ -222,6 +228,27 @@ export default function EgoSnowBlowerReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate Disclosure + Top CTA */}
+            <AffiliateDisclosure compact />
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Best Electric Snow Blower'
+              rating={4.6}
+              verdict='EGO SNT2114 Peak Power — 21-inch single-stage, dual-battery torque, push-button start, LED headlights. Handles 80% of residential snow.'
+              pros={[
+                'Push-button start — no pull cord at 6 AM',
+                'Peak Power dual-battery torque',
+                '56V platform shares with 70+ EGO tools',
+                '5-year warranty',
+              ]}
+              cons={[
+                '$999 premium over mid-range gas',
+                'Single-stage limits above 10-inch snowfalls',
+              ]}
+              source='ego-snow-blower'
+              variant='top'
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -577,6 +604,15 @@ export default function EgoSnowBlowerReview() {
               </p>
             </section>
 
+            {/* Mid-content CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Ready to buy?'
+              verdict='Push-button start in freezing temperatures is worth the price of admission alone.'
+              source='ego-snow-blower'
+              variant='mid'
+            />
+
             {/* EGO vs Gas Comparison */}
             <section className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -907,16 +943,33 @@ export default function EgoSnowBlowerReview() {
                 </p>
               </div>
 
-              {/* Buy CTA */}
-              <a
-                href='#'
-                className='flex items-center justify-center gap-2 w-full bg-primary text-primary-foreground font-semibold py-3 px-6 rounded-xl hover:bg-primary/90 transition-colors text-center'
-              >
-                <DollarSign className='h-5 w-5' />
-                Check Current Price — EGO SNT2114 ($999)
-                <ArrowRight className='h-5 w-5' />
-              </a>
+              <BuyButton
+                productKey={PRODUCT_KEY}
+                source='ego-snow-blower-verdict'
+                variant='primary'
+                showPrice
+                fullWidth
+              />
             </section>
+
+            {/* Final CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Final Verdict'
+              verdict='The best electric snow blower you can buy — Peak Power torque, LED headlights, and the quiet freedom of lithium in your garage.'
+              source='ego-snow-blower'
+              variant='final'
+            />
+            <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+              <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+              <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                See how this compares against other top options in our full review library.
+              </p>
+              <Link href='/reviews' className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'>
+                Browse All Reviews
+                <ArrowRight className='h-4 w-4' />
+              </Link>
+            </div>
 
             {/* Related Content CTAs */}
             <section className='mb-10'>
@@ -971,6 +1024,7 @@ export default function EgoSnowBlowerReview() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source='ego-snow-blower' />
     </ReviewLayout>
   );
 }

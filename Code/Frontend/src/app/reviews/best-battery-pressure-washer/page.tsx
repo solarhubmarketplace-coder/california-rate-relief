@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -257,6 +259,8 @@ export default function BestBatteryPressureWashers() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -485,14 +489,13 @@ export default function BestBatteryPressureWashers() {
               </div>
 
               <div className="text-center mb-8">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ego-power-hpw3200"
+                  source="battery-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — EGO POWER+ HPW3200"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -578,14 +581,13 @@ export default function BestBatteryPressureWashers() {
               </div>
 
               <div className="text-center mb-8">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="greenworks-60v-2100-psi"
+                  source="battery-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — Greenworks 60V 2100 PSI"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -671,14 +673,13 @@ export default function BestBatteryPressureWashers() {
               </div>
 
               <div className="text-center mb-8">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price at Home Depot
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ryobi-40v-hp-1500-psi"
+                  source="battery-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — Ryobi 40V HP 1500 PSI"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -764,14 +765,13 @@ export default function BestBatteryPressureWashers() {
               </div>
 
               <div className="text-center mb-8">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="dewalt-20v-max-dcpw550"
+                  source="battery-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — DeWalt 20V MAX DCPW550"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -857,14 +857,13 @@ export default function BestBatteryPressureWashers() {
               </div>
 
               <div className="text-center mb-8">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="sun-joe-24v-x2-pw1200"
+                  source="battery-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — Sun Joe 24V-X2-PW1200"
+                  showPrice
+                />
               </div>
             </section>
 

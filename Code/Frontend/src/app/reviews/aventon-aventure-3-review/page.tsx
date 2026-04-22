@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -17,6 +21,8 @@ import {
   X,
   Zap,
 } from 'lucide-react';
+
+const PRODUCT_KEY = 'aventon-aventure-3';
 
 export const metadata: Metadata = {
   title:
@@ -221,6 +227,25 @@ export default function AventonAventure3Review() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Best Fat Tire E-Bike"
+              rating={4.6}
+              verdict="The Aventon Aventure 3 delivers a torque sensor, Class 3 speed (28 mph), a 720Wh battery, and a full accessory package for $1,899 — the best fat tire e-bike value under $2,000."
+              pros={[
+                'Adventure and all-terrain riding',
+                'Long-range commuting (40-60 mi)',
+                'Natural, bike-like pedal assist',
+              ]}
+              cons={['Heavy at 77 lbs', 'Basic front suspension']}
+              source="aventon-aventure-3"
+              variant="top"
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -806,6 +831,15 @@ export default function AventonAventure3Review() {
                 hands on the bars in heavy traffic or on rough surfaces.
               </p>
 
+              {/* Mid-content CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Ready to ride?"
+                verdict="In stock at Aventon.com with free shipping — check current price and any seasonal promos."
+                source="aventon-aventure-3"
+                variant="mid"
+              />
+
               {/* Comparison Table */}
               <h2 className='text-2xl font-bold text-foreground mb-4'>
                 Aventon Aventure 3 vs. Rad Power RadRover 6 Plus vs. Lectric
@@ -1291,47 +1325,26 @@ export default function AventonAventure3Review() {
               </p>
             </div>
 
-            {/* CTA */}
-            <div className='mt-12 space-y-4'>
-              <div className='bg-muted/30 border border-border rounded-2xl p-6 text-center'>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-foreground hover:bg-foreground/90 text-background px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                >
-                  Check Price on Aventon.com
-                  <ArrowRight className='h-4 w-4' />
-                </a>
-                <p className='text-xs text-muted-foreground mt-3'>
-                  Affiliate links may be added in the future. Currently no
-                  affiliate relationship.
-                </p>
-              </div>
-
-              <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center'>
-                <h3 className='text-lg font-bold text-foreground mb-2'>
-                  Compare More Electric Bikes
-                </h3>
-                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
-                  See how the Aventure 3 stacks up against other top-rated
-                  electric bikes in our full comparison guide.
-                </p>
-                <div className='flex flex-col sm:flex-row gap-3 justify-center'>
-                  <Link
-                    href='/reviews/best-electric-bikes'
-                    className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                  >
-                    Best Electric Bikes 2026
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                  <Link
-                    href='/reviews'
-                    className='inline-flex items-center gap-2 border border-border hover:bg-muted/30 text-foreground px-6 py-3 rounded-lg font-semibold transition-all'
-                  >
-                    Browse All Reviews
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                </div>
-              </div>
+            {/* Final CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Final Verdict"
+              verdict="If you want a fat tire e-bike that rides well on and off pavement, commutes at a useful 28 mph, and includes every accessory out of the box — the Aventure 3 is the one to buy."
+              source="aventon-aventure-3"
+              variant="final"
+            />
+            <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+              <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+              <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                See how this compares against other top options in our full review.
+              </p>
+              <Link
+                href='/reviews'
+                className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'
+              >
+                Browse All Reviews
+                <ArrowRight className='h-4 w-4' />
+              </Link>
             </div>
 
             {/* Navigation */}
@@ -1355,6 +1368,7 @@ export default function AventonAventure3Review() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="aventon-aventure-3" />
     </ReviewLayout>
   );
 }

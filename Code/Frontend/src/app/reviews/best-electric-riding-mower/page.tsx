@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -266,6 +268,8 @@ export default function BestElectricRidingMower() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -648,13 +652,13 @@ export default function BestElectricRidingMower() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-                    style={{ backgroundColor: '#22c55e' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="ego-z6-zero-turn"
+                    source="electric-riding-mower-hub"
+                    variant="primary"
+                    label="Check Price — EGO Z6 Zero-Turn"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -727,13 +731,13 @@ export default function BestElectricRidingMower() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-                    style={{ backgroundColor: '#22c55e' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="ryobi-80v-zero-turn"
+                    source="electric-riding-mower-hub"
+                    variant="primary"
+                    label="Check Price — Ryobi 80V Zero-Turn"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -806,13 +810,13 @@ export default function BestElectricRidingMower() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-                    style={{ backgroundColor: '#22c55e' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="greenworks-60v-crossoverz"
+                    source="electric-riding-mower-hub"
+                    variant="primary"
+                    label="Check Price — Greenworks 60V CrossoverZ"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -885,13 +889,13 @@ export default function BestElectricRidingMower() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-                    style={{ backgroundColor: '#22c55e' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="cub-cadet-cc-30e"
+                    source="electric-riding-mower-hub"
+                    variant="primary"
+                    label="Check Price — Cub Cadet CC 30e"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -965,13 +969,13 @@ export default function BestElectricRidingMower() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-                    style={{ backgroundColor: '#22c55e' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="john-deere-z370r-electric"
+                    source="electric-riding-mower-hub"
+                    variant="primary"
+                    label="Check Price — John Deere Z370R Electric"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -1047,13 +1051,13 @@ export default function BestElectricRidingMower() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-                    style={{ backgroundColor: '#22c55e' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="husqvarna-ceora"
+                    source="electric-riding-mower-hub"
+                    variant="primary"
+                    label="Check Price — Husqvarna Ceora"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

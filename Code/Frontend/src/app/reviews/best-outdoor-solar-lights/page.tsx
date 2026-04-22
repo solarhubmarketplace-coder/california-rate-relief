@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Sun,
@@ -274,6 +276,8 @@ export default function BestOutdoorSolarLights() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -555,14 +559,13 @@ export default function BestOutdoorSolarLights() {
                   </div>
                 </div>
                 <div className="mt-5">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="litom-3-head-solar-motion-sensor-light"
+                    source="best-outdoor-solar-lights"
+                    variant="primary"
+                    label="Check Price — LITOM 3-Head Solar Motion Sensor Light"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -625,14 +628,13 @@ export default function BestOutdoorSolarLights() {
                   </div>
                 </div>
                 <div className="mt-5">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="urpower-3-head-solar-motion-light"
+                    source="best-outdoor-solar-lights"
+                    variant="primary"
+                    label="Check Price — URPOWER 3-Head Solar Motion Light"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -696,14 +698,13 @@ export default function BestOutdoorSolarLights() {
                   </div>
                 </div>
                 <div className="mt-5">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="baxia-solar-flood-lights"
+                    source="best-outdoor-solar-lights"
+                    variant="primary"
+                    label="Check Price — BAXIA Solar Flood Lights"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -767,14 +768,13 @@ export default function BestOutdoorSolarLights() {
                   </div>
                 </div>
                 <div className="mt-5">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="gigalumi-solar-path-lights"
+                    source="best-outdoor-solar-lights"
+                    variant="primary"
+                    label="Check Price — GIGALUMI Solar Path Lights"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -839,14 +839,13 @@ export default function BestOutdoorSolarLights() {
                   </div>
                 </div>
                 <div className="mt-5">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="brightech-ambience-pro-solar-string-lights"
+                    source="best-outdoor-solar-lights"
+                    variant="primary"
+                    label="Check Price — Brightech Ambience Pro Solar String Lights"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -912,14 +911,13 @@ export default function BestOutdoorSolarLights() {
                   </div>
                 </div>
                 <div className="mt-5">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="ring-solar-pathlight"
+                    source="best-outdoor-solar-lights"
+                    variant="primary"
+                    label="Check Price — Ring Solar Pathlight"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -984,14 +982,13 @@ export default function BestOutdoorSolarLights() {
                   </div>
                 </div>
                 <div className="mt-5">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="solpex-solar-step-lights"
+                    source="best-outdoor-solar-lights"
+                    variant="primary"
+                    label="Check Price — SOLPEX Solar Step Lights"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

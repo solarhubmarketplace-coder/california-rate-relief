@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   ArrowRight,
@@ -286,6 +288,8 @@ export default function BestElectricSmoker() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* ========== QUICK PICKS ========== */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold mb-6" style={{ color: '#f5f5f5' }}>
@@ -497,13 +501,13 @@ export default function BestElectricSmoker() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ArrowRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="masterbuilt-40-inch-digital-electric-smoker"
+                  source="electric-smoker-hub"
+                  variant="primary"
+                  label="Check Price — Masterbuilt 40-inch Digital Electric Smoker"
+                  showPrice
+                  />
               </div>
 
               {/* --- 2. Weber SmokeFire EX6 --- */}
@@ -580,13 +584,13 @@ export default function BestElectricSmoker() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#a78bfa', color: '#0a0a0a' }}
-                >
-                  Check Price at Weber <ArrowRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="weber-smokefire-ex6"
+                  source="electric-smoker-hub"
+                  variant="primary"
+                  label="Check Price — Weber SmokeFire EX6"
+                  showPrice
+                  />
               </div>
 
               {/* --- 3. Traeger Pro 780 --- */}
@@ -665,13 +669,13 @@ export default function BestElectricSmoker() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#f97316', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ArrowRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="traeger-pro-780"
+                  source="electric-smoker-hub"
+                  variant="primary"
+                  label="Check Price — Traeger Pro 780"
+                  showPrice
+                  />
               </div>
 
               {/* --- 4. Pit Boss Copperhead 7 --- */}
@@ -751,13 +755,13 @@ export default function BestElectricSmoker() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#3b82f6', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ArrowRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="pit-boss-copperhead-7-series"
+                  source="electric-smoker-hub"
+                  variant="primary"
+                  label="Check Price — Pit Boss Copperhead 7 Series"
+                  showPrice
+                  />
               </div>
 
               {/* --- 5. Char-Broil Deluxe Digital --- */}
@@ -833,13 +837,13 @@ export default function BestElectricSmoker() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#eab308', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ArrowRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="char-broil-deluxe-digital-electric-smoker"
+                  source="electric-smoker-hub"
+                  variant="primary"
+                  label="Check Price — Char-Broil Deluxe Digital Electric Smoker"
+                  showPrice
+                  />
               </div>
 
               {/* --- 6. Bradley Original 4-Rack --- */}
@@ -921,13 +925,13 @@ export default function BestElectricSmoker() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: '#ec4899', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ArrowRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="bradley-original-4-rack-smoker"
+                  source="electric-smoker-hub"
+                  variant="primary"
+                  label="Check Price — Bradley Original 4-Rack Smoker"
+                  showPrice
+                  />
               </div>
             </section>
 

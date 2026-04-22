@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -274,6 +276,8 @@ export default function BestSolarGenerator() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -515,13 +519,13 @@ export default function BestSolarGenerator() {
                     <span className="text-sm font-medium" style={{ color: '#a1a1aa' }}>Bundle Price:</span>
                     <span className="ml-2 text-lg font-bold" style={{ color: '#22c55e' }}>~$2,798</span>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="ecoflow-delta-pro-3"
+                    source="best-solar-generator"
+                    variant="primary"
+                    label="Check Price — EcoFlow Delta Pro 3 + 400W Solar Panels"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -619,13 +623,13 @@ export default function BestSolarGenerator() {
                     <span className="text-sm font-medium" style={{ color: '#a1a1aa' }}>Bundle Price:</span>
                     <span className="ml-2 text-lg font-bold" style={{ color: '#22c55e' }}>~$1,599</span>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="bluetti-ac200l"
+                    source="best-solar-generator"
+                    variant="primary"
+                    label="Check Price — Bluetti AC200L + PV200 Solar Panel"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -723,13 +727,13 @@ export default function BestSolarGenerator() {
                     <span className="text-sm font-medium" style={{ color: '#a1a1aa' }}>Bundle Price:</span>
                     <span className="ml-2 text-lg font-bold" style={{ color: '#22c55e' }}>~$2,499</span>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="jackery-explorer-2000-plus"
+                    source="best-solar-generator"
+                    variant="primary"
+                    label="Check Price — Jackery Explorer 2000 Plus + SolarSaga 200W Panels"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -829,13 +833,13 @@ export default function BestSolarGenerator() {
                     <span className="text-sm font-medium" style={{ color: '#a1a1aa' }}>Bundle Price:</span>
                     <span className="ml-2 text-lg font-bold" style={{ color: '#22c55e' }}>~$2,400</span>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="goal-zero-yeti-1500x-nomad-200-solar-panel"
+                    source="best-solar-generator"
+                    variant="primary"
+                    label="Check Price — Goal Zero Yeti 1500X + Nomad 200 Solar Panel"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -935,13 +939,13 @@ export default function BestSolarGenerator() {
                     <span className="text-sm font-medium" style={{ color: '#a1a1aa' }}>Bundle Price:</span>
                     <span className="ml-2 text-lg font-bold" style={{ color: '#22c55e' }}>~$2,599</span>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="anker-solix-f3800"
+                    source="best-solar-generator"
+                    variant="primary"
+                    label="Check Price — Anker SOLIX F3800 + PS400 Solar Panel"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

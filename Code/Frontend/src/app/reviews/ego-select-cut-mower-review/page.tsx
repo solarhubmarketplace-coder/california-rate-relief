@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowRight,
   Battery,
@@ -166,6 +170,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'ego-select-cut-mower';
+
 export default function EgoSelectCutMowerReview() {
   return (
     <ReviewLayout>
@@ -226,6 +232,27 @@ export default function EgoSelectCutMowerReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate Disclosure + Top CTA */}
+            <AffiliateDisclosure compact />
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Editor&apos;s Choice'
+              rating={4.7}
+              verdict='56V, 21-inch Select Cut multi-blade system, 60 min runtime. The electric mower we recommend for most homeowners.'
+              pros={[
+                'Multi-blade Select Cut for any grass condition',
+                'Up to 60 min runtime on 10Ah battery',
+                '70+ tool EGO 56V ecosystem',
+                '5-year tool / 3-year battery warranty',
+              ]}
+              cons={[
+                '77 lbs — heavier than DeWalt and Ryobi',
+                '$799 kit is a premium price',
+              ]}
+              source='ego-select-cut-mower'
+              variant='top'
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -789,6 +816,15 @@ export default function EgoSelectCutMowerReview() {
               </div>
             </section>
 
+            {/* Mid-content CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Ready to buy?'
+              verdict='The EGO Select Cut XP pays back its premium in a year or two through zero fuel, zero maintenance, and whisper-quiet operation.'
+              source='ego-select-cut-mower'
+              variant='mid'
+            />
+
             {/* Who It's Best For */}
             <section className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -972,15 +1008,33 @@ export default function EgoSelectCutMowerReview() {
                   conditions throughout the year, and want to stop messing with gas
                   engines forever, this is the mower to buy.
                 </p>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
-                >
-                  Check Current Price
-                  <ArrowRight className='h-4 w-4' />
-                </a>
+                <BuyButton
+                  productKey={PRODUCT_KEY}
+                  source='ego-select-cut-mower-verdict'
+                  variant='primary'
+                  showPrice
+                />
               </div>
             </section>
+
+            {/* Final CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Final Verdict'
+              verdict='The electric mower we recommend for most homeowners — multi-blade versatility, huge ecosystem, and the quiet freedom of 56V.'
+              source='ego-select-cut-mower'
+              variant='final'
+            />
+            <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+              <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+              <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                See how the EGO Select Cut XP compares against DeWalt, Greenworks, Ryobi, and other top mowers.
+              </p>
+              <Link href='/reviews/best-electric-lawn-mower' className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'>
+                Best Electric Lawn Mowers 2026
+                <ArrowRight className='h-4 w-4' />
+              </Link>
+            </div>
 
             {/* FAQ Section */}
             <section className='mb-10'>
@@ -1045,20 +1099,12 @@ export default function EgoSelectCutMowerReview() {
               </div>
             </section>
 
-            {/* Affiliate Disclosure */}
-            <div className='border-t border-border pt-6 text-xs text-muted-foreground leading-relaxed'>
-              <p>
-                <strong className='text-foreground/60'>Affiliate Disclosure:</strong>{' '}
-                GreenVerdict may earn a commission if you purchase through links on
-                this page. This does not affect our editorial independence — all
-                opinions are our own and we only recommend products we believe
-                deliver genuine value.
-              </p>
-            </div>
+            <AffiliateDisclosure />
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source='ego-select-cut-mower' />
     </ReviewLayout>
   );
 }

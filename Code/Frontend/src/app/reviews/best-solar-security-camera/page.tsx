@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -259,6 +261,8 @@ export default function BestSolarSecurityCamera() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -540,14 +544,13 @@ export default function BestSolarSecurityCamera() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{REOLINK_ARGUS_4_PRO_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Reolink Argus 4 Pro
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="reolink-argus-4-pro"
+                source="best-solar-security-camera"
+                variant="primary"
+                label="Check Price — Reolink Argus 4 Pro"
+                showPrice
+              />
             </section>
 
             {/* 2. eufy SoloCam S340 */}
@@ -638,14 +641,13 @@ export default function BestSolarSecurityCamera() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{EUFY_SOLOCAM_S340_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — eufy SoloCam S340
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="eufy-solocam-s340"
+                source="best-solar-security-camera"
+                variant="primary"
+                label="Check Price — eufy SoloCam S340"
+                showPrice
+              />
             </section>
 
             {/* 3. Ring Stick Up Cam Solar */}
@@ -735,14 +737,13 @@ export default function BestSolarSecurityCamera() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{RING_STICK_UP_CAM_SOLAR_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Ring Stick Up Cam Solar
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="ring-stick-up-cam-solar"
+                source="best-solar-security-camera"
+                variant="primary"
+                label="Check Price — Ring Stick Up Cam Solar"
+                showPrice
+              />
             </section>
 
             {/* 4. Arlo Pro 5S */}
@@ -834,14 +835,13 @@ export default function BestSolarSecurityCamera() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{ARLO_PRO_5S_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Arlo Pro 5S
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="arlo-pro-5s"
+                source="best-solar-security-camera"
+                variant="primary"
+                label="Check Price — Arlo Pro 5S"
+                showPrice
+              />
             </section>
 
             {/* 5. Wyze Cam Outdoor v2 + Solar */}
@@ -933,14 +933,13 @@ export default function BestSolarSecurityCamera() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{WYZE_CAM_OUTDOOR_V2_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Wyze Cam Outdoor v2
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="wyze-cam-outdoor-v2"
+                source="best-solar-security-camera"
+                variant="primary"
+                label="Check Price — Wyze Cam Outdoor v2"
+                showPrice
+              />
             </section>
 
             {/* 6. Blink Outdoor 4 + Solar */}
@@ -1033,14 +1032,13 @@ export default function BestSolarSecurityCamera() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{BLINK_OUTDOOR_4_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Blink Outdoor 4
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="blink-outdoor-4"
+                source="best-solar-security-camera"
+                variant="primary"
+                label="Check Price — Blink Outdoor 4"
+                showPrice
+              />
             </section>
 
             {/* ========== SOLAR CHARGING SECTION ========== */}

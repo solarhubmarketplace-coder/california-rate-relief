@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -286,6 +288,8 @@ export default function BestElectricDirtBikeAdults() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Overview / Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -488,12 +492,13 @@ export default function BestElectricDirtBikeAdults() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="sur-ron-light-bee-x"
+                    source="electric-dirt-bike-adults-hub"
+                    variant="primary"
+                    label="Check Price — Sur-Ron Light Bee X"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -569,12 +574,13 @@ export default function BestElectricDirtBikeAdults() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="ktm-freeride-e-xc"
+                    source="electric-dirt-bike-adults-hub"
+                    variant="primary"
+                    label="Check Price — KTM Freeride E-XC"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -649,12 +655,13 @@ export default function BestElectricDirtBikeAdults() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="stark-varg"
+                    source="electric-dirt-bike-adults-hub"
+                    variant="primary"
+                    label="Check Price — Stark Varg"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -728,12 +735,13 @@ export default function BestElectricDirtBikeAdults() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="cake-kalk-or"
+                    source="electric-dirt-bike-adults-hub"
+                    variant="primary"
+                    label="Check Price — Cake Kalk OR"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -807,12 +815,13 @@ export default function BestElectricDirtBikeAdults() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="segway-x260"
+                    source="electric-dirt-bike-adults-hub"
+                    variant="primary"
+                    label="Check Price — Segway X260"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -888,12 +897,13 @@ export default function BestElectricDirtBikeAdults() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                  >
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="zero-fx"
+                    source="electric-dirt-bike-adults-hub"
+                    variant="primary"
+                    label="Check Price — Zero FX"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

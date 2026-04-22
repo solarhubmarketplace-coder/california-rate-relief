@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Star,
@@ -224,6 +226,8 @@ export default function BestSmartThermostatPage() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -418,6 +422,16 @@ export default function BestSmartThermostatPage() {
                     <div><span className="text-muted-foreground">C-wire:</span> <span className="font-medium">Not required</span></div>
                   </div>
                 </div>
+
+                <div className="mt-6">
+                  <BuyButton
+                    productKey="ecobee-smart-thermostat-premium"
+                    source="best-smart-thermostat"
+                    variant="primary"
+                    label="Check Price — Ecobee Smart Thermostat Premium"
+                    showPrice
+                  />
+                </div>
               </div>
 
               {/* --- Nest Learning 4th Gen --- */}
@@ -491,6 +505,16 @@ export default function BestSmartThermostatPage() {
                     <div><span className="text-muted-foreground">C-wire:</span> <span className="font-medium">Recommended</span></div>
                   </div>
                 </div>
+
+                <div className="mt-6">
+                  <BuyButton
+                    productKey="nest-learning-thermostat"
+                    source="best-smart-thermostat"
+                    variant="primary"
+                    label="Check Price — Google Nest Learning Thermostat (4th Gen)"
+                    showPrice
+                  />
+                </div>
               </div>
 
               {/* --- Ecobee Enhanced --- */}
@@ -561,6 +585,16 @@ export default function BestSmartThermostatPage() {
                     <div><span className="text-muted-foreground">Display:</span> <span className="font-medium">Touchscreen</span></div>
                     <div><span className="text-muted-foreground">C-wire:</span> <span className="font-medium">Not required</span></div>
                   </div>
+                </div>
+
+                <div className="mt-6">
+                  <BuyButton
+                    productKey="ecobee-smart-thermostat-enhanced"
+                    source="best-smart-thermostat"
+                    variant="primary"
+                    label="Check Price — Ecobee Smart Thermostat Enhanced"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -633,6 +667,16 @@ export default function BestSmartThermostatPage() {
                     <div><span className="text-muted-foreground">Display:</span> <span className="font-medium">Mirrored</span></div>
                     <div><span className="text-muted-foreground">C-wire:</span> <span className="font-medium">Recommended</span></div>
                   </div>
+                </div>
+
+                <div className="mt-6">
+                  <BuyButton
+                    productKey="nest-thermostat"
+                    source="best-smart-thermostat"
+                    variant="primary"
+                    label="Check Price — Google Nest Thermostat"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

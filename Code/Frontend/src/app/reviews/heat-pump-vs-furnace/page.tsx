@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   ArrowRight,
@@ -195,6 +197,8 @@ export default function HeatPumpVsFurnacePage() {
                 </span>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* ========== QUICK VERDICT ========== */}
             <section className="mb-10">
@@ -1144,13 +1148,14 @@ export default function HeatPumpVsFurnacePage() {
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       <strong style={{ color: '#f5f5f5' }}>Best for:</strong> {unit.best}
                     </p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-1 text-sm font-medium mt-3 transition-colors"
-                      style={{ color: '#22c55e' }}
-                    >
-                      Check latest price <ArrowRight className="h-3 w-3" />
-                    </a>
+                    <div className="mt-3">
+                      <BuyButton
+                        productKey={unit.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}
+                        source="heat-pump-vs-furnace"
+                        variant="compact"
+                        label={`Check Price — ${unit.name}`}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1204,13 +1209,14 @@ export default function HeatPumpVsFurnacePage() {
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       <strong style={{ color: '#f5f5f5' }}>Best for:</strong> {unit.best}
                     </p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-1 text-sm font-medium mt-3 transition-colors"
-                      style={{ color: '#22c55e' }}
-                    >
-                      Check latest price <ArrowRight className="h-3 w-3" />
-                    </a>
+                    <div className="mt-3">
+                      <BuyButton
+                        productKey={unit.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}
+                        source="heat-pump-vs-furnace"
+                        variant="compact"
+                        label={`Check Price — ${unit.name}`}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
@@ -1326,10 +1332,18 @@ export default function HeatPumpVsFurnacePage() {
                   sense only in very cold climates (zone 7) with cheap natural gas, or in specific
                   situations where budget constraints or electrical limitations make a heat pump impractical.
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
                   Whichever system you choose, get multiple quotes, insist on a Manual J load
                   calculation, and take advantage of all available tax credits and rebates.
                 </p>
+
+                <BuyButton
+                  productKey="mrcool-diy-4th-gen"
+                  source="heat-pump-vs-furnace"
+                  variant="primary"
+                  label="Check Price — MrCool DIY Heat Pump"
+                  showPrice
+                />
               </div>
             </section>
 

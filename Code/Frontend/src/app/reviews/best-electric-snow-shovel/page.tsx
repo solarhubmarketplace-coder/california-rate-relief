@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -263,6 +265,8 @@ export default function BestElectricSnowShovelPage() {
               </p>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* ========== QUICK PICKS ========== */}
             <section className="mb-10">
               <h2 className="text-2xl font-bold mb-5" style={{ color: '#f5f5f5' }}>
@@ -477,14 +481,13 @@ export default function BestElectricSnowShovelPage() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="ego-snt2114-power-snow-shovel"
+                    source="electric-snow-shovel-hub"
+                    variant="primary"
+                    label="Check Price — EGO SNT2114 Power+ Snow Shovel"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -568,14 +571,13 @@ export default function BestElectricSnowShovelPage() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="greenworks-40v-cordless-snow-shovel"
+                    source="electric-snow-shovel-hub"
+                    variant="primary"
+                    label="Check Price — Greenworks 40V Cordless Snow Shovel"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -661,14 +663,13 @@ export default function BestElectricSnowShovelPage() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="snow-joe-24v-ss13-cordless-snow-shovel"
+                    source="electric-snow-shovel-hub"
+                    variant="primary"
+                    label="Check Price — Snow Joe 24V-SS13 Cordless Snow Shovel"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -754,14 +755,13 @@ export default function BestElectricSnowShovelPage() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="toro-38361-power-shovel"
+                    source="electric-snow-shovel-hub"
+                    variant="primary"
+                    label="Check Price — Toro 38361 Power Shovel"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -846,14 +846,13 @@ export default function BestElectricSnowShovelPage() {
                       </ul>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="ryobi-40v-brushless-snow-shovel"
+                    source="electric-snow-shovel-hub"
+                    variant="primary"
+                    label="Check Price — Ryobi 40V Brushless Snow Shovel"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

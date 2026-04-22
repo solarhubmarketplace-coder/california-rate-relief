@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -261,6 +263,8 @@ export default function BestSolarPanelKit() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -554,9 +558,13 @@ export default function BestSolarPanelKit() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a href="#" className="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="renogy-400w-solar-panel-kit"
+                    source="best-solar-panel-kit"
+                    variant="primary"
+                    label="Check Price — Renogy 400W Solar Panel Kit"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -619,9 +627,13 @@ export default function BestSolarPanelKit() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a href="#" className="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="bougerv-200w-solar-panel-kit"
+                    source="best-solar-panel-kit"
+                    variant="primary"
+                    label="Check Price — BougeRV 200W Solar Panel Kit"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -685,9 +697,13 @@ export default function BestSolarPanelKit() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a href="#" className="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="rich-solar-200w-solar-panel-kit"
+                    source="best-solar-panel-kit"
+                    variant="primary"
+                    label="Check Price — Rich Solar 200W Solar Panel Kit"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -751,9 +767,13 @@ export default function BestSolarPanelKit() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a href="#" className="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="eco-worthy-1200w-solar-panel-kit"
+                    source="best-solar-panel-kit"
+                    variant="primary"
+                    label="Check Price — ECO-WORTHY 1200W Solar Panel Kit"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -818,9 +838,13 @@ export default function BestSolarPanelKit() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a href="#" className="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="windynation-400w-complete-solar-kit"
+                    source="best-solar-panel-kit"
+                    variant="primary"
+                    label="Check Price — WindyNation 400W Complete Solar Kit"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -886,9 +910,13 @@ export default function BestSolarPanelKit() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <a href="#" className="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="grape-solar-540w-grid-tie-kit"
+                    source="best-solar-panel-kit"
+                    variant="primary"
+                    label="Check Price — Grape Solar 540W Grid-Tie Kit"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

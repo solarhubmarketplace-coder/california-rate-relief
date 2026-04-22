@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -148,6 +152,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'generac-guardian-24kw';
+
 export default function GeneracGuardian24kWReview() {
   return (
     <ReviewLayout>
@@ -215,6 +221,27 @@ export default function GeneracGuardian24kWReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate Disclosure + Top CTA */}
+            <AffiliateDisclosure compact />
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Best Whole-House Generator'
+              rating={4.5}
+              verdict='24 kW air-cooled standby generator with automatic transfer switch. Powers the full home through PSPS, storms, and grid failures.'
+              pros={[
+                'Auto start within 10 seconds of outage',
+                'Runs on natural gas or propane',
+                'Quiet Test mode weekly self-diagnosis',
+                'Wi-Fi monitoring via Mobile Link',
+              ]}
+              cons={[
+                'Full install runs $10,000-$15,000',
+                'Annual maintenance required',
+              ]}
+              source='generac-guardian-24kw'
+              variant='top'
+            />
 
             {/* Quick Verdict Box */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -903,6 +930,15 @@ export default function GeneracGuardian24kWReview() {
               </p>
             </section>
 
+            {/* Mid-content CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Ready to buy?'
+              verdict='The value becomes obvious the first time the grid drops and your home stays online.'
+              source='generac-guardian-24kw'
+              variant='mid'
+            />
+
             {/* Comparison Section */}
             <section className='mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -1121,17 +1157,24 @@ export default function GeneracGuardian24kWReview() {
                   sticker price.
                 </p>
                 <div className='mt-6'>
-                  <a
-                    href='#'
-                    className='inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
-                    rel='nofollow noopener'
-                  >
-                    Check Current Pricing
-                    <ArrowRight className='h-4 w-4' />
-                  </a>
+                  <BuyButton
+                    productKey={PRODUCT_KEY}
+                    source='generac-guardian-24kw-verdict'
+                    variant='primary'
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
+
+            {/* Final CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Final Verdict'
+              verdict='For California homes dealing with PSPS shutoffs and wildfire blackouts, the Guardian 24kW earns our strong recommendation.'
+              source='generac-guardian-24kw'
+              variant='final'
+            />
 
             {/* FAQ Section */}
             <section className='mb-12'>
@@ -1221,37 +1264,21 @@ export default function GeneracGuardian24kWReview() {
               </div>
             </section>
 
-            {/* CTA Section */}
-            <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mt-10 mb-8'>
-              <h2 className='text-2xl font-bold text-foreground mb-3'>
-                Explore More GreenVerdict Reviews
-              </h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                We test and compare the best backup power, solar, and green
-                energy products so you can make confident decisions. Browse our
-                full library of in-depth reviews.
+            <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8 mb-8'>
+              <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+              <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                See how the Guardian 24kW compares against Kohler, Champion, and other top whole-house generators.
               </p>
-              <div className='flex flex-col sm:flex-row gap-4'>
-                <Link
-                  href='/reviews/best-whole-house-generator'
-                  className='inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
-                >
-                  Best Whole House Generators
-                  <ArrowRight className='h-4 w-4' />
-                </Link>
-                <Link
-                  href='/reviews'
-                  className='inline-flex items-center justify-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted/50 transition-colors'
-                >
-                  <ArrowLeft className='h-4 w-4' />
-                  Back to All Reviews
-                </Link>
-              </div>
+              <Link href='/reviews/best-whole-house-generator' className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'>
+                Best Whole House Generators
+                <ArrowRight className='h-4 w-4' />
+              </Link>
             </div>
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source='generac-guardian-24kw' />
     </ReviewLayout>
   );
 }

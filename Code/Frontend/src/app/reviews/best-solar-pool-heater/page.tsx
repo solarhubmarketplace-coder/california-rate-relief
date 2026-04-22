@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   ArrowRight,
@@ -285,6 +287,8 @@ export default function BestSolarPoolHeater() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* ========== OVERVIEW ========== */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -529,13 +533,13 @@ export default function BestSolarPoolHeater() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price <ArrowRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="fafco-bear-solar-pool-heater"
+                source="best-solar-pool-heater"
+                variant="primary"
+                label="Check Price — Fafco Bear Solar Pool Heater"
+                showPrice
+              />
             </section>
 
             {/* 2. SunHeater S120U */}
@@ -612,13 +616,13 @@ export default function BestSolarPoolHeater() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price <ArrowRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="sunheater-s120u"
+                source="best-solar-pool-heater"
+                variant="primary"
+                label="Check Price — SunHeater S120U"
+                showPrice
+              />
             </section>
 
             {/* 3. Heliocol HC-40 */}
@@ -695,13 +699,13 @@ export default function BestSolarPoolHeater() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price <ArrowRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="heliocol-hc-40"
+                source="best-solar-pool-heater"
+                variant="primary"
+                label="Check Price — Heliocol HC-40"
+                showPrice
+              />
             </section>
 
             {/* 4. SmartPool S601P */}
@@ -777,13 +781,13 @@ export default function BestSolarPoolHeater() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price <ArrowRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="smartpool-s601p-sungrabber"
+                source="best-solar-pool-heater"
+                variant="primary"
+                label="Check Price — SmartPool S601P SunGrabber"
+                showPrice
+              />
             </section>
 
             {/* 5. Sun2Solar Blue Solar Cover */}
@@ -851,13 +855,13 @@ export default function BestSolarPoolHeater() {
                 </div>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-              >
-                Check Price <ArrowRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="sun2solar-blue-solar-cover"
+                source="best-solar-pool-heater"
+                variant="primary"
+                label="Check Price — Sun2Solar Blue Solar Cover"
+                showPrice
+              />
             </section>
 
             {/* ========== SOLAR HEATER VS HEAT PUMP VS GAS ========== */}

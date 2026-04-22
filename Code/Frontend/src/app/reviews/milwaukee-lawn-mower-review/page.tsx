@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowRight,
   Battery,
@@ -175,6 +179,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'milwaukee-lawn-mower';
+
 export default function MilwaukeeLawnMowerReview() {
   return (
     <ReviewLayout>
@@ -235,6 +241,25 @@ export default function MilwaukeeLawnMowerReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Pro-Grade Self-Propelled"
+              rating={4.4}
+              verdict="Milwaukee M18 FUEL dual-battery self-propelled mower with pro-grade build quality and access to the 250+ tool M18 platform. Serious cutting performance for mid-size to large lawns."
+              pros={[
+                'Pros already on the M18 platform',
+                'Mid-size to large yards (up to 1/2 acre)',
+                'DIYers who want pro-level build quality',
+              ]}
+              cons={['Small lawns under 1/4 acre (overkill)', 'Budget under $500']}
+              source="milwaukee-lawn-mower"
+              variant="top"
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -1028,6 +1053,15 @@ export default function MilwaukeeLawnMowerReview() {
               </div>
             </section>
 
+            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              headline="Ready to buy?"
+              verdict="Milwaukee M18 FUEL self-propelled mower is stocked at Home Depot and Milwaukee retailers — check current bundle pricing."
+              source="milwaukee-lawn-mower"
+              variant="mid"
+            />
+
             {/* Comparison Table */}
             <section className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -1346,24 +1380,29 @@ export default function MilwaukeeLawnMowerReview() {
                   other mower manufacturer can match that depth of platform
                   support.
                 </p>
-                <div className='flex flex-col sm:flex-row gap-3'>
-                  <a
-                    href='#'
-                    className='inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-colors'
-                    style={{ backgroundColor: '#22c55e' }}
-                  >
-                    <DollarSign className='h-4 w-4' />
-                    Check Price on Home Depot
-                  </a>
-                  <a
-                    href='#'
-                    className='inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-colors'
-                    style={{ backgroundColor: '#171717', border: '1px solid #333' }}
-                  >
-                    <DollarSign className='h-4 w-4' />
-                    Check Price on Amazon
-                  </a>
-                </div>
+              </div>
+            </section>
+
+            {/* Final Affiliate CTA */}
+            <section className='mb-10'>
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                headline='Ready to buy the Milwaukee M18 FUEL Self-Propelled Mower?'
+                verdict='Pro-grade build quality plus access to the 250+ tool M18 platform — check current pricing and bundle options.'
+                source='milwaukee-lawn-mower'
+                variant='final'
+              />
+              <div className='mt-6 text-center'>
+                <p className='text-sm text-muted-foreground mb-2'>
+                  Still comparing?
+                </p>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline'
+                >
+                  Browse All Reviews
+                  <ArrowRight className='h-3 w-3' />
+                </Link>
               </div>
             </section>
 
@@ -1424,20 +1463,11 @@ export default function MilwaukeeLawnMowerReview() {
               </div>
             </section>
 
-            {/* Affiliate Disclosure */}
-            <div className='border-t border-border pt-6 text-xs text-muted-foreground leading-relaxed'>
-              <p>
-                <strong className='text-foreground/60'>Affiliate Disclosure:</strong>{' '}
-                GreenVerdict may earn a commission if you purchase through links on
-                this page. This does not affect our editorial independence — all
-                opinions are our own and we only recommend products we believe
-                deliver genuine value.
-              </p>
-            </div>
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="milwaukee-lawn-mower" />
     </ReviewLayout>
   );
 }

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Check,
@@ -263,6 +265,8 @@ export default function BestTanklessWaterHeater() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* ─── Overview ─── */}
             <section className="mb-12">
@@ -943,12 +947,13 @@ export default function BestTanklessWaterHeater() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="rinnai-ru199in"
+                  source="best-tankless-water-heater"
+                  variant="primary"
+                  label="Check Price — Rinnai RU199iN"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1031,12 +1036,13 @@ export default function BestTanklessWaterHeater() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="rheem-rtgh-95dvln"
+                  source="best-tankless-water-heater"
+                  variant="primary"
+                  label="Check Price — Rheem RTGH-95DVLN"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1122,12 +1128,13 @@ export default function BestTanklessWaterHeater() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="navien-npe-240a2"
+                  source="best-tankless-water-heater"
+                  variant="primary"
+                  label="Check Price — Navien NPE-240A2"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1213,12 +1220,13 @@ export default function BestTanklessWaterHeater() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="noritz-ez111dv"
+                  source="best-tankless-water-heater"
+                  variant="primary"
+                  label="Check Price — Noritz EZ111DV"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1304,12 +1312,13 @@ export default function BestTanklessWaterHeater() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="rinnai-v65in"
+                  source="best-tankless-water-heater"
+                  variant="primary"
+                  label="Check Price — Rinnai V65iN"
+                  showPrice
+                />
               </div>
             </section>
 

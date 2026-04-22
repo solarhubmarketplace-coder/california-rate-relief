@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowRight,
   Calendar,
@@ -186,6 +190,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'honeywell-smart-thermostat';
+
 export default function HoneywellSmartThermostatReview() {
   return (
     <ReviewLayout>
@@ -251,6 +257,27 @@ export default function HoneywellSmartThermostatReview() {
                   </div>
                 </div>
               </header>
+
+              {/* Affiliate Disclosure + Top CTA */}
+              <AffiliateDisclosure compact />
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge='Best Value with Room Sensor'
+                rating={4.3}
+                verdict='Honeywell Home T9 — includes a wireless room sensor, geofencing, Smart Response learning. Undercuts Ecobee Premium by $50-$80.'
+                pros={[
+                  'Wireless room sensor included',
+                  'Geofencing + Smart Response learning',
+                  'Works with Alexa and Google Home',
+                  'C-wire adapter in the box',
+                ]}
+                cons={[
+                  'No native Apple HomeKit support',
+                  'Resideo app feels dated',
+                ]}
+                source='honeywell-smart-thermostat'
+                variant='top'
+              />
 
               {/* Quick Verdict */}
               <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -322,7 +349,7 @@ export default function HoneywellSmartThermostatReview() {
                 </div>
               </div>
 
-              {/* CTA */}
+              {/* Price / Buy CTA */}
               <div
                 className='rounded-2xl p-6 md:p-8 mb-12 text-center'
                 style={{ backgroundColor: '#141414' }}
@@ -336,18 +363,14 @@ export default function HoneywellSmartThermostatReview() {
                 <p className='text-sm mb-4' style={{ color: '#a1a1aa' }}>
                   $169-$199 with one room sensor included
                 </p>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 font-semibold px-8 py-3 rounded-xl transition-all'
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon
-                  <ArrowRight className='h-4 w-4' />
-                </a>
-                <p className='text-xs mt-3' style={{ color: '#52525b' }}>
-                  GreenVerdict is reader-supported. We may earn a commission
-                  through affiliate links.
-                </p>
+                <div className='flex justify-center'>
+                  <BuyButton
+                    productKey={PRODUCT_KEY}
+                    source='honeywell-smart-thermostat-price'
+                    variant='primary'
+                    showPrice
+                  />
+                </div>
               </div>
 
               {/* Key Specs */}
@@ -1113,6 +1136,15 @@ export default function HoneywellSmartThermostatReview() {
                 </div>
               </section>
 
+              {/* Mid-content CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge='Ready to buy?'
+                verdict='The T9 proves you can get genuine multi-room intelligence for under $200.'
+                source='honeywell-smart-thermostat'
+                variant='mid'
+              />
+
               {/* Comparison Table */}
               <section className='mb-14'>
                 <h2
@@ -1624,33 +1656,35 @@ export default function HoneywellSmartThermostatReview() {
                     multi-room intelligence for under $200.
                   </p>
 
-                  <div className='flex flex-col sm:flex-row gap-3'>
-                    <a
-                      href='#'
-                      className='inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 rounded-xl transition-all text-center'
-                      style={{
-                        backgroundColor: '#22c55e',
-                        color: '#0a0a0a',
-                      }}
-                    >
-                      Check Price on Amazon
-                      <ArrowRight className='h-4 w-4' />
-                    </a>
-                    <Link
-                      href='/reviews/best-smart-thermostat'
-                      className='inline-flex items-center justify-center gap-2 font-semibold px-8 py-3 rounded-xl transition-all text-center'
-                      style={{
-                        backgroundColor: '#1a1a1a',
-                        color: '#f5f5f5',
-                        border: '1px solid #27272a',
-                      }}
-                    >
-                      See All Smart Thermostats
-                      <ArrowRight className='h-4 w-4' />
-                    </Link>
+                  <div className='flex justify-start'>
+                    <BuyButton
+                      productKey={PRODUCT_KEY}
+                      source='honeywell-smart-thermostat-verdict'
+                      variant='primary'
+                      showPrice
+                    />
                   </div>
                 </div>
               </section>
+
+              {/* Final CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge='Final Verdict'
+                verdict='Room sensors are no longer a luxury feature. The T9 delivers the most comfort improvement per dollar on the market.'
+                source='honeywell-smart-thermostat'
+                variant='final'
+              />
+              <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+                <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                  See how the Honeywell T9 compares against Nest, Ecobee, and other top smart thermostats.
+                </p>
+                <Link href='/reviews/best-smart-thermostat' className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'>
+                  Best Smart Thermostats 2026
+                  <ArrowRight className='h-4 w-4' />
+                </Link>
+              </div>
 
               {/* Related Reviews */}
               <section>
@@ -1710,6 +1744,7 @@ export default function HoneywellSmartThermostatReview() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source='honeywell-smart-thermostat' />
     </ReviewLayout>
   );
 }

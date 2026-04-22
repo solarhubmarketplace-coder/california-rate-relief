@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -288,6 +290,8 @@ export default function BestElectricLeafBlower() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro / Overview */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -460,13 +464,13 @@ export default function BestElectricLeafBlower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ego-lb6504-650-cfm"
+                  source="electric-leaf-blower-hub"
+                  variant="primary"
+                  label="Check Price — EGO LB6504 650 CFM"
+                  showPrice
+                  />
               </div>
 
               {/* === Milwaukee M18 FUEL === */}
@@ -518,13 +522,13 @@ export default function BestElectricLeafBlower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="milwaukee-m18-fuel-blower"
+                  source="electric-leaf-blower-hub"
+                  variant="primary"
+                  label="Check Price — Milwaukee M18 FUEL Blower"
+                  showPrice
+                  />
               </div>
 
               {/* === DeWalt DCBL772X1 === */}
@@ -577,13 +581,13 @@ export default function BestElectricLeafBlower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="dewalt-dcbl772x1-60v-max-flexvolt"
+                  source="electric-leaf-blower-hub"
+                  variant="primary"
+                  label="Check Price — DeWalt DCBL772X1 60V MAX FlexVolt"
+                  showPrice
+                  />
               </div>
 
               {/* === Ryobi 40V Whisper === */}
@@ -635,13 +639,13 @@ export default function BestElectricLeafBlower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ryobi-40v-whisper-series"
+                  source="electric-leaf-blower-hub"
+                  variant="primary"
+                  label="Check Price — Ryobi 40V Whisper Series"
+                  showPrice
+                  />
               </div>
 
               {/* === Greenworks 80V === */}
@@ -692,13 +696,13 @@ export default function BestElectricLeafBlower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="greenworks-80v-blower"
+                  source="electric-leaf-blower-hub"
+                  variant="primary"
+                  label="Check Price — Greenworks 80V Blower"
+                  showPrice
+                  />
               </div>
 
               {/* === EGO LB5804 === */}
@@ -750,13 +754,13 @@ export default function BestElectricLeafBlower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm"
-                >
-                  Check Current Price
-                  <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ego-lb5804-580-cfm"
+                  source="electric-leaf-blower-hub"
+                  variant="primary"
+                  label="Check Price — EGO LB5804 580 CFM"
+                  showPrice
+                  />
               </div>
             </section>
 

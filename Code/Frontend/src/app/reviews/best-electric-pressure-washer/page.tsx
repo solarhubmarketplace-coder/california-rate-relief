@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Zap,
@@ -263,6 +265,8 @@ export default function BestElectricPressureWasher() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -580,13 +584,13 @@ export default function BestElectricPressureWasher() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="sun-joe-spx3000"
+                  source="electric-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — Sun Joe SPX3000"
+                  showPrice
+                  />
               </div>
 
               {/* Review 2: Greenworks GPW2700 */}
@@ -674,13 +678,13 @@ export default function BestElectricPressureWasher() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="greenworks-gpw2700"
+                  source="electric-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — Greenworks GPW2700"
+                  showPrice
+                  />
               </div>
 
               {/* Review 3: Ryobi RY142300 */}
@@ -768,13 +772,13 @@ export default function BestElectricPressureWasher() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price at Home Depot <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ryobi-ry142300"
+                  source="electric-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — Ryobi RY142300"
+                  showPrice
+                  />
               </div>
 
               {/* Review 4: Karcher K5 Premium */}
@@ -863,13 +867,13 @@ export default function BestElectricPressureWasher() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="karcher-k5-premium"
+                  source="electric-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — Karcher K5 Premium"
+                  showPrice
+                  />
               </div>
 
               {/* Review 5: AR Blue Clean AR383 */}
@@ -956,13 +960,13 @@ export default function BestElectricPressureWasher() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ar-blue-clean-ar383"
+                  source="electric-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — AR Blue Clean AR383"
+                  showPrice
+                  />
               </div>
 
               {/* Review 6: Westinghouse ePX3500 */}
@@ -1049,13 +1053,13 @@ export default function BestElectricPressureWasher() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="westinghouse-epx3500"
+                  source="electric-pressure-washer-hub"
+                  variant="primary"
+                  label="Check Price — Westinghouse ePX3500"
+                  showPrice
+                  />
               </div>
             </section>
 

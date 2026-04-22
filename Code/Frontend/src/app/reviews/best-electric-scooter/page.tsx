@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -300,6 +302,8 @@ export default function BestElectricScooter() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* ========== OVERVIEW ========== */}
             <section className="mb-12">
               <div className="prose prose-slate max-w-none">
@@ -515,14 +519,13 @@ export default function BestElectricScooter() {
                 </div>
 
                 <div className="mt-6 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price — Segway Ninebot MAX G2
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="segway-ninebot-max-g2"
+                    source="electric-scooter-hub"
+                    variant="primary"
+                    label="Check Price — Segway Ninebot MAX G2"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -624,14 +627,13 @@ export default function BestElectricScooter() {
                 </div>
 
                 <div className="mt-6 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#3b82f6', color: '#ffffff' }}
-                  >
-                    Check Price — GoTrax G4
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="gotrax-g4"
+                    source="electric-scooter-hub"
+                    variant="primary"
+                    label="Check Price — GoTrax G4"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -735,14 +737,13 @@ export default function BestElectricScooter() {
                 </div>
 
                 <div className="mt-6 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#8b5cf6', color: '#ffffff' }}
-                  >
-                    Check Price — Apollo City Pro
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="apollo-city-pro"
+                    source="electric-scooter-hub"
+                    variant="primary"
+                    label="Check Price — Apollo City Pro"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -847,14 +848,13 @@ export default function BestElectricScooter() {
                 </div>
 
                 <div className="mt-6 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#f59e0b', color: '#0a0a0a' }}
-                  >
-                    Check Price — Dualtron Thunder 3
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="dualtron-thunder-3"
+                    source="electric-scooter-hub"
+                    variant="primary"
+                    label="Check Price — Dualtron Thunder 3"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -958,14 +958,13 @@ export default function BestElectricScooter() {
                 </div>
 
                 <div className="mt-6 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#ec4899', color: '#ffffff' }}
-                  >
-                    Check Price — Unagi Model One Voyager
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="unagi-model-one-voyager"
+                    source="electric-scooter-hub"
+                    variant="primary"
+                    label="Check Price — Unagi Model One Voyager"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -1068,14 +1067,13 @@ export default function BestElectricScooter() {
                 </div>
 
                 <div className="mt-6 text-center">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#06b6d4', color: '#0a0a0a' }}
-                  >
-                    Check Price — GoTrax XR Ultra
-                    <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="gotrax-xr-ultra"
+                    source="electric-scooter-hub"
+                    variant="primary"
+                    label="Check Price — GoTrax XR Ultra"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

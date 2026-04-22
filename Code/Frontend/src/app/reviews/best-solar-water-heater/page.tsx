@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Check,
@@ -189,6 +191,8 @@ export default function BestSolarWaterHeater() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -457,7 +461,13 @@ export default function BestSolarWaterHeater() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>Check Price<ChevronRight className="h-4 w-4" /></a>
+                    <BuyButton
+                      productKey="duda-solar-200l"
+                      source="best-solar-water-heater"
+                      variant="primary"
+                      label="Check Price — Duda Solar 200L"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -498,7 +508,13 @@ export default function BestSolarWaterHeater() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>Check Price<ChevronRight className="h-4 w-4" /></a>
+                    <BuyButton
+                      productKey="sunearth-empire-series"
+                      source="best-solar-water-heater"
+                      variant="primary"
+                      label="Check Price — SunEarth Empire Series"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -538,7 +554,13 @@ export default function BestSolarWaterHeater() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>Check Price<ChevronRight className="h-4 w-4" /></a>
+                    <BuyButton
+                      productKey="rheem-solpak"
+                      source="best-solar-water-heater"
+                      variant="primary"
+                      label="Check Price — Rheem SolPak"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -578,7 +600,13 @@ export default function BestSolarWaterHeater() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>Check Price<ChevronRight className="h-4 w-4" /></a>
+                    <BuyButton
+                      productKey="ao-smith-cirrex"
+                      source="best-solar-water-heater"
+                      variant="primary"
+                      label="Check Price — A.O. Smith Cirrex"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -619,7 +647,13 @@ export default function BestSolarWaterHeater() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>Check Price<ChevronRight className="h-4 w-4" /></a>
+                    <BuyButton
+                      productKey="sunbank-40-gallon"
+                      source="best-solar-water-heater"
+                      variant="primary"
+                      label="Check Price — Sunbank 40-Gallon"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -659,7 +693,13 @@ export default function BestSolarWaterHeater() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>Check Price<ChevronRight className="h-4 w-4" /></a>
+                    <BuyButton
+                      productKey="northern-lights-swh"
+                      source="best-solar-water-heater"
+                      variant="primary"
+                      label="Check Price — Northern Lights SWH"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>

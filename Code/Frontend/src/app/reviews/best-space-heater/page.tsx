@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Zap,
@@ -259,6 +261,8 @@ export default function BestSpaceHeater() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -536,13 +540,13 @@ export default function BestSpaceHeater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Dyson HP07
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="dyson-hotcool-hp07"
+                source="best-space-heater"
+                variant="primary"
+                label="Check Price — Dyson Hot+Cool HP07"
+                showPrice
+              />
             </section>
 
             {/* 2. De'Longhi TRD40615T */}
@@ -634,13 +638,13 @@ export default function BestSpaceHeater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — De&apos;Longhi TRD40615T
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="delonghi-trd40615t"
+                source="best-space-heater"
+                variant="primary"
+                label="Check Price — De'Longhi TRD40615T"
+                showPrice
+              />
             </section>
 
             {/* 3. Lasko FH500 */}
@@ -732,13 +736,13 @@ export default function BestSpaceHeater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Lasko FH500
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="lasko-fh500"
+                source="best-space-heater"
+                variant="primary"
+                label="Check Price — Lasko FH500"
+                showPrice
+              />
             </section>
 
             {/* 4. Vornado VH200 */}
@@ -829,13 +833,13 @@ export default function BestSpaceHeater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Vornado VH200
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="vornado-vh200"
+                source="best-space-heater"
+                variant="primary"
+                label="Check Price — Vornado VH200"
+                showPrice
+              />
             </section>
 
             {/* 5. Dr Infrared DR-968 */}
@@ -928,13 +932,13 @@ export default function BestSpaceHeater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Dr Infrared DR-968
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="dr-infrared-dr-968"
+                source="best-space-heater"
+                variant="primary"
+                label="Check Price — Dr Infrared DR-968"
+                showPrice
+              />
             </section>
 
             {/* 6. Dreo Solaris 317 */}
@@ -1026,13 +1030,13 @@ export default function BestSpaceHeater() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Dreo Solaris 317
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="dreo-solaris-317"
+                source="best-space-heater"
+                variant="primary"
+                label="Check Price — Dreo Solaris 317"
+                showPrice
+              />
             </section>
 
             {/* ========== SAFETY FEATURES SECTION ========== */}

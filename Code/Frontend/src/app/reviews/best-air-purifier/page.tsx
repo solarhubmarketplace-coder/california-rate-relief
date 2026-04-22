@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Check,
@@ -265,6 +267,8 @@ export default function BestAirPurifier() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -496,13 +500,13 @@ export default function BestAirPurifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Coway AP-1512HH
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="coway-ap-1512hh"
+                source="air-purifier-hub"
+                variant="primary"
+                label="Check Price — Coway AP-1512HH"
+                showPrice
+              />
             </section>
 
             {/* 2. Blueair Blue Pure 211+ */}
@@ -593,13 +597,13 @@ export default function BestAirPurifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Blueair Blue Pure 211+
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="blueair-blue-pure-211"
+                source="air-purifier-hub"
+                variant="primary"
+                label="Check Price — Blueair Blue Pure 211+"
+                showPrice
+              />
             </section>
 
             {/* 3. Levoit Core 400S */}
@@ -690,13 +694,13 @@ export default function BestAirPurifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Levoit Core 400S
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="levoit-core-400s"
+                source="air-purifier-hub"
+                variant="primary"
+                label="Check Price — Levoit Core 400S"
+                showPrice
+              />
             </section>
 
             {/* 4. Winix 5500-2 */}
@@ -788,13 +792,13 @@ export default function BestAirPurifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Winix 5500-2
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="winix-5500-2"
+                source="air-purifier-hub"
+                variant="primary"
+                label="Check Price — Winix 5500-2"
+                showPrice
+              />
             </section>
 
             {/* 5. Dyson Purifier Cool TP07 */}
@@ -888,13 +892,13 @@ export default function BestAirPurifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Dyson Purifier Cool TP07
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="dyson-purifier-cool-tp07"
+                source="air-purifier-hub"
+                variant="primary"
+                label="Check Price — Dyson Purifier Cool TP07"
+                showPrice
+              />
             </section>
 
             {/* 6. Honeywell HPA300 */}
@@ -987,13 +991,13 @@ export default function BestAirPurifier() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Honeywell HPA300
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="honeywell-hpa300"
+                source="air-purifier-hub"
+                variant="primary"
+                label="Check Price — Honeywell HPA300"
+                showPrice
+              />
             </section>
 
             {/* ========== BUYER'S GUIDE SECTIONS ========== */}

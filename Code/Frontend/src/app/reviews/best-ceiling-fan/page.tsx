@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Zap,
@@ -267,6 +269,8 @@ export default function BestCeilingFan() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -430,9 +434,13 @@ export default function BestCeilingFan() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="hunter-symphony"
+                    source="ceiling-fan-hub"
+                    variant="primary"
+                    label="Check Price — Hunter Symphony"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -485,9 +493,13 @@ export default function BestCeilingFan() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="big-ass-fans-haiku"
+                    source="ceiling-fan-hub"
+                    variant="primary"
+                    label="Check Price — Big Ass Fans Haiku"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -540,9 +552,13 @@ export default function BestCeilingFan() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="minka-aire-light-wave"
+                    source="ceiling-fan-hub"
+                    variant="primary"
+                    label="Check Price — Minka-Aire Light Wave"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -594,9 +610,13 @@ export default function BestCeilingFan() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="modern-forms-torque"
+                    source="ceiling-fan-hub"
+                    variant="primary"
+                    label="Check Price — Modern Forms Torque"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -650,9 +670,13 @@ export default function BestCeilingFan() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="fanimation-kute"
+                    source="ceiling-fan-hub"
+                    variant="primary"
+                    label="Check Price — Fanimation Kute"
+                    showPrice
+                  />
                 </div>
               </div>
 
@@ -707,9 +731,13 @@ export default function BestCeilingFan() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                    Check Price <ChevronRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="hampton-bay-windward-iv"
+                    source="ceiling-fan-hub"
+                    variant="primary"
+                    label="Check Price — Hampton Bay Windward IV"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

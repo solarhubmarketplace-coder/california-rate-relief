@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowRight,
   Battery,
@@ -167,6 +171,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'ryobi-40v-lawn-mower';
+
 export default function Ryobi40VLawnMowerReview() {
   return (
     <ReviewLayout>
@@ -227,6 +233,25 @@ export default function Ryobi40VLawnMowerReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Best Budget Electric Mower"
+              rating={4.3}
+              verdict="Ryobi 40V HP Brushless 21 inch self-propelled mower — the most affordable electric mower with legit cutting power. Home Depot exclusive pricing and massive 40V ecosystem."
+              pros={[
+                'Budget-conscious homeowners',
+                'Small to mid-size yards under 1/3 acre',
+                'Existing Ryobi 40V tool owners',
+              ]}
+              cons={['Large yards over 1/2 acre', 'Premium performance seekers']}
+              source="ryobi-40v-lawn-mower"
+              variant="top"
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -692,6 +717,15 @@ export default function Ryobi40VLawnMowerReview() {
               </div>
             </section>
 
+            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              headline="Ready to buy?"
+              verdict="Ryobi 40V HP Brushless is exclusively available at Home Depot — check current pricing and battery bundle offers."
+              source="ryobi-40v-lawn-mower"
+              variant="mid"
+            />
+
             {/* Comparison: vs EGO vs Greenworks */}
             <section className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -1025,13 +1059,29 @@ export default function Ryobi40VLawnMowerReview() {
                   under 1/3 acre, this is the self-propelled electric mower to
                   buy in 2026.
                 </p>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
+              </div>
+            </section>
+
+            {/* Final Affiliate CTA */}
+            <section className='mb-10'>
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                headline='Ready to buy the Ryobi 40V HP Brushless Mower?'
+                verdict='The best self-propelled electric mower under $400 — check current pricing and bundle offers at Home Depot.'
+                source='ryobi-40v-lawn-mower'
+                variant='final'
+              />
+              <div className='mt-6 text-center'>
+                <p className='text-sm text-muted-foreground mb-2'>
+                  Still comparing?
+                </p>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline'
                 >
-                  Check Current Price
-                  <ArrowRight className='h-4 w-4' />
-                </a>
+                  Browse All Reviews
+                  <ArrowRight className='h-3 w-3' />
+                </Link>
               </div>
             </section>
 
@@ -1098,20 +1148,11 @@ export default function Ryobi40VLawnMowerReview() {
               </div>
             </section>
 
-            {/* Affiliate Disclosure */}
-            <div className='border-t border-border pt-6 text-xs text-muted-foreground leading-relaxed'>
-              <p>
-                <strong className='text-foreground/60'>Affiliate Disclosure:</strong>{' '}
-                GreenVerdict may earn a commission if you purchase through links on
-                this page. This does not affect our editorial independence — all
-                opinions are our own and we only recommend products we believe
-                deliver genuine value.
-              </p>
-            </div>
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="ryobi-40v-lawn-mower" />
     </ReviewLayout>
   );
 }

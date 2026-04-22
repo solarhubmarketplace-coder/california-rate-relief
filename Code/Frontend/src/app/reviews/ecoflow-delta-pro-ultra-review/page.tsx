@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -137,6 +141,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'ecoflow-delta-pro-ultra';
+
 export default function EcoFlowDeltaProUltraReview() {
   return (
     <ReviewLayout>
@@ -198,6 +204,27 @@ export default function EcoFlowDeltaProUltraReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate Disclosure + Top CTA */}
+            <AffiliateDisclosure compact />
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Best Whole-Home Backup'
+              rating={4.7}
+              verdict='6,144 Wh LFP, 7,200W continuous output, scalable to 90 kWh. Whole-home backup without Tesla Powerwall installation costs.'
+              pros={[
+                'Scalable to 90 kWh with extra batteries',
+                '7,200W continuous — runs heavy appliances',
+                'LFP chemistry, 3,000+ cycles',
+                'SGIP rebate eligible in California',
+              ]}
+              cons={[
+                '$4,099 base + batteries',
+                'Requires 240V install for whole-home use',
+              ]}
+              source='ecoflow-delta-pro-ultra'
+              variant='top'
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -606,6 +633,15 @@ export default function EcoFlowDeltaProUltraReview() {
                 appliances into the inverter&apos;s outlets during an
                 outage rather than having automatic switchover.
               </p>
+
+              {/* Mid-content CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge='Ready to buy?'
+                verdict='A compelling alternative to Tesla Powerwall at a fraction of the installed cost.'
+                source='ecoflow-delta-pro-ultra'
+                variant='mid'
+              />
 
               {/* Delta Pro Ultra vs Delta Pro 3 */}
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -1167,52 +1203,20 @@ export default function EcoFlowDeltaProUltraReview() {
                 </div>
               </div>
 
-              {/* CTA Section */}
-              <div className='text-center mb-10'>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-foreground hover:bg-foreground/90 text-background px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                >
-                  Check Price on EcoFlow.com
-                  <ArrowRight className='h-4 w-4' />
-                </a>
-                <p className='text-xs text-muted-foreground mt-3'>
-                  Affiliate links may be added in the future. Currently no
-                  affiliate relationship.
-                </p>
-              </div>
-
-              {/* Related Content */}
-              <div className='bg-card border border-border rounded-2xl p-6 mb-6'>
-                <h3 className='text-lg font-bold text-foreground mb-2'>
-                  Compare the Delta Pro Ultra
-                </h3>
-                <p className='text-muted-foreground mb-4 max-w-lg text-sm'>
-                  See how the Delta Pro Ultra stacks up against other
-                  top-rated portable power stations and home batteries in
-                  our full comparison guide.
-                </p>
-                <Link
-                  href='/reviews/best-portable-power-stations'
-                  className='inline-flex items-center gap-2 text-primary hover:underline font-medium text-sm'
-                >
-                  Best Portable Power Stations 2026
-                  <ArrowRight className='h-4 w-4' />
-                </Link>
-              </div>
-
-              <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center'>
-                <h3 className='text-lg font-bold text-foreground mb-2'>
-                  Explore More Reviews
-                </h3>
+              {/* Final CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge='Final Verdict'
+                verdict='Whole-home backup with the modularity of a portable system — a compelling alternative to permanent Powerwall installs.'
+                source='ecoflow-delta-pro-ultra'
+                variant='final'
+              />
+              <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+                <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
                 <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
-                  Browse our complete review index covering portable power
-                  stations, home batteries, solar generators, and more.
+                  See how the Delta Pro Ultra stacks up against other top-rated power stations and home batteries.
                 </p>
-                <Link
-                  href='/reviews'
-                  className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-                >
+                <Link href='/reviews' className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'>
                   Browse All Reviews
                   <ArrowRight className='h-4 w-4' />
                 </Link>
@@ -1240,6 +1244,7 @@ export default function EcoFlowDeltaProUltraReview() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source='ecoflow-delta-pro-ultra' />
     </ReviewLayout>
   );
 }

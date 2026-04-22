@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -262,6 +264,8 @@ export default function BestPortableHeater() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -411,13 +415,13 @@ export default function BestPortableHeater() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-5 w-5" />
-                </a>
+                <BuyButton
+                  productKey="mr-heater-buddy-mh9bx-4000-9000-btu"
+                  source="best-portable-heater"
+                  variant="primary"
+                  label="Check Price — Mr. Heater Buddy (MH9BX) -- 4,000-9,000 BTU"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -472,13 +476,13 @@ export default function BestPortableHeater() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-5 w-5" />
-                </a>
+                <BuyButton
+                  productKey="dewalt-dxh12b-6000-12000-btu"
+                  source="best-portable-heater"
+                  variant="primary"
+                  label="Check Price — DeWalt DXH12B -- 6,000-12,000 BTU"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -533,13 +537,13 @@ export default function BestPortableHeater() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-5 w-5" />
-                </a>
+                <BuyButton
+                  productKey="sengoku-heatmate-or-77-10000-btu"
+                  source="best-portable-heater"
+                  variant="primary"
+                  label="Check Price — Sengoku HeatMate (OR-77) -- 10,000 BTU"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -596,13 +600,13 @@ export default function BestPortableHeater() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-5 w-5" />
-                </a>
+                <BuyButton
+                  productKey="lasko-755320-ceramic-tower-1500w-5118-btu"
+                  source="best-portable-heater"
+                  variant="primary"
+                  label="Check Price — Lasko 755320 Ceramic Tower -- 1,500W (5,118 BTU)"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -657,13 +661,13 @@ export default function BestPortableHeater() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-5 w-5" />
-                </a>
+                <BuyButton
+                  productKey="dr-infrared-dr-218-1500w-5118-btu"
+                  source="best-portable-heater"
+                  variant="primary"
+                  label="Check Price — Dr. Infrared DR-218 -- 1,500W (5,118 BTU)"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -720,13 +724,13 @@ export default function BestPortableHeater() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price on Amazon <ChevronRight className="h-5 w-5" />
-                </a>
+                <BuyButton
+                  productKey="campy-gear-chubby-2-in-1-9000-btu"
+                  source="best-portable-heater"
+                  variant="primary"
+                  label="Check Price — Campy Gear Chubby 2-in-1 -- 9,000 BTU"
+                  showPrice
+                />
               </div>
             </section>
 

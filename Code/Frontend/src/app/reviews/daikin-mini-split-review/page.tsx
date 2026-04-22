@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -154,6 +158,8 @@ const faqSchema = {
     },
   ],
 };
+
+const PRODUCT_KEY = 'daikin-mini-split';
 
 export default function DaikinMiniSplitReviewPage() {
   return (
@@ -308,28 +314,26 @@ export default function DaikinMiniSplitReviewPage() {
               </p>
             </div>
 
-            {/* Buy Box */}
-            <div className='rounded-2xl border border-border bg-card p-6 mb-12'>
-              <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4'>
-                <div>
-                  <div className='text-sm text-muted-foreground mb-1'>Price Range</div>
-                  <div className='text-2xl font-bold text-foreground'>
-                    $1,400 &ndash; $3,200 <span className='text-base font-normal text-muted-foreground'>(unit only)</span>
-                  </div>
-                  <div className='text-sm text-muted-foreground mt-1'>
-                    $3,000 &ndash; $7,500 fully installed
-                  </div>
-                </div>
-                <a
-                  href='#'
-                  className='inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all'
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Best Price
-                  <ArrowRight className='w-4 h-4' />
-                </a>
-              </div>
-            </div>
+            {/* Affiliate Disclosure + Top CTA */}
+            <AffiliateDisclosure compact />
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Editor's Choice"
+              rating={4.6}
+              verdict="Daikin 17-Series delivers 20.6 SEER2 efficiency, 19 dB whisper-quiet operation, R-32 refrigerant, and a 12-year warranty from the world's largest HVAC manufacturer."
+              pros={[
+                'Class-leading 20.6 SEER2 efficiency',
+                'Whisper-quiet 19 dB indoor operation',
+                '12-year compressor + parts warranty',
+                'Future-proof R-32 refrigerant',
+              ]}
+              cons={[
+                'Professional install required (~$1,500-$4,000)',
+                'Smaller US installer network than Mitsubishi',
+              ]}
+              source='daikin-mini-split'
+              variant='top'
+            />
 
             {/* Table of Contents */}
             <div className='rounded-2xl border border-border bg-card p-6 mb-12'>
@@ -678,6 +682,15 @@ export default function DaikinMiniSplitReviewPage() {
                 to most competitors — but it&apos;s the indoor unit where you live and sleep.
               </p>
             </section>
+
+            {/* Mid-content CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge='Ready to buy?'
+              verdict="Daikin's 17-Series is the benchmark for premium mini split efficiency and quiet operation."
+              source='daikin-mini-split'
+              variant='mid'
+            />
 
             {/* Daikin vs Mitsubishi */}
             <section className='mb-14'>
@@ -1049,22 +1062,22 @@ export default function DaikinMiniSplitReviewPage() {
                 </p>
               </div>
 
-              {/* CTA */}
-              <div className='flex flex-col sm:flex-row gap-4'>
-                <a
-                  href='#'
-                  className='inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all'
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Best Daikin Price
-                  <ArrowRight className='w-4 h-4' />
-                </a>
-                <Link
-                  href='/reviews/best-mini-split-ac'
-                  className='inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm border border-border text-foreground transition-all hover:bg-card'
-                >
+              {/* Final CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge='Final Verdict'
+                verdict='The best mini split you can buy — 20.6 SEER2, 19 dB, 12-year warranty, engineered to run quietly for 15-20 years.'
+                source='daikin-mini-split'
+                variant='final'
+              />
+              <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+                <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                  See how Daikin compares against Mitsubishi, MrCool DIY, and other top mini splits in our full roundup.
+                </p>
+                <Link href='/reviews/best-mini-split-ac' className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'>
                   Compare All Mini Splits
-                  <ArrowRight className='w-4 h-4' />
+                  <ArrowRight className='h-4 w-4' />
                 </Link>
               </div>
             </section>
@@ -1130,6 +1143,7 @@ export default function DaikinMiniSplitReviewPage() {
       </main>
 
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source='daikin-mini-split' />
     </ReviewLayout>
   );
 }

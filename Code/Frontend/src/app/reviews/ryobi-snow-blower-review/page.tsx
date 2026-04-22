@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -177,6 +181,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'ryobi-snow-blower';
+
 export default function RyobiSnowBlowerReview() {
   return (
     <ReviewLayout>
@@ -248,6 +254,25 @@ export default function RyobiSnowBlowerReview() {
                 </div>
               </header>
 
+              {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+              <AffiliateDisclosure compact />
+
+              {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Best Value Snow Blower"
+                rating={4.3}
+                verdict="Ryobi 40V HP Brushless 21-inch snow blower — half the price of EGO and Toro competitors. Brushless motor, 40 ft throw, works with 85+ Ryobi 40V tools."
+                pros={[
+                  'Budget-conscious homeowners',
+                  'Standard driveways with 4-8 inch snowfalls',
+                  'Existing Ryobi 40V platform owners',
+                ]}
+                cons={['Heavy lake-effect or mountain regions', 'Long driveways needing 60+ min runtime']}
+                source="ryobi-snow-blower"
+                variant="top"
+              />
+
               {/* Quick Verdict */}
               <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
                 <div className='flex items-center gap-3 mb-4'>
@@ -312,35 +337,6 @@ export default function RyobiSnowBlowerReview() {
                     </ul>
                   </div>
                 </div>
-              </div>
-
-              {/* CTA Box */}
-              <div
-                className='rounded-xl p-5 mb-10 flex flex-col sm:flex-row items-center justify-between gap-4'
-                style={{
-                  backgroundColor: '#141414',
-                  border: '1px solid #27272a',
-                }}
-              >
-                <div>
-                  <p
-                    className='font-bold text-lg'
-                    style={{ color: '#f5f5f5' }}
-                  >
-                    Ryobi 40V HP Brushless 21&quot; Snow Blower
-                  </p>
-                  <p className='text-sm' style={{ color: '#a1a1aa' }}>
-                    ~$449-$549 with battery &amp; charger at The Home Depot
-                  </p>
-                </div>
-                <a
-                  href='#'
-                  className='shrink-0 inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg transition-all'
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price
-                  <ArrowRight className='h-4 w-4' />
-                </a>
               </div>
 
               {/* Key Specifications */}
@@ -876,6 +872,15 @@ export default function RyobiSnowBlowerReview() {
                 </div>
               </section>
 
+              {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                headline="Ready to buy?"
+                verdict="Ryobi 40V HP Brushless Snow Blower is exclusively available at Home Depot — check current pricing and battery bundle offers."
+                source="ryobi-snow-blower"
+                variant="mid"
+              />
+
               {/* Competitor Comparison */}
               <section className='mb-10'>
                 <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -1215,47 +1220,28 @@ export default function RyobiSnowBlowerReview() {
                 </div>
               </section>
 
-              {/* CTA Box */}
-              <div
-                className='rounded-xl p-6 mb-10 text-center'
-                style={{
-                  backgroundColor: '#141414',
-                  border: '1px solid #27272a',
-                }}
-              >
-                <p
-                  className='font-bold text-xl mb-2'
-                  style={{ color: '#f5f5f5' }}
-                >
-                  Ryobi 40V HP Brushless 21&quot; Snow Blower
-                </p>
-                <p className='text-sm mb-4' style={{ color: '#a1a1aa' }}>
-                  Available exclusively at The Home Depot — ~$449-$549 with
-                  battery &amp; charger
-                </p>
-                <div className='flex flex-col sm:flex-row items-center justify-center gap-3'>
-                  <a
-                    href='#'
-                    className='inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg transition-all'
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price at Home Depot
-                    <ArrowRight className='h-4 w-4' />
-                  </a>
+              {/* Final Affiliate CTA */}
+              <section className='mb-10'>
+                <AffiliateCTABox
+                  productKey={PRODUCT_KEY}
+                  headline='Ready to buy the Ryobi 40V HP Snow Blower?'
+                  verdict='The best budget battery snow blower in 2026 — exclusive at Home Depot. Check current pricing and battery bundle offers.'
+                  source='ryobi-snow-blower'
+                  variant='final'
+                />
+                <div className='mt-6 text-center'>
+                  <p className='text-sm text-muted-foreground mb-2'>
+                    Still comparing?
+                  </p>
                   <Link
-                    href='/reviews/ego-snow-blower-review'
-                    className='inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg transition-all'
-                    style={{
-                      backgroundColor: 'transparent',
-                      color: '#d4d4d8',
-                      border: '1px solid #27272a',
-                    }}
+                    href='/reviews'
+                    className='inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline'
                   >
-                    Compare: EGO SNT2114 Review
-                    <ArrowRight className='h-4 w-4' />
+                    Browse All Reviews
+                    <ArrowRight className='h-3 w-3' />
                   </Link>
                 </div>
-              </div>
+              </section>
 
               {/* FAQ Section */}
               <section className='mb-10'>
@@ -1316,31 +1302,12 @@ export default function RyobiSnowBlowerReview() {
                 </div>
               </section>
 
-              {/* Affiliate Disclosure */}
-              <div
-                className='rounded-xl p-5 text-center'
-                style={{
-                  backgroundColor: '#141414',
-                  border: '1px solid #27272a',
-                }}
-              >
-                <p className='text-xs' style={{ color: '#71717a' }}>
-                  <strong style={{ color: '#a1a1aa' }}>
-                    Affiliate Disclosure:
-                  </strong>{' '}
-                  GreenVerdict is reader-supported. When you buy through
-                  links on our site, we may earn an affiliate commission at
-                  no extra cost to you. This does not influence our ratings
-                  or recommendations — every product is evaluated
-                  independently based on performance, value, and real-world
-                  usability.
-                </p>
-              </div>
             </article>
           </div>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="ryobi-snow-blower" />
     </ReviewLayout>
   );
 }

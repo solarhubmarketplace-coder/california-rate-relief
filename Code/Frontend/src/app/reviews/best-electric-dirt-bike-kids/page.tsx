@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   ArrowRight,
@@ -276,6 +278,8 @@ export default function BestElectricDirtBikeKids() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Overview / Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -526,9 +530,13 @@ export default function BestElectricDirtBikeKids() {
                   </div>
 
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                      Check Price <ArrowRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="razor-mx650"
+                      source="electric-dirt-bike-kids-hub"
+                      variant="primary"
+                      label="Check Price — Razor MX650"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -622,9 +630,13 @@ export default function BestElectricDirtBikeKids() {
                   </div>
 
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                      Check Price <ArrowRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="ktm-sx-e-3"
+                      source="electric-dirt-bike-kids-hub"
+                      variant="primary"
+                      label="Check Price — KTM SX-E 3"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -718,9 +730,13 @@ export default function BestElectricDirtBikeKids() {
                   </div>
 
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                      Check Price <ArrowRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="stacyc-16edrive"
+                      source="electric-dirt-bike-kids-hub"
+                      variant="primary"
+                      label="Check Price — Stacyc 16eDRIVE"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -814,9 +830,13 @@ export default function BestElectricDirtBikeKids() {
                   </div>
 
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                      Check Price <ArrowRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="razor-sx500"
+                      source="electric-dirt-bike-kids-hub"
+                      variant="primary"
+                      label="Check Price — Razor SX500"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>
@@ -910,9 +930,13 @@ export default function BestElectricDirtBikeKids() {
                   </div>
 
                   <div className="mt-6">
-                    <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
-                      Check Price <ArrowRight className="h-4 w-4" />
-                    </a>
+                    <BuyButton
+                      productKey="husqvarna-ee-3"
+                      source="electric-dirt-bike-kids-hub"
+                      variant="primary"
+                      label="Check Price — Husqvarna EE 3"
+                      showPrice
+                    />
                   </div>
                 </div>
               </div>

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -475,14 +477,13 @@ export default function BestPortablePowerStations() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{ECOFLOW_DELTA_PRO_3_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — EcoFlow Delta Pro 3
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="ecoflow-delta-pro-3"
+                source="best-power-stations-hub"
+                variant="primary"
+                label="Check Price — EcoFlow Delta Pro 3"
+                showPrice
+              />
             </section>
 
             {/* 2. Anker SOLIX F3800 */}
@@ -574,14 +575,13 @@ export default function BestPortablePowerStations() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{ANKER_SOLIX_F3800_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Anker SOLIX F3800
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="anker-solix-f3800"
+                source="best-power-stations-hub"
+                variant="primary"
+                label="Check Price — Anker SOLIX F3800"
+                showPrice
+              />
             </section>
 
             {/* 3. Bluetti AC500 + B300S */}
@@ -675,14 +675,13 @@ export default function BestPortablePowerStations() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{BLUETTI_AC500_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Bluetti AC500 + B300S
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="bluetti-ac500"
+                source="best-power-stations-hub"
+                variant="primary"
+                label="Check Price — Bluetti AC500 + B300S"
+                showPrice
+              />
             </section>
 
             {/* 4. Jackery Explorer 2000 Plus */}
@@ -772,14 +771,13 @@ export default function BestPortablePowerStations() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{JACKERY_2000_PLUS_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Jackery Explorer 2000 Plus
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="jackery-explorer-2000-plus"
+                source="best-power-stations-hub"
+                variant="primary"
+                label="Check Price — Jackery Explorer 2000 Plus"
+                showPrice
+              />
             </section>
 
             {/* 5. EcoFlow Delta Pro Ultra */}
@@ -873,14 +871,13 @@ export default function BestPortablePowerStations() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{ECOFLOW_DELTA_PRO_ULTRA_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — EcoFlow Delta Pro Ultra
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="ecoflow-delta-pro-ultra"
+                source="best-power-stations-hub"
+                variant="primary"
+                label="Check Price — EcoFlow Delta Pro Ultra"
+                showPrice
+              />
             </section>
 
             {/* 6. Tesla Powerwall 3 */}

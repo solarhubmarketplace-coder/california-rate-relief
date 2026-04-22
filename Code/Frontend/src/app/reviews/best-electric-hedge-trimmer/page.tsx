@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -263,6 +265,8 @@ export default function BestElectricHedgeTrimmer() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -536,13 +540,13 @@ export default function BestElectricHedgeTrimmer() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm mt-2 hover:underline"
-                  style={{ color: '#22c55e' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ego-ht2601"
+                  source="electric-hedge-trimmer-hub"
+                  variant="primary"
+                  label="Check Price — EGO HT2601"
+                  showPrice
+                />
               </div>
 
               {/* 2. Milwaukee M18 FUEL */}
@@ -626,13 +630,13 @@ export default function BestElectricHedgeTrimmer() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm mt-2 hover:underline"
-                  style={{ color: '#22c55e' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="milwaukee-m18-fuel"
+                  source="electric-hedge-trimmer-hub"
+                  variant="primary"
+                  label="Check Price — Milwaukee M18 FUEL"
+                  showPrice
+                />
               </div>
 
               {/* 3. DeWalt 20V MAX */}
@@ -716,13 +720,13 @@ export default function BestElectricHedgeTrimmer() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm mt-2 hover:underline"
-                  style={{ color: '#22c55e' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="dewalt-20v-max-dcht820p1"
+                  source="electric-hedge-trimmer-hub"
+                  variant="primary"
+                  label="Check Price — DeWalt 20V MAX DCHT820P1"
+                  showPrice
+                />
               </div>
 
               {/* 4. Makita XHU08Z */}
@@ -806,13 +810,13 @@ export default function BestElectricHedgeTrimmer() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm mt-2 hover:underline"
-                  style={{ color: '#22c55e' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="makita-xhu08z"
+                  source="electric-hedge-trimmer-hub"
+                  variant="primary"
+                  label="Check Price — Makita XHU08Z"
+                  showPrice
+                />
               </div>
 
               {/* 5. BLACK+DECKER 40V */}
@@ -897,13 +901,13 @@ export default function BestElectricHedgeTrimmer() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm mt-2 hover:underline"
-                  style={{ color: '#22c55e' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="black-decker-40v-lht2436"
+                  source="electric-hedge-trimmer-hub"
+                  variant="primary"
+                  label="Check Price — BLACK+DECKER 40V LHT2436"
+                  showPrice
+                />
               </div>
 
               {/* 6. Greenworks 40V */}
@@ -989,13 +993,13 @@ export default function BestElectricHedgeTrimmer() {
                     </ul>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm mt-2 hover:underline"
-                  style={{ color: '#22c55e' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="greenworks-40v-ht40b211"
+                  source="electric-hedge-trimmer-hub"
+                  variant="primary"
+                  label="Check Price — Greenworks 40V HT40B211"
+                  showPrice
+                />
               </div>
             </section>
 

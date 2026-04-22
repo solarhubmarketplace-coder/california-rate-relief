@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -15,6 +19,8 @@ import {
   XCircle,
   Zap,
 } from 'lucide-react';
+
+const PRODUCT_KEY = 'bluetti-ac500';
 
 export const metadata: Metadata = {
   title:
@@ -204,6 +210,25 @@ export default function BluettiAC500Review() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Most Modular"
+              rating={4.5}
+              verdict="The Bluetti AC500 delivers 5,000W output, 3,000W solar input (highest in class), and scales from 3,072 Wh to 18,432 Wh — the best modular power station for homeowners who want to grow their backup system over time."
+              pros={[
+                'PSPS and outage preparedness (scalable)',
+                'Off-grid solar setups (3,000W solar input)',
+                'Home backup that grows with your needs',
+              ]}
+              cons={['Battery sold separately', 'Combined weight 150 lbs']}
+              source="bluetti-ac500"
+              variant="top"
+            />
 
             {/* Quick Verdict Box */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -683,6 +708,15 @@ export default function BluettiAC500Review() {
                 </div>
               </div>
 
+              {/* Mid-content CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Ready to buy?"
+                verdict="In stock at Bluetti.com with free shipping — check current bundle pricing on the AC500 + B300S combo."
+                source="bluetti-ac500"
+                variant="mid"
+              />
+
               {/* Comparison Table */}
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 How It Compares
@@ -947,39 +981,33 @@ export default function BluettiAC500Review() {
                 </div>
               </div>
 
-              {/* CTA Section */}
-              <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mt-10 mb-8'>
-                <h2 className='text-2xl font-bold text-foreground mb-3'>
-                  Explore More GreenVerdict Reviews
-                </h2>
-                <p className='text-foreground/80 leading-relaxed mb-6'>
-                  We test and compare the best green energy products so you can
-                  make confident decisions. Browse our full library of in-depth
-                  reviews covering portable power stations, solar generators,
-                  e-bikes, and more.
+              {/* Final CTA */}
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                badge="Final Verdict"
+                verdict="If you want backup power that scales — from PSPS essentials today to whole-home resilience tomorrow — the AC500 is the only modular system that can take you there."
+                source="bluetti-ac500"
+                variant="final"
+              />
+              <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
+                <h3 className='text-lg font-bold text-foreground mb-2'>Still comparing?</h3>
+                <p className='text-muted-foreground mb-4 max-w-lg mx-auto text-sm'>
+                  See how this compares against other top options in our full review.
                 </p>
-                <div className='flex flex-col sm:flex-row gap-4'>
-                  <Link
-                    href='/reviews'
-                    className='inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
-                  >
-                    Browse All Reviews
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                  <Link
-                    href='/reviews'
-                    className='inline-flex items-center justify-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted/50 transition-colors'
-                  >
-                    <ArrowLeft className='h-4 w-4' />
-                    Back to All Reviews
-                  </Link>
-                </div>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-muted transition-all'
+                >
+                  Browse All Reviews
+                  <ArrowRight className='h-4 w-4' />
+                </Link>
               </div>
             </div>
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="bluetti-ac500" />
     </ReviewLayout>
   );
 }

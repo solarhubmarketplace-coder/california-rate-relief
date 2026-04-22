@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Check,
@@ -250,6 +252,8 @@ export default function BestWindowAirConditioner() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -608,14 +612,13 @@ export default function BestWindowAirConditioner() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{LG_LW1222IVSM_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — LG LW1222IVSM
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="lg-lw1222ivsm-dual-inverter"
+                source="best-window-air-conditioner"
+                variant="primary"
+                label="Check Price — LG LW1222IVSM Dual Inverter"
+                showPrice
+              />
             </section>
 
             {/* 2. Frigidaire Gallery GHWQ083WC1 */}
@@ -704,14 +707,13 @@ export default function BestWindowAirConditioner() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{FRIGIDAIRE_GHWQ083WC1_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Frigidaire Gallery GHWQ083WC1
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="frigidaire-gallery-ghwq083wc1"
+                source="best-window-air-conditioner"
+                variant="primary"
+                label="Check Price — Frigidaire Gallery GHWQ083WC1"
+                showPrice
+              />
             </section>
 
             {/* 3. Midea MAW08V1QWT */}
@@ -802,14 +804,13 @@ export default function BestWindowAirConditioner() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{MIDEA_MAW08V1QWT_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Midea U-Shaped MAW08V1QWT
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="midea-u-shaped-maw08v1qwt"
+                source="best-window-air-conditioner"
+                variant="primary"
+                label="Check Price — Midea U-Shaped MAW08V1QWT"
+                showPrice
+              />
             </section>
 
             {/* 4. GE Profile PHC08LY */}
@@ -900,14 +901,13 @@ export default function BestWindowAirConditioner() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{GE_PROFILE_PHC08LY_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — GE Profile PHC08LY
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="ge-profile-phc08ly"
+                source="best-window-air-conditioner"
+                variant="primary"
+                label="Check Price — GE Profile PHC08LY"
+                showPrice
+              />
             </section>
 
             {/* 5. Haier Serenity ESAQ406TZ */}
@@ -999,14 +999,13 @@ export default function BestWindowAirConditioner() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{HAIER_ESAQ406TZ_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — Haier Serenity ESAQ406TZ
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="haier-serenity-esaq406tz"
+                source="best-window-air-conditioner"
+                variant="primary"
+                label="Check Price — Haier Serenity ESAQ406TZ"
+                showPrice
+              />
             </section>
 
             {/* 6. TCL 8W3E1-A */}
@@ -1097,14 +1096,13 @@ export default function BestWindowAirConditioner() {
                 </p>
               </div>
 
-              <a
-                href="#"
-                data-affiliate="{TCL_8W3E1A_LINK}"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-              >
-                Check Price — TCL 8W3E1-A
-                <ChevronRight className="h-4 w-4" />
-              </a>
+              <BuyButton
+                productKey="tcl-8w3e1-a"
+                source="best-window-air-conditioner"
+                variant="primary"
+                label="Check Price — TCL 8W3E1-A"
+                showPrice
+              />
             </section>
 
             {/* ========== Energy Star & Running Costs ========== */}

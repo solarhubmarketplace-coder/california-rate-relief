@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowRight,
   Battery,
@@ -17,6 +21,8 @@ import {
   X,
   Zap,
 } from 'lucide-react';
+
+const PRODUCT_KEY = 'milwaukee-chainsaw';
 
 export const metadata: Metadata = {
   title:
@@ -225,6 +231,25 @@ export default function MilwaukeeM18ChainsawReview() {
                 </div>
               </div>
             </header>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Editor's Choice — Pro Grade"
+              rating={4.6}
+              verdict="The battery chainsaw that finally matches 40cc gas saw performance. POWERSTATE brushless motor, 6,600 RPM chain speed, and up to 150 cuts per charge on the 12.0Ah HIGH OUTPUT battery."
+              pros={[
+                'Pros already on the M18 platform',
+                'Storm cleanup and firewood',
+                'Serious DIYers wanting pro build',
+              ]}
+              cons={['All-day professional logging', 'Budget under $300']}
+              source="milwaukee-chainsaw"
+              variant="top"
+            />
 
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
@@ -645,6 +670,15 @@ export default function MilwaukeeM18ChainsawReview() {
               </div>
             </section>
 
+            {/* Mid-content CTA — placed after pros/cons where buy intent peaks */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Ready to buy?"
+              verdict="Milwaukee M18 FUEL 2727-21HD is stocked at Home Depot and Milwaukee retailers — check current bundle pricing."
+              source="milwaukee-chainsaw"
+              variant="mid"
+            />
+
             {/* Comparison Section */}
             <section className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
@@ -993,13 +1027,29 @@ export default function MilwaukeeM18ChainsawReview() {
                   dealing with gas engines, pull cords, and carburetor issues — the
                   Milwaukee M18 FUEL 16&quot; is built for exactly that job.
                 </p>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
+              </div>
+            </section>
+
+            {/* Final Affiliate CTA */}
+            <section className='mb-10'>
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                headline='Ready to buy the Milwaukee M18 FUEL 16" Chainsaw?'
+                verdict='The best battery chainsaw for pros and serious DIYers on the M18 platform — check current pricing and bundle options.'
+                source='milwaukee-chainsaw'
+                variant='final'
+              />
+              <div className='mt-6 text-center'>
+                <p className='text-sm text-muted-foreground mb-2'>
+                  Still comparing?
+                </p>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline'
                 >
-                  Check Current Price
-                  <ArrowRight className='h-4 w-4' />
-                </a>
+                  Browse All Reviews
+                  <ArrowRight className='h-3 w-3' />
+                </Link>
               </div>
             </section>
 
@@ -1066,20 +1116,11 @@ export default function MilwaukeeM18ChainsawReview() {
               </div>
             </section>
 
-            {/* Affiliate Disclosure */}
-            <div className='border-t border-border pt-6 text-xs text-muted-foreground leading-relaxed'>
-              <p>
-                <strong className='text-foreground/60'>Affiliate Disclosure:</strong>{' '}
-                GreenVerdict may earn a commission if you purchase through links on
-                this page. This does not affect our editorial independence — all
-                opinions are our own and we only recommend products we believe
-                deliver genuine value.
-              </p>
-            </div>
           </article>
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="milwaukee-chainsaw" />
     </ReviewLayout>
   );
 }

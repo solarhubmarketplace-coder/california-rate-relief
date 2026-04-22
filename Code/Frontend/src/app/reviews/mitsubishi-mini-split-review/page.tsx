@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowRight,
   Calendar,
@@ -192,6 +196,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'mitsubishi-mini-split';
+
 export default function MitsubishiMiniSplitReview() {
   return (
     <ReviewLayout>
@@ -259,6 +265,25 @@ export default function MitsubishiMiniSplitReview() {
               </div>
             </header>
 
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="HVAC Contractor's Choice"
+              rating={4.7}
+              verdict="Mitsubishi MSZ-GL series — the most trusted name in ductless HVAC. Inverter-driven variable speed, 19 dB quiet, 12-year registered compressor warranty, H2i Hyper-Heating for cold climates."
+              pros={[
+                'Homeowners wanting premium reliability',
+                'Whole-home multi-zone installations',
+                'Cold-climate heating (H2i Hyper-Heating)',
+              ]}
+              cons={['Budget-conscious DIY installers', 'Renters (requires permanent install)']}
+              source="mitsubishi-mini-split"
+              variant="top"
+            />
+
             {/* Quick Verdict */}
             <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-10'>
               <div className='flex items-center gap-3 mb-4'>
@@ -325,30 +350,6 @@ export default function MitsubishiMiniSplitReview() {
                     </li>
                   </ul>
                 </div>
-              </div>
-            </div>
-
-            {/* Buy Box */}
-            <div className='bg-card border border-border rounded-xl p-6 mb-10'>
-              <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4'>
-                <div>
-                  <p className='text-sm text-muted-foreground mb-1'>
-                    Mitsubishi MSZ-GL Series (unit only)
-                  </p>
-                  <p className='text-2xl font-bold text-foreground'>
-                    $1,500 - $3,500
-                  </p>
-                  <p className='text-sm text-muted-foreground'>
-                    $3,000 - $7,000 fully installed
-                  </p>
-                </div>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
-                >
-                  Check Latest Price
-                  <ArrowRight className='h-4 w-4' />
-                </a>
               </div>
             </div>
 
@@ -806,6 +807,15 @@ export default function MitsubishiMiniSplitReview() {
                 ordinances.
               </p>
             </section>
+
+            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              headline="Ready to get installed?"
+              verdict="Mitsubishi MSZ-GL is available through certified HVAC contractors — check current pricing on unit and installation packages."
+              source="mitsubishi-mini-split"
+              variant="mid"
+            />
 
             {/* Mitsubishi vs MrCool */}
             <section id='vs-mrcool' className='mb-12'>
@@ -1328,29 +1338,28 @@ export default function MitsubishiMiniSplitReview() {
               </div>
             </section>
 
-            {/* CTA Buy Box */}
-            <div className='bg-card border border-border rounded-xl p-6 mb-10'>
-              <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4'>
-                <div>
-                  <p className='text-sm text-muted-foreground mb-1'>
-                    Mitsubishi MSZ-GL Series Mini Split
-                  </p>
-                  <p className='text-2xl font-bold text-foreground'>
-                    $1,500 - $3,500
-                  </p>
-                  <p className='text-sm text-muted-foreground'>
-                    $3,000 - $7,000 fully installed
-                  </p>
-                </div>
-                <a
-                  href='#'
-                  className='inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors'
+            {/* Final Affiliate CTA */}
+            <section className='mb-10'>
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                headline='Ready to buy the Mitsubishi MSZ-GL Mini Split?'
+                verdict='The most trusted name in ductless HVAC — check current pricing on unit and installation packages.'
+                source='mitsubishi-mini-split'
+                variant='final'
+              />
+              <div className='mt-6 text-center'>
+                <p className='text-sm text-muted-foreground mb-2'>
+                  Still comparing?
+                </p>
+                <Link
+                  href='/reviews'
+                  className='inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline'
                 >
-                  Check Latest Price
-                  <ArrowRight className='h-4 w-4' />
-                </a>
+                  Browse All Reviews
+                  <ArrowRight className='h-3 w-3' />
+                </Link>
               </div>
-            </div>
+            </section>
 
             {/* Related Links */}
             <div className='bg-card border border-border rounded-xl p-6 mb-10'>
@@ -1402,6 +1411,7 @@ export default function MitsubishiMiniSplitReview() {
         </div>
       </main>
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="mitsubishi-mini-split" />
     </ReviewLayout>
   );
 }

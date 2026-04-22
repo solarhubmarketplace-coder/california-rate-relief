@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   ArrowRight,
@@ -186,6 +188,8 @@ export default function BestPortableAirConditionerPage() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* ========== QUICK PICKS ========== */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold mb-6" style={{ color: '#f5f5f5' }}>
@@ -342,13 +346,13 @@ export default function BestPortableAirConditionerPage() {
                   </div>
                 </div>
                 <div className="p-6 text-center" style={{ borderTop: '1px solid #ffffff10' }}>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="lg-lp1419ivsm"
+                    source="best-portable-air-conditioner"
+                    variant="primary"
+                    label="Check Price — LG LP1419IVSM"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -418,13 +422,13 @@ export default function BestPortableAirConditionerPage() {
                   </div>
                 </div>
                 <div className="p-6 text-center" style={{ borderTop: '1px solid #ffffff10' }}>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="whynter-arc-14sh"
+                    source="best-portable-air-conditioner"
+                    variant="primary"
+                    label="Check Price — Whynter ARC-14SH"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -492,13 +496,13 @@ export default function BestPortableAirConditionerPage() {
                   </div>
                 </div>
                 <div className="p-6 text-center" style={{ borderTop: '1px solid #ffffff10' }}>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="midea-duo-map12s1tbl"
+                    source="best-portable-air-conditioner"
+                    variant="primary"
+                    label="Check Price — Midea Duo MAP12S1TBL"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -565,13 +569,13 @@ export default function BestPortableAirConditionerPage() {
                   </div>
                 </div>
                 <div className="p-6 text-center" style={{ borderTop: '1px solid #ffffff10' }}>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="blackdecker-bpact14hwt"
+                    source="best-portable-air-conditioner"
+                    variant="primary"
+                    label="Check Price — Black+Decker BPACT14HWT"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -639,13 +643,13 @@ export default function BestPortableAirConditionerPage() {
                   </div>
                 </div>
                 <div className="p-6 text-center" style={{ borderTop: '1px solid #ffffff10' }}>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="serenelife-slpac8"
+                    source="best-portable-air-conditioner"
+                    variant="primary"
+                    label="Check Price — SereneLife SLPAC8"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>
@@ -714,13 +718,13 @@ export default function BestPortableAirConditionerPage() {
                   </div>
                 </div>
                 <div className="p-6 text-center" style={{ borderTop: '1px solid #ffffff10' }}>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                  >
-                    Check Price <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <BuyButton
+                    productKey="honeywell-mo08ceswk"
+                    source="best-portable-air-conditioner"
+                    variant="primary"
+                    label="Check Price — Honeywell MO08CESWK"
+                    showPrice
+                  />
                 </div>
               </div>
             </section>

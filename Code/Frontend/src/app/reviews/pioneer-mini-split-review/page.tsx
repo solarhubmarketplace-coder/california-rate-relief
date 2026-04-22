@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { AffiliateCTABox } from '@/components/reviews/AffiliateCTABox';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import {
   ArrowLeft,
   ArrowRight,
@@ -184,6 +188,8 @@ const faqSchema = {
   ],
 };
 
+const PRODUCT_KEY = 'pioneer-mini-split';
+
 export default function PioneerMiniSplitReviewPage() {
   return (
     <ReviewLayout>
@@ -261,6 +267,25 @@ export default function PioneerMiniSplitReviewPage() {
                 </span>
               </div>
             </div>
+
+            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            <AffiliateDisclosure compact />
+
+            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              badge="Best Budget Pick"
+              rating={4.0}
+              verdict="Pioneer Diamante Series — inverter-driven ductless at 30-50% less than Daikin or Mitsubishi. Up to 19 SEER2, heats down to -4°F, built-in WiFi, 32 dB indoor noise."
+              pros={[
+                'Budget-conscious homeowners',
+                'Garages, workshops, ADUs, bonus rooms',
+                'Rental properties and investment homes',
+              ]}
+              cons={['Need ultra-quiet bedroom operation', 'Want a 10+ year warranty']}
+              source="pioneer-mini-split"
+              variant="top"
+            />
 
             {/* Rating Card */}
             <div className='rounded-2xl border border-border bg-card p-8 mb-12'>
@@ -374,29 +399,6 @@ export default function PioneerMiniSplitReviewPage() {
                     ))}
                   </ul>
                 </div>
-              </div>
-            </div>
-
-            {/* Buy Box */}
-            <div className='rounded-2xl border border-border bg-card p-6 mb-12'>
-              <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4'>
-                <div>
-                  <div className='text-sm text-muted-foreground mb-1'>Price Range (Unit Only)</div>
-                  <div className='text-2xl font-bold text-foreground'>
-                    $750 &ndash; $2,200
-                  </div>
-                  <div className='text-sm text-muted-foreground mt-1'>
-                    $2,200 &ndash; $5,500 fully installed
-                  </div>
-                </div>
-                <a
-                  href='#'
-                  className='inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all'
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Best Price
-                  <ArrowRight className='w-4 h-4' />
-                </a>
               </div>
             </div>
 
@@ -869,6 +871,15 @@ export default function PioneerMiniSplitReviewPage() {
               </div>
             </section>
 
+            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            <AffiliateCTABox
+              productKey={PRODUCT_KEY}
+              headline="Ready to buy?"
+              verdict="Pioneer Diamante is available on Amazon, Home Depot, and specialty HVAC retailers — check current pricing on all BTU sizes."
+              source="pioneer-mini-split"
+              variant="mid"
+            />
+
             {/* Comparisons */}
             <section className='mb-14'>
               <h2 className='text-3xl font-bold text-foreground mb-6'>
@@ -1208,22 +1219,27 @@ export default function PioneerMiniSplitReviewPage() {
                 </p>
               </div>
 
-              {/* CTA */}
-              <div className='flex flex-col sm:flex-row gap-4'>
-                <a
-                  href='#'
-                  className='inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all'
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Best Pioneer Price
-                  <ArrowRight className='w-4 h-4' />
-                </a>
+            </section>
+
+            {/* Final Affiliate CTA */}
+            <section className='mb-14'>
+              <AffiliateCTABox
+                productKey={PRODUCT_KEY}
+                headline='Ready to buy the Pioneer Diamante Mini Split?'
+                verdict='Legitimate ductless performance at 30-50% less than premium brands — check current pricing on all BTU sizes.'
+                source='pioneer-mini-split'
+                variant='final'
+              />
+              <div className='mt-6 text-center'>
+                <p className='text-sm text-muted-foreground mb-2'>
+                  Still comparing?
+                </p>
                 <Link
-                  href='/reviews/best-mini-split-ac'
-                  className='inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm border border-border text-foreground transition-all hover:bg-card'
+                  href='/reviews'
+                  className='inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline'
                 >
-                  Compare All Mini Splits
-                  <ArrowRight className='w-4 h-4' />
+                  Browse All Reviews
+                  <ArrowRight className='h-3 w-3' />
                 </Link>
               </div>
             </section>
@@ -1299,6 +1315,7 @@ export default function PioneerMiniSplitReviewPage() {
       </main>
 
       <ReviewFooter />
+      <StickyMobileCTA productKey={PRODUCT_KEY} source="pioneer-mini-split" />
     </ReviewLayout>
   );
 }

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -247,6 +249,8 @@ export default function BestWholeHouseGenerator() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -455,6 +459,16 @@ export default function BestWholeHouseGenerator() {
                   </ul>
                 </div>
               </div>
+
+              <div className="mt-6">
+                <BuyButton
+                  productKey="generac-guardian-24kw"
+                  source="best-whole-house-generator"
+                  variant="primary"
+                  label="Check Price — Generac Guardian 24kW"
+                  showPrice
+                />
+              </div>
             </section>
 
             {/* ========== DETAILED REVIEW: Generac 22kW ========== */}
@@ -548,6 +562,16 @@ export default function BestWholeHouseGenerator() {
                   </ul>
                 </div>
               </div>
+
+              <div className="mt-6">
+                <BuyButton
+                  productKey="generac-guardian-22kw"
+                  source="best-whole-house-generator"
+                  variant="primary"
+                  label="Check Price — Generac Guardian 22kW"
+                  showPrice
+                />
+              </div>
             </section>
 
             {/* ========== DETAILED REVIEW: Generac 26kW ========== */}
@@ -634,6 +658,16 @@ export default function BestWholeHouseGenerator() {
                     ))}
                   </ul>
                 </div>
+              </div>
+
+              <div className="mt-6">
+                <BuyButton
+                  productKey="generac-guardian-26kw"
+                  source="best-whole-house-generator"
+                  variant="primary"
+                  label="Check Price — Generac Guardian 26kW"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -725,6 +759,16 @@ export default function BestWholeHouseGenerator() {
                   </ul>
                 </div>
               </div>
+
+              <div className="mt-6">
+                <BuyButton
+                  productKey="kohler-24kw-standby"
+                  source="best-whole-house-generator"
+                  variant="primary"
+                  label="Check Price — Kohler 24kW Standby"
+                  showPrice
+                />
+              </div>
             </section>
 
             {/* ========== DETAILED REVIEW: Champion 14kW ========== */}
@@ -815,6 +859,16 @@ export default function BestWholeHouseGenerator() {
                     ))}
                   </ul>
                 </div>
+              </div>
+
+              <div className="mt-6">
+                <BuyButton
+                  productKey="champion-14kw-100177"
+                  source="best-whole-house-generator"
+                  variant="primary"
+                  label="Check Price — Champion 14kW"
+                  showPrice
+                />
               </div>
             </section>
 

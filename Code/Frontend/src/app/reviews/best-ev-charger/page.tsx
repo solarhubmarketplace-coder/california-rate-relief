@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -261,6 +263,8 @@ export default function BestEVCharger() {
               </div>
             </header>
 
+            <AffiliateDisclosure compact />
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
@@ -413,9 +417,13 @@ export default function BestEVCharger() {
                     </ul>
                   </div>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="chargepoint-home-flex"
+                  source="best-ev-charger"
+                  variant="primary"
+                  label="Check Price — ChargePoint Home Flex"
+                  showPrice
+                />
               </div>
 
               {/* --- Emporia Smart Level 2 --- */}
@@ -470,9 +478,13 @@ export default function BestEVCharger() {
                     </ul>
                   </div>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="emporia-smart-level-2"
+                  source="best-ev-charger"
+                  variant="primary"
+                  label="Check Price — Emporia Smart Level 2"
+                  showPrice
+                />
               </div>
 
               {/* --- Grizzl-E Classic --- */}
@@ -526,9 +538,13 @@ export default function BestEVCharger() {
                     </ul>
                   </div>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="grizzl-e-classic"
+                  source="best-ev-charger"
+                  variant="primary"
+                  label="Check Price — Grizzl-E Classic"
+                  showPrice
+                />
               </div>
 
               {/* --- JuiceBox 48 --- */}
@@ -574,9 +590,13 @@ export default function BestEVCharger() {
                     </ul>
                   </div>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="juicebox-48"
+                  source="best-ev-charger"
+                  variant="primary"
+                  label="Check Price — JuiceBox 48"
+                  showPrice
+                />
               </div>
 
               {/* --- Wallbox Pulsar Plus --- */}
@@ -622,9 +642,13 @@ export default function BestEVCharger() {
                     </ul>
                   </div>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="wallbox-pulsar-plus"
+                  source="best-ev-charger"
+                  variant="primary"
+                  label="Check Price — Wallbox Pulsar Plus"
+                  showPrice
+                />
               </div>
 
               {/* --- Tesla Wall Connector --- */}
@@ -678,9 +702,13 @@ export default function BestEVCharger() {
                     </ul>
                   </div>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors hover:opacity-90" style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}>
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="tesla-wall-connector"
+                  source="best-ev-charger"
+                  variant="primary"
+                  label="Check Price — Tesla Wall Connector"
+                  showPrice
+                />
               </div>
             </section>
 

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   ArrowRight,
@@ -268,6 +270,8 @@ export default function BestInductionCooktop() {
                 deserves your countertop space.
               </p>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Table of Contents */}
             <div
@@ -552,13 +556,13 @@ export default function BestInductionCooktop() {
                         $2,799
                       </span>
                       <div className="mt-2">
-                        <a
-                          href="#"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-lg"
-                          style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                        >
-                          Check Price <ArrowRight className="h-4 w-4" />
-                        </a>
+                        <BuyButton
+                          productKey="ge-profile-phs93xypfs"
+                          source="best-induction-cooktop"
+                          variant="primary"
+                          label="Check Price — GE Profile PHS93XYPFS"
+                          showPrice
+                        />
                       </div>
                     </div>
                   </div>
@@ -644,13 +648,13 @@ export default function BestInductionCooktop() {
                         $1,499
                       </span>
                       <div className="mt-2">
-                        <a
-                          href="#"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-lg"
-                          style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                        >
-                          Check Price <ArrowRight className="h-4 w-4" />
-                        </a>
+                        <BuyButton
+                          productKey="samsung-bespoke-ne63a6711ss"
+                          source="best-induction-cooktop"
+                          variant="primary"
+                          label="Check Price — Samsung Bespoke NE63A6711SS"
+                          showPrice
+                        />
                       </div>
                     </div>
                   </div>
@@ -736,13 +740,13 @@ export default function BestInductionCooktop() {
                         $1,599
                       </span>
                       <div className="mt-2">
-                        <a
-                          href="#"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-lg"
-                          style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                        >
-                          Check Price <ArrowRight className="h-4 w-4" />
-                        </a>
+                        <BuyButton
+                          productKey="bosch-nit5660uc"
+                          source="best-induction-cooktop"
+                          variant="primary"
+                          label="Check Price — Bosch NIT5660UC"
+                          showPrice
+                        />
                       </div>
                     </div>
                   </div>
@@ -828,13 +832,13 @@ export default function BestInductionCooktop() {
                         $100
                       </span>
                       <div className="mt-2">
-                        <a
-                          href="#"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-lg"
-                          style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                        >
-                          Check Price <ArrowRight className="h-4 w-4" />
-                        </a>
+                        <BuyButton
+                          productKey="duxtop-9620ls"
+                          source="best-induction-cooktop"
+                          variant="primary"
+                          label="Check Price — Duxtop 9620LS"
+                          showPrice
+                        />
                       </div>
                     </div>
                   </div>
@@ -920,13 +924,13 @@ export default function BestInductionCooktop() {
                         $2,499
                       </span>
                       <div className="mt-2">
-                        <a
-                          href="#"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 rounded-lg"
-                          style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                        >
-                          Check Price <ArrowRight className="h-4 w-4" />
-                        </a>
+                        <BuyButton
+                          productKey="lg-lsil6336f"
+                          source="best-induction-cooktop"
+                          variant="primary"
+                          label="Check Price — LG LSIL6336F"
+                          showPrice
+                        />
                       </div>
                     </div>
                   </div>
@@ -1337,13 +1341,13 @@ export default function BestInductionCooktop() {
                         <span className="ml-2 font-bold" style={{ color: '#22c55e' }}>{item.price}</span>
                         <p className="text-sm mt-1" style={{ color: '#a1a1aa' }}>{item.why}</p>
                       </div>
-                      <a
-                        href="#"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-lg shrink-0"
-                        style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                      >
-                        Check Price <ArrowRight className="h-4 w-4" />
-                      </a>
+                      <BuyButton
+                        productKey={item.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}
+                        source="best-induction-cooktop"
+                        variant="primary"
+                        label={`Check Price — ${item.name}`}
+                        showPrice
+                      />
                     </div>
                   ))}
                 </div>

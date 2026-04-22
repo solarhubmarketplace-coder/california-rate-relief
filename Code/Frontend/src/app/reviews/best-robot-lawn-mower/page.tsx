@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { BuyButton } from '@/components/reviews/BuyButton';
+import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import {
   ArrowLeft,
   Battery,
@@ -266,6 +268,8 @@ export default function BestRobotLawnMower() {
                 </div>
               </div>
             </header>
+
+            <AffiliateDisclosure compact />
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -696,13 +700,13 @@ export default function BestRobotLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="husqvarna-automower-450x"
+                  source="best-robot-lawn-mower"
+                  variant="primary"
+                  label="Check Price — Husqvarna Automower 450X"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -800,13 +804,13 @@ export default function BestRobotLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="worx-landroid-m-wr147"
+                  source="best-robot-lawn-mower"
+                  variant="primary"
+                  label="Check Price — Worx Landroid M (WR147)"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -904,13 +908,13 @@ export default function BestRobotLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="ecovacs-goat-g1"
+                  source="best-robot-lawn-mower"
+                  variant="primary"
+                  label="Check Price — EcoVacs GOAT G1"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1008,13 +1012,13 @@ export default function BestRobotLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="mammotion-luba-2"
+                  source="best-robot-lawn-mower"
+                  variant="primary"
+                  label="Check Price — Mammotion LUBA 2"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1111,13 +1115,13 @@ export default function BestRobotLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="robomow-rs630"
+                  source="best-robot-lawn-mower"
+                  variant="primary"
+                  label="Check Price — Robomow RS630"
+                  showPrice
+                />
               </div>
             </section>
 
@@ -1216,13 +1220,13 @@ export default function BestRobotLawnMower() {
                   </div>
                 </div>
 
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 font-semibold text-sm px-5 py-2.5 rounded-lg"
-                  style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
-                >
-                  Check Price <ChevronRight className="h-4 w-4" />
-                </a>
+                <BuyButton
+                  productKey="gardena-sileno-city-250"
+                  source="best-robot-lawn-mower"
+                  variant="primary"
+                  label="Check Price — Gardena SILENO City 250"
+                  showPrice
+                />
               </div>
             </section>
 

@@ -615,6 +615,414 @@ const reviews: ReviewCard[] = [
     badge: 'Comparison Guide',
     icon: 'zap',
   },
+  // ============ 2026-04-22 EXPANSION — 46 NEW PAGES ============
+  // Smart Thermostats
+  {
+    slug: 'nest-thermostat-review',
+    title: 'Nest Thermostat Review 2026',
+    description:
+      'Google Nest Learning Thermostat 4th Gen — AI learning, 10-15% energy savings, Rush Hour Rewards in California.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'ecobee-thermostat-review',
+    title: 'Ecobee Smart Thermostat Premium Review',
+    description:
+      'Built-in Alexa, SmartSensor room balancing, air quality monitoring — is ecobee the smarter choice over Nest?',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'zap',
+  },
+  {
+    slug: 'smart-thermostat-installation',
+    title: 'Smart Thermostat Installation Guide',
+    description:
+      'DIY in 30 minutes — wire labeling, C-wire workarounds, Title 24 compliance. Step-by-step install instructions.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  // Tankless Water Heaters
+  {
+    slug: 'tankless-water-heater-cost',
+    title: 'Tankless Water Heater Cost 2026',
+    description:
+      'Unit + install price breakdown — gas, electric, condensing. Total installed cost and rebates explained.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'tankless-water-heater-vs-tank',
+    title: 'Tankless vs Tank Water Heater',
+    description:
+      'Cost, efficiency, lifespan, and 20-year ownership math compared head-to-head.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'tankless-water-heater-pros-and-cons',
+    title: 'Tankless Water Heater Pros & Cons',
+    description:
+      'Is a tankless water heater actually worth it? The honest buyer guide with 6 pros, 6 cons.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'rinnai-tankless-water-heater-review',
+    title: 'Rinnai Tankless Water Heater Review',
+    description:
+      'Rinnai Sensei RX, RU, and RL series compared — Japan-made, 15-year heat exchanger warranty.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'rheem-tankless-water-heater-review',
+    title: 'Rheem Tankless Water Heater Review',
+    description:
+      'Performance Platinum, Prestige condensing, and EcoSmart electric — the budget-friendly Rinnai alternative?',
+    badge: 'Product Review',
+    rating: 4.4,
+    icon: 'zap',
+  },
+  {
+    slug: 'navien-tankless-water-heater-review',
+    title: 'Navien Tankless Water Heater Review',
+    description:
+      'NPE, NPN, and NCB combi compared — 4.7M US installs, 0.97 UEF condensing efficiency, 15-year warranty.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'noritz-tankless-water-heater-review',
+    title: 'Noritz Tankless Water Heater Review',
+    description:
+      'NRC condensing, EZ series drop-in replacements, CB combi — 70-year-old Japanese tankless pioneer.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  // Mini Splits
+  {
+    slug: 'mrcool-mini-split',
+    title: 'MrCool Mini Split Review',
+    description:
+      'DIY 4th Gen, Olympus Hyper Heat, and Advantage — the no-HVAC-tech-needed mini split everyone is buying.',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'zap',
+  },
+  {
+    slug: 'diy-mini-split',
+    title: 'DIY Mini Split Guide',
+    description:
+      'How to install a mini split yourself — pre-charged line sets, permits, step-by-step, best DIY kits.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'gree-mini-split-review',
+    title: 'Gree Mini Split Review',
+    description:
+      'Livo Gen 3, Sapphire, Vireo+ — world\u2019s largest mini split manufacturer compared on SEER2, price, and DIY-friendliness.',
+    badge: 'Product Review',
+    rating: 4.3,
+    icon: 'zap',
+  },
+  {
+    slug: 'senville-mini-split-review',
+    title: 'Senville Mini Split Review',
+    description:
+      'LETO, AURA, and SENA compared — Amazon/Home Depot availability, quick-connect line sets, 5-year warranty.',
+    badge: 'Product Review',
+    rating: 4.2,
+    icon: 'zap',
+  },
+  // Power Stations (expansion)
+  {
+    slug: 'ecoflow-delta-2-max-review',
+    title: 'EcoFlow Delta 2 Max Review',
+    description:
+      '2,048 Wh LFP, 2,400W output, expandable to 6,144 Wh. The mid-tier power station upgrade worth buying?',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'battery',
+  },
+  {
+    slug: 'ecoflow-river-3-review',
+    title: 'EcoFlow River 3 Review',
+    description:
+      '245 Wh LFP for $259 — small-footprint 3,000-cycle portable for CPAP, camping, and outages.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'battery',
+  },
+  {
+    slug: 'ecoflow-river-3-plus-review',
+    title: 'EcoFlow River 3 Plus Review',
+    description:
+      '286 Wh LFP (expandable to 572 Wh), 600W output with X-Boost to 1,200W. Upgraded for $399.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'battery',
+  },
+  {
+    slug: 'ecoflow-river-2-pro-review',
+    title: 'EcoFlow River 2 Pro Review',
+    description:
+      '768 Wh LFP workhorse for camping and CPAP — 800W output, 70-min fast charge, 3,000-cycle lifespan.',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'battery',
+  },
+  {
+    slug: 'ecoflow-delta-3-plus-review',
+    title: 'EcoFlow Delta 3 Plus Review',
+    description:
+      '1,024 Wh LFP (expandable 5,120 Wh), 4,000-cycle lifespan, Smart Extra Battery support — the new home backup workhorse.',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'battery',
+  },
+  {
+    slug: 'anker-solix-c1000-review',
+    title: 'Anker SOLIX C1000 Review',
+    description:
+      '1,056 Wh LFP, 1,800W output, 600W solar, 58-minute fast charge — the best mid-size power station for $999.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'battery',
+  },
+  {
+    slug: 'bluetti-eb3a-review',
+    title: 'Bluetti EB3A Review',
+    description:
+      '268 Wh LFP for $299 — punches above its price with Power Lifting to 1,200W and 30-min Turbo charge.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'battery',
+  },
+  {
+    slug: 'bluetti-ac200max-review',
+    title: 'Bluetti AC200Max Review',
+    description:
+      '2,048 Wh LFP expandable to 8,192 Wh, 2,200W continuous output, 3,500-cycle lifespan, 900W solar.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'battery',
+  },
+  {
+    slug: 'jackery-explorer-1000-review',
+    title: 'Jackery Explorer 1000 v2 Review',
+    description:
+      '1,070 Wh LFP upgrade (v2), 1,500W output, 4,000-cycle lifespan. The LFP-era Jackery workhorse for $999.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'battery',
+  },
+  {
+    slug: 'whole-house-battery-backup',
+    title: 'Whole House Battery Backup Guide',
+    description:
+      'Tesla Powerwall 3 vs Franklin vs Enphase vs EcoFlow Delta Pro Ultra — permanent vs portable, SGIP rebates, install cost.',
+    badge: 'Comparison Guide',
+    icon: 'battery',
+  },
+  // E-Bikes & Scooters (expansion)
+  {
+    slug: 'electric-dirt-bike',
+    title: 'Best Electric Dirt Bikes 2026',
+    description:
+      'Sur-Ron vs Talaria vs Segway vs Kuberg vs Stark — full-size, kids, and street-legal electric dirt bikes.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'lectric-ebike',
+    title: 'Lectric eBikes Review',
+    description:
+      'XP 3.0, XP Lite, XPedition, XPress, and ONE — Phoenix-based direct-to-consumer lineup fully compared.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'rad-power-bikes',
+    title: 'Rad Power Bikes Review',
+    description:
+      'RadRover 6 Plus, RadRunner, RadCity, RadWagon, RadExpand, RadTrike — Seattle\u2019s largest e-bike brand compared.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'aventon-ebike',
+    title: 'Aventon E-Bikes Review',
+    description:
+      'Aventure 3, Pace 500.3, Level 3, Soltera, Sinch.2, and Abound cargo — torque sensor e-bikes compared.',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'zap',
+  },
+  {
+    slug: 'velotric-ebike',
+    title: 'Velotric E-Bikes Review',
+    description:
+      'Discover 2, Nomad 1+, T1, Go, Summit, Breeze — UL 2849 certified, IPX6, SensorShift e-bikes compared.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'electric-motorcycle',
+    title: 'Best Electric Motorcycles 2026',
+    description:
+      'Zero SR/F vs LiveWire ONE vs Energica Ego+ vs Kawasaki Ninja e-1 vs CAKE Kalk OR — street, dual-sport, off-road.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'fastest-electric-bike',
+    title: 'Fastest Electric Bikes 2026',
+    description:
+      'Delfast, HPC, Vintage Electric, Ariel Rider, Stealth Bomber — 35+ mph Class 3 and off-road monsters.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'kids-electric-bike',
+    title: 'Best Kids Electric Bikes 2026',
+    description:
+      'Ages 5-14 tested — Rad Power Youth, Woom UP 5, Razor MX650, Little Fiets, Segway Xyber ranked for safety.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'cheap-electric-bike',
+    title: 'Best Cheap Electric Bikes 2026',
+    description:
+      'Under $1,000 that actually don\u2019t suck — Lectric XP Lite, Ride1Up Roadster V3, Aventon Soltera 2.5, Heybike.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'fastest-electric-scooter',
+    title: 'Fastest Electric Scooters 2026',
+    description:
+      'Dualtron X Limited 68 mph, Weped FS, Kaabo Wolf King GT Pro, NAMI Burn-E 2 Max, Apollo Pro — adult scooters tested.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-electric-scooter-for-adults',
+    title: 'Best Electric Scooters for Adults',
+    description:
+      'Apollo City Pro, Segway GT2, NIU KQi3 Pro, Unagi Voyager — commuter, heavy-duty, and portable scooters compared.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'gotrax-electric-scooter',
+    title: 'Gotrax Electric Scooter Review',
+    description:
+      'GXL V2, XR Pro, G4, G3, Apex XL — USA budget scooter brand, UL 2272 certified, $299-$699 lineup.',
+    badge: 'Product Review',
+    rating: 4.3,
+    icon: 'zap',
+  },
+  // Lawn Equipment (expansion)
+  {
+    slug: 'ego-lawn-mower',
+    title: 'EGO Lawn Mower Review',
+    description:
+      'Select Cut XP, Z6 zero-turn, T6 stand-on, push and self-propelled — full EGO 56V Power+ mower lineup.',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'zap',
+  },
+  {
+    slug: 'ryobi-lawn-mower',
+    title: 'Ryobi Lawn Mower Review',
+    description:
+      'Ryobi 40V HP Brushless vs 80V HP Ride-On vs 40V Push — Home Depot\u2019s electric mower platform compared.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'greenworks-lawn-mower',
+    title: 'Greenworks Lawn Mower Review',
+    description:
+      '80V Pro, 60V Brushless, 40V, and CrossoverT Riding Mower compared — 3 incompatible battery platforms explained.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'dewalt-chainsaw-review',
+    title: 'DeWalt Chainsaw Review',
+    description:
+      '60V MAX FLEXVOLT 20" DCCS690 tested — 450 cuts per charge, vs Milwaukee M18 Fuel, vs Stihl gas.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'ego-chainsaw-review',
+    title: 'EGO Power+ Chainsaw Review',
+    description:
+      'CS1804 18" and CS1400E 14" tested — 56V Arc Lithium platform, up to 200 cuts per charge, chain brake safety.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'ryobi-chainsaw-review',
+    title: 'Ryobi Chainsaw Review',
+    description:
+      '40V HP Brushless 18" and 14" tested — Oregon bar/chain, 100+ cuts on 4Ah, Home Depot exclusive 5-year warranty.',
+    badge: 'Product Review',
+    rating: 4.4,
+    icon: 'zap',
+  },
+  {
+    slug: 'ego-leaf-blower-review',
+    title: 'EGO Leaf Blower Review',
+    description:
+      'LB7654 765 CFM backpack, LB6504 handheld, LB5804 3-speed, LB5302 PowerLoad — EGO 56V blower lineup tested.',
+    badge: 'Product Review',
+    rating: 4.7,
+    icon: 'zap',
+  },
+  {
+    slug: 'dewalt-leaf-blower-review',
+    title: 'DeWalt Leaf Blower Review',
+    description:
+      '60V MAX FLEXVOLT DCBL772 125 MPH handheld and DCBL590 backpack vs Milwaukee M18 Fuel vs Stihl gas.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
+  {
+    slug: 'ryobi-leaf-blower-review',
+    title: 'Ryobi Leaf Blower Review',
+    description:
+      '40V HP Whisper Series 730 CFM backpack, 550 CFM Jet Fan, 110 MPH handheld — 60 dB noise rating tested.',
+    badge: 'Product Review',
+    rating: 4.6,
+    icon: 'zap',
+  },
+  {
+    slug: 'milwaukee-leaf-blower-review',
+    title: 'Milwaukee Leaf Blower Review',
+    description:
+      'M18 FUEL Dual Battery Backpack 2824-20 and 2728-20 handheld — 145 MPH, jobsite-grade electric blowers.',
+    badge: 'Product Review',
+    rating: 4.5,
+    icon: 'zap',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {
