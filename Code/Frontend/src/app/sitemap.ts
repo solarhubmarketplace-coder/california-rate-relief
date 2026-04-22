@@ -140,6 +140,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-electric-snow-shovel',
     'best-solar-panel-kit',
     'best-electric-hedge-trimmer',
+    'best-portable-air-conditioner',
+    'best-window-air-conditioner',
+    'best-ceiling-fan',
+    'best-dehumidifier',
+    'jackery-solar-generator-1000-review',
+    'best-electric-weed-eater',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-21'),

@@ -470,6 +470,55 @@ const reviews: ReviewCard[] = [
     badge: 'Comparison Guide',
     icon: 'zap',
   },
+  {
+    slug: 'best-portable-air-conditioner',
+    title: 'Best Portable Air Conditioners 2026',
+    description:
+      'LG vs Midea vs Whynter vs BLACK+DECKER — portable AC units from 8,000 to 14,000 BTU. Single-hose and dual-hose models compared.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-window-air-conditioner',
+    title: 'Best Window Air Conditioners 2026',
+    description:
+      'LG vs Frigidaire vs Midea U-Shaped vs GE Profile — the quietest, most efficient window AC units for every room size.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-ceiling-fan',
+    title: 'Best Ceiling Fans 2026',
+    description:
+      'Hunter vs Big Ass Fans vs Modern Forms vs Fanimation — smart, energy-efficient ceiling fans with DC motors and WiFi control.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'best-dehumidifier',
+    title: 'Best Dehumidifiers 2026',
+    description:
+      'Frigidaire vs hOmeLabs vs GE vs LG — 35 to 70-pint dehumidifiers for basements, bedrooms, and whole-home moisture control.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
+  {
+    slug: 'jackery-solar-generator-1000-review',
+    title: 'Jackery Solar Generator 1000 Review',
+    description:
+      'Explorer 1000 + SolarSaga 100W bundle at $1,099. The most portable mid-range solar generator for camping and emergency backup.',
+    badge: 'Product Review',
+    rating: 4.2,
+    icon: 'battery',
+  },
+  {
+    slug: 'best-electric-weed-eater',
+    title: 'Best Electric Weed Eaters 2026',
+    description:
+      'EGO vs Milwaukee vs DeWalt vs Greenworks vs Ryobi — battery string trimmers with attachment systems and platform compatibility.',
+    badge: 'Comparison Guide',
+    icon: 'zap',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {
