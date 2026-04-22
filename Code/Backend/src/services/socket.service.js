@@ -422,7 +422,23 @@ const handleConnection = (connection, req) => {
 
       if (eventType === "session.updated") {
         sessionConfigured = true;
-        logger.log(LOG_PREFIX.OPENAI, `Session configured (voice: ${response.session?.voice}, tools: ${response.session?.tools?.length || 0})`);
+        // ✨ INWORLD: voice nests under audio.output.voice in Inworld's schema;
+        // OpenAI keeps it flat at session.voice. Read both paths.
+        const ackedVoice =
+          response.session?.voice ??
+          response.session?.audio?.output?.voice ??
+          "undefined";
+        logger.log(LOG_PREFIX.OPENAI, `Session configured (voice: ${ackedVoice}, tools: ${response.session?.tools?.length || 0})`);
+
+        // ✨ INWORLD DIAG: Dump full session.updated once per call so we can
+        // verify the schema Inworld actually echoes back.
+        if (USE_INWORLD && !seenInworldEventTypes.has("__logged_session_updated")) {
+          seenInworldEventTypes.add("__logged_session_updated");
+          logger.log(
+            LOG_PREFIX.OPENAI,
+            `[DIAG] First session.updated payload: ${JSON.stringify(response, null, 2)}`
+          );
+        }
 
         // ✨ FIX: Send any buffered audio chunks now that session is configured
         if (audioBuffer.length > 0 && openAI.readyState === WebSocket.OPEN) {
@@ -460,13 +476,41 @@ const handleConnection = (connection, req) => {
             // 4. If silence for 2.5s → force-trigger the intro as fallback
             // ========================================
             logger.log(LOG_PREFIX.STATE, "Triggering greeting part 1: Hello?");
-            openAI.send(JSON.stringify({
-              type: "response.create",
-              response: {
-                modalities: ["text", "audio"],
-                instructions: 'Say only "Hello?" in a warm, natural tone. Nothing else. Just "Hello?" as if you just picked up the phone and are checking if someone is there.',
-              },
-            }));
+            // ✨ INWORLD: Inworld's OpenAI-compat layer uses `output_modalities`
+            // (matching its session schema) and doesn't accept per-response
+            // `instructions` overrides the same way OpenAI does. Send a
+            // schema-correct response.create per provider. For Inworld, we
+            // prime the conversation with a user message so the model's first
+            // turn is a natural greeting, then ask for a response.
+            if (USE_INWORLD) {
+              openAI.send(JSON.stringify({
+                type: "conversation.item.create",
+                item: {
+                  type: "message",
+                  role: "user",
+                  content: [
+                    {
+                      type: "input_text",
+                      text: '[System: The phone just connected. Say only "Hello?" in a warm, natural tone — nothing else. Like picking up the phone and checking if someone is there.]',
+                    },
+                  ],
+                },
+              }));
+              openAI.send(JSON.stringify({
+                type: "response.create",
+                response: {
+                  output_modalities: ["text", "audio"],
+                },
+              }));
+            } else {
+              openAI.send(JSON.stringify({
+                type: "response.create",
+                response: {
+                  modalities: ["text", "audio"],
+                  instructions: 'Say only "Hello?" in a warm, natural tone. Nothing else. Just "Hello?" as if you just picked up the phone and are checking if someone is there.',
+                },
+              }));
+            }
           }
         }
       }
@@ -547,6 +591,17 @@ const handleConnection = (connection, req) => {
           logger.log(LOG_PREFIX.OPENAI, `Response done (${response.response?.status}) | ${tokens} tokens | $${cost.toFixed(6)} | ${audioChunksSent} audio chunks`);
         } else {
           logger.log(LOG_PREFIX.OPENAI, `Response done (${response.response?.status}) | ${audioChunksSent} audio chunks`);
+        }
+
+        // ✨ INWORLD DIAG: Dump full response.done payload whenever the response
+        // didn't complete cleanly. The protocol-compat layer hides the actual
+        // rejection reason (voice config, unsupported field, quota, etc) unless
+        // we log the status_details / error object directly.
+        if (response.response?.status && response.response.status !== "completed") {
+          logger.log(
+            LOG_PREFIX.OPENAI,
+            `[DIAG] response.done non-completed. Full payload: ${JSON.stringify(response, null, 2)}`
+          );
         }
 
         // Clear audio chunks (no longer saving locally)
