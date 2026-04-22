@@ -47,4 +47,18 @@ module.exports = {
 
     // Timezone
     BUSINESS_TIMEZONE: getEnv('BUSINESS_TIMEZONE', 'America/Los_Angeles'),
+
+    // Voice provider selection — controls which realtime API powers the voice bot
+    // Values: 'openai' (default, existing gpt-4o-realtime) | 'inworld' (Inworld Realtime API w/ Sarah voice)
+    VOICE_PROVIDER: getEnv('VOICE_PROVIDER', 'openai'),
+
+    // Inworld Realtime API — only used when VOICE_PROVIDER=inworld
+    // Format: base64-encoded client_id:client_secret (sent as "Authorization: Basic <key>")
+    INWORLD_API_KEY: getEnv('INWORLD_API_KEY', ''),
+    // Inworld TTS model — 'inworld-tts-1.5-max' (top quality) or 'inworld-tts-1.5-mini' (faster/cheaper)
+    INWORLD_TTS_MODEL: getEnv('INWORLD_TTS_MODEL', 'inworld-tts-1.5-max'),
+    // Inworld voice name for TTS — confirmed name from playground (e.g. 'Sarah', 'Dennis', etc.)
+    INWORLD_VOICE: getEnv('INWORLD_VOICE', 'Sarah'),
+    // LLM model routed through Inworld Router — matches OpenAI model IDs
+    INWORLD_LLM_MODEL: getEnv('INWORLD_LLM_MODEL', 'gpt-4o'),
 };

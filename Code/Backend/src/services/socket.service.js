@@ -5,7 +5,23 @@ const fs = require("fs");
 const path = require("path");
 
 const config = require("../config");
-const { OPENAI_API_KEY, LIVE_TRANSFER_NUMBER } = config;
+const {
+  OPENAI_API_KEY,
+  LIVE_TRANSFER_NUMBER,
+  VOICE_PROVIDER,
+  INWORLD_API_KEY,
+  INWORLD_TTS_MODEL,
+  INWORLD_VOICE,
+  INWORLD_LLM_MODEL,
+} = config;
+
+// Provider selection — flip via VOICE_PROVIDER env var on Railway without code changes
+const USE_INWORLD = (VOICE_PROVIDER || "openai").toLowerCase() === "inworld";
+if (USE_INWORLD && !INWORLD_API_KEY) {
+  console.warn(
+    "[VOICE] VOICE_PROVIDER=inworld but INWORLD_API_KEY is missing — calls will fail. Set it in your environment."
+  );
+}
 const voiceService = require("./voice.service");
 
 const appointmentService = require("./appointment.service");
@@ -269,37 +285,53 @@ const handleConnection = (connection, req) => {
 
   // ========================================
 
-  logger.log(LOG_PREFIX.OPENAI, "Connecting to OpenAI Realtime API...");
+  const providerLabel = USE_INWORLD ? "INWORLD" : "OPENAI";
+  logger.log(
+    LOG_PREFIX.OPENAI,
+    `Connecting to ${USE_INWORLD ? "Inworld" : "OpenAI"} Realtime API...`
+  );
 
   let openAI;
 
   try {
-    openAI = new WebSocket(
-      "wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-12-17",
+    if (USE_INWORLD) {
+      // Inworld Realtime API — protocol-compatible with OpenAI, but different endpoint + auth
+      // Basic auth header carries the base64-encoded client_id:client_secret
+      openAI = new WebSocket(
+        "wss://api.inworld.ai/api/v1/realtime/session?protocol=realtime",
+        {
+          headers: {
+            Authorization: `Basic ${INWORLD_API_KEY}`,
+          },
+        }
+      );
+    } else {
+      // OpenAI Realtime API (original path)
+      openAI = new WebSocket(
+        "wss://api.openai.com/v1/realtime?model=gpt-4o-realtime-preview-2024-12-17",
+        {
+          headers: {
+            Authorization: `Bearer ${OPENAI_API_KEY}`,
+            "OpenAI-Beta": "realtime=v1",
+          },
+        }
+      );
+    }
 
-      {
-        headers: {
-          Authorization: `Bearer ${OPENAI_API_KEY}`,
+    logger.log(LOG_PREFIX.OPENAI, `[${providerLabel}] WebSocket created, waiting for connection...`);
 
-          "OpenAI-Beta": "realtime=v1",
-        },
-      }
-    );
-
-    logger.log(LOG_PREFIX.OPENAI, "WebSocket created, waiting for connection...");
-
-    // ✨ FIX: 10s connection timeout - terminate if OpenAI never connects
+    // ✨ FIX: 10s connection timeout - terminate if realtime provider never connects
     var openAIConnectTimeout = setTimeout(() => {
       if (!isOpenAIConnected) {
-        logger.error("OpenAI WebSocket connection timed out after 10s");
+        logger.error(`${providerLabel} WebSocket connection timed out after 10s`);
         try { openAI.terminate(); } catch (e) { /* ignore */ }
-        try { connection.close(1011, "OpenAI connection timeout"); } catch (e) { /* ignore */ }
+        try { connection.close(1011, `${providerLabel} connection timeout`); } catch (e) { /* ignore */ }
       }
     }, 10000);
   } catch (error) {
-    logger.error("Failed to create OpenAI WebSocket", error);
+    logger.error(`Failed to create ${providerLabel} WebSocket`, error);
 
-    connection.close(1011, "Failed to connect to OpenAI");
+    connection.close(1011, `Failed to connect to ${providerLabel}`);
 
     return;
   }
@@ -524,14 +556,7 @@ const handleConnection = (connection, req) => {
                 // Enable VAD to listen for their "hello" or "yeah"
                 openAI.send(JSON.stringify({
                   type: "session.update",
-                  session: {
-                    turn_detection: {
-                      type: "server_vad",
-                      threshold: 0.5,
-                      prefix_padding_ms: 300,
-                      silence_duration_ms: 700,
-                    },
-                  },
+                  session: buildTurnDetectionPatch(false),
                 }));
 
                 // Silence fallback: if nobody speaks within 2.5s, trigger the intro
@@ -562,14 +587,7 @@ const handleConnection = (connection, req) => {
 
               const resetVAD = {
                 type: "session.update",
-                session: {
-                  turn_detection: {
-                    type: "server_vad",
-                    threshold: 0.5,
-                    prefix_padding_ms: 300,
-                    silence_duration_ms: 700,
-                  },
-                },
+                session: buildTurnDetectionPatch(false),
               };
 
               openAI.send(JSON.stringify(resetVAD));
@@ -1328,17 +1346,36 @@ const handleConnection = (connection, req) => {
   });
 };
 
+/**
+ * Builds the turn_detection patch fragment for a session.update mid-call.
+ * Schema differs between OpenAI (flat turn_detection) and Inworld
+ * (nested audio.input.turn_detection, semantic_vad w/ eagerness).
+ */
+const buildTurnDetectionPatch = (disableVAD) => {
+  if (USE_INWORLD) {
+    return {
+      audio: {
+        input: {
+          turn_detection: disableVAD
+            ? null
+            : { type: "semantic_vad", eagerness: "medium" },
+        },
+      },
+    };
+  }
+  return {
+    turn_detection: disableVAD
+      ? null
+      : {
+          type: "server_vad",
+          threshold: 0.5,
+          prefix_padding_ms: 300,
+          silence_duration_ms: 700,
+        },
+  };
+};
+
 const sendSessionUpdate = (openAI, logger, customInstructions = null, { disableVAD = false } = {}) => {
-  // ========================================
-
-  // Session configuration for OpenAI Realtime API
-
-  // Using the CORRECT format that works
-
-  // ========================================
-
-  // ========================================
-
   const instructionBase = customInstructions || SYSTEM_MESSAGE;
   const now = new Date();
   const tz = config.BUSINESS_TIMEZONE;
@@ -1358,40 +1395,80 @@ const sendSessionUpdate = (openAI, logger, customInstructions = null, { disableV
 
   const instructions = dateContext + "\n\n" + instructionBase;
 
-  const sessionUpdate = {
-    type: "session.update",
+  let sessionUpdate;
 
-    session: {
-      modalities: ["text", "audio"],
-
-      instructions: instructions,
-
-      voice: VOICE,
-
-      input_audio_format: "g711_ulaw",
-
-      output_audio_format: "g711_ulaw",
-
-      input_audio_transcription: {
-        model: "whisper-1",
+  if (USE_INWORLD) {
+    // ========================================
+    // INWORLD REALTIME API — nested audio config schema
+    // - audio.input.format: audio/pcmu @ 8000Hz = G.711 μ-law (Twilio-native, zero transcode)
+    // - audio.output: same codec out, Sarah voice, inworld-tts-1.5-max
+    // - LLM routed via Inworld Router (gpt-4o by default, switchable via INWORLD_LLM_MODEL)
+    // - VAD is semantic_vad with eagerness, not threshold-based
+    // ========================================
+    sessionUpdate = {
+      type: "session.update",
+      session: {
+        instructions: instructions,
+        model: INWORLD_LLM_MODEL,
+        output_modalities: ["text", "audio"],
+        temperature: 0.7,
+        audio: {
+          input: {
+            format: { type: "audio/pcmu", rate: 8000 },
+            turn_detection: disableVAD
+              ? null
+              : { type: "semantic_vad", eagerness: "medium" },
+          },
+          output: {
+            format: { type: "audio/pcmu", rate: 8000 },
+            voice: INWORLD_VOICE,
+            model: INWORLD_TTS_MODEL,
+            speed: 1.0,
+          },
+        },
+        tools: tools,
+        tool_choice: "auto",
       },
+    };
 
-      temperature: 0.7,
-
-      turn_detection: disableVAD ? null : {
-        type: "server_vad",
-        threshold: 0.5,
-        prefix_padding_ms: 300,
-        silence_duration_ms: 700,
+    logger.log(
+      LOG_PREFIX.OPENAI,
+      `[INWORLD] Sending session.update (voice: ${INWORLD_VOICE}, tts: ${INWORLD_TTS_MODEL}, llm: ${INWORLD_LLM_MODEL}, tools: ${tools.length}${customInstructions ? ", with context" : ""}${disableVAD ? ", VAD off" : ""})`
+    );
+  } else {
+    // ========================================
+    // OPENAI REALTIME API — original flat schema
+    // ========================================
+    sessionUpdate = {
+      type: "session.update",
+      session: {
+        modalities: ["text", "audio"],
+        instructions: instructions,
+        voice: VOICE,
+        input_audio_format: "g711_ulaw",
+        output_audio_format: "g711_ulaw",
+        input_audio_transcription: {
+          model: "whisper-1",
+        },
+        temperature: 0.7,
+        turn_detection: disableVAD
+          ? null
+          : {
+              type: "server_vad",
+              threshold: 0.5,
+              prefix_padding_ms: 300,
+              silence_duration_ms: 700,
+            },
+        tools: tools,
+        tool_choice: "auto",
       },
+    };
 
-      tools: tools,
-
-      tool_choice: "auto",
-    },
-  };
-
-  logger.log(LOG_PREFIX.OPENAI, `Sending session.update (voice: ${VOICE}, tools: ${tools.length}${customInstructions ? ', with context' : ''}${disableVAD ? ', VAD off' : ''})`);
+    logger.log(
+      LOG_PREFIX.OPENAI,
+      `Sending session.update (voice: ${VOICE}, tools: ${tools.length}${customInstructions ? ", with context" : ""}${disableVAD ? ", VAD off" : ""})`
+    );
+  }
 
   openAI.send(JSON.stringify(sessionUpdate));
 };
