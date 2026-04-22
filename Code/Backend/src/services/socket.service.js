@@ -227,6 +227,7 @@ const handleConnection = (connection, req) => {
   let vadResetTimeout = null; // ✨ FIX: Debounce VAD resets
   let greetingInProgress = false; // ✨ FIX: Protect greeting audio from being cleared by early VAD detection
   let greetingPart1Done = false; // Track two-part greeting: "Hello?" then pause then full intro
+  const seenInworldEventTypes = new Set(); // ✨ INWORLD DIAG: track unique event types per call
 
   // ✨ PHASE 2: Conversation transcript & context
 
@@ -345,7 +346,28 @@ const handleConnection = (connection, req) => {
   openAI.on("open", () => {
     isOpenAIConnected = true;
     clearTimeout(openAIConnectTimeout);
-    logger.log(LOG_PREFIX.OPENAI, "Connected to OpenAI Realtime API");
+    logger.log(
+      LOG_PREFIX.OPENAI,
+      `[${providerLabel}] Connected to ${USE_INWORLD ? "Inworld" : "OpenAI"} Realtime API`
+    );
+
+    // ✨ INWORLD FIX: OpenAI emits `session.created` which we use as the signal
+    // to send session.update. Inworld's Realtime API is OpenAI-protocol-COMPATIBLE
+    // but does not guarantee the same bootstrap handshake — empirically it does
+    // not emit `session.created`, so without this, session.update is never sent,
+    // the model is never configured, and we get dead audio on every call.
+    //
+    // Send session.update eagerly on open for Inworld. If context loads later,
+    // sendSessionUpdate will be called again with the contextual instructions
+    // (session.update is idempotent / accepts patches).
+    //
+    // Also arm waitingForContextUpdate so the session.updated handler knows to
+    // trigger the greeting — normally this gets armed inside sendSessionUpdate's
+    // callers, but the eager-on-open path needs explicit arming here.
+    if (USE_INWORLD) {
+      waitingForContextUpdate = true;
+      sendSessionUpdate(openAI, logger, null, { disableVAD: true });
+    }
   });
 
   openAI.on("message", async (data) => {
@@ -353,6 +375,14 @@ const handleConnection = (connection, req) => {
       const response = JSON.parse(data);
 
       const eventType = response.type;
+
+      // ✨ INWORLD DIAG: Log every unique event type we see from Inworld so we
+      // can map its event names vs OpenAI's protocol. Only during Inworld mode
+      // to avoid flooding OpenAI logs. Logs each type once per call.
+      if (USE_INWORLD && !seenInworldEventTypes.has(eventType)) {
+        seenInworldEventTypes.add(eventType);
+        logger.log(LOG_PREFIX.OPENAI, `[INWORLD] First-seen event type: ${eventType}`);
+      }
 
       // Only log errors and important events (skip noisy per-chunk events)
       if (eventType === "error") {
