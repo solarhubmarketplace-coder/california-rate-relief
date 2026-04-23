@@ -176,7 +176,7 @@ export default function Page() {
             variant='top'
             badge='BEST VALUE HOME BACKUP'
             rating={4.6}
-            verdict='The AC200Max is the sweet-spot unit of Bluetti\'s home-backup line. At $1,699 you get 2,048Wh of genuine LFP storage, a 2,200W inverter that actually carries most household loads, and true modular expansion up to 8.2 kWh via B230/B300 batteries. The 900W dual-MPPT solar input and 3,500-cycle battery life make this a \"buy once, keep forever\" unit for California homeowners who want serious PSPS protection without the $3,000+ price tag of the Delta Pro 3 or EcoFlow Delta Pro Ultra.'
+            verdict={`The AC200Max is the sweet-spot unit of Bluetti's home-backup line. At $1,699 you get 2,048Wh of genuine LFP storage, a 2,200W inverter that actually carries most household loads, and true modular expansion up to 8.2 kWh via B230/B300 batteries. The 900W dual-MPPT solar input and 3,500-cycle battery life make this a "buy once, keep forever" unit for California homeowners who want serious PSPS protection without the $3,000+ price tag of the Delta Pro 3 or EcoFlow Delta Pro Ultra.`}
             pros={[
               '2,048Wh LFP expandable to 8,192Wh (4x) with B230/B300',
               '2,200W continuous / 4,800W Power Lifting inverter',
@@ -664,7 +664,7 @@ export default function Page() {
               variant='final'
               badge='Best Value Home Backup'
               rating={4.6}
-              verdict='If your PSPS plan is \"keep the fridge, Wi-Fi, and lights going for a day or two and have room to expand later,\" the AC200Max is the unit. The 2,048Wh LFP + 2,200W inverter + 900W solar combo at $1,699 is the most balanced value in the class.'
+              verdict={`If your PSPS plan is "keep the fridge, Wi-Fi, and lights going for a day or two and have room to expand later," the AC200Max is the unit. The 2,048Wh LFP + 2,200W inverter + 900W solar combo at $1,699 is the most balanced value in the class.`}
             />
           </div>
 

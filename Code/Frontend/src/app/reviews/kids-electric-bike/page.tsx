@@ -196,7 +196,7 @@ export default function KidsElectricBikeHub() {
               productKey={PRIMARY_PRODUCT_KEY}
               badge='Our Top Pick'
               rating={4.6}
-              verdict='The Rad Power RadRunner Plus Youth at $1,799 is the best all-around kids e-bike in 2026. It uses a real, well-made Class 2 chassis sized for riders 4\'8" to 5\'8", has parent-adjustable speed limits, and comes from a company with a strong safety record and actual US support.'
+              verdict={`The Rad Power RadRunner Plus Youth at $1,799 is the best all-around kids e-bike in 2026. It uses a real, well-made Class 2 chassis sized for riders 4'8" to 5'8", has parent-adjustable speed limits, and comes from a company with a strong safety record and actual US support.`}
               pros={[
                 'Ages 10-14 family riding',
                 'Bike-to-school commuters',
@@ -349,7 +349,7 @@ export default function KidsElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Best Value for 10-14 Year Olds'
-                verdict='At $1,799, the RadRunner Plus Youth is the best combination of build quality, safety features, and brand support for most families.'
+                verdict={`At $1,799, the RadRunner Plus Youth is the best combination of build quality, safety features, and brand support for most families.`}
                 source='kids-electric-bike-mid'
                 variant='mid'
               />
@@ -558,7 +558,7 @@ export default function KidsElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Parent-Approved Pick'
-                verdict='If you want one recommendation for most families with kids 10-14, the RadRunner Plus Youth is the right answer. Safety features, parent controls, brand support — all the things that matter.'
+                verdict={`If you want one recommendation for most families with kids 10-14, the RadRunner Plus Youth is the right answer. Safety features, parent controls, brand support — all the things that matter.`}
                 source='kids-electric-bike-mid-2'
                 variant='mid'
               />
@@ -677,7 +677,7 @@ export default function KidsElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Final Verdict'
-                verdict='The Rad Power RadRunner Plus Youth is our top pick for kids electric bikes in 2026. Real build quality, parent speed controls, U.S. brand support. Check current price and availability.'
+                verdict={`The Rad Power RadRunner Plus Youth is our top pick for kids electric bikes in 2026. Real build quality, parent speed controls, U.S. brand support. Check current price and availability.`}
                 source='kids-electric-bike-final'
                 variant='final'
               />

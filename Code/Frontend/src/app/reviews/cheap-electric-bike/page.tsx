@@ -196,7 +196,7 @@ export default function CheapElectricBikeHub() {
               productKey={PRIMARY_PRODUCT_KEY}
               badge='Our Top Pick'
               rating={4.5}
-              verdict='The Lectric XP Lite 2.0 at $799 is the best all-around cheap electric bike in 2026. Folding frame, Class 2 throttle + pedal-assist, 300W motor with 20 mph top speed, UL 2849 certification, and a 1-year warranty with strong U.S. support. It is the bike we recommend to first-time e-bike buyers more than any other.'
+              verdict={`The Lectric XP Lite 2.0 at $799 is the best all-around cheap electric bike in 2026. Folding frame, Class 2 throttle + pedal-assist, 300W motor with 20 mph top speed, UL 2849 certification, and a 1-year warranty with strong U.S. support. It is the bike we recommend to first-time e-bike buyers more than any other.`}
               pros={[
                 'First-time e-bike buyers on a budget',
                 'Apartment dwellers who need folding storage',
@@ -404,7 +404,7 @@ export default function CheapElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Why the Lectric XP Lite 2.0'
-                verdict='At $799 you get a Lectric-brand folding e-bike with UL 2849 certification, proper U.S. warranty, and a company that will actually pick up the phone if something breaks. That combination is rare at this price.'
+                verdict={`At $799 you get a Lectric-brand folding e-bike with UL 2849 certification, proper U.S. warranty, and a company that will actually pick up the phone if something breaks. That combination is rare at this price.`}
                 source='cheap-electric-bike-mid'
                 variant='mid'
               />
@@ -634,7 +634,7 @@ export default function CheapElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Best First E-Bike Pick'
-                verdict='If you\'ve never owned an e-bike and you want one that won\'t make you regret your purchase, the Lectric XP Lite 2.0 is the right first buy. UL 2849 certified, strong warranty, folding frame, proven brand.'
+                verdict={`If you've never owned an e-bike and you want one that won't make you regret your purchase, the Lectric XP Lite 2.0 is the right first buy. UL 2849 certified, strong warranty, folding frame, proven brand.`}
                 source='cheap-electric-bike-mid-2'
                 variant='mid'
               />
@@ -737,7 +737,7 @@ export default function CheapElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Final Verdict'
-                verdict='The Lectric XP Lite 2.0 is the best cheap e-bike of 2026 — UL 2849 certified, strong warranty, folding frame, proven brand, and $799. Check current price and availability.'
+                verdict={`The Lectric XP Lite 2.0 is the best cheap e-bike of 2026 — UL 2849 certified, strong warranty, folding frame, proven brand, and $799. Check current price and availability.`}
                 source='cheap-electric-bike-final'
                 variant='final'
               />

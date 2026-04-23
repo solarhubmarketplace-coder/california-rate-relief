@@ -50,12 +50,12 @@ const reviewSchema = {
   datePublished: '2026-04-22',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -204,7 +204,7 @@ export default function DewaltChainsawReview() {
               productKey={PRODUCT_KEY}
               badge='Best Mid-Size Electric Chainsaw'
               rating={4.5}
-              verdict='The DeWalt DCCS690 60V MAX 20" FLEXVOLT chainsaw matches 35cc gas performance with zero emissions, a chain brake, brushless motor, and full cross-compatibility with DeWalt\'s 20V MAX tool platform.'
+              verdict={`The DeWalt DCCS690 60V MAX 20" FLEXVOLT chainsaw matches 35cc gas performance with zero emissions, a chain brake, brushless motor, and full cross-compatibility with DeWalt's 20V MAX tool platform.`}
               pros={[
                 'Firewood cutting up to 14" hardwood',
                 'Storm cleanup in residential neighborhoods',
@@ -592,7 +592,7 @@ export default function DewaltChainsawReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge='Ready to buy?'
-                verdict='The DCCS690 kit is stocked at DeWalt and Amazon — check current pricing and any active FLEXVOLT bundle promotions.'
+                verdict={`The DCCS690 kit is stocked at DeWalt and Amazon — check current pricing and any active FLEXVOLT bundle promotions.`}
                 source='dewalt-chainsaw'
                 variant='mid'
               />
@@ -1036,7 +1036,7 @@ export default function DewaltChainsawReview() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Final Verdict'
-              verdict='If you need gas-replacement cutting performance for firewood, storm cleanup, and residential tree work — and especially if you already own DeWalt 20V MAX tools — the DCCS690 is the right buy.'
+              verdict={`If you need gas-replacement cutting performance for firewood, storm cleanup, and residential tree work — and especially if you already own DeWalt 20V MAX tools — the DCCS690 is the right buy.`}
               source='dewalt-chainsaw'
               variant='final'
             />

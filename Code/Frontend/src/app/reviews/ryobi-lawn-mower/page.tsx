@@ -629,7 +629,7 @@ export default function RyobiLawnMowerReview() {
               <AffiliateCTABox
                 productKey='ryobi-40v-lawn-mower'
                 badge='Most popular Ryobi mower'
-                verdict='The 40V HP Brushless 21" self-propelled is Home Depot\'s top-selling battery mower. Check current pricing and any seasonal promos.'
+                verdict={`The 40V HP Brushless 21" self-propelled is Home Depot's top-selling battery mower. Check current pricing and any seasonal promos.`}
                 source='ryobi-lawn-mower'
                 variant='mid'
               />
