@@ -21,7 +21,7 @@ export function ReviewFooter() {
                   className='w-10 h-10 rounded-lg flex items-center justify-center font-extrabold text-base'
                   style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
                 >
-                  GV
+                  GR
                 </div>
                 <div className='flex flex-col'>
                   <span
@@ -116,12 +116,11 @@ export function ReviewFooter() {
               </h4>
               <ul className='space-y-3'>
                 {[
-                  { label: 'How We Test', href: '/reviews' },
-                  { label: 'Editorial Policy', href: '/reviews' },
-                  { label: 'Affiliate Disclosure', href: '/reviews' },
-                  { label: 'Privacy Policy', href: '/privacy-policy' },
-                  { label: 'Terms of Service', href: '/terms-of-service' },
-                  { label: 'Contact', href: 'mailto:reviews@ratereliefca.com' },
+                  { label: 'About & How We Test', href: '/reviews/about' },
+                  { label: 'Affiliate Disclosure', href: '/reviews/affiliate-disclosure' },
+                  { label: 'Privacy Policy', href: '/reviews/privacy' },
+                  { label: 'Terms of Service', href: '/reviews/terms' },
+                  { label: 'Contact', href: '/reviews/contact' },
                 ].map((link) => (
                   <li key={link.label}>
                     {link.href.startsWith('mailto:') ? (

@@ -454,7 +454,7 @@ export default function BestSpaceHeater() {
             {/* 1. Dyson Hot+Cool HP07 */}
             <section className="mb-14">
               <div className="border-l-4 border-yellow-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-yellow-300 bg-yellow-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Overall
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -552,7 +552,7 @@ export default function BestSpaceHeater() {
             {/* 2. De'Longhi TRD40615T */}
             <section className="mb-14">
               <div className="border-l-4 border-green-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-green-300 bg-green-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Oil-Filled Radiator
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -650,7 +650,7 @@ export default function BestSpaceHeater() {
             {/* 3. Lasko FH500 */}
             <section className="mb-14">
               <div className="border-l-4 border-blue-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-blue-300 bg-blue-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Budget
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -748,7 +748,7 @@ export default function BestSpaceHeater() {
             {/* 4. Vornado VH200 */}
             <section className="mb-14">
               <div className="border-l-4 border-purple-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-purple-300 bg-purple-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Compact
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -845,7 +845,7 @@ export default function BestSpaceHeater() {
             {/* 5. Dr Infrared DR-968 */}
             <section className="mb-14">
               <div className="border-l-4 border-orange-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-orange-700 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-orange-300 bg-orange-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best for Large Rooms
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -944,7 +944,7 @@ export default function BestSpaceHeater() {
             {/* 6. Dreo Solaris 317 */}
             <section className="mb-14">
               <div className="border-l-4 border-pink-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-pink-700 bg-pink-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-pink-300 bg-pink-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best for Bedrooms
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>

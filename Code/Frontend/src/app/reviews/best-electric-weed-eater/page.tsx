@@ -390,7 +390,7 @@ export default function BestElectricWeedEater() {
             {/* 1. EGO ST1623T */}
             <section className="mb-14">
               <div className="border-l-4 border-yellow-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-yellow-300 bg-yellow-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Overall
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -489,7 +489,7 @@ export default function BestElectricWeedEater() {
             {/* 2. Milwaukee M18 FUEL */}
             <section className="mb-14">
               <div className="border-l-4 border-red-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-red-700 bg-red-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-red-300 bg-red-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best for Professionals
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -585,7 +585,7 @@ export default function BestElectricWeedEater() {
             {/* 3. DeWalt 60V MAX */}
             <section className="mb-14">
               <div className="border-l-4 border-amber-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-amber-700 bg-amber-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-amber-300 bg-amber-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Most Powerful
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -683,7 +683,7 @@ export default function BestElectricWeedEater() {
             {/* 4. Greenworks 80V */}
             <section className="mb-14">
               <div className="border-l-4 border-green-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-green-300 bg-green-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Heavy-Duty
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -782,7 +782,7 @@ export default function BestElectricWeedEater() {
             {/* 5. Ryobi 40V Expand-It */}
             <section className="mb-14">
               <div className="border-l-4 border-blue-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-blue-300 bg-blue-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Attachment System
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -880,7 +880,7 @@ export default function BestElectricWeedEater() {
             {/* 6. BLACK+DECKER 20V MAX */}
             <section className="mb-14">
               <div className="border-l-4 border-orange-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-orange-700 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-orange-300 bg-orange-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Budget
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>

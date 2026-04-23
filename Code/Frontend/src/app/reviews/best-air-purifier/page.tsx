@@ -415,7 +415,7 @@ export default function BestAirPurifier() {
             {/* 1. Coway Airmega AP-1512HH */}
             <section className="mb-14">
               <div className="border-l-4 border-yellow-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-yellow-300 bg-yellow-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Overall
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -512,7 +512,7 @@ export default function BestAirPurifier() {
             {/* 2. Blueair Blue Pure 211+ */}
             <section className="mb-14">
               <div className="border-l-4 border-blue-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-blue-300 bg-blue-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best for Large Rooms
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -609,7 +609,7 @@ export default function BestAirPurifier() {
             {/* 3. Levoit Core 400S */}
             <section className="mb-14">
               <div className="border-l-4 border-purple-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-purple-300 bg-purple-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Smart Purifier
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -706,7 +706,7 @@ export default function BestAirPurifier() {
             {/* 4. Winix 5500-2 */}
             <section className="mb-14">
               <div className="border-l-4 border-green-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-green-300 bg-green-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Budget Pick
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -804,7 +804,7 @@ export default function BestAirPurifier() {
             {/* 5. Dyson Purifier Cool TP07 */}
             <section className="mb-14">
               <div className="border-l-4 border-indigo-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-indigo-700 bg-indigo-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-indigo-300 bg-indigo-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Premium
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -904,7 +904,7 @@ export default function BestAirPurifier() {
             {/* 6. Honeywell HPA300 */}
             <section className="mb-14">
               <div className="border-l-4 border-orange-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-orange-700 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-orange-300 bg-orange-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best for Allergies
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>

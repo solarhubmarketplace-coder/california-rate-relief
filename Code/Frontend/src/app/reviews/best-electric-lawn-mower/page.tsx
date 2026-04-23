@@ -265,7 +265,7 @@ export default function BestElectricLawnMower() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
+                  <span className="bg-yellow-400 text-yellow-200 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
                     Best Overall
                   </span>
                   <div>
@@ -279,7 +279,7 @@ export default function BestElectricLawnMower() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
+                  <span className="bg-green-500/15 text-green-300 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
                     Best for Tough Grass
                   </span>
                   <div>
@@ -293,7 +293,7 @@ export default function BestElectricLawnMower() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
+                  <span className="bg-blue-500/15 text-blue-300 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
                     Best Budget
                   </span>
                   <div>
@@ -367,7 +367,7 @@ export default function BestElectricLawnMower() {
               {/* === EGO Select Cut XP === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-yellow-400 text-yellow-200 text-xs font-bold px-3 py-1 rounded-full">
                     Best Overall
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -421,7 +421,7 @@ export default function BestElectricLawnMower() {
                   </div>
                   <div>
                     <div className="mb-4">
-                      <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -448,7 +448,7 @@ export default function BestElectricLawnMower() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
                         <X className="h-4 w-4" /> Cons
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -481,7 +481,7 @@ export default function BestElectricLawnMower() {
               {/* === EGO LM2114SP === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-purple-500/15 text-purple-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Mid-Range
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -527,7 +527,7 @@ export default function BestElectricLawnMower() {
                   </div>
                   <div>
                     <div className="mb-4">
-                      <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -550,7 +550,7 @@ export default function BestElectricLawnMower() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
                         <X className="h-4 w-4" /> Cons
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -583,7 +583,7 @@ export default function BestElectricLawnMower() {
               {/* === Greenworks 80V Pro === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-green-500/15 text-green-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best for Tough Grass
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -630,7 +630,7 @@ export default function BestElectricLawnMower() {
                   </div>
                   <div>
                     <div className="mb-4">
-                      <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -653,7 +653,7 @@ export default function BestElectricLawnMower() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
                         <X className="h-4 w-4" /> Cons
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -686,7 +686,7 @@ export default function BestElectricLawnMower() {
               {/* === Greenworks 80V Self-Propelled === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-teal-500/15 text-teal-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Value for Large Yards
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -733,7 +733,7 @@ export default function BestElectricLawnMower() {
                   </div>
                   <div>
                     <div className="mb-4">
-                      <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -756,7 +756,7 @@ export default function BestElectricLawnMower() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
                         <X className="h-4 w-4" /> Cons
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -789,7 +789,7 @@ export default function BestElectricLawnMower() {
               {/* === Ryobi 40V === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-blue-500/15 text-blue-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Budget
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -836,7 +836,7 @@ export default function BestElectricLawnMower() {
                   </div>
                   <div>
                     <div className="mb-4">
-                      <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -859,7 +859,7 @@ export default function BestElectricLawnMower() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
                         <X className="h-4 w-4" /> Cons
                       </h4>
                       <ul className="space-y-1.5 text-sm text-foreground/80">
@@ -911,7 +911,7 @@ export default function BestElectricLawnMower() {
                   <div className="flex items-center gap-3 mb-2">
                     <Battery className="h-5 w-5 text-primary" />
                     <h3 className="font-bold text-foreground">EGO 56V ARC Lithium</h3>
-                    <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full font-semibold">
+                    <span className="text-xs bg-yellow-500/15 text-yellow-300 px-2 py-0.5 rounded-full font-semibold">
                       Best All-Around
                     </span>
                   </div>
@@ -928,7 +928,7 @@ export default function BestElectricLawnMower() {
                   <div className="flex items-center gap-3 mb-2">
                     <Zap className="h-5 w-5 text-green-600" />
                     <h3 className="font-bold text-foreground">Greenworks 80V</h3>
-                    <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-semibold">
+                    <span className="text-xs bg-green-500/15 text-green-300 px-2 py-0.5 rounded-full font-semibold">
                       Most Powerful
                     </span>
                   </div>
@@ -945,7 +945,7 @@ export default function BestElectricLawnMower() {
                   <div className="flex items-center gap-3 mb-2">
                     <Shield className="h-5 w-5 text-blue-600" />
                     <h3 className="font-bold text-foreground">Ryobi 40V ONE+ HP</h3>
-                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full font-semibold">
+                    <span className="text-xs bg-blue-500/15 text-blue-300 px-2 py-0.5 rounded-full font-semibold">
                       Biggest Ecosystem
                     </span>
                   </div>
@@ -962,7 +962,7 @@ export default function BestElectricLawnMower() {
                   <div className="flex items-center gap-3 mb-2">
                     <Shield className="h-5 w-5 text-red-600" />
                     <h3 className="font-bold text-foreground">Milwaukee M18</h3>
-                    <span className="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded-full font-semibold">
+                    <span className="text-xs bg-red-500/15 text-red-300 px-2 py-0.5 rounded-full font-semibold">
                       Pro-Grade
                     </span>
                   </div>
@@ -978,7 +978,7 @@ export default function BestElectricLawnMower() {
                   <div className="flex items-center gap-3 mb-2">
                     <Zap className="h-5 w-5 text-yellow-600" />
                     <h3 className="font-bold text-foreground">DeWalt 60V MAX</h3>
-                    <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full font-semibold">
+                    <span className="text-xs bg-yellow-500/15 text-yellow-300 px-2 py-0.5 rounded-full font-semibold">
                       Contractor-Focused
                     </span>
                   </div>
@@ -1056,7 +1056,7 @@ export default function BestElectricLawnMower() {
                 </table>
               </div>
 
-              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+              <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <CheckCircle className="h-5 w-5 text-green-600" />
                   <h3 className="font-bold text-foreground">Bottom Line on Electric vs Gas</h3>
@@ -1084,7 +1084,7 @@ export default function BestElectricLawnMower() {
               <div className="space-y-4">
                 <div className="bg-card border border-border rounded-lg p-5">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
+                    <div className="bg-green-500/15 text-green-300 text-xs font-bold px-3 py-1 rounded-full">
                       Small Yard
                     </div>
                     <span className="text-sm text-foreground/60">Under 1/4 acre</span>
@@ -1101,7 +1101,7 @@ export default function BestElectricLawnMower() {
 
                 <div className="bg-card border border-border rounded-lg p-5">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
+                    <div className="bg-blue-500/15 text-blue-300 text-xs font-bold px-3 py-1 rounded-full">
                       Medium Yard
                     </div>
                     <span className="text-sm text-foreground/60">1/4 to 1/2 acre</span>
@@ -1118,7 +1118,7 @@ export default function BestElectricLawnMower() {
 
                 <div className="bg-card border border-border rounded-lg p-5">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">
+                    <div className="bg-purple-500/15 text-purple-300 text-xs font-bold px-3 py-1 rounded-full">
                       Large Yard
                     </div>
                     <span className="text-sm text-foreground/60">1/2 to 3/4 acre</span>
@@ -1135,7 +1135,7 @@ export default function BestElectricLawnMower() {
 
                 <div className="bg-card border border-border rounded-lg p-5">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">
+                    <div className="bg-orange-500/15 text-orange-300 text-xs font-bold px-3 py-1 rounded-full">
                       Extra Large Yard
                     </div>
                     <span className="text-sm text-foreground/60">3/4 acre to 1 acre</span>

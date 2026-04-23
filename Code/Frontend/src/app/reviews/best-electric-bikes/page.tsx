@@ -347,7 +347,7 @@ export default function BestElectricBikes() {
               <div className="overflow-x-auto -mx-4 px-4">
                 <table className="w-full min-w-[800px] border-collapse text-sm">
                   <thead>
-                    <tr className="bg-slate-100">
+                    <tr className="bg-slate-500/15">
                       <th className="text-left p-3 font-semibold text-foreground border-b-2 border-border">Spec</th>
                       {bikes.map((b) => (
                         <th key={b.name} className="text-left p-3 font-semibold text-foreground border-b-2 border-border">
@@ -360,43 +360,43 @@ export default function BestElectricBikes() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-slate-100">
+                    <tr className="border-b border-slate-500/20">
                       <td className="p-3 font-medium text-foreground">Price</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.price}</td>
                       ))}
                     </tr>
-                    <tr className="border-b border-slate-100 bg-card">
+                    <tr className="border-b border-slate-500/20 bg-card">
                       <td className="p-3 font-medium text-foreground">Motor</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.motor}</td>
                       ))}
                     </tr>
-                    <tr className="border-b border-slate-100">
+                    <tr className="border-b border-slate-500/20">
                       <td className="p-3 font-medium text-foreground">Battery</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.battery}</td>
                       ))}
                     </tr>
-                    <tr className="border-b border-slate-100 bg-card">
+                    <tr className="border-b border-slate-500/20 bg-card">
                       <td className="p-3 font-medium text-foreground">Range</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.range}</td>
                       ))}
                     </tr>
-                    <tr className="border-b border-slate-100">
+                    <tr className="border-b border-slate-500/20">
                       <td className="p-3 font-medium text-foreground">Top Speed</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.topSpeed}</td>
                       ))}
                     </tr>
-                    <tr className="border-b border-slate-100 bg-card">
+                    <tr className="border-b border-slate-500/20 bg-card">
                       <td className="p-3 font-medium text-foreground">Tires</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.tires}</td>
                       ))}
                     </tr>
-                    <tr className="border-b border-slate-100">
+                    <tr className="border-b border-slate-500/20">
                       <td className="p-3 font-medium text-foreground">Weight</td>
                       {bikes.map((b) => (
                         <td key={b.name} className="p-3 text-foreground">{b.weight}</td>
@@ -412,10 +412,10 @@ export default function BestElectricBikes() {
             {/* 1. Aventon Aventure 3 */}
             <section className="mb-16">
               <div className="border border-border rounded-xl overflow-hidden">
-                <div className="bg-yellow-50 border-b border-yellow-200 p-6">
+                <div className="bg-yellow-500/10 border-b border-yellow-500/30 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
-                      <span className="text-xs font-semibold text-yellow-700 bg-yellow-200 px-3 py-1 rounded-full uppercase">
+                      <span className="text-xs font-semibold text-yellow-300 bg-yellow-500/20 px-3 py-1 rounded-full uppercase">
                         Best Fat Tire E-Bike
                       </span>
                       <h3 className="text-2xl font-bold text-foreground mt-2">Aventon Aventure 3</h3>
@@ -469,11 +469,11 @@ export default function BestElectricBikes() {
 
                   {/* Pros/Cons */}
                   <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-1">
+                    <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-1">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
-                      <ul className="space-y-1 text-sm text-green-900">
+                      <ul className="space-y-1 text-sm text-green-200">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> 65-mile range — best in class for fat-tire bikes</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> 4G/GPS tracking with anti-theft geofencing</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Class 3 speed (28 mph) for faster commuting</li>
@@ -481,11 +481,11 @@ export default function BestElectricBikes() {
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Dual suspension for comfortable all-terrain riding</li>
                       </ul>
                     </div>
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-1">
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-1">
                         <X className="h-4 w-4" /> Cons
                       </h4>
-                      <ul className="space-y-1 text-sm text-red-900">
+                      <ul className="space-y-1 text-sm text-red-200">
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Heavy at ~73 lbs — not easy to carry upstairs</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Non-folding frame limits storage options</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> 4G connectivity requires app setup</li>
@@ -516,7 +516,7 @@ export default function BestElectricBikes() {
                 <div className="bg-card border-b border-border p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
-                      <span className="text-xs font-semibold text-blue-700 bg-blue-200 px-3 py-1 rounded-full uppercase">
+                      <span className="text-xs font-semibold text-blue-300 bg-blue-500/20 px-3 py-1 rounded-full uppercase">
                         Best for Beginners
                       </span>
                       <h3 className="text-2xl font-bold text-foreground mt-2">Rad Power Bikes RadRover 6 Plus</h3>
@@ -566,11 +566,11 @@ export default function BestElectricBikes() {
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-1">
+                    <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-1">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
-                      <ul className="space-y-1 text-sm text-green-900">
+                      <ul className="space-y-1 text-sm text-green-200">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Outstanding customer support and warranty</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Step-through frame option for easy mounting</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Intuitive controls — great for first-time riders</li>
@@ -578,11 +578,11 @@ export default function BestElectricBikes() {
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Huge accessories ecosystem (racks, bags, child seats)</li>
                       </ul>
                     </div>
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-1">
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-1">
                         <X className="h-4 w-4" /> Cons
                       </h4>
-                      <ul className="space-y-1 text-sm text-red-900">
+                      <ul className="space-y-1 text-sm text-red-200">
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Class 2 only — capped at 20 mph</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Shorter range (25-45 mi) vs. competitors</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> No GPS/connected features</li>
@@ -611,10 +611,10 @@ export default function BestElectricBikes() {
             {/* 3. Rad Power RadExpand 5 Plus */}
             <section className="mb-16">
               <div className="border border-border rounded-xl overflow-hidden">
-                <div className="bg-purple-50 border-b border-purple-200 p-6">
+                <div className="bg-purple-500/10 border-b border-purple-500/30 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
-                      <span className="text-xs font-semibold text-purple-700 bg-purple-200 px-3 py-1 rounded-full uppercase">
+                      <span className="text-xs font-semibold text-purple-300 bg-purple-500/20 px-3 py-1 rounded-full uppercase">
                         Best Folding E-Bike
                       </span>
                       <h3 className="text-2xl font-bold text-foreground mt-2">Rad Power Bikes RadExpand 5 Plus</h3>
@@ -664,22 +664,22 @@ export default function BestElectricBikes() {
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-1">
+                    <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-1">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
-                      <ul className="space-y-1 text-sm text-green-900">
+                      <ul className="space-y-1 text-sm text-green-200">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Folds compactly for car/RV/apartment storage</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Full 750W motor — no power sacrifice for portability</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Fat tires + suspension fork for comfort</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Integrated Safe Shield battery design</li>
                       </ul>
                     </div>
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-1">
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-1">
                         <X className="h-4 w-4" /> Cons
                       </h4>
-                      <ul className="space-y-1 text-sm text-red-900">
+                      <ul className="space-y-1 text-sm text-red-200">
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Still ~68 lbs even when folded — heavy to lift</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> 20&quot; wheels feel less stable at speed than 26&quot;</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Premium price for a folding bike</li>
@@ -707,10 +707,10 @@ export default function BestElectricBikes() {
             {/* 4. Lectric XP 3.0 */}
             <section className="mb-16">
               <div className="border border-border rounded-xl overflow-hidden">
-                <div className="bg-green-50 border-b border-green-200 p-6">
+                <div className="bg-green-500/10 border-b border-green-500/30 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
-                      <span className="text-xs font-semibold text-green-700 bg-green-200 px-3 py-1 rounded-full uppercase">
+                      <span className="text-xs font-semibold text-green-300 bg-green-500/20 px-3 py-1 rounded-full uppercase">
                         Best Value E-Bike
                       </span>
                       <h3 className="text-2xl font-bold text-foreground mt-2">Lectric XP 3.0</h3>
@@ -760,11 +760,11 @@ export default function BestElectricBikes() {
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-1">
+                    <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-1">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
-                      <ul className="space-y-1 text-sm text-green-900">
+                      <ul className="space-y-1 text-sm text-green-200">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Unbeatable price-to-performance ratio</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Folding frame fits in any car trunk</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> 60+ mile range eliminates range anxiety</li>
@@ -772,11 +772,11 @@ export default function BestElectricBikes() {
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Can carry a passenger with accessories</li>
                       </ul>
                     </div>
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-1">
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-1">
                         <X className="h-4 w-4" /> Cons
                       </h4>
-                      <ul className="space-y-1 text-sm text-red-900">
+                      <ul className="space-y-1 text-sm text-red-200">
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> 20&quot; wheels feel less smooth over bumps</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Build quality is good but not premium</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Heavier than non-folding bikes at ~64 lbs</li>
@@ -804,10 +804,10 @@ export default function BestElectricBikes() {
             {/* 5. Aventon Soltera.2 */}
             <section className="mb-16">
               <div className="border border-border rounded-xl overflow-hidden">
-                <div className="bg-sky-50 border-b border-sky-200 p-6">
+                <div className="bg-sky-500/10 border-b border-sky-500/30 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
-                      <span className="text-xs font-semibold text-sky-700 bg-sky-200 px-3 py-1 rounded-full uppercase">
+                      <span className="text-xs font-semibold text-sky-300 bg-sky-500/20 px-3 py-1 rounded-full uppercase">
                         Best City Commuter
                       </span>
                       <h3 className="text-2xl font-bold text-foreground mt-2">Aventon Soltera.2</h3>
@@ -858,22 +858,22 @@ export default function BestElectricBikes() {
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-1">
+                    <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-1">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
-                      <ul className="space-y-1 text-sm text-green-900">
+                      <ul className="space-y-1 text-sm text-green-200">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Lightweight at ~44 lbs — easy to carry and lock up</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Sleek, traditional bike aesthetics</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Fast-rolling narrow tires for efficient commuting</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Premium build quality and fabrication</li>
                       </ul>
                     </div>
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-1">
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-1">
                         <X className="h-4 w-4" /> Cons
                       </h4>
-                      <ul className="space-y-1 text-sm text-red-900">
+                      <ul className="space-y-1 text-sm text-red-200">
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Not suitable for off-road or rough terrain</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Smaller battery limits max range</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> No suspension — road vibrations transfer to rider</li>
@@ -902,10 +902,10 @@ export default function BestElectricBikes() {
             {/* 6. Lectric XP Lite 2.0 */}
             <section className="mb-16">
               <div className="border border-border rounded-xl overflow-hidden">
-                <div className="bg-orange-50 border-b border-orange-200 p-6">
+                <div className="bg-orange-500/10 border-b border-orange-500/30 p-6">
                   <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
-                      <span className="text-xs font-semibold text-orange-700 bg-orange-200 px-3 py-1 rounded-full uppercase">
+                      <span className="text-xs font-semibold text-orange-300 bg-orange-500/20 px-3 py-1 rounded-full uppercase">
                         Best Budget E-Bike
                       </span>
                       <h3 className="text-2xl font-bold text-foreground mt-2">Lectric XP Lite 2.0</h3>
@@ -956,22 +956,22 @@ export default function BestElectricBikes() {
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-1">
+                    <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-1">
                         <Check className="h-4 w-4" /> Pros
                       </h4>
-                      <ul className="space-y-1 text-sm text-green-900">
+                      <ul className="space-y-1 text-sm text-green-200">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Incredible price point at $799</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Light at ~46 lbs — easy to carry upstairs</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Folding frame + throttle — full Class 2 features</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Perfect gateway e-bike for skeptics</li>
                       </ul>
                     </div>
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-1">
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-1">
                         <X className="h-4 w-4" /> Cons
                       </h4>
-                      <ul className="space-y-1 text-sm text-red-900">
+                      <ul className="space-y-1 text-sm text-red-200">
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> 300W motor struggles on steep hills</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Shorter range (25-40 mi) than pricier options</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Narrow 2.4&quot; tires less stable on loose surfaces</li>
@@ -1109,22 +1109,22 @@ export default function BestElectricBikes() {
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-card border border-border rounded-lg p-4">
-                      <div className="font-semibold text-blue-900 mb-1">Class 1</div>
-                      <p className="text-sm text-blue-800">
+                      <div className="font-semibold text-blue-200 mb-1">Class 1</div>
+                      <p className="text-sm text-blue-300">
                         Pedal-assist only, up to 20 mph. No throttle. Allowed on most bike paths
                         and trails. The most universally accepted class.
                       </p>
                     </div>
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <div className="font-semibold text-green-900 mb-1">Class 2</div>
-                      <p className="text-sm text-green-800">
+                    <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                      <div className="font-semibold text-green-200 mb-1">Class 2</div>
+                      <p className="text-sm text-green-300">
                         Pedal-assist + throttle, up to 20 mph. Throttle lets you ride without
                         pedaling. Allowed on most bike paths. Most popular class for casual riders.
                       </p>
                     </div>
-                    <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-                      <div className="font-semibold text-orange-900 mb-1">Class 3</div>
-                      <p className="text-sm text-orange-800">
+                    <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+                      <div className="font-semibold text-orange-200 mb-1">Class 3</div>
+                      <p className="text-sm text-orange-300">
                         Pedal-assist up to 28 mph. Often restricted from bike paths — limited to
                         roads and bike lanes. Best for longer commutes where speed matters.
                       </p>
@@ -1182,7 +1182,7 @@ export default function BestElectricBikes() {
                   essentially zero and your carbon footprint follows.
                 </p>
 
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-6">
+                <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-6 mb-6">
                   <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <DollarSign className="h-5 w-5 text-green-600" />
                     Cost Savings: E-Bike vs. Car
@@ -1196,7 +1196,7 @@ export default function BestElectricBikes() {
                         <li>Maintenance: $800-$1,200</li>
                         <li>Parking: $600-$2,400</li>
                         <li>Car payment: $4,000-$7,200</li>
-                        <li className="font-semibold text-foreground pt-1 border-t border-green-200">
+                        <li className="font-semibold text-foreground pt-1 border-t border-green-500/30">
                           Total: $8,900-$16,800/year
                         </li>
                       </ul>
@@ -1209,13 +1209,13 @@ export default function BestElectricBikes() {
                         <li>Maintenance: $100-$200</li>
                         <li>Parking: $0</li>
                         <li>E-bike cost amortized: $200-$400/year</li>
-                        <li className="font-semibold text-foreground pt-1 border-t border-green-200">
+                        <li className="font-semibold text-foreground pt-1 border-t border-green-500/30">
                           Total: $320-$650/year
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <p className="text-sm text-green-900 mt-4 font-medium">
+                  <p className="text-sm text-green-200 mt-4 font-medium">
                     Potential savings: $8,000-$16,000+ per year by replacing car trips with e-bike
                     trips. Even replacing just 50% of short car trips can save $4,000-$8,000
                     annually.

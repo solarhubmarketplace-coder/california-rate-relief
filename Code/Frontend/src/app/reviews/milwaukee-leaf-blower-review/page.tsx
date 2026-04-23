@@ -730,8 +730,8 @@ export default function MilwaukeeLeafBlowerReview() {
                 Pros and Cons
               </h2>
               <div className='grid md:grid-cols-2 gap-6 mb-8'>
-                <div className='bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-xl p-5'>
-                  <h3 className='font-semibold text-green-800 dark:text-green-400 mb-3'>
+                <div className='bg-green-500/10 dark:bg-green-950/20 border border-green-500/30 dark:border-green-800 rounded-xl p-5'>
+                  <h3 className='font-semibold text-green-300 dark:text-green-400 mb-3'>
                     Pros
                   </h3>
                   <ul className='space-y-2 text-sm text-foreground/80'>
@@ -767,8 +767,8 @@ export default function MilwaukeeLeafBlowerReview() {
                     </li>
                   </ul>
                 </div>
-                <div className='bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-xl p-5'>
-                  <h3 className='font-semibold text-red-800 dark:text-red-400 mb-3'>
+                <div className='bg-red-500/10 dark:bg-red-950/20 border border-red-500/30 dark:border-red-800 rounded-xl p-5'>
+                  <h3 className='font-semibold text-red-300 dark:text-red-400 mb-3'>
                     Cons
                   </h3>
                   <ul className='space-y-2 text-sm text-foreground/80'>

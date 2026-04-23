@@ -277,7 +277,7 @@ export default function BestWholeHouseGenerator() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded mt-0.5">
+                  <span className="bg-yellow-400 text-yellow-200 text-xs font-bold px-2 py-1 rounded mt-0.5">
                     BEST OVERALL
                   </span>
                   <div>
@@ -292,7 +292,7 @@ export default function BestWholeHouseGenerator() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded mt-0.5">
+                  <span className="bg-green-500/15 text-green-300 text-xs font-bold px-2 py-1 rounded mt-0.5">
                     BEST VALUE
                   </span>
                   <div>
@@ -307,7 +307,7 @@ export default function BestWholeHouseGenerator() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded mt-0.5">
+                  <span className="bg-purple-500/15 text-purple-300 text-xs font-bold px-2 py-1 rounded mt-0.5">
                     BEST BUDGET
                   </span>
                   <div>
@@ -366,7 +366,7 @@ export default function BestWholeHouseGenerator() {
             {/* ========== DETAILED REVIEW: Generac 24kW ========== */}
             <section className="mb-16">
               <div className="border-l-4 border-yellow-400 pl-6">
-                <span className="text-xs font-bold text-yellow-600 bg-yellow-50 px-2 py-1 rounded uppercase">
+                <span className="text-xs font-bold text-yellow-600 bg-yellow-500/10 px-2 py-1 rounded uppercase">
                   Best Overall
                 </span>
                 <h2 className="text-2xl font-bold text-foreground mt-3 mb-2">
@@ -417,8 +417,8 @@ export default function BestWholeHouseGenerator() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
+                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-green-300 mb-3 flex items-center gap-2">
                     <CheckCircle className="h-4 w-4" />
                     Pros
                   </h4>
@@ -431,15 +431,15 @@ export default function BestWholeHouseGenerator() {
                       '75% market share = huge dealer/service network',
                       'Dual fuel: natural gas or propane',
                     ].map((pro) => (
-                      <li key={pro} className="flex items-start gap-2 text-sm text-green-900">
+                      <li key={pro} className="flex items-start gap-2 text-sm text-green-200">
                         <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
                         {pro}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="bg-red-50 border border-red-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-red-800 mb-3 flex items-center gap-2">
+                <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-red-300 mb-3 flex items-center gap-2">
                     <XCircle className="h-4 w-4" />
                     Cons
                   </h4>
@@ -451,7 +451,7 @@ export default function BestWholeHouseGenerator() {
                       'Requires regular maintenance (oil changes, filter replacement)',
                       'Natural gas output drops to 21kW (may matter for very large homes)',
                     ].map((con) => (
-                      <li key={con} className="flex items-start gap-2 text-sm text-red-900">
+                      <li key={con} className="flex items-start gap-2 text-sm text-red-200">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
                         {con}
                       </li>
@@ -474,7 +474,7 @@ export default function BestWholeHouseGenerator() {
             {/* ========== DETAILED REVIEW: Generac 22kW ========== */}
             <section className="mb-16">
               <div className="border-l-4 border-green-400 pl-6">
-                <span className="text-xs font-bold text-green-700 bg-green-50 px-2 py-1 rounded uppercase">
+                <span className="text-xs font-bold text-green-300 bg-green-500/10 px-2 py-1 rounded uppercase">
                   Best Value
                 </span>
                 <h2 className="text-2xl font-bold text-foreground mt-3 mb-2">
@@ -522,8 +522,8 @@ export default function BestWholeHouseGenerator() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
+                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-green-300 mb-3 flex items-center gap-2">
                     <CheckCircle className="h-4 w-4" />
                     Pros
                   </h4>
@@ -535,15 +535,15 @@ export default function BestWholeHouseGenerator() {
                       'Massive dealer and service network',
                       '$2,000-$4,000 cheaper installed than the 24kW',
                     ].map((pro) => (
-                      <li key={pro} className="flex items-start gap-2 text-sm text-green-900">
+                      <li key={pro} className="flex items-start gap-2 text-sm text-green-200">
                         <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
                         {pro}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="bg-red-50 border border-red-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-red-800 mb-3 flex items-center gap-2">
+                <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-red-300 mb-3 flex items-center gap-2">
                     <XCircle className="h-4 w-4" />
                     Cons
                   </h4>
@@ -554,7 +554,7 @@ export default function BestWholeHouseGenerator() {
                       'Same 67 dB noise level as the 24kW',
                       'Still requires $3,000-$5,000 professional installation',
                     ].map((con) => (
-                      <li key={con} className="flex items-start gap-2 text-sm text-red-900">
+                      <li key={con} className="flex items-start gap-2 text-sm text-red-200">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
                         {con}
                       </li>
@@ -577,7 +577,7 @@ export default function BestWholeHouseGenerator() {
             {/* ========== DETAILED REVIEW: Generac 26kW ========== */}
             <section className="mb-16">
               <div className="border-l-4 border-blue-400 pl-6">
-                <span className="text-xs font-bold text-blue-700 bg-card px-2 py-1 rounded uppercase">
+                <span className="text-xs font-bold text-blue-300 bg-card px-2 py-1 rounded uppercase">
                   Best for Large Homes
                 </span>
                 <h2 className="text-2xl font-bold text-foreground mt-3 mb-2">
@@ -620,8 +620,8 @@ export default function BestWholeHouseGenerator() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
+                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-green-300 mb-3 flex items-center gap-2">
                     <CheckCircle className="h-4 w-4" />
                     Pros
                   </h4>
@@ -632,15 +632,15 @@ export default function BestWholeHouseGenerator() {
                       'Future-proof: handles EV chargers, pool pumps, workshops',
                       'Same trusted Generac platform and dealer network',
                     ].map((pro) => (
-                      <li key={pro} className="flex items-start gap-2 text-sm text-green-900">
+                      <li key={pro} className="flex items-start gap-2 text-sm text-green-200">
                         <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
                         {pro}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="bg-red-50 border border-red-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-red-800 mb-3 flex items-center gap-2">
+                <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-red-300 mb-3 flex items-center gap-2">
                     <XCircle className="h-4 w-4" />
                     Cons
                   </h4>
@@ -651,7 +651,7 @@ export default function BestWholeHouseGenerator() {
                       'Larger physical footprint — needs more clearance',
                       'Higher fuel consumption during operation',
                     ].map((con) => (
-                      <li key={con} className="flex items-start gap-2 text-sm text-red-900">
+                      <li key={con} className="flex items-start gap-2 text-sm text-red-200">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
                         {con}
                       </li>
@@ -674,7 +674,7 @@ export default function BestWholeHouseGenerator() {
             {/* ========== DETAILED REVIEW: Kohler 24kW ========== */}
             <section className="mb-16">
               <div className="border-l-4 border-purple-400 pl-6">
-                <span className="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-1 rounded uppercase">
+                <span className="text-xs font-bold text-purple-300 bg-purple-500/10 px-2 py-1 rounded uppercase">
                   Best Premium
                 </span>
                 <h2 className="text-2xl font-bold text-foreground mt-3 mb-2">
@@ -720,8 +720,8 @@ export default function BestWholeHouseGenerator() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
+                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-green-300 mb-3 flex items-center gap-2">
                     <CheckCircle className="h-4 w-4" />
                     Pros
                   </h4>
@@ -732,15 +732,15 @@ export default function BestWholeHouseGenerator() {
                       'PowerBoost handles motor startup surges gracefully',
                       'Strong reputation in commercial and industrial power',
                     ].map((pro) => (
-                      <li key={pro} className="flex items-start gap-2 text-sm text-green-900">
+                      <li key={pro} className="flex items-start gap-2 text-sm text-green-200">
                         <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
                         {pro}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="bg-red-50 border border-red-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-red-800 mb-3 flex items-center gap-2">
+                <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-red-300 mb-3 flex items-center gap-2">
                     <XCircle className="h-4 w-4" />
                     Cons
                   </h4>
@@ -751,7 +751,7 @@ export default function BestWholeHouseGenerator() {
                       'Smaller dealer network than Generac',
                       'Parts and service may be harder to find in some areas',
                     ].map((con) => (
-                      <li key={con} className="flex items-start gap-2 text-sm text-red-900">
+                      <li key={con} className="flex items-start gap-2 text-sm text-red-200">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
                         {con}
                       </li>
@@ -774,7 +774,7 @@ export default function BestWholeHouseGenerator() {
             {/* ========== DETAILED REVIEW: Champion 14kW ========== */}
             <section className="mb-16">
               <div className="border-l-4 border-orange-400 pl-6">
-                <span className="text-xs font-bold text-orange-700 bg-orange-50 px-2 py-1 rounded uppercase">
+                <span className="text-xs font-bold text-orange-300 bg-orange-500/10 px-2 py-1 rounded uppercase">
                   Best Budget
                 </span>
                 <h2 className="text-2xl font-bold text-foreground mt-3 mb-2">
@@ -819,8 +819,8 @@ export default function BestWholeHouseGenerator() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
+                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-green-300 mb-3 flex items-center gap-2">
                     <CheckCircle className="h-4 w-4" />
                     Pros
                   </h4>
@@ -832,15 +832,15 @@ export default function BestWholeHouseGenerator() {
                       'Dual fuel: natural gas or propane',
                       'Total installed cost can be under $7,000',
                     ].map((pro) => (
-                      <li key={pro} className="flex items-start gap-2 text-sm text-green-900">
+                      <li key={pro} className="flex items-start gap-2 text-sm text-green-200">
                         <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
                         {pro}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="bg-red-50 border border-red-200 rounded-lg p-5">
-                  <h4 className="font-semibold text-red-800 mb-3 flex items-center gap-2">
+                <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-5">
+                  <h4 className="font-semibold text-red-300 mb-3 flex items-center gap-2">
                     <XCircle className="h-4 w-4" />
                     Cons
                   </h4>
@@ -852,7 +852,7 @@ export default function BestWholeHouseGenerator() {
                       'No WiFi monitoring standard (available as add-on)',
                       'Transfer switch may need to be purchased separately',
                     ].map((con) => (
-                      <li key={con} className="flex items-start gap-2 text-sm text-red-900">
+                      <li key={con} className="flex items-start gap-2 text-sm text-red-200">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
                         {con}
                       </li>
@@ -945,8 +945,8 @@ export default function BestWholeHouseGenerator() {
                 </table>
               </div>
 
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-5">
-                <p className="text-sm text-yellow-900">
+              <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-5">
+                <p className="text-sm text-yellow-200">
                   <strong>Pro tip:</strong> Add up the running watts of everything you want to power
                   simultaneously, then add 20% headroom for startup surges. That total is your minimum
                   generator size. A licensed electrician can do a full load calculation during the
@@ -1087,7 +1087,7 @@ export default function BestWholeHouseGenerator() {
               </ul>
 
               <div className="bg-card border border-border rounded-lg p-5">
-                <p className="text-sm text-blue-900">
+                <p className="text-sm text-blue-200">
                   <strong>California note:</strong> Most California cities and counties require a
                   building permit for standby generator installation. The permit process typically
                   takes 1-3 weeks and the cost is included in the installation estimate. Your installer

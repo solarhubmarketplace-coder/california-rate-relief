@@ -473,7 +473,7 @@ export default function BestDehumidifier() {
             {/* 1. Frigidaire FFAD5033W1 */}
             <section className="mb-14">
               <div className="border-l-4 border-yellow-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-yellow-300 bg-yellow-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Overall
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -571,7 +571,7 @@ export default function BestDehumidifier() {
             {/* 2. hOmeLabs HME020031N */}
             <section className="mb-14">
               <div className="border-l-4 border-green-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-green-300 bg-green-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Budget
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -668,7 +668,7 @@ export default function BestDehumidifier() {
             {/* 3. GE ADEW50LW */}
             <section className="mb-14">
               <div className="border-l-4 border-blue-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-blue-300 bg-blue-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Smart Features
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -766,7 +766,7 @@ export default function BestDehumidifier() {
             {/* 4. LG PuriCare UD501KOG5 */}
             <section className="mb-14">
               <div className="border-l-4 border-purple-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-purple-300 bg-purple-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Quietest
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -864,7 +864,7 @@ export default function BestDehumidifier() {
             {/* 5. Midea MAD50S1QWT */}
             <section className="mb-14">
               <div className="border-l-4 border-orange-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-orange-700 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-orange-300 bg-orange-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best for Basements
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -960,7 +960,7 @@ export default function BestDehumidifier() {
             {/* 6. Tosot 50-Pint */}
             <section className="mb-14">
               <div className="border-l-4 border-teal-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-teal-700 bg-teal-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-teal-300 bg-teal-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Compact
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>

@@ -393,7 +393,7 @@ export default function BestPortablePowerStations() {
             {/* 1. EcoFlow Delta Pro 3 */}
             <section className="mb-14">
               <div className="border-l-4 border-yellow-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-yellow-300 bg-yellow-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Overall
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -489,7 +489,7 @@ export default function BestPortablePowerStations() {
             {/* 2. Anker SOLIX F3800 */}
             <section className="mb-14">
               <div className="border-l-4 border-green-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-green-300 bg-green-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Value for Capacity
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -587,7 +587,7 @@ export default function BestPortablePowerStations() {
             {/* 3. Bluetti AC500 + B300S */}
             <section className="mb-14">
               <div className="border-l-4 border-blue-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-blue-300 bg-blue-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Most Modular
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -687,7 +687,7 @@ export default function BestPortablePowerStations() {
             {/* 4. Jackery Explorer 2000 Plus */}
             <section className="mb-14">
               <div className="border-l-4 border-orange-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-orange-700 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-orange-300 bg-orange-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Most Portable
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -783,7 +783,7 @@ export default function BestPortablePowerStations() {
             {/* 5. EcoFlow Delta Pro Ultra */}
             <section className="mb-14">
               <div className="border-l-4 border-purple-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-purple-300 bg-purple-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Premium / Whole Home
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -883,7 +883,7 @@ export default function BestPortablePowerStations() {
             {/* 6. Tesla Powerwall 3 */}
             <section className="mb-14">
               <div className="border-l-4 border-slate-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-slate-300 bg-slate-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Permanent Installation
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>

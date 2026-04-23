@@ -1124,8 +1124,8 @@ export default function ReviewsPage() {
                       <span
                         className={`text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide ${
                           review.badge === 'Comparison Guide'
-                            ? 'bg-blue-100 text-blue-700'
-                            : 'bg-green-100 text-green-700'
+                            ? 'bg-blue-500/15 text-blue-300'
+                            : 'bg-green-500/15 text-green-300'
                         }`}
                       >
                         {review.badge}

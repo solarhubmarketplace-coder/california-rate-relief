@@ -394,7 +394,7 @@ export default function BestHeatPumpWaterHeaters() {
             {/* 1. Rheem ProTerra */}
             <section className="mb-14">
               <div className="border-l-4 border-yellow-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-yellow-300 bg-yellow-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Overall
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -484,7 +484,7 @@ export default function BestHeatPumpWaterHeaters() {
             {/* 2. A.O. Smith Voltex */}
             <section className="mb-14">
               <div className="border-l-4 border-gray-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-gray-700 bg-gray-200 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-gray-300 bg-gray-500/20 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Value
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -573,7 +573,7 @@ export default function BestHeatPumpWaterHeaters() {
             {/* 3. GE GeoSpring */}
             <section className="mb-14">
               <div className="border-l-4 border-blue-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-blue-300 bg-blue-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Budget
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -662,7 +662,7 @@ export default function BestHeatPumpWaterHeaters() {
             {/* 4. Bradford White AeroTherm */}
             <section className="mb-14">
               <div className="border-l-4 border-purple-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-purple-300 bg-purple-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best for Pros
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -751,7 +751,7 @@ export default function BestHeatPumpWaterHeaters() {
             {/* 5. Stiebel Eltron Accelera 300 */}
             <section className="mb-14">
               <div className="border-l-4 border-cyan-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-cyan-700 bg-cyan-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-cyan-300 bg-cyan-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best for Cold Climates
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -842,7 +842,7 @@ export default function BestHeatPumpWaterHeaters() {
             {/* 6. State Premier */}
             <section className="mb-14">
               <div className="border-l-4 border-orange-400 pl-6 mb-6">
-                <span className="text-xs font-semibold text-orange-700 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-orange-300 bg-orange-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Availability
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>

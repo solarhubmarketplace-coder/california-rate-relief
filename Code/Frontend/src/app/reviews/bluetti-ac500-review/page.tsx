@@ -642,8 +642,8 @@ export default function BluettiAC500Review() {
                 Pros and Cons
               </h2>
               <div className='grid md:grid-cols-2 gap-6 mb-8'>
-                <div className='bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg p-5'>
-                  <h3 className='font-bold text-green-800 dark:text-green-300 mb-3 flex items-center gap-2'>
+                <div className='bg-green-500/10 dark:bg-green-950/30 border border-green-500/30 dark:border-green-800 rounded-lg p-5'>
+                  <h3 className='font-bold text-green-300 dark:text-green-300 mb-3 flex items-center gap-2'>
                     <CheckCircle className='h-5 w-5' />
                     Pros
                   </h3>
@@ -677,8 +677,8 @@ export default function BluettiAC500Review() {
                     </li>
                   </ul>
                 </div>
-                <div className='bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-lg p-5'>
-                  <h3 className='font-bold text-red-800 dark:text-red-300 mb-3 flex items-center gap-2'>
+                <div className='bg-red-500/10 dark:bg-red-950/30 border border-red-500/30 dark:border-red-800 rounded-lg p-5'>
+                  <h3 className='font-bold text-red-300 dark:text-red-300 mb-3 flex items-center gap-2'>
                     <XCircle className='h-5 w-5' />
                     Cons
                   </h3>

@@ -223,11 +223,11 @@ export default function BestMiniSplitACPage() {
             {/* ========== HEADER ========== */}
             <header className="mb-10">
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
+                <span className="inline-flex items-center gap-1 bg-blue-500/15 text-blue-300 text-xs font-medium px-2.5 py-1 rounded-full">
                   <Star className="h-3 w-3" />
                   Comparison Guide
                 </span>
-                <span className="inline-flex items-center gap-1 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">
+                <span className="inline-flex items-center gap-1 bg-green-500/15 text-green-300 text-xs font-medium px-2.5 py-1 rounded-full">
                   <Shield className="h-3 w-3" />
                   Independently Reviewed
                 </span>
@@ -319,7 +319,7 @@ export default function BestMiniSplitACPage() {
               </p>
               <div className="bg-card border border-border rounded-lg p-4 mb-4">
                 <p className="text-foreground/80 text-sm leading-relaxed">
-                  <strong className="text-amber-800">The math:</strong> With PG&amp;E peak TOU rates
+                  <strong className="text-amber-300">The math:</strong> With PG&amp;E peak TOU rates
                   at $0.40-$0.48/kWh, those 783 saved kWh equal <strong>$313-$376 in annual
                   cooling savings alone</strong>. Add heating season savings and the total can
                   reach up to 26% off your energy bill.
@@ -342,7 +342,7 @@ export default function BestMiniSplitACPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-border rounded-lg overflow-hidden">
                   <thead>
-                    <tr className="bg-slate-100">
+                    <tr className="bg-slate-500/15">
                       <th className="text-left p-3 font-semibold text-foreground">Spec</th>
                       {models.map((m) => (
                         <th key={m.name} className="text-left p-3 font-semibold text-foreground">
@@ -528,7 +528,7 @@ export default function BestMiniSplitACPage() {
             {/* ========== DETAILED REVIEW: DIY 5TH GEN ========== */}
             <section id="mrcool-diy-5th-gen" className="mb-10 scroll-mt-20">
               <div className="border border-border rounded-xl overflow-hidden">
-                <div className="bg-green-50 border-b border-border p-6">
+                <div className="bg-green-500/10 border-b border-border p-6">
                   <div className="flex items-start justify-between flex-wrap gap-3">
                     <div>
                       <span className="inline-block bg-green-600 text-white text-xs font-bold px-2.5 py-1 rounded-full mb-2">
@@ -643,7 +643,7 @@ export default function BestMiniSplitACPage() {
             {/* ========== DETAILED REVIEW: EASY PRO ========== */}
             <section id="mrcool-easy-pro" className="mb-10 scroll-mt-20">
               <div className="border border-border rounded-xl overflow-hidden">
-                <div className="bg-purple-50 border-b border-border p-6">
+                <div className="bg-purple-500/10 border-b border-border p-6">
                   <div className="flex items-start justify-between flex-wrap gap-3">
                     <div>
                       <span className="inline-block bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded-full mb-2">
@@ -960,9 +960,9 @@ export default function BestMiniSplitACPage() {
                 </div>
               </div>
 
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
                 <p className="text-sm text-foreground/80 leading-relaxed">
-                  <strong className="text-red-800">Important:</strong> Check your local building codes
+                  <strong className="text-red-300">Important:</strong> Check your local building codes
                   before installing. Some California cities require permits for HVAC work, and the
                   electrical connection may need to be done by a licensed electrician. The
                   refrigerant side (line set connection) does not require EPA certification with
@@ -1032,13 +1032,13 @@ export default function BestMiniSplitACPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-b border-slate-100">
+                      <tr className="border-b border-slate-500/20">
                         <td className="p-2 text-foreground/80">PG&amp;E</td>
                         <td className="p-2 text-foreground/80">$0.40-$0.48/kWh</td>
                         <td className="p-2 text-foreground/80">1,513 kWh</td>
                         <td className="p-2 font-semibold text-green-600">$605-$726</td>
                       </tr>
-                      <tr className="border-b border-slate-100">
+                      <tr className="border-b border-slate-500/20">
                         <td className="p-2 text-foreground/80">SCE</td>
                         <td className="p-2 text-foreground/80">$0.36-$0.52/kWh</td>
                         <td className="p-2 text-foreground/80">1,513 kWh</td>
@@ -1060,9 +1060,9 @@ export default function BestMiniSplitACPage() {
                 </p>
               </div>
 
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
                 <p className="text-foreground/80 text-sm leading-relaxed">
-                  <strong className="text-green-800">Payback period:</strong> A MrCool DIY 4th Gen
+                  <strong className="text-green-300">Payback period:</strong> A MrCool DIY 4th Gen
                   12K BTU at $1,549 (self-installed) saving $600/year on a PG&amp;E bill pays for
                   itself in under 2.6 years. With a 12-20 year lifespan, that is 10-17 years of
                   pure savings.

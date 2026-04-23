@@ -29,7 +29,7 @@ export function ReviewHeader() {
               className='w-9 h-9 rounded-lg flex items-center justify-center font-extrabold text-sm'
               style={{ backgroundColor: '#22c55e', color: '#0a0a0a' }}
             >
-              GV
+              GR
             </div>
             <div className='flex flex-col'>
               <span

@@ -456,8 +456,8 @@ export default function EcoFlowRiver3PlusReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Pros &amp; Cons</h2>
               <div className='grid md:grid-cols-2 gap-6 mb-8'>
-                <div className='bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-xl p-5'>
-                  <h3 className='font-semibold text-green-800 dark:text-green-400 mb-3'>Pros</h3>
+                <div className='bg-green-500/10 dark:bg-green-950/20 border border-green-500/30 dark:border-green-800 rounded-xl p-5'>
+                  <h3 className='font-semibold text-green-300 dark:text-green-400 mb-3'>Pros</h3>
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />Expandable to 572 Wh</li>
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />600W inverter handles real appliances</li>
@@ -469,8 +469,8 @@ export default function EcoFlowRiver3PlusReview() {
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />Quiet charging mode in app</li>
                   </ul>
                 </div>
-                <div className='bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-xl p-5'>
-                  <h3 className='font-semibold text-red-800 dark:text-red-400 mb-3'>Cons</h3>
+                <div className='bg-red-500/10 dark:bg-red-950/20 border border-red-500/30 dark:border-red-800 rounded-xl p-5'>
+                  <h3 className='font-semibold text-red-300 dark:text-red-400 mb-3'>Cons</h3>
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'><X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />Still too small for whole-home backup</li>
                     <li className='flex items-start gap-2'><X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />Expansion battery is proprietary ($279)</li>

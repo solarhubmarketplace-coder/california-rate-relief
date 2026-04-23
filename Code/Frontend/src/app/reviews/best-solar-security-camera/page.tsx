@@ -458,7 +458,7 @@ export default function BestSolarSecurityCamera() {
             {/* 1. Reolink Argus 4 Pro */}
             <section className="mb-14">
               <div className="border-l-4 border-yellow-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-yellow-300 bg-yellow-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Overall
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -556,7 +556,7 @@ export default function BestSolarSecurityCamera() {
             {/* 2. eufy SoloCam S340 */}
             <section className="mb-14">
               <div className="border-l-4 border-green-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-green-300 bg-green-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best No-Subscription
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -653,7 +653,7 @@ export default function BestSolarSecurityCamera() {
             {/* 3. Ring Stick Up Cam Solar */}
             <section className="mb-14">
               <div className="border-l-4 border-blue-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-blue-300 bg-blue-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Ecosystem
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -749,7 +749,7 @@ export default function BestSolarSecurityCamera() {
             {/* 4. Arlo Pro 5S */}
             <section className="mb-14">
               <div className="border-l-4 border-purple-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-purple-300 bg-purple-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Smart Features
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -847,7 +847,7 @@ export default function BestSolarSecurityCamera() {
             {/* 5. Wyze Cam Outdoor v2 + Solar */}
             <section className="mb-14">
               <div className="border-l-4 border-orange-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-orange-700 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-orange-300 bg-orange-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Budget
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -945,7 +945,7 @@ export default function BestSolarSecurityCamera() {
             {/* 6. Blink Outdoor 4 + Solar */}
             <section className="mb-14">
               <div className="border-l-4 border-cyan-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-cyan-700 bg-cyan-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-cyan-300 bg-cyan-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Battery Life
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>

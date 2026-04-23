@@ -527,7 +527,7 @@ export default function BestWindowAirConditioner() {
             {/* 1. LG LW1222IVSM */}
             <section className="mb-14">
               <div className="border-l-4 border-yellow-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-yellow-300 bg-yellow-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Overall
                 </span>
                 <h3 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -624,7 +624,7 @@ export default function BestWindowAirConditioner() {
             {/* 2. Frigidaire Gallery GHWQ083WC1 */}
             <section className="mb-14">
               <div className="border-l-4 border-blue-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-blue-300 bg-blue-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Smart Features
                 </span>
                 <h3 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -719,7 +719,7 @@ export default function BestWindowAirConditioner() {
             {/* 3. Midea MAW08V1QWT */}
             <section className="mb-14">
               <div className="border-l-4 border-green-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-green-300 bg-green-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best U-Shaped Design
                 </span>
                 <h3 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -816,7 +816,7 @@ export default function BestWindowAirConditioner() {
             {/* 4. GE Profile PHC08LY */}
             <section className="mb-14">
               <div className="border-l-4 border-purple-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-purple-300 bg-purple-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Design
                 </span>
                 <h3 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -913,7 +913,7 @@ export default function BestWindowAirConditioner() {
             {/* 5. Haier Serenity ESAQ406TZ */}
             <section className="mb-14">
               <div className="border-l-4 border-cyan-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-cyan-700 bg-cyan-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-cyan-300 bg-cyan-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Quietest
                 </span>
                 <h3 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
@@ -1011,7 +1011,7 @@ export default function BestWindowAirConditioner() {
             {/* 6. TCL 8W3E1-A */}
             <section className="mb-14">
               <div className="border-l-4 border-orange-500 pl-6 mb-6">
-                <span className="text-xs font-semibold text-orange-700 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-wide">
+                <span className="text-xs font-semibold text-orange-300 bg-orange-500/15 px-3 py-1 rounded-full uppercase tracking-wide">
                   Best Budget
                 </span>
                 <h3 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>

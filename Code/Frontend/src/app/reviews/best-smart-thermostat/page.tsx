@@ -355,7 +355,7 @@ export default function BestSmartThermostatPage() {
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
                   <div>
-                    <span className="text-xs font-bold text-yellow-600 bg-yellow-100 px-2 py-0.5 rounded-full">
+                    <span className="text-xs font-bold text-yellow-600 bg-yellow-500/15 px-2 py-0.5 rounded-full">
                       BEST OVERALL
                     </span>
                     <h3 className="text-xl font-bold text-foreground mt-2">
@@ -388,11 +388,11 @@ export default function BestSmartThermostatPage() {
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-green-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                  <div className="bg-green-500/10 rounded-lg p-4">
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2">
                       <CheckCircle className="h-4 w-4" /> Pros
                     </h4>
-                    <ul className="space-y-1 text-sm text-green-900">
+                    <ul className="space-y-1 text-sm text-green-200">
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Works with HomeKit, Alexa, AND Google Home</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Up to 26% energy savings</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Included SmartSensor for multi-room monitoring</li>
@@ -401,11 +401,11 @@ export default function BestSmartThermostatPage() {
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> eco+ participates in utility demand response</li>
                     </ul>
                   </div>
-                  <div className="bg-red-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
+                  <div className="bg-red-500/10 rounded-lg p-4">
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
                       <XCircle className="h-4 w-4" /> Cons
                     </h4>
-                    <ul className="space-y-1 text-sm text-red-900">
+                    <ul className="space-y-1 text-sm text-red-200">
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> $249 is pricey for a thermostat</li>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> Built-in mic may raise privacy concerns</li>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> Plastic build doesn&apos;t feel as premium as Nest</li>
@@ -438,7 +438,7 @@ export default function BestSmartThermostatPage() {
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
                   <div>
-                    <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">
+                    <span className="text-xs font-bold text-blue-600 bg-blue-500/15 px-2 py-0.5 rounded-full">
                       BEST DESIGN
                     </span>
                     <h3 className="text-xl font-bold text-foreground mt-2">
@@ -471,11 +471,11 @@ export default function BestSmartThermostatPage() {
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-green-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                  <div className="bg-green-500/10 rounded-lg p-4">
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2">
                       <CheckCircle className="h-4 w-4" /> Pros
                     </h4>
-                    <ul className="space-y-1 text-sm text-green-900">
+                    <ul className="space-y-1 text-sm text-green-200">
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Best-in-class design and build quality</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Soli radar presence detection</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> AI schedule learning is industry-leading</li>
@@ -483,11 +483,11 @@ export default function BestSmartThermostatPage() {
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Beautiful weather animations on display</li>
                     </ul>
                   </div>
-                  <div className="bg-red-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
+                  <div className="bg-red-500/10 rounded-lg p-4">
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
                       <XCircle className="h-4 w-4" /> Cons
                     </h4>
-                    <ul className="space-y-1 text-sm text-red-900">
+                    <ul className="space-y-1 text-sm text-red-200">
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> Does NOT support Apple HomeKit</li>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> $280 is the most expensive option</li>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> No included remote temperature sensor</li>
@@ -521,7 +521,7 @@ export default function BestSmartThermostatPage() {
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
                   <div>
-                    <span className="text-xs font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
+                    <span className="text-xs font-bold text-green-600 bg-green-500/15 px-2 py-0.5 rounded-full">
                       BEST VALUE
                     </span>
                     <h3 className="text-xl font-bold text-foreground mt-2">
@@ -553,11 +553,11 @@ export default function BestSmartThermostatPage() {
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-green-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                  <div className="bg-green-500/10 rounded-lg p-4">
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2">
                       <CheckCircle className="h-4 w-4" /> Pros
                     </h4>
-                    <ul className="space-y-1 text-sm text-green-900">
+                    <ul className="space-y-1 text-sm text-green-200">
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> ~$70 cheaper than Premium</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Same HomeKit + Alexa + Google Home support</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Same eco+ energy savings system</li>
@@ -565,11 +565,11 @@ export default function BestSmartThermostatPage() {
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Best value per dollar for energy savings</li>
                     </ul>
                   </div>
-                  <div className="bg-red-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
+                  <div className="bg-red-500/10 rounded-lg p-4">
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
                       <XCircle className="h-4 w-4" /> Cons
                     </h4>
-                    <ul className="space-y-1 text-sm text-red-900">
+                    <ul className="space-y-1 text-sm text-red-200">
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> No SmartSensor included (sold separately)</li>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> No built-in speaker or air quality monitor</li>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> Slightly less premium display</li>
@@ -602,7 +602,7 @@ export default function BestSmartThermostatPage() {
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
                   <div>
-                    <span className="text-xs font-bold text-purple-600 bg-purple-100 px-2 py-0.5 rounded-full">
+                    <span className="text-xs font-bold text-purple-600 bg-purple-500/15 px-2 py-0.5 rounded-full">
                       BEST BUDGET
                     </span>
                     <h3 className="text-xl font-bold text-foreground mt-2">
@@ -634,11 +634,11 @@ export default function BestSmartThermostatPage() {
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-green-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                  <div className="bg-green-500/10 rounded-lg p-4">
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2">
                       <CheckCircle className="h-4 w-4" /> Pros
                     </h4>
-                    <ul className="space-y-1 text-sm text-green-900">
+                    <ul className="space-y-1 text-sm text-green-200">
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Most affordable smart thermostat at ~$130</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Easy setup and simple interface</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Savings Finder suggests optimizations</li>
@@ -646,11 +646,11 @@ export default function BestSmartThermostatPage() {
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 flex-shrink-0" /> Works well for renters (easy to remove)</li>
                     </ul>
                   </div>
-                  <div className="bg-red-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
+                  <div className="bg-red-500/10 rounded-lg p-4">
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2">
                       <XCircle className="h-4 w-4" /> Cons
                     </h4>
-                    <ul className="space-y-1 text-sm text-red-900">
+                    <ul className="space-y-1 text-sm text-red-200">
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> No Apple HomeKit support</li>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> No radar or advanced presence sensing</li>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0" /> Less sophisticated learning than 4th Gen</li>

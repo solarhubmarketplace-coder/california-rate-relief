@@ -316,7 +316,7 @@ export default function BestElectricLeafBlower() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
+                  <span className="bg-yellow-400 text-yellow-200 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
                     Best Overall
                   </span>
                   <div>
@@ -330,7 +330,7 @@ export default function BestElectricLeafBlower() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
+                  <span className="bg-green-500/15 text-green-300 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
                     Best for Pros
                   </span>
                   <div>
@@ -344,7 +344,7 @@ export default function BestElectricLeafBlower() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
+                  <span className="bg-blue-500/15 text-blue-300 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
                     Best Value
                   </span>
                   <div>
@@ -416,7 +416,7 @@ export default function BestElectricLeafBlower() {
               {/* === EGO LB6504 === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-yellow-400 text-yellow-200 text-xs font-bold px-3 py-1 rounded-full">
                     Best Overall
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -446,7 +446,7 @@ export default function BestElectricLeafBlower() {
                     <p className="text-foreground/80 mt-1">Turbo button, variable speed, brushless motor</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />Ultra-light at 2.5 lbs tool only</li>
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />650 CFM rivals gas blowers</li>
@@ -455,7 +455,7 @@ export default function BestElectricLeafBlower() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Premium price vs Ryobi</li>
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Turbo drains battery fast</li>
@@ -476,7 +476,7 @@ export default function BestElectricLeafBlower() {
               {/* === Milwaukee M18 FUEL === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-red-500/15 text-red-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best for Pros
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -504,7 +504,7 @@ export default function BestElectricLeafBlower() {
                     <p className="text-foreground/80 mt-1">POWERSTATE brushless, compact, lock-on trigger</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />250+ M18 battery sharing</li>
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />Best ergonomics and balance</li>
@@ -513,7 +513,7 @@ export default function BestElectricLeafBlower() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Tool-only, batteries add $80&ndash;$150</li>
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Lower CFM/MPH than 56V/60V rivals</li>
@@ -534,7 +534,7 @@ export default function BestElectricLeafBlower() {
               {/* === DeWalt DCBL772X1 === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-orange-500/15 text-orange-300 text-xs font-bold px-3 py-1 rounded-full">
                     Most Powerful
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -563,7 +563,7 @@ export default function BestElectricLeafBlower() {
                     <p className="text-foreground/80 mt-1">Axial fan, variable speed, concentrator nozzle</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />Sustained power under load</li>
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />Axial design moves more per pass</li>
@@ -572,7 +572,7 @@ export default function BestElectricLeafBlower() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Heaviest at 9.8 lbs</li>
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Most expensive at $329</li>
@@ -593,7 +593,7 @@ export default function BestElectricLeafBlower() {
               {/* === Ryobi 40V Whisper === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-purple-500/15 text-purple-300 text-xs font-bold px-3 py-1 rounded-full">
                     Quietest
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -621,7 +621,7 @@ export default function BestElectricLeafBlower() {
                     <p className="text-foreground/80 mt-1">59 dB whisper mode, variable speed</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />Quietest blower at 59 dB</li>
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />Highest CFM (730) in roundup</li>
@@ -630,7 +630,7 @@ export default function BestElectricLeafBlower() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Heavier than EGO at 7.1 lbs</li>
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Home Depot exclusive</li>
@@ -651,7 +651,7 @@ export default function BestElectricLeafBlower() {
               {/* === Greenworks 80V === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-emerald-500/15 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Runtime
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -678,7 +678,7 @@ export default function BestElectricLeafBlower() {
                     <p className="text-foreground/80 mt-1">Up to 70 min runtime, variable speed</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />Best runtime (70 min)</li>
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />730 CFM + 170 MPH</li>
@@ -687,7 +687,7 @@ export default function BestElectricLeafBlower() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Heavy at 9.4 lbs</li>
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Smaller ecosystem</li>
@@ -708,7 +708,7 @@ export default function BestElectricLeafBlower() {
               {/* === EGO LB5804 === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-blue-500/15 text-blue-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Value
                   </span>
                   <h3 className="text-xl font-bold text-foreground">
@@ -736,7 +736,7 @@ export default function BestElectricLeafBlower() {
                     <p className="text-foreground/80 mt-1">Variable speed, brushless, weather-resistant</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
+                    <h4 className="font-semibold text-green-300 mb-2 flex items-center gap-2"><Check className="h-4 w-4" /> Pros</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />EGO quality at budget price</li>
                       <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-green-600 mt-0.5 shrink-0" />Full 56V ecosystem access</li>
@@ -745,7 +745,7 @@ export default function BestElectricLeafBlower() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
+                    <h4 className="font-semibold text-red-300 mb-2 flex items-center gap-2"><X className="h-4 w-4" /> Cons</h4>
                     <ul className="space-y-1 text-foreground/80">
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />No turbo button</li>
                       <li className="flex items-start gap-2"><X className="h-3.5 w-3.5 text-red-400 mt-0.5 shrink-0" />Smaller battery = less runtime</li>
@@ -960,7 +960,7 @@ export default function BestElectricLeafBlower() {
                         <td className="p-3 text-foreground/80">{gas}</td>
                         <td className="p-3 text-center">
                           <span className={`text-xs font-bold px-2 py-1 rounded-full ${
-                            winner === 'Electric' ? 'bg-green-100 text-green-800' : winner === 'Gas' ? 'bg-red-100 text-red-800' : 'bg-muted text-foreground/70'
+                            winner === 'Electric' ? 'bg-green-500/15 text-green-300' : winner === 'Gas' ? 'bg-red-500/15 text-red-300' : 'bg-muted text-foreground/70'
                           }`}>{winner}</span>
                         </td>
                       </tr>
@@ -969,7 +969,7 @@ export default function BestElectricLeafBlower() {
                 </table>
               </div>
 
-              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+              <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-6">
                 <p className="text-foreground/80 text-sm leading-relaxed">
                   <strong>Score:</strong> Electric wins 8 of 10 categories. Gas only leads on
                   runtime, and a spare battery closes that gap. For California, gas blowers will
@@ -1079,7 +1079,7 @@ export default function BestElectricLeafBlower() {
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="font-semibold text-green-700 mb-4 flex items-center gap-2">
+                  <h3 className="font-semibold text-green-300 mb-4 flex items-center gap-2">
                     <CheckCircle className="h-5 w-5" /> Advantages
                   </h3>
                   <ul className="space-y-2 text-sm text-foreground/80">
@@ -1111,7 +1111,7 @@ export default function BestElectricLeafBlower() {
                 </div>
 
                 <div className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="font-semibold text-red-700 mb-4 flex items-center gap-2">
+                  <h3 className="font-semibold text-red-300 mb-4 flex items-center gap-2">
                     <X className="h-5 w-5" /> Limitations
                   </h3>
                   <ul className="space-y-2 text-sm text-foreground/80">
@@ -1173,11 +1173,11 @@ export default function BestElectricLeafBlower() {
               </h2>
               <div className="space-y-4">
                 {[
-                  { badge: 'Best Overall', badgeClass: 'bg-yellow-400 text-yellow-900', name: 'EGO LB6504', desc: '2.5 lbs, 650 CFM, 180 MPH, turbo button. The 56V ecosystem is the strongest residential platform.', rec: 'Most homeowners who want one blower that does everything' },
-                  { badge: 'Best for Pros', badgeClass: 'bg-red-100 text-red-800', name: 'Milwaukee M18 FUEL', desc: 'Battery sharing with 250+ M18 tools justifies the choice alone. Built for daily commercial use.', rec: 'Contractors, landscapers, and M18 platform owners' },
-                  { badge: 'Quietest', badgeClass: 'bg-purple-100 text-purple-800', name: 'Ryobi 40V Whisper Series', desc: '$199 with battery, 730 CFM, 59 dB whisper mode. Unbeatable for noise-sensitive areas.', rec: 'HOA communities, early morning use, noise-restricted areas' },
-                  { badge: 'Best Runtime', badgeClass: 'bg-emerald-100 text-emerald-800', name: 'Greenworks 80V', desc: '70 minutes of runtime, 730 CFM. Won\'t quit before you do on a half-acre lot.', rec: 'Half-acre+ lots, heavy leaf clearing, extended sessions' },
-                  { badge: 'Best Value', badgeClass: 'bg-blue-100 text-blue-800', name: 'EGO LB5804', desc: '$199 for EGO quality and 56V ecosystem access. 580 CFM handles standard yards easily.', rec: 'Budget buyers who want premium build quality' },
+                  { badge: 'Best Overall', badgeClass: 'bg-yellow-400 text-yellow-200', name: 'EGO LB6504', desc: '2.5 lbs, 650 CFM, 180 MPH, turbo button. The 56V ecosystem is the strongest residential platform.', rec: 'Most homeowners who want one blower that does everything' },
+                  { badge: 'Best for Pros', badgeClass: 'bg-red-500/15 text-red-300', name: 'Milwaukee M18 FUEL', desc: 'Battery sharing with 250+ M18 tools justifies the choice alone. Built for daily commercial use.', rec: 'Contractors, landscapers, and M18 platform owners' },
+                  { badge: 'Quietest', badgeClass: 'bg-purple-500/15 text-purple-300', name: 'Ryobi 40V Whisper Series', desc: '$199 with battery, 730 CFM, 59 dB whisper mode. Unbeatable for noise-sensitive areas.', rec: 'HOA communities, early morning use, noise-restricted areas' },
+                  { badge: 'Best Runtime', badgeClass: 'bg-emerald-500/15 text-emerald-300', name: 'Greenworks 80V', desc: '70 minutes of runtime, 730 CFM. Won\'t quit before you do on a half-acre lot.', rec: 'Half-acre+ lots, heavy leaf clearing, extended sessions' },
+                  { badge: 'Best Value', badgeClass: 'bg-blue-500/15 text-blue-300', name: 'EGO LB5804', desc: '$199 for EGO quality and 56V ecosystem access. 580 CFM handles standard yards easily.', rec: 'Budget buyers who want premium build quality' },
                 ].map((v) => (
                   <div key={v.name} className="bg-card border border-border rounded-lg p-5">
                     <div className="flex items-center gap-3 mb-2">

@@ -306,7 +306,7 @@ export default function BestElectricChainsaw() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
+                  <span className="bg-yellow-400 text-yellow-200 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
                     Best Overall
                   </span>
                   <div>
@@ -321,7 +321,7 @@ export default function BestElectricChainsaw() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
+                  <span className="bg-green-500/15 text-green-300 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
                     Best Budget
                   </span>
                   <div>
@@ -335,7 +335,7 @@ export default function BestElectricChainsaw() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
+                  <span className="bg-blue-500/15 text-blue-300 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap mt-0.5">
                     Best Power
                   </span>
                   <div>
