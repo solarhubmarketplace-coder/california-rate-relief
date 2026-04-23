@@ -21,6 +21,7 @@ import {
   DollarSign,
   CheckCircle,
   XCircle,
+  Search,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -52,12 +53,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1392,7 +1393,7 @@ export default function HeatPumpVsFurnacePage() {
             {/* ========== AFFILIATE DISCLOSURE ========== */}
             <div className="rounded-lg p-4 border mb-6" style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
               <p className="text-xs leading-relaxed" style={{ color: '#71717a' }}>
-                <strong style={{ color: '#a1a1aa' }}>Affiliate Disclosure:</strong> GreenVerdict is
+                <strong style={{ color: '#a1a1aa' }}>Affiliate Disclosure:</strong> GreenReviewsHub is
                 reader-supported. When you purchase through links on this page, we may earn an
                 affiliate commission at no additional cost to you. This does not influence our
                 recommendations — all opinions are our own based on independent research and analysis.
