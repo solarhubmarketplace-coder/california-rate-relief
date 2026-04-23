@@ -363,9 +363,56 @@ class QueueService {
 
       try {
         const trackingToken = task.metadata?.trackingToken;
+        const templateKey = task.metadata?.template_key;
 
+        // ✨ GENERIC TRANSACTIONAL PATH
+        // Any task with metadata.template_key looks up the template by key and sends it.
+        // Supports: voicemail_left, unreachable, appointment_confirmation,
+        // appointment_reminder_24h, appointment_reminder_1h, appointment_rescheduled,
+        // appointment_canceled, no_show, cold_welcome, hot_welcome, etc.
+        if (templateKey) {
+          const { data: tmpl, error: tmplErr } = await supabaseAdmin
+            .from("email_templates")
+            .select("id, subject, content, html_content")
+            .eq("template_key", templateKey)
+            .maybeSingle();
+
+          if (tmplErr || !tmpl) {
+            throw new Error(
+              `Template not found for template_key=${templateKey}`
+            );
+          }
+
+          const convertUrl = lead.id
+            ? `${config.BASE_URL}/api/leads/convert/${lead.id}`
+            : "#";
+          const trackingUrl = trackingToken
+            ? `${config.BASE_URL}/api/track/${trackingToken}`
+            : convertUrl;
+
+          const fill = (s) =>
+            (s || "")
+              .replace(/\{\{name\}\}/g, lead.name || "there")
+              .replace(/\{\{phone\}\}/g, lead.phone || "")
+              .replace(/\{\{webhook\}\}/g, convertUrl)
+              .replace(/\{\{trackingUrl\}\}/g, trackingUrl)
+              .replace(/\{\{time\}\}/g, task.metadata?.appointment_time || "");
+
+          const subject = fill(tmpl.subject);
+          const html = fill(tmpl.content || tmpl.html_content);
+
+          await emailService.sendEmail(lead.email, subject, html, {
+            leadId: lead.id,
+            templateId: tmpl.id,
+            from: task.metadata?.from || undefined,
+          });
+
+          console.log(
+            `[QueueService] Sent transactional "${templateKey}" to ${lead.email}`
+          );
+        }
         // ✨ NEW: Check if this is a sequence email task
-        if (task.metadata?.sequence_step) {
+        else if (task.metadata?.sequence_step) {
           const emailSequenceService = require("./email-sequence.service");
           const sequenceData = await emailSequenceService.getNextStepForLead(lead.id);
 

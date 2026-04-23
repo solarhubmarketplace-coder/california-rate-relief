@@ -38,6 +38,10 @@ const knowledgeBaseService = require("./knowledge-base.service");
 
 const callLogService = require("./call-log.service");
 
+const emailService = require("./email.service");
+const smsService = require("./sms.service");
+const emailSequenceService = require("./email-sequence.service");
+
 const {
   AI_VOICE,
   AI_SYSTEM_PROMPT_INITIAL_CALL,
@@ -863,6 +867,126 @@ const handleConnection = (connection, req) => {
               .eq("id", leadId);
 
             logger.log(LOG_PREFIX.TOOL, `Lead status updated to: converted`);
+
+            // ========================================
+            // SEND APPOINTMENT CONFIRMATION (EMAIL + SMS) + ENROLL IN POST-APPT SEQUENCE
+            // ========================================
+            try {
+              const { data: bookedLead } = await supabaseAdmin
+                .from("leads")
+                .select("name, phone, email")
+                .eq("id", leadId)
+                .single();
+
+              if (bookedLead) {
+                const formatTime = (iso, tz) => {
+                  try {
+                    const d = new Date(iso);
+                    return d.toLocaleString("en-US", {
+                      weekday: "long",
+                      month: "long",
+                      day: "numeric",
+                      hour: "numeric",
+                      minute: "2-digit",
+                      timeZone: tz || "America/Los_Angeles",
+                      timeZoneName: "short",
+                    });
+                  } catch (_) {
+                    return iso;
+                  }
+                };
+
+                const prettyTime = formatTime(
+                  parsedArgs.time,
+                  parsedArgs.timezone
+                );
+
+                // --- EMAIL: appointment_confirmation template ---
+                if (bookedLead.email) {
+                  try {
+                    const { data: tmpl } = await supabaseAdmin
+                      .from("email_templates")
+                      .select("subject, content, html_content, id")
+                      .eq("template_key", "appointment_confirmation")
+                      .maybeSingle();
+
+                    if (tmpl) {
+                      const fill = (s) =>
+                        (s || "")
+                          .replace(/\{\{name\}\}/g, bookedLead.name || "there")
+                          .replace(/\{\{time\}\}/g, prettyTime)
+                          .replace(/\{\{phone\}\}/g, bookedLead.phone || "");
+                      const subject = fill(tmpl.subject);
+                      const html = fill(tmpl.content || tmpl.html_content);
+                      await emailService.sendEmail(
+                        bookedLead.email,
+                        subject,
+                        html,
+                        { leadId, templateId: tmpl.id }
+                      );
+                      logger.log(
+                        LOG_PREFIX.TOOL,
+                        `📧 Confirmation email sent to ${bookedLead.email}`
+                      );
+                    } else {
+                      logger.log(
+                        LOG_PREFIX.TOOL,
+                        `⚠️ appointment_confirmation template missing — skipping confirmation email`
+                      );
+                    }
+                  } catch (e) {
+                    logger.error(
+                      `❌ Failed to send confirmation email: ${e.message}`
+                    );
+                  }
+                }
+
+                // --- SMS: appointment confirmation ---
+                if (bookedLead.phone) {
+                  try {
+                    await smsService.sendAppointmentConfirmation(
+                      bookedLead.phone,
+                      bookedLead.name || "there",
+                      prettyTime,
+                      leadId
+                    );
+                    logger.log(
+                      LOG_PREFIX.TOOL,
+                      `📱 Confirmation SMS sent to ${bookedLead.phone}`
+                    );
+                  } catch (e) {
+                    logger.error(
+                      `❌ Failed to send confirmation SMS: ${e.message}`
+                    );
+                  }
+                }
+
+                // --- Enroll in post-appointment follow-up sequence ---
+                try {
+                  const postApptSeq = await emailSequenceService.getActiveSequence(
+                    "post_appointment"
+                  );
+                  if (postApptSeq) {
+                    await emailSequenceService.assignSequenceToLead(
+                      leadId,
+                      postApptSeq.id
+                    );
+                    logger.log(
+                      LOG_PREFIX.TOOL,
+                      `🔁 Enrolled lead in post_appointment_followup sequence`
+                    );
+                  }
+                } catch (e) {
+                  logger.error(
+                    `❌ Failed to enroll in post-appt sequence: ${e.message}`
+                  );
+                }
+              }
+            } catch (err) {
+              logger.error(
+                `❌ Appointment confirmation pipeline failed: ${err.message}`
+              );
+            }
           } else if (name === "search_knowledge_base") {
             // ========================================
 

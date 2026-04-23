@@ -52,6 +52,7 @@ class SchedulerService {
    */
   async runChecks() {
     const ops = [
+      { name: "autoEnrollments", fn: () => this.scheduleAutoEnrollments() },
       { name: "reminders", fn: () => this.scheduleReminders() },
       { name: "reengagement", fn: () => this.scheduleReengagementCalls() },
       { name: "sequences", fn: () => this.scheduleSequenceEmails() },
@@ -372,9 +373,170 @@ class SchedulerService {
         });
 
         console.log(`[Scheduler] Scheduled 90-day re-engagement for lead ${lead.name || lead.id}`);
+
+        // ✨ Also enroll into the 90-day reactivation email sequence
+        try {
+          const emailSequenceService = require("./email-sequence.service");
+          const seq = await emailSequenceService.getActiveSequence("reactivation");
+          if (seq) {
+            await emailSequenceService.assignSequenceToLead(lead.id, seq.id);
+
+            // Queue first email now so the sequence actually starts
+            await queueService.createTask({
+              lead_id: lead.id,
+              task_type: "email",
+              scheduled_at: new Date().toISOString(),
+              metadata: {
+                sequence_id: seq.id,
+                trigger: "reactivation_start",
+              },
+            });
+          }
+        } catch (e) {
+          console.error("[Scheduler] Failed to enroll in reactivation sequence:", e.message);
+        }
       }
     } catch (error) {
       console.error('[Scheduler] Error in scheduleReengagementCalls:', error);
+    }
+  }
+
+  /**
+   * Auto-enroll leads into the correct email sequence based on their state.
+   *
+   * Rules:
+   *   - cold leads with no active sequence    → cold_lead_nurture
+   *   - call_state = 'no_book' / lead.status = 'no_booked' → hot_no_book_recovery
+   *   - call_state = 'no_show' / status = 'no_show' → no_show_recovery
+   *   - status = 'won' and no referral sequence yet → won_deal_referral
+   *
+   * post_appointment_followup and reactivation_90_day are enrolled at their
+   * explicit trigger points (bookAppointment, 90-day re-engagement).
+   */
+  async scheduleAutoEnrollments() {
+    try {
+      const emailSequenceService = require("./email-sequence.service");
+
+      // Helper: has lead already been enrolled (active or completed) in this sequence?
+      const isAlreadyEnrolled = async (leadId, sequenceId) => {
+        const { data } = await supabaseAdmin
+          .from("lead_sequence_tracking")
+          .select("id")
+          .eq("lead_id", leadId)
+          .eq("sequence_id", sequenceId)
+          .limit(1);
+        return data && data.length > 0;
+      };
+
+      // Has lead ever been enrolled in ANY sequence right now (active)?
+      const hasActiveSequence = async (leadId) => {
+        const { data } = await supabaseAdmin
+          .from("lead_sequence_tracking")
+          .select("id")
+          .eq("lead_id", leadId)
+          .is("completed_at", null)
+          .limit(1);
+        return data && data.length > 0;
+      };
+
+      const queueFirstEmail = async (leadId, sequenceId) => {
+        // Check nothing is already queued
+        const { data: existing } = await supabaseAdmin
+          .from("communication_tasks")
+          .select("id")
+          .eq("lead_id", leadId)
+          .eq("task_type", "email")
+          .eq("metadata->>sequence_id", sequenceId)
+          .in("status", ["pending", "processing"])
+          .limit(1);
+        if (existing && existing.length > 0) return;
+
+        await queueService.createTask({
+          lead_id: leadId,
+          task_type: "email",
+          scheduled_at: new Date().toISOString(),
+          metadata: {
+            sequence_id: sequenceId,
+            trigger: "auto_enroll_start",
+          },
+        });
+      };
+
+      // ─── 1. COLD LEADS → cold_lead_nurture ─────────────────────────────
+      const coldSeq = await emailSequenceService.getActiveSequence("cold");
+      if (coldSeq) {
+        const { data: coldLeads } = await supabaseAdmin
+          .from("leads")
+          .select("id, email, type, status")
+          .eq("type", "cold")
+          .not("email", "is", null)
+          .not("status", "in", "(declined,converted,opted_out)")
+          .limit(100);
+
+        for (const lead of coldLeads || []) {
+          if (await hasActiveSequence(lead.id)) continue;
+          if (await isAlreadyEnrolled(lead.id, coldSeq.id)) continue;
+          await emailSequenceService.assignSequenceToLead(lead.id, coldSeq.id);
+          await queueFirstEmail(lead.id, coldSeq.id);
+          console.log(`[Scheduler] Auto-enrolled cold lead ${lead.id} in cold_lead_nurture`);
+        }
+      }
+
+      // ─── 2. NO-BOOK → hot_no_book_recovery ──────────────────────────────
+      const noBookSeq = await emailSequenceService.getActiveSequence("hot");
+      if (noBookSeq) {
+        const { data: noBookLeads } = await supabaseAdmin
+          .from("leads")
+          .select("id, email, call_state, status")
+          .or("call_state.eq.no_book,status.eq.no_booked")
+          .not("email", "is", null)
+          .limit(100);
+
+        for (const lead of noBookLeads || []) {
+          if (await isAlreadyEnrolled(lead.id, noBookSeq.id)) continue;
+          await emailSequenceService.assignSequenceToLead(lead.id, noBookSeq.id);
+          await queueFirstEmail(lead.id, noBookSeq.id);
+          console.log(`[Scheduler] Auto-enrolled lead ${lead.id} in hot_no_book_recovery`);
+        }
+      }
+
+      // ─── 3. NO-SHOW → no_show_recovery ──────────────────────────────────
+      const noShowSeq = await emailSequenceService.getActiveSequence("no_show");
+      if (noShowSeq) {
+        const { data: noShowLeads } = await supabaseAdmin
+          .from("leads")
+          .select("id, email, call_state, status")
+          .or("call_state.eq.no_show,status.eq.no_show")
+          .not("email", "is", null)
+          .limit(100);
+
+        for (const lead of noShowLeads || []) {
+          if (await isAlreadyEnrolled(lead.id, noShowSeq.id)) continue;
+          await emailSequenceService.assignSequenceToLead(lead.id, noShowSeq.id);
+          await queueFirstEmail(lead.id, noShowSeq.id);
+          console.log(`[Scheduler] Auto-enrolled lead ${lead.id} in no_show_recovery`);
+        }
+      }
+
+      // ─── 4. WON → won_deal_referral ─────────────────────────────────────
+      const referralSeq = await emailSequenceService.getActiveSequence("referral");
+      if (referralSeq) {
+        const { data: wonLeads } = await supabaseAdmin
+          .from("leads")
+          .select("id, email, status")
+          .eq("status", "won")
+          .not("email", "is", null)
+          .limit(100);
+
+        for (const lead of wonLeads || []) {
+          if (await isAlreadyEnrolled(lead.id, referralSeq.id)) continue;
+          await emailSequenceService.assignSequenceToLead(lead.id, referralSeq.id);
+          await queueFirstEmail(lead.id, referralSeq.id);
+          console.log(`[Scheduler] Auto-enrolled lead ${lead.id} in won_deal_referral`);
+        }
+      }
+    } catch (error) {
+      console.error("[Scheduler] Error in scheduleAutoEnrollments:", error.message);
     }
   }
 }
