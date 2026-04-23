@@ -48,12 +48,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1204,7 +1204,7 @@ export default function BestElectricLeafBlower() {
                   Explore More Green Energy Reviews
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  GreenVerdict reviews the best clean energy products so you can make informed
+                  GreenReviewsHub reviews the best clean energy products so you can make informed
                   decisions. Browse all our in-depth reviews and comparison guides.
                 </p>
                 <Link

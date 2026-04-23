@@ -13,7 +13,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Check, X, ChevronRight, AlertTr
 const PRIMARY_PRODUCT_KEY = 'dualtron-x-limited';
 
 export const metadata: Metadata = {
-  title: 'Fastest Electric Scooters 2026: 40+ MPH Adult Scooters Tested | GreenVerdict',
+  title: 'Fastest Electric Scooters 2026: 40+ MPH Adult Scooters Tested | GreenReviewsHub',
   description: 'The fastest electric scooters in 2026: Dualtron X Limited (68 mph), Weped FS (62 mph), Kaabo Wolf King GT Pro, NAMI Burn-E 2 Max, Apollo Pro. Honest speed, range, and California legality breakdown.',
   alternates: { canonical: 'https://ratereliefca.com/reviews/fastest-electric-scooter' },
   openGraph: {

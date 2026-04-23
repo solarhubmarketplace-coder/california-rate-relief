@@ -50,12 +50,12 @@ const reviewSchema = {
   datePublished: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1081,7 +1081,7 @@ export default function EcoFlowDeltaProUltraReview() {
               <div className='bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-6'>
                 <div className='flex items-center gap-3 mb-4'>
                   <h3 className='text-xl font-bold text-foreground'>
-                    GreenVerdict Rating
+                    GreenReviewsHub Rating
                   </h3>
                   <div className='flex items-center gap-1 bg-primary/10 px-3 py-1 rounded-full'>
                     <Star className='h-4 w-4 text-yellow-500 fill-yellow-500' />

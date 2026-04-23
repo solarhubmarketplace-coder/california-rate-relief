@@ -48,12 +48,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1302,7 +1302,7 @@ export default function BestElectricHedgeTrimmer() {
               className="rounded-lg p-4 mb-8 text-xs leading-relaxed border"
               style={{ backgroundColor: '#141414', borderColor: '#27272a', color: '#a1a1aa' }}
             >
-              <strong style={{ color: '#d4d4d8' }}>Affiliate Disclosure:</strong> GreenVerdict
+              <strong style={{ color: '#d4d4d8' }}>Affiliate Disclosure:</strong> GreenReviewsHub
               may earn a commission when you purchase through links on this page. This does not
               influence our rankings or recommendations. We research and test independently. All
               prices shown are approximate and may vary by retailer.

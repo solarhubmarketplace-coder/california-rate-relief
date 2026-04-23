@@ -48,12 +48,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -591,7 +591,7 @@ export default function BestRobotLawnMower() {
                 style={{ backgroundColor: '#141414', borderColor: '#27272a' }}
               >
                 <p className="text-sm font-semibold mb-2" style={{ color: '#22c55e' }}>
-                  GreenVerdict Take
+                  GreenReviewsHub Take
                 </p>
                 <p className="text-sm" style={{ color: '#d4d4d8' }}>
                   For most homeowners, <strong style={{ color: '#f5f5f5' }}>boundary wire</strong> is
@@ -1344,7 +1344,7 @@ export default function BestRobotLawnMower() {
                 <div className="flex items-center gap-2 mb-4">
                   <Star className="h-5 w-5" style={{ color: '#22c55e' }} />
                   <h2 className="text-xl font-bold" style={{ color: '#f5f5f5' }}>
-                    The GreenVerdict Bottom Line
+                    The GreenReviewsHub Bottom Line
                   </h2>
                 </div>
                 <p className="mb-4" style={{ color: '#d4d4d8' }}>
@@ -1392,7 +1392,7 @@ export default function BestRobotLawnMower() {
                   </h3>
                 </div>
                 <p className="text-sm" style={{ color: '#a1a1aa' }}>
-                  GreenVerdict reviews are based on hands-on testing, manufacturer specifications, verified owner feedback, and long-term reliability data. We evaluate robot mowers on navigation accuracy, cutting quality, slope handling, noise level, app experience, and total cost of ownership. Our recommendations are independent. If you purchase through our links, we may earn a commission at no extra cost to you.
+                  GreenReviewsHub reviews are based on hands-on testing, manufacturer specifications, verified owner feedback, and long-term reliability data. We evaluate robot mowers on navigation accuracy, cutting quality, slope handling, noise level, app experience, and total cost of ownership. Our recommendations are independent. If you purchase through our links, we may earn a commission at no extra cost to you.
                 </p>
               </div>
             </section>

@@ -50,12 +50,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -180,7 +180,7 @@ export default function BestPortableAirConditionerPage() {
               >
                 <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
                   <Shield className="h-4 w-4 inline mr-1" style={{ color: '#22c55e' }} />
-                  <strong style={{ color: '#f5f5f5' }}>GreenVerdict editorial policy:</strong>{' '}
+                  <strong style={{ color: '#f5f5f5' }}>GreenReviewsHub editorial policy:</strong>{' '}
                   Our recommendations are based on independent research and testing. We may earn a
                   commission if you purchase through our links, at no extra cost to you. This does
                   not influence our rankings or ratings.
@@ -1003,7 +1003,7 @@ export default function BestPortableAirConditionerPage() {
                 </h2>
                 <p className="max-w-2xl mx-auto mb-6 leading-relaxed" style={{ color: '#a1a1aa' }}>
                   Explore more cooling guides, smart home reviews, and energy-saving product comparisons
-                  from GreenVerdict.
+                  from GreenReviewsHub.
                 </p>
                 <Link
                   href="/reviews"

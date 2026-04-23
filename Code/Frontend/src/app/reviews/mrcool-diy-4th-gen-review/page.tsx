@@ -52,12 +52,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -82,12 +82,12 @@ const reviewSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1459,7 +1459,7 @@ export default function MrCoolDIY4thGenReview() {
                   </h3>
                   <p className='text-sm text-muted-foreground'>
                     Power stations, mini splits, e-bikes, and more — tested and
-                    reviewed by GreenVerdict.
+                    reviewed by GreenReviewsHub.
                   </p>
                   <span className='inline-flex items-center gap-1 text-sm text-primary mt-2'>
                     View all reviews <ArrowRight className='h-3 w-3' />

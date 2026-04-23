@@ -53,12 +53,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -80,12 +80,12 @@ const reviewSchema = {
   datePublished: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1134,7 +1134,7 @@ export default function Ryobi40VLawnMowerReview() {
                   className='bg-card border border-border rounded-xl p-5 hover:border-primary/50 transition-colors group'
                 >
                   <h3 className='text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors'>
-                    All GreenVerdict Reviews
+                    All GreenReviewsHub Reviews
                   </h3>
                   <p className='text-sm text-muted-foreground mb-3'>
                     Browse our full library of clean energy and outdoor power

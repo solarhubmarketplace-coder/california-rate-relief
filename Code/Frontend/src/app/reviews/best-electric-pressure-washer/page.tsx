@@ -48,12 +48,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1394,7 +1394,7 @@ export default function BestElectricPressureWasher() {
               style={{ backgroundColor: '#141414', borderColor: '#27272a', color: '#a1a1aa' }}
             >
               <strong style={{ color: '#d4d4d8' }}>Affiliate Disclosure:</strong>{' '}
-              GreenVerdict is reader-supported. When you buy through links on this page,
+              GreenReviewsHub is reader-supported. When you buy through links on this page,
               we may earn a small commission at no extra cost to you. This does not influence
               our rankings. All prices are accurate as of publication and subject to change.
             </div>

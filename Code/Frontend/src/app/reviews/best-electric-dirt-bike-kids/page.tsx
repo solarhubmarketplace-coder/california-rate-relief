@@ -52,12 +52,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1337,7 +1337,7 @@ export default function BestElectricDirtBikeKids() {
                 >
                   <div>
                     <p className="text-foreground font-semibold group-hover:text-primary transition-colors">
-                      All GreenVerdict Reviews
+                      All GreenReviewsHub Reviews
                     </p>
                     <p className="text-foreground/50 text-sm mt-1">Power stations, e-bikes, lawn gear, and more</p>
                   </div>

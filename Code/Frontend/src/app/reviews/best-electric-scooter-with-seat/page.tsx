@@ -49,12 +49,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1251,7 +1251,7 @@ export default function BestElectricScooterWithSeat() {
                     All Reviews
                   </span>
                   <h3 className="text-lg font-bold text-foreground mt-2 group-hover:text-primary transition-colors">
-                    GreenVerdict Review Hub
+                    GreenReviewsHub Review Hub
                   </h3>
                   <p className="text-sm text-muted-foreground mt-1">
                     Power stations, e-bikes, lawn equipment, smart home, and more — all reviewed with honest specs and real data.

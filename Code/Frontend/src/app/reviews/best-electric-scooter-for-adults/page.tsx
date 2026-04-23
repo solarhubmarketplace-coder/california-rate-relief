@@ -13,7 +13,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Check, X, ChevronRight, Shield 
 const PRIMARY_PRODUCT_KEY = 'apollo-city-pro';
 
 export const metadata: Metadata = {
-  title: 'Best Electric Scooters for Adults 2026: Commuter, Heavy-Duty, and Portable | GreenVerdict',
+  title: 'Best Electric Scooters for Adults 2026: Commuter, Heavy-Duty, and Portable | GreenReviewsHub',
   description: 'The best electric scooters for adult commuters in 2026: Apollo City Pro, Segway GT2, NIU KQi3 Pro, Unagi Voyager, Gotrax Mosquito, Turboant X7 Pro. Range, comfort, portability, and California law.',
   alternates: { canonical: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults' },
   openGraph: {

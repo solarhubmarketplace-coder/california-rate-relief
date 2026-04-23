@@ -11,7 +11,7 @@ export function ReviewLayout({ children }: ReviewLayoutProps) {
       style={{
         // Override CSS custom properties so all Tailwind classes
         // (text-foreground, bg-card, border-border, etc.) render
-        // correctly on the dark GreenVerdict theme
+        // correctly on the dark GreenReviewsHub theme
         ['--background' as string]: '0 0% 4%',
         ['--foreground' as string]: '0 0% 100%',
         ['--card' as string]: '0 0% 9%',

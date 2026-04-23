@@ -52,12 +52,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1388,7 +1388,7 @@ export default function BestElectricChainsaw() {
                   className="bg-card border border-border rounded-xl p-5 hover:border-primary/50 transition-colors group"
                 >
                   <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">
-                    Browse All GreenVerdict Reviews
+                    Browse All GreenReviewsHub Reviews
                   </h3>
                   <p className="text-sm text-foreground/70 mt-1">
                     Power stations, e-bikes, smart home tech, and more.
@@ -1408,7 +1408,7 @@ export default function BestElectricChainsaw() {
                   Explore More Green Energy Reviews
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  GreenVerdict reviews the best clean energy products so you can make informed
+                  GreenReviewsHub reviews the best clean energy products so you can make informed
                   decisions. Browse all our in-depth reviews and comparison guides.
                 </p>
                 <Link

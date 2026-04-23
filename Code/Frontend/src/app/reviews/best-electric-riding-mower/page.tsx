@@ -48,12 +48,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1344,7 +1344,7 @@ export default function BestElectricRidingMower() {
             {/* Methodology Note */}
             <section className="mb-8">
               <p className="text-xs" style={{ color: '#a1a1aa' }}>
-                <strong style={{ color: '#d4d4d8' }}>How we review:</strong> GreenVerdict
+                <strong style={{ color: '#d4d4d8' }}>How we review:</strong> GreenReviewsHub
                 researches manufacturer specifications, aggregates verified owner reviews,
                 and analyzes real-world performance data. We do not accept payment for
                 placement. Affiliate links may earn a commission at no cost to you, which

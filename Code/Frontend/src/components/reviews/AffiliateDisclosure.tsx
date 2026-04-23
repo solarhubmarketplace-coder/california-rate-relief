@@ -30,7 +30,7 @@ export function AffiliateDisclosure({
       <Info className='h-4 w-4 text-muted-foreground mt-0.5 shrink-0' />
       <p className='text-xs text-muted-foreground leading-relaxed'>
         <strong className='text-foreground/80'>Affiliate disclosure:</strong>{' '}
-        GreenVerdict may earn a commission when you purchase through links on
+        GreenReviewsHub may earn a commission when you purchase through links on
         this page, at no extra cost to you. Our editorial recommendations are
         independent — we test, research, and verify specs before
         recommending anything, and we never accept payment for favorable

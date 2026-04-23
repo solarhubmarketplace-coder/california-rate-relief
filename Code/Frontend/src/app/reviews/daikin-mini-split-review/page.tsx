@@ -53,12 +53,12 @@ const reviewSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -223,7 +223,7 @@ export default function DaikinMiniSplitReviewPage() {
               </p>
 
               <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground'>
-                <span>By <strong className='text-foreground'>GreenVerdict Team</strong></span>
+                <span>By <strong className='text-foreground'>GreenReviewsHub Team</strong></span>
                 <span className='w-1 h-1 rounded-full bg-muted-foreground' />
                 <span>Updated April 21, 2026</span>
                 <span className='w-1 h-1 rounded-full bg-muted-foreground' />
@@ -267,7 +267,7 @@ export default function DaikinMiniSplitReviewPage() {
                       />
                     </div>
                     <span className='text-xs text-muted-foreground'>
-                      GreenVerdict Rating
+                      GreenReviewsHub Rating
                     </span>
                   </div>
                 </div>
@@ -1037,7 +1037,7 @@ export default function DaikinMiniSplitReviewPage() {
                     4.6/5
                   </div>
                   <div>
-                    <div className='font-bold text-foreground'>GreenVerdict Rating</div>
+                    <div className='font-bold text-foreground'>GreenReviewsHub Rating</div>
                     <div className='text-sm text-muted-foreground'>Outstanding — Highly Recommended</div>
                   </div>
                 </div>
@@ -1095,7 +1095,7 @@ export default function DaikinMiniSplitReviewPage() {
                     href: '/reviews/best-mini-split-ac',
                   },
                   {
-                    title: 'Browse All GreenVerdict Reviews',
+                    title: 'Browse All GreenReviewsHub Reviews',
                     desc: 'Power stations, e-bikes, lawn equipment, smart home, and more.',
                     href: '/reviews',
                   },

@@ -48,12 +48,12 @@ const articleSchema = {
   dateModified: '2026-04-17',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1257,7 +1257,7 @@ export default function BestWholeHouseGenerator() {
                   Explore More Green Energy Reviews
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  GreenVerdict independently reviews portable power stations, solar products,
+                  GreenReviewsHub independently reviews portable power stations, solar products,
                   e-bikes, and more to help you find the right gear for your home and lifestyle.
                   Browse our full review library for unbiased, data-driven buying guides.
                 </p>

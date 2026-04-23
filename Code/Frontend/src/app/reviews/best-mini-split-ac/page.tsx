@@ -52,12 +52,12 @@ const articleSchema = {
   dateModified: '2026-04-17',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1167,7 +1167,7 @@ export default function BestMiniSplitACPage() {
                   More Energy-Saving Product Reviews
                 </h3>
                 <p className="text-foreground/70 mb-4 text-sm">
-                  GreenVerdict independently reviews the best green energy products — from portable
+                  GreenReviewsHub independently reviews the best green energy products — from portable
                   power stations to e-bikes to smart HVAC. Find the right product for your home.
                 </p>
                 <Link
@@ -1336,7 +1336,7 @@ export default function BestMiniSplitACPage() {
                   Find the Best Green Energy Products for Your Home
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  GreenVerdict independently reviews portable power stations, e-bikes, smart
+                  GreenReviewsHub independently reviews portable power stations, e-bikes, smart
                   thermostats, electric lawn equipment, and more. Every review includes real specs,
                   honest pros and cons, and energy savings math so you can buy with confidence.
                 </p>
@@ -1344,7 +1344,7 @@ export default function BestMiniSplitACPage() {
                   href="/reviews"
                   className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >
-                  Explore All GreenVerdict Reviews
+                  Explore All GreenReviewsHub Reviews
                   <ChevronRight className="h-5 w-5" />
                 </Link>
               </div>

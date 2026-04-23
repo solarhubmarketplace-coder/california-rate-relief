@@ -45,12 +45,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1374,7 +1374,7 @@ export default function BestElectricSkateboard() {
                   For most riders, we recommend the <strong style={{ color: '#f5f5f5' }}>WowGo 2S Max</strong> (budget) or the <strong style={{ color: '#f5f5f5' }}>Backfire Zealot S2</strong> (belt-drive value). If money is no object, the <strong style={{ color: '#f5f5f5' }}>Boosted Stealth</strong> remains the board to beat.
                 </p>
                 <p className="leading-relaxed text-xs" style={{ color: '#a1a1aa' }}>
-                  Prices accurate as of April 2026. GreenVerdict may earn a commission from affiliate links. This does not influence our ratings.
+                  Prices accurate as of April 2026. GreenReviewsHub may earn a commission from affiliate links. This does not influence our ratings.
                 </p>
               </div>
             </section>

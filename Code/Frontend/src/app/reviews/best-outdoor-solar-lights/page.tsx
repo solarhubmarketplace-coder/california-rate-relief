@@ -47,12 +47,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1182,7 +1182,7 @@ export default function BestOutdoorSolarLights() {
                 </h2>
                 <p className="max-w-2xl mx-auto mb-6 leading-relaxed" style={{ color: '#a1a1aa' }}>
                   Explore more solar-powered product reviews, comparison guides, and energy-saving
-                  tips from GreenVerdict.
+                  tips from GreenReviewsHub.
                 </p>
                 <Link
                   href="/reviews"

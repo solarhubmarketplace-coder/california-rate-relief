@@ -28,7 +28,7 @@ export function ReviewFooter() {
                     className='font-bold text-xl tracking-tight leading-tight'
                     style={{ color: '#f5f5f5' }}
                   >
-                    GreenVerdict
+                    GreenReviewsHub
                   </span>
                   <span
                     className='text-[10px] font-semibold tracking-widest uppercase leading-tight'
@@ -169,10 +169,10 @@ export function ReviewFooter() {
           <div className='pt-8' style={{ borderTop: '1px solid #27272a' }}>
             <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
               <p className='text-sm font-medium' style={{ color: '#71717a' }}>
-                &copy; {currentYear} GreenVerdict. All rights reserved.
+                &copy; {currentYear} GreenReviewsHub. All rights reserved.
               </p>
               <p className='text-xs' style={{ color: '#52525b' }}>
-                GreenVerdict is reader-supported. When you buy through links on our
+                GreenReviewsHub is reader-supported. When you buy through links on our
                 site, we may earn an affiliate commission.
               </p>
             </div>

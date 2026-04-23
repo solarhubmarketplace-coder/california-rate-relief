@@ -54,12 +54,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -80,12 +80,12 @@ const reviewSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1042,7 +1042,7 @@ export default function LectricXP3Review() {
               {/* Rating Breakdown */}
               <section className='mb-12'>
                 <h2 className='text-2xl font-bold mb-6' style={{ color: '#f5f5f5' }}>
-                  GreenVerdict Rating: 4.4 / 5
+                  GreenReviewsHub Rating: 4.4 / 5
                 </h2>
                 <div className='space-y-4'>
                   {[

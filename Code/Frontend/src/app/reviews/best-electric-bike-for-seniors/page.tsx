@@ -48,12 +48,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1108,7 +1108,7 @@ export default function BestElectricBikeForSeniors() {
             {/* Affiliate Disclosure */}
             <div className="rounded-lg p-4 mb-8 border" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
               <p className="text-xs" style={{ color: '#a1a1aa' }}>
-                <strong style={{ color: '#d4d4d8' }}>Affiliate Disclosure:</strong> GreenVerdict
+                <strong style={{ color: '#d4d4d8' }}>Affiliate Disclosure:</strong> GreenReviewsHub
                 may earn a commission if you purchase through our links, at no additional cost to
                 you. We only recommend products we have thoroughly researched. Our editorial
                 opinions are our own and are not influenced by any advertiser or affiliate

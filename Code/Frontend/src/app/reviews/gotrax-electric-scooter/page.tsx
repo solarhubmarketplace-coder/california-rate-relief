@@ -13,7 +13,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Check, X, ChevronRight, Shield,
 const PRIMARY_PRODUCT_KEY = 'gotrax-electric-scooter';
 
 export const metadata: Metadata = {
-  title: 'Gotrax Electric Scooter Review 2026: GXL V2, XR Pro, G4, G3 Compared | GreenVerdict',
+  title: 'Gotrax Electric Scooter Review 2026: GXL V2, XR Pro, G4, G3 Compared | GreenReviewsHub',
   description: 'Complete Gotrax electric scooter review: GXL V2 ($299), XR Pro ($499), G4 ($699), G3 ($549), Apex XL ($649). Honest breakdown of warranty, UL 2272, app, and how Gotrax stacks up vs. Segway and NIU.',
   alternates: { canonical: 'https://ratereliefca.com/reviews/gotrax-electric-scooter' },
   openGraph: {

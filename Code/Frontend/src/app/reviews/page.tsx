@@ -6,7 +6,7 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { Battery, Zap, Star, ChevronRight, Search } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Product Reviews & Comparisons | GreenVerdict',
+  title: 'Product Reviews & Comparisons | GreenReviewsHub',
   description:
     'Expert product reviews and buying guides for portable power stations, e-bikes, mini splits, electric lawn mowers, smart thermostats, and whole house generators. Tested and verified for 2026.',
   alternates: {
@@ -1066,7 +1066,7 @@ function buildCollectionSchema() {
     url: 'https://ratereliefca.com/reviews',
     publisher: {
       '@type': 'Organization',
-      name: 'GreenVerdict',
+      name: 'GreenReviewsHub',
       url: 'https://ratereliefca.com/reviews',
     },
     mainEntity: {

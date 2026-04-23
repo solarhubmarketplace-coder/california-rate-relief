@@ -55,12 +55,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -82,12 +82,12 @@ const reviewSchema = {
   datePublished: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1174,7 +1174,7 @@ export default function RyobiSnowBlowerReview() {
                   <p className='text-4xl font-extrabold' style={{ color: '#f5f5f5' }}>
                     4.3<span className='text-lg font-normal' style={{ color: '#a1a1aa' }}> / 5</span>
                   </p>
-                  <p className='text-sm mt-1' style={{ color: '#a1a1aa' }}>GreenVerdict Rating</p>
+                  <p className='text-sm mt-1' style={{ color: '#a1a1aa' }}>GreenReviewsHub Rating</p>
                 </div>
               </section>
 

@@ -55,12 +55,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -82,12 +82,12 @@ const reviewSchema = {
   datePublished: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1000,7 +1000,7 @@ export default function EgoSnowBlowerReview() {
                     All Reviews
                   </p>
                   <h3 className='text-base font-bold text-foreground group-hover:text-primary transition-colors mb-1'>
-                    GreenVerdict Review Hub
+                    GreenReviewsHub Review Hub
                   </h3>
                   <p className='text-sm text-muted-foreground'>
                     Power stations, e-bikes, smart home, and more — all

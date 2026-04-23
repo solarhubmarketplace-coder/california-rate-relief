@@ -570,7 +570,7 @@ export function buildAffiliateUrl(key: string, source?: string): string {
   const link = getAffiliateLink(key);
   const url = new URL(link.url);
   if (source) {
-    url.searchParams.set('ref', `greenverdict-${source}`);
+    url.searchParams.set('ref', `greenreviewshub-${source}`);
   }
   return url.toString();
 }

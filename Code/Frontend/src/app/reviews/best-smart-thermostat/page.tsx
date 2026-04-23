@@ -48,12 +48,12 @@ const articleSchema = {
   dateModified: '2026-04-17',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -895,7 +895,7 @@ export default function BestSmartThermostatPage() {
                     href="/reviews"
                     className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
                   >
-                    Browse All GreenVerdict Reviews
+                    Browse All GreenReviewsHub Reviews
                     <ChevronRight className="h-5 w-5" />
                   </Link>
                 </div>
@@ -1045,7 +1045,7 @@ export default function BestSmartThermostatPage() {
                   Want More Independent Energy Product Reviews?
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  GreenVerdict publishes hands-on, data-driven reviews of smart home energy
+                  GreenReviewsHub publishes hands-on, data-driven reviews of smart home energy
                   products, portable power stations, e-bikes, and more. Every review includes
                   real specs, honest pros and cons, and no manufacturer influence. Browse our
                   full review library to find the best products for your home.
@@ -1054,7 +1054,7 @@ export default function BestSmartThermostatPage() {
                   href="/reviews"
                   className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors"
                 >
-                  Explore All GreenVerdict Reviews
+                  Explore All GreenReviewsHub Reviews
                   <ChevronRight className="h-5 w-5" />
                 </Link>
               </div>

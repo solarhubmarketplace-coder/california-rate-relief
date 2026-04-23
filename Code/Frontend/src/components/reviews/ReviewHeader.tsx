@@ -36,7 +36,7 @@ export function ReviewHeader() {
                 className='font-bold text-lg tracking-tight leading-tight'
                 style={{ color: '#f5f5f5' }}
               >
-                GreenVerdict
+                GreenReviewsHub
               </span>
               <span
                 className='text-[10px] font-semibold tracking-widest uppercase leading-tight'

@@ -34,9 +34,9 @@ const reviewSchema = {
   reviewBody:
     'The EcoFlow Delta 3 Plus delivers 1,024 Wh of LFP battery capacity (expandable to 5,120 Wh via Smart Extra Battery modules), 1,800W continuous output (2,600W with X-Boost), 1,000W solar input, and a 56-minute full recharge. The upgraded 4,000-cycle battery outlasts the 3,000-cycle competitors. At $999 MSRP, it is one of the best expandable 1 kWh power stations for California homeowners planning for multi-day PSPS events.',
   datePublished: '2026-04-22',
-  author: { '@type': 'Organization', name: 'GreenVerdict', url: 'https://ratereliefca.com' },
+  author: { '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://ratereliefca.com' },
   publisher: {
-    '@type': 'Organization', name: 'GreenVerdict', url: 'https://ratereliefca.com',
+    '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://ratereliefca.com',
     logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
   },
   itemReviewed: {

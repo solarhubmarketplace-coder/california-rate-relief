@@ -52,12 +52,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -82,12 +82,12 @@ const reviewSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1390,7 +1390,7 @@ export default function MitsubishiMiniSplitReview() {
                   className='flex items-center justify-between p-3 rounded-lg hover:bg-primary/5 transition-colors group'
                 >
                   <span className='text-foreground/80 group-hover:text-primary transition-colors'>
-                    All GreenVerdict Reviews
+                    All GreenReviewsHub Reviews
                   </span>
                   <ChevronRight className='h-4 w-4 text-muted-foreground group-hover:text-primary' />
                 </Link>

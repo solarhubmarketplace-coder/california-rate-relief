@@ -49,10 +49,10 @@ const reviewSchema = {
   reviewBody:
     'The EcoFlow River 3 Plus delivers 286 Wh of LFP capacity (expandable to 572 Wh with a second battery module), a 600W continuous inverter (1,200W X-Boost), 220W solar input, and a full 0-100% recharge in 60 minutes. At $399 MSRP, it is the upgrade path from the base River 3 for buyers who want real-world utility from a small unit — including running most household appliances and capacity expansion for longer outages.',
   datePublished: '2026-04-22',
-  author: { '@type': 'Organization', name: 'GreenVerdict', url: 'https://ratereliefca.com' },
+  author: { '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://ratereliefca.com' },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
   },

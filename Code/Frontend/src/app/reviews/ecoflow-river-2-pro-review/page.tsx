@@ -48,10 +48,10 @@ const reviewSchema = {
   reviewBody:
     'The EcoFlow River 2 Pro delivers 768 Wh of LFP battery capacity with 800W continuous output (1,600W X-Boost for resistive loads), 220W solar input, and a full 0-100% recharge in 70 minutes. At $499 MSRP and 17 lbs, it is the best-value mid-capacity portable for California homeowners who want real outage insurance plus camping usability.',
   datePublished: '2026-04-22',
-  author: { '@type': 'Organization', name: 'GreenVerdict', url: 'https://ratereliefca.com' },
+  author: { '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://ratereliefca.com' },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
   },

@@ -47,12 +47,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1011,7 +1011,7 @@ export default function BestSolarAtticFan() {
                 </p>
                 <div className="rounded-lg p-4" style={{ backgroundColor: '#0a0a0a' }}>
                   <p className="text-sm" style={{ color: '#71717a' }}>
-                    <strong style={{ color: '#a1a1aa' }}>Disclosure:</strong> GreenVerdict earns
+                    <strong style={{ color: '#a1a1aa' }}>Disclosure:</strong> GreenReviewsHub earns
                     commissions from qualifying purchases through affiliate links in this article.
                     This does not influence our rankings or recommendations — every product is
                     independently evaluated based on specs, real-world performance, and customer

@@ -23,7 +23,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Portable Heaters (2026): Propane & Electric Compared | GreenVerdict',
+    'Best Portable Heaters (2026): Propane & Electric Compared | GreenReviewsHub',
   description:
     'Compare the best portable heaters for 2026 including propane and electric models. In-depth reviews of Mr. Heater Buddy, DeWalt DXH12B, Sengoku HeatMate, Lasko 755320, Dr. Infrared DR-218, and Campy Gear Chubby. BTU guide, safety tips, and buyer FAQ.',
   alternates: {
@@ -49,12 +49,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',

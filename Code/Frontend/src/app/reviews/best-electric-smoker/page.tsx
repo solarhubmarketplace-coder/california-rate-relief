@@ -49,12 +49,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1366,7 +1366,7 @@ export default function BestElectricSmoker() {
                 </p>
                 <p className="text-xs" style={{ color: '#a1a1aa' }}>
                   <em>
-                    GreenVerdict is reader-supported. When you buy through links on our site, we may
+                    GreenReviewsHub is reader-supported. When you buy through links on our site, we may
                     earn an affiliate commission at no additional cost to you. Prices and
                     availability are accurate as of April 2026 and are subject to change.
                   </em>

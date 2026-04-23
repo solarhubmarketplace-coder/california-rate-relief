@@ -49,12 +49,12 @@ const articleSchema = {
   dateModified: '2026-04-21',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -316,7 +316,7 @@ export default function BestInductionCooktop() {
               style={{ backgroundColor: '#1a1a1a', borderColor: '#27272a', color: '#71717a' }}
             >
               <Shield className="h-4 w-4 inline mr-1.5" style={{ color: '#22c55e' }} />
-              <strong style={{ color: '#a1a1aa' }}>Affiliate disclosure:</strong> GreenVerdict is
+              <strong style={{ color: '#a1a1aa' }}>Affiliate disclosure:</strong> GreenReviewsHub is
               reader-supported. When you buy through links on this page, we may earn an affiliate
               commission at no extra cost to you. We only recommend products we have researched and believe in.
             </div>
@@ -1368,7 +1368,7 @@ export default function BestInductionCooktop() {
               style={{ backgroundColor: '#141414', borderColor: '#22c55e' }}
             >
               <p className="text-sm mb-4" style={{ color: '#a1a1aa' }}>
-                From power stations to e-bikes to smart thermostats, GreenVerdict covers products that help you save energy and money.
+                From power stations to e-bikes to smart thermostats, GreenReviewsHub covers products that help you save energy and money.
               </p>
               <Link
                 href="/reviews"

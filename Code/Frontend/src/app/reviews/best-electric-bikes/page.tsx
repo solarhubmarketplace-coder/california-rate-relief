@@ -47,12 +47,12 @@ const articleSchema = {
   dateModified: '2026-04-17',
   author: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GreenVerdict',
+    name: 'GreenReviewsHub',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -1404,7 +1404,7 @@ export default function BestElectricBikes() {
 
             {/* ========== INTERNAL LINKS ========== */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">More from GreenVerdict</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">More from GreenReviewsHub</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <Link
                   href="/reviews"
@@ -1441,7 +1441,7 @@ export default function BestElectricBikes() {
                   Explore More Green Energy Reviews
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  GreenVerdict independently reviews the best e-bikes, portable power stations,
+                  GreenReviewsHub independently reviews the best e-bikes, portable power stations,
                   solar products, and sustainable tech — so you can make smarter, greener
                   choices with confidence.
                 </p>
