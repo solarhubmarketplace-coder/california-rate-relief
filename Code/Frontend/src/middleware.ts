@@ -3,7 +3,58 @@ import type { NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 
 export async function middleware(request: NextRequest) {
+  const hostname = (request.headers.get('host') || '').toLowerCase();
   const { pathname } = request.nextUrl;
+
+  // ====================================================================
+  // Hostname-based routing — keep CRR (ratereliefca.com) and the
+  // affiliate review site (greenreviewshub.com) cleanly split:
+  //
+  //   ratereliefca.com         → CRR solar business (everything except /reviews/*)
+  //   ratereliefca.com/reviews → 301 redirect to greenreviewshub.com
+  //   greenreviewshub.com      → only serve /reviews/* (the 119 review pages)
+  //   greenreviewshub.com/<x>  → 404 if not a review page
+  //
+  // Both domains deploy from this same repo. Vercel hosts greenreviewshub,
+  // Railway hosts ratereliefca. One commit updates both sites.
+  // ====================================================================
+  const isGreenReviewsHub = /^(www\.)?greenreviewshub\.com$/.test(hostname);
+  const isCRR = /^(www\.)?ratereliefca\.com$/.test(hostname);
+
+  // --- greenreviewshub.com behavior ---
+  if (isGreenReviewsHub) {
+    // Root → reviews index
+    if (pathname === '/') {
+      return NextResponse.redirect(new URL('/reviews', request.url), 302);
+    }
+    // Allow review pages, Next internals, API routes, and static files
+    if (
+      pathname.startsWith('/reviews') ||
+      pathname.startsWith('/_next') ||
+      pathname.startsWith('/api') ||
+      pathname === '/favicon.ico' ||
+      pathname === '/robots.txt' ||
+      pathname === '/sitemap.xml' ||
+      /\.[a-zA-Z0-9]+$/.test(pathname)
+    ) {
+      return NextResponse.next();
+    }
+    // Any other path on this domain → 404 (don't expose CRR pages here)
+    return new NextResponse(null, { status: 404 });
+  }
+
+  // --- ratereliefca.com → 301 redirect /reviews/* to greenreviewshub.com ---
+  if (isCRR && pathname.startsWith('/reviews')) {
+    return NextResponse.redirect(
+      `https://greenreviewshub.com${pathname}`,
+      301
+    );
+  }
+
+  // ====================================================================
+  // Below this line: existing CRR auth logic — runs only on
+  // ratereliefca.com (and on Railway/Vercel preview URLs for testing).
+  // ====================================================================
 
   // Create a response to modify
   let response = NextResponse.next({
