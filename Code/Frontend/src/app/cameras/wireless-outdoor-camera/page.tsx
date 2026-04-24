@@ -40,6 +40,10 @@ export default function WirelessOutdoorCamera() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Wireless Outdoor Camera 2026: Best Single-Camera Picks</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1558002038-1055907df827?w=1200&q=80&auto=format&fit=crop' alt='Single wireless outdoor camera' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Looking for a single wireless outdoor camera — not a full system — to cover a specific spot? Front porch, back yard, driveway, side garage entry? Here are the best standalone wireless outdoor cameras for 2026, organized by price and use case.

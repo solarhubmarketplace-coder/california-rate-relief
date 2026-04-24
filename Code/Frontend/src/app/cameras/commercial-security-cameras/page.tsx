@@ -40,6 +40,10 @@ export default function CommercialSecurityCameras() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Commercial Security Cameras 2026: Systems For Real Business Coverage</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?w=1200&q=80&auto=format&fit=crop' alt='Commercial security cameras system' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Commercial security cameras are a different animal from residential. You&apos;re covering larger square footage, higher camera counts, longer retention requirements, and multi-user access needs. Consumer-grade brands quickly hit scaling limits. Here&apos;s the 2026 guide for businesses shopping beyond the consumer tier.

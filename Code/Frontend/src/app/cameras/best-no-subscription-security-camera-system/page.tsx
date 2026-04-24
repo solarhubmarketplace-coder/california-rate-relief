@@ -40,6 +40,10 @@ export default function BestNoSubSystem() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Best No-Subscription Security Camera System 2026</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop' alt='No-subscription home security camera system' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Most buyers start by shopping individual cameras, then realize they want multiple cameras, then realize the subscription math on Ring or Nest makes the total cost absurd. For whole-home coverage without a recurring fee, the answer is a no-subscription SYSTEM — multiple cameras that integrate with a local hub or NVR, one app to manage them, and full feature access without paywalls. Here are the 2026 options.

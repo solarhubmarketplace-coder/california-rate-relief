@@ -40,6 +40,10 @@ export default function CellularSecurityCamera() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Cellular Security Camera 2026: 4G/LTE Cameras Without WiFi</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?w=1200&q=80&auto=format&fit=crop' alt='Cellular 4G LTE security camera' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Cellular security cameras connect via 4G/LTE mobile networks instead of WiFi — which makes them the only practical option for properties without internet. Cabins, farms, construction sites, rural driveways, vacation homes, and RVs all fit this use case. Here&apos;s the 2026 guide.

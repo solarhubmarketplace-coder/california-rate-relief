@@ -40,6 +40,10 @@ export default function PoeCamera() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>POE Camera Guide 2026: What Is POE, Why It Matters, Best Systems</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&q=80&auto=format&fit=crop' alt='POE security camera wired install' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 POE (Power over Ethernet) cameras are the reliability workhorses of the security camera world. One Ethernet cable carries both power and data — no separate power outlet needed, no WiFi bottleneck, no battery recharges. For permanent installations where uptime matters, POE is the gold standard. Here&apos;s the complete 2026 guide.

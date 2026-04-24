@@ -40,6 +40,10 @@ export default function BusinessSecurityCameras() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Business Security Cameras: 2026 Small-Business Buying Guide</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?w=1200&q=80&auto=format&fit=crop' alt='Business security cameras on a storefront' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Small business security cameras are a different category from residential. You&apos;re protecting inventory, employees, and customers. You probably have multi-building or multi-entrance coverage needs. Subscription costs multiplied across many cameras become significant. The brands that work for a single homeowner often don&apos;t scale to a small business. Here&apos;s the 2026 guide for small businesses shopping cameras.

@@ -40,6 +40,10 @@ export default function DoorbellCameraHub() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Doorbell Camera Buying Guide 2026</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=1200&q=80&auto=format&fit=crop' alt='Video doorbell at a front door' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Video doorbells have gone mainstream — tens of millions sold in the US alone — but the brand landscape has split into two camps: subscription-dependent (Ring, Nest, Blink, Arlo) and subscription-free (Eufy, Reolink, Canary). Picking the wrong one is easy; features that look free at purchase turn out to be paywalled 30 days later. Here&apos;s the plain-English 2026 buying guide.

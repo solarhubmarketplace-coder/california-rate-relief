@@ -121,6 +121,10 @@ export default function CamerasHub() {
               </p>
             </header>
 
+            <div className='mb-10 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&q=80&auto=format&fit=crop' alt='Home security camera system overview' className='w-full h-72 object-cover' loading='lazy' />
+            </div>
+
             <Section title='Brand Reviews'>
               <div className='grid md:grid-cols-2 gap-3'>
                 {brandReviews.map((b) => (

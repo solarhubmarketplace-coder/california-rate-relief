@@ -40,6 +40,10 @@ export default function SecurityCamerasHub() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Security Cameras 2026: Complete Buying Guide & Brand Comparison</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop' alt='Security camera mounted on a modern home' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Home security cameras have split into two camps: subscription-dependent cloud systems (Ring, Blink, Nest, Arlo) and subscription-free local-storage systems (Eufy, Reolink, Canary, and newer TP-Link Tapo / Wyze budget plays). The right choice for you depends on camera count, privacy preferences, ecosystem commitments, and whether you&apos;re OK paying forever or paying once. Here&apos;s the honest complete 2026 guide.

@@ -40,6 +40,10 @@ export default function BestWiredSystem() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Best Wired Security Camera System 2026: POE & NVR Top Picks</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&q=80&auto=format&fit=crop' alt='Wired security camera system with NVR' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Wired security camera systems — specifically POE + NVR setups — are the ultimate reliable-install choice. No WiFi congestion, no battery swaps, no subscription fees, and 24/7 uptime. They take more effort upfront (cable pulling) but reward you with decades of low-maintenance operation. Here are the best 2026 options.

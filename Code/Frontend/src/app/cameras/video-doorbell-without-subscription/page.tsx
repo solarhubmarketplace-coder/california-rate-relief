@@ -40,6 +40,10 @@ export default function VideoDoorbellNoSub() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Best Video Doorbell Without Subscription 2026</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=1200&q=80&auto=format&fit=crop' alt='Video doorbell camera without subscription' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Most major video doorbells — Ring, Nest, Arlo — require a monthly subscription for basic features like event history and person detection. If you just want a doorbell that notifies you when someone&apos;s at the door and lets you review recent activity without paying a recurring fee, you need a different brand. Here are the video doorbells that actually work fully without subscription in 2026, and why the market split looks the way it does.

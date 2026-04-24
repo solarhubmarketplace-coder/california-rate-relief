@@ -40,6 +40,10 @@ export default function BatteryPoweredSecurityCamera() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Battery Powered Security Camera 2026: Best Battery Cams By Use Case</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&q=80&auto=format&fit=crop' alt='Battery powered security camera' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Battery powered security cameras install in minutes without wiring. Perfect for renters, placement flexibility, and spots where outlets or Ethernet aren&apos;t available. Battery life has come a long way — 3-12 months on a charge is common in 2026, and solar panel compatibility makes it effectively indefinite. Here are the best picks by use case.

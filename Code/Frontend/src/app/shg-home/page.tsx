@@ -69,7 +69,11 @@ export default function SHGHomepage() {
               no-subscription alternatives big brands don&apos;t want you to know
               about.
             </p>
-            <div className='flex flex-col sm:flex-row gap-4 justify-center'>
+            
+            <div className='my-8 rounded-xl overflow-hidden border max-w-4xl mx-auto' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop' alt='Modern home with security cameras installed' className='w-full h-72 object-cover' loading='lazy' />
+            </div>
+<div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <Link
                 href='/cameras'
                 className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'

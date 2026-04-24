@@ -40,6 +40,10 @@ export default function BestOutdoorNoSub() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Best Outdoor Security Cameras Without Subscription 2026</h1>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1558002038-1055907df827?w=1200&q=80&auto=format&fit=crop' alt='Outdoor security camera on a home exterior' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
                 Outdoor security cameras face three real-world problems: weather, power, and ongoing subscription costs. The first two have engineering solutions. The third has a brand solution — buy from a manufacturer that doesn&apos;t paywall basic features behind a monthly fee. Here are the outdoor security cameras that actually work without subscription in 2026, organized by how you want to power and mount them.
