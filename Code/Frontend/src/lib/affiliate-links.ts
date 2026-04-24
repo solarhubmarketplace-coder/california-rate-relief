@@ -6,9 +6,9 @@
  * update simultaneously — no per-page edits.
  *
  * Status values:
- *   - 'pending': network approval not yet granted; renders as placeholder/CTA
- *     that still works for click-tracking and UX but goes to brand site.
- *   - 'active': live affiliate link — clicks earn commission.
+ *   - 'pending': network approval not yet granted; clicks route to the brand
+ *     storefront for UX continuity (not monetized).
+ *   - 'active': live affiliate link — clicks earn direct commission.
  *
  * Add new products as we build pages. Keep keys kebab-case matching slug.
  */
