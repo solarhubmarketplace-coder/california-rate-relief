@@ -204,6 +204,30 @@ export default function DIYColdPlunge() {
                 <li>Have a towel and warm layers accessible before you enter</li>
               </ul>
 
+              {/* REFERENCES */}
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Research Base</h2>
+              <p className='text-sm mb-4'>
+                The temperature ranges, session durations, and safety limits used in this build guide come from the peer-reviewed cold-water-immersion literature:
+              </p>
+              <ol className='space-y-3 list-decimal pl-6 text-sm'>
+                <li>
+                  Cain T, Brinsley J, Bennett H, Nelson M, Maher C, Singh B. Effects of cold-water immersion on health and wellbeing: A systematic review and meta-analysis. <em>PLoS One.</em> 2025. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/39879231/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>39879231</a>. 11 studies, N=3,177. Protocols used standard temperatures; no premium equipment required.
+                </li>
+                <li>
+                  Huo C, Song Z, Yin J, et al. Effect of cold water immersion on muscle damage and DOMS: systematic review and meta-analysis. <em>Front Physiol.</em> 2022;13:849600. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/35837014/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>35837014</a>. Meta-analysis supporting the 10–15°C recovery protocol used in the stock-tank and barrel builds.
+                </li>
+                <li>
+                  Espeland D, de Weerd L, Mercer JB. Health effects of voluntary exposure to cold water — a continuing subject of debate. <em>Int J Circumpolar Health.</em> 2022. PMC:{' '}
+                  <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9518606/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>PMC9518606</a>. University of Tromsø review covering the safety guardrails (never alone, no cardiovascular disease, etc.) used throughout this guide.
+                </li>
+                <li>
+                  Reed EL, Worley ML, Greenlund IM, et al. Cardiovascular and perceptual responses to cold-water immersion. <em>J Appl Physiol.</em> 2023. PMC:{' '}
+                  <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10842018/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>PMC10842018</a>. Source of the cardiovascular-safety guardrails (no CVD, no recent cardiac events, exit immediately on symptoms).
+                </li>
+              </ol>
+
               {/* RELATED */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>

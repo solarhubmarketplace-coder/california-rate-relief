@@ -83,7 +83,7 @@ export default function VibrationPlateBenefits() {
                 The strongest indication for WBV in 2025 research is fibromyalgia. A 2025 meta-analysis pooling seven randomized controlled trials showed significant improvements in Fibromyalgia Impact Questionnaire (FIQ) scores, balance measures, and six-minute walk test distances after 8–12 week WBV protocols. Effect sizes were clinically meaningful and compare favorably to standard exercise therapy.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> 2025 meta-analysis (7 RCTs) on WBV for fibromyalgia. Consistent improvements on FIQ, balance, and 6-minute walk test. Used as an adjunct to standard care, not a replacement for medical treatment.
+                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> The foundational Alentorn-Geli et al. randomized trial<sup>1</sup> in women with fibromyalgia was the first to show that 6 weeks of WBV plus physical exercise produced significantly greater reductions in pain, fatigue, and stiffness than exercise alone. Subsequent RCTs and meta-analyses (summarized in Bemben et al.<sup>2</sup>) reinforce the pattern — WBV consistently improves Fibromyalgia Impact Questionnaire (FIQ), balance, and 6-minute walk distance when used as an adjunct to standard care.
               </p>
 
               {/* BENEFIT 2 - OLDER ADULTS */}
@@ -94,7 +94,7 @@ export default function VibrationPlateBenefits() {
                 WBV has accumulated strong evidence in older adult populations — nursing-home residents, community-dwelling seniors, and people with sarcopenia. Recent reviews report consistent improvements in lower-limb strength, gait speed, balance, and general physical performance metrics. The mechanism likely involves motor unit recruitment and neuromuscular adaptation rather than pure hypertrophy.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Multiple 2024–2026 systematic reviews in geriatric rehabilitation journals. WBV is now routinely used in fall-prevention programs. Effect sizes are comparable to resistance training but with much lower adherence barriers — sessions are short and require no technique learning.
+                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Bemben, Stark, Taiar &amp; Bernardo-Filho<sup>2</sup> is the most-cited dose-response review of WBV in elderly populations. The authors concluded that WBV improves muscle strength, power, and bone health in older individuals across multiple protocols, with the best outcomes at 30–50 Hz frequencies and 2–6 mm amplitude delivered 2–3× per week. Effect sizes are comparable to resistance training but with lower adherence barriers.
               </p>
 
               {/* BENEFIT 3 - BODY COMP */}
@@ -105,7 +105,7 @@ export default function VibrationPlateBenefits() {
                 Studies in overweight and obese populations show measurable reductions in body fat percentage, waist circumference, and triglyceride levels with regular WBV training, often alongside improvements in VO₂ peak and leg strength. Effect sizes are smaller than traditional exercise but meaningful for populations with movement limitations.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Multiple RCTs in overweight women report reductions in body fat %, waist circumference, and triglycerides, with improvements in VO₂ peak and leg strength over 8–12 weeks. WBV works best combined with dietary intervention — it is not a stand-alone weight-loss tool.
+                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Marín-Cascales et al.<sup>3</sup> conducted a systematic review and meta-analysis of WBV in postmenopausal women, finding significant benefits for femoral-neck and lumbar bone mineral density as well as body-composition endpoints. WBV works best as an adjunct to dietary intervention and lower-body exercise, not a stand-alone weight-loss tool.
               </p>
 
               {/* BENEFIT 4 - INFLAMMATION */}
@@ -191,6 +191,27 @@ export default function VibrationPlateBenefits() {
                 <li><Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link> — another recovery / mobility modality with distinct research base.</li>
                 <li><Link href='/red-light-therapy/red-light-therapy-benefits' style={{ color: '#34d399' }} className='underline'>Red Light Therapy Benefits</Link> — complementary recovery tool.</li>
               </ul>
+
+              {/* REFERENCES */}
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>References</h2>
+              <ol className='space-y-3 list-decimal pl-6 text-sm'>
+                <li>
+                  Alentorn-Geli E, Padilla J, Moras G, Lázaro Haro C, Fernández-Solà J. Six weeks of whole-body vibration exercise improves pain and fatigue in women with fibromyalgia. <em>J Altern Complement Med.</em> 2008;14(8):975-81. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/18990045/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>18990045</a>.
+                </li>
+                <li>
+                  Bemben D, Stark C, Taiar R, Bernardo-Filho M. Relevance of Whole-Body Vibration Exercises on Muscle Strength/Power and Bone of Elderly Individuals. <em>Dose Response.</em> 2018;16(4):1559325818813066. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/30479585/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>30479585</a>.
+                </li>
+                <li>
+                  Marín-Cascales E, Alcaraz PE, Ramos-Campo DJ, Martinez-Rodriguez A, Chung LH, Rubio-Arias JÁ. Whole-body vibration training and bone health in postmenopausal women: A systematic review and meta-analysis. <em>Medicine (Baltimore).</em> 2018;97(34):e11918. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/30142802/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>30142802</a>.
+                </li>
+                <li>
+                  Rittweger J. Vibration as an exercise modality: how it may work, and what its potential might be. <em>Eur J Appl Physiol.</em> 2010;108(5):877-904. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/20012646/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>20012646</a>. Foundational mechanism paper from the German Aerospace Center / University of Cologne on tonic vibration reflex and motor-unit recruitment.
+                </li>
+              </ol>
 
               {/* DISCLAIMER */}
               <div className='p-5 rounded-xl border mt-10 text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>

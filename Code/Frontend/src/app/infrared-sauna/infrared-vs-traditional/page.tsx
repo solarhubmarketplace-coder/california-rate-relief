@@ -202,6 +202,30 @@ export default function InfraredVsTraditional() {
                 Many users end up with <strong style={{ color: '#f0fdf4' }}>both</strong> over time — an infrared sauna or blanket at home for daily use, plus occasional traditional sauna at a gym or spa for the intense-heat experience.
               </p>
 
+              {/* REFERENCES */}
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Research Base</h2>
+              <p className='text-sm mb-4'>
+                The cardiovascular- and mortality-benefit data below are best characterized for traditional Finnish sauna in the University of Eastern Finland / Kuopio Ischaemic Heart Disease (KIHD) cohort. Infrared-specific evidence is thinner but growing.
+              </p>
+              <ol className='space-y-3 list-decimal pl-6 text-sm'>
+                <li>
+                  Laukkanen JA, Laukkanen T, Kunutsor SK. Cardiovascular and other health benefits of sauna bathing: A review of the evidence. <em>Mayo Clin Proc.</em> 2018;93(8):1111-1121. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/30077204/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>30077204</a>. The University of Eastern Finland / Jyväskylä review summarizing the Kuopio cohort data on sauna frequency, cardiovascular mortality, and all-cause mortality.
+                </li>
+                <li>
+                  Laukkanen T, Khan H, Zaccardi F, Laukkanen JA. Association between sauna bathing and fatal cardiovascular and all-cause mortality events. <em>JAMA Intern Med.</em> 2015;175(4):542-548. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/25705824/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>25705824</a>. 2,315-man Kuopio prospective cohort (20+ year follow-up) showing 4–7x/week sauna use halves sudden-cardiac-death risk versus 1x/week.
+                </li>
+                <li>
+                  Patrick RP, Johnson TL. Sauna use as a lifestyle practice to extend healthspan. <em>Exp Gerontol.</em> 2021;154:111509. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/34363927/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>34363927</a>. Mechanism review covering heat-shock proteins, cardiovascular adaptation, and the traditional-vs-infrared evidence gap.
+                </li>
+                <li>
+                  Crinnion WJ. Sauna as a valuable clinical tool for cardiovascular, autoimmune, toxicant-induced and other chronic health problems. <em>Altern Med Rev.</em> 2011;16(3):215-225. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/21951023/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>21951023</a>. Review covering the infrared-specific literature on blood pressure, chronic pain, and rheumatologic outcomes.
+                </li>
+              </ol>
+
               {/* RELATED */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>

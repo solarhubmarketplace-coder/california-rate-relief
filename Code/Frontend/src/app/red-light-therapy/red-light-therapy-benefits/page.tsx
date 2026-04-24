@@ -86,10 +86,10 @@ export default function RedLightTherapyBenefits() {
                 Multiple randomized controlled trials and meta-analyses show that red light therapy increases collagen density, reduces wrinkle depth, and improves skin elasticity. The strongest effects appear with combined wavelengths — particularly 633 nm red combined with 830 nm near-infrared — delivered over multi-week protocols.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Multiple 2024–2026 RCTs and a recent systematic review in the photomedicine literature confirm improvements in collagen density, wrinkle depth, and elasticity across 8–12 week protocols using 633 nm + 830 nm combination panels and masks. Effect sizes are modest but clinically meaningful, with side-effect profiles that compare favorably to topical retinoids.
+                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> The landmark controlled trial by Wunsch &amp; Matuschka<sup>1</sup> assigned 136 volunteers to 611–650 nm red light, 570–850 nm polychromatic light, or a no-treatment control for 30 sessions. Treatment groups showed statistically significant improvements in wrinkle depth, skin roughness, skin complexion, and collagen density (measured ultrasonographically) versus control. The skin-pathway mechanism is summarized in Avci et al.&apos;s Harvard/Wellman Center review<sup>2</sup>: PBM stimulates fibroblasts, increases collagen and elastin production, and modulates inflammation — the same effects that underpin clinical FDA-cleared devices today.
               </p>
               <p>
-                In plain English: red light therapy for skin works. It is not a miracle cure, but studies show real, measurable improvements — particularly when used consistently for 2–3 months.
+                In plain English: red light therapy for skin works. It is not a miracle cure, but peer-reviewed trials show real, measurable improvements — particularly when used consistently for 2–3 months.
               </p>
 
               {/* BENEFIT 2 - RECOVERY */}
@@ -100,7 +100,7 @@ export default function RedLightTherapyBenefits() {
                 Delayed-onset muscle soreness (DOMS) and perceived muscle pain are two of the most consistently-improved outcomes in PBM research. 2025–2026 meta-analyses pooled dozens of RCTs in trained and untrained subjects and reported meaningful reductions in perceived muscle pain at 24, 48, and 72 hours post-exercise, plus faster recovery of peak force output.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> 2025–2026 systematic reviews and meta-analyses in sports medicine journals consistently report reduced DOMS and improved force recovery. Pre-exercise PBM appears slightly more effective than post-exercise dosing, though both protocols show benefit.
+                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> The Leal-Junior et al. systematic review with meta-analysis<sup>3</sup> pooled 13 RCTs of phototherapy applied before and after resistance-exercise protocols. PBM significantly reduced markers of muscle damage (CK, lactate) and improved both maximal voluntary contraction and time-to-fatigue. Pre-exercise PBM was slightly more effective than post-exercise dosing, but both protocols produced meaningful recovery benefit.
               </p>
 
               {/* BENEFIT 3 - PAIN */}
@@ -111,7 +111,7 @@ export default function RedLightTherapyBenefits() {
                 Systematic reviews confirm that PBM meaningfully reduces chronic pain — particularly neck pain, low back pain, knee osteoarthritis, and fibromyalgia-related pain. The mechanism combines direct mitochondrial support with reduced local inflammatory markers (TNF-α, IL-6, PGE2) measured in both serum and synovial fluid in clinical studies.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Cochrane-style systematic reviews of PBM for chronic musculoskeletal pain. Effect sizes on pain scales (VAS) are clinically meaningful, particularly for knee osteoarthritis and non-specific chronic low back pain. Near-infrared (810–850 nm) is more effective than visible red for deeper musculoskeletal targets because it penetrates further.
+                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Chung et al.<sup>4</sup> — the foundational Harvard/MIT biomedical engineering review of PBM dose, tissue penetration, and inflammatory modulation — describes the biphasic dose-response relationship and wavelength-depth curves that govern why 810–850 nm near-infrared reaches deeper musculoskeletal targets than visible red light. Effect sizes on pain scales (VAS) across subsequent clinical systematic reviews are clinically meaningful, particularly for knee osteoarthritis and non-specific chronic low back pain.
               </p>
 
               {/* BENEFIT 4 - HAIR */}
@@ -122,7 +122,7 @@ export default function RedLightTherapyBenefits() {
                 Red light therapy at ~650–660 nm has the strongest PBM evidence for any single application: it is FDA-cleared for male and female pattern hair loss. RCTs consistently show increased hair count and terminal hair diameter over 16–26 week protocols using helmets, caps, and combs.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Multiple RCTs over the past decade with consistent positive findings. FDA clearance for androgenic alopecia devices (HairMax, iRestore, Capillus) is based on this evidence. Effect size is comparable to topical minoxidil, with a much better side-effect profile.
+                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Lanzafame et al.<sup>5</sup> ran a 16-week double-blind, randomized sham-controlled trial of 655 nm LED phototherapy in men with androgenetic alopecia and found a 35% increase in terminal hair count in the treatment group versus sham. This and similar trials underpin the FDA&apos;s 510(k) clearances of HairMax, iRestore, and Capillus devices. Effect size is comparable to topical minoxidil, with a much better side-effect profile.
               </p>
 
               {/* BENEFIT 5 - COGNITION */}
@@ -207,6 +207,31 @@ export default function RedLightTherapyBenefits() {
                 <li><Link href='/infrared-sauna/infrared-vs-traditional' style={{ color: '#34d399' }} className='underline'>Infrared Sauna vs Traditional</Link> — related wavelength research at sauna doses.</li>
                 <li><Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link> — complementary recovery modality.</li>
               </ul>
+
+              {/* REFERENCES */}
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>References</h2>
+              <ol className='space-y-3 list-decimal pl-6 text-sm'>
+                <li>
+                  Wunsch A, Matuschka K. A controlled trial to determine the efficacy of red and near-infrared light treatment in patient satisfaction, reduction of fine lines, wrinkles, skin roughness, and intradermal collagen density increase. <em>Photomed Laser Surg.</em> 2014;32(2):93-100. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/24286286/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>24286286</a>.
+                </li>
+                <li>
+                  Avci P, Gupta A, Sadasivam M, Vecchio D, Pam Z, Pam N, Hamblin MR. Low-level laser (light) therapy (LLLT) in skin: stimulating, healing, restoring. <em>Semin Cutan Med Surg.</em> 2013;32(1):41-52. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/24049929/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>24049929</a>. (Harvard / Wellman Center for Photomedicine)
+                </li>
+                <li>
+                  Leal-Junior EC, Vanin AA, Miranda EF, de Carvalho PT, Dal Corso S, Bjordal JM. Effect of phototherapy (low-level laser therapy and light-emitting diode therapy) on exercise performance and markers of exercise recovery: a systematic review with meta-analysis. <em>Lasers Med Sci.</em> 2015;30(2):925-39. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/23619627/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>23619627</a>.
+                </li>
+                <li>
+                  Chung H, Dai T, Sharma SK, Huang YY, Carroll JD, Hamblin MR. The nuts and bolts of low-level laser (light) therapy. <em>Ann Biomed Eng.</em> 2012;40(2):516-33. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/22045511/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>22045511</a>. (Harvard / MIT)
+                </li>
+                <li>
+                  Lanzafame RJ, Blanche RR, Bodian AB, Chiacchierini RP, Fernandez-Obregon A, Kazmirek ER. The growth of human scalp hair mediated by visible red light laser and LED sources in males. <em>Lasers Surg Med.</em> 2013;45(8):487-95. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/24078483/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>24078483</a>.
+                </li>
+              </ol>
 
               {/* DISCLAIMER */}
               <div className='p-5 rounded-xl border mt-10 text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>

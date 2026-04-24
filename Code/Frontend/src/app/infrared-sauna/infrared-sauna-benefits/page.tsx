@@ -176,6 +176,31 @@ export default function InfraredSaunaBenefits() {
                 <li>Implantable medical devices — check manufacturer</li>
               </ul>
 
+              {/* REFERENCES */}
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Full References</h2>
+              <ol className='space-y-3 list-decimal pl-6 text-sm'>
+                <li>
+                  Laukkanen T, Khan H, Zaccardi F, Laukkanen JA. Association between sauna bathing and fatal cardiovascular and all-cause mortality events. <em>JAMA Intern Med.</em> 2015;175(4):542-548. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/25705824/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>25705824</a>. The University of Eastern Finland Kuopio cohort (2,315 men, 20+ year follow-up).
+                </li>
+                <li>
+                  Laukkanen JA, Laukkanen T, Kunutsor SK. Cardiovascular and other health benefits of sauna bathing: A review of the evidence. <em>Mayo Clin Proc.</em> 2018;93(8):1111-1121. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/30077204/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>30077204</a>. Comprehensive review across cardiovascular, metabolic, and cognitive endpoints.
+                </li>
+                <li>
+                  Patrick RP, Johnson TL. Sauna use as a lifestyle practice to extend healthspan. <em>Exp Gerontol.</em> 2021;154:111509. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/34363927/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>34363927</a>. Mechanism review — heat-shock protein induction, cardiovascular adaptation, FOXO3 signaling.
+                </li>
+                <li>
+                  Crinnion WJ. Sauna as a valuable clinical tool for cardiovascular, autoimmune, toxicant-induced and other chronic health problems. <em>Altern Med Rev.</em> 2011;16(3):215-225. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/21951023/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>21951023</a>. Infrared-specific clinical review including chronic pain and rheumatologic outcomes.
+                </li>
+                <li>
+                  Hussain J, Cohen M. Clinical effects of regular dry sauna bathing: A systematic review. <em>Evid Based Complement Alternat Med.</em> 2018;2018:1857413. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/29849692/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>29849692</a>. Systematic review of 40 studies; positive signals for cardiovascular, rheumatologic, and pulmonary conditions.
+                </li>
+              </ol>
+
               {/* RELATED */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>

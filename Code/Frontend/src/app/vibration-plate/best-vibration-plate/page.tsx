@@ -249,6 +249,30 @@ export default function BestVibrationPlate() {
                 <li>Migraine-prone or vestibular disorders — start at low Hz for short sessions</li>
               </ul>
 
+              {/* REFERENCES */}
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Research Base</h2>
+              <p className='text-sm mb-4'>
+                The frequency (20–40 Hz), amplitude (2–6 mm), and session-length guidance behind these rankings comes from the peer-reviewed whole-body vibration literature:
+              </p>
+              <ol className='space-y-3 list-decimal pl-6 text-sm'>
+                <li>
+                  Rittweger J. Vibration as an exercise modality: how it may work, and what its potential might be. <em>Eur J Appl Physiol.</em> 2010;108(5):877-904. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/20012646/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>20012646</a>. Foundational mechanism paper (German Aerospace Center / University of Cologne).
+                </li>
+                <li>
+                  Bemben D, Stark C, Taiar R, Bernardo-Filho M. Relevance of Whole-Body Vibration Exercises on Muscle Strength/Power and Bone of Elderly Individuals. <em>Dose Response.</em> 2018;16(4):1559325818813066. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/30479585/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>30479585</a>. Dose-response summary driving the 30–50 Hz recommendation.
+                </li>
+                <li>
+                  Marín-Cascales E, Alcaraz PE, Ramos-Campo DJ, Martinez-Rodriguez A, Chung LH, Rubio-Arias JÁ. Whole-body vibration training and bone health in postmenopausal women: A systematic review and meta-analysis. <em>Medicine (Baltimore).</em> 2018;97(34):e11918. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/30142802/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>30142802</a>.
+                </li>
+                <li>
+                  Alentorn-Geli E, Padilla J, Moras G, Lázaro Haro C, Fernández-Solà J. Six weeks of whole-body vibration exercise improves pain and fatigue in women with fibromyalgia. <em>J Altern Complement Med.</em> 2008;14(8):975-81. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/18990045/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>18990045</a>.
+                </li>
+              </ol>
+
               {/* RELATED */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>

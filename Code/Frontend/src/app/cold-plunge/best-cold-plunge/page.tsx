@@ -262,6 +262,34 @@ export default function BestColdPlunge() {
                 <li>Exit immediately if you feel lightheaded, disoriented, or chest tightness</li>
               </ul>
 
+              {/* REFERENCES */}
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Research Base</h2>
+              <p className='text-sm mb-4'>
+                The protocol guidance (50–59°F target, 2–10 minute dose, frequency, and safety notes) comes from the peer-reviewed cold-water-immersion literature:
+              </p>
+              <ol className='space-y-3 list-decimal pl-6 text-sm'>
+                <li>
+                  Huo C, Song Z, Yin J, Zhu Y, Miao X, Qian H, Wang J, Ye L, Zhou L. Effect of cold water immersion on muscle damage and delayed onset muscle soreness in athletes: a systematic review and meta-analysis. <em>Front Physiol.</em> 2022;13:849600. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/35837014/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>35837014</a>. Meta-analysis establishing CWI efficacy for DOMS and CK/LDH reduction.
+                </li>
+                <li>
+                  Scott BR, Loenneke JP. Effects of Cold-Water Immersion Compared with Other Recovery Modalities on Athletic Performance Following Acute Resistance Exercise: A Systematic Review and Meta-analysis. <em>Sports Med.</em> 2023. PMC:{' '}
+                  <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10778965/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>PMC10778965</a>. Comparator review positioning CWI against passive rest, active recovery, and contrast therapy.
+                </li>
+                <li>
+                  Reed EL, Worley ML, Greenlund IM, Schlader ZJ, Carter SJ, Chapman CL, Schlader ZJ. Cardiovascular and perceptual responses to cold-water immersion. <em>J Appl Physiol.</em> 2023. PMC:{' '}
+                  <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10842018/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>PMC10842018</a>. Underlying the cardiovascular safety guidance.
+                </li>
+                <li>
+                  Cain T, Brinsley J, Bennett H, Nelson M, Maher C, Singh B. Effects of cold-water immersion on health and wellbeing: A systematic review and meta-analysis. <em>PLoS One.</em> 2025. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/39879231/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>39879231</a>. 2025 systematic review pooling mood, inflammation, and sleep outcomes.
+                </li>
+                <li>
+                  Espeland D, de Weerd L, Mercer JB. Health effects of voluntary exposure to cold water — a continuing subject of debate. <em>Int J Circumpolar Health.</em> 2022. PMC:{' '}
+                  <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9518606/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>PMC9518606</a>. University of Tromsø review of documented benefits and hazards.
+                </li>
+              </ol>
+
               {/* RELATED */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>

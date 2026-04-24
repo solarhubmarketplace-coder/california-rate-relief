@@ -246,6 +246,34 @@ export default function BestRedLightTherapyDevice() {
                 <li>Pregnancy: conservative use; avoid direct abdominal treatment</li>
               </ul>
 
+              {/* REFERENCES */}
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Research Base</h2>
+              <p className='text-sm mb-4'>
+                Device rankings below are grounded in the peer-reviewed photobiomodulation literature. The most-cited foundational and clinical papers:
+              </p>
+              <ol className='space-y-3 list-decimal pl-6 text-sm'>
+                <li>
+                  Chung H, Dai T, Sharma SK, Huang YY, Carroll JD, Hamblin MR. The nuts and bolts of low-level laser (light) therapy. <em>Ann Biomed Eng.</em> 2012;40(2):516-33. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/22045511/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>22045511</a>. Foundational review on dose, wavelength, and biphasic response — the basis for the &quot;irradiance &gt; 100 mW/cm²&quot; threshold used in device reviews.
+                </li>
+                <li>
+                  Wunsch A, Matuschka K. A controlled trial to determine the efficacy of red and near-infrared light treatment in patient satisfaction, reduction of fine lines, wrinkles, skin roughness, and intradermal collagen density increase. <em>Photomed Laser Surg.</em> 2014;32(2):93-100. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/24286286/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>24286286</a>. The skin/collagen trial that underpins face-mask and panel skin-rejuvenation claims.
+                </li>
+                <li>
+                  Avci P, Gupta A, Sadasivam M, Vecchio D, Pam Z, Pam N, Hamblin MR. Low-level laser (light) therapy (LLLT) in skin: stimulating, healing, restoring. <em>Semin Cutan Med Surg.</em> 2013;32(1):41-52. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/24049929/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>24049929</a>. Harvard / Wellman Center review of PBM on skin.
+                </li>
+                <li>
+                  Lanzafame RJ, Blanche RR, Bodian AB, Chiacchierini RP, Fernandez-Obregon A, Kazmirek ER. The growth of human scalp hair mediated by visible red light laser and LED sources in males. <em>Lasers Surg Med.</em> 2013;45(8):487-95. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/24078483/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>24078483</a>. RCT underpinning FDA 510(k) clearances for hair-growth devices.
+                </li>
+                <li>
+                  Leal-Junior EC, Vanin AA, Miranda EF, de Carvalho PT, Dal Corso S, Bjordal JM. Effect of phototherapy on exercise performance and markers of exercise recovery: systematic review with meta-analysis. <em>Lasers Med Sci.</em> 2015;30(2):925-39. PMID:{' '}
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/23619627/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>23619627</a>. Basis for muscle-recovery protocol claims.
+                </li>
+              </ol>
+
               {/* RELATED */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
