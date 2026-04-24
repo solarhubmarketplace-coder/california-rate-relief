@@ -1023,6 +1023,15 @@ const reviews: ReviewCard[] = [
     rating: 4.5,
     icon: 'zap',
   },
+  {
+    slug: 'jackery-explorer-300-review',
+    title: 'Jackery Explorer 300 Review',
+    description:
+      'Ultra-portable 293Wh power station at just 7.1 lbs. Perfect for camping, road trips, and charging laptops and drones.',
+    badge: 'Product Review',
+    rating: 4.2,
+    icon: 'battery',
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {

@@ -40,6 +40,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'nem-3-california-still-worth-it',
     'pge-vs-sce-vs-sdge-rates-compared',
     'prepaid-ppa-california-2026',
+    'ppa-loan-vs-solar-lease-vs-cash-california',
+    'net-billing-vs-net-metering-california',
+    'nem-3-california-timeline',
+    'hoa-solar-rights-california',
+    'low-income-solar-california',
+    'free-roof-replacement-with-solar-panels-california',
+    'nem-2-vs-nem-3-california',
+    'rent-solar-panels-for-your-home-california',
+    'are-solar-panels-worth-it-california',
+    'switch-to-solar-california',
+    'solar-system-quotes-california',
+    'tesla-powerwall-installers-california',
+    'solar-panels-for-ev-charging-california',
+    'what-is-nem-3-california',
+    'free-solar-for-seniors-california',
+    'do-solar-panels-work-at-night-california',
+    'do-solar-panels-work-on-cloudy-days-california',
+    'why-is-my-california-electric-bill-so-high',
+    'how-big-of-a-solar-system-do-i-need-california',
+    'can-solar-panels-power-a-whole-house-california',
+    'do-solar-panels-work-during-power-outage-california',
+    'is-my-roof-good-for-solar-california',
+    'what-happens-to-solar-panels-after-25-years',
     'how-long-do-solar-panels-last',
     'solar-panel-inspection-california',
     'solar-panel-removal-reinstall-cost',
@@ -205,6 +228,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'dewalt-leaf-blower-review',
     'ryobi-leaf-blower-review',
     'milwaukee-leaf-blower-review',
+    'jackery-explorer-300-review',
   ].map((slug) => ({
     url: `${BASE_URL}/reviews/${slug}`,
     lastModified: new Date('2026-04-22'),
@@ -222,5 +246,86 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...staticPages, ...blogPosts, ...reviewIndex, ...reviewPages, ...cityPages, ...regionalHubs];
+  // Commercial solar section (hub + 7 topic pages)
+  const commercialSolarPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/commercial-solar`,
+      lastModified: new Date('2026-04-23'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    ...[
+      'companies-california',
+      'financing-options',
+      'cost-per-watt-california',
+      'title-24-requirements',
+      'cpace-financing-california',
+      'sgip-battery-storage',
+      'vnem-aggregation-multi-meter',
+    ].map((slug) => ({
+      url: `${BASE_URL}/commercial-solar/${slug}`,
+      lastModified: new Date('2026-04-23'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+  ];
+
+  // California solar installer comparison pages (hub + 7 reviews)
+  const installerPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/best-solar-companies-california`,
+      lastModified: new Date('2026-04-22'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    ...[
+      'freedom-forever-review',
+      'sunrun-review',
+      'tesla-solar-review',
+      'sunpower-review',
+      'momentum-solar-review',
+      'semper-solaris-review',
+      'solar-optimum-review',
+      'sunnova-review',
+      'trinity-solar-review',
+    ].map((slug) => ({
+      url: `${BASE_URL}/solar-installers/${slug}`,
+      lastModified: new Date('2026-04-23'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    })),
+  ];
+
+  // Panel brand reviews (new section)
+  const panelReviewPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/panel-reviews`,
+      lastModified: new Date('2026-04-23'),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    ...[
+      'trina-solar-panels-review',
+      'silfab-solar-panels-review',
+      'rec-solar-panels-review',
+      'canadian-solar-panels-review',
+    ].map((slug) => ({
+      url: `${BASE_URL}/panel-reviews/${slug}`,
+      lastModified: new Date('2026-04-23'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+  ];
+
+  return [
+    ...staticPages,
+    ...blogPosts,
+    ...reviewIndex,
+    ...reviewPages,
+    ...cityPages,
+    ...regionalHubs,
+    ...installerPages,
+    ...commercialSolarPages,
+    ...panelReviewPages,
+  ];
 }
