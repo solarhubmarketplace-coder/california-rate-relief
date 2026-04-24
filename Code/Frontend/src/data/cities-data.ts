@@ -183,6 +183,23 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     rateIncreaseHistory:
       'Lodi Electric rates remain well below the major IOUs at roughly 18¢/kWh. The city-owned utility has maintained stable, affordable rates.',
   },
+  reu: {
+    code: 'reu',
+    name: 'Roseville Electric Utility',
+    shortName: 'Roseville Electric',
+    ratePerKwh: 0.17,
+    peakTouRate: '20-26¢',
+    annualIncrease: 0.03,
+    fixedCharge: 0,
+    accountUrl: 'https://www.roseville.ca.us/government/departments/roseville_electric',
+    careFeraUrl: 'https://www.roseville.ca.us/government/departments/roseville_electric/customer_care/assistance_programs',
+    ratePlanAdvice:
+      'Roseville Electric is a municipal utility owned by the City of Roseville with some of the lowest electricity rates in California — roughly half of PG&E or SCE. Check your account for the current residential schedule and any available TOU options.',
+    nemVersion: 'Roseville Electric Net Metering',
+    exportRate: '~retail rate (varies)',
+    rateIncreaseHistory:
+      'Roseville Electric rates have remained among the most stable and lowest in California, typically 15–18¢/kWh versus 40¢+ in IOU territory.',
+  },
   // FUTURE UTILITIES — Add when expanding to new territories
   // bwp: { ... },    // Burbank Water & Power
   // pwp: { ... },    // Pasadena Water & Power
@@ -4761,5 +4778,78 @@ export const CITIES: CityData[] = [
   googleSunroofUrl: 'https://sunroof.withgoogle.com',
   relatedArticles: SCE_RELATED_ARTICLES,
   seoData: { primaryKeyword: 'solar panels westminster', volume: 50, kd: 0, verdict: 'BUILD' },
+},
+
+{
+  name: 'Roseville',
+  slug: 'roseville',
+  county: 'Placer County',
+  state: 'California',
+  utilityCode: 'reu',
+  avgMonthlyBill: 160,
+  peakSunHours: 5.7,
+  annualSunshineHours: 3200,
+  population: '153K',
+  systemSizeKw: 8.5,
+  systemCostCash: 25500,
+  introText:
+    'Roseville is one of the fastest-growing cities in California, anchoring Placer County north of Sacramento with a population of roughly 153,000. Unlike most of the state, Roseville runs its own municipal utility — Roseville Electric Utility (REU) — which means residential electricity rates are roughly half of PG&E or SCE. That flips the usual California solar math: the payback period is longer because rates are lower, but the rate stability and the municipal net-metering structure still make solar attractive, particularly for homes that plan to add battery storage or EV charging.',
+  electricitySection:
+    'The average Roseville household pays approximately $160 per month for electricity, or about $1,920 per year — significantly less than homes in PG&E territory just a few miles south. Roseville Electric\'s residential rate runs roughly 16–18¢/kWh, compared to 41¢+/kWh in PG&E territory. Rate increases have been modest (~3% annual) and predictable.\n\nThe flip side: lower rates mean slower payback on solar. A Roseville cash-purchase system typically pays back in 9–12 years versus 6–7 years in PG&E territory. PPAs still make sense because they lock in a known per-kWh rate against future Roseville Electric increases, but the relative savings are smaller than in IOU territory.',
+  solarPotentialText:
+    'Roseville averages approximately 3,200 hours of sunshine per year with 5.7 peak sun hours per day — one of the stronger solar-resource profiles in Northern California. The inland Sacramento Valley location keeps coastal fog out, and most Roseville neighborhoods (especially West Roseville, Fiddyment Farm, and Blue Oaks) were built recently enough that homes have south-facing roofs designed with sun exposure in mind.',
+  localTips: [
+    {
+      title: 'Roseville Electric\'s municipal net metering:',
+      content:
+        'Unlike PG&E or SCE, Roseville Electric is not subject to California\'s NEM 3.0 rules. REU offers its own net-metering structure — typically credit at or near retail rate for exports, much more favorable than the 5–8¢/kWh IOU export rate under NEM 3.0. Confirm the current REU residential interconnection rules before designing your system size.',
+    },
+    {
+      title: 'West Roseville / Fiddyment Farm / Blue Oaks new construction:',
+      content:
+        'Many newer Roseville subdivisions north of Baseline Road were built solar-ready with pre-wired conduit and 200-amp panels. If you bought after 2018 in a master-planned community, check whether your home already has solar, and whether you own it or inherit a builder PPA.',
+    },
+    {
+      title: 'EV + solar pairing is especially strong in Roseville:',
+      content:
+        'Roseville commuters drive significant distances to Sacramento, Folsom, and the Bay Area tech corridor. Pairing a home Level-2 EV charger with solar — under REU\'s favorable net-metering — offsets both your electricity and vehicle fuel costs. REU also offers EV-specific rate plans worth comparing.',
+    },
+  ],
+  whenSolarDoesntWork:
+    'If your Roseville Electric bill is under $100/month, the payback period on a cash-purchase solar system may stretch beyond 12 years, which is longer than most homeowners want. A PPA or lease still makes sense for rate protection, but the absolute monthly savings are smaller than in PG&E territory. Homes in Roseville\'s historic downtown districts with mature trees or strict design guidelines may also face installation constraints.',
+  bottomLine:
+    'Roseville sits in an unusual but attractive solar market: the peak sun hours are excellent, the utility is homeowner-friendly, and the net-metering structure outside NEM 3.0 makes exported solar meaningfully more valuable than in PG&E territory. The only catch is the lower retail rate lengthens payback. For households planning to add an EV or battery storage — or simply looking to lock in a known electricity rate against future REU increases — Roseville solar is a sound investment.',
+  faqs: [
+    {
+      question: 'How much does solar cost in Roseville in 2026?',
+      answer:
+        'A typical 8.5 kW solar system in Roseville costs approximately $25,500 before incentives if purchased outright. With a PPA, there is no upfront cost — you pay a fixed per-kWh rate typically priced just below Roseville Electric\'s current residential rate, with contractual increases capped below REU\'s historical 3% annual rate rise.',
+    },
+    {
+      question: 'Is solar worth it in Roseville with REU\'s low rates?',
+      answer:
+        'Yes, though the math is different than in PG&E territory. Roseville Electric rates are roughly 40% of PG&E\'s, so absolute monthly savings are smaller. But REU\'s net-metering is more favorable than NEM 3.0, and a PPA locks in a known rate against future REU increases. For homes with EV charging or planned battery storage, solar is particularly attractive.',
+    },
+    {
+      question: 'Does NEM 3.0 apply to Roseville?',
+      answer:
+        'No. NEM 3.0 applies only to the three investor-owned utilities (PG&E, SCE, SDG&E). Roseville Electric Utility is a municipal utility that runs its own net-metering program, typically crediting exports at or near retail rate — much more favorable than the 5–8¢/kWh IOU export rate under NEM 3.0.',
+    },
+    {
+      question: 'Can my HOA block solar panels in Roseville?',
+      answer:
+        'No. California\'s Solar Rights Act (Civil Code § 714) prohibits HOAs from banning solar installation, and the law applies statewide regardless of utility territory. HOAs can impose reasonable aesthetic guidelines, but cannot effectively prohibit solar.',
+    },
+  ],
+  metaTitle: 'Solar in Roseville, CA: 2026 Guide to REU Net Metering & Costs',
+  metaDescription:
+    'Roseville Electric rates are half PG&E\'s — which changes the solar math. Learn what solar costs in Roseville in 2026, REU\'s favorable net metering, and whether solar pays back faster with an EV or battery.',
+  ogTitle: 'Solar Savings in Roseville, CA: Roseville Electric Territory',
+  ogDescription:
+    'Roseville Electric offers California\'s most favorable municipal net-metering outside NEM 3.0. Here\'s what solar actually costs and saves in Roseville in 2026.',
+  energySageUrl: 'https://www.energysage.com/local-data/solar-panel-cost/ca/placer-county/roseville/',
+  googleSunroofUrl: 'https://sunroof.withgoogle.com',
+  relatedArticles: MUNI_RELATED_ARTICLES,
+  seoData: { primaryKeyword: 'solar companies in roseville', volume: 150, kd: 0, verdict: 'BUILD — EnergySage pos 2, no CRR page' },
 },
 ];
