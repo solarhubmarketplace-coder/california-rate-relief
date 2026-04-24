@@ -254,6 +254,10 @@ export default function BestPortablePowerStations() {
               </div>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80&auto=format&fit=crop' alt='Portable power station' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>

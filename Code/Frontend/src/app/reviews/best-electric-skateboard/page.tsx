@@ -274,6 +274,10 @@ export default function BestElectricSkateboard() {
               </p>
             </header>
 
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              <img src='https://images.unsplash.com/photo-1558981420-87aa9dad1c89?w=1200&q=80&auto=format&fit=crop' alt='Electric skateboard' className='w-full h-64 object-cover' loading='lazy' />
+            </div>
+
             <AffiliateDisclosure compact />
 
             {/* ========== TABLE OF CONTENTS ========== */}
