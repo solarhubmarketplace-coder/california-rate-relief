@@ -12,9 +12,32 @@ export const metadata: Metadata = {
   openGraph: { title: 'At Home Biohacking — Research-Backed Wellness Reviews', description: 'Cited research. Honest reviews. Home biohacking done right.', type: 'website', url: 'https://athomebiohacking.com/' },
 };
 
+const ahbOrgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'At Home Biohacking',
+  url: 'https://athomebiohacking.com',
+  description: 'Research-backed reviews of at-home biohacking and wellness products with peer-reviewed citations.',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'editorial',
+    availableLanguage: 'English',
+  },
+};
+
+const ahbWebsiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'At Home Biohacking',
+  url: 'https://athomebiohacking.com',
+  publisher: { '@type': 'Organization', name: 'At Home Biohacking' },
+};
+
 export default function AHBHome() {
   return (
     <AHBLayout>
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(ahbOrgSchema) }} />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(ahbWebsiteSchema) }} />
       <AHBHeader />
       <main className='py-16' style={{ backgroundColor: '#0a1a14' }}>
         <div className='container mx-auto px-4'>

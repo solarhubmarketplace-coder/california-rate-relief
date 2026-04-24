@@ -1,148 +1,122 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Script from 'next/script';
 import './globals.css';
 import { Providers } from './providers';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 
-const BASE_URL = 'https://ratereliefca.com';
+// =============================================================================
+// PER-DOMAIN ROOT METADATA
+// =============================================================================
+// All four domains run from this single Next.js codebase. Each domain needs
+// its own root metadata (title, description, OG, robots, canonical base) so
+// Google reads each as a distinct site, not as duplicates of CRR.
+//
+// Per-page metadata (set in individual page.tsx files) overrides this root
+// default — but only for the title/description/canonical/OG fields. The
+// metadataBase below scopes how relative canonicals resolve.
+// =============================================================================
 
-export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
-  verification: {
-    google: 'alM4ttazO_TNjm-jjscGnlwFakwTWXiAqA0xaZy9umg',
-  },
-  title: 'California Rate Relief Program | Cut Your Electric Bill by 50%',
-  description:
-    'Qualify for the 2026 Rate Relief Program. California homeowners can swap their high utility rate for a lower, fixed solar rate. No loans, no debt, $0 down.',
-  keywords:
-    'California solar, rate relief program, electric bill savings, PPA, solar power purchase agreement, SCE savings, PG&E alternatives, SDG&E solar, NEM 3.0, net metering California, reduce electric bill California',
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
+const DOMAIN_DEFAULTS = {
+  ratereliefca: {
+    base: 'https://ratereliefca.com',
     title: 'California Rate Relief Program | Cut Your Electric Bill by 50%',
     description:
-      'Qualify for the 2026 Rate Relief Program. Swap your high utility rate for a lower, fixed rate. $0 Down.',
-    type: 'website',
-    locale: 'en_US',
-    url: BASE_URL,
+      'Qualify for the 2026 Rate Relief Program. California homeowners can swap their high utility rate for a lower, fixed solar rate. No loans, no debt, $0 down.',
     siteName: 'California Rate Relief Program',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'California Rate Relief Program — Cut Your Electric Bill by Up to 50%',
-      },
-    ],
+    ogImage: '/og-image.png',
+    ogAlt: 'California Rate Relief Program — Cut Your Electric Bill by Up to 50%',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'California Rate Relief Program | Cut Your Electric Bill by 50%',
+  greenreviewshub: {
+    base: 'https://greenreviewshub.com',
+    title: 'Green Reviews Hub | Honest Green-Energy Product Reviews',
     description:
-      'Qualify for the 2026 Rate Relief Program. Swap your high utility rate for a lower, fixed rate. $0 Down.',
-    images: ['/og-image.png'],
+      'Independent buying guides for portable power stations, e-bikes, mini splits, electric lawn mowers, smart thermostats, heat pumps, and whole-house generators.',
+    siteName: 'Green Reviews Hub',
+    ogImage: '/og-image.png',
+    ogAlt: 'Green Reviews Hub — Independent Green Energy Product Reviews',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+  securehomegear: {
+    base: 'https://securehomegear.com',
+    title: 'SecureHomeGear — Honest Home Security Reviews',
+    description:
+      'Independent, research-backed reviews of home security cameras, video doorbells, and smart locks. We help you find products that fit your home — with or without subscription lock-in.',
+    siteName: 'SecureHomeGear',
+    ogImage: '/og-image.png',
+    ogAlt: 'SecureHomeGear — Independent Home Security Reviews',
+  },
+  athomebiohacking: {
+    base: 'https://athomebiohacking.com',
+    title: 'At Home Biohacking — Research-Backed Wellness Reviews',
+    description:
+      'Honest, peer-reviewed research-backed reviews of home biohacking products: cold plunges, infrared saunas, PEMF mats, red light therapy, and vibration plates. We cite the studies.',
+    siteName: 'At Home Biohacking',
+    ogImage: '/og-image.png',
+    ogAlt: 'At Home Biohacking — Research-Backed Wellness Reviews',
+  },
+};
+
+function detectDomainKey(host: string): keyof typeof DOMAIN_DEFAULTS {
+  const h = host.toLowerCase();
+  if (h.includes('greenreviewshub')) return 'greenreviewshub';
+  if (h.includes('securehomegear')) return 'securehomegear';
+  if (h.includes('athomebiohacking')) return 'athomebiohacking';
+  return 'ratereliefca';
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const hdrs = await headers();
+  const host = hdrs.get('host') || 'ratereliefca.com';
+  const cfg = DOMAIN_DEFAULTS[detectDomainKey(host)];
+
+  return {
+    metadataBase: new URL(cfg.base),
+    verification: {
+      google: 'alM4ttazO_TNjm-jjscGnlwFakwTWXiAqA0xaZy9umg',
+    },
+    title: cfg.title,
+    description: cfg.description,
+    alternates: {
+      canonical: '/',
+    },
+    openGraph: {
+      title: cfg.title,
+      description: cfg.description,
+      type: 'website',
+      locale: 'en_US',
+      url: cfg.base,
+      siteName: cfg.siteName,
+      images: [
+        {
+          url: cfg.ogImage,
+          width: 1200,
+          height: 630,
+          alt: cfg.ogAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: cfg.title,
+      description: cfg.description,
+      images: [cfg.ogImage],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  icons: {
-    icon: '/img/logo.svg',
-  },
-};
-
-// JSON-LD Structured Data
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'California Rate Relief Program',
-  url: BASE_URL,
-  logo: `${BASE_URL}/img/logo.svg`,
-  description:
-    'Helping California homeowners reduce their energy bills through the Rate Relief Program. Licensed, bonded, and insured.',
-  contactPoint: {
-    '@type': 'ContactPoint',
-    email: 'info@ratereliefca.com',
-    contactType: 'customer service',
-    areaServed: 'US-CA',
-    availableLanguage: 'English',
-  },
-  areaServed: {
-    '@type': 'State',
-    name: 'California',
-  },
-};
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'California Rate Relief Program',
-  url: BASE_URL,
-  logo: `${BASE_URL}/img/logo.svg`,
-  description:
-    'Qualify for the 2026 Rate Relief Program. California homeowners can swap their high utility rate for a lower, fixed solar rate.',
-  email: 'info@ratereliefca.com',
-  areaServed: [
-    { '@type': 'State', name: 'California' },
-  ],
-  priceRange: '$0 down',
-  serviceType: 'Solar Power Purchase Agreement (PPA)',
-};
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'How does the California Rate Relief Program work?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We install solar panels on your roof at no cost out of pocket. Instead of paying your utility company a different amount every month, you pay a fixed monthly payment that is typically 30 to 50% less than what you are currently paying. The program covers 100% of the cost for solar panels, backup batteries, and installation.',
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       },
     },
-    {
-      '@type': 'Question',
-      name: 'Who qualifies for the Rate Relief Program?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'California homeowners with SCE, PG&E, or SDG&E as their utility provider, monthly electric bills of $150 or more, and a credit score of 650 or above typically qualify. Renters are not eligible for this program.',
-      },
+    icons: {
+      icon: '/img/logo.svg',
     },
-    {
-      '@type': 'Question',
-      name: 'Is there any cost to the homeowner?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'There is $0 out of pocket cost. The program covers the full cost of solar panels, battery storage, and professional installation. Instead of paying your utility company, you simply pay a lower, fixed rate for the power generated by the system on your roof.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What happens if something breaks?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The program includes a comprehensive 25-year bumper-to-bumper warranty. If a panel breaks, it gets fixed. If an inverter fails, it gets replaced. All maintenance and repairs are covered at no cost to you for 25 years.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Which utility companies are supported?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'The program currently supports homeowners with Southern California Edison (SCE), Pacific Gas & Electric (PG&E), San Diego Gas & Electric (SDG&E), Moreno Valley Utility (MVU), and Los Angeles Department of Water and Power (LADWP).',
-      },
-    },
-  ],
-};
+  };
+}
 
 export default function RootLayout({
   children,
@@ -165,24 +139,6 @@ export default function RootLayout({
         <meta name="impact-site-verification" {...{ value: 'be1e153b-e9af-454d-b03d-4009e2c884bd' }} />
         {/* eslint-disable-next-line react/no-unknown-property */}
         <meta name="impact-site-verification" {...{ value: '5415a32f-dea8-4428-9a39-02c4e626cdcf' }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
-        />
       </head>
       <body className="font-sans antialiased">
         <GoogleAnalytics />

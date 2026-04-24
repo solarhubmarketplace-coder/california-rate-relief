@@ -10,8 +10,32 @@ export const metadata: Metadata = {
   description:
     'Expert product reviews and buying guides for portable power stations, e-bikes, mini splits, electric lawn mowers, smart thermostats, and whole house generators. Tested and verified for 2026.',
   alternates: {
-    canonical: '/reviews',
+    canonical: 'https://greenreviewshub.com/reviews',
   },
+  openGraph: {
+    title: 'Product Reviews & Comparisons | GreenReviewsHub',
+    description: 'Expert product reviews and buying guides — tested and verified for 2026.',
+    type: 'website',
+    url: 'https://greenreviewshub.com/reviews',
+    siteName: 'Green Reviews Hub',
+  },
+};
+
+const grhOrgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Green Reviews Hub',
+  url: 'https://greenreviewshub.com',
+  description:
+    'Independent buying guides for portable power stations, e-bikes, mini splits, smart thermostats, and other green-energy products.',
+};
+
+const grhWebsiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Green Reviews Hub',
+  url: 'https://greenreviewshub.com',
+  publisher: { '@type': 'Organization', name: 'Green Reviews Hub' },
 };
 
 interface ReviewCard {
@@ -1096,6 +1120,14 @@ export default function ReviewsPage() {
   return (
     <ReviewLayout>
       <ReviewHeader />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(grhOrgSchema) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(grhWebsiteSchema) }}
+      />
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
