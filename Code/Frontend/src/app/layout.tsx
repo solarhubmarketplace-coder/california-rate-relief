@@ -154,6 +154,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Impact.com site verification. Impact's scanner looks for a
+            `value` attribute (non-standard for <meta>, but that's what
+            they specified in the dashboard). All 3 properties live on
+            the same codebase; each value only validates on its own
+            domain, so having all 3 present is harmless. */}
+        {/* eslint-disable-next-line react/no-unknown-property */}
+        <meta name="impact-site-verification" {...{ value: '22606a76-7eb9-4faf-8d66-de119204a9ee' }} />
+        {/* eslint-disable-next-line react/no-unknown-property */}
+        <meta name="impact-site-verification" {...{ value: 'be1e153b-e9af-454d-b03d-4009e2c884bd' }} />
+        {/* eslint-disable-next-line react/no-unknown-property */}
+        <meta name="impact-site-verification" {...{ value: '5415a32f-dea8-4428-9a39-02c4e626cdcf' }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
