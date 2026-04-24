@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'Sunrun vs Tesla Solar: Which Is Better for California Homes in 2026?',
-  description: "Sunrun vs Tesla Solar — pricing, equipment (Tesla Solar Roof vs conventional), battery integration, service model, and California customer experience compared.",
+  description: "Sunrun vs Tesla Solar, pricing, equipment (Tesla Solar Roof vs conventional), battery integration, service model, and California customer experience compared.",
   alternates: { canonical: '/solar-installers/sunrun-vs-tesla-solar' },
   openGraph: { title: 'Sunrun vs Tesla Solar (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunrun-vs-tesla-solar' },
 };
@@ -53,7 +53,7 @@ export default function SunrunVsTeslaSolar() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Where Tesla Solar Wins</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Lowest cash-purchase pricing in the California market.</strong> Tesla Solar routinely quotes $2.50–$3.00/W installed — well below the $3.50–$4.50/W California average. This alone moves a lot of cash buyers to Tesla.</li>
+                <li><strong>Lowest cash-purchase pricing in the California market.</strong> Tesla Solar routinely quotes $2.50–$3.00/W installed. Well below the $3.50–$4.50/W California average. This alone moves a lot of cash buyers to Tesla.</li>
                 <li><strong>Native Powerwall integration.</strong> One app (Tesla app) controls solar, battery, EV charging, and home energy. No other installer offers this level of integration.</li>
                 <li><strong>Tesla Solar Roof option.</strong> If you&apos;re replacing your roof anyway, the integrated shingle-style solar roof is more aesthetically seamless than any panel-based system.</li>
               </ul>

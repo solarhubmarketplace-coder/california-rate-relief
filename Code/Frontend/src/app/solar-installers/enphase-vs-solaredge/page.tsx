@@ -31,7 +31,7 @@ export default function EnphaseVsSolarEdge() {
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Architectural Difference</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Enphase</strong> uses microinverters — one small inverter under each panel, converting DC to AC at the panel. Panels operate independently.</li>
+                <li><strong>Enphase</strong> uses microinverters. One small inverter under each panel, converting DC to AC at the panel. Panels operate independently.</li>
                 <li><strong>SolarEdge</strong> uses a string inverter (one large central inverter in the garage) combined with per-panel DC power optimizers. Panels still operate largely independently at the optimizer level, but the AC conversion is central.</li>
               </ul>
 

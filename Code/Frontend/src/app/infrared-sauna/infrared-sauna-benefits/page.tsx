@@ -60,7 +60,7 @@ export default function InfraredSaunaBenefits() {
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#a7f3d0' }}>
               <p className='text-lg'>
-                Infrared sauna is one of the best-researched tools in modern wellness — and simultaneously one of the most hyped. The strongest evidence (cardiovascular protection, dementia reduction) comes from 20+ years of Finnish cohort data on traditional sauna use. Infrared sauna research is younger and smaller but shows similar acute physiological responses. Here is the honest breakdown.
+                Infrared sauna is one of the best-researched tools in modern wellness, and simultaneously one of the most hyped. The strongest evidence (cardiovascular protection, dementia reduction) comes from 20+ years of Finnish cohort data on traditional sauna use. Infrared sauna research is younger and smaller but shows similar acute physiological responses. Here is the honest breakdown.
               </p>
 
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30', color: '#6ee7b7' }}>
@@ -69,13 +69,13 @@ export default function InfraredSaunaBenefits() {
 
               {/* BENEFIT 1 - CARDIO */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>
-                1. Cardiovascular Mortality Reduction — Strong Evidence
+                1. Cardiovascular Mortality Reduction, Strong Evidence
               </h2>
               <p>
                 The landmark data comes from a 20+ year prospective cohort of 2,315 middle-aged Finnish men. Laukkanen et al. (2018) reported a dose-response relationship: men using a sauna 4–7 times per week had a ~60% lower risk of fatal cardiovascular events compared to 1×/week users. Sessions averaged 19 minutes at 170–194°F.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Laukkanen et al. (2018) — Sauna bathing and cardiovascular mortality. <a href='https://pubmed.ncbi.nlm.nih.gov/29725033/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 29725033 <ExternalLink className='h-3 w-3' /></a>
+                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Laukkanen et al. (2018), Sauna bathing and cardiovascular mortality. <a href='https://pubmed.ncbi.nlm.nih.gov/29725033/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 29725033 <ExternalLink className='h-3 w-3' /></a>
               </p>
               <p>
                 <strong style={{ color: '#f0fdf4' }}>Does this transfer to infrared sauna?</strong> The mechanism (core body temperature elevation + sustained sweat + cardiovascular demand) is the same. Infrared saunas run cooler (130–150°F vs. ~180°F) but reliably raise core temperature and produce comparable cardiovascular responses. We do not have 20-year infrared-specific cohort data yet, but the mechanistic parallels are strong.
@@ -89,7 +89,7 @@ export default function InfraredSaunaBenefits() {
                 A 2023 mechanistic review by Patrick &amp; Johnson in <em>Experimental Gerontology</em> pulled together the evidence: sauna-induced heat stress mimics moderate-intensity exercise, including heat shock protein (HSP) induction, endothelial function improvement, and meaningful blood pressure reduction in hypertensive cohorts.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Patrick &amp; Johnson (2023) — <em>Experimental Gerontology</em>. <a href='https://pubmed.ncbi.nlm.nih.gov/33787870/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 33787870 <ExternalLink className='h-3 w-3' /></a>
+                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Patrick &amp; Johnson (2023). <em>Experimental Gerontology</em>. <a href='https://pubmed.ncbi.nlm.nih.gov/33787870/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 33787870 <ExternalLink className='h-3 w-3' /></a>
               </p>
 
               {/* BENEFIT 3 - DEMENTIA */}
@@ -105,7 +105,7 @@ export default function InfraredSaunaBenefits() {
 
               {/* BENEFIT 4 - RECOVERY */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>
-                4. Recovery and Athletic Performance — Moderate Evidence
+                4. Recovery and Athletic Performance, Moderate Evidence
               </h2>
               <p>
                 Heat acclimation via sauna use has been shown to improve endurance performance and recovery in trained athletes. Heat stress triggers plasma volume expansion, improves thermoregulation, and reduces perceived exertion in subsequent exercise bouts. The protocols that work are 20–30 minute post-workout sessions, 3–4 days per week, for 2–4 weeks.
@@ -121,7 +121,7 @@ export default function InfraredSaunaBenefits() {
               <ul className='space-y-3'>
                 <li className='flex gap-3'>
                   <AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} />
-                  <div><strong style={{ color: '#f0fdf4' }}>Detoxification.</strong> The &quot;sweat out toxins&quot; claim is overstated. Sweat is &gt;99% water with trace minerals. Real detoxification happens through liver and kidneys, not sweat glands. That said, sauna is a cardiovascular/HSP intervention — it does not need to be &quot;detox&quot; to be beneficial.</div>
+                  <div><strong style={{ color: '#f0fdf4' }}>Detoxification.</strong> The &quot;sweat out toxins&quot; claim is overstated. Sweat is &gt;99% water with trace minerals. Real detoxification happens through liver and kidneys, not sweat glands. That said, sauna is a cardiovascular/HSP intervention. It does not need to be &quot;detox&quot; to be beneficial.</div>
                 </li>
                 <li className='flex gap-3'>
                   <AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} />
@@ -189,7 +189,7 @@ export default function InfraredSaunaBenefits() {
                 </li>
                 <li>
                   Patrick RP, Johnson TL. Sauna use as a lifestyle practice to extend healthspan. <em>Exp Gerontol.</em> 2021;154:111509. PMID:{' '}
-                  <a href='https://pubmed.ncbi.nlm.nih.gov/34363927/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>34363927</a>. Mechanism review — heat-shock protein induction, cardiovascular adaptation, FOXO3 signaling.
+                  <a href='https://pubmed.ncbi.nlm.nih.gov/34363927/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>34363927</a>. Mechanism review. Heat-shock protein induction, cardiovascular adaptation, FOXO3 signaling.
                 </li>
                 <li>
                   Crinnion WJ. Sauna as a valuable clinical tool for cardiovascular, autoimmune, toxicant-induced and other chronic health problems. <em>Altern Med Rev.</em> 2011;16(3):215-225. PMID:{' '}

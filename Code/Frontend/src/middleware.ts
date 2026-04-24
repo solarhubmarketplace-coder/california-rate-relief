@@ -34,11 +34,15 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/compare') ||
     pathname.startsWith('/alternatives') ||
     pathname.startsWith('/shg-home') ||
-    pathname === '/about' ||
-    pathname === '/affiliate-disclosure' ||
     pathname === '/privacy' ||
-    pathname === '/terms' ||
-    pathname === '/contact';
+    pathname === '/terms';
+
+  // Shared trust pages — host-aware page handlers serve correct domain content
+  // for /about, /contact, and /affiliate-disclosure on every domain.
+  const isSharedTrustPath =
+    pathname === '/about' ||
+    pathname === '/contact' ||
+    pathname === '/affiliate-disclosure';
 
   // AHB-only paths — block these on other hosts
   const isAHBPath =
@@ -62,9 +66,10 @@ export async function middleware(request: NextRequest) {
     if (isSHGPath || isAHBPath) {
       return new NextResponse(null, { status: 404 });
     }
-    // Allow review pages, Next internals, API routes, and static files
+    // Allow review pages, shared trust pages, Next internals, API routes, and static files
     if (
       pathname.startsWith('/reviews') ||
+      isSharedTrustPath ||
       pathname.startsWith('/_next') ||
       pathname.startsWith('/api') ||
       pathname === '/favicon.ico' ||
@@ -88,9 +93,10 @@ export async function middleware(request: NextRequest) {
     if (isAHBPath) {
       return new NextResponse(null, { status: 404 });
     }
-    // Allow SHG paths, Next internals, API routes, and static files
+    // Allow SHG paths, shared trust pages, Next internals, API routes, and static files
     if (
       isSHGPath ||
+      isSharedTrustPath ||
       pathname.startsWith('/_next') ||
       pathname.startsWith('/api') ||
       pathname === '/favicon.ico' ||
@@ -114,9 +120,10 @@ export async function middleware(request: NextRequest) {
     if (isSHGPath) {
       return new NextResponse(null, { status: 404 });
     }
-    // Allow AHB paths, Next internals, API routes, and static files
+    // Allow AHB paths, shared trust pages, Next internals, API routes, and static files
     if (
       isAHBPath ||
+      isSharedTrustPath ||
       pathname.startsWith('/_next') ||
       pathname.startsWith('/api') ||
       pathname === '/favicon.ico' ||
@@ -139,6 +146,8 @@ export async function middleware(request: NextRequest) {
   }
 
   // --- ratereliefca.com → block SHG and AHB paths so they don't leak onto CRR ---
+  // Shared trust pages (/about, /contact, /affiliate-disclosure) are allowed
+  // and resolved by host-aware page handlers.
   if (isCRR && (isSHGPath || isAHBPath)) {
     return new NextResponse(null, { status: 404 });
   }

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'Honest 2026 rankings of home cold plunge tubs. Chiller-integrated, barrel-style, and luxury options ranked by temperature control, filtration, and real build quality.',
   alternates: { canonical: 'https://athomebiohacking.com/cold-plunge/best-cold-plunge' },
   openGraph: {
-    title: 'Best Cold Plunge Tub 2026 — Research-Backed',
+    title: 'Best Cold Plunge Tub 2026, Research-Backed',
     description: 'Research-backed rankings of home cold plunge tubs with integrated chillers and filtration.',
     type: 'article',
     publishedTime: '2026-04-24T00:00:00Z',
@@ -39,9 +39,9 @@ const TUBS = [
     temp: '37–58°F (3–14°C)',
     pros: [
       'Integrated chiller + filter + ozone/UV sanitation',
-      'Precise temperature control — dial the exact setting from the research protocols',
+      'Precise temperature control. Dial the exact setting from the research protocols',
       'Solid insulation holds temp without running the chiller constantly',
-      'Stainless steel interior — durable, cleanable, no microplastic concerns',
+      'Stainless steel interior. Durable, cleanable, no microplastic concerns',
     ],
     cons: [
       'Premium price point',
@@ -74,7 +74,7 @@ const TUBS = [
     price: '$3,799',
     temp: '37–58°F',
     pros: [
-      'Vertical / upright design — saves 30–40% floor space',
+      'Vertical / upright design, saves 30–40% floor space',
       'Stand-up immersion to shoulder/chest',
       'Integrated chiller and filter',
       'Good cold retention with insulated lid',
@@ -92,14 +92,14 @@ const TUBS = [
     price: '$1,199',
     temp: 'Ambient + ice',
     pros: [
-      'Insulated barrel-style — holds cold water longer than stock tanks',
+      'Insulated barrel-style, holds cold water longer than stock tanks',
       'No electrical or plumbing requirement',
       'Portable — roll between locations',
       '5-year warranty',
     ],
     cons: [
       'Requires ice (ongoing cost) or natural cold climate',
-      'No filtration — water changes every 1–2 weeks',
+      'No filtration; water changes every 1–2 weeks',
       'Upright immersion only',
     ],
     bottomLine: 'The best non-chiller option. Well-engineered barrel with real insulation. Great if you plunge 1–3×/week and want to avoid the $3K+ chiller tier.',
@@ -136,7 +136,7 @@ export default function BestColdPlunge() {
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#a7f3d0' }}>
               <p className='text-lg'>
-                Commercial cold plunges range from $1,200 insulated barrels to $8,000 luxury stainless-steel units. The research-backed benefits (see our <Link href='/cold-plunge/benefits-of-ice-bath' style={{ color: '#34d399' }} className='underline'>benefits of ice bath</Link> page) come from the immersion itself — not the container. That said, if you plunge multiple times per week, a proper tub dramatically improves consistency, safety, and hygiene. Here is how to choose the right tier.
+                Commercial cold plunges range from $1,200 insulated barrels to $8,000 luxury stainless-steel units. The research-backed benefits (see our <Link href='/cold-plunge/benefits-of-ice-bath' style={{ color: '#34d399' }} className='underline'>benefits of ice bath</Link> page) come from the immersion itself. Not the container. That said, if you plunge multiple times per week, a proper tub dramatically improves consistency, safety, and hygiene. Here is how to choose the right tier.
               </p>
 
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30', color: '#6ee7b7' }}>
@@ -285,7 +285,7 @@ export default function BestColdPlunge() {
                   <a href='https://pubmed.ncbi.nlm.nih.gov/39879231/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>39879231</a>. 2025 systematic review pooling mood, inflammation, and sleep outcomes.
                 </li>
                 <li>
-                  Espeland D, de Weerd L, Mercer JB. Health effects of voluntary exposure to cold water — a continuing subject of debate. <em>Int J Circumpolar Health.</em> 2022. PMC:{' '}
+                  Espeland D, de Weerd L, Mercer JB. Health effects of voluntary exposure to cold water, a continuing subject of debate. <em>Int J Circumpolar Health.</em> 2022. PMC:{' '}
                   <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9518606/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>PMC9518606</a>. University of Tromsø review of documented benefits and hazards.
                 </li>
               </ol>
@@ -294,7 +294,7 @@ export default function BestColdPlunge() {
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
                 <li><Link href='/cold-plunge/benefits-of-ice-bath' style={{ color: '#34d399' }} className='underline'>Benefits of Ice Bath</Link> — the research base behind these rankings.</li>
-                <li><Link href='/cold-plunge/diy-cold-plunge' style={{ color: '#34d399' }} className='underline'>DIY Cold Plunge</Link> — under-$200 build guide.</li>
+                <li><Link href='/cold-plunge/diy-cold-plunge' style={{ color: '#34d399' }} className='underline'>DIY Cold Plunge</Link>, under-$200 build guide.</li>
                 <li><Link href='/cold-plunge/benefits' style={{ color: '#34d399' }} className='underline'>Full Cold Plunge Research Review</Link>.</li>
                 <li><Link href='/infrared-sauna/best-infrared-sauna' style={{ color: '#34d399' }} className='underline'>Best Infrared Sauna</Link> — the hot side of contrast therapy.</li>
               </ul>

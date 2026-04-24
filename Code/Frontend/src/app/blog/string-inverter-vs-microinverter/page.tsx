@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'String Inverter vs Microinverter: Which Is Right for Your Solar System?',
-  description: "Head-to-head comparison of string inverter vs microinverter solar systems — cost, performance under shade, warranty, rapid shutdown, and repairability.",
+  description: "Head-to-head comparison of string inverter vs microinverter solar systems. Cost, performance under shade, warranty, rapid shutdown, and repairability.",
   alternates: { canonical: '/blog/string-inverter-vs-microinverter' },
   openGraph: { title: 'String Inverter vs Microinverter', description: 'Technical and real-world comparison for California solar installs.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/string-inverter-vs-microinverter' },
 };
@@ -50,8 +50,8 @@ export default function StringVsMicro() {
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Warranty</td><td className="text-center">10–12 years typical</td><td className="text-center">25 years typical (Enphase)</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Rapid shutdown compliance</td><td className="text-center">Needs add-on optimizer</td><td className="text-center">Built-in</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Repair access</td><td className="text-center">Easy (garage wall)</td><td className="text-center">Hard (on roof)</td></tr>
-                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Single point of failure</td><td className="text-center">Yes — whole system down</td><td className="text-center">No — one panel only</td></tr>
-                    <tr><td className="py-3 pr-4 font-medium">Expandability</td><td className="text-center">Limited by inverter capacity</td><td className="text-center">Easy — add panels one at a time</td></tr>
+                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Single point of failure</td><td className="text-center">Yes — whole system down</td><td className="text-center">No (one panel only)</td></tr>
+                    <tr><td className="py-3 pr-4 font-medium">Expandability</td><td className="text-center">Limited by inverter capacity</td><td className="text-center">Easy (add panels one at a time)</td></tr>
                   </tbody>
                 </table>
               </div>

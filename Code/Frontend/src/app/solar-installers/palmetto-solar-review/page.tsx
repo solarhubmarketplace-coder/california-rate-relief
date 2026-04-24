@@ -25,7 +25,7 @@ const reviewSchema = {
   itemReviewed: { '@type': 'LocalBusiness', name: 'Palmetto Solar', address: { '@type': 'PostalAddress', addressRegion: 'Multi-state', addressCountry: 'US' } },
   reviewRating: { '@type': 'Rating', ratingValue: '2.8', bestRating: '5' },
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Palmetto Solar has the highest BBB complaint volume in our California installer comparison — 300+ complaints in 3 years, a 3.0/5 SolarReviews score, and recurring themes of long delays, poor post-install support, and LightReach PPA/lease friction. Legitimate pick for no-upfront-cost buyers who want a national brand, but set expectations accordingly.',
+  reviewBody: 'Palmetto Solar has the highest BBB complaint volume in our California installer comparison, 300+ complaints in 3 years, a 3.0/5 SolarReviews score, and recurring themes of long delays, poor post-install support, and LightReach PPA/lease friction. Legitimate pick for no-upfront-cost buyers who want a national brand, but set expectations accordingly.',
 };
 
 export default function PalmettoReview() {
@@ -74,7 +74,7 @@ export default function PalmettoReview() {
             <div className='p-4 rounded-lg border border-amber-500/30 bg-amber-500/5 flex gap-3 items-start mb-10'>
               <AlertTriangle className='h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5' />
               <div className='text-sm text-foreground/80'>
-                <strong className='text-foreground'>Reputation caveat:</strong> Palmetto has the highest BBB complaint volume of any installer in our California comparison — 300+ in 3 years, 124 closed in the past 12 months. We still include it because the business model works for some buyers, but the reputation data justifies extra due diligence.
+                <strong className='text-foreground'>Reputation caveat:</strong> Palmetto has the highest BBB complaint volume of any installer in our California comparison. 300+ in 3 years, 124 closed in the past 12 months. We still include it because the business model works for some buyers, but the reputation data justifies extra due diligence.
               </div>
             </div>
 
@@ -95,7 +95,7 @@ export default function PalmettoReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Reputation Numbers</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                SolarReviews shows Palmetto at approximately 3.0 out of 5 across 142+ reviews. Google aggregate hovers around 4.0 in most California metros, while Yelp runs significantly lower — 1.6/5 in some service area listings, which reflects the ghost-town pattern of dissatisfied customers finding Yelp more than satisfied ones. The BBB profile maintains an A+ rating but logs 300+ complaints over three years, with 124 closed in just the past 12 months. The company does respond to complaints, but volume alone is the highest in our California comparison.
+                SolarReviews shows Palmetto at approximately 3.0 out of 5 across 142+ reviews. Google aggregate hovers around 4.0 in most California metros, while Yelp runs significantly lower. 1.6/5 in some service area listings, which reflects the ghost-town pattern of dissatisfied customers finding Yelp more than satisfied ones. The BBB profile maintains an A+ rating but logs 300+ complaints over three years, with 124 closed in just the past 12 months. The company does respond to complaints, but volume alone is the highest in our California comparison.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Common Complaints</h2>
@@ -103,7 +103,7 @@ export default function PalmettoReview() {
                 Recurring themes across BBB, SolarReviews, and Reddit:
               </p>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Long delays between contract signing and Permission to Operate — commonly 6 to 12+ months.</li>
+                <li>Long delays between contract signing and Permission to Operate. Commonly 6 to 12+ months.</li>
                 <li>Deposits held for extended periods when projects stall or are cancelled.</li>
                 <li>Underperforming systems — customer reports of continued high utility bills after activation.</li>
                 <li>Post-install support that is slow or unresponsive, particularly when issues are surfaced more than 90 days after PTO.</li>
@@ -111,7 +111,7 @@ export default function PalmettoReview() {
                 <li>Roof leaks and subcontractor workmanship issues traced back to regional partners.</li>
               </ul>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing — LightReach PPA/Lease Model</h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing. LightReach PPA/Lease Model</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Palmetto&apos;s primary financing offering is a LightReach PPA/lease. Under this model, Palmetto or LightReach owns the system and the homeowner pays for the electricity the system produces, typically at a contracted rate below the current utility rate with an annual escalator. Cash and loan purchase options exist but are not the focus of Palmetto&apos;s sales funnel.
               </p>
@@ -144,18 +144,18 @@ export default function PalmettoReview() {
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>What is LightReach?</h3>
-                  <p className='text-foreground/80 leading-relaxed'>LightReach is the PPA/lease financing arm that partners closely with Palmetto. Under a LightReach contract, you don&apos;t own the panels — you pay for the power the system produces. Multiple customer complaints center on LightReach-specific financing disputes.</p>
+                  <p className='text-foreground/80 leading-relaxed'>LightReach is the PPA/lease financing arm that partners closely with Palmetto. Under a LightReach contract, you don&apos;t own the panels; you pay for the power the system produces. Multiple customer complaints center on LightReach-specific financing disputes.</p>
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>How long does a Palmetto install actually take?</h3>
-                  <p className='text-foreground/80 leading-relaxed'>Install day is usually one day. But the full process — design, permitting, utility approval, PTO — frequently stretches 6 to 12+ months based on customer reports. Industry average for a straightforward California install is 2 to 3 months.</p>
+                  <p className='text-foreground/80 leading-relaxed'>Install day is usually one day. But the full process — design, permitting, utility approval, PTO, frequently stretches 6 to 12+ months based on customer reports. Industry average for a straightforward California install is 2 to 3 months.</p>
                 </div>
               </div>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Palmetto Against Two California Alternatives.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three installers — so you can compare their pricing, equipment, and warranty terms side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three installers. So you can compare their pricing, equipment, and warranty terms side by side.</p>
               <div className='flex justify-center'>
                 <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
               </div>

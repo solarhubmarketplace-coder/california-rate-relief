@@ -7,7 +7,7 @@ import { Footer } from '@/components/landing/Footer';
 export const metadata: Metadata = {
   title: 'PG&E Rate Increase 2026: What Residential Customers Actually Pay Now',
   description:
-    "PG&E's 2026 rate changes explained — current residential rates, the $24 Base Services Charge, what drove the hike, and what you can do about it.",
+    "PG&E's 2026 rate changes explained, current residential rates, the $24 Base Services Charge, what drove the hike, and what you can do about it.",
   alternates: { canonical: '/blog/pge-rate-increase-2026' },
   openGraph: {
     title: 'PG&E Rate Increase 2026',
@@ -43,7 +43,7 @@ export default function PGERateIncrease2026() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Utility Rates · California</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">PG&amp;E Rate Increase 2026: What Residential Customers Actually Pay Now</h1>
-              <p className="text-lg text-muted-foreground">PG&amp;E&apos;s 2026 rate changes are a mix — a slight generation-rate decrease on paper, offset by a new $24 Base Services Charge that hit most customers harder than the headlines suggested.</p>
+              <p className="text-lg text-muted-foreground">PG&amp;E&apos;s 2026 rate changes are a mix. A slight generation-rate decrease on paper, offset by a new $24 Base Services Charge that hit most customers harder than the headlines suggested.</p>
             </header>
 
             <div className="prose prose-slate max-w-none">

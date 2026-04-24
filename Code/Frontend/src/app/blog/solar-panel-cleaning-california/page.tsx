@@ -58,7 +58,7 @@ export default function SolarPanelCleaningCA() {
 
             <div className="prose prose-slate max-w-none">
               <p className="p-4 rounded-lg border border-border bg-card text-sm">
-                <strong>TL;DR:</strong> Professional solar panel cleaning in California runs $150–$450 per residential system, once or twice a year. Clean panels after wildfire smoke events, post-Santa Ana winds, or when production drops more than 10% below the prior year&apos;s same-month benchmark. Do NOT pressure-wash — it voids most manufacturer warranties. DIY with a soft brush and deionized water is fine if the roof is safely accessible; otherwise pay a professional.
+                <strong>TL;DR:</strong> Professional solar panel cleaning in California runs $150–$450 per residential system, once or twice a year. Clean panels after wildfire smoke events, post-Santa Ana winds, or when production drops more than 10% below the prior year&apos;s same-month benchmark. Do NOT pressure-wash. It voids most manufacturer warranties. DIY with a soft brush and deionized water is fine if the roof is safely accessible; otherwise pay a professional.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Much Does Dirt Actually Cost You?</h2>
@@ -66,7 +66,7 @@ export default function SolarPanelCleaningCA() {
                 Studies of residential PV in the Southwest US generally find <strong>2–7% production loss</strong> from soiling in typical conditions, spiking to 10–25% after heavy wildfire ash, dust storms, or prolonged drought. California&apos;s Central Valley agricultural corridor and the fire-prone Sierra foothills see the higher end of that range.
               </p>
               <p>
-                For a 10 kW system producing roughly 14,000–16,000 kWh/year in California, a 5% soiling loss equals about 750 kWh. At PG&amp;E&apos;s average residential rate of 41¢/kWh, that&apos;s roughly $300/year — enough to justify one professional cleaning. At SMUD&apos;s 17¢/kWh, the same loss is $125/year, which changes the math.
+                For a 10 kW system producing roughly 14,000–16,000 kWh/year in California, a 5% soiling loss equals about 750 kWh. At PG&amp;E&apos;s average residential rate of 41¢/kWh, that&apos;s roughly $300/year, enough to justify one professional cleaning. At SMUD&apos;s 17¢/kWh, the same loss is $125/year, which changes the math.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Professional Cleaning Cost in California</h2>
@@ -126,7 +126,7 @@ export default function SolarPanelCleaningCA() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">DIY Risks (And What Kills Your Warranty)</h2>
               <p>
-                Doing it yourself can save $200+ — but several common mistakes void your panel manufacturer warranty.
+                Doing it yourself can save $200+, but several common mistakes void your panel manufacturer warranty.
               </p>
               <ul className="space-y-3">
                 <li className="flex gap-3 items-start">
@@ -161,7 +161,7 @@ export default function SolarPanelCleaningCA() {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Do you carry liability insurance (and can you show a certificate of insurance)?</li>
-                <li>Do you use deionized water and soft-bristle brushes — never pressure washing?</li>
+                <li>Do you use deionized water and soft-bristle brushes. Never pressure washing?</li>
                 <li>Do you provide before/after monitoring-app comparison to confirm production lift?</li>
               </ul>
 

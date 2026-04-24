@@ -1,113 +1,181 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { headers } from 'next/headers';
+import { ChevronRight, Mail } from 'lucide-react';
 import { SHGLayout } from '@/components/shg/SHGLayout';
 import { SHGHeader } from '@/components/shg/SHGHeader';
 import { SHGFooter } from '@/components/shg/SHGFooter';
-import { ChevronRight, Mail, MessageCircle, AlertCircle, Briefcase } from 'lucide-react';
+import { AHBLayout } from '@/components/ahb/AHBLayout';
+import { AHBHeader } from '@/components/ahb/AHBHeader';
+import { AHBFooter } from '@/components/ahb/AHBFooter';
+import { ReviewLayout } from '@/components/reviews/ReviewLayout';
+import { ReviewHeader } from '@/components/reviews/ReviewHeader';
+import { ReviewFooter } from '@/components/reviews/ReviewFooter';
+import { PublicLayout } from '@/components/layout/PublicLayout';
+import { Header as CRRHeader } from '@/components/landing/Header';
+import { Footer as CRRFooter } from '@/components/landing/Footer';
 
-export const metadata: Metadata = {
-  title: 'Contact SecureHomeGear',
-  description: 'Get in touch with SecureHomeGear — corrections, partnership inquiries, product review submissions, and privacy requests.',
-  alternates: { canonical: 'https://securehomegear.com/contact' },
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
+
+async function getDomain(): Promise<Domain> {
+  const hdrs = await headers();
+  const host = (hdrs.get('host') || '').toLowerCase();
+  if (host.includes('greenreviewshub')) return 'grh';
+  if (host.includes('securehomegear')) return 'shg';
+  if (host.includes('athomebiohacking')) return 'ahb';
+  return 'crr';
+}
+
+const DOMAIN_CONTACT = {
+  crr: { name: 'California Rate Relief', email: 'info@ratereliefca.com', canonical: 'https://ratereliefca.com/contact' },
+  grh: { name: 'Green Reviews Hub', email: 'editorial@greenreviewshub.com', canonical: 'https://greenreviewshub.com/contact' },
+  shg: { name: 'SecureHomeGear', email: 'editorial@securehomegear.com', canonical: 'https://securehomegear.com/contact' },
+  ahb: { name: 'At Home Biohacking', email: 'editorial@athomebiohacking.com', canonical: 'https://athomebiohacking.com/contact' },
 };
 
-export default function ContactSHG() {
+export async function generateMetadata(): Promise<Metadata> {
+  const d = await getDomain();
+  return {
+    title: `Contact ${DOMAIN_CONTACT[d].name}`,
+    description: `Get in touch with ${DOMAIN_CONTACT[d].name} for corrections, partnerships, and editorial questions.`,
+    alternates: { canonical: DOMAIN_CONTACT[d].canonical },
+  };
+}
+
+export default async function ContactPage() {
+  const d = await getDomain();
+  const cfg = DOMAIN_CONTACT[d];
+
+  if (d === 'shg') {
+    return (
+      <SHGLayout>
+        <SHGHeader />
+        <main className='py-16' style={{ backgroundColor: '#0a0f1c' }}>
+          <div className='container mx-auto px-4'>
+            <article className='max-w-3xl mx-auto'>
+              <nav className='mb-8 text-sm flex items-center gap-2' style={{ color: '#71717a' }}>
+                <Link href='/' style={{ color: '#d4d4d8' }}>Home</Link>
+                <ChevronRight className='h-3 w-3' />
+                <span style={{ color: '#f5f5f5' }}>Contact</span>
+              </nav>
+              <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight' style={{ color: '#f5f5f5' }}>Contact {cfg.name}</h1>
+              <p className='text-lg mb-8' style={{ color: '#d4d4d8' }}>How to reach us. Typical response time is one business day.</p>
+              <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
+                <section>
+                  <h2 className='text-2xl font-bold mb-3' style={{ color: '#f5f5f5' }}>Editorial</h2>
+                  <p>Email <a href={`mailto:${cfg.email}`} className='underline' style={{ color: '#f59e0b' }}>{cfg.email}</a> for corrections, fact checks, and editorial feedback. Include the page URL and the specific issue.</p>
+                </section>
+                <section>
+                  <h2 className='text-2xl font-bold mb-3' style={{ color: '#f5f5f5' }}>Brands and Partnerships</h2>
+                  <p>We don&apos;t accept paid placement or sponsored reviews. Brands interested in being considered for editorial coverage may email the same address.</p>
+                </section>
+              </div>
+            </article>
+          </div>
+        </main>
+        <SHGFooter />
+      </SHGLayout>
+    );
+  }
+
+  if (d === 'ahb') {
+    return (
+      <AHBLayout>
+        <AHBHeader />
+        <main className='py-16' style={{ backgroundColor: '#0a1a14' }}>
+          <div className='container mx-auto px-4'>
+            <article className='max-w-3xl mx-auto'>
+              <nav className='mb-8 text-sm flex items-center gap-2' style={{ color: '#6ee7b7' }}>
+                <Link href='/' style={{ color: '#a7f3d0' }}>Home</Link>
+                <ChevronRight className='h-3 w-3' />
+                <span style={{ color: '#f0fdf4' }}>Contact</span>
+              </nav>
+              <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight' style={{ color: '#f0fdf4' }}>Contact {cfg.name}</h1>
+              <p className='text-lg mb-8' style={{ color: '#a7f3d0' }}>How to reach us. Typical response time is one business day.</p>
+              <div className='space-y-6 leading-relaxed' style={{ color: '#a7f3d0' }}>
+                <section>
+                  <h2 className='text-2xl font-bold mb-3' style={{ color: '#f0fdf4' }}>Editorial and Citation Corrections</h2>
+                  <p>Email <a href={`mailto:${cfg.email}`} className='underline' style={{ color: '#34d399' }}>{cfg.email}</a>. We take research-citation corrections seriously. If a study we&apos;ve linked has been retracted or superseded, or if we&apos;ve misrepresented its findings, let us know and we&apos;ll log the correction on the page.</p>
+                </section>
+                <section>
+                  <h2 className='text-2xl font-bold mb-3' style={{ color: '#f0fdf4' }}>Brands and Practitioners</h2>
+                  <p>We don&apos;t accept paid placement. Brands and clinical practitioners interested in editorial coverage may email the same address.</p>
+                </section>
+              </div>
+            </article>
+          </div>
+        </main>
+        <AHBFooter />
+      </AHBLayout>
+    );
+  }
+
+  if (d === 'grh') {
+    return (
+      <ReviewLayout>
+        <ReviewHeader />
+        <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
+          <div className='container mx-auto px-4'>
+            <article className='max-w-3xl mx-auto'>
+              <nav className='mb-8 text-sm flex items-center gap-2' style={{ color: '#71717a' }}>
+                <Link href='/reviews' style={{ color: '#d4d4d8' }}>Reviews</Link>
+                <ChevronRight className='h-3 w-3' />
+                <span style={{ color: '#f5f5f5' }}>Contact</span>
+              </nav>
+              <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight' style={{ color: '#f5f5f5' }}>Contact {cfg.name}</h1>
+              <p className='text-lg mb-8' style={{ color: '#d4d4d8' }}>How to reach us. Typical response time is one business day.</p>
+              <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
+                <section>
+                  <h2 className='text-2xl font-bold mb-3' style={{ color: '#f5f5f5' }}>Editorial</h2>
+                  <p>Email <a href={`mailto:${cfg.email}`} className='underline' style={{ color: '#10b981' }}>{cfg.email}</a> for corrections, fact checks, and editorial feedback.</p>
+                </section>
+                <section>
+                  <h2 className='text-2xl font-bold mb-3' style={{ color: '#f5f5f5' }}>Brands and Partnerships</h2>
+                  <p>We don&apos;t accept paid placement or sponsored reviews. Coverage decisions are editorial.</p>
+                </section>
+              </div>
+            </article>
+          </div>
+        </main>
+        <ReviewFooter />
+      </ReviewLayout>
+    );
+  }
+
   return (
-    <SHGLayout>
-      <SHGHeader />
-      <main className='py-16' style={{ backgroundColor: '#0a0f1c' }}>
+    <PublicLayout>
+      <CRRHeader />
+      <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
-            <nav className='mb-8 text-sm flex items-center gap-2 flex-wrap' style={{ color: '#71717a' }}>
-              <Link href='/' style={{ color: '#d4d4d8' }}>Home</Link>
+            <nav className='mb-6 text-sm text-muted-foreground flex items-center gap-2'>
+              <Link href='/' className='hover:text-primary'>Home</Link>
               <ChevronRight className='h-3 w-3' />
-              <span style={{ color: '#f5f5f5' }}>Contact</span>
+              <span className='text-foreground'>Contact</span>
             </nav>
-
-            <header className='mb-12'>
-              <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight' style={{ color: '#f5f5f5' }}>Get in Touch</h1>
-              <p className='text-xl leading-relaxed' style={{ color: '#d4d4d8' }}>
-                We read every email. Whether you have a question, spotted a mistake, or want to work with us, here is how to reach us.
-              </p>
-            </header>
-
-            <div className='grid md:grid-cols-2 gap-5 mb-12'>
-              <div className='p-6 rounded-xl border' style={{ backgroundColor: '#111827', borderColor: '#1e293b' }}>
-                <div className='flex items-center gap-3 mb-3'>
-                  <MessageCircle className='h-5 w-5' style={{ color: '#f59e0b' }} />
-                  <h2 className='text-lg font-bold' style={{ color: '#f5f5f5' }}>General Inquiries</h2>
-                </div>
-                <p className='text-sm mb-4' style={{ color: '#d4d4d8' }}>
-                  Questions about a product, a review, or the site in general.
-                </p>
-                <a href='mailto:hello@securehomegear.com' className='text-sm underline font-medium' style={{ color: '#f59e0b' }}>
-                  hello@securehomegear.com
-                </a>
-                <p className='text-xs mt-2' style={{ color: '#71717a' }}>Typical response: 2-3 business days</p>
-              </div>
-
-              <div className='p-6 rounded-xl border' style={{ backgroundColor: '#111827', borderColor: '#1e293b' }}>
-                <div className='flex items-center gap-3 mb-3'>
-                  <AlertCircle className='h-5 w-5' style={{ color: '#f59e0b' }} />
-                  <h2 className='text-lg font-bold' style={{ color: '#f5f5f5' }}>Corrections</h2>
-                </div>
-                <p className='text-sm mb-4' style={{ color: '#d4d4d8' }}>
-                  Spotted a factual error, outdated spec, or broken link? Tell us and we will fix it.
-                </p>
-                <a href='mailto:corrections@securehomegear.com' className='text-sm underline font-medium' style={{ color: '#f59e0b' }}>
-                  corrections@securehomegear.com
-                </a>
-                <p className='text-xs mt-2' style={{ color: '#71717a' }}>We review within 48 hours</p>
-              </div>
-
-              <div className='p-6 rounded-xl border' style={{ backgroundColor: '#111827', borderColor: '#1e293b' }}>
-                <div className='flex items-center gap-3 mb-3'>
-                  <Briefcase className='h-5 w-5' style={{ color: '#f59e0b' }} />
-                  <h2 className='text-lg font-bold' style={{ color: '#f5f5f5' }}>Partnerships &amp; Press</h2>
-                </div>
-                <p className='text-sm mb-4' style={{ color: '#d4d4d8' }}>
-                  Media inquiries, review sample submissions, affiliate program discussions.
-                </p>
-                <a href='mailto:partnerships@securehomegear.com' className='text-sm underline font-medium' style={{ color: '#f59e0b' }}>
-                  partnerships@securehomegear.com
-                </a>
-                <p className='text-xs mt-2' style={{ color: '#71717a' }}>Typical response: 5 business days</p>
-              </div>
-
-              <div className='p-6 rounded-xl border' style={{ backgroundColor: '#111827', borderColor: '#1e293b' }}>
-                <div className='flex items-center gap-3 mb-3'>
-                  <Mail className='h-5 w-5' style={{ color: '#f59e0b' }} />
-                  <h2 className='text-lg font-bold' style={{ color: '#f5f5f5' }}>Privacy &amp; Legal</h2>
-                </div>
-                <p className='text-sm mb-4' style={{ color: '#d4d4d8' }}>
-                  GDPR/CCPA data requests, legal notices, and takedown requests.
-                </p>
-                <a href='mailto:privacy@securehomegear.com' className='text-sm underline font-medium' style={{ color: '#f59e0b' }}>
-                  privacy@securehomegear.com
-                </a>
-                <p className='text-xs mt-2' style={{ color: '#71717a' }}>
-                  GDPR/CCPA requests handled within 30 days
-                </p>
+            <h1 className='text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight'>Contact {cfg.name}</h1>
+            <p className='text-lg text-muted-foreground mb-8'>How to reach us, and what to expect for response time.</p>
+            <div className='prose prose-slate max-w-none space-y-6 text-foreground/80'>
+              <h2 className='text-2xl font-bold text-foreground'>General Inquiries</h2>
+              <p>Email <a href={`mailto:${cfg.email}`} className='text-primary underline'>{cfg.email}</a>. Typical response time is one business day. For solar quote requests, fill out the 60-second form on our <Link href='/' className='text-primary underline'>homepage</Link> and we&apos;ll route you to up to three vetted California installers.</p>
+              <h2 className='text-2xl font-bold text-foreground'>Corrections and Editorial Feedback</h2>
+              <p>If you spot a factual error in any of our articles or installer reviews, email the page URL plus the correction. We log corrections at the bottom of the corrected page.</p>
+              <h2 className='text-2xl font-bold text-foreground'>Installer and Vendor Inquiries</h2>
+              <p>If you operate a California solar installation business and want to be considered for our installer network or editorial reviews, email <a href={`mailto:${cfg.email}`} className='text-primary underline'>{cfg.email}</a> with your CSLB license number, primary California service area, and a recent customer reference list. We do not accept paid placements.</p>
+              <h2 className='text-2xl font-bold text-foreground'>Press and Partnerships</h2>
+              <p>Same address. Please include &ldquo;Press&rdquo; or &ldquo;Partnership&rdquo; in the subject line.</p>
+            </div>
+            <div className='mt-12 p-5 rounded-lg border border-border bg-card flex items-start gap-3'>
+              <Mail className='h-5 w-5 text-primary flex-shrink-0 mt-0.5' />
+              <div>
+                <div className='font-bold text-foreground'>Direct email</div>
+                <a href={`mailto:${cfg.email}`} className='text-primary underline'>{cfg.email}</a>
               </div>
             </div>
-
-            <section className='p-6 rounded-xl border mb-8' style={{ backgroundColor: '#111827', borderColor: '#1e293b' }}>
-              <h2 className='text-xl font-bold mb-3' style={{ color: '#f5f5f5' }}>For Brands and Manufacturers</h2>
-              <p className='mb-3' style={{ color: '#d4d4d8' }}>
-                We welcome product samples for review consideration. We do not accept payment for positive coverage, guaranteed placement in rankings, or sponsored reviews disguised as editorial content. If that is the pitch, please don&apos;t send it.
-              </p>
-              <p style={{ color: '#d4d4d8' }}>
-                To submit a product for review, email{' '}
-                <a href='mailto:partnerships@securehomegear.com' className='underline' style={{ color: '#f59e0b' }}>
-                  partnerships@securehomegear.com
-                </a>{' '}
-                with product specs, retail price, any press materials, and shipping address confirmation. We decline more samples than we accept, based on category fit and editorial schedule.
-              </p>
-            </section>
           </article>
         </div>
       </main>
-      <SHGFooter />
-    </SHGLayout>
+      <CRRFooter />
+    </PublicLayout>
   );
 }

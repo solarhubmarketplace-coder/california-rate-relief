@@ -38,13 +38,13 @@ const PLATES = [
     price: '$399',
     motion: '4D (vertical + oscillating + lateral)',
     pros: [
-      'Combined motion types — delivers the oscillating pattern shown in circulation / lymphatic studies',
+      'Combined motion types; delivers the oscillating pattern shown in circulation / lymphatic studies',
       'Frequency range covers research-supported 20–50 Hz',
       'Bluetooth speaker, remote, multiple pre-set programs',
       'Strong 5-year warranty',
     ],
     cons: [
-      'Heavy — not easy to move between rooms',
+      'Heavy, not easy to move between rooms',
       'Mid-tier motor; commercial-grade plates are quieter',
     ],
     bottomLine: 'The best overall home plate. 4D motion matches the oscillating-plate research for circulation benefits plus vertical motion for strength/balance protocols.',
@@ -57,13 +57,13 @@ const PLATES = [
     motion: 'Oscillating (tilting)',
     pros: [
       'Oscillating motion — the type shown in lymphatic / circulation RCTs',
-      'Compact design — fits under a bed or couch',
+      'Compact design, fits under a bed or couch',
       'USB-powered Bluetooth speaker',
       'Strong Amazon warranty and support',
     ],
     cons: [
       'Lower maximum frequency than higher-tier plates',
-      'Plastic build — durability question at 3+ years',
+      'Plastic build, durability question at 3+ years',
     ],
     bottomLine: 'The honest value pick. At under $200, Merach delivers the oscillating motion that shows lymphatic benefits in research without the premium price.',
   },
@@ -135,7 +135,7 @@ export default function BestVibrationPlate() {
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#a7f3d0' }}>
               <p className='text-lg'>
-                Vibration plates range from $100 Amazon knockoffs to $3,000 clinical units. Most consumers don&apos;t need the clinical tier. But most budget plates also miss the oscillating motion that shows up in the lymphatic and circulation research. Here is how to choose the right one — ranked against the 2024–2026 research base summarized on our <Link href='/vibration-plate/vibration-plate-benefits' style={{ color: '#34d399' }} className='underline'>vibration plate benefits</Link> page.
+                Vibration plates range from $100 Amazon knockoffs to $3,000 clinical units. Most consumers don&apos;t need the clinical tier. But most budget plates also miss the oscillating motion that shows up in the lymphatic and circulation research. Here is how to choose the right one. Ranked against the 2024–2026 research base summarized on our <Link href='/vibration-plate/vibration-plate-benefits' style={{ color: '#34d399' }} className='underline'>vibration plate benefits</Link> page.
               </p>
 
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30', color: '#6ee7b7' }}>
@@ -244,9 +244,9 @@ export default function BestVibrationPlate() {
                 <li>Acute thrombosis or known clotting disorders</li>
                 <li>Retinal detachment or recent eye surgery</li>
                 <li>Fresh fractures or recent joint replacements (first 6–12 months)</li>
-                <li>Pacemakers or other implantable devices — check manufacturer</li>
+                <li>Pacemakers or other implantable devices; check manufacturer</li>
                 <li>Severe osteoporosis with fracture history (use only under clinical supervision)</li>
-                <li>Migraine-prone or vestibular disorders — start at low Hz for short sessions</li>
+                <li>Migraine-prone or vestibular disorders; start at low Hz for short sessions</li>
               </ul>
 
               {/* REFERENCES */}
@@ -276,9 +276,9 @@ export default function BestVibrationPlate() {
               {/* RELATED */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
-                <li><Link href='/vibration-plate/vibration-plate-benefits' style={{ color: '#34d399' }} className='underline'>Vibration Plate Benefits</Link> — the research behind these rankings.</li>
+                <li><Link href='/vibration-plate/vibration-plate-benefits' style={{ color: '#34d399' }} className='underline'>Vibration Plate Benefits</Link>; the research behind these rankings.</li>
                 <li><Link href='/vibration-plate' style={{ color: '#34d399' }} className='underline'>Vibration Plate Category Hub</Link>.</li>
-                <li><Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link> — related recovery modality.</li>
+                <li><Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link>; related recovery modality.</li>
               </ul>
 
               {/* DISCLAIMER */}

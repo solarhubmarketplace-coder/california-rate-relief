@@ -25,7 +25,7 @@ const reviewSchema = {
   itemReviewed: { '@type': 'LocalBusiness', name: 'Baker Electric Solar', address: { '@type': 'PostalAddress', addressLocality: 'Escondido', addressRegion: 'CA', addressCountry: 'US' } },
   reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5' },
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Baker Electric Solar has one of the cleanest reputations in our California installer comparison — family-owned since 1938, strong Yelp (4.1/5 / 774 reviews), 25-year workmanship warranty, and genuine electrical pedigree. Top-tier pick for San Diego County.',
+  reviewBody: 'Baker Electric Solar has one of the cleanest reputations in our California installer comparison, family-owned since 1938, strong Yelp (4.1/5 / 774 reviews), 25-year workmanship warranty, and genuine electrical pedigree. Top-tier pick for San Diego County.',
 };
 
 export default function BakerReview() {
@@ -62,7 +62,7 @@ export default function BakerReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Baker Electric has been a family-owned electrical contractor in Escondido since 1938 — 87 years of continuous California operations. The company&apos;s solar division layers residential PV onto that electrical foundation, which matters. Complex main-panel upgrades, EV charger integration, and backup-battery transfer-switch work — all of which involve electrical expertise as much as solar expertise — tend to go smoother with an installer whose core business was licensed electrical work before solar was even a product category.
+                Baker Electric has been a family-owned electrical contractor in Escondido since 1938. 87 years of continuous California operations. The company&apos;s solar division layers residential PV onto that electrical foundation, which matters. Complex main-panel upgrades, EV charger integration, and backup-battery transfer-switch work — all of which involve electrical expertise as much as solar expertise — tend to go smoother with an installer whose core business was licensed electrical work before solar was even a product category.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
@@ -77,7 +77,7 @@ export default function BakerReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Yelp: 4.1/5 across 774 reviews — one of the stronger aggregated ratings in our California comparison.</li>
+                <li>Yelp: 4.1/5 across 774 reviews. One of the stronger aggregated ratings in our California comparison.</li>
                 <li>Google: Consistently strong in SD County.</li>
                 <li>BBB: Low complaint volume relative to company scale.</li>
                 <li>SolarReviews + consumer forums: Mostly positive tone.</li>
@@ -113,7 +113,7 @@ export default function BakerReview() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Baker Electric Against Two Alternatives.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers — so you can compare side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers. So you can compare side by side.</p>
               <div className='flex justify-center'><Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
             </div>

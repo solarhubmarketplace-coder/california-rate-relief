@@ -58,7 +58,7 @@ export default function SolarBatteryBackupCA() {
 
             <div className="prose prose-slate max-w-none">
               <p className="p-4 rounded-lg border border-border bg-card text-sm">
-                <strong>TL;DR:</strong> A residential solar battery in California runs $10,000–$18,000 installed for a single Powerwall-class unit (~13 kWh). The federal 30% tax credit plus California&apos;s SGIP rebate can cut that to $6,500–$13,000 net. Under NEM 3.0, batteries also boost solar self-consumption value — often enough to justify the cost purely on bill savings, before counting outage protection.
+                <strong>TL;DR:</strong> A residential solar battery in California runs $10,000–$18,000 installed for a single Powerwall-class unit (~13 kWh). The federal 30% tax credit plus California&apos;s SGIP rebate can cut that to $6,500–$13,000 net. Under NEM 3.0, batteries also boost solar self-consumption value, often enough to justify the cost purely on bill savings, before counting outage protection.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What a Residential Battery Actually Costs (2026)</h2>
@@ -107,7 +107,7 @@ export default function SolarBatteryBackupCA() {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>General market tier.</strong> ~$150–$200/kWh of battery capacity. A 13.5 kWh Powerwall pulls roughly $2,000–$2,700 off the install.</li>
-                <li><strong>Equity / Equity Resiliency tier.</strong> Up to 100% of the battery cost for low-income households, medical-baseline customers, or homes in fire-prone Tier 2 and Tier 3 HFTD zones. Confirm eligibility with your installer — the paperwork is non-trivial.</li>
+                <li><strong>Equity / Equity Resiliency tier.</strong> Up to 100% of the battery cost for low-income households, medical-baseline customers, or homes in fire-prone Tier 2 and Tier 3 HFTD zones. Confirm eligibility with your installer, the paperwork is non-trivial.</li>
               </ul>
               <p>
                 Stacking SGIP with the 30% federal ITC is allowed. Order of operations: installer deducts SGIP at installation (or files for reimbursement on your behalf), and the federal ITC applies to your net out-of-pocket cost.
@@ -138,11 +138,11 @@ export default function SolarBatteryBackupCA() {
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>Medium (13–15 kWh — single Powerwall or FranklinWH):</strong> Whole-house coverage excluding AC and pool pump for 24 hours.</div>
+                  <div><strong>Medium (13–15 kWh. Single Powerwall or FranklinWH):</strong> Whole-house coverage excluding AC and pool pump for 24 hours.</div>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>Large (26–30 kWh — dual Powerwall or Franklin stack):</strong> Full-home coverage including AC for 24+ hours. Needed for homes running pool pumps, two EVs, or medical baseline loads.</div>
+                  <div><strong>Large (26–30 kWh, dual Powerwall or Franklin stack):</strong> Full-home coverage including AC for 24+ hours. Needed for homes running pool pumps, two EVs, or medical baseline loads.</div>
                 </li>
               </ul>
 
@@ -159,7 +159,7 @@ export default function SolarBatteryBackupCA() {
               <ul className="space-y-3">
                 <li className="flex gap-3 items-start">
                   <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                  <div><strong>Throughput limits.</strong> Some warranties cap total kWh delivered over life. Read the fine print — if you cycle daily, confirm you stay within the throughput allowance over 10 years.</div>
+                  <div><strong>Throughput limits.</strong> Some warranties cap total kWh delivered over life. Read the fine print. If you cycle daily, confirm you stay within the throughput allowance over 10 years.</div>
                 </li>
                 <li className="flex gap-3 items-start">
                   <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />

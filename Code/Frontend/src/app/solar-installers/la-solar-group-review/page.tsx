@@ -57,12 +57,12 @@ export default function LASolarGroupReview() {
             <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p><p className='text-3xl font-extrabold text-foreground mt-1'>3.3 <span className='text-lg text-muted-foreground'>/ 5</span></p></div>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>Buyers drawn to black-on-black aesthetics from a single vertically-integrated vendor</p></div>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>Post-install service responsiveness is a priority — the roof leak complaint pattern is real</p></div>
+              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>Post-install service responsiveness is a priority. The roof leak complaint pattern is real</p></div>
             </div>
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                LA Solar Group is genuinely unusual in California residential solar: the company manufactures its own black-on-black panels in addition to performing the installations. Most installers in our comparison (Palmetto, Sunrun, Sunnova, Solar Optimum, Baker Electric, etc.) all use Tier-1 third-party panels. LA Solar Group is the only one that is vertically integrated — one vendor owns panel manufacture, install, warranty, and ongoing service.
+                LA Solar Group is genuinely unusual in California residential solar: the company manufactures its own black-on-black panels in addition to performing the installations. Most installers in our comparison (Palmetto, Sunrun, Sunnova, Solar Optimum, Baker Electric, etc.) all use Tier-1 third-party panels. LA Solar Group is the only one that is vertically integrated; one vendor owns panel manufacture, install, warranty, and ongoing service.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -74,14 +74,14 @@ export default function LASolarGroupReview() {
                 LA Solar Group is headquartered in Sun Valley (LA area) with significant operations across Southern California. Privately held, with its own panel manufacturing operation separate from the install business but under common ownership.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment — The Vertical Integration Story</h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and the Vertical Integration Story</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                LA Solar Group manufactures its own panel line — typically black-on-black monocrystalline panels marketed on aesthetic appeal. Third-party inverters (Enphase, SolarEdge) and batteries (Tesla, Franklin) are paired with the house-brand panels. The integration story is appealing on paper: one vendor owns the warranty stack from manufacture through install. In practice, buyers should note that a vertically integrated warranty is only as strong as the long-term viability of the manufacturer — LA Solar Group panels are not a Tier-1 mainstream brand with deep secondary-market support if the company faces future financial stress.
+                LA Solar Group manufactures its own panel line, typically black-on-black monocrystalline panels marketed on aesthetic appeal. Third-party inverters (Enphase, SolarEdge) and batteries (Tesla, Franklin) are paired with the house-brand panels. The integration story is appealing on paper: one vendor owns the warranty stack from manufacture through install. In practice, buyers should note that a vertically integrated warranty is only as strong as the long-term viability of the manufacturer — LA Solar Group panels are not a Tier-1 mainstream brand with deep secondary-market support if the company faces future financial stress.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Yelp: 4.2/5 across 1,000+ reviews — high volume, positive skew.</li>
+                <li>Yelp: 4.2/5 across 1,000+ reviews. High volume, positive skew.</li>
                 <li>BBB: 55 complaints over 3 years, not accredited. Meaningful complaint volume for company scale.</li>
                 <li>SolarReviews: Mixed — some complaints specifically around roof leaks and post-install responsiveness.</li>
                 <li>Reddit r/solar: Mixed mentions; roof leak is the recurring theme.</li>
@@ -92,7 +92,7 @@ export default function LASolarGroupReview() {
                 <li><strong>Roof leaks.</strong> Recurring across multiple review sources. Workmanship-quality variance on roof penetrations is the specific issue.</li>
                 <li>Timeline slippage — 3-week fast installs contrasted against 9+ month drags.</li>
                 <li>Net-metering coordination delays after install.</li>
-                <li>Unexpected additional charges at install — extra electrical work, trenching, or rewiring not clearly disclosed at quote.</li>
+                <li>Unexpected additional charges at install, extra electrical work, trenching, or rewiring not clearly disclosed at quote.</li>
                 <li>Communication friction once issues surface post-install.</li>
               </ul>
 
@@ -103,7 +103,7 @@ export default function LASolarGroupReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                25-year standard. The panel warranty is backed by LA Solar Group itself rather than a Tier-1 manufacturer like Qcells or Panasonic — which is the tradeoff of vertical integration. The company has been operating for some years, but long-term panel warranty honor depends on the manufacturer still existing in decade-plus timeframes.
+                25-year standard. The panel warranty is backed by LA Solar Group itself rather than a Tier-1 manufacturer like Qcells or Panasonic, which is the tradeoff of vertical integration. The company has been operating for some years, but long-term panel warranty honor depends on the manufacturer still existing in decade-plus timeframes.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When LA Solar Group Makes Sense</h2>

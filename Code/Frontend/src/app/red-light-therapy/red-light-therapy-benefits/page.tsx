@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'Evidence-based guide to red light therapy benefits: skin, pain, muscle recovery, hair growth, cognition. Every claim cited to 2024–2026 peer-reviewed meta-analyses and RCTs.',
   alternates: { canonical: 'https://athomebiohacking.com/red-light-therapy/red-light-therapy-benefits' },
   openGraph: {
-    title: 'Red Light Therapy Benefits — Research-Backed',
+    title: 'Red Light Therapy Benefits, Research-Backed',
     description: 'Research-backed red light therapy benefits with peer-reviewed citations from 2024–2026.',
     type: 'article',
     publishedTime: '2026-04-24T00:00:00Z',
@@ -64,7 +64,7 @@ export default function RedLightTherapyBenefits() {
               </p>
 
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30', color: '#6ee7b7' }}>
-                <strong style={{ color: '#f0fdf4' }}>TL;DR:</strong> Strongest evidence for skin rejuvenation (collagen, wrinkles, elasticity), muscle recovery, chronic pain, and androgenic hair loss. Moderate-to-good evidence for cognition, mood, and wound healing. Effects are dose-dependent and cumulative — protocols of 10–20 minutes, 3–5 times per week, show the clearest results.
+                <strong style={{ color: '#f0fdf4' }}>TL;DR:</strong> Strongest evidence for skin rejuvenation (collagen, wrinkles, elasticity), muscle recovery, chronic pain, and androgenic hair loss. Moderate-to-good evidence for cognition, mood, and wound healing. Effects are dose-dependent and cumulative, protocols of 10–20 minutes, 3–5 times per week, show the clearest results.
               </p>
 
               {/* MECHANISM */}
@@ -72,7 +72,7 @@ export default function RedLightTherapyBenefits() {
                 How Red Light Therapy Actually Works
               </h2>
               <p>
-                Photobiomodulation works by delivering photons at specific wavelengths (mostly 630–670 nm red and 810–850 nm near-infrared) to skin and underlying tissue. The light is absorbed by <em>cytochrome c oxidase</em> — complex IV of the mitochondrial electron transport chain. This displaces inhibitory nitric oxide, increases electron transport, and raises ATP production. Downstream: reduced oxidative stress, modulated inflammatory signaling, and increased cellular repair capacity.
+                Photobiomodulation works by delivering photons at specific wavelengths (mostly 630–670 nm red and 810–850 nm near-infrared) to skin and underlying tissue. The light is absorbed by <em>cytochrome c oxidase</em>; complex IV of the mitochondrial electron transport chain. This displaces inhibitory nitric oxide, increases electron transport, and raises ATP production. Downstream: reduced oxidative stress, modulated inflammatory signaling, and increased cellular repair capacity.
               </p>
               <p>
                 This is not pseudoscience. The mechanism has been characterized in hundreds of cellular and animal studies and is the basis for growing FDA clearance of clinical PBM devices for specific indications.
@@ -83,7 +83,7 @@ export default function RedLightTherapyBenefits() {
                 1. Skin Rejuvenation, Collagen, and Wrinkles — Strong Evidence
               </h2>
               <p>
-                Multiple randomized controlled trials and meta-analyses show that red light therapy increases collagen density, reduces wrinkle depth, and improves skin elasticity. The strongest effects appear with combined wavelengths — particularly 633 nm red combined with 830 nm near-infrared — delivered over multi-week protocols.
+                Multiple randomized controlled trials and meta-analyses show that red light therapy increases collagen density, reduces wrinkle depth, and improves skin elasticity. The strongest effects appear with combined wavelengths — particularly 633 nm red combined with 830 nm near-infrared, delivered over multi-week protocols.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
                 <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> The landmark controlled trial by Wunsch &amp; Matuschka<sup>1</sup> assigned 136 volunteers to 611–650 nm red light, 570–850 nm polychromatic light, or a no-treatment control for 30 sessions. Treatment groups showed statistically significant improvements in wrinkle depth, skin roughness, skin complexion, and collagen density (measured ultrasonographically) versus control. The skin-pathway mechanism is summarized in Avci et al.&apos;s Harvard/Wellman Center review<sup>2</sup>: PBM stimulates fibroblasts, increases collagen and elastin production, and modulates inflammation — the same effects that underpin clinical FDA-cleared devices today.
@@ -111,7 +111,7 @@ export default function RedLightTherapyBenefits() {
                 Systematic reviews confirm that PBM meaningfully reduces chronic pain — particularly neck pain, low back pain, knee osteoarthritis, and fibromyalgia-related pain. The mechanism combines direct mitochondrial support with reduced local inflammatory markers (TNF-α, IL-6, PGE2) measured in both serum and synovial fluid in clinical studies.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Chung et al.<sup>4</sup> — the foundational Harvard/MIT biomedical engineering review of PBM dose, tissue penetration, and inflammatory modulation — describes the biphasic dose-response relationship and wavelength-depth curves that govern why 810–850 nm near-infrared reaches deeper musculoskeletal targets than visible red light. Effect sizes on pain scales (VAS) across subsequent clinical systematic reviews are clinically meaningful, particularly for knee osteoarthritis and non-specific chronic low back pain.
+                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> Chung et al.<sup>4</sup>; the foundational Harvard/MIT biomedical engineering review of PBM dose, tissue penetration, and inflammatory modulation. Describes the biphasic dose-response relationship and wavelength-depth curves that govern why 810–850 nm near-infrared reaches deeper musculoskeletal targets than visible red light. Effect sizes on pain scales (VAS) across subsequent clinical systematic reviews are clinically meaningful, particularly for knee osteoarthritis and non-specific chronic low back pain.
               </p>
 
               {/* BENEFIT 4 - HAIR */}
@@ -127,7 +127,7 @@ export default function RedLightTherapyBenefits() {
 
               {/* BENEFIT 5 - COGNITION */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>
-                5. Cognition, Mood, and Post-Stroke Recovery — Emerging
+                5. Cognition, Mood, and Post-Stroke Recovery, Emerging
               </h2>
               <p>
                 Transcranial PBM (delivered to the scalp and forehead to reach cortical tissue) is an active research area. A 2025 RCT reported improved cognition and reduced anxiety/depression symptoms in a post-stroke cohort. Earlier pilot studies showed similar benefits in mild cognitive impairment, ADHD, and major depressive disorder, though sample sizes are small.
@@ -167,7 +167,7 @@ export default function RedLightTherapyBenefits() {
                 <div className='p-5 rounded-xl border' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
                   <div className='text-xs font-bold uppercase tracking-wider mb-2' style={{ color: '#34d399' }}>Session</div>
                   <div className='text-2xl font-bold mb-1' style={{ color: '#f0fdf4' }}>10–20 min</div>
-                  <div className='text-sm'>At 6–18 inches from a proper panel. Longer is not better — over-dosing can reduce effect (the &quot;biphasic response&quot;).</div>
+                  <div className='text-sm'>At 6–18 inches from a proper panel. Longer is not better. Over-dosing can reduce effect (the &quot;biphasic response&quot;).</div>
                 </div>
                 <div className='p-5 rounded-xl border' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
                   <div className='text-xs font-bold uppercase tracking-wider mb-2' style={{ color: '#34d399' }}>Frequency</div>
@@ -195,7 +195,7 @@ export default function RedLightTherapyBenefits() {
               </p>
               <ul className='space-y-2 list-disc pl-6'>
                 <li>Do not stare directly into the panel. Use included goggles for face/eye treatments.</li>
-                <li>Photosensitivity medications (some antibiotics, isotretinoin, tetracyclines) may increase reaction risk — consult your physician.</li>
+                <li>Photosensitivity medications (some antibiotics, isotretinoin, tetracyclines) may increase reaction risk. Consult your physician.</li>
                 <li>Active skin cancer or suspicious lesions: consult a dermatologist before use.</li>
                 <li>Pregnancy: data is limited; use conservatively or avoid directly on the abdomen.</li>
               </ul>
@@ -204,8 +204,8 @@ export default function RedLightTherapyBenefits() {
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
                 <li><Link href='/red-light-therapy' style={{ color: '#34d399' }} className='underline'>Red Light Therapy Category Hub</Link> — overview of devices and protocols.</li>
-                <li><Link href='/infrared-sauna/infrared-vs-traditional' style={{ color: '#34d399' }} className='underline'>Infrared Sauna vs Traditional</Link> — related wavelength research at sauna doses.</li>
-                <li><Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link> — complementary recovery modality.</li>
+                <li><Link href='/infrared-sauna/infrared-vs-traditional' style={{ color: '#34d399' }} className='underline'>Infrared Sauna vs Traditional</Link>. Related wavelength research at sauna doses.</li>
+                <li><Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link>, complementary recovery modality.</li>
               </ul>
 
               {/* REFERENCES */}

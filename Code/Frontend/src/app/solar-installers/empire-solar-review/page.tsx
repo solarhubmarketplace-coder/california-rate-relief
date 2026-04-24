@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-re
 
 export const metadata: Metadata = {
   title: "Empire Solar Review 2026: Name Confusion, Mixed History, and Verification Checklist",
-  description: "Empire Solar has several namesake entities across states. The California operation has had mixed history — some older positive reviews, recent delay complaints and closure rumors for related entities. Verify carefully before signing.",
+  description: "Empire Solar has several namesake entities across states. The California operation has had mixed history. Some older positive reviews, recent delay complaints and closure rumors for related entities. Verify carefully before signing.",
   alternates: { canonical: '/solar-installers/empire-solar-review' },
 };
 
@@ -69,7 +69,7 @@ export default function EmpireReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                &ldquo;Empire Solar&rdquo; or &ldquo;Empire Solar Group&rdquo; is a name that has been used by several distinct solar companies across multiple states over the past decade. At least one namesake entity in Utah went through bankruptcy; others have pivoted or closed. The California operation — with mentions tied to the Pasadena area — has a mixed reputation with some older positive reviews and more recent complaints around delays and unfinished work. Before proceeding, homeowners should verify exactly which legal entity is quoting them.
+                &ldquo;Empire Solar&rdquo; or &ldquo;Empire Solar Group&rdquo; is a name that has been used by several distinct solar companies across multiple states over the past decade. At least one namesake entity in Utah went through bankruptcy; others have pivoted or closed. The California operation, with mentions tied to the Pasadena area, has a mixed reputation with some older positive reviews and more recent complaints around delays and unfinished work. Before proceeding, homeowners should verify exactly which legal entity is quoting them.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Verification Checklist</h2>
@@ -92,13 +92,13 @@ export default function EmpireReview() {
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
                 <li>Some older Yelp/Google reviews (2019–2022) are positive.</li>
                 <li>More recent reports include delays on install completion, some unfinished work, roof leak complaints, and financing handoff issues when a third-party lender wasn&apos;t aligned with the install schedule.</li>
-                <li>Namesake bankruptcy and closure mentions appear in search results for Empire Solar entities in other states — easy to conflate with the CA operation.</li>
+                <li>Namesake bankruptcy and closure mentions appear in search results for Empire Solar entities in other states, easy to conflate with the CA operation.</li>
                 <li>CSLB license status varies by specific entity; the original Empire Solar Group license status is worth verifying if that&apos;s who&apos;s quoting you.</li>
               </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing and Products</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The California operation has offered solar loans through third-party financing partners and uses Tier-1 third-party panels — no proprietary panel manufacture. Equipment selection varies by install.
+                The California operation has offered solar loans through third-party financing partners and uses Tier-1 third-party panels. No proprietary panel manufacture. Equipment selection varies by install.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Empire Solar Could Make Sense</h2>
@@ -116,7 +116,7 @@ export default function EmpireReview() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Get Quotes From Verified California Installers.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers with active CSLB licenses and verified reputations — so you can compare side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers with active CSLB licenses and verified reputations; so you can compare side by side.</p>
               <div className='flex justify-center'><Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
             </div>

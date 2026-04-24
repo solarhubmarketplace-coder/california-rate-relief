@@ -71,7 +71,7 @@ export default function SolarRebatesByCAUtility() {
                 <li><strong>SGIP battery rebate.</strong> All PG&amp;E customers eligible. Equity Resiliency tier applies to Tier 2/3 HFTD zones (which covers large portions of Sonoma, Napa, Sierra foothills, and rural PG&amp;E territory).</li>
                 <li><strong>CARE &amp; FERA bill discounts.</strong> 30–35% (CARE) or 18% (FERA) off entire bill for income-qualified households.</li>
                 <li><strong>Medical Baseline allowance.</strong> Additional baseline electricity at lowest-tier pricing for medical-equipment households.</li>
-                <li><strong>PSPS battery incentive bonus.</strong> PG&amp;E occasionally runs PSPS-area-specific battery programs — confirm current offerings in the PG&amp;E Marketplace.</li>
+                <li><strong>PSPS battery incentive bonus.</strong> PG&amp;E occasionally runs PSPS-area-specific battery programs, confirm current offerings in the PG&amp;E Marketplace.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SCE (Southern California Edison)</h2>
@@ -107,7 +107,7 @@ export default function SolarRebatesByCAUtility() {
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SMUD (Sacramento Municipal Utility District)</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>SMUD Net Energy Metering.</strong> Retail-rate-equivalent export credit (again, much more favorable than NEM 3.0).</li>
-                <li><strong>SMUD Storage Incentive.</strong> Rebates for customer-sited batteries — check current funding levels.</li>
+                <li><strong>SMUD Storage Incentive.</strong> Rebates for customer-sited batteries; check current funding levels.</li>
                 <li><strong>Energy Assistance Program Rate (EAPR).</strong> Discount for income-qualified SMUD customers.</li>
                 <li><strong>Medical Equipment Discount Rate (MEDR).</strong> Discount for medical-baseline households.</li>
                 <li><strong>EV Rate (Time-of-Day EV).</strong> Discounted overnight charging rate for EV owners.</li>
@@ -130,11 +130,11 @@ export default function SolarRebatesByCAUtility() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How to Claim Everything You Qualify For</h2>
               <ol className="list-decimal pl-6 space-y-2">
-                <li><strong>Federal 30% ITC</strong> — claim on IRS Form 5695 with your tax return. Keep contractor invoice and proof of payment.</li>
-                <li><strong>SGIP (if applicable)</strong> — your installer should file on your behalf. Confirm before signing. Lead time 60–120 days for reimbursement in some tiers.</li>
-                <li><strong>Utility-specific incentives</strong> — usually handled through utility Marketplace program or manufacturer rebate forms. Ask your installer for a list of all applicable utility programs and which they&apos;ll file.</li>
+                <li><strong>Federal 30% ITC</strong>, claim on IRS Form 5695 with your tax return. Keep contractor invoice and proof of payment.</li>
+                <li><strong>SGIP (if applicable)</strong>. Your installer should file on your behalf. Confirm before signing. Lead time 60–120 days for reimbursement in some tiers.</li>
+                <li><strong>Utility-specific incentives</strong>. Usually handled through utility Marketplace program or manufacturer rebate forms. Ask your installer for a list of all applicable utility programs and which they&apos;ll file.</li>
                 <li><strong>CARE / FERA / LIRA / EAPR</strong> — apply directly through utility account online. These are ongoing bill discounts, not one-time rebates.</li>
-                <li><strong>TECH Clean California</strong> (heat pump water heater/HVAC) — apply through participating contractor; the rebate is deducted from your install cost.</li>
+                <li><strong>TECH Clean California</strong> (heat pump water heater/HVAC), apply through participating contractor; the rebate is deducted from your install cost.</li>
               </ol>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>

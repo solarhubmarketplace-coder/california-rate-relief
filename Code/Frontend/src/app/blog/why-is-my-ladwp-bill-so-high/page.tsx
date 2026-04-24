@@ -26,7 +26,7 @@ export default function WhyIsMyLADWPBillSoHigh() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">LADWP · Los Angeles</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Why Is My LADWP Bill So High?</h1>
-              <p className="text-lg text-muted-foreground">LADWP rates run ~22¢/kWh — roughly 35–50% below SCE. So if your bill is spiking, it&apos;s almost always one of these.</p>
+              <p className="text-lg text-muted-foreground">LADWP rates run ~22¢/kWh, roughly 35–50% below SCE. So if your bill is spiking, it&apos;s almost always one of these.</p>
             </header>
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">1. Tier Cliffs</h2>

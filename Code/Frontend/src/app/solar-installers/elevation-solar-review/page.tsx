@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Elevation Solar Review 2026: Strong EnergySage Ratings But Activation Delays",
-  description: "Elevation Solar has 19,000+ installs across 5 states and a 4.6/5 EnergySage rating — but 90 BBB complaints in 3 years, recurring permit/inspection failures, and a 2.9 Yelp. Honest 2026 review.",
+  description: "Elevation Solar has 19,000+ installs across 5 states and a 4.6/5 EnergySage rating; but 90 BBB complaints in 3 years, recurring permit/inspection failures, and a 2.9 Yelp. Honest 2026 review.",
   alternates: { canonical: '/solar-installers/elevation-solar-review' },
 };
 
@@ -25,7 +25,7 @@ const reviewSchema = {
   itemReviewed: { '@type': 'LocalBusiness', name: 'Elevation Solar', address: { '@type': 'PostalAddress', addressRegion: 'Multi-state', addressCountry: 'US' } },
   reviewRating: { '@type': 'Rating', ratingValue: '3.5', bestRating: '5' },
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Elevation Solar has a mixed reputation profile — 4.6/5 EnergySage (697 reviews) vs 90 BBB complaints and Yelp 2.9/5. Strong at sales and install, weaker at permitting and inspection coordination. Works for patient buyers.',
+  reviewBody: 'Elevation Solar has a mixed reputation profile; 4.6/5 EnergySage (697 reviews) vs 90 BBB complaints and Yelp 2.9/5. Strong at sales and install, weaker at permitting and inspection coordination. Works for patient buyers.',
 };
 
 export default function ElevationReview() {
@@ -62,22 +62,22 @@ export default function ElevationReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Elevation is a multi-state solar installer with operations in California, Arizona, Nevada, Texas, and Florida. The company has completed more than 19,000 installations, has a 4.6/5 EnergySage score across 697 reviews — genuinely above average — but also carries a 90-complaint BBB record in 3 years and a Yelp score of 2.9. That split suggests an installer that does design and sales well but struggles with the back half of the install process in California: permitting, inspections, and utility interconnection.
+                Elevation is a multi-state solar installer with operations in California, Arizona, Nevada, Texas, and Florida. The company has completed more than 19,000 installations, has a 4.6/5 EnergySage score across 697 reviews, genuinely above average, but also carries a 90-complaint BBB record in 3 years and a Yelp score of 2.9. That split suggests an installer that does design and sales well but struggles with the back half of the install process in California: permitting, inspections, and utility interconnection.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Elevation operates across 5 states with CA as one of its primary markets. A+ BBB rating despite the complaint volume, suggesting the company responds to and resolves most complaints — but that&apos;s separate from how long the original issues took to surface.
+                Elevation operates across 5 states with CA as one of its primary markets. A+ BBB rating despite the complaint volume, suggesting the company responds to and resolves most complaints; but that&apos;s separate from how long the original issues took to surface.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Elevation is Enphase-heavy on microinverters, with a mix of Tier-1 panels and batteries depending on your specific quote. Install-day is usually quick and clean based on EnergySage reviews — the problems come after. Inspection failures, missing paperwork, and gateway communication issues are the recurring themes that keep systems offline for extended windows.
+                Elevation is Enphase-heavy on microinverters, with a mix of Tier-1 panels and batteries depending on your specific quote. Install-day is usually quick and clean based on EnergySage reviews; the problems come after. Inspection failures, missing paperwork, and gateway communication issues are the recurring themes that keep systems offline for extended windows.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>EnergySage: 4.6/5, 697 reviews — above average.</li>
+                <li>EnergySage: 4.6/5, 697 reviews, above average.</li>
                 <li>BBB: A+, but 90 complaints in 3 years.</li>
                 <li>Yelp: 2.9/5 — negative-skewing, common for post-install issues.</li>
                 <li>Reddit (r/solar): mixed; specific threads describe 6 to 12+ month activation timelines.</li>
@@ -85,7 +85,7 @@ export default function ElevationReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Common Complaints</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Long gaps between install-day and Permission to Operate — commonly 6 to 12+ months.</li>
+                <li>Long gaps between install-day and Permission to Operate, commonly 6 to 12+ months.</li>
                 <li>Repeated failed inspections (re-inspection delays add weeks).</li>
                 <li>Microinverter and gateway communication issues after activation.</li>
                 <li>Unresponsive post-install support for system monitoring problems.</li>

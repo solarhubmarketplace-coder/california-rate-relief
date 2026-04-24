@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'What Is a Demand Charge? (And Do California Residential Customers Pay One?)',
-  description: "Demand charges explained in plain English — what they are, why commercial and some California residential customers pay them, and how solar/battery eliminate them.",
+  description: "Demand charges explained in plain English. What they are, why commercial and some California residential customers pay them, and how solar/battery eliminate them.",
   alternates: { canonical: '/blog/what-is-demand-charge-california' },
   openGraph: { title: 'What Is a Demand Charge?', description: 'Plain-English explanation of electric demand charges.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-demand-charge-california' },
 };
@@ -30,7 +30,7 @@ export default function WhatIsDemandChargeCA() {
             </header>
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Simple Definition</h2>
-              <p>A <strong>demand charge</strong> bills you based on the <em>highest</em> electrical load (kW) you drew during the billing period — typically measured as a rolling 15-minute peak. It&apos;s separate from your per-kWh energy charge. You pay both: energy charges for how much total electricity you used, and demand charges for how big your biggest moment was.</p>
+              <p>A <strong>demand charge</strong> bills you based on the <em>highest</em> electrical load (kW) you drew during the billing period; typically measured as a rolling 15-minute peak. It&apos;s separate from your per-kWh energy charge. You pay both: energy charges for how much total electricity you used, and demand charges for how big your biggest moment was.</p>
               <p>Analogy: energy charges are like paying for gallons of water used; demand charges are like paying extra because you opened every faucet in the house at once for 15 minutes.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Who Actually Pays Demand Charges?</h2>
@@ -42,7 +42,7 @@ export default function WhatIsDemandChargeCA() {
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Why Utilities Bill This Way</h2>
-              <p>The grid is sized to handle everyone&apos;s peak demand simultaneously. If every business runs AC, pumps, and lighting at 3 PM on a hot day, the utility needs enough capacity to handle that simultaneous load. Demand charges recover the cost of having grid capacity standing by for your biggest moment — regardless of whether you used much total energy.</p>
+              <p>The grid is sized to handle everyone&apos;s peak demand simultaneously. If every business runs AC, pumps, and lighting at 3 PM on a hot day, the utility needs enough capacity to handle that simultaneous load. Demand charges recover the cost of having grid capacity standing by for your biggest moment, regardless of whether you used much total energy.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Solar and Battery Reduce Demand Charges</h2>
               <ul className="list-disc pl-6 space-y-2">

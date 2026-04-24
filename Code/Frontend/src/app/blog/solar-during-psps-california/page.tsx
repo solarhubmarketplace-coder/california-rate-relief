@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'Solar During a PSPS in California: Will My Panels Work? (And What You Actually Need)',
-  description: "Does solar work during a PG&E PSPS outage? The honest answer — why grid-tied solar shuts off, how batteries change the story, and what you actually need for 24–36 hour blackout survival.",
+  description: "Does solar work during a PG&E PSPS outage? The honest answer, why grid-tied solar shuts off, how batteries change the story, and what you actually need for 24–36 hour blackout survival.",
   alternates: { canonical: '/blog/solar-during-psps-california' },
   openGraph: { title: 'Solar During PSPS California', description: 'The honest answer on solar during PSPS outages.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-during-psps-california' },
 };
@@ -54,10 +54,10 @@ export default function SolarDuringPSPSCA() {
               </ul>
 
               <h3 className="text-xl font-bold text-foreground mt-8 mb-3">Option 3: Portable Power Stations + Solar Panels</h3>
-              <p>EcoFlow Delta Pro, Jackery 3000 Pro, Bluetti AC500 — large portable batteries that can be paired with portable solar panels. Much cheaper than installed battery systems ($3,000–$6,000 for a robust setup) but require manual plugging of appliances and cannot power hard-wired loads.</p>
+              <p>EcoFlow Delta Pro, Jackery 3000 Pro, Bluetti AC500, large portable batteries that can be paired with portable solar panels. Much cheaper than installed battery systems ($3,000–$6,000 for a robust setup) but require manual plugging of appliances and cannot power hard-wired loads.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SGIP Equity Resiliency Program</h2>
-              <p>California&apos;s SGIP Equity Resiliency tier specifically subsidizes batteries for homes in HFTD Tier 2 / Tier 3 zones — the same areas PG&amp;E targets for PSPS shutoffs. Eligible households can receive up to 100% battery-cost coverage. Check your address against the <a href="https://ia.cpuc.ca.gov/firemap/" target="_blank" rel="noopener noreferrer" className="text-primary underline">CPUC Fire-Threat Map</a>. If you&apos;re in Tier 2 or 3 and have been subject to multiple PSPS events, you likely qualify.</p>
+              <p>California&apos;s SGIP Equity Resiliency tier specifically subsidizes batteries for homes in HFTD Tier 2 / Tier 3 zones, the same areas PG&amp;E targets for PSPS shutoffs. Eligible households can receive up to 100% battery-cost coverage. Check your address against the <a href="https://ia.cpuc.ca.gov/firemap/" target="_blank" rel="noopener noreferrer" className="text-primary underline">CPUC Fire-Threat Map</a>. If you&apos;re in Tier 2 or 3 and have been subject to multiple PSPS events, you likely qualify.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Battery Sizing for PSPS Survival</h2>
               <ul className="list-disc pl-6 space-y-2">

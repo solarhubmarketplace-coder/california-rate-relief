@@ -37,7 +37,7 @@ const COMPARISON = [
   { feature: 'Session length', traditional: '10–20 min', infrared: '30–45 min' },
   { feature: 'Sweat volume per session', traditional: 'Very high', infrared: 'Moderate–high' },
   { feature: 'Long-term cohort data', traditional: '20+ years (Finnish studies)', infrared: '5–10 years, smaller cohorts' },
-  { feature: 'Tolerability', traditional: 'Lower — high heat is intense', infrared: 'Higher — gentler on heat-sensitive users' },
+  { feature: 'Tolerability', traditional: 'Lower, high heat is intense', infrared: 'Higher, gentler on heat-sensitive users' },
   { feature: 'Electrical requirement', traditional: '220V+ typical', infrared: 'Often 110V plug-in (smaller units)' },
   { feature: 'Upfront cost', traditional: '$2,000–$8,000+', infrared: '$300–$6,000 (blankets cheapest)' },
 ];
@@ -140,7 +140,7 @@ export default function InfraredVsTraditional() {
                 Both saunas induce significant sweating, but composition studies suggest infrared-induced sweat mobilizes slightly higher quantities of heavy metals (cadmium, aluminum, mercury) compared to traditional sauna sweat. This is the mechanistic basis for &quot;infrared detox&quot; marketing.
               </p>
               <p className='text-sm italic'>
-                Honest caveat: the absolute quantities are small. Real detoxification still happens through liver and kidneys. Sauna is a cardiovascular intervention that happens to excrete trace amounts of metals — it is not a substitute for addressing environmental exposure at the source.
+                Honest caveat: the absolute quantities are small. Real detoxification still happens through liver and kidneys. Sauna is a cardiovascular intervention that happens to excrete trace amounts of metals, it is not a substitute for addressing environmental exposure at the source.
               </p>
 
               {/* MENTAL HEALTH */}
@@ -229,9 +229,9 @@ export default function InfraredVsTraditional() {
               {/* RELATED */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
-                <li><Link href='/infrared-sauna/best-infrared-sauna' style={{ color: '#34d399' }} className='underline'>Best Infrared Sauna 2026</Link> — our cabin rankings.</li>
+                <li><Link href='/infrared-sauna/best-infrared-sauna' style={{ color: '#34d399' }} className='underline'>Best Infrared Sauna 2026</Link>. Our cabin rankings.</li>
                 <li><Link href='/infrared-sauna/best-sauna-blanket' style={{ color: '#34d399' }} className='underline'>Best Sauna Blanket</Link> — the under-$800 option.</li>
-                <li><Link href='/infrared-sauna/infrared-sauna-benefits' style={{ color: '#34d399' }} className='underline'>Infrared Sauna Benefits</Link> — the full research review.</li>
+                <li><Link href='/infrared-sauna/infrared-sauna-benefits' style={{ color: '#34d399' }} className='underline'>Infrared Sauna Benefits</Link>; the full research review.</li>
                 <li><Link href='/cold-plunge/benefits-of-ice-bath' style={{ color: '#34d399' }} className='underline'>Benefits of Ice Bath</Link> — the cold side of contrast therapy.</li>
               </ul>
 

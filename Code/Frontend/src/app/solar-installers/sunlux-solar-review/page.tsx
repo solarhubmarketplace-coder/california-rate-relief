@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Sunlux Solar Review 2026: One of SoCal's Higher-Rated Regional Installers",
-  description: "Sunlux has 7,000+ installs, Google 4.7/5 across 550+ reviews, BBB A+, and competitive California pricing. Here's the honest 2026 review — strengths, the permitting delays, and who it fits.",
+  description: "Sunlux has 7,000+ installs, Google 4.7/5 across 550+ reviews, BBB A+, and competitive California pricing. Here's the honest 2026 review, strengths, the permitting delays, and who it fits.",
   alternates: { canonical: '/solar-installers/sunlux-solar-review' },
 };
 
@@ -57,12 +57,12 @@ export default function SunluxReview() {
             <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p><p className='text-3xl font-extrabold text-foreground mt-1'>4.4 <span className='text-lg text-muted-foreground'>/ 5</span></p></div>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>SoCal cash/loan buyers who want competitive pricing and a strong Google/BBB record</p></div>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You need a locked install-by date — permitting and activation delays are the main complaint</p></div>
+              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You need a locked install-by date, permitting and activation delays are the main complaint</p></div>
             </div>
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Sunlux is a Southern California solar installer (with Texas operations) that has built a meaningful scale — more than 7,000 completed installations — while maintaining customer reputation metrics well above the national PPA-heavy installers. Google shows 4.7/5 across 550+ reviews, Yelp holds at 3.8/5, and the BBB profile is A+ (not accredited, which is common and not a red flag). For SoCal cash and loan buyers, Sunlux sits in the upper tier of our comparison.
+                Sunlux is a Southern California solar installer (with Texas operations) that has built a meaningful scale — more than 7,000 completed installations, while maintaining customer reputation metrics well above the national PPA-heavy installers. Google shows 4.7/5 across 550+ reviews, Yelp holds at 3.8/5, and the BBB profile is A+ (not accredited, which is common and not a red flag). For SoCal cash and loan buyers, Sunlux sits in the upper tier of our comparison.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
@@ -72,7 +72,7 @@ export default function SunluxReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux does not manufacture panels. The company installs quality Tier-1 options — Panasonic has been a frequent panel choice, with SolarEdge inverters and LG batteries mentioned in recent installs. Install-day is typically completed in one day. The full process from contract to Permission to Operate runs 3 to 6 months, in line with California industry average post-NEM 3.0.
+                Sunlux does not manufacture panels. The company installs quality Tier-1 options, Panasonic has been a frequent panel choice, with SolarEdge inverters and LG batteries mentioned in recent installs. Install-day is typically completed in one day. The full process from contract to Permission to Operate runs 3 to 6 months, in line with California industry average post-NEM 3.0.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
@@ -81,7 +81,7 @@ export default function SunluxReview() {
               </p>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
                 <li>Google: 4.7/5 across 550+ reviews — genuinely strong.</li>
-                <li>Yelp: 3.8/5 — mixed but positive-skewing.</li>
+                <li>Yelp: 3.8/5. Mixed but positive-skewing.</li>
                 <li>BBB: A+, not accredited, modest complaint volume relative to company scale.</li>
                 <li>EnergySage: positive reviews in smaller sample.</li>
               </ul>
@@ -106,12 +106,12 @@ export default function SunluxReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Sunlux Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux is a strong pick for SoCal cash or loan buyers who value a regional installer with in-house crews, competitive pricing, and above-average customer reputation metrics. It&apos;s particularly attractive if you&apos;re in Orange County, LA Metro, or coastal San Diego where Sunlux has its strongest service history. The main caveat is timeline — expect standard California industry 3 to 6 months, and build margin in your planning.
+                Sunlux is a strong pick for SoCal cash or loan buyers who value a regional installer with in-house crews, competitive pricing, and above-average customer reputation metrics. It&apos;s particularly attractive if you&apos;re in Orange County, LA Metro, or coastal San Diego where Sunlux has its strongest service history. The main caveat is timeline. Expect standard California industry 3 to 6 months, and build margin in your planning.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Sunlux Solar a reputable company?</h3><p className='text-foreground/80'>Yes, by the data we can verify — 7,000+ installs, Google 4.7/5, BBB A+. One of the cleaner reputations in SoCal regional solar.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Sunlux Solar a reputable company?</h3><p className='text-foreground/80'>Yes, by the data we can verify, 7,000+ installs, Google 4.7/5, BBB A+. One of the cleaner reputations in SoCal regional solar.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunlux offer PPAs or leases?</h3><p className='text-foreground/80'>Not as the primary offering. Sunlux focuses on cash and loan financing where you own the system.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What panels does Sunlux use?</h3><p className='text-foreground/80'>Tier-1 options — Panasonic has been a frequent panel brand with SolarEdge inverters and LG or other name-brand batteries. Sunlux does not manufacture its own panels.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunlux serve all of California?</h3><p className='text-foreground/80'>Strongest coverage is Southern California. Confirm serviceability for your specific zip code in the first call.</p></div>
@@ -120,7 +120,7 @@ export default function SunluxReview() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Sunlux Against Two California Alternatives.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three installers — so you can compare their pricing, equipment, and warranty terms side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three installers. So you can compare their pricing, equipment, and warranty terms side by side.</p>
               <div className='flex justify-center'><Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
             </div>

@@ -26,7 +26,7 @@ export default function SolarLeaseHomeSaleCA() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar + Real Estate</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">What Happens to My Solar Lease or PPA When I Sell My House in California?</h1>
-              <p className="text-lg text-muted-foreground">A 20-year solar contract can complicate a home sale in ways sales reps skip over. Here&apos;s how to handle it — with a buyer-friendly transfer, a buyout, or removal.</p>
+              <p className="text-lg text-muted-foreground">A 20-year solar contract can complicate a home sale in ways sales reps skip over. Here&apos;s how to handle it, with a buyer-friendly transfer, a buyout, or removal.</p>
             </header>
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Three Options</h2>
@@ -55,7 +55,7 @@ export default function SolarLeaseHomeSaleCA() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The UCC Lien Issue</h2>
               <p>
-                Many solar lease/PPA companies file a <strong>UCC-1 financing statement</strong> on your property, recording their security interest in the solar equipment. This is not a traditional mortgage lien — but it shows up in title searches and can spook buyers&apos; lenders.
+                Many solar lease/PPA companies file a <strong>UCC-1 financing statement</strong> on your property, recording their security interest in the solar equipment. This is not a traditional mortgage lien, but it shows up in title searches and can spook buyers&apos; lenders.
               </p>
               <p>
                 California&apos;s AB 942 (2024) formally addressed some of these transfer-friction issues but did not eliminate all of them. Provisions worth knowing:

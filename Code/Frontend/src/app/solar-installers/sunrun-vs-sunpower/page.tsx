@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'Sunrun vs SunPower: Head-to-Head Solar Comparison After the SunPower Bankruptcy (2026)',
-  description: "Sunrun vs SunPower (now Complete Solaria) — what's changed post-bankruptcy, panel quality, pricing, warranty continuity, and which is the better buy in California.",
+  description: "Sunrun vs SunPower (now Complete Solaria), what's changed post-bankruptcy, panel quality, pricing, warranty continuity, and which is the better buy in California.",
   alternates: { canonical: '/solar-installers/sunrun-vs-sunpower' },
   openGraph: { title: 'Sunrun vs SunPower (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunrun-vs-sunpower' },
 };
@@ -50,13 +50,13 @@ export default function SunrunVsSunPower() {
                 <li>You want a $0-down PPA or lease (SunPower focuses on cash and loan).</li>
                 <li>Warranty-honor-risk concern from the SunPower bankruptcy matters to you.</li>
                 <li>You value a larger installer with nationwide service presence.</li>
-                <li>Your roof has standard area — the SunPower efficiency premium doesn&apos;t pay off without a space constraint.</li>
+                <li>Your roof has standard area. The SunPower efficiency premium doesn&apos;t pay off without a space constraint.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Warranty Question</h2>
               <p>Complete Solaria has publicly committed to honoring existing SunPower customer warranties, and Maxeon (the panel manufacturer, a separate publicly traded company) directly honors its panel warranties regardless of installer status. That said:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Panel warranty: Maxeon direct — stable.</li>
+                <li>Panel warranty: Maxeon direct, stable.</li>
                 <li>Workmanship warranty: Complete Solaria as assumed obligations — newer operation, less track record.</li>
                 <li>Production guarantee (if included in your contract): verify specifically with your representative.</li>
               </ul>

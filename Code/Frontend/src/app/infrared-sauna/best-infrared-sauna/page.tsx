@@ -134,7 +134,7 @@ export default function BestInfraredSauna() {
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#a7f3d0' }}>
               <p className='text-lg'>
-                An infrared sauna cabin is a $2,000–$6,000 decision that should last a decade. Before we rank the cabins, here is the research on what sauna use actually does to your body — so you can pick a cabin that matches the evidence instead of the marketing.
+                An infrared sauna cabin is a $2,000–$6,000 decision that should last a decade. Before we rank the cabins, here is the research on what sauna use actually does to your body, so you can pick a cabin that matches the evidence instead of the marketing.
               </p>
 
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30', color: '#6ee7b7' }}>
@@ -152,13 +152,13 @@ export default function BestInfraredSauna() {
                 <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Laukkanen et al. (2018). <a href='https://pubmed.ncbi.nlm.nih.gov/29725033/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 29725033 <ExternalLink className='h-3 w-3' /></a>
               </p>
               <p>
-                A 2023 mechanistic review by Patrick &amp; Johnson in <em>Experimental Gerontology</em> pulled the threads together: sauna-induced heat stress mimics moderate-intensity exercise responses — heat shock protein (HSP) induction, endothelial improvement, blood pressure reduction.
+                A 2023 mechanistic review by Patrick &amp; Johnson in <em>Experimental Gerontology</em> pulled the threads together: sauna-induced heat stress mimics moderate-intensity exercise responses, heat shock protein (HSP) induction, endothelial improvement, blood pressure reduction.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
                 <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Patrick &amp; Johnson (2023). <a href='https://pubmed.ncbi.nlm.nih.gov/33787870/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 33787870 <ExternalLink className='h-3 w-3' /></a>
               </p>
               <p className='text-sm italic'>
-                Important caveat: most long-term sauna cohort data is from traditional Finnish steam saunas, not infrared. Mechanistically the infrared research (sweat induction + core temperature rise + cardiovascular load) shows similar acute responses — but we do not have 20-year infrared-specific cohort data yet.
+                Important caveat: most long-term sauna cohort data is from traditional Finnish steam saunas, not infrared. Mechanistically the infrared research (sweat induction + core temperature rise + cardiovascular load) shows similar acute responses, but we do not have 20-year infrared-specific cohort data yet.
               </p>
 
               {/* SPECTRUM */}
@@ -293,7 +293,7 @@ export default function BestInfraredSauna() {
                 <li>Pregnancy</li>
                 <li>Uncontrolled hypertension or recent cardiac events</li>
                 <li>Known heat intolerance or multiple sclerosis (heat can trigger MS flares)</li>
-                <li>Hemochromatosis (iron overload) — heat mobilizes iron</li>
+                <li>Hemochromatosis (iron overload). Heat mobilizes iron</li>
                 <li>Implantable medical devices — consult manufacturer</li>
               </ul>
 
@@ -301,8 +301,8 @@ export default function BestInfraredSauna() {
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
                 <li><Link href='/infrared-sauna/best-sauna-blanket' style={{ color: '#34d399' }} className='underline'>Best Sauna Blanket</Link> — the under-$800 alternative to a full cabin.</li>
-                <li><Link href='/cold-plunge/benefits-of-ice-bath' style={{ color: '#34d399' }} className='underline'>Benefits of Ice Bath</Link> — the other half of contrast therapy.</li>
-                <li><Link href='/red-light-therapy' style={{ color: '#34d399' }} className='underline'>Red Light Therapy</Link> — near-IR photobiomodulation (often bundled into full-spectrum saunas).</li>
+                <li><Link href='/cold-plunge/benefits-of-ice-bath' style={{ color: '#34d399' }} className='underline'>Benefits of Ice Bath</Link>, the other half of contrast therapy.</li>
+                <li><Link href='/red-light-therapy' style={{ color: '#34d399' }} className='underline'>Red Light Therapy</Link>. Near-IR photobiomodulation (often bundled into full-spectrum saunas).</li>
               </ul>
 
               {/* DISCLAIMER */}

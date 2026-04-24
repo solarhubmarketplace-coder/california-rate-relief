@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'How Does Net Metering Work? Plain-English Guide (2026)',
-  description: "A plain-English explanation of net metering — how it works, how the credits are calculated, the difference between NEM 1.0/2.0/3.0 and net billing, and what's next.",
+  description: "A plain-English explanation of net metering, how it works, how the credits are calculated, the difference between NEM 1.0/2.0/3.0 and net billing, and what's next.",
   alternates: { canonical: '/blog/how-does-net-metering-work' },
   openGraph: { title: 'How Does Net Metering Work?', description: 'Plain-English net metering guide for 2026.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/how-does-net-metering-work' },
 };

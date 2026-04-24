@@ -58,7 +58,7 @@ export default function SolarCarportCAGuide() {
 
             <div className="prose prose-slate max-w-none">
               <p className="p-4 rounded-lg border border-border bg-card text-sm">
-                <strong>TL;DR:</strong> Solar carports in California typically run $4.00–$6.50 per watt installed — 20–40% more than a rooftop system per watt. That premium buys covered parking, EV-charging integration, and the ability to put solar on properties without suitable roofs. For most homeowners, a rooftop install is the better value. Solar carports pay off when your roof is shaded, slated for replacement, or architecturally unsuitable — or when you want a combined solar-plus-EV-charging structure.
+                <strong>TL;DR:</strong> Solar carports in California typically run $4.00–$6.50 per watt installed, 20–40% more than a rooftop system per watt. That premium buys covered parking, EV-charging integration, and the ability to put solar on properties without suitable roofs. For most homeowners, a rooftop install is the better value. Solar carports pay off when your roof is shaded, slated for replacement, or architecturally unsuitable, or when you want a combined solar-plus-EV-charging structure.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What Is a Solar Carport?</h2>
@@ -142,17 +142,17 @@ export default function SolarCarportCAGuide() {
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">California Permit Requirements</h2>
               <p>A solar carport crosses more permit desks than a rooftop install:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Building permit</strong> — required in every California jurisdiction for structural canopies over 120 sq ft (most solar carports).</li>
-                <li><strong>Electrical permit</strong> — for the PV system, inverter, and service connection.</li>
-                <li><strong>Zoning setback review</strong> — your carport usually needs to sit a defined distance from property lines (typically 3–10 ft).</li>
-                <li><strong>Structural engineering stamp</strong> — California seismic code requires an engineered design for any structure over ~100 sq ft.</li>
-                <li><strong>Utility interconnection application</strong> — same as rooftop: Rule 21 for the three IOUs (PG&amp;E, SCE, SDG&amp;E), muni-specific for SMUD, LADWP, Roseville Electric, and other public utilities.</li>
+                <li><strong>Building permit</strong>, required in every California jurisdiction for structural canopies over 120 sq ft (most solar carports).</li>
+                <li><strong>Electrical permit</strong>, for the PV system, inverter, and service connection.</li>
+                <li><strong>Zoning setback review</strong>, your carport usually needs to sit a defined distance from property lines (typically 3–10 ft).</li>
+                <li><strong>Structural engineering stamp</strong>. California seismic code requires an engineered design for any structure over ~100 sq ft.</li>
+                <li><strong>Utility interconnection application</strong>, same as rooftop: Rule 21 for the three IOUs (PG&amp;E, SCE, SDG&amp;E), muni-specific for SMUD, LADWP, Roseville Electric, and other public utilities.</li>
               </ul>
               <p>Total permit cost typically runs $800–$2,500 on top of the installed-equipment price. Most installers roll this into the turnkey quote.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">EV Charging Integration</h2>
               <p>
-                One of the strongest arguments for a California solar carport is EV-pairing. A Level-2 charger wired to a dedicated circuit under the carport canopy gives you daylight charging directly from solar — which under NEM 3.0&apos;s net billing structure is dramatically more valuable than exporting to the grid at 5–8¢/kWh. Pair with a battery (eligible for California&apos;s Self-Generation Incentive Program rebate) and you can time-shift solar to charge your EV overnight too.
+                One of the strongest arguments for a California solar carport is EV-pairing. A Level-2 charger wired to a dedicated circuit under the carport canopy gives you daylight charging directly from solar; which under NEM 3.0&apos;s net billing structure is dramatically more valuable than exporting to the grid at 5–8¢/kWh. Pair with a battery (eligible for California&apos;s Self-Generation Incentive Program rebate) and you can time-shift solar to charge your EV overnight too.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Who Installs Solar Carports in California</h2>
@@ -184,7 +184,7 @@ export default function SolarCarportCAGuide() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><Link href="/blog/is-my-roof-good-for-solar-california" className="text-primary underline">Is My Roof Good for Solar in California?</Link></li>
                 <li><Link href="/blog/solar-panels-for-ev-charging-california" className="text-primary underline">Solar Panels for EV Charging in California</Link></li>
-                <li><Link href="/blog/ppa-loan-vs-solar-lease-vs-cash-california" className="text-primary underline">PPA vs Loan vs Lease vs Cash — California</Link></li>
+                <li><Link href="/blog/ppa-loan-vs-solar-lease-vs-cash-california" className="text-primary underline">PPA vs Loan vs Lease vs Cash; California</Link></li>
                 <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California</Link></li>
               </ul>
             </div>

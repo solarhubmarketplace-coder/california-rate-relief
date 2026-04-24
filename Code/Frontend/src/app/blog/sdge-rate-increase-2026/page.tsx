@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'SDG&E Rate Increase 2026: Why San Diego Has the Highest Rates in America',
-  description: "SDG&E's 2026 rate changes explained — why San Diego County rates hit 45.7¢/kWh, what drove the hike, the $24 Base Services Charge, and what customers can do.",
+  description: "SDG&E's 2026 rate changes explained. Why San Diego County rates hit 45.7¢/kWh, what drove the hike, the $24 Base Services Charge, and what customers can do.",
   alternates: { canonical: '/blog/sdge-rate-increase-2026' },
   openGraph: { title: 'SDG&E Rate Increase 2026', description: 'Plain-English SDG&E 2026 rate breakdown.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/sdge-rate-increase-2026' },
 };

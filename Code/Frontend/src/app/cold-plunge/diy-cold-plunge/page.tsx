@@ -60,7 +60,7 @@ export default function DIYColdPlunge() {
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#a7f3d0' }}>
               <p className='text-lg'>
-                Commercial cold plunges cost $3,000–$8,000. The research protocols behind most cold plunge benefits used nothing fancier than a stock tank with ice. If you just want to start plunging today for under $200, here are three real builds — ranked by practicality — plus a clear answer on when DIY stops making sense.
+                Commercial cold plunges cost $3,000–$8,000. The research protocols behind most cold plunge benefits used nothing fancier than a stock tank with ice. If you just want to start plunging today for under $200, here are three real builds, ranked by practicality, plus a clear answer on when DIY stops making sense.
               </p>
 
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30', color: '#6ee7b7' }}>
@@ -72,7 +72,7 @@ export default function DIYColdPlunge() {
                 Does DIY Actually Deliver the Research Benefits?
               </h2>
               <p>
-                Short answer: yes. The benefits of cold plunging — BAT activation, reduced cortisol, improved sleep — come from your body being immersed in ~50–59°F water for 2–10 minutes. The <em>container</em> doesn&apos;t matter. Any method that holds you at that temperature range, for that duration, delivers the research-backed effect.
+                Short answer: yes. The benefits of cold plunging, BAT activation, reduced cortisol, improved sleep — come from your body being immersed in ~50–59°F water for 2–10 minutes. The <em>container</em> doesn&apos;t matter. Any method that holds you at that temperature range, for that duration, delivers the research-backed effect.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
                 <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Cain et al. (2025) — Systematic review and meta-analysis of CWI effects (11 studies, N=3,177). Protocols were simple immersion at standard temperatures; no premium equipment required. <a href='https://pubmed.ncbi.nlm.nih.gov/39879231/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 39879231 <ExternalLink className='h-3 w-3' /></a>
@@ -96,19 +96,19 @@ export default function DIYColdPlunge() {
                   <li>Galvanized stock tank, 100–150 gallon (Tractor Supply, Amazon) — $75–120</li>
                   <li>Pool thermometer — $8</li>
                   <li>Garden hose access to fill</li>
-                  <li>Ice — 2–3 bags per session (~$10–15)</li>
+                  <li>Ice. 2–3 bags per session (~$10–15)</li>
                 </ul>
                 <p className='mb-3'><strong style={{ color: '#f0fdf4' }}>How to use:</strong></p>
                 <ol className='space-y-2 list-decimal pl-6'>
                   <li>Fill tank with cold tap water ~2/3 full</li>
                   <li>Add 2–3 bags of ice, wait 10 min to equilibrate</li>
-                  <li>Check thermometer — aim for 50–59°F</li>
+                  <li>Check thermometer, aim for 50–59°F</li>
                   <li>Plunge for 2–10 min</li>
                   <li>Cover tank between sessions (pool cover or tarp) to keep it cleaner</li>
                   <li>Drain and refill every 7–14 days or when water looks cloudy</li>
                 </ol>
                 <div className='mt-4 p-3 rounded-lg text-sm' style={{ backgroundColor: '#0a1a14' }}>
-                  <strong style={{ color: '#f0fdf4' }}>Reality check:</strong> You&apos;ll spend $10–15/session on ice if you don&apos;t have a dedicated freezer. At 3 sessions/week that&apos;s $150/month — in a year you&apos;ve paid for a chest freezer conversion.
+                  <strong style={{ color: '#f0fdf4' }}>Reality check:</strong> You&apos;ll spend $10–15/session on ice if you don&apos;t have a dedicated freezer. At 3 sessions/week that&apos;s $150/month. In a year you&apos;ve paid for a chest freezer conversion.
                 </div>
               </div>
 
@@ -126,8 +126,8 @@ export default function DIYColdPlunge() {
                 <ul className='space-y-2 list-disc pl-6 mb-4'>
                   <li>Chest freezer, 7–15 cu ft (new $400–700 or used $100–250)</li>
                   <li>External temperature controller (Inkbird or equivalent) — $35</li>
-                  <li>Pond liner or food-grade pool liner — $40</li>
-                  <li>Waterproof silicone sealant — $15</li>
+                  <li>Pond liner or food-grade pool liner, $40</li>
+                  <li>Waterproof silicone sealant, $15</li>
                   <li>Ozone generator (optional, extends water life) — $100–200</li>
                   <li>Small circulation pump (optional) — $50</li>
                 </ul>
@@ -136,7 +136,7 @@ export default function DIYColdPlunge() {
                   <li>Line the interior with pond liner, sealing all seams and around the drain hole (if present)</li>
                   <li>Install the Inkbird temp controller: freezer plugs into it, temp probe sits in the water. Set to 50°F.</li>
                   <li>Fill with water, wait 12–24 hours for first cool-down cycle</li>
-                  <li>Add ozone generator on a timer (30 min/day) to control bacterial growth — extends water changes to 4–8 weeks</li>
+                  <li>Add ozone generator on a timer (30 min/day) to control bacterial growth, extends water changes to 4–8 weeks</li>
                   <li>Plunge, then cover with insulated lid between sessions</li>
                 </ol>
                 <div className='mt-4 p-3 rounded-lg text-sm' style={{ backgroundColor: '#0a1a14' }}>
@@ -154,13 +154,13 @@ export default function DIYColdPlunge() {
                   <div><div className='text-xs uppercase tracking-wider mb-1' style={{ color: '#34d399' }}>Build time</div><div className='text-xl font-bold' style={{ color: '#f0fdf4' }}>30 min</div></div>
                   <div><div className='text-xs uppercase tracking-wider mb-1' style={{ color: '#34d399' }}>Best for</div><div className='text-xl font-bold' style={{ color: '#f0fdf4' }}>Small spaces</div></div>
                 </div>
-                <p className='mb-3'>The idea: an upright 55-gallon food-grade plastic barrel or large insulated trash bin. You stand in it submerged to chest/shoulder level. Smaller footprint than a stock tank — fits in a garage corner or patio.</p>
+                <p className='mb-3'>The idea: an upright 55-gallon food-grade plastic barrel or large insulated trash bin. You stand in it submerged to chest/shoulder level. Smaller footprint than a stock tank. Fits in a garage corner or patio.</p>
                 <p className='mb-3'><strong style={{ color: '#f0fdf4' }}>What you need:</strong></p>
                 <ul className='space-y-2 list-disc pl-6'>
-                  <li>Food-grade 55-gallon barrel — $80</li>
+                  <li>Food-grade 55-gallon barrel; $80</li>
                   <li>Foam board insulation wrapped around exterior — $40</li>
                   <li>Cover (custom-cut foam with cutout for head) — $20</li>
-                  <li>Ice or adjacent chiller — varies</li>
+                  <li>Ice or adjacent chiller, varies</li>
                 </ul>
                 <div className='mt-4 p-3 rounded-lg text-sm' style={{ backgroundColor: '#0a1a14' }}>
                   <strong style={{ color: '#f0fdf4' }}>Tradeoff:</strong> Standing submersion isn&apos;t as comfortable as a tub where you can sit. Works well for quick 2–3 min morning plunges; less ideal for longer sessions.
@@ -197,10 +197,10 @@ export default function DIYColdPlunge() {
                 Safety Notes
               </h2>
               <ul className='space-y-2 list-disc pl-6'>
-                <li>Never plunge alone — cold shock can impair motor control</li>
+                <li>Never plunge alone, cold shock can impair motor control</li>
                 <li>Never plunge with cardiovascular disease, uncontrolled hypertension, or recent cardiac events</li>
                 <li>Do not plunge during pregnancy</li>
-                <li>Monitor water temperature — do not go below 50°F without experience</li>
+                <li>Monitor water temperature; do not go below 50°F without experience</li>
                 <li>Have a towel and warm layers accessible before you enter</li>
               </ul>
 
@@ -219,7 +219,7 @@ export default function DIYColdPlunge() {
                   <a href='https://pubmed.ncbi.nlm.nih.gov/35837014/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>35837014</a>. Meta-analysis supporting the 10–15°C recovery protocol used in the stock-tank and barrel builds.
                 </li>
                 <li>
-                  Espeland D, de Weerd L, Mercer JB. Health effects of voluntary exposure to cold water — a continuing subject of debate. <em>Int J Circumpolar Health.</em> 2022. PMC:{' '}
+                  Espeland D, de Weerd L, Mercer JB. Health effects of voluntary exposure to cold water, a continuing subject of debate. <em>Int J Circumpolar Health.</em> 2022. PMC:{' '}
                   <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9518606/' style={{ color: '#34d399' }} className='underline' target='_blank' rel='noopener'>PMC9518606</a>. University of Tromsø review covering the safety guardrails (never alone, no cardiovascular disease, etc.) used throughout this guide.
                 </li>
                 <li>
@@ -232,8 +232,8 @@ export default function DIYColdPlunge() {
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
                 <li><Link href='/cold-plunge/benefits-of-ice-bath' style={{ color: '#34d399' }} className='underline'>Benefits of Ice Bath</Link> — the research that justifies all this effort.</li>
-                <li><Link href='/cold-plunge/benefits' style={{ color: '#34d399' }} className='underline'>Full Cold Plunge Research Review</Link> — broader cold exposure literature.</li>
-                <li><Link href='/infrared-sauna/best-sauna-blanket' style={{ color: '#34d399' }} className='underline'>Best Sauna Blanket</Link> — the hot half of contrast therapy.</li>
+                <li><Link href='/cold-plunge/benefits' style={{ color: '#34d399' }} className='underline'>Full Cold Plunge Research Review</Link>. Broader cold exposure literature.</li>
+                <li><Link href='/infrared-sauna/best-sauna-blanket' style={{ color: '#34d399' }} className='underline'>Best Sauna Blanket</Link>, the hot half of contrast therapy.</li>
               </ul>
 
               {/* DISCLAIMER */}

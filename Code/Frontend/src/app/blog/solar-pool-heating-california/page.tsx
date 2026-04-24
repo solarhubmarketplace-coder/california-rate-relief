@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/solar-pool-heating-california' },
   openGraph: {
     title: 'Solar Pool Heating California: 2026 Guide',
-    description: 'Solar pool heater cost, ROI, and alternatives — everything California pool owners should know.',
+    description: 'Solar pool heater cost, ROI, and alternatives, everything California pool owners should know.',
     type: 'article',
     publishedTime: '2026-04-24T00:00:00Z',
     url: 'https://ratereliefca.com/blog/solar-pool-heating-california',
@@ -66,7 +66,7 @@ export default function SolarPoolHeatingCA() {
                 Solar pool panels are unglazed black polypropylene mats mounted on your roof. Your existing pool pump pushes water through the mats, the water heats up in the sun, and flows back into the pool. That&apos;s the whole system — no electrical generation, no inverter, no utility interconnection. The water itself is the heat-transfer medium.
               </p>
               <p>
-                This is why solar pool heating is categorically different from solar electric (PV). You&apos;re not generating electricity you use elsewhere — you&apos;re capturing low-grade heat directly and dumping it into your pool. That makes it inexpensive, low-maintenance, and completely separate from your home&apos;s electricity system.
+                This is why solar pool heating is categorically different from solar electric (PV). You&apos;re not generating electricity you use elsewhere; you&apos;re capturing low-grade heat directly and dumping it into your pool. That makes it inexpensive, low-maintenance, and completely separate from your home&apos;s electricity system.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Solar Pool Heater Cost in California (2026)</h2>
@@ -106,7 +106,7 @@ export default function SolarPoolHeatingCA() {
                 <li><strong>Coastal Southern California</strong> (San Diego, LA, OC): April/May through October/November — about 4 extra weeks of swim season.</li>
                 <li><strong>Inland SoCal</strong> (Temecula, Riverside, Palm Springs): March through November — 6–8 extra weeks.</li>
                 <li><strong>Central Valley</strong> (Fresno, Sacramento): late April through September — about 4–6 extra weeks.</li>
-                <li><strong>Bay Area</strong>: June through September — about 3 extra weeks in most years (marine-layer-limited).</li>
+                <li><strong>Bay Area</strong>: June through September; about 3 extra weeks in most years (marine-layer-limited).</li>
                 <li><strong>Coastal NorCal</strong> (Monterey, Santa Cruz): marginal — fog often overwhelms solar gain, 1–2 weeks of added warmth at best.</li>
               </ul>
               <p>A pool cover on top of solar heating doubles the effective gain by reducing evaporative loss overnight. Every serious solar pool heater installation should include a solar cover in the budget.</p>

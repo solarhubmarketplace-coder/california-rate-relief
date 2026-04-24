@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'Solar Panels on a Tile Roof in California: Cost, Process, and the Hidden Premium',
-  description: "Installing solar on a tile roof in California — the tile removal/replacement premium, moisture concerns, underlayment upgrades, and which installers are best.",
+  description: "Installing solar on a tile roof in California; the tile removal/replacement premium, moisture concerns, underlayment upgrades, and which installers are best.",
   alternates: { canonical: '/blog/solar-panels-tile-roof-california' },
   openGraph: { title: 'Solar on Tile Roof California', description: 'The tile roof premium, process, and installer considerations.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-panels-tile-roof-california' },
 };
@@ -26,7 +26,7 @@ export default function SolarTileRoofCA() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar + Roof</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Solar Panels on a Tile Roof in California: What to Expect</h1>
-              <p className="text-lg text-muted-foreground">Tile roofs are the norm in California — Mediterranean clay and concrete tiles cover most SoCal neighborhoods and plenty of the Bay Area. Installing solar on tile is straightforward but carries a $1,500–$3,500 premium over comp-shingle. Here&apos;s why.</p>
+              <p className="text-lg text-muted-foreground">Tile roofs are the norm in California, Mediterranean clay and concrete tiles cover most SoCal neighborhoods and plenty of the Bay Area. Installing solar on tile is straightforward but carries a $1,500–$3,500 premium over comp-shingle. Here&apos;s why.</p>
             </header>
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Tile Roof Premium</h2>

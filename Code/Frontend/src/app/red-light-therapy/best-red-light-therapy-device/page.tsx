@@ -63,7 +63,7 @@ const DEVICES = [
     ],
     cons: [
       'Premium pricing',
-      'Small treatment area per session — best for focal pain, not full-body',
+      'Small treatment area per session, best for focal pain, not full-body',
     ],
     bottomLine: 'The serious choice for knee osteoarthritis, tendonitis, or any localized musculoskeletal pain. The laser + LED combination penetrates deeper than panel-only devices.',
   },
@@ -80,7 +80,7 @@ const DEVICES = [
       'Third-party irradiance spec data published',
     ],
     cons: [
-      'Smaller panel than premium options — more session time for full-body coverage',
+      'Smaller panel than premium options, more session time for full-body coverage',
       'Not FDA-cleared (marketed as wellness, not medical)',
     ],
     bottomLine: 'The honest value pick. Hooga delivers therapeutic irradiance at a price point that makes consistency practical.',
@@ -135,7 +135,7 @@ export default function BestRedLightTherapyDevice() {
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#a7f3d0' }}>
               <p className='text-lg'>
-                The red light therapy market is noisy. Every &quot;best of&quot; list recommends whatever brand has the biggest affiliate program. Here is the honest version — ranked by which devices actually deliver the wavelengths, irradiance, and dose that match the peer-reviewed research base summarized in our <Link href='/red-light-therapy/red-light-therapy-benefits' style={{ color: '#34d399' }} className='underline'>red light therapy benefits</Link> page.
+                The red light therapy market is noisy. Every &quot;best of&quot; list recommends whatever brand has the biggest affiliate program. Here is the honest version. Ranked by which devices actually deliver the wavelengths, irradiance, and dose that match the peer-reviewed research base summarized in our <Link href='/red-light-therapy/red-light-therapy-benefits' style={{ color: '#34d399' }} className='underline'>red light therapy benefits</Link> page.
               </p>
 
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30', color: '#6ee7b7' }}>
@@ -231,7 +231,7 @@ export default function BestRedLightTherapyDevice() {
                 <div className='p-5 rounded-xl border' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
                   <div className='text-xs font-bold uppercase tracking-wider mb-2' style={{ color: '#34d399' }}>Skin prep</div>
                   <div className='text-2xl font-bold mb-1' style={{ color: '#f0fdf4' }}>Clean, dry</div>
-                  <div className='text-sm'>No sunscreen, heavy moisturizer, or makeup during treatment — these block wavelength absorption.</div>
+                  <div className='text-sm'>No sunscreen, heavy moisturizer, or makeup during treatment, these block wavelength absorption.</div>
                 </div>
               </div>
 
@@ -241,7 +241,7 @@ export default function BestRedLightTherapyDevice() {
               </h2>
               <ul className='space-y-2 list-disc pl-6'>
                 <li>Wear provided goggles for face/eye treatments to protect retina</li>
-                <li>Photosensitizing medications (isotretinoin, tetracyclines, some diuretics) increase reaction risk — consult your physician</li>
+                <li>Photosensitizing medications (isotretinoin, tetracyclines, some diuretics) increase reaction risk, consult your physician</li>
                 <li>Active skin cancer or suspicious lesions: clear with dermatologist first</li>
                 <li>Pregnancy: conservative use; avoid direct abdominal treatment</li>
               </ul>
@@ -278,15 +278,15 @@ export default function BestRedLightTherapyDevice() {
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
                 <li><Link href='/red-light-therapy/red-light-therapy-benefits' style={{ color: '#34d399' }} className='underline'>Red Light Therapy Benefits</Link> — the research base behind these rankings.</li>
-                <li><Link href='/red-light-therapy' style={{ color: '#34d399' }} className='underline'>Red Light Therapy Hub</Link> — category overview.</li>
-                <li><Link href='/infrared-sauna/best-sauna-blanket' style={{ color: '#34d399' }} className='underline'>Best Sauna Blanket</Link> — related wavelengths at sauna doses.</li>
+                <li><Link href='/red-light-therapy' style={{ color: '#34d399' }} className='underline'>Red Light Therapy Hub</Link>; category overview.</li>
+                <li><Link href='/infrared-sauna/best-sauna-blanket' style={{ color: '#34d399' }} className='underline'>Best Sauna Blanket</Link>, related wavelengths at sauna doses.</li>
               </ul>
 
               {/* DISCLAIMER */}
               <div className='p-5 rounded-xl border mt-10 text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
                 <div className='font-bold mb-2' style={{ color: '#f0fdf4' }}>Medical Disclaimer &amp; Affiliate Disclosure</div>
                 <p>
-                  Informational only; not medical advice. FDA-cleared devices are cleared for specific indications — consult manufacturer documentation. We may earn commission on purchases through affiliate links at no additional cost to you; our rankings are editorial and based on evidence, not commission rates. See the full <Link href='/learn/medical-disclaimer' style={{ color: '#34d399' }} className='underline'>medical disclaimer</Link> and <Link href='/learn/affiliate-disclosure' style={{ color: '#34d399' }} className='underline'>affiliate disclosure</Link>.
+                  Informational only; not medical advice. FDA-cleared devices are cleared for specific indications, consult manufacturer documentation. We may earn commission on purchases through affiliate links at no additional cost to you; our rankings are editorial and based on evidence, not commission rates. See the full <Link href='/learn/medical-disclaimer' style={{ color: '#34d399' }} className='underline'>medical disclaimer</Link> and <Link href='/learn/affiliate-disclosure' style={{ color: '#34d399' }} className='underline'>affiliate disclosure</Link>.
                 </p>
               </div>
             </div>

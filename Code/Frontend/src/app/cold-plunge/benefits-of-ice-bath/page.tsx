@@ -63,7 +63,7 @@ const faqSchema = {
       name: 'Does an ice bath burn fat?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Cold exposure reliably activates brown adipose tissue (BAT), which burns calories to generate heat. A 2022 meta-analysis (Huo et al.) confirmed cold exposure increases energy expenditure. The magnitude of fat loss from cold alone is modest — it is a metabolic enhancer, not a weight-loss strategy on its own.',
+        text: 'Cold exposure reliably activates brown adipose tissue (BAT), which burns calories to generate heat. A 2022 meta-analysis (Huo et al.) confirmed cold exposure increases energy expenditure. The magnitude of fat loss from cold alone is modest. It is a metabolic enhancer, not a weight-loss strategy on its own.',
       },
     },
     {
@@ -115,9 +115,9 @@ export default function BenefitsOfIceBath() {
                 <strong style={{ color: '#f0fdf4' }}>TL;DR:</strong> Strong evidence for brown fat activation, acute stress reduction, improved sleep, and mood. Moderate evidence for insulin sensitivity and long-term metabolic health. Weaker / mixed evidence for immune function, cardiovascular disease prevention, and post-workout muscle recovery (depends on training goal).
               </p>
 
-              {/* BENEFIT 1 — BAT */}
+              {/* BENEFIT 1, BAT */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>
-                1. Activates Brown Fat and Raises Calorie Burn — Strong Evidence
+                1. Activates Brown Fat and Raises Calorie Burn; Strong Evidence
               </h2>
               <p>
                 An ice bath is one of the most reliable ways to activate <em>brown adipose tissue</em> (BAT), the metabolically active fat that literally burns calories to generate heat. Unlike regular (white) fat, which stores energy, brown fat releases it.
@@ -126,13 +126,13 @@ export default function BenefitsOfIceBath() {
                 A 2022 meta-analysis by Huo and colleagues in <em>Frontiers in Endocrinology</em> pooled results across 13 studies and confirmed that acute cold exposure significantly increases energy expenditure and activates BAT. The effect is reproducible across age groups and body compositions.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Huo et al. (2022) — Effect of cold exposure on energy expenditure: meta-analysis. <a href='https://pubmed.ncbi.nlm.nih.gov/35837014/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 35837014 <ExternalLink className='h-3 w-3' /></a>
+                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Huo et al. (2022), Effect of cold exposure on energy expenditure: meta-analysis. <a href='https://pubmed.ncbi.nlm.nih.gov/35837014/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 35837014 <ExternalLink className='h-3 w-3' /></a>
               </p>
               <p>
-                A 2023 comprehensive review in <em>Endocrine Connections</em> by Scott et al. built on this, showing intermittent cold exposure improves insulin sensitivity alongside BAT activation — a combined metabolic win.
+                A 2023 comprehensive review in <em>Endocrine Connections</em> by Scott et al. built on this, showing intermittent cold exposure improves insulin sensitivity alongside BAT activation; a combined metabolic win.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Scott et al. (2023) — <em>Endocrine Connections</em>. <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC10778965/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PMC 10778965 <ExternalLink className='h-3 w-3' /></a>
+                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Scott et al. (2023); <em>Endocrine Connections</em>. <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC10778965/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PMC 10778965 <ExternalLink className='h-3 w-3' /></a>
               </p>
               <p className='text-sm italic'>
                 Reality check: brown fat activation bumps calorie burn by roughly 100–300 extra kcal during and after cold exposure, depending on BAT mass and protocol. It is a meaningful metabolic lever, not a magic weight-loss shortcut.
@@ -143,7 +143,7 @@ export default function BenefitsOfIceBath() {
                 2. Lowers Stress, Cortisol, and Negative Mood — Strong Acute Effect
               </h2>
               <p>
-                The most consistent finding in modern cold plunge research: a short ice bath reliably reduces acute stress markers and improves mood for several hours afterward. Reed et al. (2023) put participants through 2–15 minute CWI sessions and measured cortisol and mood states at multiple time points. Result: reduced negative affect and lower cortisol at 3 hours post-immersion — with no meaningful vascular shear changes.
+                The most consistent finding in modern cold plunge research: a short ice bath reliably reduces acute stress markers and improves mood for several hours afterward. Reed et al. (2023) put participants through 2–15 minute CWI sessions and measured cortisol and mood states at multiple time points. Result: reduced negative affect and lower cortisol at 3 hours post-immersion; with no meaningful vascular shear changes.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
                 <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Reed et al. (2023) — Acute physiological and psychological effects of CWI. <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC10842018/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PMC 10842018 <ExternalLink className='h-3 w-3' /></a>
@@ -152,10 +152,10 @@ export default function BenefitsOfIceBath() {
                 The 2025 Cain et al. meta-analysis (11 studies, N=3,177) took it further and looked at chronic outcomes. Regular cold water immersion reduced stress at 12 hours post-session and — perhaps most importantly — improved sleep quality and overall quality of life when practiced consistently.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Cain et al. (2025) — Systematic review and meta-analysis of CWI effects on stress, sleep, and QoL. <a href='https://pubmed.ncbi.nlm.nih.gov/39879231/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 39879231 <ExternalLink className='h-3 w-3' /></a>
+                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Cain et al. (2025); Systematic review and meta-analysis of CWI effects on stress, sleep, and QoL. <a href='https://pubmed.ncbi.nlm.nih.gov/39879231/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 39879231 <ExternalLink className='h-3 w-3' /></a>
               </p>
 
-              {/* BENEFIT 3 — METABOLIC HEALTH */}
+              {/* BENEFIT 3; METABOLIC HEALTH */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>
                 3. Improves Insulin Sensitivity and Metabolic Health — Moderate-to-Strong
               </h2>
@@ -163,10 +163,10 @@ export default function BenefitsOfIceBath() {
                 Espeland et al. (2022) reviewed voluntary cold exposure and whole-body cryostimulation in the <em>International Journal of Circumpolar Health</em>. The pattern: regular cold exposure consistently reduces insulin resistance, activates brown fat, and shows cardioprotective effects in longer-term cohorts.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Espeland et al. (2022) — <em>Int J Circumpolar Health</em>. <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC9518606/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PMC 9518606 <ExternalLink className='h-3 w-3' /></a>
+                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Espeland et al. (2022), <em>Int J Circumpolar Health</em>. <a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC9518606/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PMC 9518606 <ExternalLink className='h-3 w-3' /></a>
               </p>
 
-              {/* BENEFIT 4 — INFLAMMATION */}
+              {/* BENEFIT 4. INFLAMMATION */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>
                 4. Inflammation: Good for Recovery, Mixed for Muscle Growth
               </h2>
@@ -203,7 +203,7 @@ export default function BenefitsOfIceBath() {
                 <li className='flex gap-3'>
                   <AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} />
                   <div>
-                    <strong style={{ color: '#f0fdf4' }}>Post-workout muscle recovery.</strong> Subjective soreness drops, but objective markers of recovery are mixed — and hypertrophy may be blunted if used immediately after resistance training.
+                    <strong style={{ color: '#f0fdf4' }}>Post-workout muscle recovery.</strong> Subjective soreness drops, but objective markers of recovery are mixed. And hypertrophy may be blunted if used immediately after resistance training.
                   </div>
                 </li>
               </ul>
@@ -262,7 +262,7 @@ export default function BenefitsOfIceBath() {
                 What You Actually Need to Take an Ice Bath at Home
               </h2>
               <p>
-                You do not need a $6,000 setup. The research protocols used standard immersion tanks — nothing fancy. Three tiers of home setup, ranked by cost:
+                You do not need a $6,000 setup. The research protocols used standard immersion tanks, nothing fancy. Three tiers of home setup, ranked by cost:
               </p>
 
               <div className='space-y-4 my-6'>
@@ -311,13 +311,13 @@ export default function BenefitsOfIceBath() {
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
                 <li>
-                  <Link href='/cold-plunge/benefits' style={{ color: '#34d399' }} className='underline'>Full Cold Plunge Research Review</Link> — our broader evidence survey across all cold-exposure protocols.
+                  <Link href='/cold-plunge/benefits' style={{ color: '#34d399' }} className='underline'>Full Cold Plunge Research Review</Link>, our broader evidence survey across all cold-exposure protocols.
                 </li>
                 <li>
-                  <Link href='/infrared-sauna' style={{ color: '#34d399' }} className='underline'>Infrared Sauna Guide</Link> — the opposite-temperature tool, often stacked with cold plunge for contrast therapy.
+                  <Link href='/infrared-sauna' style={{ color: '#34d399' }} className='underline'>Infrared Sauna Guide</Link>. The opposite-temperature tool, often stacked with cold plunge for contrast therapy.
                 </li>
                 <li>
-                  <Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link> — recovery modality with strongest evidence for pain and bone health.
+                  <Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link>, recovery modality with strongest evidence for pain and bone health.
                 </li>
               </ul>
 

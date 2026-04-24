@@ -72,7 +72,7 @@ export default function NewDayReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                New Day does not manufacture panels. Enphase microinverters are standard; FranklinWH Home Power is the primary battery pairing (some Tesla Powerwall options available). Install-day is clean; full process through Permission to Operate is often 2 to 3 months — faster than the California average, largely because New Day is deeply familiar with the Riverside County and southern Riverside permitting offices.
+                New Day does not manufacture panels. Enphase microinverters are standard; FranklinWH Home Power is the primary battery pairing (some Tesla Powerwall options available). Install-day is clean; full process through Permission to Operate is often 2 to 3 months, faster than the California average, largely because New Day is deeply familiar with the Riverside County and southern Riverside permitting offices.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
@@ -85,12 +85,12 @@ export default function NewDayReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Common Complaints</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Complaint volume is light. Occasional inspection hiccups — which is largely controlled by the county, not the installer — are the main theme. Nothing significant shows up around workmanship, post-install support, or contract disputes.
+                Complaint volume is light. Occasional inspection hiccups — which is largely controlled by the county, not the installer. Are the main theme. Nothing significant shows up around workmanship, post-install support, or contract disputes.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Cash or loans through third-party financing partners. New Day is known for competitive loan rates — customers have reported sub-3% options at certain historical rate cycles — and does not heavily pitch PPAs or leases. You own the system.
+                Cash or loans through third-party financing partners. New Day is known for competitive loan rates — customers have reported sub-3% options at certain historical rate cycles, and does not heavily pitch PPAs or leases. You own the system.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
@@ -106,14 +106,14 @@ export default function NewDayReview() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does New Day Solar offer leases or PPAs?</h3><p className='text-foreground/80'>Not as the default. The company focuses on ownership financing (cash/loan). If lease/PPA is required, this isn&apos;t your installer.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>How long does a New Day install take?</h3><p className='text-foreground/80'>Contract to Permission to Operate is often 2 to 3 months — fast for California, largely due to deep familiarity with Riverside County permitting.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>How long does a New Day install take?</h3><p className='text-foreground/80'>Contract to Permission to Operate is often 2 to 3 months, fast for California, largely due to deep familiarity with Riverside County permitting.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What battery does New Day install?</h3><p className='text-foreground/80'>FranklinWH Home Power is the primary battery pairing. Some Tesla Powerwall options are available.</p></div>
               </div>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare New Day Against Two Alternatives.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers — so you can compare side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers, so you can compare side by side.</p>
               <div className='flex justify-center'><Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
             </div>

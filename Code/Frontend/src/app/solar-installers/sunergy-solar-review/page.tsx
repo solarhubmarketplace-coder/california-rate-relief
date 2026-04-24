@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Sunergy Solar Review 2026: CA-Focused Installer With Strong EnergySage Ratings",
-  description: "Sunergy Solar (Ladera Ranch / LA area) holds a 4.7/5 EnergySage rating across 92 reviews. Ownership model, Enphase microinverter equipment, and the delay complaints — the honest 2026 review.",
+  description: "Sunergy Solar (Ladera Ranch / LA area) holds a 4.7/5 EnergySage rating across 92 reviews. Ownership model, Enphase microinverter equipment, and the delay complaints; the honest 2026 review.",
   alternates: { canonical: '/solar-installers/sunergy-solar-review' },
 };
 
@@ -71,7 +71,7 @@ export default function SunergyReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Sunergy Solar is a California-focused installer based in the Ladera Ranch / LA area with several regional locations. (Note: don&apos;t confuse this company with Sunergy Systems in Washington — a different operation.) The CA Sunergy has built a solid customer reputation — 4.7/5 across 92 EnergySage reviews — and focuses on straight-ownership financing rather than the PPA-heavy models favored by larger national installers. The trade-off: a handful of recurring complaints about communication and install date slippage.
+                Sunergy Solar is a California-focused installer based in the Ladera Ranch / LA area with several regional locations. (Note: don&apos;t confuse this company with Sunergy Systems in Washington; a different operation.) The CA Sunergy has built a solid customer reputation — 4.7/5 across 92 EnergySage reviews — and focuses on straight-ownership financing rather than the PPA-heavy models favored by larger national installers. The trade-off: a handful of recurring complaints about communication and install date slippage.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
@@ -81,17 +81,17 @@ export default function SunergyReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunergy does not manufacture its own panels. The company installs Enphase microinverters as the default with a range of Tier-1 panel options. Install-day turnaround is typically 1 to 2 days on the roof; full process — contract to Permission to Operate — runs about 2 to 6 months, with some customers reporting 6+ month delays. The delay pattern is consistent with most California installers operating under NEM 3.0 and the utility interconnection backlogs in PG&amp;E / SCE / SDG&amp;E territory.
+                Sunergy does not manufacture its own panels. The company installs Enphase microinverters as the default with a range of Tier-1 panel options. Install-day turnaround is typically 1 to 2 days on the roof; the full process from contract to Permission to Operate runs about 2 to 6 months, with some customers reporting 6+ month delays. The delay pattern is consistent with most California installers operating under NEM 3.0 and the utility interconnection backlogs in PG&amp;E / SCE / SDG&amp;E territory.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                EnergySage shows 4.7/5 across 92 reviews — genuinely above industry average for a residential solar installer. SolarReviews has a smaller sample but skews positive. Yelp is mixed — negative reviews are concentrated around communication and install date slippage rather than equipment or workmanship. BBB complaint volume is modest for the company&apos;s size.
+                EnergySage shows 4.7/5 across 92 reviews; genuinely above industry average for a residential solar installer. SolarReviews has a smaller sample but skews positive. Yelp is mixed, negative reviews are concentrated around communication and install date slippage rather than equipment or workmanship. BBB complaint volume is modest for the company&apos;s size.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Common Complaints</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Ghosting or silence after contract signing — customer reports of multi-week gaps in communication.</li>
+                <li>Ghosting or silence after contract signing. Customer reports of multi-week gaps in communication.</li>
                 <li>Install date rescheduled multiple times without proactive notice.</li>
                 <li>Occasional leaks or post-install workmanship issues requiring follow-up visits.</li>
                 <li>Slower response to warranty claims compared to industry-best installers.</li>
@@ -104,7 +104,7 @@ export default function SunergyReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Typical warranty is 25 years on the solar system and 15 years on battery storage (when included). Workmanship warranty is usually 10 years but confirm the specific contract language before signing — California regional installers vary in how they structure the workmanship vs manufacturer warranties.
+                Typical warranty is 25 years on the solar system and 15 years on battery storage (when included). Workmanship warranty is usually 10 years but confirm the specific contract language before signing; California regional installers vary in how they structure the workmanship vs manufacturer warranties.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Sunergy Makes Sense</h2>
@@ -115,8 +115,8 @@ export default function SunergyReview() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Sunergy Solar a good company?</h3><p className='text-foreground/80'>EnergySage reviews are genuinely strong (4.7/5 / 92 reviews) and the ownership-model focus is customer-friendly. Main risk is communication slippage during the permitting/install window.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunergy install their own panels?</h3><p className='text-foreground/80'>No — Sunergy uses Tier-1 third-party panels with Enphase microinverters. Installation is done by Sunergy&apos;s own crews.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunergy offer PPAs or leases?</h3><p className='text-foreground/80'>Primarily no — the company&apos;s default is cash or loan (Sungage Financial). You own the system.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunergy install their own panels?</h3><p className='text-foreground/80'>No; Sunergy uses Tier-1 third-party panels with Enphase microinverters. Installation is done by Sunergy&apos;s own crews.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunergy offer PPAs or leases?</h3><p className='text-foreground/80'>Primarily no, the company&apos;s default is cash or loan (Sungage Financial). You own the system.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Is this the same company as Sunergy Systems in Washington?</h3><p className='text-foreground/80'>No. The CA Sunergy Solar (based in Ladera Ranch / LA) is a different company. Reviews for Sunergy Systems WA do not apply here.</p></div>
               </div>
             </div>

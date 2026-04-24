@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'Why Is My SDG&E Bill So High? (San Diego Has the Highest Rates in America)',
-  description: "Why your San Diego Gas & Electric bill is so high — 45.7¢/kWh rates, the 4–9 PM peak window, the $24 fixed charge, and what to do.",
+  description: "Why your San Diego Gas & Electric bill is so high. 45.7¢/kWh rates, the 4–9 PM peak window, the $24 fixed charge, and what to do.",
   alternates: { canonical: '/blog/why-is-my-sdge-bill-so-high' },
   openGraph: { title: 'Why Is My SDG&E Bill So High?', description: 'San Diego Gas & Electric billing explainer and fixes.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-sdge-bill-so-high' },
 };

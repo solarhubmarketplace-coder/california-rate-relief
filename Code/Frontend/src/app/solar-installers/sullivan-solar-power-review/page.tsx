@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-re
 
 export const metadata: Metadata = {
   title: "Sullivan Solar Power Review 2026: Company Is Defunct — What Former Customers Need to Know",
-  description: "Sullivan Solar Power closed its doors in late 2021, leaving customers with unfinished installs, lost deposits, and subcontractor liens. Here's what to do if you're a former Sullivan customer — or found this company in a search.",
+  description: "Sullivan Solar Power closed its doors in late 2021, leaving customers with unfinished installs, lost deposits, and subcontractor liens. Here's what to do if you're a former Sullivan customer, or found this company in a search.",
   alternates: { canonical: '/solar-installers/sullivan-solar-power-review' },
 };
 
@@ -49,7 +49,7 @@ export default function SullivanReview() {
               <AlertTriangle className='h-6 w-6 text-red-600 flex-shrink-0 mt-0.5' />
               <div>
                 <div className='font-bold text-foreground mb-1'>Sullivan Solar Power is closed.</div>
-                <div className='text-sm text-foreground/80'>The company locked its doors in late 2021, leaving customers with unfinished installations, lost deposits, and contractor liens on their homes. If an active solar sales rep is still using the Sullivan Solar Power name, verify very carefully — it is likely a separate entity or misrepresentation.</div>
+                <div className='text-sm text-foreground/80'>The company locked its doors in late 2021, leaving customers with unfinished installations, lost deposits, and contractor liens on their homes. If an active solar sales rep is still using the Sullivan Solar Power name, verify very carefully. It is likely a separate entity or misrepresentation.</div>
               </div>
             </div>
 
@@ -75,10 +75,10 @@ export default function SullivanReview() {
               </p>
               <ol className='list-decimal pl-6 space-y-2 text-foreground/80 mb-6'>
                 <li><strong>Panel and inverter warranties are still valid.</strong> Manufacturer warranties (Qcells, REC, Canadian Solar, Enphase, SolarEdge, etc.) are with the manufacturer, not with Sullivan. Filed a claim directly with the manufacturer if your panels or inverter fail.</li>
-                <li><strong>Workmanship warranty is gone.</strong> If you have a roof leak or wiring issue traced to Sullivan&apos;s install quality, you&apos;ll need to hire a new licensed California C-46 solar contractor to assess and repair — at your own cost.</li>
+                <li><strong>Workmanship warranty is gone.</strong> If you have a roof leak or wiring issue traced to Sullivan&apos;s install quality, you&apos;ll need to hire a new licensed California C-46 solar contractor to assess and repair. At your own cost.</li>
                 <li><strong>Check for mechanic&apos;s liens on your property.</strong> If you bought a home where Sullivan had installed solar and subcontractors weren&apos;t paid, there may be a lien recorded against the property. Pull a title report.</li>
                 <li><strong>Monitoring accounts likely still work.</strong> If Sullivan set up Enphase Enlighten or SolarEdge monitoring under your own account, that&apos;s still active. If it was under Sullivan&apos;s installer account, contact Enphase / SolarEdge directly to claim ownership of your system in the monitoring platform.</li>
-                <li><strong>Permission to Operate (PTO) stays valid.</strong> Once the utility issued PTO, your interconnection is between you and the utility — not Sullivan. That doesn&apos;t go away.</li>
+                <li><strong>Permission to Operate (PTO) stays valid.</strong> Once the utility issued PTO, your interconnection is between you and the utility; not Sullivan. That doesn&apos;t go away.</li>
               </ol>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>If You&apos;re Looking at an Installer Who Claims to Be Sullivan</h2>
@@ -99,23 +99,23 @@ export default function SullivanReview() {
                 Several reputable California installers serve the San Diego market with established reputations:
               </p>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li><Link href='/solar-installers/baker-electric-solar-review' className='text-primary underline'>Baker Electric Solar</Link> — Escondido-based, family-owned since 1938, strong reputation.</li>
+                <li><Link href='/solar-installers/baker-electric-solar-review' className='text-primary underline'>Baker Electric Solar</Link>; Escondido-based, family-owned since 1938, strong reputation.</li>
                 <li><Link href='/solar-installers/solar-optimum-review' className='text-primary underline'>Solar Optimum</Link> — 4.8/5 EnergySage, covers SoCal including San Diego County.</li>
-                <li><Link href='/solar-installers/sunpower-review' className='text-primary underline'>SunPower (Complete Solaria)</Link> — national installer with strong SD footprint.</li>
+                <li><Link href='/solar-installers/sunpower-review' className='text-primary underline'>SunPower (Complete Solaria)</Link>. National installer with strong SD footprint.</li>
               </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Sullivan Solar Power still in business?</h3><p className='text-foreground/80'>No. The company closed in late 2021.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Are my Sullivan-installed solar panels still covered by warranty?</h3><p className='text-foreground/80'>Panel and inverter manufacturer warranties remain valid with the manufacturer directly. Sullivan&apos;s workmanship and production warranties are no longer enforceable — those are gone with the company.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Who do I call if my Sullivan system has a problem?</h3><p className='text-foreground/80'>For panel/inverter failures: the manufacturer directly (Qcells, REC, Enphase, SolarEdge, etc.). For installation-quality issues: any licensed California C-46 solar contractor can diagnose and repair — at your expense.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Are my Sullivan-installed solar panels still covered by warranty?</h3><p className='text-foreground/80'>Panel and inverter manufacturer warranties remain valid with the manufacturer directly. Sullivan&apos;s workmanship and production warranties are no longer enforceable; those are gone with the company.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Who do I call if my Sullivan system has a problem?</h3><p className='text-foreground/80'>For panel/inverter failures: the manufacturer directly (Qcells, REC, Enphase, SolarEdge, etc.). For installation-quality issues: any licensed California C-46 solar contractor can diagnose and repair; at your expense.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What if I still have a deposit with Sullivan that was never refunded?</h3><p className='text-foreground/80'>Consult a consumer-protection attorney about filing with the California Department of Consumer Affairs or the San Diego County Superior Court. Unfortunately, most former Sullivan customers were unable to recover lost deposits.</p></div>
               </div>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Looking for a Live San Diego Solar Installer?</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple active, licensed California installers serving San Diego County. Fill out one 60-second form and get quotes from up to three — so you can compare real options side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple active, licensed California installers serving San Diego County. Fill out one 60-second form and get quotes from up to three, so you can compare real options side by side.</p>
               <div className='flex justify-center'><Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
             </div>

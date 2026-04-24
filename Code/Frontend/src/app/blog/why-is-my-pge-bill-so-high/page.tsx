@@ -33,7 +33,7 @@ export default function WhyIsMyPGEBillSoHigh() {
               <p>Effective March 2026, every PG&amp;E residential customer pays $24/month regardless of usage. If you used to pay $50 and now pay $74, this fixed charge is most of the delta. It is unavoidable under current CPUC rules.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">2. You&apos;re on the Wrong Rate Plan</h2>
-              <p>PG&amp;E automatically defaults most customers to a time-of-use (TOU) plan. If you run laundry, dishwasher, or pool pump during 4–9 PM peak hours, you pay premium rates — often double or triple off-peak. Log into your PG&amp;E account and use the rate-comparison tool to see which plan fits your actual usage. Switching is free.</p>
+              <p>PG&amp;E automatically defaults most customers to a time-of-use (TOU) plan. If you run laundry, dishwasher, or pool pump during 4–9 PM peak hours, you pay premium rates, often double or triple off-peak. Log into your PG&amp;E account and use the rate-comparison tool to see which plan fits your actual usage. Switching is free.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">3. Summer Tier Cliffs</h2>
               <p>PG&amp;E baseline allowance roughly doubles your usage allowance from Tier 1 (lowest rate) to Tier 2 (higher rate). Summer AC use often pushes households past baseline into 55+¢/kWh territory. Cooling homes with ceiling fans, window shades, and a higher thermostat setpoint (78°F daytime, 72°F nighttime) can cut summer usage 15–30%.</p>
@@ -48,7 +48,7 @@ export default function WhyIsMyPGEBillSoHigh() {
               <p>PG&amp;E&apos;s residential rate now averages 41¢/kWh — up from under 20¢ a decade ago — largely because of wildfire infrastructure recovery and legacy fire-liability payments. This cost is baked into the rate; the only way around it is to reduce kWh usage or switch to a different utility (move territories) or self-generate via solar + battery.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">7. Medical Equipment or New AC</h2>
-              <p>Adding a new window AC, hot tub, pool, or medical equipment (home dialysis, oxygen concentrator) can add $30–$200+/month. Medical-equipment households qualify for the Medical Baseline allowance — extra low-tier electricity — which reduces the financial hit.</p>
+              <p>Adding a new window AC, hot tub, pool, or medical equipment (home dialysis, oxygen concentrator) can add $30–$200+/month. Medical-equipment households qualify for the Medical Baseline allowance (extra low-tier electricity), which reduces the financial hit.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What to Actually Do</h2>
               <ol className="list-decimal pl-6 space-y-2">

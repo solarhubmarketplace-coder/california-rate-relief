@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'What Is a Solar Inverter? (Plain-English Guide with Types, Brands, and Lifespans)',
-  description: "A plain-English explanation of solar inverters — what they do, the main types (string, micro, hybrid), how long they last, which brands are reliable, and warranty realities.",
+  description: "A plain-English explanation of solar inverters, what they do, the main types (string, micro, hybrid), how long they last, which brands are reliable, and warranty realities.",
   alternates: { canonical: '/blog/what-is-a-solar-inverter' },
   openGraph: { title: 'What Is a Solar Inverter?', description: 'Plain-English solar inverter guide.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-a-solar-inverter' },
 };
@@ -26,11 +26,11 @@ export default function WhatIsASolarInverter() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Basics</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">What Is a Solar Inverter?</h1>
-              <p className="text-lg text-muted-foreground">Solar panels produce DC electricity. Your home uses AC. The inverter is the device in the middle that makes it work — and it&apos;s the component most likely to need replacement during your system&apos;s lifetime.</p>
+              <p className="text-lg text-muted-foreground">Solar panels produce DC electricity. Your home uses AC. The inverter is the device in the middle that makes it work, and it&apos;s the component most likely to need replacement during your system&apos;s lifetime.</p>
             </header>
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">What It Actually Does</h2>
-              <p>Solar panels generate direct current (DC) electricity. Your home&apos;s outlets, lights, and appliances run on alternating current (AC) at 120V/240V and 60Hz. The inverter converts DC from the panels into AC that matches the utility grid&apos;s frequency and voltage exactly — so it can seamlessly flow into your home&apos;s breaker panel or back onto the grid.</p>
+              <p>Solar panels generate direct current (DC) electricity. Your home&apos;s outlets, lights, and appliances run on alternating current (AC) at 120V/240V and 60Hz. The inverter converts DC from the panels into AC that matches the utility grid&apos;s frequency and voltage exactly, so it can seamlessly flow into your home&apos;s breaker panel or back onto the grid.</p>
               <p>It also performs several other critical functions:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Maximum Power Point Tracking (MPPT).</strong> Continuously adjusts the operating point of each panel to extract maximum power as sun conditions change.</li>
@@ -70,7 +70,7 @@ export default function WhatIsASolarInverter() {
                 <li><strong>Capacitor failure.</strong> Most common cause of inverter death — heat-accelerated aging of DC capacitors. Diagnosed by reduced AC output or inverter fault codes.</li>
                 <li><strong>Communication failure.</strong> Inverter produces power but stops reporting to the monitoring app. Usually a firmware or gateway issue, not catastrophic.</li>
                 <li><strong>Anti-islanding false trips.</strong> Inverter keeps shutting off when the grid is fine. Often a grid-voltage or frequency sensitivity that requires a firmware update.</li>
-                <li><strong>Burned/failed microinverter.</strong> A single panel stops producing. Easy to spot in the monitoring app — one panel is dark.</li>
+                <li><strong>Burned/failed microinverter.</strong> A single panel stops producing — easy to spot in the monitoring app, since one panel will be dark.</li>
               </ul>
               <p>Check your monitoring app monthly. If production drops 10%+ vs same-month-prior-year, it&apos;s time to call your installer.</p>
 

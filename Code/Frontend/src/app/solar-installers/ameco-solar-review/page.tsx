@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Ameco Solar Review 2026: Long-Standing LA Regional Installer With Roofing Integration",
-  description: "Ameco Solar (Paramount/LA area) combines decades of electrical and roofing experience with solar — 25-year warranties, Enphase + Tesla batteries, occasional battery supply delays. Honest 2026 review.",
+  description: "Ameco Solar (Paramount/LA area) combines decades of electrical and roofing experience with solar. 25-year warranties, Enphase + Tesla batteries, occasional battery supply delays. Honest 2026 review.",
   alternates: { canonical: '/solar-installers/ameco-solar-review' },
 };
 
@@ -57,7 +57,7 @@ export default function AmecoReview() {
             <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p><p className='text-3xl font-extrabold text-foreground mt-1'>4.2 <span className='text-lg text-muted-foreground'>/ 5</span></p></div>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>LA/OC homeowners who want solar + roofing bundled and value a long-established local installer</p></div>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You want Tesla Powerwall specifically — battery supply has been inconsistent</p></div>
+              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You want Tesla Powerwall specifically, battery supply has been inconsistent</p></div>
             </div>
 
             <div className='prose prose-slate max-w-none'>
@@ -103,14 +103,14 @@ export default function AmecoReview() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Ameco Solar a good company?</h3><p className='text-foreground/80'>Reputation data is mostly positive — solid Yelp ratings, modest BBB complaint volume, strong warranty options. One of the cleaner LA-area installers.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Ameco handle roofing too?</h3><p className='text-foreground/80'>Yes — Ameco&apos;s roofing integration is a core differentiator. For California homes needing both solar and roof replacement, this matters.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Ameco handle roofing too?</h3><p className='text-foreground/80'>Yes, Ameco&apos;s roofing integration is a core differentiator. For California homes needing both solar and roof replacement, this matters.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What batteries does Ameco install?</h3><p className='text-foreground/80'>Tesla Powerwall is the most common battery pairing, though Enphase IQ Battery and other options are available. Tesla supply has been inconsistent — confirm lead time at quote.</p></div>
               </div>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Ameco Against Two California Alternatives.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers — so you can compare side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers, so you can compare side by side.</p>
               <div className='flex justify-center'><Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
             </div>

@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-re
 
 export const metadata: Metadata = {
   title: "Powur Solar Review 2026: MLM-Style Sales Model and the Complaint Record That Goes With It",
-  description: "Powur uses an MLM-style sales model with very high complaint volume — BBB 150+ complaints in 3 years, SolarReviews ~2.9/5, frequent multi-month delays. An honest 2026 review with alternatives.",
+  description: "Powur uses an MLM-style sales model with very high complaint volume. BBB 150+ complaints in 3 years, SolarReviews ~2.9/5, frequent multi-month delays. An honest 2026 review with alternatives.",
   alternates: { canonical: '/solar-installers/powur-solar-review' },
 };
 
@@ -25,7 +25,7 @@ const reviewSchema = {
   itemReviewed: { '@type': 'LocalBusiness', name: 'Powur Solar', address: { '@type': 'PostalAddress', addressLocality: 'Del Mar', addressRegion: 'CA', addressCountry: 'US' } },
   reviewRating: { '@type': 'Rating', ratingValue: '2.3', bestRating: '5' },
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Powur Solar operates on an MLM-style sales model that layers recruiter commissions over the install itself. The result is widespread complaints — BBB 150+ in 3 years, ~2.9/5 SolarReviews, and frequent 6–16 month delay reports. Use caution.',
+  reviewBody: 'Powur Solar operates on an MLM-style sales model that layers recruiter commissions over the install itself. The result is widespread complaints. BBB 150+ in 3 years, ~2.9/5 SolarReviews, and frequent 6–16 month delay reports. Use caution.',
 };
 
 export default function PowurReview() {
@@ -64,7 +64,7 @@ export default function PowurReview() {
             <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p><p className='text-3xl font-extrabold text-foreground mt-1'>2.3 <span className='text-lg text-muted-foreground'>/ 5</span></p></div>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>Buyers who have an existing trusted personal relationship with a specific Powur consultant</p></div>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You&apos;re a first-time solar buyer with no established installer relationship — other California options carry much lower risk</p></div>
+              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You&apos;re a first-time solar buyer with no established installer relationship. Other California options carry much lower risk</p></div>
             </div>
 
             <div className='prose prose-slate max-w-none'>
@@ -88,17 +88,17 @@ export default function PowurReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>BBB: Heavy complaint volume — approximately 150+ complaints over the prior 3 years for a company of Powur&apos;s scale is a notable outlier.</li>
+                <li>BBB: Heavy complaint volume, approximately 150+ complaints over the prior 3 years for a company of Powur&apos;s scale is a notable outlier.</li>
                 <li>SolarReviews: ~2.9/5 average.</li>
                 <li>Reddit (r/solar) and consumer forums: repeated first-hand accounts of multi-month delays and abandoned projects.</li>
               </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Common Complaints</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Extreme delays — 6 to 16+ months from contract to Permission to Operate has been reported repeatedly.</li>
+                <li>Extreme delays. 6 to 16+ months from contract to Permission to Operate has been reported repeatedly.</li>
                 <li>Communication breakdowns when issues surface — customers pushed between consultant, Powur Corporate, and third-party installer with no clear owner.</li>
-                <li>Incomplete or unsafe installs — customer reports of missing components, improperly wired main service panels, and failed inspections.</li>
-                <li>System underperformance after activation — bills continue high, production below design spec.</li>
+                <li>Incomplete or unsafe installs, customer reports of missing components, improperly wired main service panels, and failed inspections.</li>
+                <li>System underperformance after activation. Bills continue high, production below design spec.</li>
                 <li>Mechanic&apos;s liens from unpaid subcontractors appearing on homeowner properties.</li>
                 <li>Indifferent post-install support when warranty claims are surfaced.</li>
               </ul>
@@ -115,27 +115,27 @@ export default function PowurReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Powur Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Honestly — only one scenario: you have a pre-existing trusted personal relationship with a specific Powur consultant who has completed installs in your immediate community, whose past customers you can verify, and who is willing to stake personal reputation on your install. If that&apos;s not the exact situation, the other California installers in our comparison carry substantially lower risk for similar or better pricing.
+                Honestly, only one scenario: you have a pre-existing trusted personal relationship with a specific Powur consultant who has completed installs in your immediate community, whose past customers you can verify, and who is willing to stake personal reputation on your install. If that&apos;s not the exact situation, the other California installers in our comparison carry substantially lower risk for similar or better pricing.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Powur Solar legitimate?</h3><p className='text-foreground/80'>It&apos;s a legally operating business. The question is whether the MLM sales structure and the documented complaint pattern are acceptable trade-offs for you — our take is that for most California buyers, they&apos;re not.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Powur Solar legitimate?</h3><p className='text-foreground/80'>It&apos;s a legally operating business. The question is whether the MLM sales structure and the documented complaint pattern are acceptable trade-offs for you, our take is that for most California buyers, they&apos;re not.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Powur install its own systems?</h3><p className='text-foreground/80'>No. Powur contracts the physical installation to third-party licensed California solar contractors. Verify the specific contractor&apos;s CSLB license separately.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Who do I contact with a Powur warranty claim?</h3><p className='text-foreground/80'>This is one of the documented pain points. Depending on the issue, you may need to coordinate among Powur Corporate, the consultant who sold the job, and the third-party installer. There is no single owner for end-to-end service.</p></div>
               </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Cleaner California Alternatives</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li><Link href='/solar-installers/baker-electric-solar-review' className='text-primary underline'>Baker Electric Solar</Link> — family-owned since 1938, Escondido, clean reputation.</li>
-                <li><Link href='/solar-installers/new-day-solar-review' className='text-primary underline'>New Day Solar</Link> — 31+ years, Murrieta, strong customer record.</li>
-                <li><Link href='/solar-installers/option-one-solar-review' className='text-primary underline'>Option One Solar</Link> — High Desert, 25-year bumper-to-bumper warranty.</li>
+                <li><Link href='/solar-installers/baker-electric-solar-review' className='text-primary underline'>Baker Electric Solar</Link>, family-owned since 1938, Escondido, clean reputation.</li>
+                <li><Link href='/solar-installers/new-day-solar-review' className='text-primary underline'>New Day Solar</Link>. 31+ years, Murrieta, strong customer record.</li>
+                <li><Link href='/solar-installers/option-one-solar-review' className='text-primary underline'>Option One Solar</Link>; High Desert, 25-year bumper-to-bumper warranty.</li>
               </ul>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Get Quotes From California Installers With Cleaner Records.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three — so you can compare side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three. So you can compare side by side.</p>
               <div className='flex justify-center'><Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
             </div>

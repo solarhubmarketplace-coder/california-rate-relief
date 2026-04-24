@@ -62,22 +62,22 @@ export default function OptionOneReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Option One Solar is a smaller California regional installer serving the High Desert (Apple Valley area) and extending into the Inland Empire and parts of LA County. The company has a 50+ year electrical pedigree in the family that owns it. Customer reviews are consistently strong — Yelp runs 4.9/5 in several listings — and the company actively discourages PPAs and leases in favor of ownership. The 25-year bumper-to-bumper warranty including labor is unusually comprehensive.
+                Option One Solar is a smaller California regional installer serving the High Desert (Apple Valley area) and extending into the Inland Empire and parts of LA County. The company has a 50+ year electrical pedigree in the family that owns it. Customer reviews are consistently strong — Yelp runs 4.9/5 in several listings, and the company actively discourages PPAs and leases in favor of ownership. The 25-year bumper-to-bumper warranty including labor is unusually comprehensive.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Option One operates from Apple Valley and serves the High Desert, Inland Empire, parts of LA County, and occasional extensions into Orange County. The company is intentionally small and locally focused — not a 10-state operation chasing scale. That&apos;s part of why the service quality holds.
+                Option One operates from Apple Valley and serves the High Desert, Inland Empire, parts of LA County, and occasional extensions into Orange County. The company is intentionally small and locally focused. Not a 10-state operation chasing scale. That&apos;s part of why the service quality holds.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Option One does not manufacture panels. The company installs Tier-1 options — Enphase microinverters, SolarEdge alternatives on request, Hyundai and other premium panels, Tesla Powerwall batteries are common. Install-day is typically clean and on-schedule. Full project timelines are among the faster in our California comparison.
+                Option One does not manufacture panels. The company installs Tier-1 options, Enphase microinverters, SolarEdge alternatives on request, Hyundai and other premium panels, Tesla Powerwall batteries are common. Install-day is typically clean and on-schedule. Full project timelines are among the faster in our California comparison.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Yelp: 4.9/5 in the strongest listings — genuinely exceptional for residential solar.</li>
+                <li>Yelp: 4.9/5 in the strongest listings. Genuinely exceptional for residential solar.</li>
                 <li>SolarReviews: Strong positive average, smaller sample.</li>
                 <li>BBB: Limited complaints given company scale.</li>
                 <li>Local Google: Consistently strong.</li>
@@ -94,12 +94,12 @@ export default function OptionOneReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing — Ownership Only</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Option One is unusual in residential solar: the company actively discourages PPAs and leases. Cash and loans are the focus. This is customer-friendly because you capture the 30% ITC, you don&apos;t have a 20-year contract complicating a future home sale, and the total cost-of-ownership math is cleaner. Whether this fits your cash flow is a separate question — if $0-down lease/PPA is a must, Option One isn&apos;t the right pick.
+                Option One is unusual in residential solar: the company actively discourages PPAs and leases. Cash and loans are the focus. This is customer-friendly because you capture the 30% ITC, you don&apos;t have a 20-year contract complicating a future home sale, and the total cost-of-ownership math is cleaner. Whether this fits your cash flow is a separate question, if $0-down lease/PPA is a must, Option One isn&apos;t the right pick.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty — 25-Year Bumper-to-Bumper</h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty, 25-Year Bumper-to-Bumper</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Option One&apos;s headline warranty covers equipment, workmanship, and — critically — labor for 25 years. That&apos;s rare. Most California installers offer 25-year manufacturer equipment warranties plus a separate, shorter workmanship warranty that excludes labor costs on repair visits. Option One rolling everything including labor into a single 25-year term is meaningfully more comprehensive — if you have faith in the company still being there in year 20.
+                Option One&apos;s headline warranty covers equipment, workmanship, and, critically, labor for 25 years. That&apos;s rare. Most California installers offer 25-year manufacturer equipment warranties plus a separate, shorter workmanship warranty that excludes labor costs on repair visits. Option One rolling everything including labor into a single 25-year term is meaningfully more comprehensive — if you have faith in the company still being there in year 20.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Option One Makes Sense</h2>
@@ -117,7 +117,7 @@ export default function OptionOneReview() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Option One Against Two Alternatives.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers — so you can compare side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers; so you can compare side by side.</p>
               <div className='flex justify-center'><Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
             </div>

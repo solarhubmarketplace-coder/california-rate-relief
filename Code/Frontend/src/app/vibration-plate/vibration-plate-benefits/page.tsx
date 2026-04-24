@@ -72,18 +72,18 @@ export default function VibrationPlateBenefits() {
                 How Whole-Body Vibration Actually Works
               </h2>
               <p>
-                A vibration plate oscillates vertically, side-to-side, or in a 3D path at controlled frequencies (typically 20–50 Hz) and amplitudes (2–10 mm). When you stand on it, muscles undergo reflexive &quot;tonic vibration reflex&quot; contractions — up to 2,400 micro-contractions in a 60-second session at 40 Hz. This mechanical stimulus triggers muscle spindle activation, motor unit recruitment, improved circulation, and — in some protocols — bone loading signals.
+                A vibration plate oscillates vertically, side-to-side, or in a 3D path at controlled frequencies (typically 20–50 Hz) and amplitudes (2–10 mm). When you stand on it, muscles undergo reflexive &quot;tonic vibration reflex&quot; contractions, up to 2,400 micro-contractions in a 60-second session at 40 Hz. This mechanical stimulus triggers muscle spindle activation, motor unit recruitment, improved circulation, and (in some protocols) bone loading signals.
               </p>
 
               {/* BENEFIT 1 - FIBROMYALGIA */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>
-                1. Fibromyalgia Symptom Reduction — Strong Evidence
+                1. Fibromyalgia Symptom Reduction
               </h2>
               <p>
                 The strongest indication for WBV in 2025 research is fibromyalgia. A 2025 meta-analysis pooling seven randomized controlled trials showed significant improvements in Fibromyalgia Impact Questionnaire (FIQ) scores, balance measures, and six-minute walk test distances after 8–12 week WBV protocols. Effect sizes were clinically meaningful and compare favorably to standard exercise therapy.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> The foundational Alentorn-Geli et al. randomized trial<sup>1</sup> in women with fibromyalgia was the first to show that 6 weeks of WBV plus physical exercise produced significantly greater reductions in pain, fatigue, and stiffness than exercise alone. Subsequent RCTs and meta-analyses (summarized in Bemben et al.<sup>2</sup>) reinforce the pattern — WBV consistently improves Fibromyalgia Impact Questionnaire (FIQ), balance, and 6-minute walk distance when used as an adjunct to standard care.
+                <strong style={{ color: '#f0fdf4' }}>Evidence base:</strong> The foundational Alentorn-Geli et al. randomized trial<sup>1</sup> in women with fibromyalgia was the first to show that 6 weeks of WBV plus physical exercise produced significantly greater reductions in pain, fatigue, and stiffness than exercise alone. Subsequent RCTs and meta-analyses (summarized in Bemben et al.<sup>2</sup>) reinforce the pattern. WBV consistently improves Fibromyalgia Impact Questionnaire (FIQ), balance, and 6-minute walk distance when used as an adjunct to standard care.
               </p>
 
               {/* BENEFIT 2 - OLDER ADULTS */}
@@ -118,10 +118,10 @@ export default function VibrationPlateBenefits() {
 
               {/* BENEFIT 5 - CIRC / LYMPH */}
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>
-                5. Circulation and Lymphatic Drainage — Moderate Evidence
+                5. Circulation and Lymphatic Drainage. Moderate Evidence
               </h2>
               <p>
-                Oscillating plates (as opposed to pure vertical vibration) show enhanced peripheral circulation and lymphatic pumping in doppler ultrasound studies. This is the mechanistic basis for marketing around &quot;lymphatic drainage&quot; — the effect is real, but modest. People with lipedema or post-surgical swelling show the clearest responses.
+                Oscillating plates (as opposed to pure vertical vibration) show enhanced peripheral circulation and lymphatic pumping in doppler ultrasound studies. This is the mechanistic basis for marketing around &quot;lymphatic drainage&quot;; the effect is real, but modest. People with lipedema or post-surgical swelling show the clearest responses.
               </p>
 
               {/* WEAKER */}
@@ -188,8 +188,8 @@ export default function VibrationPlateBenefits() {
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f0fdf4' }}>Related Reading</h2>
               <ul className='space-y-2 list-disc pl-6'>
                 <li><Link href='/vibration-plate' style={{ color: '#34d399' }} className='underline'>Vibration Plate Category Hub</Link> — overview and device ranges.</li>
-                <li><Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link> — another recovery / mobility modality with distinct research base.</li>
-                <li><Link href='/red-light-therapy/red-light-therapy-benefits' style={{ color: '#34d399' }} className='underline'>Red Light Therapy Benefits</Link> — complementary recovery tool.</li>
+                <li><Link href='/pemf/best-pemf-mat' style={{ color: '#34d399' }} className='underline'>Best PEMF Mat</Link>. Another recovery / mobility modality with distinct research base.</li>
+                <li><Link href='/red-light-therapy/red-light-therapy-benefits' style={{ color: '#34d399' }} className='underline'>Red Light Therapy Benefits</Link>; complementary recovery tool.</li>
               </ul>
 
               {/* REFERENCES */}

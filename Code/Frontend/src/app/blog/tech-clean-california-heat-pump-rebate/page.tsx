@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'TECH Clean California: Heat Pump Rebate Program Guide (2026)',
-  description: "TECH Clean California rebates for heat pump water heaters and HVAC — eligibility, amounts, how to apply, contractor directory, and how it stacks with solar.",
+  description: "TECH Clean California rebates for heat pump water heaters and HVAC. Eligibility, amounts, how to apply, contractor directory, and how it stacks with solar.",
   alternates: { canonical: '/blog/tech-clean-california-heat-pump-rebate' },
   openGraph: { title: 'TECH Clean California Heat Pump Rebate', description: 'The 2026 TECH Clean California heat pump rebate explained.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/tech-clean-california-heat-pump-rebate' },
 };

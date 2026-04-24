@@ -75,7 +75,7 @@ export default function SolarPanelsCAStatewide() {
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Short Answer for 2026</h2>
               <p>
-                California residential solar in 2026 still makes financial sense in PG&amp;E, SCE, and SDG&amp;E territory, where residential rates average 38.6¢/kWh — among the highest in the US. The math is harder in municipal-utility territories (SMUD, LADWP, Roseville, Glendale) where rates run 15–22¢/kWh. The 30% federal Residential Clean Energy Credit remains in force through 2032. NEM 3.0 reduced the value of exported solar significantly — which means your payback depends much more on self-consumption than it did under NEM 2.0.
+                California residential solar in 2026 still makes financial sense in PG&amp;E, SCE, and SDG&amp;E territory, where residential rates average 38.6¢/kWh — among the highest in the US. The math is harder in municipal-utility territories (SMUD, LADWP, Roseville, Glendale) where rates run 15–22¢/kWh. The 30% federal Residential Clean Energy Credit remains in force through 2032. NEM 3.0 reduced the value of exported solar significantly, which means your payback depends much more on self-consumption than it did under NEM 2.0.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What Solar Costs in California (2026 Numbers)</h2>
@@ -123,7 +123,7 @@ export default function SolarPanelsCAStatewide() {
                 California&apos;s Net Billing Tariff (NEM 3.0) took effect April 2023. Under NEM 3.0, exported solar energy is credited at roughly 5–8¢/kWh — about 75% less than the old NEM 2.0 retail-rate structure. This changes the economics but does not kill them:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Self-consumption is now king.</strong> Every kWh your solar produces that you use immediately saves you the full 40¢+/kWh retail rate — 5–8× more valuable than exporting.</li>
+                <li><strong>Self-consumption is now king.</strong> Every kWh your solar produces that you use immediately saves you the full 40¢+/kWh retail rate. 5–8× more valuable than exporting.</li>
                 <li><strong>Batteries change the math.</strong> Pairing solar with a battery (eligible for the federal ITC plus California&apos;s SGIP rebate) lets you time-shift solar into peak-rate hours, recovering most of what NEM 2.0 used to pay for exports.</li>
                 <li><strong>Payback has stretched, not disappeared.</strong> Cash-purchase payback in PG&amp;E territory moved from roughly 5–7 years under NEM 2.0 to 7–10 years under NEM 3.0.</li>
               </ul>
@@ -131,7 +131,7 @@ export default function SolarPanelsCAStatewide() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">California Incentives That Still Matter in 2026</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Federal Residential Clean Energy Credit (ITC) — 30% through 2032.</strong> Applies to solar, battery storage, and solar water heating.</li>
+                <li><strong>Federal Residential Clean Energy Credit (ITC), 30% through 2032.</strong> Applies to solar, battery storage, and solar water heating.</li>
                 <li><strong>Self-Generation Incentive Program (SGIP).</strong> California-specific rebate for battery storage. Equity Resiliency tier provides up to full-cost coverage for qualifying low-income and fire-prone-area households.</li>
                 <li><strong>DAC-SASH and SASH.</strong> Low-income solar programs administered by GRID Alternatives.</li>
                 <li><strong>Property Tax Exclusion.</strong> California does not reassess property value upward after solar installation.</li>
@@ -188,8 +188,8 @@ export default function SolarPanelsCAStatewide() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><Link href="/solar-savings/bay-area" className="text-primary underline">Bay Area</Link> — PG&amp;E territory, 41¢/kWh rates, 5.4 peak-sun hours, tile-roof premium common.</li>
                 <li><Link href="/solar-savings/orange-county" className="text-primary underline">Orange County</Link> — SCE, 34.5¢/kWh, 5.6 peak-sun hours, strong HOA communities.</li>
-                <li><Link href="/solar-savings/san-diego-county" className="text-primary underline">San Diego County</Link> — SDG&amp;E, 45.7¢/kWh (nation&apos;s highest), 5.7 peak-sun hours.</li>
-                <li><Link href="/solar-savings/inland-empire" className="text-primary underline">Inland Empire</Link> — SCE (mostly), strong sun exposure, mostly single-family newer housing.</li>
+                <li><Link href="/solar-savings/san-diego-county" className="text-primary underline">San Diego County</Link>. SDG&amp;E, 45.7¢/kWh (nation&apos;s highest), 5.7 peak-sun hours.</li>
+                <li><Link href="/solar-savings/inland-empire" className="text-primary underline">Inland Empire</Link>, SCE (mostly), strong sun exposure, mostly single-family newer housing.</li>
                 <li><Link href="/solar-savings/central-valley" className="text-primary underline">Central Valley</Link> — PG&amp;E with SMUD pockets, mix of utility territories, hottest summers.</li>
               </ul>
 
@@ -198,7 +198,7 @@ export default function SolarPanelsCAStatewide() {
                 We maintain full reviews of 9 major California solar installers plus a ranked hub:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California — Ranked Hub</Link></li>
+                <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California. Ranked Hub</Link></li>
                 <li><Link href="/solar-installers/sunrun-review" className="text-primary underline">Sunrun Review</Link></li>
                 <li><Link href="/solar-installers/sunpower-review" className="text-primary underline">SunPower Review</Link></li>
                 <li><Link href="/solar-installers/tesla-solar-review" className="text-primary underline">Tesla Solar Review</Link></li>

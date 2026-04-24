@@ -59,7 +59,7 @@ const BRANDS = [
       'Decent heat distribution',
     ],
     cons: [
-      'Fewer layers — primarily resistive heating with FIR reflective liner',
+      'Fewer layers. Primarily resistive heating with FIR reflective liner',
       'EMF data less thoroughly published than HigherDOSE',
     ],
     bottomLine:
@@ -80,7 +80,7 @@ const BRANDS = [
       'Heavy compared to HigherDOSE',
     ],
     bottomLine:
-      'Worth considering if body size is a constraint with narrower blankets. Do not pay extra for the "negative ion" marketing — the FIR is what does the work.',
+      'Worth considering if body size is a constraint with narrower blankets. Do not pay extra for the "negative ion" marketing. The FIR is what does the work.',
     network: 'Direct',
   },
   {
@@ -97,7 +97,7 @@ const BRANDS = [
       'Plastic smell on first use; needs a break-in period',
     ],
     bottomLine:
-      'The honest budget pick. You are paying for a heated blanket with FIR marketing. It still delivers a useful sweat — just understand what you are buying.',
+      'The honest budget pick. You are paying for a heated blanket with FIR marketing. It still delivers a useful sweat, just understand what you are buying.',
     network: 'Amazon',
   },
 ];
@@ -144,19 +144,19 @@ export default function BestSaunaBlanket() {
                 What the Research Actually Shows on Passive Heat Therapy
               </h2>
               <p>
-                The strongest evidence for sauna-style heat therapy comes from <em>Finnish cabin sauna</em> cohort studies — not blanket-specific research. That said, the mechanism (raised core body temperature + sustained sweating) is the same, and sauna blankets hit the same physiological signal.
+                The strongest evidence for sauna-style heat therapy comes from <em>Finnish cabin sauna</em> cohort studies, not blanket-specific research. That said, the mechanism (raised core body temperature + sustained sweating) is the same, and sauna blankets hit the same physiological signal.
               </p>
               <p>
                 A landmark 2018 prospective cohort by Laukkanen et al. followed 2,315 middle-aged Finnish men for 20+ years. Men using a sauna 4–7 times per week had a <strong>~60% lower risk of fatal cardiovascular events</strong> and a ~66% lower risk of dementia compared to 1×/week users. Dose-response relationship was strong.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Laukkanen et al. (2018) — Sauna bathing and cardiovascular / dementia risk. <a href='https://pubmed.ncbi.nlm.nih.gov/29725033/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 29725033 <ExternalLink className='h-3 w-3' /></a>
+                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Laukkanen et al. (2018). Sauna bathing and cardiovascular / dementia risk. <a href='https://pubmed.ncbi.nlm.nih.gov/29725033/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 29725033 <ExternalLink className='h-3 w-3' /></a>
               </p>
               <p>
                 A 2023 review by Patrick &amp; Johnson in <em>Experimental Gerontology</em> synthesized the mechanistic evidence: sauna-induced heat stress mimics many of the cardiovascular benefits of moderate-intensity exercise, including heat shock protein (HSP) induction, improved endothelial function, and lowered blood pressure.
               </p>
               <p className='p-4 rounded-lg border text-sm' style={{ backgroundColor: '#1a2a22', borderColor: '#2a3a30' }}>
-                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Patrick &amp; Johnson (2023) — <em>Experimental Gerontology</em>. <a href='https://pubmed.ncbi.nlm.nih.gov/33787870/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 33787870 <ExternalLink className='h-3 w-3' /></a>
+                <strong style={{ color: '#f0fdf4' }}>Citation:</strong> Patrick &amp; Johnson (2023), <em>Experimental Gerontology</em>. <a href='https://pubmed.ncbi.nlm.nih.gov/33787870/' target='_blank' rel='noopener noreferrer' className='underline inline-flex items-center gap-1' style={{ color: '#34d399' }}>PubMed 33787870 <ExternalLink className='h-3 w-3' /></a>
               </p>
               <p className='text-sm italic'>
                 Honest caveat: we do not have long-term RCTs specifically on sauna blankets matching the Finnish cohort data. But blankets do reliably raise core temperature and induce sweating, which is the proximate cause of most sauna benefits.
@@ -176,7 +176,7 @@ export default function BestSaunaBlanket() {
                 <div className='flex gap-3'>
                   <CheckCircle2 className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#34d399' }} />
                   <div>
-                    <strong style={{ color: '#f0fdf4' }}>Multi-layer construction.</strong> Real far-infrared blankets have charcoal, tourmaline, or amethyst layers — not just a heating wire.
+                    <strong style={{ color: '#f0fdf4' }}>Multi-layer construction.</strong> Real far-infrared blankets have charcoal, tourmaline, or amethyst layers, not just a heating wire.
                   </div>
                 </div>
                 <div className='flex gap-3'>
@@ -286,10 +286,10 @@ export default function BestSaunaBlanket() {
                   <Link href='/infrared-sauna' style={{ color: '#34d399' }} className='underline'>Infrared Sauna Category Hub</Link> — cabins, blankets, and the research comparing them.
                 </li>
                 <li>
-                  <Link href='/cold-plunge/benefits-of-ice-bath' style={{ color: '#34d399' }} className='underline'>Benefits of Ice Bath</Link> — the other half of contrast therapy.
+                  <Link href='/cold-plunge/benefits-of-ice-bath' style={{ color: '#34d399' }} className='underline'>Benefits of Ice Bath</Link>, the other half of contrast therapy.
                 </li>
                 <li>
-                  <Link href='/red-light-therapy' style={{ color: '#34d399' }} className='underline'>Red Light Therapy</Link> — often confused with infrared sauna; different mechanism.
+                  <Link href='/red-light-therapy' style={{ color: '#34d399' }} className='underline'>Red Light Therapy</Link>, often confused with infrared sauna; different mechanism.
                 </li>
               </ul>
 

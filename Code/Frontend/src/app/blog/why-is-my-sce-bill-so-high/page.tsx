@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'Why Is My SCE Bill So High? The Real Reasons (and What to Do About Them)',
-  description: "Why your Southern California Edison bill jumped — TOU plan mismatches, the 4–9 PM peak window, the $24 fixed charge, hidden loads, and what to do.",
+  description: "Why your Southern California Edison bill jumped; TOU plan mismatches, the 4–9 PM peak window, the $24 fixed charge, hidden loads, and what to do.",
   alternates: { canonical: '/blog/why-is-my-sce-bill-so-high' },
   openGraph: { title: 'Why Is My SCE Bill So High?', description: 'Real reasons your SCE bill jumped and what to do.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-sce-bill-so-high' },
 };

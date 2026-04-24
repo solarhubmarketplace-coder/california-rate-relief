@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'Sunnova vs Sunrun: Head-to-Head Solar Installer Comparison (2026)',
-  description: "Sunnova vs Sunrun — how they compare on pricing, contracts, warranties, service model, California footprint, and real-world customer experience.",
+  description: "Sunnova vs Sunrun; how they compare on pricing, contracts, warranties, service model, California footprint, and real-world customer experience.",
   alternates: { canonical: '/solar-installers/sunnova-vs-sunrun' },
   openGraph: { title: 'Sunnova vs Sunrun (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunnova-vs-sunrun' },
 };

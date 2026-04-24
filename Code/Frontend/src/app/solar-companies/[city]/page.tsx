@@ -168,11 +168,11 @@ function buildFAQSchema(city: CityData) {
     },
     {
       question: `How do I compare solar quotes in ${city.name}?`,
-      answer: `Get at least three quotes. Compare total system cost per watt (should be $3.00–$4.50 per watt installed in ${city.name}), panel and inverter brands, workmanship warranty length, and production guarantee. Don't focus only on monthly payment — a 25-year PPA at 2.9% escalator can cost more over the life of the contract than a 12-year loan.`,
+      answer: `Get at least three quotes. Compare total system cost per watt (should be $3.00–$4.50 per watt installed in ${city.name}), panel and inverter brands, workmanship warranty length, and production guarantee. Don't focus only on monthly payment, a 25-year PPA at 2.9% escalator can cost more over the life of the contract than a 12-year loan.`,
     },
     {
       question: `What rebates apply to solar in ${city.name}?`,
-      answer: `${city.name} residents in ${utility.shortName} territory qualify for the federal 30% solar tax credit (through 2032, see expiration-specific post for nuance), plus the Self-Generation Incentive Program (SGIP) for battery storage. Low-income households may qualify for DAC-SASH or SASH. ${utility.shortName}'s net billing under NEM 3.0 pays ${utility.exportRate} for exports — significantly less than pre-2023 net metering.`,
+      answer: `${city.name} residents in ${utility.shortName} territory qualify for the federal 30% solar tax credit (through 2032, see expiration-specific post for nuance), plus the Self-Generation Incentive Program (SGIP) for battery storage. Low-income households may qualify for DAC-SASH or SASH. ${utility.shortName}'s net billing under NEM 3.0 pays ${utility.exportRate} for exports. Significantly less than pre-2023 net metering.`,
     },
   ];
   return {
@@ -248,7 +248,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 Best Solar Companies in {city.name}, California (2026 Reviews)
               </h1>
               <p className="text-lg text-muted-foreground">
-                9 installers compared. Licensed, bonded, and confirmed to serve {city.name}. Honest notes on who each company actually fits — including the trade-offs sales reps skip over.
+                9 installers compared. Licensed, bonded, and confirmed to serve {city.name}. Honest notes on who each company actually fits, including the trade-offs sales reps skip over.
               </p>
             </header>
 
@@ -284,7 +284,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               <p className="text-foreground/80 leading-relaxed mt-4">
                 This page cuts through sales-brochure copy. For each of the 9 solar companies that actively
                 serve {city.name} in 2026, we describe who they fit, what their honest trade-off is, and
-                where to read the detailed review. None of this is paid placement — we&apos;re an affiliate
+                where to read the detailed review. None of this is paid placement. We&apos;re an affiliate
                 site, but the comparison is editorial. See the <Link href="/affiliate-disclosure" className="text-primary underline">affiliate disclosure</Link> and <Link href="/about" className="text-primary underline">editorial approach</Link>.
               </p>
             </div>
@@ -382,7 +382,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
             </h2>
             <p className="text-foreground/80 mb-6">
               Input your {utility.shortName} bill below. We calculate system size, cost under PPA / loan /
-              cash options, and projected savings — then funnel you to up to 3 verified installer
+              cash options, and projected savings. Then funnel you to up to 3 verified installer
               quotes so you can compare for real.
             </p>
             <div className="mb-12">
@@ -408,7 +408,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 <Link href={`/solar-savings/${city.slug}`} className="text-primary hover:underline">
                   {city.name} Solar Savings Guide
                 </Link>
-                <span className="text-foreground/60"> — rates, system sizing, and incentive deep-dive.</span>
+                <span className="text-foreground/60">; rates, system sizing, and incentive deep-dive.</span>
               </li>
               <li>
                 <Link href="/best-solar-companies-california" className="text-primary hover:underline">
@@ -422,14 +422,14 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               </li>
               <li>
                 <Link href="/blog/ppa-loan-vs-solar-lease-vs-cash-california" className="text-primary hover:underline">
-                  PPA vs Loan vs Lease vs Cash — California Comparison
+                  PPA vs Loan vs Lease vs Cash. California Comparison
                 </Link>
               </li>
             </ul>
 
             {/* FAQs */}
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">
-              Frequently Asked Questions — Solar Companies in {city.name}
+              Frequently Asked Questions, Solar Companies in {city.name}
             </h2>
             <div className="space-y-6 mb-12">
               <div>
@@ -481,7 +481,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                   Get at least three quotes. Compare total system cost per watt (should be
                   $3.00–$4.50 per watt installed in {city.name}), panel and inverter brands,
                   workmanship warranty length, and production guarantee. A 25-year PPA at a 2.9%
-                  escalator can cost more over the life of the contract than a 12-year loan — run
+                  escalator can cost more over the life of the contract than a 12-year loan, run
                   both totals before signing.
                 </p>
               </div>

@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
   title: 'AB 942 California: Solar Lease Transfer Rights Explained (2026)',
-  description: "What California AB 942 actually did for solar homeowners — lease/PPA transfer rules, UCC lien relief, disclosure requirements, and practical impact when you sell.",
+  description: "What California AB 942 actually did for solar homeowners; lease/PPA transfer rules, UCC lien relief, disclosure requirements, and practical impact when you sell.",
   alternates: { canonical: '/blog/ab-942-california-solar' },
   openGraph: { title: 'AB 942 California Solar', description: 'Solar lease transfer rights under California AB 942.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/ab-942-california-solar' },
 };
@@ -26,7 +26,7 @@ export default function AB942CASolar() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">California Solar Law</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">AB 942: California&apos;s Solar Lease Transfer Rights Law, Explained</h1>
-              <p className="text-lg text-muted-foreground">AB 942 tackled one of the biggest real-world pain points in residential solar — what happens to a 20–25 year lease or PPA when the homeowner sells. Here&apos;s what the law actually did.</p>
+              <p className="text-lg text-muted-foreground">AB 942 tackled one of the biggest real-world pain points in residential solar, what happens to a 20–25 year lease or PPA when the homeowner sells. Here&apos;s what the law actually did.</p>
             </header>
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Problem AB 942 Addressed</h2>
@@ -53,7 +53,7 @@ export default function AB942CASolar() {
               <p>The law did not eliminate friction entirely:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Buyer credit qualification is still required. A bad-credit buyer can still be denied.</li>
-                <li>Escalator terms are still inherited — buyers still get your 2.9% annual payment increase.</li>
+                <li>Escalator terms are still inherited, buyers still get your 2.9% annual payment increase.</li>
                 <li>Buyers can still negotiate a lease buyout at closing as a condition of purchase.</li>
                 <li>Transfer fees still apply (typically $100–$500).</li>
               </ul>
@@ -62,7 +62,7 @@ export default function AB942CASolar() {
               <ol className="list-decimal pl-6 space-y-2">
                 <li>Your provider has a 30-day clock on UCC release. Reference this if they stall.</li>
                 <li>Pre-qualify your buyer with the solar provider before accepting an offer.</li>
-                <li>If the provider delays transfer processing, file a complaint with the California Department of Consumer Affairs — AB 942 gives regulators enforcement authority.</li>
+                <li>If the provider delays transfer processing, file a complaint with the California Department of Consumer Affairs, AB 942 gives regulators enforcement authority.</li>
                 <li>If your contract predates AB 942 (signed before January 2025), provisions still apply to post-effective-date transfers.</li>
               </ol>
 
