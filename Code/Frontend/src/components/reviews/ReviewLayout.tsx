@@ -9,30 +9,29 @@ export function ReviewLayout({ children }: ReviewLayoutProps) {
     <div
       className='min-h-screen'
       style={{
-        // Override CSS custom properties so all Tailwind classes
-        // (text-foreground, bg-card, border-border, etc.) render
-        // correctly on the dark GreenReviewsHub theme
-        ['--background' as string]: '0 0% 4%',
-        ['--foreground' as string]: '0 0% 100%',
-        ['--card' as string]: '0 0% 9%',
-        ['--card-foreground' as string]: '0 0% 100%',
-        ['--popover' as string]: '0 0% 9%',
-        ['--popover-foreground' as string]: '0 0% 100%',
+        // Subtle green tint on the dark base distinguishes GRH from CRR
+        // and AHB at a glance — neutral dark grey was too generic.
+        ['--background' as string]: '150 20% 5%',
+        ['--foreground' as string]: '120 5% 98%',
+        ['--card' as string]: '150 15% 9%',
+        ['--card-foreground' as string]: '120 5% 98%',
+        ['--popover' as string]: '150 15% 9%',
+        ['--popover-foreground' as string]: '120 5% 98%',
         ['--primary' as string]: '142 71% 45%',
-        ['--primary-foreground' as string]: '0 0% 4%',
-        ['--secondary' as string]: '0 0% 15%',
-        ['--secondary-foreground' as string]: '0 0% 100%',
-        ['--muted' as string]: '0 0% 15%',
-        ['--muted-foreground' as string]: '0 0% 85%',
-        ['--accent' as string]: '0 0% 15%',
-        ['--accent-foreground' as string]: '142 71% 45%',
+        ['--primary-foreground' as string]: '150 30% 5%',
+        ['--secondary' as string]: '150 12% 14%',
+        ['--secondary-foreground' as string]: '120 5% 98%',
+        ['--muted' as string]: '150 12% 14%',
+        ['--muted-foreground' as string]: '120 5% 80%',
+        ['--accent' as string]: '150 12% 14%',
+        ['--accent-foreground' as string]: '142 71% 50%',
         ['--destructive' as string]: '0 62% 50%',
         ['--destructive-foreground' as string]: '0 0% 100%',
-        ['--border' as string]: '0 0% 17%',
-        ['--input' as string]: '0 0% 17%',
+        ['--border' as string]: '150 10% 18%',
+        ['--input' as string]: '150 10% 18%',
         ['--ring' as string]: '142 71% 45%',
-        backgroundColor: 'hsl(0, 0%, 4%)',
-        color: 'hsl(0, 0%, 100%)',
+        backgroundColor: 'hsl(150, 20%, 5%)',
+        color: 'hsl(120, 5%, 98%)',
       }}
     >
       {children}

@@ -289,6 +289,41 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               </p>
             </div>
 
+            {/* City-Specific Context — pulls in unique paragraphs from city data so
+                this page is meaningfully differentiated from the other 76 cities */}
+            <div className="bg-card rounded-xl border border-border p-6 mb-10">
+              <h2 className="text-xl font-bold text-foreground mb-3">
+                What&apos;s Different About Solar in {city.name}
+              </h2>
+              <p className="text-foreground/80 leading-relaxed mb-4">
+                {city.introText}
+              </p>
+              {city.localTips && city.localTips.length > 0 && (
+                <div className="space-y-3 mt-4 pt-4 border-t border-border">
+                  {city.localTips.slice(0, 2).map((tip, i) => (
+                    <div key={i}>
+                      <div className="text-sm font-semibold text-foreground mb-1">{tip.title}</div>
+                      <p className="text-sm text-foreground/70 leading-relaxed">{tip.content}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Local Considerations Box — varies per city */}
+            <div className="prose prose-slate max-w-none mb-10">
+              <h2 className="text-2xl font-bold text-foreground mb-4">
+                {city.name}-Specific Solar Considerations
+              </h2>
+              <p className="text-foreground/80 leading-relaxed">{city.solarPotentialText}</p>
+              {city.whenSolarDoesntWork && (
+                <p className="text-foreground/80 leading-relaxed mt-4">
+                  <strong className="text-foreground">When solar may not be the right fit in {city.name}:</strong>{' '}
+                  {city.whenSolarDoesntWork}
+                </p>
+              )}
+            </div>
+
             {/* What to compare */}
             <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">
               What Actually Matters When Comparing Solar Companies in {city.name}
@@ -391,7 +426,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
 
             {/* Local context */}
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-              {city.name}-Specific Considerations
+              The Bottom Line for {city.name} Homeowners
             </h2>
             <div className="prose prose-slate max-w-none mb-10">
               <p className="text-foreground/80 leading-relaxed">

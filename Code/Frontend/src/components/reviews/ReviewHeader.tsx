@@ -17,10 +17,13 @@ export function ReviewHeader() {
     <header
       className='sticky top-0 z-50 border-b backdrop-blur-sm'
       style={{
-        backgroundColor: 'rgba(10, 10, 10, 0.95)',
-        borderColor: '#27272a',
+        // Match the green-tinted dark GRH theme set in ReviewLayout
+        backgroundColor: 'rgba(10, 18, 14, 0.95)',
+        borderColor: '#1a3326',
       }}
     >
+      {/* Green brand accent stripe — visible identity cue at the top of every GRH page */}
+      <div style={{ height: '3px', background: 'linear-gradient(90deg, #16a34a 0%, #22c55e 50%, #4ade80 100%)' }} />
       <div className='container mx-auto px-4'>
         <div className='flex items-center justify-between h-16'>
           {/* Logo */}

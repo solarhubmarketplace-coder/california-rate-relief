@@ -30,10 +30,21 @@ export function Header() {
 
           {/* Nav + CTA */}
           <div className='flex items-center gap-4'>
-            <Link
-              href='/blog'
-              className='hidden sm:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'
-            >
+            <nav className='hidden lg:flex items-center gap-5'>
+              <Link href='/best-solar-companies-california' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
+                Solar Companies
+              </Link>
+              <Link href='/solar-panels-california' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
+                Solar in CA
+              </Link>
+              <Link href='/blog' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
+                Blog
+              </Link>
+              <Link href='/about' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
+                About
+              </Link>
+            </nav>
+            <Link href='/blog' className='lg:hidden text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
               Blog
             </Link>
             <Link href='#qualify'>
@@ -44,7 +55,7 @@ export function Header() {
                 Check Eligibility
               </Button>
             </Link>
-            <Link href='/login' className='hidden sm:block'>
+            <Link href='/login' className='hidden xl:block'>
               <Button
                 variant='outline'
                 className='border-border text-foreground hover:bg-muted font-medium'
