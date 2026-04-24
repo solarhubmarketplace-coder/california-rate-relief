@@ -26,6 +26,7 @@ export async function middleware(request: NextRequest) {
   const isGreenReviewsHub = /^(www\.)?greenreviewshub\.com$/.test(hostname);
   const isCRR = /^(www\.)?ratereliefca\.com$/.test(hostname);
   const isSecureHomeGear = /^(www\.)?securehomegear\.com$/.test(hostname);
+  const isAtHomeBiohacking = /^(www\.)?athomebiohacking\.com$/.test(hostname);
 
   // SHG-only paths — block these on other hosts so CRR/GRH don't leak SHG pages
   const isSHGPath =
@@ -39,14 +40,26 @@ export async function middleware(request: NextRequest) {
     pathname === '/terms' ||
     pathname === '/contact';
 
+  // AHB-only paths — block these on other hosts
+  const isAHBPath =
+    pathname.startsWith('/ahb-home') ||
+    pathname.startsWith('/cold-plunge') ||
+    pathname.startsWith('/infrared-sauna') ||
+    pathname.startsWith('/pemf') ||
+    pathname.startsWith('/red-light-therapy') ||
+    pathname.startsWith('/vibration-plate') ||
+    pathname.startsWith('/guides') ||
+    pathname.startsWith('/learn') ||
+    pathname.startsWith('/vs');
+
   // --- greenreviewshub.com behavior ---
   if (isGreenReviewsHub) {
     // Root → reviews index
     if (pathname === '/') {
       return NextResponse.redirect(new URL('/reviews', request.url), 302);
     }
-    // Block SHG paths from leaking on GRH
-    if (isSHGPath) {
+    // Block SHG and AHB paths from leaking on GRH
+    if (isSHGPath || isAHBPath) {
       return new NextResponse(null, { status: 404 });
     }
     // Allow review pages, Next internals, API routes, and static files
@@ -71,6 +84,10 @@ export async function middleware(request: NextRequest) {
     if (pathname === '/') {
       return NextResponse.rewrite(new URL('/shg-home', request.url));
     }
+    // Block AHB paths from leaking on SHG
+    if (isAHBPath) {
+      return new NextResponse(null, { status: 404 });
+    }
     // Allow SHG paths, Next internals, API routes, and static files
     if (
       isSHGPath ||
@@ -87,6 +104,32 @@ export async function middleware(request: NextRequest) {
     return new NextResponse(null, { status: 404 });
   }
 
+  // --- athomebiohacking.com behavior ---
+  if (isAtHomeBiohacking) {
+    // Root → rewrite to /ahb-home (serves AHB homepage)
+    if (pathname === '/') {
+      return NextResponse.rewrite(new URL('/ahb-home', request.url));
+    }
+    // Block SHG paths from leaking on AHB
+    if (isSHGPath) {
+      return new NextResponse(null, { status: 404 });
+    }
+    // Allow AHB paths, Next internals, API routes, and static files
+    if (
+      isAHBPath ||
+      pathname.startsWith('/_next') ||
+      pathname.startsWith('/api') ||
+      pathname === '/favicon.ico' ||
+      pathname === '/robots.txt' ||
+      pathname === '/sitemap.xml' ||
+      /\.[a-zA-Z0-9]+$/.test(pathname)
+    ) {
+      return NextResponse.next();
+    }
+    // Any other path → 404 (don't leak CRR/GRH/SHG pages here)
+    return new NextResponse(null, { status: 404 });
+  }
+
   // --- ratereliefca.com → 301 redirect /reviews/* to greenreviewshub.com ---
   if (isCRR && pathname.startsWith('/reviews')) {
     return NextResponse.redirect(
@@ -95,8 +138,8 @@ export async function middleware(request: NextRequest) {
     );
   }
 
-  // --- ratereliefca.com → block SHG paths so they don't leak onto CRR ---
-  if (isCRR && isSHGPath) {
+  // --- ratereliefca.com → block SHG and AHB paths so they don't leak onto CRR ---
+  if (isCRR && (isSHGPath || isAHBPath)) {
     return new NextResponse(null, { status: 404 });
   }
 
