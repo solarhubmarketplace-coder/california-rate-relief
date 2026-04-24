@@ -303,7 +303,7 @@ export default function BestElectricScooter() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1558981420-87aa9dad1c89?w=1200&q=80&auto=format&fit=crop' alt='Electric scooter' className='w-full h-64 object-cover' loading='lazy' />
+              <img src='https://images.unsplash.com/photo-1558981420-87aa9dad1c89?w=1200&q=80&auto=format&fit=crop' alt='Electric scooter' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
             </div>
 
             <AffiliateDisclosure compact />

@@ -41,7 +41,7 @@ export default function CellularSecurityCamera() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?w=1200&q=80&auto=format&fit=crop' alt='Cellular 4G LTE security camera' className='w-full h-64 object-cover' loading='lazy' />
+              <img src='https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?w=1200&q=80&auto=format&fit=crop' alt='Cellular 4G LTE security camera' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
             </div>
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>

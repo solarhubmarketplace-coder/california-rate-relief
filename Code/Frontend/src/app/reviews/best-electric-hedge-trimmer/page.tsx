@@ -267,7 +267,7 @@ export default function BestElectricHedgeTrimmer() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1599687267812-35c05ff70ee9?w=1200&q=80&auto=format&fit=crop' alt='Electric hedge trimmer' className='w-full h-64 object-cover' loading='lazy' />
+              <img src='https://images.unsplash.com/photo-1599687267812-35c05ff70ee9?w=1200&q=80&auto=format&fit=crop' alt='Electric hedge trimmer' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
             </div>
 
             <AffiliateDisclosure compact />

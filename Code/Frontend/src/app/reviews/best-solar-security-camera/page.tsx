@@ -263,7 +263,7 @@ export default function BestSolarSecurityCamera() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80&auto=format&fit=crop' alt='Solar-powered security camera' className='w-full h-64 object-cover' loading='lazy' />
+              <img src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80&auto=format&fit=crop' alt='Solar-powered security camera' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
             </div>
 
             <AffiliateDisclosure compact />

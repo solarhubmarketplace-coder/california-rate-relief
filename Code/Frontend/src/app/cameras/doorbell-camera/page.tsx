@@ -41,7 +41,7 @@ export default function DoorbellCameraHub() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=1200&q=80&auto=format&fit=crop' alt='Video doorbell at a front door' className='w-full h-64 object-cover' loading='lazy' />
+              <img src='https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=1200&q=80&auto=format&fit=crop' alt='Video doorbell at a front door' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
             </div>
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
