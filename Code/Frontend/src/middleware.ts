@@ -7,25 +7,47 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // ====================================================================
-  // Hostname-based routing — keep CRR (ratereliefca.com) and the
-  // affiliate review site (greenreviewshub.com) cleanly split:
+  // Hostname-based routing — three sites, one codebase:
   //
-  //   ratereliefca.com         → CRR solar business (everything except /reviews/*)
+  //   ratereliefca.com      → CRR solar business (everything except /reviews/*)
   //   ratereliefca.com/reviews → 301 redirect to greenreviewshub.com
-  //   greenreviewshub.com      → only serve /reviews/* (the 119 review pages)
-  //   greenreviewshub.com/<x>  → 404 if not a review page
+  //   greenreviewshub.com   → only serve /reviews/* (the 119 review pages)
+  //   greenreviewshub.com/<x> → 404 if not a review page
+  //   securehomegear.com    → SHG security-camera affiliate site
+  //     /            → /shg-home (rewrite)
+  //     /cameras/*   → product reviews and category hub
+  //     /compare/*   → head-to-head comparisons
+  //     /alternatives/* → brand-alternative funnel pages
+  //     /about /privacy /terms /contact /affiliate-disclosure → compliance
+  //   securehomegear.com/<x> → 404 if not an allowed SHG path
   //
-  // Both domains deploy from this same repo. Vercel hosts greenreviewshub,
-  // Railway hosts ratereliefca. One commit updates both sites.
+  // All three domains deploy from this same repo.
   // ====================================================================
   const isGreenReviewsHub = /^(www\.)?greenreviewshub\.com$/.test(hostname);
   const isCRR = /^(www\.)?ratereliefca\.com$/.test(hostname);
+  const isSecureHomeGear = /^(www\.)?securehomegear\.com$/.test(hostname);
+
+  // SHG-only paths — block these on other hosts so CRR/GRH don't leak SHG pages
+  const isSHGPath =
+    pathname.startsWith('/cameras') ||
+    pathname.startsWith('/compare') ||
+    pathname.startsWith('/alternatives') ||
+    pathname.startsWith('/shg-home') ||
+    pathname === '/about' ||
+    pathname === '/affiliate-disclosure' ||
+    pathname === '/privacy' ||
+    pathname === '/terms' ||
+    pathname === '/contact';
 
   // --- greenreviewshub.com behavior ---
   if (isGreenReviewsHub) {
     // Root → reviews index
     if (pathname === '/') {
       return NextResponse.redirect(new URL('/reviews', request.url), 302);
+    }
+    // Block SHG paths from leaking on GRH
+    if (isSHGPath) {
+      return new NextResponse(null, { status: 404 });
     }
     // Allow review pages, Next internals, API routes, and static files
     if (
@@ -39,7 +61,29 @@ export async function middleware(request: NextRequest) {
     ) {
       return NextResponse.next();
     }
-    // Any other path on this domain → 404 (don't expose CRR pages here)
+    // Any other path on this domain → 404
+    return new NextResponse(null, { status: 404 });
+  }
+
+  // --- securehomegear.com behavior ---
+  if (isSecureHomeGear) {
+    // Root → rewrite to /shg-home (serves SHG homepage)
+    if (pathname === '/') {
+      return NextResponse.rewrite(new URL('/shg-home', request.url));
+    }
+    // Allow SHG paths, Next internals, API routes, and static files
+    if (
+      isSHGPath ||
+      pathname.startsWith('/_next') ||
+      pathname.startsWith('/api') ||
+      pathname === '/favicon.ico' ||
+      pathname === '/robots.txt' ||
+      pathname === '/sitemap.xml' ||
+      /\.[a-zA-Z0-9]+$/.test(pathname)
+    ) {
+      return NextResponse.next();
+    }
+    // Any other path on this domain → 404 (don't expose CRR or GRH pages here)
     return new NextResponse(null, { status: 404 });
   }
 
@@ -49,6 +93,11 @@ export async function middleware(request: NextRequest) {
       `https://greenreviewshub.com${pathname}`,
       301
     );
+  }
+
+  // --- ratereliefca.com → block SHG paths so they don't leak onto CRR ---
+  if (isCRR && isSHGPath) {
+    return new NextResponse(null, { status: 404 });
   }
 
   // ====================================================================
@@ -122,5 +171,3 @@ export const config = {
   ],
 };
 
-
-// Trigger Vercel deploy on greenreviewshub.com (project-tyk68) - 2026-04-23T04:40:05Z
