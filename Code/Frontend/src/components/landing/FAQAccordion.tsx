@@ -73,11 +73,11 @@ export function FAQAccordion() {
 
         <div className='divide-y divide-gray-200 border-y border-gray-200'>
           {FAQS.map((item, i) => (
-            <details key={i} className='group py-5 [&_svg.chev]:open:rotate-180'>
+            <details key={i} className='group py-5'>
               <summary className='flex items-center justify-between gap-4 cursor-pointer list-none'>
                 <span className='font-bold text-lg text-gray-900'>{item.q}</span>
                 <ChevronDown
-                  className='chev w-5 h-5 text-gray-400 transition-transform shrink-0'
+                  className='w-5 h-5 text-gray-400 transition-transform shrink-0 group-open:rotate-180'
                   aria-hidden='true'
                 />
               </summary>
