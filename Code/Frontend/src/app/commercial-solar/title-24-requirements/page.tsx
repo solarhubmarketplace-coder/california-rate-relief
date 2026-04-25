@@ -4,6 +4,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock, AlertTriangle } from 'lucide-react';
+import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 
 export const metadata: Metadata = {
   title: 'California Title 24 Part 6 Commercial Solar Requirements 2026',
@@ -135,6 +136,7 @@ export default function Title24Requirements() {
         </div>
       </main>
       <Footer />
+    <div className="container mx-auto px-4 max-w-3xl"><VerifyCommercialSolarBox topic="title24" /></div>
     </PublicLayout>
   );
 }

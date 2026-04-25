@@ -4,6 +4,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 
 export const metadata: Metadata = {
   title: 'Commercial Solar Panels Cost in California 2026: $/Watt by System Size',
@@ -156,6 +157,7 @@ export default function CommercialSolarCost() {
         </div>
       </main>
       <Footer />
+    <div className="container mx-auto px-4 max-w-3xl"><VerifyCommercialSolarBox topic="general" /></div>
     </PublicLayout>
   );
 }

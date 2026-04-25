@@ -6,6 +6,7 @@ import { AHBFooter } from '@/components/ahb/AHBFooter';
 import { ChevronRight, ExternalLink, CheckCircle2, XCircle } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 export const metadata: Metadata = {
   title: 'Best Vibration Plate 2026: Research-Backed Rankings for Home Use',
@@ -300,6 +301,8 @@ export default function BestVibrationPlate() {
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="ahb" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#ec4899', cardBg: '#15102a', cardBorder: '#251a44' }} />
       </div>
+
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="ahb" variant="compact" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#ec4899', cardBg: '#15102a', cardBorder: '#251a44' }} /></div>
 
     </AHBLayout>
   );

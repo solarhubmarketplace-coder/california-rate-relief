@@ -4,6 +4,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowRight, Calendar, Clock, Building2, Factory, Wrench, DollarSign } from 'lucide-react';
+import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 
 export const metadata: Metadata = {
   title: 'Commercial Solar in California 2026: EPCs, Financing, and the Full Guide',
@@ -172,6 +173,7 @@ export default function CommercialSolarHub() {
         </div>
       </main>
       <Footer />
+    <div className="container mx-auto px-4 max-w-3xl"><VerifyCommercialSolarBox topic="general" /></div>
     </PublicLayout>
   );
 }

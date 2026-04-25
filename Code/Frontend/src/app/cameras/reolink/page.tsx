@@ -6,6 +6,7 @@ import { SHGFooter } from '@/components/shg/SHGFooter';
 import { ArrowLeft, ArrowRight, ChevronRight, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 export const metadata: Metadata = {
   title: 'Reolink Review 2026: POE, Wired, and Battery Cameras Honest Take',
@@ -148,6 +149,8 @@ export default function ReolinkBrandHub() {
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="shg" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#f59e0b', cardBg: '#0f1729', cardBorder: '#1f2940' }} />
       </div>
+
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="shg" variant="compact" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#f59e0b', cardBg: '#0f1729', cardBorder: '#1f2940' }} /></div>
 
     </SHGLayout>
   );
