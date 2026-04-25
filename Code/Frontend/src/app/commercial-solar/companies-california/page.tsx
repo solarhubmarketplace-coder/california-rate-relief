@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
+import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
   title: 'Commercial Solar Companies in California 2026: Top EPCs Compared',
@@ -228,6 +229,7 @@ export default function CommercialSolarCompanies() {
       </main>
       <Footer />
     <div className="container mx-auto px-4 max-w-3xl"><VerifyCommercialSolarBox topic="general" /></div>
+    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
     </PublicLayout>
   );
 }

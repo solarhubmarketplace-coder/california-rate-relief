@@ -12,6 +12,7 @@ import {
   getAllCitySlugs,
   type CityData,
 } from '@/data/cities-data';
+import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 // =============================================================================
 // STATIC PARAMS — Pre-renders all city pages at build time
@@ -550,6 +551,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
         </div>
       </main>
       <Footer />
+    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
     </PublicLayout>
   );
 }

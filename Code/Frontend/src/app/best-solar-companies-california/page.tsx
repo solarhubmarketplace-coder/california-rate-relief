@@ -15,6 +15,7 @@ import {
   DollarSign,
 } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
   title:
@@ -589,6 +590,7 @@ export default function BestSolarCompaniesCalifornia() {
       </main>
       <Footer />
     <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
+    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
     </PublicLayout>
   );
 }

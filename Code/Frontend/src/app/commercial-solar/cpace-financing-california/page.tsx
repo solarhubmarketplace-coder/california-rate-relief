@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
+import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
   title: 'CPACE Financing California: How Commercial PACE Works for Solar',
@@ -152,6 +153,7 @@ export default function CpaceFinancing() {
       </main>
       <Footer />
     <div className="container mx-auto px-4 max-w-3xl"><VerifyCommercialSolarBox topic="cpace" /></div>
+    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
     </PublicLayout>
   );
 }
