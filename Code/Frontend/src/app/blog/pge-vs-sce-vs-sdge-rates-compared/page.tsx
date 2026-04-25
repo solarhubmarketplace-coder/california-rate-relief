@@ -58,7 +58,7 @@ const articleSchema = {
 export default function UtilityRatesCompared() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay the Most in 2026?"} url="https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared" datePublished="2026-04-14" dateModified="2026-04-24" description={"A side-by-side comparison of PG&E, SCE, and SDG&E rates in 2026, what\"} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay the Most in 2026?"} url="https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared" datePublished="2026-04-14" dateModified="2026-04-24" description={"A side-by-side comparison of PG&E, SCE, and SDG&E rates in 2026, what's driving the differences, what each utility offers to lower your bill, and how solar savings compare across all three."} />
       <Header />
       <script
         type='application/ld+json'
