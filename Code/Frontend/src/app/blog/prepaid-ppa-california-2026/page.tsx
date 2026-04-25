@@ -58,7 +58,7 @@ const articleSchema = {
 export default function PrepaidPPAGuide() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Prepaid Solar PPA in California: How It Works, What It Costs, and Who It\"} url="https://ratereliefca.com/blog/prepaid-ppa-california-2026" datePublished="2026-04-14" dateModified="2026-04-24" description={"Prepaid PPAs are surging in California after the residential tax credit expired. Learn exactly how they work, what they cost, how they compare to regular PPAs and loans, and when they make sense."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Prepaid Solar PPA in California: How It Works, What It Costs, and Who It's Best For (2026)"} url="https://ratereliefca.com/blog/prepaid-ppa-california-2026" datePublished="2026-04-14" dateModified="2026-04-24" description={"Prepaid PPAs are surging in California after the residential tax credit expired. Learn exactly how they work, what they cost, how they compare to regular PPAs and loans, and when they make sense."} />
       <Header />
       <script
         type='application/ld+json'
