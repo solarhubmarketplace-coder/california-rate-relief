@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Solar During a PSPS in California: Will My Panels Work? (And What You Actually Need)',
@@ -17,6 +18,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 export default function SolarDuringPSPSCA() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar During a PSPS in California: Will My Panels Work? (And What You Actually Need)"} url="https://ratereliefca.com/blog/solar-during-psps-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Does solar work during a PG&E PSPS outage? The honest answer, why grid-tied solar shuts off, how batteries change the story, and what you actually need for 24–36 hour blackout survival."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

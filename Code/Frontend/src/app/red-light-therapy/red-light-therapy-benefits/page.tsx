@@ -6,6 +6,7 @@ import { AHBFooter } from '@/components/ahb/AHBFooter';
 import { ChevronRight, ExternalLink, AlertTriangle } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Red Light Therapy Benefits: What 2024–2026 Research Actually Shows',
@@ -35,6 +36,7 @@ const articleSchema = {
 export default function RedLightTherapyBenefits() {
   return (
     <AHBLayout>
+      <ArticleJsonLd variant="MedicalWebPage" domain="ahb" headline={"Red Light Therapy Benefits: What 2024–2026 Research Actually Shows"} url="https://athomebiohacking.com/red-light-therapy/red-light-therapy-benefits" datePublished="2026-04-24" dateModified="2026-04-24" description={"Evidence-based guide to red light therapy benefits: skin, pain, muscle recovery, hair growth, cognition. Every claim cited to 2024–2026 peer-reviewed meta-analyses and RCTs."} />
       <AHBHeader />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16' style={{ backgroundColor: '#0a1a14' }}>

@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Do Solar Panels Work on Cloudy Days? California Guide',
@@ -26,6 +27,7 @@ const articleSchema = {
 export default function DoSolarPanelsWorkOnCloudyDays() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Do Solar Panels Work on Cloudy Days? California Guide"} url="https://ratereliefca.com/blog/do-solar-panels-work-on-cloudy-days-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Yes, solar panels work on cloudy days in California — just at reduced output. Typical cloudy-day production is 10-25% of peak sunny performance. Here is how much and what it means for California homes."} />
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>

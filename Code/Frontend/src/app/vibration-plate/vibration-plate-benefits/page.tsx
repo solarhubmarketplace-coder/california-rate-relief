@@ -6,6 +6,7 @@ import { AHBFooter } from '@/components/ahb/AHBFooter';
 import { ChevronRight, ExternalLink, AlertTriangle } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Vibration Plate Benefits: What 2024–2026 Research Actually Shows',
@@ -35,6 +36,7 @@ const articleSchema = {
 export default function VibrationPlateBenefits() {
   return (
     <AHBLayout>
+      <ArticleJsonLd variant="MedicalWebPage" domain="ahb" headline={"Vibration Plate Benefits: What 2024–2026 Research Actually Shows"} url="https://athomebiohacking.com/vibration-plate/vibration-plate-benefits" datePublished="2026-04-24" dateModified="2026-04-24" description={"Evidence-based guide to whole-body vibration (WBV) benefits: fibromyalgia, bone density, balance, body composition. Every claim cited to peer-reviewed meta-analyses and RCTs."} />
       <AHBHeader />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16' style={{ backgroundColor: '#0a1a14' }}>

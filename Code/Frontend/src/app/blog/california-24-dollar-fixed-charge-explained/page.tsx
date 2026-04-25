@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
@@ -58,6 +59,7 @@ const articleSchema = {
 export default function FixedChargeExplained() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"The New $24 Fixed Charge on Your California Electric Bill, Explained"} url="https://ratereliefca.com/blog/california-24-dollar-fixed-charge-explained" datePublished="2026-04-14" dateModified="2026-04-24" description={"PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every residential bill. Learn exactly what it is, why it exists, who pays less, and how it affects solar savings."} />
       <Header />
       <script
         type='application/ld+json'

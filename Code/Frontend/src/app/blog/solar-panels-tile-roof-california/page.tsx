@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Solar Panels on a Tile Roof in California: Cost, Process, and the Hidden Premium',
@@ -17,6 +18,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 export default function SolarTileRoofCA() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Panels on a Tile Roof in California: Cost, Process, and the Hidden Premium"} url="https://ratereliefca.com/blog/solar-panels-tile-roof-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Installing solar on a tile roof in California; the tile removal/replacement premium, moisture concerns, underlayment upgrades, and which installers are best."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

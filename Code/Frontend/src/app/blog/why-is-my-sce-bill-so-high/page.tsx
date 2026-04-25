@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Why Is My SCE Bill So High? The Real Reasons (and What to Do About Them)',
@@ -17,6 +18,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 export default function WhyIsMySCEBillSoHigh() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Why Is My SCE Bill So High? The Real Reasons (and What to Do About Them)"} url="https://ratereliefca.com/blog/why-is-my-sce-bill-so-high" datePublished="2026-04-24" dateModified="2026-04-24" description={"Why your Southern California Edison bill jumped; TOU plan mismatches, the 4–9 PM peak window, the $24 fixed charge, hidden loads, and what to do."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

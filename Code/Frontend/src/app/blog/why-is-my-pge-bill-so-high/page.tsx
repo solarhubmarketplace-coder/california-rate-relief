@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Why Is My PG&E Bill So High? The Real Reasons (and What to Do About Them)',
@@ -17,6 +18,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 export default function WhyIsMyPGEBillSoHigh() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Why Is My PG&E Bill So High? The Real Reasons (and What to Do About Them)"} url="https://ratereliefca.com/blog/why-is-my-pge-bill-so-high" datePublished="2026-04-24" dateModified="2026-04-24" description={"The 7 reasons your PG&E bill is unusually high — TOU rate plan mismatch, the $24 Base Services Charge, tier cliffs, leaks, solar-true-up, and more. What to do about each."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

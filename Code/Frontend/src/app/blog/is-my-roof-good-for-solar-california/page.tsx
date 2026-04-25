@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Is My Roof Good for Solar? California Checklist 2026',
@@ -26,6 +27,7 @@ const articleSchema = {
 export default function IsMyRoofGoodForSolar() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Is My Roof Good for Solar? California Checklist 2026"} url="https://ratereliefca.com/blog/is-my-roof-good-for-solar-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"How to tell if your California roof is suitable for solar — orientation, age, shading, roof material, structural strength. Plus what disqualifies a roof and what fixes are worth it."} />
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>

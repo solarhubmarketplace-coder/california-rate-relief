@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Why Is My LADWP Bill So High? (Even Though LADWP Rates Are Below SCE)',
@@ -17,6 +18,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 export default function WhyIsMyLADWPBillSoHigh() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Why Is My LADWP Bill So High? (Even Though LADWP Rates Are Below SCE)"} url="https://ratereliefca.com/blog/why-is-my-ladwp-bill-so-high" datePublished="2026-04-24" dateModified="2026-04-24" description={"LADWP rates are the lowest in LA Metro — so why did your bill jump? Tier pricing, AC usage, LIRA discount eligibility, and what to do."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

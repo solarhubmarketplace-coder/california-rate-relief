@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
@@ -56,6 +57,7 @@ const articleSchema = {
 export default function Nem3Timeline() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"NEM 3.0 California Timeline: Key Dates, Deadlines, and What Happens Next"} url="https://ratereliefca.com/blog/nem-3-california-timeline" datePublished="2026-04-23" dateModified="2026-04-24" description={"A complete timeline of California"} />
       <Header />
       <script
         type='application/ld+json'

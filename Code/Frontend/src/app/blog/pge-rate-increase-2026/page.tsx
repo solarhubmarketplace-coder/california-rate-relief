@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'PG&E Rate Increase 2026: What Residential Customers Actually Pay Now',
@@ -32,6 +33,7 @@ const articleSchema = {
 export default function PGERateIncrease2026() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"PG&E Rate Increase 2026: What Residential Customers Actually Pay Now"} url="https://ratereliefca.com/blog/pge-rate-increase-2026" datePublished="2026-04-24" dateModified="2026-04-24" description={"PG&E"} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'What Is NEM 3.0 in California? Plain-English Explainer',
@@ -26,6 +27,7 @@ const articleSchema = {
 export default function WhatIsNem3() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"What Is NEM 3.0 in California? Plain-English Explainer"} url="https://ratereliefca.com/blog/what-is-nem-3-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"NEM 3.0 (the Net Billing Tariff) replaced California net metering in April 2023. Here is what NEM 3.0 actually is, how it works, and what it means for new California solar customers."} />
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>

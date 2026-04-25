@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { CheckCircle2, AlertTriangle } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Solar Pool Heating in California: Cost, ROI, and How It Compares to Heat Pumps (2026)',
@@ -35,6 +36,7 @@ const articleSchema = {
 export default function SolarPoolHeatingCA() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Pool Heating in California: Cost, ROI, and How It Compares to Heat Pumps (2026)"} url="https://ratereliefca.com/blog/solar-pool-heating-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar pool heating cost in California, how panels work, when they beat heat-pump pool heaters, permits, and realistic swim-season extension. No fluff — real 2026 numbers."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

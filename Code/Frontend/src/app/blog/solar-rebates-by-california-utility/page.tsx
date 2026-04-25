@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Solar Rebates by California Utility (2026): PG&E, SCE, SDG&E, LADWP, SMUD',
@@ -34,6 +35,7 @@ const articleSchema = {
 export default function SolarRebatesByCAUtility() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Rebates by California Utility (2026): PG&E, SCE, SDG&E, LADWP, SMUD"} url="https://ratereliefca.com/blog/solar-rebates-by-california-utility" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar and battery rebates by California utility in 2026 — PG&E, SCE, SDG&E, LADWP, SMUD, Roseville Electric, Glendale Water & Power. SGIP, DAC-SASH, TECH Clean, and municipal-only programs."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

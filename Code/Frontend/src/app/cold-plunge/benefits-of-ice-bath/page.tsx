@@ -6,6 +6,7 @@ import { AHBFooter } from '@/components/ahb/AHBFooter';
 import { ChevronRight, ExternalLink, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Benefits of Ice Bath: 2020–2026 Research on What Cold Water Actually Does',
@@ -82,6 +83,7 @@ const faqSchema = {
 export default function BenefitsOfIceBath() {
   return (
     <AHBLayout>
+      <ArticleJsonLd variant="MedicalWebPage" domain="ahb" headline={"Benefits of Ice Bath: 2020–2026 Research on What Cold Water Actually Does"} url="https://athomebiohacking.com/cold-plunge/benefits-of-ice-bath" datePublished="2026-04-24" dateModified="2026-04-24" description={"Evidence-based guide to ice bath benefits: fat loss, inflammation, recovery, sleep, mood. Every claim cited to peer-reviewed research. Honest takes on what works and what is hype."} />
       <AHBHeader />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

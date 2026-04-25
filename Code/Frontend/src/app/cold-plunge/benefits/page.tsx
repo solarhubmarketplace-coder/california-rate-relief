@@ -6,6 +6,7 @@ import { AHBFooter } from '@/components/ahb/AHBFooter';
 import { ArrowLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Cold Plunge Benefits: What 2020-2026 Research Actually Shows',
@@ -26,6 +27,7 @@ const articleSchema = {
 export default function ColdPlungeBenefits() {
   return (
     <AHBLayout>
+      <ArticleJsonLd variant="MedicalWebPage" domain="ahb" headline={"Cold Plunge Benefits: What 2020-2026 Research Actually Shows"} url="https://athomebiohacking.com/cold-plunge/benefits" datePublished="2026-04-24" dateModified="2026-04-24" description={"Honest review of cold plunge and cold water immersion benefits backed by peer-reviewed research — brown adipose tissue activation, inflammation, metabolic health, stress reduction. Every claim cited."} />
       <AHBHeader />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16' style={{ backgroundColor: '#0a1a14' }}>

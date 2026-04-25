@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Can Solar Panels Power a Whole House in California?',
@@ -26,6 +27,7 @@ const articleSchema = {
 export default function CanSolarPowerWholeHouse() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Can Solar Panels Power a Whole House in California?"} url="https://ratereliefca.com/blog/can-solar-panels-power-a-whole-house-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Yes — a correctly sized solar + battery system can run a typical California home for the full day, evening, and most outages. Here is exactly what it takes."} />
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>

@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Are Solar Panels Worth It in California? 2026 Honest Answer',
@@ -26,6 +27,7 @@ const articleSchema = {
 export default function AreSolarPanelsWorthIt() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Are Solar Panels Worth It in California? 2026 Honest Answer"} url="https://ratereliefca.com/blog/are-solar-panels-worth-it-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"For most California homeowners paying $200+ per month for electricity, solar is still worth it in 2026 — but only with a battery and only if the math fits your specific situation. Here is the honest breakdown."} />
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>

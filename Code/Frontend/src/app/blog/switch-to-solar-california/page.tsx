@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Switch to Solar in California: The 2026 Complete Guide',
@@ -26,6 +27,7 @@ const articleSchema = {
 export default function SwitchToSolar() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Switch to Solar in California: The 2026 Complete Guide"} url="https://ratereliefca.com/blog/switch-to-solar-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Everything California homeowners need to know about switching to solar in 2026 — the NEM 3.0 rules, financing options, what it costs, how long it takes, and the 5-step process."} />
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>

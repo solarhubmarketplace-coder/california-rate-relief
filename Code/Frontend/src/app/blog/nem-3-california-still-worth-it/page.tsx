@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
@@ -57,6 +58,7 @@ const articleSchema = {
 export default function NEM3StillWorthIt() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)"} url="https://ratereliefca.com/blog/nem-3-california-still-worth-it" datePublished="2026-04-14" dateModified="2026-04-24" description={"NEM 3.0 cut solar export credits by 75%. An honest breakdown of the new economics, when solar still works, when it doesn\"} />
       <Header />
       <script
         type='application/ld+json'

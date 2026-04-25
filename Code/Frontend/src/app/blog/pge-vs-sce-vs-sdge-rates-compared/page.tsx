@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
@@ -57,6 +58,7 @@ const articleSchema = {
 export default function UtilityRatesCompared() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay the Most in 2026?"} url="https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared" datePublished="2026-04-14" dateModified="2026-04-24" description={"A side-by-side comparison of PG&E, SCE, and SDG&E rates in 2026, what\"} />
       <Header />
       <script
         type='application/ld+json'

@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
@@ -56,6 +57,7 @@ const articleSchema = {
 export default function NetBillingVsNetMetering() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Net Billing vs Net Metering: The California Solar Difference, Explained"} url="https://ratereliefca.com/blog/net-billing-vs-net-metering-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Net metering and net billing sound similar but pay you very differently. Here is what California"} />
       <Header />
       <script
         type='application/ld+json'

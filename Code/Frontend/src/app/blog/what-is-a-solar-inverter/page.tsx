@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'What Is a Solar Inverter? (Plain-English Guide with Types, Brands, and Lifespans)',
@@ -17,6 +18,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 export default function WhatIsASolarInverter() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"What Is a Solar Inverter? (Plain-English Guide with Types, Brands, and Lifespans)"} url="https://ratereliefca.com/blog/what-is-a-solar-inverter" datePublished="2026-04-24" dateModified="2026-04-24" description={"A plain-English explanation of solar inverters, what they do, the main types (string, micro, hybrid), how long they last, which brands are reliable, and warranty realities."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

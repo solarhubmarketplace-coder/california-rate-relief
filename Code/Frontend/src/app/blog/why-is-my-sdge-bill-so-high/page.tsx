@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Why Is My SDG&E Bill So High? (San Diego Has the Highest Rates in America)',
@@ -17,6 +18,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 export default function WhyIsMySDGEBillSoHigh() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Why Is My SDG&E Bill So High? (San Diego Has the Highest Rates in America)"} url="https://ratereliefca.com/blog/why-is-my-sdge-bill-so-high" datePublished="2026-04-24" dateModified="2026-04-24" description={"Why your San Diego Gas & Electric bill is so high. 45.7¢/kWh rates, the 4–9 PM peak window, the $24 fixed charge, and what to do."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

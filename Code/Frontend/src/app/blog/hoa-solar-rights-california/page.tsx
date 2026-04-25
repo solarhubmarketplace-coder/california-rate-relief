@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
@@ -56,6 +57,7 @@ const articleSchema = {
 export default function HoaSolarRights() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Can an HOA Ban Solar Panels in California? Your Solar Rights, Explained"} url="https://ratereliefca.com/blog/hoa-solar-rights-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"California"} />
       <Header />
       <script
         type='application/ld+json'

@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'AB 942 California: Solar Lease Transfer Rights Explained (2026)',
@@ -17,6 +18,7 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 export default function AB942CASolar() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"AB 942 California: Solar Lease Transfer Rights Explained (2026)"} url="https://ratereliefca.com/blog/ab-942-california-solar" datePublished="2026-04-24" dateModified="2026-04-24" description={"What California AB 942 actually did for solar homeowners; lease/PPA transfer rules, UCC lien relief, disclosure requirements, and practical impact when you sell."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

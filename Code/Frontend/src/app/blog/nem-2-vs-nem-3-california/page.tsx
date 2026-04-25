@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'NEM 2.0 vs NEM 3.0 California: What Changed and What It Means For You',
@@ -37,6 +38,7 @@ const articleSchema = {
 export default function Nem2vsNem3() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"NEM 2.0 vs NEM 3.0 California: What Changed and What It Means For You"} url="https://ratereliefca.com/blog/nem-2-vs-nem-3-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"NEM 2.0 and NEM 3.0 are not the same. California"} />
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>

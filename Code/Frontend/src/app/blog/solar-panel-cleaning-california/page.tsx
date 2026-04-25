@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { CheckCircle2, AlertTriangle } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Solar Panel Cleaning in California: Cost, DIY Risks, and When It Actually Helps (2026)',
@@ -35,6 +36,7 @@ const articleSchema = {
 export default function SolarPanelCleaningCA() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Panel Cleaning in California: Cost, DIY Risks, and When It Actually Helps (2026)"} url="https://ratereliefca.com/blog/solar-panel-cleaning-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"How much solar panel cleaning costs in California, when production loss justifies it, DIY vs pro, warranty traps, and the seasonal windows that matter most in wildfire country."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">

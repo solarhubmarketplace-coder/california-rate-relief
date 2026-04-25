@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Tesla Powerwall Installers in California: 2026 Guide',
@@ -26,6 +27,7 @@ const articleSchema = {
 export default function TeslaPowerwallInstallers() {
   return (
     <PublicLayout>
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Tesla Powerwall Installers in California: 2026 Guide"} url="https://ratereliefca.com/blog/tesla-powerwall-installers-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Find certified Tesla Powerwall installers in California — how Tesla"} />
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
