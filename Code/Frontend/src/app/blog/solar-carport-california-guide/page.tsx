@@ -36,7 +36,7 @@ const articleSchema = {
 export default function SolarCarportCAGuide() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Carports in California: Cost, Permits, and Whether It\"} url="https://ratereliefca.com/blog/solar-carport-california-guide" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar carport cost in California, permit requirements, installer options, and whether a freestanding solar carport beats a roof install. EV-pairing, code compliance, SGIP battery stacking."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Carports in California: Cost, Permits, and Whether It's Worth It (2026)"} url="https://ratereliefca.com/blog/solar-carport-california-guide" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar carport cost in California, permit requirements, installer options, and whether a freestanding solar carport beats a roof install. EV-pairing, code compliance, SGIP battery stacking."} />
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
