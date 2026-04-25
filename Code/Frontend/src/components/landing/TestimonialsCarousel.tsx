@@ -39,13 +39,13 @@ export function TestimonialsCarousel() {
     <section className='py-16 md:py-24 bg-white'>
       <div className='container mx-auto px-4'>
         <div className='text-center max-w-3xl mx-auto mb-12'>
-          <div className='inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide uppercase'>
+          <div className='inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide uppercase'>
             Homeowners on the program
           </div>
-          <h2 className='text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-3'>
+          <h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-3'>
             Real California families. Real savings.
           </h2>
-          <p className='text-lg text-gray-600'>
+          <p className='text-lg text-slate-600'>
             Verified Rate Relief Program participants share what changed after switching.
           </p>
         </div>
@@ -54,15 +54,15 @@ export function TestimonialsCarousel() {
           {visible.map((t, i) => (
             <div
               key={`${t.name}-${i}-${idx}`}
-              className='bg-white rounded-2xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all'
+              className='bg-white rounded-2xl p-6 border border-slate-200 shadow-md hover:shadow-lg transition-all'
             >
-              <div className='flex text-yellow-400 mb-3' aria-label='5 out of 5 stars'>
+              <div className='flex text-amber-400 mb-3' aria-label='5 out of 5 stars'>
                 {[...Array(5)].map((_, k) => (
                   <Star key={k} className='w-4 h-4 fill-current' />
                 ))}
               </div>
-              <p className='text-gray-700 leading-relaxed mb-5'>&ldquo;{t.quote}&rdquo;</p>
-              <div className='flex items-center gap-3 pt-4 border-t border-gray-100'>
+              <p className='text-slate-700 leading-relaxed mb-5'>&ldquo;{t.quote}&rdquo;</p>
+              <div className='flex items-center gap-3 pt-4 border-t border-slate-100'>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={t.img}
@@ -71,12 +71,12 @@ export function TestimonialsCarousel() {
                   loading='lazy'
                 />
                 <div>
-                  <div className='font-bold text-gray-900 text-sm'>{t.name}</div>
-                  <div className='text-xs text-gray-500'>
+                  <div className='font-bold text-slate-900 text-sm'>{t.name}</div>
+                  <div className='text-xs text-slate-500'>
                     {t.city} · {t.utility}
                   </div>
                 </div>
-                <div className='ml-auto bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full'>
+                <div className='ml-auto bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full'>
                   &minus;{t.savings}
                 </div>
               </div>
@@ -88,7 +88,7 @@ export function TestimonialsCarousel() {
           <button
             onClick={() => setIdx((i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
             aria-label='Previous testimonials'
-            className='w-11 h-11 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center hover:border-green-700 hover:text-green-700'
+            className='w-11 h-11 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center hover:border-emerald-700 hover:text-emerald-700'
           >
             <ChevronLeft className='w-5 h-5' />
           </button>
@@ -99,7 +99,7 @@ export function TestimonialsCarousel() {
                 onClick={() => setIdx(i)}
                 aria-label={`Go to testimonial ${i + 1}`}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  i === idx ? 'bg-green-700' : 'bg-gray-300'
+                  i === idx ? 'bg-emerald-700' : 'bg-slate-300'
                 }`}
               />
             ))}
@@ -107,7 +107,7 @@ export function TestimonialsCarousel() {
           <button
             onClick={() => setIdx((i) => (i + 1) % TESTIMONIALS.length)}
             aria-label='Next testimonials'
-            className='w-11 h-11 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center hover:border-green-700 hover:text-green-700'
+            className='w-11 h-11 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center hover:border-emerald-700 hover:text-emerald-700'
           >
             <ChevronRight className='w-5 h-5' />
           </button>
