@@ -288,7 +288,7 @@ export default function BestElectricWeedEater() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      EGO ST1623T — Best Overall
+                      EGO ST1623T, Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The POWERLOAD auto-feed system eliminates the most frustrating part of string
@@ -301,7 +301,7 @@ export default function BestElectricWeedEater() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Milwaukee M18 FUEL — Best for Professionals
+                      Milwaukee M18 FUEL. Best for Professionals
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Built for daily commercial use with the legendary M18 battery platform (250+
@@ -314,7 +314,7 @@ export default function BestElectricWeedEater() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      DeWalt 60V MAX — Most Powerful
+                      DeWalt 60V MAX, Most Powerful
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The widest cutting swath (17 inches) and the highest voltage in our lineup.
@@ -468,7 +468,7 @@ export default function BestElectricWeedEater() {
                     <li>$249 with battery is a premium price</li>
                     <li>POWERLOAD head is proprietary (no aftermarket heads)</li>
                     <li>Not attachment-capable (dedicated trimmer only)</li>
-                    <li>Battery not included in some SKUs — check carefully</li>
+                    <li>Battery not included in some SKUs, check carefully</li>
                   </ul>
                 </div>
               </div>
@@ -485,7 +485,7 @@ export default function BestElectricWeedEater() {
                 productKey="ego-select-cut-mower"
                 source="best-electric-weed-eater"
                 variant="primary"
-                label="Check Price — EGO ST1623T"
+                label="Check Price, EGO ST1623T"
                 showPrice
               />
             </section>
@@ -679,7 +679,7 @@ export default function BestElectricWeedEater() {
                 productKey="dewalt-lawn-mower"
                 source="best-electric-weed-eater"
                 variant="primary"
-                label="Check Price — DeWalt 60V MAX"
+                label="Check Price, DeWalt 60V MAX"
                 showPrice
               />
             </section>
@@ -778,7 +778,7 @@ export default function BestElectricWeedEater() {
                 productKey="greenworks-80v-lawn-mower"
                 source="best-electric-weed-eater"
                 variant="primary"
-                label="Check Price — Greenworks 80V Pro"
+                label="Check Price, Greenworks 80V Pro"
                 showPrice
               />
             </section>

@@ -112,7 +112,7 @@ const faqSchema = {
       name: 'Do air purifiers help with wildfire smoke?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. True HEPA air purifiers are highly effective against wildfire smoke particulates (PM2.5). During California wildfire season, running a HEPA purifier indoors can reduce PM2.5 levels by 60-80%. Look for units with high smoke CADR ratings — the Honeywell HPA300 (300 CFM smoke CADR) and Blueair Blue Pure 211+ (350 CFM smoke CADR) are particularly strong for smoke filtration. Keep windows and doors closed for best results.',
+        text: 'Yes. True HEPA air purifiers are highly effective against wildfire smoke particulates (PM2.5). During California wildfire season, running a HEPA purifier indoors can reduce PM2.5 levels by 60-80%. Look for units with high smoke CADR ratings, the Honeywell HPA300 (300 CFM smoke CADR) and Blueair Blue Pure 211+ (350 CFM smoke CADR) are particularly strong for smoke filtration. Keep windows and doors closed for best results.',
       },
     },
     {
@@ -301,7 +301,7 @@ export default function BestAirPurifier() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Coway Airmega AP-1512HH — Best Overall
+                      Coway Airmega AP-1512HH, Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The gold standard of HEPA air purifiers. 246 CFM dust CADR, whisper-quiet
@@ -508,7 +508,7 @@ export default function BestAirPurifier() {
                 productKey="coway-ap-1512hh"
                 source="air-purifier-hub"
                 variant="primary"
-                label="Check Price — Coway AP-1512HH"
+                label="Check Price, Coway AP-1512HH"
                 showPrice
               />
             </section>
@@ -559,7 +559,7 @@ export default function BestAirPurifier() {
                   particulate concentrations indoors.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
-                  The design philosophy is deliberately simple — one button controls three speed
+                  The design philosophy is deliberately simple, one button controls three speed
                   settings. No app, no WiFi, no complicated menus. The washable pre-filter comes
                   in multiple colors, letting you customize the look. The main filter lasts about
                   6 months and costs around $40 to replace.
@@ -605,7 +605,7 @@ export default function BestAirPurifier() {
                 productKey="blueair-blue-pure-211"
                 source="air-purifier-hub"
                 variant="primary"
-                label="Check Price — Blueair Blue Pure 211+"
+                label="Check Price, Blueair Blue Pure 211+"
                 showPrice
               />
             </section>
@@ -658,7 +658,7 @@ export default function BestAirPurifier() {
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   Energy efficiency is a standout feature. The Core 400S draws just 38W at
                   maximum speed and only 5W on sleep mode. That translates to roughly $30 per
-                  year running 24/7 on medium — one of the lowest energy costs in its coverage
+                  year running 24/7 on medium, one of the lowest energy costs in its coverage
                   class. The sleep mode at 24 dB is bedroom-friendly.
                 </p>
               </div>
@@ -671,7 +671,7 @@ export default function BestAirPurifier() {
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
                     <li>Full WiFi with Alexa and Google Home</li>
                     <li>Real-time PM2.5 laser sensor</li>
-                    <li>Only 38W max — extremely efficient</li>
+                    <li>Only 38W max, extremely efficient</li>
                     <li>H13 True HEPA (medical grade)</li>
                     <li>24 dB sleep mode for bedrooms</li>
                     <li>App scheduling and remote control</li>
@@ -756,7 +756,7 @@ export default function BestAirPurifier() {
                   PlasmaWave is what differentiates the Winix from other budget options. It
                   creates hydroxyls that neutralize bacteria, viruses, and chemical vapors
                   without relying solely on the physical filter. Independent testing confirms
-                  it produces negligible ozone — well below California&apos;s strict CARB
+                  it produces negligible ozone, well below California&apos;s strict CARB
                   certification limits.
                 </p>
               </div>
@@ -842,7 +842,7 @@ export default function BestAirPurifier() {
                   unit on this list at just 6-40W, and the sealed HEPA H13 + activated carbon
                   filtration system meets Dyson&apos;s claim of capturing 99.97% of particles
                   as small as 0.3 microns. The &quot;fully sealed&quot; design means air passes
-                  through the filters — not around them.
+                  through the filters, not around them.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   The Dyson Link app provides detailed air quality data including PM2.5, PM10,
@@ -868,7 +868,7 @@ export default function BestAirPurifier() {
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
                     <li>2-in-1 purifier + bladeless cooling fan</li>
-                    <li>Only 6-40W — lowest energy draw on this list</li>
+                    <li>Only 6-40W; lowest energy draw on this list</li>
                     <li>Sealed H13 HEPA (no air bypass)</li>
                     <li>Detailed multi-pollutant monitoring (PM2.5, VOCs, NO2)</li>
                     <li>WiFi + Alexa + Siri + LCD display</li>
@@ -941,7 +941,7 @@ export default function BestAirPurifier() {
                   With a 300 CFM CADR for both dust and smoke across a 465 sq ft coverage area,
                   it delivers the second-highest raw airflow on this list behind the Blueair.
                   The turbo mode provides maximum air changes per hour when you need rapid
-                  allergen removal — ideal during high pollen counts or when someone tracks
+                  allergen removal, ideal during high pollen counts or when someone tracks
                   allergens indoors.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -967,7 +967,7 @@ export default function BestAirPurifier() {
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
                     <li>300 CFM CADR for dust and smoke at $200</li>
-                    <li>465 sq ft coverage — second largest on list</li>
+                    <li>465 sq ft coverage. Second largest on list</li>
                     <li>AHAM-verified performance ratings</li>
                     <li>Turbo mode for rapid allergen removal</li>
                     <li>Triple HEPA filter stack for extended capacity</li>
@@ -982,7 +982,7 @@ export default function BestAirPurifier() {
                     <li>Loudest unit on this list (63 dB turbo)</li>
                     <li>Highest energy use at 104W max</li>
                     <li>No smart features or WiFi</li>
-                    <li>No auto mode — manual speed selection only</li>
+                    <li>No auto mode, manual speed selection only</li>
                   </ul>
                 </div>
               </div>
@@ -991,7 +991,7 @@ export default function BestAirPurifier() {
                 <p className="text-sm mb-1" style={{ color: '#a1a1aa' }}>Best for</p>
                 <p className="font-medium" style={{ color: '#f5f5f5' }}>
                   Severe allergy sufferers who prioritize maximum CADR at a reasonable price.
-                  Great for daytime use in living rooms — too loud for bedrooms on high speed.
+                  Great for daytime use in living rooms, too loud for bedrooms on high speed.
                 </p>
               </div>
 
@@ -1057,7 +1057,7 @@ export default function BestAirPurifier() {
               <p className="mb-6 leading-relaxed" style={{ color: '#a1a1aa' }}>
                 The most common mistake is buying an air purifier that&apos;s too small for your
                 room. Use this table to match your room size to the minimum CADR you need. When
-                in doubt, size up — an oversized purifier can run on a lower, quieter speed and
+                in doubt, size up, an oversized purifier can run on a lower, quieter speed and
                 still clean the air effectively.
               </p>
               <div className="overflow-x-auto -mx-4 px-4">
@@ -1192,8 +1192,8 @@ export default function BestAirPurifier() {
                   { name: 'Coway AP-1512HH', low: '24.4 dB', high: '53.8 dB', context: 'Near-silent on low, light hum on high' },
                   { name: 'Winix 5500-2', low: '27.8 dB', high: '54.2 dB', context: 'Very quiet on low, moderate on high' },
                   { name: 'Blueair 211+', low: '31 dB', high: '56 dB', context: 'Gentle whoosh on low, noticeable on high' },
-                  { name: 'Dyson TP07', low: '40 dB', high: '62 dB', context: 'Fan noise — acceptable for day, loud on max' },
-                  { name: 'Honeywell HPA300', low: '39 dB', high: '63 dB', context: 'Loudest — dishwasher-level on turbo' },
+                  { name: 'Dyson TP07', low: '40 dB', high: '62 dB', context: 'Fan noise, acceptable for day, loud on max' },
+                  { name: 'Honeywell HPA300', low: '39 dB', high: '63 dB', context: 'Loudest. dishwasher-level on turbo' },
                 ].map((item) => (
                   <div key={item.name} className="flex items-center gap-4 rounded-lg p-4 border" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                     <div className="min-w-[160px]">
@@ -1210,7 +1210,7 @@ export default function BestAirPurifier() {
               </div>
               <p className="mt-4 text-sm" style={{ color: '#a1a1aa' }}>
                 For bedroom use, the Levoit Core 400S and Coway AP-1512HH are the best choices.
-                Both run below 25 dB on sleep mode — quieter than the ambient noise in most rooms.
+                Both run below 25 dB on sleep mode, quieter than the ambient noise in most rooms.
               </p>
             </section>
 

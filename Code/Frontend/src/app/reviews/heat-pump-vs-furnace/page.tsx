@@ -88,7 +88,7 @@ const faqSchema = {
       name: 'Do heat pumps work in cold climates?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Modern cold-climate heat pumps work effectively down to -15 to -22 degrees Fahrenheit. Models like the Mitsubishi Hyper-Heat and Bosch IDS 2.0 maintain rated capacity well below freezing. However, efficiency does decline as temperatures drop — a heat pump that delivers a COP of 4.0 at 47 degrees Fahrenheit might deliver a COP of 2.0 at 5 degrees Fahrenheit. In USDA climate zones 6-7, a dual-fuel hybrid system (heat pump plus gas furnace backup) is often the most cost-effective approach.',
+        text: 'Modern cold-climate heat pumps work effectively down to -15 to -22 degrees Fahrenheit. Models like the Mitsubishi Hyper-Heat and Bosch IDS 2.0 maintain rated capacity well below freezing. However, efficiency does decline as temperatures drop, a heat pump that delivers a COP of 4.0 at 47 degrees Fahrenheit might deliver a COP of 2.0 at 5 degrees Fahrenheit. In USDA climate zones 6-7, a dual-fuel hybrid system (heat pump plus gas furnace backup) is often the most cost-effective approach.',
       },
     },
     {
@@ -315,7 +315,7 @@ export default function HeatPumpVsFurnacePage() {
                       'Compresses refrigerant to amplify that heat',
                       'Distributes warm air through ducts or mini-split heads',
                       'Reverses the cycle in summer for air conditioning',
-                      'Powered by electricity — no combustion, no gas line needed',
+                      'Powered by electricity, no combustion, no gas line needed',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
                         <Check className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />
@@ -359,8 +359,7 @@ export default function HeatPumpVsFurnacePage() {
                 <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
                   <strong style={{ color: '#f5f5f5' }}>The key insight:</strong> Because a heat pump
                   moves heat rather than creating it, it can deliver 2-4 times more heating energy
-                  than the electrical energy it consumes. A furnace can never exceed 100% efficiency —
-                  the best models convert about 98% of gas energy into usable heat. A heat pump
+                  than the electrical energy it consumes. A furnace can never exceed 100% efficiency, the best models convert about 98% of gas energy into usable heat. A heat pump
                   routinely delivers 200-400% effective efficiency.
                 </p>
               </div>
@@ -381,12 +380,12 @@ export default function HeatPumpVsFurnacePage() {
               <div className="space-y-4 mb-6">
                 <div className="rounded-xl p-5 border" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                   <h3 className="font-bold mb-2" style={{ color: '#f5f5f5' }}>
-                    COP (Coefficient of Performance) — Heat Pumps
+                    COP (Coefficient of Performance); Heat Pumps
                   </h3>
                   <p className="text-sm leading-relaxed mb-3" style={{ color: '#d4d4d8' }}>
                     COP measures how many units of heat a heat pump delivers per unit of electricity
                     consumed. A COP of 3.0 means for every 1 kWh of electricity used, you get 3 kWh
-                    of heating output — that is 300% effective efficiency.
+                    of heating output; that is 300% effective efficiency.
                   </p>
                   <div className="grid grid-cols-3 gap-3">
                     {[
@@ -405,24 +404,24 @@ export default function HeatPumpVsFurnacePage() {
 
                 <div className="rounded-xl p-5 border" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                   <h3 className="font-bold mb-2" style={{ color: '#f5f5f5' }}>
-                    HSPF2 (Heating Seasonal Performance Factor) — Heat Pumps
+                    HSPF2 (Heating Seasonal Performance Factor), Heat Pumps
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: '#d4d4d8' }}>
                     HSPF2 measures seasonal heating efficiency over an entire winter. It accounts for
                     varying outdoor temperatures and defrost cycles. Higher is better. The federal
                     minimum for heat pumps is 7.5 HSPF2. High-efficiency models reach 12-13 HSPF2.
-                    To convert HSPF2 to an approximate COP, divide by 3.412 — so an HSPF2 of 10
+                    To convert HSPF2 to an approximate COP, divide by 3.412. so an HSPF2 of 10
                     is roughly a COP of 2.93 across the season.
                   </p>
                 </div>
 
                 <div className="rounded-xl p-5 border" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                   <h3 className="font-bold mb-2" style={{ color: '#f5f5f5' }}>
-                    AFUE (Annual Fuel Utilization Efficiency) — Furnaces
+                    AFUE (Annual Fuel Utilization Efficiency); Furnaces
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: '#d4d4d8' }}>
                     AFUE measures what percentage of gas energy is converted to usable heat. An AFUE
-                    of 96% means 96 cents of every dollar spent on gas becomes heat — the other 4
+                    of 96% means 96 cents of every dollar spent on gas becomes heat; the other 4
                     cents goes up the flue. The federal minimum is 80% AFUE. Standard efficiency
                     models are 80-89% AFUE. High-efficiency condensing furnaces reach 95-98.5% AFUE.
                     The maximum possible is effectively 100% — a furnace can never exceed 100% AFUE.
@@ -450,7 +449,7 @@ export default function HeatPumpVsFurnacePage() {
                         { metric: 'Effective efficiency', hp: '200 - 400%', furnace: '80 - 98.5%' },
                         { metric: 'Best conditions', hp: 'COP 4.0+ at 47\u00B0F', furnace: '98.5% AFUE (all temps)' },
                         { metric: 'Worst conditions', hp: 'COP 1.5 at -5\u00B0F', furnace: '80% AFUE (same)' },
-                        { metric: 'Efficiency varies with temp?', hp: 'Yes — declines in cold', furnace: 'No — consistent' },
+                        { metric: 'Efficiency varies with temp?', hp: 'Yes, declines in cold', furnace: 'No. Consistent' },
                         { metric: 'Provides cooling?', hp: 'Yes (SEER2 15-22+)', furnace: 'No' },
                         { metric: 'Energy source', hp: 'Electricity', furnace: 'Natural gas / propane' },
                       ].map((row) => (
@@ -536,7 +535,7 @@ export default function HeatPumpVsFurnacePage() {
                   <p className="text-sm" style={{ color: '#a1a1aa' }}>
                     <strong style={{ color: '#22c55e' }}>Key insight:</strong> A heat pump replaces
                     BOTH your furnace and AC. When comparing total system cost (heating + cooling),
-                    a heat pump is often cheaper upfront — and significantly cheaper after the $2,000
+                    a heat pump is often cheaper upfront. And significantly cheaper after the $2,000
                     federal tax credit.
                   </p>
                 </div>
@@ -669,7 +668,7 @@ export default function HeatPumpVsFurnacePage() {
               </h2>
               <p className="mb-6 leading-relaxed" style={{ color: '#d4d4d8' }}>
                 Climate is the single biggest factor in this decision. Heat pump efficiency is
-                temperature-dependent — the colder it gets, the harder the system works. Here is
+                temperature-dependent, the colder it gets, the harder the system works. Here is
                 how it plays out across different climates.
               </p>
 
@@ -740,14 +739,14 @@ export default function HeatPumpVsFurnacePage() {
                   </h3>
                   <ul className="space-y-2.5">
                     {[
-                      'Heating AND cooling in one system — replaces both furnace and AC',
-                      '200-400% effective efficiency (COP 2.0-4.0) — dramatically lower operating costs',
+                      'Heating AND cooling in one system. replaces both furnace and AC',
+                      '200-400% effective efficiency (COP 2.0-4.0), dramatically lower operating costs',
                       'Up to $2,000 federal tax credit through 2032 under the Inflation Reduction Act',
-                      'No combustion — no carbon monoxide risk, no gas leaks, no flue needed',
+                      'No combustion; no carbon monoxide risk, no gas leaks, no flue needed',
                       'Works with solar panels for near-zero operating costs',
                       'Better humidity control in cooling mode than most central AC systems',
-                      'Quieter operation — modern inverter compressors are whisper-quiet',
-                      'All-electric — future-proof as grid gets cleaner and gas prices rise',
+                      'Quieter operation, modern inverter compressors are whisper-quiet',
+                      'All-electric. Future-proof as grid gets cleaner and gas prices rise',
                       'Ductless mini-split options available for homes without ductwork',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
@@ -764,14 +763,14 @@ export default function HeatPumpVsFurnacePage() {
                   </h3>
                   <ul className="space-y-2.5">
                     {[
-                      'Efficiency drops in extreme cold — COP falls below 2.0 under 0\u00B0F',
+                      'Efficiency drops in extreme cold. COP falls below 2.0 under 0\u00B0F',
                       'Higher upfront cost than a furnace alone (but cheaper than furnace + AC)',
                       'Supplemental heat may be needed in climate zones 6-7',
                       'Defrost cycles in cold weather temporarily reduce output',
                       'Dependent on electricity — vulnerable to power outages without backup',
                       'Air temperature output is warm (90-110\u00B0F) not hot (130-150\u00B0F like a furnace)',
                       'Shorter lifespan than a furnace (15-20 years vs 15-25 years)',
-                      'Requires outdoor unit — generates some noise, takes up yard space',
+                      'Requires outdoor unit. Generates some noise, takes up yard space',
                       'Higher electricity rates in some areas can reduce cost advantage',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
@@ -797,14 +796,14 @@ export default function HeatPumpVsFurnacePage() {
                   </h3>
                   <ul className="space-y-2.5">
                     {[
-                      'Consistent performance in any temperature — AFUE does not change with weather',
-                      'Higher air output temperature (130-150\u00B0F) — feels warmer faster',
+                      'Consistent performance in any temperature, AFUE does not change with weather',
+                      'Higher air output temperature (130-150\u00B0F). Feels warmer faster',
                       'Lower upfront cost for the furnace unit alone ($2,500-$6,000)',
                       'Longer potential lifespan (15-25 years with proper maintenance)',
                       'Works during power outages (with battery backup for blower fan)',
                       'Natural gas is cheap in many areas — can be very economical where gas is under $0.80/therm',
                       'Well-established technology with abundant repair technicians',
-                      'No outdoor unit — less noise and no yard space needed for heating',
+                      'No outdoor unit, less noise and no yard space needed for heating',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
                         <Check className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />
@@ -820,15 +819,15 @@ export default function HeatPumpVsFurnacePage() {
                   </h3>
                   <ul className="space-y-2.5">
                     {[
-                      'Heating only — you need a separate air conditioner ($3,000-$6,000)',
+                      'Heating only. you need a separate air conditioner ($3,000-$6,000)',
                       'Maximum efficiency capped at 98.5% — can never exceed 100% AFUE',
                       'Combustion risk — carbon monoxide, gas leaks, fire hazard',
                       'Requires gas line, flue venting, and combustion air supply',
                       'Natural gas prices are rising 3-5% per year in most markets',
-                      'No federal heat pump tax credit — only a $600 furnace credit',
+                      'No federal heat pump tax credit. Only a $600 furnace credit',
                       'Produces greenhouse gas emissions at the point of use',
                       'Many states are phasing out gas hookups in new construction',
-                      'Ductwork required — no ductless option available',
+                      'Ductwork required, no ductless option available',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
                         <X className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#ef4444' }} />
@@ -910,8 +909,7 @@ export default function HeatPumpVsFurnacePage() {
                   <p className="text-sm" style={{ color: '#a1a1aa' }}>
                     <strong style={{ color: '#f5f5f5' }}>Who should consider dual-fuel?</strong> Homeowners
                     in climate zones 5-6 who already have a gas line and ductwork. The hybrid approach
-                    gives you heat pump efficiency in mild weather and furnace reliability in extreme cold —
-                    the lowest operating costs for cold climates.
+                    gives you heat pump efficiency in mild weather and furnace reliability in extreme cold, the lowest operating costs for cold climates.
                   </p>
                 </div>
               </div>
@@ -923,8 +921,7 @@ export default function HeatPumpVsFurnacePage() {
                 Recommendations by Climate Zone
               </h2>
               <p className="mb-6 leading-relaxed" style={{ color: '#d4d4d8' }}>
-                Here is our recommendation for each IECC climate zone. These are general guidelines —
-                your local energy prices, existing infrastructure, and personal preferences should
+                Here is our recommendation for each IECC climate zone. These are general guidelines, your local energy prices, existing infrastructure, and personal preferences should
                 also factor into the decision.
               </p>
 
@@ -1033,7 +1030,7 @@ export default function HeatPumpVsFurnacePage() {
                     },
                     {
                       title: 'You want to reduce your carbon footprint',
-                      desc: 'Heat pumps produce zero on-site emissions. Even accounting for grid electricity generation, a heat pump produces 40-70% fewer greenhouse gas emissions than a gas furnace in most U.S. regions.',
+                      desc: 'Heat pumps produce zero on-site emissions. Even accounting for grid electricity generation, a heat pump produces 40-70% fewer greenhouse gas emissions than a gas furnace in most U.S. Regions.',
                     },
                   ].map((item) => (
                     <div key={item.title} className="flex items-start gap-3">
@@ -1125,7 +1122,7 @@ export default function HeatPumpVsFurnacePage() {
                     badge: 'Best DIY Install',
                     badgeColor: '#a855f7',
                     price: '$1,549 - $3,329 (no install cost)',
-                    specs: 'Up to 22 SEER2. Pre-charged QuickConnect line sets — no HVAC certification needed. Heating down to -4\u00B0F.',
+                    specs: 'Up to 22 SEER2. Pre-charged QuickConnect line sets. no HVAC certification needed. Heating down to -4\u00B0F.',
                     best: 'Handy homeowners who want to save $3,000-$5,000 in installation labor.',
                   },
                   {
@@ -1154,7 +1151,7 @@ export default function HeatPumpVsFurnacePage() {
                         productKey={unit.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}
                         source="heat-pump-vs-furnace"
                         variant="compact"
-                        label={`Check Price — ${unit.name}`}
+                        label={`Check Price, ${unit.name}`}
                       />
                     </div>
                   </div>
@@ -1178,7 +1175,7 @@ export default function HeatPumpVsFurnacePage() {
                     badge: 'Best Overall Furnace',
                     badgeColor: '#f97316',
                     price: '$3,500 - $6,000 installed',
-                    specs: '98.5% AFUE — the most efficient gas furnace available. Modulating gas valve and variable-speed ECM blower for precise temperature control and whisper-quiet operation.',
+                    specs: '98.5% AFUE, the most efficient gas furnace available. Modulating gas valve and variable-speed ECM blower for precise temperature control and whisper-quiet operation.',
                     best: 'Homeowners who need a furnace and want the absolute lowest gas bills.',
                   },
                   {
@@ -1187,7 +1184,7 @@ export default function HeatPumpVsFurnacePage() {
                     badgeColor: '#60a5fa',
                     price: '$3,000 - $5,200 installed',
                     specs: '80% AFUE (non-condensing). Variable-speed blower, extremely quiet. No condensate drain needed. Ideal for dual-fuel pairing since the heat pump handles most heating.',
-                    best: 'Dual-fuel systems where the furnace is backup only — lower upfront cost since max AFUE is less critical.',
+                    best: 'Dual-fuel systems where the furnace is backup only. lower upfront cost since max AFUE is less critical.',
                   },
                   {
                     name: 'Goodman GMVM97',
@@ -1215,7 +1212,7 @@ export default function HeatPumpVsFurnacePage() {
                         productKey={unit.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}
                         source="heat-pump-vs-furnace"
                         variant="compact"
-                        label={`Check Price — ${unit.name}`}
+                        label={`Check Price. ${unit.name}`}
                       />
                     </div>
                   </div>
@@ -1232,7 +1229,7 @@ export default function HeatPumpVsFurnacePage() {
                 </h2>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
                   The strongest case for a heat pump is when you pair it with rooftop solar panels.
-                  Solar generates free electricity during peak hours — exactly when your heat pump
+                  Solar generates free electricity during peak hours, exactly when your heat pump
                   runs. In California, this combination can reduce your combined heating, cooling,
                   and electricity costs by 70-90%.
                 </p>
@@ -1265,7 +1262,7 @@ export default function HeatPumpVsFurnacePage() {
                 {[
                   {
                     title: 'Get a Manual J Load Calculation',
-                    desc: 'Proper sizing is critical for both systems. An oversized heat pump short-cycles and wastes energy. An undersized furnace cannot keep up on the coldest days. Insist on a Manual J calculation from your HVAC contractor — not a rule-of-thumb estimate.',
+                    desc: 'Proper sizing is critical for both systems. An oversized heat pump short-cycles and wastes energy. An undersized furnace cannot keep up on the coldest days. Insist on a Manual J calculation from your HVAC contractor, not a rule-of-thumb estimate.',
                     icon: Search,
                   },
                   {
@@ -1275,7 +1272,7 @@ export default function HeatPumpVsFurnacePage() {
                   },
                   {
                     title: 'Compare Local Energy Prices',
-                    desc: 'The heat pump vs furnace math depends on your local electricity rate ($/kWh) and gas rate ($/therm). Get your actual rates from recent utility bills — national averages can be misleading.',
+                    desc: 'The heat pump vs furnace math depends on your local electricity rate ($/kWh) and gas rate ($/therm). Get your actual rates from recent utility bills; national averages can be misleading.',
                     icon: DollarSign,
                   },
                   {
@@ -1325,7 +1322,7 @@ export default function HeatPumpVsFurnacePage() {
                 </p>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
                   In cold climates (zone 6), a <strong style={{ color: '#60a5fa' }}>hybrid dual-fuel
-                  system</strong> gives you the best of both worlds — heat pump efficiency for 70-85%
+                  system</strong> gives you the best of both worlds. Heat pump efficiency for 70-85%
                   of heating hours and furnace reliability for the coldest days.
                 </p>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
@@ -1355,7 +1352,7 @@ export default function HeatPumpVsFurnacePage() {
                 {[
                   {
                     title: 'Best Mini Split AC & Heat Pumps (2026)',
-                    desc: 'DIY ductless heat pump options — install yourself and save thousands.',
+                    desc: 'DIY ductless heat pump options, install yourself and save thousands.',
                     href: '/reviews/best-mini-split-ac',
                   },
                   {
@@ -1396,7 +1393,7 @@ export default function HeatPumpVsFurnacePage() {
                 <strong style={{ color: '#a1a1aa' }}>Affiliate Disclosure:</strong> GreenReviewsHub is
                 reader-supported. When you purchase through links on this page, we may earn an
                 affiliate commission at no additional cost to you. This does not influence our
-                recommendations — all opinions are our own based on independent research and analysis.
+                recommendations, all opinions are our own based on independent research and analysis.
                 Product prices and availability are accurate as of the date published and are subject
                 to change.
               </p>

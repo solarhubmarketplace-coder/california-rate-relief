@@ -238,7 +238,7 @@ export default function RyobiSnowBlowerReview() {
                   style={{ color: '#a1a1aa' }}
                 >
                   A 21-inch brushless snow blower that costs half the price of
-                  the competition — and shares batteries with over 85 Ryobi
+                  the competition, and shares batteries with over 85 Ryobi
                   tools. We break down whether the savings come at the cost of
                   performance.
                 </p>
@@ -254,10 +254,10 @@ export default function RyobiSnowBlowerReview() {
                 </div>
               </header>
 
-              {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+              {/* Affiliate disclosure, FTC compliance, must be above the fold */}
               <AffiliateDisclosure compact />
 
-              {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+              {/* Above-the-fold primary CTA; 40-80% CTR lift vs end-only CTA */}
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge="Best Value Snow Blower"
@@ -289,7 +289,7 @@ export default function RyobiSnowBlowerReview() {
                   The Ryobi 40V HP Brushless 21-inch snow blower is the value
                   king of battery-powered snow removal. It does not match the
                   raw power of the EGO SNT2114 or the Toro 60V, but it costs
-                  $400-$500 less — and for homeowners dealing with standard
+                  $400-$500 less, and for homeowners dealing with standard
                   Midwest and Northeast snowfalls (4-8 inches), it gets the
                   job done without the gas, oil, or pull-cord frustration.
                   The brushless motor is a meaningful upgrade over older
@@ -384,7 +384,7 @@ export default function RyobiSnowBlowerReview() {
                 </h2>
                 <p className='text-foreground/80 leading-relaxed mb-4'>
                   Battery snow blowers have matured rapidly. Five years ago,
-                  they were novelties — underpowered, short on runtime, and
+                  they were novelties, underpowered, short on runtime, and
                   incapable of handling anything beyond a dusting. Today, the
                   top-tier options from EGO, Toro, and Greenworks genuinely
                   compete with gas single-stage models. The problem is price.
@@ -396,7 +396,7 @@ export default function RyobiSnowBlowerReview() {
                   21-inch snow blower delivers roughly 75-80% of the
                   performance of premium battery snow blowers at roughly half
                   the price. The &quot;HP&quot; designation means it uses
-                  Ryobi&apos;s High Performance brushless motor — more
+                  Ryobi&apos;s High Performance brushless motor, more
                   efficient, more durable, and more torque than brushed
                   alternatives. And it plugs into the massive Ryobi 40V
                   ecosystem, which includes over 85 outdoor tools from mowers
@@ -456,7 +456,7 @@ export default function RyobiSnowBlowerReview() {
                       without clogging. Runtime drops to about 25-35
                       minutes, so you may want a second battery on hand for
                       larger properties. This is the sweet spot for
-                      this machine — it does not feel underpowered here.
+                      this machine, it does not feel underpowered here.
                     </p>
                   </div>
 
@@ -471,7 +471,7 @@ export default function RyobiSnowBlowerReview() {
                       down considerably and take half-width passes. Throw
                       distance drops to 10-20 feet with dense, heavy snow.
                       Above 8-10 inches of wet pack, the single 40V battery
-                      starts to labor — the auger slows noticeably and
+                      starts to labor. The auger slows noticeably and
                       clogging becomes more likely. Runtime drops to
                       20-25 minutes under heavy load. If you live somewhere
                       that regularly gets dumped on with 10+ inches of wet
@@ -495,7 +495,7 @@ export default function RyobiSnowBlowerReview() {
                       inches will require breaking up with a shovel first.
                       Premium competitors like the EGO and Toro handle
                       plow walls with more authority, but the Ryobi gets
-                      through them — it just takes more patience and more
+                      through them, it just takes more patience and more
                       passes. This is the most noticeable performance gap
                       compared to the higher-priced machines.
                     </p>
@@ -510,7 +510,7 @@ export default function RyobiSnowBlowerReview() {
                   Battery &amp; Runtime
                 </h2>
                 <p className='text-foreground/80 leading-relaxed mb-4'>
-                  The Ryobi 40V HP system uses a single battery — unlike the
+                  The Ryobi 40V HP system uses a single battery, unlike the
                   EGO Peak Power system which runs two simultaneously. This
                   is the biggest difference between the two and explains most
                   of the power gap. A single 40V 7.5Ah battery delivers
@@ -577,7 +577,7 @@ export default function RyobiSnowBlowerReview() {
                   20 x 40 feet), you should budget for a second battery.
                   Ryobi 40V 7.5Ah batteries run about $179 separately. You
                   can also use any existing 40V battery you own from other
-                  Ryobi tools — even smaller 4Ah or 6Ah batteries work,
+                  Ryobi tools, even smaller 4Ah or 6Ah batteries work,
                   though with proportionally less runtime.
                 </p>
                 <div
@@ -621,7 +621,7 @@ export default function RyobiSnowBlowerReview() {
                   The Ryobi 40V snow blower uses a mix of reinforced plastic
                   housing and steel auger components. The plastic housing keeps
                   weight down to approximately 53 lbs with the battery
-                  installed — about 9 lbs lighter than the EGO SNT2114. That
+                  installed, about 9 lbs lighter than the EGO SNT2114. That
                   weight savings makes a real difference in maneuverability,
                   especially on walkways and when navigating around obstacles.
                 </p>
@@ -698,7 +698,7 @@ export default function RyobiSnowBlowerReview() {
                   Overall build quality is good for the price point. It does
                   not feel as tank-like as the EGO or Toro, but nothing
                   about it feels cheap or flimsy either. The brushless motor
-                  should outlast a brushed motor significantly — fewer
+                  should outlast a brushed motor significantly. fewer
                   wearing parts means longer service life with zero
                   maintenance.
                 </p>
@@ -756,7 +756,7 @@ export default function RyobiSnowBlowerReview() {
                 </h2>
                 <p className='text-foreground/80 leading-relaxed mb-4'>
                   One of the Ryobi 40V snow blower&apos;s strongest selling
-                  points is not the snow blower itself — it is the platform.
+                  points is not the snow blower itself, it is the platform.
                   Ryobi&apos;s 40V outdoor power tool lineup includes over
                   85 tools that all share the same battery system:
                 </p>
@@ -804,11 +804,11 @@ export default function RyobiSnowBlowerReview() {
                     <ul className='space-y-3'>
                       {[
                         'Best price-to-performance ratio in battery snow blowers',
-                        'Brushless motor — more efficient and longer-lasting than brushed',
+                        'Brushless motor, more efficient and longer-lasting than brushed',
                         'Shares batteries with 85+ Ryobi 40V tools (year-round value)',
                         '21-inch clearing width — wider than many competitors in this price range',
                         '53 lbs with battery — lightweight and easy to maneuver',
-                        'Push-button start — works every time, no cold-start drama',
+                        'Push-button start, works every time, no cold-start drama',
                         'Zero emissions, no gas, no oil, no winterizing',
                         'Folding handle for compact storage',
                         'Dual LED headlights for early morning use',
@@ -846,12 +846,12 @@ export default function RyobiSnowBlowerReview() {
                     </h3>
                     <ul className='space-y-3'>
                       {[
-                        'Single battery — no dual-battery power boost like EGO Peak Power',
+                        'Single battery. No dual-battery power boost like EGO Peak Power',
                         'Shorter runtime than premium competitors (40-45 min vs 60 min)',
                         'Less throw distance (40 ft vs 50 ft for EGO)',
                         'Struggles with heavy, wet snow over 8 inches',
                         'Plastic chute may be less durable in extreme cold',
-                        'Not self-propelled — you push it through deep snow',
+                        'Not self-propelled. you push it through deep snow',
                         'Only one battery included in kit (most users will want two)',
                         'Plow wall performance lags behind premium competitors',
                       ].map((con) => (
@@ -1039,7 +1039,7 @@ export default function RyobiSnowBlowerReview() {
                       vs. Toro 60V Power Max e21 ($699-$799)
                     </h3>
                     <p className='text-foreground/80 leading-relaxed'>
-                      The Toro 60V sits in the middle ground — more powerful
+                      The Toro 60V sits in the middle ground, more powerful
                       than the Ryobi but less expensive than the EGO. Its
                       60V platform delivers more voltage to the motor, which
                       translates to slightly better performance in heavy
@@ -1107,7 +1107,7 @@ export default function RyobiSnowBlowerReview() {
                   </div>
                 </div>
                 <p className='text-foreground/80 leading-relaxed'>
-                  Over five years, cost is comparable. But the Ryobi eliminates all ongoing maintenance — no oil changes, no spark plugs, no carburetor cleaning. And if those batteries cross-pollinate with your Ryobi mower, trimmer, or blower, the amortized battery cost drops further. The push-button start alone is worth a premium to anyone who has pulled a gas cord 15 times in 10-degree weather.
+                  Over five years, cost is comparable. But the Ryobi eliminates all ongoing maintenance, no oil changes, no spark plugs, no carburetor cleaning. And if those batteries cross-pollinate with your Ryobi mower, trimmer, or blower, the amortized battery cost drops further. The push-button start alone is worth a premium to anyone who has pulled a gas cord 15 times in 10-degree weather.
                 </p>
               </section>
 
@@ -1146,7 +1146,7 @@ export default function RyobiSnowBlowerReview() {
                     { category: 'Ease of Use', score: 4.7, note: 'Push-button start, lightweight, folding handle' },
                     { category: 'Value for Money', score: 4.8, note: 'Best price-to-performance ratio in the category' },
                     { category: 'Noise', score: 4.3, note: 'Much quieter than gas, slightly louder than EGO' },
-                    { category: 'Platform Ecosystem', score: 4.7, note: '85+ compatible tools — largest 40V ecosystem' },
+                    { category: 'Platform Ecosystem', score: 4.7, note: '85+ compatible tools. Largest 40V ecosystem' },
                   ].map((item) => (
                     <div key={item.category} className='flex items-center gap-4 p-4 rounded-xl' style={{ backgroundColor: '#141414', border: '1px solid #27272a' }}>
                       <div className='flex-1'>
@@ -1194,7 +1194,7 @@ export default function RyobiSnowBlowerReview() {
                   </p>
                   <p className='text-foreground/80 leading-relaxed mb-4'>
                     At $449-$549 with a battery and charger — or as low as
-                    $299-$349 as a bare tool for existing Ryobi owners — it
+                    $299-$349 as a bare tool for existing Ryobi owners, it
                     undercuts the competition by $200-$500. And for the
                     majority of homeowners who clear a standard driveway
                     after a standard snowfall, it does the job without
@@ -1203,7 +1203,7 @@ export default function RyobiSnowBlowerReview() {
                     October.
                   </p>
                   <p className='text-foreground/80 leading-relaxed mb-4'>
-                    The brushless motor upgrade is meaningful — it is more
+                    The brushless motor upgrade is meaningful. It is more
                     efficient and will last longer than brushed predecessors.
                     The 85+ tool ecosystem gives your battery investment
                     year-round utility. And the Home Depot exclusivity

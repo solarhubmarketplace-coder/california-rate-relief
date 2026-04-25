@@ -76,7 +76,7 @@ const faqSchema = {
       name: 'What is the best DIY solar panel kit for beginners?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Renogy 400W Solar Panel Kit is the best option for beginners. It ships with everything you need — panels, charge controller, mounting hardware, wiring, and connectors — plus Renogy provides detailed installation guides and responsive customer support. The 40A Rover MPPT controller is beginner-friendly with an LCD display that shows real-time system data.',
+        text: 'The Renogy 400W Solar Panel Kit is the best option for beginners. It ships with everything you need — panels, charge controller, mounting hardware, wiring, and connectors, plus Renogy provides detailed installation guides and responsive customer support. The 40A Rover MPPT controller is beginner-friendly with an LCD display that shows real-time system data.',
       },
     },
     {
@@ -108,7 +108,7 @@ const faqSchema = {
       name: 'Do DIY solar panel kits come with batteries?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most DIY solar panel kits do not include batteries — they typically come with panels, a charge controller, wiring, and mounting hardware. Batteries are usually purchased separately because sizing depends on your specific energy storage needs. The ECO-WORTHY 1200W kit is a notable exception that offers bundle options including lithium batteries.',
+        text: 'Most DIY solar panel kits do not include batteries, they typically come with panels, a charge controller, wiring, and mounting hardware. Batteries are usually purchased separately because sizing depends on your specific energy storage needs. The ECO-WORTHY 1200W kit is a notable exception that offers bundle options including lithium batteries.',
       },
     },
     {
@@ -116,7 +116,7 @@ const faqSchema = {
       name: 'How long do DIY solar panels last?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Modern monocrystalline solar panels typically last 25-30 years with minimal degradation — most manufacturers guarantee at least 80% output at 25 years. Charge controllers and inverters generally last 10-15 years. Wiring and mounting hardware can last the lifetime of the panels if properly installed and maintained.',
+        text: 'Modern monocrystalline solar panels typically last 25-30 years with minimal degradation, most manufacturers guarantee at least 80% output at 25 years. Charge controllers and inverters generally last 10-15 years. Wiring and mounting hardware can last the lifetime of the panels if properly installed and maintained.',
       },
     },
     {
@@ -273,7 +273,7 @@ export default function BestSolarPanelKit() {
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
-                DIY solar panel kits have gotten dramatically better — and cheaper — over the
+                DIY solar panel kits have gotten dramatically better, and cheaper — over the
                 last two years. Whether you&apos;re outfitting an RV for full-time van life,
                 powering a remote cabin, or offsetting your utility bill with a grid-tie setup,
                 today&apos;s kits ship with everything you need to start generating your own
@@ -523,7 +523,7 @@ export default function BestSolarPanelKit() {
                   than a PWM controller in the same conditions.
                 </p>
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
-                  Installation is straightforward — Renogy provides step-by-step guides and
+                  Installation is straightforward, Renogy provides step-by-step guides and
                   their customer support is among the best in the industry. The kit is designed
                   for 12V battery systems but can be wired in series for 24V. In full
                   California sun (5.5-6 peak hours), expect 1,800-2,200 Wh of daily production.
@@ -566,7 +566,7 @@ export default function BestSolarPanelKit() {
                     productKey="renogy-400w-solar-panel-kit"
                     source="best-solar-panel-kit"
                     variant="primary"
-                    label="Check Price — Renogy 400W Solar Panel Kit"
+                    label="Check Price; Renogy 400W Solar Panel Kit"
                     showPrice
                   />
                 </div>
@@ -595,7 +595,7 @@ export default function BestSolarPanelKit() {
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
                   The panels are slim-profile and lightweight, making them ideal for roof
                   mounting on RVs and vans where aerodynamics and weight limits matter. At
-                  $329, it&apos;s competitively priced for what you get — though upgrading the
+                  $329, it&apos;s competitively priced for what you get. Though upgrading the
                   PWM controller to an MPPT unit is worth considering if you plan to expand.
                 </p>
 
@@ -635,7 +635,7 @@ export default function BestSolarPanelKit() {
                     productKey="bougerv-200w-solar-panel-kit"
                     source="best-solar-panel-kit"
                     variant="primary"
-                    label="Check Price — BougeRV 200W Solar Panel Kit"
+                    label="Check Price, BougeRV 200W Solar Panel Kit"
                     showPrice
                   />
                 </div>
@@ -658,7 +658,7 @@ export default function BestSolarPanelKit() {
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
                   Rich Solar delivers the lowest cost-per-watt in this roundup at roughly
                   $1.35/W all-in. What sets this budget kit apart is that it includes a 20A
-                  MPPT charge controller — not a cheap PWM unit — which means you get
+                  MPPT charge controller — not a cheap PWM unit, which means you get
                   significantly better charging efficiency for the price.
                 </p>
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -705,7 +705,7 @@ export default function BestSolarPanelKit() {
                     productKey="rich-solar-200w-solar-panel-kit"
                     source="best-solar-panel-kit"
                     variant="primary"
-                    label="Check Price — Rich Solar 200W Solar Panel Kit"
+                    label="Check Price. Rich Solar 200W Solar Panel Kit"
                     showPrice
                   />
                 </div>
@@ -728,7 +728,7 @@ export default function BestSolarPanelKit() {
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
                   When a 200W or 400W kit is not going to cut it, the ECO-WORTHY 1200W system
                   is the kit to consider. It packs six 195W monocrystalline panels, a 60A
-                  MPPT charge controller, and a 3,000W pure sine wave inverter — making it
+                  MPPT charge controller, and a 3,000W pure sine wave inverter, making it
                   one of the most complete large-scale DIY kits on the market.
                 </p>
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -775,7 +775,7 @@ export default function BestSolarPanelKit() {
                     productKey="eco-worthy-1200w-solar-panel-kit"
                     source="best-solar-panel-kit"
                     variant="primary"
-                    label="Check Price — ECO-WORTHY 1200W Solar Panel Kit"
+                    label="Check Price; ECO-WORTHY 1200W Solar Panel Kit"
                     showPrice
                   />
                 </div>
@@ -826,7 +826,7 @@ export default function BestSolarPanelKit() {
                   <div>
                     <h4 className="text-sm font-semibold mb-2" style={{ color: '#22c55e' }}>Pros</h4>
                     <ul className="space-y-1 text-sm" style={{ color: '#d4d4d8' }}>
-                      <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />Includes inverter — true all-in-one</li>
+                      <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />Includes inverter, true all-in-one</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />Simple, no-guesswork setup</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />US-based company with phone support</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />LCD controller shows real-time data</li>
@@ -846,7 +846,7 @@ export default function BestSolarPanelKit() {
                     productKey="windynation-400w-complete-solar-kit"
                     source="best-solar-panel-kit"
                     variant="primary"
-                    label="Check Price — WindyNation 400W Complete Solar Kit"
+                    label="Check Price. WindyNation 400W Complete Solar Kit"
                     showPrice
                   />
                 </div>
@@ -870,7 +870,7 @@ export default function BestSolarPanelKit() {
                   Grape Solar is the go-to brand for DIY grid-tie installations. Unlike every
                   other kit in this roundup, the 540W system is designed to connect directly
                   to your home&apos;s electrical panel and feed power back to the utility grid.
-                  It uses micro-inverters instead of a charge controller — one per panel — which
+                  It uses micro-inverters instead of a charge controller — one per panel, which
                   means each panel operates independently and maximizes output even if one
                   panel is partially shaded.
                 </p>
@@ -879,7 +879,7 @@ export default function BestSolarPanelKit() {
                   themselves. This kit is an excellent entry point for homeowners who want to
                   start offsetting their utility bill with solar and may expand the system
                   later. Keep in mind that grid-tie systems require a permit and utility
-                  interconnection approval — this is not a plug-and-play weekend project.
+                  interconnection approval. this is not a plug-and-play weekend project.
                 </p>
 
                 <div className="mb-4 p-4 rounded-lg" style={{ backgroundColor: '#0a0a0a' }}>
@@ -901,7 +901,7 @@ export default function BestSolarPanelKit() {
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />Only grid-tie kit in this roundup</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />25-year micro-inverter warranty</li>
                       <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />Panel-level monitoring included</li>
-                      <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />Easily expandable — add more panels</li>
+                      <li className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} />Easily expandable, add more panels</li>
                     </ul>
                   </div>
                   <div>
@@ -909,7 +909,7 @@ export default function BestSolarPanelKit() {
                     <ul className="space-y-1 text-sm" style={{ color: '#d4d4d8' }}>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} />Requires permit and utility approval</li>
                       <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} />Polycrystalline (less efficient than mono)</li>
-                      <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} />No battery backup — goes down with the grid</li>
+                      <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} />No battery backup, goes down with the grid</li>
                     </ul>
                   </div>
                 </div>
@@ -918,7 +918,7 @@ export default function BestSolarPanelKit() {
                     productKey="grape-solar-540w-grid-tie-kit"
                     source="best-solar-panel-kit"
                     variant="primary"
-                    label="Check Price — Grape Solar 540W Grid-Tie Kit"
+                    label="Check Price, Grape Solar 540W Grid-Tie Kit"
                     showPrice
                   />
                 </div>
@@ -1004,7 +1004,7 @@ export default function BestSolarPanelKit() {
                 <div className="p-5 rounded-xl border" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                   <h3 className="font-bold mb-2" style={{ color: '#f5f5f5' }}>
                     <CheckCircle className="inline h-5 w-5 mr-2" style={{ color: '#22c55e' }} />
-                    3. Fuse Everything — Even If the Kit Doesn&apos;t Include Fuses
+                    3. Fuse Everything. Even If the Kit Doesn&apos;t Include Fuses
                   </h3>
                   <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                     Install a fuse or circuit breaker between your panels and charge controller,

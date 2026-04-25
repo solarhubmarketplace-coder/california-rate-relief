@@ -111,7 +111,7 @@ const faqSchema = {
       name: 'How fast does the Bluetti AC200L charge?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The AC200L charges from 0-80% in approximately 45 minutes using the 2,400W AC input — the fastest charging in its price class. A full 0-100% charge takes about 1.5 hours from a wall outlet. Solar charging with 900W of panels can fully charge the unit in about 2.5-3 hours of peak California sun.',
+        text: 'The AC200L charges from 0-80% in approximately 45 minutes using the 2,400W AC input, the fastest charging in its price class. A full 0-100% charge takes about 1.5 hours from a wall outlet. Solar charging with 900W of panels can fully charge the unit in about 2.5-3 hours of peak California sun.',
       },
     },
     {
@@ -212,7 +212,7 @@ export default function BluettiAC200LReview() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure. FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
             {/* Above-the-fold primary CTA */}
@@ -220,7 +220,7 @@ export default function BluettiAC200LReview() {
               productKey={PRODUCT_KEY}
               badge="Best Budget Pick"
               rating={4.5}
-              verdict="At $799, the Bluetti AC200L delivers 2,048 Wh LFP, 2,400W output, a 30A RV plug, and 0-80% charge in 45 minutes — the best portable power station value under $1,000."
+              verdict="At $799, the Bluetti AC200L delivers 2,048 Wh LFP, 2,400W output, a 30A RV plug, and 0-80% charge in 45 minutes. The best portable power station value under $1,000."
               pros={[
                 'Budget-conscious PSPS backup',
                 'RV and camping (30A TT-30 plug)',
@@ -344,8 +344,7 @@ export default function BluettiAC200LReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The portable power station market has a price problem. The
-                flagships — EcoFlow Delta Pro 3, Anker F3800, Bluetti AC500 —
-                all hover around $2,000-$2,700. That is a lot of money for
+                flagships — EcoFlow Delta Pro 3, Anker F3800, Bluetti AC500, all hover around $2,000-$2,700. That is a lot of money for
                 something most California homeowners will use a few times a
                 year during PSPS events. The Bluetti AC200L changes the math
                 entirely.
@@ -353,7 +352,7 @@ export default function BluettiAC200LReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 At $799, you get nearly identical battery capacity to the
                 Jackery Explorer 2000 Plus (2,048 Wh vs 2,042 Wh) at a
-                significantly lower price. You get faster charging — 45
+                significantly lower price. You get faster charging. 45
                 minutes to 80% versus roughly 2 hours for most competitors.
                 You get a 30A RV plug that the Jackery lacks. And you get
                 expansion capability to 8,192 Wh with B300 batteries if you
@@ -362,7 +361,7 @@ export default function BluettiAC200LReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The AC200L is not Bluetti&apos;s flagship. It does not have the
                 5,000W output of the AC500 or the massive expandability to
-                18,432 Wh. But for the vast majority of use cases — keeping
+                18,432 Wh. But for the vast majority of use cases, keeping
                 your fridge running, your phone charged, and your internet
                 working during an outage — it does everything you need at less
                 than half the price of the premium units.
@@ -384,13 +383,12 @@ export default function BluettiAC200LReview() {
                 Why does this matter? In California, PSPS events are often
                 announced with short notice. If your power station is at 20%
                 when you get the PSPS alert, the AC200L can be at 80% before
-                the shutoff hits — less than an hour of charging to be
+                the shutoff hits. Less than an hour of charging to be
                 prepared. With slower-charging competitors, you might be stuck
                 with a half-charged unit when the lights go out.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The 2,400W AC input also means you can run the AC200L as a UPS
-                — plugged into the wall, fully charged, and ready to switch to
+                The 2,400W AC input also means you can run the AC200L as a UPS, plugged into the wall, fully charged, and ready to switch to
                 battery power in under 20 milliseconds when the grid drops. The
                 fast charging keeps the battery topped off continuously without
                 stressing the cells.
@@ -405,8 +403,7 @@ export default function BluettiAC200LReview() {
                 The AC200L accepts up to 900W of solar input through its
                 built-in MPPT charge controller with a 12-60V input range. With
                 900W of panels in full California sunshine (5-6 peak sun
-                hours), you can realistically harvest 4.5-5.4 kWh per day —
-                more than enough to fully recharge the 2,048 Wh battery with
+                hours), you can realistically harvest 4.5-5.4 kWh per day. more than enough to fully recharge the 2,048 Wh battery with
                 energy to spare.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -420,7 +417,7 @@ export default function BluettiAC200LReview() {
                 The 900W solar input is lower than the flagships (the AC500
                 does 3,000W, the Delta Pro 3 does 2,600W), but it is perfectly
                 adequate for the AC200L&apos;s 2,048 Wh battery. You do not
-                need 3,000W of solar to charge a 2 kWh battery — 900W gets
+                need 3,000W of solar to charge a 2 kWh battery. 900W gets
                 the job done in a morning of California sun.
               </p>
 
@@ -439,7 +436,7 @@ export default function BluettiAC200LReview() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Bluetti&apos;s Power Lifting feature boosts the effective output
-                to 3,600W for resistive loads — things like space heaters,
+                to 3,600W for resistive loads. Things like space heaters,
                 electric kettles, and hair dryers. Power Lifting works by
                 reducing voltage slightly to stay within the inverter&apos;s
                 thermal limits. The appliance still works, just at slightly
@@ -503,15 +500,15 @@ export default function BluettiAC200LReview() {
               <div className='bg-muted/30 border border-border rounded-lg p-4 mb-6'>
                 <ul className='text-foreground/80 space-y-2 list-none pl-0'>
                   <li>
-                    <strong>Base unit:</strong> 2,048 Wh — essentials for 13-20
+                    <strong>Base unit:</strong> 2,048 Wh. Essentials for 13-20
                     hours
                   </li>
                   <li>
-                    <strong>+ 1x B300:</strong> 5,120 Wh — essentials for 2-3
+                    <strong>+ 1x B300:</strong> 5,120 Wh, essentials for 2-3
                     days
                   </li>
                   <li>
-                    <strong>+ 2x B300:</strong> 8,192 Wh — essentials for 4-5
+                    <strong>+ 2x B300:</strong> 8,192 Wh. Essentials for 4-5
                     days
                   </li>
                 </ul>
@@ -519,7 +516,7 @@ export default function BluettiAC200LReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 At 8,192 Wh fully expanded, the AC200L system holds more than
                 half the capacity of a Tesla Powerwall (13.5 kWh) at a fraction
-                of the installed cost. The B300 batteries are not cheap — about
+                of the installed cost. The B300 batteries are not cheap; about
                 $899 each — but they give you a scalable path to multi-day
                 backup without committing to a full home battery installation.
               </p>
@@ -620,7 +617,7 @@ export default function BluettiAC200LReview() {
                 $150/kWh would be about $307 for the AC200L (2,048 Wh).
                 Equity-eligible customers (low-income, medically vulnerable, or
                 in high fire-threat areas) receive approximately $1,100/kWh,
-                which could be around $2,253 — potentially covering the entire
+                which could be around $2,253, potentially covering the entire
                 purchase price nearly three times over. However, SGIP
                 eligibility for portable power stations varies and you should
                 confirm current rules at{' '}
@@ -647,7 +644,7 @@ export default function BluettiAC200LReview() {
                   </h3>
                   <ul className='text-foreground/80 text-sm space-y-2 list-none pl-0'>
                     <li>
-                      Incredible price — $799 for 2,048 Wh LiFePO4
+                      Incredible price, $799 for 2,048 Wh LiFePO4
                     </li>
                     <li>
                       Fastest charging in class (0-80% in 45 minutes)
@@ -712,7 +709,7 @@ export default function BluettiAC200LReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge="Ready to buy?"
-                verdict="In stock at Bluetti.com — check current $799 price and any bundle promos before they end."
+                verdict="In stock at Bluetti.com, check current $799 price and any bundle promos before they end."
                 source="bluetti-ac200l"
                 variant="mid"
               />
@@ -841,7 +838,7 @@ export default function BluettiAC200LReview() {
                 <strong>Competitors win on:</strong> The Jackery 2000 Plus is
                 slightly lighter and has more expansion headroom (~12,000 Wh vs
                 8,192 Wh). The EcoFlow Delta Pro 3 doubles the capacity,
-                output, and solar input — but at 2.5x the price. Choose based
+                output, and solar input, but at 2.5x the price. Choose based
                 on whether you need more power or more value.
               </p>
 
@@ -902,7 +899,7 @@ export default function BluettiAC200LReview() {
                     outage?
                   </h3>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
-                    The 2,048 Wh battery can run essential loads — a
+                    The 2,048 Wh battery can run essential loads, a
                     refrigerator, Wi-Fi router, phone chargers, and LED lights —
                     for roughly 13-20 hours on a single charge. With two B300
                     expansion batteries (8,192 Wh total), you can extend runtime
@@ -917,7 +914,7 @@ export default function BluettiAC200LReview() {
                   </h3>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
                     The AC200L charges from 0-80% in approximately 45 minutes
-                    using the 2,400W AC input — the fastest charging in its
+                    using the 2,400W AC input, the fastest charging in its
                     price class. A full 0-100% charge takes about 1.5 hours from
                     a wall outlet. Solar charging with 900W of panels can fully
                     charge the unit in about 2.5-3 hours of peak California sun.

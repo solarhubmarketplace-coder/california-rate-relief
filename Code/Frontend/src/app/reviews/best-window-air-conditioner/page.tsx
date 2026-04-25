@@ -287,7 +287,7 @@ export default function BestWindowAirConditioner() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      LG LW1222IVSM — Best Overall
+                      LG LW1222IVSM. Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Dual inverter compressor delivers 12,000 BTU at just 44 dB. Energy Star
@@ -313,7 +313,7 @@ export default function BestWindowAirConditioner() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      TCL 8W3E1-A — Best Budget Pick
+                      TCL 8W3E1-A, Best Budget Pick
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Solid 8,000 BTU cooling for just $219 with Wi-Fi and voice assistant
@@ -587,7 +587,7 @@ export default function BestWindowAirConditioner() {
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
                     <li>Dual inverter: quietest 12,000 BTU unit available</li>
-                    <li>15.0 CEER — top efficiency in class</li>
+                    <li>15.0 CEER. Top efficiency in class</li>
                     <li>Works with Alexa, Google, and HomeKit</li>
                     <li>25% less energy vs fixed-speed compressors</li>
                     <li>Cools rooms up to 550 sq ft effectively</li>
@@ -683,7 +683,7 @@ export default function BestWindowAirConditioner() {
                     <Check className="h-4 w-4" /> Pros
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
-                    <li>42 dB — among the quietest in any category</li>
+                    <li>42 dB. Among the quietest in any category</li>
                     <li>Full smart home integration with scheduling</li>
                     <li>Antimicrobial washable filter</li>
                     <li>Inverter compressor for consistent temps</li>
@@ -780,8 +780,8 @@ export default function BestWindowAirConditioner() {
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
                     <li>Window opens/closes with unit installed</li>
-                    <li>42 dB — near-silent operation</li>
-                    <li>15.0 CEER — tied for best efficiency</li>
+                    <li>42 dB. near-silent operation</li>
+                    <li>15.0 CEER. Tied for best efficiency</li>
                     <li>Better seal reduces drafts and bugs</li>
                     <li>Blocks less natural light than traditional units</li>
                     <li>Strong value at $339</li>
@@ -954,7 +954,7 @@ export default function BestWindowAirConditioner() {
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   At 6,000 BTU, this is sized for bedrooms and smaller living spaces up to 250
-                  square feet. The Serenity name isn&apos;t just marketing — Haier designed the
+                  square feet. The Serenity name isn&apos;t just marketing; Haier designed the
                   airflow path to minimize turbulence, which reduces the whooshing sound that
                   even some quiet units produce. The sleep mode drops the fan speed further and
                   gradually raises the set temperature through the night.
@@ -974,9 +974,9 @@ export default function BestWindowAirConditioner() {
                     <Check className="h-4 w-4" /> Pros
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
-                    <li>43 dB — engineered from the ground up for silence</li>
+                    <li>43 dB. Engineered from the ground up for silence</li>
                     <li>Cross-flow fan reduces air turbulence noise</li>
-                    <li>Light at 46 lbs — easy solo installation</li>
+                    <li>Light at 46 lbs. Easy solo installation</li>
                     <li>Excellent sleep mode with gradual temp adjustment</li>
                     <li>Affordable at $299</li>
                   </ul>
@@ -986,11 +986,11 @@ export default function BestWindowAirConditioner() {
                     <X className="h-4 w-4" /> Cons
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
-                    <li>6,000 BTU — not enough for rooms over 250 sq ft</li>
+                    <li>6,000 BTU. not enough for rooms over 250 sq ft</li>
                     <li>No Wi-Fi or smart home integration</li>
                     <li>Not an inverter compressor</li>
                     <li>Basic remote without backlight</li>
-                    <li>Smaller brand — fewer service centers</li>
+                    <li>Smaller brand, fewer service centers</li>
                   </ul>
                 </div>
               </div>
@@ -1007,7 +1007,7 @@ export default function BestWindowAirConditioner() {
                 productKey="haier-serenity-esaq406tz"
                 source="best-window-air-conditioner"
                 variant="primary"
-                label="Check Price — Haier Serenity ESAQ406TZ"
+                label="Check Price, Haier Serenity ESAQ406TZ"
                 showPrice
               />
             </section>
@@ -1060,7 +1060,7 @@ export default function BestWindowAirConditioner() {
                   The tradeoff is noise. At 52 dB, the TCL is noticeably louder than the inverter
                   models on this list. It is fine for daytime use in a living room but may bother
                   light sleepers on the highest fan setting. The build quality is also more
-                  utilitarian — functional but not premium. For the price, those are fair
+                  utilitarian; functional but not premium. For the price, those are fair
                   compromises.
                 </p>
               </div>
@@ -1071,11 +1071,11 @@ export default function BestWindowAirConditioner() {
                     <Check className="h-4 w-4" /> Pros
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
-                    <li>$219 — lowest price for 8,000 BTU with Wi-Fi</li>
+                    <li>$219, lowest price for 8,000 BTU with Wi-Fi</li>
                     <li>Built-in Wi-Fi with Alexa and Google support</li>
                     <li>Energy Star certified (12.1 CEER)</li>
                     <li>Auto-restart after power outage</li>
-                    <li>49 lbs — manageable solo install</li>
+                    <li>49 lbs, manageable solo install</li>
                   </ul>
                 </div>
                 <div className="border rounded-lg p-4" style={{ backgroundColor: '#1f0a0a', borderColor: '#ef444444' }}>
@@ -1083,7 +1083,7 @@ export default function BestWindowAirConditioner() {
                     <X className="h-4 w-4" /> Cons
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
-                    <li>52 dB — loudest on this list</li>
+                    <li>52 dB, loudest on this list</li>
                     <li>No inverter compressor — on/off cycling</li>
                     <li>Basic build quality and aesthetics</li>
                     <li>TCL app less polished than LG or GE</li>
@@ -1104,7 +1104,7 @@ export default function BestWindowAirConditioner() {
                 productKey="tcl-8w3e1-a"
                 source="best-window-air-conditioner"
                 variant="primary"
-                label="Check Price — TCL 8W3E1-A"
+                label="Check Price, TCL 8W3E1-A"
                 showPrice
               />
             </section>

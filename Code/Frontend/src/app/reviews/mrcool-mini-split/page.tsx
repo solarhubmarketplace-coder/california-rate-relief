@@ -149,7 +149,7 @@ const faqSchema = {
       name: 'Can you really install a MrCool DIY mini split yourself?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — the entire DIY 4th Gen line ships with factory pre-charged quick-connect line sets that eliminate the vacuum pump, manifold gauges, and refrigerant charging that normally require HVAC-tech skill. A homeowner with basic electrical knowledge can complete a typical install in 4-8 hours. You do need a 240V/20A dedicated circuit for 24K BTU and larger units (homeowner-DIY legal if you are comfortable with panel work; otherwise hire an electrician for the circuit only). Permits are still typically required in California — the DIY refers to the refrigerant work, not to skipping the permit process.',
+        text: 'Yes. the entire DIY 4th Gen line ships with factory pre-charged quick-connect line sets that eliminate the vacuum pump, manifold gauges, and refrigerant charging that normally require HVAC-tech skill. A homeowner with basic electrical knowledge can complete a typical install in 4-8 hours. You do need a 240V/20A dedicated circuit for 24K BTU and larger units (homeowner-DIY legal if you are comfortable with panel work; otherwise hire an electrician for the circuit only). Permits are still typically required in California, the DIY refers to the refrigerant work, not to skipping the permit process.',
       },
     },
     {
@@ -157,7 +157,7 @@ const faqSchema = {
       name: 'What is the difference between MrCool DIY 4th Gen and Olympus Hyper Heat?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'DIY 4th Gen is homeowner-installable via pre-charged quick-connect line sets and rated for cooling plus heating down to 5°F outdoor ambient. Olympus Hyper Heat requires professional installation but maintains full rated heating capacity down to -22°F, making it the cold-climate pick. For most of California — coastal, Bay Area, Inland Empire, Central Valley — the DIY 4th Gen handles heating needs comfortably. For Sierra Nevada mountain homes, Tahoe, or high-elevation properties, Olympus Hyper Heat is the right call.',
+        text: 'DIY 4th Gen is homeowner-installable via pre-charged quick-connect line sets and rated for cooling plus heating down to 5°F outdoor ambient. Olympus Hyper Heat requires professional installation but maintains full rated heating capacity down to -22°F, making it the cold-climate pick. For most of California, coastal, Bay Area, Inland Empire, Central Valley, the DIY 4th Gen handles heating needs comfortably. For Sierra Nevada mountain homes, Tahoe, or high-elevation properties, Olympus Hyper Heat is the right call.',
       },
     },
     {
@@ -173,7 +173,7 @@ const faqSchema = {
       name: 'How long do MrCool mini splits last?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Properly installed and maintained mini split heat pumps typically run 15-20 years. MrCool warranty terms are 5-year limited parts coverage and 7-year compressor warranty on the DIY and Olympus lines — longer than the 1-2 year parts and 5-year compressor typical of bargain Chinese imports. Annual maintenance (cleaning the indoor head filter, washing the outdoor coil, checking refrigerant pressure during professional service visits) drives longevity.',
+        text: 'Properly installed and maintained mini split heat pumps typically run 15-20 years. MrCool warranty terms are 5-year limited parts coverage and 7-year compressor warranty on the DIY and Olympus lines, longer than the 1-2 year parts and 5-year compressor typical of bargain Chinese imports. Annual maintenance (cleaning the indoor head filter, washing the outdoor coil, checking refrigerant pressure during professional service visits) drives longevity.',
       },
     },
     {
@@ -181,7 +181,7 @@ const faqSchema = {
       name: 'Is MrCool made in the USA?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'MrCool is headquartered in Hickory, Kentucky, and designs its products in the US with final assembly operations in Kentucky. Many components — compressors, electronics — are sourced globally (similar to virtually all HVAC brands). MrCool is the only major mini split brand with a US design and assembly footprint at the residential DIY price point, which matters for warranty service and parts availability compared to direct-import Chinese brands.',
+        text: 'MrCool is headquartered in Hickory, Kentucky, and designs its products in the US with final assembly operations in Kentucky. Many components, compressors, electronics, are sourced globally (similar to virtually all HVAC brands). MrCool is the only major mini split brand with a US design and assembly footprint at the residential DIY price point, which matters for warranty service and parts availability compared to direct-import Chinese brands.',
       },
     },
     {
@@ -256,7 +256,7 @@ export default function MrCoolMiniSplitHub() {
               productKey={PRODUCT_KEY}
               badge='Best DIY Mini Split Brand'
               rating={4.7}
-              verdict='MrCool is the only major mini split brand built around a true homeowner-installable product — factory pre-charged quick-connect line sets that let you complete a full installation without an HVAC tech. The DIY 4th Gen 24K BTU is our top overall pick for most California homes, with Olympus Hyper Heat for cold-climate properties and Advantage 3rd Gen for pro-install jobs on a budget.'
+              verdict='MrCool is the only major mini split brand built around a true homeowner-installable product. factory pre-charged quick-connect line sets that let you complete a full installation without an HVAC tech. The DIY 4th Gen 24K BTU is our top overall pick for most California homes, with Olympus Hyper Heat for cold-climate properties and Advantage 3rd Gen for pro-install jobs on a budget.'
               pros={[
                 'True homeowner-installable without HVAC certification',
                 'Saves $3,000-5,000 vs professional install',
@@ -503,17 +503,17 @@ export default function MrCoolMiniSplitHub() {
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
-                    <strong>DIY 4th Gen 12K BTU</strong> ($1,399 MSRP) — single
+                    <strong>DIY 4th Gen 12K BTU</strong> ($1,399 MSRP); single
                     room, bedroom, home office, or small ADU. Covers 450-550
                     sq ft well-insulated. 115V/20A standard household circuit
-                    in most kits — meaning you may not need a new electrical
+                    in most kits. meaning you may not need a new electrical
                     run.
                   </span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
-                    <strong>DIY 4th Gen 24K BTU</strong> ($1,899 MSRP) — large
+                    <strong>DIY 4th Gen 24K BTU</strong> ($1,899 MSRP), large
                     room, open-concept living area, master bedroom + adjoining
                     bathroom, or a 1,000-1,500 sq ft ADU. 240V/20A dedicated
                     circuit required. The best-selling single SKU in the
@@ -524,7 +524,7 @@ export default function MrCoolMiniSplitHub() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>DIY 36K BTU Multi-Zone</strong> ($2,899 MSRP
-                    condenser only; add $500-700 per indoor head) — one outdoor
+                    condenser only; add $500-700 per indoor head), one outdoor
                     unit feeding 2-5 indoor heads. The right choice if you
                     want to add mini splits to multiple rooms while running a
                     single condenser and a single 240V circuit. Total
@@ -542,8 +542,7 @@ export default function MrCoolMiniSplitHub() {
                 a standard DIY 4th Gen maintains some heating capacity down to
                 5°F outdoor and derates rapidly below that, the Olympus Hyper
                 Heat maintains full rated heating capacity down to -22°F. That
-                matters in a fairly narrow set of California use cases —
-                Sierra Nevada mountain homes, Lake Tahoe, Mammoth, properties
+                matters in a fairly narrow set of California use cases. Sierra Nevada mountain homes, Lake Tahoe, Mammoth, properties
                 above 4,000 ft elevation — but where it matters, it matters
                 significantly. A standard mini split in Truckee during a
                 January cold snap effectively stops heating below 0°F. An
@@ -576,7 +575,7 @@ export default function MrCoolMiniSplitHub() {
                 For a homeowner, the Advantage only makes sense if you are
                 already paying for professional installation and you want to
                 shave $400-500 off the unit cost. The moment you value DIY,
-                the 4th Gen is the right pick — it is only $100-200 more and
+                the 4th Gen is the right pick, it is only $100-200 more and
                 saves thousands in labor. Contractors tend to prefer
                 Advantage because they can sell a standard install package
                 against it without competing against a homeowner-installable
@@ -659,7 +658,7 @@ export default function MrCoolMiniSplitHub() {
                 (Home Electrification and Appliance Rebates) program, which
                 rolled out to California administrators in late 2025. HEEHRA
                 rebates cannot be combined with 25C on the same project, so
-                the math changes — but for qualifying households, the HEEHRA
+                the math changes, but for qualifying households, the HEEHRA
                 path typically results in a near-zero out-of-pocket mini
                 split installation.
               </p>
@@ -697,7 +696,7 @@ export default function MrCoolMiniSplitHub() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>vs Mitsubishi:</strong> Mitsubishi is the
-                    premium-brand benchmark — best-in-class reliability, the
+                    premium-brand benchmark, best-in-class reliability, the
                     quietest indoor heads, the smoothest inverter modulation,
                     and the strongest cold-climate performance. Unit prices
                     run 50-100% higher than MrCool, and the line is
@@ -730,7 +729,7 @@ export default function MrCoolMiniSplitHub() {
                 underestimate. If you are comfortable with your main panel
                 and the panel has capacity, installing the circuit yourself
                 is legal in California for a homeowner on their primary
-                residence — but permits are still required and final
+                residence. But permits are still required and final
                 inspection is a good idea. If you are not comfortable with
                 panel work, hire an electrician for the circuit only
                 (typically $400-700) and keep the rest of the install DIY.
@@ -778,7 +777,7 @@ export default function MrCoolMiniSplitHub() {
                     vacuum pump, manifold gauges, and EPA 608 refrigerant
                     certification otherwise required. Basic DIYers complete
                     a typical install in 4-8 hours. A 240V/20A dedicated
-                    circuit is still needed for 24K+ models — hire an
+                    circuit is still needed for 24K+ models, hire an
                     electrician for the circuit if you&apos;re not comfortable
                     with panel work.
                   </p>
@@ -802,7 +801,7 @@ export default function MrCoolMiniSplitHub() {
                     Are MrCool mini splits California rebate-eligible?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — TECH Clean California up to $3,000, plus federal
+                    Yes, TECH Clean California up to $3,000, plus federal
                     25C credit 30% up to $2,000, plus BayREN/3C-REN/SMUD BEES
                     stacking up to $800-2,500. Income-qualified households
                     may access HEEHRA up to $8,000 instead of 25C.
@@ -856,7 +855,7 @@ export default function MrCoolMiniSplitHub() {
                 conditioned air into a space. After California TECH rebates
                 ($3,000 potential), federal 25C credit ($570 on this unit),
                 and BayREN/utility stacking, the net installed cost can come
-                in under $1,000 — versus $6,000-8,000 for a professional
+                in under $1,000. versus $6,000-8,000 for a professional
                 install of an equivalent system. Step up to Olympus Hyper
                 Heat if you live in the Sierra Nevada or above 4,000 ft
                 elevation. Skip MrCool only if you&apos;re replacing a

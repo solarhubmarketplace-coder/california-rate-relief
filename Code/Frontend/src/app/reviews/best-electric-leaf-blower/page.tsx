@@ -530,7 +530,7 @@ export default function BestElectricLeafBlower() {
                   productKey="milwaukee-m18-fuel-blower"
                   source="electric-leaf-blower-hub"
                   variant="primary"
-                  label="Check Price — Milwaukee M18 FUEL Blower"
+                  label="Check Price. Milwaukee M18 FUEL Blower"
                   showPrice
                   />
               </div>
@@ -647,7 +647,7 @@ export default function BestElectricLeafBlower() {
                   productKey="ryobi-40v-whisper-series"
                   source="electric-leaf-blower-hub"
                   variant="primary"
-                  label="Check Price — Ryobi 40V Whisper Series"
+                  label="Check Price. Ryobi 40V Whisper Series"
                   showPrice
                   />
               </div>
@@ -704,7 +704,7 @@ export default function BestElectricLeafBlower() {
                   productKey="greenworks-80v-blower"
                   source="electric-leaf-blower-hub"
                   variant="primary"
-                  label="Check Price — Greenworks 80V Blower"
+                  label="Check Price, Greenworks 80V Blower"
                   showPrice
                   />
               </div>
@@ -762,7 +762,7 @@ export default function BestElectricLeafBlower() {
                   productKey="ego-lb5804-580-cfm"
                   source="electric-leaf-blower-hub"
                   variant="primary"
-                  label="Check Price — EGO LB5804 580 CFM"
+                  label="Check Price. EGO LB5804 580 CFM"
                   showPrice
                   />
               </div>

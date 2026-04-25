@@ -103,7 +103,7 @@ const faqSchema = {
       name: 'How quiet is the Ryobi Whisper Series leaf blower?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The RY404110 measures roughly 60 decibels at operator ear level, 55 dB at 50 feet. Gas backpack blowers typically run 75-85 dB at the operator and 65-70 dB at 50 feet. The 15-25 dB difference is massive — a decibel is logarithmic, so 65 dB sounds about 4x louder than 60 dB subjectively. Most HOA and municipal noise ordinances cap blowers at 65-70 dB at 50 feet, which makes gas blowers marginal or illegal in many California suburbs. Ryobi Whisper Series is well under those limits.',
+        text: 'The RY404110 measures roughly 60 decibels at operator ear level, 55 dB at 50 feet. Gas backpack blowers typically run 75-85 dB at the operator and 65-70 dB at 50 feet. The 15-25 dB difference is massive. a decibel is logarithmic, so 65 dB sounds about 4x louder than 60 dB subjectively. Most HOA and municipal noise ordinances cap blowers at 65-70 dB at 50 feet, which makes gas blowers marginal or illegal in many California suburbs. Ryobi Whisper Series is well under those limits.',
       },
     },
     {
@@ -132,7 +132,7 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Ryobi vs Echo backpack blower — is the Ryobi worth it?',
+      name: 'Ryobi vs Echo backpack blower, is the Ryobi worth it?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'For residential use, yes. An Echo PB-580T gas backpack runs $499-$549 and delivers 510 CFM/215 MPH. The Ryobi RY404110 at $399 delivers 730 CFM/165 MPH — more air volume, slightly less velocity, zero emissions, and 20+ fewer decibels. For commercial crews running blowers 6+ hours a day, Echo gas still offers continuous runtime. For everyone else, Ryobi is the better buy in 2026.',
@@ -285,7 +285,7 @@ export default function RyobiLeafBlowerReview() {
             {/* Specs Table */}
             <div className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
-                Key Specifications — Ryobi RY404110 (Primary Review)
+                Key Specifications, Ryobi RY404110 (Primary Review)
               </h2>
               <div className='overflow-x-auto'>
                 <table className='w-full text-sm border border-border rounded-lg overflow-hidden'>
@@ -436,8 +436,7 @@ export default function RyobiLeafBlowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Build quality is solid. Ryobi&apos;s standard lime-green and
                 black, over-molded rubber grips, a translucent battery
-                status window, and tool-free tube assembly. No metal frame —
-                the chassis is reinforced polymer, which keeps weight down
+                status window, and tool-free tube assembly. No metal frame, the chassis is reinforced polymer, which keeps weight down
                 but does mean the tool is less abuse-tolerant than an Echo
                 or Stihl gas backpack in a commercial setting.
               </p>
@@ -585,21 +584,20 @@ export default function RyobiLeafBlowerReview() {
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
-                    <strong>Medium/cruise:</strong> ~20 minutes — typical
+                    <strong>Medium/cruise:</strong> ~20 minutes, typical
                     fall leaf session
                   </span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
-                    <strong>Max turbo:</strong> ~10-12 minutes — for wet
+                    <strong>Max turbo:</strong> ~10-12 minutes, for wet
                     leaves or difficult spots
                   </span>
                 </li>
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The variable-speed trigger is the key to practical runtime
-                — most of your blowing can happen on low-to-medium, with
+                The variable-speed trigger is the key to practical runtime, most of your blowing can happen on low-to-medium, with
                 quick turbo bursts only when needed. A 6Ah pack comfortably
                 covers a 1/2-acre yard. For a full acre, buy a second 6Ah
                 pack ($179) and swap mid-session, or upgrade to an 8Ah or
@@ -623,7 +621,7 @@ export default function RyobiLeafBlowerReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                40V HP Jet Fan Blower, 550 CFM — $249
+                40V HP Jet Fan Blower, 550 CFM, $249
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 A handheld at 7.5 lbs (with 4Ah battery). 550 CFM / 140 MPH,
@@ -634,7 +632,7 @@ export default function RyobiLeafBlowerReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                40V 110 MPH Handheld Blower — $199
+                40V 110 MPH Handheld Blower, $199
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Budget handheld. 480 CFM / 110 MPH. Fine for patio and
@@ -648,7 +646,7 @@ export default function RyobiLeafBlowerReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge='Ready to buy?'
-                verdict='The Ryobi RY404110 is stocked at Home Depot — check current pricing and any seasonal blower promotions.'
+                verdict='The Ryobi RY404110 is stocked at Home Depot, check current pricing and any seasonal blower promotions.'
                 source='ryobi-leaf-blower'
                 variant='mid'
               />
@@ -661,7 +659,7 @@ export default function RyobiLeafBlowerReview() {
                 California&apos;s 2024 CARB Small Off-Road Engine rule is
                 particularly impactful for leaf blowers. The rule banned
                 the sale of new gas-powered leaf blowers statewide
-                effective January 1, 2024 — the hard retail cutoff, not a
+                effective January 1, 2024; the hard retail cutoff, not a
                 phase-out. Echo, Stihl, Husqvarna, and Makita gas backpack
                 blowers can no longer be sold new in California. Used gas
                 blowers are still legal to own, sell, and repair, but the
@@ -693,7 +691,7 @@ export default function RyobiLeafBlowerReview() {
                   <Leaf className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>SMAQMD:</strong> Mow Down Air Pollution extends
-                    to blowers — $50-$100 typical.
+                    to blowers, $50-$100 typical.
                   </span>
                 </li>
                 <li className='flex items-start gap-2'>
@@ -823,7 +821,7 @@ export default function RyobiLeafBlowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      Whisper Series 60 dB — 15-22 dB quieter than gas
+                      Whisper Series 60 dB, 15-22 dB quieter than gas
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -839,7 +837,7 @@ export default function RyobiLeafBlowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      California CARB compliant — qualifies for rebates
+                      California CARB compliant, qualifies for rebates
                     </li>
                   </ul>
                 </div>
@@ -858,7 +856,7 @@ export default function RyobiLeafBlowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      Home Depot exclusive — no alternative retailers
+                      Home Depot exclusive; no alternative retailers
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -902,7 +900,7 @@ export default function RyobiLeafBlowerReview() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>Existing Ryobi 40V owners</strong> who already
-                    have batteries — grab the bare tool for $299 and save
+                    have batteries, grab the bare tool for $299 and save
                     $100.
                   </span>
                 </li>
@@ -945,7 +943,7 @@ export default function RyobiLeafBlowerReview() {
 
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>
-                    CFM vs MPH — which matters more?
+                    CFM vs MPH. which matters more?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     CFM is air volume (how much leaf pile you push). MPH
@@ -973,7 +971,7 @@ export default function RyobiLeafBlowerReview() {
                     Is it legal in California?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — in fact, battery blowers are now the default
+                    Yes, in fact, battery blowers are now the default
                     after California&apos;s 2024 CARB ban on new gas
                     blowers. Qualifies for SCAQMD rebates up to $125,
                     BAAQMD exchange programs, and SMAQMD equipment

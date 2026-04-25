@@ -22,7 +22,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Smart Thermostats (2026): Ecobee vs Nest — Full Comparison & Reviews',
+    'Best Smart Thermostats (2026): Ecobee vs Nest, Full Comparison & Reviews',
   description:
     'Compare the best smart thermostats for 2026. Ecobee Premium vs Google Nest Learning (4th Gen) vs Ecobee Enhanced vs Nest Thermostat. HomeKit, Alexa, Google Home compatibility, energy savings, and California TOU optimization guide.',
   alternates: {
@@ -72,10 +72,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Ecobee or Nest — which smart thermostat is better?',
+      name: 'Ecobee or Nest, which smart thermostat is better?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'It depends on your smart home ecosystem. The Ecobee Smart Thermostat Premium is the best overall pick because it works with Apple HomeKit, Amazon Alexa, AND Google Home — it is the only thermostat that supports all three. If you are fully invested in Google Home and want the sleekest design, the Nest Learning Thermostat (4th Gen) is excellent. Both save comparable energy. Ecobee wins on compatibility and included SmartSensors; Nest wins on design and Matter support.',
+        text: 'It depends on your smart home ecosystem. The Ecobee Smart Thermostat Premium is the best overall pick because it works with Apple HomeKit, Amazon Alexa, AND Google Home, it is the only thermostat that supports all three. If you are fully invested in Google Home and want the sleekest design, the Nest Learning Thermostat (4th Gen) is excellent. Both save comparable energy. Ecobee wins on compatibility and included SmartSensors; Nest wins on design and Matter support.',
       },
     },
     {
@@ -83,7 +83,7 @@ const faqSchema = {
       name: 'Do smart thermostats really save money on energy bills?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Ecobee reports up to 26% savings on heating and cooling costs, and the EPA estimates ENERGY STAR certified smart thermostats save about $50 per year on average. In California, where TOU (time-of-use) rates mean electricity can cost 40-70 cents per kWh during peak hours, a smart thermostat that pre-cools your home before peak pricing kicks in can save significantly more — potentially $100-$200+ per year depending on your usage and rate plan.',
+        text: 'Yes. Ecobee reports up to 26% savings on heating and cooling costs, and the EPA estimates ENERGY STAR certified smart thermostats save about $50 per year on average. In California, where TOU (time-of-use) rates mean electricity can cost 40-70 cents per kWh during peak hours, a smart thermostat that pre-cools your home before peak pricing kicks in can save significantly more, potentially $100-$200+ per year depending on your usage and rate plan.',
       },
     },
     {
@@ -91,7 +91,7 @@ const faqSchema = {
       name: 'Does the Nest Learning Thermostat work with Apple HomeKit?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. The Google Nest Learning Thermostat (4th Gen) does NOT support Apple HomeKit. It works with Google Home and supports the Matter protocol, but Apple HomeKit integration is not available. If you need HomeKit support, the Ecobee Smart Thermostat Premium or Ecobee Enhanced are your best options — both have native HomeKit support.',
+        text: 'No. The Google Nest Learning Thermostat (4th Gen) does NOT support Apple HomeKit. It works with Google Home and supports the Matter protocol, but Apple HomeKit integration is not available. If you need HomeKit support, the Ecobee Smart Thermostat Premium or Ecobee Enhanced are your best options, both have native HomeKit support.',
       },
     },
     {
@@ -107,7 +107,7 @@ const faqSchema = {
       name: 'Is a smart thermostat worth it if I have solar panels?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Absolutely. Solar panels and smart thermostats are a powerful combination, especially under California NEM 3.0. A smart thermostat can pre-cool or pre-heat your home during midday hours when your solar panels are producing at peak capacity. This means you use your own free solar electricity for HVAC instead of pulling expensive grid power during the 4-9 PM peak TOU window. This strategy — called peak shaving or load shifting — can save California homeowners an additional $150-$300 per year on top of their solar savings.',
+        text: 'Absolutely. Solar panels and smart thermostats are a powerful combination, especially under California NEM 3.0. A smart thermostat can pre-cool or pre-heat your home during midday hours when your solar panels are producing at peak capacity. This means you use your own free solar electricity for HVAC instead of pulling expensive grid power during the 4-9 PM peak TOU window. This strategy — called peak shaving or load shifting, can save California homeowners an additional $150-$300 per year on top of their solar savings.',
       },
     },
     {
@@ -212,7 +212,7 @@ export default function BestSmartThermostatPage() {
                 Smart Home Reviews
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
-                Best Smart Thermostats (2026): Ecobee vs Nest — Full Comparison
+                Best Smart Thermostats (2026): Ecobee vs Nest, Full Comparison
               </h1>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
@@ -260,7 +260,7 @@ export default function BestSmartThermostatPage() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Ecobee Smart Thermostat Premium — Best Overall ($249)
+                      Ecobee Smart Thermostat Premium, Best Overall ($249)
                     </p>
                     <p className="text-sm text-muted-foreground">
                       The only thermostat that works with Apple HomeKit, Alexa, AND Google
@@ -274,7 +274,7 @@ export default function BestSmartThermostatPage() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Google Nest Learning Thermostat (4th Gen) — Best Design ($280)
+                      Google Nest Learning Thermostat (4th Gen). Best Design ($280)
                     </p>
                     <p className="text-sm text-muted-foreground">
                       Stunning circular glass display with weather animations, Soli radar
@@ -287,7 +287,7 @@ export default function BestSmartThermostatPage() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Ecobee Smart Thermostat Enhanced — Best Value (~$180)
+                      Ecobee Smart Thermostat Enhanced, Best Value (~$180)
                     </p>
                     <p className="text-sm text-muted-foreground">
                       Same core Ecobee platform at ~$70 less than the Premium. Still
@@ -300,7 +300,7 @@ export default function BestSmartThermostatPage() {
                   <span className="flex-shrink-0 w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Google Nest Thermostat — Best Budget (~$130)
+                      Google Nest Thermostat, Best Budget (~$130)
                     </p>
                     <p className="text-sm text-muted-foreground">
                       A simplified, affordable smart thermostat with basic learning,
@@ -432,7 +432,7 @@ export default function BestSmartThermostatPage() {
                     productKey="ecobee-smart-thermostat-premium"
                     source="best-smart-thermostat"
                     variant="primary"
-                    label="Check Price — Ecobee Smart Thermostat Premium"
+                    label="Check Price; Ecobee Smart Thermostat Premium"
                     showPrice
                   />
                 </div>
@@ -543,7 +543,7 @@ export default function BestSmartThermostatPage() {
 
                 <p className="text-foreground/80 leading-relaxed mb-4">
                   The Ecobee Enhanced is the sweet spot of the lineup. It uses the same core
-                  platform as the Premium — same app, same eco+ system, same HomeKit + Alexa
+                  platform as the Premium. same app, same eco+ system, same HomeKit + Alexa
                   + Google Home compatibility — but at roughly <strong>$70 less</strong>. You
                   lose the built-in Alexa speaker, the air quality monitor, and some cosmetic
                   touches, but none of the core smart thermostat functionality that actually
@@ -596,7 +596,7 @@ export default function BestSmartThermostatPage() {
                     productKey="ecobee-smart-thermostat-enhanced"
                     source="best-smart-thermostat"
                     variant="primary"
-                    label="Check Price — Ecobee Smart Thermostat Enhanced"
+                    label="Check Price; Ecobee Smart Thermostat Enhanced"
                     showPrice
                   />
                 </div>
@@ -632,7 +632,7 @@ export default function BestSmartThermostatPage() {
                 <p className="text-foreground/80 leading-relaxed mb-6">
                   It works with Google Home and supports Matter, but like its premium sibling,
                   it does not support Apple HomeKit. The simplified interface makes it
-                  especially easy to set up — ideal for renters or anyone who just wants a
+                  especially easy to set up, ideal for renters or anyone who just wants a
                   &quot;set it and forget it&quot; smart thermostat that learns your
                   preferences over time.
                 </p>
@@ -678,7 +678,7 @@ export default function BestSmartThermostatPage() {
                     productKey="nest-thermostat"
                     source="best-smart-thermostat"
                     variant="primary"
-                    label="Check Price — Google Nest Thermostat"
+                    label="Check Price; Google Nest Thermostat"
                     showPrice
                   />
                 </div>
@@ -857,7 +857,7 @@ export default function BestSmartThermostatPage() {
                     <h4 className="font-semibold text-foreground mb-2">Peak Shaving</h4>
                     <p className="text-sm text-muted-foreground">
                       Your solar panels generate the most power at midday. A smart thermostat
-                      can run your HVAC during those hours — using your own free solar
+                      can run your HVAC during those hours, using your own free solar
                       electricity — so you pull less from the grid during expensive 4-9 PM
                       peak TOU hours.
                     </p>
@@ -973,7 +973,7 @@ export default function BestSmartThermostatPage() {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     It depends on your smart home ecosystem. The Ecobee Premium is the best
                     overall because it works with Apple HomeKit, Amazon Alexa, AND Google
-                    Home — the only thermostat to support all three. If you are fully
+                    Home; the only thermostat to support all three. If you are fully
                     invested in Google Home and want the sleekest design, the Nest Learning
                     Thermostat (4th Gen) is excellent. Both deliver comparable energy savings.
                   </p>
@@ -1032,8 +1032,7 @@ export default function BestSmartThermostatPage() {
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Most smart thermostats work best with a C-wire for constant 24V power.
-                    Ecobee includes a Power Extender Kit that lets you install without one —
-                    making it compatible with virtually any home. Nest thermostats can charge
+                    Ecobee includes a Power Extender Kit that lets you install without one. Making it compatible with virtually any home. Nest thermostats can charge
                     from existing wires but a C-wire ensures the most reliable operation. If
                     your home lacks a C-wire, Ecobee is the safer choice.
                   </p>

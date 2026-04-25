@@ -22,7 +22,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Heat Pump Water Heaters (2026): Rheem vs A.O. Smith vs Stiebel Eltron — Full Reviews',
+    'Best Heat Pump Water Heaters (2026): Rheem vs A.O. Smith vs Stiebel Eltron, Full Reviews',
   description:
     'Compare the best heat pump water heaters for 2026. In-depth reviews of Rheem ProTerra, A.O. Smith Voltex, GE GeoSpring, Bradford White AeroTherm, Stiebel Eltron Accelera 300, and State Premier. Energy savings, tax credits, and installation guide.',
   alternates: {
@@ -108,7 +108,7 @@ const faqSchema = {
       name: 'How long does a heat pump water heater last?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Heat pump water heaters typically last 13-15 years, which is comparable to or slightly longer than standard electric water heaters (10-15 years). The heat pump compressor itself is rated for 10+ years. Regular maintenance — flushing the tank annually, cleaning the air filter every 3-6 months, and checking the anode rod every 2-3 years — can extend the lifespan further.',
+        text: 'Heat pump water heaters typically last 13-15 years, which is comparable to or slightly longer than standard electric water heaters (10-15 years). The heat pump compressor itself is rated for 10+ years. Regular maintenance, flushing the tank annually, cleaning the air filter every 3-6 months, and checking the anode rod every 2-3 years, can extend the lifespan further.',
       },
     },
     {
@@ -124,7 +124,7 @@ const faqSchema = {
       name: 'Can I replace my gas water heater with a heat pump water heater?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Heat pump water heaters are all-electric, so switching from gas requires running a dedicated electrical circuit (typically 240V/30A for most models, or just 120V for the Rheem ProTerra Plug-In). You will also need to cap the gas line and ensure adequate clearance — most units need at least 700-1,000 cubic feet of surrounding air space. The federal tax credit and potential gas-to-electric rebates can significantly offset the switchover cost.',
+        text: 'Yes. Heat pump water heaters are all-electric, so switching from gas requires running a dedicated electrical circuit (typically 240V/30A for most models, or just 120V for the Rheem ProTerra Plug-In). You will also need to cap the gas line and ensure adequate clearance, most units need at least 700-1,000 cubic feet of surrounding air space. The federal tax credit and potential gas-to-electric rebates can significantly offset the switchover cost.',
       },
     },
   ],
@@ -292,7 +292,7 @@ export default function BestHeatPumpWaterHeaters() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Rheem ProTerra — Best Overall
+                      Rheem ProTerra. Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Industry-leading 3.55 UEF, available in a 120V plug-in model that requires
@@ -305,7 +305,7 @@ export default function BestHeatPumpWaterHeaters() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      A.O. Smith Voltex — Best Value
+                      A.O. Smith Voltex. Best Value
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Excellent efficiency (up to 3.75 UEF on the 66-gallon model), quiet
@@ -318,7 +318,7 @@ export default function BestHeatPumpWaterHeaters() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Stiebel Eltron Accelera 300 — Best for Cold Climates
+                      Stiebel Eltron Accelera 300. Best for Cold Climates
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       German-engineered with a large 80-gallon capacity and optimized compressor
@@ -428,7 +428,7 @@ export default function BestHeatPumpWaterHeaters() {
               <div className="prose prose-slate max-w-none mb-6">
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   The Rheem ProTerra is the heat pump water heater that changed the game. Its
-                  headline feature is the 120V plug-in option — you can literally plug it into a
+                  headline feature is the 120V plug-in option, you can literally plug it into a
                   standard household outlet, no electrician required. For homeowners replacing a gas
                   water heater who don&apos;t have a 240V circuit in the utility closet, this
                   eliminates one of the biggest installation barriers.
@@ -471,7 +471,7 @@ export default function BestHeatPumpWaterHeaters() {
                     <li>120V mode heats slower than 240V</li>
                     <li>Premium pricing vs competitors</li>
                     <li>App can be finicky per user reports</li>
-                    <li>Taller unit — measure clearance carefully</li>
+                    <li>Taller unit. measure clearance carefully</li>
                   </ul>
                 </div>
               </div>
@@ -480,7 +480,7 @@ export default function BestHeatPumpWaterHeaters() {
                 productKey="rheem-proterra-plug-in"
                 source="best-heat-pump-water-heater"
                 variant="primary"
-                label="Check Price — Rheem ProTerra Plug-In"
+                label="Check Price, Rheem ProTerra Plug-In"
                 showPrice
               />
             </section>
@@ -518,8 +518,8 @@ export default function BestHeatPumpWaterHeaters() {
               <div className="prose prose-slate max-w-none mb-6">
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   The A.O. Smith Voltex delivers the best efficiency-per-dollar of any heat pump
-                  water heater in 2026. The 66-gallon model hits a remarkable 3.75 UEF — the
-                  highest on this list — while costing $200-$300 less than the comparable Rheem
+                  water heater in 2026. The 66-gallon model hits a remarkable 3.75 UEF. The
+                  highest on this list, while costing $200-$300 less than the comparable Rheem
                   ProTerra. For homeowners who already have a 240V circuit available, the Voltex
                   is hard to beat on pure value.
                 </p>
@@ -557,7 +557,7 @@ export default function BestHeatPumpWaterHeaters() {
                     <X className="h-4 w-4" /> Cons
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
-                    <li>240V only — no 120V plug-in option</li>
+                    <li>240V only. no 120V plug-in option</li>
                     <li>Wi-Fi adapter sold separately on some models</li>
                     <li>No built-in leak detection</li>
                     <li>No 40-gallon option for small households</li>
@@ -569,7 +569,7 @@ export default function BestHeatPumpWaterHeaters() {
                 productKey="ao-smith-voltex-hybrid"
                 source="best-heat-pump-water-heater"
                 variant="primary"
-                label="Check Price — A.O. Smith Voltex Hybrid"
+                label="Check Price; A.O. Smith Voltex Hybrid"
                 showPrice
               />
             </section>
@@ -616,7 +616,7 @@ export default function BestHeatPumpWaterHeaters() {
                   The 3.25 UEF is lower than the Rheem and A.O. Smith, but still roughly 3x more
                   efficient than a standard electric water heater. GE includes built-in Wi-Fi
                   with SmartHQ app integration, letting you schedule heating cycles around
-                  time-of-use electricity rates — a significant advantage for California homeowners
+                  time-of-use electricity rates, a significant advantage for California homeowners
                   paying peak TOU rates of 40-70 cents per kWh.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -658,7 +658,7 @@ export default function BestHeatPumpWaterHeaters() {
                 productKey="ge-geospring-hybrid"
                 source="best-heat-pump-water-heater"
                 variant="primary"
-                label="Check Price — GE GeoSpring Hybrid"
+                label="Check Price, GE GeoSpring Hybrid"
                 showPrice
               />
             </section>
@@ -698,7 +698,7 @@ export default function BestHeatPumpWaterHeaters() {
                   Bradford White is the brand plumbers trust. Unlike the other units on this list
                   that are widely available at retail, the AeroTherm is sold exclusively through
                   licensed plumbing professionals. This means you get professional installation
-                  included — and the unit is built to professional-grade standards with a heavy-duty
+                  included. and the unit is built to professional-grade standards with a heavy-duty
                   tank and commercial-quality components.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -735,7 +735,7 @@ export default function BestHeatPumpWaterHeaters() {
                     <X className="h-4 w-4" /> Cons
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
-                    <li>Not available at retail — pro install only</li>
+                    <li>Not available at retail, pro install only</li>
                     <li>Higher total cost with installation</li>
                     <li>Limited smart/Wi-Fi features</li>
                     <li>Only 50 and 80-gallon sizes</li>
@@ -747,7 +747,7 @@ export default function BestHeatPumpWaterHeaters() {
                 productKey="stiebel-eltron-accelera-300"
                 source="best-heat-pump-water-heater"
                 variant="primary"
-                label="Check Price — Stiebel Eltron Accelera 300"
+                label="Check Price. Stiebel Eltron Accelera 300"
                 showPrice
               />
             </section>
@@ -794,11 +794,11 @@ export default function BestHeatPumpWaterHeaters() {
                   The 80-gallon tank is one of the largest heat pump water heaters available,
                   and Stiebel Eltron claims it can heat up to 80% of hot water using the heat pump
                   alone (even in cooler environments), minimizing reliance on backup electric
-                  elements. The unit is notably quiet at around 46 dB — one of the quietest models
+                  elements. The unit is notably quiet at around 46 dB, one of the quietest models
                   tested.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
-                  The lower 2.83 UEF is misleading — it reflects the larger tank size and the way
+                  The lower 2.83 UEF is misleading, it reflects the larger tank size and the way
                   UEF testing works. In real-world use, the Accelera 300 delivers comparable or
                   better annual energy savings than units with higher UEF ratings because the large
                   tank stores more heat pump-generated hot water, reducing the need for resistance
@@ -838,7 +838,7 @@ export default function BestHeatPumpWaterHeaters() {
                 productKey="bradford-white-aerotherm"
                 source="best-heat-pump-water-heater"
                 variant="primary"
-                label="Check Price — Bradford White AeroTherm"
+                label="Check Price, Bradford White AeroTherm"
                 showPrice
               />
             </section>
@@ -927,7 +927,7 @@ export default function BestHeatPumpWaterHeaters() {
                 productKey="state-premier-hybrid"
                 source="best-heat-pump-water-heater"
                 variant="primary"
-                label="Check Price — State Premier Hybrid"
+                label="Check Price, State Premier Hybrid"
                 showPrice
               />
             </section>
@@ -955,7 +955,7 @@ export default function BestHeatPumpWaterHeaters() {
                   only about 500-800 watts to move the same amount of thermal energy.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
-                  Most modern heat pump water heaters are &quot;hybrid&quot; units — they include
+                  Most modern heat pump water heaters are &quot;hybrid&quot; units; they include
                   both the heat pump and traditional electric resistance elements as backup.
                   In normal operation, the heat pump does all the work. During periods of
                   very high demand or very cold ambient temperatures, the electric elements
@@ -1041,7 +1041,7 @@ export default function BestHeatPumpWaterHeaters() {
                 <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
                   Costs based on national average electricity rate of ~$0.16/kWh and natural gas
                   rate of ~$1.50/therm. California homeowners paying $0.25-$0.45/kWh will see
-                  even larger savings — potentially $500-$800+ per year compared to a standard
+                  even larger savings; potentially $500-$800+ per year compared to a standard
                   electric tank.
                 </p>
               </div>
@@ -1057,7 +1057,7 @@ export default function BestHeatPumpWaterHeaters() {
               <div className="space-y-4">
                 <div className="border rounded-lg p-5" style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#f5f5f5' }}>
-                    Federal Tax Credit — Up to $2,000
+                    Federal Tax Credit, Up to $2,000
                   </h3>
                   <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                     Under the Inflation Reduction Act (IRA), ENERGY STAR-certified heat pump water
@@ -1070,14 +1070,14 @@ export default function BestHeatPumpWaterHeaters() {
 
                 <div className="border rounded-lg p-5" style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#f5f5f5' }}>
-                    HEEHRA Rebates — Up to $1,750
+                    HEEHRA Rebates, Up to $1,750
                   </h3>
                   <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                     The High-Efficiency Electric Home Rebate Act (HEEHRA) provides point-of-sale
                     rebates for qualifying heat pump water heaters. Low-to-moderate income
                     households (under 150% area median income) can receive up to $1,750 off the
                     purchase price at the register. These rebates are administered by individual
-                    states and availability varies — check your state&apos;s energy office for
+                    states and availability varies. Check your state&apos;s energy office for
                     current status.
                   </p>
                 </div>
@@ -1137,7 +1137,7 @@ export default function BestHeatPumpWaterHeaters() {
                     Electrical Requirements
                   </h3>
                   <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
-                    Most heat pump water heaters require a dedicated 240V/30A circuit — the same
+                    Most heat pump water heaters require a dedicated 240V/30A circuit, the same
                     as a standard electric water heater. If you are replacing an existing electric
                     tank, you likely already have the right circuit. The Rheem ProTerra Plug-In
                     is the exception: it can run on a standard 120V/15A outlet, eliminating the
@@ -1151,7 +1151,7 @@ export default function BestHeatPumpWaterHeaters() {
                     Condensate Drainage
                   </h3>
                   <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
-                    Heat pump water heaters produce condensate (like an air conditioner) — roughly
+                    Heat pump water heaters produce condensate (like an air conditioner). roughly
                     3-5 gallons per day depending on humidity. You will need a condensate drain
                     line to a floor drain, condensate pump, or exterior. This is often the most
                     overlooked installation requirement. Make sure your installer plans for drainage
@@ -1179,7 +1179,7 @@ export default function BestHeatPumpWaterHeaters() {
                   <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                     Heat pump water heaters are taller than standard tanks because the compressor
                     and evaporator sit on top. Expect total heights of 62-72 inches depending on
-                    model. Measure your available ceiling height before purchasing — you need at
+                    model. Measure your available ceiling height before purchasing. You need at
                     least 6 inches of clearance above the unit for proper airflow.
                   </p>
                 </div>

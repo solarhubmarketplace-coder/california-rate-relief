@@ -124,7 +124,7 @@ export default function FreedomForeverReview() {
                 <AlertTriangle className='h-6 w-6 text-red-400 flex-shrink-0 mt-0.5' />
                 <div>
                   <p className='text-xs font-bold uppercase tracking-widest text-red-300 mb-1'>
-                    Breaking — April 15, 2026
+                    Breaking, April 15, 2026
                   </p>
                   <p className='text-foreground font-semibold leading-relaxed'>
                     Freedom Forever filed for Chapter 11 bankruptcy
@@ -184,7 +184,7 @@ export default function FreedomForeverReview() {
                   <span>
                     Roughly 190,000 existing solar systems across the U.S.
                     depend on Freedom Forever for long-term service and
-                    warranty support — the outcome of the bankruptcy case
+                    warranty support. The outcome of the bankruptcy case
                     will determine how those obligations are honored.
                   </span>
                 </li>
@@ -213,9 +213,8 @@ export default function FreedomForeverReview() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                On April 15, 2026, Freedom Forever Solar — headquartered in
-                Temecula, California with operations in Las Vegas, Nevada —
-                filed a voluntary petition for Chapter 11 bankruptcy
+                On April 15, 2026, Freedom Forever Solar, headquartered in
+                Temecula, California with operations in Las Vegas, Nevada, filed a voluntary petition for Chapter 11 bankruptcy
                 protection. Chapter 11 is not liquidation. It is a legal
                 process that lets a company continue operating while it
                 restructures its debts under court supervision. The company
@@ -281,7 +280,7 @@ export default function FreedomForeverReview() {
                 SolarEdge string inverters. Those manufacturer warranties
                 do not disappear with Freedom Forever. What you may lose,
                 depending on how the case resolves, is the workmanship
-                warranty and the roof penetration warranty — Freedom
+                warranty and the roof penetration warranty, Freedom
                 Forever&apos;s own obligations — and the single point of
                 contact for scheduling a repair.
               </p>
@@ -292,7 +291,7 @@ export default function FreedomForeverReview() {
                 system&apos;s serial numbers and equipment spec sheets.
                 Download any recent production data from the monitoring
                 app. If you financed through Mosaic, keep paying your
-                loan on schedule — Mosaic is the creditor, not Freedom
+                loan on schedule; Mosaic is the creditor, not Freedom
                 Forever, and the loan obligation continues regardless of
                 what happens to Freedom Forever.
               </p>
@@ -319,7 +318,7 @@ export default function FreedomForeverReview() {
                 typically include a 3-day right of rescission by state law,
                 and many installers offer a longer cancellation window
                 before material is ordered. If you&apos;re outside both
-                windows, consult an attorney before taking any action — a
+                windows, consult an attorney before taking any action, a
                 Chapter 11 filing does not automatically void existing
                 contracts, and the company&apos;s intent during
                 restructuring is to keep building systems.
@@ -337,8 +336,8 @@ export default function FreedomForeverReview() {
                 combined direct-install teams with a large network of
                 third-party dealers who sold and installed under the
                 Freedom Forever brand. That model scaled faster than a
-                pure in-house operation could — which is how the company
-                reached 36 states and 2 GW of installs — but it also meant
+                pure in-house operation could, which is how the company
+                reached 36 states and 2 GW of installs, but it also meant
                 less direct quality control on what ended up on the roof.
                 Customer complaints clustered predictably: install
                 quality varied from crew to crew, post-install service
@@ -347,7 +346,7 @@ export default function FreedomForeverReview() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 On the financial side, Freedom Forever relied heavily on
-                third-party lenders — Mosaic Funding most of all — to
+                third-party lenders — Mosaic Funding most of all. to
                 finance customer systems. When a residential solar company
                 doesn&apos;t own its financing, the gross margin is
                 thinner, and the company has less cushion when installs
@@ -368,7 +367,7 @@ export default function FreedomForeverReview() {
                 Pre-filing, Freedom Forever installed Qcells, Trina, and JA
                 Solar panels, paired primarily with Enphase microinverters
                 or SolarEdge string inverters. Battery options were
-                third-party — typically Tesla Powerwall or Enphase IQ — and
+                third-party, typically Tesla Powerwall or Enphase IQ, and
                 batteries were not vertically integrated with the company.
               </p>
 
@@ -390,7 +389,7 @@ export default function FreedomForeverReview() {
                 reputation was already a weak spot. The Better Business
                 Bureau did not accredit the company, and the BBB profile
                 listed approximately 1,359 complaints closed in the prior
-                three years — a high volume for any installer.
+                three years. A high volume for any installer.
                 Trustpilot&apos;s rating sat at roughly 3.9 out of 5,
                 buoyed by positive install-phase reviews but dragged down
                 by a steady stream of post-install complaints.
@@ -440,7 +439,7 @@ export default function FreedomForeverReview() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 California still has strong options across every price
-                point and business model — national public companies,
+                point and business model, national public companies,
                 mid-sized private installers, and local CA-native
                 operators. The right fit depends on your priorities
                 (cheapest upfront vs. best warranty vs. simplest process),
@@ -498,9 +497,9 @@ export default function FreedomForeverReview() {
                     Chapter 11 reorganization, not liquidation. The
                     company has stated it intends to continue operating
                     and installing systems during restructuring. The
-                    final outcome — whether the company emerges
+                    final outcome, whether the company emerges
                     reorganized, is acquired, or converts to Chapter 7
-                    liquidation — will be determined by the bankruptcy
+                    liquidation, will be determined by the bankruptcy
                     case.
                   </p>
                 </div>
@@ -527,7 +526,7 @@ export default function FreedomForeverReview() {
                   <p className='text-foreground/80 leading-relaxed'>
                     Keep paying your Mosaic loan on schedule. Mosaic is a
                     separate company and is actually Freedom Forever&apos;s
-                    largest creditor in the bankruptcy — your loan
+                    largest creditor in the bankruptcy, your loan
                     obligation is to Mosaic, not to Freedom Forever, and
                     continues unchanged.
                   </p>
@@ -574,7 +573,7 @@ export default function FreedomForeverReview() {
                 California Rate Relief works with multiple top-rated
                 California solar installers. Fill out one 60-second form
                 and we&apos;ll bring you quotes from up to three
-                financially stable installers for your address — so you
+                financially stable installers for your address. So you
                 can compare pricing, equipment, and warranty terms side
                 by side before you commit to a 25-year decision.
               </p>

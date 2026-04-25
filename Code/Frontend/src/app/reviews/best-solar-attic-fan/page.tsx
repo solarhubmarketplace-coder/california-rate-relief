@@ -278,7 +278,7 @@ export default function BestSolarAtticFan() {
                 Your attic can reach 150 degrees or more on a summer afternoon. That heat radiates
                 down through your ceiling, forces your AC to work overtime, and drives up your
                 electricity bill month after month. A solar attic fan fixes that problem using free
-                energy from the sun — no wiring, no added electricity cost, and no ongoing
+                energy from the sun. No wiring, no added electricity cost, and no ongoing
                 maintenance.
               </p>
               <p className="text-lg leading-relaxed mb-8" style={{ color: '#a1a1aa' }}>
@@ -300,7 +300,7 @@ export default function BestSolarAtticFan() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Remington Solar 30W — Best Overall
+                      Remington Solar 30W. Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The complete package. 1,550 CFM, brushless motor, built-in thermostat,
@@ -312,7 +312,7 @@ export default function BestSolarAtticFan() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Natural Light SAFG — Best Premium
+                      Natural Light SAFG, Best Premium
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Highest CFM rating (1,628), all-metal construction built to last decades,
@@ -325,7 +325,7 @@ export default function BestSolarAtticFan() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      iLiving ILG8SF301 — Best Budget
+                      iLiving ILG8SF301; Best Budget
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       At $200, it delivers solid 900 CFM airflow with a built-in thermostat
@@ -444,7 +444,7 @@ export default function BestSolarAtticFan() {
                   <p className="text-2xl font-bold text-primary mb-4">$350</p>
                   <p className="leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
                     The Remington Solar 30W is the best all-around solar attic fan you can buy. It
-                    delivers 1,550 CFM of airflow — enough for attics up to 2,200 square feet — and
+                    delivers 1,550 CFM of airflow, enough for attics up to 2,200 square feet, and
                     comes with a brushless motor that eliminates the most common failure point in
                     cheaper fans. The built-in adjustable thermostat lets you set the activation
                     temperature (typically 80-90 degrees F), so the fan only runs when your attic
@@ -465,7 +465,7 @@ export default function BestSolarAtticFan() {
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />1,550 CFM handles most attics with a single unit</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Brushless motor lasts 3-5x longer than brushed</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Built-in adjustable thermostat included</li>
-                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />25-year warranty — one of the longest available</li>
+                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />25-year warranty, one of the longest available</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Easy DIY roof-mount installation</li>
                       </ul>
                     </div>
@@ -475,7 +475,7 @@ export default function BestSolarAtticFan() {
                       </h4>
                       <ul className="space-y-1 text-sm" style={{ color: '#a1a1aa' }}>
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Not the quietest option (audible hum under full power)</li>
-                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Roof-mount only — no gable option</li>
+                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Roof-mount only, no gable option</li>
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Solar panel is fixed (not adjustable angle)</li>
                       </ul>
                     </div>
@@ -484,7 +484,7 @@ export default function BestSolarAtticFan() {
                     productKey="remington-solar-30w-solar-attic-fan"
                     source="best-solar-attic-fan"
                     variant="primary"
-                    label="Check Price — Remington Solar 30W Solar Attic Fan"
+                    label="Check Price, Remington Solar 30W Solar Attic Fan"
                     showPrice
                   />
                 </div>
@@ -514,7 +514,7 @@ export default function BestSolarAtticFan() {
                   <p className="leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
                     Natural Light has been manufacturing solar attic ventilation since the early
                     2000s, and the SAFG reflects that experience. The low-profile, dome-style design
-                    sits flush and blends with most rooflines — a real advantage if curb appeal
+                    sits flush and blends with most rooflines. a real advantage if curb appeal
                     matters to you. The 30-year warranty is the longest in the industry. The only
                     downside: the thermostat is sold separately as an add-on, which bumps the total
                     cost above $550 if you want temperature-controlled operation.
@@ -526,8 +526,8 @@ export default function BestSolarAtticFan() {
                       </h4>
                       <ul className="space-y-1 text-sm" style={{ color: '#a1a1aa' }}>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Highest CFM in this roundup (1,628)</li>
-                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />All-metal construction — built to last decades</li>
-                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />30-year warranty — industry-leading</li>
+                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />All-metal construction, built to last decades</li>
+                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />30-year warranty. Industry-leading</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Low-profile dome design blends with roof</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />36W panel delivers strong performance even on hazy days</li>
                       </ul>
@@ -539,7 +539,7 @@ export default function BestSolarAtticFan() {
                       <ul className="space-y-1 text-sm" style={{ color: '#a1a1aa' }}>
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Most expensive on this list at $500</li>
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Thermostat sold separately (~$50 add-on)</li>
-                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Heavier than competitors — two-person install recommended</li>
+                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Heavier than competitors, two-person install recommended</li>
                       </ul>
                     </div>
                   </div>
@@ -547,7 +547,7 @@ export default function BestSolarAtticFan() {
                     productKey="natural-light-safg-solar-attic-fan"
                     source="best-solar-attic-fan"
                     variant="primary"
-                    label="Check Price — Natural Light SAFG Solar Attic Fan"
+                    label="Check Price, Natural Light SAFG Solar Attic Fan"
                     showPrice
                   />
                 </div>
@@ -565,13 +565,13 @@ export default function BestSolarAtticFan() {
                     <StarRating rating={4.3} />
                   </div>
                   <h2 className="text-2xl font-bold mb-2" style={{ color: '#f5f5f5' }}>
-                    3. iLiving ILG8SF301 Solar Attic Fan
+                    3. ILiving ILG8SF301 Solar Attic Fan
                   </h2>
                   <p className="text-2xl font-bold text-primary mb-4">$200</p>
                   <p className="leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
                     At $200, the iLiving ILG8SF301 is the most affordable solar attic fan worth
                     considering. It puts out 900 CFM through a compact 14-inch fan powered by a 15W
-                    solar panel — enough for attics up to about 1,300 square feet. The built-in
+                    solar panel. Enough for attics up to about 1,300 square feet. The built-in
                     thermostat (a feature missing on some fans costing twice as much) ensures
                     the fan only kicks on when your attic temperature warrants it.
                   </p>
@@ -590,7 +590,7 @@ export default function BestSolarAtticFan() {
                       <ul className="space-y-1 text-sm" style={{ color: '#a1a1aa' }}>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Lowest price on this list at $200</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Built-in thermostat included at this price point</li>
-                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Compact and lightweight — easy solo DIY install</li>
+                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Compact and lightweight; easy solo DIY install</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Good for smaller attics, garages, and sheds</li>
                       </ul>
                     </div>
@@ -602,7 +602,7 @@ export default function BestSolarAtticFan() {
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />900 CFM is insufficient for attics over 1,300 sq ft</li>
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />5-year warranty is short compared to competitors</li>
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />15W panel underperforms on cloudy or hazy days</li>
-                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Plastic construction — less durable long-term</li>
+                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Plastic construction, less durable long-term</li>
                       </ul>
                     </div>
                   </div>
@@ -610,7 +610,7 @@ export default function BestSolarAtticFan() {
                     productKey="iliving-ilg8sf301-solar-attic-fan"
                     source="best-solar-attic-fan"
                     variant="primary"
-                    label="Check Price — iLiving ILG8SF301 Solar Attic Fan"
+                    label="Check Price, iLiving ILG8SF301 Solar Attic Fan"
                     showPrice
                   />
                 </div>
@@ -664,7 +664,7 @@ export default function BestSolarAtticFan() {
                       <ul className="space-y-1 text-sm" style={{ color: '#a1a1aa' }}>
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Slightly lower CFM than Remington and Natural Light</li>
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Less brand recognition than Natural Light or Broan</li>
-                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Limited availability — may ship slower than competitors</li>
+                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />Limited availability. may ship slower than competitors</li>
                       </ul>
                     </div>
                   </div>
@@ -672,7 +672,7 @@ export default function BestSolarAtticFan() {
                     productKey="quietcool-30w-solar-attic-fan"
                     source="best-solar-attic-fan"
                     variant="primary"
-                    label="Check Price — QuietCool 30W Solar Attic Fan"
+                    label="Check Price, QuietCool 30W Solar Attic Fan"
                     showPrice
                   />
                 </div>
@@ -701,7 +701,7 @@ export default function BestSolarAtticFan() {
                     confidence they would not get from a smaller manufacturer.
                   </p>
                   <p className="leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
-                    The adjustable panel tilt is a useful feature — it lets you angle the panel
+                    The adjustable panel tilt is a useful feature, it lets you angle the panel
                     toward the sun for maximum energy capture even if your roof pitch is not ideal.
                     Weather-resistant construction handles rain, hail, and UV exposure well. The
                     main drawback is a shorter 5-year warranty and no thermostat included (you
@@ -715,7 +715,7 @@ export default function BestSolarAtticFan() {
                       <ul className="space-y-1 text-sm" style={{ color: '#a1a1aa' }}>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Trusted brand with decades in home ventilation</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Adjustable solar panel angle for optimal positioning</li>
-                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Strong weather resistance — built for exposure</li>
+                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Strong weather resistance. built for exposure</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Mid-range price with solid 1,200 CFM output</li>
                       </ul>
                     </div>
@@ -724,9 +724,9 @@ export default function BestSolarAtticFan() {
                         <X className="h-4 w-4" /> Cons
                       </h4>
                       <ul className="space-y-1 text-sm" style={{ color: '#a1a1aa' }}>
-                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />No thermostat included — must add separately</li>
+                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />No thermostat included, must add separately</li>
                         <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />5-year warranty is below average for the category</li>
-                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />1,200 CFM is mid-pack — not ideal for large attics alone</li>
+                        <li className="flex items-start gap-2"><X className="h-3 w-3 mt-1 flex-shrink-0 text-red-500" />1,200 CFM is mid-pack. not ideal for large attics alone</li>
                       </ul>
                     </div>
                   </div>
@@ -734,7 +734,7 @@ export default function BestSolarAtticFan() {
                     productKey="broan-nutone-345soww-solar-attic-fan"
                     source="best-solar-attic-fan"
                     variant="primary"
-                    label="Check Price — Broan-NuTone 345SOWW Solar Attic Fan"
+                    label="Check Price. Broan-NuTone 345SOWW Solar Attic Fan"
                     showPrice
                   />
                 </div>
@@ -810,13 +810,13 @@ export default function BestSolarAtticFan() {
                   </div>
                   <div className="p-4 rounded-lg text-center" style={{ backgroundColor: '#0a0a0a' }}>
                     <p className="text-3xl font-bold text-primary mb-1">$0/yr</p>
-                    <p className="text-sm" style={{ color: '#a1a1aa' }}>Operating cost — runs entirely on solar power</p>
+                    <p className="text-sm" style={{ color: '#a1a1aa' }}>Operating cost. runs entirely on solar power</p>
                   </div>
                 </div>
                 <p className="leading-relaxed mb-4" style={{ color: '#a1a1aa' }}>
                   <strong style={{ color: '#f5f5f5' }}>Example payback calculation:</strong> If your summer
                   AC bill is $250/month for 5 months ($1,250/year), a 20% reduction saves $250/year.
-                  A $350 solar attic fan pays for itself in under 18 months — and then saves you
+                  A $350 solar attic fan pays for itself in under 18 months, and then saves you
                   money every summer for the next 20+ years.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -906,11 +906,11 @@ export default function BestSolarAtticFan() {
                     wire. No roof penetration required.
                   </p>
                   <ul className="space-y-2 text-sm" style={{ color: '#a1a1aa' }}>
-                    <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-500" />No roof penetration — zero leak risk</li>
-                    <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-500" />Easiest installation — uses existing vent opening</li>
+                    <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-500" />No roof penetration. zero leak risk</li>
+                    <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-500" />Easiest installation, uses existing vent opening</li>
                     <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-500" />Does not affect roof warranty</li>
                     <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0 text-red-500" />Not all homes have gable vents</li>
-                    <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0 text-red-500" />Less efficient — fan is lower than the hot air peak</li>
+                    <li className="flex items-start gap-2"><X className="h-4 w-4 mt-0.5 flex-shrink-0 text-red-500" />Less efficient. Fan is lower than the hot air peak</li>
                   </ul>
                 </div>
               </div>
@@ -1007,7 +1007,7 @@ export default function BestSolarAtticFan() {
                   entry point, especially for smaller spaces.
                 </p>
                 <p className="leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
-                  If noise matters — say your bedrooms are directly below the attic — the
+                  If noise matters, say your bedrooms are directly below the attic — the
                   <strong style={{ color: '#f5f5f5' }}> QuietCool 30W</strong> is worth the small premium
                   over the Remington. And for homeowners who simply want a familiar name they trust,
                   the <strong style={{ color: '#f5f5f5' }}>Broan-NuTone 345SOWW</strong> delivers solid
@@ -1017,7 +1017,7 @@ export default function BestSolarAtticFan() {
                   <p className="text-sm" style={{ color: '#71717a' }}>
                     <strong style={{ color: '#a1a1aa' }}>Disclosure:</strong> GreenReviewsHub earns
                     commissions from qualifying purchases through affiliate links in this article.
-                    This does not influence our rankings or recommendations — every product is
+                    This does not influence our rankings or recommendations, every product is
                     independently evaluated based on specs, real-world performance, and customer
                     feedback.
                   </p>

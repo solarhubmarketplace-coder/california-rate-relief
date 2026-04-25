@@ -312,7 +312,7 @@ export default function BestDehumidifier() {
                   </span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Frigidaire FFAD5033W1 — Best Overall
+                      Frigidaire FFAD5033W1, Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The gold standard 50-pint dehumidifier. Built-in pump, Energy Star
@@ -327,7 +327,7 @@ export default function BestDehumidifier() {
                   </span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      hOmeLabs HME020031N — Best Budget
+                      hOmeLabs HME020031N, Best Budget
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Under $200 with 50-pint capacity and Energy Star certification. No pump,
@@ -342,7 +342,7 @@ export default function BestDehumidifier() {
                   </span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      LG PuriCare UD501KOG5 — Quietest
+                      LG PuriCare UD501KOG5. Quietest
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       At just 44 dB on low, the LG PuriCare is whisper-quiet. Built-in pump,
@@ -579,7 +579,7 @@ export default function BestDehumidifier() {
                   Best Budget
                 </span>
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
-                  2. hOmeLabs HME020031N
+                  2. HOmeLabs HME020031N
                 </h2>
               </div>
 
@@ -643,7 +643,7 @@ export default function BestDehumidifier() {
                     <X className="h-4 w-4" /> Cons
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
-                    <li>No built-in pump — gravity drain or bucket only</li>
+                    <li>No built-in pump. Gravity drain or bucket only</li>
                     <li>52 dB is the loudest on this list</li>
                     <li>No Wi-Fi or app control</li>
                     <li>Bucket is smaller than Frigidaire at 10.5 pints</li>
@@ -664,7 +664,7 @@ export default function BestDehumidifier() {
                 productKey="homelabs-hme020031n"
                 source="dehumidifier-hub"
                 variant="primary"
-                label="Check Price — hOmeLabs HME020031N"
+                label="Check Price. HOmeLabs HME020031N"
                 showPrice
               />
             </section>
@@ -710,7 +710,7 @@ export default function BestDehumidifier() {
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   Beyond smart features, it is a strong 50-pint performer. The built-in pump
                   pushes water up to 15 feet, the digital humidistat is accurate, and the
-                  unit includes auto-restart after power outages — a critical feature for
+                  unit includes auto-restart after power outages, a critical feature for
                   basements and crawlspaces that run unattended. The washable filter slides
                   out from the front for easy cleaning.
                 </p>
@@ -743,7 +743,7 @@ export default function BestDehumidifier() {
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
                     <li>$40 premium over Frigidaire for smart features</li>
                     <li>App requires account creation and setup</li>
-                    <li>Wi-Fi is 2.4 GHz only — no 5 GHz support</li>
+                    <li>Wi-Fi is 2.4 GHz only. No 5 GHz support</li>
                     <li>Occasional app connectivity hiccups reported</li>
                   </ul>
                 </div>
@@ -860,7 +860,7 @@ export default function BestDehumidifier() {
                 productKey="lg-puricare-ud501kog5"
                 source="dehumidifier-hub"
                 variant="primary"
-                label="Check Price — LG PuriCare UD501KOG5"
+                label="Check Price, LG PuriCare UD501KOG5"
                 showPrice
               />
             </section>
@@ -907,8 +907,7 @@ export default function BestDehumidifier() {
                   (they own the Toshiba home appliance brand and make components for many
                   name-brand units). Their dehumidifier engineering is solid: the compressor
                   is reliable, the humidity sensor is accurate, and the unit handles
-                  temperature drops down to 41 degrees F before the auto-defrost kicks in —
-                  important for unheated basements in winter.
+                  temperature drops down to 41 degrees F before the auto-defrost kicks in, important for unheated basements in winter.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   At $235, it sits right between the budget hOmeLabs and the feature-packed
@@ -937,7 +936,7 @@ export default function BestDehumidifier() {
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
                     <li>No Wi-Fi or smart features</li>
-                    <li>51 dB noise level — not bedroom-friendly</li>
+                    <li>51 dB noise level; not bedroom-friendly</li>
                     <li>Brand less recognized than Frigidaire or GE</li>
                     <li>Slightly smaller bucket than Frigidaire</li>
                   </ul>
@@ -1020,7 +1019,7 @@ export default function BestDehumidifier() {
                     <Check className="h-4 w-4" /> Pros
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
-                    <li>Lightest at 37.5 lbs — easy to carry</li>
+                    <li>Lightest at 37.5 lbs. Easy to carry</li>
                     <li>Quiet at 48 dB — second only to LG</li>
                     <li>Compact footprint saves floor space</li>
                     <li>Energy Star certified</li>

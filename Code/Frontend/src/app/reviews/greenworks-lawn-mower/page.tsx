@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title:
       'Greenworks Lawn Mower Review 2026: 80V Pro, 60V, and 40V Compared',
     description:
-      'Full review of the Greenworks lawn mower lineup — 80V Pro flagship, 60V brushless, 40V push, plus the breakthrough CrossoverT ride-on and ZT zero-turn. All three battery platforms compared.',
+      'Full review of the Greenworks lawn mower lineup, 80V Pro flagship, 60V brushless, 40V push, plus the breakthrough CrossoverT ride-on and ZT zero-turn. All three battery platforms compared.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -132,7 +132,7 @@ const faqSchema = {
       name: 'Are Greenworks 80V, 60V, and 40V batteries interchangeable?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. The three Greenworks platforms are completely separate — 80V Pro batteries do not fit 60V or 40V tools, and vice versa. This is the single most common mistake buyers make. Choose your platform based on the tools you want, then commit to it. The 80V Pro line is the flagship with the widest tool selection (40+ tools including the CrossoverT ride-on and ZT zero-turn). 60V is the consumer flagship with 30+ tools. 40V is the entry line with 50+ tools aimed at smaller yards.',
+        text: 'No. The three Greenworks platforms are completely separate. 80V Pro batteries do not fit 60V or 40V tools, and vice versa. This is the single most common mistake buyers make. Choose your platform based on the tools you want, then commit to it. The 80V Pro line is the flagship with the widest tool selection (40+ tools including the CrossoverT ride-on and ZT zero-turn). 60V is the consumer flagship with 30+ tools. 40V is the entry line with 50+ tools aimed at smaller yards.',
       },
     },
     {
@@ -148,7 +148,7 @@ const faqSchema = {
       name: 'Does Greenworks qualify for SoCalGas or SCE mower rebates?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'SoCalGas does not offer lawn mower rebates directly. South Coast AQMD and other California air districts have run commercial and residential battery lawn mower rebate programs periodically — $50 to $1,000 depending on program and whether commercial or residential. Greenworks mowers are generally on the approved equipment list. Check the latest rebate round at your county AQMD site.',
+        text: 'SoCalGas does not offer lawn mower rebates directly. South Coast AQMD and other California air districts have run commercial and residential battery lawn mower rebate programs periodically. $50 to $1,000 depending on program and whether commercial or residential. Greenworks mowers are generally on the approved equipment list. Check the latest rebate round at your county AQMD site.',
       },
     },
     {
@@ -234,7 +234,7 @@ export default function GreenworksLawnMowerReview() {
               productKey={PRODUCT_KEY}
               badge='Brand Hub'
               rating={4.5}
-              verdict='Greenworks offers the most complete battery mower lineup of any brand — 80V Pro flagship with steel decks, 60V consumer, 40V entry, plus the breakthrough CrossoverT ride-on and 42" ZT zero-turn.'
+              verdict='Greenworks offers the most complete battery mower lineup of any brand. 80V Pro flagship with steel decks, 60V consumer, 40V entry, plus the breakthrough CrossoverT ride-on and 42" ZT zero-turn.'
               pros={[
                 'Only battery brand with real ride-on (CrossoverT) and zero-turn (ZT)',
                 'Steel deck across 80V Pro line',
@@ -320,7 +320,7 @@ export default function GreenworksLawnMowerReview() {
               </div>
             </div>
 
-            {/* Comparison Table — the CRO element for brand hubs */}
+            {/* Comparison Table, the CRO element for brand hubs */}
             <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
               The Greenworks Lineup at a Glance
             </h2>
@@ -443,7 +443,7 @@ export default function GreenworksLawnMowerReview() {
                 self-propelled, zero-turn, ride-on), leaf blowers, string
                 trimmers, hedge trimmers, pressure washers, snow blowers,
                 chainsaws, and a power station accessory. All run on the
-                same 80V Pro batteries — 2.5Ah, 4.0Ah, 5.0Ah, and 8.0Ah
+                same 80V Pro batteries. 2.5Ah, 4.0Ah, 5.0Ah, and 8.0Ah
                 capacities. The 5.0Ah pack is the sweet spot for mower
                 runtime: 60-90 minutes of cutting, enough for a standard
                 suburban lot in one charge.
@@ -477,7 +477,7 @@ export default function GreenworksLawnMowerReview() {
                 Runtime at typical cutting load is 2-3 hours. That&apos;s
                 enough for a 1-to-2 acre lot in one charge. For a 3+ acre
                 lot you&apos;d need to rotate through extra batteries on a
-                separate charger — feasible but awkward. Where the CrossoverT
+                separate charger, feasible but awkward. Where the CrossoverT
                 wins over gas: no fuel, no carburetor, no engine
                 maintenance, no fumes when you mow at 9 AM on a Saturday.
                 Where gas still wins: 4+ acre properties, continuous 4+
@@ -498,7 +498,7 @@ export default function GreenworksLawnMowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The 80V 42-inch ZT ($5,499) is the zero-turn sibling to the
                 CrossoverT. It sacrifices the tow capacity and the riding
-                tractor styling for true zero-turn maneuverability — the
+                tractor styling for true zero-turn maneuverability, the
                 rear wheels rotate independently, allowing the mower to pivot
                 in place. For properties with lots of obstacles (trees,
                 planting beds, fences), zero-turn cuts your mowing time by
@@ -519,12 +519,11 @@ export default function GreenworksLawnMowerReview() {
                 The 60V Consumer Line: Best Value Battery Platform
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Greenworks 60V is the consumer-focused middle platform —
-                30+ tools, steel-deck mowers, brushless motors, priced
+                Greenworks 60V is the consumer-focused middle platform, 30+ tools, steel-deck mowers, brushless motors, priced
                 between 80V Pro and 40V. For a typical homeowner on a
                 quarter-acre to half-acre lot, 60V is the sensible choice.
                 The flagship mower is the 60V 21-inch brushless
-                self-propelled at $499 — steel deck, rear-wheel drive,
+                self-propelled at $499, steel deck, rear-wheel drive,
                 variable speed, 45-75 minute runtime on a 5Ah battery.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -540,7 +539,7 @@ export default function GreenworksLawnMowerReview() {
                 The 40V Entry Line
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                40V is Greenworks&apos; entry-level platform — 50+ tools,
+                40V is Greenworks&apos; entry-level platform, 50+ tools,
                 plastic-deck mowers, mostly push (not self-propelled)
                 lawn mower options. At $349 for the 40V 20-inch push
                 mower, this is the cheapest way into a Greenworks battery
@@ -579,8 +578,7 @@ export default function GreenworksLawnMowerReview() {
                 CARB SORE Compliance
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Every Greenworks battery mower is zero-emission by design —
-                they don&apos;t use gas, don&apos;t emit hydrocarbons, and
+                Every Greenworks battery mower is zero-emission by design. they don&apos;t use gas, don&apos;t emit hydrocarbons, and
                 don&apos;t require registration under SORE. Since January 1,
                 2024, new gas lawn mowers under 25hp can no longer be sold
                 in California. Commercial crews must replace their fleet
@@ -725,7 +723,7 @@ export default function GreenworksLawnMowerReview() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>California commercial landscape crews</strong>{' '}
-                    going CARB-compliant — 80V Pro is the strongest
+                    going CARB-compliant, 80V Pro is the strongest
                     pro-grade battery mower platform with steel deck and
                     commercial construction.
                   </span>
@@ -734,7 +732,7 @@ export default function GreenworksLawnMowerReview() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>1/2 to 2 acre property owners</strong> who
-                    want a real battery ride-on or zero-turn — the
+                    want a real battery ride-on or zero-turn, the
                     CrossoverT and ZT are the only serious options in
                     their price class.
                   </span>
@@ -764,7 +762,7 @@ export default function GreenworksLawnMowerReview() {
               <div className='space-y-6 mb-8'>
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>
-                    80V, 60V, and 40V batteries — interchangeable?
+                    80V, 60V, and 40V batteries. Interchangeable?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     No. Three completely separate platforms. Pick one and
@@ -808,7 +806,7 @@ export default function GreenworksLawnMowerReview() {
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     Steel lasts a decade+, handles rocks, re-paintable.
-                    Plastic is lighter, cheaper, no rust — but cracks on
+                    Plastic is lighter, cheaper, no rust, but cracks on
                     impact. Steel for 5+ year buys.
                   </p>
                 </div>
@@ -829,7 +827,7 @@ export default function GreenworksLawnMowerReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Greenworks is the battery lawn mower brand with the deepest
-                product range — from $349 entry push mowers to $5,499
+                product range, from $349 entry push mowers to $5,499
                 zero-turn ride-ons. The 80V Pro platform is the strongest
                 CARB-compliant pro mower lineup on the market, and the
                 CrossoverT is the first real battery ride-on that can

@@ -22,7 +22,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Whole House Generators (2026): Generac vs Kohler vs Champion — Full Buyer\u2019s Guide',
+    'Best Whole House Generators (2026): Generac vs Kohler vs Champion; Full Buyer\u2019s Guide',
   description:
     'Compare the best whole house generators for 2026. In-depth reviews of Generac Guardian 24kW, 22kW, 26kW, Kohler 24kW, and Champion 14kW. Sizing guide, installation costs, and California backup power tips included.',
   alternates: {
@@ -41,7 +41,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Best Whole House Generators (2026): Generac vs Kohler vs Champion — Full Buyer\u2019s Guide',
+    'Best Whole House Generators (2026): Generac vs Kohler vs Champion, Full Buyer\u2019s Guide',
   description:
     'Compare the best whole house standby generators for 2026. In-depth reviews covering Generac Guardian 24kW, 22kW, 26kW, Kohler 24kW, and Champion 14kW with installation costs, sizing guide, and California-specific considerations.',
   datePublished: '2026-04-17',
@@ -429,7 +429,7 @@ export default function BestWholeHouseGenerator() {
                   <ul className="space-y-2">
                     {[
                       'Powers entire 3,000+ sq ft home including central AC',
-                      'True Power technology — safe for sensitive electronics',
+                      'True Power technology. safe for sensitive electronics',
                       'Mobile Link WiFi monitoring and diagnostics',
                       '200A whole-house transfer switch included',
                       '75% market share = huge dealer/service network',
@@ -450,7 +450,7 @@ export default function BestWholeHouseGenerator() {
                   <ul className="space-y-2">
                     {[
                       'Higher upfront cost than 22kW model',
-                      '67 dB noise level — audible from neighboring yards',
+                      '67 dB noise level, audible from neighboring yards',
                       'Professional installation required ($3,000-$5,000)',
                       'Requires regular maintenance (oil changes, filter replacement)',
                       'Natural gas output drops to 21kW (may matter for very large homes)',
@@ -469,7 +469,7 @@ export default function BestWholeHouseGenerator() {
                   productKey="generac-guardian-24kw"
                   source="best-whole-house-generator"
                   variant="primary"
-                  label="Check Price — Generac Guardian 24kW"
+                  label="Check Price. Generac Guardian 24kW"
                   showPrice
                 />
               </div>
@@ -554,7 +554,7 @@ export default function BestWholeHouseGenerator() {
                   <ul className="space-y-2">
                     {[
                       'May fall short for homes over 2,500 sq ft with heavy loads',
-                      'Only 19,500W on natural gas — tight if running AC + range + dryer',
+                      'Only 19,500W on natural gas. tight if running AC + range + dryer',
                       'Same 67 dB noise level as the 24kW',
                       'Still requires $3,000-$5,000 professional installation',
                     ].map((con) => (
@@ -669,7 +669,7 @@ export default function BestWholeHouseGenerator() {
                   productKey="generac-guardian-26kw"
                   source="best-whole-house-generator"
                   variant="primary"
-                  label="Check Price — Generac Guardian 26kW"
+                  label="Check Price, Generac Guardian 26kW"
                   showPrice
                 />
               </div>
@@ -751,7 +751,7 @@ export default function BestWholeHouseGenerator() {
                   <ul className="space-y-2">
                     {[
                       'More expensive than Generac for equivalent output',
-                      'Transfer switch sold separately — adds $800-$1,500',
+                      'Transfer switch sold separately, adds $800-$1,500',
                       'Smaller dealer network than Generac',
                       'Parts and service may be harder to find in some areas',
                     ].map((con) => (
@@ -870,7 +870,7 @@ export default function BestWholeHouseGenerator() {
                   productKey="champion-14kw-100177"
                   source="best-whole-house-generator"
                   variant="primary"
-                  label="Check Price — Champion 14kW"
+                  label="Check Price, Champion 14kW"
                   showPrice
                 />
               </div>

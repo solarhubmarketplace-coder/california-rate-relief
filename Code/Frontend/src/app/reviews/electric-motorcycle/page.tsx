@@ -19,14 +19,14 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-// Primary affiliate CTA for this hub — category top pick
+// Primary affiliate CTA for this hub, category top pick
 const PRIMARY_PRODUCT_KEY = 'zero-srf';
 
 export const metadata: Metadata = {
   title:
     'Best Electric Motorcycles 2026: Street, Dual-Sport, and Off-Road Compared',
   description:
-    'The definitive 2026 electric motorcycle buyer\'s guide. Zero SR/F, Harley-Davidson LiveWire ONE, Energica Ego+, Kawasaki Ninja e-1, and CAKE Kalk OR compared — range, charging, M1 licensing, California HOV lane access, and the $1,500-$2,000 CVAP rebate explained.',
+    'The definitive 2026 electric motorcycle buyer\'s guide. Zero SR/F, Harley-Davidson LiveWire ONE, Energica Ego+, Kawasaki Ninja e-1, and CAKE Kalk OR compared, range, charging, M1 licensing, California HOV lane access, and the $1,500-$2,000 CVAP rebate explained.',
   alternates: {
     canonical: '/reviews/electric-motorcycle',
   },
@@ -88,7 +88,7 @@ const faqSchema = {
       name: 'Do you need a motorcycle license to ride an electric motorcycle?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, for any street-legal electric motorcycle with a top speed above 30 mph, you need a motorcycle endorsement — in California that is the M1 license. The M1 covers all two-wheeled motorcycles regardless of engine type. Smaller 28 mph-capped e-mopeds (Class 2 mopeds) don\'t require an M1, but every bike on this list including the 55 mph Kawasaki Ninja e-1 does require a motorcycle license.',
+        text: 'Yes, for any street-legal electric motorcycle with a top speed above 30 mph, you need a motorcycle endorsement. In California that is the M1 license. The M1 covers all two-wheeled motorcycles regardless of engine type. Smaller 28 mph-capped e-mopeds (Class 2 mopeds) don\'t require an M1, but every bike on this list including the 55 mph Kawasaki Ninja e-1 does require a motorcycle license.',
       },
     },
     {
@@ -104,7 +104,7 @@ const faqSchema = {
       name: 'Can an electric motorcycle use the California HOV / carpool lane solo?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Motorcycles (electric or gas) can already use HOV lanes in California regardless of occupancy — this is a longstanding rule that has nothing to do with the CAV sticker program. What electric motorcycles don\'t qualify for (as of 2026) is the Clean Air Vehicle (CAV) decal program, which was designed for four-wheeled EVs and PHEVs. The practical result is the same: ride your electric motorcycle solo in the HOV lane anywhere in California, no decal needed.',
+        text: 'Motorcycles (electric or gas) can already use HOV lanes in California regardless of occupancy, this is a longstanding rule that has nothing to do with the CAV sticker program. What electric motorcycles don\'t qualify for (as of 2026) is the Clean Air Vehicle (CAV) decal program, which was designed for four-wheeled EVs and PHEVs. The practical result is the same: ride your electric motorcycle solo in the HOV lane anywhere in California, no decal needed.',
       },
     },
     {
@@ -112,7 +112,7 @@ const faqSchema = {
       name: 'Is there a California rebate for electric motorcycles in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. California\'s Clean Vehicle Assistance Program (CVAP) and the CARB-funded E-Motorcycle Rebate cover eligible battery-electric motorcycles with rebates of $1,500 to $2,000 depending on income level and the specific program funding available. Qualifying bikes must have a top speed of at least 45 mph and appear on the state-maintained eligible vehicle list. Most Zero, LiveWire, and Energica models qualify; entry-level bikes like the Kawasaki Ninja e-1 do not meet the 45 mph threshold for all program tiers. Funding runs out periodically — check current availability before purchasing.',
+        text: 'Yes. California\'s Clean Vehicle Assistance Program (CVAP) and the CARB-funded E-Motorcycle Rebate cover eligible battery-electric motorcycles with rebates of $1,500 to $2,000 depending on income level and the specific program funding available. Qualifying bikes must have a top speed of at least 45 mph and appear on the state-maintained eligible vehicle list. Most Zero, LiveWire, and Energica models qualify; entry-level bikes like the Kawasaki Ninja e-1 do not meet the 45 mph threshold for all program tiers. Funding runs out periodically; check current availability before purchasing.',
       },
     },
     {
@@ -120,7 +120,7 @@ const faqSchema = {
       name: 'How much does it cost to "fuel" an electric motorcycle vs gas?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'At California\'s 2026 average residential electricity rate of roughly 32 cents per kWh, a full charge of a 14.4 kWh Zero SR/F costs about $4.60 and covers 100-200 miles — roughly 2-5 cents per mile. A gas motorcycle at 45 mpg on $5.00 gas costs about 11 cents per mile. Over 10,000 miles per year, the electric bike saves roughly $600-$900 in fuel. The savings grow if you charge on off-peak TOU rates (around 24 cents per kWh) or from rooftop solar.',
+        text: 'At California\'s 2026 average residential electricity rate of roughly 32 cents per kWh, a full charge of a 14.4 kWh Zero SR/F costs about $4.60 and covers 100-200 miles, roughly 2-5 cents per mile. A gas motorcycle at 45 mpg on $5.00 gas costs about 11 cents per mile. Over 10,000 miles per year, the electric bike saves roughly $600-$900 in fuel. The savings grow if you charge on off-peak TOU rates (around 24 cents per kWh) or from rooftop solar.',
       },
     },
     {
@@ -128,7 +128,7 @@ const faqSchema = {
       name: 'Are electric motorcycles reliable? What about maintenance?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Electric motorcycles have dramatically fewer moving parts than gas bikes — no engine oil, no spark plugs, no valves, no cam chain, no clutch, no gearbox in most cases, and no coolant system on air-cooled models. The primary maintenance items are: tires (same as gas), brake pads, brake fluid, chain or belt tension, and battery-pack checks. Zero and LiveWire publish maintenance intervals of 1 year / annual check, not 3,000-mile oil changes. The main reliability concern is battery degradation after 100,000 miles, and battery replacements run $3,500-$7,000 depending on the bike.',
+        text: 'Electric motorcycles have dramatically fewer moving parts than gas bikes, no engine oil, no spark plugs, no valves, no cam chain, no clutch, no gearbox in most cases, and no coolant system on air-cooled models. The primary maintenance items are: tires (same as gas), brake pads, brake fluid, chain or belt tension, and battery-pack checks. Zero and LiveWire publish maintenance intervals of 1 year / annual check, not 3,000-mile oil changes. The main reliability concern is battery degradation after 100,000 miles, and battery replacements run $3,500-$7,000 depending on the bike.',
       },
     },
   ],
@@ -208,7 +208,7 @@ export default function ElectricMotorcycleHub() {
                 Electric motorcycles have crossed a real threshold in 2026. A Zero SR/F will out-accelerate a Ducati Monster from 0 to 60, the Harley-Davidson LiveWire has refined itself into a genuinely premium product, and California riders now have a proper rebate stack — up to $2,000 through CARB&apos;s CVAP program — that can meaningfully offset the sticker price. What was a niche category five years ago is now a real alternative for daily commuters, canyon riders, and track-day enthusiasts.
               </p>
               <p className='text-lg text-foreground/80 leading-relaxed mb-8'>
-                This guide covers the five electric motorcycles that matter most in 2026 — from the $7,999 Kawasaki Ninja e-1 that gets new riders into the category, to the $24,000 Energica Ego+ superbike with 261 miles of city range. We break down the trade-offs between range, price, riding style, and California-specific perks so you can pick the right bike the first time.
+                This guide covers the five electric motorcycles that matter most in 2026. From the $7,999 Kawasaki Ninja e-1 that gets new riders into the category, to the $24,000 Energica Ego+ superbike with 261 miles of city range. We break down the trade-offs between range, price, riding style, and California-specific perks so you can pick the right bike the first time.
               </p>
             </div>
 
@@ -299,7 +299,7 @@ export default function ElectricMotorcycleHub() {
                 Why Electric Motorcycles in 2026?
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The pitch for an electric motorcycle in 2026 is not just environmental. It&apos;s performance, cost of ownership, and riding experience. An electric motor produces maximum torque the instant the throttle cracks — there is no rev-up, no powerband, no waiting for the cams to come in. The Zero SR/F will lift its front wheel out of a corner in ways that would require three gear changes on a gas liter bike.
+                The pitch for an electric motorcycle in 2026 is not just environmental. It&apos;s performance, cost of ownership, and riding experience. An electric motor produces maximum torque the instant the throttle cracks, there is no rev-up, no powerband, no waiting for the cams to come in. The Zero SR/F will lift its front wheel out of a corner in ways that would require three gear changes on a gas liter bike.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The other half of the pitch is silence. An electric motorcycle doesn&apos;t announce itself at 6 AM when you leave for a canyon ride, doesn&apos;t rattle your fillings on the interstate, and doesn&apos;t trigger noise complaints in Los Angeles or San Francisco neighborhoods that are increasingly hostile to loud bikes.
@@ -336,13 +336,13 @@ export default function ElectricMotorcycleHub() {
                 Range and Charging: What&apos;s Actually Realistic
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Manufacturer range claims for electric motorcycles follow an annoying convention — they advertise city range (the biggest number) loud, and mention highway range (the smaller, more relevant number) quietly. Aggressive riding, highway speeds, and headwinds all crush range significantly. Here&apos;s what to expect in the real world.
+                Manufacturer range claims for electric motorcycles follow an annoying convention, they advertise city range (the biggest number) loud, and mention highway range (the smaller, more relevant number) quietly. Aggressive riding, highway speeds, and headwinds all crush range significantly. Here&apos;s what to expect in the real world.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 City Range vs Highway Range
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                On most electric motorcycles, city range is roughly double highway range. A Zero SR/F claims 200 miles city / 100 miles highway at 70 mph. A LiveWire ONE is 146 miles city / 95 miles highway. The difference comes from aerodynamic drag — at 70 mph, the bike is fighting a lot of air, and without regenerative braking benefits you&apos;d get in stop-and-go city riding, the battery drains faster.
+                On most electric motorcycles, city range is roughly double highway range. A Zero SR/F claims 200 miles city / 100 miles highway at 70 mph. A LiveWire ONE is 146 miles city / 95 miles highway. The difference comes from aerodynamic drag, at 70 mph, the bike is fighting a lot of air, and without regenerative braking benefits you&apos;d get in stop-and-go city riding, the battery drains faster.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Level 1 (Home 120V) Charging
@@ -394,7 +394,7 @@ export default function ElectricMotorcycleHub() {
                 Four of the five bikes on this list (Zero SR/F, LiveWire ONE, Energica Ego+, Kawasaki Ninja e-1) are full street-legal motorcycles with DOT lighting, VIN, CARB certification, and motorcycle titles. They register like any other motorcycle and can be ridden on any public road.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The CAKE Kalk OR is sold as an off-road only bike. CAKE does make a street-legal variant called the Kalk INK&amp;SR (or the OR+ in some markets) that adds DOT lighting, turn signals, mirrors, and a proper street-legal title. The OR we review here is the pure-trail version — ride it on OHV land, private property, or organized enduro events.
+                The CAKE Kalk OR is sold as an off-road only bike. CAKE does make a street-legal variant called the Kalk INK&amp;SR (or the OR+ in some markets) that adds DOT lighting, turn signals, mirrors, and a proper street-legal title. The OR we review here is the pure-trail version; ride it on OHV land, private property, or organized enduro events.
               </p>
 
               {/* California HOV */}
@@ -402,7 +402,7 @@ export default function ElectricMotorcycleHub() {
                 California HOV Lane Access
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Motorcycles in California — electric, gas, diesel, or steam-powered — can ride the HOV / carpool lane solo under longstanding California Vehicle Code Section 21655.5. You do not need any decal, sticker, or permit for this. That&apos;s a real daily benefit for anyone commuting from the Inland Empire into Orange County or across the Bay on the 880.
+                Motorcycles in California, electric, gas, diesel, or steam-powered, can ride the HOV / carpool lane solo under longstanding California Vehicle Code Section 21655.5. You do not need any decal, sticker, or permit for this. That&apos;s a real daily benefit for anyone commuting from the Inland Empire into Orange County or across the Bay on the 880.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The California Clean Air Vehicle (CAV) sticker program does not include electric motorcycles, but you don&apos;t need it — motorcycles already have full HOV access by virtue of being motorcycles.
@@ -416,7 +416,7 @@ export default function ElectricMotorcycleHub() {
                 CARB funds a rebate program specifically for battery-electric motorcycles with top speeds above 45 mph. As of 2026, qualifying applicants can receive between $1,500 and $2,000 depending on income level and funding availability. The higher tier ($2,000) is reserved for applicants at or below 400% of the federal poverty line; the base rebate of $1,500 is available to most California residents who meet program income caps.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Qualifying bikes from this list: Zero SR/F, Harley-Davidson LiveWire ONE, Energica Ego+. Bikes that may or may not qualify depending on the current eligible-vehicle list: Kawasaki Ninja e-1 (borderline — the 55 mph top speed meets the 45 mph threshold, but funding tier eligibility varies year to year), CAKE Kalk OR (off-road only models typically don&apos;t qualify; the street-legal INK&amp;SR variant usually does).
+                Qualifying bikes from this list: Zero SR/F, Harley-Davidson LiveWire ONE, Energica Ego+. Bikes that may or may not qualify depending on the current eligible-vehicle list: Kawasaki Ninja e-1 (borderline. The 55 mph top speed meets the 45 mph threshold, but funding tier eligibility varies year to year), CAKE Kalk OR (off-road only models typically don&apos;t qualify; the street-legal INK&amp;SR variant usually does).
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Apply through the California Air Resources Board&apos;s program portal before purchasing (some programs require pre-approval) and confirm current funding status. CVAP funding periodically runs dry and reopens when additional state budget is allocated.
@@ -433,7 +433,7 @@ export default function ElectricMotorcycleHub() {
                 Compare that to a gas motorcycle. A typical naked like a Yamaha MT-09 returns about 45 mpg. At $5.00 per gallon (roughly California&apos;s 2026 average), you&apos;re paying about 11 cents per mile. Ride 10,000 miles a year and the electric bike saves you roughly $600-$900 in fuel alone.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Savings can grow materially if you charge on off-peak TOU rates — PG&amp;E EV2-A peak is around 55 cents per kWh but off-peak drops to about 24 cents — or if you charge from rooftop solar you already own. A solar homeowner effectively pays the avoided-export rate of 4-8 cents per kWh, which pushes fuel cost below a penny per mile.
+                Savings can grow materially if you charge on off-peak TOU rates; PG&amp;E EV2-A peak is around 55 cents per kWh but off-peak drops to about 24 cents. or if you charge from rooftop solar you already own. A solar homeowner effectively pays the avoided-export rate of 4-8 cents per kWh, which pushes fuel cost below a penny per mile.
               </p>
 
               {/* Product Deep Dives */}
@@ -447,10 +447,10 @@ export default function ElectricMotorcycleHub() {
                 The Zero SR/F is the best all-around electric motorcycle in 2026, and it&apos;s not close. It pairs a 110-horsepower ZF17.3 motor and 17.3 kWh battery pack (14.4 kWh usable) with premium Showa suspension, Pirelli Diablo Rosso III tires, and a Bosch MSC IMU-based rider-aid package that handles traction control, cornering ABS, and wheelie control.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                What sets it apart from Harley and Energica is the Cypher III operating system. You can unlock Sport mode, additional power, Rapid Charge capability, and other features via software purchase after the fact — a genuinely novel approach to bike configuration. Zero also has the deepest US dealer network of any electric-only brand, and parts availability is now mature.
+                What sets it apart from Harley and Energica is the Cypher III operating system. You can unlock Sport mode, additional power, Rapid Charge capability, and other features via software purchase after the fact. a genuinely novel approach to bike configuration. Zero also has the deepest US dealer network of any electric-only brand, and parts availability is now mature.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The SR/F weighs 498 pounds, which is heavy for a naked but lighter than the LiveWire by 64 pounds. The low center of gravity makes it feel much lighter than the scale reading suggests — it flicks through canyons like a 400-pound Ducati Monster even though it has more torque than a Panigale V2.
+                The SR/F weighs 498 pounds, which is heavy for a naked but lighter than the LiveWire by 64 pounds. The low center of gravity makes it feel much lighter than the scale reading suggests. It flicks through canyons like a 400-pound Ducati Monster even though it has more torque than a Panigale V2.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Weaknesses: the seat is flat and firm for long rides, no DC fast charging on the base model, and the TFT dash is smaller than the LiveWire&apos;s. For a daily commuter plus weekend canyon bike, none of that matters.
@@ -465,22 +465,22 @@ export default function ElectricMotorcycleHub() {
               </div>
 
               <h2 id='livewire' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                2. Harley-Davidson LiveWire ONE — Best Premium
+                2. Harley-Davidson LiveWire ONE, Best Premium
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $22,799 · <strong>Peak power:</strong> 105 hp · <strong>Top speed:</strong> 110 mph · <strong>Range:</strong> 146 mi city / 95 mi highway · <strong>Weight:</strong> 562 lbs
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                LiveWire started as a Harley-Davidson sub-brand and in 2022 spun off as its own public company. The LiveWire ONE is the refined, production-ready second generation of the bike Harley launched in 2019 — it dropped the price by $8,000 from the original LiveWire, added better range, and kept the premium hardware.
+                LiveWire started as a Harley-Davidson sub-brand and in 2022 spun off as its own public company. The LiveWire ONE is the refined, production-ready second generation of the bike Harley launched in 2019, it dropped the price by $8,000 from the original LiveWire, added better range, and kept the premium hardware.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The LiveWire rides like a refined, heavy naked. It&apos;s not as aggressive as the Zero SR/F — the 562-pound weight pulls it down in tighter canyons — but it&apos;s the most polished and comfortable long-ride electric motorcycle you can buy. Brembo M50 brakes, Showa Separate Function Fork, and a large 4.3-inch color TFT dash feel like premium equipment. The ride quality is noticeably smoother than the Zero.
+                The LiveWire rides like a refined, heavy naked. It&apos;s not as aggressive as the Zero SR/F, the 562-pound weight pulls it down in tighter canyons — but it&apos;s the most polished and comfortable long-ride electric motorcycle you can buy. Brembo M50 brakes, Showa Separate Function Fork, and a large 4.3-inch color TFT dash feel like premium equipment. The ride quality is noticeably smoother than the Zero.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The standout feature: CCS1 DC fast charging. Plug into a Combined Charging System DCFC station and you can get to 80% in about 40 minutes. That single feature is what makes the LiveWire the practical pick for long-distance touring. The Zero SR/F can&apos;t do this.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Range is the weak point. 146 miles city / 95 miles highway means a LiveWire is a commuter and canyon bike first, not a touring bike — but the DCFC makes it tour-capable in a way the longer-range Energica isn&apos;t as easily.
+                Range is the weak point. 146 miles city / 95 miles highway means a LiveWire is a commuter and canyon bike first, not a touring bike. But the DCFC makes it tour-capable in a way the longer-range Energica isn&apos;t as easily.
               </p>
               <div className='mb-8'>
                 <BuyButton
@@ -501,13 +501,13 @@ export default function ElectricMotorcycleHub() {
                 Energica is an Italian manufacturer that came out of the CRP Group&apos;s aerospace and Formula 1 business. The Ego+ (plus is the current 21.5 kWh battery spec) is the largest-battery, highest-performance production electric motorcycle you can buy in 2026. It was the official bike of the MotoE world championship series from 2019 to 2022.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                At 169 horsepower and 150 mph, the Ego+ is a genuine superbike. The 21.5 kWh battery delivers a claimed 261 miles city range — the longest on this list by a wide margin. It supports Mode 4 DC fast charging (up to about 25 kW), which takes a realistic 40 minutes to go from 20% to 80%.
+                At 169 horsepower and 150 mph, the Ego+ is a genuine superbike. The 21.5 kWh battery delivers a claimed 261 miles city range, the longest on this list by a wide margin. It supports Mode 4 DC fast charging (up to about 25 kW), which takes a realistic 40 minutes to go from 20% to 80%.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The hardware is proper superbike kit: Marzocchi fork, Bitubo shock, Brembo M4 brakes with Bosch cornering ABS, and a full-size full-color dash with Bluetooth and ride modes. On a canyon road or a track day, the Ego+ is the fastest electric motorcycle on this list, bar none.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Downsides: weight (571 lbs), price ($24,000 before options), and dealer access — Energica has a thinner US network than Zero or Harley, which can matter for service and warranty. The Ego+ is a specialist pick for a rider who wants the most performance-forward electric motorcycle and is willing to make service accommodations.
+                Downsides: weight (571 lbs), price ($24,000 before options), and dealer access. Energica has a thinner US network than Zero or Harley, which can matter for service and warranty. The Ego+ is a specialist pick for a rider who wants the most performance-forward electric motorcycle and is willing to make service accommodations.
               </p>
               <div className='mb-8'>
                 <BuyButton
@@ -519,7 +519,7 @@ export default function ElectricMotorcycleHub() {
               </div>
 
               <h2 id='ninja-e1' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                4. Kawasaki Ninja e-1 — Best Entry Level
+                4. Kawasaki Ninja e-1, Best Entry Level
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $7,999 · <strong>Peak power:</strong> 11 hp · <strong>Top speed:</strong> 55 mph · <strong>Range:</strong> 40 mi · <strong>Weight:</strong> 309 lbs
@@ -546,16 +546,16 @@ export default function ElectricMotorcycleHub() {
               </div>
 
               <h2 id='cake-kalk' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                5. CAKE Kalk OR — Best Off-Road
+                5. CAKE Kalk OR, Best Off-Road
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $13,500 · <strong>Peak power:</strong> 16 kW · <strong>Top speed:</strong> 56 mph · <strong>Range:</strong> 3 hours trail riding · <strong>Weight:</strong> 174 lbs
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                CAKE is a Swedish company that builds minimalist electric off-road motorcycles designed around weight reduction and clean aesthetics rather than raw power. The Kalk OR is their dedicated off-road bike — 174 pounds, 16 kW peak power, 2.6 kWh battery, and a minimalist aluminum frame that makes most other electric dirt bikes look heavy.
+                CAKE is a Swedish company that builds minimalist electric off-road motorcycles designed around weight reduction and clean aesthetics rather than raw power. The Kalk OR is their dedicated off-road bike. 174 pounds, 16 kW peak power, 2.6 kWh battery, and a minimalist aluminum frame that makes most other electric dirt bikes look heavy.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                What distinguishes the Kalk OR from a Sur-Ron or Talaria is design philosophy. The Sur-Ron and Talaria are electric motorcycles; the CAKE is a piece of industrial design that happens to be fast off road. Fit and finish is on a different level — it feels like an Apple product. Suspension is a proper Ohlins TTX fork and shock (top of the dirt-bike spec list). Ergonomics are tall and neutral, more like a modern European enduro than a mini-moto.
+                What distinguishes the Kalk OR from a Sur-Ron or Talaria is design philosophy. The Sur-Ron and Talaria are electric motorcycles; the CAKE is a piece of industrial design that happens to be fast off road. Fit and finish is on a different level, it feels like an Apple product. Suspension is a proper Ohlins TTX fork and shock (top of the dirt-bike spec list). Ergonomics are tall and neutral, more like a modern European enduro than a mini-moto.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The trade-off is price. At $13,500, the Kalk OR costs three times what a Sur-Ron Light Bee X does for a bike that&apos;s arguably only 20% better on the trail. You pay for the design, the suspension, and the lighter weight. If those matter to you, nothing else in the segment feels like it.
@@ -576,7 +576,7 @@ export default function ElectricMotorcycleHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Best Value After Rebates'
-                verdict='The Zero SR/F at $21,995 drops to roughly $19,995 after a $2,000 CVAP rebate — that is materially less than a comparable Ducati Monster 937 with comparable power.'
+                verdict='The Zero SR/F at $21,995 drops to roughly $19,995 after a $2,000 CVAP rebate; that is materially less than a comparable Ducati Monster 937 with comparable power.'
                 source='electric-motorcycle-mid-2'
                 variant='mid'
               />
@@ -619,7 +619,7 @@ export default function ElectricMotorcycleHub() {
                 Electric motorcycle batteries are typically warrantied for 5 years / unlimited miles and rated for 1,000+ charge cycles to 80% capacity. In real terms, most bikes will hold 80%+ capacity past 100,000 miles if they&apos;re charged predominantly on Level 1 or Level 2 (not repeatedly on DC fast charge at high state of charge).
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                When battery replacement eventually becomes necessary, expect $3,500-$7,000 depending on bike. Zero battery packs are about $5,000-$7,000 depending on capacity. LiveWire is similar. Energica&apos;s larger pack is more. The Kawasaki Ninja e-1&apos;s removable packs are cheap by comparison — around $700-$900 per pack, and you can replace one without replacing both.
+                When battery replacement eventually becomes necessary, expect $3,500-$7,000 depending on bike. Zero battery packs are about $5,000-$7,000 depending on capacity. LiveWire is similar. Energica&apos;s larger pack is more. The Kawasaki Ninja e-1&apos;s removable packs are cheap by comparison, around $700-$900 per pack, and you can replace one without replacing both.
               </p>
 
               {/* FAQ */}
@@ -632,7 +632,7 @@ export default function ElectricMotorcycleHub() {
                     Do you need a motorcycle license for an electric motorcycle?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — an M1 endorsement is required in California for any two-wheeled motorcycle capable of more than 30 mph. Every bike on this list requires it.
+                    Yes, an M1 endorsement is required in California for any two-wheeled motorcycle capable of more than 30 mph. Every bike on this list requires it.
                   </p>
                 </div>
                 <div>
@@ -656,7 +656,7 @@ export default function ElectricMotorcycleHub() {
                     Is there a California rebate for electric motorcycles?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — CARB&apos;s CVAP / E-Motorcycle Rebate program offers $1,500-$2,000 depending on income and funding. Most full-size electric motorcycles qualify.
+                    Yes. CARB&apos;s CVAP / E-Motorcycle Rebate program offers $1,500-$2,000 depending on income and funding. Most full-size electric motorcycles qualify.
                   </p>
                 </div>
                 <div>
@@ -691,7 +691,7 @@ export default function ElectricMotorcycleHub() {
                 The Bottom Line
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For most buyers, the <strong>Zero SR/F</strong> at $21,995 is the right answer — enough power, enough range, the most mature dealer network, and full CVAP eligibility for a $2,000 rebate in California. The <strong>Harley-Davidson LiveWire ONE</strong> is the premium touring pick because it&apos;s the only bike here with proper CCS1 DC fast charging. The <strong>Energica Ego+</strong> is for the rider who wants the fastest, longest-range production electric bike regardless of price. The <strong>Kawasaki Ninja e-1</strong> is the right first electric motorcycle for someone who needs an urban commuter with a removable battery. The <strong>CAKE Kalk OR</strong> is the pick for riders who want design-forward off-road performance and don&apos;t blink at the $13,500 sticker.
+                For most buyers, the <strong>Zero SR/F</strong> at $21,995 is the right answer. Enough power, enough range, the most mature dealer network, and full CVAP eligibility for a $2,000 rebate in California. The <strong>Harley-Davidson LiveWire ONE</strong> is the premium touring pick because it&apos;s the only bike here with proper CCS1 DC fast charging. The <strong>Energica Ego+</strong> is for the rider who wants the fastest, longest-range production electric bike regardless of price. The <strong>Kawasaki Ninja e-1</strong> is the right first electric motorcycle for someone who needs an urban commuter with a removable battery. The <strong>CAKE Kalk OR</strong> is the pick for riders who want design-forward off-road performance and don&apos;t blink at the $13,500 sticker.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Whatever you buy, factor in the California rebate stack, the cost of an M1 endorsement (~$300), and a quality helmet / jacket / glove / boot setup ($800-$1,500). Electric motorcycles are real motorcycles — they deserve real gear and real respect.

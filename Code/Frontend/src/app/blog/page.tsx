@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Blog post data — add new posts here
+// Blog post data. Add new posts here
 const blogPosts = [
   {
     slug: 'sce-rate-increase-2026',
@@ -47,7 +47,7 @@ const blogPosts = [
     slug: 'nem-3-california-still-worth-it',
     title: 'Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)',
     excerpt:
-      'NEM 3.0 cut export credits by 75%. Here\'s why solar is still worth it in 2026 — and why battery storage changes everything.',
+      'NEM 3.0 cut export credits by 75%. Here\'s why solar is still worth it in 2026, and why battery storage changes everything.',
     date: '2026-04-14',
     readTime: '9 min read',
     category: 'Solar Education',
@@ -74,7 +74,7 @@ const blogPosts = [
     slug: 'ppa-loan-vs-solar-lease-vs-cash-california',
     title: 'PPA Loan vs Solar Lease vs Cash: 2026 California Comparison',
     excerpt:
-      "California's four ways to pay for solar compared — cash, loan, lease, PPA — with the actual math for a typical $250/mo household.",
+      "California's four ways to pay for solar compared, cash, loan, lease, PPA, with the actual math for a typical $250/mo household.",
     date: '2026-04-23',
     readTime: '13 min read',
     category: 'Solar Financing',
@@ -137,7 +137,7 @@ const blogPosts = [
     slug: 'rent-solar-panels-for-your-home-california',
     title: 'Rent Solar Panels For Your Home: California 2026 Guide',
     excerpt:
-      "Renting solar panels in California — how solar leases and PPAs actually work, typical monthly costs, who qualifies, and when renting beats owning.",
+      "Renting solar panels in California, how solar leases and PPAs actually work, typical monthly costs, who qualifies, and when renting beats owning.",
     date: '2026-04-23',
     readTime: '7 min read',
     category: 'Solar Financing',
@@ -146,7 +146,7 @@ const blogPosts = [
     slug: 'are-solar-panels-worth-it-california',
     title: 'Are Solar Panels Worth It in California? 2026 Honest Answer',
     excerpt:
-      "For most California homeowners paying $200+ per month, solar is still worth it in 2026 — but only with a battery and only if the math fits your situation.",
+      "For most California homeowners paying $200+ per month, solar is still worth it in 2026. but only with a battery and only if the math fits your situation.",
     date: '2026-04-23',
     readTime: '8 min read',
     category: 'Solar Decision',
@@ -173,7 +173,7 @@ const blogPosts = [
     slug: 'tesla-powerwall-installers-california',
     title: 'Tesla Powerwall Installers in California: 2026 Guide',
     excerpt:
-      "Find certified Tesla Powerwall installers in California — how Tesla's certified installer network works, what Powerwall 3 costs installed, and which California installers are certified.",
+      "Find certified Tesla Powerwall installers in California; how Tesla's certified installer network works, what Powerwall 3 costs installed, and which California installers are certified.",
     date: '2026-04-23',
     readTime: '7 min read',
     category: 'Battery Storage',
@@ -200,7 +200,7 @@ const blogPosts = [
     slug: 'free-solar-for-seniors-california',
     title: 'Free Solar For Seniors in California: The Real Programs',
     excerpt:
-      "California seniors on fixed income have several legitimate pathways to low-cost or no-cost solar — DAC-SASH, SASH, CARE, FERA, and PPAs. Here's what actually exists.",
+      "California seniors on fixed income have several legitimate pathways to low-cost or no-cost solar. DAC-SASH, SASH, CARE, FERA, and PPAs. Here's what actually exists.",
     date: '2026-04-23',
     readTime: '7 min read',
     category: 'California Solar Programs',
@@ -209,7 +209,7 @@ const blogPosts = [
     slug: 'do-solar-panels-work-at-night-california',
     title: 'Do Solar Panels Work at Night? California Guide',
     excerpt:
-      "Solar panels don't produce electricity at night — but a battery or the grid keeps your home running. Here is how it works in California.",
+      "Solar panels don't produce electricity at night. But a battery or the grid keeps your home running. Here is how it works in California.",
     date: '2026-04-23',
     readTime: '6 min read',
     category: 'Solar Basics',
@@ -227,7 +227,7 @@ const blogPosts = [
     slug: 'why-is-my-california-electric-bill-so-high',
     title: 'Why Is My California Electric Bill So High? PGE, SCE, SDGE Explained',
     excerpt:
-      "California rates are among the highest in the country. Here is why PG&E, SCE, SDG&E, and LADWP bills keep climbing — and how to lower yours.",
+      "California rates are among the highest in the country. Here is why PG&E, SCE, SDG&E, and LADWP bills keep climbing, and how to lower yours.",
     date: '2026-04-23',
     readTime: '9 min read',
     category: 'Utility Bills',
@@ -254,7 +254,7 @@ const blogPosts = [
     slug: 'do-solar-panels-work-during-power-outage-california',
     title: 'Do Solar Panels Work During a Power Outage in California?',
     excerpt:
-      "Grid-tied solar without a battery shuts off during an outage — for safety. Only solar + battery keeps your home powered. Here is how it works and what PSPS means.",
+      "Grid-tied solar without a battery shuts off during an outage. for safety. Only solar + battery keeps your home powered. Here is how it works and what PSPS means.",
     date: '2026-04-23',
     readTime: '7 min read',
     category: 'Solar + Outages',
@@ -263,7 +263,7 @@ const blogPosts = [
     slug: 'is-my-roof-good-for-solar-california',
     title: 'Is My Roof Good for Solar? California Checklist 2026',
     excerpt:
-      "How to tell if your California roof is suitable for solar — orientation, age, shading, roof material, structural strength.",
+      "How to tell if your California roof is suitable for solar. orientation, age, shading, roof material, structural strength.",
     date: '2026-04-23',
     readTime: '8 min read',
     category: 'Roof Suitability',

@@ -26,7 +26,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Electric Dirt Bikes for Kids (2026): Razor MX650 vs KTM SX-E 3 vs Stacyc vs Husqvarna — Top 5 Reviewed',
+    'Best Electric Dirt Bikes for Kids (2026): Razor MX650 vs KTM SX-E 3 vs Stacyc vs Husqvarna; Top 5 Reviewed',
   description:
     'Compare the best electric dirt bikes for kids in 2026. In-depth reviews of Razor MX650, KTM SX-E 3, Stacyc 16eDRIVE, Razor SX500, and Husqvarna EE 3. Age guide, safety gear checklist, specs, and buying guide.',
   alternates: {
@@ -45,7 +45,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Best Electric Dirt Bikes for Kids (2026): Razor MX650 vs KTM SX-E 3 vs Stacyc vs Husqvarna — Top 5 Reviewed',
+    'Best Electric Dirt Bikes for Kids (2026): Razor MX650 vs KTM SX-E 3 vs Stacyc vs Husqvarna. Top 5 Reviewed',
   description:
     'Compare the best electric dirt bikes for kids in 2026. In-depth reviews covering Razor MX650, KTM SX-E 3, Stacyc 16eDRIVE, Razor SX500, and Husqvarna EE 3 with age guide, safety gear, specs, and buying guide.',
   datePublished: '2026-04-21',
@@ -638,7 +638,7 @@ export default function BestElectricDirtBikeKids() {
                       productKey="ktm-sx-e-3"
                       source="electric-dirt-bike-kids-hub"
                       variant="primary"
-                      label="Check Price — KTM SX-E 3"
+                      label="Check Price, KTM SX-E 3"
                       showPrice
                     />
                   </div>
@@ -938,7 +938,7 @@ export default function BestElectricDirtBikeKids() {
                       productKey="husqvarna-ee-3"
                       source="electric-dirt-bike-kids-hub"
                       variant="primary"
-                      label="Check Price — Husqvarna EE 3"
+                      label="Check Price. Husqvarna EE 3"
                       showPrice
                     />
                   </div>
@@ -1213,7 +1213,7 @@ export default function BestElectricDirtBikeKids() {
                     <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />Adjustable power modes let parents control max speed</li>
                     <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />No hot exhaust pipes to burn kids</li>
                     <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />Near-silent operation — ride without disturbing neighbors</li>
-                    <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />No clutch, no kickstart — just twist and go</li>
+                    <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />No clutch, no kickstart, just twist and go</li>
                     <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />Minimal maintenance (no oil changes, no air filters)</li>
                     <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />Instant throttle cutoff when released</li>
                     <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />No fuel spills or fumes around kids</li>

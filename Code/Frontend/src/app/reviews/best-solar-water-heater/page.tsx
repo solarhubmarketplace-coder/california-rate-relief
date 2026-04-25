@@ -122,7 +122,7 @@ const faqSchema = {
       name: 'Do solar water heaters work on cloudy days?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Solar water heaters still collect heat on cloudy days, though at reduced efficiency — typically 30-50% of their capacity on overcast days. Evacuated tube collectors handle diffuse light better than flat plate collectors. Most systems include a backup electric or gas element that kicks in automatically when solar heating is insufficient, so you always have hot water.',
+        text: 'Solar water heaters still collect heat on cloudy days, though at reduced efficiency, typically 30-50% of their capacity on overcast days. Evacuated tube collectors handle diffuse light better than flat plate collectors. Most systems include a backup electric or gas element that kicks in automatically when solar heating is insufficient, so you always have hot water.',
       },
     },
   ],
@@ -204,7 +204,7 @@ export default function BestSolarWaterHeater() {
                 Water heating accounts for roughly 18-20% of the average American home&apos;s energy bill. A solar water heater can slash that cost by 50-80%, using free energy from the sun to heat your domestic hot water. With energy prices continuing to climb in 2026, solar water heating has never made more financial sense.
               </p>
               <p className="text-lg leading-relaxed mb-8" style={{ color: '#a1a1aa' }}>
-                We spent over 80 hours researching and comparing the top solar water heaters on the market. This guide covers everything you need to know — from active vs. passive systems and flat plate vs. evacuated tube collectors to ROI calculations and climate suitability — so you can make the right choice for your home.
+                We spent over 80 hours researching and comparing the top solar water heaters on the market. This guide covers everything you need to know — from active vs. Passive systems and flat plate vs. Evacuated tube collectors to ROI calculations and climate suitability, so you can make the right choice for your home.
               </p>
             </div>
 
@@ -225,14 +225,14 @@ export default function BestSolarWaterHeater() {
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
-                    <p className="font-semibold" style={{ color: '#f5f5f5' }}>Sunbank 40-Gallon — Best Passive / Best Budget</p>
+                    <p className="font-semibold" style={{ color: '#f5f5f5' }}>Sunbank 40-Gallon; Best Passive / Best Budget</p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>No pumps, no controllers, no electricity needed. Dead-simple to install, virtually maintenance-free, and ideal for warm and mild climates.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
-                    <p className="font-semibold" style={{ color: '#f5f5f5' }}>Northern Lights SWH — Best for Cold Climates</p>
+                    <p className="font-semibold" style={{ color: '#f5f5f5' }}>Northern Lights SWH. Best for Cold Climates</p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>Purpose-built for harsh winters with high-performance evacuated tubes, glycol antifreeze loop, and heavy-duty insulation.</p>
                   </div>
                 </div>
@@ -323,7 +323,7 @@ export default function BestSolarWaterHeater() {
                     </li>
                   </ul>
                   <p className="text-sm mt-4 italic" style={{ color: '#a1a1aa' }}>
-                    <strong style={{ color: '#f5f5f5' }}>Two sub-types:</strong> Direct (open-loop) systems pump actual water through collectors — simple but freeze-prone. Indirect (closed-loop) systems pump antifreeze glycol and transfer heat via a heat exchanger — ideal for cold climates.
+                    <strong style={{ color: '#f5f5f5' }}>Two sub-types:</strong> Direct (open-loop) systems pump actual water through collectors. Simple but freeze-prone. Indirect (closed-loop) systems pump antifreeze glycol and transfer heat via a heat exchanger. Ideal for cold climates.
                   </p>
                 </div>
                 <div className="rounded-xl p-6 border" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
@@ -335,7 +335,7 @@ export default function BestSolarWaterHeater() {
                     </li>
                     <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
                       <Check className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />
-                      Extremely reliable — virtually no moving parts
+                      Extremely reliable. Virtually no moving parts
                     </li>
                     <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
                       <Check className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />
@@ -372,7 +372,7 @@ export default function BestSolarWaterHeater() {
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
                       <Check className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />
-                      More durable — withstand hail and physical impact
+                      More durable, withstand hail and physical impact
                     </li>
                     <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
                       <Check className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />
@@ -443,13 +443,13 @@ export default function BestSolarWaterHeater() {
                     The Duda Solar 200L is the most popular solar water heater kit in America for good reason. It ships as a complete pressurized system with 20 evacuated tubes, a well-insulated stainless steel tank, a pump station, controller, and all the plumbing fittings you need. The evacuated tube design delivers strong performance even on cloudy days and in freezing temperatures when used with the included glycol antifreeze.
                   </p>
                   <p className="text-sm leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
-                    At 200 liters (53 gallons), it comfortably supplies a household of 2-3 people. Larger families can opt for the 300L or 400L versions. The digital controller automates circulation, and the backup electric element ensures hot water even during extended overcast stretches. Installation is straightforward for a licensed plumber — most report 4-6 hours.
+                    At 200 liters (53 gallons), it comfortably supplies a household of 2-3 people. Larger families can opt for the 300L or 400L versions. The digital controller automates circulation, and the backup electric element ensures hot water even during extended overcast stretches. Installation is straightforward for a licensed plumber; most report 4-6 hours.
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 mt-4">
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#22c55e' }}>Pros</p>
                       <ul className="space-y-1.5">
-                        <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Complete kit — everything included for install</li>
+                        <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Complete kit, everything included for install</li>
                         <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Evacuated tubes excel in all climates</li>
                         <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Competitive pricing for an active system</li>
                         <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Multiple size options (200L, 300L, 400L)</li>
@@ -469,7 +469,7 @@ export default function BestSolarWaterHeater() {
                       productKey="duda-solar-200l"
                       source="best-solar-water-heater"
                       variant="primary"
-                      label="Check Price — Duda Solar 200L"
+                      label="Check Price; Duda Solar 200L"
                       showPrice
                     />
                   </div>
@@ -490,7 +490,7 @@ export default function BestSolarWaterHeater() {
                     SunEarth is a California-based manufacturer that has been building flat plate collectors since 1978. The Empire Series is their flagship line — heavy-gauge copper absorbers with a selective coating, tempered low-iron glass glazing, and aluminum frames built to survive decades on a rooftop. These are SRCC-certified and widely used in commercial and residential installations across the Sun Belt.
                   </p>
                   <p className="text-sm leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
-                    The Empire collectors pair with standard 80-gallon solar storage tanks and can be configured as open-loop (direct) in freeze-free zones or closed-loop (indirect) with glycol for colder areas. A two-collector system handles a typical 3-4 person household. The flat plate design is incredibly durable — SunEarth collectors from the 1980s are still in service today.
+                    The Empire collectors pair with standard 80-gallon solar storage tanks and can be configured as open-loop (direct) in freeze-free zones or closed-loop (indirect) with glycol for colder areas. A two-collector system handles a typical 3-4 person household. The flat plate design is incredibly durable. SunEarth collectors from the 1980s are still in service today.
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 mt-4">
                     <div>
@@ -516,7 +516,7 @@ export default function BestSolarWaterHeater() {
                       productKey="sunearth-empire-series"
                       source="best-solar-water-heater"
                       variant="primary"
-                      label="Check Price — SunEarth Empire Series"
+                      label="Check Price, SunEarth Empire Series"
                       showPrice
                     />
                   </div>
@@ -537,7 +537,7 @@ export default function BestSolarWaterHeater() {
                     If you want a solar water heater from a household name in water heating, Rheem&apos;s SolPak is the answer. The system pairs Rheem&apos;s flat plate collectors with their solar-ready storage tanks and a glycol-based closed-loop circulation package. It is backed by Rheem&apos;s national service network, which makes finding parts and qualified installers significantly easier than niche solar brands.
                   </p>
                   <p className="text-sm leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
-                    Performance is solid — the flat plate collectors are efficient in sunny conditions and the 80-gallon tank provides ample storage for a family of 3-4. The indirect glycol loop means it works in freezing climates too. Where Rheem really wins is peace of mind: widespread installer availability, easy warranty claims, and a brand that has been making water heaters for over 100 years.
+                    Performance is solid, the flat plate collectors are efficient in sunny conditions and the 80-gallon tank provides ample storage for a family of 3-4. The indirect glycol loop means it works in freezing climates too. Where Rheem really wins is peace of mind: widespread installer availability, easy warranty claims, and a brand that has been making water heaters for over 100 years.
                   </p>
                   <div className="grid md:grid-cols-2 gap-4 mt-4">
                     <div>
@@ -562,7 +562,7 @@ export default function BestSolarWaterHeater() {
                       productKey="rheem-solpak"
                       source="best-solar-water-heater"
                       variant="primary"
-                      label="Check Price — Rheem SolPak"
+                      label="Check Price, Rheem SolPak"
                       showPrice
                     />
                   </div>
@@ -608,7 +608,7 @@ export default function BestSolarWaterHeater() {
                       productKey="ao-smith-cirrex"
                       source="best-solar-water-heater"
                       variant="primary"
-                      label="Check Price — A.O. Smith Cirrex"
+                      label="Check Price, A.O. Smith Cirrex"
                       showPrice
                     />
                   </div>
@@ -635,7 +635,7 @@ export default function BestSolarWaterHeater() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#22c55e' }}>Pros</p>
                       <ul className="space-y-1.5">
-                        <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Zero electricity needed — fully passive</li>
+                        <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Zero electricity needed; fully passive</li>
                         <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Lowest maintenance of any solar water heater</li>
                         <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Affordable — fastest payback period</li>
                         <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Easy DIY-friendly installation</li>
@@ -682,7 +682,7 @@ export default function BestSolarWaterHeater() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#22c55e' }}>Pros</p>
                       <ul className="space-y-1.5">
-                        <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Purpose-built for extreme cold — tested to -40°F</li>
+                        <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Purpose-built for extreme cold. Tested to -40°F</li>
                         <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Evacuated tubes excel in low-light conditions</li>
                         <li className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}><CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />Commercial-grade components and build quality</li>
                       </ul>
@@ -701,7 +701,7 @@ export default function BestSolarWaterHeater() {
                       productKey="northern-lights-swh"
                       source="best-solar-water-heater"
                       variant="primary"
-                      label="Check Price — Northern Lights SWH"
+                      label="Check Price, Northern Lights SWH"
                       showPrice
                     />
                   </div>

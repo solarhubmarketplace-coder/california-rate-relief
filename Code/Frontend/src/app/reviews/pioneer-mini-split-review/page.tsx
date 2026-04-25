@@ -150,7 +150,7 @@ const faqSchema = {
       name: 'Can I install a Pioneer mini split myself?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Technically, Pioneer mini splits are not designed as DIY units like MrCool. They require a vacuum pump, manifold gauges, and refrigerant handling — all of which need EPA 608 certification. However, Pioneer sells complete install kits and some handy homeowners do self-install. Be aware that improper installation voids the warranty and can cause refrigerant leaks, poor performance, and premature failure.',
+        text: 'Technically, Pioneer mini splits are not designed as DIY units like MrCool. They require a vacuum pump, manifold gauges, and refrigerant handling, all of which need EPA 608 certification. However, Pioneer sells complete install kits and some handy homeowners do self-install. Be aware that improper installation voids the warranty and can cause refrigerant leaks, poor performance, and premature failure.',
       },
     },
     {
@@ -276,7 +276,7 @@ export default function PioneerMiniSplitReviewPage() {
               productKey={PRODUCT_KEY}
               badge="Best Budget Pick"
               rating={4.0}
-              verdict="Pioneer Diamante Series — inverter-driven ductless at 30-50% less than Daikin or Mitsubishi. Up to 19 SEER2, heats down to -4°F, built-in WiFi, 32 dB indoor noise."
+              verdict="Pioneer Diamante Series, inverter-driven ductless at 30-50% less than Daikin or Mitsubishi. Up to 19 SEER2, heats down to -4°F, built-in WiFi, 32 dB indoor noise."
               pros={[
                 'Budget-conscious homeowners',
                 'Garages, workshops, ADUs, bonus rooms',
@@ -360,11 +360,11 @@ export default function PioneerMiniSplitReviewPage() {
               <p className='text-muted-foreground leading-relaxed mb-4'>
                 The Pioneer Diamante Series is the best mini split you can buy if your primary goal
                 is spending as little as possible without buying junk. Starting under $800 for a 12K BTU
-                system (unit only), it delivers legitimate inverter-driven performance — up to 19 SEER2,
+                system (unit only), it delivers legitimate inverter-driven performance, up to 19 SEER2,
                 heating down to -4&deg;F, built-in WiFi, and 32 dB indoor noise. You will not get Daikin-level
                 whisper-quiet operation or Mitsubishi-level cold-climate performance. But you will get a
                 reliable ductless system that cools and heats effectively at a fraction of the premium price.
-                The 5-year warranty is the main compromise — budget accordingly.
+                The 5-year warranty is the main compromise, budget accordingly.
               </p>
               <div className='grid md:grid-cols-2 gap-4'>
                 <div>
@@ -448,20 +448,20 @@ export default function PioneerMiniSplitReviewPage() {
               <p className='text-muted-foreground leading-relaxed mb-4'>
                 This direct-to-consumer approach is why a Pioneer 12K BTU mini split costs $750-$900
                 while a comparable Mitsubishi or Daikin unit runs $1,400-$1,800. The components
-                inside — Toshiba or Panasonic compressors, copper refrigerant lines, aluminum fin
-                coils — are the same types used by mid-tier competitors. The savings come from
+                inside, Toshiba or Panasonic compressors, copper refrigerant lines, aluminum fin
+                coils. are the same types used by mid-tier competitors. The savings come from
                 lower marketing spend, smaller dealer margins, and less R&D overhead.
               </p>
               <p className='text-muted-foreground leading-relaxed mb-4'>
                 Pioneer currently holds tens of thousands of reviews on Amazon with average
                 ratings of 4.3-4.5 stars across their product line. They maintain a US-based
                 customer support team in Fort Lauderdale, Florida, and stock replacement parts
-                domestically — an important detail that separates them from generic imported brands
+                domestically. An important detail that separates them from generic imported brands
                 that disappear when something breaks.
               </p>
               <p className='text-muted-foreground leading-relaxed'>
                 The Diamante Series we are reviewing here is Pioneer&apos;s flagship residential
-                line — the one that gets the latest features, highest efficiency ratings, and
+                line. the one that gets the latest features, highest efficiency ratings, and
                 the most attention from their engineering team. It replaced the older WYS series
                 and brought meaningful upgrades in efficiency, noise, and smart home integration.
               </p>
@@ -511,7 +511,7 @@ export default function PioneerMiniSplitReviewPage() {
 
               <p className='text-muted-foreground leading-relaxed'>
                 The 12K BTU model is the bestseller and the sweet spot for most single-room
-                applications — bedrooms, home offices, living rooms up to 600 square feet. The 24K
+                applications; bedrooms, home offices, living rooms up to 600 square feet. The 24K
                 BTU model is the go-to for garages, large open-concept spaces, and ADUs. Note that
                 SEER2 ratings decrease with larger capacities, which is normal across all mini split
                 brands.
@@ -580,7 +580,7 @@ export default function PioneerMiniSplitReviewPage() {
                 The Pioneer Diamante uses a DC inverter compressor, which is the same fundamental
                 technology found in Daikin, Mitsubishi, and every modern mini split. Unlike old
                 fixed-speed compressors that cycle on and off (creating temperature swings and
-                wasting energy), the inverter modulates continuously — ramping up when the room
+                wasting energy), the inverter modulates continuously, ramping up when the room
                 needs fast cooling, then dialing back to a whisper once it reaches the set
                 temperature.
               </p>
@@ -666,7 +666,7 @@ export default function PioneerMiniSplitReviewPage() {
                 SEER2 (Seasonal Energy Efficiency Ratio 2) is the standard measure of cooling
                 efficiency. Higher numbers mean less electricity consumed per unit of cooling
                 delivered. The Pioneer Diamante&apos;s 19 SEER2 rating on the 9K and 12K models
-                puts it squarely in the &quot;good but not great&quot; category — significantly
+                puts it squarely in the &quot;good but not great&quot; category, significantly
                 better than window units (10-15 CEER) and most central AC systems (14-16 SEER2),
                 but below premium mini splits like Daikin (20.6 SEER2) and MrCool DIY 4th Gen
                 (22 SEER2).
@@ -703,7 +703,7 @@ export default function PioneerMiniSplitReviewPage() {
 
               <p className='text-muted-foreground leading-relaxed mb-4'>
                 The practical difference between the Pioneer&apos;s 19 SEER2 and Daikin&apos;s
-                20.6 SEER2 is about $15-$30/year in electricity savings — meaningful over 15 years,
+                20.6 SEER2 is about $15-$30/year in electricity savings, meaningful over 15 years,
                 but modest compared to the $600-$1,000 difference in unit price. If you are
                 replacing a window AC or old central system, the Pioneer delivers the vast majority
                 of the efficiency gains at a fraction of the premium brand cost.
@@ -774,7 +774,7 @@ export default function PioneerMiniSplitReviewPage() {
                 The outdoor condenser runs at approximately 56 dB, which is average for the
                 category. If the outdoor unit is mounted near a bedroom window or a neighbor&apos;s
                 property line, consider placement carefully. Premium brands like Daikin and
-                Mitsubishi run 2-4 dB quieter outdoors — a small but perceptible difference.
+                Mitsubishi run 2-4 dB quieter outdoors, a small but perceptible difference.
               </p>
             </section>
 
@@ -871,11 +871,11 @@ export default function PioneerMiniSplitReviewPage() {
               </div>
             </section>
 
-            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            {/* Mid-content affiliate CTA. 30-60% CTR lift */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               headline="Ready to buy?"
-              verdict="Pioneer Diamante is available on Amazon, Home Depot, and specialty HVAC retailers — check current pricing on all BTU sizes."
+              verdict="Pioneer Diamante is available on Amazon, Home Depot, and specialty HVAC retailers, check current pricing on all BTU sizes."
               source="pioneer-mini-split"
               variant="mid"
             />
@@ -1070,7 +1070,7 @@ export default function PioneerMiniSplitReviewPage() {
                   </h3>
                   <ul className='space-y-3'>
                     {[
-                      'Exceptional value — 30-50% cheaper than Daikin/Mitsubishi units',
+                      'Exceptional value, 30-50% cheaper than Daikin/Mitsubishi units',
                       '19 SEER2 is strong for the price point',
                       'Built-in WiFi with app control and Alexa/Google voice support',
                       'Heating down to -4F covers 90%+ of California climates',
@@ -1107,7 +1107,7 @@ export default function PioneerMiniSplitReviewPage() {
                       'Professional installation required — no DIY option',
                       'Expected lifespan 10-15 years vs 15-20 for premium brands',
                       '-4F heating minimum falls short of -13F cold-climate models',
-                      'No multi-zone condenser option — single-zone only',
+                      'No multi-zone condenser option. Single-zone only',
                       'WiFi app can be clunky with occasional connectivity drops',
                       'Build quality and finish noticeably below Daikin/Mitsubishi',
                     ].map((con, idx) => (
@@ -1191,14 +1191,14 @@ export default function PioneerMiniSplitReviewPage() {
                   </div>
                   <div>
                     <div className='font-bold text-foreground'>GreenReviewsHub Rating</div>
-                    <div className='text-sm text-muted-foreground'>Very Good — Best Budget Pick</div>
+                    <div className='text-sm text-muted-foreground'>Very Good, Best Budget Pick</div>
                   </div>
                 </div>
                 <p className='text-muted-foreground leading-relaxed mb-4'>
                   The Pioneer Diamante Series is the smartest choice for homeowners who want
                   legitimate ductless mini split performance without paying the Daikin or Mitsubishi
                   premium. At $750-$2,200 for the unit (roughly half the price of comparable premium
-                  models), you get a DC inverter system that genuinely works — 19 SEER2, built-in
+                  models), you get a DC inverter system that genuinely works; 19 SEER2, built-in
                   WiFi, heating down to -4&deg;F, and five size options covering everything from a
                   bedroom to a large workshop.
                 </p>
@@ -1226,7 +1226,7 @@ export default function PioneerMiniSplitReviewPage() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 headline='Ready to buy the Pioneer Diamante Mini Split?'
-                verdict='Legitimate ductless performance at 30-50% less than premium brands — check current pricing on all BTU sizes.'
+                verdict='Legitimate ductless performance at 30-50% less than premium brands, check current pricing on all BTU sizes.'
                 source='pioneer-mini-split'
                 variant='final'
               />

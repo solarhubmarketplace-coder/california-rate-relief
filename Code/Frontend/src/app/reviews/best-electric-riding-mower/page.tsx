@@ -660,7 +660,7 @@ export default function BestElectricRidingMower() {
                     productKey="ego-z6-zero-turn"
                     source="electric-riding-mower-hub"
                     variant="primary"
-                    label="Check Price — EGO Z6 Zero-Turn"
+                    label="Check Price, EGO Z6 Zero-Turn"
                     showPrice
                   />
                 </div>
@@ -739,7 +739,7 @@ export default function BestElectricRidingMower() {
                     productKey="ryobi-80v-zero-turn"
                     source="electric-riding-mower-hub"
                     variant="primary"
-                    label="Check Price — Ryobi 80V Zero-Turn"
+                    label="Check Price, Ryobi 80V Zero-Turn"
                     showPrice
                   />
                 </div>
@@ -897,7 +897,7 @@ export default function BestElectricRidingMower() {
                     productKey="cub-cadet-cc-30e"
                     source="electric-riding-mower-hub"
                     variant="primary"
-                    label="Check Price — Cub Cadet CC 30e"
+                    label="Check Price, Cub Cadet CC 30e"
                     showPrice
                   />
                 </div>
@@ -977,7 +977,7 @@ export default function BestElectricRidingMower() {
                     productKey="john-deere-z370r-electric"
                     source="electric-riding-mower-hub"
                     variant="primary"
-                    label="Check Price — John Deere Z370R Electric"
+                    label="Check Price, John Deere Z370R Electric"
                     showPrice
                   />
                 </div>
@@ -1059,7 +1059,7 @@ export default function BestElectricRidingMower() {
                     productKey="husqvarna-ceora"
                     source="electric-riding-mower-hub"
                     variant="primary"
-                    label="Check Price — Husqvarna Ceora"
+                    label="Check Price, Husqvarna Ceora"
                     showPrice
                   />
                 </div>

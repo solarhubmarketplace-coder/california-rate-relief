@@ -306,7 +306,7 @@ export default function BestRobotLawnMower() {
                       className="font-semibold"
                       style={{ color: '#f5f5f5' }}
                     >
-                      Husqvarna Automower 450X — Best Overall
+                      Husqvarna Automower 450X, Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The industry benchmark. Handles 1.25 acres, navigates
@@ -325,7 +325,7 @@ export default function BestRobotLawnMower() {
                       className="font-semibold"
                       style={{ color: '#f5f5f5' }}
                     >
-                      Mammotion LUBA 2 — Best for Large Yards
+                      Mammotion LUBA 2, Best for Large Yards
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Wire-free RTK GPS navigation covers a full acre with
@@ -708,7 +708,7 @@ export default function BestRobotLawnMower() {
                   productKey="husqvarna-automower-450x"
                   source="best-robot-lawn-mower"
                   variant="primary"
-                  label="Check Price — Husqvarna Automower 450X"
+                  label="Check Price, Husqvarna Automower 450X"
                   showPrice
                 />
               </div>
@@ -812,7 +812,7 @@ export default function BestRobotLawnMower() {
                   productKey="worx-landroid-m-wr147"
                   source="best-robot-lawn-mower"
                   variant="primary"
-                  label="Check Price — Worx Landroid M (WR147)"
+                  label="Check Price, Worx Landroid M (WR147)"
                   showPrice
                 />
               </div>
@@ -1020,7 +1020,7 @@ export default function BestRobotLawnMower() {
                   productKey="mammotion-luba-2"
                   source="best-robot-lawn-mower"
                   variant="primary"
-                  label="Check Price — Mammotion LUBA 2"
+                  label="Check Price. Mammotion LUBA 2"
                   showPrice
                 />
               </div>
@@ -1123,7 +1123,7 @@ export default function BestRobotLawnMower() {
                   productKey="robomow-rs630"
                   source="best-robot-lawn-mower"
                   variant="primary"
-                  label="Check Price — Robomow RS630"
+                  label="Check Price, Robomow RS630"
                   showPrice
                 />
               </div>

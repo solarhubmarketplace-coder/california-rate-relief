@@ -165,7 +165,7 @@ const faqSchema = {
       name: 'Is the DeWalt 20V MAX mower self-propelled?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The DCMWP233U2 is a rear-wheel-drive self-propelled mower with variable speed control. You adjust the speed with a bail handle — squeeze more for faster, less for slower. It handles flat to moderate slopes without issue. On steep hills, it has less traction than heavier units like the 77 lb EGO, partly because the DeWalt is lighter at around 63 lbs with batteries.',
+        text: 'Yes. The DCMWP233U2 is a rear-wheel-drive self-propelled mower with variable speed control. You adjust the speed with a bail handle, squeeze more for faster, less for slower. It handles flat to moderate slopes without issue. On steep hills, it has less traction than heavier units like the 77 lb EGO, partly because the DeWalt is lighter at around 63 lbs with batteries.',
       },
     },
     {
@@ -460,10 +460,10 @@ export default function DewaltLawnMowerReview() {
                 Overview: The Platform Play
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                DeWalt is a construction tool company that extended its 20V MAX platform — the largest cordless ecosystem in the world — to the yard. That explains both the strengths (ecosystem) and limitations (physics) of this mower.
+                DeWalt is a construction tool company that extended its 20V MAX platform, the largest cordless ecosystem in the world, to the yard. That explains both the strengths (ecosystem) and limitations (physics) of this mower.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                The strength: if you own DeWalt drills, impact drivers, or any of the 300+ 20V MAX tools, those same batteries power your mower. No new charger, no new platform, no battery clutter. The limitation: two 20V batteries in series give 40V of motor headroom — competitive with Ryobi 40V but below EGO 56V and Greenworks 80V. In thin dry grass, no difference. In thick wet conditions, you will feel it.
+                The strength: if you own DeWalt drills, impact drivers, or any of the 300+ 20V MAX tools, those same batteries power your mower. No new charger, no new platform, no battery clutter. The limitation: two 20V batteries in series give 40V of motor headroom. competitive with Ryobi 40V but below EGO 56V and Greenworks 80V. In thin dry grass, no difference. In thick wet conditions, you will feel it.
               </p>
               <p className='text-foreground/80 leading-relaxed'>
                 At $599 for the kit, it lands between the budget Ryobi ($399) and premium EGO ($799). Whether that delivers depends on your yard size and existing tool investment.
@@ -504,8 +504,8 @@ export default function DewaltLawnMowerReview() {
                 <p className='text-foreground/80 leading-relaxed'>
                   This is where the DeWalt shines. Regular Bermuda, fescue,
                   and bluegrass at 3-4 inches get a clean, even cut with no
-                  stragglers. The 21.5-inch deck — half an inch wider than
-                  most 21-inch competitors — means slightly fewer passes per
+                  stragglers. The 21.5-inch deck, half an inch wider than
+                  most 21-inch competitors; means slightly fewer passes per
                   row. Mulching performance is strong with fine clippings
                   distributed evenly. On well-maintained turf, you cannot tell
                   the difference between this and a 56V or 80V machine.
@@ -545,7 +545,7 @@ export default function DewaltLawnMowerReview() {
                   5 inches, the blade speed drops audibly and the mower bogs
                   down. It still cuts, but you need to slow your walking pace
                   or raise the deck height and double-pass. Runtime takes a
-                  significant hit — expect 25-30 minutes instead of 40+. For
+                  significant hit, expect 25-30 minutes instead of 40+. For
                   comparison, the EGO 56V and Greenworks 80V push through this
                   kind of grass without the same hesitation.
                 </p>
@@ -705,7 +705,7 @@ export default function DewaltLawnMowerReview() {
                     </div>
                   </div>
                   <p className='text-xs text-muted-foreground mt-2'>
-                    Smaller batteries (2-4Ah) technically work but deliver only 8-15 min — not practical for full mowing.
+                    Smaller batteries (2-4Ah) technically work but deliver only 8-15 min, not practical for full mowing.
                   </p>
                 </div>
               </div>
@@ -879,7 +879,7 @@ export default function DewaltLawnMowerReview() {
                   <ul className='space-y-3'>
                     <li className='flex items-start gap-3'>
                       <Check className='h-4 w-4 text-green-500 mt-0.5 shrink-0' />
-                      <span className='text-sm text-foreground/80'>300+ tool ecosystem — largest battery platform of any mower brand</span>
+                      <span className='text-sm text-foreground/80'>300+ tool ecosystem, largest battery platform of any mower brand</span>
                     </li>
                     <li className='flex items-start gap-3'>
                       <Check className='h-4 w-4 text-green-500 mt-0.5 shrink-0' />
@@ -887,11 +887,11 @@ export default function DewaltLawnMowerReview() {
                     </li>
                     <li className='flex items-start gap-3'>
                       <Check className='h-4 w-4 text-green-500 mt-0.5 shrink-0' />
-                      <span className='text-sm text-foreground/80'>21.5-inch steel deck — wider than most, durable construction</span>
+                      <span className='text-sm text-foreground/80'>21.5-inch steel deck, wider than most, durable construction</span>
                     </li>
                     <li className='flex items-start gap-3'>
                       <Check className='h-4 w-4 text-green-500 mt-0.5 shrink-0' />
-                      <span className='text-sm text-foreground/80'>~63 lbs — 14 lbs lighter than EGO, easier to maneuver</span>
+                      <span className='text-sm text-foreground/80'>~63 lbs, 14 lbs lighter than EGO, easier to maneuver</span>
                     </li>
                     <li className='flex items-start gap-3'>
                       <Check className='h-4 w-4 text-green-500 mt-0.5 shrink-0' />
@@ -1277,7 +1277,7 @@ export default function DewaltLawnMowerReview() {
                   </h2>
                 </div>
                 <p className='text-foreground/80 leading-relaxed mb-4'>
-                  Not the best electric mower in isolation — the EGO cuts better, the Greenworks costs less. But the best mower{' '}
+                  Not the best electric mower in isolation. The EGO cuts better, the Greenworks costs less. But the best mower{' '}
                   <strong className='text-foreground'>for DeWalt owners.</strong>{' '}
                   Millions already have 20V MAX batteries on chargers. This slots in with zero friction and delivers a genuinely good cut on small to medium yards.
                 </p>
@@ -1326,7 +1326,7 @@ export default function DewaltLawnMowerReview() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Final Verdict'
-              verdict='The best mower for anyone already on the 20V MAX platform. One battery system for your entire garage — workshop and yard.'
+              verdict='The best mower for anyone already on the 20V MAX platform. One battery system for your entire garage; workshop and yard.'
               source='dewalt-lawn-mower'
               variant='final'
             />

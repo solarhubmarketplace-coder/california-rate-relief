@@ -184,7 +184,7 @@ export default function WholeHouseBatteryBackupGuide() {
               productKey={PRODUCT_KEY}
               badge='Portable Pick'
               rating={4.6}
-              verdict='If a $12,500-$16,500 permanent Powerwall install is too much, the EcoFlow Delta Pro 3 at $1,999 (expandable to 12 kWh) delivers essential-circuit whole-home backup without permits or electricians — and you keep the hardware if you move.'
+              verdict='If a $12,500-$16,500 permanent Powerwall install is too much, the EcoFlow Delta Pro 3 at $1,999 (expandable to 12 kWh) delivers essential-circuit whole-home backup without permits or electricians. And you keep the hardware if you move.'
               pros={[
                 'No permit required for portable',
                 'Expandable capacity',
@@ -269,7 +269,7 @@ export default function WholeHouseBatteryBackupGuide() {
               </div>
             </div>
 
-            {/* Comparison table — the revenue driver */}
+            {/* Comparison table. The revenue driver */}
             <div className='mb-10'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>
                 Whole-House Battery Systems Compared
@@ -294,7 +294,7 @@ export default function WholeHouseBatteryBackupGuide() {
                     rating: 4.7,
                     specs: {
                       Type: 'Portable',
-                      'Usable Capacity': '4.1 kWh (exp. to 12 kWh)',
+                      'Usable Capacity': '4.1 kWh (exp. To 12 kWh)',
                       'Peak Output': '4,000W',
                       Chemistry: 'LFP',
                       'Backup Duration (13 kWh/day)': '7-8 hrs',
@@ -326,7 +326,7 @@ export default function WholeHouseBatteryBackupGuide() {
                     rating: 4.5,
                     specs: {
                       Type: 'Portable (stackable)',
-                      'Usable Capacity': '3.8 kWh (exp. to 26.9 kWh)',
+                      'Usable Capacity': '3.8 kWh (exp. To 26.9 kWh)',
                       'Peak Output': '6,000W',
                       Chemistry: 'LFP',
                       'Backup Duration (13 kWh/day)': '7-50 hrs',
@@ -356,7 +356,7 @@ export default function WholeHouseBatteryBackupGuide() {
               </h2>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                Tesla Powerwall 3 — $12,500-$16,500 Installed
+                Tesla Powerwall 3, $12,500-$16,500 Installed
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Powerwall 3 is the market benchmark. 13.5 kWh of usable
@@ -367,7 +367,7 @@ export default function WholeHouseBatteryBackupGuide() {
                 backup via automatic transfer switching. Install runs
                 $12,500-$16,500 in California depending on panel upgrade
                 needs and installer markup. Tesla sells exclusively through
-                Tesla Energy or certified installers — plan for 8-16 weeks
+                Tesla Energy or certified installers. plan for 8-16 weeks
                 from order to commissioning.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -379,14 +379,14 @@ export default function WholeHouseBatteryBackupGuide() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                Franklin WH aPower 2 — $14,000 Installed (15 kWh)
+                Franklin WH aPower 2, $14,000 Installed (15 kWh)
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Franklin has become the serious Tesla alternative. The
                 aPower 2 delivers 15 kWh usable capacity per unit, expands
                 to 45 kWh across three units, and pushes 10 kW continuous
                 / 15 kW peak output. The standout spec is the 12-year
-                warranty guaranteeing 80% capacity retention — one of the
+                warranty guaranteeing 80% capacity retention, one of the
                 longest and strongest warranties in the category. Full
                 off-grid operation is supported with the right solar
                 configuration. Install cost runs roughly $14,000 per
@@ -401,7 +401,7 @@ export default function WholeHouseBatteryBackupGuide() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                Enphase IQ Battery 5P — $9,500 Installed (10 kWh / 2 units)
+                Enphase IQ Battery 5P, $9,500 Installed (10 kWh / 2 units)
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Enphase takes a different architectural approach. Each IQ
@@ -426,25 +426,24 @@ export default function WholeHouseBatteryBackupGuide() {
               </h2>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                EcoFlow Delta Pro Ultra — $4,099+ per Unit
+                EcoFlow Delta Pro Ultra. $4,099+ per Unit
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Delta Pro Ultra is the most ambitious portable battery
-                shipped to date — 6 kWh base capacity, expandable to 30
+                shipped to date; 6 kWh base capacity, expandable to 30
                 kWh across 5 units. Paired with the EcoFlow Smart Home
                 Panel 2, it provides automatic backup switching with
                 sub-20ms transfer time for selected circuits. The SHP2
                 is a genuine permanent install (hardwired to your panel
                 by a licensed electrician, roughly $2,000-$3,500
-                installed), but the batteries themselves remain portable
-                — you can unhook them and take them camping or to a
+                installed), but the batteries themselves remain portable. you can unhook them and take them camping or to a
                 different property.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Typical full-system cost: $4,099 for one 6 kWh battery +
                 $2,000-$3,500 for Smart Home Panel 2 install = $6,100-$7,600
                 for essential-circuit backup. Scaling to 30 kWh pushes the
-                battery cost to $15,000-$20,000 — at which point a
+                battery cost to $15,000-$20,000, at which point a
                 permanent Franklin or Powerwall system starts to compete
                 favorably. Best at the 6-18 kWh range where portable
                 flexibility still beats permanent on flexibility.
@@ -462,7 +461,7 @@ export default function WholeHouseBatteryBackupGuide() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                Anker SOLIX F3800 — $1,799 per Unit
+                Anker SOLIX F3800, $1,799 per Unit
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Anker&apos;s F3800 is the best portable value in the
@@ -595,8 +594,7 @@ export default function WholeHouseBatteryBackupGuide() {
                     low-income customers, those in high fire-threat
                     districts (HFTD Tier 2/3), medically vulnerable
                     residents on medical baseline, or customers with well
-                    pump dependence. $14,850 on a 13.5 kWh Powerwall 3 —
-                    often covering the full installed cost.
+                    pump dependence. $14,850 on a 13.5 kWh Powerwall 3, often covering the full installed cost.
                   </span>
                 </li>
                 <li className='flex items-start gap-2'>
@@ -614,7 +612,7 @@ export default function WholeHouseBatteryBackupGuide() {
                 run out mid-year. Application goes through your installer
                 within 30 days of project completion. Portable batteries
                 (Delta Pro Ultra, F3800) qualify only when paired with a
-                permanently installed Smart Home Panel — the battery alone
+                permanently installed Smart Home Panel; the battery alone
                 does not meet SGIP&apos;s installation requirements. Fully
                 portable units without any permanent infrastructure are
                 typically ineligible.
@@ -633,7 +631,7 @@ export default function WholeHouseBatteryBackupGuide() {
                 standalone battery retrofit after January 1, 2026 no
                 longer qualifies for the federal credit. This is the
                 single most impactful policy change affecting 2026
-                whole-house battery economics — the standalone storage
+                whole-house battery economics. the standalone storage
                 ITC would have added $3,750-$5,000 off a Powerwall 3
                 install that is no longer available.
               </p>
@@ -642,7 +640,7 @@ export default function WholeHouseBatteryBackupGuide() {
                 storage, the stacking still works: 30% ITC on the full
                 combined system cost. If you are doing storage-only as
                 a retrofit on an existing solar array, check with a tax
-                professional — there is some ambiguity around
+                professional, there is some ambiguity around
                 qualification for ITC on storage added to a previously
                 installed solar system, depending on the original
                 commissioning date.
@@ -744,7 +742,7 @@ export default function WholeHouseBatteryBackupGuide() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Portable stackable</strong> units operate fully
-                off-grid by design — they do not require grid connection
+                off-grid by design, they do not require grid connection
                 for any mode. Paired with a solar array, they function as
                 miniature off-grid systems for cabins, ADUs, or remote
                 workshops.
@@ -856,12 +854,12 @@ export default function WholeHouseBatteryBackupGuide() {
                 </div>
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>
-                    Permanent vs portable — what is the difference?
+                    Permanent vs portable, what is the difference?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     Permanent systems (Powerwall, Franklin, Enphase) are
                     hardwired with automatic transfer switching and solar
-                    integration — $9,500-$16,500+ installed, seamless
+                    integration, $9,500-$16,500+ installed, seamless
                     whole-home backup. Portable (Delta Pro Ultra, F3800)
                     starts at $1,799-$4,099 per unit, works for essential
                     circuits via smart panel, and moves with you.
@@ -888,7 +886,7 @@ export default function WholeHouseBatteryBackupGuide() {
                     $150/kWh general market. Up to $1,100/kWh for equity
                     customers (low-income, HFTD, medical baseline). On a
                     13.5 kWh Powerwall: $2,025 general, up to $14,850
-                    equity — often covering the full installed cost.
+                    equity, often covering the full installed cost.
                   </p>
                 </div>
                 <div>
@@ -928,7 +926,7 @@ export default function WholeHouseBatteryBackupGuide() {
                 ITC changes the math meaningfully. For California homeowners
                 who qualify for SGIP Equity funds, permanent systems like
                 Tesla Powerwall 3 or Franklin aPower 2 remain the most
-                capable path — often with SGIP covering most or all of
+                capable path. Often with SGIP covering most or all of
                 the cost. For everyone else, the decision comes down to
                 long-term ownership plans. If you are staying 10+ years and
                 want seamless whole-home backup including central AC,
@@ -944,7 +942,7 @@ export default function WholeHouseBatteryBackupGuide() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Ready to upgrade?'
-              verdict='The EcoFlow Delta Pro 3 is the easiest entry point into whole-house backup — $1,999, no permits, and compatible with a Smart Home Panel when you are ready to scale up.'
+              verdict='The EcoFlow Delta Pro 3 is the easiest entry point into whole-house backup. $1,999, no permits, and compatible with a Smart Home Panel when you are ready to scale up.'
               source='whole-house-backup'
               variant='final'
             />

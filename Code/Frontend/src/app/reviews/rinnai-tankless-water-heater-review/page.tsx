@@ -48,7 +48,7 @@ const reviewSchema = {
   '@type': 'Review',
   name: 'Rinnai Tankless Water Heater Review',
   reviewBody:
-    'Rinnai tankless water heaters deliver the best combination of longevity, reliability, and efficiency in the tankless category. The Japan-designed Sensei RX, RU, and RL series carry a 15-year heat exchanger warranty, ENERGY STAR efficiency ratings, and up to 11 GPM flow — enough to run multiple showers simultaneously in a typical California home. At $1,200-$2,500 for the unit alone, Rinnai commands a premium but delivers genuinely better reliability than the mid-tier competition.',
+    'Rinnai tankless water heaters deliver the best combination of longevity, reliability, and efficiency in the tankless category. The Japan-designed Sensei RX, RU, and RL series carry a 15-year heat exchanger warranty, ENERGY STAR efficiency ratings, and up to 11 GPM flow; enough to run multiple showers simultaneously in a typical California home. At $1,200-$2,500 for the unit alone, Rinnai commands a premium but delivers genuinely better reliability than the mid-tier competition.',
   datePublished: '2026-04-22',
   author: {
     '@type': 'Organization',
@@ -137,7 +137,7 @@ const faqSchema = {
       name: 'What flow rate do I need for my household?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Small households (1-2 people, 1-2 bathrooms): 5-7 GPM is sufficient — a Rinnai RL75 or RU160e works. Average California homes (3-4 people, 2-3 bathrooms): 8-9 GPM — Rinnai RU180 or Sensei RX180. Large homes (5+ people, 3+ bathrooms, simultaneous shower use): 11 GPM — Sensei RX199. Always size by the number of fixtures you might run simultaneously, not total fixtures, and factor in inlet water temperature (California groundwater is often 55-65°F, requiring more BTU to hit 120°F setpoint).',
+        text: 'Small households (1-2 people, 1-2 bathrooms): 5-7 GPM is sufficient, a Rinnai RL75 or RU160e works. Average California homes (3-4 people, 2-3 bathrooms): 8-9 GPM, Rinnai RU180 or Sensei RX180. Large homes (5+ people, 3+ bathrooms, simultaneous shower use): 11 GPM, Sensei RX199. Always size by the number of fixtures you might run simultaneously, not total fixtures, and factor in inlet water temperature (California groundwater is often 55-65°F, requiring more BTU to hit 120°F setpoint).',
       },
     },
   ],
@@ -202,7 +202,7 @@ export default function RinnaiTanklessReview() {
               productKey={PRODUCT_KEY}
               badge='Premium Pick'
               rating={4.6}
-              verdict='Rinnai is the gold standard in tankless water heaters — 15-year heat exchanger warranty, 20+ year typical lifespan, ENERGY STAR efficiency. You pay a premium ($300-$500 more than Rheem), but you get Japanese engineering that genuinely lasts.'
+              verdict='Rinnai is the gold standard in tankless water heaters, 15-year heat exchanger warranty, 20+ year typical lifespan, ENERGY STAR efficiency. You pay a premium ($300-$500 more than Rheem), but you get Japanese engineering that genuinely lasts.'
               pros={[
                 '15-year heat exchanger warranty (longest in class)',
                 'Up to 11 GPM — runs multiple showers',
@@ -393,7 +393,7 @@ export default function RinnaiTanklessReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                Sensei RX Series (Premium Condensing) — $2,000-$2,500
+                Sensei RX Series (Premium Condensing), $2,000-$2,500
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Sensei RX line is the flagship. Condensing operation
@@ -408,7 +408,7 @@ export default function RinnaiTanklessReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                RU Series (Mid-Tier Condensing) — $1,600-$2,100
+                RU Series (Mid-Tier Condensing). $1,600-$2,100
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The RU series offers most of the Sensei RX efficiency
@@ -423,12 +423,12 @@ export default function RinnaiTanklessReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                RL Series (Non-Condensing Value) — $1,200-$1,600
+                RL Series (Non-Condensing Value), $1,200-$1,600
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The RL line uses single-stage non-condensing operation with
                 UEF around 0.82. You save on unit cost but install costs may
-                go up — non-condensing units require more expensive
+                go up. non-condensing units require more expensive
                 stainless steel venting instead of cheap PVC. The 15-year
                 heat exchanger warranty still applies. UEF below 0.95 means
                 the RL line does NOT qualify for the federal 25C tax credit
@@ -454,7 +454,7 @@ export default function RinnaiTanklessReview() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Rinnai units sold in California between 2000 and 2010 are
-                still widely in service today — a 20+ year service life is
+                still widely in service today. a 20+ year service life is
                 not unusual with consistent annual descaling. Parts
                 availability is excellent; the company has a commitment to
                 stocking parts for discontinued models for a minimum of 10
@@ -495,7 +495,7 @@ export default function RinnaiTanklessReview() {
                 for the federal Energy Efficient Home Improvement Credit
                 (25C), which returns 30% of the equipment + installation
                 cost up to $600/year for gas tankless. On a $5,000 total
-                installed cost, that&apos;s a $600 credit — bringing your
+                installed cost, that&apos;s a $600 credit. bringing your
                 net out-of-pocket to $4,400 in year one. SoCalGas adds
                 $200-$700 in rebates on qualifying Rinnai models, and some
                 municipal utilities offer additional $100-$300 rebates.
@@ -548,7 +548,7 @@ export default function RinnaiTanklessReview() {
                 </li>
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The app is functional but not flashy — it covers the basics
+                The app is functional but not flashy, it covers the basics
                 well and is genuinely useful for the diagnostic alerts,
                 which can flag issues before they become failures. Amazon
                 Alexa and Google Assistant integration are supported for
@@ -560,7 +560,7 @@ export default function RinnaiTanklessReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 All tankless water heaters need annual descaling in hard
-                water areas — and most of California qualifies as hard
+                water areas, and most of California qualifies as hard
                 water (100-400 ppm in most metros). The descaling process
                 involves pumping a vinegar or citric acid solution through
                 the heat exchanger for 60-90 minutes once a year. DIY
@@ -763,7 +763,7 @@ export default function RinnaiTanklessReview() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>Long-term California homeowners</strong> planning
-                    to stay 15+ years — the 15-year heat exchanger warranty
+                    to stay 15+ years. The 15-year heat exchanger warranty
                     and 20+ year lifespan earn back the price premium.
                   </span>
                 </li>
@@ -880,8 +880,7 @@ export default function RinnaiTanklessReview() {
                 $300-$500 premium over Rheem is real, but so is the extra
                 3-5 years of service life it typically delivers. For
                 California homeowners planning to stay in their homes long
-                term — especially larger families or 3+ bathroom homes —
-                Rinnai is the right call. Budget-focused buyers planning
+                term — especially larger families or 3+ bathroom homes, Rinnai is the right call. Budget-focused buyers planning
                 shorter-term stays should look at our{' '}
                 <Link
                   href='/reviews/rheem-tankless-water-heater-review'

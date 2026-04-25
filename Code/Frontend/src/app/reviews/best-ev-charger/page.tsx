@@ -425,7 +425,7 @@ export default function BestEVCharger() {
                   productKey="chargepoint-home-flex"
                   source="best-ev-charger"
                   variant="primary"
-                  label="Check Price — ChargePoint Home Flex"
+                  label="Check Price, ChargePoint Home Flex"
                   showPrice
                 />
               </div>
@@ -546,7 +546,7 @@ export default function BestEVCharger() {
                   productKey="grizzl-e-classic"
                   source="best-ev-charger"
                   variant="primary"
-                  label="Check Price — Grizzl-E Classic"
+                  label="Check Price, Grizzl-E Classic"
                   showPrice
                 />
               </div>
@@ -598,7 +598,7 @@ export default function BestEVCharger() {
                   productKey="juicebox-48"
                   source="best-ev-charger"
                   variant="primary"
-                  label="Check Price — JuiceBox 48"
+                  label="Check Price. JuiceBox 48"
                   showPrice
                 />
               </div>
@@ -650,7 +650,7 @@ export default function BestEVCharger() {
                   productKey="wallbox-pulsar-plus"
                   source="best-ev-charger"
                   variant="primary"
-                  label="Check Price — Wallbox Pulsar Plus"
+                  label="Check Price, Wallbox Pulsar Plus"
                   showPrice
                 />
               </div>
@@ -710,7 +710,7 @@ export default function BestEVCharger() {
                   productKey="tesla-wall-connector"
                   source="best-ev-charger"
                   variant="primary"
-                  label="Check Price — Tesla Wall Connector"
+                  label="Check Price, Tesla Wall Connector"
                   showPrice
                 />
               </div>

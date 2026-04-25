@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title:
     'Jackery Explorer 1000 v2 Review 2026: The 1,070Wh LFP Workhorse for Camping',
   description:
-    'In-depth review of the Jackery Explorer 1000 v2 — now with 1,070 Wh LFP battery (upgraded from NMC), 1,500W output, 400W solar input, 0-100% in 60 min, 23 lbs, $999. Ideal for camping, mid-size PSPS backup, and TOU load shifting.',
+    'In-depth review of the Jackery Explorer 1000 v2, now with 1,070 Wh LFP battery (upgraded from NMC), 1,500W output, 400W solar input, 0-100% in 60 min, 23 lbs, $999. Ideal for camping, mid-size PSPS backup, and TOU load shifting.',
   alternates: {
     canonical: '/reviews/jackery-explorer-1000-review',
   },
@@ -208,7 +208,7 @@ export default function JackeryExplorer1000Review() {
               verdict='The Jackery Explorer 1000 v2 hits the sweet spot: LFP chemistry, 1,070 Wh, 1,500W output, 23 lbs, and 60-minute fast charging. Best-in-class for camping, van life, and mid-size California PSPS backup.'
               pros={[
                 'LFP battery, 4,000 cycles',
-                '23 lbs — genuinely portable',
+                '23 lbs. Genuinely portable',
                 '0-100% in 60 minutes',
               ]}
               cons={['Not enough for whole-home backup', 'No smart panel']}
@@ -232,7 +232,7 @@ export default function JackeryExplorer1000Review() {
                 station Jackery has ever made. The v2 refresh dropped the
                 aging NMC battery chemistry in favor of LFP, which
                 dramatically extends cycle life from around 500 cycles to
-                4,000 cycles — the single most important upgrade in this
+                4,000 cycles, the single most important upgrade in this
                 category over the last two years. At 23 pounds, $999, and
                 1,500W pure sine wave output, it lives in a distinct niche
                 between the tiny Explorer 300 and the heavyweight 2000 Plus.
@@ -419,7 +419,7 @@ export default function JackeryExplorer1000Review() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The original Jackery Explorer 1000 (v1, launched 2018)
-                used an NMC (nickel manganese cobalt) battery — the same
+                used an NMC (nickel manganese cobalt) battery, the same
                 chemistry as most laptops and early EVs. NMC delivers high
                 energy density and low weight, which is how Jackery kept
                 the v1 at a respectable 22 pounds. But NMC degrades
@@ -431,7 +431,7 @@ export default function JackeryExplorer1000Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The v2 switches to LiFePO4 (LFP). LFP is heavier per
                 watt-hour (the v2 gains one pound for a similar capacity),
-                but its cycle life is dramatically longer — Jackery rates
+                but its cycle life is dramatically longer. Jackery rates
                 the v2 at 4,000 cycles to 70% capacity, an 8x improvement
                 over NMC. Daily cycling pushes the v2 past 10 years before
                 it falls to 70% capacity. LFP is also inherently safer:
@@ -476,14 +476,14 @@ export default function JackeryExplorer1000Review() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Explorer 1000 v2 provides 1,500W of continuous AC
-                output with 3,000W surge — enough to start high-inrush
+                output with 3,000W surge, enough to start high-inrush
                 appliances like a small window AC, refrigerator, or power
                 tool. Running loads: a full-size fridge (150W avg)
                 consumes about 15% of the battery per hour; a typical
                 laptop (30W) runs for 30+ hours; a CPAP machine (30-50W)
                 runs all night plus most of the next day. You can
                 comfortably power a campsite&apos;s worth of essentials
-                simultaneously — lights, phone chargers, small cooking
+                simultaneously. Lights, phone chargers, small cooking
                 appliance, laptop.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -529,7 +529,7 @@ export default function JackeryExplorer1000Review() {
                 Bluetooth and provides real-time monitoring of input/output
                 power, battery state of charge, individual outlet control,
                 charging speed adjustment, and firmware updates. It is
-                functional but less polished than the EcoFlow app — you
+                functional but less polished than the EcoFlow app, you
                 can do what you need to do, but the UI is not as snappy.
                 Jackery has steadily improved the app over 2024-2025 and
                 the v2 experience is materially better than the original
@@ -563,7 +563,7 @@ export default function JackeryExplorer1000Review() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For TOU arbitrage, the math is marginal at this capacity.
-                A full 1,070 Wh cycle — charging off-peak at 15 cents/kWh
+                A full 1,070 Wh cycle, charging off-peak at 15 cents/kWh
                 and discharging during peak at 50 cents/kWh — yields
                 roughly $0.37 per cycle of savings. Daily cycling saves
                 $135/year. Not enough to justify the purchase on TOU
@@ -717,8 +717,7 @@ export default function JackeryExplorer1000Review() {
                 competitors at the same price point. The Anker edges on
                 peak output (1,800W vs 1,500W) and solar input (600W vs
                 400W). The Jackery wins on weight (23 lbs vs 28 lbs) and
-                industrial design polish. Either is a defensible pick —
-                go with whichever brand you prefer and whichever is on
+                industrial design polish. Either is a defensible pick, go with whichever brand you prefer and whichever is on
                 sale.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -746,7 +745,7 @@ export default function JackeryExplorer1000Review() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      23 lbs — truly portable for camping
+                      23 lbs, truly portable for camping
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -816,7 +815,7 @@ export default function JackeryExplorer1000Review() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>Car campers and van lifers.</strong> 23 lbs is
-                    the sweet spot for regular portability — light enough
+                    the sweet spot for regular portability, light enough
                     to carry in and out of the vehicle without groaning,
                     heavy enough to actually do work.
                   </span>
@@ -893,7 +892,7 @@ export default function JackeryExplorer1000Review() {
                   <p className='text-foreground/80 leading-relaxed'>
                     0-100% in 60 minutes via AC wall outlet. 2.5 hours
                     via 400W of solar in California sun. Car charging is
-                    supported but slow — meant for maintenance, not
+                    supported but slow. meant for maintenance, not
                     emergency top-ups.
                   </p>
                 </div>

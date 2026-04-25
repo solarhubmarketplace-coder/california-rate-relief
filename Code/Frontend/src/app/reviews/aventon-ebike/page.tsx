@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Aventon E-Bikes Review 2026: The Full Lineup Compared',
     description:
-      'Aventure 3, Pace 500.3, Level 3, Soltera 2.5, Sinch.2 folding, Abound cargo — every Aventon reviewed. Who should buy which model.',
+      'Aventure 3, Pace 500.3, Level 3, Soltera 2.5, Sinch.2 folding, Abound cargo, every Aventon reviewed. Who should buy which model.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -103,7 +103,7 @@ const faqSchema = {
       name: 'Where are Aventon eBikes made?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Aventon is headquartered in Ontario, California — they\'re one of the few major e-bike brands actually based in the state they sell to. Final assembly and manufacturing is done in China. Customer service, warranty claims, and dealer support are all operated out of the California HQ. Aventon has one of the largest dealer networks of any DTC brand, with 1,500+ bike shops carrying the line.',
+        text: 'Aventon is headquartered in Ontario, California, they\'re one of the few major e-bike brands actually based in the state they sell to. Final assembly and manufacturing is done in China. Customer service, warranty claims, and dealer support are all operated out of the California HQ. Aventon has one of the largest dealer networks of any DTC brand, with 1,500+ bike shops carrying the line.',
       },
     },
     {
@@ -111,7 +111,7 @@ const faqSchema = {
       name: 'Do Aventon eBikes have a torque sensor?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — every Aventon e-bike sold in 2025-2026 ships with a torque sensor (not a cadence sensor). This is a meaningful premium feature. Torque sensors measure how hard you push on the pedals and deliver proportional assistance, giving a natural bicycle-like feel. Cadence sensors only detect whether the pedals are turning and deliver binary on/off assist. Aventon makes torque sensors standard across the lineup; Rad Power reserves them for top-tier models and Lectric largely uses cadence sensors.',
+        text: 'Yes. every Aventon e-bike sold in 2025-2026 ships with a torque sensor (not a cadence sensor). This is a meaningful premium feature. Torque sensors measure how hard you push on the pedals and deliver proportional assistance, giving a natural bicycle-like feel. Cadence sensors only detect whether the pedals are turning and deliver binary on/off assist. Aventon makes torque sensors standard across the lineup; Rad Power reserves them for top-tier models and Lectric largely uses cadence sensors.',
       },
     },
     {
@@ -135,7 +135,7 @@ const faqSchema = {
       name: 'Does the Aventon app actually work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — the Aventon App is the most polished mobile app in the DTC e-bike category. It connects via Bluetooth, shows GPS-tracked ride stats, lets you lock the motor remotely, adjusts pedal-assist profiles, handles firmware updates, and includes a community ride-sharing feature. Rad Power and Lectric both have apps but theirs are meaningfully less developed. If app integration matters to you, Aventon wins the DTC field.',
+        text: 'Yes, the Aventon App is the most polished mobile app in the DTC e-bike category. It connects via Bluetooth, shows GPS-tracked ride stats, lets you lock the motor remotely, adjusts pedal-assist profiles, handles firmware updates, and includes a community ride-sharing feature. Rad Power and Lectric both have apps but theirs are meaningfully less developed. If app integration matters to you, Aventon wins the DTC field.',
       },
     },
   ],
@@ -195,7 +195,7 @@ export default function AventonEbikeHub() {
               productKey={PRIMARY_PRODUCT_KEY}
               badge='Premium DTC Pick'
               rating={4.7}
-              verdict='Aventon is the premium direct-to-consumer e-bike brand — every model in the lineup ships with a torque sensor, a 2-year warranty, and the best mobile app in the category. You pay $300-$700 more than Lectric; for daily riders, it earns the difference.'
+              verdict='Aventon is the premium direct-to-consumer e-bike brand, every model in the lineup ships with a torque sensor, a 2-year warranty, and the best mobile app in the category. You pay $300-$700 more than Lectric; for daily riders, it earns the difference.'
               pros={[
                 'Commuters who ride daily',
                 'Riders upgrading from a cheap e-bike',
@@ -317,15 +317,15 @@ export default function AventonEbikeHub() {
                 Who Is Aventon?
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Aventon launched in 2012 in Ontario, California — the heart of SoCal&apos;s fixed-gear and urban cycling scene — and spent its first six years building a reputation for fixie and single-speed frames aimed at track riders and urban cyclists. In 2018, the company pivoted hard to e-bikes with the launch of the original Pace. Within four years they were the fastest-growing DTC e-bike brand in North America.
+                Aventon launched in 2012 in Ontario, California — the heart of SoCal&apos;s fixed-gear and urban cycling scene, and spent its first six years building a reputation for fixie and single-speed frames aimed at track riders and urban cyclists. In 2018, the company pivoted hard to e-bikes with the launch of the original Pace. Within four years they were the fastest-growing DTC e-bike brand in North America.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Aventon&apos;s strategy is different from Rad and Lectric. Instead of competing on price, they positioned above the competition: premium components, torque sensors standard, a longer warranty, a better app, a genuine dealer network. The result is a brand that feels more like buying from Specialized or Trek than like buying from a startup — except the prices are still $1,000-$3,000 below traditional bike shop e-bikes.
+                Aventon&apos;s strategy is different from Rad and Lectric. Instead of competing on price, they positioned above the competition: premium components, torque sensors standard, a longer warranty, a better app, a genuine dealer network. The result is a brand that feels more like buying from Specialized or Trek than like buying from a startup, except the prices are still $1,000-$3,000 below traditional bike shop e-bikes.
               </p>
               <ul className='space-y-2 text-foreground/80 mb-6'>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>1,500+ U.S. dealer locations</strong> — biggest DTC dealer network in the industry</span>
+                  <span><strong>1,500+ U.S. Dealer locations</strong> — biggest DTC dealer network in the industry</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
@@ -353,7 +353,7 @@ export default function AventonEbikeHub() {
                 <strong>Price:</strong> $2,199 · <strong>Motor:</strong> 750W hub (75 Nm) · <strong>Range:</strong> 45-60 mi · <strong>Weight:</strong> 77 lbs · <strong>Tires:</strong> 26 x 4 inches
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Aventure 3 is Aventon&apos;s fat-tire flagship and the direct competitor to the Rad Power RadRover 6 Plus. Both bikes sit at $1,999-$2,199 and both target adventure/gravel/all-terrain riders. What separates the Aventure is the torque-sensor pedal assist (the Rad uses a cadence sensor), the 75 Nm of torque rating (vs 80 Nm on the Rad — similar), and the color-integrated LCD display.
+                The Aventure 3 is Aventon&apos;s fat-tire flagship and the direct competitor to the Rad Power RadRover 6 Plus. Both bikes sit at $1,999-$2,199 and both target adventure/gravel/all-terrain riders. What separates the Aventure is the torque-sensor pedal assist (the Rad uses a cadence sensor), the 75 Nm of torque rating (vs 80 Nm on the Rad. Similar), and the color-integrated LCD display.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Real-world: on mixed pavement and dirt road loops, the Aventure 3 feels genuinely bike-like thanks to the torque sensor. It amplifies your effort instead of kicking in with a surge of assist every time the pedals turn. The 26 x 4-inch fat tires float over washboard, loose gravel, and broken pavement. Integrated rear rack (rated for 55 lbs), full fenders, and bright headlight/taillight are included.
@@ -378,7 +378,7 @@ export default function AventonEbikeHub() {
                 <strong>Price:</strong> $1,599 · <strong>Motor:</strong> 500W hub (60 Nm) · <strong>Range:</strong> 45-60 mi · <strong>Weight:</strong> 52 lbs · <strong>Frame:</strong> Step-through
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Pace 500.3 is Aventon&apos;s sweet spot — a lightweight (52 lb) step-through commuter at $1,599 that genuinely feels like a bicycle you happen to have boosted with a motor. This is the bike we recommend to most adults who are buying their first e-bike. The torque sensor makes starts feel natural. The 500W motor with 60 Nm of torque is plenty for any California grade unless you&apos;re hauling cargo.
+                The Pace 500.3 is Aventon&apos;s sweet spot; a lightweight (52 lb) step-through commuter at $1,599 that genuinely feels like a bicycle you happen to have boosted with a motor. This is the bike we recommend to most adults who are buying their first e-bike. The torque sensor makes starts feel natural. The 500W motor with 60 Nm of torque is plenty for any California grade unless you&apos;re hauling cargo.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The low step-over height (around 17 inches) makes this bike accessible for older riders, shorter riders, or anyone wearing clothing that doesn&apos;t accommodate a diamond-frame mount. Integrated lights, full fenders, and a chain guard make it genuinely practical for commuting in work clothes without getting dirty.
@@ -421,7 +421,7 @@ export default function AventonEbikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='The 30% More Torque Story'
-                verdict='Every Aventon ships with a torque-sensor drivetrain. That is what justifies the $300-$700 premium over a comparable Rad Power or Lectric — once you ride torque vs cadence back-to-back, it is hard to go back.'
+                verdict='Every Aventon ships with a torque-sensor drivetrain. That is what justifies the $300-$700 premium over a comparable Rad Power or Lectric, once you ride torque vs cadence back-to-back, it is hard to go back.'
                 source='aventon-ebike-mid'
                 variant='mid'
               />
@@ -434,10 +434,10 @@ export default function AventonEbikeHub() {
                 <strong>Price:</strong> $1,199 · <strong>Motor:</strong> 350W hub (40 Nm) · <strong>Range:</strong> 60 mi · <strong>Weight:</strong> 46 lbs
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Soltera 2.5 is Aventon&apos;s lightest e-bike at 46 lbs and its cheapest in the Class 3 lineup at $1,199. It&apos;s a minimalist urban commuter with a single-speed drivetrain, 700c road tires, and a smaller 350W rear hub motor. The lighter motor and single-speed transmission keep weight low and give the bike a genuinely bike-like riding feel — more than almost any other e-bike in the sub-$1,500 category.
+                The Soltera 2.5 is Aventon&apos;s lightest e-bike at 46 lbs and its cheapest in the Class 3 lineup at $1,199. It&apos;s a minimalist urban commuter with a single-speed drivetrain, 700c road tires, and a smaller 350W rear hub motor. The lighter motor and single-speed transmission keep weight low and give the bike a genuinely bike-like riding feel, more than almost any other e-bike in the sub-$1,500 category.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                This is the right pick for urban commuters who live in flat or rolling terrain (not hills), don&apos;t need to haul cargo, and want a bike that&apos;s light enough to lift onto a bike rack or carry into an apartment. At 40 Nm of torque, it struggles on genuine hills — this is not the bike for Oakland or SF commuters. For flat or gently rolling cities (most of California&apos;s Central Valley, parts of LA, Sacramento), it&apos;s a gem.
+                This is the right pick for urban commuters who live in flat or rolling terrain (not hills), don&apos;t need to haul cargo, and want a bike that&apos;s light enough to lift onto a bike rack or carry into an apartment. At 40 Nm of torque, it struggles on genuine hills. This is not the bike for Oakland or SF commuters. For flat or gently rolling cities (most of California&apos;s Central Valley, parts of LA, Sacramento), it&apos;s a gem.
               </p>
               <div className='mb-8'>
                 <BuyButton
@@ -450,13 +450,13 @@ export default function AventonEbikeHub() {
 
               {/* Sinch.2 */}
               <h2 id='sinch' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                5. Aventon Sinch.2 — The Folding Bike
+                5. Aventon Sinch.2. The Folding Bike
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,799 · <strong>Motor:</strong> 500W hub (60 Nm) · <strong>Range:</strong> 40 mi · <strong>Weight:</strong> 68 lbs · <strong>Class:</strong> 2 (20 mph max)
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Sinch.2 is Aventon&apos;s folding fat-tire e-bike and their direct competitor to the Lectric XP 3.0 ($999) and RadExpand 5 ($1,499). At $1,799 it&apos;s the most expensive of the three, but you get Aventon&apos;s torque sensor, 2-year warranty, and app integration. The folding mechanism is smooth — 30 seconds to fold, no tools required.
+                The Sinch.2 is Aventon&apos;s folding fat-tire e-bike and their direct competitor to the Lectric XP 3.0 ($999) and RadExpand 5 ($1,499). At $1,799 it&apos;s the most expensive of the three, but you get Aventon&apos;s torque sensor, 2-year warranty, and app integration. The folding mechanism is smooth, 30 seconds to fold, no tools required.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If budget is the primary driver, Lectric wins. If Rad Power&apos;s 30-day return policy matters most, RadExpand wins. If you want the premium build quality and torque-sensor feel in a folding form factor, Sinch.2 is the play. For most buyers, the $800 price gap vs the Lectric XP 3.0 is hard to justify unless the app and warranty really matter.
@@ -472,19 +472,19 @@ export default function AventonEbikeHub() {
 
               {/* Abound */}
               <h2 id='abound' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                6. Aventon Abound — The Cargo Hauler
+                6. Aventon Abound. The Cargo Hauler
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $2,199 · <strong>Motor:</strong> 750W hub (80 Nm) · <strong>Range:</strong> 50 mi · <strong>Weight:</strong> 82 lbs · <strong>Payload:</strong> 440 lbs total
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Abound is Aventon&apos;s cargo bike — a longtail design with dual kickstand, extended rear rack (accommodates two child seats or a full adult passenger), running boards for kids&apos; feet, and wheel skirts to prevent fingers/feet getting caught in the spokes. It directly competes with the Rad Power RadWagon 5 ($2,299) and sits $800 above the Lectric XPedition 2.0 ($1,399).
+                The Abound is Aventon&apos;s cargo bike. a longtail design with dual kickstand, extended rear rack (accommodates two child seats or a full adult passenger), running boards for kids&apos; feet, and wheel skirts to prevent fingers/feet getting caught in the spokes. It directly competes with the Rad Power RadWagon 5 ($2,299) and sits $800 above the Lectric XPedition 2.0 ($1,399).
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Choose the Abound over the RadWagon if: you want torque-sensor feel, a 2-year warranty, and the Aventon app. Choose the RadWagon if: you want slightly lower price, the 30-day return policy, and a more mature platform with more aftermarket accessories. Choose the Lectric XPedition 2.0 if: price is the top priority and $800 savings matters more than the premium feel.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                At 82 lbs the Abound is heavy — heavier than the RadWagon 5 — and the weight is noticeable at slow speeds and when parking. With a full family load (two kids + cargo), the bike handles the weight well; the 80 Nm of motor torque is sufficient for any California hill with kids aboard.
+                At 82 lbs the Abound is heavy, heavier than the RadWagon 5. And the weight is noticeable at slow speeds and when parking. With a full family load (two kids + cargo), the bike handles the weight well; the 80 Nm of motor torque is sufficient for any California hill with kids aboard.
               </p>
               <div className='mb-8'>
                 <BuyButton
@@ -517,10 +517,10 @@ export default function AventonEbikeHub() {
                 Warranty: 2 Years on Everything
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Aventon&apos;s 2-year comprehensive warranty covers the frame, fork, motor, battery, and electronics from manufacturing defects. It&apos;s twice as long as Lectric&apos;s 1-year warranty and competitive with Rad Power&apos;s 1-year comprehensive + 2-year frame structure. It&apos;s transferable within the 2-year window, which protects resale value — a significant factor if you plan to upgrade within a few years.
+                Aventon&apos;s 2-year comprehensive warranty covers the frame, fork, motor, battery, and electronics from manufacturing defects. It&apos;s twice as long as Lectric&apos;s 1-year warranty and competitive with Rad Power&apos;s 1-year comprehensive + 2-year frame structure. It&apos;s transferable within the 2-year window, which protects resale value. a significant factor if you plan to upgrade within a few years.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Wear items aren&apos;t covered: tires, brake pads, chain, cables, and tubes are on you. This is standard across the e-bike industry. Aventon sells replacement parts directly and has 1,500+ dealers that can handle warranty work in person — a meaningful advantage over DTC-only brands where warranty claims require shipping parts back.
+                Wear items aren&apos;t covered: tires, brake pads, chain, cables, and tubes are on you. This is standard across the e-bike industry. Aventon sells replacement parts directly and has 1,500+ dealers that can handle warranty work in person, a meaningful advantage over DTC-only brands where warranty claims require shipping parts back.
               </p>
 
               {/* App Integration */}
@@ -582,7 +582,7 @@ export default function AventonEbikeHub() {
                     Does every Aventon have a torque sensor?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — every 2025-2026 model. This is what separates Aventon from cadence-sensor DTC bikes at the same price point.
+                    Yes, every 2025-2026 model. This is what separates Aventon from cadence-sensor DTC bikes at the same price point.
                   </p>
                 </div>
                 <div>
@@ -606,7 +606,7 @@ export default function AventonEbikeHub() {
                     Does the app work?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes. It&apos;s the best app in the DTC e-bike category. GPS, remote lock, PAS customization, firmware updates, ride stats — all functional.
+                    Yes. It&apos;s the best app in the DTC e-bike category. GPS, remote lock, PAS customization, firmware updates, ride stats, all functional.
                   </p>
                 </div>
               </div>

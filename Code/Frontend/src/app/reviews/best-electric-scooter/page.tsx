@@ -337,7 +337,7 @@ export default function BestElectricScooter() {
                     <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                     <div>
                       <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                        Segway Ninebot MAX G2 — Best Overall
+                        Segway Ninebot MAX G2, Best Overall
                       </p>
                       <p className="text-sm" style={{ color: '#a1a1aa' }}>
                         43-mile range, 22 mph, 10-inch pneumatic tires, Apple Find My tracking, and
@@ -349,7 +349,7 @@ export default function BestElectricScooter() {
                     <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                     <div>
                       <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                        GoTrax G4 — Best Budget
+                        GoTrax G4. Best Budget
                       </p>
                       <p className="text-sm" style={{ color: '#a1a1aa' }}>
                         Pneumatic 10-inch tires, 25-mile range, cruise control, and a 20 mph top speed
@@ -527,7 +527,7 @@ export default function BestElectricScooter() {
                     productKey="segway-ninebot-max-g2"
                     source="electric-scooter-hub"
                     variant="primary"
-                    label="Check Price — Segway Ninebot MAX G2"
+                    label="Check Price, Segway Ninebot MAX G2"
                     showPrice
                   />
                 </div>
@@ -635,7 +635,7 @@ export default function BestElectricScooter() {
                     productKey="gotrax-g4"
                     source="electric-scooter-hub"
                     variant="primary"
-                    label="Check Price — GoTrax G4"
+                    label="Check Price, GoTrax G4"
                     showPrice
                   />
                 </div>
@@ -816,7 +816,7 @@ export default function BestElectricScooter() {
                     </h4>
                     <ul className="space-y-2">
                       {[
-                        '60+ mph top speed — nothing faster',
+                        '60+ mph top speed. nothing faster',
                         '75-mile range for all-day riding',
                         'Hydraulic brakes for real stopping power',
                         '11" off-road tires handle any terrain',
@@ -1059,7 +1059,7 @@ export default function BestElectricScooter() {
                         '12-14 miles real-world range',
                         'Struggles on steep hills',
                         'No app or smart features',
-                        '8.5" tires — smaller than ideal',
+                        '8.5" tires. smaller than ideal',
                       ].map((con) => (
                         <li key={con} className="flex items-start gap-2 text-sm" style={{ color: '#a1a1aa' }}>
                           <X className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#ef4444' }} />
@@ -1075,7 +1075,7 @@ export default function BestElectricScooter() {
                     productKey="gotrax-xr-ultra"
                     source="electric-scooter-hub"
                     variant="primary"
-                    label="Check Price — GoTrax XR Ultra"
+                    label="Check Price, GoTrax XR Ultra"
                     showPrice
                   />
                 </div>
@@ -1314,8 +1314,8 @@ export default function BestElectricScooter() {
                       'Dramatically cheaper than driving ($20-50/yr in electricity vs $1,500+ in gas)',
                       'Zero emissions — no carbon footprint for your commute',
                       'Skip traffic — bike lanes save 20-40% commute time in congested areas',
-                      'No parking hassle — fold it and bring it inside',
-                      'Low maintenance — no oil changes, no brake fluid, minimal parts',
+                      'No parking hassle, fold it and bring it inside',
+                      'Low maintenance, no oil changes, no brake fluid, minimal parts',
                       'Year 1 total cost: $470-1,440 vs $10,000+ for a car',
                     ].map((pro) => (
                       <li key={pro} className="flex items-start gap-2 text-sm" style={{ color: '#a1a1aa' }}>
@@ -1331,11 +1331,11 @@ export default function BestElectricScooter() {
                   </h3>
                   <ul className="space-y-3">
                     {[
-                      'Weather dependent — rain, extreme heat, and cold reduce range and comfort',
+                      'Weather dependent. Rain, extreme heat, and cold reduce range and comfort',
                       'Limited cargo capacity — backpack only for groceries/errands',
-                      'Safety risk — no crumple zone, exposed to cars and road hazards',
-                      'Range anxiety — running out of battery mid-commute is real',
-                      'Theft target — always bring it inside or use a heavy-duty lock',
+                      'Safety risk, no crumple zone, exposed to cars and road hazards',
+                      'Range anxiety, running out of battery mid-commute is real',
+                      'Theft target, always bring it inside or use a heavy-duty lock',
                       'Road quality matters — potholes and debris are serious hazards',
                     ].map((con) => (
                       <li key={con} className="flex items-start gap-2 text-sm" style={{ color: '#a1a1aa' }}>

@@ -130,7 +130,7 @@ const faqSchema = {
       name: 'Is natural gas or propane better for a standby generator?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Natural gas is more convenient because you never run out of fuel — it feeds from your existing gas line. Propane requires a separate tank but delivers about 10% more power output per unit and stores indefinitely. Most homeowners choose natural gas for convenience. Propane is better for rural areas without gas service or where gas lines are unreliable.',
+        text: 'Natural gas is more convenient because you never run out of fuel; it feeds from your existing gas line. Propane requires a separate tank but delivers about 10% more power output per unit and stores indefinitely. Most homeowners choose natural gas for convenience. Propane is better for rural areas without gas service or where gas lines are unreliable.',
       },
     },
     {
@@ -350,7 +350,7 @@ export default function GeneracGuardian24kWReview() {
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 Generac invented the home standby generator category, and the
                 Guardian series is their bread and butter. The 24kW model sits
-                right in the middle of the lineup — powerful enough to run a
+                right in the middle of the lineup, powerful enough to run a
                 full-size home with central air conditioning, but not so
                 oversized that you are paying for capacity you will never use.
               </p>
@@ -366,7 +366,7 @@ export default function GeneracGuardian24kWReview() {
               <p className='text-foreground/80 leading-relaxed'>
                 For California homeowners dealing with PSPS (Public Safety Power
                 Shutoff) events, wildfire season blackouts, and an increasingly
-                strained grid, a standby generator is not a luxury — it is
+                strained grid, a standby generator is not a luxury. It is
                 infrastructure. The question is whether the 24kW model is the
                 right size, and whether the total cost of ownership justifies the
                 investment. We will break down both.
@@ -389,7 +389,7 @@ export default function GeneracGuardian24kWReview() {
               <div className='space-y-4'>
                 <div className='bg-card border border-border rounded-lg p-5'>
                   <h3 className='font-semibold text-foreground mb-2'>
-                    22kW — Smaller Homes (Under 1,800 sq ft)
+                    22kW. Smaller Homes (Under 1,800 sq ft)
                   </h3>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
                     Handles most essential circuits plus one central AC unit.
@@ -402,7 +402,7 @@ export default function GeneracGuardian24kWReview() {
                 <div className='bg-primary/5 border border-primary/20 rounded-lg p-5'>
                   <div className='flex items-center gap-2 mb-2'>
                     <h3 className='font-semibold text-foreground'>
-                      24kW — The Sweet Spot (1,800-2,500 sq ft)
+                      24kW; The Sweet Spot (1,800-2,500 sq ft)
                     </h3>
                     <span className='text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full'>
                       RECOMMENDED
@@ -413,13 +413,13 @@ export default function GeneracGuardian24kWReview() {
                     kitchen appliances, electric water heater, washer/dryer, and
                     all lighting and electronics. The included 200A transfer
                     switch means whole-house coverage. This is the model most
-                    installers recommend and keep in stock — which also means
+                    installers recommend and keep in stock; which also means
                     faster installation timelines.
                   </p>
                 </div>
                 <div className='bg-card border border-border rounded-lg p-5'>
                   <h3 className='font-semibold text-foreground mb-2'>
-                    26kW — Large Homes (2,500+ sq ft)
+                    26kW, Large Homes (2,500+ sq ft)
                   </h3>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
                     Required for homes with multiple AC zones, large electric
@@ -435,7 +435,7 @@ export default function GeneracGuardian24kWReview() {
                   <strong className='text-foreground'>Pro tip:</strong> Ask your
                   installer for a load calculation before committing to a size.
                   They will add up the wattage of every circuit you want covered
-                  and recommend the right model. Do not guess — a proper load
+                  and recommend the right model. Do not guess, a proper load
                   calculation takes 30 minutes and prevents a $15,000 mistake.
                 </p>
               </div>
@@ -502,7 +502,7 @@ export default function GeneracGuardian24kWReview() {
                 cycles on and off, you are not running the oven and dryer at the
                 exact same second, and the water heater has a thermostat. The
                 24kW gives you enough headroom to run everything in your home
-                without ever thinking about load management — which is the
+                without ever thinking about load management. Which is the
                 entire point of a whole house generator.
               </p>
             </section>
@@ -516,7 +516,7 @@ export default function GeneracGuardian24kWReview() {
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The Generac RXSW200A3 200-amp automatic transfer switch is
                 included with the 24kW Guardian. This is a critical component
-                that many people overlook when comparing prices — some
+                that many people overlook when comparing prices. some
                 competitors charge $800-$1,200 extra for the transfer switch.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
@@ -524,12 +524,12 @@ export default function GeneracGuardian24kWReview() {
               </p>
               <div className='space-y-3 mb-4'>
                 {[
-                  'Grid power fails — the transfer switch detects the loss instantly',
-                  'Signal sent to generator — engine cranking begins immediately',
-                  'Engine starts and stabilizes — takes 5-8 seconds',
-                  'Transfer switch flips your home to generator power — total elapsed time under 10 seconds',
-                  'Grid power returns — transfer switch waits a few minutes to confirm stability',
-                  'Home switched back to grid — generator runs a cool-down cycle and shuts off',
+                  'Grid power fails, the transfer switch detects the loss instantly',
+                  'Signal sent to generator, engine cranking begins immediately',
+                  'Engine starts and stabilizes, takes 5-8 seconds',
+                  'Transfer switch flips your home to generator power, total elapsed time under 10 seconds',
+                  'Grid power returns; transfer switch waits a few minutes to confirm stability',
+                  'Home switched back to grid. Generator runs a cool-down cycle and shuts off',
                 ].map((step, i) => (
                   <div key={i} className='flex items-start gap-3'>
                     <span className='flex-shrink-0 w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xs font-bold'>
@@ -663,7 +663,7 @@ export default function GeneracGuardian24kWReview() {
                 actual installation takes 1-2 days. The rest is lead time for
                 permits, scheduling inspections, and (sometimes) waiting for the
                 unit to arrive. The 24kW is the most popular model, so
-                installers usually have them in stock — which shaves weeks off
+                installers usually have them in stock, which shaves weeks off
                 the timeline compared to less common sizes.
               </p>
             </section>
@@ -675,7 +675,7 @@ export default function GeneracGuardian24kWReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 A standby generator is a long-term investment. Here is what
-                ownership actually costs over a decade — the numbers most
+                ownership actually costs over a decade; the numbers most
                 reviews skip.
               </p>
               <div className='bg-card border border-border rounded-xl p-6'>
@@ -763,7 +763,7 @@ export default function GeneracGuardian24kWReview() {
                 Fuel Considerations: Natural Gas vs. Liquid Propane
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Guardian 24kW is dual fuel — it runs on either natural gas
+                The Guardian 24kW is dual fuel. It runs on either natural gas
                 or liquid propane right out of the box. Your choice of fuel
                 affects cost, convenience, and performance.
               </p>
@@ -774,10 +774,10 @@ export default function GeneracGuardian24kWReview() {
                   </h3>
                   <ul className='space-y-2'>
                     {[
-                      'Unlimited fuel supply from gas line — never runs out',
+                      'Unlimited fuel supply from gas line, never runs out',
                       'Lower per-hour fuel cost ($3-5/hr at full load)',
                       'No fuel storage tank needed',
-                      'Slightly lower power output vs. propane',
+                      'Slightly lower power output vs. Propane',
                       'Depends on gas utility staying pressurized during outages',
                       'Best for: Urban/suburban homes with existing gas service',
                     ].map((item, i) => (
@@ -797,7 +797,7 @@ export default function GeneracGuardian24kWReview() {
                   </h3>
                   <ul className='space-y-2'>
                     {[
-                      'Independent fuel supply — not dependent on utility',
+                      'Independent fuel supply. Not dependent on utility',
                       'About 10% more power output per unit of fuel',
                       'Stores indefinitely without degradation',
                       'Requires a 250-500 gallon tank ($500-$2,500 installed)',
@@ -908,7 +908,7 @@ export default function GeneracGuardian24kWReview() {
                     'Push notifications when an outage starts and when power returns',
                     'Maintenance reminders based on actual run hours',
                     'Weekly self-test results and history',
-                    'Remote monitoring — check status from work, vacation, anywhere',
+                    'Remote monitoring. Check status from work, vacation, anywhere',
                     'Service dealer connection for faster support',
                   ].map((item, i) => (
                     <li
@@ -923,8 +923,8 @@ export default function GeneracGuardian24kWReview() {
               </div>
               <p className='text-foreground/80 leading-relaxed mt-4 text-sm'>
                 Mobile Link is surprisingly useful. Knowing your generator
-                started successfully during a PSPS event — while you are at
-                work or traveling — is genuine peace of mind. The maintenance
+                started successfully during a PSPS event, while you are at
+                work or traveling, is genuine peace of mind. The maintenance
                 reminders also prevent the common problem of neglecting service
                 until something breaks.
               </p>
@@ -1031,7 +1031,7 @@ export default function GeneracGuardian24kWReview() {
                     When to consider Champion
                   </h4>
                   <p className='text-foreground/70 text-sm leading-relaxed'>
-                    Champion offers the best value on paper — lower unit price
+                    Champion offers the best value on paper; lower unit price
                     and a 10-year warranty. The trade-off is a smaller dealer
                     network and less mature service infrastructure. If budget
                     is the primary concern and you are comfortable with a
@@ -1056,7 +1056,7 @@ export default function GeneracGuardian24kWReview() {
                   <ul className='space-y-3'>
                     {[
                       'True whole-house coverage with 200A transfer switch included',
-                      '24kW is the sweet spot for most homes — not undersized, not overbuilt',
+                      '24kW is the sweet spot for most homes; not undersized, not overbuilt',
                       'Automatic operation — starts within 10 seconds, no manual intervention',
                       'Dual fuel flexibility (natural gas or propane)',
                       'Mobile Link WiFi monitoring at no extra cost',
@@ -1082,9 +1082,9 @@ export default function GeneracGuardian24kWReview() {
                   </h3>
                   <ul className='space-y-3'>
                     {[
-                      'High total cost — $10,000-$15,000 installed is a major investment',
+                      'High total cost. $10,000-$15,000 installed is a major investment',
                       '67 dB noise level is noticeable (not silent like a battery backup)',
-                      'Requires professional installation — not a DIY project',
+                      'Requires professional installation. Not a DIY project',
                       'Ongoing maintenance costs ($200-$400/year)',
                       'Burns fossil fuel — not a green energy solution',
                       'Only 5-year warranty (Champion offers 10 years)',
@@ -1153,7 +1153,7 @@ export default function GeneracGuardian24kWReview() {
                   wildfire season blackouts, or an aging grid, the Guardian 24kW
                   earns our strong recommendation. Get a load calculation from a
                   local installer, confirm the 24kW is the right size for your
-                  home, and budget for the full installed cost — not just the
+                  home, and budget for the full installed cost, not just the
                   sticker price.
                 </p>
                 <div className='mt-6'>
@@ -1228,7 +1228,7 @@ export default function GeneracGuardian24kWReview() {
                   </h3>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
                     Natural gas is more convenient because you never run out of
-                    fuel — it feeds from your existing gas line. Propane
+                    fuel; it feeds from your existing gas line. Propane
                     requires a separate tank but delivers about 10% more power
                     output and stores indefinitely. Most homeowners choose
                     natural gas for convenience. Propane is better for rural

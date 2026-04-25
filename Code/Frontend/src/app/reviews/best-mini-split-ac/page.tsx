@@ -25,7 +25,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Mini Split AC & Heat Pumps (2026): MrCool DIY vs Easy Pro vs Advantage — Complete Guide',
+    'Best Mini Split AC & Heat Pumps (2026): MrCool DIY vs Easy Pro vs Advantage; Complete Guide',
   description:
     'Compare the best mini split AC systems for 2026. In-depth reviews of MrCool DIY 4th Gen, DIY 5th Gen, Easy Pro, and Advantage. DIY installation guide, energy savings math, and California solar pairing tips.',
   alternates: {
@@ -45,7 +45,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Best Mini Split AC & Heat Pumps (2026): MrCool DIY vs Easy Pro vs Advantage — Complete Guide',
+    'Best Mini Split AC & Heat Pumps (2026): MrCool DIY vs Easy Pro vs Advantage; Complete Guide',
   description:
     'Compare the best ductless mini split heat pumps for 2026. In-depth reviews covering MrCool DIY 4th Gen, DIY 5th Gen, Easy Pro, and Advantage models with DIY installation guide, energy savings analysis, and California solar pairing strategies.',
   datePublished: '2026-04-17',
@@ -87,7 +87,7 @@ const faqSchema = {
       name: 'How much will I save with a mini split vs central AC?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A 22.7 SEER2 mini split uses roughly 1,058 kWh over a summer cooling season compared to approximately 1,841 kWh for a 20 SEER central system — that is a 42% reduction in energy consumption. At California electricity rates of $0.30-$0.45/kWh, that translates to $235-$350 in annual cooling savings. Combined with heating efficiency gains, total annual savings can reach up to 26% on energy costs.',
+        text: 'A 22.7 SEER2 mini split uses roughly 1,058 kWh over a summer cooling season compared to approximately 1,841 kWh for a 20 SEER central system. That is a 42% reduction in energy consumption. At California electricity rates of $0.30-$0.45/kWh, that translates to $235-$350 in annual cooling savings. Combined with heating efficiency gains, total annual savings can reach up to 26% on energy costs.',
       },
     },
     {
@@ -111,7 +111,7 @@ const faqSchema = {
       name: 'Do mini splits work in cold weather?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The MrCool DIY 4th Gen operates in heating mode down to -4 degrees Fahrenheit. Mini split heat pumps are significantly more efficient than traditional resistance heating — they move heat rather than generate it, delivering 2-3 times more energy than they consume. In mild California winters, a mini split heat pump can handle 100% of heating needs for most homes.',
+        text: 'Yes. The MrCool DIY 4th Gen operates in heating mode down to -4 degrees Fahrenheit. Mini split heat pumps are significantly more efficient than traditional resistance heating; they move heat rather than generate it, delivering 2-3 times more energy than they consume. In mild California winters, a mini split heat pump can handle 100% of heating needs for most homes.',
       },
     },
     {
@@ -119,7 +119,7 @@ const faqSchema = {
       name: 'Can I pair a mini split with solar panels?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Absolutely, and this is one of the best combinations for California homeowners. A mini split running on solar-generated electricity effectively provides free cooling and heating during peak sun hours — which aligns with the hottest part of the day when you need AC most. Under NEM 3.0, using solar power directly for your mini split during peak TOU hours avoids the highest electricity rates ($0.40-$0.67/kWh for PG&E peak).',
+        text: 'Absolutely, and this is one of the best combinations for California homeowners. A mini split running on solar-generated electricity effectively provides free cooling and heating during peak sun hours. which aligns with the hottest part of the day when you need AC most. Under NEM 3.0, using solar power directly for your mini split during peak TOU hours avoids the highest electricity rates ($0.40-$0.67/kWh for PG&E peak).',
       },
     },
   ],
@@ -236,7 +236,7 @@ export default function BestMiniSplitACPage() {
                 Best Mini Split AC &amp; Heat Pumps (2026): MrCool DIY vs Easy Pro vs Advantage
               </h1>
               <p className="text-lg text-foreground/70 leading-relaxed mb-4">
-                Ductless mini splits are the most efficient way to heat and cool your home — and with
+                Ductless mini splits are the most efficient way to heat and cool your home, and with
                 the MrCool DIY line, you can install one yourself in under 5 hours, saving $3,000-$8,000
                 in labor costs. We break down every model to help you pick the right one.
               </p>
@@ -331,7 +331,7 @@ export default function BestMiniSplitACPage() {
               </div>
               <p className="text-foreground/80 leading-relaxed">
                 And here is the game changer: with MrCool&apos;s DIY line, you can install a
-                mini split yourself in about 4.5 hours — no HVAC license, no vacuum pump, no
+                mini split yourself in about 4.5 hours, no HVAC license, no vacuum pump, no
                 EPA certification. That saves $3,000-$8,000 in professional installation costs,
                 bringing the total cost of a ductless system to $1,549-$3,329 depending on
                 size.
@@ -431,7 +431,7 @@ export default function BestMiniSplitACPage() {
                 <div className="p-6">
                   <p className="text-foreground/80 leading-relaxed mb-4">
                     The MrCool DIY 4th Gen is the unit that proved homeowners can install their own
-                    mini split. Its pre-charged QuickConnect line sets are the key innovation — the
+                    mini split. Its pre-charged QuickConnect line sets are the key innovation, the
                     refrigerant is already sealed inside, so you never need to handle R-410A, own a
                     vacuum pump, or hold an EPA Section 608 certification. You run the line set from
                     the indoor unit through a 3-inch hole in your wall to the outdoor compressor,
@@ -453,7 +453,7 @@ export default function BestMiniSplitACPage() {
                       <ul className="space-y-1">
                         <li className="flex items-start gap-2 text-sm text-foreground/80">
                           <Check className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
-                          True DIY install — no HVAC tools or EPA cert needed
+                          True DIY install, no HVAC tools or EPA cert needed
                         </li>
                         <li className="flex items-start gap-2 text-sm text-foreground/80">
                           <Check className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
@@ -521,7 +521,7 @@ export default function BestMiniSplitACPage() {
                       productKey="mrcool-diy-4th-gen"
                       source="best-mini-split-ac"
                       variant="primary"
-                      label="Check Price — MrCool DIY 4th Gen"
+                      label="Check Price, MrCool DIY 4th Gen"
                       showPrice
                     />
                   </div>
@@ -557,7 +557,7 @@ export default function BestMiniSplitACPage() {
                     future, not the past.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    Efficiency gets a bump too — up to 22.7 SEER2 compared to the 4th Gen&apos;s
+                    Efficiency gets a bump too, up to 22.7 SEER2 compared to the 4th Gen&apos;s
                     22 SEER2. The same QuickConnect DIY installation system carries over, so the
                     install experience is identical. Currently available as a 12K BTU single-zone
                     unit at Costco, with more sizes expected to roll out. If you are buying a
@@ -595,7 +595,7 @@ export default function BestMiniSplitACPage() {
                       <ul className="space-y-1">
                         <li className="flex items-start gap-2 text-sm text-foreground/80">
                           <X className="h-4 w-4 text-red-500 mt-0.5 shrink-0" />
-                          Limited to 12K BTU currently — fewer size options
+                          Limited to 12K BTU currently, fewer size options
                         </li>
                         <li className="flex items-start gap-2 text-sm text-foreground/80">
                           <X className="h-4 w-4 text-red-500 mt-0.5 shrink-0" />
@@ -636,7 +636,7 @@ export default function BestMiniSplitACPage() {
                       productKey="mrcool-diy-5th-gen"
                       source="best-mini-split-ac"
                       variant="primary"
-                      label="Check Price — MrCool DIY 5th Gen"
+                      label="Check Price. MrCool DIY 5th Gen"
                       showPrice
                     />
                   </div>
@@ -673,7 +673,7 @@ export default function BestMiniSplitACPage() {
                     The &quot;DIY-adjacent&quot; installation means you can handle much of the setup
                     yourself, but some steps may benefit from professional involvement depending on
                     your local codes and comfort level. At roughly 40% more than the DIY line, the
-                    premium buys you measurably better cooling efficiency — which, at California
+                    premium buys you measurably better cooling efficiency; which, at California
                     electricity rates, can pay for itself over the system&apos;s 12-20 year lifespan.
                   </p>
 
@@ -749,7 +749,7 @@ export default function BestMiniSplitACPage() {
                       productKey="mrcool-easy-pro"
                       source="best-mini-split-ac"
                       variant="primary"
-                      label="Check Price — MrCool Easy Pro"
+                      label="Check Price, MrCool Easy Pro"
                       showPrice
                     />
                   </div>
@@ -783,8 +783,8 @@ export default function BestMiniSplitACPage() {
                     the installation. The upside? The equipment itself costs less than the DIY line.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    If you are already planning to hire an HVAC professional — maybe because your
-                    local code requires it, or you just prefer having a pro handle it — the Advantage
+                    If you are already planning to hire an HVAC professional, maybe because your
+                    local code requires it, or you just prefer having a pro handle it. The Advantage
                     gives you MrCool quality at the lowest equipment price. The efficiency is slightly
                     lower at up to 20 SEER2 (vs 22+ for the DIY line), and heating performance drops
                     off below 5&deg;F rather than -4&deg;F, but for most California climates that
@@ -867,7 +867,7 @@ export default function BestMiniSplitACPage() {
                       productKey="mrcool-advantage"
                       source="best-mini-split-ac"
                       variant="primary"
-                      label="Check Price — MrCool Advantage"
+                      label="Check Price. MrCool Advantage"
                       showPrice
                     />
                   </div>
@@ -883,7 +883,7 @@ export default function BestMiniSplitACPage() {
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-6">
                 The biggest selling point of the MrCool DIY line is that you can install it
-                yourself. Here is exactly what that involves — no sugarcoating.
+                yourself. Here is exactly what that involves, no sugarcoating.
               </p>
 
               <div className="bg-card border border-border rounded-xl p-6 mb-6">
@@ -1132,7 +1132,7 @@ export default function BestMiniSplitACPage() {
                   </h3>
                   <p className="text-sm text-foreground/80 leading-relaxed">
                     California utilities charge the highest rates during peak hours (4-9 PM). But
-                    your solar panels produce the most power from 10 AM to 4 PM — exactly when you
+                    your solar panels produce the most power from 10 AM to 4 PM. Exactly when you
                     need cooling most. Running your mini split on solar-generated electricity during
                     the day means you avoid peak TOU rates entirely. PG&amp;E peak rates run
                     $0.40-$0.48/kWh. Solar electricity costs you nothing once the panels are paid for.
@@ -1160,7 +1160,7 @@ export default function BestMiniSplitACPage() {
                     A high-efficiency mini split alone can cut cooling costs by 42%. Solar panels
                     can offset 80-100% of your remaining electricity. Together, a California
                     homeowner paying $250/month to their utility could see that drop to a fixed
-                    $100-$125/month solar payment — locked in for the life of the system, immune
+                    $100-$125/month solar payment, locked in for the life of the system, immune
                     to rate increases.
                   </p>
                 </div>
@@ -1171,7 +1171,7 @@ export default function BestMiniSplitACPage() {
                   More Energy-Saving Product Reviews
                 </h3>
                 <p className="text-foreground/70 mb-4 text-sm">
-                  GreenReviewsHub independently reviews the best green energy products — from portable
+                  GreenReviewsHub independently reviews the best green energy products, from portable
                   power stations to e-bikes to smart HVAC. Find the right product for your home.
                 </p>
                 <Link
@@ -1254,7 +1254,7 @@ export default function BestMiniSplitACPage() {
                   </summary>
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
                     A 22.7 SEER2 mini split uses roughly 1,058 kWh over a summer cooling season
-                    compared to approximately 1,841 kWh for a 20 SEER central system — a 42%
+                    compared to approximately 1,841 kWh for a 20 SEER central system, a 42%
                     reduction. At California rates of $0.30-$0.70/kWh depending on your utility and
                     TOU tier, that translates to $235-$1,059 in annual cooling savings. Combined
                     with heating season efficiency gains, total energy savings can reach up to 26%.
@@ -1308,7 +1308,7 @@ export default function BestMiniSplitACPage() {
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
                     Absolutely, and it is one of the best combinations for California homeowners. A
                     mini split running on solar-generated electricity provides effectively free
-                    cooling and heating during peak sun hours — which aligns with the hottest part
+                    cooling and heating during peak sun hours, which aligns with the hottest part
                     of the day when you need AC most. Under NEM 3.0, using solar power directly for
                     your mini split during peak TOU hours avoids the highest electricity rates. A
                     pre-cool strategy (cooling to 68&deg;F before 4 PM peak hours) maximizes solar

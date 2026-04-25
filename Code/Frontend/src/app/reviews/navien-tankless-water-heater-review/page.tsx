@@ -132,7 +132,7 @@ const faqSchema = {
       name: 'What is the difference between Navien NPE and NPN tankless water heaters?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Navien NPE series is the premium condensing lineup — 0.96-0.97 UEF (highly efficient), stainless steel primary and secondary heat exchangers, NaviLink Wi-Fi control standard, and on NPE-A2 models, a built-in recirculation pump. The NPN series is the budget non-condensing option — 0.83 UEF, single copper heat exchanger, no recirculation pump, no Wi-Fi standard. NPE installs vent horizontally through plastic pipe; NPN requires metal B-vent. NPE qualifies for federal efficiency credits; NPN typically does not.',
+        text: 'The Navien NPE series is the premium condensing lineup; 0.96-0.97 UEF (highly efficient), stainless steel primary and secondary heat exchangers, NaviLink Wi-Fi control standard, and on NPE-A2 models, a built-in recirculation pump. The NPN series is the budget non-condensing option, 0.83 UEF, single copper heat exchanger, no recirculation pump, no Wi-Fi standard. NPE installs vent horizontally through plastic pipe; NPN requires metal B-vent. NPE qualifies for federal efficiency credits; NPN typically does not.',
       },
     },
     {
@@ -148,7 +148,7 @@ const faqSchema = {
       name: 'How long do Navien tankless water heaters last?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Navien quotes 20+ years of service life for their tankless units with annual maintenance. The heat exchanger warranty is 15 years residential (stainless on condensing NPE models, copper on NPN). Actual lifespan depends heavily on water hardness — areas with hard water require annual descaling to hit the 20-year mark. California homes on hard municipal water should plan for yearly flushes.',
+        text: 'Navien quotes 20+ years of service life for their tankless units with annual maintenance. The heat exchanger warranty is 15 years residential (stainless on condensing NPE models, copper on NPN). Actual lifespan depends heavily on water hardness, areas with hard water require annual descaling to hit the 20-year mark. California homes on hard municipal water should plan for yearly flushes.',
       },
     },
     {
@@ -164,15 +164,15 @@ const faqSchema = {
       name: 'What rebates are available for a Navien tankless water heater in California?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'California utilities offer rebates on high-efficiency gas tankless water heaters. SoCalGas and PG&E both offer $100-300 rebates on qualifying Navien NPE condensing models (0.93+ UEF threshold). BayREN and 3C-REN offer additional rebates in their service territories, often stacking with utility rebates for a combined $500-800. The federal 25C tax credit applies to qualifying condensing gas tankless at up to $600 per year. Heat pump water heaters qualify for higher incentives — up to $2,000 under the 25C credit plus $4,000-8,000 under HEEHRA/HOMES rebate programs.',
+        text: 'California utilities offer rebates on high-efficiency gas tankless water heaters. SoCalGas and PG&E both offer $100-300 rebates on qualifying Navien NPE condensing models (0.93+ UEF threshold). BayREN and 3C-REN offer additional rebates in their service territories, often stacking with utility rebates for a combined $500-800. The federal 25C tax credit applies to qualifying condensing gas tankless at up to $600 per year. Heat pump water heaters qualify for higher incentives, up to $2,000 under the 25C credit plus $4,000-8,000 under HEEHRA/HOMES rebate programs.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Navien or Rinnai — which is better?',
+      name: 'Navien or Rinnai, which is better?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Both are top-tier tankless brands. Navien generally wins on built-in features — NaviLink Wi-Fi standard on NPE-A2, integrated recirculation pump on NPE-240A2, and a longer 15-year heat exchanger warranty. Rinnai wins on installer familiarity in the US market (longer retail presence) and slightly simpler controls. For residential new construction or gut retrofits, Navien NPE-240A2 is our pick. For contractor-replacement jobs where the tech already knows Rinnai, the Rinnai RSC180iN or RX180iN is a comparable buy.',
+        text: 'Both are top-tier tankless brands. Navien generally wins on built-in features, NaviLink Wi-Fi standard on NPE-A2, integrated recirculation pump on NPE-240A2, and a longer 15-year heat exchanger warranty. Rinnai wins on installer familiarity in the US market (longer retail presence) and slightly simpler controls. For residential new construction or gut retrofits, Navien NPE-240A2 is our pick. For contractor-replacement jobs where the tech already knows Rinnai, the Rinnai RSC180iN or RX180iN is a comparable buy.',
       },
     },
   ],
@@ -239,7 +239,7 @@ export default function NavienTanklessReview() {
               productKey={PRODUCT_KEY}
               badge='Best Overall Brand'
               rating={4.6}
-              verdict="Navien is the most feature-packed tankless water heater brand sold in the US — 4.7 million units installed nationwide, 15-year heat exchanger warranty on condensing models, NaviLink Wi-Fi control standard, and the only major brand with a built-in recirculation pump in its flagship. The NPE-240A2 is our top pick for most California homes."
+              verdict="Navien is the most feature-packed tankless water heater brand sold in the US, 4.7 million units installed nationwide, 15-year heat exchanger warranty on condensing models, NaviLink Wi-Fi control standard, and the only major brand with a built-in recirculation pump in its flagship. The NPE-240A2 is our top pick for most California homes."
               pros={[
                 'Condensing NPE line for new builds / retrofits',
                 'Combi NCB for heat + hot water in one',
@@ -449,7 +449,7 @@ export default function NavienTanklessReview() {
                 This is the single most important decision in the Navien
                 lineup. Condensing tankless water heaters (Navien NPE and NCB)
                 recover heat from combustion exhaust by condensing it through a
-                secondary heat exchanger — turning water vapor back into liquid
+                secondary heat exchanger, turning water vapor back into liquid
                 and capturing the latent heat. The result is dramatically
                 higher efficiency: 0.96-0.97 UEF on Navien NPE models vs 0.83
                 UEF on the non-condensing NPN.
@@ -459,16 +459,16 @@ export default function NavienTanklessReview() {
                 ~64 therms per year for hot water at SoCalGas rates (roughly
                 $2.40/therm in 2026) would see annual gas cost around $154 on
                 the 0.83 UEF NPN and around $132 on the 0.97 UEF NPE. Savings
-                of $22/year are modest — but the condensing models also qualify
+                of $22/year are modest, but the condensing models also qualify
                 for utility rebates (SoCalGas, PG&amp;E, 3C-REN, BayREN) and
                 federal 25C tax credits that the non-condensing unit does not.
                 Counting rebates, the condensing NPE often costs less installed
-                than the NPN — especially on a new install where you are
+                than the NPN, especially on a new install where you are
                 running a new vent anyway.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The other factor is venting. Condensing NPE units vent
-                horizontally through 2-inch schedule 40 PVC or CPVC — cheap,
+                horizontally through 2-inch schedule 40 PVC or CPVC, cheap,
                 flexible, easy to route through a wall. Non-condensing NPN
                 units require metal B-vent pipe rated for 400°F+ exhaust, which
                 must typically run vertically up through the roof. On a
@@ -518,7 +518,7 @@ export default function NavienTanklessReview() {
                 NPE-210A2: The Sweet Spot
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The NPE-210A2 is the step-down condensing model — same
+                The NPE-210A2 is the step-down condensing model, same
                 core technology, slightly smaller burner. Specs: 10 GPM max
                 flow, 180,000 BTU/hr input, 0.96 UEF, dual stainless heat
                 exchangers, NaviLink Wi-Fi standard. Does not include the
@@ -549,7 +549,7 @@ export default function NavienTanklessReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Confusingly, the NPN often lists at higher MSRP than the NPE
                 despite being the budget line. This is because the NPN is
-                positioned as a simpler retrofit product — the total installed
+                positioned as a simpler retrofit product. the total installed
                 cost ends up lower when you can reuse an existing metal flue
                 and avoid the PVC vent run a condensing unit needs. For
                 contractor replacement jobs where a tank water heater already
@@ -566,7 +566,7 @@ export default function NavienTanklessReview() {
                 catalog for homeowners planning major mechanical upgrades. An
                 NCB combi boiler provides both hydronic space heating
                 (radiators or radiant floor) and domestic hot water from a
-                single wall-mount unit — replacing two separate pieces of
+                single wall-mount unit. Replacing two separate pieces of
                 equipment with one.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -587,7 +587,7 @@ export default function NavienTanklessReview() {
                 a small house (the NCB is roughly the size of a kitchen
                 cabinet and mounts flat to the wall). The NCB does not make
                 sense if you are happy with your existing forced-air furnace
-                and just need a water heater — in that case buy an NPE.
+                and just need a water heater, in that case buy an NPE.
               </p>
 
               <AffiliateCTABox
@@ -697,15 +697,14 @@ export default function NavienTanklessReview() {
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
-                    <strong>Contractor familiarity:</strong> Rinnai wins —
-                    longer US presence, more technicians trained on the
+                    <strong>Contractor familiarity:</strong> Rinnai wins, longer US presence, more technicians trained on the
                     product, easier to find parts in a pinch.
                   </span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
-                    <strong>Reliability data:</strong> Tie — both brands
+                    <strong>Reliability data:</strong> Tie, both brands
                     post 20+ year mean lifespan with annual maintenance.
                     Consumer Reports rates them similarly.
                   </span>
@@ -713,7 +712,7 @@ export default function NavienTanklessReview() {
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
-                    <strong>Price installed:</strong> Tie — both brands
+                    <strong>Price installed:</strong> Tie, both brands
                     install for $3,500-5,500 at the top of their condensing
                     residential lines in California.
                   </span>
@@ -731,12 +730,12 @@ export default function NavienTanklessReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Tankless water heater installation is almost always a licensed
-                plumber job in California — CSLB C-36 contractors are the
+                plumber job in California, CSLB C-36 contractors are the
                 standard, and most jurisdictions require a permit plus a
                 final inspection. Installed cost typically breaks down as:
                 unit ($1,400-1,800), venting and connections ($600-1,200), gas
                 line upsizing if needed ($400-1,200, more common than
-                homeowners expect — tankless units demand higher BTU/hr peak
+                homeowners expect, tankless units demand higher BTU/hr peak
                 than tank heaters), and labor ($800-1,400). Total installed:
                 $3,200-5,600 on a standard single-family replacement.
               </p>
@@ -823,7 +822,7 @@ export default function NavienTanklessReview() {
 
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>
-                    Navien or Rinnai — which should I buy?
+                    Navien or Rinnai. which should I buy?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     Both are top-tier. Navien wins on built-in features
@@ -841,7 +840,7 @@ export default function NavienTanklessReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For most California homeowners on natural gas who want a
                 tankless upgrade, a Navien NPE-240A2 is the right buy. It
-                checks every box — condensing efficiency for rebate and tax
+                checks every box. Condensing efficiency for rebate and tax
                 credit eligibility, 11.2 GPM flow for a family home, built-in
                 recirculation for quality-of-life hot water delivery, Wi-Fi
                 control, and a 15-year heat exchanger warranty. Step down to
@@ -851,7 +850,7 @@ export default function NavienTanklessReview() {
                 total installed cost pencils cheaper. Go with the NCB combi
                 if you are replacing both your heater and your water heater in
                 one move. Skip Navien entirely only if you are on a path
-                toward full electrification — in which case a heat pump water
+                toward full electrification; in which case a heat pump water
                 heater captures significantly more incentive dollars.
               </p>
             </div>

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title:
       'EcoFlow Delta Pro 3 Review: The Best Portable Power Station for Home Backup?',
     description:
-      'Detailed review of the EcoFlow Delta Pro 3 — 4,096 Wh LFP battery, 4,000W output, X-Stream fast charging. Is it worth $1,999?',
+      'Detailed review of the EcoFlow Delta Pro 3, 4,096 Wh LFP battery, 4,000W output, X-Stream fast charging. Is it worth $1,999?',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
   },
@@ -199,7 +199,7 @@ export default function EcoFlowDeltaPro3Review() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure. FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
             {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
@@ -207,7 +207,7 @@ export default function EcoFlowDeltaPro3Review() {
               productKey={PRODUCT_KEY}
               badge="Our Top Pick"
               rating={4.7}
-              verdict="The EcoFlow Delta Pro 3 is the most well-rounded portable power station of 2026 — 4,096 Wh LFP, 4,000W output, 0-80% charge in 50 min, and Smart Home Panel support."
+              verdict="The EcoFlow Delta Pro 3 is the most well-rounded portable power station of 2026, 4,096 Wh LFP, 4,000W output, 0-80% charge in 50 min, and Smart Home Panel support."
               pros={[
                 'Home backup during PSPS outages',
                 'TOU arbitrage at peak rates',
@@ -422,7 +422,7 @@ export default function EcoFlowDeltaPro3Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Delta Pro 3 is a serious piece of hardware. At 25 x 11.2 x
                 13.3 inches and 114 pounds, it is not something you casually toss
-                in a backpack — this is a unit designed to sit in a garage, utility
+                in a backpack, this is a unit designed to sit in a garage, utility
                 room, or RV bay. The build quality is excellent: a sturdy metal
                 chassis with rubberized edges, solid retractable handle, and
                 heavy-duty wheels on the bottom for rolling it around. The front
@@ -449,7 +449,7 @@ export default function EcoFlowDeltaPro3Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Delta Pro 3 uses a LiFePO4 (LFP) battery rated at 4,096 Wh.
                 LFP is the same chemistry used in Tesla Powerwall and most modern
-                stationary storage systems — it is inherently safer, more thermally
+                stationary storage systems, it is inherently safer, more thermally
                 stable, and longer-lasting than the NMC (nickel manganese cobalt)
                 cells found in older portable power stations and many laptops. The
                 trade-off is energy density: LFP is heavier per watt-hour, which is
@@ -462,7 +462,7 @@ export default function EcoFlowDeltaPro3Review() {
                 aggressive for most home backup use cases), you are looking at
                 roughly 10 years before the battery degrades to 80% of its original
                 capacity. For typical usage — occasional outages, weekend camping
-                trips, TOU shifting — the battery will likely outlast the 5-year
+                trips, TOU shifting. the battery will likely outlast the 5-year
                 warranty by a wide margin.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -495,7 +495,7 @@ export default function EcoFlowDeltaPro3Review() {
                 panel array in California sun (averaging 5-6 peak sun hours), you
                 can fully recharge the unit in under 2 hours. For reference, four
                 400W panels would give you approximately 1,600W of real-world input
-                on a clear day — a full charge in roughly 2.5 hours. Car charging
+                on a clear day. a full charge in roughly 2.5 hours. Car charging
                 is also supported, though at much slower speeds suitable for
                 road-trip top-ups rather than emergency charging.
               </p>
@@ -524,8 +524,7 @@ export default function EcoFlowDeltaPro3Review() {
                 The port selection is comprehensive: five AC outlets, two USB-C
                 ports at 140W each (enough to fast-charge a MacBook Pro), two
                 USB-A ports, a 12V car outlet, and an Anderson connector for RV or
-                heavy-duty applications. The USB-C ports at 140W are a standout —
-                many competitors still cap their USB-C at 100W. For a household
+                heavy-duty applications. The USB-C ports at 140W are a standout, many competitors still cap their USB-C at 100W. For a household
                 running laptops, phones, and tablets during an outage, this
                 eliminates the need for separate chargers.
               </p>
@@ -546,7 +545,7 @@ export default function EcoFlowDeltaPro3Review() {
                 The headline smart feature is Smart Home Panel compatibility. The
                 Smart Home Panel (sold separately) installs at your electrical
                 panel and allows the Delta Pro 3 to automatically take over
-                selected circuits during an outage — with a switchover time under
+                selected circuits during an outage. with a switchover time under
                 20ms. This transforms the Delta Pro 3 from a portable battery into
                 a proper home backup system. You select which circuits to back up
                 (typically fridge, lights, internet, a few outlets), and the system
@@ -604,7 +603,7 @@ export default function EcoFlowDeltaPro3Review() {
                 hours and discharging during peak hours, you pocket the difference.
                 On a 4,096 Wh cycle, the savings range from roughly $0.80 to $2.00
                 per day depending on your utility&apos;s rate spread. Over a year,
-                that is $290-$730 — not enough to justify the purchase purely on
+                that is $290-$730, not enough to justify the purchase purely on
                 TOU arbitrage alone, but a meaningful offset when combined with
                 outage protection.
               </p>
@@ -651,7 +650,7 @@ export default function EcoFlowDeltaPro3Review() {
                 during midday is worth significantly less than it was under NEM
                 2.0. A battery like the Delta Pro 3 lets you store that midday
                 solar production and use it during evening peak hours when rates
-                are highest — improving the economics of your solar system. With
+                are highest, improving the economics of your solar system. With
                 the Smart Home Panel, this happens automatically. For more on how
                 NEM 3.0 affects solar economics, see our article on{' '}
                 <Link
@@ -740,7 +739,7 @@ export default function EcoFlowDeltaPro3Review() {
                 </div>
               </div>
 
-              {/* Mid-content CTA — placed after pros/cons where buy intent peaks */}
+              {/* Mid-content CTA, placed after pros/cons where buy intent peaks */}
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge="Ready to buy?"
@@ -857,7 +856,7 @@ export default function EcoFlowDeltaPro3Review() {
                 (5,000W) and solar input (3,000W) but costs significantly more and
                 requires separate battery modules. The{' '}
                 <strong>Jackery 2000 Plus</strong> is the best option if you
-                prioritize portability at 61 lbs — but at half the capacity and
+                prioritize portability at 61 lbs, but at half the capacity and
                 output, it is a different product for a different use case.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -1027,7 +1026,7 @@ export default function EcoFlowDeltaPro3Review() {
               </p>
             </div>
 
-            {/* Final CTA — real buy button replacing the old placeholder */}
+            {/* Final CTA. real buy button replacing the old placeholder */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge="Final Verdict"
@@ -1036,7 +1035,7 @@ export default function EcoFlowDeltaPro3Review() {
               variant="final"
             />
 
-            {/* Explore more reviews — navigational, not monetization */}
+            {/* Explore more reviews; navigational, not monetization */}
             <div className='bg-muted/20 border border-border rounded-2xl p-6 text-center mt-8'>
               <h3 className='text-lg font-bold text-foreground mb-2'>
                 Still comparing?

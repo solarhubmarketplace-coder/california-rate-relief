@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className='list-disc pl-6 space-y-2'>
                 <li>
-                  <strong className='text-foreground'>Vercel</strong> (hosting + analytics) —{' '}
+                  <strong className='text-foreground'>Vercel</strong> (hosting + analytics), {' '}
                   <a
                     href='https://vercel.com/legal/privacy-policy'
                     className='text-primary hover:underline'
@@ -120,7 +120,7 @@ export default function PrivacyPolicyPage() {
                 <li>
                   <strong className='text-foreground'>Affiliate networks</strong> (ShareASale,
                   Impact.com, CJ Affiliate, AvantLink, AWIN, FlexOffers, Amazon Associates when
-                  active) — each has its own privacy policy and tracking behavior governed by
+                  active). Each has its own privacy policy and tracking behavior governed by
                   their terms
                 </li>
                 <li>

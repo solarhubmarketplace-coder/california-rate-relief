@@ -478,7 +478,7 @@ export default function BestElectricFireplaceTvStand() {
                     productKey="walker-edison-wren-classic-fireplace-tv-stand"
                     source="electric-fireplace-tv-stand-hub"
                     variant="primary"
-                    label="Check Price — Walker Edison Wren Classic Fireplace TV Stand"
+                    label="Check Price, Walker Edison Wren Classic Fireplace TV Stand"
                     showPrice
                     />
                 </div>
@@ -543,7 +543,7 @@ export default function BestElectricFireplaceTvStand() {
                     productKey="ameriwood-home-chicago-fireplace-tv-console"
                     source="electric-fireplace-tv-stand-hub"
                     variant="primary"
-                    label="Check Price — Ameriwood Home Chicago Fireplace TV Console"
+                    label="Check Price; Ameriwood Home Chicago Fireplace TV Console"
                     showPrice
                     />
                 </div>
@@ -610,7 +610,7 @@ export default function BestElectricFireplaceTvStand() {
                     productKey="twin-star-classicflame-cabaret-tv-stand"
                     source="electric-fireplace-tv-stand-hub"
                     variant="primary"
-                    label="Check Price — Twin Star ClassicFlame Cabaret TV Stand"
+                    label="Check Price. Twin Star ClassicFlame Cabaret TV Stand"
                     showPrice
                     />
                 </div>
@@ -745,7 +745,7 @@ export default function BestElectricFireplaceTvStand() {
                     productKey="real-flame-tracey-grand-entertainment-unit"
                     source="electric-fireplace-tv-stand-hub"
                     variant="primary"
-                    label="Check Price — Real Flame Tracey Grand Entertainment Unit"
+                    label="Check Price, Real Flame Tracey Grand Entertainment Unit"
                     showPrice
                     />
                 </div>

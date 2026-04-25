@@ -23,7 +23,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Electric Dirt Bikes for Adults (2026): Sur-Ron vs KTM vs Stark Varg vs Zero — Top 6 Reviewed',
+    'Best Electric Dirt Bikes for Adults (2026): Sur-Ron vs KTM vs Stark Varg vs Zero. Top 6 Reviewed',
   description:
     'Compare the best electric dirt bikes for adults in 2026. In-depth reviews of Sur-Ron Light Bee X, KTM Freeride E-XC, Stark Varg, Cake Kalk OR, Segway X260, and Zero FX. Specs, range, street legal options, and buying guide.',
   alternates: {
@@ -92,7 +92,7 @@ const faqSchema = {
       name: 'How far can an electric dirt bike go on a single charge?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Range varies dramatically based on riding style and terrain. Trail riding at moderate speeds yields the best range: the Segway X260 can reach 75 miles, the Sur-Ron Light Bee X about 60 miles, and the Cake Kalk OR around 50 miles. Aggressive motocross riding cuts range significantly — the KTM Freeride E-XC gets about 1.5 hours of hard trail riding. The Stark Varg claims up to 6 hours in eco mode.',
+        text: 'Range varies dramatically based on riding style and terrain. Trail riding at moderate speeds yields the best range: the Segway X260 can reach 75 miles, the Sur-Ron Light Bee X about 60 miles, and the Cake Kalk OR around 50 miles. Aggressive motocross riding cuts range significantly, the KTM Freeride E-XC gets about 1.5 hours of hard trail riding. The Stark Varg claims up to 6 hours in eco mode.',
       },
     },
     {
@@ -321,7 +321,7 @@ export default function BestElectricDirtBikeAdults() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Sur-Ron Light Bee X — Most Popular / Best Entry Point
+                      Sur-Ron Light Bee X, Most Popular / Best Entry Point
                     </p>
                     <p className="text-sm text-muted-foreground">
                       The electric dirt bike that started the movement. At $4,500 and just 70 lbs with
@@ -334,7 +334,7 @@ export default function BestElectricDirtBikeAdults() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Stark Varg — Performance King / Best for MX
+                      Stark Varg, Performance King / Best for MX
                     </p>
                     <p className="text-sm text-muted-foreground">
                       80 horsepower, 80+ mph, full motocross capability, and up to 6 hours of ride time
@@ -347,7 +347,7 @@ export default function BestElectricDirtBikeAdults() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Zero FX — Best All-Around / Street Legal
+                      Zero FX, Best All-Around / Street Legal
                     </p>
                     <p className="text-sm text-muted-foreground">
                       85 mph, 91 miles of city range, street legal out of the box, and capable on trails
@@ -465,8 +465,7 @@ export default function BestElectricDirtBikeAdults() {
                   60-mile range at moderate trail speeds.
                 </p>
                 <p className="text-foreground/80 leading-relaxed mb-6">
-                  What makes the Sur-Ron special is the ecosystem. The aftermarket support is enormous —
-                  upgraded controllers, batteries, suspension kits, and street-legal conversion kits are
+                  What makes the Sur-Ron special is the ecosystem. The aftermarket support is enormous. Upgraded controllers, batteries, suspension kits, and street-legal conversion kits are
                   all readily available. The stock suspension and brakes are basic, but even with $500-$1,000
                   in upgrades, the total cost is still far below premium competitors.
                 </p>
@@ -477,7 +476,7 @@ export default function BestElectricDirtBikeAdults() {
                     </h4>
                     <ul className="space-y-1 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Incredibly lightweight at 70 lbs</li>
-                      <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Removable battery — swap in seconds</li>
+                      <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Removable battery. Swap in seconds</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Massive aftermarket parts ecosystem</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Best price-to-performance ratio</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> 60-mile range is class-leading at this price</li>
@@ -500,7 +499,7 @@ export default function BestElectricDirtBikeAdults() {
                     productKey="sur-ron-light-bee-x"
                     source="electric-dirt-bike-adults-hub"
                     variant="primary"
-                    label="Check Price — Sur-Ron Light Bee X"
+                    label="Check Price, Sur-Ron Light Bee X"
                     showPrice
                   />
                 </div>
@@ -543,12 +542,12 @@ export default function BestElectricDirtBikeAdults() {
                   KTM does not make half-hearted motorcycles, and the Freeride E-XC is no exception.
                   This is a proper enduro bike from a manufacturer with decades of off-road racing DNA.
                   The 18kW motor delivers smooth, controllable power through a chassis that feels like a
-                  real motorcycle — because it is one.
+                  real motorcycle, because it is one.
                 </p>
                 <p className="text-foreground/80 leading-relaxed mb-6">
                   The WP XPLOR suspension and Brembo brakes are the same components found on KTM&apos;s
                   gas enduro bikes. The removable 3.9 kWh battery swaps in about a minute, with an
-                  optional fast charger for 80-minute refills. The main limitation is ride time — about
+                  optional fast charger for 80-minute refills. The main limitation is ride time, about
                   1.5 hours of aggressive trail riding per charge. For riders who can live with that (or
                   buy a second battery), this is the most polished electric enduro experience money can buy.
                 </p>
@@ -559,7 +558,7 @@ export default function BestElectricDirtBikeAdults() {
                     </h4>
                     <ul className="space-y-1 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Pro-grade WP XPLOR suspension</li>
-                      <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Brembo brakes — the gold standard</li>
+                      <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Brembo brakes. The gold standard</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> KTM dealer network for parts and service</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Removable battery with fast charge option</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Real motorcycle feel and build quality</li>
@@ -582,7 +581,7 @@ export default function BestElectricDirtBikeAdults() {
                     productKey="ktm-freeride-e-xc"
                     source="electric-dirt-bike-adults-hub"
                     variant="primary"
-                    label="Check Price — KTM Freeride E-XC"
+                    label="Check Price, KTM Freeride E-XC"
                     showPrice
                   />
                 </div>
@@ -622,15 +621,15 @@ export default function BestElectricDirtBikeAdults() {
                   </div>
                 </div>
                 <p className="text-foreground/80 leading-relaxed mb-4">
-                  The Stark Varg is the bike that proved electric motocross is not just viable — it is
+                  The Stark Varg is the bike that proved electric motocross is not just viable, it is
                   the future. With 80 horsepower from its motor, the Varg matches the output of a
                   450cc gas motocross bike. It hits 80+ mph and can rip through a full MX track with
                   power to spare.
                 </p>
                 <p className="text-foreground/80 leading-relaxed mb-6">
-                  The 6 kWh battery — the largest in any electric dirt bike — delivers up to 6 hours in
+                  The 6 kWh battery, the largest in any electric dirt bike, delivers up to 6 hours in
                   eco mode. In full-attack MX mode, expect 25-35 minutes of track time per charge, enough
-                  for a full moto. The app offers 100+ customizable power maps. This is not a novelty — it
+                  for a full moto. The app offers 100+ customizable power maps. This is not a novelty, it
                   is a race-ready machine with purpose-built MX suspension, geometry, and ergonomics.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -640,7 +639,7 @@ export default function BestElectricDirtBikeAdults() {
                     </h4>
                     <ul className="space-y-1 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> 80 hp rivals 450cc gas MX bikes</li>
-                      <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> 6 kWh battery — largest in class</li>
+                      <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> 6 kWh battery, largest in class</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> 100+ customizable power maps via app</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Full MX-grade suspension and chassis</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Eco mode extends ride time to 6 hours</li>
@@ -654,7 +653,7 @@ export default function BestElectricDirtBikeAdults() {
                       <li className="flex items-start gap-2"><X className="h-3 w-3 text-red-500 mt-1 flex-shrink-0" /> $11,900 is a significant investment</li>
                       <li className="flex items-start gap-2"><X className="h-3 w-3 text-red-500 mt-1 flex-shrink-0" /> 243 lbs is heavy for an MX bike</li>
                       <li className="flex items-start gap-2"><X className="h-3 w-3 text-red-500 mt-1 flex-shrink-0" /> Limited dealer network (direct sales)</li>
-                      <li className="flex items-start gap-2"><X className="h-3 w-3 text-red-500 mt-1 flex-shrink-0" /> Off-road only — not street legal</li>
+                      <li className="flex items-start gap-2"><X className="h-3 w-3 text-red-500 mt-1 flex-shrink-0" /> Off-road only, not street legal</li>
                     </ul>
                   </div>
                 </div>
@@ -663,7 +662,7 @@ export default function BestElectricDirtBikeAdults() {
                     productKey="stark-varg"
                     source="electric-dirt-bike-adults-hub"
                     variant="primary"
-                    label="Check Price — Stark Varg"
+                    label="Check Price. Stark Varg"
                     showPrice
                   />
                 </div>
@@ -704,13 +703,13 @@ export default function BestElectricDirtBikeAdults() {
                 </div>
                 <p className="text-foreground/80 leading-relaxed mb-4">
                   The Cake Kalk OR is the Swedish design statement of the electric dirt bike world.
-                  Its minimalist aesthetic — exposed frame, clean lines, no unnecessary graphics — has
+                  Its minimalist aesthetic. exposed frame, clean lines, no unnecessary graphics, has
                   won design awards and turned heads at motorcycle shows worldwide. But it is more than
                   looks: the Kalk OR is street legal from the factory.
                 </p>
                 <p className="text-foreground/80 leading-relaxed mb-6">
                   DOT-approved lighting, mirrors, turn signals, and a registerable VIN mean you can ride
-                  to the trailhead, hit the dirt, and ride home — no trailer needed. At 11kW, the Kalk OR
+                  to the trailhead, hit the dirt, and ride home. No trailer needed. At 11kW, the Kalk OR
                   is not trying to compete with MX bikes. It is a trail explorer and urban runabout at
                   176 lbs that happens to look stunning doing both.
                 </p>
@@ -783,7 +782,7 @@ export default function BestElectricDirtBikeAdults() {
                   </div>
                 </div>
                 <p className="text-foreground/80 leading-relaxed mb-4">
-                  Segway — yes, that Segway — entered the electric dirt bike market with the X260, and
+                  Segway, yes, that Segway; entered the electric dirt bike market with the X260, and
                   the result is surprisingly capable. Backed by the resources and reliability standards
                   of a major consumer electronics brand, the X260 offers the longest range in this
                   roundup at 75 miles, all for under $5,000.
@@ -791,7 +790,7 @@ export default function BestElectricDirtBikeAdults() {
                 <p className="text-foreground/80 leading-relaxed mb-6">
                   The 5kW motor will not win drag races, but 46 mph is more than enough for trail riding.
                   At 121 lbs it sits in a comfortable middle ground, and Segway&apos;s warranty and parts
-                  availability give peace of mind. The X260 is the sensible choice — if range per dollar
+                  availability give peace of mind. The X260 is the sensible choice; if range per dollar
                   is your priority, nothing else comes close.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -801,7 +800,7 @@ export default function BestElectricDirtBikeAdults() {
                     </h4>
                     <ul className="space-y-1 text-sm text-muted-foreground">
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Best range in this roundup at 75 miles</li>
-                      <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Under $5,000 — excellent value</li>
+                      <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Under $5,000, excellent value</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Segway brand reliability and warranty</li>
                       <li className="flex items-start gap-2"><Check className="h-3 w-3 text-green-500 mt-1 flex-shrink-0" /> Solid build quality for the price</li>
                     </ul>
@@ -823,7 +822,7 @@ export default function BestElectricDirtBikeAdults() {
                     productKey="segway-x260"
                     source="electric-dirt-bike-adults-hub"
                     variant="primary"
-                    label="Check Price — Segway X260"
+                    label="Check Price, Segway X260"
                     showPrice
                   />
                 </div>
@@ -864,7 +863,7 @@ export default function BestElectricDirtBikeAdults() {
                 </div>
                 <p className="text-foreground/80 leading-relaxed mb-4">
                   The Zero FX is the Swiss Army knife of electric dirt bikes. Street legal, highway
-                  capable at 85 mph, 91 miles of city range, and still genuinely fun on trails — it does
+                  capable at 85 mph, 91 miles of city range, and still genuinely fun on trails. It does
                   everything well. Zero Motorcycles has been building electric bikes since 2006, making
                   them the most experienced manufacturer in this roundup by a wide margin.
                 </p>
@@ -933,13 +932,13 @@ export default function BestElectricDirtBikeAdults() {
                   <tbody>
                     <tr className="bg-card/50">
                       <td className="p-3 font-semibold text-foreground">Torque Delivery</td>
-                      <td className="p-3 text-muted-foreground">Instant from 0 RPM — no clutch, no rev matching</td>
+                      <td className="p-3 text-muted-foreground">Instant from 0 RPM. No clutch, no rev matching</td>
                       <td className="p-3 text-muted-foreground">Builds through RPM range; requires clutch skill</td>
                     </tr>
                     <tr className="bg-card/30">
                       <td className="p-3 font-semibold text-foreground">Noise Level</td>
-                      <td className="p-3 text-muted-foreground">Near-silent — ride in noise-restricted areas</td>
-                      <td className="p-3 text-muted-foreground">80-110 dB — requires earplugs, angers neighbors</td>
+                      <td className="p-3 text-muted-foreground">Near-silent. ride in noise-restricted areas</td>
+                      <td className="p-3 text-muted-foreground">80-110 dB, requires earplugs, angers neighbors</td>
                     </tr>
                     <tr className="bg-card/50">
                       <td className="p-3 font-semibold text-foreground">Maintenance</td>
@@ -963,7 +962,7 @@ export default function BestElectricDirtBikeAdults() {
                     </tr>
                     <tr className="bg-card/50">
                       <td className="p-3 font-semibold text-foreground">Learning Curve</td>
-                      <td className="p-3 text-muted-foreground">No clutch, no stalling — beginner-friendly</td>
+                      <td className="p-3 text-muted-foreground">No clutch, no stalling, beginner-friendly</td>
                       <td className="p-3 text-muted-foreground">Clutch, shifting, kick-starting to learn</td>
                     </tr>
                     <tr className="bg-card/30">
@@ -1164,7 +1163,7 @@ export default function BestElectricDirtBikeAdults() {
                 <ul className="space-y-2 text-foreground/80 text-sm">
                   <li className="flex items-start gap-2">
                     <ChevronRight className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                    <span>Street-legal electric motorcycles require a motorcycle license, registration, and insurance — just like gas bikes.</span>
+                    <span>Street-legal electric motorcycles require a motorcycle license, registration, and insurance, just like gas bikes.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <ChevronRight className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
@@ -1252,7 +1251,7 @@ export default function BestElectricDirtBikeAdults() {
                 </div>
                 <p className="text-sm text-muted-foreground mt-3">
                   * Cost per charge calculated at the national average of $0.16/kWh. California rates
-                  average $0.28-$0.35/kWh, which roughly doubles these costs — still far cheaper than gas.
+                  average $0.28-$0.35/kWh, which roughly doubles these costs, still far cheaper than gas.
                 </p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
@@ -1291,7 +1290,7 @@ export default function BestElectricDirtBikeAdults() {
                     Advantages
                   </h3>
                   <ul className="space-y-2 text-foreground/80 text-sm">
-                    <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>Instant torque</strong> from zero RPM — no powerband wait</span></li>
+                    <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>Instant torque</strong> from zero RPM, no powerband wait</span></li>
                     <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>Near-silent</strong> — ride noise-restricted areas</span></li>
                     <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>Minimal maintenance</strong> — no oil, filters, valves, plugs</span></li>
                     <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" /><span><strong>Pennies per charge</strong> vs dollars per tank</span></li>
@@ -1356,7 +1355,7 @@ export default function BestElectricDirtBikeAdults() {
                     <p className="text-foreground/80">
                       <strong className="text-foreground">Best entry point / most popular:</strong>{' '}
                       The <strong>Sur-Ron Light Bee X</strong> at $4,500 is the Honda Civic of electric
-                      dirt bikes — affordable, proven, and endlessly customizable. Start here if you are
+                      dirt bikes. Affordable, proven, and endlessly customizable. Start here if you are
                       new to electric off-road.
                     </p>
                   </div>
@@ -1372,8 +1371,8 @@ export default function BestElectricDirtBikeAdults() {
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                     <p className="text-foreground/80">
                       <strong className="text-foreground">Best street-legal all-rounder:</strong>{' '}
-                      The <strong>Zero FX</strong> at $8,995 does everything — commute, trail ride, and
-                      highway — from one machine. Unmatched versatility.
+                      The <strong>Zero FX</strong> at $8,995 does everything, commute, trail ride, and
+                      highway, from one machine. Unmatched versatility.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">

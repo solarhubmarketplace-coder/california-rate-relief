@@ -82,7 +82,7 @@ const faqSchema = {
       name: 'Which is cheaper overall — tankless or tank?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Over a 20-year window, tankless is typically $300-$1,500 cheaper total. Tankless costs 2-3x more upfront ($2,500-$5,000 installed vs $800-$1,800 for tank) but uses 24-34% less energy and lasts 20+ years versus 10-15 for a tank. Over two full tank replacement cycles, the math usually tips toward tankless — especially in California where gas and electricity rates are above national averages.',
+        text: 'Over a 20-year window, tankless is typically $300-$1,500 cheaper total. Tankless costs 2-3x more upfront ($2,500-$5,000 installed vs $800-$1,800 for tank) but uses 24-34% less energy and lasts 20+ years versus 10-15 for a tank. Over two full tank replacement cycles, the math usually tips toward tankless; especially in California where gas and electricity rates are above national averages.',
       },
     },
     {
@@ -90,7 +90,7 @@ const faqSchema = {
       name: 'Does a tankless water heater really provide unlimited hot water?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Technically yes — hot water never runs out as long as gas or electricity is flowing — but only within the flow rate limit. A typical residential gas tankless delivers 6-9 gallons per minute (GPM). Running two showers simultaneously (roughly 4 GPM combined) plus the dishwasher pushes most units to their limit. If multiple fixtures exceed flow capacity at once, water temperature drops. Tank units do not have a flow rate cap but will exhaust the stored volume (40-80 gallons) during heavy simultaneous use.',
+        text: 'Technically yes — hot water never runs out as long as gas or electricity is flowing. but only within the flow rate limit. A typical residential gas tankless delivers 6-9 gallons per minute (GPM). Running two showers simultaneously (roughly 4 GPM combined) plus the dishwasher pushes most units to their limit. If multiple fixtures exceed flow capacity at once, water temperature drops. Tank units do not have a flow rate cap but will exhaust the stored volume (40-80 gallons) during heavy simultaneous use.',
       },
     },
     {
@@ -98,7 +98,7 @@ const faqSchema = {
       name: 'How long do tankless water heaters last compared to tank?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tankless water heaters typically last 20+ years with proper maintenance (annual descaling in hard water areas). Tank water heaters last 10-15 years on average, with 8-12 being more realistic in hard water regions. The longer tankless lifespan is the biggest factor in the lifetime cost comparison — you replace a tank twice during the life of one tankless unit.',
+        text: 'Tankless water heaters typically last 20+ years with proper maintenance (annual descaling in hard water areas). Tank water heaters last 10-15 years on average, with 8-12 being more realistic in hard water regions. The longer tankless lifespan is the biggest factor in the lifetime cost comparison, you replace a tank twice during the life of one tankless unit.',
       },
     },
     {
@@ -106,7 +106,7 @@ const faqSchema = {
       name: 'Will my gas line and electrical panel handle a tankless water heater?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Not always. Gas tankless units typically require a 3/4" gas line (most tank heaters use 1/2") and a 120V electrical connection for the ignition, fan, and controls. Whole-home electric tankless models often need 120-150A of dedicated service — frequently requiring a panel upgrade or supplemental service. A good installer will run a load calculation before quoting. Plan for $500-$1,500 in gas line or electrical upgrades if the home was originally wired for a tank.',
+        text: 'Not always. Gas tankless units typically require a 3/4" gas line (most tank heaters use 1/2") and a 120V electrical connection for the ignition, fan, and controls. Whole-home electric tankless models often need 120-150A of dedicated service. Frequently requiring a panel upgrade or supplemental service. A good installer will run a load calculation before quoting. Plan for $500-$1,500 in gas line or electrical upgrades if the home was originally wired for a tank.',
       },
     },
     {
@@ -208,7 +208,7 @@ export default function TanklessVsTankGuide() {
                 The Short Answer
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-5'>
-                Tankless wins on efficiency, lifespan, and space — tank wins
+                Tankless wins on efficiency, lifespan, and space; tank wins
                 on upfront cost and installation simplicity. For a California
                 homeowner who plans to stay in the house more than seven years
                 and uses hot water across multiple fixtures daily, tankless
@@ -455,7 +455,7 @@ export default function TanklessVsTankGuide() {
                 closes, heating stops. There is no standby loss, no tank to
                 lose heat through the walls, and no finite reservoir to
                 exhaust. The trade-off is that the unit can only heat water
-                as fast as it can flow through the exchanger — typically
+                as fast as it can flow through the exchanger. typically
                 6-9 gallons per minute for a residential gas tankless, and
                 2-5 GPM for most residential electric tankless models.
               </p>
@@ -534,7 +534,7 @@ export default function TanklessVsTankGuide() {
                 per therm, and PG&amp;E gas rates are similar. Every therm
                 not burned is money kept. In colder climates with higher gas
                 use, savings scale up. In mild coastal California areas with
-                light hot water use, savings shrink — and the payback period
+                light hot water use, savings shrink, and the payback period
                 lengthens.
               </p>
 
@@ -578,7 +578,7 @@ export default function TanklessVsTankGuide() {
                 and 22 inches in diameter — a 10-12 square foot footprint in
                 your garage, utility closet, or basement. A whole-home gas
                 tankless unit is typically 18-26 inches tall, 14-18 inches
-                wide, and 10 inches deep — and it wall-mounts. In a small
+                wide, and 10 inches deep; and it wall-mounts. In a small
                 garage or a cramped utility closet, reclaiming 80% of the
                 footprint is a real quality-of-life upgrade. For California
                 homeowners with attached garages, the freed floor space often
@@ -588,7 +588,7 @@ export default function TanklessVsTankGuide() {
                 Outdoor installation is another tankless-only option. Models
                 rated for exterior mounting (most of Rinnai&apos;s
                 non-condensing units, for example) can be installed on an
-                exterior wall in California&apos;s mild climates — freeing
+                exterior wall in California&apos;s mild climates, freeing
                 interior space entirely and simplifying venting.
               </p>
 
@@ -598,7 +598,7 @@ export default function TanklessVsTankGuide() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Tankless marketing loves this claim, and it is technically
-                true — but only within the flow rate limit. A typical
+                true, but only within the flow rate limit. A typical
                 residential gas tankless delivers 6-9 gallons per minute
                 (GPM) of heated water based on incoming temperature. In
                 California where winter inlet water runs 55-65&deg;F, a
@@ -638,7 +638,7 @@ export default function TanklessVsTankGuide() {
                 electric. A family that takes four back-to-back showers can
                 empty a 50-gallon tank in 25 minutes, and the fifth person is
                 waiting 30+ minutes for enough recovery to shower. Tankless
-                has no recovery time — the water heats continuously as it
+                has no recovery time, the water heats continuously as it
                 flows, so shower number five is as warm as shower number one.
                 For families with staggered morning routines, this is a
                 real-world advantage that tank owners rarely notice until
@@ -678,7 +678,7 @@ export default function TanklessVsTankGuide() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge='Ready to shop?'
-                verdict='Rinnai is the easiest contractor-supported starting point for gas tankless — broadly distributed, strong warranty, condensing and non-condensing models for every budget.'
+                verdict='Rinnai is the easiest contractor-supported starting point for gas tankless, broadly distributed, strong warranty, condensing and non-condensing models for every budget.'
                 source='tankless-vs-tank'
                 variant='mid'
               />
@@ -689,7 +689,7 @@ export default function TanklessVsTankGuide() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Tank water heaters rarely qualify for meaningful rebates.
-                Tankless units — and their heat pump electric cousins — do,
+                Tankless units, and their heat pump electric cousins, do,
                 which narrows the upfront cost gap considerably.
               </p>
               <ul className='space-y-3 text-foreground/80 mb-6'>
@@ -930,7 +930,7 @@ export default function TanklessVsTankGuide() {
               <div className='space-y-6 mb-8'>
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>
-                    Which is cheaper overall — tankless or tank?
+                    Which is cheaper overall, tankless or tank?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     Over a 20-year window, tankless is typically $300-$1,500
@@ -1024,7 +1024,7 @@ export default function TanklessVsTankGuide() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Ready to upgrade?'
-              verdict='Rinnai tankless models are the safest starting point — broad contractor support in California, solid 12-15 year warranties, and condensing options that qualify for SoCalGas and 25C tax credits.'
+              verdict='Rinnai tankless models are the safest starting point, broad contractor support in California, solid 12-15 year warranties, and condensing options that qualify for SoCalGas and 25C tax credits.'
               source='tankless-vs-tank'
               variant='final'
             />

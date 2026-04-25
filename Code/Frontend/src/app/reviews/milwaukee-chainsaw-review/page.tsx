@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title:
       'Milwaukee M18 FUEL 16" Chainsaw Review (2727-21HD): Pro-Grade Battery Power in 2026',
     description:
-      'Detailed review of the Milwaukee M18 FUEL 16-inch chainsaw — POWERSTATE brushless motor, 6,600 RPM chain speed, Oregon low-kickback bar, up to 150 cuts per charge. Is it worth $549?',
+      'Detailed review of the Milwaukee M18 FUEL 16-inch chainsaw, POWERSTATE brushless motor, 6,600 RPM chain speed, Oregon low-kickback bar, up to 150 cuts per charge. Is it worth $549?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -232,13 +232,13 @@ export default function MilwaukeeM18ChainsawReview() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
-            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            {/* Above-the-fold primary CTA. 40-80% CTR lift vs end-only CTA */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
-              badge="Editor's Choice — Pro Grade"
+              badge="Editor's Choice. Pro Grade"
               rating={4.6}
               verdict="The battery chainsaw that finally matches 40cc gas saw performance. POWERSTATE brushless motor, 6,600 RPM chain speed, and up to 150 cuts per charge on the 12.0Ah HIGH OUTPUT battery."
               pros={[
@@ -439,7 +439,7 @@ export default function MilwaukeeM18ChainsawReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 Battery chainsaws used to be a punchline. Underpowered, slow, and
-                dead after ten cuts — they were glorified pruning tools that
+                dead after ten cuts, they were glorified pruning tools that
                 couldn&apos;t handle real wood. That era is over, and the Milwaukee
                 M18 FUEL 16&quot; is one of the saws that killed it.
               </p>
@@ -448,8 +448,7 @@ export default function MilwaukeeM18ChainsawReview() {
                 who already fill their trucks with M18 drills, impacts, and grinders.
                 The pitch is simple: you already own the batteries, now you can leave
                 the gas can at home for tree work too. But even if you&apos;re not
-                already in the M18 ecosystem, the 2727-21HD stands on its own merits —
-                a 16-inch bar, brushless motor pushing 6,600 RPM, and a 12.0Ah battery
+                already in the M18 ecosystem, the 2727-21HD stands on its own merits. A 16-inch bar, brushless motor pushing 6,600 RPM, and a 12.0Ah battery
                 that delivers up to 150 cuts on 6x6 lumber before needing a charge.
               </p>
               <p className='text-foreground/80 leading-relaxed'>
@@ -469,7 +468,7 @@ export default function MilwaukeeM18ChainsawReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The POWERSTATE brushless motor is the heart of this saw. It
-                delivers chain speed up to 6,600 RPM — comparable to a mid-range
+                delivers chain speed up to 6,600 RPM, comparable to a mid-range
                 gas saw in the 38-42cc class. More importantly, it delivers that
                 speed with consistent torque. Unlike gas saws that can bog down
                 and need throttle finesse to recover, the Milwaukee maintains
@@ -482,7 +481,7 @@ export default function MilwaukeeM18ChainsawReview() {
                 you can cut from both sides to handle material up to 28 inches, though
                 anything over 20 inches is pushing the practical limits of any
                 16-inch bar. The 3/8-inch low-profile chain is a standard Oregon
-                size — replacements are cheap and available everywhere.
+                size, replacements are cheap and available everywhere.
               </p>
               <div className='bg-card border border-border rounded-xl p-5 mb-4'>
                 <h3 className='text-lg font-semibold text-foreground mb-3'>
@@ -545,7 +544,7 @@ export default function MilwaukeeM18ChainsawReview() {
                 the included 12.0Ah HIGH OUTPUT battery. That number assumes clean
                 softwood and a sharp chain. Real-world performance with mixed hardwood,
                 varying chain sharpness, and normal cutting technique lands around
-                100-130 cuts — still a massive amount of work on a single charge.
+                100-130 cuts, still a massive amount of work on a single charge.
               </p>
               <div className='bg-card border border-border rounded-xl p-5 mb-4'>
                 <h3 className='text-lg font-semibold text-foreground mb-3'>
@@ -660,7 +659,7 @@ export default function MilwaukeeM18ChainsawReview() {
                 </h3>
                 <p className='text-sm text-foreground/80 leading-relaxed'>
                   If you already own M18 tools, buying this chainsaw at $399
-                  tool-only saves you $150 over the kit price — money you&apos;d
+                  tool-only saves you $150 over the kit price. Money you&apos;d
                   spend on a battery you don&apos;t need. That&apos;s the power of
                   platform economics. Conversely, if you buy the $549 kit as your
                   first M18 tool, that 12.0Ah battery becomes an asset that works
@@ -796,7 +795,7 @@ export default function MilwaukeeM18ChainsawReview() {
                     in this comparison. The MSA 220 C cuts beautifully and feels like
                     a chainsaw should feel. But it costs more, the battery platform is
                     small (~20 tools), and Stihl batteries are expensive. Milwaukee
-                    wins on value, platform flexibility, and availability — you can
+                    wins on value, platform flexibility, and availability, you can
                     buy Milwaukee at any Home Depot, while Stihl requires a dealer visit.
                   </p>
                 </div>
@@ -828,7 +827,7 @@ export default function MilwaukeeM18ChainsawReview() {
                 The automatic oiler with the translucent oil window is a practical
                 touch. You can see at a glance whether you need to top off the bar
                 oil without flipping the saw over or unscrewing anything. The oil
-                delivery rate is consistent — the bar and chain stay lubricated
+                delivery rate is consistent, the bar and chain stay lubricated
                 through sustained cutting sessions without burning through oil
                 unnecessarily fast.
               </p>
@@ -855,7 +854,7 @@ export default function MilwaukeeM18ChainsawReview() {
                   <p className='text-foreground/80 text-sm leading-relaxed'>
                     The front hand guard doubles as an inertia-activated chain brake.
                     Push it forward manually or let kickback force trip it
-                    automatically — either way, the chain stops in a fraction of a
+                    automatically, either way, the chain stops in a fraction of a
                     second. This is the single most important safety feature on any
                     chainsaw.
                   </p>
@@ -870,8 +869,7 @@ export default function MilwaukeeM18ChainsawReview() {
                   <p className='text-foreground/80 text-sm leading-relaxed'>
                     The Oregon low-kickback design reduces the likelihood and severity
                     of the bar kicking back during a cut. This does not eliminate
-                    kickback risk entirely — always follow safe cutting practices —
-                    but it significantly reduces it compared to full-chisel chains.
+                    kickback risk entirely — always follow safe cutting practices. But it significantly reduces it compared to full-chisel chains.
                   </p>
                 </div>
                 <div className='bg-card border border-border rounded-xl p-5'>
@@ -885,8 +883,7 @@ export default function MilwaukeeM18ChainsawReview() {
                     Unlike gas chainsaws where the chain moves slowly at idle (chain
                     creep), the Milwaukee&apos;s chain is completely stationary until
                     you pull the trigger. Release the trigger and the chain stops
-                    instantly. This is a genuine safety advantage of electric over gas —
-                    you never have a spinning chain when you&apos;re not actively cutting.
+                    instantly. This is a genuine safety advantage of electric over gas, you never have a spinning chain when you&apos;re not actively cutting.
                   </p>
                 </div>
                 <div className='bg-card border border-border rounded-xl p-5'>
@@ -940,11 +937,11 @@ export default function MilwaukeeM18ChainsawReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      No chain creep at idle — instant start and stop
+                      No chain creep at idle. Instant start and stop
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      Auto oiler with translucent window — easy oil monitoring
+                      Auto oiler with translucent window, easy oil monitoring
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -952,7 +949,7 @@ export default function MilwaukeeM18ChainsawReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      Pro-grade build quality — handles drops and jobsite abuse
+                      Pro-grade build quality. handles drops and jobsite abuse
                     </li>
                   </ul>
                 </div>
@@ -968,7 +965,7 @@ export default function MilwaukeeM18ChainsawReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      13.4 lbs with battery — heavier than gas equivalents
+                      13.4 lbs with battery, heavier than gas equivalents
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -1023,8 +1020,8 @@ export default function MilwaukeeM18ChainsawReview() {
                 </p>
                 <p className='text-foreground/80 leading-relaxed mb-6'>
                   If you need a reliable chainsaw for storm cleanup, firewood,
-                  property maintenance, or jobsite work — and you want to stop
-                  dealing with gas engines, pull cords, and carburetor issues — the
+                  property maintenance, or jobsite work. And you want to stop
+                  dealing with gas engines, pull cords, and carburetor issues, the
                   Milwaukee M18 FUEL 16&quot; is built for exactly that job.
                 </p>
               </div>

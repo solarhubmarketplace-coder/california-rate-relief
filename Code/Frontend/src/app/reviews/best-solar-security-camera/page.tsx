@@ -745,7 +745,7 @@ export default function BestSolarSecurityCamera() {
                 productKey="ring-stick-up-cam-solar"
                 source="best-solar-security-camera"
                 variant="primary"
-                label="Check Price — Ring Stick Up Cam Solar"
+                label="Check Price. Ring Stick Up Cam Solar"
                 showPrice
               />
             </section>
@@ -843,7 +843,7 @@ export default function BestSolarSecurityCamera() {
                 productKey="arlo-pro-5s"
                 source="best-solar-security-camera"
                 variant="primary"
-                label="Check Price — Arlo Pro 5S"
+                label="Check Price, Arlo Pro 5S"
                 showPrice
               />
             </section>
@@ -941,7 +941,7 @@ export default function BestSolarSecurityCamera() {
                 productKey="wyze-cam-outdoor-v2"
                 source="best-solar-security-camera"
                 variant="primary"
-                label="Check Price — Wyze Cam Outdoor v2"
+                label="Check Price, Wyze Cam Outdoor v2"
                 showPrice
               />
             </section>
@@ -1040,7 +1040,7 @@ export default function BestSolarSecurityCamera() {
                 productKey="blink-outdoor-4"
                 source="best-solar-security-camera"
                 variant="primary"
-                label="Check Price — Blink Outdoor 4"
+                label="Check Price. Blink Outdoor 4"
                 showPrice
               />
             </section>

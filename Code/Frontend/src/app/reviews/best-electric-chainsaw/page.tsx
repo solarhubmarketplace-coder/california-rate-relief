@@ -26,7 +26,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Electric Chainsaws (2026): DeWalt vs EGO vs Ryobi vs Makita vs Stihl — Top Battery Chainsaws Compared',
+    'Best Electric Chainsaws (2026): DeWalt vs EGO vs Ryobi vs Makita vs Stihl, Top Battery Chainsaws Compared',
   description:
     'Compare the best electric chainsaws for 2026. In-depth reviews of EGO CS1804, DeWalt DCCS670X1, Milwaukee M18 FUEL, Ryobi 40V HP, Stihl MSA 220 C-B, and Makita XCU11SM1. Bar length guide, battery platform comparison, and electric vs gas breakdown included.',
   alternates: {
@@ -45,7 +45,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Best Electric Chainsaws (2026): DeWalt vs EGO vs Ryobi vs Makita vs Stihl — Top Battery Chainsaws Compared',
+    'Best Electric Chainsaws (2026): DeWalt vs EGO vs Ryobi vs Makita vs Stihl. Top Battery Chainsaws Compared',
   description:
     'Compare the best electric chainsaws for 2026. In-depth reviews covering EGO CS1804, DeWalt DCCS670X1, Milwaukee M18 FUEL, Ryobi 40V HP, Stihl MSA 220 C-B, and Makita XCU11SM1. Bar length guide, battery platform comparison, and electric vs gas breakdown.',
   datePublished: '2026-04-21',
@@ -498,7 +498,7 @@ export default function BestElectricChainsaw() {
                   productKey="ego-cs1804"
                   source="electric-chainsaw-hub"
                   variant="primary"
-                  label="Check Price — EGO CS1804"
+                  label="Check Price, EGO CS1804"
                   showPrice
                 />
               </div>
@@ -601,7 +601,7 @@ export default function BestElectricChainsaw() {
                   productKey="dewalt-dccs670x1"
                   source="electric-chainsaw-hub"
                   variant="primary"
-                  label="Check Price — DeWalt DCCS670X1"
+                  label="Check Price. DeWalt DCCS670X1"
                   showPrice
                 />
               </div>
@@ -705,7 +705,7 @@ export default function BestElectricChainsaw() {
                   productKey="milwaukee-m18-fuel"
                   source="electric-chainsaw-hub"
                   variant="primary"
-                  label="Check Price — Milwaukee M18 FUEL"
+                  label="Check Price, Milwaukee M18 FUEL"
                   showPrice
                 />
               </div>
@@ -809,7 +809,7 @@ export default function BestElectricChainsaw() {
                   productKey="ryobi-40v-hp"
                   source="electric-chainsaw-hub"
                   variant="primary"
-                  label="Check Price — Ryobi 40V HP"
+                  label="Check Price. Ryobi 40V HP"
                   showPrice
                 />
               </div>
@@ -1016,7 +1016,7 @@ export default function BestElectricChainsaw() {
                   productKey="makita-xcu11sm1"
                   source="electric-chainsaw-hub"
                   variant="primary"
-                  label="Check Price — Makita XCU11SM1"
+                  label="Check Price. Makita XCU11SM1"
                   showPrice
                 />
               </div>

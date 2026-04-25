@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title:
     'DIY Mini Split Guide 2026: How to Install Yourself + Best DIY Kits',
   description:
-    'Complete DIY mini split installation guide for 2026. How pre-charged line sets work, skill level required, permits and code, step-by-step install, total time, DIY vs pro cost ($1,500-3,500 vs $4,500-8,000), and the best DIY mini split kits — MrCool 4th Gen, Klimaire, Senville LETO, and GREE Livo.',
+    'Complete DIY mini split installation guide for 2026. How pre-charged line sets work, skill level required, permits and code, step-by-step install, total time, DIY vs pro cost ($1,500-3,500 vs $4,500-8,000), and the best DIY mini split kits; MrCool 4th Gen, Klimaire, Senville LETO, and GREE Livo.',
   alternates: {
     canonical: '/reviews/diy-mini-split',
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title:
       'DIY Mini Split Guide 2026: How to Install Yourself + Best DIY Kits',
     description:
-      'Full DIY mini split install guide — pre-charged line sets, permits, steps, and the top DIY-friendly brands for 2026.',
+      'Full DIY mini split install guide; pre-charged line sets, permits, steps, and the top DIY-friendly brands for 2026.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -98,7 +98,7 @@ const faqSchema = {
       name: 'How much does a DIY mini split cost compared to professional installation?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A complete DIY single-zone mini split install typically costs $1,500-3,500 (unit $1,400-1,900 plus line set, wiring, and permits). A professional install of the same unit runs $4,500-8,000 — with most of the delta going to HVAC labor for refrigerant work, plus electrician fees. Across California, the typical DIY savings is $3,000-5,000 per single-zone install, and $6,000-10,000 per multi-zone (3-4 head) install.',
+        text: 'A complete DIY single-zone mini split install typically costs $1,500-3,500 (unit $1,400-1,900 plus line set, wiring, and permits). A professional install of the same unit runs $4,500-8,000. with most of the delta going to HVAC labor for refrigerant work, plus electrician fees. Across California, the typical DIY savings is $3,000-5,000 per single-zone install, and $6,000-10,000 per multi-zone (3-4 head) install.',
       },
     },
     {
@@ -106,7 +106,7 @@ const faqSchema = {
       name: 'What skills do I need to install a DIY mini split?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Comfort with basic power tools (drill, hammer drill for masonry walls, wrenches), reasonable mechanical aptitude, and either electrical comfort or willingness to hire out the 240V circuit portion. The factory-charged quick-connect line sets eliminate the specialized refrigerant skills. The hardest part for most DIYers is the 2.5-inch through-wall line set pass-through — it requires care in choosing the exit point and sealing the penetration properly. No HVAC certification or refrigerant handler license is required for DIY kits.',
+        text: 'Comfort with basic power tools (drill, hammer drill for masonry walls, wrenches), reasonable mechanical aptitude, and either electrical comfort or willingness to hire out the 240V circuit portion. The factory-charged quick-connect line sets eliminate the specialized refrigerant skills. The hardest part for most DIYers is the 2.5-inch through-wall line set pass-through, it requires care in choosing the exit point and sealing the penetration properly. No HVAC certification or refrigerant handler license is required for DIY kits.',
       },
     },
     {
@@ -210,7 +210,7 @@ export default function DIYMiniSplitGuide() {
               <p className='text-foreground/80 leading-relaxed mb-5'>
                 Until about a decade ago, adding a mini split to a room meant
                 hiring an HVAC tech to braze refrigerant lines, pull a vacuum,
-                and charge the system — typically $4,500-8,000 per zone. Then
+                and charge the system; typically $4,500-8,000 per zone. Then
                 a handful of brands (MrCool leading, Klimaire and Senville
                 following) started shipping factory pre-charged line sets
                 with quick-connect fittings. No vacuum pump, no manifold
@@ -220,7 +220,7 @@ export default function DIYMiniSplitGuide() {
                 zone. The install is not trivial — you still need to mount
                 the indoor head, drill a through-wall pass-through, route the
                 line set, wire a 240V circuit, pull the proper permits, and
-                pass final inspection — but it is well within the skill range
+                pass final inspection, but it is well within the skill range
                 of anyone comfortable with home improvement. This guide
                 walks through the complete install process, the permit
                 requirements in California, a cost breakdown vs professional
@@ -275,7 +275,7 @@ export default function DIYMiniSplitGuide() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Traditional mini split installations require refrigerant
-                handling — a regulated activity in the US that requires EPA
+                handling. a regulated activity in the US that requires EPA
                 Section 608 certification for the tech doing the work. The
                 steps: braze copper refrigerant lines to the indoor and
                 outdoor units, pressure-test the system for leaks, pull the
@@ -300,7 +300,7 @@ export default function DIYMiniSplitGuide() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The engineering trade-off is that the line sets ship in
-                fixed lengths — typically 15, 25, 35, or 50 feet depending
+                fixed lengths, typically 15, 25, 35, or 50 feet depending
                 on the model. You cannot cut them shorter or extend them
                 longer without turning this back into a full HVAC job. For
                 installations where the outdoor condenser mounts within the
@@ -343,7 +343,7 @@ export default function DIYMiniSplitGuide() {
                     <strong>Basic electrical wiring:</strong> A 240V/20A
                     dedicated circuit from your panel to the outdoor unit.
                     If you&apos;re not comfortable with panel work, hire an
-                    electrician for the circuit only ($400-700) — the rest of
+                    electrician for the circuit only ($400-700); the rest of
                     the install stays DIY.
                   </span>
                 </li>
@@ -437,7 +437,7 @@ export default function DIYMiniSplitGuide() {
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Choose an interior wall that allows a reasonable path to the
-                outdoor condenser — typically 7-8 feet above the floor,
+                outdoor condenser. Typically 7-8 feet above the floor,
                 on a wall that either faces outside or is adjacent to an
                 outside-facing wall. Locate studs (or use drywall anchors
                 rated for the head weight), mount the bracket with the
@@ -494,7 +494,7 @@ export default function DIYMiniSplitGuide() {
                 the condenser&apos;s terminal block. Use 12 AWG THHN copper
                 conductors in conduit (or 12/2 UF-B direct-burial if going
                 underground). If your panel lacks capacity, a panel upgrade
-                is a separate project — typically $2,000-4,000 and a
+                is a separate project, typically $2,000-4,000 and a
                 standalone effort.
               </p>
 
@@ -764,7 +764,7 @@ export default function DIYMiniSplitGuide() {
                 Klimaire runs a parallel pre-charged DIY line with similar
                 quick-connect engineering at a slightly lower price point.
                 Quality is comparable to MrCool. The main disadvantage is
-                weaker US distribution and support — MrCool wins on speed
+                weaker US distribution and support. MrCool wins on speed
                 to parts and service in California. Klimaire is a smart buy
                 when MrCool is out of stock on your capacity or the price
                 delta runs $200+.
@@ -840,7 +840,7 @@ export default function DIYMiniSplitGuide() {
                 Regional programs that stack on top of TECH and 25C,
                 typically adding $300-800 for single-zone installs and up
                 to $2,500 for multi-zone. Eligibility and budgets shift
-                annually — check your specific utility or REN before the
+                annually. check your specific utility or REN before the
                 install.
               </p>
 
@@ -898,7 +898,7 @@ export default function DIYMiniSplitGuide() {
                   <X className='h-4 w-4 text-red-500 mt-1 shrink-0' />
                   <span>
                     <strong>You&apos;re not willing to pull permits.</strong>{' '}
-                    Skip DIY — an unpermitted install creates real problems
+                    Skip DIY. an unpermitted install creates real problems
                     at resale and disqualifies you from every rebate on
                     this page. A permitted pro install is better than an
                     unpermitted DIY install.
@@ -954,7 +954,7 @@ export default function DIYMiniSplitGuide() {
                     What skills do I need?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Basic home improvement comfort — drilling, wall-mounting
+                    Basic home improvement comfort, drilling, wall-mounting
                     heavy brackets, basic electrical. No HVAC certification
                     required. If you&apos;re unsure about panel work, hire
                     an electrician for the circuit only ($400-700); keep the
@@ -978,7 +978,7 @@ export default function DIYMiniSplitGuide() {
                     Which DIY brand is best?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    MrCool DIY 4th Gen is the category leader — SEER2 22,
+                    MrCool DIY 4th Gen is the category leader, SEER2 22,
                     standard WiFi, 5-yr parts / 7-yr compressor warranty,
                     broadest capacity lineup. Klimaire is a strong
                     alternative. Senville LETO is the budget pick (watch
@@ -996,7 +996,7 @@ export default function DIYMiniSplitGuide() {
                 project available in California in 2026. For the cost of a
                 weekend and $2,300-3,400 out-of-pocket (before rebates), a
                 homeowner can add conditioned air to a garage, ADU,
-                basement, or single-family room — saving $3,000-5,000 vs a
+                basement, or single-family room, saving $3,000-5,000 vs a
                 professional install. Layer in California TECH rebates,
                 federal 25C tax credit, and utility stacking, and the net
                 cost can come in under $500 for a single zone. The MrCool

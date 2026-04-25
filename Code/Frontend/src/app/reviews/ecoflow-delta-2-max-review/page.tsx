@@ -115,7 +115,7 @@ const faqSchema = {
       name: 'Is the EcoFlow Delta 2 Max eligible for California SGIP rebates?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Potentially. Californias Self-Generation Incentive Program offers general market incentives of $150/kWh, which pencils out to approximately $307 on the Delta 2 Maxs 2.048 kWh capacity. Equity-budget customers (low-income, medically vulnerable, or in high fire-threat districts) can qualify for up to $1,100/kWh — approximately $2,253, which could cover more than the retail price. Eligibility depends on utility territory and application timing.',
+        text: 'Potentially. Californias Self-Generation Incentive Program offers general market incentives of $150/kWh, which pencils out to approximately $307 on the Delta 2 Maxs 2.048 kWh capacity. Equity-budget customers (low-income, medically vulnerable, or in high fire-threat districts) can qualify for up to $1,100/kWh, approximately $2,253, which could cover more than the retail price. Eligibility depends on utility territory and application timing.',
       },
     },
     {
@@ -131,7 +131,7 @@ const faqSchema = {
       name: 'How does the Delta 2 Max compare to the Anker SOLIX C1000?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Delta 2 Max has double the capacity (2,048 Wh vs 1,056 Wh) and is expandable — the C1000 is a fixed-capacity unit. The C1000 is lighter (28 lbs vs 50 lbs) and runs about $500 less, but it cannot power a fridge through a multi-day outage on its own. For single-device or camping use, the C1000 is the better value. For home backup, the Delta 2 Max pulls ahead.',
+        text: 'The Delta 2 Max has double the capacity (2,048 Wh vs 1,056 Wh) and is expandable, the C1000 is a fixed-capacity unit. The C1000 is lighter (28 lbs vs 50 lbs) and runs about $500 less, but it cannot power a fridge through a multi-day outage on its own. For single-device or camping use, the C1000 is the better value. For home backup, the Delta 2 Max pulls ahead.',
       },
     },
     {
@@ -139,7 +139,7 @@ const faqSchema = {
       name: 'What is the warranty on the EcoFlow Delta 2 Max?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'EcoFlow provides a 5-year limited warranty on the Delta 2 Max — covering manufacturing defects on the unit and battery. The LFP battery itself is rated for 3,000 cycles to 80% capacity, meaning the warranty period is well under the functional lifespan of the battery for most household use patterns.',
+        text: 'EcoFlow provides a 5-year limited warranty on the Delta 2 Max, covering manufacturing defects on the unit and battery. The LFP battery itself is rated for 3,000 cycles to 80% capacity, meaning the warranty period is well under the functional lifespan of the battery for most household use patterns.',
       },
     },
   ],
@@ -236,7 +236,7 @@ export default function EcoFlowDelta2MaxReview() {
                 households should actually be looking at. The flagship Delta Pro
                 3 gets all the attention, but for a home with a standard fridge,
                 internet equipment, a few lights, a CPAP, and the usual parade
-                of phones and laptops, 2,048 Wh is plenty — and 4,096 Wh is
+                of phones and laptops, 2,048 Wh is plenty. And 4,096 Wh is
                 overkill. At $1,899 MSRP (and frequently $1,599-1,699 during
                 EcoFlow&apos;s rolling promos), the Delta 2 Max costs $300-500
                 less than the Delta Pro 3, weighs less than half as much, and
@@ -421,7 +421,7 @@ export default function EcoFlowDelta2MaxReview() {
                 into an SUV for a weekend trip, but substantial enough that it
                 clearly belongs in a garage, utility room, or pantry as a
                 long-term fixture. The chassis is the same matte-black polymer
-                and aluminum mix EcoFlow uses across the line — tough, non-slip
+                and aluminum mix EcoFlow uses across the line. Tough, non-slip
                 feet, solid carry handles on each side, and a bright LCD
                 dominating the front panel showing input wattage, output
                 wattage, battery percentage, and estimated time remaining.
@@ -441,14 +441,14 @@ export default function EcoFlowDelta2MaxReview() {
                 Battery &amp; Capacity
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Delta 2 Max uses LiFePO4 (LFP) chemistry — the same cells
+                The Delta 2 Max uses LiFePO4 (LFP) chemistry. the same cells
                 used in Tesla Powerwall, most modern home batteries, and the
                 entire modern EcoFlow lineup. LFP is the right call for a home
                 backup product. It runs cooler, tolerates deep discharge better
                 than the NMC chemistry in older power stations, and lasts
                 meaningfully longer. EcoFlow rates the cells at 3,000 cycles to
                 80% of original capacity. At one cycle per day — which is
-                aggressive for most home-backup use cases — that is roughly 8
+                aggressive for most home-backup use cases, that is roughly 8
                 years before the battery drops to 80%. In typical intermittent
                 use (PSPS events, TOU shifting on peak days, occasional
                 camping), the battery will outlast the 5-year warranty by a
@@ -466,7 +466,7 @@ export default function EcoFlowDelta2MaxReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Expandability is the real differentiator vs the base Delta 2.
                 You can daisy-chain up to two DELTA Max Smart Extra Batteries
-                (each 2,048 Wh), pushing total capacity to 6,144 Wh — the same
+                (each 2,048 Wh), pushing total capacity to 6,144 Wh. The same
                 ballpark as the Delta Pro 3. You pay for the expansion
                 batteries separately, but this gives you a path to scale up as
                 your needs change, rather than buying a larger unit today for
@@ -486,7 +486,7 @@ export default function EcoFlowDelta2MaxReview() {
                 handle short-duration surges from inductive loads (fridge
                 compressors kicking in, a shop vac motor starting) without
                 tripping the inverter. The inverter is pure sine wave, so
-                sensitive electronics — laptops, CPAPs, routers, newer fridges
+                sensitive electronics; laptops, CPAPs, routers, newer fridges
                 with electronic controls — run cleanly without the buzz of a
                 modified-sine inverter.
               </p>
@@ -511,11 +511,11 @@ export default function EcoFlowDelta2MaxReview() {
                 competitors in this capacity class take 3-5 hours for a full
                 AC charge. When PG&amp;E announces a PSPS shutoff at 4 PM for a
                 7 PM de-energization, X-Stream can have the battery topped off
-                before the lights go out — even if you were at 15% when the
+                before the lights go out, even if you were at 15% when the
                 announcement hit.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Solar input is capped at 1,000W — double the original Delta
+                Solar input is capped at 1,000W, double the original Delta
                 2&apos;s 500W ceiling. Three 400W portable panels (or a pair of
                 500W panels) gets you into the real-world 800-950W range on a
                 clear California day. That fills the 2,048 Wh battery from
@@ -539,7 +539,7 @@ export default function EcoFlowDelta2MaxReview() {
                 can cap the battery at 85% to extend cycle life, or slow the
                 charge rate to reduce wear and fan noise. For TOU arbitrage,
                 you can schedule the unit to charge during off-peak hours and
-                discharge during peak via the app — no external smart
+                discharge during peak via the app, no external smart
                 scheduling required.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -548,7 +548,7 @@ export default function EcoFlowDelta2MaxReview() {
                 so it cannot drop in as an automatic whole-home backup with
                 sub-20ms switchover the way a Delta Pro 3 can. You still get
                 UPS-grade sub-30ms switchover for devices plugged directly
-                into the unit — enough for desktop computers, network gear, and
+                into the unit, enough for desktop computers, network gear, and
                 CPAPs — just not for circuit-level backup. If circuit-level
                 automatic failover is a must, step up to the Delta Pro 3.
               </p>
@@ -649,9 +649,9 @@ export default function EcoFlowDelta2MaxReview() {
                 than it looks on the product pages.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If your use case is a single-device backup — a desktop computer
+                If your use case is a single-device backup. a desktop computer
                 ride-through, a CPAP for overnight trips, a mini fridge for
-                tailgating — the C1000 is the more ergonomic and affordable
+                tailgating, the C1000 is the more ergonomic and affordable
                 pick. If you want a unit that can realistically carry a
                 household fridge plus essentials through a 24-hour outage and
                 scale up later, the Delta 2 Max wins on capacity,
@@ -662,7 +662,7 @@ export default function EcoFlowDelta2MaxReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge='Ready to buy?'
-                verdict='The Delta 2 Max is in stock at EcoFlow.com with frequent seasonal promos — check current pricing before you order.'
+                verdict='The Delta 2 Max is in stock at EcoFlow.com with frequent seasonal promos. check current pricing before you order.'
                 source='delta-2-max'
                 variant='mid'
               />
@@ -698,10 +698,10 @@ export default function EcoFlowDelta2MaxReview() {
                 California&apos;s time-of-use rate structures create an honest
                 arbitrage opportunity. Off-peak rates land in the 12-25
                 cents/kWh range depending on your utility and plan. Peak
-                rates — 4 PM to 9 PM on most plans — run 40-70+ cents/kWh.
+                rates, 4 PM to 9 PM on most plans — run 40-70+ cents/kWh.
                 Cycling 2,048 Wh per day from off-peak to peak pockets roughly
                 $0.40-$1.00 per day in rate differential. Over a year, that is
-                $145-$365 — not enough to justify the unit on pure arbitrage,
+                $145-$365, not enough to justify the unit on pure arbitrage,
                 but a meaningful offset to the purchase price over its
                 lifespan. For a deeper dive on rate structures, see our guides
                 to{' '}
@@ -727,10 +727,10 @@ export default function EcoFlowDelta2MaxReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 California&apos;s Self-Generation Incentive Program (SGIP)
                 offers rebates on qualifying energy storage systems. The
-                general market rate is $150/kWh — roughly $307 on the 2.048 kWh
+                general market rate is $150/kWh, roughly $307 on the 2.048 kWh
                 Delta 2 Max. Equity customers (low-income, in a High Fire
                 Threat District, or medically vulnerable) may qualify for up
-                to $1,100/kWh — roughly $2,253, which exceeds the unit&apos;s
+                to $1,100/kWh. Roughly $2,253, which exceeds the unit&apos;s
                 retail price. Eligibility depends on your utility territory and
                 application timing. The SGIP program has specific rules about
                 which portable units qualify; confirm with your utility
@@ -745,7 +745,7 @@ export default function EcoFlowDelta2MaxReview() {
                 homeowners expired on December 31, 2025. Standalone battery
                 storage purchases made in 2026 and beyond no longer qualify for
                 the federal credit on a residential basis. Plan your purchase
-                math on California rebates and utility bill savings — not
+                math on California rebates and utility bill savings, not
                 federal tax treatment.
               </p>
 
@@ -772,7 +772,7 @@ export default function EcoFlowDelta2MaxReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      1,000W solar input — 2x the base Delta 2
+                      1,000W solar input, 2x the base Delta 2
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -784,7 +784,7 @@ export default function EcoFlowDelta2MaxReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      50 lbs — liftable by one person
+                      50 lbs. liftable by one person
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -834,8 +834,7 @@ export default function EcoFlowDelta2MaxReview() {
                 is two years longer than Jackery&apos;s standard warranty and
                 matches Anker&apos;s 5-year coverage. US-based support is
                 reachable by phone, email, and chat. Replacement and repair
-                logistics are handled through a network of US service centers —
-                EcoFlow does not require you to ship internationally for
+                logistics are handled through a network of US service centers, EcoFlow does not require you to ship internationally for
                 service, which matters on a 50-pound unit.
               </p>
 
@@ -924,7 +923,7 @@ export default function EcoFlowDelta2MaxReview() {
                     Potentially. SGIP general market incentive is $150/kWh
                     (~$307 for this unit). Equity customers may qualify for up
                     to $1,100/kWh (~$2,253), which exceeds the retail price.
-                    Confirm with your utility before relying on it — portable
+                    Confirm with your utility before relying on it; portable
                     unit eligibility has specific rules.
                   </p>
                 </div>
@@ -988,7 +987,7 @@ export default function EcoFlowDelta2MaxReview() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Final Verdict'
-              verdict="If you're in California and want the right-sized power station for typical PSPS needs — plus room to grow — the Delta 2 Max is the one to buy. Check current price and promos at EcoFlow."
+              verdict="If you're in California and want the right-sized power station for typical PSPS needs, plus room to grow, the Delta 2 Max is the one to buy. Check current price and promos at EcoFlow."
               source='delta-2-max'
               variant='final'
             />

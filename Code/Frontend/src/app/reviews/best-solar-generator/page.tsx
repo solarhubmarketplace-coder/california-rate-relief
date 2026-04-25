@@ -317,7 +317,7 @@ export default function BestSolarGenerator() {
                   </span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      EcoFlow Delta Pro 3 + 400W Panels — Best Overall Solar Generator
+                      EcoFlow Delta Pro 3 + 400W Panels. Best Overall Solar Generator
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The most complete package. 4,096 Wh capacity, 4,000W output, and 800W of
@@ -332,7 +332,7 @@ export default function BestSolarGenerator() {
                   </span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Bluetti AC200L + PV200 — Best Mid-Range Value
+                      Bluetti AC200L + PV200. Best Mid-Range Value
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The sweet spot for most buyers. 2,048 Wh of LFP capacity, 2,400W output, and a
@@ -347,7 +347,7 @@ export default function BestSolarGenerator() {
                   </span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Jackery 2000 Plus + SolarSaga 200W — Most Portable
+                      Jackery 2000 Plus + SolarSaga 200W, Most Portable
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       At 61.5 lbs for the station alone, the Jackery 2000 Plus is the lightest
@@ -590,7 +590,7 @@ export default function BestSolarGenerator() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />
-                        LFP battery with 3,000+ cycles — roughly 8 years of daily use
+                        LFP battery with 3,000+ cycles, roughly 8 years of daily use
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#22c55e' }} />
@@ -631,7 +631,7 @@ export default function BestSolarGenerator() {
                     productKey="bluetti-ac200l"
                     source="best-solar-generator"
                     variant="primary"
-                    label="Check Price — Bluetti AC200L + PV200 Solar Panel"
+                    label="Check Price. Bluetti AC200L + PV200 Solar Panel"
                     showPrice
                   />
                 </div>
@@ -735,7 +735,7 @@ export default function BestSolarGenerator() {
                     productKey="jackery-explorer-2000-plus"
                     source="best-solar-generator"
                     variant="primary"
-                    label="Check Price — Jackery Explorer 2000 Plus + SolarSaga 200W Panels"
+                    label="Check Price, Jackery Explorer 2000 Plus + SolarSaga 200W Panels"
                     showPrice
                   />
                 </div>
@@ -928,7 +928,7 @@ export default function BestSolarGenerator() {
                       </li>
                       <li className="flex items-start gap-2">
                         <X className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#ef4444' }} />
-                        Promo pricing may not last — check current price
+                        Promo pricing may not last, check current price
                       </li>
                       <li className="flex items-start gap-2">
                         <X className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ color: '#ef4444' }} />
@@ -947,7 +947,7 @@ export default function BestSolarGenerator() {
                     productKey="anker-solix-f3800"
                     source="best-solar-generator"
                     variant="primary"
-                    label="Check Price — Anker SOLIX F3800 + PS400 Solar Panel"
+                    label="Check Price, Anker SOLIX F3800 + PS400 Solar Panel"
                     showPrice
                   />
                 </div>
@@ -1354,8 +1354,7 @@ export default function BestSolarGenerator() {
                       For maximum power: Anker SOLIX F3800 + PS400
                     </p>
                     <p className="text-sm" style={{ color: '#d4d4d8' }}>
-                      If you need to power heavy appliances — well pumps, power tools, space heaters —
-                      the F3800&apos;s 6,000W continuous output is unmatched. At the current promo
+                      If you need to power heavy appliances. Well pumps, power tools, space heaters. the F3800&apos;s 6,000W continuous output is unmatched. At the current promo
                       price, the bundle is a steal at $2,599. Just be prepared for the weight: this is
                       a stay-in-place system, not a grab-and-go.
                     </p>

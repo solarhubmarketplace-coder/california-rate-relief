@@ -21,7 +21,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Tankless Water Heaters (2026): Rinnai vs Rheem vs Navien vs Noritz — Full Comparison',
+    'Best Tankless Water Heaters (2026): Rinnai vs Rheem vs Navien vs Noritz. Full Comparison',
   description:
     'Compare the best tankless water heaters in 2026. In-depth reviews of Rinnai RU199iN, Rheem RTGH-95DVLN, Navien NPE-240A2, and Noritz EZ111DV. Cost breakdown, sizing guide, and tankless vs tank comparison included.',
   alternates: {
@@ -301,7 +301,7 @@ export default function BestTanklessWaterHeater() {
               >
                 All five of our picks are gas-fired condensing or non-condensing
                 models, which deliver the high flow rates (6.5-11+ GPM) needed for
-                whole-home use. We also cover gas vs. electric, sizing by household,
+                whole-home use. We also cover gas vs. Electric, sizing by household,
                 and a full cost breakdown so you can make an informed decision.
               </p>
             </section>
@@ -324,10 +324,10 @@ export default function BestTanklessWaterHeater() {
                   ['Sizing Guide', '#sizing-guide'],
                   ['Gas vs. Electric Tankless', '#gas-vs-electric'],
                   ['Rinnai RU199iN — Best Overall', '#rinnai-ru199in'],
-                  ['Rheem RTGH-95DVLN — Best Value', '#rheem-rtgh-95dvln'],
-                  ['Navien NPE-240A2 — Most Efficient', '#navien-npe-240a2'],
-                  ['Noritz EZ111DV — Best Compact', '#noritz-ez111dv'],
-                  ['Rinnai V65iN — Best Budget', '#rinnai-v65in'],
+                  ['Rheem RTGH-95DVLN. Best Value', '#rheem-rtgh-95dvln'],
+                  ['Navien NPE-240A2. Most Efficient', '#navien-npe-240a2'],
+                  ['Noritz EZ111DV, Best Compact', '#noritz-ez111dv'],
+                  ['Rinnai V65iN, Best Budget', '#rinnai-v65in'],
                   ['Installation Considerations', '#installation'],
                   ['Pros & Cons of Going Tankless', '#pros-cons'],
                   ['FAQ', '#faq'],
@@ -474,7 +474,7 @@ export default function BestTanklessWaterHeater() {
                 style={{ backgroundColor: '#171717', borderColor: '#27272a' }}
               >
                 <h3 className="font-bold mb-4" style={{ color: '#f5f5f5' }}>
-                  The Tankless Process — Step by Step
+                  The Tankless Process, Step by Step
                 </h3>
                 <ol className="space-y-3 text-sm" style={{ color: '#a1a1aa' }}>
                   <li className="flex items-start gap-3">
@@ -519,7 +519,7 @@ export default function BestTanklessWaterHeater() {
                 </ol>
               </div>
               <p className="text-base leading-relaxed mb-4" style={{ color: '#a1a1aa' }}>
-                <strong style={{ color: '#f5f5f5' }}>Condensing vs. non-condensing:</strong>{' '}
+                <strong style={{ color: '#f5f5f5' }}>Condensing vs. Non-condensing:</strong>{' '}
                 Condensing units (like the Rinnai RU199iN and Navien NPE-240A2) capture
                 heat from exhaust gases through a secondary heat exchanger, achieving
                 UEF ratings of 0.93-0.97. Non-condensing units vent that heat outside,
@@ -1044,7 +1044,7 @@ export default function BestTanklessWaterHeater() {
                   productKey="rheem-rtgh-95dvln"
                   source="best-tankless-water-heater"
                   variant="primary"
-                  label="Check Price — Rheem RTGH-95DVLN"
+                  label="Check Price. Rheem RTGH-95DVLN"
                   showPrice
                 />
               </div>
@@ -1228,7 +1228,7 @@ export default function BestTanklessWaterHeater() {
                   productKey="noritz-ez111dv"
                   source="best-tankless-water-heater"
                   variant="primary"
-                  label="Check Price — Noritz EZ111DV"
+                  label="Check Price; Noritz EZ111DV"
                   showPrice
                 />
               </div>
@@ -1320,7 +1320,7 @@ export default function BestTanklessWaterHeater() {
                   productKey="rinnai-v65in"
                   source="best-tankless-water-heater"
                   variant="primary"
-                  label="Check Price — Rinnai V65iN"
+                  label="Check Price, Rinnai V65iN"
                   showPrice
                 />
               </div>
@@ -1441,7 +1441,7 @@ export default function BestTanklessWaterHeater() {
                   </h3>
                   <ul className="space-y-3">
                     {[
-                      'Unlimited hot water — never runs out mid-shower',
+                      'Unlimited hot water, never runs out mid-shower',
                       '24-34% more energy efficient than tank heaters',
                       'Lasts 20-25 years (double a tank heater)',
                       'Wall-mounted design frees up floor space',

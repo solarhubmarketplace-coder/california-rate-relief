@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title:
       'DeWalt 60V MAX Chainsaw Review 2026: DCCS690 Tested',
     description:
-      'Full hands-on review of the DeWalt DCCS690 20" FLEXVOLT chainsaw — 450 cuts per charge claim tested, vs gas, vs Milwaukee M18 Fuel.',
+      'Full hands-on review of the DeWalt DCCS690 20" FLEXVOLT chainsaw; 450 cuts per charge claim tested, vs gas, vs Milwaukee M18 Fuel.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -415,7 +415,7 @@ export default function DewaltChainsawReview() {
                 The DCCS690 feels like a proper gas-replacement saw the
                 moment you pick it up. At 12.2 lbs with a 9Ah FLEXVOLT pack,
                 it&apos;s comparable to a 35-40cc gas saw fully fueled and
-                oiled — not light, but balanced. The magnesium-alloy chassis
+                oiled, not light, but balanced. The magnesium-alloy chassis
                 (not plastic) gives it the heft and rigidity needed for
                 serious bucking work. DeWalt uses the familiar
                 yellow-and-black trade-dress, with over-molded rubber grips
@@ -492,7 +492,7 @@ export default function DewaltChainsawReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Chain speed is 25 ft/s unloaded, which is right in the range
                 of a 35-40cc gas saw. What really matters in heavy wood is
-                sustained chain speed under load — and here the brushless
+                sustained chain speed under load. And here the brushless
                 motor and FLEXVOLT 60V architecture hold their own. The saw
                 doesn&apos;t bog the way a 20V or 40V chainsaw does when you
                 hit a knot.
@@ -544,7 +544,7 @@ export default function DewaltChainsawReview() {
                 FLEXVOLT 9Ah packs are rated for 1,000+ charge cycles to 80%
                 capacity. Runtime degradation is gradual and noticeable around
                 year 5-6 of regular use. Replacement packs run $250-$300
-                street, which is pricey — so buy kit first, bare-tool
+                street, which is pricey. so buy kit first, bare-tool
                 everything after.
               </p>
 
@@ -758,7 +758,7 @@ export default function DewaltChainsawReview() {
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 These are all standard for a quality chainsaw. What matters
-                is whether they work reliably — and in the DCCS690&apos;s case
+                is whether they work reliably, and in the DCCS690&apos;s case
                 they do. The chain brake engages crisply, the throttle trigger
                 lock is positive, and the bucking spikes bite well on
                 rough-bark wood.
@@ -772,7 +772,7 @@ export default function DewaltChainsawReview() {
                 California&apos;s 2024 CARB Small Off-Road Engine rule
                 banned the sale of new gas chainsaws under 45cc statewide.
                 The major residential gas chainsaw SKUs — Stihl MS 170, MS
-                180, Husqvarna 120, Echo CS-310 — are no longer legal for
+                180, Husqvarna 120, Echo CS-310. Are no longer legal for
                 retailers to sell new in California as of January 1, 2024.
                 Used gas saws can still be sold and repaired, and gas saws
                 over 45cc (like the Stihl MS 261 at 50.2cc) are still
@@ -842,7 +842,7 @@ export default function DewaltChainsawReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      Instant-on — no choke, no pull start
+                      Instant-on, no choke, no pull start
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -972,7 +972,7 @@ export default function DewaltChainsawReview() {
                   <p className='text-foreground/80 leading-relaxed'>
                     FLEXVOLT is a dual-voltage battery that runs at 60V on
                     FLEXVOLT tools and 20V on DeWalt 20V MAX tools. One
-                    battery powers your chainsaw AND your drill — a huge
+                    battery powers your chainsaw AND your drill, a huge
                     platform advantage if you&apos;re in the DeWalt ecosystem.
                   </p>
                 </div>
@@ -1036,7 +1036,7 @@ export default function DewaltChainsawReview() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Final Verdict'
-              verdict={`If you need gas-replacement cutting performance for firewood, storm cleanup, and residential tree work — and especially if you already own DeWalt 20V MAX tools — the DCCS690 is the right buy.`}
+              verdict={`If you need gas-replacement cutting performance for firewood, storm cleanup, and residential tree work, and especially if you already own DeWalt 20V MAX tools, the DCCS690 is the right buy.`}
               source='dewalt-chainsaw'
               variant='final'
             />

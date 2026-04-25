@@ -174,7 +174,7 @@ const faqSchema = {
       name: 'What is the MrCool DIY warranty?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The MrCool DIY 4th Generation comes with a 7-year compressor warranty and a 5-year parts warranty. This applies to DIY installations — you do not need professional installation to maintain warranty coverage. MrCool is one of the few manufacturers that explicitly supports DIY installation without voiding the warranty.',
+        text: 'The MrCool DIY 4th Generation comes with a 7-year compressor warranty and a 5-year parts warranty. This applies to DIY installations, you do not need professional installation to maintain warranty coverage. MrCool is one of the few manufacturers that explicitly supports DIY installation without voiding the warranty.',
       },
     },
     {
@@ -264,7 +264,7 @@ export default function MrCoolDIY4thGenReview() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
             {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
@@ -358,7 +358,7 @@ export default function MrCoolDIY4thGenReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 Mini splits are the most energy-efficient way to heat and cool a
-                home. That is not debatable — heat pump technology moves heat
+                home. That is not debatable. Heat pump technology moves heat
                 instead of generating it, delivering 3-4x more energy than it
                 consumes. The problem has always been installation. A traditional
                 mini split requires an HVAC technician with EPA 608
@@ -368,7 +368,7 @@ export default function MrCoolDIY4thGenReview() {
                 depending on your market.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                MrCool solved this with their QuickConnect line sets — factory
+                MrCool solved this with their QuickConnect line sets; factory
                 pre-charged copper lines with snap-together fittings that
                 release the refrigerant when you connect them. No vacuum pump.
                 No gauges. No EPA certification. No HVAC technician. The 4th
@@ -426,8 +426,7 @@ export default function MrCoolDIY4thGenReview() {
                       <p className='text-muted-foreground mb-1'>Best for</p>
                       <p className='text-foreground/80'>
                         Bedrooms, home offices, small living rooms. The easiest
-                        to install because it plugs into a standard 115V outlet
-                        — no electrician needed for most homes.
+                        to install because it plugs into a standard 115V outlet. no electrician needed for most homes.
                       </p>
                     </div>
                   </div>
@@ -467,7 +466,7 @@ export default function MrCoolDIY4thGenReview() {
                   </div>
                 </div>
 
-                {/* 24K BTU — Sweet Spot */}
+                {/* 24K BTU, Sweet Spot */}
                 <div className='bg-primary/5 border-2 border-primary/40 rounded-xl p-5 relative'>
                   <div className='absolute -top-3 left-4'>
                     <span className='text-xs font-bold text-primary-foreground bg-primary px-3 py-1 rounded-full'>
@@ -501,8 +500,7 @@ export default function MrCoolDIY4thGenReview() {
                         Open-concept living areas, large garages, ADUs, in-law
                         suites. The 24K is the best value per BTU and delivers
                         the highest SEER2 rating (22) in the lineup. This is the
-                        size most homeowners should buy. Requires a 230V circuit
-                        — you may need an electrician to run one from your
+                        size most homeowners should buy. Requires a 230V circuit, you may need an electrician to run one from your
                         panel if you do not already have a 230V outlet nearby.
                       </p>
                     </div>
@@ -671,7 +669,7 @@ export default function MrCoolDIY4thGenReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This is the section everyone wants to read. MrCool markets the
                 DIY 4th Gen as a &ldquo;no professional needed&rdquo;
-                installation. That is mostly true — with some important caveats.
+                installation. That is mostly true, with some important caveats.
                 Here is exactly what the installation involves, step by step:
               </p>
 
@@ -735,7 +733,7 @@ export default function MrCoolDIY4thGenReview() {
                       This is where the MrCool DIY shines. Feed the pre-charged
                       line set through the wall hole. The line set includes the
                       refrigerant lines, communication wire, and condensate
-                      drain — all bundled together. Connect the indoor end to
+                      drain, all bundled together. Connect the indoor end to
                       the evaporator using the QuickConnect fittings. They
                       literally snap together with a quarter turn. No flaring
                       tools, no vacuum pump, no torque wrenches. The refrigerant
@@ -760,7 +758,7 @@ export default function MrCoolDIY4thGenReview() {
                       mounting brackets, or a wall bracket. Ensure at least 24
                       inches of clearance on the sides and 48 inches above for
                       airflow. Connect the other end of the QuickConnect line
-                      set to the outdoor unit — same snap-together process.
+                      set to the outdoor unit, same snap-together process.
                     </p>
                   </div>
                 </div>
@@ -853,7 +851,7 @@ export default function MrCoolDIY4thGenReview() {
               </div>
             </section>
 
-            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            {/* Mid-content affiliate CTA, 30-60% CTR lift */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               headline="Ready to buy?"
@@ -874,12 +872,12 @@ export default function MrCoolDIY4thGenReview() {
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The 24K BTU model cools a 1,000+ sq ft space comfortably in
                 California summer heat. The inverter compressor is the key
-                advantage here — unlike window units that cycle on and off
+                advantage here, unlike window units that cycle on and off
                 (creating temperature swings and noise spikes), the MrCool
                 continuously adjusts its output to maintain your set
                 temperature. This means steadier comfort and significantly lower
                 energy consumption. In cooling mode, the indoor unit operates at
-                around 40 dB on low speed — quieter than a library. You will
+                around 40 dB on low speed, quieter than a library. You will
                 hear it when it first ramps up, but at steady state it fades
                 into background noise.
               </p>
@@ -1059,7 +1057,7 @@ export default function MrCoolDIY4thGenReview() {
                 Smart Features and WiFi Integration
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                The 4th Generation ships with built-in WiFi — no adapter
+                The 4th Generation ships with built-in WiFi, no adapter
                 dongle needed (earlier generations required a separate WiFi kit).
                 Once connected to your network through the SmartHQ app, you get:
               </p>
@@ -1353,8 +1351,7 @@ export default function MrCoolDIY4thGenReview() {
                     electricity bills for 10-15 CEER efficiency, one MrCool DIY
                     24K unit can replace them all while cutting your cooling
                     energy cost by 30-50%. The upfront investment pays for
-                    itself within 3-5 years through energy savings alone —
-                    faster if you factor in the avoided professional
+                    itself within 3-5 years through energy savings alone, faster if you factor in the avoided professional
                     installation cost.
                   </p>
                 </div>
@@ -1390,7 +1387,7 @@ export default function MrCoolDIY4thGenReview() {
                   useful.
                 </p>
                 <p className='text-foreground/80 leading-relaxed mb-6'>
-                  The 24K BTU model is the sweet spot for most buyers — it
+                  The 24K BTU model is the sweet spot for most buyers, it
                   covers up to 1,400 sq ft, achieves the lineup&apos;s best
                   SEER2 rating, and hits the right price-to-performance balance.
                   If you are a homeowner comfortable with a drill, a hole saw,
@@ -1458,7 +1455,7 @@ export default function MrCoolDIY4thGenReview() {
                     Browse All Product Reviews
                   </h3>
                   <p className='text-sm text-muted-foreground'>
-                    Power stations, mini splits, e-bikes, and more — tested and
+                    Power stations, mini splits, e-bikes, and more, tested and
                     reviewed by GreenReviewsHub.
                   </p>
                   <span className='inline-flex items-center gap-1 text-sm text-primary mt-2'>
@@ -1473,7 +1470,7 @@ export default function MrCoolDIY4thGenReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 headline='Ready to buy the MrCool DIY 4th Gen?'
-                verdict='The only true DIY mini split — skip HVAC contractor costs and save thousands. Check current pricing on all BTU sizes.'
+                verdict='The only true DIY mini split, skip HVAC contractor costs and save thousands. Check current pricing on all BTU sizes.'
                 source='mrcool-diy-4th-gen'
                 variant='final'
               />

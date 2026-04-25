@@ -690,7 +690,7 @@ export default function BestEbikeRack() {
                       productKey="1up-usa-heavy-duty-double"
                       source="ebike-rack-hub"
                       variant="primary"
-                      label="Check Price — 1UP USA Heavy Duty Double"
+                      label="Check Price, 1UP USA Heavy Duty Double"
                       showPrice
                     />
                   </div>
@@ -810,7 +810,7 @@ export default function BestEbikeRack() {
                       productKey="thule-easyfold-xt2"
                       source="ebike-rack-hub"
                       variant="primary"
-                      label="Check Price — Thule EasyFold XT2"
+                      label="Check Price. Thule EasyFold XT2"
                       showPrice
                     />
                   </div>
@@ -1047,7 +1047,7 @@ export default function BestEbikeRack() {
                       productKey="saris-superclamp-ex"
                       source="ebike-rack-hub"
                       variant="primary"
-                      label="Check Price — Saris SuperClamp EX"
+                      label="Check Price, Saris SuperClamp EX"
                       showPrice
                     />
                   </div>
@@ -1286,7 +1286,7 @@ export default function BestEbikeRack() {
                       productKey="quietkat-single-bike-rack"
                       source="ebike-rack-hub"
                       variant="primary"
-                      label="Check Price — QuietKat Single Bike Rack"
+                      label="Check Price; QuietKat Single Bike Rack"
                       showPrice
                     />
                   </div>

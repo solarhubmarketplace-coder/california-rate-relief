@@ -592,7 +592,7 @@ export default function BestElectricPressureWasher() {
                   productKey="sun-joe-spx3000"
                   source="electric-pressure-washer-hub"
                   variant="primary"
-                  label="Check Price — Sun Joe SPX3000"
+                  label="Check Price, Sun Joe SPX3000"
                   showPrice
                   />
               </div>
@@ -840,7 +840,7 @@ export default function BestElectricPressureWasher() {
                     </h4>
                     <ul className="space-y-1">
                       {[
-                        'Vario Power wand — adjust pressure without swapping tips',
+                        'Vario Power wand, adjust pressure without swapping tips',
                         'Lightest unit in our roundup (25.4 lbs)',
                         'Water-cooled induction motor for maximum lifespan',
                         'Onboard hose reel and compact storage',
@@ -875,7 +875,7 @@ export default function BestElectricPressureWasher() {
                   productKey="karcher-k5-premium"
                   source="electric-pressure-washer-hub"
                   variant="primary"
-                  label="Check Price — Karcher K5 Premium"
+                  label="Check Price; Karcher K5 Premium"
                   showPrice
                   />
               </div>
@@ -951,7 +951,7 @@ export default function BestElectricPressureWasher() {
                     </h4>
                     <ul className="space-y-1">
                       {[
-                        'Universal (brushed) motor — shorter lifespan',
+                        'Universal (brushed) motor. shorter lifespan',
                         'Louder than induction/brushless competitors',
                         'Plastic build feels less durable',
                         'Garden hose connection can be finicky',
@@ -968,7 +968,7 @@ export default function BestElectricPressureWasher() {
                   productKey="ar-blue-clean-ar383"
                   source="electric-pressure-washer-hub"
                   variant="primary"
-                  label="Check Price — AR Blue Clean AR383"
+                  label="Check Price. AR Blue Clean AR383"
                   showPrice
                   />
               </div>
@@ -1157,7 +1157,7 @@ export default function BestElectricPressureWasher() {
                   </div>
                   <ul className="space-y-2">
                     {[
-                      'Plug in and go — instant start, no pull cord',
+                      'Plug in and go. instant start, no pull cord',
                       'Zero emissions, safe for enclosed spaces',
                       '60-80% quieter than gas models',
                       'No engine oil, spark plugs, or fuel stabilizer',

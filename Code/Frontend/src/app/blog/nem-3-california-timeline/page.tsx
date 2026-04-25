@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "NEM 3.0 California Timeline: Key Dates, Deadlines, and What Happens Next",
   description:
-    "A complete timeline of California's NEM 3.0 / Net Billing Tariff — the CPUC vote, the April 2023 go-live, grandfathering windows, AB 942, and what's coming in 2026 and beyond.",
+    "A complete timeline of California's NEM 3.0 / Net Billing Tariff, the CPUC vote, the April 2023 go-live, grandfathering windows, AB 942, and what's coming in 2026 and beyond.",
   alternates: {
     canonical: '/blog/nem-3-california-timeline',
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title:
       "NEM 3.0 California Timeline: Key Dates and What Happens Next",
     description:
-      "The full California NEM 3.0 timeline — CPUC vote, rollout, grandfathering, AB 942, and what's ahead.",
+      "The full California NEM 3.0 timeline, CPUC vote, rollout, grandfathering, AB 942, and what's ahead.",
     type: 'article',
     publishedTime: '2026-04-23T00:00:00Z',
   },
@@ -94,7 +94,7 @@ export default function Nem3Timeline() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                California&apos;s NEM 3.0 — formally the Net Billing Tariff —
+                California&apos;s NEM 3.0. formally the Net Billing Tariff —
                 is the most consequential residential solar policy change
                 of the last decade. It cut solar export credits by roughly
                 75%, reshaped the installer market, and forced a shift
@@ -104,7 +104,7 @@ export default function Nem3Timeline() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                December 15, 2022 — CPUC Votes to Approve
+                December 15, 2022, CPUC Votes to Approve
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -121,7 +121,7 @@ export default function Nem3Timeline() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                April 14-15, 2023 — The Go-Live Deadline
+                April 14-15, 2023. The Go-Live Deadline
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -130,13 +130,13 @@ export default function Nem3Timeline() {
                 qualifies for 20-year grandfathering under NEM 2.0.
                 Applications submitted on or after April 15 fall under the
                 new Net Billing Tariff. Installers and homeowners rush to
-                submit before the deadline — California sees a record
+                submit before the deadline, California sees a record
                 monthly interconnection volume in March and April 2023 as
                 the industry races the clock.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Summer-Fall 2023 — Installation Volumes Collapse
+                Summer-Fall 2023, Installation Volumes Collapse
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -150,7 +150,7 @@ export default function Nem3Timeline() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                2024 — Industry Consolidation Begins
+                2024, Industry Consolidation Begins
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -164,7 +164,7 @@ export default function Nem3Timeline() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                June 2025 — Sunnova Chapter 11
+                June 2025. Sunnova Chapter 11
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -184,7 +184,7 @@ export default function Nem3Timeline() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                2025 — AB 942 Legislative Activity
+                2025; AB 942 Legislative Activity
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -199,7 +199,7 @@ export default function Nem3Timeline() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                April 15, 2026 — Freedom Forever Chapter 11
+                April 15, 2026, Freedom Forever Chapter 11
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -235,7 +235,7 @@ export default function Nem3Timeline() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>NEM 2.0 grandfather expirations.</strong> The
-                earliest NEM 2.0 customers — interconnected in 2016 — will
+                earliest NEM 2.0 customers, interconnected in 2016, will
                 start aging out of their 20-year grandfather windows in
                 2036. What those customers transition to depends on the
                 tariff in effect at that time.
@@ -255,7 +255,7 @@ export default function Nem3Timeline() {
                 <strong>Utility rate inflation.</strong> SCE, PG&amp;E, and
                 SDG&amp;E rates continue to rise 6-12% annually.
                 Paradoxically, higher utility rates make NEM 3.0 solar more
-                valuable over time — the exported kWh value doesn&apos;t
+                valuable over time, the exported kWh value doesn&apos;t
                 change much, but the consumed kWh value (what solar offsets
                 for self-consumption) goes up. The rate-inflation factor is
                 the biggest single reason solar still works for most
@@ -268,13 +268,13 @@ export default function Nem3Timeline() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If you installed solar before April 15, 2023, nothing about
-                the above changes your situation — you&apos;re grandfathered
+                the above changes your situation. you&apos;re grandfathered
                 under NEM 2.0 and your economics remain as originally sold.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If you&apos;re shopping for solar in 2026, the economics work
-                — especially with a battery — but the system design has to
+                — especially with a battery. But the system design has to
                 prioritize self-consumption rather than export. See{' '}
                 <Link
                   href='/blog/nem-3-california-still-worth-it'

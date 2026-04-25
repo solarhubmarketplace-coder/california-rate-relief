@@ -106,7 +106,7 @@ const faqSchema = {
       name: 'How long does the DeWalt 60V FLEXVOLT blower run on a single charge?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'With a FLEXVOLT 12Ah battery, the DCBL772 runs about 75 minutes on low, 30-40 minutes on medium, and 12-18 minutes on full-throttle boost. Run-time scales directly with battery capacity — a 6Ah FLEXVOLT delivers roughly half those numbers. For most residential yard jobs, a single 12Ah battery covers a complete cleanup session with power to spare.',
+        text: 'With a FLEXVOLT 12Ah battery, the DCBL772 runs about 75 minutes on low, 30-40 minutes on medium, and 12-18 minutes on full-throttle boost. Run-time scales directly with battery capacity; a 6Ah FLEXVOLT delivers roughly half those numbers. For most residential yard jobs, a single 12Ah battery covers a complete cleanup session with power to spare.',
       },
     },
     {
@@ -122,7 +122,7 @@ const faqSchema = {
       name: 'Is the DeWalt leaf blower legal under Californias CARB gas-blower ban?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. California AB 1346, effective since January 1, 2024, prohibits the sale of new gasoline-powered Small Off-Road Engines (SORE), which includes gas-powered leaf blowers, lawn mowers, and similar equipment under 25 horsepower. Electric leaf blowers — including all DeWalt 20V, 60V FLEXVOLT, and corded models — are explicitly compliant and preferred under the policy. Many California cities (Los Angeles, Santa Monica, West Hollywood, Sacramento, Berkeley, Palo Alto, and others) also have local bans predating AB 1346 that specifically target gas blower noise and emissions.',
+        text: 'Yes. California AB 1346, effective since January 1, 2024, prohibits the sale of new gasoline-powered Small Off-Road Engines (SORE), which includes gas-powered leaf blowers, lawn mowers, and similar equipment under 25 horsepower. Electric leaf blowers — including all DeWalt 20V, 60V FLEXVOLT, and corded models, are explicitly compliant and preferred under the policy. Many California cities (Los Angeles, Santa Monica, West Hollywood, Sacramento, Berkeley, Palo Alto, and others) also have local bans predating AB 1346 that specifically target gas blower noise and emissions.',
       },
     },
     {
@@ -130,7 +130,7 @@ const faqSchema = {
       name: 'How does the DeWalt 60V FLEXVOLT compare to Milwaukee M18 Fuel?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Both are premium jobsite-grade cordless platforms. The DeWalt 60V FLEXVOLT DCBL772 and Milwaukee M18 FUEL Dual-Battery Blower (2824) deliver similar air performance (120-130 MPH, 500-600 CFM class). Milwaukee gets slightly higher peak CFM on the dual-battery config; DeWalt wins on single-battery runtime with a 12Ah FLEXVOLT. If you already own one platforms batteries, stick with it — neither blower is worth switching ecosystems for.',
+        text: 'Both are premium jobsite-grade cordless platforms. The DeWalt 60V FLEXVOLT DCBL772 and Milwaukee M18 FUEL Dual-Battery Blower (2824) deliver similar air performance (120-130 MPH, 500-600 CFM class). Milwaukee gets slightly higher peak CFM on the dual-battery config; DeWalt wins on single-battery runtime with a 12Ah FLEXVOLT. If you already own one platforms batteries, stick with it, neither blower is worth switching ecosystems for.',
       },
     },
     {
@@ -239,7 +239,7 @@ export default function DeWaltLeafBlowerReview() {
                 brushless motor that reliably pushes peak output for the full
                 battery runtime. For the contractor or serious homeowner
                 already running DeWalt 20V/60V FLEXVOLT batteries on other
-                tools, the leverage is obvious — a single tool purchase plugs
+                tools, the leverage is obvious, a single tool purchase plugs
                 into the existing battery inventory. For a homeowner starting
                 from zero, buying into FLEXVOLT just for a leaf blower is
                 overkill; an EGO Power+ 765 or a Ryobi 40V blower runs cheaper
@@ -413,8 +413,8 @@ export default function DeWaltLeafBlowerReview() {
                 Practically, this means a contractor or serious DIYer with an
                 existing DeWalt 20V battery inventory buys a FLEXVOLT battery
                 or two and gains access to the entire 60V outdoor power
-                equipment lineup — blower, chainsaw, string trimmer, hedge
-                trimmer, mower, snow blower — without starting a new battery
+                equipment lineup. Blower, chainsaw, string trimmer, hedge
+                trimmer, mower, snow blower; without starting a new battery
                 platform. The ROI on buying a 60V tool is much higher when
                 the batteries are already in the truck. For anyone not
                 already in the DeWalt ecosystem, FLEXVOLT batteries cost
@@ -424,8 +424,7 @@ export default function DeWaltLeafBlowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This platform logic dominates the DeWalt leaf blower buying
                 decision. If you own DeWalt batteries, skip the rest of this
-                review and just buy the DCBL772. If you don&apos;t, read on
-                — the DeWalt may still be the right pick, but it&apos;s not
+                review and just buy the DCBL772. If you don&apos;t, read on, the DeWalt may still be the right pick, but it&apos;s not
                 the automatic default.
               </p>
 
@@ -448,7 +447,7 @@ export default function DeWaltLeafBlowerReview() {
                 maple leaves, and light pine needles at cruise speed with
                 room to spare. For wet leaves matted to a concrete
                 driveway after an October rain, you&apos;ll want to kick it
-                into turbo boost for short bursts — the peak setting
+                into turbo boost for short bursts. The peak setting
                 unlocks noticeably higher airflow but drains the battery
                 about 4x faster than cruise.
               </p>
@@ -600,7 +599,7 @@ export default function DeWaltLeafBlowerReview() {
                 The honest summary: if you already own Milwaukee M18
                 batteries, buy Milwaukee. If you already own DeWalt 20V or
                 FLEXVOLT batteries, buy DeWalt. Neither blower is worth
-                switching ecosystems for on its own merits — both are
+                switching ecosystems for on its own merits, both are
                 excellent, and the platform lock-in advantage dominates. For
                 the rare buyer starting from zero and weighing platforms,
                 DeWalt&apos;s FLEXVOLT logic (one battery serves 20V, 60V,
@@ -615,8 +614,8 @@ export default function DeWaltLeafBlowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For anyone who used a Stihl gas backpack in their previous
                 career and is now evaluating cordless, the performance gap
-                closes every year. The Stihl BR 600 — the longtime
-                gold-standard residential backpack gas blower — delivers
+                closes every year. The Stihl BR 600. the longtime
+                gold-standard residential backpack gas blower, delivers
                 roughly 677 CFM and 201 MPH with a 64.8cc engine. The DeWalt
                 DCBL772 handheld delivers 600 CFM and 125 MPH; the DCBL590
                 backpack delivers ~600 CFM and 175 MPH.
@@ -627,7 +626,7 @@ export default function DeWaltLeafBlowerReview() {
                 trying cordless a decade ago. On total blower performance
                 metric (CFM x MPH), the DeWalt DCBL590 backpack comes
                 within 15-20% of the BR 600. For residential cleanup, that
-                gap is invisible — you finish the driveway, you finish the
+                gap is invisible. You finish the driveway, you finish the
                 yard. For high-volume commercial work moving massive piles
                 of wet leaves on a daily schedule, Stihl gas still has the
                 edge on raw power and the advantage of refuel-and-go
@@ -654,7 +653,7 @@ export default function DeWaltLeafBlowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 California AB 1346 (signed October 2021, effective January
                 1, 2024) prohibits the sale of new gasoline-powered Small
-                Off-Road Engines (SORE) — a category that includes leaf
+                Off-Road Engines (SORE). a category that includes leaf
                 blowers, lawn mowers, chainsaws, and other outdoor power
                 equipment under 25 horsepower. The California Air Resources
                 Board (CARB) regulation specifically banned new SORE sales
@@ -672,7 +671,7 @@ export default function DeWaltLeafBlowerReview() {
                     <strong>New gas blowers cannot be sold</strong> in
                     California retail. Existing gas blowers purchased before
                     2024 remain legal to use in most jurisdictions (subject
-                    to local bans — LA, SF, Berkeley, Palo Alto, and ~150+
+                    to local bans, LA, SF, Berkeley, Palo Alto, and ~150+
                     other cities had local gas blower bans before CARB).
                   </span>
                 </li>
@@ -735,7 +734,7 @@ export default function DeWaltLeafBlowerReview() {
                 Most AQMD rebates are restricted to commercial landscapers
                 and require documentation of a gas blower retirement. Pure
                 residential buyers typically do not qualify for these
-                specific rebates — but benefit indirectly through lower
+                specific rebates, but benefit indirectly through lower
                 commercial-service pricing as landscapers modernize their
                 fleets.
               </p>
@@ -751,7 +750,7 @@ export default function DeWaltLeafBlowerReview() {
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      125 MPH / 600 CFM — real gas-handheld performance
+                      125 MPH / 600 CFM, real gas-handheld performance
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -820,7 +819,7 @@ export default function DeWaltLeafBlowerReview() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>Contractors and landscapers</strong> on DeWalt
-                    platform — the ecosystem leverage and AQMD rebate
+                    platform, the ecosystem leverage and AQMD rebate
                     eligibility make this the obvious buy.
                   </span>
                 </li>
@@ -844,7 +843,7 @@ export default function DeWaltLeafBlowerReview() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>DeWalt 20V battery owners</strong> who want to
-                    expand into outdoor power equipment — a single FLEXVOLT
+                    expand into outdoor power equipment. A single FLEXVOLT
                     battery purchase unlocks the whole 60V lineup.
                   </span>
                 </li>
@@ -855,7 +854,7 @@ export default function DeWaltLeafBlowerReview() {
                 765 ($229) or Ryobi 40V HP Brushless ($179) deliver 80-90%
                 of the performance at 60-70% of the all-in cost for a
                 first-time cordless buyer. Skip it too if you need real
-                commercial-scale power — step up to the DCBL590 backpack or
+                commercial-scale power, step up to the DCBL590 backpack or
                 a Stihl BGA 300 cordless backpack.
               </p>
 

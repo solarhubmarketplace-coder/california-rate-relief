@@ -21,7 +21,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-// Brand-level affiliate CTA — for overall Lectric brand pick
+// Brand-level affiliate CTA, for overall Lectric brand pick
 const PRIMARY_PRODUCT_KEY = 'lectric-xp-3';
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Lectric eBikes Review 2026: Full Lineup Compared',
     description:
-      'Every Lectric e-bike — XP 3.0, XP Lite 2.0, XPedition 2.0, XPress 750, Lectric ONE — reviewed and compared. Best value pick and premium pick.',
+      'Every Lectric e-bike. XP 3.0, XP Lite 2.0, XPedition 2.0, XPress 750, Lectric ONE, reviewed and compared. Best value pick and premium pick.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -98,7 +98,7 @@ const faqSchema = {
       name: 'Where are Lectric eBikes made?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Lectric eBikes are designed in Phoenix, Arizona, where the company is headquartered. Final manufacturing and assembly happens in China. Quality control and warranty claims are handled by Lectric\'s Phoenix customer service team, which is a meaningful differentiator vs drop-ship brands with no U.S. presence.',
+        text: 'Lectric eBikes are designed in Phoenix, Arizona, where the company is headquartered. Final manufacturing and assembly happens in China. Quality control and warranty claims are handled by Lectric\'s Phoenix customer service team, which is a meaningful differentiator vs drop-ship brands with no U.S. Presence.',
       },
     },
     {
@@ -106,7 +106,7 @@ const faqSchema = {
       name: 'Which Lectric eBike has the longest range?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Lectric XPedition 2.0 has the longest range — up to 150 miles with the optional dual-battery configuration (2x 672 Wh). For single-battery bikes, the Lectric ONE offers the longest verified range at 60+ miles due to its Pinion mid-drive efficiency. The XP 3.0 gets 45-65 miles per charge in real-world conditions.',
+        text: 'The Lectric XPedition 2.0 has the longest range. up to 150 miles with the optional dual-battery configuration (2x 672 Wh). For single-battery bikes, the Lectric ONE offers the longest verified range at 60+ miles due to its Pinion mid-drive efficiency. The XP 3.0 gets 45-65 miles per charge in real-world conditions.',
       },
     },
     {
@@ -209,7 +209,7 @@ export default function LectricEbikeHub() {
                 Lectric eBikes went from a Phoenix garage startup in 2019 to one of the three best-selling e-bike brands in North America — selling more than 500,000 bikes in six years without a single retail store. The entire business runs direct-to-consumer online, which is how they can offer a full-featured folding e-bike at $999 when Rad Power charges $1,999 and traditional bike shops charge $2,500+.
               </p>
               <p className='text-lg text-foreground/80 leading-relaxed mb-8'>
-                The question for 2026 is: which Lectric do you actually buy? The lineup has expanded from one model (the original XP) to a full range — folding commuter, lightweight step-through, electric cargo, premium urban, and a belt-drive high-end flagship. We rode the full 2026 range and this guide breaks down who each bike is for.
+                The question for 2026 is: which Lectric do you actually buy? The lineup has expanded from one model (the original XP) to a full range, folding commuter, lightweight step-through, electric cargo, premium urban, and a belt-drive high-end flagship. We rode the full 2026 range and this guide breaks down who each bike is for.
               </p>
             </div>
 
@@ -300,7 +300,7 @@ export default function LectricEbikeHub() {
                 Who Is Lectric eBikes?
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Lectric eBikes was founded in 2019 by Levi Conlow and Robby Deziel — two Arizona State students who noticed that folding e-bikes in the U.S. cost $2,000+ while comparable bikes overseas sold for half that. They cut out the middleman (no retail stores, no dealer markup, direct online sales only) and launched the original XP at $899. Five years and half a million bikes later, they&apos;re still in Phoenix and still direct-to-consumer.
+                Lectric eBikes was founded in 2019 by Levi Conlow and Robby Deziel — two Arizona State students who noticed that folding e-bikes in the U.S. Cost $2,000+ while comparable bikes overseas sold for half that. They cut out the middleman (no retail stores, no dealer markup, direct online sales only) and launched the original XP at $899. Five years and half a million bikes later, they&apos;re still in Phoenix and still direct-to-consumer.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 What this means for buyers:
@@ -339,10 +339,10 @@ export default function LectricEbikeHub() {
                 The XP 3.0 is the bike that made Lectric famous and it remains their volume leader by an enormous margin. It&apos;s a folding fat-tire e-bike built around a 500W rear hub motor, a 500 Wh battery, hydraulic disc brakes, and 20-inch by 3-inch fat tires. The fold-in-half design brings the bike down to 40 x 16 x 25 inches — small enough to fit in a car trunk, under a desk, or beside an apartment door.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Real-world performance: 45-65 miles of range per charge depending on terrain and rider weight, 20 mph on throttle-only, and up to 28 mph with pedal assist once you unlock Class 3 mode through the display. Torque is strong enough to pull a 220-pound rider up a 15% grade without drama. Hydraulic brakes are genuinely good — better than the mechanical brakes on the original XP 2.0 and most cheap competitors.
+                Real-world performance: 45-65 miles of range per charge depending on terrain and rider weight, 20 mph on throttle-only, and up to 28 mph with pedal assist once you unlock Class 3 mode through the display. Torque is strong enough to pull a 220-pound rider up a 15% grade without drama. Hydraulic brakes are genuinely good, better than the mechanical brakes on the original XP 2.0 and most cheap competitors.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The weaknesses are honest: 65 pounds is heavy for something called &quot;folding&quot; — you can lift it, but not gracefully — and the fat tires create noticeable rolling resistance on pavement. The motor is cadence-sensor based, not torque-sensor, so pedal assist feels more on/off than linear. For the price, none of these are dealbreakers.
+                The weaknesses are honest: 65 pounds is heavy for something called &quot;folding&quot; — you can lift it, but not gracefully; and the fat tires create noticeable rolling resistance on pavement. The motor is cadence-sensor based, not torque-sensor, so pedal assist feels more on/off than linear. For the price, none of these are dealbreakers.
               </p>
               <div className='mb-8'>
                 <BuyButton
@@ -355,7 +355,7 @@ export default function LectricEbikeHub() {
 
               {/* XP Lite 2.0 */}
               <h2 id='xp-lite' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                Lectric XP Lite 2.0 — The Entry Point
+                Lectric XP Lite 2.0, The Entry Point
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $799 · <strong>Motor:</strong> 300W hub (819W peak) · <strong>Range:</strong> 60 mi · <strong>Top speed:</strong> 20 mph · <strong>Weight:</strong> 46 lbs
@@ -377,7 +377,7 @@ export default function LectricEbikeHub() {
 
               {/* XPedition 2.0 */}
               <h2 id='xpedition' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                Lectric XPedition 2.0 — The Cargo Workhorse
+                Lectric XPedition 2.0; The Cargo Workhorse
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,399 · <strong>Motor:</strong> 750W hub (1,310W peak) · <strong>Range:</strong> 75-150 mi (dual battery) · <strong>Top speed:</strong> 28 mph unlocked · <strong>Weight:</strong> 78 lbs
@@ -402,7 +402,7 @@ export default function LectricEbikeHub() {
 
               {/* XPress 750 */}
               <h2 id='xpress' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                Lectric XPress 750 — The Traditional Commuter
+                Lectric XPress 750, The Traditional Commuter
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,099 · <strong>Motor:</strong> 750W hub · <strong>Range:</strong> 60 mi · <strong>Top speed:</strong> 28 mph unlocked · <strong>Weight:</strong> 61 lbs
@@ -436,7 +436,7 @@ export default function LectricEbikeHub() {
 
               {/* Lectric ONE */}
               <h2 id='one' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                Lectric ONE — The $2,199 Flagship
+                Lectric ONE, The $2,199 Flagship
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $2,199 · <strong>Motor:</strong> Pinion C1.9i (belt drive) · <strong>Range:</strong> 60+ mi · <strong>Top speed:</strong> 28 mph · <strong>Weight:</strong> 72 lbs
@@ -445,7 +445,7 @@ export default function LectricEbikeHub() {
                 The Lectric ONE is Lectric&apos;s answer to &quot;can a direct-to-consumer brand build a genuinely premium e-bike?&quot; The answer is yes. The ONE replaces the hub-drive motor used on every other Lectric with a Pinion C1.9i mid-drive gearbox — the same 9-speed internally-geared system found on $5,000+ Riese & Müller touring e-bikes — and pairs it with a Gates Carbon Drive belt instead of a conventional chain.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                What this gets you: zero chain maintenance (the belt lasts 20,000+ miles and never needs lubrication), sealed-gearbox shifting that works while stopped or under full load, and a dramatically more efficient drivetrain that stretches range. It also feels genuinely different to ride — because the motor is at the crank instead of the rear hub, weight distribution is more balanced and the bike handles more like a conventional bicycle.
+                What this gets you: zero chain maintenance (the belt lasts 20,000+ miles and never needs lubrication), sealed-gearbox shifting that works while stopped or under full load, and a dramatically more efficient drivetrain that stretches range. It also feels genuinely different to ride; because the motor is at the crank instead of the rear hub, weight distribution is more balanced and the bike handles more like a conventional bicycle.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 At $2,199, the Lectric ONE is the most expensive Lectric by a wide margin, but it undercuts comparable Pinion-equipped belt-drive e-bikes by $2,000-$3,000. For a rider who wants a low-maintenance, premium e-bike and can&apos;t justify $5,000+, this is the play.
@@ -472,7 +472,7 @@ export default function LectricEbikeHub() {
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>Shipping &amp; Assembly</h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Free shipping in the contiguous U.S. Alaska, Hawaii, and Canada have surcharges. Delivery time is typically 3-7 business days from order confirmation. Bikes arrive in a large cardboard carton at your door — UPS or FedEx Ground, no signature required on most orders.
+                Free shipping in the contiguous U.S. Alaska, Hawaii, and Canada have surcharges. Delivery time is typically 3-7 business days from order confirmation. Bikes arrive in a large cardboard carton at your door. UPS or FedEx Ground, no signature required on most orders.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Assembly takes 15-30 minutes and is genuinely straightforward. The bike ships 85% assembled. You install the front wheel (folding models only have the front wheel loose), attach the pedals, adjust handlebars, pump up the tires, and you&apos;re riding. A multi-tool is included; no special skills required.
@@ -508,7 +508,7 @@ export default function LectricEbikeHub() {
                 Lectric vs Rad Power vs Aventon: Which Direct-to-Consumer Wins?
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The three big direct-to-consumer e-bike brands in the U.S. are Lectric, Rad Power Bikes, and Aventon. Each has a different personality:
+                The three big direct-to-consumer e-bike brands in the U.S. Are Lectric, Rad Power Bikes, and Aventon. Each has a different personality:
               </p>
               <ul className='space-y-3 text-foreground/80 mb-6'>
                 <li className='flex items-start gap-2'>
@@ -538,7 +538,7 @@ export default function LectricEbikeHub() {
                     Are Lectric eBikes any good?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — top-three U.S. e-bike brand with 500,000+ bikes sold and strong independent reviews. Trade-offs: 1-year warranty (vs 2-year Aventon) and mostly hub motors vs torque-sensing mid-drives.
+                    Yes, top-three U.S. e-bike brand with 500,000+ bikes sold and strong independent reviews. Trade-offs: 1-year warranty (vs 2-year Aventon) and mostly hub motors vs torque-sensing mid-drives.
                   </p>
                 </div>
                 <div>
@@ -588,7 +588,7 @@ export default function LectricEbikeHub() {
                 The Bottom Line
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For most readers, the answer is still the <strong>Lectric XP 3.0</strong> at $999. Folding, fat-tired, hydraulic-brake, 65-mile range, 28 mph unlocked — it does everything 80% of e-bike buyers actually need for a price that makes competitors look overpriced. Upgrade to the <strong>Lectric ONE</strong> ($2,199) if you want premium low-maintenance belt drive, or the <strong>XPedition 2.0</strong> ($1,399) if you need to haul kids or cargo.
+                For most readers, the answer is still the <strong>Lectric XP 3.0</strong> at $999. Folding, fat-tired, hydraulic-brake, 65-mile range, 28 mph unlocked, it does everything 80% of e-bike buyers actually need for a price that makes competitors look overpriced. Upgrade to the <strong>Lectric ONE</strong> ($2,199) if you want premium low-maintenance belt drive, or the <strong>XPedition 2.0</strong> ($1,399) if you need to haul kids or cargo.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Lectric&apos;s direct-to-consumer model keeps prices real. It&apos;s the main reason to buy the brand. If you need a retail test ride or a 2-year warranty, look at Aventon instead. For everyone else, Lectric delivers exactly what it claims: a good e-bike at a price that makes sense.

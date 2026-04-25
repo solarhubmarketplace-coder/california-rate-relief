@@ -42,7 +42,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Best Electric Scooter with Seat (2026): Segway vs NIU vs Hiboy vs EMOVE vs Razor — Top 5 Reviewed',
+    'Best Electric Scooter with Seat (2026): Segway vs NIU vs Hiboy vs EMOVE vs Razor. Top 5 Reviewed',
   description:
     'Compare the best electric scooters with seats in 2026. In-depth reviews covering Segway Ninebot P100S, NIU KQi3 Sport, Hiboy S2 Pro, EMOVE Cruiser, and Razor EcoSmart Metro with specs, range data, and buying guide.',
   datePublished: '2026-04-21',
@@ -288,7 +288,7 @@ export default function BestElectricScooterWithSeat() {
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
                 Standing on an electric scooter for 30 minutes gets old fast. Your legs ache, your
                 back tightens up, and every crack in the pavement jolts through your spine. Seated
-                electric scooters fix all of that — turning a novelty ride into a genuine daily
+                electric scooters fix all of that, turning a novelty ride into a genuine daily
                 commuting tool.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-8">
@@ -310,7 +310,7 @@ export default function BestElectricScooterWithSeat() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
-                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">NIU KQi3 Sport — Best Commuter:</strong> Regenerative braking, 31-mile range, polished app, self-healing tires. $600.</p>
+                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">NIU KQi3 Sport; Best Commuter:</strong> Regenerative braking, 31-mile range, polished app, self-healing tires. $600.</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
@@ -318,11 +318,11 @@ export default function BestElectricScooterWithSeat() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-primary/80 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
-                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">Hiboy S2 Pro — Best Budget:</strong> Under $500, removable seat, solid flat-proof tires, 25-mile range. $460.</p>
+                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">Hiboy S2 Pro; Best Budget:</strong> Under $500, removable seat, solid flat-proof tires, 25-mile range. $460.</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-muted-foreground/30 text-white rounded-full flex items-center justify-center font-bold text-sm">5</span>
-                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">Razor EcoSmart Metro — Most Affordable:</strong> Bamboo deck, built-in seat, rear basket, 12-mile range. $450.</p>
+                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">Razor EcoSmart Metro, Most Affordable:</strong> Bamboo deck, built-in seat, rear basket, 12-mile range. $450.</p>
                 </div>
               </div>
             </div>
@@ -514,7 +514,7 @@ export default function BestElectricScooterWithSeat() {
                   <p className="text-foreground/80 leading-relaxed mb-4">
                     The seat is sold as an accessory, keeping the base price low. Once mounted, it
                     transforms the KQi3 into a comfortable commuter for rides up to 10 miles each
-                    way. At 40 lbs, it is one of the lighter options — manageable for a short flight
+                    way. At 40 lbs, it is one of the lighter options, manageable for a short flight
                     of stairs. The NIU app offers ride tracking and battery health monitoring.
                   </p>
                 </div>
@@ -551,7 +551,7 @@ export default function BestElectricScooterWithSeat() {
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                        No suspension — rough pavement transfers
+                        No suspension, rough pavement transfers
                       </li>
                     </ul>
                   </div>
@@ -561,7 +561,7 @@ export default function BestElectricScooterWithSeat() {
                     productKey="niu-kqi3-sport"
                     source="electric-scooter-with-seat-hub"
                     variant="primary"
-                    label="Check Price — NIU KQi3 Sport"
+                    label="Check Price. NIU KQi3 Sport"
                     showPrice
                   />
                 </div>
@@ -628,7 +628,7 @@ export default function BestElectricScooterWithSeat() {
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        Solid 10" tires — zero flats, zero maintenance
+                        Solid 10" tires; zero flats, zero maintenance
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -700,7 +700,7 @@ export default function BestElectricScooterWithSeat() {
                 <div className="prose prose-slate max-w-none">
                   <p className="text-foreground/80 leading-relaxed mb-4">
                     The EMOVE Cruiser is the scooter you buy when you are done compromising. 1,000W
-                    motor, 62-mile range, 33 mph, hydraulic suspension, IPX6 water resistance — it
+                    motor, 62-mile range, 33 mph, hydraulic suspension, IPX6 water resistance, it
                     handles 15-mile commutes and rainy weekend rides without blinking. The hydraulic
                     suspension absorbs potholes and gravel without jarring your spine. Combined with
                     the included seat, riders regularly report 20+ mile rides without fatigue.
@@ -721,7 +721,7 @@ export default function BestElectricScooterWithSeat() {
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        62-mile range — longest on this list
+                        62-mile range. Longest on this list
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -815,7 +815,7 @@ export default function BestElectricScooterWithSeat() {
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        Bamboo deck, 16" tires — smoothest ride here
+                        Bamboo deck, 16" tires; smoothest ride here
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -835,7 +835,7 @@ export default function BestElectricScooterWithSeat() {
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                        12-mile range, 18 mph — neighborhood only
+                        12-mile range, 18 mph, neighborhood only
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
@@ -849,7 +849,7 @@ export default function BestElectricScooterWithSeat() {
                     productKey="razor-ecosmart-metro"
                     source="electric-scooter-with-seat-hub"
                     variant="primary"
-                    label="Check Price — Razor EcoSmart Metro"
+                    label="Check Price, Razor EcoSmart Metro"
                     showPrice
                   />
                 </div>
@@ -1047,7 +1047,7 @@ export default function BestElectricScooterWithSeat() {
                   </li>
                   <li className="flex items-start gap-2 text-sm text-muted-foreground">
                     <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                    Avoid wet metal surfaces (manhole covers, rail tracks, painted markings) — extremely slippery.
+                    Avoid wet metal surfaces (manhole covers, rail tracks, painted markings); extremely slippery.
                   </li>
                 </ul>
               </div>
@@ -1079,7 +1079,7 @@ export default function BestElectricScooterWithSeat() {
                   </li>
                   <li className="flex items-start gap-2 text-sm text-muted-foreground">
                     <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span><strong className="text-foreground">Skip if:</strong> You only ride 1-2 miles occasionally or need to carry the scooter up multiple flights daily — a lighter standing scooter is better.</span>
+                    <span><strong className="text-foreground">Skip if:</strong> You only ride 1-2 miles occasionally or need to carry the scooter up multiple flights daily, a lighter standing scooter is better.</span>
                   </li>
                 </ul>
               </div>
@@ -1199,23 +1199,23 @@ export default function BestElectricScooterWithSeat() {
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2 text-foreground/80 text-sm">
                     <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 mt-0.5 flex-shrink-0" />
-                    <span><strong className="text-foreground">Best for most people:</strong> Segway Ninebot P100S ($1,100) — 60-mile range, detachable seat, Segway reliability.</span>
+                    <span><strong className="text-foreground">Best for most people:</strong> Segway Ninebot P100S ($1,100), 60-mile range, detachable seat, Segway reliability.</span>
                   </li>
                   <li className="flex items-start gap-2 text-foreground/80 text-sm">
                     <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 mt-0.5 flex-shrink-0" />
-                    <span><strong className="text-foreground">Best for long commutes:</strong> EMOVE Cruiser ($1,399) — 62 miles, hydraulic suspension, 1,000W motor.</span>
+                    <span><strong className="text-foreground">Best for long commutes:</strong> EMOVE Cruiser ($1,399). 62 miles, hydraulic suspension, 1,000W motor.</span>
                   </li>
                   <li className="flex items-start gap-2 text-foreground/80 text-sm">
                     <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 mt-0.5 flex-shrink-0" />
-                    <span><strong className="text-foreground">Best on a budget:</strong> Hiboy S2 Pro ($460) — flat-proof tires, seat included, 25-mile range.</span>
+                    <span><strong className="text-foreground">Best on a budget:</strong> Hiboy S2 Pro ($460), flat-proof tires, seat included, 25-mile range.</span>
                   </li>
                   <li className="flex items-start gap-2 text-foreground/80 text-sm">
                     <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 mt-0.5 flex-shrink-0" />
-                    <span><strong className="text-foreground">Best commuter polish:</strong> NIU KQi3 Sport ($600) — regen braking, self-healing tires, refined app.</span>
+                    <span><strong className="text-foreground">Best commuter polish:</strong> NIU KQi3 Sport ($600), regen braking, self-healing tires, refined app.</span>
                   </li>
                   <li className="flex items-start gap-2 text-foreground/80 text-sm">
                     <Star className="h-4 w-4 text-yellow-500 fill-yellow-500 mt-0.5 flex-shrink-0" />
-                    <span><strong className="text-foreground">Best for errands:</strong> Razor EcoSmart Metro ($450) — bamboo deck, built-in seat, rear basket.</span>
+                    <span><strong className="text-foreground">Best for errands:</strong> Razor EcoSmart Metro ($450). bamboo deck, built-in seat, rear basket.</span>
                   </li>
                 </ul>
                 <p className="text-foreground/80 leading-relaxed">
@@ -1258,7 +1258,7 @@ export default function BestElectricScooterWithSeat() {
                     GreenReviewsHub Review Hub
                   </h3>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Power stations, e-bikes, lawn equipment, smart home, and more — all reviewed with honest specs and real data.
+                    Power stations, e-bikes, lawn equipment, smart home, and more. all reviewed with honest specs and real data.
                   </p>
                   <span className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-3">
                     Browse all reviews <ChevronRight className="h-4 w-4" />

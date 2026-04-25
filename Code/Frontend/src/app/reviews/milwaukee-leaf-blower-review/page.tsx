@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title:
       'Milwaukee M18 FUEL Leaf Blower Review 2026: 145 MPH Handheld and Backpack Tested',
     description:
-      'Full review of the Milwaukee M18 FUEL backpack blower (2824-20) and handheld (2728-20) — specs, runtime, comparisons, and California CARB gas-blower ban context.',
+      'Full review of the Milwaukee M18 FUEL backpack blower (2824-20) and handheld (2728-20), specs, runtime, comparisons, and California CARB gas-blower ban context.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -96,7 +96,7 @@ const faqSchema = {
       name: 'Is the Milwaukee M18 FUEL backpack blower as powerful as a gas backpack?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For most residential and light commercial tasks, yes. The 2824-20 hits 600 CFM at 145 MPH — that is within striking range of a Stihl BR 600 gas backpack (677 CFM, 238 MPH). Gas still wins on raw air speed for wet leaves and stubborn debris, but the Milwaukee clears dry leaves, grass clippings, and typical driveway debris just as effectively with less vibration, no fumes, no pull start, and no gas mixing.',
+        text: 'For most residential and light commercial tasks, yes. The 2824-20 hits 600 CFM at 145 MPH, that is within striking range of a Stihl BR 600 gas backpack (677 CFM, 238 MPH). Gas still wins on raw air speed for wet leaves and stubborn debris, but the Milwaukee clears dry leaves, grass clippings, and typical driveway debris just as effectively with less vibration, no fumes, no pull start, and no gas mixing.',
       },
     },
     {
@@ -112,7 +112,7 @@ const faqSchema = {
       name: 'Does California AQMD offer rebates on the Milwaukee leaf blower?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, in many districts. South Coast AQMD (Los Angeles, Orange, Riverside, San Bernardino counties) runs a Commercial Electric Lawn Mower and Leaf Blower Exchange Program with rebates historically between $150 and $1,000 per unit when a commercial operator trades in a working gas leaf blower. San Joaquin Valley, Sacramento Metro, and Bay Area AQMD have run similar programs. Residential rebates are less common but worth checking each year — programs open and close based on funding.',
+        text: 'Yes, in many districts. South Coast AQMD (Los Angeles, Orange, Riverside, San Bernardino counties) runs a Commercial Electric Lawn Mower and Leaf Blower Exchange Program with rebates historically between $150 and $1,000 per unit when a commercial operator trades in a working gas leaf blower. San Joaquin Valley, Sacramento Metro, and Bay Area AQMD have run similar programs. Residential rebates are less common but worth checking each year. programs open and close based on funding.',
       },
     },
     {
@@ -136,7 +136,7 @@ const faqSchema = {
       name: 'Can I use my existing Milwaukee M18 batteries with the backpack blower?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — any M18 battery works, though the 2824-20 backpack is engineered for dual 12.0Ah HIGH OUTPUT packs to hit its rated air volume. Smaller 5.0Ah or 8.0Ah batteries run but produce less airflow and shorter runtime. If you already own M18 tools and 12.0Ah packs, buying the 2824-20 tool-only saves roughly $200 over the kit.',
+        text: 'Yes; any M18 battery works, though the 2824-20 backpack is engineered for dual 12.0Ah HIGH OUTPUT packs to hit its rated air volume. Smaller 5.0Ah or 8.0Ah batteries run but produce less airflow and shorter runtime. If you already own M18 tools and 12.0Ah packs, buying the 2824-20 tool-only saves roughly $200 over the kit.',
       },
     },
   ],
@@ -206,10 +206,10 @@ export default function MilwaukeeLeafBlowerReview() {
               pros={[
                 'POWERSTATE brushless motor, true pro output',
                 'Plugs into 250+ tool M18 ecosystem',
-                'Zero emissions — California CARB-compliant for new sales',
+                'Zero emissions; California CARB-compliant for new sales',
               ]}
               cons={[
-                'Backpack kit $599 — premium price',
+                'Backpack kit $599, premium price',
                 'Needs dual 12.0Ah HIGH OUTPUT packs for rated performance',
               ]}
               source='milwaukee-leaf-blower'
@@ -230,13 +230,12 @@ export default function MilwaukeeLeafBlowerReview() {
                 Milwaukee&apos;s M18 FUEL leaf blower lineup is the most
                 credible battery answer to gas for pro landscapers working in
                 California. The 2824-20 dual-battery backpack blower pushes 600
-                CFM at 145 MPH — close enough to a Stihl BR 600 gas backpack
+                CFM at 145 MPH, close enough to a Stihl BR 600 gas backpack
                 that it clears the same driveways, parking lots, and curbside
                 leaf piles without the fumes, the pull start, or the CARB
                 compliance headache. The handheld 2728-20 hits 120 MPH at 450
                 CFM and is the smarter buy for most homeowners. Both snap into
-                the 250+ tool M18 battery ecosystem. The price tag is steep —
-                $599 for the backpack kit, $299 for the handheld — but if you
+                the 250+ tool M18 battery ecosystem. The price tag is steep. $599 for the backpack kit, $299 for the handheld, but if you
                 already own M18 tools or you are a pro crew trying to stay
                 legal in LA, Bay Area, or Central Valley cities, the math works.
               </p>
@@ -423,7 +422,7 @@ export default function MilwaukeeLeafBlowerReview() {
                 What matters more than peak numbers is how consistent the
                 airflow is as the battery drains. Brushless motors with
                 electronic battery monitoring do not slow down noticeably until
-                the battery is nearly dead — the blower pushes the same CFM at
+                the battery is nearly dead, the blower pushes the same CFM at
                 20% state of charge as it does at 100%. With brushed motors,
                 you lose 15-25% of peak airflow in the last third of the
                 battery. On the job, that consistency means a pro crew can
@@ -435,19 +434,17 @@ export default function MilwaukeeLeafBlowerReview() {
                 Dual-Battery Backpack (2824-20): The Gas-Replacement Pick
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The 2824-20 is Milwaukee&apos;s answer to the Stihl BR 600 —
-                the benchmark gas backpack that has dominated commercial
+                The 2824-20 is Milwaukee&apos;s answer to the Stihl BR 600, the benchmark gas backpack that has dominated commercial
                 crews for 20+ years. It takes two M18 batteries simultaneously
                 in a dual-port tray on the frame, and Milwaukee tunes the
                 motor for the combined discharge capability of a dual 12.0Ah
                 HIGH OUTPUT setup. Running smaller batteries (5.0Ah, 8.0Ah)
-                still works but the motor throttles back to protect them —
-                you&apos;ll see 450-500 CFM instead of 600.
+                still works but the motor throttles back to protect them, you&apos;ll see 450-500 CFM instead of 600.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Fit and ergonomics are where Milwaukee surprised us. The
                 backpack harness uses a padded hip belt that transfers most of
-                the 20.8 lbs of weight to the hips — not the shoulders — the
+                the 20.8 lbs of weight to the hips, not the shoulders — the
                 way a good hiking pack does. The vibration dampening is
                 noticeably better than any gas backpack, because there is no
                 reciprocating piston. After four hours of cleanup, the
@@ -458,7 +455,7 @@ export default function MilwaukeeLeafBlowerReview() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The control is a simple trigger on the tube handle with a
-                variable-speed knob and cruise-control lock — identical to how
+                variable-speed knob and cruise-control lock. identical to how
                 gas backpack controls have worked for decades, so crews
                 coming off Stihl or Echo will not need any adjustment period.
                 The only real learning curve is the startup ritual: instead of
@@ -478,7 +475,7 @@ export default function MilwaukeeLeafBlowerReview() {
                 a quarter-acre lot of leaves, or a typical home garage
                 cleanout. It weighs just under 10 lbs with an 8.0Ah battery
                 installed, and the balance point puts most of the weight in
-                the palm rather than wrist — you can run it for 20 minutes at
+                the palm rather than wrist. You can run it for 20 minutes at
                 a time without fatigue, which is about how long a single 8.0Ah
                 pack lasts at moderate throttle.
               </p>
@@ -486,8 +483,7 @@ export default function MilwaukeeLeafBlowerReview() {
                 The 2728-20 uses a standard tube + nozzle configuration with
                 a concentrator attachment in the box. It&apos;s loud at full
                 trigger (about 103 dB(A) at operator ear per OSHA-standard
-                test), though at 50 ft the measured sound is a civil 63 dB(A)
-                — well below the 65 dB(A) threshold many California cities use
+                test), though at 50 ft the measured sound is a civil 63 dB(A). Well below the 65 dB(A) threshold many California cities use
                 for their residential blower ordinances. Compared to the EGO
                 765 CFM handheld (LB7654) or DeWalt FLEXVOLT handheld
                 (DCBL772B), the Milwaukee sits between them on raw CFM but
@@ -594,7 +590,7 @@ export default function MilwaukeeLeafBlowerReview() {
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <strong>Verdict:</strong> If you already own FLEXVOLT tools,
-                  get the DeWalt. If you own M18 tools — or plan to invest in a
+                  get the DeWalt. If you own M18 tools, or plan to invest in a
                   broader power-tool platform — get the Milwaukee. The
                   real-world airflow difference is small enough that ecosystem
                   wins out.
@@ -606,7 +602,7 @@ export default function MilwaukeeLeafBlowerReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Stihl BR 600 is the gas backpack most California crews are
-                replacing. It produces 677 CFM at 238 MPH — a real performance
+                replacing. It produces 677 CFM at 238 MPH, a real performance
                 lead over any cordless backpack on the market. On stubborn wet
                 leaves or parking lots with compacted debris, gas still wins
                 clearly. But the BR 600 weighs 22 lbs dry, vibrates
@@ -616,8 +612,8 @@ export default function MilwaukeeLeafBlowerReview() {
                 blower sales under the CARB SORE regulation.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For most residential cleanup — grass clippings, dry leaves,
-                driveway cleaning — you do not need 677 CFM. The Milwaukee
+                For most residential cleanup, grass clippings, dry leaves,
+                driveway cleaning, you do not need 677 CFM. The Milwaukee
                 2824-20 clears the same spaces just as fast in practice
                 because the limiting factor is how quickly you can walk and
                 direct the airflow, not peak CFM. For the narrow band of work
@@ -631,7 +627,7 @@ export default function MilwaukeeLeafBlowerReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The EGO LB7654 is the highest-CFM handheld on the consumer
-                market — 765 CFM at 200 MPH, from a single EGO 56V battery.
+                market, 765 CFM at 200 MPH, from a single EGO 56V battery.
                 On paper, it blows past the Milwaukee 2728-20 handheld
                 (450 CFM, 120 MPH). In practice, the EGO is a much larger,
                 heavier handheld optimized for maximum peak performance; the
@@ -671,7 +667,7 @@ export default function MilwaukeeLeafBlowerReview() {
                 the frame to keep leaves and grass out of the impeller. After
                 90 days of rotation between four landscaping crews, the
                 housing survived scratches and minor impacts without any
-                functional issues reported — consistent with Milwaukee&apos;s
+                functional issues reported, consistent with Milwaukee&apos;s
                 broader reputation for pro-grade cordless durability.
               </p>
 
@@ -694,15 +690,15 @@ export default function MilwaukeeLeafBlowerReview() {
                 Menlo Park, and dozens of other California cities ban the
                 USE of gas blowers within city limits regardless of when
                 they were purchased. If you run a crew that works in those
-                cities, battery is no longer optional — it is the
+                cities, battery is no longer optional, it is the
                 regulatory default.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 South Coast AQMD Exchange Program
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                South Coast AQMD — which covers LA, Orange, Riverside, and San
-                Bernardino counties — has run a Commercial Electric Lawn
+                South Coast AQMD, which covers LA, Orange, Riverside, and San
+                Bernardino counties, has run a Commercial Electric Lawn
                 Mower and Leaf Blower Exchange Program in recent years that
                 pays $150-$1,000 per unit when a commercial operator turns in
                 a working gas blower and replaces it with a qualified
@@ -742,15 +738,15 @@ export default function MilwaukeeLeafBlowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      600 CFM / 145 MPH on the backpack — gas-comparable output
+                      600 CFM / 145 MPH on the backpack; gas-comparable output
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      M18 platform — 250+ compatible tools
+                      M18 platform. 250+ compatible tools
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      No emissions — CARB SORE compliant for new sales
+                      No emissions; CARB SORE compliant for new sales
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -762,7 +758,7 @@ export default function MilwaukeeLeafBlowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      Quiet — under 65 dB(A) at 50 ft meets most city
+                      Quiet, under 65 dB(A) at 50 ft meets most city
                       ordinances
                     </li>
                   </ul>
@@ -774,7 +770,7 @@ export default function MilwaukeeLeafBlowerReview() {
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      Backpack kit $599 — premium pricing
+                      Backpack kit $599, premium pricing
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -920,8 +916,7 @@ export default function MilwaukeeLeafBlowerReview() {
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     Yes. Any M18 battery fits. For the 2824-20 backpack you
-                    want dual 12.0Ah HIGH OUTPUT packs to hit rated output —
-                    smaller packs work but throttle airflow down. Tool-only
+                    want dual 12.0Ah HIGH OUTPUT packs to hit rated output, smaller packs work but throttle airflow down. Tool-only
                     purchase saves ~$200 over the kit if you already own
                     batteries.
                   </p>
@@ -938,7 +933,7 @@ export default function MilwaukeeLeafBlowerReview() {
                 backpack comes close enough to a Stihl BR 600 to replace it
                 for 90% of real work, and the M18 platform ecosystem is the
                 biggest in cordless pro tools. The 2728-20 handheld is the
-                sleeper pick here — smaller, half the price, and more than
+                sleeper pick here; smaller, half the price, and more than
                 enough power for most homeowners already on M18. Neither
                 blower is the cheapest way to solve the problem (EGO does
                 that), but they&apos;re the right answer for anyone

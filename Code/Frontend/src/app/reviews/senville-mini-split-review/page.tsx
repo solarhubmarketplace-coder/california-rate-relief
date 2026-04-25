@@ -104,7 +104,7 @@ const faqSchema = {
       name: 'Can I install a Senville mini split myself?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Some Senville models ship with pre-charged quick-connect line sets that support DIY install — similar to MrCool DIY 4th Gen. Verify the specific SKU you are buying: not every Senville model is DIY-friendly. For traditional (non-quick-connect) Senville units you need a licensed HVAC contractor to do the vacuum, leak check, and refrigerant commissioning. If warranty matters, read the product page carefully before ordering.',
+        text: 'Some Senville models ship with pre-charged quick-connect line sets that support DIY install, similar to MrCool DIY 4th Gen. Verify the specific SKU you are buying: not every Senville model is DIY-friendly. For traditional (non-quick-connect) Senville units you need a licensed HVAC contractor to do the vacuum, leak check, and refrigerant commissioning. If warranty matters, read the product page carefully before ordering.',
       },
     },
     {
@@ -120,7 +120,7 @@ const faqSchema = {
       name: 'Does Senville qualify for TECH Clean California and 25C rebates?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For 25C federal tax credit — yes, Senville AURA and higher-efficiency LETO models meet the SEER2 18+ / HSPF2 8.5+ threshold. You can claim up to $2,000 via IRS Form 5695. For TECH Clean California rebates — typically yes, but the rebate requires installation by a TECH-approved contractor who handles the rebate paperwork. If you DIY install a Senville, you will not receive the TECH Clean California rebate. If a professional installer installs it, you can — but many TECH contractors prefer to spec the brands they carry, which may not be Senville.',
+        text: 'For 25C federal tax credit. yes, Senville AURA and higher-efficiency LETO models meet the SEER2 18+ / HSPF2 8.5+ threshold. You can claim up to $2,000 via IRS Form 5695. For TECH Clean California rebates. Typically yes, but the rebate requires installation by a TECH-approved contractor who handles the rebate paperwork. If you DIY install a Senville, you will not receive the TECH Clean California rebate. If a professional installer installs it, you can, but many TECH contractors prefer to spec the brands they carry, which may not be Senville.',
       },
     },
     {
@@ -465,7 +465,7 @@ export default function SenvilleMiniSplitReview() {
                 Manufacturing is done in China under Senville&apos;s spec,
                 similar to how MrCool, Klimaire, and several other
                 online-direct brands operate. The underlying factories are
-                competent — these are not fly-by-night operations — but
+                competent, these are not fly-by-night operations — but
                 quality control varies slightly more unit-to-unit than
                 top-tier brands. Senville&apos;s track record on Amazon
                 across 10+ years shows consistently 4.0+ star ratings on
@@ -483,7 +483,7 @@ export default function SenvilleMiniSplitReview() {
                 split. Available in 9K, 12K, 18K, 24K, 30K, and 36K BTU
                 capacities, with the 24K at roughly $1,099 representing the
                 sweet spot for medium-size rooms or open-plan living
-                spaces. SEER2 is ~19, HSPF2 ~8.5 — both above federal
+                spaces. SEER2 is ~19, HSPF2 ~8.5, both above federal
                 minimums and at the 25C federal tax credit threshold for
                 California.
               </p>
@@ -508,7 +508,7 @@ export default function SenvilleMiniSplitReview() {
                 22 in smaller capacities, HSPF2 up to 10, and a more
                 refined indoor head design with slimmer bezel and hidden
                 display. Indoor noise drops to ~24 dB on low fan
-                speed — legitimately quiet.
+                speed. legitimately quiet.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 At $1,399 for the 18K BTU unit, AURA is $300 above LETO but
@@ -526,14 +526,14 @@ export default function SenvilleMiniSplitReview() {
                 The SENA line is Senville&apos;s multi-zone option: one
                 outdoor condenser supporting 2, 3, or 4 indoor heads.
                 Total system capacity runs 18K to 42K BTU. Configuration
-                flexibility is similar to dealer brands — mix wall-mount
+                flexibility is similar to dealer brands, mix wall-mount
                 and ceiling-cassette heads, match head BTU to room size
                 independently. The 2-head 18K+18K setup at roughly $2,199
                 is the typical California retrofit starting point for a
                 primary bedroom plus living area.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                SENA multi-zone is generally NOT DIY-friendly — you&apos;ll
+                SENA multi-zone is generally NOT DIY-friendly, you&apos;ll
                 need a licensed HVAC contractor to do the refrigerant line
                 flaring, vacuum, and leak testing across multiple runs.
                 Factor $2,000-$4,000 installation cost on top of the
@@ -560,7 +560,7 @@ export default function SenvilleMiniSplitReview() {
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
-                    No HVAC vacuum pump needed — the factory charge is
+                    No HVAC vacuum pump needed. The factory charge is
                     sealed and released when the lines connect.
                   </span>
                 </li>
@@ -715,7 +715,7 @@ export default function SenvilleMiniSplitReview() {
                 Klimaire is the other prominent online-direct mini split
                 brand in Senville&apos;s tier. Pricing is similar (Klimaire
                 24K BTU single-zone runs $1,050-$1,250), quality is
-                similar. Klimaire has thinner US channel presence — less
+                similar. Klimaire has thinner US channel presence, less
                 common on Amazon, rare at Home Depot. Senville wins on
                 brand visibility and consumer reviews; Klimaire
                 occasionally undercuts on price. Both are acceptable
@@ -778,7 +778,7 @@ export default function SenvilleMiniSplitReview() {
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
                       TECH Clean California rebate requires a TECH
-                      contractor — limits homeowner purchase flexibility
+                      contractor. Limits homeowner purchase flexibility
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -907,7 +907,7 @@ export default function SenvilleMiniSplitReview() {
                 multi-zone retrofits. Amazon and Home Depot availability
                 make purchase easy, and some SKUs support DIY quick-connect
                 install. The 5-year compressor warranty is shorter than
-                peers, and the documentation isn&apos;t MrCool-grade — but
+                peers, and the documentation isn&apos;t MrCool-grade; but
                 the equipment savings are real. For California buyers who
                 can&apos;t access TECH Clean California rebates (rural
                 areas, smaller jobs) or who are installing in secondary

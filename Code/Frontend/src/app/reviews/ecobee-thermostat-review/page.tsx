@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title:
       'Ecobee Smart Thermostat Premium Review 2026: The Nest Alternative Worth Buying?',
     description:
-      'Ecobee Smart Thermostat Premium review — built-in Alexa, SmartSensor room balancing, air quality monitoring, 26% HVAC savings. Full pros, cons, and comparison vs Nest.',
+      'Ecobee Smart Thermostat Premium review, built-in Alexa, SmartSensor room balancing, air quality monitoring, 26% HVAC savings. Full pros, cons, and comparison vs Nest.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -121,7 +121,7 @@ const faqSchema = {
       name: 'Is the built-in Alexa any good?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'It is a legitimate Alexa speaker — you can ask it questions, play podcasts, set timers, control smart home devices, and make Alexa-to-Alexa calls. The speaker is small but clear enough for podcasts and news in a hallway or small room. It is not a replacement for a dedicated Echo speaker with great audio, but for a smart thermostat that doubles as a hallway Alexa endpoint, it works well.',
+        text: 'It is a legitimate Alexa speaker. you can ask it questions, play podcasts, set timers, control smart home devices, and make Alexa-to-Alexa calls. The speaker is small but clear enough for podcasts and news in a hallway or small room. It is not a replacement for a dedicated Echo speaker with great audio, but for a smart thermostat that doubles as a hallway Alexa endpoint, it works well.',
       },
     },
     {
@@ -232,7 +232,7 @@ export default function EcobeeThermostatReview() {
                 built-in Alexa speaker, a SmartSensor for room-level
                 temperature balancing, air quality monitoring, native HomeKit,
                 Matter, and compatibility with every major smart home
-                ecosystem — all for $249, which is $30 less than the Nest 4th
+                ecosystem. All for $249, which is $30 less than the Nest 4th
                 Gen. Ecobee&apos;s third-party-verified 26% HVAC savings claim
                 is aggressive, but even conservative real-world estimates land
                 in the 15-20% range. For Apple users, Alexa households, and
@@ -436,7 +436,7 @@ export default function EcobeeThermostatReview() {
                 with photos and short videos for every wiring scenario. If
                 your old thermostat had an unusual wiring configuration — as
                 older California homes often do with heat-only furnaces or
-                line-voltage conversions — Ecobee&apos;s support has a
+                line-voltage conversions, Ecobee&apos;s support has a
                 reputation for actually helping through chat and phone, which
                 matters when you have an HVAC system half taken apart.
               </p>
@@ -448,7 +448,7 @@ export default function EcobeeThermostatReview() {
                 The SmartSensor is the single most useful feature that sets
                 Ecobee apart from Nest. Most homes have uneven temperatures
                 because the thermostat lives in a hallway while the rooms you
-                actually use — bedrooms, home offices, living rooms — are far
+                actually use; bedrooms, home offices, living rooms; are far
                 from the hallway. The thermostat thinks 72°F is 72°F; you feel
                 it as 68°F in the bedroom and 76°F in the living room.
               </p>
@@ -474,7 +474,7 @@ export default function EcobeeThermostatReview() {
                 Built-in Alexa: More Useful Than You Expect
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Premium includes a full Alexa implementation — speaker,
+                The Premium includes a full Alexa implementation, speaker,
                 microphones, and a physical mic mute button for privacy. You
                 can ask it to play music or podcasts, answer questions, set
                 timers, control other smart home devices, and make
@@ -488,7 +488,7 @@ export default function EcobeeThermostatReview() {
                 hallway wall where they did not want to add an extra device,
                 the built-in Alexa effectively turns the thermostat into a
                 dual-purpose product. If you are paying $249 anyway, the
-                included Alexa speaker is essentially free — the Echo Dot it
+                included Alexa speaker is essentially free, the Echo Dot it
                 replaces costs $50.
               </p>
 
@@ -523,13 +523,13 @@ export default function EcobeeThermostatReview() {
                 humidity, and temperature. The thermostat displays current
                 air quality as a color-coded chip (good / fair / poor) and
                 logs data over time in the app. This is genuinely useful for
-                California homes during wildfire smoke events — a spike in
+                California homes during wildfire smoke events. a spike in
                 TVOCs tells you to close windows and check your air purifier,
                 without needing a separate air quality monitor.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 It is not a replacement for a dedicated PM2.5 particulate
-                monitor — the Ecobee does not measure particles directly. But
+                monitor. the Ecobee does not measure particles directly. But
                 combined with an outdoor PurpleAir reading and your HVAC fan
                 running with a MERV-13 filter, the Ecobee gives you enough
                 data to know when indoor air is getting worse and when to
@@ -553,7 +553,7 @@ export default function EcobeeThermostatReview() {
                 SCE, and SDG&amp;E AC Saver-style programs. During grid stress
                 events, the thermostat pre-cools the home before peak hours
                 and then holds a slightly higher setpoint during the peak
-                window. Participants earn bill credits — typically $25-$50
+                window. Participants earn bill credits. Typically $25-$50
                 sign-up bonuses plus event-based credits. Eligibility varies
                 by utility and year; check the current program terms directly
                 with your utility.
@@ -830,7 +830,7 @@ export default function EcobeeThermostatReview() {
                     Is the built-in Alexa any good?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — it handles voice commands, podcasts, timers, and
+                    Yes; it handles voice commands, podcasts, timers, and
                     smart home control well. The speaker is not audiophile
                     grade but it is clear for talk content. Replaces the need
                     for a separate Echo Dot on a hallway wall.
@@ -868,7 +868,7 @@ export default function EcobeeThermostatReview() {
                 The Ecobee Smart Thermostat Premium is the best
                 feature-per-dollar smart thermostat on the market in 2026. It
                 beats the Nest on price, ecosystem flexibility, built-in voice,
-                included room sensor, and warranty length — trading only the
+                included room sensor, and warranty length. Trading only the
                 Nest&apos;s more polished learning algorithm and marginally
                 nicer industrial design. For Apple households, Alexa-first
                 smart homes, multi-zone homes with uneven temperatures, and

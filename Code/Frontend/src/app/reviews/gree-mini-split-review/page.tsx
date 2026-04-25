@@ -96,7 +96,7 @@ const faqSchema = {
       name: 'Where can I buy a Gree mini split?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Gree sells exclusively through HVAC dealer distribution in the US — this means licensed HVAC contractors, distributors, and supply houses. Unlike MrCool or Senville, you generally cannot buy a Gree unit from a big-box retail channel or directly online to a homeowner. Find a Gree-authorized distributor through greecomfort.com, or work with a local HVAC contractor who carries the brand. Dealer-direct purchase is a ~25-35% discount vs retail-channel mini splits.',
+        text: 'Gree sells exclusively through HVAC dealer distribution in the US, this means licensed HVAC contractors, distributors, and supply houses. Unlike MrCool or Senville, you generally cannot buy a Gree unit from a big-box retail channel or directly online to a homeowner. Find a Gree-authorized distributor through greecomfort.com, or work with a local HVAC contractor who carries the brand. Dealer-direct purchase is a ~25-35% discount vs retail-channel mini splits.',
       },
     },
     {
@@ -120,7 +120,7 @@ const faqSchema = {
       name: 'How does Gree compare to Mitsubishi and Daikin?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Gree is generally 20-35% cheaper than equivalent Mitsubishi or Daikin units through dealer-direct purchase, but also carries a shorter compressor warranty (7 years vs Mitsubishi 12 years / Daikin 12 years). Build quality on the Sapphire line is competitive with Mitsubishi M-Series. Build quality on the Livo Gen 3 is a clear step below. For a budget-conscious buyer, Gree Sapphire gets you 85-90% of Mitsubishi M-Series performance at 65-75% of the price. Serviceability is weaker outside major metros — verify a local contractor is comfortable servicing Gree before you buy.',
+        text: 'Gree is generally 20-35% cheaper than equivalent Mitsubishi or Daikin units through dealer-direct purchase, but also carries a shorter compressor warranty (7 years vs Mitsubishi 12 years / Daikin 12 years). Build quality on the Sapphire line is competitive with Mitsubishi M-Series. Build quality on the Livo Gen 3 is a clear step below. For a budget-conscious buyer, Gree Sapphire gets you 85-90% of Mitsubishi M-Series performance at 65-75% of the price. Serviceability is weaker outside major metros. Verify a local contractor is comfortable servicing Gree before you buy.',
       },
     },
     {
@@ -136,7 +136,7 @@ const faqSchema = {
       name: 'What is the Gree warranty?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '7-year compressor warranty and 5-year parts warranty on most residential units, provided installation is done by a licensed HVAC technician and the product is registered within 60 days of installation. Professional installation is a condition of the warranty — DIY installation voids it. This is standard in the industry for non-DIY brands.',
+        text: '7-year compressor warranty and 5-year parts warranty on most residential units, provided installation is done by a licensed HVAC technician and the product is registered within 60 days of installation. Professional installation is a condition of the warranty, DIY installation voids it. This is standard in the industry for non-DIY brands.',
       },
     },
   ],
@@ -206,7 +206,7 @@ export default function GreeMiniSplitReview() {
                 'TECH Clean California and 25C federal credit eligible',
               ]}
               cons={[
-                'Not DIY-friendly — licensed installer required',
+                'Not DIY-friendly; licensed installer required',
                 'Service network weaker than Mitsubishi/Daikin outside metros',
               ]}
               source='gree-mini-split'
@@ -233,7 +233,7 @@ export default function GreeMiniSplitReview() {
                 $1,499 for 12K BTU at SEER2 22), and Vireo+ (cold-climate
                 multi-zone, $2,499+ for a 2-head setup). Dealer-direct pricing
                 runs 25-35% below equivalent Mitsubishi or Daikin units.
-                Efficiency is legitimately good — Sapphire hits SEER2 22 in
+                Efficiency is legitimately good. Sapphire hits SEER2 22 in
                 smaller capacities. The 7-year compressor warranty is
                 shorter than Mitsubishi&apos;s 12 years but longer than most
                 budget brands. The catch: Gree is dealer-direct only. You
@@ -446,7 +446,7 @@ export default function GreeMiniSplitReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Gree Electric Appliances Inc., founded in 1991 and
                 headquartered in Zhuhai, China, is the single largest
-                producer of mini-split heat pumps in the world — roughly
+                producer of mini-split heat pumps in the world, roughly
                 25% global market share by unit volume. They also
                 manufacture under license for multiple Western brands,
                 meaning some of the products you see on US shelves with
@@ -474,8 +474,7 @@ export default function GreeMiniSplitReview() {
                 18K, 24K, 30K, and 36K BTU. The 24K BTU unit at roughly
                 $1,199 dealer-direct is the workhorse for medium rooms
                 (400-600 sq ft) or an open living/kitchen area up to 1,000
-                sq ft. SEER2 hovers around 19-20 depending on capacity —
-                solidly above the federal minimum of 15, and enough to
+                sq ft. SEER2 hovers around 19-20 depending on capacity. Solidly above the federal minimum of 15, and enough to
                 qualify for 25C tax credit (requires SEER2 18+ in the US
                 South region including California).
               </p>
@@ -485,7 +484,7 @@ export default function GreeMiniSplitReview() {
                 M-Series or Daikin Quaternity, control electronics are
                 simpler, and the Wi-Fi module is a $60 optional add-on
                 rather than built in. What you&apos;re paying for is a
-                working, quiet, efficient unit at a lower price — not a
+                working, quiet, efficient unit at a lower price, not a
                 statement piece. For a guest bedroom, a converted garage
                 office, or a small rental unit, Livo Gen 3 is the right
                 pick.
@@ -549,7 +548,7 @@ export default function GreeMiniSplitReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The reason Gree can undercut Mitsubishi and Daikin on
-                pricing isn&apos;t just factory costs — it&apos;s the
+                pricing isn&apos;t just factory costs, it&apos;s the
                 distribution channel. A Mitsubishi or Daikin unit retails
                 through a layered path: factory → regional distributor →
                 local supply house → HVAC contractor → homeowner. Each
@@ -597,7 +596,7 @@ export default function GreeMiniSplitReview() {
                 existing AC (lower), and unit efficiency. Sapphire at SEER2
                 22 and Vireo+ cold-climate tend to qualify at the higher
                 tier. Participating contractors submit the rebate
-                application directly — no paperwork on your end.
+                application directly; no paperwork on your end.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 25C Federal Tax Credit
@@ -607,7 +606,7 @@ export default function GreeMiniSplitReview() {
                 Reduction Act, for qualifying heat pumps installed in your
                 primary residence. California falls in the &quot;South&quot;
                 region for this credit, so the efficiency threshold is
-                SEER2 18 or HSPF2 8.5 — easily met by any Sapphire or
+                SEER2 18 or HSPF2 8.5, easily met by any Sapphire or
                 Vireo+ unit. Claim via IRS Form 5695 on your federal taxes.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
@@ -629,7 +628,7 @@ export default function GreeMiniSplitReview() {
                 in PG&amp;E territory: dealer-direct equipment cost
                 ~$1,899, installation ~$2,500, total project ~$4,400.
                 Apply TECH Clean CA rebate $2,500, utility rebate $500,
-                federal 25C credit $2,000 — net cost after incentives
+                federal 25C credit $2,000. net cost after incentives
                 ~$0-$400. That&apos;s before any equipment savings vs
                 Mitsubishi.
               </p>
@@ -659,7 +658,7 @@ export default function GreeMiniSplitReview() {
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <strong>vs MrCool DIY 4th Gen:</strong> MrCool is the
-                  DIY-friendly pick — pre-charged quick-connect line sets,
+                  DIY-friendly pick. pre-charged quick-connect line sets,
                   sold at Home Depot and Costco, homeowner-install friendly.
                   MrCool runs ~10-15% higher than Gree dealer-direct but
                   saves you $1,500-$3,000 on installation if you DIY. Gree
@@ -691,7 +690,7 @@ export default function GreeMiniSplitReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      SEER2 22 on Sapphire 12K — high-efficiency tier
+                      SEER2 22 on Sapphire 12K, high-efficiency tier
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -822,7 +821,7 @@ export default function GreeMiniSplitReview() {
                 Gree is the best-kept secret in US mini splits in 2026. As
                 the world&apos;s largest manufacturer, they have the scale
                 and engineering depth to compete with Mitsubishi and Daikin
-                on performance — but their US strategy of dealer-direct
+                on performance. but their US strategy of dealer-direct
                 distribution keeps them off retail shelves and out of most
                 homeowners&apos; awareness. If you have a trusted HVAC
                 contractor who carries Gree, the Sapphire line is the pick

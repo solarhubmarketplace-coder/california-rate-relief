@@ -104,7 +104,7 @@ const faqSchema = {
       name: 'How long will the Jackery Explorer 2000 Plus power my house during an outage?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The 2,042 Wh battery can run essential loads — a refrigerator, Wi-Fi router, phone chargers, and LED lights — for roughly 13-20 hours on a single charge. With expansion battery packs (up to 12,000 Wh total), you can extend runtime to 3-5 days on essentials. Adding solar panels enables indefinite runtime during daylight.',
+        text: 'The 2,042 Wh battery can run essential loads — a refrigerator, Wi-Fi router, phone chargers, and LED lights, for roughly 13-20 hours on a single charge. With expansion battery packs (up to 12,000 Wh total), you can extend runtime to 3-5 days on essentials. Adding solar panels enables indefinite runtime during daylight.',
       },
     },
     {
@@ -144,7 +144,7 @@ const faqSchema = {
       name: 'How long does the Jackery 2000 Plus battery last?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The LiFePO4 battery is rated for 4,000 cycles to 70% capacity — the highest cycle life in its class. With daily use, that translates to roughly 11 years before meaningful degradation. LFP chemistry is also inherently safer and more temperature-stable than NMC batteries.',
+        text: 'The LiFePO4 battery is rated for 4,000 cycles to 70% capacity, the highest cycle life in its class. With daily use, that translates to roughly 11 years before meaningful degradation. LFP chemistry is also inherently safer and more temperature-stable than NMC batteries.',
       },
     },
   ],
@@ -258,7 +258,7 @@ export default function JackeryExplorer2000PlusReview() {
                 to $999-$1,299 have made it one of the best values in the
                 category. The 4,000-cycle LiFePO4 battery outlasts every
                 competitor, and the modular expansion system scales to 12,000
-                Wh for serious backup needs. The trade-offs are real — lower
+                Wh for serious backup needs. The trade-offs are real. lower
                 output (3,000W) and slower solar input (1,400W) than the
                 flagships — but for most California homeowners who want reliable
                 PSPS backup they can actually carry, this is the sweet spot.
@@ -346,7 +346,7 @@ export default function JackeryExplorer2000PlusReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 When the Jackery Explorer 2000 Plus launched, it was priced at
-                $1,999-$2,299 — competitive but not remarkable in a category
+                $1,999-$2,299. Competitive but not remarkable in a category
                 where EcoFlow and Bluetti were offering more raw power for
                 similar money. What has changed the calculus entirely is
                 price. The Explorer 2000 Plus now regularly sells for
@@ -362,8 +362,7 @@ export default function JackeryExplorer2000PlusReview() {
                 capability.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The price reduction does not reflect any quality compromise —
-                the underlying hardware is identical to the original launch
+                The price reduction does not reflect any quality compromise, the underlying hardware is identical to the original launch
                 unit. This is standard market dynamics as the portable power
                 station category matures and Jackery competes for market share
                 against an expanding field of LFP-based competitors.
@@ -406,7 +405,7 @@ export default function JackeryExplorer2000PlusReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Explorer 2000 Plus uses LiFePO4 (lithium iron phosphate)
-                cells rated for 4,000 cycles to 70% capacity — the highest
+                cells rated for 4,000 cycles to 70% capacity, the highest
                 cycle rating in this review series. For daily use, that
                 translates to roughly 11 years before the battery degrades to
                 70% of its original capacity. Even at that point, you still have
@@ -415,14 +414,14 @@ export default function JackeryExplorer2000PlusReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The modular expansion system is where Jackery made a smart
                 engineering decision. You can connect add-on battery packs to
-                scale the system up to approximately 12,000 Wh total — enough
+                scale the system up to approximately 12,000 Wh total, enough
                 for multi-day whole-home essential backup. The expansion packs
                 use the same LFP cells and connect directly to the main unit.
               </p>
               <div className='bg-muted/30 border border-border rounded-lg p-4 mb-6'>
                 <ul className='text-foreground/80 space-y-2 list-none pl-0'>
                   <li>
-                    <strong>Base unit:</strong> 2,042 Wh — essentials for 13-20
+                    <strong>Base unit:</strong> 2,042 Wh, essentials for 13-20
                     hours
                   </li>
                   <li>
@@ -461,7 +460,7 @@ export default function JackeryExplorer2000PlusReview() {
                 The Explorer 2000 Plus delivers 3,000W of continuous AC power
                 with a 6,000W surge rating. This is lower than the flagships —
                 the EcoFlow Delta Pro 3 does 4,000W and the Bluetti AC500 does
-                5,000W — but 3,000W is still substantial. It comfortably runs a
+                5,000W. but 3,000W is still substantial. It comfortably runs a
                 full-size refrigerator, a microwave, a coffee maker, multiple
                 laptops, and LED lighting simultaneously.
               </p>
@@ -477,7 +476,7 @@ export default function JackeryExplorer2000PlusReview() {
                 startup spikes from refrigerators and freezers without tripping
                 the inverter. In real-world testing, most users report the
                 Explorer 2000 Plus handles typical household loads without any
-                issues — the 3,000W limit only matters if you are trying to run
+                issues; the 3,000W limit only matters if you are trying to run
                 heavy-draw appliances simultaneously.
               </p>
 
@@ -503,7 +502,7 @@ export default function JackeryExplorer2000PlusReview() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For most California homeowners using this as a PSPS backup with
-                the base unit, the 1,400W solar input is adequate — you will
+                the base unit, the 1,400W solar input is adequate; you will
                 recharge fully each day. But if you are building a large
                 expanded system or living off-grid, the solar bottleneck is a
                 real limitation compared to the Bluetti AC500&apos;s 3,000W
@@ -571,7 +570,7 @@ export default function JackeryExplorer2000PlusReview() {
                 $150/kWh would be about $306 for the Explorer 2000 Plus
                 (2,042 Wh). Equity-eligible customers (low-income, medically
                 vulnerable, or in high fire-threat areas) receive approximately
-                $1,100/kWh, which could be around $2,247 — potentially covering
+                $1,100/kWh, which could be around $2,247, potentially covering
                 the entire purchase price at current sale prices. However, SGIP
                 eligibility for portable power stations varies and you should
                 confirm current rules at{' '}
@@ -598,7 +597,7 @@ export default function JackeryExplorer2000PlusReview() {
                   </h3>
                   <ul className='text-foreground/80 text-sm space-y-2 list-none pl-0'>
                     <li>
-                      Lightest in class at 61.5 lbs — actually portable
+                      Lightest in class at 61.5 lbs, actually portable
                     </li>
                     <li>
                       4,000-cycle LiFePO4 battery (best longevity in class)
@@ -658,7 +657,7 @@ export default function JackeryExplorer2000PlusReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge="Ready to buy?"
-                verdict="Explorer 2000 Plus is shipping today at Jackery with the latest sale pricing — check current discounts."
+                verdict="Explorer 2000 Plus is shipping today at Jackery with the latest sale pricing; check current discounts."
                 source="jackery-2000-plus"
                 variant="mid"
               />
@@ -810,8 +809,7 @@ export default function JackeryExplorer2000PlusReview() {
                   </li>
                   <li>
                     <strong>Apartment or condo residents</strong> who need
-                    portable backup they can store in a closet and move easily —
-                    61.5 lbs fits where 100+ lb units do not.
+                    portable backup they can store in a closet and move easily, 61.5 lbs fits where 100+ lb units do not.
                   </li>
                   <li>
                     <strong>Budget-first buyers</strong> who want to start small
@@ -820,8 +818,7 @@ export default function JackeryExplorer2000PlusReview() {
                   </li>
                   <li>
                     <strong>Remote workers</strong> who need UPS functionality to
-                    keep a laptop and internet running during short outages —
-                    the base unit covers 20+ hours of light use.
+                    keep a laptop and internet running during short outages; the base unit covers 20+ hours of light use.
                   </li>
                 </ul>
               </div>
@@ -847,8 +844,7 @@ export default function JackeryExplorer2000PlusReview() {
                   </h3>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
                     The 2,042 Wh battery can run essential loads — a
-                    refrigerator, Wi-Fi router, phone chargers, and LED lights —
-                    for roughly 13-20 hours on a single charge. With expansion
+                    refrigerator, Wi-Fi router, phone chargers, and LED lights; for roughly 13-20 hours on a single charge. With expansion
                     battery packs (up to ~12,000 Wh total), you can extend
                     runtime to 3-5 days on essentials. Adding solar panels
                     enables indefinite runtime during daylight.

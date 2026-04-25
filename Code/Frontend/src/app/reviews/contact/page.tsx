@@ -8,7 +8,7 @@ import { ChevronRight, Mail, MessageCircle, AlertCircle, Briefcase } from 'lucid
 export const metadata: Metadata = {
   title: 'Contact GreenReviewsHub',
   description:
-    'Get in touch with GreenReviewsHub — questions, corrections, partnerships, and press inquiries.',
+    'Get in touch with GreenReviewsHub, questions, corrections, partnerships, and press inquiries.',
   alternates: {
     canonical: '/reviews/contact',
   },

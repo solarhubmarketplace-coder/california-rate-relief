@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rad Power Bikes Review 2026: The Full Lineup Compared',
     description:
-      'Every Rad Power bike reviewed — RadRover 6 Plus, RadRunner 3 Plus, RadCity 5 Plus, RadExpand 5, RadWagon 5, RadTrike. Which Rad to buy and why.',
+      'Every Rad Power bike reviewed, RadRover 6 Plus, RadRunner 3 Plus, RadCity 5 Plus, RadExpand 5, RadWagon 5, RadTrike. Which Rad to buy and why.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -103,7 +103,7 @@ const faqSchema = {
       name: 'Where are Rad Power Bikes made?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Rad Power Bikes are designed in Seattle, Washington, where the company is headquartered. Final assembly happens in China, with some components sourced globally. Rad has a U.S. warehouse network for parts distribution and operates physical retail locations (Rad Experience Centers) in several major U.S. cities where you can test-ride before buying online.',
+        text: 'Rad Power Bikes are designed in Seattle, Washington, where the company is headquartered. Final assembly happens in China, with some components sourced globally. Rad has a U.S. Warehouse network for parts distribution and operates physical retail locations (Rad Experience Centers) in several major U.S. Cities where you can test-ride before buying online.',
       },
     },
     {
@@ -211,7 +211,7 @@ export default function RadPowerBikesHub() {
             {/* Intro */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Rad Power Bikes invented the direct-to-consumer e-bike category in North America. Founded in Seattle in 2007 by Mike Radenbaugh — who rebuilt a stranded e-bike on the side of a road as a 15-year-old — the company has shipped more than 650,000 bikes and captured the largest share of the U.S. e-bike market by volume. If you know one e-bike brand name, it&apos;s probably Rad.
+                Rad Power Bikes invented the direct-to-consumer e-bike category in North America. Founded in Seattle in 2007 by Mike Radenbaugh — who rebuilt a stranded e-bike on the side of a road as a 15-year-old; the company has shipped more than 650,000 bikes and captured the largest share of the U.S. E-bike market by volume. If you know one e-bike brand name, it&apos;s probably Rad.
               </p>
               <p className='text-lg text-foreground/80 leading-relaxed mb-8'>
                 The 2026 lineup is deeper than it&apos;s ever been: a fat-tire rugged commuter (RadRover 6 Plus), a utility runabout (RadRunner 3 Plus), a step-through city commuter (RadCity 5 Plus), a folding apartment bike (RadExpand 5), a family cargo hauler (RadWagon 5), and a three-wheel stability bike (RadTrike). This guide walks through the full lineup, who each bike is for, and where Rad genuinely beats the competition vs where it&apos;s been caught up.
@@ -345,13 +345,13 @@ export default function RadPowerBikesHub() {
 
               {/* RadRover 6 Plus */}
               <h2 id='radrover' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                1. RadRover 6 Plus — The Fat-Tire Flagship
+                1. RadRover 6 Plus, The Fat-Tire Flagship
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,999 · <strong>Motor:</strong> 750W geared hub (80 Nm) · <strong>Range:</strong> 25-45 mi · <strong>Weight:</strong> 74 lbs · <strong>Tires:</strong> 26 x 4 inches
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The RadRover is Rad&apos;s best-selling bike and the one most people think of when they say &quot;a Rad.&quot; Version 6 Plus is the current generation, released in 2022 and still on sale in 2026 with minor refinements. It&apos;s built around a massive 26 x 4-inch fat tire that floats over everything — pavement, dirt roads, packed snow, loose gravel, wooden docks — and a 750W geared hub motor rated for 80 Nm of torque.
+                The RadRover is Rad&apos;s best-selling bike and the one most people think of when they say &quot;a Rad.&quot; Version 6 Plus is the current generation, released in 2022 and still on sale in 2026 with minor refinements. It&apos;s built around a massive 26 x 4-inch fat tire that floats over everything. pavement, dirt roads, packed snow, loose gravel, wooden docks; and a 750W geared hub motor rated for 80 Nm of torque.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Real-world performance: Comfortable cruising at 18-20 mph on pavement, confidence-inspiring grip on loose surfaces, and genuine off-road capability on fire roads and easier trails. The torque is enough to pull a 220-pound rider plus a loaded cargo rack up 12-15% grades without the motor getting hot. The 672 Wh semi-integrated battery delivers 25-30 miles at aggressive pace or 40-45 miles at easy cruise.
@@ -370,7 +370,7 @@ export default function RadPowerBikesHub() {
 
               {/* RadRunner 3 Plus */}
               <h2 id='radrunner' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                2. RadRunner 3 Plus — The Swiss Army Knife
+                2. RadRunner 3 Plus, The Swiss Army Knife
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $2,299 · <strong>Motor:</strong> 750W geared hub · <strong>Range:</strong> 25-45 mi · <strong>Weight:</strong> 73 lbs · <strong>Cargo capacity:</strong> 350 lbs total
@@ -401,7 +401,7 @@ export default function RadPowerBikesHub() {
                 The RadCity is what most traditional e-bike shoppers are actually looking for: a step-through commuter with 27.5-inch hybrid tires, integrated lights, full fenders, a rear rack, and a torque-sensor pedal assist that feels closer to a Trek or Specialized than to the cadence-sensor Rads below it. At 65 lbs, it&apos;s the lightest bike in the standard Rad lineup.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The torque sensor is the story here. Unlike the RadRover or RadRunner, the RadCity 5 Plus measures how hard you&apos;re pushing on the pedals and delivers proportional assistance. The result is a bike that feels more like pedaling a regular bicycle with a tailwind — you&apos;re clearly contributing, and the motor amplifies your effort linearly instead of kicking in with a binary on/off sensation.
+                The torque sensor is the story here. Unlike the RadRover or RadRunner, the RadCity 5 Plus measures how hard you&apos;re pushing on the pedals and delivers proportional assistance. The result is a bike that feels more like pedaling a regular bicycle with a tailwind, you&apos;re clearly contributing, and the motor amplifies your effort linearly instead of kicking in with a binary on/off sensation.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For a daily-use commuter who wants something that rides like a bike but goes further and faster without sweating, the RadCity 5 Plus is the right Rad to buy.
@@ -426,7 +426,7 @@ export default function RadPowerBikesHub() {
 
               {/* RadExpand 5 */}
               <h2 id='radexpand' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                4. RadExpand 5 — The Folding Apartment Bike
+                4. RadExpand 5, The Folding Apartment Bike
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,499 · <strong>Motor:</strong> 750W geared hub · <strong>Range:</strong> 25-45 mi · <strong>Weight:</strong> 62 lbs · <strong>Folded size:</strong> 41 x 21 x 28 inches
@@ -454,7 +454,7 @@ export default function RadPowerBikesHub() {
                 <strong>Price:</strong> $2,299 · <strong>Motor:</strong> 750W geared hub · <strong>Range:</strong> 25-55 mi · <strong>Weight:</strong> 78 lbs · <strong>Total capacity:</strong> 450 lbs
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The RadWagon 5 is Rad&apos;s flagship cargo bike — a longtail design with a 70-inch wheelbase, 24-inch wheels (for a lower center of gravity), a massive rear rack rated for 120 lbs of cargo, and dual-kickstand parking. It fits two child seats side-by-side, includes running boards that double as footrests for kids, and has safety features like wheel skirts to keep small feet out of the spokes.
+                The RadWagon 5 is Rad&apos;s flagship cargo bike, a longtail design with a 70-inch wheelbase, 24-inch wheels (for a lower center of gravity), a massive rear rack rated for 120 lbs of cargo, and dual-kickstand parking. It fits two child seats side-by-side, includes running boards that double as footrests for kids, and has safety features like wheel skirts to keep small feet out of the spokes.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Real-world: families using the RadWagon 5 as a second-car replacement report typical errand loops of 15-25 miles round trip (school drop-off + grocery run + pickup) with the bike running entirely on Class 2 throttle when needed. The 672 Wh battery delivers that comfortably with range to spare. For longer trips, the dual-battery upgrade ($500) pushes range past 90 miles.
@@ -473,7 +473,7 @@ export default function RadPowerBikesHub() {
 
               {/* RadTrike */}
               <h2 id='radtrike' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                6. RadTrike — The Stability Pick
+                6. RadTrike. The Stability Pick
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $2,499 · <strong>Motor:</strong> 750W geared hub · <strong>Range:</strong> 25-40 mi · <strong>Weight:</strong> 82 lbs · <strong>Top speed:</strong> 14 mph
@@ -501,7 +501,7 @@ export default function RadPowerBikesHub() {
                 Rad Power Bikes offers a 1-year comprehensive warranty covering the motor, battery, controller, display, and components, plus an additional 2 years on the frame (3 years total frame warranty). The battery warranty is 1 year regardless of charge cycles — shorter than Lectric&apos;s 800-cycle spec but simpler to understand and make claims against.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The standout feature is the <strong>30-day test ride</strong>. Buy a Rad, ride it for up to 30 days, and if it isn&apos;t the right fit you can return it for a full refund (you pay return shipping, roughly $100-$150). No other major DTC e-bike brand offers a 30-day return window — most are 14 days or require the bike be unridden. This is the single biggest factor that de-risks a Rad purchase for first-time e-bike buyers.
+                The standout feature is the <strong>30-day test ride</strong>. Buy a Rad, ride it for up to 30 days, and if it isn&apos;t the right fit you can return it for a full refund (you pay return shipping, roughly $100-$150). No other major DTC e-bike brand offers a 30-day return window, most are 14 days or require the bike be unridden. This is the single biggest factor that de-risks a Rad purchase for first-time e-bike buyers.
               </p>
 
               {/* 30-day test ride */}
@@ -525,7 +525,7 @@ export default function RadPowerBikesHub() {
                     Are Rad Power Bikes any good?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — largest DTC e-bike brand in North America with 650K+ bikes sold. Good build quality, mature parts network, best return policy in the industry. Trade-offs are weight (70+ lbs on most models) and cadence-sensor feel on cheaper bikes.
+                    Yes; largest DTC e-bike brand in North America with 650K+ bikes sold. Good build quality, mature parts network, best return policy in the industry. Trade-offs are weight (70+ lbs on most models) and cadence-sensor feel on cheaper bikes.
                   </p>
                 </div>
                 <div>
@@ -533,7 +533,7 @@ export default function RadPowerBikesHub() {
                     Where are Rad Power Bikes made?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Designed in Seattle. Final assembly in China. Physical retail locations (Rad Experience Centers) in major U.S. cities.
+                    Designed in Seattle. Final assembly in China. Physical retail locations (Rad Experience Centers) in major U.S. Cities.
                   </p>
                 </div>
                 <div>
@@ -549,7 +549,7 @@ export default function RadPowerBikesHub() {
                     Do Rad Power Bikes have a throttle?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — every U.S. Rad ships as Class 2 with throttle up to 20 mph. Canadian and some state-spec bikes ship as Class 1 (pedal assist only) by default.
+                    Yes, every U.S. Rad ships as Class 2 with throttle up to 20 mph. Canadian and some state-spec bikes ship as Class 1 (pedal assist only) by default.
                   </p>
                 </div>
                 <div>

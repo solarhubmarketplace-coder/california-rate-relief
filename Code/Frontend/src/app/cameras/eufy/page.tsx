@@ -71,9 +71,9 @@ export default function EufyBrandHub() {
 
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>Watch-outs</h2>
               <div className='space-y-3'>
-                <div className='flex items-start gap-2'><AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} /><p><strong style={{ color: '#f5f5f5' }}>2022-2023 cloud-encryption controversy.</strong> Eufy faced public criticism in late 2022 when independent researchers found that some cloud-transmitted footage and alerts were not end-to-end encrypted despite the company&apos;s privacy marketing. Eufy publicly acknowledged the issue and rolled out encryption improvements and security fixes. If privacy is your main purchase reason, check current technical documentation and recent third-party security reviews before buying — the situation has evolved but deserves informed shopping.</p></div>
-                <div className='flex items-start gap-2'><AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} /><p><strong style={{ color: '#f5f5f5' }}>HomeBase is part of the system.</strong> Most Eufy cameras work best with a HomeBase hub for full features and local storage. Check whether your budget and setup plan includes the HomeBase — SoloCam line is the exception that doesn&apos;t require one.</p></div>
-                <div className='flex items-start gap-2'><AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} /><p><strong style={{ color: '#f5f5f5' }}>Optional cloud subscription still exists.</strong> Eufy does sell optional cloud storage subscriptions for users who want remote cloud backup. Unlike Ring, the subscription is genuinely optional rather than required for core features — but know the option exists if that&apos;s relevant to you.</p></div>
+                <div className='flex items-start gap-2'><AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} /><p><strong style={{ color: '#f5f5f5' }}>2022-2023 cloud-encryption controversy.</strong> Eufy faced public criticism in late 2022 when independent researchers found that some cloud-transmitted footage and alerts were not end-to-end encrypted despite the company&apos;s privacy marketing. Eufy publicly acknowledged the issue and rolled out encryption improvements and security fixes. If privacy is your main purchase reason, check current technical documentation and recent third-party security reviews before buying. the situation has evolved but deserves informed shopping.</p></div>
+                <div className='flex items-start gap-2'><AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} /><p><strong style={{ color: '#f5f5f5' }}>HomeBase is part of the system.</strong> Most Eufy cameras work best with a HomeBase hub for full features and local storage. Check whether your budget and setup plan includes the HomeBase, SoloCam line is the exception that doesn&apos;t require one.</p></div>
+                <div className='flex items-start gap-2'><AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} /><p><strong style={{ color: '#f5f5f5' }}>Optional cloud subscription still exists.</strong> Eufy does sell optional cloud storage subscriptions for users who want remote cloud backup. Unlike Ring, the subscription is genuinely optional rather than required for core features, but know the option exists if that&apos;s relevant to you.</p></div>
                 <div className='flex items-start gap-2'><AlertTriangle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#f59e0b' }} /><p><strong style={{ color: '#f5f5f5' }}>Chinese parent company consideration.</strong> For buyers concerned about data residency or Chinese ownership of security products, Anker&apos;s ownership is a consideration. Eufy has moved to decentralize processing where possible, but for users with specific procurement requirements (some businesses, government), verify compatibility with your own policies.</p></div>
               </div>
 
@@ -81,17 +81,17 @@ export default function EufyBrandHub() {
               <ul className='space-y-2 list-disc pl-6'>
                 <li>Subscription-free operation is non-negotiable</li>
                 <li>You&apos;re buying multiple cameras and want to standardize on one ecosystem</li>
-                <li>Mid-market budget — not the cheapest, not premium-brand pricing</li>
-                <li>Video doorbells specifically — Eufy&apos;s doorbell lineup is competitive</li>
+                <li>Mid-market budget, not the cheapest, not premium-brand pricing</li>
+                <li>Video doorbells specifically, Eufy&apos;s doorbell lineup is competitive</li>
                 <li>You want solid AI detection (person, face) without a monthly AI fee</li>
               </ul>
 
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>When Eufy May Not Fit</h2>
               <ul className='space-y-2 list-disc pl-6'>
                 <li>You&apos;re already deep in the Ring/Alexa or Nest/Google Home ecosystem</li>
-                <li>You want the cheapest possible single camera — Wyze or TP-Link Tapo are cheaper</li>
+                <li>You want the cheapest possible single camera, Wyze or TP-Link Tapo are cheaper</li>
                 <li>Your use case specifically needs professional 24/7 monitoring at competitive pricing (Canary or Arlo Secure are stronger there)</li>
-                <li>You need POE / NVR wired enterprise-style setups — Reolink is better for that</li>
+                <li>You need POE / NVR wired enterprise-style setups, Reolink is better for that</li>
               </ul>
             </div>
 
@@ -101,7 +101,7 @@ export default function EufyBrandHub() {
               <a href='https://www.eufy.com/' target='_blank' rel='noopener noreferrer sponsored' className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all' style={{ backgroundColor: '#f59e0b', color: '#0a0f1c' }}>
                 See Eufy Security Cameras<ArrowRight className='h-4 w-4' />
               </a>
-              <p className='text-xs mt-3' style={{ color: '#71717a' }}>Affiliate link — we earn a commission at no cost to you. <Link href='/affiliate-disclosure' className='underline' style={{ color: '#f59e0b' }}>Full disclosure</Link>.</p>
+              <p className='text-xs mt-3' style={{ color: '#71717a' }}>Affiliate link; we earn a commission at no cost to you. <Link href='/affiliate-disclosure' className='underline' style={{ color: '#f59e0b' }}>Full disclosure</Link>.</p>
             </div>
 
             <div className='mt-10'><Link href='/cameras' className='inline-flex items-center gap-2 text-sm font-medium' style={{ color: '#f59e0b' }}><ArrowLeft className='h-4 w-4' />Back to Camera Reviews</Link></div>

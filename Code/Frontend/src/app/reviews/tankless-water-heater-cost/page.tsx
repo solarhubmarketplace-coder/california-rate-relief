@@ -96,7 +96,7 @@ const faqSchema = {
       name: 'Are there rebates or tax credits for tankless water heaters in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The federal residential solar Investment Tax Credit expired on December 31, 2025, but the Energy Efficient Home Improvement Credit (25C) still covers qualifying high-efficiency water heaters — up to $2,000/year for heat pump water heaters and $600/year for gas tankless models meeting CEE Advanced Tier efficiency. Utility rebates vary by location: SoCalGas offers $200-$700 rebates for qualifying gas tankless models, and many California utilities rebate $300-$1,500 on heat pump water heaters through TECH Clean California.',
+        text: 'The federal residential solar Investment Tax Credit expired on December 31, 2025, but the Energy Efficient Home Improvement Credit (25C) still covers qualifying high-efficiency water heaters; up to $2,000/year for heat pump water heaters and $600/year for gas tankless models meeting CEE Advanced Tier efficiency. Utility rebates vary by location: SoCalGas offers $200-$700 rebates for qualifying gas tankless models, and many California utilities rebate $300-$1,500 on heat pump water heaters through TECH Clean California.',
       },
     },
     {
@@ -104,7 +104,7 @@ const faqSchema = {
       name: 'How much does a tankless water heater save per month on energy bills?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Typical energy savings are $25-$50/month vs a standard tank water heater ($300-$600/year). Condensing gas tankless models deliver the highest savings; electric resistance tankless saves less than gas tankless due to California electricity rates. Heat pump water heaters (tank-style, not tankless) actually deliver higher savings than electric tankless in most California homes — something to consider if your motivation is purely energy savings.',
+        text: 'Typical energy savings are $25-$50/month vs a standard tank water heater ($300-$600/year). Condensing gas tankless models deliver the highest savings; electric resistance tankless saves less than gas tankless due to California electricity rates. Heat pump water heaters (tank-style, not tankless) actually deliver higher savings than electric tankless in most California homes, something to consider if your motivation is purely energy savings.',
       },
     },
     {
@@ -112,7 +112,7 @@ const faqSchema = {
       name: 'How long does a tankless water heater last vs a tank?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tankless water heaters typically last 15-20 years with annual descaling maintenance. Tank water heaters last 8-12 years before the tank corrodes and fails. Over a 20-year horizon, you typically buy one tankless unit vs two tank units — and that longer lifespan is the single biggest factor in tankless ROI. Factor two tank replacements + higher operating costs into the comparison for honest math.',
+        text: 'Tankless water heaters typically last 15-20 years with annual descaling maintenance. Tank water heaters last 8-12 years before the tank corrodes and fails. Over a 20-year horizon, you typically buy one tankless unit vs two tank units, and that longer lifespan is the single biggest factor in tankless ROI. Factor two tank replacements + higher operating costs into the comparison for honest math.',
       },
     },
     {
@@ -331,8 +331,7 @@ export default function TanklessWaterHeaterCost() {
                 Unit Cost by Type
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The tankless water heater itself — before anyone installs it —
-                varies wildly by fuel type, flow rate, and efficiency tier.
+                The tankless water heater itself; before anyone installs it; varies wildly by fuel type, flow rate, and efficiency tier.
                 Here is how the categories break down.
               </p>
 
@@ -414,7 +413,7 @@ export default function TanklessWaterHeaterCost() {
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Non-condensing gas tankless units require Category III
-                stainless steel concentric venting — not the B-vent used on
+                stainless steel concentric venting, not the B-vent used on
                 tank water heaters. Condensing units use cheaper schedule 40
                 PVC. The length of the vent run and the number of elbows and
                 penetrations through the roof or exterior wall drive the
@@ -593,7 +592,7 @@ export default function TanklessWaterHeaterCost() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SoCalGas offers $200-$700 rebates for qualifying high-
                 efficiency gas tankless water heaters. Check their current
-                rebate catalog at the time of purchase — models and amounts
+                rebate catalog at the time of purchase, models and amounts
                 change quarterly.
               </p>
 
@@ -623,7 +622,7 @@ export default function TanklessWaterHeaterCost() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge='Our pick for California homeowners'
-                verdict='For most California homes, a mid-range Rinnai Sensei RX condensing gas tankless hits the sweet spot — efficient enough to claim the full 25C credit, reliable enough to last 20 years, and widely supported by local installers.'
+                verdict='For most California homes, a mid-range Rinnai Sensei RX condensing gas tankless hits the sweet spot. efficient enough to claim the full 25C credit, reliable enough to last 20 years, and widely supported by local installers.'
                 source='tankless-water-heater-cost'
                 variant='mid'
               />
@@ -806,7 +805,7 @@ export default function TanklessWaterHeaterCost() {
                 </li>
                 <li>
                   <strong>Ask what&apos;s included.</strong> Permits, disposal
-                  of old tank, gas line upsizing, venting — missing any of
+                  of old tank, gas line upsizing, venting; missing any of
                   these can add $500-$2,000 to the final bill.
                 </li>
                 <li>
@@ -968,7 +967,7 @@ export default function TanklessWaterHeaterCost() {
                 avoiding one tank replacement cycle. For most California
                 homeowners with natural gas service and a tank that&apos;s
                 nearing end of life, a mid-range condensing gas tankless
-                ($3,500-$5,000 installed) is the sweet spot — efficient
+                ($3,500-$5,000 installed) is the sweet spot. Efficient
                 enough for the full 25C federal credit, reliable enough to
                 last 20 years, and installed by any competent plumber.
                 Electric tankless is the right call only in all-electric

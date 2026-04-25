@@ -52,7 +52,7 @@ export default function Page() {
     author: { '@type': 'Organization', name: 'California Rate Relief Program' },
     datePublished: '2026-04-22',
     reviewBody:
-      'Bluetti EB3A is the budget king of LFP power stations — 268Wh usable, 600W inverter (1,200W with Power Lifting), 200W solar input, 30-minute turbo recharge, and a 2,500-cycle LFP battery. At $299 it is an excellent entry point for California homeowners wanting PSPS peace of mind for essentials like Wi-Fi, phones, and a CPAP.',
+      'Bluetti EB3A is the budget king of LFP power stations, 268Wh usable, 600W inverter (1,200W with Power Lifting), 200W solar input, 30-minute turbo recharge, and a 2,500-cycle LFP battery. At $299 it is an excellent entry point for California homeowners wanting PSPS peace of mind for essentials like Wi-Fi, phones, and a CPAP.',
   };
 
   const faqSchema = {
@@ -104,7 +104,7 @@ export default function Page() {
         name: 'Is the EB3A good for camping?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes — at 10.1 lbs it is one of the more portable LFP stations on the market. It will happily run an LED string, USB fan, phone chargers, and a small electric kettle on Power Lifting. The IP-rated solar panel compatibility also lets you run a 200W panel during the day and keep topped up indefinitely.',
+          text: 'Yes. At 10.1 lbs it is one of the more portable LFP stations on the market. It will happily run an LED string, USB fan, phone chargers, and a small electric kettle on Power Lifting. The IP-rated solar panel compatibility also lets you run a 200W panel during the day and keep topped up indefinitely.',
         },
       },
     ],
@@ -153,7 +153,7 @@ export default function Page() {
             </h1>
             <p className='text-lg text-foreground/70 leading-relaxed mb-4'>
               268Wh LFP capacity, 600W inverter (1,200W with Power Lifting), 200W solar input,
-              30-minute turbo charge, and a 2,500-cycle battery — all for $299. Here is what
+              30-minute turbo charge, and a 2,500-cycle battery, all for $299. Here is what
               California homeowners, campers, and PSPS planners actually get out of Bluetti\'s
               entry-level unit after a week of field testing.
             </p>
@@ -175,18 +175,18 @@ export default function Page() {
             variant='top'
             badge='BEST BUDGET LFP'
             rating={4.6}
-            verdict='The EB3A is the cheapest serious LFP power station on the market and the most honest way to dip your toes into home backup. It will not run your AC or a full fridge for a day, but for Wi-Fi, CPAPs, phones, and lights during a PSPS event — or as a trunk companion for camping — it punches well above its $299 sticker. The 30-minute turbo recharge and 2,500-cycle LFP chemistry are what really separate this from cheaper NMC rivals.'
+            verdict='The EB3A is the cheapest serious LFP power station on the market and the most honest way to dip your toes into home backup. It will not run your AC or a full fridge for a day, but for Wi-Fi, CPAPs, phones, and lights during a PSPS event, or as a trunk companion for camping. It punches well above its $299 sticker. The 30-minute turbo recharge and 2,500-cycle LFP chemistry are what really separate this from cheaper NMC rivals.'
             pros={[
               '268Wh LFP with 2,500+ cycles to 80% (~7 years daily)',
               '30-minute 0-80% turbo recharge via AC',
               '1,200W Power Lifting on resistive heating loads',
               '200W solar input with MPPT',
-              '10.1 lbs — one of the lightest LFP units',
+              '10.1 lbs, one of the lightest LFP units',
               'Silent mode (caps to 100W) for bedroom use',
               'Bluetti app with firmware updates',
             ]}
             cons={[
-              'Only 268Wh — not a whole-home backup solution',
+              'Only 268Wh, not a whole-home backup solution',
               '20ms UPS switchover is slower than EcoFlow\'s 10ms',
               'Fan ramps up above 400W continuous draw',
               'Power Lifting not compatible with motor-driven appliances',
@@ -214,7 +214,7 @@ export default function Page() {
           {/* Quick Specs Table */}
           <div className='bg-[#111] border border-border/60 rounded-2xl p-6 mb-10'>
             <h2 className='text-xl font-semibold text-foreground mb-4 inline-flex items-center gap-2'>
-              <Zap className='h-5 w-5 text-amber-400' /> Bluetti EB3A — Key Specs
+              <Zap className='h-5 w-5 text-amber-400' /> Bluetti EB3A, Key Specs
             </h2>
             <div className='overflow-x-auto'>
               <table className='w-full text-sm'>
@@ -229,7 +229,7 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className='py-2 pr-4 text-foreground/60 font-medium'>AC Charging (Turbo)</td>
-                    <td className='py-2 text-foreground'>350W input — 0-80% in 30 min, full in ~70 min</td>
+                    <td className='py-2 text-foreground'>350W input, 0-80% in 30 min, full in ~70 min</td>
                   </tr>
                   <tr>
                     <td className='py-2 pr-4 text-foreground/60 font-medium'>Solar Input</td>
@@ -282,14 +282,14 @@ export default function Page() {
               the line, which means it is comfortable for a single hand but will not double as
               a shoulder-strap. The front panel groups the AC outlets, USB-C, USB-A, and 12V
               cigarette lighter with a readable LCD showing input, output, and remaining runtime
-              in minutes — a touch the cheaper Jackery minis still do not offer.
+              in minutes, a touch the cheaper Jackery minis still do not offer.
             </p>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               Build quality sits a notch below EcoFlow. The plastic is thicker, the buttons
               recessed, and the vent grilles more forgiving of dust. After a week of dusty
               balcony testing the unit still reads full capacity and accepted a full turbo
               recharge without throttling. Indoor use is silent below 100W and audibly fanned
-              above 400W — reasonable for the size.
+              above 400W; reasonable for the size.
             </p>
 
             <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Battery Chemistry and Real-World Capacity</h2>
@@ -298,7 +298,7 @@ export default function Page() {
               NMC-powered station while offering 2,500+ cycles to 80% capacity versus 500-800
               cycles for NMC. In plain English: if you cycle this once every day for 7 years
               you will still have 80% of the original 268Wh. That is genuinely rare at this
-              price point — as recently as 2024 you had to pay $500+ for an LFP unit this size.
+              price point, as recently as 2024 you had to pay $500+ for an LFP unit this size.
             </p>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               Usable capacity is closer to 240-250Wh after inverter losses. In our testing a
@@ -308,9 +308,9 @@ export default function Page() {
               on battery size.
             </p>
 
-            <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Charging Speed — 30-Minute Turbo</h2>
+            <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Charging Speed, 30-Minute Turbo</h2>
             <p className='text-foreground/80 leading-relaxed mb-6'>
-              Turbo Mode pulls up to 350W from the wall and reaches 0-80% in 30 minutes — a
+              Turbo Mode pulls up to 350W from the wall and reaches 0-80% in 30 minutes, a
               number Bluetti was quietly the first to hit at this capacity. Full charge is about
               70 minutes. Silent Mode caps input at 100W (takes ~3 hours to fully charge) and
               is the setting you want if you charge overnight in a bedroom. The fan is clearly
@@ -319,13 +319,13 @@ export default function Page() {
             <p className='text-foreground/80 leading-relaxed mb-6'>
               Solar input peaks at 200W across a 12-28V MPPT range. A 200W Bluetti PV200 panel
               paired with the EB3A fully refilled the battery in just under two hours of
-              California spring sun — plenty fast enough to keep pace with daytime loads and
+              California spring sun. Plenty fast enough to keep pace with daytime loads and
               extend PSPS runtime indefinitely for low-watt essentials.
             </p>
 
-            <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Output Capability — The Power Lifting Question</h2>
+            <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Output Capability, The Power Lifting Question</h2>
             <p className='text-foreground/80 leading-relaxed mb-6'>
-              The pure-sine 600W inverter is honest with its rating — it will carry 600W
+              The pure-sine 600W inverter is honest with its rating. It will carry 600W
               indefinitely without throttling. Power Lifting (Bluetti\'s voltage-reduction
               technology) pushes that to 1,200W for resistive heating loads only: a hair dryer
               on medium heat, a coffee maker, a toaster. The key word is resistive. Do not try
@@ -333,7 +333,7 @@ export default function Page() {
               — the voltage drop will either fail to start the motor or damage it over time.
             </p>
             <p className='text-foreground/80 leading-relaxed mb-6'>
-              The wireless charging pad on top is a nice surprise — 15W Qi charging for a phone
+              The wireless charging pad on top is a nice surprise, 15W Qi charging for a phone
               or earbuds. Two AC outlets, one 100W USB-C PD, two USB-A QC 3.0, one 12V cigarette
               lighter, and a DC 5521 round out the port selection. No RV-style 30A plug at this
               size.
@@ -341,7 +341,7 @@ export default function Page() {
 
             <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>UPS and Smart Features</h2>
             <p className='text-foreground/80 leading-relaxed mb-6'>
-              UPS switchover measures around 20 ms — fast enough for desktop computers, Wi-Fi
+              UPS switchover measures around 20 ms. Fast enough for desktop computers, Wi-Fi
               routers, ONT fiber boxes, and most TVs. It is slower than EcoFlow\'s ~10 ms and
               we would not trust it on sensitive medical equipment or high-end audio gear.
               The Bluetti app (Bluetooth only, no Wi-Fi on this model) lets you toggle Turbo
@@ -362,7 +362,7 @@ export default function Page() {
 
             <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>California Context: PSPS, TOU, SGIP, and NEM 3.0</h2>
 
-            <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>PSPS Backup — Lights, Wi-Fi, and a CPAP</h3>
+            <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>PSPS Backup, Lights, Wi-Fi, and a CPAP</h3>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               California PSPS (Public Safety Power Shutoff) events now routinely last 8-36
               hours in the foothills of Napa, Sonoma, El Dorado, and the Sierra. The EB3A will
@@ -372,11 +372,11 @@ export default function Page() {
               connected and slept\" unit, not a whole-home solution.
             </p>
 
-            <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>TOU Arbitrage — Probably Not Worth It</h3>
+            <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>TOU Arbitrage. Probably Not Worth It</h3>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               PG&E and SCE peak (4-9 PM) rates now hit 40-48¢/kWh while off-peak sits around
               32-38¢. Storing 0.24 kWh usable at an 8-10¢ delta saves roughly 2 cents per
-              cycle. Over 2,500 cycles you recover $50 — useful but not meaningful against the
+              cycle. Over 2,500 cycles you recover $50, useful but not meaningful against the
               $299 price. Buy the EB3A for backup, not for bill savings.
             </p>
 
@@ -392,7 +392,7 @@ export default function Page() {
             <p className='text-foreground/80 leading-relaxed mb-6'>
               Under NEM 3.0 export compensation averages 5-8¢/kWh while import rates still
               exceed 40¢ at peak. Homeowners with rooftop solar and no permanent battery are
-              the most common EB3A buyers — they use the EB3A purely as PSPS insurance because
+              the most common EB3A buyers. they use the EB3A purely as PSPS insurance because
               a grid-down solar system without storage produces nothing. It is a stopgap,
               not a financial tool.
             </p>
@@ -401,7 +401,7 @@ export default function Page() {
             <p className='text-foreground/80 leading-relaxed mb-6'>
               The internal fan is silent below 100W continuous draw, becomes audible around
               200-400W, and clearly running at 500-600W. In Turbo charging mode the fan is
-              noticeable — about the volume of a mid-size laptop. We would not charge this
+              noticeable. about the volume of a mid-size laptop. We would not charge this
               overnight in a bedroom in Turbo mode, but Silent mode is fine. Operating
               temperature range is 32-104°F. Cold-weather performance is honest but 0-32°F
               (think Tahoe in January) will slow both discharge and recharge.
@@ -417,7 +417,7 @@ export default function Page() {
                   <li className='flex gap-2'><Check className='h-4 w-4 text-green-400 flex-shrink-0 mt-0.5' /> LFP chemistry at a price that used to only buy NMC</li>
                   <li className='flex gap-2'><Check className='h-4 w-4 text-green-400 flex-shrink-0 mt-0.5' /> 30-minute turbo recharge is genuinely fast</li>
                   <li className='flex gap-2'><Check className='h-4 w-4 text-green-400 flex-shrink-0 mt-0.5' /> Wireless charging pad is a nice touch</li>
-                  <li className='flex gap-2'><Check className='h-4 w-4 text-green-400 flex-shrink-0 mt-0.5' /> 10 lbs — car trunk friendly</li>
+                  <li className='flex gap-2'><Check className='h-4 w-4 text-green-400 flex-shrink-0 mt-0.5' /> 10 lbs; car trunk friendly</li>
                   <li className='flex gap-2'><Check className='h-4 w-4 text-green-400 flex-shrink-0 mt-0.5' /> 200W solar input with real MPPT</li>
                   <li className='flex gap-2'><Check className='h-4 w-4 text-green-400 flex-shrink-0 mt-0.5' /> Silent Mode for overnight bedroom use</li>
                 </ul>
@@ -427,9 +427,9 @@ export default function Page() {
                   <X className='h-4 w-4' /> What We Do Not Like
                 </h4>
                 <ul className='space-y-2 text-sm text-foreground/80'>
-                  <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> 268Wh is simply small — plan accordingly</li>
+                  <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> 268Wh is simply small; plan accordingly</li>
                   <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> 20ms UPS is slower than EcoFlow</li>
-                  <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> Bluetti app is Bluetooth-only — no Wi-Fi or cellular</li>
+                  <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> Bluetti app is Bluetooth-only. No Wi-Fi or cellular</li>
                   <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> Power Lifting only works on resistive heating loads</li>
                   <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> Fan audible above 400W</li>
                 </ul>
@@ -495,7 +495,7 @@ export default function Page() {
             </div>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               Versus the River 3 ($259), the EB3A gives you double the continuous inverter wattage
-              (600W vs 300W) and 23Wh more capacity for $40 more — a clear win if you plan to run
+              (600W vs 300W) and 23Wh more capacity for $40 more; a clear win if you plan to run
               anything over 300W. Against the Jackery Explorer 300 Plus ($299) the comparison is
               closer: Jackery is lighter and has a better app, but the EB3A has faster recharge
               and Power Lifting. Against the River 3 Plus ($399) the EB3A loses on app features
@@ -517,8 +517,8 @@ export default function Page() {
               <ul className='space-y-2 text-sm text-foreground/80'>
                 <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You need to run a fridge for more than a few hours</li>
                 <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You plan to power any kind of motor-driven tool or AC compressor</li>
-                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You want a seamless UPS for sensitive desktop/medical equipment — get an EcoFlow</li>
-                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You want whole-home backup — step up to the AC200Max or AC500</li>
+                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You want a seamless UPS for sensitive desktop/medical equipment, get an EcoFlow</li>
+                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You want whole-home backup. Step up to the AC200Max or AC500</li>
               </ul>
             </div>
 
@@ -545,7 +545,7 @@ export default function Page() {
                 <summary className='cursor-pointer font-semibold text-foreground'>Can the EB3A run a refrigerator during a PSPS?</summary>
                 <p className='text-sm text-foreground/80 mt-3 leading-relaxed'>
                   A small Energy Star mini-fridge drawing 60-90W while running and cycling ~1/3
-                  of the time pulls roughly 0.5-0.7 kWh per day. The EB3A holds 0.268 kWh — so
+                  of the time pulls roughly 0.5-0.7 kWh per day. The EB3A holds 0.268 kWh, so
                   realistically 6-10 hours, not a full day. For multi-hour outages pair this
                   with a second battery or step up to the AC200Max.
                 </p>
@@ -588,7 +588,7 @@ export default function Page() {
               as your \"PG&E just texted that the power goes off tomorrow night\" kit.
             </p>
             <p className='text-foreground/80 leading-relaxed mb-6'>
-              For larger loads — fridges, power tools, AC compressors — this is not the right
+              For larger loads; fridges, power tools, AC compressors — this is not the right
               station. Step up to the <Link href='/reviews/ecoflow-river-2-pro-review' className='text-amber-400 hover:underline'>River 2 Pro</Link>
               {' '}(768Wh, $499) for weekend-long runtime or
               the <Link href='/reviews/bluetti-ac200max-review' className='text-amber-400 hover:underline'>AC200Max</Link>

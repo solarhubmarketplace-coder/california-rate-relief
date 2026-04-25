@@ -136,7 +136,7 @@ const faqSchema = {
       name: 'What is the difference between Ryobi 40V HP and regular 40V?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The HP (High Performance) line uses brushless motors, higher-amperage motor controllers, and denser HP-specific battery packs to deliver 20-40% more power than standard Ryobi 40V tools. The RY405010 chainsaw is an HP model — critical for chainsaw work where motor torque and heat management matter. Non-HP 40V Ryobi chainsaws still exist but should be avoided if you can afford the HP version.',
+        text: 'The HP (High Performance) line uses brushless motors, higher-amperage motor controllers, and denser HP-specific battery packs to deliver 20-40% more power than standard Ryobi 40V tools. The RY405010 chainsaw is an HP model, critical for chainsaw work where motor torque and heat management matter. Non-HP 40V Ryobi chainsaws still exist but should be avoided if you can afford the HP version.',
       },
     },
   ],
@@ -428,7 +428,7 @@ export default function RyobiChainsawReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The RY405010 is Ryobi&apos;s answer to the EGO CS1804 and the
                 Greenworks 80V 18-inch. It runs on Ryobi&apos;s 40V HP
-                platform — the &quot;High Performance&quot; subset of their
+                platform. The &quot;High Performance&quot; subset of their
                 40V line that uses brushless motors, higher-current
                 controllers, and HP-specific denser battery packs. For
                 chainsaws, specifically, the HP designation matters: a
@@ -442,12 +442,12 @@ export default function RyobiChainsawReview() {
                 8-inch oak rounds, 8-10 seconds depending on chain
                 sharpness. Chain speed holds steady until the last 15% of
                 battery state of charge thanks to brushless monitoring. Peak
-                chain speed is ~19 m/s (3,740 ft/min) — slightly below EGO
+                chain speed is ~19 m/s (3,740 ft/min), slightly below EGO
                 (20 m/s) and DeWalt (19 m/s) but not in a way you can feel
                 cut-to-cut.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The 18-inch bar is Oregon&apos;s LPX58 — a good mid-range pro
+                The 18-inch bar is Oregon&apos;s LPX58. A good mid-range pro
                 bar that takes any standard 58-link low-profile chain. The
                 factory chain is Oregon&apos;s S58 low-kickback chain.
                 Replacement chains are available at any Home Depot for ~$15
@@ -468,7 +468,7 @@ export default function RyobiChainsawReview() {
                 or cutting for extended periods. For 80-90% of what
                 homeowners actually use a chainsaw for — storm branches,
                 occasional firewood rounds under 10 inches, limbing, yard
-                cleanup — the 14-inch saw handles it easily and with less
+                cleanup, the 14-inch saw handles it easily and with less
                 fatigue than the 18-inch.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -497,9 +497,9 @@ export default function RyobiChainsawReview() {
                 40V HP saws. Chain speed is noticeably slower (~14 m/s). For
                 anything over 8 inches in diameter, this saw will struggle
                 and overheat under sustained load. It&apos;s a limber, not
-                a firewood processor. Used within that context — cleaning up
+                a firewood processor. Used within that context, cleaning up
                 branches up to 6 inches, trimming hedges, tidying up after
-                storms — it&apos;s fantastic for the money.
+                storms, it&apos;s fantastic for the money.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -655,7 +655,7 @@ export default function RyobiChainsawReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Ryobi has been Home Depot exclusive in the US for over two
                 decades. That&apos;s the structural reason the brand can
-                price aggressively — no margin paid to other retailers, no
+                price aggressively. no margin paid to other retailers, no
                 inventory split, and no rivalry between distribution
                 channels. For you, the buyer, Home Depot exclusivity has
                 practical advantages:
@@ -691,7 +691,7 @@ export default function RyobiChainsawReview() {
                 California AQMD Rebates
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                CARB SORE — the 2024 California regulation that banned new
+                CARB SORE. The 2024 California regulation that banned new
                 gas leaf blowers and mowers — does NOT currently include
                 chainsaws, so gas chainsaws are still legal to buy and sell.
                 That said, several California air districts have offered
@@ -716,7 +716,7 @@ export default function RyobiChainsawReview() {
                 </li>
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Check each year&apos;s program at your county AQMD — a
+                Check each year&apos;s program at your county AQMD. a
                 $150-$250 rebate on a $279 chainsaw is essentially a
                 half-price saw.
               </p>
@@ -767,7 +767,7 @@ export default function RyobiChainsawReview() {
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      Home Depot exclusive — no alternative retailers
+                      Home Depot exclusive, no alternative retailers
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />

@@ -22,7 +22,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Electric Lawn Mowers (2026): EGO vs Greenworks vs Ryobi — Top Battery Mowers Compared',
+    'Best Electric Lawn Mowers (2026): EGO vs Greenworks vs Ryobi; Top Battery Mowers Compared',
   description:
     'Compare the best electric lawn mowers for 2026. In-depth reviews of EGO Power+ Select Cut XP, Greenworks 80V Pro, Ryobi 40V, and more. Battery platform guide, gas vs electric savings, and sizing recommendations included.',
   alternates: {
@@ -579,7 +579,7 @@ export default function BestElectricLawnMower() {
                   productKey="ego-power-lm2114sp"
                   source="electric-lawn-mower-hub"
                   variant="primary"
-                  label="Check Price — EGO Power+ LM2114SP"
+                  label="Check Price; EGO Power+ LM2114SP"
                   showPrice
                   />
               </div>
@@ -785,7 +785,7 @@ export default function BestElectricLawnMower() {
                   productKey="greenworks-80v-21-self-propelled"
                   source="electric-lawn-mower-hub"
                   variant="primary"
-                  label="Check Price — Greenworks 80V 21 Self-Propelled"
+                  label="Check Price, Greenworks 80V 21 Self-Propelled"
                   showPrice
                   />
               </div>
@@ -892,7 +892,7 @@ export default function BestElectricLawnMower() {
                   productKey="ryobi-40v-21-self-propelled"
                   source="electric-lawn-mower-hub"
                   variant="primary"
-                  label="Check Price — Ryobi 40V 21 Self-Propelled"
+                  label="Check Price, Ryobi 40V 21 Self-Propelled"
                   showPrice
                   />
               </div>

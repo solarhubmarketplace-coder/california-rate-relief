@@ -77,7 +77,7 @@ const faqSchema = {
       name: 'Are battery powered pressure washers as powerful as gas models?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Not yet. The most powerful cordless pressure washer in 2026, the EGO POWER+ HPW3200, tops out at 3,200 PSI, which rivals many entry-level gas units. However, gas models routinely deliver 3,000-4,200 PSI with higher GPM (gallons per minute), giving them more cleaning power for heavy-duty jobs like stripping paint or cleaning concrete driveways. For most residential tasks — cars, patios, siding, outdoor furniture — a battery unit in the 1,500-3,200 PSI range is more than sufficient.',
+        text: 'Not yet. The most powerful cordless pressure washer in 2026, the EGO POWER+ HPW3200, tops out at 3,200 PSI, which rivals many entry-level gas units. However, gas models routinely deliver 3,000-4,200 PSI with higher GPM (gallons per minute), giving them more cleaning power for heavy-duty jobs like stripping paint or cleaning concrete driveways. For most residential tasks — cars, patios, siding, outdoor furniture, a battery unit in the 1,500-3,200 PSI range is more than sufficient.',
       },
     },
     {
@@ -109,7 +109,7 @@ const faqSchema = {
       name: 'Do battery powered pressure washers need a garden hose connection?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most battery pressure washers require a garden hose connection for their water supply. However, some models — like the DeWalt 20V MAX DCPW550 and Sun Joe 24V — can draw water from a bucket or other still-water source using a siphon hose, making them truly portable for use anywhere without a tap. This is ideal for boat docks, campsites, or remote job sites.',
+        text: 'Most battery pressure washers require a garden hose connection for their water supply. However, some models, like the DeWalt 20V MAX DCPW550 and Sun Joe 24V, can draw water from a bucket or other still-water source using a siphon hose, making them truly portable for use anywhere without a tap. This is ideal for boat docks, campsites, or remote job sites.',
       },
     },
     {
@@ -269,8 +269,8 @@ export default function BestBatteryPressureWashers() {
             <div className="prose prose-slate max-w-none">
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
                 Battery powered pressure washers have come a long way. In 2026, the best cordless
-                models deliver enough PSI to tackle real cleaning jobs — driveways, siding, decks,
-                cars — without the noise, fumes, and maintenance headaches of gas engines or the
+                models deliver enough PSI to tackle real cleaning jobs, driveways, siding, decks,
+                cars. without the noise, fumes, and maintenance headaches of gas engines or the
                 cord-tangling hassle of plug-in electrics. Just pop in a battery and start spraying.
               </p>
               <p className="text-lg leading-relaxed mb-8" style={{ color: '#a1a1aa' }}>
@@ -305,7 +305,7 @@ export default function BestBatteryPressureWashers() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Greenworks 60V 2100 PSI — Best Value
+                      Greenworks 60V 2100 PSI. Best Value
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Hits the sweet spot between power and price. 2,100 PSI handles driveways and
@@ -318,7 +318,7 @@ export default function BestBatteryPressureWashers() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Ryobi 40V HP 1500 PSI — Best for Cars
+                      Ryobi 40V HP 1500 PSI. Best for Cars
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Perfect for car enthusiasts who want a dedicated cordless washer. 1,500 PSI is
@@ -447,8 +447,8 @@ export default function BestBatteryPressureWashers() {
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   The unit ships as tool-only at $549, which means you need an EGO 56V battery (the 10.0 Ah
-                  BA5600T is recommended for maximum runtime). If you already own EGO lawn equipment — a mower,
-                  blower, or string trimmer — your batteries are cross-compatible. This is a huge value
+                  BA5600T is recommended for maximum runtime). If you already own EGO lawn equipment, a mower,
+                  blower, or string trimmer, your batteries are cross-compatible. This is a huge value
                   proposition for homeowners already invested in the EGO ecosystem.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -470,7 +470,7 @@ export default function BestBatteryPressureWashers() {
                     <Check className="h-4 w-4" /> Pros
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
-                    <li>3,200 PSI — the highest of any cordless model</li>
+                    <li>3,200 PSI, the highest of any cordless model</li>
                     <li>Variable-pressure wand eliminates nozzle swapping</li>
                     <li>Cross-compatible with all EGO 56V batteries</li>
                     <li>Excellent build quality with large-wheel cart design</li>
@@ -484,10 +484,10 @@ export default function BestBatteryPressureWashers() {
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
                     <li>Tool-only: battery sold separately adds $200-$400+</li>
-                    <li>Heavy at 45 lbs — not easily portable</li>
+                    <li>Heavy at 45 lbs, not easily portable</li>
                     <li>1.0 GPM is lower than gas models (2.0-2.5 GPM typical)</li>
                     <li>Premium price point for the complete kit</li>
-                    <li>Requires garden hose — no bucket-draw mode</li>
+                    <li>Requires garden hose; no bucket-draw mode</li>
                   </ul>
                 </div>
               </div>
@@ -497,7 +497,7 @@ export default function BestBatteryPressureWashers() {
                   productKey="ego-power-hpw3200"
                   source="battery-pressure-washer-hub"
                   variant="primary"
-                  label="Check Price — EGO POWER+ HPW3200"
+                  label="Check Price, EGO POWER+ HPW3200"
                   showPrice
                 />
               </div>
@@ -562,9 +562,9 @@ export default function BestBatteryPressureWashers() {
                     <Check className="h-4 w-4" /> Pros
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#86efac' }}>
-                    <li>Battery and charger included at $349 — outstanding value</li>
+                    <li>Battery and charger included at $349. Outstanding value</li>
                     <li>2,100 PSI handles most residential cleaning tasks</li>
-                    <li>1.2 GPM — highest flow rate of any cordless model here</li>
+                    <li>1.2 GPM, highest flow rate of any cordless model here</li>
                     <li>60V battery cross-compatible with Greenworks lawn tools</li>
                     <li>Lighter than EGO at 37 lbs with decent wheel mobility</li>
                     <li>Four nozzle tips plus turbo nozzle included</li>
@@ -576,7 +576,7 @@ export default function BestBatteryPressureWashers() {
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
                     <li>5.0 Ah battery limits runtime to ~30-45 min</li>
-                    <li>Requires garden hose — no bucket-draw option</li>
+                    <li>Requires garden hose, no bucket-draw option</li>
                     <li>Hose can feel stiff in cold weather</li>
                     <li>Not powerful enough for deeply embedded oil stains</li>
                     <li>Soap tank is small — frequent refills on big jobs</li>
@@ -634,7 +634,7 @@ export default function BestBatteryPressureWashers() {
                   units can cause if you are not careful.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
-                  The brushless motor is a big upgrade over brushed alternatives — it runs cooler, lasts
+                  The brushless motor is a big upgrade over brushed alternatives, it runs cooler, lasts
                   longer, and extracts more runtime from each battery charge. The included 4.0 Ah battery
                   provides roughly 30-40 minutes of washing, which is enough for 1-2 vehicles. And since
                   this is part of Ryobi&apos;s massive 40V platform (also sold at Home Depot as ONE+ HP),
@@ -670,7 +670,7 @@ export default function BestBatteryPressureWashers() {
                     <li>1,500 PSI is too low for tough concrete stains</li>
                     <li>1.0 GPM limits rinsing speed on large surfaces</li>
                     <li>Requires garden hose connection</li>
-                    <li>No variable-pressure wand — nozzle swapping required</li>
+                    <li>No variable-pressure wand. Nozzle swapping required</li>
                     <li>Plastic wand feels less premium than EGO</li>
                   </ul>
                 </div>
@@ -681,7 +681,7 @@ export default function BestBatteryPressureWashers() {
                   productKey="ryobi-40v-hp-1500-psi"
                   source="battery-pressure-washer-hub"
                   variant="primary"
-                  label="Check Price — Ryobi 40V HP 1500 PSI"
+                  label="Check Price, Ryobi 40V HP 1500 PSI"
                   showPrice
                 />
               </div>
@@ -720,7 +720,7 @@ export default function BestBatteryPressureWashers() {
               <div className="prose prose-slate max-w-none mb-6">
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   The DeWalt DCPW550 is a completely different animal from the other units on this list.
-                  At just 600 PSI and 8.4 lbs, this is not a traditional pressure washer — it is a
+                  At just 600 PSI and 8.4 lbs, this is not a traditional pressure washer, it is a
                   portable power cleaner designed for quick, on-the-go cleaning tasks. Think of it as a
                   garden hose on steroids that you can take literally anywhere, including places with no
                   water hookup.
@@ -733,7 +733,7 @@ export default function BestBatteryPressureWashers() {
                   end of the day.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
-                  If you are a DeWalt 20V MAX user — and millions of tradespeople and DIYers are — you
+                  If you are a DeWalt 20V MAX user. And millions of tradespeople and DIYers are — you
                   already own compatible batteries. The 5.0 Ah battery included with the kit provides
                   roughly 10-15 minutes of continuous use, which is enough for spot cleaning but not for
                   whole-house jobs. This is a targeted tool, not a do-everything pressure washer.
@@ -759,11 +759,11 @@ export default function BestBatteryPressureWashers() {
                     <X className="h-4 w-4" /> Cons
                   </h4>
                   <ul className="space-y-1 text-sm" style={{ color: '#fca5a5' }}>
-                    <li>600 PSI is not a real pressure washer — more of a power rinser</li>
+                    <li>600 PSI is not a real pressure washer. more of a power rinser</li>
                     <li>Very short runtime (10-15 minutes on 5.0 Ah)</li>
                     <li>Cannot handle concrete, heavy grime, or mildew</li>
                     <li>0.8 GPM flow rate is low</li>
-                    <li>No wheels or cart — handheld only</li>
+                    <li>No wheels or cart; handheld only</li>
                   </ul>
                 </div>
               </div>
@@ -773,7 +773,7 @@ export default function BestBatteryPressureWashers() {
                   productKey="dewalt-20v-max-dcpw550"
                   source="battery-pressure-washer-hub"
                   variant="primary"
-                  label="Check Price — DeWalt 20V MAX DCPW550"
+                  label="Check Price, DeWalt 20V MAX DCPW550"
                   showPrice
                 />
               </div>
@@ -827,7 +827,7 @@ export default function BestBatteryPressureWashers() {
                   battery platform is smaller than EGO, Greenworks, or Ryobi, so cross-compatibility with
                   other tools is limited. The plastic construction feels lighter-duty than the competition,
                   and the motor is louder relative to its output. But for occasional use — washing the car
-                  once a week, cleaning patio furniture, rinsing off the grill — it gets the job done at a
+                  once a week, cleaning patio furniture, rinsing off the grill, it gets the job done at a
                   price that is hard to argue with.
                 </p>
               </div>
@@ -908,9 +908,9 @@ export default function BestBatteryPressureWashers() {
                     </tr>
                     <tr className="border-b" style={{ borderColor: '#27272a' }}>
                       <td className="p-3 font-medium" style={{ color: '#f5f5f5' }}>Portability</td>
-                      <td className="p-3" style={{ color: '#22c55e' }}>Excellent — no cord, no hose limits</td>
+                      <td className="p-3" style={{ color: '#22c55e' }}>Excellent, no cord, no hose limits</td>
                       <td className="p-3" style={{ color: '#a1a1aa' }}>Good — no cord, but heavy (60-90 lbs)</td>
-                      <td className="p-3" style={{ color: '#a1a1aa' }}>Limited — tethered to outlet</td>
+                      <td className="p-3" style={{ color: '#a1a1aa' }}>Limited. tethered to outlet</td>
                     </tr>
                     <tr className="border-b" style={{ borderColor: '#27272a', backgroundColor: '#171717' }}>
                       <td className="p-3 font-medium" style={{ color: '#f5f5f5' }}>Noise</td>
@@ -1073,7 +1073,7 @@ export default function BestBatteryPressureWashers() {
                     PSI (pounds per square inch) measures water pressure, while GPM (gallons per minute) measures
                     flow rate. Multiply them together to get Cleaning Units (CU): a higher CU means more
                     cleaning power. For example, the EGO at 3,200 PSI x 1.0 GPM = 3,200 CU, while the
-                    Greenworks at 2,100 PSI x 1.2 GPM = 2,520 CU. Both numbers matter — high PSI with low GPM
+                    Greenworks at 2,100 PSI x 1.2 GPM = 2,520 CU. Both numbers matter. High PSI with low GPM
                     means the water hits hard but rinses slowly, while high GPM with low PSI rinses fast but
                     may not dislodge tough grime.
                   </p>
@@ -1086,7 +1086,7 @@ export default function BestBatteryPressureWashers() {
                     deliver the most PSI, while 20V (DeWalt) and 24V (Sun Joe) are suited to lighter tasks.
                     Battery capacity (measured in amp-hours, or Ah) determines runtime: a 10.0 Ah battery
                     lasts roughly 3-4x longer than a 2.5 Ah battery at the same voltage. Always check whether
-                    the battery is included or sold separately — it can add $100-$400 to the total cost.
+                    the battery is included or sold separately, it can add $100-$400 to the total cost.
                   </p>
                 </div>
 
@@ -1174,7 +1174,7 @@ export default function BestBatteryPressureWashers() {
                   </span>
                   <div>
                     <p className="font-medium text-sm" style={{ color: '#f5f5f5' }}>Commercial / Industrial</p>
-                    <p className="text-xs" style={{ color: '#a1a1aa' }}>Paint stripping, graffiti removal, fleet washing — gas models only (for now)</p>
+                    <p className="text-xs" style={{ color: '#a1a1aa' }}>Paint stripping, graffiti removal, fleet washing, gas models only (for now)</p>
                   </div>
                 </div>
               </div>
@@ -1194,10 +1194,10 @@ export default function BestBatteryPressureWashers() {
                   </summary>
                   <div className="px-4 pb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
                     Not yet. The most powerful cordless model in 2026, the EGO POWER+ HPW3200, reaches
-                    3,200 PSI — which rivals many entry-level gas units. However, gas models routinely deliver
+                    3,200 PSI, which rivals many entry-level gas units. However, gas models routinely deliver
                     3,000-4,200 PSI with higher GPM (2.0-2.5 vs 0.8-1.2), giving them significantly more
-                    cleaning throughput. For most residential tasks — cars, patios, siding, outdoor
-                    furniture — a battery unit in the 1,500-3,200 PSI range is more than sufficient.
+                    cleaning throughput. For most residential tasks, cars, patios, siding, outdoor
+                    furniture. a battery unit in the 1,500-3,200 PSI range is more than sufficient.
                   </div>
                 </details>
 
@@ -1303,7 +1303,7 @@ export default function BestBatteryPressureWashers() {
                   <div className="flex items-start gap-3 p-4 rounded-lg" style={{ backgroundColor: '#141414' }}>
                     <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                     <div>
-                      <p className="font-bold" style={{ color: '#f5f5f5' }}>EGO POWER+ HPW3200 — Best Overall</p>
+                      <p className="font-bold" style={{ color: '#f5f5f5' }}>EGO POWER+ HPW3200, Best Overall</p>
                       <p className="text-sm" style={{ color: '#a1a1aa' }}>
                         Unmatched 3,200 PSI. The only cordless model that can genuinely replace a gas pressure
                         washer for most homeowners. Premium price, premium performance.
@@ -1314,7 +1314,7 @@ export default function BestBatteryPressureWashers() {
                   <div className="flex items-start gap-3 p-4 rounded-lg" style={{ backgroundColor: '#141414' }}>
                     <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                     <div>
-                      <p className="font-bold" style={{ color: '#f5f5f5' }}>Greenworks 60V 2100 PSI — Best Value</p>
+                      <p className="font-bold" style={{ color: '#f5f5f5' }}>Greenworks 60V 2100 PSI, Best Value</p>
                       <p className="text-sm" style={{ color: '#a1a1aa' }}>
                         The best all-around pick for most homeowners. Strong power, battery included, excellent
                         ecosystem, and a price that makes sense.
@@ -1325,7 +1325,7 @@ export default function BestBatteryPressureWashers() {
                   <div className="flex items-start gap-3 p-4 rounded-lg" style={{ backgroundColor: '#141414' }}>
                     <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                     <div>
-                      <p className="font-bold" style={{ color: '#f5f5f5' }}>Ryobi 40V HP 1500 PSI — Best for Cars</p>
+                      <p className="font-bold" style={{ color: '#f5f5f5' }}>Ryobi 40V HP 1500 PSI, Best for Cars</p>
                       <p className="text-sm" style={{ color: '#a1a1aa' }}>
                         Paint-safe pressure, huge battery ecosystem, widely available. The go-to for anyone
                         who primarily washes vehicles.
@@ -1336,7 +1336,7 @@ export default function BestBatteryPressureWashers() {
                   <div className="flex items-start gap-3 p-4 rounded-lg" style={{ backgroundColor: '#141414' }}>
                     <span className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: '#27272a', color: '#a1a1aa' }}>4</span>
                     <div>
-                      <p className="font-bold" style={{ color: '#f5f5f5' }}>DeWalt 20V MAX DCPW550 — Most Portable</p>
+                      <p className="font-bold" style={{ color: '#f5f5f5' }}>DeWalt 20V MAX DCPW550, Most Portable</p>
                       <p className="text-sm" style={{ color: '#a1a1aa' }}>
                         A niche tool done right. Not a traditional pressure washer, but the ultimate portable
                         power rinser for boats, camping, and job sites.
@@ -1347,7 +1347,7 @@ export default function BestBatteryPressureWashers() {
                   <div className="flex items-start gap-3 p-4 rounded-lg" style={{ backgroundColor: '#141414' }}>
                     <span className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-bold text-sm" style={{ backgroundColor: '#27272a', color: '#a1a1aa' }}>5</span>
                     <div>
-                      <p className="font-bold" style={{ color: '#f5f5f5' }}>Sun Joe 24V-X2-PW1200 — Budget Pick</p>
+                      <p className="font-bold" style={{ color: '#f5f5f5' }}>Sun Joe 24V-X2-PW1200. Budget Pick</p>
                       <p className="text-sm" style={{ color: '#a1a1aa' }}>
                         The cheapest way into cordless pressure washing. Two batteries, bucket-draw mode, and
                         enough PSI for light-duty cleaning at a price that is hard to beat.

@@ -40,7 +40,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Best Electric Bikes (2026): Aventon vs Rad Power vs Lectric — Top E-Bikes Reviewed',
+    'Best Electric Bikes (2026): Aventon vs Rad Power vs Lectric, Top E-Bikes Reviewed',
   description:
     'Compare the best electric bikes in 2026. In-depth reviews covering Aventon Aventure 3, Rad Power RadRover 6 Plus, RadExpand 5 Plus, Lectric XP 3.0, Aventon Soltera.2, and Lectric XP Lite 2.0.',
   datePublished: '2026-04-17',
@@ -74,7 +74,7 @@ const faqSchema = {
       name: 'What is the best electric bike in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Aventon Aventure 3 is our top pick for 2026. It offers a 750W motor, 65-mile range, fat tires for all-terrain riding, and an ACU with 4G/GPS tracking and anti-theft geofencing — all for $1,999. It handles commuting, trails, and beach rides equally well.',
+        text: 'The Aventon Aventure 3 is our top pick for 2026. It offers a 750W motor, 65-mile range, fat tires for all-terrain riding, and an ACU with 4G/GPS tracking and anti-theft geofencing, all for $1,999. It handles commuting, trails, and beach rides equally well.',
       },
     },
     {
@@ -114,7 +114,7 @@ const faqSchema = {
       name: 'How long do electric bike batteries last?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most e-bike batteries use lithium-ion cells rated for 500-1,000 charge cycles before capacity drops to 80%. For a typical rider charging 2-3 times per week, that translates to 3-5+ years of use. Replacement batteries typically cost $400-$800. Proper care — avoiding extreme heat, not storing at 0% or 100%, and using the manufacturer charger — can extend battery life significantly.',
+        text: 'Most e-bike batteries use lithium-ion cells rated for 500-1,000 charge cycles before capacity drops to 80%. For a typical rider charging 2-3 times per week, that translates to 3-5+ years of use. Replacement batteries typically cost $400-$800. Proper care, avoiding extreme heat, not storing at 0% or 100%, and using the manufacturer charger, can extend battery life significantly.',
       },
     },
     {
@@ -288,7 +288,7 @@ export default function BestElectricBikes() {
               <p className="text-lg text-foreground/80 leading-relaxed mb-8">
                 We analyzed dozens of e-bikes across every category to find the six best options
                 for 2026. This guide covers everything from fat-tire adventure bikes to folding
-                commuters and budget-friendly options under $800 — with honest specs, pros and
+                commuters and budget-friendly options under $800. with honest specs, pros and
                 cons, and a detailed buying guide to help you pick the right ride.
               </p>
             </div>
@@ -304,7 +304,7 @@ export default function BestElectricBikes() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Aventon Aventure 3 — Best Fat Tire E-Bike
+                      Aventon Aventure 3, Best Fat Tire E-Bike
                     </p>
                     <p className="text-sm text-muted-foreground">
                       The complete package: 750W motor, 65-mile range, 4G/GPS tracking with
@@ -317,7 +317,7 @@ export default function BestElectricBikes() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Lectric XP 3.0 — Best Value E-Bike
+                      Lectric XP 3.0, Best Value E-Bike
                     </p>
                     <p className="text-sm text-muted-foreground">
                       Starting at just $999, the XP 3.0 folds for easy storage, delivers up to 60+
@@ -330,7 +330,7 @@ export default function BestElectricBikes() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold text-foreground">
-                      Rad Power RadRover 6 Plus — Best for Beginners
+                      Rad Power RadRover 6 Plus, Best for Beginners
                     </p>
                     <p className="text-sm text-muted-foreground">
                       Rad Power&apos;s flagship fat-tire bike is approachable, comfortable, and
@@ -507,7 +507,7 @@ export default function BestElectricBikes() {
                     productKey="aventon-aventure-3"
                     source="electric-bikes-hub"
                     variant="primary"
-                    label="Check Price — Aventon Aventure 3"
+                    label="Check Price, Aventon Aventure 3"
                     showPrice
                   />
                 </div>
@@ -556,8 +556,7 @@ export default function BestElectricBikes() {
 
                   <p className="text-foreground/80 leading-relaxed mb-6">
                     Rad Power Bikes is the largest e-bike brand in North America, and the RadRover 6
-                    Plus is their flagship fat-tire model. It&apos;s designed to be approachable —
-                    the step-through frame option makes mounting easy, the controls are intuitive,
+                    Plus is their flagship fat-tire model. It&apos;s designed to be approachable. The step-through frame option makes mounting easy, the controls are intuitive,
                     and the ride quality is forgiving enough for first-time e-bike riders.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-6">
@@ -577,7 +576,7 @@ export default function BestElectricBikes() {
                       <ul className="space-y-1 text-sm text-green-200">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Outstanding customer support and warranty</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Step-through frame option for easy mounting</li>
-                        <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Intuitive controls — great for first-time riders</li>
+                        <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Intuitive controls, great for first-time riders</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Suspension fork with lockout</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Huge accessories ecosystem (racks, bags, child seats)</li>
                       </ul>
@@ -587,8 +586,8 @@ export default function BestElectricBikes() {
                         <X className="h-4 w-4" /> Cons
                       </h4>
                       <ul className="space-y-1 text-sm text-red-200">
-                        <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Class 2 only — capped at 20 mph</li>
-                        <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Shorter range (25-45 mi) vs. competitors</li>
+                        <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Class 2 only. Capped at 20 mph</li>
+                        <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Shorter range (25-45 mi) vs. Competitors</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> No GPS/connected features</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Heavy at 73.4 lbs</li>
                       </ul>
@@ -605,7 +604,7 @@ export default function BestElectricBikes() {
                     productKey="rad-power-radrover-6-plus"
                     source="electric-bikes-hub"
                     variant="primary"
-                    label="Check Price — Rad Power RadRover 6 Plus"
+                    label="Check Price, Rad Power RadRover 6 Plus"
                     showPrice
                   />
                 </div>
@@ -674,7 +673,7 @@ export default function BestElectricBikes() {
                       </h4>
                       <ul className="space-y-1 text-sm text-green-200">
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Folds compactly for car/RV/apartment storage</li>
-                        <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Full 750W motor — no power sacrifice for portability</li>
+                        <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Full 750W motor. No power sacrifice for portability</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Fat tires + suspension fork for comfort</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 flex-shrink-0 mt-0.5" /> Integrated Safe Shield battery design</li>
                       </ul>
@@ -880,7 +879,7 @@ export default function BestElectricBikes() {
                       <ul className="space-y-1 text-sm text-red-200">
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Not suitable for off-road or rough terrain</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Smaller battery limits max range</li>
-                        <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> No suspension — road vibrations transfer to rider</li>
+                        <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> No suspension. road vibrations transfer to rider</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 flex-shrink-0 mt-0.5" /> Non-folding and non-removable battery</li>
                       </ul>
                     </div>
@@ -896,7 +895,7 @@ export default function BestElectricBikes() {
                     productKey="aventon-soltera-2"
                     source="electric-bikes-hub"
                     variant="primary"
-                    label="Check Price — Aventon Soltera.2"
+                    label="Check Price, Aventon Soltera.2"
                     showPrice
                   />
                 </div>
@@ -952,7 +951,7 @@ export default function BestElectricBikes() {
                     keep the overall package compact.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    The &quot;Lite&quot; designation is earned — at ~46 lbs, it&apos;s one of the
+                    The &quot;Lite&quot; designation is earned. At ~46 lbs, it&apos;s one of the
                     lighter folding e-bikes available. The tradeoff is a smaller battery and less
                     powerful motor compared to the XP 3.0, but for riders with shorter commutes
                     (under 10 miles each way) or those who just want an affordable way to run
@@ -1053,7 +1052,7 @@ export default function BestElectricBikes() {
                   <p className="text-foreground/80 leading-relaxed mb-4">
                     Battery capacity is measured in watt-hours (Wh). A higher Wh rating means more
                     energy stored and generally more range. Manufacturer range claims are based on
-                    ideal conditions — real-world range depends on terrain, rider weight, assist
+                    ideal conditions. Real-world range depends on terrain, rider weight, assist
                     level, wind, and temperature.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-4">
@@ -1153,7 +1152,7 @@ export default function BestElectricBikes() {
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" /> Fits in car trunks, closets, under desks</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" /> Great for multimodal commuting (bike + transit)</li>
                         <li className="flex items-start gap-2"><Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" /> Easier to store in apartments</li>
-                        <li className="flex items-start gap-2"><X className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" /> Usually smaller wheels (20&quot;) — less stable at speed</li>
+                        <li className="flex items-start gap-2"><X className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" /> Usually smaller wheels (20&quot;), less stable at speed</li>
                         <li className="flex items-start gap-2"><X className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" /> Folding mechanism adds weight and complexity</li>
                       </ul>
                     </div>
@@ -1246,7 +1245,7 @@ export default function BestElectricBikes() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="h-4 w-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                      Most riders charge 2-3 times per week — total solar cost: $0
+                      Most riders charge 2-3 times per week, total solar cost: $0
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="h-4 w-4 text-blue-600 flex-shrink-0 mt-0.5" />
@@ -1302,7 +1301,7 @@ export default function BestElectricBikes() {
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
                     The Aventon Aventure 3 is our top pick for 2026. It offers a 750W motor, 65-mile
                     range, fat tires for all-terrain riding, and an ACU with 4G/GPS tracking and
-                    anti-theft geofencing — all for $1,999. For pure value, the Lectric XP 3.0
+                    anti-theft geofencing, all for $1,999. For pure value, the Lectric XP 3.0
                     starting at $999 is hard to beat. For beginners, the Rad Power RadRover 6 Plus
                     is the most approachable option.
                   </div>
@@ -1341,7 +1340,7 @@ export default function BestElectricBikes() {
                     <ChevronRight className="h-5 w-5 text-muted-foreground group-open:rotate-90 transition-transform" />
                   </summary>
                   <div className="px-4 pb-4 text-foreground/80 leading-relaxed">
-                    Yes — e-bikes are one of the most cost-effective commuting options available. The
+                    Yes. E-bikes are one of the most cost-effective commuting options available. The
                     average American spends $10,000-$12,000 per year on car ownership. An e-bike costs
                     $20-$50 per year in electricity and $100-$200 in maintenance. For commutes under
                     15 miles each way, an e-bike can replace a car entirely and pay for itself within
@@ -1431,7 +1430,7 @@ export default function BestElectricBikes() {
                     <ChevronRight className="h-4 w-4" />
                   </h3>
                   <p className="text-sm text-muted-foreground mt-1">
-                    EcoFlow vs Bluetti vs Jackery vs Anker — full comparison with solar pairing guide.
+                    EcoFlow vs Bluetti vs Jackery vs Anker, full comparison with solar pairing guide.
                   </p>
                 </Link>
               </div>
@@ -1446,7 +1445,7 @@ export default function BestElectricBikes() {
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
                   GreenReviewsHub independently reviews the best e-bikes, portable power stations,
-                  solar products, and sustainable tech — so you can make smarter, greener
+                  solar products, and sustainable tech. so you can make smarter, greener
                   choices with confidence.
                 </p>
                 <Link

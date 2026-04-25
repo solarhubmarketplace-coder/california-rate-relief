@@ -18,21 +18,21 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-// Primary affiliate CTA — the best all-around kids e-bike
+// Primary affiliate CTA, the best all-around kids e-bike
 const PRIMARY_PRODUCT_KEY = 'rad-power-radrunner-plus-youth';
 
 export const metadata: Metadata = {
   title:
     'Best Kids Electric Bikes 2026: Ages 5-14 Tested and Ranked',
   description:
-    'The best kids electric bikes of 2026 for ages 5 through 14. Rad Power RadRunner Plus Youth, Woom UP 5, Little Fiets, Kent Torpedo, Razor MX650, and Segway Xyber compared — speed limits, helmet law, pedal-assist vs throttle, and parent buying advice.',
+    'The best kids electric bikes of 2026 for ages 5 through 14. Rad Power RadRunner Plus Youth, Woom UP 5, Little Fiets, Kent Torpedo, Razor MX650, and Segway Xyber compared. Speed limits, helmet law, pedal-assist vs throttle, and parent buying advice.',
   alternates: {
     canonical: '/reviews/kids-electric-bike',
   },
   openGraph: {
     title: 'Best Kids Electric Bikes 2026: The Parent\'s Buyer\'s Guide',
     description:
-      'Rad Power, Woom, Little Fiets, Kent, Razor, Segway — every major kids e-bike tested. Age ranges, safety features, California helmet law, and what to actually buy.',
+      'Rad Power, Woom, Little Fiets, Kent, Razor, Segway. every major kids e-bike tested. Age ranges, safety features, California helmet law, and what to actually buy.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -93,7 +93,7 @@ const faqSchema = {
       name: 'What age is right for a kids electric bike?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most kids e-bikes are designed for ages 5-14, with specific models targeting narrower bands. Ages 5-7 need a smaller balance-style e-bike (not on this list — see the Stacyc 12 or Kuberg Start). Ages 7-10 fit a 20" wheel Class 2 e-bike with throttle, like the Kent Torpedo. Ages 10-14 fit a full-size Class 3 pedal-assist like the Woom UP 5 or the RadRunner Plus Youth. Size matters more than age — if your child\'s feet can\'t flat-foot at a stop, the bike is too big.',
+        text: 'Most kids e-bikes are designed for ages 5-14, with specific models targeting narrower bands. Ages 5-7 need a smaller balance-style e-bike (not on this list, see the Stacyc 12 or Kuberg Start). Ages 7-10 fit a 20" wheel Class 2 e-bike with throttle, like the Kent Torpedo. Ages 10-14 fit a full-size Class 3 pedal-assist like the Woom UP 5 or the RadRunner Plus Youth. Size matters more than age — if your child\'s feet can\'t flat-foot at a stop, the bike is too big.',
       },
     },
     {
@@ -109,7 +109,7 @@ const faqSchema = {
       name: 'Are helmets required on kids e-bikes in California?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. California law requires bicycle helmets for all riders under age 18 on any bicycle or e-bike, regardless of class. For Class 3 e-bikes (28 mph pedal-assist), helmets are required for all riders of any age. Class 3 e-bikes also have a 16-and-up minimum rider age in California — children under 16 cannot legally ride a Class 3 bike on public roads. For serious off-road use like the Razor MX650 dirt bike, a DOT-certified motorcycle helmet is strongly recommended.',
+        text: 'Yes. California law requires bicycle helmets for all riders under age 18 on any bicycle or e-bike, regardless of class. For Class 3 e-bikes (28 mph pedal-assist), helmets are required for all riders of any age. Class 3 e-bikes also have a 16-and-up minimum rider age in California, children under 16 cannot legally ride a Class 3 bike on public roads. For serious off-road use like the Razor MX650 dirt bike, a DOT-certified motorcycle helmet is strongly recommended.',
       },
     },
     {
@@ -324,7 +324,7 @@ export default function KidsElectricBikeHub() {
                 Ages 5-8 (16&quot; Wheels)
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                This age group is generally too young for a traditional e-bike. Look at balance-bike-style models like the Stacyc 12 or 16 (not in this guide). If your 7-year-old insists on a bigger bike, a small 20&quot; wheel model with a strict parent-limited 10-12 mph top speed is workable — but ride with them, always.
+                This age group is generally too young for a traditional e-bike. Look at balance-bike-style models like the Stacyc 12 or 16 (not in this guide). If your 7-year-old insists on a bigger bike, a small 20&quot; wheel model with a strict parent-limited 10-12 mph top speed is workable. But ride with them, always.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Ages 8-12 (20&quot; Wheels)
@@ -336,13 +336,13 @@ export default function KidsElectricBikeHub() {
                 Ages 12-14 (24&quot;+ Wheels)
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Pre-teens who can fit a 24&quot; wheel bike should look at the Woom UP 5 or a larger RadRunner Plus. This is the bridge to adult e-bikes — by age 14-15, most kids can fit a small adult-frame Class 1 pedal-assist without issue.
+                Pre-teens who can fit a 24&quot; wheel bike should look at the Woom UP 5 or a larger RadRunner Plus. This is the bridge to adult e-bikes. by age 14-15, most kids can fit a small adult-frame Class 1 pedal-assist without issue.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Ages 13+ (Off-Road Dirt Bikes)
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Razor MX650, Segway X160, and similar off-road electric dirt bikes are appropriate for teens 13 and up with proper supervision and gear. These are not bikes for roads — ride them at designated OHV parks or on private property with full motocross safety equipment.
+                Razor MX650, Segway X160, and similar off-road electric dirt bikes are appropriate for teens 13 and up with proper supervision and gear. These are not bikes for roads. Ride them at designated OHV parks or on private property with full motocross safety equipment.
               </p>
 
               {/* Mid CTA */}
@@ -405,13 +405,13 @@ export default function KidsElectricBikeHub() {
                 <strong>Price:</strong> $1,799 · <strong>Ages:</strong> 10-14 · <strong>Wheel size:</strong> 20&quot; · <strong>Top speed:</strong> 20 mph · <strong>Motor:</strong> 750W geared hub
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Rad Power Bikes has been the best-selling e-bike company in the U.S. for several years, and the RadRunner Plus Youth is their kid-sized version of the bestselling RadRunner Plus platform. It&apos;s a real bike — not a toy — with legitimate 750W hub motor, 48V / 14Ah battery, hydraulic disc brakes, and a cargo-ready chassis.
+                Rad Power Bikes has been the best-selling e-bike company in the U.S. for several years, and the RadRunner Plus Youth is their kid-sized version of the bestselling RadRunner Plus platform. It&apos;s a real bike, not a toy, with legitimate 750W hub motor, 48V / 14Ah battery, hydraulic disc brakes, and a cargo-ready chassis.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Parent-adjustable speed limiter is the killer feature. You can set maximum speed to 5, 10, 15, or 20 mph in the LCD display, password-protect the setting, and gradually increase as the child proves competence. The throttle can also be disabled entirely to force pedal-assist only, which we recommend for the first month of ownership.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Built-in features that matter for kids: integrated LED front and rear lights (auto-on), low standover height, internal battery (no carrying it separately), and a step-through frame that makes mounting easy for riders with less flexibility. The Rad Power warranty is 1 year on the bike and 2 years on the battery, with a proper U.S. service network.
+                Built-in features that matter for kids: integrated LED front and rear lights (auto-on), low standover height, internal battery (no carrying it separately), and a step-through frame that makes mounting easy for riders with less flexibility. The Rad Power warranty is 1 year on the bike and 2 years on the battery, with a proper U.S. Service network.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Weaknesses: at $1,799 it&apos;s not cheap, and the 65-lb weight is hard for a smaller rider to pick up after a crash. For a bike you&apos;re going to keep for 2-3 years of serious use, the price is reasonable.
@@ -426,13 +426,13 @@ export default function KidsElectricBikeHub() {
               </div>
 
               <h2 id='woom' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                2. Woom UP 5 — Best Quality (Premium)
+                2. Woom UP 5. Best Quality (Premium)
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $3,399 · <strong>Ages:</strong> 10-14 · <strong>Wheel size:</strong> 24&quot; · <strong>Top speed:</strong> 20 mph · <strong>Motor:</strong> 250W Fazua pedal-assist
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Woom is an Austrian brand that specializes in lightweight premium kids bikes. The UP 5 is their first e-bike — a 24&quot; wheel Class 1 pedal-assist with a 250W Fazua motor and a featherweight (for an e-bike) 35-lb total weight. It&apos;s dramatically lighter than comparable RadRunner or Kent bikes, which makes it feel more like a real bike and less like a heavy appliance.
+                Woom is an Austrian brand that specializes in lightweight premium kids bikes. The UP 5 is their first e-bike; a 24&quot; wheel Class 1 pedal-assist with a 250W Fazua motor and a featherweight (for an e-bike) 35-lb total weight. It&apos;s dramatically lighter than comparable RadRunner or Kent bikes, which makes it feel more like a real bike and less like a heavy appliance.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Pedal-assist only. No throttle. Three assist levels controlled from the bar. When the motor engages it does so smoothly and proportionally to pedal effort, teaching the child proper cycling technique rather than twist-grip-and-go. For parents who want their kid to become a real cyclist rather than a motor-twister, the Woom is the correct choice.
@@ -453,7 +453,7 @@ export default function KidsElectricBikeHub() {
               </div>
 
               <h2 id='little-fiets' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                3. Little Fiets — Best Commuter for Younger Kids
+                3. Little Fiets, Best Commuter for Younger Kids
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,899 · <strong>Ages:</strong> 8-12 · <strong>Wheel size:</strong> 20&quot; · <strong>Top speed:</strong> 15 mph · <strong>Motor:</strong> 250W pedal-assist
@@ -480,7 +480,7 @@ export default function KidsElectricBikeHub() {
               </div>
 
               <h2 id='kent' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                4. Kent Torpedo — Best Budget
+                4. Kent Torpedo, Best Budget
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $699 at Walmart · <strong>Ages:</strong> 8-12 · <strong>Wheel size:</strong> 20&quot; · <strong>Top speed:</strong> 15 mph · <strong>Motor:</strong> 250W
@@ -489,7 +489,7 @@ export default function KidsElectricBikeHub() {
                 The Kent Torpedo is a box-store kids e-bike sold at Walmart and similar big-box retailers. At $699 it&apos;s less than half the price of everything else on this list. You get a real 250W Class 2 e-bike with throttle, pedal-assist, and 15 mph top speed.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For the price, it&apos;s a legitimate option. Components are entry-level but functional — mechanical disc brakes rather than hydraulic, lower-end Shimano Tourney drivetrain, and a smaller 36V battery that gets about 15-20 miles of range. The chassis is heavy at 58 lbs, but for a kid who outgrows a bike every 18 months, dropping $700 instead of $1,800 may make sense.
+                For the price, it&apos;s a legitimate option. Components are entry-level but functional. mechanical disc brakes rather than hydraulic, lower-end Shimano Tourney drivetrain, and a smaller 36V battery that gets about 15-20 miles of range. The chassis is heavy at 58 lbs, but for a kid who outgrows a bike every 18 months, dropping $700 instead of $1,800 may make sense.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Be realistic about what $699 buys: this is a budget bike. The warranty is limited, parts availability is through Kent&apos;s consumer line (not a bike shop), and you should assume you&apos;ll replace the brakes and tires earlier than on a premium bike. For casual neighborhood use, it&apos;s fine. For daily commuting 5 miles each way to school, step up to the RadRunner Plus Youth.
@@ -504,7 +504,7 @@ export default function KidsElectricBikeHub() {
               </div>
 
               <h2 id='razor' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                5. Razor MX650 — Best Off-Road Electric Dirt Bike
+                5. Razor MX650, Best Off-Road Electric Dirt Bike
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $700 · <strong>Ages:</strong> 13+ · <strong>Wheel size:</strong> 16&quot; knobby · <strong>Top speed:</strong> 17 mph · <strong>Motor:</strong> 650W
@@ -516,7 +516,7 @@ export default function KidsElectricBikeHub() {
                 Razor has been making this platform for over 15 years and the MX650 is the refined evolution. 650W motor with chain drive, 36V / 15Ah SLA battery (heavy, but cheap), dual spring-coil shock, 12&quot; pneumatic tires front and rear, and a frame sized for riders 4&apos;6&quot; to 5&apos;8&quot;.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                What to know: the SLA battery is the weak point — it&apos;s cheap to replace ($100) but doesn&apos;t hold the energy density of a lithium pack. Expect 30-45 minutes of riding per charge and 6-8 hours of recharge time. The Razor MX650 is about introduction and fun, not serious motocross. If your kid is serious about competitive motocross, step up to the Kuberg Freerider at $6,500.
+                What to know: the SLA battery is the weak point. it&apos;s cheap to replace ($100) but doesn&apos;t hold the energy density of a lithium pack. Expect 30-45 minutes of riding per charge and 6-8 hours of recharge time. The Razor MX650 is about introduction and fun, not serious motocross. If your kid is serious about competitive motocross, step up to the Kuberg Freerider at $6,500.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Riding location matters: this bike is legal on private property, at designated OHV parks, and at motocross tracks that allow electric kids bikes. It&apos;s not legal on roads, sidewalks, or bike paths. A DOT-certified motorcycle helmet, chest protector, and boots are non-negotiable.
@@ -531,13 +531,13 @@ export default function KidsElectricBikeHub() {
               </div>
 
               <h2 id='segway' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                6. Segway Xyber — Best Hybrid
+                6. Segway Xyber, Best Hybrid
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $899 · <strong>Ages:</strong> 10-14 · <strong>Wheel size:</strong> 20&quot; · <strong>Top speed:</strong> 20 mph · <strong>Motor:</strong> 500W
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Segway Xyber is a newer entry into the kids e-bike market from Segway Powersports (same corporate family as Ninebot). It splits the difference between a pedal commuter and an off-road style bike — knobby tires, upright cockpit, 500W motor, and a chassis that looks more aggressive than the Rad or Woom offerings.
+                The Segway Xyber is a newer entry into the kids e-bike market from Segway Powersports (same corporate family as Ninebot). It splits the difference between a pedal commuter and an off-road style bike, knobby tires, upright cockpit, 500W motor, and a chassis that looks more aggressive than the Rad or Woom offerings.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 At $899 it&apos;s priced between the budget Kent and the premium Rad Power. You get hydraulic-assist brakes, a proper LCD dash with parent speed-limit controls, and a removable lithium battery for charging indoors. The throttle-plus-pedal-assist Class 2 setup is conventional.
@@ -558,7 +558,7 @@ export default function KidsElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Parent-Approved Pick'
-                verdict={`If you want one recommendation for most families with kids 10-14, the RadRunner Plus Youth is the right answer. Safety features, parent controls, brand support — all the things that matter.`}
+                verdict={`If you want one recommendation for most families with kids 10-14, the RadRunner Plus Youth is the right answer. Safety features, parent controls, brand support, all the things that matter.`}
                 source='kids-electric-bike-mid-2'
                 variant='mid'
               />
@@ -677,7 +677,7 @@ export default function KidsElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Final Verdict'
-                verdict={`The Rad Power RadRunner Plus Youth is our top pick for kids electric bikes in 2026. Real build quality, parent speed controls, U.S. brand support. Check current price and availability.`}
+                verdict={`The Rad Power RadRunner Plus Youth is our top pick for kids electric bikes in 2026. Real build quality, parent speed controls, U.S. Brand support. Check current price and availability.`}
                 source='kids-electric-bike-final'
                 variant='final'
               />
@@ -687,7 +687,7 @@ export default function KidsElectricBikeHub() {
                 The Bottom Line
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For most families, the <strong>Rad Power RadRunner Plus Youth</strong> at $1,799 is the right pick — it&apos;s a real bike, it has parent-adjustable safety features, and it comes from a company that will support you. For families with the budget and desire for the best bike possible, the <strong>Woom UP 5</strong> at $3,399 is unmatched in quality. For smaller kids who want a commuter, the <strong>Little Fiets</strong> is a beautiful option. For budget-constrained families, the <strong>Kent Torpedo</strong> at $699 gets you into a real e-bike without breaking the bank.
+                For most families, the <strong>Rad Power RadRunner Plus Youth</strong> at $1,799 is the right pick, it&apos;s a real bike, it has parent-adjustable safety features, and it comes from a company that will support you. For families with the budget and desire for the best bike possible, the <strong>Woom UP 5</strong> at $3,399 is unmatched in quality. For smaller kids who want a commuter, the <strong>Little Fiets</strong> is a beautiful option. For budget-constrained families, the <strong>Kent Torpedo</strong> at $699 gets you into a real e-bike without breaking the bank.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Don&apos;t overlook the off-road option. For a kid 13+ interested in motocross-style riding, the <strong>Razor MX650</strong> at $700 is the best value dirt bike in the category. Just be clear that it&apos;s not a road bike and requires motocross gear and a dedicated riding location.

@@ -105,7 +105,7 @@ const faqSchema = {
       name: 'Is Rheem cheaper than Rinnai?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. A Rheem Prestige 11 GPM condensing tankless typically retails $1,500-$2,200, compared to $2,100-$2,500 for a comparable Rinnai Sensei RX199. Installation labor is similar for both brands. Over 20 years, the Rinnai may deliver 3-5 more years of service life — but if you\'re planning to stay 10 years or less, Rheem is the better value.',
+        text: 'Yes. A Rheem Prestige 11 GPM condensing tankless typically retails $1,500-$2,200, compared to $2,100-$2,500 for a comparable Rinnai Sensei RX199. Installation labor is similar for both brands. Over 20 years, the Rinnai may deliver 3-5 more years of service life, but if you\'re planning to stay 10 years or less, Rheem is the better value.',
       },
     },
     {
@@ -478,7 +478,7 @@ export default function RheemTanklessReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Rheem&apos;s built-in EcoNet Wi-Fi is a genuine advantage
                 over Rinnai&apos;s accessory-only Control-R module. On
-                Prestige units, EcoNet works out of the box — no extra $150
+                Prestige units, EcoNet works out of the box, no extra $150
                 module to purchase and install. The app provides:
               </p>
               <ul className='space-y-2 text-foreground/80 mb-6'>
@@ -512,7 +512,7 @@ export default function RheemTanklessReview() {
                 EcoNet also supports Rheem&apos;s broader HVAC and heat pump
                 water heater lineup, so if you&apos;re a Rheem household,
                 everything lives in one app. The app is polished,
-                responsive, and does what you&apos;d expect — a step ahead
+                responsive, and does what you&apos;d expect. a step ahead
                 of Rinnai&apos;s more utilitarian Control-R app.
               </p>
 
@@ -520,7 +520,7 @@ export default function RheemTanklessReview() {
                 Performance &amp; Flow Rate
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Prestige RTGH-11DVLN delivers 11 GPM at 60°F rise — the
+                The Prestige RTGH-11DVLN delivers 11 GPM at 60°F rise. the
                 same headline flow rate as the Rinnai Sensei RX199. In
                 California with groundwater at 55-65°F (typical for most
                 inland metros), you&apos;ll see actual flow at the 9-10 GPM
@@ -545,7 +545,7 @@ export default function RheemTanklessReview() {
                 Rheem&apos;s Performance Platinum line is sold exclusively
                 at Home Depot, which matters more than you&apos;d think.
                 For the buyer who prefers to source their own unit and hire
-                an independent plumber for installation — a workflow that
+                an independent plumber for installation, a workflow that
                 typically saves 15-25% over having a branded installer
                 handle the entire job — Rheem is far easier to work with
                 than Rinnai. You walk into Home Depot, buy a unit at the
@@ -826,7 +826,7 @@ export default function RheemTanklessReview() {
                     Is Rheem cheaper than Rinnai?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — typically $300-$500 less for a comparable
+                    Yes, typically $300-$500 less for a comparable
                     condensing 11 GPM unit. Over 20 years, Rinnai may
                     deliver 3-5 more years of service; for 10-year horizons,
                     Rheem is better value.
@@ -860,7 +860,7 @@ export default function RheemTanklessReview() {
                     Does Rheem have Wi-Fi?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — EcoNet is built-in on Prestige (no extra
+                    Yes, EcoNet is built-in on Prestige (no extra
                     accessory). Performance Platinum supports EcoNet via
                     ~$100 accessory module. Alexa and Google integration
                     included.
@@ -889,7 +889,7 @@ export default function RheemTanklessReview() {
                 and nearly-equivalent efficiency, pick up a better built-in
                 Wi-Fi experience, and gain Home Depot retail availability.
                 The only real tradeoff is three fewer years of heat
-                exchanger warranty — which matters if you&apos;re planning
+                exchanger warranty, which matters if you&apos;re planning
                 to stay in the home 20+ years, but rarely matters for
                 5-15-year owners. For California homeowners buying tankless
                 in 2026, the Rheem Prestige 11 GPM (RTGH-11DVLN) is the

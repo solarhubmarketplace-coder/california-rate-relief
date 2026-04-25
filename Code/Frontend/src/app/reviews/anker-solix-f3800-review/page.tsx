@@ -97,7 +97,7 @@ const faqSchema = {
       name: 'Is the Anker SOLIX F3800 $1,799 price real?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. As of April 2026, Anker is selling the F3800 at $1,799 — a 55% discount from the $3,999 MSRP. This appears to be an aggressive market-share grab against EcoFlow and Bluetti. The promotional price has been available for several months, but there is no guarantee it will last indefinitely.',
+        text: 'Yes. As of April 2026, Anker is selling the F3800 at $1,799, a 55% discount from the $3,999 MSRP. This appears to be an aggressive market-share grab against EcoFlow and Bluetti. The promotional price has been available for several months, but there is no guarantee it will last indefinitely.',
       },
     },
     {
@@ -216,7 +216,7 @@ export default function AnkerSolixF3800Review() {
               productKey={PRODUCT_KEY}
               badge="Best Value"
               rating={4.6}
-              verdict="At $1,799 promo pricing, the Anker SOLIX F3800 delivers 6,000W continuous output, 3,840Wh of LFP storage, and a built-in NEMA 14-50 240V outlet — the best price-per-watt-hour in its class."
+              verdict="At $1,799 promo pricing, the Anker SOLIX F3800 delivers 6,000W continuous output, 3,840Wh of LFP storage, and a built-in NEMA 14-50 240V outlet. The best price-per-watt-hour in its class."
               pros={[
                 'California PSPS / wildfire backup',
                 'EV charging without a transfer switch',
@@ -356,7 +356,7 @@ export default function AnkerSolixF3800Review() {
                 is the gold standard for stationary power storage. LFP
                 batteries are more thermally stable than NMC lithium-ion,
                 have longer cycle life, and degrade more gracefully. Anker
-                rates the F3800 for 3,000+ cycles to 80% capacity — which
+                rates the F3800 for 3,000+ cycles to 80% capacity, which
                 means if you cycle it once per day, you&apos;re looking at
                 over 8 years before the battery drops to 80% of its original
                 capacity.
@@ -364,7 +364,7 @@ export default function AnkerSolixF3800Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The real standout is expandability. You can connect up to six
                 B3800 expansion batteries, bringing total capacity to a
-                staggering 26,880 Wh. That&apos;s 26.8 kWh — for context,
+                staggering 26,880 Wh. That&apos;s 26.8 kWh, for context,
                 a Tesla Powerwall 3 is 13.5 kWh. Two expansion batteries
                 give you more capacity than a Powerwall at a fraction of the
                 installed cost. This makes the F3800 a genuinely viable
@@ -413,11 +413,11 @@ export default function AnkerSolixF3800Review() {
               <ul className='text-foreground/80 leading-relaxed mb-6 space-y-2'>
                 <li>
                   <strong>6 AC outlets</strong> including a dedicated NEMA
-                  14-50 240V outlet — this is the same plug your dryer or
+                  14-50 240V outlet, this is the same plug your dryer or
                   EV charger uses
                 </li>
                 <li>
-                  <strong>3 USB-C ports</strong> at 100W each — fast-charge
+                  <strong>3 USB-C ports</strong> at 100W each. Fast-charge
                   laptops, phones, tablets simultaneously
                 </li>
                 <li>
@@ -445,7 +445,7 @@ export default function AnkerSolixF3800Review() {
                 real-time monitoring of input/output power, battery state of
                 charge, individual outlet status, and charging schedules.
                 You can set charge/discharge schedules — useful for TOU
-                arbitrage — and receive notifications for low battery or
+                arbitrage. and receive notifications for low battery or
                 power events.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -478,11 +478,11 @@ export default function AnkerSolixF3800Review() {
                 value leader in the high-capacity segment.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Is the price real? Yes — it&apos;s available directly from
+                Is the price real? Yes; it&apos;s available directly from
                 Anker and through major retailers as of April 2026. Will it
                 last forever? Unknown. Anker hasn&apos;t announced an end
                 date, but promotional pricing by definition is temporary.
-                At $1,799, the cost per watt-hour is $0.47/Wh — compared
+                At $1,799, the cost per watt-hour is $0.47/Wh, compared
                 to roughly $0.78/Wh for the EcoFlow Delta Pro 3 and
                 $0.85/Wh for the Bluetti AC500 + B300S combo. It&apos;s
                 genuinely the best price-to-performance ratio in this class
@@ -516,7 +516,7 @@ export default function AnkerSolixF3800Review() {
                 With one B3800 expansion battery (7,680 Wh total), essential
                 backup extends to 4-5 days. With the full six-battery
                 expansion (26,880 Wh), you have multi-week coverage for
-                essential circuits — more than a Tesla Powerwall 3.
+                essential circuits, more than a Tesla Powerwall 3.
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-8 mb-3'>
@@ -526,7 +526,7 @@ export default function AnkerSolixF3800Review() {
                 The built-in NEMA 14-50 240V outlet lets you plug in a
                 standard Level 2 EV charger directly. From a full F3800
                 charge, you can add roughly 15-25 miles of range to most
-                EVs — enough to get to a working charging station or handle
+                EVs. enough to get to a working charging station or handle
                 essential errands during an extended outage. No transfer
                 switch or electrician needed.
               </p>
@@ -543,7 +543,7 @@ export default function AnkerSolixF3800Review() {
                 scheduling, you can charge during cheap off-peak hours (or
                 via solar panels during midday) and discharge during
                 expensive peak evening hours. On a 3,840 Wh cycle, the
-                savings are modest — roughly $0.50-0.75 per cycle — but
+                savings are modest — roughly $0.50-0.75 per cycle, but
                 they compound, and expansion batteries increase the
                 arbitrage potential.
               </p>
@@ -557,8 +557,7 @@ export default function AnkerSolixF3800Review() {
                 rate of approximately $150/kWh, a 3,840 Wh system could
                 qualify for roughly $576. For equity-eligible households
                 (low-income, living in high-fire-threat areas, or medically
-                vulnerable), the rebate jumps to approximately $1,100/kWh —
-                or about $4,224 for the F3800. At the equity rate, that
+                vulnerable), the rebate jumps to approximately $1,100/kWh, or about $4,224 for the F3800. At the equity rate, that
                 would more than cover the $1,799 purchase price.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -584,7 +583,7 @@ export default function AnkerSolixF3800Review() {
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
                       <span>
-                        6,000W continuous output — highest in class by a
+                        6,000W continuous output, highest in class by a
                         wide margin
                       </span>
                     </li>
@@ -644,7 +643,7 @@ export default function AnkerSolixF3800Review() {
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
                       <span>
-                        132 lbs — not portable in any practical sense
+                        132 lbs, not portable in any practical sense
                       </span>
                     </li>
                     <li className='flex items-start gap-2'>
@@ -905,7 +904,7 @@ export default function AnkerSolixF3800Review() {
                     Potentially. SGIP is designed for permanently installed
                     battery systems. If the F3800 is hardwired as permanent
                     home backup, it may qualify. General market rate: ~$576
-                    rebate. Equity-eligible households: up to ~$4,224 — which
+                    rebate. Equity-eligible households: up to ~$4,224, which
                     would more than cover the $1,799 price. Verify with your
                     utility before purchasing based on SGIP expectations.
                   </p>
@@ -941,7 +940,7 @@ export default function AnkerSolixF3800Review() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge="Final Verdict"
-                verdict="At $1,799 promo, the F3800 is the clearest value proposition in portable power today — 6,000W output, built-in 240V outlet, LFP cells. Lock it in before the promo ends."
+                verdict="At $1,799 promo, the F3800 is the clearest value proposition in portable power today, 6,000W output, built-in 240V outlet, LFP cells. Lock it in before the promo ends."
                 source="anker-f3800"
                 variant="final"
               />

@@ -74,7 +74,7 @@ const faqSchema = {
       name: 'What is the best ceiling fan in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Hunter Symphony is our top overall pick for 2026. It combines a whisper-quiet DC motor, Wi-Fi and Bluetooth connectivity with voice assistant support, SureSpeed airflow optimization, and an integrated LED light kit — all for under $300. For a premium no-compromise option, the Big Ass Fans Haiku remains the gold standard.',
+        text: 'The Hunter Symphony is our top overall pick for 2026. It combines a whisper-quiet DC motor, Wi-Fi and Bluetooth connectivity with voice assistant support, SureSpeed airflow optimization, and an integrated LED light kit, all for under $300. For a premium no-compromise option, the Big Ass Fans Haiku remains the gold standard.',
       },
     },
     {
@@ -106,7 +106,7 @@ const faqSchema = {
       name: 'How much electricity does a ceiling fan use?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A modern DC motor ceiling fan on medium speed uses approximately 15-30 watts — comparable to a standard LED light bulb. Running a DC fan for 8 hours a day costs roughly $1-2 per month in electricity. An older AC motor fan uses 50-100 watts on medium. Compared to running air conditioning (which uses 1,000-3,500 watts), ceiling fans can reduce cooling costs by 30-40% by allowing you to raise your thermostat 4-6 degrees.',
+        text: 'A modern DC motor ceiling fan on medium speed uses approximately 15-30 watts, comparable to a standard LED light bulb. Running a DC fan for 8 hours a day costs roughly $1-2 per month in electricity. An older AC motor fan uses 50-100 watts on medium. Compared to running air conditioning (which uses 1,000-3,500 watts), ceiling fans can reduce cooling costs by 30-40% by allowing you to raise your thermostat 4-6 degrees.',
       },
     },
     {
@@ -114,7 +114,7 @@ const faqSchema = {
       name: 'What is CFM and how much do I need?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'CFM stands for Cubic Feet per Minute and measures how much air a ceiling fan moves. For a comfortable breeze in a standard room, look for at least 4,000 CFM. High-performance fans like the Big Ass Fans Haiku and Modern Forms Torque deliver 6,000-8,000+ CFM. The key efficiency metric is CFM per watt — anything above 100 CFM/watt is considered excellent. The most efficient DC fans on our list reach 200+ CFM/watt.',
+        text: 'CFM stands for Cubic Feet per Minute and measures how much air a ceiling fan moves. For a comfortable breeze in a standard room, look for at least 4,000 CFM. High-performance fans like the Big Ass Fans Haiku and Modern Forms Torque deliver 6,000-8,000+ CFM. The key efficiency metric is CFM per watt. anything above 100 CFM/watt is considered excellent. The most efficient DC fans on our list reach 200+ CFM/watt.',
       },
     },
     {
@@ -287,7 +287,7 @@ export default function BestCeilingFan() {
               <p className="text-lg leading-relaxed mb-8" style={{ color: '#a1a1aa' }}>
                 We evaluated over 40 ceiling fans across performance, efficiency, noise, build
                 quality, smart features, and value. These six stood out as the best options for
-                different needs and budgets — from the $120 Hampton Bay Windward IV to the
+                different needs and budgets. from the $120 Hampton Bay Windward IV to the
                 $1,275 Big Ass Fans Haiku.
               </p>
             </div>
@@ -316,7 +316,7 @@ export default function BestCeilingFan() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Big Ass Fans Haiku — Best Premium
+                      Big Ass Fans Haiku; Best Premium
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The quietest fan on the market with SenseME auto-comfort technology. At 254 CFM
@@ -329,7 +329,7 @@ export default function BestCeilingFan() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Modern Forms Torque — Best Airflow
+                      Modern Forms Torque. Best Airflow
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Moves a massive 8,374 CFM of air with its 58-inch blade span — ideal for large
@@ -393,7 +393,7 @@ export default function BestCeilingFan() {
               <div className="rounded-xl border p-6 md:p-8 mb-8" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
                   <h3 className="text-xl font-bold" style={{ color: '#f5f5f5' }}>
-                    1. Hunter Symphony — Best Overall
+                    1. Hunter Symphony, Best Overall
                   </h3>
                   <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: '#22c55e20', color: '#22c55e' }}>
                     Editor&apos;s Choice
@@ -442,7 +442,7 @@ export default function BestCeilingFan() {
                     productKey="hunter-symphony"
                     source="ceiling-fan-hub"
                     variant="primary"
-                    label="Check Price — Hunter Symphony"
+                    label="Check Price, Hunter Symphony"
                     showPrice
                   />
                 </div>
@@ -467,7 +467,7 @@ export default function BestCeilingFan() {
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
                   The Haiku is the benchmark that every other premium ceiling fan is measured against.
                   Big Ass Fans (yes, that is the real company name) builds commercial-grade fans for
-                  warehouses and factories — the Haiku brings that engineering to your living room.
+                  warehouses and factories, the Haiku brings that engineering to your living room.
                   At 254 CFM per watt, it is the single most energy-efficient ceiling fan on the market.
                 </p>
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -560,7 +560,7 @@ export default function BestCeilingFan() {
                     productKey="minka-aire-light-wave"
                     source="ceiling-fan-hub"
                     variant="primary"
-                    label="Check Price — Minka-Aire Light Wave"
+                    label="Check Price. Minka-Aire Light Wave"
                     showPrice
                   />
                 </div>
@@ -570,7 +570,7 @@ export default function BestCeilingFan() {
               <div className="rounded-xl border p-6 md:p-8 mb-8" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
                   <h3 className="text-xl font-bold" style={{ color: '#f5f5f5' }}>
-                    4. Modern Forms Torque — Best Airflow
+                    4. Modern Forms Torque, Best Airflow
                   </h3>
                   <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: '#f59e0b20', color: '#f59e0b' }}>
                     Power Pick
@@ -618,7 +618,7 @@ export default function BestCeilingFan() {
                     productKey="modern-forms-torque"
                     source="ceiling-fan-hub"
                     variant="primary"
-                    label="Check Price — Modern Forms Torque"
+                    label="Check Price. Modern Forms Torque"
                     showPrice
                   />
                 </div>
@@ -628,7 +628,7 @@ export default function BestCeilingFan() {
               <div className="rounded-xl border p-6 md:p-8 mb-8" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
                   <h3 className="text-xl font-bold" style={{ color: '#f5f5f5' }}>
-                    5. Fanimation Kute — Best Compact
+                    5. Fanimation Kute. Best Compact
                   </h3>
                   <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: '#06b6d420', color: '#06b6d4' }}>
                     Small Room Pick
@@ -678,7 +678,7 @@ export default function BestCeilingFan() {
                     productKey="fanimation-kute"
                     source="ceiling-fan-hub"
                     variant="primary"
-                    label="Check Price — Fanimation Kute"
+                    label="Check Price. Fanimation Kute"
                     showPrice
                   />
                 </div>
@@ -688,7 +688,7 @@ export default function BestCeilingFan() {
               <div className="rounded-xl border p-6 md:p-8 mb-8" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
                   <h3 className="text-xl font-bold" style={{ color: '#f5f5f5' }}>
-                    6. Hampton Bay Windward IV — Best Budget
+                    6. Hampton Bay Windward IV. Best Budget
                   </h3>
                   <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: '#22c55e20', color: '#22c55e' }}>
                     Budget Pick
@@ -705,12 +705,12 @@ export default function BestCeilingFan() {
                   Not everyone needs a $600 smart fan. The Hampton Bay Windward IV is a Home Depot
                   staple that delivers reliable performance at a price that is hard to argue with.
                   At $120, it includes a 52-inch span, an integrated LED light kit, and a reversible
-                  motor for winter use — covering all the basics without any extras.
+                  motor for winter use. covering all the basics without any extras.
                 </p>
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
                   The trade-off is an AC motor. It uses roughly twice the electricity of DC fans
                   (55W vs 25-30W), only has 3 speed settings instead of 6, and runs louder on high.
-                  There are no smart features — you get a pull chain and an optional wall control.
+                  There are no smart features. You get a pull chain and an optional wall control.
                   But if you need to outfit multiple rooms on a budget, five Windward IVs cost less
                   than one Haiku.
                 </p>
@@ -739,7 +739,7 @@ export default function BestCeilingFan() {
                     productKey="hampton-bay-windward-iv"
                     source="ceiling-fan-hub"
                     variant="primary"
-                    label="Check Price — Hampton Bay Windward IV"
+                    label="Check Price, Hampton Bay Windward IV"
                     showPrice
                   />
                 </div>
@@ -876,7 +876,7 @@ export default function BestCeilingFan() {
                 <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
                   <strong style={{ color: '#f5f5f5' }}>Bottom line:</strong> If you run your ceiling fan
                   daily, a DC motor fan pays for its premium in 2-3 years through electricity savings
-                  alone. The noise difference is even more compelling — DC fans are virtually silent,
+                  alone. The noise difference is even more compelling, DC fans are virtually silent,
                   which makes a major difference in bedrooms and home offices.
                 </p>
               </div>
@@ -945,7 +945,7 @@ export default function BestCeilingFan() {
               </h2>
               <p className="mb-6 leading-relaxed" style={{ color: '#a1a1aa' }}>
                 CFM (Cubic Feet per Minute) tells you how much air a fan moves. But raw CFM alone
-                does not tell the whole story — a fan that moves 5,000 CFM at 100 watts is far less
+                does not tell the whole story. a fan that moves 5,000 CFM at 100 watts is far less
                 efficient than one that moves 5,000 CFM at 25 watts. The metric that matters most
                 is <strong style={{ color: '#f5f5f5' }}>CFM per watt</strong>.
               </p>

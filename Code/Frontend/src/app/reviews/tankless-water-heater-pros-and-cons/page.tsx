@@ -188,7 +188,7 @@ export default function TanklessProsConsGuide() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Editor Pick'
-              verdict='Rinnai is the easiest starting point if you decide tankless is right — broad California contractor support, 12-15 year warranties, and condensing models that qualify for SoCalGas and federal tax credits.'
+              verdict='Rinnai is the easiest starting point if you decide tankless is right. broad California contractor support, 12-15 year warranties, and condensing models that qualify for SoCalGas and federal tax credits.'
               pros={[
                 'Endless hot water (within flow limit)',
                 '24-34% more efficient than tank',
@@ -205,7 +205,7 @@ export default function TanklessProsConsGuide() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-5'>
                 Tankless water heaters are genuinely better technology for
-                most California households — but they are not magic, and the
+                most California households, but they are not magic, and the
                 cons are real. The biggest upside is the 20+ year lifespan
                 combined with 24-34% energy savings. The biggest downside is
                 the $2,500-$5,000 installed cost plus a few real-world
@@ -368,7 +368,7 @@ export default function TanklessProsConsGuide() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This is the headline feature and the one most homeowners
                 notice first. A tank water heater stores a finite volume of
-                hot water — usually 40, 50, 65, or 80 gallons. Once you
+                hot water. usually 40, 50, 65, or 80 gallons. Once you
                 exhaust it, you wait 30+ minutes for the burner (or electric
                 elements) to reheat a fresh batch. A tankless unit heats
                 water on demand. As long as gas or electricity is flowing,
@@ -445,7 +445,7 @@ export default function TanklessProsConsGuide() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Outdoor-rated models (common in Rinnai&apos;s
                 non-condensing lineup) can mount on an exterior wall in
-                California&apos;s mild climates — freeing all interior
+                California&apos;s mild climates, freeing all interior
                 space and simplifying venting.
               </p>
 
@@ -709,7 +709,7 @@ export default function TanklessProsConsGuide() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>You qualify for rebates.</strong> SoCalGas,
-                    25C, TECH Clean California — stacking these can shave
+                    25C, TECH Clean California, stacking these can shave
                     $700-$1,200 off installed cost.
                   </span>
                 </li>
@@ -850,8 +850,8 @@ export default function TanklessProsConsGuide() {
                 for the majority of California homeowners planning to stay
                 in place 7+ years, the math tilts toward tankless once you
                 stack energy savings, the avoided second replacement, and
-                available rebates. The cons — upfront cost, install
-                complexity, cold-water sandwich, flow rate limits — are
+                available rebates. The cons, upfront cost, install
+                complexity, cold-water sandwich, flow rate limits. are
                 real and worth taking seriously, but none of them are
                 dealbreakers for most households. The situations where tank
                 still wins are narrow: emergency replacement, short-term

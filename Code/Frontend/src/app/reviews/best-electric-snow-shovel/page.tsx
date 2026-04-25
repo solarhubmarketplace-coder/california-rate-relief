@@ -579,7 +579,7 @@ export default function BestElectricSnowShovelPage() {
                     productKey="greenworks-40v-cordless-snow-shovel"
                     source="electric-snow-shovel-hub"
                     variant="primary"
-                    label="Check Price — Greenworks 40V Cordless Snow Shovel"
+                    label="Check Price. Greenworks 40V Cordless Snow Shovel"
                     showPrice
                   />
                 </div>
@@ -763,7 +763,7 @@ export default function BestElectricSnowShovelPage() {
                     productKey="toro-38361-power-shovel"
                     source="electric-snow-shovel-hub"
                     variant="primary"
-                    label="Check Price — Toro 38361 Power Shovel"
+                    label="Check Price, Toro 38361 Power Shovel"
                     showPrice
                   />
                 </div>

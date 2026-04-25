@@ -296,7 +296,7 @@ export default function BestSpaceHeater() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Dyson Hot+Cool HP07 — Best Overall
+                      Dyson Hot+Cool HP07; Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Year-round versatility with heating, cooling, and HEPA air purification
@@ -309,7 +309,7 @@ export default function BestSpaceHeater() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      De&apos;Longhi TRD40615T — Best Oil-Filled Radiator
+                      De&apos;Longhi TRD40615T. Best Oil-Filled Radiator
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Silent operation, no exposed heating elements, and exceptional heat
@@ -322,7 +322,7 @@ export default function BestSpaceHeater() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Dr Infrared DR-968 — Best for Large Rooms
+                      Dr Infrared DR-968. Best for Large Rooms
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Dual heating system (infrared + convection) covers up to 1,000 sq ft
@@ -548,7 +548,7 @@ export default function BestSpaceHeater() {
                 productKey="dyson-hotcool-hp07"
                 source="best-space-heater"
                 variant="primary"
-                label="Check Price — Dyson Hot+Cool HP07"
+                label="Check Price, Dyson Hot+Cool HP07"
                 showPrice
               />
             </section>
@@ -744,7 +744,7 @@ export default function BestSpaceHeater() {
                 productKey="lasko-fh500"
                 source="best-space-heater"
                 variant="primary"
-                label="Check Price — Lasko FH500"
+                label="Check Price, Lasko FH500"
                 showPrice
               />
             </section>
@@ -1190,14 +1190,14 @@ export default function BestSpaceHeater() {
                   <h3 className="font-bold mb-1" style={{ color: '#f5f5f5' }}>Large Rooms (300-1,000 sq ft)</h3>
                   <p className="text-sm mb-2" style={{ color: '#a1a1aa' }}>Open-concept living areas, basements, garages, workshops</p>
                   <p className="text-sm font-medium" style={{ color: '#22c55e' }}>
-                    Recommended: Dr Infrared DR-968 ($110) — the only option that genuinely covers this range
+                    Recommended: Dr Infrared DR-968 ($110); the only option that genuinely covers this range
                   </p>
                 </div>
                 <div className="rounded-lg p-5 border" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                   <h3 className="font-bold mb-1" style={{ color: '#f5f5f5' }}>Whole Home / Multi-Room</h3>
                   <p className="text-sm mb-2" style={{ color: '#a1a1aa' }}>Heating 3+ rooms or your entire home</p>
                   <p className="text-sm font-medium" style={{ color: '#22c55e' }}>
-                    Consider a mini-split heat pump instead — space heaters become less cost-effective than central heating at 3+ rooms
+                    Consider a mini-split heat pump instead. space heaters become less cost-effective than central heating at 3+ rooms
                   </p>
                 </div>
               </div>

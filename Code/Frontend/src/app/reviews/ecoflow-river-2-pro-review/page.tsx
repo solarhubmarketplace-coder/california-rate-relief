@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'EcoFlow River 2 Pro Review 2026: The 768Wh LFP Portable for Camping and CPAP',
     description:
-      'Hands-on review of the EcoFlow River 2 Pro — 768 Wh LFP, 800W continuous output, 220W solar input, 70-minute full recharge. The best mid-capacity LFP power station under $500?',
+      'Hands-on review of the EcoFlow River 2 Pro, 768 Wh LFP, 800W continuous output, 220W solar input, 70-minute full recharge. The best mid-capacity LFP power station under $500?',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -99,7 +99,7 @@ const faqSchema = {
       name: 'River 2 Pro vs the base River 3 Plus?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The River 2 Pro has significantly more capacity (768 Wh vs 286 Wh base, 572 Wh fully expanded on the Plus), a higher continuous inverter (800W vs 600W), and similar solar input. The River 3 Plus is lighter and adds the optional expansion battery. For pure capacity-per-dollar, the River 2 Pro wins — $499 vs $678 for a fully expanded 3 Plus.',
+        text: 'The River 2 Pro has significantly more capacity (768 Wh vs 286 Wh base, 572 Wh fully expanded on the Plus), a higher continuous inverter (800W vs 600W), and similar solar input. The River 3 Plus is lighter and adds the optional expansion battery. For pure capacity-per-dollar, the River 2 Pro wins, $499 vs $678 for a fully expanded 3 Plus.',
       },
     },
     {
@@ -115,7 +115,7 @@ const faqSchema = {
       name: 'Can I run it at night without fan noise waking me up?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, during normal discharge below 400W the unit is effectively silent. Fans only engage during fast charging or sustained high-load output. For CPAP use overnight, the unit runs silently — just charge it before bed, not during.',
+        text: 'Yes, during normal discharge below 400W the unit is effectively silent. Fans only engage during fast charging or sustained high-load output. For CPAP use overnight, the unit runs silently. just charge it before bed, not during.',
       },
     },
   ],
@@ -161,7 +161,7 @@ export default function EcoFlowRiver2ProReview() {
               productKey={PRODUCT_KEY}
               badge="Best Mid-Capacity Pick"
               rating={4.7}
-              verdict="The EcoFlow River 2 Pro hits the sweet spot at 768 Wh / 800W / $499. Enough capacity to run a fridge for 6-8 hours, a CPAP machine all night with margin, or a laptop and router for 2+ days — without the 30+ lb weight of step-up units."
+              verdict="The EcoFlow River 2 Pro hits the sweet spot at 768 Wh / 800W / $499. Enough capacity to run a fridge for 6-8 hours, a CPAP machine all night with margin, or a laptop and router for 2+ days. Without the 30+ lb weight of step-up units."
               pros={[
                 'Multi-day CPAP and medical device backup',
                 'Overnight PSPS refrigerator protection',
@@ -184,7 +184,7 @@ export default function EcoFlowRiver2ProReview() {
               <p className='text-foreground/80 leading-relaxed mb-5'>
                 The River 2 Pro is the best-value unit in the 500-800 Wh
                 category. 768 Wh of LFP capacity is enough to meaningfully
-                bridge a PSPS event — 6-8 hours of refrigerator, an entire
+                bridge a PSPS event; 6-8 hours of refrigerator, an entire
                 night of CPAP, or a couple of days of lights, router, and
                 laptop. The 800W continuous inverter handles most household
                 appliances, and the 1,600W X-Boost extends that to things
@@ -290,7 +290,7 @@ export default function EcoFlowRiver2ProReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The River 2 Pro uses EcoFlow&apos;s X-Stream fast charging
                 for a full 0-100% recharge in 70 minutes from a wall outlet.
-                That is fast — competitors at this capacity often take 2+
+                That is fast. Competitors at this capacity often take 2+
                 hours. If a PSPS warning drops at 3 PM, you can be fully
                 topped off well before sunset.
               </p>
@@ -302,7 +302,7 @@ export default function EcoFlowRiver2ProReview() {
                 enough to stay fully topped up during daylight while still
                 running some loads. For emergency recharge during a multi-day
                 outage, it is a little under-powered compared to the EcoFlow
-                Delta 2&apos;s 500W input — so if extended PSPS events are a
+                Delta 2&apos;s 500W input, so if extended PSPS events are a
                 real concern, consider stepping up.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -319,7 +319,7 @@ export default function EcoFlowRiver2ProReview() {
                 single-appliance loads without workarounds: small
                 microwaves, blenders, desktop computers, toasters, and
                 table saws all work directly. The X-Boost feature extends
-                this to 1,600W for resistive loads — meaning a 1,100W hair
+                this to 1,600W for resistive loads, meaning a 1,100W hair
                 dryer, a 1,500W space heater, or a 1,200W coffee maker all
                 work fine.
               </p>
@@ -360,7 +360,7 @@ export default function EcoFlowRiver2ProReview() {
                 in the app caps charging at ~300W, which keeps the unit
                 nearly silent but doubles recharge time. For overnight
                 use (CPAP, Wi-Fi, lights), the unit runs completely silent
-                during discharge — no concern for bedroom placement.
+                during discharge, no concern for bedroom placement.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>California-Specific: PSPS Backup &amp; Medical Devices</h2>
@@ -384,8 +384,7 @@ export default function EcoFlowRiver2ProReview() {
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>Medical Device Backup</h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For CPAP users, 768 Wh is a meaningful buffer. A typical
-                CPAP at 30-60W runs for 14-24 hours on the River 2 Pro —
-                two full nights or a night plus a day of recharge
+                CPAP at 30-60W runs for 14-24 hours on the River 2 Pro, two full nights or a night plus a day of recharge
                 opportunity. With humidifier use, expect 8-12 hours. For
                 sleep apnea patients in PSPS zones, the River 2 Pro is
                 often the right first purchase: large enough to handle the
@@ -398,7 +397,7 @@ export default function EcoFlowRiver2ProReview() {
                 At 768 Wh, TOU arbitrage math is modest: charging off-peak
                 (12-25&cent;/kWh) and discharging on-peak (40-65&cent;/kWh)
                 saves roughly $0.15-$0.35 per full cycle. Daily cycling
-                would net $55-$130 per year — not a &quot;pays for itself&quot;
+                would net $55-$130 per year, not a &quot;pays for itself&quot;
                 story on its own, but a legitimate supplemental value
                 alongside the outage protection. The app&apos;s scheduled
                 charging makes this a one-time setup. For a deeper look at
@@ -438,7 +437,7 @@ export default function EcoFlowRiver2ProReview() {
                 <div className='bg-red-500/10 dark:bg-red-950/20 border border-red-500/30 dark:border-red-800 rounded-xl p-5'>
                   <h3 className='font-semibold text-red-300 dark:text-red-400 mb-3'>Cons</h3>
                   <ul className='space-y-2 text-sm text-foreground/80'>
-                    <li className='flex items-start gap-2'><X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />17 lbs — less portable than Rivers</li>
+                    <li className='flex items-start gap-2'><X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />17 lbs. less portable than Rivers</li>
                     <li className='flex items-start gap-2'><X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />No battery expansion</li>
                     <li className='flex items-start gap-2'><X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />800W can&apos;t run central AC or oven</li>
                     <li className='flex items-start gap-2'><X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />220W solar behind Delta 2&apos;s 500W</li>
@@ -539,7 +538,7 @@ export default function EcoFlowRiver2ProReview() {
                 </div>
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>Can it run a refrigerator?</h3>
-                  <p className='text-foreground/80 leading-relaxed'>Yes — 6-8 hours. Enough for typical overnight PSPS events and food preservation.</p>
+                  <p className='text-foreground/80 leading-relaxed'>Yes, 6-8 hours. Enough for typical overnight PSPS events and food preservation.</p>
                 </div>
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>How does X-Boost work?</h3>
@@ -568,15 +567,14 @@ export default function EcoFlowRiver2ProReview() {
                 get. For California owners who need more than a camping
                 battery but don&apos;t need whole-home backup, this is the
                 unit to buy. The only real question is whether you need
-                more capacity (step up to SOLIX C1000 or Delta 3 Plus) —
-                and for most households, 768 Wh is enough.
+                more capacity (step up to SOLIX C1000 or Delta 3 Plus). and for most households, 768 Wh is enough.
               </p>
             </div>
 
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge="Final Verdict"
-              verdict="The best mid-capacity LFP power station under $500. Check current pricing — River 2 Pro regularly drops to $399 during promos."
+              verdict="The best mid-capacity LFP power station under $500. Check current pricing, River 2 Pro regularly drops to $399 during promos."
               source="river-2-pro"
               variant="final"
             />

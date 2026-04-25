@@ -89,7 +89,7 @@ const faqSchema = {
       name: 'Do I need a C-wire for a smart thermostat?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most modern smart thermostats — Ecobee, Nest Learning (4th gen), Honeywell T10, Emerson Sensi Touch — perform best with a dedicated C-wire (common wire) supplying continuous 24V power. Without one, the thermostat either relies on "power stealing" through the heating/cooling circuit (which can cause short-cycling, Wi-Fi dropouts, and erratic behavior) or requires a compatibility adapter. The new Nest Learning Thermostat (4th generation, released 2024) and Nest Thermostat (base model) are designed to work reliably without a C-wire on most systems, but Ecobee and Honeywell still strongly recommend one.',
+        text: 'Most modern smart thermostats. Ecobee, Nest Learning (4th gen), Honeywell T10, Emerson Sensi Touch — perform best with a dedicated C-wire (common wire) supplying continuous 24V power. Without one, the thermostat either relies on "power stealing" through the heating/cooling circuit (which can cause short-cycling, Wi-Fi dropouts, and erratic behavior) or requires a compatibility adapter. The new Nest Learning Thermostat (4th generation, released 2024) and Nest Thermostat (base model) are designed to work reliably without a C-wire on most systems, but Ecobee and Honeywell still strongly recommend one.',
       },
     },
     {
@@ -97,7 +97,7 @@ const faqSchema = {
       name: 'Can I install a smart thermostat myself?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, most homeowners can self-install a smart thermostat in under an hour if the existing system is a standard 24V low-voltage setup (forced air gas, electric heat pump, or central AC). The low voltage means there is no electrocution risk once the HVAC breaker is off. The hardest part for most DIYers is interpreting the existing wire labels when the previous installer used non-standard colors — in that case, photograph the old wiring before removing any wire and use the Ecobee or Nest compatibility checker before you start.',
+        text: 'Yes, most homeowners can self-install a smart thermostat in under an hour if the existing system is a standard 24V low-voltage setup (forced air gas, electric heat pump, or central AC). The low voltage means there is no electrocution risk once the HVAC breaker is off. The hardest part for most DIYers is interpreting the existing wire labels when the previous installer used non-standard colors, in that case, photograph the old wiring before removing any wire and use the Ecobee or Nest compatibility checker before you start.',
       },
     },
     {
@@ -105,7 +105,7 @@ const faqSchema = {
       name: 'How much does it cost to hire someone to install a smart thermostat?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A local HVAC technician or handyman typically charges $75-$200 for a basic smart thermostat install in California, including confirming compatibility and walking you through the app setup. Installing a C-wire from scratch (running a new 18/5 cable from the thermostat to the air handler) adds $150-$350. Some utilities — including SCE, PG&E, and SDG&E — partner with companies like Sealed or Franklin Energy to offer reduced-cost or free smart thermostat installs tied to demand-response enrollment. Check your utility\'s marketplace before paying full price.',
+        text: 'A local HVAC technician or handyman typically charges $75-$200 for a basic smart thermostat install in California, including confirming compatibility and walking you through the app setup. Installing a C-wire from scratch (running a new 18/5 cable from the thermostat to the air handler) adds $150-$350. Some utilities. including SCE, PG&E, and SDG&E, partner with companies like Sealed or Franklin Energy to offer reduced-cost or free smart thermostat installs tied to demand-response enrollment. Check your utility\'s marketplace before paying full price.',
       },
     },
     {
@@ -113,7 +113,7 @@ const faqSchema = {
       name: 'What if my system is millivolt or line-voltage?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most smart thermostats do NOT work with millivolt systems (older floor/wall gas heaters powered by a gas pilot thermocouple — roughly 750 mV) or line-voltage systems (120V/240V electric baseboard heaters, radiant ceiling, and some wall heaters). For millivolt, you need a specialty thermostat like the Ecobee EB-STATE6-01 with a millivolt adapter or the Honeywell TH5220D. For line-voltage, look at Mysa, Stelpro Ki Z-Wave, or Sinope — these are purpose-built to switch 240V loads. A standard Ecobee or Nest will fail immediately (or pop the thermostat) if connected to line voltage.',
+        text: 'Most smart thermostats do NOT work with millivolt systems (older floor/wall gas heaters powered by a gas pilot thermocouple, roughly 750 mV) or line-voltage systems (120V/240V electric baseboard heaters, radiant ceiling, and some wall heaters). For millivolt, you need a specialty thermostat like the Ecobee EB-STATE6-01 with a millivolt adapter or the Honeywell TH5220D. For line-voltage, look at Mysa, Stelpro Ki Z-Wave, or Sinope, these are purpose-built to switch 240V loads. A standard Ecobee or Nest will fail immediately (or pop the thermostat) if connected to line voltage.',
       },
     },
     {
@@ -121,7 +121,7 @@ const faqSchema = {
       name: 'Does California Title 24 require a specific type of thermostat?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'California Title 24, Part 6 (the Building Energy Efficiency Standards) requires a programmable setback thermostat on all new residential construction and most major retrofits with central HVAC. Any smart thermostat — Ecobee, Nest, Honeywell, Emerson — satisfies the programmable setback requirement. New construction projects also need the thermostat to support at least 4-period daily programming and hold a setpoint within ±2°F. If you are replacing the thermostat only (no other HVAC work), no permit is required in most California jurisdictions, but keep your install documentation for the home file.',
+        text: 'California Title 24, Part 6 (the Building Energy Efficiency Standards) requires a programmable setback thermostat on all new residential construction and most major retrofits with central HVAC. Any smart thermostat. Ecobee, Nest, Honeywell, Emerson. Satisfies the programmable setback requirement. New construction projects also need the thermostat to support at least 4-period daily programming and hold a setpoint within ±2°F. If you are replacing the thermostat only (no other HVAC work), no permit is required in most California jurisdictions, but keep your install documentation for the home file.',
       },
     },
   ],
@@ -193,12 +193,12 @@ export default function SmartThermostatInstallationPage() {
             {/* FTC Disclosure */}
             <AffiliateDisclosure variant="compact" />
 
-            {/* Top CTA — Ecobee as go-to for self-install */}
+            {/* Top CTA, Ecobee as go-to for self-install */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               variant="top"
               headline="Going the self-install route?"
-              subline="The Ecobee Smart Thermostat Premium ships with the Power Extender Kit in the box — so you can self-install even if your system has no C-wire."
+              subline="The Ecobee Smart Thermostat Premium ships with the Power Extender Kit in the box; so you can self-install even if your system has no C-wire."
             />
 
             {/* Intro */}
@@ -208,7 +208,7 @@ export default function SmartThermostatInstallationPage() {
                 projects a California homeowner can knock out on a Saturday
                 morning. A working Ecobee or Nest running a reasonable setback
                 schedule and pre-cooling on hot days will trim 8-15% off your
-                annual HVAC electricity use — and at 40-48¢/kWh peak TOU rates
+                annual HVAC electricity use, and at 40-48¢/kWh peak TOU rates
                 on PG&E or 47-70¢ on SDG&E, that pays back the $199-$299 unit
                 cost in a single summer on most homes.
               </p>
@@ -220,7 +220,7 @@ export default function SmartThermostatInstallationPage() {
                 because HVAC thermostats run on 24-volt low-voltage control
                 wiring, not line voltage. The other 20% — older homes with
                 millivolt wall furnaces, electric baseboards, or no C-wire and
-                inaccessible air handlers — need either a C-wire workaround kit
+                inaccessible air handlers, need either a C-wire workaround kit
                 or a one-hour visit from an HVAC tech.
               </p>
 
@@ -229,8 +229,7 @@ export default function SmartThermostatInstallationPage() {
                 off power at the breaker, labeling the existing wires, checking
                 for a C-wire, mounting the new thermostat, Wi-Fi setup, and
                 every workaround for the two or three edge cases that trip up
-                first-time DIYers. It also covers when to just pay someone —
-                and where to find discounted installs through your utility.
+                first-time DIYers. It also covers when to just pay someone, and where to find discounted installs through your utility.
               </p>
 
               {/* Quick decision box */}
@@ -304,8 +303,7 @@ export default function SmartThermostatInstallationPage() {
                 Tools and Supplies You Need
               </h2>
               <p className="text-foreground leading-relaxed">
-                The tool list for a smart thermostat swap is genuinely short —
-                you probably own everything already. No specialty HVAC tools,
+                The tool list for a smart thermostat swap is genuinely short, you probably own everything already. No specialty HVAC tools,
                 no meter required (though a multimeter is nice for verifying
                 the breaker is off).
               </p>
@@ -344,7 +342,7 @@ export default function SmartThermostatInstallationPage() {
                         Smartphone with camera
                       </td>
                       <td className="px-4 py-3 text-muted-foreground">
-                        Photograph existing wiring before removal — non-optional
+                        Photograph existing wiring before removal, non-optional
                       </td>
                     </tr>
                     <tr>
@@ -390,7 +388,7 @@ export default function SmartThermostatInstallationPage() {
               <p className="text-foreground leading-relaxed">
                 Before you touch anything on the thermostat, kill the HVAC
                 circuit at the main electrical panel. This is not about
-                electrocution risk — 24V control wiring cannot hurt you — it is
+                electrocution risk. 24V control wiring cannot hurt you, it is
                 about not shorting the low-voltage transformer inside your air
                 handler. Brushing two energized control wires together can pop
                 the 3A control-circuit fuse on the furnace board, and
@@ -405,7 +403,7 @@ export default function SmartThermostatInstallationPage() {
                 Flip it off. On most California homes you are looking at a
                 single 15A or 20A 120V breaker for the gas furnace blower and
                 control board. Heat pumps will also have a separate 30-60A
-                double-pole breaker for the outdoor condenser — you do not
+                double-pole breaker for the outdoor condenser. You do not
                 need to turn that one off for a thermostat swap. Verify the
                 system is dead by raising or lowering the thermostat setpoint
                 and confirming the blower does not kick on.
@@ -419,7 +417,7 @@ export default function SmartThermostatInstallationPage() {
                 Most older thermostats have a plastic faceplate that pops off
                 or unscrews, revealing the wire terminals on the backplate.
                 With the cover off you should see a handful of 18-gauge solid
-                copper wires — usually 4 to 8 of them — each landed on a
+                copper wires, usually 4 to 8 of them. each landed on a
                 terminal marked with a single letter. Before you touch
                 anything, take three photos from different angles with your
                 phone. This is your insurance policy. If you get confused at
@@ -539,7 +537,7 @@ export default function SmartThermostatInstallationPage() {
               <p className="text-foreground leading-relaxed">
                 Three important gotchas to check before you disconnect
                 anything. First, if you see a single &quot;R&quot; wire only,
-                you are on a single-transformer system — the new thermostat
+                you are on a single-transformer system. The new thermostat
                 will use the R terminal alone. If you see both RC and RH wires
                 with a jumper between them on the old thermostat, pull the
                 jumper, remove both wires, and land them on the appropriate R,
@@ -547,10 +545,10 @@ export default function SmartThermostatInstallationPage() {
                 instructions (Ecobee and Nest handle this automatically with a
                 built-in jumper behind the backplate). Second, note whether
                 any wires are just coiled up in the wall and not connected to
-                a terminal — these are your spare conductors, typically used
+                a terminal, these are your spare conductors, typically used
                 to add a C-wire without running a new cable. Third,
                 double-check there are no silver/black wires that look like a
-                24VAC pair coming from a relay box — that is a sign of a zoned
+                24VAC pair coming from a relay box; that is a sign of a zoned
                 system with a zone control panel in the attic, which
                 complicates the install.
               </p>
@@ -571,11 +569,11 @@ export default function SmartThermostatInstallationPage() {
 
               <p className="text-foreground leading-relaxed">
                 Look at the old thermostat&apos;s terminals. If you see a wire
-                landed on the &quot;C&quot; terminal, you are set — proceed to
+                landed on the &quot;C&quot; terminal, you are set, proceed to
                 step 4. If no wire is on C but you see a blue (or unused
                 colored) wire tucked into the wall behind the thermostat plate,
                 that is probably a run already pulled from the air handler but
-                never connected. Pull it forward — you will land it on C at
+                never connected. Pull it forward, you will land it on C at
                 the new thermostat and confirm the matching end is connected
                 to C at the furnace control board in step 4.
               </p>
@@ -590,7 +588,7 @@ export default function SmartThermostatInstallationPage() {
                   <strong>Ecobee Power Extender Kit (PEK):</strong> Ships free
                   in the box with every Ecobee Premium and Smart Thermostat
                   Enhanced. The PEK is a small module you install at the
-                  furnace control board — it converts a 4-wire system (R, W,
+                  furnace control board. It converts a 4-wire system (R, W,
                   Y, G) into a 5-wire setup by running C over the existing G
                   wire and multiplexing the fan signal. Roughly 15 extra
                   minutes, requires opening the furnace panel.
@@ -609,7 +607,7 @@ export default function SmartThermostatInstallationPage() {
                 </li>
                 <li>
                   <strong>Run a new C-wire:</strong> The cleanest long-term
-                  solution — pull a new 18/5 or 18/6 thermostat cable from
+                  solution, pull a new 18/5 or 18/6 thermostat cable from
                   the thermostat location to the air handler and use one of
                   the extra conductors for C. Easiest when the air handler is
                   in an attic or closet directly above the thermostat. Budget
@@ -622,7 +620,7 @@ export default function SmartThermostatInstallationPage() {
                 Learning Thermostat (4th generation, 2024) and Nest Thermostat
                 (base model) are designed to run without a C-wire by power
                 stealing through the Y or W call. Roughly 85% of homes work
-                fine. If you buy a Nest, try the no-C-wire install first — if
+                fine. If you buy a Nest, try the no-C-wire install first, if
                 you get Wi-Fi dropouts or short-cycling after a week, install
                 the Nest Power Connector.
               </p>
@@ -647,7 +645,7 @@ export default function SmartThermostatInstallationPage() {
                 included drywall anchors, and screw the backplate to the wall.
                 For plaster walls (common in California homes built before
                 1960) swap the included plastic anchors for a #6 or #8 zinc
-                togglebolt — plaster is brittle and plastic anchors often just
+                togglebolt, plaster is brittle and plastic anchors often just
                 spin out. Make sure the backplate is level — it does not
                 matter electrically, but the display will look crooked forever
                 if you skip this.
@@ -675,9 +673,9 @@ export default function SmartThermostatInstallationPage() {
                 is nicked or oxidized (most smart thermostats include a small
                 wire stripper in the box for this), and push the bare end into
                 the matching terminal on the new backplate. Ecobee and Nest
-                both use push-down spring terminals — press the white tab
+                both use push-down spring terminals. Press the white tab
                 down, insert the wire, release. Honeywell T10 uses a screw
-                terminal — insert the wire and tighten with the included
+                terminal. insert the wire and tighten with the included
                 screwdriver.
               </p>
 
@@ -685,7 +683,7 @@ export default function SmartThermostatInstallationPage() {
                 Match letter to letter: R goes to R, C to C, W to W, Y to Y, G
                 to G. If your system is a heat pump, the orange wire goes to
                 O/B (the thermostat&apos;s setup routine will ask later whether
-                you need O or B — virtually all California heat pumps are
+                you need O or B; virtually all California heat pumps are
                 O-reversing). If you have a second-stage W2 or Y2 wire,
                 landit on the W2/Y2 terminal. Leave any spare unused wires
                 coiled behind the backplate with a wire nut on the stripped
@@ -697,10 +695,10 @@ export default function SmartThermostatInstallationPage() {
                 Connector) in step 3, now is when you also install the other
                 end of that adapter. Open the furnace access panel, find the
                 control board (the board with the R, C, W, Y, G terminals on
-                the air handler — mirror image of your thermostat), remove
+                the air handler, mirror image of your thermostat), remove
                 the existing R/W/Y/G wires, and reland them on the PEK per
                 the included diagram. PEK installs are fiddly but not
-                electrically complex — another 10-15 minutes. Put the furnace
+                electrically complex; another 10-15 minutes. Put the furnace
                 panel back on when done.
               </p>
 
@@ -732,7 +730,7 @@ export default function SmartThermostatInstallationPage() {
                 The on-screen setup wizard walks you through the configuration
                 in 10-15 minutes. The order varies slightly by brand but the
                 steps are always: language and region, Wi-Fi network (2.4 GHz
-                only for Ecobee and Nest — 5 GHz is not supported on any
+                only for Ecobee and Nest. 5 GHz is not supported on any
                 current smart thermostat as of early 2026), account linking
                 (Ecobee account, Google account, or Honeywell Resideo
                 account), equipment type (gas furnace, heat pump, heat pump
@@ -741,13 +739,13 @@ export default function SmartThermostatInstallationPage() {
 
               <p className="text-foreground leading-relaxed">
                 Two setup choices that matter. First, when asked about your
-                equipment, be honest about staging — if you have a two-stage
+                equipment, be honest about staging, if you have a two-stage
                 furnace or two-stage compressor, say so, because the
                 thermostat&apos;s adaptive recovery and pre-heat algorithms
                 work much better with the correct stage count. Second, on
                 Ecobee and Nest, enable the &quot;demand response&quot; or
                 &quot;energy programs&quot; option during setup if you are on
-                SCE, PG&E, or SDG&E — you get a $50-100 enrollment bonus and a
+                SCE, PG&E, or SDG&E, you get a $50-100 enrollment bonus and a
                 smaller per-event payment ($5-10) for letting the utility
                 trim a few degrees during peak summer events. It is worth
                 $75-200/year to most California homes and virtually
@@ -760,7 +758,7 @@ export default function SmartThermostatInstallationPage() {
                 cool when home, 62°F heat / 82°F cool when away, 66°F heat /
                 74°F cool at night. Let the thermostat&apos;s occupancy sensors
                 or your phone&apos;s geofence auto-switch between home and
-                away mode — that is where the real savings come from, not
+                away mode. That is where the real savings come from, not
                 from the absolute temperatures.
               </p>
 
@@ -895,7 +893,7 @@ export default function SmartThermostatInstallationPage() {
               </h3>
               <p className="text-foreground leading-relaxed">
                 Ships in the box with every Ecobee Premium and Ecobee Smart
-                Thermostat Enhanced — zero additional cost. Installs at the
+                Thermostat Enhanced, zero additional cost. Installs at the
                 furnace control board. The PEK uses signal multiplexing over
                 the existing G wire to deliver both the fan call and the 24V
                 common back to the thermostat. Works on virtually all
@@ -959,8 +957,7 @@ export default function SmartThermostatInstallationPage() {
               <p className="text-foreground leading-relaxed">
                 <strong>Millivolt</strong> systems are older gas wall
                 furnaces, floor furnaces, and gas fireplaces powered by a
-                pilot-driven thermocouple generating roughly 750 millivolts —
-                less than one volt. You will usually recognize them by the
+                pilot-driven thermocouple generating roughly 750 millivolts. Less than one volt. You will usually recognize them by the
                 shape: a tall, narrow wall-mounted furnace in a hallway, or
                 an in-floor furnace grill. The thermostat wire is typically
                 just two conductors and the old thermostat is a simple
@@ -983,7 +980,7 @@ export default function SmartThermostatInstallationPage() {
                 Ecobee or Nest to a 240V circuit will instantly destroy the
                 thermostat (and potentially trip the breaker hard enough to
                 damage the panel). You need a purpose-built line-voltage
-                smart thermostat — Mysa, Stelpro Ki Z-Wave, Sinope, or the
+                smart thermostat, Mysa, Stelpro Ki Z-Wave, Sinope, or the
                 line-voltage variant of Honeywell. Install is very similar
                 but the wire gauge is heavier (12 or 14 AWG) and there is
                 real electrocution risk, so hiring an electrician is common
@@ -1001,8 +998,7 @@ export default function SmartThermostatInstallationPage() {
                 the wiring is not what most homeowners have seen. Second,
                 zoned systems with a dedicated zone control panel (Honeywell
                 TrueZONE, EWC, or Carrier Infinity). These systems need
-                brand-matched thermostats and controllers that work together
-                — a generic Ecobee or Nest will either not work or will
+                brand-matched thermostats and controllers that work together, a generic Ecobee or Nest will either not work or will
                 fight the zone panel. Third, any situation where you have
                 opened the furnace access panel and you cannot identify
                 which terminals are which on the control board, or the wires
@@ -1018,8 +1014,8 @@ export default function SmartThermostatInstallationPage() {
                 has already purchased the thermostat. Running a new C-wire
                 adds $150-350. A full thermostat-plus-new-C-wire job
                 typically lands at $250-500 through an independent HVAC tech
-                or handyman. Large national HVAC chains — ARS, Service
-                Experts, American Home Shield contractors — tend to run
+                or handyman. Large national HVAC chains, ARS, Service
+                Experts, American Home Shield contractors, tend to run
                 $50-150 higher for the same work.
               </p>
 
@@ -1046,7 +1042,7 @@ export default function SmartThermostatInstallationPage() {
                 2023) requires a programmable setback thermostat on all new
                 residential construction with central HVAC, and on most
                 retrofits that involve replacing the furnace or air handler.
-                Any modern smart thermostat — Ecobee, Nest, Honeywell T10,
+                Any modern smart thermostat. Ecobee, Nest, Honeywell T10,
                 Emerson Sensi Touch — clears the programmable setback
                 requirement automatically, because they all support at least
                 4-period daily programming.
@@ -1054,12 +1050,12 @@ export default function SmartThermostatInstallationPage() {
 
               <p className="text-foreground leading-relaxed">
                 For a standalone thermostat replacement — swapping an old
-                mercury or digital stat for an Ecobee — no California
+                mercury or digital stat for an Ecobee, no California
                 jurisdiction requires a building permit. You are not
                 modifying the mechanical system, not changing the
                 transformer, and not altering any line-voltage wiring. The
                 only exception is zoned systems where replacing the zone
-                controller is considered a control-system modification — in
+                controller is considered a control-system modification; in
                 Los Angeles County and San Diego County, some jurisdictions
                 require a mechanical permit for that work.
               </p>
@@ -1069,7 +1065,7 @@ export default function SmartThermostatInstallationPage() {
                 smart thermostat as part of that job, the smart thermostat
                 becomes part of the overall HERS verification and Title 24
                 compliance paperwork the HVAC contractor files. In that case,
-                you do not install the thermostat yourself — the contractor
+                you do not install the thermostat yourself, the contractor
                 does, because their license is on the line for the permit.
               </p>
 
@@ -1077,11 +1073,11 @@ export default function SmartThermostatInstallationPage() {
                 One other compliance note: Title 20 (California&apos;s
                 appliance efficiency standards) requires smart thermostats
                 sold in the state to meet certain Wi-Fi security and
-                occupancy-sensing requirements. Every major brand — Ecobee,
-                Nest, Honeywell, Emerson — is compliant by default. If you
+                occupancy-sensing requirements. Every major brand, Ecobee,
+                Nest, Honeywell, Emerson, is compliant by default. If you
                 buy an off-brand thermostat online for $30-50, check the
                 product listing for &quot;California Title 20 compliant&quot;
-                before you buy — a handful of cheap Amazon-only brands do
+                before you buy, a handful of cheap Amazon-only brands do
                 not meet the standard and are technically illegal to sell
                 into California (though enforcement is effectively zero).
               </p>
@@ -1114,7 +1110,7 @@ export default function SmartThermostatInstallationPage() {
                     <li className="flex items-start gap-2">
                       <Check className="h-4 w-4 text-green-400 flex-shrink-0 mt-0.5" />
                       <span>
-                        Zero electrocution risk on 24V systems — this is
+                        Zero electrocution risk on 24V systems. this is
                         beginner-friendly work
                       </span>
                     </li>
@@ -1202,7 +1198,7 @@ export default function SmartThermostatInstallationPage() {
                 Heating runs but AC does not (or vice versa)
               </h3>
               <p className="text-foreground leading-relaxed">
-                Almost always a wire landed on the wrong terminal — W and Y
+                Almost always a wire landed on the wrong terminal, W and Y
                 swapped, or Y missing, or the orange O/B wire not connected
                 on a heat pump. Pull your photo of the old wiring and
                 double-check each color against the original terminal, then
@@ -1221,7 +1217,7 @@ export default function SmartThermostatInstallationPage() {
                 power-steal through the Y or W call. Install the PEK or
                 Power Connector and it goes away immediately. Less commonly,
                 the thermostat&apos;s &quot;minimum run time&quot; setting is
-                set to zero — check the HVAC settings in the app and set
+                set to zero, check the HVAC settings in the app and set
                 minimum run time to 5 minutes for heat and 10 minutes for
                 cool.
               </p>
@@ -1241,7 +1237,7 @@ export default function SmartThermostatInstallationPage() {
                 Thermostat reads 3-5°F low
               </h3>
               <p className="text-foreground leading-relaxed">
-                Wall draft — common on exterior-wall mounts. Pull the
+                Wall draft. Common on exterior-wall mounts. Pull the
                 thermostat off, stuff the wire hole with plumber&apos;s putty
                 or foam insulation, and remount. You can also adjust the
                 temperature offset in the app&apos;s settings by a matching
@@ -1298,7 +1294,7 @@ export default function SmartThermostatInstallationPage() {
                     Can I install a smart thermostat myself?
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Yes — on a standard 24V low-voltage central HVAC system,
+                    Yes. On a standard 24V low-voltage central HVAC system,
                     this is genuinely beginner-friendly DIY work. There is
                     no electrocution risk once the HVAC breaker is off. The
                     hardest parts are photographing the old wiring before
@@ -1315,7 +1311,7 @@ export default function SmartThermostatInstallationPage() {
                     A local HVAC tech or handyman charges $75-$200 for a
                     basic California smart thermostat install. Running a
                     new C-wire adds $150-$350. Check your utility&apos;s
-                    marketplace first — SCE, PG&E, and SDG&E all run
+                    marketplace first, SCE, PG&E, and SDG&E all run
                     demand-response programs that offer reduced-cost or
                     free smart thermostats and installs.
                   </p>
@@ -1328,8 +1324,7 @@ export default function SmartThermostatInstallationPage() {
                   <p className="text-muted-foreground leading-relaxed">
                     Most smart thermostats do NOT work with millivolt
                     (~750 mV, old gas wall/floor furnaces) or line-voltage
-                    (120V/240V electric baseboard). Use a specialty stat —
-                    Ecobee EB-STATE6-01 with millivolt adapter for millivolt;
+                    (120V/240V electric baseboard). Use a specialty stat, Ecobee EB-STATE6-01 with millivolt adapter for millivolt;
                     Mysa, Stelpro, or Sinope for line-voltage. Hiring a
                     pro is usually the right call on these systems.
                   </p>
@@ -1369,7 +1364,7 @@ export default function SmartThermostatInstallationPage() {
                 the $25 Power Connector. Either turns a 4-wire system into a
                 fully-powered 5-wire setup in 15-20 extra minutes at the
                 furnace control board. Millivolt or line-voltage system?
-                Different problem entirely — you need a specialty
+                Different problem entirely, you need a specialty
                 thermostat, and this is the one case where hiring an HVAC
                 tech is usually the right answer.
               </p>

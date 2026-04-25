@@ -158,7 +158,7 @@ const faqSchema = {
       name: 'Is Mitsubishi better than MrCool?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'They serve different markets. Mitsubishi is the premium choice for homeowners who want the best reliability, quietest operation, and longest warranty — and are willing to pay for professional installation. MrCool DIY is the budget-friendly choice for homeowners who want to save $3,000-$8,000 by installing it themselves. Mitsubishi has a longer track record, quieter indoor units (19 dB vs 35-40 dB), and a 12-year compressor warranty vs MrCool\'s 7-year.',
+        text: 'They serve different markets. Mitsubishi is the premium choice for homeowners who want the best reliability, quietest operation, and longest warranty; and are willing to pay for professional installation. MrCool DIY is the budget-friendly choice for homeowners who want to save $3,000-$8,000 by installing it themselves. Mitsubishi has a longer track record, quieter indoor units (19 dB vs 35-40 dB), and a 12-year compressor warranty vs MrCool\'s 7-year.',
       },
     },
     {
@@ -265,15 +265,15 @@ export default function MitsubishiMiniSplitReview() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
-            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            {/* Above-the-fold primary CTA, 40-80% CTR lift vs end-only CTA */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge="HVAC Contractor's Choice"
               rating={4.7}
-              verdict="Mitsubishi MSZ-GL series — the most trusted name in ductless HVAC. Inverter-driven variable speed, 19 dB quiet, 12-year registered compressor warranty, H2i Hyper-Heating for cold climates."
+              verdict="Mitsubishi MSZ-GL series, the most trusted name in ductless HVAC. Inverter-driven variable speed, 19 dB quiet, 12-year registered compressor warranty, H2i Hyper-Heating for cold climates."
               pros={[
                 'Homeowners wanting premium reliability',
                 'Whole-home multi-zone installations',
@@ -298,7 +298,7 @@ export default function MitsubishiMiniSplitReview() {
               </div>
               <p className='text-foreground/80 leading-relaxed mb-5'>
                 The Mitsubishi Electric MSZ-GL series is the mini split that
-                HVAC contractors recommend most — and for good reason.
+                HVAC contractors recommend most, and for good reason.
                 Mitsubishi has been building ductless systems longer than
                 almost anyone, and the engineering shows. The inverter-driven
                 variable speed compressor delivers precise temperature control
@@ -381,7 +381,7 @@ export default function MitsubishiMiniSplitReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 Mitsubishi Electric is to mini splits what Toyota is to
-                sedans — the default choice when reliability matters more
+                sedans. the default choice when reliability matters more
                 than anything else. They have been manufacturing ductless
                 systems since the 1950s and hold the #1 market share for
                 mini splits in North America. When HVAC contractors are asked
@@ -389,7 +389,7 @@ export default function MitsubishiMiniSplitReview() {
                 is almost always the answer.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                The MSZ-GL series is their volume workhorse — the model most
+                The MSZ-GL series is their volume workhorse. The model most
                 commonly installed in homes across the US. It delivers the
                 core Mitsubishi value proposition: inverter-driven variable
                 speed compression, quiet operation, strong efficiency, and
@@ -426,7 +426,7 @@ export default function MitsubishiMiniSplitReview() {
                 <div className='flex items-center gap-3 mb-3'>
                   <Zap className='h-5 w-5 text-primary' />
                   <h3 className='text-lg font-bold text-foreground'>
-                    MSZ-GL Series — The Workhorse
+                    MSZ-GL Series, The Workhorse
                   </h3>
                 </div>
                 <div className='grid md:grid-cols-2 gap-4 text-sm text-foreground/80'>
@@ -466,7 +466,7 @@ export default function MitsubishiMiniSplitReview() {
                 <div className='flex items-center gap-3 mb-3'>
                   <Sun className='h-5 w-5 text-primary' />
                   <h3 className='text-lg font-bold text-foreground'>
-                    MSZ-FH Series — Hyper-Heating Mid-Range
+                    MSZ-FH Series. Hyper-Heating Mid-Range
                   </h3>
                 </div>
                 <div className='grid md:grid-cols-2 gap-4 text-sm text-foreground/80'>
@@ -642,7 +642,7 @@ export default function MitsubishiMiniSplitReview() {
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The single biggest difference between a Mitsubishi mini split
                 and a cheap window unit or portable AC is the inverter
-                compressor. Traditional AC systems are binary — the
+                compressor. Traditional AC systems are binary. The
                 compressor is either running at 100% or off. This creates
                 temperature swings: the room cools to the set temperature,
                 the compressor shuts off, the room warms up, the compressor
@@ -712,7 +712,7 @@ export default function MitsubishiMiniSplitReview() {
                 temperatures drop below 25-30&deg;F, their heating capacity
                 falls off a cliff. By the time it hits 5&deg;F outside, most
                 heat pumps are producing a fraction of their rated output and
-                the backup electric resistance heater takes over — eating
+                the backup electric resistance heater takes over, eating
                 electricity at 3-4x the cost.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
@@ -799,7 +799,7 @@ export default function MitsubishiMiniSplitReview() {
               </div>
               <p className='text-foreground/80 leading-relaxed'>
                 In a bedroom, this matters enormously. A 19 dB indoor unit is
-                essentially inaudible — you will not hear it running. Even
+                essentially inaudible, you will not hear it running. Even
                 on higher fan speeds, Mitsubishi units stay notably quieter
                 than competitors. The outdoor unit noise is also well
                 controlled, typically 46-58 dB depending on BTU size, which
@@ -808,11 +808,11 @@ export default function MitsubishiMiniSplitReview() {
               </p>
             </section>
 
-            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            {/* Mid-content affiliate CTA. 30-60% CTR lift */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               headline="Ready to get installed?"
-              verdict="Mitsubishi MSZ-GL is available through certified HVAC contractors — check current pricing on unit and installation packages."
+              verdict="Mitsubishi MSZ-GL is available through certified HVAC contractors. check current pricing on unit and installation packages."
               source="mitsubishi-mini-split"
               variant="mid"
             />
@@ -882,7 +882,7 @@ export default function MitsubishiMiniSplitReview() {
                 <span className='font-semibold text-foreground'>Choose MrCool DIY if:</span>{' '}
                 You want to save $3,000-$8,000 by doing the installation
                 yourself, you only need a single zone, and you are comfortable
-                with power tools. The MrCool DIY is an excellent product — it
+                with power tools. The MrCool DIY is an excellent product, it
                 just targets a completely different buyer.
               </p>
               <div className='mt-4'>
@@ -975,7 +975,7 @@ export default function MitsubishiMiniSplitReview() {
               <p className='text-foreground/80 leading-relaxed'>
                 You genuinely cannot go wrong with either brand. If your
                 preferred local HVAC contractor recommends one over the
-                other, go with their recommendation — installer quality
+                other, go with their recommendation. Installer quality
                 matters more than marginal spec differences between these
                 two brands.
               </p>
@@ -1072,7 +1072,7 @@ export default function MitsubishiMiniSplitReview() {
                 Get at least three quotes from Mitsubishi Diamond Contractors
                 (their certified installer network) in your area. Prices vary
                 significantly by region and contractor. Avoid choosing the
-                cheapest bid — installer quality directly impacts system
+                cheapest bid, installer quality directly impacts system
                 longevity and performance. A well-installed Mitsubishi system
                 will outlast a poorly installed one by a decade.
               </p>
@@ -1092,7 +1092,7 @@ export default function MitsubishiMiniSplitReview() {
                   <ul className='space-y-3 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-500 mt-0.5 shrink-0' />
-                      #1 selling mini split brand — largest parts and
+                      #1 selling mini split brand. Largest parts and
                       contractor network in North America
                     </li>
                     <li className='flex items-start gap-2'>
@@ -1101,7 +1101,7 @@ export default function MitsubishiMiniSplitReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-500 mt-0.5 shrink-0' />
-                      Whisper-quiet 19 dB indoor operation — essentially
+                      Whisper-quiet 19 dB indoor operation, essentially
                       inaudible
                     </li>
                     <li className='flex items-start gap-2'>
@@ -1134,7 +1134,7 @@ export default function MitsubishiMiniSplitReview() {
                   <ul className='space-y-3 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      No DIY installation option — professional HVAC required
+                      No DIY installation option, professional HVAC required
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -1293,7 +1293,7 @@ export default function MitsubishiMiniSplitReview() {
                     California electricity rates, running it 8 hours per day
                     costs roughly $1.50-$2.50 per day depending on your
                     utility and rate plan. By comparison, a window AC unit of
-                    similar capacity draws 1,000-1,200 watts — nearly double.
+                    similar capacity draws 1,000-1,200 watts, nearly double.
                   </p>
                 </div>
               </div>
@@ -1318,9 +1318,9 @@ export default function MitsubishiMiniSplitReview() {
                   system you can put in your home.
                 </p>
                 <p className='text-foreground/80 leading-relaxed mb-4'>
-                  The 12-year compressor warranty is not marketing — it is a
+                  The 12-year compressor warranty is not marketing, it is a
                   reflection of how long these units actually run. The 19 dB
-                  noise level is not a gimmick — it is genuinely inaudible in
+                  noise level is not a gimmick; it is genuinely inaudible in
                   a bedroom. The inverter compressor is not a buzzword — it
                   produces a tangibly more comfortable environment than
                   fixed-speed systems.
@@ -1332,8 +1332,7 @@ export default function MitsubishiMiniSplitReview() {
                   budget-conscious and handy with tools, a DIY system will
                   save you thousands. But if you want premium reliability,
                   near-silent operation, multi-zone capability, and the peace
-                  of mind that comes with the #1 brand in the industry —
-                  Mitsubishi is the standard.
+                  of mind that comes with the #1 brand in the industry, Mitsubishi is the standard.
                 </p>
               </div>
             </section>
@@ -1343,7 +1342,7 @@ export default function MitsubishiMiniSplitReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 headline='Ready to buy the Mitsubishi MSZ-GL Mini Split?'
-                verdict='The most trusted name in ductless HVAC — check current pricing on unit and installation packages.'
+                verdict='The most trusted name in ductless HVAC. Check current pricing on unit and installation packages.'
                 source='mitsubishi-mini-split'
                 variant='final'
               />

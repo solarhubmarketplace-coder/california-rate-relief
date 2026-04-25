@@ -130,7 +130,7 @@ const faqSchema = {
       name: 'Does Noritz make outdoor-rated tankless water heaters?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The NR series includes outdoor-rated non-condensing models (NR501-OD, NR981-OD) that mount on an exterior wall — ideal for California homes with mild climates where interior space is at a premium. Outdoor installation simplifies venting (no stainless or PVC vent pipe needed) and frees interior square footage. Outdoor models are not rated for freezing climates, so they are essentially a California/Arizona/Texas/Florida product.',
+        text: 'Yes. The NR series includes outdoor-rated non-condensing models (NR501-OD, NR981-OD) that mount on an exterior wall, ideal for California homes with mild climates where interior space is at a premium. Outdoor installation simplifies venting (no stainless or PVC vent pipe needed) and frees interior square footage. Outdoor models are not rated for freezing climates, so they are essentially a California/Arizona/Texas/Florida product.',
       },
     },
     {
@@ -229,7 +229,7 @@ export default function NoritzTanklessReview() {
                 </div>
               </div>
               <p className='text-foreground/80 leading-relaxed mb-5'>
-                Noritz is the quiet veteran of the tankless category — the
+                Noritz is the quiet veteran of the tankless category, the
                 Japanese company that literally invented tankless water
                 heating in 1951 and still makes some of the best-engineered
                 units you can buy. The NRC1111-DV ($1,600) is a solid indoor
@@ -434,7 +434,7 @@ export default function NoritzTanklessReview() {
                 55-65&deg;F). Rated at 0.96 UEF, it is within a hair of the
                 most efficient condensing tankless sold. The heat exchanger
                 is stainless steel (not copper), which resists scale and
-                condensate acidity better — particularly important in
+                condensate acidity better, particularly important in
                 California&apos;s hard-water regions.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -456,7 +456,7 @@ export default function NoritzTanklessReview() {
                 This is Noritz&apos;s most distinctive product, and the
                 reason I keep recommending the brand for retrofits. Every
                 other major tankless requires a 3/4&quot; gas line to feed
-                its burner — most tank heaters use 1/2&quot; lines.
+                its burner. most tank heaters use 1/2&quot; lines.
                 Upgrading the gas line to 3/4&quot; adds $300-$800 and a
                 day of work to every tank-to-tankless conversion. The EZ
                 Series (EZTR40, EZTR75) is engineered specifically to run
@@ -466,7 +466,7 @@ export default function NoritzTanklessReview() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The tradeoff is slightly lower peak output — 7.5 GPM on the
-                EZTR75 versus 11.1 GPM on the NRC1111 — but for most
+                EZTR75 versus 11.1 GPM on the NRC1111. but for most
                 homes that replaces a tank with similar hot water demand,
                 that capacity is sufficient. The EZ Series also uses
                 existing vent pipe dimensions, simplifying the swap even
@@ -545,7 +545,7 @@ export default function NoritzTanklessReview() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The federal 25C Energy Efficient Home Improvement Credit
-                stacks on top — 30% of cost up to $600 per year for
+                stacks on top, 30% of cost up to $600 per year for
                 qualifying gas tankless through 2032. Stacking SoCalGas +
                 25C + any utility-specific program (SMUD, PG&amp;E, SDG&amp;E
                 all run seasonal rebates) typically nets $800-$1,200 off a
@@ -835,7 +835,7 @@ export default function NoritzTanklessReview() {
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     The EZTR40 and EZTR75 are drop-in tank replacements
-                    that run on the existing 1/2&quot; gas line — no
+                    that run on the existing 1/2&quot; gas line, no
                     upsize needed. Unique in the tankless market. Saves
                     $500-$1,500 and cuts install time from 2-3 days to
                     one day.
@@ -870,7 +870,7 @@ export default function NoritzTanklessReview() {
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     Yes. The NR series (NR501-OD, NR981-OD) is outdoor
-                    non-condensing and mounts on exterior walls — ideal
+                    non-condensing and mounts on exterior walls. ideal
                     for California mild climates. Simplifies venting and
                     frees interior space. Not rated for freezing
                     climates.
@@ -882,7 +882,7 @@ export default function NoritzTanklessReview() {
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     The CB199 provides both domestic hot water and
-                    hydronic space heating from one unit — replaces a
+                    hydronic space heating from one unit. replaces a
                     separate water heater and boiler. Ideal for homes
                     with radiant floors or hot-water baseboard. 0.95
                     UEF, 11.1 GPM, $3,500 unit / $5,500+ installed.
@@ -901,7 +901,7 @@ export default function NoritzTanklessReview() {
                 warranty in its class, and the truly unique EZ Series for
                 California retrofits. If you are doing a planned
                 tank-to-tankless conversion and you have a Noritz-certified
-                installer available, it is a very defensible pick — often
+                installer available, it is a very defensible pick. Often
                 the technically best pick for retrofits specifically. For
                 greenfield new construction or when broad service is
                 paramount, Rinnai remains the safer default. For
@@ -913,7 +913,7 @@ export default function NoritzTanklessReview() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Final Verdict'
-              verdict='Noritz — especially the EZ Series for retrofits and CB Combi for hydronic homes — delivers Japanese engineering quality and the longest heat exchanger warranty in the category.'
+              verdict='Noritz, especially the EZ Series for retrofits and CB Combi for hydronic homes. Delivers Japanese engineering quality and the longest heat exchanger warranty in the category.'
               source='noritz-review'
               variant='final'
             />

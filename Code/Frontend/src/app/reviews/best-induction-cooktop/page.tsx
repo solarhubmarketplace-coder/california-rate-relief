@@ -572,7 +572,7 @@ export default function BestInductionCooktop() {
                   </div>
 
                   <p className="text-base leading-relaxed mb-6" style={{ color: '#d4d4d8' }}>
-                    The GE Profile PHS93XYPFS is a 30-inch slide-in with 5 burners (4 true induction plus a warming zone), a 5.3 cu. ft. true convection oven with air fry, and built-in WiFi via SmartHQ. In testing, the 3,700W front left element boiled 6 quarts in just over 5 minutes, and the oven held within 5 degrees of target across a 60-minute bake. This is premium performance without commercial-grade pricing.
+                    The GE Profile PHS93XYPFS is a 30-inch slide-in with 5 burners (4 true induction plus a warming zone), a 5.3 cu. Ft. true convection oven with air fry, and built-in WiFi via SmartHQ. In testing, the 3,700W front left element boiled 6 quarts in just over 5 minutes, and the oven held within 5 degrees of target across a 60-minute bake. This is premium performance without commercial-grade pricing.
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-6">
@@ -664,7 +664,7 @@ export default function BestInductionCooktop() {
                   </div>
 
                   <p className="text-base leading-relaxed mb-6" style={{ color: '#d4d4d8' }}>
-                    At $1,499, the Samsung Bespoke delivers roughly 80% of the GE Profile&apos;s performance at just over half the price. The Flex Zone links two burner positions into one large rectangular cooking surface for griddles and oversized pans. WiFi, air fry, and self-clean are all included. The Rapid Boil element hit a rolling boil in about 6 minutes — solid if not quite GE Profile speed.
+                    At $1,499, the Samsung Bespoke delivers roughly 80% of the GE Profile&apos;s performance at just over half the price. The Flex Zone links two burner positions into one large rectangular cooking surface for griddles and oversized pans. WiFi, air fry, and self-clean are all included. The Rapid Boil element hit a rolling boil in about 6 minutes. solid if not quite GE Profile speed.
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-6">
@@ -748,7 +748,7 @@ export default function BestInductionCooktop() {
                           productKey="bosch-nit5660uc"
                           source="best-induction-cooktop"
                           variant="primary"
-                          label="Check Price — Bosch NIT5660UC"
+                          label="Check Price. Bosch NIT5660UC"
                           showPrice
                         />
                       </div>
@@ -932,7 +932,7 @@ export default function BestInductionCooktop() {
                           productKey="lg-lsil6336f"
                           source="best-induction-cooktop"
                           variant="primary"
-                          label="Check Price — LG LSIL6336F"
+                          label="Check Price, LG LSIL6336F"
                           showPrice
                         />
                       </div>
@@ -1069,7 +1069,7 @@ export default function BestInductionCooktop() {
                     {
                       title: 'Gas to Induction',
                       savings: '$30-70/yr',
-                      desc: 'Based on average U.S. cooking gas usage of ~200 therms/year vs equivalent induction electricity.',
+                      desc: 'Based on average U.S. Cooking gas usage of ~200 therms/year vs equivalent induction electricity.',
                     },
                     {
                       title: 'Electric to Induction',
@@ -1294,7 +1294,7 @@ export default function BestInductionCooktop() {
                 style={{ backgroundColor: '#141414', borderColor: '#27272a' }}
               >
                 <p className="text-base leading-relaxed" style={{ color: '#d4d4d8' }}>
-                  Induction is objectively faster, more efficient, and safer than both gas and traditional electric. The only barriers — cookware compatibility and potentially running a 240V circuit — are solvable for a few hundred dollars.
+                  Induction is objectively faster, more efficient, and safer than both gas and traditional electric. The only barriers, cookware compatibility and potentially running a 240V circuit — are solvable for a few hundred dollars.
                 </p>
                 <div className="space-y-4">
                   {[
@@ -1349,7 +1349,7 @@ export default function BestInductionCooktop() {
                         productKey={item.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')}
                         source="best-induction-cooktop"
                         variant="primary"
-                        label={`Check Price — ${item.name}`}
+                        label={`Check Price, ${item.name}`}
                         showPrice
                       />
                     </div>

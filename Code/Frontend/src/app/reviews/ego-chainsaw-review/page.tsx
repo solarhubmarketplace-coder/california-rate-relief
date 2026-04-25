@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title:
       'EGO Power+ Chainsaw Review 2026: The 56V CS1804 and CS1400E Tested',
     description:
-      'Full review of the EGO CS1804 and CS1400E chainsaws — Arc Lithium battery, tool-free chain tensioning, 5-year warranty, and how they stack up against DeWalt, Stihl, and Husqvarna.',
+      'Full review of the EGO CS1804 and CS1400E chainsaws, Arc Lithium battery, tool-free chain tensioning, 5-year warranty, and how they stack up against DeWalt, Stihl, and Husqvarna.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -112,12 +112,12 @@ const faqSchema = {
       name: 'Does California offer rebates on EGO chainsaws?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Less commonly than for leaf blowers, but some California air districts have run residential and commercial battery tool exchange programs that include chainsaws. South Coast AQMD, Sacramento Metro, and San Joaquin Valley have offered $50-$250 rebates in past program years. CARB SORE has NOT banned gas chainsaws at the state level as of 2026 — the regulation focuses on leaf blowers and lawn mowers — but some cities have broader battery-only landscaping rules that include chainsaws.',
+        text: 'Less commonly than for leaf blowers, but some California air districts have run residential and commercial battery tool exchange programs that include chainsaws. South Coast AQMD, Sacramento Metro, and San Joaquin Valley have offered $50-$250 rebates in past program years. CARB SORE has NOT banned gas chainsaws at the state level as of 2026, the regulation focuses on leaf blowers and lawn mowers. but some cities have broader battery-only landscaping rules that include chainsaws.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What size EGO chainsaw should I buy — 14 inch or 18 inch?',
+      name: 'What size EGO chainsaw should I buy, 14 inch or 18 inch?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'For most homeowners, the 14-inch CS1400E is the right pick. It is lighter, shorter to store, cheaper ($229 vs $299), and cuts everything under 10 inches easily. Choose the 18-inch CS1804 if you regularly fell small-to-medium trees, process firewood from logs over 10 inches, or deal with storm cleanup on a larger rural property.',
@@ -198,7 +198,7 @@ export default function EGOChainsawReview() {
               productKey={PRODUCT_KEY}
               badge='Best Homeowner Battery Chainsaw'
               rating={4.6}
-              verdict='The EGO CS1804 (18") and CS1400E (14") are the best-value battery chainsaws for homeowners in 2026 — Oregon bar & chain, 5-year warranty, and the 70+ tool Arc Lithium platform.'
+              verdict='The EGO CS1804 (18") and CS1400E (14") are the best-value battery chainsaws for homeowners in 2026, Oregon bar & chain, 5-year warranty, and the 70+ tool Arc Lithium platform.'
               pros={[
                 'Oregon low-kickback bar & chain',
                 'Tool-free chain tensioning',
@@ -230,7 +230,7 @@ export default function EGOChainsawReview() {
                 cuts like a 30-40cc gas saw without any of the mixing,
                 starting, or fume hassle, and the 14-inch CS1400E ($229) is
                 the right saw for anyone with a normal residential lot. Both
-                run on EGO&apos;s Arc Lithium 56V platform — the same
+                run on EGO&apos;s Arc Lithium 56V platform. the same
                 batteries that power the CrossoverT ride-on, the Select Cut
                 mower, the Nexus Power Station, and 70+ other outdoor tools.
                 Oregon makes the bar and chain, tensioning is tool-free, and
@@ -467,7 +467,7 @@ export default function EGOChainsawReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 What separates this from the cheap $99 cordless chainsaws on
                 Amazon is the Oregon bar and chain. Oregon is the industry
-                standard — the same bars professionals mount on Husqvarna
+                standard, the same bars professionals mount on Husqvarna
                 and Stihl pro saws. That means your replacement chains are
                 widely available ($15-$25) and easy to sharpen with standard
                 tools. You can also upgrade to a more aggressive
@@ -476,7 +476,7 @@ export default function EGOChainsawReview() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Runtime (200 Cuts on 5.0Ah — Under Real Conditions)
+                Runtime (200 Cuts on 5.0Ah, Under Real Conditions)
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 EGO&apos;s marketing cites up to 200 cuts on the CS1804 with a
@@ -486,7 +486,7 @@ export default function EGOChainsawReview() {
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <strong>4-inch pine (soft, dry):</strong> ~200-220 cuts on
-                  5.0Ah — EGO&apos;s claim holds.
+                  5.0Ah, EGO&apos;s claim holds.
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
@@ -505,7 +505,7 @@ export default function EGOChainsawReview() {
                 </li>
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For a typical storm-cleanup job — clearing a fallen branch,
+                For a typical storm-cleanup job, clearing a fallen branch,
                 cutting a tree into firewood rounds — one 5.0Ah battery is
                 more than enough. If you&apos;re processing firewood all day
                 or dropping a tree and bucking it, plan on two batteries in
@@ -540,14 +540,14 @@ export default function EGOChainsawReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The DeWalt 16-inch FLEXVOLT chainsaw is the closest
                 cross-platform rival. Cutting performance is roughly
-                equivalent — both hit ~20 m/s chain speed, both use Oregon
+                equivalent, both hit ~20 m/s chain speed, both use Oregon
                 bars, both have brushless motors and chain brakes. DeWalt
                 carries a 3-year warranty vs EGO&apos;s 5-year. DeWalt runs
                 on 20V/60V FLEXVOLT batteries that also power drills,
                 drivers, circular saws, and the broader DeWalt platform —
                 great if you&apos;re a contractor. EGO runs on the 56V Arc
                 Lithium platform that powers almost exclusively outdoor
-                tools — great if you&apos;re building an outdoor cordless
+                tools. Great if you&apos;re building an outdoor cordless
                 ecosystem. Price is similar ($349-$399 kit for DeWalt vs
                 $299 EGO).
               </p>
@@ -565,7 +565,7 @@ export default function EGOChainsawReview() {
                 a 30.1cc engine, 16-inch bar, 8.6 lbs, and $199-$229 new at
                 Stihl dealers. The EGO CS1804 at 18 inches and 11 lbs is
                 heavier by about 2.5 lbs (including battery). Cut speed is
-                close — the Stihl&apos;s slight edge on raw chain speed is
+                close, the Stihl&apos;s slight edge on raw chain speed is
                 offset by the EGO&apos;s instant-on-full-torque character.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -602,7 +602,7 @@ export default function EGOChainsawReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge='Ready to buy?'
-                verdict='EGO chainsaws are available at Home Depot, Lowes, Ace, and egopowerplus.com. Check current promotions — EGO runs seasonal bundle deals regularly.'
+                verdict='EGO chainsaws are available at Home Depot, Lowes, Ace, and egopowerplus.com. Check current promotions, EGO runs seasonal bundle deals regularly.'
                 source='ego-chainsaw'
                 variant='mid'
               />
@@ -660,7 +660,7 @@ export default function EGOChainsawReview() {
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      Oregon bar and chain — pro-standard, replacement chains
+                      Oregon bar and chain, pro-standard, replacement chains
                       easy to find
                     </li>
                     <li className='flex items-start gap-2'>
@@ -717,7 +717,7 @@ export default function EGOChainsawReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      Consumer-grade durability — not built for daily
+                      Consumer-grade durability; not built for daily
                       commercial abuse
                     </li>
                   </ul>
@@ -790,7 +790,7 @@ export default function EGOChainsawReview() {
                     Does California offer rebates?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Some air districts have in past program years — South
+                    Some air districts have in past program years, South
                     Coast AQMD, Sacramento Metro, San Joaquin Valley have
                     included battery chainsaws in rebate programs. Check
                     yearly.
@@ -839,7 +839,7 @@ export default function EGOChainsawReview() {
                 platform combine to make these the default recommendation for
                 anyone serious about building out a cordless outdoor tool
                 collection. They&apos;re not pro 50-60cc replacements, and
-                they&apos;re not the absolute cheapest option — but they
+                they&apos;re not the absolute cheapest option. But they
                 hit the sweet spot between cost, performance, and platform
                 value better than anything else in the homeowner battery
                 chainsaw space.

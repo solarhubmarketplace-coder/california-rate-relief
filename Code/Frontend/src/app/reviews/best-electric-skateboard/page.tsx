@@ -572,7 +572,7 @@ export default function BestElectricSkateboard() {
                     productKey="boosted-stealth"
                     source="electric-skateboard-hub"
                     variant="primary"
-                    label="Check Price — Boosted Stealth"
+                    label="Check Price, Boosted Stealth"
                     showPrice
                   />
                 </div>
@@ -810,7 +810,7 @@ export default function BestElectricSkateboard() {
                   productKey="meepo-hurricane"
                   source="electric-skateboard-hub"
                   variant="primary"
-                  label="Check Price — Meepo Hurricane"
+                  label="Check Price, Meepo Hurricane"
                   showPrice
                 />
               </div>

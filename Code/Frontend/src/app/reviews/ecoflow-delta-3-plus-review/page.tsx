@@ -16,12 +16,12 @@ const PRODUCT_KEY = 'ecoflow-delta-3-plus';
 export const metadata: Metadata = {
   title: 'EcoFlow Delta 3 Plus Review 2026: The Upgraded 1,024Wh LFP for Home Backup',
   description:
-    'Full EcoFlow Delta 3 Plus review — 1,024 Wh LFP (expandable to 5,120 Wh), 1,800W output (2,600W X-Boost), 1,000W solar input, 56-minute full recharge. How does the $999 Delta 3 Plus compare to the SOLIX C1000 and Delta 2 for California home backup?',
+    'Full EcoFlow Delta 3 Plus review. 1,024 Wh LFP (expandable to 5,120 Wh), 1,800W output (2,600W X-Boost), 1,000W solar input, 56-minute full recharge. How does the $999 Delta 3 Plus compare to the SOLIX C1000 and Delta 2 for California home backup?',
   alternates: { canonical: '/reviews/ecoflow-delta-3-plus-review' },
   openGraph: {
     title: 'EcoFlow Delta 3 Plus Review 2026: The Upgraded 1,024Wh LFP for Home Backup',
     description:
-      'Hands-on review of the EcoFlow Delta 3 Plus — 1,024 Wh LFP expandable to 5,120 Wh, 1,800W continuous, 1,000W solar input, 56-minute recharge, 4,000-cycle battery life.',
+      'Hands-on review of the EcoFlow Delta 3 Plus. 1,024 Wh LFP expandable to 5,120 Wh, 1,800W continuous, 1,000W solar input, 56-minute recharge, 4,000-cycle battery life.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -88,7 +88,7 @@ const faqSchema = {
       name: 'Is the Delta 3 Plus eligible for SGIP rebates?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Generally no — SGIP typically requires permanent installation and interconnection, which portable units do not provide. Equity customers may have more flexible pathways. Verify with your utility. At $999, the unit does not depend on rebates to pay for itself — one prevented food spoilage event plus ongoing TOU savings justify the investment.',
+        text: 'Generally no, SGIP typically requires permanent installation and interconnection, which portable units do not provide. Equity customers may have more flexible pathways. Verify with your utility. At $999, the unit does not depend on rebates to pay for itself, one prevented food spoilage event plus ongoing TOU savings justify the investment.',
       },
     },
     {
@@ -222,7 +222,7 @@ export default function EcoFlowDelta3PlusReview() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Design &amp; Build Quality</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 At 27 pounds, the Delta 3 Plus is squarely in the
-                &quot;two-hand carry&quot; category — still reasonably
+                &quot;two-hand carry&quot; category. Still reasonably
                 portable but not something you casually move. EcoFlow has
                 refined the industrial design vs the original Delta 2: the
                 chassis is more angular, the integrated handles feel more
@@ -262,7 +262,7 @@ export default function EcoFlowDelta3PlusReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The expansion system is one of EcoFlow&apos;s strongest
                 competitive advantages. Most 1 kWh competitors (including
-                the Anker SOLIX C1000) have no expansion path — if you
+                the Anker SOLIX C1000) have no expansion path, if you
                 need more capacity, you buy a second unit. The Delta 3
                 Plus&apos;s integrated expansion is cleaner, requires no
                 separate management, and scales your investment over
@@ -313,7 +313,7 @@ export default function EcoFlowDelta3PlusReview() {
                 Port layout is generous: five AC outlets, two USB-C ports
                 at 100W each, two USB-A ports, and a 12V car outlet. The
                 USB-C port count is a notable advantage over units with
-                only one — if you have two laptops to keep running during
+                only one, if you have two laptops to keep running during
                 an outage, that extra port matters.
               </p>
 
@@ -346,7 +346,7 @@ export default function EcoFlowDelta3PlusReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Silent below 800W discharge load. Fans engage during fast
                 charging or sustained high-output discharge. Fan noise is
-                noticeable but manageable — comparable to a desk fan on
+                noticeable but manageable. comparable to a desk fan on
                 medium. The app&apos;s quiet charging mode limits input to
                 about 400W and keeps the unit effectively silent at the
                 cost of doubling recharge time.
@@ -368,7 +368,7 @@ export default function EcoFlowDelta3PlusReview() {
                 out by mid-day two. With one expansion battery (2,048 Wh
                 total), you cover a full 48-hour event. With two
                 expansions (3,072 Wh), 72 hours is within reach. This
-                scaling — without replacing your base unit — is a real
+                scaling. without replacing your base unit, is a real
                 advantage over fixed-capacity competitors.
               </p>
 
@@ -377,7 +377,7 @@ export default function EcoFlowDelta3PlusReview() {
                 The 1,000W solar input is genuinely useful during
                 extended California outages. With four 250W panels (roughly
                 $500 in portable solar) in 5-6 peak sun hours, you can
-                generate 5-6 kWh per day — enough to refill even a
+                generate 5-6 kWh per day. enough to refill even a
                 fully expanded 5,120 Wh system. During a typical PSPS
                 event, this means indefinite operation: the battery
                 discharges at night, refills during the day, and
@@ -390,7 +390,7 @@ export default function EcoFlowDelta3PlusReview() {
                 economically viable. Charging during off-peak
                 (12-20&cent;/kWh) and discharging during peak
                 (40-70&cent;/kWh) saves roughly $0.20-$0.50 per 1,024 Wh
-                cycle. At daily cycling, that&apos;s $75-$180/year — and
+                cycle. At daily cycling, that&apos;s $75-$180/year, and
                 with 4,000 cycles of battery life, you can do this for 11
                 years without degradation concerns. Over the battery life,
                 that&apos;s $800-$2,000 in TOU savings alone, on top of
@@ -431,7 +431,7 @@ export default function EcoFlowDelta3PlusReview() {
                   <h3 className='font-semibold text-green-300 dark:text-green-400 mb-3'>Pros</h3>
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />Expandable to 5,120 Wh via Smart Extra Batteries</li>
-                    <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />1,000W solar input — class-leading</li>
+                    <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />1,000W solar input, class-leading</li>
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />4,000-cycle battery (vs 3,000 competitors)</li>
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />1,800W inverter, 2,600W X-Boost</li>
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />56-min full AC recharge</li>
@@ -555,7 +555,7 @@ export default function EcoFlowDelta3PlusReview() {
                 <div><h3 className='text-lg font-semibold text-foreground mb-2'>Battery lifespan?</h3><p className='text-foreground/80 leading-relaxed'>4,000 cycles to 80% — 33% better than competitors. At daily use, 11+ years.</p></div>
                 <div><h3 className='text-lg font-semibold text-foreground mb-2'>Can it run central AC?</h3><p className='text-foreground/80 leading-relaxed'>No. Central AC needs 2,000W+. The Delta 3 Plus handles portable AC up to 8,000 BTU (500-900W).</p></div>
                 <div><h3 className='text-lg font-semibold text-foreground mb-2'>SGIP eligibility?</h3><p className='text-foreground/80 leading-relaxed'>Generally no — portable units don&apos;t qualify for SGIP general market rebates. Equity customers may have exceptions.</p></div>
-                <div><h3 className='text-lg font-semibold text-foreground mb-2'>Why does 1,000W solar input matter?</h3><p className='text-foreground/80 leading-relaxed'>During multi-day outages, you can fully recharge from 4x250W panels in 75 min peak sun — enough for indefinite operation on solar alone.</p></div>
+                <div><h3 className='text-lg font-semibold text-foreground mb-2'>Why does 1,000W solar input matter?</h3><p className='text-foreground/80 leading-relaxed'>During multi-day outages, you can fully recharge from 4x250W panels in 75 min peak sun, enough for indefinite operation on solar alone.</p></div>
               </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Bottom Line</h2>

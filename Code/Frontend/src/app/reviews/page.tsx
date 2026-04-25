@@ -160,7 +160,7 @@ const reviews: ReviewCard[] = [
     slug: 'mrcool-diy-4th-gen-review',
     title: 'MrCool DIY 4th Gen Mini Split Review',
     description:
-      'Install your own mini split — no HVAC tech needed. 12K-36K BTU, up to 22 SEER2. Save $3,000-$8,000 on installation.',
+      'Install your own mini split, no HVAC tech needed. 12K-36K BTU, up to 22 SEER2. Save $3,000-$8,000 on installation.',
     badge: 'Product Review',
     rating: 4.6,
     icon: 'zap',
@@ -223,7 +223,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-tankless-water-heater',
     title: 'Best Tankless Water Heater 2026',
     description:
-      'Rinnai vs Rheem vs Navien vs Noritz — full comparison with sizing guide, installation costs, and annual savings breakdown.',
+      'Rinnai vs Rheem vs Navien vs Noritz, full comparison with sizing guide, installation costs, and annual savings breakdown.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -240,7 +240,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-dirt-bike-adults',
     title: 'Best Electric Dirt Bikes for Adults 2026',
     description:
-      'Sur-Ron vs KTM vs Stark Varg vs Zero FX. Electric dirt bikes from $4,500 to $12,000 compared — performance, range, and street legality.',
+      'Sur-Ron vs KTM vs Stark Varg vs Zero FX. Electric dirt bikes from $4,500 to $12,000 compared, performance, range, and street legality.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -298,7 +298,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-moped',
     title: 'Best Electric Mopeds 2026',
     description:
-      'NIU vs Segway vs CSC vs ONYX — top electric mopeds from $2,000 to $4,500 compared. Range, speed, and city commuting picks.',
+      'NIU vs Segway vs CSC vs ONYX, top electric mopeds from $2,000 to $4,500 compared. Range, speed, and city commuting picks.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -314,7 +314,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-scooter',
     title: 'Best Electric Scooters 2026',
     description:
-      'Segway vs Apollo vs EMOVE vs Kaabo — adult electric scooters from $400 to $2,500 compared. Commuter, off-road, and premium picks.',
+      'Segway vs Apollo vs EMOVE vs Kaabo, adult electric scooters from $400 to $2,500 compared. Commuter, off-road, and premium picks.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -331,7 +331,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-dirt-bike-kids',
     title: 'Best Electric Dirt Bikes for Kids 2026',
     description:
-      'STACYC vs KTM vs Razor vs Sur-Ron — kids electric dirt bikes from $200 to $3,000. Age-appropriate picks for 3-16 year olds.',
+      'STACYC vs KTM vs Razor vs Sur-Ron. Kids electric dirt bikes from $200 to $3,000. Age-appropriate picks for 3-16 year olds.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -339,7 +339,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-solar-attic-fan',
     title: 'Best Solar Attic Fans 2026',
     description:
-      'Remington vs Natural Light vs QuietCool vs iLIVING — solar attic fans compared. Cut cooling costs 10-30% with zero operating cost.',
+      'Remington vs Natural Light vs QuietCool vs iLIVING, solar attic fans compared. Cut cooling costs 10-30% with zero operating cost.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -401,7 +401,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-fireplace-tv-stand',
     title: 'Best Electric Fireplace TV Stands 2026',
     description:
-      'Walker Edison vs Ameriwood vs Twin Star vs SEI Furniture vs Real Flame — electric fireplace entertainment centers from $235 to $899.',
+      'Walker Edison vs Ameriwood vs Twin Star vs SEI Furniture vs Real Flame, electric fireplace entertainment centers from $235 to $899.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -409,7 +409,7 @@ const reviews: ReviewCard[] = [
     slug: 'heat-pump-vs-furnace',
     title: 'Heat Pump vs Furnace: Which Is Better?',
     description:
-      'Complete comparison of heat pumps vs gas furnaces — efficiency, costs, climate zones, and when each makes sense for your home.',
+      'Complete comparison of heat pumps vs gas furnaces; efficiency, costs, climate zones, and when each makes sense for your home.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -417,7 +417,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-solar-charge-controller',
     title: 'Best Solar Charge Controllers 2026',
     description:
-      'Victron vs Renogy vs EPEver vs Rich Solar vs BougeRV — MPPT and PWM controllers compared for off-grid and DIY solar setups.',
+      'Victron vs Renogy vs EPEver vs Rich Solar vs BougeRV, MPPT and PWM controllers compared for off-grid and DIY solar setups.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -425,7 +425,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-battery-pressure-washer',
     title: 'Best Battery Pressure Washers 2026',
     description:
-      'EGO vs Greenworks vs Ryobi vs DeWalt vs Sun Joe — cordless pressure washers from 600 to 3,200 PSI compared.',
+      'EGO vs Greenworks vs Ryobi vs DeWalt vs Sun Joe, cordless pressure washers from 600 to 3,200 PSI compared.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -433,7 +433,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-skateboard',
     title: 'Best Electric Skateboards 2026',
     description:
-      'Boosted vs Evolve vs Meepo vs WowGo vs Exway vs Backfire — electric skateboards from $400 to $2,000+ compared.',
+      'Boosted vs Evolve vs Meepo vs WowGo vs Exway vs Backfire, electric skateboards from $400 to $2,000+ compared.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -441,7 +441,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-solar-generator',
     title: 'Best Solar Generators 2026',
     description:
-      'EcoFlow vs Bluetti vs Jackery vs Goal Zero vs Anker — complete solar generator bundles for home backup, camping, and off-grid.',
+      'EcoFlow vs Bluetti vs Jackery vs Goal Zero vs Anker, complete solar generator bundles for home backup, camping, and off-grid.',
     badge: 'Comparison Guide',
     icon: 'battery',
   },
@@ -449,7 +449,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-robot-lawn-mower',
     title: 'Best Robot Lawn Mowers 2026',
     description:
-      'Husqvarna vs Worx vs EcoVacs vs Mammotion vs Robomow — autonomous mowers from $600 to $3,500. Wire, RTK, and vision navigation compared.',
+      'Husqvarna vs Worx vs EcoVacs vs Mammotion vs Robomow, autonomous mowers from $600 to $3,500. Wire, RTK, and vision navigation compared.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -466,7 +466,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-outdoor-solar-lights',
     title: 'Best Outdoor Solar Lights 2026',
     description:
-      'Path lights, security floods, string lights, and step lights — the best solar-powered outdoor lighting from $15 to $80.',
+      'Path lights, security floods, string lights, and step lights, the best solar-powered outdoor lighting from $15 to $80.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -474,7 +474,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-snow-shovel',
     title: 'Best Electric Snow Shovels 2026',
     description:
-      'EGO vs Greenworks vs Snow Joe vs Toro vs Ryobi — battery-powered snow shovels for decks, walkways, and light accumulation.',
+      'EGO vs Greenworks vs Snow Joe vs Toro vs Ryobi, battery-powered snow shovels for decks, walkways, and light accumulation.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -482,7 +482,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-solar-panel-kit',
     title: 'Best Solar Panel Kits 2026',
     description:
-      'Renogy vs BougeRV vs Rich Solar vs ECO-WORTHY — DIY solar panel kits for RVs, sheds, cabins, and off-grid setups.',
+      'Renogy vs BougeRV vs Rich Solar vs ECO-WORTHY, DIY solar panel kits for RVs, sheds, cabins, and off-grid setups.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -498,7 +498,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-portable-air-conditioner',
     title: 'Best Portable Air Conditioners 2026',
     description:
-      'LG vs Midea vs Whynter vs BLACK+DECKER — portable AC units from 8,000 to 14,000 BTU. Single-hose and dual-hose models compared.',
+      'LG vs Midea vs Whynter vs BLACK+DECKER, portable AC units from 8,000 to 14,000 BTU. Single-hose and dual-hose models compared.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -506,7 +506,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-window-air-conditioner',
     title: 'Best Window Air Conditioners 2026',
     description:
-      'LG vs Frigidaire vs Midea U-Shaped vs GE Profile — the quietest, most efficient window AC units for every room size.',
+      'LG vs Frigidaire vs Midea U-Shaped vs GE Profile. The quietest, most efficient window AC units for every room size.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -514,7 +514,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-ceiling-fan',
     title: 'Best Ceiling Fans 2026',
     description:
-      'Hunter vs Big Ass Fans vs Modern Forms vs Fanimation — smart, energy-efficient ceiling fans with DC motors and WiFi control.',
+      'Hunter vs Big Ass Fans vs Modern Forms vs Fanimation, smart, energy-efficient ceiling fans with DC motors and WiFi control.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -522,7 +522,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-dehumidifier',
     title: 'Best Dehumidifiers 2026',
     description:
-      'Frigidaire vs hOmeLabs vs GE vs LG — 35 to 70-pint dehumidifiers for basements, bedrooms, and whole-home moisture control.',
+      'Frigidaire vs hOmeLabs vs GE vs LG, 35 to 70-pint dehumidifiers for basements, bedrooms, and whole-home moisture control.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -539,7 +539,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-weed-eater',
     title: 'Best Electric Weed Eaters 2026',
     description:
-      'EGO vs Milwaukee vs DeWalt vs Greenworks vs Ryobi — battery string trimmers with attachment systems and platform compatibility.',
+      'EGO vs Milwaukee vs DeWalt vs Greenworks vs Ryobi. Battery string trimmers with attachment systems and platform compatibility.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -547,7 +547,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-air-purifier',
     title: 'Best Air Purifiers 2026',
     description:
-      'Coway vs Blueair vs Levoit vs Winix vs Dyson — HEPA air purifiers compared by CADR, noise, energy cost, and room coverage.',
+      'Coway vs Blueair vs Levoit vs Winix vs Dyson, HEPA air purifiers compared by CADR, noise, energy cost, and room coverage.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -555,7 +555,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-space-heater',
     title: 'Best Space Heaters 2026',
     description:
-      'Dyson vs De\'Longhi vs Lasko vs Vornado vs Dr Infrared — ceramic, oil-filled, and infrared heaters for every room size.',
+      'Dyson vs De\'Longhi vs Lasko vs Vornado vs Dr Infrared, ceramic, oil-filled, and infrared heaters for every room size.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -563,7 +563,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-bike-for-seniors',
     title: 'Best Electric Bikes for Seniors 2026',
     description:
-      'Step-through e-bikes from Rad Power, Aventon, Lectric, Pedego, and Gazelle — comfort, safety, and easy-mount designs.',
+      'Step-through e-bikes from Rad Power, Aventon, Lectric, Pedego, and Gazelle. comfort, safety, and easy-mount designs.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -579,7 +579,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-riding-mower',
     title: 'Best Electric Riding Mowers 2026',
     description:
-      'EGO Z6 vs Ryobi 80V vs Greenworks vs Cub Cadet vs John Deere — battery zero-turn and riding mowers from $3K to $8.5K.',
+      'EGO Z6 vs Ryobi 80V vs Greenworks vs Cub Cadet vs John Deere. Battery zero-turn and riding mowers from $3K to $8.5K.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -587,7 +587,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-portable-heater',
     title: 'Best Portable Heaters 2026',
     description:
-      'Mr. Heater Buddy vs DeWalt vs Lasko vs Dr. Infrared — propane and electric portable heaters for camping, garages, and patios.',
+      'Mr. Heater Buddy vs DeWalt vs Lasko vs Dr. Infrared. propane and electric portable heaters for camping, garages, and patios.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -595,7 +595,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-ev-charger',
     title: 'Best Home EV Chargers 2026',
     description:
-      'ChargePoint vs Emporia vs Grizzl-E vs JuiceBox vs Wallbox vs Tesla — Level 2 home EV chargers from $400 to $700.',
+      'ChargePoint vs Emporia vs Grizzl-E vs JuiceBox vs Wallbox vs Tesla, Level 2 home EV chargers from $400 to $700.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -603,7 +603,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-solar-water-heater',
     title: 'Best Solar Water Heaters 2026',
     description:
-      'Duda Solar vs SunEarth vs Rheem vs A.O. Smith — active and passive solar water heating systems compared.',
+      'Duda Solar vs SunEarth vs Rheem vs A.O. Smith. active and passive solar water heating systems compared.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -611,7 +611,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-pressure-washer',
     title: 'Best Electric Pressure Washers 2026',
     description:
-      'Sun Joe vs Greenworks vs Ryobi vs Karcher vs Westinghouse — corded electric power washers from 1,500 to 3,500 PSI.',
+      'Sun Joe vs Greenworks vs Ryobi vs Karcher vs Westinghouse. corded electric power washers from 1,500 to 3,500 PSI.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -619,7 +619,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-heat-pump-water-heater',
     title: 'Best Heat Pump Water Heaters 2026',
     description:
-      'Rheem ProTerra vs A.O. Smith Voltex vs GE GeoSpring — hybrid heat pump water heaters with 3-4x efficiency and $2,000+ tax credits.',
+      'Rheem ProTerra vs A.O. Smith Voltex vs GE GeoSpring, hybrid heat pump water heaters with 3-4x efficiency and $2,000+ tax credits.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -627,7 +627,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-ebike-rack',
     title: 'Best E-Bike Racks 2026',
     description:
-      '1UP USA vs Thule vs Kuat vs Saris — hitch-mounted e-bike racks rated for 60-75 lb heavy electric bikes.',
+      '1UP USA vs Thule vs Kuat vs Saris, hitch-mounted e-bike racks rated for 60-75 lb heavy electric bikes.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -654,7 +654,7 @@ const reviews: ReviewCard[] = [
     slug: 'ecobee-thermostat-review',
     title: 'Ecobee Smart Thermostat Premium Review',
     description:
-      'Built-in Alexa, SmartSensor room balancing, air quality monitoring — is ecobee the smarter choice over Nest?',
+      'Built-in Alexa, SmartSensor room balancing, air quality monitoring. is ecobee the smarter choice over Nest?',
     badge: 'Product Review',
     rating: 4.7,
     icon: 'zap',
@@ -663,7 +663,7 @@ const reviews: ReviewCard[] = [
     slug: 'smart-thermostat-installation',
     title: 'Smart Thermostat Installation Guide',
     description:
-      'DIY in 30 minutes — wire labeling, C-wire workarounds, Title 24 compliance. Step-by-step install instructions.',
+      'DIY in 30 minutes, wire labeling, C-wire workarounds, Title 24 compliance. Step-by-step install instructions.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -672,7 +672,7 @@ const reviews: ReviewCard[] = [
     slug: 'tankless-water-heater-cost',
     title: 'Tankless Water Heater Cost 2026',
     description:
-      'Unit + install price breakdown — gas, electric, condensing. Total installed cost and rebates explained.',
+      'Unit + install price breakdown, gas, electric, condensing. Total installed cost and rebates explained.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -696,7 +696,7 @@ const reviews: ReviewCard[] = [
     slug: 'rinnai-tankless-water-heater-review',
     title: 'Rinnai Tankless Water Heater Review',
     description:
-      'Rinnai Sensei RX, RU, and RL series compared — Japan-made, 15-year heat exchanger warranty.',
+      'Rinnai Sensei RX, RU, and RL series compared, Japan-made, 15-year heat exchanger warranty.',
     badge: 'Product Review',
     rating: 4.6,
     icon: 'zap',
@@ -705,7 +705,7 @@ const reviews: ReviewCard[] = [
     slug: 'rheem-tankless-water-heater-review',
     title: 'Rheem Tankless Water Heater Review',
     description:
-      'Performance Platinum, Prestige condensing, and EcoSmart electric — the budget-friendly Rinnai alternative?',
+      'Performance Platinum, Prestige condensing, and EcoSmart electric, the budget-friendly Rinnai alternative?',
     badge: 'Product Review',
     rating: 4.4,
     icon: 'zap',
@@ -714,7 +714,7 @@ const reviews: ReviewCard[] = [
     slug: 'navien-tankless-water-heater-review',
     title: 'Navien Tankless Water Heater Review',
     description:
-      'NPE, NPN, and NCB combi compared — 4.7M US installs, 0.97 UEF condensing efficiency, 15-year warranty.',
+      'NPE, NPN, and NCB combi compared, 4.7M US installs, 0.97 UEF condensing efficiency, 15-year warranty.',
     badge: 'Product Review',
     rating: 4.6,
     icon: 'zap',
@@ -723,7 +723,7 @@ const reviews: ReviewCard[] = [
     slug: 'noritz-tankless-water-heater-review',
     title: 'Noritz Tankless Water Heater Review',
     description:
-      'NRC condensing, EZ series drop-in replacements, CB combi — 70-year-old Japanese tankless pioneer.',
+      'NRC condensing, EZ series drop-in replacements, CB combi, 70-year-old Japanese tankless pioneer.',
     badge: 'Product Review',
     rating: 4.5,
     icon: 'zap',
@@ -733,7 +733,7 @@ const reviews: ReviewCard[] = [
     slug: 'mrcool-mini-split',
     title: 'MrCool Mini Split Review',
     description:
-      'DIY 4th Gen, Olympus Hyper Heat, and Advantage — the no-HVAC-tech-needed mini split everyone is buying.',
+      'DIY 4th Gen, Olympus Hyper Heat, and Advantage, the no-HVAC-tech-needed mini split everyone is buying.',
     badge: 'Product Review',
     rating: 4.7,
     icon: 'zap',
@@ -742,7 +742,7 @@ const reviews: ReviewCard[] = [
     slug: 'diy-mini-split',
     title: 'DIY Mini Split Guide',
     description:
-      'How to install a mini split yourself — pre-charged line sets, permits, step-by-step, best DIY kits.',
+      'How to install a mini split yourself. pre-charged line sets, permits, step-by-step, best DIY kits.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -759,7 +759,7 @@ const reviews: ReviewCard[] = [
     slug: 'senville-mini-split-review',
     title: 'Senville Mini Split Review',
     description:
-      'LETO, AURA, and SENA compared — Amazon/Home Depot availability, quick-connect line sets, 5-year warranty.',
+      'LETO, AURA, and SENA compared. Amazon/Home Depot availability, quick-connect line sets, 5-year warranty.',
     badge: 'Product Review',
     rating: 4.2,
     icon: 'zap',
@@ -778,7 +778,7 @@ const reviews: ReviewCard[] = [
     slug: 'ecoflow-river-3-review',
     title: 'EcoFlow River 3 Review',
     description:
-      '245 Wh LFP for $259 — small-footprint 3,000-cycle portable for CPAP, camping, and outages.',
+      '245 Wh LFP for $259. small-footprint 3,000-cycle portable for CPAP, camping, and outages.',
     badge: 'Product Review',
     rating: 4.5,
     icon: 'battery',
@@ -796,7 +796,7 @@ const reviews: ReviewCard[] = [
     slug: 'ecoflow-river-2-pro-review',
     title: 'EcoFlow River 2 Pro Review',
     description:
-      '768 Wh LFP workhorse for camping and CPAP — 800W output, 70-min fast charge, 3,000-cycle lifespan.',
+      '768 Wh LFP workhorse for camping and CPAP, 800W output, 70-min fast charge, 3,000-cycle lifespan.',
     badge: 'Product Review',
     rating: 4.7,
     icon: 'battery',
@@ -805,7 +805,7 @@ const reviews: ReviewCard[] = [
     slug: 'ecoflow-delta-3-plus-review',
     title: 'EcoFlow Delta 3 Plus Review',
     description:
-      '1,024 Wh LFP (expandable 5,120 Wh), 4,000-cycle lifespan, Smart Extra Battery support — the new home backup workhorse.',
+      '1,024 Wh LFP (expandable 5,120 Wh), 4,000-cycle lifespan, Smart Extra Battery support, the new home backup workhorse.',
     badge: 'Product Review',
     rating: 4.7,
     icon: 'battery',
@@ -814,7 +814,7 @@ const reviews: ReviewCard[] = [
     slug: 'anker-solix-c1000-review',
     title: 'Anker SOLIX C1000 Review',
     description:
-      '1,056 Wh LFP, 1,800W output, 600W solar, 58-minute fast charge — the best mid-size power station for $999.',
+      '1,056 Wh LFP, 1,800W output, 600W solar, 58-minute fast charge, the best mid-size power station for $999.',
     badge: 'Product Review',
     rating: 4.6,
     icon: 'battery',
@@ -859,7 +859,7 @@ const reviews: ReviewCard[] = [
     slug: 'electric-dirt-bike',
     title: 'Best Electric Dirt Bikes 2026',
     description:
-      'Sur-Ron vs Talaria vs Segway vs Kuberg vs Stark — full-size, kids, and street-legal electric dirt bikes.',
+      'Sur-Ron vs Talaria vs Segway vs Kuberg vs Stark, full-size, kids, and street-legal electric dirt bikes.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -867,7 +867,7 @@ const reviews: ReviewCard[] = [
     slug: 'lectric-ebike',
     title: 'Lectric eBikes Review',
     description:
-      'XP 3.0, XP Lite, XPedition, XPress, and ONE — Phoenix-based direct-to-consumer lineup fully compared.',
+      'XP 3.0, XP Lite, XPedition, XPress, and ONE, Phoenix-based direct-to-consumer lineup fully compared.',
     badge: 'Product Review',
     rating: 4.6,
     icon: 'zap',
@@ -876,7 +876,7 @@ const reviews: ReviewCard[] = [
     slug: 'rad-power-bikes',
     title: 'Rad Power Bikes Review',
     description:
-      'RadRover 6 Plus, RadRunner, RadCity, RadWagon, RadExpand, RadTrike — Seattle\u2019s largest e-bike brand compared.',
+      'RadRover 6 Plus, RadRunner, RadCity, RadWagon, RadExpand, RadTrike, Seattle\u2019s largest e-bike brand compared.',
     badge: 'Product Review',
     rating: 4.5,
     icon: 'zap',
@@ -885,7 +885,7 @@ const reviews: ReviewCard[] = [
     slug: 'aventon-ebike',
     title: 'Aventon E-Bikes Review',
     description:
-      'Aventure 3, Pace 500.3, Level 3, Soltera, Sinch.2, and Abound cargo — torque sensor e-bikes compared.',
+      'Aventure 3, Pace 500.3, Level 3, Soltera, Sinch.2, and Abound cargo. Torque sensor e-bikes compared.',
     badge: 'Product Review',
     rating: 4.7,
     icon: 'zap',
@@ -911,7 +911,7 @@ const reviews: ReviewCard[] = [
     slug: 'fastest-electric-bike',
     title: 'Fastest Electric Bikes 2026',
     description:
-      'Delfast, HPC, Vintage Electric, Ariel Rider, Stealth Bomber — 35+ mph Class 3 and off-road monsters.',
+      'Delfast, HPC, Vintage Electric, Ariel Rider, Stealth Bomber, 35+ mph Class 3 and off-road monsters.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -919,7 +919,7 @@ const reviews: ReviewCard[] = [
     slug: 'kids-electric-bike',
     title: 'Best Kids Electric Bikes 2026',
     description:
-      'Ages 5-14 tested — Rad Power Youth, Woom UP 5, Razor MX650, Little Fiets, Segway Xyber ranked for safety.',
+      'Ages 5-14 tested, Rad Power Youth, Woom UP 5, Razor MX650, Little Fiets, Segway Xyber ranked for safety.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -943,7 +943,7 @@ const reviews: ReviewCard[] = [
     slug: 'best-electric-scooter-for-adults',
     title: 'Best Electric Scooters for Adults',
     description:
-      'Apollo City Pro, Segway GT2, NIU KQi3 Pro, Unagi Voyager — commuter, heavy-duty, and portable scooters compared.',
+      'Apollo City Pro, Segway GT2, NIU KQi3 Pro, Unagi Voyager, commuter, heavy-duty, and portable scooters compared.',
     badge: 'Comparison Guide',
     icon: 'zap',
   },
@@ -951,7 +951,7 @@ const reviews: ReviewCard[] = [
     slug: 'gotrax-electric-scooter',
     title: 'Gotrax Electric Scooter Review',
     description:
-      'GXL V2, XR Pro, G4, G3, Apex XL — USA budget scooter brand, UL 2272 certified, $299-$699 lineup.',
+      'GXL V2, XR Pro, G4, G3, Apex XL, USA budget scooter brand, UL 2272 certified, $299-$699 lineup.',
     badge: 'Product Review',
     rating: 4.3,
     icon: 'zap',
@@ -961,7 +961,7 @@ const reviews: ReviewCard[] = [
     slug: 'ego-lawn-mower',
     title: 'EGO Lawn Mower Review',
     description:
-      'Select Cut XP, Z6 zero-turn, T6 stand-on, push and self-propelled — full EGO 56V Power+ mower lineup.',
+      'Select Cut XP, Z6 zero-turn, T6 stand-on, push and self-propelled. Full EGO 56V Power+ mower lineup.',
     badge: 'Product Review',
     rating: 4.7,
     icon: 'zap',
@@ -970,7 +970,7 @@ const reviews: ReviewCard[] = [
     slug: 'ryobi-lawn-mower',
     title: 'Ryobi Lawn Mower Review',
     description:
-      'Ryobi 40V HP Brushless vs 80V HP Ride-On vs 40V Push — Home Depot\u2019s electric mower platform compared.',
+      'Ryobi 40V HP Brushless vs 80V HP Ride-On vs 40V Push, Home Depot\u2019s electric mower platform compared.',
     badge: 'Product Review',
     rating: 4.5,
     icon: 'zap',
@@ -979,7 +979,7 @@ const reviews: ReviewCard[] = [
     slug: 'greenworks-lawn-mower',
     title: 'Greenworks Lawn Mower Review',
     description:
-      '80V Pro, 60V Brushless, 40V, and CrossoverT Riding Mower compared — 3 incompatible battery platforms explained.',
+      '80V Pro, 60V Brushless, 40V, and CrossoverT Riding Mower compared, 3 incompatible battery platforms explained.',
     badge: 'Product Review',
     rating: 4.5,
     icon: 'zap',
@@ -988,7 +988,7 @@ const reviews: ReviewCard[] = [
     slug: 'dewalt-chainsaw-review',
     title: 'DeWalt Chainsaw Review',
     description:
-      '60V MAX FLEXVOLT 20" DCCS690 tested — 450 cuts per charge, vs Milwaukee M18 Fuel, vs Stihl gas.',
+      '60V MAX FLEXVOLT 20" DCCS690 tested, 450 cuts per charge, vs Milwaukee M18 Fuel, vs Stihl gas.',
     badge: 'Product Review',
     rating: 4.5,
     icon: 'zap',
@@ -997,7 +997,7 @@ const reviews: ReviewCard[] = [
     slug: 'ego-chainsaw-review',
     title: 'EGO Power+ Chainsaw Review',
     description:
-      'CS1804 18" and CS1400E 14" tested — 56V Arc Lithium platform, up to 200 cuts per charge, chain brake safety.',
+      'CS1804 18" and CS1400E 14" tested, 56V Arc Lithium platform, up to 200 cuts per charge, chain brake safety.',
     badge: 'Product Review',
     rating: 4.6,
     icon: 'zap',
@@ -1006,7 +1006,7 @@ const reviews: ReviewCard[] = [
     slug: 'ryobi-chainsaw-review',
     title: 'Ryobi Chainsaw Review',
     description:
-      '40V HP Brushless 18" and 14" tested — Oregon bar/chain, 100+ cuts on 4Ah, Home Depot exclusive 5-year warranty.',
+      '40V HP Brushless 18" and 14" tested. Oregon bar/chain, 100+ cuts on 4Ah, Home Depot exclusive 5-year warranty.',
     badge: 'Product Review',
     rating: 4.4,
     icon: 'zap',
@@ -1033,7 +1033,7 @@ const reviews: ReviewCard[] = [
     slug: 'ryobi-leaf-blower-review',
     title: 'Ryobi Leaf Blower Review',
     description:
-      '40V HP Whisper Series 730 CFM backpack, 550 CFM Jet Fan, 110 MPH handheld — 60 dB noise rating tested.',
+      '40V HP Whisper Series 730 CFM backpack, 550 CFM Jet Fan, 110 MPH handheld. 60 dB noise rating tested.',
     badge: 'Product Review',
     rating: 4.6,
     icon: 'zap',
@@ -1042,7 +1042,7 @@ const reviews: ReviewCard[] = [
     slug: 'milwaukee-leaf-blower-review',
     title: 'Milwaukee Leaf Blower Review',
     description:
-      'M18 FUEL Dual Battery Backpack 2824-20 and 2728-20 handheld — 145 MPH, jobsite-grade electric blowers.',
+      'M18 FUEL Dual Battery Backpack 2824-20 and 2728-20 handheld, 145 MPH, jobsite-grade electric blowers.',
     badge: 'Product Review',
     rating: 4.5,
     icon: 'zap',
@@ -1147,7 +1147,7 @@ export default function ReviewsPage() {
               <p className='text-lg max-w-2xl mx-auto' style={{ color: '#d4d4d8' }}>
                 Expert reviews and comparisons of portable power stations, e-bikes,
                 mini splits, electric lawn mowers, smart thermostats, generators,
-                and more — tested and verified for 2026.
+                and more. Tested and verified for 2026.
               </p>
             </div>
 
@@ -1212,7 +1212,7 @@ export default function ReviewsPage() {
                 Looking for More?
               </h2>
               <p className='mb-6 max-w-xl mx-auto' style={{ color: '#d4d4d8' }}>
-                We test and review the latest in green energy tech — from
+                We test and review the latest in green energy tech, from
                 portable power stations to smart home devices. New reviews
                 every week.
               </p>

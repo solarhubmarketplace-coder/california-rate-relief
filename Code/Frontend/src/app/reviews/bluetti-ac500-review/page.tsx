@@ -211,7 +211,7 @@ export default function BluettiAC500Review() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
             {/* Above-the-fold primary CTA */}
@@ -219,7 +219,7 @@ export default function BluettiAC500Review() {
               productKey={PRODUCT_KEY}
               badge="Most Modular"
               rating={4.5}
-              verdict="The Bluetti AC500 delivers 5,000W output, 3,000W solar input (highest in class), and scales from 3,072 Wh to 18,432 Wh — the best modular power station for homeowners who want to grow their backup system over time."
+              verdict="The Bluetti AC500 delivers 5,000W output, 3,000W solar input (highest in class), and scales from 3,072 Wh to 18,432 Wh; the best modular power station for homeowners who want to grow their backup system over time."
               pros={[
                 'PSPS and outage preparedness (scalable)',
                 'Off-grid solar setups (3,000W solar input)',
@@ -349,17 +349,15 @@ export default function BluettiAC500Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Most portable power stations are all-in-one units: inverter and
                 battery packed into a single enclosure. The Bluetti AC500 does
-                something different. The AC500 itself is just an inverter module
-                — a 67.2-pound box with no internal battery at all. You connect
+                something different. The AC500 itself is just an inverter module, a 67.2-pound box with no internal battery at all. You connect
                 it to one or more B300S battery modules via a thick cable, and
                 the system comes alive.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This split architecture is the single most important thing to
                 understand about the AC500. It is not a power station. It is a
-                power <em>system</em>. The inverter handles all the brains —
-                output regulation, MPPT solar charging, app connectivity, UPS
-                switching — while the batteries are simple, swappable energy
+                power <em>system</em>. The inverter handles all the brains, output regulation, MPPT solar charging, app connectivity, UPS
+                switching. While the batteries are simple, swappable energy
                 storage. This means you can start with one B300S at 3,072 Wh and
                 add batteries later as your budget or backup needs grow.
               </p>
@@ -393,11 +391,11 @@ export default function BluettiAC500Review() {
               <div className='bg-muted/30 border border-border rounded-lg p-4 mb-6'>
                 <ul className='text-foreground/80 space-y-2 list-none pl-0'>
                   <li>
-                    <strong>1x B300S:</strong> 3,072 Wh — essentials for 1-2
+                    <strong>1x B300S:</strong> 3,072 Wh, essentials for 1-2
                     days
                   </li>
                   <li>
-                    <strong>2x B300S:</strong> 6,144 Wh — essentials for 3-4
+                    <strong>2x B300S:</strong> 6,144 Wh. essentials for 3-4
                     days
                   </li>
                   <li>
@@ -405,7 +403,7 @@ export default function BluettiAC500Review() {
                     days
                   </li>
                   <li>
-                    <strong>4x B300S:</strong> 12,288 Wh — essentials for a week
+                    <strong>4x B300S:</strong> 12,288 Wh, essentials for a week
                   </li>
                   <li>
                     <strong>6x B300S:</strong> 18,432 Wh — extended off-grid or
@@ -416,7 +414,7 @@ export default function BluettiAC500Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 &quot;Essentials&quot; means a refrigerator (150-200W
                 continuous), Wi-Fi router (15W), phone and laptop charging
-                (50-100W), and LED lighting (20-50W) — roughly 400-500W average
+                (50-100W), and LED lighting (20-50W), roughly 400-500W average
                 draw, or about 6-8 kWh per day. Your actual runtime depends
                 heavily on what you plug in and how often.
               </p>
@@ -436,7 +434,7 @@ export default function BluettiAC500Review() {
                 Charging Speed: 3,000W Solar Input Is Class-Leading
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The AC500 accepts up to 3,000W of solar input — the highest of
+                The AC500 accepts up to 3,000W of solar input; the highest of
                 any portable power station currently available. For context, the
                 EcoFlow Delta Pro 3 maxes out at 2,600W, and the Anker F3800
                 tops out at 2,400W. In a category where solar charging speed is
@@ -445,7 +443,7 @@ export default function BluettiAC500Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 With 3,000W of panels in full California sunshine (5-6 peak sun
                 hours in most of the state), you can realistically harvest 15-18
-                kWh per day — enough to completely recharge even a large
+                kWh per day; enough to completely recharge even a large
                 multi-battery setup. A single B300S (3,072 Wh) can go from empty
                 to full in about 1.5-2 hours of peak sun with adequate panels.
               </p>
@@ -523,7 +521,7 @@ export default function BluettiAC500Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Bluetti&apos;s Fusion Pro feature lets you link two AC500 units
                 together. The result is a combined 10,000W of continuous output
-                and a 240V split-phase configuration — the same voltage your
+                and a 240V split-phase configuration, the same voltage your
                 home electrical panel uses. This opens the door to running 240V
                 appliances like electric dryers, well pumps, and central air
                 conditioning units that a single AC500 cannot handle.
@@ -557,7 +555,7 @@ export default function BluettiAC500Review() {
                 That is fast enough to keep computers, networking equipment, and
                 medical devices running without interruption. For California
                 homeowners who work from home during PSPS events, this is a
-                practical feature — your router and laptop stay online even as
+                practical feature. your router and laptop stay online even as
                 the grid goes dark.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -585,7 +583,7 @@ export default function BluettiAC500Review() {
                 </h3>
                 <ul className='text-foreground/80 space-y-2 list-none pl-0'>
                   <li>
-                    <strong>Tier 1 — Short outages (4-12 hours):</strong> 1x
+                    <strong>Tier 1. Short outages (4-12 hours):</strong> 1x
                     B300S (3,072 Wh) keeps your fridge, router, and lights
                     running through a single PSPS event. Cost: $2,299 bundle.
                   </li>
@@ -605,7 +603,7 @@ export default function BluettiAC500Review() {
                 The 3,000W solar input is where the AC500 really shines for
                 California. With 5-6 peak sun hours in most of the state, a
                 properly sized solar array can fully recharge the battery every
-                day — making extended outages manageable without grid power at
+                day, making extended outages manageable without grid power at
                 all. No other portable power station can match this solar
                 charging speed.
               </p>
@@ -616,7 +614,7 @@ export default function BluettiAC500Review() {
                 $150/kWh, which would be about $461 for a single B300S (3,072
                 Wh). Equity-eligible customers (low-income, medically
                 vulnerable, or in high fire-threat areas) receive approximately
-                $1,100/kWh, which would be about $3,379 — potentially covering
+                $1,100/kWh, which would be about $3,379, potentially covering
                 the entire cost of the B300S battery. However, SGIP eligibility
                 for portable power stations varies and you should confirm
                 current rules at{' '}
@@ -684,7 +682,7 @@ export default function BluettiAC500Review() {
                   </h3>
                   <ul className='text-foreground/80 text-sm space-y-2 list-none pl-0'>
                     <li>
-                      Battery sold separately — higher effective entry price
+                      Battery sold separately. Higher effective entry price
                     </li>
                     <li>
                       Combined weight is 150 lbs (not portable for one person)
@@ -985,7 +983,7 @@ export default function BluettiAC500Review() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge="Final Verdict"
-                verdict="If you want backup power that scales — from PSPS essentials today to whole-home resilience tomorrow — the AC500 is the only modular system that can take you there."
+                verdict="If you want backup power that scales — from PSPS essentials today to whole-home resilience tomorrow. The AC500 is the only modular system that can take you there."
                 source="bluetti-ac500"
                 variant="final"
               />

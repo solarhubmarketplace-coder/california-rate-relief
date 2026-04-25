@@ -152,7 +152,7 @@ const faqSchema = {
       name: 'How does the Honeywell T9 compare to the Nest Learning Thermostat?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The T9 and Nest Learning Thermostat (4th gen) are closely matched. The T9 wins on room sensors (included in the box vs. sold separately for Nest), price ($169-$199 vs. $249 for Nest 4th gen), and broad HVAC compatibility. The Nest wins on design aesthetics (the rotating bezel is more intuitive), learning algorithms (Nest has had more years to refine its machine learning), and the Google Home ecosystem integration. If multi-room comfort is your priority, the T9 has the edge. If you want the sleekest design and are already deep in the Google ecosystem, the Nest is hard to beat.',
+        text: 'The T9 and Nest Learning Thermostat (4th gen) are closely matched. The T9 wins on room sensors (included in the box vs. Sold separately for Nest), price ($169-$199 vs. $249 for Nest 4th gen), and broad HVAC compatibility. The Nest wins on design aesthetics (the rotating bezel is more intuitive), learning algorithms (Nest has had more years to refine its machine learning), and the Google Home ecosystem integration. If multi-room comfort is your priority, the T9 has the edge. If you want the sleekest design and are already deep in the Google ecosystem, the Nest is hard to beat.',
       },
     },
     {
@@ -264,7 +264,7 @@ export default function HoneywellSmartThermostatReview() {
                 productKey={PRODUCT_KEY}
                 badge='Best Value with Room Sensor'
                 rating={4.3}
-                verdict='Honeywell Home T9 — includes a wireless room sensor, geofencing, Smart Response learning. Undercuts Ecobee Premium by $50-$80.'
+                verdict='Honeywell Home T9, includes a wireless room sensor, geofencing, Smart Response learning. Undercuts Ecobee Premium by $50-$80.'
                 pros={[
                   'Wireless room sensor included',
                   'Geofencing + Smart Response learning',
@@ -537,7 +537,7 @@ export default function HoneywellSmartThermostatReview() {
                   The Honeywell T9&apos;s room sensors solve this by measuring
                   temperature and humidity in the rooms that actually matter to
                   you. You place the small wireless sensors (about the size of a
-                  deck of cards) in bedrooms, home offices, nurseries — wherever
+                  deck of cards) in bedrooms, home offices, nurseries, wherever
                   comfort matters most. Then you tell the T9 which sensors to
                   prioritize at different times of day.
                 </p>
@@ -701,7 +701,7 @@ export default function HoneywellSmartThermostatReview() {
                     This is not as aggressive as Nest&apos;s full machine
                     learning approach (which tries to learn your entire schedule
                     from scratch), but it is more predictable. You still set
-                    your schedule manually — the T9 just makes sure transitions
+                    your schedule manually, the T9 just makes sure transitions
                     happen on time rather than starting when the clock hits your
                     scheduled time.
                   </p>
@@ -733,7 +733,7 @@ export default function HoneywellSmartThermostatReview() {
                     The T9 supports fully customizable 7-day scheduling with up
                     to 4 time periods per day. Each period can have its own
                     target temperature and sensor priority. You can set
-                    different schedules for weekdays vs. weekends, or make
+                    different schedules for weekdays vs. Weekends, or make
                     every day unique. The scheduling interface on the
                     touchscreen is decent but much easier to configure through
                     the Resideo app, where you can drag time periods and copy
@@ -870,7 +870,7 @@ export default function HoneywellSmartThermostatReview() {
                         scenario: 'Upgrading from a basic manual thermostat',
                         savings: '$150-$345/year',
                         percent: '15-23%',
-                        note: 'Biggest gains — scheduling and geofencing eliminate most waste',
+                        note: 'Biggest gains, scheduling and geofencing eliminate most waste',
                       },
                       {
                         scenario:
@@ -891,7 +891,7 @@ export default function HoneywellSmartThermostatReview() {
                           'Upgrading from another smart thermostat with sensors',
                         savings: '$0-$50/year',
                         percent: '0-3%',
-                        note: 'Marginal gains — mainly from updated algorithms',
+                        note: 'Marginal gains. Mainly from updated algorithms',
                       },
                     ].map((row) => (
                       <div
@@ -1029,8 +1029,8 @@ export default function HoneywellSmartThermostatReview() {
                   </p>
                   <p className='text-sm leading-relaxed' style={{ color: '#d4d4d8' }}>
                     The T9 needs a C-wire (common wire) for power. If your
-                    existing thermostat does not have a C-wire — which is
-                    common in homes built before 2000 — Honeywell includes a
+                    existing thermostat does not have a C-wire, which is
+                    common in homes built before 2000. Honeywell includes a
                     C-wire adapter in the box. The adapter installs at your
                     HVAC equipment&apos;s control board and takes an
                     additional 10-15 minutes. If you are not comfortable
@@ -1387,7 +1387,7 @@ export default function HoneywellSmartThermostatReview() {
                       You need Apple HomeKit support, want a built-in Alexa
                       speaker, or care about indoor air quality monitoring.
                       The Ecobee Premium is the most feature-rich smart
-                      thermostat on the market — you just pay a premium for
+                      thermostat on the market. you just pay a premium for
                       those extras ($249 vs. $169-$199 for the T9).
                     </p>
                   </div>
@@ -1629,7 +1629,7 @@ export default function HoneywellSmartThermostatReview() {
                     list, but it nails the fundamentals: accurate multi-room
                     temperature control, reliable geofencing, solid voice
                     assistant integration, and a price that undercuts the
-                    competition by $50-$80 — while including a sensor and
+                    competition by $50-$80, while including a sensor and
                     C-wire adapter in the box.
                   </p>
                   <p
@@ -1703,7 +1703,7 @@ export default function HoneywellSmartThermostatReview() {
                     },
                     {
                       title: 'MrCool DIY 4th Gen Mini Split Review',
-                      desc: 'The only mini split you can install yourself — no HVAC tech needed.',
+                      desc: 'The only mini split you can install yourself, no HVAC tech needed.',
                       href: '/reviews/mrcool-diy-4th-gen-review',
                     },
                     {

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   title:
     'EcoFlow Delta Pro Ultra Review 2026: Whole-Home Backup That Scales to 90kWh',
   description:
-    'In-depth EcoFlow Delta Pro Ultra review. 6,144Wh LFP battery, 7,200W output, expandable to 90kWh with up to 15 batteries. $4,099 — is it worth it vs Tesla Powerwall 3? Honest pros, cons, and California backup analysis.',
+    'In-depth EcoFlow Delta Pro Ultra review. 6,144Wh LFP battery, 7,200W output, expandable to 90kWh with up to 15 batteries. $4,099, is it worth it vs Tesla Powerwall 3? Honest pros, cons, and California backup analysis.',
   alternates: {
     canonical: '/reviews/ecoflow-delta-pro-ultra-review',
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title:
       'EcoFlow Delta Pro Ultra Review 2026: Whole-Home Backup That Scales to 90kWh',
     description:
-      'Detailed review of the EcoFlow Delta Pro Ultra — 6,144Wh LFP battery, 7,200W output, expandable to 90kWh. The bridge between portable power stations and permanent home batteries.',
+      'Detailed review of the EcoFlow Delta Pro Ultra, 6,144Wh LFP battery, 7,200W output, expandable to 90kWh. The bridge between portable power stations and permanent home batteries.',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -190,7 +190,7 @@ export default function EcoFlowDeltaProUltraReview() {
               </h1>
               <p className='text-lg text-muted-foreground mb-4'>
                 The bridge between portable power stations and permanent home
-                battery systems — without the permits, electricians, or
+                battery systems, without the permits, electricians, or
                 $15,000+ install costs.
               </p>
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
@@ -246,7 +246,7 @@ export default function EcoFlowDeltaProUltraReview() {
                 6,144Wh LFP battery, 7,200W continuous output, and ability to
                 scale to a jaw-dropping 90kWh make it genuinely viable as a
                 primary backup system for California homes. At $4,099 for the
-                base inverter + battery, it is not inexpensive — but compared
+                base inverter + battery, it is not inexpensive, but compared
                 to the $12,500-$16,500 installed cost of a Tesla Powerwall 3,
                 it is a compelling value proposition for homeowners who want
                 serious backup power without permits, contractors, or
@@ -434,11 +434,11 @@ export default function EcoFlowDeltaProUltraReview() {
                 The core concept is simple: one inverter unit paired with
                 stackable 6,144Wh LFP battery modules. Start with one
                 inverter and one battery for $4,099. Add more batteries as
-                your budget allows — up to 5 batteries per inverter (30,720Wh).
+                your budget allows, up to 5 batteries per inverter (30,720Wh).
                 Need even more? Daisy-chain up to 3 inverters with 5
                 batteries each for a maximum system capacity of 90kWh and
                 21,600W of output. That is enough to run a large California
-                home — including central air conditioning — for days during a
+                home; including central air conditioning — for days during a
                 PSPS event.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -488,31 +488,31 @@ export default function EcoFlowDeltaProUltraReview() {
                   <div className='flex justify-between items-center border-b border-border pb-2'>
                     <span>1 inverter + 1 battery</span>
                     <span className='font-medium text-foreground'>
-                      6,144Wh / 7,200W — ~$4,099
+                      6,144Wh / 7,200W. ~$4,099
                     </span>
                   </div>
                   <div className='flex justify-between items-center border-b border-border pb-2'>
                     <span>1 inverter + 3 batteries</span>
                     <span className='font-medium text-foreground'>
-                      18,432Wh / 7,200W — ~$10,000
+                      18,432Wh / 7,200W, ~$10,000
                     </span>
                   </div>
                   <div className='flex justify-between items-center border-b border-border pb-2'>
                     <span>1 inverter + 5 batteries</span>
                     <span className='font-medium text-foreground'>
-                      30,720Wh / 7,200W — ~$16,000
+                      30,720Wh / 7,200W, ~$16,000
                     </span>
                   </div>
                   <div className='flex justify-between items-center border-b border-border pb-2'>
                     <span>2 inverters + 10 batteries</span>
                     <span className='font-medium text-foreground'>
-                      61,440Wh / 14,400W — ~$32,000
+                      61,440Wh / 14,400W, ~$32,000
                     </span>
                   </div>
                   <div className='flex justify-between items-center'>
                     <span>3 inverters + 15 batteries (MAX)</span>
                     <span className='font-medium text-foreground'>
-                      90,000Wh+ / 21,600W — ~$48,000
+                      90,000Wh+ / 21,600W. ~$48,000
                     </span>
                   </div>
                 </div>
@@ -533,7 +533,7 @@ export default function EcoFlowDeltaProUltraReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Delta Pro Ultra accepts up to 5,600W of solar input via
-                its built-in MPPT controller — more than double the 2,600W
+                its built-in MPPT controller, more than double the 2,600W
                 input of the Delta Pro 3. This is a critical specification
                 for California homeowners who want to pair the system with
                 rooftop or ground-mounted solar panels for true energy
@@ -542,8 +542,7 @@ export default function EcoFlowDeltaProUltraReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 With 5,600W of solar input capacity and California&apos;s
                 average 5-6 peak sun hours, you can theoretically push
-                28,000-33,600Wh of solar energy into the system per day —
-                enough to fully recharge a 3-battery configuration
+                28,000-33,600Wh of solar energy into the system per day, enough to fully recharge a 3-battery configuration
                 (18,432Wh) every day with surplus. Even with real-world
                 derating (clouds, panel angle, heat losses), a well-sized
                 solar array can keep the Delta Pro Ultra topped off
@@ -607,7 +606,7 @@ export default function EcoFlowDeltaProUltraReview() {
                 Panel 2 is a sub-panel that wires into your main electrical
                 panel and manages up to 6 circuits. When grid power drops,
                 it automatically switches those circuits to the Delta Pro
-                Ultra within 10 milliseconds — fast enough that your
+                Ultra within 10 milliseconds, fast enough that your
                 refrigerator, sump pump, and internet router never even
                 notice the transition.
               </p>
@@ -618,7 +617,7 @@ export default function EcoFlowDeltaProUltraReview() {
                 the grid during off-peak hours, discharge during peak), and
                 monitor per-circuit energy consumption. For California
                 homeowners on PG&amp;E, SCE, or SDG&amp;E time-of-use plans
-                — where peak rates can exceed 40-50 cents per kWh — this
+                — where peak rates can exceed 40-50 cents per kWh, this
                 TOU arbitrage capability can meaningfully offset the
                 system&apos;s cost over time.
               </p>
@@ -906,7 +905,7 @@ export default function EcoFlowDeltaProUltraReview() {
                 The EcoFlow app (iOS and Android) guides you through the
                 initial setup, including Wi-Fi connection, firmware updates,
                 and configuring your preferred charging schedule. The app
-                interface is clean and responsive — EcoFlow has clearly
+                interface is clean and responsive; EcoFlow has clearly
                 invested heavily in software, and it shows. You can monitor
                 real-time input/output, set charging limits (useful for
                 battery longevity), configure TOU schedules, and check
@@ -919,7 +918,7 @@ export default function EcoFlowDeltaProUltraReview() {
                 electrician and potentially local permits depending on your
                 jurisdiction. Budget $500-$1,500 for installation on top of
                 the panel&apos;s cost. Once installed, however, the system
-                becomes fully automatic — grid power drops, the Delta Pro
+                becomes fully automatic, grid power drops, the Delta Pro
                 Ultra takes over within 10ms, and you may not even notice
                 the transition.
               </p>
@@ -1012,7 +1011,7 @@ export default function EcoFlowDeltaProUltraReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      5,600W solar input — serious off-grid capability
+                      5,600W solar input, serious off-grid capability
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -1032,7 +1031,7 @@ export default function EcoFlowDeltaProUltraReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      Relocatable — take it with you if you move
+                      Relocatable, take it with you if you move
                     </li>
                   </ul>
                 </div>
@@ -1044,7 +1043,7 @@ export default function EcoFlowDeltaProUltraReview() {
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      Heavy: 170 lbs — not portable at all
+                      Heavy: 170 lbs. Not portable at all
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -1064,11 +1063,11 @@ export default function EcoFlowDeltaProUltraReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      Large footprint — needs garage or utility room space
+                      Large footprint, needs garage or utility room space
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      No built-in wheels — need two people to move
+                      No built-in wheels, need two people to move
                     </li>
                   </ul>
                 </div>
@@ -1092,7 +1091,7 @@ export default function EcoFlowDeltaProUltraReview() {
                 <p className='text-foreground/80 leading-relaxed mb-4'>
                   The EcoFlow Delta Pro Ultra is the most ambitious product
                   in the portable-adjacent power station category. It is not
-                  really portable, and that is fine — it is not trying to be.
+                  really portable, and that is fine, it is not trying to be.
                   What it offers is something no other product in this space
                   does: a modular, permit-free, relocatable home battery
                   system that can scale from a modest 6.1kWh backup to a
@@ -1170,7 +1169,7 @@ export default function EcoFlowDeltaProUltraReview() {
                   </h3>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
                     The base system (inverter + batteries) is
-                    plug-and-play — no electrician or permits needed. The
+                    plug-and-play. no electrician or permits needed. The
                     optional Smart Home Panel 2 for automatic whole-home
                     switchover does require professional installation by a
                     licensed electrician.

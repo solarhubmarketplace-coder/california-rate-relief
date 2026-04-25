@@ -137,7 +137,7 @@ const faqSchema = {
       name: 'Can I install a Daikin mini split myself?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Daikin mini splits require professional HVAC installation. Unlike MrCool DIY units with pre-charged linesets, Daikin systems need vacuum pumps, refrigerant charging, electrical work, and brazing — all requiring EPA 608 certification. Professional installation costs $1,500-$4,000+ depending on complexity but ensures warranty coverage and optimal performance.',
+        text: 'No. Daikin mini splits require professional HVAC installation. Unlike MrCool DIY units with pre-charged linesets, Daikin systems need vacuum pumps, refrigerant charging, electrical work, and brazing. all requiring EPA 608 certification. Professional installation costs $1,500-$4,000+ depending on complexity but ensures warranty coverage and optimal performance.',
       },
     },
     {
@@ -218,7 +218,7 @@ export default function DaikinMiniSplitReviewPage() {
               <p className='text-lg text-muted-foreground leading-relaxed mb-6'>
                 Daikin invented R-32 refrigerant, sells more HVAC units than anyone on earth, and
                 builds mini splits so quiet you forget they&apos;re running. We break down the full
-                17-Series, Fit, and Aurora lineup — specs, real-world performance, pricing, and
+                17-Series, Fit, and Aurora lineup. Specs, real-world performance, pricing, and
                 whether Daikin is worth the premium over Mitsubishi and MrCool DIY.
               </p>
 
@@ -305,7 +305,7 @@ export default function DaikinMiniSplitReviewPage() {
                 Quick Verdict
               </h2>
               <p className='text-muted-foreground leading-relaxed'>
-                Daikin is the Toyota of HVAC — not always the flashiest, but relentlessly refined and
+                Daikin is the Toyota of HVAC, not always the flashiest, but relentlessly refined and
                 engineered for long-term reliability. The 17-Series delivers class-leading efficiency
                 (20.6 SEER2), near-silent indoor operation (19 dB), and an industry-best 12-year
                 warranty. The trade-off is clear: you need professional installation, and you&apos;ll
@@ -386,7 +386,7 @@ export default function DaikinMiniSplitReviewPage() {
                 What this means for you as a homeowner: when you buy a Daikin mini split, you&apos;re
                 getting technology refined over decades, backed by the deepest engineering bench in the
                 HVAC industry. The 17-Series wall mount we&apos;re reviewing here represents the sweet
-                spot of their residential lineup — premium efficiency, whisper-quiet operation, and
+                spot of their residential lineup. Premium efficiency, whisper-quiet operation, and
                 the durability that comes from a company that builds systems designed to run 24/7 in
                 commercial settings.
               </p>
@@ -434,7 +434,7 @@ export default function DaikinMiniSplitReviewPage() {
                       <p className='text-sm text-muted-foreground mt-1'>
                         A side-discharge heat pump designed for homes that have existing ductwork or want a
                         concealed installation. The Fit has a significantly smaller outdoor unit footprint
-                        than traditional central AC condensers — about the size of a carry-on suitcase. Up to
+                        than traditional central AC condensers. about the size of a carry-on suitcase. Up to
                         18.5 SEER2. Ideal if you want inverter technology without wall-mounted indoor units.
                       </p>
                     </div>
@@ -521,14 +521,14 @@ export default function DaikinMiniSplitReviewPage() {
                 The 17-Series&apos; 20.6 SEER2 rating places it among the most efficient mini splits
                 you can buy. For context, the federal minimum for split-system heat pumps is 15 SEER2.
                 That means Daikin delivers roughly 37% more cooling per watt consumed than a
-                baseline-compliant system — a difference you feel directly on your electricity bill.
+                baseline-compliant system, a difference you feel directly on your electricity bill.
               </p>
               <p className='text-muted-foreground leading-relaxed mb-4'>
                 The secret is Daikin&apos;s inverter compressor. Unlike single-stage systems that
                 cycle on and off (blasting cold air, then shutting down, then blasting again), the
                 inverter continuously adjusts speed to match the exact cooling or heating load. This
                 eliminates the energy-wasting start-stop cycle and keeps room temperature remarkably
-                stable — no hot spots, no cold drafts.
+                stable, no hot spots, no cold drafts.
               </p>
 
               <div className='rounded-xl border border-border bg-card p-6 mb-6'>
@@ -825,8 +825,7 @@ export default function DaikinMiniSplitReviewPage() {
                 Installation & Cost Breakdown
               </h2>
               <p className='text-muted-foreground leading-relaxed mb-6'>
-                Daikin mini splits require professional HVAC installation. This is non-negotiable —
-                unlike MrCool DIY, there are no pre-charged linesets. A qualified technician needs
+                Daikin mini splits require professional HVAC installation. This is non-negotiable; unlike MrCool DIY, there are no pre-charged linesets. A qualified technician needs
                 to handle refrigerant line routing, vacuum and charge, electrical connections, and
                 condensate drainage.
               </p>
@@ -893,7 +892,7 @@ export default function DaikinMiniSplitReviewPage() {
                     {[
                       'Use Daikin\'s dealer locator on their website',
                       'Look for "Daikin Comfort Pro" certified installers',
-                      'Get 3 quotes minimum — prices vary significantly',
+                      'Get 3 quotes minimum, prices vary significantly',
                       'Ask about permit pulling and warranty registration',
                       'Confirm they\'ve installed R-32 systems before',
                     ].map((item, i) => (
@@ -921,7 +920,7 @@ export default function DaikinMiniSplitReviewPage() {
                   <ul className='space-y-3'>
                     {[
                       'Industry-leading 20.6 SEER2 efficiency saves real money on bills',
-                      '19 dB indoor noise — genuinely inaudible in normal conditions',
+                      '19 dB indoor noise, genuinely inaudible in normal conditions',
                       'R-32 refrigerant is future-proof and environmentally responsible',
                       '12-year compressor AND 12-year parts warranty (registered)',
                       'Variable-speed inverter eliminates temperature swings',
@@ -950,7 +949,7 @@ export default function DaikinMiniSplitReviewPage() {
                   </h3>
                   <ul className='space-y-3'>
                     {[
-                      'Professional installation required — no DIY option',
+                      'Professional installation required, no DIY option',
                       'Installed cost significantly higher than MrCool DIY',
                       'Smaller US installer network than Mitsubishi',
                       'Daikin One+ thermostat sold separately (~$300)',
@@ -1003,7 +1002,7 @@ export default function DaikinMiniSplitReviewPage() {
                   },
                   {
                     q: 'How quiet is a Daikin mini split?',
-                    a: 'The 17-Series operates at 19 dB on the lowest fan setting — quieter than a human whisper (20 dB). This is among the lowest in the industry. For comparison, Mitsubishi\'s MSZ-FH starts at 32 dB and MrCool DIY at 25 dB. At normal operating speeds, indoor noise stays under 40 dB.',
+                    a: 'The 17-Series operates at 19 dB on the lowest fan setting, quieter than a human whisper (20 dB). This is among the lowest in the industry. For comparison, Mitsubishi\'s MSZ-FH starts at 32 dB and MrCool DIY at 25 dB. At normal operating speeds, indoor noise stays under 40 dB.',
                   },
                   {
                     q: 'What is the difference between Daikin 17-Series, Fit, and Aurora?',
@@ -1038,7 +1037,7 @@ export default function DaikinMiniSplitReviewPage() {
                   </div>
                   <div>
                     <div className='font-bold text-foreground'>GreenReviewsHub Rating</div>
-                    <div className='text-sm text-muted-foreground'>Outstanding — Highly Recommended</div>
+                    <div className='text-sm text-muted-foreground'>Outstanding, Highly Recommended</div>
                   </div>
                 </div>
                 <p className='text-muted-foreground leading-relaxed mb-4'>
@@ -1055,7 +1054,7 @@ export default function DaikinMiniSplitReviewPage() {
                   their own install, MrCool DIY offers 70% of the performance at 40% of the cost.
                 </p>
                 <p className='text-muted-foreground leading-relaxed'>
-                  But for homeowners who want the best mini split they can buy — installed correctly,
+                  But for homeowners who want the best mini split they can buy. installed correctly,
                   warranted for over a decade, and engineered to run quietly and efficiently for
                   15-20 years — Daikin is the answer. It&apos;s the brand HVAC professionals install
                   in their own homes, and that tells you everything.
@@ -1066,7 +1065,7 @@ export default function DaikinMiniSplitReviewPage() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge='Final Verdict'
-                verdict='The best mini split you can buy — 20.6 SEER2, 19 dB, 12-year warranty, engineered to run quietly for 15-20 years.'
+                verdict='The best mini split you can buy, 20.6 SEER2, 19 dB, 12-year warranty, engineered to run quietly for 15-20 years.'
                 source='daikin-mini-split'
                 variant='final'
               />

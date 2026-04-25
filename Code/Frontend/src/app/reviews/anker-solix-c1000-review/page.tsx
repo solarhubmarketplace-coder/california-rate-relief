@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title:
     'Anker SOLIX C1000 Review 2026: The Best Mid-Size Power Station?',
   description:
-    'In-depth Anker SOLIX C1000 review — 1,056 Wh LFP, 1,800W output (2,400W SurgePad), 600W solar input, full recharge in 58 minutes. Is the $999 SOLIX C1000 the best mid-size power station for California home backup and PSPS outages?',
+    'In-depth Anker SOLIX C1000 review, 1,056 Wh LFP, 1,800W output (2,400W SurgePad), 600W solar input, full recharge in 58 minutes. Is the $999 SOLIX C1000 the best mid-size power station for California home backup and PSPS outages?',
   alternates: {
     canonical: '/reviews/anker-solix-c1000-review',
   },
@@ -138,7 +138,7 @@ const faqSchema = {
       name: 'Can the SOLIX C1000 charge from car and solar simultaneously?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The SOLIX C1000 supports multiple input sources simultaneously — you can combine AC (wall), solar (up to 600W), and 12V car input to top up faster while on the road. This is useful during RV trips or extended camping where you want to maximize every available charging source.',
+        text: 'Yes. The SOLIX C1000 supports multiple input sources simultaneously, you can combine AC (wall), solar (up to 600W), and 12V car input to top up faster while on the road. This is useful during RV trips or extended camping where you want to maximize every available charging source.',
       },
     },
   ],
@@ -200,13 +200,13 @@ export default function AnkerSolixC1000Review() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure. FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
             {/* Above-the-fold primary CTA */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
-              badge="Editor's Pick — Mid-Size"
+              badge="Editor's Pick. Mid-Size"
               rating={4.6}
               verdict="The Anker SOLIX C1000 is the best-balanced mid-size LFP power station for 2026 — 1,056 Wh of LFP capacity, 1,800W output (2,400W with SurgePad), 600W solar input, and a shocking 58-minute full recharge. Regular promos put it under $700, making it the best dollar-per-watt-hour unit in its class."
               pros={[
@@ -237,7 +237,7 @@ export default function AnkerSolixC1000Review() {
                 2,400W SurgePad for resistive loads), and jaw-dropping 58-minute
                 full recharge time make it one of the most practical units you
                 can buy in 2026. At $999 MSRP — and frequently $699-$799 during
-                promotions — it delivers better real-world utility than
+                promotions, it delivers better real-world utility than
                 competitors twice its price. For California renters, apartment
                 dwellers, and homeowners who want reliable overnight outage
                 protection without committing to a 100-lb Delta Pro 3, the
@@ -429,7 +429,7 @@ export default function AnkerSolixC1000Review() {
                 suggests, and the SOLIX C1000 continues that pattern. At 28
                 pounds, it is noticeably heavier than the plastic-bodied
                 sub-1kWh units it competes with, but the heft comes from the
-                LFP cells and the metal chassis — not marketing bulk. The unit
+                LFP cells and the metal chassis; not marketing bulk. The unit
                 feels dense, well-built, and stable on a countertop or garage
                 shelf. The carry handles on each end are integrated into the
                 chassis (not flimsy plastic flaps), and the bright LCD display
@@ -438,7 +438,7 @@ export default function AnkerSolixC1000Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The industrial design is black-and-silver, clean, and doesn&apos;t
                 scream &quot;camping gear.&quot; It looks at home in a living
-                room, a home office, or a utility closet — which matters more
+                room, a home office, or a utility closet, which matters more
                 than you&apos;d think when you are trying to justify leaving a
                 battery permanently plugged in somewhere. The six AC outlets are
                 arranged in two columns on the front, the USB ports are to the
@@ -470,8 +470,7 @@ export default function AnkerSolixC1000Review() {
                 with compressor cycles — so the SOLIX C1000 will run it for
                 6-8 hours on a single charge. A CPAP machine (30-60W) runs for
                 15-30 hours. A Wi-Fi router and a few LED lights will run for
-                2-3 days. These are the numbers that matter during a PSPS event
-                — and they are enough to handle the single overnight shutoffs
+                2-3 days. These are the numbers that matter during a PSPS event, and they are enough to handle the single overnight shutoffs
                 that represent the majority of California outage events.
               </p>
 
@@ -501,7 +500,7 @@ export default function AnkerSolixC1000Review() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Car charging through the 12V input is slow (around 100W real
-                output) — useful for topping up on a road trip but not
+                output), useful for topping up on a road trip but not
                 practical for full recharges. The good news: the SOLIX C1000
                 supports simultaneous input from AC + solar + car, so you can
                 stack sources to speed things up when needed.
@@ -552,7 +551,7 @@ export default function AnkerSolixC1000Review() {
                 charge more slowly to preserve cycle life), firmware updates,
                 and usage history. It is not as polished as the EcoFlow app,
                 but it is responsive and does everything you&apos;d want. The
-                charging speed setting is particularly useful — you can cap
+                charging speed setting is particularly useful, you can cap
                 recharge at 300W instead of 1,300W, which reduces fan noise and
                 extends long-term battery health.
               </p>
@@ -572,8 +571,8 @@ export default function AnkerSolixC1000Review() {
                 During normal discharge, the SOLIX C1000 is effectively
                 silent. The internal fans only engage during fast charging or
                 under heavy inverter load (above about 1,200W). During a 58-
-                minute fast charge, the fans are clearly audible — roughly at
-                the level of a desk fan on medium — but not disruptive. If you
+                minute fast charge, the fans are clearly audible, roughly at
+                the level of a desk fan on medium, but not disruptive. If you
                 plan to keep the unit in a bedroom or living room, we&apos;d
                 recommend dropping charging speed to the quieter setting in the
                 app.
@@ -585,7 +584,7 @@ export default function AnkerSolixC1000Review() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If you live in California, the case for a unit like the SOLIX
-                C1000 is more than convenience — it is about managing two
+                C1000 is more than convenience. It is about managing two
                 specific cost and risk problems.
               </p>
 
@@ -595,7 +594,7 @@ export default function AnkerSolixC1000Review() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 PG&amp;E, SCE, and SDG&amp;E all run Public Safety Power
                 Shutoffs during red-flag wind events. Most PSPS events last
-                12-24 hours — the 48-72 hour events make headlines but are
+                12-24 hours, the 48-72 hour events make headlines but are
                 statistically less common. The SOLIX C1000&apos;s 1,056 Wh
                 capacity is well-matched to the typical overnight event: a
                 fridge (6-8 hours), lights and Wi-Fi overnight, and phone
@@ -644,7 +643,7 @@ export default function AnkerSolixC1000Review() {
                 installation, interconnection paperwork, and a licensed
                 contractor. Equity customers in high fire-threat districts or
                 medically vulnerable households sometimes have more flexible
-                pathways — but assume no rebate unless you&apos;ve personally
+                pathways. but assume no rebate unless you&apos;ve personally
                 verified eligibility with your utility. The good news: at the
                 C1000&apos;s sub-$1,000 price point, you don&apos;t need a
                 rebate to make the math work. The unit pays for itself in a
@@ -686,7 +685,7 @@ export default function AnkerSolixC1000Review() {
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      58-minute full recharge — class-leading in this size
+                      58-minute full recharge, class-leading in this size
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -745,7 +744,7 @@ export default function AnkerSolixC1000Review() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      28 lbs — heavier than some 1kWh competitors
+                      28 lbs, heavier than some 1kWh competitors
                     </li>
                   </ul>
                 </div>
@@ -847,7 +846,7 @@ export default function AnkerSolixC1000Review() {
                   </tbody>
                 </table>
                 <p className='text-xs text-muted-foreground mt-2'>
-                  MSRP is identical across the segment — real pricing varies
+                  MSRP is identical across the segment; real pricing varies
                   10-30% based on promotions.
                 </p>
               </div>
@@ -902,7 +901,7 @@ export default function AnkerSolixC1000Review() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>RV campers and van lifers</strong> who need a
-                    second battery bank for weekends off-grid — the 1,056 Wh
+                    second battery bank for weekends off-grid, the 1,056 Wh
                     capacity is perfect for 2-3 days of CPAP, lights, and
                     device charging.
                   </span>
@@ -1033,7 +1032,7 @@ export default function AnkerSolixC1000Review() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge="Final Verdict"
-              verdict="The best-balanced mid-size LFP power station of 2026. Check the current Anker price and promo discounts — real pricing often lands 20-30% below MSRP."
+              verdict="The best-balanced mid-size LFP power station of 2026. Check the current Anker price and promo discounts, real pricing often lands 20-30% below MSRP."
               source="solix-c1000"
               variant="final"
             />

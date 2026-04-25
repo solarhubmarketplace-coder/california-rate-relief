@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title:
       'Lectric XP 3.0 Review: Best Folding E-Bike Under $1,000?',
     description:
-      'Full review of the Lectric XP 3.0 folding e-bike — 750W motor, 48V 14Ah battery, 28 mph top speed, foldable frame. Is it worth $999?',
+      'Full review of the Lectric XP 3.0 folding e-bike, 750W motor, 48V 14Ah battery, 28 mph top speed, foldable frame. Is it worth $999?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -75,7 +75,7 @@ const reviewSchema = {
   '@type': 'Review',
   name: 'Lectric XP 3.0 Review',
   reviewBody:
-    'The Lectric XP 3.0 delivers a 750W rear hub motor, 48V 14Ah battery with up to 65 miles of pedal-assist range, and a compact folding frame — all for $999. It is one of the best value folding e-bikes available in 2026, particularly for commuters and riders who need portability without sacrificing power.',
+    'The Lectric XP 3.0 delivers a 750W rear hub motor, 48V 14Ah battery with up to 65 miles of pedal-assist range, and a compact folding frame, all for $999. It is one of the best value folding e-bikes available in 2026, particularly for commuters and riders who need portability without sacrificing power.',
   datePublished: '2026-04-21',
   dateModified: '2026-04-21',
   author: {
@@ -239,7 +239,7 @@ export default function LectricXP3Review() {
                 </div>
               </header>
 
-              {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+              {/* Affiliate disclosure. FTC compliance, must be above the fold */}
               <AffiliateDisclosure compact />
 
               {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
@@ -282,7 +282,7 @@ export default function LectricXP3Review() {
                   genuine all-day range on pedal assist, and the folding frame actually works for
                   apartment dwellers and trunk storage. At $999, Lectric continues to undercut
                   competitors who charge $1,500-$2,000 for comparable specs. The trade-offs are real —
-                  64 lbs is heavy for carrying, and the suspension is basic — but nothing at this
+                  64 lbs is heavy for carrying, and the suspension is basic. But nothing at this
                   price point comes close to the overall package.
                 </p>
                 <div className='grid md:grid-cols-2 gap-4'>
@@ -449,14 +449,13 @@ export default function LectricXP3Review() {
                 </h2>
                 <p className='mb-4 leading-relaxed' style={{ color: '#d4d4d8' }}>
                   The Lectric XP 3.0 runs a 750W brushless rear hub motor that peaks around 1,200W
-                  under load. In practical terms, this means strong acceleration from a dead stop —
-                  you feel the bike pull forward decisively when you twist the throttle, not the
+                  under load. In practical terms, this means strong acceleration from a dead stop, you feel the bike pull forward decisively when you twist the throttle, not the
                   gradual, sluggish buildup you get from cheaper 500W e-bikes.
                 </p>
                 <p className='mb-4 leading-relaxed' style={{ color: '#d4d4d8' }}>
                   On flat ground, the motor holds 20 mph on throttle alone with no pedaling required.
                   Switch to pedal assist level 5 and you can cruise at 28 mph, though this technically
-                  makes it a Class 3 e-bike — check your local regulations before riding at that speed
+                  makes it a Class 3 e-bike, check your local regulations before riding at that speed
                   on bike paths. Most riders will live in PAS levels 2-3, which provides a comfortable
                   15-18 mph cruising speed while significantly extending battery range.
                 </p>
@@ -472,8 +471,7 @@ export default function LectricXP3Review() {
                         The 750W motor handles moderate grades (8-12%) adequately with pedal assist. On steeper
                         hills (15%+), expect the bike to slow to 8-12 mph even at full power. Using the Shimano
                         7-speed to downshift and pedal along makes a substantial difference. If you live in
-                        San Francisco or a similarly hilly area, a mid-drive motor would be a better choice —
-                        but for typical suburban inclines, the XP 3.0 manages fine.
+                        San Francisco or a similarly hilly area, a mid-drive motor would be a better choice, but for typical suburban inclines, the XP 3.0 manages fine.
                       </p>
                     </div>
                   </div>
@@ -617,7 +615,7 @@ export default function LectricXP3Review() {
                 <p className='mb-4 leading-relaxed' style={{ color: '#d4d4d8' }}>
                   The Shimano 7-speed drivetrain shifts cleanly and reliably. The mechanical disc
                   brakes (180mm rotors front and rear) provide adequate stopping power, though
-                  hydraulic discs would be a welcome upgrade — something you typically do not find
+                  hydraulic discs would be a welcome upgrade, something you typically do not find
                   at this price point. After a few hundred miles, the brake pads may need adjustment
                   as they bed in, but this is standard for mechanical discs.
                 </p>
@@ -625,7 +623,7 @@ export default function LectricXP3Review() {
                   The 20&quot; x 3.0&quot; fat tires are puncture-resistant and provide a stable,
                   confidence-inspiring ride on pavement, gravel, and packed dirt. They absorb road
                   imperfections well, partially compensating for the basic front suspension fork.
-                  The saddle is serviceable but not great — most riders will want to swap it for
+                  The saddle is serviceable but not great, most riders will want to swap it for
                   a more comfortable option within the first few weeks.
                 </p>
                 <div className='grid md:grid-cols-2 gap-4'>
@@ -669,15 +667,15 @@ export default function LectricXP3Review() {
                     <ul className='text-sm space-y-1.5' style={{ color: '#d4d4d8' }}>
                       <li className='flex items-center gap-2'>
                         <ArrowRight className='h-3.5 w-3.5 shrink-0' style={{ color: '#a1a1aa' }} />
-                        Passenger package (seat + pegs) — $149
+                        Passenger package (seat + pegs). $149
                       </li>
                       <li className='flex items-center gap-2'>
                         <ArrowRight className='h-3.5 w-3.5 shrink-0' style={{ color: '#a1a1aa' }} />
-                        Pannier bags — $59
+                        Pannier bags. $59
                       </li>
                       <li className='flex items-center gap-2'>
                         <ArrowRight className='h-3.5 w-3.5 shrink-0' style={{ color: '#a1a1aa' }} />
-                        Extra battery — $249
+                        Extra battery, $249
                       </li>
                       <li className='flex items-center gap-2'>
                         <ArrowRight className='h-3.5 w-3.5 shrink-0' style={{ color: '#a1a1aa' }} />
@@ -685,7 +683,7 @@ export default function LectricXP3Review() {
                       </li>
                       <li className='flex items-center gap-2'>
                         <ArrowRight className='h-3.5 w-3.5 shrink-0' style={{ color: '#a1a1aa' }} />
-                        Mirror set — $20
+                        Mirror set, $20
                       </li>
                     </ul>
                   </div>
@@ -701,11 +699,11 @@ export default function LectricXP3Review() {
                   The XP 3.0 rides like a compact cruiser. The upright riding position is comfortable
                   for most body types between 5&apos;2&quot; and 6&apos;2&quot;, and the adjustable
                   seat post and handlebar height give you enough range to dial in a good fit. The
-                  20-inch wheels make it feel nimble in tight spaces — weaving through traffic, navigating
+                  20-inch wheels make it feel nimble in tight spaces. weaving through traffic, navigating
                   parking lots, and making U-turns are all easier than on a full-size e-bike.
                 </p>
                 <p className='mb-4 leading-relaxed' style={{ color: '#d4d4d8' }}>
-                  The front suspension fork has about 40mm of travel — enough to take the edge off
+                  The front suspension fork has about 40mm of travel, enough to take the edge off
                   potholes and curb transitions, but not enough to call it a trail-capable bike. There
                   is no rear suspension, which means you feel larger bumps through the saddle. The fat
                   tires absorb a surprising amount, though, and running them at slightly lower pressure
@@ -715,7 +713,7 @@ export default function LectricXP3Review() {
                   At speed, the bike is stable but not planted the way a full-size e-bike with
                   larger wheels would be. The compact wheelbase means you need to be a bit more
                   attentive on descents and at higher speeds. This is inherent to all folding e-bikes
-                  and not a flaw specific to the XP 3.0 — just something to be aware of if you are
+                  and not a flaw specific to the XP 3.0, just something to be aware of if you are
                   coming from a standard bicycle.
                 </p>
               </section>
@@ -737,7 +735,7 @@ export default function LectricXP3Review() {
                     <ul className='space-y-3 text-sm' style={{ color: '#d4d4d8' }}>
                       <li className='flex items-start gap-2'>
                         <Check className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#22c55e' }} />
-                        <span>Unbeatable value — 750W motor at $999 undercuts most competitors by $500+</span>
+                        <span>Unbeatable value, 750W motor at $999 undercuts most competitors by $500+</span>
                       </li>
                       <li className='flex items-start gap-2'>
                         <Check className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#22c55e' }} />
@@ -792,7 +790,7 @@ export default function LectricXP3Review() {
                       </li>
                       <li className='flex items-start gap-2'>
                         <X className='h-4 w-4 mt-0.5 shrink-0 text-red-500' />
-                        <span>Basic front suspension (40mm travel) — no rear suspension</span>
+                        <span>Basic front suspension (40mm travel), no rear suspension</span>
                       </li>
                       <li className='flex items-start gap-2'>
                         <X className='h-4 w-4 mt-0.5 shrink-0 text-red-500' />
@@ -815,7 +813,7 @@ export default function LectricXP3Review() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge="Ready to buy?"
-                verdict="The Lectric XP 3.0 typically ships in 1-2 weeks from Lectric eBikes — check today's price and color options."
+                verdict="The Lectric XP 3.0 typically ships in 1-2 weeks from Lectric eBikes. check today's price and color options."
                 source="lectric-xp-3"
                 variant="mid"
               />
@@ -925,7 +923,7 @@ export default function LectricXP3Review() {
                       vs. Rad Power RadRunner 3 Plus ($1,499)
                     </h3>
                     <p className='text-sm leading-relaxed' style={{ color: '#a1a1aa' }}>
-                      The RadRunner is a utility e-bike, not a folding one — so if you need compact storage,
+                      The RadRunner is a utility e-bike, not a folding one, so if you need compact storage,
                       this is not a direct comparison. But if you are choosing between the two for commuting,
                       the RadRunner offers hydraulic disc brakes, a more robust frame, and better passenger
                       capabilities. The XP 3.0 wins on price ($500 less), portability, and comparable
@@ -1082,7 +1080,7 @@ export default function LectricXP3Review() {
                 <p className='leading-relaxed mb-4' style={{ color: '#d4d4d8' }}>
                   The Lectric XP 3.0 is not a perfect e-bike. The cadence sensor is a step behind
                   torque-sensor competitors, the weight makes true portability a stretch, and the
-                  suspension is basic. But perfection is not the point — value is.
+                  suspension is basic. But perfection is not the point, value is.
                 </p>
                 <p className='leading-relaxed mb-4' style={{ color: '#d4d4d8' }}>
                   At $999, no other folding e-bike delivers a 750W motor, a 672 Wh battery, a

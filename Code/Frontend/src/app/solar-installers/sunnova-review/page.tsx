@@ -115,11 +115,11 @@ export default function SunnovaReview() {
                 <AlertTriangle className='h-6 w-6 text-red-400 flex-shrink-0 mt-0.5' />
                 <div>
                   <p className='text-xs font-bold uppercase tracking-widest text-red-300 mb-1'>
-                    Status Update — 2025 Bankruptcy Completed
+                    Status Update. 2025 Bankruptcy Completed
                   </p>
                   <p className='text-foreground font-semibold leading-relaxed'>
                     Sunnova filed for Chapter 11 bankruptcy in June 2025. The
-                    bankruptcy is now complete — Sunnova&apos;s assets were
+                    bankruptcy is now complete, Sunnova&apos;s assets were
                     acquired by Solaris Assets (backed by its bondholders) and
                     transitioned to SunStrong Management, which now
                     administers the ~500,000 legacy customer accounts. The
@@ -265,8 +265,8 @@ export default function SunnovaReview() {
                 Through the bankruptcy process, substantially all of
                 Sunnova&apos;s operating assets were sold to Solaris Assets, a
                 vehicle backed by the company&apos;s bondholders. The sale
-                closed and the ongoing portfolio — leases, PPAs, customer
-                accounts, servicing operations — transitioned to a new
+                closed and the ongoing portfolio, leases, PPAs, customer
+                accounts, servicing operations. transitioned to a new
                 operating company called SunStrong Management. The Sunnova
                 brand name continues to be used for customer-facing
                 communications, but the legal entity behind your contract, if
@@ -292,7 +292,7 @@ export default function SunnovaReview() {
                 25-year performance guarantee, the lease or PPA payment
                 administration, and post-install service (repairs,
                 monitoring, billing disputes). The Chapter 11 plan provides
-                that SunStrong honors the existing contract terms — your
+                that SunStrong honors the existing contract terms. Your
                 monthly rate stays the same, your annual escalator stays the
                 same, the 90% production guarantee persists. In practice,
                 post-bankruptcy service response times have lengthened
@@ -306,7 +306,7 @@ export default function SunnovaReview() {
                 are from the equipment makers themselves (not Sunnova) and
                 are unaffected by the ownership change. Keep a copy of your
                 original installation paperwork and the spec sheets for every
-                component — if SunStrong service is slow on a warranty issue,
+                component, if SunStrong service is slow on a warranty issue,
                 you can sometimes pursue the manufacturer directly.
               </p>
 
@@ -339,14 +339,14 @@ export default function SunnovaReview() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 That model — asset-light, dealer-heavy, capital-markets
-                dependent — was efficient for scaling fast in the NEM 2.0
+                dependent. was efficient for scaling fast in the NEM 2.0
                 era but brittle under rate pressure and the NEM 3.0
                 transition. The dealer structure also created the
                 service-quality pattern that dominates Sunnova&apos;s
                 complaint record: great sales pitch, mixed install quality,
                 slow post-install service. When a dealer moves on or
                 closes, Sunnova/SunStrong becomes the default servicer for
-                systems the dealer installed — and the service queue
+                systems the dealer installed, and the service queue
                 backs up.
               </p>
 
@@ -370,7 +370,7 @@ export default function SunnovaReview() {
                 Post-bankruptcy, the customer-facing reputation has not
                 improved. SunStrong&apos;s mandate is portfolio management —
                 keep the existing customers paying, keep warranties from
-                becoming a lawsuit — rather than growth or service
+                becoming a lawsuit. rather than growth or service
                 excellence. For a California homeowner considering installing
                 new solar in 2026, Sunnova is not a strong candidate. For
                 existing customers, it&apos;s worth knowing what you have and

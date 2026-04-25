@@ -330,7 +330,7 @@ export default function BestSolarChargeControllerPage() {
               <p className="leading-relaxed mb-6" style={{ color: '#d4d4d8' }}>
                 Every solar charge controller sits between your panels and your battery bank,
                 regulating voltage and current to prevent overcharging. The two technologies
-                available — PWM and MPPT — differ dramatically in how they handle that job, and the
+                available, PWM and MPPT. Differ dramatically in how they handle that job, and the
                 efficiency gap is significant enough to affect your system cost and energy harvest
                 for years.
               </p>
@@ -414,8 +414,8 @@ export default function BestSolarChargeControllerPage() {
                 style={{ backgroundColor: '#141414', borderColor: '#ffffff12', color: '#a1a1aa' }}
               >
                 <strong style={{ color: '#22c55e' }}>Bottom line:</strong> If your total solar array
-                is over 200W — and especially if your panels produce a higher voltage than your
-                battery bank — MPPT is the clear winner. The upfront cost difference pays for itself
+                is over 200W, and especially if your panels produce a higher voltage than your
+                battery bank; MPPT is the clear winner. The upfront cost difference pays for itself
                 in extra energy harvest within 6-12 months. Every controller in our top five list
                 below is MPPT.
               </div>
@@ -562,7 +562,7 @@ export default function BestSolarChargeControllerPage() {
                 <p className="leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
                   At 50A, it handles up to 700W of solar on a 12V system or 1,400W on 24V. The
                   100V maximum Voc means you can string two standard 60-cell panels in series
-                  without exceeding limits — a common and efficient wiring configuration for
+                  without exceeding limits. A common and efficient wiring configuration for
                   mid-size off-grid and RV setups.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#d4d4d8' }}>
@@ -583,7 +583,7 @@ export default function BestSolarChargeControllerPage() {
                   <ul className="space-y-2">
                     {[
                       'Industry-leading ~98% tracking efficiency',
-                      'Built-in Bluetooth — no extra modules needed',
+                      'Built-in Bluetooth; no extra modules needed',
                       '5-year warranty (best in class)',
                       'Adaptive 3-stage charging with battery presets',
                       'Integrates with Victron GX ecosystem / VRM portal',
@@ -621,7 +621,7 @@ export default function BestSolarChargeControllerPage() {
                 productKey="victron-smartsolar-mppt-100-50"
                 source="best-solar-charge-controller"
                 variant="primary"
-                label="Check Price — Victron SmartSolar MPPT 100/50 Review"
+                label="Check Price, Victron SmartSolar MPPT 100/50 Review"
                 showPrice
               />
             </section>
@@ -653,8 +653,8 @@ export default function BestSolarChargeControllerPage() {
                   consumer solar, and the Rover is their flagship charge controller for good reason.
                 </p>
                 <p className="leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
-                  The built-in LCD screen shows real-time charging data — panel voltage, battery
-                  voltage, charge current, and daily/cumulative yield — without needing a phone.
+                  The built-in LCD screen shows real-time charging data. Panel voltage, battery
+                  voltage, charge current, and daily/cumulative yield, without needing a phone.
                   For remote monitoring, you can add the optional BT-1 Bluetooth module ($20) to
                   connect to the Renogy DC Home app, which provides historical data and lets you
                   adjust charging parameters remotely.
@@ -667,7 +667,7 @@ export default function BestSolarChargeControllerPage() {
                   overload.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#d4d4d8' }}>
-                  At 40A, it handles up to 520W of solar at 12V — enough for a typical RV or
+                  At 40A, it handles up to 520W of solar at 12V, enough for a typical RV or
                   small cabin system. The only real compromise vs. the Victron is the 2-year
                   warranty (vs. 5) and the lack of built-in Bluetooth.
                 </p>
@@ -720,7 +720,7 @@ export default function BestSolarChargeControllerPage() {
                 productKey="renogy-rover-40a-mppt"
                 source="best-solar-charge-controller"
                 variant="primary"
-                label="Check Price — Renogy Rover 40A MPPT Review"
+                label="Check Price, Renogy Rover 40A MPPT Review"
                 showPrice
               />
             </section>
@@ -760,15 +760,14 @@ export default function BestSolarChargeControllerPage() {
                 </p>
                 <p className="leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
                   The main tradeoff at this price point is monitoring. The unit itself has only
-                  basic LED indicators — no LCD screen. For detailed data, you need the MT50 remote
+                  basic LED indicators, no LCD screen. For detailed data, you need the MT50 remote
                   meter ($25) or the eBox Bluetooth/WiFi dongle ($30-$40). Once connected, though,
                   the EPEver app provides comprehensive monitoring and full parameter adjustment.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#d4d4d8' }}>
                   Build quality is functional rather than premium. The housing is sturdy aluminum
                   with good heat dissipation, but the terminal blocks and wire connectors feel
-                  a step below Victron or Renogy. For the price, it is an outstanding value —
-                  especially for first-time builders and budget-conscious off-grid projects.
+                  a step below Victron or Renogy. For the price, it is an outstanding value. Especially for first-time builders and budget-conscious off-grid projects.
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -803,7 +802,7 @@ export default function BestSolarChargeControllerPage() {
                   </h4>
                   <ul className="space-y-2">
                     {[
-                      'No built-in display — LED indicators only',
+                      'No built-in display. LED indicators only',
                       'Bluetooth/WiFi monitoring requires add-on purchase',
                       'Terminal block quality is average',
                       '2-year warranty',
@@ -820,7 +819,7 @@ export default function BestSolarChargeControllerPage() {
                 productKey="epever-tracer-4210an"
                 source="best-solar-charge-controller"
                 variant="primary"
-                label="Check Price — EPEver Tracer 4210AN Review"
+                label="Check Price, EPEver Tracer 4210AN Review"
                 showPrice
               />
             </section>
@@ -881,7 +880,7 @@ export default function BestSolarChargeControllerPage() {
                   </h4>
                   <ul className="space-y-2">
                     {[
-                      '60A rating — highest on our list',
+                      '60A rating, highest on our list',
                       '150V Voc supports longer panel strings',
                       'Native 48V battery bank support',
                       'Built-in LCD + Bluetooth monitoring',
@@ -905,7 +904,7 @@ export default function BestSolarChargeControllerPage() {
                     {[
                       'Most expensive at $280',
                       '2-year warranty',
-                      'Newer brand — less long-term reliability data',
+                      'Newer brand, less long-term reliability data',
                       'Overkill for systems under 500W',
                     ].map((con) => (
                       <li key={con} className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
@@ -920,7 +919,7 @@ export default function BestSolarChargeControllerPage() {
                 productKey="rich-solar-60a-mppt"
                 source="best-solar-charge-controller"
                 variant="primary"
-                label="Check Price — Rich Solar 60A MPPT Review"
+                label="Check Price, Rich Solar 60A MPPT Review"
                 showPrice
               />
             </section>
@@ -949,11 +948,11 @@ export default function BestSolarChargeControllerPage() {
                   BougeRV has built a loyal following in the RV and van-life community, and their
                   40A MPPT charge controller is purpose-built for mobile solar setups. At $140,
                   it slots between the budget EPEver and the mid-range Renogy, offering built-in
-                  Bluetooth and an LCD display — features that both competitors charge extra for.
+                  Bluetooth and an LCD display, features that both competitors charge extra for.
                 </p>
                 <p className="leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
                   The compact form factor is designed for tight RV electrical compartments, and
-                  the fanless passive cooling design means zero noise — a real advantage when your
+                  the fanless passive cooling design means zero noise, a real advantage when your
                   charge controller is a few feet from where you sleep. The BougeRV app provides
                   clean, straightforward monitoring with daily yield tracking and battery health
                   indicators.
@@ -982,7 +981,7 @@ export default function BestSolarChargeControllerPage() {
                   <ul className="space-y-2">
                     {[
                       'Built-in Bluetooth + LCD at just $140',
-                      'Fanless/silent design — ideal for RVs',
+                      'Fanless/silent design, ideal for RVs',
                       'Compact form factor for tight installs',
                       'Clean, intuitive app interface',
                       'Well-calibrated LFP charging profile',
@@ -1020,7 +1019,7 @@ export default function BestSolarChargeControllerPage() {
                 productKey="bougerv-40a-mppt"
                 source="best-solar-charge-controller"
                 variant="primary"
-                label="Check Price — BougeRV 40A MPPT Review"
+                label="Check Price, BougeRV 40A MPPT Review"
                 showPrice
               />
             </section>
@@ -1050,7 +1049,7 @@ export default function BestSolarChargeControllerPage() {
                   {
                     step: '3',
                     title: 'Check open-circuit voltage (Voc)',
-                    desc: 'Add up the Voc of all panels wired in series. This number must stay below the controller maximum input voltage. For cold climates, add 10% to Voc since voltage increases in cold temperatures. Example: 2 panels x 45V Voc = 90V + 10% = 99V — a 100V controller works, but barely.',
+                    desc: 'Add up the Voc of all panels wired in series. This number must stay below the controller maximum input voltage. For cold climates, add 10% to Voc since voltage increases in cold temperatures. Example: 2 panels x 45V Voc = 90V + 10% = 99V, a 100V controller works, but barely.',
                   },
                   {
                     step: '4',

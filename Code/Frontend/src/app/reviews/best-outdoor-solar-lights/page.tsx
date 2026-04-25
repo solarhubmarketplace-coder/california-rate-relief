@@ -122,7 +122,7 @@ const faqSchema = {
       name: 'What is the difference between warm white and cool white solar lights?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Warm white (2700-3000K) produces a soft, yellowish glow similar to incandescent bulbs — ideal for ambiance, patios, and garden paths. Cool white (5000-6500K) is a bright, bluish-white light better suited for security and task lighting. Most decorative solar lights use warm white, while motion-sensor security lights typically use cool white for maximum visibility.',
+        text: 'Warm white (2700-3000K) produces a soft, yellowish glow similar to incandescent bulbs, ideal for ambiance, patios, and garden paths. Cool white (5000-6500K) is a bright, bluish-white light better suited for security and task lighting. Most decorative solar lights use warm white, while motion-sensor security lights typically use cool white for maximum visibility.',
       },
     },
   ],
@@ -706,7 +706,7 @@ export default function BestOutdoorSolarLights() {
                     productKey="baxia-solar-flood-lights"
                     source="best-outdoor-solar-lights"
                     variant="primary"
-                    label="Check Price — BAXIA Solar Flood Lights"
+                    label="Check Price. BAXIA Solar Flood Lights"
                     showPrice
                   />
                 </div>
@@ -776,7 +776,7 @@ export default function BestOutdoorSolarLights() {
                     productKey="gigalumi-solar-path-lights"
                     source="best-outdoor-solar-lights"
                     variant="primary"
-                    label="Check Price — GIGALUMI Solar Path Lights"
+                    label="Check Price. GIGALUMI Solar Path Lights"
                     showPrice
                   />
                 </div>
@@ -847,7 +847,7 @@ export default function BestOutdoorSolarLights() {
                     productKey="brightech-ambience-pro-solar-string-lights"
                     source="best-outdoor-solar-lights"
                     variant="primary"
-                    label="Check Price — Brightech Ambience Pro Solar String Lights"
+                    label="Check Price, Brightech Ambience Pro Solar String Lights"
                     showPrice
                   />
                 </div>
@@ -990,7 +990,7 @@ export default function BestOutdoorSolarLights() {
                     productKey="solpex-solar-step-lights"
                     source="best-outdoor-solar-lights"
                     variant="primary"
-                    label="Check Price — SOLPEX Solar Step Lights"
+                    label="Check Price. SOLPEX Solar Step Lights"
                     showPrice
                   />
                 </div>

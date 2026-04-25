@@ -330,7 +330,7 @@ export default function BestPortableAirConditionerPage() {
                       <Check className="h-4 w-4" /> Pros
                     </h3>
                     <ul className="space-y-2 text-sm" style={{ color: '#d4d4d8' }}>
-                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Inverter compressor — quietest 14K unit at 44 dB</li>
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Inverter compressor; quietest 14K unit at 44 dB</li>
                       <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Best-in-class CEER of 10.0 saves on electricity</li>
                       <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Wi-Fi enabled with LG ThinQ app and voice control</li>
                       <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Auto-evaporation eliminates manual draining</li>
@@ -354,7 +354,7 @@ export default function BestPortableAirConditionerPage() {
                     productKey="lg-lp1419ivsm"
                     source="best-portable-air-conditioner"
                     variant="primary"
-                    label="Check Price — LG LP1419IVSM"
+                    label="Check Price, LG LP1419IVSM"
                     showPrice
                   />
                 </div>
@@ -418,7 +418,7 @@ export default function BestPortableAirConditionerPage() {
                       <X className="h-4 w-4" /> Cons
                     </h3>
                     <ul className="space-y-2 text-sm" style={{ color: '#d4d4d8' }}>
-                      <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> Heavy at 80 lbs — difficult to move between rooms</li>
+                      <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> Heavy at 80 lbs, difficult to move between rooms</li>
                       <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> Louder than inverter models (52 dB)</li>
                       <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> Dual-hose window kit is bulkier to install</li>
                       <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> No Wi-Fi or smart home integration</li>
@@ -430,7 +430,7 @@ export default function BestPortableAirConditionerPage() {
                     productKey="whynter-arc-14sh"
                     source="best-portable-air-conditioner"
                     variant="primary"
-                    label="Check Price — Whynter ARC-14SH"
+                    label="Check Price. Whynter ARC-14SH"
                     showPrice
                   />
                 </div>
@@ -577,7 +577,7 @@ export default function BestPortableAirConditionerPage() {
                     productKey="blackdecker-bpact14hwt"
                     source="best-portable-air-conditioner"
                     variant="primary"
-                    label="Check Price — Black+Decker BPACT14HWT"
+                    label="Check Price. Black+Decker BPACT14HWT"
                     showPrice
                   />
                 </div>
@@ -640,7 +640,7 @@ export default function BestPortableAirConditionerPage() {
                     </h3>
                     <ul className="space-y-2 text-sm" style={{ color: '#d4d4d8' }}>
                       <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> Loudest on the list at 55 dB</li>
-                      <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> Lowest CEER (7.8) — higher running costs</li>
+                      <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> Lowest CEER (7.8), higher running costs</li>
                       <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> Basic window kit lacks polish</li>
                       <li className="flex items-start gap-2"><XCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#ef4444' }} /> No Wi-Fi, no smart controls, no heater</li>
                     </ul>
@@ -651,7 +651,7 @@ export default function BestPortableAirConditionerPage() {
                     productKey="serenelife-slpac8"
                     source="best-portable-air-conditioner"
                     variant="primary"
-                    label="Check Price — SereneLife SLPAC8"
+                    label="Check Price. SereneLife SLPAC8"
                     showPrice
                   />
                 </div>
@@ -691,7 +691,7 @@ export default function BestPortableAirConditionerPage() {
                   <p className="leading-relaxed" style={{ color: '#d4d4d8' }}>
                     Cooling capacity is rated for rooms up to 250 sq ft, and we found it handles that
                     range well. The auto-evaporation system works reliably. The lack of smart features
-                    is the main compromise — you get a basic remote control and an LED display, but
+                    is the main compromise, you get a basic remote control and an LED display, but
                     no app control or voice assistant integration. For a bedroom AC that stays out of
                     the way and does its job quietly, the Honeywell is a refined pick.
                   </p>
@@ -702,8 +702,8 @@ export default function BestPortableAirConditionerPage() {
                       <Check className="h-4 w-4" /> Pros
                     </h3>
                     <ul className="space-y-2 text-sm" style={{ color: '#d4d4d8' }}>
-                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Slimmest profile — fits tight spaces</li>
-                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Lightest unit at 48 lbs — easy to move</li>
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Slimmest profile; fits tight spaces</li>
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Lightest unit at 48 lbs. Easy to move</li>
                       <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Dual-filter with activated carbon for odors</li>
                       <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Quiet operation at 50 dB</li>
                       <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#22c55e' }} /> Reliable auto-evaporation</li>
@@ -726,7 +726,7 @@ export default function BestPortableAirConditionerPage() {
                     productKey="honeywell-mo08ceswk"
                     source="best-portable-air-conditioner"
                     variant="primary"
-                    label="Check Price — Honeywell MO08CESWK"
+                    label="Check Price, Honeywell MO08CESWK"
                     showPrice
                   />
                 </div>
@@ -975,7 +975,7 @@ export default function BestPortableAirConditionerPage() {
                   },
                   {
                     q: 'Are portable air conditioners worth it compared to window units?',
-                    a: 'Portable ACs cost more to buy and run than equivalent window units. A 14,000 BTU window AC uses 20-30% less energy than a portable of the same capacity. However, portable ACs are the better option when window ACs cannot be installed — due to HOA rules, casement windows, rental restrictions, or aesthetic preferences. They also offer the advantage of being movable between rooms.',
+                    a: 'Portable ACs cost more to buy and run than equivalent window units. A 14,000 BTU window AC uses 20-30% less energy than a portable of the same capacity. However, portable ACs are the better option when window ACs cannot be installed. due to HOA rules, casement windows, rental restrictions, or aesthetic preferences. They also offer the advantage of being movable between rooms.',
                   },
                 ].map((faq, i) => (
                   <details

@@ -42,7 +42,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Best Electric Moped (2026): NIU vs Super Soco vs CSC vs Vespa vs GenZe — Top 5 Reviewed',
+    'Best Electric Moped (2026): NIU vs Super Soco vs CSC vs Vespa vs GenZe. Top 5 Reviewed',
   description:
     'Compare the best electric mopeds in 2026. In-depth reviews covering NIU NQi GTS Sport, Super Soco CPx, CSC Monterey, Vespa Elettrica, and GenZe 200 with specs, range data, licensing requirements, and buying guide.',
   datePublished: '2026-04-21',
@@ -124,7 +124,7 @@ const faqSchema = {
       name: 'How long do electric moped batteries last before replacement?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most electric moped batteries last 3-5 years or 500-1,000 charge cycles before capacity drops below 80%. Lithium-ion batteries in premium models like NIU and Super Soco typically reach 800+ cycles. Replacement batteries cost $500-$1,500 depending on the model. Proper charging habits — avoiding full depletion and extreme heat — extend battery life significantly.',
+        text: 'Most electric moped batteries last 3-5 years or 500-1,000 charge cycles before capacity drops below 80%. Lithium-ion batteries in premium models like NIU and Super Soco typically reach 800+ cycles. Replacement batteries cost $500-$1,500 depending on the model. Proper charging habits, avoiding full depletion and extreme heat, extend battery life significantly.',
       },
     },
   ],
@@ -295,7 +295,7 @@ export default function BestElectricMoped() {
                 The market has matured significantly. You can now buy a legitimate, street-legal
                 electric moped with 50+ miles of range for under $4,000. Some models hit highway
                 speeds. Others prioritize cargo capacity and all-weather reliability. The question
-                is not whether electric mopeds are ready — it is which one fits your commute.
+                is not whether electric mopeds are ready, it is which one fits your commute.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-8">
                 We tested five of the best electric mopeds available in the US in 2026. Here is
@@ -312,15 +312,15 @@ export default function BestElectricMoped() {
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
-                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">NIU NQi GTS Sport — Best Overall:</strong> 3.1kW motor, 37 mph, 62-mile range, GPS tracking, dual battery, connected app. $3,599.</p>
+                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">NIU NQi GTS Sport, Best Overall:</strong> 3.1kW motor, 37 mph, 62-mile range, GPS tracking, dual battery, connected app. $3,599.</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
-                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">Super Soco CPx — Best Commuter:</strong> 4kW motor, 56 mph, 87-mile range with dual battery, CBS braking. $3,999.</p>
+                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">Super Soco CPx, Best Commuter:</strong> 4kW motor, 56 mph, 87-mile range with dual battery, CBS braking. $3,999.</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
-                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">CSC Monterey — Best Value:</strong> Retro styling, 30 mph, 50-mile range, street legal, under $2,500. $2,495.</p>
+                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">CSC Monterey, Best Value:</strong> Retro styling, 30 mph, 50-mile range, street legal, under $2,500. $2,495.</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-primary/80 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
@@ -328,7 +328,7 @@ export default function BestElectricMoped() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-muted-foreground/30 text-white rounded-full flex items-center justify-center font-bold text-sm">5</span>
-                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">GenZe 200 — Most Practical:</strong> Built-in cargo, weather resistant, 30 mph, fleet-proven reliability. $2,999.</p>
+                  <p className="text-sm text-muted-foreground"><strong className="text-foreground">GenZe 200, Most Practical:</strong> Built-in cargo, weather resistant, 30 mph, fleet-proven reliability. $2,999.</p>
                 </div>
               </div>
             </div>
@@ -418,7 +418,7 @@ export default function BestElectricMoped() {
                     NIU is the world&apos;s largest electric two-wheeler company by volume, and the
                     NQi GTS Sport is the reason why. This is not a novelty. It is a commuting
                     appliance built by a company that has shipped over 10 million units. The 3.1kW
-                    Bosch motor delivers smooth, predictable power up to 37 mph — fast enough for
+                    Bosch motor delivers smooth, predictable power up to 37 mph, fast enough for
                     urban arterials without feeling sketchy.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-4">
@@ -468,7 +468,7 @@ export default function BestElectricMoped() {
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                        Not highway legal — 37 mph limits it to city and suburban roads
+                        Not highway legal; 37 mph limits it to city and suburban roads
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
@@ -556,7 +556,7 @@ export default function BestElectricMoped() {
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        56 mph top speed — handles suburban arterials and multi-lane roads
+                        56 mph top speed; handles suburban arterials and multi-lane roads
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -584,7 +584,7 @@ export default function BestElectricMoped() {
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                        242 lbs — heavier than most competitors
+                        242 lbs, heavier than most competitors
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
@@ -598,7 +598,7 @@ export default function BestElectricMoped() {
                     productKey="super-soco-cpx"
                     source="electric-moped-hub"
                     variant="primary"
-                    label="Check Price — Super Soco CPx"
+                    label="Check Price, Super Soco CPx"
                     showPrice
                   />
                 </div>
@@ -656,7 +656,7 @@ export default function BestElectricMoped() {
                     That matters for apartment dwellers, riders who need to maneuver in tight
                     parking spots, and anyone who values nimble handling over raw power. CSC also
                     ships the Monterey fully assembled to your door and provides US-based customer
-                    support — not a call center overseas.
+                    support, not a call center overseas.
                   </p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4 mt-6">
@@ -668,7 +668,7 @@ export default function BestElectricMoped() {
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        $2,495 — lowest price on this list by $500+
+                        $2,495, lowest price on this list by $500+
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -700,7 +700,7 @@ export default function BestElectricMoped() {
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                        Basic instrumentation — no TFT display
+                        Basic instrumentation, no TFT display
                       </li>
                     </ul>
                   </div>
@@ -710,7 +710,7 @@ export default function BestElectricMoped() {
                     productKey="csc-monterey"
                     source="electric-moped-hub"
                     variant="primary"
-                    label="Check Price — CSC Monterey"
+                    label="Check Price, CSC Monterey"
                     showPrice
                   />
                 </div>
@@ -753,12 +753,12 @@ export default function BestElectricMoped() {
                   <p className="text-foreground/80 leading-relaxed mb-4">
                     The Vespa Elettrica is the electric moped you buy when the moped itself is part
                     of the experience, not just the transportation. This is a Vespa. The steel
-                    monocoque body, the curves, the Italian design heritage going back to 1946 — it
+                    monocoque body, the curves, the Italian design heritage going back to 1946, it
                     all carries over to the electric version. You will get compliments. People will
                     stop you to ask about it.
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-4">
-                    The 3.9kW motor is powerful — more powerful than the NIU — but Vespa
+                    The 3.9kW motor is powerful, more powerful than the NIU — but Vespa
                     electronically limits it to 30 mph for the standard Elettrica model. That
                     limitation keeps it in the moped licensing category. The 4.2 kWh battery
                     delivers about 55-62 miles of real-world range. Charge time is about 4 hours on
@@ -767,7 +767,7 @@ export default function BestElectricMoped() {
                   <p className="text-foreground/80 leading-relaxed mb-4">
                     The TFT color display is the best screen in this roundup. It shows speed,
                     range, battery level, riding mode, and pairs with the Vespa app via Bluetooth
-                    for navigation, call management, and music control. Two riding modes — Eco and
+                    for navigation, call management, and music control. Two riding modes, Eco and
                     Power — let you choose between maximum range and full torque. The ride quality
                     is superb. The single-sided front suspension and link-type rear suspension
                     smooth out rough pavement better than any competitor here.
@@ -806,7 +806,7 @@ export default function BestElectricMoped() {
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                        $7,499 — double the price of the NIU for similar specs
+                        $7,499, double the price of the NIU for similar specs
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
@@ -824,7 +824,7 @@ export default function BestElectricMoped() {
                     productKey="vespa-elettrica"
                     source="electric-moped-hub"
                     variant="primary"
-                    label="Check Price — Vespa Elettrica"
+                    label="Check Price; Vespa Elettrica"
                     showPrice
                   />
                 </div>
@@ -923,7 +923,7 @@ export default function BestElectricMoped() {
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                        Utilitarian design — not the most visually appealing
+                        Utilitarian design. not the most visually appealing
                       </li>
                       <li className="flex items-start gap-2 text-sm text-muted-foreground">
                         <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
@@ -937,7 +937,7 @@ export default function BestElectricMoped() {
                     productKey="genze-200"
                     source="electric-moped-hub"
                     variant="primary"
-                    label="Check Price — GenZe 200"
+                    label="Check Price. GenZe 200"
                     showPrice
                   />
                 </div>
@@ -1048,7 +1048,7 @@ export default function BestElectricMoped() {
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-6">
                 Electric moped licensing varies significantly by state. The key factors are
-                motor wattage and top speed. Here is a general breakdown — always verify with
+                motor wattage and top speed. Here is a general breakdown, always verify with
                 your local DMV.
               </p>
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 space-y-4">
@@ -1097,7 +1097,7 @@ export default function BestElectricMoped() {
                 Range Reality: Claimed vs Actual
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-6">
-                Every manufacturer tests range under ideal conditions — flat roads, moderate speed,
+                Every manufacturer tests range under ideal conditions, flat roads, moderate speed,
                 lightweight rider, no wind. Real-world range is typically 70-85% of the claimed
                 figure. Here is what to actually expect.
               </p>
@@ -1280,7 +1280,7 @@ export default function BestElectricMoped() {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      Fuel costs near zero — $40-$100/year in electricity vs $1,200-$2,000/year for gas
+                      Fuel costs near zero. $40-$100/year in electricity vs $1,200-$2,000/year for gas
                     </li>
                     <li className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -1300,7 +1300,7 @@ export default function BestElectricMoped() {
                     </li>
                     <li className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      Charge at home from a standard outlet — no gas station trips
+                      Charge at home from a standard outlet. No gas station trips
                     </li>
                   </ul>
                 </div>
@@ -1312,7 +1312,7 @@ export default function BestElectricMoped() {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2 text-sm text-muted-foreground">
                       <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                      Range anxiety on longer trips — no quick refueling option
+                      Range anxiety on longer trips, no quick refueling option
                     </li>
                     <li className="flex items-start gap-2 text-sm text-muted-foreground">
                       <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
@@ -1332,7 +1332,7 @@ export default function BestElectricMoped() {
                     </li>
                     <li className="flex items-start gap-2 text-sm text-muted-foreground">
                       <X className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                      Weather exposure — no cabin protection in rain or cold
+                      Weather exposure, no cabin protection in rain or cold
                     </li>
                   </ul>
                 </div>
@@ -1429,7 +1429,7 @@ export default function BestElectricMoped() {
                     <ChevronRight className="h-4 w-4" />
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Browse all GreenReviewsHub reviews — portable power stations, e-bikes, lawn
+                    Browse all GreenReviewsHub reviews, portable power stations, e-bikes, lawn
                     equipment, smart home tech, and more.
                   </p>
                 </Link>

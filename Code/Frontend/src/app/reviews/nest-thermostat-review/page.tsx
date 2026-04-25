@@ -95,7 +95,7 @@ const faqSchema = {
       name: 'How much can a Nest Thermostat save on energy bills?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Independent studies and Google\'s own reporting put typical HVAC savings at 10-15% on heating and cooling costs once the unit has learned your schedule (typically 1-2 weeks). For a California home with a $200/month summer electric bill where roughly half goes to AC, expect $10-$15/month in savings — roughly $120-$180 per year. Payback on a $279 investment lands in the 18-30 month range.',
+        text: 'Independent studies and Google\'s own reporting put typical HVAC savings at 10-15% on heating and cooling costs once the unit has learned your schedule (typically 1-2 weeks). For a California home with a $200/month summer electric bill where roughly half goes to AC, expect $10-$15/month in savings. Roughly $120-$180 per year. Payback on a $279 investment lands in the 18-30 month range.',
       },
     },
     {
@@ -103,7 +103,7 @@ const faqSchema = {
       name: 'Does the Nest Thermostat work with California utility rebates?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The Nest Thermostat is enrolled in utility demand-response programs (Rush Hour Rewards for PG&E and SCE). Participants typically earn a $25-$50 sign-up bonus plus annual bill credits for allowing the utility to pre-cool the home before peak-rate events. SDG&E offers similar AC Saver-style programs. Always check the specific program terms — you can opt out of any individual event if you are home.',
+        text: 'Yes. The Nest Thermostat is enrolled in utility demand-response programs (Rush Hour Rewards for PG&E and SCE). Participants typically earn a $25-$50 sign-up bonus plus annual bill credits for allowing the utility to pre-cool the home before peak-rate events. SDG&E offers similar AC Saver-style programs. Always check the specific program terms. you can opt out of any individual event if you are home.',
       },
     },
     {
@@ -119,7 +119,7 @@ const faqSchema = {
       name: 'Is the Nest Thermostat compatible with my HVAC system?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The 4th Gen supports most 24V systems including heat pumps, conventional gas/electric, dual-fuel, and multi-stage setups. It does NOT support millivolt systems, high-voltage line-voltage baseboards, or most 110V+ systems. Google offers a free online compatibility checker — enter your existing wiring and it tells you within seconds. The most common incompatibility is the lack of a C-wire, which requires either running a new wire or using a Google-approved power adapter.',
+        text: 'The 4th Gen supports most 24V systems including heat pumps, conventional gas/electric, dual-fuel, and multi-stage setups. It does NOT support millivolt systems, high-voltage line-voltage baseboards, or most 110V+ systems. Google offers a free online compatibility checker, enter your existing wiring and it tells you within seconds. The most common incompatibility is the lack of a C-wire, which requires either running a new wire or using a Google-approved power adapter.',
       },
     },
     {
@@ -203,7 +203,7 @@ export default function NestThermostatReview() {
               productKey={PRODUCT_KEY}
               badge="Editor's Pick"
               rating={4.5}
-              verdict='The Nest Learning Thermostat 4th Gen is the most polished smart thermostat you can buy — genuine AI schedule learning, 10-15% HVAC savings, and a beautiful display. $279 is premium pricing, but the ecosystem and utility rebates close the gap fast.'
+              verdict='The Nest Learning Thermostat 4th Gen is the most polished smart thermostat you can buy. genuine AI schedule learning, 10-15% HVAC savings, and a beautiful display. $279 is premium pricing, but the ecosystem and utility rebates close the gap fast.'
               pros={[
                 'AI learning actually works',
                 'California Rush Hour Rewards eligible',
@@ -229,8 +229,7 @@ export default function NestThermostatReview() {
               <p className='text-foreground/80 leading-relaxed mb-5'>
                 Fifteen years after the original Nest launched, the 4th Gen
                 still sets the bar for smart thermostats. The adaptive schedule
-                learning is the most hands-off experience in the category —
-                install it, use it manually for a week, and it quietly takes
+                learning is the most hands-off experience in the category, install it, use it manually for a week, and it quietly takes
                 over. Savings typically land in the 10-15% range on HVAC costs,
                 the Google Home integration is seamless, and California
                 homeowners get extra mileage from Rush Hour Rewards demand
@@ -398,7 +397,7 @@ export default function NestThermostatReview() {
                 The 4th Gen Nest is the prettiest thermostat on the market. The
                 borderless circular display is larger than previous generations,
                 the polished metal ring catches light beautifully, and the
-                interface is unmistakably Google — crisp typography, smooth
+                interface is unmistakably Google, crisp typography, smooth
                 animations, and just enough information on screen. When the
                 unit senses you approaching (thanks to the built-in Soli radar
                 sensor), the display wakes to show either the current
@@ -412,7 +411,7 @@ export default function NestThermostatReview() {
                 and the unit mounts flush to the wall with a standard backplate
                 or the optional trim kit for covering paint gaps from older
                 thermostats. It is noticeably lighter than the 3rd Gen, which
-                came in for criticism from long-time Nest users — but after a
+                came in for criticism from long-time Nest users, but after a
                 few weeks of use the lighter weight stops registering. The
                 finish has held up on our test unit through six months of daily
                 interaction without visible wear.
@@ -449,7 +448,7 @@ export default function NestThermostatReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This is the feature that made Nest famous, and 15 years of
                 iteration have made it genuinely impressive. For the first week
-                of use, you operate the thermostat manually — adjust it when
+                of use, you operate the thermostat manually, adjust it when
                 you wake up, when you leave for work, when you come home, when
                 you go to bed. The Nest logs every change alongside data about
                 occupancy (via the Soli radar and your phone location), outdoor
@@ -465,7 +464,7 @@ export default function NestThermostatReview() {
                 learning algorithm and may want to disable auto-schedule and
                 set a static schedule manually. Home/Away Assist uses phone
                 location from all household members to automatically shift to
-                an efficient away temperature when the house is empty — this
+                an efficient away temperature when the house is empty. this
                 alone accounts for a large chunk of the claimed savings.
               </p>
 
@@ -480,7 +479,7 @@ export default function NestThermostatReview() {
                 a household&apos;s pattern. For context: if your California
                 home runs $200/month in summer and roughly half of that is AC
                 (a typical breakdown in PG&amp;E and SCE territories), you are
-                looking at $10-$15/month in cooling savings — $120-$180/year,
+                looking at $10-$15/month in cooling savings, $120-$180/year,
                 which pays back the $279 unit in 18-30 months.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -519,8 +518,7 @@ export default function NestThermostatReview() {
                 The Nest is also a key piece of broader home energy
                 management. The Google Home app will show how your HVAC runtime
                 correlates with your time-of-use peak periods, and with the
-                Matter protocol you can build automations across brands —
-                trigger a Kasa smart plug or a Philips Hue scene when the
+                Matter protocol you can build automations across brands, trigger a Kasa smart plug or a Philips Hue scene when the
                 thermostat enters Away mode, for example.
               </p>
 
@@ -622,7 +620,7 @@ export default function NestThermostatReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      Lighter build than 3rd Gen — feels less premium in hand
+                      Lighter build than 3rd Gen. feels less premium in hand
                     </li>
                   </ul>
                 </div>
@@ -774,7 +772,7 @@ export default function NestThermostatReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Skip the Nest if you want built-in Alexa voice control, you run
                 an Apple-first smart home and care about native HomeKit, or you
-                are on a tight budget — the Honeywell T9 or a non-learning
+                are on a tight budget, the Honeywell T9 or a non-learning
                 smart thermostat will do 80% of the job at 60% of the price.
               </p>
 
@@ -850,7 +848,7 @@ export default function NestThermostatReview() {
                     Does the Nest support Matter or HomeKit?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    The 4th Gen supports Matter over Wi-Fi — works with Apple
+                    The 4th Gen supports Matter over Wi-Fi. works with Apple
                     Home, SmartThings, Alexa, and Home Assistant. Native
                     HomeKit is not supported, but Matter bridging covers most
                     use cases.
@@ -868,7 +866,7 @@ export default function NestThermostatReview() {
                 seamless, and the demand-response program participation makes
                 it particularly attractive for California homeowners. At $279
                 it is not cheap — the Honeywell T9 does 80% of the job for
-                $100 less — but if you value hands-off behavior and a polished
+                $100 less. but if you value hands-off behavior and a polished
                 ecosystem, the Nest remains the best smart thermostat money
                 can buy. Add the free Rush Hour Rewards sign-up bonus and
                 typical $120-$180/year savings, and the real cost of ownership

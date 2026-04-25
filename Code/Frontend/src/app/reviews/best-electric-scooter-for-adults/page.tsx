@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults' },
   openGraph: {
     title: 'Best Electric Scooters for Adults 2026: Commuter, Heavy-Duty, and Portable',
-    description: 'Six adult e-scooters tested for real commutes — not marketing specs.',
+    description: 'Six adult e-scooters tested for real commutes, not marketing specs.',
     url: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Best Electric Scooters for Adults 2026',
-    description: 'Apollo, Segway, NIU, Unagi, Gotrax, Turboant — commuter scooters ranked honestly.',
+    description: 'Apollo, Segway, NIU, Unagi, Gotrax, Turboant, commuter scooters ranked honestly.',
   },
 };
 
@@ -81,7 +81,7 @@ const faqSchema = {
       name: 'What is the best electric scooter for daily commuting?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For most adult commuters, the Apollo City Pro at $1,599 is the sweet spot — 32 mph top speed, 38-mile range, full suspension, and hydraulic brakes. The NIU KQi3 Pro at $699 is the best sub-$1,000 option if your commute is under 15 miles. Match the scooter to your real route, not the marketing spec.',
+        text: 'For most adult commuters, the Apollo City Pro at $1,599 is the sweet spot. 32 mph top speed, 38-mile range, full suspension, and hydraulic brakes. The NIU KQi3 Pro at $699 is the best sub-$1,000 option if your commute is under 15 miles. Match the scooter to your real route, not the marketing spec.',
       },
     },
     {
@@ -89,7 +89,7 @@ const faqSchema = {
       name: 'How fast can an adult electric scooter legally go in California?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '15 mph on public roads, bike paths, and bike lanes — that is the statewide cap under California Vehicle Code 22411, regardless of the scooter\'s actual top speed. You also need a valid driver\'s license, and riders under 18 must wear a helmet. No DMV registration or insurance is required.',
+        text: '15 mph on public roads, bike paths, and bike lanes. That is the statewide cap under California Vehicle Code 22411, regardless of the scooter\'s actual top speed. You also need a valid driver\'s license, and riders under 18 must wear a helmet. No DMV registration or insurance is required.',
       },
     },
     {
@@ -97,7 +97,7 @@ const faqSchema = {
       name: 'What is UL 2272 certification and why does it matter?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'UL 2272 is the safety standard for e-scooter electrical systems, specifically battery and charging protection against fire. New York City banned non-certified scooters from many buildings after multiple apartment fires. In California, UL 2272 is not legally required but is strongly recommended — every scooter on this list is UL 2272 certified.',
+        text: 'UL 2272 is the safety standard for e-scooter electrical systems, specifically battery and charging protection against fire. New York City banned non-certified scooters from many buildings after multiple apartment fires. In California, UL 2272 is not legally required but is strongly recommended, every scooter on this list is UL 2272 certified.',
       },
     },
     {
@@ -113,7 +113,7 @@ const faqSchema = {
       name: 'Can I take an electric scooter on a plane?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'FAA rules ban lithium batteries over 160 watt-hours from passenger flights. Most adult e-scooters use 200-700 Wh batteries, which means no. The one exception: the Gotrax Mosquito and Unagi Voyager have removable batteries under the 160 Wh threshold on their smaller models — call the airline in advance. Everything else has to be shipped ground.',
+        text: 'FAA rules ban lithium batteries over 160 watt-hours from passenger flights. Most adult e-scooters use 200-700 Wh batteries, which means no. The one exception: the Gotrax Mosquito and Unagi Voyager have removable batteries under the 160 Wh threshold on their smaller models, call the airline in advance. Everything else has to be shipped ground.',
       },
     },
     {
@@ -166,7 +166,7 @@ export default function BestElectricScooterForAdultsHub() {
                 Best Electric Scooters for Adults 2026: Commuter, Heavy-Duty, and Portable
               </h1>
               <p className="text-lg md:text-xl leading-relaxed" style={{ color: '#d1d5db' }}>
-                Six scooters covering every adult use case — the 5-mile city commute, the 20-mile suburban run, the
+                Six scooters covering every adult use case, the 5-mile city commute, the 20-mile suburban run, the
                 heavy-duty rider, and the apartment-dweller who needs to fold it and carry it up stairs. Ranges, weight
                 capacities, California legality, and the UL 2272 certification you should absolutely check before
                 buying.
@@ -188,7 +188,7 @@ export default function BestElectricScooterForAdultsHub() {
                 rating={4.7}
                 verdict="The Apollo City Pro hits the commuter sweet spot: 32 mph top speed, 38-mile range, full suspension, hydraulic brakes, and app-controlled settings. At $1,599 it is not cheap, but it is the scooter you buy and keep for 5+ years. The build quality is what justifies the price."
                 pros={['32 mph top speed, 38-mile range', 'Full dual suspension + hydraulic brakes', 'UL 2272 certified (safe for apartments)', 'Best-in-class US customer support']}
-                cons={['$1,599 — not a starter scooter', '65 lb — heavy for stair-carrying', 'IP54 rating (light rain only)']}
+                cons={['$1,599, not a starter scooter', '65 lb. heavy for stair-carrying', 'IP54 rating (light rain only)']}
                 source="best-escooter-adults-top-cta"
                 variant="top"
               />
@@ -298,16 +298,16 @@ export default function BestElectricScooterForAdultsHub() {
 
             <section className="prose prose-invert max-w-none">
               <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-5" style={{ color: '#fff' }}>
-                Commuter vs. heavy-duty: which one do you actually need?
+                Commuter vs. Heavy-duty: which one do you actually need?
               </h2>
               <p style={{ color: '#d1d5db' }}>
                 Most adult buyers pick a scooter that is either too much or too little for their actual commute. A
-                "commuter" scooter — 15-30 mph, 20-40 mile range, 40-65 lb curb weight — covers 85% of real-world use
+                "commuter" scooter; 15-30 mph, 20-40 mile range, 40-65 lb curb weight, covers 85% of real-world use
                 cases. You are riding 3-10 miles on paved streets, parking at work or a transit stop, and occasionally
                 folding it to get on a bus or elevator.
               </p>
               <p style={{ color: '#d1d5db' }}>
-                A "heavy-duty" scooter — 35-45 mph, 50+ mile range, 100+ lb curb weight — is overkill for most people,
+                A "heavy-duty" scooter; 35-45 mph, 50+ mile range, 100+ lb curb weight, is overkill for most people,
                 but makes sense for riders over 230 lb, hilly routes (SF hills, Bay Area ridges, LA canyon roads), or
                 longer 15-20 mile one-way commutes where you cannot top up mid-day.
               </p>
@@ -318,7 +318,7 @@ export default function BestElectricScooterForAdultsHub() {
                 than you need wastes it.
               </p>
 
-              {/* Product 1 — Apollo City Pro */}
+              {/* Product 1, Apollo City Pro */}
               <h2 id="apollo-city-pro" className="text-2xl md:text-3xl font-bold mt-12 mb-5 scroll-mt-24" style={{ color: '#fff' }}>
                 1. Apollo City Pro — best overall adult commuter
               </h2>
@@ -332,7 +332,7 @@ export default function BestElectricScooterForAdultsHub() {
                 The ride quality is a category above anything in the sub-$1,000 tier.
               </p>
               <p style={{ color: '#d1d5db' }}>
-                Apollo's app is also the best in the business — you can dial in acceleration curves, regen levels, and
+                Apollo's app is also the best in the business. You can dial in acceleration curves, regen levels, and
                 top-speed limits, then save profiles for "commute" and "weekend." UL 2272 certified, which matters if
                 you live in an apartment building.
               </p>
@@ -357,12 +357,12 @@ export default function BestElectricScooterForAdultsHub() {
               <p style={{ color: '#d1d5db' }}>
                 The Segway GT2 is the heavy-duty answer from the largest name in the category. Dual 1,500W motors peak
                 at 6,000W combined, handle 330-lb riders without drama, and push the scooter to a verified 43 mph. The
-                suspension and 11-inch tubeless tires are tuned for comfort over long rides — 20-mile commutes feel
+                suspension and 11-inch tubeless tires are tuned for comfort over long rides, 20-mile commutes feel
                 effortless.
               </p>
               <p style={{ color: '#d1d5db' }}>
                 What makes the GT2 different from the Dualtron-class performance scooters is refinement. It feels like
-                an appliance — predictable, smooth, quiet. The app, headlight, turn signals, and display are all
+                an appliance, predictable, smooth, quiet. The app, headlight, turn signals, and display are all
                 integrated and work exactly as advertised. Segway's warranty network is also the most extensive in the
                 US, which matters on a $4,000 purchase.
               </p>
@@ -378,7 +378,7 @@ export default function BestElectricScooterForAdultsHub() {
 
               {/* Product 3 — NIU KQi3 Pro */}
               <h2 id="niu-kqi3-pro" className="text-2xl md:text-3xl font-bold mt-12 mb-5 scroll-mt-24" style={{ color: '#fff' }}>
-                3. NIU KQi3 Pro — best scooter under $700
+                3. NIU KQi3 Pro; best scooter under $700
               </h2>
               <p style={{ color: '#d1d5db' }}>
                 <strong style={{ color: '#fff' }}>Price: $699 | Top speed: 20 mph | Range: 31 miles | Weight: 45 lb</strong>
@@ -389,7 +389,7 @@ export default function BestElectricScooterForAdultsHub() {
                 surprisingly well without suspension. At $699, nothing else in this price tier hits all these specs.
               </p>
               <p style={{ color: '#d1d5db' }}>
-                The KQi3 Pro is also genuinely portable — 45 lb is the upper edge of "carry it up one flight of stairs"
+                The KQi3 Pro is also genuinely portable, 45 lb is the upper edge of "carry it up one flight of stairs"
                 territory. The fold mechanism is one-click, and the handlebar collapses to roughly suitcase size. If
                 you commute from an apartment or take it on BART, this is easier to live with than a 65-lb Apollo.
               </p>
@@ -411,8 +411,8 @@ export default function BestElectricScooterForAdultsHub() {
                   productName="NIU KQi3 Pro"
                   badge="BEST BUDGET COMMUTER"
                   rating={4.5}
-                  verdict="At $699, the NIU KQi3 Pro is the best adult scooter under $700 — full stop. 20 mph, 31-mile range, UL 2272 certified, 45 lb, and actually pleasant to ride. If you commute under 8 miles each way on decent pavement, this is the smart buy."
-                  pros={['$699 — best price-to-spec ratio under $1,000', '31-mile range easily handles weeklong commutes', 'UL 2272 certified for apartment use', '45 lb folds compact enough for transit']}
+                  verdict="At $699, the NIU KQi3 Pro is the best adult scooter under $700. Full stop. 20 mph, 31-mile range, UL 2272 certified, 45 lb, and actually pleasant to ride. If you commute under 8 miles each way on decent pavement, this is the smart buy."
+                  pros={['$699. Best price-to-spec ratio under $1,000', '31-mile range easily handles weeklong commutes', 'UL 2272 certified for apartment use', '45 lb folds compact enough for transit']}
                   cons={['No suspension — rough on bad pavement', 'Mechanical disc brakes (not hydraulic)', 'Top speed capped at 20 mph']}
                   source="best-escooter-adults-mid-cta-1"
                   variant="mid"
@@ -421,7 +421,7 @@ export default function BestElectricScooterForAdultsHub() {
 
               {/* Product 4 — Unagi Voyager */}
               <h2 id="unagi-voyager" className="text-2xl md:text-3xl font-bold mt-12 mb-5 scroll-mt-24" style={{ color: '#fff' }}>
-                4. Unagi Model One Voyager — most portable adult scooter
+                4. Unagi Model One Voyager. Most portable adult scooter
               </h2>
               <p style={{ color: '#d1d5db' }}>
                 <strong style={{ color: '#fff' }}>Price: $990 | Top speed: 20 mph | Range: 25 miles | Weight: 29 lb</strong>
@@ -433,7 +433,7 @@ export default function BestElectricScooterForAdultsHub() {
                 stutter that plagues budget dual-motor setups.
               </p>
               <p style={{ color: '#d1d5db' }}>
-                Unagi's design is the other differentiator — this is the Apple of e-scooters. Flush handlebar, clean
+                Unagi's design is the other differentiator, this is the Apple of e-scooters. Flush handlebar, clean
                 deck, integrated headlight and taillight, and a controller that feels like an iPhone. If you work in
                 an office where you have to carry your scooter past your boss every morning, the Voyager looks like a
                 premium product and not a Chinese knockoff.
@@ -449,9 +449,9 @@ export default function BestElectricScooterForAdultsHub() {
                 </BuyButton>
               </div>
 
-              {/* Product 5 — Gotrax Mosquito */}
+              {/* Product 5, Gotrax Mosquito */}
               <h2 id="gotrax-mosquito" className="text-2xl md:text-3xl font-bold mt-12 mb-5 scroll-mt-24" style={{ color: '#fff' }}>
-                5. Gotrax Mosquito — lightweight for tight spaces
+                5. Gotrax Mosquito, lightweight for tight spaces
               </h2>
               <p style={{ color: '#d1d5db' }}>
                 <strong style={{ color: '#fff' }}>Price: $499 | Top speed: 20 mph | Range: 22 miles | Weight: 35 lb</strong>
@@ -477,9 +477,9 @@ export default function BestElectricScooterForAdultsHub() {
                 </BuyButton>
               </div>
 
-              {/* Product 6 — Turboant X7 Pro */}
+              {/* Product 6, Turboant X7 Pro */}
               <h2 id="turboant-x7-pro" className="text-2xl md:text-3xl font-bold mt-12 mb-5 scroll-mt-24" style={{ color: '#fff' }}>
-                6. Turboant X7 Pro — the budget pick with a trick battery
+                6. Turboant X7 Pro. the budget pick with a trick battery
               </h2>
               <p style={{ color: '#d1d5db' }}>
                 <strong style={{ color: '#fff' }}>Price: $569 | Top speed: 20 mph | Range: 30 miles | Weight: 33 lb</strong>
@@ -491,7 +491,7 @@ export default function BestElectricScooterForAdultsHub() {
                 other scooter in this tier has this.
               </p>
               <p style={{ color: '#d1d5db' }}>
-                30-mile range, 20 mph top speed, 33-lb weight — specs are competitive with the Gotrax Mosquito. The
+                30-mile range, 20 mph top speed, 33-lb weight. Specs are competitive with the Gotrax Mosquito. The
                 X7 Pro gives up rear suspension to gain 8 extra miles of range on the same size battery. UL 2272
                 certified.
               </p>
@@ -518,7 +518,7 @@ export default function BestElectricScooterForAdultsHub() {
               <p style={{ color: '#d1d5db' }}>
                 Rule of thumb: buy a scooter rated for your weight + 40 lb. If you are 200 lb, get a 250-275 lb capacity
                 scooter. If you are 230 lb, step up to the Apollo City Pro (265 lb) or Segway GT2 (330 lb). Batteries
-                drain faster under load, and motor bearings wear faster — this is not marketing, it is mechanical
+                drain faster under load, and motor bearings wear faster. This is not marketing, it is mechanical
                 engineering.
               </p>
 
@@ -537,9 +537,9 @@ export default function BestElectricScooterForAdultsHub() {
                 <li><strong style={{ color: '#fff' }}>70+ lb:</strong> Not portable. Garage or storage room only. Segway GT2 (114 lb).</li>
               </ul>
 
-              {/* Range vs. real range */}
+              {/* Range vs. Real range */}
               <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-5" style={{ color: '#fff' }}>
-                Advertised range vs. real range
+                Advertised range vs. Real range
               </h2>
               <p style={{ color: '#d1d5db' }}>
                 Manufacturer ranges are measured by a 140-lb rider on flat pavement at 15 mph in 70°F. Your real range
@@ -581,7 +581,7 @@ export default function BestElectricScooterForAdultsHub() {
                 The law that governs adult electric scooter use in California:
               </p>
               <ul style={{ color: '#d1d5db' }}>
-                <li><strong style={{ color: '#fff' }}>15 mph</strong> speed limit on public roads, bike paths, bike lanes — regardless of scooter capability.</li>
+                <li><strong style={{ color: '#fff' }}>15 mph</strong> speed limit on public roads, bike paths, bike lanes. Regardless of scooter capability.</li>
                 <li><strong style={{ color: '#fff' }}>Class C driver's license</strong> (standard California driver's license) or higher is required. Instruction permits also qualify.</li>
                 <li><strong style={{ color: '#fff' }}>Helmets mandatory for riders under 18</strong>; strongly recommended for adults.</li>
                 <li><strong style={{ color: '#fff' }}>No sidewalk riding</strong> except to access the road you started from.</li>
@@ -593,7 +593,7 @@ export default function BestElectricScooterForAdultsHub() {
 
               {/* UL 2272 */}
               <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-5" style={{ color: '#fff' }}>
-                UL 2272 certification — check before you buy
+                UL 2272 certification; check before you buy
               </h2>
               <div className="p-5 rounded-lg my-6" style={{ backgroundColor: 'rgba(59, 130, 246, 0.08)', border: '1px solid rgba(59, 130, 246, 0.3)' }}>
                 <div className="flex items-start gap-3">
@@ -611,7 +611,7 @@ export default function BestElectricScooterForAdultsHub() {
               <p style={{ color: '#d1d5db' }}>
                 New York City required UL 2272 for rental scooters in 2023 after a series of apartment fires. California
                 does not mandate it legally, but some insurance policies and apartment leases now require it. If you
-                live in a multi-unit building, UL 2272 is not optional — both for safety and because your landlord may
+                live in a multi-unit building, UL 2272 is not optional, both for safety and because your landlord may
                 be about to require it.
               </p>
 
@@ -632,7 +632,7 @@ export default function BestElectricScooterForAdultsHub() {
                 <div className="p-5 rounded-lg" style={{ backgroundColor: '#141414', border: '1px solid #262626' }}>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#fff' }}>How fast can an adult electric scooter legally go in California?</h3>
                   <p style={{ color: '#d1d5db' }}>
-                    15 mph on public roads, bike paths, and bike lanes — that is the statewide cap under California
+                    15 mph on public roads, bike paths, and bike lanes, that is the statewide cap under California
                     Vehicle Code 22411, regardless of the scooter's actual top speed. You also need a valid driver's
                     license, and riders under 18 must wear a helmet. No DMV registration or insurance is required.
                   </p>
@@ -642,8 +642,7 @@ export default function BestElectricScooterForAdultsHub() {
                   <p style={{ color: '#d1d5db' }}>
                     UL 2272 is the safety standard for e-scooter electrical systems, specifically battery and charging
                     protection against fire. New York City banned non-certified scooters from many buildings after
-                    multiple apartment fires. In California, UL 2272 is not legally required but is strongly recommended —
-                    every scooter on this list is UL 2272 certified.
+                    multiple apartment fires. In California, UL 2272 is not legally required but is strongly recommended. Every scooter on this list is UL 2272 certified.
                   </p>
                 </div>
                 <div className="p-5 rounded-lg" style={{ backgroundColor: '#141414', border: '1px solid #262626' }}>
@@ -660,7 +659,7 @@ export default function BestElectricScooterForAdultsHub() {
                   <p style={{ color: '#d1d5db' }}>
                     FAA rules ban lithium batteries over 160 watt-hours from passenger flights. Most adult e-scooters
                     use 200-700 Wh batteries, which means no. The one exception: the Gotrax Mosquito and Unagi Voyager
-                    have removable batteries under the 160 Wh threshold on their smaller models — call the airline in
+                    have removable batteries under the 160 Wh threshold on their smaller models, call the airline in
                     advance. Everything else has to be shipped ground.
                   </p>
                 </div>
@@ -682,7 +681,7 @@ export default function BestElectricScooterForAdultsHub() {
                   productName="Apollo City Pro"
                   badge="OUR OVERALL PICK FOR ADULT COMMUTERS"
                   rating={4.7}
-                  verdict="We keep coming back to the Apollo City Pro because it is the one scooter that does every adult use case well. Long commutes, hilly routes, heavier riders, apartment storage — the City Pro handles all of it. At $1,599 it is a serious purchase, but it is the scooter you buy once and keep for 5+ years without upgrading."
+                  verdict="We keep coming back to the Apollo City Pro because it is the one scooter that does every adult use case well. Long commutes, hilly routes, heavier riders, apartment storage. The City Pro handles all of it. At $1,599 it is a serious purchase, but it is the scooter you buy once and keep for 5+ years without upgrading."
                   pros={['32 mph top speed handles open-road stretches', '38-mile range covers a week of commutes', 'Full dual suspension + hydraulic brakes', 'UL 2272 certified for apartment storage']}
                   cons={['$1,599 is a real commitment', '65 lb is heavy to carry up stairs', 'IP54 rating = light rain only']}
                   source="best-escooter-adults-final-cta"

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title:
       "Low-Income Solar in California: DAC-SASH, SASH, CARE, and FERA Programs",
     description:
-      "California programs that make solar affordable for low-income households — DAC-SASH, SASH, CARE, FERA — and who qualifies.",
+      "California programs that make solar affordable for low-income households — DAC-SASH, SASH, CARE, FERA. and who qualifies.",
     type: 'article',
     publishedTime: '2026-04-23T00:00:00Z',
   },
@@ -97,7 +97,7 @@ export default function LowIncomeSolarCalifornia() {
                 California has built one of the most comprehensive sets of
                 low-income energy assistance programs in the country. For
                 qualifying households, these programs combine to make solar
-                dramatically more affordable — and in some cases fully
+                dramatically more affordable. and in some cases fully
                 subsidized. This guide walks through the four main
                 California programs that lower-income homeowners should
                 know about: DAC-SASH, SASH, CARE, and FERA. Each targets a
@@ -110,12 +110,11 @@ export default function LowIncomeSolarCalifornia() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                DAC-SASH stands for &quot;Disadvantaged Communities —
-                Single-Family Affordable Solar Homes.&quot; It is
+                DAC-SASH stands for &quot;Disadvantaged Communities, Single-Family Affordable Solar Homes.&quot; It is
                 California&apos;s headline solar equity program and the
                 strongest low-income solar benefit available in the state.
                 For qualifying households, DAC-SASH provides a residential
-                solar system at no cost — the installation, equipment, and
+                solar system at no cost, the installation, equipment, and
                 interconnection are fully subsidized by the program.
               </p>
 
@@ -141,7 +140,7 @@ export default function LowIncomeSolarCalifornia() {
                 <li className='flex items-start gap-2'>
                   <span className='text-primary font-bold mt-1'>•</span>
                   <span>
-                    Meet low-income qualifications — typically household
+                    Meet low-income qualifications, typically household
                     income at or below 80% of area median income, OR
                     participation in another qualified income program
                     (CARE, FERA, CalFresh, Medi-Cal, etc.).
@@ -170,12 +169,12 @@ export default function LowIncomeSolarCalifornia() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                SASH — Single-Family Affordable Solar Homes — is the
+                SASH — Single-Family Affordable Solar Homes; is the
                 broader statewide program that DAC-SASH is a subset of.
                 SASH provides solar for low-income homeowners across
                 California who meet the income qualifications but aren&apos;t
                 necessarily in a designated Disadvantaged Community. The
-                subsidy is substantial — covering a major portion of the
+                subsidy is substantial. covering a major portion of the
                 system cost — but not always 100% like DAC-SASH.
               </p>
 
@@ -233,7 +232,7 @@ export default function LowIncomeSolarCalifornia() {
                 Alternatively, participation in certain public assistance
                 programs (CalFresh/SNAP, Medi-Cal, SSI, WIC, etc.)
                 automatically qualifies a household for CARE. You apply
-                through your utility&apos;s website — PG&amp;E, SCE, and
+                through your utility&apos;s website. PG&amp;E, SCE, and
                 SDG&amp;E all have CARE enrollment portals.
               </p>
 
@@ -244,7 +243,7 @@ export default function LowIncomeSolarCalifornia() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 FERA is CARE&apos;s sibling program for households that
                 earn too much to qualify for CARE but still face energy
-                cost burden. The discount is smaller — typically around
+                cost burden. The discount is smaller, typically around
                 12% off the electric bill — and income eligibility runs
                 from the CARE upper limit to roughly 250% of the Federal
                 Poverty Level.
@@ -301,7 +300,7 @@ export default function LowIncomeSolarCalifornia() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Most California households don&apos;t qualify for DAC-SASH
-                or SASH — they target the lowest income tier. If your
+                or SASH, they target the lowest income tier. If your
                 income is above those thresholds but you still find your
                 utility bill painful, the standard options are still
                 available: cash purchase, solar loan, solar lease, or a

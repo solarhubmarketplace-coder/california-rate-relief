@@ -24,7 +24,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Solar Pool Heater 2026: Fafco vs Heliocol vs SunHeater — Complete Buyer\u2019s Guide',
+    'Best Solar Pool Heater 2026: Fafco vs Heliocol vs SunHeater, Complete Buyer\u2019s Guide',
   description:
     'Compare the best solar pool heaters and solar pool covers for 2026. In-depth reviews of Fafco Bear, Heliocol HC-40, SunHeater S120U, SmartPool S601P, and Sun2Solar covers. Sizing guide, DIY installation tips, and ROI payback analysis.',
   alternates: {
@@ -44,7 +44,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Best Solar Pool Heater 2026: Fafco vs Heliocol vs SunHeater — Complete Buyer\u2019s Guide',
+    'Best Solar Pool Heater 2026: Fafco vs Heliocol vs SunHeater. Complete Buyer\u2019s Guide',
   description:
     'Compare the best solar pool heaters and solar pool covers for 2026. In-depth reviews covering Fafco Bear, Heliocol HC-40, SunHeater S120U, SmartPool S601P, and Sun2Solar Blue Solar Cover with sizing guide, installation tips, and ROI analysis.',
   datePublished: '2026-04-21',
@@ -330,7 +330,7 @@ export default function BestSolarPoolHeater() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Fafco Bear — Best Overall Value
+                      Fafco Bear; Best Overall Value
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Most popular solar pool heater in the US. Proven design, 10-year warranty, 10-20&deg;F increase, strong dealer network.
@@ -624,7 +624,7 @@ export default function BestSolarPoolHeater() {
                 productKey="sunheater-s120u"
                 source="best-solar-pool-heater"
                 variant="primary"
-                label="Check Price — SunHeater S120U"
+                label="Check Price, SunHeater S120U"
                 showPrice
               />
             </section>
@@ -789,7 +789,7 @@ export default function BestSolarPoolHeater() {
                 productKey="smartpool-s601p-sungrabber"
                 source="best-solar-pool-heater"
                 variant="primary"
-                label="Check Price — SmartPool S601P SunGrabber"
+                label="Check Price, SmartPool S601P SunGrabber"
                 showPrice
               />
             </section>
@@ -863,7 +863,7 @@ export default function BestSolarPoolHeater() {
                 productKey="sun2solar-blue-solar-cover"
                 source="best-solar-pool-heater"
                 variant="primary"
-                label="Check Price — Sun2Solar Blue Solar Cover"
+                label="Check Price, Sun2Solar Blue Solar Cover"
                 showPrice
               />
             </section>

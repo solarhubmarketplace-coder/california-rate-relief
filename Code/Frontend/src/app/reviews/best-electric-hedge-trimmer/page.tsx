@@ -305,7 +305,7 @@ export default function BestElectricHedgeTrimmer() {
                   </span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      EGO HT2601 — Best Overall
+                      EGO HT2601, Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       26-inch blade, 60-minute runtime on the 56V platform, and a 1-inch cutting
@@ -335,7 +335,7 @@ export default function BestElectricHedgeTrimmer() {
                   </span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      BLACK+DECKER 40V LHT2436 — Best Budget
+                      BLACK+DECKER 40V LHT2436, Best Budget
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       At $139 with a battery and charger included, this is the best entry point into
@@ -548,7 +548,7 @@ export default function BestElectricHedgeTrimmer() {
                   productKey="ego-ht2601"
                   source="electric-hedge-trimmer-hub"
                   variant="primary"
-                  label="Check Price — EGO HT2601"
+                  label="Check Price. EGO HT2601"
                   showPrice
                 />
               </div>
@@ -638,7 +638,7 @@ export default function BestElectricHedgeTrimmer() {
                   productKey="milwaukee-m18-fuel"
                   source="electric-hedge-trimmer-hub"
                   variant="primary"
-                  label="Check Price — Milwaukee M18 FUEL"
+                  label="Check Price. Milwaukee M18 FUEL"
                   showPrice
                 />
               </div>
@@ -728,7 +728,7 @@ export default function BestElectricHedgeTrimmer() {
                   productKey="dewalt-20v-max-dcht820p1"
                   source="electric-hedge-trimmer-hub"
                   variant="primary"
-                  label="Check Price — DeWalt 20V MAX DCHT820P1"
+                  label="Check Price, DeWalt 20V MAX DCHT820P1"
                   showPrice
                 />
               </div>
@@ -765,7 +765,7 @@ export default function BestElectricHedgeTrimmer() {
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
                   Makita&apos;s XHU08Z uses a clever dual-battery design that pairs two 18V LXT
                   batteries to produce 36V of power. The result is the longest runtime in this
-                  roundup — around 90 minutes with two 5.0 Ah packs — and a 30-inch blade that
+                  roundup — around 90 minutes with two 5.0 Ah packs, and a 30-inch blade that
                   covers massive hedges quickly. If you have a large property with extensive
                   hedgerows, this trimmer will finish the job on a single charge.
                 </p>
@@ -802,7 +802,7 @@ export default function BestElectricHedgeTrimmer() {
                     </h4>
                     <ul className="space-y-1.5">
                       {[
-                        'Bare tool only — two batteries required (adds ~$120+)',
+                        'Bare tool only, two batteries required (adds ~$120+)',
                         '30-inch blade can feel unwieldy for tight spaces',
                         'Heavier at 10.1 lbs without batteries',
                       ].map((con) => (
@@ -909,7 +909,7 @@ export default function BestElectricHedgeTrimmer() {
                   productKey="black-decker-40v-lht2436"
                   source="electric-hedge-trimmer-hub"
                   variant="primary"
-                  label="Check Price — BLACK+DECKER 40V LHT2436"
+                  label="Check Price. BLACK+DECKER 40V LHT2436"
                   showPrice
                 />
               </div>
@@ -1025,7 +1025,7 @@ export default function BestElectricHedgeTrimmer() {
                   <div className="flex items-center gap-3 mb-2">
                     <Zap className="h-5 w-5" style={{ color: '#22c55e' }} />
                     <h3 className="font-bold" style={{ color: '#f5f5f5' }}>
-                      18-22 Inches — Precision and Detail Work
+                      18-22 Inches, Precision and Detail Work
                     </h3>
                   </div>
                   <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -1042,7 +1042,7 @@ export default function BestElectricHedgeTrimmer() {
                   <div className="flex items-center gap-3 mb-2">
                     <Zap className="h-5 w-5" style={{ color: '#22c55e' }} />
                     <h3 className="font-bold" style={{ color: '#f5f5f5' }}>
-                      24-26 Inches — The Sweet Spot for Most Homeowners
+                      24-26 Inches, The Sweet Spot for Most Homeowners
                     </h3>
                   </div>
                   <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -1220,7 +1220,7 @@ export default function BestElectricHedgeTrimmer() {
                     },
                     {
                       title: 'Noise Levels',
-                      desc: 'Measured decibel output at the operator position. Battery trimmers ranged from 72 to 84 dB — far below the 95+ dB of gas models.',
+                      desc: 'Measured decibel output at the operator position. Battery trimmers ranged from 72 to 84 dB, far below the 95+ dB of gas models.',
                     },
                     {
                       title: 'Value and Ecosystem',

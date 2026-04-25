@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title:
       'Milwaukee M18 FUEL Brushless Self-Propelled Lawn Mower Review (2026): Pro-Grade Power for Your Yard',
     description:
-      'Detailed review of the Milwaukee M18 FUEL 21-inch self-propelled mower — dual M18 batteries (36V combined), brushless POWERSTATE motor, steel deck, 3-in-1 discharge, and the 250+ tool M18 ecosystem. Is it worth $599-$799?',
+      'Detailed review of the Milwaukee M18 FUEL 21-inch self-propelled mower, dual M18 batteries (36V combined), brushless POWERSTATE motor, steel deck, 3-in-1 discharge, and the 250+ tool M18 ecosystem. Is it worth $599-$799?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -141,7 +141,7 @@ const faqSchema = {
       name: 'Is the Milwaukee lawn mower 18V or 36V?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The mower uses two M18 batteries wired in series, delivering 36V of total power to the POWERSTATE brushless motor. Milwaukee brands everything under the M18 name for ecosystem consistency, but the mower operates at 36V equivalent. This is a similar approach to DeWalt using dual 20V batteries for 40V operation. The platform voltage is a naming convention — the mower gets more power than a single 18V battery provides.',
+        text: 'The mower uses two M18 batteries wired in series, delivering 36V of total power to the POWERSTATE brushless motor. Milwaukee brands everything under the M18 name for ecosystem consistency, but the mower operates at 36V equivalent. This is a similar approach to DeWalt using dual 20V batteries for 40V operation. The platform voltage is a naming convention, the mower gets more power than a single 18V battery provides.',
       },
     },
     {
@@ -242,10 +242,10 @@ export default function MilwaukeeLawnMowerReview() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
-            {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+            {/* Above-the-fold primary CTA. 40-80% CTR lift vs end-only CTA */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge="Pro-Grade Self-Propelled"
@@ -276,7 +276,7 @@ export default function MilwaukeeLawnMowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-5'>
                 The Milwaukee M18 FUEL Self-Propelled Mower brings the same
                 build quality and engineering discipline that made Milwaukee the
-                dominant force in professional power tools — and applies it to
+                dominant force in professional power tools, and applies it to
                 your lawn. The POWERSTATE brushless motor delivers more
                 consistent blade speed under load than the raw voltage number
                 would suggest, the 21-inch steel deck is built to take abuse,
@@ -286,7 +286,7 @@ export default function MilwaukeeLawnMowerReview() {
                 $200. The ecosystem play is the real story: 250+ M18 tools share
                 batteries, making this the smartest buy for anyone already
                 invested in Milwaukee. If you are starting from zero and only
-                care about mowing performance, the EGO still edges it out — but
+                care about mowing performance, the EGO still edges it out, but
                 the gap is narrower than the voltage difference suggests.
               </p>
               <div className='grid md:grid-cols-2 gap-4'>
@@ -465,7 +465,7 @@ export default function MilwaukeeLawnMowerReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 Milwaukee is a professional tool company first. They built
-                their reputation on job sites — drills, impacts, saws, and
+                their reputation on job sites, drills, impacts, saws, and
                 lights that contractors beat on daily and expect to keep
                 working. The M18 platform is the foundation: 250+ tools, one
                 battery system, zero compromises on durability. The lawn
@@ -474,7 +474,7 @@ export default function MilwaukeeLawnMowerReview() {
               <p className='text-foreground/80 leading-relaxed'>
                 That matters because it explains both what the Milwaukee mower
                 does well and where it has limitations. The build quality is
-                genuinely pro-grade — thicker steel, tighter tolerances, a
+                genuinely pro-grade, thicker steel, tighter tolerances, a
                 motor designed to maintain speed under load. The limitation:
                 two 18V batteries in series give 36V of motor power, which
                 is below EGO&apos;s 56V and Greenworks&apos;s 80V. In light
@@ -500,8 +500,7 @@ export default function MilwaukeeLawnMowerReview() {
                 the battery. In practical terms, this means the blade
                 maintains speed more consistently when it hits thick patches
                 of grass, rather than bogging down the way cheaper brushless
-                motors can. Milwaukee also includes REDLINK PLUS intelligence
-                — their electronic control system that monitors temperature,
+                motors can. Milwaukee also includes REDLINK PLUS intelligence, their electronic control system that monitors temperature,
                 current draw, and voltage in real time to optimize power
                 delivery and extend runtime.
               </p>
@@ -555,7 +554,7 @@ export default function MilwaukeeLawnMowerReview() {
                   POWERSTATE motor spins the blade at a consistent RPM, and
                   the 21-inch steel deck provides excellent airflow for
                   mulching. Clippings are chopped fine and distributed
-                  evenly — no visible clumps on the surface. At this
+                  evenly, no visible clumps on the surface. At this
                   height and density, you genuinely cannot tell the
                   difference between this and a 56V or 80V machine. The
                   striping is clean, edges are sharp, and the self-propelled
@@ -593,8 +592,7 @@ export default function MilwaukeeLawnMowerReview() {
                 </div>
                 <p className='text-foreground/80 leading-relaxed'>
                   This is where the POWERSTATE motor earns its keep. In
-                  thick grass, cheaper brushless motors lose RPM quickly —
-                  you hear the blade slow down and the cut quality drops.
+                  thick grass, cheaper brushless motors lose RPM quickly; you hear the blade slow down and the cut quality drops.
                   The Milwaukee holds blade speed noticeably longer before
                   it bogs. It is not immune to physics (36V is still 36V),
                   but it handles 5-6 inch grass better than you would
@@ -638,8 +636,7 @@ export default function MilwaukeeLawnMowerReview() {
                 <p className='text-foreground/80 leading-relaxed'>
                   Wet grass is the hardest test for any electric mower, and
                   the Milwaukee handles it about how you would expect at
-                  36V. Clippings clump under the deck when mulching —
-                  switch to side discharge or bagging for best results.
+                  36V. Clippings clump under the deck when mulching, switch to side discharge or bagging for best results.
                   The POWERSTATE motor and REDLINK system do a decent job
                   of managing power delivery, maintaining blade speed
                   longer than DeWalt in similar conditions. But wet grass
@@ -681,7 +678,7 @@ export default function MilwaukeeLawnMowerReview() {
                 </div>
                 <p className='text-foreground/80 leading-relaxed'>
                   At ~67 lbs with batteries, the Milwaukee sits in the
-                  middle of the pack weight-wise — heavier than the 63 lb
+                  middle of the pack weight-wise. Heavier than the 63 lb
                   DeWalt, lighter than the 77 lb EGO. The rear-wheel-drive
                   self-propelled system provides good traction on moderate
                   slopes up to about 15-20 degrees. The variable speed
@@ -794,7 +791,7 @@ export default function MilwaukeeLawnMowerReview() {
                 deliver higher sustained discharge current than standard M18
                 batteries, which directly impacts POWERSTATE motor
                 performance. A standard 5.0Ah M18 battery technically fits,
-                but a 12.0Ah HIGH OUTPUT does not just give more runtime — it
+                but a 12.0Ah HIGH OUTPUT does not just give more runtime. it
                 gives better cutting performance because the motor can pull
                 more current without battery sag. Charge times: 12.0Ah packs
                 take 60-90 minutes, 8.0Ah packs about 60 minutes.
@@ -913,7 +910,7 @@ export default function MilwaukeeLawnMowerReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed'>
                 The Milwaukee M18 FUEL mower operates at approximately 65 dB
-                at the operator&apos;s ear — roughly the volume of a normal
+                at the operator&apos;s ear. Roughly the volume of a normal
                 conversation. Compare that to a typical gas mower at 90-95
                 dB, which requires hearing protection. At 65 dB, you can mow
                 early morning or evening without disturbing neighbors, hear
@@ -1053,11 +1050,11 @@ export default function MilwaukeeLawnMowerReview() {
               </div>
             </section>
 
-            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            {/* Mid-content affiliate CTA, 30-60% CTR lift */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               headline="Ready to buy?"
-              verdict="Milwaukee M18 FUEL self-propelled mower is stocked at Home Depot and Milwaukee retailers — check current bundle pricing."
+              verdict="Milwaukee M18 FUEL self-propelled mower is stocked at Home Depot and Milwaukee retailers; check current bundle pricing."
               source="milwaukee-lawn-mower"
               variant="mid"
             />
@@ -1182,7 +1179,7 @@ export default function MilwaukeeLawnMowerReview() {
                     Milwaukee vs EGO Select Cut XP
                   </h3>
                   <p className='text-sm text-foreground/80 leading-relaxed'>
-                    The EGO wins on raw cutting performance — 56V torque,
+                    The EGO wins on raw cutting performance, 56V torque,
                     Select Cut multi-blade system, better in thick grass.
                     The Milwaukee wins on ecosystem (250+ vs 70+ tools) and
                     price ($0-$200 less). Own M18 batteries? Milwaukee. No
@@ -1233,7 +1230,7 @@ export default function MilwaukeeLawnMowerReview() {
                     and cost around $599. DeWalt has a slight voltage edge
                     and wider deck. Milwaukee has the POWERSTATE motor and
                     arguably better build quality. This is a platform
-                    decision — buy whichever you already own.
+                    decision; buy whichever you already own.
                   </p>
                 </div>
               </div>
@@ -1374,7 +1371,7 @@ export default function MilwaukeeLawnMowerReview() {
                   For existing M18 owners with yards under 1/2 acre, this
                   is one of the best electric mower values available. For
                   platform-agnostic buyers, the EGO Select Cut XP remains
-                  the pure mowing champion — but the Milwaukee is closer
+                  the pure mowing champion. But the Milwaukee is closer
                   than the voltage gap suggests. If you are a tradesperson
                   who wants one battery for the job site and the yard, no
                   other mower manufacturer can match that depth of platform
@@ -1388,7 +1385,7 @@ export default function MilwaukeeLawnMowerReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 headline='Ready to buy the Milwaukee M18 FUEL Self-Propelled Mower?'
-                verdict='Pro-grade build quality plus access to the 250+ tool M18 platform — check current pricing and bundle options.'
+                verdict='Pro-grade build quality plus access to the 250+ tool M18 platform, check current pricing and bundle options.'
                 source='milwaukee-lawn-mower'
                 variant='final'
               />

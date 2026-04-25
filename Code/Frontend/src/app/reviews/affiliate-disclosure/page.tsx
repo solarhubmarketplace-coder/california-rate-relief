@@ -8,7 +8,7 @@ import { ChevronRight } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Affiliate Disclosure | GreenReviewsHub',
   description:
-    'GreenReviewsHub affiliate disclosure — how we earn, what it means for our reviews, and our commitment to editorial independence.',
+    'GreenReviewsHub affiliate disclosure, how we earn, what it means for our reviews, and our commitment to editorial independence.',
   alternates: {
     canonical: '/reviews/affiliate-disclosure',
   },

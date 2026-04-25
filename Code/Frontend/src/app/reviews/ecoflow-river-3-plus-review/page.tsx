@@ -29,14 +29,14 @@ const PRODUCT_KEY = 'ecoflow-river-3-plus';
 export const metadata: Metadata = {
   title: 'EcoFlow River 3 Plus Review 2026: Upgraded LFP for $399',
   description:
-    'Full EcoFlow River 3 Plus review — 286 Wh LFP (expandable to 572 Wh), 600W output (1,200W X-Boost), 220W solar, 60-minute recharge, 9.9 lbs. How does the $399 River 3 Plus compare to the base River 3?',
+    'Full EcoFlow River 3 Plus review, 286 Wh LFP (expandable to 572 Wh), 600W output (1,200W X-Boost), 220W solar, 60-minute recharge, 9.9 lbs. How does the $399 River 3 Plus compare to the base River 3?',
   alternates: {
     canonical: '/reviews/ecoflow-river-3-plus-review',
   },
   openGraph: {
     title: 'EcoFlow River 3 Plus Review 2026: Upgraded LFP for $399',
     description:
-      'Hands-on review of the EcoFlow River 3 Plus — 286 Wh LFP (expandable to 572 Wh), 600W continuous output, expansion battery support. Is the $140 upgrade over the base River 3 worth it?',
+      'Hands-on review of the EcoFlow River 3 Plus. 286 Wh LFP (expandable to 572 Wh), 600W continuous output, expansion battery support. Is the $140 upgrade over the base River 3 worth it?',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -113,7 +113,7 @@ const faqSchema = {
       name: 'How does X-Boost work at 1,200W?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'X-Boost on the River 3 Plus can briefly handle up to 1,200W from resistive loads by reducing output voltage. This means you can power a 1,000W microwave, a 1,100W hair dryer, or a small space heater — all things that would trip the 600W continuous inverter. It does not work with motor-driven appliances or sensitive electronics.',
+        text: 'X-Boost on the River 3 Plus can briefly handle up to 1,200W from resistive loads by reducing output voltage. This means you can power a 1,000W microwave, a 1,100W hair dryer, or a small space heater, all things that would trip the 600W continuous inverter. It does not work with motor-driven appliances or sensitive electronics.',
       },
     },
     {
@@ -193,8 +193,7 @@ export default function EcoFlowRiver3PlusReview() {
                 300W), twice the solar input (220W vs 110W), and expandable
                 capacity up to 572 Wh. That combination transforms the unit
                 from a &quot;phone and laptop&quot; power station into one that
-                can run a coffee maker, a microwave, or a space heater briefly —
-                the appliances people actually want to use during an outage. At
+                can run a coffee maker, a microwave, or a space heater briefly, the appliances people actually want to use during an outage. At
                 $399 MSRP, it sits between the budget River 3 ($259) and the
                 mid-size River 2 Pro ($499), and for most California homeowners
                 who want outage insurance without committing to a 30-lb unit,
@@ -289,8 +288,7 @@ export default function EcoFlowRiver3PlusReview() {
             <div className='prose prose-slate max-w-none'>
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Design &amp; Build Quality</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The River 3 Plus looks nearly identical to the base River 3 —
-                same boxy silhouette, same rugged handle, same bright LCD. At
+                The River 3 Plus looks nearly identical to the base River 3, same boxy silhouette, same rugged handle, same bright LCD. At
                 9.9 lbs, it&apos;s a pound and a half heavier than the base
                 model, which comes from the larger inverter transformer and
                 slightly more battery capacity. The unit still fits in a
@@ -299,7 +297,7 @@ export default function EcoFlowRiver3PlusReview() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The expansion port for the optional second battery is a new
-                addition on the back panel — a proprietary connector with
+                addition on the back panel, a proprietary connector with
                 robust retention. EcoFlow has been refining their expansion
                 ecosystem for years, and the River 3 Plus inherits the
                 battle-tested designs from the Delta line. The port is
@@ -310,7 +308,7 @@ export default function EcoFlowRiver3PlusReview() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Battery &amp; Capacity</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 At 286 Wh base, the River 3 Plus has about 17% more capacity
-                than the base River 3&apos;s 245 Wh — not a huge absolute
+                than the base River 3&apos;s 245 Wh; not a huge absolute
                 jump, but when combined with the expansion battery option,
                 you can double it to 572 Wh. That 572 Wh number is genuinely
                 useful: it can run a full-size refrigerator for about 4 hours,
@@ -329,7 +327,7 @@ export default function EcoFlowRiver3PlusReview() {
                 So the total expanded system is about $678. At that price
                 point, you&apos;re within striking distance of a base Anker
                 SOLIX C1000 at 1,056 Wh. If expansion is the plan from day
-                one, do the math carefully — the C1000 may be the better
+                one, do the math carefully, the C1000 may be the better
                 value.
               </p>
 
@@ -338,7 +336,7 @@ export default function EcoFlowRiver3PlusReview() {
                 Like its smaller sibling, the River 3 Plus uses X-Stream
                 charging to hit 0-100% in 60 minutes from AC. When the
                 expansion battery is attached, the total capacity is larger,
-                and full charge time extends to roughly 2 hours — still
+                and full charge time extends to roughly 2 hours. Still
                 faster than most competitors even with the doubled capacity.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -346,7 +344,7 @@ export default function EcoFlowRiver3PlusReview() {
                 Plus. That means you can pair it with a pair of 100W panels
                 or a single 200W panel for a full recharge in roughly 2
                 hours of California sun. 220W makes the unit much more
-                viable for extended off-grid use — you can stay at capacity
+                viable for extended off-grid use; you can stay at capacity
                 indefinitely during daylight with moderate panel sizing.
               </p>
 
@@ -358,7 +356,7 @@ export default function EcoFlowRiver3PlusReview() {
                 starts being able to run real appliances. A 1,000W microwave?
                 Yes, via X-Boost. A 1,100W hair dryer? Yes. A 600W blender?
                 Easy. A 500W coffee maker? No problem. The practical
-                difference is substantial — if you want a small unit that
+                difference is substantial, if you want a small unit that
                 can run the kitchen appliances you actually use, the Plus is
                 the minimum tier.
               </p>
@@ -391,7 +389,7 @@ export default function EcoFlowRiver3PlusReview() {
                 Effectively silent during discharge below about 400W. Fans
                 engage during X-Stream fast charging and during sustained
                 loads above 400W. The fan noise is audible but not
-                disruptive — comparable to a desk fan on medium. The quiet
+                disruptive, comparable to a desk fan on medium. The quiet
                 charging mode in the app drops charge speed to about 300W,
                 which eliminates fan noise entirely at the cost of doubling
                 recharge time.
@@ -408,7 +406,7 @@ export default function EcoFlowRiver3PlusReview() {
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>PSPS Fridge-Stretching</h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 During a PSPS event, a refrigerator is the single biggest
-                concern — spoiled food costs hundreds of dollars. The River
+                concern, spoiled food costs hundreds of dollars. The River
                 3 Plus can cycle a fridge on and off for 2-3 hours on the
                 base capacity, or 4-5 hours with the expansion battery. For
                 the typical 12-24 hour PSPS event, pair the unit with a
@@ -420,7 +418,7 @@ export default function EcoFlowRiver3PlusReview() {
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>Medical Device &amp; Remote Work</h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For CPAP users, the River 3 Plus&apos;s 286 Wh base supports
-                8-15 hours of CPAP runtime — a full night, with margin. For
+                8-15 hours of CPAP runtime; a full night, with margin. For
                 remote workers, the 600W inverter handles a laptop, monitor,
                 router, and lamp simultaneously. The UPS pass-through means
                 when the grid flickers, there&apos;s no reboot, no lost
@@ -449,7 +447,7 @@ export default function EcoFlowRiver3PlusReview() {
                 during the super off-peak window (typically midnight to 6
                 AM), and you&apos;re paying 15-20&cent;/kWh instead of the
                 40-60&cent;/kWh peak rate. At 286 Wh, the savings are
-                modest — pennies per cycle — but over 100 cycles per year,
+                modest — pennies per cycle. but over 100 cycles per year,
                 it adds up. Combined with outage protection and CPAP/medical
                 backup, the total value proposition is solid.
               </p>
@@ -465,7 +463,7 @@ export default function EcoFlowRiver3PlusReview() {
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />220W solar input (2x base River 3)</li>
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />60-minute full recharge</li>
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />Best-in-class app with TOU scheduling</li>
-                    <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />LFP — 3,000 cycles / 5-yr warranty</li>
+                    <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />LFP; 3,000 cycles / 5-yr warranty</li>
                     <li className='flex items-start gap-2'><Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />Quiet charging mode in app</li>
                   </ul>
                 </div>
@@ -543,7 +541,7 @@ export default function EcoFlowRiver3PlusReview() {
               </div>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The <strong>base River 3</strong> is the right pick if you
-                only need to charge phones and laptops — it saves $140. The{' '}
+                only need to charge phones and laptops. it saves $140. The{' '}
                 <strong>River 2 Pro</strong> offers 2.5x the capacity for
                 $100 more, but at 17 lbs it loses the true-portable edge.
                 The <strong>Bluetti EB3A</strong> matches the Plus on
@@ -573,8 +571,8 @@ export default function EcoFlowRiver3PlusReview() {
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Skip it if you&apos;re 100% sure you only need to charge
-                small electronics — the base River 3 saves you money. Skip
-                it if you need a bigger base unit — the River 2 Pro is a
+                small electronics, the base River 3 saves you money. Skip
+                it if you need a bigger base unit. the River 2 Pro is a
                 better fit for &gt;500 Wh needs.
               </p>
 

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title:
       'Ryobi 40V HP Brushless 21" Self-Propelled Lawn Mower Review: Best Budget Electric Mower in 2026?',
     description:
-      'Detailed review of the Ryobi 40V HP Brushless self-propelled mower — 21-inch steel deck, 3-in-1 mulch/bag/side discharge, rear wheel drive, LED headlights, cross-cut capability. Is it worth $399?',
+      'Detailed review of the Ryobi 40V HP Brushless self-propelled mower, 21-inch steel deck, 3-in-1 mulch/bag/side discharge, rear wheel drive, LED headlights, cross-cut capability. Is it worth $399?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -234,7 +234,7 @@ export default function Ryobi40VLawnMowerReview() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
             {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
@@ -242,7 +242,7 @@ export default function Ryobi40VLawnMowerReview() {
               productKey={PRODUCT_KEY}
               badge="Best Budget Electric Mower"
               rating={4.3}
-              verdict="Ryobi 40V HP Brushless 21 inch self-propelled mower — the most affordable electric mower with legit cutting power. Home Depot exclusive pricing and massive 40V ecosystem."
+              verdict="Ryobi 40V HP Brushless 21 inch self-propelled mower, the most affordable electric mower with legit cutting power. Home Depot exclusive pricing and massive 40V ecosystem."
               pros={[
                 'Budget-conscious homeowners',
                 'Small to mid-size yards under 1/3 acre',
@@ -328,7 +328,7 @@ export default function Ryobi40VLawnMowerReview() {
                 push mowers with brushed motors and short battery life. Above
                 $600, you get premium machines like the EGO Select Cut with
                 features most homeowners will never fully use. The Ryobi 40V HP
-                Brushless sits right in the middle — and that&apos;s exactly
+                Brushless sits right in the middle, and that&apos;s exactly
                 where most buyers should be looking.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
@@ -438,7 +438,7 @@ export default function Ryobi40VLawnMowerReview() {
                         LED Headlights
                       </td>
                       <td className='px-4 py-3 text-foreground/80'>
-                        Yes — front-mounted for low-light mowing
+                        Yes. Front-mounted for low-light mowing
                       </td>
                     </tr>
                     <tr className='bg-muted/30'>
@@ -446,7 +446,7 @@ export default function Ryobi40VLawnMowerReview() {
                         Cross-Cut
                       </td>
                       <td className='px-4 py-3 text-foreground/80'>
-                        Yes — cuts in forward and reverse
+                        Yes, cuts in forward and reverse
                       </td>
                     </tr>
                     <tr>
@@ -480,14 +480,14 @@ export default function Ryobi40VLawnMowerReview() {
                 over Ryobi&apos;s standard 40V mowers. Brushless motors deliver
                 more torque per watt, generate less heat, and last significantly
                 longer than brushed alternatives. In practical terms, the blade
-                spins faster and maintains RPM better under load — meaning it
+                spins faster and maintains RPM better under load. Meaning it
                 doesn&apos;t bog down when you hit a thick patch.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The 21-inch steel deck provides a clean, even cut across all
                 seven height positions (1.5&quot; to 4&quot;). For standard
                 weekly mowing on Bermuda, fescue, or Kentucky bluegrass, the cut
-                quality is genuinely good — not &quot;good for the price,&quot;
+                quality is genuinely good. Not &quot;good for the price,&quot;
                 just good. Stripes are clean, edges are sharp, and the deck
                 clears clippings efficiently.
               </p>
@@ -503,7 +503,7 @@ export default function Ryobi40VLawnMowerReview() {
                 Where it falls short compared to the EGO Select Cut is on thick,
                 wet grass. Without a dedicated high-lift blade option, the Ryobi
                 can clump in heavy conditions. The solution is simple — mow more
-                frequently or raise the height and make two passes — but it is a
+                frequently or raise the height and make two passes; but it is a
                 real limitation if your lawn grows fast in spring.
               </p>
             </section>
@@ -575,7 +575,7 @@ export default function Ryobi40VLawnMowerReview() {
                   the brushed motor in Ryobi&apos;s cheaper 40V mowers. If
                   you&apos;re choosing between the HP Brushless and the standard
                   brushed model, the extra runtime per charge alone justifies the
-                  price difference — you get roughly 15-20% more mowing time
+                  price difference, you get roughly 15-20% more mowing time
                   from the same battery.
                 </p>
               </div>
@@ -639,8 +639,8 @@ export default function Ryobi40VLawnMowerReview() {
               </div>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The Expand-It attachment system deserves special mention. One
-                power head accepts multiple attachments — trimmer, edger, pole
-                saw, cultivator, and more — so you buy one motor and swap
+                power head accepts multiple attachments, trimmer, edger, pole
+                saw, cultivator, and more, so you buy one motor and swap
                 attachments as needed. It&apos;s the most cost-effective way to
                 build out a full yard care toolkit.
               </p>
@@ -717,7 +717,7 @@ export default function Ryobi40VLawnMowerReview() {
               </div>
             </section>
 
-            {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+            {/* Mid-content affiliate CTA, 30-60% CTR lift */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               headline="Ready to buy?"
@@ -822,7 +822,7 @@ export default function Ryobi40VLawnMowerReview() {
                     Ryobi vs EGO: The Value Argument
                   </h3>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
-                    The EGO Select Cut XP is objectively a better mower — bigger
+                    The EGO Select Cut XP is objectively a better mower; bigger
                     battery, longer runtime, the multi-blade system, a larger tool
                     ecosystem. But it costs exactly twice as much. The question is
                     whether those upgrades are worth $400 to you. If you have a
@@ -951,7 +951,7 @@ export default function Ryobi40VLawnMowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      HP brushless motor — more torque and longer life
+                      HP brushless motor, more torque and longer life
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -999,7 +999,7 @@ export default function Ryobi40VLawnMowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      Single blade — no multi-blade system like EGO
+                      Single blade. no multi-blade system like EGO
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -1038,8 +1038,8 @@ export default function Ryobi40VLawnMowerReview() {
                 <p className='text-foreground/80 leading-relaxed mb-4'>
                   The Ryobi 40V HP Brushless is the electric mower we recommend
                   for budget-conscious homeowners. At $399, it delivers the core
-                  features that matter — brushless motor, self-propelled drive,
-                  21-inch steel deck, 3-in-1 versatility — and adds LED
+                  features that matter. Brushless motor, self-propelled drive,
+                  21-inch steel deck, 3-in-1 versatility, and adds LED
                   headlights and cross-cut capability that pricier competitors
                   skip. The Ryobi 40V platform gives you an affordable path to
                   replace every gas tool in your garage.
@@ -1067,7 +1067,7 @@ export default function Ryobi40VLawnMowerReview() {
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 headline='Ready to buy the Ryobi 40V HP Brushless Mower?'
-                verdict='The best self-propelled electric mower under $400 — check current pricing and bundle offers at Home Depot.'
+                verdict='The best self-propelled electric mower under $400, check current pricing and bundle offers at Home Depot.'
                 source='ryobi-40v-lawn-mower'
                 variant='final'
               />

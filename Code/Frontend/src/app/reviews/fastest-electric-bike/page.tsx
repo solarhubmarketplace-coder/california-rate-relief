@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title:
     'Fastest Electric Bikes 2026: 35+ MPH Class 3 and Off-Road Monsters',
   description:
-    'The fastest electric bikes you can actually buy in 2026. Delfast Top 3.0 (50 mph), HPC Revolution XX, Vintage Electric Scrambler, Ariel Rider X-Class, and the 50 mph Stealth Bomber B52 compared — Class 3 laws, off-road legality, and California helmet requirements.',
+    'The fastest electric bikes you can actually buy in 2026. Delfast Top 3.0 (50 mph), HPC Revolution XX, Vintage Electric Scrambler, Ariel Rider X-Class, and the 50 mph Stealth Bomber B52 compared; Class 3 laws, off-road legality, and California helmet requirements.',
   alternates: {
     canonical: '/reviews/fastest-electric-bike',
   },
@@ -87,7 +87,7 @@ const faqSchema = {
       name: 'What is the fastest electric bike in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The fastest production electric bikes in 2026 top out around 50 mph. The Delfast Top 3.0 is rated at 50 mph and has a Guinness World Record for range (228 miles on a single charge). The Stealth Bomber B52 is also rated at 50 mph. Custom shop HPC (High Power Cycles) builds bikes that hit 48+ mph in production trim. These are all classified as off-road bikes or motorcycles in most U.S. states — none are Class 3 compliant.',
+        text: 'The fastest production electric bikes in 2026 top out around 50 mph. The Delfast Top 3.0 is rated at 50 mph and has a Guinness World Record for range (228 miles on a single charge). The Stealth Bomber B52 is also rated at 50 mph. Custom shop HPC (High Power Cycles) builds bikes that hit 48+ mph in production trim. These are all classified as off-road bikes or motorcycles in most U.S. States. None are Class 3 compliant.',
       },
     },
     {
@@ -103,7 +103,7 @@ const faqSchema = {
       name: 'Do I need a helmet on a fast electric bike in California?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'California law requires helmets on Class 3 e-bikes for all riders regardless of age. For Class 1 and Class 2 e-bikes, helmets are required under age 18 only. For bikes that exceed 28 mph motor-only (anything in the "fast" category covered in this guide), the bike is legally a motorcycle and requires a DOT-certified motorcycle helmet — not a bicycle helmet — for all riders at all times.',
+        text: 'California law requires helmets on Class 3 e-bikes for all riders regardless of age. For Class 1 and Class 2 e-bikes, helmets are required under age 18 only. For bikes that exceed 28 mph motor-only (anything in the "fast" category covered in this guide), the bike is legally a motorcycle and requires a DOT-certified motorcycle helmet. Not a bicycle helmet — for all riders at all times.',
       },
     },
     {
@@ -204,7 +204,7 @@ export default function FastestElectricBikeHub() {
             {/* Intro */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                The phrase &quot;fastest electric bike&quot; covers two very different categories in 2026. Category one is Class 3 — the legal pedal-assist ceiling, capped at 28 mph motor-only, rideable in bike lanes in most U.S. states. Category two is everything above 28 mph: off-road monsters, motorcycle-class bikes, and custom-tuned speed machines that top 50 mph and legally should not be in a bike lane.
+                The phrase &quot;fastest electric bike&quot; covers two very different categories in 2026. Category one is Class 3, the legal pedal-assist ceiling, capped at 28 mph motor-only, rideable in bike lanes in most U.S. States. Category two is everything above 28 mph: off-road monsters, motorcycle-class bikes, and custom-tuned speed machines that top 50 mph and legally should not be in a bike lane.
               </p>
               <p className='text-lg text-foreground/80 leading-relaxed mb-8'>
                 This guide covers the five bikes that define the second category — the 35-to-50 mph machines. We&apos;ll walk through why someone buys one, where you can legally ride them, which California helmet and licensing rules apply, and which bike is right for different use cases. Read the legal sections before you click Buy.
@@ -394,13 +394,13 @@ export default function FastestElectricBikeHub() {
                 <strong>Price:</strong> $7,200 · <strong>Top speed:</strong> 50 mph · <strong>Motor:</strong> 6 kW peak · <strong>Battery:</strong> 72V / 48Ah · <strong>Range:</strong> 70-228 miles
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Delfast is a Ukrainian-American company that set a Guinness World Record in 2017 for the longest single-charge e-bike ride: 228 miles. The Top 3.0 is the current flagship, and it remains the best-engineered long-range high-speed e-bike on the market. It pairs a 6 kW peak rear-hub motor with a massive 72V / 48Ah lithium battery pack (3.4 kWh) — larger than some motorcycle batteries.
+                Delfast is a Ukrainian-American company that set a Guinness World Record in 2017 for the longest single-charge e-bike ride: 228 miles. The Top 3.0 is the current flagship, and it remains the best-engineered long-range high-speed e-bike on the market. It pairs a 6 kW peak rear-hub motor with a massive 72V / 48Ah lithium battery pack (3.4 kWh), larger than some motorcycle batteries.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Top 3.0 has proper motorcycle hardware: inverted fork, hydraulic disc brakes front and rear, full LED lighting, LCD dash, and a frame that feels like a lightweight motorcycle rather than a bicycle. It ships with both a Class 3 / 28 mph programmable limit and an unlocked 50 mph off-road mode. The 228-mile record came at steady 20 mph on flat ground; realistic range at 50 mph is about 70-80 miles.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                We like it because it&apos;s the one bike in this guide that feels like a complete product rather than a kit. Delfast has real engineering depth, mature production, and a US support network. Weak points: weight (154 lbs — not carrying this up apartment stairs), price ($7,200 in base trim), and the reality that unlocked mode is off-road-only.
+                We like it because it&apos;s the one bike in this guide that feels like a complete product rather than a kit. Delfast has real engineering depth, mature production, and a US support network. Weak points: weight (154 lbs, not carrying this up apartment stairs), price ($7,200 in base trim), and the reality that unlocked mode is off-road-only.
               </p>
               <div className='mb-8'>
                 <BuyButton
@@ -442,10 +442,10 @@ export default function FastestElectricBikeHub() {
                 <strong>Price:</strong> $6,995 · <strong>Top speed:</strong> 36 mph · <strong>Motor:</strong> 3 kW peak · <strong>Battery:</strong> 72V / 16Ah · <strong>Range:</strong> 30-40 miles
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Vintage Electric is a small-batch California builder that makes the most visually distinctive e-bikes in the U.S. market. The Scrambler styles itself after 1960s Triumph scramblers — tank-between-the-knees design, low-slung bench seat, tall bars, polished aluminum fenders. It&apos;s the kind of bike you park at a restaurant and people actually take pictures of.
+                Vintage Electric is a small-batch California builder that makes the most visually distinctive e-bikes in the U.S. market. The Scrambler styles itself after 1960s Triumph scramblers. tank-between-the-knees design, low-slung bench seat, tall bars, polished aluminum fenders. It&apos;s the kind of bike you park at a restaurant and people actually take pictures of.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Underneath the style, the Scrambler has a 3 kW peak hub motor, a 72V / 16Ah battery pack, and a Race Mode that unlocks 36 mph. In Street Mode it self-limits to 20 mph for legal bike-lane riding. Range is the trade-off — the small 16Ah battery gets about 30-40 miles at moderate speed and significantly less wide-open.
+                Underneath the style, the Scrambler has a 3 kW peak hub motor, a 72V / 16Ah battery pack, and a Race Mode that unlocks 36 mph. In Street Mode it self-limits to 20 mph for legal bike-lane riding. Range is the trade-off, the small 16Ah battery gets about 30-40 miles at moderate speed and significantly less wide-open.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 You buy a Vintage Electric because of how it looks and how it makes you feel when you ride it. It&apos;s not the fastest, not the longest-range, not the best value. It&apos;s the best in one category: aesthetic. If that&apos;s why you&apos;re shopping, nothing else comes close.
@@ -460,16 +460,16 @@ export default function FastestElectricBikeHub() {
               </div>
 
               <h2 id='ariel' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                4. Ariel Rider X-Class 52V — Best Value
+                4. Ariel Rider X-Class 52V, Best Value
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $2,299 · <strong>Top speed:</strong> 35 mph · <strong>Motor:</strong> 1 kW peak (dual motor option) · <strong>Battery:</strong> 52V / 20Ah (dual battery option) · <strong>Range:</strong> 45-75 miles
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Ariel Rider is a direct-to-consumer brand that has quietly become one of the most popular fast e-bike makers by undercutting everyone on price. The X-Class 52V in dual-battery trim gets you a 35 mph top speed, a combined 40Ah battery, and real motorcycle-style ergonomics for $2,299 — roughly a third of what Delfast or HPC charges.
+                Ariel Rider is a direct-to-consumer brand that has quietly become one of the most popular fast e-bike makers by undercutting everyone on price. The X-Class 52V in dual-battery trim gets you a 35 mph top speed, a combined 40Ah battery, and real motorcycle-style ergonomics for $2,299. roughly a third of what Delfast or HPC charges.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The X-Class chassis is a real bike: hydraulic disc brakes, proper suspension, full-size 26&quot; tires, and a dual-battery setup that you can run one or both of for range flexibility. Build quality is not premium — plastics feel cheaper, welds aren&apos;t as clean, paint is more basic. But at this price point, none of that is a dealbreaker.
+                The X-Class chassis is a real bike: hydraulic disc brakes, proper suspension, full-size 26&quot; tires, and a dual-battery setup that you can run one or both of for range flexibility. Build quality is not premium. Plastics feel cheaper, welds aren&apos;t as clean, paint is more basic. But at this price point, none of that is a dealbreaker.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The main caveat with Ariel Rider is that they sell direct-to-consumer with no dealer network. If something goes wrong, you ship the bike to Texas or you handle warranty repairs yourself. Parts are available through the brand, but not at a local shop. If you&apos;re mechanically inclined or on a budget, it&apos;s the obvious entry point into the 35+ mph class. If you want white-glove service, spend the money on a Delfast or HPC.
@@ -484,13 +484,13 @@ export default function FastestElectricBikeHub() {
               </div>
 
               <h2 id='stealth' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                5. Stealth Bomber B52 — Most Powerful
+                5. Stealth Bomber B52, Most Powerful
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $15,000 · <strong>Top speed:</strong> 50 mph · <strong>Motor:</strong> 5.2 kW peak · <strong>Battery:</strong> 72V / 31Ah · <strong>Range:</strong> ~60 miles
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Stealth is an Australian company that has built the Bomber platform since 2009. The B52 is the current flagship — widely considered one of the most capable off-road high-performance e-bikes ever made. 5.2 kW peak power, 50 mph top speed, 72V / 31Ah battery, 110 lb-ft of torque at the wheel, and a chassis rated to handle big-bike motocross stresses.
+                Stealth is an Australian company that has built the Bomber platform since 2009. The B52 is the current flagship, widely considered one of the most capable off-road high-performance e-bikes ever made. 5.2 kW peak power, 50 mph top speed, 72V / 31Ah battery, 110 lb-ft of torque at the wheel, and a chassis rated to handle big-bike motocross stresses.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Bomber is where the line between e-bike and electric dirt bike really dissolves. Seven-stage throttle map, air-cooled motor with active oil cooling, fully adjustable air suspension with 8 inches of travel, 4-piston hydraulic brakes, and a claimed 2,000+ Wh/mi efficiency at moderate speeds. This bike is serious hardware.
@@ -526,19 +526,19 @@ export default function FastestElectricBikeHub() {
               <ul className='space-y-2 text-foreground/80 mb-6'>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>DOT / ECE motorcycle helmet</strong> ($150-$500) — a full-face lid is appropriate at 40+ mph. Not a bicycle helmet.</span>
+                  <span><strong>DOT / ECE motorcycle helmet</strong> ($150-$500), a full-face lid is appropriate at 40+ mph. Not a bicycle helmet.</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>Abrasion-rated jacket and pants</strong> ($200-$500) — textile motorcycle gear with CE armor at shoulders, elbows, back, and knees.</span>
+                  <span><strong>Abrasion-rated jacket and pants</strong> ($200-$500). Textile motorcycle gear with CE armor at shoulders, elbows, back, and knees.</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>Gloves</strong> ($40-$100) — motorcycle-rated gloves with knuckle protection and palm sliders.</span>
+                  <span><strong>Gloves</strong> ($40-$100), motorcycle-rated gloves with knuckle protection and palm sliders.</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>Boots</strong> ($150-$300) — over-the-ankle boots with armor. Sneakers are insufficient at these speeds.</span>
+                  <span><strong>Boots</strong> ($150-$300). Over-the-ankle boots with armor. Sneakers are insufficient at these speeds.</span>
                 </li>
               </ul>
 
@@ -550,7 +550,7 @@ export default function FastestElectricBikeHub() {
                 We&apos;re going to be honest about the reality of the fast e-bike market. Most owners of 35-50 mph bikes ride them in a legal grey area. They&apos;re registered as bicycles (or not registered at all), they&apos;re ridden on bike paths and roads at high speed, and they&apos;re enforced against inconsistently depending on the jurisdiction.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                We can&apos;t tell you to do that. California Vehicle Code is clear that a bike capable of 28+ mph under motor power is not an e-bike, and riding it in a bike lane or bike path isn&apos;t legal. Enforcement varies, but the risk is real — tickets start at a few hundred dollars and can include impoundment. Liability exposure in a crash is much worse: your bicycle insurance won&apos;t cover you, and if you injure someone at 40 mph in a bike lane, you are personally liable.
+                We can&apos;t tell you to do that. California Vehicle Code is clear that a bike capable of 28+ mph under motor power is not an e-bike, and riding it in a bike lane or bike path isn&apos;t legal. Enforcement varies, but the risk is real, tickets start at a few hundred dollars and can include impoundment. Liability exposure in a crash is much worse: your bicycle insurance won&apos;t cover you, and if you injure someone at 40 mph in a bike lane, you are personally liable.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Our recommendation: if you buy one of these bikes, ride it in environments where it&apos;s legal (private property, OHV land, closed circuit, registered as a motorcycle on public roads). If you&apos;re going to commute on one, choose a model with a programmable Class 3 / 28 mph limit and actually use it on public roads.
@@ -574,7 +574,7 @@ export default function FastestElectricBikeHub() {
                     What&apos;s the legal speed limit for an e-bike in California?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Class 3 e-bikes can assist up to 28 mph pedal-assisted. Anything above that is not a legal e-bike in California — it&apos;s a motor-driven cycle or motorcycle requiring proper registration and licensing.
+                    Class 3 e-bikes can assist up to 28 mph pedal-assisted. Anything above that is not a legal e-bike in California. It&apos;s a motor-driven cycle or motorcycle requiring proper registration and licensing.
                   </p>
                 </div>
                 <div>
@@ -606,7 +606,7 @@ export default function FastestElectricBikeHub() {
                     Can I convert a fast e-bike to street legal?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    In some states, yes — register as a motor-driven cycle or moped. In California, it&apos;s difficult and requires CARB certification that most manufacturers don&apos;t have. Consult your local DMV before committing.
+                    In some states, yes, register as a motor-driven cycle or moped. In California, it&apos;s difficult and requires CARB certification that most manufacturers don&apos;t have. Consult your local DMV before committing.
                   </p>
                 </div>
               </div>
@@ -625,7 +625,7 @@ export default function FastestElectricBikeHub() {
                 The Bottom Line
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For most riders who want a fast electric bike, the <strong>Delfast Top 3.0</strong> is the right answer — 50 mph top speed, Guinness-record range, motorcycle-grade build quality, and a price tag that makes sense for what you&apos;re getting. The <strong>HPC Revolution XX</strong> is the pick for off-road riders who want a real mountain bike chassis with hill-climbing mid-drive torque. The <strong>Ariel Rider X-Class 52V</strong> is the budget entry point at $2,299. The <strong>Vintage Electric Scrambler</strong> is the style pick, and the <strong>Stealth Bomber B52</strong> is the serious-off-road premium pick at $15,000.
+                For most riders who want a fast electric bike, the <strong>Delfast Top 3.0</strong> is the right answer. 50 mph top speed, Guinness-record range, motorcycle-grade build quality, and a price tag that makes sense for what you&apos;re getting. The <strong>HPC Revolution XX</strong> is the pick for off-road riders who want a real mountain bike chassis with hill-climbing mid-drive torque. The <strong>Ariel Rider X-Class 52V</strong> is the budget entry point at $2,299. The <strong>Vintage Electric Scrambler</strong> is the style pick, and the <strong>Stealth Bomber B52</strong> is the serious-off-road premium pick at $15,000.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Whatever you buy, understand the legal constraints. These bikes exceed Class 3 e-bike limits and aren&apos;t legal in bike lanes in their unlocked configurations. Wear motorcycle gear, ride where it&apos;s legal, and enjoy what is genuinely one of the most exciting categories in personal transportation in 2026.

@@ -145,7 +145,7 @@ const faqSchema = {
       name: 'Is Ryobi better than EGO or Greenworks?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ryobi offers the best value — 20-30% cheaper than EGO at comparable spec levels. EGO beats Ryobi on torque in thick grass, battery cycle life, and platform breadth (80+ tools vs Ryobi\'s ~280+ tools at 40V). Greenworks 80V Pro competes with both on performance. For a household already invested in Ryobi 40V drills, impacts, and other tools, staying in the Ryobi ecosystem is the smart call. For a first-time battery mower buyer, EGO usually offers better longevity per dollar.',
+        text: 'Ryobi offers the best value, 20-30% cheaper than EGO at comparable spec levels. EGO beats Ryobi on torque in thick grass, battery cycle life, and platform breadth (80+ tools vs Ryobi\'s ~280+ tools at 40V). Greenworks 80V Pro competes with both on performance. For a household already invested in Ryobi 40V drills, impacts, and other tools, staying in the Ryobi ecosystem is the smart call. For a first-time battery mower buyer, EGO usually offers better longevity per dollar.',
       },
     },
     {
@@ -413,8 +413,7 @@ export default function RyobiLawnMowerReview() {
                 important thing to understand about the brand. Ryobi is owned
                 by Techtronic Industries (TTI), the Hong Kong-headquartered
                 parent company that also owns Milwaukee Tool, Ridgid, Hoover,
-                and Hart. Within TTI&apos;s portfolio, Ryobi is the value brand
-                — engineered to deliver 80-90% of Milwaukee&apos;s performance
+                and Hart. Within TTI&apos;s portfolio, Ryobi is the value brand. Engineered to deliver 80-90% of Milwaukee&apos;s performance
                 at 40-60% of the price, and distributed exclusively through
                 Home Depot in the US. Home Depot stocks every Ryobi SKU,
                 services warranties in-store, and runs seasonal promotions that
@@ -451,7 +450,7 @@ export default function RyobiLawnMowerReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                40V HP Brushless Self-Propelled — $549 (our pick)
+                40V HP Brushless Self-Propelled, $549 (our pick)
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For 90% of residential buyers, the 40V HP Brushless 21" is
@@ -467,7 +466,7 @@ export default function RyobiLawnMowerReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                40V 20" Push — $349
+                40V 20" Push, $349
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If your lawn is under 10,000 sq ft and relatively flat, the
@@ -479,7 +478,7 @@ export default function RyobiLawnMowerReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                80V HP Brushless 30" Ride-On — $3,799
+                80V HP Brushless 30" Ride-On, $3,799
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The 30" zero-turn ride-on is where Ryobi directly competes
@@ -493,7 +492,7 @@ export default function RyobiLawnMowerReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                80V HP Brushless 30" Rear Engine Rider — $4,299
+                80V HP Brushless 30" Rear Engine Rider, $4,299
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The rear-engine rider is the better pick if you have 2-3
@@ -679,7 +678,7 @@ export default function RyobiLawnMowerReview() {
                 California&apos;s 2024 CARB SORE rule banned the sale of new
                 gas engines under 25 HP statewide, effective January 1, 2024.
                 Ryobi 40V and 80V mowers were already the top-selling battery
-                mowers at Home Depot — the ban solidified them as the default
+                mowers at Home Depot, the ban solidified them as the default
                 Home Depot option. Stack an AQMD rebate with Home Depot&apos;s
                 typical spring-season $50-$100 off kit promotions and the
                 effective cost of the 40V HP Brushless self-propelled can
@@ -769,7 +768,7 @@ export default function RyobiLawnMowerReview() {
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      Home Depot exclusive — limits retail options
+                      Home Depot exclusive. limits retail options
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -822,7 +821,7 @@ export default function RyobiLawnMowerReview() {
                   <Check className='h-4 w-4 text-green-600 mt-1 shrink-0' />
                   <span>
                     <strong>2-3 acre homeowners</strong> considering an
-                    electric rider but priced out of EGO&apos;s Z6 — Ryobi
+                    electric rider but priced out of EGO&apos;s Z6. Ryobi
                     80V riders undercut EGO by $2,000+.
                   </span>
                 </li>
@@ -891,7 +890,7 @@ export default function RyobiLawnMowerReview() {
                     Can I use Ryobi 40V batteries across all their tools?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes, across 280+ tools — the largest single-battery
+                    Yes, across 280+ tools, the largest single-battery
                     platform on the market. 80V is separate; those batteries
                     only work with 80V outdoor equipment.
                   </p>
@@ -922,7 +921,7 @@ export default function RyobiLawnMowerReview() {
                 riders bring electric power to 2-3 acre homeowners at prices
                 gas-mower buyers can stomach. Home Depot exclusivity is a
                 real consideration, but for most California homeowners the
-                retail channel is more feature than bug — one-stop warranty
+                retail channel is more feature than bug. one-stop warranty
                 service at the same store the mower came from. Pair a Ryobi
                 40V HP Brushless with an AQMD rebate and you&apos;re
                 replacing a gas mower at a net cost under $300.

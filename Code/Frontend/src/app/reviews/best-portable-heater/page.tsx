@@ -100,7 +100,7 @@ const faqSchema = {
       name: 'Propane vs electric heater: which costs less to run?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'It depends on your local propane and electricity prices. At average 2026 U.S. rates, propane typically costs $1.50-2.50 per hour for a 9,000 BTU heater, while a 1,500W electric heater costs $0.20-0.35 per hour at $0.15-0.25/kWh. Electric heaters are usually cheaper to operate per hour, but propane heaters produce more BTUs and work during power outages.',
+        text: 'It depends on your local propane and electricity prices. At average 2026 U.S. Rates, propane typically costs $1.50-2.50 per hour for a 9,000 BTU heater, while a 1,500W electric heater costs $0.20-0.35 per hour at $0.15-0.25/kWh. Electric heaters are usually cheaper to operate per hour, but propane heaters produce more BTUs and work during power outages.',
       },
     },
     {
@@ -484,7 +484,7 @@ export default function BestPortableHeater() {
                   productKey="dewalt-dxh12b-6000-12000-btu"
                   source="best-portable-heater"
                   variant="primary"
-                  label="Check Price — DeWalt DXH12B -- 6,000-12,000 BTU"
+                  label="Check Price, DeWalt DXH12B -- 6,000-12,000 BTU"
                   showPrice
                 />
               </div>
@@ -608,7 +608,7 @@ export default function BestPortableHeater() {
                   productKey="lasko-755320-ceramic-tower-1500w-5118-btu"
                   source="best-portable-heater"
                   variant="primary"
-                  label="Check Price — Lasko 755320 Ceramic Tower -- 1,500W (5,118 BTU)"
+                  label="Check Price, Lasko 755320 Ceramic Tower -- 1,500W (5,118 BTU)"
                   showPrice
                 />
               </div>
@@ -732,7 +732,7 @@ export default function BestPortableHeater() {
                   productKey="campy-gear-chubby-2-in-1-9000-btu"
                   source="best-portable-heater"
                   variant="primary"
-                  label="Check Price — Campy Gear Chubby 2-in-1 -- 9,000 BTU"
+                  label="Check Price. Campy Gear Chubby 2-in-1 -- 9,000 BTU"
                   showPrice
                 />
               </div>

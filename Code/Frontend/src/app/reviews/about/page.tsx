@@ -34,7 +34,7 @@ export default function AboutPage() {
                 About GreenReviewsHub
               </h1>
               <p className='text-xl text-foreground/80 leading-relaxed'>
-                Independent, hands-on reviews of green-energy products — so you can make informed
+                Independent, hands-on reviews of green-energy products; so you can make informed
                 buying decisions without wading through manufacturer marketing.
               </p>
             </header>
@@ -46,9 +46,8 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                GreenReviewsHub exists because buying green-energy products — portable power
-                stations, e-bikes, mini splits, tankless water heaters, electric lawn equipment —
-                is hard. Specs are inconsistent across brands. Marketing claims are rarely
+                GreenReviewsHub exists because buying green-energy products, portable power
+                stations, e-bikes, mini splits, tankless water heaters, electric lawn equipment, is hard. Specs are inconsistent across brands. Marketing claims are rarely
                 verified. And most review sites publish thin listicles written by people who
                 have never actually used the products.
               </p>
@@ -73,7 +72,7 @@ export default function AboutPage() {
                 <li className='flex items-start gap-3'>
                   <CheckCircle className='h-5 w-5 text-primary mt-0.5 shrink-0' />
                   <span>
-                    <strong className='text-foreground'>Stage 1 — Specification verification.</strong>{' '}
+                    <strong className='text-foreground'>Stage 1, Specification verification.</strong>{' '}
                     We pull specs directly from the manufacturer&apos;s current product page,
                     cross-check against retailer listings, and verify claims like wattage, capacity,
                     and warranty terms through third-party sources. All numbers on our reviews are
@@ -85,7 +84,7 @@ export default function AboutPage() {
                   <span>
                     <strong className='text-foreground'>Stage 2 — Real-world use.</strong>{' '}
                     Wherever possible, our reviewers spend time with the product under normal home
-                    use conditions — actually running a refrigerator off a power station, riding an
+                    use conditions. actually running a refrigerator off a power station, riding an
                     e-bike for 50+ miles, installing a DIY mini split. Where we rely on aggregated
                     owner reviews instead of first-hand testing, we label it clearly.
                   </span>
@@ -93,7 +92,7 @@ export default function AboutPage() {
                 <li className='flex items-start gap-3'>
                   <CheckCircle className='h-5 w-5 text-primary mt-0.5 shrink-0' />
                   <span>
-                    <strong className='text-foreground'>Stage 3 — Competitive comparison.</strong>{' '}
+                    <strong className='text-foreground'>Stage 3, Competitive comparison.</strong>{' '}
                     No product exists in isolation. Every review places the product against 2-5
                     direct competitors at the same price tier and use case, so you can understand
                     trade-offs rather than being sold a single option.
@@ -102,7 +101,7 @@ export default function AboutPage() {
                 <li className='flex items-start gap-3'>
                   <CheckCircle className='h-5 w-5 text-primary mt-0.5 shrink-0' />
                   <span>
-                    <strong className='text-foreground'>Stage 4 — Honest recommendation.</strong>{' '}
+                    <strong className='text-foreground'>Stage 4. Honest recommendation.</strong>{' '}
                     We call out when a product is the wrong fit. We tell you who should NOT buy
                     it. If we can&apos;t recommend something for a given use case, we say so. The
                     goal is the right product for the right buyer — not the sale we get
@@ -120,7 +119,7 @@ export default function AboutPage() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 GreenReviewsHub is reader-supported. When you buy a product through a link on
-                this site, we may earn an affiliate commission — at no extra cost to you.
+                this site, we may earn an affiliate commission; at no extra cost to you.
                 That revenue pays for our testing and writing.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>

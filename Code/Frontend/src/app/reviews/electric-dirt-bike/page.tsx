@@ -21,14 +21,14 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-// Primary affiliate CTA for this hub — our overall top pick
+// Primary affiliate CTA for this hub, our overall top pick
 const PRIMARY_PRODUCT_KEY = 'sur-ron-light-bee-x';
 
 export const metadata: Metadata = {
   title:
     'Best Electric Dirt Bikes 2026: Full-Size, Kids, and Street Legal Options',
   description:
-    'Compare the best electric dirt bikes of 2026 — Sur-Ron Light Bee X, Talaria Sting R MX4, Segway X260, Kuberg Freerider, and the 80-HP Stark VARG. Full-size vs kids, street legal vs off-road, California CARB rules, battery range, and buying advice.',
+    'Compare the best electric dirt bikes of 2026, Sur-Ron Light Bee X, Talaria Sting R MX4, Segway X260, Kuberg Freerider, and the 80-HP Stark VARG. Full-size vs kids, street legal vs off-road, California CARB rules, battery range, and buying advice.',
   alternates: {
     canonical: '/reviews/electric-dirt-bike',
   },
@@ -130,7 +130,7 @@ const faqSchema = {
       name: 'Are electric dirt bikes allowed at motocross tracks?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Policies vary by track. Most California motocross tracks now allow electric dirt bikes and some have dedicated electric-only classes. The Stark VARG is AMA-legal for competition. Sur-Ron and Talaria typically ride in the 250cc or e-moto class depending on the track. Call ahead before your first visit — a few tracks still exclude electric bikes for liability reasons.',
+        text: 'Policies vary by track. Most California motocross tracks now allow electric dirt bikes and some have dedicated electric-only classes. The Stark VARG is AMA-legal for competition. Sur-Ron and Talaria typically ride in the 250cc or e-moto class depending on the track. Call ahead before your first visit; a few tracks still exclude electric bikes for liability reasons.',
       },
     },
   ],
@@ -193,7 +193,7 @@ export default function ElectricDirtBikeHub() {
               productKey={PRIMARY_PRODUCT_KEY}
               badge='Our Top Pick'
               rating={4.7}
-              verdict='The Sur-Ron Light Bee X is the best all-around electric dirt bike in 2026 — light enough to load into a pickup solo, quick enough to dust most trail riders, and cheap enough at $4,500 to be the obvious starting point for electric off-road.'
+              verdict='The Sur-Ron Light Bee X is the best all-around electric dirt bike in 2026; light enough to load into a pickup solo, quick enough to dust most trail riders, and cheap enough at $4,500 to be the obvious starting point for electric off-road.'
               pros={[
                 'Trail, single-track, and enduro use',
                 'Riders transitioning from bicycles or 125cc',
@@ -210,7 +210,7 @@ export default function ElectricDirtBikeHub() {
                 Electric dirt bikes have graduated from novelty to the fastest-growing segment in off-road motorcycling. In 2026, there is an electric option for every rider: an eight-year-old learning throttle control, a weekend trail rider who wants instant torque without waking the neighbors, and a pro-level racer chasing 450cc lap times on a bike that plugs into a wall outlet.
               </p>
               <p className='text-lg text-foreground/80 leading-relaxed mb-8'>
-                This guide covers the five electric dirt bikes that matter most right now — from the $4,500 Sur-Ron Light Bee X that kicked off the movement, to the $12,000 Stark VARG that is beating premium gas bikes in motocross. We&apos;ll walk through how to pick the right one for your terrain, your skill level, and your legal situation (spoiler: California is fussy about this).
+                This guide covers the five electric dirt bikes that matter most right now, from the $4,500 Sur-Ron Light Bee X that kicked off the movement, to the $12,000 Stark VARG that is beating premium gas bikes in motocross. We&apos;ll walk through how to pick the right one for your terrain, your skill level, and your legal situation (spoiler: California is fussy about this).
               </p>
             </div>
 
@@ -334,13 +334,13 @@ export default function ElectricDirtBikeHub() {
                 Full-Size vs Kids: Pick the Right Size
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Electric dirt bikes split cleanly into four size categories. Buying the wrong size is the single most common mistake first-time buyers make — an adult on a kids bike will break it; a small child on an adult bike will get hurt.
+                Electric dirt bikes split cleanly into four size categories. Buying the wrong size is the single most common mistake first-time buyers make, an adult on a kids bike will break it; a small child on an adult bike will get hurt.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Ages 3-6 (Balance and Intro Bikes)
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Kuberg Start, Stacyc 12, Razor MX125. Seat height 18-23 inches, top speed 5-15 mph, power under 500W. These are essentially balance bikes with a throttle — a great way to introduce young kids to power control without the complexity of gears or a clutch.
+                Kuberg Start, Stacyc 12, Razor MX125. Seat height 18-23 inches, top speed 5-15 mph, power under 500W. These are essentially balance bikes with a throttle, a great way to introduce young kids to power control without the complexity of gears or a clutch.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Ages 7-12 (Youth Motocross Size)
@@ -352,7 +352,7 @@ export default function ElectricDirtBikeHub() {
                 Teen & Small Adult (5&apos;2&quot; to 5&apos;8&quot;)
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sur-Ron Light Bee X, Talaria Sting, Segway X260. Seat height 33-36 inches, top speed 45-55 mph, power 5-8 kW. This is the sweet spot for most riders — enough bike to be genuinely fun, light enough to pick up when you crash, cheap enough not to cry about.
+                Sur-Ron Light Bee X, Talaria Sting, Segway X260. Seat height 33-36 inches, top speed 45-55 mph, power 5-8 kW. This is the sweet spot for most riders; enough bike to be genuinely fun, light enough to pick up when you crash, cheap enough not to cry about.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Full-Size Adult (5&apos;8&quot;+ and serious riders)
@@ -378,7 +378,7 @@ export default function ElectricDirtBikeHub() {
                 </li>
                 <li className='flex items-start gap-2'>
                   <span className='text-amber-400 font-bold'>2.</span>
-                  <span><strong>Buy a bike that ships street legal.</strong> Very few electric dirt bikes qualify — in the U.S. the KTM Freeride E-XC (import only) and the forthcoming dual-sport Stark are the main options. Expect $11,000+ and a motorcycle-specific title.</span>
+                  <span><strong>Buy a bike that ships street legal.</strong> Very few electric dirt bikes qualify, in the U.S. The KTM Freeride E-XC (import only) and the forthcoming dual-sport Stark are the main options. Expect $11,000+ and a motorcycle-specific title.</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <span className='text-amber-400 font-bold'>3.</span>
@@ -397,16 +397,16 @@ export default function ElectricDirtBikeHub() {
 
               {/* Product Deep Dives */}
               <h2 id='sur-ron' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                1. Sur-Ron Light Bee X — Best Overall
+                1. Sur-Ron Light Bee X, Best Overall
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $4,500 · <strong>Power:</strong> 6 kW peak · <strong>Top speed:</strong> 47 mph · <strong>Weight:</strong> 110 lbs · <strong>Range:</strong> 60-75 miles trail
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Light Bee X is the bike that created the modern electric dirt bike category. Sur-Ron has been iterating on this platform since 2018, and the current X model is the refined product of seven years of feedback. It&apos;s built around a lightweight aluminum frame, a 6 kW peak mid-drive motor, and a 60V / 40Ah battery pack. Adjustable suspension front and rear, hydraulic disc brakes, and a proper throttle map for sport mode vs eco mode make it feel like a real motorcycle — because at this point, it is.
+                The Light Bee X is the bike that created the modern electric dirt bike category. Sur-Ron has been iterating on this platform since 2018, and the current X model is the refined product of seven years of feedback. It&apos;s built around a lightweight aluminum frame, a 6 kW peak mid-drive motor, and a 60V / 40Ah battery pack. Adjustable suspension front and rear, hydraulic disc brakes, and a proper throttle map for sport mode vs eco mode make it feel like a real motorcycle, because at this point, it is.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                What makes it the overall winner is the price-to-capability ratio. At $4,500 it undercuts every comparable bike, and it&apos;s light enough (110 lbs) that one adult can wrestle it into a pickup bed without a ramp. The aftermarket is enormous — want bigger tires, more power, a longer-range battery, street-legal conversion? There&apos;s a kit for it. Sur-Ron spare parts are everywhere; your local motorcycle shop probably stocks them.
+                What makes it the overall winner is the price-to-capability ratio. At $4,500 it undercuts every comparable bike, and it&apos;s light enough (110 lbs) that one adult can wrestle it into a pickup bed without a ramp. The aftermarket is enormous. Want bigger tires, more power, a longer-range battery, street-legal conversion? There&apos;s a kit for it. Sur-Ron spare parts are everywhere; your local motorcycle shop probably stocks them.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The weaknesses are honest: the seat is punishingly firm after an hour, the suspension is underdamped for bigger riders, and the controller is known to fail if you ride it hard in deep sand. For 80% of trail use, none of that matters.
@@ -445,16 +445,16 @@ export default function ElectricDirtBikeHub() {
               </div>
 
               <h2 id='segway' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                3. Segway X260 — Best Ergonomics for Adult Beginners
+                3. Segway X260, Best Ergonomics for Adult Beginners
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $6,000 · <strong>Power:</strong> 7 kW peak · <strong>Top speed:</strong> 50 mph · <strong>Weight:</strong> 121 lbs · <strong>Range:</strong> Up to 75 miles
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Segway Powersports isn&apos;t the scooter company — it&apos;s a full-line powersports brand that shares a parent company with Ninebot. The X260 is the flagship off-road electric dirt bike in the lineup. What separates it from Sur-Ron and Talaria is manufacturing polish. Fit and finish on a Segway feels more &quot;bought at a dealership&quot; and less &quot;built in a garage&quot; — welds are cleaner, plastics fit tighter, the harness is better routed.
+                Segway Powersports isn&apos;t the scooter company, it&apos;s a full-line powersports brand that shares a parent company with Ninebot. The X260 is the flagship off-road electric dirt bike in the lineup. What separates it from Sur-Ron and Talaria is manufacturing polish. Fit and finish on a Segway feels more &quot;bought at a dealership&quot; and less &quot;built in a garage&quot; — welds are cleaner, plastics fit tighter, the harness is better routed.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The X260 has a roomier cockpit and more neutral ergonomics than the Sur-Ron, which makes it a great pick for taller adult beginners who find the Light Bee X a bit cramped. The 7.2 kWh battery pack is larger than what Sur-Ron ships stock, so range is genuinely 75+ miles in eco mode. The trade-off is weight — at 121 lbs it&apos;s 11 lbs heavier than the Sur-Ron — and price, at $1,500 more.
+                The X260 has a roomier cockpit and more neutral ergonomics than the Sur-Ron, which makes it a great pick for taller adult beginners who find the Light Bee X a bit cramped. The 7.2 kWh battery pack is larger than what Sur-Ron ships stock, so range is genuinely 75+ miles in eco mode. The trade-off is weight, at 121 lbs it&apos;s 11 lbs heavier than the Sur-Ron, and price, at $1,500 more.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Segway also has a proper dealer network and a real service warranty, which matters if you&apos;re not a DIY mechanic. For anyone who wants an electric dirt bike without the weekend-project energy of a Sur-Ron, this is the pick.
@@ -469,16 +469,16 @@ export default function ElectricDirtBikeHub() {
               </div>
 
               <h2 id='kuberg' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                4. Kuberg Freerider — Best for Kids (Ages 8-14)
+                4. Kuberg Freerider; Best for Kids (Ages 8-14)
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $6,500 · <strong>Power:</strong> 5 kW peak · <strong>Top speed:</strong> 34 mph (adjustable) · <strong>Weight:</strong> 85 lbs · <strong>Range:</strong> 60-90 minutes
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Kuberg is a Czech manufacturer that&apos;s been building electric dirt bikes for kids since 2006 — they were in this space before Sur-Ron existed. The Freerider is their flagship youth motocross bike, sized for riders 8-14 years old, with parent-controlled speed limiters in three stages: 14 mph (learning), 22 mph (intermediate), 34 mph (advanced).
+                Kuberg is a Czech manufacturer that&apos;s been building electric dirt bikes for kids since 2006, they were in this space before Sur-Ron existed. The Freerider is their flagship youth motocross bike, sized for riders 8-14 years old, with parent-controlled speed limiters in three stages: 14 mph (learning), 22 mph (intermediate), 34 mph (advanced).
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                What separates the Freerider from cheaper kids bikes is that it&apos;s a real motocross bike, not a toy. Adjustable suspension, hydraulic brakes, proper 17-inch motocross tires, and a chassis geometry that teaches correct standing-rider technique. Kids who learn on a Freerider actually learn to ride — not just to pin the throttle.
+                What separates the Freerider from cheaper kids bikes is that it&apos;s a real motocross bike, not a toy. Adjustable suspension, hydraulic brakes, proper 17-inch motocross tires, and a chassis geometry that teaches correct standing-rider technique. Kids who learn on a Freerider actually learn to ride, not just to pin the throttle.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Price is the hang-up. At $6,500 it&apos;s more than most adults spend on their bike. But if your kid is serious about riding, it will resell for 60-70% of purchase price in two years when they outgrow it, and the lessons learned on proper equipment are worth the cost.
@@ -493,7 +493,7 @@ export default function ElectricDirtBikeHub() {
               </div>
 
               <h2 id='stark' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                5. Stark VARG — Best Performance (Pro/Expert Only)
+                5. Stark VARG. Best Performance (Pro/Expert Only)
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $12,000+ · <strong>Power:</strong> 80 hp / 60 kW · <strong>Top speed:</strong> 90+ mph · <strong>Weight:</strong> 243 lbs · <strong>Runtime:</strong> 1.5-3 hours depending on map
@@ -524,7 +524,7 @@ export default function ElectricDirtBikeHub() {
                 Battery &amp; Range: What to Expect in the Real World
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Manufacturer range claims on electric dirt bikes are — like EV range claims — optimistic. Real-world range depends heavily on three factors: riding style, rider weight, and terrain.
+                Manufacturer range claims on electric dirt bikes are. Like EV range claims. Optimistic. Real-world range depends heavily on three factors: riding style, rider weight, and terrain.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 A 170-pound rider cruising single-track in eco mode at 20 mph will see roughly double the range of a 220-pound rider hammering wide-open sand dunes in sport mode. Manufacturer claims are typically measured at the low end of that range.
@@ -569,13 +569,13 @@ export default function ElectricDirtBikeHub() {
                 OHV Registration (Green or Red Sticker)
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                To ride on California state-managed OHV land — Hungry Valley, Ocotillo Wells, Clay Pit, Prairie City, Hollister Hills — you need to register your bike as an off-highway vehicle with the DMV and display either a green sticker (year-round riding on all OHV lands) or red sticker (restricted seasons in certain areas). Registration costs $54 for two years. Electric dirt bikes automatically qualify for green-sticker status because they produce zero emissions.
+                To ride on California state-managed OHV land, Hungry Valley, Ocotillo Wells, Clay Pit, Prairie City, Hollister Hills — you need to register your bike as an off-highway vehicle with the DMV and display either a green sticker (year-round riding on all OHV lands) or red sticker (restricted seasons in certain areas). Registration costs $54 for two years. Electric dirt bikes automatically qualify for green-sticker status because they produce zero emissions.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Street Conversion &amp; CARB
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Converting an off-road electric bike to street-legal status in California requires the bike&apos;s manufacturer to have filed a CARB Executive Order for that model — and most off-road electric dirt bike manufacturers haven&apos;t. That means even if you install DOT lighting, mirrors, and street tires, the DMV will often refuse registration. Sur-Ron, Talaria, and Segway have all struggled here. The ethical advice is: if you need a street-legal electric dirt bike in California, buy one that&apos;s homologated for street use from the factory (Zero FX, KTM Freeride E-XC import, or an e-moped class bike that caps at 30 mph).
+                Converting an off-road electric bike to street-legal status in California requires the bike&apos;s manufacturer to have filed a CARB Executive Order for that model, and most off-road electric dirt bike manufacturers haven&apos;t. That means even if you install DOT lighting, mirrors, and street tires, the DMV will often refuse registration. Sur-Ron, Talaria, and Segway have all struggled here. The ethical advice is: if you need a street-legal electric dirt bike in California, buy one that&apos;s homologated for street use from the factory (Zero FX, KTM Freeride E-XC import, or an e-moped class bike that caps at 30 mph).
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Where You Can Legally Ride
@@ -594,15 +594,15 @@ export default function ElectricDirtBikeHub() {
               <ul className='space-y-2 text-foreground/80 mb-6'>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>DOT/Snell motocross helmet</strong> ($150-$500) — not a bicycle helmet. A proper MX lid covers the jaw and has ECE or Snell certification.</span>
+                  <span><strong>DOT/Snell motocross helmet</strong> ($150-$500), not a bicycle helmet. A proper MX lid covers the jaw and has ECE or Snell certification.</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>Goggles</strong> ($30-$80) — the bike is quiet but the roost from a rider in front of you is not. Eye protection is non-negotiable.</span>
+                  <span><strong>Goggles</strong> ($30-$80). The bike is quiet but the roost from a rider in front of you is not. Eye protection is non-negotiable.</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>Chest protector / body armor</strong> ($80-$200) — protects ribs and sternum from rocks kicked up by other riders.</span>
+                  <span><strong>Chest protector / body armor</strong> ($80-$200). Protects ribs and sternum from rocks kicked up by other riders.</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
@@ -610,11 +610,11 @@ export default function ElectricDirtBikeHub() {
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>Motocross boots</strong> ($150-$400) — ankle support and impact protection. Hiking boots are not a substitute.</span>
+                  <span><strong>Motocross boots</strong> ($150-$400), ankle support and impact protection. Hiking boots are not a substitute.</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span><strong>Gloves</strong> ($25-$60) — protect palms during crashes and reduce arm-pump on long rides.</span>
+                  <span><strong>Gloves</strong> ($25-$60). Protect palms during crashes and reduce arm-pump on long rides.</span>
                 </li>
               </ul>
 
@@ -668,7 +668,7 @@ export default function ElectricDirtBikeHub() {
                     Can I ride at motocross tracks?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Most California tracks allow electric bikes now and some have dedicated electric-only classes. Call ahead before your first visit — a handful still exclude electric bikes.
+                    Most California tracks allow electric bikes now and some have dedicated electric-only classes. Call ahead before your first visit, a handful still exclude electric bikes.
                   </p>
                 </div>
               </div>
@@ -681,7 +681,7 @@ export default function ElectricDirtBikeHub() {
                 For 80% of adult trail riders, the <strong>Sur-Ron Light Bee X</strong> at $4,500 is the right answer. Light enough to load alone, cheap enough to crash, capable enough to dust most gas-powered kids on tight single-track. For kids, the <strong>Kuberg Freerider</strong> is the only serious pick. For racers already riding intermediate motocross, the <strong>Stark VARG</strong> is worth every dollar of the $12,000 sticker. Anyone in between should look hard at the Talaria Sting R MX4 for aggressive riders or the Segway X260 for comfort-focused adult beginners.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The technology has matured fast. A 2026 electric dirt bike is a legitimate alternative to a gas bike — not a compromise. Just be clear on whether you&apos;re riding off-road, street, or both, because that decision dictates which bike you should buy.
+                The technology has matured fast. A 2026 electric dirt bike is a legitimate alternative to a gas bike, not a compromise. Just be clear on whether you&apos;re riding off-road, street, or both, because that decision dictates which bike you should buy.
               </p>
             </div>
 

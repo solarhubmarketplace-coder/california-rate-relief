@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title:
       'EcoFlow Delta 2 Review (2026): Best Mid-Range Portable Power Station?',
     description:
-      'Detailed review of the EcoFlow Delta 2 — 1,024 Wh LFP battery, 1,800W output with X-Boost to 2,200W, 27 lbs. Is it worth $849?',
+      'Detailed review of the EcoFlow Delta 2. 1,024 Wh LFP battery, 1,800W output with X-Boost to 2,200W, 27 lbs. Is it worth $849?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -228,7 +228,7 @@ export default function EcoFlowDelta2Review() {
               verdict='1,024 Wh LFP, 1,800W output with X-Boost to 2,200W, 27 lbs, expandable to 3,072 Wh. The sweet spot between portability and power.'
               pros={[
                 'Fast 0-80% AC charge in 50 min',
-                'LFP chemistry — 3,000+ cycles',
+                'LFP chemistry, 3,000+ cycles',
                 'Expandable to 3,072 Wh',
                 '27 lbs, easy to carry',
               ]}
@@ -473,7 +473,7 @@ export default function EcoFlowDelta2Review() {
                 The 2,700W surge rating means the Delta 2 can handle motor
                 startup loads from refrigerator compressors, power tools,
                 and pumps that briefly spike above 1,800W. This is critical
-                for real-world usability — a fridge that draws 150W running
+                for real-world usability. A fridge that draws 150W running
                 might spike to 1,200W on startup, and the Delta 2 handles
                 that without blinking.
               </p>
@@ -531,7 +531,7 @@ export default function EcoFlowDelta2Review() {
                 the battery overnight running a fridge and lights, then
                 recharge it during the day while you are out hiking. In
                 California&apos;s 5-6 peak sun hours, a single 220W panel
-                produces roughly 1,000-1,100 Wh per day — enough to
+                produces roughly 1,000-1,100 Wh per day. enough to
                 fully replenish the Delta 2 with margin to spare.
               </p>
             </div>
@@ -781,8 +781,8 @@ export default function EcoFlowDelta2Review() {
                     'CPAP machine — 2-3 nights',
                     'Phone and tablet charging — days',
                     'LED lighting — 15+ hours',
-                    'Laptop for remote work — 10+ hours',
-                    'Refrigerator — 5-10 hours (bridge until power returns)',
+                    'Laptop for remote work, 10+ hours',
+                    'Refrigerator, 5-10 hours (bridge until power returns)',
                   ].map((item) => (
                     <li
                       key={item}
@@ -925,7 +925,7 @@ export default function EcoFlowDelta2Review() {
                       'LFP battery with 3,000+ cycle lifespan',
                       'X-Stream charging: 0-80% in 50 minutes',
                       'X-Boost handles 2,200W appliances',
-                      'Only 27 lbs — genuinely portable',
+                      'Only 27 lbs, genuinely portable',
                       'UPS mode with <30ms switchover',
                       'Excellent EcoFlow app with scheduled charging',
                       '2x USB-C at 100W each',
@@ -997,7 +997,7 @@ export default function EcoFlowDelta2Review() {
                     controller. A single 220W panel charges it in 5-6
                     hours; two panels in parallel (440W) drop that to 2.5-3
                     hours. Any solar panel with an MC4 or XT60 connector
-                    works — you are not locked into EcoFlow panels.
+                    works, you are not locked into EcoFlow panels.
                   </p>
                 </div>
 
@@ -1078,7 +1078,7 @@ export default function EcoFlowDelta2Review() {
                 The EcoFlow Delta 2 is the best portable power station for
                 people who actually want to carry it somewhere. That sounds
                 obvious, but it matters. The market is trending toward
-                bigger, heavier, more powerful units — and most of them
+                bigger, heavier, more powerful units, and most of them
                 spend their entire lives in a garage. If you need a unit
                 that moves between your car, campsite, home office, and
                 patio, the Delta 2&apos;s 27-lb form factor is genuinely
@@ -1133,7 +1133,7 @@ export default function EcoFlowDelta2Review() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Final Verdict'
-              verdict='The portable power station that actually earns the word portable — 1,024 Wh of LFP capacity you can carry in one hand.'
+              verdict='The portable power station that actually earns the word portable, 1,024 Wh of LFP capacity you can carry in one hand.'
               source='ecoflow-delta-2'
               variant='final'
             />

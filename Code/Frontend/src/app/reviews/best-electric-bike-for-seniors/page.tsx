@@ -123,7 +123,7 @@ const faqSchema = {
       name: 'What is the best budget electric bike for seniors?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Lectric XP Lite 2.0 at $799 is the best budget option for seniors. It offers a step-through frame, pedal assist and throttle, 40-mile range, and weighs just 46 lbs — the lightest bike on our list. The tradeoff is a smaller 48V 7.8Ah battery and mechanical disc brakes instead of hydraulic. For seniors who want more features without breaking the bank, the Blix Sol Eclipse at $1,599 offers excellent value with a mid-drive motor and larger battery.',
+        text: 'The Lectric XP Lite 2.0 at $799 is the best budget option for seniors. It offers a step-through frame, pedal assist and throttle, 40-mile range, and weighs just 46 lbs, the lightest bike on our list. The tradeoff is a smaller 48V 7.8Ah battery and mechanical disc brakes instead of hydraulic. For seniors who want more features without breaking the bank, the Blix Sol Eclipse at $1,599 offers excellent value with a mid-drive motor and larger battery.',
       },
     },
   ],
@@ -281,7 +281,7 @@ export default function BestElectricBikeForSeniors() {
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
                 Electric bikes are transforming the way older adults stay active, run errands, and
                 enjoy the outdoors. With pedal assist doing the heavy lifting on hills and headwinds,
-                an e-bike lets you ride farther and longer than a traditional bicycle — without the
+                an e-bike lets you ride farther and longer than a traditional bicycle, without the
                 joint strain. But not every e-bike is built with seniors in mind.
               </p>
               <p className="text-lg leading-relaxed mb-8" style={{ color: '#a1a1aa' }}>
@@ -303,7 +303,7 @@ export default function BestElectricBikeForSeniors() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Rad Power RadCity 5 Plus — Best Overall
+                      Rad Power RadCity 5 Plus, Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The complete package for senior riders. 750W motor handles any hill, hydraulic
@@ -329,7 +329,7 @@ export default function BestElectricBikeForSeniors() {
                   <span className="flex-shrink-0 w-7 h-7 bg-amber-700 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Gazelle Medeo T9 — Best Premium
+                      Gazelle Medeo T9, Best Premium
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Dutch-engineered with a Bosch mid-drive motor, internal gear hub, and
@@ -349,7 +349,7 @@ export default function BestElectricBikeForSeniors() {
               </h2>
               <div className="rounded-xl p-6 border mb-6" style={{ backgroundColor: '#141414', borderColor: '#27272a' }}>
                 <p className="mb-4" style={{ color: '#d4d4d8' }}>
-                  Every bike on this list features a step-through frame — and that is not negotiable
+                  Every bike on this list features a step-through frame. and that is not negotiable
                   for senior riders. Here is why this single design choice matters more than any
                   other spec:
                 </p>
@@ -481,7 +481,7 @@ export default function BestElectricBikeForSeniors() {
                     that most riders can flat-foot at stops.
                   </p>
                   <p className="mb-6" style={{ color: '#d4d4d8' }}>
-                    Hydraulic disc brakes are a standout at this price point — many competitors
+                    Hydraulic disc brakes are a standout at this price point, many competitors
                     still use mechanical brakes under $2,000. The integrated rear rack supports
                     up to 50 lbs, making grocery runs effortless. Puncture-resistant tires and
                     integrated front and rear lights round out a package that is genuinely ready
@@ -526,7 +526,7 @@ export default function BestElectricBikeForSeniors() {
                       productKey="rad-power-radcity-5-plus"
                       source="electric-bike-for-seniors-hub"
                       variant="primary"
-                      label="Check Price — Rad Power RadCity 5 Plus"
+                      label="Check Price; Rad Power RadCity 5 Plus"
                       showPrice
                     />
                   </div>
@@ -551,7 +551,7 @@ export default function BestElectricBikeForSeniors() {
                   </div>
                   <p className="mb-4" style={{ color: '#d4d4d8' }}>
                     The Aventon Pace 500.3 strikes an excellent balance between performance and
-                    affordability. The torque sensor is the standout feature here — unlike
+                    affordability. The torque sensor is the standout feature here, unlike
                     cadence-based systems that deliver power in an on/off fashion, the torque
                     sensor responds proportionally to how hard you pedal. This makes the ride
                     feel natural and intuitive, which is especially valuable for seniors who
@@ -602,7 +602,7 @@ export default function BestElectricBikeForSeniors() {
                       productKey="aventon-pace-500-3"
                       source="electric-bike-for-seniors-hub"
                       variant="primary"
-                      label="Check Price — Aventon Pace 500.3"
+                      label="Check Price, Aventon Pace 500.3"
                       showPrice
                     />
                   </div>
@@ -647,7 +647,7 @@ export default function BestElectricBikeForSeniors() {
                           'Unbeatable price at $799',
                           'Lightest bike on this list at just 46 lbs',
                           'Foldable design for easy car transport',
-                          'Simple controls — easy to learn quickly',
+                          'Simple controls. Easy to learn quickly',
                           'Excellent entry point for first-time riders',
                         ].map((pro) => (
                           <li key={pro} className="flex items-start gap-2 text-sm" style={{ color: '#a1a1aa' }}>
@@ -678,7 +678,7 @@ export default function BestElectricBikeForSeniors() {
                       productKey="lectric-xp-lite-2-0"
                       source="electric-bike-for-seniors-hub"
                       variant="primary"
-                      label="Check Price — Lectric XP Lite 2.0"
+                      label="Check Price. Lectric XP Lite 2.0"
                       showPrice
                     />
                   </div>
@@ -711,7 +711,7 @@ export default function BestElectricBikeForSeniors() {
                   <p className="mb-6" style={{ color: '#d4d4d8' }}>
                     The real differentiator is Pedego&apos;s dealer network. With over 200 local
                     stores across the US, you get in-person test rides, professional assembly,
-                    and face-to-face service — a major comfort factor for seniors who do not want
+                    and face-to-face service, a major comfort factor for seniors who do not want
                     to assemble a bike from a box or troubleshoot issues via email. The 5-year
                     warranty is the best in the industry.
                   </p>
@@ -738,7 +738,7 @@ export default function BestElectricBikeForSeniors() {
                       <ul className="space-y-1">
                         {[
                           'Most expensive non-premium bike at $2,995',
-                          '500W motor — less hill-climbing power than RadCity',
+                          '500W motor. less hill-climbing power than RadCity',
                           'Heavier than some competitors at 58 lbs',
                         ].map((con) => (
                           <li key={con} className="flex items-start gap-2 text-sm" style={{ color: '#a1a1aa' }}>
@@ -754,7 +754,7 @@ export default function BestElectricBikeForSeniors() {
                       productKey="pedego-boomerang-plus"
                       source="electric-bike-for-seniors-hub"
                       variant="primary"
-                      label="Check Price — Pedego Boomerang Plus"
+                      label="Check Price, Pedego Boomerang Plus"
                       showPrice
                     />
                   </div>
@@ -781,7 +781,7 @@ export default function BestElectricBikeForSeniors() {
                     Royal Dutch Gazelle has been building bicycles since 1892, and that heritage
                     shows in every detail of the Medeo T9. The Bosch Active Line Plus mid-drive
                     motor delivers power through the drivetrain rather than at the wheel, creating
-                    a riding experience that feels like natural pedaling with a tailwind — not
+                    a riding experience that feels like natural pedaling with a tailwind, not
                     like a motor pushing you forward.
                   </p>
                   <p className="mb-6" style={{ color: '#d4d4d8' }}>
@@ -797,7 +797,7 @@ export default function BestElectricBikeForSeniors() {
                       <p className="font-semibold text-sm mb-2" style={{ color: '#22c55e' }}>Pros</p>
                       <ul className="space-y-1">
                         {[
-                          'Bosch mid-drive motor — smoothest pedal assist',
+                          'Bosch mid-drive motor. smoothest pedal assist',
                           'Internal 9-speed hub — shift while stopped',
                           'Up to 60 miles range on moderate assist',
                           'Exceptional build quality and finish',
@@ -831,7 +831,7 @@ export default function BestElectricBikeForSeniors() {
                       productKey="gazelle-medeo-t9"
                       source="electric-bike-for-seniors-hub"
                       variant="primary"
-                      label="Check Price — Gazelle Medeo T9"
+                      label="Check Price. Gazelle Medeo T9"
                       showPrice
                     />
                   </div>
@@ -863,7 +863,7 @@ export default function BestElectricBikeForSeniors() {
                   </p>
                   <p className="mb-6" style={{ color: '#d4d4d8' }}>
                     The Sol Eclipse is also one of the more aesthetically refined bikes on this
-                    list — the battery is semi-integrated into the downtube, and the overall
+                    list; the battery is semi-integrated into the downtube, and the overall
                     profile looks more like a regular bicycle than an electrified one. For seniors
                     who want the mid-drive experience without paying Gazelle or Bosch premium
                     prices, this is the one to consider.
@@ -907,7 +907,7 @@ export default function BestElectricBikeForSeniors() {
                       productKey="blix-sol-eclipse"
                       source="electric-bike-for-seniors-hub"
                       variant="primary"
-                      label="Check Price — Blix Sol Eclipse"
+                      label="Check Price, Blix Sol Eclipse"
                       showPrice
                     />
                   </div>
@@ -928,7 +928,7 @@ export default function BestElectricBikeForSeniors() {
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Look for swept-back handlebars and an adjustable stem that lets you sit tall
                       rather than hunched forward. This reduces strain on your neck, shoulders, and
-                      wrists — especially on rides longer than 30 minutes. The Pedego Boomerang
+                      wrists, especially on rides longer than 30 minutes. The Pedego Boomerang
                       Plus and Gazelle Medeo T9 excel here.
                     </p>
                   </div>
@@ -945,7 +945,7 @@ export default function BestElectricBikeForSeniors() {
                     <h3 className="font-semibold mb-2" style={{ color: '#f5f5f5' }}>Saddle Quality</h3>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Most stock saddles are mediocre regardless of the bike&apos;s price. Budget $30-60
-                      for an ergonomic saddle with memory foam or gel padding — it will transform your
+                      for an ergonomic saddle with memory foam or gel padding, it will transform your
                       riding experience. Look for saddles with a pressure-relief channel down the center.
                     </p>
                   </div>
@@ -973,7 +973,7 @@ export default function BestElectricBikeForSeniors() {
                     <h3 className="font-semibold mb-3" style={{ color: '#f5f5f5' }}>Before You Ride</h3>
                     <ul className="space-y-2">
                       {[
-                        'Always wear a properly fitted helmet — MIPS technology recommended',
+                        'Always wear a properly fitted helmet. MIPS technology recommended',
                         'Start on the lowest pedal assist level until comfortable',
                         'Practice braking in an empty parking lot before riding in traffic',
                         'Ensure your feet can touch the ground when seated',
@@ -990,10 +990,10 @@ export default function BestElectricBikeForSeniors() {
                     <h3 className="font-semibold mb-3" style={{ color: '#f5f5f5' }}>While Riding</h3>
                     <ul className="space-y-2">
                       {[
-                        'Use both brakes simultaneously — front provides 70% stopping power',
+                        'Use both brakes simultaneously, front provides 70% stopping power',
                         'Signal turns with hand signals or electronic turn signals',
                         'Ride with traffic, not against it, and use bike lanes when available',
-                        'Be extra cautious at intersections — most accidents happen there',
+                        'Be extra cautious at intersections, most accidents happen there',
                         'Consider a mirror attachment for checking traffic behind you',
                       ].map((tip) => (
                         <li key={tip} className="flex items-start gap-2 text-sm" style={{ color: '#a1a1aa' }}>
@@ -1012,7 +1012,7 @@ export default function BestElectricBikeForSeniors() {
                   <p className="text-sm" style={{ color: '#a1a1aa' }}>
                     Hydraulic disc brakes require significantly less hand pressure than mechanical
                     brakes or rim brakes. For seniors with reduced grip strength or arthritis in
-                    their hands, this is not a luxury — it is a safety requirement. Five of the
+                    their hands, this is not a luxury, it is a safety requirement. Five of the
                     six bikes on our list include hydraulic disc brakes. Only the budget Lectric
                     XP Lite 2.0 uses mechanical brakes.
                   </p>
@@ -1088,7 +1088,7 @@ export default function BestElectricBikeForSeniors() {
                   The Bottom Line
                 </h2>
                 <p className="mb-4" style={{ color: '#d4d4d8' }}>
-                  An electric bike can genuinely change your daily life as a senior — keeping you
+                  An electric bike can genuinely change your daily life as a senior; keeping you
                   active, independent, and outdoors without the physical strain of a traditional
                   bicycle. The key is choosing a model that prioritizes safety and comfort over
                   raw speed or flashy specs.

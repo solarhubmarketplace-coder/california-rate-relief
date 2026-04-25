@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title:
       'EGO Select Cut XP Mower Review (LM2156SP): The Best Electric Lawn Mower in 2026?',
     description:
-      'Detailed review of the EGO Power+ Select Cut XP self-propelled mower — 21-inch steel deck, 3 swappable blade types, 56V ARC Lithium battery, up to 60 min runtime. Is it worth $799?',
+      'Detailed review of the EGO Power+ Select Cut XP self-propelled mower, 21-inch steel deck, 3 swappable blade types, 56V ARC Lithium battery, up to 60 min runtime. Is it worth $799?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -156,7 +156,7 @@ const faqSchema = {
       name: 'Is the EGO Select Cut XP worth it over the standard EGO mower?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'If you deal with varying grass conditions — thick patches, wet grass, different seasons — the Select Cut system is absolutely worth the upgrade. The ability to swap blade types means you always have the right tool for the job. If you have a small, uniform lawn under 1/4 acre, the standard EGO mower will serve you fine and save $100-150.',
+        text: 'If you deal with varying grass conditions, thick patches, wet grass, different seasons. The Select Cut system is absolutely worth the upgrade. The ability to swap blade types means you always have the right tool for the job. If you have a small, uniform lawn under 1/4 acre, the standard EGO mower will serve you fine and save $100-150.',
       },
     },
     {
@@ -270,7 +270,7 @@ export default function EgoSelectCutMowerReview() {
                 The EGO Power+ Select Cut XP (LM2156SP) is the electric mower
                 that finally makes the &quot;as good as gas&quot; argument
                 irrelevant. The Select Cut multi-blade system is the real
-                differentiator — three swappable blade types mean you always
+                differentiator. three swappable blade types mean you always
                 have the right blade for the job, whether you&apos;re mulching
                 dry clippings, bagging thick wet grass, or stretching battery
                 life on a big yard. At $799 with the 10.0Ah battery, it
@@ -450,7 +450,7 @@ export default function EgoSelectCutMowerReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 Electric mowers have been &quot;good enough&quot; for a few years now.
-                But &quot;good enough&quot; still meant compromises — you picked one
+                But &quot;good enough&quot; still meant compromises, you picked one
                 blade type and hoped it worked for every situation your lawn threw
                 at you. Wet spring grass? Tough luck, your mulching blade clumps.
                 Fall leaves mixed with long growth? Your standard blade just pushes
@@ -538,7 +538,7 @@ export default function EgoSelectCutMowerReview() {
                     </h3>
                   </div>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
-                    Designed for maximum efficiency — lower drag on the motor means
+                    Designed for maximum efficiency, lower drag on the motor means
                     more minutes per charge. Ideal for larger yards where you need
                     every minute of battery life, or for light weekly maintenance
                     mowing where aggressive cutting is overkill. You trade a small
@@ -605,7 +605,7 @@ export default function EgoSelectCutMowerReview() {
               </div>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 For most suburban lawns (1/4 to 1/2 acre), one charge is plenty.
-                If you have a bigger property, pick up a second battery — the
+                If you have a bigger property, pick up a second battery. the
                 swap takes under 10 seconds. EGO batteries charge from zero to full
                 in about 40 minutes with the Rapid Charger, or roughly an hour with
                 the standard charger included in the kit.
@@ -615,7 +615,7 @@ export default function EgoSelectCutMowerReview() {
                 maintain consistent power output until they&apos;re depleted. Unlike
                 some cheaper electrics that slow down as the battery drains, the
                 Select Cut XP cuts at full speed from start to finish. The blade
-                doesn&apos;t gradually lose RPM — it just stops when the battery
+                doesn&apos;t gradually lose RPM, it just stops when the battery
                 is empty.
               </p>
             </section>
@@ -638,7 +638,7 @@ export default function EgoSelectCutMowerReview() {
                 wet corner near the sprinkler heads, you&apos;d normally need to
                 mow twice or accept an uneven result. With the high lift blade, the
                 strong airflow lifts every blade of grass to the same height before
-                cutting — even in the damp patches that make standard blades clump
+                cutting, even in the damp patches that make standard blades clump
                 and skip.
               </p>
               <p className='text-foreground/80 leading-relaxed'>
@@ -656,8 +656,7 @@ export default function EgoSelectCutMowerReview() {
                 Self-Propelled Performance
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                At 77.2 lbs with the battery, you absolutely want self-propulsion —
-                and the LM2156SP delivers. The variable-speed rear wheel drive
+                At 77.2 lbs with the battery, you absolutely want self-propulsion, and the LM2156SP delivers. The variable-speed rear wheel drive
                 lets you dial in exactly the pace you want, from a slow crawl for
                 tight edges to a brisk walk for open stretches.
               </p>
@@ -672,7 +671,7 @@ export default function EgoSelectCutMowerReview() {
                 comfortably. You&apos;re not fighting the mower uphill or chasing
                 it downhill. For steep grades, bump up the speed and let the drive
                 system carry the weight. The only limitation is on very wet,
-                steep slopes where any mower — gas or electric — would struggle
+                steep slopes where any mower — gas or electric. Would struggle
                 for traction.
               </p>
             </section>
@@ -685,7 +684,7 @@ export default function EgoSelectCutMowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 This is where electric mowers have an overwhelming advantage, and
                 the numbers don&apos;t fully convey the difference. The EGO Select
-                Cut runs at approximately 65 dB — roughly the volume of a normal
+                Cut runs at approximately 65 dB, roughly the volume of a normal
                 conversation or a running dishwasher. A typical gas mower sits at
                 90-95 dB.
               </p>
@@ -724,7 +723,7 @@ export default function EgoSelectCutMowerReview() {
                 </div>
               </div>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                Decibels are logarithmic — a 25 dB difference means the gas mower
+                Decibels are logarithmic. A 25 dB difference means the gas mower
                 is roughly 8 times louder in perceived volume. In practice, you can
                 mow at 7 AM on a Saturday without your neighbors knowing. You can
                 hold a conversation while mowing. You don&apos;t need hearing
@@ -734,7 +733,7 @@ export default function EgoSelectCutMowerReview() {
                 For California homeowners in HOA communities or neighborhoods with
                 noise ordinances, this is often the deciding factor. Many
                 municipalities restrict gas-powered equipment before 8 or 9 AM on
-                weekends — the EGO mower flies under every noise limit.
+                weekends, the EGO mower flies under every noise limit.
               </p>
             </section>
 
@@ -744,7 +743,7 @@ export default function EgoSelectCutMowerReview() {
                 The EGO 56V Platform: One Battery, 70+ Tools
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                The Select Cut XP isn&apos;t just a mower — it&apos;s an entry
+                The Select Cut XP isn&apos;t just a mower; it&apos;s an entry
                 point into the largest battery-powered outdoor tool ecosystem on
                 the market. Every EGO 56V ARC Lithium battery works across every
                 EGO tool. The 10.0Ah battery included with this mower also powers:
@@ -809,7 +808,7 @@ export default function EgoSelectCutMowerReview() {
                   requires 4 separate engines, 4 types of maintenance, gas cans,
                   oil, spark plugs, and winterization. With EGO, it&apos;s 4 tools
                   and 2-3 batteries. No maintenance. No gas. No oil. The total cost
-                  of ownership over 5 years tilts heavily in EGO&apos;s favor — and
+                  of ownership over 5 years tilts heavily in EGO&apos;s favor; and
                   that&apos;s before factoring in California&apos;s increasingly
                   strict emissions regulations on small gas engines.
                 </p>
@@ -882,8 +881,7 @@ export default function EgoSelectCutMowerReview() {
                   </div>
                   <p className='text-foreground/80 text-sm leading-relaxed'>
                     At 65 dB, you can mow at any hour without complaints. California
-                    HOAs and municipalities increasingly restrict gas equipment —
-                    electric is future-proof for compliance.
+                    HOAs and municipalities increasingly restrict gas equipment, electric is future-proof for compliance.
                   </p>
                 </div>
               </div>
@@ -915,7 +913,7 @@ export default function EgoSelectCutMowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      65 dB noise — mow anytime without disturbing neighbors
+                      65 dB noise. Mow anytime without disturbing neighbors
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -935,7 +933,7 @@ export default function EgoSelectCutMowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      IPX4 weather resistance — handles morning dew and light rain
+                      IPX4 weather resistance. Handles morning dew and light rain
                     </li>
                   </ul>
                 </div>
@@ -951,7 +949,7 @@ export default function EgoSelectCutMowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      77.2 lbs — heavy to lift into a truck bed
+                      77.2 lbs. heavy to lift into a truck bed
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -991,7 +989,7 @@ export default function EgoSelectCutMowerReview() {
                   The EGO Power+ Select Cut XP (LM2156SP) is the electric mower we
                   recommend for most homeowners. The Select Cut multi-blade system
                   is a genuine innovation that gives you the right blade for every
-                  mowing condition — something no gas mower offers without buying
+                  mowing condition, something no gas mower offers without buying
                   separate blades and spending 20 minutes swapping them. The 56V
                   platform ecosystem means your investment extends far beyond the
                   mower itself.
@@ -1000,7 +998,7 @@ export default function EgoSelectCutMowerReview() {
                   At $799 for the full kit, it costs more upfront than a basic
                   electric or a mid-range gas mower. But factor in zero fuel costs,
                   zero maintenance, a battery that powers 70+ tools, and noise
-                  levels that let you mow whenever you want — the value equation
+                  levels that let you mow whenever you want, the value equation
                   tips firmly in the EGO&apos;s favor within the first year or two.
                 </p>
                 <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -1021,7 +1019,7 @@ export default function EgoSelectCutMowerReview() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Final Verdict'
-              verdict='The electric mower we recommend for most homeowners — multi-blade versatility, huge ecosystem, and the quiet freedom of 56V.'
+              verdict='The electric mower we recommend for most homeowners, multi-blade versatility, huge ecosystem, and the quiet freedom of 56V.'
               source='ego-select-cut-mower'
               variant='final'
             />

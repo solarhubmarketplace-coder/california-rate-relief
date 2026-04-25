@@ -23,7 +23,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Best Electric Smokers in 2026: Masterbuilt vs Weber vs Traeger vs Pit Boss — Full Comparison',
+    'Best Electric Smokers in 2026: Masterbuilt vs Weber vs Traeger vs Pit Boss. Full Comparison',
   description:
     'Compare the best electric smokers in 2026. In-depth reviews of Masterbuilt 40-inch Digital, Weber SmokeFire EX6, Traeger Pro 780, Pit Boss Copperhead 7, Char-Broil Deluxe Digital, and Bradley Original 4-Rack. Temperature control, capacity, and energy usage compared.',
   alternates: {
@@ -76,7 +76,7 @@ const faqSchema = {
       name: 'What is the best electric smoker in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Masterbuilt 40-inch Digital Electric Smoker is our top pick for 2026. It offers precise digital temperature control from 100-275 degrees F, 970 sq in of cooking space across four chrome-coated smoking racks, a built-in meat probe, Bluetooth connectivity, and a patented side wood chip loading system — all for under $350. It delivers consistent results with minimal effort.',
+        text: 'The Masterbuilt 40-inch Digital Electric Smoker is our top pick for 2026. It offers precise digital temperature control from 100-275 degrees F, 970 sq in of cooking space across four chrome-coated smoking racks, a built-in meat probe, Bluetooth connectivity, and a patented side wood chip loading system, all for under $350. It delivers consistent results with minimal effort.',
       },
     },
     {
@@ -116,7 +116,7 @@ const faqSchema = {
       name: 'What is the ideal temperature for smoking brisket in an electric smoker?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The ideal temperature for smoking brisket in an electric smoker is 225 degrees F. At this temperature, a full packer brisket (12-14 lbs) takes approximately 12-18 hours to reach an internal temperature of 200-205 degrees F. Some pitmasters run at 250 degrees F to reduce total cook time to 10-14 hours. The key is consistency — and this is where electric smokers excel, maintaining steady temperatures within 5 degrees of your set point.',
+        text: 'The ideal temperature for smoking brisket in an electric smoker is 225 degrees F. At this temperature, a full packer brisket (12-14 lbs) takes approximately 12-18 hours to reach an internal temperature of 200-205 degrees F. Some pitmasters run at 250 degrees F to reduce total cook time to 10-14 hours. The key is consistency; and this is where electric smokers excel, maintaining steady temperatures within 5 degrees of your set point.',
       },
     },
     {
@@ -267,7 +267,7 @@ export default function BestElectricSmoker() {
               </h1>
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
                 We tested the top digital electric smokers for flavor, temperature accuracy,
-                capacity, energy efficiency, and value — from budget to premium.
+                capacity, energy efficiency, and value, from budget to premium.
               </p>
               <div
                 className="flex flex-wrap gap-4 text-sm"
@@ -461,14 +461,14 @@ export default function BestElectricSmoker() {
                   &plusmn;5&deg;F of your set point, and the built-in meat probe eliminates
                   guesswork. Bluetooth connectivity through the Masterbuilt app allows you to
                   monitor and adjust from your phone. Four chrome-coated racks provide 970 square
-                  inches of cooking space — enough for six full racks of ribs or four pork butts
+                  inches of cooking space; enough for six full racks of ribs or four pork butts
                   simultaneously.
                 </p>
                 <p className="leading-relaxed mb-5" style={{ color: '#a1a1aa' }}>
                   In our testing, the Masterbuilt delivered the most consistent temperature
                   performance across all rack positions, with less than 8&deg;F variance top to
                   bottom. The brisket came out with a respectable smoke ring and juicy bark. Energy
-                  consumption averaged 5.2 kWh over 12 hours — the second most efficient in our
+                  consumption averaged 5.2 kWh over 12 hours. The second most efficient in our
                   lineup behind the Bradley.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mb-5">
@@ -493,8 +493,8 @@ export default function BestElectricSmoker() {
                     <h4 className="font-semibold text-sm mb-2" style={{ color: '#ef4444' }}>Cons</h4>
                     <ul className="space-y-1.5">
                       {[
-                        'Max temp 275\u00b0F — no searing',
-                        'Powder-coated steel — less durable than stainless',
+                        'Max temp 275\u00b0F, no searing',
+                        'Powder-coated steel. Less durable than stainless',
                         'Chip tray is small, needs frequent refilling',
                       ].map((con) => (
                         <li key={con} className="flex items-start gap-2 text-sm" style={{ color: '#d4d4d8' }}>
@@ -509,7 +509,7 @@ export default function BestElectricSmoker() {
                   productKey="masterbuilt-40-inch-digital-electric-smoker"
                   source="electric-smoker-hub"
                   variant="primary"
-                  label="Check Price — Masterbuilt 40-inch Digital Electric Smoker"
+                  label="Check Price; Masterbuilt 40-inch Digital Electric Smoker"
                   showPrice
                   />
               </div>
@@ -545,7 +545,7 @@ export default function BestElectricSmoker() {
                   The Weber SmokeFire EX6 second generation fixes nearly every complaint from its
                   rocky 2020 launch. The redesigned dual-drive auger eliminates pellet jamming,
                   and new flavorizer bars distribute heat more evenly. With a 200-600&deg;F range,
-                  it handles low-and-slow brisket and 600&deg;F searing — something no traditional
+                  it handles low-and-slow brisket and 600&deg;F searing. Something no traditional
                   electric smoker can match. Weber Connect WiFi provides step-by-step programs.
                 </p>
                 <p className="leading-relaxed mb-5" style={{ color: '#a1a1aa' }}>
@@ -636,7 +636,7 @@ export default function BestElectricSmoker() {
                 <p className="leading-relaxed mb-5" style={{ color: '#a1a1aa' }}>
                   We included the Traeger because many shoppers cross-shop pellet and electric.
                   Super Smoke mode produced outstanding flavor rivaling the Weber. The draw is
-                  versatility — smoke at 180&deg;F, bake at 350&deg;F, or grill at 500&deg;F.
+                  versatility. Smoke at 180&deg;F, bake at 350&deg;F, or grill at 500&deg;F.
                   The trade-off: more cleaning (ash vacuuming) and hopper monitoring on long cooks.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mb-5">
@@ -661,7 +661,7 @@ export default function BestElectricSmoker() {
                     <h4 className="font-semibold text-sm mb-2" style={{ color: '#ef4444' }}>Cons</h4>
                     <ul className="space-y-1.5">
                       {[
-                        'Not a true electric smoker — requires pellets',
+                        'Not a true electric smoker, requires pellets',
                         'More cleaning and maintenance than electric',
                         'Smaller cooking area than competitors at this price',
                       ].map((con) => (
@@ -677,7 +677,7 @@ export default function BestElectricSmoker() {
                   productKey="traeger-pro-780"
                   source="electric-smoker-hub"
                   variant="primary"
-                  label="Check Price — Traeger Pro 780"
+                  label="Check Price, Traeger Pro 780"
                   showPrice
                   />
               </div>
@@ -712,14 +712,14 @@ export default function BestElectricSmoker() {
                 <p className="leading-relaxed mb-4" style={{ color: '#a1a1aa' }}>
                   The Pit Boss Copperhead 7 is the undisputed value champion in electric smoking.
                   For under $300, you get a staggering 1,548 square inches of cooking space across
-                  seven porcelain-coated racks — the largest capacity in our lineup by a wide
+                  seven porcelain-coated racks. The largest capacity in our lineup by a wide
                   margin. The insulated double-wall construction holds temperature better than
                   single-wall competitors, making it a strong choice for cold-weather smoking. An
                   analog dial controls temperature from 100-275&deg;F, and the external wood chip
                   loading door means no heat loss during long cooks.
                 </p>
                 <p className="leading-relaxed mb-5" style={{ color: '#a1a1aa' }}>
-                  In our testing, the Copperhead held temperature within &plusmn;12&deg;F — not as
+                  In our testing, the Copperhead held temperature within &plusmn;12&deg;F. not as
                   tight as the Masterbuilt&apos;s digital controller, but very respectable for an analog
                   unit. The massive capacity means you can smoke for a crowd: we fit eight racks of
                   ribs simultaneously. The main drawbacks are the lack of digital controls, no
@@ -732,7 +732,7 @@ export default function BestElectricSmoker() {
                       {[
                         'Largest capacity in our lineup (1,548 sq in, 7 racks)',
                         'Insulated double-wall construction',
-                        'Under $300 — unbeatable value per sq in',
+                        'Under $300. Unbeatable value per sq in',
                         'External wood chip loading door',
                         'Porcelain-coated racks resist corrosion',
                       ].map((pro) => (
@@ -763,7 +763,7 @@ export default function BestElectricSmoker() {
                   productKey="pit-boss-copperhead-7-series"
                   source="electric-smoker-hub"
                   variant="primary"
-                  label="Check Price — Pit Boss Copperhead 7 Series"
+                  label="Check Price, Pit Boss Copperhead 7 Series"
                   showPrice
                   />
               </div>
@@ -845,7 +845,7 @@ export default function BestElectricSmoker() {
                   productKey="char-broil-deluxe-digital-electric-smoker"
                   source="electric-smoker-hub"
                   variant="primary"
-                  label="Check Price — Char-Broil Deluxe Digital Electric Smoker"
+                  label="Check Price. Char-Broil Deluxe Digital Electric Smoker"
                   showPrice
                   />
               </div>
@@ -879,7 +879,7 @@ export default function BestElectricSmoker() {
                 <p className="text-sm mb-4" style={{ color: '#ec4899' }}>$400 &bull; 520 sq in &bull; 500W</p>
                 <p className="leading-relaxed mb-4" style={{ color: '#a1a1aa' }}>
                   The Bradley Original takes a fundamentally different approach to electric smoking.
-                  Instead of wood chips, it uses proprietary bisquettes — compressed wood pucks that
+                  Instead of wood chips, it uses proprietary bisquettes. compressed wood pucks that
                   are automatically advanced and extinguished by a separate smoke generator every 20
                   minutes. This creates cleaner smoke without the bitter creosote buildup that can
                   happen when chips smolder too long. The separate smoke and heat generators give you
@@ -933,7 +933,7 @@ export default function BestElectricSmoker() {
                   productKey="bradley-original-4-rack-smoker"
                   source="electric-smoker-hub"
                   variant="primary"
-                  label="Check Price — Bradley Original 4-Rack Smoker"
+                  label="Check Price. Bradley Original 4-Rack Smoker"
                   showPrice
                   />
               </div>
@@ -996,7 +996,7 @@ export default function BestElectricSmoker() {
                 </h3>
                 <p className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
                   <strong style={{ color: '#22c55e' }}>Choose electric</strong> if you want the
-                  simplest, most consistent experience with minimal effort — ideal for beginners and
+                  simplest, most consistent experience with minimal effort, ideal for beginners and
                   apartment/condo dwellers where open flames may be restricted.{' '}
                   <strong style={{ color: '#f97316' }}>Choose pellet</strong> if you want stronger
                   smoke flavor with the ability to grill and sear, and you do not mind managing a
@@ -1264,7 +1264,7 @@ export default function BestElectricSmoker() {
                     The Masterbuilt 40-inch Digital Electric Smoker is our top pick for 2026. It
                     offers precise digital temperature control from 100-275&deg;F, 970 sq in of
                     cooking space across four chrome-coated smoking racks, a built-in meat probe,
-                    Bluetooth connectivity, and a patented side wood chip loading system — all for
+                    Bluetooth connectivity, and a patented side wood chip loading system, all for
                     under $350.
                   </div>
                 </details>
@@ -1359,7 +1359,7 @@ export default function BestElectricSmoker() {
                 </h2>
                 <p className="leading-relaxed mb-4" style={{ color: '#a1a1aa' }}>
                   For most people, the <strong style={{ color: '#22c55e' }}>Masterbuilt 40-inch
-                  Digital</strong> is the best electric smoker in 2026 — precise digital controls,
+                  Digital</strong> is the best electric smoker in 2026, precise digital controls,
                   Bluetooth monitoring, meat probe, side chip loading, and 970 sq in for under
                   $350. For best smoke quality, the <strong style={{ color: '#ec4899' }}>Bradley
                   Original</strong> is worth the premium. For max capacity on a budget, the{' '}

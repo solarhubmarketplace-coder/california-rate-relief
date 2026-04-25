@@ -104,7 +104,7 @@ export default function Page() {
         name: 'How long will the battery last before needing replacement?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '3,500 cycles to 80% capacity at full depth of discharge. At one cycle per day that is about 9.5 years. For typical PSPS backup use (5-20 cycles per year), the battery will last 20+ years — essentially the service life of the entire unit.',
+          text: '3,500 cycles to 80% capacity at full depth of discharge. At one cycle per day that is about 9.5 years. For typical PSPS backup use (5-20 cycles per year), the battery will last 20+ years, essentially the service life of the entire unit.',
         },
       },
     ],
@@ -154,7 +154,7 @@ export default function Page() {
             <p className='text-lg text-foreground/70 leading-relaxed mb-4'>
               2,048Wh of LFP capacity expandable to 8,192Wh, 2,200W pure-sine inverter (4,800W
               with Power Lifting), 900W solar input with dual MPPT, and a 3,500-cycle battery
-              that will outlast any PSPS event California can throw at it — for $1,699. Here is
+              that will outlast any PSPS event California can throw at it, for $1,699. Here is
               the honest California-focused review after two weeks of fridge, freezer, and
               mini-split testing.
             </p>
@@ -187,7 +187,7 @@ export default function Page() {
               'Full Bluetti app with Wi-Fi monitoring',
             ]}
             cons={[
-              '61.7 lbs without handles — two-person lift in practice',
+              '61.7 lbs without handles; two-person lift in practice',
               '2,200W ceiling means no central AC or deep-well pumps',
               '4.5-hour default AC recharge (unless you buy T500)',
               'TT-30 RV outlet limited to 25A / 2,200W like the main inverter',
@@ -215,7 +215,7 @@ export default function Page() {
           {/* Quick Specs Table */}
           <div className='bg-[#111] border border-border/60 rounded-2xl p-6 mb-10'>
             <h2 className='text-xl font-semibold text-foreground mb-4 inline-flex items-center gap-2'>
-              <Zap className='h-5 w-5 text-amber-400' /> Bluetti AC200Max — Key Specs
+              <Zap className='h-5 w-5 text-amber-400' /> Bluetti AC200Max, Key Specs
             </h2>
             <div className='overflow-x-auto'>
               <table className='w-full text-sm'>
@@ -300,7 +300,7 @@ export default function Page() {
             </p>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               The two expansion battery ports (DC7909) sit on the back panel. Cables to B230 or
-              B300 batteries run maybe 3 feet long — plenty for stacking in a closet but you
+              B300 batteries run maybe 3 feet long. Plenty for stacking in a closet but you
               will not be hiding the batteries in another room.
             </p>
 
@@ -326,7 +326,7 @@ export default function Page() {
               without solar input. That is where this unit earns its price.
             </p>
 
-            <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Charging Speed — Default vs T500</h2>
+            <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Charging Speed, Default vs T500</h2>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               Default AC input is 500W, which fully charges the AC200Max in about 4.5 hours — a
               long time if you are racing a PSPS event. Bluetti\'s optional T500 fast charger
@@ -366,7 +366,7 @@ export default function Page() {
 
             <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>UPS and Smart Features</h2>
             <p className='text-foreground/80 leading-relaxed mb-6'>
-              UPS switchover is ~20 ms — fine for a fridge, Wi-Fi, desktop PC, and most TVs but
+              UPS switchover is ~20 ms, fine for a fridge, Wi-Fi, desktop PC, and most TVs but
               slow enough that we would not trust it on critical medical equipment. This is a
               line-interactive standby UPS, not a true online double-conversion unit. For sensitive
               gear, pair with a small inline APC or CyberPower UPS.
@@ -392,7 +392,7 @@ export default function Page() {
 
             <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>California Context: PSPS, TOU, SGIP, and NEM 3.0</h2>
 
-            <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>PSPS Backup — Where the AC200Max Earns Its Price</h3>
+            <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>PSPS Backup, Where the AC200Max Earns Its Price</h3>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               For California homeowners in Tier-2/Tier-3 fire zones (Napa, Sonoma, El Dorado,
               Lake, parts of Placer, Nevada, Amador, Calaveras, Santa Cruz, and the foothill
@@ -415,7 +415,7 @@ export default function Page() {
             <p className='text-foreground/80 leading-relaxed mb-6'>
               PG&E peak (4-9 PM) now runs 40-48¢/kWh; off-peak around 32-38¢. The spread is 8-10¢.
               Cycling 1.9 kWh usable per day through the AC200Max saves 15-19¢/day, or roughly
-              $60-70/year. Over the 9.5-year cycle life that is $570-665 saved — not transformative,
+              $60-70/year. Over the 9.5-year cycle life that is $570-665 saved, not transformative,
               but meaningful next to the $1,699 purchase price. With a B300 expansion (5,120Wh total,
               4,800Wh usable) the savings roughly double to $150/year, and at that point TOU
               arbitrage becomes a real financial argument alongside the PSPS insurance.
@@ -429,13 +429,13 @@ export default function Page() {
             <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>SGIP Rebate — Still Does Not Qualify</h3>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               SGIP requires permanent installation with a utility-approved critical-load panel
-              and transfer switch. The AC200Max is a plug-in portable and does not qualify — no
+              and transfer switch. The AC200Max is a plug-in portable and does not qualify. No
               matter how many B300 batteries you stack. If SGIP dollars are the goal, look at
               the Bluetti EP500/EP600 series (with a pro-installed transfer switch), Tesla
               Powerwall, or Enphase IQ Battery.
             </p>
 
-            <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>NEM 3.0 — A Gap the AC200Max Partly Fills</h3>
+            <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>NEM 3.0, A Gap the AC200Max Partly Fills</h3>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               Under NEM 3.0, export compensation averages 5-8¢/kWh while peak import rates exceed
               40¢. For rooftop solar owners without permanent battery storage, self-consumption
@@ -448,10 +448,10 @@ export default function Page() {
 
             <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Noise, Heat, and Daily-Living Realities</h2>
             <p className='text-foreground/80 leading-relaxed mb-6'>
-              Below 500W draw the AC200Max is quiet — audible up close, inaudible in the next
+              Below 500W draw the AC200Max is quiet, audible up close, inaudible in the next
               room. Between 500-1,500W the fan runs steadily and you can hear it across a room.
               Above 1,500W (running a microwave, hair dryer, or space heater) it gets clearly
-              noisy — think dishwasher on the wash cycle. In Turbo AC charging mode with T500
+              noisy, think dishwasher on the wash cycle. In Turbo AC charging mode with T500
               connected, fan noise is comparable to a mid-size window AC. Operating range 32-104°F;
               storage 4-140°F. Summer garage storage in California is fine.
             </p>
@@ -477,7 +477,7 @@ export default function Page() {
                   <X className='h-4 w-4' /> What We Do Not Like
                 </h4>
                 <ul className='space-y-2 text-sm text-foreground/80'>
-                  <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> 61.7 lbs — realistically a two-person lift</li>
+                  <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> 61.7 lbs, realistically a two-person lift</li>
                   <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> 2,200W ceiling = no central AC, no 240V loads</li>
                   <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> T500 fast charger is an upsell, not included</li>
                   <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> 20ms UPS is slower than online double-conversion units</li>
@@ -555,7 +555,7 @@ export default function Page() {
             </p>
             <p className='text-foreground/80 leading-relaxed mb-6'>
               Against the AC500+B300S ($2,299, 240V) or Delta Pro 3 ($2,999, 240V), the AC200Max
-              is genuinely the budget pick — but it cannot run a 240V well pump, electric dryer,
+              is genuinely the budget pick; but it cannot run a 240V well pump, electric dryer,
               or central AC. The question is always: do you need 240V? If yes, skip this. If no,
               this saves you $600-1,300.
             </p>
@@ -575,10 +575,10 @@ export default function Page() {
             <div className='bg-red-500/5 border border-red-500/30 rounded-lg p-5 mb-8'>
               <h4 className='text-red-400 font-semibold mb-3'>Skip it if:</h4>
               <ul className='space-y-2 text-sm text-foreground/80'>
-                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You need 240V or central AC — step up to Delta Pro 3 or AC500</li>
-                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You want SGIP rebates — only permanent-install units qualify</li>
-                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> Your PSPS plan is just phones and Wi-Fi — buy an EB3A for $299</li>
-                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You need the lightest unit in your car trunk — consider a River 2 Pro</li>
+                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You need 240V or central AC, step up to Delta Pro 3 or AC500</li>
+                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You want SGIP rebates, only permanent-install units qualify</li>
+                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> Your PSPS plan is just phones and Wi-Fi. buy an EB3A for $299</li>
+                <li className='flex gap-2'><X className='h-4 w-4 text-red-400 flex-shrink-0 mt-0.5' /> You need the lightest unit in your car trunk, consider a River 2 Pro</li>
               </ul>
             </div>
 
@@ -630,7 +630,7 @@ export default function Page() {
                 <summary className='cursor-pointer font-semibold text-foreground'>How long will the battery last before needing replacement?</summary>
                 <p className='text-sm text-foreground/80 mt-3 leading-relaxed'>
                   3,500 cycles to 80% capacity. At one cycle per day, 9.5 years. For typical PSPS
-                  use (10-20 cycles per year), 20+ years — effectively the service life of the
+                  use (10-20 cycles per year), 20+ years. effectively the service life of the
                   unit.
                 </p>
               </details>

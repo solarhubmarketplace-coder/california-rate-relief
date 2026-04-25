@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title:
     'EGO Lawn Mower Review 2026: Full EGO Power+ Mower Lineup Compared',
   description:
-    'In-depth EGO lawn mower review covering the full 56V Arc Lithium lineup — Select Cut XP LMX5300, LM2206SP, LM2100, Z6 zero-turn, and T6 stand-on. Runtime, warranty, California AQMD rebates, vs Ryobi and gas.',
+    'In-depth EGO lawn mower review covering the full 56V Arc Lithium lineup, Select Cut XP LMX5300, LM2206SP, LM2100, Z6 zero-turn, and T6 stand-on. Runtime, warranty, California AQMD rebates, vs Ryobi and gas.',
   alternates: {
     canonical: '/reviews/ego-lawn-mower',
   },
@@ -144,7 +144,7 @@ const faqSchema = {
       name: 'What is the warranty on an EGO lawn mower?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'EGO offers a 5-year warranty on the mower itself and a 3-year warranty on the 56V Arc Lithium battery packs and chargers. Commercial use on the Z6 and T6 models is covered by a separate commercial warranty. This is one of the longest battery warranties in the industry — most competitors offer 3 years on the tool and 2-3 years on batteries.',
+        text: 'EGO offers a 5-year warranty on the mower itself and a 3-year warranty on the 56V Arc Lithium battery packs and chargers. Commercial use on the Z6 and T6 models is covered by a separate commercial warranty. This is one of the longest battery warranties in the industry, most competitors offer 3 years on the tool and 2-3 years on batteries.',
       },
     },
     {
@@ -168,7 +168,7 @@ const faqSchema = {
       name: 'Can one EGO battery power all my EGO tools?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Every EGO 56V Arc Lithium battery is cross-compatible across the entire EGO Power+ lineup — mowers, trimmers, blowers, chainsaws, snow blowers, power stations, and the Z6 rider. Start with a mower kit, and every additional tool you buy can be a bare-tool purchase, saving $100-$300 each.',
+        text: 'Yes. Every EGO 56V Arc Lithium battery is cross-compatible across the entire EGO Power+ lineup, mowers, trimmers, blowers, chainsaws, snow blowers, power stations, and the Z6 rider. Start with a mower kit, and every additional tool you buy can be a bare-tool purchase, saving $100-$300 each.',
       },
     },
     {
@@ -243,7 +243,7 @@ export default function EgoLawnMowerReview() {
               productKey='ego-select-cut-mower'
               badge='Our Top Pick'
               rating={4.7}
-              verdict='The EGO Select Cut XP 56V LMX5300 is the best residential battery mower you can buy in 2026 — dual 10Ah batteries, Peak Power dual-battery system, 21" multi-blade cut, and the full 5-year warranty EGO is known for.'
+              verdict='The EGO Select Cut XP 56V LMX5300 is the best residential battery mower you can buy in 2026. Dual 10Ah batteries, Peak Power dual-battery system, 21" multi-blade cut, and the full 5-year warranty EGO is known for.'
               pros={[
                 'Half-acre to 1.25-acre lawns',
                 'Replacing a gas self-propelled',
@@ -269,7 +269,7 @@ export default function EgoLawnMowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-5'>
                 EGO Power+ has become the default electric lawn mower brand for
                 anyone who takes their yard seriously. The 56V Arc Lithium
-                platform — developed by Chervon, the same parent company that
+                platform, developed by Chervon, the same parent company that
                 makes Skil and Flex — delivers cut quality that genuinely
                 matches or beats gas in most side-by-side tests. The lineup runs
                 from a $399 push mower for small lawns all the way up to an
@@ -440,12 +440,12 @@ export default function EgoLawnMowerReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 EGO Power+ launched in 2012 with a single product — a push
-                mower — and a single bet: that a 56V lithium-ion battery
+                mower, and a single bet: that a 56V lithium-ion battery
                 platform could genuinely replace gas for residential outdoor
                 power equipment. Fourteen years later, that bet has paid off.
                 EGO is owned by Chervon Group, the same China-headquartered
                 manufacturer that owns Skil and Flex, and Chervon has poured
-                serious R&amp;D into the Arc Lithium pack design — the curved
+                serious R&amp;D into the Arc Lithium pack design. the curved
                 battery shape that wraps the cell stack in heat-dissipating
                 aluminum and keeps cells cooler than the rectangular packs most
                 competitors still use.
@@ -453,8 +453,8 @@ export default function EgoLawnMowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Today the EGO catalog spans 80+ tools, every one of them
                 powered by the same 56V battery. Buy a mower kit today, and
-                every subsequent EGO tool — trimmer, blower, chainsaw, snow
-                blower, pressure washer, power station — can be bought as a
+                every subsequent EGO tool. Trimmer, blower, chainsaw, snow
+                blower, pressure washer, power station; can be bought as a
                 bare tool, saving $100-$300 each. That platform lock-in is the
                 single biggest reason to pick EGO over cheaper one-off brands:
                 your investment compounds over years.
@@ -467,8 +467,7 @@ export default function EgoLawnMowerReview() {
                 rated at 1,500+ cycles to 80% capacity on the 7.5Ah and 10Ah
                 packs, which at typical homeowner use (roughly 30 cycles a
                 year) translates to 40+ years before reaching 80% capacity.
-                Batteries don&apos;t actually last that long in calendar terms
-                — typical LFP-style chemistry experiences calendar aging over
+                Batteries don&apos;t actually last that long in calendar terms, typical LFP-style chemistry experiences calendar aging over
                 10-15 years — but cycle-wise the packs will outlast most
                 homeowners&apos; interest in lawn equipment.
               </p>
@@ -493,17 +492,17 @@ export default function EgoLawnMowerReview() {
                 than a typical gas push mower (~80 lbs) and folds flat for
                 vertical storage in a garage. The single-blade 21" deck cuts
                 cleanly and mulches adequately. Skip this one if you have
-                hills — pushing 62 lbs uphill gets old fast.
+                hills. Pushing 62 lbs uphill gets old fast.
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Quarter to three-quarter acre: EGO LM2206SP (22" Select Cut
-                Self-Propelled) — $549
+                Self-Propelled). $549
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This is the sweet spot for most California suburban yards. The
                 LM2206SP runs EGO&apos;s <strong>Peak Power</strong> dual-port
-                system — two 6Ah or 7.5Ah batteries run in parallel to deliver
+                system, two 6Ah or 7.5Ah batteries run in parallel to deliver
                 gas-level torque when cutting thick spring grass. The 22"
                 Select Cut deck uses two blades (a standard lift blade and a
                 shredder blade) that can be swapped depending on whether
@@ -514,14 +513,14 @@ export default function EgoLawnMowerReview() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                Three-quarter to 1.25 acres: EGO Select Cut XP LMX5300 — $799
+                Three-quarter to 1.25 acres: EGO Select Cut XP LMX5300. $799
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The LMX5300 is the flagship residential walk-behind. Two 10Ah
                 batteries in the dual-port system deliver more runtime and more
                 power than any competitor&apos;s single-battery mower. The 21"
                 Select Cut XP deck uses three interchangeable blades — lift,
-                mulch, and high-lift — and EGO&apos;s improved brushless motor
+                mulch, and high-lift. And EGO&apos;s improved brushless motor
                 spins up harder under load without bogging. This is the model
                 we&apos;d recommend for anyone with a lawn big enough that a
                 push mower would become a chore, but not big enough to justify
@@ -536,7 +535,7 @@ export default function EgoLawnMowerReview() {
                 market, which has historically been gas territory (Bad Boy,
                 Gravely, Ariens, Cub Cadet). It runs four 56V batteries
                 totaling ~6 kWh and delivers roughly 2 hours of cut time on a
-                full charge — enough for a 2-3 acre property in a single
+                full charge. enough for a 2-3 acre property in a single
                 session. Dual 42" decks with three stamped blades, a
                 steering-wheel control option (unusual for zero-turns and a
                 lifesaver for hills), and 6 mph max ground speed. At $5,999
@@ -575,7 +574,7 @@ export default function EgoLawnMowerReview() {
                 cruising on level grass, and spikes to 1,500-2,000 watts in
                 thick or tall grass. That means a 7.5Ah pack cuts for ~28-42
                 minutes depending on conditions. A dual-port mower running two
-                10Ah batteries in parallel has 1,120 Wh available — about 75-90
+                10Ah batteries in parallel has 1,120 Wh available, about 75-90
                 minutes of cutting.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -635,7 +634,7 @@ export default function EgoLawnMowerReview() {
                 Milwaukee M18 outdoor tools (5-year tool, 3-year battery).
                 EGO&apos;s 5-year tool warranty is tied for longest among
                 residential brands. In practice, what this means is that if
-                your brushless motor controller fails in year four — the most
+                your brushless motor controller fails in year four, the most
                 common electronic failure mode — you&apos;re covered for a
                 free replacement, typically turned around in 7-14 business
                 days through a local service center.
@@ -647,7 +646,7 @@ export default function EgoLawnMowerReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If you live in California, switching from gas to electric
-                lawn equipment is no longer optional for new purchases — and
+                lawn equipment is no longer optional for new purchases, and
                 the state is actively paying you to do it.
               </p>
 
@@ -659,7 +658,7 @@ export default function EgoLawnMowerReview() {
                 (CARB) prohibited the sale of new small off-road engines (gas
                 engines under 25 horsepower) for lawn mowers, leaf blowers,
                 string trimmers, and similar equipment. Existing gas equipment
-                can still be used, resold, and repaired — but no new gas mowers
+                can still be used, resold, and repaired, but no new gas mowers
                 under 25 HP can be sold by California retailers. The rule
                 doesn&apos;t apply to used equipment or equipment purchased
                 out of state, but it does shift the entire retail market to
@@ -689,7 +688,7 @@ export default function EgoLawnMowerReview() {
                 Pollution program offers $50-$150 rebates on residential
                 mowers. The San Joaquin Valley APCD (Fresno, Bakersfield, and
                 the Central Valley) runs a particularly aggressive exchange
-                program — when funds are available, they&apos;ve offered up to
+                program, when funds are available, they&apos;ve offered up to
                 $300 per mower.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -704,7 +703,7 @@ export default function EgoLawnMowerReview() {
               <AffiliateCTABox
                 productKey='ego-select-cut-mower'
                 badge='Ready to buy?'
-                verdict='The Select Cut XP LMX5300 is in stock at EGO.com with free shipping — check current pricing and any active promos.'
+                verdict='The Select Cut XP LMX5300 is in stock at EGO.com with free shipping, check current pricing and any active promos.'
                 source='ego-lawn-mower'
                 variant='mid'
               />
@@ -748,7 +747,7 @@ export default function EgoLawnMowerReview() {
                 self-propelled runs $849 new. EGO LM2206SP runs $549. Over 10
                 years, the gas mower needs roughly $400 in gas, $150 in oil,
                 $60 in spark plugs, $120 in filters, and $200 in miscellaneous
-                service — call it $900-$1,100 in consumables. The EGO&apos;s
+                service. Call it $900-$1,100 in consumables. The EGO&apos;s
                 cost after purchase: one $349 battery replacement around year
                 8-10. Gas wins on instant fill-up during a long day of cutting,
                 loses on everything else including noise, emissions, storage,
@@ -801,7 +800,7 @@ export default function EgoLawnMowerReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      65-75 dB — below HOA noise thresholds
+                      65-75 dB, below HOA noise thresholds
                     </li>
                   </ul>
                 </div>
@@ -883,7 +882,7 @@ export default function EgoLawnMowerReview() {
                 If your lawn is a tiny 2,500 sq ft postage stamp, a corded
                 electric mower or a cheaper Ryobi 40V kit gets the job done for
                 half the price. If you&apos;re cutting 5+ acres commercially,
-                skip EGO and look at Greenworks Commercial or Mean Green — both
+                skip EGO and look at Greenworks Commercial or Mean Green, both
                 designed for all-day crew use.
               </p>
 

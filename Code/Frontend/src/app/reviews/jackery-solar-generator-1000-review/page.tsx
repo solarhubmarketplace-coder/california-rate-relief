@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title:
       'Jackery Solar Generator 1000 Review: Explorer 1000 + SolarSaga 100W Bundle',
     description:
-      'Full review of the Jackery Solar Generator 1000 — 1,002 Wh lithium battery, 1,000W pure sine wave output, and SolarSaga 100W panel. Is the $1,099 bundle worth it?',
+      'Full review of the Jackery Solar Generator 1000, 1,002 Wh lithium battery, 1,000W pure sine wave output, and SolarSaga 100W panel. Is the $1,099 bundle worth it?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -122,7 +122,7 @@ const reviewSchema = {
     worstRating: '1',
   },
   reviewBody:
-    'The Jackery Solar Generator 1000 bundles the Explorer 1000 power station with a SolarSaga 100W solar panel for a complete off-grid charging solution. At 22 lbs and 1,002 Wh, it hits the sweet spot for camping, tailgating, and light emergency backup. The trade-offs — NMC battery chemistry, 1,000W output cap, and slower solar charging than newer competitors — keep it from being a home backup powerhouse, but for portable solar power at a reasonable price, it remains one of the most popular options on the market.',
+    'The Jackery Solar Generator 1000 bundles the Explorer 1000 power station with a SolarSaga 100W solar panel for a complete off-grid charging solution. At 22 lbs and 1,002 Wh, it hits the sweet spot for camping, tailgating, and light emergency backup. The trade-offs. NMC battery chemistry, 1,000W output cap, and slower solar charging than newer competitors. keep it from being a home backup powerhouse, but for portable solar power at a reasonable price, it remains one of the most popular options on the market.',
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
@@ -261,10 +261,10 @@ export default function JackerySolarGenerator1000Review() {
                 </div>
               </header>
 
-              {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+              {/* Affiliate disclosure, FTC compliance, must be above the fold */}
               <AffiliateDisclosure compact />
 
-              {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
+              {/* Above-the-fold primary CTA, 40-80% CTR lift vs end-only CTA */}
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge="Best Solar Bundle"
@@ -494,7 +494,7 @@ export default function JackerySolarGenerator1000Review() {
                   hours, expect 60-80W of actual output. Clouds, panel angle, time
                   of day, and ambient temperature all reduce output. At 70W
                   average, charging the Explorer 1000 from 0-100% takes roughly
-                  14 hours of direct sunlight — more than two full days of
+                  14 hours of direct sunlight, more than two full days of
                   camping sun. This is the fundamental reality of a single 100W
                   panel paired with a 1 kWh battery.
                 </p>
@@ -505,7 +505,7 @@ export default function JackerySolarGenerator1000Review() {
                   a full charge down to 5-6 hours of good sunlight. For serious
                   off-grid use, the second panel is practically a necessity. With
                   two panels in California&apos;s 5-6 peak sun hours, you can
-                  realistically top off the battery during a single day — a much
+                  realistically top off the battery during a single day, a much
                   more practical proposition.
                 </p>
                 <p className='leading-relaxed mb-6' style={{ color: '#d4d4d8' }}>
@@ -530,7 +530,7 @@ export default function JackerySolarGenerator1000Review() {
                   weight per Wh) but shorter cycle life. Jackery rates the Explorer
                   1000 at approximately 500 full charge cycles to 80% capacity.
                   For weekly camping use, that is roughly 10 years. For daily use,
-                  closer to 1.5 years — which is where the limitation becomes
+                  closer to 1.5 years. Which is where the limitation becomes
                   meaningful for home backup scenarios.
                 </p>
                 <p className='leading-relaxed mb-6' style={{ color: '#d4d4d8' }}>
@@ -572,7 +572,7 @@ export default function JackerySolarGenerator1000Review() {
                       <ul className='space-y-2' style={{ color: '#d4d4d8' }}>
                         <li className='flex items-center gap-2'>
                           <Check className='h-3 w-3 shrink-0' style={{ color: '#22c55e' }} />
-                          Laptop (60W) — 12-14 full charges
+                          Laptop (60W). 12-14 full charges
                         </li>
                         <li className='flex items-center gap-2'>
                           <Check className='h-3 w-3 shrink-0' style={{ color: '#22c55e' }} />
@@ -580,11 +580,11 @@ export default function JackerySolarGenerator1000Review() {
                         </li>
                         <li className='flex items-center gap-2'>
                           <Check className='h-3 w-3 shrink-0' style={{ color: '#22c55e' }} />
-                          CPAP machine (30-60W) — 15-30 hours
+                          CPAP machine (30-60W). 15-30 hours
                         </li>
                         <li className='flex items-center gap-2'>
                           <Check className='h-3 w-3 shrink-0' style={{ color: '#22c55e' }} />
-                          Mini fridge (60W) — 14-16 hours
+                          Mini fridge (60W). 14-16 hours
                         </li>
                         <li className='flex items-center gap-2'>
                           <Check className='h-3 w-3 shrink-0' style={{ color: '#22c55e' }} />
@@ -592,7 +592,7 @@ export default function JackerySolarGenerator1000Review() {
                         </li>
                         <li className='flex items-center gap-2'>
                           <Check className='h-3 w-3 shrink-0' style={{ color: '#22c55e' }} />
-                          Portable projector (80-150W) — 6-10 hours
+                          Portable projector (80-150W), 6-10 hours
                         </li>
                         <li className='flex items-center gap-2'>
                           <Check className='h-3 w-3 shrink-0' style={{ color: '#22c55e' }} />
@@ -600,7 +600,7 @@ export default function JackerySolarGenerator1000Review() {
                         </li>
                         <li className='flex items-center gap-2'>
                           <Check className='h-3 w-3 shrink-0' style={{ color: '#22c55e' }} />
-                          Electric blanket (100W) — 8-9 hours
+                          Electric blanket (100W). 8-9 hours
                         </li>
                       </ul>
                     </div>
@@ -612,7 +612,7 @@ export default function JackerySolarGenerator1000Review() {
                       <ul className='space-y-2' style={{ color: '#d4d4d8' }}>
                         <li className='flex items-center gap-2'>
                           <X className='h-3 w-3 text-red-500 shrink-0' />
-                          Microwave (1,000-1,200W) — exceeds limit
+                          Microwave (1,000-1,200W), exceeds limit
                         </li>
                         <li className='flex items-center gap-2'>
                           <X className='h-3 w-3 text-red-500 shrink-0' />
@@ -620,27 +620,27 @@ export default function JackerySolarGenerator1000Review() {
                         </li>
                         <li className='flex items-center gap-2'>
                           <X className='h-3 w-3 text-red-500 shrink-0' />
-                          Hair dryer (1,500W) — exceeds limit
+                          Hair dryer (1,500W); exceeds limit
                         </li>
                         <li className='flex items-center gap-2'>
                           <X className='h-3 w-3 text-red-500 shrink-0' />
-                          Window AC unit (1,200W) — exceeds limit
+                          Window AC unit (1,200W), exceeds limit
                         </li>
                         <li className='flex items-center gap-2'>
                           <X className='h-3 w-3 text-red-500 shrink-0' />
-                          Full-size refrigerator — surge risk
+                          Full-size refrigerator, surge risk
                         </li>
                         <li className='flex items-center gap-2'>
                           <X className='h-3 w-3 text-red-500 shrink-0' />
-                          Electric grill (1,500W+) — exceeds limit
+                          Electric grill (1,500W+), exceeds limit
                         </li>
                         <li className='flex items-center gap-2'>
                           <X className='h-3 w-3 text-red-500 shrink-0' />
-                          Power tools (&gt;1,000W) — exceeds limit
+                          Power tools (&gt;1,000W), exceeds limit
                         </li>
                         <li className='flex items-center gap-2'>
                           <X className='h-3 w-3 text-red-500 shrink-0' />
-                          Coffee maker (800-1,200W) — borderline
+                          Coffee maker (800-1,200W), borderline
                         </li>
                       </ul>
                     </div>
@@ -658,7 +658,7 @@ export default function JackerySolarGenerator1000Review() {
                   color scheme, a solid carrying handle on top, and a clean front
                   panel with an LCD display showing battery percentage,
                   input/output wattage, and estimated time remaining. The build
-                  feels robust without being heavy — at 22 lbs, one adult can
+                  feels robust without being heavy, at 22 lbs, one adult can
                   comfortably carry it with one hand.
                 </p>
                 <p className='leading-relaxed mb-6' style={{ color: '#d4d4d8' }}>
@@ -681,7 +681,7 @@ export default function JackerySolarGenerator1000Review() {
                 </p>
                 <p className='leading-relaxed mb-6' style={{ color: '#d4d4d8' }}>
                   The fan is virtually silent during normal discharge. Under heavy
-                  load (above ~600W), a small internal fan kicks on — audible in a
+                  load (above ~600W), a small internal fan kicks on. audible in a
                   quiet tent but not disruptive. During AC wall charging, the fan
                   runs more consistently but remains quieter than a laptop under
                   load.
@@ -706,7 +706,7 @@ export default function JackerySolarGenerator1000Review() {
                   LED lights (~20W), and keep a laptop on (~60W). Total draw:
                   ~115W. The Explorer 1000 runs that setup for roughly 7-8 hours.
                   If the sun comes up and you deploy the SolarSaga 100W panel, you
-                  can extend that indefinitely — drawing ~115W while inputting
+                  can extend that indefinitely, drawing ~115W while inputting
                   ~60-80W from solar means you are only net-drawing 35-55W from
                   the battery, stretching your runtime to 2-3 days.
                 </p>
@@ -760,7 +760,7 @@ export default function JackerySolarGenerator1000Review() {
                       </li>
                       <li className='flex items-start gap-2'>
                         <Check className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#22c55e' }} />
-                        Complete solar bundle — panel included in price
+                        Complete solar bundle, panel included in price
                       </li>
                       <li className='flex items-start gap-2'>
                         <Check className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#22c55e' }} />
@@ -780,7 +780,7 @@ export default function JackerySolarGenerator1000Review() {
                       </li>
                       <li className='flex items-start gap-2'>
                         <Check className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#22c55e' }} />
-                        USB-C PD at 60W — fast laptop charging
+                        USB-C PD at 60W, fast laptop charging
                       </li>
                       <li className='flex items-start gap-2'>
                         <Check className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#22c55e' }} />
@@ -832,11 +832,11 @@ export default function JackerySolarGenerator1000Review() {
                   </div>
                 </div>
 
-                {/* Mid-content CTA — placed after pros/cons where buy intent peaks */}
+                {/* Mid-content CTA, placed after pros/cons where buy intent peaks */}
                 <AffiliateCTABox
                   productKey={PRODUCT_KEY}
                   badge="Ready to buy?"
-                  verdict="The Explorer 1000 + SolarSaga 100W bundle is regularly discounted at Jackery — check today's price."
+                  verdict="The Explorer 1000 + SolarSaga 100W bundle is regularly discounted at Jackery. check today's price."
                   source="jackery-1000"
                   variant="mid"
                 />
@@ -973,7 +973,7 @@ export default function JackerySolarGenerator1000Review() {
                 </div>
                 <p className='leading-relaxed mb-6' style={{ color: '#d4d4d8' }}>
                   The <strong style={{ color: '#f5f5f5' }}>EcoFlow Delta 2</strong>{' '}
-                  is the most direct threat to the Explorer 1000 — and on paper, it
+                  is the most direct threat to the Explorer 1000. And on paper, it
                   wins nearly every spec comparison. It offers LFP chemistry
                   (6x the cycle life), 1,800W output (80% more), X-Stream fast
                   charging (80 minutes vs 7.5 hours), and higher solar input. At
@@ -987,7 +987,7 @@ export default function JackerySolarGenerator1000Review() {
                   the budget alternative. At ~$599, it costs significantly less and
                   includes LFP chemistry with 2,500+ cycle life. The trade-off:
                   smaller capacity (716 Wh) and lower output (800W). If your needs
-                  are modest — phone charging, LED lights, a laptop — the EB70S
+                  are modest; phone charging, LED lights, a laptop, the EB70S
                   delivers more value per dollar.
                 </p>
                 <p className='leading-relaxed mb-6' style={{ color: '#d4d4d8' }}>
@@ -996,7 +996,7 @@ export default function JackerySolarGenerator1000Review() {
                   quality, an app, and higher output (1,500W). However, it shares
                   the Explorer 1000&apos;s NMC chemistry weakness and costs more
                   without including a panel. For brand-conscious buyers who want
-                  the Goal Zero ecosystem, it is a solid option — but the value
+                  the Goal Zero ecosystem, it is a solid option. But the value
                   proposition is weaker.
                 </p>
                 <p className='leading-relaxed mb-6' style={{ color: '#d4d4d8' }}>
@@ -1050,7 +1050,7 @@ export default function JackerySolarGenerator1000Review() {
                     <span>
                       <strong style={{ color: '#f5f5f5' }}>Light emergency preppers</strong>{' '}
                       who want a grab-and-go backup for phones, lights, and
-                      Wi-Fi during short California outages — not multi-day
+                      Wi-Fi during short California outages, not multi-day
                       PSPS events.
                     </span>
                   </li>
@@ -1176,7 +1176,7 @@ export default function JackerySolarGenerator1000Review() {
                     </h3>
                     <p className='leading-relaxed' style={{ color: '#d4d4d8' }}>
                       For light emergency use (phones, lights, Wi-Fi, laptop),
-                      yes — you get 1-2 days of essential device power. The
+                      yes, you get 1-2 days of essential device power. The
                       1,000W output limit excludes high-draw appliances like
                       microwaves, space heaters, and air conditioners. For
                       serious home backup, look at units with 2,000W+ output
@@ -1210,12 +1210,12 @@ export default function JackerySolarGenerator1000Review() {
                   weekend-warrior camping companion and a closet emergency backup,
                   500 cycles is likely more than you will ever use. At ~$1,099 for
                   the complete solar bundle, it is a reasonable entry point into
-                  portable solar power — just go in with realistic expectations
+                  portable solar power; just go in with realistic expectations
                   about what 1,002 Wh and 1,000W can and cannot do.
                 </p>
               </div>
 
-              {/* Final CTA — real buy button replacing the old placeholder */}
+              {/* Final CTA, real buy button replacing the old placeholder */}
               <AffiliateCTABox
                 productKey={PRODUCT_KEY}
                 badge="Final Verdict"

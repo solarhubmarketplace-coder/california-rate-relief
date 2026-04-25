@@ -30,7 +30,7 @@ import {
 const PRODUCT_KEY = 'jackery-explorer-300';
 
 // ==================================================================
-// ⚠️  GRONK-VERIFY CHECKLIST — run before publishing
+// ⚠️  GRONK-VERIFY CHECKLIST, run before publishing
 // ==================================================================
 // Per CLAUDE.md: never use Claude training data for live numbers.
 // Every claim below marked [GRONK-VERIFY] must be confirmed against
@@ -39,7 +39,7 @@ const PRODUCT_KEY = 'jackery-explorer-300';
 // verified value or remove the claim if no longer accurate.
 //
 // Claims to verify:
-//   • Battery chemistry (NMC vs LFP — Jackery has been transitioning
+//   • Battery chemistry (NMC vs LFP. Jackery has been transitioning
 //     product lines; 300 model may still be NMC or may have been
 //     refreshed to LFP)
 //   • Actual Wh capacity (spec sheet value, not marketing round number)
@@ -142,7 +142,7 @@ const faqSchema = {
       name: 'How fast does the Explorer 300 charge?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'From a standard AC wall outlet, the Explorer 300 reaches full charge in approximately 2 hours. Solar charging via Jackery\'s 100W SolarSaga panel reaches full charge in roughly 5 hours under good direct sun. USB-C PD input at 60W adds a useful trickle charge option from a laptop brick — not a primary method but handy when traveling. Car charging at 12V is supported but slow (around 6 hours).',
+        text: 'From a standard AC wall outlet, the Explorer 300 reaches full charge in approximately 2 hours. Solar charging via Jackery\'s 100W SolarSaga panel reaches full charge in roughly 5 hours under good direct sun. USB-C PD input at 60W adds a useful trickle charge option from a laptop brick, not a primary method but handy when traveling. Car charging at 12V is supported but slow (around 6 hours).',
       },
     },
     {
@@ -158,7 +158,7 @@ const faqSchema = {
       name: 'Does the Explorer 300 use LFP or NMC battery chemistry?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Verify current chemistry on Jackery\'s product page before purchase. Jackery has been progressively refreshing its lineup from the older NMC (lithium nickel manganese cobalt oxide) chemistry to newer LFP (lithium iron phosphate), which lasts 4x–8x longer in cycle life and is safer thermally. As of this review, confirm whether the 300 is on the LFP roadmap or still ships with NMC — the answer changes the long-term value calculation considerably. If still NMC, expect roughly 500 cycles to 80% capacity. If LFP, expect 2,000+ cycles.',
+        text: 'Verify current chemistry on Jackery\'s product page before purchase. Jackery has been progressively refreshing its lineup from the older NMC (lithium nickel manganese cobalt oxide) chemistry to newer LFP (lithium iron phosphate), which lasts 4x–8x longer in cycle life and is safer thermally. As of this review, confirm whether the 300 is on the LFP roadmap or still ships with NMC, the answer changes the long-term value calculation considerably. If still NMC, expect roughly 500 cycles to 80% capacity. If LFP, expect 2,000+ cycles.',
       },
     },
     {
@@ -166,7 +166,7 @@ const faqSchema = {
       name: 'What is the warranty on the Jackery Explorer 300?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Jackery standard consumer warranty — 2 years for NMC-chemistry Explorer units, 5 years for LFP-chemistry Explorer units. Check the current spec sheet on Jackery.com for which chemistry this specific SKU ships with before purchase; it materially affects the warranty you receive.',
+        text: 'Jackery standard consumer warranty, 2 years for NMC-chemistry Explorer units, 5 years for LFP-chemistry Explorer units. Check the current spec sheet on Jackery.com for which chemistry this specific SKU ships with before purchase; it materially affects the warranty you receive.',
       },
     },
   ],
@@ -233,9 +233,9 @@ export default function JackeryExplorer300Review() {
               productKey={PRODUCT_KEY}
               badge='Best Entry-Level'
               rating={4.2}
-              verdict='The Jackery Explorer 300 is the right-sized portable power station for weekend campers, CPAP users on short trips, and anyone who wants a compact emergency buffer. At roughly 7 lbs and $299, it is genuinely portable and approachable — but it is not sized for refrigerators, heaters, or whole-home backup.'
+              verdict='The Jackery Explorer 300 is the right-sized portable power station for weekend campers, CPAP users on short trips, and anyone who wants a compact emergency buffer. At roughly 7 lbs and $299, it is genuinely portable and approachable, but it is not sized for refrigerators, heaters, or whole-home backup.'
               pros={[
-                '7.1 lbs — truly grab-and-go portable',
+                '7.1 lbs, truly grab-and-go portable',
                 'Pure sine wave output safe for sensitive electronics',
                 'Six output ports cover most small-device scenarios',
               ]}
@@ -259,8 +259,7 @@ export default function JackeryExplorer300Review() {
                 </div>
               </div>
               <p className='text-foreground/80 leading-relaxed mb-5'>
-                The Explorer 300 is Jackery&apos;s entry-level power station —
-                a deliberately small 293 Wh unit aimed at buyers who want
+                The Explorer 300 is Jackery&apos;s entry-level power station; a deliberately small 293 Wh unit aimed at buyers who want
                 portable power for phones, laptops, small appliances, and a
                 CPAP on short trips. At approximately 7.1 lbs and roughly $299
                 MSRP, it is by far the easiest Jackery unit to carry and the
@@ -404,9 +403,9 @@ export default function JackeryExplorer300Review() {
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The Explorer 300 sits at the very bottom of the useful-capacity
                 ladder for portable power stations. It has enough juice to
-                matter — you can get a full night of CPAP, roughly ten phone
+                matter; you can get a full night of CPAP, roughly ten phone
                 recharges, several laptop top-ups, or a solid evening of LED
-                camp lighting — but the moment you ask it to do refrigerator,
+                camp lighting. But the moment you ask it to do refrigerator,
                 heater, or hair-dryer work, you&apos;ll be watching the battery
                 indicator drop with every glance.
               </p>
@@ -545,7 +544,7 @@ export default function JackeryExplorer300Review() {
                   <Shield className='h-5 w-5 text-primary mt-0.5 shrink-0' />
                   <span>
                     <strong className='text-foreground'>Thermal safety:</strong>{' '}
-                    LFP is materially more thermally stable than NMC — a
+                    LFP is materially more thermally stable than NMC, a
                     meaningful consideration for a unit you may leave in a
                     parked car or RV.
                   </span>
@@ -644,7 +643,7 @@ export default function JackeryExplorer300Review() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      Pure sine wave — safe for laptops, CPAP, sensitive
+                      Pure sine wave, safe for laptops, CPAP, sensitive
                       electronics
                     </li>
                     <li className='flex items-start gap-2'>
@@ -711,8 +710,8 @@ export default function JackeryExplorer300Review() {
                 has a reasonable price floor during sales.
               </p>
               <p className='text-foreground/80 leading-relaxed'>
-                Outside that envelope — whole-home backup, refrigerator duty,
-                extended off-grid living — it is the wrong tool. Size up to
+                Outside that envelope, whole-home backup, refrigerator duty,
+                extended off-grid living. it is the wrong tool. Size up to
                 the Explorer 1000 v2 or a comparable competitor instead. The
                 worst mistake in this category is buying under your actual
                 needs; the second-worst is buying way over. The 300 is
@@ -724,7 +723,7 @@ export default function JackeryExplorer300Review() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               headline='Ready to buy the Jackery Explorer 300?'
-              verdict='Compact, portable, reasonable price — watch for sale pricing around $249 at Jackery, Amazon, and during Prime Day / Black Friday.'
+              verdict='Compact, portable, reasonable price; watch for sale pricing around $249 at Jackery, Amazon, and during Prime Day / Black Friday.'
               source='jackery-300-bottom'
               variant='bottom'
             />

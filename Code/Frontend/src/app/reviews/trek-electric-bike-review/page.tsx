@@ -75,7 +75,7 @@ const reviewSchema = {
   '@type': 'Review',
   name: 'Trek Allant+ Series E-Bike Review',
   reviewBody:
-    'The Trek Allant+ series delivers a premium electric bike experience anchored by the Bosch Performance Line CX motor and a well-integrated 500Wh battery. The Allant+ 7 hits a compelling mid-range price point at around $3,500, while the 9S pushes into enthusiast territory with Shimano Deore XT components and a Gates carbon belt drive at roughly $5,500. Both models offer a refined, natural ride feel that justifies Trek\'s reputation — but the price premium over direct-to-consumer competitors is significant.',
+    'The Trek Allant+ series delivers a premium electric bike experience anchored by the Bosch Performance Line CX motor and a well-integrated 500Wh battery. The Allant+ 7 hits a compelling mid-range price point at around $3,500, while the 9S pushes into enthusiast territory with Shimano Deore XT components and a Gates carbon belt drive at roughly $5,500. Both models offer a refined, natural ride feel that justifies Trek\'s reputation, but the price premium over direct-to-consumer competitors is significant.',
   datePublished: '2026-04-21',
   author: {
     '@type': 'Organization',
@@ -157,7 +157,7 @@ const faqSchema = {
       name: 'How long does the Trek Allant+ battery last before it needs replacing?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Bosch rates their PowerTube batteries for approximately 500 full charge cycles before capacity drops to 80%. For most commuters riding 20-30 miles per day, that translates to roughly 4-6 years of daily use. Replacement batteries cost approximately $600-$800 through Trek dealers. Proper care — avoiding extreme temperatures and not storing the battery fully depleted — can extend its lifespan.',
+        text: 'Bosch rates their PowerTube batteries for approximately 500 full charge cycles before capacity drops to 80%. For most commuters riding 20-30 miles per day, that translates to roughly 4-6 years of daily use. Replacement batteries cost approximately $600-$800 through Trek dealers. Proper care, avoiding extreme temperatures and not storing the battery fully depleted, can extend its lifespan.',
       },
     },
     {
@@ -173,7 +173,7 @@ const faqSchema = {
       name: 'Does the Trek Allant+ qualify for any e-bike tax credits or rebates?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'As of 2026, there is no active federal e-bike tax credit in the US, though proposals have been introduced in Congress. Some states and cities offer local rebates — for example, certain California air quality districts and utility programs offer $100-$500 rebates for e-bike purchases. Check your local utility and air district for current incentive programs.',
+        text: 'As of 2026, there is no active federal e-bike tax credit in the US, though proposals have been introduced in Congress. Some states and cities offer local rebates. For example, certain California air quality districts and utility programs offer $100-$500 rebates for e-bike purchases. Check your local utility and air district for current incentive programs.',
       },
     },
   ],
@@ -233,7 +233,7 @@ export default function TrekElectricBikeReview() {
                 className='text-lg leading-relaxed mb-4'
                 style={{ color: '#d4d4d8' }}
               >
-                A deep dive into the Trek Allant+ 7 and 9S — Bosch Performance
+                A deep dive into the Trek Allant+ 7 and 9S, Bosch Performance
                 Line CX motor, integrated 500Wh battery, premium components, and
                 a price tag that demands justification.
               </p>
@@ -249,13 +249,13 @@ export default function TrekElectricBikeReview() {
               </div>
             </header>
 
-            {/* Affiliate disclosure — FTC compliance, must be above the fold */}
+            {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
 
             {/* Above-the-fold primary CTA — 40-80% CTR lift vs end-only CTA */}
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
-              badge="Premium Pick — LBS Support"
+              badge="Premium Pick. LBS Support"
               rating={4.5}
               verdict="Trek Allant+ 7 and 9S — Bosch Performance Line CX motor, integrated 500Wh battery, premium components, and the largest independent bike shop network in North America for lifetime service."
               pros={[
@@ -534,8 +534,8 @@ export default function TrekElectricBikeReview() {
                 The answer is the same reason people buy a Toyota Camry instead of the
                 cheapest sedan on the lot: refinement, reliability, and a support
                 network. Trek is the largest bicycle manufacturer in the United States,
-                with over 1,700 authorized dealers. When something goes wrong — and with
-                e-bikes, something eventually will — you can walk into a local shop and
+                with over 1,700 authorized dealers. When something goes wrong. and with
+                e-bikes, something eventually will, you can walk into a local shop and
                 get it fixed. That alone separates Trek from brands that ship you a box
                 and wish you luck.
               </p>
@@ -559,8 +559,8 @@ export default function TrekElectricBikeReview() {
                 This is the heart of the Allant+ and the primary reason it costs what
                 it does. The Bosch Performance Line CX is widely considered the
                 gold standard for mid-drive e-bike motors. It produces 85 Nm of
-                torque — more than enough to flatten hills that would leave hub-motor
-                bikes struggling — and it does so with a smoothness that makes the
+                torque, more than enough to flatten hills that would leave hub-motor
+                bikes struggling, and it does so with a smoothness that makes the
                 assist feel like a natural extension of your pedaling, not a motor
                 bolted onto a bicycle.
               </p>
@@ -570,7 +570,7 @@ export default function TrekElectricBikeReview() {
                 pedal pressure, and speed simultaneously, adjusting power delivery in
                 real time. In practice, this means the transition from &quot;your legs&quot;
                 to &quot;motor helping&quot; is nearly imperceptible. You pedal, and the
-                bike just... goes. There is no lag, no jolt, no feeling of being pushed
+                bike just... Goes. There is no lag, no jolt, no feeling of being pushed
                 from behind.
               </p>
               <div
@@ -622,7 +622,7 @@ export default function TrekElectricBikeReview() {
               </div>
               <p className='leading-relaxed mb-4' style={{ color: '#d4d4d8' }}>
                 The CX motor also supports eMTB mode, which dynamically adjusts assist
-                based on how hard you push — Eco-level on flats, near-Turbo on hills.
+                based on how hard you push, Eco-level on flats, near-Turbo on hills.
                 This is the mode most riders use 90% of the time.
               </p>
               <p className='leading-relaxed mb-6' style={{ color: '#d4d4d8' }}>
@@ -646,7 +646,7 @@ export default function TrekElectricBikeReview() {
                 of gravity, and a balanced ride.
               </p>
               <p className='leading-relaxed mb-4' style={{ color: '#d4d4d8' }}>
-                500Wh is not the largest battery on the market — competitors pack 700Wh
+                500Wh is not the largest battery on the market, competitors pack 700Wh
                 or even 1,000Wh. But capacity numbers alone are misleading. Because the
                 Bosch CX mid-drive is more efficient than most hub motors (especially
                 on hills), the Allant+ often matches the real-world range of hub-motor
@@ -712,8 +712,7 @@ export default function TrekElectricBikeReview() {
               </h2>
               <p className='leading-relaxed mb-4' style={{ color: '#d4d4d8' }}>
                 Pick up a Trek Allant+ and you immediately feel where the money went.
-                The Alpha Gold Aluminum frame is hydroformed and internally routed —
-                no visible cables, no external battery, no clunky motor housing jutting
+                The Alpha Gold Aluminum frame is hydroformed and internally routed. No visible cables, no external battery, no clunky motor housing jutting
                 out from the bottom bracket. Every wire runs inside the frame. The
                 welds are clean. The paint is deep. This is a bike that looks like it
                 costs what it costs.
@@ -745,7 +744,7 @@ export default function TrekElectricBikeReview() {
                     <p className='text-sm mt-2' style={{ color: '#d4d4d8' }}>
                       <strong style={{ color: '#f5f5f5' }}>Allant+ 9S:</strong> Gates Carbon
                       Drive CDX belt with Shimano Deore XT Linkglide internally geared hub.
-                      Zero chain maintenance — no lubing, no stretching, no greasy pants legs.
+                      Zero chain maintenance, no lubing, no stretching, no greasy pants legs.
                       The belt is rated for 15,000-20,000 miles. For daily commuters, this is
                       the single biggest quality-of-life upgrade over the 7.
                     </p>
@@ -771,12 +770,10 @@ export default function TrekElectricBikeReview() {
                       Display
                     </h4>
                     <p className='text-sm' style={{ color: '#d4d4d8' }}>
-                      <strong style={{ color: '#f5f5f5' }}>Allant+ 7:</strong> Bosch Intuvia 100
-                      — clean, legible, shows speed/battery/assist level/range. Gets the job done.
+                      <strong style={{ color: '#f5f5f5' }}>Allant+ 7:</strong> Bosch Intuvia 100, clean, legible, shows speed/battery/assist level/range. Gets the job done.
                     </p>
                     <p className='text-sm mt-2' style={{ color: '#d4d4d8' }}>
-                      <strong style={{ color: '#f5f5f5' }}>Allant+ 9S:</strong> Bosch Kiox 300
-                      — full-color display with navigation, fitness tracking, smartphone
+                      <strong style={{ color: '#f5f5f5' }}>Allant+ 9S:</strong> Bosch Kiox 300. Full-color display with navigation, fitness tracking, smartphone
                       integration via the Bosch eBike Flow app. Noticeably sharper and more
                       feature-rich.
                     </p>
@@ -787,7 +784,7 @@ export default function TrekElectricBikeReview() {
                 Both models use Schwalbe Super Moto-X tires (27.5 x 2.4&quot;), which
                 strike a good balance between rolling resistance and puncture protection.
                 They are not the fastest-rolling tires available, but for commuting
-                through mixed urban conditions — including occasional glass, gravel,
+                through mixed urban conditions, including occasional glass, gravel,
                 and wet roads — they are a smart default choice. The SR Suntour NEX
                 suspension fork on both models provides 63mm of travel, enough to
                 smooth out potholes and rough pavement without adding excessive weight.
@@ -844,11 +841,11 @@ export default function TrekElectricBikeReview() {
                   <ul className='space-y-2 text-sm' style={{ color: '#d4d4d8' }}>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#22c55e' }} />
-                      Bosch Performance Line CX motor — the best mid-drive in the business
+                      Bosch Performance Line CX motor, the best mid-drive in the business
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#22c55e' }} />
-                      Fully integrated battery and cable routing — looks like a regular bike
+                      Fully integrated battery and cable routing, looks like a regular bike
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#22c55e' }} />
@@ -887,11 +884,11 @@ export default function TrekElectricBikeReview() {
                   <ul className='space-y-2 text-sm' style={{ color: '#d4d4d8' }}>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#ef4444' }} />
-                      Expensive — $3,500+ is 2-3x the price of capable budget e-bikes
+                      Expensive, $3,500+ is 2-3x the price of capable budget e-bikes
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#ef4444' }} />
-                      Class 1 only (20 mph) — no throttle, no 28 mph option in the US
+                      Class 1 only (20 mph), no throttle, no 28 mph option in the US
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#ef4444' }} />
@@ -899,11 +896,11 @@ export default function TrekElectricBikeReview() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#ef4444' }} />
-                      55 lbs — heavy to carry up stairs or load onto a car rack
+                      55 lbs; heavy to carry up stairs or load onto a car rack
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#ef4444' }} />
-                      Bosch system is proprietary — repairs must go through authorized shops
+                      Bosch system is proprietary. Repairs must go through authorized shops
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 mt-0.5 shrink-0' style={{ color: '#ef4444' }} />
@@ -958,15 +955,15 @@ export default function TrekElectricBikeReview() {
                 themselves in reduced maintenance and improved safety. If you ride
                 occasionally or are testing whether bike commuting works for your
                 lifestyle, the Allant+ 7 delivers 90% of the experience at 64% of
-                the price — and you can always upgrade components later.
+                the price. And you can always upgrade components later.
               </p>
 
-              {/* Mid-content affiliate CTA — 30-60% CTR lift */}
+              {/* Mid-content affiliate CTA, 30-60% CTR lift */}
               <div className='my-10'>
                 <AffiliateCTABox
                   productKey={PRODUCT_KEY}
                   headline="Ready to buy?"
-                  verdict="Trek Allant+ is available at 1,700+ independent bike shops across North America — check current pricing and request a test ride."
+                  verdict="Trek Allant+ is available at 1,700+ independent bike shops across North America, check current pricing and request a test ride."
                   source="trek-electric-bike"
                   variant="mid"
                 />
@@ -1090,7 +1087,7 @@ export default function TrekElectricBikeReview() {
                       (lower torque at 50 Nm but Class 3 capable at 28 mph) and packs a larger
                       710Wh battery. If top speed and range matter most, the Vado wins. If raw
                       climbing power and ride feel are your priorities, the Bosch CX in the Trek
-                      is superior. The Vado is also about 5 lbs lighter. Both are excellent — your
+                      is superior. The Vado is also about 5 lbs lighter. Both are excellent, your
                       choice depends on whether you value speed (Vado) or torque and motor
                       refinement (Trek).
                     </p>
@@ -1114,7 +1111,7 @@ export default function TrekElectricBikeReview() {
                     <p className='text-sm' style={{ color: '#d4d4d8' }}>
                       The value play. At nearly half the Allant+ 7 price, the RadCity delivers
                       functional transportation: 672Wh battery, throttle, larger carrying
-                      capacity. But the ride quality gap is enormous — the hub motor is louder,
+                      capacity. But the ride quality gap is enormous, the hub motor is louder,
                       less refined, and struggles on steep hills. The RadCity is a great bike
                       for the money, but it lives in a different category. Buy the RadCity if
                       you need an e-bike. Buy the Allant+ if you want one.
@@ -1359,7 +1356,7 @@ export default function TrekElectricBikeReview() {
               <p className='leading-relaxed mb-4' style={{ color: '#d4d4d8' }}>
                 The 500Wh battery feels dated against 2026 competitors, though the
                 Range Boost extender closes that gap. The Class 1 limitation (20 mph,
-                no throttle) will be a dealbreaker for some — look at the Specialized
+                no throttle) will be a dealbreaker for some. Look at the Specialized
                 Turbo Vado for 28 mph assist. And you can buy a functional e-bike for
                 $1,500 or less.
               </p>

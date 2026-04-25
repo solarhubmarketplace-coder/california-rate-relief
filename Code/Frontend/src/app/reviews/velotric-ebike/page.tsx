@@ -119,7 +119,7 @@ const faqSchema = {
       name: 'What does IPX6 water rating mean?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'IPX6 is an Ingress Protection rating for water resistance. IPX6 means the electronics can withstand powerful jets of water from any direction — significantly more than IPX4 (splash-resistant) or IPX5 (low-pressure jets). For e-bike buyers, IPX6 means you can ride confidently in heavy rain, spray the bike down with a hose to clean it, and not worry about a sudden downpour destroying the controller. Most DTC e-bikes are IPX4-IPX5; Velotric is one of the few brands that engineers to IPX6 across the lineup.',
+        text: 'IPX6 is an Ingress Protection rating for water resistance. IPX6 means the electronics can withstand powerful jets of water from any direction; significantly more than IPX4 (splash-resistant) or IPX5 (low-pressure jets). For e-bike buyers, IPX6 means you can ride confidently in heavy rain, spray the bike down with a hose to clean it, and not worry about a sudden downpour destroying the controller. Most DTC e-bikes are IPX4-IPX5; Velotric is one of the few brands that engineers to IPX6 across the lineup.',
       },
     },
     {
@@ -195,7 +195,7 @@ export default function VelotricEbikeHub() {
               productKey={PRIMARY_PRODUCT_KEY}
               badge='Engineer-Built Premium'
               rating={4.6}
-              verdict='Velotric was founded by former Lime and Trek engineers in 2021 — the full lineup is UL 2849 certified, IPX6 water-rated, and carries a 2-year warranty. It is the most engineering-led DTC e-bike brand, and often cheaper than equivalent Aventons.'
+              verdict='Velotric was founded by former Lime and Trek engineers in 2021. The full lineup is UL 2849 certified, IPX6 water-rated, and carries a 2-year warranty. It is the most engineering-led DTC e-bike brand, and often cheaper than equivalent Aventons.'
               pros={[
                 'Riders who prioritize safety certifications',
                 'Wet-climate commuters (IPX6 water rating)',
@@ -355,19 +355,19 @@ export default function VelotricEbikeHub() {
 
               {/* Discover 2 */}
               <h2 id='discover' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                1. Velotric Discover 2 — The All-Around Best Pick
+                1. Velotric Discover 2. The All-Around Best Pick
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,499 · <strong>Motor:</strong> 750W hub (85 Nm) · <strong>Range:</strong> 55-65 mi · <strong>Weight:</strong> 68 lbs · <strong>Tires:</strong> 27.5 x 2.4 inches (mixed-surface)
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Discover 2 is Velotric&apos;s best-seller and the bike we recommend to most buyers in the Velotric lineup. It sits exactly at the intersection of commuter and light-adventure — 27.5-inch hybrid tires that handle pavement and dirt roads equally, a 750W rear hub motor with 85 Nm of torque, a 691 Wh battery delivering 55-65 miles of real-world range, and SensorShift pedal assist.
+                The Discover 2 is Velotric&apos;s best-seller and the bike we recommend to most buyers in the Velotric lineup. It sits exactly at the intersection of commuter and light-adventure, 27.5-inch hybrid tires that handle pavement and dirt roads equally, a 750W rear hub motor with 85 Nm of torque, a 691 Wh battery delivering 55-65 miles of real-world range, and SensorShift pedal assist.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Real-world: this is the bike that most Velotric owners praise in reviews. It&apos;s comfortable for an hour-long ride, fast enough to feel powerful (28 mph unlocked), and durable enough to be ridden in rain. Integrated headlight/taillight, rear rack (compatible with most pannier bags), and full fenders included. Hydraulic disc brakes with 180mm rotors front and rear.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                At $1,499 it undercuts the Aventon Level 3 ($2,099) by $600 and delivers comparable performance. For buyers choosing between Aventon Level 3 and Velotric Discover 2, it&apos;s genuinely close — Aventon has a bigger dealer network, Velotric has sharper pricing.
+                At $1,499 it undercuts the Aventon Level 3 ($2,099) by $600 and delivers comparable performance. For buyers choosing between Aventon Level 3 and Velotric Discover 2, it&apos;s genuinely close, Aventon has a bigger dealer network, Velotric has sharper pricing.
               </p>
               <div className='mb-8'>
                 <BuyButton
@@ -380,7 +380,7 @@ export default function VelotricEbikeHub() {
 
               {/* Nomad 1 Plus */}
               <h2 id='nomad' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                2. Velotric Nomad 1 Plus — The Fat-Tire All-Terrain
+                2. Velotric Nomad 1 Plus, The Fat-Tire All-Terrain
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,899 · <strong>Motor:</strong> 750W hub (85 Nm) · <strong>Range:</strong> 55 mi · <strong>Weight:</strong> 75 lbs · <strong>Tires:</strong> 26 x 4 inches
@@ -402,16 +402,16 @@ export default function VelotricEbikeHub() {
 
               {/* T1 ST Plus */}
               <h2 id='t1' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                3. Velotric T1 ST Plus — The Lightweight Commuter
+                3. Velotric T1 ST Plus; The Lightweight Commuter
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,599 · <strong>Motor:</strong> 350W hub (50 Nm) · <strong>Range:</strong> 70 mi · <strong>Weight:</strong> 48 lbs
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The T1 ST Plus is Velotric&apos;s lightweight road/urban e-bike — a step-through 700c commuter with skinnier tires, a smaller 350W motor, a sleek integrated battery in the downtube, and a total weight of just 48 lbs. It&apos;s the closest thing to a regular bike in the Velotric lineup, and it&apos;s aimed at commuters who care more about ride feel than raw power.
+                The T1 ST Plus is Velotric&apos;s lightweight road/urban e-bike. A step-through 700c commuter with skinnier tires, a smaller 350W motor, a sleek integrated battery in the downtube, and a total weight of just 48 lbs. It&apos;s the closest thing to a regular bike in the Velotric lineup, and it&apos;s aimed at commuters who care more about ride feel than raw power.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The 70-mile range claim holds up in real-world riding — the combination of a relatively efficient 350W motor, aerodynamic commuter tires, and a 500 Wh battery produces meaningfully better range than the heavier bikes in the lineup. Hydraulic disc brakes, integrated lights, fenders, and rear rack included.
+                The 70-mile range claim holds up in real-world riding, the combination of a relatively efficient 350W motor, aerodynamic commuter tires, and a 500 Wh battery produces meaningfully better range than the heavier bikes in the lineup. Hydraulic disc brakes, integrated lights, fenders, and rear rack included.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Caveat: the 50 Nm of torque is on the lower end for California terrain. On 10%+ grades with a rider pushing 200 lbs, the motor works hard. If you live somewhere flat or gently rolling, the T1 ST Plus is the most premium-feeling Velotric for the money. If you live in hilly SF/Oakland, step up to the Discover 2 or Summit 1.
@@ -429,20 +429,20 @@ export default function VelotricEbikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='What UL 2849 Means'
-                verdict='Every Velotric is UL 2849 certified — the safety standard that NYC now requires and that other cities are adopting. It is evidence that the battery and charging system was tested by a third-party lab for fire safety.'
+                verdict='Every Velotric is UL 2849 certified, the safety standard that NYC now requires and that other cities are adopting. It is evidence that the battery and charging system was tested by a third-party lab for fire safety.'
                 source='velotric-ebike-mid'
                 variant='mid'
               />
 
               {/* Go */}
               <h2 id='go' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                4. Velotric Go — The Value Pick
+                4. Velotric Go, The Value Pick
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $999 · <strong>Motor:</strong> 500W hub (65 Nm) · <strong>Range:</strong> 55 mi · <strong>Weight:</strong> 70 lbs · <strong>Class:</strong> 2 (20 mph)
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Velotric Go is the brand&apos;s entry-level e-bike at $999 — exactly matching the Lectric XP 3.0 price point and positioning as Velotric&apos;s answer to the budget-conscious first-time buyer. You get the same UL 2849 certification and IPX6 water rating as the more expensive bikes in the lineup, which is rare at this price.
+                The Velotric Go is the brand&apos;s entry-level e-bike at $999, exactly matching the Lectric XP 3.0 price point and positioning as Velotric&apos;s answer to the budget-conscious first-time buyer. You get the same UL 2849 certification and IPX6 water rating as the more expensive bikes in the lineup, which is rare at this price.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The trade-offs vs the Discover 2: smaller motor (500W vs 750W), capped at Class 2 (20 mph), standard torque sensor instead of SensorShift, and shorter battery range (55 mi vs 65 mi). But for $500 less, you&apos;re getting a genuinely premium-feeling bike with safety certifications that most bikes at this price point don&apos;t have.
@@ -461,13 +461,13 @@ export default function VelotricEbikeHub() {
 
               {/* Summit 1 */}
               <h2 id='summit' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                5. Velotric Summit 1 — The Flagship
+                5. Velotric Summit 1. The Flagship
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $2,499 · <strong>Motor:</strong> 750W hub (90 Nm) · <strong>Range:</strong> 75 mi · <strong>Weight:</strong> 73 lbs
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Summit 1 is Velotric&apos;s premium/performance flagship. 90 Nm of torque (highest in the lineup), 75-mile range, SensorShift pedal assist, 4-piston hydraulic brakes, a full-color TFT display, and integrated rear suspension. It&apos;s positioned against bikes like the Specialized Turbo Como 3.0 ($3,750) or Trek Verve+ 3 ($3,299) — premium bike-shop commuters at $1,000-$1,500 more.
+                The Summit 1 is Velotric&apos;s premium/performance flagship. 90 Nm of torque (highest in the lineup), 75-mile range, SensorShift pedal assist, 4-piston hydraulic brakes, a full-color TFT display, and integrated rear suspension. It&apos;s positioned against bikes like the Specialized Turbo Como 3.0 ($3,750) or Trek Verve+ 3 ($3,299). Premium bike-shop commuters at $1,000-$1,500 more.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The 90 Nm torque rating is genuinely meaningful. On the steepest California grades (think: 15%+, which covers a lot of SF and Oakland neighborhoods), the Summit 1 pulls smoothly where 75-80 Nm bikes start to labor. The TFT display is bright enough to read in direct sunlight, the rear suspension takes the edge off rough pavement, and the 4-piston brakes have genuinely strong modulation.
@@ -486,7 +486,7 @@ export default function VelotricEbikeHub() {
 
               {/* Breeze 1 */}
               <h2 id='breeze' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                6. Velotric Breeze 1 — The Accessible Step-Through
+                6. Velotric Breeze 1, The Accessible Step-Through
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $1,599 · <strong>Motor:</strong> 500W hub (65 Nm) · <strong>Range:</strong> 65 mi · <strong>Weight:</strong> 62 lbs
@@ -552,7 +552,7 @@ export default function VelotricEbikeHub() {
                 UL 2849 Certification: Why It Matters
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                UL 2849 is the Underwriters Laboratories safety standard for e-bike electrical systems. It tests the entire electrical path — battery, battery management system, charger, motor controller, wiring, and connectors — for fire safety, thermal runaway resistance, overcharge protection, and fault tolerance.
+                UL 2849 is the Underwriters Laboratories safety standard for e-bike electrical systems. It tests the entire electrical path, battery, battery management system, charger, motor controller, wiring, and connectors, for fire safety, thermal runaway resistance, overcharge protection, and fault tolerance.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Why this matters:
@@ -576,7 +576,7 @@ export default function VelotricEbikeHub() {
                 </li>
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Velotric was one of the first DTC brands to commit to UL 2849 across the entire lineup. Aventon, Lectric, and Rad Power have all moved the same direction in 2024-2025 — but Velotric got there first and made it a core part of their brand story.
+                Velotric was one of the first DTC brands to commit to UL 2849 across the entire lineup. Aventon, Lectric, and Rad Power have all moved the same direction in 2024-2025. but Velotric got there first and made it a core part of their brand story.
               </p>
 
               {/* IPX6 */}
@@ -634,12 +634,12 @@ export default function VelotricEbikeHub() {
                     UL certified?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — UL 2849 for the electrical system and UL 2271 for the battery pack on every current model.
+                    Yes. UL 2849 for the electrical system and UL 2271 for the battery pack on every current model.
                   </p>
                 </div>
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>
-                    IPX6 water rating — what does that mean?
+                    IPX6 water rating, what does that mean?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
                     You can ride in heavy rain, splash through puddles, and hose-wash the bike without fear of damaging the controller. Most competitors only rate IPX4-IPX5.
@@ -668,7 +668,7 @@ export default function VelotricEbikeHub() {
                 The Bottom Line
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For most Velotric buyers, the <strong>Discover 2</strong> at $1,499 is the right pick — 750W motor, 85 Nm torque, 55-65 mile range, SensorShift pedal assist, and all the safety certifications in one bike. Upgrade to the <strong>Summit 1</strong> ($2,499) if you want the flagship performance; step down to the <strong>Go</strong> ($999) for the best sub-$1,000 DTC commuter. The <strong>Nomad 1 Plus</strong> ($1,899) is the fat-tire pick and undercuts the Aventon Aventure 3 by $300.
+                For most Velotric buyers, the <strong>Discover 2</strong> at $1,499 is the right pick. 750W motor, 85 Nm torque, 55-65 mile range, SensorShift pedal assist, and all the safety certifications in one bike. Upgrade to the <strong>Summit 1</strong> ($2,499) if you want the flagship performance; step down to the <strong>Go</strong> ($999) for the best sub-$1,000 DTC commuter. The <strong>Nomad 1 Plus</strong> ($1,899) is the fat-tire pick and undercuts the Aventon Aventure 3 by $300.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Where Velotric beats Aventon: engineering certifications (UL 2849 came first, IPX6 beats IPX5), SensorShift pedal assist for some riders, and usually sharper pricing. Where Aventon beats Velotric: 1,500+ dealer network vs ~300, more polished app, broader lineup including cargo bikes. If engineering-first appeals to you, Velotric. If ecosystem-first appeals to you, Aventon. Both are dramatically better than buying a cheap unbranded e-bike and hoping for the best.

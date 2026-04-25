@@ -18,14 +18,14 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-// Primary affiliate CTA — best-value under-$1000 e-bike
+// Primary affiliate CTA. Best-value under-$1000 e-bike
 const PRIMARY_PRODUCT_KEY = 'lectric-xp-3';
 
 export const metadata: Metadata = {
   title:
     'Best Cheap Electric Bikes 2026: Under $1,000 That Actually Don\'t Suck',
   description:
-    'The six best cheap electric bikes under $1,000 in 2026. Lectric XP Lite 2.0, Ride1Up Roadster V3, Aventon Soltera 2.5, Heybike Mars 2.0, Rattan Challenger Pro, and Espin Sport compared — what to look for, what to avoid, and UL 2849 safety certification.',
+    'The six best cheap electric bikes under $1,000 in 2026. Lectric XP Lite 2.0, Ride1Up Roadster V3, Aventon Soltera 2.5, Heybike Mars 2.0, Rattan Challenger Pro, and Espin Sport compared, what to look for, what to avoid, and UL 2849 safety certification.',
   alternates: {
     canonical: '/reviews/cheap-electric-bike',
   },
@@ -101,7 +101,7 @@ const faqSchema = {
       name: 'What components should I check on a budget e-bike?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Five things matter most: (1) Motor wattage — 500W is the sweet spot for budget bikes, 750W is ideal but bumps price. (2) Battery capacity in watt-hours (Wh) — aim for 400Wh+, which gives 25-40 mile real-world range. (3) Brakes — mechanical discs are acceptable at this price; hydraulics are a bonus. (4) Frame material — aluminum is standard; steel is heavier but cheaper and easier to repair. (5) UL 2849 or EN 15194 certification for the battery pack — this is the single most important safety feature to confirm before buying.',
+        text: 'Five things matter most: (1) Motor wattage. 500W is the sweet spot for budget bikes, 750W is ideal but bumps price. (2) Battery capacity in watt-hours (Wh). aim for 400Wh+, which gives 25-40 mile real-world range. (3) Brakes. mechanical discs are acceptable at this price; hydraulics are a bonus. (4) Frame material, aluminum is standard; steel is heavier but cheaper and easier to repair. (5) UL 2849 or EN 15194 certification for the battery pack — this is the single most important safety feature to confirm before buying.',
       },
     },
     {
@@ -117,7 +117,7 @@ const faqSchema = {
       name: 'Are Amazon and Walmart electric bikes safe?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most are fine, but you need to check two things before buying. First, confirm UL 2849 certification (e-bike electrical system safety standard) or EN 15194 (European equivalent) on the battery — this is the anti-fire certification that matters most. Second, verify the seller is either the brand directly or an authorized retailer. Third-party sellers of unbranded Amazon bikes often ship unsertified batteries that have been linked to apartment fires in NYC, Chicago, and Los Angeles. Brands like Heybike, Rattan, and Aventon that sell on Amazon through their official storefronts are generally safe; truly generic "e-bike" listings are not.',
+        text: 'Most are fine, but you need to check two things before buying. First, confirm UL 2849 certification (e-bike electrical system safety standard) or EN 15194 (European equivalent) on the battery. This is the anti-fire certification that matters most. Second, verify the seller is either the brand directly or an authorized retailer. Third-party sellers of unbranded Amazon bikes often ship unsertified batteries that have been linked to apartment fires in NYC, Chicago, and Los Angeles. Brands like Heybike, Rattan, and Aventon that sell on Amazon through their official storefronts are generally safe; truly generic "e-bike" listings are not.',
       },
     },
     {
@@ -133,7 +133,7 @@ const faqSchema = {
       name: 'Is UL 2849 certification important?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — UL 2849 is the electrical safety standard for e-bike systems specifically designed to prevent battery fires. Since 2023, multiple major U.S. cities (notably New York City) have begun enforcing UL 2849 requirements for e-bikes in response to a rash of apartment fires caused by uncertified batteries. If you\'re buying an e-bike you\'ll charge indoors, UL 2849 certification is the single most important safety factor. Most brand-name bikes (Lectric, Aventon, Ride1Up, Heybike, Rad Power) are now UL 2849 certified. Generic Amazon bikes often are not.',
+        text: 'Yes, UL 2849 is the electrical safety standard for e-bike systems specifically designed to prevent battery fires. Since 2023, multiple major U.S. Cities (notably New York City) have begun enforcing UL 2849 requirements for e-bikes in response to a rash of apartment fires caused by uncertified batteries. If you\'re buying an e-bike you\'ll charge indoors, UL 2849 certification is the single most important safety factor. Most brand-name bikes (Lectric, Aventon, Ride1Up, Heybike, Rad Power) are now UL 2849 certified. Generic Amazon bikes often are not.',
       },
     },
   ],
@@ -196,7 +196,7 @@ export default function CheapElectricBikeHub() {
               productKey={PRIMARY_PRODUCT_KEY}
               badge='Our Top Pick'
               rating={4.5}
-              verdict={`The Lectric XP Lite 2.0 at $799 is the best all-around cheap electric bike in 2026. Folding frame, Class 2 throttle + pedal-assist, 300W motor with 20 mph top speed, UL 2849 certification, and a 1-year warranty with strong U.S. support. It is the bike we recommend to first-time e-bike buyers more than any other.`}
+              verdict={`The Lectric XP Lite 2.0 at $799 is the best all-around cheap electric bike in 2026. Folding frame, Class 2 throttle + pedal-assist, 300W motor with 20 mph top speed, UL 2849 certification, and a 1-year warranty with strong U.S. Support. It is the bike we recommend to first-time e-bike buyers more than any other.`}
               pros={[
                 'First-time e-bike buyers on a budget',
                 'Apartment dwellers who need folding storage',
@@ -210,7 +210,7 @@ export default function CheapElectricBikeHub() {
             {/* Intro */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Three years ago, a &quot;cheap electric bike&quot; meant a poorly-made Amazon bike that might catch fire in your hallway. In 2026, a cheap e-bike means something genuinely different — an $800 Lectric XP Lite 2.0 or a $995 Ride1Up Roadster V3 built by established brands with real U.S. support, UL 2849-certified batteries, and enough component quality to be reliable transportation.
+                Three years ago, a &quot;cheap electric bike&quot; meant a poorly-made Amazon bike that might catch fire in your hallway. In 2026, a cheap e-bike means something genuinely different. An $800 Lectric XP Lite 2.0 or a $995 Ride1Up Roadster V3 built by established brands with real U.S. Support, UL 2849-certified batteries, and enough component quality to be reliable transportation.
               </p>
               <p className='text-lg text-foreground/80 leading-relaxed mb-8'>
                 This guide covers the six cheap electric bikes under $1,000 that we&apos;d actually recommend in 2026, plus honest guidance on what&apos;s worth paying for, what you can skip, and why UL 2849 certification has become the single most important safety checkbox in the category.
@@ -326,7 +326,7 @@ export default function CheapElectricBikeHub() {
               <ul className='space-y-2 text-foreground/80 mb-6'>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span>Brand-name battery cells (Samsung, LG, Panasonic) — not generic Chinese cells</span>
+                  <span>Brand-name battery cells (Samsung, LG, Panasonic). Not generic Chinese cells</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
@@ -338,7 +338,7 @@ export default function CheapElectricBikeHub() {
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
-                  <span>Established brand with U.S. customer service and warranty</span>
+                  <span>Established brand with U.S. Customer service and warranty</span>
                 </li>
                 <li className='flex items-start gap-2'>
                   <Check className='h-4 w-4 text-emerald-400 mt-1 shrink-0' />
@@ -391,7 +391,7 @@ export default function CheapElectricBikeHub() {
                 Brakes
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Mechanical disc brakes (with a cable) are acceptable at this price point. Hydraulic disc brakes are better — they self-adjust, work in wet weather, and require less hand strength. Avoid rim brakes at any price; they can&apos;t safely stop a 50+ lb e-bike from 20 mph.
+                Mechanical disc brakes (with a cable) are acceptable at this price point. Hydraulic disc brakes are better, they self-adjust, work in wet weather, and require less hand strength. Avoid rim brakes at any price; they can&apos;t safely stop a 50+ lb e-bike from 20 mph.
               </p>
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
                 Certification
@@ -404,7 +404,7 @@ export default function CheapElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Why the Lectric XP Lite 2.0'
-                verdict={`At $799 you get a Lectric-brand folding e-bike with UL 2849 certification, proper U.S. warranty, and a company that will actually pick up the phone if something breaks. That combination is rare at this price.`}
+                verdict={`At $799 you get a Lectric-brand folding e-bike with UL 2849 certification, proper U.S. Warranty, and a company that will actually pick up the phone if something breaks. That combination is rare at this price.`}
                 source='cheap-electric-bike-mid'
                 variant='mid'
               />
@@ -469,13 +469,13 @@ export default function CheapElectricBikeHub() {
 
               {/* Product Deep Dives */}
               <h2 id='lectric' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                1. Lectric XP Lite 2.0 — Best Overall
+                1. Lectric XP Lite 2.0. Best Overall
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $799 · <strong>Motor:</strong> 300W peak · <strong>Battery:</strong> 36V / 10.4Ah (375 Wh) · <strong>Top speed:</strong> 20 mph · <strong>Weight:</strong> 46 lbs
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Lectric is a Phoenix-based brand that has quietly become the best-selling U.S. e-bike maker by undercutting Rad Power on price while matching them on quality. The XP Lite 2.0 is the budget-tier model — folding frame, 300W hub motor, UL 2849 certified battery, Class 2 throttle plus pedal-assist, and a proper 1-year warranty with U.S.-based customer service.
+                Lectric is a Phoenix-based brand that has quietly become the best-selling U.S. E-bike maker by undercutting Rad Power on price while matching them on quality. The XP Lite 2.0 is the budget-tier model — folding frame, 300W hub motor, UL 2849 certified battery, Class 2 throttle plus pedal-assist, and a proper 1-year warranty with U.S.-based customer service.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The folding frame is the killer feature for city riders. It folds to about 35 x 18 x 24 inches — small enough to fit in a sedan trunk, under an office desk, or in an apartment entryway. The hinges are heavier-duty than most folding bikes and the bike feels solid once locked in.
@@ -496,13 +496,13 @@ export default function CheapElectricBikeHub() {
               </div>
 
               <h2 id='ride1up' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                2. Ride1Up Roadster V3 — Best Quality Build
+                2. Ride1Up Roadster V3, Best Quality Build
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $995 · <strong>Motor:</strong> 350W nominal (500W peak) · <strong>Battery:</strong> 36V / 7Ah (252 Wh) · <strong>Top speed:</strong> 24 mph · <strong>Weight:</strong> 33 lbs
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Ride1Up Roadster V3 is the lightest e-bike in this guide at 33 pounds — lighter than many pedal road bikes and dramatically lighter than fat-tire budget bikes. It achieves that by using a smaller battery (252Wh), a hidden battery integrated into the down tube, and premium aluminum tube construction.
+                The Ride1Up Roadster V3 is the lightest e-bike in this guide at 33 pounds, lighter than many pedal road bikes and dramatically lighter than fat-tire budget bikes. It achieves that by using a smaller battery (252Wh), a hidden battery integrated into the down tube, and premium aluminum tube construction.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The payoff: the bike rides like a regular road bike. Most people won&apos;t even realize it&apos;s an e-bike at first glance. The hidden battery and clean cable routing keep the silhouette classical. At 33 lbs it&apos;s easy to carry upstairs to an apartment, throw on a car rack, or pedal unassisted if the battery dies.
@@ -535,7 +535,7 @@ export default function CheapElectricBikeHub() {
                 What sets Aventon apart is support. You can walk into a local dealer (or most bike shops that carry Aventon) for warranty repairs, basic tune-ups, and parts. That&apos;s rare in the direct-to-consumer e-bike world and it meaningfully lowers your long-term cost of ownership.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Soltera 2.5 uses Aventon&apos;s newer chassis with better geometry than the previous version, integrated rear rack mounts (rack sold separately), and the Aventon-branded dash. The 346Wh battery gets 25-35 miles realistic range. Real-world reliability has been strong — Aventon has one of the lower warranty claim rates in the category.
+                The Soltera 2.5 uses Aventon&apos;s newer chassis with better geometry than the previous version, integrated rear rack mounts (rack sold separately), and the Aventon-branded dash. The 346Wh battery gets 25-35 miles realistic range. Real-world reliability has been strong, Aventon has one of the lower warranty claim rates in the category.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The weakness: Aventon&apos;s pricing runs higher list but regularly discounts on Amazon and their own site. The $999 sale price is genuinely good value; the $1,199 MSRP is not as competitive. Always check current promo pricing before buying.
@@ -550,7 +550,7 @@ export default function CheapElectricBikeHub() {
               </div>
 
               <h2 id='heybike' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                4. Heybike Mars 2.0 — Best Fat Tire for Off-Road
+                4. Heybike Mars 2.0, Best Fat Tire for Off-Road
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $849 · <strong>Motor:</strong> 750W peak · <strong>Battery:</strong> 48V / 12Ah (576 Wh) · <strong>Top speed:</strong> 28 mph · <strong>Weight:</strong> 75 lbs
@@ -559,10 +559,10 @@ export default function CheapElectricBikeHub() {
                 Heybike Mars 2.0 is the cheapest legitimate fat-tire e-bike we can recommend in 2026. At $849 it gets you a 750W peak motor, a 576Wh battery, 20x4&quot; fat tires, a folding frame, and a classy cruiser-style geometry. In the fat-tire category, these are specs that typically come with a $1,500-$2,500 price tag.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The build is heavy (75 lbs) and that&apos;s not going to change. The trade-off for the fat tires is that you can ride sand, gravel, snow, and hardpack dirt — places a road e-bike can&apos;t go. The 750W motor pairs well with the fat tires for off-road utility; you can grind up fire roads and rolling hills without the motor struggling.
+                The build is heavy (75 lbs) and that&apos;s not going to change. The trade-off for the fat tires is that you can ride sand, gravel, snow, and hardpack dirt, places a road e-bike can&apos;t go. The 750W motor pairs well with the fat tires for off-road utility; you can grind up fire roads and rolling hills without the motor struggling.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Heybike has improved meaningfully as a brand over 2024-2025. The current 2.0 chassis uses better components than the original Mars, UL 2849 certification is present on all 2024+ batteries, and the warranty is a solid 2 years on the frame and 1 year on electronics. Customer service is based in the U.S. and responsive.
+                Heybike has improved meaningfully as a brand over 2024-2025. The current 2.0 chassis uses better components than the original Mars, UL 2849 certification is present on all 2024+ batteries, and the warranty is a solid 2 years on the frame and 1 year on electronics. Customer service is based in the U.S. And responsive.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Weaknesses: the 75-lb weight makes it hard to carry upstairs, the folding mechanism is more about storage than portability (you&apos;re not taking this on the bus), and the 28 mph Class 3 setting requires helmet use in California. For riders who want real off-road capability on a budget, nothing else at this price is close.
@@ -577,7 +577,7 @@ export default function CheapElectricBikeHub() {
               </div>
 
               <h2 id='rattan' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                5. Rattan Challenger Pro — Best Budget Fat Tire
+                5. Rattan Challenger Pro. Best Budget Fat Tire
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $799 · <strong>Motor:</strong> 750W peak · <strong>Battery:</strong> 48V / 13Ah (624 Wh) · <strong>Top speed:</strong> 28 mph · <strong>Weight:</strong> 73 lbs
@@ -586,13 +586,13 @@ export default function CheapElectricBikeHub() {
                 Rattan undercuts Heybike by $50 and adds a slightly larger 624Wh battery, making it technically the best spec-per-dollar fat-tire e-bike under $1,000. The Challenger Pro pairs a 750W peak hub motor with a 48V / 13Ah lithium-ion pack, 20x4&quot; fat tires, and a frame with integrated racks front and rear.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Where Rattan gets penalized vs Heybike is brand maturity. Heybike has been in the U.S. for longer, has better customer service infrastructure, and has a better parts availability network. Rattan is catching up — they&apos;ve added U.S.-based customer support and their warranty compliance has improved through 2025 — but it&apos;s still a slight step down.
+                Where Rattan gets penalized vs Heybike is brand maturity. Heybike has been in the U.S. For longer, has better customer service infrastructure, and has a better parts availability network. Rattan is catching up. they&apos;ve added U.S.-based customer support and their warranty compliance has improved through 2025, but it&apos;s still a slight step down.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The pitch for Rattan: if you want maximum specs per dollar and don&apos;t mind saving slightly less support, the Challenger Pro delivers real off-road capability for under $800. The 624Wh battery gets 30-45 miles realistic range; the 750W motor climbs anything short of a proper single-track trail. UL 2849 certification is present on 2024+ production.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Who should pick Rattan over Heybike: riders who prioritize battery range and price. Who should pick Heybike: riders who value brand support and U.S. presence. Both are legitimate budget fat-tire options.
+                Who should pick Rattan over Heybike: riders who prioritize battery range and price. Who should pick Heybike: riders who value brand support and U.S. Presence. Both are legitimate budget fat-tire options.
               </p>
               <div className='mb-8'>
                 <BuyButton
@@ -604,7 +604,7 @@ export default function CheapElectricBikeHub() {
               </div>
 
               <h2 id='espin' className='text-2xl font-bold text-foreground mt-12 mb-4'>
-                6. Espin Sport — Best Lightweight Step-Through
+                6. Espin Sport, Best Lightweight Step-Through
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 <strong>Price:</strong> $999 · <strong>Motor:</strong> 350W nominal · <strong>Battery:</strong> 36V / 10.4Ah (374 Wh) · <strong>Top speed:</strong> 20 mph · <strong>Weight:</strong> 46 lbs
@@ -644,7 +644,7 @@ export default function CheapElectricBikeHub() {
                 UL 2849 Certification: Why It Matters
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                UL 2849 is a U.S. safety standard covering the electrical system of an e-bike — motor, battery, wiring harness, and controller. It was developed in 2020 and began widespread enforcement in 2023-2024 as e-bike battery fires became a serious urban safety issue.
+                UL 2849 is a U.S. Safety standard covering the electrical system of an e-bike — motor, battery, wiring harness, and controller. It was developed in 2020 and began widespread enforcement in 2023-2024 as e-bike battery fires became a serious urban safety issue.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 In 2023, New York City enacted a law requiring all e-bikes sold in the city to be UL 2849 certified. San Francisco, Los Angeles, and Chicago are considering similar rules. Landlords in NYC are explicitly permitted to ban non-certified e-bikes from apartment buildings, which has meaningfully affected what residents can buy.
@@ -701,10 +701,10 @@ export default function CheapElectricBikeHub() {
                 </div>
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>
-                    $500 vs $1,000 — is the jump worth it?
+                    $500 vs $1,000, is the jump worth it?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes — dramatically better motor, larger battery, proper brakes, real warranty. Skip the $500 tier unless budget forces the choice.
+                    Yes. Dramatically better motor, larger battery, proper brakes, real warranty. Skip the $500 tier unless budget forces the choice.
                   </p>
                 </div>
                 <div>
@@ -728,7 +728,7 @@ export default function CheapElectricBikeHub() {
                     Is UL 2849 certification important?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Critical — it&apos;s the single most important e-bike safety standard. NYC requires it. Many apartments require it. Don&apos;t buy a bike without it.
+                    Critical. It&apos;s the single most important e-bike safety standard. NYC requires it. Many apartments require it. Don&apos;t buy a bike without it.
                   </p>
                 </div>
               </div>
@@ -737,7 +737,7 @@ export default function CheapElectricBikeHub() {
               <AffiliateCTABox
                 productKey={PRIMARY_PRODUCT_KEY}
                 badge='Final Verdict'
-                verdict={`The Lectric XP Lite 2.0 is the best cheap e-bike of 2026 — UL 2849 certified, strong warranty, folding frame, proven brand, and $799. Check current price and availability.`}
+                verdict={`The Lectric XP Lite 2.0 is the best cheap e-bike of 2026, UL 2849 certified, strong warranty, folding frame, proven brand, and $799. Check current price and availability.`}
                 source='cheap-electric-bike-final'
                 variant='final'
               />
@@ -747,7 +747,7 @@ export default function CheapElectricBikeHub() {
                 The Bottom Line
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For first-time buyers, the <strong>Lectric XP Lite 2.0</strong> at $799 is the right answer — proven brand, UL 2849 certified, folding frame, strong warranty. For riders who want the lightest and best-looking budget bike, the <strong>Ride1Up Roadster V3</strong> at $995 and 33 lbs is unmatched. For local dealer support and strong app features, pick the <strong>Aventon Soltera 2.5</strong>. For off-road fat-tire capability, the <strong>Heybike Mars 2.0</strong> is the best at $849. The <strong>Rattan Challenger Pro</strong> at $799 gets you more battery for less money if brand support is a lower priority. The <strong>Espin Sport</strong> is the step-through commuter with proper hydraulic brakes and an 8-speed drivetrain at $999.
+                For first-time buyers, the <strong>Lectric XP Lite 2.0</strong> at $799 is the right answer; proven brand, UL 2849 certified, folding frame, strong warranty. For riders who want the lightest and best-looking budget bike, the <strong>Ride1Up Roadster V3</strong> at $995 and 33 lbs is unmatched. For local dealer support and strong app features, pick the <strong>Aventon Soltera 2.5</strong>. For off-road fat-tire capability, the <strong>Heybike Mars 2.0</strong> is the best at $849. The <strong>Rattan Challenger Pro</strong> at $799 gets you more battery for less money if brand support is a lower priority. The <strong>Espin Sport</strong> is the step-through commuter with proper hydraulic brakes and an 8-speed drivetrain at $999.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Whichever you choose, verify UL 2849 certification before buying, check that the listing is from the brand&apos;s official storefront (not a random reseller), and plan for a battery replacement in year 2-3 as part of total cost of ownership.

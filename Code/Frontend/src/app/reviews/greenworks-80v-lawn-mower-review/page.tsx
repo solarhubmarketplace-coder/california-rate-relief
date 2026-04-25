@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title:
       'Greenworks 80V 21" Self-Propelled Lawn Mower Review: The Mid-Range Power Play for 2026',
     description:
-      'Detailed review of the Greenworks 80V self-propelled mower — 21-inch steel deck, Smart Cut auto-adjusting power, 80V 4.0Ah battery, up to 60 min runtime, LED headlights. Is it worth $499?',
+      'Detailed review of the Greenworks 80V self-propelled mower; 21-inch steel deck, Smart Cut auto-adjusting power, 80V 4.0Ah battery, up to 60 min runtime, LED headlights. Is it worth $499?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -357,8 +357,7 @@ export default function Greenworks80VLawnMowerReview() {
                 the bottom, 40V mowers from Ryobi and others handle small yards
                 for under $400. At the top, EGO&apos;s 56V Select Cut XP commands
                 $799 with its multi-blade system and massive 10.0Ah battery. The
-                Greenworks 80V occupies the increasingly important middle ground
-                — more power than budget options, less cost than the flagships.
+                Greenworks 80V occupies the increasingly important middle ground. more power than budget options, less cost than the flagships.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The math here is straightforward. 80 volts means more torque at
@@ -370,9 +369,8 @@ export default function Greenworks80VLawnMowerReview() {
               </p>
               <p className='text-foreground/80 leading-relaxed'>
                 Greenworks has been making 80V outdoor tools longer than most
-                people realize. Their 80V Pro platform now includes 25+ tools —
-                string trimmers, leaf blowers, chainsaws, hedge trimmers, snow
-                blowers — all sharing the same battery system. The mower is
+                people realize. Their 80V Pro platform now includes 25+ tools; string trimmers, leaf blowers, chainsaws, hedge trimmers, snow
+                blowers, all sharing the same battery system. The mower is
                 the centerpiece of that ecosystem, and at $499, it&apos;s
                 priced to pull buyers away from both 40V limitations and 56V
                 sticker shock.
@@ -470,7 +468,7 @@ export default function Greenworks80VLawnMowerReview() {
                         Smart Cut
                       </td>
                       <td className='px-4 py-3 text-foreground/80'>
-                        Yes — auto-adjusts power based on grass thickness
+                        Yes, auto-adjusts power based on grass thickness
                       </td>
                     </tr>
                     <tr className='bg-muted/30'>
@@ -495,7 +493,7 @@ export default function Greenworks80VLawnMowerReview() {
                         Platform
                       </td>
                       <td className='px-4 py-3 text-foreground/80'>
-                        Greenworks 80V Pro — 25+ compatible outdoor tools
+                        Greenworks 80V Pro, 25+ compatible outdoor tools
                       </td>
                     </tr>
                   </tbody>
@@ -509,7 +507,7 @@ export default function Greenworks80VLawnMowerReview() {
                 Smart Cut Technology: The Feature That Actually Matters
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                Most mower reviews focus on raw specs — voltage, battery size,
+                Most mower reviews focus on raw specs, voltage, battery size,
                 deck width. Smart Cut is the kind of feature that only shows its
                 value when you actually mow with it. The system monitors blade
                 resistance in real time and automatically adjusts motor power to
@@ -520,7 +518,7 @@ export default function Greenworks80VLawnMowerReview() {
                 dry grass (conserving battery) and ramps up when it hits a thick
                 patch or an area you skipped last week. You never have to slow
                 down, change settings, or make a second pass through dense
-                sections — the mower handles it automatically.
+                sections, the mower handles it automatically.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The battery efficiency gains are meaningful. Without Smart Cut,
@@ -532,7 +530,7 @@ export default function Greenworks80VLawnMowerReview() {
               </p>
               <div className='bg-card border border-border rounded-xl p-5'>
                 <h3 className='text-base font-semibold text-foreground mb-3'>
-                  Smart Cut vs. Fixed Power — What You Actually Feel
+                  Smart Cut vs. Fixed Power, What You Actually Feel
                 </h3>
                 <ul className='text-sm text-foreground/80 space-y-2'>
                   <li className='flex items-start gap-2'>
@@ -552,7 +550,7 @@ export default function Greenworks80VLawnMowerReview() {
                   </li>
                   <li className='flex items-start gap-2'>
                     <CheckCircle className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                    10-15% better battery efficiency vs. constant-speed motors
+                    10-15% better battery efficiency vs. Constant-speed motors
                   </li>
                 </ul>
               </div>
@@ -565,8 +563,7 @@ export default function Greenworks80VLawnMowerReview() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 The included 80V 4.0Ah battery is rated for up to 60 minutes of
-                runtime. In real-world mowing on average suburban grass —
-                standard fescue or bluegrass mowed weekly at 3 inches — expect
+                runtime. In real-world mowing on average suburban grass. standard fescue or bluegrass mowed weekly at 3 inches — expect
                 45-55 minutes consistently. That&apos;s enough for most yards
                 between 1/4 and 1/2 acre without needing to swap batteries.
               </p>
@@ -727,7 +724,7 @@ export default function Greenworks80VLawnMowerReview() {
                 more energy per battery than 40V systems while costing
                 significantly less than 56V. The trade-off is a smaller tool
                 ecosystem (25+ vs. 70+ for EGO), which matters less if you only
-                need a mower, trimmer, and blower — all of which Greenworks
+                need a mower, trimmer, and blower, all of which Greenworks
                 covers in the 80V lineup.
               </p>
             </section>
@@ -736,7 +733,7 @@ export default function Greenworks80VLawnMowerReview() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Ready to buy?'
-              verdict='The mower that makes the most people happy — enough power for thick grass, smart enough to save battery, and $300 less than the premium.'
+              verdict='The mower that makes the most people happy, enough power for thick grass, smart enough to save battery, and $300 less than the premium.'
               source='greenworks-80v-lawn-mower'
               variant='mid'
             />
@@ -898,7 +895,7 @@ export default function Greenworks80VLawnMowerReview() {
                 The 21-inch steel deck with 7-position height adjustment
                 (1.375&quot; to 3.75&quot;) delivers a clean, even cut across all
                 three modes. Mulching performance is where the 80V motor makes
-                the biggest difference compared to 40V — the higher blade speed
+                the biggest difference compared to 40V, the higher blade speed
                 chops clippings finer, which means better decomposition and less
                 visible residue on the lawn surface.
               </p>
@@ -1043,7 +1040,7 @@ export default function Greenworks80VLawnMowerReview() {
                 <p className='text-foreground/80 leading-relaxed mb-4'>
                   The Greenworks 80V 21&quot; self-propelled mower is the most
                   sensible electric mower for mid-size yards in 2026. It solves
-                  the two biggest complaints about budget electric mowers — not
+                  the two biggest complaints about budget electric mowers. not
                   enough power for thick grass and not enough runtime for larger
                   yards — while staying $300 below the premium tier.
                 </p>
@@ -1059,7 +1056,7 @@ export default function Greenworks80VLawnMowerReview() {
                   The trade-offs are real but manageable. The Greenworks 80V
                   ecosystem is smaller than EGO&apos;s, the mower lacks
                   multi-blade versatility, and 80V batteries are less ubiquitous.
-                  But if you need a mower, trimmer, and blower — the three tools
+                  But if you need a mower, trimmer, and blower, the three tools
                   most homeowners actually use — the 80V platform covers all
                   three, and covers them well. At $499, this is the mower that
                   makes the most people happy.
@@ -1077,7 +1074,7 @@ export default function Greenworks80VLawnMowerReview() {
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge='Final Verdict'
-              verdict='The mid-range value king — 80V Smart Cut that cuts like a flagship at mid-range pricing.'
+              verdict='The mid-range value king, 80V Smart Cut that cuts like a flagship at mid-range pricing.'
               source='greenworks-80v-lawn-mower'
               variant='final'
             />

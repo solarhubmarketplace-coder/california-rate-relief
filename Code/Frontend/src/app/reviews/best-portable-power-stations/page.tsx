@@ -286,7 +286,7 @@ export default function BestPortablePowerStations() {
                   <span className="flex-shrink-0 w-7 h-7 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      EcoFlow Delta Pro 3 — Best Overall
+                      EcoFlow Delta Pro 3, Best Overall
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       The most complete home backup package. 4,096 Wh capacity, 4,000W output,
@@ -299,7 +299,7 @@ export default function BestPortablePowerStations() {
                   <span className="flex-shrink-0 w-7 h-7 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
                     <p className="font-semibold" style={{ color: '#f5f5f5' }}>
-                      Anker SOLIX F3800 — Best Value for Capacity
+                      Anker SOLIX F3800, Best Value for Capacity
                     </p>
                     <p className="text-sm" style={{ color: '#a1a1aa' }}>
                       Currently on promo at $1,799 (normally $3,999), the F3800 delivers 6,000W
@@ -485,7 +485,7 @@ export default function BestPortablePowerStations() {
                 productKey="ecoflow-delta-pro-3"
                 source="best-power-stations-hub"
                 variant="primary"
-                label="Check Price — EcoFlow Delta Pro 3"
+                label="Check Price. EcoFlow Delta Pro 3"
                 showPrice
               />
             </section>
@@ -819,7 +819,7 @@ export default function BestPortablePowerStations() {
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   The EcoFlow Delta Pro Ultra is in a different league. Starting at 6,144 Wh per
                   battery and expandable up to a staggering 90 kWh with 15 battery modules, this
-                  is a system designed to power an entire home — including HVAC, kitchen
+                  is a system designed to power an entire home, including HVAC, kitchen
                   appliances, and EV chargers — for days, not hours.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
@@ -879,7 +879,7 @@ export default function BestPortablePowerStations() {
                 productKey="ecoflow-delta-pro-ultra"
                 source="best-power-stations-hub"
                 variant="primary"
-                label="Check Price — EcoFlow Delta Pro Ultra"
+                label="Check Price, EcoFlow Delta Pro Ultra"
                 showPrice
               />
             </section>
@@ -932,7 +932,7 @@ export default function BestPortablePowerStations() {
                 <p className="leading-relaxed" style={{ color: '#a1a1aa' }}>
                   For homeowners who already have solar panels (or plan to install them), the
                   Powerwall 3 provides the most seamless integration. It is the &quot;set it and
-                  forget it&quot; option — once installed, it manages itself automatically. The
+                  forget it&quot; option, once installed, it manages itself automatically. The
                   10-year warranty guarantees 70% capacity retention. However, it uses NMC
                   (nickel manganese cobalt) chemistry rather than LFP, which has fewer total
                   cycles and is less thermally stable.

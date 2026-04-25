@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title:
     'EcoFlow River 3 Review 2026: The $259 LFP Power Station Worth Buying?',
   description:
-    'Hands-on EcoFlow River 3 review — 245 Wh LFP, 300W output (600W X-Boost), 110W solar, full recharge in 60 minutes, 8.4 lbs. Is the $259 River 3 the best entry-level power station for California camping, CPAP use, and short outages?',
+    'Hands-on EcoFlow River 3 review, 245 Wh LFP, 300W output (600W X-Boost), 110W solar, full recharge in 60 minutes, 8.4 lbs. Is the $259 River 3 the best entry-level power station for California camping, CPAP use, and short outages?',
   alternates: {
     canonical: '/reviews/ecoflow-river-3-review',
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title:
       'EcoFlow River 3 Review 2026: The $259 LFP Power Station Worth Buying?',
     description:
-      'In-depth review of the EcoFlow River 3 — 245 Wh LFP battery, 300W output with X-Boost to 600W, 1-hour full recharge, 8.4 lbs. Is it the best budget power station of 2026?',
+      'In-depth review of the EcoFlow River 3. 245 Wh LFP battery, 300W output with X-Boost to 600W, 1-hour full recharge, 8.4 lbs. Is it the best budget power station of 2026?',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -98,7 +98,7 @@ const faqSchema = {
       name: 'Can the EcoFlow River 3 run a CPAP machine overnight?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. With a typical CPAP drawing 30-60W (without humidifier), the River 3\'s 245 Wh capacity supports 4-8 hours of use on a single charge — enough for most single-night use. Using DC output instead of AC adds another 20-30% of runtime by skipping the inverter loss.',
+        text: 'Yes. With a typical CPAP drawing 30-60W (without humidifier), the River 3\'s 245 Wh capacity supports 4-8 hours of use on a single charge, enough for most single-night use. Using DC output instead of AC adds another 20-30% of runtime by skipping the inverter loss.',
       },
     },
     {
@@ -232,7 +232,7 @@ export default function EcoFlowRiver3Review() {
                 The EcoFlow River 3 is exactly what the entry-level power
                 station category needed: a real LFP battery, a fast 60-minute
                 recharge, a 300W inverter with X-Boost for higher-draw
-                resistive loads, and a weight of just 8.4 pounds — light
+                resistive loads, and a weight of just 8.4 pounds, light
                 enough to actually carry around. At $259 MSRP and frequent
                 promos under $200, it is the clearest buy in the category. It
                 will not run your fridge for a day, but it will keep your
@@ -389,8 +389,7 @@ export default function EcoFlowRiver3Review() {
                 EcoFlow&apos;s lineup that feels genuinely &quot;grab and go.&quot;
                 You can carry it with one hand without thinking about it, and
                 it fits easily on a truck bed, a cabin shelf, or in a closet
-                next to the router. The form factor is boxy but clean —
-                roughly the size of a loaf of bread. The integrated handle on
+                next to the router. The form factor is boxy but clean, roughly the size of a loaf of bread. The integrated handle on
                 top is solid (not a flimsy flap), the plastic chassis feels
                 dense without being brittle, and the LCD display is bright and
                 easy to read.
@@ -400,7 +399,7 @@ export default function EcoFlowRiver3Review() {
                 point. There is no wasted plastic, the port layout is
                 logical, and the included accessories (AC cable, DC car
                 adapter, MC4 solar cable) are well-made. Compared to some of
-                the Amazon-brand power stations at similar pricing — which
+                the Amazon-brand power stations at similar pricing. Which
                 often feel like repackaged OEM units — the River 3 feels
                 like a product someone actually designed.
               </p>
@@ -469,7 +468,7 @@ export default function EcoFlowRiver3Review() {
                 technology that lets the inverter handle up to 600W from
                 resistive loads by briefly reducing output voltage. This
                 means you can actually run a small coffee maker, a phone
-                kettle, or a low-wattage hair dryer — things that would be
+                kettle, or a low-wattage hair dryer. Things that would be
                 hard limits on a standard 300W inverter. It does not work
                 with motor-driven appliances or sensitive electronics, but
                 for the vast majority of camping and outage use cases, it
@@ -500,7 +499,7 @@ export default function EcoFlowRiver3Review() {
                 and a small desktop device, and it will take over
                 instantly if the grid drops. 30ms is slightly slower than
                 the &lt;20ms on the larger EcoFlow units — some sensitive
-                electronics may blink — but most laptops, routers, and
+                electronics may blink. but most laptops, routers, and
                 devices won&apos;t notice the switch.
               </p>
 
@@ -545,7 +544,7 @@ export default function EcoFlowRiver3Review() {
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 At 245 Wh, the River 3 is too small for meaningful TOU rate
-                arbitrage — cycling it daily off peak to on peak saves
+                arbitrage. cycling it daily off peak to on peak saves
                 roughly $0.05-$0.10 per day, which doesn&apos;t add up to
                 anything meaningful. Its value proposition is pure outage
                 protection and portability, not shifting rates. For TOU
@@ -582,7 +581,7 @@ export default function EcoFlowRiver3Review() {
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      $259 MSRP — lowest for real LFP power stations
+                      $259 MSRP, lowest for real LFP power stations
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -598,7 +597,7 @@ export default function EcoFlowRiver3Review() {
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
-                      LFP chemistry — 3,000 cycles
+                      LFP chemistry. 3,000 cycles
                     </li>
                     <li className='flex items-start gap-2'>
                       <Check className='h-4 w-4 text-green-600 mt-0.5 shrink-0' />
@@ -619,7 +618,7 @@ export default function EcoFlowRiver3Review() {
                   <ul className='space-y-2 text-sm text-foreground/80'>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
-                      245 Wh is small — can&apos;t run a fridge for long
+                      245 Wh is small, can&apos;t run a fridge for long
                     </li>
                     <li className='flex items-start gap-2'>
                       <X className='h-4 w-4 text-red-500 mt-0.5 shrink-0' />
@@ -776,7 +775,7 @@ export default function EcoFlowRiver3Review() {
                 <div>
                   <h3 className='text-lg font-semibold text-foreground mb-2'>River 3 vs River 2?</h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    River 3 has faster charging (60 vs 70 min), a slightly lighter chassis, and a refreshed app. Similar overall performance — buy new units as the River 3.
+                    River 3 has faster charging (60 vs 70 min), a slightly lighter chassis, and a refreshed app. Similar overall performance, buy new units as the River 3.
                   </p>
                 </div>
                 <div>
@@ -796,7 +795,7 @@ export default function EcoFlowRiver3Review() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Bottom Line</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The EcoFlow River 3 is the easiest-to-recommend power station
-                under $300. It gets the fundamentals right — LFP chemistry,
+                under $300. It gets the fundamentals right; LFP chemistry,
                 X-Boost for higher loads, 60-minute recharge, true portability
                 — and wraps them in the best software in the category. For
                 California campers, CPAP users, and homeowners who want a
@@ -804,14 +803,14 @@ export default function EcoFlowRiver3Review() {
                 the obvious pick. It won&apos;t replace a larger unit for
                 serious home backup, but at $259 (and often $199 on promo),
                 it doesn&apos;t need to. It just needs to be good at what it
-                is — and it is.
+                is, and it is.
               </p>
             </div>
 
             <AffiliateCTABox
               productKey={PRODUCT_KEY}
               badge="Final Verdict"
-              verdict="The best entry-level LFP power station of 2026. Check current pricing — River 3 regularly drops below $220 during promotional windows."
+              verdict="The best entry-level LFP power station of 2026. Check current pricing, River 3 regularly drops below $220 during promotional windows."
               source="river-3"
               variant="final"
             />
