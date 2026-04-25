@@ -4,6 +4,8 @@ import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { ChevronRight } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | GreenReviewsHub',
@@ -33,7 +35,9 @@ export default function TermsOfServicePage() {
               Terms of Service
             </h1>
 
-            <p className='text-sm text-muted-foreground mb-8'>Last updated: April 22, 2026</p>
+            
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className='text-sm text-muted-foreground mb-8'>Last updated: April 22, 2026</p>
 
             <div className='text-foreground/80 leading-relaxed space-y-6'>
               <p>
@@ -183,6 +187,10 @@ export default function TermsOfServicePage() {
         </div>
       </main>
       <ReviewFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

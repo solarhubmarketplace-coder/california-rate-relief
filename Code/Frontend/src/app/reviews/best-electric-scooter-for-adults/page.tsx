@@ -9,6 +9,8 @@ import { BuyButton } from '@/components/reviews/BuyButton';
 import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import { ComparisonTable } from '@/components/reviews/ComparisonTable';
 import { ArrowLeft, ArrowRight, Calendar, Clock, Check, X, ChevronRight, Shield } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 const PRIMARY_PRODUCT_KEY = 'apollo-city-pro';
 
@@ -165,7 +167,9 @@ export default function BestElectricScooterForAdultsHub() {
               <h1 className="text-4xl md:text-5xl font-black mb-5 leading-tight" style={{ color: '#fff' }}>
                 Best Electric Scooters for Adults 2026: Commuter, Heavy-Duty, and Portable
               </h1>
-              <p className="text-lg md:text-xl leading-relaxed" style={{ color: '#d1d5db' }}>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className="text-lg md:text-xl leading-relaxed" style={{ color: '#d1d5db' }}>
                 Six scooters covering every adult use case, the 5-mile city commute, the 20-mile suburban run, the
                 heavy-duty rider, and the apartment-dweller who needs to fold it and carry it up stairs. Ranges, weight
                 capacities, California legality, and the UL 2272 certification you should absolutely check before
@@ -755,6 +759,10 @@ export default function BestElectricScooterForAdultsHub() {
 
       <ReviewFooter />
       <StickyMobileCTA productKey={PRIMARY_PRODUCT_KEY} source="best-electric-scooter-for-adults-sticky" />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

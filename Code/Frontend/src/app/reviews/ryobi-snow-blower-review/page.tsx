@@ -25,6 +25,8 @@ import {
   XCircle,
   Zap,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
@@ -233,7 +235,9 @@ export default function RyobiSnowBlowerReview() {
                   Ryobi 40V HP Brushless 21&quot; Snow Blower Review: The Best
                   Budget Battery Snow Blower in 2026?
                 </h1>
-                <p
+                
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p
                   className='text-lg leading-relaxed mb-4'
                   style={{ color: '#a1a1aa' }}
                 >
@@ -1308,6 +1312,10 @@ export default function RyobiSnowBlowerReview() {
       </main>
       <ReviewFooter />
       <StickyMobileCTA productKey={PRODUCT_KEY} source="ryobi-snow-blower" />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

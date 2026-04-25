@@ -23,6 +23,8 @@ import {
   XCircle,
   Search,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
@@ -181,7 +183,9 @@ export default function HeatPumpVsFurnacePage() {
               <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight" style={{ color: '#f5f5f5' }}>
                 Heat Pump vs Furnace (2026): Which Is Better for Your Home?
               </h1>
-              <p className="text-lg leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className="text-lg leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
                 Choosing between a heat pump and a gas furnace is one of the biggest HVAC decisions
                 you will make. A heat pump can cut your heating costs by 30-50% and doubles as an
                 air conditioner — but a furnace still wins in certain climates. We break down efficiency,
@@ -1403,6 +1407,10 @@ export default function HeatPumpVsFurnacePage() {
         </div>
       </main>
       <ReviewFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

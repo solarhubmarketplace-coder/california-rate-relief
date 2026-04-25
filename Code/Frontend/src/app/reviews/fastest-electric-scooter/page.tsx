@@ -9,6 +9,8 @@ import { BuyButton } from '@/components/reviews/BuyButton';
 import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import { ComparisonTable } from '@/components/reviews/ComparisonTable';
 import { ArrowLeft, ArrowRight, Calendar, Clock, Check, X, ChevronRight, AlertTriangle, Zap, Gauge } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 const PRIMARY_PRODUCT_KEY = 'dualtron-x-limited';
 
@@ -159,7 +161,9 @@ export default function FastestElectricScooterHub() {
               <h1 className="text-4xl md:text-5xl font-black mb-5 leading-tight" style={{ color: '#fff' }}>
                 Fastest Electric Scooters 2026: 40+ MPH Adult Scooters Tested
               </h1>
-              <p className="text-lg md:text-xl leading-relaxed" style={{ color: '#d1d5db' }}>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className="text-lg md:text-xl leading-relaxed" style={{ color: '#d1d5db' }}>
                 Five machines that genuinely hit 40+ mph, and what you are actually signing up for when you buy one.
                 Real top speeds, hydraulic brake performance, California legality, and an honest answer to the question
                 nobody selling these scooters wants to answer: should you ride this on a public street?
@@ -732,6 +736,10 @@ export default function FastestElectricScooterHub() {
 
       <ReviewFooter />
       <StickyMobileCTA productKey={PRIMARY_PRODUCT_KEY} source="fastest-electric-scooter-sticky" />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

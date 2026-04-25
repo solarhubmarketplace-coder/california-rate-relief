@@ -9,6 +9,8 @@ import { BuyButton } from '@/components/reviews/BuyButton';
 import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import { ComparisonTable } from '@/components/reviews/ComparisonTable';
 import { ArrowLeft, ArrowRight, Calendar, Clock, Check, X, ChevronRight, Shield, Info } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 const PRIMARY_PRODUCT_KEY = 'gotrax-electric-scooter';
 
@@ -159,7 +161,9 @@ export default function GotraxElectricScooterReview() {
               <h1 className="text-4xl md:text-5xl font-black mb-5 leading-tight" style={{ color: '#fff' }}>
                 Gotrax Electric Scooter Review 2026: GXL V2, XR Pro, G4, G3 Compared
               </h1>
-              <p className="text-lg md:text-xl leading-relaxed" style={{ color: '#d1d5db' }}>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className="text-lg md:text-xl leading-relaxed" style={{ color: '#d1d5db' }}>
                 A complete breakdown of the Gotrax lineup. What the Texas-based budget brand gets right, where it cuts
                 corners, and which model (if any) is the right buy for an adult commuter. Full comparison of GXL V2,
                 XR Pro, G4, G3, and Apex XL, plus an honest head-to-head against Segway and NIU.
@@ -724,6 +728,10 @@ export default function GotraxElectricScooterReview() {
 
       <ReviewFooter />
       <StickyMobileCTA productKey={PRIMARY_PRODUCT_KEY} source="gotrax-electric-scooter-sticky" />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

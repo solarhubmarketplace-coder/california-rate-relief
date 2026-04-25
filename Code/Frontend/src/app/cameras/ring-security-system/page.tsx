@@ -4,6 +4,8 @@ import { SHGLayout } from '@/components/shg/SHGLayout';
 import { SHGHeader } from '@/components/shg/SHGHeader';
 import { SHGFooter } from '@/components/shg/SHGFooter';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Ring Security System Review 2026: Is It Worth It?',
@@ -38,7 +40,9 @@ export default function RingSecuritySystem() {
             <header className='mb-10'>
               <span className='inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4' style={{ backgroundColor: '#f59e0b22', color: '#f59e0b' }}>System Review</span>
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Ring Security System Review 2026: Is It Worth It?</h1>
-            </header>
+            
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: '#1f2940', accent: '#f59e0b' }} />
+</header>
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
               <p className='text-lg'>
@@ -112,6 +116,10 @@ export default function RingSecuritySystem() {
         </div>
       </main>
       <SHGFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="shg" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#f59e0b', cardBg: '#0f1729', cardBorder: '#1f2940' }} />
+      </div>
+
     </SHGLayout>
   );
 }

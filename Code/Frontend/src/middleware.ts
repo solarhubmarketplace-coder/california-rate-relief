@@ -36,14 +36,16 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/shg-home');
 
   // Shared trust pages — host-aware page handlers serve correct domain content
-  // for /about, /contact, /affiliate-disclosure, /privacy, /terms, /methodology on every domain.
+  // for /about, /contact, /affiliate-disclosure, /privacy, /terms, /methodology,
+  // /author/* on every domain.
   const isSharedTrustPath =
     pathname === '/about' ||
     pathname === '/contact' ||
     pathname === '/affiliate-disclosure' ||
     pathname === '/privacy' ||
     pathname === '/terms' ||
-    pathname === '/methodology';
+    pathname === '/methodology' ||
+    pathname.startsWith('/author/');
 
   // AHB-only paths — block these on other hosts
   const isAHBPath =

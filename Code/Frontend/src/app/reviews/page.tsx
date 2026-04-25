@@ -4,6 +4,8 @@ import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { Battery, Zap, Star, ChevronRight, Search } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Product Reviews & Comparisons | GreenReviewsHub',
@@ -1144,7 +1146,9 @@ export default function ReviewsPage() {
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight' style={{ color: '#f5f5f5' }}>
                 Product Reviews & Buying Guides
               </h1>
-              <p className='text-lg max-w-2xl mx-auto' style={{ color: '#d4d4d8' }}>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className='text-lg max-w-2xl mx-auto' style={{ color: '#d4d4d8' }}>
                 Expert reviews and comparisons of portable power stations, e-bikes,
                 mini splits, electric lawn mowers, smart thermostats, generators,
                 and more. Tested and verified for 2026.
@@ -1229,6 +1233,10 @@ export default function ReviewsPage() {
         </div>
       </main>
       <ReviewFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

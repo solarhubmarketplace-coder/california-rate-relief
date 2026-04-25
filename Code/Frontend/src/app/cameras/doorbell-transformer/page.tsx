@@ -4,6 +4,8 @@ import { SHGLayout } from '@/components/shg/SHGLayout';
 import { SHGHeader } from '@/components/shg/SHGHeader';
 import { SHGFooter } from '@/components/shg/SHGFooter';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Doorbell Transformer 2026: What It Is, Why It Matters For Smart Doorbells',
@@ -38,7 +40,9 @@ export default function DoorbellTransformer() {
             <header className='mb-10'>
               <span className='inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4' style={{ backgroundColor: '#f59e0b22', color: '#f59e0b' }}>Installation Guide</span>
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Doorbell Transformer 2026: What It Is, Why It Matters For Smart Doorbells</h1>
-            </header>
+            
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: '#1f2940', accent: '#f59e0b' }} />
+</header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
               <img src='https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=1200&q=80&auto=format&fit=crop' alt='Video doorbell mounted by a front door' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
@@ -110,6 +114,10 @@ export default function DoorbellTransformer() {
         </div>
       </main>
       <SHGFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="shg" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#f59e0b', cardBg: '#0f1729', cardBorder: '#1f2940' }} />
+      </div>
+
     </SHGLayout>
   );
 }

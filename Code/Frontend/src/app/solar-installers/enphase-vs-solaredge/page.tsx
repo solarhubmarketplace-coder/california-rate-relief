@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Enphase vs SolarEdge: Which Inverter System Is Better in 2026?',
@@ -26,7 +28,9 @@ export default function EnphaseVsSolarEdge() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Inverter Comparison</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Enphase vs SolarEdge: The 2026 Inverter Face-Off</h1>
-              <p className="text-lg text-muted-foreground">The two dominant inverter platforms in American residential solar. Here&apos;s how they actually compare — technically, commercially, and in real-world reliability.</p>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+<p className="text-lg text-muted-foreground">The two dominant inverter platforms in American residential solar. Here&apos;s how they actually compare — technically, commercially, and in real-world reliability.</p>
             </header>
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Architectural Difference</h2>
@@ -105,6 +109,10 @@ export default function EnphaseVsSolarEdge() {
         </div>
       </main>
       <Footer />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
+      </div>
+
     </PublicLayout>
   );
 }

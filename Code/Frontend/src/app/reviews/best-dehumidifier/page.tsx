@@ -15,6 +15,8 @@ import {
   X,
   Zap,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
@@ -250,7 +252,9 @@ export default function BestDehumidifier() {
               >
                 Best Dehumidifiers (2026): Top 6 Picks for Basements, Bedrooms &amp; Whole Homes
               </h1>
-              <div
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<div
                 className="flex items-center gap-4 text-sm"
                 style={{ color: '#a1a1aa' }}
               >
@@ -1370,6 +1374,10 @@ export default function BestDehumidifier() {
         </div>
       </main>
       <ReviewFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

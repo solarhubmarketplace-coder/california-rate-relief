@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { SHGLayout } from '@/components/shg/SHGLayout';
 import { SHGHeader } from '@/components/shg/SHGHeader';
 import { SHGFooter } from '@/components/shg/SHGFooter';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Home Security Camera Reviews — SecureHomeGear',
@@ -116,7 +118,9 @@ export default function CamerasHub() {
             <header className='mb-10'>
               <span className='inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4' style={{ backgroundColor: '#f59e0b22', color: '#f59e0b' }}>Security Camera Reviews</span>
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Home Security Camera Reviews</h1>
-              <p className='text-xl leading-relaxed max-w-3xl' style={{ color: '#d4d4d8' }}>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: '#1f2940', accent: '#f59e0b' }} />
+<p className='text-xl leading-relaxed max-w-3xl' style={{ color: '#d4d4d8' }}>
                 Independent, research-backed reviews of home security cameras across every category — doorbells, outdoor, indoor, wired POE systems, and the no-subscription alternatives that the big brands don&apos;t want you to see.
               </p>
             </header>
@@ -216,6 +220,10 @@ export default function CamerasHub() {
         </div>
       </main>
       <SHGFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="shg" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#f59e0b', cardBg: '#0f1729', cardBorder: '#1f2940' }} />
+      </div>
+
     </SHGLayout>
   );
 }

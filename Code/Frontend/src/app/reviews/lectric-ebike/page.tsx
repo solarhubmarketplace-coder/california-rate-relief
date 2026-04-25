@@ -20,6 +20,8 @@ import {
   Battery,
   ChevronRight,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 // Brand-level affiliate CTA, for overall Lectric brand pick
 const PRIMARY_PRODUCT_KEY = 'lectric-xp-3';
@@ -173,7 +175,9 @@ export default function LectricEbikeHub() {
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
                 Lectric eBikes Review 2026: Full Lineup Compared (XP, XPedition, XP Lite, ONE)
               </h1>
-              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
                   <time dateTime='2026-04-22'>April 22, 2026</time>
@@ -659,6 +663,10 @@ export default function LectricEbikeHub() {
       </main>
       <ReviewFooter />
       <StickyMobileCTA productKey={PRIMARY_PRODUCT_KEY} source='lectric-ebike-sticky' />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

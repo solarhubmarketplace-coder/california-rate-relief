@@ -23,6 +23,8 @@ import {
   XCircle,
   Zap,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
@@ -263,7 +265,9 @@ export default function BestElectricDirtBikeKids() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
                 Best Electric Dirt Bikes for Kids (2026)
               </h1>
-              <p className="text-lg text-muted-foreground mb-3">
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className="text-lg text-muted-foreground mb-3">
                 Razor MX650 vs KTM SX-E 3 vs Stacyc vs Razor SX500 vs Husqvarna EE 3
               </p>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -1354,6 +1358,10 @@ export default function BestElectricDirtBikeKids() {
         </div>
       </main>
       <ReviewFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

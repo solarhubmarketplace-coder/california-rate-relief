@@ -22,6 +22,8 @@ import {
   CheckCircle,
   XCircle,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
@@ -235,7 +237,9 @@ export default function BestMiniSplitACPage() {
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
                 Best Mini Split AC &amp; Heat Pumps (2026): MrCool DIY vs Easy Pro vs Advantage
               </h1>
-              <p className="text-lg text-foreground/70 leading-relaxed mb-4">
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className="text-lg text-foreground/70 leading-relaxed mb-4">
                 Ductless mini splits are the most efficient way to heat and cool your home, and with
                 the MrCool DIY line, you can install one yourself in under 5 hours, saving $3,000-$8,000
                 in labor costs. We break down every model to help you pick the right one.
@@ -1358,6 +1362,10 @@ export default function BestMiniSplitACPage() {
         </div>
       </main>
       <ReviewFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

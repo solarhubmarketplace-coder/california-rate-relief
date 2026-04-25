@@ -8,6 +8,8 @@ import { AffiliateDisclosure } from '@/components/reviews/AffiliateDisclosure';
 import { BuyButton } from '@/components/reviews/BuyButton';
 import { StickyMobileCTA } from '@/components/reviews/StickyMobileCTA';
 import { ArrowLeft, ArrowRight, Calendar, Clock, Star, Check, X, Zap, Battery, Sun, Shield, ChevronRight, Home, DollarSign } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 const PRODUCT_KEY = 'bluetti-eb3a';
 
@@ -151,7 +153,9 @@ export default function Page() {
             <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4'>
               Bluetti EB3A Review 2026: The Budget LFP Power Station That Punches Above Its Price
             </h1>
-            <p className='text-lg text-foreground/70 leading-relaxed mb-4'>
+            
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className='text-lg text-foreground/70 leading-relaxed mb-4'>
               268Wh LFP capacity, 600W inverter (1,200W with Power Lifting), 200W solar input,
               30-minute turbo charge, and a 2,500-cycle battery, all for $299. Here is what
               California homeowners, campers, and PSPS planners actually get out of Bluetti\'s
@@ -661,6 +665,10 @@ export default function Page() {
       </article>
 
       <StickyMobileCTA productKey={PRODUCT_KEY} source='eb3a-sticky' />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

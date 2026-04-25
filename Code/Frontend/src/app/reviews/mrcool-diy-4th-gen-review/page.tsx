@@ -22,6 +22,8 @@ import {
   XCircle,
   Zap,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
@@ -247,7 +249,9 @@ export default function MrCoolDIY4thGenReview() {
                 MrCool DIY 4th Gen Review: The Best Mini Split You Can Install
                 Yourself
               </h1>
-              <p className='text-lg text-muted-foreground mb-4'>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className='text-lg text-muted-foreground mb-4'>
                 Save $3,000-$8,000 in HVAC labor costs with pre-charged
                 QuickConnect line sets. No vacuum pump, no manifold gauges, no
                 HVAC license required.
@@ -1503,6 +1507,10 @@ export default function MrCoolDIY4thGenReview() {
       </main>
       <ReviewFooter />
       <StickyMobileCTA productKey={PRODUCT_KEY} source="mrcool-diy-4th-gen" />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

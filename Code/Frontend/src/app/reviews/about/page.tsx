@@ -4,6 +4,8 @@ import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
 import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { ChevronRight, Shield, CheckCircle, Target, Zap } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'About GreenReviewsHub | Editorial Standards & Testing Methodology',
@@ -33,7 +35,9 @@ export default function AboutPage() {
               <h1 className='text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight leading-tight'>
                 About GreenReviewsHub
               </h1>
-              <p className='text-xl text-foreground/80 leading-relaxed'>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className='text-xl text-foreground/80 leading-relaxed'>
                 Independent, hands-on reviews of green-energy products; so you can make informed
                 buying decisions without wading through manufacturer marketing.
               </p>
@@ -269,6 +273,10 @@ export default function AboutPage() {
         </div>
       </main>
       <ReviewFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

@@ -21,6 +21,8 @@ import {
   X,
   Zap,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 const PRODUCT_KEY = 'aventon-aventure-3';
 
@@ -216,7 +218,9 @@ export default function AventonAventure3Review() {
                 Aventon Aventure 3 Review: The Best Fat Tire E-Bike for
                 Adventure Riders?
               </h1>
-              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
                   <time dateTime='2026-04-21'>April 21, 2026</time>
@@ -1369,6 +1373,10 @@ export default function AventonAventure3Review() {
       </main>
       <ReviewFooter />
       <StickyMobileCTA productKey={PRODUCT_KEY} source="aventon-aventure-3" />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

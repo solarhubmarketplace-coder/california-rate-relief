@@ -23,6 +23,8 @@ import {
   XCircle,
   Zap,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
@@ -205,7 +207,9 @@ export default function GeneracGuardian24kWReview() {
                 Generac Guardian 24kW Review: The Whole House Generator That
                 Actually Powers Your Whole House
               </h1>
-              <p className='text-lg text-muted-foreground leading-relaxed mb-4'>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<p className='text-lg text-muted-foreground leading-relaxed mb-4'>
                 We break down the real costs, installation process, and total
                 cost of ownership for the most popular standby generator in
                 America.
@@ -1279,6 +1283,10 @@ export default function GeneracGuardian24kWReview() {
       </main>
       <ReviewFooter />
       <StickyMobileCTA productKey={PRODUCT_KEY} source='generac-guardian-24kw' />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

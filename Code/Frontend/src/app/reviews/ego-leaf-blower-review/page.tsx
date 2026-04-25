@@ -20,6 +20,8 @@ import {
   ChevronRight,
   Leaf,
 } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 const PRODUCT_KEY = 'ego-leaf-blower';
 
@@ -186,7 +188,9 @@ export default function EgoLeafBlowerReview() {
                 EGO Leaf Blower Review 2026: LB7654, Backpack, and Handheld
                 Tested
               </h1>
-              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+<div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
                   <time dateTime='2026-04-22'>April 22, 2026</time>
@@ -1464,6 +1468,10 @@ export default function EgoLeafBlowerReview() {
       </main>
       <ReviewFooter />
       <StickyMobileCTA productKey={PRODUCT_KEY} source='ego-leaf-blower' />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
+      </div>
+
     </ReviewLayout>
   );
 }

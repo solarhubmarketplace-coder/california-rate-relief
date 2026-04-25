@@ -4,6 +4,8 @@ import { AHBLayout } from '@/components/ahb/AHBLayout';
 import { AHBHeader } from '@/components/ahb/AHBHeader';
 import { AHBFooter } from '@/components/ahb/AHBFooter';
 import { ChevronRight, ExternalLink, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Benefits of Ice Bath: 2020–2026 Research on What Cold Water Actually Does',
@@ -101,7 +103,9 @@ export default function BenefitsOfIceBath() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f0fdf4' }}>
                 Benefits of Ice Bath: What 2020–2026 Research Actually Shows
               </h1>
-              <p className='text-sm' style={{ color: '#a7f3d0' }}>
+              
+              <LastReviewedStamp date="2026-04-24" variant="medical" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: '#251a44', accent: '#ec4899' }} />
+<p className='text-sm' style={{ color: '#a7f3d0' }}>
                 Every claim below is linked to a peer-reviewed study. Updated April 2026.
               </p>
             </header>
@@ -333,6 +337,10 @@ export default function BenefitsOfIceBath() {
         </div>
       </main>
       <AHBFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="ahb" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#ec4899', cardBg: '#15102a', cardBorder: '#251a44' }} />
+      </div>
+
     </AHBLayout>
   );
 }

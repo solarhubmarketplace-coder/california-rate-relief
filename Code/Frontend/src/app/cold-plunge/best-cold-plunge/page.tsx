@@ -4,6 +4,8 @@ import { AHBLayout } from '@/components/ahb/AHBLayout';
 import { AHBHeader } from '@/components/ahb/AHBHeader';
 import { AHBFooter } from '@/components/ahb/AHBFooter';
 import { ChevronRight, ExternalLink, CheckCircle2, XCircle } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Best Cold Plunge Tub 2026: Research-Backed Rankings',
@@ -129,7 +131,9 @@ export default function BestColdPlunge() {
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f0fdf4' }}>
                 Best Cold Plunge Tub 2026
               </h1>
-              <p className='text-sm' style={{ color: '#a7f3d0' }}>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: '#251a44', accent: '#ec4899' }} />
+<p className='text-sm' style={{ color: '#a7f3d0' }}>
                 Honest rankings. Chiller-integrated, barrel-style, and luxury options ranked against the research protocols.
               </p>
             </header>
@@ -311,6 +315,10 @@ export default function BestColdPlunge() {
         </div>
       </main>
       <AHBFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="ahb" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#ec4899', cardBg: '#15102a', cardBorder: '#251a44' }} />
+      </div>
+
     </AHBLayout>
   );
 }

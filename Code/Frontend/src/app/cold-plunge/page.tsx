@@ -4,6 +4,8 @@ import { AHBLayout } from '@/components/ahb/AHBLayout';
 import { AHBHeader } from '@/components/ahb/AHBHeader';
 import { AHBFooter } from '@/components/ahb/AHBFooter';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Cold Plunge Guide 2026: Tubs, Benefits, and Research',
@@ -28,7 +30,9 @@ export default function Page() {
             <header className='mb-10'>
               <span className='inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4' style={{ backgroundColor: '#34d39922', color: '#34d399' }}>Category Hub</span>
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f0fdf4' }}>Cold Plunge Guide 2026: Tubs, Benefits, and Research</h1>
-            </header>
+            
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: '#251a44', accent: '#ec4899' }} />
+</header>
 
             <div className='space-y-6 leading-relaxed' style={{ color: '#a7f3d0' }}>
               <p className='text-lg'>Cold plunge and cold water immersion deliver some of the most research-backed biohacking benefits: brown adipose tissue activation, acute stress reduction, improved metabolic health. Here&apos;s the complete guide to getting started at home.</p>
@@ -51,6 +55,10 @@ export default function Page() {
         </div>
       </main>
       <AHBFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="ahb" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#ec4899', cardBg: '#15102a', cardBorder: '#251a44' }} />
+      </div>
+
     </AHBLayout>
   );
 }

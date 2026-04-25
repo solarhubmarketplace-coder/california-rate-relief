@@ -4,6 +4,8 @@ import { SHGLayout } from '@/components/shg/SHGLayout';
 import { SHGHeader } from '@/components/shg/SHGHeader';
 import { SHGFooter } from '@/components/shg/SHGFooter';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: 'Best No-Subscription Security Camera System 2026',
@@ -38,7 +40,9 @@ export default function BestNoSubSystem() {
             <header className='mb-10'>
               <span className='inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4' style={{ backgroundColor: '#f59e0b22', color: '#f59e0b' }}>Whole-Home Buying Guide</span>
               <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>Best No-Subscription Security Camera System 2026</h1>
-            </header>
+            
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: '#1f2940', accent: '#f59e0b' }} />
+</header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
               <img src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&auto=format&fit=crop' alt='No-subscription home security camera system' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
@@ -128,6 +132,10 @@ export default function BestNoSubSystem() {
         </div>
       </main>
       <SHGFooter />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="shg" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#f59e0b', cardBg: '#0f1729', cardBorder: '#1f2940' }} />
+      </div>
+
     </SHGLayout>
   );
 }

@@ -4,6 +4,8 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-react';
+import { AuthorBio } from '@/components/shared/AuthorBio';
+import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: "Powur Solar Review 2026: MLM-Style Sales Model and the Complaint Record That Goes With It",
@@ -48,7 +50,9 @@ export default function PowurReview() {
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
                 Powur Solar Review 2026: MLM Sales Model and the Complaint Record
               </h1>
-              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
+              
+              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+<div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-24'>Updated April 24, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>8 min read</span></div>
               </div>
@@ -147,6 +151,10 @@ export default function PowurReview() {
         </div>
       </main>
       <Footer />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
+      </div>
+
     </PublicLayout>
   );
 }
