@@ -43,17 +43,14 @@ export default function CanaryVsRing() {
             
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: '#1f2940', accent: '#f59e0b' }} />
 </header>
-
-            <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
-              <p className='text-lg'>
-                Canary and Ring are positioned very differently in the residential security camera market. Canary is the premium AI-driven independent brand; Ring is the Amazon-owned market leader with mass-market ecosystem reach. Both have their place. Here&apos;s the honest 2026 head-to-head for buyers deciding between them.
+            {/* lifted-comparison-table — top-of-fold for SEO + UX */}
+            <div className='mb-10' aria-label='At a glance comparison'>
+              <h2 className='text-xl md:text-2xl font-bold mb-2 tracking-tight' style={{ color: '#f5f5f5' }}>
+                At a glance
+              </h2>
+              <p className='text-sm mb-3' style={{ color: '#a1a1aa' }}>
+                Spec-by-spec head-to-head — full analysis below.
               </p>
-
-              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>The Core Difference in One Sentence</h2>
-              <p className='text-lg p-4 rounded-xl border' style={{ backgroundColor: '#111827', borderColor: '#1e293b', color: '#f5f5f5' }}>
-                Canary is the premium AI-first independent option for buyers who care about data privacy and hardware quality; Ring is the scale champion for buyers who want the Amazon ecosystem and don&apos;t mind the subscription.
-              </p>
-
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>Side-by-Side Comparison</h2>
               <div className='overflow-x-auto rounded-xl border my-6' style={{ borderColor: '#1e293b' }}>
                 <table className='min-w-full text-sm'>
@@ -77,6 +74,19 @@ export default function CanaryVsRing() {
                   </tbody>
                 </table>
               </div>
+            </div>
+
+            <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
+              <p className='text-lg'>
+                Canary and Ring are positioned very differently in the residential security camera market. Canary is the premium AI-driven independent brand; Ring is the Amazon-owned market leader with mass-market ecosystem reach. Both have their place. Here&apos;s the honest 2026 head-to-head for buyers deciding between them.
+              </p>
+
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>The Core Difference in One Sentence</h2>
+              <p className='text-lg p-4 rounded-xl border' style={{ backgroundColor: '#111827', borderColor: '#1e293b', color: '#f5f5f5' }}>
+                Canary is the premium AI-first independent option for buyers who care about data privacy and hardware quality; Ring is the scale champion for buyers who want the Amazon ecosystem and don&apos;t mind the subscription.
+              </p>
+
+              
 
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>Where Canary Wins</h2>
               <ul className='space-y-2 list-disc pl-6'>

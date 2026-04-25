@@ -171,6 +171,12 @@ function grhSitemap(base: string): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${base}/reviews`, lastModified: today, changeFrequency: 'weekly', priority: 0.95 },
+    // Pagination pages — 118 reviews / 20 per page = 6 pages total (page 1 = /reviews)
+    { url: `${base}/reviews/page/2`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
+    { url: `${base}/reviews/page/3`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
+    { url: `${base}/reviews/page/4`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
+    { url: `${base}/reviews/page/5`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
+    { url: `${base}/reviews/page/6`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
   ];
 
   const reviewSlugs = [

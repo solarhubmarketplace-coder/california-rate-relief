@@ -43,17 +43,14 @@ export default function WyzeVsRing() {
             
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: '#1f2940', accent: '#f59e0b' }} />
 </header>
-
-            <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
-              <p className='text-lg'>
-                Wyze and Ring both claim accessibility, but Wyze takes it further with $25-$50 cameras that undercut even Ring&apos;s budget tier. Ring pays that back with app polish, ecosystem integration, and a broader product lineup. Here&apos;s the honest 2026 comparison.
+            {/* lifted-comparison-table — top-of-fold for SEO + UX */}
+            <div className='mb-10' aria-label='At a glance comparison'>
+              <h2 className='text-xl md:text-2xl font-bold mb-2 tracking-tight' style={{ color: '#f5f5f5' }}>
+                At a glance
+              </h2>
+              <p className='text-sm mb-3' style={{ color: '#a1a1aa' }}>
+                Spec-by-spec head-to-head — full analysis below.
               </p>
-
-              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>The Core Difference</h2>
-              <p className='text-lg p-4 rounded-xl border' style={{ backgroundColor: '#111827', borderColor: '#1e293b', color: '#f5f5f5' }}>
-                Wyze is the cheapest name-brand camera option with real features; Ring is Amazon&apos;s mass-market leader with better app polish and ecosystem integration at higher price points.
-              </p>
-
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>Side-by-Side</h2>
               <div className='overflow-x-auto rounded-xl border my-6' style={{ borderColor: '#1e293b' }}>
                 <table className='min-w-full text-sm'>
@@ -73,6 +70,20 @@ export default function WyzeVsRing() {
                   </tbody>
                 </table>
               </div>
+            </div>
+
+
+            <div className='space-y-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
+              <p className='text-lg'>
+                Wyze and Ring both claim accessibility, but Wyze takes it further with $25-$50 cameras that undercut even Ring&apos;s budget tier. Ring pays that back with app polish, ecosystem integration, and a broader product lineup. Here&apos;s the honest 2026 comparison.
+              </p>
+
+              <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>The Core Difference</h2>
+              <p className='text-lg p-4 rounded-xl border' style={{ backgroundColor: '#111827', borderColor: '#1e293b', color: '#f5f5f5' }}>
+                Wyze is the cheapest name-brand camera option with real features; Ring is Amazon&apos;s mass-market leader with better app polish and ecosystem integration at higher price points.
+              </p>
+
+              
 
               <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#f5f5f5' }}>Where Wyze Wins</h2>
               <ul className='space-y-2 list-disc pl-6'>
