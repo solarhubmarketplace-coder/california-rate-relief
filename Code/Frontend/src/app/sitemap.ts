@@ -44,9 +44,10 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     { url: `${base}/commercial-solar`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/methodology`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/privacy-policy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/terms-of-service`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const blogSlugs = [
@@ -234,6 +235,7 @@ function shgSitemap(base: string): MetadataRoute.Sitemap {
     { url: `${base}/cameras`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/methodology`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${base}/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${base}/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
@@ -298,6 +300,12 @@ function ahbSitemap(base: string): MetadataRoute.Sitemap {
     { url: `${base}/vibration-plate`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/learn/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/learn/medical-disclaimer`, lastModified: today, changeFrequency: 'yearly', priority: 0.4 },
+    { url: `${base}/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/methodology`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const ahbContentPages: MetadataRoute.Sitemap = [
