@@ -356,8 +356,8 @@ export function QualificationWizard() {
       <section id='qualify' className='py-16 bg-slate-50'>
         <div className='container mx-auto px-4'>
           <div className='max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-8 min-h-[650px] flex flex-col justify-center'>
-            <div className='w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6'>
-              <CheckCircle className='h-8 w-8 text-green-600' />
+            <div className='w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6'>
+              <CheckCircle className='h-8 w-8 text-emerald-600' />
             </div>
             <h3 className='text-2xl font-bold text-slate-900 mb-4'>
               You&apos;re Pre-Qualified!
@@ -367,11 +367,11 @@ export function QualificationWizard() {
               significant savings on your monthly electric bill. Our team will
               contact you within 24 hours.
             </p>
-            <div className='bg-green-50 rounded-lg p-4 mb-6 text-left'>
-              <h4 className='font-semibold text-green-800 mb-2'>
+            <div className='bg-emerald-50 rounded-lg p-4 mb-6 text-left'>
+              <h4 className='font-semibold text-emerald-800 mb-2'>
                 What Happens Next?
               </h4>
-              <ul className='text-sm text-green-700 space-y-1'>
+              <ul className='text-sm text-emerald-700 space-y-1'>
                 <li>✓ We&apos;ll review your information</li>
                 <li>✓ A specialist will call to confirm eligibility</li>
                 <li>✓ We&apos;ll schedule a free home assessment</li>
