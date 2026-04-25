@@ -11,6 +11,7 @@ import {
   Calendar,
 } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
+import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
@@ -583,6 +584,9 @@ export default function SunnovaReview() {
         </div>
       </main>
       <Footer />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <VerifyInstallerBox installerName="Sunnova" />
+      </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
       </div>

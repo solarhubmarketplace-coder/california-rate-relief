@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
+import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
@@ -495,6 +496,9 @@ export default function SunrunReview() {
         </div>
       </main>
       <Footer />
+      <div className="container mx-auto px-4 max-w-3xl">
+        <VerifyInstallerBox installerName="Sunrun" cslbLicenseNumber="925340" bbbProfileUrl="https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-contractors/sunrun-inc-1116-22011110" />
+      </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
       </div>
