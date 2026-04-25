@@ -4,6 +4,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { CheckCircle2, AlertTriangle } from 'lucide-react';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 export const metadata: Metadata = {
   title: 'Solar Panel Cleaning in California: Cost, DIY Risks, and When It Actually Helps (2026)',
@@ -196,6 +197,7 @@ export default function SolarPanelCleaningCA() {
         </div>
       </main>
       <Footer />
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
     </PublicLayout>
   );
 }

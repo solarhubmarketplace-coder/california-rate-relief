@@ -4,6 +4,7 @@ import { AHBLayout } from '@/components/ahb/AHBLayout';
 import { AHBHeader } from '@/components/ahb/AHBHeader';
 import { AHBFooter } from '@/components/ahb/AHBFooter';
 import { ArrowRight } from 'lucide-react';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 export const metadata: Metadata = {
   title: 'At Home Biohacking — Research-Backed Wellness Reviews',
@@ -87,6 +88,7 @@ export default function AHBHome() {
         </div>
       </main>
       <AHBFooter />
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="ahb" variant="compact" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#ec4899', cardBg: '#15102a', cardBorder: '#251a44' }} /></div>
     </AHBLayout>
   );
 }

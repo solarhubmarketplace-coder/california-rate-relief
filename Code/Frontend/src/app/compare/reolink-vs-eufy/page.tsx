@@ -6,6 +6,7 @@ import { SHGFooter } from '@/components/shg/SHGFooter';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 export const metadata: Metadata = {
   title: 'Reolink vs Eufy 2026: Wired POE vs Wireless No-Subscription',
@@ -115,6 +116,8 @@ export default function ReolinkVsEufy() {
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="shg" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#f59e0b', cardBg: '#0f1729', cardBorder: '#1f2940' }} />
       </div>
+
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="shg" variant="compact" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#f59e0b', cardBg: '#0f1729', cardBorder: '#1f2940' }} /></div>
 
     </SHGLayout>
   );
