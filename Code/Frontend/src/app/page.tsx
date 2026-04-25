@@ -2,8 +2,14 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
-import { Hero } from '@/components/landing/Hero';
-import { ValueProps } from '@/components/landing/ValueProps';
+import { HeroV2 } from '@/components/landing/HeroV2';
+import { HowItWorksV2 } from '@/components/landing/HowItWorksV2';
+import { SavingsComparison } from '@/components/landing/SavingsComparison';
+import { TestimonialsCarousel } from '@/components/landing/TestimonialsCarousel';
+import { SavingsCalculator } from '@/components/landing/SavingsCalculator';
+import { FAQAccordion } from '@/components/landing/FAQAccordion';
+import { FinalCTA } from '@/components/landing/FinalCTA';
+import { FloatingMobileCTA } from '@/components/landing/FloatingMobileCTA';
 import { QualificationWizard } from '@/components/landing/QualificationWizard';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
@@ -11,14 +17,30 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 const BASE_URL = 'https://ratereliefca.com';
 
 export const metadata: Metadata = {
+  title: '2026 California Rate Relief Program | $0 Down Solar + Battery — Lock In Lower Rates',
+  description:
+    'California homeowners on PG&E, SCE, or SDG&E: qualify for the 2026 Rate Relief Program. $0 down, 25-year warranty, fixed rate up to 50% lower than your utility. Check eligibility in 60 seconds.',
   alternates: {
     canonical: BASE_URL,
+  },
+  openGraph: {
+    title: '2026 California Rate Relief Program — $0 Down Solar + Battery',
+    description:
+      'Lock in a fixed rate up to 50% lower than your utility. $0 down, no loans, 25-year bumper-to-bumper warranty.',
+    url: BASE_URL,
+    type: 'website',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=630&fit=crop',
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
 // =============================================================================
-// CRR-SPECIFIC JSON-LD (was previously in root layout, now scoped to this page
-// only so it doesn't bleed onto GRH/SHG/AHB).
+// CRR-SPECIFIC JSON-LD (scoped to homepage so it doesn't bleed onto GRH/SHG/AHB).
 // =============================================================================
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -35,10 +57,7 @@ const organizationSchema = {
     areaServed: 'US-CA',
     availableLanguage: 'English',
   },
-  areaServed: {
-    '@type': 'State',
-    name: 'California',
-  },
+  areaServed: { '@type': 'State', name: 'California' },
 };
 
 const localBusinessSchema = {
@@ -115,10 +134,7 @@ function WizardWithSuspense() {
                 <div className='h-8 bg-muted rounded'></div>
                 <div className='grid grid-cols-2 gap-3'>
                   {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className='h-20 bg-muted/50 rounded-xl'
-                    ></div>
+                    <div key={i} className='h-20 bg-muted/50 rounded-xl'></div>
                   ))}
                 </div>
               </div>
@@ -149,12 +165,50 @@ export default function HomePage() {
       />
       <Header />
       <main>
-        <Hero />
-        <WizardWithSuspense />
-        <ValueProps />
+        {/* New full-bg hero with urgency badge + dual CTA */}
+        <HeroV2 />
+
+        {/* Existing qualification wizard (Tally-driven) — kept as the conversion form */}
+        <div id='qualify' className='scroll-mt-24'>
+          <WizardWithSuspense />
+        </div>
+
+        {/* New 3-card How-It-Works */}
+        <HowItWorksV2 />
+
+        {/* Before/After savings visual */}
+        <SavingsComparison />
+
+        {/* Testimonials carousel (8 placeholders, auto-rotate every 6s) */}
+        <TestimonialsCarousel />
+
+        {/* Interactive savings calculator */}
+        <SavingsCalculator />
+
+        {/* 12-question FAQ accordion */}
+        <FAQAccordion />
+
+        {/* Final CTA (background-image section) */}
+        <FinalCTA />
       </main>
       <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
+      <div className='container mx-auto px-4 max-w-3xl'>
+        <TrustedSources
+          domain='crr'
+          variant='compact'
+          palette={{
+            fg: 'hsl(var(--foreground))',
+            muted: 'hsl(var(--foreground) / 0.85)',
+            mutedFg: 'hsl(var(--muted-foreground))',
+            accent: 'hsl(var(--primary))',
+            cardBg: 'hsl(var(--card))',
+            cardBorder: 'hsl(var(--border))',
+          }}
+        />
+      </div>
+
+      {/* Sticky mobile CTA bar (hidden on md+) */}
+      <FloatingMobileCTA />
     </PublicLayout>
   );
 }
