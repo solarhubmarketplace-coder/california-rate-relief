@@ -59,7 +59,7 @@ const articleSchema = {
 export default function SolarTaxCreditExpired() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"The Solar Tax Credit Expired in 2026. Here Are Your Best Options Now."} url="https://ratereliefca.com/blog/solar-tax-credit-expired-2026-options" datePublished="2026-04-14" dateModified="2026-04-24" description={"The federal residential solar tax credit (Section 25D) ended December 31, 2025. A clear breakdown of what\"} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"The Solar Tax Credit Expired in 2026. Here Are Your Best Options Now."} url="https://ratereliefca.com/blog/solar-tax-credit-expired-2026-options" datePublished="2026-04-14" dateModified="2026-04-24" description={"The federal residential solar tax credit (Section 25D) ended December 31, 2025. A clear breakdown of what's gone, what's still available, and every option for going solar in 2026."} />
       <Header />
       <script
         type='application/ld+json'
