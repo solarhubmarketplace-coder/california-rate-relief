@@ -63,25 +63,25 @@ export function FAQAccordion() {
           <div className='inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide uppercase'>
             Common questions
           </div>
-          <h2 className='text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-3'>
+          <h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-3'>
             Everything you want to know
           </h2>
-          <p className='text-lg text-gray-600'>
+          <p className='text-lg text-slate-600'>
             Straight answers about how the 2026 program works.
           </p>
         </div>
 
-        <div className='divide-y divide-gray-200 border-y border-gray-200'>
+        <div className='divide-y divide-slate-200 border-y border-slate-200'>
           {FAQS.map((item, i) => (
             <details key={i} className='group py-5'>
               <summary className='flex items-center justify-between gap-4 cursor-pointer list-none'>
-                <span className='font-bold text-lg text-gray-900'>{item.q}</span>
+                <span className='font-bold text-lg text-slate-900'>{item.q}</span>
                 <ChevronDown
-                  className='w-5 h-5 text-gray-400 transition-transform shrink-0 group-open:rotate-180'
+                  className='w-5 h-5 text-slate-400 transition-transform shrink-0 group-open:rotate-180'
                   aria-hidden='true'
                 />
               </summary>
-              <p className='mt-3 text-gray-600 leading-relaxed'>{item.a}</p>
+              <p className='mt-3 text-slate-600 leading-relaxed'>{item.a}</p>
             </details>
           ))}
         </div>
