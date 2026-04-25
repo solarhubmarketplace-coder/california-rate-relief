@@ -16,10 +16,10 @@ export function FinalCTA() {
           className='w-full h-full object-cover'
           loading='lazy'
         />
-        <div className='absolute inset-0 bg-gradient-to-r from-green-900/95 via-green-800/90 to-green-700/85' />
+        <div className='absolute inset-0 bg-gradient-to-r from-emerald-900/95 via-emerald-800/90 to-emerald-700/85' />
       </div>
       <div className='relative container mx-auto px-4 max-w-4xl text-center text-white'>
-        <div className='inline-flex items-center gap-2 bg-yellow-400/95 text-green-900 font-bold text-xs md:text-sm px-3 py-1.5 rounded-full mb-5'>
+        <div className='inline-flex items-center gap-2 bg-amber-400/95 text-emerald-900 font-bold text-xs md:text-sm px-3 py-1.5 rounded-full mb-5'>
           <span className='w-2 h-2 bg-red-600 rounded-full animate-pulse' />
           2026 PROGRAM SLOTS FILLING — LIMITED AVAILABILITY
         </div>
@@ -32,7 +32,7 @@ export function FinalCTA() {
         <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center'>
           <Link
             href='#qualify'
-            className='inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-green-900 font-extrabold text-lg px-8 py-4 rounded-xl shadow-2xl'
+            className='inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-emerald-900 font-extrabold text-lg px-8 py-4 rounded-xl shadow-2xl'
           >
             Check My Eligibility Now
             <ArrowRight className='w-5 h-5' />
@@ -40,7 +40,7 @@ export function FinalCTA() {
           {/* REPLACE 800-555-0123 WITH REAL PHONE NUMBER */}
           <a
             href='tel:18005550123'
-            className='inline-flex items-center gap-2 text-white font-bold text-lg hover:text-yellow-400'
+            className='inline-flex items-center gap-2 text-white font-bold text-lg hover:text-amber-400'
           >
             <Phone className='w-5 h-5' />
             or call (800) 555-0123
