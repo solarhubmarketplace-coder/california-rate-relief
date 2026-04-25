@@ -12,6 +12,7 @@ export function HeroV2() {
     <section className='relative overflow-hidden'>
       {/* Background image — REPLACE with branded photo of an actual install when available */}
       <div className='absolute inset-0'>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src='https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=1920&h=1080&fit=crop&q=80'
           alt='California home with rooftop solar and battery storage'

@@ -63,6 +63,7 @@ export function TestimonialsCarousel() {
               </div>
               <p className='text-gray-700 leading-relaxed mb-5'>&ldquo;{t.quote}&rdquo;</p>
               <div className='flex items-center gap-3 pt-4 border-t border-gray-100'>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={t.img}
                   alt={t.name}

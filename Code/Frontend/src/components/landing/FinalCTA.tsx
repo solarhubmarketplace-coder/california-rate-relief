@@ -9,6 +9,7 @@ export function FinalCTA() {
   return (
     <section className='relative py-20 md:py-28 overflow-hidden'>
       <div className='absolute inset-0'>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src='https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=1920&h=1080&fit=crop&q=80'
           alt=''
