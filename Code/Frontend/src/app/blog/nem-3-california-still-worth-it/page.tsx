@@ -58,7 +58,7 @@ const articleSchema = {
 export default function NEM3StillWorthIt() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)"} url="https://ratereliefca.com/blog/nem-3-california-still-worth-it" datePublished="2026-04-14" dateModified="2026-04-24" description={"NEM 3.0 cut solar export credits by 75%. An honest breakdown of the new economics, when solar still works, when it doesn\"} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)"} url="https://ratereliefca.com/blog/nem-3-california-still-worth-it" datePublished="2026-04-14" dateModified="2026-04-24" description={"NEM 3.0 cut solar export credits by 75%. An honest breakdown of the new economics, when solar still works, when it doesn't, and how battery storage changes the math."} />
       <Header />
       <script
         type='application/ld+json'
