@@ -13,6 +13,7 @@ import {
   type CityData,
 } from '@/data/cities-data';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 // =============================================================================
 // STATIC PARAMS — Pre-renders all city pages at build time
@@ -552,6 +553,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
       </main>
       <Footer />
     <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
     </PublicLayout>
   );
 }

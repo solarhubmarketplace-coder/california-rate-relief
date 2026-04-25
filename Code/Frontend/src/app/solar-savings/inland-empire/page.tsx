@@ -9,6 +9,7 @@ import {
   UTILITY_DATA,
   type CityData,
 } from '@/data/cities-data';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 export const metadata: Metadata = {
   title: 'Inland Empire Solar Companies | Riverside, San Bernardino | Rate Relief',
@@ -233,6 +234,7 @@ export default function InlandEmpireSolarPage() {
       />
 
       <Footer />
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
     </PublicLayout>
   );
 }
