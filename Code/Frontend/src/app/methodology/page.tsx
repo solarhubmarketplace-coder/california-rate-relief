@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { headers } from 'next/headers';
 import { ChevronRight, CheckCircle2, AlertCircle, Microscope, Search, BookOpen, RefreshCw } from 'lucide-react';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 import { SHGLayout } from '@/components/shg/SHGLayout';
 import { SHGHeader } from '@/components/shg/SHGHeader';
 import { SHGFooter } from '@/components/shg/SHGFooter';
@@ -196,7 +197,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 interface Palette { fg: string; muted: string; mutedFg: string; accent: string; accentSoft: string; bg: string; cardBg: string; cardBorder: string; }
 
-function MethodologyBody({ cfg, palette }: { cfg: DomainConfig; palette: Palette }) {
+function MethodologyBody({ cfg, palette, domain }: { cfg: DomainConfig; palette: Palette; domain: 'crr' | 'grh' | 'shg' | 'ahb' }) {
   return (
     <div className='space-y-12 leading-relaxed' style={{ color: palette.muted }}>
       <p className='text-lg'>{cfg.intro}</p>
@@ -253,6 +254,8 @@ function MethodologyBody({ cfg, palette }: { cfg: DomainConfig; palette: Palette
         <p>{cfg.conflictsBlurb}</p>
       </section>
 
+      <TrustedSources domain={domain} palette={{ fg: palette.fg, muted: palette.muted, mutedFg: palette.mutedFg, accent: palette.accent, cardBg: palette.cardBg, cardBorder: palette.cardBorder }} />
+
       <section>
         <div className='rounded-xl p-5' style={{ backgroundColor: palette.accentSoft, borderColor: palette.accent, borderWidth: '1px', borderStyle: 'solid' }}>
           <div className='flex items-start gap-3'>
@@ -299,7 +302,7 @@ function ShgMethodology() {
   return (
     <SHGLayout>
       <SHGHeader />
-      <PageShell palette={palette}><MethodologyBody cfg={cfg} palette={palette} /></PageShell>
+      <PageShell palette={palette}><MethodologyBody cfg={cfg} palette={palette} domain="shg" /></PageShell>
       <SHGFooter />
     </SHGLayout>
   );
@@ -311,7 +314,7 @@ function GrhMethodology() {
   return (
     <ReviewLayout>
       <ReviewHeader />
-      <PageShell palette={palette}><MethodologyBody cfg={cfg} palette={palette} /></PageShell>
+      <PageShell palette={palette}><MethodologyBody cfg={cfg} palette={palette} domain="grh" /></PageShell>
       <ReviewFooter />
     </ReviewLayout>
   );
@@ -323,7 +326,7 @@ function AhbMethodology() {
   return (
     <AHBLayout>
       <AHBHeader />
-      <PageShell palette={palette}><MethodologyBody cfg={cfg} palette={palette} /></PageShell>
+      <PageShell palette={palette}><MethodologyBody cfg={cfg} palette={palette} domain="ahb" /></PageShell>
       <AHBFooter />
     </AHBLayout>
   );
@@ -335,7 +338,7 @@ function CrrMethodology() {
   return (
     <PublicLayout>
       <CRRHeader />
-      <PageShell palette={palette}><MethodologyBody cfg={cfg} palette={palette} /></PageShell>
+      <PageShell palette={palette}><MethodologyBody cfg={cfg} palette={palette} domain="crr" /></PageShell>
       <CRRFooter />
     </PublicLayout>
   );
