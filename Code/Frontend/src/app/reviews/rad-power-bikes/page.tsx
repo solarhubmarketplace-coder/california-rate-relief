@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 const PRIMARY_PRODUCT_KEY = 'rad-power-bikes';
 
@@ -653,6 +654,8 @@ export default function RadPowerBikesHub() {
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
       </div>
+
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="grh" variant="compact" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} /></div>
 
     </ReviewLayout>
   );

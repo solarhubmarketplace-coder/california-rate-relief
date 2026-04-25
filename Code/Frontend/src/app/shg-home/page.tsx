@@ -4,6 +4,7 @@ import { SHGLayout } from '@/components/shg/SHGLayout';
 import { SHGHeader } from '@/components/shg/SHGHeader';
 import { SHGFooter } from '@/components/shg/SHGFooter';
 import { ArrowRight, Camera, DoorOpen, Lock, Shield, Video, Wifi } from 'lucide-react';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 export const metadata: Metadata = {
   title: 'SecureHomeGear — Honest Home Security Reviews',
@@ -275,6 +276,7 @@ export default function SHGHomepage() {
       </section>
 
       <SHGFooter />
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="shg" variant="compact" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#f59e0b', cardBg: '#0f1729', cardBorder: '#1f2940' }} /></div>
     </SHGLayout>
   );
 }

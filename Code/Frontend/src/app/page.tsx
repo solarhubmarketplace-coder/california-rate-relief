@@ -6,6 +6,7 @@ import { Hero } from '@/components/landing/Hero';
 import { ValueProps } from '@/components/landing/ValueProps';
 import { QualificationWizard } from '@/components/landing/QualificationWizard';
 import { Footer } from '@/components/landing/Footer';
+import { TrustedSources } from '@/components/shared/TrustedSources';
 
 const BASE_URL = 'https://ratereliefca.com';
 
@@ -153,6 +154,7 @@ export default function HomePage() {
         <ValueProps />
       </main>
       <Footer />
+    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
     </PublicLayout>
   );
 }
