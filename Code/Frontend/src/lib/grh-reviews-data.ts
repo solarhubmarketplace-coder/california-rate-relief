@@ -5,6 +5,8 @@ export interface ReviewCard {
   badge: 'Comparison Guide' | 'Product Review';
   rating?: number;
   icon: 'battery' | 'zap';
+  image?: string;
+  brand?: string;
 }
 
 export const reviews: ReviewCard[] = [
@@ -15,6 +17,8 @@ export const reviews: ReviewCard[] = [
       'EcoFlow Delta Pro 3 vs Anker SOLIX F3800 vs Bluetti AC500 vs Jackery 2000 Plus \u2014 which one is right for you?',
     badge: 'Comparison Guide',
     icon: 'battery',
+    image: 'https://m.media-amazon.com/images/I/71a+5EKu+8L._AC_UF894,1000_QL80_.jpg',
+    brand: 'EcoFlow'
   },
   {
     slug: 'ecoflow-delta-pro-3-review',
@@ -23,6 +27,8 @@ export const reviews: ReviewCard[] = [
       '4,096 Wh, 4,000W output, X-Stream charging \u2014 the best all-around portable power station for home backup.',
     badge: 'Product Review',
     rating: 4.7,
+    image: 'https://m.media-amazon.com/images/I/71a+5EKu+8L._AC_UF894,1000_QL80_.jpg',
+    brand: 'EcoFlow'
   },
   {
     slug: 'anker-solix-f3800-review',
@@ -31,6 +37,8 @@ export const reviews: ReviewCard[] = [
       '6,000W output and 3,840 Wh at an unbeatable price point. The best value in portable power.',
     badge: 'Product Review',
     rating: 4.6,
+    image: 'https://m.media-amazon.com/images/I/71WoQNAA-YL._AC_UF894,1000_QL80_.jpg',
+    brand: 'Anker'
   },
   {
     slug: 'bluetti-ac500-review',
@@ -39,6 +47,8 @@ export const reviews: ReviewCard[] = [
       'The most modular power station with 3,000W solar input and expandability up to 18,432 Wh.',
     badge: 'Product Review',
     rating: 4.5,
+    image: 'https://www.bluettipower.ph/cdn/shop/files/ac500_d502c572-8373-4a10-a44f-bcc6c7b2b88d.jpg',
+    brand: 'BLUETTI'
   },
   {
     slug: 'jackery-explorer-2000-plus-review',
@@ -48,6 +58,8 @@ export const reviews: ReviewCard[] = [
     badge: 'Product Review',
     rating: 4.5,
     icon: 'zap',
+    image: 'https://m.media-amazon.com/images/I/71JnAbpQj-L._AC_UF894,1000_QL80_.jpg',
+    brand: 'Jackery'
   },
   {
     slug: 'bluetti-ac200l-review',
@@ -57,6 +69,8 @@ export const reviews: ReviewCard[] = [
     badge: 'Product Review',
     rating: 4.5,
     icon: 'zap',
+    image: 'https://m.media-amazon.com/images/I/712KweyPQQL._AC_UF894,1000_QL80_.jpg',
+    brand: 'BLUETTI'
   },
   {
     slug: 'best-electric-bikes',
@@ -65,6 +79,8 @@ export const reviews: ReviewCard[] = [
       'Aventon vs Rad Power vs Lectric \u2014 top e-bikes from $799 to $1,999 compared. Fat tire, folding, and city commuter picks.',
     badge: 'Comparison Guide',
     icon: 'zap',
+    image: 'https://cdn11.bigcommerce.com/s-6ahcroh/images/stencil/1280x1280/products/2760/8835/Aventure-3_Matcha_Side_1__89416.1747331054.jpg',
+    brand: 'Aventon'
   },
   {
     slug: 'best-mini-split-ac',
@@ -73,6 +89,8 @@ export const reviews: ReviewCard[] = [
       'MrCool DIY mini splits reviewed. Save $3,000-$8,000 on installation with pre-charged QuickConnect line sets. Up to 22.7 SEER2.',
     badge: 'Comparison Guide',
     icon: 'zap',
+    image: 'https://crdms.images.consumerreports.org/prod/products/cr/models/413079-ductless-air-conditioners-mrcool-diy-4th-gen-diy-12-hp-wm-115c25-10039675.png',
+    brand: 'MrCool'
   },
   {
     slug: 'best-electric-lawn-mower',
@@ -89,6 +107,8 @@ export const reviews: ReviewCard[] = [
       'Ecobee Premium vs Google Nest 4th Gen. Save up to 26% on energy with smart scheduling and TOU optimization.',
     badge: 'Comparison Guide',
     icon: 'zap',
+    image: 'https://www.techhive.com/wp-content/uploads/2023/04/Ecobee-Smart-Thermostat-Premium-installed-1.jpg',
+    brand: 'Ecobee'
   },
   {
     slug: 'best-whole-house-generator',
@@ -97,6 +117,8 @@ export const reviews: ReviewCard[] = [
       'Generac Guardian 22kW vs 24kW vs 26kW, plus Kohler and Champion. Sizing guide, installation costs, and fuel comparison.',
     badge: 'Comparison Guide',
     icon: 'battery',
+    image: 'https://m.media-amazon.com/images/I/71VNiAQEIfL._AC_UF894,1000_QL80_.jpg',
+    brand: 'Generac'
   },
   {
     slug: 'rad-power-radrover-6-plus-review',
@@ -106,6 +128,8 @@ export const reviews: ReviewCard[] = [
     badge: 'Product Review',
     rating: 4.5,
     icon: 'zap',
+    image: 'https://electricbikereview.com/wp-content/assets/2021/07/rad-power-bikes-radrover-6-plus-stock-high-step-black.jpg',
+    brand: 'Rad Power'
   },
   {
     slug: 'aventon-aventure-3-review',
@@ -115,6 +139,8 @@ export const reviews: ReviewCard[] = [
     badge: 'Product Review',
     rating: 4.6,
     icon: 'zap',
+    image: 'https://cdn11.bigcommerce.com/s-6ahcroh/images/stencil/1280x1280/products/2760/8836/Aventure-3_Stealth_Side_1__66073.1747331060.jpg',
+    brand: 'Aventon'
   },
   {
     slug: 'mrcool-diy-4th-gen-review',
@@ -124,6 +150,8 @@ export const reviews: ReviewCard[] = [
     badge: 'Product Review',
     rating: 4.6,
     icon: 'zap',
+    image: 'https://crdms.images.consumerreports.org/prod/products/cr/models/413079-ductless-air-conditioners-mrcool-diy-4th-gen-diy-12-hp-wm-115c25-10039675.png',
+    brand: 'MrCool'
   },
   {
     slug: 'ego-select-cut-mower-review',
@@ -142,6 +170,8 @@ export const reviews: ReviewCard[] = [
     badge: 'Product Review',
     rating: 4.5,
     icon: 'battery',
+    image: 'https://m.media-amazon.com/images/I/71VNiAQEIfL._AC_UF894,1000_QL80_.jpg',
+    brand: 'Generac'
   },
   {
     slug: 'ecoflow-delta-pro-ultra-review',
@@ -151,6 +181,8 @@ export const reviews: ReviewCard[] = [
     badge: 'Product Review',
     rating: 4.7,
     icon: 'battery',
+    image: 'https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-1195484329.png',
+    brand: 'EcoFlow'
   },
   {
     slug: 'ego-snow-blower-review',
@@ -178,6 +210,8 @@ export const reviews: ReviewCard[] = [
     badge: 'Product Review',
     rating: 4.7,
     icon: 'zap',
+    image: 'https://dw2p0k56b2hr9.cloudfront.net/ME_GS_Mens_Den_copy_5d9986f120.webp',
+    brand: 'Mitsubishi'
   },
   {
     slug: 'best-tankless-water-heater',
@@ -421,6 +455,8 @@ export const reviews: ReviewCard[] = [
     badge: 'Product Review',
     rating: 4.4,
     icon: 'zap',
+    image: 'https://www.nycbicycleshop.com/2049/lectric-xp-30-folding-electric-bike.jpg',
+    brand: 'Lectric'
   },
   {
     slug: 'best-outdoor-solar-lights',
