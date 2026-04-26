@@ -226,6 +226,9 @@ export default function GeneracGuardian24kWReview() {
                 </div>
               </div>
             </header>
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}>
+              <img src='https://m.media-amazon.com/images/I/71VNiAQEIfL._AC_UF894,1000_QL80_.jpg' alt='Generac Guardian 24kW home standby generator' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             {/* Affiliate Disclosure + Top CTA */}
             <AffiliateDisclosure compact />

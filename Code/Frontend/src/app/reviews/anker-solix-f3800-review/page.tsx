@@ -212,6 +212,9 @@ export default function AnkerSolixF3800Review() {
                 </div>
               </div>
             </header>
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}>
+              <img src='https://m.media-amazon.com/images/I/71WoQNAA-YL._AC_UF894,1000_QL80_.jpg' alt='Anker SOLIX F3800 portable power station' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             {/* Affiliate disclosure — FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />

@@ -209,6 +209,9 @@ export default function EcoFlowDeltaProUltraReview() {
                 </div>
               </div>
             </header>
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}>
+              <img src='https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-1195484329.png' alt='EcoFlow Delta Pro Ultra whole-home backup' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             {/* Affiliate Disclosure + Top CTA */}
             <AffiliateDisclosure compact />

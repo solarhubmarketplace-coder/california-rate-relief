@@ -202,6 +202,9 @@ export default function EcobeeThermostatReview() {
                 </div>
               </div>
             </header>
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}>
+              <img src='https://www.techhive.com/wp-content/uploads/2023/04/Ecobee-Smart-Thermostat-Premium-installed-1.jpg' alt='Ecobee Smart Thermostat Premium' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             <AffiliateDisclosure compact />
 

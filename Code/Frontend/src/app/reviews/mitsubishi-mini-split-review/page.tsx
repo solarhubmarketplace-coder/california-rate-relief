@@ -269,6 +269,9 @@ export default function MitsubishiMiniSplitReview() {
                 </div>
               </div>
             </header>
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}>
+              <img src='https://dw2p0k56b2hr9.cloudfront.net/ME_GS_Mens_Den_copy_5d9986f120.webp' alt='Mitsubishi MSZ-GS premier wall-mounted mini split' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />

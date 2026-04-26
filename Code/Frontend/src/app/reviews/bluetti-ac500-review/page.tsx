@@ -215,6 +215,9 @@ export default function BluettiAC500Review() {
                 </div>
               </div>
             </header>
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}>
+              <img src='https://www.bluettipower.ph/cdn/shop/files/ac500_d502c572-8373-4a10-a44f-bcc6c7b2b88d.jpg' alt='Bluetti AC500 + B300S home battery backup' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />

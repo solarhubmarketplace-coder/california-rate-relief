@@ -191,7 +191,12 @@ export default function VelotricEbikeHub() {
                   <span>17 min read</span>
                 </div>
               </div>
-            </header><div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}><img src='https://images.unsplash.com/photo-1605705077777-7045ace4af31?w=1200&q=80&auto=format&fit=crop' alt='Velotric e-bike' className='w-full h-auto max-h-[480px] object-cover' loading='eager' /></div>
+            </header>
+
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src='https://electricbikereview.com/wp-content/assets/2022/02/2022-rad-power-bikes-radexpand-5-step-thru-black.jpg' alt='Velotric e-bike' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             <AffiliateDisclosure compact />
 

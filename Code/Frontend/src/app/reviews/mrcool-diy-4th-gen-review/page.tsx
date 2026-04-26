@@ -268,6 +268,9 @@ export default function MrCoolDIY4thGenReview() {
                 </div>
               </div>
             </header>
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}>
+              <img src='https://crdms.images.consumerreports.org/prod/products/cr/models/413079-ductless-air-conditioners-mrcool-diy-4th-gen-diy-12-hp-wm-115c25-10039675.png' alt='MrCool DIY 4th Gen mini split AC' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />
