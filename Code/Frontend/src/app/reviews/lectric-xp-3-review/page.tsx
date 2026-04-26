@@ -242,7 +242,7 @@ export default function LectricXP3Review() {
                     <span>12 min read</span>
                   </div>
                 </div>
-              </header>
+              </header><div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}><img src='https://images.unsplash.com/photo-1571333250630-f0230c320b6d?w=1200&q=80&auto=format&fit=crop' alt='Lectric XP 3.0 folding e-bike' className='w-full h-auto max-h-[480px] object-cover' loading='eager' /></div>
 
               {/* Affiliate disclosure. FTC compliance, must be above the fold */}
               <AffiliateDisclosure compact />
