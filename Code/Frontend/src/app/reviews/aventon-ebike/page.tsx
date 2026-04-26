@@ -191,7 +191,7 @@ export default function AventonEbikeHub() {
                   <span>16 min read</span>
                 </div>
               </div>
-            </header>
+            </header><div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}><img src='https://aventon-images.imgix.net/files/01_AventureM_Camouflage_Side_1.jpg?v=1751415302&width=1200' alt='Aventon e-bike lineup' className='w-full h-auto max-h-[480px] object-cover' loading='eager' /></div>
 
             <AffiliateDisclosure compact />
 
