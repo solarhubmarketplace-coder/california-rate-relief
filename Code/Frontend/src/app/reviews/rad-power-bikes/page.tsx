@@ -193,7 +193,7 @@ export default function RadPowerBikesHub() {
                   <span>17 min read</span>
                 </div>
               </div>
-            </header>
+            </header><div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}><img src='https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&q=80&auto=format&fit=crop' alt='Rad Power Bikes e-bike lineup' className='w-full h-auto max-h-[480px] object-cover' loading='eager' /></div>
 
             <AffiliateDisclosure compact />
 
