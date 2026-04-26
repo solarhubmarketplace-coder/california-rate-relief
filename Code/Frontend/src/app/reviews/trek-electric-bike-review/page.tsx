@@ -1,4 +1,4 @@
-—import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
