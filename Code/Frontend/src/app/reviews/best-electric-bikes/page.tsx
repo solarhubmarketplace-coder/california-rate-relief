@@ -276,7 +276,7 @@ export default function BestElectricBikes() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&q=80&auto=format&fit=crop' alt='Electric bikes lineup' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='https://cdn11.bigcommerce.com/s-6ahcroh/images/stencil/1280x1280/products/2760/8835/Aventure-3_Matcha_Side_1__89416.1747331054.jpg' alt='Aventon Aventure 3 — top pick e-bike for 2026' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
             </div>
 
             <AffiliateDisclosure compact />
@@ -435,6 +435,9 @@ export default function BestElectricBikes() {
                     </div>
                   </div>
                 </div>
+                <div className="w-full bg-card border-b border-border">
+                  <img src="https://cdn11.bigcommerce.com/s-6ahcroh/images/stencil/1280x1280/products/2760/8835/Aventure-3_Matcha_Side_1__89416.1747331054.jpg" alt="Aventon Aventure 3 fat-tire e-bike (Matcha green)" className="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
+                </div>
                 <div className="p-6">
                   {/* Specs Grid */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -535,6 +538,9 @@ export default function BestElectricBikes() {
                     </div>
                   </div>
                 </div>
+                <div className="w-full bg-card border-b border-border">
+                  <img src="https://electricbikereview.com/wp-content/assets/2021/07/rad-power-bikes-radrover-6-plus-stock-high-step-black.jpg" alt="Rad Power Bikes RadRover 6 Plus (high-step black)" className="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
+                </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                     <div className="bg-card rounded-lg p-3 text-center">
@@ -631,6 +637,9 @@ export default function BestElectricBikes() {
                       <div className="text-2xl font-bold text-foreground">$1,899</div>
                     </div>
                   </div>
+                </div>
+                <div className="w-full bg-card border-b border-border">
+                  <img src="https://electricbikereview.com/wp-content/assets/2022/02/2022-rad-power-bikes-radexpand-5-step-thru-black.jpg" alt="Rad Power Bikes RadExpand 5 Plus (folding, step-thru black)" className="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -729,6 +738,9 @@ export default function BestElectricBikes() {
                     </div>
                   </div>
                 </div>
+                <div className="w-full bg-card border-b border-border">
+                  <img src="https://www.nycbicycleshop.com/2049/lectric-xp-30-folding-electric-bike.jpg" alt="Lectric XP 3.0 folding fat-tire e-bike" className="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
+                </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                     <div className="bg-card rounded-lg p-3 text-center">
@@ -824,6 +836,9 @@ export default function BestElectricBikes() {
                       <div className="text-2xl font-bold text-foreground">$1,399</div>
                     </div>
                   </div>
+                </div>
+                <div className="w-full bg-card border-b border-border">
+                  <img src="https://crdms.images.consumerreports.org/f_auto,w_1200/prod/products/cr/models/412113-class-2-electric-bikes-aventon-soltera-2-10036846.png" alt="Aventon Soltera.2 sleek commuter e-bike" className="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -923,6 +938,9 @@ export default function BestElectricBikes() {
                       <div className="text-sm text-muted-foreground">Lowest price on this list</div>
                     </div>
                   </div>
+                </div>
+                <div className="w-full bg-card border-b border-border">
+                  <img src="https://casabikes.com/cdn/shop/files/BXPL_3f61b6b9-24d0-4c23-8b85-e643b20d43e2.webp" alt="Lectric XP Lite 2.0 lightweight folding e-bike (JW Black)" className="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
