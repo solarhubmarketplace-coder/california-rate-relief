@@ -284,9 +284,6 @@ export default function BestWholeHouseGenerator() {
                     >
                       See the #1 Pick &rarr;
                     </a>
-                    <div className="mt-3">
-                      <BuyButton productKey="generac-guardian-24kw" source="best-whole-house-generator-hero" variant="secondary" label="Get the Best Price Right Now" />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1480,21 +1477,6 @@ export default function BestWholeHouseGenerator() {
                 </div>
               </div>
             </section>
-
-{/* ========== MID-PAGE PURCHASE CTA ========== */}
-<section className="mb-12">
-  <div className="rounded-2xl p-6 md:p-8 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
-    <h3 className="text-xl md:text-2xl font-extrabold mb-2" style={{ color: '#f5f5f5' }}>
-      Ready to grab our top standby generator pick?
-    </h3>
-    <p className="mb-5" style={{ color: '#d4d4d8' }}>
-      We tested every model on this page. The Editor&apos;s Pick wins on real-world performance, build quality, and value. Lock in current pricing before stock or promo windows change.
-    </p>
-    <div className="inline-flex">
-      <BuyButton productKey="generac-guardian-24kw" source="best-whole-house-generator-mid-page-cta" variant="secondary" label="See Today&apos;s Best Price" />
-    </div>
-  </div>
-</section>
 
             {/* ========== FAQ SECTION ========== */}
             <section className="mb-16">
