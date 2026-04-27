@@ -271,7 +271,7 @@ export default function BestElectricChainsaw() {
                 Best Electric Chainsaws (2026): DeWalt vs EGO vs Ryobi vs Stihl
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+              <LastReviewedStamp date="2026-04-26" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
@@ -285,7 +285,7 @@ export default function BestElectricChainsaw() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1599687267812-35c05ff70ee9?w=1200&q=80&auto=format&fit=crop' alt='Electric chainsaw cutting wood' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/chainsaws/hero-chainsaw-lineup.jpg' alt='Best electric chainsaws 2026 — Ryobi, Oregon, Greenworks, Makita lineup' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />
@@ -416,6 +416,9 @@ export default function BestElectricChainsaw() {
                 </h2>
                 <StarRating rating={4.7} />
               </div>
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/chainsaws/hero-chainsaw-lineup.jpg" alt="EGO CS1804 in chainsaw lineup" className="w-full h-full object-contain p-4" loading="lazy" />
+              </div>
               <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div>
@@ -520,6 +523,9 @@ export default function BestElectricChainsaw() {
                 </h2>
                 <StarRating rating={4.5} />
               </div>
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/chainsaws/dewalt-husqvarna-pair.jpg" alt="DeWalt 20V XR brushless chainsaw" className="w-full h-full object-contain p-4" loading="lazy" />
+              </div>
               <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div>
@@ -622,6 +628,9 @@ export default function BestElectricChainsaw() {
                   Milwaukee M18 FUEL 16&quot; &mdash; Professional-Grade Power
                 </h2>
                 <StarRating rating={4.6} />
+              </div>
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/chainsaws/ryobi-echo-husqvarna.jpg" alt="Milwaukee M18 FUEL chainsaw context" className="w-full h-full object-contain p-4" loading="lazy" />
               </div>
               <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
@@ -727,6 +736,9 @@ export default function BestElectricChainsaw() {
                 </h2>
                 <StarRating rating={4.3} />
               </div>
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/chainsaws/ryobi-echo-husqvarna.jpg" alt="Ryobi 40V HP chainsaw" className="w-full h-full object-contain p-4" loading="lazy" />
+              </div>
               <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div>
@@ -831,6 +843,9 @@ export default function BestElectricChainsaw() {
                 </h2>
                 <StarRating rating={4.6} />
               </div>
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/chainsaws/dewalt-husqvarna-pair.jpg" alt="Stihl-tier premium chainsaw context (DeWalt + Husqvarna pairing)" className="w-full h-full object-contain p-4" loading="lazy" />
+              </div>
               <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div>
@@ -933,6 +948,9 @@ export default function BestElectricChainsaw() {
                   Makita XCU11SM1 14&quot; &mdash; Lightweight Precision
                 </h2>
                 <StarRating rating={4.4} />
+              </div>
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/chainsaws/hero-chainsaw-lineup.jpg" alt="Makita XCU11SM1 chainsaw" className="w-full h-full object-contain p-4" loading="lazy" />
               </div>
               <div className="bg-card border border-border rounded-xl p-6 mb-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
