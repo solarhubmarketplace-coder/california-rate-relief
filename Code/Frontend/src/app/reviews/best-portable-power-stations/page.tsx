@@ -442,6 +442,27 @@ export default function BestPortablePowerStations() {
                         <td key={p.name} className="p-3" style={{ color: '#a1a1aa' }}>{p.solarInput}</td>
                       ))}
                     </tr>
+                  <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
+                    <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
+                    {products.map((p) => {
+                      const pk =
+                        p.name === 'EcoFlow Delta Pro 3' ? 'ecoflow-delta-pro-3' :
+                        p.name === 'Anker SOLIX F3800' ? 'anker-solix-f3800' :
+                        p.name === 'Bluetti AC500 + B300S' ? 'bluetti-ac500' :
+                        p.name === 'Jackery 2000 Plus' ? 'jackery-explorer-2000-plus' :
+                        p.name === 'EcoFlow Delta Pro Ultra' ? 'ecoflow-delta-pro-ultra' :
+                        null;
+                      return (
+                        <td key={p.name} className="p-3 text-center">
+                          {pk ? (
+                            <BuyButton productKey={pk} source="best-power-stations-table" variant="compact" label="Check Price" />
+                          ) : (
+                            <span className="text-xs" style={{ color: '#71717a' }}>Local install only</span>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
                   </tbody>
                 </table>
               </div>
