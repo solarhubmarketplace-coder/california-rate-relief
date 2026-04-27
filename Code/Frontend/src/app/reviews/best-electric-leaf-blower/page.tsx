@@ -282,7 +282,7 @@ export default function BestElectricLeafBlower() {
                 Best Electric Leaf Blowers (2026): EGO vs Ryobi vs Milwaukee vs DeWalt
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+              <LastReviewedStamp date="2026-04-26" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
@@ -296,7 +296,7 @@ export default function BestElectricLeafBlower() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1599687267812-35c05ff70ee9?w=1200&q=80&auto=format&fit=crop' alt='Electric leaf blower in action' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/leaf-blowers/hero-leaf-blower-lineup.jpg' alt='Best electric leaf blowers 2026 — EGO, Husqvarna, EGO 880 CFM lineup' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />
@@ -424,6 +424,9 @@ export default function BestElectricLeafBlower() {
 
               {/* === EGO LB6504 === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/leaf-blowers/ego-980-cfm.jpg" alt="EGO LB6504 high-CFM cordless leaf blower" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <span className="bg-yellow-400 text-yellow-200 text-xs font-bold px-3 py-1 rounded-full">
                     Best Overall
@@ -484,6 +487,9 @@ export default function BestElectricLeafBlower() {
 
               {/* === Milwaukee M18 FUEL === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/leaf-blowers/leaf-blower-trio-comparison.jpg" alt="Milwaukee M18 FUEL alongside EGO and Husqvarna competitors" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <span className="bg-red-500/15 text-red-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best for Pros
@@ -542,6 +548,9 @@ export default function BestElectricLeafBlower() {
 
               {/* === DeWalt DCBL772X1 === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/leaf-blowers/leaf-blower-trio-comparison.jpg" alt="DeWalt 60V MAX FlexVolt leaf blower comparison context" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <span className="bg-orange-500/15 text-orange-300 text-xs font-bold px-3 py-1 rounded-full">
                     Most Powerful
@@ -601,6 +610,9 @@ export default function BestElectricLeafBlower() {
 
               {/* === Ryobi 40V Whisper === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/leaf-blowers/leaf-blower-trio-comparison.jpg" alt="Ryobi 40V Whisper-series leaf blower" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <span className="bg-purple-500/15 text-purple-300 text-xs font-bold px-3 py-1 rounded-full">
                     Quietest
@@ -659,6 +671,9 @@ export default function BestElectricLeafBlower() {
 
               {/* === Greenworks 80V === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/leaf-blowers/leaf-blower-trio-comparison.jpg" alt="Greenworks 80V cordless leaf blower" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <span className="bg-emerald-500/15 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Runtime
@@ -716,6 +731,9 @@ export default function BestElectricLeafBlower() {
 
               {/* === EGO LB5804 === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/leaf-blowers/ego-880-cfm.jpg" alt="EGO LB5804 mid-tier cordless leaf blower" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <span className="bg-blue-500/15 text-blue-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Value
