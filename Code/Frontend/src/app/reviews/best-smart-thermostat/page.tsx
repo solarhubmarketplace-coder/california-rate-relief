@@ -218,7 +218,7 @@ export default function BestSmartThermostatPage() {
                 Best Smart Thermostats (2026): Ecobee vs Nest, Full Comparison
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+              <LastReviewedStamp date="2026-04-26" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
@@ -232,10 +232,30 @@ export default function BestSmartThermostatPage() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop' alt='Smart thermostat on wall' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/thermostats/hero-ecobee-premium-livingroom.jpg' alt='Ecobee Smart Thermostat Premium installed on a living-room wall — top pick for 2026' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />
+
+            {/* Trust badges strip */}
+            <div className="mb-10 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+              <div className="rounded-lg p-3 border bg-card border-border">
+                <div className="text-2xl font-bold text-emerald-400">4</div>
+                <div className="text-xs text-muted-foreground">Thermostats compared</div>
+              </div>
+              <div className="rounded-lg p-3 border bg-card border-border">
+                <div className="text-2xl font-bold text-emerald-400">$0</div>
+                <div className="text-xs text-muted-foreground">Manufacturer payouts</div>
+              </div>
+              <div className="rounded-lg p-3 border bg-card border-border">
+                <div className="text-2xl font-bold text-emerald-400">2026</div>
+                <div className="text-xs text-muted-foreground">Updated April 26</div>
+              </div>
+              <div className="rounded-lg p-3 border bg-card border-border">
+                <div className="text-2xl font-bold text-emerald-400">Plain</div>
+                <div className="text-xs text-muted-foreground">English first, tech second</div>
+              </div>
+            </div>
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -362,6 +382,9 @@ export default function BestSmartThermostatPage() {
 
               {/* --- Ecobee Premium --- */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/thermostats/ecobee-premium-product.jpg" alt="Ecobee Smart Thermostat Premium product close-up — black square touchscreen showing 72°" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
                   <div>
                     <span className="text-xs font-bold text-yellow-600 bg-yellow-500/15 px-2 py-0.5 rounded-full">
@@ -445,6 +468,9 @@ export default function BestSmartThermostatPage() {
 
               {/* --- Nest Learning 4th Gen --- */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/thermostats/nest-learning-thermostat.jpg" alt="Google Nest Learning Thermostat 4th gen — round dial showing 66° with characteristic warm glow" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
                   <div>
                     <span className="text-xs font-bold text-blue-600 bg-blue-500/15 px-2 py-0.5 rounded-full">
@@ -528,6 +554,9 @@ export default function BestSmartThermostatPage() {
 
               {/* --- Ecobee Enhanced --- */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/thermostats/ecobee-enhanced-hallway.jpg" alt="Ecobee Smart Thermostat Enhanced installed in a modern home hallway" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
                   <div>
                     <span className="text-xs font-bold text-green-600 bg-green-500/15 px-2 py-0.5 rounded-full">
@@ -609,6 +638,9 @@ export default function BestSmartThermostatPage() {
 
               {/* --- Google Nest Thermostat --- */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/thermostats/nest-thermostat-with-plant.jpg" alt="Google Nest Thermostat (entry-level) — sand-color dial showing 72° next to a houseplant" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
                 <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
                   <div>
                     <span className="text-xs font-bold text-purple-600 bg-purple-500/15 px-2 py-0.5 rounded-full">
