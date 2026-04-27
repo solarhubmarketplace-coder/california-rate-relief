@@ -1456,6 +1456,13 @@ export default function BestPortablePowerStations() {
           </article>
         </div>
       </main>
+      <section className="container mx-auto px-4 max-w-3xl mb-12">
+        <div className="rounded-xl p-6 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
+          <h3 className="text-xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Ready to lock in our top pick?</h3>
+          <p className="mb-4" style={{ color: '#d4d4d8' }}>The EcoFlow Delta Pro 3 is our Editor&apos;s Pick for 2026.</p>
+          <BuyButton productKey="ecoflow-delta-pro-3" source="best-power-stations-final-cta" variant="secondary" label="See Today's Best Price" />
+        </div>
+      </section>
       <ReviewFooter />
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
