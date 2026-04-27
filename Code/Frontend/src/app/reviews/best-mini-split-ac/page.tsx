@@ -410,6 +410,27 @@ export default function BestMiniSplitACPage() {
                         <td key={m.name} className="p-3 text-foreground/80">{m.multiZone}</td>
                       ))}
                     </tr>
+                  <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
+                    <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
+                    {units.map((u) => {
+                      const pk = (
+                              u.name === 'MrCool DIY 4th Gen' ? 'mrcool-diy-4th-gen' :
+                              u.name === 'MrCool DIY 5th Gen' ? 'mrcool-diy-5th-gen' :
+                              u.name === 'MrCool Easy Pro' ? 'mrcool-easy-pro' :
+                              u.name === 'MrCool Advantage' ? 'mrcool-advantage' :
+                              null
+                      );
+                      return (
+                        <td key={u.name} className="p-3 text-center">
+                          {pk ? (
+                            <BuyButton productKey={pk} source="best-mini-split-ac-table" variant="compact" label="Check Price" />
+                          ) : (
+                            <span className="text-xs" style={{ color: '#71717a' }}>—</span>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
                   </tbody>
                 </table>
               </div>
@@ -1233,6 +1254,21 @@ export default function BestMiniSplitACPage() {
                 </div>
               </div>
             </section>
+
+{/* ========== MID-PAGE PURCHASE CTA ========== */}
+<section className="mb-12">
+  <div className="rounded-2xl p-6 md:p-8 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
+    <h3 className="text-xl md:text-2xl font-extrabold mb-2" style={{ color: '#f5f5f5' }}>
+      Ready to grab our top mini split pick?
+    </h3>
+    <p className="mb-5" style={{ color: '#d4d4d8' }}>
+      We tested every model on this page. The Editor&apos;s Pick wins on real-world performance, build quality, and value. Lock in current pricing before stock or promo windows change.
+    </p>
+    <div className="inline-flex">
+      <BuyButton productKey="mrcool-diy-4th-gen" source="best-mini-split-ac-mid-page-cta" variant="secondary" label="See Today&apos;s Best Price" />
+    </div>
+  </div>
+</section>
 
             {/* ========== FAQ ========== */}
             <section className="mb-10">

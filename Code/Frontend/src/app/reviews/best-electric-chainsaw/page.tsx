@@ -398,6 +398,29 @@ export default function BestElectricChainsaw() {
                         </td>
                       </tr>
                     ))}
+                  <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
+                    <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
+                    {chainsaws.map((c) => {
+                      const pk = (
+                              c.name === 'EGO CS1804 18"' ? 'ego-cs1804' :
+                              c.name === 'DeWalt DCCS670X1 60V MAX 16"' ? 'dewalt-dccs670x1' :
+                              c.name === 'Milwaukee M18 FUEL 16"' ? 'milwaukee-m18-fuel' :
+                              c.name === 'Ryobi 40V HP 18"' ? 'ryobi-40v-hp' :
+                              c.name === 'Stihl MSA 220 C-B 14"' ? 'stihl-msa-220-c-b' :
+                              c.name === 'Makita XCU11SM1 14"' ? 'makita-xcu11sm1' :
+                              null
+                      );
+                      return (
+                        <td key={c.name} className="p-3 text-center">
+                          {pk ? (
+                            <BuyButton productKey={pk} source="best-electric-chainsaw-table" variant="compact" label="Check Price" />
+                          ) : (
+                            <span className="text-xs" style={{ color: '#71717a' }}>—</span>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
                   </tbody>
                 </table>
               </div>
@@ -1321,6 +1344,21 @@ export default function BestElectricChainsaw() {
                 </ul>
               </div>
             </section>
+
+{/* ========== MID-PAGE PURCHASE CTA ========== */}
+<section className="mb-12">
+  <div className="rounded-2xl p-6 md:p-8 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
+    <h3 className="text-xl md:text-2xl font-extrabold mb-2" style={{ color: '#f5f5f5' }}>
+      Ready to grab our top electric chainsaw pick?
+    </h3>
+    <p className="mb-5" style={{ color: '#d4d4d8' }}>
+      We tested every model on this page. The Editor&apos;s Pick wins on real-world performance, build quality, and value. Lock in current pricing before stock or promo windows change.
+    </p>
+    <div className="inline-flex">
+      <BuyButton productKey="ego-cs1804" source="best-electric-chainsaw-mid-page-cta" variant="secondary" label="See Today&apos;s Best Price" />
+    </div>
+  </div>
+</section>
 
             {/* ========== FAQ ========== */}
             <section className="mb-16">
