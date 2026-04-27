@@ -268,6 +268,12 @@ export default function BestElectricLawnMower() {
               </div>
             </div>
 
+            {/* Hero purchase CTA */}
+            <div className="mb-10 flex justify-center">
+              <BuyButton productKey="ego-power-select-cut-xp" source="best-lawn-mower-hero" variant="secondary" label="Get the Best Price Right Now" />
+            </div>
+
+
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
