@@ -410,26 +410,6 @@ export default function BestMiniSplitACPage() {
                         <td key={m.name} className="p-3 text-foreground/80">{m.multiZone}</td>
                       ))}
                     </tr>
-                  <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
-                    <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
-                    {models.map((m) => {
-                      const pk =
-                        m.name === 'MrCool DIY 4th Gen' ? 'mrcool-diy-4th-gen' :
-                        m.name === 'MrCool DIY 5th Gen' ? 'mrcool-diy-5th-gen' :
-                        m.name === 'MrCool Easy Pro' ? 'mrcool-easy-pro' :
-                        m.name === 'MrCool Advantage' ? 'mrcool-advantage' :
-                        null;
-                      return (
-                        <td key={m.name} className="p-3 text-center">
-                          {pk ? (
-                            <BuyButton productKey={pk} source="best-mini-split-ac-table" variant="compact" label="Check Price" />
-                          ) : (
-                            <span className="text-xs" style={{ color: '#71717a' }}>—</span>
-                          )}
-                        </td>
-                      );
-                    })}
-                  </tr>
                   </tbody>
                 </table>
               </div>
@@ -1382,13 +1362,6 @@ export default function BestMiniSplitACPage() {
           </article>
         </div>
       </main>
-      <section className="container mx-auto px-4 max-w-3xl mb-12">
-        <div className="rounded-xl p-6 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
-          <h3 className="text-xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Ready to lock in our top pick?</h3>
-          <p className="mb-4" style={{ color: '#d4d4d8' }}>The Editor&apos;s Pick mini split AC is sitting at our recommended price right now — lock it in before promo windows shift.</p>
-          <BuyButton productKey="mrcool-diy-4th-gen" source="best-mini-split-ac-final-cta" variant="secondary" label="See Today&apos;s Best Price" />
-        </div>
-      </section>
       <ReviewFooter />
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />

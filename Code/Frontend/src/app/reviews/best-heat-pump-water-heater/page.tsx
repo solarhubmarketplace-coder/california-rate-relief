@@ -393,28 +393,6 @@ export default function BestHeatPumpWaterHeaters() {
                         <td key={p.name} className="p-3" style={{ color: '#a1a1aa' }}>{p.warranty}</td>
                       ))}
                     </tr>
-                  <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
-                    <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
-                    {products.map((p) => {
-                      const pk =
-                        p.name === 'Rheem ProTerra' ? 'rheem-proterra-plug-in' :
-                        p.name === 'A.O. Smith Voltex' ? 'ao-smith-voltex-hybrid' :
-                        p.name === 'GE GeoSpring' ? 'ge-geospring-hybrid' :
-                        p.name === 'Bradford White AeroTherm' ? 'bradford-white-aerotherm' :
-                        p.name === 'Stiebel Eltron Accelera 300' ? 'stiebel-eltron-accelera-300' :
-                        p.name === 'State Premier' ? 'state-premier-hybrid' :
-                        null;
-                      return (
-                        <td key={p.name} className="p-3 text-center">
-                          {pk ? (
-                            <BuyButton productKey={pk} source="best-heat-pump-water-heater-table" variant="compact" label="Check Price" />
-                          ) : (
-                            <span className="text-xs" style={{ color: '#71717a' }}>—</span>
-                          )}
-                        </td>
-                      );
-                    })}
-                  </tr>
                   </tbody>
                 </table>
               </div>
@@ -1342,13 +1320,6 @@ export default function BestHeatPumpWaterHeaters() {
           </article>
         </div>
       </main>
-      <section className="container mx-auto px-4 max-w-3xl mb-12">
-        <div className="rounded-xl p-6 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
-          <h3 className="text-xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Ready to lock in our top pick?</h3>
-          <p className="mb-4" style={{ color: '#d4d4d8' }}>The Editor&apos;s Pick heat-pump water heater is sitting at our recommended price right now — lock it in before promo windows shift.</p>
-          <BuyButton productKey="rheem-proterra-plug-in" source="best-heat-pump-water-heater-final-cta" variant="secondary" label="See Today&apos;s Best Price" />
-        </div>
-      </section>
       <ReviewFooter />
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />

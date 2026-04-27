@@ -1103,13 +1103,6 @@ export default function BestSmartThermostatPage() {
           </article>
         </div>
       </main>
-      <section className="container mx-auto px-4 max-w-3xl mb-12">
-        <div className="rounded-xl p-6 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
-          <h3 className="text-xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Ready to lock in our top pick?</h3>
-          <p className="mb-4" style={{ color: '#d4d4d8' }}>The Editor&apos;s Pick smart thermostat is sitting at our recommended price right now — lock it in before promo windows shift.</p>
-          <BuyButton productKey="ecobee-smart-thermostat-premium" source="best-smart-thermostat-final-cta" variant="secondary" label="See Today&apos;s Best Price" />
-        </div>
-      </section>
       <ReviewFooter />
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />

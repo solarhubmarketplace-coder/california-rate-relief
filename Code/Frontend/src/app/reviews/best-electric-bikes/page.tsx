@@ -549,28 +549,6 @@ export default function BestElectricBikes() {
                       <td className="p-3 text-center"><X className="h-5 w-5 text-slate-500 inline" /></td>
                       <td className="p-3 text-center"><X className="h-5 w-5 text-slate-500 inline" /></td>
                     </tr>
-                  <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
-                    <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
-                    {bikes.map((b) => {
-                      const pk =
-                        b.name === 'Aventon Aventure 3' ? 'aventon-aventure-3' :
-                        b.name === 'Rad Power RadRover 6 Plus' ? 'rad-power-radrover-6-plus' :
-                        b.name === 'Rad Power RadExpand 5 Plus' ? 'rad-power-radexpand-5-plus' :
-                        b.name === 'Lectric XP 3.0' ? 'lectric-xp-3-0' :
-                        b.name === 'Aventon Soltera.2' ? 'aventon-soltera-2' :
-                        b.name === 'Lectric XP Lite 2.0' ? 'lectric-xp-lite-2-0' :
-                        null;
-                      return (
-                        <td key={b.name} className="p-3 text-center">
-                          {pk ? (
-                            <BuyButton productKey={pk} source="best-electric-bikes-table" variant="compact" label="Check Price" />
-                          ) : (
-                            <span className="text-xs" style={{ color: '#71717a' }}>—</span>
-                          )}
-                        </td>
-                      );
-                    })}
-                  </tr>
                   </tbody>
                 </table>
               </div>
@@ -1706,13 +1684,6 @@ export default function BestElectricBikes() {
           </article>
         </div>
       </main>
-      <section className="container mx-auto px-4 max-w-3xl mb-12">
-        <div className="rounded-xl p-6 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
-          <h3 className="text-xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Ready to lock in our top pick?</h3>
-          <p className="mb-4" style={{ color: '#d4d4d8' }}>The Editor&apos;s Pick electric bike is sitting at our recommended price right now — lock it in before promo windows shift.</p>
-          <BuyButton productKey="aventon-aventure-3" source="best-electric-bikes-final-cta" variant="secondary" label="See Today&apos;s Best Price" />
-        </div>
-      </section>
       <ReviewFooter />
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="grh" palette={{ fg: '#f5f5f5', muted: '#d4d4d8', mutedFg: '#71717a', accent: '#22c55e', cardBg: 'hsl(150, 15%, 9%)', cardBorder: 'hsl(150, 10%, 18%)' }} />
