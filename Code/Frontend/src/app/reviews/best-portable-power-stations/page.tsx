@@ -288,6 +288,9 @@ export default function BestPortablePowerStations() {
                     >
                       See the #1 Pick &rarr;
                     </a>
+                    <div className="mt-3">
+                      <BuyButton productKey="ecoflow-delta-pro-3" source="best-power-stations-hero" variant="secondary" label="Get the Best Price Right Now" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -441,6 +444,29 @@ export default function BestPortablePowerStations() {
                       {products.map((p) => (
                         <td key={p.name} className="p-3" style={{ color: '#a1a1aa' }}>{p.solarInput}</td>
                       ))}
+                    </tr>
+                  
+                    <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
+                      <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
+                      {products.map((p) => {
+                        const pk = (
+                              p.name === 'EcoFlow Delta Pro 3' ? 'ecoflow-delta-pro-3' :
+                              p.name === 'Anker SOLIX F3800' ? 'anker-solix-f3800' :
+                              p.name === 'Bluetti AC500 + B300S' ? 'bluetti-ac500' :
+                              p.name === 'Jackery 2000 Plus' ? 'jackery-explorer-2000-plus' :
+                              p.name === 'EcoFlow Delta Pro Ultra' ? 'ecoflow-delta-pro-ultra' :
+                              null
+                        );
+                        return (
+                          <td key={p.name} className="p-3 text-center">
+                            {pk ? (
+                              <BuyButton productKey={pk} source="best-power-stations-table" variant="compact" label="Check Price" />
+                            ) : (
+                              <span className="text-xs" style={{ color: '#71717a' }}>Local install only</span>
+                            )}
+                          </td>
+                        );
+                      })}
                     </tr>
                   </tbody>
                 </table>
@@ -1318,6 +1344,21 @@ export default function BestPortablePowerStations() {
                 </div>
               </div>
             </section>
+
+{/* ========== MID-PAGE PURCHASE CTA ========== */}
+<section className="mb-12">
+  <div className="rounded-2xl p-6 md:p-8 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
+    <h3 className="text-xl md:text-2xl font-extrabold mb-2" style={{ color: '#f5f5f5' }}>
+      Ready to grab our top power station pick?
+    </h3>
+    <p className="mb-5" style={{ color: '#d4d4d8' }}>
+      We tested every model on this page. The Editor&apos;s Pick wins on real-world performance, build quality, and value. Lock in current pricing before stock or promo windows change.
+    </p>
+    <div className="inline-flex">
+      <BuyButton productKey="ecoflow-delta-pro-3" source="best-power-stations-mid-page-cta" variant="secondary" label="See Today&apos;s Best Price" />
+    </div>
+  </div>
+</section>
 
             {/* ========== FAQ SECTION ========== */}
             <section className="mb-16">

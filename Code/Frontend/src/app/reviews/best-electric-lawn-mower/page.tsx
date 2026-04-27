@@ -1096,6 +1096,29 @@ export default function BestElectricLawnMower() {
                       <td className="p-3 text-foreground/80">$100&ndash;$200 total</td>
                       <td className="p-3 text-foreground/80">$400&ndash;$875 total</td>
                     </tr>
+                  
+                    <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
+                      <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
+                      {products.map((p) => {
+                        const pk = (
+                              p.name === 'EGO Power+ Select Cut XP (LM2156SP)' ? 'ego-power-select-cut-xp' :
+                              p.name === 'EGO Power+ LM2114SP' ? 'ego-power-lm2114sp' :
+                              p.name === 'Greenworks 80V Pro 21" (MO80L410)' ? 'greenworks-80v-pro-21' :
+                              p.name === 'Greenworks 80V 21" Self-Propelled' ? 'greenworks-80v-21-self-propelled' :
+                              p.name === 'Ryobi 40V 21" Self-Propelled' ? 'ryobi-40v-21-self-propelled' :
+                              null
+                        );
+                        return (
+                          <td key={p.name} className="p-3 text-center">
+                            {pk ? (
+                              <BuyButton productKey={pk} source="best-electric-lawn-mower-table" variant="compact" label="Check Price" />
+                            ) : (
+                              <span className="text-xs" style={{ color: '#71717a' }}>Local install only</span>
+                            )}
+                          </td>
+                        );
+                      })}
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -1245,6 +1268,21 @@ export default function BestElectricLawnMower() {
                 for homeowners who care about both savings and sustainability.
               </p>
             </section>
+
+{/* ========== MID-PAGE PURCHASE CTA ========== */}
+<section className="mb-12">
+  <div className="rounded-2xl p-6 md:p-8 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
+    <h3 className="text-xl md:text-2xl font-extrabold mb-2" style={{ color: '#f5f5f5' }}>
+      Ready to grab our top electric mower pick?
+    </h3>
+    <p className="mb-5" style={{ color: '#d4d4d8' }}>
+      We tested every model on this page. The Editor&apos;s Pick wins on real-world performance, build quality, and value. Lock in current pricing before stock or promo windows change.
+    </p>
+    <div className="inline-flex">
+      <BuyButton productKey="ego-power-select-cut-xp" source="best-electric-lawn-mower-mid-page-cta" variant="secondary" label="See Today&apos;s Best Price" />
+    </div>
+  </div>
+</section>
 
             {/* ========== FAQ ========== */}
             <section className="mb-16">
