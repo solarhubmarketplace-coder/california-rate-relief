@@ -402,7 +402,6 @@ export default function BestWholeHouseGenerator() {
                       <th className="text-left p-3 font-semibold text-foreground">Output (NG)</th>
                       <th className="text-left p-3 font-semibold text-foreground">Transfer Switch</th>
                       <th className="text-left p-3 font-semibold text-foreground">Warranty</th>
-                      <th className="text-left p-3 font-semibold text-foreground">Where to Buy</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -420,18 +419,6 @@ export default function BestWholeHouseGenerator() {
                         <td className="p-3 text-foreground">{gen.outputNG}</td>
                         <td className="p-3 text-foreground">{gen.transferSwitch}</td>
                         <td className="p-3 text-foreground">{gen.warranty}</td>
-                        <td className="p-3 text-center">
-                          {(() => {
-                            const pk = gen.name === 'Generac Guardian 24kW (7210)' ? 'generac-guardian-24kw' :
-                              gen.name === 'Generac Guardian 22kW (7043)' ? 'generac-guardian-22kw' :
-                              gen.name === 'Generac Guardian 26kW (7291)' ? 'generac-guardian-26kw' :
-                              gen.name === 'Kohler 24kW' ? 'kohler-24kw-standby' :
-                              gen.name === 'Champion 14kW (100177)' ? 'champion-14kw-100177' : null;
-                            return pk ? (
-                              <BuyButton productKey={pk} source="best-whole-house-generator-table" variant="compact" label="Check Price" />
-                            ) : <span className="text-xs text-muted-foreground">—</span>;
-                          })()}
-                        </td>
                       </tr>
                     ))}
                   </tbody>
