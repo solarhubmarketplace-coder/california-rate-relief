@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Rounded green background -->
+  <rect width="64" height="64" rx="14" fill="#16a34a"/>
+  <!-- Big bold leaf in white -->
+  <path d="M 12 50 C 12 26, 26 12, 52 12 C 52 38, 38 52, 14 52 C 13 52, 12 51, 12 50 Z"
+        fill="#ffffff"/>
+  <!-- Inner leaf vein -->
+  <path d="M 14 50 L 44 20"
+        stroke="#16a34a" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <!-- Star burst on leaf (review mark) -->
+  <circle cx="44" cy="22" r="7" fill="#facc15" stroke="#16a34a" stroke-width="2"/>
+  <path d="M 44 17.5 L 45.3 21 L 49 21 L 46 23 L 47.3 26.5 L 44 24.5 L 40.7 26.5 L 42 23 L 39 21 L 42.7 21 Z"
+        fill="#16a34a"/>
+</svg>

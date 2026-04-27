@@ -26,6 +26,8 @@ const DOMAIN_DEFAULTS = {
     siteName: 'California Rate Relief Program',
     ogImage: '/og-image.png',
     ogAlt: 'California Rate Relief Program — Cut Your Electric Bill by Up to 50%',
+    favicon: '/favicon.ico',
+    appleTouchIcon: '/favicon.ico',
   },
   greenreviewshub: {
     base: 'https://greenreviewshub.com',
@@ -35,6 +37,8 @@ const DOMAIN_DEFAULTS = {
     siteName: 'Green Reviews Hub',
     ogImage: '/og-image.png',
     ogAlt: 'Green Reviews Hub — Independent Green Energy Product Reviews',
+    favicon: '/img/favicons/grh-favicon.ico',
+    appleTouchIcon: '/img/favicons/grh-apple-touch-icon.png',
   },
   securehomegear: {
     base: 'https://securehomegear.com',
@@ -44,6 +48,8 @@ const DOMAIN_DEFAULTS = {
     siteName: 'SecureHomeGear',
     ogImage: '/og-image.png',
     ogAlt: 'SecureHomeGear — Independent Home Security Reviews',
+    favicon: '/favicon.ico',
+    appleTouchIcon: '/favicon.ico',
   },
   athomebiohacking: {
     base: 'https://athomebiohacking.com',
@@ -53,6 +59,8 @@ const DOMAIN_DEFAULTS = {
     siteName: 'At Home Biohacking',
     ogImage: '/og-image.png',
     ogAlt: 'At Home Biohacking — Research-Backed Wellness Reviews',
+    favicon: '/favicon.ico',
+    appleTouchIcon: '/favicon.ico',
   },
 };
 
@@ -113,7 +121,14 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     icons: {
-      icon: '/img/logo.svg',
+      icon: [
+        { url: cfg.favicon, sizes: 'any' },
+        ...(cfg.favicon.endsWith('.ico')
+          ? [{ url: cfg.favicon.replace('.ico', '-32.png'), sizes: '32x32', type: 'image/png' }]
+          : []),
+      ],
+      apple: cfg.appleTouchIcon,
+      shortcut: cfg.favicon,
     },
   };
 }
