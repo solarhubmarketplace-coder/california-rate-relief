@@ -395,8 +395,8 @@ export default function BestElectricLawnMower() {
 
               {/* === EGO Select Cut XP === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
-                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
-                  <img src="/img/products/lawn-mowers/ego-select-cut-xp.jpg" alt="EGO Power+ Select Cut XP self-propelled 21-inch mower — Best Overall pick" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/lawn-mowers/ego-select-cut-xp.jpg" alt="EGO Power+ Select Cut XP self-propelled 21-inch mower — Best Overall pick" className="w-full h-full object-contain p-4" loading="lazy" />
                 </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-yellow-400 text-yellow-200 text-xs font-bold px-3 py-1 rounded-full">
@@ -512,8 +512,8 @@ export default function BestElectricLawnMower() {
 
               {/* === EGO LM2114SP === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
-                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
-                  <img src="/img/products/lawn-mowers/ego-lm2114sp.jpg" alt="EGO Power+ LM2114SP 21-inch self-propelled mower" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/lawn-mowers/ego-lm2114sp.jpg" alt="EGO Power+ LM2114SP 21-inch self-propelled mower" className="w-full h-full object-contain p-4" loading="lazy" />
                 </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-purple-500/15 text-purple-300 text-xs font-bold px-3 py-1 rounded-full">
@@ -617,8 +617,8 @@ export default function BestElectricLawnMower() {
 
               {/* === Greenworks 80V Pro === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
-                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
-                  <img src="/img/products/lawn-mowers/greenworks-80v-lifestyle.jpg" alt="Greenworks 80V Pro 21-inch lawn mower in real-world use" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/lawn-mowers/greenworks-80v-lifestyle.jpg" alt="Greenworks 80V Pro 21-inch lawn mower in real-world use" className="w-full h-full object-contain p-4" loading="lazy" />
                 </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-green-500/15 text-green-300 text-xs font-bold px-3 py-1 rounded-full">
@@ -723,8 +723,8 @@ export default function BestElectricLawnMower() {
 
               {/* === Greenworks 80V Self-Propelled === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
-                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
-                  <img src="/img/products/lawn-mowers/greenworks-80v-lifestyle.jpg" alt="Greenworks 80V 21-inch self-propelled lawn mower" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/lawn-mowers/greenworks-80v-lifestyle.jpg" alt="Greenworks 80V 21-inch self-propelled lawn mower" className="w-full h-full object-contain p-4" loading="lazy" />
                 </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-teal-500/15 text-teal-300 text-xs font-bold px-3 py-1 rounded-full">
@@ -829,8 +829,8 @@ export default function BestElectricLawnMower() {
 
               {/* === Ryobi 40V === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
-                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
-                  <img src="/img/products/lawn-mowers/ryobi-40v-awd.jpg" alt="Ryobi 40V HP 21-inch AWD self-propelled lawn mower" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/lawn-mowers/ryobi-40v-awd.jpg" alt="Ryobi 40V HP 21-inch AWD self-propelled lawn mower" className="w-full h-full object-contain p-4" loading="lazy" />
                 </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-blue-500/15 text-blue-300 text-xs font-bold px-3 py-1 rounded-full">
