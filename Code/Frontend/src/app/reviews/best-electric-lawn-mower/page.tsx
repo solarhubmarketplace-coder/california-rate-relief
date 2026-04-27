@@ -229,7 +229,7 @@ export default function BestElectricLawnMower() {
                 Best Electric Lawn Mowers (2026): EGO vs Greenworks vs Ryobi
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+              <LastReviewedStamp date="2026-04-26" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
@@ -243,10 +243,30 @@ export default function BestElectricLawnMower() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1589923188900-85dae523342b?w=1200&q=80&auto=format&fit=crop' alt='Electric lawn mower on grass' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/lawn-mowers/hero-ego-power-21.jpg' alt='EGO Power+ 21" battery-powered lawn mower — top pick for 2026' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />
+
+            {/* Trust badges strip */}
+            <div className="mb-10 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+              <div className="rounded-lg p-3 border bg-card border-border">
+                <div className="text-2xl font-bold text-emerald-400">5</div>
+                <div className="text-xs text-muted-foreground">Mowers compared</div>
+              </div>
+              <div className="rounded-lg p-3 border bg-card border-border">
+                <div className="text-2xl font-bold text-emerald-400">$0</div>
+                <div className="text-xs text-muted-foreground">Manufacturer payouts</div>
+              </div>
+              <div className="rounded-lg p-3 border bg-card border-border">
+                <div className="text-2xl font-bold text-emerald-400">2026</div>
+                <div className="text-xs text-muted-foreground">Updated April 26</div>
+              </div>
+              <div className="rounded-lg p-3 border bg-card border-border">
+                <div className="text-2xl font-bold text-emerald-400">Plain</div>
+                <div className="text-xs text-muted-foreground">English first, tech second</div>
+              </div>
+            </div>
 
             {/* Intro */}
             <div className="prose prose-slate max-w-none">
@@ -375,6 +395,9 @@ export default function BestElectricLawnMower() {
 
               {/* === EGO Select Cut XP === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
+                  <img src="/img/products/lawn-mowers/ego-select-cut-xp.jpg" alt="EGO Power+ Select Cut XP self-propelled 21-inch mower — Best Overall pick" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-yellow-400 text-yellow-200 text-xs font-bold px-3 py-1 rounded-full">
                     Best Overall
@@ -489,6 +512,9 @@ export default function BestElectricLawnMower() {
 
               {/* === EGO LM2114SP === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
+                  <img src="/img/products/lawn-mowers/ego-lm2114sp.jpg" alt="EGO Power+ LM2114SP 21-inch self-propelled mower" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-purple-500/15 text-purple-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Mid-Range
@@ -591,6 +617,9 @@ export default function BestElectricLawnMower() {
 
               {/* === Greenworks 80V Pro === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
+                  <img src="/img/products/lawn-mowers/greenworks-80v-lifestyle.jpg" alt="Greenworks 80V Pro 21-inch lawn mower in real-world use" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-green-500/15 text-green-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best for Tough Grass
@@ -694,6 +723,9 @@ export default function BestElectricLawnMower() {
 
               {/* === Greenworks 80V Self-Propelled === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
+                  <img src="/img/products/lawn-mowers/greenworks-80v-lifestyle.jpg" alt="Greenworks 80V 21-inch self-propelled lawn mower" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-teal-500/15 text-teal-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Value for Large Yards
@@ -797,6 +829,9 @@ export default function BestElectricLawnMower() {
 
               {/* === Ryobi 40V === */}
               <div className="bg-card border border-border rounded-xl p-6 md:p-8 mb-8">
+                <div className="rounded-lg overflow-hidden border border-border mb-6 bg-white">
+                  <img src="/img/products/lawn-mowers/ryobi-40v-awd.jpg" alt="Ryobi 40V HP 21-inch AWD self-propelled lawn mower" className="w-full h-auto max-h-[420px] object-contain" loading="lazy" />
+                </div>
                 <div className="flex flex-wrap items-center gap-3 mb-4">
                   <span className="bg-blue-500/15 text-blue-300 text-xs font-bold px-3 py-1 rounded-full">
                     Best Budget
