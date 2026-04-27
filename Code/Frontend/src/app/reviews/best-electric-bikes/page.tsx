@@ -348,12 +348,6 @@ export default function BestElectricBikes() {
               </div>
             </div>
 
-            {/* Hero purchase CTA */}
-            <div className="mb-10 flex justify-center">
-              <BuyButton productKey="aventon-aventure-3" source="best-electric-bikes-hero" variant="secondary" label="Get the Best Price Right Now" />
-            </div>
-
-
             <AffiliateDisclosure compact />
 
             {/* Intro */}
@@ -555,29 +549,6 @@ export default function BestElectricBikes() {
                       <td className="p-3 text-center"><X className="h-5 w-5 text-slate-500 inline" /></td>
                       <td className="p-3 text-center"><X className="h-5 w-5 text-slate-500 inline" /></td>
                     </tr>
-                  <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
-                    <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
-                    {bikes.map((b) => {
-                      const pk = (
-                              b.name === 'Aventon Aventure 3' ? 'aventon-aventure-3' :
-                              b.name === 'Rad Power RadRover 6 Plus' ? 'rad-power-radrover-6-plus' :
-                              b.name === 'Rad Power RadExpand 5 Plus' ? 'rad-power-radexpand-5-plus' :
-                              b.name === 'Lectric XP 3.0' ? 'lectric-xp-3-0' :
-                              b.name === 'Aventon Soltera.2' ? 'aventon-soltera-2' :
-                              b.name === 'Lectric XP Lite 2.0' ? 'lectric-xp-lite-2-0' :
-                              null
-                      );
-                      return (
-                        <td key={b.name} className="p-3 text-center">
-                          {pk ? (
-                            <BuyButton productKey={pk} source="best-electric-bikes-table" variant="compact" label="Check Price" />
-                          ) : (
-                            <span className="text-xs" style={{ color: '#71717a' }}>—</span>
-                          )}
-                        </td>
-                      );
-                    })}
-                  </tr>
                   </tbody>
                 </table>
               </div>
@@ -1513,21 +1484,6 @@ export default function BestElectricBikes() {
                 </div>
               </div>
             </section>
-
-{/* ========== MID-PAGE PURCHASE CTA ========== */}
-<section className="mb-12">
-  <div className="rounded-2xl p-6 md:p-8 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
-    <h3 className="text-xl md:text-2xl font-extrabold mb-2" style={{ color: '#f5f5f5' }}>
-      Ready to grab our top electric bike pick?
-    </h3>
-    <p className="mb-5" style={{ color: '#d4d4d8' }}>
-      We tested every model on this page. The Editor&apos;s Pick wins on real-world performance, build quality, and value. Lock in current pricing before stock or promo windows change.
-    </p>
-    <div className="inline-flex">
-      <BuyButton productKey="aventon-aventure-3" source="best-electric-bikes-mid-page-cta" variant="secondary" label="See Today&apos;s Best Price" />
-    </div>
-  </div>
-</section>
 
             {/* ========== FAQ SECTION ========== */}
             <section className="mb-16">

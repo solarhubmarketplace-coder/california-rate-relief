@@ -454,28 +454,6 @@ export default function BestTanklessWaterHeater() {
                         </td>
                       </tr>
                     ))}
-                  <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
-                    <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
-                    {heaters.map((h) => {
-                      const pk = (
-                              h.name === 'Rinnai RU199iN' ? 'rinnai-ru199in' :
-                              h.name === 'Rheem RTGH-95DVLN' ? 'rheem-rtgh-95dvln' :
-                              h.name === 'Navien NPE-240A2' ? 'navien-npe-240a2' :
-                              h.name === 'Noritz EZ111DV' ? 'noritz-ez111dv' :
-                              h.name === 'Rinnai V65iN' ? 'rinnai-v65in' :
-                              null
-                      );
-                      return (
-                        <td key={h.name} className="p-3 text-center">
-                          {pk ? (
-                            <BuyButton productKey={pk} source="best-tankless-water-heater-table" variant="compact" label="Check Price" />
-                          ) : (
-                            <span className="text-xs" style={{ color: '#71717a' }}>—</span>
-                          )}
-                        </td>
-                      );
-                    })}
-                  </tr>
                   </tbody>
                 </table>
               </div>

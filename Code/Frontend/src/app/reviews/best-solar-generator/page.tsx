@@ -417,28 +417,6 @@ export default function BestSolarGenerator() {
                         ))}
                       </tr>
                     ))}
-                  <tr style={{ backgroundColor: '#0a3d1f', borderTop: '2px solid #16a34a' }}>
-                    <td className="p-3 font-bold" style={{ color: '#f5f5f5' }}>Where to Buy</td>
-                    {systems.map((s) => {
-                      const pk = (
-                              s.name === 'EcoFlow Delta Pro 3 + 400W Panels' ? 'ecoflow-delta-pro-3' :
-                              s.name === 'Bluetti AC200L + PV200' ? 'bluetti-ac200l' :
-                              s.name === 'Jackery 2000 Plus + SolarSaga 200W' ? 'jackery-explorer-2000-plus' :
-                              s.name === 'Goal Zero Yeti 1500X + Nomad 200' ? 'goal-zero-yeti-1500x-nomad-200-solar-panel' :
-                              s.name === 'Anker SOLIX F3800 + PS400' ? 'anker-solix-f3800' :
-                              null
-                      );
-                      return (
-                        <td key={s.name} className="p-3 text-center">
-                          {pk ? (
-                            <BuyButton productKey={pk} source="best-solar-generator-table" variant="compact" label="Check Price" />
-                          ) : (
-                            <span className="text-xs" style={{ color: '#71717a' }}>—</span>
-                          )}
-                        </td>
-                      );
-                    })}
-                  </tr>
                   </tbody>
                 </table>
               </div>
