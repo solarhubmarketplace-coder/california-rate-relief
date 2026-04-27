@@ -758,6 +758,13 @@ export default function BestElectricScooterForAdultsHub() {
         </div>
       </main>
 
+      <section className="container mx-auto px-4 max-w-3xl mb-12">
+        <div className="rounded-xl p-6 text-center border-2" style={{ backgroundColor: '#0a3d1f', borderColor: '#16a34a' }}>
+          <h3 className="text-xl font-bold mb-2" style={{ color: '#f5f5f5' }}>Ready to lock in our top pick?</h3>
+          <p className="mb-4" style={{ color: '#d4d4d8' }}>Our Editor&apos;s Pick electric scooter is sitting at our recommended price right now — lock it in before promo windows shift.</p>
+          <BuyButton productKey="apollo-city-pro" source="best-electric-scooter-for-adults-final-cta" variant="secondary" label="See Today&apos;s Best Price" />
+        </div>
+      </section>
       <ReviewFooter />
       <StickyMobileCTA productKey={PRIMARY_PRODUCT_KEY} source="best-electric-scooter-for-adults-sticky" />
       <div className="container mx-auto px-4 max-w-3xl">
