@@ -239,7 +239,7 @@ export default function BestMiniSplitACPage() {
                 Best Mini Split AC &amp; Heat Pumps (2026): MrCool DIY vs Easy Pro vs Advantage
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+              <LastReviewedStamp date="2026-04-26" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
 <p className="text-lg text-foreground/70 leading-relaxed mb-4">
                 Ductless mini splits are the most efficient way to heat and cool your home, and with
                 the MrCool DIY line, you can install one yourself in under 5 hours, saving $3,000-$8,000
@@ -258,7 +258,7 @@ export default function BestMiniSplitACPage() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1200&q=80&auto=format&fit=crop' alt='Mini-split AC unit' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/mini-splits/hero-mini-split-system.jpg' alt='Best mini split AC 2026 — full system shot showing indoor head, outdoor condenser, and line set' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />
@@ -452,6 +452,9 @@ export default function BestMiniSplitACPage() {
                       <div className="text-sm text-foreground/60">12K - 24K BTU at Home Depot</div>
                     </div>
                   </div>
+                </div>
+                <div className="rounded-lg overflow-hidden bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/mini-splits/della-mini-split-winter-lifestyle.jpg" alt="MrCool DIY 4th Gen-style indoor mini split head installed in a winter-view living room" className="w-full h-full object-contain p-4" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <p className="text-foreground/80 leading-relaxed mb-4">
@@ -799,6 +802,15 @@ export default function BestMiniSplitACPage() {
                       <div className="text-sm text-foreground/60">Equipment cost only</div>
                     </div>
                   </div>
+                </div>
+                <div className="rounded-lg overflow-hidden bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/mini-splits/hero-mini-split-system.jpg" alt="MrCool Advantage full system with line set" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
+                <div className="rounded-lg overflow-hidden bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/mini-splits/mini-split-outdoor-condenser.jpg" alt="MrCool Easy Pro outdoor condenser unit" className="w-full h-full object-contain p-4" loading="lazy" />
+                </div>
+                <div className="rounded-lg overflow-hidden bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                  <img src="/img/products/mini-splits/mini-split-indoor-outdoor-clean.jpg" alt="MrCool DIY 5th Gen complete system — indoor head + outdoor condenser" className="w-full h-full object-contain p-4" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <p className="text-foreground/80 leading-relaxed mb-4">

@@ -255,7 +255,7 @@ export default function BestTanklessWaterHeater() {
                 Best Tankless Water Heaters (2026): Rinnai vs Rheem vs Navien vs Noritz
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
+              <LastReviewedStamp date="2026-04-26" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
 <div
                 className="flex items-center gap-4 text-sm"
                 style={{ color: '#a1a1aa' }}
@@ -272,7 +272,7 @@ export default function BestTanklessWaterHeater() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1200&q=80&auto=format&fit=crop' alt='Tankless water heater on wall' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/tankless-water-heaters/hero-tankless-install.jpg' alt='Best tankless water heaters 2026 — install scene with branded GreenReviewsHub watermark' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />
@@ -459,6 +459,10 @@ export default function BestTanklessWaterHeater() {
               </div>
             </section>
 
+<div className="rounded-lg overflow-hidden mb-8 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+  <img src="/img/products/tankless-water-heaters/navien-tankless.jpg" alt="Navien tankless water heater wall-mounted — premium gas tankless option" className="w-full h-full object-contain p-4" loading="lazy" />
+</div>
+
             {/* ─── How Tankless Works ─── */}
             <section id="how-tankless-works" className="mb-16">
               <h2
@@ -539,6 +543,10 @@ export default function BestTanklessWaterHeater() {
                 &quot;cold water sandwich&quot; that some tankless units are known for.
               </p>
             </section>
+
+<div className="rounded-lg overflow-hidden mb-8 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+  <img src="/img/products/tankless-water-heaters/tankless-interior-copper.jpg" alt="Tankless water heater interior showing copper heat exchangers — quality components affect cost" className="w-full h-full object-contain p-4" loading="lazy" />
+</div>
 
             {/* ─── Cost Breakdown ─── */}
             <section id="cost-breakdown" className="mb-16">
@@ -622,6 +630,10 @@ export default function BestTanklessWaterHeater() {
                 </p>
               </div>
             </section>
+
+<div className="rounded-lg overflow-hidden mb-8 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+  <img src="/img/products/tankless-water-heaters/electric-tankless-shower.jpg" alt="Electric point-of-use tankless water heater installed near a shower" className="w-full h-full object-contain p-4" loading="lazy" />
+</div>
 
             {/* ─── Tankless vs Tank ─── */}
             <section id="tankless-vs-tank" className="mb-16">
