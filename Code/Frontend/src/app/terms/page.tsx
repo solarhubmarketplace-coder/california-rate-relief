@@ -14,12 +14,13 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
+import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
 
 // =============================================================================
 // HOST-AWARE /terms PAGE — same pattern as /privacy
 // =============================================================================
 
-type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
 interface BrandConfig { brand: string; domain: string; canonical: string; }
 
 const BRANDS: Record<Domain, BrandConfig> = {
@@ -27,6 +28,7 @@ const BRANDS: Record<Domain, BrandConfig> = {
   grh: { brand: 'GreenReviewsHub', domain: 'greenreviewshub.com', canonical: 'https://greenreviewshub.com/terms' },
   shg: { brand: 'SecureHomeGear', domain: 'securehomegear.com', canonical: 'https://securehomegear.com/terms' },
   ahb: { brand: 'At Home Biohacking', domain: 'athomebiohacking.com', canonical: 'https://athomebiohacking.com/terms' },
+  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/terms' },
 };
 
 async function getDomain(): Promise<Domain> {
@@ -35,6 +37,7 @@ async function getDomain(): Promise<Domain> {
   if (host.includes('greenreviewshub')) return 'grh';
   if (host.includes('securehomegear')) return 'shg';
   if (host.includes('athomebiohacking')) return 'ahb';
+  if (host.includes('glp1comparehub')) return 'glp1';
   return 'crr';
 }
 
@@ -140,6 +143,14 @@ function ShgTerms() {
     </SHGLayout>
   );
 }
+
+  if (d === 'glp1') {
+    return (
+      <GLP1TrustPage title='Terms of Use'>
+        <CommonContent name={cfg.name} domain={d} />
+      </GLP1TrustPage>
+    );
+  }
 
 function GrhTerms() {
   const cfg = BRANDS.grh;
