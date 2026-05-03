@@ -14,9 +14,8 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
-import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
 
-type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
 
 async function getDomain(): Promise<Domain> {
   const hdrs = await headers();
@@ -24,7 +23,6 @@ async function getDomain(): Promise<Domain> {
   if (host.includes('greenreviewshub')) return 'grh';
   if (host.includes('securehomegear')) return 'shg';
   if (host.includes('athomebiohacking')) return 'ahb';
-  if (host.includes('glp1comparehub')) return 'glp1';
   return 'crr';
 }
 
@@ -33,7 +31,6 @@ const DOMAIN_CONTACT = {
   grh: { name: 'Green Reviews Hub', email: 'editorial@greenreviewshub.com', canonical: 'https://greenreviewshub.com/contact' },
   shg: { name: 'SecureHomeGear', email: 'editorial@securehomegear.com', canonical: 'https://securehomegear.com/contact' },
   ahb: { name: 'At Home Biohacking', email: 'editorial@athomebiohacking.com', canonical: 'https://athomebiohacking.com/contact' },
-  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/contact' },
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -78,14 +75,6 @@ export default async function ContactPage() {
         </main>
         <SHGFooter />
       </SHGLayout>
-    );
-  }
-
-  if (d === 'glp1') {
-    return (
-      <GLP1TrustPage title='Contact'>
-        <CommonContent name={cfg.name} domain={d} />
-      </GLP1TrustPage>
     );
   }
 

@@ -14,9 +14,8 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
-import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
 
-type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
 
 async function getDomain(): Promise<Domain> {
   const hdrs = await headers();
@@ -24,7 +23,6 @@ async function getDomain(): Promise<Domain> {
   if (host.includes('greenreviewshub')) return 'grh';
   if (host.includes('securehomegear')) return 'shg';
   if (host.includes('athomebiohacking')) return 'ahb';
-  if (host.includes('glp1comparehub')) return 'glp1';
   return 'crr';
 }
 
@@ -33,7 +31,6 @@ const META = {
   grh: { name: 'Green Reviews Hub', canonical: 'https://greenreviewshub.com/affiliate-disclosure' },
   shg: { name: 'SecureHomeGear', canonical: 'https://securehomegear.com/affiliate-disclosure' },
   ahb: { name: 'At Home Biohacking', canonical: 'https://athomebiohacking.com/affiliate-disclosure' },
-  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/affiliate-disclosure' },
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -105,14 +102,6 @@ export default async function AffiliateDisclosurePage() {
         </main>
         <SHGFooter />
       </SHGLayout>
-    );
-  }
-
-  if (d === 'glp1') {
-    return (
-      <GLP1TrustPage title='Affiliate Disclosure'>
-        <CommonContent name={cfg.name} domain={d} />
-      </GLP1TrustPage>
     );
   }
 

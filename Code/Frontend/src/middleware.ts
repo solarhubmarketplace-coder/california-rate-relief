@@ -7,7 +7,7 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // ====================================================================
-  // Hostname-based routing — five sites, one codebase:
+  // Hostname-based routing — three sites, one codebase:
   //
   //   ratereliefca.com      → CRR solar business (everything except /reviews/*)
   //   ratereliefca.com/reviews → 301 redirect to greenreviewshub.com
@@ -20,26 +20,18 @@ export async function middleware(request: NextRequest) {
   //     /alternatives/* → brand-alternative funnel pages
   //     /about /privacy /terms /contact /affiliate-disclosure → compliance
   //   securehomegear.com/<x> → 404 if not an allowed SHG path
-  //   athomebiohacking.com  → AHB biohacking review site
-  //   glp1comparehub.com       → GLP-1 telehealth comparison site
-  //     /            → /glp1-home (rewrite)
-  //     /tirzepatide /semaglutide /comparisons /research /fda-news /side-effects/*
-  //     /about /privacy /terms /contact /affiliate-disclosure /methodology
   //
-  // All domains deploy from this same repo.
+  // All three domains deploy from this same repo.
   // ====================================================================
   const isGreenReviewsHub = /^(www\.)?greenreviewshub\.com$/.test(hostname);
   const isCRR = /^(www\.)?ratereliefca\.com$/.test(hostname);
   const isSecureHomeGear = /^(www\.)?securehomegear\.com$/.test(hostname);
   const isAtHomeBiohacking = /^(www\.)?athomebiohacking\.com$/.test(hostname);
-  const isGLP1CompareHub = /^(www\.)?glp1comparehub\.com$/.test(hostname);
 
   // SHG-only paths — block these on other hosts so CRR/GRH don't leak SHG pages
-  // NOTE: /compare/ moved from SHG-exclusive to GLP1-also (matchglp1 model uses
-  // it for provider-vs-provider pages). When SHG launches its compare flow,
-  // namespace it as /shg-compare/ to avoid collision.
   const isSHGPath =
     pathname.startsWith('/cameras') ||
+    pathname.startsWith('/compare') ||
     pathname.startsWith('/alternatives') ||
     pathname.startsWith('/shg-home');
 
@@ -67,69 +59,14 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/learn') ||
     pathname.startsWith('/vs');
 
-  // GLP1-only paths — block these on other hosts
-  const isGLP1Path =
-    pathname.startsWith('/glp1-home') ||
-    pathname.startsWith('/providers') ||
-    pathname.startsWith('/best') ||
-    pathname.startsWith('/compare') ||
-    pathname.startsWith('/match') ||
-    pathname.startsWith('/simulator') ||
-    pathname.startsWith('/tools') ||
-    pathname.startsWith('/news') ||
-    pathname.startsWith('/disclaimer') ||
-    pathname.startsWith('/peptides') ||
-    pathname.startsWith('/tirzepatide') ||
-    pathname.startsWith('/semaglutide') ||
-    pathname.startsWith('/comparisons') ||
-    pathname.startsWith('/research') ||
-    pathname.startsWith('/fda-news') ||
-    pathname.startsWith('/side-effects') ||
-    pathname.startsWith('/zepbound') ||
-    pathname.startsWith('/wegovy') ||
-    pathname.startsWith('/mounjaro') ||
-    pathname.startsWith('/ozempic') ||
-    pathname.startsWith('/oral-semaglutide') ||
-    pathname.startsWith('/oral-tirzepatide') ||
-    pathname.startsWith('/sublingual-semaglutide') ||
-    pathname.startsWith('/sublingual-tirzepatide') ||
-    pathname.startsWith('/compounded-tirzepatide') ||
-    pathname.startsWith('/compounded-semaglutide') ||
-    pathname.startsWith('/compounded-liraglutide') ||
-    pathname.startsWith('/compounded-glp-1') ||
-    pathname.startsWith('/microdosing') ||
-    pathname.startsWith('/microdose') ||
-    pathname.startsWith('/cheapest-tirzepatide') ||
-    pathname.startsWith('/cheapest-semaglutide') ||
-    pathname.startsWith('/cheapest-compounded') ||
-    pathname.startsWith('/best-compounded') ||
-    pathname.startsWith('/wegovy-pill') ||
-    pathname.startsWith('/wegovy-vs') ||
-    pathname.startsWith('/ozempic-vs') ||
-    pathname.startsWith('/lipotropic') ||
-    pathname.startsWith('/nad-iv') ||
-    pathname.startsWith('/nad-injection') ||
-    pathname.startsWith('/nad-nasal') ||
-    pathname.startsWith('/sermorelin') ||
-    pathname.startsWith('/glutathione') ||
-    pathname.startsWith('/methylene-blue') ||
-    pathname.startsWith('/glp-1-stack') ||
-    pathname.startsWith('/glp1-stack') ||
-    pathname.startsWith('/503a') ||
-    pathname.startsWith('/is-compounded-glp') ||
-    pathname.startsWith('/fda-compounded') ||
-    pathname.startsWith('/how-tirzepatide-works') ||
-    pathname.startsWith('/how-semaglutide-works') ||
-    pathname.startsWith('/how-to-microdose');
-
   // --- greenreviewshub.com behavior ---
   if (isGreenReviewsHub) {
     // Root → reviews index
     if (pathname === '/') {
       return NextResponse.redirect(new URL('/reviews', request.url), 302);
     }
-    // Block SHG, AHB, and GLP1 paths from leaking on GRH
-    if (isSHGPath || isAHBPath || isGLP1Path) {
+    // Block SHG and AHB paths from leaking on GRH
+    if (isSHGPath || isAHBPath) {
       return new NextResponse(null, { status: 404 });
     }
     // Allow review pages, shared trust pages, Next internals, API routes, and static files
@@ -155,8 +92,8 @@ export async function middleware(request: NextRequest) {
     if (pathname === '/') {
       return NextResponse.rewrite(new URL('/shg-home', request.url));
     }
-    // Block AHB and GLP1 paths from leaking on SHG
-    if (isAHBPath || isGLP1Path) {
+    // Block AHB paths from leaking on SHG
+    if (isAHBPath) {
       return new NextResponse(null, { status: 404 });
     }
     // Allow SHG paths, shared trust pages, Next internals, API routes, and static files
@@ -182,8 +119,8 @@ export async function middleware(request: NextRequest) {
     if (pathname === '/') {
       return NextResponse.rewrite(new URL('/ahb-home', request.url));
     }
-    // Block SHG and GLP1 paths from leaking on AHB
-    if (isSHGPath || isGLP1Path) {
+    // Block SHG paths from leaking on AHB
+    if (isSHGPath) {
       return new NextResponse(null, { status: 404 });
     }
     // Allow AHB paths, shared trust pages, Next internals, API routes, and static files
@@ -203,33 +140,6 @@ export async function middleware(request: NextRequest) {
     return new NextResponse(null, { status: 404 });
   }
 
-  // --- glp1comparehub.com behavior ---
-  if (isGLP1CompareHub) {
-    // Root → rewrite to /glp1-home (serves GLP1CompareHub homepage)
-    if (pathname === '/') {
-      return NextResponse.rewrite(new URL('/glp1-home', request.url));
-    }
-    // Block other niches from leaking on GLP1CompareHub
-    if (isSHGPath || isAHBPath) {
-      return new NextResponse(null, { status: 404 });
-    }
-    // Allow GLP1 paths, shared trust pages, Next internals, API routes, and static files
-    if (
-      isGLP1Path ||
-      isSharedTrustPath ||
-      pathname.startsWith('/_next') ||
-      pathname.startsWith('/api') ||
-      pathname === '/favicon.ico' ||
-      pathname === '/robots.txt' ||
-      pathname === '/sitemap.xml' ||
-      /\.[a-zA-Z0-9]+$/.test(pathname)
-    ) {
-      return NextResponse.next();
-    }
-    // Any other path → 404 (don't leak other niches here)
-    return new NextResponse(null, { status: 404 });
-  }
-
   // --- ratereliefca.com → 301 redirect /reviews/* to greenreviewshub.com ---
   if (isCRR && pathname.startsWith('/reviews')) {
     return NextResponse.redirect(
@@ -238,15 +148,12 @@ export async function middleware(request: NextRequest) {
     );
   }
 
-  // --- ratereliefca.com → block SHG, AHB, and GLP1 paths so they don't leak onto CRR ---
+  // --- ratereliefca.com → block SHG and AHB paths so they don't leak onto CRR ---
   // Shared trust pages (/about, /contact, /affiliate-disclosure) are allowed
   // and resolved by host-aware page handlers.
-  if (isCRR && (isSHGPath || isAHBPath || isGLP1Path)) {
+  if (isCRR && (isSHGPath || isAHBPath)) {
     return new NextResponse(null, { status: 404 });
   }
-
-  // --- greenreviewshub.com (already handled above) — but also block GLP1 paths ---
-  // (added defensively in case someone adds a path that matches both)
 
   // ====================================================================
   // Below this line: existing CRR auth logic — runs only on
