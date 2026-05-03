@@ -14,7 +14,6 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
-import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
 
 // =============================================================================
 // HOST-AWARE /privacy PAGE
@@ -23,7 +22,7 @@ import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
 // reaches /privacy through middleware's isSharedTrustPath allowlist.
 // =============================================================================
 
-type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
 
 interface BrandConfig {
   brand: string;
@@ -37,7 +36,6 @@ const BRANDS: Record<Domain, BrandConfig> = {
   grh: { brand: 'GreenReviewsHub', domain: 'greenreviewshub.com', contactPath: '/contact', canonical: 'https://greenreviewshub.com/privacy' },
   shg: { brand: 'SecureHomeGear', domain: 'securehomegear.com', contactPath: '/contact', canonical: 'https://securehomegear.com/privacy' },
   ahb: { brand: 'At Home Biohacking', domain: 'athomebiohacking.com', contactPath: '/contact', canonical: 'https://athomebiohacking.com/privacy' },
-  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/privacy' },
 };
 
 async function getDomain(): Promise<Domain> {
@@ -46,7 +44,6 @@ async function getDomain(): Promise<Domain> {
   if (host.includes('greenreviewshub')) return 'grh';
   if (host.includes('securehomegear')) return 'shg';
   if (host.includes('athomebiohacking')) return 'ahb';
-  if (host.includes('glp1comparehub')) return 'glp1';
   return 'crr';
 }
 
@@ -168,14 +165,6 @@ function ShgPrivacy() {
     </SHGLayout>
   );
 }
-
-  if (d === 'glp1') {
-    return (
-      <GLP1TrustPage title='Privacy Policy'>
-        <CommonContent name={cfg.name} domain={d} />
-      </GLP1TrustPage>
-    );
-  }
 
 function GrhPrivacy() {
   const cfg = BRANDS.grh;

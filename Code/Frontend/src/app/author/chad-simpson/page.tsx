@@ -14,9 +14,6 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
-import { GLP1Layout } from '@/components/glp1/GLP1Layout';
-import { GLP1Header } from '@/components/glp1/GLP1Header';
-import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 
 // =============================================================================
 // HOST-AWARE /author/chad-simpson PROFILE PAGE
@@ -26,7 +23,7 @@ import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 // is reviewing X products.
 // =============================================================================
 
-type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
 interface DomainConfig { brand: string; canonical: string; siteOrigin: string; bioBlurb: string; }
 
 const CONFIGS: Record<Domain, DomainConfig> = {
@@ -42,7 +39,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     canonical: 'https://greenreviewshub.com/author/chad-simpson',
     siteOrigin: 'https://greenreviewshub.com',
     bioBlurb:
-      'Chad runs GreenReviewsHub as a hands-on review publication covering portable power stations, e-bikes, mini splits, smart thermostats, generators, and adjacent green-energy gear. He has logged 500+ hours testing products in his own home and yard, with hands-on observations cross-checked against manufacturer specs, independent lab data, owner reports, and warranty terms.',
+      'Chad runs GreenReviewsHub as a research-led publication covering portable power stations, e-bikes, mini splits, smart thermostats, generators, and adjacent green-energy gear. Reviews aggregate manufacturer specs, owner reports, independent lab data, and warranty terms.',
   },
   shg: {
     brand: 'SecureHomeGear',
@@ -58,13 +55,6 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     bioBlurb:
       'Chad anchors At Home Biohacking in peer-reviewed research. Every health-relevant claim links to a PMID or DOI, and the evidence tier (RCT, systematic review, observational, anecdote) is named when a claim is made. Chad is not a medical professional; content is informational and not medical advice.',
   },
-  glp1: {
-    brand: 'GLP1CompareHub',
-    canonical: 'https://glp1comparehub.com/author/chad-simpson',
-    siteOrigin: 'https://glp1comparehub.com',
-    bioBlurb:
-      'Chad runs GLP1CompareHub as an independent comparison directory for GLP-1 telehealth providers. Every provider price is verified directly from each provider\'s public site monthly. Every clinical claim cites a peer-reviewed trial (NEJM, JAMA, Lancet) or the FDA prescribing information. Commission rates have zero impact on ranking order — disclosure is on every page that contains affiliate links per FTC 16 CFR § 255. Chad is not a medical professional; content is informational and not medical advice.',
-  },
 };
 
 async function getDomain(): Promise<Domain> {
@@ -73,7 +63,6 @@ async function getDomain(): Promise<Domain> {
   if (host.includes('greenreviewshub')) return 'grh';
   if (host.includes('securehomegear')) return 'shg';
   if (host.includes('athomebiohacking')) return 'ahb';
-  if (host.includes('glp1comparehub')) return 'glp1';
   return 'crr';
 }
 
@@ -222,17 +211,11 @@ function CrrAuthor() {
   const palette: Palette = { fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', bg: 'hsl(var(--background))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' };
   return <PublicLayout><CRRHeader /><PageShell palette={palette} cfg={cfg}><AuthorBody cfg={cfg} palette={palette} /></PageShell><CRRFooter /></PublicLayout>;
 }
-function Glp1Author() {
-  const cfg = CONFIGS.glp1;
-  const palette: Palette = { fg: '#3A1B3D', muted: '#4B3548', mutedFg: '#7A6478', accent: '#F47C5B', bg: '#FDF7F0', cardBg: '#FFFFFF', cardBorder: '#E8DDD0' };
-  return <GLP1Layout><GLP1Header /><PageShell palette={palette} cfg={cfg}><AuthorBody cfg={cfg} palette={palette} /></PageShell><GLP1Footer /></GLP1Layout>;
-}
 
 export default async function AuthorPage() {
   const domain = await getDomain();
   if (domain === 'shg') return <ShgAuthor />;
   if (domain === 'grh') return <GrhAuthor />;
   if (domain === 'ahb') return <AhbAuthor />;
-  if (domain === 'glp1') return <Glp1Author />;
   return <CrrAuthor />;
 }
