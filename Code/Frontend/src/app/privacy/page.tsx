@@ -14,6 +14,7 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
+import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
 
 // =============================================================================
 // HOST-AWARE /privacy PAGE
@@ -22,7 +23,7 @@ import { Footer as CRRFooter } from '@/components/landing/Footer';
 // reaches /privacy through middleware's isSharedTrustPath allowlist.
 // =============================================================================
 
-type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
 
 interface BrandConfig {
   brand: string;
@@ -36,6 +37,7 @@ const BRANDS: Record<Domain, BrandConfig> = {
   grh: { brand: 'GreenReviewsHub', domain: 'greenreviewshub.com', contactPath: '/contact', canonical: 'https://greenreviewshub.com/privacy' },
   shg: { brand: 'SecureHomeGear', domain: 'securehomegear.com', contactPath: '/contact', canonical: 'https://securehomegear.com/privacy' },
   ahb: { brand: 'At Home Biohacking', domain: 'athomebiohacking.com', contactPath: '/contact', canonical: 'https://athomebiohacking.com/privacy' },
+  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/privacy' },
 };
 
 async function getDomain(): Promise<Domain> {
@@ -44,6 +46,7 @@ async function getDomain(): Promise<Domain> {
   if (host.includes('greenreviewshub')) return 'grh';
   if (host.includes('securehomegear')) return 'shg';
   if (host.includes('athomebiohacking')) return 'ahb';
+  if (host.includes('glp1comparehub')) return 'glp1';
   return 'crr';
 }
 
@@ -202,8 +205,54 @@ function CrrPrivacy() {
   );
 }
 
+function Glp1Privacy() {
+  return (
+    <GLP1TrustPage title='Privacy Policy' subtitle='How GLP1CompareHub collects, uses, and protects your data.'>
+      <h2>What We Collect</h2>
+      <ul>
+        <li>Anonymous analytics (page views, clicks, sessions) via Google Analytics 4 and PostHog</li>
+        <li>UTM parameters and affiliate-click events when you visit a provider&rsquo;s site through our links</li>
+        <li>Email address only if you voluntarily subscribe (we do not currently offer a newsletter)</li>
+      </ul>
+      <p>We do NOT collect your medical information, insurance details, or any data submitted
+      to third-party providers after you click an affiliate link. Once you leave glp1comparehub.com,
+      that provider&rsquo;s privacy policy applies.</p>
+
+      <h2>Cookies</h2>
+      <p>We use first-party cookies for analytics and to remember your provider-comparison selections.
+      Third-party cookies may be set by Google Analytics. You can disable cookies via your browser
+      settings — the site will still function but analytics will not record your visit.</p>
+
+      <h2>Affiliate Tracking</h2>
+      <p>When you click a provider link, we append UTM parameters
+      (<code>utm_source=glp1comparehub</code>) so the provider can attribute the referral and
+      pay our commission. The provider&rsquo;s own tracking applies after that point.</p>
+
+      <h2>Your Rights (GDPR / CCPA)</h2>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of any data we hold about you</li>
+        <li><strong>Deletion:</strong> Request we delete data associated with your IP or session</li>
+        <li><strong>Opt-out of sale:</strong> We do NOT sell personal information to third parties</li>
+      </ul>
+      <p>Email <a href="mailto:privacy@glp1comparehub.com">privacy@glp1comparehub.com</a> for any
+      data-rights request. We respond within 30 days.</p>
+
+      <h2>Data Retention</h2>
+      <p>Analytics data is retained for 14 months. Affiliate-click data is retained indefinitely
+      for commission auditing. We do not retain personally identifying information beyond what
+      Google Analytics and PostHog retain by default.</p>
+
+      <h2>Updates</h2>
+      <p>This policy was last updated May 2026. Material changes will be announced via a banner
+      on the site for 30 days. Contact us with questions at
+      <a href="mailto:privacy@glp1comparehub.com">privacy@glp1comparehub.com</a>.</p>
+    </GLP1TrustPage>
+  );
+}
+
 export default async function PrivacyPage() {
   const domain = await getDomain();
+  if (domain === 'glp1') return <Glp1Privacy />;
   if (domain === 'shg') return <ShgPrivacy />;
   if (domain === 'grh') return <GrhPrivacy />;
   if (domain === 'ahb') return <AhbPrivacy />;

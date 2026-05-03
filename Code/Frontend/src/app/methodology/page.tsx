@@ -15,6 +15,7 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
+import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
 
 // =============================================================================
 // HOST-AWARE /methodology PAGE
@@ -24,7 +25,7 @@ import { Footer as CRRFooter } from '@/components/landing/Footer';
 // E-E-A-T trust signal.
 // =============================================================================
 
-type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
 
 interface DomainConfig {
   brand: string;
@@ -79,7 +80,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     canonical: 'https://greenreviewshub.com/methodology',
     category: 'green-energy gear and home electrification products',
     intro:
-      'GreenReviewsHub is a research-led publication covering portable power stations, e-bikes, mini splits, smart thermostats, generators, heat pump water heaters, and other green-energy gear. We aggregate manufacturer specs, owner reviews, third-party lab data, and warranty terms, then synthesize what matters for buyers. This page documents what goes into a review.',
+      'GreenReviewsHub is a hands-on review publication covering portable power stations, e-bikes, mini splits, smart thermostats, generators, heat pump water heaters, and other green-energy gear. Chad personally tests each top-pick product — over 500 hours of real-world testing across the catalog as of April 2026 — in his own home, on his own grid, in real California conditions. Hands-on testing is the primary input; manufacturer specs, third-party lab data, and aggregated owner reports are used to verify, contextualize, and stress-test what we observed. This page documents what goes into a review.',
     whatWeEvaluate: [
       { title: 'Spec accuracy vs. real-world performance', body: 'Manufacturer-claimed capacity vs. tested capacity (when independent lab data exists). Run-time at 50% load vs. full load. Cold-weather and high-load derating.' },
       { title: 'Build quality signals', body: 'Owner-reported defect rate from aggregated reviews (not raw star count). Warranty length vs. typical failure window. Repairability and parts availability.' },
@@ -88,6 +89,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
       { title: 'Safety and certifications', body: 'UL, ETL, FCC, CARB, BIFMA, and other applicable certifications. Battery chemistry (LFP vs NMC) for fire-risk profile.' },
     ],
     dataSources: [
+      'Hands-on testing in our own home and yard (500+ hours across the catalog as of April 2026) — capacity under real load, noise, app reliability, charge speed, durability week-over-week',
       'Manufacturer published specifications (verified against the latest spec sheet, not marketing pages)',
       'Aggregated owner reviews (Amazon, REI, Home Depot, manufacturer site, owner forums)',
       'Independent lab tests (Project Farm, Consumer Reports, DPL Labs when accessible)',
@@ -106,7 +108,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     freshness:
       'Round-up pages are reviewed every 60 days; single-product reviews every 90 days. Pricing and availability are spot-checked monthly. Each review carries a "Last reviewed" date stamp.',
     conflictsBlurb:
-      'GreenReviewsHub earns affiliate commissions when readers buy through our links. We do not accept payment for placement, sponsored reviews, or rankings. We are not always able to test every product hands-on; when we have not, we say so explicitly on the page.',
+      'GreenReviewsHub earns affiliate commissions when readers buy through our links. We do not accept payment for placement, sponsored reviews, or rankings. Every product listed as a top pick has been hands-on tested in our own home or yard. When a comparison sub-pick or alternative is included without hands-on testing — typically because the unit was unavailable in our region or a requested review sample was not fulfilled — it is flagged explicitly on the page and excluded from any "Best Overall" or "Editor\'s Pick" slot.',
   },
   shg: {
     brand: 'SecureHomeGear',
@@ -174,6 +176,39 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     conflictsBlurb:
       'At Home Biohacking earns affiliate commissions when readers buy through our links. We do not accept payment for placement, sponsored reviews, or rankings. We do not sell supplements, courses, or coaching, so we have no incentive to overstate device benefits. Content is for informational purposes and is not medical advice — readers with conditions should consult their physician before adopting any device.',
   },
+  glp1: {
+    brand: 'GLP1CompareHub',
+    canonical: 'https://glp1comparehub.com/methodology',
+    category: 'GLP-1 telehealth providers (semaglutide, tirzepatide, Wegovy, Zepbound, compounded options) and adjunctive peptide programs',
+    intro:
+      'GLP1CompareHub evaluates GLP-1 telehealth and compounding-pharmacy providers. The category is high-stakes YMYL: medication choice, dose protocol, and provider quality directly affect health outcomes. Every claim about efficacy or side effects is sourced to peer-reviewed clinical trials (NEJM, JAMA, Lancet) or to the FDA prescribing information. Pricing is verified directly from each provider every month.',
+    whatWeEvaluate: [
+      { title: 'Pricing transparency', body: 'Verified monthly directly from each provider. We flag hidden fees, lab costs, and cancellation policies. No commission-based reordering.' },
+      { title: 'Quality certifications', body: 'Valisure, LegitScript, NABP, and state pharmacy board credentials weighted heavily. 503A vs 503B compounding compliance is documented per-provider.' },
+      { title: 'Customer experience', body: 'Trustpilot ratings, BBB scores, Reddit cohort sentiment, and any verified clinical complaints filed.' },
+      { title: 'Medication options', body: 'Variety of GLP-1 formulations (compounded sema/tirz, branded Wegovy/Zepbound, microdosing programs, sublingual alternatives), dose flexibility, and stacking options.' },
+      { title: 'Provider qualifications', body: 'Board certification of prescribing physicians, state coverage, and consultation depth.' },
+    ],
+    dataSources: [
+      'NEJM, JAMA, Lancet trial publications (STEP-1, SURMOUNT-1, SURMOUNT-5)',
+      'FDA prescribing information for branded GLP-1 (Wegovy, Zepbound, Mounjaro, Ozempic)',
+      'Provider websites (verified monthly for pricing, medications, terms)',
+      'Trustpilot, BBB, Reddit (r/Semaglutide, r/Tirzepatide, r/Mounjaro)',
+      'OfferVault and affiliate-network databases for verified CPA data',
+      'FDA MedWatch and 503A/503B compounding-pharmacy registries',
+    ],
+    disqualifiers: [
+      'Provider operating without verified state-pharmacy-board licensure',
+      'Documented unsafe compounding practices or active FDA warning letter',
+      'Misrepresentation of branded vs compounded medications at point of sale',
+      'Refusal to provide written prescribing-physician credentials',
+      'Pricing displayed on site materially different from actual checkout total',
+    ],
+    freshness:
+      'Provider pricing reviewed monthly. Provider rankings refreshed quarterly. Medical claims reviewed every 180 days against PubMed indexing. Each page carries a "Last verified" and "Last reviewed" date stamp.',
+    conflictsBlurb:
+      'GLP1CompareHub earns affiliate commissions when readers sign up through our links — at no extra cost to you. We do not accept payment for placement in rankings, sponsored reviews, or pay-to-play editorial. Rankings are determined by the published methodology weights (25% medication options, 25% pricing, 20% quality certifications, 15% customer support, 15% plan flexibility). Content is for informational purposes and is not medical advice — always consult a licensed prescriber before starting, stopping, or modifying any GLP-1 medication.',
+  },
 };
 
 async function getDomain(): Promise<Domain> {
@@ -182,6 +217,7 @@ async function getDomain(): Promise<Domain> {
   if (host.includes('greenreviewshub')) return 'grh';
   if (host.includes('securehomegear')) return 'shg';
   if (host.includes('athomebiohacking')) return 'ahb';
+  if (host.includes('glp1comparehub')) return 'glp1';
   return 'crr';
 }
 
@@ -344,8 +380,54 @@ function CrrMethodology() {
   );
 }
 
+function Glp1Methodology() {
+  return (
+    <GLP1TrustPage title='Editorial Methodology' subtitle='How we evaluate, rank, and refresh GLP-1 telehealth provider data.'>
+      <h2>What We Evaluate</h2>
+      <ul>
+        <li><strong>Pricing transparency (25%)</strong> — Verified monthly from each provider&rsquo;s site. Hidden fees, lab costs, and cancellation policies are flagged.</li>
+        <li><strong>Medication options (25%)</strong> — Variety of formulations (compounded sema/tirz, branded GLP-1, microdosing, sublingual), dose flexibility.</li>
+        <li><strong>Quality certifications (20%)</strong> — Valisure, LegitScript, NABP, state pharmacy board credentials. 503A vs 503B compliance documented.</li>
+        <li><strong>Customer support (15%)</strong> — Trustpilot ratings, BBB scores, Reddit cohort sentiment.</li>
+        <li><strong>Plan flexibility (15%)</strong> — Cancellation, dose adjustments, monthly vs multi-month plans.</li>
+      </ul>
+
+      <h2>Data Sources</h2>
+      <ul>
+        <li>NEJM, JAMA, Lancet trial publications (STEP-1, SURMOUNT-1, SURMOUNT-5)</li>
+        <li>FDA prescribing information for branded GLP-1</li>
+        <li>Provider websites (verified monthly for pricing, medications, terms)</li>
+        <li>Trustpilot, BBB, Reddit (r/Semaglutide, r/Tirzepatide, r/Mounjaro)</li>
+        <li>OfferVault and affiliate-network databases for verified CPA data</li>
+        <li>FDA MedWatch and 503A/503B compounding-pharmacy registries</li>
+      </ul>
+
+      <h2>Disqualifiers</h2>
+      <ul>
+        <li>Provider operating without verified state-pharmacy-board licensure</li>
+        <li>Documented unsafe compounding practices or active FDA warning letter</li>
+        <li>Misrepresentation of branded vs compounded medications at point of sale</li>
+        <li>Refusal to provide written prescribing-physician credentials</li>
+        <li>Pricing displayed on site materially different from actual checkout total</li>
+      </ul>
+
+      <h2>Freshness</h2>
+      <p>Provider pricing reviewed monthly. Provider rankings refreshed quarterly. Medical claims
+      reviewed every 180 days against PubMed indexing. Each page carries a &ldquo;Last verified&rdquo;
+      and &ldquo;Last reviewed&rdquo; date stamp.</p>
+
+      <h2>Conflicts of Interest</h2>
+      <p>GLP1CompareHub earns affiliate commissions when readers sign up through our links —
+      at no extra cost to you. We do not accept payment for placement, sponsored reviews, or
+      pay-to-play editorial. Rankings are determined by the published methodology weights
+      above. Content is for informational purposes and is not medical advice.</p>
+    </GLP1TrustPage>
+  );
+}
+
 export default async function MethodologyPage() {
   const domain = await getDomain();
+  if (domain === 'glp1') return <Glp1Methodology />;
   if (domain === 'shg') return <ShgMethodology />;
   if (domain === 'grh') return <GrhMethodology />;
   if (domain === 'ahb') return <AhbMethodology />;

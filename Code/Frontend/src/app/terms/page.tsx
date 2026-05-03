@@ -14,12 +14,13 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
+import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
 
 // =============================================================================
 // HOST-AWARE /terms PAGE — same pattern as /privacy
 // =============================================================================
 
-type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
 interface BrandConfig { brand: string; domain: string; canonical: string; }
 
 const BRANDS: Record<Domain, BrandConfig> = {
@@ -27,6 +28,7 @@ const BRANDS: Record<Domain, BrandConfig> = {
   grh: { brand: 'GreenReviewsHub', domain: 'greenreviewshub.com', canonical: 'https://greenreviewshub.com/terms' },
   shg: { brand: 'SecureHomeGear', domain: 'securehomegear.com', canonical: 'https://securehomegear.com/terms' },
   ahb: { brand: 'At Home Biohacking', domain: 'athomebiohacking.com', canonical: 'https://athomebiohacking.com/terms' },
+  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/terms' },
 };
 
 async function getDomain(): Promise<Domain> {
@@ -35,6 +37,7 @@ async function getDomain(): Promise<Domain> {
   if (host.includes('greenreviewshub')) return 'grh';
   if (host.includes('securehomegear')) return 'shg';
   if (host.includes('athomebiohacking')) return 'ahb';
+  if (host.includes('glp1comparehub')) return 'glp1';
   return 'crr';
 }
 
@@ -177,8 +180,61 @@ function CrrTerms() {
   );
 }
 
+function Glp1Terms() {
+  return (
+    <GLP1TrustPage title='Terms of Use' subtitle='Terms governing your use of GLP1CompareHub.com.'>
+      <h2>Acceptance</h2>
+      <p>By using GLP1CompareHub.com you agree to these terms. If you do not agree, please
+      do not use the site.</p>
+
+      <h2>Editorial Content</h2>
+      <p>Content on this site is for informational and educational purposes only. It is NOT
+      medical advice, NOT a substitute for professional medical care, and NOT a recommendation
+      that any specific medication is right for you. Always consult a licensed healthcare
+      provider before starting, stopping, or modifying any medication.</p>
+
+      <h2>Affiliate Links</h2>
+      <p>This site contains affiliate links. We may earn a commission when you click a link
+      and sign up with a provider — at no extra cost to you. Affiliate relationships do not
+      influence our editorial recommendations. See our <a href="/affiliate-disclosure">full
+      affiliate disclosure</a>.</p>
+
+      <h2>Pricing Information</h2>
+      <p>Pricing displayed on this site is verified monthly from each provider&rsquo;s public
+      website. Pricing changes frequently and we cannot guarantee real-time accuracy. Always
+      confirm current pricing directly with the provider before purchase.</p>
+
+      <h2>Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, GLP1CompareHub and its operators are not
+      liable for any indirect, incidental, special, consequential, or punitive damages arising
+      from your use of this site or any provider you find through this site. Our total
+      liability is limited to $100.</p>
+
+      <h2>External Links</h2>
+      <p>We link to external sites including provider websites, peer-reviewed clinical trials,
+      and government health resources. We are not responsible for the content, accuracy, or
+      availability of external sites.</p>
+
+      <h2>Compounded Medications</h2>
+      <p>Compounded GLP-1 medications discussed on this site are NOT FDA-approved drugs. They
+      are produced by state-licensed 503A and 503B compounding pharmacies under specific FDA
+      exemptions. Always consult your prescriber about whether a branded FDA-approved
+      medication or a compounded alternative is right for you.</p>
+
+      <h2>Changes</h2>
+      <p>We may update these terms at any time. Continued use of the site after changes
+      constitutes acceptance of the new terms. Last updated: May 2026.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about these terms:
+      <a href="mailto:legal@glp1comparehub.com">legal@glp1comparehub.com</a>.</p>
+    </GLP1TrustPage>
+  );
+}
+
 export default async function TermsPage() {
   const domain = await getDomain();
+  if (domain === 'glp1') return <Glp1Terms />;
   if (domain === 'shg') return <ShgTerms />;
   if (domain === 'grh') return <GrhTerms />;
   if (domain === 'ahb') return <AhbTerms />;

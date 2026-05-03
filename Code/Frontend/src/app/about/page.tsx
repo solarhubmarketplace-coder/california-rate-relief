@@ -14,6 +14,7 @@ import { ReviewFooter } from '@/components/reviews/ReviewFooter';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
+import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
 
 // =============================================================================
 // HOST-AWARE /about PAGE
@@ -22,7 +23,7 @@ import { Footer as CRRFooter } from '@/components/landing/Footer';
 // detects the request host and switches the layout + copy accordingly.
 // =============================================================================
 
-type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
+type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
 
 async function getDomain(): Promise<Domain> {
   const hdrs = await headers();
@@ -30,6 +31,7 @@ async function getDomain(): Promise<Domain> {
   if (host.includes('greenreviewshub')) return 'grh';
   if (host.includes('securehomegear')) return 'shg';
   if (host.includes('athomebiohacking')) return 'ahb';
+  if (host.includes('glp1comparehub')) return 'glp1';
   return 'crr';
 }
 
@@ -60,6 +62,7 @@ export async function generateMetadata(): Promise<Metadata> {
         'Research-backed reviews of home biohacking products. How we cite peer-reviewed studies and stay independent.',
       canonical: 'https://athomebiohacking.com/about',
     },
+  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/about' },
   };
   const m = meta[domain];
   return {
@@ -69,8 +72,43 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+function Glp1About() {
+  return (
+    <GLP1TrustPage title='About GLP1CompareHub' subtitle='Independent comparison directory for GLP-1 telehealth providers.'>
+      <h2>What We Do</h2>
+      <p>GLP1CompareHub is an independent comparison directory for GLP-1 telehealth providers.
+      We track 50+ providers — telemedicine companies, compounding pharmacies, and manufacturer
+      programs — and surface verified pricing, medication options, and patient experience data
+      so you can pick the right program for your needs and budget.</p>
+
+      <h2>How We Work</h2>
+      <p>Pricing is verified directly from each provider&rsquo;s public site every month.
+      Rankings are weighted on pricing transparency (25%), medication options (25%), quality
+      certifications (20%), customer support (15%), and plan flexibility (15%). Commission rates
+      have zero impact on ranking order — see our <a href="/methodology">methodology</a>.</p>
+
+      <h2>Editorial Independence</h2>
+      <p>We do not accept payment for placement or sponsored reviews. Providers cannot purchase
+      ranking position. Every claim about clinical efficacy cites a peer-reviewed trial
+      (NEJM, JAMA, Lancet) or the FDA prescribing information. See our
+      <a href="/affiliate-disclosure">affiliate disclosure</a> for details on how we earn money.</p>
+
+      <h2>Not Medical Advice</h2>
+      <p>This site provides educational information, not medical advice. GLP-1 medications
+      require a prescription from a licensed healthcare provider. Always consult a qualified
+      prescriber before starting, stopping, or modifying any medication. See our
+      <a href="/disclaimer">medical disclaimer</a> for the full notice.</p>
+
+      <h2>Contact</h2>
+      <p>Editorial questions: <a href="mailto:editorial@glp1comparehub.com">editorial@glp1comparehub.com</a>.
+      We respond within one business day. See our <a href="/contact">contact page</a> for other inquiries.</p>
+    </GLP1TrustPage>
+  );
+}
+
 export default async function AboutPage() {
   const domain = await getDomain();
+  if (domain === 'glp1') return <Glp1About />;
   if (domain === 'shg') return <ShgAbout />;
   if (domain === 'ahb') return <AhbAbout />;
   if (domain === 'grh') return <GrhAbout />;
