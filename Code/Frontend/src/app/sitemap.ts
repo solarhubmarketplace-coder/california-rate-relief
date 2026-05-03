@@ -1,6 +1,29 @@
 import { MetadataRoute } from 'next';
 import { headers } from 'next/headers';
+import { statSync } from 'fs';
+import { join } from 'path';
 import { getAllCitySlugs } from '@/data/cities-data';
+
+// =============================================================================
+// LAST-MODIFIED HELPERS (Batch 4.4, 2026-04-30)
+// =============================================================================
+// Replaces the previous `new Date()` on every URL — which told Google that
+// every page changed today on every request, training the crawler to ignore
+// the field. Now reads file mtime per page.tsx; falls back to today only if
+// the file isn't accessible (build-time edge cases).
+// =============================================================================
+
+function fileMtime(relPath: string, fallback: Date): Date {
+  try {
+    return statSync(join(process.cwd(), relPath)).mtime;
+  } catch {
+    return fallback;
+  }
+}
+
+function reviewMtime(slug: string, fallback: Date): Date {
+  return fileMtime(`src/app/reviews/${slug}/page.tsx`, fallback);
+}
 
 // =============================================================================
 // HOST-AWARE SITEMAP
@@ -12,13 +35,14 @@ import { getAllCitySlugs } from '@/data/cities-data';
 // that domain.
 // =============================================================================
 
-type DomainKey = 'ratereliefca' | 'greenreviewshub' | 'securehomegear' | 'athomebiohacking';
+type DomainKey = 'ratereliefca' | 'greenreviewshub' | 'securehomegear' | 'athomebiohacking' | 'glp1comparehub';
 
 const DOMAIN_BASE: Record<DomainKey, string> = {
   ratereliefca: 'https://ratereliefca.com',
   greenreviewshub: 'https://greenreviewshub.com',
   securehomegear: 'https://securehomegear.com',
   athomebiohacking: 'https://athomebiohacking.com',
+  glp1comparehub: 'https://glp1comparehub.com',
 };
 
 function detectDomainKey(host: string): DomainKey {
@@ -26,6 +50,7 @@ function detectDomainKey(host: string): DomainKey {
   if (h.includes('greenreviewshub')) return 'greenreviewshub';
   if (h.includes('securehomegear')) return 'securehomegear';
   if (h.includes('athomebiohacking')) return 'athomebiohacking';
+  if (h.includes('glp1comparehub')) return 'glp1comparehub';
   return 'ratereliefca';
 }
 
@@ -223,7 +248,7 @@ function grhSitemap(base: string): MetadataRoute.Sitemap {
   ];
   const reviewPages: MetadataRoute.Sitemap = reviewSlugs.map((slug) => ({
     url: `${base}/reviews/${slug}`,
-    lastModified: today,
+    lastModified: reviewMtime(slug, today),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
@@ -266,7 +291,7 @@ function shgSitemap(base: string): MetadataRoute.Sitemap {
   ];
   const cameraPages: MetadataRoute.Sitemap = cameraSlugs.map((slug) => ({
     url: `${base}/cameras/${slug}`,
-    lastModified: today,
+    lastModified: fileMtime(`src/app/cameras/${slug}/page.tsx`, today),
     changeFrequency: 'monthly',
     priority: 0.75,
   }));
@@ -277,7 +302,7 @@ function shgSitemap(base: string): MetadataRoute.Sitemap {
   ];
   const comparePages: MetadataRoute.Sitemap = compareSlugs.map((slug) => ({
     url: `${base}/compare/${slug}`,
-    lastModified: today,
+    lastModified: fileMtime(`src/app/compare/${slug}/page.tsx`, today),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
@@ -285,7 +310,7 @@ function shgSitemap(base: string): MetadataRoute.Sitemap {
   const altSlugs = ['arlo', 'blink', 'google-nest', 'ring', 'wyze'];
   const altPages: MetadataRoute.Sitemap = altSlugs.map((slug) => ({
     url: `${base}/alternatives/${slug}`,
-    lastModified: today,
+    lastModified: fileMtime(`src/app/alternatives/${slug}/page.tsx`, today),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
@@ -329,12 +354,53 @@ function ahbSitemap(base: string): MetadataRoute.Sitemap {
     'vibration-plate/vibration-plate-benefits',
   ].map((path) => ({
     url: `${base}/${path}`,
-    lastModified: today,
+    lastModified: fileMtime(`src/app/${path}/page.tsx`, today),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
 
   return [...staticPages, ...ahbContentPages];
+}
+
+// =============================================================================
+// GLP1CompareHub (glp1comparehub.com) URLs
+// =============================================================================
+function glp1Sitemap(base: string): MetadataRoute.Sitemap {
+  // Pull from the page-routes registry (single source of truth).
+  // Inline import rather than top-level so this only runs when needed.
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { allPageRoutes } = require('@/lib/glp1-page-routes') as typeof import('@/lib/glp1-page-routes');
+  const today = new Date();
+
+  // Trust pages + key meta routes (in case they're not in the registry)
+  const trustPages: MetadataRoute.Sitemap = [
+    { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/about`,                lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/contact`,              lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/methodology`,          lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${base}/disclaimer`,           lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${base}/privacy`,              lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${base}/terms`,                lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
+  ];
+
+  // All pages from the registry that are LIVE, NEXT, or QUEUED (skip future + utility duplicates)
+  const registryPages: MetadataRoute.Sitemap = allPageRoutes
+    .filter((r) => r.status === 'live' || r.status === 'next' || r.status === 'queued')
+    .map((r) => {
+      // Adjust homepage URL — registry stores /glp1-home but public URL is /
+      const url = r.path === '/glp1-home' ? base : `${base}${r.path}`;
+      // Tier A = 0.9, B = 0.7, C = 0.5
+      const priority = r.tier === 'A' ? 0.9 : r.tier === 'B' ? 0.7 : 0.5;
+      return {
+        url,
+        lastModified: today,
+        changeFrequency: 'weekly' as const,
+        priority,
+      };
+    });
+
+  return [...trustPages, ...registryPages];
 }
 
 // =============================================================================
@@ -353,6 +419,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       return shgSitemap(base);
     case 'athomebiohacking':
       return ahbSitemap(base);
+    case 'glp1comparehub':
+      return glp1Sitemap(base);
     case 'ratereliefca':
     default:
       return crrSitemap(base);
