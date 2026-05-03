@@ -120,10 +120,10 @@ export default async function ProviderDetailPage({ params }: PageParams) {
       <GLP1Header />
 
       {/* Affiliate disclosure */}
-      <div className='border-b' style={{ backgroundColor: '#FFF1D6', borderColor: '#E8DDD0' }}>
+      <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
         <div
           className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center'
-          style={{ color: '#8A6D1A' }}
+          style={{ color: '#7A6020' }}
         >
           <strong>Affiliate Disclosure:</strong> This review contains affiliate links. We may earn a
           commission if you sign up — at no extra cost to you. Our editorial recommendations are
@@ -137,20 +137,20 @@ export default async function ProviderDetailPage({ params }: PageParams) {
 
       <main>
         {/* HEADER — breadcrumb + name + tagline + CTAs */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <nav className='text-xs mb-3' aria-label='Breadcrumb'>
-              <Link href='/' style={{ color: '#7A6478' }}>Home</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <Link href='/providers' style={{ color: '#7A6478' }}>Providers</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <span style={{ color: '#3A1B3D' }}>{provider.name}</span>
+              <Link href='/' style={{ color: '#6B7B82' }}>Home</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <Link href='/providers' style={{ color: '#6B7B82' }}>Providers</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <span style={{ color: '#0E2A3A' }}>{provider.name}</span>
             </nav>
 
             {/* Hero — real image if available, otherwise category-colored placeholder */}
             <div
               className='relative mb-6 rounded-2xl overflow-hidden shadow-md'
-              style={{ aspectRatio: '16 / 9', backgroundColor: '#FDF7F0' }}
+              style={{ aspectRatio: '16 / 9', backgroundColor: '#F8F4ED' }}
             >
               {provider.heroImage ? (
                 <Image
@@ -175,7 +175,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
               </span>
               <span
                 className='inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full'
-                style={{ backgroundColor: '#D4F1E8', color: '#1F6B3D' }}
+                style={{ backgroundColor: '#D9E8D4', color: '#2D5A3D' }}
               >
                 {provider.status}
               </span>
@@ -183,7 +183,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                 <span
                   key={mt}
                   className='inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full'
-                  style={{ backgroundColor: '#EDE5F2', color: '#5C3A7B' }}
+                  style={{ backgroundColor: '#DEE5E8', color: '#385560' }}
                 >
                   {mt}
                 </span>
@@ -192,17 +192,17 @@ export default async function ProviderDetailPage({ params }: PageParams) {
 
             <h1
               className='text-3xl md:text-5xl font-bold mb-2'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               {provider.name}
             </h1>
             {provider.tagline && (
-              <p className='text-base md:text-lg italic mb-5' style={{ color: '#7A6478' }}>
+              <p className='text-base md:text-lg italic mb-5' style={{ color: '#6B7B82' }}>
                 {provider.tagline}
               </p>
             )}
             {provider.description && (
-              <p className='text-base leading-relaxed mb-6 max-w-3xl' style={{ color: '#4B3548' }}>
+              <p className='text-base leading-relaxed mb-6 max-w-3xl' style={{ color: '#3D5560' }}>
                 {provider.description}
               </p>
             )}
@@ -214,14 +214,14 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                 target='_blank'
                 rel='sponsored nofollow noopener noreferrer'
                 className='inline-flex items-center gap-2 text-white px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-md hover:shadow-xl'
-                style={{ backgroundColor: '#F47C5B' }}
+                style={{ backgroundColor: '#D4A33A' }}
               >
                 Visit {provider.name} <ExternalLink className='h-4 w-4' />
               </a>
               <Link
                 href='/compare'
                 className='inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5'
-                style={{ backgroundColor: 'white', color: '#3A1B3D', border: '1.5px solid #3A1B3D' }}
+                style={{ backgroundColor: 'white', color: '#0E2A3A', border: '1.5px solid #0E2A3A' }}
               >
                 Compare Options
               </Link>
@@ -234,7 +234,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <div
               className='bg-white rounded-2xl p-5 md:p-6 shadow-md grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2'
-              style={{ border: '1px solid #E8DDD0' }}
+              style={{ border: '1px solid #E5DDC8' }}
             >
               <Stat label='Starting Price' value={provider.monthlyPrice} />
               <Stat
@@ -251,30 +251,30 @@ export default async function ProviderDetailPage({ params }: PageParams) {
         </section>
 
         {/* TWO-COLUMN: medications + pros/cons */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-5xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 md:gap-10'>
             {/* Medications */}
             <div>
               <h2
                 className='text-xl md:text-2xl font-bold mb-5'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 Medications Available
               </h2>
               {provider.medicationsList && provider.medicationsList.length > 0 ? (
                 <ul className='space-y-2.5'>
                   {provider.medicationsList.map((m) => (
-                    <li key={m} className='flex items-start gap-2' style={{ color: '#4B3548' }}>
+                    <li key={m} className='flex items-start gap-2' style={{ color: '#3D5560' }}>
                       <Check
                         className='h-4 w-4 mt-1 flex-shrink-0'
-                        style={{ color: '#5FBFAA' }}
+                        style={{ color: '#7CA982' }}
                       />
                       <span className='text-sm'>{m}</span>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className='text-sm' style={{ color: '#7A6478' }}>
+                <p className='text-sm' style={{ color: '#6B7B82' }}>
                   {provider.medications}
                 </p>
               )}
@@ -284,20 +284,20 @@ export default async function ProviderDetailPage({ params }: PageParams) {
             <div>
               <h2
                 className='text-xl md:text-2xl font-bold mb-5'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 Pros &amp; Cons
               </h2>
               <div className='grid grid-cols-1 gap-4'>
                 {provider.pros && provider.pros.length > 0 && (
                   <div>
-                    <h3 className='text-sm font-bold mb-2 uppercase tracking-wide' style={{ color: '#1F6B3D' }}>
+                    <h3 className='text-sm font-bold mb-2 uppercase tracking-wide' style={{ color: '#2D5A3D' }}>
                       Pros
                     </h3>
                     <ul className='space-y-2'>
                       {provider.pros.map((pro) => (
-                        <li key={pro} className='flex items-start gap-2 text-sm' style={{ color: '#4B3548' }}>
-                          <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+                        <li key={pro} className='flex items-start gap-2 text-sm' style={{ color: '#3D5560' }}>
+                          <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                           <span>{pro}</span>
                         </li>
                       ))}
@@ -311,7 +311,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                     </h3>
                     <ul className='space-y-2'>
                       {provider.cons.map((con) => (
-                        <li key={con} className='flex items-start gap-2 text-sm' style={{ color: '#4B3548' }}>
+                        <li key={con} className='flex items-start gap-2 text-sm' style={{ color: '#3D5560' }}>
                           <X className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#B14739' }} />
                           <span>{con}</span>
                         </li>
@@ -330,7 +330,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-6'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 How It Works
               </h2>
@@ -339,15 +339,15 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                   <li
                     key={step}
                     className='flex items-start gap-4 p-5 rounded-2xl'
-                    style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0' }}
+                    style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}
                   >
                     <div
                       className='flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-white font-bold'
-                      style={{ backgroundColor: '#F47C5B' }}
+                      style={{ backgroundColor: '#D4A33A' }}
                     >
                       {i + 1}
                     </div>
-                    <span className='text-sm leading-relaxed pt-1.5' style={{ color: '#4B3548' }}>
+                    <span className='text-sm leading-relaxed pt-1.5' style={{ color: '#3D5560' }}>
                       {step}
                     </span>
                   </li>
@@ -359,41 +359,41 @@ export default async function ProviderDetailPage({ params }: PageParams) {
 
         {/* PRICING TABLE + PROMO */}
         {provider.pricingTable && provider.pricingTable.length > 0 && (
-          <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+          <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-2'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 Pricing
               </h2>
-              <p className='text-sm mb-6' style={{ color: '#7A6478' }}>
+              <p className='text-sm mb-6' style={{ color: '#6B7B82' }}>
                 Pricing verified {provider.lastVerified ?? 'recently'}. Confirm current rates on{' '}
                 <a
                   href={affiliateUrl}
                   target='_blank'
                   rel='sponsored nofollow noopener noreferrer'
                   className='underline'
-                  style={{ color: '#F47C5B' }}
+                  style={{ color: '#D4A33A' }}
                 >
                   {provider.name}&rsquo;s site
                 </a>
                 .
               </p>
 
-              <div className='bg-white rounded-2xl overflow-hidden' style={{ border: '1px solid #E8DDD0' }}>
+              <div className='bg-white rounded-2xl overflow-hidden' style={{ border: '1px solid #E5DDC8' }}>
                 <table className='w-full'>
                   <thead>
-                    <tr style={{ backgroundColor: '#FDF7F0' }}>
+                    <tr style={{ backgroundColor: '#F8F4ED' }}>
                       <th
                         className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider'
-                        style={{ color: '#7A6478' }}
+                        style={{ color: '#6B7B82' }}
                       >
                         Plan
                       </th>
                       <th
                         className='text-right px-5 py-3 text-xs font-bold uppercase tracking-wider'
-                        style={{ color: '#7A6478' }}
+                        style={{ color: '#6B7B82' }}
                       >
                         Price
                       </th>
@@ -401,11 +401,11 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                   </thead>
                   <tbody>
                     {provider.pricingTable.map((tier) => (
-                      <tr key={tier.plan} className='border-t' style={{ borderColor: '#E8DDD0' }}>
-                        <td className='px-5 py-4 text-sm font-medium' style={{ color: '#3A1B3D' }}>
+                      <tr key={tier.plan} className='border-t' style={{ borderColor: '#E5DDC8' }}>
+                        <td className='px-5 py-4 text-sm font-medium' style={{ color: '#0E2A3A' }}>
                           {tier.plan}
                         </td>
-                        <td className='px-5 py-4 text-sm font-bold text-right' style={{ color: '#F47C5B' }}>
+                        <td className='px-5 py-4 text-sm font-bold text-right' style={{ color: '#D4A33A' }}>
                           {tier.price}
                         </td>
                       </tr>
@@ -422,19 +422,19 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                     border: '1px solid rgba(95, 191, 170, 0.4)',
                   }}
                 >
-                  <AlertCircle className='h-5 w-5 mt-0.5 flex-shrink-0' style={{ color: '#3A8F77' }} />
+                  <AlertCircle className='h-5 w-5 mt-0.5 flex-shrink-0' style={{ color: '#5A8C68' }} />
                   <div>
-                    <div className='text-sm font-bold mb-0.5' style={{ color: '#1F6B3D' }}>
+                    <div className='text-sm font-bold mb-0.5' style={{ color: '#2D5A3D' }}>
                       Active Promotion
                     </div>
-                    <div className='text-sm' style={{ color: '#4B3548' }}>
+                    <div className='text-sm' style={{ color: '#3D5560' }}>
                       {provider.promo}
                     </div>
                   </div>
                 </div>
               )}
 
-              <p className='text-xs mt-3' style={{ color: '#7A6478' }}>
+              <p className='text-xs mt-3' style={{ color: '#6B7B82' }}>
                 Pricing footnote: We may earn a commission if you sign up through our links — at no
                 extra cost to you. See our{' '}
                 <Link href='/methodology' className='underline'>
@@ -452,7 +452,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-6'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 Key Features
               </h2>
@@ -477,18 +477,18 @@ export default async function ProviderDetailPage({ params }: PageParams) {
 
         {/* WHO IS THIS BEST FOR? */}
         {provider.bestForList && provider.bestForList.length > 0 && (
-          <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+          <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-6'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 Who Is This Best For?
               </h2>
               <ul className='space-y-3'>
                 {provider.bestForList.map((b) => (
-                  <li key={b} className='flex items-start gap-2 text-base' style={{ color: '#4B3548' }}>
-                    <ShieldCheck className='h-5 w-5 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+                  <li key={b} className='flex items-start gap-2 text-base' style={{ color: '#3D5560' }}>
+                    <ShieldCheck className='h-5 w-5 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -503,11 +503,11 @@ export default async function ProviderDetailPage({ params }: PageParams) {
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-2'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 {provider.name} Medications &mdash; In Depth
               </h2>
-              <p className='text-sm mb-6' style={{ color: '#7A6478' }}>
+              <p className='text-sm mb-6' style={{ color: '#6B7B82' }}>
                 See our independent rankings for each medication this provider offers.
               </p>
               <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
@@ -516,10 +516,10 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                     key={m.slug}
                     href={`/best/telemedicine-${m.slug}`}
                     className='p-4 rounded-xl text-center transition-all hover:-translate-y-0.5'
-                    style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0', color: '#3A1B3D' }}
+                    style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8', color: '#0E2A3A' }}
                   >
                     <div className='text-sm font-bold mb-1'>{m.name}</div>
-                    <div className='text-[10px] uppercase tracking-wider' style={{ color: '#7A6478' }}>
+                    <div className='text-[10px] uppercase tracking-wider' style={{ color: '#6B7B82' }}>
                       View Top 5 →
                     </div>
                   </Link>
@@ -531,15 +531,15 @@ export default async function ProviderDetailPage({ params }: PageParams) {
 
         {/* COMPARE WITH */}
         {provider.comparisonsAvailable && provider.comparisonsAvailable.length > 0 && (
-          <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+          <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-2'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 Compare {provider.name} With
               </h2>
-              <p className='text-sm mb-6' style={{ color: '#7A6478' }}>
+              <p className='text-sm mb-6' style={{ color: '#6B7B82' }}>
                 Side-by-side comparisons against other top providers.
               </p>
               <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
@@ -550,10 +550,10 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                       key={vsSlug}
                       href={`/compare/${provider.slug}-vs-${vsSlug}`}
                       className='p-4 rounded-xl text-center transition-all hover:-translate-y-0.5 bg-white'
-                      style={{ border: '1px solid #E8DDD0', color: '#3A1B3D' }}
+                      style={{ border: '1px solid #E5DDC8', color: '#0E2A3A' }}
                     >
                       <div className='text-sm font-bold mb-1'>vs {other?.name ?? vsSlug}</div>
-                      <div className='text-[10px] uppercase tracking-wider' style={{ color: '#7A6478' }}>
+                      <div className='text-[10px] uppercase tracking-wider' style={{ color: '#6B7B82' }}>
                         Compare →
                       </div>
                     </Link>
@@ -570,11 +570,11 @@ export default async function ProviderDetailPage({ params }: PageParams) {
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-4'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 The Bottom Line
               </h2>
-              <p className='text-base leading-relaxed' style={{ color: '#4B3548' }}>
+              <p className='text-base leading-relaxed' style={{ color: '#3D5560' }}>
                 {provider.bottomLine}
               </p>
             </div>
@@ -583,11 +583,11 @@ export default async function ProviderDetailPage({ params }: PageParams) {
 
         {/* GALLERY — secondary imagery (product cards, screenshots, etc.) */}
         {provider.galleryImages && provider.galleryImages.length > 0 && (
-          <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+          <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-6'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 {provider.name} in Detail
               </h2>
@@ -596,7 +596,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                   <div
                     key={img}
                     className='relative rounded-2xl overflow-hidden shadow-sm bg-white'
-                    style={{ aspectRatio: '4 / 3', border: '1px solid #E8DDD0' }}
+                    style={{ aspectRatio: '4 / 3', border: '1px solid #E5DDC8' }}
                   >
                     <Image
                       src={img}
@@ -608,7 +608,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                   </div>
                 ))}
               </div>
-              <p className='text-xs italic mt-4' style={{ color: '#7A6478' }}>
+              <p className='text-xs italic mt-4' style={{ color: '#6B7B82' }}>
                 Images sourced from the provider&rsquo;s public marketing materials. Used for
                 editorial / review purposes.
               </p>
@@ -618,7 +618,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
 
         {/* META FOOTER (last updated + verify dates + submit-update link) */}
         <section className='py-6'>
-          <div className='max-w-5xl mx-auto px-4 md:px-6 text-xs' style={{ color: '#7A6478' }}>
+          <div className='max-w-5xl mx-auto px-4 md:px-6 text-xs' style={{ color: '#6B7B82' }}>
             <div className='flex flex-wrap items-center gap-x-4 gap-y-1'>
               {provider.lastUpdated && (
                 <span className='inline-flex items-center gap-1'>
@@ -633,7 +633,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
             </div>
             <div className='mt-2'>
               Are you from {provider.name}?{' '}
-              <Link href='/contact' className='underline' style={{ color: '#F47C5B' }}>
+              <Link href='/contact' className='underline' style={{ color: '#D4A33A' }}>
                 Submit an update →
               </Link>
             </div>
@@ -641,12 +641,12 @@ export default async function ProviderDetailPage({ params }: PageParams) {
         </section>
 
         {/* FINAL CTA CARD */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-3xl mx-auto px-4 md:px-6'>
             <div
               className='rounded-3xl p-7 md:p-10 text-center text-white'
               style={{
-                background: 'linear-gradient(135deg, #F47C5B 0%, #F09A65 50%, #EFC079 100%)',
+                background: 'linear-gradient(135deg, #D4A33A 0%, #C99230 50%, #B88A2A 100%)',
               }}
             >
               <h2
@@ -665,7 +665,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                   target='_blank'
                   rel='sponsored nofollow noopener noreferrer'
                   className='inline-flex items-center gap-2 bg-white px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-lg'
-                  style={{ color: '#F47C5B' }}
+                  style={{ color: '#D4A33A' }}
                 >
                   Visit {provider.name} <ExternalLink className='h-4 w-4' />
                 </a>
@@ -693,10 +693,10 @@ export default async function ProviderDetailPage({ params }: PageParams) {
 
 function categoryColor(c: GLP1Provider['category']) {
   const map: Record<GLP1Provider['category'], { bg: string; fg: string }> = {
-    Telemedicine: { bg: '#FFE5D9', fg: '#B14739' },
-    'Compounding Pharmacy': { bg: '#D4F1E8', fg: '#1F6B3D' },
-    'Manufacturer Program': { bg: '#EDE5F2', fg: '#5C3A7B' },
-    Hybrid: { bg: '#FFF1D6', fg: '#8A6D1A' },
+    Telemedicine: { bg: '#E8DCC0', fg: '#7A6020' },
+    'Compounding Pharmacy': { bg: '#D9E8D4', fg: '#2D5A3D' },
+    'Manufacturer Program': { bg: '#DEE5E8', fg: '#385560' },
+    Hybrid: { bg: '#F4EBD0', fg: '#7A6020' },
   };
   return map[c];
 }
@@ -704,10 +704,10 @@ function categoryColor(c: GLP1Provider['category']) {
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className='text-center md:text-left px-2'>
-      <div className='text-[11px] font-bold uppercase tracking-widest mb-1' style={{ color: '#7A6478' }}>
+      <div className='text-[11px] font-bold uppercase tracking-widest mb-1' style={{ color: '#6B7B82' }}>
         {label}
       </div>
-      <div className='text-base md:text-lg font-bold' style={{ color: '#3A1B3D' }}>
+      <div className='text-base md:text-lg font-bold' style={{ color: '#0E2A3A' }}>
         {value}
       </div>
     </div>
@@ -718,12 +718,12 @@ function FeatureItem({ label, value }: { label: string; value: string }) {
   return (
     <div
       className='p-4 rounded-xl'
-      style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0' }}
+      style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}
     >
-      <div className='text-[11px] font-bold uppercase tracking-widest mb-1' style={{ color: '#7A6478' }}>
+      <div className='text-[11px] font-bold uppercase tracking-widest mb-1' style={{ color: '#6B7B82' }}>
         {label}
       </div>
-      <div className='text-sm font-medium' style={{ color: '#3A1B3D' }}>
+      <div className='text-sm font-medium' style={{ color: '#0E2A3A' }}>
         {value}
       </div>
     </div>

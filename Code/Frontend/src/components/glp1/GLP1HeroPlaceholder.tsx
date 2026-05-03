@@ -15,10 +15,10 @@
 import type { ProviderCategory } from '@/lib/glp1-providers';
 
 const CATEGORY_GRADIENT: Record<ProviderCategory, { from: string; to: string; accent: string }> = {
-  Telemedicine:           { from: '#FFE5D9', to: '#F47C5B', accent: '#3A1B3D' },
-  'Compounding Pharmacy': { from: '#D4F1E8', to: '#5FBFAA', accent: '#0B3D2E' },
-  'Manufacturer Program': { from: '#EDE5F2', to: '#9333EA', accent: '#3B1A52' },
-  Hybrid:                 { from: '#FFF1D6', to: '#F59E0B', accent: '#5C3A0B' },
+  Telemedicine:           { from: '#E8DCC0', to: '#D4A33A', accent: '#0E2A3A' },
+  'Compounding Pharmacy': { from: '#D9E8D4', to: '#7CA982', accent: '#0B3D2E' },
+  'Manufacturer Program': { from: '#DEE5E8', to: '#9333EA', accent: '#3B1A52' },
+  Hybrid:                 { from: '#F4EBD0', to: '#F59E0B', accent: '#5C3A0B' },
 };
 
 interface GLP1HeroPlaceholderProps {

@@ -107,8 +107,8 @@ export default async function MedicationRankingPage({ params }: PageParams) {
 
       <GLP1Header />
 
-      <div className='border-b' style={{ backgroundColor: '#FFF1D6', borderColor: '#E8DDD0' }}>
-        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#8A6D1A' }}>
+      <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
+        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#7A6020' }}>
           <strong>Affiliate Disclosure:</strong> Rankings are independent of commission rates.{' '}
           <Link href='/affiliate-disclosure' className='underline'>Full disclosure</Link>.
         </div>
@@ -116,28 +116,28 @@ export default async function MedicationRankingPage({ params }: PageParams) {
 
       <main>
         {/* HEADER */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <nav className='text-xs mb-3' aria-label='Breadcrumb'>
-              <Link href='/' style={{ color: '#7A6478' }}>Home</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <Link href='/best' style={{ color: '#7A6478' }}>Best Rankings</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <span style={{ color: '#3A1B3D' }}>{med.name}</span>
+              <Link href='/' style={{ color: '#6B7B82' }}>Home</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <Link href='/best' style={{ color: '#6B7B82' }}>Best Rankings</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <span style={{ color: '#0E2A3A' }}>{med.name}</span>
             </nav>
 
             <h1
               className='text-3xl md:text-5xl font-bold mb-3'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               {med.titleHook.split(' — ')[0]}
             </h1>
             {med.titleHook.includes(' — ') && (
-              <p className='text-lg md:text-xl font-semibold mb-3' style={{ color: '#F47C5B' }}>
+              <p className='text-lg md:text-xl font-semibold mb-3' style={{ color: '#D4A33A' }}>
                 {med.titleHook.split(' — ')[1]}
               </p>
             )}
-            <div className='flex items-center gap-3 text-xs flex-wrap mb-5' style={{ color: '#7A6478' }}>
+            <div className='flex items-center gap-3 text-xs flex-wrap mb-5' style={{ color: '#6B7B82' }}>
               <span className='flex items-center gap-1'>
                 <Calendar className='h-3 w-3' /> Updated {med.lastUpdated}
               </span>
@@ -145,16 +145,16 @@ export default async function MedicationRankingPage({ params }: PageParams) {
               <span>By GLP1CompareHub Editorial Team</span>
             </div>
 
-            <p className='text-base leading-relaxed max-w-3xl' style={{ color: '#4B3548' }}>
+            <p className='text-base leading-relaxed max-w-3xl' style={{ color: '#3D5560' }}>
               {med.description}
             </p>
           </div>
         </section>
 
         {/* QUICK NAV */}
-        <section className='py-6 sticky top-[60px] z-40' style={{ backgroundColor: '#FDF7F0', borderBottom: '1px solid #E8DDD0' }}>
+        <section className='py-6 sticky top-[60px] z-40' style={{ backgroundColor: '#F8F4ED', borderBottom: '1px solid #E5DDC8' }}>
           <div className='max-w-5xl mx-auto px-4 md:px-6 flex flex-wrap items-center gap-2 md:gap-3 text-xs md:text-sm'>
-            <span className='font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>
+            <span className='font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>
               Quick Nav:
             </span>
             {top5.map((p, i) => (
@@ -162,7 +162,7 @@ export default async function MedicationRankingPage({ params }: PageParams) {
                 key={p.slug}
                 href={`#rank-${i + 1}`}
                 className='font-semibold hover:underline'
-                style={{ color: '#3A1B3D' }}
+                style={{ color: '#0E2A3A' }}
               >
                 #{i + 1} {p.name}
               </a>
@@ -171,7 +171,7 @@ export default async function MedicationRankingPage({ params }: PageParams) {
         </section>
 
         {/* PROVIDER RANKINGS */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-5xl mx-auto px-4 md:px-6 space-y-6 md:space-y-8'>
             {top5.map((p, i) => (
               <RankCard key={p.slug} rank={i + 1} provider={p} medication={med.name} />
@@ -184,19 +184,19 @@ export default async function MedicationRankingPage({ params }: PageParams) {
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               About {med.name}
             </h2>
-            <p className='text-base leading-relaxed mb-4' style={{ color: '#4B3548' }}>
+            <p className='text-base leading-relaxed mb-4' style={{ color: '#3D5560' }}>
               {med.description}
             </p>
             {med.mechanism && (
-              <p className='text-base leading-relaxed mb-4' style={{ color: '#4B3548' }}>
+              <p className='text-base leading-relaxed mb-4' style={{ color: '#3D5560' }}>
                 <strong>Mechanism:</strong> {med.mechanism}
               </p>
             )}
-            <p className='text-sm' style={{ color: '#7A6478' }}>
+            <p className='text-sm' style={{ color: '#6B7B82' }}>
               <strong>FDA Status:</strong> {med.fdaStatus}
             </p>
           </div>
@@ -204,29 +204,29 @@ export default async function MedicationRankingPage({ params }: PageParams) {
 
         {/* DOSING SCHEDULE */}
         {med.dosingSchedule && med.dosingSchedule.length > 0 && (
-          <section className='py-12' style={{ backgroundColor: '#FFF6E8' }}>
+          <section className='py-12' style={{ backgroundColor: '#F0EBE0' }}>
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-5'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 Dosing Schedule
               </h2>
-              <div className='bg-white rounded-2xl overflow-hidden' style={{ border: '1px solid #E8DDD0' }}>
+              <div className='bg-white rounded-2xl overflow-hidden' style={{ border: '1px solid #E5DDC8' }}>
                 <table className='w-full'>
                   <thead>
-                    <tr style={{ backgroundColor: '#FDF7F0' }}>
-                      <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Week</th>
-                      <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Dose</th>
-                      <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Phase</th>
+                    <tr style={{ backgroundColor: '#F8F4ED' }}>
+                      <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Week</th>
+                      <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Dose</th>
+                      <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Phase</th>
                     </tr>
                   </thead>
                   <tbody>
                     {med.dosingSchedule.map((step) => (
-                      <tr key={step.week} className='border-t' style={{ borderColor: '#E8DDD0' }}>
-                        <td className='px-5 py-3 text-sm font-semibold' style={{ color: '#3A1B3D' }}>Week {step.week}</td>
-                        <td className='px-5 py-3 text-sm font-bold' style={{ color: '#F47C5B' }}>{step.dose}</td>
-                        <td className='px-5 py-3 text-sm' style={{ color: '#4B3548' }}>{step.phase}</td>
+                      <tr key={step.week} className='border-t' style={{ borderColor: '#E5DDC8' }}>
+                        <td className='px-5 py-3 text-sm font-semibold' style={{ color: '#0E2A3A' }}>Week {step.week}</td>
+                        <td className='px-5 py-3 text-sm font-bold' style={{ color: '#D4A33A' }}>{step.dose}</td>
+                        <td className='px-5 py-3 text-sm' style={{ color: '#3D5560' }}>{step.phase}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -242,7 +242,7 @@ export default async function MedicationRankingPage({ params }: PageParams) {
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-5'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 Clinical Trial Results
               </h2>
@@ -251,18 +251,18 @@ export default async function MedicationRankingPage({ params }: PageParams) {
                   <div
                     key={t.metric}
                     className='p-5 rounded-2xl flex items-start gap-4'
-                    style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0' }}
+                    style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}
                   >
-                    <ShieldCheck className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#5FBFAA' }} />
+                    <ShieldCheck className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#7CA982' }} />
                     <div>
-                      <div className='text-sm font-semibold' style={{ color: '#3A1B3D' }}>{t.metric}</div>
-                      <div className='text-2xl font-bold my-1' style={{ color: '#F47C5B' }}>{t.value}</div>
-                      <div className='text-xs italic' style={{ color: '#7A6478' }}>Source: {t.trial}</div>
+                      <div className='text-sm font-semibold' style={{ color: '#0E2A3A' }}>{t.metric}</div>
+                      <div className='text-2xl font-bold my-1' style={{ color: '#D4A33A' }}>{t.value}</div>
+                      <div className='text-xs italic' style={{ color: '#6B7B82' }}>Source: {t.trial}</div>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className='text-xs mt-4' style={{ color: '#7A6478' }}>
+              <p className='text-xs mt-4' style={{ color: '#6B7B82' }}>
                 Individual results vary. Clinical trial averages are not guarantees of personal outcome.
               </p>
             </div>
@@ -271,11 +271,11 @@ export default async function MedicationRankingPage({ params }: PageParams) {
 
         {/* SIDE EFFECTS */}
         {med.commonSideEffects && med.commonSideEffects.length > 0 && (
-          <section className='py-12' style={{ backgroundColor: '#FDF7F0' }}>
+          <section className='py-12' style={{ backgroundColor: '#F8F4ED' }}>
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
                 className='text-2xl md:text-3xl font-bold mb-5'
-                style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
               >
                 Common Side Effects
               </h2>
@@ -284,13 +284,13 @@ export default async function MedicationRankingPage({ params }: PageParams) {
                   <span
                     key={s}
                     className='px-4 py-2 rounded-full text-sm font-medium bg-white'
-                    style={{ border: '1px solid #E8DDD0', color: '#4B3548' }}
+                    style={{ border: '1px solid #E5DDC8', color: '#3D5560' }}
                   >
                     {s}
                   </span>
                 ))}
               </div>
-              <p className='text-xs mt-4' style={{ color: '#7A6478' }}>
+              <p className='text-xs mt-4' style={{ color: '#6B7B82' }}>
                 See your prescriber for the full list of potential side effects and contraindications.
               </p>
             </div>
@@ -302,11 +302,11 @@ export default async function MedicationRankingPage({ params }: PageParams) {
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Our Ranking Methodology
             </h2>
-            <p className='text-sm mb-6' style={{ color: '#4B3548' }}>
+            <p className='text-sm mb-6' style={{ color: '#3D5560' }}>
               We weight five factors when ranking providers for each medication:
             </p>
             <div className='grid grid-cols-1 md:grid-cols-5 gap-3'>
@@ -316,18 +316,18 @@ export default async function MedicationRankingPage({ params }: PageParams) {
               <WeightItem pct={15} label='Customer Support' />
               <WeightItem pct={15} label='Plan Flexibility' />
             </div>
-            <p className='text-xs mt-5' style={{ color: '#7A6478' }}>
+            <p className='text-xs mt-5' style={{ color: '#6B7B82' }}>
               See our full <Link href='/methodology' className='underline'>methodology</Link>.
             </p>
           </div>
         </section>
 
         {/* RELATED + FINAL CTA */}
-        <section className='py-12' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-12' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Related Rankings
             </h2>
@@ -340,10 +340,10 @@ export default async function MedicationRankingPage({ params }: PageParams) {
                     key={m2.slug}
                     href={`/best/telemedicine-${m2.slug}`}
                     className='p-4 rounded-xl text-center bg-white transition-all hover:-translate-y-0.5'
-                    style={{ border: '1px solid #E8DDD0', color: '#3A1B3D' }}
+                    style={{ border: '1px solid #E5DDC8', color: '#0E2A3A' }}
                   >
                     <div className='text-sm font-bold mb-1'>Best for {m2.name}</div>
-                    <div className='text-[10px] uppercase tracking-wider' style={{ color: '#7A6478' }}>
+                    <div className='text-[10px] uppercase tracking-wider' style={{ color: '#6B7B82' }}>
                       View Top 5 →
                     </div>
                   </Link>
@@ -352,11 +352,11 @@ export default async function MedicationRankingPage({ params }: PageParams) {
           </div>
         </section>
 
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-3xl mx-auto px-4 md:px-6'>
             <div
               className='rounded-3xl p-7 md:p-10 text-center text-white'
-              style={{ background: 'linear-gradient(135deg, #F47C5B 0%, #F09A65 50%, #EFC079 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #D4A33A 0%, #C99230 50%, #B88A2A 100%)' }}
             >
               <h2 className='text-2xl md:text-3xl font-bold mb-3' style={{ fontFamily: '"Playfair Display", "Georgia", serif' }}>
                 Not sure which provider fits you?
@@ -368,7 +368,7 @@ export default async function MedicationRankingPage({ params }: PageParams) {
                 <Link
                   href='/match'
                   className='inline-flex items-center gap-2 bg-white px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-lg'
-                  style={{ color: '#F47C5B' }}
+                  style={{ color: '#D4A33A' }}
                 >
                   Take the Quiz
                 </Link>
@@ -410,22 +410,22 @@ function RankCard({
     <div
       id={`rank-${rank}`}
       className='bg-white rounded-2xl p-6 md:p-7 shadow-sm scroll-mt-32'
-      style={{ border: '1px solid #E8DDD0' }}
+      style={{ border: '1px solid #E5DDC8' }}
     >
       <div className='flex items-start gap-5 flex-col md:flex-row'>
         {/* Rank number badge */}
         <div className='flex-shrink-0'>
           <div
             className='w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl font-bold'
-            style={{ backgroundColor: rank === 1 ? '#F47C5B' : '#3A1B3D' }}
+            style={{ backgroundColor: rank === 1 ? '#D4A33A' : '#0E2A3A' }}
           >
             #{rank}
           </div>
           <div
             className='mt-2 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full'
             style={{
-              backgroundColor: rank === 1 ? '#FFE5D9' : '#FDF7F0',
-              color: rank === 1 ? '#B14739' : '#3A1B3D',
+              backgroundColor: rank === 1 ? '#E8DCC0' : '#F8F4ED',
+              color: rank === 1 ? '#7A6020' : '#0E2A3A',
             }}
           >
             <Trophy className='h-3 w-3' /> {badge}
@@ -435,20 +435,20 @@ function RankCard({
         {/* Content */}
         <div className='flex-1 min-w-0'>
           <div className='flex items-center justify-between gap-3 flex-wrap mb-2'>
-            <h3 className='text-2xl font-bold' style={{ color: '#3A1B3D' }}>
+            <h3 className='text-2xl font-bold' style={{ color: '#0E2A3A' }}>
               {provider.name}
             </h3>
             <div className='flex items-center gap-3'>
               <div className='text-right'>
-                <div className='text-xs' style={{ color: '#7A6478' }}>From</div>
-                <div className='text-lg font-bold' style={{ color: '#F47C5B' }}>
+                <div className='text-xs' style={{ color: '#6B7B82' }}>From</div>
+                <div className='text-lg font-bold' style={{ color: '#D4A33A' }}>
                   {provider.monthlyPrice}
                 </div>
               </div>
               {provider.rating > 0 && (
                 <div className='flex items-center gap-1'>
-                  <Star className='h-5 w-5 fill-current' style={{ color: '#F47C5B' }} />
-                  <span className='text-lg font-bold' style={{ color: '#3A1B3D' }}>
+                  <Star className='h-5 w-5 fill-current' style={{ color: '#D4A33A' }} />
+                  <span className='text-lg font-bold' style={{ color: '#0E2A3A' }}>
                     {provider.rating.toFixed(1)}
                   </span>
                 </div>
@@ -457,12 +457,12 @@ function RankCard({
           </div>
 
           {provider.tagline && (
-            <p className='text-sm italic mb-3' style={{ color: '#7A6478' }}>
+            <p className='text-sm italic mb-3' style={{ color: '#6B7B82' }}>
               {provider.tagline}
             </p>
           )}
 
-          <p className='text-sm mb-4 leading-relaxed' style={{ color: '#4B3548' }}>
+          <p className='text-sm mb-4 leading-relaxed' style={{ color: '#3D5560' }}>
             <strong>Why #{rank}?</strong>{' '}
             {provider.bottomLine ?? provider.description ?? `Strong ${medication} program with verified pricing.`}
           </p>
@@ -470,13 +470,13 @@ function RankCard({
           {provider.pros && provider.pros.length > 0 && (
             <div className='grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 mb-5'>
               <div>
-                <div className='text-xs font-bold uppercase tracking-wider mb-1.5' style={{ color: '#1F6B3D' }}>
+                <div className='text-xs font-bold uppercase tracking-wider mb-1.5' style={{ color: '#2D5A3D' }}>
                   Pros
                 </div>
                 <ul className='space-y-1'>
                   {provider.pros.slice(0, 3).map((pro) => (
-                    <li key={pro} className='flex items-start gap-1.5 text-xs' style={{ color: '#4B3548' }}>
-                      <CircleCheck className='h-3.5 w-3.5 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+                    <li key={pro} className='flex items-start gap-1.5 text-xs' style={{ color: '#3D5560' }}>
+                      <CircleCheck className='h-3.5 w-3.5 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                       <span>{pro}</span>
                     </li>
                   ))}
@@ -489,7 +489,7 @@ function RankCard({
                   </div>
                   <ul className='space-y-1'>
                     {provider.cons.slice(0, 3).map((con) => (
-                      <li key={con} className='flex items-start gap-1.5 text-xs' style={{ color: '#4B3548' }}>
+                      <li key={con} className='flex items-start gap-1.5 text-xs' style={{ color: '#3D5560' }}>
                         <X className='h-3.5 w-3.5 mt-0.5 flex-shrink-0' style={{ color: '#B14739' }} />
                         <span>{con}</span>
                       </li>
@@ -504,7 +504,7 @@ function RankCard({
             <Link
               href={`/providers/${provider.slug}`}
               className='inline-flex items-center gap-1 text-sm font-semibold px-5 py-2.5 rounded-full transition-all'
-              style={{ backgroundColor: '#3A1B3D', color: 'white' }}
+              style={{ backgroundColor: '#0E2A3A', color: 'white' }}
             >
               Full Review <ArrowRight className='h-3.5 w-3.5' />
             </Link>
@@ -513,7 +513,7 @@ function RankCard({
               target='_blank'
               rel='sponsored nofollow noopener noreferrer'
               className='inline-flex items-center gap-1 text-sm font-semibold px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5'
-              style={{ backgroundColor: '#F47C5B', color: 'white' }}
+              style={{ backgroundColor: '#D4A33A', color: 'white' }}
             >
               Visit {provider.name} <ExternalLink className='h-3.5 w-3.5' />
             </a>
@@ -528,15 +528,15 @@ function WeightItem({ pct, label }: { pct: number; label: string }) {
   return (
     <div
       className='text-center p-4 rounded-2xl'
-      style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0' }}
+      style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}
     >
       <div
         className='text-2xl font-bold mb-1'
-        style={{ color: '#F47C5B', fontFamily: '"Playfair Display", "Georgia", serif' }}
+        style={{ color: '#D4A33A', fontFamily: '"Playfair Display", "Georgia", serif' }}
       >
         {pct}%
       </div>
-      <div className='text-xs font-semibold' style={{ color: '#3A1B3D' }}>
+      <div className='text-xs font-semibold' style={{ color: '#0E2A3A' }}>
         {label}
       </div>
     </div>

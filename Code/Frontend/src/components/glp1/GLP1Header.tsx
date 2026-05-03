@@ -22,7 +22,7 @@ export function GLP1Header() {
       style={{
         backgroundColor: 'rgba(253, 247, 240, 0.92)',
         backdropFilter: 'blur(8px)',
-        borderColor: '#E8DDD0',
+        borderColor: '#E5DDC8',
       }}
     >
       <div className='max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-4'>
@@ -38,9 +38,9 @@ export function GLP1Header() {
               key={link.href}
               href={link.href}
               className='transition-colors'
-              style={{ color: '#3A1B3D' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#F47C5B')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#3A1B3D')}
+              style={{ color: '#0E2A3A' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#D4A33A')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#0E2A3A')}
             >
               {link.label}
             </Link>
@@ -52,9 +52,9 @@ export function GLP1Header() {
           <Link
             href='/match'
             className='inline-flex items-center gap-2 text-white px-5 md:px-6 py-2.5 rounded-full font-semibold transition-all duration-200 hover:-translate-y-0.5 shadow-md hover:shadow-lg whitespace-nowrap text-sm md:text-base'
-            style={{ backgroundColor: '#F47C5B' }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#E5654A')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F47C5B')}
+            style={{ backgroundColor: '#D4A33A' }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#B88A2A')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#D4A33A')}
           >
             Take the Quiz
           </Link>
@@ -63,7 +63,7 @@ export function GLP1Header() {
             aria-label={open ? 'Close menu' : 'Open menu'}
             onClick={() => setOpen((v) => !v)}
             className='lg:hidden p-2 rounded-md'
-            style={{ color: '#3A1B3D' }}
+            style={{ color: '#0E2A3A' }}
           >
             {open ? <X className='h-5 w-5' /> : <Menu className='h-5 w-5' />}
           </button>
@@ -74,7 +74,7 @@ export function GLP1Header() {
       {open && (
         <nav
           className='lg:hidden border-t'
-          style={{ backgroundColor: '#FDF7F0', borderColor: '#E8DDD0' }}
+          style={{ backgroundColor: '#F8F4ED', borderColor: '#E5DDC8' }}
         >
           <div className='max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1'>
             {NAV_LINKS.map((link) => (
@@ -83,7 +83,7 @@ export function GLP1Header() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className='py-2.5 px-2 rounded-md text-sm font-medium transition-colors'
-                style={{ color: '#3A1B3D' }}
+                style={{ color: '#0E2A3A' }}
               >
                 {link.label}
               </Link>
@@ -106,12 +106,12 @@ function Logo() {
       <span
         aria-hidden
         className='inline-block w-6 h-6 rounded-full mr-2'
-        style={{ backgroundColor: '#F47C5B' }}
+        style={{ backgroundColor: '#D4A33A' }}
       />
-      <span className='text-xl font-extrabold tracking-tight' style={{ color: '#F47C5B' }}>
+      <span className='text-xl font-extrabold tracking-tight' style={{ color: '#D4A33A' }}>
         glp1
       </span>
-      <span className='text-xl font-extrabold tracking-tight' style={{ color: '#3A1B3D' }}>
+      <span className='text-xl font-extrabold tracking-tight' style={{ color: '#0E2A3A' }}>
         comparehub
       </span>
     </span>

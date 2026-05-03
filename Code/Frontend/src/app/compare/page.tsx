@@ -40,8 +40,8 @@ export default function CompareHubPage() {
 
       <GLP1Header />
 
-      <div className='border-b' style={{ backgroundColor: '#FFF1D6', borderColor: '#E8DDD0' }}>
-        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#8A6D1A' }}>
+      <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
+        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#7A6020' }}>
           <strong>Affiliate Disclosure:</strong> Comparisons are independent.{' '}
           <Link href='/affiliate-disclosure' className='underline'>Full disclosure</Link>.
         </div>
@@ -49,24 +49,24 @@ export default function CompareHubPage() {
 
       <main>
         {/* Header */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-7xl mx-auto px-4 md:px-6'>
             <nav className='text-xs mb-3' aria-label='Breadcrumb'>
-              <Link href='/' style={{ color: '#7A6478' }}>Home</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <span style={{ color: '#3A1B3D' }}>Compare</span>
+              <Link href='/' style={{ color: '#6B7B82' }}>Home</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <span style={{ color: '#0E2A3A' }}>Compare</span>
             </nav>
 
             <h1
               className='text-3xl md:text-5xl font-bold mb-4'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Compare GLP-1 Providers
             </h1>
-            <p className='text-base md:text-lg max-w-3xl' style={{ color: '#4B3548' }}>
+            <p className='text-base md:text-lg max-w-3xl' style={{ color: '#3D5560' }}>
               Compare any GLP-1 telehealth providers side-by-side. Pre-built head-to-head pages
               below, or browse our{' '}
-              <Link href='/providers' className='underline' style={{ color: '#F47C5B' }}>
+              <Link href='/providers' className='underline' style={{ color: '#D4A33A' }}>
                 full directory
               </Link>{' '}
               to see all options.
@@ -75,15 +75,15 @@ export default function CompareHubPage() {
         </section>
 
         {/* Popular comparisons */}
-        <section className='py-12' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-12' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-7xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-2'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Popular Comparisons
             </h2>
-            <p className='text-sm mb-6' style={{ color: '#7A6478' }}>
+            <p className='text-sm mb-6' style={{ color: '#6B7B82' }}>
               The most-viewed head-to-head pages on our site.
             </p>
 
@@ -96,13 +96,13 @@ export default function CompareHubPage() {
                     key={vp.path}
                     href={vp.path}
                     className='block bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5'
-                    style={{ border: '1px solid #E8DDD0' }}
+                    style={{ border: '1px solid #E5DDC8' }}
                   >
-                    <div className='text-xs font-bold uppercase tracking-wider mb-1' style={{ color: '#7A6478' }}>
+                    <div className='text-xs font-bold uppercase tracking-wider mb-1' style={{ color: '#6B7B82' }}>
                       Compare
                     </div>
-                    <div className='text-sm font-bold' style={{ color: '#3A1B3D' }}>
-                      {prettyName(a)} <span style={{ color: '#F47C5B' }}>vs</span> {prettyName(b)}
+                    <div className='text-sm font-bold' style={{ color: '#0E2A3A' }}>
+                      {prettyName(a)} <span style={{ color: '#D4A33A' }}>vs</span> {prettyName(b)}
                     </div>
                   </Link>
                 );
@@ -116,7 +116,7 @@ export default function CompareHubPage() {
           <div className='max-w-7xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-8 text-center'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               What You Can Compare
             </h2>
@@ -147,11 +147,11 @@ export default function CompareHubPage() {
         </section>
 
         {/* How to use */}
-        <section className='py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-8 text-center'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               How to Use This Tool
             </h2>
@@ -164,7 +164,7 @@ export default function CompareHubPage() {
               <Link
                 href='/match'
                 className='inline-flex items-center gap-2 text-white px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-md'
-                style={{ backgroundColor: '#F47C5B' }}
+                style={{ backgroundColor: '#D4A33A' }}
               >
                 Take the Quiz <ArrowRight className='h-4 w-4' />
               </Link>
@@ -187,18 +187,18 @@ function CompareItem({ icon, title, body }: { icon: React.ReactNode; title: stri
   return (
     <div
       className='text-center p-5 rounded-2xl'
-      style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0' }}
+      style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}
     >
       <div
         className='inline-flex items-center justify-center w-11 h-11 rounded-full mb-3'
-        style={{ backgroundColor: '#FFE5D9', color: '#F47C5B' }}
+        style={{ backgroundColor: '#E8DCC0', color: '#D4A33A' }}
       >
         {icon}
       </div>
-      <h3 className='font-bold mb-1.5' style={{ color: '#3A1B3D' }}>
+      <h3 className='font-bold mb-1.5' style={{ color: '#0E2A3A' }}>
         {title}
       </h3>
-      <p className='text-xs' style={{ color: '#4B3548' }}>
+      <p className='text-xs' style={{ color: '#3D5560' }}>
         {body}
       </p>
     </div>
@@ -210,13 +210,13 @@ function Step({ n, title, body }: { n: number; title: string; body: string }) {
     <div className='flex items-start gap-3'>
       <div
         className='w-9 h-9 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white'
-        style={{ backgroundColor: '#F47C5B' }}
+        style={{ backgroundColor: '#D4A33A' }}
       >
         {n}
       </div>
       <div>
-        <h3 className='font-bold mb-1' style={{ color: '#3A1B3D' }}>{title}</h3>
-        <p className='text-sm' style={{ color: '#4B3548' }}>{body}</p>
+        <h3 className='font-bold mb-1' style={{ color: '#0E2A3A' }}>{title}</h3>
+        <p className='text-sm' style={{ color: '#3D5560' }}>{body}</p>
       </div>
     </div>
   );

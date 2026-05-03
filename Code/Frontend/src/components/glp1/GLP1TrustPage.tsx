@@ -35,31 +35,31 @@ export function GLP1TrustPage({ title, subtitle, breadcrumb, children }: GLP1Tru
     <GLP1Layout>
       <GLP1Header />
       <main>
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-3xl mx-auto px-4 md:px-6'>
             <nav className='text-xs mb-3 flex items-center gap-1' aria-label='Breadcrumb'>
-              <Link href='/' style={{ color: '#7A6478' }}>Home</Link>
-              <ChevronRight className='h-3 w-3' style={{ color: '#7A6478' }} />
-              <span style={{ color: '#3A1B3D' }}>{breadcrumb ?? title}</span>
+              <Link href='/' style={{ color: '#6B7B82' }}>Home</Link>
+              <ChevronRight className='h-3 w-3' style={{ color: '#6B7B82' }} />
+              <span style={{ color: '#0E2A3A' }}>{breadcrumb ?? title}</span>
             </nav>
             <h1
               className='text-3xl md:text-5xl font-bold mb-4'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               {title}
             </h1>
             {subtitle && (
-              <p className='text-base md:text-lg' style={{ color: '#4B3548' }}>
+              <p className='text-base md:text-lg' style={{ color: '#3D5560' }}>
                 {subtitle}
               </p>
             )}
           </div>
         </section>
 
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <article
             className='max-w-3xl mx-auto px-4 md:px-6 leading-relaxed glp1-trust-page'
-            style={{ color: '#4B3548' }}
+            style={{ color: '#3D5560' }}
           >
             {children}
           </article>
@@ -70,7 +70,7 @@ export function GLP1TrustPage({ title, subtitle, breadcrumb, children }: GLP1Tru
       {/* Inline scoped styles for the trust-page article */}
       <style>{`
         .glp1-trust-page h2 {
-          color: #3A1B3D;
+          color: #0E2A3A;
           font-family: 'Playfair Display', Georgia, serif;
           font-size: 1.5rem;
           font-weight: 700;
@@ -85,10 +85,10 @@ export function GLP1TrustPage({ title, subtitle, breadcrumb, children }: GLP1Tru
         }
         .glp1-trust-page li { margin-bottom: 0.5rem; }
         .glp1-trust-page a {
-          color: #F47C5B;
+          color: #D4A33A;
           text-decoration: underline;
         }
-        .glp1-trust-page strong { color: #3A1B3D; }
+        .glp1-trust-page strong { color: #0E2A3A; }
       `}</style>
     </GLP1Layout>
   );

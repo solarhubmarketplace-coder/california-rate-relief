@@ -103,11 +103,11 @@ export default function GLP1Home() {
       {/* Above-the-fold FTC affiliate disclosure — placed BEFORE the hero per FTC guidance */}
       <div
         className='border-b'
-        style={{ backgroundColor: '#FFF1D6', borderColor: '#E8DDD0' }}
+        style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}
       >
         <div
           className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center'
-          style={{ color: '#8A6D1A' }}
+          style={{ color: '#7A6020' }}
         >
           <strong>Affiliate Disclosure:</strong> This page contains affiliate links. We may earn a
           commission when you sign up — at no additional cost to you.{' '}

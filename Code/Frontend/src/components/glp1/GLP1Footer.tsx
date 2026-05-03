@@ -31,7 +31,7 @@ export function GLP1Footer() {
   return (
     <footer
       className='text-white pt-14 pb-6'
-      style={{ backgroundColor: '#2D0E2D' }}
+      style={{ backgroundColor: '#0F4D5C' }}
     >
       <div className='max-w-7xl mx-auto px-4 md:px-6'>
         {/* Top row: 4 columns */}
@@ -42,9 +42,9 @@ export function GLP1Footer() {
               <span
                 aria-hidden
                 className='inline-block w-6 h-6 rounded-full mr-2'
-                style={{ backgroundColor: '#F47C5B' }}
+                style={{ backgroundColor: '#D4A33A' }}
               />
-              <span className='text-xl font-extrabold' style={{ color: '#F47C5B' }}>
+              <span className='text-xl font-extrabold' style={{ color: '#D4A33A' }}>
                 glp1
               </span>
               <span className='text-xl font-extrabold text-white'>comparehub</span>
@@ -57,7 +57,7 @@ export function GLP1Footer() {
               className='inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full'
               style={{
                 backgroundColor: 'rgba(95, 191, 170, 0.18)',
-                color: '#5FBFAA',
+                color: '#7CA982',
               }}
             >
               <ShieldCheck className='h-3.5 w-3.5' />
@@ -142,7 +142,7 @@ export function GLP1Footer() {
             <Link
               href='/affiliate-disclosure'
               className='underline'
-              style={{ color: '#F47C5B' }}
+              style={{ color: '#D4A33A' }}
             >
               full affiliate disclosure
             </Link>

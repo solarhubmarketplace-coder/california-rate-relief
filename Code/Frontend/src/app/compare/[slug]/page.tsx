@@ -77,8 +77,8 @@ export default async function CompareVsPage({ params }: PageParams) {
 
       <GLP1Header />
 
-      <div className='border-b' style={{ backgroundColor: '#FFF1D6', borderColor: '#E8DDD0' }}>
-        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#8A6D1A' }}>
+      <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
+        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#7A6020' }}>
           <strong>Affiliate Disclosure:</strong> Comparisons are independent of commission rates.{' '}
           <Link href='/affiliate-disclosure' className='underline'>Full disclosure</Link>.
         </div>
@@ -86,23 +86,23 @@ export default async function CompareVsPage({ params }: PageParams) {
 
       <main>
         {/* Header */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-6xl mx-auto px-4 md:px-6'>
             <nav className='text-xs mb-3' aria-label='Breadcrumb'>
-              <Link href='/' style={{ color: '#7A6478' }}>Home</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <Link href='/compare' style={{ color: '#7A6478' }}>Compare</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <span style={{ color: '#3A1B3D' }}>{a.name} vs {b.name}</span>
+              <Link href='/' style={{ color: '#6B7B82' }}>Home</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <Link href='/compare' style={{ color: '#6B7B82' }}>Compare</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <span style={{ color: '#0E2A3A' }}>{a.name} vs {b.name}</span>
             </nav>
 
             <h1
               className='text-3xl md:text-5xl font-bold mb-4'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
-              {a.name} <span style={{ color: '#F47C5B' }}>vs</span> {b.name}
+              {a.name} <span style={{ color: '#D4A33A' }}>vs</span> {b.name}
             </h1>
-            <p className='text-base md:text-lg max-w-3xl' style={{ color: '#4B3548' }}>
+            <p className='text-base md:text-lg max-w-3xl' style={{ color: '#3D5560' }}>
               Side-by-side comparison of {a.name} ({a.monthlyPrice}) and {b.name} ({b.monthlyPrice}).
               Pricing, medications, features, pros, and cons in one view.
             </p>
@@ -110,7 +110,7 @@ export default async function CompareVsPage({ params }: PageParams) {
         </section>
 
         {/* Side-by-side cards */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-6xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-5 md:gap-6'>
             <CompareCard provider={a} sourcePage={`compare-${slug}`} />
             <CompareCard provider={b} sourcePage={`compare-${slug}`} />
@@ -122,7 +122,7 @@ export default async function CompareVsPage({ params }: PageParams) {
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Which Should You Pick?
             </h2>
@@ -130,7 +130,7 @@ export default async function CompareVsPage({ params }: PageParams) {
               <VerdictBlock provider={a} reason={a.bottomLine ?? `${a.name} is best when ${a.bestFor.toLowerCase()}.`} />
               <VerdictBlock provider={b} reason={b.bottomLine ?? `${b.name} is best when ${b.bestFor.toLowerCase()}.`} />
             </div>
-            <p className='text-xs mt-5 italic' style={{ color: '#7A6478' }}>
+            <p className='text-xs mt-5 italic' style={{ color: '#6B7B82' }}>
               Both verdicts above reflect the editorial summary on each provider&rsquo;s detail page.
               For your specific situation, take the{' '}
               <Link href='/match' className='underline'>match quiz</Link>.
@@ -139,11 +139,11 @@ export default async function CompareVsPage({ params }: PageParams) {
         </section>
 
         {/* Related comparisons */}
-        <section className='py-12' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-12' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Related Comparisons
             </h2>
@@ -166,13 +166,13 @@ export default async function CompareVsPage({ params }: PageParams) {
                       key={r.path}
                       href={r.path}
                       className='block bg-white rounded-xl p-4 transition-all hover:-translate-y-0.5'
-                      style={{ border: '1px solid #E8DDD0' }}
+                      style={{ border: '1px solid #E5DDC8' }}
                     >
-                      <div className='text-xs font-bold uppercase tracking-wider mb-1' style={{ color: '#7A6478' }}>
+                      <div className='text-xs font-bold uppercase tracking-wider mb-1' style={{ color: '#6B7B82' }}>
                         Compare
                       </div>
-                      <div className='text-sm font-bold' style={{ color: '#3A1B3D' }}>
-                        {oaName} <span style={{ color: '#F47C5B' }}>vs</span> {obName}
+                      <div className='text-sm font-bold' style={{ color: '#0E2A3A' }}>
+                        {oaName} <span style={{ color: '#D4A33A' }}>vs</span> {obName}
                       </div>
                     </Link>
                   );
@@ -182,11 +182,11 @@ export default async function CompareVsPage({ params }: PageParams) {
         </section>
 
         {/* Final CTA */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-3xl mx-auto px-4 md:px-6'>
             <div
               className='rounded-3xl p-7 md:p-10 text-center text-white'
-              style={{ background: 'linear-gradient(135deg, #F47C5B 0%, #F09A65 50%, #EFC079 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #D4A33A 0%, #C99230 50%, #B88A2A 100%)' }}
             >
               <h2 className='text-2xl md:text-3xl font-bold mb-3' style={{ fontFamily: '"Playfair Display", "Georgia", serif' }}>
                 Still deciding?
@@ -197,7 +197,7 @@ export default async function CompareVsPage({ params }: PageParams) {
               <Link
                 href='/match'
                 className='inline-flex items-center gap-2 bg-white px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-lg'
-                style={{ color: '#F47C5B' }}
+                style={{ color: '#D4A33A' }}
               >
                 Take the Quiz <ArrowRight className='h-4 w-4' />
               </Link>
@@ -218,7 +218,7 @@ function CompareCard({ provider, sourcePage }: { provider: typeof glp1Providers[
   return (
     <div
       className='bg-white rounded-2xl p-6 shadow-sm flex flex-col'
-      style={{ border: '1px solid #E8DDD0' }}
+      style={{ border: '1px solid #E5DDC8' }}
     >
       <span
         className='inline-block self-start text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full mb-3'
@@ -227,32 +227,32 @@ function CompareCard({ provider, sourcePage }: { provider: typeof glp1Providers[
         {provider.category}
       </span>
 
-      <h3 className='text-2xl font-bold mb-1' style={{ color: '#3A1B3D' }}>
+      <h3 className='text-2xl font-bold mb-1' style={{ color: '#0E2A3A' }}>
         {provider.name}
       </h3>
       {provider.tagline && (
-        <p className='text-sm italic mb-4' style={{ color: '#7A6478' }}>{provider.tagline}</p>
+        <p className='text-sm italic mb-4' style={{ color: '#6B7B82' }}>{provider.tagline}</p>
       )}
 
       {/* Pricing block */}
-      <div className='mb-4 p-4 rounded-xl' style={{ backgroundColor: '#FFF6E8' }}>
-        <div className='text-[10px] font-bold uppercase tracking-widest mb-1' style={{ color: '#7A6478' }}>
+      <div className='mb-4 p-4 rounded-xl' style={{ backgroundColor: '#F0EBE0' }}>
+        <div className='text-[10px] font-bold uppercase tracking-widest mb-1' style={{ color: '#6B7B82' }}>
           Starting at
         </div>
-        <div className='text-2xl font-bold' style={{ color: '#F47C5B' }}>{provider.monthlyPrice}</div>
+        <div className='text-2xl font-bold' style={{ color: '#D4A33A' }}>{provider.monthlyPrice}</div>
       </div>
 
       {/* Medications */}
       <div className='mb-4'>
-        <div className='text-xs font-bold uppercase tracking-wider mb-1.5' style={{ color: '#7A6478' }}>Medications</div>
-        <div className='text-sm' style={{ color: '#4B3548' }}>{provider.medications}</div>
+        <div className='text-xs font-bold uppercase tracking-wider mb-1.5' style={{ color: '#6B7B82' }}>Medications</div>
+        <div className='text-sm' style={{ color: '#3D5560' }}>{provider.medications}</div>
         {provider.medicationType && provider.medicationType.length > 0 && (
           <div className='flex flex-wrap gap-1.5 mt-2'>
             {provider.medicationType.map((mt) => (
               <span
                 key={mt}
                 className='text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full'
-                style={{ backgroundColor: '#EDE5F2', color: '#5C3A7B' }}
+                style={{ backgroundColor: '#DEE5E8', color: '#385560' }}
               >
                 {mt}
               </span>
@@ -264,13 +264,13 @@ function CompareCard({ provider, sourcePage }: { provider: typeof glp1Providers[
       {/* Ratings */}
       <div className='mb-4 flex items-center gap-4 text-sm'>
         {provider.rating > 0 && (
-          <span className='inline-flex items-center gap-1' style={{ color: '#3A1B3D' }}>
-            <Star className='h-4 w-4 fill-current' style={{ color: '#F47C5B' }} />
+          <span className='inline-flex items-center gap-1' style={{ color: '#0E2A3A' }}>
+            <Star className='h-4 w-4 fill-current' style={{ color: '#D4A33A' }} />
             <strong>{provider.rating.toFixed(1)}</strong> Trustpilot
           </span>
         )}
         {provider.bbbRating && (
-          <span style={{ color: '#3A1B3D' }}>
+          <span style={{ color: '#0E2A3A' }}>
             <strong>{provider.bbbRating}</strong> BBB
           </span>
         )}
@@ -279,11 +279,11 @@ function CompareCard({ provider, sourcePage }: { provider: typeof glp1Providers[
       {/* Pros (top 3) */}
       {provider.pros && provider.pros.length > 0 && (
         <div className='mb-3'>
-          <div className='text-xs font-bold uppercase tracking-wider mb-1.5' style={{ color: '#1F6B3D' }}>Pros</div>
+          <div className='text-xs font-bold uppercase tracking-wider mb-1.5' style={{ color: '#2D5A3D' }}>Pros</div>
           <ul className='space-y-1'>
             {provider.pros.slice(0, 3).map((p) => (
-              <li key={p} className='flex items-start gap-1.5 text-xs' style={{ color: '#4B3548' }}>
-                <CircleCheck className='h-3.5 w-3.5 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+              <li key={p} className='flex items-start gap-1.5 text-xs' style={{ color: '#3D5560' }}>
+                <CircleCheck className='h-3.5 w-3.5 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                 <span>{p}</span>
               </li>
             ))}
@@ -297,8 +297,8 @@ function CompareCard({ provider, sourcePage }: { provider: typeof glp1Providers[
           <div className='text-xs font-bold uppercase tracking-wider mb-1.5' style={{ color: '#B14739' }}>Cons</div>
           <ul className='space-y-1'>
             {provider.cons.slice(0, 3).map((c) => (
-              <li key={c} className='flex items-start gap-1.5 text-xs' style={{ color: '#4B3548' }}>
-                <X className='h-3.5 w-3.5 mt-0.5 flex-shrink-0' style={{ color: '#B14739' }} />
+              <li key={c} className='flex items-start gap-1.5 text-xs' style={{ color: '#3D5560' }}>
+                <X className='h-3.5 w-3.5 mt-0.5 flex-shrink-0' style={{ color: '#7A6020' }} />
                 <span>{c}</span>
               </li>
             ))}
@@ -311,7 +311,7 @@ function CompareCard({ provider, sourcePage }: { provider: typeof glp1Providers[
         <Link
           href={`/providers/${provider.slug}`}
           className='flex-1 inline-flex items-center justify-center gap-1 text-sm font-semibold py-2.5 rounded-full transition-all'
-          style={{ border: '1.5px solid #3A1B3D', color: '#3A1B3D' }}
+          style={{ border: '1.5px solid #0E2A3A', color: '#0E2A3A' }}
         >
           Full Review
         </Link>
@@ -320,7 +320,7 @@ function CompareCard({ provider, sourcePage }: { provider: typeof glp1Providers[
           target='_blank'
           rel='sponsored nofollow noopener noreferrer'
           className='flex-1 inline-flex items-center justify-center gap-1 text-sm font-semibold py-2.5 rounded-full transition-all hover:-translate-y-0.5 text-white'
-          style={{ backgroundColor: '#F47C5B' }}
+          style={{ backgroundColor: '#D4A33A' }}
         >
           Visit Site <ExternalLink className='h-3.5 w-3.5' />
         </a>
@@ -333,22 +333,22 @@ function VerdictBlock({ provider, reason }: { provider: typeof glp1Providers[num
   return (
     <div
       className='p-5 rounded-2xl'
-      style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0' }}
+      style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}
     >
-      <div className='text-xs font-bold uppercase tracking-wider mb-2' style={{ color: '#F47C5B' }}>
+      <div className='text-xs font-bold uppercase tracking-wider mb-2' style={{ color: '#D4A33A' }}>
         Pick {provider.name} if…
       </div>
-      <p className='text-sm leading-relaxed' style={{ color: '#4B3548' }}>{reason}</p>
+      <p className='text-sm leading-relaxed' style={{ color: '#3D5560' }}>{reason}</p>
     </div>
   );
 }
 
 function categoryColor(c: typeof glp1Providers[number]['category']) {
   const map = {
-    Telemedicine: { bg: '#FFE5D9', fg: '#B14739' },
-    'Compounding Pharmacy': { bg: '#D4F1E8', fg: '#1F6B3D' },
-    'Manufacturer Program': { bg: '#EDE5F2', fg: '#5C3A7B' },
-    Hybrid: { bg: '#FFF1D6', fg: '#8A6D1A' },
+    Telemedicine: { bg: '#E8DCC0', fg: '#7A6020' },
+    'Compounding Pharmacy': { bg: '#D9E8D4', fg: '#2D5A3D' },
+    'Manufacturer Program': { bg: '#DEE5E8', fg: '#385560' },
+    Hybrid: { bg: '#F4EBD0', fg: '#7A6020' },
   };
   return map[c];
 }

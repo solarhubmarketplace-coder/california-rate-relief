@@ -64,28 +64,28 @@ function QuizContent() {
       <GLP1Header />
 
       {/* Affiliate disclosure */}
-      <div className='border-b' style={{ backgroundColor: '#FFF1D6', borderColor: '#E8DDD0' }}>
-        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#8A6D1A' }}>
+      <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
+        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#7A6020' }}>
           <strong>Affiliate Disclosure:</strong> Recommendations are not influenced by commission rates.{' '}
           <Link href='/affiliate-disclosure' className='underline'>Full disclosure</Link>.
         </div>
       </div>
 
       <main>
-        <section className='py-10 md:py-16' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-16' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-3xl mx-auto px-4 md:px-6'>
             {/* Progress bar */}
             <div className='mb-7'>
-              <div className='flex justify-between text-xs mb-2 font-semibold' style={{ color: '#7A6478' }}>
+              <div className='flex justify-between text-xs mb-2 font-semibold' style={{ color: '#6B7B82' }}>
                 <span>Step {step} of {TOTAL_STEPS}</span>
                 <span>{Math.round((step / TOTAL_STEPS) * 100)}% complete</span>
               </div>
-              <div className='w-full h-2 rounded-full' style={{ backgroundColor: '#E8DDD0' }}>
+              <div className='w-full h-2 rounded-full' style={{ backgroundColor: '#E5DDC8' }}>
                 <div
                   className='h-2 rounded-full transition-all duration-500'
                   style={{
                     width: `${(step / TOTAL_STEPS) * 100}%`,
-                    backgroundColor: '#F47C5B',
+                    backgroundColor: '#D4A33A',
                   }}
                 />
               </div>
@@ -94,7 +94,7 @@ function QuizContent() {
             {/* Step content */}
             <div
               className='bg-white rounded-3xl p-7 md:p-10 shadow-sm'
-              style={{ border: '1px solid #E8DDD0' }}
+              style={{ border: '1px solid #E5DDC8' }}
             >
               {step === 1 && (
                 <StepCard
@@ -174,7 +174,7 @@ function QuizContent() {
                   type='button'
                   onClick={() => goToStep((step - 1) as Step)}
                   className='inline-flex items-center gap-1 text-sm font-semibold mt-5'
-                  style={{ color: '#7A6478' }}
+                  style={{ color: '#6B7B82' }}
                 >
                   <ArrowLeft className='h-4 w-4' /> Back
                 </button>
@@ -182,13 +182,13 @@ function QuizContent() {
             </div>
 
             {/* Side CTA */}
-            <div className='mt-8 text-center text-sm' style={{ color: '#4B3548' }}>
+            <div className='mt-8 text-center text-sm' style={{ color: '#3D5560' }}>
               Want to explore on your own?{' '}
-              <Link href='/providers' className='underline font-semibold' style={{ color: '#F47C5B' }}>
+              <Link href='/providers' className='underline font-semibold' style={{ color: '#D4A33A' }}>
                 View All Providers
               </Link>{' '}
               or{' '}
-              <Link href='/compare' className='underline font-semibold' style={{ color: '#F47C5B' }}>
+              <Link href='/compare' className='underline font-semibold' style={{ color: '#D4A33A' }}>
                 Compare Providers
               </Link>
             </div>
@@ -227,11 +227,11 @@ function StepCard({
     <div>
       <h2
         className='text-2xl md:text-3xl font-bold mb-3'
-        style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+        style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
       >
         {title}
       </h2>
-      <p className='text-sm md:text-base mb-6' style={{ color: '#4B3548' }}>
+      <p className='text-sm md:text-base mb-6' style={{ color: '#3D5560' }}>
         {body}
       </p>
       <div className='space-y-3'>
@@ -244,13 +244,13 @@ function StepCard({
               onClick={() => onSelect(opt.value)}
               className='w-full text-left p-4 md:p-5 rounded-2xl transition-all hover:-translate-y-0.5 flex items-center justify-between gap-3'
               style={{
-                backgroundColor: isSelected ? '#FFE5D9' : '#FDF7F0',
-                border: isSelected ? '2px solid #F47C5B' : '1.5px solid #E8DDD0',
-                color: '#3A1B3D',
+                backgroundColor: isSelected ? '#E8DCC0' : '#F8F4ED',
+                border: isSelected ? '2px solid #D4A33A' : '1.5px solid #E5DDC8',
+                color: '#0E2A3A',
               }}
             >
               <span className='font-semibold text-sm md:text-base'>{opt.label}</span>
-              <ArrowRight className='h-4 w-4 flex-shrink-0' style={{ color: '#F47C5B' }} />
+              <ArrowRight className='h-4 w-4 flex-shrink-0' style={{ color: '#D4A33A' }} />
             </button>
           );
         })}
@@ -270,18 +270,18 @@ function ResultsCard({ recommendations, answers }: { recommendations: GLP1Provid
     <div>
       <div
         className='inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4'
-        style={{ backgroundColor: '#D4F1E8', color: '#1F6B3D' }}
+        style={{ backgroundColor: '#D9E8D4', color: '#2D5A3D' }}
       >
         <CheckCircle2 className='h-3.5 w-3.5' /> Your Match
       </div>
 
       <h2
         className='text-2xl md:text-3xl font-bold mb-3'
-        style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+        style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
       >
         Your Top {recommendations.length} GLP-1 Providers
       </h2>
-      <p className='text-sm md:text-base mb-6' style={{ color: '#4B3548' }}>
+      <p className='text-sm md:text-base mb-6' style={{ color: '#3D5560' }}>
         Based on your answers ({summary}), here are the providers most likely to fit.
       </p>
 
@@ -295,14 +295,14 @@ function ResultsCard({ recommendations, answers }: { recommendations: GLP1Provid
         <Link
           href='/match?step=1'
           className='inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold transition-all'
-          style={{ backgroundColor: 'white', color: '#3A1B3D', border: '1.5px solid #3A1B3D' }}
+          style={{ backgroundColor: 'white', color: '#0E2A3A', border: '1.5px solid #0E2A3A' }}
         >
           <ArrowLeft className='h-4 w-4' /> Retake Quiz
         </Link>
         <Link
           href='/providers'
           className='inline-flex items-center gap-1 px-5 py-2.5 rounded-full text-sm font-semibold transition-all'
-          style={{ backgroundColor: '#3A1B3D', color: 'white' }}
+          style={{ backgroundColor: '#0E2A3A', color: 'white' }}
         >
           See All Providers <ArrowRight className='h-4 w-4' />
         </Link>
@@ -316,33 +316,33 @@ function ResultProvider({ rank, provider }: { rank: number; provider: GLP1Provid
   return (
     <div
       className='p-4 rounded-2xl flex items-center gap-4'
-      style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0' }}
+      style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}
     >
       <div
         className='w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white'
-        style={{ backgroundColor: rank === 1 ? '#F47C5B' : '#3A1B3D' }}
+        style={{ backgroundColor: rank === 1 ? '#D4A33A' : '#0E2A3A' }}
       >
         {rank}
       </div>
       <div className='flex-1 min-w-0'>
         <div className='flex items-baseline gap-2 flex-wrap'>
-          <span className='font-bold' style={{ color: '#3A1B3D' }}>{provider.name}</span>
+          <span className='font-bold' style={{ color: '#0E2A3A' }}>{provider.name}</span>
           {provider.rating > 0 && (
-            <span className='inline-flex items-center gap-0.5 text-xs' style={{ color: '#3A1B3D' }}>
-              <Star className='h-3 w-3 fill-current' style={{ color: '#F47C5B' }} />
+            <span className='inline-flex items-center gap-0.5 text-xs' style={{ color: '#0E2A3A' }}>
+              <Star className='h-3 w-3 fill-current' style={{ color: '#D4A33A' }} />
               {provider.rating.toFixed(1)}
             </span>
           )}
         </div>
-        <div className='text-xs' style={{ color: '#7A6478' }}>{provider.tagline}</div>
-        <div className='text-sm font-bold mt-1' style={{ color: '#F47C5B' }}>{provider.monthlyPrice}</div>
+        <div className='text-xs' style={{ color: '#6B7B82' }}>{provider.tagline}</div>
+        <div className='text-sm font-bold mt-1' style={{ color: '#D4A33A' }}>{provider.monthlyPrice}</div>
       </div>
       <a
         href={affiliateUrl}
         target='_blank'
         rel='sponsored nofollow noopener noreferrer'
         className='inline-flex items-center gap-1 text-xs font-semibold px-3 py-2 rounded-full text-white whitespace-nowrap'
-        style={{ backgroundColor: '#F47C5B' }}
+        style={{ backgroundColor: '#D4A33A' }}
       >
         Visit <ExternalLink className='h-3 w-3' />
       </a>

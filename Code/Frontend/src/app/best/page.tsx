@@ -49,10 +49,10 @@ export default function BestRankingsHub() {
       <GLP1Header />
 
       {/* Affiliate disclosure */}
-      <div className='border-b' style={{ backgroundColor: '#FFF1D6', borderColor: '#E8DDD0' }}>
+      <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
         <div
           className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center'
-          style={{ color: '#8A6D1A' }}
+          style={{ color: '#7A6020' }}
         >
           <strong>Affiliate Disclosure:</strong> Rankings are independent of commission rates. We
           may earn a commission if you sign up — at no extra cost to you.{' '}
@@ -65,32 +65,32 @@ export default function BestRankingsHub() {
 
       <main>
         {/* Page header */}
-        <section className='py-10 md:py-16' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-16' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-7xl mx-auto px-4 md:px-6'>
             <nav className='text-xs mb-3' aria-label='Breadcrumb'>
-              <Link href='/' style={{ color: '#7A6478' }}>Home</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <span style={{ color: '#3A1B3D' }}>Best Rankings</span>
+              <Link href='/' style={{ color: '#6B7B82' }}>Home</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <span style={{ color: '#0E2A3A' }}>Best Rankings</span>
             </nav>
 
             <h1
               className='text-3xl md:text-5xl font-bold mb-4'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Best GLP-1 Providers Online (May 2026)
             </h1>
-            <p className='text-base md:text-lg max-w-3xl mb-6' style={{ color: '#4B3548' }}>
+            <p className='text-base md:text-lg max-w-3xl mb-6' style={{ color: '#3D5560' }}>
               Expert rankings of the top GLP-1 telemedicine providers for each medication. Updated
               monthly with verified pricing.
             </p>
 
-            <div className='flex flex-wrap items-center gap-4 text-xs' style={{ color: '#4B3548' }}>
+            <div className='flex flex-wrap items-center gap-4 text-xs' style={{ color: '#3D5560' }}>
               <div className='flex items-center gap-1.5'>
-                <ShieldCheck className='h-4 w-4' style={{ color: '#5FBFAA' }} />
+                <ShieldCheck className='h-4 w-4' style={{ color: '#7CA982' }} />
                 Independent Rankings
               </div>
               <div className='flex items-center gap-1.5'>
-                <BadgeCheck className='h-4 w-4' style={{ color: '#5FBFAA' }} />
+                <BadgeCheck className='h-4 w-4' style={{ color: '#7CA982' }} />
                 Updated Monthly
               </div>
             </div>
@@ -98,15 +98,15 @@ export default function BestRankingsHub() {
         </section>
 
         {/* By Category section */}
-        <section className='py-12' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-12' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-7xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-2'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               By Category
             </h2>
-            <p className='text-sm mb-6' style={{ color: '#7A6478' }}>
+            <p className='text-sm mb-6' style={{ color: '#6B7B82' }}>
               Compare the broad approach: brand-name vs compounded.
             </p>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5'>
@@ -122,11 +122,11 @@ export default function BestRankingsHub() {
           <div className='max-w-7xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-2'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               By Medication
             </h2>
-            <p className='text-sm mb-6' style={{ color: '#7A6478' }}>
+            <p className='text-sm mb-6' style={{ color: '#6B7B82' }}>
               Drill down to the specific medication you&rsquo;re interested in.
             </p>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4'>
@@ -138,15 +138,15 @@ export default function BestRankingsHub() {
         </section>
 
         {/* Methodology block */}
-        <section className='py-14 md:py-20' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-14 md:py-20' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-3'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               How We Create Our Rankings
             </h2>
-            <p className='text-base mb-8' style={{ color: '#4B3548' }}>
+            <p className='text-base mb-8' style={{ color: '#3D5560' }}>
               Every provider in our rankings is evaluated against the same four criteria. We do not
               accept payment for placement and do not adjust rankings based on commission rates.
             </p>
@@ -172,12 +172,12 @@ export default function BestRankingsHub() {
 
             <div
               className='mt-8 rounded-2xl p-6 md:p-7'
-              style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0' }}
+              style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}
             >
-              <h3 className='text-lg font-bold mb-3' style={{ color: '#3A1B3D' }}>
+              <h3 className='text-lg font-bold mb-3' style={{ color: '#0E2A3A' }}>
                 Our Commitment
               </h3>
-              <ul className='space-y-2 text-sm' style={{ color: '#4B3548' }}>
+              <ul className='space-y-2 text-sm' style={{ color: '#3D5560' }}>
                 <li>· <strong>Unbiased:</strong> Recommendations are not influenced by commission rates.</li>
                 <li>· <strong>Updated:</strong> Pricing reviewed monthly; rankings refreshed quarterly.</li>
                 <li>· <strong>Transparent:</strong> Methodology and affiliate disclosures are public.</li>
@@ -198,26 +198,26 @@ function RankingTile({ med, large = false }: { med: typeof glp1Medications[numbe
     <Link
       href={`/best/telemedicine-${med.slug}`}
       className='block bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-all hover:-translate-y-1'
-      style={{ border: '1px solid #E8DDD0' }}
+      style={{ border: '1px solid #E5DDC8' }}
     >
       <div
         className='inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full mb-3'
-        style={{ backgroundColor: '#FFF1D6', color: '#A88A1A' }}
+        style={{ backgroundColor: '#F4EBD0', color: '#7A6020' }}
       >
         <Trophy className='h-3 w-3' /> Top Ranked
       </div>
       <div
         className={`font-bold mb-1.5 ${large ? 'text-xl md:text-2xl' : 'text-sm md:text-base'}`}
-        style={{ color: '#3A1B3D' }}
+        style={{ color: '#0E2A3A' }}
       >
         Best for {med.name}
       </div>
       {large && med.priceRange && (
-        <div className='text-xs mb-3' style={{ color: '#7A6478' }}>
+        <div className='text-xs mb-3' style={{ color: '#6B7B82' }}>
           From {med.priceRange.split('–')[0]}
         </div>
       )}
-      <span className='inline-flex items-center gap-1 text-xs font-semibold' style={{ color: '#F47C5B' }}>
+      <span className='inline-flex items-center gap-1 text-xs font-semibold' style={{ color: '#D4A33A' }}>
         See Top 5 <ArrowRight className='h-3 w-3' />
       </span>
     </Link>
@@ -228,15 +228,15 @@ function MethodologyItem({ title, body }: { title: string; body: string }) {
   return (
     <div
       className='p-5 rounded-2xl bg-white'
-      style={{ border: '1px solid #E8DDD0' }}
+      style={{ border: '1px solid #E5DDC8' }}
     >
       <div className='flex items-start gap-3'>
-        <Star className='h-5 w-5 mt-0.5 flex-shrink-0' style={{ color: '#F47C5B' }} />
+        <Star className='h-5 w-5 mt-0.5 flex-shrink-0' style={{ color: '#D4A33A' }} />
         <div>
-          <h3 className='font-bold mb-1.5' style={{ color: '#3A1B3D' }}>
+          <h3 className='font-bold mb-1.5' style={{ color: '#0E2A3A' }}>
             {title}
           </h3>
-          <p className='text-sm' style={{ color: '#4B3548' }}>
+          <p className='text-sm' style={{ color: '#3D5560' }}>
             {body}
           </p>
         </div>

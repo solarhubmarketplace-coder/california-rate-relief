@@ -224,7 +224,7 @@ function CrrAuthor() {
 }
 function Glp1Author() {
   const cfg = CONFIGS.glp1;
-  const palette: Palette = { fg: '#3A1B3D', muted: '#4B3548', mutedFg: '#7A6478', accent: '#F47C5B', bg: '#FDF7F0', cardBg: '#FFFFFF', cardBorder: '#E8DDD0' };
+  const palette: Palette = { fg: '#0E2A3A', muted: '#3D5560', mutedFg: '#6B7B82', accent: '#D4A33A', bg: '#F8F4ED', cardBg: '#FFFFFF', cardBorder: '#E5DDC8' };
   return <GLP1Layout><GLP1Header /><PageShell palette={palette} cfg={cfg}><AuthorBody cfg={cfg} palette={palette} /></PageShell><GLP1Footer /></GLP1Layout>;
 }
 

@@ -99,8 +99,8 @@ export default function ZepboundVsWegovyPage() {
 
       <GLP1Header />
 
-      <div className='border-b' style={{ backgroundColor: '#FFF1D6', borderColor: '#E8DDD0' }}>
-        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#8A6D1A' }}>
+      <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
+        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#7A6020' }}>
           <strong>Affiliate Disclosure:</strong> This page contains affiliate links. We may earn a commission — at no extra cost to you.{' '}
           <Link href='/affiliate-disclosure' className='underline'>Full disclosure</Link>.
         </div>
@@ -108,23 +108,23 @@ export default function ZepboundVsWegovyPage() {
 
       <main>
         {/* Header */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <nav className='text-xs mb-3' aria-label='Breadcrumb'>
-              <Link href='/' style={{ color: '#7A6478' }}>Home</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <span style={{ color: '#3A1B3D' }}>Zepbound vs Wegovy</span>
+              <Link href='/' style={{ color: '#6B7B82' }}>Home</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <span style={{ color: '#0E2A3A' }}>Zepbound vs Wegovy</span>
             </nav>
             <h1
               className='text-3xl md:text-5xl font-bold mb-4 leading-[1.1]'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
-              Zepbound <span style={{ color: '#F47C5B' }}>vs</span> Wegovy 2026
+              Zepbound <span style={{ color: '#D4A33A' }}>vs</span> Wegovy 2026
             </h1>
-            <p className='text-lg md:text-xl mb-3' style={{ color: '#4B3548' }}>
+            <p className='text-lg md:text-xl mb-3' style={{ color: '#3D5560' }}>
               Side-by-side comparison of the two FDA-approved branded GLP-1 weight-loss medications.
             </p>
-            <div className='flex items-center gap-3 text-xs' style={{ color: '#7A6478' }}>
+            <div className='flex items-center gap-3 text-xs' style={{ color: '#6B7B82' }}>
               <span className='flex items-center gap-1'>
                 <Calendar className='h-3 w-3' /> Updated May 3, 2026
               </span>
@@ -135,17 +135,17 @@ export default function ZepboundVsWegovyPage() {
         </section>
 
         {/* TL;DR verdict */}
-        <section className='py-10' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <div
               className='rounded-2xl p-6 md:p-8 bg-white'
-              style={{ border: '2px solid #F47C5B' }}
+              style={{ border: '2px solid #D4A33A' }}
             >
               <div className='flex items-start gap-3 mb-5'>
-                <Trophy className='h-6 w-6 flex-shrink-0' style={{ color: '#F47C5B' }} />
+                <Trophy className='h-6 w-6 flex-shrink-0' style={{ color: '#D4A33A' }} />
                 <h2
                   className='text-2xl md:text-3xl font-bold'
-                  style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+                  style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
                 >
                   TL;DR Verdict
                 </h2>
@@ -176,18 +176,18 @@ export default function ZepboundVsWegovyPage() {
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Head-to-Head At a Glance
             </h2>
-            <div className='overflow-x-auto rounded-2xl' style={{ border: '1px solid #E8DDD0' }}>
+            <div className='overflow-x-auto rounded-2xl' style={{ border: '1px solid #E5DDC8' }}>
               <table className='w-full text-sm'>
                 <thead>
-                  <tr style={{ backgroundColor: '#FDF7F0' }}>
-                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Factor</th>
-                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#3A1B3D' }}>Zepbound</th>
-                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#3A1B3D' }}>Wegovy</th>
-                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Winner</th>
+                  <tr style={{ backgroundColor: '#F8F4ED' }}>
+                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Factor</th>
+                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#0E2A3A' }}>Zepbound</th>
+                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#0E2A3A' }}>Wegovy</th>
+                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Winner</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -203,7 +203,7 @@ export default function ZepboundVsWegovyPage() {
                 </tbody>
               </table>
             </div>
-            <p className='text-xs mt-3 italic' style={{ color: '#7A6478' }}>
+            <p className='text-xs mt-3 italic' style={{ color: '#6B7B82' }}>
               Trial citations: SURMOUNT-1 (NEJM 2022), STEP-1 (NEJM 2021), SURMOUNT-5 (NEJM 2025).
               Pricing verified May 2026 from telehealth provider sites; branded GLP-1 pricing varies by pharmacy and insurance status.
             </p>
@@ -211,26 +211,26 @@ export default function ZepboundVsWegovyPage() {
         </section>
 
         {/* Mechanism explainer */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Why Zepbound Often Produces More Weight Loss
             </h2>
-            <p className='text-base mb-4 leading-relaxed' style={{ color: '#4B3548' }}>
+            <p className='text-base mb-4 leading-relaxed' style={{ color: '#3D5560' }}>
               Zepbound (tirzepatide) is the only dual <strong>GIP + GLP-1</strong> receptor agonist on the market.
               Wegovy (semaglutide) targets only the GLP-1 receptor. The dual mechanism produces additional appetite
               suppression and metabolic effects beyond what a GLP-1-only agent achieves.
             </p>
-            <p className='text-base mb-4 leading-relaxed' style={{ color: '#4B3548' }}>
+            <p className='text-base mb-4 leading-relaxed' style={{ color: '#3D5560' }}>
               In <strong>SURMOUNT-5</strong> — the only head-to-head trial of the two molecules — patients on tirzepatide
               lost 20.2% of body weight at 72 weeks vs 13.7% on semaglutide. That is roughly 50% more weight loss
               from the dual-agonist arm.
             </p>
-            <p className='text-sm italic' style={{ color: '#7A6478' }}>
-              Source: <a href='https://www.nejm.org/doi/full/10.1056/NEJMoa2416394' target='_blank' rel='noopener noreferrer' style={{ color: '#F47C5B', textDecoration: 'underline' }}>SURMOUNT-5, NEJM 2025</a>.
+            <p className='text-sm italic' style={{ color: '#6B7B82' }}>
+              Source: <a href='https://www.nejm.org/doi/full/10.1056/NEJMoa2416394' target='_blank' rel='noopener noreferrer' style={{ color: '#D4A33A', textDecoration: 'underline' }}>SURMOUNT-5, NEJM 2025</a>.
             </p>
           </div>
         </section>
@@ -240,17 +240,17 @@ export default function ZepboundVsWegovyPage() {
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Side Effects Compared (Trial Data)
             </h2>
-            <div className='overflow-x-auto rounded-2xl' style={{ border: '1px solid #E8DDD0' }}>
+            <div className='overflow-x-auto rounded-2xl' style={{ border: '1px solid #E5DDC8' }}>
               <table className='w-full text-sm'>
                 <thead>
-                  <tr style={{ backgroundColor: '#FDF7F0' }}>
-                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Side Effect</th>
-                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#3A1B3D' }}>Zepbound (SURMOUNT-1)</th>
-                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#3A1B3D' }}>Wegovy (STEP-1)</th>
+                  <tr style={{ backgroundColor: '#F8F4ED' }}>
+                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Side Effect</th>
+                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#0E2A3A' }}>Zepbound (SURMOUNT-1)</th>
+                    <th className='text-center px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#0E2A3A' }}>Wegovy (STEP-1)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -262,7 +262,7 @@ export default function ZepboundVsWegovyPage() {
                 </tbody>
               </table>
             </div>
-            <p className='text-xs mt-3 italic' style={{ color: '#7A6478' }}>
+            <p className='text-xs mt-3 italic' style={{ color: '#6B7B82' }}>
               Both medications carry FDA boxed warnings for thyroid C-cell tumors (based on rodent studies).
               Both are contraindicated in patients with personal or family history of medullary thyroid carcinoma
               or Multiple Endocrine Neoplasia syndrome type 2 (MEN 2). Always consult a prescriber before starting.
@@ -271,11 +271,11 @@ export default function ZepboundVsWegovyPage() {
         </section>
 
         {/* Cost section */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Cost Comparison (May 2026)
             </h2>
@@ -289,7 +289,7 @@ export default function ZepboundVsWegovyPage() {
                 <div className='text-sm font-bold mb-1' style={{ color: '#B14739' }}>
                   FDA Compounded Notice
                 </div>
-                <div className='text-sm' style={{ color: '#4B3548' }}>
+                <div className='text-sm' style={{ color: '#3D5560' }}>
                   The FDA April 30, 2026 503B compounded shutdown proposal continues to evolve.
                   Compounded tirzepatide and semaglutide remain available through 503A pharmacies but
                   are <strong>NOT FDA-approved drugs</strong>. Confirm legal/medical guidance with your prescriber.
@@ -305,9 +305,9 @@ export default function ZepboundVsWegovyPage() {
               <CostRow label='Compounded semaglutide (503A pharmacy)' price='$99–$297/mo' />
             </div>
 
-            <p className='text-xs mt-4' style={{ color: '#7A6478' }}>
+            <p className='text-xs mt-4' style={{ color: '#6B7B82' }}>
               Insurance coverage for branded Zepbound and Wegovy varies. Many commercial plans cover one
-              or both for patients meeting BMI eligibility. Use our <Link href='/tools/cost-calculator' className='underline' style={{ color: '#F47C5B' }}>cost calculator</Link> to estimate
+              or both for patients meeting BMI eligibility. Use our <Link href='/tools/cost-calculator' className='underline' style={{ color: '#D4A33A' }}>cost calculator</Link> to estimate
               your 12-month spend at any provider.
             </p>
           </div>
@@ -318,7 +318,7 @@ export default function ZepboundVsWegovyPage() {
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Which One Should You Ask Your Doctor About?
             </h2>
@@ -326,42 +326,42 @@ export default function ZepboundVsWegovyPage() {
               <DecisionRow
                 ifClause='You want maximum weight loss and tolerate GI side effects'
                 pick='Zepbound'
-                color='#F47C5B'
+                color='#D4A33A'
               />
               <DecisionRow
                 ifClause='You want a longer FDA track record and slightly milder side effects'
                 pick='Wegovy'
-                color='#F47C5B'
+                color='#D4A33A'
               />
               <DecisionRow
                 ifClause='You want the cheapest branded GLP-1 and prefer oral over injection'
                 pick='Wegovy Pill (oral semaglutide)'
-                color='#5FBFAA'
+                color='#7CA982'
               />
               <DecisionRow
                 ifClause='You are uninsured and need lowest possible cost'
                 pick='Compounded semaglutide ($99/mo at GobyMeds)'
-                color='#5FBFAA'
+                color='#7CA982'
               />
               <DecisionRow
                 ifClause='Your insurance covers one but not the other'
                 pick='Whichever is covered (cost difference dominates)'
-                color='#7A6478'
+                color='#6B7B82'
               />
             </div>
           </div>
         </section>
 
         {/* Provider comparison table */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-7xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-2 text-center'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Where to Get Zepbound or Wegovy
             </h2>
-            <p className='text-sm mb-6 text-center' style={{ color: '#7A6478' }}>
+            <p className='text-sm mb-6 text-center' style={{ color: '#6B7B82' }}>
               Verified branded-GLP-1 telehealth providers, May 2026.
             </p>
             <GLP1ComparisonTable
@@ -373,11 +373,11 @@ export default function ZepboundVsWegovyPage() {
         </section>
 
         {/* Final CTA */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-3xl mx-auto px-4 md:px-6'>
             <div
               className='rounded-3xl p-7 md:p-10 text-center text-white'
-              style={{ background: 'linear-gradient(135deg, #F47C5B 0%, #F09A65 50%, #EFC079 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #D4A33A 0%, #C99230 50%, #B88A2A 100%)' }}
             >
               <h2 className='text-2xl md:text-3xl font-bold mb-3' style={{ fontFamily: '"Playfair Display", "Georgia", serif' }}>
                 Still deciding between the two?
@@ -389,7 +389,7 @@ export default function ZepboundVsWegovyPage() {
                 <Link
                   href='/match'
                   className='inline-flex items-center gap-2 bg-white px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-lg'
-                  style={{ color: '#F47C5B' }}
+                  style={{ color: '#D4A33A' }}
                 >
                   Take the Quiz <ArrowRight className='h-4 w-4' />
                 </Link>
@@ -421,27 +421,27 @@ export default function ZepboundVsWegovyPage() {
 function VerdictCol({ label, winner, detail }: { label: string; winner: string; detail: string }) {
   return (
     <div className='text-center'>
-      <div className='text-xs font-bold uppercase tracking-widest mb-2' style={{ color: '#7A6478' }}>
+      <div className='text-xs font-bold uppercase tracking-widest mb-2' style={{ color: '#6B7B82' }}>
         {label}
       </div>
       <div
         className='text-2xl font-bold mb-2'
-        style={{ color: '#F47C5B', fontFamily: '"Playfair Display", "Georgia", serif' }}
+        style={{ color: '#D4A33A', fontFamily: '"Playfair Display", "Georgia", serif' }}
       >
         {winner}
       </div>
-      <p className='text-xs leading-relaxed' style={{ color: '#4B3548' }}>{detail}</p>
+      <p className='text-xs leading-relaxed' style={{ color: '#3D5560' }}>{detail}</p>
     </div>
   );
 }
 
 function FactRow({ factor, zep, weg, winner }: { factor: string; zep: string; weg: string; winner: string }) {
   return (
-    <tr className='border-t' style={{ borderColor: '#E8DDD0' }}>
-      <td className='px-5 py-3 font-semibold' style={{ color: '#3A1B3D' }}>{factor}</td>
-      <td className='px-5 py-3 text-center' style={{ color: '#4B3548' }}>{zep}</td>
-      <td className='px-5 py-3 text-center' style={{ color: '#4B3548' }}>{weg}</td>
-      <td className='px-5 py-3 text-center text-xs font-semibold' style={{ color: winner.includes('Zepbound') ? '#F47C5B' : winner.includes('Wegovy') ? '#5FBFAA' : '#7A6478' }}>
+    <tr className='border-t' style={{ borderColor: '#E5DDC8' }}>
+      <td className='px-5 py-3 font-semibold' style={{ color: '#0E2A3A' }}>{factor}</td>
+      <td className='px-5 py-3 text-center' style={{ color: '#3D5560' }}>{zep}</td>
+      <td className='px-5 py-3 text-center' style={{ color: '#3D5560' }}>{weg}</td>
+      <td className='px-5 py-3 text-center text-xs font-semibold' style={{ color: winner.includes('Zepbound') ? '#D4A33A' : winner.includes('Wegovy') ? '#7CA982' : '#6B7B82' }}>
         {winner}
       </td>
     </tr>
@@ -450,10 +450,10 @@ function FactRow({ factor, zep, weg, winner }: { factor: string; zep: string; we
 
 function SideEffectRow({ effect, zep, weg }: { effect: string; zep: string; weg: string }) {
   return (
-    <tr className='border-t' style={{ borderColor: '#E8DDD0' }}>
-      <td className='px-5 py-3 font-semibold' style={{ color: '#3A1B3D' }}>{effect}</td>
-      <td className='px-5 py-3 text-center font-bold' style={{ color: '#F47C5B' }}>{zep}</td>
-      <td className='px-5 py-3 text-center font-bold' style={{ color: '#5FBFAA' }}>{weg}</td>
+    <tr className='border-t' style={{ borderColor: '#E5DDC8' }}>
+      <td className='px-5 py-3 font-semibold' style={{ color: '#0E2A3A' }}>{effect}</td>
+      <td className='px-5 py-3 text-center font-bold' style={{ color: '#D4A33A' }}>{zep}</td>
+      <td className='px-5 py-3 text-center font-bold' style={{ color: '#7CA982' }}>{weg}</td>
     </tr>
   );
 }
@@ -463,11 +463,11 @@ function CostRow({ label, price, highlight = false }: { label: string; price: st
     <div
       className='flex items-center justify-between p-4 rounded-xl bg-white'
       style={{
-        border: highlight ? '2px solid #5FBFAA' : '1px solid #E8DDD0',
+        border: highlight ? '2px solid #7CA982' : '1px solid #E5DDC8',
       }}
     >
-      <span className='text-sm font-semibold' style={{ color: '#3A1B3D' }}>{label}</span>
-      <span className='text-base font-bold' style={{ color: highlight ? '#1F6B3D' : '#F47C5B' }}>{price}</span>
+      <span className='text-sm font-semibold' style={{ color: '#0E2A3A' }}>{label}</span>
+      <span className='text-base font-bold' style={{ color: highlight ? '#2D5A3D' : '#D4A33A' }}>{price}</span>
     </div>
   );
 }
@@ -476,13 +476,13 @@ function DecisionRow({ ifClause, pick, color }: { ifClause: string; pick: string
   return (
     <div
       className='flex items-start gap-4 p-5 rounded-2xl bg-white'
-      style={{ border: '1px solid #E8DDD0' }}
+      style={{ border: '1px solid #E5DDC8' }}
     >
       <CircleCheck className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color }} />
       <div>
-        <div className='text-sm mb-1' style={{ color: '#7A6478' }}>If…</div>
-        <div className='text-base font-semibold mb-1' style={{ color: '#3A1B3D' }}>{ifClause}</div>
-        <div className='text-sm' style={{ color: '#4B3548' }}>
+        <div className='text-sm mb-1' style={{ color: '#6B7B82' }}>If…</div>
+        <div className='text-base font-semibold mb-1' style={{ color: '#0E2A3A' }}>{ifClause}</div>
+        <div className='text-sm' style={{ color: '#3D5560' }}>
           → <strong style={{ color }}>{pick}</strong>
         </div>
       </div>

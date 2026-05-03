@@ -110,7 +110,7 @@ export default function DisclaimerPage() {
         and editorial-policy questions within one business day.
       </p>
 
-      <p style={{ marginTop: '2rem', fontSize: '0.875rem', color: '#7A6478' }}>
+      <p style={{ marginTop: '2rem', fontSize: '0.875rem', color: '#6B7B82' }}>
         <em>Last updated: May 2026</em>
       </p>
     </GLP1TrustPage>

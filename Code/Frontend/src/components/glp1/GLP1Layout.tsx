@@ -13,17 +13,17 @@ interface GLP1LayoutProps {
  * blue-shield), and CRR (clean blue-utility).
  *
  * Design tokens:
- *   --glp1-cream:    #FDF7F0  page background
- *   --glp1-wine:     #2D0E2D  deep wine — hero card + footer
- *   --glp1-wine-mid: #3A1B3D  midtone — H1 headings
- *   --glp1-coral:    #F47C5B  primary CTA
- *   --glp1-coral-h:  #E5654A  CTA hover
- *   --glp1-mint:     #5FBFAA  success / "saved" callouts
- *   --glp1-peach-bg: #FFE5D9  soft pastel category badge
- *   --glp1-mint-bg:  #D4F1E8  soft pastel category badge
- *   --glp1-lav-bg:   #EDE5F2  soft pastel category badge
- *   --glp1-text:     #4B3548  body text (muted wine)
- *   --glp1-border:   #E8DDD0  warm border
+ *   --glp1-cream:    #F8F4ED  page background
+ *   --glp1-wine:     #0F4D5C  deep wine — hero card + footer
+ *   --glp1-wine-mid: #0E2A3A  midtone — H1 headings
+ *   --glp1-coral:    #D4A33A  primary CTA
+ *   --glp1-coral-h:  #B88A2A  CTA hover
+ *   --glp1-mint:     #7CA982  success / "saved" callouts
+ *   --glp1-peach-bg: #E8DCC0  soft pastel category badge
+ *   --glp1-mint-bg:  #D9E8D4  soft pastel category badge
+ *   --glp1-lav-bg:   #DEE5E8  soft pastel category badge
+ *   --glp1-text:     #3D5560  body text (muted wine)
+ *   --glp1-border:   #E5DDC8  warm border
  */
 export function GLP1Layout({ children }: GLP1LayoutProps) {
   return (
@@ -46,19 +46,19 @@ export function GLP1Layout({ children }: GLP1LayoutProps) {
         ['--border' as string]: '32 30% 86%',
         ['--ring' as string]: '15 88% 65%',
         // Custom GLP-1 brand tokens
-        ['--glp1-cream' as string]: '#FDF7F0',
-        ['--glp1-wine' as string]: '#2D0E2D',
-        ['--glp1-wine-mid' as string]: '#3A1B3D',
-        ['--glp1-coral' as string]: '#F47C5B',
-        ['--glp1-coral-h' as string]: '#E5654A',
-        ['--glp1-mint' as string]: '#5FBFAA',
-        ['--glp1-peach-bg' as string]: '#FFE5D9',
-        ['--glp1-mint-bg' as string]: '#D4F1E8',
-        ['--glp1-lav-bg' as string]: '#EDE5F2',
-        ['--glp1-text' as string]: '#4B3548',
-        ['--glp1-border' as string]: '#E8DDD0',
-        backgroundColor: '#FDF7F0',
-        color: '#4B3548',
+        ['--glp1-cream' as string]: '#F8F4ED',
+        ['--glp1-wine' as string]: '#0F4D5C',
+        ['--glp1-wine-mid' as string]: '#0E2A3A',
+        ['--glp1-coral' as string]: '#D4A33A',
+        ['--glp1-coral-h' as string]: '#B88A2A',
+        ['--glp1-mint' as string]: '#7CA982',
+        ['--glp1-peach-bg' as string]: '#E8DCC0',
+        ['--glp1-mint-bg' as string]: '#D9E8D4',
+        ['--glp1-lav-bg' as string]: '#DEE5E8',
+        ['--glp1-text' as string]: '#3D5560',
+        ['--glp1-border' as string]: '#E5DDC8',
+        backgroundColor: '#F8F4ED',
+        color: '#3D5560',
         fontFamily: '"Inter", system-ui, sans-serif',
       }}
     >

@@ -64,31 +64,31 @@ export default async function NewsArticlePage({ params }: PageParams) {
       <GLP1Header />
 
       <main>
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-3xl mx-auto px-4 md:px-6'>
             <nav className='text-xs mb-3' aria-label='Breadcrumb'>
-              <Link href='/' style={{ color: '#7A6478' }}>Home</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <Link href='/news' style={{ color: '#7A6478' }}>News</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <span style={{ color: '#3A1B3D' }}>{a.title.slice(0, 40)}…</span>
+              <Link href='/' style={{ color: '#6B7B82' }}>Home</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <Link href='/news' style={{ color: '#6B7B82' }}>News</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <span style={{ color: '#0E2A3A' }}>{a.title.slice(0, 40)}…</span>
             </nav>
 
             <span
               className='inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full mb-3'
-              style={{ backgroundColor: '#FFE5D9', color: '#B14739' }}
+              style={{ backgroundColor: '#E8DCC0', color: '#7A6020' }}
             >
               {a.category}
             </span>
 
             <h1
               className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-[1.15]'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               {a.title}
             </h1>
 
-            <div className='flex items-center gap-3 text-xs' style={{ color: '#7A6478' }}>
+            <div className='flex items-center gap-3 text-xs' style={{ color: '#6B7B82' }}>
               <span className='inline-flex items-center gap-1'>
                 <Calendar className='h-3 w-3' /> {a.publishedDate}
               </span>
@@ -98,10 +98,10 @@ export default async function NewsArticlePage({ params }: PageParams) {
           </div>
         </section>
 
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div
             className='max-w-3xl mx-auto px-4 md:px-6 prose prose-slate'
-            style={{ color: '#4B3548' }}
+            style={{ color: '#3D5560' }}
           >
             <article
               className='news-article'
@@ -110,19 +110,19 @@ export default async function NewsArticlePage({ params }: PageParams) {
           </div>
         </section>
 
-        <section className='py-10' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-3xl mx-auto px-4 md:px-6 flex flex-wrap gap-3'>
             <Link
               href='/news'
               className='inline-flex items-center gap-1 text-sm font-semibold px-5 py-2.5 rounded-full'
-              style={{ backgroundColor: 'white', color: '#3A1B3D', border: '1.5px solid #3A1B3D' }}
+              style={{ backgroundColor: 'white', color: '#0E2A3A', border: '1.5px solid #0E2A3A' }}
             >
               <ArrowLeft className='h-4 w-4' /> All News
             </Link>
             <Link
               href='/match'
               className='inline-flex items-center gap-1 text-sm font-semibold px-5 py-2.5 rounded-full text-white'
-              style={{ backgroundColor: '#F47C5B' }}
+              style={{ backgroundColor: '#D4A33A' }}
             >
               Take the Quiz <ArrowRight className='h-4 w-4' />
             </Link>
@@ -153,7 +153,7 @@ function renderSimpleMarkdown(md: string): string {
     if (line.startsWith('## ')) {
       flushList();
       flushTable();
-      out.push(`<h2 style="color:#3A1B3D;font-family:'Playfair Display','Georgia',serif;font-size:1.75rem;font-weight:700;margin-top:2rem;margin-bottom:1rem;">${escape(line.slice(3))}</h2>`);
+      out.push(`<h2 style="color:#0E2A3A;font-family:'Playfair Display','Georgia',serif;font-size:1.75rem;font-weight:700;margin-top:2rem;margin-bottom:1rem;">${escape(line.slice(3))}</h2>`);
       continue;
     }
 
@@ -161,7 +161,7 @@ function renderSimpleMarkdown(md: string): string {
     if (line.startsWith('|')) {
       if (!inTable) {
         flushList();
-        out.push('<table style="width:100%;border-collapse:collapse;margin:1.5rem 0;background:white;border:1px solid #E8DDD0;border-radius:0.75rem;overflow:hidden;">');
+        out.push('<table style="width:100%;border-collapse:collapse;margin:1.5rem 0;background:white;border:1px solid #E5DDC8;border-radius:0.75rem;overflow:hidden;">');
         inTable = true;
       }
       // skip separator row (---)
@@ -170,8 +170,8 @@ function renderSimpleMarkdown(md: string): string {
       const isHeader = i + 1 < lines.length && lines[i + 1].includes('---');
       const tag = isHeader ? 'th' : 'td';
       const tdAttr = isHeader
-        ? 'style="background:#FDF7F0;padding:0.75rem 1rem;text-align:left;font-weight:700;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#7A6478;border-bottom:1px solid #E8DDD0;"'
-        : 'style="padding:0.75rem 1rem;border-top:1px solid #E8DDD0;font-size:0.875rem;color:#4B3548;"';
+        ? 'style="background:#F8F4ED;padding:0.75rem 1rem;text-align:left;font-weight:700;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#6B7B82;border-bottom:1px solid #E5DDC8;"'
+        : 'style="padding:0.75rem 1rem;border-top:1px solid #E5DDC8;font-size:0.875rem;color:#3D5560;"';
       out.push(`<tr>${cells.map((c) => `<${tag} ${tdAttr}>${escape(c)}</${tag}>`).join('')}</tr>`);
       continue;
     } else if (inTable) {
@@ -185,7 +185,7 @@ function renderSimpleMarkdown(md: string): string {
         inList = true;
       }
       const content = line.replace(/^(?:-\s|\d+\.\s)/, '');
-      out.push(`<li style="margin-bottom:0.5rem;color:#4B3548;">${parseInline(content)}</li>`);
+      out.push(`<li style="margin-bottom:0.5rem;color:#3D5560;">${parseInline(content)}</li>`);
       continue;
     } else if (inList) {
       flushList();
@@ -193,7 +193,7 @@ function renderSimpleMarkdown(md: string): string {
 
     // paragraph (non-empty line)
     if (line.trim()) {
-      out.push(`<p style="margin:1rem 0;color:#4B3548;line-height:1.6;">${parseInline(line.trim())}</p>`);
+      out.push(`<p style="margin:1rem 0;color:#3D5560;line-height:1.6;">${parseInline(line.trim())}</p>`);
     }
   }
   flushTable();
@@ -218,7 +218,7 @@ function renderSimpleMarkdown(md: string): string {
 function parseInline(s: string): string {
   // bold + escape
   return escape(s)
-    .replace(/\*\*([^*]+)\*\*/g, '<strong style="color:#3A1B3D;">$1</strong>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong style="color:#0E2A3A;">$1</strong>')
     .replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }
 

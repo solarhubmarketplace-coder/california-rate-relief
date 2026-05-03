@@ -94,8 +94,8 @@ export default function CompoundedTirzepatidePage() {
 
       <GLP1Header />
 
-      <div className='border-b' style={{ backgroundColor: '#FFF1D6', borderColor: '#E8DDD0' }}>
-        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#8A6D1A' }}>
+      <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
+        <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#7A6020' }}>
           <strong>Affiliate Disclosure:</strong> This page contains affiliate links.{' '}
           <Link href='/affiliate-disclosure' className='underline'>Full disclosure</Link>.
         </div>
@@ -103,23 +103,23 @@ export default function CompoundedTirzepatidePage() {
 
       <main>
         {/* Header */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <nav className='text-xs mb-3' aria-label='Breadcrumb'>
-              <Link href='/' style={{ color: '#7A6478' }}>Home</Link>
-              <span style={{ color: '#7A6478' }}> / </span>
-              <span style={{ color: '#3A1B3D' }}>Compounded Tirzepatide</span>
+              <Link href='/' style={{ color: '#6B7B82' }}>Home</Link>
+              <span style={{ color: '#6B7B82' }}> / </span>
+              <span style={{ color: '#0E2A3A' }}>Compounded Tirzepatide</span>
             </nav>
             <h1
               className='text-3xl md:text-5xl font-bold mb-4 leading-[1.1]'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Compounded Tirzepatide 2026
             </h1>
-            <p className='text-lg md:text-xl mb-3' style={{ color: '#4B3548' }}>
+            <p className='text-lg md:text-xl mb-3' style={{ color: '#3D5560' }}>
               The 73-91% cheaper alternative to branded Zepbound. Cost, safety, FDA status, and where to buy.
             </p>
-            <div className='flex items-center gap-3 text-xs' style={{ color: '#7A6478' }}>
+            <div className='flex items-center gap-3 text-xs' style={{ color: '#6B7B82' }}>
               <span className='flex items-center gap-1'>
                 <Calendar className='h-3 w-3' /> Updated May 3, 2026
               </span>
@@ -130,7 +130,7 @@ export default function CompoundedTirzepatidePage() {
         </section>
 
         {/* FDA warning callout — top of fold */}
-        <section className='py-6' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-6' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <div
               className='rounded-2xl p-5 flex items-start gap-3'
@@ -141,7 +141,7 @@ export default function CompoundedTirzepatidePage() {
                 <div className='text-sm font-bold mb-1' style={{ color: '#B14739' }}>
                   Important: Compounded tirzepatide is NOT FDA-approved
                 </div>
-                <div className='text-sm' style={{ color: '#4B3548' }}>
+                <div className='text-sm' style={{ color: '#3D5560' }}>
                   It is produced by state-licensed 503A pharmacies under specific FDA exemptions. The clinical
                   trial efficacy of <em>branded</em> Zepbound (SURMOUNT-1: 20.2% average weight loss) does NOT
                   automatically transfer to compounded versions. Always work with a licensed prescriber and
@@ -157,16 +157,16 @@ export default function CompoundedTirzepatidePage() {
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               What Is Compounded Tirzepatide?
             </h2>
-            <p className='text-base mb-4 leading-relaxed' style={{ color: '#4B3548' }}>
+            <p className='text-base mb-4 leading-relaxed' style={{ color: '#3D5560' }}>
               <strong>Tirzepatide</strong> is the active molecule in Eli Lilly&rsquo;s FDA-approved Zepbound
               (weight loss) and Mounjaro (type-2 diabetes). It is the only dual GIP + GLP-1 receptor agonist on
               the market, producing 20.2% average weight loss at 72 weeks in the SURMOUNT-1 trial.
             </p>
-            <p className='text-base mb-4 leading-relaxed' style={{ color: '#4B3548' }}>
+            <p className='text-base mb-4 leading-relaxed' style={{ color: '#3D5560' }}>
               <strong>Compounded tirzepatide</strong> is the same molecule produced by state-licensed 503A and 503B
               compounding pharmacies — NOT by Eli Lilly. The FDA permits compounding under specific exemptions
               (drug shortage status, individual patient medical necessity, or per state pharmacy board rules).
@@ -177,22 +177,22 @@ export default function CompoundedTirzepatidePage() {
         </section>
 
         {/* Pricing table */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Compounded Tirzepatide Pricing (May 2026)
             </h2>
-            <div className='overflow-x-auto rounded-2xl bg-white' style={{ border: '1px solid #E8DDD0' }}>
+            <div className='overflow-x-auto rounded-2xl bg-white' style={{ border: '1px solid #E5DDC8' }}>
               <table className='w-full text-sm'>
                 <thead>
-                  <tr style={{ backgroundColor: '#FDF7F0' }}>
-                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Provider</th>
-                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Format</th>
-                    <th className='text-right px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Monthly</th>
-                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#7A6478' }}>Notes</th>
+                  <tr style={{ backgroundColor: '#F8F4ED' }}>
+                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Provider</th>
+                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Format</th>
+                    <th className='text-right px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Monthly</th>
+                    <th className='text-left px-5 py-3 text-xs font-bold uppercase tracking-wider' style={{ color: '#6B7B82' }}>Notes</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -207,7 +207,7 @@ export default function CompoundedTirzepatidePage() {
                 </tbody>
               </table>
             </div>
-            <p className='text-xs italic mt-3' style={{ color: '#7A6478' }}>
+            <p className='text-xs italic mt-3' style={{ color: '#6B7B82' }}>
               Pricing verified directly from each provider&rsquo;s public site, May 2026. Confirm current rates
               before purchase. Branded comparison: Zepbound through telehealth ~$1,498/mo (73-91% more expensive).
             </p>
@@ -219,33 +219,33 @@ export default function CompoundedTirzepatidePage() {
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               How to Choose a Safe Compounded Tirzepatide Provider
             </h2>
             <div className='space-y-3'>
               <SafetyRow
-                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#5FBFAA' }} />}
+                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#7CA982' }} />}
                 title='LegitScript or NABP certification'
                 body='Confirms the compounding pharmacy meets baseline regulatory and quality standards.'
               />
               <SafetyRow
-                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#5FBFAA' }} />}
+                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#7CA982' }} />}
                 title='503A vs 503B disclosure'
                 body='503A pharmacies serve individual prescriptions. 503B "outsourcing facilities" produce in larger batches under stricter oversight. Either is acceptable; lack of clarity is a yellow flag.'
               />
               <SafetyRow
-                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#5FBFAA' }} />}
+                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#7CA982' }} />}
                 title='Valisure third-party testing (bonus)'
                 body='Some pharmacies submit batches to Valisure for independent purity / potency testing. This is the gold standard but rare.'
               />
               <SafetyRow
-                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#5FBFAA' }} />}
+                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#7CA982' }} />}
                 title='Licensed prescriber required'
                 body='Avoid any provider that ships without a real telehealth consultation and prescription. That is a major regulatory red flag.'
               />
               <SafetyRow
-                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#5FBFAA' }} />}
+                icon={<ShieldCheck className='h-5 w-5' style={{ color: '#7CA982' }} />}
                 title='Cold-chain shipping'
                 body='Tirzepatide must remain refrigerated. Reputable providers ship with cold packs and clear handling instructions.'
               />
@@ -254,29 +254,29 @@ export default function CompoundedTirzepatidePage() {
         </section>
 
         {/* Regulatory landscape */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FFF6E8' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               The FDA April 30, 2026 503B Shutdown Proposal
             </h2>
-            <p className='text-base mb-4 leading-relaxed' style={{ color: '#4B3548' }}>
+            <p className='text-base mb-4 leading-relaxed' style={{ color: '#3D5560' }}>
               In April 2026, the FDA proposed limiting 503B outsourcing-facility compounding of tirzepatide and
               semaglutide on the grounds that the branded equivalents (Zepbound, Wegovy) are no longer in shortage.
               The proposal does NOT directly affect 503A pharmacy compounding for individual prescriptions, which
               remains the primary channel for compounded tirzepatide as of May 2026.
             </p>
-            <p className='text-base mb-4 leading-relaxed' style={{ color: '#4B3548' }}>
+            <p className='text-base mb-4 leading-relaxed' style={{ color: '#3D5560' }}>
               <strong>Practical impact:</strong> Most of the providers in our top stack (SkinnyRx, MEDVi, Ivim,
               Eden Health, GobyMeds, OrderlyMeds, DirectMeds) source from 503A pharmacies and would continue
               serving compounded tirzepatide if the 503B proposal is implemented. 503B-only providers may
               discontinue their compounded GLP-1 lines.
             </p>
-            <p className='text-sm italic' style={{ color: '#7A6478' }}>
+            <p className='text-sm italic' style={{ color: '#6B7B82' }}>
               We re-verify the FDA regulatory status monthly. Last verified: May 3, 2026. Subscribe to{' '}
-              <Link href='/news' className='underline' style={{ color: '#F47C5B' }}>our news feed</Link> for updates.
+              <Link href='/news' className='underline' style={{ color: '#D4A33A' }}>our news feed</Link> for updates.
             </p>
           </div>
         </section>
@@ -286,11 +286,11 @@ export default function CompoundedTirzepatidePage() {
           <div className='max-w-7xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-2 text-center'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Compare Compounded Tirzepatide Providers
             </h2>
-            <p className='text-sm mb-6 text-center' style={{ color: '#7A6478' }}>
+            <p className='text-sm mb-6 text-center' style={{ color: '#6B7B82' }}>
               All providers listed offer compounded tirzepatide. Pricing verified May 2026.
             </p>
             <GLP1ComparisonTable
@@ -302,49 +302,49 @@ export default function CompoundedTirzepatidePage() {
         </section>
 
         {/* Should-you-use section */}
-        <section className='py-10 md:py-14' style={{ backgroundColor: '#FDF7F0' }}>
+        <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
-              style={{ color: '#3A1B3D', fontFamily: '"Playfair Display", "Georgia", serif' }}
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
               Compounded Tirzepatide vs Branded Zepbound — Quick Decision Guide
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-              <div className='p-5 rounded-2xl bg-white' style={{ border: '1px solid #E8DDD0' }}>
-                <div className='text-xs font-bold uppercase tracking-wider mb-2' style={{ color: '#F47C5B' }}>
+              <div className='p-5 rounded-2xl bg-white' style={{ border: '1px solid #E5DDC8' }}>
+                <div className='text-xs font-bold uppercase tracking-wider mb-2' style={{ color: '#D4A33A' }}>
                   Pick compounded if…
                 </div>
-                <ul className='text-sm space-y-2' style={{ color: '#4B3548' }}>
+                <ul className='text-sm space-y-2' style={{ color: '#3D5560' }}>
                   <li className='flex items-start gap-2'>
-                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                     Cost is the dominant factor (73-91% cheaper)
                   </li>
                   <li className='flex items-start gap-2'>
-                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                     You are uninsured or your insurance does not cover branded
                   </li>
                   <li className='flex items-start gap-2'>
-                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                     You are comfortable with non-FDA-approved medication under prescriber supervision
                   </li>
                 </ul>
               </div>
-              <div className='p-5 rounded-2xl bg-white' style={{ border: '1px solid #E8DDD0' }}>
-                <div className='text-xs font-bold uppercase tracking-wider mb-2' style={{ color: '#5FBFAA' }}>
+              <div className='p-5 rounded-2xl bg-white' style={{ border: '1px solid #E5DDC8' }}>
+                <div className='text-xs font-bold uppercase tracking-wider mb-2' style={{ color: '#7CA982' }}>
                   Pick branded Zepbound if…
                 </div>
-                <ul className='text-sm space-y-2' style={{ color: '#4B3548' }}>
+                <ul className='text-sm space-y-2' style={{ color: '#3D5560' }}>
                   <li className='flex items-start gap-2'>
-                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                     Insurance covers the branded version
                   </li>
                   <li className='flex items-start gap-2'>
-                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                     You want FDA-approved batch-to-batch consistency
                   </li>
                   <li className='flex items-start gap-2'>
-                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#5FBFAA' }} />
+                    <CircleCheck className='h-4 w-4 mt-0.5 flex-shrink-0' style={{ color: '#7CA982' }} />
                     You want the trial efficacy data (SURMOUNT-1: 20.2%) to apply directly
                   </li>
                 </ul>
@@ -358,7 +358,7 @@ export default function CompoundedTirzepatidePage() {
           <div className='max-w-3xl mx-auto px-4 md:px-6'>
             <div
               className='rounded-3xl p-7 md:p-10 text-center text-white'
-              style={{ background: 'linear-gradient(135deg, #F47C5B 0%, #F09A65 50%, #EFC079 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #D4A33A 0%, #C99230 50%, #B88A2A 100%)' }}
             >
               <h2 className='text-2xl md:text-3xl font-bold mb-3' style={{ fontFamily: '"Playfair Display", "Georgia", serif' }}>
                 Find your compounded tirzepatide match
@@ -370,7 +370,7 @@ export default function CompoundedTirzepatidePage() {
                 <Link
                   href='/match'
                   className='inline-flex items-center gap-2 bg-white px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-lg'
-                  style={{ color: '#F47C5B' }}
+                  style={{ color: '#D4A33A' }}
                 >
                   Take the Quiz <ArrowRight className='h-4 w-4' />
                 </Link>
@@ -401,18 +401,18 @@ export default function CompoundedTirzepatidePage() {
 
 function PricingRow({ provider, format, price, note, badge }: { provider: string; format: string; price: string; note: string; badge?: string }) {
   return (
-    <tr className='border-t' style={{ borderColor: '#E8DDD0' }}>
+    <tr className='border-t' style={{ borderColor: '#E5DDC8' }}>
       <td className='px-5 py-3'>
-        <div className='font-semibold' style={{ color: '#3A1B3D' }}>{provider}</div>
+        <div className='font-semibold' style={{ color: '#0E2A3A' }}>{provider}</div>
         {badge && (
-          <span className='inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mt-1' style={{ backgroundColor: '#FFF1D6', color: '#A88A1A' }}>
+          <span className='inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mt-1' style={{ backgroundColor: '#F4EBD0', color: '#7A6020' }}>
             {badge}
           </span>
         )}
       </td>
-      <td className='px-5 py-3 text-sm' style={{ color: '#4B3548' }}>{format}</td>
-      <td className='px-5 py-3 text-right text-base font-bold' style={{ color: '#F47C5B' }}>{price}</td>
-      <td className='px-5 py-3 text-xs' style={{ color: '#7A6478' }}>{note}</td>
+      <td className='px-5 py-3 text-sm' style={{ color: '#3D5560' }}>{format}</td>
+      <td className='px-5 py-3 text-right text-base font-bold' style={{ color: '#D4A33A' }}>{price}</td>
+      <td className='px-5 py-3 text-xs' style={{ color: '#6B7B82' }}>{note}</td>
     </tr>
   );
 }
@@ -421,12 +421,12 @@ function SafetyRow({ icon, title, body }: { icon: React.ReactNode; title: string
   return (
     <div
       className='flex items-start gap-3 p-5 rounded-2xl'
-      style={{ backgroundColor: '#FDF7F0', border: '1px solid #E8DDD0' }}
+      style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}
     >
       <span className='flex-shrink-0 mt-0.5'>{icon}</span>
       <div>
-        <h3 className='font-bold mb-1' style={{ color: '#3A1B3D' }}>{title}</h3>
-        <p className='text-sm' style={{ color: '#4B3548' }}>{body}</p>
+        <h3 className='font-bold mb-1' style={{ color: '#0E2A3A' }}>{title}</h3>
+        <p className='text-sm' style={{ color: '#3D5560' }}>{body}</p>
       </div>
     </div>
   );
