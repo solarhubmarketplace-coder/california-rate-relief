@@ -506,18 +506,18 @@ export default function ZepboundVsWegovyPage() {
                   Take the Quiz <ArrowRight className='h-4 w-4' />
                 </Link>
                 <Link
-                  href='/best/telemedicine-zepbound'
+                  href='/best-compounded-tirzepatide'
                   className='inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold transition-all'
                   style={{ color: 'white', border: '1.5px solid white' }}
                 >
-                  Best for Zepbound
+                  Top Compounded Programs
                 </Link>
                 <Link
-                  href='/best/telemedicine-wegovy'
+                  href='/cheapest-tirzepatide-online'
                   className='inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold transition-all'
                   style={{ color: 'white', border: '1.5px solid white' }}
                 >
-                  Best for Wegovy
+                  Cheapest Tirzepatide
                 </Link>
               </div>
             </div>

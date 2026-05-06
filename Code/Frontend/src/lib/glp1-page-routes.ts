@@ -139,6 +139,29 @@ const livePages: PageRoute[] = [
     kd: 8,
     note: 'NEW 2026-05-05. Sublingual (Direct Meds) + GLP-1 gum (Embody) — dual active affiliate fit.',
   },
+  // Batch 2 — added 2026-05-05
+  {
+    path: '/cheapest-tirzepatide-online',
+    template: 'commercial-comparison',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'cheapest tirzepatide online',
+    estRevenueAtMaturity: 709,
+    volume: 6300,
+    kd: 12,
+    note: 'NEW 2026-05-05 (Batch 2). Pure price-shopping intent. Three cost paths compared: $25 branded+insurance, $179 compounded (System Labs), $299 LillyDirect.',
+  },
+  {
+    path: '/nad-iv-therapy',
+    template: 'peptide-stack',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'nad iv therapy',
+    estRevenueAtMaturity: 1463,
+    volume: 13000,
+    kd: 9,
+    note: 'NEW 2026-05-05 (Batch 2). System Labs adjacent peptide play — IV vs at-home injection vs the GLP-1 + NAD+ longevity stack.',
+  },
 ];
 
 // ============================================================
@@ -280,8 +303,7 @@ const peptidePages: PageRoute[] = [
     targetKeyword: `${p.name.toLowerCase()} for weight loss`,
     note: `${p.category} adjunct — compliance risk: ${p.complianceRisk}`,
   })),
-  // Specific high-volume peptide pages
-  { path: '/nad-iv-therapy',     template: 'peptide-stack', tier: 'A', status: 'queued', targetKeyword: 'nad iv therapy',  volume: 13000, kd: 9,  estRevenueAtMaturity: 1463 },
+  // Specific high-volume peptide pages — /nad-iv-therapy promoted to livePages 2026-05-05
   { path: '/nad-injection',      template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'nad+ injection',  volume: 2300,  kd: 15 },
   { path: '/nad-nasal-spray',    template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'nad nasal spray', volume: 2800,  kd: 0,  estRevenueAtMaturity: 315 },
   { path: '/lipotropic-injections', template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'lipotropic injections', volume: 8300, kd: 4 },
@@ -293,10 +315,9 @@ const peptidePages: PageRoute[] = [
 // COMMERCIAL-INTENT COMPARISON PAGES
 // ============================================================
 const commercialPages: PageRoute[] = [
-  { path: '/cheapest-tirzepatide-online',     template: 'commercial-comparison', tier: 'A', status: 'queued', targetKeyword: 'cheapest tirzepatide online',     volume: 6300, kd: 12, estRevenueAtMaturity: 709 },
+  // /cheapest-tirzepatide-online and /best-compounded-tirzepatide promoted to livePages 2026-05-05
   { path: '/cheapest-semaglutide-online',     template: 'commercial-comparison', tier: 'B', status: 'queued', targetKeyword: 'cheapest semaglutide online',     volume: 350,  kd: 10 },
   { path: '/cheapest-compounded-tirzepatide', template: 'commercial-comparison', tier: 'B', status: 'queued', targetKeyword: 'cheapest compounded tirzepatide', volume: 600,  kd: 7 },
-  { path: '/best-compounded-tirzepatide',     template: 'commercial-comparison', tier: 'B', status: 'queued', targetKeyword: 'best compounded tirzepatide',     volume: 500,  kd: 3 },
   { path: '/best-compounded-semaglutide',     template: 'commercial-comparison', tier: 'B', status: 'queued', targetKeyword: 'best compounded semaglutide',     volume: 500,  kd: 34 },
 ];
 
