@@ -185,6 +185,49 @@ const livePages: PageRoute[] = [
     kd: 16,
     note: 'NEW 2026-05-05 (Batch 3). Educational format complement to /oral-tirzepatide. Honest answer that no FDA-approved tirzepatide tablet exists; routes traffic to compounded sublingual/gum or Wegovy Pill alternative.',
   },
+  // Batch 5 — added 2026-05-05 (adjacent peptide cluster)
+  {
+    path: '/lipotropic-injections',
+    template: 'peptide-stack',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'lipotropic injections',
+    volume: 8300,
+    kd: 4,
+    note: 'NEW 2026-05-05 (Batch 5). KD 4 + 8,300 vol — biggest remaining volume play. System Labs MIC+B12 monetization at $89/mo.',
+  },
+  {
+    path: '/nad-nasal-spray',
+    template: 'peptide-stack',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'nad nasal spray',
+    estRevenueAtMaturity: 315,
+    volume: 2800,
+    kd: 0,
+    note: 'NEW 2026-05-05 (Batch 5). KD 0 — virgin SERP. Eden Health unique 5-format NAD+ menu monetization.',
+  },
+  {
+    path: '/glutathione-injection',
+    template: 'peptide-stack',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'glutathione injection',
+    estRevenueAtMaturity: 326,
+    volume: 2900,
+    kd: 5,
+    note: 'NEW 2026-05-05 (Batch 5). KD 5 + Eden Health/Direct Meds monetization. Honest evidence read with FDA warning context.',
+  },
+  {
+    path: '/sermorelin-for-weight-loss',
+    template: 'peptide-stack',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'sermorelin for weight loss',
+    volume: 600,
+    kd: 8,
+    note: 'NEW 2026-05-05 (Batch 5). KD 8 + System Labs ($79 first oral, $109 first injectable) + Direct Meds + Eden Health monetization. GLP-1 lean-mass preservation stack angle.',
+  },
 ];
 
 // ============================================================
@@ -326,12 +369,9 @@ const peptidePages: PageRoute[] = [
     targetKeyword: `${p.name.toLowerCase()} for weight loss`,
     note: `${p.category} adjunct — compliance risk: ${p.complianceRisk}`,
   })),
-  // Specific high-volume peptide pages — /nad-iv-therapy promoted to livePages 2026-05-05
+  // Specific high-volume peptide pages — many promoted to livePages in Batches 1-5
+  // /nad-iv-therapy, /nad-nasal-spray, /lipotropic-injections, /sermorelin-for-weight-loss, /glutathione-injection now live
   { path: '/nad-injection',      template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'nad+ injection',  volume: 2300,  kd: 15 },
-  { path: '/nad-nasal-spray',    template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'nad nasal spray', volume: 2800,  kd: 0,  estRevenueAtMaturity: 315 },
-  { path: '/lipotropic-injections', template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'lipotropic injections', volume: 8300, kd: 4 },
-  { path: '/sermorelin-for-weight-loss', template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'sermorelin for weight loss', volume: 600, kd: 8 },
-  { path: '/glutathione-injection', template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'glutathione injection', volume: 2900, kd: 5,  estRevenueAtMaturity: 326 },
 ];
 
 // ============================================================
