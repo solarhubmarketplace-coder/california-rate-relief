@@ -20,6 +20,7 @@ export type AffiliateNetwork =
   | 'awin'
   | 'amazon'
   | 'direct'
+  | 'katalys'
   | 'pending';
 
 export interface AffiliateLink {
@@ -1118,10 +1119,10 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
   },
   'glp1-eden-health': {
     brand: 'Eden Health',
-    url: 'https://www.tryeden.com/',
-    status: 'pending',
-    network: 'impact',
-    commissionRate: 'TBD via Impact.com',
+    url: 'https://track.revoffers.com/aff_c?offer_id=1435&aff_id=12427',
+    status: 'active',
+    network: 'katalys',
+    commissionRate: '$300 default CPA + 13 payout tiers (up to $350/lead). Realized EPC $3.92, CR 1.10% (Katalys May 2026)',
     priceDisplay: '$149 intro / $229-$249 ongoing',
   },
   'glp1-medvi': {
@@ -1171,10 +1172,10 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
   },
   'glp1-directmeds': {
     brand: 'DirectMeds',
-    url: 'https://www.directmeds.com/',
-    status: 'pending',
-    network: 'direct',
-    commissionRate: 'TBD — affiliate program not publicly listed',
+    url: 'https://track.revoffers.com/aff_c?offer_id=1304&aff_id=12427',
+    status: 'active',
+    network: 'katalys',
+    commissionRate: '$280 default CPA (Katalys May 2026)',
     priceDisplay: '$179.10–$399/mo (sublingual + injectable)',
   },
   'glp1-ivim-health': {
@@ -1216,6 +1217,42 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
     network: 'direct',
     commissionRate: 'TBD — TWO public programs: /partnerships/affiliates + /partnerships/medical-affiliates',
     priceDisplay: 'From $99/mo (compounded sema)',
+  },
+
+  // --- 4 NEW Katalys-approved providers (added 2026-05-05) ---
+  // All approved on www.glp1comparehub.com (traffic source 12427).
+  // Tracking pattern: track.revoffers.com/aff_c?offer_id=<PROGRAM_ID>&aff_id=12427
+  'glp1-embody': {
+    brand: 'Embody',
+    url: 'https://track.revoffers.com/aff_c?offer_id=1548&aff_id=12427',
+    status: 'active',
+    network: 'katalys',
+    commissionRate: '$400 default CPA + $200 sermorelin. Realized EPC $4.60, CR 1.31% — highest EPC of the 6 (Katalys May 2026)',
+    priceDisplay: 'From $149/mo (semaglutide, tirzepatide, GLP-1 gum)',
+  },
+  'glp1-gala-health': {
+    brand: 'Gala Health',
+    url: 'https://track.revoffers.com/aff_c?offer_id=1576&aff_id=12427',
+    status: 'active',
+    network: 'katalys',
+    commissionRate: '$349 default CPA + 3 payout tiers. Realized EPC $3.60, CR 1.18% (Katalys May 2026)',
+    priceDisplay: 'GLP-1 telehealth (US-based)',
+  },
+  'glp1-care-bare-rx': {
+    brand: 'Care Bare Rx',
+    url: 'https://track.revoffers.com/aff_c?offer_id=1519&aff_id=12427',
+    status: 'active',
+    network: 'katalys',
+    commissionRate: '$300 default CPA + 6 payout tiers (covers GLP-1, hair, sexual health) (Katalys May 2026)',
+    priceDisplay: 'Weight loss from $199/mo + hair regrowth + sexual health',
+  },
+  'glp1-system-labs': {
+    brand: 'System Labs',
+    url: 'https://track.revoffers.com/aff_c?offer_id=1575&aff_id=12427',
+    status: 'active',
+    network: 'katalys',
+    commissionRate: '$100 default CPA + 4 payout tiers across Anti-aging, B-12, GLP-1, NAD+ (Katalys May 2026)',
+    priceDisplay: 'Peptides + GLP-1 + NAD+ + B-12 (longevity stack)',
   },
 
   // ============ GENERIC FALLBACKS ============
