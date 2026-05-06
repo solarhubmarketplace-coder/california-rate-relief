@@ -1264,7 +1264,7 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
     status: 'active',
     network: 'katalys',
     commissionRate: '$125 default CPA; tiered: Semaglutide $120, Tirzepatide $140, Oral Sermorelin $120, Hair Loss Finasteride $80, Hair Loss Dutasteride $120. Realized EPC $8.91, CR 7.12% (Katalys May 2026). AK excluded.',
-    priceDisplay: 'Verify on struthealth.com',
+    priceDisplay: 'Oral Semaglutide from $99/mo, Oral Tirzepatide from $199/mo (auto-refill, struthealth.com 2026-05-06)',
   },
   'glp1-tmates': {
     brand: 'TMates',
@@ -1272,7 +1272,7 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
     status: 'active',
     network: 'katalys',
     commissionRate: '$250 default CPA. Realized EPC $16.09, CR 6.43% — HIGHEST EPC in entire Katalys stack (May 2026). Sub-verticals: GLP-1, NAD+, TRT, ED, Hair Loss.',
-    priceDisplay: 'Verify on tmates.com/products/semaglutide',
+    priceDisplay: 'Semaglutide $158-$249/mo, Tirzepatide $167-$297/mo (1-12 mo plans, same price all doses, tmates.com 2026-05-06)',
   },
 
   // ============ GENERIC FALLBACKS ============

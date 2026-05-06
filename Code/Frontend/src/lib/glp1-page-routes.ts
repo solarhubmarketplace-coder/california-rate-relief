@@ -95,6 +95,17 @@ const livePages: PageRoute[] = [
     note: 'Highest single-page revenue target. Updated 2026-05-05 with insurance-vs-cash-pay angle and verified May 2026 pricing.',
   },
   {
+    path: '/tmates-vs-embody',
+    template: 'provider-vs-provider',
+    tier: 'B',
+    status: 'live',
+    targetKeyword: 'tmates vs embody',
+    estRevenueAtMaturity: 0,
+    volume: 0,
+    kd: 0,
+    note: 'NEW 2026-05-06. Provider vs provider comparison — #1 EPC (TMates) vs #3 EPC (Embody) Katalys-active programs. Capturable SERP, low brand competition.',
+  },
+  {
     path: '/compounded-tirzepatide',
     template: 'compliance-pillar',
     tier: 'A',
@@ -381,7 +392,7 @@ const commercialPages: PageRoute[] = [
   // /cheapest-tirzepatide-online and /best-compounded-tirzepatide promoted to livePages 2026-05-05
   { path: '/cheapest-semaglutide-online',     template: 'commercial-comparison', tier: 'B', status: 'queued', targetKeyword: 'cheapest semaglutide online',     volume: 350,  kd: 10 },
   { path: '/cheapest-compounded-tirzepatide', template: 'commercial-comparison', tier: 'B', status: 'queued', targetKeyword: 'cheapest compounded tirzepatide', volume: 600,  kd: 7 },
-  { path: '/best-compounded-semaglutide',     template: 'commercial-comparison', tier: 'B', status: 'queued', targetKeyword: 'best compounded semaglutide',     volume: 500,  kd: 34 },
+  { path: '/best-compounded-semaglutide',     template: 'commercial-comparison', tier: 'B', status: 'live', targetKeyword: 'best compounded semaglutide',     volume: 500,  kd: 34, note: 'NEW 2026-05-06. Listicle ranking the 6 best compounded sema providers with TMates + Strut at top.' },
 ];
 
 // ============================================================
