@@ -4,6 +4,7 @@ import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { GLP1ComparisonTable } from '@/components/glp1/GLP1ComparisonTable';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { primaryProviders } from '@/lib/glp1-providers';
 import { buildAffiliateUrl } from '@/lib/affiliate-links';
 import { ArrowRight, ShieldCheck, AlertCircle, CircleCheck, Calendar, Trophy, Award } from 'lucide-react';
@@ -423,6 +424,8 @@ export default function BestCompoundedTirzepatidePage() {
             />
           </div>
         </section>
+
+        <RelatedGuides currentPath="/best-compounded-tirzepatide" />
 
         {/* Final CTA */}
         <section className='py-10 md:py-14 bg-white'>

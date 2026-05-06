@@ -4,6 +4,7 @@ import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { GLP1ComparisonTable } from '@/components/glp1/GLP1ComparisonTable';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { primaryProviders } from '@/lib/glp1-providers';
 import { ArrowRight, ShieldCheck, AlertCircle, CircleCheck, Calendar, Pill, Droplet } from 'lucide-react';
 
@@ -435,6 +436,8 @@ export default function OralTirzepatidePage() {
             />
           </div>
         </section>
+
+        <RelatedGuides currentPath="/oral-tirzepatide" />
 
         {/* Final CTA */}
         <section className='py-10 md:py-14 bg-white'>

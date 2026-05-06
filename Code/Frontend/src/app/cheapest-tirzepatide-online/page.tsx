@@ -4,6 +4,7 @@ import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { GLP1ComparisonTable } from '@/components/glp1/GLP1ComparisonTable';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { primaryProviders } from '@/lib/glp1-providers';
 import { buildAffiliateUrl } from '@/lib/affiliate-links';
 import { ArrowRight, AlertCircle, CircleCheck, Calendar, DollarSign, Trophy } from 'lucide-react';
@@ -372,6 +373,8 @@ export default function CheapestTirzepatideOnlinePage() {
             />
           </div>
         </section>
+
+        <RelatedGuides currentPath="/cheapest-tirzepatide-online" />
 
         {/* Final CTA */}
         <section className='py-10 md:py-14' style={{ backgroundColor: '#F8F4ED' }}>

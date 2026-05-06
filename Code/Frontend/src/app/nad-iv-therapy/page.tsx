@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { primaryProviders } from '@/lib/glp1-providers';
 import { buildAffiliateUrl } from '@/lib/affiliate-links';
 import { ArrowRight, AlertCircle, CircleCheck, Calendar, Zap, Sparkles, Trophy } from 'lucide-react';
@@ -497,6 +498,8 @@ export default function NadIvTherapyPage() {
             </div>
           </div>
         </section>
+
+        <RelatedGuides currentPath="/nad-iv-therapy" />
 
         {/* Final CTA */}
         <section className='py-10 md:py-14 bg-white'>

@@ -1,9 +1,31 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Script from 'next/script';
+import { Plus_Jakarta_Sans, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+
+// =============================================================================
+// FONTS — self-hosted via next/font (2026-04-30, Batch 3.5)
+// =============================================================================
+// Replaces the two render-blocking Google Fonts @import statements that lived
+// in globals.css. CSS variables are wired into tailwind.config.ts fontFamily.
+// =============================================================================
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-display',
+  display: 'swap',
+});
 
 // =============================================================================
 // PER-DOMAIN ROOT METADATA
@@ -62,6 +84,17 @@ const DOMAIN_DEFAULTS = {
     favicon: '/favicon.ico',
     appleTouchIcon: '/favicon.ico',
   },
+  glp1comparehub: {
+    base: 'https://glp1comparehub.com',
+    title: 'GLP1CompareHub — Independent GLP-1 Telehealth Provider Comparison',
+    description:
+      'Independent comparison of verified GLP-1 telehealth programs (compounded semaglutide, tirzepatide). Real pricing, post-FDA-crackdown framing, and provider rankings backed by realized EPC data.',
+    siteName: 'GLP1CompareHub',
+    ogImage: '/img/glp1/og-image.png',
+    ogAlt: 'GLP1CompareHub — Independent GLP-1 Telehealth Provider Comparison',
+    favicon: '/img/glp1/favicon.svg',
+    appleTouchIcon: '/img/glp1/favicon.svg',
+  },
 };
 
 function detectDomainKey(host: string): keyof typeof DOMAIN_DEFAULTS {
@@ -69,19 +102,30 @@ function detectDomainKey(host: string): keyof typeof DOMAIN_DEFAULTS {
   if (h.includes('greenreviewshub')) return 'greenreviewshub';
   if (h.includes('securehomegear')) return 'securehomegear';
   if (h.includes('athomebiohacking')) return 'athomebiohacking';
+  if (h.includes('glp1comparehub')) return 'glp1comparehub';
   return 'ratereliefca';
 }
+
+// Per-domain GSC verification tokens. Each site needs its OWN token because
+// each is a separate GSC property. Add tokens here as new sites are verified.
+const GSC_VERIFICATION_TOKENS: Record<keyof typeof DOMAIN_DEFAULTS, string | undefined> = {
+  ratereliefca: 'alM4ttazO_TNjm-jjscGnlwFakwTWXiAqA0xaZy9umg',
+  greenreviewshub: undefined, // TODO: add when GRH GSC property is verified
+  securehomegear: undefined, // TODO: add when SHG GSC property is verified
+  athomebiohacking: undefined, // TODO: add when AHB GSC property is verified
+  glp1comparehub: undefined, // TODO: add token after creating GSC property at https://search.google.com/search-console
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   const hdrs = await headers();
   const host = hdrs.get('host') || 'ratereliefca.com';
-  const cfg = DOMAIN_DEFAULTS[detectDomainKey(host)];
+  const domainKey = detectDomainKey(host);
+  const cfg = DOMAIN_DEFAULTS[domainKey];
+  const gscToken = GSC_VERIFICATION_TOKENS[domainKey];
 
   return {
     metadataBase: new URL(cfg.base),
-    verification: {
-      google: 'alM4ttazO_TNjm-jjscGnlwFakwTWXiAqA0xaZy9umg',
-    },
+    verification: gscToken ? { google: gscToken } : undefined,
     title: cfg.title,
     description: cfg.description,
     alternates: {
@@ -133,15 +177,60 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const googlePlacesApiKey = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
 
+  // Host-gate the Google Maps Places script (Batch 3.4). Only CRR uses Places
+  // autocomplete in the qualification wizard. Loading on GRH/SHG/AHB cost ~80KB
+  // of synchronous JS per page for nothing.
+  const hdrs = await headers();
+  const host = hdrs.get('host') || '';
+  const domainKey = detectDomainKey(host);
+  const isCRR = domainKey === 'ratereliefca';
+
+  // Global Organization + WebSite JSON-LD per host (Batch 5).
+  // Emitted on EVERY page so Google sees the publisher entity + sitelinks-search-box
+  // potential consistently across the site, not just on /reviews.
+  const cfg = DOMAIN_DEFAULTS[domainKey];
+  const orgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${cfg.base}#organization`,
+    name: cfg.siteName,
+    url: cfg.base,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${cfg.base}/img/logo.svg`,
+    },
+  };
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${cfg.base}#website`,
+    url: cfg.base,
+    name: cfg.siteName,
+    description: cfg.description,
+    publisher: { '@id': `${cfg.base}#organization` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${cfg.base}/?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${plusJakartaSans.variable} ${dmSerifDisplay.variable}`}
+    >
       <head>
         {/* Impact.com site verification. Impact's scanner looks for a
             `value` attribute (non-standard for <meta>, but that's what
@@ -156,14 +245,37 @@ export default function RootLayout({
         <meta name="impact-site-verification" {...{ value: '5415a32f-dea8-4428-9a39-02c4e626cdcf' }} />
       </head>
       <body className="font-sans antialiased">
+        {/* Skip-to-content link (Batch 3.6). Visible only on keyboard focus.
+            WCAG 2.1 SC 2.4.1 (Bypass Blocks). */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2"
+        >
+          Skip to main content
+        </a>
+        {/* Global Organization + WebSite (with SearchAction) JSON-LD per host (Batch 5). */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <GoogleAnalytics />
-        {googlePlacesApiKey && (
+        {googlePlacesApiKey && isCRR && (
           <Script
             src={`https://maps.googleapis.com/maps/api/js?key=${googlePlacesApiKey}&libraries=places`}
             strategy="beforeInteractive"
           />
         )}
-        <Providers>{children}</Providers>
+        <Providers>
+          {/* display: contents — wrapper carries the skip-link target id without
+              affecting layout flow. Sub-layouts keep their own <main> tags. */}
+          <div id="main-content" className="contents">
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );
