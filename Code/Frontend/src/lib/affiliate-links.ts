@@ -1129,16 +1129,16 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
     brand: 'MEDVi',
     url: 'https://www.medvi.com/',
     status: 'pending',
-    network: 'shareasale',
-    commissionRate: 'TBD via ShareASale',
+    network: 'katalys',
+    commissionRate: '$228 default CPA (Katalys offer #1265 — pending brand approval as of May 2026)',
     priceDisplay: '$179-$299/mo',
   },
   'glp1-ro': {
     brand: 'Ro',
     url: 'https://ro.co/weight-loss/',
     status: 'pending',
-    network: 'direct',
-    commissionRate: 'TBD',
+    network: 'katalys',
+    commissionRate: '$5 default CPA on Katalys offer #359 (pending approval — likely lead/trial action, verify on approval)',
     priceDisplay: '$149/mo membership + meds',
   },
   'glp1-calibrate': {
@@ -1253,6 +1253,26 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
     network: 'katalys',
     commissionRate: '$100 default CPA + 4 payout tiers (Anti-aging / B-12 / GLP-1 / NAD+) (Katalys May 2026)',
     priceDisplay: 'GLP-1 $179, NAD+ $79 first mo, B-12 $89, Sermorelin from $79 first mo',
+  },
+
+  // --- 2 more Katalys-approved providers (added 2026-05-06) ---
+  // Both joined/approved on Katalys but missing from registry until now.
+  // TMates is the highest-EPC program in the entire Katalys account ($16.09 EPC).
+  'glp1-strut-health': {
+    brand: 'Strut Health',
+    url: 'https://track.revoffers.com/aff_c?offer_id=384&aff_id=12427',
+    status: 'active',
+    network: 'katalys',
+    commissionRate: '$125 default CPA; tiered: Semaglutide $120, Tirzepatide $140, Oral Sermorelin $120, Hair Loss Finasteride $80, Hair Loss Dutasteride $120. Realized EPC $8.91, CR 7.12% (Katalys May 2026). AK excluded.',
+    priceDisplay: 'Verify on struthealth.com',
+  },
+  'glp1-tmates': {
+    brand: 'TMates',
+    url: 'https://track.revoffers.com/aff_c?offer_id=1471&aff_id=12427',
+    status: 'active',
+    network: 'katalys',
+    commissionRate: '$250 default CPA. Realized EPC $16.09, CR 6.43% — HIGHEST EPC in entire Katalys stack (May 2026). Sub-verticals: GLP-1, NAD+, TRT, ED, Hair Loss.',
+    priceDisplay: 'Verify on tmates.com/products/semaglutide',
   },
 
   // ============ GENERIC FALLBACKS ============
