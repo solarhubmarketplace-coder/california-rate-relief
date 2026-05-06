@@ -90,7 +90,7 @@ const DOMAIN_DEFAULTS = {
     description:
       'Independent comparison of verified GLP-1 telehealth programs (compounded semaglutide, tirzepatide). Real pricing, post-FDA-crackdown framing, and provider rankings backed by realized EPC data.',
     siteName: 'GLP1CompareHub',
-    ogImage: '/img/glp1/og-image.png',
+    ogImage: '/img/glp1/og-image.jpg',
     ogAlt: 'GLP1CompareHub — Independent GLP-1 Telehealth Provider Comparison',
     favicon: '/img/glp1/favicon.svg',
     appleTouchIcon: '/img/glp1/favicon.svg',
