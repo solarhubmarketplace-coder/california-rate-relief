@@ -25,9 +25,9 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Zepbound vs Wegovy 2026: Which GLP-1 Wins?',
+  headline: 'Zepbound vs Wegovy May 2026: Trial Data, Cost Paths, and the Insurance Loophole',
   datePublished: '2026-05-03',
-  dateModified: '2026-05-03',
+  dateModified: '2026-05-05',
   author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
   publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
   mainEntityOfPage: 'https://glp1comparehub.com/zepbound-vs-wegovy',
@@ -126,7 +126,7 @@ export default function ZepboundVsWegovyPage() {
             </p>
             <div className='flex items-center gap-3 text-xs' style={{ color: '#6B7B82' }}>
               <span className='flex items-center gap-1'>
-                <Calendar className='h-3 w-3' /> Updated May 3, 2026
+                <Calendar className='h-3 w-3' /> Updated May 5, 2026
               </span>
               <span>·</span>
               <span>By <Link href='/author/chad-simpson' className='underline'>Chad Simpson</Link></span>
@@ -277,39 +277,151 @@ export default function ZepboundVsWegovyPage() {
               className='text-2xl md:text-3xl font-bold mb-5'
               style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
-              Cost Comparison (May 2026)
+              Cost Comparison (Verified May 2026)
             </h2>
 
             <div
-              className='mb-5 rounded-2xl p-5 flex items-start gap-3'
+              className='mb-5 rounded-2xl p-5'
               style={{ backgroundColor: '#FEE2E2', border: '1px solid #B14739' }}
             >
-              <AlertCircle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#B14739' }} />
-              <div>
-                <div className='text-sm font-bold mb-1' style={{ color: '#B14739' }}>
-                  FDA Compounded Notice
+              <div className='flex items-start gap-3 mb-2'>
+                <AlertCircle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#B14739' }} />
+                <div className='text-sm font-bold' style={{ color: '#B14739' }}>
+                  May 2026 FDA update on the compounded route
                 </div>
-                <div className='text-sm' style={{ color: '#3D5560' }}>
-                  The FDA April 30, 2026 503B compounded shutdown proposal continues to evolve.
-                  Compounded tirzepatide and semaglutide remain available through 503A pharmacies but
-                  are <strong>NOT FDA-approved drugs</strong>. Confirm legal/medical guidance with your prescriber.
-                </div>
+              </div>
+              <div className='text-sm ml-8' style={{ color: '#3D5560' }}>
+                On <strong>April 1 2026</strong>, the FDA ended enforcement discretion for 503A pharmacies producing
+                copies of tirzepatide and semaglutide at telehealth scale. On <strong>April 30</strong>, the FDA
+                proposed excluding both drugs from the 503B bulks list — comment period closes <strong>June 29 2026</strong>.
+                503A pharmacies are now restricted to true patient-specific compounding. Many telehealth providers
+                continue under narrow exceptions, but legal and compliance risk has increased. See{' '}
+                <Link href='/compounded-tirzepatide' className='underline' style={{ color: '#B14739' }}>our full compounded tirzepatide guide</Link>{' '}
+                for the regulatory deep-dive.
               </div>
             </div>
 
-            <div className='space-y-3'>
+            <h3 className='text-lg font-bold mb-3 mt-2' style={{ color: '#0E2A3A' }}>
+              Branded — list price + cash-pay direct from manufacturers
+            </h3>
+            <div className='space-y-3 mb-6'>
+              <CostRow label='Branded Zepbound (list price per fill)' price='$499–$1,086' />
               <CostRow label='Branded Zepbound (telehealth, no insurance)' price='~$1,498/mo' />
+              <CostRow label='Branded Zepbound via LillyDirect (cash-pay vials, starter dose)' price='$299/mo' highlight />
+              <CostRow label='Branded Zepbound via LillyDirect (cash-pay, maintenance dose)' price='$399–$699/mo' />
               <CostRow label='Branded Wegovy injectable (telehealth, no insurance)' price='~$1,839/mo' />
-              <CostRow label='Wegovy Pill (NEW oral semaglutide)' price='from $149/mo' highlight />
-              <CostRow label='Compounded tirzepatide (503A pharmacy)' price='$133–$399/mo' />
-              <CostRow label='Compounded semaglutide (503A pharmacy)' price='$99–$297/mo' />
+              <CostRow label='Wegovy Pill (oral semaglutide)' price='from $149/mo' highlight />
             </div>
 
-            <p className='text-xs mt-4' style={{ color: '#6B7B82' }}>
-              Insurance coverage for branded Zepbound and Wegovy varies. Many commercial plans cover one
-              or both for patients meeting BMI eligibility. Use our <Link href='/tools/cost-calculator' className='underline' style={{ color: '#D4A33A' }}>cost calculator</Link> to estimate
-              your 12-month spend at any provider.
+            <h3 className='text-lg font-bold mb-3 mt-6' style={{ color: '#0E2A3A' }}>
+              Compounded — verified May 2026 telehealth pricing
+            </h3>
+            <div className='space-y-3 mb-6'>
+              <CostRow label='System Labs (compounded GLP-1, lowest entry)' price='$179/mo' highlight />
+              <CostRow label='Embody ($149 first month / Spring Forward $200 off)' price='$149 / $299 flat refill' />
+              <CostRow label='Gala Health (3-month all-inclusive plan)' price='$179–$199/mo' />
+              <CostRow label='Care Bare Rx (oral + injectable compounded)' price='from $199/mo' />
+              <CostRow label='Eden Health (intro / ongoing)' price='$149 / $229–$249' />
+              <CostRow label='Direct Meds (sublingual drops)' price='$224.10/mo' />
+              <CostRow label='Direct Meds (compounded injectable tirzepatide)' price='$297–$399/mo' />
+            </div>
+
+            <p className='text-xs italic mt-2' style={{ color: '#6B7B82' }}>
+              All compounded provider pricing Gronk-verified May 5, 2026 directly from each provider&rsquo;s public site.
+              Insurance coverage for branded Zepbound and Wegovy varies. Use our{' '}
+              <Link href='/tools/cost-calculator' className='underline' style={{ color: '#D4A33A' }}>cost calculator</Link>{' '}
+              to estimate your 12-month spend at any provider.
             </p>
+          </div>
+        </section>
+
+        {/* NEW: The Insurance Loophole — branded $25/mo vs compounded $179/mo */}
+        <section className='py-10 md:py-14 bg-white'>
+          <div className='max-w-4xl mx-auto px-4 md:px-6'>
+            <h2
+              className='text-2xl md:text-3xl font-bold mb-3'
+              style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
+            >
+              The Insurance Loophole: Branded at $25/mo vs Compounded at $179/mo
+            </h2>
+            <p className='text-base mb-5 leading-relaxed' style={{ color: '#3D5560' }}>
+              Most patients comparing Zepbound and Wegovy don&rsquo;t realize there are now <strong>three distinct cost paths</strong>,
+              and the cheapest is often counterintuitive. Picking the right path matters more than picking the right drug —
+              the cost gap between paths is wider than the cost gap between Zepbound and Wegovy.
+            </p>
+
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mb-5'>
+              <div className='p-5 rounded-2xl' style={{ backgroundColor: '#F0EBE0', border: '1px solid #D4A33A' }}>
+                <div className='text-xs font-bold uppercase tracking-widest mb-2' style={{ color: '#7A6020' }}>
+                  Path 1
+                </div>
+                <h3 className='font-bold mb-2' style={{ color: '#0E2A3A' }}>
+                  Branded + Commercial Insurance + Savings Card
+                </h3>
+                <p className='text-3xl font-bold mb-2' style={{ color: '#7CA982' }}>
+                  $25/mo
+                </p>
+                <p className='text-sm leading-relaxed mb-3' style={{ color: '#3D5560' }}>
+                  When commercial insurance covers Zepbound or Wegovy AND you stack the manufacturer&rsquo;s savings card,
+                  out-of-pocket can drop as low as $25/mo. This is the cheapest path that exists — but it requires
+                  insurance coverage AND a current savings card eligibility check.
+                </p>
+                <p className='text-xs' style={{ color: '#6B7B82' }}>
+                  Eligibility: BMI ≥ 30 (or ≥ 27 + comorbidity), commercial insurance with coverage, savings card not previously exhausted.
+                </p>
+              </div>
+
+              <div className='p-5 rounded-2xl' style={{ backgroundColor: '#F8F4ED', border: '1px solid #E5DDC8' }}>
+                <div className='text-xs font-bold uppercase tracking-widest mb-2' style={{ color: '#6B7B82' }}>
+                  Path 2
+                </div>
+                <h3 className='font-bold mb-2' style={{ color: '#0E2A3A' }}>
+                  Branded Cash-Pay (LillyDirect / Wegovy Pill)
+                </h3>
+                <p className='text-3xl font-bold mb-2' style={{ color: '#D4A33A' }}>
+                  $149–$699/mo
+                </p>
+                <p className='text-sm leading-relaxed mb-3' style={{ color: '#3D5560' }}>
+                  When insurance won&rsquo;t cover, manufacturers now sell direct: LillyDirect cash-pay Zepbound vials
+                  start at $299 (starter dose) and scale to $399–$699 for maintenance doses. The Wegovy Pill (oral
+                  semaglutide) is $149/mo flat — the cheapest branded option that exists.
+                </p>
+                <p className='text-xs' style={{ color: '#6B7B82' }}>
+                  Eligibility: anyone with a valid prescription. No insurance required.
+                </p>
+              </div>
+
+              <div className='p-5 rounded-2xl' style={{ backgroundColor: '#F4EBD0', border: '1px solid #D4A33A' }}>
+                <div className='text-xs font-bold uppercase tracking-widest mb-2' style={{ color: '#7A6020' }}>
+                  Path 3
+                </div>
+                <h3 className='font-bold mb-2' style={{ color: '#0E2A3A' }}>
+                  Compounded Cash-Pay (Telehealth)
+                </h3>
+                <p className='text-3xl font-bold mb-2' style={{ color: '#D4A33A' }}>
+                  $179–$399/mo
+                </p>
+                <p className='text-sm leading-relaxed mb-3' style={{ color: '#3D5560' }}>
+                  Compounded tirzepatide or semaglutide via 503A pharmacies under telehealth-prescribed plans.
+                  System Labs starts at $179/mo (lowest); Embody, Eden, Gala, Care Bare, and Direct Meds round out the
+                  $179–$399 range. NOT FDA-approved; tightening regulatory landscape post-April 2026.
+                </p>
+                <p className='text-xs' style={{ color: '#6B7B82' }}>
+                  Eligibility: anyone with a valid telehealth-prescribed compounded GLP-1.
+                </p>
+              </div>
+            </div>
+
+            <div className='p-5 rounded-2xl' style={{ backgroundColor: '#F0EBE0', border: '1px solid #E5DDC8' }}>
+              <h3 className='font-bold mb-3' style={{ color: '#0E2A3A' }}>
+                Picking the right path — quick decision framework
+              </h3>
+              <ul className='text-sm space-y-2' style={{ color: '#3D5560' }}>
+                <li><strong>Path 1 (branded + insurance):</strong> Best if your commercial plan covers Zepbound or Wegovy and you haven&rsquo;t exhausted the savings card. Always run an eligibility check first — your insurer knows in 2 minutes.</li>
+                <li><strong>Path 2 (LillyDirect / Wegovy Pill):</strong> Best if you want FDA-approved branded medication and don&rsquo;t qualify for Path 1. The Wegovy Pill at $149/mo is genuinely the cheapest branded GLP-1 that has ever existed.</li>
+                <li><strong>Path 3 (compounded telehealth):</strong> Best if you&rsquo;re comfortable with non-FDA-approved compounded versions, want to lock in entry-level pricing ($179/mo at System Labs), or want a needle-free format like Direct Meds sublingual or Embody&rsquo;s GLP-1 gum. Note the post-April 2026 regulatory tightening.</li>
+              </ul>
+            </div>
           </div>
         </section>
 

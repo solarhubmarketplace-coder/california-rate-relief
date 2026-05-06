@@ -81,7 +81,63 @@ const livePages: PageRoute[] = [
     estRevenueAtMaturity: 6600,
     volume: 44000,
     kd: 22,
-    note: 'Tier A flagship comparison — already live with NEJM citations + Reddit quotes',
+    note: 'Tier A flagship comparison — live with NEJM citations + Reddit quotes',
+  },
+  {
+    path: '/zepbound-vs-wegovy',
+    template: 'medication-vs-medication',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'zepbound vs wegovy',
+    estRevenueAtMaturity: 7050,
+    volume: 47000,
+    kd: 19,
+    note: 'Highest single-page revenue target. Updated 2026-05-05 with insurance-vs-cash-pay angle and verified May 2026 pricing.',
+  },
+  {
+    path: '/compounded-tirzepatide',
+    template: 'compliance-pillar',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'compounded tirzepatide',
+    estRevenueAtMaturity: 1830,
+    volume: 28000,
+    kd: 12,
+    note: 'KD 12 easy win. Rewritten 2026-05-05 with April 1 + April 30 + June 29 FDA framing.',
+  },
+  // NEW pages added 2026-05-05 (Batch 1 of foreman build)
+  {
+    path: '/tirzepatide-near-me',
+    template: 'commercial-comparison',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'tirzepatide near me',
+    estRevenueAtMaturity: 4524,
+    volume: 8700,
+    kd: 7,
+    note: 'NEW 2026-05-05. KD 7 commercial buyer page. Reframed as telehealth-vs-local-clinic given the May 2026 SERP shift to local pack.',
+  },
+  {
+    path: '/best-compounded-tirzepatide',
+    template: 'commercial-comparison',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'best compounded tirzepatide',
+    estRevenueAtMaturity: 56,
+    volume: 500,
+    kd: 3,
+    note: 'NEW 2026-05-05. Affiliate money page — listicle ranking the 6 active Katalys-approved providers with FDA banner.',
+  },
+  {
+    path: '/oral-tirzepatide',
+    template: 'compounded-format',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'oral tirzepatide',
+    estRevenueAtMaturity: 731,
+    volume: 6500,
+    kd: 8,
+    note: 'NEW 2026-05-05. Sublingual (Direct Meds) + GLP-1 gum (Embody) — dual active affiliate fit.',
   },
 ];
 
@@ -89,28 +145,6 @@ const livePages: PageRoute[] = [
 // NEXT — Build first (Tier A money pages)
 // ============================================================
 const nextPages: PageRoute[] = [
-  {
-    path: '/zepbound-vs-wegovy',
-    template: 'medication-vs-medication',
-    tier: 'A',
-    status: 'next',
-    targetKeyword: 'zepbound vs wegovy',
-    estRevenueAtMaturity: 7050,
-    volume: 47000,
-    kd: 19,
-    note: 'Highest single-page revenue opportunity in the entire batch',
-  },
-  {
-    path: '/compounded-tirzepatide',
-    template: 'compliance-pillar',
-    tier: 'A',
-    status: 'next',
-    targetKeyword: 'compounded tirzepatide',
-    estRevenueAtMaturity: 1830,
-    volume: 28000,
-    kd: 12,
-    note: 'KD 12 easy win + 503A safety angle',
-  },
   {
     path: '/compounded-semaglutide',
     template: 'compliance-pillar',
@@ -120,7 +154,7 @@ const nextPages: PageRoute[] = [
     estRevenueAtMaturity: 1665,
     volume: 37000,
     kd: 48,
-    note: 'High vol but harder KD; pillar play',
+    note: 'High vol but harder KD; pillar play. Mirror of /compounded-tirzepatide — defer until DR climbs.',
   },
 ];
 
@@ -203,8 +237,8 @@ const providerVsPages: PageRoute[] = [
 // MEDICATION VS MEDICATION (additional comparison pages beyond the 2 already covered)
 // ============================================================
 const medVsMedPages: PageRoute[] = [
-  { path: '/wegovy-vs-mounjaro',     template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'wegovy vs mounjaro',     volume: 6700,  kd: 24, estRevenueAtMaturity: 1005 },
-  { path: '/ozempic-vs-mounjaro',    template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'ozempic vs mounjaro',    volume: 21000, kd: 54, estRevenueAtMaturity: 630 },
+  { path: '/wegovy-vs-mounjaro',     template: 'medication-vs-medication', tier: 'B', status: 'live', targetKeyword: 'wegovy vs mounjaro',     volume: 6700,  kd: 24, estRevenueAtMaturity: 1005 },
+  { path: '/ozempic-vs-mounjaro',    template: 'medication-vs-medication', tier: 'B', status: 'live', targetKeyword: 'ozempic vs mounjaro',    volume: 21000, kd: 54, estRevenueAtMaturity: 630 },
   { path: '/tirzepatide-vs-zepbound', template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'tirzepatide vs zepbound', volume: 1500, kd: 9,  estRevenueAtMaturity: 630 },
   { path: '/semaglutide-vs-wegovy',  template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'semaglutide vs wegovy' },
   { path: '/oral-semaglutide-vs-injection', template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'oral semaglutide vs injection', volume: 600 },
@@ -296,8 +330,8 @@ const compliancePages: PageRoute[] = [
 // INTERACTIVE TOOLS
 // ============================================================
 const toolPages: PageRoute[] = [
-  { path: '/match',                  template: 'match-quiz',      tier: 'A', status: 'queued', targetKeyword: 'find your glp-1 match', note: 'Quiz — central conversion mechanic' },
-  { path: '/tools/cost-calculator',  template: 'cost-calculator', tier: 'A', status: 'queued', targetKeyword: 'glp-1 cost calculator', note: 'Titration breakdown tool' },
+  { path: '/match',                  template: 'match-quiz',      tier: 'A', status: 'live',   targetKeyword: 'find your glp-1 match', note: 'Quiz — central conversion mechanic. Flipped to live 2026-05-05.' },
+  { path: '/tools/cost-calculator',  template: 'cost-calculator', tier: 'A', status: 'live',   targetKeyword: 'glp-1 cost calculator', note: 'Titration breakdown tool. Flipped to live 2026-05-05.' },
   { path: '/simulator',              template: 'simulator',       tier: 'B', status: 'future', targetKeyword: 'glp-1 weight loss simulator', note: 'V1.5 — defer to post-launch' },
   { path: '/compare',                template: 'compare-tool',    tier: 'A', status: 'queued', targetKeyword: 'compare glp-1 providers', note: 'Compare-tray UI for selecting providers' },
 ];

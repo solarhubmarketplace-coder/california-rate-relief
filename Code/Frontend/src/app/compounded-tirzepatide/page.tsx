@@ -8,14 +8,14 @@ import { primaryProviders } from '@/lib/glp1-providers';
 import { ArrowRight, ShieldCheck, AlertCircle, CircleCheck, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Compounded Tirzepatide 2026: Cost ($133–$399/mo), Safety, FDA Status, and Where to Buy | GLP1CompareHub',
+  title: 'Compounded Tirzepatide May 2026: Cost ($179–$399), Post-FDA-Crackdown Status, and Verified Providers | GLP1CompareHub',
   description:
-    'Independent guide to compounded tirzepatide: how 503A pharmacies make it, why it is NOT FDA-approved, current pricing across the top 6 telehealth providers ($133–$399/mo), legal status post-April 2026, and which provider matches your situation.',
+    'Independent guide to compounded tirzepatide updated May 5 2026 — including the April 1 FDA enforcement shift, April 30 503B exclusion proposal (comment period open until June 29), how 503A pharmacies are now operating under narrow exceptions, current $179–$399/mo pricing across 10 verified telehealth providers, and which is right for you.',
   alternates: { canonical: 'https://glp1comparehub.com/compounded-tirzepatide' },
   openGraph: {
-    title: 'Compounded Tirzepatide 2026 — Pricing, Safety, FDA Status',
+    title: 'Compounded Tirzepatide — Updated May 5 2026 (Post-FDA-Crackdown)',
     description:
-      '503A pharmacy compounding, post-April-2026 FDA shutdown analysis, $133–$399/mo provider pricing comparison, and which telehealth program is right for you.',
+      'Post-April 2026 enforcement landscape, narrow 503A exceptions, 10 verified provider pricing rows ($179–$399/mo), and what June 29 could mean for compounded GLP-1.',
     url: 'https://glp1comparehub.com/compounded-tirzepatide',
     siteName: 'GLP1CompareHub',
     type: 'article',
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Compounded Tirzepatide 2026: Cost, Safety, and Where to Buy',
+  headline: 'Compounded Tirzepatide May 2026: Cost, Post-FDA-Crackdown Status, and Verified Providers',
   datePublished: '2026-05-03',
-  dateModified: '2026-05-03',
+  dateModified: '2026-05-05',
   author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
   publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
   mainEntityOfPage: 'https://glp1comparehub.com/compounded-tirzepatide',
-  about: ['Compounded tirzepatide', 'Tirzepatide', '503A compounding pharmacy', 'GLP-1 weight loss'],
+  about: ['Compounded tirzepatide', 'Tirzepatide', '503A compounding pharmacy', '503B compounding facility', 'FDA enforcement', 'GLP-1 weight loss'],
 };
 
 const faqSchema = {
@@ -40,18 +40,26 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Is compounded tirzepatide FDA-approved?',
+      name: 'Is compounded tirzepatide still legal in May 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Compounded tirzepatide is NOT an FDA-approved drug. It is produced by state-licensed 503A and 503B compounding pharmacies under specific FDA exemptions that allow compounding of medications when the branded version (Zepbound, Mounjaro) is in shortage or when an individual patient has documented medical necessity for a custom formulation. The FDA April 30, 2026 503B proposal could materially change availability — see the regulatory section below.',
+        text: 'Compounded tirzepatide is still available as of May 5 2026, but the legal landscape has materially tightened. On April 1 2026, the FDA ended its enforcement discretion for 503A pharmacies producing copies of tirzepatide and semaglutide at telehealth scale. On April 30, the FDA formally proposed excluding tirzepatide, semaglutide, and liraglutide from the 503B bulks list — public comment period is open through June 29 2026. 503A pharmacies are now restricted to true patient-specific compounding (documented allergy, custom strength, or other clinical justification) rather than routine telehealth-scale production. Many telehealth providers continue serving customers under these narrow exceptions or via shifting supply chains, but legal and compliance risk has increased.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How much does compounded tirzepatide cost?',
+      name: 'Is compounded tirzepatide FDA-approved?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'As of May 2026, compounded tirzepatide ranges from $133/mo (GobyMeds entry tier) to $399/mo (DirectMeds injectable, top tier) across our verified telehealth provider stack. This compares to $1,498/mo for branded Zepbound through telehealth — a 73-91% cost reduction.',
+        text: 'No. Compounded tirzepatide is NOT an FDA-approved drug. It is produced by state-licensed 503A and 503B compounding pharmacies under specific FDA exemptions. The FDA-declared shortage of branded tirzepatide ended in 2024-2025. With the April 1 2026 enforcement shift and the April 30 503B exclusion proposal, the regulatory window for routine compounded tirzepatide has narrowed significantly.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does compounded tirzepatide cost in May 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'As of May 2026, compounded tirzepatide ranges from $179/mo (System Labs entry, the lowest verified price in our stack) to $399/mo (DirectMeds injectable, top tier). Embody offers $149 first month + $299 flat refills with a Spring Forward $200-off promo. Gala Health offers $179-$199/mo on 3-month all-inclusive plans. This compares to $1,498/mo for branded Zepbound through telehealth, $499-$1,086 list price per fill, or $25/mo with commercial insurance + savings card when covered.',
       },
     },
     {
@@ -59,23 +67,23 @@ const faqSchema = {
       name: 'Is compounded tirzepatide safe?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Compounded tirzepatide produced by reputable 503A pharmacies follows USP standards but does not undergo the same FDA pre-market safety review as branded Zepbound or Mounjaro. Look for providers using LegitScript-certified, NABP-accredited, or Valisure-tested compounding pharmacies. Risks include batch-to-batch variability, incorrect dosing, and adulteration in lower-tier providers. The clinical efficacy data from Zepbound (SURMOUNT-1, 20.2% weight loss at 72 weeks) does NOT automatically transfer to compounded versions.',
+        text: 'Compounded tirzepatide produced by reputable 503A pharmacies follows USP standards but does not undergo the same FDA pre-market safety review as branded Zepbound or Mounjaro. Look for providers using LegitScript-certified, NABP-accredited compounding pharmacies. Post-April 2026, verifying that your provider is operating under a valid 503A patient-specific compounding exception (not a discontinued bulk-production model) is more important than ever. Risks include batch-to-batch variability, incorrect dosing, and adulteration in lower-tier providers. The clinical efficacy data from branded Zepbound (SURMOUNT-1, 20.2% weight loss at 72 weeks) does NOT automatically transfer to compounded versions.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Where can I buy compounded tirzepatide online?',
+      name: 'Where can I buy compounded tirzepatide online in May 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The top verified telehealth providers offering compounded tirzepatide as of May 2026: GobyMeds (from $133/mo), Ivim Health ($149/mo + $74.99 program fee), Eden Health (from $129 first month, 3-mo plan), MEDVi ($229-$299/mo), SkinnyRx ($299-$399/mo), DirectMeds ($224-$399/mo). All require a telehealth consultation and prescription.',
+        text: 'Verified telehealth providers actively serving compounded tirzepatide customers as of May 2026 (Gronk-verified): System Labs ($179/mo, lowest entry); Embody ($149 first / $299 flat refills, Spring Forward $200 off promo); Gala Health ($179-$199/mo 3-month plan); Care Bare Rx (from $199/mo, oral + injectable); Eden Health ($149 intro / $229-$249 ongoing); Direct Meds (sublingual $224.10/mo, injectable $399/mo). All require a telehealth consultation and prescription.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Is compounded tirzepatide legal?',
+      name: 'What changes if the FDA finalizes the April 30 503B proposal in July 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Compounded tirzepatide produced by state-licensed 503A pharmacies under documented medical necessity is legal in the United States as of May 2026. The legal landscape is evolving: the FDA April 30, 2026 503B proposal would limit compounding when a branded equivalent is on the market. Consult your prescriber and the FDA\'s current guidance for the latest status.',
+        text: 'The April 30 proposal targets 503B outsourcing-facility compounding of tirzepatide, semaglutide, and liraglutide. If finalized after the June 29 comment period, 503B-only providers may discontinue compounded GLP-1 lines. Most providers in the verified May 2026 stack source from 503A pharmacies, which would continue serving compounded tirzepatide for individual prescriptions under documented medical necessity — but supply chains may tighten further and prices may shift. We re-verify provider status monthly.',
       },
     },
   ],
@@ -117,11 +125,11 @@ export default function CompoundedTirzepatidePage() {
               Compounded Tirzepatide 2026
             </h1>
             <p className='text-lg md:text-xl mb-3' style={{ color: '#3D5560' }}>
-              The 73-91% cheaper alternative to branded Zepbound. Cost, safety, FDA status, and where to buy.
+              Updated May 5, 2026 — including the April 1 FDA enforcement shift, the April 30 503B exclusion proposal, and what June 29 means for compounded GLP-1.
             </p>
             <div className='flex items-center gap-3 text-xs' style={{ color: '#6B7B82' }}>
               <span className='flex items-center gap-1'>
-                <Calendar className='h-3 w-3' /> Updated May 3, 2026
+                <Calendar className='h-3 w-3' /> Updated May 5, 2026
               </span>
               <span>·</span>
               <span>By <Link href='/author/chad-simpson' className='underline'>Chad Simpson</Link></span>
@@ -129,25 +137,25 @@ export default function CompoundedTirzepatidePage() {
           </div>
         </section>
 
-        {/* FDA warning callout — top of fold */}
+        {/* FDA warning callout — top of fold (post-April 2026 reality) */}
         <section className='py-6' style={{ backgroundColor: '#F8F4ED' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <div
-              className='rounded-2xl p-5 flex items-start gap-3'
+              className='rounded-2xl p-5'
               style={{ backgroundColor: '#FEE2E2', border: '1px solid #B14739' }}
             >
-              <AlertCircle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#B14739' }} />
-              <div>
-                <div className='text-sm font-bold mb-1' style={{ color: '#B14739' }}>
-                  Important: Compounded tirzepatide is NOT FDA-approved
-                </div>
-                <div className='text-sm' style={{ color: '#3D5560' }}>
-                  It is produced by state-licensed 503A pharmacies under specific FDA exemptions. The clinical
-                  trial efficacy of <em>branded</em> Zepbound (SURMOUNT-1: 20.2% average weight loss) does NOT
-                  automatically transfer to compounded versions. Always work with a licensed prescriber and
-                  use providers that source from accredited compounding pharmacies (LegitScript, NABP, USP-compliant).
+              <div className='flex items-start gap-3 mb-3'>
+                <AlertCircle className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#B14739' }} />
+                <div className='text-sm font-bold' style={{ color: '#B14739' }}>
+                  Important May 2026 update: the compounded tirzepatide landscape has tightened
                 </div>
               </div>
+              <ul className='text-sm space-y-2 ml-8' style={{ color: '#3D5560' }}>
+                <li><strong>April 1, 2026:</strong> The FDA ended enforcement discretion for 503A pharmacies producing &ldquo;essentially a copy&rdquo; of tirzepatide and semaglutide at telehealth scale.</li>
+                <li><strong>April 30, 2026:</strong> The FDA formally proposed excluding tirzepatide, semaglutide, and liraglutide from the 503B bulks list — comment period open through <strong>June 29, 2026</strong>.</li>
+                <li><strong>Today:</strong> 503A pharmacies are restricted to true patient-specific compounding (documented allergies, custom strengths). Many telehealth providers continue under narrow exceptions; legal and compliance risk has increased materially.</li>
+                <li><strong>Always:</strong> Compounded tirzepatide is NOT an FDA-approved drug. The clinical trial efficacy of branded Zepbound (SURMOUNT-1: 20.2% weight loss) does NOT automatically transfer to compounded versions. Work with a licensed prescriber and a verifiable LegitScript / NABP-accredited compounding pharmacy.</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -196,20 +204,21 @@ export default function CompoundedTirzepatidePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <PricingRow provider='GobyMeds' format='Injectable' price='From $133/mo' note='Lowest entry price; B12 / NAD+ / glycine combo available' badge='Best Value' />
-                  <PricingRow provider='Ivim Health' format='Injectable' price='$149/mo + $74.99 fee' note='Two-part pricing; microdosing GLP-1 program available' />
-                  <PricingRow provider='OrderlyMeds' format='Injectable' price='$299/mo (after starter)' note='3-month starter $449; lifestyle bundle (BetterHelp, meals)' />
-                  <PricingRow provider='MEDVi' format='Injectable' price='$229–$299/mo' note='Strongest brand recognition; 30-day flexibility' />
-                  <PricingRow provider='SkinnyRx' format='Injectable' price='$299–$399/mo' note='503A specialist; bundled all-in pricing' badge='Best Overall' />
-                  <PricingRow provider='Eden Health' format='Injectable' price='From $129 first mo (3-mo)' note='"Same Price at Every Dose" guarantee' />
-                  <PricingRow provider='DirectMeds' format='Injectable' price='$399/mo' note='Sublingual drops also offered at $224.10/mo (unique)' badge='Best for Sublingual' />
-                  <PricingRow provider='DirectMeds' format='Sublingual Drops' price='$224.10/mo' note='Only verified provider with sublingual GLP-1 in May 2026' />
+                  <PricingRow provider='System Labs' format='Injectable' price='$179/mo' note='Lowest GLP-1 entry in our verified stack; longevity bundle (NAD+ / B-12 / Sermorelin)' badge='Best Value' />
+                  <PricingRow provider='Embody' format='Injectable + GLP-1 Gum' price='$149 first / $299 flat' note='Spring Forward $200 off + free shipping; flat refill price (no dose escalation fees)' badge='Best Overall' />
+                  <PricingRow provider='Gala Health' format='Injectable' price='$179–$199/mo (3-mo plan)' note='All-inclusive 3-month bundling; provider consults + async support + shipping included' badge='Best 3-Mo Bundle' />
+                  <PricingRow provider='Care Bare Rx' format='Oral + Injectable' price='From $199/mo' note='Multi-vertical: $99 hair, $99 sexual health, $199 NAD+ standalone' badge='Best Multi-Vertical' />
+                  <PricingRow provider='Eden Health' format='Injectable' price='$149 intro / $229–$249' note='&ldquo;Same Price at Every Dose&rdquo; guarantee; month-to-month or 3-mo options' />
+                  <PricingRow provider='Direct Meds' format='Sublingual Drops' price='$224.10/mo' note='Only verified provider with compounded sublingual tirzepatide; needle-free' badge='Best for Sublingual' />
+                  <PricingRow provider='Direct Meds' format='Injectable' price='$297–$399/mo' note='Adjacent peptide menu (Sermorelin, NAD+, Epithalon)' />
                 </tbody>
               </table>
             </div>
             <p className='text-xs italic mt-3' style={{ color: '#6B7B82' }}>
-              Pricing verified directly from each provider&rsquo;s public site, May 2026. Confirm current rates
-              before purchase. Branded comparison: Zepbound through telehealth ~$1,498/mo (73-91% more expensive).
+              Pricing verified May 5, 2026 directly from each provider&rsquo;s public site (Gronk-verified).
+              Branded comparison: Zepbound list price $499–$1,086/fill; ~$1,498/mo through telehealth without insurance;
+              as low as $25/mo with commercial insurance + savings card; LillyDirect cash-pay $299 starter
+              dose, $399–$699 maintenance doses.
             </p>
           </div>
         </section>
@@ -253,31 +262,95 @@ export default function CompoundedTirzepatidePage() {
           </div>
         </section>
 
-        {/* Regulatory landscape */}
+        {/* Regulatory landscape — fully rewritten for May 2026 reality */}
         <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
           <div className='max-w-4xl mx-auto px-4 md:px-6'>
             <h2
               className='text-2xl md:text-3xl font-bold mb-5'
               style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
             >
-              The FDA April 30, 2026 503B Shutdown Proposal
+              The May 2026 FDA Reality — A Two-Step Crackdown
             </h2>
-            <p className='text-base mb-4 leading-relaxed' style={{ color: '#3D5560' }}>
-              In April 2026, the FDA proposed limiting 503B outsourcing-facility compounding of tirzepatide and
-              semaglutide on the grounds that the branded equivalents (Zepbound, Wegovy) are no longer in shortage.
-              The proposal does NOT directly affect 503A pharmacy compounding for individual prescriptions, which
-              remains the primary channel for compounded tirzepatide as of May 2026.
-            </p>
-            <p className='text-base mb-4 leading-relaxed' style={{ color: '#3D5560' }}>
-              <strong>Practical impact:</strong> Most of the providers in our top stack (SkinnyRx, MEDVi, Ivim,
-              Eden Health, GobyMeds, OrderlyMeds, DirectMeds) source from 503A pharmacies and would continue
-              serving compounded tirzepatide if the 503B proposal is implemented. 503B-only providers may
-              discontinue their compounded GLP-1 lines.
-            </p>
-            <p className='text-sm italic' style={{ color: '#6B7B82' }}>
-              We re-verify the FDA regulatory status monthly. Last verified: May 3, 2026. Subscribe to{' '}
-              <Link href='/news' className='underline' style={{ color: '#D4A33A' }}>our news feed</Link> for updates.
-            </p>
+
+            <div className='space-y-5'>
+              <div className='p-5 rounded-2xl bg-white' style={{ border: '1px solid #E5DDC8' }}>
+                <div className='text-xs font-bold uppercase tracking-widest mb-2' style={{ color: '#B14739' }}>
+                  Step 1 — April 1, 2026
+                </div>
+                <h3 className='font-bold mb-2 text-lg' style={{ color: '#0E2A3A' }}>
+                  FDA ended enforcement discretion for 503A &ldquo;essentially-a-copy&rdquo; compounding
+                </h3>
+                <p className='text-sm leading-relaxed' style={{ color: '#3D5560' }}>
+                  Throughout 2024 and 2025, while the FDA-declared shortage of branded tirzepatide and semaglutide was active, 503A
+                  pharmacies operated under enforcement discretion that effectively allowed routine production
+                  of compounded copies for telehealth distribution. With the shortage officially resolved, the FDA
+                  ended that discretion on April 1, 2026. 503A pharmacies are now restricted to true patient-specific
+                  compounding — meaning a documented allergy, custom dosing strength, or other clinical justification
+                  for the individual patient. Routine telehealth-scale production of compounded copies of FDA-approved
+                  tirzepatide is no longer protected.
+                </p>
+              </div>
+
+              <div className='p-5 rounded-2xl bg-white' style={{ border: '1px solid #E5DDC8' }}>
+                <div className='text-xs font-bold uppercase tracking-widest mb-2' style={{ color: '#B14739' }}>
+                  Step 2 — April 30, 2026
+                </div>
+                <h3 className='font-bold mb-2 text-lg' style={{ color: '#0E2A3A' }}>
+                  FDA proposed excluding tirzepatide, semaglutide, and liraglutide from the 503B bulks list
+                </h3>
+                <p className='text-sm leading-relaxed mb-2' style={{ color: '#3D5560' }}>
+                  The 503B bulks list governs which active pharmaceutical ingredients FDA-registered outsourcing
+                  facilities are permitted to compound from bulk substance. On April 30, 2026, the FDA formally
+                  proposed excluding all three GLP-1 ingredients on the grounds that there is &ldquo;no clinical need&rdquo;
+                  for compounded versions when the FDA-approved branded products are commercially available.
+                </p>
+                <p className='text-sm leading-relaxed' style={{ color: '#3D5560' }}>
+                  The proposal entered a <strong>public comment period that closes June 29, 2026</strong>. If finalized
+                  after that, 503B outsourcing facilities would no longer be permitted to compound bulk
+                  tirzepatide, semaglutide, or liraglutide.
+                </p>
+              </div>
+
+              <div className='p-5 rounded-2xl' style={{ backgroundColor: '#F4EBD0', border: '1px solid #D4A33A' }}>
+                <div className='text-xs font-bold uppercase tracking-widest mb-2' style={{ color: '#7A6020' }}>
+                  What this means for buyers in May 2026
+                </div>
+                <ul className='text-sm space-y-2' style={{ color: '#3D5560' }}>
+                  <li>
+                    <strong>Compounded tirzepatide is still available</strong> through telehealth providers operating
+                    under 503A patient-specific exceptions or via supply chains that have already adapted to the
+                    post-April reality.
+                  </li>
+                  <li>
+                    <strong>Pricing has held</strong> — the verified May 2026 stack still ranges $179–$399/mo. The
+                    crackdown has not yet materially shifted prices upward, but supply is tightening.
+                  </li>
+                  <li>
+                    <strong>Provider quality matters more than ever.</strong> Verify your provider sources from a
+                    LegitScript or NABP-accredited 503A pharmacy and is operating under a valid patient-specific
+                    compounding rationale, not a discontinued bulk-production model.
+                  </li>
+                  <li>
+                    <strong>If the June 29 proposal finalizes against compounded GLP-1,</strong> 503B-only providers
+                    will discontinue their compounded GLP-1 lines. 503A patient-specific compounding can continue
+                    for documented medical necessity, but supply chains may tighten further and prices may shift.
+                  </li>
+                  <li>
+                    <strong>Branded alternatives have shifted too.</strong> LillyDirect now sells branded Zepbound
+                    cash-pay vials at $299 (starter dose), scaling to $399–$699 maintenance doses. With commercial
+                    insurance + the manufacturer savings card, branded Zepbound can drop as low as $25/mo when covered.
+                    See our <Link href='/zepbound-vs-wegovy' className='underline' style={{ color: '#D4A33A' }}>Zepbound vs Wegovy comparison</Link> for the full pricing breakdown.
+                  </li>
+                </ul>
+              </div>
+
+              <p className='text-sm italic' style={{ color: '#6B7B82' }}>
+                We re-verify the FDA regulatory landscape and provider availability monthly. Last verified: May 5, 2026.
+                The next material milestone is the June 29 close of the 503B exclusion comment period — we will publish a
+                follow-up review within 7 days of any finalized rule. Subscribe to{' '}
+                <Link href='/news' className='underline' style={{ color: '#D4A33A' }}>our news feed</Link> for updates.
+              </p>
+            </div>
           </div>
         </section>
 
