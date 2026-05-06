@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/best-compounded-tirzepatide',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: '/img/glp1/og-best-compounded-tirzepatide.jpg', width: 1168, height: 784, alt: 'Best Compounded Tirzepatide providers 2026 comparison' }],
   },
 };
 

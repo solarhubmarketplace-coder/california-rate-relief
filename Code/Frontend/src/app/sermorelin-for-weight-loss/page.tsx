@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/sermorelin-for-weight-loss',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: '/img/glp1/og-sermorelin-for-weight-loss.jpg', width: 1168, height: 784, alt: 'Sermorelin for Weight Loss — telehealth guide 2026' }],
   },
 };
 

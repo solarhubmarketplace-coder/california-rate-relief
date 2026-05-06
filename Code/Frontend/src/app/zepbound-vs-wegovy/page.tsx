@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/zepbound-vs-wegovy',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: '/img/glp1/og-zepbound-vs-wegovy.jpg', width: 1168, height: 784, alt: 'Zepbound vs Wegovy — side-by-side comparison 2026' }],
   },
 };
 

@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/nad-iv-therapy',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: '/img/glp1/og-nad-iv-therapy.jpg', width: 1168, height: 784, alt: 'NAD+ IV Therapy — telehealth provider comparison' }],
   },
 };
 

@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/cheapest-tirzepatide-online',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: '/img/glp1/og-cheapest-tirzepatide.jpg', width: 1168, height: 784, alt: 'Cheapest Tirzepatide Online — verified lowest prices 2026' }],
   },
 };
 

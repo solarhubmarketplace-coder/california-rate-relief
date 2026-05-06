@@ -40,6 +40,7 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2026-05-03T00:00:00Z',
     siteName: 'GLP1CompareHub',
+    images: [{ url: '/img/glp1/og-wegovy-vs-mounjaro.jpg', width: 1168, height: 784, alt: 'Wegovy vs Mounjaro — side-by-side comparison 2026' }],
   },
 };
 

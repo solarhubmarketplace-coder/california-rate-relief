@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/tirzepatide-near-me',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: '/img/glp1/og-tirzepatide-near-me.jpg', width: 1168, height: 784, alt: 'Tirzepatide Near Me — local clinic vs telehealth comparison' }],
   },
 };
 

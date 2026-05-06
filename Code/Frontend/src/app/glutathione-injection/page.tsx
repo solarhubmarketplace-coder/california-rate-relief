@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/glutathione-injection',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: '/img/glp1/og-glutathione-injection.jpg', width: 1168, height: 784, alt: 'Glutathione Injection — IV vs IM telehealth guide 2026' }],
   },
 };
 

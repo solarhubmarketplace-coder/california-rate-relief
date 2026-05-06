@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/nad-nasal-spray',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: '/img/glp1/og-nad-nasal-spray.jpg', width: 1168, height: 784, alt: 'NAD+ Nasal Spray — comparison and provider guide 2026' }],
   },
 };
 
