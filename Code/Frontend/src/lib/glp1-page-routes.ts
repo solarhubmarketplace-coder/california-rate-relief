@@ -162,6 +162,29 @@ const livePages: PageRoute[] = [
     kd: 9,
     note: 'NEW 2026-05-05 (Batch 2). System Labs adjacent peptide play — IV vs at-home injection vs the GLP-1 + NAD+ longevity stack.',
   },
+  // Batch 3 — added 2026-05-05
+  {
+    path: '/tirzepatide-before-and-after',
+    template: 'commercial-comparison',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'tirzepatide before and after',
+    estRevenueAtMaturity: 1482,
+    volume: 3800,
+    kd: 2,
+    note: 'NEW 2026-05-05 (Batch 3). KD 2 transformation page written with rigorous compliance framing — no patient testimonials, lean on SURMOUNT-1 trial data with full disclaimers.',
+  },
+  {
+    path: '/tirzepatide-tablets',
+    template: 'compounded-format',
+    tier: 'A',
+    status: 'live',
+    targetKeyword: 'tirzepatide tablets',
+    estRevenueAtMaturity: 641,
+    volume: 5700,
+    kd: 16,
+    note: 'NEW 2026-05-05 (Batch 3). Educational format complement to /oral-tirzepatide. Honest answer that no FDA-approved tirzepatide tablet exists; routes traffic to compounded sublingual/gum or Wegovy Pill alternative.',
+  },
 ];
 
 // ============================================================
@@ -275,7 +298,7 @@ const formatPages: PageRoute[] = [
   { path: '/sublingual-semaglutide', template: 'compounded-format', tier: 'A', status: 'queued', targetKeyword: 'sublingual semaglutide', volume: 4000,  kd: 19, estRevenueAtMaturity: 450 },
   { path: '/sublingual-tirzepatide', template: 'compounded-format', tier: 'B', status: 'queued', targetKeyword: 'sublingual tirzepatide', volume: 900,   kd: 3,  estRevenueAtMaturity: 101 },
   { path: '/oral-tirzepatide',       template: 'compounded-format', tier: 'A', status: 'queued', targetKeyword: 'oral tirzepatide',        volume: 6500,  kd: 8,  estRevenueAtMaturity: 731 },
-  { path: '/tirzepatide-tablets',    template: 'compounded-format', tier: 'A', status: 'queued', targetKeyword: 'tirzepatide tablets',     volume: 5700,  kd: 16, estRevenueAtMaturity: 641 },
+  // /tirzepatide-tablets promoted to livePages 2026-05-05 (Batch 3)
   { path: '/semaglutide-tablets',    template: 'compounded-format', tier: 'B', status: 'queued', targetKeyword: 'semaglutide tablets',     volume: 12000, kd: 50 },
   { path: '/wegovy-pill',            template: 'compounded-format', tier: 'A', status: 'queued', targetKeyword: 'wegovy pill',             volume: 37000, kd: 41, estRevenueAtMaturity: 1665 },
 ];
