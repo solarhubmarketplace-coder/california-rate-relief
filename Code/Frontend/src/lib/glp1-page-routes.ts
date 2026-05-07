@@ -382,7 +382,7 @@ const peptidePages: PageRoute[] = [
   })),
   // Specific high-volume peptide pages — many promoted to livePages in Batches 1-5
   // /nad-iv-therapy, /nad-nasal-spray, /lipotropic-injections, /sermorelin-for-weight-loss, /glutathione-injection now live
-  { path: '/nad-injection',      template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'nad+ injection',  volume: 2300,  kd: 15 },
+  { path: '/nad-injection',      template: 'peptide-stack', tier: 'B', status: 'live',   targetKeyword: 'nad+ injection',  volume: 2300,  kd: 15, note: 'LIVE 2026-05-06. SubQ vs IV vs nasal spray 3-way comparison. GLP-1 stack rationale (lean mass, sirtuin activation, fatigue management). Eden Health (editor pick), System Labs, Ivim. 6-FAQ schema.' },
 ];
 
 // ============================================================
