@@ -249,12 +249,12 @@ const nextPages: PageRoute[] = [
     path: '/compounded-semaglutide',
     template: 'compliance-pillar',
     tier: 'A',
-    status: 'next',
+    status: 'live',
     targetKeyword: 'compounded semaglutide',
     estRevenueAtMaturity: 1665,
     volume: 37000,
     kd: 48,
-    note: 'High vol but harder KD; pillar play. Mirror of /compounded-tirzepatide — defer until DR climbs.',
+    note: 'LIVE 2026-05-06. Compliance pillar: FDA enforcement timeline, compounded vs branded table, 4 providers (Strut/TMates/Embody/Eden), VerifiedPricingBadge, EditorialByline.',
   },
 ];
 

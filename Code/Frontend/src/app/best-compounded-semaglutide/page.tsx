@@ -7,6 +7,7 @@ import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBann
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
 import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
+import { VerifiedPricingBadge } from '@/components/glp1/VerifiedPricingBadge';
 import {
   ArrowRight,
   Calendar,
@@ -414,9 +415,12 @@ export default function BestCompoundedSemaglutidePage() {
                     {/* Pricing block */}
                     <div className="grid gap-4 md:grid-cols-2 mb-5">
                       <div className="rounded-lg p-4" style={{ backgroundColor: '#F0EBE0' }}>
-                        <h3 className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#7A6020' }}>
-                          Verified Pricing (May 6, 2026)
-                        </h3>
+                        <div className="flex items-center gap-2 mb-2">
+                          <h3 className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#7A6020' }}>
+                            Pricing
+                          </h3>
+                          <VerifiedPricingBadge verifiedDate="2026-05-06" variant="compact" />
+                        </div>
                         <ul className="space-y-1 text-sm" style={{ color: '#3D5560' }}>
                           {p.pricing.map((line) => (
                             <li key={line}>{line}</li>

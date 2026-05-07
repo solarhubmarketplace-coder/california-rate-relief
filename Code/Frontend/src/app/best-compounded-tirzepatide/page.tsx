@@ -10,6 +10,7 @@ import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { primaryProviders } from '@/lib/glp1-providers';
 import { buildAffiliateUrl } from '@/lib/affiliate-links';
+import { VerifiedPricingBadge } from '@/components/glp1/VerifiedPricingBadge';
 import { ArrowRight, ShieldCheck, AlertCircle, CircleCheck, Calendar, Trophy, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -577,7 +578,10 @@ function DetailedReview({
       </div>
 
       <div className='mb-3 p-4 rounded-xl' style={{ backgroundColor: '#F0EBE0' }}>
-        <div className='text-xl font-bold mb-1' style={{ color: '#D4A33A' }}>{priceHeadline}</div>
+        <div className='flex items-start justify-between gap-2 mb-1'>
+          <div className='text-xl font-bold' style={{ color: '#D4A33A' }}>{priceHeadline}</div>
+          <VerifiedPricingBadge verifiedDate="2026-05-06" variant="compact" />
+        </div>
         <div className='text-xs' style={{ color: '#6B7B82' }}>{metric}</div>
         {promo && (
           <div className='text-xs font-semibold mt-2 inline-block px-2 py-1 rounded' style={{ backgroundColor: '#F4EBD0', color: '#7A6020' }}>

@@ -350,6 +350,10 @@ export default function TirzepatideVsSemaglutide() {
                 <Activity className='h-4 w-4' />
                 <span>16 min read</span>
               </div>
+              <div>
+                <span>By </span>
+                <Link href='/author/chad-simpson' className='underline font-medium'>Chad Simpson</Link>
+              </div>
             </div>
             <p className='text-slate-600 text-sm mt-3'>
               Reviewed against the SURMOUNT-5 head-to-head trial (NEJM, May 2025), SURMOUNT-1

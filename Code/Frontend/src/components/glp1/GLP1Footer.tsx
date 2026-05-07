@@ -12,6 +12,7 @@ const EXPLORE_LINKS = [
 ];
 
 const LEGAL_LINKS = [
+  { label: 'About the Author',     href: '/author/chad-simpson' },
   { label: 'Privacy Policy',       href: '/privacy' },
   { label: 'Terms of Use',         href: '/terms' },
   { label: 'Affiliate Disclosure', href: '/affiliate-disclosure' },
