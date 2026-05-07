@@ -436,6 +436,7 @@ const toolPages: PageRoute[] = [
 // ============================================================
 const utilityPages: PageRoute[] = [
   { path: '/about',                template: 'utility', tier: 'A', status: 'utility', note: 'Author bio + E-E-A-T' },
+  { path: '/author/chad-simpson',  template: 'utility', tier: 'A', status: 'utility', note: 'Person schema, E-E-A-T — editorial credentials, affiliate + YMYL disclosure' },
   { path: '/methodology',          template: 'utility', tier: 'A', status: 'utility', note: 'How we evaluate providers' },
   { path: '/affiliate-disclosure', template: 'utility', tier: 'A', status: 'utility', note: 'FTC 16 CFR § 255 compliance' },
   { path: '/medical-disclaimer',   template: 'utility', tier: 'A', status: 'utility', note: 'YMYL — FDA/FTC compliance posture, not medical advice, compounded GLP-1 risk disclosure' },
