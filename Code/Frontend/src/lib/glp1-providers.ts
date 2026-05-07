@@ -1123,6 +1123,7 @@ export const glp1Providers: GLP1Provider[] = [
     lastUpdated: '2026-05-06',
     lastVerified: '2026-05-06',
     comparisonsAvailable: ['care-bare-rx', 'embody', 'eden-health', 'directmeds'],
+    heroImage: '/img/glp1/strut-health-hero.jpg',
   },
 
   // TMates: #1 HIGHEST EPC in entire Katalys account ($16.09, 6.43% CR, $250 CPA)
@@ -1195,6 +1196,7 @@ export const glp1Providers: GLP1Provider[] = [
     lastUpdated: '2026-05-06',
     lastVerified: '2026-05-06',
     comparisonsAvailable: ['embody', 'eden-health', 'gala-health', 'strut-health', 'system-labs'],
+    heroImage: '/img/glp1/tmates-hero.jpg',
   },
 ];
 
