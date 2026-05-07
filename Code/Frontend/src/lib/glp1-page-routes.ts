@@ -362,7 +362,7 @@ const formatPages: PageRoute[] = [
 // ============================================================
 const microdosingPages: PageRoute[] = [
   { path: '/microdosing-tirzepatide',         template: 'microdosing-cluster', tier: 'A', status: 'live',   targetKeyword: 'microdosing tirzepatide',         volume: 7900, kd: 22, estRevenueAtMaturity: 711, note: 'LIVE 2026-05-06. SURMOUNT-1 dose-response table (5mg=15%, 10mg=19.5%, 15mg=20.9%). SURMOUNT-4 maintenance data. Three microdosing use cases. Ivim Health (microdosing specialist), TMates, Eden, MEDVi. 6-FAQ schema.' },
-  { path: '/microdose-tirzepatide',           template: 'microdosing-cluster', tier: 'B', status: 'queued', targetKeyword: 'microdose tirzepatide',           volume: 3400, kd: 14, estRevenueAtMaturity: 383 },
+  { path: '/microdose-tirzepatide',           template: 'microdosing-cluster', tier: 'B', status: 'live',   targetKeyword: 'microdose tirzepatide',           volume: 3400, kd: 14, estRevenueAtMaturity: 383, note: 'LIVE 2026-05-06. Practical how-to companion to /microdosing-tirzepatide. Dose math table (5mg/mL and 10mg/mL vials), 4 dose tiers, administration steps. Ivim/TMates/MEDVi provider cards. 6-FAQ schema.' },
   { path: '/microdosing-semaglutide',         template: 'microdosing-cluster', tier: 'B', status: 'queued', targetKeyword: 'microdosing semaglutide',         volume: 3500, kd: 30 },
   { path: '/microdosing-glp-1-schedule',      template: 'microdosing-cluster', tier: 'B', status: 'queued', targetKeyword: 'glp-1 microdosing schedule',      volume: 600,  kd: 4,  estRevenueAtMaturity: 68 },
   { path: '/how-to-microdose-semaglutide',    template: 'microdosing-cluster', tier: 'B', status: 'queued', targetKeyword: 'how to microdose semaglutide',    volume: 1100 },
