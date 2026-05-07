@@ -381,9 +381,10 @@ function glp1Sitemap(base: string): MetadataRoute.Sitemap {
     { url: `${base}/terms`,                lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
   ];
 
-  // All pages from the registry that are LIVE, NEXT, or QUEUED (skip future + utility duplicates)
+  // Only LIVE pages — queued/next pages don't have page.tsx files yet and would 404.
+  // Sitemap accuracy > sitemap size: a 404 URL trains Google to distrust the sitemap.
   const registryPages: MetadataRoute.Sitemap = allPageRoutes
-    .filter((r) => r.status === 'live' || r.status === 'next' || r.status === 'queued')
+    .filter((r) => r.status === 'live')
     .map((r) => {
       // Adjust homepage URL — registry stores /glp1-home but public URL is /
       const url = r.path === '/glp1-home' ? base : `${base}${r.path}`;
