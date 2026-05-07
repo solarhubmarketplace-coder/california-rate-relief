@@ -400,7 +400,7 @@ const commercialPages: PageRoute[] = [
 // ============================================================
 const stackPages: PageRoute[] = [
   { path: '/tirzepatide-with-b12',         template: 'peptide-stack', tier: 'A', status: 'live',   targetKeyword: 'tirzepatide with b12',         volume: 1500, kd: 2, note: 'LIVE 2026-05-06. Why B12 is added, cyano vs methyl, evidence summary (no trials for combo), 4 provider cards, 6-FAQ schema.' },
-  { path: '/semaglutide-with-b12',         template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'semaglutide with b12',         volume: 1900, kd: 22 },
+  { path: '/semaglutide-with-b12',         template: 'peptide-stack', tier: 'B', status: 'live',   targetKeyword: 'semaglutide with b12',         volume: 1900, kd: 22, note: 'LIVE 2026-05-06. B12 rationale, evidence section (no trial data for combo), cyano vs methyl, 4 provider cards (Strut/TMates/Eden/Embody), 6-FAQ schema.' },
   { path: '/compounded-semaglutide-with-b12', template: 'peptide-stack', tier: 'B', status: 'queued', targetKeyword: 'compounded semaglutide with b12', volume: 1600, kd: 23 },
   { path: '/glp-1-stack-guide',            template: 'peptide-stack', tier: 'C', status: 'queued', targetKeyword: 'glp-1 stack' },
 ];
