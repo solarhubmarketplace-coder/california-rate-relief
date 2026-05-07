@@ -339,7 +339,7 @@ const providerVsPages: PageRoute[] = [
 const medVsMedPages: PageRoute[] = [
   { path: '/wegovy-vs-mounjaro',     template: 'medication-vs-medication', tier: 'B', status: 'live', targetKeyword: 'wegovy vs mounjaro',     volume: 6700,  kd: 24, estRevenueAtMaturity: 1005 },
   { path: '/ozempic-vs-mounjaro',    template: 'medication-vs-medication', tier: 'B', status: 'live', targetKeyword: 'ozempic vs mounjaro',    volume: 21000, kd: 54, estRevenueAtMaturity: 630 },
-  { path: '/tirzepatide-vs-zepbound', template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'tirzepatide vs zepbound', volume: 1500, kd: 9,  estRevenueAtMaturity: 630 },
+  { path: '/tirzepatide-vs-zepbound', template: 'medication-vs-medication', tier: 'B', status: 'live',   targetKeyword: 'tirzepatide vs zepbound', volume: 1500, kd: 9,  estRevenueAtMaturity: 630, note: 'LIVE 2026-05-06. Clarity page: tirz IS Zepbound. Branded ($1,086) vs compounded ($167-299) cost breakdown, FDA enforcement timeline, 4 provider cards, 6-FAQ schema.' },
   { path: '/semaglutide-vs-wegovy',  template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'semaglutide vs wegovy' },
   { path: '/oral-semaglutide-vs-injection', template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'oral semaglutide vs injection', volume: 600 },
   { path: '/wegovy-pill-vs-injection', template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'oral wegovy', volume: 1400, kd: 31 },
