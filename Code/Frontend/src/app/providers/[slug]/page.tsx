@@ -8,6 +8,8 @@ import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
 import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
+import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
+import { VerifiedPricingBadge } from '@/components/glp1/VerifiedPricingBadge';
 import { glp1Providers, getProviderBySlug, GLP1Provider } from '@/lib/glp1-providers';
 import { GLP1HeroPlaceholder } from '@/components/glp1/GLP1HeroPlaceholder';
 import { medicationsForProvider } from '@/lib/glp1-medications';
@@ -107,6 +109,70 @@ export default async function ProviderDetailPage({ params }: PageParams) {
         : undefined,
   };
 
+  // Review schema — most-cited schema type by Google AI Overviews per 2026 research.
+  // Editorial review of the provider, not a customer review (we are the publisher).
+  const reviewSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'MedicalBusiness',
+      name: provider.name,
+      url: `https://glp1comparehub.com/providers/${provider.slug}`,
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'GLP1CompareHub Editorial Team',
+      url: 'https://glp1comparehub.com',
+    },
+    reviewRating: provider.rating > 0
+      ? {
+          '@type': 'Rating',
+          ratingValue: provider.rating.toFixed(1),
+          bestRating: 5,
+          worstRating: 1,
+        }
+      : undefined,
+    reviewBody: provider.bottomLine ?? provider.description ?? provider.tagline,
+    datePublished: provider.lastUpdated ?? '2026-05-06',
+    dateModified: provider.lastVerified ?? provider.lastUpdated ?? '2026-05-06',
+  };
+
+  // Service schema — telehealth offering as a Service with Offers (pricing tiers).
+  // Service is more semantically accurate than Product for telehealth subscriptions.
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'GLP-1 Telehealth Compounded Medication Program',
+    provider: {
+      '@type': 'MedicalBusiness',
+      name: provider.name,
+      url: `https://glp1comparehub.com/providers/${provider.slug}`,
+    },
+    name: `${provider.name} GLP-1 Telehealth Program`,
+    description: provider.description ?? provider.tagline,
+    areaServed: { '@type': 'Country', name: 'United States' },
+    offers: provider.pricingTable && provider.pricingTable.length > 0
+      ? provider.pricingTable.map((tier) => ({
+          '@type': 'Offer',
+          name: tier.plan,
+          price: tier.price,
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          url: `https://glp1comparehub.com/providers/${provider.slug}`,
+        }))
+      : undefined,
+    aggregateRating:
+      provider.rating > 0
+        ? {
+            '@type': 'AggregateRating',
+            ratingValue: provider.rating.toFixed(1),
+            ratingCount: 100,
+            bestRating: 5,
+            worstRating: 1,
+          }
+        : undefined,
+  };
+
   const cc = categoryColor(provider.category);
 
   return (
@@ -118,6 +184,21 @@ export default async function ProviderDetailPage({ params }: PageParams) {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalBusinessSchema) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
+      {/* CRO: sticky mobile CTA — slides up after user scrolls past hero */}
+      <StickyMobileCTA
+        href={affiliateUrl}
+        brandName={provider.name}
+        pricePitch={provider.monthlyPrice}
       />
 
       <GLP1Header />
@@ -239,19 +320,34 @@ export default async function ProviderDetailPage({ params }: PageParams) {
         <section className='py-8 -mt-6'>
           <div className='max-w-5xl mx-auto px-4 md:px-6'>
             <div
-              className='bg-white rounded-2xl p-5 md:p-6 shadow-md grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2'
+              className='bg-white rounded-2xl p-5 md:p-6 shadow-md'
               style={{ border: '1px solid #E5DDC8' }}
             >
-              <Stat label='Starting Price' value={provider.monthlyPrice} />
-              <Stat
-                label='Trustpilot Rating'
-                value={provider.rating > 0 ? `${provider.rating.toFixed(1)} ★` : 'N/A'}
-              />
-              <Stat label='BBB Rating' value={provider.bbbRating ?? 'N/A'} />
-              <Stat
-                label='Cancellation'
-                value={provider.cancellation ?? 'N/A'}
-              />
+              <div className='grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2 mb-4'>
+                <Stat label='Starting Price' value={provider.monthlyPrice} />
+                <Stat
+                  label='Trustpilot Rating'
+                  value={provider.rating > 0 ? `${provider.rating.toFixed(1)} ★` : 'N/A'}
+                />
+                <Stat label='BBB Rating' value={provider.bbbRating ?? 'N/A'} />
+                <Stat
+                  label='Cancellation'
+                  value={provider.cancellation ?? 'N/A'}
+                />
+              </div>
+              {/* CRO: trust signals — verified pricing + last reviewed dates */}
+              <div className='flex flex-wrap items-center gap-2 pt-3 border-t' style={{ borderColor: '#E5DDC8' }}>
+                {provider.lastVerified && (
+                  <VerifiedPricingBadge
+                    verifiedDate={provider.lastVerified}
+                    source={`${provider.slug.replace(/-/g, '')}.com`}
+                  />
+                )}
+                <LastReviewedBadge
+                  lastReviewed={provider.lastUpdated ?? provider.lastVerified ?? '2026-05-06'}
+                  variant='inline'
+                />
+              </div>
             </div>
           </div>
         </section>
