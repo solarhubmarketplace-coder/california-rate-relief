@@ -3,9 +3,12 @@ import Link from 'next/link';
 import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
+import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
+import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
+import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
 import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { primaryProviders } from '@/lib/glp1-providers';
-import { buildAffiliateUrl } from '@/lib/affiliate-links';
+import { buildAffiliateUrl, buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { ArrowRight, AlertCircle, CircleCheck, Calendar, Zap, Sparkles, Trophy } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -96,6 +99,8 @@ export default function NadIvTherapyPage() {
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <GLP1Header />
+      <MedicalDisclaimerBanner />
+      <StickyMobileCTA href={buildGlp1AffiliateUrl('eden-health', 'nad-iv-therapy')} brandName="Eden Health" pricePitch="NAD+ injection from $79 first month — no IV required" />
 
       <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
         <div className='max-w-7xl mx-auto px-4 md:px-6 py-2 text-xs text-center' style={{ color: '#7A6020' }}>
@@ -543,6 +548,7 @@ export default function NadIvTherapyPage() {
         </section>
       </main>
 
+      <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
       <GLP1Footer />
     </GLP1Layout>
   );
