@@ -29,7 +29,9 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://glp1comparehub.com/',
     siteName: 'GLP1CompareHub',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'GLP1CompareHub — Find Your Perfect GLP-1 Match' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const orgSchema = {

@@ -13,9 +13,9 @@ import { primaryProviders } from '@/lib/glp1-providers';
 import { ArrowRight, AlertCircle, CircleCheck, Calendar, Pill, X } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Tirzepatide Tablets May 2026: Are They Real? FDA Status, Compounded Options, and What to Get Instead | GLP1CompareHub',
+  title: 'Tirzepatide Tablets 2026: Do They Exist? FDA Status & Options',
   description:
-    'Searching for tirzepatide tablets? There is no FDA-approved tirzepatide tablet in May 2026. Branded Zepbound and Mounjaro are injectable only. Here are the actual compounded oral options (sublingual drops, GLP-1 gum) and the closest FDA-approved tablet alternative (Wegovy Pill / Rybelsus, oral semaglutide).',
+    'No FDA-approved tirzepatide tablet in 2026 — Zepbound and Mounjaro are injectable only. Compounded sublingual drops (~$224/mo), GLP-1 gum, and oral semaglutide alternatives compared.',
   alternates: { canonical: 'https://glp1comparehub.com/tirzepatide-tablets' },
   openGraph: {
     title: 'Tirzepatide Tablets — Are They Real? May 2026 Reality Check',
@@ -24,8 +24,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/tirzepatide-tablets',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: '/img/glp1/og-tirzepatide-tablets.jpg', width: 1168, height: 784, alt: 'Tirzepatide Tablets — oral format vs injectable comparison' }],
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-tirzepatide-tablets.jpg', width: 1168, height: 784, alt: 'Tirzepatide Tablets — oral format vs injectable comparison' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const articleSchema = {

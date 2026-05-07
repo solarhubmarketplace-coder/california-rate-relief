@@ -12,9 +12,9 @@ import { buildAffiliateUrl, buildGlp1AffiliateUrl } from '@/lib/affiliate-links'
 import { ArrowRight, AlertCircle, CircleCheck, Calendar, Zap, Sparkles, Trophy } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'NAD+ IV Therapy 2026: Cost ($150–$1,000+ per drip), At-Home Alternatives, and the GLP-1 Stack | GLP1CompareHub',
+  title: 'NAD+ IV Therapy 2026: Cost, At-Home Alternatives & the GLP-1 Stack',
   description:
-    'NAD+ IV therapy guide updated May 2026. IV drip pricing, at-home alternatives (injection $79 first month, oral, nasal spray), why patients stack NAD+ with GLP-1 for energy and longevity, and which option fits your budget.',
+    'NAD+ IV therapy: $150–$1,000+/drip at-clinic vs $79/mo at-home injection alternative. GLP-1 + NAD+ longevity stack explained. Verified pricing and at-home options — May 2026.',
   alternates: { canonical: 'https://glp1comparehub.com/nad-iv-therapy' },
   openGraph: {
     title: 'NAD+ IV Therapy — Cost, At-Home Alternatives, and the GLP-1 Stack',
@@ -23,8 +23,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/nad-iv-therapy',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: '/img/glp1/og-nad-iv-therapy.jpg', width: 1168, height: 784, alt: 'NAD+ IV Therapy — telehealth provider comparison' }],
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-nad-iv-therapy.jpg', width: 1168, height: 784, alt: 'NAD+ IV Therapy — telehealth provider comparison' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const articleSchema = {

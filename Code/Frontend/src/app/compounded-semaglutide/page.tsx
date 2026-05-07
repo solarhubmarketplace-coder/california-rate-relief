@@ -13,9 +13,9 @@ import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { ArrowRight, ShieldCheck, AlertCircle, CircleCheck, Calendar, ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Compounded Semaglutide 2026: Is It Still Legal? FDA Status + Verified Providers | GLP1CompareHub',
+  title: 'Compounded Semaglutide 2026: Legal Status, Cost & Verified Providers',
   description:
-    'Independent guide to compounded semaglutide — updated May 2026. FDA shortage ended March 2025. April 1 enforcement shift. 503A vs 503B status. Current $99–$249/mo pricing across verified telehealth providers, and how to choose.',
+    'Compounded semaglutide 2026: FDA shortage ended March 2025. 503A still available under narrow exceptions. Verified pricing $99–$249/mo. Updated May 2026.',
   alternates: { canonical: 'https://glp1comparehub.com/compounded-semaglutide' },
   openGraph: {
     title: 'Compounded Semaglutide 2026 — Post-FDA-Enforcement Status + Pricing',
@@ -24,7 +24,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/compounded-semaglutide',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Compounded Semaglutide 2026 — GLP1CompareHub' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const articleSchema = {

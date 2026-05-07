@@ -39,16 +39,19 @@ import {
 export const metadata: Metadata = {
   title: 'Ozempic vs Mounjaro 2026: Complete Comparison for Diabetes & Weight Loss',
   description:
-    'Ozempic vs Mounjaro: both FDA-approved for type 2 diabetes but Mounjaro (tirzepatide) shows superior weight loss. SURMOUNT-5 data, May 2026 pricing ($997 vs $1,080/mo), side effects, and insurance coverage compared.',
-  alternates: { canonical: '/ozempic-vs-mounjaro' },
+    'Ozempic vs Mounjaro 2026: both T2D drugs — Mounjaro shows superior weight loss in SURMOUNT-5. May 2026 pricing ($997 vs $1,080/mo), side effects, and insurance coverage compared.',
+  alternates: { canonical: 'https://glp1comparehub.com/ozempic-vs-mounjaro' },
   openGraph: {
     title: 'Ozempic vs Mounjaro 2026: Which Is Better for T2D & Weight Loss?',
     description:
       'Head-to-head comparison of Ozempic (semaglutide) and Mounjaro (tirzepatide) — both T2D drugs with weight-loss benefits. SUSTAIN vs SURMOUNT trial data, May 2026 pricing, and insurance coverage.',
     type: 'article',
     publishedTime: '2026-05-03T00:00:00Z',
+    url: 'https://glp1comparehub.com/ozempic-vs-mounjaro',
     siteName: 'GLP1CompareHub',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Ozempic vs Mounjaro 2026 — GLP1CompareHub' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const articleSchema = {

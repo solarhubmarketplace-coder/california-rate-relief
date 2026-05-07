@@ -25,7 +25,7 @@ import { ArrowRight, Check, X, AlertCircle, ExternalLink, Award } from 'lucide-r
 // =============================================================================
 
 export const metadata: Metadata = {
-  title: 'Is There a Wegovy Pill in 2026? OASIS-1 Data + What\'s Available Now | GLP1CompareHub',
+  title: 'Wegovy Pill 2026: OASIS-1 Trial Data + What\'s Available Now',
   description:
     'No FDA-approved Wegovy pill exists as of May 2026. Oral semaglutide 50mg is in FDA review after OASIS-1 (−15.1% at 68 weeks). Compounded injectable semaglutide from $99/month is available now.',
   alternates: { canonical: 'https://glp1comparehub.com/wegovy-pill' },
@@ -36,7 +36,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/wegovy-pill',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Wegovy Pill 2026 — GLP1CompareHub' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const breadcrumbSchema = {

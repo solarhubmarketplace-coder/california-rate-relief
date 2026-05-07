@@ -12,7 +12,7 @@ import { primaryProviders } from '@/lib/glp1-providers';
 import { ArrowRight, ShieldCheck, Trophy, AlertCircle, CircleCheck, X, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Zepbound vs Wegovy 2026: Which GLP-1 Wins on Price, Side Effects, and Weight Loss? | GLP1CompareHub',
+  title: 'Zepbound vs Wegovy 2026: Trial Data, Cost & Which to Choose',
   description:
     'Side-by-side comparison of Zepbound (tirzepatide) and Wegovy (semaglutide). Trial weight loss (20.2% vs 14.9%), side effect profiles, monthly cost ($299–$1,498 vs $149–$1,839), and which one to ask your doctor about.',
   alternates: { canonical: 'https://glp1comparehub.com/zepbound-vs-wegovy' },
@@ -23,8 +23,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/zepbound-vs-wegovy',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: '/img/glp1/og-zepbound-vs-wegovy.jpg', width: 1168, height: 784, alt: 'Zepbound vs Wegovy — side-by-side comparison 2026' }],
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-zepbound-vs-wegovy.jpg', width: 1168, height: 784, alt: 'Zepbound vs Wegovy — side-by-side comparison 2026' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const articleSchema = {

@@ -12,9 +12,9 @@ import { primaryProviders } from '@/lib/glp1-providers';
 import { ArrowRight, ShieldCheck, AlertCircle, CircleCheck, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Compounded Tirzepatide May 2026: Cost ($179–$399), Post-FDA-Crackdown Status, and Verified Providers | GLP1CompareHub',
+  title: 'Compounded Tirzepatide 2026: FDA Status, Cost & Verified Providers',
   description:
-    'Independent guide to compounded tirzepatide updated May 5 2026 — including the April 1 FDA enforcement shift, April 30 503B exclusion proposal (comment period open until June 29), how 503A pharmacies are now operating under narrow exceptions, current $179–$399/mo pricing across 10 verified telehealth providers, and which is right for you.',
+    'Compounded tirzepatide post-FDA-crackdown: 503A narrow exceptions still apply. Verified pricing $179–$399/mo across 10 telehealth providers. Updated May 2026.',
   alternates: { canonical: 'https://glp1comparehub.com/compounded-tirzepatide' },
   openGraph: {
     title: 'Compounded Tirzepatide — Updated May 5 2026 (Post-FDA-Crackdown)',
@@ -23,7 +23,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/compounded-tirzepatide',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Compounded Tirzepatide 2026 — GLP1CompareHub' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const breadcrumbSchema = {

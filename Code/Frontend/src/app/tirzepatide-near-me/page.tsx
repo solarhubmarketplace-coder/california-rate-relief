@@ -13,9 +13,9 @@ import { primaryProviders } from '@/lib/glp1-providers';
 import { ArrowRight, ShieldCheck, AlertCircle, CircleCheck, MapPin, Truck, Calendar, Trophy } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Tirzepatide Near Me May 2026: Local Clinic vs Telehealth Shipped to Your Door | GLP1CompareHub',
+  title: 'Tirzepatide Near Me 2026: Local Clinic vs Telehealth Compared',
   description:
-    'Searching for tirzepatide near you? Local clinics now charge $300–$500/mo plus travel and scheduling. Telehealth providers ship to all 50 states starting at $179/mo. Side-by-side cost, format, and convenience comparison — verified May 2026.',
+    'Local tirzepatide clinics charge $300–$500/mo. Telehealth ships to all 50 states from $179/mo. Cost, format, and convenience compared side-by-side. Verified May 2026.',
   alternates: { canonical: 'https://glp1comparehub.com/tirzepatide-near-me' },
   openGraph: {
     title: 'Tirzepatide Near Me — Local Clinic vs Telehealth (Verified May 2026)',
@@ -24,8 +24,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/tirzepatide-near-me',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: '/img/glp1/og-tirzepatide-near-me.jpg', width: 1168, height: 784, alt: 'Tirzepatide Near Me — local clinic vs telehealth comparison' }],
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-tirzepatide-near-me.jpg', width: 1168, height: 784, alt: 'Tirzepatide Near Me — local clinic vs telehealth comparison' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const articleSchema = {
