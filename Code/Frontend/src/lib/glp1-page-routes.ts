@@ -390,8 +390,8 @@ const peptidePages: PageRoute[] = [
 // ============================================================
 const commercialPages: PageRoute[] = [
   // /cheapest-tirzepatide-online and /best-compounded-tirzepatide promoted to livePages 2026-05-05
-  { path: '/cheapest-semaglutide-online',     template: 'commercial-comparison', tier: 'B', status: 'queued', targetKeyword: 'cheapest semaglutide online',     volume: 350,  kd: 10 },
-  { path: '/cheapest-compounded-tirzepatide', template: 'commercial-comparison', tier: 'B', status: 'queued', targetKeyword: 'cheapest compounded tirzepatide', volume: 600,  kd: 7 },
+  { path: '/cheapest-semaglutide-online',     template: 'commercial-comparison', tier: 'B', status: 'live',   targetKeyword: 'cheapest semaglutide online',     volume: 350,  kd: 10, note: 'LIVE 2026-05-06. Strut ($99) vs TMates ($158) vs Embody ($149 intro) vs Eden ($229-249). Savings math: $14,412/yr vs Wegovy. 5-FAQ schema.' },
+  { path: '/cheapest-compounded-tirzepatide', template: 'commercial-comparison', tier: 'B', status: 'live',   targetKeyword: 'cheapest compounded tirzepatide', volume: 600,  kd: 7,  note: 'LIVE 2026-05-06. Price table: TMates ($167 12-mo), MEDVi ($179-299), Eden ($229-299), Zepbound ($1,086+ comparison). What drives price differences section. 5-FAQ schema.' },
   { path: '/best-compounded-semaglutide',     template: 'commercial-comparison', tier: 'B', status: 'live', targetKeyword: 'best compounded semaglutide',     volume: 500,  kd: 34, note: 'NEW 2026-05-06. Listicle ranking the 6 best compounded sema providers with TMates + Strut at top.' },
 ];
 
