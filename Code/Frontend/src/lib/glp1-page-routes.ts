@@ -342,7 +342,7 @@ const medVsMedPages: PageRoute[] = [
   { path: '/tirzepatide-vs-zepbound', template: 'medication-vs-medication', tier: 'B', status: 'live',   targetKeyword: 'tirzepatide vs zepbound', volume: 1500, kd: 9,  estRevenueAtMaturity: 630, note: 'LIVE 2026-05-06. Clarity page: tirz IS Zepbound. Branded ($1,086) vs compounded ($167-299) cost breakdown, FDA enforcement timeline, 4 provider cards, 6-FAQ schema.' },
   { path: '/semaglutide-vs-wegovy',  template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'semaglutide vs wegovy' },
   { path: '/oral-semaglutide-vs-injection', template: 'medication-vs-medication', tier: 'B', status: 'live',   targetKeyword: 'oral semaglutide vs injection', volume: 600, note: 'LIVE 2026-05-06. Answer-first: injectable wins by wide margin. ~1% oral vs ~94% injectable bioavailability. PIONEER vs STEP-1 trial data. 4-format overview (Rybelsus T2D only). 4 provider cards (Strut/TMates/Eden/Embody), 6-FAQ schema.' },
-  { path: '/wegovy-pill-vs-injection', template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'oral wegovy', volume: 1400, kd: 31 },
+  { path: '/wegovy-pill-vs-injection', template: 'medication-vs-medication', tier: 'B', status: 'live',   targetKeyword: 'oral wegovy', volume: 1400, kd: 31, note: 'LIVE 2026-05-06. Oral vs injectable Wegovy comparison. OASIS-1 (~15.1%) vs STEP-1 (~14.9%) trial data. Fasting protocol deep-dive. Brand-only pill vs compounded injectable pricing. 4 provider cards, 6-FAQ schema.' },
 ];
 
 // ============================================================
