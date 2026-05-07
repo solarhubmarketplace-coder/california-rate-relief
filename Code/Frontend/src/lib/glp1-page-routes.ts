@@ -311,7 +311,7 @@ const medicationCategoryPages: PageRoute[] = [
 // Format: /compare/{provider-a-slug}-vs-{provider-b-slug}
 const providerVsPages: PageRoute[] = [
   // Tier A vs-pages (verified Ahrefs volume)
-  { path: '/compare/trimrx-vs-medvi',         template: 'provider-vs-provider', tier: 'A', status: 'queued', targetKeyword: 'trimrx vs medvi',     volume: 600, kd: 0, estRevenueAtMaturity: 68 },
+  { path: '/compare/trimrx-vs-medvi',         template: 'provider-vs-provider', tier: 'A', status: 'live',   targetKeyword: 'trimrx vs medvi',     volume: 600, kd: 0, estRevenueAtMaturity: 68, note: 'LIVE 2026-05-06. MEDVi=editorial pick (verified pricing, 33K brand vol). TrimRx entry confirmed; full catalog pending manual screenshot. 6-FAQ schema, BreadcrumbList, Person author.' },
 
   // Tier B — high-affiliity cross-comparisons (low individual vol but cluster value)
   { path: '/compare/skinnyrx-vs-eden-health', template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'skinnyrx vs eden' },
