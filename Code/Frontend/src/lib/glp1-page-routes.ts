@@ -349,7 +349,7 @@ const medVsMedPages: PageRoute[] = [
 // ALTERNATIVE FORMAT PAGES (sublingual, oral, tablets)
 // ============================================================
 const formatPages: PageRoute[] = [
-  { path: '/sublingual-semaglutide', template: 'compounded-format', tier: 'A', status: 'queued', targetKeyword: 'sublingual semaglutide', volume: 4000,  kd: 19, estRevenueAtMaturity: 450 },
+  { path: '/sublingual-semaglutide', template: 'compounded-format', tier: 'A', status: 'live',   targetKeyword: 'sublingual semaglutide', volume: 4000,  kd: 19, estRevenueAtMaturity: 450, note: 'LIVE 2026-05-06. Under-tongue drops vs injectable. Honest bioavailability review: ~10-30% claimed (unverified) vs ~94% injectable. SNAC gap explained. TMates (confirmed) + DirectMeds (verify) as sublingual providers. 6-FAQ schema.' },
   { path: '/sublingual-tirzepatide', template: 'compounded-format', tier: 'B', status: 'queued', targetKeyword: 'sublingual tirzepatide', volume: 900,   kd: 3,  estRevenueAtMaturity: 101 },
   { path: '/oral-tirzepatide',       template: 'compounded-format', tier: 'A', status: 'queued', targetKeyword: 'oral tirzepatide',        volume: 6500,  kd: 8,  estRevenueAtMaturity: 731 },
   // /tirzepatide-tablets promoted to livePages 2026-05-05 (Batch 3)
