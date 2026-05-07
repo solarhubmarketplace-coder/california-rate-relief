@@ -340,7 +340,7 @@ const medVsMedPages: PageRoute[] = [
   { path: '/wegovy-vs-mounjaro',     template: 'medication-vs-medication', tier: 'B', status: 'live', targetKeyword: 'wegovy vs mounjaro',     volume: 6700,  kd: 24, estRevenueAtMaturity: 1005 },
   { path: '/ozempic-vs-mounjaro',    template: 'medication-vs-medication', tier: 'B', status: 'live', targetKeyword: 'ozempic vs mounjaro',    volume: 21000, kd: 54, estRevenueAtMaturity: 630 },
   { path: '/tirzepatide-vs-zepbound', template: 'medication-vs-medication', tier: 'B', status: 'live',   targetKeyword: 'tirzepatide vs zepbound', volume: 1500, kd: 9,  estRevenueAtMaturity: 630, note: 'LIVE 2026-05-06. Clarity page: tirz IS Zepbound. Branded ($1,086) vs compounded ($167-299) cost breakdown, FDA enforcement timeline, 4 provider cards, 6-FAQ schema.' },
-  { path: '/semaglutide-vs-wegovy',  template: 'medication-vs-medication', tier: 'B', status: 'queued', targetKeyword: 'semaglutide vs wegovy' },
+  { path: '/semaglutide-vs-wegovy',  template: 'medication-vs-medication', tier: 'B', status: 'live',   targetKeyword: 'semaglutide vs wegovy', note: 'LIVE 2026-05-06. Answer-first clarity: sema IS Wegovy. 4-formulation table (Wegovy/Ozempic/Rybelsus/compounded). $16,200 vs $1,188 annual cost math. 4 provider cards.' },
   { path: '/oral-semaglutide-vs-injection', template: 'medication-vs-medication', tier: 'B', status: 'live',   targetKeyword: 'oral semaglutide vs injection', volume: 600, note: 'LIVE 2026-05-06. Answer-first: injectable wins by wide margin. ~1% oral vs ~94% injectable bioavailability. PIONEER vs STEP-1 trial data. 4-format overview (Rybelsus T2D only). 4 provider cards (Strut/TMates/Eden/Embody), 6-FAQ schema.' },
   { path: '/wegovy-pill-vs-injection', template: 'medication-vs-medication', tier: 'B', status: 'live',   targetKeyword: 'oral wegovy', volume: 1400, kd: 31, note: 'LIVE 2026-05-06. Oral vs injectable Wegovy comparison. OASIS-1 (~15.1%) vs STEP-1 (~14.9%) trial data. Fasting protocol deep-dive. Brand-only pill vs compounded injectable pricing. 4 provider cards, 6-FAQ schema.' },
 ];
@@ -354,7 +354,7 @@ const formatPages: PageRoute[] = [
   { path: '/oral-tirzepatide',       template: 'compounded-format', tier: 'A', status: 'live',   targetKeyword: 'oral tirzepatide',        volume: 6500,  kd: 8,  estRevenueAtMaturity: 731, note: 'LIVE 2026-05-06. Needle-free formats: DirectMeds sublingual drops + Embody GLP-1 gum. Bioavailability table, FDA status, 4 providers.' },
   // /tirzepatide-tablets promoted to livePages 2026-05-05 (Batch 3)
   { path: '/semaglutide-tablets',    template: 'compounded-format', tier: 'B', status: 'queued', targetKeyword: 'semaglutide tablets',     volume: 12000, kd: 50 },
-  { path: '/wegovy-pill',            template: 'compounded-format', tier: 'A', status: 'queued', targetKeyword: 'wegovy pill',             volume: 37000, kd: 41, estRevenueAtMaturity: 1665 },
+  { path: '/wegovy-pill',            template: 'compounded-format', tier: 'A', status: 'live',   targetKeyword: 'wegovy pill',             volume: 37000, kd: 41, estRevenueAtMaturity: 1665, note: 'LIVE 2026-05-06. No approved Wegovy pill (May 2026). OASIS-1 (15.1%) vs STEP-1 (14.9%) data. Fasting requirement deep-dive. Compounded injectable $99-249 as practical NOW alternative. 4 providers.' },
 ];
 
 // ============================================================
@@ -363,9 +363,9 @@ const formatPages: PageRoute[] = [
 const microdosingPages: PageRoute[] = [
   { path: '/microdosing-tirzepatide',         template: 'microdosing-cluster', tier: 'A', status: 'live',   targetKeyword: 'microdosing tirzepatide',         volume: 7900, kd: 22, estRevenueAtMaturity: 711, note: 'LIVE 2026-05-06. SURMOUNT-1 dose-response table (5mg=15%, 10mg=19.5%, 15mg=20.9%). SURMOUNT-4 maintenance data. Three microdosing use cases. Ivim Health (microdosing specialist), TMates, Eden, MEDVi. 6-FAQ schema.' },
   { path: '/microdose-tirzepatide',           template: 'microdosing-cluster', tier: 'B', status: 'live',   targetKeyword: 'microdose tirzepatide',           volume: 3400, kd: 14, estRevenueAtMaturity: 383, note: 'LIVE 2026-05-06. Practical how-to companion to /microdosing-tirzepatide. Dose math table (5mg/mL and 10mg/mL vials), 4 dose tiers, administration steps. Ivim/TMates/MEDVi provider cards. 6-FAQ schema.' },
-  { path: '/microdosing-semaglutide',         template: 'microdosing-cluster', tier: 'B', status: 'queued', targetKeyword: 'microdosing semaglutide',         volume: 3500, kd: 30 },
+  { path: '/microdosing-semaglutide',         template: 'microdosing-cluster', tier: 'B', status: 'live',   targetKeyword: 'microdosing semaglutide',         volume: 3500, kd: 30, note: 'LIVE 2026-05-06. STEP dose-response (5.9%/9.3%/14.9%). Dose math table (2 vial conc.). Standard vs ultra-slow 8-12wk titration tables. Maintenance step-down protocol. Ivim/Strut/TMates.' },
   { path: '/microdosing-glp-1-schedule',      template: 'microdosing-cluster', tier: 'B', status: 'live',   targetKeyword: 'glp-1 microdosing schedule',      volume: 600,  kd: 4,  estRevenueAtMaturity: 68,  note: 'LIVE 2026-05-06. Full dose tables: sema 0.25→0.5→1.0→1.7→2.4mg + tirz 0.5→1.25→2.5→5mg+ with standard vs stretched hold durations. Side-effect timing table. Ivim/TMates/MEDVi.' },
-  { path: '/how-to-microdose-semaglutide',    template: 'microdosing-cluster', tier: 'B', status: 'queued', targetKeyword: 'how to microdose semaglutide',    volume: 1100 },
+  { path: '/how-to-microdose-semaglutide',    template: 'microdosing-cluster', tier: 'B', status: 'live',   targetKeyword: 'how to microdose semaglutide',    volume: 1100, note: 'LIVE 2026-05-06. Practical how-to: dose measurement table (2 vial concentrations), 6-step injection technique, rotation sites, storage, tracking log, when-to-call section. Strut/Ivim/TMates.' },
 ];
 
 // ============================================================
