@@ -4,6 +4,10 @@ import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { glp1Medications } from '@/lib/glp1-medications';
+import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
+import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
+import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { Trophy, Star, ShieldCheck, BadgeCheck, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -47,6 +51,8 @@ export default function BestRankingsHub() {
       />
 
       <GLP1Header />
+      <MedicalDisclaimerBanner />
+      <StickyMobileCTA href={buildGlp1AffiliateUrl('medvi', 'best')} brandName="MEDVi" pricePitch="Top-ranked verified provider — compounded tirzepatide from $179/mo" />
 
       {/* Affiliate disclosure */}
       <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
@@ -188,6 +194,7 @@ export default function BestRankingsHub() {
         </section>
       </main>
 
+      <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
       <GLP1Footer />
     </GLP1Layout>
   );

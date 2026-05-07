@@ -26,6 +26,16 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Tirzepatide vs Semaglutide', item: 'https://glp1comparehub.com/tirzepatide-vs-semaglutide' },
+    { '@type': 'ListItem', position: 3, name: 'Compounded Tirzepatide' },
+  ],
+};
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -101,6 +111,7 @@ export default function CompoundedTirzepatidePage() {
 
   return (
     <GLP1Layout>
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 

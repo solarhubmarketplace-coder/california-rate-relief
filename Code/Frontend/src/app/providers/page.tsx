@@ -6,6 +6,10 @@ import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { glp1Providers, ProviderCategory } from '@/lib/glp1-providers';
 import { GLP1HeroPlaceholder } from '@/components/glp1/GLP1HeroPlaceholder';
+import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
+import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
+import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { ShieldCheck, Calendar, BadgeCheck, Star, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -69,6 +73,8 @@ export default function ProvidersDirectoryPage() {
       />
 
       <GLP1Header />
+      <MedicalDisclaimerBanner />
+      <StickyMobileCTA href={buildGlp1AffiliateUrl('medvi', 'providers')} brandName="MEDVi" pricePitch="Compounded GLP-1 from $179/mo — verified pricing, ships nationwide" />
 
       {/* Affiliate disclosure strip */}
       <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
@@ -177,6 +183,7 @@ export default function ProvidersDirectoryPage() {
         </section>
       </main>
 
+      <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
       <GLP1Footer />
     </GLP1Layout>
   );
