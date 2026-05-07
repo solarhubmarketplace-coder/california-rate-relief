@@ -314,13 +314,13 @@ const providerVsPages: PageRoute[] = [
   { path: '/compare/trimrx-vs-medvi',         template: 'provider-vs-provider', tier: 'A', status: 'live',   targetKeyword: 'trimrx vs medvi',     volume: 600, kd: 0, estRevenueAtMaturity: 68, note: 'LIVE 2026-05-06. MEDVi=editorial pick (verified pricing, 33K brand vol). TrimRx entry confirmed; full catalog pending manual screenshot. 6-FAQ schema, BreadcrumbList, Person author.' },
 
   // Tier B — high-affiliity cross-comparisons (low individual vol but cluster value)
-  { path: '/compare/skinnyrx-vs-eden-health', template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'skinnyrx vs eden' },
+  { path: '/compare/skinnyrx-vs-eden-health', template: 'provider-vs-provider', tier: 'B', status: 'live',   targetKeyword: 'skinnyrx vs eden', note: 'LIVE 2026-05-06. SkinnyRx (VERIFY flags — pricing unconfirmed) vs Eden Health (verified $229-299). Data caveat banner. Editorial pick: Eden Health.' },
   { path: '/compare/skinnyrx-vs-medvi',       template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'skinnyrx vs medvi' },
   { path: '/compare/skinnyrx-vs-trimrx',      template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'skinnyrx vs trimrx' },
   { path: '/compare/skinnyrx-vs-ivim-health', template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'skinnyrx vs ivim' },
-  { path: '/compare/medvi-vs-eden-health',    template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'medvi vs eden' },
+  { path: '/compare/medvi-vs-eden-health',    template: 'provider-vs-provider', tier: 'B', status: 'live',   targetKeyword: 'medvi vs eden', note: 'LIVE 2026-05-06. MEDVi ($179-299, editorial pick) vs Eden Health ($229-299, metabolic panel). MEDVi wins on price; Eden wins on included services.' },
   { path: '/compare/medvi-vs-ivim-health',    template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'medvi vs ivim' },
-  { path: '/compare/ivim-health-vs-eden-health', template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'ivim vs eden' },
+  { path: '/compare/ivim-health-vs-eden-health', template: 'provider-vs-provider', tier: 'B', status: 'live',   targetKeyword: 'ivim vs eden', note: 'LIVE 2026-05-06. Ivim Health (microdosing specialist, VERIFY pricing) vs Eden Health ($229-299, verified). Editorial pick: Eden for verified pricing; Ivim for microdosing.' },
   { path: '/compare/ivim-health-vs-trimrx',   template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'ivim vs trimrx' },
   { path: '/compare/trimrx-vs-eden-health',   template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'trimrx vs eden' },
   { path: '/compare/gobymeds-vs-orderlymeds', template: 'provider-vs-provider', tier: 'B', status: 'queued', targetKeyword: 'gobymeds vs orderlymeds' },
