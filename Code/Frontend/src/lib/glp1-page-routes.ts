@@ -266,9 +266,9 @@ const providerPages: PageRoute[] = [
     path: '/providers',
     template: 'provider-directory',
     tier: 'A',
-    status: 'queued',
+    status: 'live',
     targetKeyword: 'glp-1 providers comparison',
-    note: 'Full directory of all 10 providers + secondary',
+    note: 'LIVE — full provider directory. page.tsx existed since initial site build.',
   },
   ...glp1Providers
     .filter((p) => p.status === 'Active')
@@ -276,9 +276,9 @@ const providerPages: PageRoute[] = [
       path: `/providers/${p.slug}`,
       template: 'provider-detail',
       tier: p.priority === 'primary' ? 'A' : 'B',
-      status: 'queued',
+      status: 'live',
       targetKeyword: `${p.name.toLowerCase()} review`,
-      note: `${p.priority} provider — ${p.tagline ?? ''}`,
+      note: `${p.priority} provider — ${p.tagline ?? ''} — served by static override or [slug] dynamic fallback.`,
     })),
 ];
 
@@ -290,17 +290,17 @@ const medicationCategoryPages: PageRoute[] = [
     path: '/best',
     template: 'rankings-hub',
     tier: 'A',
-    status: 'queued',
+    status: 'live',
     targetKeyword: 'best glp-1 providers',
-    note: 'Rankings hub — links to all 8 medication category pages',
+    note: 'LIVE — rankings hub. page.tsx existed since initial site build.',
   },
   ...glp1Medications.map<PageRoute>((m) => ({
     path: `/best/telemedicine-${m.slug}`,
     template: 'medication-category',
     tier: m.slug === 'wegovy' || m.slug === 'zepbound' ? 'A' : 'B',
-    status: 'queued',
+    status: 'live',
     targetKeyword: `best telemedicine for ${m.slug}`,
-    note: m.titleHook,
+    note: `${m.titleHook} — served by telemedicine-[medication] dynamic route.`,
   })),
 ];
 
@@ -449,9 +449,9 @@ const utilityPages: PageRoute[] = [
 // NEWS (SEO freshness signal)
 // ============================================================
 const newsPages: PageRoute[] = [
-  { path: '/news',                                                       template: 'news', tier: 'B', status: 'queued', note: 'Index page' },
-  { path: '/news/wegovy-pill-fda-approval-2026',                         template: 'news', tier: 'B', status: 'queued' },
-  { path: '/news/fda-503b-compounded-shutdown-april-2026',               template: 'news', tier: 'B', status: 'queued' },
+  { path: '/news',                                                       template: 'news', tier: 'B', status: 'live', note: 'LIVE — news index. page.tsx exists. [slug] dynamic route handles all article URLs.' },
+  { path: '/news/wegovy-pill-fda-approval-2026',                         template: 'news', tier: 'B', status: 'live', note: 'LIVE — served by [slug] dynamic route.' },
+  { path: '/news/fda-503b-compounded-shutdown-april-2026',               template: 'news', tier: 'B', status: 'live', note: 'LIVE — served by [slug] dynamic route.' },
 ];
 
 // ============================================================
