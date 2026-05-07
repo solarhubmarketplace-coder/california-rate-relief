@@ -409,7 +409,7 @@ const stackPages: PageRoute[] = [
 // SPECIAL SUSP / NEW MEDICATION PILLAR
 // ============================================================
 const newMedicationPages: PageRoute[] = [
-  { path: '/compounded-liraglutide', template: 'compliance-pillar', tier: 'A', status: 'queued', targetKeyword: 'compounded liraglutide', volume: 600,  kd: 0, note: 'Ivim USP — KD 0 virgin SERP' },
+  { path: '/compounded-liraglutide', template: 'compliance-pillar', tier: 'A', status: 'live',   targetKeyword: 'compounded liraglutide', volume: 600,  kd: 0, note: 'LIVE 2026-05-06. KD 0 virgin SERP. SCALE trial ~8% wt loss vs STEP-1 ~14.9% (sema) vs SURMOUNT-1 ~20.9% (tirz). Daily injection context. Ivim Health (confirmed), TMates/Eden (inquire). 6-FAQ schema.' },
 ];
 
 // ============================================================
