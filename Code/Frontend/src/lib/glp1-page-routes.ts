@@ -428,7 +428,7 @@ const toolPages: PageRoute[] = [
   { path: '/match',                  template: 'match-quiz',      tier: 'A', status: 'live',   targetKeyword: 'find your glp-1 match', note: 'Quiz — central conversion mechanic. Flipped to live 2026-05-05.' },
   { path: '/tools/cost-calculator',  template: 'cost-calculator', tier: 'A', status: 'live',   targetKeyword: 'glp-1 cost calculator', note: 'Titration breakdown tool. Flipped to live 2026-05-05.' },
   { path: '/simulator',              template: 'simulator',       tier: 'B', status: 'future', targetKeyword: 'glp-1 weight loss simulator', note: 'V1.5 — defer to post-launch' },
-  { path: '/compare',                template: 'compare-tool',    tier: 'A', status: 'queued', targetKeyword: 'compare glp-1 providers', note: 'Compare-tray UI for selecting providers' },
+  { path: '/compare',                template: 'compare-tool',    tier: 'A', status: 'live',   targetKeyword: 'compare glp-1 providers', note: 'Compare-tray UI for selecting providers. Has canonical + metadata. Flipped to live 2026-05-06.' },
 ];
 
 // ============================================================

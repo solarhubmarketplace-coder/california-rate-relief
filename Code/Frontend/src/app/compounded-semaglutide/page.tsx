@@ -5,6 +5,7 @@ import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { VerifiedPricingBadge } from '@/components/glp1/VerifiedPricingBadge';
@@ -498,6 +499,7 @@ export default function CompoundedSemaglutidePage() {
       </main>
 
       <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
+      <RelatedGuides currentPath="/compounded-semaglutide" priorityCluster="semaglutide" />
       <GLP1Footer />
     </GLP1Layout>
   );
