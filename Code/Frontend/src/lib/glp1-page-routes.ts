@@ -353,7 +353,7 @@ const formatPages: PageRoute[] = [
   { path: '/sublingual-tirzepatide', template: 'compounded-format', tier: 'B', status: 'live',   targetKeyword: 'sublingual tirzepatide', volume: 900,   kd: 3,  estRevenueAtMaturity: 101, note: 'LIVE 2026-05-06. Bioavailability 3-column table: ~94% injectable vs ~10-30% sublingual (LIMITED DATA) vs ~1% oral. SNAC gap explained. TMates (confirmed sublingual sema), Ivim, MEDVi.' },
   { path: '/oral-tirzepatide',       template: 'compounded-format', tier: 'A', status: 'live',   targetKeyword: 'oral tirzepatide',        volume: 6500,  kd: 8,  estRevenueAtMaturity: 731, note: 'LIVE 2026-05-06. Needle-free formats: DirectMeds sublingual drops + Embody GLP-1 gum. Bioavailability table, FDA status, 4 providers.' },
   // /tirzepatide-tablets promoted to livePages 2026-05-05 (Batch 3)
-  { path: '/semaglutide-tablets',    template: 'compounded-format', tier: 'B', status: 'queued', targetKeyword: 'semaglutide tablets',     volume: 12000, kd: 50 },
+  { path: '/semaglutide-tablets',    template: 'compounded-format', tier: 'B', status: 'live',   targetKeyword: 'semaglutide tablets',     volume: 12000, kd: 50, note: 'LIVE 2026-05-06. Rybelsus (T2D only) vs oral Wegovy pipeline (OASIS-1 15.1%) vs compounded options. 5-column bioavailability table. Strut $99 CTA.' },
   { path: '/wegovy-pill',            template: 'compounded-format', tier: 'A', status: 'live',   targetKeyword: 'wegovy pill',             volume: 37000, kd: 41, estRevenueAtMaturity: 1665, note: 'LIVE 2026-05-06. No approved Wegovy pill (May 2026). OASIS-1 (15.1%) vs STEP-1 (14.9%) data. Fasting requirement deep-dive. Compounded injectable $99-249 as practical NOW alternative. 4 providers.' },
 ];
 
@@ -402,7 +402,7 @@ const stackPages: PageRoute[] = [
   { path: '/tirzepatide-with-b12',         template: 'peptide-stack', tier: 'A', status: 'live',   targetKeyword: 'tirzepatide with b12',         volume: 1500, kd: 2, note: 'LIVE 2026-05-06. Why B12 is added, cyano vs methyl, evidence summary (no trials for combo), 4 provider cards, 6-FAQ schema.' },
   { path: '/semaglutide-with-b12',         template: 'peptide-stack', tier: 'B', status: 'live',   targetKeyword: 'semaglutide with b12',         volume: 1900, kd: 22, note: 'LIVE 2026-05-06. B12 rationale, evidence section (no trial data for combo), cyano vs methyl, 4 provider cards (Strut/TMates/Eden/Embody), 6-FAQ schema.' },
   { path: '/compounded-semaglutide-with-b12', template: 'peptide-stack', tier: 'B', status: 'live',   targetKeyword: 'compounded semaglutide with b12', volume: 1600, kd: 23, note: 'LIVE 2026-05-06. Compounded-specific angle (vs /semaglutide-with-b12 general query); pricing table $99-299, FDA regulatory timeline, B12 vs B6 FAQ, 6-FAQ schema.' },
-  { path: '/glp-1-stack-guide',            template: 'peptide-stack', tier: 'C', status: 'queued', targetKeyword: 'glp-1 stack' },
+  { path: '/glp-1-stack-guide',            template: 'peptide-stack', tier: 'C', status: 'live',   targetKeyword: 'glp-1 stack', note: 'LIVE 2026-05-06. 5 stacks: NAD+, sermorelin, B12, lipotropics, metformin. Evidence table (plausibility vs RCT status). Eden/Ivim/TMates. STEP-1 lean mass data framing.' },
 ];
 
 // ============================================================
@@ -416,9 +416,9 @@ const newMedicationPages: PageRoute[] = [
 // 503A COMPLIANCE / SAFETY PILLAR PAGES
 // ============================================================
 const compliancePages: PageRoute[] = [
-  { path: '/503a-compounding-pharmacy-tirzepatide', template: 'compliance-pillar', tier: 'C', status: 'queued', targetKeyword: '503a compounding pharmacy tirzepatide', volume: 100 },
-  { path: '/is-compounded-glp-1-legal',             template: 'compliance-pillar', tier: 'C', status: 'queued', targetKeyword: 'is compounded glp-1 legal' },
-  { path: '/fda-compounded-glp-1',                  template: 'compliance-pillar', tier: 'C', status: 'queued', targetKeyword: 'fda compounded glp-1', volume: 20 },
+  { path: '/503a-compounding-pharmacy-tirzepatide', template: 'compliance-pillar', tier: 'C', status: 'live',   targetKeyword: '503a compounding pharmacy tirzepatide', volume: 100, note: 'LIVE 2026-05-06. 503A vs 503B table, 4-step telehealth workflow, 3-point verification checklist. Eden/TMates/MEDVi.' },
+  { path: '/is-compounded-glp-1-legal',             template: 'compliance-pillar', tier: 'C', status: 'live',   targetKeyword: 'is compounded glp-1 legal', note: 'LIVE 2026-05-06. E-E-A-T trust pillar. Timeline of FDA shortage/enforcement, legal vs not-legal split cards, 4 patient protections, red flags list.' },
+  { path: '/fda-compounded-glp-1',                  template: 'compliance-pillar', tier: 'C', status: 'live',   targetKeyword: 'fda compounded glp-1', volume: 20, note: 'LIVE 2026-05-06. 4-date timeline, enforcement target split (503B vs 503A), FDA guidance summary. Eden/TMates/MEDVi.' },
 ];
 
 // ============================================================
