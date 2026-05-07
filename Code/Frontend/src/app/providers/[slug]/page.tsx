@@ -5,6 +5,9 @@ import { notFound } from 'next/navigation';
 import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
+import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
+import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
 import { glp1Providers, getProviderBySlug, GLP1Provider } from '@/lib/glp1-providers';
 import { GLP1HeroPlaceholder } from '@/components/glp1/GLP1HeroPlaceholder';
 import { medicationsForProvider } from '@/lib/glp1-medications';
@@ -118,6 +121,9 @@ export default async function ProviderDetailPage({ params }: PageParams) {
       />
 
       <GLP1Header />
+
+      {/* YMYL: medical / FDA disclaimer banner — first line of compliance defense */}
+      <MedicalDisclaimerBanner />
 
       {/* Affiliate disclosure */}
       <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
@@ -680,6 +686,12 @@ export default async function ProviderDetailPage({ params }: PageParams) {
             </div>
           </div>
         </section>
+
+        {/* YMYL: editorial review box — transparent about non-medical-advice posture */}
+        <EditorialReviewBox
+          lastReviewed={provider.lastUpdated || '2026-05-06'}
+          lastVerified={provider.lastVerified || provider.lastUpdated || '2026-05-06'}
+        />
       </main>
 
       <GLP1Footer />

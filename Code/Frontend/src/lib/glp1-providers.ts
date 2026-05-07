@@ -1151,11 +1151,11 @@ export const glp1Providers: GLP1Provider[] = [
     medicationType: ['Compounded'],
     rating: 4.7,
     starsDisplay: '★★★★☆',
-    bestFor: 'Patients who want clinically-proven GLP-1 through the highest-converting telehealth funnel in our stack',
+    bestFor: 'Patients who want compounded GLP-1 through the highest-converting telehealth funnel in our stack',
     bestForList: [
       'Patients seeking the #1 highest-converting GLP-1 funnel (6.43% CR, Katalys-verified)',
       'Multi-vertical patients combining GLP-1 with NAD+, TRT, or ED treatment',
-      'Patients prioritizing clinically-proven compounded GLP-1 with licensed medical oversight',
+      'Patients prioritizing compounded GLP-1 from a provider with licensed medical oversight (note: compounded GLP-1 is not FDA-approved; see medical disclaimer)',
     ],
     cancellation: 'Cancel anytime',
     labsIncluded: false,

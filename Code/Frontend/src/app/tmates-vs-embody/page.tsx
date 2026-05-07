@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
+import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
+import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import {
   ArrowLeft,
@@ -214,6 +217,9 @@ export default function TMatesVsEmbodyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GLP1Header />
+
+      {/* YMYL compliance: medical / FDA disclaimer banner */}
+      <MedicalDisclaimerBanner />
 
       <main className="bg-glp1-cream">
         {/* ============ HERO ============ */}
@@ -555,6 +561,9 @@ export default function TMatesVsEmbodyPage() {
           </div>
         </section>
       </main>
+
+            {/* YMYL compliance: editorial review box */}
+      <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
 
       <GLP1Footer />
     </GLP1Layout>
