@@ -5,6 +5,7 @@ import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import {
@@ -237,6 +238,7 @@ export default function OralSemaglutideVsInjectionPage() {
       />
       <GLP1Header />
 
+      <RelatedGuides currentPath="/oral-semaglutide-vs-injection" priorityCluster="compare" />
       <StickyMobileCTA
         href={strutUrl}
         brandName="Strut Health"

@@ -5,6 +5,7 @@ import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import {
@@ -156,6 +157,7 @@ export default function SemaglutideWithB12Page() {
       <GLP1Header />
 
       {/* CRO: sticky mobile CTA — Strut Health cheapest verified sema */}
+      <RelatedGuides currentPath="/semaglutide-with-b12" priorityCluster="semaglutide" />
       <StickyMobileCTA
         href={strutUrl}
         brandName="Strut Health"

@@ -7,6 +7,7 @@ import { glp1Medications } from '@/lib/glp1-medications';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { Trophy, Star, ShieldCheck, BadgeCheck, ArrowRight } from 'lucide-react';
 
@@ -54,6 +55,7 @@ export default function BestRankingsHub() {
 
       <GLP1Header />
       <MedicalDisclaimerBanner />
+      <RelatedGuides currentPath="/best" priorityCluster="compare" />
       <StickyMobileCTA href={buildGlp1AffiliateUrl('tmates', 'best')} brandName="TMates" pricePitch="Compounded semaglutide & tirzepatide from $167/mo" />
 
       {/* Affiliate disclosure */}

@@ -6,6 +6,7 @@ import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { VerifiedPricingBadge } from '@/components/glp1/VerifiedPricingBadge';
@@ -542,6 +543,7 @@ export default function BestCompoundedSemaglutidePage() {
 
             {/* YMYL compliance: editorial review box */}
       <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
+      <RelatedGuides currentPath="/best-compounded-semaglutide" priorityCluster="semaglutide" />
       <StickyMobileCTA href={buildGlp1AffiliateUrl('tmates', 'best-compounded-semaglutide')} brandName="TMates" pricePitch="Best-ranked compounded semaglutide from $158/mo" />
       <GLP1Footer />
     </GLP1Layout>

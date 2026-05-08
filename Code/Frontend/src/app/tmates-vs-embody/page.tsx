@@ -5,6 +5,7 @@ import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
@@ -222,6 +223,7 @@ export default function TMatesVsEmbodyPage() {
       <GLP1Header />
 
       {/* CRO: sticky mobile CTA — routes to our editorial pick (TMates) */}
+      <RelatedGuides currentPath="/tmates-vs-embody" priorityCluster="compare" />
       <StickyMobileCTA
         href={tmatesUrl}
         brandName="TMates"

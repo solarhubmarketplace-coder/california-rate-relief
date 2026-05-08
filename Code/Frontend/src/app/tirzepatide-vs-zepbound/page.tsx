@@ -5,6 +5,7 @@ import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { VerifiedPricingBadge } from '@/components/glp1/VerifiedPricingBadge';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
@@ -241,6 +242,7 @@ export default function TirzepatideVsZepboundPage() {
       <GLP1Header />
 
       {/* CRO: sticky mobile CTA — routes to TMates (best compounded price) */}
+      <RelatedGuides currentPath="/tirzepatide-vs-zepbound" priorityCluster="compare" />
       <StickyMobileCTA
         href={tmatesUrl}
         brandName="TMates"

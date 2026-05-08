@@ -9,6 +9,7 @@ import { GLP1HeroPlaceholder } from '@/components/glp1/GLP1HeroPlaceholder';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { ShieldCheck, Calendar, BadgeCheck, Star, ArrowRight } from 'lucide-react';
 
@@ -76,6 +77,7 @@ export default function ProvidersDirectoryPage() {
 
       <GLP1Header />
       <MedicalDisclaimerBanner />
+      <RelatedGuides currentPath="/providers" priorityCluster="compare" />
       <StickyMobileCTA href={buildGlp1AffiliateUrl('medvi', 'providers')} brandName="MEDVi" pricePitch="Compounded GLP-1 from $179/mo — verified pricing, ships nationwide" />
 
       {/* Affiliate disclosure strip */}

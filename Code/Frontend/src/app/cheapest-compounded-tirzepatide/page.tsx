@@ -5,6 +5,7 @@ import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { VerifiedPricingBadge } from '@/components/glp1/VerifiedPricingBadge';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
@@ -99,6 +100,7 @@ export default function CheapestCompoundedTirzepatidePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <GLP1Header />
       <MedicalDisclaimerBanner />
+      <RelatedGuides currentPath="/cheapest-compounded-tirzepatide" priorityCluster="tirzepatide" />
       <StickyMobileCTA href={tmatesUrl} brandName="TMates" pricePitch="Compounded tirzepatide from $167/mo (12-mo plan)" />
 
       <main className="max-w-3xl mx-auto px-4 py-10 space-y-12">

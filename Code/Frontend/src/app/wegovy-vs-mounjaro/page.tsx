@@ -7,6 +7,7 @@ import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
 import { GLP1ComparisonTable } from '@/components/glp1/GLP1ComparisonTable';
 import {
@@ -1056,6 +1057,7 @@ export default function WegovyVsMounjaro() {
 
             {/* YMYL compliance: editorial review box */}
       <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
+      <RelatedGuides currentPath="/wegovy-vs-mounjaro" priorityCluster="compare" />
       <StickyMobileCTA href={buildGlp1AffiliateUrl('tmates', 'wegovy-vs-mounjaro')} brandName="TMates" pricePitch="Compounded semaglutide & tirzepatide from $167/mo" />
       <GLP1Footer />
     </GLP1Layout>

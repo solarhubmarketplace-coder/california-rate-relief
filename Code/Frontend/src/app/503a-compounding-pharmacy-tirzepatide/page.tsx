@@ -5,6 +5,7 @@ import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
+import { RelatedGuides } from '@/components/glp1/RelatedGuides';
 import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
 import { VerifiedPricingBadge } from '@/components/glp1/VerifiedPricingBadge';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
@@ -576,7 +577,8 @@ export default function Page503ACompoundingTirzepatide() {
           </section>
         </main>
 
-        <StickyMobileCTA
+        <RelatedGuides currentPath="/503a-compounding-pharmacy-tirzepatide" priorityCluster="compliance" />
+      <StickyMobileCTA
           href={buildGlp1AffiliateUrl('eden-health', '503a-compounding-pharmacy-tirzepatide')}
           brandName="Eden Health"
           pricePitch="Verified telehealth — compounded GLP-1 from $229/mo"
