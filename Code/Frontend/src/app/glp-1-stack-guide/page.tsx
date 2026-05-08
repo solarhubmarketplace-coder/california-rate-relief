@@ -554,10 +554,9 @@ export default function GLP1StackGuidePage() {
       </main>
 
       <StickyMobileCTA
-        providerName="Eden Health"
-        providerSlug="eden"
-        sourceSlug="glp-1-stack-guide"
-        ctaText="See Eden GLP-1 + NAD+ Programs"
+        href={buildGlp1AffiliateUrl('eden-health', 'glp-1-stack-guide')}
+        brandName="Eden Health"
+        pricePitch="GLP-1 + NAD+ + peptide stack programs from $229/mo"
       />
       <GLP1Footer />
     </GLP1Layout>

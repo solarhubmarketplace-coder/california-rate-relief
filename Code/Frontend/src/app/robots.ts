@@ -14,10 +14,12 @@ const DOMAIN_BASE: Record<string, string> = {
   greenreviewshub: 'https://greenreviewshub.com',
   securehomegear: 'https://securehomegear.com',
   athomebiohacking: 'https://athomebiohacking.com',
+  glp1comparehub: 'https://glp1comparehub.com',
 };
 
 function detectDomainKey(host: string): string {
   const h = host.toLowerCase();
+  if (h.includes('glp1comparehub')) return 'glp1comparehub';
   if (h.includes('greenreviewshub')) return 'greenreviewshub';
   if (h.includes('securehomegear')) return 'securehomegear';
   if (h.includes('athomebiohacking')) return 'athomebiohacking';

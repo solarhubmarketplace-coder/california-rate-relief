@@ -518,9 +518,9 @@ export default function PageIsCompoundedGlp1Legal() {
         </main>
 
         <StickyMobileCTA
-          providerSlug="tmates"
-          sourcePage="is-compounded-glp-1-legal"
-          label="Check TMates Pricing"
+          href={buildGlp1AffiliateUrl('tmates', 'is-compounded-glp-1-legal')}
+          brandName="TMates"
+          pricePitch="Compounded semaglutide & tirzepatide from $167/mo"
         />
         <GLP1Footer />
       </GLP1Layout>

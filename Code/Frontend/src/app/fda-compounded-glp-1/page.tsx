@@ -522,9 +522,9 @@ export default function PageFdaCompoundedGlp1() {
         </main>
 
         <StickyMobileCTA
-          providerSlug="eden"
-          sourcePage="fda-compounded-glp-1"
-          label="Check Eden Health Pricing"
+          href={buildGlp1AffiliateUrl('eden-health', 'fda-compounded-glp-1')}
+          brandName="Eden Health"
+          pricePitch="FDA-compliant 503A compounding — GLP-1 from $229/mo"
         />
         <GLP1Footer />
       </GLP1Layout>

@@ -543,10 +543,9 @@ export default function SemaglutideTabletsPage() {
       </main>
 
       <StickyMobileCTA
-        providerName="Strut Health"
-        providerSlug="strut-health"
-        sourceSlug="semaglutide-tablets"
-        ctaText="Get Semaglutide from $99/mo"
+        href={buildGlp1AffiliateUrl('strut-health', 'semaglutide-tablets')}
+        brandName="Strut Health"
+        pricePitch="Compounded semaglutide from $99/mo — no insurance needed"
       />
       <GLP1Footer />
     </GLP1Layout>

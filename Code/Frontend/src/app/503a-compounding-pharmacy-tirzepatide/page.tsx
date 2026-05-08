@@ -575,9 +575,9 @@ export default function Page503ACompoundingTirzepatide() {
         </main>
 
         <StickyMobileCTA
-          providerSlug="eden"
-          sourcePage="503a-compounding-pharmacy-tirzepatide"
-          label="Check Eden Health Pricing"
+          href={buildGlp1AffiliateUrl('eden-health', '503a-compounding-pharmacy-tirzepatide')}
+          brandName="Eden Health"
+          pricePitch="Verified telehealth — compounded GLP-1 from $229/mo"
         />
         <GLP1Footer />
       </GLP1Layout>
