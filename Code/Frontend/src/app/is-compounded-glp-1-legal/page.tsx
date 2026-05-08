@@ -276,7 +276,7 @@ export default function PageIsCompoundedGlp1Legal() {
                   {[
                     'Compounded semaglutide or tirzepatide prepared by a licensed 503A pharmacy for an individual patient',
                     'Requires a valid prescription from a licensed physician, NP, or PA',
-                    'Pharmacy must be licensed in the patient's state',
+                    "Pharmacy must be licensed in the patient's state",
                     'Telehealth platforms with physician oversight + 503A pharmacy partners',
                     'Patient-specific formulations (different concentration, add-ins like B12, etc.)',
                   ].map((item, i) => (
