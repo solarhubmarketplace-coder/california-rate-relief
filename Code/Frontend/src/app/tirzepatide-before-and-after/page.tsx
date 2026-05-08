@@ -13,7 +13,7 @@ import { primaryProviders } from '@/lib/glp1-providers';
 import { ArrowRight, AlertCircle, CircleCheck, Calendar, TrendingDown, Clock, Trophy } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Tirzepatide Before and After 2026: Trial Data, Realistic Timeline, and Honest Expectations | GLP1CompareHub',
+  title: 'Tirzepatide Before and After 2026: Trial Data & Realistic Timeline',
   description:
     'Honest tirzepatide before-and-after framing — what published clinical trials show (SURMOUNT-1: 20.2% average weight loss at 72 weeks), how the timeline unfolds month by month, and why compounded versions may not match branded trial data. No fake testimonials.',
   alternates: { canonical: 'https://glp1comparehub.com/tirzepatide-before-and-after' },

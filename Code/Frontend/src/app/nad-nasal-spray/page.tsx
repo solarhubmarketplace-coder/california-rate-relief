@@ -13,7 +13,7 @@ import { buildAffiliateUrl, buildGlp1AffiliateUrl } from '@/lib/affiliate-links'
 import { ArrowRight, AlertCircle, CircleCheck, Calendar, Sparkles, Trophy } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'NAD+ Nasal Spray May 2026: How It Compares to IV ($150-$1,000) and Injection ($79) | GLP1CompareHub',
+  title: 'NAD+ Nasal Spray 2026: Bioavailability vs IV and At-Home Injection',
   description:
     'NAD+ nasal spray is one of 5 NAD+ formats offered by Eden Health. Compare bioavailability vs IV therapy ($150-$1,000+/session) and at-home injection ($79 first month at System Labs). Honest read on what nasal spray delivery actually does.',
   alternates: { canonical: 'https://glp1comparehub.com/nad-nasal-spray' },

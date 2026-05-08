@@ -13,7 +13,7 @@ import { ArrowRight, Check, X, AlertCircle, ExternalLink, ShieldCheck } from 'lu
 
 export const metadata: Metadata = {
   title:
-    'Is Compounded GLP-1 Legal in 2026? The Short Answer: Yes, With a Prescription | GLP1CompareHub',
+    'Is Compounded GLP-1 Legal in 2026? Yes, With a Prescription',
   description:
     "Compounded semaglutide and tirzepatide from licensed 503A pharmacies are legal with a valid physician prescription. Here's the timeline, the legal framework, and what to verify.",
   alternates: {

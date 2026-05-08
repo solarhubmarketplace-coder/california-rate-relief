@@ -13,7 +13,7 @@ import { buildAffiliateUrl, buildGlp1AffiliateUrl } from '@/lib/affiliate-links'
 import { ArrowRight, AlertCircle, CircleCheck, Calendar, Sparkles, Trophy } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Glutathione Injection May 2026: Cost, Evidence, At-Home Telehealth Options | GLP1CompareHub',
+  title: 'Glutathione Injection 2026: Cost, Evidence & At-Home Options',
   description:
     'Glutathione injection guide updated May 2026. Local IV pricing ($75-$250/session) vs at-home telehealth options. The honest read on what glutathione actually does, what the evidence shows, and how it fits into a longevity stack.',
   alternates: { canonical: 'https://glp1comparehub.com/glutathione-injection' },

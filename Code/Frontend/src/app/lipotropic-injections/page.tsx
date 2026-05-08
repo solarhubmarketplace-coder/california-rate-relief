@@ -13,7 +13,7 @@ import { buildAffiliateUrl, buildGlp1AffiliateUrl } from '@/lib/affiliate-links'
 import { ArrowRight, AlertCircle, CircleCheck, Calendar, Zap, Trophy } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Lipotropic Injections 2026: Cost ($89/mo at Home), MIC+B12 Guide, GLP-1 Stack | GLP1CompareHub',
+  title: 'Lipotropic MIC+B12 Injections 2026: Cost, At-Home Options & GLP-1 Stack',
   description:
     'Lipotropic injections (MIC+B12) explained: how they work, what the evidence says, local clinic pricing ($25-$80/shot) vs at-home telehealth ($89/mo at System Labs), and why patients are stacking them with GLP-1 medications for energy and metabolic support.',
   alternates: { canonical: 'https://glp1comparehub.com/lipotropic-injections' },

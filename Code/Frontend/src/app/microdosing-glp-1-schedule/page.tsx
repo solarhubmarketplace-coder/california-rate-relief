@@ -24,7 +24,7 @@ import { ArrowRight, Check, X, Minus, ExternalLink, Award, AlertCircle } from 'l
 // =============================================================================
 
 export const metadata: Metadata = {
-  title: 'GLP-1 Microdosing Schedule 2026: Weekly Semaglutide & Tirzepatide Timing Guide | GLP1CompareHub',
+  title: 'GLP-1 Microdosing Schedule 2026: Semaglutide & Tirzepatide Timing',
   description:
     'Complete GLP-1 microdosing schedule guide: week-by-week semaglutide and tirzepatide dose tables, titration protocols, day-of-week timing, side effect windows, and when to pause. Updated May 2026.',
   alternates: { canonical: 'https://glp1comparehub.com/microdosing-glp-1-schedule' },

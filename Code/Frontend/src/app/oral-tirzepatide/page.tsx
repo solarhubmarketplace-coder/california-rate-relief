@@ -14,7 +14,7 @@ import { primaryProviders } from '@/lib/glp1-providers';
 import { ArrowRight, ShieldCheck, AlertCircle, CircleCheck, Calendar, Pill, Droplet } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Oral Tirzepatide May 2026: Sublingual Drops + GLP-1 Gum (Needle-Free Compounded GLP-1) | GLP1CompareHub',
+  title: 'Oral Tirzepatide 2026: Sublingual Drops, GLP-1 Gum & Alternatives',
   description:
     'Compounded oral tirzepatide is now available in two needle-free formats: Direct Meds sublingual drops at $224.10/mo and Embody GLP-1 gum. Bioavailability, dosing, and how the oral route compares to injection — verified May 2026.',
   alternates: { canonical: 'https://glp1comparehub.com/oral-tirzepatide' },

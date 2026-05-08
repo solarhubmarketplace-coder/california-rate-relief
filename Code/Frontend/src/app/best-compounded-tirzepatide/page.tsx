@@ -14,7 +14,7 @@ import { VerifiedPricingBadge } from '@/components/glp1/VerifiedPricingBadge';
 import { ArrowRight, ShieldCheck, AlertCircle, CircleCheck, Calendar, Trophy, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Best Compounded Tirzepatide May 2026: 6 Verified Telehealth Programs Ranked | GLP1CompareHub',
+  title: 'Best Compounded Tirzepatide May 2026: 6 Programs Ranked',
   description:
     'Editorial ranking of the 6 best compounded tirzepatide telehealth programs verified May 2026. TMates (Best Overall, $167-$297/mo, 6.43% CR), Embody (Best Flat-Rate, $299 flat refills), System Labs ($179 — Best Value). Includes the post-April 2026 FDA context.',
   alternates: { canonical: 'https://glp1comparehub.com/best-compounded-tirzepatide' },

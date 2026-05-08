@@ -41,7 +41,7 @@ import {
 // =============================================================================
 
 export const metadata: Metadata = {
-  title: 'Compounded Liraglutide 2026: What It Is, Who Offers It, and How It Compares | GLP1CompareHub',
+  title: 'Compounded Liraglutide 2026: Who Offers It & How It Compares',
   description:
     'Compounded liraglutide (generic Saxenda) explained: daily GLP-1 injection, ~8% weight loss in SCALE trial, FDA status, and which providers offer it. How does it compare to semaglutide?',
   alternates: { canonical: 'https://glp1comparehub.com/compounded-liraglutide' },
