@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { headers } from 'next/headers';
+
+export const dynamic = 'force-dynamic';
 import { statSync } from 'fs';
 import { join } from 'path';
 import { getAllCitySlugs } from '@/data/cities-data';
@@ -406,7 +408,7 @@ function glp1Sitemap(base: string): MetadataRoute.Sitemap {
 // =============================================================================
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const hdrs = await headers();
-  const host = hdrs.get('host') || 'ratereliefca.com';
+  const host = hdrs.get('x-forwarded-host') || hdrs.get('host') || 'ratereliefca.com';
   const key = detectDomainKey(host);
   const base = DOMAIN_BASE[key];
 
