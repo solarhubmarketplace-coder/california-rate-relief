@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { headers } from 'next/headers';
 
+export const dynamic = 'force-dynamic';
+
 // =============================================================================
 // HOST-AWARE ROBOTS.TXT
 // =============================================================================
@@ -28,7 +30,7 @@ function detectDomainKey(host: string): string {
 
 export default async function robots(): Promise<MetadataRoute.Robots> {
   const hdrs = await headers();
-  const host = hdrs.get('host') || 'ratereliefca.com';
+  const host = hdrs.get('x-forwarded-host') || hdrs.get('host') || 'ratereliefca.com';
   const base = DOMAIN_BASE[detectDomainKey(host)];
 
   return {
