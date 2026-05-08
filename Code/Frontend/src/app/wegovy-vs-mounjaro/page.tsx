@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
+import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
+import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
 import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
@@ -35,16 +37,18 @@ export const metadata: Metadata = {
   title: 'Wegovy vs Mounjaro 2026: Head-to-Head Comparison (SURMOUNT-5 Data)',
   description:
     'Wegovy vs Mounjaro comparison: SURMOUNT-5 trial showed Mounjaro (tirzepatide) -20.2% weight loss vs Wegovy (semaglutide) -13.7%. Cost, side effects, and FDA approvals compared for May 2026.',
-  alternates: { canonical: '/wegovy-vs-mounjaro' },
+  alternates: { canonical: 'https://glp1comparehub.com/wegovy-vs-mounjaro' },
   openGraph: {
     title: 'Wegovy vs Mounjaro 2026: Which GLP-1 Is Better for Weight Loss?',
     description:
       'Head-to-head comparison of Wegovy (semaglutide) and Mounjaro (tirzepatide) using SURMOUNT-5 data, May 2026 pricing, side effects, and FDA approval status.',
     type: 'article',
     publishedTime: '2026-05-03T00:00:00Z',
+    url: 'https://glp1comparehub.com/wegovy-vs-mounjaro',
     siteName: 'GLP1CompareHub',
-    images: [{ url: '/img/glp1/og-wegovy-vs-mounjaro.jpg', width: 1168, height: 784, alt: 'Wegovy vs Mounjaro — side-by-side comparison 2026' }],
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-wegovy-vs-mounjaro.jpg', width: 1168, height: 784, alt: 'Wegovy vs Mounjaro — side-by-side comparison 2026' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const articleSchema = {
@@ -1052,7 +1056,7 @@ export default function WegovyVsMounjaro() {
 
             {/* YMYL compliance: editorial review box */}
       <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
-
+      <StickyMobileCTA href={buildGlp1AffiliateUrl('tmates', 'wegovy-vs-mounjaro')} brandName="TMates" pricePitch="Compounded semaglutide & tirzepatide from $167/mo" />
       <GLP1Footer />
     </GLP1Layout>
   );

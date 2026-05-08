@@ -23,7 +23,9 @@ export const metadata: Metadata = {
       "Is 503A compounded tirzepatide legal in 2026? Yes — with a valid Rx from a licensed physician. Here's how 503A pharmacies work, how they differ from 503B, and what to verify before enrolling.",
     url: 'https://glp1comparehub.com/503a-compounding-pharmacy-tirzepatide',
     type: 'article',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const jsonLd = {

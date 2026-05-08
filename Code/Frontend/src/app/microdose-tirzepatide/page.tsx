@@ -40,7 +40,9 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'GLP1CompareHub',
     url: 'https://glp1comparehub.com/microdose-tirzepatide',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const breadcrumbSchema = {

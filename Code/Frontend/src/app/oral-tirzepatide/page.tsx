@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
+import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
+import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
 import { LastReviewedBadge } from '@/components/glp1/LastReviewedBadge';
@@ -23,7 +25,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/oral-tirzepatide',
     siteName: 'GLP1CompareHub',
     type: 'article',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const articleSchema = {
@@ -488,7 +492,7 @@ export default function OralTirzepatidePage() {
 
             {/* YMYL compliance: editorial review box */}
       <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
-
+      <StickyMobileCTA href={buildGlp1AffiliateUrl('directmeds', 'oral-tirzepatide')} brandName="DirectMeds" pricePitch="Sublingual tirzepatide drops from $224/mo · Needle-free" />
       <GLP1Footer />
     </GLP1Layout>
   );

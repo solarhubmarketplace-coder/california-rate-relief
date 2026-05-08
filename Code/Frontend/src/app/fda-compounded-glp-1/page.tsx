@@ -25,7 +25,9 @@ export const metadata: Metadata = {
       "FDA enforcement actions in 2025 targeted bulk 503B GLP-1 manufacturers — not patient-specific 503A compounding. Here's what the FDA actually said and what it means for patients.",
     url: 'https://glp1comparehub.com/fda-compounded-glp-1',
     type: 'article',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const jsonLd = {

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
+import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
+import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
 import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
 import { RelatedGuides } from '@/components/glp1/RelatedGuides';
@@ -1000,6 +1002,7 @@ export default function OzempicVsMounjaro() {
             {/* YMYL compliance: editorial review box */}
       <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
       <RelatedGuides currentPath="/ozempic-vs-mounjaro" priorityCluster="compare" />
+      <StickyMobileCTA href={buildGlp1AffiliateUrl('tmates', 'ozempic-vs-mounjaro')} brandName="TMates" pricePitch="Compounded semaglutide & tirzepatide from $167/mo" />
       <GLP1Footer />
     </GLP1Layout>
   );

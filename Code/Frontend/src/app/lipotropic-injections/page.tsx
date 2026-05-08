@@ -24,8 +24,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/lipotropic-injections',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: '/img/glp1/og-lipotropic-injections.jpg', width: 1168, height: 784, alt: 'Lipotropic Injections — telehealth provider guide 2026' }],
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-lipotropic-injections.jpg', width: 1168, height: 784, alt: 'Lipotropic Injections — telehealth provider guide 2026' }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const articleSchema = {

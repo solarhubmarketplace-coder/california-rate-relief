@@ -22,7 +22,9 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/best',
     siteName: 'GLP1CompareHub',
     type: 'website',
+    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 const breadcrumbSchema = {
@@ -52,7 +54,7 @@ export default function BestRankingsHub() {
 
       <GLP1Header />
       <MedicalDisclaimerBanner />
-      <StickyMobileCTA href={buildGlp1AffiliateUrl('medvi', 'best')} brandName="MEDVi" pricePitch="Top-ranked verified provider — compounded tirzepatide from $179/mo" />
+      <StickyMobileCTA href={buildGlp1AffiliateUrl('tmates', 'best')} brandName="TMates" pricePitch="Compounded semaglutide & tirzepatide from $167/mo" />
 
       {/* Affiliate disclosure */}
       <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
