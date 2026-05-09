@@ -11,11 +11,20 @@
  *
  * Source documents:
  *   /05_GLP1_Telehealth_Affiliate/Research/Gronk_Responses_Batch1_2026-05-01.md
- *   matchglp1.com title-tag pricing (verify before publish — this is competitor data)
+ *   Gronk verification batch 2026-05-08 (provider pricing + top-5 rankings across
+ *     all 19 providers and all 8 medication categories — see chat transcript).
+ *
+ * Notable May 2026 regulatory context (from Gronk verification 2026-05-08):
+ *   - April 30, 2026: FDA proposed exclusion of bulk 503B compounding of
+ *     semaglutide/tirzepatide; public comment open through June 29, 2026.
+ *   - Feb–Mar 2026: 30+ telehealth firms received FDA warning letters for
+ *     misleading marketing implying equivalence to branded drugs.
+ *   - 503A patient-specific compounding remains legal but with heightened
+ *     scrutiny on quality, sourcing, and marketing claims.
  */
 
 export type MedicationFormat = 'Injectable' | 'Oral Tablet' | 'Sublingual Drops' | 'Nasal Spray' | 'Mixed';
-export type FdaStatus = 'FDA-Approved' | 'Compounded — Not FDA Approved' | 'Pipeline / Pending';
+export type FdaStatus = 'FDA-Approved' | 'Compounded — Not FDA Approved' | 'Pipeline / Pending' | 'Mixed';
 
 export interface DosingStep {
   week: number;
@@ -72,15 +81,15 @@ export const glp1Medications: GLP1Medication[] = [
     name: 'Wegovy',
     genericName: 'semaglutide',
     manufacturer: 'Novo Nordisk',
-    titleHook: 'Best Telemedicine for Wegovy 2026 — NEW Wegovy Pill from $149/mo',
+    titleHook: 'Best Telemedicine for Wegovy 2026 — Insurance Concierge from $0 Copay',
     formats: ['Injectable', 'Oral Tablet'],
     fdaStatus: 'FDA-Approved',
-    description: 'Wegovy is the FDA-approved branded form of semaglutide for chronic weight management in adults with obesity (BMI ≥30) or overweight (BMI ≥27 with weight-related comorbidity). Available as a weekly injectable pen and (newly) as the Wegovy Pill — oral semaglutide for weight loss.',
+    description: 'Wegovy is the FDA-approved branded form of semaglutide for chronic weight management in adults with obesity (BMI ≥30) or overweight (BMI ≥27 with weight-related comorbidity). Available as a weekly injectable pen and (newly) as the Wegovy Pill — oral semaglutide for weight loss. Cash pay runs $900–$1,400/month without insurance; insurance concierge providers (Ro, Calibrate, Found) maximize coverage outcomes.',
     mechanism: 'GLP-1 receptor agonist — slows gastric emptying, reduces appetite, increases satiety.',
     indications: ['Chronic weight management', 'Cardiovascular risk reduction in adults with established CVD + obesity'],
-    priceRange: '$149–$1,839/mo',
+    priceRange: '$0–$1,400/mo (with insurance → cash pay)',
     offeredByProviders: ['ivim-health', 'eden-health', 'orderlymeds', 'gobymeds', 'ro', 'calibrate', 'found'],
-    topProviders: ['ivim-health', 'eden-health', 'orderlymeds', 'ro', 'calibrate'],
+    topProviders: ['ro', 'calibrate', 'ivim-health', 'found', 'eden-health'],
     dosingSchedule: [
       { week: 1, dose: '0.25 mg', phase: 'Initiation' },
       { week: 5, dose: '0.5 mg', phase: 'Titration' },
@@ -92,8 +101,8 @@ export const glp1Medications: GLP1Medication[] = [
     trialResults: [
       { metric: 'Average weight loss at 68 weeks', value: '14.9%', trial: 'STEP-1 (NEJM 2021)' },
     ],
-    lastUpdated: '2026-05-02',
-    pricingVerified: false, // Wegovy Pill $149 figure pulled from matchglp1 title — verify
+    lastUpdated: '2026-05-08',
+    pricingVerified: true,
   },
 
   {
@@ -101,15 +110,15 @@ export const glp1Medications: GLP1Medication[] = [
     name: 'Zepbound',
     genericName: 'tirzepatide',
     manufacturer: 'Eli Lilly',
-    titleHook: 'Best Telemedicine for Zepbound 2026 — LillyDirect Prices Reduced to $299/mo',
+    titleHook: 'Best Telemedicine for Zepbound 2026 — LillyDirect Vials from $349/mo',
     formats: ['Injectable'],
     fdaStatus: 'FDA-Approved',
-    description: 'Zepbound is the FDA-approved branded form of tirzepatide for chronic weight management. Tirzepatide is a dual GIP/GLP-1 receptor agonist — the only dual-agonist on the market — and produces significantly greater weight loss than GLP-1-only agents in head-to-head trials.',
+    description: 'Zepbound is the FDA-approved branded form of tirzepatide for chronic weight management. Tirzepatide is a dual GIP/GLP-1 receptor agonist — the only dual-agonist on the market — and produces significantly greater weight loss than GLP-1-only agents in head-to-head trials. LillyDirect self-pay vials run $349–$550/month with savings cards; cash pay without coverage runs $1,000–$1,350/month.',
     mechanism: 'Dual GIP + GLP-1 receptor agonist — combines two incretin pathways for amplified appetite suppression and metabolic effect.',
     indications: ['Chronic weight management', 'Obstructive sleep apnea in adults with obesity (FDA-approved Dec 2024)'],
-    priceRange: '$299–$1,498/mo',
-    offeredByProviders: ['ivim-health', 'eden-health', 'orderlymeds', 'gobymeds'],
-    topProviders: ['ivim-health', 'eden-health', 'orderlymeds', 'gobymeds'],
+    priceRange: '$349–$1,350/mo (LillyDirect savings → cash pay)',
+    offeredByProviders: ['ivim-health', 'eden-health', 'orderlymeds', 'gobymeds', 'ro', 'calibrate', 'found'],
+    topProviders: ['ro', 'calibrate', 'ivim-health', 'found', 'eden-health'],
     dosingSchedule: [
       { week: 1, dose: '2.5 mg', phase: 'Initiation' },
       { week: 5, dose: '5 mg', phase: 'Titration' },
@@ -123,8 +132,8 @@ export const glp1Medications: GLP1Medication[] = [
       { metric: 'Average weight loss at 72 weeks', value: '20.2%', trial: 'SURMOUNT-1 (NEJM 2022)' },
       { metric: 'Tirzepatide vs Semaglutide head-to-head', value: '20.2% vs 13.7%', trial: 'SURMOUNT-5 (NEJM 2025)' },
     ],
-    lastUpdated: '2026-05-02',
-    pricingVerified: false, // $299 LillyDirect figure pulled from matchglp1 title — verify
+    lastUpdated: '2026-05-08',
+    pricingVerified: true,
   },
 
   {
@@ -132,18 +141,18 @@ export const glp1Medications: GLP1Medication[] = [
     name: 'Mounjaro',
     genericName: 'tirzepatide',
     manufacturer: 'Eli Lilly',
-    titleHook: 'Best Telemedicine for Mounjaro 2026 — Zepbound REDUCED to $299/mo',
+    titleHook: 'Best Telemedicine for Mounjaro 2026 — Insurance-Covered for Type 2 Diabetes',
     formats: ['Injectable'],
     fdaStatus: 'FDA-Approved',
-    description: 'Mounjaro is the FDA-approved branded form of tirzepatide for type 2 diabetes (NOT weight loss — that indication is Zepbound, same molecule). Often discussed in weight-loss contexts because off-label prescribing is common.',
+    description: 'Mounjaro is the FDA-approved branded form of tirzepatide for type 2 diabetes (NOT weight loss — that indication is Zepbound, same molecule). Often discussed in weight-loss contexts because off-label prescribing is common. Cash pay $1,000+/month; insurance coverage typical for diabetic patients with proper indication.',
     mechanism: 'Dual GIP + GLP-1 receptor agonist (same molecule as Zepbound).',
     indications: ['Type 2 diabetes mellitus'],
-    priceRange: '$1,000+/mo (often insurance-covered)',
-    offeredByProviders: ['ivim-health', 'eden-health'],
-    topProviders: ['ivim-health', 'eden-health'],
+    priceRange: '$25–$1,000+/mo (insurance copay → cash pay)',
+    offeredByProviders: ['ivim-health', 'eden-health', 'ro', 'calibrate', 'found'],
+    topProviders: ['ro', 'calibrate', 'ivim-health', 'eden-health', 'found'],
     commonSideEffects: ['Nausea', 'Diarrhea', 'Vomiting', 'Constipation', 'Decreased appetite'],
-    lastUpdated: '2026-05-02',
-    pricingVerified: false,
+    lastUpdated: '2026-05-08',
+    pricingVerified: true,
   },
 
   {
@@ -151,18 +160,18 @@ export const glp1Medications: GLP1Medication[] = [
     name: 'Ozempic',
     genericName: 'semaglutide',
     manufacturer: 'Novo Nordisk',
-    titleHook: 'Best Telemedicine for Ozempic 2026 — NovoCare Intro $199/mo',
+    titleHook: 'Best Telemedicine for Ozempic 2026 — Insurance Coverage for Type 2 Diabetes',
     formats: ['Injectable'],
     fdaStatus: 'FDA-Approved',
-    description: 'Ozempic is the FDA-approved branded form of semaglutide for type 2 diabetes (NOT weight loss — that indication is Wegovy, same molecule). Off-label prescribing for weight loss has driven enormous demand and historic shortages.',
+    description: 'Ozempic is the FDA-approved branded form of semaglutide for type 2 diabetes (NOT weight loss — that indication is Wegovy, same molecule). Off-label prescribing for weight loss has driven enormous demand and historic shortages. Cash pay typically $900–$1,000/month; insurance coverage typical for diabetic patients.',
     mechanism: 'GLP-1 receptor agonist (same molecule as Wegovy).',
     indications: ['Type 2 diabetes mellitus', 'Cardiovascular risk reduction in T2D + CVD'],
-    priceRange: '$199–$1,000+/mo',
-    offeredByProviders: ['ivim-health', 'eden-health'],
-    topProviders: ['ivim-health', 'eden-health'],
+    priceRange: '$25–$1,000+/mo (insurance copay → cash pay)',
+    offeredByProviders: ['ivim-health', 'eden-health', 'ro', 'calibrate', 'found'],
+    topProviders: ['ro', 'calibrate', 'ivim-health', 'eden-health', 'found'],
     commonSideEffects: ['Nausea', 'Vomiting', 'Diarrhea', 'Constipation', 'Abdominal pain'],
-    lastUpdated: '2026-05-02',
-    pricingVerified: false,
+    lastUpdated: '2026-05-08',
+    pricingVerified: true,
   },
 
   // ============================================================
@@ -173,19 +182,19 @@ export const glp1Medications: GLP1Medication[] = [
     slug: 'semaglutide',
     name: 'Semaglutide',
     genericName: 'semaglutide',
-    titleHook: 'Best Telemedicine for Semaglutide 2026 — Wegovy Pill from $149/mo',
+    titleHook: 'Best Telemedicine for Compounded Semaglutide 2026 — From $74/mo (Bundles)',
     formats: ['Injectable', 'Oral Tablet', 'Sublingual Drops'],
     fdaStatus: 'Mixed',
-    description: 'Semaglutide is the active molecule in both Wegovy (weight loss) and Ozempic (diabetes), and is also available compounded by 503A pharmacies (compounded semaglutide). Compounded versions are NOT FDA-approved but are produced under specific compounding-pharmacy exemptions.',
+    description: 'Semaglutide is the active molecule in both Wegovy (weight loss) and Ozempic (diabetes), and is also available compounded by 503A pharmacies (compounded semaglutide). Compounded versions are NOT FDA-approved but are produced under specific 503A patient-specific compounding exemptions. May 2026 pricing ranges from $74/mo (OrderlyMeds bundle starter) to $1,400/mo cash pay for branded Wegovy.',
     mechanism: 'GLP-1 receptor agonist.',
-    priceRange: '$99–$1,839/mo (compounded → branded)',
-    offeredByProviders: ['skinnyrx', 'trimrx', 'medvi', 'directmeds', 'ivim-health', 'eden-health', 'elevate-health', 'orderlymeds', 'gobymeds'],
-    topProviders: ['skinnyrx', 'eden-health', 'gobymeds', 'medvi', 'ivim-health'],
+    priceRange: '$74–$1,400/mo (compounded → branded)',
+    offeredByProviders: ['skinnyrx', 'trimrx', 'medvi', 'directmeds', 'ivim-health', 'eden-health', 'elevate-health', 'orderlymeds', 'gobymeds', 'tmates', 'embody', 'strut-health', 'sprout-health', 'gala-health', 'care-bare-rx', 'system-labs'],
+    topProviders: ['orderlymeds', 'gobymeds', 'skinnyrx', 'eden-health', 'trimrx'],
     commonSideEffects: ['Nausea', 'Vomiting', 'Diarrhea'],
     trialResults: [
       { metric: 'Average weight loss at 68 weeks (Wegovy)', value: '14.9%', trial: 'STEP-1 (NEJM 2021)' },
     ],
-    lastUpdated: '2026-05-02',
+    lastUpdated: '2026-05-08',
     pricingVerified: true,
   },
 
@@ -193,20 +202,20 @@ export const glp1Medications: GLP1Medication[] = [
     slug: 'tirzepatide',
     name: 'Tirzepatide',
     genericName: 'tirzepatide',
-    titleHook: 'Best Telemedicine for Tirzepatide 2026 — Zepbound REDUCED to $299/mo',
+    titleHook: 'Best Telemedicine for Compounded Tirzepatide 2026 — From $133/mo (Bundles)',
     formats: ['Injectable', 'Sublingual Drops'],
     fdaStatus: 'Mixed',
-    description: 'Tirzepatide is the active molecule in Zepbound (weight loss) and Mounjaro (diabetes), and available compounded by 503A pharmacies. The dual GIP/GLP-1 mechanism produces 50% greater weight loss than semaglutide in head-to-head trials.',
+    description: 'Tirzepatide is the active molecule in Zepbound (weight loss) and Mounjaro (diabetes), and available compounded by 503A pharmacies. The dual GIP/GLP-1 mechanism produces ~50% greater weight loss than semaglutide in head-to-head trials. May 2026 pricing ranges from $133/mo (GobyMeds bundle starter) to $1,350/mo cash pay for branded Zepbound.',
     mechanism: 'Dual GIP + GLP-1 receptor agonist.',
-    priceRange: '$133–$1,498/mo (compounded → branded)',
-    offeredByProviders: ['skinnyrx', 'trimrx', 'medvi', 'directmeds', 'ivim-health', 'eden-health', 'elevate-health', 'orderlymeds', 'gobymeds'],
-    topProviders: ['skinnyrx', 'gobymeds', 'orderlymeds', 'eden-health', 'ivim-health'],
+    priceRange: '$133–$1,350/mo (compounded → branded)',
+    offeredByProviders: ['skinnyrx', 'trimrx', 'medvi', 'directmeds', 'ivim-health', 'eden-health', 'elevate-health', 'orderlymeds', 'gobymeds', 'tmates', 'embody', 'strut-health', 'sprout-health', 'gala-health', 'care-bare-rx', 'system-labs'],
+    topProviders: ['gobymeds', 'orderlymeds', 'skinnyrx', 'ivim-health', 'eden-health'],
     commonSideEffects: ['Nausea', 'Vomiting', 'Diarrhea', 'Constipation'],
     trialResults: [
       { metric: 'Average weight loss at 72 weeks (Zepbound)', value: '20.2%', trial: 'SURMOUNT-1 (NEJM 2022)' },
       { metric: 'Tirzepatide vs Semaglutide', value: '20.2% vs 13.7%', trial: 'SURMOUNT-5 (NEJM 2025)' },
     ],
-    lastUpdated: '2026-05-02',
+    lastUpdated: '2026-05-08',
     pricingVerified: true,
   },
 
@@ -220,11 +229,11 @@ export const glp1Medications: GLP1Medication[] = [
     titleHook: 'Best Telemedicine for Compounded Semaglutide & Tirzepatide 2026',
     formats: ['Injectable', 'Sublingual Drops'],
     fdaStatus: 'Compounded — Not FDA Approved',
-    description: 'Compounded GLP-1 medications (compounded semaglutide and compounded tirzepatide) are produced by state-licensed 503A and 503B compounding pharmacies under specific FDA exemptions. They are NOT FDA-approved drugs. Compounded options are typically 60–80% cheaper than branded equivalents.',
-    priceRange: '$75–$399/mo',
-    offeredByProviders: ['skinnyrx', 'trimrx', 'medvi', 'directmeds', 'ivim-health', 'eden-health', 'elevate-health', 'orderlymeds', 'gobymeds'],
-    topProviders: ['skinnyrx', 'gobymeds', 'eden-health', 'medvi', 'directmeds'],
-    lastUpdated: '2026-05-02',
+    description: 'Compounded GLP-1 medications (compounded semaglutide and compounded tirzepatide) are produced by state-licensed 503A patient-specific compounding pharmacies under specific FDA exemptions. They are NOT FDA-approved drugs. Compounded options are typically 60–90% cheaper than branded equivalents. Heightened FDA scrutiny since the April 30, 2026 proposed bulks-list exclusion — providers with verified 503A sourcing and accredited pharmacy partners now stand out.',
+    priceRange: '$74–$399/mo',
+    offeredByProviders: ['skinnyrx', 'trimrx', 'medvi', 'directmeds', 'ivim-health', 'eden-health', 'elevate-health', 'orderlymeds', 'gobymeds', 'tmates', 'embody', 'strut-health', 'sprout-health', 'gala-health', 'care-bare-rx', 'system-labs'],
+    topProviders: ['orderlymeds', 'gobymeds', 'skinnyrx', 'eden-health', 'tmates'],
+    lastUpdated: '2026-05-08',
     pricingVerified: true,
   },
 
@@ -234,12 +243,12 @@ export const glp1Medications: GLP1Medication[] = [
     titleHook: 'Best Telemedicine for Brand-Name GLP-1 (Wegovy, Zepbound, Mounjaro, Ozempic) 2026',
     formats: ['Injectable', 'Oral Tablet'],
     fdaStatus: 'FDA-Approved',
-    description: 'Branded GLP-1 medications include Wegovy (semaglutide for weight loss), Zepbound (tirzepatide for weight loss), Mounjaro (tirzepatide for diabetes), Ozempic (semaglutide for diabetes), and the new Wegovy Pill (oral semaglutide). All are FDA-approved.',
-    priceRange: '$149–$1,839/mo',
+    description: 'Branded GLP-1 medications include Wegovy (semaglutide for weight loss), Zepbound (tirzepatide for weight loss), Mounjaro (tirzepatide for diabetes), Ozempic (semaglutide for diabetes), and the new Wegovy Pill (oral semaglutide). All are FDA-approved. Insurance-concierge providers (Ro, Calibrate, Found) maximize coverage outcomes; cash pay without insurance runs $900–$1,400/month.',
+    priceRange: '$25–$1,400/mo (insurance copay → cash pay)',
     offeredByProviders: ['ivim-health', 'eden-health', 'orderlymeds', 'gobymeds', 'ro', 'calibrate', 'found'],
-    topProviders: ['ivim-health', 'eden-health', 'ro', 'calibrate', 'orderlymeds'],
-    lastUpdated: '2026-05-02',
-    pricingVerified: false,
+    topProviders: ['ro', 'calibrate', 'ivim-health', 'found', 'eden-health'],
+    lastUpdated: '2026-05-08',
+    pricingVerified: true,
   },
 ];
 

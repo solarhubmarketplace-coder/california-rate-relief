@@ -79,6 +79,7 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/news') ||
     pathname.startsWith('/disclaimer') ||
     pathname.startsWith('/peptides') ||
+    pathname.startsWith('/tmates') ||
     pathname.startsWith('/tirzepatide') ||
     pathname.startsWith('/semaglutide') ||
     pathname.startsWith('/comparisons') ||
