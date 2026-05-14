@@ -15,7 +15,6 @@
 
 import { glp1Providers } from './glp1-providers';
 import { glp1Medications } from './glp1-medications';
-import { glp1Peptides } from './glp1-peptides';
 
 export type PageTier = 'A' | 'B' | 'C';
 export type PageStatus = 'live' | 'next' | 'queued' | 'utility' | 'future';
@@ -479,19 +478,24 @@ const microdosingPages: PageRoute[] = [
 ];
 
 // ============================================================
-// ADJACENT PEPTIDE / STACK PAGES (auto-generated from glp1Peptides)
+// ADJACENT PEPTIDE / STACK PAGES
 // ============================================================
+// NOTE: /peptides/[slug] dynamic route is wired to lib/peptides-data.ts
+// (research peptides: BPC-157, Ipamorelin/CJC-1295, PT-141, TB-500, AOD-9604) —
+// NOT to lib/glp1-peptides.ts (GLP-1-adjacent products like sermorelin, NAD+,
+// MIC+B12, lipotropic, glutathione, methylene-blue). The latter are exposed
+// at their own top-level URLs (/sermorelin-for-weight-loss, /lipotropic-injections,
+// /nad-iv-therapy, /nad-nasal-spray, /glutathione-injection) and registered as
+// 'live' in livePages above. Do not auto-generate /peptides/<glp1Peptide.slug> here
+// — those routes don't exist and would create soft-404s in the sitemap.
 const peptidePages: PageRoute[] = [
-  ...glp1Peptides.map<PageRoute>((p) => ({
-    path: `/peptides/${p.slug}`,
-    template: 'peptide-stack',
-    tier: 'B',
-    status: 'queued',
-    targetKeyword: `${p.name.toLowerCase()} for weight loss`,
-    note: `${p.category} adjunct — compliance risk: ${p.complianceRisk}`,
-  })),
-  // Specific high-volume peptide pages — many promoted to livePages in Batches 1-5
-  // /nad-iv-therapy, /nad-nasal-spray, /lipotropic-injections, /sermorelin-for-weight-loss, /glutathione-injection now live
+  // /peptides/[slug] — the 5 research peptides served by app/peptides/[slug]/page.tsx
+  { path: '/peptides/bpc-157',              template: 'peptide-stack', tier: 'B', status: 'live', targetKeyword: 'bpc-157 peptide',           note: 'LIVE — served by app/peptides/[slug]/page.tsx from peptides-data.ts.' },
+  { path: '/peptides/ipamorelin-cjc-1295',  template: 'peptide-stack', tier: 'B', status: 'live', targetKeyword: 'ipamorelin cjc 1295',       note: 'LIVE — served by app/peptides/[slug]/page.tsx from peptides-data.ts.' },
+  { path: '/peptides/pt-141',               template: 'peptide-stack', tier: 'B', status: 'live', targetKeyword: 'pt-141 peptide',            note: 'LIVE — served by app/peptides/[slug]/page.tsx from peptides-data.ts.' },
+  { path: '/peptides/tb-500',               template: 'peptide-stack', tier: 'B', status: 'live', targetKeyword: 'tb-500 peptide',            note: 'LIVE — served by app/peptides/[slug]/page.tsx from peptides-data.ts.' },
+  { path: '/peptides/aod-9604',             template: 'peptide-stack', tier: 'B', status: 'live', targetKeyword: 'aod-9604 peptide',          note: 'LIVE — served by app/peptides/[slug]/page.tsx from peptides-data.ts.' },
+  // Standalone peptide top-level pages live elsewhere; nad-injection lives at /nad-injection
   { path: '/nad-injection',      template: 'peptide-stack', tier: 'B', status: 'live',   targetKeyword: 'nad+ injection',  volume: 2300,  kd: 15, note: 'LIVE 2026-05-06. SubQ vs IV vs nasal spray 3-way comparison. GLP-1 stack rationale (lean mass, sirtuin activation, fatigue management). Eden Health (editor pick), System Labs, Ivim. 6-FAQ schema.' },
 ];
 
