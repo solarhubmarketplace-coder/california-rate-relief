@@ -20,10 +20,21 @@ import {
 
 // ============================================================
 // SSG: enumerate all medication slugs
+//
+// URLs are /best/telemedicine-<slug>. The folder is [medication], so the
+// captured param is the full "telemedicine-<slug>" string — strip the prefix
+// before looking up the medication.
 // ============================================================
 
+const PREFIX = 'telemedicine-';
+
+function resolveSlug(param: string): string | null {
+  if (!param.startsWith(PREFIX)) return null;
+  return param.slice(PREFIX.length);
+}
+
 export function generateStaticParams() {
-  return glp1Medications.map((m) => ({ medication: m.slug }));
+  return glp1Medications.map((m) => ({ medication: `${PREFIX}${m.slug}` }));
 }
 
 interface PageParams {
@@ -32,7 +43,8 @@ interface PageParams {
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { medication } = await params;
-  const med = getMedicationBySlug(medication);
+  const slug = resolveSlug(medication);
+  const med = slug ? getMedicationBySlug(slug) : undefined;
   if (!med) return { title: 'Medication Not Found | GLP1CompareHub' };
   return {
     title: `${med.titleHook} | GLP1CompareHub`,
@@ -57,7 +69,8 @@ const RANK_BADGES = ['Best Overall', 'Best Value', 'Best Brand-Name Value', 'Bes
 
 export default async function MedicationRankingPage({ params }: PageParams) {
   const { medication } = await params;
-  const med = getMedicationBySlug(medication);
+  const slug = resolveSlug(medication);
+  const med = slug ? getMedicationBySlug(slug) : undefined;
   if (!med) notFound();
 
   // Pull top 5 providers for this medication

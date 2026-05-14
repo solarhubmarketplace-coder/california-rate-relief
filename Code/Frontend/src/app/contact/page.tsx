@@ -33,7 +33,7 @@ const DOMAIN_CONTACT = {
   grh: { name: 'Green Reviews Hub', email: 'editorial@greenreviewshub.com', canonical: 'https://greenreviewshub.com/contact' },
   shg: { name: 'SecureHomeGear', email: 'editorial@securehomegear.com', canonical: 'https://securehomegear.com/contact' },
   ahb: { name: 'At Home Biohacking', email: 'editorial@athomebiohacking.com', canonical: 'https://athomebiohacking.com/contact' },
-  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/contact' },
+  glp1: { name: 'GLP1CompareHub', email: 'editorial@glp1comparehub.com', canonical: 'https://glp1comparehub.com/contact' },
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -83,8 +83,78 @@ export default async function ContactPage() {
 
   if (d === 'glp1') {
     return (
-      <GLP1TrustPage title='Contact'>
-        <CommonContent name={cfg.name} domain={d} />
+      <GLP1TrustPage title='Contact GLP1CompareHub'>
+        <p className='text-base leading-relaxed mb-6'>
+          GLP1CompareHub is an independent comparison site for GLP-1 telehealth programs. We do not
+          sell, prescribe, or dispense medication — every clinical interaction happens through the
+          licensed provider you choose. Use this page to reach the editorial team for corrections,
+          press, or partnership questions. Typical response time is one business day.
+        </p>
+
+        <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}>
+          Editorial and Corrections
+        </h2>
+        <p className='text-base leading-relaxed mb-4'>
+          Email{' '}
+          <a href={`mailto:${cfg.email}`} className='underline font-semibold' style={{ color: '#D4A33A' }}>
+            {cfg.email}
+          </a>{' '}
+          for factual corrections, broken citations, or outdated pricing. Please include the page URL
+          and a short description of the issue. We log corrections at the bottom of the corrected
+          page with the date the change was made.
+        </p>
+
+        <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}>
+          Providers and Pharmacies
+        </h2>
+        <p className='text-base leading-relaxed mb-4'>
+          Telehealth providers and compounding pharmacies who want their program reviewed should
+          email the same address with their current public pricing page, the medications they offer,
+          and any third-party quality certifications (USP 797/800, NABP Verified Pharmacy, etc.).
+          Editorial inclusion is independent of advertising or affiliate relationships — see our{' '}
+          <Link href='/methodology' className='underline'>methodology</Link> for ranking criteria.
+        </p>
+
+        <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}>
+          Press and Partnerships
+        </h2>
+        <p className='text-base leading-relaxed mb-4'>
+          Same address. Please put &ldquo;Press&rdquo; or &ldquo;Partnership&rdquo; in the subject
+          line so we can prioritize the request.
+        </p>
+
+        <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}>
+          What We Cannot Help With
+        </h2>
+        <p className='text-base leading-relaxed mb-4'>
+          We are <strong>not a medical provider</strong>. We cannot answer dosing questions,
+          adjust prescriptions, review individual side effects, refund or cancel a third-party
+          provider&apos;s order, or substitute for the licensed prescriber on your care team. For
+          clinical questions or order issues, contact the telehealth provider directly through the
+          account portal you used to enroll. For a medical emergency, call 911 or go to your nearest
+          emergency department.
+        </p>
+
+        <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}>
+          Mailing Address
+        </h2>
+        <p className='text-base leading-relaxed mb-4'>
+          Solar Hub Marketplace LLC dba GLP1CompareHub
+          <br />
+          44087 Caleluz
+          <br />
+          Temecula, CA 92592
+          <br />
+          United States
+        </p>
+
+        <div className='mt-10 p-5 rounded-2xl flex items-start gap-3' style={{ backgroundColor: '#F4EBD0', border: '1px solid #E5DDC8' }}>
+          <Mail className='h-5 w-5 flex-shrink-0 mt-0.5' style={{ color: '#D4A33A' }} />
+          <div>
+            <div className='font-bold' style={{ color: '#0E2A3A' }}>Direct email</div>
+            <a href={`mailto:${cfg.email}`} className='underline' style={{ color: '#D4A33A' }}>{cfg.email}</a>
+          </div>
+        </div>
       </GLP1TrustPage>
     );
   }
