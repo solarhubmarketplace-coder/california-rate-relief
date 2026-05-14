@@ -155,16 +155,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
           url: `https://glp1comparehub.com/providers/${provider.slug}`,
         }))
       : undefined,
-    aggregateRating:
-      provider.rating > 0
-        ? {
-            '@type': 'AggregateRating',
-            ratingValue: provider.rating.toFixed(1),
-            ratingCount: 100,
-            bestRating: 5,
-            worstRating: 1,
-          }
-        : undefined,
+    // aggregateRating intentionally omitted — see MedicalBusiness schema above.
   };
 
   const cc = categoryColor(provider.category);
