@@ -560,8 +560,10 @@ const utilityPages: PageRoute[] = [
 // ============================================================
 const newsPages: PageRoute[] = [
   { path: '/news',                                                       template: 'news', tier: 'B', status: 'live', note: 'LIVE — news index. page.tsx exists. [slug] dynamic route handles all article URLs.' },
-  { path: '/news/wegovy-pill-fda-approval-2026',                         template: 'news', tier: 'B', status: 'live', note: 'LIVE — served by [slug] dynamic route.' },
-  { path: '/news/fda-503b-compounded-shutdown-april-2026',               template: 'news', tier: 'B', status: 'live', note: 'LIVE — served by [slug] dynamic route.' },
+  { path: '/news/may-2026-glp1-telehealth-pricing-update',               template: 'news', tier: 'B', status: 'live', note: 'LIVE — actual published article (slug in glp1-news.ts).' },
+  // Future news articles below — only flip to 'live' AFTER adding to glp1-news.ts.
+  { path: '/news/wegovy-pill-fda-approval-2026',                         template: 'news', tier: 'B', status: 'queued', note: 'Not yet published — slug not in glp1-news.ts.' },
+  { path: '/news/fda-503b-compounded-shutdown-april-2026',               template: 'news', tier: 'B', status: 'queued', note: 'Not yet published — slug not in glp1-news.ts.' },
 ];
 
 // ============================================================

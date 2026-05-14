@@ -64,7 +64,7 @@ const faqSchema = {
       name: 'Which is cheaper, Zepbound or Wegovy?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'As of May 2026, branded Zepbound through telehealth is approximately $1,498/mo, branded Wegovy is approximately $1,839/mo. The new Wegovy Pill (oral semaglutide) is the cheapest branded option at ~$149/mo. Compounded versions of both medications are available at $99-$399/mo through 503A compounding pharmacies (NOT FDA-approved).',
+        text: 'As of May 2026, branded Zepbound through telehealth is approximately $1,498/mo, branded Wegovy is approximately $1,839/mo. The new Wegovy Pill (oral semaglutide) is the cheapest branded option at ~$149/mo. Compounded versions of both medications are available at $179-$399/mo through 503A compounding pharmacies (NOT FDA-approved).',
       },
     },
     {
@@ -463,7 +463,7 @@ export default function ZepboundVsWegovyPage() {
               />
               <DecisionRow
                 ifClause='You are uninsured and need lowest possible cost'
-                pick='Compounded semaglutide ($99/mo at GobyMeds)'
+                pick='Compounded semaglutide (System Labs, from $179/mo)'
                 color='#7CA982'
               />
               <DecisionRow

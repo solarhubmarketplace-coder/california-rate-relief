@@ -101,7 +101,7 @@ export default function ArloBrandHub() {
             <div className='mt-12 p-6 rounded-xl border' style={{ backgroundColor: '#111827', borderColor: '#1e293b' }}>
               <h3 className='text-xl font-bold mb-2' style={{ color: '#f5f5f5' }}>Check Current Arlo Pricing</h3>
               <p className='mb-4' style={{ color: '#d4d4d8' }}>Arlo runs frequent seasonal promotions and bundle discounts. Check current pricing before buying.</p>
-              <a href='https://www.arlo.com/' target='_blank' rel='noopener noreferrer sponsored' className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all' style={{ backgroundColor: '#f59e0b', color: '#0a0f1c' }}>
+              <a href='https://www.arlo.com/' target='_blank' rel='sponsored nofollow noopener noreferrer' className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all' style={{ backgroundColor: '#f59e0b', color: '#0a0f1c' }}>
                 See Arlo Cameras<ArrowRight className='h-4 w-4' />
               </a>
               <p className='text-xs mt-3' style={{ color: '#71717a' }}>Affiliate link via CJ Affiliate — we earn a commission at no cost to you. <Link href='/affiliate-disclosure' className='underline' style={{ color: '#f59e0b' }}>Full disclosure</Link>.</p>

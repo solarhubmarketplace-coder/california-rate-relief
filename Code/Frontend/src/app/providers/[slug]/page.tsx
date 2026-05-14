@@ -97,16 +97,10 @@ export default async function ProviderDetailPage({ params }: PageParams) {
     description: provider.description ?? provider.tagline,
     url: `https://glp1comparehub.com/providers/${provider.slug}`,
     medicalSpecialty: ['Bariatric', 'Endocrine'],
-    aggregateRating:
-      provider.rating > 0
-        ? {
-            '@type': 'AggregateRating',
-            ratingValue: provider.rating.toFixed(1),
-            ratingCount: 100, // placeholder — replace with real counts when available
-            bestRating: 5,
-            worstRating: 1,
-          }
-        : undefined,
+    // aggregateRating intentionally omitted — we do not have first-party review
+    // counts to back the ratings up. Publishing fabricated `ratingCount` is a
+    // structured-data spam risk per Google's review-snippet guidelines and an
+    // automatic affiliate-network disqualifier.
   };
 
   // Review schema — most-cited schema type by Google AI Overviews per 2026 research.

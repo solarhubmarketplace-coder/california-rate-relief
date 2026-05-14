@@ -15,7 +15,7 @@ import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 export const metadata: Metadata = {
   title: 'GLP1CompareHub.com | Find Your Perfect GLP-1 Match — 2026 Provider Comparison',
   description:
-    'Compare 50+ GLP-1 telehealth providers including telemedicine, compounding pharmacies, and manufacturer programs. Semaglutide and tirzepatide from $99/month. Expert rankings, transparent pricing, no hidden fees. Updated weekly.',
+    'Compare 50+ GLP-1 telehealth providers including telemedicine, compounding pharmacies, and manufacturer programs. Wegovy Pill from $149/mo, compounded semaglutide and tirzepatide from $179/mo. Expert rankings, transparent pricing, no hidden fees. Updated weekly.',
   alternates: { canonical: 'https://glp1comparehub.com/' },
   icons: {
     icon: [

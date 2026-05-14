@@ -386,7 +386,7 @@ export default function SermorelinForWeightLossPage() {
                 <a
                   href={systemLabsUrl}
                   target='_blank'
-                  rel='noopener noreferrer sponsored'
+                  rel='sponsored nofollow noopener noreferrer'
                   className='inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-md text-white'
                   style={{ background: 'linear-gradient(135deg, #D4A33A 0%, #C99230 100%)' }}
                 >
@@ -410,7 +410,7 @@ export default function SermorelinForWeightLossPage() {
                 <a
                   href={directMedsUrl}
                   target='_blank'
-                  rel='noopener noreferrer sponsored'
+                  rel='sponsored nofollow noopener noreferrer'
                   className='inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-md text-white'
                   style={{ background: 'linear-gradient(135deg, #D4A33A 0%, #C99230 100%)' }}
                 >

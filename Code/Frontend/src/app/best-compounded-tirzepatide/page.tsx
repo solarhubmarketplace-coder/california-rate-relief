@@ -160,6 +160,11 @@ export default function BestCompoundedTirzepatidePage() {
                 </div>
               </div>
               <div className='text-sm ml-8' style={{ color: '#3D5560' }}>
+                <strong>Compounded tirzepatide is NOT an FDA-approved drug.</strong> It is produced
+                by state-licensed 503A compounding pharmacies under specific FDA exemptions and is
+                not therapeutically equivalent to brand-name Mounjaro or Zepbound. Compounded
+                formulations are not reviewed by the FDA for safety, efficacy, or quality.
+                <br /><br />
                 The April 1, 2026 FDA enforcement shift restricted 503A pharmacies to patient-specific compounding.
                 The April 30 503B exclusion proposal closes its public comment period on June 29.
                 All six providers below continue serving customers as of May 6, 2026, but the regulatory landscape is
@@ -627,7 +632,7 @@ function DetailedReview({
         <a
           href={url}
           target='_blank'
-          rel='noopener noreferrer sponsored'
+          rel='sponsored nofollow noopener noreferrer'
           className='inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-md text-white'
           style={{ background: 'linear-gradient(135deg, #D4A33A 0%, #C99230 100%)' }}
         >

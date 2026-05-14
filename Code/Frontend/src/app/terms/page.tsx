@@ -28,7 +28,7 @@ const BRANDS: Record<Domain, BrandConfig> = {
   grh: { brand: 'GreenReviewsHub', domain: 'greenreviewshub.com', canonical: 'https://greenreviewshub.com/terms' },
   shg: { brand: 'SecureHomeGear', domain: 'securehomegear.com', canonical: 'https://securehomegear.com/terms' },
   ahb: { brand: 'At Home Biohacking', domain: 'athomebiohacking.com', canonical: 'https://athomebiohacking.com/terms' },
-  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/terms' },
+  glp1: { brand: 'GLP1CompareHub', domain: 'glp1comparehub.com', canonical: 'https://glp1comparehub.com/terms' },
 };
 
 async function getDomain(): Promise<Domain> {

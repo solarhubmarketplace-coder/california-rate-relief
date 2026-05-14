@@ -134,7 +134,7 @@ export default function CanaryBrandHub() {
               <a
                 href='https://canary.is/'
                 target='_blank'
-                rel='noopener noreferrer sponsored'
+                rel='sponsored nofollow noopener noreferrer'
                 className='inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
                 style={{ backgroundColor: '#f59e0b', color: '#0a0f1c' }}
               >

@@ -434,7 +434,7 @@ export default function GalaHealthReviewPage() {
                 <a
                   href={galaAffiliate}
                   target='_blank'
-                  rel='noopener noreferrer sponsored'
+                  rel='sponsored nofollow noopener noreferrer'
                   className='inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-md text-white'
                   style={{ background: 'linear-gradient(135deg, #D4A33A 0%, #C99230 100%)' }}
                 >
@@ -489,7 +489,7 @@ export default function GalaHealthReviewPage() {
                 <a
                   href={galaAffiliate}
                   target='_blank'
-                  rel='noopener noreferrer sponsored'
+                  rel='sponsored nofollow noopener noreferrer'
                   className='inline-flex items-center gap-2 bg-white px-7 py-3.5 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-lg'
                   style={{ color: '#D4A33A' }}
                 >
