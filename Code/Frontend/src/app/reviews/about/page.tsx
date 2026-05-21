@@ -7,11 +7,11 @@ import { ChevronRight, Shield, CheckCircle, Target, Zap } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title: 'About GreenReviewsHub | Editorial Standards & Testing Methodology',
-  description:
-    'How GreenReviewsHub researches, tests, and reviews green-energy products. Our editorial standards, affiliate disclosure, and commitment to honest, independent reviews.',
+  title: "About Green Reviews Hub: How We Research Green-Energy Gear",
+  description: "How Green Reviews Hub researches and reviews portable power stations, e-bikes, mini splits, smart thermostats, heat pumps, and other green-energy gear.",
   alternates: {
     canonical: '/reviews/about',
   },
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="about" pageType="AboutPage" pageTitle="About Green Reviews Hub" pageDescription="How GreenReviewsHub researches and reviews green-energy products." />
       <ReviewHeader />
       <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>
@@ -39,7 +40,7 @@ export default function AboutPage() {
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
 <p className='text-xl text-foreground/80 leading-relaxed'>
-                Independent, hands-on reviews of green-energy products; so you can make informed
+                Independent, research-driven reviews of green-energy products; so you can make informed
                 buying decisions without wading through manufacturer marketing.
               </p>
             </header>
@@ -57,10 +58,10 @@ export default function AboutPage() {
                 have never actually used the products.
               </p>
               <p className='text-foreground/80 leading-relaxed'>
-                We do the work differently. Every review on this site is built around real-world
-                testing, manufacturer-verified specs, and honest commentary about who should
-                actually buy each product. We care more about getting the recommendation right
-                than driving clicks.
+                We do the work differently. Every review on this site is built around
+                manufacturer-verified specs, independent lab data, aggregated owner reports, and
+                honest commentary about who should actually buy each product. We care more about
+                getting the recommendation right than driving clicks.
               </p>
             </section>
 
@@ -68,7 +69,7 @@ export default function AboutPage() {
             <section className='mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-4 flex items-center gap-2'>
                 <Zap className='h-6 w-6 text-primary' />
-                How We Test
+                How We Review
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 Every product reviewed on GreenReviewsHub goes through a four-stage evaluation:
@@ -87,11 +88,12 @@ export default function AboutPage() {
                 <li className='flex items-start gap-3'>
                   <CheckCircle className='h-5 w-5 text-primary mt-0.5 shrink-0' />
                   <span>
-                    <strong className='text-foreground'>Stage 2 — Real-world use.</strong>{' '}
-                    Wherever possible, our reviewers spend time with the product under normal home
-                    use conditions. actually running a refrigerator off a power station, riding an
-                    e-bike for 50+ miles, installing a DIY mini split. Where we rely on aggregated
-                    owner reviews instead of first-hand testing, we label it clearly.
+                    <strong className='text-foreground'>Stage 2 — Performance research.</strong>{' '}
+                    We compile independent lab testing and measured-performance data (Project Farm,
+                    Consumer Reports, and comparable outlets) and aggregate owner reports across
+                    retailers and owner forums — capacity under real load, noise, app reliability,
+                    charge speed, and durability over time — to see how each product holds up
+                    beyond the spec sheet.
                   </span>
                 </li>
                 <li className='flex items-start gap-3'>
@@ -125,7 +127,7 @@ export default function AboutPage() {
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 GreenReviewsHub is reader-supported. When you buy a product through a link on
                 this site, we may earn an affiliate commission; at no extra cost to you.
-                That revenue pays for our testing and writing.
+                That revenue pays for our research and writing.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 We want to be direct about how this works and doesn&apos;t work:
@@ -142,8 +144,8 @@ export default function AboutPage() {
                 <li className='flex items-start gap-2'>
                   <CheckCircle className='h-4 w-4 text-green-400 mt-1 shrink-0' />
                   <span>
-                    <strong className='text-foreground'>We occasionally receive free or
-                    discounted review samples.</strong> When this happens, we disclose it on the
+                    <strong className='text-foreground'>If we receive a free or
+                    discounted review sample,</strong> we disclose it on the
                     specific review. Receiving a sample never changes our rating — if the product
                     is mediocre, we say so.
                   </span>

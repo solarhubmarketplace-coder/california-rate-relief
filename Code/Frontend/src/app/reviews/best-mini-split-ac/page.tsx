@@ -25,20 +25,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Mini Split AC & Heat Pumps (2026): MrCool DIY vs Easy Pro vs Advantage; Complete Guide',
-  description:
-    'Compare the best mini split AC systems for 2026. In-depth reviews of MrCool DIY 4th Gen, DIY 5th Gen, Easy Pro, and Advantage. DIY installation guide, energy savings math, and California solar pairing tips.',
+  title: "Best Mini Split AC 2026: MrCool DIY vs Mitsubishi vs Pioneer",
+  description: "The best mini split AC and heat pumps reviewed: MrCool DIY 4th Gen, DIY 5th Gen, Easy Pro, and Advantage. SEER2 ratings and Title 24 specs.",
   alternates: {
     canonical: '/reviews/best-mini-split-ac',
   },
   openGraph: {
-    title:
-      'Best Mini Split AC & Heat Pumps (2026): MrCool DIY vs Easy Pro vs Advantage',
-    description:
-      'MrCool DIY 4th Gen vs 5th Gen vs Easy Pro vs Advantage. Full specs, DIY install guide, energy savings calculator, and California solar pairing strategies.',
+    title: "Best Mini Split AC 2026: MrCool DIY vs Mitsubishi vs Pioneer",
+    description: "MrCool DIY vs Mitsubishi vs Pioneer mini splits, ranked by which actually heats below freezing.",
     type: 'article',
     publishedTime: '2026-04-17T00:00:00Z',
   },
@@ -56,20 +53,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-mini-split-ac',
+    '@id': 'https://greenreviewshub.com/reviews/best-mini-split-ac',
   },
 };
 
@@ -200,6 +197,7 @@ const models: MiniSplitModel[] = [
 export default function BestMiniSplitACPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-mini-split-ac" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -275,7 +273,7 @@ export default function BestMiniSplitACPage() {
                     <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">Best DIY Install</span>
                     <h3 className="font-bold text-foreground mt-1">MrCool DIY 4th Gen</h3>
                     <p className="text-sm text-foreground/70 mt-1">From $1,549. No HVAC tools or certification needed. Pre-charged QuickConnect line sets.</p>
-                    <Link href="#mrcool-diy-4th-gen" className="text-sm text-primary font-medium mt-2 inline-flex items-center gap-1 hover:underline">
+                    <Link href="/reviews/mrcool-diy-4th-gen-review" className="text-sm text-primary font-medium mt-2 inline-flex items-center gap-1 hover:underline">
                       Read review <ArrowRight className="h-3 w-3" />
                     </Link>
                   </div>
@@ -283,7 +281,7 @@ export default function BestMiniSplitACPage() {
                     <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Newest Model</span>
                     <h3 className="font-bold text-foreground mt-1">MrCool DIY 5th Gen</h3>
                     <p className="text-sm text-foreground/70 mt-1">Low-GWP R-454B refrigerant. Up to 22.7 SEER2. Same easy DIY install.</p>
-                    <Link href="#mrcool-diy-5th-gen" className="text-sm text-primary font-medium mt-2 inline-flex items-center gap-1 hover:underline">
+                    <Link href="/reviews/mrcool-mini-split" className="text-sm text-primary font-medium mt-2 inline-flex items-center gap-1 hover:underline">
                       Read review <ArrowRight className="h-3 w-3" />
                     </Link>
                   </div>
@@ -291,7 +289,7 @@ export default function BestMiniSplitACPage() {
                     <span className="text-xs font-semibold text-purple-600 uppercase tracking-wider">Best Performance</span>
                     <h3 className="font-bold text-foreground mt-1">MrCool Easy Pro</h3>
                     <p className="text-sm text-foreground/70 mt-1">Top efficiency in the lineup. Outperforms DIY and Advantage in cooling tests.</p>
-                    <Link href="#mrcool-easy-pro" className="text-sm text-primary font-medium mt-2 inline-flex items-center gap-1 hover:underline">
+                    <Link href="/reviews/mrcool-mini-split" className="text-sm text-primary font-medium mt-2 inline-flex items-center gap-1 hover:underline">
                       Read review <ArrowRight className="h-3 w-3" />
                     </Link>
                   </div>
@@ -299,7 +297,7 @@ export default function BestMiniSplitACPage() {
                     <span className="text-xs font-semibold text-amber-600 uppercase tracking-wider">Best Budget</span>
                     <h3 className="font-bold text-foreground mt-1">MrCool Advantage</h3>
                     <p className="text-sm text-foreground/70 mt-1">Lowest price in the lineup. Requires professional install but great value.</p>
-                    <Link href="#mrcool-advantage" className="text-sm text-primary font-medium mt-2 inline-flex items-center gap-1 hover:underline">
+                    <Link href="/reviews/mrcool-mini-split" className="text-sm text-primary font-medium mt-2 inline-flex items-center gap-1 hover:underline">
                       Read review <ArrowRight className="h-3 w-3" />
                     </Link>
                   </div>

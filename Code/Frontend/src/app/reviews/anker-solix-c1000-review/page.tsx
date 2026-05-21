@@ -26,22 +26,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'anker-solix-c1000';
 
 export const metadata: Metadata = {
-  title:
-    'Anker SOLIX C1000 Review 2026: The Best Mid-Size Power Station?',
-  description:
-    'In-depth Anker SOLIX C1000 review, 1,056 Wh LFP, 1,800W output (2,400W SurgePad), 600W solar input, full recharge in 58 minutes. Is the $999 SOLIX C1000 the best mid-size power station for California home backup and PSPS outages?',
+  title: "Anker SOLIX C1000 Review: 1,056Wh LFP, 58-Min Recharge",
+  description: "Anker SOLIX C1000 review: 1,056 Wh LFP, 1,800W output (2,400W SurgePad), 600W solar input, and a full recharge in 58 minutes at $999 MSRP.",
   alternates: {
     canonical: '/reviews/anker-solix-c1000-review',
   },
   openGraph: {
-    title:
-      'Anker SOLIX C1000 Review 2026: The Best Mid-Size Power Station?',
-    description:
-      'Hands-on review of the Anker SOLIX C1000 — 1,056 Wh LFP battery, 1,800W output, 58-minute full recharge. How it performs for California PSPS backup and TOU arbitrage.',
+    title: "Anker SOLIX C1000 Review: 1,056Wh LFP, 58-Min Recharge",
+    description: "Under $700 on promo, 58-minute recharge, LFP cells. Is the Anker SOLIX C1000 the PSPS sweet spot?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -57,15 +54,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -150,6 +147,7 @@ const faqSchema = {
 export default function AnkerSolixC1000Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="anker-solix-c1000-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

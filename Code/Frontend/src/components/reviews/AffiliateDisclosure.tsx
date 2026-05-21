@@ -18,8 +18,8 @@ export function AffiliateDisclosure({
         <span>
           We may earn a commission on qualifying purchases through links on
           this page, at no extra cost to you. Our recommendations are based on
-          independent research and verified specs — we never recommend a
-          product we wouldn&apos;t buy ourselves.
+          independent research — manufacturer specifications, independent lab
+          data, and aggregated owner reports — not on commission rates.
         </span>
       </p>
     );
@@ -32,7 +32,8 @@ export function AffiliateDisclosure({
         <strong className='text-foreground/80'>Affiliate disclosure:</strong>{' '}
         GreenReviewsHub may earn a commission when you purchase through links on
         this page, at no extra cost to you. Our editorial recommendations are
-        independent — we test, research, and verify specs before
+        independent — we research and compare specifications and verify them
+        against independent lab data and aggregated owner reports before
         recommending anything, and we never accept payment for favorable
         reviews.
       </p>

@@ -25,20 +25,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'EcoFlow Delta Pro Ultra Review 2026: Whole-Home Backup That Scales to 90kWh',
-  description:
-    'In-depth EcoFlow Delta Pro Ultra review. 6,144Wh LFP battery, 7,200W output, expandable to 90kWh with up to 15 batteries. $4,099, is it worth it vs Tesla Powerwall 3? Honest pros, cons, and California backup analysis.',
+  title: "EcoFlow Delta Pro Ultra Review: 6,144Wh, 7,200W, 90kWh Max",
+  description: "EcoFlow Delta Pro Ultra review: 6,144Wh LFP per unit, 7,200W output, expandable to 90kWh across 15 batteries. A no-permit Powerwall alternative.",
   alternates: {
     canonical: '/reviews/ecoflow-delta-pro-ultra-review',
   },
   openGraph: {
-    title:
-      'EcoFlow Delta Pro Ultra Review 2026: Whole-Home Backup That Scales to 90kWh',
-    description:
-      'Detailed review of the EcoFlow Delta Pro Ultra, 6,144Wh LFP battery, 7,200W output, expandable to 90kWh. The bridge between portable power stations and permanent home batteries.',
+    title: "EcoFlow Delta Pro Ultra Review: 6,144Wh, 7,200W, 90kWh Max",
+    description: "90 kWh of LFP backup, no electrician required. Is this finally a real Tesla Powerwall alternative?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -54,15 +51,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -149,6 +146,7 @@ const PRODUCT_KEY = 'ecoflow-delta-pro-ultra';
 export default function EcoFlowDeltaProUltraReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ecoflow-delta-pro-ultra-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

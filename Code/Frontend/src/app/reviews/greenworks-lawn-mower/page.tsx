@@ -25,22 +25,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'greenworks-lawn-mower';
 
 export const metadata: Metadata = {
-  title:
-    'Greenworks Lawn Mower Review 2026: 80V Pro, 60V, and 40V Compared',
-  description:
-    'Greenworks lawn mower review covering the 80V Pro line (21" self-propelled, 25" ZT ride-on, 42" CrossoverT), 60V brushless, and 40V push mowers. Steel vs plastic deck, battery platforms, SoCalGas rebates, CARB compliance, vs EGO/Ryobi. 4.5/5.',
+  title: "Greenworks Lawn Mower Review (2026): 80V Pro vs 60V vs 40V",
+  description: 'Greenworks lawn mower review: the 80V Pro 21" self-propelled ($649), 60V brushless ($499), and 40V push compared, with CrossoverT ride-on and ZT zero-turn.',
   alternates: {
     canonical: '/reviews/greenworks-lawn-mower',
   },
   openGraph: {
-    title:
-      'Greenworks Lawn Mower Review 2026: 80V Pro, 60V, and 40V Compared',
-    description:
-      'Full review of the Greenworks lawn mower lineup, 80V Pro flagship, 60V brushless, 40V push, plus the breakthrough CrossoverT ride-on and ZT zero-turn. All three battery platforms compared.',
+    title: "Greenworks Lawn Mower Review (2026): 80V Pro vs 60V vs 40V",
+    description: "80V Pro, 60V, or 40V — which Greenworks mower is right for your yard? Steel deck, ride-on, push, all tested.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -184,6 +181,7 @@ const faqSchema = {
 export default function GreenworksLawnMowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="greenworks-lawn-mower" />
       <ReviewHeader />
       <script
         type='application/ld+json'

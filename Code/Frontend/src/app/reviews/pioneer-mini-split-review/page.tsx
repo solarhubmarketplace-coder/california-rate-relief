@@ -25,20 +25,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Pioneer Diamante Mini Split Review 2026: Budget-Friendly Ductless Heating & Cooling',
-  description:
-    'In-depth Pioneer Diamante Series mini split review. Up to 19 SEER2, whisper-quiet 32 dB, heating down to -4F, and prices starting under $800. Full specs, installation, noise levels, and how Pioneer compares to MrCool DIY, Mitsubishi, Daikin, and Senville.',
+  title: "Pioneer Mini Split Review: Diamante 19 SEER2, Heats to -4F",
+  description: "Pioneer mini split review: the Diamante Series with 19 SEER2 efficiency, 32 dB whisper-quiet operation, heating to -4F, and prices starting under $800.",
   alternates: {
     canonical: '/reviews/pioneer-mini-split-review',
   },
   openGraph: {
-    title:
-      'Pioneer Diamante Mini Split Review 2026: Budget-Friendly Ductless Heating & Cooling',
-    description:
-      'Full review of the Pioneer Diamante Series ductless mini split heat pump. Up to 19 SEER2, 32 dB indoor noise, heating to -4F. Honest pros, cons, and value analysis for California homeowners.',
+    title: "Pioneer Mini Split Review: Diamante 19 SEER2, Heats to -4F",
+    description: "A 19 SEER2 ductless mini split for under $800? We test where Pioneer wins and where you should pay more.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -56,20 +53,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/pioneer-mini-split-review',
+    '@id': 'https://greenreviewshub.com/reviews/pioneer-mini-split-review',
   },
 };
 
@@ -86,15 +83,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -124,7 +121,7 @@ const reviewSchema = {
     'The Pioneer Diamante Series delivers solid cooling and heating performance at a price point that undercuts most competitors by 30-50%. With up to 19 SEER2, heating down to -4F, built-in WiFi, and indoor noise as low as 32 dB, it offers genuine value for homeowners who want ductless comfort without spending $3,000-$7,000 on a premium brand. The tradeoff is a shorter 5-year warranty, slightly lower efficiency than top-tier competitors, and the requirement for professional installation.',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/pioneer-mini-split-review',
+    '@id': 'https://greenreviewshub.com/reviews/pioneer-mini-split-review',
   },
 };
 
@@ -196,6 +193,7 @@ const PRODUCT_KEY = 'pioneer-mini-split';
 export default function PioneerMiniSplitReviewPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="pioneer-mini-split-review" />
       <ReviewHeader />
 
       <script

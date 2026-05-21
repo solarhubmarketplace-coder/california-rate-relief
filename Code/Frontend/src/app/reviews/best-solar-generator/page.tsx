@@ -21,19 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Solar Generators (2026): Top Portable Power Station + Panel Bundles Compared',
-  description:
-    'Compare the best solar generators for home backup and off-grid use in 2026. EcoFlow Delta Pro 3 + 400W, Bluetti AC200L + PV200, Jackery 2000 Plus + SolarSaga 200W, Goal Zero Yeti 1500X + Nomad 200, and Anker SOLIX F3800 + PS400 reviewed with specs, pros/cons, and sizing guide.',
+  title: "Best Solar Generator 2026: EcoFlow vs Bluetti vs Jackery",
+  description: "The best solar generator for 2026: EcoFlow Delta Pro 3, Bluetti AC200L, Jackery 2000 Plus, Goal Zero Yeti 1500X, and Anker SOLIX F3800 with panels.",
   alternates: {
     canonical: '/reviews/best-solar-generator',
   },
   openGraph: {
-    title: 'Best Solar Generators (2026): Portable Power Station + Panel Bundles',
-    description:
-      'EcoFlow vs Bluetti vs Jackery vs Goal Zero vs Anker solar generator bundles. Full specs, charging tests, and buyer guide.',
+    title: "Best Solar Generator 2026: EcoFlow vs Bluetti vs Jackery",
+    description: "How big a solar generator do you actually need for a 3-day PSPS outage? Real wattage math inside.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -51,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-solar-generator',
+    '@id': 'https://greenreviewshub.com/reviews/best-solar-generator',
   },
 };
 
@@ -233,6 +231,7 @@ const specRows: { label: string; key: keyof SolarGenerator }[] = [
 export default function BestSolarGenerator() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-solar-generator" />
       <ReviewHeader />
       <script
         type="application/ld+json"

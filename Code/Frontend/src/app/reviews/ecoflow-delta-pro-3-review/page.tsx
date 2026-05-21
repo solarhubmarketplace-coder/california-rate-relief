@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ecoflow-delta-pro-3';
 
 export const metadata: Metadata = {
-  title:
-    'EcoFlow Delta Pro 3 Review: The Best Portable Power Station for Home Backup?',
-  description:
-    'In-depth EcoFlow Delta Pro 3 review covering specs, performance, charging speed, California PSPS backup, TOU arbitrage, SGIP rebates, and honest pros/cons. 4,096 Wh LFP battery, 4,000W output.',
+  title: "EcoFlow Delta Pro 3 Review: 4,096Wh LFP, 4,000W Output",
+  description: "EcoFlow Delta Pro 3 review: 4,096Wh LFP capacity, 4,000W output, X-Stream charging 0-80% in 50 min, expandable to 12,288Wh. PSPS backup tested at $1,999.",
   alternates: {
     canonical: '/reviews/ecoflow-delta-pro-3-review',
   },
   openGraph: {
-    title:
-      'EcoFlow Delta Pro 3 Review: The Best Portable Power Station for Home Backup?',
-    description:
-      'Detailed review of the EcoFlow Delta Pro 3, 4,096 Wh LFP battery, 4,000W output, X-Stream fast charging. Is it worth $1,999?',
+    title: "EcoFlow Delta Pro 3 Review: 4,096Wh LFP, 4,000W Output",
+    description: "4,096Wh, 4,000W, expandable to 12,288Wh. Is the Delta Pro 3 actually worth $1,999? A research-driven review.",
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
   },
@@ -55,15 +52,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -148,6 +145,7 @@ const faqSchema = {
 export default function EcoFlowDeltaPro3Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ecoflow-delta-pro-3-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

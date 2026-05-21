@@ -400,7 +400,7 @@ export default function CompoundedSemaglutidePage() {
 
             <div className="rounded-xl p-4" style={{ backgroundColor: '#FFF8E1', border: '1px solid #D4A33A' }}>
               <p className="text-sm" style={{ color: '#7A4F00' }}>
-                <strong>Important:</strong> This comparison is for informational purposes only and does not constitute medical advice. The right choice depends on your health history, insurance status, and prescriber recommendation. See our <Link href="/medical-disclaimer" className="underline">medical disclaimer</Link>.
+                <strong>Important:</strong> This comparison is for informational purposes only and does not constitute medical advice. The right choice depends on your health history, insurance status, and prescriber recommendation. See our <Link href="/disclaimer" className="underline">medical disclaimer</Link>.
               </p>
             </div>
           </div>

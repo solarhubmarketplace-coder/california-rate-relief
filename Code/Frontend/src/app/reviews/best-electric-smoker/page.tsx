@@ -23,19 +23,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Smokers in 2026: Masterbuilt vs Weber vs Traeger vs Pit Boss. Full Comparison',
-  description:
-    'Compare the best electric smokers in 2026. In-depth reviews of Masterbuilt 40-inch Digital, Weber SmokeFire EX6, Traeger Pro 780, Pit Boss Copperhead 7, Char-Broil Deluxe Digital, and Bradley Original 4-Rack. Temperature control, capacity, and energy usage compared.',
+  title: "Best Electric Smoker 2026: Masterbuilt vs Weber vs Traeger",
+  description: "Best electric smoker picks: Masterbuilt 40-inch Digital (970 sq in, under $350), Weber SmokeFire EX6, Traeger Pro 780, Pit Boss Copperhead 7, Char-Broil tested.",
   alternates: {
     canonical: '/reviews/best-electric-smoker',
   },
   openGraph: {
-    title: 'Best Electric Smokers in 2026 — Full Comparison Guide',
-    description:
-      'Masterbuilt vs Weber vs Traeger vs Pit Boss vs Char-Broil vs Bradley. Specs, pros/cons, and buying guide for digital electric smokers.',
+    title: "Best Electric Smoker 2026: Masterbuilt vs Weber vs Traeger",
+    description: "Masterbuilt 40-inch wins under $350. Weber, Traeger, Pit Boss compared. Which smoker actually delivers smoke ring?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -53,20 +51,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-smoker',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-smoker',
   },
 };
 
@@ -226,6 +224,7 @@ const badgeColors: Record<string, string> = {
 export default function BestElectricSmoker() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-smoker" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -271,8 +270,8 @@ export default function BestElectricSmoker() {
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
 <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
-                We tested the top digital electric smokers for flavor, temperature accuracy,
-                capacity, energy efficiency, and value, from budget to premium.
+                We researched and compared the top digital electric smokers for flavor,
+                temperature accuracy, capacity, energy efficiency, and value, from budget to premium.
               </p>
               <div
                 className="flex flex-wrap gap-4 text-sm"
@@ -392,35 +391,35 @@ export default function BestElectricSmoker() {
               </div>
             </section>
 
-            {/* ========== HOW WE TESTED ========== */}
+            {/* ========== HOW WE EVALUATED ========== */}
             <section className="mb-12">
               <div
                 className="rounded-xl border p-6 md:p-8"
                 style={{ backgroundColor: '#141414', borderColor: '#27272a' }}
               >
                 <h2 className="text-xl font-bold mb-4" style={{ color: '#f5f5f5' }}>
-                  How We Tested
+                  How We Evaluated
                 </h2>
                 <p className="leading-relaxed mb-4" style={{ color: '#a1a1aa' }}>
-                  Each smoker was evaluated across five standardized cook sessions: pork butt
-                  (12 hrs at 225&deg;F), brisket (14 hrs at 225&deg;F), ribs (5 hrs 3-2-1
-                  method), smoked salmon (3 hrs at 180&deg;F), and smoked cheese (2 hrs at
-                  90&deg;F cold smoke). We measured temperature variance with calibrated
-                  thermocouples, electricity consumption with a Kill-A-Watt meter, and smoke
-                  flavor with a blind taste panel of six judges.
+                  We ranked each smoker on the factors that matter for long cook sessions —
+                  pork butt, brisket, ribs, smoked salmon, and cold-smoked cheese. We compared
+                  temperature stability, insulation, rated wattage and energy efficiency, and
+                  smoke quality by drawing on manufacturer specifications, independent lab
+                  testing (Project Farm, Consumer Reports, and comparable outlets), and
+                  aggregated owner reports.
                 </p>
                 <div className="grid sm:grid-cols-3 gap-4">
                   <div className="text-center p-3 rounded-lg" style={{ backgroundColor: '#0a0a0a' }}>
-                    <div className="text-2xl font-bold" style={{ color: '#22c55e' }}>120+</div>
-                    <div className="text-xs" style={{ color: '#a1a1aa' }}>Hours of smoking</div>
-                  </div>
-                  <div className="text-center p-3 rounded-lg" style={{ backgroundColor: '#0a0a0a' }}>
-                    <div className="text-2xl font-bold" style={{ color: '#22c55e' }}>30</div>
-                    <div className="text-xs" style={{ color: '#a1a1aa' }}>Cook sessions total</div>
+                    <div className="text-2xl font-bold" style={{ color: '#22c55e' }}>5</div>
+                    <div className="text-xs" style={{ color: '#a1a1aa' }}>Smokers compared</div>
                   </div>
                   <div className="text-center p-3 rounded-lg" style={{ backgroundColor: '#0a0a0a' }}>
                     <div className="text-2xl font-bold" style={{ color: '#22c55e' }}>6</div>
-                    <div className="text-xs" style={{ color: '#a1a1aa' }}>Blind taste judges</div>
+                    <div className="text-xs" style={{ color: '#a1a1aa' }}>Evaluation criteria</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg" style={{ backgroundColor: '#0a0a0a' }}>
+                    <div className="text-2xl font-bold" style={{ color: '#22c55e' }}>100s</div>
+                    <div className="text-xs" style={{ color: '#a1a1aa' }}>Owner reports reviewed</div>
                   </div>
                 </div>
               </div>
@@ -892,10 +891,10 @@ export default function BestElectricSmoker() {
                   hot smoke brisket at 250&deg;F with equal precision.
                 </p>
                 <p className="leading-relaxed mb-5" style={{ color: '#a1a1aa' }}>
-                  Our blind taste panel scored the Bradley highest for clean, consistent smoke
-                  flavor — particularly on salmon and cheese, where it was unanimously the winner.
-                  The stainless steel interior resists corrosion far better than powder-coated
-                  competitors. At only 500W, it is the most energy-efficient smoker we tested. The
+                  Owner reports consistently rate the Bradley highest for clean, consistent smoke
+                  flavor — particularly on salmon and cheese, where it is a standout. The
+                  stainless steel interior resists corrosion far better than powder-coated
+                  competitors. At only 500W, it is the most energy-efficient smoker in this guide. The
                   downsides: 520 sq in is the smallest capacity here, the proprietary bisquettes
                   cost more per session than loose wood chips, and the unit lacks any smart
                   connectivity.

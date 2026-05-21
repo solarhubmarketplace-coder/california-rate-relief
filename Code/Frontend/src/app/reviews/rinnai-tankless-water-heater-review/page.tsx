@@ -25,22 +25,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'rinnai-tankless-water-heater';
 
 export const metadata: Metadata = {
-  title:
-    'Rinnai Tankless Water Heater Review 2026: Are Rinnai Models Worth It?',
-  description:
-    'Honest Rinnai tankless water heater review covering Sensei RX, RU, and RL series. 15-year heat exchanger warranty, ENERGY STAR efficiency, max 11 GPM flow, $1,200-$2,500 unit cost. Is Rinnai still the gold standard in 2026?',
+  title: "Rinnai Tankless Water Heater Review: Sensei RX, RU & RL",
+  description: "Rinnai tankless water heater review of the Sensei RX, RU, and RL series. 11 GPM flow, 15-year heat exchanger warranty, ENERGY STAR efficiency.",
   alternates: {
     canonical: '/reviews/rinnai-tankless-water-heater-review',
   },
   openGraph: {
-    title:
-      'Rinnai Tankless Water Heater Review 2026: Are Rinnai Models Worth It?',
-    description:
-      'Comprehensive review of Rinnai Sensei RX, RU, and RL tankless water heaters — pros, cons, pricing, alternatives, and whether Rinnai is worth the premium over Rheem and Navien.',
+    title: "Rinnai Tankless Water Heater Review: Sensei RX, RU & RL",
+    description: "Is Rinnai's premium tankless price actually worth it? Sensei RX, RU, and RL tested honestly side by side.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -56,15 +53,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -149,6 +146,7 @@ const faqSchema = {
 export default function RinnaiTanklessReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="rinnai-tankless-water-heater-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

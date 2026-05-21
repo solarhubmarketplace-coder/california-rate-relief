@@ -13,18 +13,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ecoflow-delta-3-plus';
 
 export const metadata: Metadata = {
-  title: 'EcoFlow Delta 3 Plus Review 2026: The Upgraded 1,024Wh LFP for Home Backup',
-  description:
-    'Full EcoFlow Delta 3 Plus review. 1,024 Wh LFP (expandable to 5,120 Wh), 1,800W output (2,600W X-Boost), 1,000W solar input, 56-minute full recharge. How does the $999 Delta 3 Plus compare to the SOLIX C1000 and Delta 2 for California home backup?',
+  title: "EcoFlow Delta 3 Plus Review: 1,024Wh LFP, 1,800W, $999",
+  description: "EcoFlow Delta 3 Plus review: 1,024 Wh LFP (expandable to 5,120 Wh), 1,800W output, 1,000W solar input, 56-min recharge, 4,000-cycle battery, $999.",
   alternates: { canonical: '/reviews/ecoflow-delta-3-plus-review' },
   openGraph: {
-    title: 'EcoFlow Delta 3 Plus Review 2026: The Upgraded 1,024Wh LFP for Home Backup',
-    description:
-      'Hands-on review of the EcoFlow Delta 3 Plus. 1,024 Wh LFP expandable to 5,120 Wh, 1,800W continuous, 1,000W solar input, 56-minute recharge, 4,000-cycle battery life.',
+    title: "EcoFlow Delta 3 Plus Review: 1,024Wh LFP, 1,800W, $999",
+    description: "Expandable to 5,120 Wh, recharges in 56 minutes, $999. Is the Delta 3 Plus the best 1 kWh power station?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -37,10 +36,10 @@ const reviewSchema = {
   reviewBody:
     'The EcoFlow Delta 3 Plus delivers 1,024 Wh of LFP battery capacity (expandable to 5,120 Wh via Smart Extra Battery modules), 1,800W continuous output (2,600W with X-Boost), 1,000W solar input, and a 56-minute full recharge. The upgraded 4,000-cycle battery outlasts the 3,000-cycle competitors. At $999 MSRP, it is one of the best expandable 1 kWh power stations for California homeowners planning for multi-day PSPS events.',
   datePublished: '2026-04-22',
-  author: { '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://ratereliefca.com' },
+  author: { '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://greenreviewshub.com' },
   publisher: {
-    '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://ratereliefca.com',
-    logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
+    '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://greenreviewshub.com',
+    logo: { '@type': 'ImageObject', url: 'https://greenreviewshub.com/img/logo.svg' },
   },
   itemReviewed: {
     '@type': 'Product', name: 'EcoFlow Delta 3 Plus', brand: { '@type': 'Brand', name: 'EcoFlow' },
@@ -108,6 +107,7 @@ const faqSchema = {
 export default function EcoFlowDelta3PlusReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ecoflow-delta-3-plus-review" />
       <ReviewHeader />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

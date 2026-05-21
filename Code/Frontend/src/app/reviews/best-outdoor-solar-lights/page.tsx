@@ -21,19 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Outdoor Solar Lights (2026): Path, Security, String & Step Lights Compared',
-  description:
-    'Compare the best outdoor solar lights for 2026. In-depth reviews of LITOM, URPOWER, BAXIA, GIGALUMI, Brightech, Ring, and SOLPEX solar lights. Covers path lights, security motion lights, string lights, step lights, and flood lights with brightness guides and placement tips.',
+  title: "Best Outdoor Solar Lights: Path, Security, String & Flood",
+  description: "Best outdoor solar lights tested across 5 categories: path, security/motion, string, step, and flood. LITOM, URPOWER, BAXIA, Brightech, and Ring compared.",
   alternates: {
     canonical: '/reviews/best-outdoor-solar-lights',
   },
   openGraph: {
-    title: 'Best Outdoor Solar Lights (2026): Path, Security, String & Step Lights',
-    description:
-      'LITOM vs URPOWER vs BAXIA vs GIGALUMI vs Brightech vs Ring vs SOLPEX. Full specs, pros/cons, and placement guide.',
+    title: "Best Outdoor Solar Lights: Path, Security, String & Flood",
+    description: "Path, security, string, step, and flood lights ranked. Which outdoor solar lights actually survive winter?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -51,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-outdoor-solar-lights',
+    '@id': 'https://greenreviewshub.com/reviews/best-outdoor-solar-lights',
   },
 };
 
@@ -234,6 +232,7 @@ const products: Product[] = [
 export default function BestOutdoorSolarLights() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-outdoor-solar-lights" />
       <ReviewHeader />
       <script
         type="application/ld+json"

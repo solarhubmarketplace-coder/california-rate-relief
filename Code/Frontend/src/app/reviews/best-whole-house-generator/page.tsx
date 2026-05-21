@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Whole House Generators (2026): Generac vs Kohler vs Champion; Full Buyer\u2019s Guide',
-  description:
-    'Compare the best whole house generators for 2026. In-depth reviews of Generac Guardian 24kW, 22kW, 26kW, Kohler 24kW, and Champion 14kW. Sizing guide, installation costs, and California backup power tips included.',
+  title: "Best Whole House Generators: Generac vs Kohler vs Champion",
+  description: "Best whole house generators compared: Generac Guardian 24kW, 22kW, 26kW, Kohler 24kW, and Champion 14kW with installed costs ($8K-$15K) and sizing.",
   alternates: {
     canonical: '/reviews/best-whole-house-generator',
   },
   openGraph: {
-    title: 'Best Whole House Generators (2026): Generac vs Kohler vs Champion',
-    description:
-      'Generac Guardian 24kW vs 22kW vs 26kW vs Kohler 24kW vs Champion 14kW. Full specs, pros/cons, sizing guide, and California buyer guide.',
+    title: "Best Whole House Generators: Generac vs Kohler vs Champion",
+    description: "Sized right, a whole-house generator is $8K-$15K installed. See how Generac, Kohler, and Champion compare.",
     type: 'article',
     publishedTime: '2026-04-17T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-whole-house-generator',
+    '@id': 'https://greenreviewshub.com/reviews/best-whole-house-generator',
   },
 };
 
@@ -209,6 +207,7 @@ const generators: Generator[] = [
 export default function BestWholeHouseGenerator() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-whole-house-generator" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -279,7 +278,7 @@ export default function BestWholeHouseGenerator() {
                       best 2026 models, ranked by what actually matters to families.
                     </p>
                     <a
-                      href="#generac-24kw"
+                      href="/reviews/generac-guardian-24kw-review"
                       className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 font-bold px-5 py-2.5 rounded-lg transition-colors"
                     >
                       See the #1 Pick &rarr;
@@ -1531,20 +1530,20 @@ export default function BestWholeHouseGenerator() {
               <div className="rounded-xl p-6 md:p-8 border bg-card border-border">
                 <div className="flex items-center gap-2 mb-4">
                   <Shield className="h-5 w-5 text-emerald-400" />
-                  <h2 className="text-xl font-bold text-foreground">How We Tested These 5 Generators</h2>
+                  <h2 className="text-xl font-bold text-foreground">How We Ranked These 5 Generators</h2>
                 </div>
                 <div className="grid md:grid-cols-3 gap-6 text-sm text-foreground/80">
                   <div>
                     <div className="font-semibold mb-1 text-foreground">⚙️ Real install cost data</div>
-                    <p>We collected install quotes from 12 licensed Generac/Kohler dealers across California (Sacramento, Bay Area, San Diego). The numbers in this guide are real-world totals — not manufacturer MSRPs.</p>
+                    <p>We compared installed-cost ranges reported by licensed Generac and Kohler dealers and aggregated owner reports across California. The numbers in this guide reflect real-world totals — not manufacturer MSRPs alone.</p>
                   </div>
                   <div>
-                    <div className="font-semibold mb-1 text-foreground">📏 Sound testing</div>
-                    <p>Decibel readings taken at 23 ft per the EPA standard, with the generator under 50% load. Generac numbers verified independently — manufacturer claims overstate by ~3 dB on average.</p>
+                    <div className="font-semibold mb-1 text-foreground">📏 Sound levels</div>
+                    <p>We compared manufacturer decibel ratings (measured at 23 ft per the EPA standard) against independent test outlets and owner reports, since real-world levels often run a few dB above the published figure.</p>
                   </div>
                   <div>
                     <div className="font-semibold mb-1 text-foreground">💵 Independent</div>
-                    <p>No manufacturer paid for placement. Affiliate commissions don&apos;t change which generator we recommend — only which retailer we link to.</p>
+                    <p>Our rankings draw on manufacturer specifications, independent testing, and aggregated owner reports. No manufacturer paid for placement, and affiliate commissions don&apos;t change which generator we recommend — only which retailer we link to.</p>
                   </div>
                 </div>
               </div>

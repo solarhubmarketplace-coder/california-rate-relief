@@ -24,19 +24,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Portable Air Conditioners (2026): Top 6 Portable AC Units Reviewed',
-  description:
-    'Compare the best portable air conditioners in 2026. In-depth reviews of LG, Midea Duo, Black+Decker, Whynter, SereneLife, and Honeywell portable AC units with BTU sizing guide, noise levels, and energy efficiency ratings.',
+  title: "Best Portable Air Conditioner 2026: LG, Midea Duo & Whynter",
+  description: "The best portable air conditioner for 2026: LG LP1419IVSM (14K BTU inverter), Midea Duo, Whynter ARC-14SH dual-hose, Black+Decker, and Honeywell.",
   alternates: {
     canonical: '/reviews/best-portable-air-conditioner',
   },
   openGraph: {
-    title: 'Best Portable Air Conditioners (2026)',
-    description:
-      'LG LP1419IVSM vs Midea Duo vs Whynter ARC-14SH vs Black+Decker vs SereneLife vs Honeywell. Full specs, pros/cons, and buyer guide.',
+    title: "Best Portable Air Conditioner 2026: LG, Midea Duo & Whynter",
+    description: "Single-hose vs dual-hose portable AC: the difference is roughly 30% on your summer power bill.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -54,20 +52,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-portable-air-conditioner',
+    '@id': 'https://greenreviewshub.com/reviews/best-portable-air-conditioner',
   },
 };
 
@@ -137,6 +135,7 @@ const faqSchema = {
 export default function BestPortableAirConditionerPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-portable-air-conditioner" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -174,7 +173,7 @@ export default function BestPortableAirConditionerPage() {
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />
 <p className="text-lg leading-relaxed mb-6" style={{ color: '#d4d4d8' }}>
-                We tested and researched dozens of portable air conditioners to find the best options
+                We researched and compared dozens of portable air conditioners to find the best options
                 for every room size and budget. Whether you need a quiet unit for a bedroom, a
                 powerful dual-hose model for a large living room, or a budget pick under $300,
                 this guide covers everything you need to know before buying.

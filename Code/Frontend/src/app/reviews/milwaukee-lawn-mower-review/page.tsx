@@ -26,20 +26,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Milwaukee M18 FUEL Brushless Self-Propelled Lawn Mower Review (2026): Pro-Grade Power for Your Yard',
-  description:
-    'In-depth Milwaukee M18 FUEL brushless self-propelled lawn mower review covering the 18V/36V dual-battery system, cutting performance, runtime, build quality, and the 250+ tool M18 platform. Honest comparison vs EGO, Greenworks, Ryobi, and DeWalt. 4.4/5 rating.',
+  title: "Milwaukee Lawn Mower Review: M18 FUEL Self-Propelled",
+  description: "Milwaukee M18 FUEL brushless self-propelled lawn mower review: 18V/36V dual-battery system, cutting performance, runtime, and build quality tested.",
   alternates: {
     canonical: '/reviews/milwaukee-lawn-mower-review',
   },
   openGraph: {
-    title:
-      'Milwaukee M18 FUEL Brushless Self-Propelled Lawn Mower Review (2026): Pro-Grade Power for Your Yard',
-    description:
-      'Detailed review of the Milwaukee M18 FUEL 21-inch self-propelled mower, dual M18 batteries (36V combined), brushless POWERSTATE motor, steel deck, 3-in-1 discharge, and the 250+ tool M18 ecosystem. Is it worth $599-$799?',
+    title: "Milwaukee Lawn Mower Review: M18 FUEL Self-Propelled",
+    description: "Milwaukee M18 FUEL self-propelled mower — runtime, deck, and how it stacks up vs EGO.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -57,20 +54,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/milwaukee-lawn-mower-review',
+    '@id': 'https://greenreviewshub.com/reviews/milwaukee-lawn-mower-review',
   },
 };
 
@@ -84,15 +81,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -187,6 +184,7 @@ const PRODUCT_KEY = 'milwaukee-lawn-mower';
 export default function MilwaukeeLawnMowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="milwaukee-lawn-mower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

@@ -107,13 +107,31 @@ function detectDomainKey(host: string): keyof typeof DOMAIN_DEFAULTS {
 }
 
 // Per-domain GSC verification tokens. Each site needs its OWN token because
-// each is a separate GSC property. Add tokens here as new sites are verified.
+// each is a separate GSC property in Google Search Console.
+//
+// Two ways to verify a GSC property:
+//   1. DNS TXT record on the domain (preferred for domain-level properties — no
+//      code change required, covers all subdomains).
+//   2. HTML <meta name="google-site-verification"> tag on the homepage. To use
+//      this method, set the matching env var below in Railway. The verification
+//      tag is emitted by generateMetadata() automatically when the token is set.
+//
+// The CRR token is hardcoded for backward compatibility — it's already in DNS
+// and removing it would break that property. New properties should use either
+// the env-var approach below or DNS TXT.
+//
+// Env vars (set in Railway, NOT committed to .env):
+//   GSC_VERIFICATION_TOKEN_GLP1  — glp1comparehub.com
+//   GSC_VERIFICATION_TOKEN_GRH   — greenreviewshub.com
+//   GSC_VERIFICATION_TOKEN_SHG   — securehomegear.com
+//   GSC_VERIFICATION_TOKEN_AHB   — athomebiohacking.com
+//   GSC_VERIFICATION_TOKEN_CRR   — overrides the hardcoded CRR token if set
 const GSC_VERIFICATION_TOKENS: Record<keyof typeof DOMAIN_DEFAULTS, string | undefined> = {
-  ratereliefca: 'alM4ttazO_TNjm-jjscGnlwFakwTWXiAqA0xaZy9umg',
-  greenreviewshub: undefined, // TODO: add when GRH GSC property is verified
-  securehomegear: undefined, // TODO: add when SHG GSC property is verified
-  athomebiohacking: undefined, // TODO: add when AHB GSC property is verified
-  glp1comparehub: undefined, // TODO: add token after creating GSC property at https://search.google.com/search-console
+  ratereliefca: process.env.GSC_VERIFICATION_TOKEN_CRR ?? 'alM4ttazO_TNjm-jjscGnlwFakwTWXiAqA0xaZy9umg',
+  greenreviewshub: process.env.GSC_VERIFICATION_TOKEN_GRH,
+  securehomegear: process.env.GSC_VERIFICATION_TOKEN_SHG,
+  athomebiohacking: process.env.GSC_VERIFICATION_TOKEN_AHB,
+  glp1comparehub: process.env.GSC_VERIFICATION_TOKEN_GLP1,
 };
 
 export async function generateMetadata(): Promise<Metadata> {

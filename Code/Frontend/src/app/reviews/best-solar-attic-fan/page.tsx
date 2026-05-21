@@ -21,19 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Solar Attic Fans 2026: Remington vs Natural Light vs QuietCool (Top 5 Reviewed)',
-  description:
-    'Compare the best solar attic fans for 2026. In-depth reviews of Remington Solar 30W, Natural Light SAFG, iLiving ILG8SF301, QuietCool 30W, and Broan-NuTone 345SOWW. Sizing guide, energy savings, and installation tips included.',
+  title: "Best Solar Attic Fan (2026): Remington vs Natural Light",
+  description: "Best solar attic fan compared: Remington Solar 30W, Natural Light SAFG, iLiving ILG8SF301, QuietCool 30W, and Broan-NuTone 345SOWW with sizing guide.",
   alternates: {
     canonical: '/reviews/best-solar-attic-fan',
   },
   openGraph: {
-    title: 'Best Solar Attic Fans 2026: Top 5 Reviewed',
-    description:
-      'Remington Solar vs Natural Light vs iLiving vs QuietCool vs Broan-NuTone. Full specs, pros/cons, sizing guide, and energy savings breakdown.',
+    title: "Best Solar Attic Fan (2026): Remington vs Natural Light",
+    description: "Drop your attic 20-40 degrees and cut AC bills. The 5 best solar attic fans, ranked.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -51,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-solar-attic-fan',
+    '@id': 'https://greenreviewshub.com/reviews/best-solar-attic-fan',
   },
 };
 
@@ -226,6 +224,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestSolarAtticFan() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-solar-attic-fan" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -656,7 +655,7 @@ export default function BestSolarAtticFan() {
                         <Check className="h-4 w-4" /> Pros
                       </h4>
                       <ul className="space-y-1 text-sm" style={{ color: '#a1a1aa' }}>
-                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Quietest operation of any solar attic fan we tested</li>
+                        <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Quietest operation of any solar attic fan in this guide</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Lifetime warranty on the motor</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Built-in thermostat included</li>
                         <li className="flex items-start gap-2"><Check className="h-3 w-3 mt-1 flex-shrink-0 text-green-500" />Strong 1,486 CFM airflow despite quiet design</li>

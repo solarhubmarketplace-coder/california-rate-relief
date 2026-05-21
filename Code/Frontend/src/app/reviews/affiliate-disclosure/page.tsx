@@ -7,11 +7,11 @@ import { ChevronRight } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title: 'Affiliate Disclosure | GreenReviewsHub',
-  description:
-    'GreenReviewsHub affiliate disclosure, how we earn, what it means for our reviews, and our commitment to editorial independence.',
+  title: "Affiliate Disclosure | GreenReviewsHub",
+  description: "GreenReviewsHub affiliate disclosure: how we earn commissions, why it never affects our editorial reviews, and our FTC compliance commitment.",
   alternates: {
     canonical: '/reviews/affiliate-disclosure',
   },
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 export default function AffiliateDisclosurePage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="affiliate-disclosure" pageType="WebPage" pageTitle="Affiliate Disclosure" pageDescription="How GreenReviewsHub earns affiliate commissions and our editorial independence." />
       <ReviewHeader />
       <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>

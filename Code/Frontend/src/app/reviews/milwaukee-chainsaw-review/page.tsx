@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'milwaukee-chainsaw';
 
 export const metadata: Metadata = {
-  title:
-    'Milwaukee M18 FUEL 16" Chainsaw Review (2727-21HD): Pro-Grade Battery Power in 2026',
-  description:
-    'In-depth Milwaukee M18 FUEL 16-inch chainsaw review (2727-21HD) covering POWERSTATE brushless motor, cutting performance, 12.0Ah HIGH OUTPUT battery runtime, M18 platform compatibility, and head-to-head comparison vs EGO, DeWalt, and Stihl battery chainsaws. 4.6/5 rating.',
+  title: 'Milwaukee Chainsaw Review: M18 FUEL 16" 2727-21HD Examined',
+  description: 'Milwaukee chainsaw review: the M18 FUEL 16" 2727-21HD with POWERSTATE brushless motor, 6,600 RPM chain speed, 150 cuts on a 12.0Ah HIGH OUTPUT battery.',
   alternates: {
     canonical: '/reviews/milwaukee-chainsaw-review',
   },
   openGraph: {
-    title:
-      'Milwaukee M18 FUEL 16" Chainsaw Review (2727-21HD): Pro-Grade Battery Power in 2026',
-    description:
-      'Detailed review of the Milwaukee M18 FUEL 16-inch chainsaw, POWERSTATE brushless motor, 6,600 RPM chain speed, Oregon low-kickback bar, up to 150 cuts per charge. Is it worth $549?',
+    title: 'Milwaukee Chainsaw Review: M18 FUEL 16" 2727-21HD Examined',
+    description: `Can a battery chainsaw really replace gas? A research-driven look at Milwaukee's M18 FUEL 16" — specs, lab data, and owner reports.`,
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -57,20 +54,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/milwaukee-chainsaw-review',
+    '@id': 'https://greenreviewshub.com/reviews/milwaukee-chainsaw-review',
   },
 };
 
@@ -84,15 +81,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -177,6 +174,7 @@ const faqSchema = {
 export default function MilwaukeeM18ChainsawReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="milwaukee-chainsaw-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

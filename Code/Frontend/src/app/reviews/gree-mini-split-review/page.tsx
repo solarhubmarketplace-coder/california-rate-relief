@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'gree-mini-split';
 
 export const metadata: Metadata = {
-  title:
-    'Gree Mini Split Review 2026: Livo Gen 3, Sapphire, and Vireo+ Compared',
-  description:
-    'Gree mini split review covering the Livo Gen 3 (budget), Sapphire (premium), and Vireo+ (cold-climate multi-zone). World largest mini-split maker, SEER2 18-22, dealer-direct purchase, TECH Clean California rebates, 7-year compressor warranty. 4.3/5.',
+  title: "Gree Mini Split Review: Livo Gen 3 vs Sapphire vs Vireo+",
+  description: "Gree mini split review: Livo Gen 3 24K BTU ($1,199 budget), Sapphire 12K SEER2 22 (premium), and Vireo+ multi-zone for cold climates. 7-yr compressor warranty.",
   alternates: {
     canonical: '/reviews/gree-mini-split-review',
   },
   openGraph: {
-    title:
-      'Gree Mini Split Review 2026: Livo Gen 3, Sapphire, and Vireo+ Compared',
-    description:
-      'In-depth review of the Gree Livo Gen 3, Sapphire, and Vireo+ ductless mini splits. How they stack up against Mitsubishi, Daikin, and MrCool for California homeowners.',
+    title: "Gree Mini Split Review: Livo Gen 3 vs Sapphire vs Vireo+",
+    description: "Gree is the world's largest mini split maker. Is its dealer-direct pricing worth it? Livo, Sapphire, and Vireo+ tested.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -55,15 +52,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -148,6 +145,7 @@ const faqSchema = {
 export default function GreeMiniSplitReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="gree-mini-split-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

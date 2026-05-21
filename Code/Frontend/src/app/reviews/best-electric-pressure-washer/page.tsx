@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Pressure Washers (2026): Sun Joe vs Greenworks vs Ryobi vs Karcher',
-  description:
-    'Compare the best electric pressure washers for 2026. In-depth reviews of Sun Joe SPX3000, Greenworks GPW2700, Ryobi RY142300, Karcher K5 Premium, AR Blue Clean AR383, and Westinghouse ePX3500. PSI/GPM guide, nozzle types, and electric vs gas breakdown.',
+  title: "Best Electric Pressure Washer 2026: Sun Joe vs Greenworks",
+  description: "Best electric pressure washer picks: Sun Joe SPX3000 (2,030 PSI, under $200), Greenworks GPW2700, Ryobi RY142300, Karcher K5 Premium, and AR Blue Clean tested.",
   alternates: {
     canonical: '/reviews/best-electric-pressure-washer',
   },
   openGraph: {
-    title: 'Best Electric Pressure Washers (2026)',
-    description:
-      'Sun Joe SPX3000 vs Greenworks GPW2700 vs Ryobi RY142300 vs Karcher K5 Premium. Full specs, pros/cons, and buying guide.',
+    title: "Best Electric Pressure Washer 2026: Sun Joe vs Greenworks",
+    description: "Sun Joe SPX3000 wins under $200. Greenworks 2,700 PSI for tougher jobs. Which one fits your driveway?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-pressure-washer',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-pressure-washer',
   },
 };
 
@@ -223,6 +221,7 @@ const products: Product[] = [
 export default function BestElectricPressureWasher() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-pressure-washer" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -335,7 +334,7 @@ export default function BestElectricPressureWasher() {
                       Greenworks GPW2700 &mdash; Best Heavy-Duty
                     </h3>
                     <p className="text-sm mt-1" style={{ color: '#a1a1aa' }}>
-                      The most powerful corded electric washer we tested. 2,700 PSI
+                      The most powerful corded electric washer in this guide. 2,700 PSI
                       and 2.3 GPM deliver gas-level cleaning power without the
                       fumes, engine maintenance, or deafening noise. Outstanding
                       on concrete and heavily soiled surfaces.
@@ -379,7 +378,7 @@ export default function BestElectricPressureWasher() {
                   { label: 'PSI & GPM: How Much Do You Need?', anchor: '#psi-gpm-guide' },
                   { label: 'Electric vs Gas Pressure Washers', anchor: '#electric-vs-gas' },
                   { label: 'Nozzle Types Explained', anchor: '#nozzle-types' },
-                  { label: 'How We Tested', anchor: '#methodology' },
+                  { label: 'How We Evaluated', anchor: '#methodology' },
                   { label: 'FAQ', anchor: '#faq' },
                 ].map((item) => (
                   <a
@@ -1303,14 +1302,16 @@ export default function BestElectricPressureWasher() {
                 className="text-2xl md:text-3xl font-bold mb-6"
                 style={{ color: '#f5f5f5' }}
               >
-                How We Tested and Ranked
+                How We Ranked These
               </h2>
               <p className="leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
-                We evaluated each model across six weighted criteria.
+                We ranked each model across six weighted criteria, drawing on manufacturer
+                specifications, independent lab testing (Project Farm, Consumer Reports, and
+                comparable outlets), and aggregated owner reports.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { title: 'Cleaning Power (30%)', desc: 'Cleaning units (PSI x GPM) and real-world stain removal on concrete, wood, and siding.' },
+                  { title: 'Cleaning Power (30%)', desc: 'Cleaning units (PSI x GPM) and reported real-world stain removal on concrete, wood, and siding.' },
                   { title: 'Value (25%)', desc: 'Price relative to cleaning units, included accessories, and build quality.' },
                   { title: 'Build Quality & Durability (20%)', desc: 'Motor type (brushless > induction > universal), pump materials, hose quality, and connectors.' },
                   { title: 'Ease of Use (10%)', desc: 'Setup time, weight, maneuverability, hose management, nozzle swapping, and storage.' },

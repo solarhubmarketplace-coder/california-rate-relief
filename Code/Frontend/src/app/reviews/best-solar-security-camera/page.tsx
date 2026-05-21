@@ -21,19 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Solar Security Cameras (2026): Ring vs Reolink vs eufy vs Arlo vs Wyze vs Blink',
-  description:
-    'Compare the best solar-powered security cameras in 2026. In-depth reviews of Ring Stick Up Cam Solar, Reolink Argus 4 Pro, eufy SoloCam S340, Arlo Pro 5S, Wyze Cam Outdoor v2, and Blink Outdoor 4. Wireless solar camera buyer guide.',
+  title: "Best Solar Security Cameras: Ring vs Reolink vs eufy",
+  description: "Best solar security cameras compared: Ring Stick Up Cam Solar, Reolink Argus 4 Pro, eufy SoloCam S340, Arlo Pro 5S, and Wyze ranked by resolution and battery.",
   alternates: {
     canonical: '/reviews/best-solar-security-camera',
   },
   openGraph: {
-    title: 'Best Solar Security Cameras (2026)',
-    description:
-      'Ring vs Reolink vs eufy vs Arlo vs Wyze vs Blink. Full specs, pros/cons, storage options, and solar panel charging comparison.',
+    title: "Best Solar Security Cameras: Ring vs Reolink vs eufy",
+    description: "Six solar-powered security cams head-to-head: which one truly runs forever without a wire?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -51,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-solar-security-camera',
+    '@id': 'https://greenreviewshub.com/reviews/best-solar-security-camera',
   },
 };
 
@@ -222,6 +220,7 @@ const products: Product[] = [
 export default function BestSolarSecurityCamera() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-solar-security-camera" />
       <ReviewHeader />
       <script
         type="application/ld+json"

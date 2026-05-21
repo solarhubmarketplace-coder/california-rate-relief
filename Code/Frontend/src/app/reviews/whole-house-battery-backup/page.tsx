@@ -27,22 +27,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ecoflow-delta-pro-3';
 
 export const metadata: Metadata = {
-  title:
-    'Whole House Battery Backup 2026: Tesla Powerwall 3, Franklin, EcoFlow Delta Pro Ultra Compared',
-  description:
-    'Complete 2026 guide to whole-house battery backup systems. Tesla Powerwall 3 ($12,500-$16,500 installed), Franklin WH aPower 2 ($14,000), Enphase IQ Battery 5P ($9,500), EcoFlow Delta Pro Ultra ($4,099), Anker SOLIX F3800 ($1,799). SGIP rebates, permitting, off-grid vs grid-tied.',
+  title: "Whole House Battery Backup: Powerwall 3 vs Franklin",
+  description: "Whole house battery backup compared: Tesla Powerwall 3 (13.5 kWh), Franklin aPower 2, Enphase IQ 5P vs portable EcoFlow Delta Pro Ultra and Anker SOLIX F3800.",
   alternates: {
     canonical: '/reviews/whole-house-battery-backup',
   },
   openGraph: {
-    title:
-      'Whole House Battery Backup 2026: Tesla Powerwall 3, Franklin, EcoFlow Delta Pro Ultra Compared',
-    description:
-      'Real 2026 installed costs: Permanent systems $9,500-$16,500 vs portable stackable $1,799-$4,099. SGIP rebates, permitting, which is right for you.',
+    title: "Whole House Battery Backup: Powerwall 3 vs Franklin",
+    description: "Permanent vs portable, $1,799 to $16,500. Which whole-house battery backup actually fits your home?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -60,21 +57,21 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
-      'https://ratereliefca.com/reviews/whole-house-battery-backup',
+      'https://greenreviewshub.com/reviews/whole-house-battery-backup',
   },
 };
 
@@ -136,6 +133,7 @@ const faqSchema = {
 export default function WholeHouseBatteryBackupGuide() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="whole-house-battery-backup" />
       <ReviewHeader />
       <script
         type='application/ld+json'

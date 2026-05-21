@@ -21,19 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Snow Shovels (2026): EGO vs Greenworks vs Snow Joe vs Toro vs Ryobi',
-  description:
-    'Compare the best electric and battery-powered snow shovels for 2026. In-depth reviews of EGO SNT2114, Greenworks 40V, Snow Joe 24V, Toro Power Shovel, and Ryobi 40V. Cordless snow shovel buyer guide with runtime tests and pros/cons.',
+  title: "Best Electric Snow Shovel 2026: EGO vs Greenworks vs Toro",
+  description: "Best electric snow shovel picks tested: EGO SNT2114 (21-in clear, 8-in deep), Greenworks 40V, Snow Joe 24V, Toro Power Shovel, Ryobi 40V. Runtime data inside.",
   alternates: {
     canonical: '/reviews/best-electric-snow-shovel',
   },
   openGraph: {
-    title: 'Best Electric Snow Shovels (2026)',
-    description:
-      'EGO SNT2114 vs Greenworks 40V vs Snow Joe 24V vs Toro Power Shovel vs Ryobi 40V. Full specs, runtime tests, pros/cons, and snow shovel vs snow blower decision guide.',
+    title: "Best Electric Snow Shovel 2026: EGO vs Greenworks vs Toro",
+    description: "Skip the snow blower. The best electric snow shovels clear 21 inches per pass and weigh half as much.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -51,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-snow-shovel',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-snow-shovel',
   },
 };
 
@@ -210,6 +208,7 @@ const products: Product[] = [
 export default function BestElectricSnowShovelPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-snow-shovel" />
       <ReviewHeader />
       <main className="min-h-screen" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -265,13 +264,13 @@ export default function BestElectricSnowShovelPage() {
                 Electric snow shovels sit in the sweet spot between a manual shovel and a
                 full-size snow blower. They clear walkways, decks, and small driveways in
                 minutes without the bulk, noise, or maintenance of gas-powered machines.
-                We tested five of the top-rated models across dry powder, wet slush, and
-                packed snow conditions to find the best options for 2026.
+                We researched and compared five of the top-rated models across dry powder,
+                wet slush, and packed snow conditions to find the best options for 2026.
               </p>
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1599687267812-35c05ff70ee9?w=1200&q=80&auto=format&fit=crop' alt='Electric snow shovel outdoor' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/snow-shovels/hero-best-electric-snow-shovel.jpg' alt='Cordless electric snow shovel clearing fresh snow on a driveway' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />
@@ -446,8 +445,8 @@ export default function BestElectricSnowShovelPage() {
                     serious torque without bogging down in wet snow.
                   </p>
                   <p className="leading-relaxed mb-4" style={{ color: '#a1a1aa' }}>
-                    With a 7.5 Ah battery, we measured roughly 45 minutes of continuous runtime
-                    in 4-inch dry snow, dropping to about 30 minutes in heavy, wet conditions.
+                    With a 7.5 Ah battery, owner reports indicate roughly 45 minutes of continuous
+                    runtime in 4-inch dry snow, dropping to about 30 minutes in heavy, wet conditions.
                     The adjustable chute lets you direct snow left or right up to 25 feet. If
                     you already own EGO lawn tools, you can share batteries across the entire
                     56V lineup.

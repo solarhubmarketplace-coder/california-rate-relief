@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'senville-mini-split';
 
 export const metadata: Metadata = {
-  title:
-    'Senville Mini Split Review 2026: LETO, AURA, and SENA Compared',
-  description:
-    'Senville mini split review — LETO (budget single-zone, $1,099), AURA (premium Wi-Fi, $1,399), and SENA (multi-zone, $2,199+). Online direct, DIY-friendly with quick-connect lines on some models, SEER2 19-22, vs MrCool and Klimaire. 4.2/5.',
+  title: "Senville Mini Split Review: LETO vs AURA vs SENA Compared",
+  description: "Senville mini split review: LETO 24K BTU ($1,099), AURA Wi-Fi SEER2 22 ($1,399), SENA multi-zone ($2,199+). DIY install, warranty, and SEER2 efficiency examined.",
   alternates: {
     canonical: '/reviews/senville-mini-split-review',
   },
   openGraph: {
-    title:
-      'Senville Mini Split Review 2026: LETO, AURA, and SENA Compared',
-    description:
-      'Full review of Senville LETO, AURA, and SENA mini splits — DIY-friendly options, Amazon and Home Depot availability, warranty, and California rebate eligibility.',
+    title: "Senville Mini Split Review: LETO vs AURA vs SENA Compared",
+    description: "Three Senville mini splits compared: which model is right for one room, your whole house, or DIY install?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -55,15 +52,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -148,6 +145,7 @@ const faqSchema = {
 export default function SenvilleMiniSplitReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="senville-mini-split-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

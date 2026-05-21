@@ -26,22 +26,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'noritz-tankless-water-heater';
 
 export const metadata: Metadata = {
-  title:
-    'Noritz Tankless Water Heater Review 2026: NRC, EZ Series, and CB Combi Compared',
-  description:
-    'In-depth Noritz tankless water heater review covering the NRC1111-DV indoor condensing ($1,600), EZTR75 tank-replacement model ($1,400), and CB199 combi ($3,500). Japanese engineering, 0.95-0.97 UEF, 12-year heat exchanger warranty, California SoCalGas rebates.',
+  title: "Noritz Tankless Water Heater Review: NRC, EZ Series, Combi",
+  description: "Noritz tankless water heater review: NRC1111-DV indoor condensing (0.97 UEF), EZTR75 no-upsize swap-in, and CB199 combi. 12-yr heat exchanger warranty.",
   alternates: {
     canonical: '/reviews/noritz-tankless-water-heater-review',
   },
   openGraph: {
-    title:
-      'Noritz Tankless Water Heater Review 2026: NRC, EZ Series, and CB Combi Compared',
-    description:
-      'Noritz invented tankless. This review breaks down the NRC, EZ, and CB lines, efficiency, warranty, California rebates, and who should actually buy.',
+    title: "Noritz Tankless Water Heater Review: NRC, EZ Series, Combi",
+    description: "Noritz EZ Series replaces a tank without upsizing your gas line. NRC, EZTR75, and CB199 combi tested.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -57,15 +54,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -150,6 +147,7 @@ const faqSchema = {
 export default function NoritzTanklessReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="noritz-tankless-water-heater-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

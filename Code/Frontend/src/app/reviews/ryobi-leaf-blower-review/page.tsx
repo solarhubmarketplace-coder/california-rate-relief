@@ -23,22 +23,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ryobi-leaf-blower';
 
 export const metadata: Metadata = {
-  title:
-    'Ryobi Leaf Blower Review 2026: 40V Whisper Series, Backpack, and Handheld Compared',
-  description:
-    'In-depth Ryobi leaf blower review covering the 40V HP Brushless Whisper Series 730 CFM backpack (RY404110), 550 CFM Jet Fan handheld, and 110 MPH handheld. Noise data, CFM vs MPH math, runtime, California CARB gas ban context, vs Echo gas backpack.',
+  title: "Ryobi Leaf Blower Review: 40V Whisper Series 730 CFM",
+  description: "Ryobi leaf blower review: the 40V HP Brushless Whisper Series 730 CFM backpack (RY404110) at $399, plus 550 CFM Jet Fan and 110 MPH handhelds.",
   alternates: {
     canonical: '/reviews/ryobi-leaf-blower-review',
   },
   openGraph: {
-    title:
-      'Ryobi Leaf Blower Review 2026: Whisper Series Tested',
-    description:
-      'Full review of Ryobi RY404110 730 CFM backpack blower and full 40V blower lineup. Whisper Series 60 dB noise, CARB gas ban, runtime tested.',
+    title: "Ryobi Leaf Blower Review: 40V Whisper Series 730 CFM",
+    description: "Can a $399 Ryobi backpack really match a $600 Echo gas blower? A research-driven look at 730 CFM at 60 dB.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -54,15 +51,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -147,6 +144,7 @@ const faqSchema = {
 export default function RyobiLeafBlowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ryobi-leaf-blower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

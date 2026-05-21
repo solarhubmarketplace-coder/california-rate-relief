@@ -26,19 +26,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Dirt Bikes for Kids (2026): Razor MX650 vs KTM SX-E 3 vs Stacyc vs Husqvarna; Top 5 Reviewed',
-  description:
-    'Compare the best electric dirt bikes for kids in 2026. In-depth reviews of Razor MX650, KTM SX-E 3, Stacyc 16eDRIVE, Razor SX500, and Husqvarna EE 3. Age guide, safety gear checklist, specs, and buying guide.',
+  title: "Best Electric Dirt Bikes for Kids: Razor MX650 vs KTM SX-E 3",
+  description: "Best electric dirt bikes for kids: Razor MX650, KTM SX-E 3, Stacyc 16eDRIVE, Razor SX500, and Husqvarna EE 3 compared by age and skill.",
   alternates: {
     canonical: '/reviews/best-electric-dirt-bike-kids',
   },
   openGraph: {
-    title: 'Best Electric Dirt Bikes for Kids (2026): Top 5 Reviewed',
-    description:
-      'Razor MX650 vs KTM SX-E 3 vs Stacyc 16eDRIVE vs Razor SX500 vs Husqvarna EE 3. Full specs, age guide, safety gear checklist, pros/cons, and buying guide for parents.',
+    title: "Best Electric Dirt Bikes for Kids: Razor MX650 vs KTM SX-E 3",
+    description: "Safest electric dirt bikes for kids — Razor, KTM SX-E 3, Stacyc, Husqvarna ranked by age.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -56,20 +54,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-dirt-bike-kids',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-dirt-bike-kids',
   },
 };
 
@@ -235,6 +233,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestElectricDirtBikeKids() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-dirt-bike-kids" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -305,7 +304,7 @@ export default function BestElectricDirtBikeKids() {
                 the throttle and go.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-8">
-                We tested and compared the top 5 kids electric dirt bikes available in 2026, evaluating
+                We researched and compared the top 5 kids electric dirt bikes available in 2026, evaluating
                 safety features, build quality, age-appropriateness, battery life, and value. Here is what
                 we found.
               </p>

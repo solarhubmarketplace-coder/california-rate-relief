@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Link from 'next/link';
 import { ReviewLayout } from '@/components/reviews/ReviewLayout';
 import { ReviewHeader } from '@/components/reviews/ReviewHeader';
@@ -18,40 +19,39 @@ import { reviews, REVIEWS_PER_PAGE, TOTAL_PAGES } from '@/lib/grh-reviews-data';
 // initial-load size from ~1MB (full 119 cards) to ~200KB.
 // =============================================================================
 
-export const metadata: Metadata = {
-  title: 'GreenReviewsHub: 119 Tested Product Reviews & Buying Guides (2026)',
-  description:
-    '119 hands-on reviews of portable power stations, e-bikes, mini splits, electric lawn equipment, smart thermostats, and whole house generators. Independent testing — no manufacturer payouts. Updated April 2026.',
-  alternates: {
-    canonical: 'https://greenreviewshub.com/reviews',
-  },
-  openGraph: {
-    title: 'GreenReviewsHub: 119 Tested Product Reviews & Buying Guides (2026)',
-    description: 'Expert product reviews and buying guides — tested and verified for 2026.',
-    type: 'website',
-    url: 'https://greenreviewshub.com/reviews',
-    siteName: 'Green Reviews Hub',
-  },
-};
+// Resolve origin from the request host — greenreviewshub.com DNS is not yet
+// wired, so the index is currently served from ratereliefca.com/reviews/.
+// Canonical + schema URLs must match the serving host. Post-DNS this returns
+// the GRH domain automatically. Organization + WebSite schema are emitted
+// host-aware by app/layout.tsx, so this page only adds the CollectionPage node.
+function detectGrhOrigin(host: string): string {
+  return host.toLowerCase().includes('greenreviewshub')
+    ? 'https://greenreviewshub.com'
+    : 'https://ratereliefca.com';
+}
 
-const grhOrgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Green Reviews Hub',
-  url: 'https://greenreviewshub.com',
-  description:
-    'Independent buying guides for portable power stations, e-bikes, mini splits, smart thermostats, and other green-energy products.',
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const hdrs = await headers();
+  const origin = detectGrhOrigin(hdrs.get('host') || '');
+  const title = 'GreenReviewsHub: Green-Energy Product Reviews & Buying Guides (2026)';
+  const description =
+    'Independent, research-driven reviews of portable power stations, e-bikes, mini splits, electric lawn equipment, smart thermostats, and whole-house generators. No manufacturer payouts. Updated 2026.';
+  return {
+    title,
+    description,
+    alternates: { canonical: `${origin}/reviews` },
+    openGraph: {
+      title,
+      description:
+        'Independent green-energy product reviews and buying guides — researched and verified for 2026.',
+      type: 'website',
+      url: `${origin}/reviews`,
+      siteName: 'Green Reviews Hub',
+    },
+  };
+}
 
-const grhWebsiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Green Reviews Hub',
-  url: 'https://greenreviewshub.com',
-  publisher: { '@type': 'Organization', name: 'Green Reviews Hub' },
-};
-
-function buildCollectionSchema() {
+function buildCollectionSchema(origin: string) {
   // Schema lists EVERY review — so Google sees the full catalog from the
   // canonical hub page even though we paginate the visual rendering.
   return {
@@ -59,47 +59,42 @@ function buildCollectionSchema() {
     '@type': 'CollectionPage',
     name: 'Product Reviews & Buying Guides',
     description:
-      'Expert reviews and comparisons of portable power stations, solar generators, and home backup systems for 2026.',
-    url: 'https://greenreviewshub.com/reviews',
+      'Expert reviews and comparisons of portable power stations, solar generators, e-bikes, and home electrification products for 2026.',
+    url: `${origin}/reviews`,
     publisher: {
       '@type': 'Organization',
       name: 'GreenReviewsHub',
-      url: 'https://greenreviewshub.com',
+      url: origin,
     },
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: reviews.map((review, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `https://greenreviewshub.com/reviews/${review.slug}`,
+        url: `${origin}/reviews/${review.slug}`,
         name: review.title,
       })),
     },
   };
 }
 
-export default function ReviewsPage() {
-  const jsonLd = buildCollectionSchema();
+export default async function ReviewsPage() {
+  const hdrs = await headers();
+  const origin = detectGrhOrigin(hdrs.get('host') || '');
+  const jsonLd = buildCollectionSchema(origin);
   const pageItems = reviews.slice(0, REVIEWS_PER_PAGE);
 
   return (
     <ReviewLayout>
       <ReviewHeader />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(grhOrgSchema) }}
-      />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(grhWebsiteSchema) }}
-      />
+      {/* Organization + WebSite schema are emitted host-aware by app/layout.tsx. */}
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* rel=next on page 1 only — page-N pages will set their own prev/next */}
       {TOTAL_PAGES > 1 && (
-        <link rel='next' href='https://greenreviewshub.com/reviews/page/2' />
+        <link rel='next' href={`${origin}/reviews/page/2`} />
       )}
       <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>
@@ -111,14 +106,14 @@ export default function ReviewsPage() {
                   <div className='p-6 md:p-10 flex flex-col justify-center'>
                     <div className='inline-flex items-center gap-2 bg-emerald-500/15 text-emerald-300 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 w-fit'>
                       <Award className='h-3 w-3' />
-                      119 Reviews · Updated April 26, 2026
+                      {reviews.length} Reviews · Updated 2026
                     </div>
                     <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight leading-tight' style={{ color: '#f5f5f5' }}>
                       The honest review hub for clean-energy gear.
                     </h1>
                     <p className='text-base md:text-lg mb-6 leading-relaxed' style={{ color: '#d4d4d8' }}>
-                      We test portable power stations, e-bikes, mini splits, electric lawn equipment,
-                      smart thermostats, and whole-house generators in real homes — then publish what
+                      We research portable power stations, e-bikes, mini splits, electric lawn
+                      equipment, smart thermostats, and whole-house generators — then publish what
                       actually works. No manufacturer payouts. No fake hype.
                     </p>
                     <div className='flex flex-wrap gap-3'>
@@ -155,8 +150,8 @@ export default function ReviewsPage() {
             {/* ========== TRUST STRIP ========== */}
             <div className='mb-12 grid grid-cols-2 md:grid-cols-4 gap-3 text-center'>
               <div className='border rounded-lg p-4' style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
-                <div className='text-2xl font-extrabold text-emerald-400'>119</div>
-                <div className='text-xs' style={{ color: '#a1a1aa' }}>Products tested</div>
+                <div className='text-2xl font-extrabold text-emerald-400'>{reviews.length}</div>
+                <div className='text-xs' style={{ color: '#a1a1aa' }}>Products reviewed</div>
               </div>
               <div className='border rounded-lg p-4' style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
                 <div className='text-2xl font-extrabold text-emerald-400'>$0</div>
@@ -167,8 +162,8 @@ export default function ReviewsPage() {
                 <div className='text-xs' style={{ color: '#a1a1aa' }}>Last refresh: Apr 26</div>
               </div>
               <div className='border rounded-lg p-4' style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
-                <div className='text-2xl font-extrabold text-emerald-400'>500h+</div>
-                <div className='text-xs' style={{ color: '#a1a1aa' }}>Real-world testing</div>
+                <div className='text-2xl font-extrabold text-emerald-400'>100%</div>
+                <div className='text-xs' style={{ color: '#a1a1aa' }}>Editorially independent</div>
               </div>
             </div>
 
@@ -230,7 +225,7 @@ export default function ReviewsPage() {
                   We asked Grok, ChatGPT &amp; Gemini: <em>&ldquo;Best e-bike under $2,000?&rdquo;</em>
                 </h2>
                 <p className='mb-6 max-w-3xl' style={{ color: '#d4d4d8' }}>
-                  Three frontier AI models. One question. Two of three picked the same bike — and our 50+ hours of testing back them up.
+                  Three frontier AI models. One question. Two of three picked the same bike — and our spec-and-owner-report research backs them up.
                 </p>
                 <div className='grid sm:grid-cols-3 gap-3 mb-6'>
                   <div className='rounded-lg border p-4' style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>

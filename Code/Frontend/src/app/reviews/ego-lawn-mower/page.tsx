@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ego-lawn-mower';
 
 export const metadata: Metadata = {
-  title:
-    'EGO Lawn Mower Review 2026: Full EGO Power+ Mower Lineup Compared',
-  description:
-    'In-depth EGO lawn mower review covering the full 56V Arc Lithium lineup, Select Cut XP LMX5300, LM2206SP, LM2100, Z6 zero-turn, and T6 stand-on. Runtime, warranty, California AQMD rebates, vs Ryobi and gas.',
+  title: "EGO Lawn Mower Review: Full Power+ Lineup Compared 2026",
+  description: "EGO lawn mower review covering the 56V Arc Lithium lineup: Select Cut XP LMX5300, LM2206SP, LM2100, Z6 zero-turn, and T6 stand-on.",
   alternates: {
     canonical: '/reviews/ego-lawn-mower',
   },
   openGraph: {
-    title:
-      'EGO Lawn Mower Review 2026: Full EGO Power+ Lineup Compared',
-    description:
-      'EGO Select Cut XP, self-propelled, push, zero-turn, and stand-on mowers compared. Is EGO the best battery lawn mower brand for California homeowners?',
+    title: "EGO Lawn Mower Review: Full Power+ Lineup Compared 2026",
+    description: "EGO Power+ vs Ryobi vs Greenworks — full EGO lineup tested across yard sizes and runtime.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -188,6 +185,7 @@ const faqSchema = {
 export default function EgoLawnMowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ego-lawn-mower" />
       <ReviewHeader />
       <script
         type='application/ld+json'

@@ -20,22 +20,20 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 // Primary affiliate CTA. Best-value under-$1000 e-bike
 const PRIMARY_PRODUCT_KEY = 'lectric-xp-3';
 
 export const metadata: Metadata = {
-  title:
-    'Best Cheap Electric Bikes 2026: Under $1,000 That Actually Don\'t Suck',
-  description:
-    'The six best cheap electric bikes under $1,000 in 2026. Lectric XP Lite 2.0, Ride1Up Roadster V3, Aventon Soltera 2.5, Heybike Mars 2.0, Rattan Challenger Pro, and Espin Sport compared, what to look for, what to avoid, and UL 2849 safety certification.',
+  title: "Cheap Electric Bike Under $1,000: 6 We'd Actually Buy",
+  description: "Cheap electric bike picks under $1,000: Lectric XP Lite 2.0, Ride1Up Roadster V3, Aventon Soltera 2.5, Heybike Mars 2.0, Rattan Challenger Pro, Espin Sport.",
   alternates: {
     canonical: '/reviews/cheap-electric-bike',
   },
   openGraph: {
-    title: 'Best Cheap Electric Bikes 2026: Under $1,000 Buyer\'s Guide',
-    description:
-      'Lectric XP Lite 2.0, Ride1Up Roadster V3, Aventon Soltera 2.5, Heybike, Rattan, Espin. The six affordable e-bikes we\'d actually recommend.',
+    title: "Cheap Electric Bike Under $1,000: 6 We'd Actually Buy",
+    description: "Six cheap ebikes under $1,000 that we'd actually recommend. Lectric, Ride1Up, Aventon, Heybike compared.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -52,37 +50,37 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Lectric XP Lite 2.0',
-      url: 'https://ratereliefca.com/reviews/cheap-electric-bike#lectric',
+      url: 'https://greenreviewshub.com/reviews/cheap-electric-bike#lectric',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Ride1Up Roadster V3',
-      url: 'https://ratereliefca.com/reviews/cheap-electric-bike#ride1up',
+      url: 'https://greenreviewshub.com/reviews/cheap-electric-bike#ride1up',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Aventon Soltera 2.5',
-      url: 'https://ratereliefca.com/reviews/cheap-electric-bike#aventon',
+      url: 'https://greenreviewshub.com/reviews/cheap-electric-bike#aventon',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Heybike Mars 2.0',
-      url: 'https://ratereliefca.com/reviews/cheap-electric-bike#heybike',
+      url: 'https://greenreviewshub.com/reviews/cheap-electric-bike#heybike',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Rattan Challenger Pro',
-      url: 'https://ratereliefca.com/reviews/cheap-electric-bike#rattan',
+      url: 'https://greenreviewshub.com/reviews/cheap-electric-bike#rattan',
     },
     {
       '@type': 'ListItem',
       position: 6,
       name: 'Espin Sport',
-      url: 'https://ratereliefca.com/reviews/cheap-electric-bike#espin',
+      url: 'https://greenreviewshub.com/reviews/cheap-electric-bike#espin',
     },
   ],
 };
@@ -145,6 +143,7 @@ const faqSchema = {
 export default function CheapElectricBikeHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="cheap-electric-bike" />
       <ReviewHeader />
       <script
         type='application/ld+json'

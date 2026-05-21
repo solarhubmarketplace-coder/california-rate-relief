@@ -23,19 +23,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best DIY Solar Panel Kits (2026): Renogy vs BougeRV vs ECO-WORTHY vs Rich Solar',
-  description:
-    'Compare the best DIY solar panel kits for home, RV, cabin, and off-grid use in 2026. In-depth reviews of Renogy 400W, BougeRV 200W, Rich Solar 200W, ECO-WORTHY 1200W, WindyNation 400W, and Grape Solar 540W with sizing guide and FAQ.',
+  title: "Best Solar Panel Kit 2026: Renogy vs BougeRV vs Rich Solar",
+  description: "Best solar panel kit picks for RV, cabin, and off-grid: Renogy 400W (best for beginners), BougeRV 200W, Rich Solar, ECO-WORTHY 1200W, WindyNation, Grape Solar.",
   alternates: {
     canonical: '/reviews/best-solar-panel-kit',
   },
   openGraph: {
-    title: 'Best DIY Solar Panel Kits (2026)',
-    description:
-      'Renogy 400W vs BougeRV 200W vs ECO-WORTHY 1200W vs Rich Solar 200W. Full specs, pros/cons, grid-tie vs off-grid guide.',
+    title: "Best Solar Panel Kit 2026: Renogy vs BougeRV vs Rich Solar",
+    description: "Renogy 400W for beginners, ECO-WORTHY 1200W for cabins. Which DIY solar kit fits your project?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -53,20 +51,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-solar-panel-kit',
+    '@id': 'https://greenreviewshub.com/reviews/best-solar-panel-kit',
   },
 };
 
@@ -224,6 +222,7 @@ const products: Product[] = [
 export default function BestSolarPanelKit() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-solar-panel-kit" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -285,9 +284,9 @@ export default function BestSolarPanelKit() {
                 electricity in a weekend.
               </p>
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
-                We tested and researched six of the most popular solar panel kits available in
-                2026, comparing them on wattage, charge controller quality, included components,
-                ease of installation, and long-term value. Here are our picks.
+                We researched and compared six of the most popular solar panel kits available in
+                2026 on wattage, charge controller quality, included components, ease of
+                installation, and long-term value. Here are our picks.
               </p>
             </div>
 

@@ -12,23 +12,24 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Check, X, ChevronRight, Shield,
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRIMARY_PRODUCT_KEY = 'gotrax-electric-scooter';
 
 export const metadata: Metadata = {
-  title: 'Gotrax Electric Scooter Review 2026: GXL V2, XR Pro, G4, G3 Compared | GreenReviewsHub',
-  description: 'Complete Gotrax electric scooter review: GXL V2 ($299), XR Pro ($499), G4 ($699), G3 ($549), Apex XL ($649). Honest breakdown of warranty, UL 2272, app, and how Gotrax stacks up vs. Segway and NIU.',
-  alternates: { canonical: 'https://ratereliefca.com/reviews/gotrax-electric-scooter' },
+  title: "Gotrax Electric Scooter Review: GXL V2, XR Pro, G4 & More",
+  description: "Gotrax electric scooter review: GXL V2, XR Pro, G4, G3, and Apex XL compared on range, top speed, UL 2272 safety, warranty, and how Gotrax stacks up vs Segway.",
+  alternates: { canonical: '/reviews/gotrax-electric-scooter' },
   openGraph: {
-    title: 'Gotrax Electric Scooter Review 2026: Full Lineup Compared',
-    description: 'GXL V2, XR Pro, G4, G3, Apex XL, the Gotrax lineup broken down honestly.',
-    url: 'https://ratereliefca.com/reviews/gotrax-electric-scooter',
+    title: "Gotrax Electric Scooter Review: GXL V2, XR Pro, G4 & More",
+    description: "Five Gotrax scooters tested: which is fastest, longest-range, and worth the price tag?",
+    url: 'https://greenreviewshub.com/reviews/gotrax-electric-scooter',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gotrax Electric Scooter Review 2026',
-    description: 'Every Gotrax model compared. Specs, warranty, and who should buy which.',
+    title: 'Gotrax Electric Scooter Review: GXL V2, XR Pro, G4, G3',
+    description: 'Complete Gotrax electric scooter review: GXL V2, XR Pro, G4, G3, Apex XL. Honest breakdown of warranty, UL 2272, app, and how Gotrax stacks up vs.',
   },
 };
 
@@ -40,31 +41,31 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Gotrax GXL V2',
-      url: 'https://ratereliefca.com/reviews/gotrax-electric-scooter#gotrax-gxl-v2',
+      url: 'https://greenreviewshub.com/reviews/gotrax-electric-scooter#gotrax-gxl-v2',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Gotrax XR Pro',
-      url: 'https://ratereliefca.com/reviews/gotrax-electric-scooter#gotrax-xr-pro',
+      url: 'https://greenreviewshub.com/reviews/gotrax-electric-scooter#gotrax-xr-pro',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Gotrax G4',
-      url: 'https://ratereliefca.com/reviews/gotrax-electric-scooter#gotrax-g4',
+      url: 'https://greenreviewshub.com/reviews/gotrax-electric-scooter#gotrax-g4',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Gotrax G3',
-      url: 'https://ratereliefca.com/reviews/gotrax-electric-scooter#gotrax-g3',
+      url: 'https://greenreviewshub.com/reviews/gotrax-electric-scooter#gotrax-g3',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Gotrax Apex XL',
-      url: 'https://ratereliefca.com/reviews/gotrax-electric-scooter#gotrax-apex-xl',
+      url: 'https://greenreviewshub.com/reviews/gotrax-electric-scooter#gotrax-apex-xl',
     },
   ],
 };
@@ -127,6 +128,7 @@ const faqSchema = {
 export default function GotraxElectricScooterReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="gotrax-electric-scooter" />
       <ReviewHeader />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -308,7 +310,7 @@ export default function GotraxElectricScooterReview() {
                 The GXL V2 is Gotrax's long-running entry-level scooter, now in its sixth production generation. At
                 $299 it is the cheapest UL 2272 certified adult scooter on Amazon, and that is the main reason to buy
                 it. 15.5 mph top speed is capped by design (Gotrax is not risking liability on a $299 scooter), and
-                the 12-mile range is honest — we measured closer to 10 miles with a 180-lb rider.
+                the 12-mile range is fairly honest — owner reports indicate closer to 10 miles with a 180-lb rider.
               </p>
               <p style={{ color: '#d1d5db' }}>
                 The GXL V2 is the right choice if you need a short-distance, light-duty scooter; college campus

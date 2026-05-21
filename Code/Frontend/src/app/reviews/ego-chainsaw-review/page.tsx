@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ego-chainsaw';
 
 export const metadata: Metadata = {
-  title:
-    'EGO Power+ Chainsaw Review 2026: The 56V CS1804 and CS1400E Tested',
-  description:
-    'In-depth EGO Power+ chainsaw review covering the 18-inch CS1804 ($299) and 14-inch CS1400E ($229). Arc Lithium 56V platform, runtime, vs DeWalt 60V and Stihl MS 170 gas, California AQMD rebates. 4.6/5 rating.',
+  title: "EGO Chainsaw Review: 56V CS1804 (18-inch) and CS1400E Compared",
+  description: "EGO chainsaw review: 18-inch CS1804 ($299) delivers gas-comparable cutting with 200 cuts per charge; 14-inch CS1400E ($229) handles homeowner storm cleanup.",
   alternates: {
     canonical: '/reviews/ego-chainsaw-review',
   },
   openGraph: {
-    title:
-      'EGO Power+ Chainsaw Review 2026: The 56V CS1804 and CS1400E Tested',
-    description:
-      'Full review of the EGO CS1804 and CS1400E chainsaws, Arc Lithium battery, tool-free chain tensioning, 5-year warranty, and how they stack up against DeWalt, Stihl, and Husqvarna.',
+    title: "EGO Chainsaw Review: 56V CS1804 (18-inch) and CS1400E Compared",
+    description: "Gas-comparable cutting, no fumes, 200 cuts per charge. Can the EGO CS1804 really replace a Stihl?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -55,15 +52,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -148,6 +145,7 @@ const faqSchema = {
 export default function EGOChainsawReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ego-chainsaw-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -181,7 +179,7 @@ export default function EGOChainsawReview() {
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
                 EGO Power+ Chainsaw Review 2026: The 56V CS1804 and CS1400E
-                Tested
+                Compared
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />

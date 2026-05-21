@@ -26,22 +26,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'navien-tankless-water-heater';
 
 export const metadata: Metadata = {
-  title:
-    'Navien Tankless Water Heater Review 2026: NPE, NPN, and NCB Compared',
-  description:
-    'Complete Navien tankless water heater review covering NPE-240A2, NPE-210A2, NPN-180E condensing, and NCB-180H combi. Condensing vs non-condensing UEF ratings, GPM flow, 15-year heat exchanger warranty, California rebates, and Navien vs Rinnai.',
+  title: "Navien Tankless Water Heater Review: NPE-240A2 vs NCB Combi",
+  description: "Navien tankless water heater review: NPE-240A2 (11.2 GPM, 0.97 UEF), NPE-210A2, NPN-180E condensing, and NCB-180H combi with NaviLink Wi-Fi and built-in recirc.",
   alternates: {
     canonical: '/reviews/navien-tankless-water-heater-review',
   },
   openGraph: {
-    title:
-      'Navien Tankless Water Heater Review 2026: NPE, NPN, and NCB Compared',
-    description:
-      'NPE premium, NPN budget, NCB combi (heat + hot water) — which Navien tankless fits your home? Full spec comparison, warranty, and California rebate guide.',
+    title: "Navien Tankless Water Heater Review: NPE-240A2 vs NCB Combi",
+    description: "Which Navien tankless is right for your home? NPE-240A2, NPN-180E, and NCB-180H combi tested side-by-side.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -184,6 +181,7 @@ const faqSchema = {
 export default function NavienTanklessReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="navien-tankless-water-heater-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

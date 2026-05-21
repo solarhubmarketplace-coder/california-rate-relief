@@ -6,6 +6,7 @@ import { statSync } from 'fs';
 import { join } from 'path';
 import { getAllCitySlugs } from '@/data/cities-data';
 import { allPageRoutes } from '@/lib/glp1-page-routes';
+import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
 // =============================================================================
 // LAST-MODIFIED HELPERS (Batch 4.4, 2026-04-30)
@@ -199,64 +200,40 @@ function grhSitemap(base: string): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${base}/reviews`, lastModified: today, changeFrequency: 'weekly', priority: 0.95 },
-    // Pagination pages — 118 reviews / 20 per page = 6 pages total (page 1 = /reviews)
-    { url: `${base}/reviews/page/2`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
-    { url: `${base}/reviews/page/3`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
-    { url: `${base}/reviews/page/4`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
-    { url: `${base}/reviews/page/5`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
-    { url: `${base}/reviews/page/6`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
+    // Trust / authority pages — E-E-A-T signals; previously omitted from the sitemap.
+    { url: `${base}/methodology`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/reviews/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/reviews/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/reviews/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/reviews/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/reviews/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
   ];
 
-  const reviewSlugs = [
-    'best-portable-power-stations', 'ecoflow-delta-pro-3-review', 'anker-solix-f3800-review',
-    'bluetti-ac500-review', 'jackery-explorer-2000-plus-review', 'bluetti-ac200l-review',
-    'best-electric-bikes', 'best-mini-split-ac', 'best-electric-lawn-mower',
-    'best-smart-thermostat', 'best-whole-house-generator', 'rad-power-radrover-6-plus-review',
-    'mrcool-diy-4th-gen-review', 'ego-select-cut-mower-review', 'generac-guardian-24kw-review',
-    'aventon-aventure-3-review', 'ecoflow-delta-pro-ultra-review', 'ego-snow-blower-review',
-    'ryobi-40v-lawn-mower-review', 'mitsubishi-mini-split-review', 'best-tankless-water-heater',
-    'milwaukee-chainsaw-review', 'best-electric-dirt-bike-adults', 'daikin-mini-split-review',
-    'best-electric-leaf-blower', 'best-electric-chainsaw', 'best-electric-scooter-with-seat',
-    'greenworks-80v-lawn-mower-review', 'best-induction-cooktop', 'best-electric-moped',
-    'best-solar-pool-heater', 'best-electric-scooter', 'ecoflow-delta-2-review',
-    'best-electric-dirt-bike-kids', 'best-solar-attic-fan', 'ryobi-snow-blower-review',
-    'dewalt-lawn-mower-review', 'milwaukee-lawn-mower-review', 'pioneer-mini-split-review',
-    'honeywell-smart-thermostat-review', 'trek-electric-bike-review',
-    'best-electric-fireplace-tv-stand', 'heat-pump-vs-furnace', 'best-solar-charge-controller',
-    'best-battery-pressure-washer', 'best-electric-skateboard', 'best-solar-generator',
-    'best-robot-lawn-mower', 'lectric-xp-3-review', 'best-outdoor-solar-lights',
-    'best-electric-snow-shovel', 'best-solar-panel-kit', 'best-electric-hedge-trimmer',
-    'best-portable-air-conditioner', 'best-window-air-conditioner', 'best-ceiling-fan',
-    'best-dehumidifier', 'jackery-solar-generator-1000-review', 'best-electric-weed-eater',
-    'best-air-purifier', 'best-space-heater', 'best-electric-bike-for-seniors',
-    'best-solar-security-camera', 'best-electric-riding-mower', 'best-portable-heater',
-    'best-ev-charger', 'best-solar-water-heater', 'best-electric-pressure-washer',
-    'best-heat-pump-water-heater', 'best-ebike-rack', 'best-electric-smoker',
-    'nest-thermostat-review', 'ecobee-thermostat-review', 'smart-thermostat-installation',
-    'tankless-water-heater-cost', 'tankless-water-heater-vs-tank',
-    'tankless-water-heater-pros-and-cons', 'rinnai-tankless-water-heater-review',
-    'rheem-tankless-water-heater-review', 'navien-tankless-water-heater-review',
-    'noritz-tankless-water-heater-review', 'mrcool-mini-split', 'diy-mini-split',
-    'gree-mini-split-review', 'senville-mini-split-review', 'ecoflow-delta-2-max-review',
-    'ecoflow-river-3-review', 'ecoflow-river-3-plus-review', 'ecoflow-river-2-pro-review',
-    'ecoflow-delta-3-plus-review', 'anker-solix-c1000-review', 'bluetti-eb3a-review',
-    'bluetti-ac200max-review', 'jackery-explorer-1000-review', 'whole-house-battery-backup',
-    'electric-dirt-bike', 'lectric-ebike', 'rad-power-bikes', 'aventon-ebike',
-    'velotric-ebike', 'electric-motorcycle', 'fastest-electric-bike', 'kids-electric-bike',
-    'cheap-electric-bike', 'fastest-electric-scooter', 'best-electric-scooter-for-adults',
-    'gotrax-electric-scooter', 'ego-lawn-mower', 'ryobi-lawn-mower', 'greenworks-lawn-mower',
-    'dewalt-chainsaw-review', 'ego-chainsaw-review', 'ryobi-chainsaw-review',
-    'ego-leaf-blower-review', 'dewalt-leaf-blower-review', 'ryobi-leaf-blower-review',
-    'milwaukee-leaf-blower-review', 'jackery-explorer-300-review',
-  ];
-  const reviewPages: MetadataRoute.Sitemap = reviewSlugs.map((slug) => ({
-    url: `${base}/reviews/${slug}`,
-    lastModified: reviewMtime(slug, today),
+  // Pagination pages /reviews/page/2..N — derived from TOTAL_PAGES so the
+  // sitemap can never drift out of sync with the actual paginated routes
+  // (the previous hardcoded 2..6 list missed page 7 once the catalog grew).
+  const paginationPages: MetadataRoute.Sitemap = Array.from(
+    { length: Math.max(0, GRH_TOTAL_PAGES - 1) },
+    (_, i) => ({
+      url: `${base}/reviews/page/${i + 2}`,
+      lastModified: today,
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+    }),
+  );
+
+  // Review URLs derived directly from the grh-reviews-data registry — the same
+  // source the index renders from. A hardcoded slug list silently orphaned
+  // pages from the sitemap (e.g. best-water-filter-pitcher); deriving from the
+  // registry keeps the sitemap and the live catalog permanently in sync.
+  const reviewPages: MetadataRoute.Sitemap = grhReviews.map((review) => ({
+    url: `${base}/reviews/${review.slug}`,
+    lastModified: reviewMtime(review.slug, today),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
 
-  return [...staticPages, ...reviewPages];
+  return [...staticPages, ...paginationPages, ...reviewPages];
 }
 
 // =============================================================================

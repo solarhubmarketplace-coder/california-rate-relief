@@ -25,22 +25,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'rinnai-tankless-water-heater';
 
 export const metadata: Metadata = {
-  title:
-    'Tankless Water Heater Pros and Cons 2026: Is It Actually Worth It?',
-  description:
-    'Honest 2026 breakdown of tankless water heater pros and cons. Endless hot water (within flow limits), 24-34% efficiency gain, 20+ year lifespan, upfront cost 2-3x tank, install complexity, cold-water sandwich, and who should actually buy one.',
+  title: "Tankless Water Heater Pros and Cons: Is It Worth It in 2026?",
+  description: "Tankless water heater pros and cons: efficiency, 20-year lifespan, space savings, upfront cost, install complexity, and the cold-water sandwich explained.",
   alternates: {
     canonical: '/reviews/tankless-water-heater-pros-and-cons',
   },
   openGraph: {
-    title:
-      'Tankless Water Heater Pros and Cons 2026: Is It Actually Worth It?',
-    description:
-      'Every pro and con that matters. Efficiency gain, endless hot water, 20+ year lifespan, versus 2-3x upfront cost, install complexity, and cold-water sandwich.',
+    title: "Tankless Water Heater Pros and Cons: Is It Worth It in 2026?",
+    description: "Endless hot water sounds great — until you hit the cold-water sandwich. Honest tankless tradeoffs.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -58,21 +55,21 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
-      'https://ratereliefca.com/reviews/tankless-water-heater-pros-and-cons',
+      'https://greenreviewshub.com/reviews/tankless-water-heater-pros-and-cons',
   },
 };
 
@@ -134,6 +131,7 @@ const faqSchema = {
 export default function TanklessProsConsGuide() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="tankless-water-heater-pros-and-cons" />
       <ReviewHeader />
       <script
         type='application/ld+json'

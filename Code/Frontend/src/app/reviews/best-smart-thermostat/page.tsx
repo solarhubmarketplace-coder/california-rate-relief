@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Smart Thermostats (2026): Ecobee vs Nest, Full Comparison & Reviews',
-  description:
-    'Compare the best smart thermostats for 2026. Ecobee Premium vs Google Nest Learning (4th Gen) vs Ecobee Enhanced vs Nest Thermostat. HomeKit, Alexa, Google Home compatibility, energy savings, and California TOU optimization guide.',
+  title: "Best Smart Thermostat 2026: Ecobee Premium vs Nest 4th Gen",
+  description: "The best smart thermostat for 2026: Ecobee Premium vs Nest Learning 4th Gen vs Ecobee Enhanced. HomeKit, Matter, and TOU savings compared.",
   alternates: {
     canonical: '/reviews/best-smart-thermostat',
   },
   openGraph: {
-    title: 'Best Smart Thermostats (2026): Ecobee vs Nest',
-    description:
-      'Ecobee Smart Thermostat Premium vs Google Nest Learning Thermostat (4th Gen) vs Ecobee Enhanced vs Nest Thermostat. Specs, pros/cons, smart home compatibility, and California energy savings guide.',
+    title: "Best Smart Thermostat 2026: Ecobee Premium vs Nest 4th Gen",
+    description: "Ecobee or Nest? The only smart thermostat that works with Apple, Alexa AND Google might surprise you.",
     type: 'article',
     publishedTime: '2026-04-17T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-smart-thermostat',
+    '@id': 'https://greenreviewshub.com/reviews/best-smart-thermostat',
   },
 };
 
@@ -186,6 +184,7 @@ const thermostats: Thermostat[] = [
 export default function BestSmartThermostatPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-smart-thermostat" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -1085,7 +1084,7 @@ export default function BestSmartThermostatPage() {
                   Want More Independent Energy Product Reviews?
                 </h2>
                 <p className="text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-                  GreenReviewsHub publishes hands-on, data-driven reviews of smart home energy
+                  GreenReviewsHub publishes research-driven, data-backed reviews of smart home energy
                   products, portable power stations, e-bikes, and more. Every review includes
                   real specs, honest pros and cons, and no manufacturer influence. Browse our
                   full review library to find the best products for your home.

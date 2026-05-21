@@ -23,21 +23,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRIMARY_PRODUCT_KEY = 'velotric-ebike';
 
 export const metadata: Metadata = {
-  title:
-    'Velotric E-Bikes Review 2026: Discover, Nomad, T1, Go, Summit Compared',
-  description:
-    'Honest Velotric e-bikes review covering the 2026 lineup: Discover 2, Nomad 1 Plus, T1 ST Plus, Go, Summit 1, and Breeze 1. SensorShift pedal assist, UL 2849 certified, IPX6 waterproof, 2-year warranty — premium DTC built by ex-Lime/Trek engineers.',
+  title: "Velotric Ebike Review 2026: Discover 2, Nomad, T1, Summit",
+  description: "Velotric ebike review: every model UL 2849 certified, IPX6 water resistance, 2-year warranty. Discover 2, Nomad 1 Plus, T1 ST Plus, Summit 1, Breeze 1 tested.",
   alternates: {
     canonical: '/reviews/velotric-ebike',
   },
   openGraph: {
-    title: 'Velotric E-Bikes Review 2026: The Full Lineup Compared',
-    description:
-      'Discover 2, Nomad 1 Plus, T1 ST Plus, Go, Summit 1, Breeze 1 — every Velotric reviewed. SensorShift tech, IPX6 water rating, and how Velotric compares to Aventon and Lectric.',
+    title: "Velotric Ebike Review 2026: Discover 2, Nomad, T1, Summit",
+    description: "UL 2849 certified, IPX6-rated, ranked above Lectric. Is Velotric the smartest DTC ebike buy in 2026?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -54,37 +52,37 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Velotric Discover 2',
-      url: 'https://ratereliefca.com/reviews/velotric-ebike#discover',
+      url: 'https://greenreviewshub.com/reviews/velotric-ebike#discover',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Velotric Nomad 1 Plus',
-      url: 'https://ratereliefca.com/reviews/velotric-ebike#nomad',
+      url: 'https://greenreviewshub.com/reviews/velotric-ebike#nomad',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Velotric T1 ST Plus',
-      url: 'https://ratereliefca.com/reviews/velotric-ebike#t1',
+      url: 'https://greenreviewshub.com/reviews/velotric-ebike#t1',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Velotric Go',
-      url: 'https://ratereliefca.com/reviews/velotric-ebike#go',
+      url: 'https://greenreviewshub.com/reviews/velotric-ebike#go',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Velotric Summit 1',
-      url: 'https://ratereliefca.com/reviews/velotric-ebike#summit',
+      url: 'https://greenreviewshub.com/reviews/velotric-ebike#summit',
     },
     {
       '@type': 'ListItem',
       position: 6,
       name: 'Velotric Breeze 1',
-      url: 'https://ratereliefca.com/reviews/velotric-ebike#breeze',
+      url: 'https://greenreviewshub.com/reviews/velotric-ebike#breeze',
     },
   ],
 };
@@ -147,6 +145,7 @@ const faqSchema = {
 export default function VelotricEbikeHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="velotric-ebike" />
       <ReviewHeader />
       <script
         type='application/ld+json'

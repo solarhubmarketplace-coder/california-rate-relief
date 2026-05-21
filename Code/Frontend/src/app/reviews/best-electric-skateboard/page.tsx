@@ -19,19 +19,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Skateboards in 2026: Boosted vs Evolve vs Meepo vs WowGo vs Exway vs Backfire',
-  description:
-    'Compare the best electric skateboards of 2026. In-depth reviews of Boosted Stealth, Evolve GTR, Meepo Hurricane, WowGo 2S Max, Exway X1 Max, and Backfire Zealot S2. Board types, safety tips, and buying guide included.',
+  title: "Best Electric Skateboard 2026: Boosted vs Evolve vs Meepo",
+  description: "The best electric skateboard for 2026: Boosted Stealth, Evolve GTR, Meepo Hurricane, WowGo 2S Max, Exway X1 Max, and Backfire Zealot S2 ranked.",
   alternates: {
     canonical: '/reviews/best-electric-skateboard',
   },
   openGraph: {
-    title: 'Best Electric Skateboards in 2026',
-    description:
-      'Boosted Stealth vs Evolve GTR vs Meepo Hurricane vs WowGo 2S Max vs Exway X1 Max vs Backfire Zealot S2. Full specs, pros/cons, and buyer guide.',
+    title: "Best Electric Skateboard 2026: Boosted vs Evolve vs Meepo",
+    description: "Belt vs hub motor, AT vs street: the electric skateboards actually worth $1,500+ in 2026.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -49,20 +47,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-skateboard',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-skateboard',
   },
 };
 
@@ -220,6 +218,7 @@ const boards: Board[] = [
 export default function BestElectricSkateboard() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-skateboard" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -274,8 +273,8 @@ export default function BestElectricSkateboard() {
                 style={{ color: '#d4d4d8' }}
               >
                 Electric skateboards have exploded in popularity as a green, thrilling last-mile
-                commute option. We tested six of the top-selling motorized skateboards of 2026
-                across range, speed, hill climbing, ride comfort, and build quality.
+                commute option. We researched and compared six of the top-selling motorized
+                skateboards of 2026 across range, speed, hill climbing, ride comfort, and build quality.
               </p>
             </header>
 
@@ -499,7 +498,7 @@ export default function BestElectricSkateboard() {
                 <p className="leading-relaxed mb-4" style={{ color: '#d4d4d8' }}>
                   The Boosted Stealth remains the gold standard for premium electric skateboards.
                   Its Super Flex composite deck absorbs road vibrations beautifully, delivering the
-                  smoothest ride of any board we tested. The dual belt-drive system punches hard off
+                  smoothest ride of any board in this guide. The dual belt-drive system punches hard off
                   the line with 2,100W of peak power, and the refined braking feel is unmatched.
                   Boosted&apos;s companion app lets you fine-tune acceleration curves, toggle ride
                   modes (Eco/Expert/Hyper), and monitor battery health in real time.

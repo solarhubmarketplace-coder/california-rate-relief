@@ -28,20 +28,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Ryobi 40V HP Brushless 21" Snow Blower Review (2026): Best Budget Battery Snow Blower?',
-  description:
-    'In-depth Ryobi 40V HP Brushless snow blower review covering 21-inch clearing width, brushless motor performance, battery runtime, wet snow handling, noise levels, and how it compares to EGO, Toro, and Greenworks. 4.3/5 rating.',
+  title: 'Ryobi Snow Blower Review: 40V HP Brushless 21" Examined',
+  description: 'Ryobi snow blower review: the 40V HP Brushless 21" examined for clearing width, runtime, wet vs dry snow, noise, and value vs EGO and Toro.',
   alternates: {
     canonical: '/reviews/ryobi-snow-blower-review',
   },
   openGraph: {
-    title:
-      'Ryobi 40V HP Brushless 21" Snow Blower Review (2026): Best Budget Battery Snow Blower?',
-    description:
-      'Detailed review of the Ryobi 40V HP Brushless 21-inch snow blower — brushless motor, up to 40-foot throw distance, push-button start. Is it the best value in battery snow blowers?',
+    title: 'Ryobi Snow Blower Review: 40V HP Brushless 21" Examined',
+    description: "Can a $599 battery snow blower handle a real Northeast storm? A research-driven look at the Ryobi 40V HP in wet, heavy snow.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -59,20 +56,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/ryobi-snow-blower-review',
+    '@id': 'https://greenreviewshub.com/reviews/ryobi-snow-blower-review',
   },
 };
 
@@ -86,15 +83,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -189,6 +186,7 @@ const PRODUCT_KEY = 'ryobi-snow-blower';
 export default function RyobiSnowBlowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ryobi-snow-blower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

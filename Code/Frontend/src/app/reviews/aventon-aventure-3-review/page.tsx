@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'aventon-aventure-3';
 
 export const metadata: Metadata = {
-  title:
-    'Aventon Aventure 3 Review (2026): Best Fat Tire E-Bike for Adventure Riders?',
-  description:
-    'In-depth Aventon Aventure 3 review covering the 750W motor, 720Wh battery, torque sensor, 28 mph Class 3 speed, fat tires, and real-world range tests. Honest pros, cons, and comparisons to Rad Power and Lectric.',
+  title: "Aventon Aventure 3 Review: 750W Fat Tire E-Bike, 28 mph",
+  description: "Aventon Aventure 3 review: 750W rear hub motor (1,130W peak), 720Wh battery, 40-60 mi range, torque sensor, 28 mph Class 3 fat tire e-bike for $1,899.",
   alternates: {
     canonical: '/reviews/aventon-aventure-3-review',
   },
   openGraph: {
-    title:
-      'Aventon Aventure 3 Review (2026): Best Fat Tire E-Bike for Adventure Riders?',
-    description:
-      'Detailed review of the Aventon Aventure 3. 750W motor, 720Wh battery, torque sensor, Class 3 speed. Is it worth $1,899?',
+    title: "Aventon Aventure 3 Review: 750W Fat Tire E-Bike, 28 mph",
+    description: "Aventon Aventure 3: 28 mph Class 3 fat tire e-bike for $1,899. Real-world range tested over 60+ miles.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -57,15 +54,15 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
 };
@@ -80,15 +77,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -173,6 +170,7 @@ const faqSchema = {
 export default function AventonAventure3Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="aventon-aventure-3-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -231,7 +229,12 @@ export default function AventonAventure3Review() {
                   <span>16 min read</span>
                 </div>
               </div>
-            </header><div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}><img src='https://aventon-images.imgix.net/files/01_AventureM_Camouflage_Side_1.jpg?v=1751415302&width=1200' alt='Aventon Aventure 3 fat tire e-bike' className='w-full h-auto max-h-[480px] object-cover' loading='eager' /></div>
+            </header>
+
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src='https://aventon-images.imgix.net/files/01_AventureM_Camouflage_Side_1.jpg?v=1751415302&width=1200' alt='Aventon Aventure 3 fat tire e-bike — Stealth color' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             {/* Affiliate disclosure — FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />

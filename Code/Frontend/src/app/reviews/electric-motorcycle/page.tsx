@@ -21,22 +21,20 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 // Primary affiliate CTA for this hub, category top pick
 const PRIMARY_PRODUCT_KEY = 'zero-srf';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Motorcycles 2026: Street, Dual-Sport, and Off-Road Compared',
-  description:
-    'The definitive 2026 electric motorcycle buyer\'s guide. Zero SR/F, Harley-Davidson LiveWire ONE, Energica Ego+, Kawasaki Ninja e-1, and CAKE Kalk OR compared, range, charging, M1 licensing, California HOV lane access, and the $1,500-$2,000 CVAP rebate explained.',
+  title: "Best Electric Motorcycles: Street, Dual-Sport, Off-Road",
+  description: "Best electric motorcycles compared: Zero SR/F, Harley LiveWire ONE, Energica Ego+, Kawasaki Ninja e-1, CAKE Kalk OR — with California rebate guide.",
   alternates: {
     canonical: '/reviews/electric-motorcycle',
   },
   openGraph: {
-    title: 'Best Electric Motorcycles 2026: The Complete Buyer\'s Guide',
-    description:
-      'Zero SR/F vs Harley LiveWire ONE vs Energica Ego+ vs Kawasaki Ninja e-1 vs CAKE Kalk OR. Street, dual-sport, and off-road compared, with California rebate and HOV details.',
+    title: "Best Electric Motorcycles: Street, Dual-Sport, Off-Road",
+    description: "Zero, Harley, Energica, Kawasaki, CAKE — best electric motorcycles plus California's $2,000 rebate.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -53,31 +51,31 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Zero SR/F',
-      url: 'https://ratereliefca.com/reviews/electric-motorcycle#zero-srf',
+      url: 'https://greenreviewshub.com/reviews/electric-motorcycle#zero-srf',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Harley-Davidson LiveWire ONE',
-      url: 'https://ratereliefca.com/reviews/electric-motorcycle#livewire',
+      url: 'https://greenreviewshub.com/reviews/electric-motorcycle#livewire',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Energica Ego+',
-      url: 'https://ratereliefca.com/reviews/electric-motorcycle#energica',
+      url: 'https://greenreviewshub.com/reviews/electric-motorcycle#energica',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Kawasaki Ninja e-1',
-      url: 'https://ratereliefca.com/reviews/electric-motorcycle#ninja-e1',
+      url: 'https://greenreviewshub.com/reviews/electric-motorcycle#ninja-e1',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'CAKE Kalk OR',
-      url: 'https://ratereliefca.com/reviews/electric-motorcycle#cake-kalk',
+      url: 'https://greenreviewshub.com/reviews/electric-motorcycle#cake-kalk',
     },
   ],
 };
@@ -140,6 +138,7 @@ const faqSchema = {
 export default function ElectricMotorcycleHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="electric-motorcycle" />
       <ReviewHeader />
       <script
         type='application/ld+json'

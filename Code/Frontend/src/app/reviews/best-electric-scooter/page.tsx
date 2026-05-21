@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Scooters (2026): Segway vs GoTrax vs Apollo vs Dualtron vs Unagi',
-  description:
-    'Compare the best electric scooters for adults in 2026. In-depth reviews of Segway Ninebot MAX G2, GoTrax G4, Apollo City Pro, Dualtron Thunder 3, Unagi Model One Voyager, and GoTrax XR Ultra. Speed, range, and budget guide included.',
+  title: "Best Electric Scooter 2026: Segway MAX G2 vs Apollo, GoTrax",
+  description: "Best electric scooter picks for adults: Segway Ninebot MAX G2 (43-mi, 22 mph, $999), GoTrax G4, Apollo City Pro, Dualtron Thunder 3, and Unagi Voyager.",
   alternates: {
     canonical: '/reviews/best-electric-scooter',
   },
   openGraph: {
-    title: 'Best Electric Scooters (2026): Complete Buyer\'s Guide',
-    description:
-      'Segway Ninebot MAX G2 vs GoTrax G4 vs Apollo City Pro vs Dualtron Thunder 3 vs Unagi Model One Voyager. Full specs, pros/cons, and budget guide.',
+    title: "Best Electric Scooter 2026: Segway MAX G2 vs Apollo, GoTrax",
+    description: "Which electric scooter is worth $999? We compared 6 models on range, speed, and ride quality.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-scooter',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-scooter',
   },
 };
 
@@ -262,6 +260,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestElectricScooter() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-scooter" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -319,7 +318,7 @@ export default function BestElectricScooter() {
                 <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
                   Electric scooters have gone from rental-app novelties to legitimate personal
                   transportation. In 2026, the market spans $300 commuter runabouts to $3,800 speed
-                  machines that outrun most mopeds. We tested and researched over 30 models to find
+                  machines that outrun most mopeds. We researched and compared over 30 models to find
                   the six best across every budget and riding style.
                 </p>
                 <p className="text-lg leading-relaxed mb-8" style={{ color: '#a1a1aa' }}>
@@ -1125,7 +1124,7 @@ export default function BestElectricScooter() {
               <p className="leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
                 Every scooter manufacturer advertises range under ideal conditions: a 150-lb rider,
                 flat terrain, no wind, moderate temperature, and eco mode. Real-world range is
-                typically 70-85% of the advertised number. Here is what we measured:
+                typically 70-85% of the advertised number. Here is what independent testing and owner reports indicate:
               </p>
 
               <div className="overflow-x-auto rounded-xl border mb-6" style={{ borderColor: '#27272a' }}>

@@ -23,22 +23,20 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 // Brand-level affiliate CTA, for overall Lectric brand pick
 const PRIMARY_PRODUCT_KEY = 'lectric-xp-3';
 
 export const metadata: Metadata = {
-  title:
-    'Lectric eBikes Review 2026: Full Lineup Compared (XP, XPedition, XP Lite, ONE)',
-  description:
-    'Honest Lectric eBikes review covering the full 2026 lineup: XP 3.0, XP Lite 2.0, XPedition 2.0, XPress 750, and Lectric ONE. Direct-to-consumer value, 1-year warranty, and how Lectric compares to Rad Power and Aventon.',
+  title: "Lectric eBikes Review: XP 3.0, XPedition, ONE Compared",
+  description: "Lectric eBikes 2026 review: XP 3.0, XP Lite 2.0, XPedition 2.0, XPress 750, and Lectric ONE compared on price, range, and ride quality.",
   alternates: {
     canonical: '/reviews/lectric-ebike',
   },
   openGraph: {
-    title: 'Lectric eBikes Review 2026: Full Lineup Compared',
-    description:
-      'Every Lectric e-bike. XP 3.0, XP Lite 2.0, XPedition 2.0, XPress 750, Lectric ONE, reviewed and compared. Best value pick and premium pick.',
+    title: "Lectric eBikes Review: XP 3.0, XPedition, ONE Compared",
+    description: "Are Lectric eBikes worth it? Honest review of the XP 3.0, XPedition, and the new Lectric ONE.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -55,31 +53,31 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Lectric XP 3.0',
-      url: 'https://ratereliefca.com/reviews/lectric-ebike#xp-3',
+      url: 'https://greenreviewshub.com/reviews/lectric-ebike#xp-3',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Lectric XP Lite 2.0',
-      url: 'https://ratereliefca.com/reviews/lectric-ebike#xp-lite',
+      url: 'https://greenreviewshub.com/reviews/lectric-ebike#xp-lite',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Lectric XPedition 2.0',
-      url: 'https://ratereliefca.com/reviews/lectric-ebike#xpedition',
+      url: 'https://greenreviewshub.com/reviews/lectric-ebike#xpedition',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Lectric XPress 750',
-      url: 'https://ratereliefca.com/reviews/lectric-ebike#xpress',
+      url: 'https://greenreviewshub.com/reviews/lectric-ebike#xpress',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Lectric ONE',
-      url: 'https://ratereliefca.com/reviews/lectric-ebike#one',
+      url: 'https://greenreviewshub.com/reviews/lectric-ebike#one',
     },
   ],
 };
@@ -142,6 +140,7 @@ const faqSchema = {
 export default function LectricEbikeHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="lectric-ebike" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -219,7 +218,7 @@ export default function LectricEbikeHub() {
                 Lectric eBikes went from a Phoenix garage startup in 2019 to one of the three best-selling e-bike brands in North America — selling more than 500,000 bikes in six years without a single retail store. The entire business runs direct-to-consumer online, which is how they can offer a full-featured folding e-bike at $999 when Rad Power charges $1,999 and traditional bike shops charge $2,500+.
               </p>
               <p className='text-lg text-foreground/80 leading-relaxed mb-8'>
-                The question for 2026 is: which Lectric do you actually buy? The lineup has expanded from one model (the original XP) to a full range, folding commuter, lightweight step-through, electric cargo, premium urban, and a belt-drive high-end flagship. We rode the full 2026 range and this guide breaks down who each bike is for.
+                The question for 2026 is: which Lectric do you actually buy? The lineup has expanded from one model (the original XP) to a full range, folding commuter, lightweight step-through, electric cargo, premium urban, and a belt-drive high-end flagship. We researched the full 2026 range — cross-referencing manufacturer specs, independent test outlets, and aggregated owner reports — and this guide breaks down who each bike is for.
               </p>
             </div>
 

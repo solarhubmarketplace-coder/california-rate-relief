@@ -23,22 +23,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ego-leaf-blower';
 
 export const metadata: Metadata = {
-  title:
-    'EGO Leaf Blower Review 2026: LB7654, Backpack, and Handheld Tested',
-  description:
-    'In-depth EGO leaf blower review covering the Power+ 765 CFM LB7654 backpack, 650 CFM LB6504 handheld, 580 CFM LB5804 3-speed, and 530 CFM LB5302 PowerLoad. Runtime, Turbo Boost, IPX4 rating, CARB-ban context, vs Stihl BR 600 and Ryobi 40V.',
+  title: "EGO Leaf Blower Review: 765 CFM LB7654 Beats Stihl BR 600",
+  description: "EGO leaf blower review: 765 CFM LB7654 backpack outperforms Stihl BR 600 gas at 64 dB, plus the 650 CFM LB6504 handheld and 580 CFM LB5804 3-speed compared.",
   alternates: {
     canonical: '/reviews/ego-leaf-blower-review',
   },
   openGraph: {
-    title:
-      'EGO Leaf Blower Review 2026: LB7654 Backpack Tested',
-    description:
-      'Full review of the EGO Power+ 765 CFM backpack blower and full 56V lineup. Turbo Boost, IPX4 weather rating, runtime math, California rebate context, vs Stihl gas.',
+    title: "EGO Leaf Blower Review: 765 CFM LB7654 Beats Stihl BR 600",
+    description: "765 CFM, 64 dB, beats a Stihl BR 600 on paper. Is the EGO LB7654 the new backpack blower king?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -54,15 +51,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -147,6 +144,7 @@ const faqSchema = {
 export default function EgoLeafBlowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ego-leaf-blower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -187,7 +185,7 @@ export default function EgoLeafBlowerReview() {
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
                 EGO Leaf Blower Review 2026: LB7654, Backpack, and Handheld
-                Tested
+                Compared
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />

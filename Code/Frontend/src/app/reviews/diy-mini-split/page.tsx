@@ -26,22 +26,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'mrcool-diy-4th-gen';
 
 export const metadata: Metadata = {
-  title:
-    'DIY Mini Split Guide 2026: How to Install Yourself + Best DIY Kits',
-  description:
-    'Complete DIY mini split installation guide for 2026. How pre-charged line sets work, skill level required, permits and code, step-by-step install, total time, DIY vs pro cost ($1,500-3,500 vs $4,500-8,000), and the best DIY mini split kits; MrCool 4th Gen, Klimaire, Senville LETO, and GREE Livo.',
+  title: "DIY Mini Split Install Guide: MrCool, Klimaire & Senville",
+  description: "Complete DIY mini split install guide: pre-charged QuickConnect line sets, permits, step-by-step process, plus the best kits from MrCool and Klimaire.",
   alternates: {
     canonical: '/reviews/diy-mini-split',
   },
   openGraph: {
-    title:
-      'DIY Mini Split Guide 2026: How to Install Yourself + Best DIY Kits',
-    description:
-      'Full DIY mini split install guide; pre-charged line sets, permits, steps, and the top DIY-friendly brands for 2026.',
+    title: "DIY Mini Split Install Guide: MrCool, Klimaire & Senville",
+    description: "Can you really install a mini split yourself in a weekend? The pre-charged kits that make it possible.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -59,20 +56,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/diy-mini-split',
+    '@id': 'https://greenreviewshub.com/reviews/diy-mini-split',
   },
 };
 
@@ -134,6 +131,7 @@ const faqSchema = {
 export default function DIYMiniSplitGuide() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="diy-mini-split" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -523,7 +521,7 @@ export default function DIYMiniSplitGuide() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For a first-time DIYer doing a single-zone install on a
                 standard drywall-over-stud wall with reasonable routing:
-                4-8 hours of hands-on time, typically completed over a
+                4-8 hours of hands-on installation time, typically completed over a
                 weekend with one evening to review manuals and one day to
                 do the work. Second install goes faster — experienced
                 DIYers routinely complete single-zone installs in 3-4

@@ -21,19 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Bikes (2026): Aventon vs Rad Power vs Lectric — Top E-Bikes Reviewed',
-  description:
-    'Compare the best electric bikes in 2026. In-depth reviews of Aventon Aventure 3, Rad Power RadRover 6 Plus, Lectric XP 3.0, and more. Fat tire, folding, commuter, and budget e-bikes compared with specs, pros/cons, and buying guide.',
+  title: "Best Electric Bikes: Aventon vs Rad Power vs Lectric (2026)",
+  description: "Best electric bikes compared: Aventon Aventure 3 ($1,999, 65-mile range), Rad Power RadRover 6 Plus, Lectric XP 3.0, and 3 more ranked by range and motor.",
   alternates: {
     canonical: '/reviews/best-electric-bikes',
   },
   openGraph: {
-    title: 'Best Electric Bikes 2026: 6 Tested — From $799 (Lectric) to $1,999 (Aventon)',
-    description:
-      'Aventon Aventure 3 vs Rad Power RadRover 6 Plus vs Lectric XP 3.0 vs Lectric XP Lite 2.0. Full specs, pros/cons, and green energy buying guide.',
+    title: "Best Electric Bikes: Aventon vs Rad Power vs Lectric (2026)",
+    description: "Six top e-bikes head-to-head: which delivers 65-mile range, 750W power, and the best value under $2K?",
     type: 'article',
     publishedTime: '2026-04-17T00:00:00Z',
     modifiedTime: '2026-04-26T00:00:00Z',
@@ -53,20 +51,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-bikes',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-bikes',
   },
 };
 
@@ -232,6 +230,7 @@ const bikes: EBike[] = [
 export default function BestElectricBikes() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-bikes" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -331,12 +330,12 @@ export default function BestElectricBikes() {
             {/* Trust badges strip */}
             <div className="mb-8 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
               <div className="bg-card border border-border rounded-lg p-3">
-                <div className="text-2xl font-bold text-emerald-400">50+</div>
-                <div className="text-xs text-muted-foreground">Hours of testing</div>
+                <div className="text-2xl font-bold text-emerald-400">6</div>
+                <div className="text-xs text-muted-foreground">Models researched</div>
               </div>
               <div className="bg-card border border-border rounded-lg p-3">
-                <div className="text-2xl font-bold text-emerald-400">6</div>
-                <div className="text-xs text-muted-foreground">Bikes ridden in CA</div>
+                <div className="text-2xl font-bold text-emerald-400">100s</div>
+                <div className="text-xs text-muted-foreground">Owner reports reviewed</div>
               </div>
               <div className="bg-card border border-border rounded-lg p-3">
                 <div className="text-2xl font-bold text-emerald-400">$0</div>
@@ -1662,20 +1661,20 @@ export default function BestElectricBikes() {
               <div className="bg-card border border-border rounded-xl p-6 md:p-8">
                 <div className="flex items-center gap-2 mb-4">
                   <Shield className="h-5 w-5 text-emerald-400" />
-                  <h2 className="text-xl font-bold text-foreground">How We Tested These 6 E-Bikes</h2>
+                  <h2 className="text-xl font-bold text-foreground">How We Ranked These 6 E-Bikes</h2>
                 </div>
                 <div className="grid md:grid-cols-3 gap-6 text-sm text-foreground/80">
                   <div>
-                    <div className="font-semibold text-foreground mb-1">⏱️ 50+ hours of riding</div>
-                    <p>Each bike was ridden a minimum of 8 hours across mixed terrain — paved streets, gravel paths, and one steep hill (the same 14% grade in San Diego County) for repeatable comparisons.</p>
+                    <div className="font-semibold text-foreground mb-1">⛰️ Hill-climb performance</div>
+                    <p>We compared each e-bike&apos;s motor torque, rated range, and hill-climb specs, then cross-referenced independent test channels and aggregated owner reports for real-world performance on steep grades.</p>
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground mb-1">🔋 Real-world range tests</div>
-                    <p>Range was measured in PAS 3 with a 175-lb rider on flat terrain at 65°F. Manufacturer claims were confirmed within ±10%; outliers are noted in each review.</p>
+                    <div className="font-semibold text-foreground mb-1">🔋 Real-world range</div>
+                    <p>We weighed manufacturer range claims against independent lab testing and aggregated owner reports, since real-world range typically lands 10-25% below the advertised number depending on terrain, rider weight, and pedal-assist level.</p>
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground mb-1">💵 We bought our own</div>
-                    <p>Three of these e-bikes were purchased at full retail. The other three were on long-term loan from manufacturers — but we received zero payment, and brands don&apos;t see drafts.</p>
+                    <div className="font-semibold text-foreground mb-1">📊 Independent &amp; editorial</div>
+                    <p>Our rankings draw on manufacturer specifications, independent test outlets, and aggregated owner reports. We receive zero payment from brands, and our editorial picks are made independently.</p>
                   </div>
                 </div>
               </div>

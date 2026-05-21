@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Hedge Trimmers (2026): EGO vs Milwaukee vs DeWalt vs Makita',
-  description:
-    'Compare the best electric and battery-powered hedge trimmers in 2026. In-depth reviews of EGO HT2601, Milwaukee M18 FUEL, DeWalt 20V MAX, Makita XHU08Z, BLACK+DECKER 40V, and Greenworks 40V with pros, cons, and buying guide.',
+  title: "Best Electric Hedge Trimmer 2026: EGO HT2601 vs Milwaukee",
+  description: "Best electric hedge trimmer picks: EGO HT2601 (26-in dual-blade, 60-min runtime), Milwaukee M18 FUEL, DeWalt 20V, Makita XHU08Z, BLACK+DECKER 40V, Greenworks.",
   alternates: {
     canonical: '/reviews/best-electric-hedge-trimmer',
   },
   openGraph: {
-    title: 'Best Electric Hedge Trimmers (2026)',
-    description:
-      'EGO HT2601 vs Milwaukee M18 FUEL vs DeWalt 20V MAX vs Makita XHU08Z. Full specs, pros/cons, and buyer guide for cordless hedge trimmers.',
+    title: "Best Electric Hedge Trimmer 2026: EGO HT2601 vs Milwaukee",
+    description: "Which cordless hedge trimmer cuts cleanest? We compared EGO, Milwaukee, DeWalt, and Makita on specs, lab data, and owner reports.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-hedge-trimmer',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-hedge-trimmer',
   },
 };
 
@@ -78,7 +76,7 @@ const faqSchema = {
       name: 'What is the best electric hedge trimmer in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The EGO HT2601 is our top pick for 2026. It delivers a 26-inch dual-action blade, up to 60 minutes of runtime on the 56V 5.0 Ah battery, and a 1-inch cutting capacity. It balances power, runtime, and ergonomics better than any other cordless hedge trimmer we tested.',
+        text: 'The EGO HT2601 is our top pick for 2026. It delivers a 26-inch dual-action blade, up to 60 minutes of runtime on the 56V 5.0 Ah battery, and a 1-inch cutting capacity. It balances power, runtime, and ergonomics better than any other cordless hedge trimmer in this guide.',
       },
     },
     {
@@ -223,6 +221,7 @@ const products: Product[] = [
 export default function BestElectricHedgeTrimmer() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-hedge-trimmer" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -366,7 +365,7 @@ export default function BestElectricHedgeTrimmer() {
                   { label: 'Individual Reviews', anchor: '#reviews' },
                   { label: 'Blade Length Guide', anchor: '#blade-length-guide' },
                   { label: 'Battery vs Corded', anchor: '#battery-vs-corded' },
-                  { label: 'How We Tested', anchor: '#how-we-tested' },
+                  { label: 'How We Evaluated', anchor: '#how-we-tested' },
                   { label: 'FAQ', anchor: '#faq' },
                 ].map((item) => (
                   <li key={item.anchor}>
@@ -1192,40 +1191,42 @@ export default function BestElectricHedgeTrimmer() {
               </div>
             </section>
 
-            {/* How We Tested */}
+            {/* How We Evaluated */}
             <section id="how-we-tested" className="mb-16">
               <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: '#f5f5f5' }}>
-                How We Tested
+                How We Evaluated
               </h2>
               <div
                 className="rounded-xl p-6 border"
                 style={{ backgroundColor: '#171717', borderColor: '#27272a' }}
               >
                 <p className="mb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
-                  Our evaluation process focused on the factors that matter most to real homeowners
-                  and landscaping professionals:
+                  Our rankings draw on manufacturer specifications, independent lab testing
+                  (Project Farm, Consumer Reports, and comparable outlets), and aggregated owner
+                  reports, focusing on the factors that matter most to homeowners and landscaping
+                  professionals:
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
                     {
                       title: 'Cutting Performance',
-                      desc: 'Tested on privet, boxwood, holly, and ligustrum branches at varying thicknesses from 1/4 inch to 1 inch.',
+                      desc: 'Compared blade length, dual-action design, and rated cutting capacity against owner reports for privet, boxwood, holly, and ligustrum at 1/4-inch to 1-inch thicknesses.',
                     },
                     {
-                      title: 'Runtime Accuracy',
-                      desc: 'Ran each trimmer continuously on a standardized hedge until the battery died, using the recommended battery for each model.',
+                      title: 'Runtime',
+                      desc: 'Compared battery capacity and rated runtime against independent testing and owner reports, using the recommended battery for each model.',
                     },
                     {
                       title: 'Ergonomics and Fatigue',
-                      desc: 'Evaluated weight distribution, handle comfort, vibration levels, and arm fatigue during 30-minute continuous sessions.',
+                      desc: 'Compared weight distribution, handle design, and vibration ratings, cross-referenced with owner feedback on arm fatigue during extended sessions.',
                     },
                     {
                       title: 'Cut Quality',
-                      desc: 'Inspected cut surfaces for tearing, crushing, and jagged edges that could harm plant health and invite disease.',
+                      desc: 'Reviewed reports of tearing, crushing, and jagged edges that could harm plant health and invite disease.',
                     },
                     {
                       title: 'Noise Levels',
-                      desc: 'Measured decibel output at the operator position. Battery trimmers ranged from 72 to 84 dB, far below the 95+ dB of gas models.',
+                      desc: 'Compared manufacturer and independent decibel ratings at the operator position. Battery trimmers ranged from 72 to 84 dB, far below the 95+ dB of gas models.',
                     },
                     {
                       title: 'Value and Ecosystem',

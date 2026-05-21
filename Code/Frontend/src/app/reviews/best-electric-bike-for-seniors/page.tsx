@@ -21,20 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Bikes for Seniors (2026): 6 Easy-Mount E-Bikes Reviewed',
-  description:
-    'Compare the best electric bikes for seniors and older adults in 2026. Step-through frames, comfortable rides, and safe handling. Rad Power RadCity 5 Plus, Aventon Pace 500.3, Lectric XP Lite 2.0, and more reviewed.',
+  title: "Best Electric Bikes for Seniors: 6 Step-Through Picks",
+  description: "Best electric bikes for seniors: 6 easy-mount step-through e-bikes ranked, including Rad Power RadCity 5 Plus, Aventon Pace 500.3, and Pedego Boomerang Plus.",
   alternates: {
     canonical: '/reviews/best-electric-bike-for-seniors',
   },
   openGraph: {
-    title:
-      'Best Electric Bikes for Seniors (2026): 6 Easy-Mount E-Bikes Reviewed',
-    description:
-      'Step-through e-bikes built for comfort, safety, and ease of use. Full comparison of the top 6 electric bikes for older adults in 2026.',
+    title: "Best Electric Bikes for Seniors: 6 Step-Through Picks",
+    description: "Six step-through e-bikes that make cycling easy at any age, ranked by mount height, ride comfort, and safety.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-bike-for-seniors',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-bike-for-seniors',
   },
 };
 
@@ -230,6 +227,7 @@ const ebikes: EBike[] = [
 export default function BestElectricBikeForSeniors() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-bike-for-seniors" />
       <ReviewHeader />
       <script
         type="application/ld+json"

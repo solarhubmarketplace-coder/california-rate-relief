@@ -30,7 +30,7 @@ const BIOS: Record<Domain, { headline: string; body: string; }> = {
   },
   grh: {
     headline: 'Editor — Chad Simpson',
-    body: 'Chad runs GreenReviewsHub as a research-led publication covering portable power stations, e-bikes, mini splits, smart thermostats, generators, and other green-energy gear. Most reviews aggregate manufacturer specs, owner reports, independent lab data, and warranty terms; when we have personally owned a product, we say so on the page. See the methodology page for how every review is constructed.',
+    body: 'Chad runs GreenReviewsHub as a research-driven review publication covering portable power stations, e-bikes, mini splits, smart thermostats, generators, and other green-energy gear. Every review is built from manufacturer specifications, independent lab data (Project Farm, Consumer Reports, and comparable testing outlets), aggregated owner reports across retailers and owner forums, warranty terms, and safety-certification registries — cross-checked against each other to surface where real-world performance diverges from the spec sheet. GreenReviewsHub is a research-led publication; Chad is not a licensed contractor or electrician and does not give project-specific advice. See the methodology page for the full process and data sources behind every review.',
   },
   shg: {
     headline: 'Editor — Chad Simpson',

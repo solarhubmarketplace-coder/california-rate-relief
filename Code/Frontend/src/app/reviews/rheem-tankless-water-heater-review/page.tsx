@@ -25,22 +25,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'rheem-tankless-water-heater';
 
 export const metadata: Metadata = {
-  title:
-    'Rheem Tankless Water Heater Review 2026: The Budget-Friendly Alternative?',
-  description:
-    'Detailed Rheem tankless water heater review covering Performance Platinum electric ($999), Prestige gas condensing ($1,500-$2,200), EcoSmart electric ($399-$899) lines. Warranty, Home Depot availability, and value vs Rinnai.',
+  title: "Rheem Tankless Water Heater Review: Prestige vs EcoSmart",
+  description: "Rheem tankless water heater review: Prestige gas condensing ($1,500-$2,200, 0.93 UEF), Performance Platinum electric, and EcoSmart ($399-$899).",
   alternates: {
     canonical: '/reviews/rheem-tankless-water-heater-review',
   },
   openGraph: {
-    title:
-      'Rheem Tankless Water Heater Review 2026: The Budget-Friendly Alternative?',
-    description:
-      'Rheem Performance Platinum, Prestige, and EcoSmart tankless water heaters reviewed. Is Rheem the best value in tankless, or should you pay up for Rinnai?',
+    title: "Rheem Tankless Water Heater Review: Prestige vs EcoSmart",
+    description: "Rheem vs Rinnai: where the budget-friendly Prestige and EcoSmart actually beat the premium pick.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -56,15 +53,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -149,6 +146,7 @@ const faqSchema = {
 export default function RheemTanklessReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="rheem-tankless-water-heater-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

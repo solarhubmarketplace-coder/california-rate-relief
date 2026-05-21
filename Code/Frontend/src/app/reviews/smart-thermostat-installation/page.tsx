@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ecobee-thermostat';
 
 export const metadata: Metadata = {
-  title:
-    'Smart Thermostat Installation Guide 2026: DIY in 30 Minutes or Hire a Pro?',
-  description:
-    'Step-by-step smart thermostat installation guide for 2026. Tools needed, wire identification (R, C, W, Y, G, RC, RH), C-wire workarounds, Nest Power Connector and Ecobee PEK options, millivolt/line-voltage compatibility, when to hire a pro ($75-$200), and California Title 24 part 6 compliance.',
+  title: "Smart Thermostat Installation: DIY in 30 Min (Nest, Ecobee)",
+  description: "Step-by-step smart thermostat installation guide: HVAC power off, R/C/W/Y wire labels, C-wire workarounds, and Title 24 for Nest and Ecobee.",
   alternates: {
     canonical: '/reviews/smart-thermostat-installation',
   },
   openGraph: {
-    title:
-      'Smart Thermostat Installation Guide 2026: DIY in 30 Minutes or Hire a Pro?',
-    description:
-      'Full DIY smart thermostat install guide — wiring, C-wire workarounds, and Title 24 compliance.',
+    title: "Smart Thermostat Installation: DIY in 30 Min (Nest, Ecobee)",
+    description: "No C-wire? No problem. The 30-minute smart thermostat install most homeowners can actually do today.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -57,21 +54,21 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
-      'https://ratereliefca.com/reviews/smart-thermostat-installation',
+      'https://greenreviewshub.com/reviews/smart-thermostat-installation',
   },
 };
 
@@ -133,6 +130,7 @@ const faqSchema = {
 export default function SmartThermostatInstallationPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="smart-thermostat-installation" />
       <ReviewHeader />
 
       <script

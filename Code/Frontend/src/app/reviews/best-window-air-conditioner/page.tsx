@@ -19,19 +19,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Window Air Conditioners (2026): LG vs Frigidaire vs Midea vs GE vs Haier vs TCL',
-  description:
-    'Compare the best window air conditioners in 2026. In-depth reviews of LG LW1222IVSM, Frigidaire Gallery GHWQ083WC1, Midea U-Shaped MAW08V1QWT, GE Profile PHC08LY, Haier Serenity ESAQ406TZ, and TCL 8W3E1-A. BTU sizing guide, noise ratings, and Energy Star picks.',
+  title: "Best Window Air Conditioner 2026: LG vs Frigidaire vs Midea",
+  description: "Best window air conditioner picks: LG LW1222IVSM (dual inverter, 44 dB), Frigidaire Gallery, Midea U-Shaped, GE Profile, Haier Serenity, TCL ranked by BTU/CEER.",
   alternates: {
     canonical: '/reviews/best-window-air-conditioner',
   },
   openGraph: {
-    title: 'Best Window Air Conditioners (2026)',
-    description:
-      'LG LW1222IVSM vs Frigidaire Gallery vs Midea U-Shaped vs GE Profile vs Haier Serenity vs TCL. Full specs, pros/cons, and buyer guide.',
+    title: "Best Window Air Conditioner 2026: LG vs Frigidaire vs Midea",
+    description: "LG dual inverter at 44 dB whisper-quiet. Midea U-Shaped lets your window still open. Which AC fits?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -49,20 +47,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-window-air-conditioner',
+    '@id': 'https://greenreviewshub.com/reviews/best-window-air-conditioner',
   },
 };
 
@@ -213,6 +211,7 @@ const products: Product[] = [
 export default function BestWindowAirConditioner() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-window-air-conditioner" />
       <ReviewHeader />
       <script
         type="application/ld+json"

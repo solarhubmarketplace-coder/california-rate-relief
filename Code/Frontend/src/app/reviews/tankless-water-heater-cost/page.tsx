@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'rinnai-tankless-water-heater';
 
 export const metadata: Metadata = {
-  title:
-    'Tankless Water Heater Cost 2026: Unit + Install Prices Explained',
-  description:
-    'Complete 2026 guide to tankless water heater costs: unit prices ($500-$3,000), installation costs ($1,000-$3,500), total installed costs by fuel type, rebates and tax credits, and ROI vs tank heaters. Gas, electric, and condensing models compared.',
+  title: "Tankless Water Heater Cost: Unit + Install Prices (2026)",
+  description: "Tankless water heater cost breakdown: units run $500-$3,000, install adds $1,000-$3,500. See total installed prices by gas, electric, and propane fuel type.",
   alternates: {
     canonical: '/reviews/tankless-water-heater-cost',
   },
   openGraph: {
-    title:
-      'Tankless Water Heater Cost 2026: Unit + Install Prices Explained',
-    description:
-      'Real 2026 costs: $2,500-$5,000 installed for gas tankless, $1,500-$3,500 for electric. Plus rebates, ROI vs tank, and when tankless actually makes sense.',
+    title: "Tankless Water Heater Cost: Unit + Install Prices (2026)",
+    description: "What does a tankless water heater really cost installed? Real 2026 prices by fuel type, plus rebates that cut the bill.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -57,20 +54,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/tankless-water-heater-cost',
+    '@id': 'https://greenreviewshub.com/reviews/tankless-water-heater-cost',
   },
 };
 
@@ -132,6 +129,7 @@ const faqSchema = {
 export default function TanklessWaterHeaterCost() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="tankless-water-heater-cost" />
       <ReviewHeader />
       <script
         type='application/ld+json'

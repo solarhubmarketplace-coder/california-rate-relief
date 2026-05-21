@@ -21,19 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Solar Water Heaters (2026): Duda Solar vs SunEarth vs Rheem vs Sunbank',
-  description:
-    'Compare the best solar water heaters in 2026. In-depth reviews of Duda Solar 200L, SunEarth Empire, Rheem SolPak, A.O. Smith Cirrex, Sunbank 40-gallon, and Northern Lights SWH. Active vs passive, flat plate vs evacuated tube, ROI and climate guide.',
+  title: "Best Solar Water Heater 2026: Duda Solar vs SunEarth, Rheem",
+  description: "Best solar water heater picks: Duda Solar 200L, SunEarth Empire, Rheem SolPak, A.O. Smith Cirrex, Sunbank 40-gal, and Northern Lights compared.",
   alternates: {
     canonical: '/reviews/best-solar-water-heater',
   },
   openGraph: {
-    title: 'Best Solar Water Heaters (2026)',
-    description:
-      'Duda Solar vs SunEarth vs Rheem vs A.O. Smith vs Sunbank vs Northern Lights. Full specs, pros/cons, and buyer guide.',
+    title: "Best Solar Water Heater 2026: Duda Solar vs SunEarth, Rheem",
+    description: "Cut your hot water bill 50-80% with solar. We compared 6 systems from $2,500 to $7,000 installed.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -51,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-solar-water-heater',
+    '@id': 'https://greenreviewshub.com/reviews/best-solar-water-heater',
   },
 };
 
@@ -154,6 +152,7 @@ const products: Product[] = [
 export default function BestSolarWaterHeater() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-solar-water-heater" />
       <ReviewHeader />
       <script
         type="application/ld+json"

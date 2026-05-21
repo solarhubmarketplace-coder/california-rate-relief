@@ -61,9 +61,9 @@ export function GLP1Hero({
 
           {/* Trust badge strip — 3 columns matching matchglp1 model */}
           <div className='flex flex-wrap items-center gap-x-6 gap-y-3 text-xs md:text-sm' style={{ color: '#3D5560' }}>
-            <TrustBadge icon={<ShieldCheck className='h-4 w-4' />} label='Medically Reviewed' />
+            <TrustBadge icon={<ShieldCheck className='h-4 w-4' />} label='Editorially Reviewed' />
             <TrustBadge icon={<FileText className='h-4 w-4' />} label='No Hidden Fees' />
-            <TrustBadge icon={<Calendar className='h-4 w-4' />} label='Updated Weekly' />
+            <TrustBadge icon={<Calendar className='h-4 w-4' />} label='Updated Monthly' />
           </div>
         </div>
 

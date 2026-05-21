@@ -23,22 +23,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'dewalt-chainsaw';
 
 export const metadata: Metadata = {
-  title:
-    'DeWalt 60V MAX Chainsaw Review 2026: Is DeWalt\'s Electric Chainsaw Worth It?',
-  description:
-    'In-depth DeWalt 60V MAX FLEXVOLT 20" cordless chainsaw (DCCS690) review. Cutting performance, FLEXVOLT battery, vs Stihl MS 170 gas, vs Milwaukee M18 Fuel, California CARB compliance, warranty, safety features.',
+  title: "DeWalt Chainsaw Review: 60V MAX FLEXVOLT DCCS690 vs Gas",
+  description: "DeWalt chainsaw review: the 60V MAX FLEXVOLT DCCS690 20-inch cordless tested vs Stihl MS 170 gas and Milwaukee M18 Fuel. 450 cuts per charge, CARB-compliant.",
   alternates: {
     canonical: '/reviews/dewalt-chainsaw-review',
   },
   openGraph: {
-    title:
-      'DeWalt 60V MAX Chainsaw Review 2026: DCCS690 Tested',
-    description:
-      'Full hands-on review of the DeWalt DCCS690 20" FLEXVOLT chainsaw; 450 cuts per charge claim tested, vs gas, vs Milwaukee M18 Fuel.',
+    title: "DeWalt Chainsaw Review: 60V MAX FLEXVOLT DCCS690 vs Gas",
+    description: "Can DeWalt's DCCS690 really replace your gas chainsaw? 450 cuts per charge, FLEXVOLT power, tested.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -54,15 +51,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -147,6 +144,7 @@ const faqSchema = {
 export default function DewaltChainsawReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="dewalt-chainsaw-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

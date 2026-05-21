@@ -64,7 +64,7 @@ function TermsBody({ cfg, palette }: { cfg: BrandConfig; palette: Palette }) {
 
       <section>
         <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>2. Editorial Content and Opinions</h2>
-        <p className='mb-3'>Product reviews, comparisons, and recommendations on {brand} represent our independent editorial judgment based on research, public product information, aggregated customer feedback, and where applicable, hands-on testing. Opinions expressed are the author&apos;s and do not constitute professional advice.</p>
+        <p className='mb-3'>Product reviews, comparisons, and recommendations on {brand} represent our independent editorial judgment based on research, public product information, manufacturer specifications, independent lab data, and aggregated customer feedback. Opinions expressed are the author&apos;s and do not constitute professional advice.</p>
         <p>We strive for accuracy but make no warranty that content is free from errors. If you spot a factual error, please <Link href='/contact' className='underline' style={{ color: palette.accent }}>contact us</Link> and we will correct it.</p>
       </section>
 

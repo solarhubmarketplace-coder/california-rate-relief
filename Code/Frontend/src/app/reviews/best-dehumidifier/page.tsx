@@ -18,19 +18,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Dehumidifiers (2026): Top 6 Picks for Basements, Bedrooms & Whole Homes',
-  description:
-    'Compare the best dehumidifiers in 2026. In-depth reviews of Frigidaire FFAD5033W1, hOmeLabs HME020031N, GE ADEW50LW, LG PuriCare UD501KOG5, Midea MAD50S1QWT, and Tosot 50-pint. Sizing guide, drainage options, noise levels, and Energy Star ratings.',
+  title: "Best Dehumidifiers: 6 Top Picks for Basements & Bedrooms",
+  description: "Best dehumidifiers compared: Frigidaire FFAD5033W1, hOmeLabs HME020031N, GE ADEW50LW, LG PuriCare, and Tosot 50-pint ranked by capacity and drainage.",
   alternates: {
     canonical: '/reviews/best-dehumidifier',
   },
   openGraph: {
-    title: 'Best Dehumidifiers (2026): Top 6 Reviewed',
-    description:
-      'Frigidaire vs hOmeLabs vs GE vs LG vs Midea vs Tosot. Full specs, pros/cons, sizing guide, and buyer tips.',
+    title: "Best Dehumidifiers: 6 Top Picks for Basements & Bedrooms",
+    description: "Six dehumidifiers tested: which one keeps a damp basement or bedroom dry without the noise?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -48,20 +46,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-dehumidifier',
+    '@id': 'https://greenreviewshub.com/reviews/best-dehumidifier',
   },
 };
 
@@ -219,6 +217,7 @@ const products: Product[] = [
 export default function BestDehumidifier() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-dehumidifier" />
       <ReviewHeader />
       <script
         type="application/ld+json"

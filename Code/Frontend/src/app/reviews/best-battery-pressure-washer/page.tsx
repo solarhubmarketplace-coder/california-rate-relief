@@ -23,20 +23,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Battery Powered Pressure Washers (2026): EGO vs Greenworks vs Ryobi vs DeWalt vs Sun Joe',
-  description:
-    'Compare the best battery powered pressure washers in 2026. In-depth reviews of EGO POWER+ 3200 PSI, Greenworks 60V, Ryobi 40V, DeWalt 20V MAX, and Sun Joe 24V. Cordless pressure washer buying guide with specs, pros/cons, and use-case recommendations.',
+  title: "Best Battery Pressure Washers: EGO 3200 PSI vs Rivals",
+  description: "Best electric pressure washers compared: EGO POWER+ 3200 PSI, Greenworks 60V 2100 PSI, Ryobi 40V, DeWalt 20V MAX, and Sun Joe 24V tested head-to-head.",
   alternates: {
     canonical: '/reviews/best-battery-pressure-washer',
   },
   openGraph: {
-    title:
-      'Best Battery Powered Pressure Washers (2026)',
-    description:
-      'EGO POWER+ 3200 PSI vs Greenworks 60V vs Ryobi 40V vs DeWalt 20V MAX vs Sun Joe 24V. Full specs, pros/cons, and buyer guide.',
+    title: "Best Battery Pressure Washers: EGO 3200 PSI vs Rivals",
+    description: "Can a cordless pressure washer hit 3,200 PSI? We compared the top 5 on specs, lab data, and owner reports.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -54,20 +51,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-battery-pressure-washer',
+    '@id': 'https://greenreviewshub.com/reviews/best-battery-pressure-washer',
   },
 };
 
@@ -219,6 +216,7 @@ const products: Product[] = [
 export default function BestBatteryPressureWashers() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-battery-pressure-washer" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -279,7 +277,7 @@ export default function BestBatteryPressureWashers() {
                 cord-tangling hassle of plug-in electrics. Just pop in a battery and start spraying.
               </p>
               <p className="text-lg leading-relaxed mb-8" style={{ color: '#a1a1aa' }}>
-                We tested and compared the top five cordless pressure washers on the market today,
+                We researched and compared the top five cordless pressure washers on the market today,
                 evaluating them across power output, runtime, build quality, portability, and overall
                 value. Whether you need a beast that can strip grime off concrete or a compact unit
                 for quick car washes, this guide has you covered.

@@ -25,20 +25,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'nest-thermostat';
 
 export const metadata: Metadata = {
-  title: 'Nest Thermostat Review 2026: Still the Best Smart Thermostat?',
-  description:
-    'In-depth Google Nest Learning Thermostat (4th Gen) review: AI-driven schedule learning, 10-15% HVAC savings, Matter support, Rush Hour Rewards eligibility in California, and honest pros/cons. Is the $279 price still worth it?',
+  title: "Nest Thermostat Review: Still the Best Smart Thermostat",
+  description: "Google Nest Learning Thermostat (4th Gen) review: AI schedule learning, 10-15% HVAC savings, Matter support, Rush Hour Rewards eligibility.",
   alternates: {
     canonical: '/reviews/nest-thermostat-review',
   },
   openGraph: {
-    title: 'Nest Thermostat Review 2026: Still the Best Smart Thermostat?',
-    description:
-      'Google Nest Learning Thermostat 4th Gen review — schedule learning, energy savings, California Rush Hour Rewards, Matter support. Full pros, cons, verdict.',
+    title: "Nest Thermostat Review: Still the Best Smart Thermostat",
+    description: "Is the Nest still worth it? AI scheduling, real HVAC savings, Matter support — honest review.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -54,15 +53,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -147,6 +146,7 @@ const faqSchema = {
 export default function NestThermostatReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="nest-thermostat-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

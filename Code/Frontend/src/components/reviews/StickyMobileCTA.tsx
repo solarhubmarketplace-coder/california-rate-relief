@@ -28,9 +28,15 @@ export function StickyMobileCTA({
   useEffect(() => {
     const handleScroll = () => {
       if (dismissed) return;
-      // Show after user scrolls past ~600px (roughly past the top CTA box)
-      setVisible(window.scrollY > 600);
+      // Show once the user is past ~600px (roughly past the top CTA box) and
+      // keep it shown — never re-hide on scroll-up. Only an explicit dismiss
+      // hides it. `setVisible(prev => prev || ...)` is the latch.
+      setVisible((prev) => prev || window.scrollY > 600);
     };
+    // Initial check on mount — covers back-button / deep-link arrivals where
+    // the user is already scrolled past the threshold (the prior bug: the bar
+    // never appeared until a fresh scroll event fired).
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [dismissed]);

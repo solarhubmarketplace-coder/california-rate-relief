@@ -27,20 +27,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'EcoFlow Delta 2 Review (2026): Best Mid-Range Portable Power Station?',
-  description:
-    'In-depth EcoFlow Delta 2 review covering specs, LFP battery, X-Boost, solar charging, app features, and honest pros/cons. 1,024 Wh, 1,800W output, 27 lbs. Plus Delta 2 vs Delta 2 Max comparison.',
+  title: "EcoFlow Delta 2 Review: 1,024 Wh LFP, X-Boost, 27 lbs",
+  description: "EcoFlow Delta 2 review: 1,024 Wh LFP, 1,800W output (X-Boost 2,400W), solar charging, app features, and honest pros/cons of this 27-lb power station.",
   alternates: {
     canonical: '/reviews/ecoflow-delta-2-review',
   },
   openGraph: {
-    title:
-      'EcoFlow Delta 2 Review (2026): Best Mid-Range Portable Power Station?',
-    description:
-      'Detailed review of the EcoFlow Delta 2. 1,024 Wh LFP battery, 1,800W output with X-Boost to 2,200W, 27 lbs. Is it worth $849?',
+    title: "EcoFlow Delta 2 Review: 1,024 Wh LFP, X-Boost, 27 lbs",
+    description: "EcoFlow Delta 2 — 1,024 Wh LFP at 27 lbs, X-Boost mode, and solar input tested.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -59,15 +56,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -96,7 +93,7 @@ const reviewSchema = {
     'The EcoFlow Delta 2 delivers 1,024 Wh of LFP battery capacity with 1,800W continuous output, X-Boost to 2,200W, and fast AC charging (0-80% in 50 minutes). At 27 lbs and $849, it hits a sweet spot between portability and power that larger units cannot match. Expandable to 3,072 Wh with an extra battery.',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/ecoflow-delta-2-review',
+    '@id': 'https://greenreviewshub.com/reviews/ecoflow-delta-2-review',
   },
 };
 
@@ -168,6 +165,7 @@ const PRODUCT_KEY = 'ecoflow-delta-2';
 export default function EcoFlowDelta2Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ecoflow-delta-2-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -376,9 +374,10 @@ export default function EcoFlowDelta2Review() {
               <p className='text-foreground/80 leading-relaxed'>
                 At $849 (regularly $1,099, and frequently discounted), it
                 competes directly with the Jackery Explorer 1000 Plus and
-                Bluetti AC70. We tested it across camping trips, home office
-                backup scenarios, and kitchen appliance stress tests to see
-                if it lives up to the hype.
+                Bluetti AC70. We evaluated it for camping, home office
+                backup, and kitchen appliance loads — drawing on manufacturer
+                specs, independent testing, and aggregated owner reports — to
+                see if it lives up to the hype.
               </p>
             </div>
 

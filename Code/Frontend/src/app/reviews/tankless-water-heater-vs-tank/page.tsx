@@ -25,22 +25,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'rinnai-tankless-water-heater';
 
 export const metadata: Metadata = {
-  title:
-    'Tankless vs Tank Water Heater 2026: Cost, Efficiency, and Lifespan Compared',
-  description:
-    'Head-to-head comparison of tankless vs tank water heaters in 2026. Upfront cost ($2,500-$5,000 tankless vs $800-$1,800 tank), 24-34% efficiency gain, 20+ year lifespan, California Title 24 impact, and which one is actually right for your home.',
+  title: "Tankless Water Heater vs Tank: Cost, Efficiency, Lifespan",
+  description: "Tankless water heater vs tank: tankless costs 2-3x upfront but uses 24-34% less energy and lasts 20+ years. Full 20-year cost, GPM, and Title 24 breakdown.",
   alternates: {
     canonical: '/reviews/tankless-water-heater-vs-tank',
   },
   openGraph: {
-    title:
-      'Tankless vs Tank Water Heater 2026: Cost, Efficiency, and Lifespan Compared',
-    description:
-      'Which is actually worth it? Detailed breakdown of upfront cost, operating cost, lifespan, space, and California rebates.',
+    title: "Tankless Water Heater vs Tank: Cost, Efficiency, Lifespan",
+    description: "Tankless costs more upfront but lasts 2x longer. Which water heater actually wins on a 20-year math?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -58,21 +55,21 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
-      'https://ratereliefca.com/reviews/tankless-water-heater-vs-tank',
+      'https://greenreviewshub.com/reviews/tankless-water-heater-vs-tank',
   },
 };
 
@@ -134,6 +131,7 @@ const faqSchema = {
 export default function TanklessVsTankGuide() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="tankless-water-heater-vs-tank" />
       <ReviewHeader />
       <script
         type='application/ld+json'

@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ryobi-chainsaw';
 
 export const metadata: Metadata = {
-  title:
-    'Ryobi Chainsaw Review 2026: 40V HP Brushless and 18-40V Cordless Options',
-  description:
-    'In-depth Ryobi chainsaw review covering the 40V HP Brushless 18-inch RY405010 ($279), 14-inch RY40580 ($229), and 18V One+ 10-inch P2500B. Oregon bars, runtime, vs EGO and DeWalt, Home Depot exclusive, California AQMD rebates. 4.4/5.',
+  title: 'Ryobi Chainsaw Review: 40V HP Brushless 18" vs 14" vs 18V',
+  description: 'Ryobi chainsaw review: 40V HP Brushless 18" RY405010 ($279), 14" RY40580 ($229), and 18V One+ P2500B compared on cuts per charge, bar quality, and warranty.',
   alternates: {
     canonical: '/reviews/ryobi-chainsaw-review',
   },
   openGraph: {
-    title:
-      'Ryobi Chainsaw Review 2026: 40V HP Brushless and 18-40V Cordless Options',
-    description:
-      'Complete review of Ryobi cordless chainsaws — 40V HP Brushless 18-inch flagship, 14-inch entry, and 18V One+ compact. Home Depot exclusive. Honest comparison to EGO, DeWalt, Milwaukee.',
+    title: 'Ryobi Chainsaw Review: 40V HP Brushless 18" vs 14" vs 18V',
+    description: "Three Ryobi chainsaws tested: which one cuts more on a charge, and which is overkill for your yard?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -55,15 +52,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -148,6 +145,7 @@ const faqSchema = {
 export default function RyobiChainsawReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ryobi-chainsaw-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -511,8 +509,8 @@ export default function RyobiChainsawReview() {
                 Runtime Math (100+ Cuts on 4Ah)
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Here&apos;s what we measured across the Ryobi lineup with
-                Ryobi HP batteries:
+                Here&apos;s what manufacturer specs, independent testing, and owner
+                reports indicate across the Ryobi lineup with Ryobi HP batteries:
               </p>
               <div className='overflow-x-auto mb-6'>
                 <table className='w-full text-sm border border-border rounded-lg overflow-hidden'>

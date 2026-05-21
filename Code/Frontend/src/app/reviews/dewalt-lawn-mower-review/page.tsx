@@ -26,20 +26,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'DeWalt 20V MAX Brushless Lawn Mower Review (DCMWP233U2): Is 20V Enough in 2026?',
-  description:
-    'In-depth DeWalt 20V MAX brushless lawn mower review (DCMWP233U2) covering dual 20V battery system, 21.5-inch deck, self-propelled performance, runtime vs EGO and Greenworks, and the 300+ tool 20V MAX platform. 4.3/5 rating.',
+  title: "DeWalt Lawn Mower Review: 20V MAX Brushless DCMWP233U2",
+  description: 'DeWalt lawn mower review: the DCMWP233U2 runs dual 20V batteries (40V total), 21.5" deck, self-propelled, 35-45 min runtime. Compared vs EGO and Ryobi at $599.',
   alternates: {
     canonical: '/reviews/dewalt-lawn-mower-review',
   },
   openGraph: {
-    title:
-      'DeWalt 20V MAX Brushless Lawn Mower Review (DCMWP233U2): Is 20V Enough in 2026?',
-    description:
-      'Detailed review of the DeWalt 20V MAX Brushless Self-Propelled Mower — 21.5-inch steel deck, dual 20V 10Ah batteries (40V combined), rear wheel drive, 3-in-1 mulch/bag/side discharge. Is it worth $599?',
+    title: "DeWalt Lawn Mower Review: 20V MAX Brushless DCMWP233U2",
+    description: 'Dual 20V batteries, 21.5" deck, $599. Is the DeWalt DCMWP233U2 enough mower for your yard?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -57,20 +54,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/dewalt-lawn-mower-review',
+    '@id': 'https://greenreviewshub.com/reviews/dewalt-lawn-mower-review',
   },
 };
 
@@ -84,15 +81,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -187,6 +184,7 @@ const PRODUCT_KEY = 'dewalt-lawn-mower';
 export default function DewaltLawnMowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="dewalt-lawn-mower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

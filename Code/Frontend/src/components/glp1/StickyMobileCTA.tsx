@@ -1,95 +1,114 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { ExternalLink, X } from 'lucide-react';
+
+// =============================================================================
+// StickyMobileCTA (GLP-1 variant)
+// =============================================================================
+// Sticky bottom bar on mobile only (md+ hidden). Appears once the user has
+// scrolled past ~600px (roughly past the hero / first CTA) and stays visible
+// until explicitly dismissed — never re-hides on scroll-up.
+//
+// Fires `telehealth_affiliate_click` to GA4 dataLayer + window.gtag + PostHog
+// (if any are loaded) — same event-name convention as GLP1ComparisonTable so
+// click data aggregates cleanly across surfaces.
+//
+// Brand palette matches the GLP-1 design system (warm beige + deep navy CTA).
+// =============================================================================
 
 interface StickyMobileCTAProps {
-  /** The affiliate URL to send clicks to */
+  /** Affiliate destination — must already be built via buildGlp1AffiliateUrl() */
   href: string;
-  /** Brand name for the button label */
+  /** Display name of the brand (e.g. "TMates") */
   brandName: string;
-  /** Optional: short pitch/price line shown above the button */
+  /** Optional price pitch line (e.g. "Compounded tirzepatide from $167/mo") */
   pricePitch?: string;
-  /** Hide on desktop? (default true — sticky bottom is mobile UX) */
-  mobileOnly?: boolean;
 }
 
-/**
- * Sticky-bottom mobile affiliate CTA.
- *
- * Per 2026 CRO research (Gronk-verified): above-the-fold CTA + duplicated
- * in-content CTAs lift conversions 20-40%. On mobile, the persistent
- * bottom-bar pattern is the best-converting placement because:
- *   - It's always visible without scroll-jumping
- *   - It doesn't take the user's primary content space
- *   - Tap target stays in thumb zone
- *
- * Implementation notes:
- *   - Slides up only after the user scrolls past the in-content hero CTA
- *     (no double-CTA stacking when both are visible)
- *   - Dismissible — respects user choice (stored per-session, not persisted
- *     to avoid hostility)
- *   - rel="sponsored nofollow noopener" on the affiliate link
- *   - 48px+ tap target
- *   - No layout shift (CLS-safe — reserved space via fixed positioning)
- */
-export function StickyMobileCTA({
-  href,
-  brandName,
-  pricePitch,
-  mobileOnly = true,
-}: StickyMobileCTAProps) {
+export function StickyMobileCTA({ href, brandName, pricePitch }: StickyMobileCTAProps) {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    // Reveal after the user scrolls past ~600px (past the hero CTA)
     const handleScroll = () => {
-      if (window.scrollY > 600 && !dismissed) {
-        setVisible(true);
-      } else if (window.scrollY <= 600) {
-        setVisible(false);
-      }
+      if (dismissed) return;
+      // Latched: once shown, stays shown until dismissed. Never re-hides on scroll-up.
+      setVisible((prev) => prev || window.scrollY > 600);
     };
-
+    // Initial check — covers deep-link / back-button arrivals already scrolled past 600.
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [dismissed]);
 
-  if (dismissed || !visible) return null;
+  if (!visible || dismissed) return null;
+
+  const handleClick = () => {
+    if (typeof window === 'undefined') return;
+    const w = window as unknown as {
+      dataLayer?: Array<Record<string, unknown>>;
+      posthog?: { capture?: (event: string, props: Record<string, unknown>) => void };
+      gtag?: (...args: unknown[]) => void;
+    };
+    const payload = {
+      affiliate_source: 'sticky-mobile-cta',
+      brand: brandName,
+    };
+    if (Array.isArray(w.dataLayer)) {
+      w.dataLayer.push({ event: 'telehealth_affiliate_click', ...payload });
+    }
+    if (typeof w.gtag === 'function') {
+      w.gtag('event', 'telehealth_affiliate_click', payload);
+    }
+    if (w.posthog?.capture) {
+      w.posthog.capture('telehealth_affiliate_click', payload);
+    }
+  };
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-40 ${mobileOnly ? 'md:hidden' : ''} animate-slide-up`}
-      style={{
-        backgroundColor: 'rgba(14, 42, 58, 0.97)',
-        backdropFilter: 'blur(8px)',
-        boxShadow: '0 -4px 16px rgba(0,0,0,0.15)',
-      }}
+      className='md:hidden fixed bottom-0 left-0 right-0 z-40 border-t-2 shadow-2xl'
+      style={{ backgroundColor: '#FDF6E3', borderColor: '#C9A146' }}
+      role='complementary'
+      aria-label={`Sticky CTA: visit ${brandName}`}
     >
-      <div className="flex items-center gap-2 px-4 py-3 max-w-md mx-auto">
-        {pricePitch && (
-          <div className="flex-1 text-xs leading-tight" style={{ color: '#F0EBE0' }}>
-            {pricePitch}
-          </div>
-        )}
-        <a
+      <div className='flex items-center gap-3 p-3'>
+        <div className='flex-1 min-w-0'>
+          <p
+            className='text-xs truncate'
+            style={{ color: '#6B7B82' }}
+          >
+            {brandName}
+          </p>
+          {pricePitch && (
+            <p
+              className='text-sm font-bold truncate'
+              style={{ color: '#0E2A3A' }}
+            >
+              {pricePitch}
+            </p>
+          )}
+        </div>
+        <Link
           href={href}
-          target="_blank"
-          rel="sponsored nofollow noopener noreferrer"
-          className="inline-flex items-center justify-center gap-1.5 rounded-full px-5 py-3 text-sm font-bold whitespace-nowrap"
-          style={{ backgroundColor: '#D4A33A', color: '#0E2A3A', minHeight: '48px' }}
+          target='_blank'
+          rel='sponsored nofollow noopener noreferrer'
+          onClick={handleClick}
+          className='inline-flex items-center font-semibold rounded-lg px-3 py-2 text-sm whitespace-nowrap'
+          style={{ backgroundColor: '#0E2A3A', color: '#F0EBE0', minHeight: '44px' }}
+          data-affiliate-source='sticky-mobile-cta'
+          data-brand={brandName}
         >
-          Visit {brandName}
-          <ExternalLink className="h-4 w-4" />
-        </a>
+          Visit {brandName} →
+        </Link>
         <button
           onClick={() => setDismissed(true)}
-          aria-label="Dismiss"
-          className="p-2 rounded-full hover:bg-white/10"
-          style={{ color: '#F0EBE0', minHeight: '48px', minWidth: '48px' }}
+          aria-label='Dismiss sticky CTA'
+          className='px-2 py-2 text-lg leading-none rounded'
+          style={{ color: '#6B7B82', minWidth: '44px', minHeight: '44px' }}
         >
-          <X className="h-4 w-4" />
+          ×
         </button>
       </div>
     </div>

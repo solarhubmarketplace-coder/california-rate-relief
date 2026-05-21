@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Robot Lawn Mowers (2026): Husqvarna vs Worx vs EcoVacs vs Mammotion vs Robomow vs Gardena',
-  description:
-    'Compare the best robot lawn mowers of 2026. In-depth reviews of Husqvarna Automower 450X, Worx Landroid M, EcoVacs GOAT G1, Mammotion LUBA 2, Robomow RS630, and Gardena SILENO City. Boundary wire vs RTK vs vision navigation compared.',
+  title: "Best Robot Lawn Mower 2026: Husqvarna vs Worx vs Mammotion",
+  description: "Best robot lawn mower picks for 2026: Husqvarna Automower 450X, Worx Landroid M, Mammotion LUBA 2, EcoVacs GOAT G1, and Robomow RS630 ranked.",
   alternates: {
     canonical: '/reviews/best-robot-lawn-mower',
   },
   openGraph: {
-    title: 'Best Robot Lawn Mowers (2026)',
-    description:
-      'Husqvarna 450X vs Worx Landroid M vs EcoVacs GOAT G1 vs Mammotion LUBA 2. Full specs, pros/cons, and yard size guide.',
+    title: "Best Robot Lawn Mower 2026: Husqvarna vs Worx vs Mammotion",
+    description: "No more boundary wires. A research-driven guide to the best wire-free RTK robot mowers for 2026.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-robot-lawn-mower',
+    '@id': 'https://greenreviewshub.com/reviews/best-robot-lawn-mower',
   },
 };
 
@@ -223,6 +221,7 @@ const products: Product[] = [
 export default function BestRobotLawnMower() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-robot-lawn-mower" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -286,7 +285,7 @@ export default function BestRobotLawnMower() {
                 Robot lawn mowers have gone from novelty to necessity. The latest models navigate complex yards autonomously, handle steep slopes, and keep your lawn looking professionally maintained without lifting a finger. But with prices ranging from $650 to $3,500 and three fundamentally different navigation technologies on the market, choosing the right one takes real research.
               </p>
               <p className="text-lg leading-relaxed mb-8" style={{ color: '#a1a1aa' }}>
-                We tested and compared six of the best robot lawn mowers available in 2026 across every metric that matters: yard coverage, slope handling, noise level, navigation accuracy, app experience, and long-term value. Whether you have a small city lot or a full acre, this guide will match you with the right mower.
+                We researched and compared six of the best robot lawn mowers available in 2026 across every metric that matters: yard coverage, slope handling, noise level, navigation accuracy, app experience, and long-term value. Whether you have a small city lot or a full acre, this guide will match you with the right mower.
               </p>
             </div>
 
@@ -873,7 +872,7 @@ export default function BestRobotLawnMower() {
                 </div>
 
                 <p className="mb-6" style={{ color: '#d4d4d8' }}>
-                  EcoVacs brought its robot vacuum expertise outdoors with the GOAT G1, and the result is the most advanced wire-free mowing experience available. TrueMapping technology combines dual cameras with Time-of-Flight sensors to create a detailed 3D map of your yard. No wire, no reference station, no GPS dependency. It excels at obstacle avoidance, detecting objects as small as a tennis ball. With 180 minutes of runtime, a polished app for zone management and scheduling, and whisper-quiet 55 dB operation, it is the most user-friendly mower we tested.
+                  EcoVacs brought its robot vacuum expertise outdoors with the GOAT G1, and the result is the most advanced wire-free mowing experience available. TrueMapping technology combines dual cameras with Time-of-Flight sensors to create a detailed 3D map of your yard. No wire, no reference station, no GPS dependency. It excels at obstacle avoidance, detecting objects as small as a tennis ball. With 180 minutes of runtime, a polished app for zone management and scheduling, and whisper-quiet 55 dB operation, it ranks as the most user-friendly mower in this guide.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -1397,11 +1396,11 @@ export default function BestRobotLawnMower() {
                 <div className="flex items-center gap-2 mb-3">
                   <Shield className="h-5 w-5" style={{ color: '#a1a1aa' }} />
                   <h3 className="font-semibold" style={{ color: '#f5f5f5' }}>
-                    How We Test and Review
+                    How We Evaluate and Rank
                   </h3>
                 </div>
                 <p className="text-sm" style={{ color: '#a1a1aa' }}>
-                  GreenReviewsHub reviews are based on hands-on testing, manufacturer specifications, verified owner feedback, and long-term reliability data. We evaluate robot mowers on navigation accuracy, cutting quality, slope handling, noise level, app experience, and total cost of ownership. Our recommendations are independent. If you purchase through our links, we may earn a commission at no extra cost to you.
+                  GreenReviewsHub reviews are based on manufacturer specifications, independent lab testing (Project Farm, Consumer Reports, and comparable outlets), aggregated owner reports, and long-term reliability data. We evaluate robot mowers on navigation accuracy, cutting quality, slope handling, noise level, app experience, and total cost of ownership. Our recommendations are independent. If you purchase through our links, we may earn a commission at no extra cost to you.
                 </p>
               </div>
             </section>

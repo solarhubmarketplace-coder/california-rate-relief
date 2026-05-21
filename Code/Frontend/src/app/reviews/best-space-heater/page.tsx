@@ -21,19 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Space Heaters (2026): Most Energy-Efficient Electric Heaters Reviewed',
-  description:
-    'Compare the best space heaters for 2026. In-depth reviews of Dyson Hot+Cool HP07, De\'Longhi TRD40615T, Lasko FH500, Vornado VH200, Dr Infrared DR-968, and Dreo Solaris 317. Energy costs, safety features, and room size guide included.',
+  title: "Best Space Heater 2026: Energy-Efficient Picks Compared",
+  description: "The best space heater for 2026, ranked: Dyson Hot+Cool HP07, De'Longhi TRD40615T, Lasko FH500, Vornado VH200, and Dr Infrared DR-968.",
   alternates: {
     canonical: '/reviews/best-space-heater',
   },
   openGraph: {
-    title: 'Best Space Heaters (2026): Most Energy-Efficient Electric Heaters',
-    description:
-      'Dyson HP07 vs De\'Longhi vs Lasko vs Vornado vs Dr Infrared vs Dreo. Full specs, energy costs, pros/cons, and buying guide.',
+    title: "Best Space Heater 2026: Energy-Efficient Picks Compared",
+    description: "The space heater that costs $0.18/hr to run vs the one that costs $0.45 — full energy breakdown.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -51,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-space-heater',
+    '@id': 'https://greenreviewshub.com/reviews/best-space-heater',
   },
 };
 
@@ -222,6 +220,7 @@ const products: Product[] = [
 export default function BestSpaceHeater() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-space-heater" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -1035,7 +1034,7 @@ export default function BestSpaceHeater() {
                 <p className="text-sm mb-1" style={{ color: '#a1a1aa' }}>Best for</p>
                 <p className="font-medium" style={{ color: '#f5f5f5' }}>
                   Bedrooms, nurseries, and desks where quiet operation and safety are the top
-                  priorities. The best sub-$50 heater we tested.
+                  priorities. The best sub-$50 heater in this guide.
                 </p>
               </div>
 

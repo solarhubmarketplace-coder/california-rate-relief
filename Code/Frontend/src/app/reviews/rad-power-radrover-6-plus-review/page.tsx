@@ -24,20 +24,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Rad Power RadRover 6 Plus Review (2026): Best Fat Tire E-Bike for the Money?',
-  description:
-    'Honest Rad Power RadRover 6 Plus review covering motor performance, battery range, build quality, ride comfort, and who it is best for. 750W motor, 672Wh battery, 25-45 mile range, $1,999.',
+  title: "Rad Power RadRover 6 Plus Review: 750W Fat Tire at $1,999",
+  description: "Rad Power RadRover 6 Plus review: 750W geared hub motor, 672Wh battery, 25-45 mile range, hydraulic disc brakes, fat tires, and integrated rack at $1,999.",
   alternates: {
     canonical: '/reviews/rad-power-radrover-6-plus-review',
   },
   openGraph: {
-    title:
-      'Rad Power RadRover 6 Plus Review (2026): Best Fat Tire E-Bike for the Money?',
-    description:
-      'In-depth review of the Rad Power RadRover 6 Plus, 750W hub motor, 672Wh battery, fat tires, $1,999. Is it still the best value e-bike in 2026?',
+    title: "Rad Power RadRover 6 Plus Review: 750W Fat Tire at $1,999",
+    description: "750W motor, 45-mile range, fat tires, hydraulic brakes, $1,999. Is the RadRover 6 Plus still the value king?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -53,15 +50,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -156,6 +153,7 @@ const PRODUCT_KEY = 'rad-power-radrover-6-plus';
 export default function RadPowerRadRover6PlusReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="rad-power-radrover-6-plus-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

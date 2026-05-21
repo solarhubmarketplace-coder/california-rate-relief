@@ -1,45 +1,61 @@
 import Link from 'next/link';
-import { AlertTriangle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
-/**
- * Medical / FDA disclaimer banner.
- *
- * Surfaced ABOVE the first medical claim on every page that discusses
- * GLP-1 medications, compounded telehealth, or specific provider efficacy.
- *
- * Why this exists:
- * - FDA issued 30+ warning letters to GLP-1 telehealth companies in March 2026
- *   for misleading compounded-drug claims and unsubstantiated efficacy.
- * - FTC final order against NextMed (Dec 2025) sets the regulatory floor.
- * - Affiliate sites covering YMYL health content carry the same exposure.
- *
- * This banner is the first line of compliance defense.
- */
+// =============================================================================
+// MedicalDisclaimerBanner — YMYL / FDA first-line-of-defense banner
+// =============================================================================
+// Renders directly under the GLP1Header on every YMYL page (provider profiles,
+// best-of pages, vs-pages, compounded-* pillar pages). The compliance posture
+// of the site rests on this banner being above the fold AND on every monetized
+// page where a user could click an affiliate CTA.
+//
+// Wording is deliberately specific:
+//   - distinguishes compounded (NOT FDA-approved) from branded (Wegovy/Zepbound/
+//     Mounjaro/Ozempic — FDA-approved for specific indications)
+//   - names 503A vs 503B at point of disclosure so users see the regulatory
+//     framework alongside the recommendation
+//   - educational-only / consult-a-prescriber framing satisfies FTC 16 CFR 255
+//     and FDA marketing rules for compounded GLP-1
+//
+// Do NOT soften this language without an attorney review.
+// =============================================================================
+
 export function MedicalDisclaimerBanner() {
   return (
-    <div className="border-b border-yellow-200 bg-yellow-50">
-      <div className="mx-auto max-w-7xl px-4 md:px-6 py-3">
-        <div className="flex items-start gap-3 text-xs md:text-sm" style={{ color: '#7A4F00' }}>
-          <AlertTriangle className="h-5 w-5 shrink-0 mt-0.5" style={{ color: '#B8860B' }} />
-          <div className="leading-relaxed">
-            <strong>Educational content — not medical advice.</strong>{' '}
-            Information on this page is for educational purposes only and is not a substitute for advice from a licensed physician. GLP-1 medications carry meaningful risks; speak with your doctor before starting any treatment.{' '}
-            Compounded GLP-1 medications are <strong>not FDA-approved</strong> and clinical evidence is less robust than for FDA-approved branded products (Wegovy, Zepbound, Ozempic, Mounjaro).{' '}
-            <Link href="/medical-disclaimer" className="underline font-semibold">
-              Read our full medical disclaimer
-            </Link>
-            {' · '}
-            <a
-              href="https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/medications-containing-semaglutide-marketed-type-2-diabetes-or-weight-loss"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline font-semibold"
-            >
-              FDA on compounded GLP-1
-            </a>
-            .
-          </div>
-        </div>
+    <div
+      className='border-y-2'
+      style={{ backgroundColor: '#FDF6E3', borderColor: '#C9A146' }}
+      role='note'
+      aria-label='Medical disclaimer'
+    >
+      <div className='max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-start gap-3'>
+        <AlertCircle
+          className='h-5 w-5 mt-0.5 flex-shrink-0'
+          style={{ color: '#7A5A1A' }}
+          aria-hidden='true'
+        />
+        <p
+          className='text-xs md:text-sm leading-relaxed'
+          style={{ color: '#3D2E0F' }}
+        >
+          <strong className='font-semibold'>Medical Disclaimer:</strong>{' '}
+          Compounded GLP-1 medications (semaglutide, tirzepatide) are{' '}
+          <strong>not FDA-approved</strong>; they are produced by state-licensed
+          503A or 503B compounding pharmacies under patient-specific
+          prescriptions. Branded products (Wegovy, Zepbound, Mounjaro, Ozempic)
+          are FDA-approved for specific indications. Content on GLP1CompareHub
+          is educational and is not medical advice — consult a licensed
+          prescriber before starting, stopping, or modifying any GLP-1
+          medication.{' '}
+          <Link
+            href='/disclaimer'
+            className='underline font-semibold'
+            style={{ color: '#5A4308' }}
+          >
+            Full medical disclaimer
+          </Link>
+          .
+        </p>
       </div>
     </div>
   );

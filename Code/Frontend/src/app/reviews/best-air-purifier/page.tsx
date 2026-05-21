@@ -19,19 +19,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Air Purifiers (2026): Energy-Efficient HEPA Models Reviewed — Coway vs Blueair vs Levoit vs Dyson',
-  description:
-    'Compare the best air purifiers of 2026. In-depth reviews of Coway Airmega AP-1512HH, Blueair Blue Pure 211+, Levoit Core 400S, Winix 5500-2, Dyson Purifier Cool TP07, and Honeywell HPA300. CADR ratings, noise levels, energy costs, and smart features compared.',
+  title: "Best Air Purifier 2026: Coway, Levoit, Blueair & Dyson HEPA",
+  description: "The best air purifier for 2026: Coway Airmega AP-1512HH, Blueair Blue Pure 211+, Levoit Core 400S, Winix 5500-2, and Dyson Purifier Cool TP07.",
   alternates: {
     canonical: '/reviews/best-air-purifier',
   },
   openGraph: {
-    title: 'Best Air Purifiers (2026): Energy-Efficient HEPA Models Reviewed',
-    description:
-      'Coway AP-1512HH vs Blueair 211+ vs Levoit Core 400S vs Winix 5500-2 vs Dyson TP07 vs Honeywell HPA300. Full specs, pros/cons, and buying guide.',
+    title: "Best Air Purifier 2026: Coway, Levoit, Blueair & Dyson HEPA",
+    description: "True HEPA on a $5/year electric bill? The Coway Airmega beats the Dyson on cost-per-CFM, easily.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -49,20 +47,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-air-purifier',
+    '@id': 'https://greenreviewshub.com/reviews/best-air-purifier',
   },
 };
 
@@ -227,6 +225,7 @@ const products: Product[] = [
 export default function BestAirPurifier() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-air-purifier" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -273,7 +272,7 @@ export default function BestAirPurifier() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop' alt='Air purifier in modern home' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/air-purifiers/hero-best-air-purifier.jpg' alt='Coway air purifier in a sunlit living room' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />
@@ -432,6 +431,10 @@ export default function BestAirPurifier() {
                 </h2>
               </div>
 
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/air-purifiers/coway-airmega-ap-1512hh.jpg" alt="Coway Airmega AP-1512HH HEPA air purifier" className="w-full h-full object-contain p-4" loading="lazy" />
+              </div>
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 <div className="rounded-lg p-4 text-center" style={{ backgroundColor: '#171717' }}>
                   <p className="text-xs uppercase tracking-wide" style={{ color: '#a1a1aa' }}>Price</p>
@@ -529,6 +532,10 @@ export default function BestAirPurifier() {
                 </h2>
               </div>
 
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/air-purifiers/blueair-blue-pure-211-plus.jpg" alt="Blueair Blue Pure 211+ large-room HEPA air purifier" className="w-full h-full object-contain p-4" loading="lazy" />
+              </div>
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 <div className="rounded-lg p-4 text-center" style={{ backgroundColor: '#171717' }}>
                   <p className="text-xs uppercase tracking-wide" style={{ color: '#a1a1aa' }}>Price</p>
@@ -624,6 +631,10 @@ export default function BestAirPurifier() {
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
                   3. Levoit Core 400S
                 </h2>
+              </div>
+
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/air-purifiers/levoit-core-400s.jpg" alt="Levoit Core 400S smart HEPA air purifier" className="w-full h-full object-contain p-4" loading="lazy" />
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -919,6 +930,10 @@ export default function BestAirPurifier() {
                 <h2 className="text-2xl font-bold mt-3" style={{ color: '#f5f5f5' }}>
                   6. Honeywell HPA300
                 </h2>
+              </div>
+
+              <div className="rounded-lg overflow-hidden mb-6 bg-gradient-to-b from-white via-white to-card aspect-[16/9] flex items-center justify-center" style={{maskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)', WebkitMaskImage:'linear-gradient(to bottom, black 0%, black 85%, transparent 100%)'}}>
+                <img src="/img/products/air-purifiers/honeywell-hpa300.jpg" alt="Honeywell HPA300 True HEPA allergen-remover air purifier" className="w-full h-full object-contain p-4" loading="lazy" />
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">

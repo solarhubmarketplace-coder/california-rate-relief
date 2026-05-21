@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'anker-solix-f3800';
 
 export const metadata: Metadata = {
-  title:
-    'Anker SOLIX F3800 Review: 6,000W of Power at an Unbeatable Price (2026)',
-  description:
-    'In-depth Anker SOLIX F3800 review. 3,840Wh capacity, 6,000W output, LiFePO4 battery, expandable to 26,880Wh. Currently $1,799 (MSRP $3,999). Is it worth it for California homeowners?',
+  title: "Anker SOLIX F3800 Review: 3,840Wh, 6,000W, $1,799 vs $3,999",
+  description: "Anker SOLIX F3800 review: 3,840Wh LiFePO4, 6,000W output (12,000W surge), expandable to 26,880Wh. Now $1,799 vs $3,999 MSRP — is the 55% discount real?",
   alternates: {
     canonical: '/reviews/anker-solix-f3800-review',
   },
   openGraph: {
-    title:
-      'Anker SOLIX F3800 Review: 6,000W of Power at an Unbeatable Price',
-    description:
-      'Full review of the Anker SOLIX F3800 portable power station. 3,840Wh, 6,000W output, $1,799 promo pricing. How it performs for California backup power and TOU arbitrage.',
+    title: "Anker SOLIX F3800 Review: 3,840Wh, 6,000W, $1,799 vs $3,999",
+    description: "3,840Wh, 6,000W, $1,799 (was $3,999). Is Anker's deepest discount of the year too good to last?",
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
   },
@@ -56,15 +53,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -149,6 +146,7 @@ const faqSchema = {
 export default function AnkerSolixF3800Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="anker-solix-f3800-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

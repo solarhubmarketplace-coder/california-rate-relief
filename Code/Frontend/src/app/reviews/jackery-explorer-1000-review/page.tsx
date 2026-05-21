@@ -26,22 +26,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'jackery-explorer-1000';
 
 export const metadata: Metadata = {
-  title:
-    'Jackery Explorer 1000 v2 Review 2026: The 1,070Wh LFP Workhorse for Camping',
-  description:
-    'In-depth review of the Jackery Explorer 1000 v2, now with 1,070 Wh LFP battery (upgraded from NMC), 1,500W output, 400W solar input, 0-100% in 60 min, 23 lbs, $999. Ideal for camping, mid-size PSPS backup, and TOU load shifting.',
+  title: "Jackery Explorer 1000 v2 Review: 1,070Wh LFP, 1,500W, $999",
+  description: "Jackery Explorer 1000 v2 review: 1,070 Wh LFP (upgraded from NMC), 1,500W output, 400W solar input, full recharge in 60 minutes, 23 lbs, $999.",
   alternates: {
     canonical: '/reviews/jackery-explorer-1000-review',
   },
   openGraph: {
-    title:
-      'Jackery Explorer 1000 v2 Review 2026: The 1,070Wh LFP Workhorse for Camping',
-    description:
-      'Jackery Explorer 1000 v2 with LFP battery upgrade, 1,500W output, 60-minute fast charging, and 4,000-cycle lifespan. Full California review.',
+    title: "Jackery Explorer 1000 v2 Review: 1,070Wh LFP, 1,500W, $999",
+    description: "LFP upgrade, 4,000-cycle battery, full recharge in an hour. Is the Jackery 1000 v2 worth $999?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -57,15 +54,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -150,6 +147,7 @@ const faqSchema = {
 export default function JackeryExplorer1000Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="jackery-explorer-1000-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

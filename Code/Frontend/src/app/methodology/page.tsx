@@ -80,7 +80,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     canonical: 'https://greenreviewshub.com/methodology',
     category: 'green-energy gear and home electrification products',
     intro:
-      'GreenReviewsHub is a hands-on review publication covering portable power stations, e-bikes, mini splits, smart thermostats, generators, heat pump water heaters, and other green-energy gear. Chad personally tests each top-pick product — over 500 hours of real-world testing across the catalog as of April 2026 — in his own home, on his own grid, in real California conditions. Hands-on testing is the primary input; manufacturer specs, third-party lab data, and aggregated owner reports are used to verify, contextualize, and stress-test what we observed. This page documents what goes into a review.',
+      'GreenReviewsHub is a research-driven review publication covering portable power stations, e-bikes, mini splits, smart thermostats, generators, heat pump water heaters, and other green-energy gear. Our reviews are built from manufacturer specifications, independent lab testing (Project Farm, Consumer Reports, and comparable outlets), aggregated owner reports across retailers and owner forums, warranty terms, and safety-certification registries — cross-checked against each other to surface where real-world performance diverges from the spec sheet. This page documents what goes into a review.',
     whatWeEvaluate: [
       { title: 'Spec accuracy vs. real-world performance', body: 'Manufacturer-claimed capacity vs. tested capacity (when independent lab data exists). Run-time at 50% load vs. full load. Cold-weather and high-load derating.' },
       { title: 'Build quality signals', body: 'Owner-reported defect rate from aggregated reviews (not raw star count). Warranty length vs. typical failure window. Repairability and parts availability.' },
@@ -89,7 +89,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
       { title: 'Safety and certifications', body: 'UL, ETL, FCC, CARB, BIFMA, and other applicable certifications. Battery chemistry (LFP vs NMC) for fire-risk profile.' },
     ],
     dataSources: [
-      'Hands-on testing in our own home and yard (500+ hours across the catalog as of April 2026) — capacity under real load, noise, app reliability, charge speed, durability week-over-week',
+      'Side-by-side specification analysis across every product in a category — capacity, output, efficiency, run-time, noise ratings, charge speed, and warranty',
       'Manufacturer published specifications (verified against the latest spec sheet, not marketing pages)',
       'Aggregated owner reviews (Amazon, REI, Home Depot, manufacturer site, owner forums)',
       'Independent lab tests (Project Farm, Consumer Reports, DPL Labs when accessible)',
@@ -108,7 +108,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     freshness:
       'Round-up pages are reviewed every 60 days; single-product reviews every 90 days. Pricing and availability are spot-checked monthly. Each review carries a "Last reviewed" date stamp.',
     conflictsBlurb:
-      'GreenReviewsHub earns affiliate commissions when readers buy through our links. We do not accept payment for placement, sponsored reviews, or rankings. Every product listed as a top pick has been hands-on tested in our own home or yard. When a comparison sub-pick or alternative is included without hands-on testing — typically because the unit was unavailable in our region or a requested review sample was not fulfilled — it is flagged explicitly on the page and excluded from any "Best Overall" or "Editor\'s Pick" slot.',
+      'GreenReviewsHub earns affiliate commissions when readers buy through our links. We do not accept payment for placement, sponsored reviews, or rankings. Our recommendations are editorial: a product\'s ranking reflects our research — specifications, independent lab data, owner reports, and warranty terms — never a commercial relationship. A product that pays a higher commission does not outrank a better-value product that pays less. Where we have an affiliate partnership with a manufacturer or retailer, that relationship is disclosed and does not influence placement.',
   },
   shg: {
     brand: 'SecureHomeGear',

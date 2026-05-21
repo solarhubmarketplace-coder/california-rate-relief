@@ -21,20 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Weed Eaters & Battery String Trimmers (2026): EGO vs Milwaukee vs DeWalt vs Greenworks',
-  description:
-    'Compare the best electric weed eaters and battery-powered string trimmers in 2026. In-depth reviews of EGO ST1623T, Milwaukee M18 FUEL, DeWalt 60V MAX, Greenworks 80V, Ryobi 40V, and BLACK+DECKER 20V MAX with pros, cons, and attachment guides.',
+  title: "Best Electric Weed Eater 2026: EGO vs Milwaukee vs DeWalt",
+  description: "Best electric weed eater picks: EGO ST1623T (16-in POWERLOAD, 45-min runtime), Milwaukee M18 FUEL, DeWalt 60V MAX, Greenworks 80V Pro, Ryobi 40V Expand-It.",
   alternates: {
     canonical: '/reviews/best-electric-weed-eater',
   },
   openGraph: {
-    title:
-      'Best Electric Weed Eaters & Battery String Trimmers (2026)',
-    description:
-      'EGO ST1623T vs Milwaukee M18 FUEL vs DeWalt 60V MAX vs Greenworks 80V vs Ryobi 40V vs BLACK+DECKER 20V MAX. Full specs, pros/cons, and buyer guide.',
+    title: "Best Electric Weed Eater 2026: EGO vs Milwaukee vs DeWalt",
+    description: "Cordless weed eaters that actually replace gas. The top 6 string trimmers ranked by power and runtime.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-weed-eater',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-weed-eater',
   },
 };
 
@@ -216,6 +213,7 @@ const products: Product[] = [
 export default function BestElectricWeedEater() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-weed-eater" />
       <ReviewHeader />
       <script
         type="application/ld+json"

@@ -321,8 +321,8 @@ function ProviderCard({
 const TRUST_PILLARS = [
   {
     icon: ShieldCheck,
-    title: 'Medically Reviewed',
-    body: 'All content reviewed by healthcare professionals',
+    title: 'Editorially Reviewed',
+    body: 'Independent research-led editorial process — methodology and disqualifiers documented on every page',
   },
   {
     icon: BadgeCheck,
@@ -331,8 +331,8 @@ const TRUST_PILLARS = [
   },
   {
     icon: Calendar,
-    title: 'Updated Weekly',
-    body: 'Pricing and availability refreshed regularly',
+    title: 'Updated Monthly',
+    body: 'Provider pricing verified monthly; rankings refreshed quarterly',
   },
 ];
 

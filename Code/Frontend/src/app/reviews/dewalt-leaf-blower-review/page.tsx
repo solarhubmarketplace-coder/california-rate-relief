@@ -26,22 +26,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'dewalt-leaf-blower';
 
 export const metadata: Metadata = {
-  title:
-    'DeWalt Leaf Blower Review 2026: 60V MAX FLEXVOLT and 20V Models Tested',
-  description:
-    'Hands-on DeWalt leaf blower review covering the 60V MAX FLEXVOLT Brushless DCBL772 (125 MPH / 600 CFM), DCBL590 backpack, and 20V MAX DCBL720. FLEXVOLT platform explained, runtime, vs Milwaukee M18, vs Stihl BR 600 gas, and California AQMD rebates in a post-CARB gas blower ban landscape.',
+  title: "DeWalt Leaf Blower Review: 60V FLEXVOLT vs 20V MAX Compared",
+  description: "DeWalt leaf blower review: the 60V FLEXVOLT DCBL772 hits 125 MPH / 600 CFM, plus the DCBL590 backpack and 20V DCBL720. Specs, runtime, and Milwaukee comparison.",
   alternates: {
     canonical: '/reviews/dewalt-leaf-blower-review',
   },
   openGraph: {
-    title:
-      'DeWalt Leaf Blower Review 2026: 60V MAX FLEXVOLT and 20V Models Tested',
-    description:
-      '125 MPH / 600 CFM, 75-minute runtime on 12Ah FLEXVOLT, 3-year warranty. Is the DeWalt FLEXVOLT 60V blower the right jobsite blower under Californias 2024 CARB gas-blower ban?',
+    title: "DeWalt Leaf Blower Review: 60V FLEXVOLT vs 20V MAX Compared",
+    description: "125 MPH, 600 CFM, 75 minutes of runtime. Does DeWalt's FLEXVOLT blower actually replace gas?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -57,15 +54,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -150,6 +147,7 @@ const faqSchema = {
 export default function DeWaltLeafBlowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="dewalt-leaf-blower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -190,7 +188,7 @@ export default function DeWaltLeafBlowerReview() {
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
                 DeWalt Leaf Blower Review 2026: 60V MAX FLEXVOLT and 20V Models
-                Tested
+                Compared
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />

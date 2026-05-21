@@ -553,7 +553,7 @@ const utilityPages: PageRoute[] = [
   { path: '/author/chad-simpson',  template: 'utility', tier: 'A', status: 'utility', note: 'Person schema, E-E-A-T — editorial credentials, affiliate + YMYL disclosure' },
   { path: '/methodology',          template: 'utility', tier: 'A', status: 'utility', note: 'How we evaluate providers' },
   { path: '/affiliate-disclosure', template: 'utility', tier: 'A', status: 'utility', note: 'FTC 16 CFR § 255 compliance' },
-  { path: '/medical-disclaimer',   template: 'utility', tier: 'A', status: 'utility', note: 'YMYL — FDA/FTC compliance posture, not medical advice, compounded GLP-1 risk disclosure' },
+  { path: '/disclaimer',           template: 'utility', tier: 'A', status: 'utility', note: 'YMYL — FDA/FTC compliance posture, not medical advice, compounded GLP-1 risk disclosure (route is /disclaimer, not /medical-disclaimer)' },
   { path: '/privacy',              template: 'utility', tier: 'A', status: 'utility', note: 'GDPR / CCPA' },
   { path: '/terms',                template: 'utility', tier: 'A', status: 'utility', note: 'Liability cap' },
   { path: '/contact',              template: 'utility', tier: 'A', status: 'utility', note: 'Real email + form' },

@@ -23,19 +23,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Scooter with Seat (2026): Segway vs NIU vs Hiboy vs EMOVE vs Razor — Top 5 Reviewed',
-  description:
-    'Compare the best electric scooters with seats in 2026. In-depth reviews of Segway Ninebot P100S, NIU KQi3 Sport, Hiboy S2 Pro, EMOVE Cruiser, and Razor EcoSmart Metro. Range, speed, comfort, and buying guide.',
+  title: "Best Electric Scooter with Seat: Segway vs NIU vs EMOVE",
+  description: "Best electric scooter with seat: Segway Ninebot P100S (60 mi, $1,100), NIU KQi3 Sport, Hiboy S2 Pro, EMOVE Cruiser (62 mi), and Razor EcoSmart compared.",
   alternates: {
     canonical: '/reviews/best-electric-scooter-with-seat',
   },
   openGraph: {
-    title: 'Best Electric Scooter with Seat (2026): Top 5 Reviewed',
-    description:
-      'Segway Ninebot P100S vs NIU KQi3 Sport vs Hiboy S2 Pro vs EMOVE Cruiser vs Razor EcoSmart Metro. Full specs, pros/cons, seated vs standing comparison, and buying guide.',
+    title: "Best Electric Scooter with Seat: Segway vs NIU vs EMOVE",
+    description: "Want a scooter you can actually sit on? We ranked the Segway P100S, EMOVE Cruiser, and 3 more by real range.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -53,20 +51,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-scooter-with-seat',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-scooter-with-seat',
   },
 };
 
@@ -234,6 +232,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestElectricScooterWithSeat() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-scooter-with-seat" />
       <ReviewHeader />
       <script
         type="application/ld+json"

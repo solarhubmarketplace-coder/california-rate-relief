@@ -4,9 +4,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
+// /simulator is registered as `status: 'future'` in glp1-page-routes.ts —
+// reinstate this link only after the route ships.
 const NAV_LINKS = [
   { label: 'Find Your Match', href: '/match' },
-  { label: 'Simulator',       href: '/simulator' },
   { label: 'Providers',       href: '/providers' },
   { label: 'Best Rankings',   href: '/best' },
   { label: 'Compare',         href: '/compare' },

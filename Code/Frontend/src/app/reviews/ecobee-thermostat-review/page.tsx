@@ -25,22 +25,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ecobee-thermostat';
 
 export const metadata: Metadata = {
-  title:
-    'Ecobee Smart Thermostat Premium Review 2026: The Nest Alternative Worth Buying?',
-  description:
-    'Detailed Ecobee Smart Thermostat Premium review: 26% verified HVAC savings, built-in Alexa, included SmartSensor, air quality monitoring, HomeKit/Matter support. Is the $249 thermostat the best Nest alternative?',
+  title: "Ecobee Thermostat Premium Review: 26% HVAC Savings Examined",
+  description: "Ecobee Smart Thermostat Premium review: 26% verified HVAC savings, built-in Alexa, included SmartSensor, air quality monitoring, HomeKit and Matter.",
   alternates: {
     canonical: '/reviews/ecobee-thermostat-review',
   },
   openGraph: {
-    title:
-      'Ecobee Smart Thermostat Premium Review 2026: The Nest Alternative Worth Buying?',
-    description:
-      'Ecobee Smart Thermostat Premium review, built-in Alexa, SmartSensor room balancing, air quality monitoring, 26% HVAC savings. Full pros, cons, and comparison vs Nest.',
+    title: "Ecobee Thermostat Premium Review: 26% HVAC Savings Examined",
+    description: "Ecobee Premium is rated for 26% HVAC savings. Worth $250? An honest, research-driven review.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -56,15 +53,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -149,6 +146,7 @@ const faqSchema = {
 export default function EcobeeThermostatReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ecobee-thermostat-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

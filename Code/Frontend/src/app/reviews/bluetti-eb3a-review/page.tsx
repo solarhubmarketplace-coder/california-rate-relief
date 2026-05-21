@@ -11,13 +11,13 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Star, Check, X, Zap, Battery, S
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'bluetti-eb3a';
 
 export const metadata: Metadata = {
-  title: 'Bluetti EB3A Review 2026: The Budget LFP Power Station That Punches Above Its Price',
-  description:
-    'In-depth Bluetti EB3A review: 268Wh LFP battery, 600W output (1,200W Power Lifting), 200W solar input, 0-80% in 30 minutes, 2,500+ cycle life. California buyer guide with PSPS backup and camping use cases.',
+  title: "Bluetti EB3A Review: 268Wh LFP Power Station at $299",
+  description: "Bluetti EB3A review: 268Wh LFP battery, 600W output (1,200W Power Lifting), 200W solar input, 0-80% turbo charge in 30 min, 2,500+ cycles. $299 PSPS-ready.",
   keywords: [
     'bluetti eb3a review',
     'bluetti eb3a',
@@ -27,12 +27,11 @@ export const metadata: Metadata = {
     'bluetti eb3a vs ecoflow river 3',
     'small lfp power station',
   ],
-  alternates: { canonical: 'https://ratereliefca.com/reviews/bluetti-eb3a-review' },
+  alternates: { canonical: '/reviews/bluetti-eb3a-review' },
   openGraph: {
-    title: 'Bluetti EB3A Review 2026: Budget LFP Power Station',
-    description:
-      '268Wh LFP, 600W (1,200W Power Lifting), 30-minute turbo charge, 2,500+ cycles — a ruthlessly honest California-focused review of Bluetti\'s entry-level unit.',
-    url: 'https://ratereliefca.com/reviews/bluetti-eb3a-review',
+    title: "Bluetti EB3A Review: 268Wh LFP Power Station at $299",
+    description: "Is the $299 Bluetti EB3A enough for a power outage? 268Wh LFP, 30-min turbo charge, examined in depth.",
+    url: 'https://greenreviewshub.com/reviews/bluetti-eb3a-review',
     siteName: 'California Rate Relief Program',
     type: 'article',
     locale: 'en_US',
@@ -115,6 +114,7 @@ export default function Page() {
 
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="bluetti-eb3a-review" />
       <ReviewHeader />
 
       <script

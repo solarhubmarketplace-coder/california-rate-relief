@@ -7,11 +7,11 @@ import { ChevronRight } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | GreenReviewsHub',
-  description:
-    'GreenReviewsHub terms of service — the rules for using this site, liability limits, and dispute resolution.',
+  title: "Terms of Service | GreenReviewsHub",
+  description: "GreenReviewsHub terms of service: the rules for using greenreviewshub.com, liability limits, content disclaimers, and dispute resolution.",
   alternates: {
     canonical: '/reviews/terms',
   },
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 export default function TermsOfServicePage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="terms" pageType="WebPage" pageTitle="Terms of Service" pageDescription="Terms of service for using greenreviewshub.com." />
       <ReviewHeader />
       <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>

@@ -42,10 +42,10 @@ export function ReviewFooter() {
                 className='text-sm leading-relaxed font-medium'
                 style={{ color: '#d4d4d8' }}
               >
-                Independent, hands-on reviews of portable power stations,
-                e-bikes, smart home devices, lawn equipment, and everything
-                in the green energy space. We test it so you don&apos;t have to
-                guess.
+                Independent, research-driven reviews of portable power
+                stations, e-bikes, smart home devices, lawn equipment, and
+                everything in the green energy space. We do the research so
+                you don&apos;t have to guess.
               </p>
             </div>
 
@@ -116,7 +116,7 @@ export function ReviewFooter() {
               </h4>
               <ul className='space-y-3'>
                 {[
-                  { label: 'About & How We Test', href: '/reviews/about' },
+                  { label: 'About & How We Review', href: '/reviews/about' },
                   { label: 'Affiliate Disclosure', href: '/reviews/affiliate-disclosure' },
                   { label: 'Privacy Policy', href: '/reviews/privacy' },
                   { label: 'Terms of Service', href: '/reviews/terms' },

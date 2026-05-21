@@ -22,20 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Heat Pump Water Heaters (2026): Rheem vs A.O. Smith vs Stiebel Eltron, Full Reviews',
-  description:
-    'Compare the best heat pump water heaters for 2026. In-depth reviews of Rheem ProTerra, A.O. Smith Voltex, GE GeoSpring, Bradford White AeroTherm, Stiebel Eltron Accelera 300, and State Premier. Energy savings, tax credits, and installation guide.',
+  title: "Best Heat Pump Water Heater 2026: Rheem vs A.O. Smith vs GE",
+  description: "Best heat pump water heater picks: Rheem ProTerra (3.55 UEF, 120V), A.O. Smith Voltex, GE GeoSpring, Stiebel Eltron Accelera 300. Up to $2,000 IRA credit.",
   alternates: {
     canonical: '/reviews/best-heat-pump-water-heater',
   },
   openGraph: {
-    title:
-      'Best Heat Pump Water Heaters (2026): Full Comparison Guide',
-    description:
-      'Rheem ProTerra vs A.O. Smith Voltex vs Stiebel Eltron Accelera 300 vs GE GeoSpring. Specs, pros/cons, energy savings, and federal tax credit guide.',
+    title: "Best Heat Pump Water Heater 2026: Rheem vs A.O. Smith vs GE",
+    description: "Rheem ProTerra wins on a 120V plug. A.O. Smith Voltex on value. Which heat pump saves you $550/year?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -53,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-heat-pump-water-heater',
+    '@id': 'https://greenreviewshub.com/reviews/best-heat-pump-water-heater',
   },
 };
 
@@ -217,6 +214,7 @@ const products: Product[] = [
 export default function BestHeatPumpWaterHeaters() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-heat-pump-water-heater" />
       <ReviewHeader />
       <script
         type="application/ld+json"

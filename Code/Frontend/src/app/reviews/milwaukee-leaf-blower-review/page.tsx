@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'milwaukee-leaf-blower';
 
 export const metadata: Metadata = {
-  title:
-    'Milwaukee M18 FUEL Leaf Blower Review 2026: 145 MPH Handheld and Backpack Tested',
-  description:
-    'In-depth Milwaukee M18 FUEL leaf blower review — the 2824-20 dual-battery backpack blower (145 MPH, 600 CFM) and 2728-20 handheld. Runtime math, vs DeWalt FLEXVOLT, Stihl BR 600 gas, and EGO 765 CFM. California AQMD rebates covered.',
+  title: "Milwaukee Leaf Blower Review: M18 FUEL 600 CFM Backpack",
+  description: "Milwaukee leaf blower review: the 2824-20 dual-battery backpack (600 CFM, 145 MPH, $599) and 2728-20 handheld (450 CFM) on the M18 platform.",
   alternates: {
     canonical: '/reviews/milwaukee-leaf-blower-review',
   },
   openGraph: {
-    title:
-      'Milwaukee M18 FUEL Leaf Blower Review 2026: 145 MPH Handheld and Backpack Tested',
-    description:
-      'Full review of the Milwaukee M18 FUEL backpack blower (2824-20) and handheld (2728-20), specs, runtime, comparisons, and California CARB gas-blower ban context.',
+    title: "Milwaukee Leaf Blower Review: M18 FUEL 600 CFM Backpack",
+    description: "Milwaukee's 600 CFM backpack blower vs Stihl gas. Is the M18 FUEL finally a true pro replacement?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -55,15 +52,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -148,6 +145,7 @@ const faqSchema = {
 export default function MilwaukeeLeafBlowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="milwaukee-leaf-blower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -185,7 +183,7 @@ export default function MilwaukeeLeafBlowerReview() {
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
                 Milwaukee M18 FUEL Leaf Blower Review 2026: 145 MPH Handheld and
-                Backpack Tested
+                Backpack Compared
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />

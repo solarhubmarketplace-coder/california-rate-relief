@@ -25,20 +25,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Daikin Mini Split Review 2026: World-Class Efficiency From the HVAC Giant',
-  description:
-    'In-depth Daikin ductless mini split review. 17-Series, Fit, and Aurora models compared. Up to 20.6 SEER2, 19 dB noise, R-32 refrigerant, heating to -13F. Specs, pricing, installation costs, and how Daikin compares to Mitsubishi and MrCool DIY.',
+  title: "Daikin Mini Split Review: 20.6 SEER2, R-32, Heats to -13F",
+  description: "Daikin mini split review comparing 17-Series, Fit, and Aurora ductless models. Up to 20.6 SEER2, 19 dB whisper-quiet operation, R-32 refrigerant, heat to -13F.",
   alternates: {
     canonical: '/reviews/daikin-mini-split-review',
   },
   openGraph: {
-    title:
-      'Daikin Mini Split Review 2026: World-Class Efficiency From the HVAC Giant',
-    description:
-      'Full review of Daikin ductless mini split systems. 17-Series wall mount, Fit, and Aurora lineups. Up to 20.6 SEER2, R-32 refrigerant, 19 dB noise. Pros, cons, and California installation analysis.',
+    title: "Daikin Mini Split Review: 20.6 SEER2, R-32, Heats to -13F",
+    description: "Daikin makes the world's quietest mini split at 19 dB. We compared the 17-Series, Fit, and Aurora head-to-head.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -57,15 +54,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -95,7 +92,7 @@ const reviewSchema = {
     'Daikin brings decades of global HVAC leadership to the ductless mini split market with whisper-quiet operation, industry-leading efficiency, and the environmental advantages of R-32 refrigerant. The 17-Series wall mount delivers up to 20.6 SEER2 and 12.5 HSPF2, with indoor noise as low as 19 dB.',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/daikin-mini-split-review',
+    '@id': 'https://greenreviewshub.com/reviews/daikin-mini-split-review',
   },
 };
 
@@ -167,6 +164,7 @@ const PRODUCT_KEY = 'daikin-mini-split';
 export default function DaikinMiniSplitReviewPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="daikin-mini-split-review" />
       <ReviewHeader />
 
       <script

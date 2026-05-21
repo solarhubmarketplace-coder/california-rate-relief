@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Lawn Mowers (2026): EGO vs Greenworks vs Ryobi; Top Battery Mowers Compared',
-  description:
-    'Compare the best electric lawn mowers for 2026. In-depth reviews of EGO Power+ Select Cut XP, Greenworks 80V Pro, Ryobi 40V, and more. Battery platform guide, gas vs electric savings, and sizing recommendations included.',
+  title: "Best Electric Lawn Mower 2026: EGO vs Greenworks vs Ryobi",
+  description: "The best electric lawn mower for 2026, ranked: EGO Power+ Select Cut XP, Greenworks 80V Pro, Ryobi 40V HP, and more. Battery runtimes compared.",
   alternates: {
     canonical: '/reviews/best-electric-lawn-mower',
   },
   openGraph: {
-    title: 'Best Electric Lawn Mowers (2026): EGO vs Greenworks vs Ryobi',
-    description:
-      'EGO Power+ Select Cut XP vs Greenworks 80V Pro vs Ryobi 40V. Full specs, pros/cons, battery platform guide, and electric vs gas cost comparison.',
+    title: "Best Electric Lawn Mower 2026: EGO vs Greenworks vs Ryobi",
+    description: "EGO vs Greenworks vs Ryobi: which battery mower actually replaces a gas mower for a 1/4 acre lawn?",
     type: 'article',
     publishedTime: '2026-04-17T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-lawn-mower',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-lawn-mower',
   },
 };
 
@@ -197,6 +195,7 @@ const mowers: Mower[] = [
 export default function BestElectricLawnMower() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-lawn-mower" />
       <ReviewHeader />
       <script
         type="application/ld+json"

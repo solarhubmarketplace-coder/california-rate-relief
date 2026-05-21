@@ -21,20 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Fireplace TV Stands (2026): Top 7 Entertainment Centers Reviewed',
-  description:
-    'Compare the best electric fireplace TV stands for 2026. In-depth reviews of Walker Edison, Ameriwood Home, Twin Star, SEI Furniture, and Real Flame entertainment centers. Heating capacity, flame effects, and value compared.',
+  title: "Best Electric Fireplace TV Stands: 7 Top Picks Compared",
+  description: "Best electric fireplace TV stands: Ameriwood, Twin Star ClassicFlame, SEI, and Real Flame ranked on heat output, flame realism, and value for money.",
   alternates: {
     canonical: '/reviews/best-electric-fireplace-tv-stand',
   },
   openGraph: {
-    title:
-      'Best Electric Fireplace TV Stands (2026): Top 7 Reviewed',
-    description:
-      'Walker Edison vs Ameriwood Home vs Twin Star vs SEI Furniture vs Real Flame. Full specs, pros/cons, and buyer guide.',
+    title: "Best Electric Fireplace TV Stands: 7 Top Picks Compared",
+    description: "Seven electric fireplace TV stands ranked by heat output, flame realism, and price. Which one fits your room?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-fireplace-tv-stand',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-fireplace-tv-stand',
   },
 };
 
@@ -251,6 +248,7 @@ const products: Product[] = [
 export default function BestElectricFireplaceTvStand() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-fireplace-tv-stand" />
       <ReviewHeader />
       <script
         type="application/ld+json"

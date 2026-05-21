@@ -26,19 +26,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ecoflow-river-2-pro';
 
 export const metadata: Metadata = {
-  title:
-    'EcoFlow River 2 Pro Review 2026: The 768Wh LFP Portable for Camping and CPAP',
-  description:
-    'In-depth EcoFlow River 2 Pro review — 768 Wh LFP, 800W output (1,600W X-Boost), 220W solar, 70-minute full recharge, 17 lbs. How the $499 River 2 Pro performs for California PSPS outages, multi-day CPAP, and long camping trips.',
+  title: "EcoFlow River 2 Pro Review: 768Wh LFP at $499, 17 lbs",
+  description: "EcoFlow River 2 Pro review: 768 Wh LFP, 800W output (1,600W X-Boost), 220W solar, 70-minute full recharge, and 17 lbs at $499 MSRP.",
   alternates: { canonical: '/reviews/ecoflow-river-2-pro-review' },
   openGraph: {
-    title: 'EcoFlow River 2 Pro Review 2026: The 768Wh LFP Portable for Camping and CPAP',
-    description:
-      'Hands-on review of the EcoFlow River 2 Pro, 768 Wh LFP, 800W continuous output, 220W solar input, 70-minute full recharge. The best mid-capacity LFP power station under $500?',
+    title: "EcoFlow River 2 Pro Review: 768Wh LFP at $499, 17 lbs",
+    description: "Real outage insurance for $499? The EcoFlow River 2 Pro after a year of California PSPS outages.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -51,12 +49,12 @@ const reviewSchema = {
   reviewBody:
     'The EcoFlow River 2 Pro delivers 768 Wh of LFP battery capacity with 800W continuous output (1,600W X-Boost for resistive loads), 220W solar input, and a full 0-100% recharge in 70 minutes. At $499 MSRP and 17 lbs, it is the best-value mid-capacity portable for California homeowners who want real outage insurance plus camping usability.',
   datePublished: '2026-04-22',
-  author: { '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://ratereliefca.com' },
+  author: { '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://greenreviewshub.com' },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
-    logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
+    url: 'https://greenreviewshub.com',
+    logo: { '@type': 'ImageObject', url: 'https://greenreviewshub.com/img/logo.svg' },
   },
   itemReviewed: {
     '@type': 'Product',
@@ -127,6 +125,7 @@ const faqSchema = {
 export default function EcoFlowRiver2ProReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ecoflow-river-2-pro-review" />
       <ReviewHeader />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Leaf Blowers (2026): EGO vs Ryobi vs Milwaukee vs DeWalt vs Greenworks',
-  description:
-    'Compare the best cordless leaf blowers for 2026. In-depth reviews of EGO LB6504, Milwaukee M18 FUEL, DeWalt 60V MAX, Ryobi 40V Whisper, Greenworks 80V, and more. CFM vs MPH explained, noise comparison, and battery platform guide.',
+  title: "Best Electric Leaf Blowers (2026): EGO vs Ryobi vs DeWalt",
+  description: "Best electric leaf blowers compared: EGO LB6504 (650 CFM/180 MPH), Ryobi 40V Whisper, Milwaukee M18 FUEL, DeWalt 60V MAX, and Greenworks 80V tested.",
   alternates: {
     canonical: '/reviews/best-electric-leaf-blower',
   },
   openGraph: {
-    title: 'Best Electric Leaf Blowers (2026): EGO vs Ryobi vs Milwaukee vs DeWalt',
-    description:
-      'EGO LB6504 vs Milwaukee M18 FUEL vs DeWalt 60V MAX vs Ryobi Whisper vs Greenworks 80V. Full specs, pros/cons, noise levels, and battery platform guide.',
+    title: "Best Electric Leaf Blowers (2026): EGO vs Ryobi vs DeWalt",
+    description: "EGO, Ryobi, Milwaukee, or DeWalt? Our research-driven comparison reveals which cordless blower clears wet leaves best.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-leaf-blower',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-leaf-blower',
   },
 };
 
@@ -250,6 +248,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestElectricLeafBlower() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-leaf-blower" />
       <ReviewHeader />
       <script
         type="application/ld+json"

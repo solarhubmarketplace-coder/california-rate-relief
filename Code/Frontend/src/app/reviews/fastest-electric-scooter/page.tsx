@@ -12,23 +12,24 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Check, X, ChevronRight, AlertTr
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRIMARY_PRODUCT_KEY = 'dualtron-x-limited';
 
 export const metadata: Metadata = {
-  title: 'Fastest Electric Scooters 2026: 40+ MPH Adult Scooters Tested | GreenReviewsHub',
-  description: 'The fastest electric scooters in 2026: Dualtron X Limited (68 mph), Weped FS (62 mph), Kaabo Wolf King GT Pro, NAMI Burn-E 2 Max, Apollo Pro. Honest speed, range, and California legality breakdown.',
-  alternates: { canonical: 'https://ratereliefca.com/reviews/fastest-electric-scooter' },
+  title: "Fastest Electric Scooter 2026: Dualtron X, Weped & Kaabo",
+  description: "The fastest electric scooter picks for 2026: Dualtron X Limited (68 mph), Weped FS (62 mph), Kaabo Wolf King GT Pro, NAMI Burn-E 2 Max, and Apollo Pro.",
+  alternates: { canonical: '/reviews/fastest-electric-scooter' },
   openGraph: {
-    title: 'Fastest Electric Scooters 2026: 40+ MPH Adult Scooters Tested',
-    description: 'Dualtron, Weped, Kaabo, NAMI, and Apollo; the 5 fastest e-scooters you can actually buy, tested and compared.',
-    url: 'https://ratereliefca.com/reviews/fastest-electric-scooter',
+    title: "Fastest Electric Scooter 2026: Dualtron X, Weped & Kaabo",
+    description: "68 mph on a scooter is real. The 5 hyper-scooters that go faster than most cars in a city.",
+    url: 'https://greenreviewshub.com/reviews/fastest-electric-scooter',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fastest Electric Scooters 2026: 40+ MPH Adult Scooters Tested',
-    description: 'Dualtron, Weped, Kaabo, NAMI, Apollo, ranked by real-world speed, not marketing.',
+    title: 'Fastest Electric Scooters: 40+ MPH Adult Scooters Compared',
+    description: 'The fastest electric scooters: Dualtron X Limited (68 mph), Weped FS (62 mph), Kaabo Wolf King GT Pro, NAMI Burn-E 2 Max, Apollo Pro.',
   },
 };
 
@@ -40,31 +41,31 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Dualtron X Limited',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-scooter#dualtron-x-limited',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-scooter#dualtron-x-limited',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Weped FS',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-scooter#weped-fs',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-scooter#weped-fs',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Kaabo Wolf King GT Pro',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-scooter#kaabo-wolf-king-gt-pro',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-scooter#kaabo-wolf-king-gt-pro',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'NAMI Burn-E 2 Max',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-scooter#nami-burn-e-2-max',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-scooter#nami-burn-e-2-max',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Apollo Pro',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-scooter#apollo-pro',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-scooter#apollo-pro',
     },
   ],
 };
@@ -127,6 +128,7 @@ const faqSchema = {
 export default function FastestElectricScooterHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="fastest-electric-scooter" />
       <ReviewHeader />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -160,7 +162,7 @@ export default function FastestElectricScooterHub() {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl font-black mb-5 leading-tight" style={{ color: '#fff' }}>
-                Fastest Electric Scooters 2026: 40+ MPH Adult Scooters Tested
+                Fastest Electric Scooters 2026: 40+ MPH Adult Scooters Compared
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />

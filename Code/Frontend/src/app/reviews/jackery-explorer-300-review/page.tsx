@@ -26,6 +26,7 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 // PRODUCT_KEY resolves against the central registry in src/lib/affiliate-links.ts
 // Entry 'jackery-explorer-300' already present. Update status: 'active' + url with
@@ -58,18 +59,14 @@ const PRODUCT_KEY = 'jackery-explorer-300';
 // ==================================================================
 
 export const metadata: Metadata = {
-  title:
-    'Jackery Explorer 300 Review 2026: The Entry-Level Power Station for Weekend Campers',
-  description:
-    'Full review of the Jackery Explorer 300 — Jackery\'s compact 293Wh portable power station for weekend camping, small device backup, and short power outages. Weight, specs, runtime, and who should buy it.',
+  title: "Jackery Explorer 300 Review: 293Wh Compact Power Station",
+  description: "Jackery Explorer 300 review: 293Wh compact power station for weekend camping, CPAP backup, and short outages. Compared vs Explorer 500 and Bluetti EB3A.",
   alternates: {
     canonical: '/reviews/jackery-explorer-300-review',
   },
   openGraph: {
-    title:
-      'Jackery Explorer 300 Review 2026: The Entry-Level Power Station for Weekend Campers',
-    description:
-      'Jackery Explorer 300 portable power station reviewed. Compact 293Wh unit for weekend camping, CPAP backup, and short outages. Is it worth it vs the Explorer 500 and Bluetti EB3A?',
+    title: "Jackery Explorer 300 Review: 293Wh Compact Power Station",
+    description: "Jackery Explorer 300: weekend-camping sized but is it enough for a power outage? Honest take inside.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -85,15 +82,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -178,6 +175,7 @@ const faqSchema = {
 export default function JackeryExplorer300Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="jackery-explorer-300-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

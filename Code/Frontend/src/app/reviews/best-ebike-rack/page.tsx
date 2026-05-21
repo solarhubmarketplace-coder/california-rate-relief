@@ -20,19 +20,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best E-Bike Racks (2026): Top Hitch-Mounted Racks for Heavy Electric Bikes',
-  description:
-    'Compare the best e-bike racks for 2026. In-depth reviews of 1UP USA Heavy Duty Double, Thule EasyFold XT2, Kuat NV 2.0, Saris SuperClamp EX, Hollywood Racks Sport Rider, and QuietKat Single Bike Rack. Weight capacity guide, hitch class breakdown, and platform vs hanging comparison.',
+  title: "Best E-Bike Racks: Hitch-Mounted for Heavy E-Bikes",
+  description: "Best e-bike racks compared: 1UP USA Heavy Duty Double, Thule EasyFold XT2, Kuat NV 2.0, Saris SuperClamp EX, and Hollywood Racks Sport Rider tested.",
   alternates: {
     canonical: '/reviews/best-ebike-rack',
   },
   openGraph: {
-    title: 'Best E-Bike Racks (2026): Top Hitch-Mounted Racks for Heavy Electric Bikes',
-    description:
-      '1UP USA vs Thule vs Kuat vs Saris vs Hollywood Racks vs QuietKat. Full specs, pros/cons, and hitch class guide for hauling heavy e-bikes.',
+    title: "Best E-Bike Racks: Hitch-Mounted for Heavy E-Bikes",
+    description: "Standard racks bend under 60-lb e-bikes. Here are the 5 hitch racks built to actually carry them.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -50,20 +48,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-ebike-rack',
+    '@id': 'https://greenreviewshub.com/reviews/best-ebike-rack',
   },
 };
 
@@ -221,6 +219,7 @@ const racks: Rack[] = [
 export default function BestEbikeRack() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-ebike-rack" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -270,7 +269,7 @@ export default function BestEbikeRack() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1200&q=80&auto=format&fit=crop' alt='E-bike rack for transport' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/ebike-racks/hero-best-ebike-rack.jpg' alt='Hitch-mounted e-bike rack on the back of an SUV holding an electric mountain bike at a desert trailhead' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />

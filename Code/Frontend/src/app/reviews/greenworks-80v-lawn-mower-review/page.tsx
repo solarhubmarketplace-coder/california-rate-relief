@@ -26,20 +26,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Greenworks 80V 21" Self-Propelled Lawn Mower Review: The Mid-Range Power Play for 2026',
-  description:
-    'In-depth Greenworks 80V 21-inch self-propelled lawn mower review covering Smart Cut technology, 80V brushless motor, 60-minute runtime, 80V vs 40V vs 56V platform comparison, and cut quality vs EGO and Ryobi. 4.5/5 rating.',
+  title: 'Greenworks Lawn Mower Review: 80V Pro 21" Self-Propelled',
+  description: 'Greenworks lawn mower review: the 80V Pro 21" self-propelled delivers Smart Cut tech, brushless motor, 60-min runtime, and LED lights. 80V vs EGO compared.',
   alternates: {
     canonical: '/reviews/greenworks-80v-lawn-mower-review',
   },
   openGraph: {
-    title:
-      'Greenworks 80V 21" Self-Propelled Lawn Mower Review: The Mid-Range Power Play for 2026',
-    description:
-      'Detailed review of the Greenworks 80V self-propelled mower; 21-inch steel deck, Smart Cut auto-adjusting power, 80V 4.0Ah battery, up to 60 min runtime, LED headlights. Is it worth $499?',
+    title: 'Greenworks Lawn Mower Review: 80V Pro 21" Self-Propelled',
+    description: "60-minute runtime, Smart Cut auto-power, $499. Does Greenworks' 80V mower beat EGO and Ryobi?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -57,20 +54,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/greenworks-80v-lawn-mower-review',
+    '@id': 'https://greenreviewshub.com/reviews/greenworks-80v-lawn-mower-review',
   },
 };
 
@@ -84,15 +81,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -187,6 +184,7 @@ const PRODUCT_KEY = 'greenworks-80v-lawn-mower';
 export default function Greenworks80VLawnMowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="greenworks-80v-lawn-mower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

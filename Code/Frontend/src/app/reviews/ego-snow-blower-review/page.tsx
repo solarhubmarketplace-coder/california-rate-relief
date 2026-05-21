@@ -28,20 +28,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'EGO SNT2114 Snow Blower Review: The Best Electric Snow Blower in 2026?',
-  description:
-    'In-depth EGO SNT2114 Peak Power snow blower review covering 21-inch clearing width, dual-battery runtime, throw distance, wet snow performance, noise levels vs gas, and the 70+ tool EGO 56V platform. 4.6/5 rating.',
+  title: "EGO SNT2114 Snow Blower Review: Best Electric Snow Blower",
+  description: "EGO SNT2114 Peak Power snow blower review: 21-inch clearing width, dual-battery runtime, throw distance, wet snow performance, and noise tested.",
   alternates: {
     canonical: '/reviews/ego-snow-blower-review',
   },
   openGraph: {
-    title:
-      'EGO SNT2114 Snow Blower Review: The Best Electric Snow Blower in 2026?',
-    description:
-      'Detailed review of the EGO Power+ SNT2114 Peak Power snow blower; 21-inch clearing, dual 7.5Ah batteries, up to 50-foot throw distance. Is it worth $999?',
+    title: "EGO SNT2114 Snow Blower Review: Best Electric Snow Blower",
+    description: "EGO SNT2114 vs the gas alternative — quieter, runtime tested, throw distance measured.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -59,20 +56,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/ego-snow-blower-review',
+    '@id': 'https://greenreviewshub.com/reviews/ego-snow-blower-review',
   },
 };
 
@@ -86,15 +83,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -181,6 +178,7 @@ const PRODUCT_KEY = 'ego-snow-blower';
 export default function EgoSnowBlowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ego-snow-blower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

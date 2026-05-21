@@ -21,20 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Solar Charge Controllers in 2026: MPPT vs PWM Compared',
-  description:
-    'Compare the best solar charge controllers for 2026. In-depth reviews of Victron SmartSolar, Renogy Rover, EPEver Tracer, Rich Solar, and BougeRV. MPPT vs PWM explainer, sizing guide, and FAQ included.',
+  title: "Best Solar Charge Controller 2026: MPPT vs PWM, Victron Top",
+  description: "Best solar charge controller picks: Victron SmartSolar MPPT 100/50 (98% efficiency, Bluetooth), Renogy Rover 40A, EPEver Tracer, Rich Solar, and BougeRV tested.",
   alternates: {
     canonical: '/reviews/best-solar-charge-controller',
   },
   openGraph: {
-    title:
-      'Best Solar Charge Controllers in 2026: MPPT vs PWM Compared',
-    description:
-      'Victron SmartSolar vs Renogy Rover vs EPEver Tracer vs Rich Solar vs BougeRV. Full specs, pros/cons, and solar charge controller sizing guide.',
+    title: "Best Solar Charge Controller 2026: MPPT vs PWM, Victron Top",
+    description: "MPPT or PWM? The right charge controller adds 30% to your solar harvest. Top 5 ranked.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-solar-charge-controller',
+    '@id': 'https://greenreviewshub.com/reviews/best-solar-charge-controller',
   },
 };
 
@@ -217,6 +214,7 @@ const controllers: Controller[] = [
 export default function BestSolarChargeControllerPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-solar-charge-controller" />
       <ReviewHeader />
       <main className="min-h-screen" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="max-w-4xl mx-auto px-4 py-12 md:py-16">
@@ -275,13 +273,13 @@ export default function BestSolarChargeControllerPage() {
               >
                 Whether you are building an off-grid cabin, outfitting an RV, or adding battery
                 backup to your home solar system, the charge controller is the brain of your setup.
-                We tested and reviewed the top five solar charge controllers of 2026 across
+                We researched and compared the top five solar charge controllers of 2026 across
                 efficiency, features, build quality, and value.
               </p>
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80&auto=format&fit=crop' alt='Solar charge controller system' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/solar-controllers/hero-best-solar-charge-controller.jpg' alt='MPPT solar charge controller wall-mounted in an off-grid cabin beside a deep-cycle battery' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />

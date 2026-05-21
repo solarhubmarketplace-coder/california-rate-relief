@@ -25,20 +25,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'MrCool DIY 4th Gen Review: The Best Mini Split You Can Install Yourself (2026)',
-  description:
-    'In-depth MrCool DIY 4th Generation mini split review. True DIY installation with pre-charged QuickConnect line sets, up to 22 SEER2, WiFi built-in, heating down to -13°F. Full specs, installation walkthrough, and honest pros/cons.',
+  title: "MrCool DIY 4th Gen Review: 22 SEER2 Mini Split, True DIY",
+  description: "MrCool DIY 4th Gen review: 22 SEER2, heats to -13°F, R-32 refrigerant, built-in WiFi, and pre-charged QuickConnect lines saving $3,000-$8,000.",
   alternates: {
     canonical: '/reviews/mrcool-diy-4th-gen-review',
   },
   openGraph: {
-    title:
-      'MrCool DIY 4th Gen Review: The Best Mini Split You Can Install Yourself (2026)',
-    description:
-      'Detailed review of the MrCool DIY 4th Generation mini split AC and heat pump. Save $3,000-$8,000 on installation with pre-charged QuickConnect line sets. No HVAC tech required.',
+    title: "MrCool DIY 4th Gen Review: 22 SEER2 Mini Split, True DIY",
+    description: "The only mini split with a 7-year warranty that doesn't void on DIY install. 22 SEER2, 12K-36K BTU.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -56,20 +53,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/mrcool-diy-4th-gen-review',
+    '@id': 'https://greenreviewshub.com/reviews/mrcool-diy-4th-gen-review',
   },
 };
 
@@ -86,15 +83,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -124,7 +121,7 @@ const reviewSchema = {
     'The MrCool DIY 4th Generation is the only mini split on the market that a homeowner can genuinely install without an HVAC technician. Pre-charged QuickConnect line sets eliminate the need for vacuum pumps, manifold gauges, or refrigerant handling. The 24K BTU model delivers 22 SEER2 efficiency, heats down to -13°F, and includes built-in WiFi for smart home integration. At $1,899-$2,499 before installation savings, it represents $3,000-$8,000 less than a professionally installed equivalent.',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/mrcool-diy-4th-gen-review',
+    '@id': 'https://greenreviewshub.com/reviews/mrcool-diy-4th-gen-review',
   },
 };
 
@@ -204,6 +201,7 @@ const PRODUCT_KEY = 'mrcool-diy-4th-gen';
 export default function MrCoolDIY4thGenReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="mrcool-diy-4th-gen-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

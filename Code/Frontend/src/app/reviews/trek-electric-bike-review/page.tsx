@@ -25,20 +25,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Trek Allant+ Review (2026): Is Trek\'s Best Electric Bike Worth the Price?',
-  description:
-    'In-depth Trek Allant+ 7 and 9S e-bike review covering Bosch Performance Line CX motor, 400Wh battery, range, ride feel, build quality, and honest pros/cons. How it compares to Specialized Turbo Vado, Cannondale Mavaro, and Rad Power RadCity.',
+  title: "Trek Electric Bike Review: Allant+ 7 & 9S Bosch CX",
+  description: "Trek electric bike review: the Allant+ 7 ($3,500) and 9S ($5,500) with Bosch Performance Line CX motor, 500Wh battery, range, ride feel, and build quality.",
   alternates: {
     canonical: '/reviews/trek-electric-bike-review',
   },
   openGraph: {
-    title:
-      'Trek Allant+ Review (2026): Is Trek\'s Best Electric Bike Worth the Price?',
-    description:
-      'Full review of the Trek Allant+ 7 and 9S electric bikes. Bosch Performance Line CX motor, up to 60+ mile range, premium components. Worth $3,500-$5,500?',
+    title: "Trek Electric Bike Review: Allant+ 7 & 9S Bosch CX",
+    description: "Is a Trek Allant+ worth $3,500-$5,500 vs direct-to-consumer e-bikes? A research-driven breakdown.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -56,20 +53,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/trek-electric-bike-review',
+    '@id': 'https://greenreviewshub.com/reviews/trek-electric-bike-review',
   },
 };
 
@@ -83,15 +80,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -187,6 +184,7 @@ const PRODUCT_KEY = 'trek-electric-bike';
 export default function TrekElectricBikeReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="trek-electric-bike-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -253,6 +251,11 @@ export default function TrekElectricBikeReview() {
                 </div>
               </div>
             </header>
+
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src='/img/products/electric-bikes/hero-trek-electric-bike.jpg' alt='Trek-style commuter electric bicycle parked beside a brick cafe entrance at golden hour' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
+            </div>
 
             {/* Affiliate disclosure, FTC compliance, must be above the fold */}
             <AffiliateDisclosure compact />

@@ -26,20 +26,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Ryobi 40V HP Brushless 21" Self-Propelled Lawn Mower Review: Best Budget Electric Mower in 2026?',
-  description:
-    'In-depth Ryobi 40V HP Brushless 21-inch self-propelled lawn mower review covering cut quality, battery runtime (48 min), the 40V platform ecosystem with 40+ tools, LED headlights, and budget value vs EGO and Greenworks. 4.4/5 rating.',
+  title: 'Ryobi Lawn Mower Review: 40V HP Brushless 21" Examined',
+  description: 'Ryobi lawn mower review: the 40V HP Brushless 21" self-propelled mower delivers 48-min runtime, cross-cut blades, LED lights, and the 40V platform for $399.',
   alternates: {
     canonical: '/reviews/ryobi-40v-lawn-mower-review',
   },
   openGraph: {
-    title:
-      'Ryobi 40V HP Brushless 21" Self-Propelled Lawn Mower Review: Best Budget Electric Mower in 2026?',
-    description:
-      'Detailed review of the Ryobi 40V HP Brushless self-propelled mower, 21-inch steel deck, 3-in-1 mulch/bag/side discharge, rear wheel drive, LED headlights, cross-cut capability. Is it worth $399?',
+    title: 'Ryobi Lawn Mower Review: 40V HP Brushless 21" Examined',
+    description: '$399, 48-min runtime, 21" deck. Is the Ryobi 40V HP Brushless the best budget electric mower of the year?',
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -57,20 +54,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/ryobi-40v-lawn-mower-review',
+    '@id': 'https://greenreviewshub.com/reviews/ryobi-40v-lawn-mower-review',
   },
 };
 
@@ -84,15 +81,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -179,6 +176,7 @@ const PRODUCT_KEY = 'ryobi-40v-lawn-mower';
 export default function Ryobi40VLawnMowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ryobi-40v-lawn-mower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

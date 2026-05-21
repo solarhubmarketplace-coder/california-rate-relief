@@ -23,21 +23,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRIMARY_PRODUCT_KEY = 'aventon-ebike';
 
 export const metadata: Metadata = {
-  title:
-    'Aventon E-Bikes Review 2026: Aventure, Pace, Level, Soltera Compared',
-  description:
-    'Honest Aventon e-bikes review covering the 2026 lineup: Aventure 3, Pace 500.3, Level 3, Soltera 2.5, Sinch.2, and Abound cargo. Torque-sensor rides, 2-year warranty, app integration — the premium DTC pick vs Rad Power and Lectric.',
+  title: "Aventon Ebike Review 2026: Aventure 3, Pace, Level, Soltera",
+  description: "Aventon ebike review: torque-sensor pedal assist on every model, 2-year warranty, top-rated DTC app. Aventure 3, Pace 500.3, Level 3, Soltera 2.5 compared.",
   alternates: {
     canonical: '/reviews/aventon-ebike',
   },
   openGraph: {
-    title: 'Aventon E-Bikes Review 2026: The Full Lineup Compared',
-    description:
-      'Aventure 3, Pace 500.3, Level 3, Soltera 2.5, Sinch.2 folding, Abound cargo, every Aventon reviewed. Who should buy which model.',
+    title: "Aventon Ebike Review 2026: Aventure 3, Pace, Level, Soltera",
+    description: "Torque sensors on every model, 2-year warranty, premium DTC app. Is Aventon worth $300-$800 more than Lectric?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -54,37 +52,37 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Aventon Aventure 3',
-      url: 'https://ratereliefca.com/reviews/aventon-ebike#aventure',
+      url: 'https://greenreviewshub.com/reviews/aventon-ebike#aventure',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Aventon Pace 500.3',
-      url: 'https://ratereliefca.com/reviews/aventon-ebike#pace',
+      url: 'https://greenreviewshub.com/reviews/aventon-ebike#pace',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Aventon Level 3',
-      url: 'https://ratereliefca.com/reviews/aventon-ebike#level',
+      url: 'https://greenreviewshub.com/reviews/aventon-ebike#level',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Aventon Soltera 2.5',
-      url: 'https://ratereliefca.com/reviews/aventon-ebike#soltera',
+      url: 'https://greenreviewshub.com/reviews/aventon-ebike#soltera',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Aventon Sinch.2',
-      url: 'https://ratereliefca.com/reviews/aventon-ebike#sinch',
+      url: 'https://greenreviewshub.com/reviews/aventon-ebike#sinch',
     },
     {
       '@type': 'ListItem',
       position: 6,
       name: 'Aventon Abound',
-      url: 'https://ratereliefca.com/reviews/aventon-ebike#abound',
+      url: 'https://greenreviewshub.com/reviews/aventon-ebike#abound',
     },
   ],
 };
@@ -147,6 +145,7 @@ const faqSchema = {
 export default function AventonEbikeHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="aventon-ebike" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -191,7 +190,12 @@ export default function AventonEbikeHub() {
                   <span>16 min read</span>
                 </div>
               </div>
-            </header><div className='mb-8 rounded-xl overflow-hidden border' style={{borderColor:'#1e293b'}}><img src='https://aventon-images.imgix.net/files/01_AventureM_Camouflage_Side_1.jpg?v=1751415302&width=1200' alt='Aventon e-bike lineup' className='w-full h-auto max-h-[480px] object-cover' loading='eager' /></div>
+            </header>
+
+            <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src='https://aventon-images.imgix.net/files/01_AventureM_Camouflage_Side_1.jpg?v=1751415302&width=1200' alt='Aventon e-bike lineup' className='w-full h-auto max-h-[480px] object-cover' loading='eager' />
+            </div>
 
             <AffiliateDisclosure compact />
 

@@ -23,19 +23,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Moped (2026): NIU vs Super Soco vs CSC vs Vespa vs GenZe — Top 5 Reviewed',
-  description:
-    'Compare the best electric mopeds in 2026. In-depth reviews of NIU NQi GTS Sport, Super Soco CPx, CSC Monterey, Vespa Elettrica, and GenZe 200. Range, speed, licensing, insurance, and buying guide.',
+  title: "Best Electric Moped 2026: NIU NQi GTS vs Super Soco, Vespa",
+  description: "Best electric moped picks: NIU NQi GTS Sport (37 mph, 62-mi range, $3,599), Super Soco CPx, CSC Monterey, Vespa Elettrica, and GenZe 200 reviewed.",
   alternates: {
     canonical: '/reviews/best-electric-moped',
   },
   openGraph: {
-    title: 'Best Electric Moped (2026): Top 5 Reviewed',
-    description:
-      'NIU NQi GTS Sport vs Super Soco CPx vs CSC Monterey vs Vespa Elettrica vs GenZe 200. Full specs, pros/cons, licensing guide, and moped vs e-bike comparison.',
+    title: "Best Electric Moped 2026: NIU NQi GTS vs Super Soco, Vespa",
+    description: "Electric mopeds that hit 37 mph and 62 miles per charge. Top 5 ranked by range, price, and licensing.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -53,20 +51,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-moped',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-moped',
   },
 };
 
@@ -234,6 +232,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestElectricMoped() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-moped" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -303,8 +302,9 @@ export default function BestElectricMoped() {
                 is not whether electric mopeds are ready, it is which one fits your commute.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-8">
-                We tested five of the best electric mopeds available in the US in 2026. Here is
-                how they stack up across range, speed, build quality, and real-world usability.
+                We researched and compared five of the best electric mopeds available in the US
+                in 2026. Here is how they stack up across range, speed, build quality, and
+                real-world usability.
               </p>
             </div>
 

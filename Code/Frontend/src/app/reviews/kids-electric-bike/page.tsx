@@ -20,22 +20,20 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 // Primary affiliate CTA, the best all-around kids e-bike
 const PRIMARY_PRODUCT_KEY = 'rad-power-radrunner-plus-youth';
 
 export const metadata: Metadata = {
-  title:
-    'Best Kids Electric Bikes 2026: Ages 5-14 Tested and Ranked',
-  description:
-    'The best kids electric bikes of 2026 for ages 5 through 14. Rad Power RadRunner Plus Youth, Woom UP 5, Little Fiets, Kent Torpedo, Razor MX650, and Segway Xyber compared. Speed limits, helmet law, pedal-assist vs throttle, and parent buying advice.',
+  title: "Best Kids Electric Bikes: Ages 5-14 Compared and Ranked",
+  description: "Best kids electric bikes for ages 5-14: Rad Power RadRunner Plus Youth, Woom UP 5, Little Fiets, Kent Torpedo, and Razor MX650 ranked by safety and value.",
   alternates: {
     canonical: '/reviews/kids-electric-bike',
   },
   openGraph: {
-    title: 'Best Kids Electric Bikes 2026: The Parent\'s Buyer\'s Guide',
-    description:
-      'Rad Power, Woom, Little Fiets, Kent, Razor, Segway. every major kids e-bike tested. Age ranges, safety features, California helmet law, and what to actually buy.',
+    title: "Best Kids Electric Bikes: Ages 5-14 Compared and Ranked",
+    description: "Which e-bike is right for your 5, 8, 10, or 14-year-old? A parent's guide ranked by safety and ride.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -52,37 +50,37 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Rad Power RadRunner Plus Youth',
-      url: 'https://ratereliefca.com/reviews/kids-electric-bike#rad-runner',
+      url: 'https://greenreviewshub.com/reviews/kids-electric-bike#rad-runner',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Woom UP 5',
-      url: 'https://ratereliefca.com/reviews/kids-electric-bike#woom',
+      url: 'https://greenreviewshub.com/reviews/kids-electric-bike#woom',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Little Fiets',
-      url: 'https://ratereliefca.com/reviews/kids-electric-bike#little-fiets',
+      url: 'https://greenreviewshub.com/reviews/kids-electric-bike#little-fiets',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Kent Torpedo',
-      url: 'https://ratereliefca.com/reviews/kids-electric-bike#kent',
+      url: 'https://greenreviewshub.com/reviews/kids-electric-bike#kent',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Razor MX650',
-      url: 'https://ratereliefca.com/reviews/kids-electric-bike#razor',
+      url: 'https://greenreviewshub.com/reviews/kids-electric-bike#razor',
     },
     {
       '@type': 'ListItem',
       position: 6,
       name: 'Segway Xyber',
-      url: 'https://ratereliefca.com/reviews/kids-electric-bike#segway',
+      url: 'https://greenreviewshub.com/reviews/kids-electric-bike#segway',
     },
   ],
 };
@@ -145,6 +143,7 @@ const faqSchema = {
 export default function KidsElectricBikeHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="kids-electric-bike" />
       <ReviewHeader />
       <script
         type='application/ld+json'
@@ -177,7 +176,7 @@ export default function KidsElectricBikeHub() {
                 Buyer&apos;s Guide
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Best Kids Electric Bikes 2026: Ages 5-14 Tested and Ranked
+                Best Kids Electric Bikes 2026: Ages 5-14 Compared and Ranked
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: '#f5f5f5', muted: '#a1a1aa', border: 'hsl(150, 10%, 18%)', accent: '#22c55e' }} />

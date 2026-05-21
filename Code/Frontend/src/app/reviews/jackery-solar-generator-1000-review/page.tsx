@@ -27,22 +27,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'jackery-solar-generator-1000';
 
 export const metadata: Metadata = {
-  title:
-    'Jackery Solar Generator 1000 Review: Explorer 1000 + SolarSaga 100W Bundle (2026)',
-  description:
-    'In-depth Jackery Solar Generator 1000 review covering the Explorer 1000 + SolarSaga 100W panel bundle. 1,002 Wh capacity, 1,000W output, portable solar charging, real-world performance, and honest pros/cons. Rating: 4.2/5.',
+  title: "Jackery Solar Generator 1000 Review: Explorer + 100W Panel",
+  description: "Jackery Solar Generator 1000 review: Explorer 1000 Plus + SolarSaga 100W panel bundle, 1,002 Wh, X-Boost, 7+ hour solar recharge, and PSPS-ready.",
   alternates: {
     canonical: '/reviews/jackery-solar-generator-1000-review',
   },
   openGraph: {
-    title:
-      'Jackery Solar Generator 1000 Review: Explorer 1000 + SolarSaga 100W Bundle',
-    description:
-      'Full review of the Jackery Solar Generator 1000, 1,002 Wh lithium battery, 1,000W pure sine wave output, and SolarSaga 100W panel. Is the $1,099 bundle worth it?',
+    title: "Jackery Solar Generator 1000 Review: Explorer + 100W Panel",
+    description: "Jackery Solar Generator 1000 Plus tested — capacity, solar recharge time, and PSPS readiness.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -60,21 +57,21 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
-      'https://ratereliefca.com/reviews/jackery-solar-generator-1000-review',
+      'https://greenreviewshub.com/reviews/jackery-solar-generator-1000-review',
   },
 };
 
@@ -91,15 +88,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -129,7 +126,7 @@ const reviewSchema = {
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
-      'https://ratereliefca.com/reviews/jackery-solar-generator-1000-review',
+      'https://greenreviewshub.com/reviews/jackery-solar-generator-1000-review',
   },
 };
 
@@ -199,6 +196,7 @@ const faqSchema = {
 export default function JackerySolarGenerator1000Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="jackery-solar-generator-1000-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

@@ -20,20 +20,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Ceiling Fans 2026: Energy-Efficient Smart Ceiling Fans Compared',
-  description:
-    'Compare the best ceiling fans of 2026. In-depth reviews of Hunter Symphony, Big Ass Fans Haiku, Minka-Aire Light Wave, Modern Forms Torque, Fanimation Kute, and Hampton Bay Windward IV. DC vs AC motors, smart features, and sizing guide.',
+  title: "Best Ceiling Fan 2026: Hunter, Big Ass Fans, Minka-Aire",
+  description: "Best ceiling fan picks: Hunter Symphony (DC motor, smart, under $300), Big Ass Fans Haiku, Minka-Aire Light Wave, Modern Forms Torque, Fanimation Kute compared.",
   alternates: {
     canonical: '/reviews/best-ceiling-fan',
   },
   openGraph: {
-    title:
-      'Best Ceiling Fans 2026: Energy-Efficient Smart Ceiling Fans',
-    description:
-      'Hunter Symphony vs Big Ass Fans Haiku vs Modern Forms Torque vs Fanimation Kute. Full specs, pros/cons, sizing guide, and smart home integration breakdown.',
+    title: "Best Ceiling Fan 2026: Hunter, Big Ass Fans, Minka-Aire",
+    description: "Hunter Symphony wins under $300. Big Ass Fans Haiku for premium. Which DC ceiling fan saves the most?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -51,20 +48,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-ceiling-fan',
+    '@id': 'https://greenreviewshub.com/reviews/best-ceiling-fan',
   },
 };
 
@@ -229,6 +226,7 @@ const fans: Fan[] = [
 export default function BestCeilingFan() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-ceiling-fan" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -275,7 +273,7 @@ export default function BestCeilingFan() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop' alt='Ceiling fan in modern interior' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/ceiling-fans/hero-best-ceiling-fan.jpg' alt='Brushed-nickel ceiling fan in a sunlit vaulted living room' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />

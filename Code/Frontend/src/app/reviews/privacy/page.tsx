@@ -7,11 +7,11 @@ import { ChevronRight } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | GreenReviewsHub',
-  description:
-    'GreenReviewsHub privacy policy — what we collect, how we use it, your rights under GDPR and CCPA, and how to contact us.',
+  title: "Privacy Policy | GreenReviewsHub",
+  description: "GreenReviewsHub privacy policy — what we collect, how we use it, your rights under GDPR and CCPA, and how to contact us.",
   alternates: {
     canonical: '/reviews/privacy',
   },
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="privacy" pageType="WebPage" pageTitle="Privacy Policy" pageDescription="GreenReviewsHub privacy policy: what we collect, how we use it, your GDPR/CCPA rights." />
       <ReviewHeader />
       <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>

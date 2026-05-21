@@ -25,20 +25,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Mitsubishi Mini Split Review (MSZ-GL Series): Premium Ductless Heat Pump (2026)',
-  description:
-    'In-depth Mitsubishi Electric ductless mini split review covering the MSZ-GL, MSZ-FH, and MSZ-FZ series. Up to 20.2 SEER2, whisper-quiet 19 dB, Hyper-Heating to -13°F, 12-year compressor warranty. Full specs, model comparison, and honest pros/cons.',
+  title: "Mitsubishi Mini Split Review: MSZ-GL, 20.2 SEER2, 19 dB",
+  description: "Mitsubishi mini split review: #1 ductless brand in North America, 20.2 SEER2, Hyper-Heating to -13F, whisper-quiet 19 dB. MSZ-GL, FH, and FZ compared.",
   alternates: {
     canonical: '/reviews/mitsubishi-mini-split-review',
   },
   openGraph: {
-    title:
-      'Mitsubishi Mini Split Review (MSZ-GL Series): Premium Ductless Heat Pump (2026)',
-    description:
-      'Detailed Mitsubishi Electric mini split review. #1 selling mini split brand in North America. MSZ-GL vs FH vs FZ series compared. Professional installation required.',
+    title: "Mitsubishi Mini Split Review: MSZ-GL, 20.2 SEER2, 19 dB",
+    description: "20.2 SEER2, Hyper-Heating to -13F, 19 dB whisper-quiet. Is the Mitsubishi MSZ-GL worth the premium price?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -56,20 +53,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/mitsubishi-mini-split-review',
+    '@id': 'https://greenreviewshub.com/reviews/mitsubishi-mini-split-review',
   },
 };
 
@@ -86,15 +83,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -124,7 +121,7 @@ const reviewSchema = {
     'The Mitsubishi Electric MSZ-GL series is the benchmark for ductless mini split reliability and performance. As the #1 selling mini split brand in North America, Mitsubishi has earned its reputation through decades of consistent quality, whisper-quiet operation as low as 19 dB, and a 12-year compressor warranty that backs up their confidence. The inverter-driven variable speed compressor delivers precise temperature control and up to 20.2 SEER2 efficiency. The Hyper-Heating H2i models extend operation down to -13°F. The tradeoff is price: $3,000-$7,000 installed, with no DIY option. You are paying for premium engineering and the peace of mind that comes with it.',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/mitsubishi-mini-split-review',
+    '@id': 'https://greenreviewshub.com/reviews/mitsubishi-mini-split-review',
   },
 };
 
@@ -204,6 +201,7 @@ const PRODUCT_KEY = 'mitsubishi-mini-split';
 export default function MitsubishiMiniSplitReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="mitsubishi-mini-split-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

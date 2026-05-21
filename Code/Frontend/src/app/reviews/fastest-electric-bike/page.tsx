@@ -20,22 +20,20 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 // Primary affiliate CTA for this hub — top pick of the category
 const PRIMARY_PRODUCT_KEY = 'delfast-top-3';
 
 export const metadata: Metadata = {
-  title:
-    'Fastest Electric Bikes 2026: 35+ MPH Class 3 and Off-Road Monsters',
-  description:
-    'The fastest electric bikes you can actually buy in 2026. Delfast Top 3.0 (50 mph), HPC Revolution XX, Vintage Electric Scrambler, Ariel Rider X-Class, and the 50 mph Stealth Bomber B52 compared; Class 3 laws, off-road legality, and California helmet requirements.',
+  title: "Fastest Electric Bike 2026: 50 MPH Delfast, HPC & Vintage",
+  description: "The fastest electric bike picks you can actually buy: Delfast Top 3.0 (50 mph), HPC Revolution XX, Vintage Electric Scrambler, and Ariel Rider X-Class.",
   alternates: {
     canonical: '/reviews/fastest-electric-bike',
   },
   openGraph: {
-    title: 'Fastest Electric Bikes 2026: The Complete Speed Guide',
-    description:
-      'Delfast, HPC Revolution XX, Vintage Electric, Ariel Rider, Stealth Bomber B52 compared. Class 3 laws, off-road monsters, and California-specific rules explained.',
+    title: "Fastest Electric Bike 2026: 50 MPH Delfast, HPC & Vintage",
+    description: "50 mph on two wheels, no license required (sort of). The bikes that bend the Class 3 rules in 2026.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -52,31 +50,31 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Delfast Top 3.0',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-bike#delfast',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-bike#delfast',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'HPC Revolution XX',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-bike#hpc',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-bike#hpc',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Vintage Electric Scrambler',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-bike#vintage',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-bike#vintage',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Ariel Rider X-Class 52V',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-bike#ariel',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-bike#ariel',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Stealth Bomber B52',
-      url: 'https://ratereliefca.com/reviews/fastest-electric-bike#stealth',
+      url: 'https://greenreviewshub.com/reviews/fastest-electric-bike#stealth',
     },
   ],
 };
@@ -139,6 +137,7 @@ const faqSchema = {
 export default function FastestElectricBikeHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="fastest-electric-bike" />
       <ReviewHeader />
       <script
         type='application/ld+json'

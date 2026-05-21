@@ -11,13 +11,13 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Star, Check, X, Zap, Battery, S
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'bluetti-ac200max';
 
 export const metadata: Metadata = {
-  title: 'Bluetti AC200Max Review 2026: Expandable 2,048Wh LFP for Home Backup',
-  description:
-    'Bluetti AC200Max review: 2,048Wh LFP expandable to 8,192Wh with B230/B300 batteries, 2,200W output (4,800W Power Lifting), 900W solar input, 3,500-cycle battery. California PSPS, TOU, SGIP, and NEM 3.0 analysis.',
+  title: "Bluetti AC200Max Review: 2,048Wh Expandable to 8,192Wh LFP",
+  description: "Bluetti AC200Max review: 2,048Wh LFP expandable to 8,192Wh, 2,200W output (4,800W Power Lifting), 900W solar input, 3,500-cycle lifespan. Home backup at $1,699.",
   keywords: [
     'bluetti ac200max review',
     'bluetti ac200max',
@@ -27,12 +27,11 @@ export const metadata: Metadata = {
     'home backup power station',
     'bluetti ac200max solar generator',
   ],
-  alternates: { canonical: 'https://ratereliefca.com/reviews/bluetti-ac200max-review' },
+  alternates: { canonical: '/reviews/bluetti-ac200max-review' },
   openGraph: {
-    title: 'Bluetti AC200Max Review 2026: Expandable 2,048Wh LFP Home Backup',
-    description:
-      '2,048Wh LFP expandable to 8.2kWh, 2,200W output (4,800W Power Lifting), 900W solar, 3,500 cycles. The honest California-focused review.',
-    url: 'https://ratereliefca.com/reviews/bluetti-ac200max-review',
+    title: "Bluetti AC200Max Review: 2,048Wh Expandable to 8,192Wh LFP",
+    description: "2,048Wh, expandable to 8,192Wh, $1,699. Is the Bluetti AC200Max the best home backup under $2K?",
+    url: 'https://greenreviewshub.com/reviews/bluetti-ac200max-review',
     siteName: 'California Rate Relief Program',
     type: 'article',
     locale: 'en_US',
@@ -115,6 +114,7 @@ export default function Page() {
 
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="bluetti-ac200max-review" />
       <ReviewHeader />
 
       <script

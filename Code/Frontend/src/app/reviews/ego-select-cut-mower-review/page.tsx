@@ -25,20 +25,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'EGO Select Cut XP Mower Review (LM2156SP): The Best Electric Lawn Mower in 2026?',
-  description:
-    'In-depth EGO Select Cut XP mower review (LM2156SP) covering the multi-blade Select Cut system, 56V battery runtime, self-propelled performance, noise levels vs gas, and the 70+ tool EGO platform ecosystem. 4.7/5 rating.',
+  title: "EGO Select Cut XP Mower Review: LM2156SP, 21-inch, 56V",
+  description: "EGO Select Cut XP mower review (LM2156SP): 21-inch self-propelled, multi-blade Select Cut system, 56V Arc Lithium, handles 1/4 to 1/2 acre on a charge. $799.",
   alternates: {
     canonical: '/reviews/ego-select-cut-mower-review',
   },
   openGraph: {
-    title:
-      'EGO Select Cut XP Mower Review (LM2156SP): The Best Electric Lawn Mower in 2026?',
-    description:
-      'Detailed review of the EGO Power+ Select Cut XP self-propelled mower, 21-inch steel deck, 3 swappable blade types, 56V ARC Lithium battery, up to 60 min runtime. Is it worth $799?',
+    title: "EGO Select Cut XP Mower Review: LM2156SP, 21-inch, 56V",
+    description: "Three swappable blades, gas-equivalent cut, 1/4 to 1/2 acre per charge. Is the LM2156SP the best electric mower?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -56,20 +53,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/ego-select-cut-mower-review',
+    '@id': 'https://greenreviewshub.com/reviews/ego-select-cut-mower-review',
   },
 };
 
@@ -83,15 +80,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -178,6 +175,7 @@ const PRODUCT_KEY = 'ego-select-cut-mower';
 export default function EgoSelectCutMowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ego-select-cut-mower-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

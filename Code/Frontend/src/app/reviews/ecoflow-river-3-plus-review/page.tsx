@@ -26,20 +26,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ecoflow-river-3-plus';
 
 export const metadata: Metadata = {
-  title: 'EcoFlow River 3 Plus Review 2026: Upgraded LFP for $399',
-  description:
-    'Full EcoFlow River 3 Plus review, 286 Wh LFP (expandable to 572 Wh), 600W output (1,200W X-Boost), 220W solar, 60-minute recharge, 9.9 lbs. How does the $399 River 3 Plus compare to the base River 3?',
+  title: "EcoFlow River 3 Plus Review: 286Wh LFP, 600W X-Boost, $399",
+  description: "EcoFlow River 3 Plus review: 286Wh LFP (expandable to 572Wh), 600W output (1,200W X-Boost), 220W solar, 60-min recharge, 9.9 lbs. Worth the upgrade from base?",
   alternates: {
     canonical: '/reviews/ecoflow-river-3-plus-review',
   },
   openGraph: {
-    title: 'EcoFlow River 3 Plus Review 2026: Upgraded LFP for $399',
-    description:
-      'Hands-on review of the EcoFlow River 3 Plus. 286 Wh LFP (expandable to 572 Wh), 600W continuous output, expansion battery support. Is the $140 upgrade over the base River 3 worth it?',
+    title: "EcoFlow River 3 Plus Review: 286Wh LFP, 600W X-Boost, $399",
+    description: "286Wh, 600W, 60-minute recharge, $399. Is the EcoFlow River 3 Plus worth the $100 upgrade?",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -52,12 +51,12 @@ const reviewSchema = {
   reviewBody:
     'The EcoFlow River 3 Plus delivers 286 Wh of LFP capacity (expandable to 572 Wh with a second battery module), a 600W continuous inverter (1,200W X-Boost), 220W solar input, and a full 0-100% recharge in 60 minutes. At $399 MSRP, it is the upgrade path from the base River 3 for buyers who want real-world utility from a small unit — including running most household appliances and capacity expansion for longer outages.',
   datePublished: '2026-04-22',
-  author: { '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://ratereliefca.com' },
+  author: { '@type': 'Organization', name: 'GreenReviewsHub', url: 'https://greenreviewshub.com' },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
-    logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
+    url: 'https://greenreviewshub.com',
+    logo: { '@type': 'ImageObject', url: 'https://greenreviewshub.com/img/logo.svg' },
   },
   itemReviewed: {
     '@type': 'Product',
@@ -133,6 +132,7 @@ const faqSchema = {
 export default function EcoFlowRiver3PlusReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ecoflow-river-3-plus-review" />
       <ReviewHeader />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

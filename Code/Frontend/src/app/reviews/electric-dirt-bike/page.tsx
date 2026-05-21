@@ -23,22 +23,20 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 // Primary affiliate CTA for this hub, our overall top pick
 const PRIMARY_PRODUCT_KEY = 'sur-ron-light-bee-x';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Dirt Bikes 2026: Full-Size, Kids, and Street Legal Options',
-  description:
-    'Compare the best electric dirt bikes of 2026, Sur-Ron Light Bee X, Talaria Sting R MX4, Segway X260, Kuberg Freerider, and the 80-HP Stark VARG. Full-size vs kids, street legal vs off-road, California CARB rules, battery range, and buying advice.',
+  title: "Electric Dirt Bikes 2026: Adult, Kid, Street Legal Picks",
+  description: "Electric dirt bikes for every rider: Sur-Ron Light Bee X, Talaria Sting R MX4, Segway X260, Kuberg Freerider, and the 80-HP Stark VARG.",
   alternates: {
     canonical: '/reviews/electric-dirt-bike',
   },
   openGraph: {
-    title: 'Best Electric Dirt Bikes 2026: The Complete Buyer\'s Guide',
-    description:
-      'Sur-Ron, Talaria, Segway, Kuberg, Stark VARG compared. Adult vs kids, trail vs street legal, California-specific regulations explained.',
+    title: "Electric Dirt Bikes 2026: Adult, Kid, Street Legal Picks",
+    description: "Sur-Ron, Talaria, Segway, Stark VARG — every electric dirt bike worth riding in 2026.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -55,31 +53,31 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Sur-Ron Light Bee X',
-      url: 'https://ratereliefca.com/reviews/electric-dirt-bike#sur-ron',
+      url: 'https://greenreviewshub.com/reviews/electric-dirt-bike#sur-ron',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Talaria Sting R MX4',
-      url: 'https://ratereliefca.com/reviews/electric-dirt-bike#talaria',
+      url: 'https://greenreviewshub.com/reviews/electric-dirt-bike#talaria',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Segway X260',
-      url: 'https://ratereliefca.com/reviews/electric-dirt-bike#segway',
+      url: 'https://greenreviewshub.com/reviews/electric-dirt-bike#segway',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Kuberg Freerider',
-      url: 'https://ratereliefca.com/reviews/electric-dirt-bike#kuberg',
+      url: 'https://greenreviewshub.com/reviews/electric-dirt-bike#kuberg',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Stark VARG',
-      url: 'https://ratereliefca.com/reviews/electric-dirt-bike#stark',
+      url: 'https://greenreviewshub.com/reviews/electric-dirt-bike#stark',
     },
   ],
 };
@@ -142,6 +140,7 @@ const faqSchema = {
 export default function ElectricDirtBikeHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="electric-dirt-bike" />
       <ReviewHeader />
       <script
         type='application/ld+json'

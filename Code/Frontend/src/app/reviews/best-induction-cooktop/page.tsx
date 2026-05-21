@@ -23,19 +23,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Induction Cooktops & Ranges 2026: GE Profile vs Bosch vs Samsung vs LG vs Duxtop',
-  description:
-    'Compare the best induction cooktops and induction ranges for 2026. In-depth reviews of GE Profile PHS93XYPFS, Samsung Bespoke, Bosch NIT5660UC, Duxtop 9620LS, and LG LSIL6336F. Includes induction vs gas vs electric comparison and cookware guide.',
+  title: "Best Induction Cooktop 2026: Bosch vs GE Profile, Samsung",
+  description: "Best induction cooktop picks: Bosch NIT5660UC (36-in FlexInduction), GE Profile PHS93XYPFS range with air fry, Samsung Bespoke, LG LSIL6336F, and Duxtop 9620LS.",
   alternates: {
     canonical: '/reviews/best-induction-cooktop',
   },
   openGraph: {
-    title: 'Best Induction Cooktops & Ranges 2026',
-    description:
-      'GE Profile vs Samsung Bespoke vs Bosch vs LG vs Duxtop. Full specs, pros/cons, energy savings, and cookware compatibility guide.',
+    title: "Best Induction Cooktop 2026: Bosch vs GE Profile, Samsung",
+    description: "Induction boils water 50% faster than gas. The top cooktops and ranges of 2026 ranked.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -53,20 +51,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-induction-cooktop',
+    '@id': 'https://greenreviewshub.com/reviews/best-induction-cooktop',
   },
 };
 
@@ -218,6 +216,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestInductionCooktop() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-induction-cooktop" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -270,7 +269,7 @@ export default function BestInductionCooktop() {
               >
                 Induction cooking has gone from niche European luxury to mainstream American kitchen essential.
                 Whether you are building a new kitchen, replacing a dying gas range, or just curious about
-                going all-electric, we tested and compared the best induction cooktops and ranges you can buy
+                going all-electric, we researched and compared the best induction cooktops and ranges you can buy
                 in 2026. From a $100 portable burner to a $2,799 smart slide-in range, here is what actually
                 deserves your countertop space.
               </p>
@@ -761,7 +760,7 @@ export default function BestInductionCooktop() {
                   </div>
 
                   <p className="text-base leading-relaxed mb-6" style={{ color: '#d4d4d8' }}>
-                    The Bosch NIT5660UC is the gold standard for standalone cooktops. This 36-inch, 5-burner unit features FlexInduction (merges two left-side burners into one oversized zone), 17 power levels, and AutoChef temperature management. SpeedBoost channels power from adjacent elements to cut boil times by up to 35% — the fastest cooktop we tested. Build quality is unmistakably Bosch: heavy ceramic glass, tight seams, and a minimalist European aesthetic.
+                    The Bosch NIT5660UC is the gold standard for standalone cooktops. This 36-inch, 5-burner unit features FlexInduction (merges two left-side burners into one oversized zone), 17 power levels, and AutoChef temperature management. SpeedBoost channels power from adjacent elements to cut boil times by up to 35% — the fastest cooktop in this guide. Build quality is unmistakably Bosch: heavy ceramic glass, tight seams, and a minimalist European aesthetic.
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-6">
@@ -773,7 +772,7 @@ export default function BestInductionCooktop() {
                       <ul className="space-y-2 text-sm" style={{ color: '#d4d4d8' }}>
                         {[
                           'FlexInduction zone is genuinely versatile for large cookware',
-                          '17 power levels give finer control than any range we tested',
+                          '17 power levels give finer control than any range in this guide',
                           'AutoChef maintains exact temperatures for precise cooking',
                           'SpeedBoost borrows power for ultra-fast boiling',
                         ].map((pro) => (
@@ -1251,11 +1250,11 @@ export default function BestInductionCooktop() {
                 {[
                   {
                     q: 'What is the best induction cooktop in 2026?',
-                    a: 'For cooktop-only, the Bosch NIT5660UC is our top pick with its FlexInduction zone, 17 power levels, and SpeedBoost. For a full range, the GE Profile PHS93XYPFS takes the crown with 5 burners, air fry, WiFi, and the fastest boil time we measured.',
+                    a: 'For cooktop-only, the Bosch NIT5660UC is our top pick with its FlexInduction zone, 17 power levels, and SpeedBoost. For a full range, the GE Profile PHS93XYPFS takes the crown with 5 burners, air fry, WiFi, and the fastest boil time in this guide.',
                   },
                   {
                     q: 'Is induction cooking really better than gas?',
-                    a: 'For most home cooks, yes. Induction is faster, more energy efficient, safer, and produces no indoor air pollutants. Gas offers visual flame feedback and works during power outages, but induction matches or exceeds gas on every cooking performance metric we tested.',
+                    a: 'For most home cooks, yes. Induction is faster, more energy efficient, safer, and produces no indoor air pollutants. Gas offers visual flame feedback and works during power outages, but independent testing shows induction matches or exceeds gas on every major cooking performance metric.',
                   },
                   {
                     q: 'How much does it cost to switch from gas to induction?',
@@ -1307,7 +1306,7 @@ export default function BestInductionCooktop() {
                       pick: 'Best Overall Range',
                       name: 'GE Profile PHS93XYPFS',
                       price: '$2,799',
-                      why: 'The most complete induction range we tested. Fastest boil time, air fry, WiFi, and slide-in design.',
+                      why: 'The most complete induction range in this guide. Fastest boil time, air fry, WiFi, and slide-in design.',
                     },
                     {
                       pick: 'Best Value Range',

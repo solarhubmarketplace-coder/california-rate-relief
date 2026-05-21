@@ -28,22 +28,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'lectric-xp-3';
 
 export const metadata: Metadata = {
-  title:
-    'Lectric XP 3.0 Review: Best Folding E-Bike Under $1,000? (2026)',
-  description:
-    'In-depth Lectric XP 3.0 review covering motor performance, battery range, folding mechanism, ride quality, and honest pros/cons. 750W hub motor, 48V 14Ah battery, Class 2 e-bike at $999.',
+  title: "Lectric XP 3.0 Review: 750W Folding E-Bike Under $1,000",
+  description: "Lectric XP 3.0 review: 750W rear hub motor, 48V 14Ah battery with up to 65 mi pedal-assist range, and a folding frame that fits in a trunk. All for $999.",
   alternates: {
     canonical: '/reviews/lectric-xp-3-review',
   },
   openGraph: {
-    title:
-      'Lectric XP 3.0 Review: Best Folding E-Bike Under $1,000?',
-    description:
-      'Full review of the Lectric XP 3.0 folding e-bike, 750W motor, 48V 14Ah battery, 28 mph top speed, foldable frame. Is it worth $999?',
+    title: "Lectric XP 3.0 Review: 750W Folding E-Bike Under $1,000",
+    description: "Can a $999 folding e-bike really hit 65 miles per charge? Lectric XP 3.0 honestly tested.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -58,15 +55,15 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   description:
@@ -84,15 +81,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -185,6 +182,7 @@ const faqSchema = {
 export default function LectricXP3Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="lectric-xp-3-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

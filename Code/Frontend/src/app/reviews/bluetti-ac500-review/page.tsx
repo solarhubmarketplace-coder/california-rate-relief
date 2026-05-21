@@ -22,22 +22,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'bluetti-ac500';
 
 export const metadata: Metadata = {
-  title:
-    'Bluetti AC500 Review: The Most Modular Power Station You Can Buy (2026)',
-  description:
-    'In-depth Bluetti AC500 + B300S review. 5,000W output, 3,000W solar input, expandable to 18,432 Wh. Specs, real-world performance, California backup power analysis, and how it compares to EcoFlow Delta Pro 3 and Anker F3800.',
+  title: "Bluetti AC500 Review: 5,000W, 18,432Wh Expandable, $2,299",
+  description: "Bluetti AC500 + B300S review: 5,000W pure sine output, 3,000W solar input, expandable to 18,432 Wh, and the most modular home backup at $2,299.",
   alternates: {
     canonical: '/reviews/bluetti-ac500-review',
   },
   openGraph: {
-    title:
-      'Bluetti AC500 Review: The Most Modular Power Station You Can Buy (2026)',
-    description:
-      'Full review of the Bluetti AC500 + B300S portable power station. 5,000W output, expandable to 18,432 Wh, 3,000W solar input. Specs, pros, cons, and California PSPS backup analysis.',
+    title: "Bluetti AC500 Review: 5,000W, 18,432Wh Expandable, $2,299",
+    description: "Stack 6 batteries to 18,432 Wh and run a fridge for days. An in-depth look at the Bluetti AC500.",
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
   },
@@ -56,15 +53,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -93,7 +90,7 @@ const reviewSchema = {
     'The Bluetti AC500 takes a modular approach to portable power that no other manufacturer has matched. The split inverter-battery design offers unmatched expandability up to 18,432 Wh, class-leading 3,000W solar input, and 5,000W continuous output.',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/bluetti-ac500-review',
+    '@id': 'https://greenreviewshub.com/reviews/bluetti-ac500-review',
   },
 };
 
@@ -155,6 +152,7 @@ const faqSchema = {
 export default function BluettiAC500Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="bluetti-ac500-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

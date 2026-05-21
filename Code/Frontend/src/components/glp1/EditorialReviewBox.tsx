@@ -1,107 +1,86 @@
 import Link from 'next/link';
-import { ShieldCheck, Calendar, FileSearch } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
+
+// =============================================================================
+// EditorialReviewBox — "How this page is reviewed" attribution block
+// =============================================================================
+// Renders mid- or near-end of long-form YMYL pages. Surfaces editorial process
+// + freshness dates so a QRG rater (or human reader) can see:
+//   - who reviewed the page
+//   - what data sources fed it
+//   - when it was last reviewed / verified
+//   - that rankings are independent of commission size
+//   - link to the full methodology
+//
+// Wording is "Editorially Reviewed" not "Medically Reviewed" — the latter
+// would require a licensed medical professional named as the reviewer (an
+// FTC 16 CFR 255 issue if claimed without one).
+// =============================================================================
 
 interface EditorialReviewBoxProps {
-  /** ISO date when the page content was last editorially reviewed */
+  /** ISO date string for last editorial review, e.g. '2026-05-06' */
   lastReviewed: string;
-  /** ISO date when pricing/data was last verified against the source */
-  lastVerified?: string;
-  /** Optional: reviewer name (defaults to "GLP1CompareHub Editorial Team") */
-  reviewer?: string;
+  /** ISO date string for last pricing/data verification, e.g. '2026-05-06' */
+  lastVerified: string;
 }
 
-/**
- * Editorial review box — placed near the bottom of every money page.
- *
- * Critical compliance distinction:
- * We do NOT claim medical review by a licensed MD/RD because we don't
- * have one on staff. Fabricating medical credentials is an FTC violation
- * AND triggers the exact "deceptive endorsement" issue FDA flagged in
- * its March 2026 warning letters.
- *
- * Instead we are transparent: editorially reviewed for accuracy by named
- * editor, with explicit "not medical advice" language. This is more honest
- * AND more FTC-safe than the fake-doctor-photo pattern.
- */
-export function EditorialReviewBox({
-  lastReviewed,
-  lastVerified,
-  reviewer = 'GLP1CompareHub Editorial Team',
-}: EditorialReviewBoxProps) {
-  const formatDate = (iso: string) =>
-    new Date(iso + 'T00:00:00').toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-
+export function EditorialReviewBox({ lastReviewed, lastVerified }: EditorialReviewBoxProps) {
   return (
-    <section className="border-t border-glp1-charcoal/10 bg-white">
-      <div className="mx-auto max-w-3xl px-4 md:px-6 py-8">
-        <div className="rounded-xl border p-5 md:p-6" style={{ backgroundColor: '#F0EBE0', borderColor: '#E5DDC8' }}>
-          <div className="mb-3 flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5" style={{ color: '#0E6E5A' }} />
-            <h3 className="text-base font-bold" style={{ color: '#0E2A3A' }}>
-              How this page is reviewed
-            </h3>
-          </div>
-
-          <div className="space-y-3 text-sm leading-relaxed" style={{ color: '#3D5560' }}>
-            <p>
-              <strong>Editorially reviewed by {reviewer}.</strong> We are an independent
-              affiliate publisher — we are <strong>not licensed medical providers</strong> and
-              this site does not deliver medical advice. Every claim on this page is sourced
-              to a verifiable origin (peer-reviewed study, FDA documentation, live brand-site
-              crawl, or our Katalys partner dashboard).
-            </p>
-
-            <div className="grid gap-3 md:grid-cols-2 pt-2">
-              <div className="flex items-start gap-2">
-                <Calendar className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#6B7B82' }} />
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#6B7B82' }}>
-                    Last editorially reviewed
-                  </div>
-                  <div className="font-medium" style={{ color: '#0E2A3A' }}>
-                    {formatDate(lastReviewed)}
-                  </div>
-                </div>
-              </div>
-
-              {lastVerified && (
-                <div className="flex items-start gap-2">
-                  <FileSearch className="h-4 w-4 mt-0.5 shrink-0" style={{ color: '#6B7B82' }} />
-                  <div>
-                    <div className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#6B7B82' }}>
-                      Pricing/data last verified
-                    </div>
-                    <div className="font-medium" style={{ color: '#0E2A3A' }}>
-                      {formatDate(lastVerified)}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <p className="pt-2 text-xs" style={{ color: '#6B7B82' }}>
-              <strong>Affiliate disclosure:</strong> We earn a commission when you sign up
-              with a provider through our links — at no extra cost to you. We do{' '}
-              <strong>not</strong> rank providers by what they pay us; we rank by patient fit.{' '}
-              <Link href="/affiliate-disclosure" className="underline">Full disclosure</Link>.
-              Read our{' '}
-              <Link href="/methodology" className="underline">methodology</Link>{' · '}
-              <Link href="/medical-disclaimer" className="underline">medical disclaimer</Link>.
-            </p>
-
-            <div className="rounded-lg p-3 text-xs" style={{ backgroundColor: '#FFF8E1', color: '#7A4F00' }}>
-              <strong>If you are considering a GLP-1 medication:</strong> consult a
-              licensed physician familiar with your medical history. Do not start, stop,
-              or change a prescription based on content from this site. Side effects,
-              contraindications, and drug interactions are real and individual.
-            </div>
-          </div>
-        </div>
+    <aside
+      className='rounded-xl border p-5 my-8'
+      style={{ backgroundColor: '#F0EBE0', borderColor: '#D8CFB8' }}
+      aria-label='Editorial review information'
+    >
+      <div className='flex items-start gap-3 mb-3'>
+        <BookOpen
+          className='h-5 w-5 mt-0.5 flex-shrink-0'
+          style={{ color: '#0E2A3A' }}
+          aria-hidden='true'
+        />
+        <h3
+          className='text-sm font-bold uppercase tracking-wide'
+          style={{ color: '#0E2A3A' }}
+        >
+          How this page is reviewed
+        </h3>
       </div>
-    </section>
+      <p
+        className='text-sm leading-relaxed mb-4'
+        style={{ color: '#3D4A52' }}
+      >
+        Editorially reviewed by the GLP1CompareHub Editorial Team.
+        GLP1CompareHub is an independent, research-driven directory — not a
+        medical practice and not a pharmacy. Provider pricing is verified
+        directly from each provider&apos;s public site, every clinical claim
+        cites a peer-reviewed trial (NEJM, JAMA, Lancet) or FDA prescribing
+        information, and rankings are determined by published methodology
+        weights, never by commission rate. Content is for informational
+        purposes and is not medical advice — always consult a licensed
+        prescriber before starting, stopping, or modifying any GLP-1
+        medication.
+      </p>
+      <div
+        className='flex flex-wrap gap-x-4 gap-y-1 text-xs'
+        style={{ color: '#6B7B82' }}
+      >
+        <span>
+          Last editorially reviewed:{' '}
+          <strong style={{ color: '#0E2A3A' }}>{lastReviewed}</strong>
+        </span>
+        <span aria-hidden='true'>·</span>
+        <span>
+          Pricing last verified:{' '}
+          <strong style={{ color: '#0E2A3A' }}>{lastVerified}</strong>
+        </span>
+        <span aria-hidden='true'>·</span>
+        <Link
+          href='/methodology'
+          className='underline font-semibold'
+          style={{ color: '#0E2A3A' }}
+        >
+          Our methodology
+        </Link>
+      </div>
+    </aside>
   );
 }

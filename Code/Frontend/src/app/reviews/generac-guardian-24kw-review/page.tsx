@@ -26,20 +26,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Generac Guardian 24kW Review: The Whole House Standby Generator Worth the Investment?',
-  description:
-    'In-depth Generac Guardian 24kW (Model 7210) review covering specs, installation costs, fuel options, maintenance, total cost of ownership, and honest pros/cons. 24,000 watts, dual fuel, 200A transfer switch included.',
+  title: "Generac Guardian 24kW Review: Whole House Standby Examined",
+  description: "Generac Guardian 24kW review: Model 7210 dual-fuel standby with 200A ATS. Install costs, NG vs LP runtime, maintenance, and total cost of ownership.",
   alternates: {
     canonical: '/reviews/generac-guardian-24kw-review',
   },
   openGraph: {
-    title:
-      'Generac Guardian 24kW Review: The Whole House Standby Generator Worth the Investment?',
-    description:
-      'Detailed review of the Generac Guardian 24kW whole house standby generator. 24,000W output, dual fuel, automatic transfer switch, WiFi monitoring. Is $10,000-$15,000 installed worth it?',
+    title: "Generac Guardian 24kW Review: Whole House Standby Examined",
+    description: "Generac's 24kW Guardian: real install cost, fuel choice, and whether it actually runs your whole house.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -58,15 +55,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -96,7 +93,7 @@ const reviewSchema = {
     'The Generac Guardian 24kW is the sweet spot in the whole house standby generator market. It delivers enough power to run a 2,500 sq ft home with central AC, includes a 200A automatic transfer switch, and starts within 10 seconds of an outage. At $10,000-$15,000 fully installed, it is a serious investment — but for homeowners in outage-prone areas, it pays for itself in peace of mind and protected property value.',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/generac-guardian-24kw-review',
+    '@id': 'https://greenreviewshub.com/reviews/generac-guardian-24kw-review',
   },
 };
 
@@ -160,6 +157,7 @@ const PRODUCT_KEY = 'generac-guardian-24kw';
 export default function GeneracGuardian24kWReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="generac-guardian-24kw-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

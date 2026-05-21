@@ -26,22 +26,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ecoflow-river-3';
 
 export const metadata: Metadata = {
-  title:
-    'EcoFlow River 3 Review 2026: The $259 LFP Power Station Worth Buying?',
-  description:
-    'Hands-on EcoFlow River 3 review, 245 Wh LFP, 300W output (600W X-Boost), 110W solar, full recharge in 60 minutes, 8.4 lbs. Is the $259 River 3 the best entry-level power station for California camping, CPAP use, and short outages?',
+  title: "EcoFlow River 3 Review: 245Wh LFP, 300W, 60-Min Recharge",
+  description: "In-depth EcoFlow River 3 review: 245 Wh LFP, 300W output (600W X-Boost), 110W solar, full recharge in 60 minutes, 8.4 lbs, $259 MSRP.",
   alternates: {
     canonical: '/reviews/ecoflow-river-3-review',
   },
   openGraph: {
-    title:
-      'EcoFlow River 3 Review 2026: The $259 LFP Power Station Worth Buying?',
-    description:
-      'In-depth review of the EcoFlow River 3. 245 Wh LFP battery, 300W output with X-Boost to 600W, 1-hour full recharge, 8.4 lbs. Is it the best budget power station of 2026?',
+    title: "EcoFlow River 3 Review: 245Wh LFP, 300W, 60-Min Recharge",
+    description: "$259 for an LFP power station that recharges in 60 minutes? An in-depth look at the EcoFlow River 3.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -57,15 +54,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -150,6 +147,7 @@ const faqSchema = {
 export default function EcoFlowRiver3Review() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ecoflow-river-3-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

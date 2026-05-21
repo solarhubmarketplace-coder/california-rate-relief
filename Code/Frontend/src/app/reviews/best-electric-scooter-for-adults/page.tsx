@@ -12,23 +12,24 @@ import { ArrowLeft, ArrowRight, Calendar, Clock, Check, X, ChevronRight, Shield 
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRIMARY_PRODUCT_KEY = 'apollo-city-pro';
 
 export const metadata: Metadata = {
-  title: 'Best Electric Scooters for Adults 2026: Commuter, Heavy-Duty, and Portable | GreenReviewsHub',
-  description: 'The best electric scooters for adult commuters in 2026: Apollo City Pro, Segway GT2, NIU KQi3 Pro, Unagi Voyager, Gotrax Mosquito, Turboant X7 Pro. Range, comfort, portability, and California law.',
-  alternates: { canonical: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults' },
+  title: "Best Electric Scooter for Adults: Apollo, Segway, NIU Compared",
+  description: "Best electric scooter for adults: Apollo City Pro (32 mph, 38-mile range), Segway GT2, NIU KQi3 Pro under $700, Unagi Voyager, Gotrax Mosquito, Turboant X7 Pro.",
+  alternates: { canonical: '/reviews/best-electric-scooter-for-adults' },
   openGraph: {
-    title: 'Best Electric Scooters for Adults 2026: Commuter, Heavy-Duty, and Portable',
-    description: 'Six adult e-scooters tested for real commutes, not marketing specs.',
-    url: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults',
+    title: "Best Electric Scooter for Adults: Apollo, Segway, NIU Compared",
+    description: "Apollo City Pro at $1,599 is the sweet spot. NIU KQi3 Pro under $700 if your commute is short.",
+    url: 'https://greenreviewshub.com/reviews/best-electric-scooter-for-adults',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Electric Scooters for Adults 2026',
-    description: 'Apollo, Segway, NIU, Unagi, Gotrax, Turboant, commuter scooters ranked honestly.',
+    title: 'Best Electric Scooters for Adults: Commuter, Heavy-Duty',
+    description: 'The best electric scooters for adult commuters: Apollo City Pro, Segway GT2, NIU KQi3 Pro, Unagi Voyager, Gotrax Mosquito, Turboant X7 Pro.',
   },
 };
 
@@ -40,37 +41,37 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Apollo City Pro',
-      url: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults#apollo-city-pro',
+      url: 'https://greenreviewshub.com/reviews/best-electric-scooter-for-adults#apollo-city-pro',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Segway GT2',
-      url: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults#segway-gt2',
+      url: 'https://greenreviewshub.com/reviews/best-electric-scooter-for-adults#segway-gt2',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'NIU KQi3 Pro',
-      url: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults#niu-kqi3-pro',
+      url: 'https://greenreviewshub.com/reviews/best-electric-scooter-for-adults#niu-kqi3-pro',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'Unagi Model One Voyager',
-      url: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults#unagi-voyager',
+      url: 'https://greenreviewshub.com/reviews/best-electric-scooter-for-adults#unagi-voyager',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'Gotrax Mosquito',
-      url: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults#gotrax-mosquito',
+      url: 'https://greenreviewshub.com/reviews/best-electric-scooter-for-adults#gotrax-mosquito',
     },
     {
       '@type': 'ListItem',
       position: 6,
       name: 'Turboant X7 Pro',
-      url: 'https://ratereliefca.com/reviews/best-electric-scooter-for-adults#turboant-x7-pro',
+      url: 'https://greenreviewshub.com/reviews/best-electric-scooter-for-adults#turboant-x7-pro',
     },
   ],
 };
@@ -133,6 +134,7 @@ const faqSchema = {
 export default function BestElectricScooterForAdultsHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-scooter-for-adults" />
       <ReviewHeader />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

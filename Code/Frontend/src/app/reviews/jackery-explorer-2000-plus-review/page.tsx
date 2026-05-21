@@ -22,22 +22,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'jackery-explorer-2000-plus';
 
 export const metadata: Metadata = {
-  title:
-    'Jackery Explorer 2000 Plus Review: The Most Portable Power Station for Home Backup (2026)',
-  description:
-    'In-depth Jackery Explorer 2000 Plus review. 2,042 Wh capacity, 3,000W output, expandable to 12,000 Wh, and the lightest in its class at 61.5 lbs. Specs, real-world performance, California backup power analysis, and how it compares to EcoFlow Delta Pro 3 and Bluetti AC500.',
+  title: "Jackery Explorer 2000 Plus Review: 2,042Wh, 3,000W, 61.5 lbs",
+  description: "Jackery Explorer 2000 Plus review: 2,042 Wh LFP, 3,000W output, expandable to 12,000 Wh, and the lightest in its class at 61.5 lbs for home backup.",
   alternates: {
     canonical: '/reviews/jackery-explorer-2000-plus-review',
   },
   openGraph: {
-    title:
-      'Jackery Explorer 2000 Plus Review: The Most Portable Power Station for Home Backup (2026)',
-    description:
-      'Full review of the Jackery Explorer 2000 Plus portable power station. 2,042 Wh LiFePO4, 3,000W output, expandable to 12,000 Wh. Specs, pros, cons, and California PSPS backup analysis.',
+    title: "Jackery Explorer 2000 Plus Review: 2,042Wh, 3,000W, 61.5 lbs",
+    description: "Lightest 2 kWh power station in its class. The Jackery 2000 Plus tested for PSPS home backup.",
     type: 'article',
     publishedTime: '2026-04-17T00:00:00Z',
   },
@@ -56,15 +53,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -94,7 +91,7 @@ const reviewSchema = {
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
-      'https://ratereliefca.com/reviews/jackery-explorer-2000-plus-review',
+      'https://greenreviewshub.com/reviews/jackery-explorer-2000-plus-review',
   },
 };
 
@@ -156,6 +153,7 @@ const faqSchema = {
 export default function JackeryExplorer2000PlusReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="jackery-explorer-2000-plus-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

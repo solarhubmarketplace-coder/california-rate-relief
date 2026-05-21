@@ -26,19 +26,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Chainsaws (2026): DeWalt vs EGO vs Ryobi vs Makita vs Stihl, Top Battery Chainsaws Compared',
-  description:
-    'Compare the best electric chainsaws for 2026. In-depth reviews of EGO CS1804, DeWalt DCCS670X1, Milwaukee M18 FUEL, Ryobi 40V HP, Stihl MSA 220 C-B, and Makita XCU11SM1. Bar length guide, battery platform comparison, and electric vs gas breakdown included.',
+  title: "Best Electric Chainsaws: EGO vs DeWalt vs Stihl Compared",
+  description: "Best electric chainsaws compared: EGO CS1804, DeWalt DCCS670X1, Milwaukee M18 FUEL, Ryobi 40V HP, Stihl MSA 220 C-B, and Makita XCU11SM1.",
   alternates: {
     canonical: '/reviews/best-electric-chainsaw',
   },
   openGraph: {
-    title: 'Best Electric Chainsaws (2026): DeWalt vs EGO vs Ryobi vs Stihl',
-    description:
-      'EGO CS1804 vs DeWalt DCCS670X1 vs Milwaukee M18 FUEL vs Ryobi 40V HP vs Stihl MSA 220 vs Makita XCU11SM1. Full specs, pros/cons, and buyer guide.',
+    title: "Best Electric Chainsaws: EGO vs DeWalt vs Stihl Compared",
+    description: "Battery chainsaws are finally fast enough for real wood. Here's how EGO, DeWalt, and Stihl actually stack up.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -56,20 +54,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-chainsaw',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-chainsaw',
   },
 };
 
@@ -239,6 +237,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestElectricChainsaw() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-chainsaw" />
       <ReviewHeader />
       <script
         type="application/ld+json"

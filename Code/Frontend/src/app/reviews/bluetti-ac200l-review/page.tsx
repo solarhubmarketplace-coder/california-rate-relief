@@ -22,22 +22,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'bluetti-ac200l';
 
 export const metadata: Metadata = {
-  title:
-    'Bluetti AC200L Review: The Best Portable Power Station Under $1,000 (2026)',
-  description:
-    'In-depth Bluetti AC200L review. 2,048 Wh LiFePO4, 2,400W output, expandable to 8,192 Wh, 0-80% in 45 minutes. At $799, it is the best value portable power station for California homeowners. Specs, pros, cons, and PSPS backup analysis.',
+  title: "Bluetti AC200L Review: 2,048Wh LFP Power Station for $799",
+  description: "Bluetti AC200L review: 2,048Wh LiFePO4, 2,400W output (3,600W Power Lifting), expandable to 8,192Wh, 0-80% in 45 min. Best portable power station under $1,000.",
   alternates: {
     canonical: '/reviews/bluetti-ac200l-review',
   },
   openGraph: {
-    title:
-      'Bluetti AC200L Review: The Best Portable Power Station Under $1,000 (2026)',
-    description:
-      'Full review of the Bluetti AC200L portable power station. 2,048 Wh, 2,400W output, expandable to 8,192 Wh. At $799 it is the best value in the category. Specs, pros, cons, and California PSPS analysis.',
+    title: "Bluetti AC200L Review: 2,048Wh LFP Power Station for $799",
+    description: "2,048Wh, 2,400W, full charge in 45 minutes, $799. Is this the best power station under $1K?",
     type: 'article',
     publishedTime: '2026-04-17T00:00:00Z',
   },
@@ -56,15 +53,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -93,7 +90,7 @@ const reviewSchema = {
     'The Bluetti AC200L is the best portable power station under $1,000. At $799 it delivers 2,048 Wh of LiFePO4 storage, 2,400W output with Power Lifting to 3,600W, blazing fast 0-80% charging in 45 minutes, a 30A RV plug, and expansion to 8,192 Wh. No other unit matches this combination of features at this price.',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/bluetti-ac200l-review',
+    '@id': 'https://greenreviewshub.com/reviews/bluetti-ac200l-review',
   },
 };
 
@@ -155,6 +152,7 @@ const faqSchema = {
 export default function BluettiAC200LReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="bluetti-ac200l-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

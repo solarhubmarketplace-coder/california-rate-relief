@@ -23,19 +23,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Portable Heaters (2026): Propane & Electric Compared | GreenReviewsHub',
-  description:
-    'Compare the best portable heaters for 2026 including propane and electric models. In-depth reviews of Mr. Heater Buddy, DeWalt DXH12B, Sengoku HeatMate, Lasko 755320, Dr. Infrared DR-218, and Campy Gear Chubby. BTU guide, safety tips, and buyer FAQ.',
+  title: "Best Portable Heaters: Propane vs Electric Models Ranked",
+  description: "Best portable heaters compared: Mr. Heater Buddy, DeWalt DXH12B, Lasko 755320, Dr. Infrared DR-218, and more ranked by BTU output, safety features, and runtime.",
   alternates: {
     canonical: '/reviews/best-portable-heater',
   },
   openGraph: {
-    title: 'Best Portable Heaters (2026): Propane & Electric Compared',
-    description:
-      'Mr. Heater Buddy vs DeWalt DXH12B vs Sengoku HeatMate vs Lasko 755320 vs Dr. Infrared DR-218 vs Campy Gear Chubby. Full specs, pros/cons, and safety guide.',
+    title: "Best Portable Heaters: Propane vs Electric Models Ranked",
+    description: "Propane vs electric: which portable heater warms a garage, room, or job site fastest and safest?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -53,20 +51,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-portable-heater',
+    '@id': 'https://greenreviewshub.com/reviews/best-portable-heater',
   },
 };
 
@@ -224,6 +222,7 @@ const heaters: Heater[] = [
 export default function BestPortableHeater() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-portable-heater" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -285,7 +284,7 @@ export default function BestPortableHeater() {
                 outlet for convenient, fume-free warmth.
               </p>
               <p className="text-lg leading-relaxed mb-6" style={{ color: '#a1a1aa' }}>
-                We tested and researched six standout portable heaters across both categories to help
+                We researched and compared six standout portable heaters across both categories to help
                 you find the best match for your budget, use case, and safety requirements. Every
                 pick below was evaluated on heat output (BTU), runtime, portability, safety features,
                 and real-world value.
@@ -1035,7 +1034,7 @@ export default function BestPortableHeater() {
                   <p className="leading-relaxed">
                     <strong style={{ color: '#22c55e' }}>Best ultralight for camping:</strong>{' '}
                     The <strong style={{ color: '#f5f5f5' }}>Campy Gear Chubby 2-in-1</strong> at 3.3 lbs
-                    doubles as a stove and is the most packable heater we tested.
+                    doubles as a stove and is the most packable heater in this guide.
                   </p>
                 </div>
               </div>

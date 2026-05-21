@@ -6,11 +6,6 @@ import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
 import { glp1Providers, ProviderCategory } from '@/lib/glp1-providers';
 import { GLP1HeroPlaceholder } from '@/components/glp1/GLP1HeroPlaceholder';
-import { MedicalDisclaimerBanner } from '@/components/glp1/MedicalDisclaimerBanner';
-import { StickyMobileCTA } from '@/components/glp1/StickyMobileCTA';
-import { EditorialReviewBox } from '@/components/glp1/EditorialReviewBox';
-import { RelatedGuides } from '@/components/glp1/RelatedGuides';
-import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
 import { ShieldCheck, Calendar, BadgeCheck, Star, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -25,9 +20,7 @@ export const metadata: Metadata = {
     url: 'https://glp1comparehub.com/providers',
     siteName: 'GLP1CompareHub',
     type: 'website',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
-  twitter: { card: 'summary_large_image' },
 };
 
 const breadcrumbSchema = {
@@ -76,9 +69,6 @@ export default function ProvidersDirectoryPage() {
       />
 
       <GLP1Header />
-      <MedicalDisclaimerBanner />
-      <RelatedGuides currentPath="/providers" priorityCluster="compare" />
-      <StickyMobileCTA href={buildGlp1AffiliateUrl('medvi', 'providers')} brandName="MEDVi" pricePitch="Compounded GLP-1 from $179/mo — verified pricing, ships nationwide" />
 
       {/* Affiliate disclosure strip */}
       <div className='border-b' style={{ backgroundColor: '#F4EBD0', borderColor: '#E5DDC8' }}>
@@ -135,7 +125,7 @@ export default function ProvidersDirectoryPage() {
             <div className='flex flex-wrap items-center gap-4 mt-6 text-xs' style={{ color: '#3D5560' }}>
               <div className='flex items-center gap-1.5'>
                 <ShieldCheck className='h-4 w-4' style={{ color: '#7CA982' }} />
-                Medically Reviewed
+                Editorially Reviewed
               </div>
               <div className='flex items-center gap-1.5'>
                 <BadgeCheck className='h-4 w-4' style={{ color: '#7CA982' }} />
@@ -143,7 +133,7 @@ export default function ProvidersDirectoryPage() {
               </div>
               <div className='flex items-center gap-1.5'>
                 <Calendar className='h-4 w-4' style={{ color: '#7CA982' }} />
-                Updated Weekly
+                Updated Monthly
               </div>
             </div>
           </div>
@@ -187,7 +177,6 @@ export default function ProvidersDirectoryPage() {
         </section>
       </main>
 
-      <EditorialReviewBox lastReviewed="2026-05-06" lastVerified="2026-05-06" />
       <GLP1Footer />
     </GLP1Layout>
   );

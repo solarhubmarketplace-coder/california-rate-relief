@@ -7,11 +7,11 @@ import { ChevronRight, Mail, MessageCircle, AlertCircle, Briefcase } from 'lucid
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title: 'Contact GreenReviewsHub',
-  description:
-    'Get in touch with GreenReviewsHub, questions, corrections, partnerships, and press inquiries.',
+  title: "Contact GreenReviewsHub: Questions, Corrections, Press",
+  description: "Get in touch with GreenReviewsHub. We read every email: product questions, fact corrections, partnership inquiries, and press requests welcome.",
   alternates: {
     canonical: '/reviews/contact',
   },
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="contact" pageType="ContactPage" pageTitle="Contact Green Reviews Hub" pageDescription="Get in touch with the GreenReviewsHub editorial team." />
       <ReviewHeader />
       <main className='py-16' style={{ backgroundColor: '#0a0a0a' }}>
         <div className='container mx-auto px-4'>

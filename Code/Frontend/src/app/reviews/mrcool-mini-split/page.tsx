@@ -26,22 +26,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'mrcool-diy-4th-gen';
 
 export const metadata: Metadata = {
-  title:
-    'MrCool Mini Split Review 2026: DIY 4th Gen, Olympus, and Hyper Heat Compared',
-  description:
-    'Complete MrCool mini split review covering DIY 4th Gen (12K, 24K, 36K BTU), Olympus Hyper Heat 24K, and Advantage 3rd Gen. SEER2 20-22, pre-charged quick-connect line sets, WiFi, cold-climate -22°F operation, California TECH rebates, and federal 25C $2,000 credit.',
+  title: "MrCool Mini Split Review: DIY 4th Gen, Olympus Hyper Heat",
+  description: "MrCool mini split review: DIY 4th Gen (12K/24K/36K BTU) with pre-charged quick-connect, Olympus Hyper Heat 24K cold-climate, and Advantage 3rd Gen compared.",
   alternates: {
     canonical: '/reviews/mrcool-mini-split',
   },
   openGraph: {
-    title:
-      'MrCool Mini Split Review 2026: DIY 4th Gen, Olympus, and Hyper Heat Compared',
-    description:
-      'MrCool DIY 4th Gen vs Olympus Hyper Heat vs Advantage 3rd Gen — which one fits your home? Pre-charged line sets, SEER2 ratings, warranty, rebates.',
+    title: "MrCool Mini Split Review: DIY 4th Gen, Olympus Hyper Heat",
+    description: "MrCool DIY mini split: install it yourself in an afternoon? We compared the 4th Gen, Olympus, and Advantage.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -201,6 +198,7 @@ const faqSchema = {
 export default function MrCoolMiniSplitHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="mrcool-mini-split" />
       <ReviewHeader />
       <script
         type='application/ld+json'

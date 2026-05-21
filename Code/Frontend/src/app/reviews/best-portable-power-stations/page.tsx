@@ -20,20 +20,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Portable Power Stations 2026: 6 Tested for Home Backup (EcoFlow, Anker, Bluetti, Jackery)',
-  description:
-    'Compare the best portable power stations for home backup in 2026. In-depth reviews of EcoFlow Delta Pro 3, Anker SOLIX F3800, Bluetti AC500, Jackery 2000 Plus, and more. California PSPS and solar pairing guide included.',
+  title: "Best Portable Power Stations 2026: 6 Compared for Home Backup",
+  description: "Best portable power stations for home backup: EcoFlow Delta Pro 3, Anker SOLIX F3800, Bluetti AC500, Jackery 2000 Plus, and Tesla Powerwall 3 compared.",
   alternates: {
     canonical: '/reviews/best-portable-power-stations',
   },
   openGraph: {
-    title:
-      'Best Portable Power Stations for Home Backup (2026)',
-    description:
-      'EcoFlow Delta Pro 3 vs Anker SOLIX F3800 vs Bluetti AC500 vs Jackery 2000 Plus. Full specs, pros/cons, and California buyer guide.',
+    title: "Best Portable Power Stations 2026: 6 Compared for Home Backup",
+    description: "We compared 6 portable power stations for California PSPS backup. Here's which one wins.",
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
   },
@@ -51,20 +48,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-portable-power-stations',
+    '@id': 'https://greenreviewshub.com/reviews/best-portable-power-stations',
   },
 };
 
@@ -214,6 +211,7 @@ const products: Product[] = [
 export default function BestPortablePowerStations() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-portable-power-stations" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -283,7 +281,7 @@ export default function BestPortablePowerStations() {
                       head-to-head with real watt-hours, cycle counts, and price-per-kWh math.
                     </p>
                     <a
-                      href="#ecoflow-delta-pro-3"
+                      href="/reviews/ecoflow-delta-pro-3-review"
                       className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 font-bold px-5 py-2.5 rounded-lg transition-colors"
                     >
                       See the #1 Pick &rarr;
@@ -296,12 +294,12 @@ export default function BestPortablePowerStations() {
             {/* Trust badges strip */}
             <div className="mb-10 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
               <div className="rounded-lg p-3 border" style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
-                <div className="text-2xl font-bold text-emerald-400">100+</div>
-                <div className="text-xs" style={{ color: '#a1a1aa' }}>Hours of testing</div>
-              </div>
-              <div className="rounded-lg p-3 border" style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
                 <div className="text-2xl font-bold text-emerald-400">6</div>
                 <div className="text-xs" style={{ color: '#a1a1aa' }}>Stations compared</div>
+              </div>
+              <div className="rounded-lg p-3 border" style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
+                <div className="text-2xl font-bold text-emerald-400">100s</div>
+                <div className="text-xs" style={{ color: '#a1a1aa' }}>Owner reports reviewed</div>
               </div>
               <div className="rounded-lg p-3 border" style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
                 <div className="text-2xl font-bold text-emerald-400">$0</div>
@@ -1116,7 +1114,7 @@ export default function BestPortablePowerStations() {
                   </div>
                 </div>
                 <p className="text-sm italic" style={{ color: '#a1a1aa' }}>
-                  Two out of three AIs picked the EcoFlow Delta Pro 3 — and our 100+ hours of testing confirm it.
+                  Two out of three AIs picked the EcoFlow Delta Pro 3 — and our spec analysis and owner-report research point to the same conclusion.
                 </p>
               </div>
             </section>
@@ -1206,32 +1204,32 @@ export default function BestPortablePowerStations() {
 
                   <div className="border rounded-lg p-4 mt-4" style={{ backgroundColor: '#132a15', borderColor: '#22c55e33' }}>
                     <p className="text-sm font-medium mb-2" style={{ color: '#f5f5f5' }}>
-                      Already thinking about solar for your California home?
+                      Want a more complete backup setup?
                     </p>
                     <p className="text-sm mb-3" style={{ color: '#a1a1aa' }}>
-                      A portable power station is a great start, but rooftop solar paired with
-                      battery storage provides the most complete protection against rising rates
-                      and outages. Check if you qualify for California&apos;s rate relief programs.
+                      A portable power station is a great start, but a solar generator or a
+                      whole-house battery backup provides the most complete protection against
+                      rising rates and extended outages. See our other research-driven guides.
                     </p>
                     <div className="flex flex-wrap gap-3">
                       <Link
-                        href="/solar-savings"
+                        href="/reviews/best-solar-generator"
                         className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary/90 transition-colors"
                       >
-                        Check Your Savings
+                        Best Solar Generators
                         <ChevronRight className="h-4 w-4" />
                       </Link>
                       <Link
-                        href="/blog/is-solar-worth-it-california-2026"
+                        href="/reviews/best-solar-panel-kit"
                         className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
                       >
-                        Is Solar Worth It in CA?
+                        Best Solar Panel Kits
                       </Link>
                       <Link
-                        href="/blog/nem-3-california-still-worth-it"
+                        href="/reviews/whole-house-battery-backup"
                         className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
                       >
-                        NEM 3.0 Explained
+                        Whole-House Battery Backup
                       </Link>
                     </div>
                   </div>
@@ -1433,20 +1431,20 @@ export default function BestPortablePowerStations() {
               <div className="rounded-xl p-6 md:p-8 border" style={{ backgroundColor: '#171717', borderColor: '#27272a' }}>
                 <div className="flex items-center gap-2 mb-4">
                   <Shield className="h-5 w-5 text-emerald-400" />
-                  <h2 className="text-xl font-bold" style={{ color: '#f5f5f5' }}>How We Tested These 6 Power Stations</h2>
+                  <h2 className="text-xl font-bold" style={{ color: '#f5f5f5' }}>How We Ranked These 6 Power Stations</h2>
                 </div>
                 <div className="grid md:grid-cols-3 gap-6 text-sm" style={{ color: '#d4d4d8' }}>
                   <div>
-                    <div className="font-semibold mb-1" style={{ color: '#f5f5f5' }}>⚡ Real-load discharge tests</div>
-                    <p>Each unit was discharged with a calibrated 1,500W load (refrigerator + LED lighting + laptop) and timed to 0%. Manufacturer Wh ratings confirmed within ±5%.</p>
+                    <div className="font-semibold mb-1" style={{ color: '#f5f5f5' }}>⚡ Real-load run-time</div>
+                    <p>We compared rated capacity, continuous and surge output, and independent lab discharge data (where available) to estimate real run-time under a typical 1,500W household load.</p>
                   </div>
                   <div>
-                    <div className="font-semibold mb-1" style={{ color: '#f5f5f5' }}>☀️ Solar input verification</div>
-                    <p>Tested with two 400W bifacial panels in San Diego (May, 11am-2pm). MPPT efficiency benchmarked against EcoFlow&apos;s X-Stream baseline.</p>
+                    <div className="font-semibold mb-1" style={{ color: '#f5f5f5' }}>☀️ Solar input performance</div>
+                    <p>We cross-referenced rated solar input, MPPT specifications, and independent test outlets to gauge how quickly each unit recharges from panels in real conditions.</p>
                   </div>
                   <div>
                     <div className="font-semibold mb-1" style={{ color: '#f5f5f5' }}>💵 Total cost, not just MSRP</div>
-                    <p>Three units bought at full retail; the rest were on long-term loan. We received zero payment, and brands don&apos;t see drafts before publish.</p>
+                    <p>Our rankings draw on manufacturer specifications, independent lab testing, and aggregated owner reports. We receive zero payment from brands, and our editorial picks are made independently.</p>
                   </div>
                 </div>
               </div>

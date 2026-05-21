@@ -26,20 +26,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Heat Pump vs Furnace (2026): Which Is Better for Your Home? Complete Comparison Guide',
-  description:
-    'Heat pump vs furnace — which heating system is right for your home in 2026? Compare efficiency (COP vs AFUE), upfront and operating costs, climate suitability, and long-term savings. Includes hybrid system breakdown and climate zone recommendations.',
+  title: "Heat Pump vs Furnace: Costs, Efficiency, Climate Compared",
+  description: "Heat pump vs furnace compared: COP, HSPF2, and AFUE efficiency, upfront and operating costs, climate suitability, and when a hybrid dual-fuel system wins.",
   alternates: {
     canonical: '/reviews/heat-pump-vs-furnace',
   },
   openGraph: {
-    title:
-      'Heat Pump vs Furnace (2026): Which Is Better for Your Home?',
-    description:
-      'Complete comparison of heat pumps vs furnaces. Efficiency ratings, cost analysis, climate zone recommendations, and when a hybrid system makes sense.',
+    title: "Heat Pump vs Furnace: Costs, Efficiency, Climate Compared",
+    description: "Heat pump or furnace? The answer depends on your climate zone and electric rates. Full breakdown.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -57,20 +54,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/heat-pump-vs-furnace',
+    '@id': 'https://greenreviewshub.com/reviews/heat-pump-vs-furnace',
   },
 };
 
@@ -140,6 +137,7 @@ const faqSchema = {
 export default function HeatPumpVsFurnacePage() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="heat-pump-vs-furnace" />
       <ReviewHeader />
       <script
         type="application/ld+json"

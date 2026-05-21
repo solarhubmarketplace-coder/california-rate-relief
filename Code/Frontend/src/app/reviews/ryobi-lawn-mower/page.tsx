@@ -24,22 +24,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ryobi-lawn-mower';
 
 export const metadata: Metadata = {
-  title:
-    'Ryobi Lawn Mower Review 2026: 40V, 80V, and Gas Models Compared',
-  description:
-    'In-depth Ryobi lawn mower review covering the 40V HP Brushless self-propelled, 80V HP Brushless riders, 40V push, and the full Home Depot Ryobi lineup. Warranty, runtime, California AQMD rebates, Whisper Series noise data.',
+  title: "Ryobi Lawn Mower Review (2026): 40V vs 80V HP vs Gas",
+  description: 'Ryobi lawn mower review: the 40V HP Brushless self-propelled ($549), 80V HP 30" ride-on ($3,799), 40V push, and the full Home Depot lineup compared.',
   alternates: {
     canonical: '/reviews/ryobi-lawn-mower',
   },
   openGraph: {
-    title:
-      'Ryobi Lawn Mower Review 2026: 40V vs 80V Compared',
-    description:
-      'Ryobi 40V HP Brushless self-propelled, 80V HP Brushless 30" ride-on, 40V push, and 80V rear-engine rider compared. Is Ryobi the right battery mower brand?',
+    title: "Ryobi Lawn Mower Review (2026): 40V vs 80V HP vs Gas",
+    description: "40V HP, 80V Pro, or gas? We compared the full Ryobi mower lineup so you can pick the right deck.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -173,6 +170,7 @@ const faqSchema = {
 export default function RyobiLawnMowerReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ryobi-lawn-mower" />
       <ReviewHeader />
       <script
         type='application/ld+json'

@@ -23,19 +23,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Dirt Bikes for Adults (2026): Sur-Ron vs KTM vs Stark Varg vs Zero. Top 6 Reviewed',
-  description:
-    'Compare the best electric dirt bikes for adults in 2026. In-depth reviews of Sur-Ron Light Bee X, KTM Freeride E-XC, Stark Varg, Cake Kalk OR, Segway X260, and Zero FX. Specs, range, street legal options, and buying guide.',
+  title: "Best Electric Dirt Bikes for Adults: Sur-Ron vs KTM 2026",
+  description: "Best electric dirt bikes for adults: Sur-Ron Light Bee X, KTM Freeride E-XC, Stark Varg, Cake Kalk OR, Segway X260, and Zero FX compared.",
   alternates: {
     canonical: '/reviews/best-electric-dirt-bike-adults',
   },
   openGraph: {
-    title: 'Best Electric Dirt Bikes for Adults (2026): Top 6 Reviewed',
-    description:
-      'Sur-Ron Light Bee X vs KTM Freeride E-XC vs Stark Varg vs Cake Kalk OR vs Segway X260 vs Zero FX. Full specs, pros/cons, electric vs gas comparison, and buying guide.',
+    title: "Best Electric Dirt Bikes for Adults: Sur-Ron vs KTM 2026",
+    description: "Sur-Ron, KTM, Stark Varg, Cake — best electric dirt bikes for adults ranked by trail performance.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -53,20 +51,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-dirt-bike-adults',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-dirt-bike-adults',
   },
 };
 
@@ -245,6 +243,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestElectricDirtBikeAdults() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-dirt-bike-adults" />
       <ReviewHeader />
       <script
         type="application/ld+json"

@@ -21,19 +21,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Tankless Water Heaters (2026): Rinnai vs Rheem vs Navien vs Noritz. Full Comparison',
-  description:
-    'Compare the best tankless water heaters in 2026. In-depth reviews of Rinnai RU199iN, Rheem RTGH-95DVLN, Navien NPE-240A2, and Noritz EZ111DV. Cost breakdown, sizing guide, and tankless vs tank comparison included.',
+  title: "Best Tankless Water Heater 2026: Rinnai vs Rheem vs Navien",
+  description: "Best tankless water heater picks: Rinnai RU199iN (11 GPM), Rheem RTGH-95DVLN, Navien NPE-240A2, Noritz EZ111DV. 24-34% more efficient than tank.",
   alternates: {
     canonical: '/reviews/best-tankless-water-heater',
   },
   openGraph: {
-    title: 'Best Tankless Water Heaters (2026): Full Comparison Guide',
-    description:
-      'Rinnai vs Rheem vs Navien vs Noritz. Specs, cost breakdown, sizing guide, and honest pros/cons for every budget.',
+    title: "Best Tankless Water Heater 2026: Rinnai vs Rheem vs Navien",
+    description: "Rinnai RU199iN, Navien NPE-240A2, Rheem condensing units. Which tankless actually pays off in California?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -51,20 +49,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-tankless-water-heater',
+    '@id': 'https://greenreviewshub.com/reviews/best-tankless-water-heater',
   },
 };
 
@@ -220,6 +218,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestTanklessWaterHeater() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-tankless-water-heater" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -1182,7 +1181,7 @@ export default function BestTanklessWaterHeater() {
                   The Noritz EZ111DV earns its &quot;Best Compact&quot; badge with the
                   smallest footprint in our lineup while still packing 199K BTU and
                   11.1 GPM. At 0.97 UEF, it&apos;s technically the most efficient unit
-                  we tested &mdash; though the real-world difference between 0.96 and
+                  in this guide &mdash; though the real-world difference between 0.96 and
                   0.97 is negligible.
                 </p>
                 <p className="text-base leading-relaxed mb-4" style={{ color: '#a1a1aa' }}>

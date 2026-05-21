@@ -23,21 +23,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRIMARY_PRODUCT_KEY = 'rad-power-bikes';
 
 export const metadata: Metadata = {
-  title:
-    'Rad Power Bikes Review 2026: RadRover, RadRunner, RadCity Compared',
-  description:
-    'Honest Rad Power Bikes review covering the 2026 lineup: RadRover 6 Plus, RadRunner 3 Plus, RadCity 5 Plus, RadExpand 5, RadWagon 5, and RadTrike. Seattle-based DTC brand with 650K+ bikes sold, 30-day test ride, and utility-focused lineup.',
+  title: "Rad Power Bikes 2026 Review: RadRover, RadRunner, RadCity",
+  description: "Rad Power Bikes 2026 review covering the lineup: RadRover 6 Plus, RadRunner 3 Plus, RadCity 5 Plus, RadExpand 5, RadWagon 5, and RadTrike.",
   alternates: {
     canonical: '/reviews/rad-power-bikes',
   },
   openGraph: {
-    title: 'Rad Power Bikes Review 2026: The Full Lineup Compared',
-    description:
-      'Every Rad Power bike reviewed, RadRover 6 Plus, RadRunner 3 Plus, RadCity 5 Plus, RadExpand 5, RadWagon 5, RadTrike. Which Rad to buy and why.',
+    title: "Rad Power Bikes 2026 Review: RadRover, RadRunner, RadCity",
+    description: "Rad Power Bikes 2026 — RadRover, RadRunner, RadCity, RadWagon, and the new RadTrike compared.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -54,37 +52,37 @@ const itemListSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'RadRover 6 Plus',
-      url: 'https://ratereliefca.com/reviews/rad-power-bikes#radrover',
+      url: 'https://greenreviewshub.com/reviews/rad-power-bikes#radrover',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'RadRunner 3 Plus',
-      url: 'https://ratereliefca.com/reviews/rad-power-bikes#radrunner',
+      url: 'https://greenreviewshub.com/reviews/rad-power-bikes#radrunner',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'RadCity 5 Plus',
-      url: 'https://ratereliefca.com/reviews/rad-power-bikes#radcity',
+      url: 'https://greenreviewshub.com/reviews/rad-power-bikes#radcity',
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'RadExpand 5',
-      url: 'https://ratereliefca.com/reviews/rad-power-bikes#radexpand',
+      url: 'https://greenreviewshub.com/reviews/rad-power-bikes#radexpand',
     },
     {
       '@type': 'ListItem',
       position: 5,
       name: 'RadWagon 5',
-      url: 'https://ratereliefca.com/reviews/rad-power-bikes#radwagon',
+      url: 'https://greenreviewshub.com/reviews/rad-power-bikes#radwagon',
     },
     {
       '@type': 'ListItem',
       position: 6,
       name: 'RadTrike',
-      url: 'https://ratereliefca.com/reviews/rad-power-bikes#radtrike',
+      url: 'https://greenreviewshub.com/reviews/rad-power-bikes#radtrike',
     },
   ],
 };
@@ -147,6 +145,7 @@ const faqSchema = {
 export default function RadPowerBikesHub() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="rad-power-bikes" />
       <ReviewHeader />
       <script
         type='application/ld+json'

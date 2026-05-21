@@ -24,20 +24,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Solar Pool Heater 2026: Fafco vs Heliocol vs SunHeater, Complete Buyer\u2019s Guide',
-  description:
-    'Compare the best solar pool heaters and solar pool covers for 2026. In-depth reviews of Fafco Bear, Heliocol HC-40, SunHeater S120U, SmartPool S601P, and Sun2Solar covers. Sizing guide, DIY installation tips, and ROI payback analysis.',
+  title: "Best Solar Pool Heater: Fafco vs Heliocol vs SunHeater",
+  description: "Best solar pool heater compared: Fafco Bear, Heliocol HC-40, SunHeater S120U, SmartPool S601P, and Sun2Solar covers, with sizing and ROI analysis.",
   alternates: {
     canonical: '/reviews/best-solar-pool-heater',
   },
   openGraph: {
-    title:
-      'Best Solar Pool Heater 2026: Fafco vs Heliocol vs SunHeater',
-    description:
-      'Fafco Bear vs Heliocol HC-40 vs SunHeater S120U. Full specs, solar pool cover comparison, sizing calculator, and installation guide for 2026.',
+    title: "Best Solar Pool Heater: Fafco vs Heliocol vs SunHeater",
+    description: "Heat your pool free with the sun. Fafco, Heliocol, and SunHeater compared for real Southern California ROI.",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -55,20 +52,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-solar-pool-heater',
+    '@id': 'https://greenreviewshub.com/reviews/best-solar-pool-heater',
   },
 };
 
@@ -244,6 +241,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function BestSolarPoolHeater() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-solar-pool-heater" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -293,7 +291,7 @@ export default function BestSolarPoolHeater() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80&auto=format&fit=crop' alt='Solar pool heater' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/solar-pool-heaters/hero-best-solar-pool-heater.jpg' alt='Rooftop solar pool heater panels heating a backyard pool on a sunny day' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />

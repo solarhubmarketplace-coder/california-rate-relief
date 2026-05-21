@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Home EV Chargers (Level 2) in 2026: ChargePoint vs Wallbox vs JuiceBox vs Tesla',
-  description:
-    'Compare the best Level 2 home EV chargers in 2026. In-depth reviews of ChargePoint Home Flex, Wallbox Pulsar Plus, JuiceBox 48, Emporia Smart, Grizzl-E Classic, and Tesla Wall Connector. Installation costs, smart features, and solar pairing guide.',
+  title: "Best Home EV Charger 2026: ChargePoint vs Wallbox vs Tesla",
+  description: "Best home EV charger picks: ChargePoint Home Flex (50A, 12 kW), Wallbox Pulsar Plus, JuiceBox 48, Emporia Smart, Grizzl-E Classic, and Tesla Wall Connector.",
   alternates: {
     canonical: '/reviews/best-ev-charger',
   },
   openGraph: {
-    title: 'Best Home EV Chargers (Level 2) in 2026',
-    description:
-      'ChargePoint Home Flex vs Wallbox Pulsar Plus vs JuiceBox 48 vs Emporia vs Grizzl-E vs Tesla. Full specs, pros/cons, and buyer guide.',
+    title: "Best Home EV Charger 2026: ChargePoint vs Wallbox vs Tesla",
+    description: "Level 2 home EV chargers ranked: which one charges fastest, costs least, and works with every EV?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-ev-charger',
+    '@id': 'https://greenreviewshub.com/reviews/best-ev-charger',
   },
 };
 
@@ -223,6 +221,7 @@ const chargers: Charger[] = [
 export default function BestEVCharger() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-ev-charger" />
       <ReviewHeader />
       <script
         type="application/ld+json"

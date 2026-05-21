@@ -22,19 +22,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Best Electric Riding Mowers (2026): EGO vs Ryobi vs Greenworks vs Cub Cadet vs John Deere vs Husqvarna',
-  description:
-    'Compare the best electric riding lawn mowers in 2026. In-depth reviews of EGO Z6, Ryobi 80V, Greenworks CrossoverZ, Cub Cadet CC 30e, John Deere Z370R Electric, and Husqvarna Ceora. Battery runtime, zero-turn performance, and cost of ownership vs gas.',
+  title: "Best Electric Riding Mowers: EGO vs Ryobi vs Greenworks",
+  description: "Best electric riding mowers compared: EGO Z6, Ryobi 80V, Greenworks CrossoverZ, Cub Cadet CC 30e, and John Deere Z370R ranked by acreage, runtime, and value.",
   alternates: {
     canonical: '/reviews/best-electric-riding-mower',
   },
   openGraph: {
-    title: 'Best Electric Riding Mowers (2026)',
-    description:
-      'EGO Z6 vs Ryobi 80V vs Greenworks CrossoverZ vs Cub Cadet vs John Deere vs Husqvarna. Full specs, pros/cons, and gas vs electric cost comparison.',
+    title: "Best Electric Riding Mowers: EGO vs Ryobi vs Greenworks",
+    description: "EGO Z6, Ryobi 80V, Greenworks, Cub Cadet, John Deere — which electric riding mower wins on runtime per acre?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -52,20 +50,20 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/reviews/best-electric-riding-mower',
+    '@id': 'https://greenreviewshub.com/reviews/best-electric-riding-mower',
   },
 };
 
@@ -223,6 +221,7 @@ const mowers: Mower[] = [
 export default function BestElectricRidingMower() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="best-electric-riding-mower" />
       <ReviewHeader />
       <script
         type="application/ld+json"
@@ -275,7 +274,7 @@ export default function BestElectricRidingMower() {
             </header>
 
             <div className='mb-8 rounded-xl overflow-hidden border' style={{ borderColor: '#1e293b' }}>
-              <img src='https://images.unsplash.com/photo-1589923188900-85dae523342b?w=1200&q=80&auto=format&fit=crop' alt='Electric riding mower' className='w-full h-auto max-h-96 object-contain' loading='lazy' />
+              <img src='/img/products/riding-mowers/hero-best-electric-riding-mower.jpg' alt='Electric zero-turn riding lawn mower on a manicured suburban lawn at golden hour' className='w-full h-auto max-h-[480px] object-cover' loading='eager' fetchPriority='high' />
             </div>
 
             <AffiliateDisclosure compact />
@@ -1354,11 +1353,12 @@ export default function BestElectricRidingMower() {
             <section className="mb-8">
               <p className="text-xs" style={{ color: '#a1a1aa' }}>
                 <strong style={{ color: '#d4d4d8' }}>How we review:</strong> GreenReviewsHub
-                researches manufacturer specifications, aggregates verified owner reviews,
-                and analyzes real-world performance data. We do not accept payment for
-                placement. Affiliate links may earn a commission at no cost to you, which
-                helps support our independent testing. Prices and availability are accurate
-                as of publication and may change. Last updated April 21, 2026.
+                is research-driven. We rank products by cross-referencing manufacturer
+                specifications, independent lab testing (Project Farm, Consumer Reports, and
+                comparable outlets), and aggregated owner reports. We do not accept payment for
+                placement. Affiliate links may earn a commission at no cost to you, which helps
+                support our independent research. Prices and availability are accurate as of
+                publication and may change. Last updated April 21, 2026.
               </p>
             </section>
           </article>

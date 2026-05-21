@@ -27,22 +27,19 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 const PRODUCT_KEY = 'ecoflow-delta-2-max';
 
 export const metadata: Metadata = {
-  title:
-    'EcoFlow Delta 2 Max Review 2026: The Mid-Tier Power Station Upgrade?',
-  description:
-    'Full EcoFlow Delta 2 Max review: 2,048 Wh LFP, 2,400W output, expandable to 6,144 Wh, 1,000W solar input, and X-Stream charging 0-80% in 43 min. California SGIP, TOU arbitrage, and how it stacks up against Anker SOLIX C1000 and the original Delta 2.',
+  title: "EcoFlow Delta 2 Max Review: 2,048 Wh, X-Stream Charging",
+  description: "EcoFlow Delta 2 Max review: 2,048 Wh LFP, 2,400W output, expandable to 6,144 Wh, 1,000W solar input, and X-Stream charging 0-80% in 43 min.",
   alternates: {
     canonical: '/reviews/ecoflow-delta-2-max-review',
   },
   openGraph: {
-    title:
-      'EcoFlow Delta 2 Max Review 2026: The Mid-Tier Power Station Upgrade?',
-    description:
-      '2,048 Wh LFP, 2,400W output (3,100W surge), expandable to 6,144 Wh, 1,000W solar input. Is the Delta 2 Max the sweet-spot power station for California homes?',
+    title: "EcoFlow Delta 2 Max Review: 2,048 Wh, X-Stream Charging",
+    description: "EcoFlow Delta 2 Max — 2,048 Wh expandable to 6 kWh, with X-Stream fast charging tested.",
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
   },
@@ -58,15 +55,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -151,6 +148,7 @@ const faqSchema = {
 export default function EcoFlowDelta2MaxReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="ecoflow-delta-2-max-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'

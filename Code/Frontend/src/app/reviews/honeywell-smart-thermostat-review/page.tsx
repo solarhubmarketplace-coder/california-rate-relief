@@ -25,20 +25,17 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { GrhPageSchemas } from '@/components/shared/GrhPageSchemas';
 
 export const metadata: Metadata = {
-  title:
-    'Honeywell Home T9 Smart Thermostat Review: Room Sensors Change Everything (2026)',
-  description:
-    'In-depth Honeywell Home T9 smart thermostat review with room sensors. Geofencing, adaptive learning, multi-room comfort, Alexa/Google Home support. Full specs, energy savings analysis, and honest pros/cons.',
+  title: "Honeywell Smart Thermostat Review: T9 Sensors, Geofencing",
+  description: "Honeywell smart thermostat review: Home T9 with room sensors fixes uneven temps, geofencing auto-adjusts on arrival, Alexa and Google Home support.",
   alternates: {
     canonical: '/reviews/honeywell-smart-thermostat-review',
   },
   openGraph: {
-    title:
-      'Honeywell Home T9 Smart Thermostat Review: Room Sensors Change Everything (2026)',
-    description:
-      'Detailed review of the Honeywell Home T9 smart thermostat with room sensors. Smart Response learning, geofencing, multi-room comfort control, and up to 23% energy savings. Honest pros/cons from real-world testing.',
+    title: "Honeywell Smart Thermostat Review: T9 Sensors, Geofencing",
+    description: "Room sensors that actually fix uneven temps. Is the Honeywell T9 the smart thermostat Nest should have built?",
     type: 'article',
     publishedTime: '2026-04-21T00:00:00Z',
   },
@@ -56,21 +53,21 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
-      'https://ratereliefca.com/reviews/honeywell-smart-thermostat-review',
+      'https://greenreviewshub.com/reviews/honeywell-smart-thermostat-review',
   },
 };
 
@@ -87,15 +84,15 @@ const reviewSchema = {
   author: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GreenReviewsHub',
-    url: 'https://ratereliefca.com',
+    url: 'https://greenreviewshub.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
+      url: 'https://greenreviewshub.com/img/logo.svg',
     },
   },
   itemReviewed: {
@@ -126,7 +123,7 @@ const reviewSchema = {
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id':
-      'https://ratereliefca.com/reviews/honeywell-smart-thermostat-review',
+      'https://greenreviewshub.com/reviews/honeywell-smart-thermostat-review',
   },
 };
 
@@ -198,6 +195,7 @@ const PRODUCT_KEY = 'honeywell-smart-thermostat';
 export default function HoneywellSmartThermostatReview() {
   return (
     <ReviewLayout>
+      <GrhPageSchemas slug="honeywell-smart-thermostat-review" />
       <ReviewHeader />
       <script
         type='application/ld+json'
