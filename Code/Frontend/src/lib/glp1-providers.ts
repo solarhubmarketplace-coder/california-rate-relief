@@ -55,7 +55,7 @@ export interface GLP1Provider {
   /** Best-for use case (one line) */
   bestFor: string;
   /** Optional badge */
-  badge?: 'Best Overall' | 'Best Value' | 'Best for Branded' | 'Best for Compounded' | 'Editor’s Pick' | 'Top Ranked' | 'Best for Microdosing' | 'Best for Sublingual';
+  badge?: 'Best Overall' | 'Best Value' | 'Best for Branded' | 'Best for Compounded' | 'Editor’s Pick' | 'Top Ranked' | 'Best for Microdosing' | 'Best for Sublingual' | 'Best for 3-Month Bundles' | 'Best Multi-Vertical';
   /** Cancellation policy */
   cancellation: string;
   /** Lab work included? */

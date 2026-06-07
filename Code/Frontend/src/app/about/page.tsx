@@ -62,7 +62,12 @@ export async function generateMetadata(): Promise<Metadata> {
         'Research-backed reviews of home biohacking products. How we cite peer-reviewed studies and stay independent.',
       canonical: 'https://athomebiohacking.com/about',
     },
-  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/about' },
+    glp1: {
+      title: 'About GLP1CompareHub',
+      description:
+        'Independent comparison of GLP-1 telehealth providers. How we evaluate compounded and branded GLP-1 programs, how we cite clinical evidence, and how we stay independent.',
+      canonical: 'https://glp1comparehub.com/about',
+    },
   };
   const m = meta[domain];
   return {

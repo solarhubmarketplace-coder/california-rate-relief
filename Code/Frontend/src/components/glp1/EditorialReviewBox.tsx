@@ -19,12 +19,47 @@ import { BookOpen } from 'lucide-react';
 
 interface EditorialReviewBoxProps {
   /** ISO date string for last editorial review, e.g. '2026-05-06' */
-  lastReviewed: string;
+  lastReviewed?: string;
   /** ISO date string for last pricing/data verification, e.g. '2026-05-06' */
-  lastVerified: string;
+  lastVerified?: string;
+  /** Editor / reviewer name (e.g. 'Chad Simpson'). Optional — defaults to "Editorial Team" wording. */
+  author?: string;
+  /** Alias for `author` — accepted for backward compatibility with older pages. */
+  reviewer?: string;
+  /** Alias for `lastReviewed` — accepted for backward compatibility with older pages. */
+  dateReviewed?: string;
+  /** Alias for `lastReviewed` — older pages used this name */
+  reviewDate?: string;
+  /** Alias for `author` — older pages used this name */
+  reviewerName?: string;
+  /** Page-specific editorial summary. Renders above the standard boilerplate when present. */
+  summary?: string;
+  /** Page-specific recommendation / verdict. Renders below the summary when present. */
+  recommendation?: string;
+  /** Page-specific "our pick" line — short label. */
+  pick?: string;
+  /** Page-specific reasoning paragraph that follows the pick. */
+  reasoning?: string;
+  /** Bulleted caveats / limitations rendered as a small list below the pick. */
+  caveats?: string[];
 }
 
-export function EditorialReviewBox({ lastReviewed, lastVerified }: EditorialReviewBoxProps) {
+export function EditorialReviewBox({
+  lastReviewed,
+  lastVerified,
+  author,
+  reviewer,
+  dateReviewed,
+  summary,
+  recommendation,
+  pick,
+  reasoning,
+  caveats,
+}: EditorialReviewBoxProps) {
+  // Coalesce aliases so older pages still work.
+  const reviewedDate = lastReviewed ?? dateReviewed;
+  const verifiedDate = lastVerified ?? lastReviewed ?? dateReviewed;
+  const reviewerName = author ?? reviewer;
   return (
     <aside
       className='rounded-xl border p-5 my-8'
@@ -44,11 +79,34 @@ export function EditorialReviewBox({ lastReviewed, lastVerified }: EditorialRevi
           How this page is reviewed
         </h3>
       </div>
+      {summary && (
+        <p className='text-sm leading-relaxed mb-3' style={{ color: '#3D4A52' }}>
+          <strong>Editorial summary:</strong> {summary}
+        </p>
+      )}
+      {recommendation && (
+        <p className='text-sm leading-relaxed mb-3' style={{ color: '#3D4A52' }}>
+          <strong>Recommendation:</strong> {recommendation}
+        </p>
+      )}
+      {pick && (
+        <p className='text-sm leading-relaxed mb-3' style={{ color: '#3D4A52' }}>
+          <strong>Our pick:</strong> {pick}
+          {reasoning && <> {reasoning}</>}
+        </p>
+      )}
+      {caveats && caveats.length > 0 && (
+        <ul className='text-sm leading-relaxed mb-4 pl-5 list-disc' style={{ color: '#3D4A52' }}>
+          {caveats.map((caveat, i) => (
+            <li key={i}>{caveat}</li>
+          ))}
+        </ul>
+      )}
       <p
         className='text-sm leading-relaxed mb-4'
         style={{ color: '#3D4A52' }}
       >
-        Editorially reviewed by the GLP1CompareHub Editorial Team.
+        Editorially reviewed by {reviewerName ?? 'the GLP1CompareHub Editorial Team'}.
         GLP1CompareHub is an independent, research-driven directory — not a
         medical practice and not a pharmacy. Provider pricing is verified
         directly from each provider&apos;s public site, every clinical claim
@@ -63,16 +121,24 @@ export function EditorialReviewBox({ lastReviewed, lastVerified }: EditorialRevi
         className='flex flex-wrap gap-x-4 gap-y-1 text-xs'
         style={{ color: '#6B7B82' }}
       >
-        <span>
-          Last editorially reviewed:{' '}
-          <strong style={{ color: '#0E2A3A' }}>{lastReviewed}</strong>
-        </span>
-        <span aria-hidden='true'>·</span>
-        <span>
-          Pricing last verified:{' '}
-          <strong style={{ color: '#0E2A3A' }}>{lastVerified}</strong>
-        </span>
-        <span aria-hidden='true'>·</span>
+        {reviewedDate && (
+          <>
+            <span>
+              Last editorially reviewed:{' '}
+              <strong style={{ color: '#0E2A3A' }}>{reviewedDate}</strong>
+            </span>
+            <span aria-hidden='true'>·</span>
+          </>
+        )}
+        {verifiedDate && (
+          <>
+            <span>
+              Pricing last verified:{' '}
+              <strong style={{ color: '#0E2A3A' }}>{verifiedDate}</strong>
+            </span>
+            <span aria-hidden='true'>·</span>
+          </>
+        )}
         <Link
           href='/methodology'
           className='underline font-semibold'

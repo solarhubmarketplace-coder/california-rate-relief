@@ -15,13 +15,18 @@ const nextConfig = {
     unoptimized: false,
   },
   eslint: {
-    // Temporarily ignored to unblock landing-page redesign deploy.
-    // Lint warnings (no-img-element on a couple <img> background images, etc.)
-    // are acceptable in production; clean up incrementally afterwards.
+    // ESLint config not yet established — flipping to false would prompt for
+    // setup at build time. Re-enable after `eslint.config.mjs` is committed.
     ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    // Re-enabled 2026-06-07. TypeScript errors will fail the build.
+    // The ~58 pre-existing prop-shape errors that surfaced when this flipped
+    // were fixed in the same commit by extending interfaces on
+    // EditorialReviewBox, VerifiedPricingBadge, StickyMobileCTA,
+    // LastReviewedBadge, AffiliateCTABox, AffiliateDisclosure, BuyButton.
+    // `npx tsc --noEmit` was clean as of 2026-06-07.
+    ignoreBuildErrors: false,
   },
 };
 

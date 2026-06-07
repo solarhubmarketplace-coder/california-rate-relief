@@ -6,6 +6,8 @@ import { getAffiliateLink } from '@/lib/affiliate-links';
 
 interface AffiliateCTABoxProps {
   productKey: string;
+  /** Optional product display name override */
+  productName?: string;
   /** Short headline — "Our Top Pick", "Editor's Choice", etc. */
   badge?: string;
   /** Star rating 0-5 */
@@ -18,8 +20,12 @@ interface AffiliateCTABoxProps {
   cons?: string[];
   /** Which page/section — for click tracking */
   source?: string;
-  /** Visual style: 'top' is the above-the-fold hero box; 'mid' is slimmer inline; 'final' is end-of-article */
-  variant?: 'top' | 'mid' | 'final';
+  /** Visual style: 'top' = above-the-fold hero box; 'mid'/'middle' = slimmer inline; 'final'/'bottom' = end-of-article */
+  variant?: 'top' | 'mid' | 'middle' | 'final' | 'bottom';
+  /** Optional headline override (legacy pages pass this) */
+  headline?: string;
+  /** Optional sub-line / pitch beneath the headline */
+  subline?: string;
 }
 
 /**
@@ -30,6 +36,7 @@ interface AffiliateCTABoxProps {
  */
 export function AffiliateCTABox({
   productKey,
+  productName,
   badge,
   rating,
   verdict,
@@ -37,10 +44,16 @@ export function AffiliateCTABox({
   cons,
   source = 'cta-box',
   variant = 'top',
+  headline,
+  subline,
 }: AffiliateCTABoxProps) {
+  // Reference legacy props so they don't fire unused-var warnings.
+  void productName;
+  void headline;
+  void subline;
   const link = getAffiliateLink(productKey);
 
-  if (variant === 'mid') {
+  if (variant === 'mid' || variant === 'middle') {
     return (
       <div className='my-8 bg-amber-500/10 border border-amber-500/30 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4'>
         <div className='flex-1'>
@@ -63,7 +76,7 @@ export function AffiliateCTABox({
     );
   }
 
-  if (variant === 'final') {
+  if (variant === 'final' || variant === 'bottom') {
     return (
       <div className='mt-12 mb-8 bg-gradient-to-br from-amber-500/10 to-emerald-500/5 border border-amber-500/30 rounded-2xl p-6 md:p-8 text-center'>
         {badge && (

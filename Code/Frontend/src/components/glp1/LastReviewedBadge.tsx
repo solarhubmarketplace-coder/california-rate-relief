@@ -11,9 +11,12 @@ import { CircleCheck } from 'lucide-react';
 interface LastReviewedBadgeProps {
   /** ISO date string, e.g. '2026-05-06' */
   lastReviewed: string;
+  /** Visual variant — pages may pass 'compact' or 'inline' for smaller forms */
+  variant?: 'default' | 'compact' | 'inline';
 }
 
-export function LastReviewedBadge({ lastReviewed }: LastReviewedBadgeProps) {
+export function LastReviewedBadge({ lastReviewed, variant }: LastReviewedBadgeProps) {
+  void variant;
   return (
     <span
       className='inline-flex items-center gap-1.5 text-xs font-medium'

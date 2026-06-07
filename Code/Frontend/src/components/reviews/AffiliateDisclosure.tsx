@@ -8,9 +8,13 @@ import { Info } from 'lucide-react';
  */
 export function AffiliateDisclosure({
   compact = false,
+  variant,
 }: {
   compact?: boolean;
+  /** Pages may pass variant='compact' as an alias for compact={true} */
+  variant?: string;
 }) {
+  if (variant === 'compact') compact = true;
   if (compact) {
     return (
       <p className='text-xs text-muted-foreground flex items-start gap-1.5 mb-4'>

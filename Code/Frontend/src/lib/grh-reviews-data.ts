@@ -4,7 +4,7 @@ export interface ReviewCard {
   description: string;
   badge: 'Comparison Guide' | 'Product Review';
   rating?: number;
-  icon: 'battery' | 'zap';
+  icon?: 'battery' | 'zap';
   image?: string;
   brand?: string;
 }

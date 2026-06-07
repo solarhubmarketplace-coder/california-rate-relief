@@ -20,13 +20,28 @@ import { useEffect, useState } from 'react';
 interface StickyMobileCTAProps {
   /** Affiliate destination — must already be built via buildGlp1AffiliateUrl() */
   href: string;
-  /** Display name of the brand (e.g. "TMates") */
-  brandName: string;
+  /** Display name of the brand (e.g. "TMates") — preferred prop name */
+  brandName?: string;
+  /** Alias for `brandName` — older pages used this name */
+  providerName?: string;
   /** Optional price pitch line (e.g. "Compounded tirzepatide from $167/mo") */
   pricePitch?: string;
+  /** CTA button text override (defaults to "Visit {brand}") */
+  ctaText?: string;
+  /** Alias for `ctaText` — older pages used this name */
+  label?: string;
 }
 
-export function StickyMobileCTA({ href, brandName, pricePitch }: StickyMobileCTAProps) {
+export function StickyMobileCTA({
+  href,
+  brandName,
+  providerName,
+  pricePitch,
+  ctaText,
+  label,
+}: StickyMobileCTAProps) {
+  const brand = brandName ?? providerName ?? 'Provider';
+  const ctaLabel = ctaText ?? label ?? `Visit ${brand}`;
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -53,7 +68,7 @@ export function StickyMobileCTA({ href, brandName, pricePitch }: StickyMobileCTA
     };
     const payload = {
       affiliate_source: 'sticky-mobile-cta',
-      brand: brandName,
+      brand,
     };
     if (Array.isArray(w.dataLayer)) {
       w.dataLayer.push({ event: 'telehealth_affiliate_click', ...payload });
@@ -71,7 +86,7 @@ export function StickyMobileCTA({ href, brandName, pricePitch }: StickyMobileCTA
       className='md:hidden fixed bottom-0 left-0 right-0 z-40 border-t-2 shadow-2xl'
       style={{ backgroundColor: '#FDF6E3', borderColor: '#C9A146' }}
       role='complementary'
-      aria-label={`Sticky CTA: visit ${brandName}`}
+      aria-label={`Sticky CTA: visit ${brand}`}
     >
       <div className='flex items-center gap-3 p-3'>
         <div className='flex-1 min-w-0'>
@@ -79,7 +94,7 @@ export function StickyMobileCTA({ href, brandName, pricePitch }: StickyMobileCTA
             className='text-xs truncate'
             style={{ color: '#6B7B82' }}
           >
-            {brandName}
+            {brand}
           </p>
           {pricePitch && (
             <p
@@ -98,9 +113,9 @@ export function StickyMobileCTA({ href, brandName, pricePitch }: StickyMobileCTA
           className='inline-flex items-center font-semibold rounded-lg px-3 py-2 text-sm whitespace-nowrap'
           style={{ backgroundColor: '#0E2A3A', color: '#F0EBE0', minHeight: '44px' }}
           data-affiliate-source='sticky-mobile-cta'
-          data-brand={brandName}
+          data-brand={brand}
         >
-          Visit {brandName} →
+          {ctaLabel} →
         </Link>
         <button
           onClick={() => setDismissed(true)}

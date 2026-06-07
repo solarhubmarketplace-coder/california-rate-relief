@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from 'react';
 import Link from 'next/link';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { getAffiliateLink, buildAffiliateUrl } from '@/lib/affiliate-links';
@@ -63,6 +64,8 @@ interface BuyButtonProps {
   /** Full-width on mobile */
   fullWidth?: boolean;
   className?: string;
+  /** Optional inline children — pages may use this as a label */
+  children?: React.ReactNode;
 }
 
 /**
