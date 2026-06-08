@@ -1111,18 +1111,25 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
   // for top-tier programs. Adjust revenue forecasts accordingly.
   'glp1-skinnyrx': {
     brand: 'SkinnyRx',
-    url: 'https://www.skinnyrx.com/',
-    status: 'pending',
-    network: 'direct',
-    commissionRate: '~$50-100 CPA (Gronk-verified May 2026)',
+    // Chad pulled offer_id=1519 from SkinnyRx's Katalys approval page 2026-06-08.
+    // ⚠ Reconciliation needed: glp1-care-bare-rx also had 1519 historically — see
+    // its entry below. Care Bare Rx flipped to 'pending' in the same commit until
+    // its current offer_id is reconfirmed at the Katalys source.
+    url: 'https://track.revoffers.com/aff_c?offer_id=1519&aff_id=12427',
+    status: 'active',
+    network: 'katalys',
+    commissionRate: '$500 default CPA per Katalys approval letter 2026-05-08. EPC + CR data pending first traffic.',
     priceDisplay: '$199-$399/mo',
   },
   'glp1-eden-health': {
     brand: 'Eden Health',
     url: 'https://track.revoffers.com/aff_c?offer_id=1435&aff_id=12427',
-    status: 'active',
+    // PAUSED by Katalys 2026-05-20. Status flipped active → pending so buy
+    // buttons stop sending traffic to a dead offer. Flip back to 'active' when
+    // Katalys re-enables, or remove if the program is permanently dead.
+    status: 'pending',
     network: 'katalys',
-    commissionRate: '$300 default CPA + 13 payout tiers (up to $350/lead). Realized EPC $3.92, CR 1.10% (Katalys May 2026)',
+    commissionRate: '$300 default CPA + 13 payout tiers (up to $350/lead). Realized EPC $3.92, CR 1.10% before pause (Katalys May 2026)',
     priceDisplay: '$149 intro / $229-$249 ongoing',
   },
   'glp1-medvi': {
@@ -1240,10 +1247,16 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
   },
   'glp1-care-bare-rx': {
     brand: 'Care Bare Rx',
+    // ⚠ 2026-06-08: offer_id=1519 was confirmed by Chad to belong to SkinnyRx now
+    // (verified on SkinnyRx's Katalys approval page). Either Katalys reassigned
+    // 1519 from Care Bare Rx → SkinnyRx, or this entry was always wrong, or one
+    // of the programs was paused. Status flipped active → pending until the
+    // current Care Bare Rx offer_id is reconfirmed at the Katalys source. Restore
+    // 'active' + correct URL once verified.
     url: 'https://track.revoffers.com/aff_c?offer_id=1519&aff_id=12427',
-    status: 'active',
+    status: 'pending',
     network: 'katalys',
-    commissionRate: '$300 default CPA + 6 payout tiers (cross-sell: hair $99, sexual health $99, NAD+ $199) (Katalys May 2026)',
+    commissionRate: '$300 default CPA + 6 payout tiers (cross-sell: hair $99, sexual health $99, NAD+ $199) (Katalys May 2026 — pre-reassignment)',
     priceDisplay: 'Weight loss from $199/mo (oral + injectable compounded)',
   },
   'glp1-system-labs': {

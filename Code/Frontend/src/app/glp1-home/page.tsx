@@ -7,6 +7,7 @@ import {
   FeatureCards,
   ExpertRankings,
   TopRatedProvidersGrid,
+  PopularGuidesGrid,
   WhyTrustBlock,
   FinalCtaBanner,
 } from '@/components/glp1/GLP1HomeSections';
@@ -125,6 +126,7 @@ export default function GLP1Home() {
         <FeatureCards />
         <ExpertRankings />
         <TopRatedProvidersGrid />
+        <PopularGuidesGrid />
         <WhyTrustBlock />
         <FinalCtaBanner />
       </main>

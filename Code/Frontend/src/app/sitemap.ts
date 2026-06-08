@@ -29,6 +29,20 @@ function reviewMtime(slug: string, fallback: Date): Date {
   return fileMtime(`src/app/reviews/${slug}/page.tsx`, fallback);
 }
 
+/**
+ * Map a user-facing URL path (e.g. '/blog' or '/solar-companies/temecula')
+ * to the mtime of its backing `src/app/<path>/page.tsx`. Falls back to
+ * `fallback` (typically `today`) when the file isn't accessible.
+ *
+ * URL paths beginning with `/` are routed to `src/app/<path>/page.tsx`.
+ * The bare base URL (empty string) maps to `src/app/page.tsx`.
+ */
+function urlMtime(urlPath: string, fallback: Date): Date {
+  const cleaned = urlPath.replace(/^\/+|\/+$/g, '');
+  const rel = cleaned ? `src/app/${cleaned}/page.tsx` : 'src/app/page.tsx';
+  return fileMtime(rel, fallback);
+}
+
 // =============================================================================
 // HOST-AWARE SITEMAP
 // =============================================================================
@@ -65,19 +79,19 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   const today = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${base}/blog`, lastModified: today, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${base}/best-solar-companies-california`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/solar-panels-california`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/panel-reviews`, lastModified: today, changeFrequency: 'weekly', priority: 0.85 },
-    { url: `${base}/commercial-solar`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/methodology`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/author/chad-simpson`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: base, lastModified: urlMtime('', today), changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/blog`, lastModified: urlMtime('/blog', today), changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/best-solar-companies-california`, lastModified: urlMtime('/best-solar-companies-california', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/solar-panels-california`, lastModified: urlMtime('/solar-panels-california', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/panel-reviews`, lastModified: urlMtime('/panel-reviews', today), changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${base}/commercial-solar`, lastModified: urlMtime('/commercial-solar', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/about`, lastModified: urlMtime('/about', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/contact`, lastModified: urlMtime('/contact', today), changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/methodology`, lastModified: urlMtime('/methodology', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/author/chad-simpson`, lastModified: urlMtime('/author/chad-simpson', today), changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/affiliate-disclosure`, lastModified: urlMtime('/affiliate-disclosure', today), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/privacy`, lastModified: urlMtime('/privacy', today), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms`, lastModified: urlMtime('/terms', today), changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const blogSlugs = [
@@ -110,7 +124,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   ];
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
     url: `${base}/blog/${slug}`,
-    lastModified: today,
+    lastModified: fileMtime(`src/app/blog/${slug}/page.tsx`, today),
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
@@ -129,7 +143,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   ];
   const installerPages: MetadataRoute.Sitemap = installerSlugs.map((slug) => ({
     url: `${base}/solar-installers/${slug}`,
-    lastModified: today,
+    lastModified: fileMtime(`src/app/solar-installers/${slug}/page.tsx`, today),
     changeFrequency: 'monthly',
     priority: 0.85,
   }));
@@ -141,7 +155,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   ];
   const panelPages: MetadataRoute.Sitemap = panelSlugs.map((slug) => ({
     url: `${base}/panel-reviews/${slug}`,
-    lastModified: today,
+    lastModified: fileMtime(`src/app/panel-reviews/${slug}/page.tsx`, today),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
@@ -154,7 +168,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   ];
   const commercialPages: MetadataRoute.Sitemap = commercialSlugs.map((slug) => ({
     url: `${base}/commercial-solar/${slug}`,
-    lastModified: today,
+    lastModified: fileMtime(`src/app/commercial-solar/${slug}/page.tsx`, today),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
@@ -164,9 +178,14 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'orange-county', 'bay-area', 'inland-empire',
     'san-diego-county', 'central-valley',
   ];
+  // Regional hub pages route through src/app/solar-savings/[city]/page.tsx; use that
+  // file's mtime as the stable proxy (per-slug mtime would always be the same).
+  const solarSavingsRouteMtime = fileMtime('src/app/solar-savings/[city]/page.tsx', today);
+  const solarCompaniesRouteMtime = fileMtime('src/app/solar-companies/[city]/page.tsx', today);
+
   const regionalPages: MetadataRoute.Sitemap = regionalSlugs.map((slug) => ({
     url: `${base}/solar-savings/${slug}`,
-    lastModified: today,
+    lastModified: solarSavingsRouteMtime,
     changeFrequency: 'monthly',
     priority: 0.85,
   }));
@@ -174,13 +193,13 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   // City pages (76+ from cities-data.ts) — both /solar-savings and /solar-companies
   const citySavingsPages: MetadataRoute.Sitemap = getAllCitySlugs().map((slug) => ({
     url: `${base}/solar-savings/${slug}`,
-    lastModified: today,
+    lastModified: solarSavingsRouteMtime,
     changeFrequency: 'monthly',
     priority: 0.75,
   }));
   const cityCompaniesPages: MetadataRoute.Sitemap = getAllCitySlugs().map((slug) => ({
     url: `${base}/solar-companies/${slug}`,
-    lastModified: today,
+    lastModified: solarCompaniesRouteMtime,
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
@@ -197,26 +216,32 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
 function grhSitemap(base: string): MetadataRoute.Sitemap {
   const today = new Date();
 
+  // GRH base URL routes through /reviews via middleware redirect; use the
+  // reviews index page's mtime as the proxy for the homepage URL.
+  const reviewsIndexMtime = urlMtime('/reviews', today);
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${base}/reviews`, lastModified: today, changeFrequency: 'weekly', priority: 0.95 },
+    { url: base, lastModified: reviewsIndexMtime, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/reviews`, lastModified: reviewsIndexMtime, changeFrequency: 'weekly', priority: 0.95 },
     // Trust / authority pages — E-E-A-T signals; previously omitted from the sitemap.
-    { url: `${base}/methodology`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/reviews/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/reviews/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/reviews/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/reviews/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/reviews/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/methodology`, lastModified: urlMtime('/methodology', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/reviews/about`, lastModified: urlMtime('/reviews/about', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/reviews/contact`, lastModified: urlMtime('/reviews/contact', today), changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/reviews/affiliate-disclosure`, lastModified: urlMtime('/reviews/affiliate-disclosure', today), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/reviews/privacy`, lastModified: urlMtime('/reviews/privacy', today), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/reviews/terms`, lastModified: urlMtime('/reviews/terms', today), changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   // Pagination pages /reviews/page/2..N — derived from TOTAL_PAGES so the
   // sitemap can never drift out of sync with the actual paginated routes
   // (the previous hardcoded 2..6 list missed page 7 once the catalog grew).
+  // All paginated pages share the dynamic route file, so use that file's mtime.
+  const reviewsPaginationMtime = fileMtime('src/app/reviews/page/[page]/page.tsx', today);
   const paginationPages: MetadataRoute.Sitemap = Array.from(
     { length: Math.max(0, GRH_TOTAL_PAGES - 1) },
     (_, i) => ({
       url: `${base}/reviews/page/${i + 2}`,
-      lastModified: today,
+      lastModified: reviewsPaginationMtime,
       changeFrequency: 'weekly' as const,
       priority: 0.5,
     }),
@@ -242,16 +267,19 @@ function grhSitemap(base: string): MetadataRoute.Sitemap {
 function shgSitemap(base: string): MetadataRoute.Sitemap {
   const today = new Date();
 
+  // SHG base URL rewrites to /shg-home via middleware; use that page's mtime.
+  const shgHomeMtime = urlMtime('/shg-home', today);
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${base}/cameras`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/methodology`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/author/chad-simpson`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: base, lastModified: shgHomeMtime, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/cameras`, lastModified: urlMtime('/cameras', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/about`, lastModified: urlMtime('/about', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/contact`, lastModified: urlMtime('/contact', today), changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/methodology`, lastModified: urlMtime('/methodology', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/author/chad-simpson`, lastModified: urlMtime('/author/chad-simpson', today), changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/affiliate-disclosure`, lastModified: urlMtime('/affiliate-disclosure', today), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/privacy`, lastModified: urlMtime('/privacy', today), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms`, lastModified: urlMtime('/terms', today), changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const cameraSlugs = [
@@ -304,22 +332,25 @@ function shgSitemap(base: string): MetadataRoute.Sitemap {
 function ahbSitemap(base: string): MetadataRoute.Sitemap {
   const today = new Date();
 
+  // AHB base URL rewrites to /ahb-home via middleware; use that page's mtime.
+  const ahbHomeMtime = urlMtime('/ahb-home', today);
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${base}/cold-plunge`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/infrared-sauna`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/pemf`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/red-light-therapy`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/vibration-plate`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/learn/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/learn/medical-disclaimer`, lastModified: today, changeFrequency: 'yearly', priority: 0.4 },
-    { url: `${base}/about`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/methodology`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/author/chad-simpson`, lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
+    { url: base, lastModified: ahbHomeMtime, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/cold-plunge`, lastModified: urlMtime('/cold-plunge', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/infrared-sauna`, lastModified: urlMtime('/infrared-sauna', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/pemf`, lastModified: urlMtime('/pemf', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/red-light-therapy`, lastModified: urlMtime('/red-light-therapy', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/vibration-plate`, lastModified: urlMtime('/vibration-plate', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/learn/about`, lastModified: urlMtime('/learn/about', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/learn/medical-disclaimer`, lastModified: urlMtime('/learn/medical-disclaimer', today), changeFrequency: 'yearly', priority: 0.4 },
+    { url: `${base}/about`, lastModified: urlMtime('/about', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/contact`, lastModified: urlMtime('/contact', today), changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/methodology`, lastModified: urlMtime('/methodology', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/author/chad-simpson`, lastModified: urlMtime('/author/chad-simpson', today), changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/affiliate-disclosure`, lastModified: urlMtime('/affiliate-disclosure', today), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/privacy`, lastModified: urlMtime('/privacy', today), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms`, lastModified: urlMtime('/terms', today), changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const ahbContentPages: MetadataRoute.Sitemap = [
@@ -348,20 +379,25 @@ function ahbSitemap(base: string): MetadataRoute.Sitemap {
 function glp1Sitemap(base: string): MetadataRoute.Sitemap {
   const today = new Date();
 
+  // GLP1 base URL rewrites to /glp1-home via middleware; use that page's mtime.
+  const glp1HomeMtime = urlMtime('/glp1-home', today);
+
   // Trust pages + key meta routes (in case they're not in the registry)
   const trustPages: MetadataRoute.Sitemap = [
-    { url: base, lastModified: today, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${base}/about`,                lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/contact`,              lastModified: today, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/methodology`,          lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/affiliate-disclosure`, lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${base}/disclaimer`,           lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${base}/privacy`,              lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${base}/terms`,                lastModified: today, changeFrequency: 'yearly',  priority: 0.3 },
+    { url: base, lastModified: glp1HomeMtime, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/about`,                lastModified: urlMtime('/about', today), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/contact`,              lastModified: urlMtime('/contact', today), changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/methodology`,          lastModified: urlMtime('/methodology', today), changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/affiliate-disclosure`, lastModified: urlMtime('/affiliate-disclosure', today), changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${base}/disclaimer`,           lastModified: urlMtime('/disclaimer', today), changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${base}/privacy`,              lastModified: urlMtime('/privacy', today), changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${base}/terms`,                lastModified: urlMtime('/terms', today), changeFrequency: 'yearly',  priority: 0.3 },
   ];
 
   // Only LIVE pages — queued/next pages don't have page.tsx files yet and would 404.
   // Sitemap accuracy > sitemap size: a 404 URL trains Google to distrust the sitemap.
+  // lastModified is derived from each route's page.tsx mtime so Google sees real
+  // change signals rather than "every page modified now."
   const registryPages: MetadataRoute.Sitemap = allPageRoutes
     .filter((r) => r.status === 'live')
     .map((r) => {
@@ -371,7 +407,7 @@ function glp1Sitemap(base: string): MetadataRoute.Sitemap {
       const priority = r.tier === 'A' ? 0.9 : r.tier === 'B' ? 0.7 : 0.5;
       return {
         url,
-        lastModified: today,
+        lastModified: urlMtime(r.path, today),
         changeFrequency: 'weekly' as const,
         priority,
       };

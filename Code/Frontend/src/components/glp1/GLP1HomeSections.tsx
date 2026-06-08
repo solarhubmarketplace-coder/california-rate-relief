@@ -315,6 +315,145 @@ function ProviderCard({
 }
 
 // ============================================================
+// POPULAR GUIDES GRID — internal linking to ~30 high-priority money pages
+// ============================================================
+// Added 2026-06-08 to fix orphan-page indexation. Previously the homepage
+// linked only to /best, /match, /providers — leaving 90+ revenue pages
+// undiscoverable to Googlebot from the root URL. This grid surfaces the
+// medication comparisons, /best/telemedicine-* rankings, compounded money
+// pages, microdosing cluster, and the "cheapest" commercial-intent pages
+// so crawlers (and humans) can find them within one hop of the homepage.
+//
+// Group order roughly matches revenue priority — top-ranked pages first.
+// ============================================================
+
+const GUIDE_GROUPS: { title: string; items: { label: string; href: string }[] }[] = [
+  {
+    title: 'Head-to-head comparisons',
+    items: [
+      { label: 'Tirzepatide vs Semaglutide', href: '/tirzepatide-vs-semaglutide' },
+      { label: 'Zepbound vs Wegovy', href: '/zepbound-vs-wegovy' },
+      { label: 'Wegovy vs Mounjaro', href: '/wegovy-vs-mounjaro' },
+      { label: 'Ozempic vs Mounjaro', href: '/ozempic-vs-mounjaro' },
+      { label: 'Semaglutide vs Wegovy', href: '/semaglutide-vs-wegovy' },
+      { label: 'Oral vs injection (semaglutide)', href: '/oral-semaglutide-vs-injection' },
+    ],
+  },
+  {
+    title: 'Best by medication',
+    items: [
+      { label: 'Best Telemedicine for Wegovy', href: '/best/telemedicine-wegovy' },
+      { label: 'Best for Zepbound', href: '/best/telemedicine-zepbound' },
+      { label: 'Best for Tirzepatide', href: '/best/telemedicine-tirzepatide' },
+      { label: 'Best for Semaglutide', href: '/best/telemedicine-semaglutide' },
+      { label: 'Best for Mounjaro', href: '/best/telemedicine-mounjaro' },
+      { label: 'Best for Ozempic', href: '/best/telemedicine-ozempic' },
+      { label: 'Best for Compounded GLP-1', href: '/best/telemedicine-compounded-glp-1' },
+      { label: 'Best Branded GLP-1', href: '/best/telemedicine-brand-name-glp-1' },
+    ],
+  },
+  {
+    title: 'Compounded GLP-1 deep dives',
+    items: [
+      { label: 'Compounded Tirzepatide', href: '/compounded-tirzepatide' },
+      { label: 'Compounded Semaglutide', href: '/compounded-semaglutide' },
+      { label: 'Best Compounded Tirzepatide', href: '/best-compounded-tirzepatide' },
+      { label: 'Best Compounded Semaglutide', href: '/best-compounded-semaglutide' },
+      { label: 'Cheapest Tirzepatide Online', href: '/cheapest-tirzepatide-online' },
+      { label: 'Cheapest Semaglutide Online', href: '/cheapest-semaglutide-online' },
+      { label: 'Is Compounded GLP-1 Legal?', href: '/is-compounded-glp-1-legal' },
+    ],
+  },
+  {
+    title: 'Oral & sublingual formats',
+    items: [
+      { label: 'Oral Tirzepatide', href: '/oral-tirzepatide' },
+      { label: 'Sublingual Semaglutide', href: '/sublingual-semaglutide' },
+      { label: 'Sublingual Tirzepatide', href: '/sublingual-tirzepatide' },
+      { label: 'Tirzepatide Tablets', href: '/tirzepatide-tablets' },
+      { label: 'Semaglutide Tablets', href: '/semaglutide-tablets' },
+      { label: 'Wegovy Pill', href: '/wegovy-pill' },
+    ],
+  },
+  {
+    title: 'Microdosing & stack adjuncts',
+    items: [
+      { label: 'Microdosing Tirzepatide', href: '/microdosing-tirzepatide' },
+      { label: 'Microdosing Semaglutide', href: '/microdosing-semaglutide' },
+      { label: 'How to Microdose Semaglutide', href: '/how-to-microdose-semaglutide' },
+      { label: 'Tirzepatide with B12', href: '/tirzepatide-with-b12' },
+      { label: 'Semaglutide with B12', href: '/semaglutide-with-b12' },
+      { label: 'GLP-1 Stack Guide', href: '/glp-1-stack-guide' },
+    ],
+  },
+  {
+    title: 'Adjacent peptides & NAD+',
+    items: [
+      { label: 'NAD+ IV Therapy', href: '/nad-iv-therapy' },
+      { label: 'NAD+ Nasal Spray', href: '/nad-nasal-spray' },
+      { label: 'NAD+ Injection', href: '/nad-injection' },
+      { label: 'Lipotropic Injections', href: '/lipotropic-injections' },
+      { label: 'Sermorelin for Weight Loss', href: '/sermorelin-for-weight-loss' },
+      { label: 'Glutathione Injection', href: '/glutathione-injection' },
+    ],
+  },
+];
+
+export function PopularGuidesGrid() {
+  return (
+    <section className='py-12 md:py-16' style={{ backgroundColor: '#F8F4ED' }}>
+      <div className='max-w-7xl mx-auto px-4 md:px-6'>
+        <div className='text-center mb-8'>
+          <h2
+            className='text-2xl md:text-3xl font-bold mb-2'
+            style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}
+          >
+            Popular guides
+          </h2>
+          <p className='text-sm md:text-base' style={{ color: '#6B7B82' }}>
+            Browse the comparison + ranking pages that drive most of our reader research.
+          </p>
+        </div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+          {GUIDE_GROUPS.map((group) => (
+            <div
+              key={group.title}
+              className='rounded-2xl bg-white p-5 md:p-6'
+              style={{ border: '1px solid #E5DDC8' }}
+            >
+              <h3
+                className='text-sm font-bold uppercase tracking-widest mb-3'
+                style={{ color: '#7A6020' }}
+              >
+                {group.title}
+              </h3>
+              <ul className='space-y-2'>
+                {group.items.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className='text-sm hover:underline inline-flex items-center gap-1.5 group'
+                      style={{ color: '#0E2A3A' }}
+                    >
+                      <span>{item.label}</span>
+                      <ArrowRight
+                        className='h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity'
+                        style={{ color: '#D4A33A' }}
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ============================================================
 // WHY TRUST + STATS ROW
 // ============================================================
 
