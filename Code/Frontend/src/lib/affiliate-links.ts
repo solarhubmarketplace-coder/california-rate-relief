@@ -1111,14 +1111,17 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
   // for top-tier programs. Adjust revenue forecasts accordingly.
   'glp1-skinnyrx': {
     brand: 'SkinnyRx',
-    // Chad pulled offer_id=1519 from SkinnyRx's Katalys approval page 2026-06-08.
-    // ⚠ Reconciliation needed: glp1-care-bare-rx also had 1519 historically — see
-    // its entry below. Care Bare Rx flipped to 'pending' in the same commit until
-    // its current offer_id is reconfirmed at the Katalys source.
-    url: 'https://track.revoffers.com/aff_c?offer_id=1519&aff_id=12427',
-    status: 'active',
+    // TODO 2026-06-08: real SkinnyRx Katalys offer_id needed. The 1519 swap
+    // earlier today was wrong — 1519 redirects to www.carebarerx.com
+    // (campaign Katalys-1519-12427), confirming it's Care Bare Rx's ID.
+    // Status held at 'pending' so buy buttons route to brand site (no tracking)
+    // rather than running with the wrong offer. Replace this URL with the
+    // correct tracking link once Chad pulls the real offer_id from the SkinnyRx
+    // detail page in Katalys, then flip status back to 'active'.
+    url: 'https://www.skinnyrx.com/',
+    status: 'pending',
     network: 'katalys',
-    commissionRate: '$500 default CPA per Katalys approval letter 2026-05-08. EPC + CR data pending first traffic.',
+    commissionRate: '$500 default CPA per Katalys approval letter 2026-05-08. Tracking blocked until correct offer_id is supplied.',
     priceDisplay: '$199-$399/mo',
   },
   'glp1-eden-health': {
@@ -1247,16 +1250,10 @@ export const AFFILIATE_LINKS: Record<string, AffiliateLink> = {
   },
   'glp1-care-bare-rx': {
     brand: 'Care Bare Rx',
-    // ⚠ 2026-06-08: offer_id=1519 was confirmed by Chad to belong to SkinnyRx now
-    // (verified on SkinnyRx's Katalys approval page). Either Katalys reassigned
-    // 1519 from Care Bare Rx → SkinnyRx, or this entry was always wrong, or one
-    // of the programs was paused. Status flipped active → pending until the
-    // current Care Bare Rx offer_id is reconfirmed at the Katalys source. Restore
-    // 'active' + correct URL once verified.
     url: 'https://track.revoffers.com/aff_c?offer_id=1519&aff_id=12427',
-    status: 'pending',
+    status: 'active',
     network: 'katalys',
-    commissionRate: '$300 default CPA + 6 payout tiers (cross-sell: hair $99, sexual health $99, NAD+ $199) (Katalys May 2026 — pre-reassignment)',
+    commissionRate: '$300 default CPA + 6 payout tiers (cross-sell: hair $99, sexual health $99, NAD+ $199) (Katalys May 2026)',
     priceDisplay: 'Weight loss from $199/mo (oral + injectable compounded)',
   },
   'glp1-system-labs': {
