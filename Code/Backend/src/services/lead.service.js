@@ -99,6 +99,40 @@ class LeadService {
       throw { statusCode: 500, message: error.message };
     }
 
+    // ✨ NEW: Instant owner alert — email the operator the moment a lead comes in.
+    // Non-blocking: a notification failure must never break lead capture.
+    try {
+      const cfg = require("../config");
+      if (cfg.OWNER_NOTIFICATION_EMAIL) {
+        const emailService = require("./email.service");
+        const subject = `🔆 New lead: ${data.name || "Unknown"}${data.utility_provider ? " — " + data.utility_provider : ""}`;
+        const row = (label, val) => `<tr><td style="padding:4px 10px;color:#555"><b>${label}</b></td><td style="padding:4px 10px">${val || "—"}</td></tr>`;
+        const html = `
+          <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px">
+            <h2 style="color:#1d4ed8;margin:0 0 4px">New California Rate Relief lead</h2>
+            <p style="color:#666;margin:0 0 12px">Captured ${data.created_at || new Date().toISOString()}</p>
+            <table style="border-collapse:collapse;font-size:14px">
+              ${row("Name", data.name)}
+              ${row("Phone", data.phone)}
+              ${row("Email", data.email)}
+              ${row("Address", data.address)}
+              ${row("Utility", data.utility_provider)}
+              ${row("Monthly bill", data.bill_amount)}
+              ${row("Credit", data.credit_score)}
+              ${row("Source", `${data.source || ""}${data.type ? " / " + data.type : ""}`)}
+            </table>
+            <p style="color:#666;font-size:13px;margin-top:14px">The system has queued the automated call / SMS / email outreach for this lead.</p>
+          </div>`;
+        // Fire-and-forget so it never delays the API response.
+        emailService
+          .sendEmail(cfg.OWNER_NOTIFICATION_EMAIL, subject, html, { from: cfg.EMAIL_FROM, leadId: data.id })
+          .then(() => console.log(`[LeadService] Owner alerted of new lead ${data.id}`))
+          .catch((e) => console.error("[LeadService] Owner alert failed:", e.message));
+      }
+    } catch (notifyErr) {
+      console.error("[LeadService] Owner alert setup failed:", notifyErr.message);
+    }
+
     // ✨ NEW: Assign email sequence to lead if active sequence exists
     try {
       const emailSequenceService = require("./email-sequence.service");

@@ -22,6 +22,10 @@ module.exports = {
     EMAIL_FROM: getEnv('EMAIL_FROM', 'California Rate Relief <noreply@ratereliefca.com>'),
     COLD_EMAIL_FROM: getEnv('COLD_EMAIL_FROM'), // Optional: Special sender for cold leads
 
+    // Owner/admin instant alert — who gets emailed the moment a new inbound lead arrives.
+    // Defaults to the operator's inbox; override in Railway env if it changes.
+    OWNER_NOTIFICATION_EMAIL: getEnv('OWNER_NOTIFICATION_EMAIL', 'solarhubmarketplace@gmail.com'),
+
     // Public URL (ngrok or production domain) - used for Twilio callbacks
     PUBLIC_URL: getEnv('PUBLIC_URL'),
 
