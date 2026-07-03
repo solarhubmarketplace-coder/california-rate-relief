@@ -45,15 +45,15 @@ export const metadata: Metadata = {
   title: 'Wegovy Pill vs Injection 2026: What\'s the Difference? | GLP1CompareHub',
   description:
     'Wegovy pill vs injection compared: bioavailability, weight loss data, fasting requirements, cost, and which format is right for you. OASIS-1 and STEP-1 trial breakdown.',
-  alternates: { canonical: 'https://glp1comparehub.com/wegovy-pill-vs-injection' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/wegovy-pill-vs-injection' },
   openGraph: {
     title: 'Wegovy Pill vs Injection 2026: OASIS vs STEP-1 Trial Data Compared',
     description:
       'The Wegovy pill shows ~15% weight loss in OASIS-1 — matching the injection. But the fasting protocol and cost make it a harder choice for most patients. Here\'s the full breakdown.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/wegovy-pill-vs-injection',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/wegovy-pill-vs-injection',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -62,18 +62,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Medication Comparisons',
-      item: 'https://glp1comparehub.com/tirzepatide-vs-semaglutide',
+      item: 'https://www.glp1comparehub.com/tirzepatide-vs-semaglutide',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Wegovy Pill vs Injection',
-      item: 'https://glp1comparehub.com/wegovy-pill-vs-injection',
+      item: 'https://www.glp1comparehub.com/wegovy-pill-vs-injection',
     },
   ],
 };
@@ -89,14 +89,14 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/wegovy-pill-vs-injection' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/wegovy-pill-vs-injection' },
 };
 
 const faqSchema = {

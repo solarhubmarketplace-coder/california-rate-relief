@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'Embody Review May 2026: $149 First Month, $299 Flat Refills, GLP-1 Gum | GLP1CompareHub',
   description:
     'Independent Embody (joinem.co) review verified May 2026. Highest realized EPC ($4.60) and conversion rate (1.31%) in our active stack. $149 first month with Spring Forward $200-off promo, then flat $299/mo refills with no dose-escalation upcharges. GLP-1 gum format available.',
-  alternates: { canonical: 'https://glp1comparehub.com/providers/embody' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/providers/embody' },
   openGraph: {
     title: 'Embody Review — $149 First Month / $299 Flat Refills + GLP-1 Gum',
     description:
       'Highest realized EPC in our active stack. Flat refill pricing, Spring Forward $200 off, and the only GLP-1 gum format available.',
-    url: 'https://glp1comparehub.com/providers/embody',
+    url: 'https://www.glp1comparehub.com/providers/embody',
     siteName: 'GLP1CompareHub',
     type: 'article',
   },
@@ -37,8 +37,8 @@ const articleSchema = {
     ratingValue: '4.7',
     bestRating: '5',
   },
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
 };

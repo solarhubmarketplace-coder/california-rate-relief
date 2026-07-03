@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   title: 'Oral Tirzepatide 2026: Sublingual Drops, GLP-1 Gum & Alternatives',
   description:
     'Compounded oral tirzepatide is now available in two needle-free formats: Direct Meds sublingual drops at $224.10/mo and Embody GLP-1 gum. Bioavailability, dosing, and how the oral route compares to injection — verified May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/oral-tirzepatide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/oral-tirzepatide' },
   openGraph: {
     title: 'Oral Tirzepatide — Sublingual + GLP-1 Gum (Needle-Free)',
     description:
       'Two verified needle-free compounded tirzepatide formats in May 2026: Direct Meds sublingual ($224.10/mo) and Embody GLP-1 gum. Side-by-side bioavailability and pricing.',
-    url: 'https://glp1comparehub.com/oral-tirzepatide',
+    url: 'https://www.glp1comparehub.com/oral-tirzepatide',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -36,9 +36,9 @@ const articleSchema = {
   headline: 'Oral Tirzepatide May 2026: Sublingual Drops + GLP-1 Gum (Needle-Free Compounded GLP-1)',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/oral-tirzepatide',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/oral-tirzepatide',
   about: ['Oral tirzepatide', 'Sublingual tirzepatide', 'GLP-1 gum', 'Compounded tirzepatide', 'Needle-free GLP-1'],
 };
 

@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'Eden Health Review May 2026: $149 Intro, "Same Price at Every Dose," + 5-Format NAD+ Menu | GLP1CompareHub',
   description:
     'Independent Eden Health (tryeden.com) review verified May 2026. Realized EPC $3.92, conversion rate 1.10% (Katalys-verified). $149 intro month, $229-$249 ongoing across all dose tiers, broadest adjacent-peptide menu in the active stack.',
-  alternates: { canonical: 'https://glp1comparehub.com/providers/eden-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/providers/eden-health' },
   openGraph: {
     title: 'Eden Health Review — $149 Intro / Flat Ongoing + 5-Format NAD+',
     description:
       'Established brand, third-highest EPC in stack, "Same Price at Every Dose" predictability, plus the broadest NAD+ menu (5 formats) in our verified May 2026 stack.',
-    url: 'https://glp1comparehub.com/providers/eden-health',
+    url: 'https://www.glp1comparehub.com/providers/eden-health',
     siteName: 'GLP1CompareHub',
     type: 'article',
   },
@@ -33,8 +33,8 @@ const articleSchema = {
     url: 'https://tryeden.com',
   },
   reviewRating: { '@type': 'Rating', ratingValue: '4.6', bestRating: '5' },
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
 };

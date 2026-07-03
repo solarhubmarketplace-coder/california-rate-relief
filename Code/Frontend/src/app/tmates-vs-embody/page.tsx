@@ -36,15 +36,15 @@ export const metadata: Metadata = {
   title: 'TMates vs Embody 2026: Which Compounded GLP-1 Telehealth Wins? | GLP1CompareHub',
   description:
     'TMates ($158-$297/mo same price all doses) vs Embody ($149 first month, $299 flat refills) compared head-to-head. Pricing, formats, conversion data, and who should pick which.',
-  alternates: { canonical: 'https://glp1comparehub.com/tmates-vs-embody' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tmates-vs-embody' },
   openGraph: {
     title: 'TMates vs Embody 2026: Compounded GLP-1 Head-to-Head',
     description:
       'Two top-rated compounded GLP-1 telehealth providers compared on price, formats, dosing flexibility, and customer experience. Verified pricing, May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/tmates-vs-embody',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/tmates-vs-embody',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -57,11 +57,11 @@ const articleSchema = {
     'Head-to-head review of TMates and Embody — two compounded GLP-1 telehealth providers. Pricing, dosing structure, format options (injectable + oral + gum), and a verdict on who should pick which.',
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
-  author: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  author: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/tmates-vs-embody',
+    '@id': 'https://www.glp1comparehub.com/tmates-vs-embody',
   },
 };
 

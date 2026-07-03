@@ -50,15 +50,15 @@ export const metadata: Metadata = {
   title: 'Microdosing Tirzepatide: Does It Work for Weight Loss? | GLP1CompareHub',
   description:
     'Microdosing tirzepatide explained: what it is, who it\'s for, whether sub-standard doses produce weight loss, and which providers support flexible dosing protocols.',
-  alternates: { canonical: 'https://glp1comparehub.com/microdosing-tirzepatide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/microdosing-tirzepatide' },
   openGraph: {
     title: 'Microdosing Tirzepatide: The Complete 2026 Guide',
     description:
       'Microdosing tirzepatide (1.25–2.5mg doses) can reduce GI side effects and support maintenance. No RCTs exist for the practice, but the logic is sound. Here\'s what to know.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/microdosing-tirzepatide',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Microdosing Tirzepatide — GLP1CompareHub' }],
+    url: 'https://www.glp1comparehub.com/microdosing-tirzepatide',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Microdosing Tirzepatide — GLP1CompareHub' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -67,18 +67,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Compounded Tirzepatide',
-      item: 'https://glp1comparehub.com/compounded-tirzepatide',
+      item: 'https://www.glp1comparehub.com/compounded-tirzepatide',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Microdosing Tirzepatide',
-      item: 'https://glp1comparehub.com/microdosing-tirzepatide',
+      item: 'https://www.glp1comparehub.com/microdosing-tirzepatide',
     },
   ],
 };
@@ -94,14 +94,14 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/microdosing-tirzepatide' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/microdosing-tirzepatide' },
 };
 
 const faqSchema = {

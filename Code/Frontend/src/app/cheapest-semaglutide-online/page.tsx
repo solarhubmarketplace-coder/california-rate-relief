@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   title: 'Cheapest Semaglutide Online 2026: Verified Provider Prices | GLP1CompareHub',
   description:
     'Cheapest semaglutide online without insurance: from $99/month. Verified 2026 pricing from Strut Health, TMates, Eden Health, and more. No insurance required.',
-  alternates: { canonical: 'https://glp1comparehub.com/cheapest-semaglutide-online' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/cheapest-semaglutide-online' },
   openGraph: {
     title: 'Cheapest Semaglutide Online 2026: $99/Month Without Insurance',
     description: 'Compounded semaglutide starts at $99/month through telehealth — vs $1,300+/month for branded Wegovy. Verified 2026 prices ranked by cost.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/cheapest-semaglutide-online',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Cheapest Semaglutide Online 2026 — GLP1CompareHub' }],
+    url: 'https://www.glp1comparehub.com/cheapest-semaglutide-online',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Cheapest Semaglutide Online 2026 — GLP1CompareHub' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -36,9 +36,9 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compounded Semaglutide', item: 'https://glp1comparehub.com/compounded-semaglutide' },
-    { '@type': 'ListItem', position: 3, name: 'Cheapest Semaglutide Online', item: 'https://glp1comparehub.com/cheapest-semaglutide-online' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compounded Semaglutide', item: 'https://www.glp1comparehub.com/compounded-semaglutide' },
+    { '@type': 'ListItem', position: 3, name: 'Cheapest Semaglutide Online', item: 'https://www.glp1comparehub.com/cheapest-semaglutide-online' },
   ],
 };
 

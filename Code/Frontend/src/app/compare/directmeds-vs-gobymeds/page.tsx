@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   description:
     'DirectMeds vs GobyMeds compared: both are newer compounded GLP-1 providers with unverified pricing. No editorial pick — verify both directly. For confirmed pricing, TMates, MEDVi, or Eden Health are recommended. Updated May 2026.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/compare/directmeds-vs-gobymeds',
+    canonical: 'https://www.glp1comparehub.com/compare/directmeds-vs-gobymeds',
   },
   openGraph: {
     title: 'DirectMeds vs GobyMeds (2026): Both Unverified — What You Need to Know',
     description:
       'Neither DirectMeds nor GobyMeds has independently verified pricing. No editorial pick — verify both directly. For confirmed pricing, see TMates, MEDVi ($179-299/mo), or Eden Health ($229-299/mo). May 2026.',
-    url: 'https://glp1comparehub.com/compare/directmeds-vs-gobymeds',
+    url: 'https://www.glp1comparehub.com/compare/directmeds-vs-gobymeds',
     type: 'article',
     siteName: 'GLP1CompareHub',
   },
@@ -43,13 +43,13 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'DirectMeds vs GobyMeds',
-      item: 'https://glp1comparehub.com/compare/directmeds-vs-gobymeds',
+      item: 'https://www.glp1comparehub.com/compare/directmeds-vs-gobymeds',
     },
   ],
 };
@@ -65,16 +65,16 @@ const articleJsonLd = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/directmeds-vs-gobymeds',
+    '@id': 'https://www.glp1comparehub.com/compare/directmeds-vs-gobymeds',
   },
 };
 

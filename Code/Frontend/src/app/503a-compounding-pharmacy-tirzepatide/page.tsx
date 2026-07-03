@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   description:
     "Is 503A compounded tirzepatide legal in 2026? Yes — with a valid Rx from a licensed physician. Here's how 503A pharmacies work, how they differ from 503B, and what to verify before enrolling.",
   alternates: {
-    canonical: 'https://glp1comparehub.com/503a-compounding-pharmacy-tirzepatide',
+    canonical: 'https://www.glp1comparehub.com/503a-compounding-pharmacy-tirzepatide',
   },
   openGraph: {
     title: '503A Compounding Pharmacy Tirzepatide: Legal Status, What to Verify | GLP1CompareHub',
     description:
       "Is 503A compounded tirzepatide legal in 2026? Yes — with a valid Rx from a licensed physician. Here's how 503A pharmacies work, how they differ from 503B, and what to verify before enrolling.",
-    url: 'https://glp1comparehub.com/503a-compounding-pharmacy-tirzepatide',
+    url: 'https://www.glp1comparehub.com/503a-compounding-pharmacy-tirzepatide',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,18 +35,18 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'GLP-1 Compliance',
-          item: 'https://glp1comparehub.com/compliance',
+          item: 'https://www.glp1comparehub.com/compliance',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: '503A Compounding Pharmacy: Tirzepatide',
-          item: 'https://glp1comparehub.com/503a-compounding-pharmacy-tirzepatide',
+          item: 'https://www.glp1comparehub.com/503a-compounding-pharmacy-tirzepatide',
         },
       ],
     },
@@ -58,15 +58,15 @@ const jsonLd = {
       author: {
         '@type': 'Person',
         name: 'Chad Simpson',
-        url: 'https://glp1comparehub.com/author/chad-simpson',
+        url: 'https://www.glp1comparehub.com/author/chad-simpson',
       },
       publisher: {
         '@type': 'Organization',
         name: 'GLP1CompareHub',
-        url: 'https://glp1comparehub.com',
+        url: 'https://www.glp1comparehub.com',
       },
       mainEntityOfPage:
-        'https://glp1comparehub.com/503a-compounding-pharmacy-tirzepatide',
+        'https://www.glp1comparehub.com/503a-compounding-pharmacy-tirzepatide',
     },
     {
       '@type': 'FAQPage',

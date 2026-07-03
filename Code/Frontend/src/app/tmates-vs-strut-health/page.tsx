@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: 'TMates vs Strut Health 2026: Which Compounded GLP-1 Wins? | GLP1CompareHub',
   description:
     'TMates ($158-$297/mo flat dosing, injectable focus) vs Strut Health ($199/mo with in-house ACHC-accredited pharmacy + oral lozenge). Pricing, formats, and who should pick which.',
-  alternates: { canonical: 'https://glp1comparehub.com/tmates-vs-strut-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tmates-vs-strut-health' },
   openGraph: {
     title: 'TMates vs Strut Health 2026: Compounded GLP-1 Head-to-Head',
     description:
       'Injection-only flat pricing vs in-house pharmacy with oral lozenge format. Strut Health offers ACHC-accredited transparency; TMates wins on tirzepatide pricing. Verified May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/tmates-vs-strut-health',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/tmates-vs-strut-health',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -26,7 +26,7 @@ const articleSchema = {
   dateModified: '2026-05-08',
   author: { '@type': 'Organization', name: 'GLP1CompareHub' },
   publisher: { '@type': 'Organization', name: 'GLP1CompareHub' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/tmates-vs-strut-health' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/tmates-vs-strut-health' },
 };
 
 const faqSchema = {

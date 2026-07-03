@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   title: 'SkinnyRx vs MEDVi 2026: Which Compounded GLP-1 Program Is Better? | GLP1CompareHub',
   description:
     'SkinnyRx vs MEDVi compared head-to-head: pricing, included services, and who each program is best for. MEDVi pricing verified May 2026; SkinnyRx pricing requires direct verification. MEDVi is our editorial pick.',
-  alternates: { canonical: 'https://glp1comparehub.com/compare/skinnyrx-vs-medvi' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-medvi' },
   openGraph: {
     title: 'SkinnyRx vs MEDVi 2026: Compounded GLP-1 Head-to-Head',
     description:
       'MEDVi wins on verified pricing ($179/mo) and brand trust. SkinnyRx pricing requires direct verification. Detailed comparison, May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compare/skinnyrx-vs-medvi',
+    url: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-medvi',
   },
 };
 
@@ -52,13 +52,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'SkinnyRx vs MEDVi',
-      item: 'https://glp1comparehub.com/compare/skinnyrx-vs-medvi',
+      item: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-medvi',
     },
   ],
 };
@@ -74,12 +74,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/skinnyrx-vs-medvi',
+    '@id': 'https://www.glp1comparehub.com/compare/skinnyrx-vs-medvi',
   },
 };
 

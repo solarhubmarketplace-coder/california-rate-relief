@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'Gala Health Review May 2026: $179-$199 3-Month All-Inclusive Bundle | GLP1CompareHub',
   description:
     'Independent Gala Health (galaglp1.com) review verified May 2026. Realized EPC $3.60, conversion rate 1.18% (Katalys-verified). $179-$199/mo on 3-month all-inclusive plan covering compounded GLP-1/GIP, provider consults, async support, and shipping.',
-  alternates: { canonical: 'https://glp1comparehub.com/providers/gala-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/providers/gala-health' },
   openGraph: {
     title: 'Gala Health Review — $179-$199 3-Month All-Inclusive Bundle',
     description:
       'High-converting funnel (1.18% CR), all-inclusive 3-month bundle eliminates surprise upcharges, nationwide US coverage. $349 default CPA.',
-    url: 'https://glp1comparehub.com/providers/gala-health',
+    url: 'https://www.glp1comparehub.com/providers/gala-health',
     siteName: 'GLP1CompareHub',
     type: 'article',
   },
@@ -29,8 +29,8 @@ const articleSchema = {
   '@type': 'Review',
   itemReviewed: { '@type': 'MedicalBusiness', name: 'Gala Health', url: 'https://galaglp1.com' },
   reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5' },
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
 };

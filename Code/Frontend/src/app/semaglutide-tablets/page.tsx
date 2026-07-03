@@ -16,16 +16,16 @@ export const metadata: Metadata = {
   description:
     "Only FDA-approved semaglutide tablet is Rybelsus (T2D). Oral Wegovy for obesity is in late-stage development. Compounded oral options exist but have bioavailability limitations. Here's what's available in 2026.",
   alternates: {
-    canonical: 'https://glp1comparehub.com/semaglutide-tablets',
+    canonical: 'https://www.glp1comparehub.com/semaglutide-tablets',
   },
   openGraph: {
     title: 'Semaglutide Tablets 2026: Rybelsus, Oral Wegovy & Compounded Options',
     description:
       "Only FDA-approved semaglutide tablet is Rybelsus (T2D). Oral Wegovy for obesity is in late-stage development. Compounded oral options exist but have bioavailability limitations.",
-    url: 'https://glp1comparehub.com/semaglutide-tablets',
+    url: 'https://www.glp1comparehub.com/semaglutide-tablets',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -36,18 +36,18 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Semaglutide',
-          item: 'https://glp1comparehub.com/semaglutide',
+          item: 'https://www.glp1comparehub.com/semaglutide',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'Semaglutide Tablets',
-          item: 'https://glp1comparehub.com/semaglutide-tablets',
+          item: 'https://www.glp1comparehub.com/semaglutide-tablets',
         },
       ],
     },
@@ -56,18 +56,18 @@ const jsonLd = {
       headline: 'Semaglutide Tablets 2026: Rybelsus, Oral Wegovy & Compounded Options',
       description:
         "Only FDA-approved semaglutide tablet is Rybelsus (T2D). Oral Wegovy for obesity is in late-stage development. Compounded oral options exist but have bioavailability limitations.",
-      url: 'https://glp1comparehub.com/semaglutide-tablets',
+      url: 'https://www.glp1comparehub.com/semaglutide-tablets',
       datePublished: '2026-05-06',
       dateModified: '2026-05-06',
       author: {
         '@type': 'Person',
         name: 'Chad Simpson',
-        url: 'https://glp1comparehub.com/author/chad-simpson',
+        url: 'https://www.glp1comparehub.com/author/chad-simpson',
       },
       publisher: {
         '@type': 'Organization',
         name: 'GLP1CompareHub',
-        url: 'https://glp1comparehub.com',
+        url: 'https://www.glp1comparehub.com',
       },
     },
     {

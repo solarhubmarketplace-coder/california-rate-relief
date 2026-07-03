@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: 'GLP1CompareHub.com | Find Your Perfect GLP-1 Match — 2026 Provider Comparison',
   description:
     'Compare 50+ GLP-1 telehealth providers including telemedicine, compounding pharmacies, and manufacturer programs. Wegovy Pill from $149/mo, compounded semaglutide and tirzepatide from $179/mo. Expert rankings, transparent pricing, no hidden fees. Updated weekly.',
-  alternates: { canonical: 'https://glp1comparehub.com/' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/' },
   icons: {
     icon: [
       { url: '/img/glp1/favicon.svg', type: 'image/svg+xml' },
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     description:
       'Independent, FTC-compliant comparison of GLP-1 telehealth providers. Semaglutide, tirzepatide, Wegovy, Zepbound. Real pricing, expert rankings, take the quiz to get matched.',
     type: 'website',
-    url: 'https://glp1comparehub.com/',
+    url: 'https://www.glp1comparehub.com/',
     siteName: 'GLP1CompareHub',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'GLP1CompareHub — Find Your Perfect GLP-1 Match' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'GLP1CompareHub — Find Your Perfect GLP-1 Match' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -39,7 +39,7 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'GLP1CompareHub',
-  url: 'https://glp1comparehub.com',
+  url: 'https://www.glp1comparehub.com',
   description:
     'Independent comparison and review site for GLP-1 telehealth providers, including tirzepatide and semaglutide programs.',
 };
@@ -48,7 +48,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'GLP1CompareHub',
-  url: 'https://glp1comparehub.com',
+  url: 'https://www.glp1comparehub.com',
   publisher: { '@type': 'Organization', name: 'GLP1CompareHub' },
 };
 
@@ -56,7 +56,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Best GLP-1 Telehealth Providers 2026',
-  url: 'https://glp1comparehub.com',
+  url: 'https://www.glp1comparehub.com',
   description:
     'Comparison of leading GLP-1 telehealth providers offering tirzepatide and semaglutide programs.',
 };
@@ -65,7 +65,7 @@ const medicalBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalBusiness',
   name: 'GLP1CompareHub',
-  url: 'https://glp1comparehub.com',
+  url: 'https://www.glp1comparehub.com',
   description: 'Independent comparison directory for GLP-1 telehealth providers.',
   medicalSpecialty: ['Endocrine', 'Bariatric'],
   knowsAbout: [

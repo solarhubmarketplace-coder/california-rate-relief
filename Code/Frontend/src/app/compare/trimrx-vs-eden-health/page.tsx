@@ -40,14 +40,14 @@ export const metadata: Metadata = {
   title: 'TrimRx vs Eden Health 2026: Which Compounded GLP-1 Program Is Better? | GLP1CompareHub',
   description:
     'TrimRx vs Eden Health compared head-to-head: Eden Health wins with fully verified pricing ($229/mo) and included metabolic bloodwork. TrimRx entry price confirmed at $179+; full catalog requires verification. Updated May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/compare/trimrx-vs-eden-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare/trimrx-vs-eden-health' },
   openGraph: {
     title: 'TrimRx vs Eden Health 2026: Compounded GLP-1 Head-to-Head',
     description:
       'Eden Health: fully verified pricing, metabolic bloodwork included, $149 intro month. TrimRx entry confirmed at $179+; full catalog SPA-blocked. Detailed comparison, May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compare/trimrx-vs-eden-health',
+    url: 'https://www.glp1comparehub.com/compare/trimrx-vs-eden-health',
   },
 };
 
@@ -55,13 +55,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'TrimRx vs Eden Health',
-      item: 'https://glp1comparehub.com/compare/trimrx-vs-eden-health',
+      item: 'https://www.glp1comparehub.com/compare/trimrx-vs-eden-health',
     },
   ],
 };
@@ -77,12 +77,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/trimrx-vs-eden-health',
+    '@id': 'https://www.glp1comparehub.com/compare/trimrx-vs-eden-health',
   },
 };
 

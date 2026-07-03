@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: 'Tirzepatide Near Me 2026: Local Clinic vs Telehealth Compared',
   description:
     'Local tirzepatide clinics charge $300–$500/mo. Telehealth ships to all 50 states from $179/mo. Cost, format, and convenience compared side-by-side. Verified May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/tirzepatide-near-me' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tirzepatide-near-me' },
   openGraph: {
     title: 'Tirzepatide Near Me — Local Clinic vs Telehealth (Verified May 2026)',
     description:
       'The local clinic charges $300–$500/mo. Telehealth ships to all 50 states from $179/mo. Side-by-side comparison plus the post-April-2026 FDA context.',
-    url: 'https://glp1comparehub.com/tirzepatide-near-me',
+    url: 'https://www.glp1comparehub.com/tirzepatide-near-me',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-tirzepatide-near-me.jpg', width: 1168, height: 784, alt: 'Tirzepatide Near Me — local clinic vs telehealth comparison' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-tirzepatide-near-me.jpg', width: 1168, height: 784, alt: 'Tirzepatide Near Me — local clinic vs telehealth comparison' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const articleSchema = {
   headline: 'Tirzepatide Near Me May 2026: Local Clinic vs Telehealth Shipped',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/tirzepatide-near-me',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/tirzepatide-near-me',
   about: ['Tirzepatide', 'Local weight-loss clinic', 'Telehealth GLP-1', 'Compounded tirzepatide'],
 };
 

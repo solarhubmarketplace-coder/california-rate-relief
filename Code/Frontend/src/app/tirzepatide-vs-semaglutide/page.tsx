@@ -38,16 +38,16 @@ export const metadata: Metadata = {
   title: 'Tirzepatide vs Semaglutide 2026: Which GLP-1 Wins? (SURMOUNT-5 Data)',
   description:
     'Tirzepatide vs semaglutide head-to-head: SURMOUNT-5 trial (May 2025) showed -20.2% vs -13.7% weight loss. Side effects, cost, real user experiences compared.',
-  alternates: { canonical: 'https://glp1comparehub.com/tirzepatide-vs-semaglutide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tirzepatide-vs-semaglutide' },
   openGraph: {
     title: 'Tirzepatide vs Semaglutide 2026: SURMOUNT-5 Head-to-Head',
     description:
       'The definitive comparison: NEJM SURMOUNT-5 trial data, side effects, cost, and real user voices on r/Tirzepatide and r/Semaglutide.',
     type: 'article',
     publishedTime: '2026-05-01T00:00:00Z',
-    url: 'https://glp1comparehub.com/tirzepatide-vs-semaglutide',
+    url: 'https://www.glp1comparehub.com/tirzepatide-vs-semaglutide',
     siteName: 'GLP1CompareHub',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Tirzepatide vs Semaglutide — GLP1CompareHub' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Tirzepatide vs Semaglutide — GLP1CompareHub' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -64,16 +64,16 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/tirzepatide-vs-semaglutide',
+    '@id': 'https://www.glp1comparehub.com/tirzepatide-vs-semaglutide',
   },
   citation: [
     {

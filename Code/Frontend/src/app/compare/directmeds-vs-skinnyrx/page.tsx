@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   description:
     'DirectMeds vs SkinnyRx compared: neither provider has independently verified pricing. SkinnyRx has stronger brand presence; DirectMeds is less documented. For confirmed pricing, see MEDVi or Strut Health. Updated May 2026.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/compare/directmeds-vs-skinnyrx',
+    canonical: 'https://www.glp1comparehub.com/compare/directmeds-vs-skinnyrx',
   },
   openGraph: {
     title: 'DirectMeds vs SkinnyRx (2026): Compounded GLP-1 Comparison',
     description:
       'Both DirectMeds and SkinnyRx have unverified pricing. Soft editorial edge to SkinnyRx for brand recognition. For confirmed pricing today, MEDVi or Strut Health are recommended. May 2026.',
-    url: 'https://glp1comparehub.com/compare/directmeds-vs-skinnyrx',
+    url: 'https://www.glp1comparehub.com/compare/directmeds-vs-skinnyrx',
     type: 'article',
     siteName: 'GLP1CompareHub',
   },
@@ -42,13 +42,13 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'DirectMeds vs SkinnyRx',
-      item: 'https://glp1comparehub.com/compare/directmeds-vs-skinnyrx',
+      item: 'https://www.glp1comparehub.com/compare/directmeds-vs-skinnyrx',
     },
   ],
 };
@@ -64,16 +64,16 @@ const articleJsonLd = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/directmeds-vs-skinnyrx',
+    '@id': 'https://www.glp1comparehub.com/compare/directmeds-vs-skinnyrx',
   },
 };
 

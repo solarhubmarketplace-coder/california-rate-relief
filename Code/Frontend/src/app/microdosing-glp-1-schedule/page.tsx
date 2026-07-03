@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   title: 'GLP-1 Microdosing Schedule 2026: Semaglutide & Tirzepatide Timing',
   description:
     'Complete GLP-1 microdosing schedule guide: week-by-week semaglutide and tirzepatide dose tables, titration protocols, day-of-week timing, side effect windows, and when to pause. Updated May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/microdosing-glp-1-schedule' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/microdosing-glp-1-schedule' },
   openGraph: {
     title: 'GLP-1 Microdosing Schedule: Full 2026 Timing Guide',
     description:
       'Week-by-week microdosing schedule tables for both semaglutide and tirzepatide. Two protocols covered: fixed micro-dose and ultra-slow titration. Includes side-effect timing and pause criteria.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/microdosing-glp-1-schedule',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/microdosing-glp-1-schedule',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -44,18 +44,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'GLP-1 Resources',
-      item: 'https://glp1comparehub.com/learn',
+      item: 'https://www.glp1comparehub.com/learn',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Microdosing Schedule',
-      item: 'https://glp1comparehub.com/microdosing-glp-1-schedule',
+      item: 'https://www.glp1comparehub.com/microdosing-glp-1-schedule',
     },
   ],
 };
@@ -71,12 +71,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/microdosing-glp-1-schedule',
+    '@id': 'https://www.glp1comparehub.com/microdosing-glp-1-schedule',
   },
 };
 

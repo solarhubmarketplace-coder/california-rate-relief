@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   title: 'Zepbound vs Wegovy 2026: Trial Data, Cost & Which to Choose',
   description:
     'Side-by-side comparison of Zepbound (tirzepatide) and Wegovy (semaglutide). Trial weight loss (20.2% vs 14.9%), side effect profiles, monthly cost ($299–$1,498 vs $149–$1,839), and which one to ask your doctor about.',
-  alternates: { canonical: 'https://glp1comparehub.com/zepbound-vs-wegovy' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/zepbound-vs-wegovy' },
   openGraph: {
     title: 'Zepbound vs Wegovy 2026 — Side-by-Side Comparison',
     description:
       '20.2% vs 14.9% average weight loss in head-to-head trials. Plus pricing, side effects, and which GLP-1 to ask your doctor about.',
-    url: 'https://glp1comparehub.com/zepbound-vs-wegovy',
+    url: 'https://www.glp1comparehub.com/zepbound-vs-wegovy',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-zepbound-vs-wegovy.jpg', width: 1168, height: 784, alt: 'Zepbound vs Wegovy — side-by-side comparison 2026' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-zepbound-vs-wegovy.jpg', width: 1168, height: 784, alt: 'Zepbound vs Wegovy — side-by-side comparison 2026' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -36,9 +36,9 @@ const articleSchema = {
   headline: 'Zepbound vs Wegovy May 2026: Trial Data, Cost Paths, and the Insurance Loophole',
   datePublished: '2026-05-03',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/zepbound-vs-wegovy',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/zepbound-vs-wegovy',
   about: ['Zepbound (tirzepatide)', 'Wegovy (semaglutide)', 'GLP-1 weight loss medications'],
   citation: [
     { '@type': 'CreativeWork', name: 'SURMOUNT-1 (NEJM 2022)', url: 'https://www.nejm.org/doi/10.1056/NEJMoa2206038' },

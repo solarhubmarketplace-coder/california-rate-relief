@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   title: 'Best Compounded Tirzepatide May 2026: 6 Programs Ranked',
   description:
     'Editorial ranking of the 6 best compounded tirzepatide telehealth programs verified May 2026. TMates (Best Overall, $167-$297/mo, 6.43% CR), Embody (Best Flat-Rate, $299 flat refills), System Labs ($179 — Best Value). Includes the post-April 2026 FDA context.',
-  alternates: { canonical: 'https://glp1comparehub.com/best-compounded-tirzepatide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/best-compounded-tirzepatide' },
   openGraph: {
     title: 'Best Compounded Tirzepatide 2026 — 6 Verified Programs Ranked',
     description:
       'Independent ranking by realized EPC, conversion rate, and value. TMates leads at $16.09 EPC and 6.43% CR. Verified May 6, 2026 with the post-April FDA context built in.',
-    url: 'https://glp1comparehub.com/best-compounded-tirzepatide',
+    url: 'https://www.glp1comparehub.com/best-compounded-tirzepatide',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-best-compounded-tirzepatide.jpg', width: 1168, height: 784, alt: 'Best Compounded Tirzepatide providers 2026 comparison' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-best-compounded-tirzepatide.jpg', width: 1168, height: 784, alt: 'Best Compounded Tirzepatide providers 2026 comparison' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -36,9 +36,9 @@ const articleSchema = {
   headline: 'Best Compounded Tirzepatide May 2026: 6 Verified Telehealth Programs Ranked',
   datePublished: '2026-05-05',
   dateModified: '2026-05-06',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/best-compounded-tirzepatide',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/best-compounded-tirzepatide',
   about: ['Compounded tirzepatide', 'Telehealth GLP-1', 'TMates', 'Embody', 'System Labs', 'Direct Meds', 'Eden Health'],
 };
 

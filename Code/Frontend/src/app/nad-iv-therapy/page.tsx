@@ -15,15 +15,15 @@ export const metadata: Metadata = {
   title: 'NAD+ IV Therapy 2026: Cost, At-Home Alternatives & the GLP-1 Stack',
   description:
     'NAD+ IV therapy: $150–$1,000+/drip at-clinic vs $79/mo at-home injection alternative. GLP-1 + NAD+ longevity stack explained. Verified pricing and at-home options — May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/nad-iv-therapy' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/nad-iv-therapy' },
   openGraph: {
     title: 'NAD+ IV Therapy — Cost, At-Home Alternatives, and the GLP-1 Stack',
     description:
       'IV NAD+ runs $150–$1,000+ per drip. At-home injection alternatives start at $79 first month. Plus the GLP-1 + NAD+ longevity stack — verified May 2026.',
-    url: 'https://glp1comparehub.com/nad-iv-therapy',
+    url: 'https://www.glp1comparehub.com/nad-iv-therapy',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-nad-iv-therapy.jpg', width: 1168, height: 784, alt: 'NAD+ IV Therapy — telehealth provider comparison' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-nad-iv-therapy.jpg', width: 1168, height: 784, alt: 'NAD+ IV Therapy — telehealth provider comparison' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -34,9 +34,9 @@ const articleSchema = {
   headline: 'NAD+ IV Therapy 2026: Cost, At-Home Alternatives, and the GLP-1 Stack',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/nad-iv-therapy',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/nad-iv-therapy',
   about: ['NAD+', 'NAD IV therapy', 'NAD+ injection', 'GLP-1 longevity stack'],
 };
 

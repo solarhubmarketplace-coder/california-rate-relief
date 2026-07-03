@@ -43,15 +43,15 @@ export const metadata: Metadata = {
   title: 'Oral Semaglutide vs Injection 2026: Which Works Better for Weight Loss? | GLP1CompareHub',
   description:
     'Oral semaglutide vs injection compared on bioavailability, weight loss efficacy, cost, and who each format is right for. Injectable wins on absorption — oral wins on needle-free convenience.',
-  alternates: { canonical: 'https://glp1comparehub.com/oral-semaglutide-vs-injection' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/oral-semaglutide-vs-injection' },
   openGraph: {
     title: 'Oral Semaglutide vs Injection 2026: The Real Bioavailability Gap',
     description:
       'Oral semaglutide has ~1% bioavailability vs 94%+ for injectable. Here\'s what that means for weight loss, which format to choose, and verified 2026 pricing.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/oral-semaglutide-vs-injection',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/oral-semaglutide-vs-injection',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -60,8 +60,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Oral Semaglutide vs Injection', item: 'https://glp1comparehub.com/oral-semaglutide-vs-injection' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Oral Semaglutide vs Injection', item: 'https://www.glp1comparehub.com/oral-semaglutide-vs-injection' },
   ],
 };
 
@@ -76,12 +76,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/oral-semaglutide-vs-injection',
+    '@id': 'https://www.glp1comparehub.com/oral-semaglutide-vs-injection',
   },
 };
 

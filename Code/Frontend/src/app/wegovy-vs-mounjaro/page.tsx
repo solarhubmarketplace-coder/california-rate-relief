@@ -38,16 +38,16 @@ export const metadata: Metadata = {
   title: 'Wegovy vs Mounjaro 2026: Head-to-Head Comparison (SURMOUNT-5 Data)',
   description:
     'Wegovy vs Mounjaro comparison: SURMOUNT-5 trial showed Mounjaro (tirzepatide) -20.2% weight loss vs Wegovy (semaglutide) -13.7%. Cost, side effects, and FDA approvals compared for May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/wegovy-vs-mounjaro' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/wegovy-vs-mounjaro' },
   openGraph: {
     title: 'Wegovy vs Mounjaro 2026: Which GLP-1 Is Better for Weight Loss?',
     description:
       'Head-to-head comparison of Wegovy (semaglutide) and Mounjaro (tirzepatide) using SURMOUNT-5 data, May 2026 pricing, side effects, and FDA approval status.',
     type: 'article',
     publishedTime: '2026-05-03T00:00:00Z',
-    url: 'https://glp1comparehub.com/wegovy-vs-mounjaro',
+    url: 'https://www.glp1comparehub.com/wegovy-vs-mounjaro',
     siteName: 'GLP1CompareHub',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-wegovy-vs-mounjaro.jpg', width: 1168, height: 784, alt: 'Wegovy vs Mounjaro — side-by-side comparison 2026' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-wegovy-vs-mounjaro.jpg', width: 1168, height: 784, alt: 'Wegovy vs Mounjaro — side-by-side comparison 2026' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -64,16 +64,16 @@ const articleSchema = {
   author: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/wegovy-vs-mounjaro',
+    '@id': 'https://www.glp1comparehub.com/wegovy-vs-mounjaro',
   },
   citation: [
     {

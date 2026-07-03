@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   title: 'Elevate Health vs Eden Health 2026: Which GLP-1 Program Is Better? | GLP1CompareHub',
   description:
     'Elevate Health vs Eden Health compared: Eden Health wins with verified pricing ($229–$299/mo), metabolic bloodwork included at intake, and physician-supervised clinical structure. Elevate Health pricing requires direct verification.',
-  alternates: { canonical: 'https://glp1comparehub.com/compare/elevate-health-vs-eden-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare/elevate-health-vs-eden-health' },
   openGraph: {
     title: 'Elevate Health vs Eden Health 2026: Clear Winner',
     description:
       'Eden Health wins on every verifiable dimension: confirmed pricing, bloodwork at intake, and established clinical brand. Elevate Health pricing is unverified. Full breakdown.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compare/elevate-health-vs-eden-health',
+    url: 'https://www.glp1comparehub.com/compare/elevate-health-vs-eden-health',
   },
 };
 
@@ -39,13 +39,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Elevate Health vs Eden Health',
-      item: 'https://glp1comparehub.com/compare/elevate-health-vs-eden-health',
+      item: 'https://www.glp1comparehub.com/compare/elevate-health-vs-eden-health',
     },
   ],
 };
@@ -61,12 +61,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/elevate-health-vs-eden-health',
+    '@id': 'https://www.glp1comparehub.com/compare/elevate-health-vs-eden-health',
   },
 };
 

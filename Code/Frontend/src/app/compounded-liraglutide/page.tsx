@@ -44,15 +44,15 @@ export const metadata: Metadata = {
   title: 'Compounded Liraglutide 2026: Who Offers It & How It Compares',
   description:
     'Compounded liraglutide (generic Saxenda) explained: daily GLP-1 injection, ~8% weight loss in SCALE trial, FDA status, and which providers offer it. How does it compare to semaglutide?',
-  alternates: { canonical: 'https://glp1comparehub.com/compounded-liraglutide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compounded-liraglutide' },
   openGraph: {
     title: 'Compounded Liraglutide 2026: The Older GLP-1 Still Worth Considering',
     description:
       'Liraglutide (Saxenda) was the first GLP-1 approved for obesity. Compounded versions are now available through select telehealth providers. Here\'s how it compares to semaglutide and tirzepatide.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compounded-liraglutide',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/compounded-liraglutide',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -61,18 +61,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'GLP-1 Medications',
-      item: 'https://glp1comparehub.com/tirzepatide-vs-semaglutide',
+      item: 'https://www.glp1comparehub.com/tirzepatide-vs-semaglutide',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Compounded Liraglutide',
-      item: 'https://glp1comparehub.com/compounded-liraglutide',
+      item: 'https://www.glp1comparehub.com/compounded-liraglutide',
     },
   ],
 };
@@ -88,14 +88,14 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/compounded-liraglutide' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/compounded-liraglutide' },
 };
 
 const faqSchema = {

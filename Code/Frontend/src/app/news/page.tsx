@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: 'GLP-1 News & Updates — Pricing, FDA, Industry | GLP1CompareHub',
   description:
     'Latest GLP-1 telehealth news. Pricing updates, FDA developments, provider changes, and clinical research.',
-  alternates: { canonical: 'https://glp1comparehub.com/news' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/news' },
   openGraph: {
     title: 'GLP-1 News & Updates — GLP1CompareHub',
     description: 'Latest pricing, FDA, and industry news for GLP-1 telehealth.',
-    url: 'https://glp1comparehub.com/news',
+    url: 'https://www.glp1comparehub.com/news',
     siteName: 'GLP1CompareHub',
     type: 'website',
   },
@@ -24,8 +24,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com/' },
-    { '@type': 'ListItem', position: 2, name: 'News', item: 'https://glp1comparehub.com/news' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com/' },
+    { '@type': 'ListItem', position: 2, name: 'News', item: 'https://www.glp1comparehub.com/news' },
   ],
 };
 

@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'System Labs Review May 2026: $179 GLP-1, $79 NAD+, $89 B-12 — Cheapest Longevity Stack | GLP1CompareHub',
   description:
     'Independent System Labs (systemlabs.com) review verified May 2026. Lowest GLP-1 entry price in our active stack at $179/mo. NAD+ injection $79 first month, B-12 $89/mo, oral sermorelin $79 first month. The full longevity stack from a single LegitScript-accredited provider.',
-  alternates: { canonical: 'https://glp1comparehub.com/providers/system-labs' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/providers/system-labs' },
   openGraph: {
     title: 'System Labs Review — $179 GLP-1 + Full Longevity Stack',
     description:
       'Lowest GLP-1 entry price in our active stack. Plus the only verified provider covering NAD+, B-12, and sermorelin (oral + injectable) in one platform.',
-    url: 'https://glp1comparehub.com/providers/system-labs',
+    url: 'https://www.glp1comparehub.com/providers/system-labs',
     siteName: 'GLP1CompareHub',
     type: 'article',
   },
@@ -37,8 +37,8 @@ const articleSchema = {
     ratingValue: '4.5',
     bestRating: '5',
   },
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
 };

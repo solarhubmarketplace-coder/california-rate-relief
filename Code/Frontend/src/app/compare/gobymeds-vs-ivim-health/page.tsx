@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   description:
     'GobyMeds vs Ivim Health compared: Ivim Health stands out for confirmed microdosing protocols and liraglutide availability. Both pricing unverified — for confirmed pricing, see TMates or MEDVi. Full breakdown updated May 2026.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/compare/gobymeds-vs-ivim-health',
+    canonical: 'https://www.glp1comparehub.com/compare/gobymeds-vs-ivim-health',
   },
   openGraph: {
     title: 'GobyMeds vs Ivim Health (2026): Microdosing, Liraglutide & Which Is Right for You',
     description:
       'Ivim Health is the editorial pick for its confirmed microdosing specialty and liraglutide offering. GobyMeds pricing unconfirmed. Neither has verified pricing — for confirmed pricing see TMates or MEDVi. May 2026.',
-    url: 'https://glp1comparehub.com/compare/gobymeds-vs-ivim-health',
+    url: 'https://www.glp1comparehub.com/compare/gobymeds-vs-ivim-health',
     type: 'article',
     siteName: 'GLP1CompareHub',
   },
@@ -42,13 +42,13 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'GobyMeds vs Ivim Health',
-      item: 'https://glp1comparehub.com/compare/gobymeds-vs-ivim-health',
+      item: 'https://www.glp1comparehub.com/compare/gobymeds-vs-ivim-health',
     },
   ],
 };
@@ -64,16 +64,16 @@ const articleJsonLd = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/gobymeds-vs-ivim-health',
+    '@id': 'https://www.glp1comparehub.com/compare/gobymeds-vs-ivim-health',
   },
 };
 

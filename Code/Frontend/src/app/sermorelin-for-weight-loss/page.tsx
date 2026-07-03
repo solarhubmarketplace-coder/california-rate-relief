@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: 'Sermorelin for Weight Loss May 2026: Cost, Evidence, GLP-1 Stack | GLP1CompareHub',
   description:
     'Sermorelin guide for the weight-loss + body composition use case. Cost ($79 first month at System Labs oral, $109 first month injectable), what the evidence shows, why it stacks with GLP-1, and the honest read on growth-hormone secretagogue therapy.',
-  alternates: { canonical: 'https://glp1comparehub.com/sermorelin-for-weight-loss' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/sermorelin-for-weight-loss' },
   openGraph: {
     title: 'Sermorelin for Weight Loss — Cost, Evidence, GLP-1 Stack',
     description:
       'Oral $79 first month / injectable $109 first month at System Labs. Honest read on growth-hormone secretagogue therapy and how it pairs with GLP-1 weight loss.',
-    url: 'https://glp1comparehub.com/sermorelin-for-weight-loss',
+    url: 'https://www.glp1comparehub.com/sermorelin-for-weight-loss',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-sermorelin-for-weight-loss.jpg', width: 1168, height: 784, alt: 'Sermorelin for Weight Loss — telehealth guide 2026' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-sermorelin-for-weight-loss.jpg', width: 1168, height: 784, alt: 'Sermorelin for Weight Loss — telehealth guide 2026' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const articleSchema = {
   headline: 'Sermorelin for Weight Loss 2026: Cost, Evidence, and GLP-1 Stack',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/sermorelin-for-weight-loss',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/sermorelin-for-weight-loss',
   about: ['Sermorelin', 'Growth hormone secretagogue', 'Body composition', 'GLP-1 stack'],
 };
 

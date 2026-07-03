@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   description:
     'GobyMeds vs OrderlyMeds side-by-side comparison. Both providers have unconfirmed pricing. For verified pricing, consider MEDVi (~$179/mo) or Eden Health ($229–$299/mo) instead.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/compare/gobymeds-vs-orderlymeds',
+    canonical: 'https://www.glp1comparehub.com/compare/gobymeds-vs-orderlymeds',
   },
   openGraph: {
     title: 'GobyMeds vs OrderlyMeds 2026: GLP-1 Telehealth Comparison',
     description:
       'Neither GobyMeds nor OrderlyMeds has confirmed pricing. See our honest take and verified-pricing alternatives before you commit.',
-    url: 'https://glp1comparehub.com/compare/gobymeds-vs-orderlymeds',
+    url: 'https://www.glp1comparehub.com/compare/gobymeds-vs-orderlymeds',
     type: 'article',
   },
 };
@@ -32,18 +32,18 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Compare Providers',
-          item: 'https://glp1comparehub.com/compare',
+          item: 'https://www.glp1comparehub.com/compare',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'GobyMeds vs OrderlyMeds',
-          item: 'https://glp1comparehub.com/compare/gobymeds-vs-orderlymeds',
+          item: 'https://www.glp1comparehub.com/compare/gobymeds-vs-orderlymeds',
         },
       ],
     },
@@ -53,14 +53,14 @@ const jsonLd = {
       author: {
         '@type': 'Person',
         name: 'Chad Simpson',
-        url: 'https://glp1comparehub.com/author/chad-simpson',
+        url: 'https://www.glp1comparehub.com/author/chad-simpson',
       },
       datePublished: '2026-05-06',
       dateModified: '2026-05-06',
       publisher: {
         '@type': 'Organization',
         name: 'GLP-1 Compare Hub',
-        url: 'https://glp1comparehub.com',
+        url: 'https://www.glp1comparehub.com',
       },
     },
     {

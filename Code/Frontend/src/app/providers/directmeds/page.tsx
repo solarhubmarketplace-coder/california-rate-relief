@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'Direct Meds Review May 2026: $224.10 Sublingual Tirzepatide — Only Verified Needle-Free GLP-1 | GLP1CompareHub',
   description:
     'Independent Direct Meds (directmeds.com) review verified May 2026. The only verified provider with compounded sublingual tirzepatide ($224.10/mo) and sublingual semaglutide ($179.10/mo). LegitScript + HIPAA certified, 53,000+ customer base, broad adjacent peptide menu.',
-  alternates: { canonical: 'https://glp1comparehub.com/providers/directmeds' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/providers/directmeds' },
   openGraph: {
     title: 'Direct Meds Review — Sublingual Tirzepatide $224.10/mo',
     description:
       'Only verified provider with compounded sublingual GLP-1 in our active stack. Plus injectable + adjacent peptides (Sermorelin, NAD+, Epithalon).',
-    url: 'https://glp1comparehub.com/providers/directmeds',
+    url: 'https://www.glp1comparehub.com/providers/directmeds',
     siteName: 'GLP1CompareHub',
     type: 'article',
   },
@@ -29,8 +29,8 @@ const articleSchema = {
   '@type': 'Review',
   itemReviewed: { '@type': 'MedicalBusiness', name: 'Direct Meds', url: 'https://directmeds.com' },
   reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5' },
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
 };

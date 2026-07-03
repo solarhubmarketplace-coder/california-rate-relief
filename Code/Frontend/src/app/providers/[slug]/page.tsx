@@ -55,11 +55,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     description:
       provider.description?.slice(0, 160) ??
       `Independent review of ${provider.name}'s GLP-1 program. Pricing, medications, pros & cons, and how it compares to other telehealth providers.`,
-    alternates: { canonical: `https://glp1comparehub.com/providers/${provider.slug}` },
+    alternates: { canonical: `https://www.glp1comparehub.com/providers/${provider.slug}` },
     openGraph: {
       title: `${provider.name} Review 2026 — GLP1CompareHub`,
       description: provider.description ?? provider.tagline,
-      url: `https://glp1comparehub.com/providers/${provider.slug}`,
+      url: `https://www.glp1comparehub.com/providers/${provider.slug}`,
       siteName: 'GLP1CompareHub',
       type: 'article',
     },
@@ -85,9 +85,9 @@ export default async function ProviderDetailPage({ params }: PageParams) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Providers', item: 'https://glp1comparehub.com/providers' },
-      { '@type': 'ListItem', position: 3, name: provider.name, item: `https://glp1comparehub.com/providers/${provider.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Providers', item: 'https://www.glp1comparehub.com/providers' },
+      { '@type': 'ListItem', position: 3, name: provider.name, item: `https://www.glp1comparehub.com/providers/${provider.slug}` },
     ],
   };
   const medicalBusinessSchema = {
@@ -95,7 +95,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
     '@type': 'MedicalBusiness',
     name: provider.name,
     description: provider.description ?? provider.tagline,
-    url: `https://glp1comparehub.com/providers/${provider.slug}`,
+    url: `https://www.glp1comparehub.com/providers/${provider.slug}`,
     medicalSpecialty: ['Bariatric', 'Endocrine'],
     // aggregateRating intentionally omitted — we do not have first-party review
     // counts to back the ratings up. Publishing fabricated `ratingCount` is a
@@ -111,12 +111,12 @@ export default async function ProviderDetailPage({ params }: PageParams) {
     itemReviewed: {
       '@type': 'MedicalBusiness',
       name: provider.name,
-      url: `https://glp1comparehub.com/providers/${provider.slug}`,
+      url: `https://www.glp1comparehub.com/providers/${provider.slug}`,
     },
     author: {
       '@type': 'Organization',
       name: 'GLP1CompareHub Editorial Team',
-      url: 'https://glp1comparehub.com',
+      url: 'https://www.glp1comparehub.com',
     },
     reviewRating: provider.rating > 0
       ? {
@@ -140,7 +140,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
     provider: {
       '@type': 'MedicalBusiness',
       name: provider.name,
-      url: `https://glp1comparehub.com/providers/${provider.slug}`,
+      url: `https://www.glp1comparehub.com/providers/${provider.slug}`,
     },
     name: `${provider.name} GLP-1 Telehealth Program`,
     description: provider.description ?? provider.tagline,
@@ -152,7 +152,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
           price: tier.price,
           priceCurrency: 'USD',
           availability: 'https://schema.org/InStock',
-          url: `https://glp1comparehub.com/providers/${provider.slug}`,
+          url: `https://www.glp1comparehub.com/providers/${provider.slug}`,
         }))
       : undefined,
     // aggregateRating intentionally omitted — see MedicalBusiness schema above.

@@ -38,15 +38,15 @@ export const metadata: Metadata = {
   title: 'Best Compounded Semaglutide May 2026: 6 Telehealth Programs Ranked | GLP1CompareHub',
   description:
     'Editorial ranking of compounded semaglutide telehealth programs verified May 2026. TMates ($158/mo on 12-mo plan), Strut Health ($99/mo oral), Embody ($299 flat). Verified pricing, real conversion data.',
-  alternates: { canonical: 'https://glp1comparehub.com/best-compounded-semaglutide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/best-compounded-semaglutide' },
   openGraph: {
     title: 'Best Compounded Semaglutide 2026 — Telehealth Programs Ranked',
     description:
       'Independent ranking by verified pricing, realized conversion data, and format options. Pricing crawled live from provider sites May 6, 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/best-compounded-semaglutide',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/best-compounded-semaglutide',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -57,9 +57,9 @@ const articleSchema = {
   headline: 'Best Compounded Semaglutide May 2026: Telehealth Programs Ranked',
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/best-compounded-semaglutide',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/best-compounded-semaglutide',
   about: ['Compounded semaglutide', 'Telehealth GLP-1', 'TMates', 'Strut Health', 'Embody', 'Eden Health', 'System Labs'],
 };
 

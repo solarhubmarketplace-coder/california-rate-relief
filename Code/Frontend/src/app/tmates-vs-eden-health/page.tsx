@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: 'TMates vs Eden Health 2026: Which Compounded GLP-1 Wins? | GLP1CompareHub',
   description:
     'TMates ($158-$297/mo flat dosing) vs Eden Health ($129-$229/mo with NABP/PCAB/ACHC-accredited 503A pharmacy). Pricing, pharmacy verification, branded access, and who should pick which.',
-  alternates: { canonical: 'https://glp1comparehub.com/tmates-vs-eden-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tmates-vs-eden-health' },
   openGraph: {
     title: 'TMates vs Eden Health 2026: Compounded GLP-1 Head-to-Head',
     description:
       "Budget vs accreditation. TMates wins flat-dose pricing; Eden wins pharmacy transparency, branded access, and consumer trust signals. Verified May 2026.",
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/tmates-vs-eden-health',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/tmates-vs-eden-health',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -26,7 +26,7 @@ const articleSchema = {
   dateModified: '2026-05-08',
   author: { '@type': 'Organization', name: 'GLP1CompareHub' },
   publisher: { '@type': 'Organization', name: 'GLP1CompareHub' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/tmates-vs-eden-health' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/tmates-vs-eden-health' },
 };
 
 const faqSchema = {

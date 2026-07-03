@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   description:
     'OrderlyMeds vs MEDVi side-by-side. MEDVi wins with confirmed pricing (~$179–$299/mo), strong brand recognition, and physician-supervised compounded semaglutide. OrderlyMeds pricing is unconfirmed.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/compare/orderlymeds-vs-medvi',
+    canonical: 'https://www.glp1comparehub.com/compare/orderlymeds-vs-medvi',
   },
   openGraph: {
     title: 'OrderlyMeds vs MEDVi 2026: GLP-1 Provider Comparison',
     description:
       "MEDVi has confirmed pricing (~$179/mo entry) and 33K+ monthly searches. OrderlyMeds pricing is unconfirmed. The winner is clear — here's why.",
-    url: 'https://glp1comparehub.com/compare/orderlymeds-vs-medvi',
+    url: 'https://www.glp1comparehub.com/compare/orderlymeds-vs-medvi',
     type: 'article',
   },
 };
@@ -32,18 +32,18 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Compare Providers',
-          item: 'https://glp1comparehub.com/compare',
+          item: 'https://www.glp1comparehub.com/compare',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'OrderlyMeds vs MEDVi',
-          item: 'https://glp1comparehub.com/compare/orderlymeds-vs-medvi',
+          item: 'https://www.glp1comparehub.com/compare/orderlymeds-vs-medvi',
         },
       ],
     },
@@ -53,14 +53,14 @@ const jsonLd = {
       author: {
         '@type': 'Person',
         name: 'Chad Simpson',
-        url: 'https://glp1comparehub.com/author/chad-simpson',
+        url: 'https://www.glp1comparehub.com/author/chad-simpson',
       },
       datePublished: '2026-05-06',
       dateModified: '2026-05-06',
       publisher: {
         '@type': 'Organization',
         name: 'GLP-1 Compare Hub',
-        url: 'https://glp1comparehub.com',
+        url: 'https://www.glp1comparehub.com',
       },
     },
     {

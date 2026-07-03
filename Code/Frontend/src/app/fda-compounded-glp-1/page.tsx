@@ -17,16 +17,16 @@ export const metadata: Metadata = {
   description:
     "FDA enforcement actions in 2025 targeted bulk 503B GLP-1 manufacturers — not patient-specific 503A compounding. Here's what the FDA actually said and what it means for patients.",
   alternates: {
-    canonical: 'https://glp1comparehub.com/fda-compounded-glp-1',
+    canonical: 'https://www.glp1comparehub.com/fda-compounded-glp-1',
   },
   openGraph: {
     title:
       'FDA & Compounded GLP-1 2026: What the Enforcement Actions Actually Mean | GLP1CompareHub',
     description:
       "FDA enforcement actions in 2025 targeted bulk 503B GLP-1 manufacturers — not patient-specific 503A compounding. Here's what the FDA actually said and what it means for patients.",
-    url: 'https://glp1comparehub.com/fda-compounded-glp-1',
+    url: 'https://www.glp1comparehub.com/fda-compounded-glp-1',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -37,18 +37,18 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'GLP-1 Compliance',
-          item: 'https://glp1comparehub.com/compliance',
+          item: 'https://www.glp1comparehub.com/compliance',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'FDA & Compounded GLP-1',
-          item: 'https://glp1comparehub.com/fda-compounded-glp-1',
+          item: 'https://www.glp1comparehub.com/fda-compounded-glp-1',
         },
       ],
     },
@@ -61,14 +61,14 @@ const jsonLd = {
       author: {
         '@type': 'Person',
         name: 'Chad Simpson',
-        url: 'https://glp1comparehub.com/author/chad-simpson',
+        url: 'https://www.glp1comparehub.com/author/chad-simpson',
       },
       publisher: {
         '@type': 'Organization',
         name: 'GLP1CompareHub',
-        url: 'https://glp1comparehub.com',
+        url: 'https://www.glp1comparehub.com',
       },
-      mainEntityOfPage: 'https://glp1comparehub.com/fda-compounded-glp-1',
+      mainEntityOfPage: 'https://www.glp1comparehub.com/fda-compounded-glp-1',
     },
     {
       '@type': 'FAQPage',

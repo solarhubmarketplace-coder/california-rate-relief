@@ -39,14 +39,14 @@ export const metadata: Metadata = {
   title: 'SkinnyRx vs Eden Health 2026: Which Compounded GLP-1 Program Is Better? | GLP1CompareHub',
   description:
     'SkinnyRx vs Eden Health compared head-to-head. Important: SkinnyRx pricing could not be confirmed at publication — all SkinnyRx data requires direct verification. Eden Health pricing Gronk-verified May 2026 ($229–$249/mo, labs included).',
-  alternates: { canonical: 'https://glp1comparehub.com/compare/skinnyrx-vs-eden-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-eden-health' },
   openGraph: {
     title: 'SkinnyRx vs Eden Health 2026: GLP-1 Program Comparison',
     description:
       'Eden Health pricing is verified ($229/mo, metabolic bloodwork included). SkinnyRx pricing requires direct verification — site did not return confirmed data at publication. Updated May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compare/skinnyrx-vs-eden-health',
+    url: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-eden-health',
   },
 };
 
@@ -54,18 +54,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Compare Providers',
-      item: 'https://glp1comparehub.com/compare',
+      item: 'https://www.glp1comparehub.com/compare',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'SkinnyRx vs Eden Health',
-      item: 'https://glp1comparehub.com/compare/skinnyrx-vs-eden-health',
+      item: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-eden-health',
     },
   ],
 };
@@ -81,12 +81,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/skinnyrx-vs-eden-health',
+    '@id': 'https://www.glp1comparehub.com/compare/skinnyrx-vs-eden-health',
   },
 };
 

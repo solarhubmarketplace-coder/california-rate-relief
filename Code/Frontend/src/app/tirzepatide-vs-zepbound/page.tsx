@@ -40,15 +40,15 @@ export const metadata: Metadata = {
   title: 'Tirzepatide vs Zepbound 2026: Are They the Same Drug? | GLP1CompareHub',
   description:
     'Tirzepatide IS Zepbound — same molecule, different names. The real comparison is branded Zepbound (~$1,086/mo) vs compounded tirzepatide ($167–$299/mo). Full breakdown May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/tirzepatide-vs-zepbound' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tirzepatide-vs-zepbound' },
   openGraph: {
     title: 'Tirzepatide vs Zepbound 2026: Same Drug, Very Different Prices',
     description:
       'Tirzepatide is the active compound. Zepbound is the brand name. Here\'s what that means for your wallet — and whether compounded is still legal in 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/tirzepatide-vs-zepbound',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/tirzepatide-vs-zepbound',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -57,8 +57,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Tirzepatide vs Zepbound', item: 'https://glp1comparehub.com/tirzepatide-vs-zepbound' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Tirzepatide vs Zepbound', item: 'https://www.glp1comparehub.com/tirzepatide-vs-zepbound' },
   ],
 };
 
@@ -73,12 +73,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/tirzepatide-vs-zepbound',
+    '@id': 'https://www.glp1comparehub.com/tirzepatide-vs-zepbound',
   },
 };
 

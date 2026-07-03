@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'Strut Health Review May 2026: $99 Oral Semaglutide, No-Video Telehealth, 7.12% Conversion | GLP1CompareHub',
   description:
     'Independent Strut Health review verified May 2026. The lowest verified oral GLP-1 entry price in our Katalys stack ($99/mo sema, $199/mo tirz), 7.12% conversion rate (2nd highest), and the only no-video async physician model.',
-  alternates: { canonical: 'https://glp1comparehub.com/providers/strut-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/providers/strut-health' },
   openGraph: {
     title: 'Strut Health Review — $99 Oral Semaglutide, No-Video Telehealth, 7.12% CR',
     description:
       'LegitScript + HIPAA certified, no-video async model with ≤1 business day physician review. Multi-vertical: GLP-1 + hair + skin + sexual health. Available in 49 US states.',
-    url: 'https://glp1comparehub.com/providers/strut-health',
+    url: 'https://www.glp1comparehub.com/providers/strut-health',
     siteName: 'GLP1CompareHub',
     type: 'article',
   },
@@ -33,8 +33,8 @@ const articleSchema = {
     url: 'https://struthealth.com',
   },
   reviewRating: { '@type': 'Rating', ratingValue: '4.6', bestRating: '5' },
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   datePublished: '2026-05-13',
   dateModified: '2026-05-13',
 };

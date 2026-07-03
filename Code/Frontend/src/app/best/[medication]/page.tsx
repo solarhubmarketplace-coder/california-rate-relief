@@ -50,11 +50,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     title: `${med.titleHook} | GLP1CompareHub`,
     description:
       `Top 5 telemedicine providers for ${med.name} in 2026. Pricing, ratings, and side-by-side comparison. ${med.description.slice(0, 100)}`,
-    alternates: { canonical: `https://glp1comparehub.com/best/telemedicine-${med.slug}` },
+    alternates: { canonical: `https://www.glp1comparehub.com/best/telemedicine-${med.slug}` },
     openGraph: {
       title: med.titleHook,
       description: med.description.slice(0, 160),
-      url: `https://glp1comparehub.com/best/telemedicine-${med.slug}`,
+      url: `https://www.glp1comparehub.com/best/telemedicine-${med.slug}`,
       siteName: 'GLP1CompareHub',
       type: 'article',
     },
@@ -84,9 +84,9 @@ export default async function MedicationRankingPage({ params }: PageParams) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Best Rankings', item: 'https://glp1comparehub.com/best' },
-      { '@type': 'ListItem', position: 3, name: med.name, item: `https://glp1comparehub.com/best/telemedicine-${med.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Best Rankings', item: 'https://www.glp1comparehub.com/best' },
+      { '@type': 'ListItem', position: 3, name: med.name, item: `https://www.glp1comparehub.com/best/telemedicine-${med.slug}` },
     ],
   };
   const itemListSchema = {
@@ -97,7 +97,7 @@ export default async function MedicationRankingPage({ params }: PageParams) {
     itemListElement: top5.map((p, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      url: `https://glp1comparehub.com/providers/${p.slug}`,
+      url: `https://www.glp1comparehub.com/providers/${p.slug}`,
       name: p.name,
     })),
   };
@@ -105,7 +105,7 @@ export default async function MedicationRankingPage({ params }: PageParams) {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
     name: med.titleHook,
-    url: `https://glp1comparehub.com/best/telemedicine-${med.slug}`,
+    url: `https://www.glp1comparehub.com/best/telemedicine-${med.slug}`,
     about: med.genericName ?? med.name,
     lastReviewed: med.lastUpdated,
     datePublished: '2026-05-02',

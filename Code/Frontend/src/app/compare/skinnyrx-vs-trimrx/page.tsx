@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   description:
     'Comparing SkinnyRx and TrimRx for compounded semaglutide and tirzepatide. TrimRx entry pricing confirmed at ~$179/mo. SkinnyRx pricing unconfirmed — verify directly before subscribing.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/compare/skinnyrx-vs-trimrx',
+    canonical: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-trimrx',
   },
   openGraph: {
     title: 'SkinnyRx vs TrimRx 2026: GLP-1 Program Comparison',
     description:
       'Side-by-side look at SkinnyRx and TrimRx compounded GLP-1 programs. Verified TrimRx entry price: ~$179/mo. SkinnyRx pricing: verify directly.',
-    url: 'https://glp1comparehub.com/compare/skinnyrx-vs-trimrx',
+    url: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-trimrx',
     type: 'article',
   },
 };
@@ -32,18 +32,18 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Compare Providers',
-          item: 'https://glp1comparehub.com/compare',
+          item: 'https://www.glp1comparehub.com/compare',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'SkinnyRx vs TrimRx',
-          item: 'https://glp1comparehub.com/compare/skinnyrx-vs-trimrx',
+          item: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-trimrx',
         },
       ],
     },
@@ -53,14 +53,14 @@ const jsonLd = {
       author: {
         '@type': 'Person',
         name: 'Chad Simpson',
-        url: 'https://glp1comparehub.com/author/chad-simpson',
+        url: 'https://www.glp1comparehub.com/author/chad-simpson',
       },
       datePublished: '2026-05-06',
       dateModified: '2026-05-06',
       publisher: {
         '@type': 'Organization',
         name: 'GLP-1 Compare Hub',
-        url: 'https://glp1comparehub.com',
+        url: 'https://www.glp1comparehub.com',
       },
     },
     {

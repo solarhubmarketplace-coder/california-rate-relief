@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: 'Compounded Semaglutide 2026: Legal Status, Cost & Verified Providers',
   description:
     'Compounded semaglutide 2026: FDA shortage ended March 2025. 503A still available under narrow exceptions. Verified pricing $99–$249/mo. Updated May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/compounded-semaglutide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compounded-semaglutide' },
   openGraph: {
     title: 'Compounded Semaglutide 2026 — Post-FDA-Enforcement Status + Pricing',
     description:
       'Shortage ended March 2025. April 1 enforcement shift. Where compounded sema still stands, 503A narrow exceptions, and current pricing from $99/mo.',
-    url: 'https://glp1comparehub.com/compounded-semaglutide',
+    url: 'https://www.glp1comparehub.com/compounded-semaglutide',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Compounded Semaglutide 2026 — GLP1CompareHub' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Compounded Semaglutide 2026 — GLP1CompareHub' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const articleSchema = {
   headline: 'Compounded Semaglutide 2026: FDA Status, Cost, and Verified Providers',
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/compounded-semaglutide',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/compounded-semaglutide',
   about: ['Compounded semaglutide', 'Semaglutide', 'Ozempic', 'Wegovy', '503A compounding pharmacy', 'FDA enforcement', 'GLP-1 weight loss'],
 };
 
@@ -100,8 +100,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Compounded Semaglutide', item: 'https://glp1comparehub.com/compounded-semaglutide' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Compounded Semaglutide', item: 'https://www.glp1comparehub.com/compounded-semaglutide' },
   ],
 };
 

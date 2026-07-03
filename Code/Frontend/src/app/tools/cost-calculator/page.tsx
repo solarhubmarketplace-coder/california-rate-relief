@@ -45,7 +45,7 @@ const webApplicationSchema = {
   name: 'GLP-1 Cost Calculator',
   applicationCategory: 'HealthApplication',
   operatingSystem: 'Any',
-  url: 'https://glp1comparehub.com/tools/cost-calculator',
+  url: 'https://www.glp1comparehub.com/tools/cost-calculator',
   description: 'Interactive tool that estimates 12-month GLP-1 medication cost based on provider, dose schedule, and titration plan.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };

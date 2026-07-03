@@ -29,15 +29,15 @@ export const metadata: Metadata = {
   title: 'Wegovy Pill 2026: OASIS-1 Trial Data + What\'s Available Now',
   description:
     'No FDA-approved Wegovy pill exists as of May 2026. Oral semaglutide 50mg is in FDA review after OASIS-1 (−15.1% at 68 weeks). Compounded injectable semaglutide from $99/month is available now.',
-  alternates: { canonical: 'https://glp1comparehub.com/wegovy-pill' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/wegovy-pill' },
   openGraph: {
     title: 'Is There a Wegovy Pill in 2026? OASIS-1 Trial Data + What You Can Get Now',
     description:
       'No approved Wegovy pill as of May 2026. Oral sema 50mg showed −15.1% weight loss in OASIS-1 but is still in FDA review. Compounded injectable semaglutide is available from $99/mo.',
-    url: 'https://glp1comparehub.com/wegovy-pill',
+    url: 'https://www.glp1comparehub.com/wegovy-pill',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Wegovy Pill 2026 — GLP1CompareHub' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Wegovy Pill 2026 — GLP1CompareHub' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -46,9 +46,9 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Semaglutide', item: 'https://glp1comparehub.com/compounded-semaglutide' },
-    { '@type': 'ListItem', position: 3, name: 'Wegovy Pill', item: 'https://glp1comparehub.com/wegovy-pill' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Semaglutide', item: 'https://www.glp1comparehub.com/compounded-semaglutide' },
+    { '@type': 'ListItem', position: 3, name: 'Wegovy Pill', item: 'https://www.glp1comparehub.com/wegovy-pill' },
   ],
 };
 
@@ -61,14 +61,14 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/wegovy-pill' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/wegovy-pill' },
 };
 
 const faqSchema = {

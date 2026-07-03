@@ -16,16 +16,16 @@ export const metadata: Metadata = {
   description:
     'What GLP-1 stacking means, the evidence behind common combinations (NAD+, B12, sermorelin, lipotropics), and providers that offer bundled programs.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/glp-1-stack-guide',
+    canonical: 'https://www.glp1comparehub.com/glp-1-stack-guide',
   },
   openGraph: {
     title: 'GLP-1 Stack Guide 2026: NAD+, B12, Sermorelin & Adjunct Protocols',
     description:
       'What GLP-1 stacking means, the evidence behind common combinations (NAD+, B12, sermorelin, lipotropics), and providers that offer bundled programs.',
-    url: 'https://glp1comparehub.com/glp-1-stack-guide',
+    url: 'https://www.glp1comparehub.com/glp-1-stack-guide',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -36,18 +36,18 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'GLP-1 Resources',
-          item: 'https://glp1comparehub.com/resources',
+          item: 'https://www.glp1comparehub.com/resources',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'GLP-1 Stack Guide',
-          item: 'https://glp1comparehub.com/glp-1-stack-guide',
+          item: 'https://www.glp1comparehub.com/glp-1-stack-guide',
         },
       ],
     },
@@ -56,18 +56,18 @@ const jsonLd = {
       headline: 'GLP-1 Stack Guide 2026: NAD+, B12, Sermorelin & Adjunct Protocols',
       description:
         'What GLP-1 stacking means, the evidence behind common combinations (NAD+, B12, sermorelin, lipotropics), and providers that offer bundled programs.',
-      url: 'https://glp1comparehub.com/glp-1-stack-guide',
+      url: 'https://www.glp1comparehub.com/glp-1-stack-guide',
       datePublished: '2026-05-06',
       dateModified: '2026-05-06',
       author: {
         '@type': 'Person',
         name: 'Chad Simpson',
-        url: 'https://glp1comparehub.com/author/chad-simpson',
+        url: 'https://www.glp1comparehub.com/author/chad-simpson',
       },
       publisher: {
         '@type': 'Organization',
         name: 'GLP1CompareHub',
-        url: 'https://glp1comparehub.com',
+        url: 'https://www.glp1comparehub.com',
       },
     },
     {

@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: 'Glutathione Injection 2026: Cost, Evidence & At-Home Options',
   description:
     'Glutathione injection guide updated May 2026. Local IV pricing ($75-$250/session) vs at-home telehealth options. The honest read on what glutathione actually does, what the evidence shows, and how it fits into a longevity stack.',
-  alternates: { canonical: 'https://glp1comparehub.com/glutathione-injection' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/glutathione-injection' },
   openGraph: {
     title: 'Glutathione Injection — Cost, Evidence, At-Home Options',
     description:
       'IV $75-$250/session vs at-home telehealth. Honest read on what glutathione does, what the evidence supports, and how it stacks with NAD+ and GLP-1.',
-    url: 'https://glp1comparehub.com/glutathione-injection',
+    url: 'https://www.glp1comparehub.com/glutathione-injection',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-glutathione-injection.jpg', width: 1168, height: 784, alt: 'Glutathione Injection — IV vs IM telehealth guide 2026' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-glutathione-injection.jpg', width: 1168, height: 784, alt: 'Glutathione Injection — IV vs IM telehealth guide 2026' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const articleSchema = {
   headline: 'Glutathione Injection 2026: Cost, Evidence, and At-Home Options',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/glutathione-injection',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/glutathione-injection',
   about: ['Glutathione injection', 'IV glutathione', 'Antioxidant therapy'],
 };
 

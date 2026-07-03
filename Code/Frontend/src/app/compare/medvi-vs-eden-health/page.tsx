@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   title: 'MEDVi vs Eden Health 2026: Which Compounded GLP-1 Program Is Better? | GLP1CompareHub',
   description:
     'MEDVi vs Eden Health compared head-to-head: pricing, included services, metabolic bloodwork, and who each program is best for. Verified pricing May 2026. MEDVi wins on price; Eden wins on clinical support.',
-  alternates: { canonical: 'https://glp1comparehub.com/compare/medvi-vs-eden-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare/medvi-vs-eden-health' },
   openGraph: {
     title: 'MEDVi vs Eden Health 2026: Compounded GLP-1 Head-to-Head',
     description:
       'Two top-tier compounded GLP-1 telehealth providers compared on price, included metabolic testing, and patient fit. Verified pricing, May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compare/medvi-vs-eden-health',
+    url: 'https://www.glp1comparehub.com/compare/medvi-vs-eden-health',
   },
 };
 
@@ -52,13 +52,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'MEDVi vs Eden Health',
-      item: 'https://glp1comparehub.com/compare/medvi-vs-eden-health',
+      item: 'https://www.glp1comparehub.com/compare/medvi-vs-eden-health',
     },
   ],
 };
@@ -74,12 +74,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/medvi-vs-eden-health',
+    '@id': 'https://www.glp1comparehub.com/compare/medvi-vs-eden-health',
   },
 };
 

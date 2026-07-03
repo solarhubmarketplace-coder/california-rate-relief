@@ -33,15 +33,15 @@ export const metadata: Metadata = {
   title: 'How to Microdose Tirzepatide: Doses, Measurement, and Providers | GLP1CompareHub',
   description:
     'What a tirzepatide microdose looks like in practice: common starting doses (1.25mg, 2.5mg), how to measure from a compounded vial, and which providers support flexible dosing.',
-  alternates: { canonical: 'https://glp1comparehub.com/microdose-tirzepatide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/microdose-tirzepatide' },
   openGraph: {
     title: 'How to Microdose Tirzepatide: Practical Guide to Lower Doses',
     description:
       'Tirzepatide microdoses (1.25–2.5mg) require compounded vials and a syringe — auto-injector pens don\'t allow sub-2.5mg dosing. Here\'s how it works and where to start.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/microdose-tirzepatide',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/microdose-tirzepatide',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -50,18 +50,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Microdosing Tirzepatide',
-      item: 'https://glp1comparehub.com/microdosing-tirzepatide',
+      item: 'https://www.glp1comparehub.com/microdosing-tirzepatide',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Microdose Tirzepatide',
-      item: 'https://glp1comparehub.com/microdose-tirzepatide',
+      item: 'https://www.glp1comparehub.com/microdose-tirzepatide',
     },
   ],
 };
@@ -75,14 +75,14 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/microdose-tirzepatide' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/microdose-tirzepatide' },
 };
 
 const faqSchema = {

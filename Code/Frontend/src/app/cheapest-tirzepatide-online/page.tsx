@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: 'Cheapest Tirzepatide Online May 2026: $149–$179/mo Verified | GLP1CompareHub',
   description:
     'Verified cheapest tirzepatide online May 2026: System Labs $179/mo (lowest sustained), Embody $149 first month with Spring Forward $200-off promo, branded Zepbound from $25/mo with insurance. Side-by-side cost across all three paths.',
-  alternates: { canonical: 'https://glp1comparehub.com/cheapest-tirzepatide-online' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/cheapest-tirzepatide-online' },
   openGraph: {
     title: 'Cheapest Tirzepatide Online — Verified May 2026 ($149–$179/mo)',
     description:
       'Three cost paths: branded+insurance ($25/mo), LillyDirect cash-pay ($299–$699), and compounded telehealth ($179–$399). Honest read on which is cheapest for you.',
-    url: 'https://glp1comparehub.com/cheapest-tirzepatide-online',
+    url: 'https://www.glp1comparehub.com/cheapest-tirzepatide-online',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-cheapest-tirzepatide.jpg', width: 1168, height: 784, alt: 'Cheapest Tirzepatide Online — verified lowest prices 2026' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-cheapest-tirzepatide.jpg', width: 1168, height: 784, alt: 'Cheapest Tirzepatide Online — verified lowest prices 2026' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const articleSchema = {
   headline: 'Cheapest Tirzepatide Online May 2026',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/cheapest-tirzepatide-online',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/cheapest-tirzepatide-online',
   about: ['Cheapest tirzepatide', 'Compounded tirzepatide', 'Branded Zepbound', 'Telehealth GLP-1'],
 };
 

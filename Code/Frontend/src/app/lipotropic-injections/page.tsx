@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: 'Lipotropic MIC+B12 Injections 2026: Cost, At-Home Options & GLP-1 Stack',
   description:
     'Lipotropic injections (MIC+B12) explained: how they work, what the evidence says, local clinic pricing ($25-$80/shot) vs at-home telehealth ($89/mo at System Labs), and why patients are stacking them with GLP-1 medications for energy and metabolic support.',
-  alternates: { canonical: 'https://glp1comparehub.com/lipotropic-injections' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/lipotropic-injections' },
   openGraph: {
     title: 'Lipotropic Injections — MIC+B12 Cost, At-Home Options, GLP-1 Stack',
     description:
       'Local clinic $25-$80/shot vs at-home $89/mo. The honest read on what lipotropic injections actually do, plus the GLP-1 + MIC+B12 stack pattern.',
-    url: 'https://glp1comparehub.com/lipotropic-injections',
+    url: 'https://www.glp1comparehub.com/lipotropic-injections',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-lipotropic-injections.jpg', width: 1168, height: 784, alt: 'Lipotropic Injections — telehealth provider guide 2026' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-lipotropic-injections.jpg', width: 1168, height: 784, alt: 'Lipotropic Injections — telehealth provider guide 2026' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const articleSchema = {
   headline: 'Lipotropic Injections 2026: Cost, At-Home Options, and the GLP-1 Stack',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/lipotropic-injections',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/lipotropic-injections',
   about: ['Lipotropic injections', 'MIC+B12', 'B-12 injection', 'GLP-1 metabolic stack'],
 };
 

@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'Care Bare Rx Review May 2026: Multi-Vertical Telehealth — Weight Loss + Hair + Sexual Health + NAD+ | GLP1CompareHub',
   description:
     'Independent Care Bare Rx (carebarerx.com) review verified May 2026. The only multi-vertical provider in our active Katalys-approved stack offering compounded GLP-1 ($199+/mo, oral + injectable), hair regrowth ($99/mo), sexual health ($99/mo), and NAD+ ($199/mo) under one platform.',
-  alternates: { canonical: 'https://glp1comparehub.com/providers/care-bare-rx' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/providers/care-bare-rx' },
   openGraph: {
     title: 'Care Bare Rx Review — Weight Loss + Hair + Sexual Health + NAD+',
     description:
       'Only multi-vertical provider in active stack. $300 default CPA + 6 cross-vertical payout tiers. Inclusive "self-care with pride" positioning.',
-    url: 'https://glp1comparehub.com/providers/care-bare-rx',
+    url: 'https://www.glp1comparehub.com/providers/care-bare-rx',
     siteName: 'GLP1CompareHub',
     type: 'article',
   },
@@ -29,8 +29,8 @@ const articleSchema = {
   '@type': 'Review',
   itemReviewed: { '@type': 'MedicalBusiness', name: 'Care Bare Rx', url: 'https://carebarerx.com' },
   reviewRating: { '@type': 'Rating', ratingValue: '4.4', bestRating: '5' },
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
 };

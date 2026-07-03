@@ -15,15 +15,15 @@ export const metadata: Metadata = {
   title: 'Best GLP-1 Providers Online (May 2026) — Expert Rankings | GLP1CompareHub',
   description:
     'Expert-ranked top 5 GLP-1 telemedicine providers for each medication: Wegovy, Zepbound, Mounjaro, Ozempic, Semaglutide, Tirzepatide, Compounded GLP-1, and Brand-Name GLP-1. Updated weekly.',
-  alternates: { canonical: 'https://glp1comparehub.com/best' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/best' },
   openGraph: {
     title: 'Best GLP-1 Providers — Expert Rankings 2026',
     description:
       'Independent rankings of the top GLP-1 telemedicine providers. Pricing, quality certifications (Valisure, LegitScript, NABP), customer experience, and medication options.',
-    url: 'https://glp1comparehub.com/best',
+    url: 'https://www.glp1comparehub.com/best',
     siteName: 'GLP1CompareHub',
     type: 'website',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -32,8 +32,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Best Rankings', item: 'https://glp1comparehub.com/best' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Best Rankings', item: 'https://www.glp1comparehub.com/best' },
   ],
 };
 

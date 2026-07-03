@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: 'Tirzepatide Before and After 2026: Trial Data & Realistic Timeline',
   description:
     'Honest tirzepatide before-and-after framing — what published clinical trials show (SURMOUNT-1: 20.2% average weight loss at 72 weeks), how the timeline unfolds month by month, and why compounded versions may not match branded trial data. No fake testimonials.',
-  alternates: { canonical: 'https://glp1comparehub.com/tirzepatide-before-and-after' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tirzepatide-before-and-after' },
   openGraph: {
     title: 'Tirzepatide Before and After — Trial Data + Realistic Timeline',
     description:
       'What clinical trials show vs marketing claims. Branded SURMOUNT-1 data, compounded efficacy caveats, and a realistic month-by-month dose-titration timeline.',
-    url: 'https://glp1comparehub.com/tirzepatide-before-and-after',
+    url: 'https://www.glp1comparehub.com/tirzepatide-before-and-after',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-tirzepatide-before-and-after.jpg', width: 1168, height: 784, alt: 'Tirzepatide Before and After — what to realistically expect' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-tirzepatide-before-and-after.jpg', width: 1168, height: 784, alt: 'Tirzepatide Before and After — what to realistically expect' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const articleSchema = {
   headline: 'Tirzepatide Before and After: Trial Data, Realistic Timeline, and Honest Expectations',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/tirzepatide-before-and-after',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/tirzepatide-before-and-after',
   about: ['Tirzepatide weight loss', 'SURMOUNT-1 trial', 'Branded Zepbound', 'Compounded tirzepatide'],
   citation: [
     { '@type': 'CreativeWork', name: 'SURMOUNT-1 (NEJM 2022)', url: 'https://www.nejm.org/doi/10.1056/NEJMoa2206038' },

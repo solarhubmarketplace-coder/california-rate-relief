@@ -36,14 +36,14 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   return {
     title: `${peptide.name} 2026: Evidence, Dosing, Cost & GLP-1 Stacking Guide | GLP1CompareHub`,
     description: `${peptide.hook} Verified May 2026: regulatory status, telehealth providers, dosing protocols, real user reports, and honest red flags.`,
-    alternates: { canonical: `https://glp1comparehub.com/peptides/${peptide.slug}` },
+    alternates: { canonical: `https://www.glp1comparehub.com/peptides/${peptide.slug}` },
     openGraph: {
       title: `${peptide.name} 2026: ${peptide.category} Peptide for GLP-1 Stackers`,
       description: peptide.hook,
       type: 'article',
       siteName: 'GLP1CompareHub',
-      url: `https://glp1comparehub.com/peptides/${peptide.slug}`,
-      images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+      url: `https://www.glp1comparehub.com/peptides/${peptide.slug}`,
+      images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
     },
     twitter: { card: 'summary_large_image' },
   };
@@ -63,7 +63,7 @@ export default async function PeptidePage({ params }: PageParams) {
     dateModified: peptide.lastUpdated,
     author: { '@type': 'Organization', name: 'GLP1CompareHub' },
     publisher: { '@type': 'Organization', name: 'GLP1CompareHub' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://glp1comparehub.com/peptides/${peptide.slug}` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.glp1comparehub.com/peptides/${peptide.slug}` },
   };
 
   return (

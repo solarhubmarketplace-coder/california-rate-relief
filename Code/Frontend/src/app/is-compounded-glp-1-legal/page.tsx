@@ -17,16 +17,16 @@ export const metadata: Metadata = {
   description:
     "Compounded semaglutide and tirzepatide from licensed 503A pharmacies are legal with a valid physician prescription. Here's the timeline, the legal framework, and what to verify.",
   alternates: {
-    canonical: 'https://glp1comparehub.com/is-compounded-glp-1-legal',
+    canonical: 'https://www.glp1comparehub.com/is-compounded-glp-1-legal',
   },
   openGraph: {
     title:
       'Is Compounded GLP-1 Legal in 2026? The Short Answer: Yes, With a Prescription | GLP1CompareHub',
     description:
       "Compounded semaglutide and tirzepatide from licensed 503A pharmacies are legal with a valid physician prescription. Here's the timeline, the legal framework, and what to verify.",
-    url: 'https://glp1comparehub.com/is-compounded-glp-1-legal',
+    url: 'https://www.glp1comparehub.com/is-compounded-glp-1-legal',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -37,18 +37,18 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'GLP-1 Compliance',
-          item: 'https://glp1comparehub.com/compliance',
+          item: 'https://www.glp1comparehub.com/compliance',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'Is Compounded GLP-1 Legal?',
-          item: 'https://glp1comparehub.com/is-compounded-glp-1-legal',
+          item: 'https://www.glp1comparehub.com/is-compounded-glp-1-legal',
         },
       ],
     },
@@ -61,14 +61,14 @@ const jsonLd = {
       author: {
         '@type': 'Person',
         name: 'Chad Simpson',
-        url: 'https://glp1comparehub.com/author/chad-simpson',
+        url: 'https://www.glp1comparehub.com/author/chad-simpson',
       },
       publisher: {
         '@type': 'Organization',
         name: 'GLP1CompareHub',
-        url: 'https://glp1comparehub.com',
+        url: 'https://www.glp1comparehub.com',
       },
-      mainEntityOfPage: 'https://glp1comparehub.com/is-compounded-glp-1-legal',
+      mainEntityOfPage: 'https://www.glp1comparehub.com/is-compounded-glp-1-legal',
     },
     {
       '@type': 'FAQPage',

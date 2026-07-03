@@ -22,11 +22,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   return {
     title: `${a.title} | GLP1CompareHub`,
     description: a.excerpt.slice(0, 160),
-    alternates: { canonical: `https://glp1comparehub.com/news/${a.slug}` },
+    alternates: { canonical: `https://www.glp1comparehub.com/news/${a.slug}` },
     openGraph: {
       title: a.title,
       description: a.excerpt,
-      url: `https://glp1comparehub.com/news/${a.slug}`,
+      url: `https://www.glp1comparehub.com/news/${a.slug}`,
       siteName: 'GLP1CompareHub',
       type: 'article',
       publishedTime: a.publishedDate,
@@ -49,7 +49,7 @@ export default async function NewsArticlePage({ params }: PageParams) {
     publisher: {
       '@type': 'Organization',
       name: 'GLP1CompareHub',
-      url: 'https://glp1comparehub.com',
+      url: 'https://www.glp1comparehub.com',
     },
   };
 

@@ -31,15 +31,15 @@ export const metadata: Metadata = {
   title: 'Microdosing Semaglutide 2026: Doses, Evidence & How to Start | GLP1CompareHub',
   description:
     'Microdosing semaglutide explained — using sub-standard doses for side-effect management, ultra-slow titration, or maintenance coasting. STEP trial evidence, dose math tables, and provider options.',
-  alternates: { canonical: 'https://glp1comparehub.com/microdosing-semaglutide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/microdosing-semaglutide' },
   openGraph: {
     title: 'Microdosing Semaglutide 2026: Sub-Standard Doses, Evidence & Providers',
     description:
       'Starting below 0.25mg or staying at sub-therapeutic doses of semaglutide for side-effect management or maintenance. What the STEP trials show, how to dose, and which providers support it.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/microdosing-semaglutide',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/microdosing-semaglutide',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -48,18 +48,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'GLP-1 Resources',
-      item: 'https://glp1comparehub.com/compounded-semaglutide',
+      item: 'https://www.glp1comparehub.com/compounded-semaglutide',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Microdosing Semaglutide',
-      item: 'https://glp1comparehub.com/microdosing-semaglutide',
+      item: 'https://www.glp1comparehub.com/microdosing-semaglutide',
     },
   ],
 };
@@ -75,16 +75,16 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/microdosing-semaglutide',
+    '@id': 'https://www.glp1comparehub.com/microdosing-semaglutide',
   },
 };
 

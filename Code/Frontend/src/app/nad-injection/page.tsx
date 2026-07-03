@@ -43,15 +43,15 @@ export const metadata: Metadata = {
   title: 'NAD+ Injections 2026: At-Home Subcutaneous vs IV Therapy | GLP1CompareHub',
   description:
     'NAD+ injections compared to IV therapy: bioavailability, cost, who offers at-home subQ NAD+, and how it fits into a GLP-1 weight loss protocol for lean mass preservation.',
-  alternates: { canonical: 'https://glp1comparehub.com/nad-injection' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/nad-injection' },
   openGraph: {
     title: 'NAD+ Injection vs IV: Which Is Worth It in 2026?',
     description:
       'At-home NAD+ subcutaneous injections are 80-90% cheaper than IV therapy with reasonable bioavailability. Here\'s the breakdown for GLP-1 users and longevity stackers.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/nad-injection',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/nad-injection',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -60,18 +60,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Peptides & Stacks',
-      item: 'https://glp1comparehub.com/nad-iv-therapy',
+      item: 'https://www.glp1comparehub.com/nad-iv-therapy',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'NAD+ Injections',
-      item: 'https://glp1comparehub.com/nad-injection',
+      item: 'https://www.glp1comparehub.com/nad-injection',
     },
   ],
 };
@@ -87,14 +87,14 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/nad-injection' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/nad-injection' },
 };
 
 const faqSchema = {

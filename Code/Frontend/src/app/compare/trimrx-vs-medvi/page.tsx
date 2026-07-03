@@ -35,14 +35,14 @@ export const metadata: Metadata = {
   title: 'TrimRx vs MEDVi 2026: Which Compounded GLP-1 Telehealth Is Better? | GLP1CompareHub',
   description:
     'TrimRx vs MEDVi compared head-to-head: pricing, medications, formats, and who should pick which. Verified pricing May 2026. Both offer compounded semaglutide starting at $179/mo.',
-  alternates: { canonical: 'https://glp1comparehub.com/compare/trimrx-vs-medvi' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare/trimrx-vs-medvi' },
   openGraph: {
     title: 'TrimRx vs MEDVi 2026: Compounded GLP-1 Head-to-Head',
     description:
       'Two of the highest brand-search-volume compounded GLP-1 providers compared on price, medications, and patient fit. Verified pricing, May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compare/trimrx-vs-medvi',
+    url: 'https://www.glp1comparehub.com/compare/trimrx-vs-medvi',
   },
 };
 
@@ -50,9 +50,9 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
-    { '@type': 'ListItem', position: 3, name: 'TrimRx vs MEDVi', item: 'https://glp1comparehub.com/compare/trimrx-vs-medvi' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 3, name: 'TrimRx vs MEDVi', item: 'https://www.glp1comparehub.com/compare/trimrx-vs-medvi' },
   ],
 };
 
@@ -67,12 +67,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/trimrx-vs-medvi',
+    '@id': 'https://www.glp1comparehub.com/compare/trimrx-vs-medvi',
   },
 };
 

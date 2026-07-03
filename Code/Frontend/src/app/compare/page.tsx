@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   title: 'Compare GLP-1 Providers — Side-by-Side Comparison Tool | GLP1CompareHub',
   description:
     'Compare any 2-4 GLP-1 telehealth providers side-by-side. Pricing, medications, features, ratings, and pros/cons in one view.',
-  alternates: { canonical: 'https://glp1comparehub.com/compare' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare' },
   openGraph: {
     title: 'Compare GLP-1 Providers Side-by-Side',
     description: 'Pick any 2-4 GLP-1 telehealth providers and see them compared instantly.',
-    url: 'https://glp1comparehub.com/compare',
+    url: 'https://www.glp1comparehub.com/compare',
     siteName: 'GLP1CompareHub',
     type: 'website',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -27,8 +27,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Compare', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Compare', item: 'https://www.glp1comparehub.com/compare' },
   ],
 };
 

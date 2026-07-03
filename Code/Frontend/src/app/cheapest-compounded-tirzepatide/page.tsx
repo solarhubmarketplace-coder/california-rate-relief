@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   title: 'Cheapest Compounded Tirzepatide 2026: Provider Price Comparison | GLP1CompareHub',
   description:
     'Cheapest compounded tirzepatide prices compared: from $167/month (12-mo plan). See verified 2026 pricing from TMates, MEDVi, Eden Health, and more — without insurance.',
-  alternates: { canonical: 'https://glp1comparehub.com/cheapest-compounded-tirzepatide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/cheapest-compounded-tirzepatide' },
   openGraph: {
     title: 'Cheapest Compounded Tirzepatide 2026: Verified Provider Prices',
     description: 'Compounded tirzepatide ranges from $167–$299/month. Here\'s the verified 2026 price comparison across telehealth providers — no insurance needed.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/cheapest-compounded-tirzepatide',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/cheapest-compounded-tirzepatide',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compounded Tirzepatide', item: 'https://glp1comparehub.com/compounded-tirzepatide' },
-    { '@type': 'ListItem', position: 3, name: 'Cheapest Compounded Tirzepatide', item: 'https://glp1comparehub.com/cheapest-compounded-tirzepatide' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compounded Tirzepatide', item: 'https://www.glp1comparehub.com/compounded-tirzepatide' },
+    { '@type': 'ListItem', position: 3, name: 'Cheapest Compounded Tirzepatide', item: 'https://www.glp1comparehub.com/cheapest-compounded-tirzepatide' },
   ],
 };
 

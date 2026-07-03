@@ -39,14 +39,14 @@ export const metadata: Metadata = {
   title: 'MEDVi vs Ivim Health 2026: Verified Pricing vs Microdosing Specialist | GLP1CompareHub',
   description:
     'MEDVi vs Ivim Health compared head-to-head: MEDVi wins on verified pricing ($179/mo, Gronk-confirmed). Ivim Health wins on microdosing and customized titration protocols. Which is right for you? Updated May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/compare/medvi-vs-ivim-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare/medvi-vs-ivim-health' },
   openGraph: {
     title: 'MEDVi vs Ivim Health 2026: Which Compounded GLP-1 Program Fits You?',
     description:
       'MEDVi verified pricing from $179/mo. Ivim Health is the microdosing specialist for patients who struggled with standard protocols. Head-to-head, May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compare/medvi-vs-ivim-health',
+    url: 'https://www.glp1comparehub.com/compare/medvi-vs-ivim-health',
   },
 };
 
@@ -54,13 +54,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'MEDVi vs Ivim Health',
-      item: 'https://glp1comparehub.com/compare/medvi-vs-ivim-health',
+      item: 'https://www.glp1comparehub.com/compare/medvi-vs-ivim-health',
     },
   ],
 };
@@ -76,12 +76,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/medvi-vs-ivim-health',
+    '@id': 'https://www.glp1comparehub.com/compare/medvi-vs-ivim-health',
   },
 };
 

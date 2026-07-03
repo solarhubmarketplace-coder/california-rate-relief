@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: 'TMates Review May 2026: $158-$249 Semaglutide, $167-$297 Tirzepatide — Same Price All Doses | GLP1CompareHub',
   description:
     'Independent TMates review verified May 2026. #1 highest realized EPC ($16.09) and 6.43% conversion rate in our active Katalys stack. Same price across every dose tier, injectable AND oral, multi-vertical (NAD+, TRT, ED).',
-  alternates: { canonical: 'https://glp1comparehub.com/providers/tmates' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/providers/tmates' },
   openGraph: {
     title: 'TMates Review — Same Price at Every Dose, #1 EPC in Our Katalys Stack',
     description:
       'TMates ranks #1 by realized EPC ($16.09) and 6.43% conversion rate in our verified May 2026 stack. Same price across all sema (0.25-2.4mg) and tirz (2.5-15mg) doses on 1-12 month plans.',
-    url: 'https://glp1comparehub.com/providers/tmates',
+    url: 'https://www.glp1comparehub.com/providers/tmates',
     siteName: 'GLP1CompareHub',
     type: 'article',
   },
@@ -33,8 +33,8 @@ const articleSchema = {
     url: 'https://tmates.com',
   },
   reviewRating: { '@type': 'Rating', ratingValue: '4.7', bestRating: '5' },
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   datePublished: '2026-05-13',
   dateModified: '2026-05-13',
 };

@@ -40,11 +40,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     title: `${a.name} vs ${b.name} 2026 — GLP-1 Provider Comparison | GLP1CompareHub`,
     description:
       `Side-by-side comparison of ${a.name} and ${b.name}. Pricing, medications, pros, cons, and which is best for your needs.`,
-    alternates: { canonical: `https://glp1comparehub.com/compare/${slug}` },
+    alternates: { canonical: `https://www.glp1comparehub.com/compare/${slug}` },
     openGraph: {
       title: `${a.name} vs ${b.name} — GLP-1 Comparison`,
       description: `${a.name} (${a.monthlyPrice}) vs ${b.name} (${b.monthlyPrice}). Side-by-side review.`,
-      url: `https://glp1comparehub.com/compare/${slug}`,
+      url: `https://www.glp1comparehub.com/compare/${slug}`,
       siteName: 'GLP1CompareHub',
       type: 'article',
     },
@@ -65,9 +65,9 @@ export default async function CompareVsPage({ params }: PageParams) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Compare', item: 'https://glp1comparehub.com/compare' },
-      { '@type': 'ListItem', position: 3, name: `${a.name} vs ${b.name}`, item: `https://glp1comparehub.com/compare/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Compare', item: 'https://www.glp1comparehub.com/compare' },
+      { '@type': 'ListItem', position: 3, name: `${a.name} vs ${b.name}`, item: `https://www.glp1comparehub.com/compare/${slug}` },
     ],
   };
 

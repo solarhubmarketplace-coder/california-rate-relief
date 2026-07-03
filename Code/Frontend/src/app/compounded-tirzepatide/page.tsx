@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   title: 'Compounded Tirzepatide 2026: FDA Status, Cost & Verified Providers',
   description:
     'Compounded tirzepatide post-FDA-crackdown: 503A narrow exceptions still apply. Verified pricing $179–$399/mo across 10 telehealth providers. Updated May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/compounded-tirzepatide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compounded-tirzepatide' },
   openGraph: {
     title: 'Compounded Tirzepatide — Updated May 5 2026 (Post-FDA-Crackdown)',
     description:
       'Post-April 2026 enforcement landscape, narrow 503A exceptions, 10 verified provider pricing rows ($179–$399/mo), and what June 29 could mean for compounded GLP-1.',
-    url: 'https://glp1comparehub.com/compounded-tirzepatide',
+    url: 'https://www.glp1comparehub.com/compounded-tirzepatide',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Compounded Tirzepatide 2026 — GLP1CompareHub' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630, alt: 'Compounded Tirzepatide 2026 — GLP1CompareHub' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -34,8 +34,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Tirzepatide vs Semaglutide', item: 'https://glp1comparehub.com/tirzepatide-vs-semaglutide' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Tirzepatide vs Semaglutide', item: 'https://www.glp1comparehub.com/tirzepatide-vs-semaglutide' },
     { '@type': 'ListItem', position: 3, name: 'Compounded Tirzepatide' },
   ],
 };
@@ -46,9 +46,9 @@ const articleSchema = {
   headline: 'Compounded Tirzepatide May 2026: Cost, Post-FDA-Crackdown Status, and Verified Providers',
   datePublished: '2026-05-03',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/compounded-tirzepatide',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/compounded-tirzepatide',
   about: ['Compounded tirzepatide', 'Tirzepatide', '503A compounding pharmacy', '503B compounding facility', 'FDA enforcement', 'GLP-1 weight loss'],
 };
 

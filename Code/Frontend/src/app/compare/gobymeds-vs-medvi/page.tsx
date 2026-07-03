@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     'GobyMeds vs MEDVi compared: MEDVi pricing verified at $179-299/mo, GobyMeds pricing unconfirmed. Editorial pick is MEDVi. Full breakdown of legitimacy, services, and who each is right for.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/compare/gobymeds-vs-medvi',
+    canonical: 'https://www.glp1comparehub.com/compare/gobymeds-vs-medvi',
   },
   openGraph: {
     title: 'GobyMeds vs MEDVi (2026): Verified Pricing, Legitimacy & Which to Choose',
     description:
       'MEDVi pricing confirmed at $179-299/mo. GobyMeds pricing is unconfirmed — our team is monitoring their Everflow affiliate approval. Full side-by-side comparison updated May 2026.',
-    url: 'https://glp1comparehub.com/compare/gobymeds-vs-medvi',
+    url: 'https://www.glp1comparehub.com/compare/gobymeds-vs-medvi',
     type: 'article',
   },
 };
@@ -33,19 +33,19 @@ const breadcrumbJsonLd = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://glp1comparehub.com',
+      item: 'https://www.glp1comparehub.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Compare Providers',
-      item: 'https://glp1comparehub.com/compare',
+      item: 'https://www.glp1comparehub.com/compare',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'GobyMeds vs MEDVi',
-      item: 'https://glp1comparehub.com/compare/gobymeds-vs-medvi',
+      item: 'https://www.glp1comparehub.com/compare/gobymeds-vs-medvi',
     },
   ],
 };
@@ -57,18 +57,18 @@ const articleJsonLd = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1 Compare Hub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/gobymeds-vs-medvi',
+    '@id': 'https://www.glp1comparehub.com/compare/gobymeds-vs-medvi',
   },
   description:
     'Detailed comparison of GobyMeds and MEDVi GLP-1 telehealth programs. MEDVi pricing confirmed at $179-299/month. GobyMeds is a newer entrant being monitored — pricing requires direct verification.',

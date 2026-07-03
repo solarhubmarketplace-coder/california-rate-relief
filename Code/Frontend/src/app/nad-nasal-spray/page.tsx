@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: 'NAD+ Nasal Spray 2026: Bioavailability vs IV and At-Home Injection',
   description:
     'NAD+ nasal spray is one of 5 NAD+ formats offered by Eden Health. Compare bioavailability vs IV therapy ($150-$1,000+/session) and at-home injection ($79 first month at System Labs). Honest read on what nasal spray delivery actually does.',
-  alternates: { canonical: 'https://glp1comparehub.com/nad-nasal-spray' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/nad-nasal-spray' },
   openGraph: {
     title: 'NAD+ Nasal Spray — How It Compares to IV and Injection',
     description:
       'Eden Health\'s 5-format NAD+ menu includes nasal spray. Bioavailability vs IV, vs subcutaneous injection. Honest evidence read.',
-    url: 'https://glp1comparehub.com/nad-nasal-spray',
+    url: 'https://www.glp1comparehub.com/nad-nasal-spray',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-nad-nasal-spray.jpg', width: 1168, height: 784, alt: 'NAD+ Nasal Spray — comparison and provider guide 2026' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-nad-nasal-spray.jpg', width: 1168, height: 784, alt: 'NAD+ Nasal Spray — comparison and provider guide 2026' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const articleSchema = {
   headline: 'NAD+ Nasal Spray: Bioavailability, Cost, and How It Compares',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/nad-nasal-spray',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/nad-nasal-spray',
   about: ['NAD+ nasal spray', 'NAD+ formats', 'Eden Health'],
 };
 

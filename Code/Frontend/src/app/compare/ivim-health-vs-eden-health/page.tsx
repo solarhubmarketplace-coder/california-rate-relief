@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   title: 'Ivim Health vs Eden Health 2026: Microdosing vs Metabolic Monitoring | GLP1CompareHub',
   description:
     'Ivim Health vs Eden Health compared: microdosing/customized titration protocols vs comprehensive metabolic bloodwork. Verified pricing for Eden Health; Ivim pricing requires direct verification. Updated May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/compare/ivim-health-vs-eden-health' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare/ivim-health-vs-eden-health' },
   openGraph: {
     title: 'Ivim Health vs Eden Health 2026: Which GLP-1 Program Fits You?',
     description:
       'Ivim Health specializes in customized microdosing protocols. Eden Health includes metabolic bloodwork at $229/mo. Head-to-head comparison, May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compare/ivim-health-vs-eden-health',
+    url: 'https://www.glp1comparehub.com/compare/ivim-health-vs-eden-health',
   },
 };
 
@@ -52,18 +52,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Compare Providers',
-      item: 'https://glp1comparehub.com/compare',
+      item: 'https://www.glp1comparehub.com/compare',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Ivim Health vs Eden Health',
-      item: 'https://glp1comparehub.com/compare/ivim-health-vs-eden-health',
+      item: 'https://www.glp1comparehub.com/compare/ivim-health-vs-eden-health',
     },
   ],
 };
@@ -80,12 +80,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/ivim-health-vs-eden-health',
+    '@id': 'https://www.glp1comparehub.com/compare/ivim-health-vs-eden-health',
   },
 };
 

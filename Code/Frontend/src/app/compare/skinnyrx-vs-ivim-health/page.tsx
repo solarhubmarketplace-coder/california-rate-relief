@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     'Side-by-side comparison of SkinnyRx and Ivim Health GLP-1 programs. We break down pricing, microdosing protocols, medication options, and who each service is best suited for.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/compare/skinnyrx-vs-ivim-health',
+    canonical: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-ivim-health',
   },
   openGraph: {
     title: 'SkinnyRx vs Ivim Health (2026): Microdosing, Pricing & Which Is Right for You',
     description:
       'Detailed comparison of SkinnyRx and Ivim Health — two telehealth GLP-1 programs with different approaches. Updated May 2026.',
-    url: 'https://glp1comparehub.com/compare/skinnyrx-vs-ivim-health',
+    url: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-ivim-health',
     type: 'article',
   },
 };
@@ -33,19 +33,19 @@ const breadcrumbJsonLd = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://glp1comparehub.com',
+      item: 'https://www.glp1comparehub.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Compare Providers',
-      item: 'https://glp1comparehub.com/compare',
+      item: 'https://www.glp1comparehub.com/compare',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'SkinnyRx vs Ivim Health',
-      item: 'https://glp1comparehub.com/compare/skinnyrx-vs-ivim-health',
+      item: 'https://www.glp1comparehub.com/compare/skinnyrx-vs-ivim-health',
     },
   ],
 };
@@ -57,18 +57,18 @@ const articleJsonLd = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1 Compare Hub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/skinnyrx-vs-ivim-health',
+    '@id': 'https://www.glp1comparehub.com/compare/skinnyrx-vs-ivim-health',
   },
   description:
     'Side-by-side comparison of SkinnyRx and Ivim Health GLP-1 programs including microdosing protocols, pricing, medication options, and ideal candidate profiles.',

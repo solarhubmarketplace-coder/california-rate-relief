@@ -46,15 +46,15 @@ export const metadata: Metadata = {
   title: 'Sublingual Semaglutide 2026: Under-Tongue Drops vs Injectable | GLP1CompareHub',
   description:
     'Sublingual semaglutide (under-tongue drops) compared to injectable. What the bioavailability research actually says, which providers offer it, and whether it\'s right for you.',
-  alternates: { canonical: 'https://glp1comparehub.com/sublingual-semaglutide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/sublingual-semaglutide' },
   openGraph: {
     title: 'Sublingual Semaglutide: Does Under-Tongue Dosing Work?',
     description:
       'Compounded sublingual semaglutide has no published clinical trials. Here\'s what we know about bioavailability, who offers it, and when it makes sense vs the injectable.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/sublingual-semaglutide',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/sublingual-semaglutide',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -63,18 +63,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Compounded Semaglutide',
-      item: 'https://glp1comparehub.com/compounded-semaglutide',
+      item: 'https://www.glp1comparehub.com/compounded-semaglutide',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Sublingual Semaglutide',
-      item: 'https://glp1comparehub.com/sublingual-semaglutide',
+      item: 'https://www.glp1comparehub.com/sublingual-semaglutide',
     },
   ],
 };
@@ -90,14 +90,14 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/sublingual-semaglutide' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/sublingual-semaglutide' },
 };
 
 const faqSchema = {

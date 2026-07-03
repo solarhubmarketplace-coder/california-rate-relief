@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: 'All GLP-1 Providers — Complete 2026 Directory | GLP1CompareHub',
   description:
     'Side-by-side directory of GLP-1 telehealth providers and compounding pharmacies with live pricing. Compare semaglutide, tirzepatide, Wegovy, Zepbound, and compounded options. Last updated May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/providers' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/providers' },
   openGraph: {
     title: 'All GLP-1 Providers (2026) — Compare 50+ Telehealth & Pharmacy Options',
     description:
       'Complete directory of GLP-1 providers with verified pricing. Telemedicine, compounding pharmacies, and manufacturer programs in one comparison.',
-    url: 'https://glp1comparehub.com/providers',
+    url: 'https://www.glp1comparehub.com/providers',
     siteName: 'GLP1CompareHub',
     type: 'website',
   },
@@ -27,8 +27,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Providers', item: 'https://glp1comparehub.com/providers' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Providers', item: 'https://www.glp1comparehub.com/providers' },
   ],
 };
 
@@ -52,7 +52,7 @@ export default function ProvidersDirectoryPage() {
     itemListElement: active.map((p, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      url: `https://glp1comparehub.com/providers/${p.slug}`,
+      url: `https://www.glp1comparehub.com/providers/${p.slug}`,
       name: p.name,
     })),
   };

@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   title: 'How to Microdose Semaglutide: Step-by-Step Injection Guide (2026) | GLP1CompareHub',
   description:
     'How to measure and inject a semaglutide microdose from a compounded vial — equipment list, dose math table, 6-step injection technique, rotation sites, storage, and tracking. 2026 guide.',
-  alternates: { canonical: 'https://glp1comparehub.com/how-to-microdose-semaglutide' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/how-to-microdose-semaglutide' },
   openGraph: {
     title: 'How to Microdose Semaglutide: Step-by-Step Injection Guide',
     description:
       'Everything you need to measure and inject a compounded semaglutide microdose — insulin syringe, dose volume table, 6-step technique, rotation schedule, and storage guidelines.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/how-to-microdose-semaglutide',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/how-to-microdose-semaglutide',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -44,18 +44,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'GLP-1 Resources',
-      item: 'https://glp1comparehub.com/compounded-semaglutide',
+      item: 'https://www.glp1comparehub.com/compounded-semaglutide',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'How to Microdose Semaglutide',
-      item: 'https://glp1comparehub.com/how-to-microdose-semaglutide',
+      item: 'https://www.glp1comparehub.com/how-to-microdose-semaglutide',
     },
   ],
 };
@@ -71,16 +71,16 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/how-to-microdose-semaglutide',
+    '@id': 'https://www.glp1comparehub.com/how-to-microdose-semaglutide',
   },
 };
 

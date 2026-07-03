@@ -39,15 +39,15 @@ export const metadata: Metadata = {
   title: 'Tirzepatide with B12 2026: What It Is, Why Compounders Add It | GLP1CompareHub',
   description:
     'Tirzepatide with B12 is a compounded formulation that adds cyanocobalamin or methylcobalamin to tirzepatide. Here\'s what B12 does, who adds it, and whether it matters.',
-  alternates: { canonical: 'https://glp1comparehub.com/tirzepatide-with-b12' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tirzepatide-with-b12' },
   openGraph: {
     title: 'Tirzepatide with B12 2026: Is the B12 Add-On Worth It?',
     description:
       'Many compounding pharmacies sell tirzepatide with B12. We explain why, what it does, and which providers offer it — with pricing verified May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/tirzepatide-with-b12',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/tirzepatide-with-b12',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -56,9 +56,9 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compounded Tirzepatide', item: 'https://glp1comparehub.com/compounded-tirzepatide' },
-    { '@type': 'ListItem', position: 3, name: 'Tirzepatide with B12', item: 'https://glp1comparehub.com/tirzepatide-with-b12' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compounded Tirzepatide', item: 'https://www.glp1comparehub.com/compounded-tirzepatide' },
+    { '@type': 'ListItem', position: 3, name: 'Tirzepatide with B12', item: 'https://www.glp1comparehub.com/tirzepatide-with-b12' },
   ],
 };
 
@@ -73,12 +73,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/tirzepatide-with-b12',
+    '@id': 'https://www.glp1comparehub.com/tirzepatide-with-b12',
   },
 };
 

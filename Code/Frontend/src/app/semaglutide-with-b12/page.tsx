@@ -36,15 +36,15 @@ export const metadata: Metadata = {
   title: 'Semaglutide with B12 2026: What It Is and Whether It Helps | GLP1CompareHub',
   description:
     'Semaglutide with B12 is a compounded formulation that adds vitamin B12 to semaglutide. Here\'s what B12 does, why compounders add it, and which providers offer it — verified May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/semaglutide-with-b12' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/semaglutide-with-b12' },
   openGraph: {
     title: 'Semaglutide with B12 2026: Is the B12 Add-On Worth It?',
     description:
       'Many compounding pharmacies add B12 to compounded semaglutide. We explain the rationale, the evidence, and which telehealth providers offer it.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/semaglutide-with-b12',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/semaglutide-with-b12',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -53,9 +53,9 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compounded Semaglutide', item: 'https://glp1comparehub.com/compounded-semaglutide' },
-    { '@type': 'ListItem', position: 3, name: 'Semaglutide with B12', item: 'https://glp1comparehub.com/semaglutide-with-b12' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compounded Semaglutide', item: 'https://www.glp1comparehub.com/compounded-semaglutide' },
+    { '@type': 'ListItem', position: 3, name: 'Semaglutide with B12', item: 'https://www.glp1comparehub.com/semaglutide-with-b12' },
   ],
 };
 
@@ -70,12 +70,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/semaglutide-with-b12',
+    '@id': 'https://www.glp1comparehub.com/semaglutide-with-b12',
   },
 };
 

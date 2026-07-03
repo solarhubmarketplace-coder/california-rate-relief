@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: 'TMates vs MEDVi 2026: Which Compounded GLP-1 Wins? | GLP1CompareHub',
   description:
     'TMates ($158-$297/mo flat dosing) vs MEDVi ($179-$499/mo, FDA misbranding warning Feb 2026). Pricing, regulatory standing, and who should pick which.',
-  alternates: { canonical: 'https://glp1comparehub.com/tmates-vs-medvi' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tmates-vs-medvi' },
   openGraph: {
     title: 'TMates vs MEDVi 2026: Compounded GLP-1 Head-to-Head',
     description:
       'TMates flat-dose pricing vs MEDVi tiered pricing + 13K+ Trustpilot reviews. MEDVi received an FDA marketing warning in Feb 2026 — what that means for buyers. Verified May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/tmates-vs-medvi',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/tmates-vs-medvi',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -26,7 +26,7 @@ const articleSchema = {
   dateModified: '2026-05-08',
   author: { '@type': 'Organization', name: 'GLP1CompareHub' },
   publisher: { '@type': 'Organization', name: 'GLP1CompareHub' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/tmates-vs-medvi' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/tmates-vs-medvi' },
 };
 
 const faqSchema = {

@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   title: 'Tirzepatide Tablets 2026: Do They Exist? FDA Status & Options',
   description:
     'No FDA-approved tirzepatide tablet in 2026 — Zepbound and Mounjaro are injectable only. Compounded sublingual drops (~$224/mo), GLP-1 gum, and oral semaglutide alternatives compared.',
-  alternates: { canonical: 'https://glp1comparehub.com/tirzepatide-tablets' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tirzepatide-tablets' },
   openGraph: {
     title: 'Tirzepatide Tablets — Are They Real? May 2026 Reality Check',
     description:
       'No FDA-approved tirzepatide tablet exists. Compounded oral options (sublingual drops at $224.10/mo, GLP-1 gum at Embody) plus the FDA-approved oral alternative.',
-    url: 'https://glp1comparehub.com/tirzepatide-tablets',
+    url: 'https://www.glp1comparehub.com/tirzepatide-tablets',
     siteName: 'GLP1CompareHub',
     type: 'article',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-tirzepatide-tablets.jpg', width: 1168, height: 784, alt: 'Tirzepatide Tablets — oral format vs injectable comparison' }],
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-tirzepatide-tablets.jpg', width: 1168, height: 784, alt: 'Tirzepatide Tablets — oral format vs injectable comparison' }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -35,9 +35,9 @@ const articleSchema = {
   headline: 'Tirzepatide Tablets May 2026: FDA Status, Compounded Options, and FDA-Approved Alternatives',
   datePublished: '2026-05-05',
   dateModified: '2026-05-05',
-  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://glp1comparehub.com/author/chad-simpson' },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
-  mainEntityOfPage: 'https://glp1comparehub.com/tirzepatide-tablets',
+  author: { '@type': 'Person', name: 'Chad Simpson', url: 'https://www.glp1comparehub.com/author/chad-simpson' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
+  mainEntityOfPage: 'https://www.glp1comparehub.com/tirzepatide-tablets',
   about: ['Tirzepatide tablets', 'Oral tirzepatide', 'Wegovy Pill', 'Rybelsus', 'Compounded GLP-1'],
 };
 

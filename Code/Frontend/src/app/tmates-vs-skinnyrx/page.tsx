@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: 'TMates vs SkinnyRx 2026: Which Compounded GLP-1 Wins? | GLP1CompareHub',
   description:
     'TMates ($158-$297/mo flat dosing) vs SkinnyRx ($199-$299/mo, Trustpilot 4.8/5 across 5K+ reviews). Pricing, reputation, and who should pick which compounded GLP-1.',
-  alternates: { canonical: 'https://glp1comparehub.com/tmates-vs-skinnyrx' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/tmates-vs-skinnyrx' },
   openGraph: {
     title: 'TMates vs SkinnyRx 2026: Compounded GLP-1 Head-to-Head',
     description:
       'TMates flat-dose pricing vs SkinnyRx top-rated reputation (4.8/5 Trustpilot, 5K+ reviews). Best-value comparison verified May 2026.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/tmates-vs-skinnyrx',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/tmates-vs-skinnyrx',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -26,7 +26,7 @@ const articleSchema = {
   dateModified: '2026-05-08',
   author: { '@type': 'Organization', name: 'GLP1CompareHub' },
   publisher: { '@type': 'Organization', name: 'GLP1CompareHub' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://glp1comparehub.com/tmates-vs-skinnyrx' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.glp1comparehub.com/tmates-vs-skinnyrx' },
 };
 
 const faqSchema = {

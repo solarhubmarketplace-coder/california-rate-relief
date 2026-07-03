@@ -12,15 +12,15 @@ export const metadata: Metadata = {
   title: 'Peptide Therapy Guide for GLP-1 Users 2026: BPC-157, PT-141, Ipamorelin & More | GLP1CompareHub',
   description:
     'Honest peptide guides for GLP-1 users: BPC-157 (gut + recovery), Ipamorelin/CJC-1295 (muscle preservation), PT-141 (libido), TB-500 (recovery), AOD-9604 (fat loss). Pricing, evidence, and red flags. Updated May 2026.',
-  alternates: { canonical: 'https://glp1comparehub.com/peptides' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/peptides' },
   openGraph: {
     title: 'Peptide Therapy Guide for GLP-1 Users 2026',
     description:
       'Five most-stacked peptides for GLP-1 users: gut healing, muscle preservation, libido rescue, recovery, and stubborn fat loss. Honest evidence reviews and provider pricing.',
     type: 'website',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/peptides',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/peptides',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -30,7 +30,7 @@ const collectionSchema = {
   '@type': 'CollectionPage',
   name: 'Peptide Therapy for GLP-1 Users',
   description: 'Honest consumer guides to peptides commonly stacked with GLP-1 medications.',
-  url: 'https://glp1comparehub.com/peptides',
+  url: 'https://www.glp1comparehub.com/peptides',
   publisher: { '@type': 'Organization', name: 'GLP1CompareHub' },
 };
 

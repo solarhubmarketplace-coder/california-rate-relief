@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   title: 'Semaglutide vs Wegovy 2026: Same Drug, Very Different Prices | GLP1CompareHub',
   description:
     'Semaglutide IS the active ingredient in Wegovy — they are the same molecule. The real comparison is branded Wegovy (~$1,300/mo) vs compounded semaglutide ($99–249/mo). Full breakdown.',
-  alternates: { canonical: 'https://glp1comparehub.com/semaglutide-vs-wegovy' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/semaglutide-vs-wegovy' },
   openGraph: {
     title: 'Semaglutide vs Wegovy 2026: Same Drug, Very Different Prices',
     description:
       'Semaglutide is the molecule. Wegovy is the brand name. Here\'s what that means — and how compounded semaglutide compares to branded Wegovy, Ozempic, and Rybelsus.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/semaglutide-vs-wegovy',
-    images: [{ url: 'https://glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
+    url: 'https://www.glp1comparehub.com/semaglutide-vs-wegovy',
+    images: [{ url: 'https://www.glp1comparehub.com/img/glp1/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -44,18 +44,18 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Semaglutide',
-      item: 'https://glp1comparehub.com/compounded-semaglutide',
+      item: 'https://www.glp1comparehub.com/compounded-semaglutide',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Semaglutide vs Wegovy',
-      item: 'https://glp1comparehub.com/semaglutide-vs-wegovy',
+      item: 'https://www.glp1comparehub.com/semaglutide-vs-wegovy',
     },
   ],
 };
@@ -71,16 +71,16 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/semaglutide-vs-wegovy',
+    '@id': 'https://www.glp1comparehub.com/semaglutide-vs-wegovy',
   },
 };
 

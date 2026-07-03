@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     'Ivim Health vs TrimRx head-to-head: microdosing protocols, $179+ confirmed TrimRx pricing, Ivim customization, and which GLP-1 program is right for your goals.',
   alternates: {
-    canonical: 'https://glp1comparehub.com/compare/ivim-health-vs-trimrx',
+    canonical: 'https://www.glp1comparehub.com/compare/ivim-health-vs-trimrx',
   },
   openGraph: {
     title: 'Ivim Health vs TrimRx (2026): Microdosing vs Entry-Level Pricing Compared',
     description:
       'Compare Ivim Health and TrimRx across pricing, microdosing availability, titration approach, and clinical support. Updated May 2026.',
-    url: 'https://glp1comparehub.com/compare/ivim-health-vs-trimrx',
+    url: 'https://www.glp1comparehub.com/compare/ivim-health-vs-trimrx',
     type: 'article',
   },
 };
@@ -33,19 +33,19 @@ const breadcrumbJsonLd = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://glp1comparehub.com',
+      item: 'https://www.glp1comparehub.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Compare Providers',
-      item: 'https://glp1comparehub.com/compare',
+      item: 'https://www.glp1comparehub.com/compare',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Ivim Health vs TrimRx',
-      item: 'https://glp1comparehub.com/compare/ivim-health-vs-trimrx',
+      item: 'https://www.glp1comparehub.com/compare/ivim-health-vs-trimrx',
     },
   ],
 };
@@ -57,18 +57,18 @@ const articleJsonLd = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
   publisher: {
     '@type': 'Organization',
     name: 'GLP1 Compare Hub',
-    url: 'https://glp1comparehub.com',
+    url: 'https://www.glp1comparehub.com',
   },
   datePublished: '2026-05-06',
   dateModified: '2026-05-06',
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/ivim-health-vs-trimrx',
+    '@id': 'https://www.glp1comparehub.com/compare/ivim-health-vs-trimrx',
   },
   description:
     'Detailed comparison of Ivim Health and TrimRx GLP-1 programs. Covers microdosing protocols, confirmed entry pricing at $179+, titration differences, and ideal patient profiles.',

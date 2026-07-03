@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   title: 'Elevate Health vs SkinnyRx 2026: Which Compounded GLP-1 Program Wins? | GLP1CompareHub',
   description:
     'Elevate Health vs SkinnyRx compared: programs, features, and who each platform suits best. Neither provider\'s pricing is independently verified — we flag all cost figures and recommend verified alternatives.',
-  alternates: { canonical: 'https://glp1comparehub.com/compare/elevate-health-vs-skinnyrx' },
+  alternates: { canonical: 'https://www.glp1comparehub.com/compare/elevate-health-vs-skinnyrx' },
   openGraph: {
     title: 'Elevate Health vs SkinnyRx 2026: Compounded GLP-1 Comparison',
     description:
       'SkinnyRx edges out Elevate Health on brand presence and program breadth, but neither provider has verified pricing. See our recommended verified alternatives.',
     type: 'article',
     siteName: 'GLP1CompareHub',
-    url: 'https://glp1comparehub.com/compare/elevate-health-vs-skinnyrx',
+    url: 'https://www.glp1comparehub.com/compare/elevate-health-vs-skinnyrx',
   },
 };
 
@@ -39,13 +39,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://glp1comparehub.com' },
-    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://glp1comparehub.com/compare' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.glp1comparehub.com' },
+    { '@type': 'ListItem', position: 2, name: 'Compare Providers', item: 'https://www.glp1comparehub.com/compare' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Elevate Health vs SkinnyRx',
-      item: 'https://glp1comparehub.com/compare/elevate-health-vs-skinnyrx',
+      item: 'https://www.glp1comparehub.com/compare/elevate-health-vs-skinnyrx',
     },
   ],
 };
@@ -61,12 +61,12 @@ const articleSchema = {
   author: {
     '@type': 'Person',
     name: 'Chad Simpson',
-    url: 'https://glp1comparehub.com/author/chad-simpson',
+    url: 'https://www.glp1comparehub.com/author/chad-simpson',
   },
-  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://glp1comparehub.com' },
+  publisher: { '@type': 'Organization', name: 'GLP1CompareHub', url: 'https://www.glp1comparehub.com' },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://glp1comparehub.com/compare/elevate-health-vs-skinnyrx',
+    '@id': 'https://www.glp1comparehub.com/compare/elevate-health-vs-skinnyrx',
   },
 };
 
