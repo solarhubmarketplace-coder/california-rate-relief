@@ -85,7 +85,10 @@ const DOMAIN_DEFAULTS = {
     appleTouchIcon: '/favicon.ico',
   },
   glp1comparehub: {
-    base: 'https://glp1comparehub.com',
+    // Canonical host = www. Vercel serves apex -> 308 -> www, so canonical/OG/metadataBase
+    // must resolve to the 200 (www) host; pointing them at the redirecting apex made Google
+    // log "page with redirect" and decline to index (~5-8 of 112 pages indexed). Fixed 2026-06-19.
+    base: 'https://www.glp1comparehub.com',
     title: 'GLP1CompareHub — Independent GLP-1 Telehealth Provider Comparison',
     description:
       'Independent comparison of verified GLP-1 telehealth programs (compounded semaglutide, tirzepatide). Real pricing, post-FDA-crackdown framing, and provider rankings backed by realized EPC data.',
