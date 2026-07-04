@@ -16,7 +16,7 @@ const DOMAIN_BASE: Record<string, string> = {
   greenreviewshub: 'https://greenreviewshub.com',
   securehomegear: 'https://securehomegear.com',
   athomebiohacking: 'https://athomebiohacking.com',
-  glp1comparehub: 'https://glp1comparehub.com',
+  glp1comparehub: 'https://www.glp1comparehub.com', // canonical host = www (apex 308-redirects to it); keep in sync with sitemap.ts + per-page canonicals
 };
 
 function detectDomainKey(host: string): string {

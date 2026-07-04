@@ -6,6 +6,8 @@ import { statSync } from 'fs';
 import { join } from 'path';
 import { getAllCitySlugs } from '@/data/cities-data';
 import { allPageRoutes } from '@/lib/glp1-page-routes';
+import { glp1Medications } from '@/lib/glp1-medications';
+import { glp1Providers } from '@/lib/glp1-providers';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
 // =============================================================================
@@ -413,7 +415,30 @@ function glp1Sitemap(base: string): MetadataRoute.Sitemap {
       };
     });
 
-  return [...trustPages, ...registryPages];
+  // Dynamic money-page families served by [param] routes with no individual
+  // registry entries - so they were silently missing from the sitemap (GSC
+  // reported "No referring sitemaps detected" on each). Derived from the same
+  // source arrays their generateStaticParams uses, so the sitemap can never
+  // drift out of sync with the actually-rendered pages.
+  const bestRouteMtime = fileMtime('src/app/best/[medication]/page.tsx', today);
+  const bestMedicationPages: MetadataRoute.Sitemap = glp1Medications.map((m) => ({
+    url: `${base}/best/telemedicine-${m.slug}`,
+    lastModified: bestRouteMtime,
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
+  const providerRouteMtime = fileMtime('src/app/providers/[slug]/page.tsx', today);
+  const providerPages: MetadataRoute.Sitemap = glp1Providers
+    .filter((p) => p.status === 'Active')
+    .map((p) => ({
+      url: `${base}/providers/${p.slug}`,
+      lastModified: providerRouteMtime,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }));
+
+  return [...trustPages, ...registryPages, ...bestMedicationPages, ...providerPages];
 }
 
 // =============================================================================
