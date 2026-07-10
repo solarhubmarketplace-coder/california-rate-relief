@@ -6,8 +6,6 @@ import { statSync } from 'fs';
 import { join } from 'path';
 import { getAllCitySlugs } from '@/data/cities-data';
 import { allPageRoutes } from '@/lib/glp1-page-routes';
-import { glp1Medications } from '@/lib/glp1-medications';
-import { glp1Providers } from '@/lib/glp1-providers';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
 // =============================================================================
@@ -59,9 +57,9 @@ type DomainKey = 'ratereliefca' | 'greenreviewshub' | 'securehomegear' | 'athome
 
 const DOMAIN_BASE: Record<DomainKey, string> = {
   ratereliefca: 'https://ratereliefca.com',
-  greenreviewshub: 'https://greenreviewshub.com',
-  securehomegear: 'https://securehomegear.com',
-  athomebiohacking: 'https://athomebiohacking.com',
+  greenreviewshub: 'https://www.greenreviewshub.com', // canonical host = www (apex 307-redirects to it); sitemap must list the 200 URLs
+  securehomegear: 'https://www.securehomegear.com', // canonical host = www (apex 307-redirects to it); sitemap must list the 200 URLs
+  athomebiohacking: 'https://www.athomebiohacking.com', // canonical host = www (apex 307-redirects to it); sitemap must list the 200 URLs
   glp1comparehub: 'https://www.glp1comparehub.com', // canonical host = www (apex 308-redirects to it); sitemap must list the 200 URLs
 };
 
@@ -415,30 +413,14 @@ function glp1Sitemap(base: string): MetadataRoute.Sitemap {
       };
     });
 
-  // Dynamic money-page families served by [param] routes with no individual
-  // registry entries - so they were silently missing from the sitemap (GSC
-  // reported "No referring sitemaps detected" on each). Derived from the same
-  // source arrays their generateStaticParams uses, so the sitemap can never
-  // drift out of sync with the actually-rendered pages.
-  const bestRouteMtime = fileMtime('src/app/best/[medication]/page.tsx', today);
-  const bestMedicationPages: MetadataRoute.Sitemap = glp1Medications.map((m) => ({
-    url: `${base}/best/telemedicine-${m.slug}`,
-    lastModified: bestRouteMtime,
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
-  }));
-
-  const providerRouteMtime = fileMtime('src/app/providers/[slug]/page.tsx', today);
-  const providerPages: MetadataRoute.Sitemap = glp1Providers
-    .filter((p) => p.status === 'Active')
-    .map((p) => ({
-      url: `${base}/providers/${p.slug}`,
-      lastModified: providerRouteMtime,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    }));
-
-  return [...trustPages, ...registryPages, ...bestMedicationPages, ...providerPages];
+  const glp1Pages = [...trustPages, ...registryPages];
+  // De-duplicate by URL. The registry auto-generates /providers/* and
+  // /best/telemedicine-* (from glp1Providers / glp1Medications), and a few
+  // pages (homepage, peptides, oral-tirzepatide) appear in both a hand-authored
+  // and an auto-generated entry -- which emitted duplicate <loc> entries.
+  // Keep first occurrence so every URL is listed exactly once.
+  const seen = new Set<string>();
+  return glp1Pages.filter((e) => (seen.has(e.url) ? false : (seen.add(e.url), true)));
 }
 
 // =============================================================================

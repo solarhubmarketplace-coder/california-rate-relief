@@ -52,6 +52,28 @@ interface TrackingParams {
   utm_content: string | null;
 }
 
+// Derive the actual lead source from tracking params instead of hardcoding one
+// channel for every submission. Priority: paid click IDs > explicit utm_source >
+// referrer-based guess > direct/unknown.
+function deriveLeadSource(t: TrackingParams): string {
+  if (t.gclid) return 'google_ads';
+  if (t.fbclid) return 'facebook_ads';
+  if (t.utm_source) return t.utm_source;
+  if (typeof document !== 'undefined' && document.referrer) {
+    try {
+      const referrerHost = new URL(document.referrer).hostname;
+      if (!referrerHost.includes(window.location.hostname)) {
+        return /google\./.test(referrerHost)
+          ? 'organic_google'
+          : `referral_${referrerHost}`;
+      }
+    } catch {
+      // ignore malformed referrer
+    }
+  }
+  return 'direct';
+}
+
 const utilityProviders = [
   {
     id: 'sce',
@@ -268,7 +290,7 @@ export function QualificationWizard() {
         phone: normalizedPhone, // Send normalized phone with +1
         email: formData.email,
         address: formData.address,
-        source: 'google_ads',
+        source: deriveLeadSource(trackingParams),
         type: 'hot',
         bill_amount: billValue,
         utility_provider: formData.utilityProvider,

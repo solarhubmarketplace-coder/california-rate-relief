@@ -34,6 +34,17 @@ export async function middleware(request: NextRequest) {
   const isAtHomeBiohacking = /^(www\.)?athomebiohacking\.com$/.test(hostname);
   const isGLP1CompareHub = /^(www\.)?glp1comparehub\.com$/.test(hostname);
 
+  // SHG's own /compare/<slug> pages (security-camera brand match-ups). '/compare'
+  // is otherwise claimed by isGLP1Path below, which would 404 these on SHG's own
+  // domain — keep this list in sync with the `compareSlugs` array in app/sitemap.ts.
+  const SHG_COMPARE_SLUGS = [
+    'arlo-vs-ring', 'canary-vs-ring', 'eufy-vs-arlo', 'eufy-vs-ring',
+    'reolink-vs-eufy', 'ring-vs-blink', 'wyze-vs-ring',
+  ];
+  const isSHGComparePath = SHG_COMPARE_SLUGS.some(
+    (slug) => pathname === `/compare/${slug}`
+  );
+
   // SHG-only paths — block these on other hosts so CRR/GRH don't leak SHG pages
   // NOTE: /compare/ moved from SHG-exclusive to GLP1-also (matchglp1 model uses
   // it for provider-vs-provider pages). When SHG launches its compare flow,
@@ -156,6 +167,11 @@ export async function middleware(request: NextRequest) {
     if (pathname === '/') {
       return NextResponse.rewrite(new URL('/shg-home', request.url));
     }
+    // SHG's own /compare/<slug> pages — allow before the GLP1 leak-block below,
+    // since isGLP1Path also claims '/compare' and would otherwise 404 these.
+    if (isSHGComparePath) {
+      return NextResponse.next();
+    }
     // Block AHB and GLP1 paths from leaking on SHG
     if (isAHBPath || isGLP1Path) {
       return new NextResponse(null, { status: 404 });
@@ -239,15 +255,38 @@ export async function middleware(request: NextRequest) {
     );
   }
 
+  // --- ratereliefca.com's own page that collides with GLP1's '/best' prefix ---
+  // isGLP1Path matches any path starting with '/best' (for GLP1's /best,
+  // /best-compounded-tirzepatide, etc.), which also matches CRR's own
+  // '/best-solar-companies-california' page and got it wrongly 404'd below.
+  // Confirmed live: this page has been a real 404 (and a GSC indexing error)
+  // since 5/15/26. Carve it out explicitly rather than loosen '/best' for GLP1.
+  const isCRRBestSolarPage = pathname === '/best-solar-companies-california';
+
   // --- ratereliefca.com → block SHG, AHB, and GLP1 paths so they don't leak onto CRR ---
   // Shared trust pages (/about, /contact, /affiliate-disclosure) are allowed
   // and resolved by host-aware page handlers.
-  if (isCRR && (isSHGPath || isAHBPath || isGLP1Path)) {
+  if (isCRR && !isCRRBestSolarPage && (isSHGPath || isAHBPath || isGLP1Path)) {
     return new NextResponse(null, { status: 404 });
   }
 
   // --- greenreviewshub.com (already handled above) — but also block GLP1 paths ---
   // (added defensively in case someone adds a path that matches both)
+
+  // --- unrecognized hostname (e.g. the raw *.vercel.app project domain, a
+  // preview/branch deployment URL, or a bot hitting the project by IP) ---
+  // None of the isCRR/isGRH/isSHG/isAHB/isGLP1 checks matched, so without this
+  // guard we'd fall through into the CRR-only Supabase logic below on a Vercel
+  // project that doesn't have CRR's Supabase env vars set — that throws
+  // "Your project's URL and Key are required to create a Supabase client!"
+  // and 500s the request. This is the confirmed cause of the intermittent
+  // /middleware 500 errors seen in Vercel's runtime error logs.
+  // '/api' is exempted: Vercel Cron Jobs (e.g. the /api/keep-alive ping) can
+  // invoke this deployment through an internal/alias hostname that won't
+  // match isCRR, and API routes don't leak page content the way pages do.
+  if (!isCRR && !pathname.startsWith('/api')) {
+    return new NextResponse(null, { status: 404 });
+  }
 
   // ====================================================================
   // Below this line: existing CRR auth logic — runs only on
