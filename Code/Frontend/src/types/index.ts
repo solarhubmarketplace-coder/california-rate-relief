@@ -19,7 +19,12 @@ export interface Lead {
   | "referral"
   | "website"
   | "csv_import"
-  | "google_ads";
+  | "google_ads"
+  // deriveLeadSource() also emits open-ended values (utm_source passthrough,
+  // referral_<host>, organic_google, facebook_ads, direct). Supabase
+  // leads.source is character varying, so any string is valid. (string & {})
+  // keeps the literals above as editor hints without closing the union.
+  | (string & {});
   type?: "hot" | "cold"; // Hot leads get called immediately, cold leads go through nurture flow
   bill_amount?: number;
   status: "new" | "contacted" | "converted" | "declined"; // converted = qualified, declined = disqualified
