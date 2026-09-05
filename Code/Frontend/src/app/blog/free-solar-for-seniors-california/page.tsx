@@ -9,8 +9,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Free Solar For Seniors in California: The Real Programs',
-  description: "California seniors on fixed income have several legitimate pathways to low-cost or no-cost solar — DAC-SASH, SASH, CARE, FERA, and solar PPAs. Here is what actually exists and how to qualify.",
+  title: "Free Solar for Seniors in California: Real Programs",
+  description: "DAC-SASH, SASH, CARE and FERA are real and still open. Which no-cost and low-cost solar programs California seniors qualify for, and how to actually apply.",
   alternates: { canonical: '/blog/free-solar-for-seniors-california' },
   openGraph: { title: 'Free Solar For Seniors in California: The Real Programs', description: 'Real programs for senior California homeowners to get low or no-cost solar.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

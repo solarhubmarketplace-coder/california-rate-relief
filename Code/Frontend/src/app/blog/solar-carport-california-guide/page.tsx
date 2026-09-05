@@ -9,9 +9,9 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Solar Carports in California: Cost, Permits, and Whether It\'s Worth It (2026)',
+  title: "Solar Carports in California: Cost & Permits",
   description:
-    'Solar carport cost in California, permit requirements, installer options, and whether a freestanding solar carport beats a roof install. EV-pairing, code compliance, SGIP battery stacking.',
+    "What a solar carport costs in California, the permits you need, how it compares to a roof install, and when EV charging or battery stacking justifies it.",
   alternates: { canonical: '/blog/solar-carport-california-guide' },
   openGraph: {
     title: 'Solar Carports in California: 2026 Guide',

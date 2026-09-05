@@ -9,9 +9,9 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'Solar Panels in California: 2026 Statewide Guide to Cost, Incentives, and Installers',
+  title: "Solar Panels in California: 2026 Cost & Payback",
   description:
-    'Everything California homeowners need for solar in 2026 — statewide costs by utility, NEM 3.0 payback, rebates, top installers, and a realistic no-hype savings calculator.',
+    "What solar costs in California in 2026, by utility. NEM 3.0 payback math, which incentives still exist after the federal credit expired, and who it suits.",
   alternates: { canonical: '/solar-panels-california' },
   openGraph: {
     title: 'Solar Panels in California (2026): Statewide Guide',

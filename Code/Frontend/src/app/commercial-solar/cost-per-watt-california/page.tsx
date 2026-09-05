@@ -8,8 +8,8 @@ import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSo
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'Commercial Solar Panels Cost in California 2026: $/Watt by System Size',
-  description: "What commercial solar costs in California in 2026 — $1.72/Wdc national average (up 10% YoY). Prices by segment: small business, mid-market, large C&I, and what the 30% ITC + MACRS bring the effective cost to.",
+  title: "Commercial Solar Cost in California: $/Watt 2026",
+  description: "Commercial solar runs about $1.72/Wdc in California. Costs by system size, plus what the 48E credit and MACRS depreciation bring the real number down to.",
   alternates: { canonical: '/commercial-solar/cost-per-watt-california' },
   openGraph: { title: 'Commercial Solar Panels Cost in California 2026: $/Watt by System Size', description: 'Commercial solar pricing in California by system size.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

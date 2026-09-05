@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    'PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay the Most in 2026?',
+    "PG&E vs SCE vs SDG&E: 2026 Rates Compared",
   description:
-    'A side-by-side comparison of PG&E, SCE, and SDG&E rates in 2026, what\'s driving the differences, what each utility offers to lower your bill, and how solar savings compare across all three.',
+    "SDG&E charges 45.7c/kWh, PG&E 41.5c, SCE 34.5c. What drives the gap, what each utility offers to lower your bill, and how solar payback differs.",
   alternates: {
     canonical: '/blog/pge-vs-sce-vs-sdge-rates-compared',
   },

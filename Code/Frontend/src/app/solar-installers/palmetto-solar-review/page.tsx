@@ -9,8 +9,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Palmetto Solar Review 2026: Honest Look at a National Installer With Serious Complaint Volume",
-  description: "Palmetto Solar serves California and 22+ other states through subcontractors. SolarReviews 3.0/5, 300+ BBB complaints in 3 years, heavy LightReach PPA push. Here's the honest 2026 review.",
+  title: "Palmetto Solar Review 2026: Honest Assessment",
+  description: "Palmetto works through subcontractors across 22+ states. SolarReviews 3.0/5, 300+ BBB complaints in three years, heavy PPA push. What that means for you.",
   alternates: { canonical: '/solar-installers/palmetto-solar-review' },
 };
 

@@ -8,9 +8,9 @@ import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSo
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'Commercial Solar in California 2026: EPCs, Financing, and the Full Guide',
+  title: "Commercial Solar in California: 2026 Full Guide",
   description:
-    "California installed 915 MW of commercial solar in 2025 (28% YoY growth). Here is a complete 2026 guide to the market, top EPCs, financing (PPA/lease/CPACE), NEM 3.0 impact, Title 24 requirements, and how to get quotes.",
+    "California installed 915 MW of commercial solar in 2025. The 2026 guide to EPCs, PPA and CPACE financing, NEM 3.0, Title 24, and how to get real quotes.",
   alternates: { canonical: '/commercial-solar' },
   openGraph: {
     title: 'Commercial Solar in California 2026: EPCs, Financing, and the Full Guide',

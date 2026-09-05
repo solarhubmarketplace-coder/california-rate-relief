@@ -19,9 +19,9 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
   title:
-    'Best Solar Companies in California 2026: Honest Side-by-Side Review',
+    "Best Solar Companies in California (2026 Review)",
   description:
-    'An honest, research-backed comparison of the top residential solar installers operating in California in 2026 — equipment, pricing, warranties, complaint volume, and which model fits your home.',
+    "An independent comparison of California top residential solar installers - equipment, pricing, warranties, complaint volume, and which model fits your home.",
   alternates: {
     canonical: '/best-solar-companies-california',
   },

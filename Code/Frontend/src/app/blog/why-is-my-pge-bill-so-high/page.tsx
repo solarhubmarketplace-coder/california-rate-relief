@@ -8,8 +8,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Why Is My PG&E Bill So High? The Real Reasons (and What to Do About Them)',
-  description: "The 7 reasons your PG&E bill is unusually high — TOU rate plan mismatch, the $24 Base Services Charge, tier cliffs, leaks, solar-true-up, and more. What to do about each.",
+  title: "Why Is My PG&E Bill So High? 7 Real Reasons",
+  description: "TOU plan mismatch, the $24 base services charge, tier cliffs, a bad true-up and four more reasons your PG&E bill jumped - and what to do about each one.",
   alternates: { canonical: '/blog/why-is-my-pge-bill-so-high' },
   openGraph: { title: 'Why Is My PG&E Bill So High?', description: 'Real reasons your PG&E bill jumped and what to do.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' },
 };

@@ -7,8 +7,8 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: 'Sunrun vs SunPower: Head-to-Head Solar Comparison After the SunPower Bankruptcy (2026)',
-  description: "Sunrun vs SunPower (now Complete Solaria), what's changed post-bankruptcy, panel quality, pricing, warranty continuity, and which is the better buy in California.",
+  title: "Sunrun vs SunPower in California (2026)",
+  description: "SunPower went bankrupt in 2024 and is now Complete Solaria. What changed, how the two compare on panels, pricing and warranty, and which is safer to sign.",
   alternates: { canonical: '/solar-installers/sunrun-vs-sunpower' },
   openGraph: { title: 'Sunrun vs SunPower (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunrun-vs-sunpower' },
 };

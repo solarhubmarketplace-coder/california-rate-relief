@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    'Free Roof Replacement With Solar Panels in California: Is It Real?',
+    "Free Roof Replacement With Solar: Is It Real?",
   description:
-    "Some California solar programs include a roof replacement at no added cost. Here is how roof-included PPAs and solar financing actually work, what qualifies, and where the catches are.",
+    "Some California solar programs do include a roof. How roof-included PPAs actually work, what qualifies, what it really costs you, and where the catches are.",
   alternates: {
     canonical: '/blog/free-roof-replacement-with-solar-panels-california',
   },

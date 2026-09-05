@@ -9,9 +9,9 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Solar Pool Heating in California: Cost, ROI, and How It Compares to Heat Pumps (2026)',
+  title: "Solar Pool Heating in California: Cost & ROI",
   description:
-    'Solar pool heating cost in California, how panels work, when they beat heat-pump pool heaters, permits, and realistic swim-season extension. No fluff — real 2026 numbers.',
+    "What solar pool heating costs in California, when it beats a heat-pump heater, permit requirements, and how many extra swim weeks you realistically get.",
   alternates: { canonical: '/blog/solar-pool-heating-california' },
   openGraph: {
     title: 'Solar Pool Heating California: 2026 Guide',

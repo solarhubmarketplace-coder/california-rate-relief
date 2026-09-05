@@ -8,9 +8,9 @@ import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSo
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'Commercial Solar Companies in California 2026: Top EPCs Compared',
+  title: "Commercial Solar Companies in California (2026)",
   description:
-    "The top California commercial solar companies in 2026 — SOLV Energy, Baker Electric, REC Solar, Cenergy Power, M Bar C, plus CleanCapital and Borrego/New Leaf. Side-by-side on systems, financing, and notable projects.",
+    "The top California commercial solar EPCs compared for 2026 - SOLV, Baker Electric, REC Solar, Cenergy and more, on systems, financing and real projects.",
   alternates: { canonical: '/commercial-solar/companies-california' },
   openGraph: {
     title: 'Commercial Solar Companies in California 2026: Top EPCs Compared',
