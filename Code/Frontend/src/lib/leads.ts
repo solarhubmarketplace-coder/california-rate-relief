@@ -110,6 +110,15 @@ export async function createLead(leadData: {
     utm_source?: string | null;
     utm_campaign?: string | null;
     utm_content?: string | null;
+    // Page-level attribution (added 2026-09-05)
+    landing_page?: string | null;
+    landing_city_slug?: string | null;
+    landing_page_type?: string | null;
+    submitted_from?: string | null;
+    referrer?: string | null;
+    utm_medium?: string | null;
+    utm_term?: string | null;
+    ga_client_id?: string | null;
 }): Promise<Lead> {
     try {
         const response = await axiosClient.post<BackendApiResponse<BackendLead>>('/leads', {
@@ -128,6 +137,15 @@ export async function createLead(leadData: {
             utm_source: leadData.utm_source,
             utm_campaign: leadData.utm_campaign,
             utm_content: leadData.utm_content,
+            // Page-level attribution
+            landing_page: leadData.landing_page,
+            landing_city_slug: leadData.landing_city_slug,
+            landing_page_type: leadData.landing_page_type,
+            submitted_from: leadData.submitted_from,
+            referrer: leadData.referrer,
+            utm_medium: leadData.utm_medium,
+            utm_term: leadData.utm_term,
+            ga_client_id: leadData.ga_client_id,
         });
 
         const backendLead: BackendLead = (response as any).data || response;

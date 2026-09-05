@@ -23,6 +23,13 @@ import {
   XCircle,
 } from 'lucide-react';
 import { createLead } from '@/lib/leads';
+import { trackEvent } from '@/components/GoogleAnalyticsClient';
+import {
+  captureFirstTouch,
+  getFirstTouch,
+  currentPath,
+  gaClientId,
+} from '@/lib/attribution';
 import { useToast } from '@/hooks/use-toast';
 import usePlacesAutocomplete, {
   getGeocode,
@@ -50,6 +57,8 @@ interface TrackingParams {
   utm_source: string | null;
   utm_campaign: string | null;
   utm_content: string | null;
+  utm_medium: string | null;
+  utm_term: string | null;
 }
 
 // Derive the actual lead source from tracking params instead of hardcoding one
@@ -141,6 +150,8 @@ export function QualificationWizard() {
     utm_source: null,
     utm_campaign: null,
     utm_content: null,
+    utm_medium: null,
+    utm_term: null,
   });
 
   // Capture URL parameters on mount (for ad tracking)
@@ -151,8 +162,30 @@ export function QualificationWizard() {
       utm_source: searchParams.get('utm_source'),
       utm_campaign: searchParams.get('utm_campaign'),
       utm_content: searchParams.get('utm_content'),
+      utm_medium: searchParams.get('utm_medium'),
+      utm_term: searchParams.get('utm_term'),
     });
   }, [searchParams]);
+
+  // Record the first page of the session so a lead can be credited to the page
+  // that earned it rather than to whichever page hosts the wizard.
+  useEffect(() => {
+    captureFirstTouch();
+  }, []);
+
+  // wizard_start — fires once, the first time the visitor interacts. Without this
+  // the funnel has no denominator and drop-off is invisible.
+  const startedRef = useRef(false);
+  const markStarted = () => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    const ft = getFirstTouch();
+    trackEvent('wizard_start', {
+      landing_page: ft?.landing_page ?? 'unknown',
+      landing_page_type: ft?.landing_page_type ?? 'unknown',
+      landing_city_slug: ft?.landing_city_slug ?? 'none',
+    });
+  };
 
   const [formData, setFormData] = useState<FormData>({
     utilityProvider: '',
@@ -237,7 +270,12 @@ export function QualificationWizard() {
   };
 
   const nextStep = () => {
+    markStarted();
     if (currentStep < 5) {
+      trackEvent('wizard_step_completed', {
+        step: currentStep,
+        landing_page_type: getFirstTouch()?.landing_page_type ?? 'unknown',
+      });
       setCurrentStep((prev) => (prev + 1) as WizardStep);
     }
   };
@@ -259,6 +297,7 @@ export function QualificationWizard() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
+    const firstTouch = getFirstTouch();
 
     try {
       // Parse name into first and last
@@ -301,8 +340,26 @@ export function QualificationWizard() {
         utm_source: trackingParams.utm_source,
         utm_campaign: trackingParams.utm_campaign,
         utm_content: trackingParams.utm_content,
+        utm_medium: trackingParams.utm_medium,
+        utm_term: trackingParams.utm_term,
+        // Page-level attribution: which page earned this lead.
+        landing_page: firstTouch?.landing_page ?? null,
+        landing_city_slug: firstTouch?.landing_city_slug ?? null,
+        landing_page_type: firstTouch?.landing_page_type ?? null,
+        submitted_from: currentPath(),
+        referrer: firstTouch?.referrer ?? null,
+        ga_client_id: gaClientId(),
       });
 
+      // Standard GA4 lead event. Fire only after the API confirms creation and
+      // never attach contact details or other personally identifying fields.
+      trackEvent('generate_lead', {
+        landing_page: firstTouch?.landing_page ?? 'unknown',
+        landing_page_type: firstTouch?.landing_page_type ?? 'unknown',
+        landing_city_slug: firstTouch?.landing_city_slug ?? 'none',
+        utility_provider: formData.utilityProvider || 'unknown',
+        bill_bracket: formData.billAmount || 'unknown',
+      });
       setIsSuccess(true);
       toast({
         title: 'Application Submitted!',
@@ -310,6 +367,11 @@ export function QualificationWizard() {
           'We will contact you within 24 hours to discuss your savings.',
       });
     } catch (error) {
+      // Without this, a backend outage looks identical to "no traffic" in GA4.
+      trackEvent('form_submit_error', {
+        landing_page_type: firstTouch?.landing_page_type ?? 'unknown',
+        landing_city_slug: firstTouch?.landing_city_slug ?? 'none',
+      });
       toast({
         title: 'Submission Failed',
         description: 'Please try again or call us directly.',
