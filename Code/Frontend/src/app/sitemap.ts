@@ -177,7 +177,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
 
   // Regional hubs
   const regionalSlugs = [
-    'orange-county', 'bay-area', 'inland-empire',
+    'orange-county', 'bay-area', 'inland-empire', 'los-angeles-county',
     'san-diego-county', 'central-valley',
   ];
   // Regional hub pages route through src/app/solar-savings/[city]/page.tsx; use that

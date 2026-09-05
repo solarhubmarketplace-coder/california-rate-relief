@@ -193,6 +193,7 @@ export default function SolarPanelsCAStatewide() {
                 <li><Link href="/solar-savings/san-diego-county" className="text-primary underline">San Diego County</Link>. SDG&amp;E, 45.7¢/kWh (nation&apos;s highest), 5.7 peak-sun hours.</li>
                 <li><Link href="/solar-savings/inland-empire" className="text-primary underline">Inland Empire</Link>, SCE (mostly), strong sun exposure, mostly single-family newer housing.</li>
                 <li><Link href="/solar-savings/central-valley" className="text-primary underline">Central Valley</Link> — PG&amp;E with SMUD pockets, mix of utility territories, hottest summers.</li>
+                <li><Link href="/solar-savings/los-angeles-county" className="text-primary underline">Los Angeles County</Link> — four different utilities (LADWP, SCE, Glendale, Pasadena) with rates from 27¢ to 34.5¢/kWh, so the payback varies more here than anywhere else in the state.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Top California Solar Installers (2026)</h2>
