@@ -14,6 +14,7 @@ import {
 } from '@/data/cities-data';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { NearbyCities } from '@/components/shared/NearbyCities';
 
 // =============================================================================
 // STATIC PARAMS — Pre-renders all city pages at build time
@@ -250,7 +251,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 Best Solar Companies in {city.name}, California (2026 Reviews)
               </h1>
               <p className="text-lg text-muted-foreground">
-                9 installers compared. Licensed, bonded, and confirmed to serve {city.name}. Honest notes on who each company actually fits, including the trade-offs sales reps skip over.
+                9 installers compared, each holding an active CSLB licence and confirmed to serve {city.name}. Honest notes on who each company actually fits, including the trade-offs sales reps skip over.
               </p>
             </header>
 
@@ -435,6 +436,9 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 {city.bottomLine}
               </p>
             </div>
+
+            {/* Companion route + nearby cities (internal linking) */}
+            <NearbyCities city={city} variant="companies" />
 
             {/* Related */}
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">

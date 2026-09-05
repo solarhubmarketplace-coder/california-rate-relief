@@ -203,14 +203,19 @@ export default function Nem3Timeline() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                April 15, 2026, Freedom Forever Chapter 11
+                April 15, 2026, Freedom Forever Chapter 11 — converted to
+                Chapter 7 liquidation July 31, 2026
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Another top-tier California-headquartered installer files
                 for Chapter 11 bankruptcy. Freedom Forever Solar, based in
-                Temecula, cites $500M to $1B in liabilities. The Chapter 11
-                process continues through 2026. See the{' '}
+                Temecula, cites $500M to $1B in liabilities. On{' '}
+                <strong>July 31, 2026 the case converted to Chapter 7
+                liquidation</strong> after creditors rejected a proposed sale
+                to the company&apos;s own CEO. Freedom Forever is no longer
+                operating; more than 150,000 homeowners had systems installed
+                by the company. See the{' '}
                 <Link
                   href='/solar-installers/freedom-forever-review'
                   className='text-primary hover:underline'

@@ -166,6 +166,40 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     rateIncreaseHistory:
       'LADWP rates are among the lowest in Greater Los Angeles at roughly 22¢/kWh — about 35-50% less than SCE territory. Modest increases of 3-4% annually have been approved.',
   },
+  mid: {
+    code: 'mid',
+    name: 'Modesto Irrigation District',
+    shortName: 'MID',
+    ratePerKwh: 0.17,
+    peakTouRate: '20-27¢',
+    annualIncrease: 0.03,
+    fixedCharge: 0,
+    accountUrl: 'https://www.mid.org/customers/',
+    careFeraUrl: 'https://www.mid.org/customers/assistance/',
+    ratePlanAdvice:
+      'MID is a publicly owned utility with rates well below the three big IOUs. Check the MID website for current residential schedules and any time-of-use options before assuming solar will pay back on the same timeline it would in PG&E territory.',
+    nemVersion: 'MID Net Energy Metering (utility-specific)',
+    exportRate: 'varies — set by MID, not the CPUC',
+    rateIncreaseHistory:
+      'MID residential rates have stayed roughly half of PG&E\'s. MID is not subject to the CPUC\'s NEM 3.0 decision and sets its own net metering terms, so the NEM 3.0 urgency that applies in PG&E, SCE and SDG&E territory does not apply here.',
+  },
+  apu: {
+    code: 'apu',
+    name: 'Anaheim Public Utilities',
+    shortName: 'Anaheim Public Utilities',
+    ratePerKwh: 0.2,
+    peakTouRate: '24-32¢',
+    annualIncrease: 0.03,
+    fixedCharge: 0,
+    accountUrl: 'https://www.anaheim.net/570/Public-Utilities',
+    careFeraUrl: 'https://www.anaheim.net/834/Assistance-Programs',
+    ratePlanAdvice:
+      'Anaheim Public Utilities is a city-owned utility serving roughly 360,000 residents, with rates well below neighbouring SCE territory. Check APU\'s own residential schedules and rebate programs — they differ from anything SCE offers.',
+    nemVersion: 'APU Net Energy Metering (utility-specific)',
+    exportRate: 'varies — set by APU, not the CPUC',
+    rateIncreaseHistory:
+      'APU rates have remained substantially below SCE\'s. As a publicly owned utility APU is outside the CPUC\'s NEM 3.0 decision and sets its own net metering and rebate terms.',
+  },
   lodi: {
     code: 'lodi',
     name: 'Lodi Electric Utility',
@@ -1800,7 +1834,7 @@ export const CITIES: CityData[] = [
     slug: 'modesto',
     county: 'Stanislaus County',
     state: 'California',
-    utilityCode: 'pge',
+    utilityCode: 'mid',
     avgMonthlyBill: 280,
     peakSunHours: 5.6,
     annualSunshineHours: 3200,
@@ -2312,7 +2346,7 @@ export const CITIES: CityData[] = [
     slug: 'anaheim',
     county: 'Orange County',
     state: 'California',
-    utilityCode: 'sce',
+    utilityCode: 'apu',
     avgMonthlyBill: 260,
     peakSunHours: 5.6,
     annualSunshineHours: 3200,

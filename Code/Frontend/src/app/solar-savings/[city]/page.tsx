@@ -16,6 +16,7 @@ import {
 } from '@/data/cities-data';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { NearbyCities } from '@/components/shared/NearbyCities';
 
 // =============================================================================
 // STATIC PARAMS — Pre-renders all city pages at build time
@@ -60,7 +61,7 @@ function buildLocalBusinessSchema(city: CityData) {
     '@type': 'LocalBusiness',
     name: `California Rate Relief Program — ${city.name}`,
     url: `https://ratereliefca.com/solar-savings/${city.slug}`,
-    description: `Helping ${city.name} homeowners reduce their electricity bills through solar energy programs. Licensed, bonded, and insured.`,
+    description: `A private referral service helping ${city.name} homeowners reduce their electricity bills through solar energy programs. We connect homeowners with CSLB-licensed solar contractors. Not a government agency or utility.`,
     areaServed: {
       '@type': 'City',
       name: city.name,
@@ -552,6 +553,9 @@ export default async function CityPage({ params }: PageProps) {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+
+            {/* Companion route + nearby cities (internal linking) */}
+            <NearbyCities city={city} variant="savings" />
 
             {/* Related Content */}
             <div className="mt-10 pt-8 border-t border-border">

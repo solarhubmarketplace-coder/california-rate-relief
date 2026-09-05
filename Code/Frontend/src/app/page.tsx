@@ -5,7 +5,6 @@ import { Header } from '@/components/landing/Header';
 import { HeroV2 } from '@/components/landing/HeroV2';
 import { HowItWorksV2 } from '@/components/landing/HowItWorksV2';
 import { SavingsComparison } from '@/components/landing/SavingsComparison';
-import { TestimonialsCarousel } from '@/components/landing/TestimonialsCarousel';
 import { SavingsCalculator } from '@/components/landing/SavingsCalculator';
 import { FAQAccordion } from '@/components/landing/FAQAccordion';
 import { FinalCTA } from '@/components/landing/FinalCTA';
@@ -49,7 +48,7 @@ const organizationSchema = {
   url: BASE_URL,
   logo: `${BASE_URL}/img/logo.svg`,
   description:
-    'Helping California homeowners reduce their energy bills through the Rate Relief Program. Licensed, bonded, and insured.',
+    'A private referral service helping California homeowners reduce their energy bills through the Rate Relief Program. We connect homeowners with CSLB-licensed solar contractors. Not a government agency or utility.',
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'info@ratereliefca.com',
@@ -179,8 +178,13 @@ export default function HomePage() {
         {/* Before/After savings visual */}
         <SavingsComparison />
 
-        {/* Testimonials carousel (8 placeholders, auto-rotate every 6s) */}
-        <TestimonialsCarousel />
+        {/* Testimonials removed 2026-08-24. The eight entries here were
+            fabricated placeholders with Unsplash stock portraits, presented as
+            "Verified Rate Relief Program participants" while the lead table
+            shows zero completed installs. That is squarely within the FTC rule
+            on fake consumer reviews and testimonials (16 CFR Part 465), and a
+            disclaimer does not cure it. Restore this section only with real,
+            documented, consented customer statements. */}
 
         {/* Interactive savings calculator */}
         <SavingsCalculator />

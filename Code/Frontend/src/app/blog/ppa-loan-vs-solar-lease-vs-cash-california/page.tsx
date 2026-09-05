@@ -229,8 +229,10 @@ export default function PpaLoanLeaseCashCalifornia() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 In a solar lease, the installer (or a third-party leasing
-                company like Sunnova, now under SunStrong Management, or
-                Sunrun&apos;s lease product) owns the system on your roof
+                company — Sunrun&apos;s lease product is the main one still
+                originating in California; Sunnova&apos;s legacy portfolio is
+                now administered by SunStrong Management and is not writing new
+                contracts) owns the system on your roof
                 and rents it to you at a fixed monthly rate for 20 to 25
                 years. The rate typically includes an annual escalator
                 between 1% and 3.9%. You pay the monthly lease regardless
@@ -488,23 +490,26 @@ export default function PpaLoanLeaseCashCalifornia() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Contracts with installers in Chapter 11 or recently
-                restructured.</strong> As of 2026 that includes{' '}
+                <strong>Contracts with installers in bankruptcy or recently
+                restructured.</strong> As of September 2026 that includes{' '}
                 <Link
                   href='/solar-installers/freedom-forever-review'
                   className='text-primary hover:underline'
                 >
                   Freedom Forever
-                </Link>{' '}
-                and{' '}
+                </Link>
+                , which converted from Chapter 11 to <strong>Chapter 7
+                liquidation on July 31, 2026</strong> after creditors rejected
+                a sale — it is no longer operating, and more than 150,000
+                homeowners are affected — and{' '}
                 <Link
                   href='/solar-installers/sunnova-review'
                   className='text-primary hover:underline'
                 >
                   Sunnova (now SunStrong)
                 </Link>
-                . A 25-year warranty is only as good as the company behind
-                it.
+                , which no longer originates new contracts. A 25-year warranty
+                is only as good as the company behind it.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

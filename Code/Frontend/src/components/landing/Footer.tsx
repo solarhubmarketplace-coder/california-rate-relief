@@ -35,14 +35,21 @@ export function Footer() {
               </div>
               <p className='text-white/90 text-sm leading-relaxed font-medium'>
                 Helping California homeowners reduce their energy bills through
-                the Rate Relief Program. Licensed, bonded, and insured.
+                the Rate Relief Program. We connect homeowners with solar
+                contractors licensed by the California Contractors State License
+                Board.
               </p>
               <div className='flex items-center gap-2 pt-2'>
                 <Shield className='h-4 w-4 text-white/80' />
                 <span className='text-white/80 text-xs font-medium'>
-                  CPUC Licensed Provider
+                  Installers verified against CSLB records
                 </span>
               </div>
+              <p className='text-white/60 text-xs leading-relaxed pt-2'>
+                California Rate Relief is a private referral service. We are not
+                a government agency or utility, and are not affiliated with or
+                endorsed by any government agency, utility, or the CPUC.
+              </p>
             </div>
 
             {/* Contact */}
@@ -100,7 +107,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href='/privacy-policy'
+                    href='/privacy'
                     className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
                   >
                     Privacy Policy
@@ -111,7 +118,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href='/terms-of-service'
+                    href='/terms'
                     className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
                   >
                     Terms of Service
@@ -135,7 +142,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href='/privacy-policy#california-privacy-rights'
+                    href='/privacy#california-privacy-rights'
                     className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
                   >
                     Do Not Sell My Information
