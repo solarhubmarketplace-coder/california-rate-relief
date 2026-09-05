@@ -7,11 +7,19 @@ jest.mock("../src/lib/supabase", () => ({
   supabaseAdmin: { mocked: true },
 }));
 
-const { withRetry, supabaseAdmin } = require("../src/lib/supabase-wrapper");
+const {
+  withRetry,
+  supabaseAdmin,
+  resetBreaker,
+} = require("../src/lib/supabase-wrapper");
 
 describe("withRetry", () => {
   beforeEach(() => {
     jest.spyOn(console, "warn").mockImplementation(() => {});
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    // The circuit breaker is process-global by design, so failures from an
+    // earlier test would otherwise open the circuit for later ones.
+    resetBreaker();
   });
 
   afterEach(() => {

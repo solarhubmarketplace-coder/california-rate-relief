@@ -8,6 +8,22 @@ const getEnv = (key, fallback = null) => {
     return value || fallback;
 };
 
+const getEnvInt = (key, fallback, minimum = 0, maximum = Number.MAX_SAFE_INTEGER) => {
+    const rawValue = getEnv(key, String(fallback));
+    const parsedValue = Number.parseInt(rawValue, 10);
+
+    if (!Number.isFinite(parsedValue)) {
+        console.warn(`Invalid integer env variable ${key}; using ${fallback}`);
+        return fallback;
+    }
+
+    const clampedValue = Math.min(maximum, Math.max(minimum, parsedValue));
+    if (clampedValue !== parsedValue) {
+        console.warn(`Env variable ${key} must be between ${minimum} and ${maximum}; using ${clampedValue}`);
+    }
+    return clampedValue;
+};
+
 module.exports = {
     PORT: getEnv('PORT', 8000),
     SUPABASE_URL: getEnv('SUPABASE_URL'),
@@ -26,6 +42,11 @@ module.exports = {
     // Defaults to the operator's inbox; override in Railway env if it changes.
     OWNER_NOTIFICATION_EMAIL: getEnv('OWNER_NOTIFICATION_EMAIL', 'solarhubmarketplace@gmail.com'),
 
+    // Owner instant SMS alert - texts this number the moment a new inbound
+    // lead arrives. OFF by default (empty): set OWNER_SMS_ALERT_TO in Railway
+    // to enable. Requires a live Twilio account (same creds the queue uses).
+    OWNER_SMS_ALERT_TO: getEnv('OWNER_SMS_ALERT_TO', ''),
+
     // Public URL (ngrok or production domain) - used for Twilio callbacks
     PUBLIC_URL: getEnv('PUBLIC_URL'),
 
@@ -41,7 +62,21 @@ module.exports = {
     QUEUE_VOICE_DELAY: parseInt(getEnv('QUEUE_VOICE_DELAY', '60'), 10),
     QUEUE_RETRY_DELAY: parseInt(getEnv('QUEUE_RETRY_DELAY', '30'), 10),
     QUEUE_MAX_ATTEMPTS: parseInt(getEnv('QUEUE_MAX_ATTEMPTS', '3'), 10),
-    QUEUE_CHECK_INTERVAL: parseInt(getEnv('QUEUE_CHECK_INTERVAL', '10000'), 10),
+    // Raised from 10s to 30s on 2026-09-05. At a 10s tick the scheduler drove
+    // ~137k Supabase requests/day against a 33.8 MB database and pinned the
+    // t4g.nano instance's burstable disk IOPS at 100%, causing repeated
+    // multi-day outages. 30s is still well inside the queue's delivery SLAs.
+    QUEUE_CHECK_INTERVAL: getEnvInt('QUEUE_CHECK_INTERVAL', 30000, 1000),
+
+    // Scheduler cadences (milliseconds). Queue delivery stays on the fast base
+    // tick while higher-I/O scans are throttled independently.
+    SCHEDULER_REMINDER_INTERVAL_MS: getEnvInt('SCHEDULER_REMINDER_INTERVAL_MS', 60000, 10000),
+    SCHEDULER_SEQUENCE_INTERVAL_MS: getEnvInt('SCHEDULER_SEQUENCE_INTERVAL_MS', 60000, 10000),
+    SCHEDULER_AUTO_ENROLLMENT_INTERVAL_MS: getEnvInt('SCHEDULER_AUTO_ENROLLMENT_INTERVAL_MS', 300000, 60000),
+    SCHEDULER_SETTINGS_SYNC_INTERVAL_MS: getEnvInt('SCHEDULER_SETTINGS_SYNC_INTERVAL_MS', 300000, 60000),
+    SCHEDULER_TOKEN_REFRESH_INTERVAL_MS: getEnvInt('SCHEDULER_TOKEN_REFRESH_INTERVAL_MS', 300000, 60000),
+    SCHEDULER_REENGAGEMENT_INTERVAL_MS: getEnvInt('SCHEDULER_REENGAGEMENT_INTERVAL_MS', 86400000, 3600000),
+    SCHEDULER_REENGAGEMENT_BATCH_SIZE: getEnvInt('SCHEDULER_REENGAGEMENT_BATCH_SIZE', 100, 1, 1000),
 
     // Quiet Hours (8 PM - 9 AM Pacific, auto-skips weekends)
     QUIET_HOURS_ENABLED: getEnv('QUIET_HOURS_ENABLED', 'true'),

@@ -96,6 +96,70 @@ class LeadService {
       .single();
 
     if (error) {
+      // LEAD RESCUE — added 2026-09-05.
+      //
+      // Previously an insert failure threw straight out of here: the API 500'd,
+      // the wizard showed a generic "Submission Failed" toast, and the lead was
+      // gone with no record anywhere. During the 2026-09-03 to 09-05 database
+      // outage that silently discarded every submission for ~43 hours.
+      //
+      // Resend does not depend on Supabase, so we can still get the lead to a
+      // human even when the database is unreachable.
+      try {
+        const cfg = require("../config");
+        if (cfg.OWNER_NOTIFICATION_EMAIL) {
+          const emailService = require("./email.service");
+          const esc = (v) =>
+            String(v == null ? "—" : v).replace(
+              /[<>&]/g,
+              (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c])
+            );
+          const row = (label, val) =>
+            `<tr><td style="padding:4px 10px;color:#555"><b>${esc(label)}</b></td><td style="padding:4px 10px">${esc(val)}</td></tr>`;
+          const html = `
+            <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px">
+              <h2 style="color:#b91c1c;margin:0 0 4px">LEAD CAPTURE FAILED — action required</h2>
+              <p style="color:#666;margin:0 0 12px">
+                A homeowner submitted the form but the database write failed, so this lead is
+                <b>not</b> in the CRM and no automated call, SMS or email has been queued.
+                Contact them manually.
+              </p>
+              <table style="border-collapse:collapse;font-size:14px">
+                ${row("Name", `${leadData.first_name || ""} ${leadData.last_name || ""}`.trim())}
+                ${row("Phone", leadData.phone)}
+                ${row("Email", leadData.email)}
+                ${row("Address", leadData.address)}
+                ${row("Utility", leadData.utility_provider)}
+                ${row("Monthly bill", leadData.bill_amount)}
+                ${row("Credit", leadData.credit_score)}
+                ${row("Source", leadData.source)}
+                ${row("Submitted", leadData.created_at)}
+              </table>
+              <p style="color:#666;font-size:13px;margin-top:14px">Database error: ${esc(error.message)}</p>
+            </div>`;
+          await emailService
+            .sendEmail(
+              cfg.OWNER_NOTIFICATION_EMAIL,
+              `⚠️ LEAD LOST — DB write failed for ${leadData.phone || "unknown number"}`,
+              html,
+              { from: cfg.EMAIL_FROM }
+            )
+            .catch((e) =>
+              console.error("[LeadService] Lead-rescue email failed:", e.message)
+            );
+          console.error(
+            `[LeadService] Insert failed; rescue email sent for ${leadData.phone}: ${error.message}`
+          );
+        } else {
+          console.error(
+            `[LeadService] Insert failed and OWNER_NOTIFICATION_EMAIL is unset — LEAD LOST: ` +
+              JSON.stringify({ phone: leadData.phone, email: leadData.email })
+          );
+        }
+      } catch (rescueErr) {
+        console.error("[LeadService] Lead-rescue path itself failed:", rescueErr.message);
+      }
+
       throw { statusCode: 500, message: error.message };
     }
 
@@ -131,6 +195,30 @@ class LeadService {
       }
     } catch (notifyErr) {
       console.error("[LeadService] Owner alert setup failed:", notifyErr.message);
+    }
+
+    // ✨ NEW: Instant owner SMS alert - text the operator the moment a lead
+    // arrives. OFF unless OWNER_SMS_ALERT_TO is set. Non-blocking: an SMS
+    // failure (e.g. Twilio disabled) never breaks lead capture.
+    try {
+      const cfg = require("../config");
+      if (cfg.OWNER_SMS_ALERT_TO) {
+        const smsService = require("./sms.service");
+        const parts = [
+          `New lead: ${data.name || "Unknown"}`,
+          data.phone || null,
+          data.utility_provider || null,
+          data.bill_amount ? `bill ${data.bill_amount}` : null,
+        ].filter(Boolean);
+        const smsBody = `🔆 ${parts.join(" · ")}`;
+        // Fire-and-forget so it never delays the API response.
+        smsService
+          .sendSms(cfg.OWNER_SMS_ALERT_TO, smsBody)
+          .then(() => console.log(`[LeadService] Owner SMS-alerted of new lead ${data.id}`))
+          .catch((e) => console.error("[LeadService] Owner SMS alert failed:", e.message));
+      }
+    } catch (smsNotifyErr) {
+      console.error("[LeadService] Owner SMS alert setup failed:", smsNotifyErr.message);
     }
 
     // ✨ NEW: Assign email sequence to lead if active sequence exists

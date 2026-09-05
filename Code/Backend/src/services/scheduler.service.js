@@ -11,7 +11,23 @@ class SchedulerService {
   constructor() {
     this.isRunning = false;
     this.intervalId = null;
+    this.runChecksInFlight = false;
+    this.lastRunAt = new Map();
     this.CHECK_INTERVAL_MS = config.QUEUE_CHECK_INTERVAL;
+  }
+
+  /**
+   * Claim an operation's cadence for this pass. The timestamp is recorded
+   * before the operation starts so a failing database scan cannot hot-loop.
+   */
+  claimCadence(name, intervalMs, nowMs) {
+    const lastRunAt = this.lastRunAt.get(name);
+    if (lastRunAt !== undefined && nowMs - lastRunAt < intervalMs) {
+      return false;
+    }
+
+    this.lastRunAt.set(name, nowMs);
+    return true;
   }
 
   /**
@@ -51,21 +67,69 @@ class SchedulerService {
    * ✨ SIMPLIFIED: Only processes queue tasks, no direct lead querying
    */
   async runChecks() {
-    const ops = [
-      { name: "autoEnrollments", fn: () => this.scheduleAutoEnrollments() },
-      { name: "reminders", fn: () => this.scheduleReminders() },
-      { name: "reengagement", fn: () => this.scheduleReengagementCalls() },
-      { name: "sequences", fn: () => this.scheduleSequenceEmails() },
-      { name: "queues", fn: () => queueService.processQueues() },
-      { name: "tokenRefresh", fn: () => googleAuthService.checkAndRefreshTokens() },
-    ];
+    if (this.runChecksInFlight) {
+      console.log("[Scheduler] Previous pass still running; skipping overlapping tick");
+      return false;
+    }
 
-    for (const op of ops) {
-      try {
-        await op.fn();
-      } catch (error) {
-        console.error(`[Scheduler] Error in ${op.name}:`, error.message);
+    // If the Supabase circuit breaker is open the database is saturated. Skip
+    // the whole pass rather than issuing queries that will fail and consume the
+    // disk-IOPS budget the instance needs in order to recover.
+    try {
+      const { isCircuitOpen } = require("../lib/supabase-wrapper");
+      if (isCircuitOpen()) {
+        console.warn("[Scheduler] Supabase circuit open; skipping tick to let the database recover");
+        return false;
       }
+    } catch (_) {
+      // Wrapper unavailable — fall through and run normally.
+    }
+
+    this.runChecksInFlight = true;
+
+    try {
+      const nowMs = Date.now();
+      const syncSettings = this.claimCadence(
+        "settingsSync",
+        config.SCHEDULER_SETTINGS_SYNC_INTERVAL_MS,
+        nowMs
+      );
+
+      // Queue delivery runs first and on every base tick. Database-wide scans
+      // are added only when their independent cadence is due.
+      const ops = [
+        {
+          name: "queues",
+          fn: () => queueService.processQueues({ syncSettings }),
+        },
+      ];
+
+      if (this.claimCadence("autoEnrollments", config.SCHEDULER_AUTO_ENROLLMENT_INTERVAL_MS, nowMs)) {
+        ops.push({ name: "autoEnrollments", fn: () => this.scheduleAutoEnrollments() });
+      }
+      if (this.claimCadence("reminders", config.SCHEDULER_REMINDER_INTERVAL_MS, nowMs)) {
+        ops.push({ name: "reminders", fn: () => this.scheduleReminders() });
+      }
+      if (this.claimCadence("reengagement", config.SCHEDULER_REENGAGEMENT_INTERVAL_MS, nowMs)) {
+        ops.push({ name: "reengagement", fn: () => this.scheduleReengagementCalls() });
+      }
+      if (this.claimCadence("sequences", config.SCHEDULER_SEQUENCE_INTERVAL_MS, nowMs)) {
+        ops.push({ name: "sequences", fn: () => this.scheduleSequenceEmails() });
+      }
+      if (this.claimCadence("tokenRefresh", config.SCHEDULER_TOKEN_REFRESH_INTERVAL_MS, nowMs)) {
+        ops.push({ name: "tokenRefresh", fn: () => googleAuthService.checkAndRefreshTokens() });
+      }
+
+      for (const op of ops) {
+        try {
+          await op.fn();
+        } catch (error) {
+          console.error(`[Scheduler] Error in ${op.name}:`, error.message);
+        }
+      }
+      return true;
+    } finally {
+      this.runChecksInFlight = false;
     }
   }
 
@@ -75,8 +139,6 @@ class SchedulerService {
    */
   async scheduleSequenceEmails() {
     try {
-      const emailSequenceService = require("./email-sequence.service");
-
       // Get all leads with active sequences that haven't completed
       const { data: activeSequences, error } = await withRetry(
         () => supabaseAdmin
@@ -100,61 +162,63 @@ class SchedulerService {
       }
 
       const now = new Date();
+      const stepsBySequence = new Map();
 
       for (const tracking of activeSequences) {
         const lead = tracking.leads;
         if (!lead || !lead.email) continue;
 
-        // Get sequence steps
-        const { data: steps } = await supabaseAdmin
-          .from("email_sequence_steps")
-          .select("*")
-          .eq("sequence_id", tracking.sequence_id)
-          .order("step_order", { ascending: true });
+        // A scheduler pass may contain many leads in the same sequence. Fetch
+        // its steps once instead of repeating the same read for every lead.
+        if (!stepsBySequence.has(tracking.sequence_id)) {
+          const { data: sequenceSteps, error: stepsError } = await supabaseAdmin
+            .from("email_sequence_steps")
+            .select("*")
+            .eq("sequence_id", tracking.sequence_id)
+            .order("step_order", { ascending: true });
+
+          if (stepsError) {
+            console.error(
+              `[Scheduler] Error fetching steps for sequence ${tracking.sequence_id}:`,
+              stepsError
+            );
+          }
+          stepsBySequence.set(tracking.sequence_id, sequenceSteps || []);
+        }
+
+        const steps = stepsBySequence.get(tracking.sequence_id);
 
         if (!steps || steps.length === 0) continue;
 
-        // Get current step info
+        // current_step is the next unsent step. Queue it directly; adding one
+        // here skipped every other email and prevented the final step.
+        const currentStepOrder = Number(tracking.current_step);
         const currentStep = steps.find(
-          (s) => s.step_order === tracking.current_step
+          (step) => Number(step.step_order) === currentStepOrder
         );
 
         if (!currentStep) continue;
 
-        // Check if we need to schedule the next step
         const lastSent = tracking.last_sent_at
           ? new Date(tracking.last_sent_at)
           : null;
+        const delayDays = Math.max(0, Number(currentStep.delay_days) || 0);
+        const delayMs = delayDays * 24 * 60 * 60 * 1000;
+        const scheduledAt = lastSent
+          ? new Date(lastSent.getTime() + delayMs)
+          : new Date(now.getTime() + delayMs);
 
-        // If no last_sent_at, first email should already be queued
-        // Check if delay period has passed for next step
-        if (lastSent) {
-          const delayMs = currentStep.delay_days * 24 * 60 * 60 * 1000;
-          const nextSendTime = new Date(lastSent.getTime() + delayMs);
+        if (now < scheduledAt) continue;
 
-          if (now < nextSendTime) {
-            continue; // Not time yet
-          }
-        }
-
-        // Check if next step exists
-        const nextStepOrder = tracking.current_step + 1;
-        const nextStep = steps.find(
-          (s) => s.step_order === nextStepOrder
-        );
-
-        if (!nextStep) {
-          // Sequence completed - will be handled by queue service
-          continue;
-        }
-
-        // Check if task already exists for this step
+        // Only one task for a sequence should be outstanding for a lead. This
+        // also recognizes first-step tasks created by older enrollment paths
+        // that did not include sequence_step metadata.
         const { data: existingTask } = await supabaseAdmin
           .from("communication_tasks")
           .select("id")
           .eq("lead_id", lead.id)
           .eq("task_type", "email")
-          .eq("metadata->>sequence_step", String(nextStepOrder))
+          .eq("metadata->>sequence_id", tracking.sequence_id)
           .in("status", ["pending", "processing"])
           .limit(1);
 
@@ -162,26 +226,21 @@ class SchedulerService {
           continue; // Already scheduled
         }
 
-        // Calculate scheduled time based on delay
-        const delayMs = nextStep.delay_days * 24 * 60 * 60 * 1000;
-        const scheduledAt = lastSent
-          ? new Date(lastSent.getTime() + delayMs)
-          : new Date(now.getTime() + 60 * 1000); // Default 60s if no last_sent
-
-        // Create email task for next step
+        // Queue the tracking record's current (next unsent) step. Processing
+        // the last step causes email-sequence.service to mark it complete.
         await queueService.createTask({
           lead_id: lead.id,
           task_type: "email",
           scheduled_at: scheduledAt.toISOString(),
           metadata: {
             sequence_id: tracking.sequence_id,
-            sequence_step: nextStepOrder,
+            sequence_step: currentStepOrder,
           },
         });
 
         const sequenceName = tracking.email_sequences?.name || 'Unknown';
         console.log(
-          `[Scheduler] Scheduled sequence step ${nextStepOrder} for lead ${lead.id} (${sequenceName})`
+          `[Scheduler] Scheduled sequence step ${currentStepOrder} for lead ${lead.id} (${sequenceName})`
         );
       }
     } catch (error) {
@@ -321,7 +380,8 @@ class SchedulerService {
           .select('id, phone, name')
           .eq('status', 'declined')
           .lt('created_at', cutoffDate)
-          .not('phone', 'is', null),
+          .not('phone', 'is', null)
+          .limit(config.SCHEDULER_REENGAGEMENT_BATCH_SIZE),
         { label: "Scheduler.reengagement" }
       );
 
@@ -336,6 +396,16 @@ class SchedulerService {
 
       console.log(`[Scheduler] Found ${eligibleLeads.length} leads eligible for 90-day re-engagement`);
 
+      // This sequence is shared by the whole batch, so resolve it once rather
+      // than issuing one lookup per lead.
+      let reactivationSequence = null;
+      try {
+        const emailSequenceService = require("./email-sequence.service");
+        reactivationSequence = await emailSequenceService.getActiveSequence("reactivation");
+      } catch (error) {
+        console.error("[Scheduler] Failed to load reactivation sequence:", error.message);
+      }
+
       for (const lead of eligibleLeads) {
         // Check if a 90-day follow-up task already exists for this lead
         const { data: existingTask } = await supabaseAdmin
@@ -343,7 +413,7 @@ class SchedulerService {
           .select('id')
           .eq('lead_id', lead.id)
           .eq('metadata->>trigger', 'followup_90_day')
-          .in('status', ['pending', 'processing', 'completed'])
+          .in('status', ['pending', 'processing', 'completed', 'failed'])
           .limit(1);
 
         if (existingTask && existingTask.length > 0) {
@@ -375,11 +445,10 @@ class SchedulerService {
         console.log(`[Scheduler] Scheduled 90-day re-engagement for lead ${lead.name || lead.id}`);
 
         // ✨ Also enroll into the 90-day reactivation email sequence
-        try {
-          const emailSequenceService = require("./email-sequence.service");
-          const seq = await emailSequenceService.getActiveSequence("reactivation");
-          if (seq) {
-            await emailSequenceService.assignSequenceToLead(lead.id, seq.id);
+        if (reactivationSequence) {
+          try {
+            const emailSequenceService = require("./email-sequence.service");
+            await emailSequenceService.assignSequenceToLead(lead.id, reactivationSequence.id);
 
             // Queue first email now so the sequence actually starts
             await queueService.createTask({
@@ -387,13 +456,14 @@ class SchedulerService {
               task_type: "email",
               scheduled_at: new Date().toISOString(),
               metadata: {
-                sequence_id: seq.id,
+                sequence_id: reactivationSequence.id,
+                sequence_step: 1,
                 trigger: "reactivation_start",
               },
             });
+          } catch (error) {
+            console.error("[Scheduler] Failed to enroll in reactivation sequence:", error.message);
           }
-        } catch (e) {
-          console.error("[Scheduler] Failed to enroll in reactivation sequence:", e.message);
         }
       }
     } catch (error) {
@@ -457,6 +527,7 @@ class SchedulerService {
           scheduled_at: new Date().toISOString(),
           metadata: {
             sequence_id: sequenceId,
+            sequence_step: 1,
             trigger: "auto_enroll_start",
           },
         });
