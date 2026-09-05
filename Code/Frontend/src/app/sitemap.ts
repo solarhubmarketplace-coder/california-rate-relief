@@ -2,27 +2,23 @@ import { MetadataRoute } from 'next';
 import { headers } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
-import { statSync } from 'fs';
-import { join } from 'path';
 import { getAllCitySlugs } from '@/data/cities-data';
+import { ARTICLE_PAGES, articleHref, articlesInCluster } from '@/data/article-pages';
 import { allPageRoutes } from '@/lib/glp1-page-routes';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
 // =============================================================================
-// LAST-MODIFIED HELPERS (Batch 4.4, 2026-04-30)
+// LAST-MODIFIED HELPERS
 // =============================================================================
-// Replaces the previous `new Date()` on every URL — which told Google that
-// every page changed today on every request, training the crawler to ignore
-// the field. Now reads file mtime per page.tsx; falls back to today only if
-// the file isn't accessible (build-time edge cases).
+// Do not inspect process.cwd() here. Runtime filesystem stat calls force Next's
+// output tracer to include the entire project in the server bundle. A stable,
+// audited date is preferable to a false "today" timestamp on every request.
 // =============================================================================
 
-function fileMtime(relPath: string, fallback: Date): Date {
-  try {
-    return statSync(join(process.cwd(), relPath)).mtime;
-  } catch {
-    return fallback;
-  }
+const SITEMAP_LAST_AUDITED = new Date('2026-08-30T00:00:00.000Z');
+
+function fileMtime(_relPath: string, _fallback: Date): Date {
+  return SITEMAP_LAST_AUDITED;
 }
 
 function reviewMtime(slug: string, fallback: Date): Date {
@@ -30,17 +26,12 @@ function reviewMtime(slug: string, fallback: Date): Date {
 }
 
 /**
- * Map a user-facing URL path (e.g. '/blog' or '/solar-companies/temecula')
- * to the mtime of its backing `src/app/<path>/page.tsx`. Falls back to
- * `fallback` (typically `today`) when the file isn't accessible.
- *
- * URL paths beginning with `/` are routed to `src/app/<path>/page.tsx`.
- * The bare base URL (empty string) maps to `src/app/page.tsx`.
+ * Map a user-facing URL path to the stable date of the most recent sitemap
+ * audit. The path stays explicit so route ownership remains readable without
+ * runtime filesystem I/O.
  */
-function urlMtime(urlPath: string, fallback: Date): Date {
-  const cleaned = urlPath.replace(/^\/+|\/+$/g, '');
-  const rel = cleaned ? `src/app/${cleaned}/page.tsx` : 'src/app/page.tsx';
-  return fileMtime(rel, fallback);
+function urlMtime(_urlPath: string, _fallback: Date): Date {
+  return SITEMAP_LAST_AUDITED;
 }
 
 // =============================================================================
@@ -121,6 +112,17 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'solar-during-psps-california', 'tech-clean-california-heat-pump-rebate',
     'ab-942-california-solar', 'solar-panels-tile-roof-california',
     'adu-solar-requirements-california',
+    'are-solar-panels-a-scam', 'california-energy-commission',
+    'california-public-utilities-commission', 'california-solar-tax-credit-2026',
+    'commercial-solar-financing-california', 'commercial-solar-installation-cost-california',
+    'free-solar-panels-california', 'how-long-do-solar-panels-last',
+    'how-to-lower-electric-bill-california', 'is-solar-worth-it-california-2026',
+    'nem-2-vs-nem-3', 'sdge-time-of-use-rates-2026',
+    'solar-ev-charging-california', 'solar-panel-bird-proofing',
+    'solar-panel-inspection-california', 'solar-panel-maintenance-cost',
+    'solar-panel-removal-reinstall-cost', 'solar-powered-ev-charger',
+    'solar-ppa-explained-california', 'solar-ppa-vs-lease-california',
+    'solar-tax-credit-2026', 'what-size-solar-system-do-i-need',
   ];
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
     url: `${base}/blog/${slug}`,
@@ -204,9 +206,33 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Data-driven article clusters (commercial / battery / installer / problems).
+  // Generated from src/data/article-pages.*.json, so new pages enter the sitemap
+  // the moment their content ships rather than needing a sitemap edit.
+  const articlePages: MetadataRoute.Sitemap = ARTICLE_PAGES.map((p) => ({
+    url: `${base}${articleHref(p)}`,
+    lastModified: new Date(p.reviewedAt),
+    changeFrequency: 'monthly' as const,
+    priority: p.cluster === 'commercial' ? 0.9 : 0.8,
+  }));
+
+  // Cluster hubs, listed only once they have at least one article to point at.
+  const articleHubs: MetadataRoute.Sitemap = [
+    { path: '/battery', has: articlesInCluster('battery').length > 0 },
+    { path: '/solar-problems', has: articlesInCluster('problems').length > 0 },
+  ]
+    .filter((h) => h.has)
+    .map((h) => ({
+      url: `${base}${h.path}`,
+      lastModified: today,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    }));
+
   return [
     ...staticPages, ...blogPages, ...installerPages, ...panelPages,
     ...commercialPages, ...regionalPages, ...citySavingsPages, ...cityCompaniesPages,
+    ...articlePages, ...articleHubs,
   ];
 }
 
