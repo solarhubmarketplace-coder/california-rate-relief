@@ -17,7 +17,16 @@ const ingestLead = async (req, res, next) => {
             fbclid,
             utm_source,
             utm_campaign,
-            utm_content
+            utm_content,
+            // Page-level attribution (added 2026-09-05)
+            landing_page,
+            landing_city_slug,
+            landing_page_type,
+            submitted_from,
+            referrer,
+            utm_medium,
+            utm_term,
+            ga_client_id
         } = req.body;
 
         if (!phone) {
@@ -38,7 +47,16 @@ const ingestLead = async (req, res, next) => {
             fbclid,
             utm_source,
             utm_campaign,
-            utm_content
+            utm_content,
+            // Page-level attribution (added 2026-09-05)
+            landing_page,
+            landing_city_slug,
+            landing_page_type,
+            submitted_from,
+            referrer,
+            utm_medium,
+            utm_term,
+            ga_client_id
         });
         if (lead._retriggered) {
             return res.apiResponse(200, 'Lead already exists — call re-triggered', lead);

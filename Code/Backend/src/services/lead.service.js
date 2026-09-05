@@ -21,7 +21,17 @@ class LeadService {
     fbclid,
     utm_source,
     utm_campaign,
-    utm_content
+    utm_content,
+    // Page-level attribution (added 2026-09-05) — records WHICH page produced
+    // the lead so per-city and per-layer performance can be measured.
+    landing_page,
+    landing_city_slug,
+    landing_page_type,
+    submitted_from,
+    referrer,
+    utm_medium,
+    utm_term,
+    ga_client_id
   }) {
     // Deduplication Check — if lead exists, update their info and re-trigger a call
     const { data: existingLeads, error: dedupError } = await supabaseAdmin
@@ -85,6 +95,14 @@ class LeadService {
       utm_source: utm_source || null,
       utm_campaign: utm_campaign || null,
       utm_content: utm_content || null,
+      landing_page: landing_page || null,
+      landing_city_slug: landing_city_slug || null,
+      landing_page_type: landing_page_type || null,
+      submitted_from: submitted_from || null,
+      referrer: referrer || null,
+      utm_medium: utm_medium || null,
+      utm_term: utm_term || null,
+      ga_client_id: ga_client_id || null,
       created_at: new Date().toISOString(),
     };
 
