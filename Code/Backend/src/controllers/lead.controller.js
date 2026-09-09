@@ -184,12 +184,26 @@ const updateConsent = async (req, res, next) => {
     }
 };
 
+// Anonymous compatibility path: only opt-out is allowed and no lead record is
+// returned. Opt-in and all other consent changes require staff authentication.
+const publicOptOut = async (req, res, next) => {
+    try {
+        const { leadId } = req.params;
+        if (!leadId || req.body?.status !== 'opted_out') {
+            return res.apiResponse(400, 'Only opted_out is accepted on the public consent endpoint');
+        }
+        await leadService.updateConsentStatus(leadId, 'opted_out');
+        return res.apiResponse(200, 'Consent updated successfully', { status: 'opted_out' });
+    } catch (error) { next(error); }
+};
+
 module.exports = {
     ingestLead,
     getLeads,
     ingestLeadsBulk,
     upgradeLeadToHot,
     handleLeadConversionClick,
-    updateConsent
+    updateConsent,
+    publicOptOut
 };
 

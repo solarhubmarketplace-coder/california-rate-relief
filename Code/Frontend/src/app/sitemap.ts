@@ -16,8 +16,14 @@ import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh
 // =============================================================================
 
 const SITEMAP_LAST_AUDITED = new Date('2026-08-30T00:00:00.000Z');
+const CRR_UPDATED_PAGES = new Set([
+  '/blog', '/blog/pge-time-of-use-rates-2026',
+  '/blog/pge-vs-sce-vs-sdge-rates-compared', '/blog/why-is-my-pge-bill-so-high',
+]);
 
 function fileMtime(_relPath: string, _fallback: Date): Date {
+  const route = _relPath.replace(/^src\/app/, '').replace(/\/page\.[tj]sx?$/, '');
+  if (CRR_UPDATED_PAGES.has(route)) return new Date('2026-09-09T00:00:00.000Z');
   return SITEMAP_LAST_AUDITED;
 }
 
@@ -31,6 +37,7 @@ function reviewMtime(slug: string, fallback: Date): Date {
  * runtime filesystem I/O.
  */
 function urlMtime(_urlPath: string, _fallback: Date): Date {
+  if (CRR_UPDATED_PAGES.has(_urlPath)) return new Date('2026-09-09T00:00:00.000Z');
   return SITEMAP_LAST_AUDITED;
 }
 
@@ -86,6 +93,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   ];
 
   const blogSlugs = [
+    'pge-time-of-use-rates-2026',
     'sce-rate-increase-2026', 'pge-rate-increase-2026', 'sdge-rate-increase-2026',
     'california-24-dollar-fixed-charge-explained', 'solar-tax-credit-expired-2026-options',
     'nem-3-california-still-worth-it', 'pge-vs-sce-vs-sdge-rates-compared',

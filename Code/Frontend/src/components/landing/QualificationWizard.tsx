@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { ProgressBar } from './ProgressBar';
 import { Button } from '@/components/ui/button';
@@ -22,14 +21,14 @@ import {
   Loader2,
   XCircle,
 } from 'lucide-react';
-import { createLead } from '@/lib/leads';
 import { trackEvent } from '@/components/GoogleAnalyticsClient';
+import { captureFirstTouch, getFirstTouch } from '@/lib/attribution';
 import {
-  captureFirstTouch,
-  getFirstTouch,
-  currentPath,
-  gaClientId,
-} from '@/lib/attribution';
+  getOrCreateSubmissionAttempt,
+  intakeAttribution,
+  submitIntake,
+  type IntakePayload,
+} from '@/lib/intake';
 import { useToast } from '@/hooks/use-toast';
 import usePlacesAutocomplete, {
   getGeocode,
@@ -48,39 +47,7 @@ interface FormData {
   phone: string;
   email: string;
   address: string;
-}
-
-// Tracking parameters from URL (hidden fields)
-interface TrackingParams {
-  gclid: string | null; // Google Click ID
-  fbclid: string | null; // Facebook Click ID
-  utm_source: string | null;
-  utm_campaign: string | null;
-  utm_content: string | null;
-  utm_medium: string | null;
-  utm_term: string | null;
-}
-
-// Derive the actual lead source from tracking params instead of hardcoding one
-// channel for every submission. Priority: paid click IDs > explicit utm_source >
-// referrer-based guess > direct/unknown.
-function deriveLeadSource(t: TrackingParams): string {
-  if (t.gclid) return 'google_ads';
-  if (t.fbclid) return 'facebook_ads';
-  if (t.utm_source) return t.utm_source;
-  if (typeof document !== 'undefined' && document.referrer) {
-    try {
-      const referrerHost = new URL(document.referrer).hostname;
-      if (!referrerHost.includes(window.location.hostname)) {
-        return /google\./.test(referrerHost)
-          ? 'organic_google'
-          : `referral_${referrerHost}`;
-      }
-    } catch {
-      // ignore malformed referrer
-    }
-  }
-  return 'direct';
+  serviceZip: string;
 }
 
 const utilityProviders = [
@@ -136,36 +103,15 @@ const creditOptions = [
 ];
 
 export function QualificationWizard() {
-  const searchParams = useSearchParams();
   const [currentStep, setCurrentStep] = useState<WizardStep>(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDisqualified, setIsDisqualified] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [hasUnconfirmedAttempt, setHasUnconfirmedAttempt] = useState(false);
   const { toast } = useToast();
-
-  // Tracking parameters captured from URL on page load
-  const [trackingParams, setTrackingParams] = useState<TrackingParams>({
-    gclid: null,
-    fbclid: null,
-    utm_source: null,
-    utm_campaign: null,
-    utm_content: null,
-    utm_medium: null,
-    utm_term: null,
-  });
-
-  // Capture URL parameters on mount (for ad tracking)
-  useEffect(() => {
-    setTrackingParams({
-      gclid: searchParams.get('gclid'),
-      fbclid: searchParams.get('fbclid'),
-      utm_source: searchParams.get('utm_source'),
-      utm_campaign: searchParams.get('utm_campaign'),
-      utm_content: searchParams.get('utm_content'),
-      utm_medium: searchParams.get('utm_medium'),
-      utm_term: searchParams.get('utm_term'),
-    });
-  }, [searchParams]);
+  const attemptRef = useRef<{ id: string; payload: IntakePayload } | null>(null);
+  const trackedSuccessIdsRef = useRef(new Set<string>());
+  const submitInFlightRef = useRef(false);
 
   // Record the first page of the session so a lead can be credited to the page
   // that earned it rather than to whichever page hosts the wizard.
@@ -181,6 +127,7 @@ export function QualificationWizard() {
     startedRef.current = true;
     const ft = getFirstTouch();
     trackEvent('wizard_start', {
+      segment: 'residential',
       landing_page: ft?.landing_page ?? 'unknown',
       landing_page_type: ft?.landing_page_type ?? 'unknown',
       landing_city_slug: ft?.landing_city_slug ?? 'none',
@@ -196,12 +143,21 @@ export function QualificationWizard() {
     phone: '',
     email: '',
     address: '',
+    serviceZip: '',
   });
 
   const updateFormData = (
     field: keyof FormData,
     value: string | boolean | null
   ) => {
+    if (hasUnconfirmedAttempt) {
+      toast({
+        title: 'Choose how to continue',
+        description: 'Retry the same information, or start a new submission before editing.',
+        variant: 'destructive',
+      });
+      return;
+    }
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -296,16 +252,12 @@ export function QualificationWizard() {
   };
 
   const handleSubmit = async () => {
+    if (submitInFlightRef.current) return;
+    submitInFlightRef.current = true;
     setIsSubmitting(true);
     const firstTouch = getFirstTouch();
 
     try {
-      // Parse name into first and last
-      const nameParts = formData.name.trim().split(' ');
-      const firstName = nameParts[0] || '';
-      const lastName = nameParts.slice(1).join(' ') || '';
-
-      // Get bill amount value
       const billOption = billAmounts.find((b) => b.id === formData.billAmount);
       const billValue = billOption?.value || 0;
 
@@ -323,61 +275,70 @@ export function QualificationWizard() {
         return;
       }
 
-      await createLead({
-        first_name: firstName,
-        last_name: lastName,
-        phone: normalizedPhone, // Send normalized phone with +1
-        email: formData.email,
-        address: formData.address,
-        source: deriveLeadSource(trackingParams),
-        type: 'hot',
-        bill_amount: billValue,
-        utility_provider: formData.utilityProvider,
-        credit_score: formData.creditScore,
-        // Tracking parameters (hidden fields)
-        gclid: trackingParams.gclid,
-        fbclid: trackingParams.fbclid,
-        utm_source: trackingParams.utm_source,
-        utm_campaign: trackingParams.utm_campaign,
-        utm_content: trackingParams.utm_content,
-        utm_medium: trackingParams.utm_medium,
-        utm_term: trackingParams.utm_term,
-        // Page-level attribution: which page earned this lead.
-        landing_page: firstTouch?.landing_page ?? null,
-        landing_city_slug: firstTouch?.landing_city_slug ?? null,
-        landing_page_type: firstTouch?.landing_page_type ?? null,
-        submitted_from: currentPath(),
-        referrer: firstTouch?.referrer ?? null,
-        ga_client_id: gaClientId(),
-      });
+      if (!/^\d{5}$/.test(formData.serviceZip)) {
+        toast({
+          title: 'Invalid ZIP Code',
+          description: 'Enter the 5-digit ZIP code for the California project address.',
+          variant: 'destructive',
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      const attempt = getOrCreateSubmissionAttempt<IntakePayload>(attemptRef.current, submissionId => ({
+        submission_id: submissionId,
+        segment: 'residential',
+        contact: {
+          name: formData.name.trim(), phone: normalizedPhone,
+          email: formData.email.trim(), address: formData.address.trim(),
+        },
+        qualification_data: {
+          utility_provider: formData.utilityProvider, bill_amount: billValue,
+          monthly_bill_range: formData.billAmount, credit_score: formData.creditScore,
+          homeowner: formData.isHomeowner === true,
+          service_zip: formData.serviceZip,
+        },
+        attribution: intakeAttribution(firstTouch),
+        consent: { status: 'opted_in', timestamp: new Date().toISOString() },
+      }));
+      attemptRef.current = attempt;
+      await submitIntake(attempt.payload);
 
       // Standard GA4 lead event. Fire only after the API confirms creation and
       // never attach contact details or other personally identifying fields.
-      trackEvent('generate_lead', {
-        landing_page: firstTouch?.landing_page ?? 'unknown',
-        landing_page_type: firstTouch?.landing_page_type ?? 'unknown',
-        landing_city_slug: firstTouch?.landing_city_slug ?? 'none',
-        utility_provider: formData.utilityProvider || 'unknown',
-        bill_bracket: formData.billAmount || 'unknown',
-      });
+      if (!trackedSuccessIdsRef.current.has(attempt.id)) {
+        trackEvent('generate_lead', {
+          segment: 'residential',
+          landing_page: firstTouch?.landing_page ?? 'unknown',
+          landing_page_type: firstTouch?.landing_page_type ?? 'unknown',
+          landing_city_slug: firstTouch?.landing_city_slug ?? 'none',
+          utility_provider: formData.utilityProvider || 'unknown',
+          bill_bracket: formData.billAmount || 'unknown',
+        });
+        trackedSuccessIdsRef.current.add(attempt.id);
+      }
       setIsSuccess(true);
+      setHasUnconfirmedAttempt(false);
+      attemptRef.current = null;
       toast({
-        title: 'Application Submitted!',
-        description:
-          'We will contact you within 24 hours to discuss your savings.',
+        title: 'Assessment received',
+        description: 'Your information was saved for review.',
       });
     } catch (error) {
+      setHasUnconfirmedAttempt(true);
       // Without this, a backend outage looks identical to "no traffic" in GA4.
       trackEvent('form_submit_error', {
+        segment: 'residential',
         landing_page_type: firstTouch?.landing_page_type ?? 'unknown',
         landing_city_slug: firstTouch?.landing_city_slug ?? 'none',
       });
       toast({
         title: 'Submission Failed',
-        description: 'Please try again or call us directly.',
+        description: 'Your information was not confirmed as received. Please try again.',
         variant: 'destructive',
       });
     } finally {
+      submitInFlightRef.current = false;
       setIsSubmitting(false);
     }
   };
@@ -393,18 +354,17 @@ export function QualificationWizard() {
                 <XCircle className='h-8 w-8 text-amber-600' />
               </div>
               <h3 className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
-                Program Requires Homeownership
+                Residential assessment requires property ownership
               </h3>
               <p className='text-slate-600 mb-6'>
-                Unfortunately, the Rate Relief Program is only available to
-                homeowners. However, we can help you find other ways to save on
-                your energy bills.
+                This form is for California homeowners. If you control a business
+                or commercial property, use the commercial assessment instead.
               </p>
               <div className='bg-teal-50 rounded-lg p-4 mb-6 border border-teal-200'>
                 <p className='text-sm text-teal-800'>
-                  <strong>Know a homeowner who could save?</strong>
-                  <br />
-                  Refer them and earn up to $500 when they qualify!
+                  <a href='/commercial-assessment' className='font-semibold underline'>
+                    Open the commercial solar assessment
+                  </a>
                 </p>
               </div>
               <Button
@@ -420,6 +380,7 @@ export function QualificationWizard() {
                     phone: '',
                     email: '',
                     address: '',
+                    serviceZip: '',
                   });
                 }}
                 variant='outline'
@@ -444,27 +405,22 @@ export function QualificationWizard() {
               <CheckCircle className='h-8 w-8 text-emerald-600' />
             </div>
             <h3 className='text-2xl font-bold text-slate-900 mb-4'>
-              You&apos;re Pre-Qualified!
+              Your assessment was received
             </h3>
             <p className='text-slate-600 mb-6'>
-              Great news! Based on your answers, you may be eligible for
-              significant savings on your monthly electric bill. Our team will
-              contact you within 24 hours.
+              We saved your information for review. A submission is not an
+              approval, quote, or final eligibility decision.
             </p>
             <div className='bg-emerald-50 rounded-lg p-4 mb-6 text-left'>
               <h4 className='font-semibold text-emerald-800 mb-2'>
                 What Happens Next?
               </h4>
               <ul className='text-sm text-emerald-700 space-y-1'>
-                <li>✓ We&apos;ll review your information</li>
-                <li>✓ A specialist will call to confirm eligibility</li>
-                <li>✓ We&apos;ll schedule a free home assessment</li>
-                <li>✓ Get your personalized savings estimate</li>
+                <li>✓ Your answers are available for review</li>
+                <li>✓ A matched provider may contact you about next steps</li>
+                <li>✓ Any project terms require a separate written quote</li>
               </ul>
             </div>
-            <p className='text-xs text-slate-400'>
-              Application ID: {Date.now().toString(36).toUpperCase()}
-            </p>
           </div>
         </div>
       </section>
@@ -499,7 +455,7 @@ export function QualificationWizard() {
                     Who is your current electric provider?
                   </h3>
                   <p className='text-base text-muted-foreground font-medium'>
-                    Select your utility company to check available programs
+                    Select the utility that supplies your property
                   </p>
                 </div>
 
@@ -588,7 +544,7 @@ export function QualificationWizard() {
                     Do you own your home?
                   </h3>
                   <p className='text-base text-muted-foreground font-medium'>
-                    Homeownership is required for this program
+                    This residential assessment is for property owners
                   </p>
                 </div>
 
@@ -626,7 +582,7 @@ export function QualificationWizard() {
                     Is your credit score above 650?
                   </h3>
                   <p className='text-base text-muted-foreground font-medium'>
-                    This helps determine program eligibility
+                    This helps a provider understand potential financing options
                   </p>
                 </div>
 
@@ -664,10 +620,10 @@ export function QualificationWizard() {
                     <CheckCircle className='h-8 w-8 text-status-success' />
                   </div>
                   <h3 className='text-2xl md:text-2xl lg:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
-                    Great! We found potential savings for your area.
+                    Send your information for review
                   </h3>
                   <p className='text-lg md:text-xl text-muted-foreground font-medium'>
-                    Enter your details to check your final eligibility
+                    A provider must review the property before confirming options or savings
                   </p>
                 </div>
 
@@ -769,6 +725,10 @@ export function QualificationWizard() {
                               placeholder='123 Main St, City, CA 90210'
                               value={placesValue}
                               onChange={(e) => {
+                                if (hasUnconfirmedAttempt) {
+                                  updateFormData('address', e.target.value);
+                                  return;
+                                }
                                 setPlacesValue(e.target.value);
                                 updateFormData('address', e.target.value);
                               }}
@@ -783,6 +743,10 @@ export function QualificationWizard() {
                                     key={place_id}
                                     type='button'
                                     onClick={async () => {
+                                      if (hasUnconfirmedAttempt) {
+                                        updateFormData('address', description);
+                                        return;
+                                      }
                                       setPlacesValue(description, false);
                                       updateFormData('address', description);
                                       clearSuggestions();
@@ -823,9 +787,45 @@ export function QualificationWizard() {
                         Start typing your address and select from suggestions
                       </p>
                     </div>
+
+                    <div className='space-y-3'>
+                      <Label
+                        htmlFor='service-zip'
+                        className='text-base font-bold text-foreground'
+                      >
+                        Project ZIP Code
+                      </Label>
+                      <Input
+                        id='service-zip'
+                        type='text'
+                        inputMode='numeric'
+                        autoComplete='postal-code'
+                        pattern='[0-9]{5}'
+                        maxLength={5}
+                        placeholder='90210'
+                        value={formData.serviceZip}
+                        onChange={(e) => updateFormData('serviceZip', e.target.value.replace(/\D/g, '').slice(0, 5))}
+                        required
+                        className='h-12 text-base border-2 border-border focus:border-primary transition-colors'
+                      />
+                      <p className='text-xs text-muted-foreground'>
+                        Enter the 5-digit ZIP code for the California project address
+                      </p>
+                    </div>
                   </div>
 
                   <div className='pt-2'>
+                    {hasUnconfirmedAttempt && (
+                      <div className='mb-4 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900'>
+                        Receipt was not confirmed. Retry to send the exact same attempt, or start a new submission before changing any answer.
+                        <Button type='button' variant='outline' className='mt-3 w-full' onClick={() => {
+                          attemptRef.current = null;
+                          setHasUnconfirmedAttempt(false);
+                        }}>
+                          Start a new submission with edits
+                        </Button>
+                      </div>
+                    )}
                     <Button
                       type='submit'
                       disabled={isSubmitting}
@@ -835,7 +835,7 @@ export function QualificationWizard() {
                       {isSubmitting ? (
                         <>
                           <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-                          Checking Eligibility...
+                          Sending...
                         </>
                       ) : (
                         <>
@@ -848,15 +848,15 @@ export function QualificationWizard() {
 
                   <p className='text-sm text-center text-foreground/70 leading-relaxed font-medium pt-2'>
                     By submitting, you agree to be contacted about the Rate
-                    Relief Program. Your information is secure and will never be
-                    sold.
+                    Relief Program by California Rate Relief and a matched solar
+                    provider using the contact information above.
                   </p>
                 </form>
               </div>
             )}
           </div>
 
-          {/* Trust Badges */}
+          {/* Service details */}
           <div className='mt-8 flex flex-wrap justify-center gap-6 text-xs text-slate-500'>
             <div className='flex items-center gap-1'>
               <CheckCircle className='h-4 w-4 text-emerald-500' />
@@ -864,11 +864,11 @@ export function QualificationWizard() {
             </div>
             <div className='flex items-center gap-1'>
               <CheckCircle className='h-4 w-4 text-emerald-500' />
-              <span>CPUC Compliant</span>
+              <span>California referral service</span>
             </div>
             <div className='flex items-center gap-1'>
               <CheckCircle className='h-4 w-4 text-emerald-500' />
-              <span>BBB Accredited</span>
+              <span>No final eligibility decision in this form</span>
             </div>
           </div>
         </div>

@@ -147,14 +147,15 @@ export function ArticleRenderer({
           See what your options actually look like
         </h3>
         <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-          Check your eligibility for the California Rate Relief Program in about
-          60 seconds. No cost, no obligation.
+          Share your property and project details. California Rate Relief reviews
+          inquiries and forwards suitable projects to an independent provider,
+          subject to service availability. No cost to submit and no obligation.
         </p>
         <Link
-          href="/#qualify"
+          href={page.cluster === 'commercial' ? '/commercial-assessment' : '/#qualify'}
           className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
         >
-          Check My Eligibility
+          {page.cluster === 'commercial' ? 'Request a Commercial Assessment' : 'Request a Residential Assessment'}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </div>

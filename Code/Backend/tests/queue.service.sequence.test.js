@@ -80,6 +80,17 @@ describe("QueueService - sequence email tasks", () => {
     ...overrides,
   });
 
+  test("fails a pre-existing queued task for a manual-review intake before delivery", async () => {
+    const task = makeTask({ leads: { ...makeTask().leads, project_type: "residential" } });
+    queueService.getPendingTasks = jest.fn().mockResolvedValue([task]);
+    await queueService.processEmailQueue();
+    expect(mockSendEmail).not.toHaveBeenCalled();
+    expect(queueService.updateTask).toHaveBeenCalledWith(task.id, expect.objectContaining({
+      status: "failed",
+      error_message: expect.stringContaining("Manual-review intake"),
+    }));
+  });
+
   test("sends the email and advances tracking when the step resolves", async () => {
     const task = makeTask();
     queueService.getPendingTasks = jest.fn().mockResolvedValue([task]);

@@ -498,6 +498,7 @@ class SchedulerService {
           .from('leads')
           .select('id, phone, name')
           .eq('status', 'declined')
+          .is('project_type', null)
           .lt('created_at', cutoffDate)
           .not('phone', 'is', null)
           .limit(config.SCHEDULER_REENGAGEMENT_BATCH_SIZE),
@@ -659,6 +660,7 @@ class SchedulerService {
           .from("leads")
           .select("id, email, type, status")
           .eq("type", "cold")
+          .is("project_type", null)
           .not("email", "is", null)
           .not("status", "in", "(declined,converted,opted_out)")
           .limit(100);
@@ -679,6 +681,7 @@ class SchedulerService {
           .from("leads")
           .select("id, email, call_state, status")
           .or("call_state.eq.no_book,status.eq.no_booked")
+          .is("project_type", null)
           .not("email", "is", null)
           .limit(100);
 
@@ -697,6 +700,7 @@ class SchedulerService {
           .from("leads")
           .select("id, email, call_state, status")
           .or("call_state.eq.no_show,status.eq.no_show")
+          .is("project_type", null)
           .not("email", "is", null)
           .limit(100);
 
@@ -715,6 +719,7 @@ class SchedulerService {
           .from("leads")
           .select("id, email, status")
           .eq("status", "won")
+          .is("project_type", null)
           .not("email", "is", null)
           .limit(100);
 

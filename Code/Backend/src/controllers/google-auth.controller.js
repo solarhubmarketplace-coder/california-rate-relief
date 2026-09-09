@@ -2,7 +2,7 @@ const googleAuthService = require('../services/google-auth.service');
 
 const initiateAuth = async (req, res, next) => {
     try {
-        const url = googleAuthService.generateAuthUrl();
+        const url = googleAuthService.generateAuthUrl(req.staffUser.id);
         res.redirect(url);
     } catch (error) {
         next(error);
@@ -11,10 +11,10 @@ const initiateAuth = async (req, res, next) => {
 
 const handleCallback = async (req, res, next) => {
     try {
-        const { code } = req.query;
+        const { code, state } = req.query;
 
-        if (!code) {
-            return res.apiResponse(400, 'Authorization code is required');
+        if (!code || !googleAuthService.verifyState(state)) {
+            return res.apiResponse(400, 'Valid authorization code and state are required');
         }
 
         await googleAuthService.handleCallback(code);

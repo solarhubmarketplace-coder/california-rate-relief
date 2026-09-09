@@ -4,54 +4,34 @@ import { ChevronDown } from 'lucide-react';
 // FAQAccordion — 12 questions using <details> for zero-JS open/close
 // =============================================================================
 
-const FAQS = [
+export const FAQS = [
   {
-    q: 'Is this really $0 down?',
-    a: 'Yes. There is no upfront cost, no loan, no lien, and no payment plan. We install and own the system. You simply switch your power provider from your utility to the Rate Relief Program at a fixed lower rate.',
+    q: 'What is California Rate Relief?',
+    a: 'California Rate Relief is a private referral service. We collect basic residential and commercial solar project information and make it available for review by a matched solar provider.',
   },
   {
-    q: 'What does "up to 50% lower" actually mean?',
-    a: "Your locked-in per-kWh rate is set below your utility's current rate. Most California homeowners on PG&E, SCE, or SDG&E see 30–50% savings depending on usage and zone. Your exact rate is calculated on your eligibility call.",
+    q: 'Does submitting the form approve my project?',
+    a: 'No. A submission is a request for review. It is not an approval, quote, contract, savings guarantee, or confirmation that a particular project structure is available.',
   },
   {
-    q: 'Who owns the equipment?',
-    a: "We do. You don't own the panels or battery, which is why there's no upfront cost and no loan. You're paying for the lower power rate, not the hardware. The 25-year warranty covers all maintenance and repairs.",
+    q: 'What information does the residential form collect?',
+    a: 'The residential form asks for the utility, bill range, homeowner status, a broad credit range, property address and contact information. A provider may need more information before discussing options.',
   },
   {
-    q: 'What is "bumper-to-bumper" warranty?',
-    a: 'It means everything is covered for 25 years: panels, battery, inverter, monitoring, replacement parts, and labor. If anything breaks or underperforms, we fix it on our dime — no deductible, no service fee.',
+    q: 'Do commercial projects use the homeowner form?',
+    a: 'No. Commercial projects use a separate assessment that asks about the company, property type and control, location, utility, bill range, project timing and contact information.',
   },
   {
-    q: 'Will my power stay on during a PG&E PSPS or blackout?',
-    a: 'Yes. Every install includes battery storage, so during a Public Safety Power Shutoff or grid outage your essentials (refrigerator, lights, Wi-Fi, medical devices, garage opener) keep running automatically.',
+    q: 'Who determines pricing, savings and contract terms?',
+    a: 'The solar provider does. Pricing, savings, equipment, ownership, financing, warranty, production and transfer terms should be stated in the provider’s written proposal and contract.',
   },
   {
-    q: 'Does this affect my credit score?',
-    a: 'No. There is no credit pull and no loan, so nothing is reported to credit bureaus. Eligibility is based on home + utility + usage profile, not your credit score.',
+    q: 'Is California Rate Relief a government or utility program?',
+    a: 'No. California Rate Relief is not a government agency or utility and is not affiliated with or endorsed by a government agency, utility or the CPUC.',
   },
   {
-    q: 'What if I want to sell my house?',
-    a: 'The program transfers cleanly to the new owner. They inherit your locked-in rate, which is typically a marketable feature for buyers. We handle the transfer paperwork at no cost.',
-  },
-  {
-    q: 'How long does the install take?',
-    a: 'Most installs are completed in 1–2 days on-site. Permits and utility interconnection add 4–8 weeks total from contract to first lower-rate bill.',
-  },
-  {
-    q: "What's the catch?",
-    a: "Honestly, no catch — but there are limits. You don't own the equipment (you can't sell it). You're locked into the program for 25 years (transferable on home sale). Your roof and electrical panel must qualify. The eligibility call walks you through everything.",
-  },
-  {
-    q: 'Why is this only available in 2026?',
-    a: 'The 2026 program has a fixed number of California installation slots. Demand has been heavy due to PG&E rate hikes and PSPS frequency. Once slots fill, eligibility re-opens in the following program year at potentially different terms.',
-  },
-  {
-    q: 'What utilities qualify?',
-    a: 'PG&E, SCE, SDG&E, LADWP, SMUD, and most other California IOUs and municipal utilities. Use the form above to confirm eligibility for your specific utility and ZIP code.',
-  },
-  {
-    q: 'Is this affiliated with my utility company?',
-    a: 'No. The Rate Relief Program is independent from PG&E, SCE, SDG&E, LADWP, and SMUD. We become your power provider in place of (or alongside) your existing utility. Your utility still maintains the grid your home connects to.',
+    q: 'What happens after I submit?',
+    a: 'The information is saved for review. A matched provider may contact you about next steps. Any project decision should be based on the provider’s written proposal and contract.',
   },
 ];
 
@@ -67,7 +47,7 @@ export function FAQAccordion() {
             Everything you want to know
           </h2>
           <p className='text-lg text-slate-600'>
-            Straight answers about how the 2026 program works.
+            Straight answers about the referral and review process.
           </p>
         </div>
 

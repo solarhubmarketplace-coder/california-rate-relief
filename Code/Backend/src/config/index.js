@@ -42,6 +42,13 @@ module.exports = {
     // Defaults to the operator's inbox; override in Railway env if it changes.
     OWNER_NOTIFICATION_EMAIL: getEnv('OWNER_NOTIFICATION_EMAIL', 'solarhubmarketplace@gmail.com'),
 
+    // Durable owner-notification worker. Ambiguous provider responses are held
+    // for staff review rather than retried blindly.
+    OWNER_NOTIFICATION_POLL_INTERVAL_MS: getEnvInt('OWNER_NOTIFICATION_POLL_INTERVAL_MS', 15000, 5000),
+    OWNER_NOTIFICATION_MAX_ATTEMPTS: getEnvInt('OWNER_NOTIFICATION_MAX_ATTEMPTS', 5, 1, 10),
+    OWNER_NOTIFICATION_STALE_MINUTES: getEnvInt('OWNER_NOTIFICATION_STALE_MINUTES', 10, 1, 120),
+    OWNER_NOTIFICATION_IDEMPOTENCY_WINDOW_HOURS: getEnvInt('OWNER_NOTIFICATION_IDEMPOTENCY_WINDOW_HOURS', 24, 1, 24),
+
     // Owner instant SMS alert - texts this number the moment a new inbound
     // lead arrives. OFF by default (empty): set OWNER_SMS_ALERT_TO in Railway
     // to enable. Requires a live Twilio account (same creds the queue uses).

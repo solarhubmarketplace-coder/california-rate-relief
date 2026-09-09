@@ -1,0 +1,49 @@
+const mockRpc = jest.fn();
+jest.mock('../src/lib/supabase', () => ({ supabaseAdmin: { rpc: mockRpc } }));
+const mockSendEmail = jest.fn();
+jest.mock('../src/services/email.service', () => ({ sendEmail: mockSendEmail }));
+jest.mock('../src/config', () => ({
+  OWNER_NOTIFICATION_EMAIL: 'owner@example.com', EMAIL_FROM: 'sender@example.com',
+  OWNER_NOTIFICATION_STALE_MINUTES: 10, OWNER_NOTIFICATION_MAX_ATTEMPTS: 5,
+  OWNER_NOTIFICATION_POLL_INTERVAL_MS: 15000, OWNER_NOTIFICATION_IDEMPOTENCY_WINDOW_HOURS: 24,
+}));
+const worker = require('../src/services/owner-notification.service');
+
+const row = {
+  id: 'outbox-1', submission_id: 'submission-1', lead_id: 'lead-1',
+  provider_idempotency_key: 'crr-owner-submission-1',
+  payload: { segment: 'residential', name: 'Test', phone: '+19515550187', is_test: true, qualification_data: { utility_provider: 'SCE', homeowner: true, credit_score: 'above_650', service_zip: '92591' }, attribution: { landing_page: '/blog/sce', source: 'organic_google', utm_campaign: 'utility' } },
+};
+
+describe('durable owner notification worker', () => {
+  beforeEach(() => jest.clearAllMocks());
+  test('claims, sends with the stable provider key, and records sent state', async () => {
+    mockRpc.mockResolvedValueOnce({ data: [row], error: null })
+      .mockResolvedValueOnce({ data: [{ ...row, destination: 'owner@example.com', provider_from: 'sender@example.com', provider_subject: 'frozen subject', provider_html: '<p>frozen</p>' }], error: null })
+      .mockResolvedValueOnce({ data: null, error: null });
+    mockSendEmail.mockResolvedValue({ id: 'provider-1' });
+    await worker.processOne();
+    expect(mockRpc).toHaveBeenNthCalledWith(2, 'prepare_owner_notification', expect.objectContaining({
+      p_provider_subject: expect.stringContaining('[TEST]'),
+      p_provider_html: expect.stringMatching(/Submission ID[\s\S]*submission-1[\s\S]*Homeowner[\s\S]*Credit[\s\S]*UTM campaign/),
+    }));
+    expect(mockSendEmail).toHaveBeenCalledWith('owner@example.com', 'frozen subject', '<p>frozen</p>', expect.objectContaining({ idempotencyKey: 'crr-owner-submission-1' }));
+    expect(mockRpc).toHaveBeenLastCalledWith('complete_owner_notification', expect.objectContaining({ p_provider_message_id: 'provider-1' }));
+  });
+  test('holds a network/provider-acceptance ambiguity without blind retry', async () => {
+    mockRpc.mockResolvedValueOnce({ data: [row], error: null })
+      .mockResolvedValueOnce({ data: [{ ...row, destination: 'owner@example.com', provider_from: 'sender@example.com', provider_subject: 'subject', provider_html: '<p>body</p>' }], error: null })
+      .mockResolvedValueOnce({ data: null, error: null });
+    mockSendEmail.mockRejectedValue(new Error('socket closed after request'));
+    await worker.processOne();
+    expect(mockRpc).toHaveBeenLastCalledWith('fail_owner_notification', expect.objectContaining({ p_ambiguous: true }));
+  });
+  test('allows bounded retry for a definite provider rejection', async () => {
+    mockRpc.mockResolvedValueOnce({ data: [row], error: null })
+      .mockResolvedValueOnce({ data: [{ ...row, destination: 'owner@example.com', provider_from: 'sender@example.com', provider_subject: 'subject', provider_html: '<p>body</p>' }], error: null })
+      .mockResolvedValueOnce({ data: null, error: null });
+    const error = new Error('invalid recipient'); error.statusCode = 422; mockSendEmail.mockRejectedValue(error);
+    await worker.processOne();
+    expect(mockRpc).toHaveBeenLastCalledWith('fail_owner_notification', expect.objectContaining({ p_ambiguous: false, p_max_attempts: 5 }));
+  });
+});

@@ -5,6 +5,8 @@ const morgan = require("morgan");
 const { PORT } = require("./config");
 const errorHandler = require("./middleware/errorHandler");
 const apiResponse = require("./utils/apiResponse");
+const { requireStaff } = require('./middleware/requireStaff');
+const requireTwilioSignature = require('./middleware/requireTwilioSignature');
 
 // Routes
 const leadRoutes = require("./routes/lead.routes");
@@ -64,7 +66,32 @@ app.get("/api/health", async (req, res) => {
   res.apiResponse(httpStatus, message, health);
 });
 
-// API Routes
+// Explicit public intake and provider/customer callbacks. Everything mounted
+// after requireStaff is private CRM/admin surface.
+app.use('/api/intake', require('./routes/intake.routes'));
+const trackingController = require('./controllers/tracking.controller');
+const voiceController = require('./controllers/voice.controller');
+const webhookController = require('./controllers/webhook.controller');
+const googleAuthController = require('./controllers/google-auth.controller');
+const leadController = require('./controllers/lead.controller');
+const intakeController = require('./controllers/intake.controller');
+// Temporary compatibility for the previously deployed flat form. Its daily,
+// deterministic ID makes network retries safe while allowing a later resubmission.
+app.post('/api/leads', intakeController.createLegacyIntake);
+app.get('/api/track/:token', trackingController.handleTrackingClick);
+app.get('/api/voice/twiml', requireTwilioSignature, voiceController.getTwiml);
+app.post('/api/voice/twiml', requireTwilioSignature, voiceController.getTwiml);
+app.post('/api/voice/voicemail', requireTwilioSignature, voiceController.handleVoicemail);
+app.post('/api/voice/status/:leadId', requireTwilioSignature, voiceController.handleStatus);
+app.post('/api/voice/recording-callback/:leadId', requireTwilioSignature, voiceController.handleRecordingCallback);
+app.post('/api/webhook/sms', requireTwilioSignature, webhookController.webhookIncomingSms);
+app.get('/api/auth/google/callback', googleAuthController.handleCallback);
+app.put('/api/leads/:leadId/consent', leadController.publicOptOut);
+
+app.use('/api', requireStaff);
+
+// Private API Routes
+app.use('/api/staff', require('./routes/staff.routes'));
 app.use("/api/leads", leadRoutes);
 app.use("/api/voice", require("./routes/voice.routes"));
 app.use("/api/appointments", require("./routes/appointment.routes"));
@@ -127,6 +154,7 @@ if (require.main === module) {
 
     // Start the auto-dial scheduler
     schedulerService.start();
+    require('./services/owner-notification.service').start();
   });
 }
 

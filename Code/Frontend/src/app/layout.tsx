@@ -5,6 +5,7 @@ import { Plus_Jakarta_Sans, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import FirstTouchCapture from '@/components/FirstTouchCapture';
 
 // =============================================================================
 // FONTS — self-hosted via next/font (2026-04-30, Batch 3.5)
@@ -42,12 +43,12 @@ const dmSerifDisplay = DM_Serif_Display({
 const DOMAIN_DEFAULTS = {
   ratereliefca: {
     base: 'https://ratereliefca.com',
-    title: 'California Rate Relief Program | Cut Your Electric Bill by 50%',
+    title: 'California Solar Referrals | California Rate Relief',
     description:
-      'Qualify for the 2026 Rate Relief Program. California homeowners can swap their high utility rate for a lower, fixed solar rate. No loans, no debt, $0 down.',
-    siteName: 'California Rate Relief Program',
-    ogImage: '/og-image.png',
-    ogAlt: 'California Rate Relief Program — Cut Your Electric Bill by Up to 50%',
+      'Understand your California electricity bill and request a residential or commercial solar assessment. California Rate Relief reviews and refers inquiries.',
+    siteName: 'California Rate Relief',
+    ogImage: '/crr-social-card',
+    ogAlt: 'California Rate Relief: understand your bill and explore your solar options',
     favicon: '/favicon.ico',
     appleTouchIcon: '/favicon.ico',
   },
@@ -286,6 +287,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />}
         <GoogleAnalytics />
+        {isCRR && <FirstTouchCapture />}
         {googlePlacesApiKey && isCRR && (
           <Script
             src={`https://maps.googleapis.com/maps/api/js?key=${googlePlacesApiKey}&libraries=places`}

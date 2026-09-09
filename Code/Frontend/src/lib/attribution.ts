@@ -1,26 +1,9 @@
-/**
- * First-touch page attribution.
- *
- * Why this exists: as of 2026-09-05 a lead's origin page was unrecoverable.
- * `deriveLeadSource()` records only the channel and flattens every same-site
- * referrer to 'direct', and the `leads` table had no landing-page column, so a
- * Bakersfield lead and a Temecula lead were indistinguishable. Google Search
- * Console showed the 159 city pages producing 9% of clicks while 51 blog posts
- * produced 52% — but with no page attribution there was no way to tell which
- * pages produced *revenue*, which is the number that should drive the build order.
- *
- * The wizard currently lives only on the homepage, so a visitor typically lands
- * on /solar-savings/bakersfield and converts on /. We therefore capture the FIRST
- * page of the session and carry it through, rather than reading location at
- * submit time (which would credit every lead to the homepage).
- *
- * Storage is sessionStorage: it survives in-site navigation, dies with the tab,
- * and never leaves the browser except on the lead payload itself.
- */
-
+/** CRR first touch in this browser tab, captured before a visitor reaches a form. */
 const KEY = 'crr_first_touch_v1';
+const TRACKING_KEYS = ['gclid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as const;
+export type TrackingParams = Record<typeof TRACKING_KEYS[number], string | null>;
 
-export interface FirstTouch {
+export interface FirstTouch extends TrackingParams {
   landing_page: string;
   landing_city_slug: string | null;
   landing_page_type: string;
@@ -28,99 +11,125 @@ export interface FirstTouch {
   captured_at: string;
 }
 
-/** Classify a path into the layers reported by Search Console. */
+let memoryTouch: FirstTouch | null = null;
+const EXCLUDED_PATHS = ['/dashboard', '/login', '/reset-password', '/testing-guide', '/testing', '/api', '/book', '/register', '/signup'];
+
+export function isAttributablePage(hostname: string, pathname: string): boolean {
+  const host = hostname.toLowerCase();
+  return (host === 'ratereliefca.com' || host === 'www.ratereliefca.com' || host === 'localhost')
+    && !EXCLUDED_PATHS.some(path => pathname === path || pathname.startsWith(path + '/'));
+}
+
 export function pageTypeFromPath(path: string): string {
   if (path === '/' || path === '') return 'home';
   if (path.startsWith('/solar-savings/')) return 'solar-savings';
   if (path.startsWith('/solar-companies/')) return 'solar-companies';
-  if (path.startsWith('/commercial-solar')) return 'commercial-solar';
+  if (path === '/commercial-solar' || path.startsWith('/commercial-solar/')) return 'commercial-solar';
   if (path.startsWith('/solar-installers/')) return 'solar-installers';
-  if (path.startsWith('/panel-reviews')) return 'panel-reviews';
+  if (path === '/panel-reviews' || path.startsWith('/panel-reviews/')) return 'panel-reviews';
   if (path.startsWith('/blog/')) return 'blog';
   if (path.startsWith('/battery/')) return 'battery';
   return 'other';
 }
 
-/**
- * Extract the city slug from a city-page path. Returns null for non-city pages
- * and for the five regional hubs, which are regions rather than cities and would
- * otherwise pollute per-city rollups.
- */
-const REGIONAL_HUBS = new Set([
-  'orange-county',
-  'bay-area',
-  'inland-empire',
-  'san-diego-county',
-  'central-valley',
-]);
+const REGIONAL_HUBS = new Set(['orange-county', 'bay-area', 'inland-empire', 'san-diego-county', 'central-valley']);
 
 export function citySlugFromPath(path: string): string | null {
-  const m = path.match(/^\/solar-(?:savings|companies)\/([a-z0-9-]+)\/?$/);
-  if (!m) return null;
-  return REGIONAL_HUBS.has(m[1]) ? null : m[1];
+  const match = path.match(/^\/solar-(?:savings|companies)\/([a-z0-9-]+)\/?$/);
+  return match && !REGIONAL_HUBS.has(match[1]) ? match[1] : null;
 }
 
-/** Read the GA4 client id from the _ga cookie, if GA has set one. */
-export function gaClientId(): string | null {
-  if (typeof document === 'undefined') return null;
+function trackingValue(value: unknown): string | null {
+  return typeof value === 'string' ? value.trim().slice(0, 200) || null : null;
+}
+
+function externalHost(referrer: string): string | null {
   try {
-    const m = document.cookie.match(/(?:^|;\s*)_ga=GA\d\.\d\.(\d+\.\d+)/);
-    return m ? m[1] : null;
+    const url = new URL(referrer);
+    if (!['http:', 'https:'].includes(url.protocol)) return null;
+    const host = url.hostname.toLowerCase();
+    return host === 'ratereliefca.com' || host.endsWith('.ratereliefca.com') ? null : host;
   } catch {
     return null;
   }
 }
 
-/**
- * Record the first page of this session, if not already recorded.
- * Safe to call on every page view; only the first call writes.
- */
-export function captureFirstTouch(): FirstTouch | null {
-  if (typeof window === 'undefined') return null;
+function storedTouch(raw: string): FirstTouch | null {
   try {
-    const existing = window.sessionStorage.getItem(KEY);
-    if (existing) return JSON.parse(existing) as FirstTouch;
-
-    const path = window.location.pathname || '/';
-    let referrer: string | null = null;
-    if (document.referrer) {
-      try {
-        const host = new URL(document.referrer).hostname;
-        // Only external referrers are meaningful; in-site navigation is noise.
-        if (!host.includes(window.location.hostname)) referrer = host;
-      } catch {
-        /* malformed referrer — ignore */
-      }
-    }
-
-    const ft: FirstTouch = {
+    const value = JSON.parse(raw);
+    if (!value || typeof value.landing_page !== 'string'
+      || !value.landing_page.startsWith('/') || value.landing_page.startsWith('//')
+      || typeof value.captured_at !== 'string' || !Number.isFinite(Date.parse(value.captured_at))) return null;
+    const path = value.landing_page.split(/[?#]/)[0];
+    if (!isAttributablePage(window.location.hostname, path)) return null;
+    return {
+      ...Object.fromEntries(TRACKING_KEYS.map(key => [key, trackingValue(value[key])])) as TrackingParams,
       landing_page: path,
       landing_city_slug: citySlugFromPath(path),
       landing_page_type: pageTypeFromPath(path),
-      referrer,
-      captured_at: new Date().toISOString(),
+      referrer: typeof value.referrer === 'string' ? externalHost('https://' + value.referrer) : null,
+      captured_at: value.captured_at,
     };
-    window.sessionStorage.setItem(KEY, JSON.stringify(ft));
-    return ft;
   } catch {
-    // Private mode / storage disabled — attribution degrades, capture must not break.
     return null;
   }
 }
 
-/** Read the stored first touch without writing. */
 export function getFirstTouch(): FirstTouch | null {
-  if (typeof window === 'undefined') return null;
+  if (typeof window === 'undefined' || !isAttributablePage(window.location.hostname, window.location.pathname)) return null;
   try {
     const raw = window.sessionStorage.getItem(KEY);
-    return raw ? (JSON.parse(raw) as FirstTouch) : null;
+    const saved = raw ? storedTouch(raw) : null;
+    if (saved) memoryTouch = saved;
+  } catch {
+    // Storage blocked: retain attribution for this document.
+  }
+  return memoryTouch;
+}
+
+export function captureFirstTouch(): FirstTouch | null {
+  if (typeof window === 'undefined' || !isAttributablePage(window.location.hostname, window.location.pathname)) return null;
+  const existing = getFirstTouch();
+  if (existing) return existing;
+  const path = window.location.pathname || '/';
+  const params = new URLSearchParams(window.location.search);
+  const touch: FirstTouch = {
+    ...Object.fromEntries(TRACKING_KEYS.map(key => [key, trackingValue(params.get(key))])) as TrackingParams,
+    landing_page: path,
+    landing_city_slug: citySlugFromPath(path),
+    landing_page_type: pageTypeFromPath(path),
+    referrer: externalHost(document.referrer),
+    captured_at: new Date().toISOString(),
+  };
+  memoryTouch = touch;
+  try {
+    window.sessionStorage.setItem(KEY, JSON.stringify(touch));
+  } catch {
+    // Intake continues without persistent storage.
+  }
+  return touch;
+}
+
+export function deriveLeadSource(touch: FirstTouch | null): string {
+  if (!touch) return 'unknown';
+  if (touch.gclid) return 'google_ads';
+  if (touch.utm_source) return touch.utm_source;
+  if (touch.fbclid) return 'facebook';
+  if (!touch.referrer) return 'direct';
+  if (/^(?:www\.)?google\.(?:com|ca|co\.uk|com\.au|de|fr|co\.in)$/.test(touch.referrer)) return 'organic_google';
+  return 'referral_' + touch.referrer;
+}
+
+export function gaClientId(): string | null {
+  if (typeof document === 'undefined') return null;
+  try {
+    const match = document.cookie.match(/(?:^|;\s*)_ga=GA\d\.\d\.(\d+\.\d+)/);
+    return match ? match[1] : null;
   } catch {
     return null;
   }
 }
 
-/** The page the form was actually submitted from. */
 export function currentPath(): string | null {
-  if (typeof window === 'undefined') return null;
-  return window.location.pathname || null;
+  return typeof window === 'undefined' ? null : window.location.pathname || null;
 }

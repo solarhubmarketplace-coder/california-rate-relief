@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { isSupabaseConfigured, supabase } from './supabaseClient';
 
 // Backend API URL - Update this when backend is deployed
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
@@ -14,12 +15,15 @@ const axiosClient = axios.create({
 
 // Request interceptor - Add auth token or other headers
 axiosClient.interceptors.request.use(
-    (config) => {
-        // You can add auth tokens here if needed
-        // const token = localStorage.getItem('token');
-        // if (token) {
-        //   config.headers.Authorization = `Bearer ${token}`;
-        // }
+    async (config) => {
+        // Private API routes use the same Supabase session as the owner login.
+        // The public intake endpoint works without a session.
+        if (isSupabaseConfigured && !config.headers.Authorization) {
+            const { data } = await supabase.auth.getSession();
+            if (data.session?.access_token) {
+                config.headers.Authorization = `Bearer ${data.session.access_token}`;
+            }
+        }
         return config;
     },
     (error) => {

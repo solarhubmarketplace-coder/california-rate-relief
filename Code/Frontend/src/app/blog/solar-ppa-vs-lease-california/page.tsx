@@ -305,7 +305,7 @@ export default function SolarPPAVsLeaseCalifornia() {
                 All Articles
               </Link>
               <Link
-                href='/blog/solar-ppa-explained'
+                href='/blog/solar-ppa-explained-california'
                 className='text-primary hover:underline font-medium inline-flex items-center gap-2'
               >
                 Next Article

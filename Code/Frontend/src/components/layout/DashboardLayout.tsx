@@ -24,6 +24,7 @@ import {
   Mail,
   MessageSquare,
   FileText,
+  ClipboardCheck,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -42,6 +43,7 @@ interface DashboardLayoutProps {
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
   { name: 'Leads', href: '/dashboard/leads', icon: Users },
+  { name: 'Referrals', href: '/dashboard/referrals', icon: ClipboardCheck },
   { name: 'Call Logs', href: '/dashboard/calls', icon: Phone },
   { name: 'Appointments', href: '/dashboard/appointments', icon: Calendar },
   { name: 'Email Logs', href: '/dashboard/email-logs', icon: Mail },

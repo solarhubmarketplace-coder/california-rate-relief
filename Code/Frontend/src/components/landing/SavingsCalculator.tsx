@@ -9,9 +9,8 @@ import Link from 'next/link';
 
 export function SavingsCalculator() {
   const [bill, setBill] = useState(285);
-  const newRate = Math.round(bill * 0.5);
-  const monthly = bill - newRate;
-  const lifetime = monthly * 12 * 25;
+  const annualSpend = bill * 12;
+  const fiveYearBaseline = annualSpend * 5;
 
   const handleBill = (v: string) => {
     const n = Math.max(50, Math.min(2000, parseInt(v, 10) || 0));
@@ -27,14 +26,13 @@ export function SavingsCalculator() {
               Free calculator
             </div>
             <h2 className='text-3xl md:text-5xl font-extrabold tracking-tight mb-4'>
-              How much would <em>you</em> save?
+              Start with your current bill.
             </h2>
             <p className='text-white/90 text-lg leading-relaxed mb-2'>
-              Enter your average monthly power bill. We&apos;ll estimate your savings under the 2026
-              California Rate Relief Program.
+              Enter your average monthly power bill to see your current annual and five-year baseline.
             </p>
             <p className='text-xs text-white/60'>
-              Estimate only — final savings calculated during your eligibility call.
+              This is current-dollar arithmetic, not a solar quote or forecast. A provider must model any project savings.
             </p>
           </div>
 
@@ -72,17 +70,17 @@ export function SavingsCalculator() {
 
             <div className='space-y-3 border-t border-slate-100 pt-5'>
               <div className='flex items-center justify-between'>
-                <span className='text-sm text-slate-600'>New monthly rate</span>
-                <span className='text-xl font-extrabold text-emerald-700'>${newRate}</span>
+                <span className='text-sm text-slate-600'>Current monthly bill</span>
+                <span className='text-xl font-extrabold text-emerald-700'>${bill}</span>
               </div>
               <div className='flex items-center justify-between'>
-                <span className='text-sm text-slate-600'>Monthly savings</span>
-                <span className='text-xl font-extrabold text-slate-900'>${monthly}</span>
+                <span className='text-sm text-slate-600'>Current annual baseline</span>
+                <span className='text-xl font-extrabold text-slate-900'>${annualSpend.toLocaleString()}</span>
               </div>
               <div className='flex items-center justify-between border-t border-dashed border-slate-200 pt-3'>
-                <span className='text-sm font-bold text-slate-900'>25-year savings</span>
+                <span className='text-sm font-bold text-slate-900'>Five-year baseline</span>
                 <span className='text-2xl font-black text-emerald-700'>
-                  ${lifetime.toLocaleString()}
+                  ${fiveYearBaseline.toLocaleString()}
                 </span>
               </div>
             </div>
@@ -91,7 +89,7 @@ export function SavingsCalculator() {
               href='/#qualify'
               className='mt-6 block text-center bg-amber-400 hover:bg-amber-300 text-emerald-900 font-extrabold py-3.5 rounded-lg shadow-md transition-all'
             >
-              Lock In My Savings →
+              Request a Property Review →
             </Link>
           </div>
         </div>

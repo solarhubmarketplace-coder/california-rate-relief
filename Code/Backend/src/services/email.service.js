@@ -20,16 +20,26 @@ class EmailService {
      */
     async sendEmail(to, subject, htmlBody, context = {}) {
         try {
-            const { data, error } = await this.resend.emails.send({
+            const request = {
                 from: context.from || this.from,
                 to: [to],
                 subject,
                 html: htmlBody
-            });
+            };
+            const options = context.idempotencyKey
+                ? { idempotencyKey: context.idempotencyKey }
+                : undefined;
+            const { data, error } = await this.resend.emails.send(request, options);
 
             if (error) {
                 console.error('[EmailService] Resend error:', error);
-                throw new Error(error.message || 'Failed to send email');
+                const providerError = new Error(error.message || 'Failed to send email');
+                // Resend returns structured errors. Preserve the fields the durable
+                // outbox uses to distinguish retryable delivery from a permanent reject.
+                for (const key of ['name', 'statusCode', 'status', 'code']) {
+                    if (error[key] !== undefined) providerError[key] = error[key];
+                }
+                throw providerError;
             }
 
             console.log(`[EmailService] Sent email to ${to}, ID: ${data.id}`);

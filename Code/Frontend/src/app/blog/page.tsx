@@ -8,7 +8,7 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Solar Savings Blog | California Rate Relief Program',
   description:
-    'Learn how California homeowners are cutting their electric bills by up to 50%. Expert guides on NEM 3.0, utility rate increases, solar PPAs, and more.',
+    'Understand California utility bills, time-of-use plans and solar options. Sourced guides for PG&E, SCE and SDG&E customers.',
   alternates: {
     canonical: '/blog',
   },
@@ -16,6 +16,14 @@ export const metadata: Metadata = {
 
 // Blog post data. Add new posts here
 const blogPosts = [
+  {
+    slug: 'pge-time-of-use-rates-2026',
+    title: 'PG&E Time-of-Use Rates: 2026 Plan Guide',
+    excerpt: 'Compare E-TOU-C and E-TOU-D peak hours, baseline credits and usage patterns before choosing a rate plan.',
+    date: '2026-09-09',
+    readTime: '8 min read',
+    category: 'Utility Rates',
+  },
   {
     slug: 'sce-rate-increase-2026',
     title: 'SCE Rate Increase 2026: What Southern California Edison Customers Need to Know',
@@ -56,8 +64,8 @@ const blogPosts = [
     slug: 'pge-vs-sce-vs-sdge-rates-compared',
     title: 'PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay the Most in 2026?',
     excerpt:
-      'A side-by-side comparison of California\'s three major utility rates, the new fixed charges, and how much each utility\'s customers can save with solar.',
-    date: '2026-04-14',
+      'Compare June 2026 residential average rates, sample bills, time-of-use plans and the steps to check your own electricity costs.',
+    date: '2026-09-09',
     readTime: '10 min read',
     category: 'Utility Rates',
   },

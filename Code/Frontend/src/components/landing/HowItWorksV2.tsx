@@ -13,10 +13,10 @@ export function HowItWorksV2() {
             How it works
           </div>
           <h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-3'>
-            Switch power providers. Skip the ownership.
+            Share the project. Review the actual terms.
           </h2>
           <p className='text-lg text-slate-600'>
-            No equipment to buy. No loan to sign. We install, we maintain, you pay a lower rate.
+            California Rate Relief gathers the basics and connects the request with a solar provider for review.
           </p>
         </div>
 
@@ -27,10 +27,9 @@ export function HowItWorksV2() {
               1
             </div>
             <Search className='w-12 h-12 text-amber-500 mb-4' />
-            <h3 className='text-xl font-extrabold mb-2'>Check eligibility</h3>
+            <h3 className='text-xl font-extrabold mb-2'>Describe the property</h3>
             <p className='text-white/85 text-sm leading-relaxed'>
-              Tell us your utility + ZIP. We confirm in seconds whether your home qualifies for the
-              2026 program. No credit check.
+              Share the utility, typical bill, property status and contact information needed for an initial review.
             </p>
           </div>
 
@@ -40,10 +39,9 @@ export function HowItWorksV2() {
               2
             </div>
             <Wrench className='w-12 h-12 text-emerald-700 mb-4' />
-            <h3 className='text-xl font-extrabold text-slate-900 mb-2'>We install — $0 down</h3>
+            <h3 className='text-xl font-extrabold text-slate-900 mb-2'>Provider review</h3>
             <p className='text-slate-600 text-sm leading-relaxed'>
-              Our crew handles permits, panels, battery, inverter, and inspection. No hardware to
-              buy, no loans, no debt against your home.
+              A matched provider can review roof, usage, utility territory and available project structures.
             </p>
           </div>
 
@@ -53,10 +51,9 @@ export function HowItWorksV2() {
               3
             </div>
             <TrendingDown className='w-12 h-12 text-blue-700 mb-4' />
-            <h3 className='text-xl font-extrabold text-slate-900 mb-2'>Pay lower power rates</h3>
+            <h3 className='text-xl font-extrabold text-slate-900 mb-2'>Compare written terms</h3>
             <p className='text-slate-600 text-sm leading-relaxed'>
-              We become your power provider at a fixed rate up to <strong>50% lower</strong> than
-              your utility. Locked for 25 years. Bumper-to-bumper coverage included.
+              Savings, ownership, financing, warranty and transfer terms depend on the provider&apos;s written proposal and contract.
             </p>
           </div>
         </div>

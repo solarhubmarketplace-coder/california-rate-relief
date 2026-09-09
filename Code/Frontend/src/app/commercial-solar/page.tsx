@@ -84,6 +84,14 @@ export default function CommercialSolarHub() {
             <section className='mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-6 tracking-tight'>Explore the California Commercial Solar Guide</h2>
               <div className='grid md:grid-cols-2 gap-4'>
+                <Link href='/commercial-solar/warehouse-solar-california' className='p-5 rounded-xl border border-border bg-card hover:border-primary transition-colors'>
+                  <h3 className='font-bold text-foreground mb-2'>Solar for Warehouses</h3>
+                  <p className='text-sm text-foreground/80'>Roof condition, operating hours and electricity use for warehouse projects.</p>
+                </Link>
+                <Link href='/commercial-solar/multifamily-solar-california' className='p-5 rounded-xl border border-border bg-card hover:border-primary transition-colors'>
+                  <h3 className='font-bold text-foreground mb-2'>Solar for Multifamily Properties</h3>
+                  <p className='text-sm text-foreground/80'>Ownership, tenant meters and project considerations for apartment buildings.</p>
+                </Link>
                 <Link href='/commercial-solar/companies-california' className='p-5 rounded-xl border border-border bg-card hover:border-primary transition-colors'>
                   <Building2 className='h-5 w-5 text-primary mb-2' />
                   <h3 className='font-bold text-foreground mb-2'>Commercial Solar Companies in California</h3>
@@ -165,10 +173,10 @@ export default function CommercialSolarHub() {
 
             {/* CTA */}
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Get Commercial Solar Quotes for Your California Property</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto leading-relaxed'>California Rate Relief connects commercial property owners with California&apos;s top commercial solar EPCs. Fill out the form — we&apos;ll route your project details to the right partners for quotes on direct purchase, PPA, lease, and CPACE financing.</p>
-              <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request Commercial Quotes<ArrowRight className='h-4 w-4' /></Link>
-              <p className='text-xs text-muted-foreground mt-4'>Free. No obligation. Commercial project details routed to qualified California EPCs.</p>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Request a Commercial Solar Assessment</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto leading-relaxed'>Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.</p>
+              <Link href='/commercial-assessment' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a Commercial Assessment<ArrowRight className='h-4 w-4' /></Link>
+              <p className='text-xs text-muted-foreground mt-4'>No cost to submit. No obligation. Provider availability and project fit must be confirmed.</p>
             </div>
           </article>
         </div>

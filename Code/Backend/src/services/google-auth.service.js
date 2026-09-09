@@ -2,6 +2,7 @@ const { google } = require('googleapis');
 const { supabaseAdmin } = require('../lib/supabase');
 const https = require('https');
 const querystring = require('querystring');
+const crypto = require('crypto');
 
 const oauth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID,
@@ -13,7 +14,7 @@ class GoogleAuthService {
     /**
      * Generate the Auth URL
      */
-    generateAuthUrl() {
+    generateAuthUrl(staffUserId) {
         const scopes = [
             'https://www.googleapis.com/auth/gmail.send',
             'https://www.googleapis.com/auth/calendar',
@@ -24,8 +25,26 @@ class GoogleAuthService {
         return oauth2Client.generateAuthUrl({
             access_type: 'offline',
             scope: scopes,
-            prompt: 'consent'
+            prompt: 'consent',
+            state: this.createState(staffUserId)
         });
+    }
+
+    createState(staffUserId) {
+        const payload = Buffer.from(JSON.stringify({ sub: staffUserId, exp: Date.now() + 10 * 60 * 1000 })).toString('base64url');
+        const signature = crypto.createHmac('sha256', process.env.GOOGLE_CLIENT_SECRET || '').update(payload).digest('base64url');
+        return `${payload}.${signature}`;
+    }
+
+    verifyState(state) {
+        try {
+            const [payload, signature] = String(state || '').split('.');
+            const expected = crypto.createHmac('sha256', process.env.GOOGLE_CLIENT_SECRET || '').update(payload).digest();
+            const supplied = Buffer.from(signature || '', 'base64url');
+            if (supplied.length !== expected.length || !crypto.timingSafeEqual(supplied, expected)) return false;
+            const decoded = JSON.parse(Buffer.from(payload, 'base64url').toString('utf8'));
+            return Boolean(decoded.sub) && decoded.exp >= Date.now();
+        } catch { return false; }
     }
 
     /**

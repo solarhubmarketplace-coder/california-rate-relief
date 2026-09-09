@@ -275,7 +275,7 @@ export default function CommercialSolarFinancingCalifornia() {
                 The California Rate Relief Program can help you evaluate your financing options and connect you with qualified specialists. No cost, no obligation.
               </p>
               <Link
-                href='/#qualify'
+                href='/commercial-assessment'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
                 Get Started

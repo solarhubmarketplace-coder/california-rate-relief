@@ -3,609 +3,108 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+
+const title = 'PG&E vs SCE vs SDG&E: 2026 Rates Compared';
+const description = 'PG&E averages 34.4¢/kWh, SCE 33.7¢ and SDG&E 45.5¢ in June 2026. Compare current rates, sample bills, TOU plans and bill-relief options.';
 
 export const metadata: Metadata = {
-  title:
-    "PG&E vs SCE vs SDG&E: 2026 Rates Compared",
-  description:
-    "SDG&E charges 45.7c/kWh, PG&E 41.5c, SCE 34.5c. What drives the gap, what each utility offers to lower your bill, and how solar payback differs.",
-  alternates: {
-    canonical: '/blog/pge-vs-sce-vs-sdge-rates-compared',
-  },
-  openGraph: {
-    title:
-      'PG&E vs. SCE vs. SDG&E: Which Utility Customers Pay the Most in 2026?',
-    description:
-      'Compare California\'s three major utilities side by side: rates, fixed charges, programs, and solar savings potential.',
-    type: 'article',
-    publishedTime: '2026-04-14T00:00:00Z',
-  },
+  title,
+  description,
+  alternates: { canonical: '/blog/pge-vs-sce-vs-sdge-rates-compared' },
+  openGraph: { title, description, type: 'article', publishedTime: '2026-04-14T00:00:00Z', modifiedTime: '2026-09-09T00:00:00Z', url: 'https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay the Most in 2026?',
-  description:
-    'A side-by-side comparison of California\'s three major utility rates in 2026, what drives the differences, and what you can do about it.',
-  datePublished: '2026-04-14',
-  dateModified: '2026-04-14',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared',
-  },
-};
+const sourceLink = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
 
 export default function UtilityRatesCompared() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay the Most in 2026?"} url="https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared" datePublished="2026-04-14" dateModified="2026-04-24" description={"A side-by-side comparison of PG&E, SCE, and SDG&E rates in 2026, what's driving the differences, what each utility offers to lower your bill, and how solar savings compare across all three."} />
+      <ArticleJsonLd variant='Article' domain='crr' headline={title} url='https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared' datePublished='2026-04-14' dateModified='2026-09-09' description={description} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
-            {/* Breadcrumb */}
             <nav className='mb-8'>
-              <Link
-                href='/blog'
-                className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'
-              >
-                <ArrowLeft className='h-4 w-4' />
-                Back to Blog
-              </Link>
+              <Link href='/blog' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Blog</Link>
             </nav>
-
-            {/* Article Header */}
             <header className='mb-10'>
-              <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
-                Utility Rates
-              </span>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay
-                the Most in 2026?
-              </h1>
-              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'>
-                  <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-14'>April 14, 2026</time>
-                </div>
-                <div className='flex items-center gap-1'>
-                  <Clock className='h-4 w-4' />
-                  <span>10 min read</span>
-                </div>
+              <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Utility Rates</span>
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>PG&amp;E vs. SCE vs. SDG&amp;E: Which California Utility Customers Pay the Most in 2026?</h1>
+              <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground'>
+                <Link href='/author/chad-simpson' className='font-medium text-foreground hover:text-primary'>By Chad Simpson</Link>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-09'>Updated September 9, 2026</time></div>
+                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>9 min read</span></div>
               </div>
             </header>
 
-            {/* Article Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                California has three major investor-owned utilities, and they
-                don&apos;t charge the same rates. Whether you&apos;re with PG&E
-                in the Bay Area, SCE in Los Angeles, or SDG&E in San Diego, your
-                electricity costs are among the highest in the country — but the
-                specifics differ significantly. This guide compares all three
-                side by side and walks through what each utility offers to help
-                you lower your bill.
+                SDG&amp;E had the highest residential average electricity rate of California&apos;s three large investor-owned utilities in June 2026: 45.5 cents per kilowatt-hour. PG&amp;E averaged 34.4 cents and SCE averaged 33.7 cents. Those are utility-wide averages for bundled residential customers. Your actual price depends on your rate plan, when you use electricity, your climate zone, your baseline allowance and whether a community choice aggregator supplies your generation.
               </p>
+              <div className='rounded-xl border border-border bg-muted/30 p-5 my-8'>
+                <p className='font-semibold text-foreground mb-2'>Quick answer</p>
+                <p className='text-foreground/80 m-0'>SDG&amp;E is the most expensive by average residential rate. But SCE&apos;s sample hot-climate bill was the highest in the state&apos;s June report because those households used more electricity. The utility name tells only half the story. Usage and location finish it.</p>
+              </div>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                2026 Rate Comparison
-              </h2>
-
-              {/* Rate Comparison Table */}
-              <div className='overflow-x-auto mb-8'>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>2026 Rate Comparison</h2>
+              <div className='overflow-x-auto mb-5'>
                 <table className='w-full border-collapse text-sm'>
-                  <thead>
-                    <tr className='border-b-2 border-border'>
-                      <th className='text-left py-3 pr-4 font-bold text-foreground'>
-                        &nbsp;
-                      </th>
-                      <th className='text-center py-3 px-4 font-bold text-foreground'>
-                        PG&E
-                      </th>
-                      <th className='text-center py-3 px-4 font-bold text-foreground'>
-                        SCE
-                      </th>
-                      <th className='text-center py-3 px-4 font-bold text-foreground'>
-                        SDG&E
-                      </th>
-                    </tr>
-                  </thead>
+                  <thead><tr className='border-b-2 border-border'><th className='text-left py-3 pr-4'>June 2026 measure</th><th className='text-center py-3 px-3'>PG&amp;E</th><th className='text-center py-3 px-3'>SCE</th><th className='text-center py-3 px-3'>SDG&amp;E</th></tr></thead>
                   <tbody>
-                    <tr className='border-b border-border'>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Avg. Residential Rate
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~41.5¢/kWh
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~34.5¢/kWh
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~45.7¢/kWh
-                      </td>
-                    </tr>
-                    <tr className='border-b border-border'>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Monthly Fixed Charge
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$24.15
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$24.15
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$24.15
-                      </td>
-                    </tr>
-                    <tr className='border-b border-border'>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Avg. Monthly Bill
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$270
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$250
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$325
-                      </td>
-                    </tr>
-                    <tr className='border-b border-border'>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        2026 Rate Change
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~−5% (temporary)
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        −2 to −3%
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        +11.4%
-                      </td>
-                    </tr>
-                    <tr className='border-b border-border'>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Peak TOU Rate
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~48-61¢/kWh
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~58-74¢/kWh
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~55-65¢/kWh
-                      </td>
-                    </tr>
-                    <tr className='border-b border-border'>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Territory
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        N. &amp; Central CA
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        Greater LA area
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        San Diego area
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Customers
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~5.5 million
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~5 million
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~1.4 million
-                      </td>
-                    </tr>
+                    <tr className='border-b border-border'><td className='py-3 pr-4 font-medium'>Residential average rate</td><td className='text-center py-3 px-3'>34.4¢/kWh</td><td className='text-center py-3 px-3'>33.7¢/kWh</td><td className='text-center py-3 px-3'>45.5¢/kWh</td></tr>
+                    <tr className='border-b border-border'><td className='py-3 pr-4 font-medium'>Change from early 2026 comparison point</td><td className='text-center py-3 px-3'>−3.7% from Jan. 1</td><td className='text-center py-3 px-3'>−0.1% from Jan. 1</td><td className='text-center py-3 px-3'>−2.0% from Apr. 1</td></tr>
+                    <tr className='border-b border-border'><td className='py-3 pr-4 font-medium'>Sample non-CARE bill, hotter zone</td><td className='text-center py-3 px-3'>$168</td><td className='text-center py-3 px-3'>$254</td><td className='text-center py-3 px-3'>$130*</td></tr>
+                    <tr><td className='py-3 pr-4 font-medium'>Sample non-CARE bill, cooler zone</td><td className='text-center py-3 px-3'>$124</td><td className='text-center py-3 px-3'>$152</td><td className='text-center py-3 px-3'>$156*</td></tr>
                   </tbody>
                 </table>
               </div>
-
-              <p className='text-foreground/60 text-xs mb-8 italic'>
-                Rates are approximate averages as of early 2026 and vary by rate
-                plan, tier, and time of use. Sources: CPUC rate filings, utility
-                rate schedules.
+              <p className='text-foreground/60 text-xs mb-8'>
+                Source: the California Public Advocates Office&apos;s <a href='https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf' target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>, pp. 8, 13–15 and 20–24. Rates exclude the California Climate Credit. Sample bills use different reported usage and climate zones, so they are examples, not utility-wide average bills. *SDG&amp;E&apos;s report notes that its coastal sample used more electricity than its desert sample.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                SDG&E: The Highest Rates in the Continental U.S.
-              </h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Average Rate Is Not Your Rate Plan</h2>
+              <p>The 34.4, 33.7 and 45.5 cent figures answer a statewide comparison question. They do not tell you what one kilowatt-hour will cost at 6 p.m. tonight. The state calculates a residential average from utility revenue and residential electricity sales. A time-of-use tariff, by contrast, prices your electricity by season and hour. A baseline credit, CARE or FERA discount, fixed charge, local tax and CCA generation charge can change the total again.</p>
+              <p>That is why two neighbors can use the same number of kilowatt-hours and still receive different bills. Before comparing utilities, read the rate-schedule name on the bill and compare the total kWh, billing days and peak-period use.</p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                SDG&E customers consistently pay the highest electricity rates
-                of any major utility in the lower 48 states. At roughly 45.7
-                cents per kWh, SDG&E is nearly triple the national average.
-                Peak TOU rates can exceed 60 cents per kWh during summer
-                evenings.
-              </p>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>PG&amp;E: Similar Average Rate, Different TOU Choices</h2>
+              <p>PG&amp;E&apos;s June residential average was 34.4 cents per kWh after a March 1 rate change lowered the residential average by about 3.7% from January 1. PG&amp;E also began showing a Base Services Charge separately in March. PG&amp;E says most customers pay around $24 a month, while CARE and FERA customers generally pay lower amounts. It also says the restructuring lowered per-kWh prices and may raise or lower an individual total bill depending on usage.</p>
+              <p>The two broad residential TOU choices have meaningfully different windows. E-TOU-C charges peak prices from 4–9 p.m. every day and includes a baseline credit. E-TOU-D uses a shorter 5–8 p.m. peak on non-holiday weekdays and no baseline credit. Our <Link href='/blog/pge-time-of-use-rates-2026' className={sourceLink}>PG&amp;E time-of-use guide</Link> compares the current schedules and the usage patterns each one tends to fit.</p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Why so expensive?</strong> SDG&E has a smaller customer
-                base (1.4 million versus PG&E&apos;s 5.5 million) to spread
-                infrastructure costs across. San Diego County&apos;s wildfire
-                risk means massive spending on grid hardening and liability
-                insurance. SDG&E also invested heavily in importing natural gas
-                for power generation, costs that flowed through to ratepayers.
-              </p>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>SCE: Climate and Usage Can Outweigh the Average</h2>
+              <p>SCE posted the lowest June residential average of the three at 33.7 cents per kWh. Yet the state&apos;s sample non-CARE bill for hot climate zone 15 was $254, compared with $152 in cooler zone 6. The report says the hotter-zone sample used about 700 kWh a month while the cooler sample used about 385 kWh. A lower average rate did not overcome much higher consumption.</p>
+              <p>SCE&apos;s June 1 update changed its residential average by only about one-tenth of one percent from January. If an SCE bill jumped sharply, first compare kWh and billing days with the same month last year, then check peak-period use and the selected rate plan.</p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>What SDG&E offers to help:</strong> SDG&E has CARE (30-35%
-                discount for qualifying incomes), FERA (18% discount for families
-                of 3+), Medical Baseline, and a rate comparison tool in your
-                online account. SDG&E also offers a Level Pay Plan that averages
-                your bill over 12 months to smooth out summer spikes — it
-                doesn&apos;t save money, but makes budgeting easier. Details at{' '}
-                <a
-                  href='https://www.sdge.com/residential/pricing-plans/about-our-pricing-plans'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  SDG&E pricing plans
-                </a>
-                .
-              </p>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>SDG&amp;E: The Highest Residential Average Rate</h2>
+              <p>SDG&amp;E remained the clear rate outlier at 45.5 cents per kWh in June, even after a June 1 update reduced its residential average by about 2% from April. Its TOU schedules can place a wide spread between on-peak and lower-priced periods. That makes the specific plan and the timing of air conditioning, cooking, laundry and EV charging especially important.</p>
+              <p>Start with the current schedule rather than a statewide average. The <Link href='/blog/sdge-time-of-use-rates-2026' className={sourceLink}>SDG&amp;E time-of-use rate guide</Link> explains the major residential options and peak windows.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                PG&E: A Temporary Dip (Don&apos;t Get Comfortable)
-              </h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What a CCA Changes on Your Bill</h2>
+              <p>A community choice aggregator buys or generates electricity for customers in participating cities and counties. The investor-owned utility still delivers the power, reads the meter, sends the consolidated bill, maintains the distribution system and handles outages. A CCA customer therefore sees utility delivery charges plus CCA generation charges, and may also see a Power Charge Indifference Adjustment.</p>
+              <p>Do not compare only the CCA generation line with a bundled utility&apos;s all-in rate. Use the joint rate comparison for your CCA and rate schedule, or the CPUC&apos;s <a href='https://www.cpuc.ca.gov/RateComparison' target='_blank' rel='noopener noreferrer' className={sourceLink}>California Electric Rate Comparison</a> tool. That is the closest apples-to-apples check.</p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                PG&E is the only California utility with a projected rate
-                decrease in 2026 — approximately 5%. This is largely due to
-                lower-than-expected wildfire fund contributions and some
-                regulatory true-ups, not a fundamental cost improvement. PG&E
-                has multi-year rate increase requests pending before the CPUC
-                that would push rates back up in 2027 and beyond.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Even with the temporary dip, PG&E&apos;s average rate of ~41.5
-                cents per kWh is still roughly double the national average of 18 cents.
-                PG&E&apos;s fixed charge of ~$24.15/month took effect in March
-                2026.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>What PG&E offers to help:</strong> CARE and FERA
-                discounts, Medical Baseline, a rate plan comparison tool in
-                your online account, SmartAC and other demand response programs
-                that pay you small credits for letting PG&E cycle your AC during
-                extreme heat events, and rebates on energy-efficient appliances.
-                Check{' '}
-                <a
-                  href='https://www.pge.com/en/account/rate-plans/find-your-best-rate-plan.html'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  PG&E&apos;s rate plan finder
-                </a>{' '}
-                to see if you&apos;re on the cheapest plan for your usage.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                SCE: Rising the Fastest
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE sits in the middle on per-kWh rates (~34.5 cents) but surprised many with a 2-3% rate decrease in January 2026 instead of the projected increase. However, with peak TOU rates reaching 58-74 cents per kWh, the savings are offset by extremely high peak charges. SCE serves the greater Los Angeles area, the Inland Empire, and parts of Central California — some of the hottest regions in the state, where air conditioning drives heavy summer usage.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>The rate surprise:</strong> Unlike PG&E and SDG&E, SCE rates actually decreased 2-3% as of January 1, 2026, despite being in the middle of a massive wildfire mitigation program. The company is undergrounding thousands of miles of power lines in high-fire-risk areas — multi-billion-dollar capital projects that typically get added to the rate base. However, the 2026 decrease was due to specific regulatory adjustments. Going forward, expect rates to resume their upward trajectory.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>What SCE offers to help:</strong> CARE and FERA discounts,
-                Medical Baseline, multiple TOU rate plans (use the rate comparison
-                tool in{' '}
-                <a
-                  href='https://www.sce.com/mysce/myaccount'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  SCE My Account
-                </a>{' '}
-                to find your cheapest option), rebates on smart thermostats and
-                efficient appliances, and the Summer Discount Plan which provides
-                bill credits in exchange for limited AC cycling during heat events.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                What About Community Choice Aggregators (CCAs)?
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Many California communities have formed CCAs — local energy
-                programs that purchase electricity on behalf of residents, using
-                the existing utility grid for delivery. If you&apos;re in a CCA
-                area, your rates may differ from the standard utility rates above.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Some CCAs offer rates slightly below or at parity with the default
-                utility, with a higher percentage of renewable energy. Others are
-                slightly more expensive. Check whether you&apos;re enrolled in a
-                CCA (it&apos;s usually the default in CCA areas — you may have
-                been switched without realizing it). You can opt out and return
-                to your utility&apos;s bundled service at any time if the CCA
-                rate isn&apos;t competitive. A list of California CCAs is
-                available at{' '}
-                <a
-                  href='https://cal-cca.org/cca-members/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  CalCCA&apos;s member directory
-                </a>
-                .
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Actionable Steps for Any Utility Customer
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Regardless of which utility you&apos;re with, these steps can
-                help reduce your electricity costs right now, at no cost.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>1. Compare rate plans.</strong> Every utility offers
-                multiple TOU plans. Log into your account and use the rate
-                comparison tool to see which plan is cheapest based on your
-                actual usage history. This is free, takes 10 minutes, and can
-                save you 10-15%.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>2. Check CARE/FERA eligibility.</strong> If your household
-                income qualifies, you can get 18-35% off your entire bill. Many
-                eligible households haven&apos;t applied. The income limits are
-                higher than you might expect.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>3. Check for Medical Baseline.</strong> If anyone in your
-                household uses electricity-dependent medical equipment, you may
-                qualify for extra electricity at the lowest rate tier.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>4. Shift heavy usage off-peak.</strong> All three utilities
-                have significantly cheaper off-peak rates (typically before 4 PM
-                and after 9 PM). Running your dishwasher, laundry, and EV charger
-                during off-peak hours costs 40-50% less per kWh than peak hours.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>5. Check utility rebates before buying appliances.</strong>{' '}
-                All three utilities offer rebates on energy-efficient appliances,
-                smart thermostats, and weatherization. Check your utility&apos;s
-                rebate page before buying anything — you might save $50 to $200.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                How Solar Savings Compare Across the Three Utilities
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Because utility rates differ significantly, solar savings also
-                vary by utility. The higher your per-kWh rate, the more you save
-                by offsetting grid purchases with solar.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                For a household paying $300/month, here&apos;s a rough comparison
-                of what solar + battery savings look like across the three
-                utilities (assuming a well-designed system with 75-85%
-                self-consumption).
-              </p>
-
-              {/* Savings Comparison Table */}
-              <div className='overflow-x-auto mb-8'>
-                <table className='w-full border-collapse text-sm'>
-                  <thead>
-                    <tr className='border-b-2 border-border'>
-                      <th className='text-left py-3 pr-4 font-bold text-foreground'>
-                        &nbsp;
-                      </th>
-                      <th className='text-center py-3 px-4 font-bold text-foreground'>
-                        PG&E
-                      </th>
-                      <th className='text-center py-3 px-4 font-bold text-foreground'>
-                        SCE
-                      </th>
-                      <th className='text-center py-3 px-4 font-bold text-foreground'>
-                        SDG&E
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className='border-b border-border'>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Current monthly bill
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $300
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $300
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $300
-                      </td>
-                    </tr>
-                    <tr className='border-b border-border'>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Est. total with solar
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $190-$230
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $180-$220
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $170-$210
-                      </td>
-                    </tr>
-                    <tr className='border-b border-border'>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Est. monthly savings
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $70-$110
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $80-$120
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $90-$130
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className='py-3 pr-4 font-medium text-foreground/80'>
-                        Est. year 1 savings
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $840-$1,320
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $960-$1,440
-                      </td>
-                      <td className='text-center py-3 px-4 text-foreground/80'>
-                        $1,080-$1,560
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <p className='text-foreground/60 text-xs mb-8 italic'>
-                Estimates assume solar + battery PPA with 75-85%
-                self-consumption. Actual savings depend on system size, roof
-                orientation, usage patterns, and specific PPA rate. These
-                numbers are for illustration only.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                These numbers grow each year because your solar rate stays fixed
-                while utility rates continue rising. By year 5, monthly savings
-                are typically 40-60% higher than year-1 figures.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Whether solar makes sense for you depends on more than just your
-                utility — your roof condition, sun exposure, how long you plan to
-                stay in your home, and your financial priorities all matter. Our{' '}
-                <Link
-                  href='/blog/nem-3-california-still-worth-it'
-                  className='text-primary hover:underline'
-                >
-                  NEM 3.0 guide
-                </Link>{' '}
-                walks through how to evaluate your specific situation step by step.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                The Bottom Line
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                All three California utilities charge rates far above the national
-                average of 18 cents/kWh. SDG&E is the most expensive at 45.7 cents/kWh,
-                followed by PG&E at 41.5 cents and SCE at 34.5 cents. While SCE posted a
-                surprising 2-3% decrease in 2026, all three utilities have rate increases already
-                approved through 2028. Before considering solar or any major change, start with
-                the free stuff: check your rate plan, apply for CARE or FERA if eligible, and
-                shift heavy usage off-peak. Those three steps alone can save 10-30% with zero
-                investment. For longer-term protection against rates that keep climbing, solar
-                with battery storage delivers the most meaningful savings across all three utility territories.
-              </p>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What to Check Before Considering Solar</h2>
+              <ol className='list-decimal pl-6 space-y-3'>
+                <li><strong>Compare usage, not just dollars.</strong> Check kWh per day against the same season last year and account for a longer billing cycle.</li>
+                <li><strong>Run the utility&apos;s rate comparison.</strong> A plan change can help when your load falls outside the peak window; it cannot fix unusually high consumption by itself.</li>
+                <li><strong>Check CARE, FERA and Medical Baseline.</strong> These programs serve different eligibility needs and can be more relevant than a solar quote.</li>
+                <li><strong>Separate generation from delivery.</strong> If you have a CCA, compare the combined cost and review the correct joint rate document.</li>
+                <li><strong>Model solar from your own interval data.</strong> A useful proposal should show consumption, production, imports, exports, rate-plan assumptions and battery behavior. A statewide savings percentage is not enough.</li>
+              </ol>
+              <p>If PG&amp;E is the problem you are trying to diagnose, use our <Link href='/blog/why-is-my-pge-bill-so-high' className={sourceLink}>PG&amp;E high-bill checklist</Link> before requesting a system proposal.</p>
             </div>
 
-            {/* CTA */}
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>
-                Curious About Your Savings Potential?
-              </h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                If you&apos;re exploring the PPA route, the California Rate
-                Relief Program offers a quick eligibility check for PG&E, SCE,
-                and SDG&E customers. 60 seconds, no obligation.
-              </p>
-              <Link
-                href='/#qualify'
-                className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-              >
-                Check My Eligibility
-                <ArrowRight className='h-4 w-4' />
-              </Link>
-            </div>
-
-            {/* Navigation */}
-            <div className='mt-10 pt-8 border-t border-border flex justify-between items-center'>
-              <Link
-                href='/blog/nem-3-california-still-worth-it'
-                className='text-primary hover:underline font-medium inline-flex items-center gap-2'
-              >
-                <ArrowLeft className='h-4 w-4' />
-                Previous Article
-              </Link>
-              <Link
-                href='/blog'
-                className='text-primary hover:underline font-medium inline-flex items-center gap-2'
-              >
-                All Articles
-                <ArrowRight className='h-4 w-4' />
-              </Link>
-            </div>
+            <ArticleCTA heading='See Whether Solar Fits Your Actual Bill' body='California Rate Relief is a private referral service. Homeowners can request an assessment based on utility, usage, property and roof fit. There is no obligation.' />
           </article>
         </div>
       </main>
       <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
+      <div className='container mx-auto px-4 max-w-3xl'><TrustedSources domain='crr' variant='compact' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
+      <div className='container mx-auto px-4 max-w-3xl'><RelatedInstallers picks='general' /></div>
     </PublicLayout>
   );
 }

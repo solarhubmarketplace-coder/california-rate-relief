@@ -2,18 +2,23 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { intakeHrefForPath, isCommercialIntentPath } from '@/lib/intake-routing';
 
 export function Header() {
+  const pathname = usePathname();
+  const isCommercial = isCommercialIntentPath(pathname);
+
   return (
     <header className='bg-card border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-card/95'>
       <div className='container mx-auto px-4'>
         <div className='flex items-center justify-between h-16'>
           {/* Logo */}
-          <div className='flex items-center'>
+          <Link href='/' className='flex items-center' aria-label='California Rate Relief home'>
             <Image
               src='/img/logo.svg'
-              alt='California Rate Relief Program'
+              alt='California Rate Relief'
               width={36}
               height={36}
               className='h-9 w-9'
@@ -23,10 +28,10 @@ export function Header() {
                 California Rate Relief
               </span>
               <span className='text-xs text-muted-foreground block -mt-1 font-medium tracking-wide uppercase'>
-                Program
+                Solar referrals
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* Nav + CTA */}
           <div className='flex items-center gap-4'>
@@ -36,6 +41,9 @@ export function Header() {
               </Link>
               <Link href='/solar-panels-california' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
                 Solar in CA
+              </Link>
+              <Link href='/commercial-solar' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
+                Commercial
               </Link>
               <Link href='/blog' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
                 Blog
@@ -47,12 +55,12 @@ export function Header() {
             <Link href='/blog' className='lg:hidden text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
               Blog
             </Link>
-            <Link href='/#qualify'>
+            <Link href={intakeHrefForPath(pathname)}>
               <Button
                 size='sm'
                 className='bg-primary hover:bg-primary/90 text-primary-foreground font-medium shadow-md hover:shadow-lg transition-all text-sm'
               >
-                Check Eligibility
+                {isCommercial ? 'Commercial Assessment' : 'Check Eligibility'}
               </Button>
             </Link>
             <Link href='/login' className='hidden xl:block'>

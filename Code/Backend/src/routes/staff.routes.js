@@ -1,0 +1,14 @@
+const express = require('express');
+const staffController = require('../controllers/staff.controller');
+
+const router = express.Router();
+router.get('/referrals', staffController.listReferrals);
+router.post('/referrals', staffController.recordReferral);
+router.patch('/referrals/:id', staffController.updateReferral);
+router.get('/scorecard', staffController.getScorecard);
+router.get('/submissions', staffController.listSubmissions);
+router.patch('/submissions/:id/classification', staffController.classifySubmission);
+router.get('/owner-notifications', staffController.listOwnerNotifications);
+router.post('/owner-notifications/:id/reconcile', staffController.reconcileOwnerNotification);
+
+module.exports = router;

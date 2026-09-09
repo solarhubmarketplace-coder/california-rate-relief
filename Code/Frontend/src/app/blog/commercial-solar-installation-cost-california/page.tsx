@@ -222,7 +222,7 @@ export default function CommercialSolarInstallationCostCalifornia() {
                 The California Rate Relief Program helps commercial property owners evaluate solar options and incentive eligibility. Free assessment, no obligation.
               </p>
               <Link
-                href='/#qualify'
+                href='/commercial-assessment'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
                 Check My Eligibility

@@ -35,15 +35,14 @@ export function Footer() {
                 </div>
               </div>
               <p className='text-white/90 text-sm leading-relaxed font-medium'>
-                Helping California homeowners reduce their energy bills through
-                the Rate Relief Program. We connect homeowners with solar
-                contractors licensed by the California Contractors State License
-                Board.
+                California Rate Relief collects residential and commercial
+                project information and connects California property owners with
+                solar providers for further review.
               </p>
               <div className='flex items-center gap-2 pt-2'>
                 <Shield className='h-4 w-4 text-white/80' />
                 <span className='text-white/80 text-xs font-medium'>
-                  Installers verified against CSLB records
+                  Private referral service
                 </span>
               </div>
               <p className='text-white/60 text-xs leading-relaxed pt-2'>
@@ -95,6 +94,15 @@ export function Footer() {
                 Information
               </h4>
               <ul className='space-y-3'>
+                <li>
+                  <Link
+                    href='/commercial-solar'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Commercial Solar
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href='/blog'

@@ -338,6 +338,15 @@ class QueueService {
     }
   }
 
+  async rejectManualIntakeTask(task) {
+    if (!task.leads?.project_type) return false;
+    await this.updateTask(task.id, {
+      status: "failed",
+      error_message: "Manual-review intake cannot enter legacy outreach automation",
+    });
+    return true;
+  }
+
   /**
    * Process email queue
    */
@@ -346,6 +355,7 @@ class QueueService {
 
     for (const task of tasks) {
       if (!task.leads) continue;
+      if (await this.rejectManualIntakeTask(task)) continue;
 
       const lead = task.leads;
       if (!lead.email) {
@@ -598,6 +608,7 @@ class QueueService {
 
     for (const task of tasks) {
       if (!task.leads) continue;
+      if (await this.rejectManualIntakeTask(task)) continue;
 
       const lead = task.leads;
       if (!lead.phone) {
@@ -828,6 +839,7 @@ class QueueService {
 
     for (const task of tasks) {
       if (!task.leads) continue;
+      if (await this.rejectManualIntakeTask(task)) continue;
 
       const lead = task.leads;
       if (!lead.phone) {
@@ -1193,10 +1205,13 @@ class QueueService {
     if (autoDialSettings.enabled) {
       const { data: newHotLeads, error: newError } = await supabaseAdmin
         .from("leads")
-        .select("id, phone, name")
-        .eq("type", "hot")
-        .eq("status", "new")
-        .not("phone", "is", null);
+          .select("id, phone, name")
+          .eq("type", "hot")
+          .eq("status", "new")
+          // Durable /api/intake records are manually reviewed and forwarded.
+          // Legacy records have no project_type and retain the existing flow.
+          .is("project_type", null)
+          .not("phone", "is", null);
 
       if (newError) {
         console.error("[QueueService] Error fetching new hot leads:", newError);
@@ -1247,6 +1262,7 @@ class QueueService {
         .select("id, phone, name")
         .eq("type", "hot")
         .eq("status", "declined")
+        .is("project_type", null)
         .gt("created_at", new Date(Date.now() - 5 * 60 * 1000).toISOString())
         .not("phone", "is", null);
 
@@ -1345,6 +1361,7 @@ class QueueService {
         .from("leads")
         .select("id, phone, name")
         .eq("status", "declined")
+        .is("project_type", null)
         .not("phone", "is", null);
 
       if (smsError) {
