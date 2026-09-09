@@ -8,7 +8,6 @@ import { SavingsComparison } from '@/components/landing/SavingsComparison';
 import { SavingsCalculator } from '@/components/landing/SavingsCalculator';
 import { FAQAccordion } from '@/components/landing/FAQAccordion';
 import { FinalCTA } from '@/components/landing/FinalCTA';
-import { FloatingMobileCTA } from '@/components/landing/FloatingMobileCTA';
 import { QualificationWizard } from '@/components/landing/QualificationWizard';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
@@ -210,9 +209,6 @@ export default function HomePage() {
           }}
         />
       </div>
-
-      {/* Sticky mobile CTA bar (hidden on md+) */}
-      <FloatingMobileCTA />
     </PublicLayout>
   );
 }

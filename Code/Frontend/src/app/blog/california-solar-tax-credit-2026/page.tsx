@@ -7,9 +7,9 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'California Solar Tax Credit 2026: What\u2019s Still Available After the ITC Expired?',
+    "California Solar Tax Credit 2026: What's Still Available",
   description:
-    'The federal residential solar tax credit (ITC) expired December 31, 2025. Here\'s what\'s still available in 2026 and why PPAs are now the smartest path to solar.',
+    "The federal solar tax credit (ITC) expired Dec 31, 2025. What's still available in 2026, and why PPAs are now the smartest path.",
   alternates: {
     canonical: '/blog/california-solar-tax-credit-2026',
   },
@@ -109,7 +109,7 @@ export default function CaliforniaSolarTaxCredit2026() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                As of January 1, 2026, that credit no longer exists for residential homeowners. If you buy a solar system for your home in 2026, you get zero federal tax credit. There is no phase-down, no reduced percentage — it&apos;s simply gone. This is the single biggest change to solar economics in a decade.
+                As of January 1, 2026, that credit no longer exists for residential homeowners. Public Law 119-21, signed July 4, 2025, rewrote IRC § 25D(h): the credit &quot;shall not apply with respect to any expenditures made after December 31, 2025.&quot; The trigger is when you spend the money, not when you file. If you buy a solar system for your home in 2026, you get zero federal tax credit. There is no phase-down, no reduced percentage — it&apos;s simply gone. This is the single biggest change to solar economics in a decade.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -121,11 +121,11 @@ export default function CaliforniaSolarTaxCredit2026() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Here&apos;s the critical detail most people miss: while the residential ITC is gone, the commercial Investment Tax Credit (Section 48E) is still available. Commercial and third-party-owned solar projects can claim a 30% base credit for systems that begin construction by July 4, 2026, or are placed in service by December 31, 2027.
+                Here&apos;s the critical detail most people miss: while the residential ITC is gone, the commercial Investment Tax Credit (Section 48E) is still available. It has its own clock. Public Law 119-21 ends § 48E for solar facilities placed in service after December 31, 2027, and IRS Notice 2025-42 confirms that termination applies only to facilities whose construction begins after July 4, 2026. So a commercial or third-party-owned project qualifies if it begins construction on or before July 4, 2026, or is placed in service by December 31, 2027. The rate is 6% at base and 30% for a facility under 1 MW AC or one meeting prevailing-wage and apprenticeship standards — a home rooftop array is far under 1 MW, so 30% is the number that applies there.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Why does this matter to you as a homeowner? Because of Power Purchase Agreements (PPAs). In a PPA, a third-party company owns the solar system on your roof. Since the company owns it — not you — it qualifies as a commercial project. The company claims the 30% commercial ITC, which reduces their cost. They pass those savings to you in the form of a lower per-kWh rate.
+                Why does this matter to you as a homeowner? Because of Power Purchase Agreements (PPAs). In a PPA, a third-party company owns the solar system on your roof. Since the company owns it — not you — it is treated as a business investment, and the company, not you, is the § 48E taxpayer. A provider whose project clears the deadlines above can claim the 30% credit, which holds their cost down and shows up in the per-kWh rate they quote you. Whether a specific provider qualifies is their tax question to answer, so ask them before you sign.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -141,7 +141,7 @@ export default function CaliforniaSolarTaxCredit2026() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Now the math has tilted decisively toward PPAs. If you buy a system in 2026, you pay full price with no federal credit. If you sign a PPA, the provider claims the commercial ITC and offers you a rate that&apos;s typically 30-50% below your current utility rate — with $0 down, no maintenance costs, and no system ownership headaches.
+                Now the math has tilted decisively toward PPAs. If you buy a system in 2026, you pay full price with no federal credit. If you sign a PPA, the provider is the one positioned to claim the commercial ITC, and providers typically quote a rate 30-50% below your current utility rate — with $0 down, no maintenance costs, and no system ownership headaches.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -153,7 +153,7 @@ export default function CaliforniaSolarTaxCredit2026() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Option B — Sign a PPA ($0 down):</strong> The provider claims the commercial ITC. Your rate: ~$0.10-0.14/kWh (locked in). Monthly payment: ~$75-105. Savings vs. utility: ~$145-175/month from day one. No maintenance costs, no ownership risk. The provider handles everything.
+                <strong>Option B — Sign a PPA ($0 down):</strong> The provider owns the system and claims any commercial ITC it qualifies for; you claim nothing. Your rate: ~$0.10-0.14/kWh (locked in). Monthly payment: ~$75-105. Savings vs. utility: ~$145-175/month from day one. No maintenance costs, no ownership risk. The provider handles everything.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

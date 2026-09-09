@@ -178,11 +178,11 @@ export default function IsSolarWorthItCalifornia2026() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The 30% federal residential ITC was extended multiple times and was originally scheduled to phase out years ago. Congress let it expire at the end of 2025. This was a big deal: it reduced the effective cost of a $20,000 system to $14,000. Without it, a purchased system now requires $5,000+ more out of pocket or a higher monthly loan payment.
+                The 30% federal residential ITC was extended multiple times and was originally scheduled to phase out years ago. Congress ended it outright: Public Law 119-21, signed July 4, 2025, amended IRC § 25D so the credit does not apply to expenditures made after December 31, 2025. This was a big deal: it reduced the effective cost of a $20,000 system to $14,000. Without it, a purchased system now requires $5,000+ more out of pocket or a higher monthly loan payment.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The exception: if you use a PPA, the third-party owner of the system (the PPA provider) is a business and still qualifies for a commercial ITC (30%, or up to 40% if located in an energy community). Providers pass some of these savings to you through lower per-kWh rates. This is why PPAs are now the strongest financing option for residential — you get the tax credit benefit without owning the system.
+                The exception: if you use a PPA, the third-party owner of the system (the PPA provider) is a business, and the commercial credit under IRC § 48E survives. It is not open-ended. Public Law 119-21 ends § 48E for solar facilities placed in service after December 31, 2027, and per IRS Notice 2025-42 that termination reaches only facilities whose construction begins after July 4, 2026 — so the provider has to clear one of those two marks. Where they do, the credit is 30% for a system this size, or higher with energy-community or domestic-content adders, and it shows up in the per-kWh rate they quote. What it is not is a credit you claim. Ask any provider how their project qualifies before you sign.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

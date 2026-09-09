@@ -9,9 +9,9 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'NEM 2.0 vs NEM 3.0 California: What Changed and What It Means For You',
+  title: "NEM 2.0 vs NEM 3.0 California: What Changed and Why",
   description:
-    "NEM 2.0 and NEM 3.0 are not the same. California's 2023 tariff change cut export credits by ~75%. Here is the side-by-side comparison, grandfathering rules, and what each tariff means for your solar payback.",
+    "California's 2023 tariff change cut solar export credits by ~75%. Side-by-side comparison, grandfathering rules, and payback impact.",
   alternates: {
     canonical: '/blog/nem-2-vs-nem-3-california',
   },

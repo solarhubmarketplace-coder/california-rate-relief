@@ -9,8 +9,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Solar System Quotes in California: How to Get 3 Real Quotes Fast',
-  description: "How to get legitimate California solar quotes without sales spam. What a real solar quote should include, which installers to request from, and what red flags to watch for.",
+  title: "Solar System Quotes in California: Get 3 Real Quotes Fast",
+  description: "How to get legitimate California solar quotes without sales spam. What a real quote includes and which red flags to watch for.",
   alternates: { canonical: '/blog/solar-system-quotes-california' },
   openGraph: { title: 'Solar System Quotes in California: How to Get 3 Real Quotes Fast', description: 'How to get California solar quotes and what to compare.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

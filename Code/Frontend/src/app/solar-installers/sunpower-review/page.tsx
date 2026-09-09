@@ -10,9 +10,9 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
-    'SunPower Review 2026: The Complete Solaria Rebrand, Explained',
+    "SunPower Review 2026: The Complete Solaria Rebrand",
   description:
-    'SunPower filed Chapter 11 in August 2024. Complete Solaria bought the assets and rebranded to SunPower in April 2025. Here is what California buyers need to know about the new entity.',
+    "SunPower filed Chapter 11 in August 2024. Complete Solaria bought the assets and rebranded to SunPower in April 2025.",
   alternates: { canonical: '/solar-installers/sunpower-review' },
 };
 

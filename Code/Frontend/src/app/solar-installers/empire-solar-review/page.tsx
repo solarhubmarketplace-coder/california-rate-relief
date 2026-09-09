@@ -9,8 +9,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Empire Solar Review 2026: Name Confusion, Mixed History, and Verification Checklist",
-  description: "Empire Solar has several namesake entities across states. The California operation has had mixed history. Some older positive reviews, recent delay complaints and closure rumors for related entities. Verify carefully before signing.",
+  title: "Empire Solar Review 2026: Name Confusion, Mixed History",
+  description: "Empire Solar has several namesake entities across states. Mixed history in California and recent delay complaints \u2014 verify before signing.",
   alternates: { canonical: '/solar-installers/empire-solar-review' },
 };
 

@@ -476,16 +476,17 @@ export default function TanklessProsConsGuide() {
                 installations stack real rebates and credits. SoCalGas
                 offers $200-$700 on qualifying gas tankless models meeting
                 CEE Advanced Tier efficiency. The federal Energy Efficient
-                Home Improvement Credit (25C) covers 30% of cost up to $600
-                per year for qualifying gas tankless or up to $2,000 per
-                year for heat pump water heaters — available through 2032.
-                TECH Clean California offers up to $4,885 for heat pump
-                water heaters through participating utilities.
+                Home Improvement Credit (25C) used to add 30% of cost up to
+                $600 per year for qualifying gas tankless or up to $2,000 per
+                year for heat pump water heaters, but Public Law 119-21
+                § 70505 terminated it for property placed in service after
+                December 31, 2025. TECH Clean California offers up to $4,885
+                for heat pump water heaters through participating utilities.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Stacking rebates and credits commonly shaves $700-$1,200 off
-                a gas tankless install and can exceed $3,000 on a heat pump
-                water heater.
+                Without 25C, stacking state and utility rebates commonly
+                shaves $200-$700 off a gas tankless install and can still
+                exceed $3,000 on a heat pump water heater.
               </p>
 
               {/* The Cons */}

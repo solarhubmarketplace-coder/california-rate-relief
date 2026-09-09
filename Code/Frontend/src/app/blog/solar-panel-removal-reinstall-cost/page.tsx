@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Solar Panel Removal and Reinstall Cost in California (2026 Guide)',
+    "Solar Panel Removal and Reinstall Cost in California",
   description:
     'Average R&R cost is $1,000-$3,500 or $200-$500 per panel. Learn why you need removal and reinstall, costs by roof type, and whether it voids warranties.',
   alternates: {

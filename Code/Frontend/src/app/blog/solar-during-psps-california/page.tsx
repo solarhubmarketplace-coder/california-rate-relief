@@ -7,9 +7,10 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'Solar During a PSPS in California: Will My Panels Work? (And What You Actually Need)',
-  description: "Does solar work during a PG&E PSPS outage? The honest answer, why grid-tied solar shuts off, how batteries change the story, and what you actually need for 24–36 hour blackout survival.",
+  title: "Solar During a PSPS in California: Will My Panels Work?",
+  description: "Does solar work during a PG&E PSPS outage? Why grid-tied solar shuts off, how batteries change that, and what you need to survive a blackout.",
   alternates: { canonical: '/blog/solar-during-psps-california' },
   openGraph: { title: 'Solar During PSPS California', description: 'The honest answer on solar during PSPS outages.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-during-psps-california' },
 };
@@ -80,6 +81,8 @@ export default function SolarDuringPSPSCA() {
                 <li><Link href="/blog/tesla-powerwall-installers-california" className="text-primary underline">Tesla Powerwall Installers California</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

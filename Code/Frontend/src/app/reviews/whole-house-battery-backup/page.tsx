@@ -100,7 +100,7 @@ const faqSchema = {
       name: 'Are whole-house batteries eligible for the federal tax credit in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Only when paired with solar. The federal Residential Clean Energy Credit (25D) expired December 31, 2025 for standalone residential solar and storage systems. However, storage paired with a qualifying solar installation still qualifies for the 30% credit through 2032 under existing transitional rules. Standalone battery installations after December 31, 2025 must rely on state incentives like SGIP. Commercial installations continue to qualify for the 30% ITC.',
+        text: 'No. The federal Residential Clean Energy Credit (25D) does not apply to expenditures made after December 31, 2025, and there is no transitional rule that keeps it alive for storage paired with solar. A homeowner buying a battery in 2026 — standalone or alongside a new solar array — claims nothing federally and must rely on state incentives like SGIP. Business-owned storage is different: it falls under the 48E commercial credit, which is 6% base and 30% only where the facility is under 1 MW AC or meets the prevailing-wage and apprenticeship requirements. Energy storage is exempt from the wind/solar termination dates that apply to 48E solar.',
       },
     },
     {
@@ -623,30 +623,28 @@ export default function WholeHouseBatteryBackupGuide() {
 
               {/* Federal tax credit */}
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Federal Tax Credit: Expired for Standalone Storage
+                Federal Tax Credit: Expired for Residential Storage
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Residential Clean Energy Credit (25D) expired on
-                December 31, 2025 for standalone residential solar and
-                storage systems. Storage installed <em>alongside</em>{' '}
-                qualifying solar still qualifies for the 30% credit
-                through 2032 under existing transitional rules. A
-                standalone battery retrofit after January 1, 2026 no
-                longer qualifies for the federal credit. This is the
-                single most impactful policy change affecting 2026
-                whole-house battery economics. the standalone storage
-                ITC would have added $3,750-$5,000 off a Powerwall 3
-                install that is no longer available.
+                The Residential Clean Energy Credit (25D) does not apply
+                to expenditures made after December 31, 2025 — Public Law
+                119-21 § 70506 ended it. That covers residential solar and
+                storage alike, standalone or paired. A battery you buy in
+                2026 gets no federal credit, and there is no transitional
+                rule that says otherwise. This is the single most impactful
+                policy change affecting 2026 whole-house battery economics.
+                the storage ITC would have added $3,750-$5,000 off a
+                Powerwall 3 install that is no longer available.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you are adding solar this year and pairing it with
-                storage, the stacking still works: 30% ITC on the full
-                combined system cost. If you are doing storage-only as
-                a retrofit on an existing solar array, check with a tax
-                professional, there is some ambiguity around
-                qualification for ITC on storage added to a previously
-                installed solar system, depending on the original
-                commissioning date.
+                Pairing a 2026 battery with new solar does not revive it.
+                The stacking that used to work — 30% off the full combined
+                system cost — ran on 25D, and 25D is gone. The federal
+                credit that survives is the business-side 48E credit,
+                claimed by whoever owns the system as a business asset: 6%
+                base, 30% only where the facility is under 1 MW AC or meets
+                the prevailing-wage and apprenticeship requirements. On a
+                lease or PPA that owner is the provider, not you.
               </p>
 
               {/* Permitting */}

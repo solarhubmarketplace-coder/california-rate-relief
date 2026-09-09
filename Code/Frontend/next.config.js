@@ -28,6 +28,15 @@ const nextConfig = {
     // `npx tsc --noEmit` was clean as of 2026-06-07.
     ignoreBuildErrors: false,
   },
+  async redirects() {
+    return [
+      {
+        source: '/blog/what-size-solar-system-do-i-need',
+        destination: '/blog/how-big-of-a-solar-system-do-i-need-california',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

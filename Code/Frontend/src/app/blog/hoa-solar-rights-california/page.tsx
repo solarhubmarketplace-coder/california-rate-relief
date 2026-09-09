@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    "Can an HOA Ban Solar Panels in California? Your Solar Rights, Explained",
+    "Can an HOA Ban Solar Panels in California? Your Rights",
   description:
-    "California's Solar Rights Act prevents HOAs from unreasonably blocking rooftop solar. Here is what the law says, what HOAs can and cannot do, and how to handle pushback.",
+    "California's Solar Rights Act prevents HOAs from unreasonably blocking rooftop solar. What the law says and how to handle pushback.",
   alternates: {
     canonical: '/blog/hoa-solar-rights-california',
   },

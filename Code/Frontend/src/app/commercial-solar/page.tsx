@@ -76,7 +76,7 @@ export default function CommercialSolarHub() {
               </div>
               <div className='bg-card rounded-xl border border-border p-4 text-center'>
                 <div className='text-2xl font-extrabold text-primary'>30%</div>
-                <div className='text-xs text-muted-foreground mt-1'>federal ITC through 2032</div>
+                <div className='text-xs text-muted-foreground mt-1'>federal ITC (§ 48E) if you begin construction by July 4, 2026</div>
               </div>
             </div>
 
@@ -92,7 +92,7 @@ export default function CommercialSolarHub() {
                 <Link href='/commercial-solar/financing-options' className='p-5 rounded-xl border border-border bg-card hover:border-primary transition-colors'>
                   <DollarSign className='h-5 w-5 text-primary mb-2' />
                   <h3 className='font-bold text-foreground mb-2'>Commercial Solar Financing</h3>
-                  <p className='text-sm text-foreground/80'>PPA, lease, direct ownership, and CPACE. 30% ITC, 5-year MACRS, and direct-pay for non-profits.</p>
+                  <p className='text-sm text-foreground/80'>PPA, lease, direct ownership, and CPACE. The § 48E ITC on a deadline, 5-year MACRS, and direct-pay for non-profits.</p>
                 </Link>
                 <Link href='/commercial-solar/cost-per-watt-california' className='p-5 rounded-xl border border-border bg-card hover:border-primary transition-colors'>
                   <Factory className='h-5 w-5 text-primary mb-2' />

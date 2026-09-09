@@ -96,7 +96,7 @@ const faqSchema = {
       name: 'Are there rebates or tax credits for tankless water heaters in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The federal residential solar Investment Tax Credit expired on December 31, 2025, but the Energy Efficient Home Improvement Credit (25C) still covers qualifying high-efficiency water heaters; up to $2,000/year for heat pump water heaters and $600/year for gas tankless models meeting CEE Advanced Tier efficiency. Utility rebates vary by location: SoCalGas offers $200-$700 rebates for qualifying gas tankless models, and many California utilities rebate $300-$1,500 on heat pump water heaters through TECH Clean California.',
+        text: 'Not federally. The same law that ended the residential solar credit (IRC 25D) after December 31, 2025 also terminated the Energy Efficient Home Improvement Credit (25C) for property placed in service after that date, so the old $2,000/year heat pump water heater and $600/year gas tankless credits are gone. State and utility rebates are what remain, and they vary by location: SoCalGas offers $200-$700 rebates for qualifying gas tankless models, and many California utilities rebate $300-$1,500 on heat pump water heaters through TECH Clean California.',
       },
     },
     {
@@ -355,8 +355,9 @@ export default function TanklessWaterHeaterCost() {
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Condensing gas units capture additional heat from exhaust
-                gases, reaching EF ratings of 0.92-0.97 and qualifying for the
-                federal Energy Efficient Home Improvement Credit (25C).
+                gases, reaching EF ratings of 0.92-0.97 — the tier that
+                qualified for the federal Energy Efficient Home Improvement
+                Credit (25C) before it ended after 2025.
                 Examples: Rinnai Sensei RX series, Navien NPE-A2, Rheem
                 Prestige condensing. Condensing units require PVC venting
                 (cheaper than stainless) but need a condensate drain. Total
@@ -575,18 +576,19 @@ export default function TanklessWaterHeaterCost() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                Federal Energy Efficient Home Improvement Credit (25C)
+                Federal Energy Efficient Home Improvement Credit (25C) — Ended
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The 25C tax credit is still active in 2026. It covers 30% of
+                The 25C tax credit is not available in 2026. It covered 30% of
                 the cost of qualifying high-efficiency water heaters, up to{' '}
                 <strong>$600/year for gas tankless</strong> meeting CEE
-                Advanced Tier efficiency (UEF ≥ 0.95 for most models). Heat
-                pump water heaters (tank-style, not tankless) qualify for the
-                higher <strong>$2,000/year</strong> cap under a separate
-                category. Note: the federal residential solar ITC expired on
-                December 31, 2025, but the 25C water heater credit is a
-                separate program and remains in place.
+                Advanced Tier efficiency (UEF ≥ 0.95 for most models), with a{' '}
+                <strong>$2,000/year</strong> cap for heat pump water heaters
+                (tank-style, not tankless). Public Law 119-21 § 70505
+                terminated it for property placed in service after
+                December 31, 2025 — the same law that ended the residential
+                solar credit under § 25D. Neither is available on a 2026
+                install.
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>

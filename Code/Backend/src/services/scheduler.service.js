@@ -7,6 +7,11 @@ const config = require("../config");
 const addMinutes = (date, minutes) => new Date(date.getTime() + minutes * 60000);
 const subMinutes = (date, minutes) => new Date(date.getTime() - minutes * 60000);
 
+// Defense-in-depth window for the sequence-email dedup guard in
+// scheduleSequenceEmails(): never queue more than one task for the same
+// lead/sequence/step within this window, regardless of task status.
+const SEQUENCE_TASK_DEDUP_WINDOW_MS = 24 * 60 * 60 * 1000;
+
 class SchedulerService {
   constructor() {
     this.isRunning = false;
@@ -102,6 +107,13 @@ class SchedulerService {
           name: "queues",
           fn: () => queueService.processQueues({ syncSettings }),
         },
+        // Runs every base tick (not throttled behind its own cadence) so a
+        // crashed worker can never leave a task — and the lead it belongs to
+        // — stuck in 'processing' for more than a few ticks.
+        {
+          name: "staleProcessingRecovery",
+          fn: () => this.recoverStaleProcessingTasks(),
+        },
       ];
 
       if (this.claimCadence("autoEnrollments", config.SCHEDULER_AUTO_ENROLLMENT_INTERVAL_MS, nowMs)) {
@@ -163,6 +175,10 @@ class SchedulerService {
 
       const now = new Date();
       const stepsBySequence = new Map();
+      // Defense-in-depth guard (see below): count skips so a broken pipeline
+      // logs one warning per pass instead of flooding the log — this is
+      // exactly the failure mode that produced 15,205 rows for one lead.
+      let guardSkipCount = 0;
 
       for (const tracking of activeSequences) {
         const lead = tracking.leads;
@@ -226,6 +242,35 @@ class SchedulerService {
           continue; // Already scheduled
         }
 
+        // ✨ Defense in depth: the check above only catches an outstanding
+        // 'pending'/'processing' task. If a bug elsewhere silently completes
+        // a sequence task without actually sending (e.g. an unhandled null
+        // step) or fails to advance tracking, this recognizes the same
+        // lead/sequence/step was already queued recently — regardless of
+        // status — and refuses to queue it again. Caps any future silent
+        // failure at 1 task/lead/day instead of 1 task/lead/tick.
+        const guardWindowStart = new Date(
+          now.getTime() - SEQUENCE_TASK_DEDUP_WINDOW_MS
+        ).toISOString();
+        const { data: recentTask } = await supabaseAdmin
+          .from("communication_tasks")
+          .select("id")
+          .eq("lead_id", lead.id)
+          .eq("metadata->>sequence_id", tracking.sequence_id)
+          .eq("metadata->>sequence_step", String(currentStepOrder))
+          .gte("created_at", guardWindowStart)
+          .limit(1);
+
+        if (recentTask && recentTask.length > 0) {
+          guardSkipCount += 1;
+          if (guardSkipCount === 1) {
+            console.warn(
+              `[Scheduler] 24h dedup guard: skipping sequence step ${currentStepOrder} for lead ${lead.id} - a task for this lead/sequence/step was already created within the last 24h`
+            );
+          }
+          continue;
+        }
+
         // Queue the tracking record's current (next unsent) step. Processing
         // the last step causes email-sequence.service to mark it complete.
         await queueService.createTask({
@@ -243,8 +288,82 @@ class SchedulerService {
           `[Scheduler] Scheduled sequence step ${currentStepOrder} for lead ${lead.id} (${sequenceName})`
         );
       }
+
+      if (guardSkipCount > 1) {
+        console.warn(
+          `[Scheduler] 24h dedup guard: suppressed ${guardSkipCount - 1} additional skip warning(s) this pass`
+        );
+      }
     } catch (error) {
       console.error("[Scheduler] Error scheduling sequence emails:", error);
+    }
+  }
+
+  /**
+   * Reset communication_tasks stuck in status 'processing' for longer than
+   * SCHEDULER_STALE_PROCESSING_MINUTES back to 'pending'.
+   *
+   * A task is marked 'processing' right before its send attempt and should
+   * flip to 'completed'/'failed'/'superseded' within seconds. If the worker
+   * crashes (or the process is killed) mid-task, the row — and the lead
+   * behind it — can otherwise stay stuck in 'processing' forever, since the
+   * queue's "existing task" checks treat 'processing' as outstanding work.
+   * Bounded to a small batch per pass to keep the scan cheap on the DB.
+   */
+  async recoverStaleProcessingTasks() {
+    try {
+      // Defensive fallbacks: config always provides a valid clamped integer
+      // in production (see src/config/index.js's getEnvInt), but guard here
+      // too so a missing/partial config (e.g. in tests) can't turn into a
+      // NaN-based Date and throw instead of just using the sane default.
+      const thresholdMinutes = Number.isFinite(config.SCHEDULER_STALE_PROCESSING_MINUTES)
+        ? config.SCHEDULER_STALE_PROCESSING_MINUTES
+        : 30;
+      const batchSize = Number.isFinite(config.SCHEDULER_STALE_PROCESSING_BATCH_SIZE)
+        ? config.SCHEDULER_STALE_PROCESSING_BATCH_SIZE
+        : 50;
+      const cutoffIso = new Date(Date.now() - thresholdMinutes * 60 * 1000).toISOString();
+
+      const { data: staleTasks, error } = await withRetry(
+        () =>
+          supabaseAdmin
+            .from("communication_tasks")
+            .select("id")
+            .eq("status", "processing")
+            .lt("updated_at", cutoffIso)
+            .limit(batchSize),
+        { label: "Scheduler.staleProcessingRecovery" }
+      );
+
+      if (error) {
+        console.error("[Scheduler] Error scanning for stale processing tasks:", error);
+        return;
+      }
+
+      if (!staleTasks || staleTasks.length === 0) {
+        return;
+      }
+
+      const ids = staleTasks.map((t) => t.id);
+      const { error: updateError } = await supabaseAdmin
+        .from("communication_tasks")
+        .update({
+          status: "pending",
+          error_message: `stale processing task recovered ${new Date().toISOString()}`,
+          updated_at: new Date().toISOString(),
+        })
+        .in("id", ids);
+
+      if (updateError) {
+        console.error("[Scheduler] Error resetting stale processing tasks:", updateError);
+        return;
+      }
+
+      console.warn(
+        `[Scheduler] Recovered ${ids.length} stale 'processing' task(s) stuck for more than ${thresholdMinutes} minutes`
+      );
+    } catch (error) {
+      console.error("[Scheduler] Error in recoverStaleProcessingTasks:", error);
     }
   }
 

@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    'Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)',
+    "Is Solar Still Worth It Under NEM 3.0 in California?",
   description:
-    'NEM 3.0 cut solar export credits by 75%. An honest breakdown of the new economics, when solar still works, when it doesn\'t, and how battery storage changes the math.',
+    "NEM 3.0 cut solar export credits by 75%. An honest breakdown of when solar still works and how battery storage changes the math.",
   alternates: {
     canonical: '/blog/nem-3-california-still-worth-it',
   },

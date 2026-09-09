@@ -9,8 +9,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "New Day Solar Review 2026: 31+ Years, Family-Owned, Ownership-Only (Murrieta CA)",
-  description: "New Day Solar is a family-owned Murrieta CA installer with 31+ years of experience, very positive Yelp and forum reviews, strong loan rates, and FranklinWH battery pairing.",
+  title: "New Day Solar Review 2026: 31+ Years, Family-Owned",
+  description: "New Day Solar is a family-owned Murrieta, CA installer with 31+ years, strong Yelp reviews, and FranklinWH battery pairing.",
   alternates: { canonical: '/solar-installers/new-day-solar-review' },
 };
 

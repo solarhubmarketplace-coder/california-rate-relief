@@ -8,6 +8,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
   title: "Solar Carports in California: Cost & Permits",
   description:
@@ -104,7 +105,7 @@ export default function SolarCarportCAGuide() {
                 </table>
               </div>
               <p>
-                These are before the federal 30% Residential Clean Energy Credit (ITC), which applies to solar carports just like rooftop arrays. A $40,000 two-vehicle carport nets to roughly $28,000 after the credit, assuming you have federal tax liability to absorb it.
+                These are the prices you pay. The federal 30% Residential Clean Energy Credit used to take a $40,000 two-vehicle carport down to roughly $28,000, but it is gone: IRC § 25D no longer applies to expenditures made after December 31, 2025. A carport you buy in 2026 gets no federal credit.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">When a Solar Carport Beats a Rooftop Install</h2>
@@ -168,7 +169,7 @@ export default function SolarCarportCAGuide() {
               <div className="space-y-6">
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Does the 30% federal tax credit apply to solar carports?</h3>
-                  <p className="text-foreground/80">Yes. The Residential Clean Energy Credit (IRC Section 25D) applies to the full qualified cost of the solar carport, including the structural canopy when it&apos;s an integral part of the PV system. Work with a tax professional to confirm what portion of your specific install qualifies.</p>
+                  <p className="text-foreground/80">Not any more. The Residential Clean Energy Credit (IRC Section 25D) once covered the full qualified cost of a solar carport, canopy included where the structure was integral to the PV system. Public Law 119-21 ended it for expenditures made after December 31, 2025. If you paid for your carport in 2025 or earlier, work with a tax professional on what portion qualifies. If you are buying in 2026, there is no federal credit to claim — a third-party owner on a lease or PPA may still claim the commercial credit under IRC § 48E, but that is their credit, not yours.</p>
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Can I add a battery to a solar carport?</h3>
@@ -192,6 +193,8 @@ export default function SolarCarportCAGuide() {
                 <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

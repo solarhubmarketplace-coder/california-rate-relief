@@ -8,8 +8,8 @@ import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSo
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'California Title 24 Part 6 Commercial Solar Requirements 2026',
-  description: "California's 2025 Energy Code (Title 24 Part 6) makes solar PV + battery storage mandatory for most new nonresidential buildings permitted after January 1, 2026. Here is what qualifies, sizing rules, and compliance.",
+  title: "California Title 24 Part 6 Commercial Solar Requirements",
+  description: "California's Title 24 Part 6 makes solar PV + battery mandatory for most new nonresidential buildings after Jan 1, 2026.",
   alternates: { canonical: '/commercial-solar/title-24-requirements' },
   openGraph: { title: 'California Title 24 Part 6 Commercial Solar Requirements 2026', description: 'Title 24 solar mandate for new California commercial buildings.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -109,7 +109,7 @@ export default function Title24Requirements() {
                 <li><strong>Budget for PV + battery from day one.</strong> The mandate adds meaningful cost — typically $100K-$500K+ on mid-size commercial projects depending on building size. Baking it into the pro-forma at design rather than treating it as a surprise change-order is essential.</li>
                 <li><strong>Choose a commercial EPC with Title 24 expertise.</strong> The sizing, interconnection, and Title 24 compliance documentation is specialized work. EPCs that regularly handle commercial new construction (as opposed to retrofit-only installers) will have the workflow down.</li>
                 <li><strong>Consider oversizing for operational benefit.</strong> The code specifies a minimum PV + battery size. Going meaningfully larger can reduce your building&apos;s operating energy cost substantially, especially given California commercial rates and TOU structures. The incremental cost per watt on a larger system is lower than on the code-minimum-only install.</li>
-                <li><strong>Don&apos;t forget the 30% ITC.</strong> Even though the solar is code-required, the federal Investment Tax Credit still applies to the full system cost. Same with MACRS depreciation. Title 24 compliance and federal tax incentives are independent — you get both.</li>
+                <li><strong>Don&apos;t forget the § 48E credit.</strong> Even though the solar is code-required, the federal Investment Tax Credit still applies to the full system cost — 6% base, 30% where the facility is under 1 MW AC or meets the prevailing-wage and apprenticeship requirements, and only if it begins construction by July 4, 2026 or is placed in service by December 31, 2027. Same with MACRS depreciation. Title 24 compliance and federal tax incentives are independent — you get both.</li>
               </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
@@ -123,7 +123,7 @@ export default function Title24Requirements() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes, wherever PV is required under the 2025 code, battery storage is also required. This is the biggest change from the 2022 code.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can I still claim the federal tax credit on Title-24-required solar?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. The federal Investment Tax Credit (30% base through 2032) applies regardless of whether the solar is code-required or voluntary. Same with 5-year MACRS depreciation. Title 24 compliance and federal incentives don&apos;t conflict.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. The federal Investment Tax Credit (§ 48E — 6% base, 30% where the facility is under 1 MW AC or meets prevailing-wage and apprenticeship requirements) applies regardless of whether the solar is code-required or voluntary, provided the project begins construction by July 4, 2026 or is placed in service by December 31, 2027. Same with 5-year MACRS depreciation. Title 24 compliance and federal incentives don&apos;t conflict.</p>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>

@@ -122,7 +122,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'solar-panel-inspection-california', 'solar-panel-maintenance-cost',
     'solar-panel-removal-reinstall-cost', 'solar-powered-ev-charger',
     'solar-ppa-explained-california', 'solar-ppa-vs-lease-california',
-    'solar-tax-credit-2026', 'what-size-solar-system-do-i-need',
+    'solar-tax-credit-2026',
   ];
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
     url: `${base}/blog/${slug}`,

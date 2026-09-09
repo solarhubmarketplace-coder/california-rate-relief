@@ -114,7 +114,7 @@ const faqSchema = {
       name: 'Is Noritz eligible for California SoCalGas rebates?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Most Noritz condensing models (NRC series, CB Combi) meet the CEE Advanced Tier efficiency threshold and qualify for SoCalGas rebates of $200-$700 depending on the model and current program year. The federal 25C tax credit also applies — 30% of cost up to $600 per year for qualifying gas tankless units through 2032. Combining both incentives typically nets $800-$1,200 in savings on a Noritz condensing install.',
+        text: 'Yes. Most Noritz condensing models (NRC series, CB Combi) meet the CEE Advanced Tier efficiency threshold and qualify for SoCalGas rebates of $200-$700 depending on the model and current program year. The federal 25C tax credit no longer applies — it paid 30% of cost up to $600 per year for qualifying gas tankless units, but Public Law 119-21 terminated it for property placed in service after December 31, 2025. On a 2026 install the utility rebates are the whole of it.',
       },
     },
     {
@@ -548,13 +548,15 @@ export default function NoritzTanklessReview() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The federal 25C Energy Efficient Home Improvement Credit
-                stacks on top, 30% of cost up to $600 per year for
-                qualifying gas tankless through 2032. Stacking SoCalGas +
-                25C + any utility-specific program (SMUD, PG&amp;E, SDG&amp;E
-                all run seasonal rebates) typically nets $800-$1,200 off a
-                Noritz install. That brings a $4,500 installed condensing
-                unit down to roughly $3,300-$3,700 net — narrowing the gap
-                against a $1,500 tank replacement.
+                used to stack on top at 30% of cost up to $600 per year for
+                qualifying gas tankless. It is gone: Public Law 119-21
+                § 70505 terminated 25C for property placed in service after
+                December 31, 2025. What still stacks is SoCalGas plus any
+                utility-specific program (SMUD, PG&amp;E, SDG&amp;E all run
+                seasonal rebates), typically $200-$700 off a Noritz install.
+                That brings a $4,500 installed condensing unit down to
+                roughly $3,800-$4,300 net — a wider gap against a $1,500
+                tank replacement than the 25C era left.
               </p>
 
               {/* Mid CTA */}

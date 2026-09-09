@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Phone } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 // =============================================================================
 // FinalCTA — bottom-of-page conversion section
@@ -31,21 +31,17 @@ export function FinalCTA() {
         </p>
         <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center'>
           <Link
-            href='#qualify'
+            href='/#qualify'
             className='inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-emerald-900 font-extrabold text-lg px-8 py-4 rounded-xl shadow-2xl'
           >
             Check My Eligibility Now
             <ArrowRight className='w-5 h-5' />
           </Link>
-          {/* REPLACE 800-555-0123 WITH REAL PHONE NUMBER */}
-          <a
-            href='tel:18005550123'
-            className='inline-flex items-center gap-2 text-white font-bold text-lg hover:text-amber-400'
-          >
-            <Phone className='w-5 h-5' />
-            or call (800) 555-0123
-          </a>
         </div>
+        {/* No phone number is published yet — a real one can be dropped in here (and in FloatingMobileCTA) once the owner supplies it. */}
+        <p className='mt-4 text-sm text-white/80'>
+          Takes about 60 seconds. No obligation, no salesperson visit.
+        </p>
       </div>
     </section>
   );

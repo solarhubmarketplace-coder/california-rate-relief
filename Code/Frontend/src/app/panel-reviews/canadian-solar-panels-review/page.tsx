@@ -8,8 +8,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'Canadian Solar Panels Review 2026: HiKu Series for California',
-  description: "Canadian Solar is a tier-1 public manufacturer with strong value positioning. Here is an honest review of Canadian Solar HiKu panels for California homeowners — warranty, efficiency, installer partnerships.",
+  title: "Canadian Solar Panels Review 2026: HiKu Series for CA",
+  description: "Canadian Solar is a tier-1 manufacturer with strong value positioning. An honest review of the HiKu series for California homeowners.",
   alternates: { canonical: '/panel-reviews/canadian-solar-panels-review' },
   openGraph: { title: 'Canadian Solar Panels Review 2026: HiKu Series for California', description: 'Canadian Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -83,7 +83,7 @@ export default function CanadianSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Canadian Solar May Not Be The Best Fit</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>You want US-manufactured panels.</strong> Canadian Solar panels are primarily manufactured in China, Vietnam, and other Asian facilities. They don&apos;t qualify for the IRA domestic-content ITC bonus.
+                <strong>You want US-manufactured panels.</strong> Canadian Solar panels are primarily manufactured in China, Vietnam, and other Asian facilities. They don&apos;t qualify for the domestic-content bonus on the commercial ITC (IRC § 48E), which a business or third-party system owner claims, not a homeowner.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>You want the absolute premium spec.</strong> Canadian Solar&apos;s standard HiKu is mid-tier residential. For hot inland California or homes with limited roof area where you want maximum production per square foot, higher-efficiency panels like REC Alpha Pure, Qcells Q.Peak Duo, or Silfab Elite may be worth the price premium.

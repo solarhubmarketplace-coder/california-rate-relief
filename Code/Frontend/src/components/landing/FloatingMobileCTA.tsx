@@ -7,20 +7,16 @@ import Link from 'next/link';
 // =============================================================================
 
 export function FloatingMobileCTA() {
+  // No phone number is published yet — once the owner supplies a real one,
+  // this can go back to a two-button bar (call + check eligibility) like it
+  // had before with a tel: link.
   return (
-    <div className='md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-2xl p-3 flex items-center gap-2'>
-      {/* REPLACE 800-555-0123 WITH REAL PHONE NUMBER */}
-      <a
-        href='tel:18005550123'
-        className='flex-1 text-center bg-white border-2 border-emerald-700 text-emerald-700 font-bold py-3 rounded-lg text-sm'
-      >
-        Call Now
-      </a>
+    <div className='md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-2xl p-3'>
       <Link
-        href='#qualify'
-        className='flex-1 text-center bg-emerald-700 text-white font-extrabold py-3 rounded-lg shadow-md text-sm'
+        href='/#qualify'
+        className='block w-full text-center bg-emerald-700 text-white font-extrabold py-3 rounded-lg shadow-md text-sm'
       >
-        Check Eligibility
+        Check My Eligibility
       </Link>
     </div>
   );

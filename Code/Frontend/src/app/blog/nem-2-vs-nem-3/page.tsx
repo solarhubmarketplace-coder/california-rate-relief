@@ -7,9 +7,9 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'NEM 2.0 vs NEM 3.0: What Changed and What It Means for California Solar in 2026',
+    "NEM 2.0 vs NEM 3.0: What Changed for California Solar",
   description:
-    'NEM 3.0 slashed solar export credits by 75-85%. Compare NEM 2.0 vs NEM 3.0 side by side — export rates, payback periods, grandfathering rules, and why solar PPAs make more sense than ever.',
+    "NEM 3.0 slashed solar export credits by 75-85%. NEM 2.0 vs NEM 3.0 side by side: export rates, payback, and grandfathering rules.",
   alternates: {
     canonical: '/blog/nem-2-vs-nem-3',
   },

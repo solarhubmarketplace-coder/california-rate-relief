@@ -60,7 +60,7 @@ export function HeroV2() {
           </div>
 
           <Link
-            href='#qualify'
+            href='/#qualify'
             className='inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-emerald-900 font-extrabold text-lg px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all'
           >
             Check My Eligibility · 60 Seconds

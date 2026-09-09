@@ -7,6 +7,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
   title: "Why Is My PG&E Bill So High? 7 Real Reasons",
   description: "TOU plan mismatch, the $24 base services charge, tier cliffs, a bad true-up and four more reasons your PG&E bill jumped - and what to do about each one.",
@@ -70,6 +71,8 @@ export default function WhyIsMyPGEBillSoHigh() {
                 <li><Link href="/blog/why-is-my-california-electric-bill-so-high" className="text-primary underline">Why Is My California Electric Bill So High? (Statewide)</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

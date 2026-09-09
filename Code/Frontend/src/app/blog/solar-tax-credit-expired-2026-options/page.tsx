@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    'The Solar Tax Credit Expired in 2026. Here Are Your Best Options Now.',
+    "The Solar Tax Credit Expired. Here Are Your Best Options",
   description:
-    'The federal residential solar tax credit (Section 25D) ended December 31, 2025. A clear breakdown of what\'s gone, what\'s still available, and every option for going solar in 2026.',
+    "The federal solar tax credit (Section 25D) ended Dec 31, 2025. What's gone, what's still available, and every option in 2026.",
   alternates: {
     canonical: '/blog/solar-tax-credit-expired-2026-options',
   },

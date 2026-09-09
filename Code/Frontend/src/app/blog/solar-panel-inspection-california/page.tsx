@@ -7,9 +7,9 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Solar Panel Inspection: What California Homeowners Need to Know (2026)',
+    "Solar Panel Inspection: What CA Homeowners Need to Know",
   description:
-    'Not required by law, but recommended. Learn what&apos;s included in a solar inspection, costs, signs you need one, and California-specific fire zone requirements.',
+    "Not required by law, but recommended. What's included in a solar inspection, costs, signs you need one, and CA fire-zone rules.",
   alternates: {
     canonical: '/blog/solar-panel-inspection-california',
   },

@@ -7,9 +7,9 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'What the California Energy Commission Means for Your Home Energy Costs',
+    "What the California Energy Commission Means for Your Bill",
   description:
-    'The CEC sets building energy standards, mandates solar on new homes, and shapes battery storage requirements. Here\'s how it affects existing homeowners in 2026.',
+    "The CEC sets building energy standards, mandates solar on new homes, and shapes battery rules. How it affects homeowners in 2026.",
   alternates: {
     canonical: '/blog/california-energy-commission',
   },

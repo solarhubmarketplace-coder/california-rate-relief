@@ -7,9 +7,10 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'What Is a Demand Charge? (And Do California Residential Customers Pay One?)',
-  description: "Demand charges explained in plain English. What they are, why commercial and some California residential customers pay them, and how solar/battery eliminate them.",
+  title: "What Is a Demand Charge? Do CA Residential Customers Pay?",
+  description: "Demand charges explained in plain English: what they are, who pays them in California, and how solar/battery eliminates them.",
   alternates: { canonical: '/blog/what-is-demand-charge-california' },
   openGraph: { title: 'What Is a Demand Charge?', description: 'Plain-English explanation of electric demand charges.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-demand-charge-california' },
 };
@@ -56,7 +57,7 @@ export default function WhatIsDemandChargeCA() {
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">If You Run a Business in California</h2>
-              <p>Battery storage for demand-charge management has some of the strongest commercial ROI of any California energy investment. Paired with SGIP (the Self-Generation Incentive Program) and the federal 30% ITC, the payback period for a commercial battery sized to clip peak demand often runs 4–6 years.</p>
+              <p>Battery storage for demand-charge management has some of the strongest commercial ROI of any California energy investment. Paired with SGIP (the Self-Generation Incentive Program) and the federal commercial ITC under IRC § 48E — 30% for a facility under 1 MW AC or one meeting prevailing-wage and apprenticeship standards — the payback period for a commercial battery sized to clip peak demand often runs 4–6 years. Storage is treated better than solar here: § 48E(e)(4)(C) exempts energy storage technology from the 2027 wind-and-solar termination, so the deadline pressure that applies to the panels does not apply to the battery itself.</p>
               <p>See our <Link href="/commercial-solar/sgip-battery-storage" className="text-primary underline">Commercial SGIP Battery Storage Guide</Link> for details.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
@@ -66,6 +67,8 @@ export default function WhatIsDemandChargeCA() {
                 <li><Link href="/commercial-solar" className="text-primary underline">Commercial Solar in California</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

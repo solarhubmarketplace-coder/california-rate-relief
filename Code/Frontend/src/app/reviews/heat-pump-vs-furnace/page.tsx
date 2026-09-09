@@ -112,7 +112,7 @@ const faqSchema = {
       name: 'Are there tax credits for heat pumps in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Under the Inflation Reduction Act, homeowners can claim a federal tax credit of up to $2,000 for qualifying heat pump installations through 2032. The heat pump must meet Energy Star efficiency requirements. This credit is available annually and can be combined with state and utility rebates. Gas furnaces do not qualify for the heat pump tax credit, though high-efficiency furnaces may qualify for a separate $600 credit under the 25C energy efficiency home improvement credit.',
+        text: 'No, not for a 2026 install. Under the Inflation Reduction Act homeowners could claim up to $2,000 for a qualifying heat pump under the 25C Energy Efficient Home Improvement Credit, and high-efficiency gas furnaces could claim a separate $600. Public Law 119-21 terminated 25C for property placed in service after December 31, 2025, so neither credit is available now. State and utility rebates — TECH Clean California and utility programs — are what remains.',
       },
     },
     {
@@ -744,7 +744,7 @@ export default function HeatPumpVsFurnacePage() {
                     {[
                       'Heating AND cooling in one system. replaces both furnace and AC',
                       '200-400% effective efficiency (COP 2.0-4.0), dramatically lower operating costs',
-                      'Up to $2,000 federal tax credit through 2032 under the Inflation Reduction Act',
+                      'State and utility rebates (TECH Clean California) still apply — the federal 25C credit ended for property placed in service after December 31, 2025',
                       'No combustion; no carbon monoxide risk, no gas leaks, no flue needed',
                       'Works with solar panels for near-zero operating costs',
                       'Better humidity control in cooling mode than most central AC systems',

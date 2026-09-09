@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    'The New $24 Fixed Charge on Your California Electric Bill, Explained',
+    "The New $24 Fixed Charge on Your California Electric Bill",
   description:
-    'PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every residential bill. Learn exactly what it is, why it exists, who pays less, and how it affects solar savings.',
+    "PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every bill. What it is, why it exists, and how it affects solar savings.",
   alternates: {
     canonical: '/blog/california-24-dollar-fixed-charge-explained',
   },

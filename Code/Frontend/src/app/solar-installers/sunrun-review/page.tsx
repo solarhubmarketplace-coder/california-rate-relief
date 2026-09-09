@@ -9,9 +9,9 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: 'Sunrun Review 2026: California Solar + Vivint Solar, Compared',
+  title: "Sunrun Review 2026: California Solar, Vivint Compared",
   description:
-    'Sunrun is the largest residential solar installer in the U.S. — here is an honest 2026 review for California homeowners, including what happened to Vivint Solar customers.',
+    "Sunrun is the largest residential solar installer in the U.S. An honest 2026 review, including what happened to Vivint Solar customers.",
   alternates: {
     canonical: '/solar-installers/sunrun-review',
   },
@@ -207,9 +207,13 @@ export default function SunrunReview() {
                 Subscription (PPA) and lease products, which roll panels,
                 batteries, and warranties into a single monthly payment
                 with no upfront cost. The trade-off with a Subscription:
-                you don&apos;t own the system, you don&apos;t claim the
-                federal tax credit, and the contract typically includes
-                an annual escalator (often 2.9 to 3.9%).
+                you don&apos;t own the system, and the contract typically
+                includes an annual escalator (often 2.9 to 3.9%). The
+                federal credit is no longer a point of difference — a
+                homeowner who buys gets none either, because IRC § 25D
+                does not apply to expenditures made after December 31,
+                2025. Sunrun, as the owner, is the party that may claim
+                the § 48E commercial credit if its project qualifies.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -339,8 +343,7 @@ export default function SunrunReview() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Sunrun makes less sense if you want to own your system
-                and claim the federal tax credit outright (pricing is
-                higher than competitors), if you value post-install
+                outright (pricing is higher than competitors), if you value post-install
                 service quality above all else (complaint volume is high),
                 or if you want a consistent install crew quality
                 (subcontractor variability is real).

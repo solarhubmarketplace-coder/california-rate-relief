@@ -9,8 +9,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Why Is My California Electric Bill So High? PGE, SCE, SDGE Explained',
-  description: "California has some of the highest electric rates in the country. Here is why PGE, SCE, SDGE, and LADWP bills keep climbing — fixed charges, TOU peak rates, wildfire costs, grid upgrades — and how to lower yours.",
+  title: "Why Is My California Electric Bill So High? PGE, SCE, SDGE",
+  description: "California has some of the highest electric rates in the country. Why PGE, SCE, SDGE, and LADWP bills keep climbing, and how to lower yours.",
   alternates: { canonical: '/blog/why-is-my-california-electric-bill-so-high' },
   openGraph: { title: 'Why Is My California Electric Bill So High? PGE, SCE, SDGE Explained', description: 'Why California utility bills keep rising and what you can do about it.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

@@ -7,8 +7,9 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'What Happens to My Solar Lease or PPA When I Sell My House in California?',
+  title: "Solar Lease or PPA When You Sell Your CA Home",
   description: "Selling a home with a solar lease or PPA in California — transfer, buyout, UCC lien issues, buyer-lender friction, and how to plan ahead.",
   alternates: { canonical: '/blog/what-happens-to-solar-lease-when-i-sell-california' },
   openGraph: { title: 'Solar Lease + Home Sale in California', description: 'Transfer vs buyout, UCC lien issues, buyer-lender objections.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-happens-to-solar-lease-when-i-sell-california' },
@@ -95,6 +96,8 @@ export default function SolarLeaseHomeSaleCA() {
                 <li><Link href="/blog/rent-solar-panels-for-your-home-california" className="text-primary underline">Renting Solar Panels in California</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

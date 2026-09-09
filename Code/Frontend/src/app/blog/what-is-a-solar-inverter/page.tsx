@@ -7,9 +7,10 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'What Is a Solar Inverter? (Plain-English Guide with Types, Brands, and Lifespans)',
-  description: "A plain-English explanation of solar inverters, what they do, the main types (string, micro, hybrid), how long they last, which brands are reliable, and warranty realities.",
+  title: "What Is a Solar Inverter? Types, Brands, and Lifespans",
+  description: "A plain-English explanation of solar inverters: the main types, how long they last, which brands are reliable, and warranty realities.",
   alternates: { canonical: '/blog/what-is-a-solar-inverter' },
   openGraph: { title: 'What Is a Solar Inverter?', description: 'Plain-English solar inverter guide.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-a-solar-inverter' },
 };
@@ -85,6 +86,8 @@ export default function WhatIsASolarInverter() {
                 <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

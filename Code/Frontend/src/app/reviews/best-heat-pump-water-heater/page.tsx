@@ -1263,12 +1263,12 @@ export default function BestHeatPumpWaterHeaters() {
                     Is there a federal tax credit for heat pump water heaters?
                   </summary>
                   <div className="px-4 pb-4 leading-relaxed" style={{ color: '#a1a1aa' }}>
-                    Yes. Under the Inflation Reduction Act, qualifying heat pump water heaters
-                    are eligible for a federal tax credit of up to $2,000. The unit must be
-                    ENERGY STAR certified and installed in your primary residence. This credit
-                    can be claimed annually and is available through 2032. Combined with state
-                    and utility rebates, many homeowners can get a heat pump water heater at
-                    effectively zero net cost.
+                    Not any more. Under the Inflation Reduction Act, qualifying heat pump water
+                    heaters were eligible for a federal credit of up to $2,000 under IRC 25C, but
+                    Public Law 119-21 terminated 25C for property placed in service after
+                    December 31, 2025. A 2026 install gets no federal credit. State and utility
+                    rebates — TECH Clean California, BayREN, and utility programs — still apply
+                    and remain the way to cut the net cost.
                   </div>
                 </details>
 

@@ -109,7 +109,7 @@ export default function SolarTaxCredit2026() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The One Big Beautiful Bill Act, signed into law in late 2025, eliminated the residential ITC effective December 31, 2025. Systems that were placed in service before that date still qualify. Systems purchased and installed in 2026 or later do not. There is no phase-down period for residential — it went from 30% to 0% overnight.
+                Public Law 119-21, signed July 4, 2025 and commonly called the One Big Beautiful Bill Act, killed the residential ITC. Section 70506 of that act rewrote IRC § 25D(h) so the credit &quot;shall not apply with respect to any expenditures made after December 31, 2025.&quot; Note what the statute keys on: the date you made the expenditure, not the tax year you file. Money you spent in 2025 still counts. Money you spend in 2026 does not. There is no phase-down period for residential — it went from 30% to 0% overnight.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -129,11 +129,11 @@ export default function SolarTaxCredit2026() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Here&apos;s what most people miss: the <strong>commercial</strong> Investment Tax Credit under Section 48E is still active. Projects that begin construction by July 4, 2026 or are placed in service by December 31, 2027 qualify for a 30% base credit. This applies to businesses, nonprofits (via direct pay), and — critically — third-party solar providers who install systems on residential rooftops through power purchase agreements (PPAs).
+                Here&apos;s what most people miss: the <strong>commercial</strong> Investment Tax Credit under Section 48E is still active. Public Law 119-21 ends it for solar facilities placed in service after December 31, 2027 — but per IRS Notice 2025-42, that termination reaches only facilities whose construction begins after July 4, 2026. So a project qualifies on either path: begin construction on or before July 4, 2026, or be placed in service by December 31, 2027. The § 48E rate is 6% at base and 30% for a facility under 1 MW AC or one meeting prevailing-wage and apprenticeship standards — a residential rooftop array is nowhere near 1 MW, so 30% is the operative number there. This applies to businesses, nonprofits (via direct pay), and — critically — third-party solar providers who install systems on residential rooftops through power purchase agreements (PPAs).
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                On top of the 30% base, bonus adders can push the credit even higher: a 10% bonus for projects in designated energy communities, a 10% bonus for systems meeting domestic content requirements, and a 10-20% bonus for projects serving low-income communities. In the right circumstances, the effective credit can reach 50% or more.
+                On top of the 30% rate, bonus adders can push the credit even higher: a 10% bonus for projects in designated energy communities, a 10% bonus for systems meeting domestic content requirements, and a 10-20% bonus for projects serving low-income communities. In the right circumstances, the effective credit can reach 50% or more.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -141,7 +141,7 @@ export default function SolarTaxCredit2026() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                This is the part that matters most for California homeowners right now. In a PPA (Power Purchase Agreement), a third-party company owns the solar panels on your roof. Because they own the system, they claim the commercial ITC. They then pass those savings to you through a lower per-kilowatt-hour rate. You pay a fixed monthly amount — typically 30-50% less than your current utility bill — and you don&apos;t pay anything upfront for the panels, installation, or maintenance.
+                This is the part that matters most for California homeowners right now. In a PPA (Power Purchase Agreement), a third-party company owns the solar panels on your roof. Because they own the system, they are the taxpayer for § 48E purposes and may claim the commercial credit if their project meets the begin-construction or placed-in-service deadlines above. Whether any particular provider qualifies is between them and the IRS — but where they do, that benefit shows up in the per-kilowatt-hour rate they quote you. You pay a fixed monthly amount — typically 30-50% less than your current utility bill — and you don&apos;t pay anything upfront for the panels, installation, or maintenance.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -193,7 +193,7 @@ export default function SolarTaxCredit2026() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                A PPA, on the other hand, still benefits from the commercial ITC. The third-party owner captures the 30% credit (or more with bonus adders), keeps the system cost low, and offers you a rate that undercuts your utility. You start saving from month one, with zero capital at risk. In 2026, this is the most straightforward path to lower electricity costs for California homeowners.
+                A PPA, on the other hand, can still benefit from the commercial ITC — the owner claims it, not you, and only if their project clears the § 48E deadlines. Where the owner does capture the 30% credit (or more with bonus adders), it holds their system cost down and lets them offer you a rate that undercuts your utility. You start saving from month one, with zero capital at risk. In 2026, this is the most straightforward path to lower electricity costs for California homeowners.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

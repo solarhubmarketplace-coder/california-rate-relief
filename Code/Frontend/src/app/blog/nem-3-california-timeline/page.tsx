@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    "NEM 3.0 California Timeline: Key Dates, Deadlines, and What Happens Next",
+    "NEM 3.0 California Timeline: Key Dates and Deadlines",
   description:
-    "A complete timeline of California's NEM 3.0 / Net Billing Tariff, the CPUC vote, the April 2023 go-live, grandfathering windows, AB 942, and what's coming in 2026 and beyond.",
+    "A complete timeline of California's NEM 3.0 tariff: the CPUC vote, the April 2023 go-live, grandfathering windows, and what's next.",
   alternates: {
     canonical: '/blog/nem-3-california-timeline',
   },

@@ -9,8 +9,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "LA Solar Group Review 2026: Vertical Integration (They Make Their Own Panels) With Mixed Reputation",
-  description: "LA Solar Group manufactures its own black-on-black panels — unique in residential CA solar. Yelp 4.2/5 across 1,000+ reviews offset by 55 BBB complaints and recurring roof leak reports. Honest 2026 review.",
+  title: "LA Solar Group Review 2026: In-House Panels, Mixed Reviews",
+  description: "LA Solar Group manufactures its own panels, unique in CA solar. Yelp 4.2/5 across 1,000+ reviews, offset by 55 BBB complaints.",
   alternates: { canonical: '/solar-installers/la-solar-group-review' },
 };
 

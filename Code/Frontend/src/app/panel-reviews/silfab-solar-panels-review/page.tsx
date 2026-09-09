@@ -8,8 +8,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'Silfab Solar Panels Review 2026: The US-Manufactured Tier-1 Choice',
-  description: "Silfab Solar is a North American-based tier-1 panel manufacturer with US factories, notable for IRA domestic-content bonus eligibility. Here is a California homeowner review — Cascade, Prime, Elite series.",
+  title: "Silfab Solar Panels Review 2026: US-Manufactured Tier-1",
+  description: "Silfab Solar is a North American tier-1 manufacturer with US factories, notable for IRA domestic-content bonus eligibility.",
   alternates: { canonical: '/panel-reviews/silfab-solar-panels-review' },
   openGraph: { title: 'Silfab Solar Panels Review 2026: The US-Manufactured Tier-1 Choice', description: 'Silfab Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -81,7 +81,7 @@ export default function SilfabSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The IRA Domestic-Content Advantage</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The federal Investment Tax Credit&apos;s 10% domestic-content bonus requires that panels (and related components) meet US-manufacturing threshold requirements. Silfab&apos;s US manufacturing presence qualifies — meaning a system with Silfab panels can potentially claim 40% federal ITC vs 30% for systems with primarily imported panels. That&apos;s a meaningful financial difference for buyers.
+                The 10% domestic-content bonus requires that panels (and related components) meet US-manufacturing threshold requirements. Silfab&apos;s US manufacturing presence qualifies. Read who benefits carefully: this bonus sits on the <em>commercial</em> credit under IRC § 48E, so a qualifying project can reach 40% rather than 30%. A homeowner buying a system in 2026 claims none of it — the residential credit under IRC § 25D ended for expenditures made after December 31, 2025. The party that benefits is a business buyer, or the third-party owner on a lease or PPA.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Verify with your installer whether your specific install qualifies for the domestic-content bonus — it depends on more than just the panel (inverters, racking, and other components factor in). But Silfab panels give you a strong start on that pathway.

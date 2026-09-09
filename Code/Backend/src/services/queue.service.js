@@ -439,6 +439,15 @@ class QueueService {
             console.log(
               `[QueueService] Sent sequence step ${step.step_order} to lead ${lead.id}`
             );
+          } else {
+            // ✨ FIX: A sequence task with no resolvable step (missing/errored
+            // tracking row, deleted step, etc.) used to fall through silently
+            // and get marked "completed" below without ever sending an email.
+            // Throw so this goes through the normal failure/retry path
+            // instead of being lost.
+            throw new Error(
+              `Sequence step unavailable for lead ${lead.id} step ${task.metadata.sequence_step}`
+            );
           }
         }
         // ✨ Check if lead has an active email sequence (first email)

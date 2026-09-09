@@ -16,9 +16,9 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
-    'Sunnova Review 2026: What the 2025 Chapter 11 Bankruptcy Means for Customers',
+    "Sunnova Review 2026: What the Chapter 11 Bankruptcy Means",
   description:
-    'Sunnova filed Chapter 11 in June 2025 and assets were sold to Solaris Assets / SunStrong Management. Here is what existing customers and California shoppers need to know in 2026.',
+    "Sunnova filed Chapter 11 in June 2025; assets sold to Solaris Assets / SunStrong Management. What customers need to know in 2026.",
   alternates: {
     canonical: '/solar-installers/sunnova-review',
   },

@@ -569,13 +569,13 @@ export default function RheemTanklessReview() {
                 California Rebates &amp; 25C Credit
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Rheem Prestige RTGH line (UEF 0.93) qualifies for the
+                The Rheem Prestige RTGH line (UEF 0.93) qualified for the
                 federal Energy Efficient Home Improvement Credit (25C) at
-                30% of cost up to $600/year. Performance Platinum and
-                EcoSmart typically do not meet the CEE Advanced Tier
-                threshold required for 25C, but check current model
-                specifications at purchase time as Rheem occasionally adds
-                higher-efficiency SKUs.
+                30% of cost up to $600/year. That credit is over — Public
+                Law 119-21 § 70505 terminated 25C for property placed in
+                service after December 31, 2025 — so on a 2026 install no
+                Rheem SKU earns a federal credit, whatever its efficiency
+                tier. The California rebates below are what is left.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SoCalGas offers $200-$500 rebates on qualifying Rheem gas

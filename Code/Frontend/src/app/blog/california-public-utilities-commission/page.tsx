@@ -7,9 +7,9 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'What Is the CPUC and How Does It Affect Your Electric Bill in 2026?',
+    "What Is the CPUC? How It Affects Your Electric Bill (2026)",
   description:
-    'The CPUC regulates PG&E, SCE, and SDG&E — setting your rates, approving fixed charges, and ruling on net metering. Here\'s what every California homeowner needs to know.',
+    "The CPUC regulates PG&E, SCE, and SDG&E \u2014 setting rates, approving fixed charges, and ruling on net metering.",
   alternates: {
     canonical: '/blog/california-public-utilities-commission',
   },

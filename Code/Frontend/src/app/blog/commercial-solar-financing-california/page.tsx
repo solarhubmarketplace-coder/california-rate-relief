@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Commercial Solar Financing Options in California (2026 Guide)',
+    "Commercial Solar Financing Options in California (2026)",
   description:
     'Explore commercial solar financing options in California: ITC, MACRS, commercial PPAs, C-PACE, and SBA loans. Full breakdown for business owners.',
   alternates: {
@@ -150,7 +150,7 @@ export default function CommercialSolarFinancingCalifornia() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you purchase a $250,000 system, you can deduct approximately $50,000-$75,000 per year for the first five years, reducing your taxable income significantly. Combined with the 30% ITC, you receive $75,000 in immediate tax credits PLUS accelerated depreciation deductions that compound over time. For many commercial businesses, this combination cuts the effective net cost of the system in half.
+                If you purchase a $250,000 system, you can deduct approximately $50,000-$75,000 per year for the first five years, reducing your taxable income significantly. Combined with the § 48E ITC — 6% base, 30% where the facility is under 1 MW AC or meets the prevailing-wage and apprenticeship requirements, and only for projects that begin construction by July 4, 2026 or are placed in service by December 31, 2027 — a project at the 30% rate receives $75,000 in immediate tax credits PLUS accelerated depreciation deductions that compound over time. For many commercial businesses, this combination cuts the effective net cost of the system in half.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -293,7 +293,7 @@ export default function CommercialSolarFinancingCalifornia() {
                 All Articles
               </Link>
               <Link
-                href='/blog/what-size-solar-system-do-i-need'
+                href='/blog/how-big-of-a-solar-system-do-i-need-california'
                 className='text-primary hover:underline font-medium inline-flex items-center gap-2'
               >
                 Next Article

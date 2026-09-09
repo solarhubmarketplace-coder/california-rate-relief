@@ -8,8 +8,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'REC Solar Panels Review 2026: Alpha Pure Series for California',
-  description: "REC Solar is a Norwegian-origin, now Reliance-owned tier-1 panel manufacturer known for the Alpha Pure series. Here is a California homeowner review — warranty, installer partnerships, and where REC fits.",
+  title: "REC Solar Panels Review 2026: Alpha Pure Series for CA",
+  description: "REC Solar is a Norwegian-origin, Reliance-owned tier-1 manufacturer known for the Alpha Pure series. A California homeowner review.",
   alternates: { canonical: '/panel-reviews/rec-solar-panels-review' },
   openGraph: { title: 'REC Solar Panels Review 2026: Alpha Pure Series for California', description: 'REC Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -92,7 +92,7 @@ export default function RecSolarReview() {
                 Price. REC Alpha Pure typically costs more per watt than baseline tier-1 panels like Trina Vertex S or Canadian Solar HiKu. On a budget-first install, the price premium may not be worth it.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Domestic content. REC panels are manufactured in Singapore — they do NOT qualify for the IRA domestic-content ITC bonus (10% additional credit). If domestic-content is important, consider Silfab (Washington State) or Qcells (Georgia) instead.
+                Domestic content. REC panels are manufactured in Singapore — they do NOT qualify for the domestic-content bonus on the commercial ITC (IRC § 48E), which a business or third-party system owner claims, not a homeowner (10% additional credit). If domestic-content is important, consider Silfab (Washington State) or Qcells (Georgia) instead.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
@@ -100,7 +100,7 @@ export default function RecSolarReview() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes. REC Alpha Pure is a premium tier-1 panel with HJT cell technology, strong warranty depth, and good hot-weather performance. Commonly considered among the best residential panels available.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Where are REC panels made?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Primarily in Singapore. REC panels do not qualify for the IRA domestic-content ITC bonus.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Primarily in Singapore. REC panels do not qualify for the domestic-content bonus on the commercial ITC (IRC § 48E), which a business or third-party system owner claims, not a homeowner.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Is REC Solar publicly traded?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>REC Group is privately held, now owned by Reliance Industries (the parent Reliance is publicly traded in India). Financial stability backing warranty claims is solid given the Reliance parentage.</p>

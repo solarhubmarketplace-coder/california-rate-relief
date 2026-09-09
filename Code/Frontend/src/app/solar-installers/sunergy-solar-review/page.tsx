@@ -9,8 +9,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunergy Solar Review 2026: CA-Focused Installer With Strong EnergySage Ratings",
-  description: "Sunergy Solar (Ladera Ranch / LA area) holds a 4.7/5 EnergySage rating across 92 reviews. Ownership model, Enphase microinverter equipment, and the delay complaints; the honest 2026 review.",
+  title: "Sunergy Solar Review 2026: CA Installer Ratings",
+  description: "Sunergy Solar holds a 4.7/5 EnergySage rating across 92 reviews. Ownership model, Enphase equipment, and delay complaints in this honest 2026 review.",
   alternates: { canonical: '/solar-installers/sunergy-solar-review' },
 };
 
@@ -104,7 +104,7 @@ export default function SunergyReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing and Ownership</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunergy is a clean ownership model: cash or loan. The company partners with Sungage Financial for solar loans but does not heavily push PPAs or leases. You own the system, which means you capture the 30% federal Residential Clean Energy Credit directly and you don&apos;t carry a 20-year contract when you sell the home. That&apos;s a genuine advantage over PPA-heavy competitors like Palmetto.
+                Sunergy is a clean ownership model: cash or loan. The company partners with Sungage Financial for solar loans but does not heavily push PPAs or leases. You own the system, which means you don&apos;t carry a 20-year contract when you sell the home. It no longer means a federal credit: the 30% Residential Clean Energy Credit does not apply to expenditures made after December 31, 2025. That&apos;s a genuine advantage over PPA-heavy competitors like Palmetto.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>

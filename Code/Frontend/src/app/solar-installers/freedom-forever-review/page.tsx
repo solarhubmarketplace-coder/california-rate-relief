@@ -16,9 +16,9 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
-    'Freedom Forever Solar Review 2026: What the Chapter 11 Bankruptcy Means',
+    "Freedom Forever Solar Review 2026: Chapter 11 Bankruptcy",
   description:
-    'Freedom Forever filed Chapter 11 on April 15, 2026. Here is what the bankruptcy means for existing customers, pending installs, and California homeowners who got a quote — plus how to compare alternatives.',
+    "Freedom Forever filed Chapter 11 on April 15, 2026. What it means for existing customers, pending installs, and California shoppers.",
   alternates: {
     canonical: '/solar-installers/freedom-forever-review',
   },

@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    'Net Billing vs Net Metering: The California Solar Difference, Explained',
+    "Net Billing vs Net Metering: The California Difference",
   description:
-    "Net metering and net billing sound similar but pay you very differently. Here is what California's NEM 3.0 Net Billing tariff changed, how the math now works, and what it means for your solar bill.",
+    "Net metering and net billing pay you very differently. What California's NEM 3.0 tariff changed and what it means for your bill.",
   alternates: {
     canonical: '/blog/net-billing-vs-net-metering-california',
   },

@@ -7,9 +7,9 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Solar Powered EV Charger: How to Charge Your EV With Solar in California',
+    "Solar Powered EV Charger: Charging Your EV With Solar",
   description:
-    'EV owners in California pay $100-$200+/month to charge at home. Learn how solar panels can offset your EV charging cost, available rebates, and TOU strategies.',
+    "EV owners in California pay $100-$200+/month to charge at home. How solar can offset that cost, rebates, and TOU strategies.",
   alternates: {
     canonical: '/blog/solar-powered-ev-charger',
   },

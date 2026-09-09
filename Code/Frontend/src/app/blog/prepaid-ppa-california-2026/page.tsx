@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    'Prepaid Solar PPA in California: How It Works, What It Costs, and Who It\'s Best For (2026)',
+    "Prepaid Solar PPA in California: Cost & How It Works",
   description:
-    'Prepaid PPAs are surging in California after the residential tax credit expired. Learn exactly how they work, what they cost, how they compare to regular PPAs and loans, and when they make sense.',
+    "Prepaid solar PPAs are surging in California after the tax credit expired. How they work, what they cost, and how they compare to loans and regular PPAs.",
   alternates: {
     canonical: '/blog/prepaid-ppa-california-2026',
   },

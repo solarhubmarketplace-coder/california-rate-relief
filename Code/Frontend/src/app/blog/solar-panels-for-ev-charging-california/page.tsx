@@ -9,8 +9,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Solar Panels for EV Charging in California: Size, Cost, and ROI',
-  description: "Sizing solar for an electric vehicle in California — how much extra capacity you need, what it adds to your system cost, and why EV + solar pays back faster than solar alone.",
+  title: "Solar Panels for EV Charging in California: Size & Cost",
+  description: "Sizing solar for an EV in California: how much extra capacity you need, what it adds to system cost, and the faster payback.",
   alternates: { canonical: '/blog/solar-panels-for-ev-charging-california' },
   openGraph: { title: 'Solar Panels for EV Charging in California: Size, Cost, and ROI', description: 'How to size solar for EV charging in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

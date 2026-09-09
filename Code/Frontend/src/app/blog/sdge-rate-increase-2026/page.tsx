@@ -7,9 +7,10 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'SDG&E Rate Increase 2026: Why San Diego Has the Highest Rates in America',
-  description: "SDG&E's 2026 rate changes explained. Why San Diego County rates hit 45.7¢/kWh, what drove the hike, the $24 Base Services Charge, and what customers can do.",
+  title: "SDG&E Rate Increase 2026: Highest Rates in America",
+  description: "SDG&E's 2026 rate changes explained: why San Diego hit 45.7\u00a2/kWh, the $24 Base Services Charge, and what customers can do.",
   alternates: { canonical: '/blog/sdge-rate-increase-2026' },
   openGraph: { title: 'SDG&E Rate Increase 2026', description: 'Plain-English SDG&E 2026 rate breakdown.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/sdge-rate-increase-2026' },
 };
@@ -64,6 +65,8 @@ export default function SDGERateIncrease2026() {
                 <li><Link href="/solar-savings/san-diego" className="text-primary underline">Solar Savings in San Diego</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

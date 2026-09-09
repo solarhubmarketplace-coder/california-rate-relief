@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Free Solar Panels in California: What\'s Real and What\'s a Scam (2026)',
+    "Free Solar Panels in California: What's Real, What's a Scam",
   description:
     'Is "free solar" real? Yes—but it\'s not actually free. Learn how $0-down solar PPAs work, spot the scams, and protect yourself in California.',
   alternates: {

@@ -88,7 +88,7 @@ export function SavingsCalculator() {
             </div>
 
             <Link
-              href='#qualify'
+              href='/#qualify'
               className='mt-6 block text-center bg-amber-400 hover:bg-amber-300 text-emerald-900 font-extrabold py-3.5 rounded-lg shadow-md transition-all'
             >
               Lock In My Savings →

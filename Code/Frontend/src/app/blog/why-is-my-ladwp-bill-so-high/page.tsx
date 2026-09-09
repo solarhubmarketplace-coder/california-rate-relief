@@ -7,8 +7,9 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'Why Is My LADWP Bill So High? (Even Though LADWP Rates Are Below SCE)',
+  title: "Why Is My LADWP Bill So High? (Rates Are Below SCE)",
   description: "LADWP rates are the lowest in LA Metro — so why did your bill jump? Tier pricing, AC usage, LIRA discount eligibility, and what to do.",
   alternates: { canonical: '/blog/why-is-my-ladwp-bill-so-high' },
   openGraph: { title: 'Why Is My LADWP Bill So High?', description: 'What really drives LADWP residential bills up.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-ladwp-bill-so-high' },
@@ -64,6 +65,8 @@ export default function WhyIsMyLADWPBillSoHigh() {
                 <li><Link href="/solar-savings/los-angeles" className="text-primary underline">Solar Savings in Los Angeles</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

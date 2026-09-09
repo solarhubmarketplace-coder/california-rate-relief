@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title:
-    "Low-Income Solar in California: DAC-SASH, SASH, CARE, and FERA Programs",
+    "Low-Income Solar in California: DAC-SASH, SASH, CARE, FERA",
   description:
-    "California has multiple programs that make solar dramatically more affordable for low-income households: DAC-SASH (free solar), SASH, CARE, and FERA. Here is who qualifies and how each works.",
+    "California has programs that make solar affordable for low-income households: DAC-SASH (free solar), SASH, CARE, and FERA. Who qualifies.",
   alternates: {
     canonical: '/blog/low-income-solar-california',
   },

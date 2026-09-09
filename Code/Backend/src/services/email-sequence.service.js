@@ -262,15 +262,27 @@ class EmailSequenceService {
      */
     async getNextStepForLead(leadId) {
         try {
-            // Get lead's current sequence tracking
+            // Get lead's current sequence tracking.
+            // NOTE: only embed email_sequences(*) here — there is no foreign
+            // key from lead_sequence_tracking to email_sequence_steps, so
+            // embedding email_sequence_steps(*) makes PostgREST reject the
+            // whole query. Steps are fetched separately below by sequence_id.
             const { data: trackingRows, error: trackError } = await supabaseAdmin
                 .from('lead_sequence_tracking')
-                .select('*, email_sequences(*), email_sequence_steps(*)')
+                .select('*, email_sequences(*)')
                 .eq('lead_id', leadId)
                 .is('completed_at', null)
                 .limit(1);
 
-            if (trackError || !trackingRows || trackingRows.length === 0) {
+            if (trackError) {
+                console.error(
+                    `[EmailSequenceService] Failed to fetch tracking for lead ${leadId}:`,
+                    trackError.message || trackError
+                );
+                return null;
+            }
+
+            if (!trackingRows || trackingRows.length === 0) {
                 return null;
             }
             const tracking = trackingRows[0];

@@ -7,10 +7,11 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'Solar Rebates by California Utility (2026): PG&E, SCE, SDG&E, LADWP, SMUD',
+  title: "Solar Rebates by California Utility (2026): PG&E to SMUD",
   description:
-    'Solar and battery rebates by California utility in 2026 — PG&E, SCE, SDG&E, LADWP, SMUD, Roseville Electric, Glendale Water & Power. SGIP, DAC-SASH, TECH Clean, and municipal-only programs.',
+    "Solar and battery rebates by California utility in 2026: PG&E, SCE, SDG&E, LADWP, SMUD, and municipal-only programs like SGIP.",
   alternates: { canonical: '/blog/solar-rebates-by-california-utility' },
   openGraph: {
     title: 'Solar Rebates by California Utility (2026)',
@@ -62,7 +63,7 @@ export default function SolarRebatesByCAUtility() {
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Statewide Programs (Apply Everywhere in California)</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Federal Residential Clean Energy Credit (ITC).</strong> 30% of qualified solar + battery cost, through 2032. Applies regardless of utility.</li>
+                <li><strong>Federal Residential Clean Energy Credit (ITC) — no longer available.</strong> Public Law 119-21 amended IRC § 25D so the credit does not apply to expenditures made after December 31, 2025. A homeowner who buys solar or a battery in 2026 gets nothing federally, in any utility territory. The commercial credit (IRC § 48E) still exists, but the system owner claims it — which on a lease or PPA is the provider, not you.</li>
                 <li><strong>Self-Generation Incentive Program (SGIP).</strong> Statewide battery rebate administered by CPUC. General market tier ~$150–$200/kWh. Equity Resiliency tier can cover the entire battery cost for qualifying households.</li>
                 <li><strong>California Property Tax Exclusion.</strong> Solar and battery systems do not trigger property tax reassessment.</li>
                 <li><strong>DAC-SASH and SASH.</strong> Low-income solar programs administered by GRID Alternatives. Income qualification required.</li>
@@ -134,7 +135,7 @@ export default function SolarRebatesByCAUtility() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How to Claim Everything You Qualify For</h2>
               <ol className="list-decimal pl-6 space-y-2">
-                <li><strong>Federal 30% ITC</strong>, claim on IRS Form 5695 with your tax return. Keep contractor invoice and proof of payment.</li>
+                <li><strong>Federal 30% ITC — only if your expenditure was made on or before December 31, 2025.</strong> Claim it on IRS Form 5695 with the return for the year the system was placed in service, and keep the contractor invoice and proof of payment. Nothing you spend in 2026 qualifies.</li>
                 <li><strong>SGIP (if applicable)</strong>. Your installer should file on your behalf. Confirm before signing. Lead time 60–120 days for reimbursement in some tiers.</li>
                 <li><strong>Utility-specific incentives</strong>. Usually handled through utility Marketplace program or manufacturer rebate forms. Ask your installer for a list of all applicable utility programs and which they&apos;ll file.</li>
                 <li><strong>CARE / FERA / LIRA / EAPR</strong> — apply directly through utility account online. These are ongoing bill discounts, not one-time rebates.</li>
@@ -150,6 +151,8 @@ export default function SolarRebatesByCAUtility() {
                 <li><Link href="/blog/pge-vs-sce-vs-sdge-rates-compared" className="text-primary underline">PG&amp;E vs SCE vs SDG&amp;E Rates Compared</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

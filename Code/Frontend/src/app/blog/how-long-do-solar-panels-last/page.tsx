@@ -7,9 +7,9 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'How Long Do Solar Panels Last? (2026 Lifespan & Degradation Data)',
+    "How Long Do Solar Panels Last? 2026 Lifespan Data",
   description:
-    'Solar panels last 30-40+ years in real-world use. Learn about degradation rates, warranties, inverter lifespan, and why California&apos;s climate gives panels an advantage.',
+    "Solar panels last 30-40+ years in real-world use. Degradation rates, warranties, inverter lifespan, and California's climate edge.",
   alternates: {
     canonical: '/blog/how-long-do-solar-panels-last',
   },

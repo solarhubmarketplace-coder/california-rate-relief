@@ -745,9 +745,10 @@ export default function EcoFlowDelta2MaxReview() {
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The federal Residential Clean Energy Credit (30% ITC) for
-                homeowners expired on December 31, 2025. Standalone battery
-                storage purchases made in 2026 and beyond no longer qualify for
-                the federal credit on a residential basis. Plan your purchase
+                homeowners did not survive 2025 — IRC § 25D no longer applies
+                to expenditures made after December 31, 2025. Battery storage
+                bought by a homeowner in 2026 and beyond, standalone or paired
+                with solar, gets no federal credit. Plan your purchase
                 math on California rebates and utility bill savings, not
                 federal tax treatment.
               </p>

@@ -8,8 +8,8 @@ import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSo
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'VNEM & NEM Aggregation California: Multi-Meter Commercial Solar',
-  description: "How California's Virtual Net Metering (VNEM) and NEM Aggregation let one solar system credit multiple meters on the same or contiguous property. AB 2175 expansion for logistics/manufacturing (2025-2026).",
+  title: "VNEM & NEM Aggregation California: Multi-Meter Solar",
+  description: "How California's Virtual Net Metering and NEM Aggregation let one solar system credit multiple meters on one property.",
   alternates: { canonical: '/commercial-solar/vnem-aggregation-multi-meter' },
   openGraph: { title: 'VNEM & NEM Aggregation California: Multi-Meter Commercial Solar', description: 'California Virtual Net Metering and NEM Aggregation rules for commercial multi-meter properties.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

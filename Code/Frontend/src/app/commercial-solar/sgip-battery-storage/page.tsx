@@ -91,12 +91,12 @@ export default function SgipCommercialStorage() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>SGIP + Federal ITC Stack</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The California SGIP rebate stacks on top of the federal 30% Investment Tax Credit. For a commercial battery install, the effective cost math works roughly like:
+                The California SGIP rebate stacks on top of the federal § 48E Investment Tax Credit — 6% base, 30% where the facility is under 1 MW AC or meets the prevailing-wage and apprenticeship requirements. Energy storage is exempt from the wind/solar termination dates, so a storage project is not on the July 4, 2026 begin-construction clock (solar paired with it is). For a commercial battery install, the effective cost math works roughly like:
               </p>
               <ol className='space-y-2 text-foreground/80 mb-6 list-decimal pl-6'>
                 <li><strong>Gross installed cost.</strong> E.g., $400/kWh × 200 kWh = $80,000</li>
                 <li><strong>Less SGIP rebate.</strong> E.g., $0.30/kWh × 200 kWh = $60,000 rebate (directional — varies by step/budget) — net $20,000</li>
-                <li><strong>Less 30% ITC.</strong> Applied to gross cost before SGIP per current IRS guidance (verify with your tax advisor): $24,000 credit</li>
+                <li><strong>Less the § 48E ITC</strong> — 6% base, 30% where the facility is under 1 MW AC or meets the prevailing-wage and apprenticeship requirements. At 30%, applied to gross cost before SGIP per current IRS guidance (verify with your tax advisor): $24,000 credit</li>
                 <li><strong>Less MACRS depreciation tax shield.</strong> Applied to gross cost less half the ITC per standard IRS rules</li>
                 <li><strong>Effective after-tax cost:</strong> often approaching zero or negative on smaller commercial systems when SGIP is at its high-tier rates</li>
               </ol>
@@ -124,7 +124,7 @@ export default function SgipCommercialStorage() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Approximately $0.15-$1.00 per kWh of installed storage capacity depending on budget, step, and equity qualifications. Equity-Resilience customers in high-fire-risk areas see the highest rates. Standard General Market commercial is at the lower end.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can SGIP stack with the federal ITC?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. SGIP and the 30% federal Investment Tax Credit stack. Combined, they can reduce commercial battery cost by 50-80% on some projects. Verify the specific stacking rules with your tax advisor since state rebates can reduce the ITC-eligible basis in some cases.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. SGIP and the federal § 48E Investment Tax Credit stack — 6% base, 30% where the facility is under 1 MW AC or meets the prevailing-wage and apprenticeship requirements. At the 30% rate the two combined can reduce commercial battery cost by 50-80% on some projects. Verify the specific stacking rules with your tax advisor since state rebates can reduce the ITC-eligible basis in some cases.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>What happens when SGIP budgets run out?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>The CPUC typically steps down rates as budgets fill and opens new budget allocations periodically. When a specific budget runs out, projects that applied are either waitlisted for the next allocation or move to a different budget if eligible. Historically the program has been re-funded multiple times; long-term availability is not guaranteed.</p>

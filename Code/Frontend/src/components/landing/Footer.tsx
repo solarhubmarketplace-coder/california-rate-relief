@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Mail, MapPin, Shield } from 'lucide-react';
+import { FloatingMobileCTA } from '@/components/landing/FloatingMobileCTA';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -165,6 +166,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <FloatingMobileCTA />
     </footer>
   );
 }

@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Solar Panel Bird Proofing: Costs, Methods, and California Guide (2026)',
+    "Solar Panel Bird Proofing: Costs and Methods (2026)",
   description:
     'Bird proofing costs $200-$500. Learn about mesh guards, spike strips, California fire zone requirements, and when to install protection.',
   alternates: {

@@ -7,6 +7,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
   title: 'TECH Clean California: Heat Pump Rebate Program Guide (2026)',
   description: "TECH Clean California rebates for heat pump water heaters and HVAC. Eligibility, amounts, how to apply, contractor directory, and how it stacks with solar.",
@@ -56,12 +57,12 @@ export default function TECHCleanCAGuide() {
               <p>Rebate amounts have varied over program phases. Confirm current levels with your contractor.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Stacking with Federal Tax Credits</h2>
-              <p>The federal Inflation Reduction Act (IRA) provides:</p>
+              <p>What the federal Inflation Reduction Act (IRA) left behind:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Energy Efficient Home Improvement Credit (25C).</strong> Up to $2,000/year for heat pump water heater + HVAC.</li>
+                <li><strong>Energy Efficient Home Improvement Credit (25C) — gone.</strong> It paid up to $2,000/year for a heat pump water heater + HVAC, but Public Law 119-21 § 70505 terminated it for property placed in service after December 31, 2025. A 2026 install claims nothing under 25C.</li>
                 <li><strong>High-Efficiency Electric Home Rebate (HEEHRA).</strong> Income-qualified point-of-sale rebates — being administered by the California Energy Commission throughout 2026.</li>
               </ul>
-              <p>TECH + 25C + HEEHRA can stack. For a middle-income household replacing a gas HVAC with a heat pump: $3,500 TECH + $2,000 federal 25C = $5,500 in combined incentives on a $12,000 install.</p>
+              <p>The old TECH + 25C + HEEHRA stack no longer includes 25C. For a middle-income household replacing a gas HVAC with a heat pump, that leaves $3,500 TECH on a $12,000 install; the $2,000 federal credit that would have brought it to $5,500 was available only for property placed in service through 2025.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How TECH Clean California Pairs with Solar</h2>
               <p>Heat pumps run on electricity. Pairing with solar turns the operating cost question from &ldquo;how much will this new electric load cost me&rdquo; into &ldquo;how much more solar do I need to size?&rdquo; Rough numbers for California:</p>
@@ -96,6 +97,8 @@ export default function TECHCleanCAGuide() {
                 <li><Link href="/blog/how-big-of-a-solar-system-do-i-need-california" className="text-primary underline">How Big of a Solar System Do I Need?</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

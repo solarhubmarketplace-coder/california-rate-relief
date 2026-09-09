@@ -8,10 +8,11 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'Solar Panel Cleaning in California: Cost, DIY Risks, and When It Actually Helps (2026)',
+  title: "Solar Panel Cleaning in California: Cost & DIY Risks",
   description:
-    'How much solar panel cleaning costs in California, when production loss justifies it, DIY vs pro, warranty traps, and the seasonal windows that matter most in wildfire country.',
+    "What solar panel cleaning costs in California, when it's worth it, DIY vs pro, warranty traps, and the best seasonal windows.",
   alternates: { canonical: '/blog/solar-panel-cleaning-california' },
   openGraph: {
     title: 'Solar Panel Cleaning California: 2026 Guide',
@@ -196,6 +197,8 @@ export default function SolarPanelCleaningCA() {
                 <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

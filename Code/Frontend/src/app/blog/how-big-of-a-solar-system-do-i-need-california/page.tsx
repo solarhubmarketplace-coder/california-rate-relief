@@ -9,8 +9,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'How Big of a Solar System Do I Need in California? 2026 Sizing Guide',
-  description: "How to size a solar system for your California home in 2026 — by monthly bill, by kWh usage, and by specific loads (EV, AC, pool). Plus why NEM 3.0 changes the optimal sizing.",
+  title: "How Big of a Solar System Do I Need in California?",
+  description: "How to size a solar system for your California home in 2026 \u2014 by monthly bill, kWh usage, and specific loads. Plus how NEM 3.0 changes sizing.",
   alternates: { canonical: '/blog/how-big-of-a-solar-system-do-i-need-california' },
   openGraph: { title: 'How Big of a Solar System Do I Need in California? 2026 Sizing Guide', description: 'Solar system sizing for California homes.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

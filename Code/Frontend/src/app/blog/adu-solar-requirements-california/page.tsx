@@ -7,8 +7,9 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'ADU Solar Requirements in California (2026): Title 24 Rules, Metering, and Cost',
+  title: "ADU Solar Requirements in California (2026)",
   description: "Does your California ADU need solar? A plain-English guide to Title 24 solar requirements for ADUs, metering options, and when the requirement is waived.",
   alternates: { canonical: '/blog/adu-solar-requirements-california' },
   openGraph: { title: 'ADU Solar Requirements California', description: 'California Title 24 solar rules for ADUs.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/adu-solar-requirements-california' },
@@ -78,7 +79,7 @@ export default function ADUSolarCA() {
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Cost Impact on ADU Budget</h2>
-              <p>A 2 kW ADU solar system typically adds $8,000–$12,000 to construction cost. This is usually rolled into the construction loan or home-equity line financing the ADU build. The 30% federal tax credit applies, netting to $5,600–$8,400 after tax credit.</p>
+              <p>A 2 kW ADU solar system typically adds $8,000–$12,000 to construction cost, and that is what it costs you now. This is usually rolled into the construction loan or home-equity line financing the ADU build. Budget the full amount: the 30% federal residential credit used to bring it down to $5,600–$8,400, but IRC § 25D no longer applies to expenditures made after December 31, 2025.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Practical Tips</h2>
               <ul className="list-disc pl-6 space-y-2">
@@ -95,6 +96,8 @@ export default function ADUSolarCA() {
                 <li><Link href="/blog/solar-battery-backup-california" className="text-primary underline">Solar Battery Backup in California</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

@@ -8,6 +8,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
   title: "Solar Pool Heating in California: Cost & ROI",
   description:
@@ -183,7 +184,7 @@ export default function SolarPoolHeatingCA() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Does the Federal Tax Credit Apply?</h2>
               <p>
-                The 30% Residential Clean Energy Credit (IRC § 25D) applies to solar water heating — which includes pool heating only under specific conditions: the pool must be <em>primary indoor-use</em> heating, not a purely recreational outdoor pool. For most residential backyard pools in California, the answer is <strong>no</strong>, the ITC does not apply. Work with a tax professional to verify for your specific setup.
+                No. The 30% Residential Clean Energy Credit (IRC § 25D) applied to solar water heating — and even then it reached pool heating only under specific conditions: the pool had to be <em>primary indoor-use</em> heating, not a purely recreational outdoor pool, so for most residential backyard pools in California the answer was already no. It is now no in every case: Public Law 119-21 § 70506 ended § 25D for expenditures made after December 31, 2025. Work with a tax professional if you paid for a system in 2025 or earlier.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
@@ -193,6 +194,8 @@ export default function SolarPoolHeatingCA() {
                 <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

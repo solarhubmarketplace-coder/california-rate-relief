@@ -8,8 +8,8 @@ import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSo
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'CPACE Financing California: How Commercial PACE Works for Solar',
-  description: "CPACE (Commercial Property Assessed Clean Energy) lets California commercial property owners finance solar up to 30 years, fixed-rate, non-recourse, repaid via property tax assessment. Transfers with sale.",
+  title: "CPACE Financing California: How Commercial PACE Works",
+  description: "CPACE lets California commercial property owners finance solar up to 30 years, fixed-rate, non-recourse, repaid via property tax.",
   alternates: { canonical: '/commercial-solar/cpace-financing-california' },
   openGraph: { title: 'CPACE Financing California: How Commercial PACE Works for Solar', description: 'CPACE solar financing in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

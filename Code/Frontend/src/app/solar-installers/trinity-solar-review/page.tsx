@@ -16,9 +16,9 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
-    'Trinity Solar Review 2026: Northeast Installer, Not a California Option',
+    "Trinity Solar Review 2026: A Northeast, Not CA, Installer",
   description:
-    'Trinity Solar is a large family-owned residential installer serving the Northeast (NJ, NY, CT, MA, PA, MD). Here is an honest 2026 review and what it means if you are shopping solar in California.',
+    "Trinity Solar is a large, family-owned installer serving the Northeast (NJ, NY, CT, MA, PA). What that means if you're shopping in CA.",
   alternates: {
     canonical: '/solar-installers/trinity-solar-review',
   },

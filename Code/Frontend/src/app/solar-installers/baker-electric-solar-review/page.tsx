@@ -9,8 +9,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Baker Electric Solar Review 2026: San Diego's Cleanest Reputation Installer",
-  description: "Baker Electric Solar is family-owned since 1938, based in Escondido. Yelp 4.1/5 across 774 reviews, 25-year workmanship standard, very clean complaint record. Here's the honest 2026 review.",
+  title: "Baker Electric Solar Review 2026: San Diego's Cleanest Rep",
+  description: "Baker Electric Solar is family-owned since 1938, based in Escondido. Yelp 4.1/5 across 774 reviews and a very clean complaint record.",
   alternates: { canonical: '/solar-installers/baker-electric-solar-review' },
 };
 

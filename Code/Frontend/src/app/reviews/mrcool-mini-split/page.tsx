@@ -165,7 +165,7 @@ const faqSchema = {
       name: 'Are MrCool mini splits eligible for California rebates?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. MrCool heat pump mini splits qualify for TECH Clean California rebates of up to $3,000 for qualifying heat pump HVAC installs (single-zone or multi-zone systems meeting the efficiency tier and refrigerant requirements). Additional rebates through BayREN, 3C-REN, and SMUD BEES can stack on top. The federal 25C Energy Efficient Home Improvement Credit covers 30% of cost up to $2,000 for qualifying heat pumps (ENERGY STAR most efficient tier, SEER2 16+ and HSPF2 9+). Most MrCool DIY 4th Gen and Olympus models meet the efficiency thresholds.',
+        text: 'Yes. MrCool heat pump mini splits qualify for TECH Clean California rebates of up to $3,000 for qualifying heat pump HVAC installs (single-zone or multi-zone systems meeting the efficiency tier and refrigerant requirements). Additional rebates through BayREN, 3C-REN, and SMUD BEES can stack on top. The federal 25C Energy Efficient Home Improvement Credit no longer stacks with them: Public Law 119-21 terminated 25C for property placed in service after December 31, 2025, so a 2026 install claims nothing federally even though most MrCool DIY 4th Gen and Olympus models meet the old efficiency thresholds.',
       },
     },
     {
@@ -627,16 +627,16 @@ export default function MrCoolMiniSplitHub() {
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>
-                Federal 25C Tax Credit
+                Federal 25C Tax Credit: Ended
               </h3>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The federal Energy Efficient Home Improvement Credit (25C)
-                provides 30% of project cost up to $2,000 for qualifying heat
-                pumps. MrCool DIY 4th Gen 24K at $1,899 MSRP plus DIY labor
-                (no separate labor cost) gets you a $570 credit. Add a 12K
-                second zone and the combined credit caps at $2,000 annually.
-                Unlike a deduction, this is a direct dollar-for-dollar tax
-                credit.
+                provided 30% of project cost up to $2,000 for qualifying heat
+                pumps — a MrCool DIY 4th Gen 24K at $1,899 MSRP would have
+                returned about $570. Public Law 119-21 § 70505 terminated 25C
+                for property placed in service after December 31, 2025. Install
+                in 2026 and there is no federal credit; budget on the state and
+                utility programs below instead.
               </p>
 
               <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>

@@ -48,7 +48,7 @@ export default function CommercialSolarCost() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Commercial solar in the U.S. averaged approximately <strong>$1.72 per Wdc installed</strong> in 2025, up 10% year-over-year per SEIA data. California&apos;s commercial pricing generally tracks the national average, though California-specific pricing data was not verified across three independent public sources. Actual pricing varies widely by system size — the larger the project, the lower the $/W — and by segment. Here&apos;s what commercial solar realistically costs in California in 2026 before and after the 30% ITC plus MACRS depreciation.
+                Commercial solar in the U.S. averaged approximately <strong>$1.72 per Wdc installed</strong> in 2025, up 10% year-over-year per SEIA data. California&apos;s commercial pricing generally tracks the national average, though California-specific pricing data was not verified across three independent public sources. Actual pricing varies widely by system size — the larger the project, the lower the $/W — and by segment. Here&apos;s what commercial solar realistically costs in California in 2026 before and after the § 48E ITC — 6% base, 30% where the facility is under 1 MW AC or meets prevailing-wage and apprenticeship requirements — plus MACRS depreciation.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Cost by System Size Segment</h2>
@@ -119,10 +119,10 @@ export default function CommercialSolarCost() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Effective Cost After Incentives</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The sticker price isn&apos;t what you actually pay if you own the system and have taxable income. The federal Investment Tax Credit (ITC) is 30% of system cost through 2032 (with bonuses for domestic content + labor that can push the effective credit higher). On top of that, 5-year MACRS depreciation accelerates the tax shield further.
+                The sticker price isn&apos;t what you actually pay if you own the system and have taxable income. The federal Investment Tax Credit for commercial solar is IRC § 48E: 6% base, 30% for a facility under 1 MW AC or one meeting prevailing-wage and apprenticeship standards, with bonuses for domestic content and energy communities that can push the effective credit higher. It comes with a deadline now. Public Law 119-21 ends the credit for solar facilities placed in service after December 31, 2027, and that termination applies only to facilities whose construction begins after July 4, 2026. On top of the credit, 5-year MACRS depreciation accelerates the tax shield further.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Worked example: a $500,000 mid-market commercial solar install at $1.70/Wdc for a 294 kW system. 30% ITC = $150,000 credit. MACRS depreciation in year 1 (bonus-adjusted) can recover another ~$100,000-$140,000 in federal tax shield depending on your effective rate. Effective first-year after-tax cost ends up around $210,000-$250,000 — roughly half the sticker price.
+                Worked example: a $500,000 mid-market commercial solar install at $1.70/Wdc for a 294 kW system that begins construction on or before July 4, 2026. At 294 kW it is under the 1 MW AC threshold, so the 30% rate applies without the prevailing-wage test. 30% ITC = $150,000 credit. MACRS depreciation in year 1 (bonus-adjusted) can recover another ~$100,000-$140,000 in federal tax shield depending on your effective rate. Effective first-year after-tax cost ends up around $210,000-$250,000 — roughly half the sticker price.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If you&apos;re a non-profit or tax-exempt entity, the ITC is still accessible via &quot;direct pay&quot; — the IRS issues a cash payment equivalent to the credit. The MACRS depreciation doesn&apos;t apply (no taxable income to shield), but the direct-pay ITC by itself still produces 30% off the effective cost.
@@ -138,7 +138,7 @@ export default function CommercialSolarCost() {
               <p className='text-foreground/80 leading-relaxed mb-4'>$1.10-$3.50/Wdc depending on system size. Small business (under 50 kW) runs $1.83-$3.50/W. Mid-market (50-500 kW) runs $1.40-$2.00/W. Large C&amp;I (500 kW+) runs $1.10-$1.70/W. National commercial average in 2025 was $1.72/W per SEIA.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>What does a 500 kW commercial solar system cost in California?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>A 500 kW mid-market/large commercial solar system typically runs $700,000-$900,000 pre-incentive in California (at $1.40-$1.80/W). After the 30% ITC and MACRS depreciation, the effective after-tax cost for a profitable buyer is roughly $350,000-$480,000.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>A 500 kW mid-market/large commercial solar system typically runs $700,000-$900,000 pre-incentive in California (at $1.40-$1.80/W). After the 30% § 48E ITC and MACRS depreciation, the effective after-tax cost for a profitable buyer is roughly $350,000-$480,000. A 500 kW system clears 1 MW AC comfortably, so the 30% rate applies; the credit still requires beginning construction by July 4, 2026 or being placed in service by December 31, 2027.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can you finance commercial solar without capex?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes — via PPA, lease, or CPACE. See our full{' '}<Link href='/commercial-solar/financing-options' className='text-primary hover:underline'>commercial solar financing options</Link>{' '}guide.</p>

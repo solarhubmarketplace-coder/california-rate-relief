@@ -7,8 +7,9 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'Why Is My SDG&E Bill So High? (San Diego Has the Highest Rates in America)',
+  title: "Why Is My SDG&E Bill So High? Highest Rates in America",
   description: "Why your San Diego Gas & Electric bill is so high. 45.7¢/kWh rates, the 4–9 PM peak window, the $24 fixed charge, and what to do.",
   alternates: { canonical: '/blog/why-is-my-sdge-bill-so-high' },
   openGraph: { title: 'Why Is My SDG&E Bill So High?', description: 'San Diego Gas & Electric billing explainer and fixes.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-sdge-bill-so-high' },
@@ -66,6 +67,8 @@ export default function WhyIsMySDGEBillSoHigh() {
                 <li><Link href="/blog/pge-vs-sce-vs-sdge-rates-compared" className="text-primary underline">PG&amp;E vs SCE vs SDG&amp;E Rates Compared</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

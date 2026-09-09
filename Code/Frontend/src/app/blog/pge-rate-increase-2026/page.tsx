@@ -7,8 +7,9 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'PG&E Rate Increase 2026: What Residential Customers Actually Pay Now',
+  title: "PG&E Rate Increase 2026: What You Actually Pay Now",
   description:
     "PG&E's 2026 rate changes explained, current residential rates, the $24 Base Services Charge, what drove the hike, and what you can do about it.",
   alternates: { canonical: '/blog/pge-rate-increase-2026' },
@@ -85,6 +86,8 @@ export default function PGERateIncrease2026() {
                 <li><Link href="/blog/pge-vs-sce-vs-sdge-rates-compared" className="text-primary underline">PG&amp;E vs SCE vs SDG&amp;E Rates Compared</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

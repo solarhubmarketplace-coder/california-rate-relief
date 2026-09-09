@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Solar PPA Explained: How California\'s $0-Down Solar Works (2026)',
+    "Solar PPA Explained: How California's $0-Down Solar Works",
   description:
     'How a solar PPA works, what you actually pay, and why it makes sense for California homeowners in 2026. Complete breakdown with 25-year comparison.',
   alternates: {

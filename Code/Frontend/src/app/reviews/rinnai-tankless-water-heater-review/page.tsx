@@ -494,12 +494,13 @@ export default function RinnaiTanklessReview() {
                 Energy Efficiency &amp; California 25C Qualification
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The Sensei RX line and top RU models (UEF 0.93+) qualify
+                The Sensei RX line and top RU models (UEF 0.93+) qualified
                 for the federal Energy Efficient Home Improvement Credit
-                (25C), which returns 30% of the equipment + installation
-                cost up to $600/year for gas tankless. On a $5,000 total
-                installed cost, that&apos;s a $600 credit. bringing your
-                net out-of-pocket to $4,400 in year one. SoCalGas adds
+                (25C), which returned 30% of the equipment + installation
+                cost up to $600/year for gas tankless — $600 on a $5,000
+                installed job. Public Law 119-21 § 70505 terminated 25C for
+                property placed in service after December 31, 2025, so a
+                2026 install starts at the full $5,000. SoCalGas still adds
                 $200-$700 in rebates on qualifying Rinnai models, and some
                 municipal utilities offer additional $100-$300 rebates.
               </p>

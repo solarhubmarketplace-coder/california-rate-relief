@@ -8,8 +8,8 @@ import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSo
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'Commercial Solar Financing in California: PPA, Lease, Direct, CPACE',
-  description: "How to finance commercial solar in California — PPA (15-25 yr), lease, direct ownership with 30% ITC + 5-year MACRS, and CPACE up to 30 years via CSCDA Open PACE. Direct-pay for non-profits.",
+  title: "Commercial Solar Financing in California: PPA to CPACE",
+  description: "How to finance commercial solar in California: PPA, lease, direct ownership with the 48E credit (up to 30%) + MACRS, and CPACE up to 30 years.",
   alternates: { canonical: '/commercial-solar/financing-options' },
   openGraph: { title: 'Commercial Solar Financing in California: PPA, Lease, Direct, CPACE', description: 'Complete guide to commercial solar financing options in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -58,7 +58,7 @@ export default function CommercialFinancing() {
                 Direct ownership means you (or your company) buys the solar system outright — with cash, a commercial loan, or project financing. You own the equipment, claim the full tax benefits, and capture all the long-term savings.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The tax benefits in 2026 are substantial. The federal Investment Tax Credit (ITC) is 30% of the system cost through 2032 under the Inflation Reduction Act, with additional bonuses for domestic content and labor/apprenticeship standards that can push the effective credit above 30%. On top of the ITC, commercial solar qualifies for 5-year MACRS depreciation, which accelerates the tax shield. Between the ITC and MACRS, the effective after-tax cost of a commercial solar system is often 40-50% below the sticker price.
+                The tax benefits in 2026 are substantial but they are now on a clock. The federal Investment Tax Credit for commercial solar lives in IRC § 48E. The base rate is 6%; it rises to 30% for a facility under 1 MW AC or one meeting the prevailing-wage and apprenticeship standards, which covers most California commercial rooftop projects. Public Law 119-21 added a termination for solar facilities placed in service after December 31, 2027 — but that termination only reaches facilities whose construction begins after July 4, 2026. Start construction on or before that date and the deadline does not touch you. Miss it and you have to be operating by the end of 2027. Bonus adders for domestic content and energy communities can push the effective credit higher. On top of the ITC, commercial solar qualifies for 5-year MACRS depreciation, which accelerates the tax shield. Between the ITC and MACRS, the effective after-tax cost of a commercial solar system is often 40-50% below the sticker price for a project that qualifies.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Direct ownership fits:</strong> Companies with sufficient capital, taxable income to use the ITC and MACRS, long-term property ownership, and a desire for the lowest total lifetime cost.
@@ -99,7 +99,7 @@ export default function CommercialFinancing() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Non-Profit and Tax-Exempt Path: Direct Pay</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you&apos;re a non-profit, school, religious institution, municipality, tribal government, or other tax-exempt entity, the Inflation Reduction Act created a pathway to monetize the 30% ITC even without taxable income. It&apos;s called <strong>direct pay</strong> (sometimes &quot;elective pay&quot;). The IRS issues a cash payment equivalent to the tax credit — so your non-profit effectively gets a 30% refund on the system cost.
+                If you&apos;re a non-profit, school, religious institution, municipality, tribal government, or other tax-exempt entity, the Inflation Reduction Act created a pathway to monetize the § 48E ITC even without taxable income. It&apos;s called <strong>direct pay</strong> (sometimes &quot;elective pay&quot;). The IRS issues a cash payment equivalent to the tax credit — so your non-profit effectively gets a refund at whatever rate the project earns: 6% base, 30% where the facility is under 1 MW AC or meets the prevailing-wage and apprenticeship requirements. Direct pay rides on the § 48E credit, so it carries the same deadlines: begin construction by July 4, 2026, or be placed in service by December 31, 2027.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Direct pay changes the financing math for non-profits and government buyers. Historically, these entities had to partner with a for-profit tax-equity investor to capture any tax benefit at all, which added complexity and cost. Direct pay lets them own the system directly and collect the ITC as cash.
@@ -122,10 +122,10 @@ export default function CommercialFinancing() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>What is the federal tax credit for commercial solar in California in 2026?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>30% of system cost via the federal Investment Tax Credit, through 2032 under the IRA. Bonuses of 10% each are available for domestic-content and energy-community qualifying projects, so the effective credit can reach 40-50%.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>The § 48E Investment Tax Credit is 6% base and 30% for a facility under 1 MW AC or one meeting prevailing-wage and apprenticeship standards. It is still available in 2026, on a deadline: begin construction by July 4, 2026, or place the system in service by December 31, 2027. Bonuses of 10% each are available for domestic-content and energy-community qualifying projects, so the effective credit can reach 40-50%. Confirm your project&apos;s qualification with your tax advisor.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can a non-profit get the solar tax credit in California?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Yes, via &quot;direct pay&quot; (elective pay). The IRS issues a cash payment equivalent to the 30% ITC for tax-exempt entities that own the system directly. Non-profits, schools, churches, and government entities all qualify.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Yes, via &quot;direct pay&quot; (elective pay). The IRS issues a cash payment equivalent to the § 48E ITC — 6% base, 30% where the facility is under 1 MW AC or meets the prevailing-wage and apprenticeship requirements — for tax-exempt entities that own the system directly. Non-profits, schools, churches, and government entities all qualify, subject to the same July 4, 2026 begin-construction / December 31, 2027 placed-in-service deadlines.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>What is CPACE and how does it differ from a regular loan?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>CPACE is a property-based financing structure repaid via an assessment on your property tax bill, up to 30 years, fixed-rate, non-recourse. It transfers with the property if you sell. Regular commercial loans are typically 5-15 years with personal or corporate guarantees. CPACE uses the property as security rather than the borrower&apos;s credit.</p>

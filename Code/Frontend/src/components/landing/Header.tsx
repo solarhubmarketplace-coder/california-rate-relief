@@ -47,7 +47,7 @@ export function Header() {
             <Link href='/blog' className='lg:hidden text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
               Blog
             </Link>
-            <Link href='#qualify'>
+            <Link href='/#qualify'>
               <Button
                 size='sm'
                 className='bg-primary hover:bg-primary/90 text-primary-foreground font-medium shadow-md hover:shadow-lg transition-all text-sm'

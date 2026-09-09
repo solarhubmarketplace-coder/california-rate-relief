@@ -122,7 +122,7 @@ const faqSchema = {
       name: 'Are there rebates that tilt the decision toward tankless?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. SoCalGas offers $200-$700 rebates on qualifying gas tankless models. TECH Clean California offers up to $4,885 for heat pump water heaters (electric tankless alternatives) through participating utilities. The federal Energy Efficient Home Improvement Credit (25C) offers up to $600/year for qualifying gas tankless or up to $2,000/year for heat pump water heaters through 2032. Tank heaters rarely qualify for meaningful rebates, which narrows the upfront cost gap considerably.',
+        text: 'Yes, on the state side. SoCalGas offers $200-$700 rebates on qualifying gas tankless models, and TECH Clean California offers up to $4,885 for heat pump water heaters (electric tankless alternatives) through participating utilities. The federal Energy Efficient Home Improvement Credit (25C) is no longer among them — it paid up to $600/year for gas tankless and $2,000/year for heat pump water heaters, but Public Law 119-21 terminated it for property placed in service after December 31, 2025. Tank heaters rarely qualify for meaningful rebates, which narrows the upfront cost gap considerably.',
       },
     },
   ],
@@ -997,12 +997,12 @@ export default function TanklessVsTankGuide() {
                     Are there rebates that tilt the decision toward tankless?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Yes. SoCalGas offers $200-$700 rebates. The federal 25C
-                    tax credit offers up to $600/year for gas tankless or
-                    $2,000/year for heat pump water heaters through 2032.
-                    TECH Clean California offers up to $4,885 for heat pump
-                    water heaters. Tank heaters rarely qualify for meaningful
-                    rebates.
+                    Yes, on the state side. SoCalGas offers $200-$700
+                    rebates and TECH Clean California offers up to $4,885 for
+                    heat pump water heaters. The federal 25C tax credit is not
+                    one of them any more — it ended for property placed in
+                    service after December 31, 2025. Tank heaters rarely
+                    qualify for meaningful rebates.
                   </p>
                 </div>
               </div>

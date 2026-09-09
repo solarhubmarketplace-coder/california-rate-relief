@@ -56,7 +56,7 @@ export function Hero() {
 
           {/* CTA Button */}
           <div className='mb-8'>
-            <Link href='#qualify'>
+            <Link href='/#qualify'>
               <Button
                 size='default'
                 className='bg-primary hover:bg-primary/90 text-primary-foreground text-base px-6 py-2.5 h-auto font-semibold shadow-md hover:shadow-lg transition-all duration-200'

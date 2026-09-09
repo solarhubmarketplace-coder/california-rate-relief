@@ -7,9 +7,10 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'Solar Panels on a Tile Roof in California: Cost, Process, and the Hidden Premium',
-  description: "Installing solar on a tile roof in California; the tile removal/replacement premium, moisture concerns, underlayment upgrades, and which installers are best.",
+  title: "Solar Panels on a Tile Roof in California: Cost & Process",
+  description: "Installing solar on a tile roof in California: the removal premium, moisture concerns, underlayment upgrades, and top installers.",
   alternates: { canonical: '/blog/solar-panels-tile-roof-california' },
   openGraph: { title: 'Solar on Tile Roof California', description: 'The tile roof premium, process, and installer considerations.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-panels-tile-roof-california' },
 };
@@ -79,6 +80,8 @@ export default function SolarTileRoofCA() {
                 <li><Link href="/blog/free-roof-replacement-with-solar-panels-california" className="text-primary underline">Roof Replacement with Solar Panels</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

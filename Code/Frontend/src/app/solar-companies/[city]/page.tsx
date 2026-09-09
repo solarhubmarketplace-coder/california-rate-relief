@@ -132,8 +132,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = getCityBySlug(slug);
   if (!city) return {};
 
-  const title = `Best Solar Companies in ${city.name}, CA (2026 Reviews & Comparison)`;
-  const description = `Solar companies serving ${city.name}, California — compare 9 installers by pricing, warranty, and fit. ${city.county} coverage, ${UTILITY_DATA[city.utilityCode].shortName} territory. Get free quotes.`;
+  const title = `Solar Companies in ${city.name}, CA: 2026 Cost & Reviews`;
+  const description = `Solar companies serving ${city.name}, CA — compare 9 installers by pricing, warranty, and fit. ${city.county} coverage. Get free quotes.`;
 
   return {
     title,
@@ -163,7 +163,7 @@ function buildFAQSchema(city: CityData) {
     },
     {
       question: `What's the average cost of solar in ${city.name}?`,
-      answer: `A typical ${city.name} home needs a ${city.systemSizeKw} kW system, which runs roughly $${city.systemCostCash.toLocaleString()} in cash purchase before the federal tax credit. Loan and PPA options are $0 down with monthly payments usually below the ${utility.shortName} bill they replace.`,
+      answer: `A typical ${city.name} home needs a ${city.systemSizeKw} kW system, which runs roughly $${city.systemCostCash.toLocaleString()} as a cash purchase — with no federal tax credit to subtract, since IRC § 25D ended for expenditures made after December 31, 2025. Loan and PPA options are $0 down with monthly payments usually below the ${utility.shortName} bill they replace.`,
     },
     {
       question: `Are solar companies in ${city.name} licensed?`,
@@ -175,7 +175,7 @@ function buildFAQSchema(city: CityData) {
     },
     {
       question: `What rebates apply to solar in ${city.name}?`,
-      answer: `${city.name} residents in ${utility.shortName} territory qualify for the federal 30% solar tax credit (through 2032, see expiration-specific post for nuance), plus the Self-Generation Incentive Program (SGIP) for battery storage. Low-income households may qualify for DAC-SASH or SASH. ${utility.shortName}'s net billing under NEM 3.0 pays ${utility.exportRate} for exports. Significantly less than pre-2023 net metering.`,
+      answer: `A ${city.name} homeowner who buys a system in 2026 gets no federal tax credit — IRC § 25D does not apply to expenditures made after December 31, 2025 — but the Self-Generation Incentive Program (SGIP) for battery storage still applies, and low-income households may qualify for DAC-SASH or SASH. On a lease or PPA the provider owns the system and is the one that may claim the § 48E commercial credit, if its project clears the federal deadlines. ${utility.shortName}'s net billing under NEM 3.0 pays ${utility.exportRate} for exports. Significantly less than pre-2023 net metering.`,
     },
   ];
   return {
@@ -267,7 +267,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 <div className="text-2xl font-bold text-foreground">
                   ~${city.systemCostCash.toLocaleString()}
                 </div>
-                <div className="text-xs text-muted-foreground mt-1">before 30% federal tax credit</div>
+                <div className="text-xs text-muted-foreground mt-1">no federal credit on a 2026 purchase</div>
               </div>
               <div className="bg-card rounded-xl border border-border p-4">
                 <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Utility</div>
@@ -531,9 +531,12 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                   What rebates apply to solar in {city.name}?
                 </h3>
                 <p className="text-foreground/80">
-                  {city.name} residents in {utility.shortName} territory qualify for the federal
-                  30% solar tax credit, the Self-Generation Incentive Program (SGIP) for battery
-                  storage, and low-income programs like DAC-SASH and SASH. {utility.shortName}&apos;s
+                  A {city.name} homeowner who buys a system in 2026 gets no federal tax credit —
+                  IRC § 25D does not apply to expenditures made after December 31, 2025. Still
+                  available in {utility.shortName} territory: the Self-Generation Incentive Program
+                  (SGIP) for battery storage and low-income programs like DAC-SASH and SASH. On a
+                  lease or PPA the provider owns the system and is the one that may claim the § 48E
+                  commercial credit. {utility.shortName}&apos;s
                   net billing under NEM 3.0 pays {utility.exportRate} for exports.
                 </p>
               </div>

@@ -7,7 +7,7 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: 'Enphase vs SolarEdge: Which Inverter System Is Better in 2026?',
+  title: "Enphase vs SolarEdge: Which Inverter Is Better in 2026?",
   description: "Enphase microinverters vs SolarEdge string-plus-optimizer inverters — cost, reliability, battery integration, app experience, and warranty compared.",
   alternates: { canonical: '/solar-installers/enphase-vs-solaredge' },
   openGraph: { title: 'Enphase vs SolarEdge (2026)', description: 'Head-to-head inverter comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/enphase-vs-solaredge' },

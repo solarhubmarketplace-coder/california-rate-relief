@@ -7,9 +7,9 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Solar PPA vs Lease: Which Is Better for California Homeowners? (2026)',
+    "Solar PPA vs Lease: Which Is Better for CA Homeowners?",
   description:
-    'Understand the difference between solar PPAs and leases in California. Side-by-side comparison, home sale impact, pros and cons, and which is right for you.',
+    "The difference between solar PPAs and leases in California: side-by-side comparison, home-sale impact, and which is right for you.",
   alternates: {
     canonical: '/blog/solar-ppa-vs-lease-california',
   },

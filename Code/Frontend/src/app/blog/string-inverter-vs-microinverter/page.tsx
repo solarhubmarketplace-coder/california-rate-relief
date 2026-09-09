@@ -7,8 +7,9 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'String Inverter vs Microinverter: Which Is Right for Your Solar System?',
+  title: "String Inverter vs Microinverter: Which Is Right for You?",
   description: "Head-to-head comparison of string inverter vs microinverter solar systems. Cost, performance under shade, warranty, rapid shutdown, and repairability.",
   alternates: { canonical: '/blog/string-inverter-vs-microinverter' },
   openGraph: { title: 'String Inverter vs Microinverter', description: 'Technical and real-world comparison for California solar installs.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/string-inverter-vs-microinverter' },
@@ -89,6 +90,8 @@ export default function StringVsMicro() {
                 <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

@@ -78,6 +78,14 @@ module.exports = {
     SCHEDULER_REENGAGEMENT_INTERVAL_MS: getEnvInt('SCHEDULER_REENGAGEMENT_INTERVAL_MS', 86400000, 3600000),
     SCHEDULER_REENGAGEMENT_BATCH_SIZE: getEnvInt('SCHEDULER_REENGAGEMENT_BATCH_SIZE', 100, 1, 1000),
 
+    // How long a communication_task may sit in status 'processing' before the
+    // scheduler treats it as stuck (e.g. the worker crashed mid-task) and
+    // resets it back to 'pending' so the lead isn't frozen forever. Minutes.
+    SCHEDULER_STALE_PROCESSING_MINUTES: getEnvInt('SCHEDULER_STALE_PROCESSING_MINUTES', 30, 1),
+    // Max stale 'processing' rows reset per scheduler pass, to keep the
+    // recovery scan cheap on the DB.
+    SCHEDULER_STALE_PROCESSING_BATCH_SIZE: getEnvInt('SCHEDULER_STALE_PROCESSING_BATCH_SIZE', 50, 1, 500),
+
     // Quiet Hours (8 PM - 9 AM Pacific, auto-skips weekends)
     QUIET_HOURS_ENABLED: getEnv('QUIET_HOURS_ENABLED', 'true'),
 

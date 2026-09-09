@@ -64,8 +64,8 @@ export default function SolarPanelsCAStatewide() {
               </div>
               <div className="bg-card rounded-xl border border-border p-4 text-center">
                 <Shield className="h-5 w-5 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold text-foreground">30%</div>
-                <div className="text-xs text-muted-foreground">Federal ITC (through 2032)</div>
+                <div className="text-2xl font-bold text-foreground">$0</div>
+                <div className="text-xs text-muted-foreground">Federal credit on a 2026 home purchase</div>
               </div>
               <div className="bg-card rounded-xl border border-border p-4 text-center">
                 <DollarSign className="h-5 w-5 text-primary mx-auto mb-2" />
@@ -77,7 +77,7 @@ export default function SolarPanelsCAStatewide() {
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Short Answer for 2026</h2>
               <p>
-                California residential solar in 2026 still makes financial sense in PG&amp;E, SCE, and SDG&amp;E territory, where residential rates average 38.6¢/kWh — among the highest in the US. The math is harder in municipal-utility territories (SMUD, LADWP, Roseville, Glendale) where rates run 15–22¢/kWh. The 30% federal Residential Clean Energy Credit remains in force through 2032. NEM 3.0 reduced the value of exported solar significantly, which means your payback depends much more on self-consumption than it did under NEM 2.0.
+                California residential solar in 2026 still makes financial sense in PG&amp;E, SCE, and SDG&amp;E territory, where residential rates average 38.6¢/kWh — among the highest in the US. The math is harder in municipal-utility territories (SMUD, LADWP, Roseville, Glendale) where rates run 15–22¢/kWh. The 30% federal Residential Clean Energy Credit is gone: Public Law 119-21, signed July 4, 2025, amended IRC § 25D so the credit &quot;shall not apply with respect to any expenditures made after December 31, 2025.&quot; Buy a system outright in 2026 and there is no federal credit on it. NEM 3.0 reduced the value of exported solar significantly, which means your payback depends much more on self-consumption than it did under NEM 2.0.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What Solar Costs in California (2026 Numbers)</h2>
@@ -87,7 +87,7 @@ export default function SolarPanelsCAStatewide() {
                     <tr className="border-b-2 border-border">
                       <th className="text-left py-3 pr-4 font-bold text-foreground">System size</th>
                       <th className="text-center py-3 px-3 font-bold text-foreground">Avg cost (cash)</th>
-                      <th className="text-center py-3 px-3 font-bold text-foreground">After 30% ITC</th>
+                      <th className="text-center py-3 px-3 font-bold text-foreground">What it would have netted with the 30% ITC (2025 only)</th>
                       <th className="text-center py-3 px-3 font-bold text-foreground">Typical home</th>
                     </tr>
                   </thead>
@@ -119,6 +119,9 @@ export default function SolarPanelsCAStatewide() {
                   </tbody>
                 </table>
               </div>
+              <p className="text-sm text-foreground/70">
+                The third column is history, not a 2026 quote. It shows what these systems netted when the 30% residential credit was still available. A homeowner buying in 2026 pays the cash column.
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">NEM 3.0 in Plain English</h2>
               <p>
@@ -126,14 +129,14 @@ export default function SolarPanelsCAStatewide() {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Self-consumption is now king.</strong> Every kWh your solar produces that you use immediately saves you the full 40¢+/kWh retail rate. 5–8× more valuable than exporting.</li>
-                <li><strong>Batteries change the math.</strong> Pairing solar with a battery (eligible for the federal ITC plus California&apos;s SGIP rebate) lets you time-shift solar into peak-rate hours, recovering most of what NEM 2.0 used to pay for exports.</li>
+                <li><strong>Batteries change the math.</strong> Pairing solar with a battery (California&apos;s SGIP rebate still applies; the federal residential credit does not, as of 2026) lets you time-shift solar into peak-rate hours, recovering most of what NEM 2.0 used to pay for exports.</li>
                 <li><strong>Payback has stretched, not disappeared.</strong> Cash-purchase payback in PG&amp;E territory moved from roughly 5–7 years under NEM 2.0 to 7–10 years under NEM 3.0.</li>
               </ul>
               <p>Read: <Link href="/blog/nem-3-california-still-worth-it" className="text-primary underline">Is Solar Still Worth It Under NEM 3.0?</Link></p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">California Incentives That Still Matter in 2026</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Federal Residential Clean Energy Credit (ITC), 30% through 2032.</strong> Applies to solar, battery storage, and solar water heating.</li>
+                <li><strong>Federal Residential Clean Energy Credit (ITC) — expired.</strong> IRC § 25D no longer applies to expenditures made after December 31, 2025. A homeowner who buys solar, battery storage, or solar water heating in 2026 claims nothing federally. The commercial credit (IRC § 48E) survives, which is why lease and PPA pricing still reflects a tax credit — the provider owns the system and claims it, not you.</li>
                 <li><strong>Self-Generation Incentive Program (SGIP).</strong> California-specific rebate for battery storage. Equity Resiliency tier provides up to full-cost coverage for qualifying low-income and fire-prone-area households.</li>
                 <li><strong>DAC-SASH and SASH.</strong> Low-income solar programs administered by GRID Alternatives.</li>
                 <li><strong>Property Tax Exclusion.</strong> California does not reassess property value upward after solar installation.</li>

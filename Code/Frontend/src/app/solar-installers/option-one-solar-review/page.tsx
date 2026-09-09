@@ -9,8 +9,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Option One Solar Review 2026: High Desert CA Installer With a 25-Year Bumper-to-Bumper Warranty",
-  description: "Option One Solar (Apple Valley / High Desert) focuses exclusively on ownership, offers a 25-year bumper-to-bumper warranty including labor, and carries some of the strongest Yelp ratings in Southern California.",
+  title: "Option One Solar Review 2026: 25-Year Bumper-to-Bumper",
+  description: "Option One Solar (Apple Valley) focuses on ownership, offers a 25-year bumper-to-bumper warranty, and strong Southern CA Yelp ratings.",
   alternates: { canonical: '/solar-installers/option-one-solar-review' },
 };
 
@@ -99,7 +99,7 @@ export default function OptionOneReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing — Ownership Only</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Option One is unusual in residential solar: the company actively discourages PPAs and leases. Cash and loans are the focus. This is customer-friendly because you capture the 30% ITC, you don&apos;t have a 20-year contract complicating a future home sale, and the total cost-of-ownership math is cleaner. Whether this fits your cash flow is a separate question, if $0-down lease/PPA is a must, Option One isn&apos;t the right pick.
+                Option One is unusual in residential solar: the company actively discourages PPAs and leases. Cash and loans are the focus. That used to mean capturing the 30% federal credit; it no longer does, because IRC § 25D does not apply to expenditures made after December 31, 2025. What ownership still buys you is no 20-year contract complicating a future home sale and cleaner total cost-of-ownership math. Whether this fits your cash flow is a separate question, if $0-down lease/PPA is a must, Option One isn&apos;t the right pick.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty, 25-Year Bumper-to-Bumper</h2>

@@ -8,8 +8,9 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: 'Solar Battery Backup in California: Cost, SGIP Rebate, and Whether It\'s Worth It (2026)',
+  title: "Solar Battery Backup in California: Cost & SGIP Rebate",
   description:
     'Solar battery backup cost in California, SGIP rebate explained, Powerwall vs Enphase vs Franklin, PSPS preparedness, and NEM 3.0 self-consumption math.',
   alternates: { canonical: '/blog/solar-battery-backup-california' },
@@ -73,7 +74,7 @@ export default function SolarBatteryBackupCA() {
                       <th className="text-left py-3 pr-4 font-bold text-foreground">Battery</th>
                       <th className="text-center py-3 px-3 font-bold text-foreground">Capacity</th>
                       <th className="text-center py-3 px-3 font-bold text-foreground">Installed cost (CA)</th>
-                      <th className="text-center py-3 px-3 font-bold text-foreground">After 30% ITC</th>
+                      <th className="text-center py-3 px-3 font-bold text-foreground">What it netted with the 30% ITC (2025 only)</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -114,7 +115,7 @@ export default function SolarBatteryBackupCA() {
                 <li><strong>Equity / Equity Resiliency tier.</strong> Up to 100% of the battery cost for low-income households, medical-baseline customers, or homes in fire-prone Tier 2 and Tier 3 HFTD zones. Confirm eligibility with your installer, the paperwork is non-trivial.</li>
               </ul>
               <p>
-                Stacking SGIP with the 30% federal ITC is allowed. Order of operations: installer deducts SGIP at installation (or files for reimbursement on your behalf), and the federal ITC applies to your net out-of-pocket cost.
+                That stack is no longer available to a 2026 homeowner purchase. The federal residential credit (IRC § 25D) does not apply to expenditures made after December 31, 2025, so there is nothing left to stack SGIP against — SGIP is now the whole incentive on a battery you buy yourself. The stacking order described below applied while the federal credit existed: the installer deducted SGIP at installation (or filed for reimbursement on your behalf), and the federal credit applied to your net out-of-pocket cost. On a lease or PPA the provider owns the battery and claims whatever commercial credit it qualifies for, not you.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The NEM 3.0 Battery Math</h2>
@@ -183,6 +184,8 @@ export default function SolarBatteryBackupCA() {
                 <li><Link href="/commercial-solar/sgip-battery-storage" className="text-primary underline">SGIP Battery Storage (Commercial Deep Dive)</Link></li>
               </ul>
             </div>
+          <ArticleCTA />
+
           </article>
         </div>
       </main>

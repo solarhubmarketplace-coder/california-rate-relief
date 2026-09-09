@@ -10,9 +10,9 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
-    'Semper Solaris Review 2026: Veteran-Owned California Solar, Honest Look',
+    "Semper Solaris Review 2026: Veteran-Owned CA Solar",
   description:
-    'Semper Solaris is a private, veteran-owned California solar + roofing + HVAC installer. In-house crews and strong local presence — but Trustpilot 1.6/5 and 173+ BBB complaints are real.',
+    "Semper Solaris is a private, veteran-owned CA solar, roofing, and HVAC installer with in-house crews \u2014 but Trustpilot 1.6/5 and 173+ BBB complaints.",
   alternates: { canonical: '/solar-installers/semper-solaris-review' },
 };
 

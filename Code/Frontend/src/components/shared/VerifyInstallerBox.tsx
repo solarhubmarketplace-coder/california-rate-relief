@@ -104,7 +104,8 @@ export function VerifyInstallerBox({ installerName, cslbLicenseNumber, bbbProfil
               </a>
               <span className='text-muted-foreground'>
                 {' '}
-                — federal 30% solar tax credit reference (Form 5695)
+                — IRS page for the residential credit, which ended for
+                expenditures made after December 31, 2025 (Form 5695)
               </span>
             </li>
           </ul>

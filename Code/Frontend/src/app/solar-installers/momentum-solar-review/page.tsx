@@ -10,9 +10,9 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
-    'Momentum Solar Review 2026: In-House Crews, But What About the Complaints?',
+    "Momentum Solar Review 2026: Crews vs the Complaints",
   description:
-    'Honest 2026 review of Momentum Solar for California homeowners. In-house installation, Qcells/REC panels, Enphase microinverters — but Trustpilot 1.6/5 and a $30M TCPA settlement in 2025.',
+    "Honest 2026 review of Momentum Solar: in-house installation, Qcells/REC panels \u2014 but Trustpilot 1.6/5 and a $30M TCPA settlement.",
   alternates: {
     canonical: '/solar-installers/momentum-solar-review',
   },

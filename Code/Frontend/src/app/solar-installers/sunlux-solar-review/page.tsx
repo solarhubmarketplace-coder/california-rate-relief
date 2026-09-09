@@ -9,8 +9,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunlux Solar Review 2026: One of SoCal's Higher-Rated Regional Installers",
-  description: "Sunlux has 7,000+ installs, Google 4.7/5 across 550+ reviews, BBB A+, and competitive California pricing. Here's the honest 2026 review, strengths, the permitting delays, and who it fits.",
+  title: "Sunlux Solar Review 2026: A Higher-Rated SoCal Installer",
+  description: "Sunlux has 7,000+ installs, Google 4.7/5 across 550+ reviews, BBB A+, and competitive California pricing. The honest 2026 review.",
   alternates: { canonical: '/solar-installers/sunlux-solar-review' },
 };
 
@@ -101,7 +101,7 @@ export default function SunluxReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux focuses on ownership — cash or loan financing through third-party partners. You own the system, capture the 30% federal ITC, and don&apos;t carry a long-term PPA or lease obligation. Pricing is competitive; customer reports put cash-purchase pricing in the $3.00–$3.80 per watt range in California, which is roughly at or below the state average.
+                Sunlux focuses on ownership — cash or loan financing through third-party partners. You own the system and don&apos;t carry a long-term PPA or lease obligation — but there is no longer a 30% federal credit to capture, since IRC § 25D does not apply to expenditures made after December 31, 2025. Pricing is competitive; customer reports put cash-purchase pricing in the $3.00–$3.80 per watt range in California, which is roughly at or below the state average.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>

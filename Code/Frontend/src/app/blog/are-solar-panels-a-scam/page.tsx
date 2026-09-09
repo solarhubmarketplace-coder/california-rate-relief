@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Are Solar Panels a Scam? What California Homeowners Should Know (2026)',
+    "Are Solar Panels a Scam? What CA Homeowners Should Know",
   description:
     'Solar panels aren\'t a scam—but some solar companies are. Learn how to spot predatory tactics, verify installers, and protect yourself.',
   alternates: {

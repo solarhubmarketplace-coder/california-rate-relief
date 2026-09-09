@@ -7,9 +7,9 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Commercial Solar Installation Cost in California 2026: What to Expect',
+    "Commercial Solar Installation Cost in California (2026)",
   description:
-    'Commercial solar costs $1.10-$2.55/W in California. Full breakdown of system sizes, ITC + MACRS incentives, ROI timelines, and utility rate savings for businesses.',
+    "Commercial solar costs $1.10-$2.55/W in California. System sizes, ITC + MACRS incentives, and ROI timelines for businesses.",
   alternates: {
     canonical: '/blog/commercial-solar-installation-cost-california',
   },
@@ -145,7 +145,7 @@ export default function CommercialSolarInstallationCostCalifornia() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Federal ITC (30% base):</strong> A $500,000 system generates a $150,000 tax credit. If your project is in an energy community, add another 10% ($50,000). If the system meets domestic content requirements, add another 10%. The effective credit can reach 40-50% of total installed cost.
+                <strong>Federal ITC (6% base, 30% for a facility under 1 MW AC or one meeting prevailing-wage and apprenticeship standards):</strong> At 30%, a $500,000 system generates a $150,000 tax credit. If your project is in an energy community, add another 10% ($50,000). If the system meets domestic content requirements, add another 10%. The effective credit can reach 40-50% of total installed cost.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
