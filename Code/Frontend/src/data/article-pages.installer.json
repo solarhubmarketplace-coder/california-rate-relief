@@ -1,1 +1,1134 @@
-[]
+[
+  {
+    "slug": "freedom-forever-bankruptcy-what-to-do",
+    "cluster": "installer",
+    "metaTitle": "Freedom Forever Bankruptcy: What Customers Should Do",
+    "metaDescription": "Freedom Forever converted to Chapter 7 liquidation Aug 7, 2026. Here's what's recoverable, what isn't, and exactly where California customers file claims now.",
+    "h1": "Freedom Forever Went Into Chapter 7 Liquidation. Here's What to Do About Your System.",
+    "intro": "Freedom Forever filed Chapter 11 in Delaware on April 15, 2026 (Case No. 26-10522, U.S. Bankruptcy Court for the District of Delaware, Judge Brendan L. Shannon). On July 31, 2026, the company told the court a proposed sale of the business had collapsed and it would seek to convert the case to Chapter 7 liquidation. The judge signed the conversion order on August 7, 2026. Trustee Alfred T. Giuliano and claims agent Kroll Restructuring Administration LLC are now winding the company down. News coverage of the case has put the number of affected homeowners nationwide above 150,000; we could not confirm that exact figure against a primary court filing as of this writing, but it is consistent with Freedom Forever having been the No. 2 residential solar installer in the country in 2025.\n\nFreedom Forever is not answering phones, not honoring service calls, and not standing behind its workmanship warranty. None of that means your solar system stopped working, and it does not mean you have no recourse at all. It means the recourse changed, and this page tells you exactly where it moved to.",
+    "keyStats": [
+      {
+        "label": "Total debt at Chapter 11 filing",
+        "value": "$500M+",
+        "note": "PV Tech, reporting court filings, Apr 17 2026"
+      },
+      {
+        "label": "Case converted to Chapter 7",
+        "value": "Aug 7, 2026",
+        "note": "Order signed, U.S. Bankruptcy Court, D. Del., docket 26-10522"
+      },
+      {
+        "label": "US residential market share, 2025 vs Q4",
+        "value": "6.1% to 3.9%",
+        "note": "Wood Mackenzie data cited by PV Tech"
+      },
+      {
+        "label": "Chapter 7 trustee now overseeing wind-down",
+        "value": "Alfred T. Giuliano",
+        "note": "CourtListener docket 73192534"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "What actually happened, and when",
+        "body": "Freedom Forever LLC filed Chapter 11 on April 15, 2026, listing more than $500 million in total debt against $100 million to $500 million in assets. Named unsecured creditors included lender Mosaic Funding IX, owed more than $100 million, and panel manufacturers JA Solar, Trina Solar, Jinko Solar, and Silfab Solar, each owed tens of millions. Silfab Solar filed a fresh notice of appearance in the case as recently as September 4, 2026, so manufacturer creditors are still actively working the case as of this writing.\n\nThe company had been the second-largest residential solar installer in the country in 2025 with 6.1% market share, a figure Wood Mackenzie data put at 3.9% by the fourth quarter as the bankruptcy became imminent. Reporting at the time pointed to the end of the federal residential solar tax credit, higher borrowing costs, California's net-billing changes, and a Texas Attorney General investigation into sales practices as the pressures that broke the company.\n\nA Chapter 11 case is a reorganization; the company tried to sell itself and keep operating. That plan fell apart. On July 31, 2026, Freedom Forever told the court it would seek to convert the case to Chapter 7 liquidation instead. The company formally filed that motion August 3, a hearing followed August 6, and the judge signed the conversion order August 7, 2026. Chapter 7 means there is no more Freedom Forever to reorganize. A trustee, Alfred T. Giuliano, is now selling off whatever assets exist and distributing the proceeds to creditors in a strict legal order, with secured lenders and administrative expenses paid first."
+      },
+      {
+        "heading": "Your workmanship warranty is effectively gone",
+        "body": "The 10-to-25-year workmanship or installation warranty Freedom Forever sold you was a promise from Freedom Forever, backed by nothing but Freedom Forever. That company no longer exists as an operating business, and in Chapter 7, an ordinary homeowner with a warranty claim is an unsecured creditor, standing behind secured lenders, administrative costs of the bankruptcy itself, and other creditors already named in the case for tens of millions of dollars apiece. Against total debt over $500 million, there is not going to be a payout that reaches a homeowner's warranty claim.\n\nA Freedom Forever customer in Maine described losing that warranty bluntly to a local news outlet: \"I lost all my warranties.\" That customer also described a real practical consequence: the panel monitoring Freedom Forever was supposed to provide had gone dark along with the company, and a loose wire went undetected until an independent electrician found it, a near fire hazard the homeowner paid out of pocket to catch. Treat your workmanship warranty as a write-off. Don't spend time or money chasing it. Put your energy into the two things that still work: your equipment warranties and your own monitoring access, both covered next."
+      },
+      {
+        "heading": "Your equipment warranties survived, file directly with the manufacturer",
+        "body": "The warranty on your panels, your inverter, and your battery is a separate contract between you and the manufacturer, not between you and Freedom Forever, and it does not disappear when the installer does. Start by identifying your manufacturer from your contract or the data plate on the equipment itself. Freedom Forever's own bankruptcy creditor list names Qcells, JA Solar, Trina Solar, Jinko Solar, and Silfab Solar as panel suppliers, and Enphase and Tesla are common inverter and battery brands in its installs.\n\nFor Qcells equipment, claims go through the company's partner portal at qpartnerus.com/qpp, with general support at qpartnerus.com/qpp/s/qcellssupport. For Enphase microinverters or IQ Battery systems, warranty documents are indexed by your system's activation date at enphase.com/warranty/us, with claims handled through enphase.com/support. For Tesla Powerwall, start at tesla.com/support/energy/warranty or the Tesla app itself.\n\nA caution on numbers: warranty terms commonly cited for this equipment run around 25 years for panels and microinverters and around 10 years for battery systems, but the exact term depends on your specific model and activation date. Pull the PDF specific to your system before you plan around a number you saw on a marketing page."
+      },
+      {
+        "heading": "Monitoring: log into your own account, not Freedom Forever's",
+        "body": "If your system uses Enphase microinverters, your production and fault data lives in your own Enlighten account at enlighten.enphaseenergy.com, a login tied to you, not to Freedom Forever. If you have a Tesla Powerwall, the same is true of the Tesla app. Neither of those ever depended on Freedom Forever staying in business to keep functioning. Freedom Forever was simply a customer of that monitoring data too, watching the same dashboard you can watch yourself.\n\nLog in today and confirm you can see current production and any active fault codes. If you never set up your own login, or don't know the credentials, contact the manufacturer's support line directly and ask to be added or reset as the account holder of record for your serial number. That's a routine request equipment manufacturers handle constantly, independent of who installed the system. Do this before you assume something is wrong with your equipment; a blinking status light with no one watching it, as the Maine homeowner found out, is a real risk, and the fix is getting your own eyes on your own dashboard, not waiting for an installer that no longer exists."
+      },
+      {
+        "heading": "If your install was left unfinished",
+        "body": "Some Freedom Forever customers had panels installed within days of the bankruptcy hitting, with the paperwork behind them never completed. Two things need checking before anything else: whether your permit was actually closed out with your city or county building department, and whether your interconnection agreement was actually processed with your utility, PG&E, SCE, SDG&E, or your local public utility, so your system has permission to operate. A company that goes dark mid-install is exactly the scenario where that paperwork stalls without anyone telling you.\n\nOnce you know where the paperwork stands, find a local, currently-operating, CSLB-licensed solar contractor to inspect the system and finish or correct anything outstanding. You are not the first customer in this position, and installers in other states hit by the same bankruptcy have started offering reduced-rate first service calls specifically for orphaned installs. It's worth asking a local installer directly whether they're doing the same before you pay full price for a first visit."
+      },
+      {
+        "heading": "File a CSLB complaint, for the record, not for a refund",
+        "body": "The California Contractors State License Board maintains a solar-specific complaint form, separate from its general contractor complaint intake, at cslb.ca.gov/Consumers/Filing_a_Complaint. File it. It puts your experience on the public record against Freedom Forever's license and bond, which matters for the state's oversight of the industry even now.\n\nBe clear-eyed about what it does not do. CSLB's own stated position is that the purpose of its investigation process is not to obtain restitution for the homeowner, and an investigation does not guarantee anyone gets money back. The board's own suggested paths to actual recovery are small claims court or hiring an attorney, not the complaint process itself. With Freedom Forever's debts running past $500 million and thousands of customers in the same position, any contractor bond that exists behind the license would be exhausted quickly if drawn on at all, and is not a meaningful individual remedy at this scale. If Freedom Forever owes you money for work paid for and never delivered, filing a proof of claim through Kroll Restructuring Administration LLC, the case's claims agent, is worth doing for the record. Just go in expecting little to nothing back, given where an unsecured claim sits behind $500 million in senior debt."
+      },
+      {
+        "heading": "Who to call, in order",
+        "body": "First, log into your Enlighten or Tesla app account and confirm your system is producing and reporting normally. Second, identify your panel, inverter, and battery manufacturers from your contract or equipment data plates, and open a warranty case directly with each one if you have an actual issue. Don't wait for a problem to surface a company that isn't watching for you anymore. Third, if your install was left unfinished, call your city or county building department and your utility's interconnection desk before you call anyone else, so you know exactly what's outstanding. Fourth, line up a local, currently licensed CSLB contractor for any service work the manufacturer warranty doesn't cover directly, which typically means labor rather than parts. Fifth, file your CSLB solar complaint for the record. Sixth, if you're out real money, an unfinished install you paid for, a system that was never interconnected, damage from stalled maintenance, talk to a consumer attorney or your local small claims court before you spend more time on the bankruptcy case itself. That is where CSLB itself points people, and it is the honest answer here too."
+      }
+    ],
+    "dataTable": {
+      "caption": "What's still covered after the Freedom Forever liquidation, and where to take it",
+      "columns": [
+        "Component or issue",
+        "Still covered?",
+        "Where to file",
+        "What to expect"
+      ],
+      "rows": [
+        [
+          "Solar panels (Qcells, JA Solar, Trina, Jinko, Silfab)",
+          "Yes, separate manufacturer warranty",
+          "Manufacturer's own portal, e.g. Qcells at qpartnerus.com/qpp",
+          "Repair or replacement under that panel's own product/performance warranty; have serial numbers and activation date ready"
+        ],
+        [
+          "Microinverters and monitoring (Enphase)",
+          "Yes, separate manufacturer warranty",
+          "enphase.com/warranty/us for terms; enphase.com/support for claims",
+          "Term is indexed by activation date, not a flat number; your monitoring already runs through your own Enlighten login"
+        ],
+        [
+          "Battery storage (Tesla Powerwall)",
+          "Yes, separate manufacturer warranty",
+          "tesla.com/support/energy/warranty or the Tesla app",
+          "Monitoring and warranty are tied to your own Tesla account, never routed through Freedom Forever"
+        ],
+        [
+          "Workmanship / installation warranty",
+          "No, was Freedom Forever's own promise",
+          "None, the company is liquidating",
+          "Treat as unrecoverable; use an independent CSLB contractor for future labor"
+        ],
+        [
+          "Unfinished installation or unclosed permit",
+          "Uncertain, depends what was actually filed",
+          "Your city/county building dept. and your utility's interconnection desk",
+          "Confirm permit closure and permission-to-operate before assuming the job was finished"
+        ],
+        [
+          "Deposit or prepayment for undelivered work",
+          "Unlikely to be recovered",
+          "Proof of claim with Kroll Restructuring Administration LLC (claims agent)",
+          "Ordinary unsecured claim behind $500M+ in senior debt; expect little to nothing back"
+        ],
+        [
+          "CSLB solar complaint",
+          "Not a warranty, a public record entry",
+          "cslb.ca.gov/Consumers/Filing_a_Complaint (dedicated solar form)",
+          "Documents the case against the license; CSLB itself says its process is not for restitution"
+        ]
+      ]
+    },
+    "whenThisIsWrong": "This playbook assumes Freedom Forever was your actual contracted installer and warranty provider. Confirm that from your own paperwork first. Freedom Forever sold both direct and through dealer networks, and some homeowners who think of a system as a \"Freedom Forever install\" actually contracted with a different company that only used Freedom Forever for part of the job. If a different name is on your installation contract, this bankruptcy may not affect your workmanship warranty at all.\n\nIf you financed the system through a solar loan, lease, or power purchase agreement, your obligations and protections run through that financing company, not through Freedom Forever, and it may still owe you service or maintenance under its own contract even though the installer is gone. Read your loan or lease documents before assuming you have no recourse there.\n\nIf your system is fully installed, permitted, interconnected, and running normally, none of this is urgent. Register your equipment with each manufacturer if you haven't already, note their contact information somewhere durable, and move on. You don't need to take action just because the installer went bankrupt.\n\nIf you're outside California, the manufacturer-warranty guidance here still applies, but the CSLB-specific advice does not. File with your own state's contractor licensing board instead.",
+    "faqs": [
+      {
+        "question": "Is Freedom Forever completely out of business now?",
+        "answer": "Yes. The company converted from Chapter 11 reorganization to Chapter 7 liquidation when the court signed the conversion order on August 7, 2026, after a proposed sale of the business collapsed. Chapter 7 means a trustee, Alfred T. Giuliano, is now selling off assets and closing the company down rather than operating it. There is no ongoing Freedom Forever to call for service, warranty work, or anything else."
+      },
+      {
+        "question": "Do I still have to make payments on my solar loan?",
+        "answer": "Almost certainly yes, and this is a separate matter from Freedom Forever's bankruptcy entirely. If you financed through a loan, lease, or PPA, your payment obligation runs to the lender or financing company that holds that paper, not to Freedom Forever, and it survives the installer's bankruptcy regardless of whether the system still gets serviced. Check your loan or lease agreement for the actual noteholder's name and contact them directly with service questions."
+      },
+      {
+        "question": "Will I get any money back from the bankruptcy for a warranty claim or unfinished work?",
+        "answer": "Realistically, very little to nothing. Freedom Forever's Chapter 11 filing listed total debt over $500 million against $100 million to $500 million in assets, with named creditors like Mosaic Funding IX and several panel manufacturers each owed tens of millions. An individual homeowner's claim is an ordinary unsecured claim, paid only after secured lenders and administrative expenses, if anything is left at all. Filing a proof of claim with Kroll Restructuring Administration LLC costs nothing and is worth doing for the record, but don't count on a payout."
+      },
+      {
+        "question": "My panels or inverter stopped working. Who fixes them now?",
+        "answer": "Your panels, inverter, and battery each carry their own manufacturer warranty, a separate contract from your installation agreement, and that warranty survives Freedom Forever's bankruptcy. Identify the manufacturer from your contract or the equipment's data plate, then file directly: Qcells through its partner portal at qpartnerus.com/qpp, Enphase through enphase.com/support, Tesla through tesla.com/support/energy/warranty or the Tesla app. The manufacturer typically covers parts; you may need to find a local independent contractor for labor."
+      },
+      {
+        "question": "My installation was never finished. What's my first move?",
+        "answer": "Before calling anyone new, find out what was actually filed. Contact your city or county building department to confirm whether your permit was closed, and contact your utility's interconnection desk to confirm whether your system has permission to operate. A company that goes dark mid-install is exactly the situation where that paperwork stalls silently. Once you know what's outstanding, bring in a local, currently licensed CSLB contractor to finish or correct the work."
+      },
+      {
+        "question": "Should I still file a CSLB complaint if it won't get me money back?",
+        "answer": "Yes, file it anyway, through CSLB's dedicated solar complaint form at cslb.ca.gov. CSLB is direct that the purpose of its investigation is not to obtain restitution for you and that an investigation doesn't guarantee any money back, so treat this as building the public record against the license rather than as a recovery path. If your damages are significant, CSLB's own suggested next step is small claims court or an attorney, not its complaint process."
+      },
+      {
+        "question": "Who monitors my system now that Freedom Forever is gone?",
+        "answer": "You do, through the manufacturer's own app or portal, and that was true even before the bankruptcy. Enphase systems report through your personal Enlighten account at enlighten.enphaseenergy.com, and Tesla Powerwall systems report through the Tesla app tied to your own account. Neither ever depended on Freedom Forever to function. Log in and confirm you can see current production and any fault codes; if you don't have your own login, contact the manufacturer's support line to get set up as the account holder."
+      }
+    ],
+    "bottomLine": "Freedom Forever's workmanship warranty is gone. Treat it as a write-off, not a pending claim. Your panels, microinverters, and battery are still under their own manufacturer warranties, and those are filed directly with Qcells, Enphase, or Tesla, not with any bankruptcy court. Log into your own Enlighten or Tesla app account today and confirm you can see your system data. If your install was left unfinished, check with your city or county building department and your utility before you assume the permit or interconnection was ever closed out. File a CSLB complaint for the record, but don't expect it to produce a refund. If Freedom Forever owes you an install you paid for and never got, a claim through Kroll Restructuring Administration is worth filing anyway, but with over $500 million in debt ahead of you in line, plan your next move around the manufacturer, not the bankruptcy court.",
+    "sources": [
+      {
+        "name": "CourtListener docket 73192534, Freedom Forever LLC, Case No. 26-10522, U.S. Bankruptcy Court, D. Del.",
+        "url": "https://www.courtlistener.com/docket/73192534/freedom-forever-llc/",
+        "supports": "Case filing date, judge, conversion motion (Aug 3), hearing (Aug 6), conversion order signed (Aug 7, 2026), trustee Alfred T. Giuliano, claims agent Kroll Restructuring Administration LLC"
+      },
+      {
+        "name": "Law360, \"Freedom Forever To Liquidate After Ch. 11 Sale Collapses\"",
+        "url": "https://www.law360.com/bankruptcy-authority/articles/2508352/freedom-forever-to-liquidate-after-ch-11-sale-collapses",
+        "supports": "July 31, 2026 statement that a sale of the company had fallen apart and conversion to Chapter 7 would be sought"
+      },
+      {
+        "name": "PV Tech, \"Freedom Forever files for Chapter 11 bankruptcy with $500 million debts\"",
+        "url": "https://www.pv-tech.org/freedom-forever-files-for-chapter-11-bankruptcy-with-500-million-debts/",
+        "supports": "Total debt and asset figures, named creditors (Mosaic Funding IX, JA Solar, Trina Solar, Jinko Solar, Silfab Solar), 2025 and Q4 2025 market share, reasons cited for the failure"
+      },
+      {
+        "name": "WGME, \"Some Maine solar customers left in limbo after Freedom Forever bankruptcy\"",
+        "url": "https://wgme.com/news/i-team/some-maine-solar-customers-left-in-limbo-after-freedom-forever-bankruptcy",
+        "supports": "Customer quote on lost workmanship warranty, loss of monitoring/fault alerts, and Maine AG guidance to review manufacturer vs. installer warranty coverage"
+      },
+      {
+        "name": "WKMG News 6 / ClickOrlando, \"We never saw this coming\"",
+        "url": "https://www.clickorlando.com/news/local/2026/08/14/we-never-saw-this-coming-solar-panel-installers-bankruptcies-are-leaving-central-florida-homeowners-in-the-dark/",
+        "supports": "Practical advice to contact equipment manufacturers directly and verify permit/interconnection status; local installers offering reduced-rate service for orphaned installs"
+      },
+      {
+        "name": "California Contractors State License Board, Filing a Complaint",
+        "url": "https://www.cslb.ca.gov/Consumers/Filing_a_Complaint/",
+        "supports": "Existence of a dedicated solar complaint form; CSLB's own statement that its investigation process is not intended to produce restitution"
+      },
+      {
+        "name": "Enphase warranty and support pages",
+        "url": "https://enphase.com/warranty/us",
+        "supports": "Warranty documents indexed by system activation date; claims/support process; Enlighten monitoring tied to the homeowner's own account"
+      },
+      {
+        "name": "Qcells claims and support portal (Q PARTNER)",
+        "url": "https://www.qpartnerus.com/qpp/s/article/Where-do-I-submit-a-claim-for-Qcells-Products",
+        "supports": "Where to submit a Qcells panel warranty claim"
+      },
+      {
+        "name": "Tesla energy support, Powerwall warranty",
+        "url": "https://www.tesla.com/support/energy/warranty",
+        "supports": "Where to start a Powerwall warranty inquiry; Tesla app as the homeowner's own monitoring account"
+      }
+    ],
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "slug": "how-to-verify-a-solar-contractor-california",
+    "cluster": "installer",
+    "metaTitle": "How to Verify a CA Solar Contractor Before You Sign",
+    "metaDescription": "Check a California solar contractor's CSLB license, bond, and disclosure document before signing. Classifications, red flags, and your 3-day cancel right.",
+    "h1": "How to Verify a California Solar Contractor Before You Sign",
+    "intro": "A California solar contractor needs one of a short list of state licenses to legally sign your job, and you can check that license, its bond, and its complaint history for free in about two minutes at cslb.ca.gov (Contractors State License Board, checked 2026-09-05). Most homeowners never run that check. They take the license number off a business card or a truck door and move straight to the contract.\n\nThat habit has gotten expensive. Freedom Forever converted its April 2026 Chapter 11 into a full Chapter 7 liquidation on July 31, 2026, leaving more than 150,000 homeowners with a solar system and no company on the other end of the warranty (Law360, Solar Power World, checked 2026-09-05). Sunnova filed Chapter 11 in June 2025 and sold its residential servicing platform and existing customer portfolio; SunStrong now administers those legacy accounts (Solar Power World, checked 2026-09-05). SunPower filed in August 2024 (Solar Power World, checked 2026-09-05). None of that means the CSLB license lookup would have predicted a bankruptcy filing years out. It does mean that a contractor's paperwork is the only piece of this transaction that is a matter of public record, verifiable before you sign, rather than a promise made across your kitchen table.\n\nThis page walks through what the license lookup tool actually tells you, what the state requires the contractor to disclose before you sign anything, and where the sales pitch itself is the tell.",
+    "keyStats": [
+      {
+        "label": "Contractor's bond",
+        "value": "$25,000",
+        "note": "Bus. & Prof. Code § 7071.6(a); raised from $15,000 by SB 607 (Stats. 2021, ch. 367), operative 1/1/2023"
+      },
+      {
+        "label": "Max down payment",
+        "value": "$1,000 or 10%",
+        "note": "whichever is less, per Bus. & Prof. Code § 7159 required contract notice"
+      },
+      {
+        "label": "Standard right to cancel",
+        "value": "3 business days",
+        "note": "Bus. & Prof. Code § 7159 and Civil Code § 1689.7 (both apply to most in-home solar sales)"
+      },
+      {
+        "label": "Disclosure document required since",
+        "value": "July 1, 2018",
+        "note": "Bus. & Prof. Code § 7169 — joint CSLB/CPUC solar disclosure document"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "The licenses that can legally do solar work",
+        "body": "Three classifications cover almost every residential solar job in California.\n\nC-46 Solar is the classification built for this exact work. CSLB's own scope language: a C-46 contractor \"installs, modifies, maintains, and repairs thermal and photovoltaic solar energy systems,\" and is barred from performing other building trades except when required to install the solar system itself (cslb.ca.gov, Licensing Classifications, checked 2026-09-05). If the crew is only doing solar, this is the classification you'd expect to see.\n\nC-10 Electrical also covers it directly. The official scope names \"solar photovoltaic cells\" among the things a C-10 contractor is licensed to place, install, erect, or connect. A licensed electrician doing your solar tie-in under a C-10 is not a red flag by itself.\n\nB General Building is where it gets more conditional. Under Bus. & Prof. Code § 7057(a), a B contractor's business has to involve construction using at least two unrelated trades or crafts, and § 7057(b) explicitly won't let framing or carpentry count toward that two-trade minimum — the B contractor either holds the specialty license for any other trade on the job or subcontracts it out. CSLB's consumer-facing Solar Smart page lists B among classifications \"authorized for solar installations,\" but nothing in the primary sources confirms a B contractor can pull a standalone, solar-only permit. The practical rule: if you're being sold under a B license and there's no accompanying trade (a re-roof, a structural addition) bundled into the job, ask directly which classification and which trades the permit will actually be filed under. Get the answer in writing.\n\nA handful of other classifications show up for specific solar applications rather than rooftop PV: A (General Engineering), C-4 (boiler/hot water/steam), C-36 (plumbing) for solar water heating, and C-53 (swimming pool) for solar pool heating. None of those substitute for C-46 or C-10 on a standard PV install."
+      },
+      {
+        "heading": "Look the license up yourself before the second visit",
+        "body": "CSLB's lookup tool lives at cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx. You can search by license number, business name, the individual's name, or a Home Improvement Salesperson (HIS) registration number — use whichever one is on the business card in front of you.\n\nThe tool returns license status and complaint disclosure. Don't stop at the company. California also requires the individual doing the in-home selling to carry a separate HIS registration, and that name or number runs through the same lookup tool. A licensed company with an unregistered salesperson at your door is still a problem — verify the person, not just the letterhead."
+      },
+      {
+        "heading": "The bond behind the license — and what it doesn't cover",
+        "body": "Every active CSLB license carries a contractor's bond, currently set at $25,000 under Bus. & Prof. Code § 7071.6(a). That figure is a genuine increase, not a renumbering: the bond stood at $15,000 before SB 607 (Stats. 2021, ch. 367) raised it to $25,000, effective January 1, 2023 — a 67% jump in required coverage. If you see a contractor's paperwork or marketing citing the old $15,000 figure, that's stale information, not a typo.\n\nA bond is not insurance for you personally, and it's not a guarantee of restitution. CSLB is explicit on its complaint-filing page that an investigation into a contractor doesn't guarantee you get money back — for financial recovery, the state points you to small claims court or private counsel. Treat the bond as evidence the contractor is currently in good standing with the state, not as a fund you can draw against if the install goes bad."
+      },
+      {
+        "heading": "The disclosure document you're legally owed before you sign",
+        "body": "Bus. & Prof. Code § 7169 required CSLB and the CPUC to jointly build a Solar Energy System Disclosure Document, live since July 1, 2018, and the contractor must hand it to you before completing any sale, financing agreement, or lease — not after.\n\nThe statute requires the front page, in bold 16-point type, to spell out the total cost and total payments for the system including financing costs, the complaint procedure, and your cancellation rights under § 7159. It can also include (at CSLB's discretion) financing sources, panel output estimates, utility fee information, rebate terms, the contractor's license number, and lease-versus-purchase comparisons. The whole document has to be in the same language the salesperson used to pitch you. One exemption: solar installed as a standard feature on new-construction homes doesn't trigger this requirement.\n\nWe can confirm the legal requirement with confidence from the statute itself. We can't confirm, as of this writing (2026-09-05), that the specific PDF template CSLB and CPUC published in 2018 is still the current live version without amendment — treat the requirement as settled law and ask to see the actual document, rather than assuming its current layout matches any sample you've seen online."
+      },
+      {
+        "heading": "Down payment caps and what a compliant contract looks like",
+        "body": "California home improvement contracts, solar included, are capped on the front-end deposit. The statutory notice required in the contract itself reads, verbatim: \"THE DOWNPAYMENT MAY NOT EXCEED $1,000 OR 10 PERCENT OF THE CONTRACT PRICE, WHICHEVER IS LESS\" (Bus. & Prof. Code § 7159). A $40,000 system caps the legal down payment at $1,000 — 10% of $40,000 is $4,000, and the statute takes the lower of the two figures, not the higher.\n\nA written contract under § 7159 also has to specify the work, not leave it vague. If the paperwork in front of you doesn't name the equipment, the exact panel count, system size, and an install timeline, that's not a formality gap — it's the same specificity the law requires, missing."
+      },
+      {
+        "heading": "Your right to cancel comes from two overlapping laws",
+        "body": "Most in-home solar sales trigger two separate cancellation statutes at once, and a contractor only telling you about one of them isn't giving you the full picture.\n\nBus. & Prof. Code § 7159 gives home improvement contract customers 3 business days to cancel, extended to 5 business days for senior citizens, and to 7 business days for contracts tied to declared-emergency or catastrophic-event repairs. Civil Code § 1689.7 separately covers home solicitation contracts — any contract signed somewhere other than the seller's regular place of business, which covers the overwhelming majority of in-home solar sales calls. Its language is specific: \"You, the buyer, may cancel this transaction at any time prior to midnight of the third business day after the date of this transaction,\" extended to the fifth business day for seniors.\n\nBoth statutes require the cancellation notice in bold type (minimum 10-point under § 1689.7, 12-point for certain contractor repair contracts under § 7159) positioned right next to your signature line, in the same language as the sales pitch, with a detachable Notice of Cancellation form attached. Civil Code § 1689.7 goes one step further: the seller has to orally explain your cancellation right at signing, not just hand you paperwork and let you find it yourself. If nobody said the words out loud, that's a compliance gap worth noting before your clock even starts."
+      },
+      {
+        "heading": "Red flags in the sales pitch itself",
+        "body": "CSLB's own consumer guidance (Solar Smart page, cslb.ca.gov, checked 2026-09-05) lines up with what shows up in complaint filings: verbal-only savings or production promises that never make it into the written contract, pressure to sign same-day with no review period, and contracts missing the specifics — equipment brand and model, exact panel count, system size, install timeline. Ask for all of it in writing before you sign anything.\n\nTwo further practices worth doing regardless of how the pitch goes: get at least three competing bids before committing to any solar contract, and get signed mechanics lien release forms from the contractor, subcontractors, and suppliers once the job is paid — that protects your home from a lien if the contractor doesn't pay a vendor downstream.\n\nOne financing structure deserves its own warning: PACE/HERO-style tax-lien financing. These programs can carry above-market interest rates, attach to your property as a tax lien rather than a personal loan, and require full payoff before you can refinance or sell the home. That's not a knock on solar financing broadly — it's a specific, CSLB-flagged caution about one structure. Ask exactly how any financing is secured before you sign, whether it's PACE, a loan, a lease, or a PPA."
+      },
+      {
+        "heading": "If something's already gone wrong",
+        "body": "CSLB maintains a dedicated Solar Complaint Form, separate from its general contractor complaint form, plus a Lead Referral form for problems on an active or ongoing project and a Building Permit Violation Referral form for unpermitted work (cslb.ca.gov, Filing a Complaint, checked 2026-09-05). Complaints can be filed against licensed or unlicensed contractors for conduct up to four years old.\n\nCSLB is explicit that filing a complaint doesn't guarantee you get money back — an investigation can lead to license discipline, but for financial recovery the agency points you to small claims court or your own attorney. If you're chasing a refund or damages rather than a regulatory action against the contractor's license, plan for that as a separate track from day one, not something CSLB's complaint process resolves on its own."
+      }
+    ],
+    "dataTable": {
+      "caption": "Verification checklist — run this before you sign anything",
+      "columns": [
+        "Step",
+        "Where to check",
+        "What it confirms",
+        "Red flag if..."
+      ],
+      "rows": [
+        [
+          "License status & classification",
+          "cslb.ca.gov CheckLicense tool (by license #, business name, or person's name)",
+          "Active license in C-46, C-10, or B (with a second trade) tied to the name on your contract",
+          "License is suspended, expired, or classification doesn't match the work being sold"
+        ],
+        [
+          "Salesperson registration",
+          "Same CheckLicense tool, search by HIS registration number/name",
+          "The in-home salesperson, not just the company, is state-registered",
+          "Company license checks out but the salesperson has no HIS registration"
+        ],
+        [
+          "Bond",
+          "Shown alongside license status on the lookup tool",
+          "A current $25,000 bond is in place (Bus. & Prof. Code § 7071.6(a))",
+          "No bond listed, or status shows a bond claim or lapse"
+        ],
+        [
+          "Disclosure document",
+          "Contractor must hand it over before you sign, finance, or lease",
+          "Total system cost and financing cost, in 16-point bold, plus complaint and cancellation rights (Bus. & Prof. Code § 7169)",
+          "You're asked to sign or put down money before ever seeing this document"
+        ],
+        [
+          "Down payment amount",
+          "Written contract",
+          "Deposit is at or below $1,000 or 10% of contract price, whichever is less (Bus. & Prof. Code § 7159)",
+          "Deposit requested exceeds that cap"
+        ],
+        [
+          "Cancellation notice",
+          "Written contract, next to the signature block",
+          "Bold-type notice of your 3-business-day right to cancel (5 days if you're a senior), plus a detachable cancellation form (Bus. & Prof. Code § 7159; Civil Code § 1689.7)",
+          "No cancellation notice near the signature, or salesperson never explains it out loud"
+        ],
+        [
+          "Contract specifics",
+          "Written contract body",
+          "Named equipment brand/model, exact panel count, system size, install timeline",
+          "Contract describes the job in vague or general terms"
+        ]
+      ]
+    },
+    "whenThisIsWrong": "This verification routine assumes a standard residential rooftop PV sale from a CSLB-licensed contractor, sold in your home. It doesn't map cleanly onto every deal.\n\nNew-construction homes where solar comes as a standard builder feature are statutorily exempt from the § 7169 disclosure document — don't expect one, and don't treat its absence there as a red flag.\n\nIf you sign at the contractor's actual place of business rather than in your home, Civil Code § 1689.7's home-solicitation cancellation right doesn't apply — only the § 7159 home-improvement-contract right does. The math changes slightly; read the contract's own cancellation language rather than assuming both statutes stack.\n\nIf you're financing through a third-party-owned system (a lease or PPA) rather than buying outright, the entity you need to verify isn't just the installer — it's also the financing company holding the paper, and their disclosures live in separate loan or lease documents this checklist doesn't cover.\n\nIf the person at your door represents a lead-generation or marketing outfit rather than the licensed installer of record, the CSLB lookup on their business name may return nothing useful at all — ask directly which company holds the license the job will be permitted under, and verify that name instead.\n\nAnd to be direct about our own role: California Rate Relief is a qualification service, not a licensing authority and not a law firm. We don't verify contractors for you, hold a CSLB license ourselves, or install anything. This page tells you how to run the check yourself.",
+    "faqs": [
+      {
+        "question": "What license does a California solar contractor need?",
+        "answer": "Most residential rooftop solar work is done under a C-46 Solar license or a C-10 Electrical license, both of which CSLB's own classification scope language explicitly covers for photovoltaic work. A B General Building license can be involved, but under Bus. & Prof. Code § 7057, a B contractor's job has to combine at least two unrelated trades — framing and carpentry don't count toward that minimum — so a solar-only job sold under a bare B license is worth a direct question: which classification and which trades will the permit actually be filed under?"
+      },
+      {
+        "question": "How do I check if a CSLB license is active?",
+        "answer": "Go to cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx and search by license number, business name, the individual's name, or their Home Improvement Salesperson (HIS) registration number. The tool returns license status and complaint disclosure for free, in a couple of minutes, before you sign anything. Check both the company's contractor license and the individual salesperson's HIS registration — they're separate records."
+      },
+      {
+        "question": "What is the contractor's bond and what does it protect me from?",
+        "answer": "California requires every active contractor license to carry a $25,000 bond under Bus. & Prof. Code § 7071.6(a) — raised from $15,000 by SB 607 (Stats. 2021, ch. 367), effective January 1, 2023. It's evidence the contractor is currently in good standing with the state, not a personal insurance fund for you. CSLB is explicit that an investigation into a contractor doesn't guarantee you financial recovery — for that, the state directs consumers to small claims court or private counsel, not the bond itself."
+      },
+      {
+        "question": "Am I legally owed a disclosure document before I sign a solar contract?",
+        "answer": "Yes. Bus. & Prof. Code § 7169 requires CSLB and the CPUC's jointly developed Solar Energy System Disclosure Document be given to you before you complete any sale, financing agreement, or lease. The front page must show total system cost and total payments including financing, in bold 16-point type, plus your complaint procedures and cancellation rights. One exemption: new-construction homes where solar is a standard builder feature don't trigger this requirement."
+      },
+      {
+        "question": "How much can a solar contractor legally ask for as a down payment?",
+        "answer": "The statutory cap, required as contract notice language under Bus. & Prof. Code § 7159, is $1,000 or 10% of the contract price, whichever is less. On a $40,000 system, that caps the legal deposit at $1,000, since $1,000 is lower than 10% of $40,000. A request above that figure is a contract-compliance problem worth raising before you sign, not after."
+      },
+      {
+        "question": "How long do I have to cancel a signed solar contract?",
+        "answer": "Two statutes typically apply at once to an in-home solar sale. Bus. & Prof. Code § 7159 gives you 3 business days (5 for seniors, 7 for contracts tied to declared-emergency repairs). Civil Code § 1689.7 separately covers contracts signed away from the seller's regular place of business — which covers most in-home solar pitches — with the same 3-business-day standard right, extended to 5 for seniors, and it requires the seller to explain your cancellation right out loud, not just hand you paperwork."
+      },
+      {
+        "question": "What do I do if I think a contractor lied to me or won't respond?",
+        "answer": "CSLB maintains a dedicated Solar Complaint Form separate from its general complaint process, along with a Lead Referral form for problems on an active job and a Building Permit Violation Referral form for unpermitted work. Complaints can cover conduct up to four years old, against licensed or unlicensed contractors. CSLB is clear that a complaint can lead to license discipline but doesn't guarantee you money back — for that, plan on small claims court or your own attorney as a separate track."
+      }
+    ],
+    "bottomLine": "The verification steps here take less time than the sales pitch that precedes them: look up the license and the salesperson's HIS registration at cslb.ca.gov, confirm the $25,000 bond is current, and don't sign, finance, or hand over a deposit until you've been given the disclosure document Bus. & Prof. Code § 7169 requires. Cap any deposit at $1,000 or 10% of the contract price, whichever is less, and know you have at least 3 business days to cancel under two separate statutes, longer if you're a senior. None of this guarantees the company stays solvent — Freedom Forever's July 2026 liquidation shows a clean license doesn't forecast a balance sheet. It does mean you're negotiating from a public record instead of a pitch.",
+    "sources": [
+      {
+        "name": "CSLB Licensing Classifications — C-46 Solar, C-10 Electrical",
+        "url": "https://www.cslb.ca.gov",
+        "supports": "License classification scope language for C-46 and C-10"
+      },
+      {
+        "name": "Bus. & Prof. Code § 7057",
+        "url": "https://leginfo.legislature.ca.gov",
+        "supports": "General Building (B) classification two-trade requirement"
+      },
+      {
+        "name": "Bus. & Prof. Code § 7071.6",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7071.6",
+        "supports": "Current $25,000 contractor bond requirement, operative 1/1/2023"
+      },
+      {
+        "name": "SB 607 (2021-2022), Legislative Counsel's Digest",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220SB607",
+        "supports": "Bond increase from $15,000 to $25,000, effective 1/1/2023"
+      },
+      {
+        "name": "Bus. & Prof. Code § 7159",
+        "url": "https://leginfo.legislature.ca.gov",
+        "supports": "Down payment cap, cancellation rights, written contract requirements"
+      },
+      {
+        "name": "Bus. & Prof. Code § 7169",
+        "url": "https://leginfo.legislature.ca.gov",
+        "supports": "Solar Energy System Disclosure Document requirement"
+      },
+      {
+        "name": "Civil Code § 1689.7",
+        "url": "https://leginfo.legislature.ca.gov",
+        "supports": "Home solicitation contract cancellation rights"
+      },
+      {
+        "name": "CSLB CheckLicense tool",
+        "url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+        "supports": "License and HIS registration lookup"
+      },
+      {
+        "name": "CSLB Solar Smart consumer guidance",
+        "url": "https://www.cslb.ca.gov/Consumers/Solar_Smart/",
+        "supports": "Sales-tactic red flags, additional solar-adjacent classifications"
+      },
+      {
+        "name": "CSLB Filing a Complaint",
+        "url": "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/",
+        "supports": "Solar complaint form, four-year complaint window, no restitution guarantee"
+      },
+      {
+        "name": "Law360 — Freedom Forever to Liquidate After Ch. 11 Sale Collapses",
+        "url": "https://www.law360.com/articles/2508352/freedom-forever-to-liquidate-after-ch-11-sale-collapses",
+        "supports": "Freedom Forever Chapter 11-to-Chapter 7 conversion, July 31, 2026"
+      },
+      {
+        "name": "Solar Power World — Residential solar installer Freedom Forever files bankruptcy",
+        "url": "https://www.solarpowerworldonline.com/2026/04/residential-solar-installer-freedom-forever-files-bankruptcy/",
+        "supports": "150,000+ homeowners affected, April 2026 Chapter 11 filing date"
+      },
+      {
+        "name": "PV Magazine USA — Sunnova files for bankruptcy",
+        "url": "https://pv-magazine-usa.com/2025/06/10/sunnova-files-for-bankruptcy/",
+        "supports": "Sunnova Chapter 11 filing date, June 2025"
+      },
+      {
+        "name": "Solar Power World — Acquisitions now complete: SunStrong in charge of legacy Sunnova systems",
+        "url": "https://www.solarpowerworldonline.com/2025/09/acquisitions-now-complete-sunstrong-in-charge-of-legacy-sunnova-systems/",
+        "supports": "SunStrong now administers legacy Sunnova accounts"
+      },
+      {
+        "name": "Solar Power World — SunPower files for Chapter 11 bankruptcy",
+        "url": "https://www.solarpowerworldonline.com/2024/08/sunpower-files-for-chapter-11-bankruptcy/",
+        "supports": "SunPower Chapter 11 filing date, August 2024"
+      }
+    ],
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "slug": "solar-installer-bankruptcy-california",
+    "cluster": "installer",
+    "metaTitle": "Solar Installer Bankruptcy: What Survives in California",
+    "metaDescription": "3 major CA solar installers went bankrupt since 2024. What survives: warranty, loan, lease/PPA, plus the CSLB $25,000 bond and records to keep.",
+    "h1": "What Happens to Your Solar System When the Installer Goes Bankrupt in California",
+    "intro": "Three of the largest residential solar installers in the country filed bankruptcy in less than two years: SunPower on August 5, 2024, Sunnova on June 8, 2025, and Freedom Forever on April 15, 2026 — the last one converting to Chapter 7 liquidation on August 7, 2026, meaning it stopped operating altogether. Freedom Forever alone carried more than $500 million in total liabilities at filing, including over $100 million owed to solar lender Mosaic Funding IX and tens of millions more to panel manufacturers JA Solar, Trina Solar, Jinko Solar, and Silfab Solar.\n\nIf you signed a contract with any installer in California in the last several years, this is not a hypothetical. It's a pattern, and the pattern has a structure: what happens to your system depends entirely on which kind of promise you're asking about. A workmanship warranty, a manufacturer warranty, a loan, and a lease or PPA are four separate legal instruments with four separate parties standing behind them, and installer bankruptcy affects each one differently.\n\nThis page walks through what actually survives, what doesn't, and what records to pull together now — while your installer's paperwork is still easy to find — using the three real cases above as evidence rather than speculation. Where we could not independently verify a figure, we say so rather than guessing.",
+    "keyStats": [
+      {
+        "label": "Major installers bankrupt",
+        "value": "3 in 22 months",
+        "note": "SunPower Aug. 5, 2024; Sunnova Jun. 8, 2025; Freedom Forever Apr. 15, 2026 (converted Ch. 7 Aug. 7, 2026)"
+      },
+      {
+        "label": "CSLB contractor bond",
+        "value": "$25,000",
+        "note": "Cal. Bus. & Prof. Code § 7071.6(a), current statute, leginfo.legislature.ca.gov"
+      },
+      {
+        "label": "Freedom Forever total liabilities at filing",
+        "value": "$500M+",
+        "note": "PV Tech, reporting on the April 15, 2026 Chapter 11 filing"
+      },
+      {
+        "label": "Accounts now serviced by SunStrong",
+        "value": "500,000+ / ~6 GW",
+        "note": "SunStrong Management's own site, following the Sunnova Ch. 11 asset sale"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "The Pattern: Three Companies, Three Different Endings",
+        "body": "SunPower filed Chapter 11 on August 5, 2024. This was not a liquidation — it was a structured stalking-horse asset sale to Complete Solaria, Inc. for $50 million, and Nasdaq suspended SunPower's stock trading on August 16, 2024. Complete Solaria then rebranded itself as SunPower in April 2025 and reports having returned to profitability. What's unconfirmed: whether the new SunPower formally assumed pre-2024 customer workmanship warranties as a contractual matter, or whether that continuity is closer to brand goodwill. If you're a legacy SunPower customer, get warranty continuity confirmed in writing rather than assuming it from the name on the building.\n\nSunnova filed Chapter 11 on June 8, 2025, listing assets and liabilities each in the $10 billion to $50 billion range. Sunnova's own site now states plainly that the company \"has ceased independent operations\" following a court-supervised sale, and that existing leases, PPAs, and loans transitioned to SunStrong Management for servicing — with explicit instructions to keep making payments as usual until SunStrong sends updated instructions directly.\n\nFreedom Forever filed Chapter 11 on April 15, 2026 in Delaware, then converted to Chapter 7 liquidation on August 7, 2026 — meaning, unlike the other two, there is no successor company continuing operations. It had been the second-largest U.S. residential solar installer in 2025 at 6.1% market share, per Wood Mackenzie data, but that share had already fallen to 3.9% by Q4 2025 before the collapse — this was a slide, not a sudden shock."
+      },
+      {
+        "heading": "Workmanship Warranty: The Promise That Dies With the Company",
+        "body": "A workmanship warranty — typically marketed around 10 years in California solar contracts — is a direct promise from the installer, not from any manufacturer or outside party. It covers things like mounting, flashing, wiring, and roof penetrations: install quality, not equipment quality. When the installer is merely restructuring under Chapter 11 and a successor keeps operating, that warranty might carry forward, as appears to be the case with Complete Solaria's SunPower rebrand, though we could not confirm whether that assumption is formal and contractual. When the installer is fully liquidated under Chapter 7, as with Freedom Forever, there is no company left to honor the promise at all.\n\nThe exception is a workmanship warranty that was independently insured at the time of installation. Solar Insure, a third-party warranty administrator operating since 2006, explicitly markets an \"Installer Out of Business\" detection and response service and states its purpose directly: if a solar company goes out of business, its job is to make sure customers aren't left without coverage. It offers products covering panels, batteries, and combined coverage for up to 30 years, plus a commercial version. Whether your specific installer purchased this kind of backing for your contract is something only your paperwork — or a call to the installer while it's still solvent — will answer. Most installer workmanship warranties are not independently insured this way, which is exactly why it's worth checking rather than assuming."
+      },
+      {
+        "heading": "Manufacturer Warranty: A Separate Contract, With Its Own Risk",
+        "body": "The manufacturer warranty on your panels, inverter, and battery is structurally independent of your installer. It's a contract between you and the equipment maker — Qcells, REC, Enphase, SolarEdge, Tesla, or whoever made your specific hardware — registered to the equipment's serial numbers, not to the company that bolted it to your roof. That means it survives installer bankruptcy as a matter of contract structure, regardless of which of the three companies above sold you the system.\n\nBut \"survives structurally\" is not the same as \"guaranteed.\" The manufacturer warranty is only as good as the manufacturer's own solvency, and manufacturer-level bankruptcy is not a hypothetical either: SunPower the panel brand itself went through the same Chapter 11 process as the installer arm, in the same August 2024 filing. \"Manufacturer-backed\" diversifies your risk away from a single installer — it does not eliminate bankruptcy risk from the equation entirely. We were not able to pull current warranty-length figures for specific manufacturers this session, so we're not going to print a number here that we haven't verified against a live manufacturer source. Pull your own equipment's serial numbers and registration confirmation and check directly."
+      },
+      {
+        "heading": "Your Solar Loan Doesn't Care That the Installer Is Gone",
+        "body": "A solar loan is a contract with a lender — Mosaic, GoodLeap, Sunlight Financial, Dividend Finance, or another financing company — and that lender is a separate legal party from your installer. Installer bankruptcy does not pause, reduce, or cancel the loan. You keep paying on the same schedule, to the same lender, under the same terms that were in place before your installer collapsed.\n\nThe clearest illustration of why this holds is Freedom Forever's own balance sheet: the company owed over $100 million to Mosaic Funding IX at the time of its Chapter 11 filing. That debt ran in the direction of installer-owes-lender, on the installer's separate business obligations — not lender-owes-borrower, and not anything that touches your individual promissory note. Your loan is a distinct instrument from the installer's corporate debts, and the lender's exposure to the installer's collapse does not transfer to you. If you're ever tempted to stop paying because your installer disappeared, don't — that puts you in default on a loan that was otherwise entirely intact, for no benefit."
+      },
+      {
+        "heading": "Lease and PPA: What Actually Happens When the Owner Fails",
+        "body": "If your system is under a lease or a Power Purchase Agreement, you don't own the equipment — a third-party owner does, and your monthly payment goes to whoever holds that ownership. When that owner fails, the asset itself (your rooftop system) still needs a servicer, and the Sunnova case shows exactly how that gets handled in an orderly Chapter 11 process: Sunnova's leases, PPAs, and loans were transitioned wholesale to SunStrong Management, an independent operator established in 2024 that now describes itself as managing roughly 6 gigawatts across 500,000-plus customer accounts in more than 50 markets. Sunnova's own guidance to affected customers is direct: keep making payments as usual, and wait for updated instructions directly from SunStrong before changing anything.\n\nThat's the strongest, most directly sourced example available here, and it should not be extrapolated automatically to SunPower or Freedom Forever's own lease/PPA books — we found no equivalent successor-servicer statement for either company's TPO portfolio this session. Freedom Forever in particular is known primarily as an installer-dealer rather than a large third-party-ownership originator, and with its Chapter 7 liquidation there is no operating successor at all, which is a materially different and worse position than Sunnova's customers ended up in."
+      },
+      {
+        "heading": "California's Contractor Bond, the Recovery Fund, and What We Couldn't Verify",
+        "body": "Solar installers doing PV work in California generally hold a C-46 Solar Contractor license, which the CSLB's own classification page describes as authorizing a contractor to install, modify, maintain, and repair thermal and photovoltaic solar energy systems — and explicitly bars that license from performing unrelated building trades except when required to install the solar system itself. Every C-46 licensee is required to carry a contractor's license bond currently set at $25,000 under California Business and Professions Code section 7071.6(a) — that figure comes straight from the statute's own text.\n\n$25,000 is real money, but it's small against a $40,000-plus residential install, and bonds are typically shared among all claimants against a single license rather than reserved per homeowner. There is also a separate CSLB Contractors State License Board Recovery Fund intended to cover situations where a bond is exhausted or a contractor is otherwise judgment-proof — but we could not locate the current per-claimant reimbursement cap for that fund this session, despite multiple direct attempts against both the statute and CSLB's own site. We are not going to state a dollar figure here that we couldn't verify. If a Recovery Fund claim becomes relevant to your situation, confirm the current cap directly with CSLB before you plan around any number, including any figure you may see quoted elsewhere."
+      },
+      {
+        "heading": "Records to Pull Together This Week",
+        "body": "The homeowners who came out of these three bankruptcies in the best position were the ones who already had their paperwork organized before the company they signed with disappeared. Six things are worth having in one folder, physical or digital, regardless of whether your current installer looks financially healthy today: your signed installation contract and any change orders or addenda; your interconnection agreement with your utility; every equipment serial number for your panels, inverter, and battery, along with your manufacturer warranty registration confirmations; your loan agreement or lease/PPA contract plus your most recent payment statements; your building permit and final inspection sign-off from your city or county; and a CSLB license verification printout dated at or near your contract signing, showing your contractor was actively licensed and bonded at the time.\n\nNone of this takes more than an afternoon. All of it becomes materially harder to reconstruct after a bankruptcy filing, when the installer's own customer service lines go dark, its app stops updating, and you're trying to prove what you signed to a successor servicer, a manufacturer's support line, or a CSLB claims examiner who has never heard of you."
+      }
+    ],
+    "dataTable": {
+      "caption": "Who actually owes you what, and what survives if your installer disappears",
+      "columns": [
+        "Obligation type",
+        "Who legally owes it",
+        "What happens if the installer is liquidated",
+        "What to do now"
+      ],
+      "rows": [
+        [
+          "Workmanship warranty (install quality, typically marketed as 10 yrs)",
+          "The installer itself — a direct promise from that company",
+          "Void in practice unless it was reinsured by a third-party administrator or a successor voluntarily assumes it",
+          "Ask your installer in writing whether your workmanship warranty is backed by a third-party administrator (e.g., Solar Insure); get the answer on paper"
+        ],
+        [
+          "Manufacturer warranty (panels, inverter, battery)",
+          "The equipment manufacturer, tied to serial numbers, not the installer's continued existence",
+          "Survives independently as long as the manufacturer stays solvent — a separate legal instrument entirely",
+          "Locate your panel/inverter/battery serial numbers and manufacturer warranty registration confirmation now, while you still have installer paperwork to cross-reference"
+        ],
+        [
+          "Financing (solar loan)",
+          "A separate lender — e.g., Mosaic, GoodLeap, Sunlight Financial, Dividend Finance",
+          "Unaffected. You keep paying per the loan agreement regardless of the installer's status",
+          "Keep the promissory note and recent statements; confirm your lender's direct contact info independent of the installer"
+        ],
+        [
+          "Lease or PPA",
+          "The financing/lease company that owns the system (TPO), not the installer who sold it",
+          "Assigned to a successor servicer; payment terms stay the same until you get written transition instructions",
+          "Keep making scheduled payments as usual; do not act on payment-instruction changes that don't come in writing from the confirmed successor servicer"
+        ]
+      ]
+    },
+    "whenThisIsWrong": "This page assumes you have an active loan, lease, or PPA, or an installer-backed workmanship warranty still theoretically in force. If you paid cash for your system with no financing at all, skip the financing and lease/PPA sections entirely — only your workmanship and manufacturer warranties are relevant to you, and even those stop mattering once their stated terms have run out.\n\nIf your workmanship warranty period already expired before your installer failed, there's nothing left to preserve there regardless of whether it was ever third-party insured — a warranty that ended is a warranty that ended.\n\nThe CSLB bond and Recovery Fund references are California-specific. If your system is in another state, your contractor's recovery mechanism is different and this page's bond figure does not apply to you.\n\nIf your installer isn't SunPower, Sunnova, or Freedom Forever and is still operating and current on its obligations, don't treat this page as a reason to panic-cancel a contract or stop payments. Verify that specific company's actual financial status — through its own communications, court filings, or reporting — before acting on anything here. This page describes what has already happened at three companies, not a prediction about any other installer.",
+    "faqs": [
+      {
+        "question": "If my solar installer goes bankrupt, do I stop paying my solar loan?",
+        "answer": "No. A solar loan is a separate contract with a separate lender — Mosaic, GoodLeap, Sunlight Financial, Dividend Finance, or similar — and it has nothing to do with whether the company that sold and installed your system still exists. Freedom Forever itself owed more than $100 million to Mosaic Funding IX when it filed Chapter 11 in April 2026, which shows the direction of the debt: the lender was a creditor of the installer's business, not the other way around. Your individual promissory note is a distinct instrument from the installer's corporate debts. Stopping payment on your own loan because your installer failed will just put you in default on a loan that is otherwise completely intact. Keep paying, keep your statements, and confirm your lender's contact information independent of the installer."
+      },
+      {
+        "question": "My installer was Freedom Forever, Sunnova, or SunPower. Who do I contact now?",
+        "answer": "It depends which one. Sunnova customers: the company's own site states leases, PPAs, and loans transitioned to SunStrong Management for servicing, and instructs customers to keep making payments as usual until they receive updated instructions directly from SunStrong. SunPower customers: Complete Solaria acquired SunPower's assets in a 2024 stalking-horse sale and rebranded itself as SunPower in April 2025, but we could not confirm this session whether pre-2024 workmanship warranties were formally assumed as part of that purchase — contact the new SunPower entity directly and get warranty continuity in writing. Freedom Forever customers: as of the Chapter 7 conversion, the company is not operating; contact your panel and inverter manufacturers directly to check equipment warranty status, which is the same advice a competing installer gave affected Freedom Forever customers in press coverage."
+      },
+      {
+        "question": "Does my panel or inverter warranty still work if the installer is gone?",
+        "answer": "Structurally, yes — a manufacturer warranty is a contract between you and the panel, inverter, or battery manufacturer, registered to the equipment's serial numbers, not to the installing company. It does not depend on the installer staying in business. But it does depend on the manufacturer staying in business, which is not automatic: SunPower the panel brand went through its own Chapter 11 in August 2024, the same risk category as the installer arm. We were not able to verify current manufacturer-specific warranty lengths for brands like Enphase or Qcells this session, so we're not going to hand you a number we can't stand behind — check your own equipment's warranty registration confirmation and contact the manufacturer directly to confirm current terms."
+      },
+      {
+        "question": "What is the CSLB contractor bond and does it cover me if my installer collapses?",
+        "answer": "California requires C-46 solar contractors to carry a contractor's license bond, currently set at $25,000 under California Business and Professions Code section 7071.6(a). It's a real protection, but it's small relative to a $40,000-plus residential install, and it's typically shared among all claimants against that one license, not a per-homeowner guarantee. There is also a separate CSLB Contractors State License Board Recovery Fund that can pay claims when a bond is exhausted or a contractor is judgment-proof, but we could not verify the current per-claimant reimbursement cap for that fund as of this writing — do not plan around a specific dollar figure until you've confirmed it directly with CSLB. Keep your license verification printout from the time you signed your contract; you'll need it to file either type of claim."
+      },
+      {
+        "question": "Should I be worried about installer bankruptcy risk if I go with a lease or PPA instead of buying my system outright?",
+        "answer": "The Sunnova case is actually the clearest evidence we have that a lease/PPA structure gets handled in an organized way when the originating company fails: leases and PPAs were assigned wholesale to SunStrong Management, a successor servicer now managing roughly 6 gigawatts and 500,000-plus customer accounts by its own account, with explicit guidance to keep paying as usual. That's a real advantage a lease/PPA has over a workmanship warranty, which has no equivalent successor-assumption mechanism unless it was independently insured. It doesn't mean lease/PPA customers face zero risk — you can still lose remote monitoring, face a slow transition, or get conflicting instructions during the handoff — but the underlying payment obligation and the system's operation are built to survive the originator's collapse in a way a bare workmanship promise is not."
+      },
+      {
+        "question": "What records should I gather right now, even if my current installer looks financially fine?",
+        "answer": "Six things, gathered before you need them: your signed installation contract and any addenda; your utility interconnection agreement; every equipment serial number for panels, inverter, and battery, plus your manufacturer warranty registration confirmations; your loan agreement or lease/PPA contract along with recent payment statements; your building permit and final inspection sign-off from your city or county; and a CSLB license verification printout dated at or near your contract signing date, showing the contractor was actively licensed and bonded. None of this takes more than an afternoon to assemble, and every one of the three bankruptcies above left homeowners scrambling for exactly this paperwork after the fact rather than before."
+      },
+      {
+        "question": "Is Freedom Forever's Chapter 7 the same thing as Sunnova's or SunPower's Chapter 11?",
+        "answer": "No, and the difference matters. Chapter 11 is a reorganization — the company keeps operating (or its assets get sold to an operating buyer) while it restructures debt; that's what happened with SunPower's $50 million stalking-horse sale to Complete Solaria and with Sunnova's court-supervised asset sale to the entity now operating as SunStrong Management. Chapter 7 is liquidation — the company stops operating entirely and a trustee sells off remaining assets to pay creditors. Freedom Forever filed Chapter 11 on April 15, 2026 and converted to Chapter 7 on August 7, 2026, meaning there is no successor company continuing its obligations the way SunStrong picked up Sunnova's book. That's a materially worse position for an affected homeowner, and it's why Freedom Forever customers specifically need to go straight to equipment manufacturers rather than waiting for a successor servicer that isn't coming."
+      }
+    ],
+    "bottomLine": "Three of the largest names in residential solar — SunPower, Sunnova, Freedom Forever — filed bankruptcy in less than two years, and each left a different mess behind. The pattern holds regardless of which installer you're evaluating: your workmanship warranty is only as good as whoever is standing behind it, your manufacturer warranty survives independently as long as the manufacturer does, your loan doesn't care that the installer is gone, and a lease or PPA gets assigned to a successor servicer who will contact you directly — as Sunnova's own site tells its former customers. California's $25,000 CSLB contractor bond (Bus. & Prof. Code § 7071.6(a)) is real but small next to a $40,000 install. The Recovery Fund exists but we could not verify its current reimbursement cap this session — do not rely on a specific dollar figure until CSLB publishes one you can check yourself. The single highest-leverage move available to you today costs nothing: pull your contract, your loan or lease documents, your equipment serial numbers, and your permit file into one place before you need them, not after.",
+    "sources": [
+      {
+        "name": "Sunnova — Our Future (customer transition page)",
+        "url": "https://www.sunnova.com/lp/our-future",
+        "supports": "Confirms Sunnova ceased independent operations, leases/PPAs/loans transitioned to SunStrong Management, and direct payment-continuity guidance to customers"
+      },
+      {
+        "name": "SunStrong Management (company site)",
+        "url": "https://www.sunstrongmanagement.com",
+        "supports": "Self-reported servicing scale: ~6 GW under management, 500,000+ customers, 50+ markets, established 2024"
+      },
+      {
+        "name": "PV Tech — Freedom Forever files for Chapter 11 bankruptcy with $500 million debts",
+        "url": "https://www.pv-tech.org/freedom-forever-files-for-chapter-11-bankruptcy-with-500-million-debts/",
+        "supports": "Freedom Forever Ch. 11 filing date (Apr. 15, 2026), total liabilities, Mosaic Funding IX debt, manufacturer creditors"
+      },
+      {
+        "name": "CourtListener/RECAP docket — In re Freedom Forever LLC, No. 26-10522 (Bankr. D. Del.)",
+        "url": "https://www.courtlistener.com/?q=Freedom+Forever+LLC&type=d",
+        "supports": "Primary-source confirmation of the Chapter 11 petition filing date (April 15, 2026); cross-checked against the docket directly rather than taken from secondary reporting alone"
+      },
+      {
+        "name": "Law360 Bankruptcy Authority — Freedom Forever Ch. 7 Shift OK'd With Reporting Terms",
+        "url": "https://www.law360.com/bankruptcy-authority/large-cap/articles/2510754/freedom-forever-ch-7-shift-ok-d-with-reporting-terms",
+        "supports": "Confirms the court approved conversion to Chapter 7 at an August 6, 2026 hearing, with the conversion order entered August 7, 2026 (Dkt. 533) — corrects this page's earlier 'July 31, 2026' date"
+      },
+      {
+        "name": "Wood Mackenzie — 'US solar industry navigated unprecedented change in 2025'",
+        "url": "https://www.woodmac.com/news/opinion/the-us-solar-industry-navigated-unprecedented-change-in-20253/",
+        "supports": "Freedom Forever's #2-ranked 6.1% full-year 2025 residential market share and its Q4 2025 compression to 3.9%"
+      },
+      {
+        "name": "California Business and Professions Code § 7071.6(a) (leginfo.legislature.ca.gov)",
+        "url": "https://leginfo.legislature.ca.gov",
+        "supports": "Current $25,000 CSLB contractor's license bond amount, quoted directly from statutory text"
+      },
+      {
+        "name": "CSLB — C-46 Solar Contractor classification page",
+        "url": "https://www.cslb.ca.gov",
+        "supports": "Scope of the C-46 license: installs/modifies/maintains/repairs PV and thermal solar systems, restricted from unrelated building trades"
+      },
+      {
+        "name": "Solar Insure (company site)",
+        "url": "https://www.solarinsure.com",
+        "supports": "Example of a third-party workmanship warranty administrator offering installer-out-of-business protection; SI-30 product line description"
+      },
+      {
+        "name": "Wikipedia — SunPower (secondary source, flag for primary cross-check before litigation-grade use)",
+        "url": "https://en.wikipedia.org/wiki/SunPower",
+        "supports": "SunPower Ch. 11 filing date, $50M stalking-horse sale to Complete Solaria, Nasdaq trading suspension, April 2025 rebrand"
+      },
+      {
+        "name": "Wikipedia — Sunnova (secondary source, flag for primary cross-check before litigation-grade use)",
+        "url": "https://en.wikipedia.org/wiki/Sunnova",
+        "supports": "Sunnova Ch. 11 filing date and reported assets/liabilities range"
+      },
+      {
+        "name": "WGME (Maine) — Freedom Forever bankruptcy customer impact coverage",
+        "url": "https://wgme.com",
+        "supports": "Confirms Ch. 11-to-Ch. 7 conversion occurred; Maine AG complaint count (state-specific, not extrapolated to California); competing installer's advice to check warranty status via manufacturer"
+      }
+    ],
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "slug": "sunrun-buyout-cost",
+    "cluster": "installer",
+    "metaTitle": "Sunrun Buyout Cost: How the Payoff Is Calculated",
+    "metaDescription": "Sunrun buyout pricing is set by an independent appraiser at fair market value, not a fixed chart, and ownership purchases are barred before year 5.",
+    "h1": "What It Actually Costs to Buy Out a Sunrun Lease or PPA",
+    "intro": "Sunrun does not publish a buyout price list, and there's a reason for that: your contract does not use a fixed formula for the number that matters most. The purchase price is set by an independent appraiser hired by Sunrun, based on the fair market value (FMV) of your specific system at the moment you're allowed to buy — not a chart, not a per-watt rate, not something you can calculate yourself in advance.\n\nWhat you can pin down is the mechanism and the timing, both confirmed directly from Sunrun's own BrightSave lease contract (filed with the New York State Department of Public Service, 2018 template) and Sunrun's live 2026 FAQ. Ownership-transferring purchases are only allowed at four points: the 5th anniversary of activation, the 20th anniversary, the end of the contract term, or when you sell the home. A separate \"prepayment\" option lets you pay off remaining lease payments early at any time, but that keeps Sunrun as the owner — it is not the same thing as buying the system.\n\nThis page covers how the price gets set, why the 5-year floor exists, what happens at a home sale versus mid-contract, what Sunrun's own contract language actually says, and where the online \"typical buyout cost\" figures you'll find elsewhere fall apart under scrutiny.",
+    "keyStats": [
+      {
+        "label": "Earliest ownership buyout",
+        "value": "Year 5",
+        "note": "Sunrun BrightSave lease contract, Section G, NY DPS filing (2018 template)"
+      },
+      {
+        "label": "How price is set",
+        "value": "Fair market value",
+        "note": "Independent appraiser hired by Sunrun — Sunrun.com FAQ, live 2026-09-05"
+      },
+      {
+        "label": "Sunrun's claimed home-sale transfer rate",
+        "value": "98%",
+        "note": "Agreements transferred to buyers instead of bought out — Sunrun FAQ, 2026-09-05"
+      },
+      {
+        "label": "Annual cost of skipping a buyout window",
+        "value": "$300-$1,000",
+        "note": "Industry-wide carrying-fee range, not Sunrun-specific — EnergySage, 2026"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Prepayment and purchase are not the same thing",
+        "body": "Two different exit mechanics live inside a Sunrun lease, and conflating them is where most confusion starts.\n\nPrepayment (Section B of the BrightSave contract) lets you pay off your remaining monthly lease payments at any point during the term. The payoff is the sum of what's left, discounted by the lesser of the prime rate plus 100 basis points or 5.0%. Sunrun's own contract example: prepaying in year 10 at a 4.25% discount rate on a small 8.40 kW system with $148/month payments comes to $32,030. That figure is nearly a decade old and describes a system a fraction of the size of a typical modern install, so don't treat it as a current benchmark — it's here to show how the discounting works, not what you'd pay.\n\nCrucially, prepayment does not transfer ownership. Sunrun still owns the panels afterward; you've simply closed out the payment obligation early, the way you'd pay off an auto loan without it becoming a title transfer.\n\nPurchase (Section G) is the option that actually makes you the owner, and it's gated to specific windows: year 5, year 20, end of term, or home sale. The price there is fair market value, set by an independent appraiser — not the discounted-payment math used for prepayment. If your goal is ownership, prepayment doesn't get you there outside those windows; only the purchase option does, and only when it's open."
+      },
+      {
+        "heading": "Why buyout windows open at year 5, not sooner",
+        "body": "Sunrun's contract bars an ownership-transferring purchase before the 5th anniversary of your system going into service, and there's a specific tax-law reason this is a common floor across third-party-owned solar generally, not just Sunrun's house preference.\n\nThird-party-owned solar systems carry the federal investment tax credit (ITC), which the third-party owner — Sunrun, not you — claims. Under 26 U.S.C. § 50(a)(1), that credit is subject to recapture if the underlying property is sold within 5 years of being placed in service: 100% recapture if disposed of in year 1, dropping to 80% in year 2, 60% in year 3, 40% in year 4, and 20% in year 5. Selling you the system earlier would expose Sunrun to giving back a meaningful chunk of a credit it already claimed.\n\nThis is a reasoned inference connecting two verified facts — Sunrun's 5-year contractual floor and the recapture statute's 5-year window — not a sentence found stated together in one Sunrun document. EnergySage's own consumer-facing material backs the same logic loosely, describing industry buyout floors (it frames the general industry pattern around year 6, not Sunrun's specific year 5) as tied to \"IRS rules governing when financiers can legally sell leased systems to homeowners,\" without citing the specific code section. Treat the mechanism as solid and the exact number as Sunrun-contract-specific."
+      },
+      {
+        "heading": "Home sale: transfer is the default path, not buyout",
+        "body": "If you're selling the house, Sunrun's own materials say most customers don't buy out at all — they transfer.\n\nUnder Section G(4) of the lease contract, you have three routes when you sell: (1) the buyer assumes your agreement outright if they have a FICO score of 650 or higher, (2) the buyer assumes it by qualifying for a mortgage or paying cash, with a $250 credit-check exemption fee split between the parties, or (3) you or the buyer purchase the system at FMV before or at the sale closes. Sunrun's live 2026 FAQ claims a 98% success rate getting agreements transferred to buyers rather than requiring a payoff — meaning in the large majority of real transactions, nobody writes a buyout check at all.\n\nThe $250 fee figure comes from the 2018 contract template and has not been reconfirmed against a current agreement, so treat it as directionally right rather than guaranteed current. If neither transfer nor purchase happens before closing, the contract treats you as having defaulted, which triggers system removal and a \"Make Whole\" payment obligation under Section G(10) — a materially worse outcome than either transferring or buying, and a real reason to start this conversation with Sunrun well before your closing date, not after."
+      },
+      {
+        "heading": "Mid-term buyout versus end-of-term: what actually changes",
+        "body": "A mid-term buyout (year 5 or year 20) and an end-of-term buyout use the identical pricing mechanism — FMV via independent appraiser — but the leverage and the alternatives differ.\n\nMid-term, at year 5 or year 20, you're one of three choices Sunrun offers on a fixed schedule; if you skip the window, you're locked into your existing lease payments (or PPA rate) until the next one opens, which per EnergySage's industry-wide figures can mean an ongoing carrying cost in the $300-$1,000/year range if there's an annual fee structure attached to holding rather than buying (this is a general industry figure, not confirmed as Sunrun's specific fee).\n\nAt end of term, per Sunrun's current FAQ, you get three options with no obligation to buy: purchase at FMV, renew the lease or PPA annually at a reset rate, or have Sunrun remove the system at no cost. The 2018 contract's renewal formula ties the reset rate to the local utility's on-peak residential rate with a contract-set floor — worth re-verifying against a current agreement before assuming it's unchanged eight years later. The free-removal option is the one lever mid-term buyouts don't offer: you cannot ask Sunrun to simply take the system back before the term ends without triggering default consequences instead."
+      },
+      {
+        "heading": "What we could not verify — and what to ignore online",
+        "body": "Two gaps are worth naming directly rather than papering over.\n\nFirst, no verified 2025-2026 real-dollar figures exist for what actual Sunrun customers have paid in buyouts recently. Reddit and consumer complaint boards were not accessible for this research, and no reliable published source gives a current $/watt or aggregate buyout range specific to Sunrun. If you see a specific dollar figure attached to \"typical Sunrun buyout\" anywhere online, it is not traceable to a verified source as of this writing (2026-09-05).\n\nSecond, a cluster of low-quality domains surfaced repeatedly in searches on this exact topic — sites with suspiciously uniform \"fresh 2026\" dates, template SEO writing, and in one case a domain built to look like an official Sunrun property. One such source produced a buyout figure of roughly $1,000-$1,800 per watt, which fails a basic sanity check: full installed solar systems run $2-4 per watt total, so a buyout at 500 times that rate is not physically or financially plausible. None of these sites should inform your expectations. The only reliable path to a real number is your own contract's Section G language plus a direct FMV quote request to Sunrun."
+      }
+    ],
+    "dataTable": {
+      "caption": "Sunrun BrightSave lease: buyout and exit trigger points (per contract Section B/G, NY DPS filing, 2018 template — mechanism confirmed current via Sunrun's 2026 FAQ)",
+      "columns": [
+        "Trigger",
+        "When it's available",
+        "How the price is set",
+        "Does ownership transfer?"
+      ],
+      "rows": [
+        [
+          "Prepayment",
+          "Any time during the Initial Term",
+          "Remaining monthly payments discounted at the lesser of (prime rate + 1.0%) or 5.0%",
+          "No — Sunrun keeps title; you've just paid off the lease early"
+        ],
+        [
+          "Year 5 purchase option",
+          "On the 5th anniversary of the in-service date",
+          "Fair market value (FMV), set by an independent appraiser Sunrun hires",
+          "Yes"
+        ],
+        [
+          "Year 20 purchase option",
+          "On the 20th anniversary of the in-service date",
+          "FMV via independent appraiser",
+          "Yes"
+        ],
+        [
+          "End of Initial Term",
+          "End of the contract term (25 years in the 2018 template)",
+          "Purchase at FMV, or renew annually, or Sunrun removes the system free",
+          "Yes, only if you choose the purchase option"
+        ],
+        [
+          "Home sale",
+          "Any time you sell the property",
+          "Buyer assumes the agreement (650+ FICO, or mortgage/cash-qualified) plus a $250 credit-check exemption fee — OR you or the buyer purchase at FMV before closing",
+          "Depends which path you take"
+        ],
+        [
+          "Sunrun default",
+          "Only if Sunrun breaches the contract",
+          "Governed by Section G(10)(b) of the agreement",
+          "Yes"
+        ]
+      ]
+    },
+    "whenThisIsWrong": "This page won't help if you're expecting a fixed number: Sunrun's buyout price is appraiser-set FMV, not a formula you can run yourself, and this page cannot tell you your specific dollar figure. If your system is under 5 years old and you want to own it outright, the contract structure reviewed here says that option isn't available except through a home sale or a Sunrun default — waiting or selling are your only paths, not negotiating your way to an earlier purchase. If you're comparing this against a real current-year dollar figure you found elsewhere, that figure is very likely unverifiable or fabricated; several domains surfacing this topic show clear low-quality signals, and one produced a per-watt figure that fails basic math. And if your agreement is a PPA rather than a lease, treat every specific clause number here (the $250 fee, the discount-rate formula) as lease-contract-sourced and unconfirmed for your document until you read your own Section G.",
+    "faqs": [
+      {
+        "question": "Can I just pay off my Sunrun lease early and own the system?",
+        "answer": "Not the same thing. Sunrun's contract splits this into two separate mechanics. \"Prepayment\" lets you pay off the remaining lease balance early at any point, but Sunrun keeps ownership of the panels — you've just settled the payment obligation. \"Purchase,\" the option that actually transfers ownership to you, is only available at specific points: the 5th anniversary of activation, the 20th anniversary, end of the contract term, or when you sell the home. Outside those windows, per Sunrun's own 2026 FAQ, you cannot buy the system even if you have the cash."
+      },
+      {
+        "question": "How does Sunrun calculate the buyout price?",
+        "answer": "By fair market value, not a fixed formula. Sunrun's contract language states the price will be \"the fair market value ('FMV') of the Solar System at the time of the purchase,\" determined by an independent appraiser Sunrun hires, who looks at a comparable in-service system's age, location, size, equipment, service costs, local electricity value, and any incentives already used. EnergySage, describing the industry generally, puts it bluntly: the financier sets the number, not you and not your installer. There is no published table you can look up in advance."
+      },
+      {
+        "question": "Why can't I buy out before year 5?",
+        "answer": "The most credible explanation ties to federal tax law, not an arbitrary Sunrun policy. Third-party-owned solar systems carry the investment tax credit (ITC), and 26 U.S.C. § 50(a)(1) imposes a recapture penalty if the system is sold within 5 years of being placed in service — 100% recapture in year 1, stepping down to 20% by year 5. Selling the system to you earlier would expose Sunrun, as the credit claimant, to giving some of that credit back. This is a reasoned connection between the contract's 5-year floor and the statute, not a line Sunrun states outright, so treat it as informed inference rather than a Sunrun-published rationale."
+      },
+      {
+        "question": "What happens to my Sunrun lease when I sell my house?",
+        "answer": "Sunrun's preferred path is transfer, not buyout. The buyer can assume your agreement if they have a FICO score of 650 or higher, or if they qualify for a mortgage or pay cash, with a $250 credit-check exemption fee (2018 contract figure, not reconfirmed for 2026) paid by either party. Sunrun's own FAQ claims a 98% success rate getting these transfers done. The alternative is that you or the buyer purchase the system outright at FMV before or at closing. If neither happens, you're treated as having defaulted, which triggers removal and a \"Make Whole\" payment under the contract."
+      },
+      {
+        "question": "What does a typical Sunrun buyout actually cost in dollars?",
+        "answer": "There is no reliable current figure to give you, and any number you find online claiming otherwise should be discounted. The one dollar example in Sunrun's own contract template — roughly $32,000 to prepay a small 8.4 kW system in year 10 — is 2018-vintage, describes prepayment (not an ownership purchase), and doesn't scale to a modern system. We could not verify any 2025-2026 real-customer buyout figures; several sites circulating dollar tables online show signs of being unreliable, including one citing a nonsensical $1,000-$1,800 per watt range, which is roughly 500 times actual installed solar cost. Get a written FMV quote from Sunrun directly before assuming any number applies to you."
+      },
+      {
+        "question": "Does the buyout timing (year 5, year 20) apply to PPAs the same as leases?",
+        "answer": "Likely yes, but not confirmed word-for-word. The specific contract text reviewed here is Sunrun's BrightSave lease agreement. Sunrun's current public FAQ refers to \"lease or PPA\" together and describes the same FMV-via-independent-appraiser mechanism and contract-specified timing windows for both. That's a reasonable signal the structure is shared, but it isn't a substitute for reading your own PPA's purchase-option clause, which may set different windows or fees than the lease template."
+      },
+      {
+        "question": "What if I don't want to buy out at all?",
+        "answer": "You have options that don't involve a lump-sum payment. Let the contract run to its end and have Sunrun remove the system at no cost under the End of Term Warranty. Renew the lease or PPA annually instead of buying, though the renewal rate resets — Sunrun's 2018 template tied it to the local utility's on-peak residential rate with a contract-set floor, and this should be re-verified against a current agreement rather than assumed unchanged. Or, per EnergySage's industry-wide figures, expect a $300 to $1,000 annual carrying fee in some arrangements if you skip a buyout window without renewing or removing."
+      }
+    ],
+    "bottomLine": "Sunrun does not let you buy your way out of a lease or PPA whenever you feel like it, and it does not price the buyout off a simple chart. Ownership purchases open at year 5, year 20, end of term, or when you sell the house — everywhere else, an independent appraiser sets the fair market value, and neither you nor Sunrun controls that number in advance. A separate \"prepayment\" option exists inside the term, but it only pays off the lease early; Sunrun still owns the panels. The 5-year floor tracks a real IRS rule (26 U.S.C. § 50 ITC recapture), which is the most credible explanation available for why early ownership transfer isn't offered. Every specific dollar figure circulating online for a Sunrun buyout should be treated as noise until you have your own contract's Section G in hand and a quote from Sunrun directly — do not let a marketing page or forum post set your expectations before that call.",
+    "sources": [
+      {
+        "name": "Sunrun BrightSave Agreement (lease contract template, filed with NY Dept. of Public Service)",
+        "url": "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B5B015D0D-8D69-41F6-BC3E-DE90701BCEC8%7D",
+        "supports": "Purchase option timing (year 5/20/end-of-term/home sale), FMV pricing language, prepayment discount formula, home-sale transfer terms and $250 fee, default consequences"
+      },
+      {
+        "name": "Sunrun Solar FAQ (live)",
+        "url": "https://www.sunrun.com/go-solar-center/solar-faq",
+        "supports": "Confirms FMV-via-independent-appraiser mechanism is current as of 2026-09-05; end-of-term three options; 98% home-sale transfer success claim"
+      },
+      {
+        "name": "EnergySage — Solar Leases vs. PPAs",
+        "url": "https://www.energysage.com/solar/solar-leases-vs-ppas",
+        "supports": "Industry-wide buyout window framing, who controls the FMV number, general context on financier-set pricing"
+      },
+      {
+        "name": "EnergySage — Top Questions About Solar Leasing",
+        "url": "https://www.energysage.com/solar/top-questions-about-solar-leasing",
+        "supports": "Industry-wide annual carrying fee range ($300-$1,000), general IRS-timing rationale for buyout floors"
+      },
+      {
+        "name": "26 U.S.C. § 50 — Cornell Legal Information Institute",
+        "url": "https://www.law.cornell.edu/uscode/text/26/50",
+        "supports": "ITC recapture schedule (100% year 1 down to 20% year 5) underlying the year-5 buyout floor explanation"
+      }
+    ],
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "slug": "sunrun-lease-vs-ppa",
+    "cluster": "installer",
+    "metaTitle": "Sunrun Lease vs. PPA: The Actual Difference",
+    "metaDescription": "Sunrun lease vs. PPA compared using Sunrun's own SEC filing: fixed rent vs. per-kWh billing, who eats a bad production year, and whether PPA is still sold in CA.",
+    "h1": "Sunrun Lease vs. PPA: The Actual Difference",
+    "intro": "Sunrun's own FAQ page draws the line in one sentence: a lease charges a fixed monthly rent for the system no matter what it produces, and a PPA charges a fixed price per kilowatt-hour for the power the system actually generates that month. That single distinction explains almost everything else people get wrong about these two contracts.\n\nBoth run through the same paperwork type. Sunrun's FY2025 Form 10-K, filed February 26, 2026 with the SEC, groups lease and PPA together as \"Customer Agreements\" and confirms a typical 20- or 25-year initial term for either one, with Sunrun owning and maintaining the system the entire time. What actually differs between them is narrower than the sales pitch suggests: which one can carry a rising annual payment, who absorbs a bad production year, and whether Sunrun is still writing new PPA contracts for California homeowners at all in 2026. That last question turns out to matter more than most of the marketing copy addressing it.\n\nThis page works from Sunrun's own SEC filing, its FAQ and product pages, and IRS guidance on the commercial tax credit that makes third-party-owned solar pricing possible in the first place. Where the public record runs out, it says so instead of guessing at a number.",
+    "keyStats": [
+      {
+        "label": "Initial contract term",
+        "value": "20-25 years",
+        "note": "Identical for lease and PPA, per Sunrun's FY2025 10-K filed 2026-02-26"
+      },
+      {
+        "label": "End-of-term renewal discount",
+        "value": "~10%",
+        "note": "Off then-prevailing power prices; applies to both products per the same filing"
+      },
+      {
+        "label": "NEM 3.0 export credit",
+        "value": "5-8¢/kWh",
+        "note": "PG&E, SCE, SDG&E; the reason oversizing doesn't pay off under either contract"
+      },
+      {
+        "label": "Residential tax credit (25D) end date",
+        "value": "Dec 31, 2025",
+        "note": "Confirmed independently via Sunrun's own 10-K; doesn't affect TPO lease/PPA pricing directly"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "The One-Line Difference",
+        "body": "Sunrun's FAQ page (sunrun.com/faq) states it plainly: \"With a lease, you pay a fixed monthly 'rent' in return for use of the system. With a PPA you pay a fixed price per kWh for power generated.\" That's the entire mechanical distinction, and it's worth sitting with because most of the confusion around these two products comes from people assuming there's more to it.\n\nUnder a lease, your payment is the same in July, when the system is producing at its peak, as it is in January, when output drops. Under a PPA, your bill moves with production: higher in the sunny months, lower in the winter, because you're billed per kilowatt-hour delivered rather than a flat rate for access to the equipment. Neither structure is inherently cheaper. A lease trades bill predictability for paying the same amount even in months when the system underperforms; a PPA trades that predictability for a bill that's more expensive exactly when the system is working hardest, which is also usually when your own air conditioning load, and utility bill, is highest."
+      },
+      {
+        "heading": "What Both Contracts Actually Have in Common",
+        "body": "Before getting into what's different, it's worth naming what isn't, because Sunrun's marketing sometimes implies a bigger gap between the two products than the underlying paperwork supports. Per the 10-K, both lease and PPA typically run a 20- or 25-year initial term, with no distinction drawn between the two on length. Sunrun owns and maintains the system under both for the full term, meaning repairs, monitoring, and equipment failures are Sunrun's responsibility either way, not yours. And both fall under the same contractual category, \"Customer Agreements,\" in Sunrun's own SEC disclosure, which telegraphs that the company itself treats them as variations on one product rather than two fundamentally different offerings. If a sales conversation frames the lease-versus-PPA decision as a bigger fork in the road than it is, that's a sales framing, not a contractual one."
+      },
+      {
+        "heading": "Escalators Apply to Both, Not Just the PPA",
+        "body": "Here's a common assumption worth correcting directly: that a lease is flat forever and only a PPA rises over time. Sunrun's 10-K says otherwise. \"Rates for both forms of our Customer Agreements can be fixed for the duration of the contract or escalated at a predetermined percentage annually.\" Read that again: both. A lease can carry a rising annual rent just as easily as a PPA can carry a rising per-kWh rate, and in principle a PPA could be offered with no escalator at all.\n\nWhat the escalator actually indexes to is the real product-level difference: a lease escalator raises a flat dollar figure, a PPA escalator raises a per-kWh rate that then still moves with production on top of that. Sunrun's 10-K doesn't disclose a specific current escalator percentage. A secondary, non-Sunrun-specific source (solar.com's lease-vs-PPA explainer) describes the broader third-party-owned solar industry commonly offering escalator tiers around 0.99%, 1.99%, or 2.99% annually, with a higher escalator buying a lower starting payment, but that's industry-general commentary, not a confirmed Sunrun rate. Get the exact escalator percentage in writing in your specific contract before signing; don't assume a generic industry figure applies to your quote."
+      },
+      {
+        "heading": "Who Eats a Bad Production Year",
+        "body": "This is where the two products genuinely diverge in how risk is allocated. Sunrun's product page for its Subscription Plan (the lease/rent product) advertises a \"workmanship and energy production guarantee for life of contract.\" The structural logic of that guarantee is straightforward: because you're paying a flat rent regardless of output, if the system underproduces against its original estimate, Sunrun typically owes you a true-up payment for the shortfall, since you're being charged the same amount either way.\n\nA PPA handles this differently by design, not by a separate guarantee. Because you're only billed for kilowatt-hours actually delivered, underproduction is self-correcting on your bill; you simply pay less in a bad year. There's less need for a true-up mechanism because you were never overcharged for power you didn't get. This is general third-party-owned solar structure, not confirmed Sunrun-specific language for how its PPA product handles underproduction, and that's worth flagging plainly: if a shaded roof, panel degradation, or a questionable install is a real concern for your property, the lease's flat payment plus documented production guarantee is the more conservative, better-protected choice of the two."
+      },
+      {
+        "heading": "End of Contract: Three Options at Year 20 or 25",
+        "body": "At the end of the initial term, Sunrun's 10-K lays out the same three exits for both products. You can renew the agreement for the remaining life of the system, typically at roughly a 10% discount to then-prevailing power prices. You can purchase the system outright at its fair market value. Or you can have Sunrun remove it. The filing's language doesn't split these options by lease versus PPA, so whichever product you're in, you're not locked into an indefinite contract with no exit; you're locked in for the initial 20 or 25 years, after which the decision resets."
+      },
+      {
+        "heading": "Which One Fits Your Usage Pattern",
+        "body": "This section is analysis built from the mechanics above, not a claim sourced to Sunrun or an independent report; no source available found Sunrun or a third party explicitly advising customers on this by usage pattern, so treat it as reasoning to apply to your own numbers, not a quoted recommendation.\n\nIf your household usage is flat and high year-round, a heat pump, EV charging, or a pool pump running consistently, a lease's fixed payment is easier to budget against and avoids a seasonal bill spike layered on top of your utility bill. If your usage is strongly seasonal, air conditioning load dominating the summer months, a PPA's per-kWh bill rises and falls with production in a way that can track your usage pattern more naturally. But notice the catch: that's also exactly when the system is producing the most, so the PPA charge peaks at the same time your utility bill would otherwise peak too. That's a billing-shape alignment, not an automatic savings advantage.\n\nOne more constraint applies regardless of which contract you pick. Under NEM 3.0, a system that overproduces relative to your onsite usage exports that surplus at roughly 5 to 8 cents per kWh on PG&E, SCE, or SDG&E, a low credit rate either way. That argues for right-sizing the system to your actual consumption as the real lever, not treating the lease-versus-PPA choice as a way to fix export economics, because it doesn't."
+      },
+      {
+        "heading": "Why This Choice Exists Right Now: The Tax Credit Behind the Price",
+        "body": "The residential solar tax credit that used to make a cash or loan purchase competitive, Section 25D, ended December 31, 2025; Sunrun's own 10-K confirms this independently, stating \"The OBBB ended the Residential Clean Energy Credit on January 1, 2026.\" That's a big part of why lease and PPA financing is getting more attention right now: those products run through a different credit entirely.\n\nUnder Section 48E, the commercial investment tax credit, the system's owner, Sunrun, not you, claims the credit, and it gets baked into how competitively Sunrun can price the lease or PPA. Per the 10-K, that credit phases out for projects placed in service after December 31, 2027 unless construction begins by July 4, 2026. IRS Notice 2025-42, issued August 15, 2025, sets out how a company proves it \"began construction\" by that date: either the Physical Work Test (actual on-site construction activity) or the 5% Safe Harbor (incurring at least 5% of project cost early, typically through advance equipment purchase).\n\nHere's the important framing correction: this is not a deadline aimed at you as the homeowner. Large third-party owners commonly bulk-purchase and safe-harbor equipment years ahead of a deadline like this specifically to extend their own credit eligibility well past the nominal cutoff, though whether Sunrun has done so for its 2026-2027 pipeline isn't independently confirmed. Don't let a sales conversation frame July 4, 2026 as a countdown clock on your signature; the deadline pressure sits on Sunrun's sourcing strategy, not on your contract date."
+      },
+      {
+        "heading": "The Question That Actually Matters: Is PPA Still Being Sold in California?",
+        "body": "This is the flag that should shape how you read this entire comparison. Sunrun's current site navigation, as of September 5, 2026, leads with a \"Sunrun Subscription Plan,\" the lease/flat-payment product, marketed with \"$0 to little down,\" \"predictable monthly payments with locked-in rates,\" and \"free maintenance and repairs for 25 years,\" alongside a separate \"owned plans\" loan/purchase option. The word \"PPA\" does not appear as its own top-navigation product on the current consumer-facing site. It surfaces only in the FAQ language quoted earlier and in the 10-K's \"Customer Agreements\" description.\n\nThat pattern is consistent with PPA having become a legacy contract type, still serviced for existing customers, while new sales get steered toward the Subscription Plan lease and loan products, but that's an inference from what's absent, not a confirmed fact. It could also just mean PPA is offered but not featured in top navigation. Either way, don't walk into a sales conversation assuming lease and PPA are two equally live, equally promoted options sitting side by side on the menu today. Ask directly, in writing, whether a PPA is currently being originated for new California customers before you spend time comparing numbers on a product that might not actually be on offer."
+      }
+    ],
+    "dataTable": {
+      "caption": "Sunrun lease vs. PPA, feature by feature (source: Sunrun FAQ and FY2025 Form 10-K, filed 2026-02-26)",
+      "columns": [
+        "Feature",
+        "Lease",
+        "PPA"
+      ],
+      "rows": [
+        [
+          "What you pay for",
+          "A fixed monthly rent for use of the system",
+          "A fixed price per kWh for power actually generated"
+        ],
+        [
+          "Bill shape month to month",
+          "Flat, same payment every month regardless of output",
+          "Variable, tracks production (higher in sunny months, lower in winter)"
+        ],
+        [
+          "Who absorbs a low-production year",
+          "Sunrun, generally offset by a production guarantee on the lease product",
+          "You, structurally, since you're only billed for kWh delivered (Sunrun-specific PPA language not independently confirmed)"
+        ],
+        [
+          "Can the payment rise over time",
+          "Yes, an annual escalator can apply",
+          "Yes, an annual escalator can apply (the 'PPA escalates, lease doesn't' assumption is false per Sunrun's own 10-K)"
+        ],
+        [
+          "System ownership during contract",
+          "Sunrun",
+          "Sunrun"
+        ],
+        [
+          "Typical initial contract term",
+          "20 or 25 years",
+          "20 or 25 years"
+        ],
+        [
+          "End-of-term options",
+          "Renew (~10% discount to prevailing power prices), buy at fair market value, or removal",
+          "Renew (~10% discount to prevailing power prices), buy at fair market value, or removal"
+        ],
+        [
+          "Best fit for flat, high year-round usage (heat pump, EV, pool pump)",
+          "Easier to budget against, no seasonal spike",
+          "Bill spikes in your highest-usage summer months"
+        ],
+        [
+          "Best fit for someone unsure about roof/shading quality",
+          "More conservative choice, flat payment plus production guarantee cushions underperformance",
+          "No separate guarantee payment if the system underproduces"
+        ],
+        [
+          "Currently marketed to new CA customers as of 2026-09-05",
+          "Yes, the featured 'Subscription Plan' on Sunrun's site nav",
+          "Unconfirmed, does not appear as its own product page; surfaces only in FAQ and SEC filing language"
+        ]
+      ]
+    },
+    "whenThisIsWrong": "This comparison assumes you're actually being offered both products, which as of September 5, 2026 isn't confirmed for new California customers; Sunrun's current site markets the lease-style Subscription Plan as its lead product and doesn't list PPA in top navigation, so confirm PPA is actually on the table before comparing it to a lease. If you're served by a publicly owned utility, LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial ID, or Turlock ID, none of this NEM 3.0 framing applies to you; those utilities set their own export terms and the urgency baked into this comparison doesn't transfer. If you plan to sell the home within the next several years, both products require the buyer to qualify and assume a 20-25 year agreement, a real complication a cash or loan purchase doesn't carry. And if your usage is low and consistent, a flat lease payment can exceed what a right-sized system would save you regardless of escalator terms, in which case the better question isn't lease-versus-PPA, it's whether third-party-owned solar fits your household at all.",
+    "faqs": [
+      {
+        "question": "Does the lease or the PPA cost less overall?",
+        "answer": "Neither is categorically cheaper. It depends on how much the system actually produces relative to Sunrun's original estimate and how your usage lines up with production months. A lease locks in the same rent whether the system overperforms or underperforms; a PPA bills you for exactly what's generated, so a strong-production system costs more under a PPA and a weak one costs less. There's no public, Sunrun-specific per-kWh starting rate available as of 2026-09-05 to run a clean side-by-side dollar comparison, so get an actual quote for your address and roof before assuming either one wins on price."
+      },
+      {
+        "question": "Can I switch from a lease to a PPA later, or vice versa?",
+        "answer": "Sunrun's public materials describe lease and PPA as the two forms of its 'Customer Agreement' but don't document a conversion process between them mid-contract. Treat the one you sign as the one you're in for the 20 or 25-year initial term. If flexibility matters to you, ask the sales rep directly whether a mid-contract product switch is contractually possible and get the answer in writing before signing, don't rely on a verbal assurance."
+      },
+      {
+        "question": "What happens to my Sunrun contract if I sell my house?",
+        "answer": "Both lease and PPA are structured as long-term agreements tied to the property, and Sunrun's 10-K frames the end-of-term options (renewal, buyout, removal) around the current customer completing the term, not around an early sale. The practical mechanism for a sale is typically a transfer of the agreement to the buyer, which requires the buyer to qualify and agree to assume the remaining term. This is a real friction point in a home sale and worth raising with your real estate agent before you sign, not after you've listed the house."
+      },
+      {
+        "question": "Does NEM 3.0 change which one I should pick?",
+        "answer": "Not directly between lease and PPA, no. NEM 3.0's low export credit (roughly 5 to 8 cents per kWh for PG&E, SCE, and SDG&E customers) affects the economics of an oversized system under either contract type equally, since export value doesn't depend on whether you're paying flat rent or per-kWh. What NEM 3.0 does change is the case for pairing either contract with a battery, and the case for right-sizing the system to your actual consumption rather than your roof's full capacity, regardless of which financing product you pick."
+      },
+      {
+        "question": "Is Sunrun financially stable enough to honor a 20 to 25-year contract?",
+        "answer": "Sunrun itself has not filed for bankruptcy, unlike Freedom Forever (Chapter 11 in April 2026, converted to Chapter 7 liquidation on July 31, 2026, no longer operating) or Sunnova (Chapter 11 in June 2025, legacy portfolio now run by SunStrong rather than originating new contracts). That said, a 20 to 25-year bet on any single company's solvency carries inherent risk that no marketing page will quantify for you. Ask what happens to your contract, maintenance obligations, and production guarantee if Sunrun were ever sold, restructured, or liquidated, and get that answer in the contract language, not a sales conversation."
+      },
+      {
+        "question": "Can I actually still get a PPA from Sunrun in California right now?",
+        "answer": "This is the single most important open question on this page, and as of 2026-09-05 it isn't settled. Sunrun's current site navigation leads with a 'Subscription Plan' lease product and an 'owned plans' loan/purchase option; PPA doesn't appear as its own marketed product page, only surfacing in FAQ language and SEC filing text that describes it as one of two historical 'Customer Agreement' types. That's consistent with PPA having become a legacy contract type serviced for existing customers while new sales are steered toward the lease, but it isn't confirmed either way. Call a Sunrun CA sales line or request quotes through a marketplace like EnergySage before assuming a PPA is on the table."
+      },
+      {
+        "question": "Does the federal tax credit lower my Sunrun lease or PPA payment?",
+        "answer": "Indirectly, and not in a way you'll ever file for yourself. The residential credit (Section 25D) that homeowners used to claim on a cash or loan purchase ended December 31, 2025. Lease and PPA pricing instead runs through a separate commercial credit (Section 48E) that Sunrun, as the system's owner, claims on its own taxes, not you. Sunrun's 10-K states that credit phases out for projects placed in service after December 31, 2027 unless construction begins by July 4, 2026, but large owners commonly lock in eligibility years ahead through equipment safe-harboring, so don't treat that date as a deadline pressuring your signing decision. It's a mechanism behind Sunrun's pricing, not a countdown clock aimed at you."
+      }
+    ],
+    "bottomLine": "The lease-versus-PPA choice comes down to one variable: does your payment track a dollar amount or a kWh count. Everything else, contract length, ownership, escalators, end-of-term options, is either identical between the two or a matter of degree, not kind. Both run 20 to 25 years with Sunrun owning the hardware; both can carry an annual escalator despite the \"flat lease\" branding; both hand you the same three exits at the end (renew at roughly a 10% discount, buy at fair market value, or have it removed). The real open question, unresolved by any source available as of September 5, 2026, is whether Sunrun is still writing new PPA contracts for California homeowners at all, given that its current site markets a \"Subscription Plan\" lease as the lead product and doesn't list PPA as a standalone offering. Confirm that directly with a Sunrun rep before treating this as a live choice. And regardless of which one you're offered, size the system to your actual consumption, not your roof space; NEM 3.0's 5 to 8 cent export credit punishes oversizing under either contract equally.",
+    "sources": [
+      {
+        "name": "Sunrun FAQ",
+        "url": "https://www.sunrun.com/faq",
+        "supports": "Direct quote defining the lease (fixed rent) vs. PPA (fixed per-kWh price) mechanical difference"
+      },
+      {
+        "name": "Sunrun Subscription Plan product page",
+        "url": "https://www.sunrun.com/solar-plans-and-services/monthly-solar-lease",
+        "supports": "Lease product's advertised production/workmanship guarantee and current site marketing framing"
+      },
+      {
+        "name": "Sunrun owned-plans product page",
+        "url": "https://www.sunrun.com/solar-plans-and-services/owned-plans",
+        "supports": "Confirms loan/purchase as a separately marketed alternative to lease and PPA"
+      },
+      {
+        "name": "Sunrun Inc. Form 10-K, FY2025 (SEC EDGAR)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1469367/000162828026012289/run-20251231.htm",
+        "supports": "Contract term length, ownership structure, escalator language applying to both products, end-of-term options, and confirmation of the 25D and 48E tax credit dates"
+      },
+      {
+        "name": "IRS Notice 2025-42",
+        "url": "https://www.irs.gov/pub/irs-drop/n-25-42.pdf",
+        "supports": "Beginning-of-construction rules (Physical Work Test and 5% Safe Harbor) governing Section 48E eligibility for the July 4, 2026 deadline"
+      },
+      {
+        "name": "solar.com, \"Solar Lease vs. PPA\"",
+        "url": "https://www.solar.com/learn/solar-lease-vs-ppa/",
+        "supports": "Secondary, non-Sunrun-specific commentary on industry-general escalator tiers (0.99%/1.99%/2.99%), cited as hedged context only"
+      }
+    ],
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "slug": "sunrun-ppa-explained",
+    "cluster": "installer",
+    "metaTitle": "Sunrun PPA Explained: Terms From the 10-K",
+    "metaDescription": "Sunrun PPA terms explained from its 2026 SEC 10-K: 20-25 year length, escalator rules, end-of-term buyout, and what happens if you sell your home.",
+    "h1": "How a Sunrun PPA Actually Works",
+    "intro": "A Sunrun power purchase agreement runs 20 to 25 years. That's not a sales estimate — it's the language in Sunrun's own 10-K, filed with the SEC on February 26, 2026: Customer Agreements \"typically have an initial term of 20 or 25 years.\" Under a PPA, you never own the panels. Sunrun or one of its financing partners does, for the life of the contract, and you pay a fixed price per kilowatt-hour for the electricity the system produces instead of paying a contractor to install equipment you'd own outright.\n\nThat distinction — pay-per-kWh (PPA) versus fixed-monthly-rent (lease) versus one-time prepayment (Sunrun's 25-year prepaid plan) versus owning the system yourself (cash or loan) — determines who gets the tax credit, who's on the hook for repairs, what happens if you sell your house, and what you're allowed to do with the system for two decades. This page walks through what Sunrun's SEC filings and its own consumer-facing materials say about each of those questions, as of September 5, 2026. Where Sunrun hasn't published a number — the exact escalator percentage, the fair-market-value buyout formula, geographic carve-outs on the performance guarantee — that gap is flagged rather than filled in with a guess.\n\nCalifornia Rate Relief doesn't install anything and isn't affiliated with Sunrun. This is a breakdown of Sunrun's own disclosed terms so you can read your actual contract with context.",
+    "keyStats": [
+      {
+        "label": "Contract term",
+        "value": "20-25 years",
+        "note": "Sunrun 10-K, FY2025, filed 2026-02-26 — exact term set per agreement"
+      },
+      {
+        "label": "Renewal discount",
+        "value": "~10% off market rate",
+        "note": "Sunrun's stated typical renewal terms after the initial period, per its 10-K"
+      },
+      {
+        "label": "Production check-in",
+        "value": "Every 24 months",
+        "note": "Sunrun consumer FAQ — cadence for comparing actual vs. guaranteed output"
+      },
+      {
+        "label": "48E construction deadline",
+        "value": "July 4, 2026 (already passed)",
+        "note": "Sunrun 10-K risk disclosure — deadline for a project to begin construction and still qualify for the commercial solar credit"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "What You're Actually Signing",
+        "body": "Sunrun's consumer FAQ draws the line plainly: \"With a lease, you pay a fixed monthly 'rent' in return for use of the system. With a PPA you pay a fixed price per kWh for power generated.\" Both are non-ownership contracts. Sunrun's site currently markets its standard monthly non-ownership product as the \"Sunrun Subscription Plan,\" described as \"hassle-free full service for life,\" and separately offers a 25-year prepaid version with no ongoing monthly bill. Whichever version you're offered, the mechanism underneath is the same: Sunrun or a financing partner owns the physical equipment, arranges non-recourse financing and tax-equity investment to fund it, and in some cases sells the completed agreement to a third-party investor. You never hold title to the panels, the inverter, or the battery during the term — the equipment sits on your roof, but it is not your asset on paper.\n\nThis matters beyond semantics. Ownership determines who can claim the tax credit, who owes property tax on the equipment in states that assess it, and whose name is on the maintenance obligation. Under a PPA or lease, all of that sits with Sunrun. That's the trade you're making for zero money down: you give up the asset and the tax benefit, and in exchange Sunrun is contractually on the hook for keeping the system running for the length of the agreement."
+      },
+      {
+        "heading": "The Escalator: Why There Isn't One Published Number",
+        "body": "Sunrun's 10-K states plainly that rates \"can be fixed for the duration of the contract or escalated at a predetermined percentage annually.\" No specific percentage appears anywhere in the filing. Sunrun's own FAQ confirms the escalator is \"outlined in your Sunrun agreement\" — meaning it's set contract-by-contract, likely varying by state, installer relationship, and product tier, not published as one company-wide rate. If you want a payment with no annual increase at all, Sunrun's FAQ points to its prepaid plan as the escalator-free option.\n\nGeneral industry guides (not Sunrun-specific — this figure should not be read as Sunrun's rate) describe typical escalator tiers around 0.99%, 1.99%, or 2.99% annually across the solar-lease/PPA industry broadly, and note that no-escalator contracts tend to save more over the full term. Whatever tier applies to your specific offer, get it in writing before signing. On a 20-25 year contract, the difference between a 1% and a 3% annual increase compounds into thousands of dollars by year 20 — this is worth more scrutiny than the sticker price of month one."
+      },
+      {
+        "heading": "The Production Guarantee, and Its Fine Print",
+        "body": "Sunrun's 10-K states that most Customer Agreements \"entitle the customer to a refund for underproduction below a guaranteed amount\" — its performance guarantee — with one carve-out: agreements \"billed based on generation\" (a strict per-kWh PPA) work differently, since underproduction there already lowers what you owe automatically, rather than triggering a separate refund. Sunrun's consumer FAQ describes the mechanic in plain terms: the company compares actual production against the estimate every 24 months and issues billing credits if the system underproduced.\n\nThe FAQ also states the guarantee \"applies only to monthly lease and PPA arrangements and may have geographic limitations\" — but does not spell out which states or regions are excluded. That gap is unresolved as of this writing; if a specific state exclusion matters to your decision, ask Sunrun directly for the geographic scope of your guarantee in writing rather than assuming universal coverage."
+      },
+      {
+        "heading": "End of the Initial Term: Three Choices, One Unpublished Number",
+        "body": "This is the single highest-value fact in Sunrun's 10-K for anyone comparing a 20-25 year commitment: at the end of the initial term, you get three options. Renew the agreement for the remaining life of the system — Sunrun states this is \"typically at a 10% discount to then-prevailing power prices.\" Purchase the system outright at its fair market value. Or have Sunrun remove it at no cost to you.\n\nWhat Sunrun has not published, in the 10-K or anywhere else checked for this page, is the formula behind that fair-market-value buyout number. There's no percentage, no depreciation schedule, no worked example. If your plan is to buy the system at year 20 or 25, don't budget around an assumed number today — request a written quote as that date approaches, since \"fair market value\" gives Sunrun latitude that isn't quantified in advance."
+      },
+      {
+        "heading": "Selling Your Home With the System Still Attached",
+        "body": "Sunrun's dedicated transfer process (\"Moving Made Easy\") lays out four steps: you submit your buyer's and escrow company's contact information; all parties verify details and confirm the closing date through Sunrun's portal; everyone e-signs transfer documents via DocuSign, with the new homeowner completing what Sunrun calls a \"soft credit check (this will not impact their credit score)\"; the transfer finalizes when escrow closes. The agreement assigns to the new owner only if they meet Sunrun's credit requirements — per the 10-K, the buyer must qualify and agree to the existing contract's terms.\n\nIf the buyer doesn't want to or can't assume it, you can prepay the remaining service balance, typically folded into your home's sale price; the new owner then gets the power for whatever's left of the term, after which Sunrun removes the system for free. Sunrun states it places no lien on the home, though it may record a notice against the title in some states as part of its financing arrangement — this is standard practice across the third-party solar industry (commonly a UCC-1 fixture filing), though the exact filing type Sunrun uses in California specifically wasn't independently confirmed in a second source for this page. Either way, expect any such notice to need clearing as part of a sale or refinance, and raise it with your title company early."
+      },
+      {
+        "heading": "What You Own vs. What Sunrun Owns",
+        "body": "Under a PPA or lease, Sunrun owns the physical equipment for the contract's duration and — per its consumer site — provides \"24/7 system monitoring\" and \"free maintenance and repairs\" as part of that ownership. You own none of the hardware and carry none of the repair liability.\n\nThe tax picture follows the same split. The federal Investment Tax Credit and any bonus credits attach to whoever owns the system — Sunrun or its tax-equity investors — never the PPA or lease customer, structurally, regardless of the credit's size or expiration date. Sunrun's own FAQ implies state-level rebates work the same way: it tells cash/loan customers that rebates \"go directly to you,\" which by contrast means they flow to Sunrun under a lease or PPA. Sunrun's 10-K also notes its investment funds \"often are able to sell SRECs to utilities directly or in SREC markets\" — worth knowing structurally, though California has no SREC market, so this doesn't apply to a California PPA in practice."
+      },
+      {
+        "heading": "Why the Tax Credit Calendar Matters for a Contract Signed Today",
+        "body": "Two federal deadlines, both from Sunrun's own 10-K risk disclosures, bracket this decision. First: the 2025 federal budget law (the OBBB) \"ended the Residential Clean Energy Credit\" — Section 25D, the credit for homeowners who buy a system outright — effective January 1, 2026. That credit never applied to PPA or lease customers anyway, but as of now it's gone for cash/loan buyers too, narrowing the tax gap between owning and leasing.\n\nSecond, and more complex: the commercial credit that makes PPA financing work, Section 48E, is not available for \"solar projects... placed in service after December 31, 2027, unless construction on the solar project begins by July 4, 2026\" — per Sunrun's own filing. As of today, September 5, 2026, that construction-start deadline has already passed. What that means for a homeowner signing a new Sunrun agreement right now is genuinely unresolved from public information: IRS \"beginning of construction\" safe-harbor rules have historically let a developer satisfy this test on a portfolio basis well ahead of any individual home's installation, which could mean Sunrun's pipeline already qualifies — but that's not confirmed here. If the 48E-eligibility of your specific project matters to the price you're being quoted, ask your installer directly whether their construction-start safe harbor has been satisfied, rather than assuming either way."
+      },
+      {
+        "heading": "Sunrun's Financial Position, in Context",
+        "body": "Given how many solar financiers have failed in the past two years, this matters as much as the contract math. Freedom Forever filed Chapter 11 in April 2026 and converted to Chapter 7 liquidation on July 31, 2026 — it no longer operates, leaving more than 150,000 homeowners in limbo. Sunnova filed Chapter 11 in June 2025; its legacy contracts are now run down by SunStrong rather than originating new business. SunPower filed Chapter 11 in August 2024.\n\nSunrun, as of this writing, has not filed for bankruptcy. Its investor relations page shows continued quarterly reporting through Q2 2026 (released August 5, 2026), two 2026 asset-backed securitizations ($584 million in April, $267 million in August), and a Fortune 1000 listing for 2026. That's a materially different fact pattern than its failed competitors — but it's a snapshot, not a forecast, and this page did not pull Sunrun's specific balance-sheet or cash-position figures, so treat \"still operating and still securitizing\" as the confirmed fact, not a guarantee of the next 20 years."
+      }
+    ],
+    "dataTable": {
+      "caption": "Sunrun's four contract structures, side by side (source: Sunrun 10-K, FY2025, filed 2026-02-26; Sunrun consumer FAQ, fetched 2026-09-05)",
+      "columns": [
+        "Contract type",
+        "How you pay",
+        "Escalator",
+        "Who owns the system",
+        "Where the tax credit goes",
+        "End-of-term options"
+      ],
+      "rows": [
+        [
+          "PPA (pay per kWh)",
+          "Fixed price per kWh of power actually produced",
+          "Set per agreement — ask for the written number before signing",
+          "Sunrun or its financing/investor partners",
+          "Sunrun or its tax-equity investors (never the customer)",
+          "Renew (commonly ~10% off prevailing power prices), buy at fair market value, or request removal"
+        ],
+        [
+          "Monthly lease (\"Subscription Plan\")",
+          "Fixed monthly amount regardless of output",
+          "Set per agreement — same caveat as PPA",
+          "Sunrun or its financing/investor partners",
+          "Sunrun or its tax-equity investors",
+          "Renew (commonly ~10% off prevailing power prices), buy at fair market value, or request removal"
+        ],
+        [
+          "Prepaid subscription (25-year)",
+          "One upfront payment covering the full term",
+          "None — this is the no-escalator option",
+          "Sunrun or its financing/investor partners",
+          "Sunrun or its tax-equity investors",
+          "Same three-way choice at year 25"
+        ],
+        [
+          "Cash or loan purchase",
+          "You pay the installer (Sunrun or another CSLB contractor) directly",
+          "Not applicable — no ongoing payment to escalate",
+          "You, from day one",
+          "You (but the federal 25D credit ended for systems placed in service after 2025)",
+          "None needed — you already own it"
+        ]
+      ]
+    },
+    "whenThisIsWrong": "A Sunrun PPA is the wrong fit if you want to claim a system-ownership tax benefit yourself — though with 25D now ended for everyone as of January 1, 2026, this gap has narrowed, it hasn't closed for the 48E-style benefits that still flow only to the owner-financier. It's wrong if you're planning to sell your home within the contract term and your likely buyer pool skews toward cash offers or buyers unlikely to clear a credit check — an unassumed PPA means prepaying the balance out of your sale proceeds, which can complicate a sale timeline. It's wrong if you want to add a battery, expand the array, or re-roof without coordinating around equipment you don't own — every physical change requires Sunrun's involvement and consent, not just a contractor's. It's wrong if you have or plan a HELOC or refinance and haven't first confirmed how a UCC-style title notice from Sunrun will be handled by your lender. And it's wrong if you're unwilling to sign before Sunrun states your specific escalator percentage and the geographic scope of your performance guarantee in writing — both are contract-specific, unpublished company-wide, and material to a two-decade commitment.",
+    "faqs": [
+      {
+        "question": "Is a Sunrun PPA the same thing as a Sunrun lease?",
+        "answer": "No, though people use the terms interchangeably. Per Sunrun's own consumer FAQ: with a lease you pay a fixed monthly \"rent\" for use of the system regardless of how much power it makes. With a PPA you pay a fixed price per kilowatt-hour for the power the system actually generates that month. Both are non-ownership contracts — Sunrun holds title either way. Sunrun's site currently markets its monthly non-ownership product as the \"Sunrun Subscription Plan\"; whether a given household's paperwork calls it a lease or a PPA structurally depends on how the meter is billed, not on marketing language. Ask which one you're being offered before signing, since the underlying math differs."
+      },
+      {
+        "question": "How long does a Sunrun contract last?",
+        "answer": "Sunrun's FY2025 10-K, filed with the SEC on 2026-02-26, states its Customer Agreements \"typically have an initial term of 20 or 25 years.\" The 25-year figure is explicitly tied to Sunrun's prepaid product on its consumer site. Which exact number applies to a monthly-pay lease or PPA in your specific market isn't broken out publicly beyond that 20-or-25 range, so get the term length in writing in your own contract rather than assuming either number."
+      },
+      {
+        "question": "Will my monthly payment go up every year?",
+        "answer": "It depends on which agreement you sign, and Sunrun does not publish one standard escalator percentage. Its own FAQ says your bill \"will increase based on an escalator outlined in your Sunrun agreement,\" and that a no-escalator option exists if you choose the prepaid plan instead. Industry-wide, escalator tiers in the 1-3% annual range are common (per general industry guides, not a Sunrun-published figure), but treat any number you hear before reading your actual contract as unconfirmed. This is the single most important number to nail down before signing, because it compounds for two decades."
+      },
+      {
+        "question": "Do I get the federal solar tax credit with a Sunrun PPA?",
+        "answer": "No — and as of 2026-09-05, nobody buying solar gets the old residential credit anymore. The Section 25D residential credit only ever applied to homeowners who purchased a system outright, never to lease or PPA customers; Sunrun's own 10-K confirms 25D applied only to \"customers who purchase an energy system outright.\" On top of that, per Sunrun's 10-K, the 2025 federal budget law (the OBBB) ended the Residential Clean Energy Credit entirely, effective January 1, 2026. Under a PPA, the tax benefit that matters — the commercial Section 48E credit — flows to Sunrun or its tax-equity investors, not to you, and is already priced into your rate."
+      },
+      {
+        "question": "What happens at the end of my Sunrun contract?",
+        "answer": "Per Sunrun's 10-K, you get three choices: renew the agreement for the system's remaining life (Sunrun states this is \"typically at a 10% discount to then-prevailing power prices\"), buy the system outright at its fair market value, or have Sunrun remove it at no cost to you. Sunrun has not published the formula it uses to calculate that fair-market-value buyout price, so if you're planning around a specific buyout number, get a written quote near the end of your term rather than estimating today."
+      },
+      {
+        "question": "What happens if I sell my house before the contract ends?",
+        "answer": "Per Sunrun's transfer process (\"Moving Made Easy\"), the buyer can assume your agreement if they pass a soft credit check (Sunrun states this does not affect the buyer's credit score) and sign the transfer paperwork, finalized at escrow close. If the buyer won't or can't assume it, you can prepay the remaining service balance — typically rolled into your home's sale price — after which the new owner gets the power for the rest of the term at no additional charge, and Sunrun removes the system for free once the term ends. Either way, plan for this conversation with your buyer and realtor before listing."
+      },
+      {
+        "question": "Is Sunrun at risk of the bankruptcies we've seen from other solar financiers?",
+        "answer": "As of 2026-09-05, Sunrun has not filed for bankruptcy, unlike Freedom Forever (Chapter 11 in April 2026, converted to Chapter 7 liquidation on July 31, 2026), Sunnova (Chapter 11 in June 2025, now run down by SunStrong), and SunPower (Chapter 11 in August 2024). Sunrun reported quarterly results through Q2 2026, closed two asset-backed securitizations in 2026 ($584 million in April, $267 million in August), and was named to the Fortune 1000 list for 2026. That's a solid operating fact pattern, not a guarantee — no company's future financial health can be verified from public filings alone, so factor it in as one data point, not a certainty."
+      }
+    ],
+    "bottomLine": "A Sunrun PPA is a 20-to-25-year contract, per Sunrun's own SEC filing, under which Sunrun (or its financing partners) keeps title to the panels and the tax credit, and you pay for the power. The escalator, the production-guarantee mechanics, and the fair-market-value buyout at year 20 or 25 are all contract-specific — Sunrun does not publish one number for any of them, so the actual figures live in the paperwork you'd sign, not on the marketing page. Selling the house means qualifying a buyer or prepaying the balance; neither is guaranteed to be simple. None of this makes a PPA wrong by default — for a homeowner who wants zero money down and zero maintenance liability, it can still make sense. But compare it against a cash or loan purchase before signing, because the two paths now diverge more than they did before January 2026, when the owner-side federal credit disappeared.",
+    "sources": [
+      {
+        "name": "Sunrun Inc. Form 10-K, FY2025 (filed with SEC 2026-02-26)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1469367/000162828026012289/run-20251231.htm",
+        "supports": "Contract term length (20-25 years), escalator language, performance guarantee language, end-of-term options (renewal discount, FMV purchase, removal), home-sale transfer rights, ownership/financing structure, SREC language, 25D end date, 48E construction/placed-in-service deadlines"
+      },
+      {
+        "name": "Sunrun consumer FAQ",
+        "url": "https://www.sunrun.com/go-solar-center/solar-faq",
+        "supports": "Lease vs. PPA distinction in plain language, escalator confirmation and no-escalator prepaid option, 24-month production comparison and credit remedy, geographic limitation disclosure, state rebate flow-through implication"
+      },
+      {
+        "name": "Sunrun monthly solar lease product page",
+        "url": "https://www.sunrun.com/solar-plans-and-services/monthly-solar-lease",
+        "supports": "Current product framing (\"Sunrun Subscription Plan\"), maintenance and monitoring inclusions, system ownership by Sunrun"
+      },
+      {
+        "name": "Sunrun \"Moving Made Easy\" transfer page",
+        "url": "https://www.sunrun.com/moving-made-easy",
+        "supports": "Four-step home-sale transfer process, buyer soft credit check, prepay-and-remove alternative, title notice practice"
+      },
+      {
+        "name": "Sunrun Investor Relations, press releases",
+        "url": "https://investors.sunrun.com/news-events/press-releases",
+        "supports": "No bankruptcy filing, Q1/Q2 2026 quarterly reporting, 2026 securitizations, Fortune 1000 2026 listing"
+      },
+      {
+        "name": "Solar.com, solar lease vs. PPA guide (updated 2026-01-22)",
+        "url": "https://www.solar.com/learn/solar-lease-vs-ppa/",
+        "supports": "General industry escalator tier context (0.99%/1.99%/2.99%) — explicitly not attributed to Sunrun specifically"
+      }
+    ],
+    "reviewedAt": "2026-09-05"
+  }
+]
