@@ -6,50 +6,11 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import { getAffiliateLink, buildAffiliateUrl } from '@/lib/affiliate-links';
 
 // =============================================================================
-// useAffiliateClick — fires GA4 dataLayer + PostHog event (Batch 6)
+// Affiliate-click instrumentation
 // =============================================================================
-// Single tracking call so every BuyButton click reports to whichever analytics
-// platforms are loaded. Safe no-op if neither is initialized — pages still
-// render, links still click through.
-//
-// Once Batch 9 (PostHog) is wired, the posthog.capture call will start firing
-// in addition to the dataLayer push (which GA4/GTM already consumes).
+// The global analytics listener records sponsored links through these data
+// attributes. The destination remains usable when analytics is unavailable.
 // =============================================================================
-function trackAffiliateClick(payload: {
-  productKey: string;
-  source: string;
-  brand: string;
-  priceDisplay?: string | null;
-  status?: string;
-}) {
-  if (typeof window === 'undefined') return;
-  const w = window as unknown as {
-    dataLayer?: Array<Record<string, unknown>>;
-    posthog?: { capture?: (event: string, props: Record<string, unknown>) => void };
-  };
-  // GA4 / GTM — push to dataLayer if it exists
-  if (Array.isArray(w.dataLayer)) {
-    w.dataLayer.push({
-      event: 'affiliate_click',
-      affiliate_source: payload.source,
-      product_key: payload.productKey,
-      brand: payload.brand,
-      price_display: payload.priceDisplay ?? null,
-      affiliate_status: payload.status ?? 'unknown',
-    });
-  }
-  // PostHog — fire if loaded (Batch 9)
-  if (w.posthog?.capture) {
-    w.posthog.capture('affiliate_click', {
-      affiliate_source: payload.source,
-      product_key: payload.productKey,
-      brand: payload.brand,
-      price_display: payload.priceDisplay ?? null,
-      affiliate_status: payload.status ?? 'unknown',
-    });
-  }
-}
-
 interface BuyButtonProps {
   /** Key into AFFILIATE_LINKS registry */
   productKey: string;
@@ -119,15 +80,7 @@ export function BuyButton({
         className={`${base} ${sizes[variant]} ${colors[variant]} ${widthClass}`}
         data-affiliate-source={source}
         data-product-key={productKey}
-        onClick={() =>
-          trackAffiliateClick({
-            productKey,
-            source,
-            brand: link.brand,
-            priceDisplay: link.priceDisplay,
-            status: link.status,
-          })
-        }
+        data-brand={link.brand}
       >
         {buttonLabel}
         {variant === 'compact' ? (

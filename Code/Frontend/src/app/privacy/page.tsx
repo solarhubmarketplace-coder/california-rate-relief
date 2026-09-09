@@ -37,7 +37,7 @@ const BRANDS: Record<Domain, BrandConfig> = {
   grh: { brand: 'GreenReviewsHub', domain: 'greenreviewshub.com', contactPath: '/contact', canonical: 'https://greenreviewshub.com/privacy' },
   shg: { brand: 'SecureHomeGear', domain: 'securehomegear.com', contactPath: '/contact', canonical: 'https://securehomegear.com/privacy' },
   ahb: { brand: 'At Home Biohacking', domain: 'athomebiohacking.com', contactPath: '/contact', canonical: 'https://athomebiohacking.com/privacy' },
-  glp1: { brand: 'GLP1CompareHub', domain: 'glp1comparehub.com', contactPath: '/contact', canonical: 'https://glp1comparehub.com/privacy' },
+  glp1: { brand: 'GLP1CompareHub', domain: 'glp1comparehub.com', contactPath: '/contact', canonical: 'https://www.glp1comparehub.com/privacy' },
 };
 
 async function getDomain(): Promise<Domain> {
@@ -55,7 +55,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const cfg = BRANDS[domain];
   return {
     title: `Privacy Policy — ${cfg.brand}`,
-    description: `How ${cfg.brand} collects, uses, and protects visitor data. GDPR, CCPA, and US state privacy law compliance information.`,
+    description:
+      domain === 'glp1'
+        ? 'How GLP1CompareHub uses analytics, campaign parameters, affiliate-click events, and messages sent to the editorial team.'
+        : `How ${cfg.brand} collects, uses, and protects visitor data. GDPR, CCPA, and US state privacy law compliance information.`,
     alternates: { canonical: cfg.canonical },
   };
 }
@@ -210,18 +213,19 @@ function Glp1Privacy() {
     <GLP1TrustPage title='Privacy Policy' subtitle='How GLP1CompareHub collects, uses, and protects your data.'>
       <h2>What We Collect</h2>
       <ul>
-        <li>Anonymous analytics (page views, clicks, sessions) via Google Analytics 4 and PostHog</li>
-        <li>UTM parameters and affiliate-click events when you visit a provider&rsquo;s site through our links</li>
-        <li>Email address only if you voluntarily subscribe (we do not currently offer a newsletter)</li>
+        <li>Google Analytics 4 page views, referrer, browser, device, and approximate location data</li>
+        <li>Campaign parameters used for attribution, limited to UTM and ad-campaign fields</li>
+        <li>Affiliate-click events identifying the provider and the page where the click occurred</li>
+        <li>Information you choose to send by email to the editorial team</li>
       </ul>
       <p>We do NOT collect your medical information, insurance details, or any data submitted
       to third-party providers after you click an affiliate link. Once you leave glp1comparehub.com,
       that provider&rsquo;s privacy policy applies.</p>
 
       <h2>Cookies</h2>
-      <p>We use first-party cookies for analytics and to remember your provider-comparison selections.
-      Third-party cookies may be set by Google Analytics. You can disable cookies via your browser
-      settings — the site will still function but analytics will not record your visit.</p>
+      <p>Google Analytics may set cookies used to distinguish visits and measure site usage. You
+      can block or delete cookies in your browser. The public price data remains available without
+      creating an account.</p>
 
       <h2>Affiliate Tracking</h2>
       <p>When you click a provider link, we append UTM parameters
@@ -230,21 +234,20 @@ function Glp1Privacy() {
 
       <h2>Your Rights (GDPR / CCPA)</h2>
       <ul>
-        <li><strong>Access:</strong> Request a copy of any data we hold about you</li>
-        <li><strong>Deletion:</strong> Request we delete data associated with your IP or session</li>
-        <li><strong>Opt-out of sale:</strong> We do NOT sell personal information to third parties</li>
+        <li><strong>Access or deletion:</strong> Ask about personal information you sent directly to us</li>
+        <li><strong>Correction:</strong> Correct inaccurate information in an editorial message</li>
+        <li><strong>Analytics opt-out:</strong> Block analytics through your browser or an opt-out tool</li>
       </ul>
       <p>Email <a href="mailto:privacy@glp1comparehub.com">privacy@glp1comparehub.com</a> for any
-      data-rights request. We respond within 30 days.</p>
+      privacy request. The rights available to you depend on where you live and the law that applies.</p>
 
       <h2>Data Retention</h2>
-      <p>Analytics data is retained for 14 months. Affiliate-click data is retained indefinitely
-      for commission auditing. We do not retain personally identifying information beyond what
-      Google Analytics and PostHog retain by default.</p>
+      <p>Analytics retention follows the settings in the site&rsquo;s Google Analytics property.
+      Editorial emails are kept only as long as reasonably needed to answer the request, document a
+      correction, or meet an applicable legal obligation.</p>
 
       <h2>Updates</h2>
-      <p>This policy was last updated May 2026. Material changes will be announced via a banner
-      on the site for 30 days. Contact us with questions at
+      <p>This policy was last updated August 31, 2026. Contact us with questions at{' '}
       <a href="mailto:privacy@glp1comparehub.com">privacy@glp1comparehub.com</a>.</p>
     </GLP1TrustPage>
   );

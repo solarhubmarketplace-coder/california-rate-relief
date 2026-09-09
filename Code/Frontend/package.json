@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "audit:glp1": "node scripts/audit-glp1-live.mjs"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.19",

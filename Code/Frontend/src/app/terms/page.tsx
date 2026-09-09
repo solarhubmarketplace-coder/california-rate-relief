@@ -28,7 +28,7 @@ const BRANDS: Record<Domain, BrandConfig> = {
   grh: { brand: 'GreenReviewsHub', domain: 'greenreviewshub.com', canonical: 'https://greenreviewshub.com/terms' },
   shg: { brand: 'SecureHomeGear', domain: 'securehomegear.com', canonical: 'https://securehomegear.com/terms' },
   ahb: { brand: 'At Home Biohacking', domain: 'athomebiohacking.com', canonical: 'https://athomebiohacking.com/terms' },
-  glp1: { brand: 'GLP1CompareHub', domain: 'glp1comparehub.com', canonical: 'https://glp1comparehub.com/terms' },
+  glp1: { brand: 'GLP1CompareHub', domain: 'glp1comparehub.com', canonical: 'https://www.glp1comparehub.com/terms' },
 };
 
 async function getDomain(): Promise<Domain> {
@@ -195,14 +195,15 @@ function Glp1Terms() {
 
       <h2>Affiliate Links</h2>
       <p>This site contains affiliate links. We may earn a commission when you click a link
-      and sign up with a provider — at no extra cost to you. Affiliate relationships do not
-      influence our editorial recommendations. See our <a href="/affiliate-disclosure">full
+      and sign up with a provider — at no extra cost to you. Affiliate economics do not determine
+      the order of the public price dataset. See our <a href="/affiliate-disclosure">full
       affiliate disclosure</a>.</p>
 
       <h2>Pricing Information</h2>
-      <p>Pricing displayed on this site is verified monthly from each provider&rsquo;s public
-      website. Pricing changes frequently and we cannot guarantee real-time accuracy. Always
-      confirm current pricing directly with the provider before purchase.</p>
+      <p>Each pricing record identifies the provider-owned page checked and the capture date.
+      Prices, promotions, eligibility rules, and billing terms can change after that date. The
+      record is an observation, not a quote or guarantee. Confirm the final recurring charge and
+      cancellation terms directly with the provider before paying.</p>
 
       <h2>Limitation of Liability</h2>
       <p>To the maximum extent permitted by law, GLP1CompareHub and its operators are not
@@ -211,19 +212,19 @@ function Glp1Terms() {
       liability is limited to $100.</p>
 
       <h2>External Links</h2>
-      <p>We link to external sites including provider websites, peer-reviewed clinical trials,
-      and government health resources. We are not responsible for the content, accuracy, or
+      <p>We link to external sites including provider websites and government health resources.
+      We are not responsible for the content, accuracy, or
       availability of external sites.</p>
 
       <h2>Compounded Medications</h2>
-      <p>Compounded GLP-1 medications discussed on this site are NOT FDA-approved drugs. They
-      are produced by state-licensed 503A and 503B compounding pharmacies under specific FDA
-      exemptions. Always consult your prescriber about whether a branded FDA-approved
-      medication or a compounded alternative is right for you.</p>
+      <p>Compounded drugs are not FDA-approved. FDA does not review them for safety,
+      effectiveness, or quality before marketing. Whether a compounded medication is legally and
+      clinically appropriate depends on facts this site cannot determine. Ask a licensed
+      prescriber and review current FDA guidance.</p>
 
       <h2>Changes</h2>
       <p>We may update these terms at any time. Continued use of the site after changes
-      constitutes acceptance of the new terms. Last updated: May 2026.</p>
+      constitutes acceptance of the new terms. Last updated: August 31, 2026.</p>
 
       <h2>Contact</h2>
       <p>Questions about these terms:

@@ -89,12 +89,12 @@ const DOMAIN_DEFAULTS = {
     // must resolve to the 200 (www) host; pointing them at the redirecting apex made Google
     // log "page with redirect" and decline to index (~5-8 of 112 pages indexed). Fixed 2026-06-19.
     base: 'https://www.glp1comparehub.com',
-    title: 'GLP1CompareHub — Independent GLP-1 Telehealth Provider Comparison',
+    title: 'GLP1CompareHub — Source-Checked GLP-1 Telehealth Prices',
     description:
-      'Independent comparison of verified GLP-1 telehealth programs (compounded semaglutide, tirzepatide). Real pricing, post-FDA-crackdown framing, and provider rankings backed by realized EPC data.',
+      'Source-linked GLP-1 telehealth price observations, capture dates, stated inclusions, and unresolved terms.',
     siteName: 'GLP1CompareHub',
     ogImage: '/img/glp1/og-image.jpg',
-    ogAlt: 'GLP1CompareHub — Independent GLP-1 Telehealth Provider Comparison',
+    ogAlt: 'GLP1CompareHub — Source-Checked GLP-1 Telehealth Prices',
     favicon: '/img/glp1/favicon.svg',
     appleTouchIcon: '/img/glp1/favicon.svg',
   },
@@ -225,7 +225,9 @@ export default async function RootLayout({
     url: cfg.base,
     logo: {
       '@type': 'ImageObject',
-      url: `${cfg.base}/img/logo.svg`,
+      url: domainKey === 'glp1comparehub'
+        ? `${cfg.base}/img/glp1/og-image.jpg`
+        : `${cfg.base}/img/logo.svg`,
     },
   };
   const websiteSchema = {
@@ -274,15 +276,15 @@ export default async function RootLayout({
         >
           Skip to main content
         </a>
-        {/* Global Organization + WebSite (with SearchAction) JSON-LD per host (Batch 5). */}
-        <script
+        {/* GLP1 homepage emits its own single Organization and WebSite entities. */}
+        {domainKey !== 'glp1comparehub' && <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-        />
-        <script
+        />}
+        {domainKey !== 'glp1comparehub' && <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
+        />}
         <GoogleAnalytics />
         {googlePlacesApiKey && isCRR && (
           <Script

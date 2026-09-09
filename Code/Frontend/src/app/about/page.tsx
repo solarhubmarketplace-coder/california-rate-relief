@@ -65,8 +65,8 @@ export async function generateMetadata(): Promise<Metadata> {
     glp1: {
       title: 'About GLP1CompareHub',
       description:
-        'Independent comparison of GLP-1 telehealth providers. How we evaluate compounded and branded GLP-1 programs, how we cite clinical evidence, and how we stay independent.',
-      canonical: 'https://glp1comparehub.com/about',
+        'Source-linked price and program information for a small set of GLP-1 telehealth providers.',
+      canonical: 'https://www.glp1comparehub.com/about',
     },
   };
   const m = meta[domain];
@@ -79,23 +79,20 @@ export async function generateMetadata(): Promise<Metadata> {
 
 function Glp1About() {
   return (
-    <GLP1TrustPage title='About GLP1CompareHub' subtitle='Independent comparison directory for GLP-1 telehealth providers.'>
+    <GLP1TrustPage title='About GLP1CompareHub' subtitle='Source-linked price and program information for GLP-1 telehealth providers.'>
       <h2>What We Do</h2>
-      <p>GLP1CompareHub is an independent comparison directory for GLP-1 telehealth providers.
-      We track 50+ providers — telemedicine companies, compounding pharmacies, and manufacturer
-      programs — and surface verified pricing, medication options, and patient experience data
-      so you can pick the right program for your needs and budget.</p>
+      <p>GLP1CompareHub is an independent publisher of source-linked price and program information.
+      Our current evidence set covers five provider pages. We report what a provider publicly
+      advertises, with a source URL, capture date, and clear caveats when a term is unknown.</p>
 
       <h2>How We Work</h2>
-      <p>Pricing is verified directly from each provider&rsquo;s public site every month.
-      Rankings are weighted on pricing transparency (25%), medication options (25%), quality
-      certifications (20%), customer support (15%), and plan flexibility (15%). Commission rates
-      have zero impact on ranking order — see our <a href="/methodology">methodology</a>.</p>
+      <p>We record advertised prices and inclusions from provider pages at a stated capture date.
+      We do not claim clinical review, medical expertise, or ongoing verification. Unknown terms
+      remain unknown — see our <a href="/methodology">methodology</a>.</p>
 
       <h2>Editorial Independence</h2>
-      <p>We do not accept payment for placement or sponsored reviews. Providers cannot purchase
-      ranking position. Every claim about clinical efficacy cites a peer-reviewed trial
-      (NEJM, JAMA, Lancet) or the FDA prescribing information. See our
+      <p>We do not accept payment for placement, sponsored reviews, or pay-to-play editorial.
+      We do not publish clinical efficacy rankings. See our
       <a href="/affiliate-disclosure">affiliate disclosure</a> for details on how we earn money.</p>
 
       <h2>Not Medical Advice</h2>
@@ -106,7 +103,7 @@ function Glp1About() {
 
       <h2>Contact</h2>
       <p>Editorial questions: <a href="mailto:editorial@glp1comparehub.com">editorial@glp1comparehub.com</a>.
-      We respond within one business day. See our <a href="/contact">contact page</a> for other inquiries.</p>
+      See our <a href="/contact">contact page</a> for corrections and other inquiries.</p>
     </GLP1TrustPage>
   );
 }

@@ -33,7 +33,7 @@ const META = {
   grh: { name: 'Green Reviews Hub', canonical: 'https://greenreviewshub.com/affiliate-disclosure' },
   shg: { name: 'SecureHomeGear', canonical: 'https://securehomegear.com/affiliate-disclosure' },
   ahb: { name: 'At Home Biohacking', canonical: 'https://athomebiohacking.com/affiliate-disclosure' },
-  glp1: { name: 'GLP1CompareHub', canonical: 'https://glp1comparehub.com/affiliate-disclosure' },
+  glp1: { name: 'GLP1CompareHub', canonical: 'https://www.glp1comparehub.com/affiliate-disclosure' },
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -79,6 +79,47 @@ function CommonContent({ name, domain }: { name: string; domain: Domain }) {
   );
 }
 
+function Glp1AffiliateContent() {
+  return (
+    <>
+      <h2>How GLP1CompareHub Can Earn Money</h2>
+      <p>
+        Some outbound provider links are affiliate links. If you click one and become a customer,
+        GLP1CompareHub may earn a commission. The price-transparency table also contains direct,
+        non-affiliate evidence links to the provider pages we checked.
+      </p>
+
+      <h2>What the Commission Cannot Buy</h2>
+      <ul>
+        <li>A better position in the public price dataset</li>
+        <li>Removal of a pricing conflict, missing term, or other caveat</li>
+        <li>A positive medical or editorial recommendation</li>
+        <li>Advance review, approval, or veto power over our published copy</li>
+      </ul>
+
+      <h2>How the Current Dataset Is Ordered</h2>
+      <p>
+        Alphabetically. That is the whole rule. We do not use commission rates, payout data, or
+        affiliate-network performance to order the records. Those internal economics are excluded
+        from the public pricing dataset.
+      </p>
+
+      <h2>How We Mark Material Connections</h2>
+      <p>
+        Pages containing affiliate calls to action carry a plain-language disclosure before the
+        relevant link. Sponsored outbound links are also marked in the page code. A source citation
+        is not automatically an affiliate link.
+      </p>
+
+      <h2>Questions or Corrections</h2>
+      <p>
+        Use the <Link href='/contact'>contact page</Link>. Include the URL and the exact link or
+        disclosure you believe is wrong.
+      </p>
+    </>
+  );
+}
+
 export default async function AffiliateDisclosurePage() {
   const d = await getDomain();
   const cfg = META[d];
@@ -111,7 +152,7 @@ export default async function AffiliateDisclosurePage() {
   if (d === 'glp1') {
     return (
       <GLP1TrustPage title='Affiliate Disclosure'>
-        <CommonContent name={cfg.name} domain={d} />
+        <Glp1AffiliateContent />
       </GLP1TrustPage>
     );
   }

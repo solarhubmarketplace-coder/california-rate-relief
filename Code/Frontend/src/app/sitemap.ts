@@ -4,7 +4,7 @@ import { headers } from 'next/headers';
 export const dynamic = 'force-dynamic';
 import { getAllCitySlugs } from '@/data/cities-data';
 import { ARTICLE_PAGES, articleHref, articlesInCluster } from '@/data/article-pages';
-import { allPageRoutes } from '@/lib/glp1-page-routes';
+import { GLP1_INDEX_ROUTES } from '@/lib/glp1-seo-routes';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
 // =============================================================================
@@ -403,50 +403,15 @@ function ahbSitemap(base: string): MetadataRoute.Sitemap {
 // GLP1CompareHub (glp1comparehub.com) URLs
 // =============================================================================
 function glp1Sitemap(base: string): MetadataRoute.Sitemap {
-  const today = new Date();
-
-  // GLP1 base URL rewrites to /glp1-home via middleware; use that page's mtime.
-  const glp1HomeMtime = urlMtime('/glp1-home', today);
-
-  // Trust pages + key meta routes (in case they're not in the registry)
-  const trustPages: MetadataRoute.Sitemap = [
-    { url: base, lastModified: glp1HomeMtime, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${base}/about`,                lastModified: urlMtime('/about', today), changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/contact`,              lastModified: urlMtime('/contact', today), changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/methodology`,          lastModified: urlMtime('/methodology', today), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/affiliate-disclosure`, lastModified: urlMtime('/affiliate-disclosure', today), changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${base}/disclaimer`,           lastModified: urlMtime('/disclaimer', today), changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${base}/privacy`,              lastModified: urlMtime('/privacy', today), changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${base}/terms`,                lastModified: urlMtime('/terms', today), changeFrequency: 'yearly',  priority: 0.3 },
-  ];
-
-  // Only LIVE pages — queued/next pages don't have page.tsx files yet and would 404.
-  // Sitemap accuracy > sitemap size: a 404 URL trains Google to distrust the sitemap.
-  // lastModified is derived from each route's page.tsx mtime so Google sees real
-  // change signals rather than "every page modified now."
-  const registryPages: MetadataRoute.Sitemap = allPageRoutes
-    .filter((r) => r.status === 'live')
-    .map((r) => {
-      // Adjust homepage URL — registry stores /glp1-home but public URL is /
-      const url = r.path === '/glp1-home' ? base : `${base}${r.path}`;
-      // Tier A = 0.9, B = 0.7, C = 0.5
-      const priority = r.tier === 'A' ? 0.9 : r.tier === 'B' ? 0.7 : 0.5;
-      return {
-        url,
-        lastModified: urlMtime(r.path, today),
-        changeFrequency: 'weekly' as const,
-        priority,
-      };
-    });
-
-  const glp1Pages = [...trustPages, ...registryPages];
-  // De-duplicate by URL. The registry auto-generates /providers/* and
-  // /best/telemedicine-* (from glp1Providers / glp1Medications), and a few
-  // pages (homepage, peptides, oral-tirzepatide) appear in both a hand-authored
-  // and an auto-generated entry -- which emitted duplicate <loc> entries.
-  // Keep first occurrence so every URL is listed exactly once.
-  const seen = new Set<string>();
-  return glp1Pages.filter((e) => (seen.has(e.url) ? false : (seen.add(e.url), true)));
+  // Fail closed: the sitemap is the public index registry, not an inventory of
+  // every page that happens to compile. Omit lastModified until a verifiable
+  // editorial update timestamp exists; a fabricated runtime date is worse than
+  // no date and trains crawlers to ignore the signal.
+  return GLP1_INDEX_ROUTES.map(({ path, changeFrequency, priority }) => ({
+    url: path === '/' ? base : `${base}${path}`,
+    changeFrequency,
+    priority,
+  }));
 }
 
 // =============================================================================

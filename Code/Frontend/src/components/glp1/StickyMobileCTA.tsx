@@ -10,9 +10,8 @@ import { useEffect, useState } from 'react';
 // scrolled past ~600px (roughly past the hero / first CTA) and stays visible
 // until explicitly dismissed — never re-hides on scroll-up.
 //
-// Fires `telehealth_affiliate_click` to GA4 dataLayer + window.gtag + PostHog
-// (if any are loaded) — same event-name convention as GLP1ComparisonTable so
-// click data aggregates cleanly across surfaces.
+// The global analytics listener records this sponsored link as a
+// `telehealth_affiliate_click` using the data attributes below.
 //
 // Brand palette matches the GLP-1 design system (warm beige + deep navy CTA).
 // =============================================================================
@@ -59,28 +58,6 @@ export function StickyMobileCTA({
 
   if (!visible || dismissed) return null;
 
-  const handleClick = () => {
-    if (typeof window === 'undefined') return;
-    const w = window as unknown as {
-      dataLayer?: Array<Record<string, unknown>>;
-      posthog?: { capture?: (event: string, props: Record<string, unknown>) => void };
-      gtag?: (...args: unknown[]) => void;
-    };
-    const payload = {
-      affiliate_source: 'sticky-mobile-cta',
-      brand,
-    };
-    if (Array.isArray(w.dataLayer)) {
-      w.dataLayer.push({ event: 'telehealth_affiliate_click', ...payload });
-    }
-    if (typeof w.gtag === 'function') {
-      w.gtag('event', 'telehealth_affiliate_click', payload);
-    }
-    if (w.posthog?.capture) {
-      w.posthog.capture('telehealth_affiliate_click', payload);
-    }
-  };
-
   return (
     <div
       className='md:hidden fixed bottom-0 left-0 right-0 z-40 border-t-2 shadow-2xl'
@@ -109,10 +86,10 @@ export function StickyMobileCTA({
           href={href}
           target='_blank'
           rel='sponsored nofollow noopener noreferrer'
-          onClick={handleClick}
           className='inline-flex items-center font-semibold rounded-lg px-3 py-2 text-sm whitespace-nowrap'
           style={{ backgroundColor: '#0E2A3A', color: '#F0EBE0', minHeight: '44px' }}
           data-affiliate-source='sticky-mobile-cta'
+          data-product-key='sticky-cta'
           data-brand={brand}
         >
           {ctaLabel} →

@@ -33,7 +33,7 @@ const DOMAIN_CONTACT = {
   grh: { name: 'Green Reviews Hub', email: 'editorial@greenreviewshub.com', canonical: 'https://greenreviewshub.com/contact' },
   shg: { name: 'SecureHomeGear', email: 'editorial@securehomegear.com', canonical: 'https://securehomegear.com/contact' },
   ahb: { name: 'At Home Biohacking', email: 'editorial@athomebiohacking.com', canonical: 'https://athomebiohacking.com/contact' },
-  glp1: { name: 'GLP1CompareHub', email: 'editorial@glp1comparehub.com', canonical: 'https://glp1comparehub.com/contact' },
+  glp1: { name: 'GLP1CompareHub', email: 'editorial@glp1comparehub.com', canonical: 'https://www.glp1comparehub.com/contact' },
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -85,10 +85,10 @@ export default async function ContactPage() {
     return (
       <GLP1TrustPage title='Contact GLP1CompareHub'>
         <p className='text-base leading-relaxed mb-6'>
-          GLP1CompareHub is an independent comparison site for GLP-1 telehealth programs. We do not
-          sell, prescribe, or dispense medication — every clinical interaction happens through the
-          licensed provider you choose. Use this page to reach the editorial team for corrections,
-          press, or partnership questions. Typical response time is one business day.
+          GLP1CompareHub is an independent price-transparency publisher. We document what GLP-1
+          telehealth providers publicly charge, what they say is included, and what their pages
+          leave unclear. We do not sell, prescribe, or dispense medication. Use this page for
+          factual corrections, source updates, press questions, or partnership disclosures.
         </p>
 
         <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}>
@@ -108,11 +108,11 @@ export default async function ContactPage() {
           Providers and Pharmacies
         </h2>
         <p className='text-base leading-relaxed mb-4'>
-          Telehealth providers and compounding pharmacies who want their program reviewed should
-          email the same address with their current public pricing page, the medications they offer,
-          and any third-party quality certifications (USP 797/800, NABP Verified Pharmacy, etc.).
-          Editorial inclusion is independent of advertising or affiliate relationships — see our{' '}
-          <Link href='/methodology' className='underline'>methodology</Link> for ranking criteria.
+          A provider can submit a public pricing URL, recurring billing terms, included fees,
+          shipping terms, and cancellation policy to the same address. Submission does not
+          guarantee inclusion, and it does not buy a better position. The current dataset is
+          alphabetical. See the <Link href='/methodology' className='underline'>methodology</Link>
+          {' '}for the evidence rules.
         </p>
 
         <h2 className='text-2xl font-bold mt-10 mb-4' style={{ color: '#0E2A3A', fontFamily: '"Playfair Display", "Georgia", serif' }}>

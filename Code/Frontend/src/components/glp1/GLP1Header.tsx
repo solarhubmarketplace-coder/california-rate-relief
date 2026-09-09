@@ -4,14 +4,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-// /simulator is registered as `status: 'future'` in glp1-page-routes.ts —
-// reinstate this link only after the route ships.
 const NAV_LINKS = [
-  { label: 'Find Your Match', href: '/match' },
-  { label: 'Providers',       href: '/providers' },
-  { label: 'Best Rankings',   href: '/best' },
-  { label: 'Compare',         href: '/compare' },
-  { label: 'News',            href: '/news' },
+  { label: 'Current Prices', href: '/pricing' },
+  { label: 'Methodology', href: '/methodology' },
+  { label: 'About', href: '/about' },
+  { label: 'Corrections', href: '/contact' },
 ];
 
 export function GLP1Header() {
@@ -48,16 +45,16 @@ export function GLP1Header() {
           ))}
         </nav>
 
-        {/* CTA + mobile toggle */}
+        {/* Primary action + mobile toggle */}
         <div className='flex items-center gap-2'>
           <Link
-            href='/match'
+            href='/pricing'
             className='inline-flex items-center gap-2 text-white px-5 md:px-6 py-2.5 rounded-full font-semibold transition-all duration-200 hover:-translate-y-0.5 shadow-md hover:shadow-lg whitespace-nowrap text-sm md:text-base'
             style={{ backgroundColor: '#D4A33A' }}
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#B88A2A')}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#D4A33A')}
           >
-            Take the Quiz
+            View Prices
           </Link>
           <button
             type='button'

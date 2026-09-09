@@ -178,36 +178,26 @@ const CONFIGS: Record<Domain, DomainConfig> = {
   },
   glp1: {
     brand: 'GLP1CompareHub',
-    canonical: 'https://glp1comparehub.com/methodology',
-    category: 'GLP-1 telehealth providers (semaglutide, tirzepatide, Wegovy, Zepbound, compounded options) and adjunctive peptide programs',
+    canonical: 'https://www.glp1comparehub.com/methodology',
+    category: 'GLP-1 telehealth provider pricing and program terms',
     intro:
-      'GLP1CompareHub evaluates GLP-1 telehealth and compounding-pharmacy providers. The category is high-stakes YMYL: medication choice, dose protocol, and provider quality directly affect health outcomes. Every claim about efficacy or side effects is sourced to peer-reviewed clinical trials (NEJM, JAMA, Lancet) or to the FDA prescribing information. Pricing is verified directly from each provider every month.',
+      'GLP1CompareHub publishes source-linked price and program information for five providers in the current evidence set. We record the source URL, capture date (2026-08-31), advertised price, stated inclusions, and caveats. This is not clinical or medical review.',
     whatWeEvaluate: [
-      { title: 'Pricing transparency', body: 'Verified monthly directly from each provider. We flag hidden fees, lab costs, and cancellation policies. No commission-based reordering.' },
-      { title: 'Quality certifications', body: 'Valisure, LegitScript, NABP, and state pharmacy board credentials weighted heavily. 503A vs 503B compounding compliance is documented per-provider.' },
-      { title: 'Customer experience', body: 'Trustpilot ratings, BBB scores, Reddit cohort sentiment, and any verified clinical complaints filed.' },
-      { title: 'Medication options', body: 'Variety of GLP-1 formulations (compounded sema/tirz, branded Wegovy/Zepbound, microdosing programs, sublingual alternatives), dose flexibility, and stacking options.' },
-      { title: 'Provider qualifications', body: 'Board certification of prescribing physicians, state coverage, and consultation depth.' },
+      { title: 'Source-linked pricing', body: 'We record the advertised price, inclusions, and caveats shown on the source page. Unknown terms remain unknown.' },
+      { title: 'Program terms', body: 'We report only what the cited provider source states about inclusions, fees, and cancellation terms.' },
     ],
     dataSources: [
-      'NEJM, JAMA, Lancet trial publications (STEP-1, SURMOUNT-1, SURMOUNT-5)',
-      'FDA prescribing information for branded GLP-1 (Wegovy, Zepbound, Mounjaro, Ozempic)',
-      'Provider websites (verified monthly for pricing, medications, terms)',
-      'Trustpilot, BBB, Reddit (r/Semaglutide, r/Tirzepatide, r/Mounjaro)',
-      'OfferVault and affiliate-network databases for verified CPA data',
-      'FDA MedWatch and 503A/503B compounding-pharmacy registries',
+      'Provider pages cited on each entry, captured 2026-08-31',
     ],
     disqualifiers: [
-      'Provider operating without verified state-pharmacy-board licensure',
-      'Documented unsafe compounding practices or active FDA warning letter',
-      'Misrepresentation of branded vs compounded medications at point of sale',
-      'Refusal to provide written prescribing-physician credentials',
-      'Pricing displayed on site materially different from actual checkout total',
+      'No provider-owned public source for the amount',
+      'An amount that cannot be separated from unsupported medical marketing',
+      'Affiliate-network economics offered as proof of a consumer price',
+      'A price or inclusion we cannot describe without guessing',
     ],
-    freshness:
-      'Provider pricing reviewed monthly. Provider rankings refreshed quarterly. Medical claims reviewed every 180 days against PubMed indexing. Each page carries a "Last verified" and "Last reviewed" date stamp.',
+    freshness: 'Current capture date: 2026-08-31. Records are ordered alphabetically and are re-captured when a correction or material source change is identified. Material corrections are dated on the affected page.',
     conflictsBlurb:
-      'GLP1CompareHub earns affiliate commissions when readers sign up through our links — at no extra cost to you. We do not accept payment for placement in rankings, sponsored reviews, or pay-to-play editorial. Rankings are determined by the published methodology weights (25% medication options, 25% pricing, 20% quality certifications, 15% customer support, 15% plan flexibility). Content is for informational purposes and is not medical advice — always consult a licensed prescriber before starting, stopping, or modifying any GLP-1 medication.',
+      'GLP1CompareHub may earn affiliate commissions when readers use links. We do not accept payment for placement, sponsored reviews, or pay-to-play editorial. We do not rank providers by commissions, clinical efficacy, Trustpilot, Reddit, or CPA data. Content is informational and not medical advice; Chad is not a medical professional.',
   },
 };
 
@@ -224,6 +214,21 @@ async function getDomain(): Promise<Domain> {
 export async function generateMetadata(): Promise<Metadata> {
   const domain = await getDomain();
   const cfg = CONFIGS[domain];
+
+  // GLP-1: title/description trimmed to fit SERP length limits (<=60 / <=155
+  // chars). The generic `Our Methodology — How {brand} Evaluates {category}`
+  // formula below runs well past both limits for this domain's long category
+  // string. No credentialed clinical reviewer exists to name on this page —
+  // the body text is unchanged; only the metadata is shortened here.
+  if (domain === 'glp1') {
+    return {
+      title: 'Our Methodology | GLP1CompareHub',
+      description:
+        'How we source, verify, and date-stamp GLP-1 telehealth pricing and program terms cited on this site.',
+      alternates: { canonical: cfg.canonical },
+    };
+  }
+
   return {
     title: `Our Methodology — How ${cfg.brand} Evaluates ${cfg.category}`,
     description: `How ${cfg.brand} researches and evaluates ${cfg.category}. Data sources, disqualifying criteria, freshness cadence, conflict-of-interest disclosures.`,
@@ -382,45 +387,44 @@ function CrrMethodology() {
 
 function Glp1Methodology() {
   return (
-    <GLP1TrustPage title='Editorial Methodology' subtitle='How we evaluate, rank, and refresh GLP-1 telehealth provider data.'>
-      <h2>What We Evaluate</h2>
+    <GLP1TrustPage title='Editorial Methodology' subtitle='How we capture, label, and correct public GLP-1 telehealth pricing.'>
+      <h2>The Current Scope</h2>
+      <p>Our current evidence set covers five provider-owned public pages captured on August 31,
+      2026. This is a price-transparency project. It is not a clinical review, a provider-quality
+      score, or a recommendation about medication.</p>
+
+      <h2>What Every Published Record Needs</h2>
       <ul>
-        <li><strong>Pricing transparency (25%)</strong> — Verified monthly from each provider&rsquo;s site. Hidden fees, lab costs, and cancellation policies are flagged.</li>
-        <li><strong>Medication options (25%)</strong> — Variety of formulations (compounded sema/tirz, branded GLP-1, microdosing, sublingual), dose flexibility.</li>
-        <li><strong>Quality certifications (20%)</strong> — Valisure, LegitScript, NABP, state pharmacy board credentials. 503A vs 503B compliance documented.</li>
-        <li><strong>Customer support (15%)</strong> — Trustpilot ratings, BBB scores, Reddit cohort sentiment.</li>
-        <li><strong>Plan flexibility (15%)</strong> — Cancellation, dose adjustments, monthly vs multi-month plans.</li>
+        <li><strong>Provider-owned source URL.</strong> The reader can inspect the page we checked.</li>
+        <li><strong>Capture date.</strong> A current price and a historical observation are not the same thing.</li>
+        <li><strong>Advertised amount and billing unit.</strong> We preserve &ldquo;from,&rdquo; &ldquo;first month,&rdquo; auto-refill, and promotional language.</li>
+        <li><strong>Stated inclusions.</strong> Medication, clinician review, shipping, membership, or support appears only when the cited page says it is included.</li>
+        <li><strong>Caveat.</strong> Conflicting copy, an undisclosed recurring total, or a checkout-only term is stated plainly.</li>
       </ul>
 
-      <h2>Data Sources</h2>
+      <h2>Order and Scoring</h2>
+      <p>Providers are ordered alphabetically. There is no hidden score. Commission rates,
+      affiliate conversion data, Trustpilot stars, Reddit sentiment, and medical-effectiveness
+      claims do not determine placement.</p>
+
+      <h2>What We Exclude</h2>
       <ul>
-        <li>NEJM, JAMA, Lancet trial publications (STEP-1, SURMOUNT-1, SURMOUNT-5)</li>
-        <li>FDA prescribing information for branded GLP-1</li>
-        <li>Provider websites (verified monthly for pricing, medications, terms)</li>
-        <li>Trustpilot, BBB, Reddit (r/Semaglutide, r/Tirzepatide, r/Mounjaro)</li>
-        <li>OfferVault and affiliate-network databases for verified CPA data</li>
-        <li>FDA MedWatch and 503A/503B compounding-pharmacy registries</li>
+        <li>A price with no provider-owned public source</li>
+        <li>Affiliate-network economics presented as consumer evidence</li>
+        <li>Clinical-effectiveness, dosing, safety, or treatment-suitability rankings</li>
+        <li>A fee, policy, credential, or inclusion we would have to infer</li>
       </ul>
 
-      <h2>Disqualifiers</h2>
-      <ul>
-        <li>Provider operating without verified state-pharmacy-board licensure</li>
-        <li>Documented unsafe compounding practices or active FDA warning letter</li>
-        <li>Misrepresentation of branded vs compounded medications at point of sale</li>
-        <li>Refusal to provide written prescribing-physician credentials</li>
-        <li>Pricing displayed on site materially different from actual checkout total</li>
-      </ul>
-
-      <h2>Freshness</h2>
-      <p>Provider pricing reviewed monthly. Provider rankings refreshed quarterly. Medical claims
-      reviewed every 180 days against PubMed indexing. Each page carries a &ldquo;Last verified&rdquo;
-      and &ldquo;Last reviewed&rdquo; date stamp.</p>
+      <h2>Corrections and Freshness</h2>
+      <p>The dataset states its capture date. If a provider or reader identifies a material source
+      change, we re-check the page and date the correction on the affected record. We do not change
+      every sitemap date just to make old content look fresh.</p>
 
       <h2>Conflicts of Interest</h2>
-      <p>GLP1CompareHub earns affiliate commissions when readers sign up through our links —
-      at no extra cost to you. We do not accept payment for placement, sponsored reviews, or
-      pay-to-play editorial. Rankings are determined by the published methodology weights
-      above. Content is for informational purposes and is not medical advice.</p>
+      <p>GLP1CompareHub may earn an affiliate commission from some links. Providers cannot buy
+      placement, remove a caveat, or approve our copy. Direct evidence links and affiliate calls to
+      action are treated as separate things. Chad Simpson is not a medical professional, and this
+      site does not provide medical advice.</p>
     </GLP1TrustPage>
   );
 }

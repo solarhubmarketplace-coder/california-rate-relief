@@ -1,6 +1,15 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
+import { getGlp1RouteDisposition } from '@/lib/glp1-seo-routes';
+
+const GLP1_PUBLIC_CACHE_CONTROL =
+  'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400';
+
+function withGlp1PublicCache(response: NextResponse): NextResponse {
+  response.headers.set('Cache-Control', GLP1_PUBLIC_CACHE_CONTROL);
+  return response;
+}
 
 export async function middleware(request: NextRequest) {
   const hostname = (request.headers.get('host') || '').toLowerCase();
@@ -88,6 +97,7 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/simulator') ||
     pathname.startsWith('/tools') ||
     pathname.startsWith('/news') ||
+    pathname.startsWith('/pricing') ||
     pathname.startsWith('/disclaimer') ||
     pathname.startsWith('/peptides') ||
     pathname.startsWith('/tmates') ||
@@ -222,29 +232,45 @@ export async function middleware(request: NextRequest) {
 
   // --- glp1comparehub.com behavior ---
   if (isGLP1CompareHub) {
-    // Root → rewrite to /glp1-home (serves GLP1CompareHub homepage)
-    if (pathname === '/') {
-      return NextResponse.rewrite(new URL('/glp1-home', request.url));
-    }
-    // Block other niches from leaking on GLP1CompareHub
-    if (isSHGPath || isAHBPath) {
-      return new NextResponse(null, { status: 404 });
-    }
-    // Allow GLP1 paths, shared trust pages, Next internals, API routes, and static files
-    if (
-      isGLP1Path ||
-      isSharedTrustPath ||
+    // Framework routes and real static assets are not HTML indexing targets.
+    // Deliberately do not exempt .html: an unknown HTML-looking route must fail
+    // closed just like every other unknown page.
+    const isInfrastructurePath =
       pathname.startsWith('/_next') ||
       pathname.startsWith('/api') ||
       pathname === '/favicon.ico' ||
       pathname === '/robots.txt' ||
       pathname === '/sitemap.xml' ||
-      /\.[a-zA-Z0-9]+$/.test(pathname)
-    ) {
+      pathname === '/pricing/data.csv' ||
+      pathname === '/pricing/data.json' ||
+      /\.(?:css|js|mjs|map|json|xml|txt|ico|svg|png|jpg|jpeg|gif|webp|avif|woff|woff2|ttf|eot|pdf)$/i.test(pathname);
+
+    if (isInfrastructurePath) {
       return NextResponse.next();
     }
-    // Any other path → 404 (don't leak other niches here)
-    return new NextResponse(null, { status: 404 });
+
+    const route = getGlp1RouteDisposition(pathname);
+
+    if (route.disposition === 'redirect') {
+      return NextResponse.redirect(new URL(route.location, request.url), 308);
+    }
+
+    if (route.disposition === 'not-found') {
+      return new NextResponse(null, { status: 404 });
+    }
+
+    // Root → rewrite to /glp1-home (serves GLP1CompareHub homepage)
+    if (pathname === '/') {
+      return withGlp1PublicCache(
+        NextResponse.rewrite(new URL('/glp1-home', request.url))
+      );
+    }
+
+    const next = NextResponse.next();
+    if (route.disposition === 'noindex') {
+      next.headers.set('X-Robots-Tag', 'noindex, follow');
+    }
+    return withGlp1PublicCache(next);
   }
 
   // --- ratereliefca.com → 301 redirect /reviews/* to greenreviewshub.com ---

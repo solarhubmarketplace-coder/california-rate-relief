@@ -60,10 +60,10 @@ const CONFIGS: Record<Domain, DomainConfig> = {
   },
   glp1: {
     brand: 'GLP1CompareHub',
-    canonical: 'https://glp1comparehub.com/author/chad-simpson',
-    siteOrigin: 'https://glp1comparehub.com',
+    canonical: 'https://www.glp1comparehub.com/author/chad-simpson',
+    siteOrigin: 'https://www.glp1comparehub.com',
     bioBlurb:
-      'Chad runs GLP1CompareHub as an independent comparison directory for GLP-1 telehealth providers. Every provider price is verified directly from each provider\'s public site monthly. Every clinical claim cites a peer-reviewed trial (NEJM, JAMA, Lancet) or the FDA prescribing information. Commission rates have zero impact on ranking order — disclosure is on every page that contains affiliate links per FTC 16 CFR § 255. Chad is not a medical professional; content is informational and not medical advice.',
+      'Chad publishes GLP1CompareHub as a source-linked price and program information site. The current evidence set covers five provider pages, with source URLs, capture dates, advertised prices, inclusions, and caveats. He does not claim medical review or clinical expertise, and unknown terms remain unknown. The site does not accept pay-to-play placement. Chad is not a medical professional; content is informational and not medical advice.',
   },
 };
 
@@ -98,7 +98,11 @@ function PersonJsonLd({ cfg }: { cfg: DomainConfig }) {
     url: cfg.canonical,
     jobTitle: `Editor at ${cfg.brand}`,
     description: cfg.bioBlurb,
-    sameAs: [`${cfg.siteOrigin}/about`, `${cfg.siteOrigin}/methodology`],
+    worksFor: {
+      '@type': 'Organization',
+      name: cfg.brand,
+      url: cfg.siteOrigin,
+    },
   };
   return (
     <script
@@ -184,6 +188,74 @@ function AuthorBody({ cfg, palette }: { cfg: DomainConfig; palette: Palette }) {
   );
 }
 
+function Glp1AuthorBody({ cfg, palette }: { cfg: DomainConfig; palette: Palette }) {
+  return (
+    <div className='space-y-10 leading-relaxed' style={{ color: palette.muted }}>
+      <div className='flex items-center gap-5'>
+        <div
+          className='w-20 h-20 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0'
+          style={{ backgroundColor: palette.accent, color: '#0a0a0a' }}
+          aria-hidden='true'
+        >
+          CS
+        </div>
+        <div>
+          <h1 className='text-3xl md:text-4xl font-extrabold tracking-tight' style={{ color: palette.fg }}>Chad Simpson</h1>
+          <p className='text-base mt-1' style={{ color: palette.mutedFg }}>Editor, {cfg.brand}</p>
+        </div>
+      </div>
+
+      <section>
+        <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>What I do here</h2>
+        <p>{cfg.bioBlurb}</p>
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>The focus</h2>
+        <ul className='space-y-2 list-disc pl-6'>
+          <li>Advertised cash prices and whether the amount is introductory, recurring, or conditional</li>
+          <li>What the provider page says is included in the price</li>
+          <li>Membership, shipping, consultation, cancellation, and checkout terms that remain unclear</li>
+          <li>Source URLs, capture dates, and dated factual corrections</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>How I work</h2>
+        <p className='mb-3'>I start with the provider&rsquo;s own public page. I record the exact pricing frame, the billing unit, what the page says is included, and the date I checked it.</p>
+        <p>Then I write down the gap. If the recurring amount conflicts with another line, if a promotion has no end date, or if the final number appears only after an intake flow, that uncertainty belongs in the record. It does not get smoothed over.</p>
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>What I will not claim</h2>
+        <ul className='space-y-2 list-disc pl-6'>
+          <li>Medical expertise, clinical review, or treatment suitability</li>
+          <li>A fake first-hand review or a star score without a traceable basis</li>
+          <li>A consumer price sourced only from an affiliate dashboard</li>
+          <li>That a compounded drug is FDA-approved, an approved generic, or the same as an FDA-approved drug</li>
+          <li>That an unknown fee or policy is known</li>
+        </ul>
+      </section>
+
+      <section className='rounded-xl border p-5' style={{ borderColor: palette.cardBorder, backgroundColor: palette.cardBg }}>
+        <h2 className='text-xl font-bold mb-3' style={{ color: palette.fg }}>Corrections</h2>
+        <p className='mb-3'>If a number or source is wrong, send the page URL and the provider-owned source that corrects it. The heavy part is simple: the public record has to be right.</p>
+        <div className='flex flex-wrap gap-3 text-sm'>
+          <Link href='/contact' className='inline-flex items-center gap-1 underline font-semibold' style={{ color: palette.accent }}>
+            <Mail className='h-4 w-4' aria-hidden='true' /> Contact
+          </Link>
+          <Link href='/methodology' className='inline-flex items-center gap-1 underline font-semibold' style={{ color: palette.accent }}>
+            <Microscope className='h-4 w-4' aria-hidden='true' /> Methodology
+          </Link>
+          <Link href='/pricing' className='inline-flex items-center gap-1 underline font-semibold' style={{ color: palette.accent }}>
+            <BookOpen className='h-4 w-4' aria-hidden='true' /> Current price data
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function PageShell({ palette, children, cfg }: { palette: Palette; cfg: DomainConfig; children: React.ReactNode }) {
   return (
     <main className='py-16' style={{ backgroundColor: palette.bg }}>
@@ -225,7 +297,7 @@ function CrrAuthor() {
 function Glp1Author() {
   const cfg = CONFIGS.glp1;
   const palette: Palette = { fg: '#0E2A3A', muted: '#3D5560', mutedFg: '#6B7B82', accent: '#D4A33A', bg: '#F8F4ED', cardBg: '#FFFFFF', cardBorder: '#E5DDC8' };
-  return <GLP1Layout><GLP1Header /><PageShell palette={palette} cfg={cfg}><AuthorBody cfg={cfg} palette={palette} /></PageShell><GLP1Footer /></GLP1Layout>;
+  return <GLP1Layout><GLP1Header /><PageShell palette={palette} cfg={cfg}><Glp1AuthorBody cfg={cfg} palette={palette} /></PageShell><GLP1Footer /></GLP1Layout>;
 }
 
 export default async function AuthorPage() {

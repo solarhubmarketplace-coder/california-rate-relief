@@ -2,8 +2,26 @@
 
 import Link from 'next/link';
 import { glp1Providers, GLP1Provider } from '@/lib/glp1-providers';
-import { buildAffiliateUrl } from '@/lib/affiliate-links';
+import { buildAffiliateUrl, getAffiliateLink } from '@/lib/affiliate-links';
 import { ArrowRight } from 'lucide-react';
+
+/**
+ * Active-tracked (Katalys-monetized) providers first, pending (unmonetized,
+ * bare marketing URL) providers after — stable sort so the existing relative
+ * order within each group is preserved. Prevents unmonetized rows from
+ * appearing with the same prominence as tracked ones.
+ */
+function sortByAffiliateStatus(list: GLP1Provider[]): GLP1Provider[] {
+  return list
+    .map((p, index) => ({ p, index }))
+    .sort((a, b) => {
+      const aActive = getAffiliateLink(a.p.productKey).status === 'active';
+      const bActive = getAffiliateLink(b.p.productKey).status === 'active';
+      if (aActive === bActive) return a.index - b.index;
+      return aActive ? -1 : 1;
+    })
+    .map(({ p }) => p);
+}
 
 interface GLP1ComparisonTableProps {
   /** Override the heading text if needed */
@@ -14,38 +32,13 @@ interface GLP1ComparisonTableProps {
   source?: string;
 }
 
-function trackTelehealthClick(payload: {
-  provider: string;
-  productKey: string;
-  source: string;
-}) {
-  if (typeof window === 'undefined') return;
-  const w = window as unknown as {
-    dataLayer?: Array<Record<string, unknown>>;
-    posthog?: { capture?: (event: string, props: Record<string, unknown>) => void };
-  };
-  if (Array.isArray(w.dataLayer)) {
-    w.dataLayer.push({
-      event: 'telehealth_affiliate_click',
-      provider: payload.provider,
-      product_key: payload.productKey,
-      affiliate_source: payload.source,
-    });
-  }
-  if (w.posthog?.capture) {
-    w.posthog.capture('telehealth_affiliate_click', {
-      provider: payload.provider,
-      product_key: payload.productKey,
-      affiliate_source: payload.source,
-    });
-  }
-}
 
 export function GLP1ComparisonTable({
   heading = 'Compare Top GLP-1 Telehealth Providers (May 2026)',
   providers = glp1Providers,
   source = 'glp1-comparison-table',
 }: GLP1ComparisonTableProps) {
+  const sortedProviders = sortByAffiliateStatus(providers);
   return (
     <div id='compare-table' className='max-w-7xl mx-auto px-6 py-12'>
       <h2 className='text-2xl md:text-3xl font-semibold text-center mb-3 text-slate-900'>
@@ -74,7 +67,9 @@ export function GLP1ComparisonTable({
             </tr>
           </thead>
           <tbody className='divide-y divide-slate-200'>
-            {providers.map((p) => (
+            {sortedProviders.map((p) => {
+              const isPending = getAffiliateLink(p.productKey).status !== 'active';
+              return (
               <tr key={p.productKey} className='hover:bg-teal-50 transition-colors'>
                 <td className='px-6 md:px-8 py-6 md:py-8 align-top'>
                   <div className='flex flex-col gap-1'>
@@ -92,6 +87,11 @@ export function GLP1ComparisonTable({
                     <span className='text-xs text-slate-500 md:hidden mt-1'>
                       {p.medications}
                     </span>
+                    {isPending && (
+                      <span className='text-[11px] text-slate-400 italic mt-1'>
+                        Not yet partnered — link goes directly to provider
+                      </span>
+                    )}
                   </div>
                 </td>
                 <td className='px-4 md:px-6 py-6 md:py-8 text-center'>
@@ -121,13 +121,9 @@ export function GLP1ComparisonTable({
                     href={buildAffiliateUrl(p.productKey, source)}
                     target='_blank'
                     rel='sponsored nofollow noopener noreferrer'
-                    onClick={() =>
-                      trackTelehealthClick({
-                        provider: p.name,
-                        productKey: p.productKey,
-                        source,
-                      })
-                    }
+                    data-product-key={p.productKey}
+                    data-affiliate-source={source}
+                    data-brand={p.name}
                     className='inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-700 text-white px-4 md:px-6 lg:px-8 py-3 md:py-4 rounded-2xl font-semibold transition-all duration-200 hover:-translate-y-0.5 shadow-md hover:shadow-lg whitespace-nowrap text-sm md:text-base'
                   >
                     View Best Offer
@@ -135,7 +131,8 @@ export function GLP1ComparisonTable({
                   </Link>
                 </td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>

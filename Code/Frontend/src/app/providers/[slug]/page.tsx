@@ -14,6 +14,7 @@ import { glp1Providers, getProviderBySlug, GLP1Provider } from '@/lib/glp1-provi
 import { GLP1HeroPlaceholder } from '@/components/glp1/GLP1HeroPlaceholder';
 import { medicationsForProvider } from '@/lib/glp1-medications';
 import { buildGlp1AffiliateUrl } from '@/lib/affiliate-links';
+import { resolveGlp1ComparisonSlug } from '@/lib/glp1-seo-routes';
 import {
   ShieldCheck,
   Calendar,
@@ -76,6 +77,15 @@ export default async function ProviderDetailPage({ params }: PageParams) {
   if (!provider || provider.status !== 'Active') {
     notFound();
   }
+
+  // The dynamic /compare/[slug] template is gone (GLP-1 recovery). Only link
+  // comparisons that resolve to a static page, or 308 to one via the registry.
+  const comparisonLinks = (provider.comparisonsAvailable ?? []).flatMap((vsSlug) => {
+    const res = resolveGlp1ComparisonSlug(`${provider.slug}-vs-${vsSlug}`);
+    if (res.disposition === 'retained') return [{ vsSlug, href: res.path }];
+    if (res.disposition === 'redirect') return [{ vsSlug, href: res.location }];
+    return [];
+  });
 
   const medications = medicationsForProvider(provider.slug);
   const affiliateUrl = buildGlp1AffiliateUrl(provider.slug, 'provider-detail');
@@ -617,7 +627,7 @@ export default async function ProviderDetailPage({ params }: PageParams) {
         )}
 
         {/* COMPARE WITH */}
-        {provider.comparisonsAvailable && provider.comparisonsAvailable.length > 0 && (
+        {comparisonLinks.length > 0 && (
           <section className='py-10 md:py-14' style={{ backgroundColor: '#F0EBE0' }}>
             <div className='max-w-5xl mx-auto px-4 md:px-6'>
               <h2
@@ -630,12 +640,12 @@ export default async function ProviderDetailPage({ params }: PageParams) {
                 Side-by-side comparisons against other top providers.
               </p>
               <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
-                {provider.comparisonsAvailable.map((vsSlug) => {
+                {comparisonLinks.map(({ vsSlug, href }) => {
                   const other = getProviderBySlug(vsSlug);
                   return (
                     <Link
                       key={vsSlug}
-                      href={`/compare/${provider.slug}-vs-${vsSlug}`}
+                      href={href}
                       className='p-4 rounded-xl text-center transition-all hover:-translate-y-0.5 bg-white'
                       style={{ border: '1px solid #E5DDC8', color: '#0E2A3A' }}
                     >
