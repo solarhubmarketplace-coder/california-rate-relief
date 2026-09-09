@@ -408,7 +408,7 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public AS $$
   ), outcome AS (
     SELECT r.lead_id, BOOL_OR(r.forwarded_at IS NOT NULL) AS forwarded,
       BOOL_OR(r.partner_qualified IS TRUE) AS qualified,
-      BOOL_OR(r.partner_qualified IS FALSE) AS rejected,
+      BOOL_AND(r.partner_qualified IS FALSE) AS rejected,
       BOOL_OR(r.partner_contacted_at IS NOT NULL) AS contacted,
       BOOL_OR(r.appointment_at IS NOT NULL) AS appointment,
       BOOL_OR(r.sale_at IS NOT NULL) AS sale

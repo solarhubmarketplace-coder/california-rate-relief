@@ -39,6 +39,7 @@ describe('migration 006 safety contract', () => {
     expect(sql).toMatch(/COUNT\(DISTINCT s\.lead_id\)/);
     expect(sql).toMatch(/America\/Los_Angeles/);
     expect(sql).toMatch(/BOOL_OR\(r\.partner_qualified IS TRUE\)/);
+    expect(sql).toMatch(/BOOL_AND\(r\.partner_qualified IS FALSE\)/);
     expect(sql).toMatch(/JOIN eligible e ON e\.submission_id=r\.submission_id AND e\.lead_id=r\.lead_id/);
   });
   test('staff classification is atomic and leaves an audit record', () => {

@@ -11,6 +11,10 @@ DECLARE
   commercial_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000003';
   old_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000004';
   current_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000005';
+  mixed_false_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000007';
+  mixed_null_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000008';
+  allfalse_one_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000009';
+  allfalse_two_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000010';
   fields JSONB := '{"homeowner":true,"utility_provider":"PG&E","bill_amount":275,"service_zip":"95014"}';
   attrib JSONB := '{"landing_page":"/__crr_transaction_test__","submitted_from":"/","utm_source":"qa","utm_campaign":"rollback-only"}';
   mismatch_rejected BOOLEAN := FALSE;
@@ -20,6 +24,9 @@ DECLARE
   target_outbox_id UUID;
   envelope_lease UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000006';
   total_count BIGINT;
+  qualified_count BIGINT;
+  rejected_count BIGINT;
+  unknown_count BIGINT;
 BEGIN
   IF EXISTS (SELECT 1 FROM public.owner_notification_outbox) THEN
     RAISE EXCEPTION 'Owner outbox is not empty; transaction test refuses to claim or modify existing delivery rows';
@@ -97,10 +104,30 @@ BEGIN
   VALUES ((retry_result->>'lead_id')::UUID,current_id,'TEST CURRENT PARTNER',NOW(),NULL,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
   SELECT SUM(partner_qualified) INTO total_count FROM public.get_crr_scorecard(NOW()-INTERVAL '1 minute',NOW()+INTERVAL '1 minute');
   IF total_count <> 1 THEN RAISE EXCEPTION 'Old-period outcome leaked into current scorecard: %', total_count; END IF;
+  first_result := public.ingest_crr_submission(mixed_false_id,'residential','TEST MIXED FEEDBACK','+19515550196',
+    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+  retry_result := public.ingest_crr_submission(mixed_null_id,'residential','TEST MIXED FEEDBACK','+19515550196',
+    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+  INSERT INTO public.lead_referral_outcomes(lead_id,submission_id,partner_name,forwarded_at,partner_qualified,recorded_by)
+  VALUES ((first_result->>'lead_id')::UUID,mixed_false_id,'TEST REJECTED PARTNER',NOW(),FALSE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d'),
+         ((retry_result->>'lead_id')::UUID,mixed_null_id,'TEST UNKNOWN PARTNER',NOW(),NULL,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
+  first_result := public.ingest_crr_submission(allfalse_one_id,'residential','TEST ALL REJECTED','+19515550195',
+    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+  retry_result := public.ingest_crr_submission(allfalse_two_id,'residential','TEST ALL REJECTED','+19515550195',
+    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+  INSERT INTO public.lead_referral_outcomes(lead_id,submission_id,partner_name,forwarded_at,partner_qualified,recorded_by)
+  VALUES ((first_result->>'lead_id')::UUID,allfalse_one_id,'TEST FALSE PARTNER A',NOW(),FALSE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d'),
+         ((retry_result->>'lead_id')::UUID,allfalse_two_id,'TEST FALSE PARTNER B',NOW(),FALSE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
+  SELECT COALESCE(SUM(unique_inquiries),0),COALESCE(SUM(partner_qualified),0),COALESCE(SUM(partner_rejected),0),COALESCE(SUM(qualification_unknown),0)
+    INTO total_count,qualified_count,rejected_count,unknown_count
+    FROM public.get_crr_scorecard(NOW()-INTERVAL '1 minute',NOW()+INTERVAL '1 minute');
+  IF total_count <> 4 OR qualified_count <> 1 OR rejected_count <> 1 OR unknown_count <> 2 THEN
+    RAISE EXCEPTION 'Outcome buckets or lead dedup incorrect: unique %, qualified %, rejected %, unknown %',total_count,qualified_count,rejected_count,unknown_count;
+  END IF;
   PERFORM public.classify_lead_submission(first_id,NULL,TRUE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
   PERFORM public.classify_lead_submission(second_id,NULL,TRUE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
   SELECT COALESCE(SUM(unique_inquiries),0) INTO total_count FROM public.get_crr_scorecard(NOW()-INTERVAL '1 minute',NOW()+INTERVAL '1 minute');
-  IF total_count <> 1 THEN RAISE EXCEPTION 'Spam submissions remained in scorecard: %', total_count; END IF;
+  IF total_count <> 3 THEN RAISE EXCEPTION 'Spam submissions remained in scorecard: %', total_count; END IF;
   PERFORM public.classify_lead_submission(first_id,FALSE,FALSE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
   IF (SELECT COUNT(*) FROM public.lead_submission_classification_audit WHERE submission_id IN (first_id,second_id)) <> 3 THEN
     RAISE EXCEPTION 'Classification audit history missing';
