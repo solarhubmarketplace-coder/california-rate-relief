@@ -34,7 +34,17 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.use(express.json());
+// Keep the exact bytes of the request body alongside the parsed object.
+// Provider webhooks (Resend/Svix) sign the raw payload, so a signature can only
+// be verified against the original bytes — re-serialising the parsed object
+// changes key order and whitespace and the signature no longer matches.
+app.use(
+  express.json({
+    verify: (req, _res, buf) => {
+      if (buf && buf.length) req.rawBody = buf;
+    },
+  })
+);
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 

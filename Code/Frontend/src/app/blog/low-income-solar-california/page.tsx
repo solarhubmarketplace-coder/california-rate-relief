@@ -26,43 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    "Low-Income Solar in California: DAC-SASH, SASH, CARE, and FERA Programs",
-  datePublished: '2026-04-23',
-  dateModified: '2026-04-23',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id':
-      'https://ratereliefca.com/blog/low-income-solar-california',
-  },
-};
-
 export default function LowIncomeSolarCalifornia() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Low-Income Solar in California: DAC-SASH, SASH, CARE, and FERA Programs"} url="https://ratereliefca.com/blog/low-income-solar-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"California has multiple programs that make solar dramatically more affordable for low-income households: DAC-SASH (free solar), SASH, CARE, and FERA. Here is who qualifies and how each works."} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

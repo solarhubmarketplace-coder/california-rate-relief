@@ -15,21 +15,11 @@ export const metadata: Metadata = {
   openGraph: { title: 'Switch to Solar in California: The 2026 Complete Guide', description: 'A complete step-by-step guide to switching to solar in California in 2026.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Switch to Solar in California: The 2026 Complete Guide',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/switch-to-solar-california' },
-};
-
 export default function SwitchToSolar() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Switch to Solar in California: The 2026 Complete Guide"} url="https://ratereliefca.com/blog/switch-to-solar-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Everything California homeowners need to know about switching to solar in 2026 — the NEM 3.0 rules, financing options, what it costs, how long it takes, and the 5-step process."} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

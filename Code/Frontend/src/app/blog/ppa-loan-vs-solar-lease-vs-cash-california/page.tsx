@@ -26,45 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'PPA Loan vs Solar Lease vs Cash: 2026 California Comparison',
-  description:
-    "The four ways to pay for solar in California — cash, loan, lease, PPA — compared on cost, ownership, risk, and what fits which kind of household.",
-  datePublished: '2026-04-23',
-  dateModified: '2026-04-23',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id':
-      'https://ratereliefca.com/blog/ppa-loan-vs-solar-lease-vs-cash-california',
-  },
-};
-
 export default function PpaLoanLeaseCashCalifornia() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"PPA Loan vs Solar Lease vs Cash: 2026 California Comparison"} url="https://ratereliefca.com/blog/ppa-loan-vs-solar-lease-vs-cash-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"California"} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

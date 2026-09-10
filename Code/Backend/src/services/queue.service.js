@@ -579,11 +579,19 @@ class QueueService {
           completed_at: new Date().toISOString(),
         });
 
-        // Update lead's email_status
-        await supabaseAdmin
-          .from("leads")
-          .update({ email_status: "sent" })
-          .eq("id", lead.id);
+        // Update lead's email_status.
+        //
+        // "accepted", not "sent": all we know at this point is that the provider
+        // took the request. Only the Resend webhook (POST /api/webhook/resend)
+        // can promote this to "delivered".
+        //
+        // Routed through advanceLeadEmailStatus so the state ladder lives in ONE
+        // place. It only ever moves a lead forward, which matters because webhook
+        // events and queue sends race: the delivered event for message N can land
+        // after the queue accepts message N+1, and a blind write here would demote
+        // a confirmed delivery back to accepted.
+        const { advanceLeadEmailStatus } = require("./email-delivery.service");
+        await advanceLeadEmailStatus(lead.id, "accepted");
 
         console.log(`[QueueService] Email sent to ${lead.email}`);
       } catch (error) {
@@ -992,6 +1000,29 @@ class QueueService {
         `[QueueService] Task ${task.id} marked as failed - invalid phone number (no retry)`
       );
       return;
+    }
+
+    // ✨ Permanent email rejections must not be retried. On 2026-08-23 a
+    // malformed address was handed to Resend four separate times, rejected four
+    // times, and left the lead reading `failed` with no way to tell a dead
+    // address from a network blip. This mirrors the invalid-phone path above.
+    if (task.task_type === "email" && errorMessage) {
+      const { classifyEmailError } = require("../lib/email-address");
+      const classified = classifyEmailError({ message: errorMessage });
+      if (classified.kind === "permanent") {
+        await this.updateTask(task.id, {
+          status: "failed",
+          error_message: `${errorMessage} (permanent: ${classified.reason} — not retried)`,
+        });
+        await supabaseAdmin
+          .from("leads")
+          .update({ email_status: "invalid_address" })
+          .eq("id", task.lead_id);
+        console.log(
+          `[QueueService] Task ${task.id} marked as failed - permanent email rejection, no retry (${classified.reason})`
+        );
+        return;
+      }
     }
 
     if (task.task_type === "voice") {

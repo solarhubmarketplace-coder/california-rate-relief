@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/what-is-demand-charge-california' },
   openGraph: { title: 'What Is a Demand Charge?', description: 'Plain-English explanation of electric demand charges.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-demand-charge-california' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'What Is a Demand Charge? California Guide', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function WhatIsDemandChargeCA() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"What Is a Demand Charge? (And Do California Residential Customers Pay One?)"} url="https://ratereliefca.com/blog/what-is-demand-charge-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Demand charges explained in plain English. What they are, why commercial and some California residential customers pay them, and how solar/battery eliminate them."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

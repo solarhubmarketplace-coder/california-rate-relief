@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 
 export const metadata: Metadata = {
   title: 'What Is NEM 3.0 in California? Plain-English Explainer',
@@ -15,21 +16,37 @@ export const metadata: Metadata = {
   openGraph: { title: 'What Is NEM 3.0 in California? Plain-English Explainer', description: 'A plain-English explanation of California NEM 3.0.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'What Is NEM 3.0 in California? Plain-English Explainer',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/what-is-nem-3-california' },
-};
+// Mirrors the visible "Frequently Asked Questions" block below, word for word.
+// FAQPage schema must match on-page content — if that copy changes, change this too.
+const faqItems = [
+  {
+    question: 'Is NEM 3.0 the same as the Net Billing Tariff?',
+    answer:
+      `Yes. "NEM 3.0" is industry shorthand. "Net Billing Tariff" or "NBT" is the CPUC's official name.`,
+  },
+  {
+    question: 'When did NEM 3.0 start?',
+    answer:
+      'Interconnection applications submitted on or after April 15, 2023 are under NEM 3.0.',
+  },
+  {
+    question: 'Can I avoid NEM 3.0?',
+    answer:
+      `Not for new solar interconnections in California's three major utility territories. Existing NEM 2.0 customers are grandfathered; new customers are on NEM 3.0.`,
+  },
+  {
+    question: 'Will NEM 3.0 change again?',
+    answer:
+      'The CPUC reviews the tariff periodically. Industry groups continue to push for higher export credits. Material changes would come via another CPUC proceeding and typically take 1-2 years to implement. See our NEM 3.0 timeline for the current policy status.',
+  },
+];
 
 export default function WhatIsNem3() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"What Is NEM 3.0 in California? Plain-English Explainer"} url="https://ratereliefca.com/blog/what-is-nem-3-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"NEM 3.0 (the Net Billing Tariff) replaced California net metering in April 2023. Here is what NEM 3.0 actually is, how it works, and what it means for new California solar customers."} />
+      <FaqJsonLd items={faqItems} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ab-942-california-solar' },
   openGraph: { title: 'AB 942 California Solar', description: 'Solar lease transfer rights under California AB 942.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/ab-942-california-solar' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'AB 942 California Solar', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function AB942CASolar() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"AB 942 California: Solar Lease Transfer Rights Explained (2026)"} url="https://ratereliefca.com/blog/ab-942-california-solar" datePublished="2026-04-24" dateModified="2026-04-24" description={"What California AB 942 actually did for solar homeowners; lease/PPA transfer rules, UCC lien relief, disclosure requirements, and practical impact when you sell."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

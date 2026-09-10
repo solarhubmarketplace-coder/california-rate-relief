@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/tech-clean-california-heat-pump-rebate' },
   openGraph: { title: 'TECH Clean California Heat Pump Rebate', description: 'The 2026 TECH Clean California heat pump rebate explained.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/tech-clean-california-heat-pump-rebate' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'TECH Clean California Heat Pump Rebate', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function TECHCleanCAGuide() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"TECH Clean California: Heat Pump Rebate Program Guide (2026)"} url="https://ratereliefca.com/blog/tech-clean-california-heat-pump-rebate" datePublished="2026-04-24" dateModified="2026-04-24" description={"TECH Clean California rebates for heat pump water heaters and HVAC. Eligibility, amounts, how to apply, contractor directory, and how it stacks with solar."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

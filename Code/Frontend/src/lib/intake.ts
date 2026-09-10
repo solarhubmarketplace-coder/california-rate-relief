@@ -5,6 +5,25 @@ export { createSubmissionId, getOrCreateSubmissionAttempt, submissionIdAfterResu
 
 export type IntakeSegment = 'residential' | 'commercial';
 
+/**
+ * Location keys every submission carries inside qualification_data.
+ *
+ * service_zip and city are the visitor's own answers and are what the backend
+ * copies onto leads.zip and leads.city. The derived_* keys come from the ZIP
+ * seed table in ./ca-utility-by-zip and sit BESIDE utility_provider rather than
+ * replacing it, so a disagreement between the visitor's utility and the derived
+ * one stays visible instead of being silently overwritten.
+ */
+export interface IntakeLocationFields {
+  service_zip?: string;
+  city?: string | null;
+  derived_utility?: string | null;
+  derived_cca?: string | null;
+  derived_county?: string | null;
+  derived_from?: string;
+  derived_utility_matches_selection?: boolean | null;
+}
+
 export interface IntakePayload {
   submission_id: string;
   segment: IntakeSegment;
@@ -14,7 +33,7 @@ export interface IntakePayload {
     email?: string;
     address?: string;
   };
-  qualification_data: Record<string, string | number | boolean | null>;
+  qualification_data: Record<string, string | number | boolean | null> & IntakeLocationFields;
   attribution: {
     source: string;
     gclid?: string;

@@ -15,21 +15,11 @@ export const metadata: Metadata = {
   openGraph: { title: 'Do Solar Panels Work During a Power Outage in California?', description: 'Why solar-only homes lose power in outages, and why battery changes that.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Do Solar Panels Work During a Power Outage in California?',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/do-solar-panels-work-during-power-outage-california' },
-};
-
 export default function DoSolarWorkDuringOutage() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Do Solar Panels Work During a Power Outage in California?"} url="https://ratereliefca.com/blog/do-solar-panels-work-during-power-outage-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"A grid-tied solar system without a battery shuts off during an outage — for safety. Only solar + battery keeps your home powered. Here is how it works, why, and what PSPS means for California solar owners."} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

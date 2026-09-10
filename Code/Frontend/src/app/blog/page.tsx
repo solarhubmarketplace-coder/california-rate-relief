@@ -287,10 +287,57 @@ const blogPosts = [
   },
 ];
 
+/**
+ * /blog is an index, not an article.
+ *
+ * The only prose unique to this route is the h1, the standfirst and the post
+ * excerpts; the writing itself lives on the posts it links to, each of which
+ * already emits its own Article node. Typing the index as an Article would
+ * assert that this page IS that piece of writing — it is not — and would put a
+ * second Article in play for the same subject. CollectionPage with an ItemList
+ * says what the page actually does: it indexes these posts, and names them.
+ *
+ * Every name, URL and count below is read from the blogPosts array rendered on
+ * the page, so the schema cannot drift from what a reader sees. The list items
+ * are plain ListItems rather than nested BlogPosting nodes on purpose: each
+ * post's own page is the right place to describe the post.
+ */
+function buildBlogIndexSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'California Energy Savings Blog',
+    description:
+      'Expert guides on lowering your electric bill, understanding utility rate changes, and making the most of solar energy in California.',
+    url: 'https://ratereliefca.com/blog',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'California Rate Relief',
+      url: 'https://ratereliefca.com',
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: blogPosts.length,
+      itemListElement: blogPosts.map((post, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `https://ratereliefca.com/blog/${post.slug}`,
+        name: post.title,
+      })),
+    },
+  };
+}
+
 export default function BlogPage() {
   return (
     <PublicLayout>
       <Header />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildBlogIndexSchema()),
+        }}
+      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <div className='max-w-4xl mx-auto'>

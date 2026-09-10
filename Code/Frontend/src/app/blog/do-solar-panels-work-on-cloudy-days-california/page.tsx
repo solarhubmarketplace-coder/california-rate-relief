@@ -15,21 +15,11 @@ export const metadata: Metadata = {
   openGraph: { title: 'Do Solar Panels Work on Cloudy Days? California Guide', description: 'How solar panels perform on cloudy California days.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Do Solar Panels Work on Cloudy Days? California Guide',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/do-solar-panels-work-on-cloudy-days-california' },
-};
-
 export default function DoSolarPanelsWorkOnCloudyDays() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Do Solar Panels Work on Cloudy Days? California Guide"} url="https://ratereliefca.com/blog/do-solar-panels-work-on-cloudy-days-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Yes, solar panels work on cloudy days in California — just at reduced output. Typical cloudy-day production is 10-25% of peak sunny performance. Here is how much and what it means for California homes."} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

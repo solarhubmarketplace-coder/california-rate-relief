@@ -10,4 +10,10 @@ router.post("/lead", webhookController.webhookCreateLead);
 // POST /api/webhook/sms
 router.post("/sms", webhookController.webhookIncomingSms);
 
+// RESEND DELIVERY WEBHOOK - records delivered / bounced / complained so the
+// delivery rate is measurable. Signature-verified inside the controller; the
+// route itself stays unauthenticated because Resend cannot present a bearer token.
+// POST /api/webhook/resend
+router.post("/resend", webhookController.webhookResendDelivery);
+
 module.exports = router;

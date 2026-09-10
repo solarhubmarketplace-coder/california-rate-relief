@@ -18,40 +18,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      'Prepaid Solar PPA in California: How It Works and Who It\'s Best For',
+      'Prepaid Solar PPA in California: Cost and Who It Fits',
     description:
       'A clear breakdown of the prepaid PPA model that\'s surging in popularity after the residential solar tax credit expired.',
     type: 'article',
     publishedTime: '2026-04-14T00:00:00Z',
-  },
-};
-
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'Prepaid Solar PPA in California: How It Works, What It Costs, and Who It\'s Best For (2026)',
-  description:
-    'A clear breakdown of prepaid PPAs — how they work, costs, comparisons to other options, and when they make sense.',
-  datePublished: '2026-04-14',
-  dateModified: '2026-04-14',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/blog/prepaid-ppa-california-2026',
   },
 };
 
@@ -60,10 +31,6 @@ export default function PrepaidPPAGuide() {
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Prepaid Solar PPA in California: How It Works, What It Costs, and Who It's Best For (2026)"} url="https://ratereliefca.com/blog/prepaid-ppa-california-2026" datePublished="2026-04-14" dateModified="2026-04-24" description={"Prepaid PPAs are surging in California after the residential tax credit expired. Learn exactly how they work, what they cost, how they compare to regular PPAs and loans, and when they make sense."} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

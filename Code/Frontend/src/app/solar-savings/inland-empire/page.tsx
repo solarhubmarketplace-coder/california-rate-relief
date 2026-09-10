@@ -10,16 +10,17 @@ import {
   type CityData,
 } from '@/data/cities-data';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Inland Empire Solar Companies | Riverside, San Bernardino | Rate Relief',
+  title: 'Inland Empire Solar Companies: Riverside & San Bernardino',
   description:
     'Solar for Inland Empire homes in Riverside, Corona, Murrieta, Temecula, and more. Cut your SCE bill by 30-50% with zero down solar programs.',
   alternates: {
     canonical: '/solar-savings/inland-empire',
   },
   openGraph: {
-    title: 'Inland Empire Solar Energy & Bill Reduction',
+    title: 'Inland Empire Solar Companies: Riverside & San Bernardino',
     description:
       'Reduce your Inland Empire electric bill with solar. Save 30-50% on SCE and Kern County rates, zero money down.',
     type: 'website',
@@ -231,6 +232,28 @@ export default function InlandEmpireSolarPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(buildRegionalCollectionSchema()),
         }}
+      />
+
+      {/*
+        Article, alongside the CollectionPage node above — not instead of it.
+        The two describe different things and neither is redundant:
+          - CollectionPage  the index of city pages this hub links to
+          - Article         the regional guide prose above that index, which is
+                            original editorial content and needs an author,
+                            a reviewer and a last-reviewed date for E-E-A-T
+        Only the Article node claims mainEntityOfPage, so there is no competing
+        "this page is really an X" assertion.
+
+        dateModified is the 2026-09-10 schema/QC review. datePublished is
+        deliberately omitted: this page carries no recorded first-publish date
+        and inventing one would put an unverifiable date into structured data.
+      */}
+      <ArticleJsonLd
+        variant='Article'
+        domain='crr'
+        headline='Solar Energy in the Inland Empire'
+        url='https://ratereliefca.com/solar-savings/inland-empire'
+        dateModified='2026-09-10'
       />
 
       <Footer />

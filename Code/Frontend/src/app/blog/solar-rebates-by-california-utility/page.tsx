@@ -22,23 +22,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Solar Rebates by California Utility (2026)',
-  datePublished: '2026-04-24',
-  dateModified: '2026-04-24',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/solar-rebates-by-california-utility' },
-};
-
 export default function SolarRebatesByCAUtility() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Rebates by California Utility (2026): PG&E, SCE, SDG&E, LADWP, SMUD"} url="https://ratereliefca.com/blog/solar-rebates-by-california-utility" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar and battery rebates by California utility in 2026 — PG&E, SCE, SDG&E, LADWP, SMUD, Roseville Electric, Glendale Water & Power. SGIP, DAC-SASH, TECH Clean, and municipal-only programs."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

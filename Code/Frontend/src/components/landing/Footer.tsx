@@ -137,6 +137,17 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    href='/corrections'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Corrections
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
+                      &rarr;
+                    </span>
+                  </Link>
+                </li>
+                <li>
                   <a
                     href='https://www.cpuc.ca.gov/consumer-support/consumer-programs-az/solar-energy'
                     target='_blank'

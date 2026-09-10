@@ -151,7 +151,57 @@ const webhookIncomingSms = async (req, res) => {
   }
 };
 
+/**
+ * RESEND DELIVERY WEBHOOK - POST /api/webhook/resend
+ *
+ * Turns "the provider accepted this" into "this reached a mailbox". Until this
+ * existed there was no delivery signal at all, so the delivery rate could not be
+ * measured and the Day-3 delivery gate could not be evaluated.
+ *
+ * Fails closed. No signing secret, or a bad signature, rejects the request —
+ * this endpoint writes to email_logs and leads, so an unauthenticated caller
+ * must never reach the apply path.
+ *
+ * Always answers 200 once the signature passes, even when the event cannot be
+ * matched to a row. A 4xx or 5xx makes Resend retry, and retrying an event we
+ * will never be able to apply is just noise; the raw event is persisted either
+ * way and can be inspected in email_webhook_events.
+ */
+const webhookResendDelivery = async (req, res) => {
+  const { verifySvixSignature } = require("../lib/svix-signature");
+  const config = require("../config");
+  const emailDelivery = require("../services/email-delivery.service");
+
+  const verdict = verifySvixSignature({
+    rawBody: req.rawBody,
+    headers: req.headers,
+    secret: config.RESEND_WEBHOOK_SECRET,
+  });
+
+  if (!verdict.ok) {
+    console.warn(`[WebhookResend] Rejected: ${verdict.reason}`);
+    // 401 on a signature failure is correct and tells Resend to stop retrying a
+    // payload it cannot get us to accept.
+    return res.status(401).json({ error: "invalid signature" });
+  }
+
+  try {
+    const providerEventId = req.headers["svix-id"] || null;
+    const result = await emailDelivery.applyResendEvent(req.body, providerEventId);
+    console.log(
+      `[WebhookResend] ${req.body && req.body.type} -> ${result.applied ? "applied" : "not applied"}: ${result.reason}`
+    );
+    return res.status(200).json({ received: true, applied: result.applied, reason: result.reason });
+  } catch (error) {
+    console.error("[WebhookResend] Error applying event:", error);
+    // Acknowledge anyway. The raw event is already stored; a retry storm on a
+    // bug in our own apply path would not help.
+    return res.status(200).json({ received: true, applied: false, reason: "internal error" });
+  }
+};
+
 module.exports = {
   webhookCreateLead,
   webhookIncomingSms,
+  webhookResendDelivery,
 };

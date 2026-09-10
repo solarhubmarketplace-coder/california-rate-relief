@@ -26,44 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)',
-  description:
-    'NEM 3.0 cut export credits by 75%. An honest breakdown of the new economics, when solar still works, and when it doesn\'t.',
-  datePublished: '2026-04-14',
-  dateModified: '2026-04-14',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/blog/nem-3-california-still-worth-it',
-  },
-};
-
 export default function NEM3StillWorthIt() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)"} url="https://ratereliefca.com/blog/nem-3-california-still-worth-it" datePublished="2026-04-14" dateModified="2026-04-24" description={"NEM 3.0 cut solar export credits by 75%. An honest breakdown of the new economics, when solar still works, when it doesn't, and how battery storage changes the math."} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/why-is-my-ladwp-bill-so-high' },
   openGraph: { title: 'Why Is My LADWP Bill So High?', description: 'What really drives LADWP residential bills up.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-ladwp-bill-so-high' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Why Is My LADWP Bill So High?', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function WhyIsMyLADWPBillSoHigh() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Why Is My LADWP Bill So High? (Even Though LADWP Rates Are Below SCE)"} url="https://ratereliefca.com/blog/why-is-my-ladwp-bill-so-high" datePublished="2026-04-24" dateModified="2026-04-24" description={"LADWP rates are the lowest in LA Metro — so why did your bill jump? Tier pricing, AC usage, LIRA discount eligibility, and what to do."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

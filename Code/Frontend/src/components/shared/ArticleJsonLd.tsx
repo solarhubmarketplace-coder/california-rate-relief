@@ -29,8 +29,13 @@ export interface ArticleJsonLdProps {
   headline: string;
   /** Canonical URL of this article */
   url: string;
-  /** ISO-8601 publish date — e.g., '2026-04-22' */
-  datePublished: string;
+  /**
+   * ISO-8601 publish date — e.g., '2026-04-22'. Optional: several pages carry a
+   * verified last-reviewed date but no recorded first-publish date, and
+   * schema.org does not require datePublished. Omitting it is honest; guessing
+   * one is not.
+   */
+  datePublished?: string;
   /** ISO-8601 last-modified date — e.g., '2026-04-24' */
   dateModified: string;
   /** Optional cover image URL (absolute) */
@@ -85,7 +90,7 @@ export function ArticleJsonLd(props: ArticleJsonLdProps): ReactElement {
     '@type': variant,
     headline,
     url,
-    datePublished,
+    ...(datePublished ? { datePublished } : {}),
     dateModified,
     inLanguage: 'en-US',
     author,

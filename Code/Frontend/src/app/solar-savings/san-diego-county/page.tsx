@@ -10,16 +10,17 @@ import {
   type CityData,
 } from '@/data/cities-data';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'San Diego County Solar Companies | San Diego, Chula Vista, Oceanside',
+  title: 'San Diego County Solar Companies: Chula Vista, Carlsbad',
   description:
     'Solar energy for San Diego County homes. Reduce your SDG&E electric bill by 30-50% with zero down solar programs. San Diego, Chula Vista, Oceanside, Carlsbad.',
   alternates: {
     canonical: '/solar-savings/san-diego-county',
   },
   openGraph: {
-    title: 'San Diego County Solar & Electric Bill Savings',
+    title: 'San Diego County Solar Companies: Chula Vista, Carlsbad',
     description:
       'Cut your San Diego County SDG&E bill by 30-50% with solar. Zero money down, fixed monthly rates.',
     type: 'website',
@@ -224,6 +225,28 @@ export default function SanDiegoCountySolarPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(buildRegionalCollectionSchema()),
         }}
+      />
+
+      {/*
+        Article, alongside the CollectionPage node above — not instead of it.
+        The two describe different things and neither is redundant:
+          - CollectionPage  the index of city pages this hub links to
+          - Article         the regional guide prose above that index, which is
+                            original editorial content and needs an author,
+                            a reviewer and a last-reviewed date for E-E-A-T
+        Only the Article node claims mainEntityOfPage, so there is no competing
+        "this page is really an X" assertion.
+
+        dateModified is the 2026-09-10 schema/QC review. datePublished is
+        deliberately omitted: this page carries no recorded first-publish date
+        and inventing one would put an unverifiable date into structured data.
+      */}
+      <ArticleJsonLd
+        variant='Article'
+        domain='crr'
+        headline='Solar Energy in San Diego County'
+        url='https://ratereliefca.com/solar-savings/san-diego-county'
+        dateModified='2026-09-10'
       />
 
       <Footer />

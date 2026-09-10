@@ -3,63 +3,74 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
+const title = 'SDG&E Time of Use Rates Explained (2026 Guide)';
+const description =
+  'SDG&E has the highest rates in the continental US at 45.7¢/kWh, with summer peak rates reaching 69.65¢. Here\'s how to navigate their TOU schedule.';
+const sourceLink =
+  'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
+
 export const metadata: Metadata = {
-  title:
-    'SDG&E Time of Use Rates Explained (2026 Guide)',
-  description:
-    'SDG&E has the highest rates in the continental US at 45.7¢/kWh, with summer peak rates reaching 69.65¢. Here\'s how to navigate their TOU schedule.',
+  title,
+  description,
   alternates: {
     canonical: '/blog/sdge-time-of-use-rates-2026',
   },
   openGraph: {
-    title:
-      'SDG&E Time of Use Rates Explained (2026 Guide)',
+    title,
     description:
       'SDG&E has the highest rates in the continental US. Here\'s how their TOU schedule works and how to save.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
+    modifiedTime: '2026-09-10T00:00:00Z',
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'SDG&E Time of Use Rates Explained (2026 Guide)',
-  description:
-    'SDG&E has the highest rates in the continental US at 45.7¢/kWh, with summer peak rates reaching 69.65¢. Here\'s how to navigate TOU rates.',
-  datePublished: '2026-04-16',
-  dateModified: '2026-04-16',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
+// Mirrors the visible "Frequently Asked Questions" block below, word for word —
+// the block is rendered from this same array, so the two cannot drift. FAQPage
+// schema must match on-page content. Every answer is condensed from copy that
+// already appears on this page; no new figures were introduced.
+const faqItems = [
+  {
+    question: 'What are SDG&E’s peak hours?',
+    answer:
+      'On TOU-DR1, peak hours are 4 PM to 9 PM in summer (June 1 – September 30) at 69.65¢/kWh, and 5 PM to 8 PM in winter (October 1 – May 31) at about 48¢/kWh. On TOU-DR2 the peak window is 2 PM to 8 PM. Rate figures verified April 2026.',
   },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
+  {
+    question: 'What are SDG&E’s super off-peak hours?',
+    answer:
+      'On TOU-DR1, super off-peak runs from 12 AM to 6 AM in summer at about 25¢/kWh, and from 12 AM to 8 AM in winter at about 28¢/kWh. Rate figures verified April 2026.',
   },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/blog/sdge-time-of-use-rates-2026',
+  {
+    question: 'Is TOU-DR1 or TOU-DR2 better?',
+    answer:
+      'Most households are better off on TOU-DR1, because the TOU-DR2 peak starts at 2 PM — earlier in the afternoon, when homeowners are less likely to control usage. TOU-DR2 peak rates are around 63-66¢/kWh instead of 69.65¢, so it is a marginal improvement only if you can shift load earlier. Use SDG&E’s rate comparison tool with your own usage history.',
   },
-};
+  {
+    question: 'Does solar change which SDG&E rate plan to pick?',
+    answer:
+      'TOU-DR1 remains the best choice for most solar customers, because solar production peaks between 12 PM and 4 PM, which is off-peak on TOU-DR1. Adding a battery lets you store daytime production and discharge it during the 4 PM to 9 PM peak instead of paying the 69.65¢ peak rate.',
+  },
+];
 
 export default function SDGETimeOfUseRates2026() {
   return (
     <PublicLayout>
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      <ArticleJsonLd
+        variant='Article'
+        domain='crr'
+        headline={title}
+        url='https://ratereliefca.com/blog/sdge-time-of-use-rates-2026'
+        datePublished='2026-04-16'
+        dateModified='2026-09-10'
+        description={description}
       />
+      <FaqJsonLd items={faqItems} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
@@ -96,8 +107,102 @@ export default function SDGETimeOfUseRates2026() {
 
             {/* Article Body */}
             <div className='prose prose-slate max-w-none'>
+              {/* Self-contained answer passage. First thing in the body, sized to
+                  stand alone if a featured snippet or an AI answer box lifts it
+                  out. Every figure in it appears elsewhere on this page. */}
+              <div className='rounded-xl border border-border bg-muted/30 p-5 mb-8'>
+                <p className='font-semibold text-foreground mb-2'>Quick answer</p>
+                <p className='text-foreground/80 m-0'>
+                  SDG&amp;E time-of-use rates are highest from 4 PM to 9 PM in summer, when TOU-DR1 peak electricity costs 69.65¢ per kilowatt-hour (rate figures verified April 2026). Off-peak is 47.56¢ and super off-peak, 12 AM to 6 AM, is about 25¢. SDG&amp;E&apos;s 45.7¢ residential average is the highest in the continental United States.
+                </p>
+              </div>
+
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 SDG&amp;E (San Diego Gas &amp; Electric) charges the highest residential electricity rates in the continental United States at 45.7 cents per kilowatt-hour (kWh). For those on time-of-use (TOU) rates, summer peak hours can reach 69.65 cents per kWh — nearly four times the national average. This article breaks down how SDG&amp;E&apos;s complex rate structure works, which plan fits your situation, and what you can do to reduce your bills.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                What Are SDG&amp;E&apos;s Peak Hours?
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                SDG&amp;E peak hours are 4 PM to 9 PM in summer on TOU-DR1, the most common residential time-of-use plan, and 5 PM to 8 PM in winter. Summer runs June 1 through September 30; winter covers October 1 through May 31.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Those windows are where the money goes. Summer peak on TOU-DR1 is 69.65¢/kWh against 47.56¢ off-peak, so the same load costs substantially more at 5 PM than it does at 3 PM. Winter peak is about 48¢/kWh against about 34¢ off-peak. If you are on TOU-DR2 instead, your peak window is 2 PM to 8 PM — two hours earlier in the afternoon. EV-TOU-5 pushes the emphasis the other way, with the cheapest charging window running roughly 12 AM to 6 AM. All of these figures were verified in April 2026; confirm them against SDG&amp;E&apos;s <a href='https://www.sdge.com/residential/pricing-plans' target='_blank' rel='noopener noreferrer' className={sourceLink}>residential pricing plans page</a> before you switch anything.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Peak hours are not the only reason a bill jumps. If yours climbed without a change in usage, work through <Link href='/blog/why-is-my-sdge-bill-so-high' className={sourceLink}>the SDG&amp;E high-bill checklist</Link> before you change rate plans.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                SDG&amp;E TOU Plan Comparison: TOU-DR1 vs TOU-DR2 vs EV-TOU-5
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-4'>
+                Rate figures in this table were verified in April 2026 and are the same ones used throughout this article. SDG&amp;E changes its tariffs, so confirm current numbers on SDG&amp;E&apos;s own <a href='https://www.sdge.com/residential/pricing-plans' target='_blank' rel='noopener noreferrer' className={sourceLink}>residential pricing plans page</a> before acting on them. Cells marked &quot;not stated&quot; are windows or prices this article does not publish a verified figure for.
+              </p>
+
+              <div className='overflow-x-auto mb-4'>
+                <table className='w-full border-collapse text-sm'>
+                  <thead>
+                    <tr className='border-b-2 border-border'>
+                      <th className='text-left py-3 pr-4'>Plan</th>
+                      <th className='text-left py-3 px-3'>Peak window</th>
+                      <th className='text-left py-3 px-3'>Off-peak window</th>
+                      <th className='text-left py-3 px-3'>Super off-peak window</th>
+                      <th className='text-left py-3 pl-3'>Rates stated in this article (verified April 2026)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className='border-b border-border'>
+                      <td className='py-3 pr-4 font-medium'>
+                        TOU-DR1, summer
+                        <br />
+                        <span className='font-normal text-muted-foreground'>June 1 – September 30</span>
+                      </td>
+                      <td className='py-3 px-3'>4 PM – 9 PM</td>
+                      <td className='py-3 px-3'>12 AM – 4 PM and 9 PM – midnight</td>
+                      <td className='py-3 px-3'>12 AM – 6 AM</td>
+                      <td className='py-3 pl-3'>Peak 69.65¢ · Off-peak 47.56¢ · Super off-peak ~25¢</td>
+                    </tr>
+                    <tr className='border-b border-border'>
+                      <td className='py-3 pr-4 font-medium'>
+                        TOU-DR1, winter
+                        <br />
+                        <span className='font-normal text-muted-foreground'>October 1 – May 31</span>
+                      </td>
+                      <td className='py-3 px-3'>5 PM – 8 PM</td>
+                      <td className='py-3 px-3'>8 AM – 5 PM and 8 PM – midnight</td>
+                      <td className='py-3 px-3'>12 AM – 8 AM</td>
+                      <td className='py-3 pl-3'>Peak ~48¢ · Off-peak ~34¢ · Super off-peak ~28¢</td>
+                    </tr>
+                    <tr className='border-b border-border'>
+                      <td className='py-3 pr-4 font-medium'>TOU-DR2</td>
+                      <td className='py-3 px-3'>2 PM – 8 PM</td>
+                      <td className='py-3 px-3'>Not stated</td>
+                      <td className='py-3 px-3'>Not stated</td>
+                      <td className='py-3 pl-3'>Peak ~63-66¢</td>
+                    </tr>
+                    <tr>
+                      <td className='py-3 pr-4 font-medium'>
+                        EV-TOU-5
+                        <br />
+                        <span className='font-normal text-muted-foreground'>requires an electric vehicle</span>
+                      </td>
+                      <td className='py-3 px-3'>Not stated</td>
+                      <td className='py-3 px-3'>Roughly 12 AM – 6 AM for charging</td>
+                      <td className='py-3 px-3'>Not stated</td>
+                      <td className='py-3 pl-3'>Off-peak charging as low as 18-22¢</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p className='text-foreground/60 text-xs mb-8'>
+                Figures are the ones published in the sections below, verified April 2026 and now several months old; treat every tilde figure as approximate. California Rate Relief is a referral service. We are not a licensed contractor. For statewide context, see <Link href='/blog/pge-vs-sce-vs-sdge-rates-compared' className={sourceLink}>PG&amp;E vs SCE vs SDG&amp;E rates compared</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -132,6 +237,10 @@ export default function SDGETimeOfUseRates2026() {
                 — Peak (5-8 PM): ~48¢/kWh<br />
                 — Off-Peak (8 AM - 5 PM, 8 PM - midnight): ~34¢/kWh<br />
                 — Super Off-Peak (12 AM - 8 AM): ~28¢/kWh
+              </p>
+
+              <p className='text-foreground/60 text-xs mb-6'>
+                Both schedules above were verified in April 2026. Current figures are on SDG&amp;E&apos;s <a href='https://www.sdge.com/residential/pricing-plans' target='_blank' rel='noopener noreferrer' className={sourceLink}>residential pricing plans page</a>.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -212,7 +321,7 @@ export default function SDGETimeOfUseRates2026() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                In six years, SDG&amp;E rates have climbed roughly 43%. Further increases are approved through 2028. If this trend continues, SDG&amp;E could exceed 50¢/kWh by 2027-2028.
+                In six years, SDG&amp;E rates have climbed roughly 43%. Further increases are approved through 2028. If this trend continues, SDG&amp;E could exceed 50¢/kWh by 2027-2028. For the detail behind the most recent step up, read our breakdown of the <Link href='/blog/sdge-rate-increase-2026' className={sourceLink}>2026 SDG&amp;E rate increase</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -228,7 +337,7 @@ export default function SDGETimeOfUseRates2026() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Step 3: Explore solar.</strong> In SDG&amp;E territory, solar is nearly always the right long-term move because rates are so high. A system sized to cover 80-90% of usage will pay for itself in 8-12 years (for purchased systems) or provide immediate savings (for PPAs). You can check Google&apos;s Project Sunroof for a free estimate of your home&apos;s solar potential.
+                <strong>Step 3: Explore solar.</strong> In SDG&amp;E territory, solar is nearly always the right long-term move because rates are so high. A system sized to cover 80-90% of usage will pay for itself in 8-12 years (for purchased systems) or provide immediate savings (for PPAs). You can check Google&apos;s Project Sunroof for a free estimate of your home&apos;s solar potential, and our <Link href='/solar-savings/san-diego' className={sourceLink}>San Diego solar savings breakdown</Link> shows what the numbers look like locally.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -242,24 +351,30 @@ export default function SDGETimeOfUseRates2026() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 SDG&amp;E rates at 45.7¢/kWh with summer peaks reaching 69.65¢ are crushing San Diego-area homeowners. Short-term relief comes from shifting usage away from peak hours and verifying you&apos;re on the right rate plan. Long-term relief almost always involves solar. In this rate environment, locking in 8-12¢/kWh through a solar PPA saves tens of thousands of dollars over 25 years compared to paying rising utility rates. If you own your home and plan to stay 15+ years, solar is worth serious evaluation.
               </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                Frequently Asked Questions
+              </h2>
+
+              <div className='space-y-6'>
+                {faqItems.map((item) => (
+                  <div key={item.question}>
+                    <h3 className='text-lg font-semibold text-foreground mb-2'>
+                      {item.question}
+                    </h3>
+                    <p className='text-foreground/80 leading-relaxed m-0'>
+                      {item.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* CTA */}
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>
-                See What a Fixed Solar Rate Would Look Like
-              </h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                At SDG&amp;E rates, solar savings are significant. Check your eligibility in 60 seconds — no cost, no obligation.
-              </p>
-              <Link
-                href='/#qualify'
-                className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-              >
-                Check Your Eligibility
-                <ArrowRight className='h-4 w-4' />
-              </Link>
-            </div>
+            <ArticleCTA
+              heading='See What a Fixed Solar Rate Would Look Like'
+              body='At SDG&E rates, solar savings are significant. California Rate Relief is a referral service, not a solar company. Check your eligibility in 60 seconds — no cost, no obligation.'
+            />
 
             {/* Navigation */}
             <div className='mt-10 pt-8 border-t border-border flex justify-between items-center'>

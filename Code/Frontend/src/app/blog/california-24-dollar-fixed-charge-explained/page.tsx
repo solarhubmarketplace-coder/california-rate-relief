@@ -26,45 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'The New $24 Fixed Charge on Your California Electric Bill, Explained',
-  description:
-    'PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every residential bill. Learn what it is, who pays less, and how it affects solar.',
-  datePublished: '2026-04-14',
-  dateModified: '2026-04-14',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id':
-      'https://ratereliefca.com/blog/california-24-dollar-fixed-charge-explained',
-  },
-};
-
 export default function FixedChargeExplained() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"The New $24 Fixed Charge on Your California Electric Bill, Explained"} url="https://ratereliefca.com/blog/california-24-dollar-fixed-charge-explained" datePublished="2026-04-14" dateModified="2026-04-24" description={"PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every residential bill. Learn exactly what it is, why it exists, who pays less, and how it affects solar savings."} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
@@ -359,7 +325,16 @@ export default function FixedChargeExplained() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The actionable decision for most homeowners is whether to address
                 the other 90% of their bill — the consumption-based charges — through
-                efficiency upgrades, rate plan optimization, or solar. The fixed
+                efficiency upgrades, rate plan optimization, or solar. Rate plan
+                optimization starts with the peak window on your own utility&apos;s
+                schedule — San Diego customers can check{' '}
+                <Link
+                  href='/blog/sdge-time-of-use-rates-2026'
+                  className='text-primary hover:underline'
+                >
+                  when SDG&amp;E&apos;s peak window falls
+                </Link>{' '}
+                before comparing plans. The fixed
                 charge makes that decision slightly more complex but doesn&apos;t
                 fundamentally change the calculus. If your bill is $200+ per month,
                 the consumption portion is still where the real savings opportunity

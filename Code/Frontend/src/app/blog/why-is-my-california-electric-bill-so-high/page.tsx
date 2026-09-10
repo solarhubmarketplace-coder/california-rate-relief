@@ -15,21 +15,11 @@ export const metadata: Metadata = {
   openGraph: { title: 'Why Is My California Electric Bill So High? PGE, SCE, SDGE Explained', description: 'Why California utility bills keep rising and what you can do about it.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Why Is My California Electric Bill So High? PGE, SCE, SDGE Explained',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/why-is-my-california-electric-bill-so-high' },
-};
-
 export default function WhyIsMyBillSoHigh() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Why Is My California Electric Bill So High? PGE, SCE, SDGE Explained"} url="https://ratereliefca.com/blog/why-is-my-california-electric-bill-so-high" datePublished="2026-04-23" dateModified="2026-04-24" description={"California has some of the highest electric rates in the country. Here is why PGE, SCE, SDGE, and LADWP bills keep climbing — fixed charges, TOU peak rates, wildfire costs, grid upgrades — and how to lower yours."} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

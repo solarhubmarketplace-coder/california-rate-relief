@@ -26,45 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'The Solar Tax Credit Expired in 2026. Here Are Your Best Options Now.',
-  description:
-    'The federal residential solar tax credit ended December 31, 2025. A breakdown of every option for California homeowners in 2026.',
-  datePublished: '2026-04-14',
-  dateModified: '2026-04-14',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id':
-      'https://ratereliefca.com/blog/solar-tax-credit-expired-2026-options',
-  },
-};
-
 export default function SolarTaxCreditExpired() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"The Solar Tax Credit Expired in 2026. Here Are Your Best Options Now."} url="https://ratereliefca.com/blog/solar-tax-credit-expired-2026-options" datePublished="2026-04-14" dateModified="2026-04-24" description={"The federal residential solar tax credit (Section 25D) ended December 31, 2025. A clear breakdown of what's gone, what's still available, and every option for going solar in 2026."} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

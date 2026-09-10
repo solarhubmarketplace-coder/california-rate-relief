@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 
 export const metadata: Metadata = {
   title: 'Are Solar Panels Worth It in California? 2026 Honest Answer',
@@ -15,21 +16,32 @@ export const metadata: Metadata = {
   openGraph: { title: "Are Solar Panels Worth It in California? 2026 Honest Answer", description: "Straight answer on whether solar panels are worth it in California in 2026.", type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Are Solar Panels Worth It in California? 2026 Honest Answer',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/are-solar-panels-worth-it-california' },
-};
+// Mirrors the visible "Frequently Asked Questions" block below, word for word.
+// FAQPage schema must match on-page content — if that copy changes, change this too.
+const faqItems = [
+  {
+    question: 'Are solar panels worth it in California in 2026?',
+    answer:
+      'For most homeowners paying $200+ per month with a reasonably sunny roof — yes, with a battery. Typical payback is 9-12 years for cash/loan, immediate savings for PPA/lease.',
+  },
+  {
+    question: 'Did NEM 3.0 ruin solar in California?',
+    answer:
+      `It didn't ruin it — it changed the optimal design. Solar-only systems are weaker now. Solar + battery is still solid. The strategy shifted from "maximize export" to "maximize self-consumption."`,
+  },
+  {
+    question: "What if I can't afford to buy solar outright?",
+    answer:
+      'A PPA or lease removes the upfront cost entirely — $0 down, fixed monthly below your utility bill. Our PPA vs Loan vs Lease vs Cash comparison walks through all four.',
+  },
+];
 
 export default function AreSolarPanelsWorthIt() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Are Solar Panels Worth It in California? 2026 Honest Answer"} url="https://ratereliefca.com/blog/are-solar-panels-worth-it-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"For most California homeowners paying $200+ per month for electricity, solar is still worth it in 2026 — but only with a battery and only if the math fits your specific situation. Here is the honest breakdown."} />
+      <FaqJsonLd items={faqItems} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

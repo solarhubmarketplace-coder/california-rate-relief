@@ -23,23 +23,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Solar Pool Heating in California: Cost, ROI, and How It Compares to Heat Pumps',
-  datePublished: '2026-04-24',
-  dateModified: '2026-04-24',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/solar-pool-heating-california' },
-};
-
 export default function SolarPoolHeatingCA() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Pool Heating in California: Cost, ROI, and How It Compares to Heat Pumps (2026)"} url="https://ratereliefca.com/blog/solar-pool-heating-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar pool heating cost in California, how panels work, when they beat heat-pump pool heaters, permits, and realistic swim-season extension. No fluff — real 2026 numbers."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

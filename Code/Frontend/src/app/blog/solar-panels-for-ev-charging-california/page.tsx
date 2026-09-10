@@ -15,21 +15,11 @@ export const metadata: Metadata = {
   openGraph: { title: 'Solar Panels for EV Charging in California: Size, Cost, and ROI', description: 'How to size solar for EV charging in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Solar Panels for EV Charging in California: Size, Cost, and ROI',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/solar-panels-for-ev-charging-california' },
-};
-
 export default function SolarForEvCharging() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Panels for EV Charging in California: Size, Cost, and ROI"} url="https://ratereliefca.com/blog/solar-panels-for-ev-charging-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Sizing solar for an electric vehicle in California — how much extra capacity you need, what it adds to your system cost, and why EV + solar pays back faster than solar alone."} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

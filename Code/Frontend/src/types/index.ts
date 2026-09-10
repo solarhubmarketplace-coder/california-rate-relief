@@ -5,12 +5,19 @@ export interface Lead {
   last_name: string;
   phone: string;
   email?: string;
+  // Delivery lifecycle, weakest to strongest. `sent` is legacy and means the
+  // same as `accepted`: the provider took the request. Only a provider webhook
+  // can promote a row to `delivered`. See migration 007_email_delivery_truth.sql.
   email_status?:
   | "pending"
   | "sent"
+  | "accepted"
+  | "delivered"
   | "opened"
   | "clicked"
   | "bounced"
+  | "complained"
+  | "invalid_address"
   | "failed";
   source:
   | "facebook"

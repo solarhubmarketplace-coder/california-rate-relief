@@ -7,6 +7,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArticleRenderer } from '@/components/shared/ArticleRenderer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import type { ArticleCluster, ArticlePage } from '@/data/article-types';
 import {
   getArticle,
@@ -135,6 +136,55 @@ export function ArticleRoute({
   );
 }
 
+/**
+ * Schema for a cluster index — CollectionPage, not Article.
+ *
+ * An ArticleHub renders a heading, a short standfirst and a list of links. The
+ * writing it points at lives on the child routes, and every one of those emits
+ * its own Article node via buildSchema() above. Calling the index an Article
+ * would claim the list is the piece of writing and would leave two Article
+ * nodes competing for the same subject, so the type here is CollectionPage with
+ * an ItemList of exactly the links the page renders.
+ *
+ * dateModified is the newest reviewedAt among the articles listed — a date that
+ * already exists in the cluster data. No date is invented here.
+ */
+function buildHubSchema(
+  cluster: ArticleCluster,
+  title: string,
+  intro: string,
+  pages: ArticlePage[],
+) {
+  const url = `${BASE_URL}${CLUSTER_BASE[cluster]}`;
+  const reviewed = pages
+    .map((p) => p.reviewedAt)
+    .filter(Boolean)
+    .sort();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: title,
+    description: intro,
+    url,
+    ...(reviewed.length ? { dateModified: reviewed[reviewed.length - 1] } : {}),
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'California Rate Relief',
+      url: BASE_URL,
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: pages.length,
+      itemListElement: pages.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${BASE_URL}${articleHref(p)}`,
+        name: p.h1,
+      })),
+    },
+  };
+}
+
 /** Index page listing every article in a cluster. */
 export function ArticleHub({
   cluster,
@@ -149,6 +199,12 @@ export function ArticleHub({
   return (
     <PublicLayout>
       <Header />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildHubSchema(cluster, title, intro, pages)),
+        }}
+      />
       <main className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-3xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 tracking-tight leading-tight">
@@ -179,6 +235,12 @@ export function ArticleHub({
               ))}
             </div>
           )}
+          {/*
+            In-body eligibility CTA. <Header/> above already carries the
+            sitewide one, but a hub is where a reader decides whether to act, so
+            it gets the same in-body box every article page gets.
+          */}
+          <ArticleCTA />
         </div>
       </main>
       <Footer />

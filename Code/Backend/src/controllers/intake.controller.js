@@ -74,9 +74,19 @@ function validate(body) {
   if (!name || !phone) return { error: 'contact.name and a valid contact.phone are required' };
   if (email && !EMAIL.test(email)) return { error: 'contact.email is invalid' };
 
-  const residential = ['utility_provider', 'bill_amount', 'monthly_bill_range', 'credit_score', 'homeowner', 'service_zip', 'county'];
-  const commercial = ['company_name', 'property_type', 'property_control', 'location', 'utility_provider', 'bill_amount', 'monthly_bill_range', 'demand_indicator', 'project_timeline', 'service_zip', 'county'];
+  // Location and ZIP-derived territory keys. derived_utility is stored ALONGSIDE
+  // utility_provider and never replaces it: the visitor's answer and the seed
+  // table's answer must both survive so a mismatch is a reviewable signal.
+  const location = ['city', 'zip', 'service_zip', 'county', 'derived_utility', 'derived_cca', 'derived_county', 'derived_from', 'derived_utility_matches_selection'];
+  const residential = ['utility_provider', 'bill_amount', 'monthly_bill_range', 'credit_score', 'homeowner', ...location];
+  const commercial = ['company_name', 'property_type', 'property_control', 'location', 'utility_provider', 'bill_amount', 'monthly_bill_range', 'demand_indicator', 'project_timeline', ...location];
   const qualification = cleanObject(body.qualification_data, segment === 'residential' ? residential : commercial, 200);
+  // `service_zip` is canonical; `zip` is accepted as an alias and folded into it.
+  // Whatever the visitor typed is kept even when it is malformed or out of state
+  // — a bad ZIP or a failed territory lookup must never cost us the lead. The
+  // RPC decides separately which values are clean enough for leads.zip/city.
+  if (qualification.zip && !qualification.service_zip) qualification.service_zip = qualification.zip;
+  delete qualification.zip;
   if (segment === 'residential' && typeof qualification.homeowner !== 'boolean') return { error: 'qualification_data.homeowner is required for residential intake' };
   for (const field of ['company_name', 'property_type', 'property_control', 'project_timeline']) {
     if (segment === 'commercial' && !qualification[field]) return { error: `qualification_data.${field} is required for commercial intake` };

@@ -99,7 +99,7 @@ export default function PGETimeOfUseRates2026() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Does Solar or a Battery Change the Best Plan?</h2>
               <p>It can. Solar production is usually strongest before the evening peak. A battery can store some daytime production for later use. But the result depends on the customer&apos;s billing program, system size, import and export pattern, battery controls and the tariff in effect. A solar proposal should model all of those inputs.</p>
-              <p>Start by diagnosing the existing bill with our <Link href='/blog/why-is-my-pge-bill-so-high' className={sourceLink}>PG&amp;E high-bill checklist</Link>. Then compare the statewide context in <Link href='/blog/pge-vs-sce-vs-sdge-rates-compared' className={sourceLink}>PG&amp;E vs. SCE vs. SDG&amp;E rates</Link>. If a provider cannot show the rate schedule used in its savings model, the estimate is not ready to sign.</p>
+              <p>Start by diagnosing the existing bill with our <Link href='/blog/why-is-my-pge-bill-so-high' className={sourceLink}>PG&amp;E high-bill checklist</Link>. Then compare the statewide context in <Link href='/blog/pge-vs-sce-vs-sdge-rates-compared' className={sourceLink}>PG&amp;E vs. SCE vs. SDG&amp;E rates</Link>. In San Diego the same exercise starts with <Link href='/blog/sdge-time-of-use-rates-2026' className={sourceLink}>SDG&amp;E&apos;s peak hours and TOU rate schedules</Link>. If a provider cannot show the rate schedule used in its savings model, the estimate is not ready to sign.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Primary Sources Used</h2>
               <ul className='list-disc pl-6 space-y-2'>

@@ -38,6 +38,13 @@ module.exports = {
     EMAIL_FROM: getEnv('EMAIL_FROM', 'California Rate Relief <noreply@ratereliefca.com>'),
     COLD_EMAIL_FROM: getEnv('COLD_EMAIL_FROM'), // Optional: Special sender for cold leads
 
+    // Resend webhook signing secret (whsec_...). Set this in Railway and paste the
+    // same value into the Resend dashboard webhook. Without it the delivery
+    // webhook at POST /api/webhook/resend fails closed and rejects every request,
+    // which is the intended behaviour: an unverified webhook can write to
+    // email_logs and leads.
+    RESEND_WEBHOOK_SECRET: getEnv('RESEND_WEBHOOK_SECRET', ''),
+
     // Owner/admin instant alert — who gets emailed the moment a new inbound lead arrives.
     // Defaults to the operator's inbox; override in Railway env if it changes.
     OWNER_NOTIFICATION_EMAIL: getEnv('OWNER_NOTIFICATION_EMAIL', 'solarhubmarketplace@gmail.com'),

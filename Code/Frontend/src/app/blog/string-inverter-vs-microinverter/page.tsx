@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/string-inverter-vs-microinverter' },
   openGraph: { title: 'String Inverter vs Microinverter', description: 'Technical and real-world comparison for California solar installs.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/string-inverter-vs-microinverter' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'String Inverter vs Microinverter', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function StringVsMicro() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"String Inverter vs Microinverter: Which Is Right for Your Solar System?"} url="https://ratereliefca.com/blog/string-inverter-vs-microinverter" datePublished="2026-04-24" dateModified="2026-04-24" description={"Head-to-head comparison of string inverter vs microinverter solar systems. Cost, performance under shade, warranty, rapid shutdown, and repairability."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

@@ -15,21 +15,11 @@ export const metadata: Metadata = {
   openGraph: { title: 'Can Solar Panels Power a Whole House in California?', description: 'What it takes to run a whole California home on solar + battery.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Can Solar Panels Power a Whole House in California?',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/can-solar-panels-power-a-whole-house-california' },
-};
-
 export default function CanSolarPowerWholeHouse() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Can Solar Panels Power a Whole House in California?"} url="https://ratereliefca.com/blog/can-solar-panels-power-a-whole-house-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Yes — a correctly sized solar + battery system can run a typical California home for the full day, evening, and most outages. Here is exactly what it takes."} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

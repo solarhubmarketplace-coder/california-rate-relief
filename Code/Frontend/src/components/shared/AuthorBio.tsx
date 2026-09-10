@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail } from 'lucide-react';
+import { CalendarClock, ExternalLink, Mail } from 'lucide-react';
 
 // =============================================================================
 // AuthorBio — palette-aware author bio block
@@ -126,5 +126,128 @@ export function PersonSchema({ siteOrigin }: { siteOrigin: string }) {
       type='application/ld+json'
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
+  );
+}
+
+// =============================================================================
+// formatLongDate — tiny local ISO formatter, no date library
+// =============================================================================
+// '2026-09-09' -> '9 September 2026'. Returns the input unchanged if it is not
+// a plain YYYY-MM-DD string, so a bad date never renders as "NaN undefined".
+// =============================================================================
+
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+export function formatLongDate(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number);
+  if (!y || !m || !d || m < 1 || m > 12) return iso;
+  return `${d} ${MONTH_NAMES[m - 1]} ${y}`;
+}
+
+// =============================================================================
+// ArticleAuthorBio — CRR byline + credential block for the foot of an article
+// =============================================================================
+// Named ArticleAuthorBio, not AuthorBio, because the AuthorBio export above is
+// already imported by 222 pages across four hosts with a different prop shape
+// (domain + palette). Renaming that would break every one of them.
+//
+// This block is CRR-specific on purpose: it carries California Rate Relief's
+// referral-service statement verbatim, so it uses CRR's Tailwind theme tokens
+// (same idiom as ArticleCTA) rather than a palette prop.
+//
+// The referral-service sentence is a compliance-adjacent claim written by the
+// site owner. Do not paraphrase it, expand it, or wrap marketing copy around it.
+// =============================================================================
+
+export interface ArticleAuthorBioProps {
+  /** ISO-8601 publish date, e.g. '2026-09-09'. */
+  publishedISO: string;
+  /** ISO-8601 last-updated date, e.g. '2026-09-10'. */
+  updatedISO: string;
+  /** Optional second name that checked the page, e.g. 'Chad Simpson'. */
+  reviewer?: string;
+  /** Optional primary sources behind the figures on this page. */
+  sources?: { label: string; href: string }[];
+}
+
+export function ArticleAuthorBio({
+  publishedISO,
+  updatedISO,
+  reviewer,
+  sources,
+}: ArticleAuthorBioProps) {
+  return (
+    <aside
+      className='mt-12 rounded-2xl border border-border bg-card p-6'
+      aria-label='About the author'
+    >
+      <div className='flex items-start gap-4'>
+        <div
+          className='w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold flex-shrink-0'
+          aria-hidden='true'
+        >
+          CS
+        </div>
+        <div className='flex-1 min-w-0'>
+          <h3 className='font-bold text-foreground tracking-tight'>
+            <Link href='/author/chad-simpson' className='underline hover:text-primary'>
+              Chad Simpson
+            </Link>
+            <span className='font-medium text-muted-foreground'>, Editor</span>
+          </h3>
+
+          <p className='mt-1 flex items-center gap-1.5 text-sm text-muted-foreground'>
+            <CalendarClock className='h-3.5 w-3.5 flex-shrink-0' aria-hidden='true' />
+            <span>
+              Published {formatLongDate(publishedISO)} &middot; Updated {formatLongDate(updatedISO)}
+            </span>
+          </p>
+
+          {reviewer && (
+            <p className='mt-1 text-sm text-muted-foreground'>
+              Reviewed by {reviewer}
+            </p>
+          )}
+
+          <p className='mt-3 text-sm leading-relaxed text-foreground/80'>
+            California Rate Relief is a referral service. We are not a licensed contractor. Installer licence numbers shown on our pages belong to those installers.
+          </p>
+
+          {sources && sources.length > 0 && (
+            <div className='mt-4'>
+              <h4 className='text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2'>
+                Sources for this page
+              </h4>
+              <ul className='space-y-1.5 text-sm'>
+                {sources.map((s) => (
+                  <li key={s.href}>
+                    <a
+                      href={s.href}
+                      target='_blank'
+                      rel='noopener external'
+                      className='inline-flex items-center gap-1 text-primary font-medium hover:underline'
+                    >
+                      {s.label}
+                      <ExternalLink className='h-3 w-3 flex-shrink-0' aria-hidden='true' />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <p className='mt-4 text-sm'>
+            Rates and incentives change. We log material fixes in our{' '}
+            <Link href='/corrections' className='text-primary font-semibold underline'>
+              corrections log
+            </Link>
+            .
+          </p>
+        </div>
+      </div>
+    </aside>
   );
 }

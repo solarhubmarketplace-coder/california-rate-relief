@@ -15,21 +15,11 @@ export const metadata: Metadata = {
   openGraph: { title: 'Free Solar For Seniors in California: The Real Programs', description: 'Real programs for senior California homeowners to get low or no-cost solar.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Free Solar For Seniors in California: The Real Programs',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/free-solar-for-seniors-california' },
-};
-
 export default function FreeSolarForSeniors() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Free Solar For Seniors in California: The Real Programs"} url="https://ratereliefca.com/blog/free-solar-for-seniors-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"California seniors on fixed income have several legitimate pathways to low-cost or no-cost solar — DAC-SASH, SASH, CARE, FERA, and solar PPAs. Here is what actually exists and how to qualify."} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

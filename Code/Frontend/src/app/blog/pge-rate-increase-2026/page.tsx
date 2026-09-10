@@ -22,21 +22,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'PG&E Rate Increase 2026',
-  datePublished: '2026-04-24',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
-};
-
 export default function PGERateIncrease2026() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"PG&E Rate Increase 2026: What Residential Customers Actually Pay Now"} url="https://ratereliefca.com/blog/pge-rate-increase-2026" datePublished="2026-04-24" dateModified="2026-04-24" description={"PG&E"} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

@@ -14,12 +14,19 @@ import {
   submitIntake,
   type IntakePayload,
 } from '@/lib/intake';
+import {
+  CA_ZIP_MAX,
+  CA_ZIP_MIN,
+  derivedLocationFields,
+  isCaliforniaZip,
+} from '@/lib/ca-utility-by-zip';
 
 interface CommercialFormData {
   companyName: string;
   propertyType: string;
   propertyControl: string;
   location: string;
+  city: string;
   serviceZip: string;
   utilityProvider: string;
   monthlyBillRange: string;
@@ -35,6 +42,7 @@ const initialForm: CommercialFormData = {
   propertyType: '',
   propertyControl: '',
   location: '',
+  city: '',
   serviceZip: '',
   utilityProvider: '',
   monthlyBillRange: '',
@@ -107,6 +115,14 @@ export function CommercialAssessmentForm() {
       setError('Enter the 5-digit ZIP code for the California project address.');
       return;
     }
+    if (!isCaliforniaZip(form.serviceZip)) {
+      setError(`That ZIP code is outside California. California ZIP codes run ${CA_ZIP_MIN} to ${CA_ZIP_MAX}.`);
+      return;
+    }
+    if (!form.city.trim()) {
+      setError('Enter the city for the project address.');
+      return;
+    }
 
     submitInFlightRef.current = true;
     setSubmitting(true);
@@ -127,10 +143,13 @@ export function CommercialAssessmentForm() {
           property_type: form.propertyType,
           property_control: form.propertyControl,
           location: form.location.trim(),
+          // utility_provider stays the answer the visitor typed. The ZIP-derived
+          // territory is recorded next to it under derived_utility so the two can
+          // disagree visibly instead of one silently replacing the other.
           utility_provider: form.utilityProvider.trim(),
-          service_zip: form.serviceZip,
           monthly_bill_range: form.monthlyBillRange,
           project_timeline: form.projectTimeline,
+          ...derivedLocationFields(form.serviceZip, form.city),
         },
         attribution: intakeAttribution(touch),
         consent: {
@@ -216,6 +235,19 @@ export function CommercialAssessmentForm() {
         <div className='space-y-2 md:col-span-2'>
           <Label htmlFor='commercial-location'>Project address or city</Label>
           <Input id='commercial-location' value={form.location} onChange={e => update('location', e.target.value)} required className='h-12' />
+        </div>
+
+        <div className='space-y-2'>
+          <Label htmlFor='commercial-city'>Project city</Label>
+          <Input
+            id='commercial-city'
+            value={form.city}
+            onChange={e => update('city', e.target.value)}
+            maxLength={80}
+            autoComplete='address-level2'
+            required
+            className='h-12'
+          />
         </div>
 
         <div className='space-y-2'>

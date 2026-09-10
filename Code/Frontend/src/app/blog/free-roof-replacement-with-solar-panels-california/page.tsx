@@ -25,43 +25,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'Free Roof Replacement With Solar Panels in California: Is It Real?',
-  datePublished: '2026-04-23',
-  dateModified: '2026-04-23',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id':
-      'https://ratereliefca.com/blog/free-roof-replacement-with-solar-panels-california',
-  },
-};
-
 export default function FreeRoofReplacementSolar() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Free Roof Replacement With Solar Panels in California: Is It Real?"} url="https://ratereliefca.com/blog/free-roof-replacement-with-solar-panels-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Some California solar programs include a roof replacement at no added cost. Here is how roof-included PPAs and solar financing actually work, what qualifies, and where the catches are."} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

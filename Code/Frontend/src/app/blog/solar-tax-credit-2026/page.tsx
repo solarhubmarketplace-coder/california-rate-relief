@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'Solar Tax Credit 2026: The Complete Guide to What\u2019s Left',
+    'Solar Tax Credit 2026: What California Can Still Claim',
   description:
     'The federal residential solar tax credit expired Dec 31, 2025. Here\u2019s what\u2019s still available in 2026 — commercial ITC, PPAs, SGIP, and how California homeowners can still save.',
   alternates: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      'Solar Tax Credit 2026: The Complete Guide to What\u2019s Left',
+      'Solar Tax Credit 2026: What California Can Still Claim',
     description:
       'The residential ITC is gone. Here\u2019s what California homeowners and businesses can still claim in 2026.',
     type: 'article',

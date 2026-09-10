@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/why-is-my-sdge-bill-so-high' },
   openGraph: { title: 'Why Is My SDG&E Bill So High?', description: 'San Diego Gas & Electric billing explainer and fixes.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-sdge-bill-so-high' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Why Is My SDG&E Bill So High?', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function WhyIsMySDGEBillSoHigh() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Why Is My SDG&E Bill So High? (San Diego Has the Highest Rates in America)"} url="https://ratereliefca.com/blog/why-is-my-sdge-bill-so-high" datePublished="2026-04-24" dateModified="2026-04-24" description={"Why your San Diego Gas & Electric bill is so high. 45.7¢/kWh rates, the 4–9 PM peak window, the $24 fixed charge, and what to do."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
@@ -44,7 +42,7 @@ export default function WhyIsMySDGEBillSoHigh() {
               <p>Applied to every residential customer regardless of usage. Unavoidable under CPUC rules.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">3. You Might Be on the Wrong TOU Plan</h2>
-              <p>SDG&amp;E offers TOU-DR1, TOU-DR2, EV-TOU-5, and several others. Running the rate comparison in My Account and switching can save 15–25% for households that can shift usage. EV households often benefit from EV-TOU-5&apos;s super-off-peak midnight–6 AM rate.</p>
+              <p>SDG&amp;E offers TOU-DR1, TOU-DR2, EV-TOU-5, and several others. Running the rate comparison in My Account and switching can save 15–25% for households that can shift usage. EV households often benefit from EV-TOU-5&apos;s super-off-peak midnight–6 AM rate. Before you switch, check <Link href="/blog/sdge-time-of-use-rates-2026" className="text-primary underline">SDG&amp;E&apos;s peak hours and TOU plans</Link> against the hours your household actually uses power.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">4. Summer AC Plus Coast-Inland Climate</h2>
               <p>San Diego County spans micro-climates. Coastal zones (La Jolla, Encinitas, Carlsbad) use less AC. Inland East County (Ramona, Alpine, Escondido) and back-country (Valley Center, Julian) run AC aggressively. If you&apos;re in an inland SDG&amp;E community, summer AC is the #1 bill driver.</p>

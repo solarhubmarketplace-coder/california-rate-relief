@@ -119,10 +119,16 @@ export function LeadTable({
     if (!status) return 'secondary';
     const variants: Record<string, any> = {
       pending: 'secondary',
-      sent: 'default',
+      // `sent` is legacy for `accepted`: the provider took the request. Neither
+      // is confirmation the message reached a mailbox, so neither reads as success.
+      sent: 'secondary',
+      accepted: 'secondary',
+      delivered: 'default',
       opened: 'qualified',
       clicked: 'qualified',
       bounced: 'destructive',
+      complained: 'destructive',
+      invalid_address: 'destructive',
       failed: 'destructive',
     };
     return variants[status] || 'secondary';

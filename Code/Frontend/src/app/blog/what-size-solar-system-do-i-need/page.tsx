@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title:
-    'What Size Solar System Do I Need? California Sizing Guide (2026)',
+    'What Size Solar System Do I Need? A California Guide',
   description:
     'Calculate the right solar system size for your California home. Learn the formula, sizing formula for NEM 3.0, battery impact, roof requirements, and common mistakes.',
   alternates: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      'What Size Solar System Do I Need? California Sizing Guide (2026)',
+      'What Size Solar System Do I Need? A California Guide',
     description:
       'Complete guide to sizing your solar system in California — formula, NEM 3.0 considerations, battery impact, and roof space requirements.',
     type: 'article',

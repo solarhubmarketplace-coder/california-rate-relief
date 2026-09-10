@@ -74,6 +74,60 @@ describe('public intake controller', () => {
     expect(valid.value.qualification_data).not.toHaveProperty('credit_score');
   });
 
+  test('accepts the ZIP, city, and ZIP-derived territory without touching the visitor answer', () => {
+    const result = controller.validate({ ...residential, qualification_data: {
+      ...residential.qualification_data,
+      service_zip: '90012', city: 'Los Angeles', county: 'Los Angeles',
+      derived_utility: 'LADWP', derived_cca: null, derived_county: 'Los Angeles',
+      derived_from: 'zip-seed-table', derived_utility_matches_selection: false,
+    } });
+    expect(result.error).toBeUndefined();
+    // The visitor picked SCE and the ZIP says LADWP. Both survive: a mismatch is
+    // a review signal, never a silent overwrite of what the homeowner answered.
+    expect(result.value.qualification_data.utility_provider).toBe('SCE');
+    expect(result.value.qualification_data.derived_utility).toBe('LADWP');
+    expect(result.value.qualification_data.derived_utility_matches_selection).toBe(false);
+    expect(result.value.qualification_data.service_zip).toBe('90012');
+    expect(result.value.qualification_data.city).toBe('Los Angeles');
+    expect(result.value.qualification_data.derived_from).toBe('zip-seed-table');
+  });
+
+  test('accepts location keys on commercial intake too', () => {
+    const result = controller.validate({ ...residential, segment: 'commercial', qualification_data: {
+      company_name: 'Acme', property_type: 'warehouse', property_control: 'owner',
+      utility_provider: 'PG&E', project_timeline: '0_3_months',
+      service_zip: '93301', city: 'Bakersfield', derived_utility: 'PG&E', derived_from: 'zip-seed-table',
+    } });
+    expect(result.error).toBeUndefined();
+    expect(result.value.qualification_data).toEqual(expect.objectContaining({
+      service_zip: '93301', city: 'Bakersfield', derived_utility: 'PG&E',
+    }));
+  });
+
+  test('a malformed or out-of-state ZIP is recorded, not rejected', () => {
+    for (const zip of ['9330', '10001', 'not-a-zip']) {
+      const result = controller.validate({ ...residential, qualification_data: {
+        ...residential.qualification_data, service_zip: zip, city: 'Somewhere',
+      } });
+      expect(result.error).toBeUndefined();
+      expect(result.value.qualification_data.service_zip).toBe(zip);
+    }
+  });
+
+  test('folds a legacy `zip` key into service_zip and drops unlisted keys', () => {
+    const result = controller.validate({ ...residential, qualification_data: {
+      ...residential.qualification_data, zip: '92101', city: 'San Diego', ssn: '000-00-0000',
+    } });
+    expect(result.value.qualification_data.service_zip).toBe('92101');
+    expect(result.value.qualification_data).not.toHaveProperty('zip');
+    expect(result.value.qualification_data).not.toHaveProperty('ssn');
+    // An explicit service_zip always wins over the alias.
+    const explicit = controller.validate({ ...residential, qualification_data: {
+      ...residential.qualification_data, zip: '92101', service_zip: '93301',
+    } });
+    expect(explicit.value.qualification_data.service_zip).toBe('93301');
+  });
+
   test('gives legacy retries a deterministic daily submission ID', () => {
     const flat = { phone: '(951) 555-0187', email: 'test@example.com', utility_provider: 'sce', bill_amount: 275, landing_page: '/blog/sce' };
     const first = controller.legacySubmissionId(flat, new Date('2026-09-09T08:00:00Z'));

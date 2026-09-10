@@ -29,10 +29,16 @@ import {
   submitIntake,
   type IntakePayload,
 } from '@/lib/intake';
+import {
+  CA_ZIP_MAX,
+  CA_ZIP_MIN,
+  derivedLocationFields,
+  isCaliforniaZip,
+} from '@/lib/ca-utility-by-zip';
 import { useToast } from '@/hooks/use-toast';
 import usePlacesAutocomplete, {
   getGeocode,
-  getLatLng,
+  getZipCode,
 } from 'use-places-autocomplete';
 import { parsePhoneNumber, isValidPhoneNumber, AsYouType } from 'libphonenumber-js';
 
@@ -47,7 +53,26 @@ interface FormData {
   phone: string;
   email: string;
   address: string;
+  city: string;
   serviceZip: string;
+}
+
+/** Minimal shape of the geocoder components we read; @types/google.maps is not installed. */
+interface AddressComponent {
+  long_name?: string;
+  short_name?: string;
+  types?: string[];
+}
+
+/** City from a Places result: locality first, then the postal-town fallbacks. */
+function cityFromComponents(components: AddressComponent[] | undefined): string {
+  if (!Array.isArray(components)) return '';
+  const priority = ['locality', 'postal_town', 'sublocality_level_1', 'administrative_area_level_3'];
+  for (const type of priority) {
+    const match = components.find(part => Array.isArray(part?.types) && part.types.includes(type));
+    if (match?.long_name) return match.long_name;
+  }
+  return '';
 }
 
 const utilityProviders = [
@@ -143,8 +168,16 @@ export function QualificationWizard() {
     phone: '',
     email: '',
     address: '',
+    city: '',
     serviceZip: '',
   });
+
+  // Live shape check only. A ZIP the seed table cannot resolve is still a valid
+  // submission, so nothing here depends on a successful utility lookup.
+  const zipWarning =
+    formData.serviceZip.length === 5 && !isCaliforniaZip(formData.serviceZip)
+      ? `That ZIP code is outside California. This program covers California only (${CA_ZIP_MIN}-${CA_ZIP_MAX}).`
+      : '';
 
   const updateFormData = (
     field: keyof FormData,
@@ -285,6 +318,39 @@ export function QualificationWizard() {
         return;
       }
 
+      // Shape only. A ZIP outside California means this form is the wrong one,
+      // so it is worth stopping for; a ZIP we simply cannot look up is not.
+      if (!isCaliforniaZip(formData.serviceZip)) {
+        toast({
+          title: 'ZIP Code Outside California',
+          description: `The Rate Relief Program covers California only. California ZIP codes run ${CA_ZIP_MIN} to ${CA_ZIP_MAX}.`,
+          variant: 'destructive',
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      if (!formData.city.trim()) {
+        toast({
+          title: 'City Required',
+          description: 'Enter the city for the project address.',
+          variant: 'destructive',
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // The ZIP-derived territory is recorded ALONGSIDE the visitor's own
+      // utility answer, never on top of it. utility_provider stays exactly what
+      // the visitor picked, derived_utility is what the seed table says, and a
+      // disagreement between the two is a review signal rather than a silent
+      // overwrite. The seed table is the less reliable of the two sources.
+      const location = derivedLocationFields(
+        formData.serviceZip,
+        formData.city,
+        formData.utilityProvider,
+      );
+
       const attempt = getOrCreateSubmissionAttempt<IntakePayload>(attemptRef.current, submissionId => ({
         submission_id: submissionId,
         segment: 'residential',
@@ -296,7 +362,7 @@ export function QualificationWizard() {
           utility_provider: formData.utilityProvider, bill_amount: billValue,
           monthly_bill_range: formData.billAmount, credit_score: formData.creditScore,
           homeowner: formData.isHomeowner === true,
-          service_zip: formData.serviceZip,
+          ...location,
         },
         attribution: intakeAttribution(firstTouch),
         consent: { status: 'opted_in', timestamp: new Date().toISOString() },
@@ -313,6 +379,7 @@ export function QualificationWizard() {
           landing_page_type: firstTouch?.landing_page_type ?? 'unknown',
           landing_city_slug: firstTouch?.landing_city_slug ?? 'none',
           utility_provider: formData.utilityProvider || 'unknown',
+          derived_utility: location.derived_utility ?? 'unknown',
           bill_bracket: formData.billAmount || 'unknown',
         });
         trackedSuccessIdsRef.current.add(attempt.id);
@@ -380,6 +447,7 @@ export function QualificationWizard() {
                     phone: '',
                     email: '',
                     address: '',
+                    city: '',
                     serviceZip: '',
                   });
                 }}
@@ -750,13 +818,21 @@ export function QualificationWizard() {
                                       setPlacesValue(description, false);
                                       updateFormData('address', description);
                                       clearSuggestions();
-                                      
-                                      // Get full address details
+
+                                      // Auto-fill city and ZIP from the selected
+                                      // place. Both stay editable, and a geocode
+                                      // failure must not block the submission.
                                       try {
                                         const results = await getGeocode({ address: description });
-                                        const { lat, lng } = await getLatLng(results[0]);
-                                        // Store full address with coordinates if needed
-                                        updateFormData('address', description);
+                                        const first = results?.[0];
+                                        if (first) {
+                                          const city = cityFromComponents(
+                                            (first as unknown as { address_components?: AddressComponent[] }).address_components,
+                                          );
+                                          if (city) updateFormData('city', city);
+                                          const zip = getZipCode(first, false);
+                                          if (zip && /^\d{5}$/.test(zip)) updateFormData('serviceZip', zip);
+                                        }
                                       } catch (error) {
                                         console.error('Error getting address details:', error);
                                       }
@@ -790,6 +866,29 @@ export function QualificationWizard() {
 
                     <div className='space-y-3'>
                       <Label
+                        htmlFor='service-city'
+                        className='text-base font-bold text-foreground'
+                      >
+                        City
+                      </Label>
+                      <Input
+                        id='service-city'
+                        type='text'
+                        autoComplete='address-level2'
+                        maxLength={80}
+                        placeholder='Bakersfield'
+                        value={formData.city}
+                        onChange={(e) => updateFormData('city', e.target.value)}
+                        required
+                        className='h-12 text-base border-2 border-border focus:border-primary transition-colors'
+                      />
+                      <p className='text-xs text-muted-foreground'>
+                        Filled in automatically when you pick a suggested address
+                      </p>
+                    </div>
+
+                    <div className='space-y-3'>
+                      <Label
                         htmlFor='service-zip'
                         className='text-base font-bold text-foreground'
                       >
@@ -806,10 +905,14 @@ export function QualificationWizard() {
                         value={formData.serviceZip}
                         onChange={(e) => updateFormData('serviceZip', e.target.value.replace(/\D/g, '').slice(0, 5))}
                         required
+                        aria-describedby='service-zip-help'
                         className='h-12 text-base border-2 border-border focus:border-primary transition-colors'
                       />
-                      <p className='text-xs text-muted-foreground'>
-                        Enter the 5-digit ZIP code for the California project address
+                      <p
+                        id='service-zip-help'
+                        className={`text-xs ${zipWarning ? 'font-semibold text-destructive' : 'text-muted-foreground'}`}
+                      >
+                        {zipWarning || 'Enter the 5-digit ZIP code for the California project address'}
                       </p>
                     </div>
                   </div>

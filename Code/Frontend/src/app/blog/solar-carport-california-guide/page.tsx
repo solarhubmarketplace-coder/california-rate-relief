@@ -23,23 +23,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Solar Carports in California: Cost, Permits, and Whether It\'s Worth It',
-  datePublished: '2026-04-24',
-  dateModified: '2026-04-24',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/solar-carport-california-guide' },
-};
-
 export default function SolarCarportCAGuide() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Carports in California: Cost, Permits, and Whether It's Worth It (2026)"} url="https://ratereliefca.com/blog/solar-carport-california-guide" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar carport cost in California, permit requirements, installer options, and whether a freestanding solar carport beats a roof install. EV-pairing, code compliance, SGIP battery stacking."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

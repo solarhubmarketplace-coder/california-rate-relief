@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/adu-solar-requirements-california' },
   openGraph: { title: 'ADU Solar Requirements California', description: 'California Title 24 solar rules for ADUs.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/adu-solar-requirements-california' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'ADU Solar Requirements California', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function ADUSolarCA() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"ADU Solar Requirements in California (2026): Title 24 Rules, Metering, and Cost"} url="https://ratereliefca.com/blog/adu-solar-requirements-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Does your California ADU need solar? A plain-English guide to Title 24 solar requirements for ADUs, metering options, and when the requirement is waived."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

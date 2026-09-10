@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/how-does-net-metering-work' },
   openGraph: { title: 'How Does Net Metering Work?', description: 'Plain-English net metering guide for 2026.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/how-does-net-metering-work' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'How Does Net Metering Work?', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function HowDoesNetMeteringWork() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"How Does Net Metering Work? Plain-English Guide (2026)"} url="https://ratereliefca.com/blog/how-does-net-metering-work" datePublished="2026-04-24" dateModified="2026-04-24" description={"A plain-English explanation of net metering, how it works, how the credits are calculated, the difference between NEM 1.0/2.0/3.0 and net billing, and what"} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

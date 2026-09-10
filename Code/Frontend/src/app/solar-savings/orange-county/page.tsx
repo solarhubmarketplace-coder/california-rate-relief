@@ -10,6 +10,7 @@ import {
   type CityData,
 } from '@/data/cities-data';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: 'Solar Companies in Orange County, California | Rate Relief',
@@ -224,6 +225,28 @@ export default function OrangeCountySolarPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(buildRegionalCollectionSchema()),
         }}
+      />
+
+      {/*
+        Article, alongside the CollectionPage node above — not instead of it.
+        The two describe different things and neither is redundant:
+          - CollectionPage  the index of city pages this hub links to
+          - Article         the regional guide prose above that index, which is
+                            original editorial content and needs an author,
+                            a reviewer and a last-reviewed date for E-E-A-T
+        Only the Article node claims mainEntityOfPage, so there is no competing
+        "this page is really an X" assertion.
+
+        dateModified is the 2026-09-10 schema/QC review. datePublished is
+        deliberately omitted: this page carries no recorded first-publish date
+        and inventing one would put an unverifiable date into structured data.
+      */}
+      <ArticleJsonLd
+        variant='Article'
+        domain='crr'
+        headline='Solar Energy in Orange County'
+        url='https://ratereliefca.com/solar-savings/orange-county'
+        dateModified='2026-09-10'
       />
 
       <Footer />

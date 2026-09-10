@@ -5,6 +5,11 @@ const {
     EMAIL_COLD_LEAD_HTML,
     fillTemplate,
 } = require('../config/scripts');
+const {
+    validateEmailAddress,
+    classifyEmailError,
+    permanentEmailError,
+} = require('../lib/email-address');
 
 class EmailService {
     constructor() {
@@ -19,10 +24,26 @@ class EmailService {
      * @param {string} htmlBody - Email HTML body
      */
     async sendEmail(to, subject, htmlBody, context = {}) {
+        // Validate before spending a provider call. A malformed address reached
+        // Resend four times on 2026-08-23 and was rejected four times; the
+        // homeowner got nothing and the queue kept retrying something that could
+        // never succeed. Fail it here, once, and mark it permanent so the queue
+        // stops instead of looping.
+        const check = validateEmailAddress(to);
+        if (!check.valid) {
+            const err = permanentEmailError(
+                `Invalid recipient address (${check.reason}): ${JSON.stringify(to)}`,
+                `address rejected locally: ${check.reason}`
+            );
+            await this.logSendFailure(to, subject, err, context, 'invalid_address');
+            throw err;
+        }
+        const recipient = check.normalized;
+
         try {
             const request = {
                 from: context.from || this.from,
-                to: [to],
+                to: [recipient],
                 subject,
                 html: htmlBody
             };
@@ -39,10 +60,15 @@ class EmailService {
                 for (const key of ['name', 'statusCode', 'status', 'code']) {
                     if (error[key] !== undefined) providerError[key] = error[key];
                 }
+                const classified = classifyEmailError(providerError);
+                if (classified.kind === 'permanent') {
+                    providerError.permanent = true;
+                    providerError.permanentReason = classified.reason;
+                }
                 throw providerError;
             }
 
-            console.log(`[EmailService] Sent email to ${to}, ID: ${data.id}`);
+            console.log(`[EmailService] Sent email to ${recipient}, ID: ${data.id}`);
 
             // ✨ LOGGING TO DATABASE
             try {
@@ -50,8 +76,12 @@ class EmailService {
                 const { error: logError } = await supabaseAdmin.from('email_logs').insert({
                     lead_id: context.leadId || null,
                     template_id: context.templateId || null,
-                    email_to: to,
+                    email_to: recipient,
                     status: 'sent',
+                    // "accepted", not "delivered". Resend returning an id means it
+                    // took the request, nothing more. The webhook at
+                    // POST /api/webhook/resend is what promotes this to delivered.
+                    delivery_state: 'accepted',
                     resend_email_id: data.id,
                     subject: subject,
                     sent_at: new Date().toISOString(),
@@ -70,22 +100,50 @@ class EmailService {
             return data;
         } catch (error) {
             console.error('[EmailService] Failed to send email:', error);
-            // Log failure if possible
-            try {
-                const { supabaseAdmin } = require('../lib/supabase');
-                if (context.leadId) {
-                    await supabaseAdmin.from('email_logs').insert({
-                        lead_id: context.leadId,
-                        template_id: context.templateId || null,
-                        email_to: to,
-                        status: 'failed',
-                        subject: subject,
-                        error_message: error.message,
-                        created_at: new Date().toISOString()
-                    });
-                }
-            } catch (e) { /* ignore */ }
+            await this.logSendFailure(recipient, subject, error, context);
             throw error;
+        }
+    }
+
+    /**
+     * Record a failed send, classified so the queue knows whether a retry could
+     * ever succeed. Never throws — a logging failure must not mask the send
+     * failure that caused it.
+     *
+     * @param {string} to
+     * @param {string} subject
+     * @param {Error} error
+     * @param {object} context
+     * @param {string|null} deliveryState - forced state, e.g. 'invalid_address'
+     */
+    async logSendFailure(to, subject, error, context = {}, deliveryState = null) {
+        try {
+            const { supabaseAdmin } = require('../lib/supabase');
+            if (!context.leadId) return;
+
+            const classified = classifyEmailError(error);
+            await supabaseAdmin.from('email_logs').insert({
+                lead_id: context.leadId,
+                template_id: context.templateId || null,
+                email_to: typeof to === 'string' ? to.slice(0, 320) : null,
+                status: 'failed',
+                delivery_state: deliveryState || (classified.kind === 'permanent' ? 'invalid_address' : null),
+                failure_kind: classified.kind,
+                subject: subject,
+                error_message: error && error.message ? String(error.message).slice(0, 1000) : 'unknown error',
+                created_at: new Date().toISOString()
+            });
+
+            // A permanent failure is the only case where the lead's own status
+            // should read as a failure. A transient one is still in flight.
+            if (classified.kind === 'permanent') {
+                await supabaseAdmin
+                    .from('leads')
+                    .update({ email_status: 'invalid_address' })
+                    .eq('id', context.leadId);
+            }
+        } catch (e) {
+            console.error('[EmailService] Failed to record send failure:', e.message);
         }
     }
 

@@ -26,44 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'SCE Rates Decreased in January 2026, But Remain Extremely High',
-  description:
-    'SCE rates decreased 2-3% as of January 1, 2026, but remain among the highest in the nation. Learn why, and what you can do.',
-  datePublished: '2026-04-14',
-  dateModified: '2026-04-14',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/blog/sce-rate-increase-2026',
-  },
-};
-
 export default function SCERateIncrease2026() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"SCE Rates Decreased in January 2026, But Remain Extremely High"} url="https://ratereliefca.com/blog/sce-rate-increase-2026" datePublished="2026-04-14" dateModified="2026-04-24" description={"SCE rates actually decreased 2-3% as of January 1, 2026, but remain among the highest in the country at 34.5¢/kWh. Learn why rates are still crushing bills, what you can do, and whether solar makes sense."} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

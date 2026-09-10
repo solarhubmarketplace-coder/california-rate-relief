@@ -15,14 +15,11 @@ export const metadata: Metadata = {
   openGraph: { title: 'SDG&E Rate Increase 2026', description: 'Plain-English SDG&E 2026 rate breakdown.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/sdge-rate-increase-2026' },
 };
 
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'SDG&E Rate Increase 2026', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
-
 export default function SDGERateIncrease2026() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"SDG&E Rate Increase 2026: Why San Diego Has the Highest Rates in America"} url="https://ratereliefca.com/blog/sdge-rate-increase-2026" datePublished="2026-04-24" dateModified="2026-04-24" description={"SDG&E"} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
@@ -51,7 +48,7 @@ export default function SDGERateIncrease2026() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What San Diego Customers Can Do</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Switch to the right TOU plan.</strong> SDG&amp;E offers EV-TOU-5 and other plans that can dramatically reduce costs for households that can shift usage to super-off-peak hours.</li>
+                <li><strong>Switch to the right TOU plan.</strong> SDG&amp;E offers EV-TOU-5 and other plans that can dramatically reduce costs for households that can shift usage to super-off-peak hours. Which plan wins depends on <Link href="/blog/sdge-time-of-use-rates-2026" className="text-primary underline">SDG&amp;E peak hours</Link> and how much of your usage falls inside them.</li>
                 <li><strong>CARE &amp; FERA.</strong> Income-qualified discounts (30–35% and 18% respectively).</li>
                 <li><strong>Medical Baseline allowance.</strong> Extra low-tier electricity for medical-equipment households.</li>
                 <li><strong>Solar + battery is particularly attractive.</strong> At 45.7¢/kWh retail and 5–8¢/kWh NEM 3.0 export credit, self-consumed solar is 6–8× more valuable than exported solar. A battery tips the payback math meaningfully positive. See <Link href="/blog/solar-battery-backup-california" className="text-primary underline">Solar Battery Backup in California</Link>.</li>

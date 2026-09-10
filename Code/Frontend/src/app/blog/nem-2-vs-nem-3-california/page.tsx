@@ -24,23 +24,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'NEM 2.0 vs NEM 3.0 California: What Changed and What It Means For You',
-  datePublished: '2026-04-23',
-  dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/blog/nem-2-vs-nem-3-california' },
-};
-
 export default function Nem2vsNem3() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"NEM 2.0 vs NEM 3.0 California: What Changed and What It Means For You"} url="https://ratereliefca.com/blog/nem-2-vs-nem-3-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"NEM 2.0 and NEM 3.0 are not the same. California"} />
       <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

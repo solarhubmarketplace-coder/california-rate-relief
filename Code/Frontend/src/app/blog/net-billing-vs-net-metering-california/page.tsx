@@ -26,43 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'Net Billing vs Net Metering: The California Solar Difference, Explained',
-  datePublished: '2026-04-23',
-  dateModified: '2026-04-23',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id':
-      'https://ratereliefca.com/blog/net-billing-vs-net-metering-california',
-  },
-};
-
 export default function NetBillingVsNetMetering() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Net Billing vs Net Metering: The California Solar Difference, Explained"} url="https://ratereliefca.com/blog/net-billing-vs-net-metering-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Net metering and net billing sound similar but pay you very differently. Here is what California"} />
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
@@ -166,7 +134,16 @@ export default function NetBillingVsNetMetering() {
                 6 cents per kWh is a kWh you could have been using yourself
                 at 40 cents per kWh. The new optimum is self-consumption —
                 use your solar in real time or store it in a battery for
-                use later — not export.
+                use later — not export. Where that self-consumption is worth
+                the most depends on your utility&apos;s time-of-use schedule —
+                in San Diego, on{' '}
+                <Link
+                  href='/blog/sdge-time-of-use-rates-2026'
+                  className='text-primary hover:underline'
+                >
+                  SDG&amp;E&apos;s evening peak hours
+                </Link>
+                .
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

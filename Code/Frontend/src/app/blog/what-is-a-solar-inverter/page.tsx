@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/what-is-a-solar-inverter' },
   openGraph: { title: 'What Is a Solar Inverter?', description: 'Plain-English solar inverter guide.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-a-solar-inverter' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'What Is a Solar Inverter?', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function WhatIsASolarInverter() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"What Is a Solar Inverter? (Plain-English Guide with Types, Brands, and Lifespans)"} url="https://ratereliefca.com/blog/what-is-a-solar-inverter" datePublished="2026-04-24" dateModified="2026-04-24" description={"A plain-English explanation of solar inverters, what they do, the main types (string, micro, hybrid), how long they last, which brands are reliable, and warranty realities."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

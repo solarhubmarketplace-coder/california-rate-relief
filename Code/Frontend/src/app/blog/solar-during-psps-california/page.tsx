@@ -14,14 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/solar-during-psps-california' },
   openGraph: { title: 'Solar During PSPS California', description: 'The honest answer on solar during PSPS outages.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-during-psps-california' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Solar During PSPS California', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function SolarDuringPSPSCA() {
   return (
     <PublicLayout>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Solar During a PSPS in California: Will My Panels Work? (And What You Actually Need)"} url="https://ratereliefca.com/blog/solar-during-psps-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Does solar work during a PG&E PSPS outage? The honest answer, why grid-tied solar shuts off, how batteries change the story, and what you actually need for 24–36 hour blackout survival."} />
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">

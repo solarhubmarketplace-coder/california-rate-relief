@@ -2687,7 +2687,7 @@ export const CITIES: CityData[] = [
     slug: 'bakersfield',
     county: 'Kern County',
     state: 'California',
-    utilityCode: 'sce',
+    utilityCode: 'pge',
     avgMonthlyBill: 330,
     peakSunHours: 6.0,
     annualSunshineHours: 3400,
@@ -2695,9 +2695,9 @@ export const CITIES: CityData[] = [
     systemSizeKw: 10.5,
     systemCostCash: 31500,
     introText:
-      'Bakersfield is Southern California\'s largest inland city with a population of around 403,000, located in the heart of Kern County\'s agricultural region. Known for extreme summer heat exceeding 110°F regularly and a strong farming economy, Bakersfield residents face some of the highest electricity bills in the state. SCE territory, abundant sunshine, and diverse property types — from suburban homes to agricultural operations — make Bakersfield an exceptional solar market.',
+      'Bakersfield is Southern California\'s largest inland city with a population of around 403,000, located in the heart of Kern County\'s agricultural region. Known for extreme summer heat exceeding 110°F regularly and a strong farming economy, Bakersfield residents face some of the highest electricity bills in the state. PG&E territory, abundant sunshine, and diverse property types — from suburban homes to agricultural operations — make Bakersfield an exceptional solar market.',
     electricitySection:
-      'The average Bakersfield household pays approximately $330 per month for electricity, or about $3,960 per year. Summer temperatures regularly exceed 110°F, driving extreme air conditioning usage. Many properties also include agricultural loads (water pumps, barn ventilation, equipment charging) that add to residential baseline consumption.\n\nSCE\'s average rate of 34.5¢/kWh with peak TOU rates of 58-74¢ makes Bakersfield summer bills among the highest in the state. The $24.15 monthly fixed charge applies to all SCE customers. High-usage households easily exceed $450/month during peak summer.',
+      'The average Bakersfield household pays approximately $330 per month for electricity, or about $3,960 per year. Summer temperatures regularly exceed 110°F, driving extreme air conditioning usage. Many properties also include agricultural loads (water pumps, barn ventilation, equipment charging) that add to residential baseline consumption.\n\nPG&E\'s average rate of 41.46¢/kWh with peak TOU rates of 55-67¢ makes Bakersfield summer bills among the highest in the state. The $24.00 monthly Base Services Charge applies to all PG&E customers. High-usage households easily exceed $450/month during peak summer.',
     solarPotentialText:
       'Bakersfield averages approximately 3,400 hours of sunshine per year with 6.0 peak sun hours per day — among the highest in California. The Kern County climate is ideal for solar: extremely dry, minimal cloud cover, and low humidity mean consistent year-round production. Many agricultural properties have large ground space available for ground-mount systems.',
     localTips: [
@@ -2720,11 +2720,11 @@ export const CITIES: CityData[] = [
     whenSolarDoesntWork:
       'If your monthly bill is under $100 (unlikely in Bakersfield), your property has heavy shade from surrounding trees (uncommon in dry Bakersfield climate), or you plan to sell within 1-2 years. Oil worker schedules with frequent relocations may make ownership less attractive than PPAs. Properties heavily shaded by grain elevators or large structures in agricultural areas may have limited roof or ground space.',
     bottomLine:
-      'Bakersfield\'s extreme sunshine, heat-driven bills, and diverse property types make it one of the strongest solar markets in California. Both residential and agricultural properties benefit significantly. The combination of 6.0 peak sun hours, SCE\'s high rates, and potential wildfire resilience incentives makes solar an excellent investment.',
+      'Bakersfield\'s extreme sunshine, heat-driven bills, and diverse property types make it one of the strongest solar markets in California. Both residential and agricultural properties benefit significantly. The combination of 6.0 peak sun hours, PG&E\'s high rates, and potential wildfire resilience incentives makes solar an excellent investment.',
     faqs: [
       {
         question: 'How much does solar cost in Bakersfield in 2026?',
-        answer: 'A typical 10.5 kW solar system in Bakersfield costs approximately $31,500 before incentives if purchased outright. Agricultural or multi-structure properties often require larger systems (12-15 kW). With a PPA, there is no upfront cost — you pay a fixed per-kWh rate (typically 18-25 cents) compared to SCE\'s 34.5 cents.',
+        answer: 'A typical 10.5 kW solar system in Bakersfield costs approximately $31,500 before incentives if purchased outright. Agricultural or multi-structure properties often require larger systems (12-15 kW). With a PPA, there is no upfront cost — you pay a fixed per-kWh rate (typically 18-25 cents) compared to PG&E\'s 41.46 cents.',
       },
       {
         question: 'What is the average electric bill in Bakersfield?',
@@ -2739,13 +2739,13 @@ export const CITIES: CityData[] = [
         answer: 'Bakersfield averages approximately 3,400 hours of sunshine per year with 6.0 peak sun hours per day — among the highest in California. The dry desert climate means consistent, high-output production year-round.',
       },
     ],
-    metaTitle: 'Solar Panels in Bakersfield, CA: 2026 SCE Rates & Cost',
-    metaDescription: 'Bakersfield residents pay ~$330/month on SCE with 6.0 peak sun hours. Learn solar costs, agricultural property options, and every way to lower your bill.',
-    ogTitle: 'Solar Savings in Bakersfield, CA: 2026 SCE Rates & Options',
-    ogDescription: 'Bakersfield residents pay ~$330/month on SCE. Here\'s what solar costs and saves with extreme heat and sunshine.',
+    metaTitle: 'Solar Panels in Bakersfield, CA: 2026 PG&E Rates & Cost',
+    metaDescription: 'Bakersfield residents pay ~$330/month on PG&E with 6.0 peak sun hours. Learn solar costs, agricultural property options, and every way to lower your bill.',
+    ogTitle: 'Solar Savings in Bakersfield, CA: 2026 PG&E Rates & Options',
+    ogDescription: 'Bakersfield residents pay ~$330/month on PG&E. Here\'s what solar costs and saves with extreme heat and sunshine.',
     energySageUrl: 'https://www.energysage.com/local-data/solar-panel-cost/ca/kern-county/bakersfield/',
     googleSunroofUrl: 'https://sunroof.withgoogle.com',
-    relatedArticles: SCE_RELATED_ARTICLES,
+    relatedArticles: PGE_RELATED_ARTICLES,
     seoData: { primaryKeyword: 'solar panels bakersfield', volume: 310, kd: 12, verdict: 'PRIORITY BUILD' },
   },
 
