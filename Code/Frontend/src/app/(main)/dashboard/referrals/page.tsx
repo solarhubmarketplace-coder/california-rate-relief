@@ -187,6 +187,34 @@ export default function ReferralsPage() {
             ))}
           </div>
 
+          <section className='rounded-xl border bg-card p-5'>
+            <h2 className='text-lg font-semibold'>Where inquiries came from</h2>
+            <p className='mb-4 text-sm text-muted-foreground'>Entry page, observed page history and submission page for each inquiry. This covers the same browser tab; earlier visits or other devices may be unknown.</p>
+            {submissions.map(submission => <details key={submission.submission_id} className='border-t py-3'>
+              <summary className='cursor-pointer text-sm font-medium'>
+                {submission.leads?.name || submission.lead_id} · {submission.segment} · {new Date(submission.received_at).toLocaleString()} {submission.is_test ? ' · TEST' : submission.is_spam ? ' · SPAM' : ''}
+              </summary>
+              <dl className='mt-3 grid gap-2 break-words text-sm sm:grid-cols-2'>
+                {Object.entries({
+                  'Lead ID': submission.lead_id, 'Submission ID': submission.submission_id,
+                  'Entry page': submission.attribution.landing_page || 'Not recorded',
+                  'Submission page': submission.attribution.submitted_from || 'Not recorded',
+                  'Source': submission.attribution.source === 'direct' ? 'Direct / no referrer observed' : submission.attribution.source || 'Unknown',
+                  'Referring website': submission.attribution.referrer || 'Not recorded',
+                  'Campaign': submission.attribution.utm_campaign || 'Not tagged',
+                }).map(([label, value]) => <div key={label}><dt className='text-muted-foreground'>{label}</dt><dd>{value}</dd></div>)}
+              </dl>
+              <h3 className='mt-3 text-sm font-medium'>Pages visited, in order</h3>
+              {submission.attribution.journey?.pages?.length ? <>
+                <ol className='ml-5 mt-2 list-decimal space-y-1 break-words text-sm'>
+                  {submission.attribution.journey.pages.map((page, index) => <li key={index}>{page.path} <span className='text-muted-foreground'>— {new Date(page.viewed_at).toLocaleString()}</span></li>)}
+                </ol>
+                {submission.attribution.journey.truncated && <p className='mt-2 text-xs text-muted-foreground'>Long visit: entry and the most recent pages are shown; some middle visits were omitted.</p>}
+              </> : <p className='mt-2 text-sm text-muted-foreground'>Page history was not recorded for this inquiry.</p>}
+            </details>)}
+            {!submissions.length && <p className='text-sm text-muted-foreground'>{loading ? 'Loading inquiries…' : 'No inquiries in this period.'}</p>}
+          </section>
+
           <form onSubmit={recordReferral} className='rounded-xl border bg-card p-5'>
             <h2 className='mb-4 text-lg font-semibold'>Record a partner handoff</h2>
             <label className='mb-4 block text-sm'>Choose a recent inquiry

@@ -1,5 +1,6 @@
 import axiosClient from './axios';
 import { currentPath, deriveLeadSource, gaClientId, type FirstTouch } from './attribution';
+import { recordJourneyPage, type LeadJourney } from './lead-journey';
 export { createSubmissionId, getOrCreateSubmissionAttempt, submissionIdAfterResult } from './submission-identity';
 
 export type IntakeSegment = 'residential' | 'commercial';
@@ -30,6 +31,7 @@ export interface IntakePayload {
     referrer?: string;
     ga_client_id?: string;
     captured_at?: string;
+    journey?: LeadJourney;
   };
   consent?: {
     status: 'opted_in';
@@ -66,6 +68,7 @@ export function intakeAttribution(firstTouch: FirstTouch | null): IntakePayload[
     referrer: firstTouch?.referrer ?? undefined,
     ga_client_id: gaClientId() ?? undefined,
     captured_at: firstTouch?.captured_at ?? undefined,
+    journey: recordJourneyPage() ?? undefined,
   };
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as IntakePayload['attribution'];
 }

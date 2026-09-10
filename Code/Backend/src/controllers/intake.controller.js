@@ -1,5 +1,6 @@
 const intakeService = require('../services/intake.service');
 const crypto = require('crypto');
+const { cleanJourney } = require('../lib/lead-journey');
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -99,6 +100,8 @@ function validate(body) {
     'source', 'gclid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
     'landing_page', 'landing_city_slug', 'landing_page_type', 'submitted_from', 'referrer', 'ga_client_id', 'captured_at'
   ], 500);
+  const journey = cleanJourney(body.attribution?.journey);
+  if (journey) attribution.journey = journey;
   const consentStatus = text(body.consent?.status, 20) || 'pending';
   if (!['pending', 'opted_in', 'opted_out'].includes(consentStatus)) return { error: 'consent.status is invalid' };
   const consentTimestamp = body.consent?.timestamp && Number.isFinite(Date.parse(body.consent.timestamp))

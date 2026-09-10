@@ -14,6 +14,30 @@ const residential = {
 };
 
 describe('public intake controller', () => {
+  test('persists only a bounded sanitized page journey, retaining existing attribution', () => {
+    const result = controller.validate({ ...residential, attribution: {
+      ...residential.attribution, utm_source: 'google', journey: { version: 1, scope: 'browser_tab', pages: [
+        { path: '/blog/pge?email=private@example.com', viewed_at: '2026-09-09T22:00:00Z', contact: 'must not persist' },
+        { path: '/dashboard/leads', viewed_at: '2026-09-09T22:01:00Z' },
+        { path: '//external.com', viewed_at: '2026-09-09T22:01:00Z' },
+        { path: '/', viewed_at: 'bad-date' },
+        ...Array.from({ length: 35 }, () => ({ path: '/', viewed_at: '2026-09-09T22:02:00Z' })),
+      ] },
+    } });
+    expect(result.value.attribution.landing_page).toBe(residential.attribution.landing_page);
+    expect(result.value.attribution.utm_source).toBe('google');
+    const journey = result.value.attribution.journey;
+    expect(journey.pages[0]).toEqual({ path: '/blog/pge', viewed_at: '2026-09-09T22:00:00.000Z' });
+    expect(journey.pages.length).toBeLessThanOrEqual(30);
+    expect(journey.truncated).toBe(true);
+    expect(JSON.stringify(journey)).not.toMatch(/private|external|dashboard|contact/);
+  });
+
+  test('bad optional tracking does not prevent a valid inquiry', () => {
+    const result = controller.validate({ ...residential, attribution: { journey: { version: 1, scope: 'browser_tab', pages: 'invalid' } } });
+    expect(result.error).toBeUndefined();
+    expect(result.value.attribution.journey).toBeUndefined();
+  });
   beforeEach(() => jest.clearAllMocks());
 
   test('normalizes and stores a residential submission through the atomic service', async () => {

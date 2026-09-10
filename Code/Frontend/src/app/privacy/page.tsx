@@ -71,6 +71,7 @@ function PrivacyBody({ cfg, palette }: { cfg: BrandConfig; palette: Palette }) {
     <div className='space-y-8 leading-relaxed' style={{ color: palette.muted }}>
       <section>
         <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>Information We Collect</h2>
+        {cfg.domain === 'ratereliefca.com' && <p className='mb-3'><strong style={{ color: palette.fg }}>Solar inquiry attribution.</strong> If you submit an assessment, we save your entry page, referring website and campaign tags with your inquiry. We also attach up to 30 public pages visited in the same browser tab, with visit times and the page where you submitted. This helps us understand which pages bring useful inquiries. Page history excludes query strings and private account pages. It is stored in your tab until submission and then in our private lead records and owner notification.</p>}
         <p className='mb-3'>
           <strong style={{ color: palette.fg }}>Analytics data (automatic).</strong> When you visit {brand}, our analytics provider collects: pages viewed, referring site, approximate location (city-level from IP), browser type, device type, and time on page. This data is aggregated and used to understand what content is useful to readers.
         </p>

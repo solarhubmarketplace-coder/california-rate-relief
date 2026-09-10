@@ -1,4 +1,5 @@
 import axiosClient from './axios';
+import type { LeadJourney } from './lead-journey';
 
 interface ApiEnvelope<T> {
   message: string;
@@ -52,7 +53,11 @@ export interface SubmissionRecord {
   is_test: boolean;
   is_spam: boolean;
   received_at: string;
-  attribution: { landing_page?: string };
+  attribution: {
+    landing_page?: string; submitted_from?: string; source?: string; referrer?: string;
+    captured_at?: string; utm_source?: string; utm_medium?: string; utm_campaign?: string;
+    journey?: LeadJourney;
+  };
   leads: { name: string; phone: string; email: string | null } | null;
 }
 

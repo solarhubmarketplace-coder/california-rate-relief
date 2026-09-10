@@ -16,6 +16,23 @@ const row = {
 };
 
 describe('durable owner notification worker', () => {
+  test('includes the submitted path and page sequence in the owner notification', async () => {
+    const journeyRow = { ...row, payload: { ...row.payload, attribution: { ...row.payload.attribution,
+      submitted_from: '/', journey: { version: 1, scope: 'browser_tab', truncated: false, pages: [
+        { path: '/blog/sce', viewed_at: '2026-09-09T22:00:00Z' },
+        { path: '/', viewed_at: '2026-09-09T22:01:00Z' },
+      ] },
+    } } };
+    mockRpc.mockResolvedValueOnce({ data: [journeyRow] })
+      .mockResolvedValueOnce({ data: [{ ...journeyRow, destination: 'owner@example.com', provider_subject: 'subject', provider_html: 'frozen' }] })
+      .mockResolvedValueOnce({ data: null });
+    mockSendEmail.mockResolvedValue({ id: 'provider-journey' });
+    await worker.processOne();
+    const html = mockRpc.mock.calls[1][1].p_provider_html;
+    expect(html).toContain('Pages visited in this tab');
+    expect(html).toContain('/blog/sce (2026-09-09T22:00:00.000Z) → / (2026-09-09T22:01:00.000Z)');
+    expect(html).toContain('Submitted from');
+  });
   beforeEach(() => jest.clearAllMocks());
   test('claims, sends with the stable provider key, and records sent state', async () => {
     mockRpc.mockResolvedValueOnce({ data: [row], error: null })

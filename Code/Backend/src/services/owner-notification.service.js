@@ -2,6 +2,7 @@ const crypto = require('crypto');
 const { supabaseAdmin } = require('../lib/supabase');
 const emailService = require('./email.service');
 const config = require('../config');
+const { cleanJourney } = require('../lib/lead-journey');
 
 function escapeHtml(value) {
   return String(value ?? '—').replace(/[<>&"']/g, (char) => ({
@@ -13,6 +14,7 @@ function render(outbox) {
   const payload = outbox.payload || {};
   const qualification = payload.qualification_data || {};
   const attribution = payload.attribution || {};
+  const journey = cleanJourney(attribution.journey);
   const rows = [
     ['TEST SUBMISSION', payload.is_test ? 'YES — DO NOT FORWARD' : null],
     ['Lead ID', outbox.lead_id],
@@ -20,6 +22,10 @@ function render(outbox) {
     ['Project type', payload.segment],
     ['Original article', attribution.landing_page],
     ['Submitted from', attribution.submitted_from],
+    ['Pages visited in this tab', journey?.pages.map(page => `${page.path} (${page.viewed_at})`).join(' → ')],
+    ['Page history coverage', journey ? (journey.truncated ? 'Entry and most recent pages; middle visits omitted after 30 pages' : 'Observed public pages in this browser tab') : 'Not recorded for this submission'],
+    ['Entry recorded at', attribution.captured_at],
+    ['Referring website', attribution.referrer],
     ['Name', payload.name],
     ['Phone', payload.phone],
     ['Email', payload.email],

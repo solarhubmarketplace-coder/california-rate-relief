@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </h1>
             <p className='text-muted-foreground mb-8'>
-              Last updated: April 14, 2026
+              Last updated: September 9, 2026
             </p>
 
             <section className='mb-8'>
@@ -67,6 +67,9 @@ export default function PrivacyPolicyPage() {
               <h2 className='text-xl font-bold text-foreground mb-3'>
                 3. How We Use Your Information
               </h2>
+              <p className='text-foreground/80 leading-relaxed mb-4'>
+                If you submit an assessment, we save your entry page, referring website and campaign tags with your inquiry. We also attach up to 30 public pages visited in the same browser tab, with visit times and the page where you submitted. This helps us understand which pages bring useful inquiries. Page history excludes query strings and private account pages. It is stored in your tab until submission and then in our private lead records and owner notification.
+              </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 We use the information we collect to determine your eligibility for the
                 Rate Relief Program, to contact you regarding your inquiry and potential
