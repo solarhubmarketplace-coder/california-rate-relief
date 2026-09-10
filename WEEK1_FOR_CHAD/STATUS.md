@@ -128,3 +128,43 @@ I read those as compatible — the prohibition is on presenting a company as *ou
 3. **The city template, not the city pages.** Now that it is two files, branch the prose and add the data fields. That fixes 154 pages and it is the only fix that scales.
 4. **Source Pasadena and Roseville.** Two utilities, then two cities go from wrong to right.
 5. **Re-audit rate data.** Five months stale, sitewide, and it is the substance of the whole site.
+
+---
+
+## 6. Block 6, the tax credit cluster — drafted, none of it shipped
+
+Nine pages written, **zero cleared the fact-check gate.** Verdicts: 0 ship, 7 fix, 2 block. They are on branch `draft/tax-credit-cluster-20260910`, not on main, so no route went live. That is the correct outcome and it is the gate doing the job it was built for.
+
+I did not let anything write tax content from memory. Five parallel passes read the statute and the IRS directly and produced 60 citable facts, 40 forbidden claims and 20 open questions. Nine pages were drafted from that sheet alone. Nine adversarial checkers then read each page line by line against it.
+
+### The finding the cluster turns on
+
+**Section 25D is terminated for expenditures made after 31 December 2025**, and 25D(e)(8)(A) treats the expenditure as made when the **installation completes**. Paying, signing, permitting or taking delivery in 2025 does not carry a 2026 completion. A homeowner who buys solar today gets no federal credit.
+
+Section 48E still exists, but it belongs to whoever owns and depreciates the equipment. No provision of the Code passes it to a resident. That is still a real advantage for your model — it just has to be said accurately, and the accurate version is narrower than the version every competitor is publishing.
+
+### Two things to know before anyone edits these
+
+1. **irs.gov is currently wrong.** Its own Residential Clean Energy Credit page, last reviewed 4 July 2026, still describes a 2033 and 2034 phase-down and still uses the "placed in service" test Congress struck. Publication 5968 does too. That is almost certainly where the 42-page error I corrected yesterday came from. Reading it on irs.gov is not a defence.
+
+2. **The lease-versus-PPA distinction everybody is publishing could not be verified, and looks false.** The claim is that the 2025 Act disallowed the credit on leased residential solar while PPAs survive. Section 48E(i) reaches only solar water heating and small wind. Rooftop photovoltaics and storage are different subsections and are not referenced. **Do not publish that distinction.** I nearly did — it was in three secondary sources and reads persuasively.
+
+### Why they failed
+
+Same class of drift that produced the 42-page error:
+
+- Unsourced legal conclusions stated flatly. "When irs.gov and the U.S. Code disagree, the Code wins" is probably true and has no citation on the page.
+- A missing new-construction carve-out, which makes the completion rule read as universal when it is not.
+- An unsourced "$300 bill" in a heading.
+- Refundability wording implying a cheque rather than a nonrefundable credit.
+- Over-attribution: a real citation stretched to cover more than it actually says.
+
+Every page has a specific must-fix list, and most items are mechanical — add the cite, delete the number, add the carve-out sentence. Full verdicts and the fact sheet are in `scratchpad/audit/tax_cluster.json`.
+
+Homeowner-facing copy is human-authored under your own standing constraints, so these were always going to stop at draft. They stop here.
+
+## 7. A live issue these drafts surfaced
+
+`RelatedInstallers` renders on **74 live pages** and names companies with undated factual taglines — including legal-status claims: "Chapter 11 April 2026", "Defunct since 2021", "Restructured 2024". A dated legal-status claim about a named business is the highest-risk sentence type on the site, and those three carry no date and no source.
+
+There is also a real tension I am not going to resolve for you. Your CLAUDE.md says never to name an installer or manufacturer. That component names ten, and your 31-page installer review vertical is built on naming them. The literal instruction and the actual content strategy disagree. Pick one and I will enforce it — the QC gate already fails any page claiming an installer as *ours*, which is the unambiguous half.
