@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { getGlp1RouteDisposition } from '@/lib/glp1-seo-routes';
+import { GROWTH_ROUTES } from '@/lib/growth-routes';
 
 const GLP1_PUBLIC_CACHE_CONTROL =
   'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400';
@@ -39,6 +40,9 @@ export async function middleware(request: NextRequest) {
   // ====================================================================
   const isGreenReviewsHub = /^(www\.)?greenreviewshub\.com$/.test(hostname);
   const isCRR = /^(www\.)?ratereliefca\.com$/.test(hostname);
+  const isCRRCalculator = pathname === '/tools/solar-panel-calculator';
+  // Exact exception: keep other /tools routes assigned to the affiliate site.
+  if (isCRRCalculator && !isCRR && !/^localhost(?::\d+)?$/.test(hostname)) return new NextResponse(null,{status:404});
   const isSecureHomeGear = /^(www\.)?securehomegear\.com$/.test(hostname);
   const isAtHomeBiohacking = /^(www\.)?athomebiohacking\.com$/.test(hostname);
   const isGLP1CompareHub = /^(www\.)?glp1comparehub\.com$/.test(hostname);
@@ -292,7 +296,7 @@ export async function middleware(request: NextRequest) {
   // --- ratereliefca.com → block SHG, AHB, and GLP1 paths so they don't leak onto CRR ---
   // Shared trust pages (/about, /contact, /affiliate-disclosure) are allowed
   // and resolved by host-aware page handlers.
-  if (isCRR && !isCRRBestSolarPage && (isSHGPath || isAHBPath || isGLP1Path)) {
+  if (isCRR && !isCRRBestSolarPage && !isCRRCalculator && (isSHGPath || isAHBPath || isGLP1Path)) {
     return new NextResponse(null, { status: 404 });
   }
 
@@ -313,6 +317,10 @@ export async function middleware(request: NextRequest) {
   if (!isCRR && !pathname.startsWith('/api')) {
     return new NextResponse(null, { status: 404 });
   }
+
+  // These public decision pages do not need an owner session or a Supabase read.
+  // Private routes retain the existing authentication path below.
+  if (isCRR && GROWTH_ROUTES.includes(pathname)) return NextResponse.next();
 
   // ====================================================================
   // Below this line: existing CRR auth logic — runs only on

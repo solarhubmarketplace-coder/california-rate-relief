@@ -1,3 +1,4 @@
+import { SgipStatusNote } from '@/components/growth/SgipStatusNote';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -30,6 +31,7 @@ export default function SolarRebatesByCAUtility() {
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
+            <SgipStatusNote/>
             <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
               <Link href="/" className="hover:text-primary">Home</Link>
               <span>/</span>
@@ -61,7 +63,7 @@ export default function SolarRebatesByCAUtility() {
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">PG&amp;E (Pacific Gas &amp; Electric)</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>NEM 3.0 Net Billing.</strong> Export credit ~5–8¢/kWh (vs ~41¢ retail rate).</li>
-                <li><strong>SGIP battery rebate.</strong> All PG&amp;E customers eligible. Equity Resiliency tier applies to Tier 2/3 HFTD zones (which covers large portions of Sonoma, Napa, Sierra foothills, and rural PG&amp;E territory).</li>
+                <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; PG&amp;E service alone does not establish eligibility. Equity Resiliency tier applies to Tier 2/3 HFTD zones (which covers large portions of Sonoma, Napa, Sierra foothills, and rural PG&amp;E territory).</li>
                 <li><strong>CARE &amp; FERA bill discounts.</strong> 30–35% (CARE) or 18% (FERA) off entire bill for income-qualified households.</li>
                 <li><strong>Medical Baseline allowance.</strong> Additional baseline electricity at lowest-tier pricing for medical-equipment households.</li>
                 <li><strong>PSPS battery incentive bonus.</strong> PG&amp;E occasionally runs PSPS-area-specific battery programs, confirm current offerings in the PG&amp;E Marketplace.</li>
@@ -70,7 +72,7 @@ export default function SolarRebatesByCAUtility() {
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SCE (Southern California Edison)</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>NEM 3.0 Net Billing.</strong> Export credit ~5–8¢/kWh (vs ~34.5¢ retail rate).</li>
-                <li><strong>SGIP battery rebate.</strong> All SCE customers eligible. Equity Resiliency tier applies to Tier 2/3 HFTD zones (covers parts of Riverside, San Bernardino, LA mountain communities).</li>
+                <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; SCE service alone does not establish eligibility. Equity Resiliency tier applies to Tier 2/3 HFTD zones (covers parts of Riverside, San Bernardino, LA mountain communities).</li>
                 <li><strong>CARE &amp; FERA bill discounts.</strong> Same structure as PG&amp;E.</li>
                 <li><strong>Medical Baseline.</strong> Same structure as PG&amp;E.</li>
                 <li><strong>SCE EV TOU rate plans.</strong> Time-of-use plans designed around home EV charging — worth pairing with solar + battery.</li>
@@ -79,7 +81,7 @@ export default function SolarRebatesByCAUtility() {
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SDG&amp;E (San Diego Gas &amp; Electric)</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>NEM 3.0 Net Billing.</strong> Export credit ~5–8¢/kWh (vs ~45.7¢ retail rate — the highest utility rate in the nation, which makes solar self-consumption particularly valuable).</li>
-                <li><strong>SGIP battery rebate.</strong> All SDG&amp;E customers eligible.</li>
+                <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; SDG&amp;E service alone does not establish eligibility.</li>
                 <li><strong>CARE &amp; FERA bill discounts.</strong> Same structure.</li>
                 <li><strong>EV-TOU-5 rate plan.</strong> San Diego-specific EV rate worth comparing when pairing with solar.</li>
                 <li><strong>Equity Resiliency battery incentive.</strong> Applies to back-country fire-prone zones (East County, Valley Center).</li>

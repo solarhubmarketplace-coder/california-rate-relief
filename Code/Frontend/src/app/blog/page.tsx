@@ -17,6 +17,12 @@ export const metadata: Metadata = {
 // Blog post data. Add new posts here
 const blogPosts = [
   {
+    slug: 'sce-time-of-use-rates-2026',
+    title: 'SCE Time-of-Use Rates: Peak Hours and Plan Choice',
+    excerpt: 'Compare 4–9 PM, 5–8 PM and PRIME, then check the full bill and generation provider before choosing a plan.',
+    date: '2026-09-10', readTime: '6 min read', category: 'Utility Rates',
+  },
+  {
     slug: 'pge-time-of-use-rates-2026',
     title: 'PG&E Time-of-Use Rates: 2026 Plan Guide',
     excerpt: 'Compare E-TOU-C and E-TOU-D peak hours, baseline credits and usage patterns before choosing a rate plan.',
@@ -28,7 +34,7 @@ const blogPosts = [
     slug: 'sce-rate-increase-2026',
     title: 'SCE Rate Increase 2026: What Southern California Edison Customers Need to Know',
     excerpt:
-      'SCE rates are projected to rise 12.9% in 2026. Here\'s what that means for your monthly bill and how the Rate Relief Program can lock in a lower, fixed rate.',
+      'Check the effective date and rate plan on your SCE bill. Separate changes in electricity use from changes in price.',
     date: '2026-04-14',
     readTime: '7 min read',
     category: 'Utility Rates',
@@ -44,10 +50,10 @@ const blogPosts = [
   },
   {
     slug: 'solar-tax-credit-expired-2026-options',
-    title: 'The Solar Tax Credit Expired in 2026. Here Are Your Best Options Now.',
+    title: 'Solar Tax Credit Ended: California Options in 2026',
     excerpt:
-      'The federal residential solar tax credit ended December 31, 2025. But California homeowners still have strong paths to $0-down solar through PPAs and prepaid leases.',
-    date: '2026-04-14',
+      'Check the expenditure deadline, separate public assistance from payment contracts, and compare a proposal without an unavailable homeowner credit.',
+    date: '2026-09-10',
     readTime: '8 min read',
     category: 'Solar Savings',
   },
@@ -116,10 +122,10 @@ const blogPosts = [
   },
   {
     slug: 'low-income-solar-california',
-    title: 'Low-Income Solar in California: DAC-SASH, SASH, CARE, and FERA Programs',
+    title: 'Low-Income Solar in California: Find the Right Application Path',
     excerpt:
-      "California has multiple programs that make solar dramatically more affordable for low-income households. Here's who qualifies and how each works.",
-    date: '2026-04-23',
+      'Separate utility-bill discounts from solar applications. Check current DAC-SASH eligibility, property requirements and funding with the administrator.',
+    date: '2026-09-10',
     readTime: '9 min read',
     category: 'California Solar Incentives',
   },
@@ -206,10 +212,10 @@ const blogPosts = [
   },
   {
     slug: 'free-solar-for-seniors-california',
-    title: 'Free Solar For Seniors in California: The Real Programs',
+    title: 'Free Solar for Seniors in California: Check the Actual Program',
     excerpt:
-      "California seniors on fixed income have several legitimate pathways to low-cost or no-cost solar. DAC-SASH, SASH, CARE, FERA, and PPAs. Here's what actually exists.",
-    date: '2026-04-23',
+      'Age alone does not establish eligibility. Check DAC-SASH, bill-discount programs and the terms of private solar offers; the older SASH program is closed.',
+    date: '2026-09-10',
     readTime: '7 min read',
     category: 'California Solar Programs',
   },

@@ -2,6 +2,8 @@ const express = require('express');
 const staffController = require('../controllers/staff.controller');
 
 const router = express.Router();
+router.get('/growth-scorecard', staffController.growthScorecard);
+router.post('/submissions/:id/receipt', staffController.recordReceipt);
 router.get('/referrals', staffController.listReferrals);
 router.post('/referrals', staffController.recordReferral);
 router.patch('/referrals/:id', staffController.updateReferral);

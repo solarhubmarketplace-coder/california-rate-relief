@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/blog/why-is-my-pge-bill-so-high' },
-  openGraph: { title, description, type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-09T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' },
+  openGraph: { title, description, type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-10T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' },
 };
 
 export default function WhyIsMyPGEBillSoHigh() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant='Article' domain='crr' headline={title} url='https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' datePublished='2026-04-24' dateModified='2026-09-09' description={description} />
+      <ArticleJsonLd variant='Article' domain='crr' headline={title} url='https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' datePublished='2026-04-24' dateModified='2026-09-10' description={description} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -37,7 +37,7 @@ export default function WhyIsMyPGEBillSoHigh() {
               <p className='text-lg text-muted-foreground'>Start with the usage line. If your kilowatt-hours did not rise, the rate plan, billing period and line-item changes usually explain the rest.</p>
               <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground mt-4'>
                 <Link href='/author/chad-simpson' className='font-medium text-foreground hover:text-primary'>By Chad Simpson</Link>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-09'>Updated September 9, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-10'>Updated September 10, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>8 min read</span></div>
               </div>
             </header>
@@ -76,7 +76,8 @@ export default function WhyIsMyPGEBillSoHigh() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>6. A Credit Ended or the Billing Period Is Different</h2>
               <p>The California Climate Credit appears in designated bill cycles, not every month. A payment-plan adjustment, prior balance, deposit, local utility tax or a longer billing period can also change the amount due without changing the current per-kWh rate. Compare the “current electric charges” subtotal separately from the account balance.</p>
-              <p>For statewide context, the California Public Advocates Office reported PG&amp;E&apos;s residential average at 34.4 cents per kWh in June 2026, excluding the Climate Credit. It also reported that PG&amp;E&apos;s March 1 update lowered the residential average by about 3.7% from January 1. A high individual bill in that period is therefore not proof that the average rate increased. Source: <a href='https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf' target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>, pp. 8 and 20.</p>
+              <p className='text-sm text-foreground/70'>Correction September 10, 2026: PG&amp;E’s June residential average below is 33.7¢/kWh; the earlier 34.4¢ figure belongs to SCE.</p>
+              <p>For statewide context, the California Public Advocates Office reported PG&amp;E&apos;s residential average at 33.7 cents per kWh in June 2026, excluding the Climate Credit. It also reported that PG&amp;E&apos;s March 1 update lowered the residential average by about 3.7% from January 1. A high individual bill in that period is therefore not proof that the average rate increased. Source: <a href='https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf' target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>, pp. 8 and 20.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>7. Your Solar Statement or True-Up Needs a Separate Review</h2>
               <p>A solar customer&apos;s statement can include imports, exports, monthly charges, credits and a running True-Up balance. The Base Services Charge cannot be offset by generation credits at True-Up. Do not diagnose that bill with a standard non-solar checklist.</p>

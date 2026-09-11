@@ -8,7 +8,7 @@ const scripts = require("../src/config/scripts");
 describe("AI Scripts Configuration", () => {
   describe("Exports", () => {
     test("exports AI_VOICE", () => {
-      expect(scripts.AI_VOICE).toBe("shimmer");
+      expect(scripts.AI_VOICE).toBe("sage");
     });
 
     test("exports AI_SYSTEM_PROMPT_INITIAL_CALL", () => {
@@ -24,7 +24,7 @@ describe("AI Scripts Configuration", () => {
 
     test("exports VOICEMAIL_DATA_ANOMALY", () => {
       expect(scripts.VOICEMAIL_DATA_ANOMALY).toBeDefined();
-      expect(scripts.VOICEMAIL_DATA_ANOMALY).toContain("Sun Speed");
+      expect(scripts.VOICEMAIL_DATA_ANOMALY).toContain("California Rate Relief Program");
     });
 
     test("exports fillTemplate helper", () => {
@@ -35,10 +35,11 @@ describe("AI Scripts Configuration", () => {
   describe("Golden Path Qualification (M2 Issue #2)", () => {
     const prompt = scripts.AI_SYSTEM_PROMPT_INITIAL_CALL;
 
-    test("contains FCC-compliant opener", () => {
+    // Structural checks of dormant copy are not a compliance certification.
+    test("contains the current caller identity and recording notice", () => {
       expect(prompt).toContain("Sarah");
-      expect(prompt.toLowerCase()).toContain("recorded line");
-      expect(prompt.toLowerCase()).toContain("sun speed solar");
+      expect(prompt.toLowerCase()).toContain("this call is recorded");
+      expect(prompt).toContain("California Rate Relief");
     });
 
     test("contains homeowner qualification", () => {
@@ -61,20 +62,18 @@ describe("AI Scripts Configuration", () => {
   describe("Iron Dome Objection Handling (M2 Issue #2)", () => {
     const prompt = scripts.AI_SYSTEM_PROMPT_INITIAL_CALL;
 
-    test("handles 'too expensive' objection", () => {
-      expect(prompt.toLowerCase()).toContain("expensive");
+    test("defers pricing questions to the specialist", () => {
+      expect(prompt).toContain('The specialist breaks down exactly how it works.');
     });
 
     test("handles 'not interested' objection", () => {
       expect(prompt.toLowerCase()).toContain("not interested");
     });
 
-    test("handles lien/UCC concerns", () => {
-      // Either in main prompt or in context service objection guide
-      const hasLien =
-        prompt.toLowerCase().includes("lien") ||
-        prompt.toLowerCase().includes("ucc");
-      expect(hasLien).toBe(true);
+    test("keeps installer affiliation out of the initial caller identity", () => {
+      // The returning-call UCC guide is tested in context.service.test.js.
+      expect(prompt).toContain('NEVER mention any installer');
+      expect(prompt.toLowerCase()).not.toContain('sun speed solar');
     });
   });
 

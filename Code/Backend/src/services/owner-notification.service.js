@@ -31,7 +31,7 @@ function render(outbox) {
     ['Email', payload.email],
     ['Address', payload.address],
     ['Utility', qualification.utility_provider],
-    ['Monthly bill', qualification.bill_amount || qualification.monthly_bill_range],
+    ['Monthly bill', qualification.bill_amount ?? qualification.monthly_bill_range],
     ['Homeowner', typeof qualification.homeowner === 'boolean' ? (qualification.homeowner ? 'Yes' : 'No') : null],
     ['Credit', qualification.credit_score],
     ['ZIP / county', qualification.service_zip || qualification.county],
@@ -40,6 +40,20 @@ function render(outbox) {
     ['Property type / control', [qualification.property_type, qualification.property_control].filter(Boolean).join(' / ')],
     ['Timeline', qualification.project_timeline],
     ['Source', attribution.source],
+    ['Observed acquisition source', attribution.acquisition_source],
+    ['Observed acquisition medium', attribution.acquisition_medium],
+    ['Original organic landing page', attribution.organic_landing_page],
+    ['Inquiry topic', qualification.inquiry_topic],
+    ['Calculator method', qualification.calculator_version],
+    ['Entered monthly bill, before CRM rounding ($)', qualification.calculator_monthly_bill],
+    ['Entered annual usage (kWh)', qualification.calculator_annual_kwh],
+    ['Quoted solar size (kW DC)', qualification.calculator_system_kw],
+    ['Solar-only cash price ($)', qualification.calculator_solar_only_price],
+    ['Battery cash price ($)', qualification.calculator_battery_price],
+    ['Combined entered cash price ($)', qualification.calculator_cash_price],
+    ['Quoted remaining annual utility bill ($)', qualification.calculator_annual_bill_after],
+    ['Calculated annual bill difference ($)', qualification.calculator_annual_difference],
+    ['Simple cash payback (years; input arithmetic only)', qualification.calculator_simple_payback],
     ['UTM source', attribution.utm_source],
     ['UTM medium', attribution.utm_medium],
     ['UTM campaign', attribution.utm_campaign],
@@ -86,6 +100,8 @@ class OwnerNotificationService {
         prepared.provider_html,
         { from: prepared.provider_from, leadId: prepared.lead_id, idempotencyKey: prepared.provider_idempotency_key }
       );
+      // A success-shaped response without a provider ID cannot establish acceptance.
+      if (typeof provider?.id !== 'string' || !provider.id.trim()) throw new Error('Owner notification provider response missing message ID');
       const { error: markError } = await supabaseAdmin.rpc('complete_owner_notification', {
         p_outbox_id: outbox.id,
         p_lease_token: leaseToken,

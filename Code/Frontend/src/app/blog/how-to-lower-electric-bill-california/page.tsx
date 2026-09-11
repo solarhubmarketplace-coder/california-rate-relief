@@ -125,7 +125,7 @@ export default function HowToLowerElectricBillCalifornia() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>FERA (Family Electric Rate Assistance):</strong> An 18% discount for families of three or more whose income is 100-150% of CARE limits. If you don&apos;t qualify for CARE but have a family, check FERA — it&apos;s easy to overlook.
+                <strong>FERA (Family Electric Rate Assistance):</strong> Check the current household and income rules with your utility. Eligible one- and two-person households can now apply too. FERA is a bill discount, not a solar-installation program. <a href='https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/family-electric-rate-assistance-program' className='underline'>CPUC requirements, checked September 10, 2026</a>.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

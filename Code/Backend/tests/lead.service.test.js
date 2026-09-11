@@ -72,7 +72,7 @@ describe("LeadService", () => {
       expect(queueService.createTasksForLead).toHaveBeenCalledWith(createdLead);
     });
 
-    test("throws 409 when phone already exists", async () => {
+    test("updates an existing contact without requeuing outreach", async () => {
       const dedupChain = {
         select: jest.fn().mockReturnThis(),
         eq: jest.fn().mockReturnThis(),
@@ -83,18 +83,20 @@ describe("LeadService", () => {
       };
 
       mockFrom.mockReturnValueOnce(dedupChain);
+      const update = jest.fn().mockReturnValue({ eq: jest.fn().mockResolvedValue({error:null}) });
+      mockFrom.mockReturnValueOnce({ update });
+      const result = await leadService.createLead({ name: 'Duplicate', phone: '+19519721902', bill_amount: 0 });
+      expect(update).toHaveBeenCalledWith({name:'Duplicate',bill_amount:0});
+      expect(result).toEqual(expect.objectContaining({id:'existing-id',duplicate:true,_retriggered:false}));
+      expect(queueService.createTasksForLead).not.toHaveBeenCalled();
+      expect(mockFrom).toHaveBeenCalledTimes(2);
+    });
 
-      await expect(
-        leadService.createLead({
-          name: "Duplicate",
-          phone: "+19519721902",
-        })
-      ).rejects.toEqual(
-        expect.objectContaining({
-          statusCode: 409,
-          message: expect.stringContaining("already exists"),
-        })
-      );
+    test('does not acknowledge a failed duplicate-contact update', async () => {
+      mockFrom.mockReturnValueOnce({select:jest.fn().mockReturnThis(),eq:jest.fn().mockReturnThis(),limit:jest.fn().mockResolvedValue({data:[{id:'existing-id'}],error:null})});
+      mockFrom.mockReturnValueOnce({update:jest.fn().mockReturnValue({eq:jest.fn().mockResolvedValue({error:{message:'write failed'}})})});
+      await expect(leadService.createLead({name:'Duplicate',phone:'+19519721902'})).rejects.toEqual({statusCode:500,message:'write failed'});
+      expect(queueService.createTasksForLead).not.toHaveBeenCalled();
     });
 
     test("throws 500 on dedup database error", async () => {

@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest --verbose --forceExit",
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "test:growth-db": "node scripts/test-growth-db.cjs"
   },
   "repository": "git+https://github.com/solarhubmarketplace-coder/california-rate-relief.git",
   "keywords": [],
@@ -33,6 +34,7 @@
     "ws": "^8.18.3"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
     "jest": "^30.5.0",
     "nodemon": "^3.1.11"
   }

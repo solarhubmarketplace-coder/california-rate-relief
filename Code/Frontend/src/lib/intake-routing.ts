@@ -1,3 +1,4 @@
+import { GROWTH_ROUTES } from './growth-routes.ts';
 const COMMERCIAL_BLOG_PREFIXES = [
   '/blog/commercial-solar-',
 ];
@@ -16,5 +17,6 @@ export function isCommercialIntentPath(pathname: string): boolean {
 }
 
 export function intakeHrefForPath(pathname: string): string {
+  if (GROWTH_ROUTES.includes(pathname)) return '#solar-inquiry';
   return isCommercialIntentPath(pathname) ? '/commercial-assessment' : '/#qualify';
 }

@@ -5,6 +5,8 @@
 
 // Save original env
 const originalEnv = process.env;
+// Defaults must not depend on developer .env contents or the runner's PORT.
+jest.mock('dotenv', () => ({ config: jest.fn() }));
 
 beforeEach(() => {
   jest.resetModules();
@@ -38,8 +40,22 @@ describe("Config", () => {
   });
 
   test("exports PORT with default 8000", () => {
+    delete process.env.PORT;
     const config = require("../src/config");
-    expect(config.PORT).toBe("8000");
+    expect(config.PORT).toBe(8000);
+  });
+
+  test('uses an explicit deployment port', () => {
+    process.env.PORT = '3101';
+    expect(require('../src/config').PORT).toBe('3101');
+  });
+
+  test('voice and SMS fail closed when configuration is absent', () => {
+    delete process.env.QUEUE_VOICE_ENABLED;
+    delete process.env.QUEUE_SMS_ENABLED;
+    const config = require('../src/config');
+    expect(config.QUEUE_VOICE_ENABLED).toBe('false');
+    expect(config.QUEUE_SMS_ENABLED).toBe('false');
   });
 
   test("exports queue configuration", () => {

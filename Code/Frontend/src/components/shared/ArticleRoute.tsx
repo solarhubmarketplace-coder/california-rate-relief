@@ -8,6 +8,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArticleRenderer } from '@/components/shared/ArticleRenderer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { ArticleCluster, ArticlePage } from '@/data/article-types';
 import {
   getArticle,
@@ -105,6 +106,7 @@ export function ArticleRoute({
 }) {
   const page = getArticle(cluster, slug);
   if (!page) notFound();
+  const isSgip = cluster === 'battery' && slug === 'sgip-battery-rebate-california';
 
   return (
     <PublicLayout>
@@ -125,7 +127,9 @@ export function ArticleRoute({
             <ArrowLeft className="h-4 w-4" />
             {backLabel}
           </Link>
-          <ArticleRenderer page={page} related={relatedArticles(page)} />
+          <ArticleRenderer page={page} related={relatedArticles(page)} inquiryHref={isSgip?'#solar-inquiry':undefined}
+            tools={isSgip?<nav aria-label="SGIP decision tools" className="my-6 flex flex-wrap gap-4 text-sm font-semibold text-primary underline"><Link href="/tools/solar-panel-calculator">Check the quote without a rebate</Link><Link href="/blog/solar-battery-backup-california">Compare battery and backup needs</Link><Link href="#solar-inquiry">Optional solar inquiry</Link></nav>:undefined}/>
+          {isSgip&&<div className="mx-auto max-w-3xl"><p className="mt-8 text-sm">California Rate Relief is a private solar referral service. This inquiry is not an SGIP application or eligibility decision. <Link className="text-primary underline" href="/commercial-solar/sgip-battery-storage">Commercial storage projects</Link> follow a separate review.</p><SolarInquiry topic="SGIP residential solar and storage"/></div>}
         </div>
       </main>
       <Footer />

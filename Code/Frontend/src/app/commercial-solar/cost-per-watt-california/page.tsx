@@ -114,7 +114,7 @@ export default function CommercialSolarCost() {
                 Under California&apos;s NEM 3.0 / Net Billing Tariff rules, commercial solar systems increasingly include battery storage to capture self-consumption value rather than exporting at low rates. Adding battery storage typically increases total project cost by 30-60%, with commercial lithium battery pricing in California running approximately $400-$700 per kWh installed in 2026 (directional; varies by size, chemistry, and inverter integration).
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The California SGIP (Self-Generation Incentive Program) still offers commercial battery rebates in 2026, though the large-scale storage budget closed to new applications after December 30, 2025. Tiered rates depend on budget, step, and equity status. Details on our{' '}<Link href='/commercial-solar/sgip-battery-storage' className='text-primary hover:underline'>SGIP commercial battery page</Link>.
+                Correction September 10, 2026: the official SGIP tracker marks Large-Scale Storage and Non-Residential Storage Equity closed across CSE, SCE, SCG and PG&amp;E. Do not assume a new commercial battery reservation is available. Details on our{' '}<Link href='/commercial-solar/sgip-battery-storage' className='text-primary hover:underline'>SGIP commercial battery page</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Effective Cost After Incentives</h2>

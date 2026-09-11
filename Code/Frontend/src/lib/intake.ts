@@ -1,5 +1,5 @@
 import axiosClient from './axios';
-import { currentPath, deriveLeadSource, gaClientId, type FirstTouch } from './attribution';
+import { acquisition, currentPath, deriveLeadSource, gaClientId, type FirstTouch } from './attribution';
 import { recordJourneyPage, type LeadJourney } from './lead-journey';
 export { createSubmissionId, getOrCreateSubmissionAttempt, submissionIdAfterResult } from './submission-identity';
 
@@ -36,7 +36,13 @@ export interface IntakePayload {
   qualification_data: Record<string, string | number | boolean | null> & IntakeLocationFields;
   attribution: {
     source: string;
+    acquisition_source?: string;
+    acquisition_medium?: string;
+    organic_landing_page?: string;
     gclid?: string;
+    gbraid?: string;
+    wbraid?: string;
+    msclkid?: string;
     fbclid?: string;
     utm_source?: string;
     utm_medium?: string;
@@ -73,7 +79,13 @@ export interface IntakeResponse {
 export function intakeAttribution(firstTouch: FirstTouch | null): IntakePayload['attribution'] {
   const value = {
     source: deriveLeadSource(firstTouch),
+    acquisition_source: acquisition(firstTouch).source,
+    acquisition_medium: acquisition(firstTouch).medium,
+    organic_landing_page: acquisition(firstTouch).medium === 'organic' ? firstTouch?.landing_page : undefined,
     gclid: firstTouch?.gclid ?? undefined,
+    gbraid: firstTouch?.gbraid ?? undefined,
+    wbraid: firstTouch?.wbraid ?? undefined,
+    msclkid: firstTouch?.msclkid ?? undefined,
     fbclid: firstTouch?.fbclid ?? undefined,
     utm_source: firstTouch?.utm_source ?? undefined,
     utm_medium: firstTouch?.utm_medium ?? undefined,

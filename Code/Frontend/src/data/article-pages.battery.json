@@ -3,9 +3,9 @@
     "slug": "battery-backup-vs-generator-california",
     "cluster": "battery",
     "metaTitle": "Battery vs. Generator for California Power Outages",
-    "metaDescription": "Home battery vs. backup generator costs, runtime, and permitting for California PSPS outages — and why SGIP and the 25D credit no longer apply in 2026.",
+    "metaDescription": "Compare home battery and backup generator costs, runtime and project scope for California outages. Check the current SGIP budget category before assuming an incentive.",
     "h1": "Home Battery vs. Backup Generator for California Power Outages",
-    "intro": "A whole-house standby generator installed in California runs $8,000-$18,000 or more depending on size, fuel source, and whether a new gas line or propane tank has to go in. A whole-home battery system — two to three stacked units in the 20-30 kWh range that most CA installers quote for backup — runs $25,000-$40,000 installed before any incentive. Those numbers alone used to tell only half the story, because a homeowner-owned battery could shave 30% off its price with the federal 25D tax credit and, in high-PSPS areas, another $850-$1,000 per kWh off with SGIP's Equity Resiliency rebate.\n\nBoth of those are gone as of today. The IRS confirms 25D is not available for any property placed in service after December 31, 2025. SGIP's own incentive step tracker shows the major residential storage budgets, Equity Resiliency included, closed to new reservations. That changes the comparison: this page runs the numbers as they actually stand in September 2026, not as they were pitched to you eighteen months ago.\n\nThis isn't a \"which is better\" page. It's a rundown of what each option actually costs to own for ten years, how they behave during an actual multi-day PSPS event, where the permitting and noise rules bite, and when the honest answer is neither one alone.",
+    "intro": "SGIP clarification September 10, 2026: Small Residential Storage, Equity Resiliency and ratepayer-funded Residential Solar and Storage Equity are closed in the current tracker. Some residential AB 209 categories are open or waitlisted; broad closure language below refers to the closed categories, not every SGIP pathway. Check the exact category and administrator at selfgenca.com/home/program_metrics/ before counting any rebate.\n\nA whole-house standby generator installed in California runs $8,000-$18,000 or more depending on size, fuel source, and whether a new gas line or propane tank has to go in. A whole-home battery system — two to three stacked units in the 20-30 kWh range that most CA installers quote for backup — runs $25,000-$40,000 installed before any incentive. Those numbers alone used to tell only half the story, because a homeowner-owned battery could shave 30% off its price with the federal 25D tax credit and, in high-PSPS areas, another $850-$1,000 per kWh off with SGIP's Equity Resiliency rebate.\n\nBoth of those are gone as of today. The IRS confirms 25D is not available for any property placed in service after December 31, 2025. SGIP's own incentive step tracker shows the major residential storage budgets, Equity Resiliency included, closed to new reservations. That changes the comparison: this page runs the numbers as they actually stand in September 2026, not as they were pitched to you eighteen months ago.\n\nThis isn't a \"which is better\" page. It's a rundown of what each option actually costs to own for ten years, how they behave during an actual multi-day PSPS event, where the permitting and noise rules bite, and when the honest answer is neither one alone.",
     "keyStats": [
       {
         "label": "Federal battery tax credit (25D)",
@@ -186,15 +186,15 @@
         "supports": "Confirms Freedom Forever's Chapter 11 case (filed April 15, 2026) was converted to Chapter 7 liquidation after a July 31, 2026 court filing, with the conversion order signed August 7, 2026, affecting roughly 150,000 customers — corroborated independently via Law360 and Bloomberg Law coverage of the same filing"
       }
     ],
-    "reviewedAt": "2026-09-05"
+    "reviewedAt": "2026-09-10"
   },
   {
     "slug": "battery-payback-nem-3-california",
     "cluster": "battery",
     "metaTitle": "Battery Payback Under NEM 3.0 in California (2026)",
-    "metaDescription": "NEM 3.0 export credits run 6-11c/kWh vs. 40-75c/kWh peak retail. PG&E, SCE, SDG&E battery payback math for 2026, with sourced rates and honest caveats.",
+    "metaDescription": "Evaluate battery payback under California net billing using the actual tariff, export credits and installed price. Check the SGIP category separately.",
     "h1": "Does a Battery Actually Pay Back Under NEM 3.0 in California?",
-    "intro": "A 13.5 kWh home battery installed in California in 2026 runs $12,000 to $16,500 (EnergySage installed-cost data puts the market average at $15,647 for a 13.5 kWh system, checked 2026-09-05). Whether it pays for itself under NEM 3.0 depends almost entirely on which utility is on your bill, because the underlying math is not the same statewide.\n\nHere is the mechanism in one line. NEM 3.0 — officially the Net Billing Tariff, in effect for anyone who interconnected after April 15, 2023 — pays you an export credit set by the CPUC's Avoided Cost Calculator, not by retail rates. That works out to roughly 5 to 8 cents per kWh across the three investor-owned utilities, with PG&E's actual January 2026 hourly table running about 6.4 to 10.9 cents depending on the time of day. Meanwhile, buying power back from the grid at peak costs 40 to 75 cents per kWh depending on utility and plan. A battery does not make money by exporting solar. It makes money by letting you use your own solar instead of selling it cheap and buying it back expensive.\n\nThat spread — export credit versus peak retail — is the whole trade, and how wide it runs depends on whether PG&E, SCE, or SDG&E bills you. This page covers only those three. NEM 3.0 does not apply to LADWP, SMUD, or any of California's other publicly owned utilities, and nothing here should be read as urgency if one of those is on your bill.",
+    "intro": "SGIP clarification September 10, 2026: Small Residential Storage, Equity Resiliency and ratepayer-funded Residential Solar and Storage Equity are closed in the current tracker. Some residential AB 209 categories are open or waitlisted; broad closure language below refers to the closed categories, not every SGIP pathway. Check the exact category and administrator at selfgenca.com/home/program_metrics/ before counting any rebate.\n\nA 13.5 kWh home battery installed in California in 2026 runs $12,000 to $16,500 (EnergySage installed-cost data puts the market average at $15,647 for a 13.5 kWh system, checked 2026-09-05). Whether it pays for itself under NEM 3.0 depends almost entirely on which utility is on your bill, because the underlying math is not the same statewide.\n\nHere is the mechanism in one line. NEM 3.0 — officially the Net Billing Tariff, in effect for anyone who interconnected after April 15, 2023 — pays you an export credit set by the CPUC's Avoided Cost Calculator, not by retail rates. That works out to roughly 5 to 8 cents per kWh across the three investor-owned utilities, with PG&E's actual January 2026 hourly table running about 6.4 to 10.9 cents depending on the time of day. Meanwhile, buying power back from the grid at peak costs 40 to 75 cents per kWh depending on utility and plan. A battery does not make money by exporting solar. It makes money by letting you use your own solar instead of selling it cheap and buying it back expensive.\n\nThat spread — export credit versus peak retail — is the whole trade, and how wide it runs depends on whether PG&E, SCE, or SDG&E bills you. This page covers only those three. NEM 3.0 does not apply to LADWP, SMUD, or any of California's other publicly owned utilities, and nothing here should be read as urgency if one of those is on your bill.",
     "keyStats": [
       {
         "label": "PG&E export credit",
@@ -380,15 +380,15 @@
         "supports": "Directional claim that third-party-owned battery storage retains access to the commercial Section 48E investment tax credit on a slower phasedown than residential 25D (industry commentary, not Treasury primary source)"
       }
     ],
-    "reviewedAt": "2026-09-05"
+    "reviewedAt": "2026-09-10"
   },
   {
     "slug": "home-battery-cost-california",
     "cluster": "battery",
     "metaTitle": "Home Battery Cost in California 2026: Real Numbers",
-    "metaDescription": "A home battery in California costs $10,000-$20,000 installed in 2026. See real cost-per-kWh figures, why SGIP and the 25D credit are gone, and honest NEM 3.0 payback math.",
+    "metaDescription": "Compare a California home battery quote by usable capacity, installed scope and remaining utility bill. Review the exact SGIP category before counting a rebate.",
     "h1": "What a Home Battery Actually Costs in California in 2026",
-    "intro": "A 10 kWh home battery installed in California in 2026 runs $10,000 to $20,000 before any incentive — and for the first time in several years, there is no federal tax credit and no state rebate cushioning that number for a typical homeowner. The 25D federal residential credit ended December 31, 2025. The Self-Generation Incentive Program's standard rebate tier is closed in every utility territory as of this writing. Two of the biggest levers homeowners assume are still there are both gone or exhausted right now.\n\nThat doesn't mean a battery is a bad idea. Under NEM 3.0, California's net billing regime, what you get paid for exporting solar power has dropped to a fraction of what you pay to import it, which is exactly the gap a battery is built to close. But the honest payback math depends on your specific utility, your specific rate schedule, and a hardware price that varies more by brand and installer than most quotes let on.\n\nThis page walks through what a battery costs per usable kWh, what installation and panel work add on top, why SGIP and the federal credit won't help you right now, and where the industry's own numbers are shakier than they look. Where we couldn't verify a figure independently, we say so — that's the point of this page existing.",
+    "intro": "SGIP clarification September 10, 2026: Small Residential Storage, Equity Resiliency and ratepayer-funded Residential Solar and Storage Equity are closed in the current tracker. Some residential AB 209 categories are open or waitlisted; broad closure language below refers to the closed categories, not every SGIP pathway. Check the exact category and administrator at selfgenca.com/home/program_metrics/ before counting any rebate.\n\nA 10 kWh home battery installed in California in 2026 runs $10,000 to $20,000 before any incentive — and for the first time in several years, there is no federal tax credit and no state rebate cushioning that number for a typical homeowner. The 25D federal residential credit ended December 31, 2025. The Self-Generation Incentive Program's standard rebate tier is closed in every utility territory as of this writing. Two of the biggest levers homeowners assume are still there are both gone or exhausted right now.\n\nThat doesn't mean a battery is a bad idea. Under NEM 3.0, California's net billing regime, what you get paid for exporting solar power has dropped to a fraction of what you pay to import it, which is exactly the gap a battery is built to close. But the honest payback math depends on your specific utility, your specific rate schedule, and a hardware price that varies more by brand and installer than most quotes let on.\n\nThis page walks through what a battery costs per usable kWh, what installation and panel work add on top, why SGIP and the federal credit won't help you right now, and where the industry's own numbers are shakier than they look. Where we couldn't verify a figure independently, we say so — that's the point of this page existing.",
     "keyStats": [
       {
         "label": "Typical installed cost, 10 kWh battery",
@@ -546,7 +546,7 @@
         "supports": "Older brand price points flagged in this page as dated to February 2024 and likely referencing prior-generation hardware (e.g., Powerwall 2 rather than Powerwall 3); cited only to explain why those figures should not be used for 2026 budgeting"
       }
     ],
-    "reviewedAt": "2026-09-05"
+    "reviewedAt": "2026-09-10"
   },
   {
     "slug": "how-many-batteries-do-i-need-california",
@@ -980,200 +980,117 @@
   {
     "slug": "sgip-battery-rebate-california",
     "cluster": "battery",
-    "metaTitle": "SGIP Battery Rebate California: 2026 Status",
-    "metaDescription": "SGIP's ratepayer battery rebates (Equity Resiliency, General Market) closed Dec. 30, 2025. One path still open: AB 209's RSSE at $3.10/W + $1.10/Wh.",
-    "h1": "SGIP Battery Rebate in California: What's Actually Open in 2026",
-    "intro": "As of September 5, 2026, every ratepayer-funded battery rebate under California's Self-Generation Incentive Program is closed to new applicants. That includes the tier most homeowners search for by name: Equity Resiliency, the $1.00/Wh incentive built for wildfire-prone and medically vulnerable households. It also includes General Market storage, where Small Residential Storage reached Step 7, its final and lowest rate, before shutting its doors, plus the standard Equity tier and Non-Residential Storage Equity. The Program Administrators' live step tracker shows Step Status as Closed across the board, and the 2026 SGIP Handbook, Version 3, states the mechanism plainly: December 30, 2025 was the deadline to submit new applications, and every ratepayer-funded waitlist closed on the same date. The authority is CPUC Decision 25-12-003, which winds down activity funded by ratepayer collections that Senate Bill 700 authorized only through the 2024 program year.\n\nOne battery-adjacent rebate is still accepting new applications: Residential Solar and Storage Equity, funded through cap-and-trade money under Assembly Bill 209, not ratepayer surcharges. It pays more than Equity Resiliency ever did, and it stays open into 2028. This page covers what has actually shut down, what is still alive, who qualifies for it, and how long the process realistically takes.",
+    "metaTitle": "SGIP Battery Rebate California: September 2026 Status",
+    "metaDescription": "Check SGIP budget status by program administrator, separate a waitlist from an approved reservation, and compare your battery quote without an assumed rebate.",
+    "h1": "SGIP battery rebates in California: check the budget first",
+    "intro": "Do not put an SGIP rebate into the purchase price until the project has the right approval. A program name on a quote is not a reservation.\n\nThe official tracker distinguishes several budgets under the Self-Generation Incentive Program. This September 10, 2026 snapshot keeps their names and administrator columns separate. Recheck the live table before making a purchase decision; the status can change.",
     "keyStats": [
       {
-        "label": "Ratepayer SGIP storage budgets",
-        "value": "Closed statewide",
-        "note": "General Market, Equity, and Equity Resiliency all stopped taking applications 12/30/2025 (2026 SGIP Handbook V3; CPUC D.25-12-003)."
+        "label": "Status checked",
+        "value": "September 10",
+        "note": "2026 snapshot of the official program metrics, not a funding commitment."
       },
       {
-        "label": "Still open: AB 209 RSSE",
-        "value": "$3.10/W solar + $1.10/Wh storage",
-        "note": "Cap-and-trade funded, Waitlist status, applications accepted through 6/30/2028 (CPUC D.24-03-071)."
+        "label": "Budget and administrator",
+        "value": "Both matter",
+        "note": "Get the exact category and responsible administrator for the service address."
       },
       {
-        "label": "Last Equity Resiliency rate",
-        "value": "$1.00/Wh, flat",
-        "note": "Not step-down; closed at Step 5 as of the 9/5/2026 program metrics tracker."
-      },
-      {
-        "label": "RSSE funding pool",
-        "value": "$280 million (GGRF)",
-        "note": "PG&E $99M, SCE $87.3M, LADWP $32.4M, CSE $19.8M, SoCalGas $13.5M (CPUC D.24-03-071, 3/22/2024)."
+        "label": "Base quote",
+        "value": "Before incentives",
+        "note": "Show the amount payable if an incentive is delayed or denied."
       }
     ],
     "sections": [
       {
-        "heading": "The Ratepayer SGIP Storage Budgets Are Closed, Here Is the Proof",
-        "body": "The self-generation incentive step tracker at selfgenca.com/home/program_metrics is updated nightly and carried the date \"9/5/2026\" at the top of the page when checked. Every one of the ratepayer storage budgets read Step Status: Closed, across all four Program Administrators, PG&E, SCE, SoCalGas, and Center for Sustainable Energy. Large-Scale Storage sits closed at Step 5. Small Residential Storage sits closed at Step 7, the bottom of its rate ladder. Non-Residential Storage Equity is closed at Step 5. Residential Solar and Storage Equity-Ratepayer, the older ratepayer-funded equity tier, is closed at Step 6. Equity Resiliency itself is closed at Step 5.\n\nDays-in-step figures on most of these run 564 days, tracing back to a step-opening date of February 18, 2025, meaning these budgets have effectively been frozen for well over a year even before the formal shutdown date. The 2026 SGIP Handbook, Version 3 confirms the same conclusion in writing: Program Administrators would issue incentive reservations for any budget with available funds only through December 31, 2025, and the deadline to submit a new application was December 30, 2025. The handbook cites CPUC Decision 25-12-003 as closing out all SGIP activity tied to ratepayer collections since the program's inception, consistent with the Senate Bill 700 sunset, which authorized the ratepayer-funded storage budgets only for 2020 through 2024 collections, a total of $813.4 million across PG&E ($360M), SCE ($280M), CSE/SDG&E ($99M), and SoCalGas ($74.4M). The legislature did not extend that funding into 2025 or beyond."
+        "heading": "Read the category and administrator together",
+        "body": "RSSE stands for Residential Solar and Storage Equity. POU identifies the publicly owned utility category; Non-POU is listed separately. The tracker has administrator columns for CSE, SCE, SCG, PG&E and LADWP. An administrator column does not by itself identify the electric utility serving your home.\n\nThe table below records the displayed status. A blank cell is not evidence that a budget is open. Use the CPUC administrator list and ask which category applies to the service address."
       },
       {
-        "heading": "What Is Still Open: Residential Solar and Storage Equity Under AB 209",
-        "body": "The one storage-related SGIP budget still taking new reservation requests is Residential Solar and Storage Equity, commonly shortened to RSSE, and it is worth understanding as a separate program rather than a continuation of Equity Resiliency. It draws from the Greenhouse Gas Reduction Fund via cap-and-trade auction revenue under Assembly Bill 209, not ratepayer utility charges, which is exactly why it survived the December 2025 shutdown.\n\nAs of September 5, 2026, the live tracker showed RSSE at Step 6 with a status of Waitlist, not fully open, across CSE, SoCalGas, and LADWP territory, meaning new applications are accepted and queued rather than funded immediately. CSE and SoCalGas opened this step on June 2, 2025; LADWP opened it September 30, 2025. CPUC Decision 24-03-071, dated March 22, 2024, allocated $280 million in GGRF funds to this budget: PG&E $99 million, SCE $87.3 million, LADWP $32.4 million, CSE $19.8 million, and SoCalGas $13.5 million.\n\nThe handbook sets the application window generously: new and waitlist applications may be submitted through June 30, 2028, followed by a wind-down period running through August 30, 2028 in which unallocated funds transfer between Program Administrators, and a final deadline of January 31, 2033 for returning any unspent money to the Commission. Rates are flat rather than step-down: $3.10 per watt for solar and $1.10 per watt-hour for storage, more generous than Equity Resiliency's now-closed $1.00/Wh rate, though RSSE requires pairing solar with storage where Equity Resiliency did not. A July 23, 2026 program announcement simplified the paperwork side: Program Administrators may now treat RSSE project cost documentation as complete when accompanied by a signed developer attestation, a process change rather than a rate change."
+        "heading": "Ask for the application path in writing",
+        "body": "Before signing, have the developer identify the proposed budget, applicant and program administrator. Ask who prepares the paperwork, who checks eligibility and who receives the incentive. Keep a copy of what is submitted and the administrator’s response.\n\nRequest a list of the household, utility, equipment and project-cost documents needed for this specific application. If the provider says income, a particular electricity program, location or medical circumstances establish eligibility, ask it to identify the current requirement and the document that satisfies it. An assumption in a sales proposal is not an eligibility determination."
       },
       {
-        "heading": "How SGIP's Step-Down Pricing Worked",
-        "body": "Understanding the mechanics matters even with the ratepayer budgets closed, because it explains why the rate you may have seen quoted online no longer reflects reality. Only the General Market storage budgets, Large-Scale Storage and Small Residential Storage, used a true step-down structure per the 2026 Handbook. Equity, Equity Resiliency, and San Joaquin Valley budgets were explicitly flat rate and not subject to an incentive step-down structure; the step number shown for those categories tracked budget-tranche progress, not a declining dollar figure.\n\nFor General Market budgets, the rate declined by $0.05 per watt-hour at each step, but if a step became fully subscribed within 10 calendar days statewide, the decline doubled to $0.10 per watt-hour. Small Residential Storage ran from $0.50/Wh at Step 1 down to $0.15/Wh at Step 7, its final and now-closed rate. Large-Scale Storage ran the same $0.50 to $0.25/Wh over five steps, with a separate, lower schedule for projects also claiming the federal Investment Tax Credit. Every step change triggered a mandatory 20-day pause before the next step opened, during which no new applications were accepted. For reference, the flat rates that applied before closure were Equity Resiliency at $1.00/Wh, Residential Solar and Storage Equity-Ratepayer storage at $1.10/Wh, Non-Residential Storage Equity at $0.85/Wh, and San Joaquin Valley Residential at $1.10/Wh."
+        "heading": "A waitlist is not money reserved for your project",
+        "body": "Treat a waitlisted request as conditional in your budget. Ask for the application reference and current status, and have the provider explain what must happen before an incentive can be reserved. Do not use an expected award to cover a payment you cannot otherwise make.\n\nFor an existing reservation, work from its own notice and the administrator’s current instructions. Ask about the project milestones, remaining documents and any deadline before changing equipment, scope or contractor. A general article cannot determine what happens to an individual application."
       },
       {
-        "heading": "Equity Resiliency's Two-Part Eligibility Test, Kept Here for Reference",
-        "body": "Equity Resiliency is closed to new applicants, but the eligibility test is worth understanding for two reasons: readers checking whether they would have qualified, and because secondary websites still describe the tier as if it were live.\n\nUnder Section 3.2.3 of the 2026 Handbook, a residential applicant needed to satisfy one option under each of two criteria. Criteria 1, resiliency and risk exposure, required any one of: the project site sitting in a CPUC High Fire-Threat District Tier 2 or Tier 3 zone; electricity shut off during two or more discrete Public Safety Power Shutoff events; electricity shut off during one PSPS event plus one wildfire-caused de-energization on or after January 1, 2017; or, for PG&E customers specifically, shutoffs during five or more Enhanced Powerline Safety Settings events on or after January 1, 2023.\n\nCriteria 2, vulnerability, required any one of: eligibility for the RSSE budget's income-based test; a household member enrolled in the Medical Baseline program; the customer having notified their utility of a serious, life-threatening medical condition tied to power loss; or reliance on an electric-pump well for water while meeting RSSE income criteria at a primary residence not served by a municipal or private water utility. Both criteria had to be met, not just one."
+        "heading": "Compare the same battery with and without the incentive",
+        "body": "Get an itemized cash quote showing solar equipment, battery, backup hardware, electrical work, permits and other charges. Put the requested incentive on a separate line. Then ask for the amount you owe if it is approved, if payment arrives later than expected, and if the application is denied.\n\nFor a loan, lease or PPA, request the complete payment schedule and an explanation of how any approved incentive affects the amount charged to you. Verify who owns the equipment. The person applying for a benefit and the person making the monthly payments may have different roles."
       },
       {
-        "heading": "CARE and FERA Enrollment: What It Actually Gets You",
-        "body": "This is the single most common point of confusion in older SGIP writeups, so it is worth stating precisely. CARE or FERA enrollment is not, by itself, a resiliency-criteria pathway into Equity Resiliency. What it is: a valid income-verification shortcut for the underlying Equity Budget test that feeds RSSE eligibility, one of the routes into Criteria 2 above.\n\nThe 2026 Handbook's Section 3.2.1 lists CARE, FERA, SASH, DAC-SASH, and ESA program participation as acceptable income-verification methods for Equity eligibility. That means a CARE or FERA-enrolled homeowner still needed an HFTD, PSPS, or EPSS showing under Criteria 1 to qualify for Equity Resiliency specifically. CARE or FERA enrollment alone gets a household into the lower-value Equity or RSSE tier, not the higher-value resiliency tier. Since Equity Resiliency is closed regardless, the practical upshot today is that CARE/FERA households pursuing a battery rebate should look at RSSE, where that same income verification is the primary eligibility test, not a secondary one."
-      },
-      {
-        "heading": "How to Apply for RSSE and How Long It Realistically Takes",
-        "body": "Applications run through the Program Administrator's online Reservation Request Form portal at selfgenca.com. Most residential storage projects are two-step applications: once approved, the applicant receives a Confirmed Reservation Letter naming the reserved incentive amount and a reservation expiration date exactly 12 months later. The Incentive Claim Form and all supporting documentation must be filed before that deadline, after installation is complete. Larger or more complex projects instead receive a Conditional Reservation Letter carrying an 18-month window and an intermediate Proof of Project Milestone requirement partway through.\n\nIf a Program Administrator flags missing information, the applicant gets 15 calendar days to respond on a reservation or milestone deficiency and 30 calendar days on a claim-form deficiency; failing to cure risks outright cancellation of the reservation. After installation, the Program Administrator may select a project for on-site inspection; if the inspection finds the claimed incentive amount overstated by more than 10 percent, the applicant gets up to 60 calendar days to correct it. An application fee applies only to non-residential projects, equal to 5 percent of the requested incentive amount; that check must be mailed within 7 calendar days of the fee invoice notice, or the project can be cancelled for non-payment. Residential RSSE applicants do not pay an application fee.\n\nHistorically, projects were limited to three six-month reservation extensions, and non-residential equity and equity-resiliency projects gained access to up to four additional 6-month extensions (retroactive to February 1, 2025) under Decision 25-12-003, but any extension or performance-based-incentive request filed after December 4, 2025 is denied outright under that same decision, another sign the ratepayer-funded side of the program is being wound down administratively rather than simply running out of budget. As of this writing, the Program Administrators have not published a fixed turnaround time for reviewing a completed Incentive Claim Form on a storage project, so no specific number of days can be given for that step; budget accordingly rather than assuming a set calendar."
-      },
-      {
-        "heading": "Equipment and Rate Requirements If You Get a Reservation",
-        "body": "A reservation is not the finish line. New residential storage systems must meet a minimum 85 percent single-cycle round-trip efficiency. Most applicants must enroll in an SGIP-approved time-of-use rate with at least a 1.69-to-1 peak-to-off-peak ratio, or an approved demand-response program, by the time they file the incentive claim; RSSE, income-qualified Equity Resiliency, and San Joaquin Valley Residential applicants are exempt from that enrollment requirement.\n\nAny existing NEM 1.0 or NEM 2.0 solar customer who does not qualify under one of those three exempt categories must transition to the Net Billing Tariff to remain SGIP-eligible. Storage systems need a minimum 10-year performance warranty covering cycle life, energy throughput, and depth-of-discharge specifications, in place of a standard service warranty. Single-family residential storage incentives are capped at 30 kWh of energy capacity per project, so oversized battery banks do not draw a proportionally larger rebate."
-      },
-      {
-        "heading": "If You Are Already in the Pipeline: What Happens to Existing Reservations",
-        "body": "Readers who applied before the December 2025 cutoff are in a different position than new applicants. The small positive available-funds balances still showing on the live tracker, roughly $1 million to $10 million per territory depending on budget, represent money already tied up in the existing reservation and waitlist backlog, not open capacity for a new application.\n\nPer the 2026 Handbook, any ratepayer-funded project still sitting in RRF Waitlist status as of December 31, 2025 was cancelled outright rather than carried forward. Projects that already held a Confirmed or Conditional Reservation Letter before the cutoff continue to be processed under their existing 12- or 18-month timeline, subject to the same cure periods and inspection rules described above, but as noted, no extension or PBI request filed after December 4, 2025 will be granted. If a reservation lapses now, there is no ratepayer-funded successor budget to reapply into; RSSE is a separate application with its own income-based eligibility test."
+        "heading": "Decide what the battery needs to power",
+        "body": "List the loads that matter during an outage. Ask the design to show the usable energy capacity, continuous power, reserve settings and backed-up circuits. A refrigerator, a well pump and central air conditioning create different design questions. The site assessment needs to answer them.\n\nFor bill savings, ask for the remaining utility bill with solar alone and with solar plus storage using the same usage history. Compare grid imports, export credits and fixed charges. Do not assume that more battery capacity pays for itself, or that a rebate replaces the need for a sound design."
       }
     ],
     "dataTable": {
-      "caption": "SGIP storage budgets: status as of 2026-09-05, who they served, and what they paid",
+      "caption": "Official budget status snapshot: September 10, 2026",
       "columns": [
-        "Budget",
-        "Funding source",
-        "Status (9/5/2026)",
-        "Rate structure",
-        "Last/current rate",
-        "New applications?"
+        "Budget category",
+        "Administrator columns",
+        "Displayed status"
       ],
       "rows": [
         [
-          "Small Residential Storage (General Market)",
-          "Ratepayer (IOU collections)",
-          "Closed, Step 7 of 7",
-          "Step-down, $0.05/Wh per step (doubles to $0.10 if a step fills in 10 days)",
-          "$0.15/Wh (final step)",
-          "No — closed 12/30/2025"
+          "Small Residential Storage; RSSE Ratepayer; Equity Resiliency",
+          "CSE, SCE, SCG, PG&E",
+          "Closed"
         ],
         [
-          "Large-Scale Storage (General Market)",
-          "Ratepayer",
-          "Closed, Step 5 of 5",
-          "Step-down, same mechanism",
-          "$0.25/Wh ($0.18/Wh with ITC)",
-          "No"
+          "RSSE — AB 209",
+          "CSE, SCG, LADWP",
+          "Waitlist"
         ],
         [
-          "Equity Resiliency",
-          "Ratepayer",
-          "Closed, Step 5",
-          "Flat rate, not step-down",
-          "$1.00/Wh",
-          "No"
+          "RSSE — AB 209 POU",
+          "SCE, PG&E",
+          "Open"
         ],
         [
-          "Non-Residential Storage Equity",
-          "Ratepayer",
-          "Closed, Step 5",
-          "Flat rate",
-          "$0.85/Wh",
-          "No"
-        ],
-        [
-          "Residential Solar and Storage Equity - Ratepayer",
-          "Ratepayer",
-          "Closed, Step 6",
-          "Flat rate",
-          "$1.10/Wh",
-          "No"
-        ],
-        [
-          "Residential Solar and Storage Equity (RSSE / AB 209)",
-          "Cap-and-trade (GGRF)",
-          "Waitlist, Step 6",
-          "Flat rate",
-          "Solar $3.10/W + Storage $1.10/Wh",
-          "Yes, through 6/30/2028"
-        ],
-        [
-          "San Joaquin Valley Residential",
-          "Ratepayer",
-          "Closed (legacy)",
-          "Flat rate",
-          "$1.10/Wh",
-          "No"
+          "RSSE — AB 209 Non-POU",
+          "SCE, PG&E",
+          "Waitlist"
         ]
       ]
     },
-    "whenThisIsWrong": "This page is not for you if you're expecting to reserve an Equity Resiliency or General Market storage rebate today: that door has been shut since December 30, 2025, and nothing in current CPUC decisions reopens it. If your household doesn't meet RSSE's income-based Equity Budget test, CARE/FERA enrollment or the equivalent, the flat $3.10/W and $1.10/Wh RSSE rate isn't available to you either, and there's currently no general-market storage rebate to fall back on. If you already had a project sitting in RRF Waitlist status as of December 31, 2025, that reservation was cancelled outright, not carried forward; don't plan around it. If you need an extension on an existing reservation, any request filed after December 4, 2025 is denied under Decision 25-12-003. And if your utility is a publicly owned utility other than LADWP (SMUD, MID, Anaheim, Roseville, Lodi, Imperial ID, Turlock ID), SGIP's CPUC-administered budgets, including RSSE, generally don't apply to you the way they do to IOU customers; check with your own utility rather than assuming these figures transfer.",
+    "whenThisIsWrong": "Pause if the purchase only works financially with an unapproved rebate, the provider cannot name the budget, or the contract requires payment before you understand the funding risk. Ask for a revised proposal. If the main purpose is reliable backup, have the actual loads and outage design reviewed before comparing the incentive amount.",
     "faqs": [
       {
-        "question": "Is the SGIP battery rebate still available in California in 2026?",
-        "answer": "Not the version most people mean. Every ratepayer-funded SGIP storage budget, General Market, Equity, Equity Resiliency, and Non-Residential Storage Equity, closed to new applications on December 30, 2025, per the 2026 SGIP Handbook and CPUC Decision 25-12-003. The live step tracker at selfgenca.com showed all of them as Closed as of September 5, 2026. The one budget still open is Residential Solar and Storage Equity under Assembly Bill 209, a cap-and-trade-funded program with its own income test, separate from the ratepayer tiers."
+        "question": "Is SGIP open to every California homeowner?",
+        "answer": "No statewide open status establishes household eligibility. Identify the applicable budget and administrator, check the live status and get the project requirements confirmed. The snapshot above includes open, waitlisted and closed categories."
       },
       {
-        "question": "What happened to the Equity Resiliency tier specifically?",
-        "answer": "It closed statewide at Step 5 on December 30, 2025, along with every other ratepayer SGIP storage budget. The tracker shows it has sat closed for 564-plus days in its final step across PG&E, SCE, SoCalGas, and CSE territory. The legal basis is CPUC Decision 25-12-003, which wound down activity tied to ratepayer collections that Senate Bill 700 only authorized through the 2024 program year. No successor ratepayer-funded resiliency tier has been announced as of this writing."
+        "question": "Can CRR approve an SGIP application?",
+        "answer": "No. California Rate Relief is a private solar referral service. The optional inquiry below collects project information for a referral. Submit an incentive application through the applicable program process."
       },
       {
-        "question": "Does being enrolled in CARE or FERA automatically qualify me for a battery rebate?",
-        "answer": "No. CARE or FERA enrollment is an income-verification shortcut for the underlying Equity Budget test, which is one route into RSSE eligibility and into Criteria 2 of the old Equity Resiliency test. It was never, by itself, enough for Equity Resiliency, which also required a separate resiliency showing (HFTD Tier 2/3, repeated PSPS shutoffs, or PG&E's EPSS threshold). Since Equity Resiliency is closed anyway, CARE/FERA households today should check RSSE eligibility directly rather than assuming automatic qualification."
+        "question": "How much should I deduct from a battery quote?",
+        "answer": "Keep the full price in the base comparison. List a requested incentive separately until its amount, recipient, conditions and payment timing have been confirmed for the project. This page does not estimate an award."
       },
       {
-        "question": "How much does the AB 209 Residential Solar and Storage Equity rebate pay?",
-        "answer": "A flat $3.10 per watt for the solar portion and $1.10 per watt-hour for the storage portion, per CPUC Decision 24-03-071 and the 2026 SGIP Handbook. Unlike the old General Market storage budgets, this rate does not step down as funds are drawn. It does require the project to pair solar with storage, which was not a requirement under the now-closed Equity Resiliency tier."
-      },
-      {
-        "question": "How long does it take to get an RSSE reservation approved and paid?",
-        "answer": "Most residential projects are two-step applications: a Confirmed Reservation Letter issues with a 12-month expiration window in which to complete installation and file the Incentive Claim Form; larger projects get an 18-month Conditional Reservation window with an added milestone step. Deficiency responses are due in 15 or 30 calendar days depending on the form. As of this writing, the Program Administrators have not published a fixed review turnaround for a completed claim form, so no specific number of days can be quoted for that final stage; expect the process to take longer than the reservation approval alone."
-      },
-      {
-        "question": "I already have an SGIP reservation from before the shutdown. Does it still count?",
-        "answer": "Confirmed and Conditional Reservation Letters issued before the December 2025 cutoff continue to be processed on their existing 12- or 18-month timeline, and the small remaining fund balances shown on the tracker reflect that backlog rather than open new capacity. But any project still sitting in RRF Waitlist status as of December 31, 2025 was cancelled outright, and no reservation extension or performance-based-incentive request filed after December 4, 2025 will be approved under Decision 25-12-003."
-      },
-      {
-        "question": "Will California re-fund the ratepayer SGIP storage budgets?",
-        "answer": "As of this writing, no CPUC decision or legislative proposal reopening the ratepayer-funded storage budgets has been identified. That is not the same as a guarantee it will never happen, but nothing currently on the books restores Equity Resiliency, General Market, or Non-Residential Storage Equity funding. The only funded, open storage-related path right now is the cap-and-trade-backed RSSE budget under AB 209."
+        "question": "What should I bring to a provider conversation?",
+        "answer": "Bring the utility bill, service address, proposed equipment and itemized price, plus any application or reservation reference already issued. Ask for the current document checklist before sending household eligibility records."
       }
     ],
-    "bottomLine": "Bottom line: if you're picturing a $1.00/Wh Equity Resiliency rebate, that door closed December 30, 2025, and the CPUC has identified no funding source to reopen it. The one live option is AB 209's Residential Solar and Storage Equity budget, which actually pays more ($3.10/W solar, $1.10/Wh storage) but requires pairing solar with storage, income qualification, and patience for a waitlist that could take months to clear depending on your utility territory. If you already hold a Confirmed or Conditional Reservation Letter from before the cutoff, keep working your existing 12- or 18-month clock; don't file for an extension after December 4, 2025, it will be denied. Everyone else should get an income eligibility check before assuming any number applies to their project, and should treat a battery purchase decision on NEM 3.0 export rates and 48E third-party-owned financing as the more durable analysis, since SGIP is now a narrow, means-tested program rather than a broad rebate anyone can apply for.",
+    "bottomLine": "Get the right budget identified, confirm the application status and compare the purchase without an assumed incentive. Then decide whether the equipment and payment obligations fit the home.",
     "sources": [
       {
-        "name": "SelfGenCA Program Metrics (live Incentive Step Tracker)",
-        "url": "https://www.selfgenca.com/home/program_metrics",
-        "supports": "Step status (Closed/Waitlist) for every SGIP storage budget across all Program Administrators, as of 9/5/2026"
+        "name": "SelfGenCA official program metrics",
+        "url": "https://www.selfgenca.com/home/program_metrics/",
+        "supports": "Named budget categories and administrator status columns dated September 10, 2026."
       },
       {
-        "name": "2026 SGIP Handbook, Version 3",
-        "url": "https://www.selfgenca.com/documents/handbook/2026",
-        "supports": "December 30, 2025 application deadline, step-down rate table, eligibility criteria (Sections 3.2, 4.1, 4.2), reservation timelines and cure periods including the non-residential-only application fee (Section 4.5.1) and the three-plus-four extension structure (Extensions and Exceptions, p.20-21), equipment requirements (Section 6.2.4)"
+        "name": "CPUC Self-Generation Incentive Program",
+        "url": "https://www.cpuc.ca.gov/sgip",
+        "supports": "Program overview, administrator contacts, current handbook and application resources. Checked September 10, 2026."
       },
       {
-        "name": "SelfGenCA Statewide Announcements",
-        "url": "https://www.selfgenca.com/home/about",
-        "supports": "July 23, 2026 RSSE documentation-simplification announcement; ongoing program administration through 2026"
-      },
-      {
-        "name": "SGIP Equity Resiliency Eligibility Matrix, Residential Customers, v3 (10/29/2020)",
-        "url": "https://www.selfgenca.com/documents/handbook/res_matrix",
-        "supports": "Historical/definitional cross-check of Equity Resiliency criteria, superseded on specifics by the 2026 Handbook"
-      },
-      {
-        "name": "CPUC Self-Generation Incentive Program page",
-        "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
-        "supports": "AB 209 $280 million GGRF allocation and per-Program-Administrator breakdown, Decision 24-03-071 (3/22/2024)"
-      },
-      {
-        "name": "Center for Sustainable Energy - SGIP program page",
-        "url": "https://energycenter.org/program/self-generation-incentive-program",
-        "supports": "CSE's role as SDG&E-territory Program Administrator; historical program totals ($284M awarded, 195 MW installed, 9,706 storage projects)"
+        "name": "CPUC solar consumer guide",
+        "url": "https://www.cpuc.ca.gov/solarguide/",
+        "supports": "Contract and financing comparison questions. Checked September 10, 2026."
       }
     ],
-    "reviewedAt": "2026-09-05"
+    "reviewedAt": "2026-09-10"
   },
   {
     "slug": "tesla-powerwall-3-cost-california",

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { Loader2, RefreshCw } from 'lucide-react';
+import { GrowthReceiptPanel } from '@/components/growth/GrowthReceiptPanel';
 import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { Button } from '@/components/ui/button';
@@ -162,6 +163,7 @@ export default function ReferralsPage() {
     <ProtectedRoute>
       <DashboardLayout>
         <div className='space-y-6'>
+          <GrowthReceiptPanel />
           <div className='flex items-center justify-between'>
             <div>
               <h1 className='text-2xl font-bold'>Referral outcomes</h1>

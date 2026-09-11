@@ -1,6 +1,6 @@
 const intakeService = require('../services/intake.service');
 const crypto = require('crypto');
-const { cleanJourney } = require('../lib/lead-journey');
+const { cleanJourney, cleanPublicPath } = require('../lib/lead-journey');
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -27,7 +27,7 @@ function cleanObject(input, allowed, max = 255) {
   for (const key of allowed) {
     const value = input[key];
     if (typeof value === 'boolean' || typeof value === 'number') output[key] = value;
-    else {
+    else if (typeof value === 'string') {
       const cleaned = text(value, max);
       if (cleaned !== null) output[key] = cleaned;
     }
@@ -42,7 +42,7 @@ function normalizeUtility(value, allowOtherLabel = false) {
   const known = {
     pge: 'PG&E', pacificgasandelectric: 'PG&E', sce: 'SCE', southerncaliforniaedison: 'SCE',
     sdge: 'SDG&E', sandiegogasandelectric: 'SDG&E', ladwp: 'LADWP',
-    losangelesdepartmentofwaterandpower: 'LADWP', mvu: 'MVU', morenovalleyutility: 'MVU', other: 'Other',
+    losangelesdepartmentofwaterandpower: 'LADWP', smud: 'SMUD', mvu: 'MVU', morenovalleyutility: 'MVU', other: 'Other',
   };
   if (known[key]) return { canonical: known[key] };
   return allowOtherLabel ? { canonical: 'Other', other: raw } : null;
@@ -63,7 +63,7 @@ function legacyBill(value) {
 }
 
 function validate(body) {
-  const submissionId = text(body?.submission_id, 36);
+  const submissionId = typeof body?.submission_id === 'string' ? body.submission_id.trim() : null;
   const segment = text(body?.segment, 20);
   const contact = body?.contact || {};
   const phone = normalizePhone(contact.phone);
@@ -78,7 +78,10 @@ function validate(body) {
   // utility_provider and never replaces it: the visitor's answer and the seed
   // table's answer must both survive so a mismatch is a reviewable signal.
   const location = ['city', 'zip', 'service_zip', 'county', 'derived_utility', 'derived_cca', 'derived_county', 'derived_from', 'derived_utility_matches_selection'];
-  const residential = ['utility_provider', 'bill_amount', 'monthly_bill_range', 'credit_score', 'homeowner', ...location];
+  const residential = ['utility_provider', 'bill_amount', 'monthly_bill_range', 'credit_score', 'homeowner',
+    'calculator_version', 'calculator_monthly_bill', 'calculator_annual_kwh', 'calculator_system_kw', 'calculator_cash_price',
+    'calculator_annual_bill_after', 'calculator_annual_difference', 'calculator_simple_payback',
+    'calculator_solar_only_price', 'calculator_battery_price', 'inquiry_topic', ...location];
   const commercial = ['company_name', 'property_type', 'property_control', 'location', 'utility_provider', 'bill_amount', 'monthly_bill_range', 'demand_indicator', 'project_timeline', ...location];
   const qualification = cleanObject(body.qualification_data, segment === 'residential' ? residential : commercial, 200);
   // `service_zip` is canonical; `zip` is accepted as an alias and folded into it.
@@ -96,22 +99,53 @@ function validate(body) {
   qualification.utility_provider = utility.canonical;
   if (utility.other) qualification.utility_provider_other = utility.other;
   if (segment === 'residential') {
-    const credit = normalizeCredit(qualification.credit_score);
+    const credit = qualification.credit_score == null ? 'unsure' : normalizeCredit(qualification.credit_score);
     if (!credit) return { error: 'qualification_data.credit_score is invalid' };
     qualification.credit_score = credit;
   }
   if (qualification.bill_amount != null) {
     const bill = Number(qualification.bill_amount);
     if (!Number.isFinite(bill) || bill < 0 || bill > 10000000) return { error: 'qualification_data.bill_amount is invalid' };
+    if (qualification.calculator_version === 'quote-input-v2') qualification.calculator_monthly_bill = bill;
     qualification.bill_amount = Math.round(bill);
+  }
+  if (qualification.calculator_version === 'quote-input-v2') {
+    for (const key of ['calculator_monthly_bill','calculator_annual_kwh','calculator_system_kw','calculator_solar_only_price','calculator_battery_price','calculator_annual_bill_after']) {
+      if (qualification[key] == null) continue;
+      const value=Number(qualification[key]);
+      if (!Number.isFinite(value) || value<0 || value>10000000 || (['calculator_monthly_bill','calculator_annual_kwh','calculator_system_kw'].includes(key) && value===0)) return {error:`qualification_data.${key} is invalid`};
+      qualification[key]=value;
+    }
+    // Recompute simple arithmetic from the entered inputs; client output fields
+    // are not authoritative. Preserve cents alongside the existing integer CRM bill.
+    const cash=qualification.calculator_solar_only_price == null ? null : qualification.calculator_solar_only_price+(qualification.calculator_battery_price || 0);
+    const difference=qualification.calculator_monthly_bill == null || qualification.calculator_annual_bill_after == null ? null : qualification.calculator_monthly_bill*12-qualification.calculator_annual_bill_after;
+    qualification.calculator_cash_price=cash;
+    qualification.calculator_annual_difference=difference;
+    qualification.calculator_simple_payback=cash != null && difference != null && difference>0 ? cash/difference : null;
   }
 
   const attribution = cleanObject(body.attribution, [
-    'source', 'gclid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
-    'landing_page', 'landing_city_slug', 'landing_page_type', 'submitted_from', 'referrer', 'ga_client_id', 'captured_at'
+    'source', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+    'landing_page', 'landing_city_slug', 'landing_page_type', 'submitted_from', 'referrer', 'ga_client_id', 'captured_at',
+    'acquisition_source', 'acquisition_medium', 'organic_landing_page'
   ], 500);
   const journey = cleanJourney(body.attribution?.journey);
   if (journey) attribution.journey = journey;
+  for (const key of ['landing_page', 'submitted_from', 'organic_landing_page']) {
+    const path = cleanPublicPath(attribution[key]);
+    if (!path) delete attribution[key];
+    else attribution[key] = path;
+  }
+  if (attribution.referrer) {
+    try {
+      const raw = String(attribution.referrer);
+      const url = new URL(/^https?:\/\//i.test(raw) ? raw : `https://${raw}`);
+      if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password || !url.hostname.includes('.')) throw new Error('Invalid referrer');
+      attribution.referrer = url.hostname.toLowerCase();
+    } catch { delete attribution.referrer; }
+  }
+  if (!Number.isFinite(Date.parse(attribution.captured_at))) delete attribution.captured_at;
   const consentStatus = text(body.consent?.status, 20) || 'pending';
   if (!['pending', 'opted_in', 'opted_out'].includes(consentStatus)) return { error: 'consent.status is invalid' };
   const consentTimestamp = body.consent?.timestamp && Number.isFinite(Date.parse(body.consent.timestamp))
@@ -135,6 +169,9 @@ async function createIntake(req, res, next) {
       lead_id: result.lead_id,
       segment: result.segment,
       status: 'received',
+      storage_status: 'stored',
+      owner_notification_status: 'unknown',
+      receipt_status: 'unknown',
       duplicate: result.replayed,
     });
   } catch (error) { return next(error); }
@@ -165,10 +202,11 @@ async function createLegacyIntake(req, res, next) {
       credit_score: body.credit_score,
     },
     attribution: Object.fromEntries([
-      'source','gclid','fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term',
+      'source','gclid','gbraid','wbraid','msclkid','fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term',
       'landing_page','landing_city_slug','landing_page_type','submitted_from','referrer','ga_client_id'
     ].map(key => [key, body[key]]).filter(([, value]) => value != null)),
     consent: { status: 'pending' },
+    test: body.test === true,
   };
   const validated = validate(translated);
   if (validated.error) return res.apiResponse(400, validated.error);

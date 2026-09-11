@@ -14,6 +14,21 @@ const residential = {
 };
 
 describe('public intake controller', () => {
+  test('drops private paths, strips referrer secrets, and rejects UUID suffixes', () => {
+    const result = controller.validate({...residential,attribution:{landing_page:'/dashboard/customer',organic_landing_page:'/blog/pge?email=secret@example.invalid',submitted_from:'/api/private',referrer:'https://www.google.com/search?q=private',utm_source:{email:'private'}}});
+    expect(result.value.attribution).toEqual({organic_landing_page:'/blog/pge',referrer:'www.google.com'});
+    expect(controller.validate({...residential,submission_id:residential.submission_id+'suffix'}).error).toMatch(/UUID/);
+  });
+  test('legacy intake preserves synthetic exclusion and every paid search identifier', async () => {
+    service.createSubmission.mockResolvedValue({submission_id:residential.submission_id,lead_id:'lead',replayed:false});
+    await controller.createLegacyIntake({body:{name:'Test',phone:'9515550187',utility_provider:'SCE',test:true,gbraid:'paid-b',wbraid:'paid-w',msclkid:'paid-m'}},response(),jest.fn());
+    expect(service.createSubmission).toHaveBeenCalledWith(expect.objectContaining({is_test:true,attribution:expect.objectContaining({gbraid:'paid-b',wbraid:'paid-w',msclkid:'paid-m'})}));
+  });
+  test('preserves entered bill cents and recomputes calculator outputs instead of trusting submitted savings', () => {
+    const result=controller.validate({...residential,qualification_data:{...residential.qualification_data,bill_amount:300.25,calculator_version:'quote-input-v2',calculator_solar_only_price:18000,calculator_battery_price:0,calculator_annual_bill_after:1200,calculator_annual_difference:999999,calculator_simple_payback:0.1}});
+    const q=result.value.qualification_data;expect(q.bill_amount).toBe(300);expect(q.calculator_monthly_bill).toBe(300.25);expect(q.calculator_annual_difference).toBe(2403);expect(q.calculator_cash_price).toBe(18000);expect(q.calculator_simple_payback).toBeCloseTo(18000/2403);
+    expect(controller.validate({...residential,qualification_data:{...residential.qualification_data,calculator_version:'quote-input-v2',calculator_system_kw:'not a number'}}).error).toMatch(/calculator_system_kw/);
+  });
   test('persists only a bounded sanitized page journey, retaining existing attribution', () => {
     const result = controller.validate({ ...residential, attribution: {
       ...residential.attribution, utm_source: 'google', journey: { version: 1, scope: 'browser_tab', pages: [

@@ -1,3 +1,4 @@
+import { SgipStatusNote } from '@/components/growth/SgipStatusNote';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -23,6 +24,7 @@ export default function DoSolarWorkDuringOutage() {
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
+            <SgipStatusNote/>
             <nav className='mb-8'><Link href='/blog' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Blog</Link></nav>
 
             <header className='mb-10'>

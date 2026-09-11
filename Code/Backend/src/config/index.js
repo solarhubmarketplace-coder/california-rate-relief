@@ -69,8 +69,8 @@ module.exports = {
     FRONTEND_URL: getEnv('FRONTEND_URL', 'http://localhost:3000'),
 
     // Queue Configuration (all in seconds)
-    QUEUE_SMS_ENABLED: getEnv('QUEUE_SMS_ENABLED', 'true'),
-    QUEUE_VOICE_ENABLED: getEnv('QUEUE_VOICE_ENABLED', 'true'),
+    QUEUE_SMS_ENABLED: getEnv('QUEUE_SMS_ENABLED', 'false'),
+    QUEUE_VOICE_ENABLED: getEnv('QUEUE_VOICE_ENABLED', 'false'),
     QUEUE_EMAIL_DELAY: parseInt(getEnv('QUEUE_EMAIL_DELAY', '60'), 10),
     QUEUE_SMS_DELAY: parseInt(getEnv('QUEUE_SMS_DELAY', '30'), 10),
     QUEUE_VOICE_DELAY: parseInt(getEnv('QUEUE_VOICE_DELAY', '60'), 10),

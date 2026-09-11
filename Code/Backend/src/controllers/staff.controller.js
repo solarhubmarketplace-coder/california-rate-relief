@@ -3,6 +3,18 @@ const staffService = require('../services/staff.service');
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const allowed = ['partner_name', 'forwarded_at', 'partner_qualified', 'qualification_reason', 'partner_contacted_at', 'appointment_at', 'sale_at', 'lost_at', 'partner_reference'];
 
+async function growthScorecard(req,res,next) {
+  const {from,to}=req.query;
+  if (!from||!to||!Number.isFinite(Date.parse(from))||!Number.isFinite(Date.parse(to))||Date.parse(to)<=Date.parse(from)) return res.apiResponse(400,'An explicit valid from/to interval is required');
+  try {return res.apiResponse(200,'Organic storage and receipt counts',await staffService.growthScorecard(from,to));} catch(error){return next(error);}
+}
+async function recordReceipt(req,res,next) {
+  const reference=typeof req.body?.evidence_reference==='string'?req.body.evidence_reference.trim():'';
+  const receiptAt=req.body?.receipt_at;
+  if(!UUID.test(req.params.id||'')||reference.length<3||reference.length>300||!Number.isFinite(Date.parse(receiptAt))||Date.parse(receiptAt)>Date.now()) return res.apiResponse(400,'Submission ID, inbox evidence reference and past receipt time are required');
+  try{return res.apiResponse(201,'Inbox receipt evidence recorded',await staffService.recordReceipt(req.params.id,{evidence_reference:reference,receipt_at:new Date(receiptAt).toISOString()},req.staffUser));}catch(error){return next(error);}
+}
+
 function pickOutcome(body) {
   const value = {};
   for (const key of allowed) if (Object.prototype.hasOwnProperty.call(body || {}, key)) value[key] = body[key] === '' ? null : body[key];
@@ -60,4 +72,4 @@ async function reconcileOwnerNotification(req, res, next) {
   catch (error) { return next(error); }
 }
 
-module.exports = { recordReferral, updateReferral, listReferrals, getScorecard, listSubmissions, classifySubmission, listOwnerNotifications, reconcileOwnerNotification, pickOutcome, validateOutcome };
+module.exports = { growthScorecard, recordReceipt, recordReferral, updateReferral, listReferrals, getScorecard, listSubmissions, classifySubmission, listOwnerNotifications, reconcileOwnerNotification, pickOutcome, validateOutcome };

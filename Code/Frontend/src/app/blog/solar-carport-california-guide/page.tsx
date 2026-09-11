@@ -1,3 +1,4 @@
+import { SgipStatusNote } from '@/components/growth/SgipStatusNote';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -31,6 +32,7 @@ export default function SolarCarportCAGuide() {
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
+            <SgipStatusNote/>
             <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
               <Link href="/" className="hover:text-primary">Home</Link>
               <span>/</span>
@@ -157,7 +159,7 @@ export default function SolarCarportCAGuide() {
               <div className="space-y-6">
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Does the 30% federal tax credit apply to solar carports?</h3>
-                  <p className="text-foreground/80">Not any more. The Residential Clean Energy Credit (IRC Section 25D) once covered the full qualified cost of a solar carport, canopy included where the structure was integral to the PV system. Public Law 119-21 ended it for expenditures made after December 31, 2025. If you paid for your carport in 2025 or earlier, work with a tax professional on what portion qualifies. If you are buying in 2026, there is no federal credit to claim — a third-party owner on a lease or PPA may still claim the commercial credit under IRC § 48E, but that is their credit, not yours.</p>
+                  <p className="text-foreground/80">Section 25D does not cover expenditures made after December 31, 2025. Its expenditure-timing rule generally uses original installation completion, with a separate original-use rule for construction or reconstruction of a structure. Payment alone does not determine eligibility. Ask your tax preparer about the actual project scope, expenditure year and any valid prior-year carryforward. A third-party owner&apos;s potential business credit does not establish a homeowner credit or savings. <a href="https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A25D+edition%3Aprelim%29" className="underline">26 U.S.C. § 25D(c), (e)(8), (h), checked September 10, 2026</a>.</p>
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Can I add a battery to a solar carport?</h3>

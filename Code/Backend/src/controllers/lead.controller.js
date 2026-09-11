@@ -58,8 +58,8 @@ const ingestLead = async (req, res, next) => {
             utm_term,
             ga_client_id
         });
-        if (lead._retriggered) {
-            return res.apiResponse(200, 'Lead already exists — call re-triggered', lead);
+        if (lead.duplicate) {
+            return res.apiResponse(200, 'Existing lead updated', lead);
         }
         return res.apiResponse(201, 'Lead created successfully', lead);
     } catch (error) {

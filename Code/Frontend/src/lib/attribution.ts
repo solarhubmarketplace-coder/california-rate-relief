@@ -1,6 +1,6 @@
 /** CRR first touch in this browser tab, captured before a visitor reaches a form. */
 const KEY = 'crr_first_touch_v1';
-const TRACKING_KEYS = ['gclid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as const;
+const TRACKING_KEYS = ['gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as const;
 export type TrackingParams = Record<typeof TRACKING_KEYS[number], string | null>;
 
 export interface FirstTouch extends TrackingParams {
@@ -112,12 +112,35 @@ export function captureFirstTouch(): FirstTouch | null {
 
 export function deriveLeadSource(touch: FirstTouch | null): string {
   if (!touch) return 'unknown';
-  if (touch.gclid) return 'google_ads';
+  if (touch.gclid || touch.gbraid || touch.wbraid) return 'google_ads';
+  if (touch.msclkid) return 'bing_ads';
   if (touch.utm_source) return touch.utm_source;
   if (touch.fbclid) return 'facebook';
   if (!touch.referrer) return 'direct';
   if (/^(?:www\.)?google\.(?:com|ca|co\.uk|com\.au|de|fr|co\.in)$/.test(touch.referrer)) return 'organic_google';
   return 'referral_' + touch.referrer;
+}
+
+/** Observed acquisition, never inferred from a click or an untagged direct visit. */
+export function acquisition(touch: FirstTouch | null): { source: string; medium: string } {
+  if (!touch) return { source: 'unknown', medium: 'unknown' };
+  if (touch.gclid || touch.gbraid || touch.wbraid) return { source: 'google', medium: 'cpc' };
+  if (touch.msclkid) return { source: 'bing', medium: 'cpc' };
+  if (touch.utm_medium?.toLowerCase() === 'organic') {
+    const source = touch.utm_source?.toLowerCase() || 'unknown';
+    return {source, medium: ['google','bing','duckduckgo','yahoo'].includes(source) ? 'organic' : source === 'unknown' ? 'unknown' : 'organic_other'};
+  }
+  if (touch.utm_medium) return { source: touch.utm_source || 'unknown', medium: touch.utm_medium.toLowerCase() };
+  if (touch.utm_source || touch.fbclid) return { source: touch.utm_source || 'facebook', medium: 'unknown' };
+  const referrer = touch.referrer || '';
+  const engines: [RegExp, string][] = [
+    [/^(www\.)?google\.(com|ca|co\.uk|com\.au|de|fr|co\.in)$/, 'google'],
+    [/^(www\.)?bing\.com$/, 'bing'], [/^(www\.)?duckduckgo\.com$/, 'duckduckgo'],
+    [/^(search\.)?yahoo\.com$/, 'yahoo'],
+  ];
+  const engine = engines.find(([pattern]) => pattern.test(referrer));
+  if (engine) return { source: engine[1], medium: 'organic' };
+  return referrer ? { source: referrer, medium: 'referral' } : { source: 'direct', medium: 'unknown' };
 }
 
 export function gaClientId(): string | null {

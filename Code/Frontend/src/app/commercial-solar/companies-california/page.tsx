@@ -1,237 +1,216 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock, CheckCircle2, AlertTriangle } from 'lucide-react';
-import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
-import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+// Reviewed local replacement. Original company claims remain at base e605685.
+import type { Metadata } from "next";
+import Link from "next/link";
+import { DecisionPage } from "@/components/growth/DecisionPage";
+import { CommercialAssessmentForm } from "@/components/landing/CommercialAssessmentForm";
 
+const title =
+  "Commercial solar companies in California: compare the project scope";
+const description =
+  "Compare California commercial solar proposals by tariff, demand charges, roof or carport scope, interconnection and service. Send a business project inquiry.";
+const path = "/commercial-solar/companies-california";
+const link = "text-emerald-800 underline underline-offset-2";
+const businessRates =
+  "https://www.sce.com/business/rates-financing/rate-plans/business-time-of-use-rate-plans";
 export const metadata: Metadata = {
-  title: "Commercial Solar Companies in California (2026)",
-  description:
-    "The top California commercial solar EPCs compared for 2026 - SOLV, Baker Electric, REC Solar, Cenergy and more, on systems, financing and real projects.",
-  alternates: { canonical: '/commercial-solar/companies-california' },
+  title,
+  description,
+  alternates: { canonical: path },
   openGraph: {
-    title: 'Commercial Solar Companies in California 2026: Top EPCs Compared',
-    description: 'Top California commercial solar EPCs compared for 2026.',
-    type: 'article',
-    publishedTime: '2026-04-23T00:00:00Z',
+    title,
+    description,
+    type: "article",
+    url: `https://ratereliefca.com${path}`,
   },
 };
-
-const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: 'Commercial Solar Companies in California 2026: Top EPCs Compared',
-  datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/commercial-solar/companies-california' },
-};
-
-interface EPC {
-  name: string;
-  ownership: string;
-  focus: string;
-  systems: string;
-  financing: string;
-  notable: string;
-  strength: string;
-  watchOut: string;
-}
-
-const epcs: EPC[] = [
-  {
-    name: 'SOLV Energy',
-    ownership: 'Private (PE-backed)',
-    focus: 'Major EPC; utility-scale + active C&I',
-    systems: '500 kW to multi-MW',
-    financing: 'EPC-focused; partners on PPA and CPACE',
-    notable: '1.1+ GW total CA installs in 2024 data; large C&I and community solar projects 2024-2026',
-    strength: 'Deep EPC bench, large-project execution capability, strong utility-scale experience that informs commercial work',
-    watchOut: 'Primarily utility-scale — mid-market C&I may be a smaller priority than their largest accounts',
-  },
-  {
-    name: 'Baker Electric Solar (Commercial Division)',
-    ownership: 'Private',
-    focus: 'C&I rooftop and carport specialist',
-    systems: '100 kW to MW+',
-    financing: 'Direct sale, PPA, and lease partnerships',
-    notable: '66,000+ kW of California installs; rooftop and carport portfolio',
-    strength: 'California-based with long local track record; strong relationships with CA utilities for interconnection',
-    watchOut: 'Smaller footprint than SOLV; ideal for mid-market rather than multi-MW campus projects',
-  },
-  {
-    name: 'REC Solar',
-    ownership: 'Private (historically Duke Energy subsidiary; now independent IPP focus)',
-    focus: 'Developer/IPP; C&I and community solar',
-    systems: 'Mid to large',
-    financing: 'Owns/operates assets; PPA model dominant',
-    notable: '4,700+ kW of CA installs listed; 700+ projects nationally',
-    strength: 'Developer/operator model means they can carry the system as their asset — good fit for PPA-hungry commercial buyers',
-    watchOut: 'Less relevant if you want direct ownership; PPA-heavy structure',
-  },
-  {
-    name: 'Cenergy Power',
-    ownership: 'Private, California-based',
-    focus: 'Commercial and agricultural EPC',
-    systems: 'Mid to large',
-    financing: 'Direct sale, PPA, CPACE',
-    notable: '450+ MW cumulative; multiple CA agricultural and commercial projects 2024-2025',
-    strength: 'CA-native with strong agricultural focus — worth evaluating if your property is in the Central Valley or agricultural corridors',
-    watchOut: 'Lower national visibility than SOLV/Baker; local-CA focus is both an advantage and a limit',
-  },
-  {
-    name: 'M Bar C Construction',
-    ownership: 'Private',
-    focus: 'Carport and parking-structure specialist',
-    systems: 'Parking-lot solar canopies, typically 500 kW to multi-MW',
-    financing: 'EPC / subcontractor structure',
-    notable: '#1 commercial-only installer in California per Solar Power World; 15 MW Viejas Casino carport; Six Flags carport 2024-2025',
-    strength: 'Unmatched specialization in carports/canopies — if you have parking to cover, they are the benchmark',
-    watchOut: 'Not a fit for rooftop-only or non-parking-lot commercial projects',
-  },
-];
 
 export default function CommercialSolarCompanies() {
   return (
-    <PublicLayout>
-      <Header />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <main className='py-16 bg-background'>
-        <div className='container mx-auto px-4'>
-          <article className='max-w-4xl mx-auto'>
-            <nav className='mb-8 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
-              <Link href='/' className='hover:text-primary transition-colors'>Home</Link>
-              <span>/</span>
-              <Link href='/commercial-solar' className='hover:text-primary transition-colors'>Commercial Solar</Link>
-              <span>/</span>
-              <span className='text-foreground font-medium'>California EPCs</span>
-            </nav>
-
-            <header className='mb-10'>
-              <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Commercial Solar California</span>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Commercial Solar Companies in California 2026: Top EPCs Compared</h1>
-              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-23'>April 23, 2026</time></div>
-                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>9 min read</span></div>
-              </div>
-            </header>
-
-            <div className='prose prose-slate max-w-none mb-10'>
-              <p className='text-lg text-foreground/80 leading-relaxed'>
-                California commercial solar — 915 MWdc installed in 2025, growing 28% year-over-year — is concentrated among a handful of EPCs and developers that handle most of the state&apos;s non-residential projects. This guide profiles the five most prominent commercial-focused players per Solar Power World&apos;s 2025 Top California Contractors List, plus notes on financing partners (CleanCapital, Borrego/New Leaf Energy) that shape the market. All data is cross-referenced against SPW, company filings, and industry reporting.
-              </p>
-            </div>
-
-            {/* Individual EPC cards */}
-            <section className='space-y-6 mb-12'>
-              {epcs.map((e, idx) => (
-                <div key={e.name} className='p-6 rounded-xl border border-border bg-card'>
-                  <div className='flex items-start justify-between gap-4 mb-4'>
-                    <div>
-                      <div className='text-xs font-bold text-primary uppercase tracking-wide mb-1'>#{idx + 1}</div>
-                      <h2 className='text-2xl font-bold text-foreground tracking-tight'>{e.name}</h2>
-                      <p className='text-sm text-muted-foreground mt-1'>{e.ownership}</p>
-                    </div>
-                  </div>
-
-                  <div className='grid sm:grid-cols-2 gap-3 mb-4 text-sm'>
-                    <div>
-                      <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1'>Focus</p>
-                      <p className='text-foreground/80'>{e.focus}</p>
-                    </div>
-                    <div>
-                      <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1'>Typical systems</p>
-                      <p className='text-foreground/80'>{e.systems}</p>
-                    </div>
-                    <div>
-                      <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1'>Financing</p>
-                      <p className='text-foreground/80'>{e.financing}</p>
-                    </div>
-                    <div>
-                      <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1'>Notable</p>
-                      <p className='text-foreground/80'>{e.notable}</p>
-                    </div>
-                  </div>
-
-                  <div className='grid sm:grid-cols-2 gap-3'>
-                    <div className='flex items-start gap-2'>
-                      <CheckCircle2 className='h-4 w-4 text-green-500 flex-shrink-0 mt-0.5' />
-                      <div>
-                        <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Strength</p>
-                        <p className='text-sm text-foreground/80'>{e.strength}</p>
-                      </div>
-                    </div>
-                    <div className='flex items-start gap-2'>
-                      <AlertTriangle className='h-4 w-4 text-yellow-500 flex-shrink-0 mt-0.5' />
-                      <div>
-                        <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Watch-out</p>
-                        <p className='text-sm text-foreground/80'>{e.watchOut}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    <DecisionPage
+      title={title}
+      intro="A warehouse, a machine shop and an office building can have the same annual electricity use and very different solar economics. Start with how the business uses power. Then compare who can deliver the work."
+      path={path}
+      commercial
+      sources={[
+        {
+          label: "SCE: commercial solar and interconnection resources",
+          url: "https://www.sce.com/business/smart-energy-solar/solar-for-business",
+        },
+        {
+          label: "SCE: business TOU plans and demand charges",
+          url: businessRates,
+        },
+        {
+          label: "CSLB: check a California contractor license",
+          url: "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+        },
+      ]}
+      inquiry={
+        <section id="solar-inquiry" className="my-10 scroll-mt-24">
+          <h2 className="mb-3 text-2xl font-bold">
+            Discuss a California commercial project
+          </h2>
+          <p className="mb-5 text-slate-700">
+            Send the property basics to California Rate Relief. This is a
+            private referral inquiry. Project review, provider availability and
+            a proposal come later.
+          </p>
+          <CommercialAssessmentForm />
+        </section>
+      }
+    >
+      <section id="epc-comparison">
+        <h2>What to compare across commercial solar companies</h2>
+        <p className="mb-4">
+          Ask each bidder to price the same scope. An engineering, procurement
+          and construction contractor may build the project; a developer or
+          financing company may own it. Get the responsible legal entities in
+          writing.
+        </p>
+        <div className="overflow-x-auto rounded-xl border">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">
+              Commercial solar proposal comparison
+            </caption>
+            <thead className="bg-slate-100">
+              <tr>
+                <th className="p-4">Project item</th>
+                <th className="p-4">Evidence to request</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                [
+                  "Relevant work",
+                  "Completed projects with similar roof, operating hours and utility. Request owner references and permission to check them.",
+                ],
+                [
+                  "Contractor and service",
+                  "The exact contracting entity, current license record, insurance, subcontractors, warranty exclusions and who handles a failed system.",
+                ],
+                [
+                  "Electrical and structural scope",
+                  "Service capacity, roof life, structural review, equipment location, roof penetrations and any main-panel or transformer work.",
+                ],
+                [
+                  "Bill model",
+                  "Actual interval data, tariff name, generation provider, energy charges, demand charges and fixed charges.",
+                ],
+                [
+                  "Interconnection",
+                  "Utility application responsibility, studies, upgrade allowances, milestones and permission-to-operate assumptions.",
+                ],
+                [
+                  "Price and financing",
+                  "Solar-only price, storage, carport or roof work, financing costs, operations, insurance, replacement assumptions and end-of-term obligations.",
+                ],
+              ].map(([item, detail]) => (
+                <tr key={item} className="border-t">
+                  <th scope="row" className="p-4 align-top">
+                    {item}
+                  </th>
+                  <td className="p-4">{detail}</td>
+                </tr>
               ))}
-            </section>
-
-            {/* Other market participants */}
-            <section className='mb-12 prose prose-slate max-w-none'>
-              <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>Other California Commercial Solar Market Participants</h2>
-              <p className='text-foreground/80 leading-relaxed mb-4'>
-                Beyond the five EPCs above, a few other players shape the California commercial market:
-              </p>
-              <ul className='space-y-3 text-foreground/80 mb-6'>
-                <li><strong>CleanCapital</strong> — Private financier / IPP that acquires California DG portfolios (27 MW noted in 2025 activity). Not a primary installer, but a common PPA off-taker / portfolio buyer who ultimately owns the system on your roof.</li>
-                <li><strong>Borrego Solar (now New Leaf Energy)</strong> — Borrego spun off its development arm as New Leaf Energy in 2022. ECP-backed. Focuses on distributed generation and commercial development rather than residential.</li>
-                <li><strong>Sunworks, SunPeak, CB&amp;I Solar, GAF Energy</strong> — Lower commercial volume or residential/utility overlap in 2025 SPW data. Not top-tier in commercial-only California installs.</li>
-              </ul>
-              <p className='text-foreground/80 leading-relaxed mb-4'>
-                The commercial solar landscape is less consolidated than residential — fewer household names and more specialist EPCs competing on local relationships, interconnection expertise, and financing partnerships. If you&apos;re shopping commercial solar in California, get quotes from at least three EPCs that actually specialize in commercial (not residential installers with a commercial division), and confirm their familiarity with your utility&apos;s specific interconnection queue and the commercial TOU tariff your property is on.
-              </p>
-            </section>
-
-            {/* Data caveat */}
-            <div className='mb-12 rounded-xl border border-yellow-500/30 bg-yellow-500/5 p-5'>
-              <div className='flex items-start gap-3'>
-                <AlertTriangle className='h-5 w-5 text-yellow-400 flex-shrink-0 mt-0.5' />
-                <div>
-                  <p className='text-sm font-semibold text-foreground mb-2'>Data caveat</p>
-                  <p className='text-sm text-foreground/80 leading-relaxed'>Exact 2025-2026 install volumes, BBB complaint counts, and lawsuit details for every player were not uniformly available in three independent public sources. Profiles here rely on Solar Power World&apos;s 2025 California Contractors List, company websites and press, and PV Magazine USA coverage. No major bankruptcies or restructurings were noted for the five listed firms in 2025-2026.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Related commercial resources */}
-            <section className='mb-12'>
-              <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>Related Commercial Solar Resources</h2>
-              <div className='grid sm:grid-cols-2 gap-3'>
-                <Link href='/commercial-solar/warehouse-solar-california' className='p-4 border border-border rounded-lg hover:border-primary transition-colors'>Warehouse Solar Projects</Link>
-                <Link href='/commercial-solar/multifamily-solar-california' className='p-4 border border-border rounded-lg hover:border-primary transition-colors'>Multifamily Solar Projects</Link>
-                <Link href='/commercial-solar/financing-options' className='p-4 border border-border rounded-lg hover:border-primary transition-colors'><div className='flex items-center justify-between'><span className='font-medium text-foreground'>Commercial Solar Financing Options</span><ArrowRight className='h-4 w-4 text-muted-foreground' /></div></Link>
-                <Link href='/commercial-solar/cost-per-watt-california' className='p-4 border border-border rounded-lg hover:border-primary transition-colors'><div className='flex items-center justify-between'><span className='font-medium text-foreground'>Commercial Solar Cost Per Watt</span><ArrowRight className='h-4 w-4 text-muted-foreground' /></div></Link>
-                <Link href='/commercial-solar/cpace-financing-california' className='p-4 border border-border rounded-lg hover:border-primary transition-colors'><div className='flex items-center justify-between'><span className='font-medium text-foreground'>CPACE Financing in California</span><ArrowRight className='h-4 w-4 text-muted-foreground' /></div></Link>
-                <Link href='/commercial-solar/title-24-requirements' className='p-4 border border-border rounded-lg hover:border-primary transition-colors'><div className='flex items-center justify-between'><span className='font-medium text-foreground'>Title 24 Part 6 Requirements</span><ArrowRight className='h-4 w-4 text-muted-foreground' /></div></Link>
-              </div>
-            </section>
-
-            {/* CTA */}
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Request a Commercial Solar Assessment</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto leading-relaxed'>Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.</p>
-              <Link href='/commercial-assessment' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a Commercial Assessment<ArrowRight className='h-4 w-4' /></Link>
-              <p className='text-xs text-muted-foreground mt-4'>No cost to submit. No obligation. Provider availability and project fit must be confirmed.</p>
-            </div>
-
-            <div className='mt-10'>
-              <Link href='/commercial-solar' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Commercial Solar Hub</Link>
-            </div>
-          </article>
+            </tbody>
+          </table>
         </div>
-      </main>
-      <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><VerifyCommercialSolarBox topic="general" /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
-    </PublicLayout>
+        <p className="mt-4">
+          A company website describes its own offering. It does not establish
+          current license standing, capacity to take your project or the final
+          installed price. Check the contractor before signing.
+        </p>
+      </section>
+      <section id="business-bill">
+        <h2>Compare the business bill, not a residential average</h2>
+        <p>
+          Energy charges measure electricity consumed in kWh. Demand charges can
+          depend on the highest measured kW during a billing period or a
+          specified time window. SCE publishes both facilities-related and
+          time-related demand charges for applicable business tariffs.{" "}
+          <a href={businessRates} className={link}>
+            Source: SCE business TOU plans
+          </a>
+          , checked September 10, 2026.
+        </p>
+        <p className="mt-3">
+          That distinction changes the calculation. A solar array may reduce
+          annual purchases without eliminating the interval that sets a demand
+          charge. Ask for the billing model with solar alone and, separately,
+          with the proposed battery controls. A Los Angeles or San Diego street
+          address does not identify the tariff; confirm the utility account.
+        </p>
+      </section>
+      <section id="manufacturing">
+        <h2>Manufacturing and industrial solar projects</h2>
+        <p>
+          A factory proposal needs an operating schedule. Identify shift
+          changes, weekend production, process heating, compressors,
+          refrigeration and planned equipment additions. Ask whether the model
+          includes startup peaks and shutdown periods.
+        </p>
+        <ul className="mt-4 list-disc space-y-2 pl-6">
+          <li>
+            Separate existing loads from an expansion that has not opened.
+          </li>
+          <li>
+            Document any roof access, ventilation, fire-lane or
+            production-interruption constraints.
+          </li>
+          <li>
+            Define the loads that need backup. Bill savings and outage operation
+            are different requirements.
+          </li>
+          <li>
+            Compare maintenance access and response obligations alongside price.
+          </li>
+        </ul>
+        <p className="mt-4">
+          Use the same project brief for each bid. This checklist is a starting
+          point for engineering review, not a design for your facility.
+        </p>
+      </section>
+      <section id="cost">
+        <h2>Put the cost per watt in context</h2>
+        <p>
+          A price-per-watt comparison needs the same DC system-size denominator
+          and the same included work. Storage, a carport, roof repairs or
+          electrical upgrades can change the total substantially. Keep those
+          lines visible. Start with the{" "}
+          <Link
+            href="/commercial-solar/cost-per-watt-california"
+            className={link}
+          >
+            commercial cost-per-watt guide
+          </Link>
+          , then request itemized proposals.
+        </p>
+      </section>
+      <section>
+        <h2>Get the right project reviewed</h2>
+        <p>
+          Share what you know. An uncertain budget or installation date should
+          not keep you from describing the property. This inquiry does not
+          require a sale, appointment or financing approval.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-5">
+          <Link
+            href="/commercial-solar/warehouse-solar-california"
+            className={link}
+          >
+            Warehouse projects
+          </Link>
+          <Link
+            href="/commercial-solar/multifamily-solar-california"
+            className={link}
+          >
+            Multifamily projects
+          </Link>
+          <Link href="/commercial-assessment" className={link}>
+            Open the commercial form
+          </Link>
+        </div>
+      </section>
+    </DecisionPage>
   );
 }

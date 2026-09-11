@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic';
 import { getAllCitySlugs } from '@/data/cities-data';
 import { ARTICLE_PAGES, articleHref, articlesInCluster } from '@/data/article-pages';
 import { GLP1_INDEX_ROUTES } from '@/lib/glp1-seo-routes';
+import { GROWTH_ROUTES } from '@/lib/growth-routes';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
 // =============================================================================
@@ -23,6 +24,7 @@ const CRR_UPDATED_PAGES = new Set([
 
 function fileMtime(_relPath: string, _fallback: Date): Date {
   const route = _relPath.replace(/^src\/app/, '').replace(/\/page\.[tj]sx?$/, '');
+  if (GROWTH_ROUTES.includes(route) || route === '/blog/why-is-my-pge-bill-so-high') return new Date('2026-09-10T00:00:00.000Z');
   if (CRR_UPDATED_PAGES.has(route)) return new Date('2026-09-09T00:00:00.000Z');
   return SITEMAP_LAST_AUDITED;
 }
@@ -37,6 +39,7 @@ function reviewMtime(slug: string, fallback: Date): Date {
  * runtime filesystem I/O.
  */
 function urlMtime(_urlPath: string, _fallback: Date): Date {
+  if (GROWTH_ROUTES.includes(_urlPath) || _urlPath === '/blog/why-is-my-pge-bill-so-high') return new Date('2026-09-10T00:00:00.000Z');
   if (CRR_UPDATED_PAGES.has(_urlPath)) return new Date('2026-09-09T00:00:00.000Z');
   return SITEMAP_LAST_AUDITED;
 }
@@ -77,6 +80,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   const today = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
+    { url: `${base}/tools/solar-panel-calculator`, lastModified: new Date('2026-09-10T00:00:00.000Z'), changeFrequency:'monthly',priority:0.8 },
     { url: base, lastModified: urlMtime('', today), changeFrequency: 'weekly', priority: 1.0 },
     { url: `${base}/blog`, lastModified: urlMtime('/blog', today), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/best-solar-companies-california`, lastModified: urlMtime('/best-solar-companies-california', today), changeFrequency: 'weekly', priority: 0.9 },
@@ -93,6 +97,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   ];
 
   const blogSlugs = [
+    'sce-time-of-use-rates-2026',
     'pge-time-of-use-rates-2026',
     'sce-rate-increase-2026', 'pge-rate-increase-2026', 'sdge-rate-increase-2026',
     'california-24-dollar-fixed-charge-explained', 'solar-tax-credit-expired-2026-options',
@@ -207,7 +212,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     changeFrequency: 'monthly',
     priority: 0.75,
   }));
-  const cityCompaniesPages: MetadataRoute.Sitemap = getAllCitySlugs().map((slug) => ({
+  const cityCompaniesPages: MetadataRoute.Sitemap = [...new Set([...getAllCitySlugs(), ...GROWTH_ROUTES.filter(route => route.startsWith('/solar-companies/')).map(route => route.split('/').pop()!)])].map((slug) => ({
     url: `${base}/solar-companies/${slug}`,
     lastModified: solarCompaniesRouteMtime,
     changeFrequency: 'monthly',

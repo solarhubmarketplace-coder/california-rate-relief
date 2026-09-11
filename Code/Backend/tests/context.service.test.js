@@ -223,10 +223,11 @@ describe("Context Service", () => {
         leadInfo
       );
 
-      expect(result).toContain("QUALIFICATION DATA FROM FORM");
+      expect(result).toContain("LEAD DATA");
       expect(result).toContain("$250");
       expect(result).toContain("PG&E");
       expect(result).toContain("Above 650");
+      expect(result).toContain("456 Oak Ave");
     });
 
     test("includes objection handling guide", () => {

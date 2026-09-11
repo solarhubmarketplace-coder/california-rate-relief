@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { ArrowRight, AlertTriangle } from 'lucide-react';
 import type { ArticlePage } from '@/data/article-types';
 
@@ -32,9 +33,13 @@ function Paragraphs({ text, className }: { text: string; className?: string }) {
 export function ArticleRenderer({
   page,
   related,
+  inquiryHref,
+  tools,
 }: {
   page: ArticlePage;
   related?: { href: string; title: string }[];
+  inquiryHref?: string;
+  tools?: ReactNode;
 }) {
   return (
     <article className="max-w-3xl mx-auto">
@@ -71,6 +76,7 @@ export function ArticleRenderer({
 
       <div className="prose-content">
         <Paragraphs text={page.intro} className="text-lg text-foreground/85 leading-relaxed mb-5" />
+        {tools}
 
         {page.sections.map((s) => (
           <section key={s.heading}>
@@ -152,10 +158,10 @@ export function ArticleRenderer({
           subject to service availability. No cost to submit and no obligation.
         </p>
         <Link
-          href={page.cluster === 'commercial' ? '/commercial-assessment' : '/#qualify'}
+          href={inquiryHref || (page.cluster === 'commercial' ? '/commercial-assessment' : '/#qualify')}
           className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
         >
-          {page.cluster === 'commercial' ? 'Request a Commercial Assessment' : 'Request a Residential Assessment'}
+          {inquiryHref ? 'Optional solar inquiry' : page.cluster === 'commercial' ? 'Request a Commercial Assessment' : 'Request a Residential Assessment'}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </div>

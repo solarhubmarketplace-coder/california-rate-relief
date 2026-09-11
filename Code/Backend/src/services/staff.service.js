@@ -5,6 +5,23 @@ function databaseError(error) {
 }
 
 class StaffService {
+  async growthScorecard(from, to) {
+    const { data, error } = await supabaseAdmin.rpc('get_crr_growth_scorecard', {p_from:from,p_to:to});
+    if (error) throw databaseError(error);
+    return data;
+  }
+
+  async recordReceipt(submissionId, evidence, staffUser) {
+    const { data, error } = await supabaseAdmin.from('owner_receipt_evidence').insert({
+      submission_id:submissionId,destination:'solarhubmarketplace@gmail.com',
+      evidence_reference:evidence.evidence_reference,receipt_at:evidence.receipt_at,recorded_by:staffUser.id,
+    }).select('id,submission_id,receipt_at,recorded_at').single();
+    if (error?.code === '23505') throw { statusCode: 409, message: 'This owner inbox message already has receipt evidence', code: error.code };
+    if (error?.code === '23503') throw { statusCode: 404, message: 'Submission or staff record not found', code: error.code };
+    if (error?.code === '23514') throw { statusCode: 400, message: 'Receipt time must follow submission and cannot be in the future', code: error.code };
+    if (error) throw databaseError(error);
+    return data;
+  }
   async listReferrals({ from, to } = {}) {
     let query = supabaseAdmin.from('lead_referral_outcomes').select('*').order('forwarded_at', { ascending: false });
     if (from) query = query.gte('forwarded_at', from);

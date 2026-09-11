@@ -16,6 +16,20 @@ const row = {
 };
 
 describe('durable owner notification worker', () => {
+  test('holds a success-shaped provider response without a message ID as unknown', async () => {
+    mockRpc.mockResolvedValueOnce({data:[row]}).mockResolvedValueOnce({data:[{...row,destination:'owner@example.com',provider_subject:'fixture',provider_html:'frozen'}]}).mockResolvedValueOnce({data:null});
+    mockSendEmail.mockResolvedValue({});
+    await worker.processOne();
+    expect(mockRpc.mock.calls.map(call=>call[0])).not.toContain('complete_owner_notification');
+    expect(mockRpc).toHaveBeenLastCalledWith('fail_owner_notification',expect.objectContaining({p_ambiguous:true}));
+  });
+  test('carries calculator context, zero prices and original organic landing into the frozen owner message', async () => {
+    const contextRow={...row,payload:{...row.payload,qualification_data:{...row.payload.qualification_data,calculator_version:'quote-input-v2',calculator_monthly_bill:300,calculator_battery_price:0,calculator_annual_bill_after:0,calculator_simple_payback:10,inquiry_topic:'San Diego comparison'},attribution:{...row.payload.attribution,acquisition_source:'google',acquisition_medium:'organic',organic_landing_page:'/blog/entry'}}};
+    mockRpc.mockResolvedValueOnce({data:[contextRow]}).mockResolvedValueOnce({data:[{...contextRow,destination:'owner@example.com',provider_subject:'fixture',provider_html:'frozen'}]}).mockResolvedValueOnce({data:null});
+    mockSendEmail.mockResolvedValue({id:'local-provider-id'});await worker.processOne();
+    const html=mockRpc.mock.calls[1][1].p_provider_html;
+    expect(html).toContain('/blog/entry');expect(html).toContain('San Diego comparison');expect(html).toContain('quote-input-v2');expect(html).toMatch(/input arithmetic/i);expect(html).toMatch(/Battery[\s\S]*>0</);
+  });
   test('includes the submitted path and page sequence in the owner notification', async () => {
     const journeyRow = { ...row, payload: { ...row.payload, attribution: { ...row.payload.attribution,
       submitted_from: '/', journey: { version: 1, scope: 'browser_tab', truncated: false, pages: [

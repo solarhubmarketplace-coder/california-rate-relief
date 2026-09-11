@@ -103,7 +103,7 @@ export default function WhyIsMyBillSoHigh() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>4. CARE / FERA assistance.</strong> If your household income qualifies, the CARE program gives you a 30-35% discount on your utility bill. FERA gives ~12% for slightly higher incomes. Apply through your utility&apos;s website — takes about 10 minutes.
+                <strong>4. CARE / FERA assistance.</strong> These are utility-bill discounts with household and income requirements. FERA now includes eligible one- and two-person households. Use your utility&apos;s current application and the <a href='https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/family-electric-rate-assistance-program' className='underline'>CPUC requirements, checked September 10, 2026</a>. Bill assistance does not automatically approve a solar project.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

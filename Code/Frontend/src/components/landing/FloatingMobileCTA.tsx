@@ -20,7 +20,7 @@ export function FloatingMobileCTA() {
         href={intakeHrefForPath(pathname)}
         className='block w-full text-center bg-emerald-700 text-white font-extrabold py-3 rounded-lg shadow-md text-sm'
       >
-        {isCommercial ? 'Request Commercial Review' : 'Check My Eligibility'}
+        {isCommercial ? 'Request Commercial Review' : intakeHrefForPath(pathname)==='#solar-inquiry' ? 'Optional Solar Inquiry' : 'Check My Eligibility'}
       </Link>
     </div>
   );
