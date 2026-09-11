@@ -6,11 +6,38 @@ import { PublicLayout } from "@/components/layout/PublicLayout";
 import { SolarInquiry } from "./SolarInquiry";
 
 export type Source = { label: string; url: string };
-export function SourceList({ sources }: { sources: Source[] }) {
+export function formatSourceCheckedDate(sourceCheckedDate: string) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(sourceCheckedDate);
+  if (!match) return sourceCheckedDate;
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ][Number(match[2]) - 1];
+  return month
+    ? `${month} ${Number(match[3])}, ${match[1]}`
+    : sourceCheckedDate;
+}
+export function SourceList({
+  sources,
+  sourceCheckedDate = "2026-09-10",
+}: {
+  sources: Source[];
+  sourceCheckedDate?: string;
+}) {
   return (
     <aside className="my-8 border-t pt-5 text-sm text-slate-600">
       <h2 className="font-bold text-slate-900">
-        Sources checked September 10, 2026
+        Sources checked {formatSourceCheckedDate(sourceCheckedDate)}
       </h2>
       <ul className="mt-2 space-y-2">
         {sources.map((s) => (
@@ -39,6 +66,7 @@ export function DecisionPage({
   topic,
   inquiry,
   commercial = false,
+  sourceCheckedDate = "2026-09-10",
 }: {
   title: string;
   intro: string;
@@ -49,6 +77,7 @@ export function DecisionPage({
   topic?: string;
   inquiry?: ReactNode;
   commercial?: boolean;
+  sourceCheckedDate?: string;
 }) {
   const schema =
     path === "/tools/solar-panel-calculator"
@@ -67,7 +96,7 @@ export function DecisionPage({
           "@context": "https://schema.org",
           "@type": "Article",
           headline: title,
-          dateModified: "2026-09-10",
+          dateModified: sourceCheckedDate,
           author: {
             "@type": "Organization",
             name: "California Rate Relief",
@@ -98,8 +127,8 @@ export function DecisionPage({
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-slate-700">{intro}</p>
           <p className="mt-3 text-sm text-slate-500">
-            Updated September 10, 2026 · California Rate Relief is a private
-            solar referral service.
+            Updated {formatSourceCheckedDate(sourceCheckedDate)} · California
+            Rate Relief is a private solar referral service.
           </p>
         </header>
         <nav
@@ -135,7 +164,7 @@ export function DecisionPage({
         <div className="space-y-8 [&_h2]:mb-3 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_p]:leading-relaxed [&_li]:leading-relaxed">
           {children}
         </div>
-        <SourceList sources={sources} />
+        <SourceList sources={sources} sourceCheckedDate={sourceCheckedDate} />
         {inquiry ?? <SolarInquiry utility={utility} topic={topic || title} />}
       </main>
       <Footer />

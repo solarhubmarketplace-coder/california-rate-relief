@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     description: 'A utility-by-utility guide to every 2026 solar and battery rebate in California.',
     type: 'article',
     publishedTime: '2026-04-24T00:00:00Z',
+    modifiedTime: '2026-09-11T00:00:00Z',
     url: 'https://ratereliefca.com/blog/solar-rebates-by-california-utility',
   },
 };
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 export default function SolarRebatesByCAUtility() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Rebates by California Utility (2026): PG&E, SCE, SDG&E, LADWP, SMUD"} url="https://ratereliefca.com/blog/solar-rebates-by-california-utility" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar and battery rebates by California utility in 2026 — PG&E, SCE, SDG&E, LADWP, SMUD, Roseville Electric, Glendale Water & Power. SGIP, DAC-SASH, TECH Clean, and municipal-only programs."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Rebates by California Utility (2026): PG&E, SCE, SDG&E, LADWP, SMUD"} url="https://ratereliefca.com/blog/solar-rebates-by-california-utility" datePublished="2026-04-24" dateModified="2026-09-11" description={"Solar and battery rebates by California utility in 2026 — PG&E, SCE, SDG&E, LADWP, SMUD, Roseville Electric, Glendale Water & Power. SGIP, DAC-SASH, TECH Clean, and municipal-only programs."} />
       <Header />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
@@ -94,7 +95,7 @@ export default function SolarRebatesByCAUtility() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>LADWP Solar Incentive Program (SIP).</strong> Historically $0.15–$0.25/W installed rebate for new solar. Confirm current availability — the program has gone through multiple iterations.</li>
                 <li><strong>LADWP net metering.</strong> Retail-rate-equivalent export credit (much more favorable than NEM 3.0&apos;s 5–8¢).</li>
-                <li><strong>LIRA (Low-Income Rate Assistance).</strong> 25% discount for income-qualified households.</li>
+                <li><strong>EZ-SAVE.</strong> Income-qualified households can check current LADWP assistance. The discount is not a universal percentage. <a href='https://www.ladwp.com/residential-services/assistance-programs/ez-save-program' className='text-primary underline'>Eligibility and application</a>. Checked September 11, 2026.</li>
                 <li><strong>Feed-In Tariff (FiT).</strong> Commercial / multi-family solar can sell power to LADWP under long-term contracts.</li>
                 <li><strong>SGIP does not apply in LADWP territory.</strong> LADWP runs its own battery program separately.</li>
               </ul>
@@ -128,7 +129,7 @@ export default function SolarRebatesByCAUtility() {
                 <li><strong>Federal 30% ITC — only if your expenditure was made on or before December 31, 2025.</strong> Claim it on IRS Form 5695 with the return for the year the system was placed in service, and keep the contractor invoice and proof of payment. Nothing you spend in 2026 qualifies.</li>
                 <li><strong>SGIP (if applicable)</strong>. Your installer should file on your behalf. Confirm before signing. Lead time 60–120 days for reimbursement in some tiers.</li>
                 <li><strong>Utility-specific incentives</strong>. Usually handled through utility Marketplace program or manufacturer rebate forms. Ask your installer for a list of all applicable utility programs and which they&apos;ll file.</li>
-                <li><strong>CARE / FERA / LIRA / EAPR</strong> — apply directly through utility account online. These are ongoing bill discounts, not one-time rebates.</li>
+                <li><strong>CARE / FERA / EZ-SAVE / EAPR</strong> — apply directly through the applicable utility. These are bill-assistance programs, not solar installation rebates.</li>
                 <li><strong>TECH Clean California</strong> (heat pump water heater/HVAC), apply through participating contractor; the rebate is deducted from your install cost.</li>
               </ol>
 

@@ -184,7 +184,7 @@ export async function generateMetadata({
       description,
       type: "article",
       ...(growthCities[slug]
-        ? { modifiedTime: "2026-09-10T00:00:00Z" }
+        ? { modifiedTime: `${growthCities[slug].sourceCheckedDate || "2026-09-10"}T00:00:00Z` }
         : { publishedTime: "2026-04-24T00:00:00Z" }),
       url: `https://ratereliefca.com/solar-companies/${slug}`,
     },

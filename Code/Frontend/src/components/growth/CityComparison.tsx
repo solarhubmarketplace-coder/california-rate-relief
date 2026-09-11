@@ -17,6 +17,7 @@ export function CityComparison({ slug }: { slug: string }) {
       path={`/solar-companies/${slug}`}
       sources={city.sources}
       utility={city.utility}
+      sourceCheckedDate={city.sourceCheckedDate}
     >
       {city.provider ? (
         <CityPublishedProvider slug={slug} />

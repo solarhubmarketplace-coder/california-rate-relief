@@ -27,12 +27,12 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 export const metadata: Metadata = {
   title: 'Solar Panels in Los Angeles County: 2026 Rates & Cost',
   description:
-    'Solar for LA County homes across LADWP, SCE, Glendale and Pasadena territory. Rates differ sharply by utility — see what your city actually pays.',
+    'Find solar guides for Los Angeles County homes. Check the provider and rate schedule on your electricity bill before comparing proposals.',
   alternates: { canonical: '/solar-savings/los-angeles-county' },
   openGraph: {
     title: 'Solar in Los Angeles County: Rates, Costs and Options',
     description:
-      'LA County spans four different electric utilities with very different rates. Find your city and what solar is actually worth there.',
+      'Los Angeles County has several electric utilities. Find your city, confirm your provider and compare proposals against your own electricity bill.',
     type: 'website',
   },
 };
@@ -62,8 +62,6 @@ function buildSchema() {
 }
 
 export default function LosAngelesCountySolarPage() {
-  const ladwp = UTILITY_DATA['ladwp'];
-  const sce = UTILITY_DATA['sce'];
 
   return (
     <PublicLayout>
@@ -88,13 +86,12 @@ export default function LosAngelesCountySolarPage() {
                 Solar Energy in Los Angeles County
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                Los Angeles County has 88 incorporated cities and four different
-                electric utilities, and what solar is worth here depends almost
-                entirely on which one serves your address. LADWP customers pay
-                roughly {(ladwp.ratePerKwh * 100).toFixed(0)}¢ per kWh. A few miles
-                away in SCE territory the rate is about{' '}
-                {(sce.ratePerKwh * 100).toFixed(1)}¢. Same county, same sunshine,
-                very different math.
+                Los Angeles County has several electric utilities. What solar is worth here depends
+                on which one serves your address, your rate plan and your usage.
+                LADWP publishes tiered and time-of-use schedules. Compare your
+                own billing period in the{' '}
+                <Link href='/blog/why-is-my-ladwp-bill-so-high' className='text-primary underline'>LADWP bill and rate guide</Link>
+                {' '}before using a county-wide estimate.
               </p>
             </div>
 
@@ -118,7 +115,7 @@ export default function LosAngelesCountySolarPage() {
               <div className="bg-card rounded-xl border border-border p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <h3 className="font-semibold text-foreground">Four utilities</h3>
+                  <h3 className="font-semibold text-foreground">Check the provider on your bill</h3>
                 </div>
                 <p className="text-sm text-muted-foreground">
                   LADWP serves the City of LA. SCE serves most of the county.
@@ -163,11 +160,11 @@ export default function LosAngelesCountySolarPage() {
                         {city.name}
                       </h3>
                       <div className="text-sm text-muted-foreground mb-3">
-                        <span className="font-medium text-foreground">
-                          ${city.avgMonthlyBill}/mo
-                        </span>{' '}
-                        average bill · {utility.shortName} ·{' '}
-                        {(utility.ratePerKwh * 100).toFixed(1)}¢/kWh
+                        {utility.code === 'ladwp' ? (
+                          <>LADWP · Use your electricity subtotal · See schedule</>
+                        ) : (
+                          <><span className="font-medium text-foreground">${city.avgMonthlyBill}/mo</span>{' '}average bill · {utility.shortName} · {(utility.ratePerKwh * 100).toFixed(1)}¢/kWh</>
+                        )}
                       </div>
                       <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
                         <Link
@@ -229,7 +226,7 @@ export default function LosAngelesCountySolarPage() {
         Only the Article node claims mainEntityOfPage, so there is no competing
         "this page is really an X" assertion.
 
-        dateModified is the 2026-09-10 schema/QC review. datePublished is
+        dateModified includes the 2026-09-11 LADWP consistency corrections. datePublished is
         deliberately omitted: this page carries no recorded first-publish date
         and inventing one would put an unverifiable date into structured data.
       */}
@@ -238,7 +235,7 @@ export default function LosAngelesCountySolarPage() {
         domain="crr"
         headline="Solar Energy in Los Angeles County"
         url="https://ratereliefca.com/solar-savings/los-angeles-county"
-        dateModified="2026-09-10"
+        dateModified="2026-09-11"
       />
 
       <Footer />

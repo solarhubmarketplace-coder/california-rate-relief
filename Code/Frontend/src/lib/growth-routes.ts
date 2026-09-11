@@ -17,6 +17,8 @@ export const GROWTH_ROUTES = [
   "/blog/solar-battery-backup-california",
   "/battery/sgip-battery-rebate-california",
   "/blog/pge-vs-sce-vs-sdge-rates-compared",
+  "/blog/why-is-my-ladwp-bill-so-high",
+  "/solar-savings/los-angeles",
   ...[
     "san-diego",
     "fresno",
@@ -36,5 +38,7 @@ export const GROWTH_ROUTES = [
     "murrieta",
     "rocklin",
     "camarillo",
+    "san-francisco",
+    "oakland",
   ].map((city) => `/solar-companies/${city}`),
 ];

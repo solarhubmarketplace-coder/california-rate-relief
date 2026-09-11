@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import SavingsCalculator from '@/components/SavingsCalculator';
+import { LadwpSavingsGuide, ladwpSavingsTitle, ladwpSavingsDescription } from '@/components/growth/LadwpSavingsGuide';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -34,6 +35,12 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { city: slug } = await params;
+  if (slug === 'los-angeles') return {
+    title: ladwpSavingsTitle,
+    description: ladwpSavingsDescription,
+    alternates: { canonical: '/solar-savings/los-angeles' },
+    openGraph: { title: ladwpSavingsTitle, description: ladwpSavingsDescription, type: 'article', modifiedTime: '2026-09-11T00:00:00Z', url: 'https://ratereliefca.com/solar-savings/los-angeles' },
+  };
   const city = getCityBySlug(slug);
   if (!city) return {};
 
@@ -95,11 +102,12 @@ function buildFAQSchema(city: CityData) {
 // =============================================================================
 export default async function CityPage({ params }: PageProps) {
   const { city: slug } = await params;
+  if (slug === 'los-angeles') return <LadwpSavingsGuide />;
   const city = getCityBySlug(slug);
   if (!city) notFound();
 
   const utility = UTILITY_DATA[city.utilityCode];
-  const rateDisplay = `${(utility.ratePerKwh * 100).toFixed(1)}¢`;
+  const rateDisplay = utility.rateDisplay || `${(utility.ratePerKwh * 100).toFixed(1)}¢`;
   const annualBill = city.avgMonthlyBill * 12;
 
   const localBusinessSchema = buildLocalBusinessSchema(city);
@@ -145,7 +153,7 @@ export default async function CityPage({ params }: PageProps) {
                   {rateDisplay}
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  {utility.shortName} avg. rate/kWh
+                  {utility.rateLabel || `${utility.shortName} avg. rate/kWh`}
                 </div>
               </div>
               <div className="bg-card rounded-xl border border-border p-4 text-center">

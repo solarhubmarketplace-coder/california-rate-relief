@@ -1,5 +1,6 @@
 // Reviewed local destinations. Existing city source remains intact for other routes.
-// Source checks: 2026-09-10. No provider endorsement, address coverage or rate implied.
+// Sources default to 2026-09-10; newer entries set sourceCheckedDate.
+// No provider endorsement, address coverage or rate implied.
 export const growthCities: Record<
   string,
   {
@@ -10,6 +11,7 @@ export const growthCities: Record<
     local: string;
     example: string;
     sources: { label: string; url: string }[];
+    sourceCheckedDate?: string;
     hasSavingsGuide?: boolean;
     checks?: [string, string][];
     provider?: { name: string; url: string; detail: string; ask: string };
@@ -17,6 +19,137 @@ export const growthCities: Record<
     faq?: [string, string][];
   }
 > = {
+  "san-francisco": {
+    name: "San Francisco",
+    county: "San Francisco County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-11",
+    bill: "Check the generation provider and enrolled program on the PG&E bill before comparing proposals. CleanPowerSF supplies generation for enrolled customers, while PG&E delivers the electricity and sends the bill. Have each bidder use both portions and the account's actual solar-billing enrollment.",
+    local:
+      "San Francisco's current digital S Permit covers qualifying solar work on R3 occupancies and goes through the registered electrical-contractor portal. Ask whether your property and scope qualify. Roof work, a service or subpanel change, storage and any additional review belong in the written permit plan.",
+    example:
+      "Put the same roof layout, shade model and monthly production in both proposals. Then separate solar, storage, roof and electrical work. The remaining bill should use the same CleanPowerSF or PG&E generation enrollment and show imports and export credits instead of promising that the bill disappears.",
+    checks: [
+      [
+        "Generation and delivery",
+        "Use the provider, rate schedule and solar program printed on the bill; show generation and PG&E delivery separately.",
+      ],
+      [
+        "Roof and shade",
+        "Map each roof plane, obstruction and shading input, then show monthly production and the work excluded from the price.",
+      ],
+      [
+        "Permit and electrical scope",
+        "State whether the S Permit applies and identify service-panel, subpanel, storage or other review in the application scope.",
+      ],
+      [
+        "Contract and service",
+        "Name the contracting business, installation crew, service contact and written responsibility for roof penetrations and equipment service.",
+      ],
+    ],
+    provider: {
+      name: "Luminalt",
+      url: "https://luminalt.com/",
+      detail:
+        "Its website identifies a San Francisco office and publishes home solar, battery storage, small-commercial and remodeling/new-construction services.",
+      ask: "Confirm acceptance of the exact address and request a roof-specific design, itemized cash price, equipment list and the legal business responsible for the contract and service.",
+    },
+    sources: [
+      {
+        label:
+          "CleanPowerSF: understanding generation and PG&E delivery charges",
+        url: "https://cleanpowersf.org/understanding-my-bill",
+      },
+      {
+        label: "CleanPowerSF: rooftop solar billing information",
+        url: "https://cleanpowersf.org/net-energy-metering",
+      },
+      {
+        label: "San Francisco DBI: current digital solar permit process",
+        url: "https://www.sf.gov/new-solar-permit-cancelling-abandoned-otc-applications-recheck-escalation-reference-drawings-and-new-fee-rates",
+      },
+      {
+        label: "Luminalt: published San Francisco service scope",
+        url: "https://luminalt.com/",
+      },
+    ],
+    nearby: ["oakland", "pleasanton", "san-jose"],
+    faq: [
+      [
+        "Should every San Francisco proposal assume CleanPowerSF generation?",
+        "No. Read the provider and enrolled program on the current PG&E bill. The proposal should use that account information and show generation and delivery separately.",
+      ],
+      [
+        "Does every San Francisco solar project use the same permit path?",
+        "No. The current S Permit is described for qualifying R3 work. Ask the bidder to identify the path for your property and include roof, electrical, storage and inspection responsibilities in writing.",
+      ],
+    ],
+  },
+  oakland: {
+    name: "Oakland",
+    county: "Alameda County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-11",
+    bill: "Check the generation provider and solar program on the PG&E bill. Ava provides generation for its customers, while PG&E provides transmission, distribution and billing. Ava's Solar Billing Plan separates generation and delivery credits, and the two annual true-ups can occur in different months.",
+    local:
+      "Oakland publishes SolarAPP+ and Online Permit Center routes for solar projects. Its instructions distinguish PV-dedicated panel, subpanel and storage work from other electrical work, which may require a separate permit. Ask the bidder to identify the route and every additional approval for the actual design.",
+    example:
+      "An Oakland bid can look lower because roof work, a panel change or storage is missing. Ask each bidder to price those items separately and use the same shade-aware monthly production. Then compare the remaining Ava and PG&E bill under the account's confirmed solar program.",
+    checks: [
+      [
+        "Ava and PG&E account",
+        "Show generation and delivery charges and credits separately, including the applicable billing and true-up calendars.",
+      ],
+      [
+        "Roof and production",
+        "Use the actual roof planes and shade inputs; list monthly output and any roof repair excluded from the contract.",
+      ],
+      [
+        "Electrical and storage",
+        "Itemize panel, subpanel, battery, backup circuits and any work that needs a separate city or fire review.",
+      ],
+      [
+        "Service after installation",
+        "Identify who answers a production or battery problem, who performs the repair and which written warranty applies.",
+      ],
+    ],
+    provider: {
+      name: "NRG Clean Power",
+      url: "https://nrgcleanpower.com/locations/california/oakland/",
+      detail:
+        "Its Oakland page publishes solar-panel, home-battery, permit-coordination, installation and financing information.",
+      ask: "Confirm the exact address and contracting business. Request an itemized cash price, roof and electrical scope, monthly production model and separate storage/backup design.",
+    },
+    sources: [
+      {
+        label: "Ava: generation, PG&E delivery and billing roles",
+        url: "https://avaenergy.org/about-ava/faq/",
+      },
+      {
+        label: "Ava: Solar Billing Plan and separate true-ups",
+        url: "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/",
+      },
+      {
+        label: "City of Oakland: solar permits and related project scope",
+        url: "https://www.oaklandca.gov/My-Household/Building-and-Remodeling/Homeowner-Projects-Permits/Solar-Energy-Systems-Facilities",
+      },
+      {
+        label: "NRG Clean Power: published Oakland service scope",
+        url: "https://nrgcleanpower.com/locations/california/oakland/",
+      },
+    ],
+    nearby: ["san-francisco", "pleasanton", "san-jose", "livermore"],
+    faq: [
+      [
+        "Does Ava replace PG&E for an Oakland solar account?",
+        "Ava explains that it provides generation while PG&E continues transmission, distribution and billing. Use the current bill to confirm the account's provider and solar program before modeling a proposal.",
+      ],
+      [
+        "Can an Oakland solar permit include a panel change or battery?",
+        "Oakland says PV-dedicated panel, subpanel and storage work may be included in the solar application, while other electrical work may require a separate permit. Have the bidder identify the scope and route in writing.",
+      ],
+    ],
+  },
   "san-diego": {
     name: "San Diego",
     county: "San Diego County",

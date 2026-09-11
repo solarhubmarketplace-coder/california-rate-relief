@@ -17,6 +17,11 @@ import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh
 // =============================================================================
 
 const SITEMAP_LAST_AUDITED = new Date('2026-08-30T00:00:00.000Z');
+const CRR_REVIEWED_SEPTEMBER_11 = new Set([
+  '/solar-companies/san-francisco', '/solar-companies/oakland',
+  '/blog/why-is-my-ladwp-bill-so-high', '/solar-savings/los-angeles',
+  '/solar-savings/los-angeles-county', '/blog/solar-rebates-by-california-utility',
+]);
 const CRR_UPDATED_PAGES = new Set([
   '/blog', '/blog/pge-time-of-use-rates-2026',
   '/blog/pge-vs-sce-vs-sdge-rates-compared', '/blog/why-is-my-pge-bill-so-high',
@@ -246,7 +251,9 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     ...staticPages, ...blogPages, ...installerPages, ...panelPages,
     ...commercialPages, ...regionalPages, ...citySavingsPages, ...cityCompaniesPages,
     ...articlePages, ...articleHubs,
-  ];
+  ].map((entry) => CRR_REVIEWED_SEPTEMBER_11.has(new URL(entry.url).pathname)
+    ? { ...entry, lastModified: new Date('2026-09-11T00:00:00.000Z') }
+    : entry);
 }
 
 // =============================================================================

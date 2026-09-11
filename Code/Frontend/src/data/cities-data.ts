@@ -18,6 +18,8 @@ export interface UtilityData {
   name: string;
   shortName: string;
   ratePerKwh: number;        // avg residential rate in dollars
+  rateDisplay?: string;     // Overrides legacy scalar when no current average is verified.
+  rateLabel?: string;
   peakTouRate: string;       // peak TOU range as display string (e.g. "58-74¢")
   annualIncrease: number;    // decimal (0.06 = 6%)
   fixedCharge: number;       // monthly fixed charge in dollars
@@ -153,18 +155,20 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     code: 'ladwp',
     name: 'Los Angeles Department of Water and Power',
     shortName: 'LADWP',
-    ratePerKwh: 0.22,
+    ratePerKwh: 0.22, // Historical scalar only; public display uses the dated schedule note below.
+    rateDisplay: 'See schedule',
+    rateLabel: 'LADWP: tiered or TOU pricing',
     peakTouRate: '28-35¢',
     annualIncrease: 0.04,
     fixedCharge: 10.00,
-    accountUrl: 'https://www.ladwp.com/ladwp/faces/ladwp/aboutus/a-myaccount',
-    careFeraUrl: 'https://www.ladwp.com/ladwp/faces/ladwp/residential/r-financialassistance/r-fa-lira',
+    accountUrl: 'https://www.ladwp.com/account',
+    careFeraUrl: 'https://www.ladwp.com/residential-services/assistance-programs/ez-save-program',
     ratePlanAdvice:
-      'LADWP is a municipal utility with rates significantly lower than SCE, PG&E, or SDG&E. Check your account for TOU options — LADWP offers time-of-use plans that can save you money if you shift usage to off-peak hours.',
+      'LADWP has standard tiered R-1A and time-of-use R-1B schedules. Check the plan and billing dates on your statement, then ask LADWP for a comparison using your actual usage. Shifting hours only changes the energy price on a time-of-use schedule.',
     nemVersion: 'LADWP Net Metering (NEM 2.0 equivalent)',
     exportRate: '~retail rate credit',
     rateIncreaseHistory:
-      'LADWP rates are among the lowest in Greater Los Angeles at roughly 22¢/kWh — about 35-50% less than SCE territory. Modest increases of 3-4% annually have been approved.',
+      'Checked September 11, 2026: LADWP publishes separate dated consumption prices by tier or time period, with additional charges. The previous 22-cent average and fixed annual-increase claim were not verified; use the current LADWP rate schedule for your billing period.',
   },
   mid: {
     code: 'mid',
@@ -2630,7 +2634,7 @@ export const CITIES: CityData[] = [
     introText:
       'Los Angeles is the largest city in California with nearly 4 million residents, served by the Los Angeles Department of Water and Power (LADWP). While LADWP rates are lower than the major investor-owned utilities, the sheer size of the city combined with sprawling geography creates distinct neighborhoods with very different solar economics. Here\'s what Los Angeles homeowners need to know about their bills and solar options.',
     electricitySection:
-      'The average Los Angeles household on LADWP pays approximately $200 per month for electricity, or about $2,400 per year. LADWP\'s tiered rate structure offers some protection at lower usage levels, but households exceeding 600 kWh per month face rates of 18-22¢/kWh, significantly above the base rate.\n\nLA\'s climate varies wildly by neighborhood — beachside areas have moderate temperatures and lower AC demand, while inland and downtown areas experience much hotter summers with heavier cooling loads. The city\'s Mediterranean climate combined with urban heat island effects in inland neighborhoods drives substantial summer bills.',
+      'Check the electricity subtotal and billing dates on your LADWP statement before comparing solar proposals. Standard R-1A prices vary by usage tier, climate zone and billing period; R-1B uses time-of-use periods. Fixed charges and taxes are separate. The current LADWP bill guide links the official schedules.\n\nCompare kWh per day with the same season last year. Keep water, sewer, trash and any previous balance separate from the electricity expense a solar proposal is intended to address.',
     solarPotentialText:
       'Los Angeles averages approximately 3,284 hours of sunshine per year with 5.8 peak sun hours per day. The variability is significant: coastal neighborhoods near Santa Monica and Malibu see 20-25% less production due to marine layer fog (especially June-August), while inland areas like the San Fernando Valley and East LA receive excellent, consistent solar potential year-round. Most LA roofs face south or west, providing good orientation.',
     localTips: [

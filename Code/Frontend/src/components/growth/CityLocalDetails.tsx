@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { growthCities } from "@/data/growth-cities";
+import { formatSourceCheckedDate } from "./DecisionPage";
 
 export function CityLocalChecks({ slug }: { slug: string }) {
   const city = growthCities[slug];
@@ -42,8 +43,9 @@ export function CityPublishedProvider({ slug }: { slug: string }) {
     <section>
       <h2>A company website to investigate in {city.name}</h2>
       <p className="mb-4">
-        Published service information checked September 10, 2026. This is a
-        starting point for requesting a comparable bid. Address acceptance,
+        Published service information checked{" "}
+        {formatSourceCheckedDate(city.sourceCheckedDate || "2026-09-10")}. This
+        is a starting point for requesting a comparable bid. Address acceptance,
         current license status and contract terms still need to be checked
         directly.
       </p>
