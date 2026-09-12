@@ -128,7 +128,7 @@ export default function SolarTileRoofCalifornia() {
 
             <ArticleCTA
               heading='Compare the written scope before you decide'
-              body='Use a written quote to compare the roof work, permitting, equipment, and warranty terms tied to your address.'
+              body='California Rate Relief is a private referral service. You can request a no-obligation solar review of a written quote; provider availability, design and price are determined after review.'
             />
           </article>
         </div>

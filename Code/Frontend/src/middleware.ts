@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { getGlp1RouteDisposition } from '@/lib/glp1-seo-routes';
-import { GROWTH_ROUTES } from '@/lib/growth-routes';
+import { PUBLIC_CRR_NO_SESSION_ROUTES } from '@/lib/growth-routes';
 
 const GLP1_PUBLIC_CACHE_CONTROL =
   'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400';
@@ -324,7 +324,7 @@ export async function middleware(request: NextRequest) {
 
   // These public decision pages do not need an owner session or a Supabase read.
   // Private routes retain the existing authentication path below.
-  if (isCRR && GROWTH_ROUTES.includes(pathname)) return NextResponse.next();
+  if (isCRR && PUBLIC_CRR_NO_SESSION_ROUTES.includes(pathname)) return NextResponse.next();
 
   // ====================================================================
   // Below this line: existing CRR auth logic — runs only on

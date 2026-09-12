@@ -45,3 +45,35 @@ export const GROWTH_ROUTES = [
     "oakland",
   ].map((city) => `/solar-companies/${city}`),
 ];
+// Public local-release candidates deliberately bypass dashboard-session middleware.
+// This keeps content review independent of Supabase auth without changing sitemap
+// timestamps or ArticleCTA destination behavior, which still use GROWTH_ROUTES.
+export const LOCAL_RELEASE_REVIEW_ROUTES = [
+  '/solar-companies/riverside',
+  '/solar-companies/san-luis-obispo',
+  '/solar-companies/temecula',
+  '/solar-companies/sonoma',
+  '/solar-companies/ventura',
+  '/solar-companies/grass-valley',
+  '/solar-companies/victorville',
+  '/solar-companies/petaluma',
+  '/solar-companies/rancho-cucamonga',
+  '/solar-companies/santa-barbara',
+  '/blog/solar-panels-tile-roof-california',
+  '/blog/nem-2-vs-nem-3-california',
+  '/blog/nem-3-california-timeline',
+  '/blog/nem-3-california-still-worth-it',
+  '/blog/net-billing-vs-net-metering-california',
+  '/blog/pge-rate-increase-2026',
+  '/blog/free-roof-replacement-with-solar-panels-california',
+  '/blog/prepaid-ppa-california-2026',
+  '/blog/what-happens-to-solar-lease-when-i-sell-california',
+  '/blog/commercial-solar-financing-california',
+  '/blog/solar-panel-removal-reinstall-cost',
+  '/blog/commercial-solar-installation-cost-california',
+] as const;
+
+export const PUBLIC_CRR_NO_SESSION_ROUTES = [
+  ...GROWTH_ROUTES,
+  ...LOCAL_RELEASE_REVIEW_ROUTES,
+] as const;
