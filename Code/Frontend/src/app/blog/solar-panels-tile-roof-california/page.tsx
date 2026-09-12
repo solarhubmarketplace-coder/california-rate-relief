@@ -3,89 +3,137 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { TrustedSources } from '@/components/shared/TrustedSources';
-import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+
+const CALIFORNIA_RESIDENTIAL_CODE_URL =
+  'https://codes.iccsafe.org/content/CARC2022P3/chapter-3-building-planning';
+const CSLB_SOLAR_URL = 'https://www.cslb.ca.gov/solar';
+const CSLB_LICENSE_LOOKUP_URL =
+  'https://www.cslb.ca.gov/onlineservices/checklicenseii/checklicense.aspx';
+
 export const metadata: Metadata = {
-  title: "Solar Panels on a Tile Roof in California: Cost & Process",
-  description: "Installing solar on a tile roof in California: the removal premium, moisture concerns, underlayment upgrades, and top installers.",
+  title: 'Solar Roof Tiles vs. Panels on a Tile Roof in California',
+  description:
+    'The difference between solar panels mounted on an existing tile roof and roof-integrated solar tiles in California, plus a source-linked scope and contract checklist.',
   alternates: { canonical: '/blog/solar-panels-tile-roof-california' },
-  openGraph: { title: 'Solar on Tile Roof California', description: 'The tile roof premium, process, and installer considerations.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-panels-tile-roof-california' },
+  openGraph: {
+    title: 'Solar Roof Tiles vs. Panels on a Tile Roof in California',
+    description:
+      'Understand the difference between solar panels on an existing tile roof and solar tiles that serve as the roof covering.',
+    type: 'article',
+    modifiedTime: '2026-09-12T00:00:00Z',
+    url: 'https://ratereliefca.com/blog/solar-panels-tile-roof-california',
+  },
 };
 
-export default function SolarTileRoofCA() {
+export default function SolarTileRoofCalifornia() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Panels on a Tile Roof in California: Cost, Process, and the Hidden Premium"} url="https://ratereliefca.com/blog/solar-panels-tile-roof-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Installing solar on a tile roof in California; the tile removal/replacement premium, moisture concerns, underlayment upgrades, and which installers are best."} />
+      <ArticleJsonLd
+        variant='Article'
+        domain='crr'
+        headline='Solar Roof Tiles vs. Panels on a Tile Roof in California'
+        url='https://ratereliefca.com/blog/solar-panels-tile-roof-california'
+        dateModified='2026-09-12'
+        description='The difference between solar panels mounted on an existing tile roof and roof-integrated solar tiles in California, plus a source-linked scope and contract checklist.'
+      />
       <Header />
-      <main className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <article className="max-w-3xl mx-auto">
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link><span>/</span><Link href="/blog" className="hover:text-primary">Blog</Link><span>/</span><span className="text-foreground">Solar on Tile Roof California</span>
+      <main className='py-16 bg-background'>
+        <div className='container mx-auto px-4'>
+          <article className='max-w-3xl mx-auto'>
+            <nav className='mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
+              <Link href='/' className='hover:text-primary'>Home</Link>
+              <span>/</span>
+              <Link href='/blog' className='hover:text-primary'>Blog</Link>
+              <span>/</span>
+              <span className='text-foreground'>Solar Roof Tiles and Tile-Roof Panels</span>
             </nav>
-            <header className="mb-10">
-              <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar + Roof</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Solar Panels on a Tile Roof in California: What to Expect</h1>
-              <p className="text-lg text-muted-foreground">Tile roofs are the norm in California, Mediterranean clay and concrete tiles cover most SoCal neighborhoods and plenty of the Bay Area. Installing solar on tile is straightforward but carries a $1,500–$3,500 premium over comp-shingle. Here&apos;s why.</p>
+
+            <header className='mb-10'>
+              <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar + Roof</span>
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
+                Solar Roof Tiles vs. Panels on a Tile Roof in California
+              </h1>
+              <p className='text-lg text-muted-foreground'>
+                The phrase “solar roof tiles” can mean two different projects. One places conventional solar panels over an existing tile roof. The other uses photovoltaic material as part of the roof covering. Start by separating those jobs. They are not the same scope.
+              </p>
+              <p className='mt-3 text-sm text-muted-foreground'>
+                Reviewed <time dateTime='2026-09-12'>September 12, 2026</time>
+              </p>
             </header>
-            <div className="prose prose-slate max-w-none">
-              <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Tile Roof Premium</h2>
-              <p>Installing solar on a tile roof typically costs $1,500–$3,500 more than an equivalent install on composite shingle. The premium reflects:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Tile removal and replacement.</strong> Each mounting point requires a tile to be lifted or removed, a flashing bracket installed, and the tile reseated over the hardware.</li>
-                <li><strong>Specialized tile hooks.</strong> Proprietary hooks (Quick Mount PV, Tile Trac, IronRidge Flashkit) replace the lag-bolt approach used for shingle.</li>
-                <li><strong>Additional labor time.</strong> Tile installs take 20–40% longer than shingle.</li>
-                <li><strong>Breakage and replacement.</strong> 2–5% of tiles break during installation. Installers include matching replacement tiles in the cost.</li>
-                <li><strong>Underlayment inspection.</strong> The 30-year tar-paper underlayment beneath your tiles must be in good shape. If it&apos;s degraded, replacement during install is strongly recommended — and can add $3,000–$8,000.</li>
+
+            <div className='prose prose-slate max-w-none'>
+              <h2 className='text-2xl font-bold text-foreground mt-8 mb-4'>First: identify which project you are pricing</h2>
+              <p>
+                A conventional rooftop photovoltaic system sits on or above the existing roof covering. A building-integrated photovoltaic system serves as part of the roof covering itself. California&apos;s residential code addresses those as separate categories, with separate roof-covering requirements for building-integrated systems.
+              </p>
+              <p>
+                That distinction should be visible in the written scope before anyone quotes a total price. A low-profile panel array, a tile-roof attachment plan, and a roof-integrated solar-tile system are different designs with different roof work, equipment, and permit questions.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>If panels will be mounted on an existing tile roof</h2>
+              <p>
+                Ask for a written description of the existing roof condition reviewed for the project, the proposed attachment and flashing approach, and who is responsible for any roof work inside or outside the solar scope. The California Residential Code requires rooftop-mounted systems to be designed for the applicable structural loads, and it requires roof penetrations to be flashed and sealed under the roof provisions.
+              </p>
+              <p>
+                The practical question is simple: if an issue appears later, you should be able to point to a written scope and see who agreed to handle it. Do not rely on a verbal assurance about tiles, waterproofing, permits, or future roof access.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>If solar tiles or shingles will serve as the roof covering</h2>
+              <p>
+                Ask the seller to identify the system as building-integrated photovoltaic work in the written proposal and to show the roof-covering scope separately from the electrical scope. California&apos;s residential code treats photovoltaic shingles and building-integrated roof panels as roof-covering systems, rather than simply a panel array installed over the roof.
+              </p>
+              <p>
+                Get the product specification, the roof assembly scope, the permit plan, and the warranty documents before comparing proposals. Your local building department decides the permit and inspection requirements for the address. A website cannot approve a project.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What to request in writing</h2>
+              <ul className='list-disc pl-6 space-y-2'>
+                <li>The legal business name, contractor license number, and a current license lookup.</li>
+                <li>The roof-work scope, including what work is included and what work is excluded.</li>
+                <li>The solar equipment list and the documents that describe its applicable listing and installation requirements.</li>
+                <li>The permit and inspection responsibilities for the project.</li>
+                <li>The workmanship and roof warranty terms, including the party responsible for each one.</li>
+                <li>The process for removing, repairing, or replacing roof materials if future roof work is needed.</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Three Tile Types, Three Different Install Approaches</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>S-tile / Spanish clay.</strong> The most common California tile. Curved, terracotta-colored, moderately fragile. Standard install approach works.</li>
-                <li><strong>Flat concrete.</strong> Popular in newer 1990s–2010s homes. More forgiving during install, fewer breakages.</li>
-                <li><strong>Flat clay.</strong> Expensive, old-growth material. Highest breakage risk. Use an installer with specific flat-clay experience.</li>
-              </ul>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Compare scopes before totals</h2>
+              <p>
+                Two proposals can use the same phrase—solar roof, solar tiles, or tile-roof solar—while describing different work. Compare the written roof scope, equipment list, permit responsibility, exclusions, and warranty language line by line. If a proposal will not say what it includes, it is not ready to compare.
+              </p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Underlayment Question</h2>
-              <p>Tile roofs over 20–25 years old often have degrading tar-paper underlayment. The tile protects the roof surface, but water vapor and attic humidity slowly compromise the underlayment over decades. If you&apos;re installing solar and your roof is 20+ years old, this is the right moment to replace the underlayment beneath the solar footprint:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Costs $3,000–$8,000 for replacement under the array.</li>
-                <li>Extends roof life 25+ more years.</li>
-                <li>Avoids having to pull and reinstall solar in 5–10 years for roof repair.</li>
-              </ul>
-              <p>This is non-negotiable for many reputable California installers.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Tile Roofs + NEC Rapid Shutdown</h2>
-              <p>California requires rapid-shutdown compliance under NEC 690.12. With tile roofs, microinverter systems (Enphase) are often a better fit than string-with-optimizer systems because the components are more distributed across the roof and require fewer long wire runs.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Installer Selection</h2>
-              <p>Ask every installer you quote:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>&ldquo;How many tile-roof installs have you completed in the past 12 months?&rdquo; (Look for 20+.)</li>
-                <li>&ldquo;What tile hooks do you use?&rdquo; (Quick Mount PV and IronRidge are industry-leading.)</li>
-                <li>&ldquo;What&apos;s your policy if a tile breaks?&rdquo; (They should supply and install matching replacements at no charge.)</li>
-                <li>&ldquo;Will you recommend underlayment replacement if my roof is 20+ years old?&rdquo; (Honest installers say yes; bad ones say &ldquo;we&apos;ll just work around it.&rdquo;)</li>
-                <li>&ldquo;How do you test for leaks after install?&rdquo; (Hose test or thermal imaging is the answer you want.)</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><Link href="/blog/is-my-roof-good-for-solar-california" className="text-primary underline">Is My Roof Good for Solar?</Link></li>
-                <li><Link href="/blog/solar-carport-california-guide" className="text-primary underline">Solar Carport California Guide</Link></li>
-                <li><Link href="/blog/free-roof-replacement-with-solar-panels-california" className="text-primary underline">Roof Replacement with Solar Panels</Link></li>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Sources</h2>
+              <ul className='list-disc pl-6 space-y-2'>
+                <li>
+                  <a href={CALIFORNIA_RESIDENTIAL_CODE_URL} target='_blank' rel='noopener external' className='text-primary underline'>
+                    California Residential Code, Section R324
+                  </a>{' '}
+                  — rooftop-mounted and building-integrated photovoltaic provisions.
+                </li>
+                <li>
+                  <a href={CSLB_SOLAR_URL} target='_blank' rel='noopener external' className='text-primary underline'>
+                    California Contractors State License Board solar guidance
+                  </a>{' '}
+                  — consumer and contractor-license information.
+                </li>
+                <li>
+                  <a href={CSLB_LICENSE_LOOKUP_URL} target='_blank' rel='noopener external' className='text-primary underline'>
+                    CSLB license lookup
+                  </a>{' '}
+                  — verify the license information in a proposal before you sign.
+                </li>
               </ul>
             </div>
-          <ArticleCTA />
 
+            <ArticleCTA
+              heading='Compare the written scope before you decide'
+              body='Use a written quote to compare the roof work, permitting, equipment, and warranty terms tied to your address.'
+            />
           </article>
         </div>
       </main>
       <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="premium" /></div>
     </PublicLayout>
   );
 }
