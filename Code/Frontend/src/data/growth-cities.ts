@@ -1139,4 +1139,162 @@ export const growthCities: Record<
       ],
     ],
   },
+  sonoma: {
+    name: "Sonoma",
+    county: "Sonoma County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-12",
+    hasSavingsGuide: false,
+    bill: "Start with the electricity and generation providers printed on the actual account. A proposal should use the confirmed rate plan, solar-billing enrollment and full usage history for the address. A citywide price or a neighbor's bill is not a substitute for that record.",
+    local:
+      "Permit Sonoma publishes a City of Sonoma solar-PV standard plan that refers to current California building standards and local amendments. Ask the bidder to identify the permit route, the submitted system design, inspection responsibility and any roof or electrical work outside the solar price.",
+    example:
+      "Give each bidder the same year of bill history and roof layout. Then compare the system design, roof work, electrical work, permit scope, contract total and remaining utility-bill assumptions side by side. A lower monthly payment does not show the full agreement.",
+    checks: [
+      [
+        "Account details",
+        "Use the rate plan, generation provider and solar enrollment on the current bill; list remaining charges and assumptions separately.",
+      ],
+      [
+        "Permit design",
+        "Ask for the submitted design, permit responsibility and any city or utility step that is excluded from the signed scope.",
+      ],
+      [
+        "Roof and electrical work",
+        "Separate roof repair, service-panel work, storage and backup-circuit work from the core solar price.",
+      ],
+    ],
+    sources: [
+      {
+        label: "Permit Sonoma: City of Sonoma solar-PV standard plan",
+        url: "https://permitsonoma.org/Microsites/Permit%20Sonoma/Documents/Instructions%20and%20Forms/_BPC%20Building%20Plan%20Check/BPC-046-Microinverter-Plan-PV-Toolkit.pdf",
+      },
+      {
+        label: "PG&E: current residential rate plans and tariff resources",
+        url: "https://www.pge.com/en/account/rate-plans.html",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does a Sonoma solar proposal use one standard utility assumption?",
+        "No. Use the rate plan, providers and solar enrollment shown on the actual account. Ask the bidder to show the assumptions behind the remaining-bill estimate.",
+      ],
+      [
+        "Does the permit plan cover roof and electrical work automatically?",
+        "Only the written project scope can answer that. Have the bidder identify the permit route, submitted design, roof work, electrical work and exclusions before comparing totals.",
+      ],
+    ],
+  },
+  ventura: {
+    name: "Ventura",
+    county: "Ventura County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-12",
+    hasSavingsGuide: false,
+    bill: "Use the electricity provider and rate schedule shown on the account. A proposal should model the actual usage history and show the utility charges that remain after installation instead of treating a citywide average as a project result.",
+    local:
+      "Ventura publishes an instant-permit route for eligible contractor-submitted residential rooftop PV and an online permit process for projects outside that route. Ask who submits the plans, which permit path applies and how the bidder will handle inspection, roof work and electrical changes.",
+    example:
+      "Use the same roof layout, annual bill history and equipment scope in each proposal. Keep solar, storage, roof repairs, service work, permits and inspections on separate lines. Compare the full written obligations before comparing any advertised payment.",
+    checks: [
+      [
+        "Bill and system model",
+        "Use the account's actual rate plan and usage history, with output, imports, exports and remaining charges identified separately.",
+      ],
+      [
+        "Permit route",
+        "Ask whether the project uses the City's instant-permit route or Ventura OPS and identify the party responsible for plans, payment and inspection scheduling.",
+      ],
+      [
+        "Roof and electrical scope",
+        "Separate roof work, service or subpanel changes, storage and backup circuits from the core array proposal.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Ventura: photovoltaic information and permit routes",
+        url: "https://www.cityofventura.ca.gov/300/Photovoltaic-Information",
+      },
+      {
+        label: "City of Ventura: contractor solar permits and inspections",
+        url: "https://www.cityofventura.ca.gov/2554/Contractor-Solar-Permits-SB-379",
+      },
+      {
+        label: "SCE: residential rate-plan information",
+        url: "https://www.sce.com/customer-service-center/help-center/rate-plans-pricing/resources/rates-faq",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does every Ventura rooftop project use the instant permit route?",
+        "No. Ventura describes an instant route for eligible contractor-submitted projects and directs other scopes to its online process. Ask the bidder to name the route for the address and design.",
+      ],
+      [
+        "Can I compare Ventura solar offers from the monthly payment alone?",
+        "No. Compare the contract total, equipment, roof and electrical scope, permit duties, production assumptions and remaining utility charges in writing.",
+      ],
+    ],
+  },
+  "grass-valley": {
+    name: "Grass Valley",
+    county: "Nevada County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-12",
+    hasSavingsGuide: false,
+    bill: "Use the provider and rate plan printed on the actual electricity bill. PG&E publishes current rate-plan and tariff information, but a proposal still needs the account's usage history, solar enrollment and site-specific production assumptions.",
+    local:
+      "Grass Valley lists solar permits, a residential solar checklist and a solar ordinance through its Building Department. Ask the bidder to identify the required documents, the permit holder, inspection steps and any roof or electrical work that does not appear in the solar proposal.",
+    example:
+      "Put the same full-year bill history, roof layout and equipment choice into each proposal. Then separate solar, storage, roof repair, electrical work, permit work and utility steps. Compare the signed scope with the remaining-bill model, not a single payment figure.",
+    checks: [
+      [
+        "Usage and rate plan",
+        "Use the actual account and rate plan. Ask for a monthly production and remaining-bill model with its inputs shown.",
+      ],
+      [
+        "City documents",
+        "Ask who prepares the residential checklist and plans, submits the permit and schedules the required inspections.",
+      ],
+      [
+        "Comparable scope",
+        "Keep roof work, electrical work, storage, permits and warranty responsibility visible as separate parts of each written quote.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Grass Valley: building permits, solar permits and residential checklist",
+        url: "https://www.cityofgrassvalley.com/post/apply-building-permit",
+      },
+      {
+        label: "City of Grass Valley: residential solar-PV plan submittal checklist",
+        url: "https://www.cityofgrassvalley.com/sites/main/files/file-attachments/residential_solar_pv_submittal_checklist_202001071103529016.pdf?1587599826=",
+      },
+      {
+        label: "PG&E: current residential rate plans and tariff resources",
+        url: "https://www.pge.com/en/account/rate-plans.html",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does every Grass Valley solar proposal include the same permit work?",
+        "No. The City lists a residential solar checklist and permit documents, but the bidder must identify the actual submitted scope, permit holder and inspection responsibilities for the address.",
+      ],
+      [
+        "Should a Grass Valley solar quote use a generic utility rate?",
+        "No. Use the rate plan and usage history on the account. A useful proposal shows its actual bill and production assumptions instead of substituting a city average.",
+      ],
+    ],
+  },
 };
