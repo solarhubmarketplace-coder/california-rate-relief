@@ -35,6 +35,7 @@ const STATE_RANK = {
     bounced: 3,
     invalid_address: 4,
     complained: 5,
+    suppressed: 6,
 };
 
 /** Resend event type -> the state it implies. */
@@ -44,6 +45,7 @@ const EVENT_STATE = {
     'email.delivery_delayed': null, // informational; no state change
     'email.bounced': 'bounced',
     'email.complained': 'complained',
+    'email.suppressed': 'suppressed',
     'email.opened': null,
     'email.clicked': null,
     'email.failed': 'bounced',
@@ -163,6 +165,14 @@ async function applyResendEvent(event, providerEventId) {
     // 4. Mirror onto the lead, again advancing only.
     if (row.lead_id) {
         await advanceLeadEmailStatus(row.lead_id, nextState);
+        if (nextState === 'complained' || nextState === 'suppressed' || (nextState === 'bounced' && isHardBounce(data))) {
+            const { error: stopError } = await supabaseAdmin.rpc('record_crr_email_delivery_stop', {
+                p_lead_id: row.lead_id,
+                p_reason: nextState,
+                p_source_reference: `resend:${providerEventId || resendEmailId}`,
+            });
+            if (stopError) console.error('[EmailDelivery] Failed to stop recipient journey:', stopError.message);
+        }
     }
 
     // 5. Link the event to the row it touched.

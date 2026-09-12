@@ -45,6 +45,18 @@ class EmailService {
         if (context.outreachQueue) {
             const { assertEmailOutreachAllowed } = require('../lib/email-outreach-permission');
             await assertEmailOutreachAllowed(context.leadId, recipient);
+            const prepared = await require('./email-preferences.service').preparePromotionalMessage(
+                context.leadId,
+                htmlBody,
+                context.text
+            );
+            htmlBody = prepared.html;
+            context = {
+                ...context,
+                text: prepared.text,
+                replyTo: prepared.replyTo,
+                headers: { ...(context.headers || {}), ...prepared.headers },
+            };
         }
 
         try {

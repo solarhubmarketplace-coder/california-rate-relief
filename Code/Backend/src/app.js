@@ -101,6 +101,9 @@ app.post('/api/webhook/sms', requireTwilioSignature, webhookController.webhookIn
 // token. The controller fails closed when the signing secret or signature is
 // absent, so this exact provider callback must stay ahead of requireStaff.
 app.post('/api/webhook/resend', webhookController.webhookResendDelivery);
+const emailPreferencesController = require('./controllers/email-preferences.controller');
+app.get('/api/email/unsubscribe/:token', emailPreferencesController.unsubscribe);
+app.post('/api/email/unsubscribe/:token', emailPreferencesController.unsubscribe);
 app.get('/api/auth/google/callback', googleAuthController.handleCallback);
 app.put('/api/leads/:leadId/consent', leadController.publicOptOut);
 

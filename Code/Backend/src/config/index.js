@@ -37,6 +37,7 @@ module.exports = {
     RESEND_API_KEY: getEnv('RESEND_API_KEY'),
     EMAIL_FROM: getEnv('EMAIL_FROM', 'California Rate Relief <noreply@ratereliefca.com>'),
     COLD_EMAIL_FROM: getEnv('COLD_EMAIL_FROM'), // Optional: Special sender for cold leads
+    EMAIL_REPLY_DOMAIN: getEnv('EMAIL_REPLY_DOMAIN', 'vtropo.resend.app'),
 
     // Resend webhook signing secret (whsec_...). Set this in Railway and paste the
     // same value into the Resend dashboard webhook. Without it the delivery

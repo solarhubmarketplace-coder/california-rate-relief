@@ -187,6 +187,10 @@ const webhookResendDelivery = async (req, res) => {
 
   try {
     const providerEventId = req.headers["svix-id"] || null;
+    if (req.body?.type === 'email.received') {
+      const result = await require('../services/email-reply.service').applyInboundReply(req.body, providerEventId);
+      return res.status(200).json({ received: true, applied: result.applied, reason: result.reason });
+    }
     const result = await emailDelivery.applyResendEvent(req.body, providerEventId);
     console.log(
       `[WebhookResend] ${req.body && req.body.type} -> ${result.applied ? "applied" : "not applied"}: ${result.reason}`
