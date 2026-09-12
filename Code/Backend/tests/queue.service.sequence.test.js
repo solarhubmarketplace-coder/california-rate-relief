@@ -76,6 +76,7 @@ describe("QueueService - sequence email tasks", () => {
       email: "lead@example.com",
       name: "Lead One",
       phone: "+15551234567",
+      consent_status: "opted_in",
     },
     ...overrides,
   });
@@ -88,6 +89,19 @@ describe("QueueService - sequence email tasks", () => {
     expect(queueService.updateTask).toHaveBeenCalledWith(task.id, expect.objectContaining({
       status: "failed",
       error_message: expect.stringContaining("Manual-review intake"),
+    }));
+  });
+
+  test("fails a queued email when documented opt-in is absent", async () => {
+    const task = makeTask({ leads: { ...makeTask().leads, consent_status: "pending" } });
+    queueService.getPendingTasks = jest.fn().mockResolvedValue([task]);
+
+    await queueService.processEmailQueue();
+
+    expect(mockSendEmail).not.toHaveBeenCalled();
+    expect(queueService.updateTask).toHaveBeenCalledWith(task.id, expect.objectContaining({
+      status: "failed",
+      error_message: expect.stringContaining("documented opt-in"),
     }));
   });
 

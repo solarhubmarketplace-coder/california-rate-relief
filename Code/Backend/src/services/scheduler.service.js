@@ -592,7 +592,10 @@ class SchedulerService {
   }
 
   /**
-   * Auto-enroll leads into the correct email sequence based on their state.
+   * Auto-enroll opted-in leads into the correct email sequence based on their state.
+   *
+   * Every automated email requires a documented opted_in consent status. Legacy
+   * imports and intake records without that status stay in CRM for manual review.
    *
    * Rules:
    *   - cold leads with no active sequence    → cold_lead_nurture
@@ -661,6 +664,7 @@ class SchedulerService {
           .select("id, email, type, status")
           .eq("type", "cold")
           .is("project_type", null)
+          .eq("consent_status", "opted_in")
           .not("email", "is", null)
           .not("status", "in", "(declined,converted,opted_out)")
           .limit(100);
@@ -682,6 +686,7 @@ class SchedulerService {
           .select("id, email, call_state, status")
           .or("call_state.eq.no_book,status.eq.no_booked")
           .is("project_type", null)
+          .eq("consent_status", "opted_in")
           .not("email", "is", null)
           .limit(100);
 
@@ -701,6 +706,7 @@ class SchedulerService {
           .select("id, email, call_state, status")
           .or("call_state.eq.no_show,status.eq.no_show")
           .is("project_type", null)
+          .eq("consent_status", "opted_in")
           .not("email", "is", null)
           .limit(100);
 
@@ -720,6 +726,7 @@ class SchedulerService {
           .select("id, email, status")
           .eq("status", "won")
           .is("project_type", null)
+          .eq("consent_status", "opted_in")
           .not("email", "is", null)
           .limit(100);
 

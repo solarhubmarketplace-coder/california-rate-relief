@@ -358,6 +358,13 @@ class QueueService {
       if (await this.rejectManualIntakeTask(task)) continue;
 
       const lead = task.leads;
+      if (lead.consent_status !== "opted_in") {
+        await this.updateTask(task.id, {
+          status: "failed",
+          error_message: "Email outreach requires documented opt-in",
+        });
+        continue;
+      }
       if (!lead.email) {
         await this.updateTask(task.id, {
           status: "failed",
