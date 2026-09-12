@@ -1297,4 +1297,166 @@ export const growthCities: Record<
       ],
     ],
   },
+  victorville: {
+    name: "Victorville",
+    county: "San Bernardino County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-12",
+    hasSavingsGuide: false,
+    bill: "Start with the electricity provider, rate plan and usage history shown on the actual account. A proposal should state its system-production and remaining-bill assumptions for the property. A generic city estimate cannot determine the outcome for an individual meter.",
+    local:
+      "Victorville describes SolarAPP+ as an automated code-compliance path for eligible residential roof-mounted retrofit systems and publishes a separate permit-center process. Ask the bidder to identify the path, approved plans, permit number and inspection steps for the actual scope.",
+    example:
+      "Give each bidder the same full-year usage history and roof layout. Then separate the array, storage, roof work, service work, permit/inspection duties and contract total. Compare the written scope and remaining-bill model before comparing a monthly payment.",
+    checks: [
+      [
+        "Bill inputs",
+        "Use the actual account's rate plan and usage history. Request the production and remaining-bill assumptions in writing.",
+      ],
+      [
+        "City approval",
+        "Ask which permit route applies, who keeps the approved plans and who schedules the inspection using the City permit record.",
+      ],
+      [
+        "Scope changes",
+        "If the equipment, roof work, storage or electrical service changes, ask for the revised plans and a written change to cost and scope.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Victorville: SolarAPP+ automated solar-plan reviews",
+        url: "https://www.victorvilleca.gov/Government/City-Departments/Building/SolarApp-Automated-Solar-Plan-Reviews",
+      },
+      {
+        label: "City of Victorville: Building Permit Center process",
+        url: "https://www.victorvilleca.gov/Government/City-Departments/Building/Permit-Center",
+      },
+      {
+        label: "SCE: residential rate-plan information",
+        url: "https://www.sce.com/customer-service-center/help-center/rate-plans-pricing/resources/rates-faq",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does every Victorville solar project use SolarAPP+?",
+        "No. Victorville describes SolarAPP+ for eligible residential roof-mounted retrofit systems. Ask the bidder to identify the path and any additional review for the property's actual scope.",
+      ],
+      [
+        "Can I decide from an advertised monthly payment?",
+        "No. Compare the full written price or total payments, roof and electrical scope, permit duties, production inputs and remaining utility charges.",
+      ],
+    ],
+  },
+  petaluma: {
+    name: "Petaluma",
+    county: "Sonoma County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-12",
+    hasSavingsGuide: false,
+    bill: "Petaluma customers may see Sonoma Clean Power generation and PG&E delivery on the account. Use the actual providers, rate plan and solar enrollment shown on the bill. A generation-only rate or a neighboring bill is not a complete solar comparison.",
+    local:
+      "Petaluma's Building Division lists SolarAPP+ and solar-permit information alongside its residential permit and inspection resources. Ask the bidder to identify the permit path, responsible business, submitted plans, inspection schedule and any roof or electrical work excluded from the proposal.",
+    example:
+      "Run every bid from the same bill history and roof layout. Keep solar, storage, roof repair, electrical work, permits and warranty terms distinct. Then compare the written contract total and the remaining-bill assumptions for the actual account.",
+    checks: [
+      [
+        "Generation and delivery",
+        "Identify the generation provider, PG&E delivery service, rate plan and solar enrollment from the current account before modeling a proposal.",
+      ],
+      [
+        "Permit and inspection",
+        "Ask who uses the City permit path, submits documents, schedules inspections and holds responsibility for revisions.",
+      ],
+      [
+        "Comparable contract",
+        "Compare roof scope, electrical scope, equipment, warranty responsibility and all payment obligations on the same written basis.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Petaluma: Building Division, SolarAPP+ and solar-permit resources",
+        url: "https://cityofpetaluma.org/departments/building",
+      },
+      {
+        label: "Sonoma Clean Power: Solar Billing Plan tariff and Petaluma service territory",
+        url: "https://sonomacleanpower.org/uploads/documents/2024.12.05-Combined-Tariffspdf.pdf",
+      },
+      {
+        label: "PG&E: current residential rate plans and tariff resources",
+        url: "https://www.pge.com/en/account/rate-plans.html",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does Sonoma Clean Power replace PG&E on a Petaluma solar account?",
+        "Sonoma Clean Power's tariff describes generation service while PG&E continues other electric services. Use the current account to identify the providers, rate plan and solar enrollment before comparing bids.",
+      ],
+      [
+        "Does every Petaluma proposal include the same City permit work?",
+        "No. Ask the bidder to identify the actual permit path, submitted plans, inspection duties, roof work and electrical work for the property in writing.",
+      ],
+    ],
+  },
+  "rancho-cucamonga": {
+    name: "Rancho Cucamonga",
+    county: "San Bernardino County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-12",
+    hasSavingsGuide: false,
+    bill: "Use the provider, rate plan and usage history on the actual electricity account. A proposal should disclose its system-production and remaining-bill assumptions for the property rather than substitute a citywide rate or an advertised savings figure.",
+    local:
+      "Rancho Cucamonga publishes both an online solar-photovoltaic permit route and SolarAPP+ information for eligible residential projects. Ask the bidder to identify the route, the responsible contractor, submitted plan, inspection schedule and scope for any roof, storage or electrical work.",
+    example:
+      "Put the same year of usage, roof layout and equipment scope into every proposal. Then separate the solar array, storage, roof work, electrical work, permit/inspection duties, contract total and remaining utility charges. Compare the signed scope, not the headline payment.",
+    checks: [
+      [
+        "Account-specific model",
+        "Use the rate plan and usage history printed on the actual account; ask for the inputs behind the production and remaining-bill model.",
+      ],
+      [
+        "Permit route",
+        "Ask whether the online permit center or SolarAPP+ applies and name who submits the plans, pays the permit fees and schedules inspection.",
+      ],
+      [
+        "Project scope",
+        "List roof work, panel/service changes, storage, backup circuits and warranty responsibility separately from the core solar array.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Rancho Cucamonga: solar photovoltaic permits and SolarAPP+",
+        url: "https://www.cityofrc.us/community-development/building-safety/solar-permits",
+      },
+      {
+        label: "City of Rancho Cucamonga: building-safety solar permit guidance",
+        url: "https://www.cityofrc.us/community-development/building-safety/building-safety-guidelines",
+      },
+      {
+        label: "SCE: residential rate-plan information",
+        url: "https://www.sce.com/customer-service-center/help-center/rate-plans-pricing/resources/rates-faq",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does every Rancho Cucamonga solar project qualify for SolarAPP+?",
+        "No. The City describes SolarAPP+ for eligible residential project types and directs other work to the online permit center. Confirm the route for the actual design and property.",
+      ],
+      [
+        "What should I compare beyond the quoted payment?",
+        "Compare the written total, roof and electrical scope, permit duties, equipment, warranty responsibility, production inputs and remaining utility charges.",
+      ],
+    ],
+  },
 };
