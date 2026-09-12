@@ -806,7 +806,7 @@ export const growthCities: Record<
     name: "Riverside",
     county: "Riverside County",
     utility: "other",
-    sourceCheckedDate: "2026-09-11",
+    sourceCheckedDate: "2026-09-12",
     bill: "Riverside Public Utilities explains that solar customers remain connected to the grid and continue to receive utility bills. Start with the last 12 months of actual usage and the rate schedule on the account. A proposal should show its assumptions and the remaining charges, rather than promise that a bill disappears.",
     local:
       "Riverside Public Utilities says a grid-tied solar project needs City permit approval and interconnection before operation. Ask the bidder to name the permit, inspection and interconnection responsibilities for the exact address, along with any roof or electrical work excluded from the contract.",
@@ -855,7 +855,7 @@ export const growthCities: Record<
     name: "San Luis Obispo",
     county: "San Luis Obispo County",
     utility: "pge",
-    sourceCheckedDate: "2026-09-11",
+    sourceCheckedDate: "2026-09-12",
     bill: "Use the electricity provider, rate plan and any generation information printed on the actual bill. PG&E directs customers to its current rate plans and tariffs; a citywide average rate is not a substitute for the account details used in a proposal.",
     local:
       "San Luis Obispo publishes a SolarAPP+ permit route for eligible residential solar projects. Its process includes the SolarAPP+ approval document, a City application and inspection. Ask whether your roof, electrical scope and any storage work qualify, and have the bidder identify the actual permit path.",
@@ -904,7 +904,7 @@ export const growthCities: Record<
     name: "Temecula",
     county: "Riverside County",
     utility: "sce",
-    sourceCheckedDate: "2026-09-11",
+    sourceCheckedDate: "2026-09-12",
     bill: "Temecula's utility page identifies Southern California Edison for electricity. Use the provider and rate plan printed on the actual account when comparing bids. A high bill can start a solar conversation, but it does not by itself determine system size, production or savings.",
     local:
       "Temecula publishes SolarAPP+, expedited and standard photovoltaic plan-review paths. Its page says expansions to existing PV systems do not qualify for SolarAPP+ or expedited review. Ask the bidder to identify the correct path, the permit responsibility and any fire, roof, panel or battery scope before relying on a schedule.",
@@ -1271,7 +1271,7 @@ export const growthCities: Record<
     sources: [
       {
         label: "City of Grass Valley: building permits, solar permits and residential checklist",
-        url: "https://www.cityofgrassvalley.com/post/apply-building-permit",
+        url: "https://www.grassvalleyca.gov/post/apply-building-permit",
       },
       {
         label: "City of Grass Valley: residential solar-PV plan submittal checklist",
