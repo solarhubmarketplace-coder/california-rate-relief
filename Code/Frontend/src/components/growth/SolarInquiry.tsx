@@ -14,7 +14,7 @@ import {
   type CalculatorContext,
 } from '@/lib/calculator-context';
 import { calculateSolarScenario } from '@/lib/solar-savings-engine';
-import { isCaliforniaZip } from '@/lib/ca-utility-by-zip';
+import { isFiveDigitZip, serviceMarkets, type ServiceMarket } from '@/lib/service-market';
 import { trackEvent } from '@/components/GoogleAnalyticsClient';
 
 const field =
@@ -34,6 +34,8 @@ export function SolarInquiry({
   });
   const [contact, setContact] = useState({ name: '', phone: '', email: '' });
   const [homeowner, setHomeowner] = useState('yes');
+  const [serviceMarket, setServiceMarket] = useState<ServiceMarket | ''>('CA');
+  const [utilityOther, setUtilityOther] = useState('');
   const [consent, setConsent] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -110,10 +112,10 @@ export function SolarInquiry({
     if (inFlight.current) return;
     if (
       !attempt.current &&
-      (!isCaliforniaZip(inputs.zip) || Number(inputs.monthlyBill) <= 0)
+      (!serviceMarket || !isFiveDigitZip(inputs.zip) || Number(inputs.monthlyBill) <= 0)
     ) {
       setError(
-        'Enter a California ZIP and a monthly electricity bill above zero.',
+        'Select the project market, enter a 5-digit ZIP, and enter a monthly electricity bill above zero.',
       );
       return;
     }
@@ -138,8 +140,10 @@ export function SolarInquiry({
           contact,
           qualification_data: {
             homeowner: homeowner === 'yes',
-            utility_provider: inputs.utility,
+            utility_provider: inputs.utility === 'other' ? utilityOther : inputs.utility,
             service_zip: inputs.zip,
+            service_market: serviceMarket,
+            territory_resolution: 'visitor_selected_zip_validated',
             bill_amount: Number(inputs.monthlyBill),
             credit_score: 'unsure',
             inquiry_topic: topic,
@@ -261,8 +265,21 @@ export function SolarInquiry({
                 ))}
               </select>
             </label>
+            {inputs.utility === 'other' && (
+              <label className="text-sm font-medium">
+                Utility company on your bill
+                <input required maxLength={120} className={field} value={utilityOther} onChange={(e) => setUtilityOther(e.target.value)} />
+              </label>
+            )}
             <label className="text-sm font-medium">
-              California service ZIP
+              Project state or district
+              <select required className={field} value={serviceMarket} onChange={(e) => setServiceMarket(e.target.value as ServiceMarket)}>
+                <option value="">Select project market</option>
+                {serviceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
+              </select>
+            </label>
+            <label className="text-sm font-medium">
+              Project ZIP
               <input
                 required
                 inputMode="numeric"

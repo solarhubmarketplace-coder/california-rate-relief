@@ -50,6 +50,7 @@ const { randomUUID } = require('node:crypto');
       credit_score: 'below_650',
       bill_amount: 240,
       service_zip: '95814',
+      service_market: 'CA',
       calculator_version: 'quote-input-v2',
     },
     p_attribution: {
@@ -88,6 +89,8 @@ const { randomUUID } = require('node:crypto');
   ).rows[0];
   assert.deepEqual(saved.attribution, input.p_attribution);
   assert.equal(saved.qualification_data.service_zip, '95814');
+  const savedLead = (await db.query('select zip,service_market,territory_resolution from leads where id=$1', [first.data.lead_id])).rows[0];
+  assert.deepEqual(savedLead, { zip: '95814', service_market: 'CA', territory_resolution: 'visitor_selected_zip_validated' });
   // Distinct IDs for the same contact count once per Pacific calendar month.
   await rpc(db, 'ingest_crr_submission', {
     ...input,
@@ -245,7 +248,7 @@ const { randomUUID } = require('node:crypto');
   );
   await db.exec('RESET ROLE');
   console.log(
-    'PASS: actual migrations 006/008/009; simulated service_role default table grants narrowed to receipt SELECT/INSERT (UPDATE/DELETE/TRUNCATE/REFERENCES/TRIGGER denied); storage, replay, mismatch, attribution/context, test/spam/paid/unknown exclusions, monthly deduplication, owner-specific provider delivery, distinct inbox receipt, Pacific boundaries, anonymous access denied.',
+    'PASS: actual migrations 006/008/009/010; simulated service_role default table grants narrowed to receipt SELECT/INSERT (UPDATE/DELETE/TRUNCATE/REFERENCES/TRIGGER denied); storage, replay, market capture, mismatch, attribution/context, test/spam/paid/unknown exclusions, monthly deduplication, owner-specific provider delivery, distinct inbox receipt, Pacific boundaries, anonymous access denied.',
   );
   await db.close();
   await require('../tests/growth-receipts.cjs')();

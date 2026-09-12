@@ -14,12 +14,7 @@ import {
   submitIntake,
   type IntakePayload,
 } from "@/lib/intake";
-import {
-  CA_ZIP_MAX,
-  CA_ZIP_MIN,
-  derivedLocationFields,
-  isCaliforniaZip,
-} from "@/lib/ca-utility-by-zip";
+import { isFiveDigitZip, serviceLocationFields, serviceMarkets, type ServiceMarket } from "@/lib/service-market";
 
 interface CommercialFormData {
   companyName: string;
@@ -28,6 +23,7 @@ interface CommercialFormData {
   location: string;
   city: string;
   serviceZip: string;
+  serviceMarket: ServiceMarket | "";
   utilityProvider: string;
   monthlyBillRange: string;
   projectTimeline: string;
@@ -44,6 +40,7 @@ const initialForm: CommercialFormData = {
   location: "",
   city: "",
   serviceZip: "",
+  serviceMarket: "",
   utilityProvider: "",
   monthlyBillRange: "",
   projectTimeline: "",
@@ -141,16 +138,8 @@ export function CommercialAssessmentForm() {
       setError("Confirm contact consent before submitting.");
       return;
     }
-    if (!/^\d{5}$/.test(form.serviceZip)) {
-      setError(
-        "Enter the 5-digit ZIP code for the California project address.",
-      );
-      return;
-    }
-    if (!isCaliforniaZip(form.serviceZip)) {
-      setError(
-        `That ZIP code is outside California. California ZIP codes run ${CA_ZIP_MIN} to ${CA_ZIP_MAX}.`,
-      );
+    if (!form.serviceMarket || !isFiveDigitZip(form.serviceZip)) {
+      setError("Select a project market and enter a 5-digit project ZIP code.");
       return;
     }
     if (!form.city.trim()) {
@@ -185,7 +174,7 @@ export function CommercialAssessmentForm() {
             utility_provider: form.utilityProvider.trim(),
             monthly_bill_range: form.monthlyBillRange,
             project_timeline: form.projectTimeline,
-            ...derivedLocationFields(form.serviceZip, form.city),
+            ...serviceLocationFields(form.serviceMarket as ServiceMarket, form.serviceZip, form.city, form.utilityProvider),
           },
           attribution: intakeAttribution(touch),
           consent: {
@@ -371,6 +360,14 @@ export function CommercialAssessmentForm() {
               required
               className="h-12"
             />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="commercial-market">Project state or district</Label>
+            <select id="commercial-market" value={form.serviceMarket} onChange={(e) => update("serviceMarket", e.target.value as ServiceMarket)} required className={selectClass}>
+              <option value="">Select project market</option>
+              {serviceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
+            </select>
           </div>
 
           <div className="space-y-2">

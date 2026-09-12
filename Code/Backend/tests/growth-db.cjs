@@ -20,6 +20,7 @@ async function createGrowthDb() {
     '006_add_durable_intake_and_referrals.sql',
     '008_capture_zip_and_city_on_leads.sql',
     '009_organic_receipt_measurement.sql',
+    '010_six_market_intake_contract.sql',
   ]) {
     await db.exec(
       fs.readFileSync(path.join(__dirname, '../migrations', name), 'utf8'),

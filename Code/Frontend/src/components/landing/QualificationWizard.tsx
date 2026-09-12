@@ -29,12 +29,7 @@ import {
   submitIntake,
   type IntakePayload,
 } from '@/lib/intake';
-import {
-  CA_ZIP_MAX,
-  CA_ZIP_MIN,
-  derivedLocationFields,
-  isCaliforniaZip,
-} from '@/lib/ca-utility-by-zip';
+import { isFiveDigitZip, serviceLocationFields, serviceMarkets, type ServiceMarket } from '@/lib/service-market';
 import { useToast } from '@/hooks/use-toast';
 import usePlacesAutocomplete, {
   getGeocode,
@@ -46,6 +41,7 @@ type WizardStep = 1 | 2 | 3 | 4 | 5;
 
 interface FormData {
   utilityProvider: string;
+  utilityProviderOther: string;
   billAmount: string;
   isHomeowner: boolean | null;
   creditScore: string;
@@ -55,6 +51,7 @@ interface FormData {
   address: string;
   city: string;
   serviceZip: string;
+  serviceMarket: ServiceMarket | '';
 }
 
 /** Minimal shape of the geocoder components we read; @types/google.maps is not installed. */
@@ -161,6 +158,7 @@ export function QualificationWizard() {
 
   const [formData, setFormData] = useState<FormData>({
     utilityProvider: '',
+    utilityProviderOther: '',
     billAmount: '',
     isHomeowner: null,
     creditScore: '',
@@ -170,13 +168,13 @@ export function QualificationWizard() {
     address: '',
     city: '',
     serviceZip: '',
+    serviceMarket: '',
   });
 
-  // Live shape check only. A ZIP the seed table cannot resolve is still a valid
-  // submission, so nothing here depends on a successful utility lookup.
+  // A ZIP-to-utility inference is deliberately California-only.
   const zipWarning =
-    formData.serviceZip.length === 5 && !isCaliforniaZip(formData.serviceZip)
-      ? `That ZIP code is outside California. This program covers California only (${CA_ZIP_MIN}-${CA_ZIP_MAX}).`
+    formData.serviceZip.length === 5 && !isFiveDigitZip(formData.serviceZip)
+      ? 'Enter a 5-digit project ZIP code.'
       : '';
 
   const updateFormData = (
@@ -308,22 +306,10 @@ export function QualificationWizard() {
         return;
       }
 
-      if (!/^\d{5}$/.test(formData.serviceZip)) {
+      if (!formData.serviceMarket || !isFiveDigitZip(formData.serviceZip)) {
         toast({
           title: 'Invalid ZIP Code',
-          description: 'Enter the 5-digit ZIP code for the California project address.',
-          variant: 'destructive',
-        });
-        setIsSubmitting(false);
-        return;
-      }
-
-      // Shape only. A ZIP outside California means this form is the wrong one,
-      // so it is worth stopping for; a ZIP we simply cannot look up is not.
-      if (!isCaliforniaZip(formData.serviceZip)) {
-        toast({
-          title: 'ZIP Code Outside California',
-          description: `The Rate Relief Program covers California only. California ZIP codes run ${CA_ZIP_MIN} to ${CA_ZIP_MAX}.`,
+          description: 'Select the project state or district and enter its 5-digit ZIP code.',
           variant: 'destructive',
         });
         setIsSubmitting(false);
@@ -345,11 +331,7 @@ export function QualificationWizard() {
       // the visitor picked, derived_utility is what the seed table says, and a
       // disagreement between the two is a review signal rather than a silent
       // overwrite. The seed table is the less reliable of the two sources.
-      const location = derivedLocationFields(
-        formData.serviceZip,
-        formData.city,
-        formData.utilityProvider,
-      );
+      const location = serviceLocationFields(formData.serviceMarket, formData.serviceZip, formData.city, formData.utilityProvider);
 
       const attempt = getOrCreateSubmissionAttempt<IntakePayload>(attemptRef.current, submissionId => ({
         submission_id: submissionId,
@@ -359,7 +341,7 @@ export function QualificationWizard() {
           email: formData.email.trim(), address: formData.address.trim(),
         },
         qualification_data: {
-          utility_provider: formData.utilityProvider, bill_amount: billValue,
+          utility_provider: formData.utilityProvider === 'other' ? formData.utilityProviderOther : formData.utilityProvider, bill_amount: billValue,
           monthly_bill_range: formData.billAmount, credit_score: formData.creditScore,
           homeowner: formData.isHomeowner === true,
           ...location,
@@ -440,6 +422,7 @@ export function QualificationWizard() {
                   setCurrentStep(1);
                   setFormData({
                     utilityProvider: '',
+                    utilityProviderOther: '',
                     billAmount: '',
                     isHomeowner: null,
                     creditScore: '',
@@ -449,6 +432,7 @@ export function QualificationWizard() {
                     address: '',
                     city: '',
                     serviceZip: '',
+                    serviceMarket: '',
                   });
                 }}
                 variant='outline'
@@ -864,6 +848,13 @@ export function QualificationWizard() {
                       </p>
                     </div>
 
+                    {formData.utilityProvider === 'other' && (
+                      <div className='space-y-3'>
+                        <Label htmlFor='utility-provider-other' className='text-base font-bold text-foreground'>Electric utility on your bill</Label>
+                        <Input id='utility-provider-other' type='text' maxLength={120} value={formData.utilityProviderOther} onChange={(e) => updateFormData('utilityProviderOther', e.target.value)} required className='h-12 text-base border-2 border-border focus:border-primary transition-colors' />
+                      </div>
+                    )}
+
                     <div className='space-y-3'>
                       <Label
                         htmlFor='service-city'
@@ -885,6 +876,22 @@ export function QualificationWizard() {
                       <p className='text-xs text-muted-foreground'>
                         Filled in automatically when you pick a suggested address
                       </p>
+                    </div>
+
+                    <div className='space-y-3'>
+                      <Label htmlFor='service-market' className='text-base font-bold text-foreground'>
+                        Project state or district
+                      </Label>
+                      <select
+                        id='service-market'
+                        value={formData.serviceMarket}
+                        onChange={(e) => updateFormData('serviceMarket', e.target.value as ServiceMarket)}
+                        required
+                        className='h-12 w-full rounded-md border-2 border-border bg-background px-3 text-base focus:border-primary focus:outline-none'
+                      >
+                        <option value=''>Select project market</option>
+                        {serviceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
+                      </select>
                     </div>
 
                     <div className='space-y-3'>
@@ -912,7 +919,7 @@ export function QualificationWizard() {
                         id='service-zip-help'
                         className={`text-xs ${zipWarning ? 'font-semibold text-destructive' : 'text-muted-foreground'}`}
                       >
-                        {zipWarning || 'Enter the 5-digit ZIP code for the California project address'}
+                        {zipWarning || 'Enter the 5-digit ZIP code for the selected project market'}
                       </p>
                     </div>
                   </div>

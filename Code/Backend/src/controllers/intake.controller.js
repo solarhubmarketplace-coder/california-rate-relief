@@ -4,6 +4,7 @@ const { cleanJourney, cleanPublicPath } = require('../lib/lead-journey');
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const SERVICE_MARKETS = new Set(['CA', 'NJ', 'DE', 'MD', 'VA', 'DC']);
 
 function text(value, max) {
   if (value == null) return null;
@@ -77,12 +78,13 @@ function validate(body) {
   // Location and ZIP-derived territory keys. derived_utility is stored ALONGSIDE
   // utility_provider and never replaces it: the visitor's answer and the seed
   // table's answer must both survive so a mismatch is a reviewable signal.
-  const location = ['city', 'zip', 'service_zip', 'county', 'derived_utility', 'derived_cca', 'derived_county', 'derived_from', 'derived_utility_matches_selection'];
+  const location = ['city', 'zip', 'service_zip', 'county', 'service_market', 'territory_resolution', 'derived_utility', 'derived_cca', 'derived_county', 'derived_from', 'derived_utility_matches_selection'];
   const residential = ['utility_provider', 'bill_amount', 'monthly_bill_range', 'credit_score', 'homeowner',
+    'utility_provider_other',
     'calculator_version', 'calculator_monthly_bill', 'calculator_annual_kwh', 'calculator_system_kw', 'calculator_cash_price',
     'calculator_annual_bill_after', 'calculator_annual_difference', 'calculator_simple_payback',
     'calculator_solar_only_price', 'calculator_battery_price', 'inquiry_topic', ...location];
-  const commercial = ['company_name', 'property_type', 'property_control', 'location', 'utility_provider', 'bill_amount', 'monthly_bill_range', 'demand_indicator', 'project_timeline', ...location];
+  const commercial = ['company_name', 'property_type', 'property_control', 'location', 'utility_provider', 'utility_provider_other', 'bill_amount', 'monthly_bill_range', 'demand_indicator', 'project_timeline', ...location];
   const qualification = cleanObject(body.qualification_data, segment === 'residential' ? residential : commercial, 200);
   // `service_zip` is canonical; `zip` is accepted as an alias and folded into it.
   // Whatever the visitor typed is kept even when it is malformed or out of state
@@ -90,11 +92,21 @@ function validate(body) {
   // RPC decides separately which values are clean enough for leads.zip/city.
   if (qualification.zip && !qualification.service_zip) qualification.service_zip = qualification.zip;
   delete qualification.zip;
+  if (qualification.service_market) {
+    qualification.service_market = qualification.service_market.toUpperCase();
+    if (!SERVICE_MARKETS.has(qualification.service_market)) return { error: 'qualification_data.service_market is invalid' };
+    // This is the visitor-selected market, not a ZIP-derived coverage claim.
+    qualification.territory_resolution = /^\d{5}$/.test(qualification.service_zip || '')
+      ? 'visitor_selected_zip_validated'
+      : 'visitor_selected_zip_unverified';
+  }
   if (segment === 'residential' && typeof qualification.homeowner !== 'boolean') return { error: 'qualification_data.homeowner is required for residential intake' };
   for (const field of ['company_name', 'property_type', 'property_control', 'project_timeline']) {
     if (segment === 'commercial' && !qualification[field]) return { error: `qualification_data.${field} is required for commercial intake` };
   }
-  const utility = normalizeUtility(qualification.utility_provider, segment === 'commercial');
+  // A non-California provider is stored as the explicit visitor answer under
+  // Other. We do not manufacture a canonical utility from state or ZIP.
+  const utility = normalizeUtility(qualification.utility_provider, true);
   if (!utility) return { error: 'qualification_data.utility_provider is invalid' };
   qualification.utility_provider = utility.canonical;
   if (utility.other) qualification.utility_provider_other = utility.other;

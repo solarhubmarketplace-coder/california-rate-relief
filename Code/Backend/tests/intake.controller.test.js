@@ -119,6 +119,26 @@ describe('public intake controller', () => {
     }));
   });
 
+  test('stores a visitor-selected expansion market and an unrecognized utility truthfully', () => {
+    const result = controller.validate({ ...residential, qualification_data: {
+      ...residential.qualification_data, service_market: 'md', service_zip: '20850',
+      utility_provider: 'Pepco Maryland',
+    } });
+    expect(result.error).toBeUndefined();
+    expect(result.value.qualification_data).toEqual(expect.objectContaining({
+      service_market: 'MD', service_zip: '20850',
+      territory_resolution: 'visitor_selected_zip_validated',
+      utility_provider: 'Other', utility_provider_other: 'Pepco Maryland',
+    }));
+  });
+
+  test('rejects a non-authorized market code without rejecting a valid legacy payload', () => {
+    const result = controller.validate({ ...residential, qualification_data: {
+      ...residential.qualification_data, service_market: 'TX', service_zip: '75001',
+    } });
+    expect(result.error).toMatch(/service_market/);
+  });
+
   test('a malformed or out-of-state ZIP is recorded, not rejected', () => {
     for (const zip of ['9330', '10001', 'not-a-zip']) {
       const result = controller.validate({ ...residential, qualification_data: {
