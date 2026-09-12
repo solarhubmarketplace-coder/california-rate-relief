@@ -71,6 +71,19 @@ describe("EmailSequenceService", () => {
   });
 
   describe("getNextStepForLead (fixed .single() → .limit(1))", () => {
+    test('scopes queued lookup and advancement to the requested sequence', async () => {
+      const query = {
+        select: jest.fn().mockReturnThis(), eq: jest.fn().mockReturnThis(),
+        is: jest.fn().mockReturnThis(),
+        limit: jest.fn().mockResolvedValue({ data: [], error: null }),
+      };
+      mockFrom.mockReturnValue(query);
+      expect(await emailSequenceService.getNextStepForLead('lead-1', 'seq-requested')).toBeNull();
+      expect(query.eq).toHaveBeenCalledWith('sequence_id', 'seq-requested');
+      query.eq.mockClear();
+      await expect(emailSequenceService.advanceLeadToNextStep('lead-1', 'seq-requested')).rejects.toThrow('No active sequence');
+      expect(query.eq).toHaveBeenCalledWith('sequence_id', 'seq-requested');
+    });
     test("returns null when no active sequence for lead", async () => {
       mockFrom.mockReturnValue({
         select: jest.fn().mockReturnThis(),

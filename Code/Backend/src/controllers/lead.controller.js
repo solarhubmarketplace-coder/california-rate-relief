@@ -124,46 +124,8 @@ const upgradeLeadToHot = async (req, res, next) => {
     }
 };
 
-const handleLeadConversionClick = async (req, res, next) => {
-    try {
-        const { leadId } = req.params;
-        await leadService.upgradeLeadToHot(leadId);
-
-        // Return Success HTML
-        res.send(`
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>Interest Confirmed</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <style>
-                    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: center; padding: 20px; background: #f0fdf4; color: #166534; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-                    .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 500px; width: 100%; }
-                    h1 { margin-top: 0; color: #15803d; }
-                    p { font-size: 18px; color: #374151; line-height: 1.6; }
-                </style>
-            </head>
-            <body>
-                <div class="card">
-                    <h1>✅ Request Received!</h1>
-                    <p>Thanks for confirm your interest. One of our solar experts has been notified and will call you shortly to discuss your savings.</p>
-                </div>
-            </body>
-            </html>
-        `);
-    } catch (error) {
-        console.error('Lead conversion error:', error);
-        res.send(`
-            <!DOCTYPE html>
-            <html>
-            <body style="font-family: sans-serif; text-align: center; padding: 50px;">
-                <h1>Something went wrong</h1>
-                <p>We couldn't process your request automatically. Please reply to the email directly.</p>
-            </body>
-            </html>
-        `);
-    }
-};
+const { redirectLegacyEmailLink } = require('../lib/legacy-email-landing');
+const handleLeadConversionClick = redirectLegacyEmailLink;
 
 const updateConsent = async (req, res, next) => {
     try {

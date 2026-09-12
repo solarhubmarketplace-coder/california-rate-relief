@@ -110,6 +110,7 @@ describe("QueueService - sequence email tasks", () => {
     queueService.getPendingTasks = jest.fn().mockResolvedValue([task]);
     mockGetNextStepForLead.mockResolvedValue({
       currentStep: {
+        id: "step-2",
         step_order: 2,
         subject: "Hi {{name}}",
         html_content: "<p>Hello {{name}}</p>",
@@ -123,9 +124,10 @@ describe("QueueService - sequence email tasks", () => {
       "lead@example.com",
       "Hi Lead One",
       expect.stringContaining("Hello Lead One"),
-      expect.objectContaining({ leadId: "lead-1", sequenceId: "seq-1" })
+      expect.objectContaining({ leadId: "lead-1", sequenceId: "seq-1", sequenceStepId: "step-2", idempotencyKey: "crr-email-task-task-1" })
     );
-    expect(mockAdvanceLeadToNextStep).toHaveBeenCalledWith("lead-1");
+    expect(mockGetNextStepForLead).toHaveBeenCalledWith("lead-1", "seq-1");
+    expect(mockAdvanceLeadToNextStep).toHaveBeenCalledWith("lead-1", "seq-1");
     expect(queueService.handleTaskFailure).not.toHaveBeenCalled();
     expect(queueService.updateTask).toHaveBeenCalledWith(
       "task-1",
@@ -168,5 +170,20 @@ describe("QueueService - sequence email tasks", () => {
 
     expect(mockSendEmail).not.toHaveBeenCalled();
     expect(queueService.handleTaskFailure).toHaveBeenCalledTimes(1);
+  });
+
+  test.each([
+    ["different sequence", "seq-other", 2],
+    ["already advanced step", "seq-1", 3],
+  ])("does not send a %s from an old queued task", async (_label, sequenceId, stepOrder) => {
+    queueService.getPendingTasks = jest.fn().mockResolvedValue([makeTask()]);
+    mockGetNextStepForLead.mockResolvedValue({
+      currentStep: { id: "step-other", step_order: stepOrder, subject: "Subject", html_content: "Body" },
+      tracking: { sequence_id: sequenceId },
+    });
+    await queueService.processEmailQueue();
+    expect(mockSendEmail).not.toHaveBeenCalled();
+    expect(mockAdvanceLeadToNextStep).not.toHaveBeenCalled();
+    expect(queueService.handleTaskFailure).toHaveBeenCalledWith(expect.any(Object), expect.stringContaining("no longer matches"));
   });
 });

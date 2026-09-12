@@ -47,6 +47,9 @@ class EmailService {
                 subject,
                 html: htmlBody
             };
+            if (context.replyTo) request.replyTo = context.replyTo;
+            if (context.text) request.text = context.text;
+            if (context.headers) request.headers = context.headers;
             const options = context.idempotencyKey
                 ? { idempotencyKey: context.idempotencyKey }
                 : undefined;
@@ -76,6 +79,8 @@ class EmailService {
                 const { error: logError } = await supabaseAdmin.from('email_logs').insert({
                     lead_id: context.leadId || null,
                     template_id: context.templateId || null,
+                    sequence_id: context.sequenceId || null,
+                    sequence_step_id: context.sequenceStepId || null,
                     email_to: recipient,
                     status: 'sent',
                     // "accepted", not "delivered". Resend returning an id means it
@@ -125,6 +130,8 @@ class EmailService {
             await supabaseAdmin.from('email_logs').insert({
                 lead_id: context.leadId,
                 template_id: context.templateId || null,
+                sequence_id: context.sequenceId || null,
+                sequence_step_id: context.sequenceStepId || null,
                 email_to: typeof to === 'string' ? to.slice(0, 320) : null,
                 status: 'failed',
                 delivery_state: deliveryState || (classified.kind === 'permanent' ? 'invalid_address' : null),

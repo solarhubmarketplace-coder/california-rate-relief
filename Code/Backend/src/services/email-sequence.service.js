@@ -260,19 +260,20 @@ class EmailSequenceService {
      * @param {string} leadId - Lead ID
      * @returns {Object|null} Next step or null if sequence completed
      */
-    async getNextStepForLead(leadId) {
+    async getNextStepForLead(leadId, sequenceId = null) {
         try {
             // Get lead's current sequence tracking.
             // NOTE: only embed email_sequences(*) here — there is no foreign
             // key from lead_sequence_tracking to email_sequence_steps, so
             // embedding email_sequence_steps(*) makes PostgREST reject the
             // whole query. Steps are fetched separately below by sequence_id.
-            const { data: trackingRows, error: trackError } = await supabaseAdmin
+            let trackingQuery = supabaseAdmin
                 .from('lead_sequence_tracking')
                 .select('*, email_sequences(*)')
                 .eq('lead_id', leadId)
-                .is('completed_at', null)
-                .limit(1);
+                .is('completed_at', null);
+            if (sequenceId) trackingQuery = trackingQuery.eq('sequence_id', sequenceId);
+            const { data: trackingRows, error: trackError } = await trackingQuery.limit(1);
 
             if (trackError) {
                 console.error(
@@ -329,14 +330,15 @@ class EmailSequenceService {
      * @param {string} leadId - Lead ID
      * @returns {Object} Updated tracking
      */
-    async advanceLeadToNextStep(leadId) {
+    async advanceLeadToNextStep(leadId, sequenceId = null) {
         try {
-            const { data: trackingRows, error } = await supabaseAdmin
+            let trackingQuery = supabaseAdmin
                 .from('lead_sequence_tracking')
                 .select('*')
                 .eq('lead_id', leadId)
-                .is('completed_at', null)
-                .limit(1);
+                .is('completed_at', null);
+            if (sequenceId) trackingQuery = trackingQuery.eq('sequence_id', sequenceId);
+            const { data: trackingRows, error } = await trackingQuery.limit(1);
 
             if (error || !trackingRows || trackingRows.length === 0) {
                 throw new Error('No active sequence found for lead');

@@ -421,6 +421,7 @@ class QueueService {
           await emailService.sendEmail(lead.email, subject, html, {
             leadId: lead.id,
             templateId: tmpl.id,
+            idempotencyKey: `crr-email-task-${task.id}`,
             from: task.metadata?.from || undefined,
           });
 
@@ -431,10 +432,15 @@ class QueueService {
         // ✨ NEW: Check if this is a sequence email task
         else if (task.metadata?.sequence_step) {
           const emailSequenceService = require("./email-sequence.service");
-          const sequenceData = await emailSequenceService.getNextStepForLead(lead.id);
+          if (!task.metadata.sequence_id) throw new Error("Queued sequence identity is missing");
+          const sequenceData = await emailSequenceService.getNextStepForLead(lead.id, task.metadata.sequence_id);
 
           if (sequenceData && sequenceData.currentStep) {
             const step = sequenceData.currentStep;
+            if (sequenceData.tracking.sequence_id !== task.metadata.sequence_id ||
+                Number(step.step_order) !== Number(task.metadata.sequence_step)) {
+              throw new Error("Queued sequence or step no longer matches active tracking");
+            }
             let subject = step.subject.replace(/{{name}}/g, lead.name || "there");
             let html = step.html_content.replace(/{{name}}/g, lead.name || "there");
             html = html.replace(/{{phone}}/g, lead.phone || "");
@@ -447,11 +453,13 @@ class QueueService {
             await emailService.sendEmail(lead.email, subject, html, {
               leadId: lead.id,
               sequenceId: sequenceData.tracking.sequence_id,
+              sequenceStepId: step.id,
+              idempotencyKey: `crr-email-task-${task.id}`,
               templateId: null,
             });
 
             // Advance to next step (or mark complete)
-            await emailSequenceService.advanceLeadToNextStep(lead.id);
+            await emailSequenceService.advanceLeadToNextStep(lead.id, sequenceData.tracking.sequence_id);
 
             console.log(
               `[QueueService] Sent sequence step ${step.step_order} to lead ${lead.id}`
@@ -487,11 +495,13 @@ class QueueService {
             await emailService.sendEmail(lead.email, subject, html, {
               leadId: lead.id,
               sequenceId: sequenceData.tracking.sequence_id,
+              sequenceStepId: step.id,
+              idempotencyKey: `crr-email-task-${task.id}`,
               templateId: null,
             });
 
             // Advance to next step (or mark complete)
-            await emailSequenceService.advanceLeadToNextStep(lead.id);
+            await emailSequenceService.advanceLeadToNextStep(lead.id, sequenceData.tracking.sequence_id);
 
             console.log(
               `[QueueService] Sent sequence step ${step.step_order} to lead ${lead.id}`
