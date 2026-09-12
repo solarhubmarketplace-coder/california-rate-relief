@@ -5,6 +5,7 @@ describe('email lifecycle migration contract', () => {
   const sql = fs.readFileSync(path.join(__dirname, '../supabase/migrations/20260912225207_email_lifecycle_controls.sql'), 'utf8');
   const bookingSql = fs.readFileSync(path.join(__dirname, '../supabase/migrations/20260912232500_booking_stops_email_promotion.sql'), 'utf8');
   const bookingAclSql = fs.readFileSync(path.join(__dirname, '../supabase/migrations/20260912233000_lock_booking_trigger_function.sql'), 'utf8');
+  const offerTaskSql = fs.readFileSync(path.join(__dirname, '../supabase/migrations/20260912234500_email_offer_staff_tasks.sql'), 'utf8');
   test('keeps marketing paused by default and applies both frequency caps', () => {
     expect(sql).toContain("values('email_marketing_enabled','false'::jsonb)");
     expect(sql).toContain("interval '24 hours'");
@@ -29,5 +30,15 @@ describe('email lifecycle migration contract', () => {
     expect(bookingAclSql).toContain('from anon');
     expect(bookingAclSql).toContain('from authenticated');
     expect(bookingAclSql).toContain('to service_role');
+  });
+  test('email offer submissions create a protected, idempotent staff task', () => {
+    expect(offerTaskSql).toContain('alter table public.email_offer_staff_tasks enable row level security');
+    expect(offerTaskSql).toContain('revoke all on public.email_offer_staff_tasks from public, anon, authenticated');
+    expect(offerTaskSql).toContain("new.attribution->>'acquisition_medium'");
+    expect(offerTaskSql).toContain("v_offer in ('bill-review', 'quote-review')");
+    expect(offerTaskSql).toContain('on conflict (submission_id) do nothing');
+    expect(offerTaskSql).toContain('update public.email_offer_staff_tasks');
+    expect(offerTaskSql).toContain("status = 'completed'");
+    expect(offerTaskSql).toContain('to service_role');
   });
 });

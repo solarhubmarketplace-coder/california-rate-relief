@@ -12,5 +12,7 @@ router.get('/submissions', staffController.listSubmissions);
 router.patch('/submissions/:id/classification', staffController.classifySubmission);
 router.get('/owner-notifications', staffController.listOwnerNotifications);
 router.post('/owner-notifications/:id/reconcile', staffController.reconcileOwnerNotification);
+router.get('/email-offer-tasks', staffController.listEmailOfferTasks);
+router.patch('/email-offer-tasks/:id', staffController.updateEmailOfferTask);
 
 module.exports = router;

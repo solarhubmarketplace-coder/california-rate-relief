@@ -72,4 +72,18 @@ async function reconcileOwnerNotification(req, res, next) {
   catch (error) { return next(error); }
 }
 
-module.exports = { growthScorecard, recordReceipt, recordReferral, updateReferral, listReferrals, getScorecard, listSubmissions, classifySubmission, listOwnerNotifications, reconcileOwnerNotification, pickOutcome, validateOutcome };
+async function listEmailOfferTasks(req, res, next) {
+  const status = req.query?.status;
+  if (status && !['open', 'completed', 'dismissed'].includes(status)) return res.apiResponse(400, 'Invalid email offer task status');
+  try { return res.apiResponse(200, 'Email offer tasks retrieved', await staffService.listEmailOfferTasks(status)); }
+  catch (error) { return next(error); }
+}
+
+async function updateEmailOfferTask(req, res, next) {
+  const status = req.body?.status;
+  if (!UUID.test(req.params.id || '') || !['open', 'completed', 'dismissed'].includes(status)) return res.apiResponse(400, 'Valid task id and status are required');
+  try { return res.apiResponse(200, 'Email offer task updated', await staffService.updateEmailOfferTask(req.params.id, status)); }
+  catch (error) { return next(error); }
+}
+
+module.exports = { growthScorecard, recordReceipt, recordReferral, updateReferral, listReferrals, getScorecard, listSubmissions, classifySubmission, listOwnerNotifications, reconcileOwnerNotification, listEmailOfferTasks, updateEmailOfferTask, pickOutcome, validateOutcome };

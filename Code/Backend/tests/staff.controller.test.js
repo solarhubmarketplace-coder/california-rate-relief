@@ -1,4 +1,4 @@
-jest.mock('../src/services/staff.service', () => ({ recordReferral: jest.fn(), updateReferral: jest.fn(), listSubmissions: jest.fn(), classifySubmission: jest.fn() }));
+jest.mock('../src/services/staff.service', () => ({ recordReferral: jest.fn(), updateReferral: jest.fn(), listSubmissions: jest.fn(), classifySubmission: jest.fn(), listEmailOfferTasks: jest.fn(), updateEmailOfferTask: jest.fn() }));
 const service = require('../src/services/staff.service');
 const controller = require('../src/controllers/staff.controller');
 
@@ -33,5 +33,16 @@ describe('manual partner outcomes', () => {
     const res = { apiResponse: jest.fn() };
     await controller.classifySubmission({ params: { id: '223e4567-e89b-42d3-a456-426614174000' }, body: { is_spam: 'yes' } }, res, jest.fn());
     expect(res.apiResponse).toHaveBeenCalledWith(400, 'is_spam must be boolean');
+  });
+  test('lists and updates protected email offer tasks', async () => {
+    const id = '223e4567-e89b-42d3-a456-426614174000';
+    service.listEmailOfferTasks.mockResolvedValue([{ id, status: 'open' }]);
+    service.updateEmailOfferTask.mockResolvedValue({ id, status: 'completed' });
+    const listRes = { apiResponse: jest.fn() };
+    await controller.listEmailOfferTasks({ query: { status: 'open' } }, listRes, jest.fn());
+    expect(service.listEmailOfferTasks).toHaveBeenCalledWith('open');
+    const updateRes = { apiResponse: jest.fn() };
+    await controller.updateEmailOfferTask({ params: { id }, body: { status: 'completed' } }, updateRes, jest.fn());
+    expect(service.updateEmailOfferTask).toHaveBeenCalledWith(id, 'completed');
   });
 });

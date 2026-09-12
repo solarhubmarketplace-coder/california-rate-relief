@@ -92,6 +92,25 @@ class StaffService {
     if (error) throw databaseError(error);
     return { id, resolution };
   }
+
+  async listEmailOfferTasks(status) {
+    let query = supabaseAdmin.from('email_offer_staff_tasks')
+      .select('id,submission_id,lead_id,offer,status,is_test,due_at,completed_at,created_at,updated_at,leads(name,phone,email)')
+      .order('due_at', { ascending: true }).limit(250);
+    if (status) query = query.eq('status', status);
+    const { data, error } = await query;
+    if (error) throw databaseError(error);
+    return data;
+  }
+
+  async updateEmailOfferTask(id, status) {
+    const now = new Date().toISOString();
+    const { data, error } = await supabaseAdmin.from('email_offer_staff_tasks').update({
+      status, completed_at: status === 'open' ? null : now, updated_at: now,
+    }).eq('id', id).select('id,submission_id,lead_id,offer,status,is_test,due_at,completed_at,updated_at').single();
+    if (error) throw databaseError(error);
+    return data;
+  }
 }
 
 module.exports = new StaffService();
