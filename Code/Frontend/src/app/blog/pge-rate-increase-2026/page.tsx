@@ -1,89 +1,113 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
-import { TrustedSources } from '@/components/shared/TrustedSources';
-import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
-import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
+const sources: Source[] = [
+  {
+    label: "PG&E: current and historic electric rates",
+    url: "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+  },
+  {
+    label: "PG&E: Base Services Charge",
+    url: "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+  },
+  {
+    label: "PG&E: residential rate plans",
+    url: "https://www.pge.com/en/account/rate-plans.html",
+  },
+];
+
 export const metadata: Metadata = {
-  title: "PG&E Rate Increase 2026: What You Actually Pay Now",
+  title: "PG&E rate changes in 2026: how to check your California bill",
   description:
-    "PG&E's 2026 rate changes explained, current residential rates, the $24 Base Services Charge, what drove the hike, and what you can do about it.",
-  alternates: { canonical: '/blog/pge-rate-increase-2026' },
+    "Use PG&E's current tariff, bill and rate-plan tools to understand a California electric bill in 2026. This guide does not substitute a generic rate for an account-specific bill.",
+  alternates: { canonical: "/blog/pge-rate-increase-2026" },
   openGraph: {
-    title: 'PG&E Rate Increase 2026',
-    description: 'PG&E residential rate changes for 2026, plain English.',
-    type: 'article',
-    publishedTime: '2026-04-24T00:00:00Z',
-    url: 'https://ratereliefca.com/blog/pge-rate-increase-2026',
+    title: "PG&E rate changes in 2026: how to check your California bill",
+    description:
+      "A source-cited guide to checking current PG&E California bill and rate-plan information.",
+    type: "article",
+    url: "https://ratereliefca.com/blog/pge-rate-increase-2026",
+    modifiedTime: "2026-09-12T00:00:00Z",
   },
 };
 
-export default function PGERateIncrease2026() {
+export default function PgeRateIncrease2026() {
   return (
-    <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"PG&E Rate Increase 2026: What Residential Customers Actually Pay Now"} url="https://ratereliefca.com/blog/pge-rate-increase-2026" datePublished="2026-04-24" dateModified="2026-04-24" description={"PG&E"} />
-      <Header />
-      <main className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <article className="max-w-3xl mx-auto">
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link><span>/</span>
-              <Link href="/blog" className="hover:text-primary">Blog</Link><span>/</span>
-              <span className="text-foreground">PG&amp;E Rate Increase 2026</span>
-            </nav>
-            <header className="mb-10">
-              <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Utility Rates · California</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">PG&amp;E Rate Increase 2026: What Residential Customers Actually Pay Now</h1>
-              <p className="text-lg text-muted-foreground">PG&amp;E&apos;s 2026 rate changes are a mix. A slight generation-rate decrease on paper, offset by a new $24 Base Services Charge that hit most customers harder than the headlines suggested.</p>
-            </header>
-
-            <div className="prose prose-slate max-w-none">
-              <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Actual 2026 Numbers</h2>
-              <p>PG&amp;E&apos;s average residential rate is approximately 41.46¢/kWh in 2026, down modestly from 44.36¢/kWh in late 2025. But that headline decrease is deceptive because of the new Base Services Charge.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The $24 Base Services Charge</h2>
-              <p>Effective March 2026, all PG&amp;E residential customers pay a fixed $24/month Base Services Charge regardless of electricity usage. This is distinct from per-kWh generation/transmission rates — it applies even if you use zero kWh from the grid. For solar homeowners, this fixed charge is unavoidable: net metering cannot zero it out.</p>
-              <p>A low-use household paying $60/month in kWh charges now pays $84/month. A solar household whose bill was $12/month now pays $36/month.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What Drove the Increase</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Wildfire-mitigation infrastructure spending (undergrounding lines in HFTD zones).</li>
-                <li>Legacy liability payments from 2017–2019 wildfire settlements.</li>
-                <li>Rate-base recovery of grid modernization investments.</li>
-                <li>The AB 205 fixed-charge restructuring approved by the CPUC, which created the Base Services Charge.</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Rate Plan Options</h2>
-              <p>PG&amp;E offers several time-of-use plans. If you can shift laundry, dishwasher, EV charging, and pool pumps to off-peak hours (typically before 4 PM or after 9 PM), the best-fit TOU plan can save 10–15%. Log into your PG&amp;E account and use the rate-comparison tool.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What You Can Do</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Check your rate plan.</strong> Many households are on a default plan that isn&apos;t optimal.</li>
-                <li><strong>Apply for CARE or FERA.</strong> Income-qualified discounts of 18–35%.</li>
-                <li><strong>Medical Baseline allowance.</strong> Additional low-tier electricity for medical-equipment households.</li>
-                <li><strong>Consider solar + battery.</strong> Solar alone under NEM 3.0 has stretched payback; pairing with a battery for self-consumption recovers most of the economics. See <Link href="/blog/solar-battery-backup-california" className="text-primary underline">Solar Battery Backup in California</Link>.</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><Link href="/blog/california-24-dollar-fixed-charge-explained" className="text-primary underline">The $24 California Fixed Charge Explained</Link></li>
-                <li><Link href="/blog/sce-rate-increase-2026" className="text-primary underline">SCE Rate Increase 2026</Link></li>
-                <li><Link href="/blog/why-is-my-pge-bill-so-high" className="text-primary underline">Why Is My PG&amp;E Bill So High?</Link></li>
-                <li><Link href="/blog/pge-vs-sce-vs-sdge-rates-compared" className="text-primary underline">PG&amp;E vs SCE vs SDG&amp;E Rates Compared</Link></li>
-              </ul>
-            </div>
-          <ArticleCTA />
-
-          </article>
-        </div>
-      </main>
-      <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
-    </PublicLayout>
+    <DecisionPage
+      title="PG&E rate changes in 2026: how to check your California bill"
+      intro="A rate-change headline does not determine an individual bill. Check the Pacific Gas and Electric bill, current rate schedule, usage and applicable program details together."
+      path="/blog/pge-rate-increase-2026"
+      sources={sources}
+      sourceCheckedDate="2026-09-12"
+      utility="pge"
+      topic="PG&E bill and solar comparison"
+    >
+      <section>
+        <h2>First, confirm that the bill is from Pacific Gas and Electric</h2>
+        <p>
+          The acronym PGE can refer to more than one utility in national search
+          results. This guide concerns Pacific Gas and Electric service in
+          California. Use the name on the bill and the service address before
+          relying on a rate article or calculator.
+        </p>
+      </section>
+      <section>
+        <h2>Use the current rate schedule, not an old average</h2>
+        <p>
+          PG&amp;E&apos;s electric-rates page identifies the current and historic
+          residential schedules. The page lists residential inclusive time-of-use
+          pricing effective from March 1, 2026. A bill can still differ from a
+          headline average because the rate plan, baseline allowance, time of
+          use, billing days, usage and generation arrangement are account
+          specific.
+        </p>
+      </section>
+      <section>
+        <h2>How the Base Services Charge changed the bill display</h2>
+        <p>
+          PG&amp;E says that, beginning in March 2026, the bill separates some
+          service costs into a Base Services Charge while lowering the
+          electricity price compared with the otherwise applicable price. Most
+          customers pay a charge around $24 per month, and the actual amount can
+          vary with the number of billing days. PG&amp;E describes discounted
+          amounts for eligible CARE and FERA customers on its current page.
+        </p>
+        <p className="mt-3">
+          Do not add a fixed-charge figure to an old bill and call the result a
+          new total. Compare the full current bill, including its rate schedule
+          and electricity use. PG&amp;E states that lower per-kWh pricing may or
+          may not lower an individual total bill because each customer&apos;s usage
+          differs.
+        </p>
+      </section>
+      <section>
+        <h2>Check a rate plan against actual usage</h2>
+        <p>
+          PG&amp;E directs residential customers to compare rate plans using their
+          actual usage. Its rate-plan resources distinguish time-of-use, tiered,
+          electric-home and solar rate options. A plan that appears inexpensive
+          in one hour or season is not necessarily the lower-bill option for a
+          particular home.
+        </p>
+        <ol className="list-decimal space-y-2 pl-5">
+          <li>Keep a recent full bill and the current rate-plan name.</li>
+          <li>Compare the same billing period in the prior year before attributing a change to one line item.</li>
+          <li>Use PG&amp;E&apos;s account tools or rate-plan comparison with actual usage.</li>
+          <li>Check eligibility directly for any income-qualified program before assuming a discount.</li>
+        </ol>
+      </section>
+      <section>
+        <h2>Solar needs a separate tariff and proposal review</h2>
+        <p>
+          A bill change does not establish a solar saving, system size or battery
+          need. Existing solar customers and new proposals should identify the
+          actual tariff, expected onsite use, imports, exports, delivery charges
+          and remaining utility charges. The <Link className="underline" href="/blog/why-is-my-pge-bill-so-high">PG&amp;E bill guide</Link> and
+          <Link className="underline" href="/blog/net-billing-vs-net-metering-california"> Net Billing comparison</Link> explain the
+          documents to check before relying on a sales estimate.
+        </p>
+      </section>
+    </DecisionPage>
   );
 }
