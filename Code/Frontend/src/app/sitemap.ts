@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
 import { getAllCitySlugs } from '@/data/cities-data';
 import { ARTICLE_PAGES, articleHref, articlesInCluster } from '@/data/article-pages';
 import { GLP1_INDEX_ROUTES } from '@/lib/glp1-seo-routes';
-import { GROWTH_ROUTES } from '@/lib/growth-routes';
+import { GROWTH_ROUTES, LOCAL_RELEASE_REVIEW_ROUTES } from '@/lib/growth-routes';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
 // =============================================================================
@@ -26,9 +26,11 @@ const CRR_UPDATED_PAGES = new Set([
   '/blog', '/blog/pge-time-of-use-rates-2026',
   '/blog/pge-vs-sce-vs-sdge-rates-compared', '/blog/why-is-my-pge-bill-so-high',
 ]);
+const LOCAL_RELEASE_REVIEW_ROUTE_SET = new Set<string>(LOCAL_RELEASE_REVIEW_ROUTES);
 
 function fileMtime(_relPath: string, _fallback: Date): Date {
   const route = _relPath.replace(/^src\/app/, '').replace(/\/page\.[tj]sx?$/, '');
+  if (LOCAL_RELEASE_REVIEW_ROUTE_SET.has(route)) return new Date('2026-09-12T00:00:00.000Z');
   if (GROWTH_ROUTES.includes(route) || route === '/blog/why-is-my-pge-bill-so-high') return new Date('2026-09-10T00:00:00.000Z');
   if (CRR_UPDATED_PAGES.has(route)) return new Date('2026-09-09T00:00:00.000Z');
   return SITEMAP_LAST_AUDITED;
@@ -44,6 +46,7 @@ function reviewMtime(slug: string, fallback: Date): Date {
  * runtime filesystem I/O.
  */
 function urlMtime(_urlPath: string, _fallback: Date): Date {
+  if (LOCAL_RELEASE_REVIEW_ROUTE_SET.has(_urlPath)) return new Date('2026-09-12T00:00:00.000Z');
   if (GROWTH_ROUTES.includes(_urlPath) || _urlPath === '/blog/why-is-my-pge-bill-so-high') return new Date('2026-09-10T00:00:00.000Z');
   if (CRR_UPDATED_PAGES.has(_urlPath)) return new Date('2026-09-09T00:00:00.000Z');
   return SITEMAP_LAST_AUDITED;
@@ -217,7 +220,12 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     changeFrequency: 'monthly',
     priority: 0.75,
   }));
-  const cityCompaniesPages: MetadataRoute.Sitemap = [...new Set([...getAllCitySlugs(), ...GROWTH_ROUTES.filter(route => route.startsWith('/solar-companies/')).map(route => route.split('/').pop()!)])].map((slug) => ({
+  const cityCompaniesPages: MetadataRoute.Sitemap = [...new Set([
+    ...getAllCitySlugs(),
+    ...[...GROWTH_ROUTES, ...LOCAL_RELEASE_REVIEW_ROUTES]
+      .filter(route => route.startsWith('/solar-companies/'))
+      .map(route => route.split('/').pop()!),
+  ])].map((slug) => ({
     url: `${base}/solar-companies/${slug}`,
     lastModified: solarCompaniesRouteMtime,
     changeFrequency: 'monthly',
