@@ -1459,4 +1459,58 @@ export const growthCities: Record<
       ],
     ],
   },
+  "santa-barbara": {
+    name: "Santa Barbara",
+    county: "Santa Barbara County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-12",
+    hasSavingsGuide: false,
+    bill: "Use the provider, rate plan and usage history printed on the actual electricity account. Santa Barbara Clean Energy and SCE publish a joint rate comparison, but the current account controls the generation enrollment, delivery charges and solar-billing assumptions for a specific proposal.",
+    local:
+      "The City publishes an On-Demand Permit route for qualifying photovoltaic systems with optional energy storage, as well as other permit paths. Ask the bidder to identify the applicable City route, responsible California contractor, submitted plan, inspection schedule and any roof or electrical work in writing.",
+    example:
+      "Give every bidder the same bill history and roof layout. Keep the solar array, storage, roof work, electrical work, permit duties and warranty terms separate. Compare the written contract total and the remaining-bill assumptions for the actual account instead of an advertised payment or citywide estimate.",
+    checks: [
+      [
+        "Account and rate plan",
+        "Confirm the generation provider, SCE delivery service, rate plan and solar enrollment from the current bill before comparing a proposal.",
+      ],
+      [
+        "City permit route",
+        "Ask whether the project is eligible for the On-Demand Permit route and who submits plans, schedules inspections and handles revisions.",
+      ],
+      [
+        "Comparable scope",
+        "Compare roof scope, electrical scope, storage, equipment, warranty responsibility and all payment obligations on the same written basis.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Santa Barbara: how to go solar and permit process",
+        url: "https://sustainability.santabarbaraca.gov/take-action/how-go-solar",
+      },
+      {
+        label: "City of Santa Barbara: On-Demand photovoltaic permit information",
+        url: "https://santabarbaraca.gov/services/construction-land-development/forms-applications/building-permit-forms-applications",
+      },
+      {
+        label: "SCE and Santa Barbara Clean Energy: joint residential rate comparison",
+        url: "https://www.sce.com/customer-service-center/community-choice-aggregation/sce-sbce-joint-rate-comparisons",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does every Santa Barbara solar project use the On-Demand Permit route?",
+        "No. The City describes that route for qualifying photovoltaic work. Confirm the permit path, scope and responsible contractor for the actual design and property.",
+      ],
+      [
+        "What should I compare beyond the quoted payment?",
+        "Compare the written contract total, roof and electrical scope, permit duties, equipment, warranty responsibility, production inputs and remaining utility charges.",
+      ],
+    ],
+  },
 };
