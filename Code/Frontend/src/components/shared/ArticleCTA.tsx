@@ -24,7 +24,7 @@ export function ArticleCTA({
   const pathname = usePathname();
   const isCommercial = isCommercialIntentPath(pathname);
   return (
-    <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
+    <div id="solar-inquiry" className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
       <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>
         {heading}
       </h3>

@@ -17,6 +17,9 @@ export const GROWTH_ROUTES = [
   "/blog/solar-battery-backup-california",
   "/battery/sgip-battery-rebate-california",
   "/blog/pge-vs-sce-vs-sdge-rates-compared",
+  "/blog/why-is-my-pge-bill-so-high",
+  "/blog/solar-carport-california-guide",
+  "/commercial-solar/cost-per-watt-california",
   "/blog/why-is-my-ladwp-bill-so-high",
   "/solar-savings/los-angeles",
   ...[

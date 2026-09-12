@@ -17,6 +17,6 @@ export function isCommercialIntentPath(pathname: string): boolean {
 }
 
 export function intakeHrefForPath(pathname: string): string {
-  if (GROWTH_ROUTES.includes(pathname)) return '#solar-inquiry';
-  return isCommercialIntentPath(pathname) ? '/commercial-assessment' : '/#qualify';
+  if (isCommercialIntentPath(pathname)) return '/commercial-assessment';
+  return GROWTH_ROUTES.includes(pathname) ? '#solar-inquiry' : '/#qualify';
 }

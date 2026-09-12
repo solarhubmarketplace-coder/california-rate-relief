@@ -11,7 +11,7 @@
     "audit:linkgraph": "node scripts/crawl-linkgraph.mjs",
     "lint:growth": "node scripts/lint-growth.mjs",
     "typecheck": "tsc --noEmit",
-    "test:growth": "node --experimental-strip-types --test src/lib/solar-savings-engine.test.ts src/lib/growth-report.test.ts src/lib/attribution.test.ts src/lib/intake.test.ts src/lib/intake-routing.test.ts",
+    "test:growth": "node --experimental-strip-types --test src/lib/solar-savings-engine.test.ts src/lib/growth-report.test.ts src/lib/attribution.test.ts src/lib/intake.test.ts src/lib/intake-routing.test.ts src/lib/bill-comparison.test.ts src/lib/solar-financing-comparison.test.ts",
     "review:growth": "node --experimental-strip-types scripts/review-growth.mjs",
     "test:growth-browser": "node --experimental-strip-types scripts/test-growth-browser.mjs",
     "test:receipt-panel": "node --experimental-strip-types scripts/test-receipt-panel.mjs"

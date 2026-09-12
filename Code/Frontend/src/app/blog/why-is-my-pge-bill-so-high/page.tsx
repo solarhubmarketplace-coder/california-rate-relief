@@ -7,6 +7,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { BillComparison } from '@/components/growth/BillComparison';
 import { Calendar, Clock } from 'lucide-react';
 
 const title = 'Why Is My PG&E Bill So High? 7 Real Reasons';
@@ -17,13 +18,13 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/blog/why-is-my-pge-bill-so-high' },
-  openGraph: { title, description, type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-10T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' },
+  openGraph: { title, description, type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-11T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' },
 };
 
 export default function WhyIsMyPGEBillSoHigh() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant='Article' domain='crr' headline={title} url='https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' datePublished='2026-04-24' dateModified='2026-09-10' description={description} />
+      <ArticleJsonLd variant='Article' domain='crr' headline={title} url='https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' datePublished='2026-04-24' dateModified='2026-09-11' description={description} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -37,7 +38,7 @@ export default function WhyIsMyPGEBillSoHigh() {
               <p className='text-lg text-muted-foreground'>Start with the usage line. If your kilowatt-hours did not rise, the rate plan, billing period and line-item changes usually explain the rest.</p>
               <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground mt-4'>
                 <Link href='/author/chad-simpson' className='font-medium text-foreground hover:text-primary'>By Chad Simpson</Link>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-10'>Updated September 10, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-11'>Updated September 11, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>8 min read</span></div>
               </div>
             </header>
@@ -53,6 +54,8 @@ export default function WhyIsMyPGEBillSoHigh() {
                   <li>If you have solar, check whether this is a monthly statement or a True-Up.</li>
                 </ol>
               </div>
+
+              <BillComparison />
 
               <h2 className='text-2xl font-bold text-foreground mt-8 mb-4'>1. You Used More Electricity</h2>
               <p>A dollar total hides the basic question: did the home use more power? Compare kWh per day, not only monthly kWh, because one bill may cover more days. Air conditioning, resistance heating, an EV, a pool pump, a second refrigerator, a hot tub or a failed appliance can move usage without changing anyone&apos;s daily routine on purpose.</p>

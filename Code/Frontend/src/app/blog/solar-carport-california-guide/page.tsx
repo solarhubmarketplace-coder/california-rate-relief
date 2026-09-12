@@ -1,25 +1,27 @@
-import { SgipStatusNote } from '@/components/growth/SgipStatusNote';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowRight, Sun, Zap, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+
+const title = 'Solar Carports in California: Compare Structure, Quotes and a Roof Alternative';
+const description =
+  'How to compare a California solar carport with a roof proposal: project scope, local review, electrical work and contract questions.';
+
 export const metadata: Metadata = {
-  title: "Solar Carports in California: Cost & Permits",
-  description:
-    "What a solar carport costs in California, the permits you need, how it compares to a roof install, and when EV charging or battery stacking justifies it.",
+  title,
+  description,
   alternates: { canonical: '/blog/solar-carport-california-guide' },
   openGraph: {
-    title: 'Solar Carports in California: 2026 Guide',
-    description: 'Everything California homeowners need to know about solar carports — cost, permits, installers, and EV integration.',
+    title,
+    description,
     type: 'article',
     publishedTime: '2026-04-24T00:00:00Z',
+    modifiedTime: '2026-09-11T00:00:00Z',
     url: 'https://ratereliefca.com/blog/solar-carport-california-guide',
   },
 };
@@ -27,170 +29,138 @@ export const metadata: Metadata = {
 export default function SolarCarportCAGuide() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Carports in California: Cost, Permits, and Whether It's Worth It (2026)"} url="https://ratereliefca.com/blog/solar-carport-california-guide" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar carport cost in California, permit requirements, installer options, and whether a freestanding solar carport beats a roof install. EV-pairing, code compliance, SGIP battery stacking."} />
+      <ArticleJsonLd
+        variant="Article"
+        domain="crr"
+        headline={title}
+        url="https://ratereliefca.com/blog/solar-carport-california-guide"
+        datePublished="2026-04-24"
+        dateModified="2026-09-11"
+        description={description}
+      />
       <Header />
-      <main className="py-16 bg-background">
+      <main className="bg-background py-16">
         <div className="container mx-auto px-4">
-          <article className="max-w-3xl mx-auto">
-            <SgipStatusNote/>
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
+          <article className="mx-auto max-w-3xl">
+            <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
               <Link href="/" className="hover:text-primary">Home</Link>
               <span>/</span>
               <Link href="/blog" className="hover:text-primary">Blog</Link>
               <span>/</span>
-              <span className="text-foreground">Solar Carport California Guide</span>
+              <span className="text-foreground">Solar Carports in California</span>
             </nav>
 
             <header className="mb-10">
-              <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Installation · California</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
-                Solar Carports in California: Cost, Permits, and Whether They&apos;re Worth It
+              <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                Solar Design · California
+              </span>
+              <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl">
+                {title}
               </h1>
-              <p className="text-lg text-muted-foreground">
-                A solar carport replaces or adds to your roof array with a freestanding structure that doubles as covered parking. Here&apos;s what it actually costs in California, when it beats a rooftop install, and the permit traps that blow budgets.
+              <p className="mt-4 text-lg text-muted-foreground">
+                A solar carport places panels on a freestanding canopy above a
+                parking area. It may solve a different property problem than a roof
+                installation, so it needs a separate scope and quote comparison.
               </p>
+              <p className="mt-4 text-sm text-muted-foreground">Updated September 11, 2026</p>
             </header>
 
             <div className="prose prose-slate max-w-none">
-              <p className="p-4 rounded-lg border border-border bg-card text-sm">
-                <strong>TL;DR:</strong> Solar carports in California typically run $4.00–$6.50 per watt installed, 20–40% more than a rooftop system per watt. That premium buys covered parking, EV-charging integration, and the ability to put solar on properties without suitable roofs. For most homeowners, a rooftop install is the better value. Solar carports pay off when your roof is shaded, slated for replacement, or architecturally unsuitable, or when you want a combined solar-plus-EV-charging structure.
-              </p>
+              <div className="my-8 rounded-xl border border-border bg-muted/30 p-5">
+                <p className="m-0">
+                  <strong>Start here:</strong> decide whether the canopy itself
+                  solves a property need. Then compare the solar equipment,
+                  structural work, electrical work and contract terms on separate
+                  lines. A single total price hides too much.
+                </p>
+              </div>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What Is a Solar Carport?</h2>
+              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                When a carport deserves its own comparison
+              </h2>
               <p>
-                A solar carport is a freestanding canopy structure — typically steel or aluminum frame — with photovoltaic panels mounted on top instead of (or in addition to) roof-mounted panels. Sizes range from single-vehicle (~4 kW) up to multi-vehicle arrays (15 kW+) with integrated EV charging. California is a leading market because of high electricity rates, large suburban lot sizes, and the state&apos;s push toward EV adoption.
+                A carport can be worth considering when usable roof area is limited,
+                when covered parking has value on its own, or when a site plan calls
+                for a freestanding structure. It is not automatically comparable to
+                a roof quote with the same panel count. The canopy, foundation and
+                site work can change both price and project sequence.
               </p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Solar Carport Cost in California (2026)</h2>
-              <div className="overflow-x-auto my-6">
-                <table className="w-full border-collapse text-sm">
-                  <thead>
-                    <tr className="border-b-2 border-border">
-                      <th className="text-left py-3 pr-4 font-bold text-foreground">Carport size</th>
-                      <th className="text-center py-3 px-3 font-bold text-foreground">Typical kW</th>
-                      <th className="text-center py-3 px-3 font-bold text-foreground">Installed cost (CA)</th>
-                      <th className="text-center py-3 px-3 font-bold text-foreground">Incl. EV charger add-on</th>
+              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Ask for a scope that separates the moving parts
+              </h2>
+              <div className="my-6 overflow-x-auto rounded-xl border border-border">
+                <table className="w-full text-left text-sm">
+                  <thead className="bg-muted">
+                    <tr>
+                      <th className="p-3">Scope</th>
+                      <th className="p-3">What to get in writing</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-border">
-                      <td className="py-3 pr-4 font-medium">Single vehicle</td>
-                      <td className="text-center py-3 px-3">4–6 kW</td>
-                      <td className="text-center py-3 px-3">$18,000–$32,000</td>
-                      <td className="text-center py-3 px-3">+$1,500–$3,000</td>
-                    </tr>
-                    <tr className="border-b border-border">
-                      <td className="py-3 pr-4 font-medium">Two-vehicle</td>
-                      <td className="text-center py-3 px-3">8–12 kW</td>
-                      <td className="text-center py-3 px-3">$34,000–$60,000</td>
-                      <td className="text-center py-3 px-3">+$2,500–$5,000</td>
-                    </tr>
-                    <tr>
-                      <td className="py-3 pr-4 font-medium">Three or more</td>
-                      <td className="text-center py-3 px-3">12–20+ kW</td>
-                      <td className="text-center py-3 px-3">$55,000–$120,000+</td>
-                      <td className="text-center py-3 px-3">+$4,000–$8,000</td>
-                    </tr>
+                    <tr className="border-t"><th scope="row" className="p-3 align-top">Canopy and site work</th><td className="p-3 align-top">Frame, foundations, drainage or paving work, and who is responsible for each item.</td></tr>
+                    <tr className="border-t"><th scope="row" className="p-3 align-top">Solar equipment</th><td className="p-3 align-top">System size, module and inverter models, production assumptions and equipment ownership.</td></tr>
+                    <tr className="border-t"><th scope="row" className="p-3 align-top">Electrical work</th><td className="p-3 align-top">Service-panel work, wiring route, EV charging or battery equipment, and items priced separately.</td></tr>
+                    <tr className="border-t"><th scope="row" className="p-3 align-top">Local review</th><td className="p-3 align-top">Which party prepares plans, submits applications, responds to questions and carries any excluded work.</td></tr>
+                    <tr className="border-t"><th scope="row" className="p-3 align-top">Contract terms</th><td className="p-3 align-top">Cash price, finance agreement, escalator, service responsibility, transfer terms and removal or repair responsibilities.</td></tr>
                   </tbody>
                 </table>
               </div>
-              <p>
-                These are the prices you pay. The federal 30% Residential Clean Energy Credit used to take a $40,000 two-vehicle carport down to roughly $28,000, but it is gone: IRC § 25D no longer applies to expenditures made after December 31, 2025. A carport you buy in 2026 gets no federal credit.
-              </p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">When a Solar Carport Beats a Rooftop Install</h2>
-              <ul className="space-y-3">
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>Your roof is shaded, tile, or slated for replacement.</strong> Mature trees, tile roofs (which carry a $1,500–$3,000 tile-removal-and-replacement premium per install), or roofs within 5 years of replacement all argue against rooftop.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>You&apos;re building a detached garage or ADU anyway.</strong> Bundling solar with structural construction lowers the marginal cost of the carport frame significantly.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>You want a solar + EV + battery integrated structure.</strong> Level-2 EV chargers and battery backup wire easily into a carport&apos;s electrical subpanel.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>Historic preservation rules ban visible rooftop panels.</strong> Common in designated districts in San Francisco, Pasadena, Pacific Grove, and parts of LA.</div>
-                </li>
+              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Check the property-specific questions before signing
+              </h2>
+              <ul className="list-disc space-y-3 pl-6">
+                <li>Ask the relevant local office what review applies to the exact property and proposed structure.</li>
+                <li>Check any HOA, lease, easement or parking-use restriction that could affect the design.</li>
+                <li>Ask who will be named in the project paperwork and who is responsible for work outside the solar equipment.</li>
+                <li>Get the roof alternative on the same usage history, equipment scope and payment basis before choosing between designs.</li>
+                <li>Keep a battery or EV charger as a separate line item unless the proposal states exactly what is included.</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">When Rooftop Still Wins</h2>
-              <ul className="space-y-3">
-                <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                  <div><strong>Budget sensitivity.</strong> A 10 kW rooftop system runs $28,000–$40,000 installed; an equivalent carport is $45,000–$60,000.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                  <div><strong>Small lot.</strong> Many Westminster, San Francisco, and Orange County lots don&apos;t have the setbacks for a conforming carport structure.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
-                  <div><strong>HOA aesthetic restrictions.</strong> California&apos;s Solar Rights Act (Civil Code § 714) protects rooftop panels, but freestanding structures can face stricter design review.</div>
-                </li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">California Permit Requirements</h2>
-              <p>A solar carport crosses more permit desks than a rooftop install:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Building permit</strong>, required in every California jurisdiction for structural canopies over 120 sq ft (most solar carports).</li>
-                <li><strong>Electrical permit</strong>, for the PV system, inverter, and service connection.</li>
-                <li><strong>Zoning setback review</strong>, your carport usually needs to sit a defined distance from property lines (typically 3–10 ft).</li>
-                <li><strong>Structural engineering stamp</strong>. California seismic code requires an engineered design for any structure over ~100 sq ft.</li>
-                <li><strong>Utility interconnection application</strong>, same as rooftop: Rule 21 for the three IOUs (PG&amp;E, SCE, SDG&amp;E), muni-specific for SMUD, LADWP, Roseville Electric, and other public utilities.</li>
-              </ul>
-              <p>Total permit cost typically runs $800–$2,500 on top of the installed-equipment price. Most installers roll this into the turnkey quote.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">EV Charging Integration</h2>
+              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Common comparison mistakes
+              </h2>
               <p>
-                One of the strongest arguments for a California solar carport is EV-pairing. A Level-2 charger wired to a dedicated circuit under the carport canopy gives you daylight charging directly from solar; which under NEM 3.0&apos;s net billing structure is dramatically more valuable than exporting to the grid at 5–8¢/kWh. Pair with a battery (eligible for California&apos;s Self-Generation Incentive Program rebate) and you can time-shift solar to charge your EV overnight too.
+                Do not compare a carport&apos;s all-in price against a roof system&apos;s
+                solar-only price. Do not assume that a financing payment covers the
+                same scope as a cash proposal. Do not assume a permit, utility or
+                ownership question has the same answer for every California
+                property. Put each answer in the written proposal.
               </p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Who Installs Solar Carports in California</h2>
-              <p>
-                Most major California solar installers will quote carports, but the market is much thinner than rooftop. Quality varies significantly. National installers (Sunrun, SunPower, Tesla Solar) quote carports but often subcontract the steel structure to a regional fabricator. Ask upfront who is building the canopy frame and whether they carry California Contractors State License Board (CSLB) B (General) or C-10 classification in addition to the C-46 (Solar) needed for the PV system.
-              </p>
+              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Questions to ask a provider
+              </h2>
+              <ol className="list-decimal space-y-3 pl-6">
+                <li>What work is included in the canopy price, and what work can change it?</li>
+                <li>Which company handles the solar equipment and which handles structural or electrical work?</li>
+                <li>What does the proposal assume about the utility bill after installation?</li>
+                <li>Who owns, maintains and services the equipment under this payment option?</li>
+                <li>What happens if property work, a sale or a roof change affects the system?</li>
+              </ol>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">Does the 30% federal tax credit apply to solar carports?</h3>
-                  <p className="text-foreground/80">Section 25D does not cover expenditures made after December 31, 2025. Its expenditure-timing rule generally uses original installation completion, with a separate original-use rule for construction or reconstruction of a structure. Payment alone does not determine eligibility. Ask your tax preparer about the actual project scope, expenditure year and any valid prior-year carryforward. A third-party owner&apos;s potential business credit does not establish a homeowner credit or savings. <a href="https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A25D+edition%3Aprelim%29" className="underline">26 U.S.C. § 25D(c), (e)(8), (h), checked September 10, 2026</a>.</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">Can I add a battery to a solar carport?</h3>
-                  <p className="text-foreground/80">Yes. California&apos;s SGIP (Self-Generation Incentive Program) rebate applies to batteries paired with a solar carport just like rooftop solar. The battery typically mounts on an adjacent garage wall or in an equipment pad.</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">How long does a solar carport take to install?</h3>
-                  <p className="text-foreground/80">Plan on 12–16 weeks from signed contract to grid-interconnected, versus 6–10 weeks for a typical rooftop install. The longer timeline is driven by structural engineering review, zoning setback review, and building permit approval.</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">Will my HOA allow a solar carport?</h3>
-                  <p className="text-foreground/80">California&apos;s Solar Rights Act (Civil Code § 714) prohibits HOAs from banning solar, but freestanding carports face stricter design review than roof panels. HOAs can impose reasonable aesthetic standards (color, materials, height). Check your CC&amp;Rs before signing a contract.</p>
-                </div>
-              </div>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
-              <ul className="list-disc pl-6 space-y-2">
+              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Related reading
+              </h2>
+              <ul className="list-disc space-y-2 pl-6">
                 <li><Link href="/blog/is-my-roof-good-for-solar-california" className="text-primary underline">Is My Roof Good for Solar in California?</Link></li>
                 <li><Link href="/blog/solar-panels-for-ev-charging-california" className="text-primary underline">Solar Panels for EV Charging in California</Link></li>
-                <li><Link href="/blog/ppa-loan-vs-solar-lease-vs-cash-california" className="text-primary underline">PPA vs Loan vs Lease vs Cash; California</Link></li>
-                <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California</Link></li>
+                <li><Link href="/blog/ppa-loan-vs-solar-lease-vs-cash-california" className="text-primary underline">PPA vs. Loan vs. Lease vs. Cash</Link></li>
+                <li><Link href="/solar-panels-california" className="text-primary underline">California Solar Cost and Quote Comparison</Link></li>
               </ul>
             </div>
-          <ArticleCTA />
 
+            <ArticleCTA
+              heading="Compare a solar carport with roof options"
+              body="California homeowners can request a no-obligation solar assessment from this private referral service after reviewing the property and contract questions above."
+            />
           </article>
         </div>
       </main>
       <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
+      <div className="container mx-auto max-w-3xl px-4"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
+      <div className="container mx-auto max-w-3xl px-4"><RelatedInstallers picks="general" /></div>
     </PublicLayout>
   );
 }

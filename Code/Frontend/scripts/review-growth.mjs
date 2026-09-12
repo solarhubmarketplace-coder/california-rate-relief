@@ -24,7 +24,9 @@ for (const [size, viewport] of [
     const onError = (error) => errors.push(error.message);
     page.on('pageerror', onError);
     const response = await page.goto('http://localhost:3100' + route, {
-      waitUntil: 'networkidle',
+      // Some pages keep client work alive after the meaningful document is ready.
+      // The explicit h1/inquiry checks below make DOM readiness the relevant gate.
+      waitUntil: 'domcontentloaded',
       timeout: 120000,
     });
     await page.locator('h1').waitFor();

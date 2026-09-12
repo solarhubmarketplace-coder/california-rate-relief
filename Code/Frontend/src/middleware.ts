@@ -39,7 +39,11 @@ export async function middleware(request: NextRequest) {
   // All domains deploy from this same repo.
   // ====================================================================
   const isGreenReviewsHub = /^(www\.)?greenreviewshub\.com$/.test(hostname);
-  const isCRR = /^(www\.)?ratereliefca\.com$/.test(hostname);
+  // Treat the local preview host as CRR so the same public-route review can
+  // run without a production hostname or Supabase credentials.
+  const isCRR =
+    /^(www\.)?ratereliefca\.com$/.test(hostname) ||
+    /^localhost(?::\d+)?$/.test(hostname);
   const isCRRCalculator = pathname === '/tools/solar-panel-calculator';
   // Exact exception: keep other /tools routes assigned to the affiliate site.
   if (isCRRCalculator && !isCRR && !/^localhost(?::\d+)?$/.test(hostname)) return new NextResponse(null,{status:404});

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DecisionPage, QuoteChecklist, type Source } from './DecisionPage';
 import { SolarCalculator } from './SolarCalculator';
+import { SolarFinancingComparison } from './SolarFinancingComparison';
 import { ProviderComparison } from './ProviderComparison';
 import { SdgeRateTable } from './SdgeRateTable';
 const consumer: Source = {
@@ -23,6 +24,11 @@ const sdge: Source = {
 const rates: Source = {
   label: 'CPUC: electric rate comparison',
   url: 'https://www.cpuc.ca.gov/RateComparison',
+};
+const lbnlPricing: Source = {
+  label:
+    'Lawrence Berkeley National Laboratory: 2026 Distributed Solar and Storage Pricing Data Update',
+  url: 'https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf',
 };
 const link = 'text-emerald-800 underline underline-offset-2';
 const definitions = {
@@ -78,6 +84,10 @@ const definitions = {
 export type GuideKey = keyof typeof definitions;
 export function guideMetadata(key: GuideKey): Metadata {
   const d = definitions[key];
+  const modifiedTime =
+    key === 'panels' || key === 'financing'
+      ? '2026-09-11T00:00:00Z'
+      : '2026-09-10T00:00:00Z';
   return {
     title: d.title,
     description: d.intro,
@@ -87,7 +97,7 @@ export function guideMetadata(key: GuideKey): Metadata {
       description: d.intro,
       type: 'article',
       url: `https://ratereliefca.com${d.path}`,
-      modifiedTime: '2026-09-10T00:00:00Z',
+      modifiedTime,
     },
   };
 }
@@ -151,6 +161,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
   const d = definitions[kind];
   let content;
   let sources: Source[] = [consumer, nem];
+  let sourceCheckedDate = '2026-09-10';
   let utility = '';
   if (kind === 'calculator')
     content = (
@@ -248,6 +259,22 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             market-average price.
           </p>
         </section>
+        <section>
+          <h2>A historical California benchmark, not a current quote</h2>
+          <p>
+            Lawrence Berkeley National Laboratory&apos;s 2026 data update reports a
+            median gross installed price of <strong>$3.30 per WDC</strong> for
+            California host-owned, stand-alone residential solar systems installed
+            in 2025. It is a historical benchmark in 2025 dollars, not a price
+            promise for a new proposal.
+          </p>
+          <p className="mt-3">
+            The study&apos;s gross installed-price scope can include ancillary work or
+            fees. Compare bids only after separating solar equipment, battery,
+            roof work, electrical work and payment terms. A different scope can
+            make the same price per watt mean something different.
+          </p>
+        </section>
         <SolarCalculator />
         <section>
           <h2>How much solar does the house need?</h2>
@@ -293,6 +320,10 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
         <QuoteChecklist />
       </>
     );
+  if (kind === 'panels') {
+    sources = [consumer, nem, lbnlPricing];
+    sourceCheckedDate = '2026-09-11';
+  }
   if (kind === 'worth')
     content = (
       <>
@@ -351,6 +382,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
     content = (
       <>
         <FinancingTable />
+        <SolarFinancingComparison />
         <section>
           <h2>A fair PPA-versus-ownership comparison</h2>
           <p>
@@ -405,6 +437,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
         </section>
       </>
     );
+  if (kind === 'financing') sourceCheckedDate = '2026-09-11';
   if (kind === 'nem')
     content = (
       <>
@@ -631,7 +664,12 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
     );
   }
   return (
-    <DecisionPage {...d} sources={sources} utility={utility}>
+    <DecisionPage
+      {...d}
+      sources={sources}
+      sourceCheckedDate={sourceCheckedDate}
+      utility={utility}
+    >
       {content}
     </DecisionPage>
   );
