@@ -18,8 +18,9 @@ interface ArticleCTAProps {
 }
 
 export function ArticleCTA({
-  heading = 'Curious About Your Savings Potential?',
-  body = "The California Rate Relief Program offers a quick eligibility check for PG&E, SCE, and SDG&E customers. 60 seconds, no obligation.",
+  heading = 'Ready to compare your solar options?',
+  body =
+    'California Rate Relief is a private referral service. You can request a no-obligation solar review; provider availability, design and price are determined after review.',
 }: ArticleCTAProps) {
   const pathname = usePathname();
   const isCommercial = isCommercialIntentPath(pathname);
@@ -33,7 +34,7 @@ export function ArticleCTA({
         href={intakeHrefForPath(pathname)}
         className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
       >
-        {isCommercial ? 'Request Commercial Review' : 'Check My Eligibility'}
+        {isCommercial ? 'Request Commercial Review' : 'Request a Solar Review'}
         <ArrowRight className='h-4 w-4' />
       </Link>
     </div>
