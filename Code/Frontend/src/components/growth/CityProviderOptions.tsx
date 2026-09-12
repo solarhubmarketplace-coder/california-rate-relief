@@ -48,6 +48,26 @@ export function CityProviderOptions({
   name: string;
 }) {
   const option = regional[slug];
+  if (!option) {
+    return (
+      <section>
+        <h2>Verify the company behind each {name} quote</h2>
+        <p>
+          This page does not rank or confirm local companies. Ask each bidder
+          for the legal business name, license number, written address coverage
+          and the person responsible for installation and later service. Check
+          the current record through the{" "}
+          <a
+            href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"
+            className="underline"
+          >
+            CSLB license lookup
+          </a>{" "}
+          before signing.
+        </p>
+      </section>
+    );
+  }
   return (
     <section>
       <h2>Company options to investigate in {name}</h2>

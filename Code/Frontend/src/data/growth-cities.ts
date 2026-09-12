@@ -802,6 +802,157 @@ export const growthCities: Record<
       ],
     ],
   },
+  riverside: {
+    name: "Riverside",
+    county: "Riverside County",
+    utility: "other",
+    sourceCheckedDate: "2026-09-11",
+    bill: "Riverside Public Utilities explains that solar customers remain connected to the grid and continue to receive utility bills. Start with the last 12 months of actual usage and the rate schedule on the account. A proposal should show its assumptions and the remaining charges, rather than promise that a bill disappears.",
+    local:
+      "Riverside Public Utilities says a grid-tied solar project needs City permit approval and interconnection before operation. Ask the bidder to name the permit, inspection and interconnection responsibilities for the exact address, along with any roof or electrical work excluded from the contract.",
+    example:
+      "Put the same twelve months of usage, roof layout and equipment scope into each proposal. Then separate solar, storage, roof repair, electrical work, permits and utility-interconnection steps. Compare cash and financing obligations alongside the remaining utility bill.",
+    checks: [
+      [
+        "Usage and billing",
+        "Use the account's actual usage history and applicable RPU schedule. Ask the bidder to state the remaining utility charges and any solar-billing assumption.",
+      ],
+      [
+        "Permit and interconnection",
+        "Identify who handles City permit approval, final inspection, the interconnection agreement and the meter work.",
+      ],
+      [
+        "Solar and storage scope",
+        "List module, inverter, battery and backup-circuit scope separately from roof and electrical work.",
+      ],
+    ],
+    sources: [
+      {
+        label: "Riverside Public Utilities: solar process, interconnection and ongoing bills",
+        url: "https://www.riversideca.gov/utilities/residents/solar-info/all-about-solar",
+      },
+      {
+        label: "Riverside Public Utilities: current electric rules and rates index",
+        url: "https://www.riversideca.gov/utilities/residents/rates/electric-rules-rates",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Will Riverside solar eliminate every utility bill?",
+        "RPU says grid-connected solar customers continue to receive utility bills. Ask the bidder to model remaining charges using your actual usage and rate schedule.",
+      ],
+      [
+        "Does every Riverside project have the same interconnection process?",
+        "RPU describes a City permit and interconnection process. The bidder should identify the steps, equipment scope and responsible parties for your specific address.",
+      ],
+    ],
+  },
+  "san-luis-obispo": {
+    name: "San Luis Obispo",
+    county: "San Luis Obispo County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-11",
+    bill: "Use the electricity provider, rate plan and any generation information printed on the actual bill. PG&E directs customers to its current rate plans and tariffs; a citywide average rate is not a substitute for the account details used in a proposal.",
+    local:
+      "San Luis Obispo publishes a SolarAPP+ permit route for eligible residential solar projects. Its process includes the SolarAPP+ approval document, a City application and inspection. Ask whether your roof, electrical scope and any storage work qualify, and have the bidder identify the actual permit path.",
+    example:
+      "Use the same full-year usage, roof layout and production assumptions in every proposal. Keep solar, battery, roof repairs, electrical work, permits and utility steps as separate line items. Compare total payment obligations with the modeled remaining bill.",
+    checks: [
+      [
+        "Bill assumptions",
+        "Use the provider and rate plan shown on the bill. Show energy use, onsite use, imports, exports and retained charges separately.",
+      ],
+      [
+        "SolarAPP+ eligibility",
+        "Ask whether the project is eligible for SolarAPP+ and whether storage, roof work or electrical changes require additional scope.",
+      ],
+      [
+        "Comparable contract",
+        "Match equipment, roof layout, warranty responsibility, cash price and financing terms across bids before selecting one.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of San Luis Obispo: SolarAPP+ permit process",
+        url: "https://www.slocity.org/government/department-directory/community-development/building-safety/permit-forms-and-applications/solar-documents",
+      },
+      {
+        label: "PG&E: residential rate plans and tariff resources",
+        url: "https://www.pge.com/en/account/rate-plans.html",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does every San Luis Obispo solar project use the same permit path?",
+        "No. The City describes a SolarAPP+ route for eligible residential systems. Ask the bidder to state whether the actual project qualifies and list any additional review in writing.",
+      ],
+      [
+        "Should a proposal use a San Luis Obispo average electric rate?",
+        "Use the provider and rate plan shown on the account. PG&E publishes current rate-plan and tariff information, but a proposal still needs the customer's actual usage and enrollment.",
+      ],
+    ],
+  },
+  temecula: {
+    name: "Temecula",
+    county: "Riverside County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-11",
+    bill: "Temecula's utility page identifies Southern California Edison for electricity. Use the provider and rate plan printed on the actual account when comparing bids. A high bill can start a solar conversation, but it does not by itself determine system size, production or savings.",
+    local:
+      "Temecula publishes SolarAPP+, expedited and standard photovoltaic plan-review paths. Its page says expansions to existing PV systems do not qualify for SolarAPP+ or expedited review. Ask the bidder to identify the correct path, the permit responsibility and any fire, roof, panel or battery scope before relying on a schedule.",
+    example:
+      "Ask every bidder to use the same full-year bill history, roof layout and equipment scope. Keep solar, storage, roof repair, electrical upgrades, permits and utility steps separate. Then compare cash and contract totals with the remaining utility bill, rather than comparing a monthly payment alone.",
+    checks: [
+      [
+        "Account and usage",
+        "Use the SCE plan and twelve months of usage printed on the actual account; list imports, exports and remaining bill assumptions separately.",
+      ],
+      [
+        "Project path",
+        "State whether the project uses SolarAPP+, expedited or standard review, and identify any exception for an existing-system expansion or storage scope.",
+      ],
+      [
+        "Inspection and scope",
+        "List permit, fire and building-inspection responsibilities, plus roof, electrical-panel and backup-circuit work.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Temecula: photovoltaic systems and permit paths",
+        url: "https://temeculaca.gov/304/Photovoltaic-Systems",
+      },
+      {
+        label: "City of Temecula: electric utility information",
+        url: "https://www.temeculaca.gov/754/Utilities",
+      },
+      {
+        label: "SCE: residential rate-plan information",
+        url: "https://www.sce.com/customer-service-center/help-center/rate-plans-pricing/resources/rates-faq",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does every Temecula solar project qualify for SolarAPP+?",
+        "No. Temecula lists SolarAPP+, expedited and standard paths and says existing-PV expansions do not qualify for SolarAPP+ or expedited review. Confirm the path for the actual scope.",
+      ],
+      [
+        "Can I compare Temecula solar offers using monthly payment alone?",
+        "No. Compare the written cash price or total payments, equipment, roof and electrical work, permit scope, production assumptions and remaining utility bill.",
+      ],
+    ],
+  },
   murrieta: {
     name: "Murrieta",
     county: "Riverside County",
