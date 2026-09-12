@@ -4,10 +4,12 @@
  */
 
 const mockFrom = jest.fn();
+const mockRpc = jest.fn();
 
 jest.mock("../src/lib/supabase", () => ({
   supabaseAdmin: {
     from: (...args) => mockFrom(...args),
+    rpc: (...args) => mockRpc(...args),
   },
 }));
 jest.mock("../src/services/email-sequence.service", () => ({
@@ -22,6 +24,13 @@ const leadService = require("../src/services/lead.service");
 const queueService = require("../src/services/queue.service");
 
 describe("LeadService", () => {
+  test('uses the atomic suppression and cancellation operation for opt-out', async () => {
+    mockRpc.mockResolvedValue({ error: null, data: { status: 'opted_out' } });
+    const query = { select: jest.fn().mockReturnThis(),eq:jest.fn().mockReturnThis(),single:jest.fn().mockResolvedValue({data:{id:'lead-1',consent_status:'opted_out'},error:null}) };
+    mockFrom.mockReturnValue(query);
+    expect(await leadService.updateConsentStatus('lead-1','opted_out')).toEqual({id:'lead-1',consent_status:'opted_out'});
+    expect(mockRpc).toHaveBeenCalledWith('record_crr_email_opt_out',{p_lead_id:'lead-1'});
+  });
   beforeEach(() => {
     jest.clearAllMocks();
     jest.spyOn(console, "log").mockImplementation(() => {});

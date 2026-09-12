@@ -186,4 +186,16 @@ describe("QueueService - sequence email tasks", () => {
     expect(mockAdvanceLeadToNextStep).not.toHaveBeenCalled();
     expect(queueService.handleTaskFailure).toHaveBeenCalledWith(expect.any(Object), expect.stringContaining("no longer matches"));
   });
+
+  test('stops a queued email without retry or sequence advancement after a fresh permission denial', async () => {
+    queueService.getPendingTasks = jest.fn().mockResolvedValue([makeTask()]);
+    mockGetNextStepForLead.mockResolvedValue({ currentStep: { id: 'step-2', step_order: 2, subject: 'Subject', html_content: 'Body' }, tracking: { sequence_id: 'seq-1' } });
+    const denied = Object.assign(new Error('Email outreach blocked: recipient_suppressed'), { outreachBlocked: true });
+    mockSendEmail.mockRejectedValueOnce(denied);
+    await queueService.processEmailQueue();
+    expect(mockSendEmail).toHaveBeenCalledWith(expect.any(String),expect.any(String),expect.any(String),expect.objectContaining({outreachQueue:true}));
+    expect(mockAdvanceLeadToNextStep).not.toHaveBeenCalled();
+    expect(queueService.handleTaskFailure).not.toHaveBeenCalled();
+    expect(queueService.updateTask).toHaveBeenCalledWith('task-1', { status: 'failed', error_message: denied.message });
+  });
 });

@@ -89,6 +89,8 @@ const intakeController = require('./controllers/intake.controller');
 // deterministic ID makes network retries safe while allowing a later resubmission.
 app.post('/api/leads', intakeController.createLegacyIntake);
 app.get('/api/track/:token', trackingController.handleTrackingClick);
+// Historical email links are now read-only redirects, safe before staff auth.
+app.get('/api/leads/convert/:leadId', leadController.handleLeadConversionClick);
 app.get('/api/voice/twiml', requireTwilioSignature, voiceController.getTwiml);
 app.post('/api/voice/twiml', requireTwilioSignature, voiceController.getTwiml);
 app.post('/api/voice/voicemail', requireTwilioSignature, voiceController.handleVoicemail);

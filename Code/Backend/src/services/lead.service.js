@@ -436,6 +436,14 @@ class LeadService {
       throw { statusCode: 400, message: "Invalid consent status" };
     }
 
+    if (status === 'opted_out') {
+      const { error: stopError } = await supabaseAdmin.rpc('record_crr_email_opt_out', { p_lead_id: leadId });
+      if (stopError) throw { statusCode: 500, message: 'Unable to record email opt-out' };
+      const { data, error } = await supabaseAdmin.from('leads').select('*').eq('id', leadId).single();
+      if (error) throw { statusCode: 500, message: 'Opt-out recorded; unable to reload contact' };
+      return data;
+    }
+
     const updates = {
       consent_status: status,
       consent_timestamp: new Date().toISOString(),

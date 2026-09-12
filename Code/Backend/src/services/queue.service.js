@@ -419,6 +419,7 @@ class QueueService {
           const html = fill(tmpl.content || tmpl.html_content);
 
           await emailService.sendEmail(lead.email, subject, html, {
+            outreachQueue: true,
             leadId: lead.id,
             templateId: tmpl.id,
             idempotencyKey: `crr-email-task-${task.id}`,
@@ -451,6 +452,7 @@ class QueueService {
             html = html.replace(/{{webhook}}/g, convertUrl);
 
             await emailService.sendEmail(lead.email, subject, html, {
+              outreachQueue: true,
               leadId: lead.id,
               sequenceId: sequenceData.tracking.sequence_id,
               sequenceStepId: step.id,
@@ -493,6 +495,7 @@ class QueueService {
             html = html.replace(/{{webhook}}/g, convertUrl);
 
             await emailService.sendEmail(lead.email, subject, html, {
+              outreachQueue: true,
               leadId: lead.id,
               sequenceId: sequenceData.tracking.sequence_id,
               sequenceStepId: step.id,
@@ -513,7 +516,8 @@ class QueueService {
               lead.name || "there",
               trackingToken,
               lead.id,
-              lead.phone
+              lead.phone,
+              { outreachQueue: true, idempotencyKey: `crr-email-task-${task.id}` }
             );
           } else if (task.metadata?.trigger === "automated_reminder") {
             // ✨ NEW: Automated Reminders - using templates from scripts.js
@@ -541,6 +545,8 @@ class QueueService {
                   });
 
             await emailService.sendEmail(lead.email, subject, htmlContent, {
+              outreachQueue: true,
+              idempotencyKey: `crr-email-task-${task.id}`,
               leadId: lead.id,
             });
           } else {
@@ -585,6 +591,8 @@ class QueueService {
             }
 
             await emailService.sendEmail(lead.email, subject, html, {
+              outreachQueue: true,
+              idempotencyKey: `crr-email-task-${task.id}`,
               leadId: lead.id,
               templateId,
             });
@@ -616,6 +624,10 @@ class QueueService {
           `[QueueService] Email failed for lead ${lead.id}:`,
           error.message
         );
+        if (error.outreachBlocked) {
+          await this.updateTask(task.id, { status: 'failed', error_message: error.message });
+          continue;
+        }
         await this.handleTaskFailure(task, error.message);
       }
     }

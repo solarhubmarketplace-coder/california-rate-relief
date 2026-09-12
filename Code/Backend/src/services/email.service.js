@@ -40,6 +40,13 @@ class EmailService {
         }
         const recipient = check.normalized;
 
+        // Fresh server-side permission, identity and suppression check. Owner
+        // notifications use their separate durable outbox and never set this flag.
+        if (context.outreachQueue) {
+            const { assertEmailOutreachAllowed } = require('../lib/email-outreach-permission');
+            await assertEmailOutreachAllowed(context.leadId, recipient);
+        }
+
         try {
             const request = {
                 from: context.from || this.from,
@@ -172,7 +179,7 @@ class EmailService {
      * @param {string} leadId - Lead ID for conversion
      * @param {string} phone - Lead phone number for replacement
      */
-    async sendColdLeadEmail(to, name, trackingToken, leadId, phone) {
+    async sendColdLeadEmail(to, name, trackingToken, leadId, phone, context = {}) {
         const trackingUrl = `${config.BASE_URL}/api/track/${trackingToken}`;
         const convertUrl = `${config.BASE_URL}/api/leads/convert/${leadId}`; // Endpoint to convert to hot
 
@@ -213,6 +220,7 @@ class EmailService {
         }
 
         return this.sendEmail(to, subject, html, {
+            ...context,
             leadId,
             templateId,
             from: config.COLD_EMAIL_FROM || undefined // Use specific sender if configured

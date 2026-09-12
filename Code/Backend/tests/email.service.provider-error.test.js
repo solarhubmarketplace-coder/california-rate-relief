@@ -1,18 +1,44 @@
 const mockSend = jest.fn();
 const mockInsert = jest.fn().mockResolvedValue({ error: null });
+const mockRpc = jest.fn();
 
 jest.mock('resend', () => ({
   Resend: jest.fn().mockImplementation(() => ({ emails: { send: mockSend } })),
 }));
 jest.mock('../src/config', () => ({ RESEND_API_KEY: 'test-key', EMAIL_FROM: 'sender@example.com' }));
 jest.mock('../src/lib/supabase', () => ({
-  supabaseAdmin: { from: jest.fn(() => ({ insert: mockInsert })) },
+  supabaseAdmin: { from: jest.fn(() => ({ insert: mockInsert })), rpc: (...args) => mockRpc(...args) },
 }));
 
 const emailService = require('../src/services/email.service');
 
 describe('EmailService provider errors', () => {
   beforeEach(() => jest.clearAllMocks());
+
+  test.each([null, { allowed: false, reason: 'recipient_suppressed' }])('holds queued outreach when permission result is %j', async data => {
+    mockRpc.mockResolvedValue({ data, error: null });
+    await expect(emailService.sendEmail('owner@example.com', 'subject', 'body', {
+      leadId: 'lead-1', outreachQueue: true,
+    })).rejects.toMatchObject({ outreachBlocked: true });
+    expect(mockSend).not.toHaveBeenCalled();
+    expect(mockInsert).not.toHaveBeenCalled();
+  });
+
+  test('does not send when fresh permission lookup fails', async () => {
+    mockRpc.mockResolvedValue({ data: null, error: { message: 'unavailable' } });
+    await expect(emailService.sendEmail('owner@example.com', 'subject', 'body', {
+      leadId: 'lead-1', outreachQueue: true,
+    })).rejects.toThrow('permission check unavailable');
+    expect(mockSend).not.toHaveBeenCalled();
+  });
+
+  test('sends queued outreach only after a positive current permission check', async () => {
+    mockRpc.mockResolvedValue({ data: { allowed: true }, error: null });
+    mockSend.mockResolvedValue({ data: { id: 'permitted-1' }, error: null });
+    await emailService.sendEmail('owner@example.com', 'subject', 'body', { leadId: 'lead-1', outreachQueue: true });
+    expect(mockRpc).toHaveBeenCalledWith('check_crr_email_outreach', { p_lead_id: 'lead-1', p_email: 'owner@example.com' });
+    expect(mockRpc.mock.invocationCallOrder[0]).toBeLessThan(mockSend.mock.invocationCallOrder[0]);
+  });
 
   test('preserves campaign identity and optional reply, text and unsubscribe fields', async () => {
     mockSend.mockResolvedValue({ data: { id: 'provider-1' }, error: null });
