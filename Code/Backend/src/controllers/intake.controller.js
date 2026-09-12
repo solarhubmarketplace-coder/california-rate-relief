@@ -83,7 +83,7 @@ function validate(body) {
     'utility_provider_other',
     'calculator_version', 'calculator_monthly_bill', 'calculator_annual_kwh', 'calculator_system_kw', 'calculator_cash_price',
     'calculator_annual_bill_after', 'calculator_annual_difference', 'calculator_simple_payback',
-    'calculator_solar_only_price', 'calculator_battery_price', 'inquiry_topic', ...location];
+    'calculator_solar_only_price', 'calculator_battery_price', 'inquiry_topic', 'inquiry_question', ...location];
   const commercial = ['company_name', 'property_type', 'property_control', 'location', 'utility_provider', 'utility_provider_other', 'bill_amount', 'monthly_bill_range', 'demand_indicator', 'project_timeline', ...location];
   const qualification = cleanObject(body.qualification_data, segment === 'residential' ? residential : commercial, 200);
   // `service_zip` is canonical; `zip` is accepted as an alias and folded into it.
@@ -140,7 +140,7 @@ function validate(body) {
   const attribution = cleanObject(body.attribution, [
     'source', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
     'landing_page', 'landing_city_slug', 'landing_page_type', 'submitted_from', 'referrer', 'ga_client_id', 'captured_at',
-    'acquisition_source', 'acquisition_medium', 'organic_landing_page'
+    'acquisition_source', 'acquisition_medium', 'organic_landing_page', 'original_acquisition_source', 'original_acquisition_medium'
   ], 500);
   const journey = cleanJourney(body.attribution?.journey);
   if (journey) attribution.journey = journey;

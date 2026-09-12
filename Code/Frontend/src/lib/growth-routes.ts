@@ -74,6 +74,8 @@ export const LOCAL_RELEASE_REVIEW_ROUTES = [
 ] as const;
 
 export const PUBLIC_CRR_NO_SESSION_ROUTES = [
+  '/email/bill-review',
+  '/email/quote-review',
   ...GROWTH_ROUTES,
   ...LOCAL_RELEASE_REVIEW_ROUTES,
 ] as const;

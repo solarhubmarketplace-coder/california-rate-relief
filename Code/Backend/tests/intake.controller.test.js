@@ -14,6 +14,11 @@ const residential = {
 };
 
 describe('public intake controller', () => {
+  test('retains the offer question and separates current email from original acquisition', () => {
+    const result=controller.validate({...residential,qualification_data:{...residential.qualification_data,inquiry_topic:'quote-review',inquiry_question:'What does the cash price include?'},attribution:{source:'email',acquisition_medium:'email',original_acquisition_source:'google',original_acquisition_medium:'organic'}});
+    expect(result.value.qualification_data.inquiry_question).toBe('What does the cash price include?');
+    expect(result.value.attribution).toEqual({source:'email',acquisition_medium:'email',original_acquisition_source:'google',original_acquisition_medium:'organic'});
+  });
   test('drops private paths, strips referrer secrets, and rejects UUID suffixes', () => {
     const result = controller.validate({...residential,attribution:{landing_page:'/dashboard/customer',organic_landing_page:'/blog/pge?email=secret@example.invalid',submitted_from:'/api/private',referrer:'https://www.google.com/search?q=private',utm_source:{email:'private'}}});
     expect(result.value.attribution).toEqual({organic_landing_page:'/blog/pge',referrer:'www.google.com'});
