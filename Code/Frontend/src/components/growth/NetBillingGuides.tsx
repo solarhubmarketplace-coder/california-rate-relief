@@ -31,6 +31,12 @@ const guides = {
     intro:
       "Net Billing changes how exports appear on a bill. Whether a proposal works for a home depends on its actual usage, tariff, production model, contract price and remaining utility charges.",
   },
+  billing: {
+    path: "/blog/net-billing-vs-net-metering-california",
+    title: "Net Billing vs. Net Metering in California: check your tariff",
+    intro:
+      "California's Net Billing Tariff and the older Net Energy Metering tariffs credit exports differently. The current bill, utility territory and interconnection record determine what applies to a specific account.",
+  },
 } as const;
 
 export type NetBillingGuideKind = keyof typeof guides;
@@ -206,9 +212,77 @@ function DecisionContent() {
   );
 }
 
+function BillingContent() {
+  return (
+    <>
+      <section>
+        <h2>Start with the utility territory</h2>
+        <p>
+          The CPUC&apos;s standard Net Energy Metering and Net Billing guidance
+          applies in the territories of PG&amp;E, SCE and SDG&amp;E. Municipal
+          utilities and small investor-owned utilities have separately adopted
+          tariffs. Identify the electricity provider on the bill before using
+          a California-wide comparison.
+        </p>
+      </section>
+      <section>
+        <h2>What Net Billing changed for new large-IOU applications</h2>
+        <p>
+          Since April 15, 2023, new interconnection applicants in the large
+          investor-owned utility territories have taken service under the Net
+          Billing Tariff, which the utilities call the Solar Billing Plan. As
+          with the earlier NEM tariffs, generation used onsite first serves
+          onsite load. The difference is how excess generation exported to the
+          grid is credited.
+        </p>
+        <p className="mt-3">
+          The CPUC states that standard NEM export bill credits use the
+          customer&apos;s retail energy rates before true-up, while Net Billing
+          export credits use the CPUC Avoided Cost Calculator values. Net
+          Billing export compensation is usually lower than retail rates, but
+          can be higher during late-summer evenings. Do not use a generic
+          cents-per-kWh figure in place of the utility&apos;s current tariff and
+          proposal assumptions.
+        </p>
+      </section>
+      <section>
+        <h2>Existing NEM accounts need a separate check</h2>
+        <p>
+          The CPUC says NEM 2.0 customer-generators may remain on that tariff
+          for 20 years from their interconnection date, unless they choose to
+          switch. A proposal for added generation, storage, repair or a new
+          owner should be checked against the utility&apos;s written account and
+          interconnection information before anyone assumes the prior tariff
+          continues unchanged.
+        </p>
+      </section>
+      <section>
+        <h2>Ask for a billing model you can inspect</h2>
+        <p>
+          A proposal should identify the utility, tariff, usage history,
+          expected onsite use, expected imports, expected exports, delivery and
+          fixed charges, and the date and source of every rate assumption. The
+          CPUC consumer guide also directs customers to review the disclosure
+          documents, contract and financing terms before signing.
+        </p>
+      </section>
+      <QuoteChecklist />
+      <section>
+        <h2>Use primary sources before deciding</h2>
+        <p>
+          The <Link className="underline" href="/blog/what-is-nem-3-california">main Net Billing guide</Link> explains the
+          broader California context. For a property-specific decision, keep a
+          copy of the current bill and written proposal, then verify tariff and
+          interconnection questions with the serving utility.
+        </p>
+      </section>
+    </>
+  );
+}
+
 export function NetBillingGuide({ kind }: { kind: NetBillingGuideKind }) {
   const guide = guides[kind];
-  const content = kind === "comparison" ? <ComparisonContent /> : kind === "timeline" ? <TimelineContent /> : <DecisionContent />;
+  const content = kind === "comparison" ? <ComparisonContent /> : kind === "timeline" ? <TimelineContent /> : kind === "decision" ? <DecisionContent /> : <BillingContent />;
   return (
     <DecisionPage
       title={guide.title}
