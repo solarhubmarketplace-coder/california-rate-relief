@@ -5,12 +5,23 @@ import path from 'node:path';
 const base = process.env.CRR_REVIEW_BASE || 'http://localhost:3311';
 const output = process.env.CRR_REVIEW_OUT || '../../evidence/state-expansion-review.json';
 const allowedHosts = new Set(['127.0.0.1', 'localhost', new URL(base).hostname]);
-const cases = [
+const allCases = [
   ['/new-jersey/solar-cost', 'NJ', 'pseg'],
   ['/new-jersey/solar-companies', 'NJ', 'pseg'],
   ['/maryland/solar-cost', 'MD', 'bge'],
   ['/maryland/solar-companies', 'MD', 'bge'],
+  ['/virginia/solar-cost', 'VA', 'dominion'],
+  ['/virginia/solar-companies', 'VA', 'dominion'],
+  ['/delaware/solar-cost', 'DE', 'delmarva'],
+  ['/delaware/solar-companies', 'DE', 'delmarva'],
+  ['/washington-dc/solar', 'DC', 'pepco'],
+  ['/washington-dc/solar-companies', 'DC', 'pepco'],
 ];
+const requestedMarkets = new Set((process.env.CRR_REVIEW_MARKETS || '')
+  .split(',').map(value => value.trim()).filter(Boolean));
+const cases = requestedMarkets.size
+  ? allCases.filter(([, market]) => requestedMarkets.has(market))
+  : allCases;
 
 const browser = await chromium.launch({ headless: true, channel: 'chrome' });
 const results = [];
@@ -28,7 +39,7 @@ try {
       await expect(page.locator('#solar-inquiry').getByLabel('Utility on your bill').locator(`option[value="${utility}"]`)).toHaveCount(1);
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://ratereliefca.com${route}`);
       results.push({ route, size, status: 200, market, canonical: true, form: true, passed: true });
-      if ((route.endsWith('solar-cost') && size === 'mobile')) {
+      if ((route.endsWith('solar-cost') || route === '/washington-dc/solar') && size === 'mobile') {
         const file = path.resolve(path.dirname(output), `${market.toLowerCase()}-solar-cost-mobile.png`);
         await fs.mkdir(path.dirname(file), { recursive: true });
         await page.screenshot({ path: file, fullPage: true });

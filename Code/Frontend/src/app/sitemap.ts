@@ -197,7 +197,8 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   }));
 
   const stateDecisionPages: MetadataRoute.Sitemap = GROWTH_ROUTES
-    .filter((route) => route.startsWith('/new-jersey/') || route.startsWith('/maryland/'))
+    .filter((route) => ['/new-jersey/', '/maryland/', '/virginia/', '/delaware/', '/washington-dc/']
+      .some((prefix) => route.startsWith(prefix)))
     .map((route) => ({
       url: `${base}${route}`,
       lastModified: new Date('2026-09-12T00:00:00.000Z'),

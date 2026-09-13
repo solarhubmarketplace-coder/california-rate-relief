@@ -4,6 +4,9 @@ const markets = [
   { state: 'California', cost: '/solar-panels-california', companies: '/best-solar-companies-california' },
   { state: 'New Jersey', cost: '/new-jersey/solar-cost', companies: '/new-jersey/solar-companies' },
   { state: 'Maryland', cost: '/maryland/solar-cost', companies: '/maryland/solar-companies' },
+  { state: 'Virginia', cost: '/virginia/solar-cost', companies: '/virginia/solar-companies' },
+  { state: 'Delaware', cost: '/delaware/solar-cost', companies: '/delaware/solar-companies' },
+  { state: 'Washington, DC', cost: '/washington-dc/solar', companies: '/washington-dc/solar-companies' },
 ];
 
 export function ServiceMarkets() {
