@@ -8,6 +8,7 @@ export const GROWTH_ROUTES = [
   "/maryland/solar-companies",
   "/virginia/solar-cost",
   "/virginia/solar-companies",
+  "/virginia/richmond-solar-companies",
   "/delaware/solar-cost",
   "/delaware/solar-companies",
   "/washington-dc/solar",
