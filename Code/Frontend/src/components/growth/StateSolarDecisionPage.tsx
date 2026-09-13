@@ -16,6 +16,7 @@ export type StateSolarConfig = {
   programNote: string;
   incentiveNote: string;
   decisionNote?: string;
+  utilityLinks?: { href: string; label: string }[];
   sources: Source[];
 };
 
@@ -42,6 +43,13 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     contractNote: 'Maryland rooftop-solar contracts must address a wildlife barrier unless the homeowner knowingly waives it after receiving the price and risk information. Put the choice, price and waiver in writing with the rest of the project scope.',
     programNote: 'Maryland net metering measures electricity used and generated during the billing period, but the customer still pays the utility customer charge. The serving utility tariff and interconnection approval control the actual bill treatment.',
     incentiveNote: 'Maryland’s FY27 Solar Access Program opened July 29, 2026 for income-eligible homeowners. A current participating contractor is required for a new rebate reservation request, and the published budget and reservation totals change as applications are processed. The separate FY26 bridge fund is closed to new applications.',
+    utilityLinks: [
+      { href: '/maryland/bge-high-bill', label: 'Why a BGE bill is high' },
+      { href: '/maryland/bge-electricity-rates', label: 'BGE electricity-rate components' },
+      { href: '/utilities/pepco/high-bill', label: 'Why a Pepco bill is high' },
+      { href: '/utilities/pepco/solar-credits', label: 'Pepco net metering and solar credits' },
+      { href: '/utilities/delmarva/high-bill', label: 'Why a Delmarva Power bill is high' },
+    ],
     sources: [
       { label: 'Maryland Energy Administration: FY27 Solar Access Program', url: 'https://energy.maryland.gov/residential/Pages/incentives/Maryland-Solar-Access-Program.aspx' },
       { label: 'Maryland Energy Administration: Solar Access Bridge Fund status', url: 'https://energy.maryland.gov/Pages/SolarBridgeFund.aspx' },
@@ -78,6 +86,9 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     contractNote: 'Match the registered contractor, responsible electrical professional, equipment, permits, interconnection, incentive paperwork, payment schedule and change-order rules to the written proposal.',
     programNote: 'The Delaware Public Service Commission directs customer-owned Delmarva Power generation to the utility’s interconnection standards. Community solar is a separate subscription with its own bill credit, subscription fee and contract terms. Do not compare it as if equipment were installed on the home.',
     incentiveNote: 'Delaware’s Green Energy Program is open only to Delmarva Power customers and has its own solar application rules. DNREC launched additional solar-plus-storage offerings in August 2026. Municipal and cooperative customers can have different programs, so the utility on the bill must be confirmed before assigning a benefit.',
+    utilityLinks: [
+      { href: '/utilities/delmarva/high-bill', label: 'Why a Delmarva Power bill is high' },
+    ],
     sources: [
       { label: 'Delaware DNREC: Green Energy Program and current offerings', url: 'https://dnrec.delaware.gov/climate-coastal-energy/energy-office/programs/gep/' },
       { label: 'Delaware PSC: renewable energy and customer-owned generation', url: 'https://depsc.delaware.gov/delawares-renewable-portfolio-standard-green-power-products/' },
@@ -101,6 +112,10 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     programNote: 'DC’s Department of Energy and Environment treats rooftop solar and community solar as different paths. A renter, condo resident or homeowner whose roof is unsuitable may be able to consider a community subscription, which does not install equipment on the home. Compare its subscription contract separately from a rooftop proposal.',
     incentiveNote: 'DC DOEE lists Solar for All for households at or below 80% of area median income, with rooftop and community-solar paths. Other owners can compare SREC, net-metering and group-purchase options through the current DOEE solar page. Program eligibility is separate from a contractor’s sales proposal.',
     decisionNote: 'For a rowhouse, condominium or shared building, establish roof ownership, association or co-owner authority, usable area, shade, equipment location and safe installer access before treating a production estimate as viable.',
+    utilityLinks: [
+      { href: '/utilities/pepco/high-bill', label: 'Why a Pepco bill is high' },
+      { href: '/utilities/pepco/solar-credits', label: 'Pepco net metering and solar credits' },
+    ],
     sources: [
       { label: 'DC DOEE: Solar in the District', url: 'https://doee.dc.gov/service/solar-district' },
       { label: 'DC DOEE: Solar for All', url: 'https://doee.dc.gov/solarforall' },
@@ -115,6 +130,11 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
 
 const linkClass = 'font-semibold text-emerald-800 underline underline-offset-2';
 
+function UtilityLinks({ config }: { config: StateSolarConfig }) {
+  if (!config.utilityLinks?.length) return null;
+  return <section><h2>Use the utility-specific guides</h2><ul className='list-disc space-y-2 pl-6'>{config.utilityLinks.map((item) => <li key={item.href}><Link href={item.href} className={linkClass}>{item.label}</Link></li>)}</ul></section>;
+}
+
 function Benchmark({ state }: { state: string }) {
   return <section><h2>A useful price benchmark, not a {state} quote</h2><p>NREL’s 2024 Annual Technology Baseline uses a 2023 bottom-up residential benchmark of $2.68 per DC watt. At that benchmark, an 8 kW system is $21,440 before financing, a battery, roof work and project-specific additions. It is a dated national modeling reference. A current local proposal can be higher or lower.</p><p className='mt-3'>Compare cash price per watt first: divide the solar-only cash price by the system’s DC watts. Keep batteries, roofing, electrical upgrades and dealer or loan fees on separate lines. A financed contract with a low stated rate can still cost much more than the cash system.</p></section>;
 }
@@ -127,6 +147,7 @@ export function StateSolarCostPage({ config }: { config: StateSolarConfig }) {
     <Benchmark state={config.state} />
     <section><h2>What changes the {config.state} price</h2><ul className='list-disc space-y-2 pl-6'><li>Roof planes, shade, structural work and whether roofing is included.</li><li>Panel and inverter models, battery capacity, backup loads and electrical upgrades.</li><li>Permits, utility interconnection and the party responsible for corrections.</li><li>Cash purchase, loan fees and APR, lease or power-purchase escalator, and transfer terms.</li><li>Expected production, degradation and the estimate for the bill that remains.</li></ul></section>
     <section><h2>Use the utility on the bill</h2><p>Common investor-owned utilities include {config.utilities}. A proposal should name the actual utility, tariff and interconnection assumptions. Do not accept a generic savings chart that treats every utility or export rule as the same.</p><p className='mt-3'>{config.programNote}</p></section>
+    <UtilityLinks config={config} />
     {config.decisionNote && <section><h2>Check the property before the production claim</h2><p>{config.decisionNote}</p></section>}
     <QuoteChecklist />
     <section><h2>Before signing</h2><p>{config.licenseNote}</p><p className='mt-3'>{config.contractNote}</p><p className='mt-3'>Use the <Link href={companiesPath} className={linkClass}>{config.state} quote-comparison checklist</Link> to compare the companies on the same basis.</p></section>
@@ -162,6 +183,7 @@ export function StateSolarIncentivesPage({ config }: { config: StateSolarConfig 
     <section><h2>Do not assume a 30% federal homeowner credit</h2><p>The IRS currently says the Residential Clean Energy Credit is not available for expenditures made after December 31, 2025. A proposal for a 2026 project should not subtract a federal homeowner credit unless the taxpayer’s own records and current tax guidance support it. Ask a qualified tax professional about prior expenditures, carryforwards and the customer’s specific facts.</p></section>
     <section><h2>Keep every benefit on its own line</h2><ul className='list-disc space-y-2 pl-6'><li>Program name, administrator and current application link.</li><li>Applicant, income or property requirements and the date eligibility is tested.</li><li>Whether the system owner, homeowner, contractor or third party receives the benefit.</li><li>Reservation, installation, inspection and final-document deadlines.</li><li>Utility interconnection, net-metering or export-credit treatment.</li><li>SREC or renewable-credit ownership and any assignment in the contract.</li><li>What happens if a reservation, credit or certificate is denied or delayed.</li></ul></section>
     <section><h2>Separate rooftop, community and bill-assistance paths</h2><p>Rooftop solar places equipment on the property. Community or shared solar uses an off-site facility and a subscription. Utility assistance is a separate benefit for the bill. They can have different eligibility, contracts, fees and cancellation rules. Compare the path that matches the property instead of treating every program result as a rooftop installation lead.</p></section>
+    <UtilityLinks config={config} />
     <section><h2>Verify the company and the written promise</h2><p>{config.licenseNote}</p><p className='mt-3'>{config.contractNote}</p><p className='mt-3'>If a salesperson includes an incentive in the savings calculation, require the official program name, application owner, amount or formula, deadline, present availability and denial risk in writing.</p></section>
     <section><h2>Review the whole project after the program check</h2><p>Use the <Link href={costPath} className={linkClass}>{config.state} cost guide</Link> to compare the unsubsidized cash price and the <Link href={companiesPath} className={linkClass}>company checklist</Link> to verify the business, design and service terms. The inquiry below can preserve the state, utility and project facts for a follow-up review.</p></section>
   </DecisionPage>;

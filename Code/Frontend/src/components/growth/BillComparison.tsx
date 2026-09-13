@@ -49,7 +49,7 @@ function readRequired(values: BillValues, field: keyof BillValues, label: string
   return Number(raw);
 }
 
-export function BillComparison() {
+export function BillComparison({ utilityName = 'PG&E' }: { utilityName?: string }) {
   const [values, setValues] = useState<BillValues>(emptyValues);
   const [error, setError] = useState('');
   const [result, setResult] = useState<ReturnType<
@@ -83,10 +83,10 @@ export function BillComparison() {
 
   return (
     <section
-      id="pge-bill-comparison"
+      id="bill-comparison"
       className="my-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-8"
     >
-      <h2 className="text-2xl font-bold">Compare two PG&amp;E bills</h2>
+      <h2 className="text-2xl font-bold">Compare two {utilityName} bills</h2>
       <p className="mt-2 text-slate-700">
         Enter the billing days, total kWh and current electric charges from a
         current bill and a prior bill. Blank fields stay blank; this is
