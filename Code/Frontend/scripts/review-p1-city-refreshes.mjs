@@ -47,7 +47,25 @@ for (const [path] of cases) {
   assert.match(sitemapText, new RegExp(path.replaceAll("/", "\\/")));
 }
 
-const result = { base, passed: 17, checks: results, sitemap: sitemap.status };
+const hub = await fetch(`${base}/best-solar-companies-california`);
+const hubText = await hub.text();
+assert.equal(hub.status, 200);
+for (const path of [
+  "/solar-companies/pleasanton",
+  "/solar-companies/modesto",
+  "/solar-companies/riverside",
+  "/solar-companies/thousand-oaks",
+  "/solar-companies/escondido",
+  "/solar-companies/anaheim",
+  "/solar-companies/roseville",
+  "/solar-companies/palm-springs",
+  "/solar-companies/irvine",
+  "/solar-companies/stockton",
+]) {
+  assert.match(hubText, new RegExp(`href="${path.replaceAll("/", "\\/")}"`));
+}
+
+const result = { base, passed: 18, checks: results, sitemap: sitemap.status, hub: hub.status };
 if (output) {
   await writeFile(output, `${JSON.stringify(result, null, 2)}\n`, "utf8");
 }

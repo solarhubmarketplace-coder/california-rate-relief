@@ -226,6 +226,32 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               </Link>
             ))}
           </div>
+          <p className="mt-5">
+            More city guides use local permit, utility and contractor sources to
+            help homeowners compare the same project scope.
+          </p>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              ['pleasanton', 'Pleasanton solar companies'],
+              ['modesto', 'Modesto solar companies'],
+              ['riverside', 'Riverside solar companies'],
+              ['thousand-oaks', 'Thousand Oaks solar installers'],
+              ['escondido', 'Escondido solar companies'],
+              ['anaheim', 'Anaheim solar companies'],
+              ['roseville', 'Roseville solar companies'],
+              ['palm-springs', 'Palm Springs solar companies'],
+              ['irvine', 'Irvine solar companies'],
+              ['stockton', 'Stockton solar companies'],
+            ].map(([slug, label]) => (
+              <Link
+                key={slug}
+                className="rounded-lg border p-4 text-emerald-800 underline"
+                href={`/solar-companies/${slug}`}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
         </section>
         <section>
           <h2>Before you request a proposal</h2>
