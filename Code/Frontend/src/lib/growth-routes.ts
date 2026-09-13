@@ -41,6 +41,7 @@ export const GROWTH_ROUTES = [
   "/blog/why-is-my-pge-bill-so-high",
   "/blog/why-is-my-california-electric-bill-so-high",
   "/blog/how-to-lower-electric-bill-california",
+  "/blog/is-my-roof-good-for-solar-california",
   "/blog/solar-carport-california-guide",
   "/commercial-solar/cost-per-watt-california",
   "/blog/why-is-my-ladwp-bill-so-high",
