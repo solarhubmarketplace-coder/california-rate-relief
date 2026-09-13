@@ -41,12 +41,11 @@ export async function middleware(request: NextRequest) {
   const isGreenReviewsHub = /^(www\.)?greenreviewshub\.com$/.test(hostname);
   // Treat the local preview host as CRR so the same public-route review can
   // run without a production hostname or Supabase credentials.
-  const isCRR =
-    /^(www\.)?ratereliefca\.com$/.test(hostname) ||
-    /^localhost(?::\d+)?$/.test(hostname);
+  const isLocalPreview = /^(localhost|127\.0\.0\.1)(?::\d+)?$/.test(hostname);
+  const isCRR = /^(www\.)?ratereliefca\.com$/.test(hostname) || isLocalPreview;
   const isCRRCalculator = pathname === '/tools/solar-panel-calculator';
   // Exact exception: keep other /tools routes assigned to the affiliate site.
-  if (isCRRCalculator && !isCRR && !/^localhost(?::\d+)?$/.test(hostname)) return new NextResponse(null,{status:404});
+  if (isCRRCalculator && !isCRR && !isLocalPreview) return new NextResponse(null,{status:404});
   const isSecureHomeGear = /^(www\.)?securehomegear\.com$/.test(hostname);
   const isAtHomeBiohacking = /^(www\.)?athomebiohacking\.com$/.test(hostname);
   const isGLP1CompareHub = /^(www\.)?glp1comparehub\.com$/.test(hostname);

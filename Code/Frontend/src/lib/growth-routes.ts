@@ -27,6 +27,7 @@ export const GROWTH_ROUTES = [
   "/blog/sdge-time-of-use-rates-2026",
   "/blog/sce-time-of-use-rates-2026",
   "/commercial-solar/companies-california",
+  "/commercial-solar",
   "/blog/solar-tax-credit-expired-2026-options",
   "/blog/california-solar-tax-credit-2026",
   "/blog/solar-tax-credit-2026",
