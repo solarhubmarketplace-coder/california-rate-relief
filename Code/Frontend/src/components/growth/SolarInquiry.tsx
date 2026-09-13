@@ -178,8 +178,6 @@ export function SolarInquiry({
       if (!result.data.duplicate)
         trackEvent('generate_lead', {
           segment: 'residential',
-          submission_id: result.data.submission_id,
-          lead_id: result.data.lead_id,
           landing_page:
             attempt.current.payload.attribution.landing_page || 'unknown',
         });

@@ -205,8 +205,6 @@ export function CommercialAssessmentForm() {
       ) {
         trackEvent("generate_lead", {
           segment: "commercial",
-          submission_id: result.data.submission_id,
-          lead_id: result.data.lead_id,
           landing_page: attempt.payload.attribution.landing_page ?? "unknown",
           landing_page_type:
             attempt.payload.attribution.landing_page_type ?? "unknown",
