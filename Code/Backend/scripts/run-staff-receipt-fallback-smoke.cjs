@@ -7,10 +7,13 @@
 const { supabaseAdmin } = require('../src/lib/supabase');
 
 const STAFF_USER_ID = 'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d';
-const SUBMISSION_ID = '7fdafac5-22a0-43ee-90e8-75f7722f7654';
-const EVIDENCE_REFERENCE = 'gmail:1a0981012ff486ae';
-const RECEIPT_AT = '2026-09-12T23:59:44Z';
-const API = 'https://api.ratereliefca.com/api';
+const SUBMISSION_ID = process.env.CRR_TEST_SUBMISSION_ID || '7fdafac5-22a0-43ee-90e8-75f7722f7654';
+const EVIDENCE_REFERENCE = process.env.CRR_TEST_EVIDENCE_REFERENCE || 'gmail:1a0981012ff486ae';
+const RECEIPT_AT = process.env.CRR_TEST_RECEIPT_AT || '2026-09-12T23:59:44Z';
+const REPORT_FROM = process.env.CRR_TEST_REPORT_FROM || '2026-09-12T00:00:00Z';
+const REPORT_TO = process.env.CRR_TEST_REPORT_TO || '2026-09-14T00:00:00Z';
+const CAMPAIGN_KEY = process.env.CRR_TEST_CAMPAIGN_KEY || 'owner_funnel_smoke';
+const API = process.env.CRR_API || 'https://api.ratereliefca.com/api';
 
 async function responseJson(response) {
   const body = await response.json().catch(() => ({}));
@@ -33,19 +36,27 @@ async function main() {
 
   const headers = { authorization: `Bearer ${accessToken}`, 'content-type': 'application/json' };
   try {
-    const receipt = await responseJson(await fetch(`${API}/staff/submissions/${SUBMISSION_ID}/receipt`, {
+    const receiptResponse = await fetch(`${API}/staff/submissions/${SUBMISSION_ID}/receipt`, {
       method: 'POST', headers,
       body: JSON.stringify({ evidence_reference: EVIDENCE_REFERENCE, receipt_at: RECEIPT_AT }),
-    }));
-    const scorecard = await responseJson(await fetch(`${API}/staff/growth-scorecard?from=2026-09-12T00:00:00Z&to=2026-09-14T00:00:00Z`, { headers }));
+    });
+    const receipt = await receiptResponse.json().catch(() => ({}));
+    if (!receiptResponse.ok && receiptResponse.status !== 409) {
+      throw new Error(`HTTP ${receiptResponse.status}: ${JSON.stringify(receipt)}`);
+    }
+    const scorecard = await responseJson(await fetch(`${API}/staff/growth-scorecard?from=${encodeURIComponent(REPORT_FROM)}&to=${encodeURIComponent(REPORT_TO)}`, { headers }));
+    const emailScorecard = await responseJson(await fetch(`${API}/staff/email-funnel-scorecard?from=${encodeURIComponent(REPORT_FROM)}&to=${encodeURIComponent(REPORT_TO)}&include_tests=true`, { headers }));
     const tasks = await responseJson(await fetch(`${API}/staff/email-offer-tasks`, { headers }));
 
     process.stdout.write(JSON.stringify({
       ok: true,
       staff_email: email,
       receipt_http_path: `/staff/submissions/${SUBMISSION_ID}/receipt`,
-      receipt_recorded: receipt?.data?.submission_id === SUBMISSION_ID,
-      scorecard_read: Array.isArray(scorecard?.data),
+      receipt_recorded: receipt?.data?.submission_id === SUBMISSION_ID || receiptResponse.status === 409,
+      receipt_http_status: receiptResponse.status,
+      scorecard_read: Boolean(scorecard?.data),
+      email_scorecard_read: Array.isArray(emailScorecard?.data),
+      matched_campaign: emailScorecard?.data?.find(row => row.campaign_key === CAMPAIGN_KEY) || null,
       protected_tasks_read: Array.isArray(tasks?.data),
       matched_task: tasks?.data?.some(task => task.submission_id === SUBMISSION_ID) || false,
     }));
