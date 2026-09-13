@@ -14,6 +14,7 @@ export type StateSolarConfig = {
   licenseNote: string;
   contractNote: string;
   programNote: string;
+  incentiveNote: string;
   decisionNote?: string;
   sources: Source[];
 };
@@ -25,6 +26,7 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     licenseNote: 'Verify the contracting business in the New Jersey Division of Consumer Affairs real-time license system. Search the business name shown on the proposal, not only the salesperson or a marketing brand.',
     contractNote: 'Match the registered contractor, equipment, roof work, permits, interconnection responsibility, payment schedule and change-order rules to the written proposal.',
     programNote: 'NJBPU directs residential and smaller net-metered projects to the Administratively Determined Incentive side of the Successor Solar Incentive program. Registration and eligibility are project-specific. NJBPU also warns that New Jersey has no state program offering free residential solar installation.',
+    incentiveNote: 'NJBPU lists the Successor Solar Incentive program for project registration and Solar Renewable Energy Certificate eligibility. Residential and smaller net-metered projects use the administratively determined side of the program. Registration, project eligibility and certificate value must be confirmed from the current program documents before they appear in a proposal.',
     sources: [
       { label: 'New Jersey BPU: Residential programs and Successor Solar Incentive', url: 'https://nj.gov/bpu/residential/program/' },
       { label: 'New Jersey BPU: customer assistance and current solar warning', url: 'https://www.nj.gov/bpu/assistance/index.html' },
@@ -39,7 +41,10 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     licenseNote: 'Maryland says a residential solar installer needs a current Maryland Home Improvement Commission license, and a licensed master electrician must connect the system. Verify both roles instead of relying on a logo or sales badge.',
     contractNote: 'Maryland rooftop-solar contracts must address a wildlife barrier unless the homeowner knowingly waives it after receiving the price and risk information. Put the choice, price and waiver in writing with the rest of the project scope.',
     programNote: 'Maryland net metering measures electricity used and generated during the billing period, but the customer still pays the utility customer charge. The serving utility tariff and interconnection approval control the actual bill treatment.',
+    incentiveNote: 'Maryland’s FY27 Solar Access Program opened July 29, 2026 for income-eligible homeowners. A current participating contractor is required for a new rebate reservation request, and the published budget and reservation totals change as applications are processed. The separate FY26 bridge fund is closed to new applications.',
     sources: [
+      { label: 'Maryland Energy Administration: FY27 Solar Access Program', url: 'https://energy.maryland.gov/residential/Pages/incentives/Maryland-Solar-Access-Program.aspx' },
+      { label: 'Maryland Energy Administration: Solar Access Bridge Fund status', url: 'https://energy.maryland.gov/Pages/SolarBridgeFund.aspx' },
       { label: 'Maryland Public Service Commission: Solar in Maryland', url: 'https://www.psc.state.md.us/electricity/wp-content/uploads/sites/2/Solar-in-Maryland-Fact-Sheet-1.pdf' },
       { label: 'Maryland PSC: net-metering customer alert', url: 'https://www.psc.state.md.us/wp-content/uploads/Net-Metering-Alert-to-Customers_03062024.pdf' },
       { label: 'Maryland Home Improvement Commission: solar licensing and contract notice', url: 'https://labor.md.gov/license/mhic/' },
@@ -54,7 +59,9 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     licenseNote: 'Verify the contracting business through the Virginia Department of Professional and Occupational Regulation. The Board for Contractors licenses businesses, and the license class and specialty determine the work and project value the business may perform.',
     contractNote: 'Match the licensed business, license classification, equipment, roof work, permits, utility interconnection, payment schedule and change-order rules to the written proposal. Local licensing and permit requirements can also apply.',
     programNote: 'Virginia’s State Corporation Commission publishes the current net-metering rules, interconnection forms and separate shared-solar program information. The serving utility and the approved interconnection arrangement determine the actual bill treatment.',
+    incentiveNote: 'Virginia Energy directs residents to Virginia Energy Connect as the current central hub for incentives. Availability depends on the household, utility, locality, ownership method and project. Treat net metering, SREC revenue, group purchasing and any income-qualified offer as separate items with separate terms.',
     sources: [
+      { label: 'Virginia Energy Connect: on-site solar options and incentives', url: 'https://energy.virginia.gov/connect/solar/on-site' },
       { label: 'Virginia SCC: behind-the-meter generation and net metering', url: 'https://www.scc.virginia.gov/regulated-industries/utility-regulation/energy-regulation/meter-generation/' },
       { label: 'Virginia SCC: regulated electric companies and service map', url: 'https://www.scc.virginia.gov/consumers/public-utility/electricity-faqs/regulated-companies-service-map/' },
       { label: 'Virginia SCC: shared solar programs', url: 'https://www.scc.virginia.gov/regulated-industries/utility-regulation/energy-regulation/renewable-resources/shared-solar/' },
@@ -70,7 +77,9 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     licenseNote: 'Check the contracting business in Delaware’s public construction-contractor registry. Check the responsible electrical professional separately in the Division of Professional Regulation license lookup, and confirm whether a funding program requires a participating contractor.',
     contractNote: 'Match the registered contractor, responsible electrical professional, equipment, permits, interconnection, incentive paperwork, payment schedule and change-order rules to the written proposal.',
     programNote: 'The Delaware Public Service Commission directs customer-owned Delmarva Power generation to the utility’s interconnection standards. Community solar is a separate subscription with its own bill credit, subscription fee and contract terms. Do not compare it as if equipment were installed on the home.',
+    incentiveNote: 'Delaware’s Green Energy Program is open only to Delmarva Power customers and has its own solar application rules. DNREC launched additional solar-plus-storage offerings in August 2026. Municipal and cooperative customers can have different programs, so the utility on the bill must be confirmed before assigning a benefit.',
     sources: [
+      { label: 'Delaware DNREC: Green Energy Program and current offerings', url: 'https://dnrec.delaware.gov/climate-coastal-energy/energy-office/programs/gep/' },
       { label: 'Delaware PSC: renewable energy and customer-owned generation', url: 'https://depsc.delaware.gov/delawares-renewable-portfolio-standard-green-power-products/' },
       { label: 'Delaware PSC: community solar consumer information', url: 'https://depsc.delaware.gov/consumer-information/' },
       { label: 'Delaware DNREC: participating renewable-energy contractors', url: 'https://dnrec.delaware.gov/climate-coastal-energy/energy-office/renewables/participating-contractors/' },
@@ -90,9 +99,11 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     licenseNote: 'Verify the contracting business through the DC Department of Licensing and Consumer Protection. Residential contractors need the applicable contractor license, and DC requires home-improvement contractors and general contractors doing residential work to maintain a licensed home-improvement salesperson.',
     contractNote: 'Put roof access, structural and electrical work, permits, Pepco interconnection, equipment, payment schedule, timeline and change-order rules in the written contract. Treat any “free solar” or guaranteed-savings statement as a claim that must be documented.',
     programNote: 'DC’s Department of Energy and Environment treats rooftop solar and community solar as different paths. A renter, condo resident or homeowner whose roof is unsuitable may be able to consider a community subscription, which does not install equipment on the home. Compare its subscription contract separately from a rooftop proposal.',
+    incentiveNote: 'DC DOEE lists Solar for All for households at or below 80% of area median income, with rooftop and community-solar paths. Other owners can compare SREC, net-metering and group-purchase options through the current DOEE solar page. Program eligibility is separate from a contractor’s sales proposal.',
     decisionNote: 'For a rowhouse, condominium or shared building, establish roof ownership, association or co-owner authority, usable area, shade, equipment location and safe installer access before treating a production estimate as viable.',
     sources: [
       { label: 'DC DOEE: Solar in the District', url: 'https://doee.dc.gov/service/solar-district' },
+      { label: 'DC DOEE: Solar for All', url: 'https://doee.dc.gov/solarforall' },
       { label: 'DC DOEE: renewable-energy service providers', url: 'https://doee.dc.gov/publication/renewable-energy-service-providers' },
       { label: 'DC DLCP: contractor and construction services', url: 'https://dlcp.dc.gov/node/1618551' },
       { label: 'DC DLCP: solar contractor consumer advisory', url: 'https://dlcp.dc.gov/release/advisory-solar-installation-tax-credit-expirationL' },
@@ -134,5 +145,24 @@ export function StateSolarCompaniesPage({ config }: { config: StateSolarConfig }
     <section><h2>4. Put state-specific promises in writing</h2><p>{config.contractNote}</p><p className='mt-3'>Reject verbal promises that do not appear in the contract. Savings, tax, incentive and production claims need the assumptions and responsible party stated clearly.</p></section>
     {config.decisionNote && <section><h2>Confirm the property path</h2><p>{config.decisionNote}</p></section>}
     <section><h2>Our decision rule</h2><p>A stronger quote is complete enough to audit: it identifies the equipment, system size, cash price, production estimate, utility assumptions, roof and electrical scope, installer, service process and contract exits. Use the <Link href={costPath} className={linkClass}>{config.state} cost guide</Link> to calculate the comparable price per watt before choosing.</p></section>
+  </DecisionPage>;
+}
+
+export function StateSolarIncentivesPage({ config }: { config: StateSolarConfig }) {
+  const path = `/${config.slug}/solar-incentives`;
+  const costPath = config.costPath || `/${config.slug}/solar-cost`;
+  const companiesPath = config.companiesPath || `/${config.slug}/solar-companies`;
+  const sources: Source[] = [
+    ...config.sources,
+    { label: 'IRS: current Residential Clean Energy Credit rules', url: 'https://www.irs.gov/credits-deductions/residential-clean-energy-credit' },
+  ];
+
+  return <DecisionPage title={`${config.state} Solar Incentives in 2026: Verify the Program First`} intro={`A useful ${config.state} incentive review starts with the current program administrator, eligibility date, serving utility, project ownership and the person who receives each benefit. A sales estimate is not an approval.`} path={path} sources={sources} sourceCheckedDate='2026-09-12' regionLabel={config.state} market={config.market} topic={`${config.state} solar incentives and program fit`} primaryResourceHref={costPath} primaryResourceLabel={`${config.state} solar cost guide`} comparisonHref={companiesPath} comparisonLabel={`Compare ${config.state} solar companies`}>
+    <section className='rounded-xl border border-emerald-200 bg-emerald-50 p-5'><h2>The 2026 starting point</h2><p>{config.incentiveNote}</p></section>
+    <section><h2>Do not assume a 30% federal homeowner credit</h2><p>The IRS currently says the Residential Clean Energy Credit is not available for expenditures made after December 31, 2025. A proposal for a 2026 project should not subtract a federal homeowner credit unless the taxpayer’s own records and current tax guidance support it. Ask a qualified tax professional about prior expenditures, carryforwards and the customer’s specific facts.</p></section>
+    <section><h2>Keep every benefit on its own line</h2><ul className='list-disc space-y-2 pl-6'><li>Program name, administrator and current application link.</li><li>Applicant, income or property requirements and the date eligibility is tested.</li><li>Whether the system owner, homeowner, contractor or third party receives the benefit.</li><li>Reservation, installation, inspection and final-document deadlines.</li><li>Utility interconnection, net-metering or export-credit treatment.</li><li>SREC or renewable-credit ownership and any assignment in the contract.</li><li>What happens if a reservation, credit or certificate is denied or delayed.</li></ul></section>
+    <section><h2>Separate rooftop, community and bill-assistance paths</h2><p>Rooftop solar places equipment on the property. Community or shared solar uses an off-site facility and a subscription. Utility assistance is a separate benefit for the bill. They can have different eligibility, contracts, fees and cancellation rules. Compare the path that matches the property instead of treating every program result as a rooftop installation lead.</p></section>
+    <section><h2>Verify the company and the written promise</h2><p>{config.licenseNote}</p><p className='mt-3'>{config.contractNote}</p><p className='mt-3'>If a salesperson includes an incentive in the savings calculation, require the official program name, application owner, amount or formula, deadline, present availability and denial risk in writing.</p></section>
+    <section><h2>Review the whole project after the program check</h2><p>Use the <Link href={costPath} className={linkClass}>{config.state} cost guide</Link> to compare the unsubsidized cash price and the <Link href={companiesPath} className={linkClass}>company checklist</Link> to verify the business, design and service terms. The inquiry below can preserve the state, utility and project facts for a follow-up review.</p></section>
   </DecisionPage>;
 }

@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 const markets = [
   { state: 'California', cost: '/solar-panels-california', companies: '/best-solar-companies-california' },
-  { state: 'New Jersey', cost: '/new-jersey/solar-cost', companies: '/new-jersey/solar-companies' },
-  { state: 'Maryland', cost: '/maryland/solar-cost', companies: '/maryland/solar-companies' },
-  { state: 'Virginia', cost: '/virginia/solar-cost', companies: '/virginia/solar-companies' },
-  { state: 'Delaware', cost: '/delaware/solar-cost', companies: '/delaware/solar-companies' },
-  { state: 'Washington, DC', cost: '/washington-dc/solar', companies: '/washington-dc/solar-companies' },
+  { state: 'New Jersey', cost: '/new-jersey/solar-cost', companies: '/new-jersey/solar-companies', incentives: '/new-jersey/solar-incentives' },
+  { state: 'Maryland', cost: '/maryland/solar-cost', companies: '/maryland/solar-companies', incentives: '/maryland/solar-incentives' },
+  { state: 'Virginia', cost: '/virginia/solar-cost', companies: '/virginia/solar-companies', incentives: '/virginia/solar-incentives' },
+  { state: 'Delaware', cost: '/delaware/solar-cost', companies: '/delaware/solar-companies', incentives: '/delaware/solar-incentives' },
+  { state: 'Washington, DC', cost: '/washington-dc/solar', companies: '/washington-dc/solar-companies', incentives: '/washington-dc/solar-incentives' },
 ];
 
 export function ServiceMarkets() {
@@ -22,6 +22,7 @@ export function ServiceMarkets() {
           <div className='mt-4 flex flex-col gap-3 text-sm font-semibold text-emerald-800'>
             <Link href={market.cost} className='underline underline-offset-2'>Cost and project guide</Link>
             <Link href={market.companies} className='underline underline-offset-2'>Company and quote comparison</Link>
+            {'incentives' in market && <Link href={market.incentives} className='underline underline-offset-2'>Incentives and program guide</Link>}
           </div>
         </article>)}
       </div>
