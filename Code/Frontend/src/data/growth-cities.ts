@@ -957,6 +957,7 @@ export const growthCities: Record<
     name: "Murrieta",
     county: "Riverside County",
     utility: "sce",
+    sourceCheckedDate: "2026-09-12",
     bill: "Have each bidder use the electric utility and rate schedule printed on your bill. For an SCE account, distinguish the current Solar Billing Plan from confirmed legacy enrollment. Do not let a proposal for a nearby community determine your meter’s rate or export treatment.",
     local:
       "Murrieta’s current self-service instructions direct residential roof-mounted solar applications through SolarAPP+ and other permits through its CSS portal. The city also describes how revised documents reach the permit record and what must be available at inspection. Ask the bidder to own that handoff.",
@@ -1824,6 +1825,59 @@ export const growthCities: Record<
       [
         "Does a Stockton address prove the utility rate or installer coverage?",
         "No. Confirm the provider and rate from the bill and require each company to confirm the exact address and contracting business in writing.",
+      ],
+    ],
+  },
+  visalia: {
+    name: "Visalia",
+    county: "Tulare County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-12",
+    bill: "Use the provider, rate plan and twelve-month usage history printed on the current electricity account. A proposal should disclose the monthly production model, onsite use, remaining imports, export credits and retained charges. Do not substitute a citywide average rate for the actual account.",
+    local:
+      "Visalia publishes a solar permit application that asks for the contractor, system size, module count, roof or ground mount, existing solar and any panel upgrade. Ask the bidder to match the signed proposal to that permit scope and identify who handles plan review, corrections and inspection.",
+    example:
+      "Put the same annual usage, roof planes and shade model into every Visalia bid. Then compare monthly production, total price, financing obligations, roof and panel work, storage, permit duties and remaining utility charges. The permit and contract should describe the same system.",
+    checks: [
+      [
+        "Permit-to-contract match",
+        "Match the module count, system size, mount type, panel upgrade and contractor across the proposal and City application.",
+      ],
+      [
+        "Full-year bill model",
+        "Use the actual provider, rate schedule and twelve months of usage and show monthly imports and exports.",
+      ],
+      [
+        "Complete project scope",
+        "Itemize roof, electrical, battery, permit, inspection and warranty responsibilities before comparing totals.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Visalia: solar permit application and required scope",
+        url: "https://www.visalia.city/civicax/filebank/blobdload.aspx?BlobID=44527",
+      },
+      {
+        label: "City of Visalia: online permit and inspection portal",
+        url: "https://cd.visalia.city/CitizenAccess/Default.aspx",
+      },
+      {
+        label: "SCE: Solar Billing Plan information",
+        url: "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "What does Visalia's solar permit application record?",
+        "The City form asks for the contractor, module count, system capacity, mount type, existing system and panel-upgrade information. Compare those fields to the signed proposal.",
+      ],
+      [
+        "What should I compare across Visalia solar companies?",
+        "Compare the licensed contractor, equipment, roof and electrical scope, permit duties, monthly production, warranties, total payment obligations and remaining utility charges.",
       ],
     ],
   },

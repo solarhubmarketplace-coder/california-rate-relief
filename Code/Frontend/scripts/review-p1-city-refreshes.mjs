@@ -10,6 +10,8 @@ const cases = [
   ["/solar-companies/roseville", /Compare solar companies in Roseville/i, /permission to operate/i],
   ["/solar-companies/irvine", /Compare solar companies in Irvine/i, /Orange County Power Authority/i],
   ["/solar-companies/stockton", /Compare solar companies in Stockton/i, /Community Development Department/i],
+  ["/solar-companies/murrieta", /Compare solar companies in Murrieta/i, /revised documents/i],
+  ["/solar-companies/visalia", /Compare solar companies in Visalia/i, /solar permit application/i],
 ];
 
 const results = [];
@@ -45,7 +47,7 @@ for (const [path] of cases) {
   assert.match(sitemapText, new RegExp(path.replaceAll("/", "\\/")));
 }
 
-const result = { base, passed: 13, checks: results, sitemap: sitemap.status };
+const result = { base, passed: 17, checks: results, sitemap: sitemap.status };
 if (output) {
   await writeFile(output, `${JSON.stringify(result, null, 2)}\n`, "utf8");
 }
