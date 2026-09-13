@@ -93,6 +93,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     { url: `${base}/blog`, lastModified: urlMtime('/blog', today), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/best-solar-companies-california`, lastModified: urlMtime('/best-solar-companies-california', today), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/solar-panels-california`, lastModified: urlMtime('/solar-panels-california', today), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/solar-problems/solar-homeowners-insurance`, lastModified: urlMtime('/solar-problems/solar-homeowners-insurance', today), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/panel-reviews`, lastModified: urlMtime('/panel-reviews', today), changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/commercial-solar`, lastModified: urlMtime('/commercial-solar', today), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/about`, lastModified: urlMtime('/about', today), changeFrequency: 'monthly', priority: 0.5 },
