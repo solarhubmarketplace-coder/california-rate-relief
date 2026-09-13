@@ -138,7 +138,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'california-public-utilities-commission', 'california-solar-tax-credit-2026',
     'commercial-solar-financing-california', 'commercial-solar-installation-cost-california',
     'free-solar-panels-california', 'how-long-do-solar-panels-last',
-    'how-to-lower-electric-bill-california', 'is-solar-worth-it-california-2026',
+    'how-to-lower-electric-bill-california',
     'nem-2-vs-nem-3', 'sdge-time-of-use-rates-2026',
     'solar-ev-charging-california', 'solar-panel-bird-proofing',
     'solar-panel-inspection-california', 'solar-panel-maintenance-cost',

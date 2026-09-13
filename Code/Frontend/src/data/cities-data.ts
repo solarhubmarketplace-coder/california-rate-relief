@@ -358,7 +358,7 @@ const MUNI_RELATED_ARTICLES = [
 ];
 
 const LADWP_RELATED_ARTICLES = [
-  { slug: 'is-solar-worth-it-california-2026', title: 'Is Solar Worth It in California in 2026?' },
+  { slug: 'are-solar-panels-worth-it-california', title: 'Are Solar Panels Worth It in California?' },
   { slug: 'nem-3-california-still-worth-it', title: 'Is Solar Still Worth It Under NEM 3.0?' },
   { slug: 'solar-ppa-explained-california', title: 'Solar PPA Explained: California Guide' },
   { slug: 'solar-tax-credit-expired-2026-options', title: 'Solar Tax Credit Expired — Your Options Now' },

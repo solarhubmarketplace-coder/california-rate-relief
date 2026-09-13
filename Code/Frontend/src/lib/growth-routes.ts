@@ -104,6 +104,7 @@ export const LOCAL_RELEASE_REVIEW_ROUTES = [
 export const PUBLIC_CRR_NO_SESSION_ROUTES = [
   '/email/bill-review',
   '/email/quote-review',
+  '/blog/is-solar-worth-it-california-2026',
   ...GROWTH_ROUTES,
   ...LOCAL_RELEASE_REVIEW_ROUTES,
 ] as const;
