@@ -4,6 +4,7 @@ import path from 'node:path';
 
 const base = process.env.CRR_REVIEW_BASE || 'http://localhost:3311';
 const output = process.env.CRR_REVIEW_OUT || '../../evidence/state-expansion-review.json';
+const allowedHosts = new Set(['127.0.0.1', 'localhost', new URL(base).hostname]);
 const cases = [
   ['/new-jersey/solar-cost', 'NJ', 'pseg'],
   ['/new-jersey/solar-companies', 'NJ', 'pseg'],
@@ -17,7 +18,7 @@ try {
   for (const [size, viewport] of [['desktop', { width: 1440, height: 1000 }], ['mobile', { width: 390, height: 844 }]]) {
     for (const [route, market, utility] of cases) {
       const context = await browser.newContext({ viewport });
-      await context.route('**/*', request => ['127.0.0.1', 'localhost'].includes(new URL(request.request().url()).hostname) ? request.continue() : request.abort());
+      await context.route('**/*', request => allowedHosts.has(new URL(request.request().url()).hostname) ? request.continue() : request.abort());
       const page = await context.newPage();
       const response = await page.goto(base + route, { waitUntil: 'domcontentloaded', timeout: 30000 });
       expect(response?.status()).toBe(200);
