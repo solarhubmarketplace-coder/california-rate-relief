@@ -1513,4 +1513,318 @@ export const growthCities: Record<
       ],
     ],
   },
+  "thousand-oaks": {
+    name: "Thousand Oaks",
+    county: "Ventura County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-12",
+    bill: "Read both parts of the current electricity bill before comparing proposals. Clean Power Alliance may supply generation, while SCE delivers the electricity and issues the bill. The proposal should identify the account's actual provider, rate schedule and solar-billing enrollment instead of treating every Thousand Oaks account the same.",
+    local:
+      "Ask the bidder to identify the City of Thousand Oaks permit path for the actual design and property. The written scope should say who submits plans, handles corrections, schedules inspection and includes any roof, service-panel, storage or backup-circuit work.",
+    example:
+      "Give each bidder the same twelve months of usage and roof layout. Compare monthly production, cash price, financing obligations and remaining SCE and generation-provider charges. Keep the battery and backup scope separate so one proposal does not look cheaper by omitting it.",
+    checks: [
+      [
+        "Generation and delivery",
+        "Use the provider and rate schedule shown on the bill and separate generation from SCE delivery charges and credits.",
+      ],
+      [
+        "Permit and electrical scope",
+        "Name the permit route and itemize service-panel, subpanel, storage, backup circuits and inspection responsibility.",
+      ],
+      [
+        "Comparable contract",
+        "Compare the same equipment, monthly production, roof work, warranty responsibility and total payment obligations.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Thousand Oaks: Building Division and permit process",
+        url: "https://www.toaks.org/departments/community-development/building",
+      },
+      {
+        label: "Clean Power Alliance: residential rates and member communities",
+        url: "https://cleanpoweralliance.org/residential-rate/",
+      },
+      {
+        label: "SCE: Solar Billing Plan information",
+        url: "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does Clean Power Alliance replace SCE in Thousand Oaks?",
+        "No. Clean Power Alliance supplies generation for enrolled customers, while SCE provides delivery and billing. Confirm both on the current bill before comparing proposals.",
+      ],
+      [
+        "What should a Thousand Oaks solar quote identify?",
+        "It should identify the legal contractor, equipment, roof and electrical scope, permit duties, monthly production inputs, total payment obligations and remaining utility charges.",
+      ],
+    ],
+  },
+  escondido: {
+    name: "Escondido",
+    county: "San Diego County",
+    utility: "sdge",
+    sourceCheckedDate: "2026-09-12",
+    bill: "Use the provider and rate plan printed on the current bill. SDG&E provides delivery and billing; generation enrollment can vary. A proposal should use a complete year of the account's actual usage and show remaining imports and export credits under the confirmed solar program.",
+    local:
+      "Escondido publishes SolarAPP+ for qualifying residential rooftop systems and directs other solar work through the regular building-permit process. Ask which route applies. A battery, panel change, roof condition or design outside the eligibility rules can change the permit and inspection scope.",
+    example:
+      "Put the same annual usage, roof planes and shade assumptions into every bid. Then compare monthly production, cash price, financing obligations, battery scope, permit work and the remaining utility bill. A low payment is not a complete price comparison.",
+    checks: [
+      [
+        "SolarAPP+ eligibility",
+        "Ask whether the actual design qualifies and identify the regular permit path if it does not.",
+      ],
+      [
+        "Bill and production model",
+        "Use the current provider, rate plan and full-year usage; require monthly production and remaining-bill assumptions.",
+      ],
+      [
+        "Roof, battery and panel work",
+        "Itemize roof work, service changes, storage, backup circuits and the contractor responsible for each item.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Escondido: SolarAPP+ eligibility and permit steps",
+        url: "https://www.escondido.gov/1247/Solar-App-Plus",
+      },
+      {
+        label: "City of Escondido: Building Division permit information",
+        url: "https://www.escondido.gov/215/Building",
+      },
+      {
+        label: "SDG&E: residential pricing plans",
+        url: "https://www.sdge.com/residential/pricing-plans",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Does every Escondido solar project qualify for SolarAPP+?",
+        "No. The City limits SolarAPP+ to qualifying residential rooftop projects and uses the regular permit process for other designs. Confirm the route before signing.",
+      ],
+      [
+        "What should I compare besides the payment?",
+        "Compare total contract cost, equipment, roof and electrical scope, permit duties, monthly production, warranty responsibility and the remaining utility charges.",
+      ],
+    ],
+  },
+  anaheim: {
+    name: "Anaheim",
+    county: "Orange County",
+    utility: "apu",
+    sourceCheckedDate: "2026-09-12",
+    bill: "Anaheim Public Utilities is a municipal utility with its own solar and net-metering rules. Do not use an SCE or investor-owned-utility NEM 3 assumption. Have each bidder use the account's past twelve months, current Anaheim rate and published excess-energy treatment.",
+    local:
+      "Anaheim publishes an online permit route for qualifying small residential rooftop systems. Its solar guidance also requires City permitting and utility interconnection steps. Ask who submits the engineering plan, handles review and inspection and includes any service-panel, roof or storage work.",
+    example:
+      "Ask every bidder to use the same annual Anaheim usage and the same roof design. Compare monthly production, total price, financing terms, permit/interconnection duties and remaining Anaheim bill. Separate the battery and panel work from the core array.",
+    checks: [
+      [
+        "Anaheim utility rules",
+        "Use Anaheim Public Utilities' current rate and solar program; reject an SCE or generic NEM assumption.",
+      ],
+      [
+        "Permit and interconnection",
+        "Name who submits plans, completes inspection and satisfies Anaheim's utility and building requirements.",
+      ],
+      [
+        "Same system scope",
+        "Compare equal equipment, production, roof, panel, storage and warranty scope before comparing price.",
+      ],
+    ],
+    sources: [
+      {
+        label: "Anaheim Public Utilities: solar energy and net metering",
+        url: "https://www.anaheim.net/636/Solar-Energy-and-Net-Metering",
+      },
+      {
+        label: "City of Anaheim: online rooftop-solar permit route",
+        url: "https://www.anaheim.net/6015/Online-Permit-Center",
+      },
+      {
+        label: "Anaheim Public Utilities: electric utility rules",
+        url: "https://www.anaheim.net/883/Electric-Utility-Rules",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Is Anaheim on the same NEM 3 program as SCE customers?",
+        "No. Anaheim Public Utilities publishes its own wholesale-based NEM 2.0 program and says Anaheim is not moving to NEM 3. Use the municipal utility's current rules for the account.",
+      ],
+      [
+        "Should I compare at least three Anaheim solar bids?",
+        "Anaheim's own solar guidance recommends obtaining bids from at least three contractors. Give each bidder the same usage and system scope so the totals are comparable.",
+      ],
+    ],
+  },
+  roseville: {
+    name: "Roseville",
+    county: "Placer County",
+    utility: "reu",
+    sourceCheckedDate: "2026-09-12",
+    bill: "Roseville Electric Utility serves the city. Use the account's current Roseville rate, full-year usage and interconnection rules instead of applying PG&E assumptions. Require the proposal to show monthly production, remaining imports and the treatment of exported power.",
+    local:
+      "Roseville's published residential process involves both Roseville Electric and Building Services. The applicant needs the utility interconnection reservation and the City permit, followed by inspection and written permission to operate. Ask the bidder to assign every step in the contract.",
+    example:
+      "Compare bids on the same annual Roseville usage, roof layout and equipment. List the utility application, building permit, meter work, inspection, roof scope, battery and panel changes separately. Do not turn on the system before written permission to operate.",
+    checks: [
+      [
+        "Municipal utility model",
+        "Use Roseville Electric's current rate and interconnection rules rather than a PG&E or statewide shortcut.",
+      ],
+      [
+        "Permit-to-operate chain",
+        "Name who obtains the utility reservation, City permit, inspection and written permission to operate.",
+      ],
+      [
+        "Complete contract scope",
+        "Itemize equipment, roof, electrical, battery, meter and warranty responsibilities before comparing totals.",
+      ],
+    ],
+    sources: [
+      {
+        label: "Roseville Electric: residential interconnection and permitting process",
+        url: "https://www.roseville.ca.us/government/departments/electric_utility/rebates_and_energy_savings/your_trusted_solar_advisor_copy/the_interconnection_process",
+      },
+      {
+        label: "City of Roseville: online building permit process",
+        url: "https://www.roseville.ca.us/government/departments/development_services/building/online_building_permit_process",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "Is Roseville a PG&E electric account?",
+        "No. Roseville Electric Utility serves the city. Model the proposal under the rate and interconnection rules shown for the actual Roseville account.",
+      ],
+      [
+        "When can a Roseville system be turned on?",
+        "Roseville's process calls for permit and interconnection steps, inspection and written permission to operate. The contract should identify who completes each step.",
+      ],
+    ],
+  },
+  irvine: {
+    name: "Irvine",
+    county: "Orange County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-12",
+    bill: "Check the generation provider and rate plan on the current SCE bill. Orange County Power Authority can provide generation while SCE delivers electricity and handles billing. Solar charges and credits belong to both sides, so a proposal should not model an SCE-only generation account unless that is what the bill shows.",
+    local:
+      "Irvine publishes an expedited residential photovoltaic path with eligibility limits. The published checklist excludes designs with battery backup, a main-panel upgrade, solar roofing tiles or more than 10 kW AC from that expedited route. Ask which current permit path covers the actual scope and who handles inspection and corrections.",
+    example:
+      "Give every bidder the same SCE/OCPA bill history and roof layout. Compare monthly production, total contract price, financing, roof and panel work, storage, permit duties and remaining generation and delivery charges. A battery changes both scope and permit route.",
+    checks: [
+      [
+        "OCPA and SCE bill",
+        "Confirm generation enrollment, SCE delivery rate and solar program directly from the account before modeling.",
+      ],
+      [
+        "Expedited-permit eligibility",
+        "Ask whether battery, panel, solar-roofing or system-size scope requires the standard review route.",
+      ],
+      [
+        "HOA and contractor scope",
+        "Keep HOA review, City permit duties, roof work and the licensed contractor's obligations separate and written.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Irvine: residential solar permitting criteria",
+        url: "https://gis.cityofirvine.org/solarpanel/",
+      },
+      {
+        label: "City of Irvine: HOA review for solar energy systems",
+        url: "https://cityofirvine.org/community-development/homeowner-association-review-solar-energy-systems",
+      },
+      {
+        label: "OCPA: solar and net-energy-metering program",
+        url: "https://www.ocpower.org/energy-programs/solar-net-energy-metering/",
+      },
+      {
+        label: "SCE: Solar Billing Plan information",
+        url: "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+      },
+    ],
+    faq: [
+      [
+        "Does OCPA replace SCE for an Irvine account?",
+        "No. OCPA provides generation for enrolled customers, while SCE handles delivery and billing. Use the current bill to confirm both before comparing proposals.",
+      ],
+      [
+        "Does every Irvine rooftop system use the expedited permit path?",
+        "No. The City's published criteria exclude several scopes, including battery backup, main-panel upgrades, solar roofing tiles and systems above the stated size limit. Confirm the route for the actual design.",
+      ],
+    ],
+  },
+  stockton: {
+    name: "Stockton",
+    county: "San Joaquin County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-12",
+    bill: "Use the provider, rate schedule and solar enrollment printed on the current electricity bill. For a PG&E account, compare delivery and any separate generation charges together. Require monthly production and remaining-bill assumptions based on a complete year of the property's usage.",
+    local:
+      "Stockton's Community Development Department controls building permits and its public records include residential photovoltaic permit categories. Ask the bidder to identify the current permit route, responsible contractor, plan package, inspection steps and any separate roof, service-panel or battery work.",
+    example:
+      "Use the same annual usage, roof and shade model for every Stockton bid. Compare monthly production, total contract cost, financing, permit duties, roof and electrical work and the remaining utility bill. Keep an advertised payment separate from the full obligation.",
+    checks: [
+      [
+        "Account-specific utility model",
+        "Use the actual provider, rate plan and solar enrollment and show both imports and export credits.",
+      ],
+      [
+        "City permit scope",
+        "Name who submits plans, handles corrections, schedules inspection and includes roof, panel or storage work.",
+      ],
+      [
+        "Contract total",
+        "Compare the same equipment, production inputs, warranties and total payment obligations, not only the first payment.",
+      ],
+    ],
+    sources: [
+      {
+        label: "City of Stockton Open Data: Community Development and permit role",
+        url: "https://data.stocktonca.gov/stories/s/Development/kc7p-zqfj/",
+      },
+      {
+        label: "City of Stockton Open Data: issued permits",
+        url: "https://data.stocktonca.gov/d/xrce-tkin",
+      },
+      {
+        label: "PG&E: Solar Billing Plan information",
+        url: "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+      },
+      {
+        label: "CSLB: Solar Smart license and consumer information",
+        url: "https://www.cslb.ca.gov/solar",
+      },
+    ],
+    faq: [
+      [
+        "What should I compare in a Stockton solar-company quote?",
+        "Compare the licensed contractor, equipment, annual and monthly production inputs, roof and electrical scope, permit duties, warranties, total payment obligations and remaining utility charges.",
+      ],
+      [
+        "Does a Stockton address prove the utility rate or installer coverage?",
+        "No. Confirm the provider and rate from the bill and require each company to confirm the exact address and contracting business in writing.",
+      ],
+    ],
+  },
 };
