@@ -38,6 +38,7 @@ export const GROWTH_ROUTES = [
   "/blog/what-is-nem-3-california",
   "/blog/solar-battery-backup-california",
   "/battery/sgip-battery-rebate-california",
+  "/battery/home-battery-cost-california",
   "/blog/pge-vs-sce-vs-sdge-rates-compared",
   "/blog/why-is-my-pge-bill-so-high",
   "/blog/why-is-my-california-electric-bill-so-high",
