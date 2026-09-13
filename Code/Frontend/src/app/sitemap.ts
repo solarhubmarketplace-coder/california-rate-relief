@@ -108,6 +108,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   const blogSlugs = [
     'best-time-to-install-solar-panels-california',
     'what-happens-if-stop-paying-solar-lease-california',
+    'is-community-solar-worth-it',
     'sce-time-of-use-rates-2026',
     'pge-time-of-use-rates-2026',
     'sce-rate-increase-2026', 'pge-rate-increase-2026', 'sdge-rate-increase-2026',
