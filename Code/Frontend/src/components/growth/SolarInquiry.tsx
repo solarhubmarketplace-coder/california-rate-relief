@@ -14,7 +14,7 @@ import {
   type CalculatorContext,
 } from '@/lib/calculator-context';
 import { calculateSolarScenario } from '@/lib/solar-savings-engine';
-import { isFiveDigitZip, serviceMarkets, type ServiceMarket } from '@/lib/service-market';
+import { isFiveDigitZip, isServiceMarket, serviceMarkets, type ServiceMarket } from '@/lib/service-market';
 import { trackEvent } from '@/components/GoogleAnalyticsClient';
 
 const field =
@@ -23,9 +23,11 @@ const ATTEMPT_KEY = 'crr_review_submission_v1';
 export function SolarInquiry({
   utility = '',
   topic = 'Solar comparison',
+  market = 'CA',
 }: {
   utility?: string;
   topic?: string;
+  market?: ServiceMarket;
 }) {
   const [inputs, setInputs] = useState<CalculatorContext>({
     utility,
@@ -34,7 +36,7 @@ export function SolarInquiry({
   });
   const [contact, setContact] = useState({ name: '', phone: '', email: '' });
   const [homeowner, setHomeowner] = useState('yes');
-  const [serviceMarket, setServiceMarket] = useState<ServiceMarket | ''>('CA');
+  const [serviceMarket, setServiceMarket] = useState<ServiceMarket | ''>(market);
   const [utilityOther, setUtilityOther] = useState('');
   const [consent, setConsent] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -100,6 +102,7 @@ export function SolarInquiry({
           email: stored.payload.contact.email || '',
         });
         setHomeowner(q.homeowner ? 'yes' : 'no');
+        if (isServiceMarket(q.service_market)) setServiceMarket(q.service_market);
         setConsent(stored.payload.consent?.status === 'opted_in');
       }
     } catch {

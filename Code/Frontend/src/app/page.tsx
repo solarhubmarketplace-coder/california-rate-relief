@@ -10,6 +10,7 @@ import { FinalCTA } from '@/components/landing/FinalCTA';
 import { QualificationWizard } from '@/components/landing/QualificationWizard';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { ServiceMarkets } from '@/components/landing/ServiceMarkets';
 
 const BASE_URL = 'https://ratereliefca.com';
 
@@ -95,6 +96,8 @@ export default function HomePage() {
 
         {/* New 3-card How-It-Works */}
         <HowItWorksV2 />
+
+        <ServiceMarkets />
 
         {/* Testimonials removed 2026-08-24. The eight entries here were
             fabricated placeholders with Unsplash stock portraits, presented as

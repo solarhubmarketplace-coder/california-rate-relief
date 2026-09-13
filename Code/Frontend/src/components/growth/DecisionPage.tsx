@@ -4,6 +4,7 @@ import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { PublicLayout } from "@/components/layout/PublicLayout";
 import { SolarInquiry } from "./SolarInquiry";
+import type { ServiceMarket } from "@/lib/service-market";
 
 export type Source = { label: string; url: string };
 export function formatSourceCheckedDate(sourceCheckedDate: string) {
@@ -67,6 +68,12 @@ export function DecisionPage({
   inquiry,
   commercial = false,
   sourceCheckedDate = "2026-09-10",
+  regionLabel = "California",
+  market = "CA",
+  primaryResourceHref,
+  primaryResourceLabel,
+  comparisonHref,
+  comparisonLabel,
 }: {
   title: string;
   intro: string;
@@ -78,6 +85,12 @@ export function DecisionPage({
   inquiry?: ReactNode;
   commercial?: boolean;
   sourceCheckedDate?: string;
+  regionLabel?: string;
+  market?: ServiceMarket;
+  primaryResourceHref?: string;
+  primaryResourceLabel?: string;
+  comparisonHref?: string;
+  comparisonLabel?: string;
 }) {
   const schema =
     path === "/tools/solar-panel-calculator"
@@ -120,7 +133,7 @@ export function DecisionPage({
         />
         <header className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-emerald-800">
-            California solar decisions
+            {regionLabel} solar decisions
           </p>
           <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-5xl">
             {title}
@@ -137,25 +150,25 @@ export function DecisionPage({
         >
           <Link
             href={
-              commercial
+              primaryResourceHref || (commercial
                 ? "/commercial-solar/cost-per-watt-california"
-                : "/tools/solar-panel-calculator"
+                : "/tools/solar-panel-calculator")
             }
             className="underline"
           >
-            {commercial
+            {primaryResourceLabel || (commercial
               ? "Commercial project costs"
-              : "Bill and quote calculator"}
+              : "Bill and quote calculator")}
           </Link>
           <Link
             href={
-              commercial
+              comparisonHref || (commercial
                 ? "/commercial-solar"
-                : "/best-solar-companies-california"
+                : "/best-solar-companies-california")
             }
             className="underline"
           >
-            {commercial ? "Commercial solar resources" : "Compare solar quotes"}
+            {comparisonLabel || (commercial ? "Commercial solar resources" : "Compare solar quotes")}
           </Link>
           <a href="#solar-inquiry" className="underline">
             Optional inquiry
@@ -165,7 +178,7 @@ export function DecisionPage({
           {children}
         </div>
         <SourceList sources={sources} sourceCheckedDate={sourceCheckedDate} />
-        {inquiry ?? <SolarInquiry utility={utility} topic={topic || title} />}
+        {inquiry ?? <SolarInquiry utility={utility} topic={topic || title} market={market} />}
       </main>
       <Footer />
     </PublicLayout>

@@ -16,6 +16,16 @@ export const utilityOptions = [
   ['ladwp', 'LADWP'],
   ['smud', 'SMUD'],
   ['mvu', 'MVU'],
+  ['pseg', 'PSE&G'],
+  ['jcpl', 'JCP&L'],
+  ['ace', 'Atlantic City Electric'],
+  ['rockland', 'Rockland Electric'],
+  ['bge', 'BGE'],
+  ['pepco', 'Pepco'],
+  ['delmarva', 'Delmarva Power'],
+  ['potomac-edison', 'Potomac Edison'],
+  ['dominion', 'Dominion Energy Virginia'],
+  ['appalachian-power', 'Appalachian Power'],
   ['other', 'Other / not sure'],
 ] as const;
 export function saveCalculatorContext(value: CalculatorContext) {

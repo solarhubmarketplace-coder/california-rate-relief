@@ -196,6 +196,15 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const stateDecisionPages: MetadataRoute.Sitemap = GROWTH_ROUTES
+    .filter((route) => route.startsWith('/new-jersey/') || route.startsWith('/maryland/'))
+    .map((route) => ({
+      url: `${base}${route}`,
+      lastModified: new Date('2026-09-12T00:00:00.000Z'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    }));
+
   // Regional hubs
   const regionalSlugs = [
     'orange-county', 'bay-area', 'inland-empire', 'los-angeles-county',
@@ -257,7 +266,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
 
   return [
     ...staticPages, ...blogPages, ...installerPages, ...panelPages,
-    ...commercialPages, ...regionalPages, ...citySavingsPages, ...cityCompaniesPages,
+    ...commercialPages, ...stateDecisionPages, ...regionalPages, ...citySavingsPages, ...cityCompaniesPages,
     ...articlePages, ...articleHubs,
   ].map((entry) => CRR_REVIEWED_SEPTEMBER_11.has(new URL(entry.url).pathname)
     ? { ...entry, lastModified: new Date('2026-09-11T00:00:00.000Z') }

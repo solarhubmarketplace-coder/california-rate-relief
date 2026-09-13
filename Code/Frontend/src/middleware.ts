@@ -324,7 +324,12 @@ export async function middleware(request: NextRequest) {
 
   // These public decision pages do not need an owner session or a Supabase read.
   // Private routes retain the existing authentication path below.
-  if (isCRR && PUBLIC_CRR_NO_SESSION_ROUTES.includes(pathname)) return NextResponse.next();
+  if (
+    isCRR &&
+    (PUBLIC_CRR_NO_SESSION_ROUTES.includes(pathname) ||
+      pathname === '/sitemap.xml' ||
+      pathname === '/robots.txt')
+  ) return NextResponse.next();
 
   // ====================================================================
   // Below this line: existing CRR auth logic — runs only on
