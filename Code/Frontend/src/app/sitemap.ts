@@ -106,6 +106,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   ];
 
   const blogSlugs = [
+    'best-time-to-install-solar-panels-california',
     'sce-time-of-use-rates-2026',
     'pge-time-of-use-rates-2026',
     'sce-rate-increase-2026', 'pge-rate-increase-2026', 'sdge-rate-increase-2026',
