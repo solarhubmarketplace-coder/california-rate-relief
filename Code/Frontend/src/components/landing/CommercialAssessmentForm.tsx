@@ -62,8 +62,18 @@ const selectClass =
   "h-12 w-full rounded-md border-2 border-border bg-background px-3 text-base focus:border-primary focus:outline-none";
 const ATTEMPT_KEY = "crr_commercial_submission_v1";
 
-export function CommercialAssessmentForm() {
-  const [form, setForm] = useState(initialForm);
+export function CommercialAssessmentForm({
+  defaultMarket = '',
+  defaultUtility = '',
+}: {
+  defaultMarket?: ServiceMarket | '';
+  defaultUtility?: string;
+} = {}) {
+  const [form, setForm] = useState({
+    ...initialForm,
+    serviceMarket: defaultMarket,
+    utilityProvider: defaultUtility,
+  });
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");

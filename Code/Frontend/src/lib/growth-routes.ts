@@ -13,6 +13,7 @@ export const GROWTH_ROUTES = [
   "/washington-dc/solar",
   "/washington-dc/solar-companies",
   "/new-jersey/solar-incentives",
+  "/new-jersey/commercial-solar",
   "/maryland/solar-incentives",
   "/virginia/solar-incentives",
   "/delaware/solar-incentives",

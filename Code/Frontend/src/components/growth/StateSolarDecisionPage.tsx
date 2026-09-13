@@ -16,7 +16,7 @@ export type StateSolarConfig = {
   programNote: string;
   incentiveNote: string;
   decisionNote?: string;
-  utilityLinks?: { href: string; label: string }[];
+  relatedDecisionLinks?: { href: string; label: string }[];
   sources: Source[];
 };
 
@@ -28,6 +28,9 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     contractNote: 'Match the registered contractor, equipment, roof work, permits, interconnection responsibility, payment schedule and change-order rules to the written proposal.',
     programNote: 'NJBPU directs residential and smaller net-metered projects to the Administratively Determined Incentive side of the Successor Solar Incentive program. Registration and eligibility are project-specific. NJBPU also warns that New Jersey has no state program offering free residential solar installation.',
     incentiveNote: 'NJBPU lists the Successor Solar Incentive program for project registration and Solar Renewable Energy Certificate eligibility. Residential and smaller net-metered projects use the administratively determined side of the program. Registration, project eligibility and certificate value must be confirmed from the current program documents before they appear in a proposal.',
+    relatedDecisionLinks: [
+      { href: '/new-jersey/commercial-solar', label: 'New Jersey commercial solar projects' },
+    ],
     sources: [
       { label: 'New Jersey BPU: Residential programs and Successor Solar Incentive', url: 'https://nj.gov/bpu/residential/program/' },
       { label: 'New Jersey BPU: customer assistance and current solar warning', url: 'https://www.nj.gov/bpu/assistance/index.html' },
@@ -43,7 +46,7 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     contractNote: 'Maryland rooftop-solar contracts must address a wildlife barrier unless the homeowner knowingly waives it after receiving the price and risk information. Put the choice, price and waiver in writing with the rest of the project scope.',
     programNote: 'Maryland net metering measures electricity used and generated during the billing period, but the customer still pays the utility customer charge. The serving utility tariff and interconnection approval control the actual bill treatment.',
     incentiveNote: 'Maryland’s FY27 Solar Access Program opened July 29, 2026 for income-eligible homeowners. A current participating contractor is required for a new rebate reservation request, and the published budget and reservation totals change as applications are processed. The separate FY26 bridge fund is closed to new applications.',
-    utilityLinks: [
+    relatedDecisionLinks: [
       { href: '/maryland/bge-high-bill', label: 'Why a BGE bill is high' },
       { href: '/maryland/bge-electricity-rates', label: 'BGE electricity-rate components' },
       { href: '/utilities/pepco/high-bill', label: 'Why a Pepco bill is high' },
@@ -86,7 +89,7 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     contractNote: 'Match the registered contractor, responsible electrical professional, equipment, permits, interconnection, incentive paperwork, payment schedule and change-order rules to the written proposal.',
     programNote: 'The Delaware Public Service Commission directs customer-owned Delmarva Power generation to the utility’s interconnection standards. Community solar is a separate subscription with its own bill credit, subscription fee and contract terms. Do not compare it as if equipment were installed on the home.',
     incentiveNote: 'Delaware’s Green Energy Program is open only to Delmarva Power customers and has its own solar application rules. DNREC launched additional solar-plus-storage offerings in August 2026. Municipal and cooperative customers can have different programs, so the utility on the bill must be confirmed before assigning a benefit.',
-    utilityLinks: [
+    relatedDecisionLinks: [
       { href: '/utilities/delmarva/high-bill', label: 'Why a Delmarva Power bill is high' },
     ],
     sources: [
@@ -112,7 +115,7 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
     programNote: 'DC’s Department of Energy and Environment treats rooftop solar and community solar as different paths. A renter, condo resident or homeowner whose roof is unsuitable may be able to consider a community subscription, which does not install equipment on the home. Compare its subscription contract separately from a rooftop proposal.',
     incentiveNote: 'DC DOEE lists Solar for All for households at or below 80% of area median income, with rooftop and community-solar paths. Other owners can compare SREC, net-metering and group-purchase options through the current DOEE solar page. Program eligibility is separate from a contractor’s sales proposal.',
     decisionNote: 'For a rowhouse, condominium or shared building, establish roof ownership, association or co-owner authority, usable area, shade, equipment location and safe installer access before treating a production estimate as viable.',
-    utilityLinks: [
+    relatedDecisionLinks: [
       { href: '/utilities/pepco/high-bill', label: 'Why a Pepco bill is high' },
       { href: '/utilities/pepco/solar-credits', label: 'Pepco net metering and solar credits' },
     ],
@@ -131,8 +134,8 @@ export const stateSolarConfigs: Record<StateSolarConfig['slug'], StateSolarConfi
 const linkClass = 'font-semibold text-emerald-800 underline underline-offset-2';
 
 function UtilityLinks({ config }: { config: StateSolarConfig }) {
-  if (!config.utilityLinks?.length) return null;
-  return <section><h2>Use the utility-specific guides</h2><ul className='list-disc space-y-2 pl-6'>{config.utilityLinks.map((item) => <li key={item.href}><Link href={item.href} className={linkClass}>{item.label}</Link></li>)}</ul></section>;
+  if (!config.relatedDecisionLinks?.length) return null;
+  return <section><h2>Related decision guides</h2><ul className='list-disc space-y-2 pl-6'>{config.relatedDecisionLinks.map((item) => <li key={item.href}><Link href={item.href} className={linkClass}>{item.label}</Link></li>)}</ul></section>;
 }
 
 function Benchmark({ state }: { state: string }) {
