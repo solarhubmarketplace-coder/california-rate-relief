@@ -373,6 +373,18 @@ class QueueService {
         continue;
       }
 
+      // Holdout assignments are measured control subjects. If a malformed
+      // workflow ever creates a send task for one, close it before the provider
+      // call instead of silently contaminating the experiment.
+      if (task.metadata?.is_holdout === true) {
+        await this.updateTask(task.id, {
+          status: "completed",
+          completed_at: new Date().toISOString(),
+          error_message: "Measured holdout: no promotional email sent",
+        });
+        continue;
+      }
+
       await this.updateTask(task.id, {
         status: "processing",
         executed_at: new Date().toISOString(),
@@ -381,6 +393,12 @@ class QueueService {
       try {
         const trackingToken = task.metadata?.trackingToken;
         const templateKey = task.metadata?.template_key;
+        const funnel = {
+          campaignKey: task.metadata?.campaign_key || undefined,
+          variantKey: task.metadata?.variant_key || undefined,
+          isHoldout: task.metadata?.is_holdout === true,
+          isTest: task.metadata?.is_test === true,
+        };
 
         // ✨ GENERIC TRANSACTIONAL PATH
         // Any task with metadata.template_key looks up the template by key and sends it.
@@ -419,6 +437,7 @@ class QueueService {
           const html = fill(tmpl.content || tmpl.html_content);
 
           await emailService.sendEmail(lead.email, subject, html, {
+            ...funnel,
             outreachQueue: true,
             leadId: lead.id,
             templateId: tmpl.id,
@@ -452,6 +471,7 @@ class QueueService {
             html = html.replace(/{{webhook}}/g, convertUrl);
 
             await emailService.sendEmail(lead.email, subject, html, {
+              ...funnel,
               outreachQueue: true,
               leadId: lead.id,
               sequenceId: sequenceData.tracking.sequence_id,
@@ -495,6 +515,7 @@ class QueueService {
             html = html.replace(/{{webhook}}/g, convertUrl);
 
             await emailService.sendEmail(lead.email, subject, html, {
+              ...funnel,
               outreachQueue: true,
               leadId: lead.id,
               sequenceId: sequenceData.tracking.sequence_id,
@@ -517,7 +538,7 @@ class QueueService {
               trackingToken,
               lead.id,
               lead.phone,
-              { outreachQueue: true, idempotencyKey: `crr-email-task-${task.id}` }
+              { ...funnel, outreachQueue: true, idempotencyKey: `crr-email-task-${task.id}` }
             );
           } else if (task.metadata?.trigger === "automated_reminder") {
             // ✨ NEW: Automated Reminders - using templates from scripts.js
@@ -545,6 +566,7 @@ class QueueService {
                   });
 
             await emailService.sendEmail(lead.email, subject, htmlContent, {
+              ...funnel,
               outreachQueue: true,
               idempotencyKey: `crr-email-task-${task.id}`,
               leadId: lead.id,
@@ -591,6 +613,7 @@ class QueueService {
             }
 
             await emailService.sendEmail(lead.email, subject, html, {
+              ...funnel,
               outreachQueue: true,
               idempotencyKey: `crr-email-task-${task.id}`,
               leadId: lead.id,

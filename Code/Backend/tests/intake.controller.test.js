@@ -1,4 +1,4 @@
-jest.mock('../src/services/intake.service', () => ({ createSubmission: jest.fn() }));
+jest.mock('../src/services/intake.service', () => ({ createSubmission: jest.fn(), recordEmailVisit: jest.fn() }));
 const service = require('../src/services/intake.service');
 const controller = require('../src/controllers/intake.controller');
 
@@ -14,10 +14,30 @@ const residential = {
 };
 
 describe('public intake controller', () => {
+  test('records a bounded privacy-safe email visit idempotently', async () => {
+    service.recordEmailVisit.mockResolvedValue({ inserted: true });
+    const res = response();
+    await controller.recordEmailVisit({ body: {
+      visit_id: residential.submission_id, landing_path: '/email/bill-review',
+      campaign_key: 'owner_funnel_smoke', variant_key: 'cta', test: true,
+      client_time: '2026-09-13T00:00:00Z',
+    } }, res, jest.fn());
+    expect(service.recordEmailVisit).toHaveBeenCalledWith(expect.objectContaining({
+      visit_id: residential.submission_id, campaign_key: 'owner_funnel_smoke', is_test: true,
+    }));
+    expect(res.apiResponse).toHaveBeenCalledWith(201, 'Email visit recorded', { inserted: true });
+  });
+  test('rejects contact-shaped campaign labels on email visits', async () => {
+    const res = response();
+    await controller.recordEmailVisit({ body: {
+      visit_id: residential.submission_id, landing_path: '/email/bill-review', campaign_key: 'person@example.com',
+    } }, res, jest.fn());
+    expect(res.apiResponse).toHaveBeenCalledWith(400, expect.stringMatching(/Valid email visit/));
+  });
   test('retains the offer question and separates current email from original acquisition', () => {
-    const result=controller.validate({...residential,qualification_data:{...residential.qualification_data,inquiry_topic:'quote-review',inquiry_question:'What does the cash price include?'},attribution:{source:'email',acquisition_medium:'email',original_acquisition_source:'google',original_acquisition_medium:'organic'}});
+    const result=controller.validate({...residential,qualification_data:{...residential.qualification_data,inquiry_topic:'quote-review',inquiry_question:'What does the cash price include?'},attribution:{source:'email',acquisition_medium:'email',original_acquisition_source:'google',original_acquisition_medium:'organic',email_visit_id:residential.submission_id}});
     expect(result.value.qualification_data.inquiry_question).toBe('What does the cash price include?');
-    expect(result.value.attribution).toEqual({source:'email',acquisition_medium:'email',original_acquisition_source:'google',original_acquisition_medium:'organic'});
+    expect(result.value.attribution).toEqual({source:'email',acquisition_medium:'email',original_acquisition_source:'google',original_acquisition_medium:'organic',email_visit_id:residential.submission_id});
   });
   test('drops private paths, strips referrer secrets, and rejects UUID suffixes', () => {
     const result = controller.validate({...residential,attribution:{landing_page:'/dashboard/customer',organic_landing_page:'/blog/pge?email=secret@example.invalid',submitted_from:'/api/private',referrer:'https://www.google.com/search?q=private',utm_source:{email:'private'}}});

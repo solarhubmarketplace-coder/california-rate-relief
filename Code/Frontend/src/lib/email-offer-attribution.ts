@@ -1,6 +1,6 @@
 import type { IntakePayload } from './intake';
 
-export function emailOfferAttribution(base: IntakePayload['attribution'], search: string): IntakePayload['attribution'] {
+export function emailOfferAttribution(base: IntakePayload['attribution'], search: string, emailVisitId?: string | null): IntakePayload['attribution'] {
   const query = new URLSearchParams(search);
   if (query.get('utm_medium')?.toLowerCase() !== 'email') return base;
   const tag = (key: string) => {
@@ -14,6 +14,7 @@ export function emailOfferAttribution(base: IntakePayload['attribution'], search
     source: 'email', acquisition_source: tag('utm_source') || 'crr', acquisition_medium: 'email',
     utm_source: tag('utm_source') || 'crr', utm_medium: 'email',
     utm_campaign: tag('utm_campaign'), utm_content: tag('utm_content'),
+    email_visit_id: emailVisitId && /^[0-9a-f-]{36}$/i.test(emailVisitId) ? emailVisitId : undefined,
     organic_landing_page: undefined, gclid: undefined, gbraid: undefined,
     wbraid: undefined, msclkid: undefined, fbclid: undefined, utm_term: undefined,
   };

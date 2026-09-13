@@ -51,6 +51,12 @@ async function updateReferral(req, res, next) {
 
 async function listReferrals(req, res, next) { try { return res.apiResponse(200, 'Referrals retrieved', await staffService.listReferrals(req.query)); } catch (error) { return next(error); } }
 async function getScorecard(req, res, next) { try { return res.apiResponse(200, 'Scorecard retrieved', await staffService.scorecard(req.query.from, req.query.to)); } catch (error) { return next(error); } }
+async function getEmailFunnelScorecard(req, res, next) {
+  const { from, to } = req.query;
+  if (!from || !to || !Number.isFinite(Date.parse(from)) || !Number.isFinite(Date.parse(to)) || Date.parse(to) <= Date.parse(from)) return res.apiResponse(400, 'An explicit valid from/to interval is required');
+  try { return res.apiResponse(200, 'Email funnel scorecard retrieved', await staffService.emailFunnelScorecard(from, to, req.query.include_tests === 'true')); }
+  catch (error) { return next(error); }
+}
 async function listOwnerNotifications(req, res, next) { try { return res.apiResponse(200, 'Owner notifications retrieved', await staffService.ownerNotifications(req.query.status)); } catch (error) { return next(error); } }
 async function listSubmissions(req, res, next) { try { return res.apiResponse(200, 'Submissions retrieved', await staffService.listSubmissions(req.query)); } catch (error) { return next(error); } }
 async function classifySubmission(req, res, next) {
@@ -86,4 +92,4 @@ async function updateEmailOfferTask(req, res, next) {
   catch (error) { return next(error); }
 }
 
-module.exports = { growthScorecard, recordReceipt, recordReferral, updateReferral, listReferrals, getScorecard, listSubmissions, classifySubmission, listOwnerNotifications, reconcileOwnerNotification, listEmailOfferTasks, updateEmailOfferTask, pickOutcome, validateOutcome };
+module.exports = { growthScorecard, recordReceipt, recordReferral, updateReferral, listReferrals, getScorecard, getEmailFunnelScorecard, listSubmissions, classifySubmission, listOwnerNotifications, reconcileOwnerNotification, listEmailOfferTasks, updateEmailOfferTask, pickOutcome, validateOutcome };

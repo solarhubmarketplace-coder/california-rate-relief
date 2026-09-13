@@ -36,6 +36,31 @@ function cleanObject(input, allowed, max = 255) {
   return output;
 }
 
+function campaignTag(value) {
+  const result = text(value, 80);
+  return result && /^[a-z0-9_-]{1,80}$/i.test(result) ? result : null;
+}
+
+async function recordEmailVisit(req, res, next) {
+  const visitId = text(req.body?.visit_id, 36);
+  const landingPath = text(req.body?.landing_path, 80);
+  const campaignKey = campaignTag(req.body?.campaign_key);
+  const variantKey = req.body?.variant_key == null ? null : campaignTag(req.body.variant_key);
+  const clientTime = req.body?.client_time && Number.isFinite(Date.parse(req.body.client_time))
+    ? new Date(req.body.client_time).toISOString() : null;
+  if (!UUID.test(visitId || '') || !['/email/bill-review', '/email/quote-review'].includes(landingPath)
+      || !campaignKey || (req.body?.variant_key != null && !variantKey)) {
+    return res.apiResponse(400, 'Valid email visit, landing page and campaign are required');
+  }
+  try {
+    const result = await intakeService.recordEmailVisit({
+      visit_id: visitId, landing_path: landingPath, campaign_key: campaignKey,
+      variant_key: variantKey, is_test: req.body?.test === true, client_time: clientTime,
+    });
+    return res.apiResponse(result.inserted ? 201 : 200, result.inserted ? 'Email visit recorded' : 'Email visit already recorded', result);
+  } catch (error) { return next(error); }
+}
+
 function normalizeUtility(value, allowOtherLabel = false) {
   const raw = text(value, 120);
   if (!raw) return null;
@@ -140,7 +165,7 @@ function validate(body) {
   const attribution = cleanObject(body.attribution, [
     'source', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
     'landing_page', 'landing_city_slug', 'landing_page_type', 'submitted_from', 'referrer', 'ga_client_id', 'captured_at',
-    'acquisition_source', 'acquisition_medium', 'organic_landing_page', 'original_acquisition_source', 'original_acquisition_medium'
+    'acquisition_source', 'acquisition_medium', 'organic_landing_page', 'original_acquisition_source', 'original_acquisition_medium', 'email_visit_id'
   ], 500);
   const journey = cleanJourney(body.attribution?.journey);
   if (journey) attribution.journey = journey;
@@ -230,4 +255,4 @@ async function createLegacyIntake(req, res, next) {
   } catch (error) { return next(error); }
 }
 
-module.exports = { createIntake, createLegacyIntake, legacySubmissionId, legacyBill, validate, normalizePhone, normalizeUtility, normalizeCredit };
+module.exports = { createIntake, createLegacyIntake, recordEmailVisit, legacySubmissionId, legacyBill, validate, normalizePhone, normalizeUtility, normalizeCredit, campaignTag };

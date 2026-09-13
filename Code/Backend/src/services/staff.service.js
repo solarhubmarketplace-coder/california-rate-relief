@@ -93,6 +93,14 @@ class StaffService {
     return { id, resolution };
   }
 
+  async emailFunnelScorecard(from, to, includeTests = false) {
+    const { data, error } = await supabaseAdmin.rpc('get_crr_email_funnel_scorecard', {
+      p_from: from, p_to: to, p_include_tests: includeTests,
+    });
+    if (error) throw databaseError(error);
+    return data;
+  }
+
   async listEmailOfferTasks(status) {
     let query = supabaseAdmin.from('email_offer_staff_tasks')
       .select('id,submission_id,lead_id,offer,status,is_test,due_at,completed_at,created_at,updated_at,leads(name,phone,email)')

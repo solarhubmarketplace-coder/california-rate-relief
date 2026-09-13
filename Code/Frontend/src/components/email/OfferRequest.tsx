@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { captureFirstTouch } from '@/lib/attribution';
 import { getOrCreateSubmissionAttempt, intakeAttribution, submitIntake, type IntakePayload } from '@/lib/intake';
 import { emailOfferAttribution } from '@/lib/email-offer-attribution';
+import { ensureEmailOfferVisit } from '@/lib/email-funnel';
 import { serviceMarkets } from '@/lib/service-market';
 import { trackEvent } from '@/components/GoogleAnalyticsClient';
 
@@ -13,6 +14,7 @@ type Attempt = { id: string; payload: IntakePayload };
 export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' }) {
   const storageKey = `crr_email_offer_${offer}_v1`;
   const attempt = useRef<Attempt | null>(null);
+  const visitId = useRef<string | null>(null);
   const locked = useRef(false);
   const [pending, setPending] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -20,6 +22,7 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
   const [saved, setSaved] = useState('');
   useEffect(() => {
     captureFirstTouch();
+    visitId.current = ensureEmailOfferVisit(offer, window.location.search);
     try {
       const stored = JSON.parse(sessionStorage.getItem(storageKey) || 'null');
       if (stored?.id === stored?.payload?.submission_id && stored?.payload?.contact && stored?.payload?.qualification_data?.inquiry_topic === offer) {
@@ -44,7 +47,10 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
           utility_provider: value('utility'), bill_amount: value('bill') ? Number(value('bill')) : null,
           inquiry_topic: offer, inquiry_question: value('question'),
         },
-        attribution: emailOfferAttribution(intakeAttribution(captureFirstTouch()), window.location.search),
+        attribution: emailOfferAttribution(
+          intakeAttribution(captureFirstTouch()), window.location.search,
+          visitId.current || ensureEmailOfferVisit(offer, window.location.search),
+        ),
         consent: { status: 'opted_in', timestamp: new Date().toISOString() },
       }));
       try { sessionStorage.setItem(storageKey, JSON.stringify(attempt.current)); } catch { /* Preserve the in-memory attempt. */ }

@@ -1,4 +1,4 @@
-jest.mock('../src/services/staff.service', () => ({ recordReferral: jest.fn(), updateReferral: jest.fn(), listSubmissions: jest.fn(), classifySubmission: jest.fn(), listEmailOfferTasks: jest.fn(), updateEmailOfferTask: jest.fn() }));
+jest.mock('../src/services/staff.service', () => ({ recordReferral: jest.fn(), updateReferral: jest.fn(), listSubmissions: jest.fn(), classifySubmission: jest.fn(), listEmailOfferTasks: jest.fn(), updateEmailOfferTask: jest.fn(), emailFunnelScorecard: jest.fn() }));
 const service = require('../src/services/staff.service');
 const controller = require('../src/controllers/staff.controller');
 
@@ -44,5 +44,14 @@ describe('manual partner outcomes', () => {
     const updateRes = { apiResponse: jest.fn() };
     await controller.updateEmailOfferTask({ params: { id }, body: { status: 'completed' } }, updateRes, jest.fn());
     expect(service.updateEmailOfferTask).toHaveBeenCalledWith(id, 'completed');
+  });
+  test('reads the protected email funnel for an explicit interval', async () => {
+    service.emailFunnelScorecard.mockResolvedValue([{ campaign_key: 'test', forms: 1 }]);
+    const res = { apiResponse: jest.fn() };
+    await controller.getEmailFunnelScorecard({ query: {
+      from: '2026-09-12T00:00:00Z', to: '2026-09-14T00:00:00Z', include_tests: 'true',
+    } }, res, jest.fn());
+    expect(service.emailFunnelScorecard).toHaveBeenCalledWith('2026-09-12T00:00:00Z', '2026-09-14T00:00:00Z', true);
+    expect(res.apiResponse).toHaveBeenCalledWith(200, 'Email funnel scorecard retrieved', expect.any(Array));
   });
 });

@@ -172,6 +172,16 @@ describe("QueueService - sequence email tasks", () => {
     expect(queueService.handleTaskFailure).toHaveBeenCalledTimes(1);
   });
 
+  test('never sends a measured holdout task', async () => {
+    const task = makeTask({ metadata: { sequence_id: 'seq-1', sequence_step: 2, is_holdout: true } });
+    queueService.getPendingTasks = jest.fn().mockResolvedValue([task]);
+    await queueService.processEmailQueue();
+    expect(mockSendEmail).not.toHaveBeenCalled();
+    expect(queueService.updateTask).toHaveBeenCalledWith(task.id, expect.objectContaining({
+      status: 'completed', error_message: expect.stringContaining('holdout'),
+    }));
+  });
+
   test.each([
     ["different sequence", "seq-other", 2],
     ["already advanced step", "seq-1", 3],

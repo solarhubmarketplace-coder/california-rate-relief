@@ -1,6 +1,19 @@
 const { supabaseAdmin } = require('../lib/supabase');
 
 class IntakeService {
+  async recordEmailVisit(input) {
+    const { data, error } = await supabaseAdmin.rpc('record_crr_email_visit', {
+      p_visit_id: input.visit_id,
+      p_landing_path: input.landing_path,
+      p_campaign_key: input.campaign_key,
+      p_variant_key: input.variant_key,
+      p_is_test: input.is_test,
+      p_client_time: input.client_time,
+    });
+    if (error) throw { statusCode: 503, message: 'Email visit could not be recorded', code: error.code };
+    return { inserted: data === true };
+  }
+
   async createSubmission(input) {
     const { data, error } = await supabaseAdmin.rpc('ingest_crr_submission', {
       p_submission_id: input.submission_id,

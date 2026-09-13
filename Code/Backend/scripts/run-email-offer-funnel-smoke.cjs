@@ -15,6 +15,7 @@ async function main() {
   const email = `solarhubmarketplace+crr-offer-${stamp}@gmail.com`;
   const subject = `[TEST] CRR offer funnel ${stamp}`;
   const submissionId = randomUUID();
+  const visitId = randomUUID();
   const offerUrl = 'https://ratereliefca.com/email/bill-review?utm_source=crr&utm_medium=email&utm_campaign=owner_funnel_smoke&utm_content=cta';
 
   if (!/^solarhubmarketplace\+crr-offer-\d+@gmail\.com$/.test(email)) {
@@ -38,7 +39,20 @@ async function main() {
   const seed = await emailService.sendEmail(email, subject, prepared.html, {
     leadId: seedLead.id, text: prepared.text, replyTo: prepared.replyTo,
     headers: prepared.headers, idempotencyKey: `crr-offer-seed-${stamp}`,
+    campaignKey: 'owner_funnel_smoke', variantKey: 'cta', isTest: true,
   });
+
+  const visitResponse = await fetch('https://api.ratereliefca.com/api/intake/email-visit', {
+    method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      visit_id: visitId, landing_path: '/email/bill-review', campaign_key: 'owner_funnel_smoke',
+      variant_key: 'cta', client_time: new Date().toISOString(), test: true,
+    }),
+  });
+  const visitResult = await visitResponse.json();
+  if (visitResponse.status !== 201 || visitResult?.data?.inserted !== true) {
+    throw new Error(`Marked email visit failed: HTTP ${visitResponse.status} ${JSON.stringify(visitResult)}`);
+  }
 
   const response = await fetch('https://api.ratereliefca.com/api/intake', {
     method: 'POST', headers: { 'content-type': 'application/json' },
@@ -54,6 +68,7 @@ async function main() {
         source: 'email', acquisition_source: 'crr', acquisition_medium: 'email',
         original_acquisition_source: 'synthetic_email_offer', original_acquisition_medium: 'test',
         utm_source: 'crr', utm_medium: 'email', utm_campaign: 'owner_funnel_smoke', utm_content: 'cta',
+        email_visit_id: visitId,
         landing_page: '/email/bill-review', submitted_from: '/email/bill-review', captured_at: new Date().toISOString(),
       },
       consent: { status: 'opted_in', timestamp: new Date().toISOString() }, test: true,
@@ -78,9 +93,9 @@ async function main() {
     ok: true, subject, recipient: email, seed_provider_id: seed.id,
     submission_id: submissionId, lead_id: result.data.lead_id,
     intake_http_status: response.status, intake_duplicate: result.data.duplicate,
+    visit_id: visitId, visit_http_status: visitResponse.status,
     offer_path: '/email/bill-review', outbox,
   }));
 }
 
 main().catch(error => { process.stderr.write(`${error.message}\n`); process.exit(1); });
-

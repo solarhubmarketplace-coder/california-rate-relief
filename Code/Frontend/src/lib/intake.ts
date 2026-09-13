@@ -40,6 +40,7 @@ export interface IntakePayload {
     acquisition_medium?: string;
     original_acquisition_source?: string;
     original_acquisition_medium?: string;
+    email_visit_id?: string;
     organic_landing_page?: string;
     gclid?: string;
     gbraid?: string;
