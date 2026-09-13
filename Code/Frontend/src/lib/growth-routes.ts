@@ -10,6 +10,7 @@ export const GROWTH_ROUTES = [
   "/virginia/solar-companies",
   "/virginia/richmond-solar-companies",
   "/blog/best-time-to-install-solar-panels-california",
+  "/blog/what-happens-if-stop-paying-solar-lease-california",
   "/delaware/solar-cost",
   "/delaware/solar-companies",
   "/washington-dc/solar",
