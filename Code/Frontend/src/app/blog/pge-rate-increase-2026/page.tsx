@@ -18,9 +18,9 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "PG&E rate changes in 2026: how to check your California bill",
+  title: "PG&E Rate Changes 2026: How to Check Your California Bill",
   description:
-    "Use PG&E's current tariff, bill and rate-plan tools to understand a California electric bill in 2026. This guide does not substitute a generic rate for an account-specific bill.",
+    "PG&E split some costs into a Base Services Charge in March 2026, around $24 a month for most customers. Check your own rate plan and usage, not an average.",
   alternates: { canonical: "/blog/pge-rate-increase-2026" },
   openGraph: {
     title: "PG&E rate changes in 2026: how to check your California bill",

@@ -18,9 +18,9 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Selling a California home with a solar lease or PPA: documents to check",
+  title: "Selling a CA Home With a Solar Lease or PPA: What to Check",
   description:
-    "Selling a California home with a solar lease or PPA starts with the written agreement. Review transfer, payment, buyout and disclosure terms before listing.",
+    "Selling a California home with a solar lease or PPA? Check the transfer, payment, buyout, and disclosure terms in the signed agreement first.",
   alternates: {
     canonical: "/blog/what-happens-to-solar-lease-when-i-sell-california",
   },

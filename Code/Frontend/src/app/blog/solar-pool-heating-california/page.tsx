@@ -10,9 +10,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
-  title: "Solar Pool Heating in California: Cost & ROI",
+  title: "Solar Pool Heating Cost in California: Is It Worth It?",
   description:
-    "What solar pool heating costs in California, when it beats a heat-pump heater, permit requirements, and how many extra swim weeks you realistically get.",
+    "Solar pool heating in California runs $3,000-$7,500 installed, adds a few extra weeks of swim season, and pays back against gas heat in 2-3 years.",
   alternates: { canonical: '/blog/solar-pool-heating-california' },
   openGraph: {
     title: 'Solar Pool Heating California: 2026 Guide',

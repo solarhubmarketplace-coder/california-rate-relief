@@ -79,6 +79,9 @@ const definitions = {
     title: 'SDG&E time-of-use rates: compare your 2026 bill',
     intro:
       'Start with the rate-plan name and the generation provider on your bill. SDG&E’s delivery price alone is not the complete price for a community choice customer.',
+    metaTitle: 'SDG&E Time-of-Use Rates: Peak Hours and Plans',
+    metaDescription:
+      "SDG&E's peak window runs 4-9 p.m. for TOU-DR1 and TOU-DR2, including weekends. Compare your plan before shifting usage.",
   },
 };
 export type GuideKey = keyof typeof definitions;
@@ -88,13 +91,20 @@ export function guideMetadata(key: GuideKey): Metadata {
     key === 'panels' || key === 'financing'
       ? '2026-09-11T00:00:00Z'
       : '2026-09-10T00:00:00Z';
+  // `intro` is visible body copy (DecisionPage renders it as the opening
+  // paragraph), so it cannot double as the search snippet without changing what
+  // the page says. metaTitle/metaDescription override the snippet only; a guide
+  // that sets neither keeps the previous behaviour exactly.
+  const metaTitle = 'metaTitle' in d && d.metaTitle ? d.metaTitle : d.title;
+  const metaDescription =
+    'metaDescription' in d && d.metaDescription ? d.metaDescription : d.intro;
   return {
-    title: d.title,
-    description: d.intro,
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical: d.path },
     openGraph: {
-      title: d.title,
-      description: d.intro,
+      title: metaTitle,
+      description: metaDescription,
       type: 'article',
       url: `https://ratereliefca.com${d.path}`,
       modifiedTime,

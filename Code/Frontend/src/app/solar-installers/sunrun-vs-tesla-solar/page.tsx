@@ -8,8 +8,8 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunrun vs Tesla Solar: Which Is Better in California?",
-  description: "Head-to-head comparison of Sunrun vs Tesla Solar for California homes: Powerwall integration, pricing, installation timelines, and customer reviews.",
+  title: "Sunrun vs Tesla Solar: Price, Install Time Compared",
+  description: "Sunrun vs Tesla Solar: cash pricing, finance options, Powerwall integration, install timelines and service, compared for California.",
   alternates: { canonical: '/solar-installers/sunrun-vs-tesla-solar' },
   openGraph: { title: 'Sunrun vs Tesla Solar (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunrun-vs-tesla-solar' },
 };

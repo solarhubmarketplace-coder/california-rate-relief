@@ -10,8 +10,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: "The $24 Fixed Charge on Your California Electric Bill",
-  description: "Learn how the CPUC $24 monthly fixed charge affects California electric bills for PG&E, SCE, and SDG&E customers, and what it means for solar.",
+  title: "California's $24 Fixed Charge on PG&E, SCE, SDG&E Bills",
+  description: "PG&E, SCE, and SDG&E added a fixed charge of about $24 a month to residential bills. CARE pays about $6, FERA about $12, per the rate table.",
   alternates: {
     canonical: '/blog/california-24-dollar-fixed-charge-explained',
   },

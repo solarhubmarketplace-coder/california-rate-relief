@@ -18,9 +18,9 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Prepaid solar PPA in California: contract checklist for 2026",
+  title: "Prepaid Solar PPA California: What to Check Before Signing",
   description:
-    "A prepaid solar PPA can use a large upfront payment, but the contract decides ownership, future payments, transfer and end-of-term rights. Compare the documents before signing.",
+    "A prepaid label does not decide ownership, future payments, buyout, transfer, or utility bills. Compare the signed contract, not the name.",
   alternates: { canonical: "/blog/prepaid-ppa-california-2026" },
   openGraph: {
     title: "Prepaid solar PPA in California: contract checklist for 2026",

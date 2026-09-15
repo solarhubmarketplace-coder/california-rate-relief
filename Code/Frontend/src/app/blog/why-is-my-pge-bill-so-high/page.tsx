@@ -10,8 +10,8 @@ import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { Calendar, Clock } from 'lucide-react';
 
-const title = 'Why Is My PG&E Bill So High? 7 Real Reasons';
-const description = 'A higher PG&E bill usually comes from more usage, TOU timing, seasonal baseline changes, a longer bill or new charges. Use this 2026 checklist to find it.';
+const title = "Why Is My PG&E Bill So High? 7 Real Reasons";
+const description = "PG&E's new Base Services Charge runs about $24 a month for most customers, $6 for CARE and $12 for FERA. See the other reasons your bill went up.";
 const sourceLink = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
 
 export const metadata: Metadata = {

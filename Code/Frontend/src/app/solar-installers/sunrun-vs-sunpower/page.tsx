@@ -8,8 +8,8 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunrun vs SunPower in California: 2026 Solar Comparison",
-  description: "Sunrun vs SunPower in California: compare equipment, warranty coverage, lease terms, and pricing following SunPower's 2024 Chapter 11 bankruptcy.",
+  title: "Sunrun vs SunPower: Which Solar Company Is Better",
+  description: "SunPower filed Chapter 11 in 2024; Complete Solaria now runs the brand. Compare warranty terms, panel efficiency and financing before you choose.",
   alternates: { canonical: '/solar-installers/sunrun-vs-sunpower' },
   openGraph: { title: 'Sunrun vs SunPower (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunrun-vs-sunpower' },
 };

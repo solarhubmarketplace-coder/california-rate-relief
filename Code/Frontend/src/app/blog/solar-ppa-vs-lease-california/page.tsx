@@ -7,8 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Solar PPA vs Lease: Which Is Better in California?",
-  description: "Compare solar PPAs vs solar leases for California homeowners: payment structures, annual escalators, maintenance rules, and home-sale transfer risks.",
+  title: "Solar PPA vs Lease in California: Compare the Costs",
+  description: "PPAs charge per kWh produced; leases charge a fixed monthly fee. Both run 20-25 years and transfer to the buyer if you sell. Compare the terms.",
   alternates: {
     canonical: '/blog/solar-ppa-vs-lease-california',
   },

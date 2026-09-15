@@ -7,9 +7,9 @@ import { Footer } from '@/components/landing/Footer';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
-const title = 'California Commercial Solar Cost: 2025 Price Benchmarks';
+const title = "Commercial Solar Cost Per Watt in California (2025 Data)";
 const description =
-  'Historical 2025 California price benchmarks for host-owned, stand-alone commercial solar systems, plus the questions needed to compare a project quote.';
+  "2025 California data: commercial solar median price is $3.20/watt for small systems, $2.60/watt for large systems, per LBNL.";
 const lbnlReport =
   'https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf';
 

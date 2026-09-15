@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Solar Optimum Review 2026: California Installer Rating",
-  description: "Solar Optimum review for California homeowners: Panasonic Authorized Premium Installer status, 25-year warranty, pricing, and verified reviews.",
+  title: "Solar Optimum Review: EnergySage 4.8/5, 21 BBB Complaints",
+  description: "Solar Optimum: 4.8/5 across 851 EnergySage reviews, 21 BBB complaints in 3 years, and a 6-level 25-year warranty. See pricing and equipment.",
   alternates: { canonical: '/solar-installers/solar-optimum-review' },
 };
 

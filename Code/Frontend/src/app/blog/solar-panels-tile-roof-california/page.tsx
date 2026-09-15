@@ -13,9 +13,9 @@ const CSLB_LICENSE_LOOKUP_URL =
   'https://www.cslb.ca.gov/onlineservices/checklicenseii/checklicense.aspx';
 
 export const metadata: Metadata = {
-  title: 'Solar Roof Tiles vs. Panels on a Tile Roof in California',
+  title: "Solar Panels on a Tile Roof in California: What to Ask",
   description:
-    'The difference between solar panels mounted on an existing tile roof and roof-integrated solar tiles in California, plus a source-linked scope and contract checklist.',
+    "Panels mounted on a tile roof and solar roof tiles are different scopes. Get the roof, permit and license details in writing before you compare quotes.",
   alternates: { canonical: '/blog/solar-panels-tile-roof-california' },
   openGraph: {
     title: 'Solar Roof Tiles vs. Panels on a Tile Roof in California',

@@ -9,8 +9,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 
-const title = 'PG&E vs SCE vs SDG&E: 2026 Rates Compared';
-const description = 'PG&E averages 33.7¢/kWh, SCE 34.4¢ and SDG&E 45.5¢ in June 2026. Compare current rates, sample bills, TOU plans and bill-relief options.';
+const title = "PG&E vs SCE vs SDG&E Rates: Which Costs More in 2026";
+const description = "SDG&E averaged 45.5c/kWh, SCE 34.4c and PG&E 33.7c per kWh in June 2026, per the CPUC Public Advocates Office. See rate plans and sample bills.";
 
 export const metadata: Metadata = {
   title,

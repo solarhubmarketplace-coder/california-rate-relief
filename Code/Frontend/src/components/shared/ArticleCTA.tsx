@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { intakeHrefForPath, isCommercialIntentPath } from '@/lib/intake-routing';
+import { trackEvent } from '@/components/GoogleAnalyticsClient';
 
 // =============================================================================
 // ArticleCTA — in-body conversion box for blog posts.
@@ -32,6 +33,18 @@ export function ArticleCTA({
       <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>{body}</p>
       <Link
         href={intakeHrefForPath(pathname)}
+        onClick={() =>
+          // On link-only pages this box is the whole conversion step, and it
+          // emitted nothing. Without this there is no signal between "read the
+          // article" and "reached a form", so an unclicked CTA and an unseen
+          // one look identical.
+          trackEvent('cta_click', {
+            cta: 'article_cta',
+            destination: intakeHrefForPath(pathname),
+            segment: isCommercial ? 'commercial' : 'residential',
+            page_path: pathname || 'unknown',
+          })
+        }
         className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
       >
         {isCommercial ? 'Request Commercial Review' : 'Request a Solar Review'}

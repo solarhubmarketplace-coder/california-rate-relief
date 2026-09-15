@@ -6,9 +6,9 @@ import { Footer } from "@/components/landing/Footer";
 import { ArticleJsonLd } from "@/components/shared/ArticleJsonLd";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 
-const title = "Why Is My LADWP Bill So High? Check Usage, Rates and Fees";
+const title = "Why Is My LADWP Bill So High? Rates, Fees, and Billing Days";
 const description =
-  "Separate electricity from water and sanitation, compare billing days, and check LADWP tiered or time-of-use rates. Updated September 2026.";
+  "Separate electricity from water and sanitation, compare billing days, and check your LADWP rate schedule (R-1A or R-1B) before assuming a rate hike.";
 const path = "/blog/why-is-my-ladwp-bill-so-high";
 const linkStyle = "text-primary underline underline-offset-2";
 const sources = {

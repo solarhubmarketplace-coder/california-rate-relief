@@ -41,6 +41,9 @@ const definitions = {
     title: "Free solar for seniors in California: check the actual program",
     intro:
       "Start with the program name. Being a senior does not, by itself, establish solar-program eligibility. Income, the property, the utility and available funding need to be checked.",
+    metaTitle: "Free Solar for Seniors in California: Check DAC-SASH First",
+    metaDescription:
+      "Age alone does not qualify you for free solar in California. Check DAC-SASH income and property rules before signing anything. SASH is closed.",
   },
   free: {
     path: "/blog/free-solar-panels-california",
@@ -57,14 +60,18 @@ const definitions = {
 };
 type AssistanceKey = keyof typeof definitions;
 export function assistanceMetadata(kind: AssistanceKey): Metadata {
-  const { title, intro, path } = definitions[kind];
+  const def = definitions[kind];
+  const { title, intro, path } = def;
+  const metaTitle = "metaTitle" in def && def.metaTitle ? def.metaTitle : title;
+  const metaDescription =
+    "metaDescription" in def && def.metaDescription ? def.metaDescription : intro;
   return {
-    title,
-    description: intro,
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical: path },
     openGraph: {
-      title,
-      description: intro,
+      title: metaTitle,
+      description: metaDescription,
       type: "article",
       url: `https://ratereliefca.com${path}`,
       modifiedTime: "2026-09-10T00:00:00Z",

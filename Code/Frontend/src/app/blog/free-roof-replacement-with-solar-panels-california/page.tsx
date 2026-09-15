@@ -18,9 +18,9 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Free roof replacement with solar in California: what to verify",
+  title: "Free Roof Replacement with Solar in California: Verify First",
   description:
-    "A solar proposal can include roof work, but a headline does not make a roof free. Compare the separate scope, contract, financing and license information before signing.",
+    "A solar proposal can include roof work, but a headline does not make it free. Separate the roof, solar and financing terms before you sign.",
   alternates: { canonical: "/blog/free-roof-replacement-with-solar-panels-california" },
   openGraph: {
     title: "Free roof replacement with solar in California: what to verify",

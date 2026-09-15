@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Baker Electric Solar Review 2026: San Diego Reputation",
-  description: "Baker Electric Solar review: family-owned Escondido contractor since 1938 serving San Diego County with premium panels and strong verified reviews.",
+  title: "Baker Electric Solar Review 2026: San Diego, Since 1938",
+  description: "Baker Electric Solar: family-owned since 1938, Yelp 4.1/5 across 774 reviews, 25-year workmanship warranty, serving San Diego County.",
   alternates: { canonical: '/solar-installers/baker-electric-solar-review' },
 };
 

@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Momentum Solar Review 2026: In-House Crews & Pricing",
-  description: "Honest 2026 review of Momentum Solar: in-house installation crews, Tier-1 panels, pricing, and what customer complaints say about their sales process.",
+  title: "Momentum Solar Review 2026: Complaints & $30M Settlement",
+  description: "Momentum Solar: in-house crews, Enphase-only inverters, Trustpilot 1.6/5, 642 BBB complaints in 3 years, and a 2025 $30M TCPA settlement.",
   alternates: {
     canonical: '/solar-installers/momentum-solar-review',
   },

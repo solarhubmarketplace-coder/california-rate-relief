@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunrun Review 2026: California Solar PPA & Lease Cost",
-  description: "Sunrun is California's largest residential solar installer. Read our honest review of contract terms, PPA and lease pricing, and customer service ratings.",
+  title: "Sunrun Review 2026: Rating, Pricing, Complaints",
+  description: "Sunrun scores 3.1/5 in our review: about $3.33/watt cash pricing, PPA and lease terms, and roughly 4,045 BBB complaints in three years.",
   alternates: {
     canonical: '/solar-installers/sunrun-review',
   },
