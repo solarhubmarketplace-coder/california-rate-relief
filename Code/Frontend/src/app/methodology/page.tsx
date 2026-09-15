@@ -31,6 +31,14 @@ interface DomainConfig {
   brand: string;
   canonical: string;
   category: string;
+  /**
+   * Optional SERP overrides. The generic formula below builds the title from
+   * `brand` + `category`, which runs past 60 characters whenever `category` is
+   * a long phrase. A domain that sets these gets them verbatim; one that does
+   * not keeps the formula exactly as before.
+   */
+  metaTitle?: string;
+  metaDescription?: string;
   intro: string;
   whatWeEvaluate: { title: string; body: string }[];
   dataSources: string[];
@@ -44,6 +52,9 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     brand: 'California Rate Relief',
     canonical: 'https://ratereliefca.com/methodology',
     category: 'California solar installers and energy programs',
+    metaTitle: 'How We Evaluate California Solar Installers',
+    metaDescription:
+      'How California Rate Relief evaluates solar installers and energy programs: data sources, disqualifying criteria, freshness cadence and conflict disclosures.',
     intro:
       'California Rate Relief evaluates solar installers, financing options, and rate programs available to California homeowners. We are a research-led publication; we read CSLB licensing records, BBB complaint files, court records, financing contracts, and homeowner reports, then write what we find. This page documents how we do that.',
     whatWeEvaluate: [
@@ -230,8 +241,11 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: `Our Methodology — How ${cfg.brand} Evaluates ${cfg.category}`,
-    description: `How ${cfg.brand} researches and evaluates ${cfg.category}. Data sources, disqualifying criteria, freshness cadence, conflict-of-interest disclosures.`,
+    title:
+      cfg.metaTitle ?? `Our Methodology — How ${cfg.brand} Evaluates ${cfg.category}`,
+    description:
+      cfg.metaDescription ??
+      `How ${cfg.brand} researches and evaluates ${cfg.category}. Data sources, disqualifying criteria, freshness cadence, conflict-of-interest disclosures.`,
     alternates: { canonical: cfg.canonical },
   };
 }
