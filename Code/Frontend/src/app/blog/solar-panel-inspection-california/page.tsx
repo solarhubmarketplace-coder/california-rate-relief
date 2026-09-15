@@ -7,10 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title:
-    "Solar Panel Inspection: What CA Homeowners Need to Know",
-  description:
-    "Not required by law, but recommended. What's included in a solar inspection, costs, signs you need one, and CA fire-zone rules.",
+  title: "Solar Panel Inspection: What CA Homeowners Need to Know",
+  description: "What California homeowners need to know about solar panel inspections: electrical checks, inverter diagnostics, roof condition, and warranty defense.",
   alternates: {
     canonical: '/blog/solar-panel-inspection-california',
   },

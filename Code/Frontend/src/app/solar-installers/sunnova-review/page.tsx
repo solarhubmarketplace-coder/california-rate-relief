@@ -16,10 +16,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title:
-    "Sunnova Review 2026: What the Chapter 11 Bankruptcy Means",
-  description:
-    "Sunnova filed Chapter 11 in June 2025; assets sold to Solaris Assets / SunStrong Management. What customers need to know in 2026.",
+  title: "Sunnova Review 2026: Chapter 11 Bankruptcy & Customers",
+  description: "What Sunnova's Chapter 11 bankruptcy means for California solar customers: existing lease contracts, warranty honoring, and ongoing service support.",
   alternates: {
     canonical: '/solar-installers/sunnova-review',
   },

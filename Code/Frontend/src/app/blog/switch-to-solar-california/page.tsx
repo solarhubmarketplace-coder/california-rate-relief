@@ -10,8 +10,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Switch to Solar in California: The 2026 Complete Guide',
-  description: "Everything California homeowners need to know about switching to solar in 2026 — the NEM 3.0 rules, financing options, what it costs, how long it takes, and the 5-step process.",
+  title: "Switch to Solar in California: The 2026 Complete Guide",
+  description: "Complete guide to switching to solar in California: understanding NEM 3.0 rules, sizing with batteries, selecting contractors, and saving on bills.",
   alternates: { canonical: '/blog/switch-to-solar-california' },
   openGraph: { title: 'Switch to Solar in California: The 2026 Complete Guide', description: 'A complete step-by-step guide to switching to solar in California in 2026.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

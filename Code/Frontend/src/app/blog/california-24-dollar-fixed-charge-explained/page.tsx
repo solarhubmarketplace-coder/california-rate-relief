@@ -10,10 +10,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title:
-    "The New $24 Fixed Charge on Your California Electric Bill",
-  description:
-    "PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every bill. What it is, why it exists, and how it affects solar savings.",
+  title: "The $24 Fixed Charge on Your California Electric Bill",
+  description: "Learn how the CPUC $24 monthly fixed charge affects California electric bills for PG&E, SCE, and SDG&E customers, and what it means for solar.",
   alternates: {
     canonical: '/blog/california-24-dollar-fixed-charge-explained',
   },

@@ -7,10 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title:
-    'What Size Solar System Do I Need? A California Guide',
-  description:
-    'Calculate the right solar system size for your California home. Learn the formula, sizing formula for NEM 3.0, battery impact, roof requirements, and common mistakes.',
+  title: "What Size Solar System Do I Need? California Guide",
+  description: "Calculate the right solar system size for your California home: simple sizing formulas, sunlight hours by region, and storage considerations.",
   alternates: {
     canonical: '/blog/what-size-solar-system-do-i-need',
   },

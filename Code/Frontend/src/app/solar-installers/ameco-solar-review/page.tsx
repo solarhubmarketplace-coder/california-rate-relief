@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Ameco Solar Review 2026: LA Installer, Roofing Integration",
-  description: "Ameco Solar (Paramount/LA) combines decades of electrical and roofing experience. 25-year warranties, Enphase + Tesla batteries.",
+  title: "Ameco Solar Review 2026: LA Installer, Roofing & Solar",
+  description: "Ameco Solar review: historic Los Angeles electrical contractor since 1974 combining roofing and solar installation with long-term workmanship warranties.",
   alternates: { canonical: '/solar-installers/ameco-solar-review' },
 };
 

@@ -10,9 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunrun Review 2026: California Solar, Vivint Compared",
-  description:
-    "Sunrun is the largest residential solar installer in the U.S. An honest 2026 review, including what happened to Vivint Solar customers.",
+  title: "Sunrun Review 2026: California Solar PPA & Lease Cost",
+  description: "Sunrun is California's largest residential solar installer. Read our honest review of contract terms, PPA and lease pricing, and customer service ratings.",
   alternates: {
     canonical: '/solar-installers/sunrun-review',
   },

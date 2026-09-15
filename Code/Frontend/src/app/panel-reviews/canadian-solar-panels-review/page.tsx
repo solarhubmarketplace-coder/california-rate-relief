@@ -10,7 +10,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
   title: "Canadian Solar Panels Review 2026: HiKu Series for CA",
-  description: "Canadian Solar is a tier-1 manufacturer with strong value positioning. An honest review of the HiKu series for California homeowners.",
+  description: "Canadian Solar HiKu review for California homes: Tier-1 efficiency ratings, temperature performance, 25-year warranties, and value pricing.",
   alternates: { canonical: '/panel-reviews/canadian-solar-panels-review' },
   openGraph: { title: 'Canadian Solar Panels Review 2026: HiKu Series for California', description: 'Canadian Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

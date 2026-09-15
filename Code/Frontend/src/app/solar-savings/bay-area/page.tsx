@@ -14,9 +14,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Bay Area Solar Companies: San Jose, San Francisco, Oakland',
-  description:
-    'Solar solutions for Bay Area homeowners in San Jose, San Francisco, Oakland, Fremont, and beyond. Cut your PG&E bill by 30-50% with zero down solar programs.',
+  title: "Bay Area Solar Savings: San Jose, San Francisco, Oakland",
+  description: "Bay Area solar savings guide: navigate PG&E rates across San Jose, San Francisco, and Oakland, evaluate battery backup, and maximize bill reduction.",
   alternates: {
     canonical: '/solar-savings/bay-area',
   },

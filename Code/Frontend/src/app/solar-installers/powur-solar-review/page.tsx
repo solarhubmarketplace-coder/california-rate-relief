@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Powur Solar Review 2026: MLM Sales and the Complaint Record",
-  description: "Powur uses an MLM-style sales model with a high complaint volume: 150+ BBB complaints in 3 years and frequent multi-month delays.",
+  title: "Powur Solar Review 2026: MLM Model and Complaints",
+  description: "Honest 2026 review of Powur Solar: multi-level marketing sales structure, subcontractor fulfillment, BBB complaints, and customer service realities.",
   alternates: { canonical: '/solar-installers/powur-solar-review' },
 };
 

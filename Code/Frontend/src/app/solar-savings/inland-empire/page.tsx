@@ -14,9 +14,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Inland Empire Solar Companies: Riverside & San Bernardino',
-  description:
-    'Solar for Inland Empire homes in Riverside, Corona, Murrieta, Temecula, and more. Cut your SCE bill by 30-50% with zero down solar programs.',
+  title: "Inland Empire Solar Savings: Riverside & San Bernardino",
+  description: "Inland Empire solar guide: compare savings across Riverside and San Bernardino counties, navigate SCE rate tiers, and evaluate battery storage.",
   alternates: {
     canonical: '/solar-savings/inland-empire',
   },

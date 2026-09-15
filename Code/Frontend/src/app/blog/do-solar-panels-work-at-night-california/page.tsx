@@ -10,8 +10,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Do Solar Panels Work at Night? California Guide',
-  description: "Solar panels don't produce electricity at night — but you can still run your home on solar after sundown using a battery, the grid, or both. Here is how it works in California.",
+  title: "Do Solar Panels Work at Night? California Solar Guide",
+  description: "Do solar panels produce power at night? How net metering, home battery storage, and grid power keep California homes running after sunset.",
   alternates: { canonical: '/blog/do-solar-panels-work-at-night-california' },
   openGraph: { title: 'Do Solar Panels Work at Night? California Guide', description: "How California solar homes still run on solar after dark.", type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

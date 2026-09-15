@@ -7,10 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title:
-    'Solar Panel Maintenance Cost: What to Expect in 2026',
-  description:
-    'Annual maintenance costs average $390-$720. Learn about cleaning, monitoring, common repairs, and why PPA holders pay nothing.',
+  title: "Solar Panel Maintenance Cost: What to Expect in 2026",
+  description: "Typical maintenance costs for California residential solar: annual panel cleaning, inverter replacements, monitoring fees, and common repair budgets.",
   alternates: {
     canonical: '/blog/solar-panel-maintenance-cost',
   },

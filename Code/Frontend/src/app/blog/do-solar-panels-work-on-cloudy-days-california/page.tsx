@@ -10,8 +10,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Do Solar Panels Work on Cloudy Days? California Guide',
-  description: "Yes, solar panels work on cloudy days in California — just at reduced output. Typical cloudy-day production is 10-25% of peak sunny performance. Here is how much and what it means for California homes.",
+  title: "Do Solar Panels Work on Cloudy Days? California Guide",
+  description: "How cloudy weather affects California solar production: expected output drops, diffuse light capture, microinverter benefits, and seasonal savings.",
   alternates: { canonical: '/blog/do-solar-panels-work-on-cloudy-days-california' },
   openGraph: { title: 'Do Solar Panels Work on Cloudy Days? California Guide', description: 'How solar panels perform on cloudy California days.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

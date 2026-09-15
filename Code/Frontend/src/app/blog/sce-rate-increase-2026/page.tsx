@@ -10,10 +10,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title:
-    "SCE Rates Decreased in 2026, But Remain Extremely High",
-  description:
-    "SCE rates dropped 2-3% in January 2026 but remain among the highest in the country at 34.5\u00a2/kWh. Why bills are still high, and what to do.",
+  title: "SCE Rates Decreased in 2026, But Remain High in Edison",
+  description: "Why Southern California Edison bills remain elevated despite minor 2026 rate adjustments: peak 4-9 PM windows, fixed charges, and solar alternatives.",
   alternates: {
     canonical: '/blog/sce-rate-increase-2026',
   },

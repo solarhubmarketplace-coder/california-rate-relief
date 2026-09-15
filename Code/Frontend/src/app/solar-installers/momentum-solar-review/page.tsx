@@ -10,10 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title:
-    "Momentum Solar Review 2026: Crews vs the Complaints",
-  description:
-    "Honest 2026 review of Momentum Solar: in-house installation, Qcells/REC panels \u2014 but Trustpilot 1.6/5 and a $30M TCPA settlement.",
+  title: "Momentum Solar Review 2026: In-House Crews & Pricing",
+  description: "Honest 2026 review of Momentum Solar: in-house installation crews, Tier-1 panels, pricing, and what customer complaints say about their sales process.",
   alternates: {
     canonical: '/solar-installers/momentum-solar-review',
   },

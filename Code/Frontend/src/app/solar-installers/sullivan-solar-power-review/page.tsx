@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sullivan Solar Power Review 2026: Company Is Defunct",
-  description: "Sullivan Solar Power closed in late 2021, leaving unfinished installs, lost deposits, and subcontractor liens. What to do if you were a customer.",
+  title: "Sullivan Solar Power Review 2026: Defunct Installer",
+  description: "Sullivan Solar Power went out of business in late 2021. What stranded San Diego customers should do for maintenance, inverter repairs, and warranties.",
   alternates: { canonical: '/solar-installers/sullivan-solar-power-review' },
 };
 

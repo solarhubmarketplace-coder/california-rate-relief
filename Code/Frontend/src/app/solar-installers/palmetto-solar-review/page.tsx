@@ -10,8 +10,8 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 
 export const metadata: Metadata = {
-  title: "Palmetto Solar Review 2026: Honest Assessment",
-  description: "Palmetto works through subcontractors across 22+ states. SolarReviews 3.0/5, 300+ BBB complaints in three years, heavy PPA push. What that means for you.",
+  title: "Palmetto Solar Review 2026: California Assessment",
+  description: "Honest 2026 review of Palmetto Solar in California: subcontractor installation model, LightReach PPA terms, warranties, and BBB complaint record.",
   alternates: { canonical: '/solar-installers/palmetto-solar-review' },
 };
 

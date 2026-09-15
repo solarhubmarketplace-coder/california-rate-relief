@@ -10,8 +10,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: "What Happens to Solar Panels After 25 Years?",
-  description: "Solar panels don't stop at 25 years \u2014 they degrade gradually, still producing 80-87% of output after three decades. What that means for CA homeowners.",
+  title: "What Happens to Solar Panels After 25 Years? CA Guide",
+  description: "What happens when solar panels reach 25 years: expected power degradation, inverter replacement cycles, warranty expiration, and system upgrade options.",
   alternates: { canonical: '/blog/what-happens-to-solar-panels-after-25-years' },
   openGraph: { title: 'What Happens to Solar Panels After 25 Years? California Guide', description: 'Solar panel lifespan and what happens past the warranty.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

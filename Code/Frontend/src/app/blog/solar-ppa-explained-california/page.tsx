@@ -7,10 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title:
-    "Solar PPA Explained: How California's $0-Down Solar Works",
-  description:
-    'How a solar PPA works, what you actually pay, and why it makes sense for California homeowners in 2026. Complete breakdown with 25-year comparison.',
+  title: "Solar PPA Explained: How California Solar PPAs Work",
+  description: "How a solar Power Purchase Agreement (PPA) works in California: per-kWh rates, zero-down installation, buyout options, and contract considerations.",
   alternates: {
     canonical: '/blog/solar-ppa-explained-california',
   },

@@ -7,10 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title:
-    "Are Solar Panels a Scam? What CA Homeowners Should Know",
-  description:
-    'Solar panels aren\'t a scam—but some solar companies are. Learn how to spot predatory tactics, verify installers, and protect yourself.',
+  title: "Are Solar Panels a Scam? What California Buyers Know",
+  description: "Are solar panels a scam? Separating legitimate electricity savings from misleading door-to-door sales tactics, hidden fees, and deceptive contracts.",
   alternates: {
     canonical: '/blog/are-solar-panels-a-scam',
   },
