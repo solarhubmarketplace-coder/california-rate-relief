@@ -18,6 +18,9 @@ const guides = {
     title: "NEM 2.0 vs. NEM 3.0 in California: what changed",
     intro:
       "NEM 3.0 is the common name for California's Net Billing Tariff. The rule that applies to a specific account depends on its utility, interconnection history and current tariff—not a sales claim.",
+    metaTitle: "NEM 2.0 vs NEM 3.0 in California: What Changed",
+    metaDescription:
+      "NEM 3.0, the Net Billing Tariff, applies to new interconnection applicants in the large IOU territories from April 15, 2023. Check your tariff.",
   },
   timeline: {
     path: "/blog/nem-3-california-timeline",
@@ -43,13 +46,22 @@ export type NetBillingGuideKind = keyof typeof guides;
 
 export function netBillingMetadata(kind: NetBillingGuideKind): Metadata {
   const guide = guides[kind];
+  // `intro` is the visible opening paragraph, so it cannot double as the search
+  // snippet without changing what the page says. These override the snippet
+  // only; a guide setting neither behaves exactly as before.
+  const metaTitle =
+    "metaTitle" in guide && guide.metaTitle ? guide.metaTitle : guide.title;
+  const metaDescription =
+    "metaDescription" in guide && guide.metaDescription
+      ? guide.metaDescription
+      : guide.intro;
   return {
-    title: guide.title,
-    description: guide.intro,
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical: guide.path },
     openGraph: {
-      title: guide.title,
-      description: guide.intro,
+      title: metaTitle,
+      description: metaDescription,
       type: "article",
       url: `https://ratereliefca.com${guide.path}`,
       modifiedTime: "2026-09-12T00:00:00Z",

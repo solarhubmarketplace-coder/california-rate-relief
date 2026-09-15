@@ -61,6 +61,9 @@ const definitions = {
     title: 'Solar PPA vs loan, lease and cash in California',
     intro:
       'Compare the same system before comparing payments. A PPA purchases power; a loan finances equipment. The monthly number means something different in each contract.',
+    metaTitle: 'PPA vs Loan vs Lease vs Cash: Solar in California',
+    metaDescription:
+      'Compare cash, loan, lease and PPA the same way: same system and production, plus what each contract actually obligates you to pay.',
   },
   nem: {
     path: '/blog/what-is-nem-3-california',

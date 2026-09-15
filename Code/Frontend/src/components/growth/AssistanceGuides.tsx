@@ -50,6 +50,9 @@ const definitions = {
     title: "Free solar panels in California: what does the offer cost?",
     intro:
       "A zero-dollar upfront payment and a fully funded solar installation are different offers. Ask who owns the equipment, who pays over time and which organization is funding the project.",
+    metaTitle: "Free Solar Panels in California: What's the Catch?",
+    metaDescription:
+      "A zero-dollar upfront offer is not a funded installation. Ask who owns the equipment, who pays over time and who funds the project.",
   },
   income: {
     path: "/blog/low-income-solar-california",
