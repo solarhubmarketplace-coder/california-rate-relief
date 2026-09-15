@@ -93,7 +93,22 @@ export function RelatedInstallers({ picks = 'general', heading }: Props) {
         ))}
       </div>
 
-      <div className='mt-4 pt-4 border-t border-border text-center'>
+      {/*
+        Several taglines above state a company's legal or operating status - a
+        Chapter 11 filing, a closure, a restructuring. Those are factual claims
+        about named third parties, and this block renders on 43 pages. Each one
+        is set out with its date and sources on that company's own review page,
+        but until now nothing here told a reader when the status was checked.
+        This line carries that date with the claims.
+      */}
+      <p className='mt-4 pt-4 border-t border-border text-xs text-muted-foreground'>
+        Company status notes above, including any bankruptcy, closure or
+        restructuring, were last checked on 15 September 2026. Each company&apos;s
+        review page sets out the dates and sources behind them. Status can change
+        after that date; confirm anything you intend to rely on.
+      </p>
+
+      <div className='mt-4 text-center'>
         <Link
           href='/best-solar-companies-california'
           className='inline-flex items-center gap-1 text-sm font-semibold text-primary underline'

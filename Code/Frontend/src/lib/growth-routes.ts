@@ -1,6 +1,22 @@
 import { getAllCitySlugs } from '../data/cities-data.ts';
 
 export const GROWTH_ROUTES = [
+  '/blog/free-roof-replacement-with-solar-panels-california',
+  '/blog/prepaid-ppa-california-2026',
+  '/blog/solar-panel-removal-reinstall-cost',
+  '/blog/what-happens-to-solar-lease-when-i-sell-california',
+  '/blog/nem-2-vs-nem-3-california',
+  '/blog/pge-rate-increase-2026',
+  '/blog/net-billing-vs-net-metering-california',
+  '/blog/nem-3-california-still-worth-it',
+  '/blog/nem-3-california-timeline',
+  '/solar-companies/sonoma',
+  '/solar-companies/ventura',
+  '/solar-companies/grass-valley',
+  '/solar-companies/victorville',
+  '/solar-companies/petaluma',
+  '/solar-companies/rancho-cucamonga',
+  '/solar-companies/santa-barbara',
   '/blog/solar-panels-tile-roof-california',
   '/blog/why-is-my-sce-bill-so-high',
   '/blog/adu-solar-requirements-california',

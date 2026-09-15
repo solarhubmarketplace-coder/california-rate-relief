@@ -37,6 +37,16 @@ const nextConfig = {
         destination: '/blog/how-big-of-a-solar-system-do-i-need-california',
         permanent: true,
       },
+      // /blog/nem-3-california has returned 404 since at least 10 September and
+      // is not in the sitemap. Nothing on the site links to it, so this costs
+      // nothing, but it is a plausible hand-typed and externally-linked path for
+      // the topic. Sent to the NEM page that actually ranks: 370 impressions at
+      // position 9.8, against 0 for every other NEM post.
+      {
+        source: '/blog/nem-3-california',
+        destination: '/blog/nem-2-vs-nem-3-california',
+        permanent: true,
+      },
     ];
   },
   // ---------------------------------------------------------------------------
