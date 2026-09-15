@@ -11,7 +11,7 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: "Ameco Solar Review 2026: LA Installer, Roofing & Solar",
-  description: "Ameco Solar review: historic Los Angeles electrical contractor since 1974 combining roofing and solar installation with long-term workmanship warranties.",
+  description: "Ameco Solar review: long-established Paramount installer combining decades of electrical and roofing work with residential solar and 25-year warranty options.",
   alternates: { canonical: '/solar-installers/ameco-solar-review' },
 };
 
