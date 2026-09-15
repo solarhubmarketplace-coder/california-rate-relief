@@ -6,6 +6,16 @@ const path = "/solar-problems/solar-homeowners-insurance";
 const title = "Does Homeowners Insurance Cover Solar Panels? Check the Policy, System and Contract";
 const intro = "Many homeowners policies treat an attached rooftop system as part of the home, but that does not answer every coverage question. Ownership, mounting location, policy limits, exclusions, deductibles and the solar contract can change the result.";
 
+
+// The two consts above are visible copy: `title` heads the page and `intro` is the
+// opening paragraph a reader sees. The search snippet has a different job and a
+// hard length budget, so it is declared separately here. Reusing `intro` as the
+// meta description is what caused a draft pass to overwrite a live opening
+// paragraph on the SDG&E guide.
+const metaTitle = "Does Homeowners Insurance Cover Solar Panels?";
+const metaDescription =
+  "Ownership, mounting location, policy limits, exclusions, deductibles and the solar contract can all change whether a system is covered.";
+
 const sources: Source[] = [
   {
     label: "CPUC: California Solar Consumer Protection Guide",
@@ -26,12 +36,12 @@ const sources: Source[] = [
 ];
 
 export const solarInsuranceMetadata: Metadata = {
-  title,
-  description: intro,
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: path },
   openGraph: {
-    title,
-    description: intro,
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-12T00:00:00Z",

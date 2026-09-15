@@ -6,6 +6,16 @@ const path = "/blog/best-time-to-install-solar-panels-california";
 const title = "Best Time to Install Solar Panels in California: Use the Project Clock";
 const intro = "There is no single best month for every California home. The right time is when the roof, electricity-use record, bids, permit path, utility application and contract schedule are ready. Compare those dates before chasing a seasonal sales pitch.";
 
+
+// The two consts above are visible copy: `title` heads the page and `intro` is the
+// opening paragraph a reader sees. The search snippet has a different job and a
+// hard length budget, so it is declared separately here. Reusing `intro` as the
+// meta description is what caused a draft pass to overwrite a live opening
+// paragraph on the SDG&E guide.
+const metaTitle = "Best Time to Install Solar Panels in California";
+const metaDescription =
+  "There is no single best month. The right time is when the roof, electricity use, bids, permits and utility application are all ready.";
+
 const sources: Source[] = [
   { label: "CPUC: California Solar Consumer Protection Guide", url: "https://www.cpuc.ca.gov/solarguide/" },
   { label: "California Energy Commission: residential solar permit status", url: "https://www.energy.ca.gov/programs-and-topics/programs/residential-solar-permit-reporting-program-sb-379/residential-solar" },
@@ -15,12 +25,12 @@ const sources: Source[] = [
 ];
 
 export const bestTimeToInstallSolarMetadata: Metadata = {
-  title,
-  description: intro,
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: path },
   openGraph: {
-    title,
-    description: intro,
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-12T00:00:00Z",

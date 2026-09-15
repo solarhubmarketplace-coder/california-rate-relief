@@ -6,6 +6,16 @@ const path = "/blog/is-my-roof-good-for-solar-california";
 const title = "What Roof Is Best for Solar Panels? A California Suitability Checklist";
 const intro = "An unshaded, south-facing roof with a moderate slope is a strong starting point, but it is not the only roof that can work. Age, condition, shade, usable area, structure and the proposed mounting plan all belong in the decision.";
 
+
+// The two consts above are visible copy: `title` heads the page and `intro` is the
+// opening paragraph a reader sees. The search snippet has a different job and a
+// hard length budget, so it is declared separately here. Reusing `intro` as the
+// meta description is what caused a draft pass to overwrite a live opening
+// paragraph on the SDG&E guide.
+const metaTitle = "Best Roof for Solar Panels? A California Checklist";
+const metaDescription =
+  "An unshaded, south-facing roof with a moderate slope is a strong start, but not the only roof that works. Age, shade, usable area and structure matter too.";
+
 const sources: Source[] = [
   {
     label: "U.S. Department of Energy: Homeowner's Guide to Solar",
@@ -26,12 +36,12 @@ const sources: Source[] = [
 ];
 
 export const roofSuitabilityMetadata: Metadata = {
-  title,
-  description: intro,
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: path },
   openGraph: {
-    title,
-    description: intro,
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-12T00:00:00Z",

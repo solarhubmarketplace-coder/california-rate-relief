@@ -6,6 +6,16 @@ const path = "/battery/home-battery-cost-california";
 const title = "How Much Does a Solar Battery Cost? Build the Installed Price";
 const intro = "There is no useful California battery price without the equipment, usable energy, power output, backup circuits, electrical work, permits, service and financing. Make every bidder price the same scope before you compare totals.";
 
+
+// The two consts above are visible copy: `title` heads the page and `intro` is the
+// opening paragraph a reader sees. The search snippet has a different job and a
+// hard length budget, so it is declared separately here. Reusing `intro` as the
+// meta description is what caused a draft pass to overwrite a live opening
+// paragraph on the SDG&E guide.
+const metaTitle = "Solar Battery Cost in California: Build the Installed Price";
+const metaDescription =
+  "A California battery price needs equipment, usable energy, power output, backup circuits, electrical work, permits and financing. Make bidders price one scope.";
+
 const sources: Source[] = [
   {
     label: "CPUC: California Solar Consumer Protection Guide",
@@ -30,12 +40,12 @@ const sources: Source[] = [
 ];
 
 export const homeBatteryCostMetadata: Metadata = {
-  title,
-  description: intro,
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: path },
   openGraph: {
-    title,
-    description: intro,
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-12T00:00:00Z",

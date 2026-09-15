@@ -4,6 +4,16 @@ import { DecisionPage, type Source } from "./DecisionPage";
 const path = "/blog/is-community-solar-worth-it";
 const title = "Is Community Solar Worth It? Compare the Credit With Every Cost";
 const intro = "Community solar can work for a renter, apartment resident or property without a usable roof. The answer depends on the subscription charge, utility bill credit, escalation, fees, term, cancellation, move rules and actual project availability.";
+
+// The two consts above are visible copy: `title` heads the page and `intro` is the
+// opening paragraph a reader sees. The search snippet has a different job and a
+// hard length budget, so it is declared separately here. Reusing `intro` as the
+// meta description is what caused a draft pass to overwrite a live opening
+// paragraph on the SDG&E guide.
+const metaTitle = "Is Community Solar Worth It? Compare Credit vs Cost";
+const metaDescription =
+  "Community solar can work for renters or homes without a usable roof. It depends on the subscription charge, bill credit, fees and contract terms.";
+
 const sources: Source[] = [
   { label: "U.S. Department of Energy: Community Solar Basics", url: "https://www.energy.gov/cmei/systems/community-solar-basics" },
   { label: "U.S. Department of Energy: community solar program designs", url: "https://www.energy.gov/sites/default/files/2024-07/Community%20Solar%20Program%20Design.pdf" },
@@ -12,7 +22,7 @@ const sources: Source[] = [
   { label: "Maryland PSC: Solar in Maryland", url: "https://www.psc.state.md.us/electricity/wp-content/uploads/sites/2/Solar-in-Maryland-Fact-Sheet-1.pdf" },
   { label: "DC DOEE: Solar for All", url: "https://doee.dc.gov/solarforall" },
 ];
-export const communitySolarWorthItMetadata: Metadata = { title, description: intro, alternates: { canonical: path }, openGraph: { title, description: intro, type: "article", url: `https://ratereliefca.com${path}`, modifiedTime: "2026-09-12T00:00:00Z" } };
+export const communitySolarWorthItMetadata: Metadata = { title: metaTitle, description: metaDescription, alternates: { canonical: path }, openGraph: { title: metaTitle, description: metaDescription, type: "article", url: `https://ratereliefca.com${path}`, modifiedTime: "2026-09-12T00:00:00Z" } };
 
 export function CommunitySolarWorthItGuide() {
   return <DecisionPage title={title} intro={intro} path={path} sources={sources} sourceCheckedDate="2026-09-12" topic="community solar subscription comparison" primaryResourceHref="/solar-panels-california" primaryResourceLabel="Compare rooftop solar" comparisonHref="/blog/how-to-lower-electric-bill-california" comparisonLabel="Electric-bill decision guide">

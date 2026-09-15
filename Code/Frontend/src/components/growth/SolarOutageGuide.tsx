@@ -6,6 +6,16 @@ const path = "/blog/do-solar-panels-work-during-power-outage-california";
 const title = "Will My Solar Panels Work in a Blackout? Check the Backup Design";
 const intro = "Most grid-tied solar systems shut down when utility power is off. A system must be specifically designed to disconnect safely from the grid and support selected loads before it can provide backup power.";
 
+
+// The two consts above are visible copy: `title` heads the page and `intro` is the
+// opening paragraph a reader sees. The search snippet has a different job and a
+// hard length budget, so it is declared separately here. Reusing `intro` as the
+// meta description is what caused a draft pass to overwrite a live opening
+// paragraph on the SDG&E guide.
+const metaTitle = "Do Solar Panels Work During a Power Outage in California?";
+const metaDescription =
+  "Most grid-tied solar systems shut down when utility power is off. A backup design must disconnect safely and support chosen loads to keep power on.";
+
 const sources: Source[] = [
   {
     label: "U.S. Department of Energy: Solar and Resilience Basics",
@@ -26,12 +36,12 @@ const sources: Source[] = [
 ];
 
 export const solarOutageMetadata: Metadata = {
-  title,
-  description: intro,
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: path },
   openGraph: {
-    title,
-    description: intro,
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-12T00:00:00Z",

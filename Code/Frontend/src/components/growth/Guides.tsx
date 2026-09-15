@@ -43,18 +43,27 @@ const definitions = {
     title: 'Compare solar companies in California',
     intro:
       'The best solar company for your home has to fit the property, the electric bill and the work you need done. Start there. A statewide ranking cannot verify who will install your system or answer a service call.',
+    metaTitle: 'Compare solar companies in California',
+    metaDescription:
+      'A statewide solar company ranking cannot verify who installs your system or answers a service call. Compare by property, bill and scope instead.',
   },
   panels: {
     path: '/solar-panels-california',
     title: 'Solar panels in California: cost, size and bill comparison',
     intro:
       'The system price is only part of the decision. Put the solar equipment, battery, roof work and remaining electricity bill on separate lines. Then compare the total.',
+    metaTitle: 'California Solar Panel Cost: 2025 Residential Benchmark',
+    metaDescription:
+      'LBNL\'s 2026 update reports a $3.30 per WDC median price for California host-owned residential solar installed in 2025. A benchmark, not a quote.',
   },
   worth: {
     path: '/blog/are-solar-panels-worth-it-california',
     title: 'Are solar panels worth it in California?',
     intro:
       'They can be. Your answer depends on the price, the electricity you use when solar is producing, your utility’s billing rules and how long you expect to keep the system. A high electric bill alone does not settle it.',
+    metaTitle: 'Are solar panels worth it in California?',
+    metaDescription:
+      'It depends on price, when you use electricity versus when solar produces, your utility\'s billing rules, and how long you keep the system.',
   },
   financing: {
     path: '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
@@ -70,12 +79,18 @@ const definitions = {
     title: 'What is NEM 3.0 in California? Start with the bill',
     intro:
       'NEM 3.0 is the common name for the Net Billing Tariff used by PG&E, SCE and SDG&E for newer solar interconnections. Electricity used at home and electricity exported to the grid have different financial effects.',
+    metaTitle: 'What is NEM 3.0 in California? Start with the bill',
+    metaDescription:
+      'NEM 3.0 is the common name for the Net Billing Tariff PG&E, SCE and SDG&E use for newer solar interconnections. Exports earn a credit; home use cuts imports.',
   },
   battery: {
     path: '/blog/solar-battery-backup-california',
     title: 'California solar batteries: backup and cost comparison',
     intro:
       'A battery can shift electricity to another hour and, with the right equipment, power selected loads during an outage. Those are separate jobs. Ask the proposal to show both.',
+    metaTitle: 'California Solar Batteries: Backup and Cost Comparison',
+    metaDescription:
+      'A battery can shift electricity to another hour and, with the right equipment, power selected loads in an outage. Ask the proposal to show both jobs.',
   },
   sdge: {
     path: '/blog/sdge-time-of-use-rates-2026',

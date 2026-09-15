@@ -6,6 +6,16 @@ const path = "/commercial-solar";
 const title = "Commercial Solar in California: Build a Quote You Can Actually Compare";
 const intro = "A commercial solar proposal only works when it starts with the property’s real load, tariff, meters, roof or site, interconnection path and ownership plan. Use this guide to make bidders show the same inputs, costs and responsibilities.";
 
+
+// The two consts above are visible copy: `title` heads the page and `intro` is the
+// opening paragraph a reader sees. The search snippet has a different job and a
+// hard length budget, so it is declared separately here. Reusing `intro` as the
+// meta description is what caused a draft pass to overwrite a live opening
+// paragraph on the SDG&E guide.
+const metaTitle = "Commercial Solar in California: Build a Comparable Quote";
+const metaDescription =
+  "A commercial proposal starts with the property's load, tariff, meters and interconnection path. Use this guide to make bidders show the same inputs and costs.";
+
 const sources: Source[] = [
   {
     label: "California Energy Commission: 2025 Nonresidential Solar PV",
@@ -30,12 +40,12 @@ const sources: Source[] = [
 ];
 
 export const commercialSolarMetadata: Metadata = {
-  title,
-  description: intro,
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: path },
   openGraph: {
-    title,
-    description: intro,
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-12T00:00:00Z",

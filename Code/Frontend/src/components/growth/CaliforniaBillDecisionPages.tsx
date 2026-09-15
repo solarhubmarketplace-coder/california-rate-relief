@@ -15,11 +15,17 @@ const guides = {
     path: "/blog/why-is-my-california-electric-bill-so-high",
     title: "Why Is My California Electric Bill So High? Check the Bill Before Guessing",
     intro: "A higher California electric bill can come from more daily use, a different rate or billing period, a credit or adjustment, or a combination of them. Compare two bills on the same daily basis, then check the account with the utility.",
+    metaTitle: "Why Is My California Electric Bill So High? Check First",
+    metaDescription:
+      "A higher bill can come from more use, a different rate or billing period, or a credit. Compare two bills on the same daily basis, then check with the utility.",
   },
   lower: {
     path: "/blog/how-to-lower-electric-bill-california",
     title: "How to Lower Your Electric Bill in California: Start With the Moves You Can Verify",
     intro: "Start with the current bill, rate plan and programs you may already qualify for. Then price efficiency or solar against the same usage history. That order keeps a sales estimate from becoming the baseline.",
+    metaTitle: "How to Lower Your Electric Bill in California: 6 Steps",
+    metaDescription:
+      "Start with the current bill, rate plan and programs you may already qualify for before pricing efficiency or solar against the same usage history.",
   },
 } as const;
 
@@ -27,13 +33,22 @@ export type CaliforniaBillGuideKind = keyof typeof guides;
 
 export function californiaBillMetadata(kind: CaliforniaBillGuideKind): Metadata {
   const guide = guides[kind];
+  // `intro` is the visible opening paragraph, so it cannot double as the search
+  // snippet without changing what the page says. These override the snippet
+  // only; a guide setting neither behaves exactly as before.
+  const metaTitle =
+    "metaTitle" in guide && guide.metaTitle ? guide.metaTitle : guide.title;
+  const metaDescription =
+    "metaDescription" in guide && guide.metaDescription
+      ? guide.metaDescription
+      : guide.intro;
   return {
-    title: guide.title,
-    description: guide.intro,
+    title: metaTitle,
+    description: metaDescription,
     alternates: { canonical: guide.path },
     openGraph: {
-      title: guide.title,
-      description: guide.intro,
+      title: metaTitle,
+      description: metaDescription,
       type: "article",
       url: `https://ratereliefca.com${guide.path}`,
       modifiedTime: "2026-09-12T00:00:00Z",

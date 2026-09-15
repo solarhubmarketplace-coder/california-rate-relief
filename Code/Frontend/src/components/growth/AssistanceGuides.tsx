@@ -23,11 +23,17 @@ const definitions = {
     title: "Solar tax credit ended: California options in 2026",
     intro:
       "A new proposal needs to work with the incentives actually available to your project. Start by removing any homeowner tax credit the project cannot claim. Then compare the full cost.",
+    metaTitle: "Solar tax credit ended: California options in 2026",
+    metaDescription:
+      "A new proposal needs to work with the incentives actually available. Start by removing any homeowner tax credit the project cannot claim, then compare cost.",
   },
   california: {
     path: "/blog/california-solar-tax-credit-2026",
     title: "California solar incentives in 2026: which program does what?",
     intro:
+      "A federal tax credit, a battery rebate and an electric-bill discount solve different problems. Put each in the right column before you compare a solar offer.",
+    metaTitle: "California solar incentives 2026: which program does what?",
+    metaDescription:
       "A federal tax credit, a battery rebate and an electric-bill discount solve different problems. Put each in the right column before you compare a solar offer.",
   },
   records: {
@@ -35,6 +41,9 @@ const definitions = {
     title: "Solar tax credit in 2026: completion dates and prior-year records",
     intro:
       "A payment receipt is only part of the record. For the federal residential credit, the installation timeline and the proper tax year matter. A deposit does not settle either.",
+    metaTitle: "Solar tax credit 2026: completion dates, prior-year records",
+    metaDescription:
+      "A payment receipt alone is not enough. The federal residential credit depends on the installation timeline and correct tax year, not just a deposit.",
   },
   seniors: {
     path: "/blog/free-solar-for-seniors-california",
@@ -59,6 +68,9 @@ const definitions = {
     title: "Low-income solar in California: find the right application path",
     intro:
       "If the electric bill is urgent, start with bill assistance. If you want rooftop solar, check the property and program rules separately. One application does not automatically approve the other.",
+    metaTitle: "Low-income solar in California: find the application path",
+    metaDescription:
+      "Bill assistance and rooftop solar have separate rules. If the bill is urgent, start with assistance. One application does not automatically approve the other.",
   },
 };
 type AssistanceKey = keyof typeof definitions;

@@ -27,18 +27,27 @@ const guides = {
     title: "NEM 3.0 California timeline: confirmed dates and account checks",
     intro:
       "The current tariff can affect a solar proposal, but an old deadline or a generic export-rate claim does not tell you what applies to your account. Start with the official timeline and the current bill.",
+    metaTitle: "NEM 3.0 California Timeline: Confirmed Dates",
+    metaDescription:
+      "The current tariff can affect a proposal, but an old deadline or generic export-rate claim won't tell you what applies to your account.",
   },
   decision: {
     path: "/blog/nem-3-california-still-worth-it",
     title: "Is solar still worth it under California Net Billing? Compare the written numbers",
     intro:
       "Net Billing changes how exports appear on a bill. Whether a proposal works for a home depends on its actual usage, tariff, production model, contract price and remaining utility charges.",
+    metaTitle: "Is Solar Still Worth It Under California Net Billing?",
+    metaDescription:
+      "Net Billing changes how exports appear on a bill. Whether a proposal works depends on usage, tariff, production model and contract price.",
   },
   billing: {
     path: "/blog/net-billing-vs-net-metering-california",
     title: "Net Billing vs. Net Metering in California: check your tariff",
     intro:
       "California's Net Billing Tariff and the older Net Energy Metering tariffs credit exports differently. The current bill, utility territory and interconnection record determine what applies to a specific account.",
+    metaTitle: "Net Billing vs. Net Metering in California: check tariff",
+    metaDescription:
+      "Net Billing and the older Net Energy Metering tariffs credit exports differently. Your bill, utility territory and interconnection record decide which applies.",
   },
 } as const;
 

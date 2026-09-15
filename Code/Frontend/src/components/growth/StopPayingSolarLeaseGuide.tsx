@@ -6,6 +6,16 @@ const path = "/blog/what-happens-if-stop-paying-solar-lease-california";
 const title = "What Happens If You Stop Paying a Solar Lease? Read the Default Section";
 const intro = "Stopping payment usually does not cancel a solar lease. The agreement controls notices, late charges, default, acceleration, collection, equipment and early termination. Pull the exact documents before changing a payment.";
 
+
+// The two consts above are visible copy: `title` heads the page and `intro` is the
+// opening paragraph a reader sees. The search snippet has a different job and a
+// hard length budget, so it is declared separately here. Reusing `intro` as the
+// meta description is what caused a draft pass to overwrite a live opening
+// paragraph on the SDG&E guide.
+const metaTitle = "What Happens If You Stop Paying a Solar Lease?";
+const metaDescription =
+  "Stopping payment usually does not cancel a solar lease. The agreement controls notices, default, collection and termination terms.";
+
 const sources: Source[] = [
   { label: "California CSLB: Solar Smart", url: "https://cslb.ca.gov/Consumers/Solar_Smart/" },
   { label: "CPUC: California Solar Consumer Protection Guide", url: "https://www.cpuc.ca.gov/solarguide/" },
@@ -16,12 +26,12 @@ const sources: Source[] = [
 ];
 
 export const stopPayingSolarLeaseMetadata: Metadata = {
-  title,
-  description: intro,
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: path },
   openGraph: {
-    title,
-    description: intro,
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-12T00:00:00Z",
