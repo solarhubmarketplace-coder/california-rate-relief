@@ -5,8 +5,8 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 
 const path='/commercial-solar/sgip-battery-storage';
-const title='SGIP commercial battery storage: California budget status';
-const description='Check current SGIP commercial storage categories, distinguish an existing reservation from a new application, and compare a battery proposal without an assumed rebate.';
+const title="SGIP commercial battery storage: California budget status";
+const description="Check current SGIP commercial storage categories, distinguish an existing reservation from a new application, and compare without an assumed rebate.";
 export const metadata:Metadata={title,description,alternates:{canonical:path},openGraph:{title,description,type:'article',url:'https://ratereliefca.com'+path,modifiedTime:'2026-09-10T00:00:00Z'}};
 export default function SgipCommercialStorage(){
  return <PublicLayout><Header/><main className='mx-auto max-w-3xl px-4 py-12'>

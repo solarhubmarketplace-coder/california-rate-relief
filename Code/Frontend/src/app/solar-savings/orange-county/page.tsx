@@ -16,7 +16,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 export const metadata: Metadata = {
   title: 'Solar Companies in Orange County, California | Rate Relief',
   description:
-    'Find affordable solar options for your Orange County home. Compare rates across Irvine, Anaheim, Santa Ana, Huntington Beach, and more. Save on your SCE electric bill.',
+    'Compare Orange County solar options across Irvine, Anaheim, Santa Ana, Huntington Beach and more, and see how they affect your SCE electric bill.',
   alternates: {
     canonical: '/solar-savings/orange-county',
   },

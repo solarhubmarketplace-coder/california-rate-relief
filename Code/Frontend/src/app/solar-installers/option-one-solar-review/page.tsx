@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Option One Solar Review 2026: 25-Year Bumper-to-Bumper",
-  description: "Option One Solar (Apple Valley) focuses on ownership, offers a 25-year bumper-to-bumper warranty, and strong Southern CA Yelp ratings.",
+  title: "Option One Solar Review 2026: 25-Yr Warranty, Labor Incl.",
+  description: "Option One Solar (Apple Valley) covers equipment, workmanship, and labor for 25 years and pushes ownership over leases. Yelp runs 4.9/5 in top listings.",
   alternates: { canonical: '/solar-installers/option-one-solar-review' },
 };
 

@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunlux Solar Review 2026: A Higher-Rated SoCal Installer",
-  description: "Sunlux has 7,000+ installs, Google 4.7/5 across 550+ reviews, BBB A+, and competitive California pricing. The honest 2026 review.",
+  title: "Sunlux Solar Review: Google 4.7/5, BBB A+ Rating",
+  description: "Sunlux has completed 7,000+ installs with Google 4.7/5 across 550+ reviews and a BBB A+ file. In-house crews, no PPA focus. The honest review.",
   alternates: { canonical: '/solar-installers/sunlux-solar-review' },
 };
 

@@ -8,9 +8,9 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 
-const title = 'Solar Carports in California: Compare Structure, Quotes and a Roof Alternative';
+const title = "Solar Carports in California: Compare Quotes and Scope";
 const description =
-  'How to compare a California solar carport with a roof proposal: project scope, local review, electrical work and contract questions.';
+  "Compare a solar carport quote against a roof quote on canopy work, solar equipment, electrical work, local review and contract terms before signing.";
 
 export const metadata: Metadata = {
   title,

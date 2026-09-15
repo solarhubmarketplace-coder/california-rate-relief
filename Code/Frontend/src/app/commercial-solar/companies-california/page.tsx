@@ -5,9 +5,9 @@ import { DecisionPage } from "@/components/growth/DecisionPage";
 import { CommercialAssessmentForm } from "@/components/landing/CommercialAssessmentForm";
 
 const title =
-  "Commercial solar companies in California: compare the project scope";
+  "Commercial Solar Companies in California: Compare by Scope";
 const description =
-  "Compare California commercial solar proposals by tariff, demand charges, roof or carport scope, interconnection and service. Send a business project inquiry.";
+  "Compare bids on license, electrical scope, tariff, demand charges, interconnection and financing before choosing a California commercial solar company.";
 const path = "/commercial-solar/companies-california";
 const link = "text-emerald-800 underline underline-offset-2";
 const businessRates =

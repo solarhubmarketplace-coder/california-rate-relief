@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunergy Solar Review 2026: CA Installer Ratings",
-  description: "Sunergy Solar holds a 4.7/5 EnergySage rating across 92 reviews. Ownership model, Enphase equipment, and delay complaints in this honest 2026 review.",
+  title: "Sunergy Solar Review: 4.7/5 on EnergySage, 92 Reviews",
+  description: "Sunergy Solar holds a 4.7/5 EnergySage rating across 92 reviews and uses Enphase equipment. Ownership focus, plus the delay complaints to expect.",
   alternates: { canonical: '/solar-installers/sunergy-solar-review' },
 };
 

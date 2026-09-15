@@ -9,8 +9,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: "REC Solar Panels Review 2026: Alpha Pure Series for CA",
-  description: "REC Solar is a Norwegian-origin, Reliance-owned tier-1 manufacturer known for the Alpha Pure series. A California homeowner review.",
+  title: "REC Solar Panels Review: Alpha Pure HJT Series Specs",
+  description: "REC's Alpha Pure uses HJT cells for better hot-weather output, about 22% efficiency. Reliance-owned since 2021, made in Singapore. Warranty and CA installers.",
   alternates: { canonical: '/panel-reviews/rec-solar-panels-review' },
   openGraph: { title: 'REC Solar Panels Review 2026: Alpha Pure Series for California', description: 'REC Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

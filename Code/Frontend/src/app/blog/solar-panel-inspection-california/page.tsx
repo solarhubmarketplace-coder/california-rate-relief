@@ -7,8 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Solar Panel Inspection: What CA Homeowners Need to Know",
-  description: "What California homeowners need to know about solar panel inspections: electrical checks, inverter diagnostics, roof condition, and warranty defense.",
+  title: "Solar Panel Inspection in California: $150 to $350",
+  description: "A solar inspection is not required by California law but typically costs $150 to $350. What a visual check, electrical test, and performance review each cover.",
   alternates: {
     canonical: '/blog/solar-panel-inspection-california',
   },

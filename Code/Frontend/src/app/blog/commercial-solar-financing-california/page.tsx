@@ -18,9 +18,8 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Commercial solar financing in California: documents to compare",
-  description:
-    "Compare ownership, payment, transfer, utility and project documents for a California commercial solar proposal before selecting a financing structure.",
+  title: "Commercial Solar Financing in California: PACE, SBA, PPA",
+  description: "Compare purchase, loan, PPA, PACE and SBA financing documents for the same commercial solar project before choosing ownership and payment terms.",
   alternates: { canonical: "/blog/commercial-solar-financing-california" },
   openGraph: {
     title: "Commercial solar financing in California: documents to compare",

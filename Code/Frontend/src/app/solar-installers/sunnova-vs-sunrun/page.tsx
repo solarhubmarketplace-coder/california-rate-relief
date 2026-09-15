@@ -8,8 +8,8 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunnova vs Sunrun: Head-to-Head Comparison (2026)",
-  description: "Sunnova vs Sunrun; how they compare on pricing, contracts, warranties, service model, California footprint, and real-world customer experience.",
+  title: "Sunnova vs Sunrun: Dealer Network vs In-House Crews",
+  description: "In major CA metros Sunrun often installs with its own W-2 crews; Sunnova works through dealers. Compare contracts, warranties, escalators, and batteries.",
   alternates: { canonical: '/solar-installers/sunnova-vs-sunrun' },
   openGraph: { title: 'Sunnova vs Sunrun (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunnova-vs-sunrun' },
 };

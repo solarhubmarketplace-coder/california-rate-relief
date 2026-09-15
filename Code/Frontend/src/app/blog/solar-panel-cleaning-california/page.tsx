@@ -11,9 +11,8 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
-  title: "Solar Panel Cleaning in California: Cost & DIY Risks",
-  description:
-    "What solar panel cleaning costs in California, when it's worth it, DIY vs pro, warranty traps, and the best seasonal windows.",
+  title: "Solar Panel Cleaning Cost in California: $150-$450",
+  description: "Professional solar panel cleaning in California runs $150 to $450 per system, once or twice a year. Pressure washing voids most warranties.",
   alternates: { canonical: '/blog/solar-panel-cleaning-california' },
   openGraph: {
     title: 'Solar Panel Cleaning California: 2026 Guide',

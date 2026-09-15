@@ -10,8 +10,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Tesla Powerwall Installers in California: 2026 Guide',
-  description: "Find certified Tesla Powerwall installers in California — how Tesla's certified installer network works, what Powerwall 3 costs installed, and which California installers are certified.",
+  title: "Tesla Powerwall Installers in California: 2026 Guide",
+  description: "Find Tesla Certified Installers in California, how the certified network works, and what Powerwall 3 costs installed before incentives.",
   alternates: { canonical: '/blog/tesla-powerwall-installers-california' },
   openGraph: { title: 'Tesla Powerwall Installers in California: 2026 Guide', description: 'Guide to Tesla Powerwall installation in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Empire Solar Review 2026: History and Lawsuits Record",
-  description: "Empire Solar review for California homeowners: examining company name confusion, contractor licensing, customer lawsuits, and recent delivery issues.",
+  title: "Empire Solar Review: Verify Which Entity You're Hiring",
+  description: "\"Empire Solar\" names multiple companies nationwide, one with a bankruptcy in Utah. The CA operation has complaints on delays; verify its CSLB license first.",
   alternates: { canonical: '/solar-installers/empire-solar-review' },
 };
 

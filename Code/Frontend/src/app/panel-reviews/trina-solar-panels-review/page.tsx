@@ -9,8 +9,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'Trina Solar Panels Review 2026: California Homeowner Guide',
-  description: "Trina Solar is one of the world's largest tier-1 panel manufacturers. Here is an honest review of Trina panels for California homeowners — Vertex series, warranty, and which California installers use them.",
+  title: "Trina Solar Panels Review: Tier-1, 25-Year Warranty",
+  description: "Trina Solar is a tier-1 manufacturer with a 25-year product and power warranty. Vertex S modules run 400-450W. Where California installers use Trina panels.",
   alternates: { canonical: '/panel-reviews/trina-solar-panels-review' },
   openGraph: { title: 'Trina Solar Panels Review 2026: California Homeowner Guide', description: 'Trina Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

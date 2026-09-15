@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { ArticleHub } from '@/components/shared/ArticleRoute';
 
 export const metadata: Metadata = {
-  title: 'Solar Problems & Scams in California: Honest Guides',
-  description: 'How solar sales tactics work, what a true-up bill is, why your bill is still high after solar, and what to do if a contractor took your money. Independent, sourced.',
+  title: "Solar Problems & Scams in California: Honest Guides",
+  description: "How solar sales tactics work, what a true-up bill is, why your bill stays high after solar, and what to do if a contractor took your money. Sourced.",
   alternates: { canonical: '/solar-problems' },
 };
 

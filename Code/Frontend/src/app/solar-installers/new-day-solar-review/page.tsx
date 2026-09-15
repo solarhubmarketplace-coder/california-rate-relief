@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "New Day Solar Review 2026: 31+ Years, Family-Owned",
-  description: "New Day Solar is a family-owned Murrieta, CA installer with 31+ years, strong Yelp reviews, and FranklinWH battery pairing.",
+  title: "New Day Solar Review 2026: Family-Owned, Murrieta, CA",
+  description: "New Day Solar is a family-owned Murrieta installer with 31+ years of combined solar and electrical experience, Enphase inverters, and FranklinWH batteries.",
   alternates: { canonical: '/solar-installers/new-day-solar-review' },
 };
 

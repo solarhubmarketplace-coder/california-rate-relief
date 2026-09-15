@@ -18,9 +18,8 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Solar panel removal and reinstallation in California: quote checklist",
-  description:
-    "Before roof work or a solar-system change, compare the removal, storage, reinstallation, permit, warranty and contract terms in writing.",
+  title: "Solar Panel Removal and Reinstall Quotes in California",
+  description: "Before roof work or a solar-system change, compare the removal, storage, reinstallation, permit, warranty and contract terms in writing.",
   alternates: { canonical: "/blog/solar-panel-removal-reinstall-cost" },
   openGraph: {
     title: "Solar panel removal and reinstallation in California: quote checklist",

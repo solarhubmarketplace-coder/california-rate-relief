@@ -6,10 +6,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title:
-    'Solar EV Charging in California: The Complete 2026 Guide',
-  description:
-    'California EV owners pay $500-$1,200/year to charge at home. Solar cuts that to near zero. Learn how much solar you need, when to charge, and how to slash your cost per mile to $0.03-$0.05.',
+  title: "Solar EV Charging in California: The Complete 2026 Guide",
+  description: "California EV owners pay $500-$1,200/year to charge at home. Solar cuts that toward zero and can bring cost per mile down to $0.03-$0.05.",
   alternates: {
     canonical: '/blog/solar-ev-charging-california',
   },

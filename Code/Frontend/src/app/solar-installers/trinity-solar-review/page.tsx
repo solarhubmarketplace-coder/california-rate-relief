@@ -16,10 +16,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title:
-    "Trinity Solar Review 2026: A Northeast, Not CA, Installer",
-  description:
-    "Trinity Solar is a large, family-owned installer serving the Northeast (NJ, NY, CT, MA, PA). What that means if you're shopping in CA.",
+  title: "Trinity Solar Review: Northeast Installer, Not California",
+  description: "Trinity Solar, founded in 1994, serves NJ, NY, CT, MA, PA and MD. It has no meaningful California operations, so compare installers that serve your address.",
   alternates: {
     canonical: '/solar-installers/trinity-solar-review',
   },

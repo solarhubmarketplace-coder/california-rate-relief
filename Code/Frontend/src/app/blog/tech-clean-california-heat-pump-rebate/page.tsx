@@ -10,8 +10,8 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
-  title: 'TECH Clean California: Heat Pump Rebate Program Guide (2026)',
-  description: "TECH Clean California rebates for heat pump water heaters and HVAC. Eligibility, amounts, how to apply, contractor directory, and how it stacks with solar.",
+  title: "TECH Clean California: Heat Pump Rebate Amounts (2026)",
+  description: "TECH Clean California pays $1,000-$2,000 for a heat pump water heater and $3,000-$4,000 for HVAC, with higher rebates for income-qualified households.",
   alternates: { canonical: '/blog/tech-clean-california-heat-pump-rebate' },
   openGraph: { title: 'TECH Clean California Heat Pump Rebate', description: 'The 2026 TECH Clean California heat pump rebate explained.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/tech-clean-california-heat-pump-rebate' },
 };

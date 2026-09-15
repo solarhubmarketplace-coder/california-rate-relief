@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Elevation Solar Review 2026: Ratings vs Activation Delays",
-  description: "Elevation Solar has 19,000+ installs and a 4.6/5 EnergySage rating, but 90 BBB complaints in 3 years and a 2.9 Yelp. Honest 2026 review.",
+  title: "Elevation Solar Review: 4.6/5 EnergySage, 90 BBB Complaints",
+  description: "Elevation Solar has 19,000+ installs and a 4.6/5 EnergySage score, but 90 BBB complaints in 3 years and reported 6 to 12+ month activation delays.",
   alternates: { canonical: '/solar-installers/elevation-solar-review' },
 };
 

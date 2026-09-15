@@ -9,8 +9,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: "Silfab Solar Panels Review 2026: US-Manufactured Tier-1",
-  description: "Silfab Solar is a North American tier-1 manufacturer with US factories, notable for IRA domestic-content bonus eligibility.",
+  title: "Silfab Solar Panels Review 2026: US-Made Tier-1",
+  description: "Silfab, founded 2010, builds panels in Washington State and Canada. Tier-1 specs, 25-year warranty, and who the IRA domestic-content bonus actually pays.",
   alternates: { canonical: '/panel-reviews/silfab-solar-panels-review' },
   openGraph: { title: 'Silfab Solar Panels Review 2026: The US-Manufactured Tier-1 Choice', description: 'Silfab Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };

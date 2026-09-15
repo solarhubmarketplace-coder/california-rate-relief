@@ -8,9 +8,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
-  title: 'Solar Panel Brand Reviews for California Homeowners (2026)',
-  description:
-    "Plain-English reviews of the solar panel brands California installers actually use — Qcells, REC, Silfab, Trina, Canadian Solar, Jinko, Longi, Maxeon. What's behind the warranty, who uses each one, and how to pick.",
+  title: "Solar Panel Brand Reviews for California Homeowners (2026)",
+  description: "Plain-English reviews of the solar panel brands California installers use: Trina, Silfab, REC and Canadian Solar, plus how 25-year warranties differ.",
   alternates: { canonical: '/panel-reviews' },
 };
 

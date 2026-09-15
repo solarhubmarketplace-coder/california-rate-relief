@@ -10,9 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: 'Tesla Solar Review 2026: Best Price, But Watch the Service',
-  description:
-    'Tesla Solar has the lowest California cash pricing in our comparison ($2.27-$2.82/W) and makes its own panels and batteries. The service reputation is the catch.',
+  title: "Tesla Solar Review 2026: $2.27-$2.82/W, Slow Service",
+  description: "Tesla Solar's California cash pricing runs about $2.27 to $2.82 per watt, the lowest in this comparison, but post-install service is its weakest part.",
   alternates: { canonical: '/solar-installers/tesla-solar-review' },
 };
 

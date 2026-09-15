@@ -10,8 +10,8 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
-  title: 'How Does Net Metering Work? Plain-English Guide (2026)',
-  description: "A plain-English explanation of net metering, how it works, how the credits are calculated, the difference between NEM 1.0/2.0/3.0 and net billing, and what's next.",
+  title: "How Does Net Metering Work? Plain-English Guide (2026)",
+  description: "Net metering explained in plain English: how export credits are calculated and the difference between NEM 1.0, 2.0, 3.0 and net billing.",
   alternates: { canonical: '/blog/how-does-net-metering-work' },
   openGraph: { title: 'How Does Net Metering Work?', description: 'Plain-English net metering guide for 2026.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/how-does-net-metering-work' },
 };

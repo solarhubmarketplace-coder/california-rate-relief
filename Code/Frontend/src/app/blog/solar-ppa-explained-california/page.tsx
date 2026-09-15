@@ -7,8 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Solar PPA Explained: How California Solar PPAs Work",
-  description: "How a solar Power Purchase Agreement (PPA) works in California: per-kWh rates, zero-down installation, buyout options, and contract considerations.",
+  title: "Solar PPA in California: Pay 8-15 Cents per kWh",
+  description: "A solar PPA charges 8-15 cents per kWh with no money down, versus 35-46 cents per kWh from the utility. How the contract, escalator, and buyout work.",
   alternates: {
     canonical: '/blog/solar-ppa-explained-california',
   },

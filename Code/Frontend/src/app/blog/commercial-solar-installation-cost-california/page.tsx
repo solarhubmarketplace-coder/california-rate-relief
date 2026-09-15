@@ -17,9 +17,8 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Commercial solar installation cost in California: quote checklist",
-  description:
-    "A commercial solar installation price depends on the actual scope. Compare system size, cash price, site work, ownership, utility assumptions and contract terms in writing.",
+  title: "Commercial solar installation cost in California: checklist",
+  description: "A commercial solar price depends on the actual scope. Compare system size, cash price, site work, ownership, utility assumptions and contract terms in writing.",
   alternates: { canonical: "/blog/commercial-solar-installation-cost-california" },
   openGraph: {
     title: "Commercial solar installation cost in California: quote checklist",

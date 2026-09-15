@@ -7,8 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Solar Panel Bird Proofing: Costs and Methods (2026)",
-  description: "Solar panel bird proofing for California homeowners: typical mesh installation costs, fire zone guidelines, pigeon prevention, and roof protection.",
+  title: "Solar Panel Bird Proofing Cost: $200-$500 in California",
+  description: "Solar panel bird proofing runs $200 to $500 for a typical residential system. Mesh guards are the most effective and common method.",
   alternates: {
     canonical: '/blog/solar-panel-bird-proofing',
   },

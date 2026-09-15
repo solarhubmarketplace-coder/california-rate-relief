@@ -7,8 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Solar Panel Maintenance Cost: What to Expect in 2026",
-  description: "Typical maintenance costs for California residential solar: annual panel cleaning, inverter replacements, monitoring fees, and common repair budgets.",
+  title: "Solar Panel Maintenance Cost in California: $390-$720/Year",
+  description: "California solar maintenance runs $390 to $720 a year, mostly optional cleaning. Cleaning, inspection, and inverter replacement costs broken down.",
   alternates: {
     canonical: '/blog/solar-panel-maintenance-cost',
   },
