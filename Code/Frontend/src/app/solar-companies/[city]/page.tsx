@@ -5,6 +5,7 @@ import { PublicLayout } from "@/components/layout/PublicLayout";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import SavingsCalculator from "@/components/SavingsCalculator";
+import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import {
   CheckCircle2,
   AlertTriangle,
@@ -566,6 +567,13 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
             </p>
             <div className="mb-12">
               <SavingsCalculator />
+            </div>
+
+            <div className="mb-12">
+              <SolarInquiry
+                utility={city.utilityCode}
+                topic={`Solar companies in ${city.name} and quote comparison`}
+              />
             </div>
 
             {/* Local context */}
