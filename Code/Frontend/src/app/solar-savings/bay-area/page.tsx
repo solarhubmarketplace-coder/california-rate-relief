@@ -1,3 +1,4 @@
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -83,7 +84,7 @@ export default function BayAreaSolarPage() {
                 Home
               </Link>
               <span>/</span>
-              <Link href='/#qualify' className='hover:text-foreground'>
+              <Link href='#solar-inquiry' className='hover:text-foreground'>
                 Solar Savings
               </Link>
               <span>/</span>
@@ -219,12 +220,16 @@ export default function BayAreaSolarPage() {
                 See if you qualify for a fixed-rate solar program. Takes 60 seconds, completely free.
               </p>
               <Link
-                href='/#qualify'
+                href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
                 Check My Eligibility
                 <ArrowRight className='h-4 w-4' />
               </Link>
+            </div>
+
+            <div className='mt-8'>
+              <SolarInquiry utility="pge" topic="Bay Area solar savings and quote comparison" />
             </div>
           </div>
         </div>

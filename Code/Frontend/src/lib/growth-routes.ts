@@ -1,4 +1,15 @@
+import { getAllCitySlugs } from '../data/cities-data.ts';
+
 export const GROWTH_ROUTES = [
+  ...getAllCitySlugs().map((city) => `/solar-savings/${city}`),
+  ...[
+    'orange-county',
+    'bay-area',
+    'inland-empire',
+    'central-valley',
+    'los-angeles-county',
+    'san-diego-county',
+  ].map((region) => `/solar-savings/${region}`),
   "/tools/solar-panel-calculator",
   "/best-solar-companies-california",
   "/solar-panels-california",

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import SavingsCalculator from '@/components/SavingsCalculator';
 import { LadwpSavingsGuide, ladwpSavingsTitle, ladwpSavingsDescription } from '@/components/growth/LadwpSavingsGuide';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -554,12 +555,19 @@ export default async function CityPage({ params }: PageProps) {
                 cost, no obligation.
               </p>
               <Link
-                href="/#qualify"
+                href="#solar-inquiry"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
               >
                 Check My Eligibility
                 <ArrowRight className="h-4 w-4" />
               </Link>
+            </div>
+
+            <div className="mt-8">
+              <SolarInquiry
+                utility={city.utilityCode}
+                topic={`${city.name} solar savings and quote comparison`}
+              />
             </div>
 
             {/* Companion route + nearby cities (internal linking) */}

@@ -3,6 +3,8 @@
 import { useState, useMemo } from 'react';
 import { DollarSign, Zap, Sun, TrendingDown, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { intakeHrefForPath } from '@/lib/intake-routing';
 
 // Utility rate data (cents per kWh, as of 2026)
 const UTILITY_DATA: Record<
@@ -59,6 +61,8 @@ export default function SavingsCalculator({
 }: SavingsCalculatorProps) {
   const [monthlyBill, setMonthlyBill] = useState(300);
   const [utility, setUtility] = useState(defaultUtility);
+  const pathname = usePathname();
+  const intakeHref = pathname ? intakeHrefForPath(pathname) : '/#qualify';
 
   const results = useMemo(() => {
     const util = UTILITY_DATA[utility] || UTILITY_DATA.sce;
@@ -247,7 +251,7 @@ export default function SavingsCalculator({
       {/* CTA */}
       <div className="text-center">
         <Link
-          href="/#qualify"
+          href={intakeHref}
           className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
         >
           Check My Eligibility — Free, 60 Seconds
