@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 
 const CALIFORNIA_RESIDENTIAL_CODE_URL =
   'https://codes.iccsafe.org/content/CARC2022P3/chapter-3-building-planning';
@@ -130,6 +131,12 @@ export default function SolarTileRoofCalifornia() {
               heading='Compare the written scope before you decide'
               body='California Rate Relief is a private referral service. You can request a no-obligation solar review of a written quote; provider availability, design and price are determined after review.'
             />
+
+            <div className="mt-8">
+
+              <SolarInquiry topic="Tile roof solar in California" />
+
+            </div>
           </article>
         </div>
       </main>

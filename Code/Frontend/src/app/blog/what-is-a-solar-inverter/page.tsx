@@ -8,6 +8,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
   title: "What Is a Solar Inverter? Types, Brands, and Lifespans",
   description: "A plain-English explanation of solar inverters: the main types, how long they last, which brands are reliable, and warranty realities.",
@@ -85,6 +86,9 @@ export default function WhatIsASolarInverter() {
               </ul>
             </div>
           <ArticleCTA />
+          <div className="mt-8">
+            <SolarInquiry topic="Solar inverter comparison" />
+          </div>
 
           </article>
         </div>

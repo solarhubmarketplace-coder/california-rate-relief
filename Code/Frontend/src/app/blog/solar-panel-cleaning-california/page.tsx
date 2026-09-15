@@ -9,6 +9,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
   title: "Solar Panel Cleaning in California: Cost & DIY Risks",
   description:
@@ -186,6 +187,9 @@ export default function SolarPanelCleaningCA() {
               </ul>
             </div>
           <ArticleCTA />
+          <div className="mt-8">
+            <SolarInquiry topic="California solar maintenance" />
+          </div>
 
           </article>
         </div>

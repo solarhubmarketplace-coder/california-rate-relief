@@ -8,6 +8,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
   title: 'TECH Clean California: Heat Pump Rebate Program Guide (2026)',
   description: "TECH Clean California rebates for heat pump water heaters and HVAC. Eligibility, amounts, how to apply, contractor directory, and how it stacks with solar.",
@@ -96,6 +97,9 @@ export default function TECHCleanCAGuide() {
               </ul>
             </div>
           <ArticleCTA />
+          <div className="mt-8">
+            <SolarInquiry topic="California home electrification" />
+          </div>
 
           </article>
         </div>

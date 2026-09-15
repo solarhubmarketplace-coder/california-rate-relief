@@ -8,6 +8,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
   title: "ADU Solar Requirements in California (2026)",
   description: "Does your California ADU need solar? A plain-English guide to Title 24 solar requirements for ADUs, metering options, and when the requirement is waived.",
@@ -95,6 +96,9 @@ export default function ADUSolarCA() {
               </ul>
             </div>
           <ArticleCTA />
+          <div className="mt-8">
+            <SolarInquiry topic="ADU solar in California" />
+          </div>
 
           </article>
         </div>

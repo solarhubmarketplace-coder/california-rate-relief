@@ -8,6 +8,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
   title: "Why Is My SCE Bill So High? The Real Reasons",
   description: "Why your Southern California Edison bill jumped; TOU plan mismatches, the 4–9 PM peak window, the $24 fixed charge, hidden loads, and what to do.",
@@ -65,6 +66,9 @@ export default function WhyIsMySCEBillSoHigh() {
               </ul>
             </div>
           <ArticleCTA />
+          <div className="mt-8">
+            <SolarInquiry topic="SCE bill review" />
+          </div>
 
           </article>
         </div>

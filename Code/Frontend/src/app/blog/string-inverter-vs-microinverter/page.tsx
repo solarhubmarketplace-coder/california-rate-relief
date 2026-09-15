@@ -8,6 +8,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
   title: "String Inverter vs Microinverter: Which Is Right for You?",
   description: "Head-to-head comparison of string inverter vs microinverter solar systems. Cost, performance under shade, warranty, rapid shutdown, and repairability.",
@@ -89,6 +90,9 @@ export default function StringVsMicro() {
               </ul>
             </div>
           <ArticleCTA />
+          <div className="mt-8">
+            <SolarInquiry topic="Solar inverter comparison" />
+          </div>
 
           </article>
         </div>

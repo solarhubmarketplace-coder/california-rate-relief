@@ -9,6 +9,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
   title: "Solar Pool Heating Cost in California: Is It Worth It?",
   description:
@@ -183,6 +184,9 @@ export default function SolarPoolHeatingCA() {
               </ul>
             </div>
           <ArticleCTA />
+          <div className="mt-8">
+            <SolarInquiry topic="California solar pool heating" />
+          </div>
 
           </article>
         </div>

@@ -1,6 +1,17 @@
 import { getAllCitySlugs } from '../data/cities-data.ts';
 
 export const GROWTH_ROUTES = [
+  '/blog/solar-panels-tile-roof-california',
+  '/blog/why-is-my-sce-bill-so-high',
+  '/blog/adu-solar-requirements-california',
+  '/blog/solar-pool-heating-california',
+  '/blog/sdge-rate-increase-2026',
+  '/blog/how-does-net-metering-work',
+  '/blog/solar-panel-cleaning-california',
+  '/blog/solar-rebates-by-california-utility',
+  '/blog/string-inverter-vs-microinverter',
+  '/blog/tech-clean-california-heat-pump-rebate',
+  '/blog/what-is-a-solar-inverter',
   ...getAllCitySlugs().map((city) => `/solar-savings/${city}`),
   ...[
     'orange-county',

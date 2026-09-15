@@ -8,6 +8,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 export const metadata: Metadata = {
   title: "SDG&E Rate Increase 2026: Highest Rates in America",
   description: "SDG&E's 2026 rate changes explained: why San Diego hit 45.7\u00a2/kWh, the $24 Base Services Charge, and what customers can do.",
@@ -63,6 +64,9 @@ export default function SDGERateIncrease2026() {
               </ul>
             </div>
           <ArticleCTA />
+          <div className="mt-8">
+            <SolarInquiry topic="SDG&E rate review" />
+          </div>
 
           </article>
         </div>
