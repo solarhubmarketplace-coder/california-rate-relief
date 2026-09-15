@@ -1,3 +1,4 @@
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -283,12 +284,16 @@ export default function SolarPPAExplainedCalifornia() {
                 Get a personalized estimate based on your utility rates and monthly bill. Takes 60 seconds, no cost, no obligation.
               </p>
               <Link
-                href='/#qualify'
+                href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
                 Check Your Eligibility
                 <ArrowRight className='h-4 w-4' />
               </Link>
+            </div>
+
+            <div className='mt-8'>
+              <SolarInquiry topic="California solar PPA explanation and options" />
             </div>
 
             {/* Navigation */}

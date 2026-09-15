@@ -114,6 +114,31 @@ export const GROWTH_ROUTES = [
     "sunpower-review",
     "ameco-solar-review",
   ].map((slug) => `/solar-installers/${slug}`),
+  ...[
+    "silfab-solar-panels-review",
+    "rec-solar-panels-review",
+    "trina-solar-panels-review",
+    "canadian-solar-panels-review",
+  ].map((slug) => `/panel-reviews/${slug}`),
+  ...[
+    "rent-solar-panels-for-your-home-california",
+    "how-big-of-a-solar-system-do-i-need-california",
+    "california-24-dollar-fixed-charge-explained",
+    "solar-panel-inspection-california",
+    "solar-ppa-vs-lease-california",
+    "solar-panel-bird-proofing",
+    "what-size-solar-system-do-i-need",
+    "solar-ppa-explained-california",
+    "solar-panel-maintenance-cost",
+    "do-solar-panels-work-at-night-california",
+    "do-solar-panels-work-on-cloudy-days-california",
+    "what-happens-to-solar-panels-after-25-years",
+    "are-solar-panels-a-scam",
+    "solar-panels-for-ev-charging-california",
+    "switch-to-solar-california",
+    "sce-rate-increase-2026",
+    "how-long-do-solar-panels-last",
+  ].map((slug) => `/blog/${slug}`),
 ];
 // Public local-release candidates deliberately bypass dashboard-session middleware.
 // This keeps content review independent of Supabase auth without changing sitemap
