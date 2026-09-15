@@ -2,8 +2,28 @@
 // CALIFORNIA RATE RELIEF — CITY DATA (SINGLE SOURCE OF TRUTH)
 // =============================================================================
 // To add a new city: add one entry to the CITIES array below.
-// To update a utility rate: change it in UTILITY_DATA — all cities in that
-// territory update automatically.
+//
+// To update a utility rate: change it in UTILITY_DATA, AND THEN SWEEP THE PROSE.
+// The old instruction here said all cities in that territory update
+// automatically. They do not. The same figures are also hand-typed as literal
+// strings inside the per-city text fields, where nothing interpolates them.
+// Counted on 15 September 2026 in this file: "34.5 cents per kWh" 21 times,
+// "27 cents per kWh" 17, "24.15" 30, "41.5¢" 32, "45.7¢" 20, "41.46¢" 14.
+// So a rate refresh is a 12-entry edit plus roughly 134 string replacements
+// across 78 city entries. Budget for that, or the file goes stale again — this
+// is the fourth time staleness has been logged as an open defect, and the wrong
+// instruction above is the reason the job keeps getting under-scoped.
+//
+// Known data issues, recorded 15 September 2026:
+//   - Pasadena carries utilityCode 'gwp' (Glendale Water & Power) and its own
+//     copy concedes those rates are a proxy. There is no UTILITY_DATA entry for
+//     the utility that serves it, so this needs sourced data, not a key change.
+//   - SMUD contradicts itself: ratePerKwh is 0.19 while its own
+//     rateIncreaseHistory text says "roughly 16-22¢/kWh".
+//   - An earlier defect list recorded Roseville as showing Redding's rates.
+//     That looks wrong: 'reu' is Roseville Electric Utility, Roseville is in
+//     Placer County, and "Redding" appears nowhere in this file. Probably an
+//     abbreviation collision. Verify before acting on it either way.
 //
 // IMPORTANT: All rate data, bill amounts, and savings projections MUST be
 // verified through Gronk before deploying. Do NOT use Claude's training data.
