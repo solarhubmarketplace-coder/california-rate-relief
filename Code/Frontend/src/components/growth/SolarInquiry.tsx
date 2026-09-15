@@ -45,6 +45,38 @@ export function SolarInquiry({
   const [pending, setPending] = useState(false);
   const attempt = useRef<{ id: string; payload: IntakePayload } | null>(null);
   const inFlight = useRef(false);
+
+  // Funnel instrumentation. This component previously emitted generate_lead and
+  // nothing else, so the 73% of organic clicks that land on a page carrying this
+  // form had no measurable drop-off: a page could earn clicks and produce no
+  // signal at all between "arrived" and "submitted". form_view is the denominator,
+  // form_start the first interaction, and the two failure events separate
+  // "wrong input" from "the request failed".
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const viewedRef = useRef(false);
+  const startedRef = useRef(false);
+  const contextRef = useRef<Record<string, string>>({});
+  contextRef.current = {
+    form_kind: 'solar_inquiry',
+    inquiry_topic: topic,
+    service_market: serviceMarket || 'unset',
+  };
+  const funnelContext = () => contextRef.current;
+  const markViewed = () => {
+    if (viewedRef.current) return;
+    viewedRef.current = true;
+    trackEvent('form_view', funnelContext());
+  };
+  const markStarted = () => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    // Interacting implies having seen it. Emitting the view first keeps
+    // view >= start in the reported funnel even where IntersectionObserver
+    // never fires (it needs a painted frame, so headless and background tabs
+    // report nothing at all).
+    markViewed();
+    trackEvent('form_start', funnelContext());
+  };
   useEffect(() => {
     captureFirstTouch();
     const context = readCalculatorContext();
@@ -110,9 +142,37 @@ export function SolarInquiry({
     }
     return () => window.removeEventListener('crr-calculator-context', update);
   }, []);
+
+  // form_view — fires once the form actually enters the viewport, so "never
+  // scrolled this far" stays distinguishable from "saw it and left".
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting || viewedRef.current) continue;
+          // Refs and a module import only, so this effect stays dependency-free
+          // and the observer is never torn down and rebuilt on a re-render.
+          viewedRef.current = true;
+          trackEvent('form_view', contextRef.current);
+          observer.disconnect();
+        }
+      },
+      // threshold 0, not a fraction: this section runs ~2,700px tall, so on a
+      // phone viewport no meaningful fraction of it is ever on screen at once
+      // and a fractional threshold would never fire. Any pixel visible counts
+      // as "the visitor reached the form".
+      { threshold: 0 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (inFlight.current) return;
+    markStarted();
     if (
       !attempt.current &&
       (!serviceMarket || !isFiveDigitZip(inputs.zip) || Number(inputs.monthlyBill) <= 0)
@@ -120,11 +180,20 @@ export function SolarInquiry({
       setError(
         'Select the project market, enter a 5-digit ZIP, and enter a monthly electricity bill above zero.',
       );
+      trackEvent('form_validation_error', {
+        ...funnelContext(),
+        reason: !serviceMarket
+          ? 'service_market'
+          : !isFiveDigitZip(inputs.zip)
+            ? 'zip'
+            : 'bill_amount',
+      });
       return;
     }
     inFlight.current = true;
     setBusy(true);
     setError('');
+    trackEvent('form_submit_attempt', funnelContext());
     try {
       const optional = (value?: string) =>
         value?.trim() ? Number(value) : undefined;
@@ -180,6 +249,7 @@ export function SolarInquiry({
       setSaved(result.data.submission_id);
       if (!result.data.duplicate)
         trackEvent('generate_lead', {
+          ...funnelContext(),
           segment: 'residential',
           landing_page:
             attempt.current.payload.attribution.landing_page || 'unknown',
@@ -203,6 +273,13 @@ export function SolarInquiry({
         }
       }
       setPending(Boolean(attempt.current));
+      trackEvent('form_submit_error', {
+        ...funnelContext(),
+        status_code: String(
+          (cause as { statusCode?: number })?.statusCode ?? 0,
+        ),
+        retained_attempt: attempt.current ? 'yes' : 'no',
+      });
       setError(
         cause instanceof Error
           ? cause.message
@@ -215,6 +292,7 @@ export function SolarInquiry({
   };
   return (
     <section
+      ref={sectionRef}
       id="solar-inquiry"
       className="my-10 scroll-mt-24 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 md:p-8"
     >
@@ -236,7 +314,11 @@ export function SolarInquiry({
           </p>
         </div>
       ) : (
-        <form onSubmit={submit} className="mt-6 space-y-4">
+        <form
+          onSubmit={submit}
+          onFocusCapture={markStarted}
+          className="mt-6 space-y-4"
+        >
           {pending && (
             <p role="status" className="rounded-lg bg-amber-50 p-3 text-sm">
               A submission is awaiting confirmation. Retry sends the same saved

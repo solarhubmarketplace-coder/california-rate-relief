@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { calculateSolarScenario } from '@/lib/solar-savings-engine';
 import {
   saveCalculatorContext,
@@ -8,6 +8,7 @@ import {
   type CalculatorContext,
 } from '@/lib/calculator-context';
 import { isCaliforniaZip } from '@/lib/ca-utility-by-zip';
+import { trackEvent } from '@/components/GoogleAnalyticsClient';
 const money = (n: number) =>
   new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -33,6 +34,16 @@ export function SolarCalculator({ utility = '' }: { utility?: string }) {
     const saved = readCalculatorContext();
     if (saved) setValues(saved);
   }, []);
+
+  // The calculator is the step before the inquiry form and emitted no events at
+  // all, so a visitor who ran the numbers and left looked identical to one who
+  // never scrolled to it.
+  const startedRef = useRef(false);
+  const markStarted = () => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    trackEvent('calculator_start', { form_kind: 'solar_calculator' });
+  };
   const inputClass =
     'mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-slate-900';
   const fields: [keyof CalculatorContext, string, boolean][] = [
@@ -59,15 +70,22 @@ export function SolarCalculator({ utility = '' }: { utility?: string }) {
       </p>
       <form
         className="mt-5 grid gap-4 md:grid-cols-2"
+        onFocusCapture={markStarted}
         onSubmit={(e) => {
           e.preventDefault();
+          markStarted();
           setError('');
           setResult(null);
           try {
-            if (!isCaliforniaZip(values.zip))
+            if (!isCaliforniaZip(values.zip)) {
+              trackEvent('calculator_error', {
+                form_kind: 'solar_calculator',
+                reason: 'non_california_zip',
+              });
               throw new Error(
                 'Enter a California ZIP. Your bill confirms the utility; ZIP alone does not.',
               );
+            }
             const n = (value?: string) =>
               value?.trim() ? Number(value) : undefined;
             const next = calculateSolarScenario({
@@ -80,6 +98,10 @@ export function SolarCalculator({ utility = '' }: { utility?: string }) {
             });
             setResult(next);
             saveCalculatorContext(values);
+            trackEvent('calculator_complete', {
+              form_kind: 'solar_calculator',
+              has_quote: values.solarPrice?.trim() ? 'yes' : 'no',
+            });
           } catch (cause) {
             setError(
               cause instanceof Error ? cause.message : 'Check your inputs.',
