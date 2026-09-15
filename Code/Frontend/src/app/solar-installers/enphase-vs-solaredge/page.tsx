@@ -1,3 +1,4 @@
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -104,6 +105,9 @@ export default function EnphaseVsSolarEdge() {
                 <li><Link href="/blog/what-is-a-solar-inverter" className="text-primary underline">What Is a Solar Inverter?</Link></li>
                 <li><Link href="/blog/solar-battery-backup-california" className="text-primary underline">Solar Battery Backup in California</Link></li>
               </ul>
+            <div className="mt-8">
+              <SolarInquiry topic="Enphase vs SolarEdge comparison" />
+            </div>
             </div>
           </article>
         </div>

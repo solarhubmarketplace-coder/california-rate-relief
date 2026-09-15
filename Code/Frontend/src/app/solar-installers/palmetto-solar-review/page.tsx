@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-re
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 
 export const metadata: Metadata = {
   title: "Palmetto Solar Review 2026: Honest Assessment",
@@ -162,9 +163,13 @@ export default function PalmettoReview() {
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Palmetto Against Two California Alternatives.</h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three installers. So you can compare their pricing, equipment, and warranty terms side by side.</p>
               <div className='flex justify-center'>
-                <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+                <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
               </div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
+            </div>
+
+            <div className='mt-8'>
+              <SolarInquiry topic="Palmetto Solar review and quote comparison" />
             </div>
 
             <div className='mt-10 pt-8 border-t border-border'>

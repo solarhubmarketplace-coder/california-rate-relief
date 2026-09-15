@@ -1,3 +1,4 @@
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -447,7 +448,7 @@ export default function TrinitySolarReview() {
               </p>
               <div className='flex justify-center'>
                 <Link
-                  href='/#qualify'
+                  href='#solar-inquiry'
                   className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
                 >
                   Get My 3 Quotes
@@ -457,6 +458,10 @@ export default function TrinitySolarReview() {
               <p className='text-xs text-muted-foreground text-center mt-4'>
                 Free. No obligation. No impact on your credit score.
               </p>
+            </div>
+
+            <div className='mt-8'>
+              <SolarInquiry topic="Trinity Solar review and quote comparison" />
             </div>
 
             {/* Related */}

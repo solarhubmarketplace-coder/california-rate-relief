@@ -1,3 +1,4 @@
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -150,9 +151,13 @@ export default function TeslaSolarReview() {
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Considering Tesla Solar? Compare Real Pricing.</h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll bring you quotes from up to three installers — including Tesla Solar — so you can compare real pricing, equipment, and warranty terms side by side.</p>
               <div className='flex justify-center'>
-                <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+                <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
               </div>
               <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
+            </div>
+
+            <div className='mt-8'>
+              <SolarInquiry topic="Tesla Solar review and quote comparison" />
             </div>
 
             <div className='mt-10 pt-8 border-t border-border'>

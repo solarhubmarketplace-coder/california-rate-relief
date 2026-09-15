@@ -1,3 +1,4 @@
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -75,6 +76,9 @@ export default function SunrunVsSunPower() {
                 <li><Link href="/solar-installers/sunpower-review" className="text-primary underline">Full SunPower Review</Link></li>
                 <li><Link href="/solar-installers/sunnova-vs-sunrun" className="text-primary underline">Sunnova vs Sunrun</Link></li>
               </ul>
+            <div className="mt-8">
+              <SolarInquiry topic="Sunrun vs SunPower comparison" />
+            </div>
             </div>
           </article>
         </div>
