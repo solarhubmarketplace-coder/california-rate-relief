@@ -342,6 +342,11 @@ export async function middleware(request: NextRequest) {
     },
   });
 
+  // Bypass Supabase session check when credentials are not configured or on local preview
+  if (isLocalPreview || !process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    return response;
+  }
+
   // Create Supabase client for server-side
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
