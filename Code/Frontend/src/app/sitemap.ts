@@ -149,6 +149,10 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'solar-panel-removal-reinstall-cost', 'solar-powered-ev-charger',
     'solar-ppa-explained-california', 'solar-ppa-vs-lease-california',
     'solar-tax-credit-2026',
+    // claude/ca-financing-20260918 — Tier A financing-decision cluster
+    'is-it-better-to-buy-or-lease-solar-panels-california',
+    'how-much-does-it-cost-to-lease-solar-panels-california',
+    'zero-down-solar-california',
   ];
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
     url: `${base}/blog/${slug}`,

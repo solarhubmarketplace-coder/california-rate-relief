@@ -166,6 +166,9 @@ export default function SolarLeaseHomeSaleCA() {
           { href: "/solar-problems/true-up-bill-california-explained", label: "How a mid-year true-up is settled at closing" },
           { href: "/blog/solar-ppa-vs-lease-california", label: "Whether the agreement is a lease or a PPA" },
           { href: "/blog/what-happens-if-stop-paying-solar-lease-california", label: "What default does to the transfer" },
+          // claude/ca-financing-20260918
+          { href: "/blog/is-it-better-to-buy-or-lease-solar-panels-california", label: "Whether buying or leasing fits the next house" },
+          { href: "/blog/how-much-does-it-cost-to-lease-solar-panels-california", label: "What determines a lease or PPA payment in the first place" },
         ]}
       />
     </DecisionPage>
