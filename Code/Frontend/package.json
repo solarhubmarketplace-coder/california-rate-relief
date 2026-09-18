@@ -14,7 +14,9 @@
     "test:growth": "node --experimental-strip-types --test src/lib/solar-savings-engine.test.ts src/lib/growth-report.test.ts src/lib/attribution.test.ts src/lib/intake.test.ts src/lib/intake-routing.test.ts src/lib/bill-comparison.test.ts src/lib/solar-financing-comparison.test.ts src/lib/service-market.test.ts",
     "review:growth": "node --experimental-strip-types scripts/review-growth.mjs",
     "test:growth-browser": "node --experimental-strip-types scripts/test-growth-browser.mjs",
-    "test:receipt-panel": "node --experimental-strip-types scripts/test-receipt-panel.mjs"
+    "test:receipt-panel": "node --experimental-strip-types scripts/test-receipt-panel.mjs",
+    "indexnow": "node scripts/indexnow-direct.mjs --submit",
+    "indexnow:dry": "node scripts/indexnow-direct.mjs"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.19",
