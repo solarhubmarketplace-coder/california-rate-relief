@@ -92,6 +92,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     { url: `${base}/tools/solar-panel-calculator`, lastModified: new Date('2026-09-10T00:00:00.000Z'), changeFrequency:'monthly',priority:0.8 },
     { url: base, lastModified: urlMtime('', today), changeFrequency: 'weekly', priority: 1.0 },
     { url: `${base}/blog`, lastModified: urlMtime('/blog', today), changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/california-utility-rate-tracker`, lastModified: new Date('2026-09-18T00:00:00.000Z'), changeFrequency: 'monthly', priority: 0.8 }, // claude/ca-ratetracker-20260918
     { url: `${base}/best-solar-companies-california`, lastModified: urlMtime('/best-solar-companies-california', today), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/solar-panels-california`, lastModified: urlMtime('/solar-panels-california', today), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/solar-problems/solar-homeowners-insurance`, lastModified: urlMtime('/solar-problems/solar-homeowners-insurance', today), changeFrequency: 'monthly', priority: 0.8 },

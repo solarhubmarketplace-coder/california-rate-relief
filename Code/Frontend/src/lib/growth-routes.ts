@@ -84,6 +84,7 @@ export const GROWTH_ROUTES = [
   "/battery/sgip-battery-rebate-california",
   "/battery/home-battery-cost-california",
   "/blog/pge-vs-sce-vs-sdge-rates-compared",
+  "/california-utility-rate-tracker", // claude/ca-ratetracker-20260918
   "/blog/why-is-my-pge-bill-so-high",
   "/blog/why-is-my-california-electric-bill-so-high",
   "/blog/how-to-lower-electric-bill-california",
