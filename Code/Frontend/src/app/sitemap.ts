@@ -166,6 +166,10 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'does-solar-increase-home-value-california',
     'do-solar-panels-increase-property-taxes-california',
     'can-you-cancel-solar-panel-contract-before-installation-california',
+    // claude/ca-financing-20260918 — Tier A financing-decision cluster
+    'is-it-better-to-buy-or-lease-solar-panels-california',
+    'how-much-does-it-cost-to-lease-solar-panels-california',
+    'zero-down-solar-california',
   ];
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
     url: `${base}/blog/${slug}`,

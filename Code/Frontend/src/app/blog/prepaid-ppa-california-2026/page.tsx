@@ -162,6 +162,9 @@ export default function PrepaidPpaCalifornia2026() {
           { href: "/solar-problems/solar-dealer-fees-explained", label: "Where the fee sits inside the price" },
           { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
           { href: "/blog/what-happens-to-solar-lease-when-i-sell-california", label: "What happens to the agreement if the home is sold" },
+          // claude/ca-financing-20260918
+          { href: "/blog/is-it-better-to-buy-or-lease-solar-panels-california", label: "Buying versus a third-party structure in 2026" },
+          { href: "/blog/how-much-does-it-cost-to-lease-solar-panels-california", label: "What determines a lease or PPA payment" },
         ]}
       />
     </DecisionPage>

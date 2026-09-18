@@ -113,6 +113,9 @@ export default function RentSolarPanels() {
                 { href: "/solar-problems/solar-escalator-clause-explained", label: "What an annual escalator does to the later years" },
                 { href: "/solar-problems/ucc-1-lien-solar-california", label: "UCC-1 liens and what they attach to" },
                 { href: "/solar-problems/solar-dealer-fees-explained", label: "How a dealer fee pays for a low headline rate" },
+                // claude/ca-financing-20260918
+                { href: "/blog/how-much-does-it-cost-to-lease-solar-panels-california", label: "What determines a lease or PPA payment" },
+                { href: "/blog/zero-down-solar-california", label: "What a no-down-payment offer does and does not tell you" },
               ]}
             />
           </article>

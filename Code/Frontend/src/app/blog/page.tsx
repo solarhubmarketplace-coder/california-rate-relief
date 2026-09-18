@@ -319,6 +319,34 @@ const blogPosts = [
     readTime: '6 min read',
     category: 'Solar Longevity',
   },
+  // claude/ca-financing-20260918 — Tier A financing-decision cluster
+  {
+    slug: 'is-it-better-to-buy-or-lease-solar-panels-california',
+    title: 'Is It Better to Buy or Lease Solar Panels in California?',
+    excerpt:
+      'The federal residential credit no longer applies to expenditures made after 31 December 2025, and the statute dates the expenditure to completion of installation. What that changes about the comparison, and what it leaves alone.',
+    date: '2026-09-18',
+    readTime: '11 min read',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'how-much-does-it-cost-to-lease-solar-panels-california',
+    title: 'How Much Does It Cost to Lease Solar Panels in California?',
+    excerpt:
+      'No two lease quotes are built the same way. What determines the payment, which contract terms move it, and the disclosure document California requires to carry the total.',
+    date: '2026-09-18',
+    readTime: '10 min read',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'zero-down-solar-california',
+    title: 'What Does $0 Down Solar Mean in California?',
+    excerpt:
+      'A no-down-payment offer is a statement about the first payment, not the total. Where the cost actually sits in a loan, a lease and a PPA, and what California already caps.',
+    date: '2026-09-18',
+    readTime: '8 min read',
+    category: 'Solar Financing',
+  },
 ];
 
 /**
