@@ -6,6 +6,7 @@ import { getAllCitySlugs } from '@/data/cities-data';
 import { ARTICLE_PAGES, articleHref, articlesInCluster } from '@/data/article-pages';
 import { GLP1_INDEX_ROUTES } from '@/lib/glp1-seo-routes';
 import { GROWTH_ROUTES, LOCAL_RELEASE_REVIEW_ROUTES } from '@/lib/growth-routes';
+import { getPublishableCityCostRows } from '@/data/city-cost-data';
 import { isRedirectedPath } from '@/lib/canonical-redirects';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
@@ -291,10 +292,21 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
       priority: 0.9,
     }));
 
+  // claude/ca-citycost-20260918 — /solar-cost/[city]. Built from the same gate
+  // the route's generateStaticParams uses, so a city with an unsourced permit
+  // or utility field is not advertised here. lastModified is the row's own
+  // sourcesFetchedAt rather than a run date: the gate guarantees it is real.
+  const cityCostPages: MetadataRoute.Sitemap = getPublishableCityCostRows().map((row) => ({
+    url: `${base}/solar-cost/${row.slug}`,
+    lastModified: new Date(`${row.sourcesFetchedAt}T00:00:00.000Z`),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   return [
     ...staticPages, ...blogPages, ...installerPages, ...panelPages,
     ...commercialPages, ...stateDecisionPages, ...regionalPages, ...citySavingsPages, ...cityCompaniesPages,
-    ...articlePages, ...articleHubs,
+    ...articlePages, ...articleHubs, ...cityCostPages,
   ]
     // One-per-intent canonicalisation (Phase 3, 2026-09-17): a URL that now
     // answers with a 301 must not be advertised in the sitemap. The table is

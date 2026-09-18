@@ -7,6 +7,19 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { IntentCTA } from '@/components/growth/IntentCTA';
 import { Calendar, Clock } from 'lucide-react';
+import {
+  Q2_2026_URL,
+  Q1_2026_URL,
+  Q4_2025_URL,
+  Q3_2025_URL,
+  Q2_2025_URL,
+  DECISION_24_05_028_URL,
+  SMUD_SCHEDULE_R_URL,
+  LADWP_STALE_PDF_URL,
+  PAO_REPORTS_INDEX_URL,
+  formatAverageRateWithPerKwh,
+  getUtilityRate,
+} from '@/data/utility-rate-tracker';
 
 // =============================================================================
 // California Utility Rate Tracker — /california-utility-rate-tracker
@@ -49,24 +62,10 @@ export const metadata: Metadata = {
 const sourceLink =
   'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
 
-const Q2_2026_URL =
-  'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf';
-const Q1_2026_URL =
-  'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260430-public-advocates-office-q1-2026-electric-rates-report.pdf';
-const Q4_2025_URL =
-  'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260210-public-advocates-office-q4-2025-rates-report.pdf';
-const Q3_2025_URL =
-  'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/251106-public-advocates-office-q3-2025-rates-report.pdf';
-const Q2_2025_URL =
-  'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/250827-public-advocates-office-q2-2025-rates-report.pdf';
-const DECISION_24_05_028_URL =
-  'https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M531/K686/531686019.PDF';
-const SMUD_SCHEDULE_R_URL =
-  'https://www.smud.org/-/media/Documents/Rate-Information/Rates/1-R.ashx';
-const LADWP_STALE_PDF_URL =
-  'https://www.ladwp.com/sites/default/files/documents/LADWP_Electric_Rates.pdf';
-const PAO_REPORTS_INDEX_URL =
-  'https://www.publicadvocates.cpuc.ca.gov/press-room/reports-and-analyses';
+// Every rate figure, source URL and fetched date on this page now lives in
+// src/data/utility-rate-tracker.ts so that any other page needing "the current
+// average residential rate" imports it instead of re-typing it.
+// See CALIFORNIA_STRATEGY_OF_RECORD_2026-09-17.md §7.2-§7.3.
 
 const datasetJsonLd = {
   '@context': 'https://schema.org',
@@ -193,7 +192,7 @@ export default function CaliforniaUtilityRateTrackerPage() {
                   <tbody>
                     <tr className='border-b border-border align-top'>
                       <td className='py-3 pr-3 font-semibold'>PG&amp;E</td>
-                      <td className='py-3 px-3'>33.7&cent;/kWh ($0.337)</td>
+                      <td className='py-3 px-3'>{formatAverageRateWithPerKwh(getUtilityRate('pge'))}</td>
                       <td className='py-3 px-3'>June 2026 (unchanged since Mar 2026)</td>
                       <td className='py-3 px-3'>RAR decrease &asymp;3.7% vs. Jan 1, 2026 rates &mdash; driven by the end of 2021 Wildfire Mitigation &amp; Catastrophic Events (WMCE) and 2023 WMCE Interim Rate Relief recovery, and the start of the income-graduated Base Services Charge (&minus;6.8% for CARE customers)</td>
                       <td className='py-3 px-3'>March 1, 2026 (Advice Letter 7846-E); no change filed for Q2 2026</td>
@@ -204,7 +203,7 @@ export default function CaliforniaUtilityRateTrackerPage() {
                     </tr>
                     <tr className='border-b border-border align-top'>
                       <td className='py-3 pr-3 font-semibold'>SCE</td>
-                      <td className='py-3 px-3'>34.4&cent;/kWh ($0.344)</td>
+                      <td className='py-3 px-3'>{formatAverageRateWithPerKwh(getUtilityRate('sce'))}</td>
                       <td className='py-3 px-3'>June 1, 2026</td>
                       <td className='py-3 px-3'>RAR decrease &asymp;0.1% vs. Jan 1, 2026 rates &mdash; 2026 wildfire self-insurance revenue requirement true-up, energy-efficiency program true-up, 2023 ERRA review decrease</td>
                       <td className='py-3 px-3'>June 1, 2026 (Advice Letter 5829-E)</td>
@@ -215,7 +214,7 @@ export default function CaliforniaUtilityRateTrackerPage() {
                     </tr>
                     <tr className='border-b border-border align-top'>
                       <td className='py-3 pr-3 font-semibold'>SDG&amp;E</td>
-                      <td className='py-3 px-3'>45.5&cent;/kWh ($0.455)</td>
+                      <td className='py-3 px-3'>{formatAverageRateWithPerKwh(getUtilityRate('sdge'))}</td>
                       <td className='py-3 px-3'>June 1, 2026</td>
                       <td className='py-3 px-3'>RAR decrease &asymp;2.0% vs. April 1, 2026 rates &mdash; FERC-ordered reduction in Base Transmission Revenue Requirement (&asymp;$112.2M)</td>
                       <td className='py-3 px-3'>June 1, 2026 (Advice Letter 4843-E)</td>
