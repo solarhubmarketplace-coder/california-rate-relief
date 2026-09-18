@@ -144,6 +144,10 @@ export const GROWTH_ROUTES = [
     "switch-to-solar-california",
     "sce-rate-increase-2026",
     "how-long-do-solar-panels-last",
+    // claude/ca-green-20260918
+    "does-solar-increase-home-value-california",
+    "do-solar-panels-increase-property-taxes-california",
+    "can-you-cancel-solar-panel-contract-before-installation-california",
   ].map((slug) => `/blog/${slug}`),
 ];
 // Public local-release candidates deliberately bypass dashboard-session middleware.
