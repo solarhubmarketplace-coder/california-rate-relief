@@ -1,4 +1,5 @@
 import { getAllCitySlugs } from '../data/cities-data.ts';
+import { getPublishableCityCostSlugs } from '../data/city-cost-data.ts';
 
 export const GROWTH_ROUTES = [
   '/blog/free-roof-replacement-with-solar-panels-california',
@@ -85,6 +86,10 @@ export const GROWTH_ROUTES = [
   "/battery/home-battery-cost-california",
   "/blog/pge-vs-sce-vs-sdge-rates-compared",
   "/california-utility-rate-tracker", // claude/ca-ratetracker-20260918
+  // claude/ca-citycost-20260918 — /solar-cost/[city]. Derived from the gate in
+  // city-cost-data.ts, so a city whose permit or utility fields are still TODO
+  // is absent here exactly as it is absent from generateStaticParams.
+  ...getPublishableCityCostSlugs().map((city) => `/solar-cost/${city}`),
   "/blog/why-is-my-pge-bill-so-high",
   "/blog/why-is-my-california-electric-bill-so-high",
   "/blog/how-to-lower-electric-bill-california",
