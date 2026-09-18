@@ -16,6 +16,34 @@ export const metadata: Metadata = {
 
 // Blog post data. Add new posts here
 const blogPosts = [
+  // claude/ca-green-20260918
+  {
+    slug: 'can-you-cancel-solar-panel-contract-before-installation-california',
+    title: 'Can You Cancel a Solar Contract Before Installation in California?',
+    excerpt:
+      'California gives at least three business days to cancel a home-solicited solar contract, five if you are 65 or older. What the statutes say and how to do it.',
+    date: '2026-09-17',
+    readTime: '12 min read',
+    category: 'California Solar Rights',
+  },
+  {
+    slug: 'do-solar-panels-increase-property-taxes-california',
+    title: 'Do Solar Panels Increase Property Taxes in California?',
+    excerpt:
+      'California law excludes a qualifying active solar energy system from new-construction reassessment. What that covers, what it does not, and when it ends.',
+    date: '2026-09-17',
+    readTime: '10 min read',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'does-solar-increase-home-value-california',
+    title: 'Does Solar Increase Home Value in California?',
+    excerpt:
+      'California excludes an active solar system from new-construction reassessment until the home sells. Here is what the statute and the sale research actually say.',
+    date: '2026-09-17',
+    readTime: '9 min read',
+    category: 'Solar Decision',
+  },
   {
     slug: 'sce-time-of-use-rates-2026',
     title: 'SCE Time-of-Use Rates: Peak Hours and Plan Choice',

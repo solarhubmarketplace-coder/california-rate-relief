@@ -27,10 +27,21 @@ const CRR_UPDATED_PAGES = new Set([
   '/blog', '/blog/pge-time-of-use-rates-2026',
   '/blog/pge-vs-sce-vs-sdge-rates-compared', '/blog/why-is-my-pge-bill-so-high',
 ]);
+// claude/ca-green-20260918 — three new sourced pages and two sourced refreshes,
+// all verified 2026-09-17. Checked ahead of the GROWTH_ROUTES branch so the two
+// refreshed routes are not stamped with the older 2026-09-10 growth date.
+const CRR_GREEN_20260918 = new Set([
+  '/blog/does-solar-increase-home-value-california',
+  '/blog/do-solar-panels-increase-property-taxes-california',
+  '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
+  '/blog/free-solar-panels-california',
+  '/blog/solar-ppa-vs-lease-california',
+]);
 const LOCAL_RELEASE_REVIEW_ROUTE_SET = new Set<string>(LOCAL_RELEASE_REVIEW_ROUTES);
 
 function fileMtime(_relPath: string, _fallback: Date): Date {
   const route = _relPath.replace(/^src\/app/, '').replace(/\/page\.[tj]sx?$/, '');
+  if (CRR_GREEN_20260918.has(route)) return new Date('2026-09-17T00:00:00.000Z'); // claude/ca-green-20260918
   if (LOCAL_RELEASE_REVIEW_ROUTE_SET.has(route)) return new Date('2026-09-12T00:00:00.000Z');
   if (GROWTH_ROUTES.includes(route) || route === '/blog/why-is-my-pge-bill-so-high') return new Date('2026-09-10T00:00:00.000Z');
   if (CRR_UPDATED_PAGES.has(route)) return new Date('2026-09-09T00:00:00.000Z');
@@ -47,6 +58,7 @@ function reviewMtime(slug: string, fallback: Date): Date {
  * runtime filesystem I/O.
  */
 function urlMtime(_urlPath: string, _fallback: Date): Date {
+  if (CRR_GREEN_20260918.has(_urlPath)) return new Date('2026-09-17T00:00:00.000Z'); // claude/ca-green-20260918
   if (LOCAL_RELEASE_REVIEW_ROUTE_SET.has(_urlPath)) return new Date('2026-09-12T00:00:00.000Z');
   if (GROWTH_ROUTES.includes(_urlPath) || _urlPath === '/blog/why-is-my-pge-bill-so-high') return new Date('2026-09-10T00:00:00.000Z');
   if (CRR_UPDATED_PAGES.has(_urlPath)) return new Date('2026-09-09T00:00:00.000Z');
@@ -150,6 +162,10 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'solar-panel-removal-reinstall-cost', 'solar-powered-ev-charger',
     'solar-ppa-explained-california', 'solar-ppa-vs-lease-california',
     'solar-tax-credit-2026',
+    // claude/ca-green-20260918
+    'does-solar-increase-home-value-california',
+    'do-solar-panels-increase-property-taxes-california',
+    'can-you-cancel-solar-panel-contract-before-installation-california',
   ];
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
     url: `${base}/blog/${slug}`,
