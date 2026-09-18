@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { calculateSolarFinancingComparison } from '@/lib/solar-financing-comparison';
+import { ToolReportRequest } from './ToolReportRequest';
 
 type FinancingValues = {
   horizonMonths: string;
@@ -256,6 +257,15 @@ export function SolarFinancingComparison() {
             These totals exclude utility bills, maintenance, equipment replacement, tax treatment, transfer or buyout terms, and resale. They do not establish savings or identify a best option.
           </p>
         </div>
+      )}
+      {/* Optional and result-gated only: every number above is produced without
+          contact details and stays that way. */}
+      {result && (
+        <ToolReportRequest
+          sourceTool="financing_comparison"
+          variant="decision"
+          topic="Cash, loan, lease and PPA comparison"
+        />
       )}
     </section>
   );

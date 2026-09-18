@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { calculateBillComparison } from '@/lib/bill-comparison';
+import { ToolReportRequest } from './ToolReportRequest';
 
 type BillValues = {
   currentBillingDays: string;
@@ -210,6 +211,16 @@ export function BillComparison({ utilityName = 'PG&E' }: { utilityName?: string 
             the difference between bills.
           </p>
         </div>
+      )}
+      {/* The comparison above is complete without contact details. This optional
+          block is the only place the tool asks for any, and it is only rendered
+          once a result exists. */}
+      {result && (
+        <ToolReportRequest
+          sourceTool="bill_comparison"
+          variant="bill"
+          topic={`${utilityName} two-bill comparison`}
+        />
       )}
     </section>
   );

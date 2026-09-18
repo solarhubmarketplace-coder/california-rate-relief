@@ -74,6 +74,19 @@ function normalizeUtility(value, allowOtherLabel = false) {
   return allowOtherLabel ? { canonical: 'Other', other: raw } : null;
 }
 
+const ROOF_AGE_BANDS = new Set(['under_5', '5_10', '11_20', 'over_20', 'unsure']);
+
+function normalizeRoofAge(value) {
+  const key = String(value == null ? '' : value).trim().toLowerCase();
+  return ROOF_AGE_BANDS.has(key) ? key : null;
+}
+
+/** Which on-page calculator a submission came from, e.g. 'bill_comparison'. */
+function sourceToolTag(value) {
+  const raw = text(value, 60);
+  return raw && /^[a-z0-9_]{1,60}$/.test(raw) ? raw : null;
+}
+
 function normalizeCredit(value) {
   const key = String(value || '').trim().toLowerCase();
   return ({ yes: 'above_650', above_650: 'above_650', no: 'below_650', below_650: 'below_650', unsure: 'unsure' })[key] || null;
@@ -104,12 +117,18 @@ function validate(body) {
   // utility_provider and never replaces it: the visitor's answer and the seed
   // table's answer must both survive so a mismatch is a reviewable signal.
   const location = ['city', 'zip', 'service_zip', 'county', 'service_market', 'territory_resolution', 'derived_utility', 'derived_cca', 'derived_county', 'derived_from', 'derived_utility_matches_selection'];
+  // roof_age, source_tool: added 17 Sep 2026 with the two-step intake. Both are
+  // optional and nullable-safe by construction — qualification_data is stored as
+  // JSONB by the ingest function, so these keys land in storage whether or not
+  // migration 011 (which promotes them to columns) has been applied. Nothing
+  // downstream requires them, so an unmigrated database is unaffected.
   const residential = ['utility_provider', 'bill_amount', 'monthly_bill_range', 'credit_score', 'homeowner',
+    'roof_age', 'source_tool',
     'utility_provider_other',
     'calculator_version', 'calculator_monthly_bill', 'calculator_annual_kwh', 'calculator_system_kw', 'calculator_cash_price',
     'calculator_annual_bill_after', 'calculator_annual_difference', 'calculator_simple_payback',
     'calculator_solar_only_price', 'calculator_battery_price', 'inquiry_topic', 'inquiry_question', ...location];
-  const commercial = ['company_name', 'property_type', 'property_control', 'location', 'utility_provider', 'utility_provider_other', 'bill_amount', 'monthly_bill_range', 'demand_indicator', 'project_timeline', ...location];
+  const commercial = ['company_name', 'property_type', 'property_control', 'location', 'utility_provider', 'utility_provider_other', 'bill_amount', 'monthly_bill_range', 'demand_indicator', 'project_timeline', 'source_tool', ...location];
   const qualification = cleanObject(body.qualification_data, segment === 'residential' ? residential : commercial, 200);
   // `service_zip` is canonical; `zip` is accepted as an alias and folded into it.
   // Whatever the visitor typed is kept even when it is malformed or out of state
@@ -126,6 +145,17 @@ function validate(body) {
       : 'visitor_selected_zip_unverified';
   }
   if (segment === 'residential' && typeof qualification.homeowner !== 'boolean') return { error: 'qualification_data.homeowner is required for residential intake' };
+  // Closed vocabularies. An unrecognised or blank answer is dropped rather than
+  // rejected: the roof-age band and the tool marker are both optional, and a
+  // stale client must never lose a lead over an optional field.
+  if (qualification.roof_age !== undefined) {
+    const band = normalizeRoofAge(qualification.roof_age);
+    if (band) qualification.roof_age = band; else delete qualification.roof_age;
+  }
+  if (qualification.source_tool !== undefined) {
+    const tool = sourceToolTag(qualification.source_tool);
+    if (tool) qualification.source_tool = tool; else delete qualification.source_tool;
+  }
   for (const field of ['company_name', 'property_type', 'property_control', 'project_timeline']) {
     if (segment === 'commercial' && !qualification[field]) return { error: `qualification_data.${field} is required for commercial intake` };
   }
@@ -255,4 +285,4 @@ async function createLegacyIntake(req, res, next) {
   } catch (error) { return next(error); }
 }
 
-module.exports = { createIntake, createLegacyIntake, recordEmailVisit, legacySubmissionId, legacyBill, validate, normalizePhone, normalizeUtility, normalizeCredit, campaignTag };
+module.exports = { createIntake, createLegacyIntake, recordEmailVisit, legacySubmissionId, legacyBill, validate, normalizePhone, normalizeUtility, normalizeCredit, normalizeRoofAge, sourceToolTag, campaignTag };

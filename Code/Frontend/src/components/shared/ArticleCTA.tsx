@@ -1,16 +1,19 @@
 'use client';
 
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-import { usePathname } from 'next/navigation';
-import { intakeHrefForPath, isCommercialIntentPath } from '@/lib/intake-routing';
-import { trackEvent } from '@/components/GoogleAnalyticsClient';
+import { IntentCTA } from '@/components/growth/IntentCTA';
 
 // =============================================================================
 // ArticleCTA — in-body conversion box for blog posts.
 // Same block used at the end of app/blog/pge-vs-sce-vs-sdge-rates-compared,
 // factored out so every post can drop in one <ArticleCTA /> instead of
 // relying on the header button alone.
+//
+// 17 Sep 2026: the box itself moved to components/growth/IntentCTA so the
+// heading, body and button label follow the page's own intent (bill review,
+// assistance, competing quote, before-you-sign) instead of one generic ask, and
+// so `cta_click` carries `cta_variant`. The destination, the DOM id and the
+// `cta: 'article_cta'` parameter are unchanged; a page that passes its own
+// heading or body still overrides the variant copy.
 // =============================================================================
 
 interface ArticleCTAProps {
@@ -18,38 +21,6 @@ interface ArticleCTAProps {
   body?: string;
 }
 
-export function ArticleCTA({
-  heading = 'Ready to compare your solar options?',
-  body =
-    'California Rate Relief is a private referral service. You can request a no-obligation solar review; provider availability, design and price are determined after review.',
-}: ArticleCTAProps) {
-  const pathname = usePathname();
-  const isCommercial = isCommercialIntentPath(pathname);
-  return (
-    <div id="solar-inquiry" className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-      <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>
-        {heading}
-      </h3>
-      <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>{body}</p>
-      <Link
-        href={intakeHrefForPath(pathname)}
-        onClick={() =>
-          // On link-only pages this box is the whole conversion step, and it
-          // emitted nothing. Without this there is no signal between "read the
-          // article" and "reached a form", so an unclicked CTA and an unseen
-          // one look identical.
-          trackEvent('cta_click', {
-            cta: 'article_cta',
-            destination: intakeHrefForPath(pathname),
-            segment: isCommercial ? 'commercial' : 'residential',
-            page_path: pathname || 'unknown',
-          })
-        }
-        className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-      >
-        {isCommercial ? 'Request Commercial Review' : 'Request a Solar Review'}
-        <ArrowRight className='h-4 w-4' />
-      </Link>
-    </div>
-  );
+export function ArticleCTA({ heading, body }: ArticleCTAProps) {
+  return <IntentCTA cta="article_cta" heading={heading} body={body} />;
 }
