@@ -79,56 +79,69 @@ const GATED_FIELDS = [
 ] as const satisfies ReadonlyArray<keyof CityCostRow>;
 
 export const CITY_COST_ROWS: CityCostRow[] = [
+  // Sources fetched and verified 2026-09-18. Rates are NOT stored here; the
+  // page reads them from utility-rate-tracker.ts. See
+  // 02_Work_Management/Growth_200/CA_CITY_DATA_2026-09-18.csv for the ledger.
   {
     slug: 'temecula',
     city: 'Temecula',
-    county: UNSOURCED,
+    county: 'Riverside County',
     utilityKey: 'sce',
-    permitUrl: UNSOURCED,
-    permitFeeNote: UNSOURCED,
-    permitFeeSource: UNSOURCED,
-    permitOnline: UNSOURCED,
-    sourcesFetchedAt: UNSOURCED,
+    permitUrl: 'https://temeculaca.gov/304/Photovoltaic-Systems',
+    permitFeeNote:
+      'The City states that a fee applies to SolarAPP+ plan check and the building permit; no dollar amount is published on the page.',
+    permitFeeSource: 'City of Temecula, Photovoltaic Systems (temeculaca.gov/304)',
+    permitOnline: 'Yes. SolarAPP+ accepted since 30 September 2023; the Citizen Self Service portal is also available.',
+    sourcesFetchedAt: '2026-09-18',
   },
   {
     slug: 'murrieta',
     city: 'Murrieta',
-    county: UNSOURCED,
+    county: 'Riverside County',
     utilityKey: 'sce',
-    permitUrl: UNSOURCED,
-    permitFeeNote: UNSOURCED,
-    permitFeeSource: UNSOURCED,
-    permitOnline: UNSOURCED,
-    sourcesFetchedAt: UNSOURCED,
+    permitUrl: 'https://www.murrietaca.gov/DocumentCenter/View/2399/Solar-Permits-Residential-IB-125',
+    permitFeeNote:
+      'Information Bulletin IB-125 states the residential solar permit fee is four hundred fifty dollars, payable when the permit is issued.',
+    permitFeeSource: 'City of Murrieta, Information Bulletin IB-125, Solar Permits (Residential)',
+    permitOnline: 'Yes. Submitted through the Development Services solar permit portal; the bulletin does not name SolarAPP+.',
+    sourcesFetchedAt: '2026-09-18',
   },
   {
     slug: 'san-diego',
     city: 'San Diego',
-    county: UNSOURCED,
+    county: 'San Diego County',
     utilityKey: 'sdge',
-    permitUrl: UNSOURCED,
-    permitFeeNote: UNSOURCED,
-    permitFeeSource: UNSOURCED,
-    permitOnline: UNSOURCED,
-    sourcesFetchedAt: UNSOURCED,
+    cca: 'San Diego Community Power (generation); SDG&E remains the delivery utility',
+    permitUrl: 'https://www.sandiego.gov/development-services/permits/solar-photovoltaic-permit',
+    permitFeeNote:
+      'The City states that inspection, review and other fees vary with project scope and refers applicants to Information Bulletin 301; no flat solar fee is published.',
+    permitFeeSource: 'City of San Diego Development Services, Solar Photovoltaic Permit page and Information Bulletin 301',
+    permitOnline: 'Yes. Applications are filed online through the Accela portal.',
+    sourcesFetchedAt: '2026-09-18',
   },
   {
     slug: 'escondido',
     city: 'Escondido',
-    county: UNSOURCED,
+    county: 'San Diego County',
     utilityKey: 'sdge',
-    permitUrl: UNSOURCED,
-    permitFeeNote: UNSOURCED,
-    permitFeeSource: UNSOURCED,
-    permitOnline: UNSOURCED,
-    sourcesFetchedAt: UNSOURCED,
+    cca: 'Clean Energy Alliance (generation, since 1 April); SDG&E remains the delivery utility',
+    permitUrl: 'https://www.escondido.gov/1247/Solar-App-Plus',
+    permitFeeNote:
+      'The City states a processing fee is charged by SolarAPP+ and that the permit issues once all applicable City fees are paid; no dollar amount is published on the page.',
+    permitFeeSource: 'City of Escondido, Solar App Plus (escondido.gov/1247)',
+    permitOnline: 'Yes. SolarAPP+ for licensed contractors (residential only); owner-builders file a regular building permit with plan check.',
+    sourcesFetchedAt: '2026-09-18',
   },
   {
+    // Gated out: the City site returns 403 to automated fetches, so the fee and
+    // online-filing statements could not be verified on 2026-09-18. Fill by
+    // reading the page in a browser and recording what it says.
     slug: 'oceanside',
     city: 'Oceanside',
-    county: UNSOURCED,
+    county: 'San Diego County',
     utilityKey: 'sdge',
-    permitUrl: UNSOURCED,
+    cca: 'Clean Energy Alliance (generation, since 1 April); SDG&E remains the delivery utility',
+    permitUrl: 'https://www.ci.oceanside.ca.us/government/development-services/building/solarapp',
     permitFeeNote: UNSOURCED,
     permitFeeSource: UNSOURCED,
     permitOnline: UNSOURCED,
