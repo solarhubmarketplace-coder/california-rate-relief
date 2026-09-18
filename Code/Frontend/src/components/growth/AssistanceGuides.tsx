@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage } from "./DecisionPage";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 
 const link = "text-emerald-800 underline underline-offset-2";
 const law25 =
@@ -478,10 +479,41 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               options. DAC-SASH&apos;s homeowner rule does not mean every
               assistance or community program is unavailable to renters. For a
               shared household, check who holds the account and whose income the
-              application includes.
+              application includes. If a purchase or contract is the next step,{" "}
+              <Link
+                href="/blog/ppa-loan-vs-solar-lease-vs-cash-california"
+                className={link}
+              >
+                compare cash, loan, lease and PPA obligations
+              </Link>
+              , read{" "}
+              <Link href="/blog/solar-ppa-vs-lease-california" className={link}>
+                how a PPA differs from a lease
+              </Link>
+              , and check{" "}
+              <Link
+                href="/blog/what-happens-to-solar-lease-when-i-sell-california"
+                className={link}
+              >
+                what happens to the contract if the home is sold
+              </Link>
+              . Where no rooftop is available,{" "}
+              <Link href="/blog/is-community-solar-worth-it" className={link}>
+                a shared community project
+              </Link>{" "}
+              is the other route to compare.
             </p>
           </section>
           <OfferQuestions />
+          <RelatedGuides
+            heading="If someone is selling at the door"
+            intro="The complaint patterns Californian households report most often."
+            links={[
+              { href: "/solar-problems/solar-door-to-door-sales-california", label: "What a door-to-door rep can and cannot legally do" },
+              { href: "/solar-problems/free-solar-california-is-it-real", label: "What a free-solar offer actually is" },
+              { href: "/solar-problems/does-solar-mean-free-electricity-california", label: "Why solar is not free electricity" },
+            ]}
+          />
           <section>
             <h2>Where to apply</h2>
             <p>
@@ -533,6 +565,18 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               written funding terms. A salesperson showing a program logo does
               not establish a reservation.
             </p>
+            <RelatedGuides
+              heading="What the offer turns out to be"
+              links={[
+                { href: "/solar-problems/free-solar-california-is-it-real", label: "Is free solar in California real?" },
+                { href: "/solar-problems/does-solar-mean-free-electricity-california", label: "Does solar mean free electricity?" },
+                { href: "/solar-problems/hidden-costs-of-solar-california", label: "The costs that arrive after the quote" },
+                { href: "/solar-problems/solar-sales-tactics-california", label: "What each sales tactic obscures" },
+                { href: "/solar-problems/why-solar-reps-get-a-bad-name", label: "Why the sales channel earns its reputation" },
+                { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+                { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA side by side" },
+              ]}
+            />
             <p className="mt-3">
               Use{" "}
               <Link href={definitions.income.path} className={link}>
@@ -606,6 +650,13 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               .
             </p>
           </section>
+          <RelatedGuides
+            heading="Other routes when a rooftop project does not fit"
+            links={[
+              { href: "/blog/is-community-solar-worth-it", label: "Whether a shared community project is worth it" },
+              { href: "/solar-problems/free-solar-california-is-it-real", label: "What a free-solar offer actually is" },
+            ]}
+          />
         </>
       )}
     </DecisionPage>

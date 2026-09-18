@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 
 const sources: Source[] = [
@@ -108,6 +109,13 @@ export default function PgeRateIncrease2026() {
           documents to check before relying on a sales estimate.
         </p>
       </section>
+      <RelatedGuides
+        heading="What a rate change does to a solar bill"
+        links={[
+          { href: "/solar-problems/true-up-bill-california-explained", label: "How the annual true-up is settled" },
+          { href: "/solar-problems/running-ac-with-solar-california", label: "Whether solar covers all-day cooling" },
+        ]}
+      />
     </DecisionPage>
   );
 }

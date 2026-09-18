@@ -3,6 +3,7 @@ import type { NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { getGlp1RouteDisposition } from '@/lib/glp1-seo-routes';
 import { PUBLIC_CRR_NO_SESSION_ROUTES } from '@/lib/growth-routes';
+import { canonicalRedirectFor } from '@/lib/canonical-redirects';
 
 const GLP1_PUBLIC_CACHE_CONTROL =
   'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400';
@@ -286,6 +287,22 @@ export async function middleware(request: NextRequest) {
       `https://greenreviewshub.com${pathname}`,
       301
     );
+  }
+
+  // --- ratereliefca.com one-per-intent canonicalisation (301) ---
+  // Phase 3 of the California strategy of record (2026-09-17): 25 retired
+  // /solar-savings city pages plus 3 same-entity duplicates, each sent to the
+  // page that actually earns impressions. The table and the evidence for every
+  // row live in src/lib/canonical-redirects.ts.
+  //
+  // Placed inside the isCRR branch on purpose. next.config.js redirects() is
+  // not host-scoped and emits 308; this has to be a 301 on CRR only, and it
+  // must also fire on the localhost preview host that isCRR covers.
+  if (isCRR) {
+    const canonicalTarget = canonicalRedirectFor(pathname);
+    if (canonicalTarget) {
+      return NextResponse.redirect(new URL(canonicalTarget, request.url), 301);
+    }
   }
 
   // --- ratereliefca.com's own page that collides with GLP1's '/best' prefix ---

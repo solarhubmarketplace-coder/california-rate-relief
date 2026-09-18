@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -174,6 +175,14 @@ export default function SolarOptimumReview() {
             <div className='mt-10'>
               <Link href='/best-solar-companies-california' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Best Solar Companies in California</Link>
             </div>
+            <RelatedGuides
+              heading="Decide the structure before the installer"
+              links={[
+                { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA obligations side by side" },
+                { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+                { href: "/blog/are-solar-panels-worth-it-california", label: "Whether the quote fits the home at all" },
+              ]}
+            />
           </article>
         </div>
       </main>

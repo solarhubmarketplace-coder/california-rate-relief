@@ -6,6 +6,7 @@ import { getAllCitySlugs } from '@/data/cities-data';
 import { ARTICLE_PAGES, articleHref, articlesInCluster } from '@/data/article-pages';
 import { GLP1_INDEX_ROUTES } from '@/lib/glp1-seo-routes';
 import { GROWTH_ROUTES, LOCAL_RELEASE_REVIEW_ROUTES } from '@/lib/growth-routes';
+import { isRedirectedPath } from '@/lib/canonical-redirects';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
 // =============================================================================
@@ -273,9 +274,15 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     ...staticPages, ...blogPages, ...installerPages, ...panelPages,
     ...commercialPages, ...stateDecisionPages, ...regionalPages, ...citySavingsPages, ...cityCompaniesPages,
     ...articlePages, ...articleHubs,
-  ].map((entry) => CRR_REVIEWED_SEPTEMBER_11.has(new URL(entry.url).pathname)
-    ? { ...entry, lastModified: new Date('2026-09-11T00:00:00.000Z') }
-    : entry);
+  ]
+    // One-per-intent canonicalisation (Phase 3, 2026-09-17): a URL that now
+    // answers with a 301 must not be advertised in the sitemap. The table is
+    // src/lib/canonical-redirects.ts, so retiring a URL there removes it here
+    // without a second edit.
+    .filter((entry) => !isRedirectedPath(new URL(entry.url).pathname))
+    .map((entry) => CRR_REVIEWED_SEPTEMBER_11.has(new URL(entry.url).pathname)
+      ? { ...entry, lastModified: new Date('2026-09-11T00:00:00.000Z') }
+      : entry);
 }
 
 // =============================================================================

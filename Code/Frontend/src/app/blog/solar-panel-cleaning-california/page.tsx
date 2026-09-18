@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -189,6 +190,13 @@ export default function SolarPanelCleaningCA() {
           <div className="mt-8">
             <SolarInquiry topic="California solar maintenance" />
           </div>
+             <RelatedGuides
+               heading="If output has dropped and cleaning did not fix it"
+               links={[
+                 { href: "/solar-problems/solar-panels-not-producing-enough", label: "The diagnostic order that finds the real cause" },
+                 { href: "/solar-problems/solar-production-winter-california", label: "When a winter drop is normal and when it is not" },
+               ]}
+             />
 
           </article>
         </div>

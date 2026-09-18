@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from '@/components/shared/RelatedGuides';
 import { DecisionPage, QuoteChecklist, type Source } from './DecisionPage';
 import { SolarCalculator } from './SolarCalculator';
 import { SolarFinancingComparison } from './SolarFinancingComparison';
@@ -489,6 +490,16 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             returns or validate a contract.
           </p>
         </section>
+        <RelatedGuides
+          heading="The three terms that decide what each structure really costs"
+          links={[
+            { href: "/solar-problems/solar-dealer-fees-explained", label: "How a dealer fee pays for a low advertised rate" },
+            { href: "/solar-problems/solar-escalator-clause-explained", label: "What an annual escalator does to the later years" },
+            { href: "/solar-problems/ucc-1-lien-solar-california", label: "UCC-1 liens and what they attach to" },
+            { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+            { href: "/blog/what-happens-to-solar-lease-when-i-sell-california", label: "What happens to the contract if the home is sold" },
+          ]}
+        />
       </>
     );
   if (kind === 'financing') sourceCheckedDate = '2026-09-11';
@@ -566,6 +577,13 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             </li>
           </ul>
         </section>
+        <RelatedGuides
+          heading="What the tariff does to storage and to the annual bill"
+          links={[
+            { href: "/battery/battery-payback-nem-3-california", label: "Whether a battery pays back under NEM 3.0" },
+            { href: "/solar-problems/true-up-bill-california-explained", label: "How the annual true-up is settled" },
+          ]}
+        />
       </>
     );
   if (kind === 'battery') {
@@ -623,6 +641,21 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
           goes to CRR for a solar referral; it is not an SGIP application or
           eligibility decision.
         </p>
+        <RelatedGuides
+          heading="The California battery guides in detail"
+          intro="Cost, sizing, equipment and rebate status, one page each."
+          links={[
+            { href: "/battery", label: "All home battery guides" },
+            { href: "/battery/home-battery-cost-california", label: "What a home battery costs installed" },
+            { href: "/battery/how-many-batteries-do-i-need-california", label: "How many batteries the load needs" },
+            { href: "/battery/battery-backup-vs-generator-california", label: "Battery against a backup generator" },
+            { href: "/battery/battery-payback-nem-3-california", label: "Whether a battery pays back under NEM 3.0" },
+            { href: "/battery/powerwall-vs-enphase-vs-franklinwh", label: "Powerwall 3, Enphase 5P and FranklinWH compared" },
+            { href: "/battery/tesla-powerwall-3-cost-california", label: "Powerwall 3 cost in California" },
+            { href: "/battery/tesla-powerwall-alternatives", label: "Alternatives to a Powerwall" },
+            { href: "/battery/sgip-battery-rebate-california", label: "SGIP rebate budget status" },
+          ]}
+        />
       </>
     );
   }
@@ -714,6 +747,15 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
           </Link>
           . The tool carries your inputs into the optional inquiry below.
         </p>
+        <RelatedGuides
+          heading="What a peak window does after solar is installed"
+          links={[
+            { href: "/solar-problems/running-ac-with-solar-california", label: "Whether solar covers all-day cooling in a peak window" },
+            { href: "/solar-problems/true-up-bill-california-explained", label: "How the annual true-up settles the year" },
+            { href: "/battery/battery-payback-nem-3-california", label: "Whether storage earns its cost on this tariff" },
+            { href: "/blog/how-big-of-a-solar-system-do-i-need-california", label: "How much capacity the household actually needs" },
+          ]}
+        />
       </>
     );
   }

@@ -43,6 +43,12 @@ export function Header() {
               <Link href='/solar-panels-california' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
                 Solar in CA
               </Link>
+              <Link href='/solar-problems' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
+                Solar Problems
+              </Link>
+              <Link href='/battery' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
+                Batteries
+              </Link>
               <Link href='/commercial-solar' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
                 Commercial
               </Link>

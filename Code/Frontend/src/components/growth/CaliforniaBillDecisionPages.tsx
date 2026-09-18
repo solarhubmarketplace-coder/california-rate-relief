@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { BillComparison } from "./BillComparison";
 import { DecisionPage, type Source } from "./DecisionPage";
 
@@ -199,6 +200,14 @@ function LowerBillContent() {
         </p>
       </section>
       <UtilityGuideLinks />
+      <RelatedGuides
+        heading="If the load itself is the problem"
+        links={[
+          { href: "/solar-problems/running-ac-with-solar-california", label: "What all-day cooling does, with or without solar" },
+          { href: "/solar-problems/do-i-still-get-a-utility-bill-with-solar", label: "What stays on the bill after solar" },
+          { href: "/blog/is-community-solar-worth-it", label: "When a shared project fits better than a rooftop" },
+        ]}
+      />
     </>
   );
 }

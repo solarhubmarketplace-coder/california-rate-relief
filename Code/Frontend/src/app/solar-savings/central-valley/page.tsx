@@ -10,6 +10,7 @@ import {
   UTILITY_DATA,
   type CityData,
 } from '@/data/cities-data';
+import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
@@ -188,7 +189,7 @@ export default function CentralValleySolarPage() {
                   return (
                     <Link
                       key={city.slug}
-                      href={`/solar-savings/${city.slug}`}
+                      href={savingsCityHref(city.slug)}
                       className='group bg-card rounded-xl border border-border p-5 hover:border-primary/50 hover:shadow-lg transition-all duration-300'
                     >
                       <div className='flex items-start justify-between gap-3'>

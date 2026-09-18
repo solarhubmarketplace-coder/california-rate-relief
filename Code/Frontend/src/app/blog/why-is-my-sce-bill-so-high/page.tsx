@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -69,6 +70,13 @@ export default function WhyIsMySCEBillSoHigh() {
           <div className="mt-8">
             <SolarInquiry topic="SCE bill review" />
           </div>
+             <RelatedGuides
+               heading="Before treating solar as the fix"
+               links={[
+                 { href: "/solar-problems/solar-bill-still-high-california", label: "When a bill stays high after going solar" },
+                 { href: "/solar-problems/running-ac-with-solar-california", label: "Whether solar covers all-day air conditioning" },
+               ]}
+             />
 
           </article>
         </div>

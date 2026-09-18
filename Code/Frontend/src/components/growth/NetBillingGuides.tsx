@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, QuoteChecklist, type Source } from "./DecisionPage";
 
 const cpucNem: Source = {
@@ -129,6 +130,13 @@ function ComparisonContent() {
           see the <a className="underline" href={cpucConsumerGuide.url}>CPUC guide</a>.
         </p>
       </section>
+      <RelatedGuides
+        heading="What the tariff change does to a battery and a true-up"
+        links={[
+          { href: "/battery/battery-payback-nem-3-california", label: "Whether a battery pays back under NEM 3.0" },
+          { href: "/solar-problems/true-up-bill-california-explained", label: "How the annual true-up is settled" },
+        ]}
+      />
     </>
   );
 }
@@ -297,6 +305,13 @@ function BillingContent() {
           interconnection questions with the serving utility.
         </p>
       </section>
+      <RelatedGuides
+        heading="Where the difference shows up on a real bill"
+        links={[
+          { href: "/solar-problems/true-up-bill-california-explained", label: "What the annual true-up bill contains" },
+          { href: "/battery/battery-payback-nem-3-california", label: "Whether storage changes the arithmetic" },
+        ]}
+      />
     </>
   );
 }

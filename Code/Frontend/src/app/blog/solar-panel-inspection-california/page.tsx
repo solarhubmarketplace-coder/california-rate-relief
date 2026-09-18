@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -250,6 +251,13 @@ export default function SolarPanelInspectionCalifornia() {
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>
+            <RelatedGuides
+              heading="What an inspection is looking for"
+              links={[
+                { href: "/solar-problems/solar-panels-not-producing-enough", label: "The diagnostic order for low output" },
+                { href: "/solar-problems/what-solar-doesnt-cover-california", label: "What sits outside the system scope" },
+              ]}
+            />
           </article>
         </div>
       </main>

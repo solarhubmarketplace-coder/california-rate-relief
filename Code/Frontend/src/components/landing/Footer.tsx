@@ -105,6 +105,28 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
+                    href='/solar-problems'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Solar Problems
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
+                      &rarr;
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/battery'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Home Batteries
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
+                      &rarr;
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href='/blog'
                     className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
                   >

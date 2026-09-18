@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -187,6 +188,13 @@ export default function SolarPoolHeatingCA() {
           <div className="mt-8">
             <SolarInquiry topic="California solar pool heating" />
           </div>
+             <RelatedGuides
+               heading="Where the pool load sits in a solar plan"
+               links={[
+                 { href: "/solar-problems/running-ac-with-solar-california", label: "What happens when a large load runs all day" },
+                 { href: "/solar-problems/what-solar-doesnt-cover-california", label: "What a system does not cover" },
+               ]}
+             />
 
           </article>
         </div>

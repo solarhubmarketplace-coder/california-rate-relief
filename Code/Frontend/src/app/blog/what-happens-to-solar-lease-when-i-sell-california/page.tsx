@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 
 const sources: Source[] = [
@@ -158,6 +159,15 @@ export default function SolarLeaseHomeSaleCA() {
           For the underlying payment structures, use the <Link className="underline" href="/blog/ppa-loan-vs-solar-lease-vs-cash-california">California payment-option comparison</Link> to organize cash, loan, lease and PPA documents separately.
         </p>
       </section>
+      <RelatedGuides
+        heading="Documents a buyer, agent or escrow officer will ask for"
+        links={[
+          { href: "/solar-problems/ucc-1-lien-solar-california", label: "UCC-1 filings and how they show up in a title search" },
+          { href: "/solar-problems/true-up-bill-california-explained", label: "How a mid-year true-up is settled at closing" },
+          { href: "/blog/solar-ppa-vs-lease-california", label: "Whether the agreement is a lease or a PPA" },
+          { href: "/blog/what-happens-if-stop-paying-solar-lease-california", label: "What default does to the transfer" },
+        ]}
+      />
     </DecisionPage>
   );
 }

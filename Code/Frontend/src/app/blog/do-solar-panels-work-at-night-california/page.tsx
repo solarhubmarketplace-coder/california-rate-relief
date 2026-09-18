@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -109,6 +110,14 @@ export default function DoSolarPanelsWorkAtNight() {
             <div className='mt-8'>
               <SolarInquiry topic="California solar and battery night power" />
             </div>
+            <RelatedGuides
+              heading="What covers the hours the panels do not"
+              links={[
+                { href: "/battery", label: "Home battery guides for California" },
+                { href: "/battery/battery-backup-vs-generator-california", label: "Battery against a backup generator" },
+                { href: "/solar-problems/do-i-still-get-a-utility-bill-with-solar", label: "Why the utility bill continues at night" },
+              ]}
+            />
           </article>
         </div>
       </main>

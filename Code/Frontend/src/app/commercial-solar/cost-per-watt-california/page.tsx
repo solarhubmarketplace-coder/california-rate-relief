@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { ArrowLeft, ArrowRight, Calendar } from 'lucide-react';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -181,6 +182,15 @@ export default function CommercialSolarCost() {
                 <ArrowLeft className="h-4 w-4" /> Back to Commercial Solar Hub
               </Link>
             </div>
+          <RelatedGuides
+            heading="What a per-watt figure leaves out"
+            intro="Two cost categories sit outside the equipment price on almost every proposal."
+            links={[
+              { href: "/solar-problems/hidden-costs-of-solar-california", label: "The cost lines that arrive after the quote" },
+              { href: "/solar-problems/solar-dealer-fees-explained", label: "How a financing fee is folded into the price per watt" },
+            { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA obligations side by side" },
+            ]}
+          />
           </article>
         </div>
       </main>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from '@/components/shared/RelatedGuides';
 import { DecisionPage, type Source } from "./DecisionPage";
 
 const path = "/blog/do-solar-panels-work-during-power-outage-california";
@@ -155,6 +156,17 @@ export function SolarOutageGuide() {
           diagram. For the storage decision itself, use the <Link className="underline" href="/blog/solar-battery-backup-california">battery and backup guide</Link>.
         </p>
       </section>
+      <RelatedGuides
+        heading="Choosing the equipment that carries the outage"
+        intro="Backup is a hardware and sizing decision before it is a price decision."
+        links={[
+          { href: "/battery", label: "Home battery guides for California" },
+          { href: "/battery/battery-backup-vs-generator-california", label: "Battery against a backup generator" },
+          { href: "/battery/tesla-powerwall-3-cost-california", label: "What a Powerwall 3 costs installed in California" },
+          { href: "/battery/powerwall-vs-enphase-vs-franklinwh", label: "Powerwall 3, Enphase 5P and FranklinWH compared" },
+          { href: "/battery/tesla-powerwall-alternatives", label: "Alternatives to a Powerwall" },
+        ]}
+      />
     </DecisionPage>
   );
 }

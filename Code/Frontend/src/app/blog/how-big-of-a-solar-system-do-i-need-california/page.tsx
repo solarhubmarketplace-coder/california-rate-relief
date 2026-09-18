@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -88,7 +89,7 @@ export default function HowBigSolarSystem() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Roof Space Reality Check</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Each modern 400W solar panel is roughly 18 square feet. A 7 kW system is about 18 panels, or roughly 325 square feet of roof. Most California single-family homes can fit 10 kW of panels on their south/west-facing roof area. Larger systems (15+ kW) may need either a second roof face, a ground mount, or a carport integration. Your installer&apos;s site survey determines the real limit.
+                Each modern 400W solar panel is roughly 18 square feet. A 7 kW system is about 18 panels, or roughly 325 square feet of roof. Most California single-family homes can fit 10 kW of panels on their south/west-facing roof area. Larger systems (15+ kW) may need either a second roof face, a ground mount, or a carport integration. Your installer&apos;s site survey determines the real limit. Before sizing anything, check <Link href='/blog/is-my-roof-good-for-solar-california' className='text-primary hover:underline'>whether your roof can carry it</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
@@ -114,6 +115,14 @@ export default function HowBigSolarSystem() {
             <div className='mt-8'>
               <SolarInquiry topic="California solar system size calculator" />
             </div>
+            <RelatedGuides
+              heading="Sizing storage alongside the array"
+              links={[
+                { href: "/battery/how-many-batteries-do-i-need-california", label: "How many batteries the load actually needs" },
+                { href: "/battery/home-battery-cost-california", label: "What a home battery costs in California" },
+                { href: "/solar-problems/running-ac-with-solar-california", label: "Whether the sizing covers all-day cooling" },
+              ]}
+            />
           </article>
         </div>
       </main>

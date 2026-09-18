@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -115,6 +116,13 @@ export default function WhatHappensAfter25Years() {
             <div className='mt-8'>
               <SolarInquiry topic="Solar panels after 25 years and warranty options" />
             </div>
+            <RelatedGuides
+              heading="Output at the end of the warranty term"
+              links={[
+                { href: "/solar-problems/solar-panel-degradation-california", label: "What the degradation rate means year by year" },
+                { href: "/blog/solar-panel-removal-reinstall-cost", label: "What removal and reinstallation costs" },
+              ]}
+            />
           </article>
         </div>
       </main>

@@ -22,6 +22,8 @@ import {
 import { RelatedInstallers } from "@/components/shared/RelatedInstallers";
 import { TrustedSources } from "@/components/shared/TrustedSources";
 import { NearbyCities } from "@/components/shared/NearbyCities";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
+import { hasSavingsCityPage } from "@/lib/canonical-redirects";
 import { growthCities } from "@/data/growth-cities";
 import { CityComparison } from "@/components/growth/CityComparison";
 
@@ -586,6 +588,52 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               </p>
             </div>
 
+            {/*
+              Contract-risk reading, in the article body.
+
+              Phase 1 of the 2026-09-17 California strategy: the /solar-problems
+              cluster had zero inbound content links from outside its own
+              subtree, while the /solar-companies city layer earned 35,424
+              impressions in the 2026-08-12..2026-09-08 GSC window. A reader
+              comparing installers for one city is exactly the reader who needs
+              the fee, escalator, lien and door-to-door pages, so the links sit
+              here rather than in the site chrome.
+            */}
+            <RelatedGuides
+              heading={`Before you sign anything in ${city.name}`}
+              intro="What the paperwork does, in the order it tends to cause trouble."
+              links={[
+                {
+                  href: "/solar-problems/solar-dealer-fees-explained",
+                  label: "How dealer fees pay for a low advertised rate",
+                },
+                {
+                  href: "/solar-problems/solar-escalator-clause-explained",
+                  label: "The escalator clause, and what it does to year 15",
+                },
+                {
+                  href: "/solar-problems/ucc-1-lien-solar-california",
+                  label: "UCC-1 liens and what they attach to",
+                },
+                {
+                  href: "/solar-problems/solar-contract-red-flags-california",
+                  label: "Contract red flags in the California disclosure forms",
+                },
+                {
+                  href: "/solar-problems/solar-door-to-door-sales-california",
+                  label: "What a door-to-door rep can and cannot legally do",
+                },
+                {
+                  href: "/solar-problems/solar-sales-tactics-california",
+                  label: "Common sales tactics and what each one obscures",
+                },
+                {
+                  href: "/solar-problems",
+                  label: "All California solar problem guides",
+                },
+              ]}
+            />
+
             {/* Companion route + nearby cities (internal linking) */}
             <NearbyCities city={city} variant="companies" />
 
@@ -594,6 +642,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               Related Reading
             </h2>
             <ul className="space-y-2 mb-10">
+              {hasSavingsCityPage(city.slug) && (
               <li>
                 <Link
                   href={`/solar-savings/${city.slug}`}
@@ -605,6 +654,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                   ; rates, system sizing, and incentive deep-dive.
                 </span>
               </li>
+              )}
               <li>
                 <Link
                   href="/best-solar-companies-california"

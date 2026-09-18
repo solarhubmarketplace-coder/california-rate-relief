@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -254,6 +255,13 @@ export default function SolarPanelBirdProofing() {
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>
+            <RelatedGuides
+              heading="If output dropped before the nesting started"
+              links={[
+                { href: "/solar-problems/solar-panels-not-producing-enough", label: "Work through the diagnostic order first" },
+                { href: "/solar-problems/solar-panel-degradation-california", label: "What normal long-term output loss looks like" },
+              ]}
+            />
           </article>
         </div>
       </main>

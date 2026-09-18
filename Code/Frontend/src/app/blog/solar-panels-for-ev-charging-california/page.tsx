@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -98,6 +99,13 @@ export default function SolarForEvCharging() {
             <div className='mt-8'>
               <SolarInquiry topic="Solar panels for EV charging in California" />
             </div>
+            <RelatedGuides
+              heading="Charging overnight without the grid"
+              links={[
+                { href: "/battery/how-many-batteries-do-i-need-california", label: "How much storage an overnight charge needs" },
+                { href: "/solar-problems/running-ac-with-solar-california", label: "What happens when a second large load runs" },
+              ]}
+            />
           </article>
         </div>
       </main>

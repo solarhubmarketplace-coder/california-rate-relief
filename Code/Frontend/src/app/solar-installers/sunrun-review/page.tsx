@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -499,6 +500,15 @@ export default function SunrunReview() {
                 Back to Best Solar Companies in California
               </Link>
             </div>
+            <RelatedGuides
+              heading="What the agreement does over its full term"
+              links={[
+                { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+                { href: "/blog/what-happens-to-solar-lease-when-i-sell-california", label: "What happens to the contract if the home is sold" },
+                { href: "/blog/what-happens-if-stop-paying-solar-lease-california", label: "What default does to the agreement" },
+                { href: "/solar-problems/solar-escalator-clause-explained", label: "What an annual escalator does to the later years" },
+              ]}
+            />
           </article>
         </div>
       </main>

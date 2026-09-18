@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -137,6 +138,13 @@ export default function SolarTileRoofCalifornia() {
               <SolarInquiry topic="Tile roof solar in California" />
 
             </div>
+            <RelatedGuides
+              heading="Roof work, cover and exclusions"
+              links={[
+                { href: "/solar-problems/solar-homeowners-insurance", label: "How panels change the homeowner policy" },
+                { href: "/solar-problems/what-solar-doesnt-cover-california", label: "What the system scope leaves out" },
+              ]}
+            />
           </article>
         </div>
       </main>

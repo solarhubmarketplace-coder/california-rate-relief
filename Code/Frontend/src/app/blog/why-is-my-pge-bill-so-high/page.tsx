@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -111,6 +112,17 @@ export default function WhyIsMyPGEBillSoHigh() {
             </div>
 
             <ArticleCTA heading='Still Paying a High PG&E Bill?' body='After checking usage, rate plan and assistance options, California homeowners can request a no-obligation solar assessment from our private referral service.' />
+            <RelatedGuides
+              heading="If solar is the next question you ask"
+              intro="Three checks that change the answer before any proposal is worth reading."
+              links={[
+                { href: "/blog/is-my-roof-good-for-solar-california", label: "Whether the roof is a candidate at all" },
+                { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA obligations side by side" },
+                { href: "/solar-problems/solar-bill-still-high-california", label: "Why a bill can stay high after solar" },
+                { href: "/solar-problems/true-up-bill-california-explained", label: "How the annual true-up is settled" },
+                { href: "/solar-problems/do-i-still-get-a-utility-bill-with-solar", label: "What is still on the monthly bill" },
+              ]}
+            />
           </article>
         </div>
       </main>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -136,6 +137,14 @@ export default function VnemAggregation() {
             </div>
 
             <div className='mt-10'><Link href='/commercial-solar' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Commercial Solar Hub</Link></div>
+          <RelatedGuides
+            heading="How the annual settlement actually reads"
+            intro="Aggregation changes which meter is credited; it does not remove the annual reconciliation."
+            links={[
+              { href: "/solar-problems/true-up-bill-california-explained", label: "What the California true-up bill contains" },
+              { href: "/solar-problems/do-i-still-get-a-utility-bill-with-solar", label: "Why a bill still arrives every month after solar" },
+            ]}
+          />
           </article>
         </div>
       </main>

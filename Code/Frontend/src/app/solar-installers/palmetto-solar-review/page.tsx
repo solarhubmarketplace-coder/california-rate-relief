@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -185,6 +186,16 @@ export default function PalmettoReview() {
             <div className='mt-10'>
               <Link href='/best-solar-companies-california' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Best Solar Companies in California</Link>
             </div>
+            <RelatedGuides
+              heading="Before comparing any installer proposal"
+              intro="Which agreement you are being offered matters more than which company offers it."
+              links={[
+                { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA obligations side by side" },
+                { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+                { href: "/blog/are-solar-panels-worth-it-california", label: "Whether the quote fits the home at all" },
+                { href: "/solar-problems/solar-dealer-fees-explained", label: "How a dealer fee pays for a low advertised rate" },
+              ]}
+            />
           </article>
         </div>
       </main>

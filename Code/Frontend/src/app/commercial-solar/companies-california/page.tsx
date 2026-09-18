@@ -1,6 +1,7 @@
 // Reviewed local replacement. Original company claims remain at base e605685.
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage } from "@/components/growth/DecisionPage";
 import { CommercialAssessmentForm } from "@/components/landing/CommercialAssessmentForm";
 
@@ -211,6 +212,15 @@ export default function CommercialSolarCompanies() {
           </Link>
         </div>
       </section>
+    <RelatedGuides
+      heading="Contract and paperwork checks that apply to any scope"
+      intro="The disclosure and financing traps are the same ones residential buyers hit first."
+      links={[
+        { href: "/solar-problems/solar-contract-red-flags-california", label: "What the California disclosure forms are meant to stop" },
+        { href: "/solar-problems/solar-dealer-fees-explained", label: "Why a low advertised rate carries a dealer fee" },
+        { href: "/solar-problems", label: "All California solar problem guides" },
+      ]}
+    />
     </DecisionPage>
   );
 }

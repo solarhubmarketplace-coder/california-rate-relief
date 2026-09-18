@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 
 const sources: Source[] = [
@@ -163,6 +164,13 @@ export default function SolarPanelRemovalReinstallCost() {
           documents from the responsible parties before authorizing work.
         </p>
       </section>
+      <RelatedGuides
+        heading="Who carries the cost, and what is excluded"
+        links={[
+          { href: "/solar-problems/solar-panel-degradation-california", label: "What 25 years of output actually looks like" },
+          { href: "/solar-problems/solar-homeowners-insurance", label: "What the homeowner policy does and does not cover" },
+        ]}
+      />
     </DecisionPage>
   );
 }

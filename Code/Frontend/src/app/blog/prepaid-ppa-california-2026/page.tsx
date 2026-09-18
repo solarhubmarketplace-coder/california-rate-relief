@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 
 const sources: Source[] = [
@@ -154,6 +155,15 @@ export default function PrepaidPpaCalifornia2026() {
           Use the <Link className="underline" href="/blog/ppa-loan-vs-solar-lease-vs-cash-california">California payment-option comparison</Link> to put cash, loan, lease and PPA terms side by side.
         </p>
       </section>
+      <RelatedGuides
+        heading="Terms to price before prepaying"
+        links={[
+          { href: "/solar-problems/solar-escalator-clause-explained", label: "What an escalator does when it is not prepaid" },
+          { href: "/solar-problems/solar-dealer-fees-explained", label: "Where the fee sits inside the price" },
+          { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+          { href: "/blog/what-happens-to-solar-lease-when-i-sell-california", label: "What happens to the agreement if the home is sold" },
+        ]}
+      />
     </DecisionPage>
   );
 }

@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -106,6 +107,14 @@ export default function RentSolarPanels() {
             <div className='mt-8'>
               <SolarInquiry topic="Renting solar panels in California" />
             </div>
+            <RelatedGuides
+              heading="The three clauses that decide what renting costs"
+              links={[
+                { href: "/solar-problems/solar-escalator-clause-explained", label: "What an annual escalator does to the later years" },
+                { href: "/solar-problems/ucc-1-lien-solar-california", label: "UCC-1 liens and what they attach to" },
+                { href: "/solar-problems/solar-dealer-fees-explained", label: "How a dealer fee pays for a low headline rate" },
+              ]}
+            />
           </article>
         </div>
       </main>

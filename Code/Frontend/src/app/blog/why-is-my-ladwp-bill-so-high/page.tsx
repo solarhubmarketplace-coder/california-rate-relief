@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from "@/components/layout/PublicLayout";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
@@ -272,6 +273,14 @@ export default function WhyIsMyLADWPBillSoHigh() {
               topic="LADWP bill and solar comparison"
             />
           </div>
+          <RelatedGuides
+            heading="If you are weighing solar or a shared programme"
+            links={[
+              { href: "/solar-problems/do-i-still-get-a-utility-bill-with-solar", label: "What is still on the bill after solar" },
+              { href: "/solar-problems/solar-bill-still-high-california", label: "Why the bill can stay high" },
+              { href: "/blog/is-community-solar-worth-it", label: "When a shared project fits better than a rooftop" },
+            ]}
+          />
         </article>
       </main>
       <Footer />

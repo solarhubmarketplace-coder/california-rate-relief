@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 
 const sources: Source[] = [
@@ -55,6 +56,14 @@ export default function FreeRoofReplacementWithSolarCalifornia() {
           Ask for the solar scope, roof scope, financing agreement and any
           change-order terms in writing. A monthly payment alone does not show
           what each part of the project costs or who is responsible for it.
+        </p>
+        <p className="mt-3">
+          Before any of that, settle{" "}
+          <Link className="underline" href="/blog/is-my-roof-good-for-solar-california">
+            whether the roof is a good candidate in the first place
+          </Link>
+          . A roof that needs replacing is a roofing decision; a roof that cannot
+          carry an array is a different answer altogether.
         </p>
       </section>
 
@@ -151,6 +160,15 @@ export default function FreeRoofReplacementWithSolarCalifornia() {
           For a conventional tile roof, see the <Link className="underline" href="/blog/solar-panels-tile-roof-california">California tile-roof solar guide</Link> before treating a roof question as a financing question.
         </p>
       </section>
+      <RelatedGuides
+        heading="Read these before signing the combined scope"
+        links={[
+          { href: "/solar-problems/hidden-costs-of-solar-california", label: "The cost lines that arrive after the quote" },
+          { href: "/solar-problems/solar-contract-red-flags-california", label: "What the California disclosure forms are meant to stop" },
+          { href: "/solar-problems/solar-homeowners-insurance", label: "How panels change the homeowner policy" },
+          { href: "/solar-problems/solar-company-took-my-money-california", label: "What to do if a contractor takes the money and stops" },
+        ]}
+      />
     </DecisionPage>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -144,6 +145,13 @@ export default function CommercialFinancing() {
             <div className='mt-10'>
               <Link href='/commercial-solar' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Commercial Solar Hub</Link>
             </div>
+          <RelatedGuides
+            heading="Two clauses to read before signing any escalating agreement"
+            links={[
+              { href: "/solar-problems/solar-escalator-clause-explained", label: "What an annual escalator does to the later years" },
+              { href: "/solar-problems/solar-dealer-fees-explained", label: "Where the financing fee shows up in the price" },
+            ]}
+          />
           </article>
         </div>
       </main>

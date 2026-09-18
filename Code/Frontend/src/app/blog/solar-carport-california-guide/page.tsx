@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -154,6 +155,15 @@ export default function SolarCarportCAGuide() {
             <ArticleCTA
               heading="Compare a solar carport with roof options"
               body="California homeowners can request a no-obligation solar assessment from this private referral service after reviewing the property and contract questions above."
+            />
+            <RelatedGuides
+              heading="Before choosing a carport over the roof"
+              links={[
+                { href: "/blog/is-my-roof-good-for-solar-california", label: "Whether the roof is a candidate first" },
+                { href: "/blog/how-big-of-a-solar-system-do-i-need-california", label: "How much capacity the household needs" },
+                { href: "/solar-problems/hidden-costs-of-solar-california", label: "Costs that sit outside the structure price" },
+                { href: "/solar-problems/what-solar-doesnt-cover-california", label: "What the system scope leaves out" },
+              ]}
             />
           </article>
         </div>

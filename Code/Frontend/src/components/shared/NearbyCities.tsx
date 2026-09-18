@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { CITIES, type CityData } from '@/data/cities-data';
+import { hasSavingsCityPage, savingsCityHref } from '@/lib/canonical-redirects';
 
 /**
  * Nearby-cities + companion-page internal linking block.
@@ -32,6 +33,12 @@ export function NearbyCities({
   variant: CityLinkVariant;
 }) {
   const nearby = pickNearby(city);
+  // Phase 3 (2026-09-17): 25 /solar-savings city pages now 301 to their
+  // /solar-companies twin. On a /solar-companies page for one of those cities
+  // the companion link would point at a redirect straight back to this page, so
+  // it is suppressed rather than retargeted. See src/lib/canonical-redirects.ts.
+  const showCompanion =
+    variant === 'savings' || hasSavingsCityPage(city.slug);
   const companionHref =
     variant === 'savings'
       ? `/solar-companies/${city.slug}`
@@ -48,6 +55,7 @@ export function NearbyCities({
   return (
     <div className="mt-10 pt-8 border-t border-border">
       {/* Companion route for the same city */}
+      {showCompanion && (
       <Link
         href={companionHref}
         className="group block rounded-xl border border-primary/25 bg-primary/5 p-5 mb-8 transition-colors hover:border-primary/50"
@@ -60,6 +68,7 @@ export function NearbyCities({
           {companionBlurb}
         </span>
       </Link>
+      )}
 
       {nearby.length > 0 && (
         <>
@@ -75,12 +84,12 @@ export function NearbyCities({
                 key={c.slug}
                 href={
                   variant === 'savings'
-                    ? `/solar-savings/${c.slug}`
+                    ? savingsCityHref(c.slug)
                     : `/solar-companies/${c.slug}`
                 }
                 className="text-primary hover:underline font-medium text-sm"
               >
-                {variant === 'savings'
+                {variant === 'savings' && hasSavingsCityPage(c.slug)
                   ? `Solar savings in ${c.name}`
                   : `Solar companies in ${c.name}`}
               </Link>

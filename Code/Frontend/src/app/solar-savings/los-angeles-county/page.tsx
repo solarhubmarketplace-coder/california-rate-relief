@@ -6,6 +6,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowRight, MapPin, Home, AlertTriangle } from 'lucide-react';
 import { CITIES, UTILITY_DATA } from '@/data/cities-data';
+import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
@@ -56,7 +57,7 @@ function buildSchema() {
         '@type': 'ListItem',
         position: i + 1,
         name: c.name,
-        url: `https://ratereliefca.com/solar-savings/${c.slug}`,
+        url: `https://ratereliefca.com${savingsCityHref(c.slug)}`,
       })),
     },
   };
@@ -169,7 +170,7 @@ export default function LosAngelesCountySolarPage() {
                       </div>
                       <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
                         <Link
-                          href={`/solar-savings/${city.slug}`}
+                          href={savingsCityHref(city.slug)}
                           className="text-primary hover:underline font-medium"
                         >
                           Costs &amp; savings →

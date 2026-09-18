@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -109,6 +110,13 @@ export default function DoSolarPanelsWorkOnCloudyDays() {
             <div className='mt-8'>
               <SolarInquiry topic="California solar panels on cloudy days" />
             </div>
+            <RelatedGuides
+              heading="Seasonal output versus a real fault"
+              links={[
+                { href: "/solar-problems/solar-production-winter-california", label: "Why California output drops in winter" },
+                { href: "/solar-problems/solar-panels-not-producing-enough", label: "When the drop is a fault rather than the weather" },
+              ]}
+            />
           </article>
         </div>
       </main>

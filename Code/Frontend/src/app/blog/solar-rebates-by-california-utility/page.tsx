@@ -1,6 +1,7 @@
 import { SgipStatusNote } from '@/components/growth/SgipStatusNote';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -147,6 +148,14 @@ export default function SolarRebatesByCAUtility() {
           <div className="mt-8">
             <SolarInquiry topic="California solar rebates" />
           </div>
+             <RelatedGuides
+               heading="Programme reality checks"
+               links={[
+                 { href: "/battery/sgip-battery-rebate-california", label: "SGIP battery budget status before you plan on it" },
+                 { href: "/solar-problems/free-solar-california-is-it-real", label: "What a free-solar offer actually is" },
+                 { href: "/blog/is-community-solar-worth-it", label: "When a shared project is the better route" },
+               ]}
+             />
 
           </article>
         </div>

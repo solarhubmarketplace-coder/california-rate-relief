@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SolarCalculator } from '@/components/growth/SolarCalculator';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -79,7 +80,7 @@ export default function UtilityRatesCompared() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>SCE: Climate and Usage Can Outweigh the Average</h2>
               <p>SCE’s June residential average was 34.4 cents per kWh, above PG&amp;E’s 33.7 cents and below SDG&amp;E’s 45.5 cents. Yet the state&apos;s sample non-CARE bill for hot climate zone 15 was $254, compared with $152 in cooler zone 6. The report says the hotter-zone sample used about 700 kWh a month while the cooler sample used about 385 kWh. Its lower average rate than SDG&amp;E did not overcome much higher consumption in this sample.</p>
-              <p>SCE&apos;s June 1 update changed its residential average by only about one-tenth of one percent from January. If an SCE bill jumped sharply, first compare kWh and billing days with the same month last year, then check peak-period use and the selected rate plan.</p>
+              <p>SCE&apos;s June 1 update changed its residential average by only about one-tenth of one percent from January. If an SCE bill jumped sharply, work through the <Link href='/blog/why-is-my-sce-bill-so-high' className={sourceLink}>SCE high-bill checklist</Link>: first compare kWh and billing days with the same month last year, then check peak-period use and the selected rate plan against the <Link href='/blog/sce-time-of-use-rates-2026' className={sourceLink}>SCE time-of-use rate guide</Link>.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>SDG&amp;E: The Highest Residential Average Rate</h2>
               <p>SDG&amp;E remained the clear rate outlier at 45.5 cents per kWh in June, even after a June 1 update reduced its residential average by about 2% from April. Its TOU schedules can place a wide spread between on-peak and lower-priced periods. That makes the specific plan and the timing of air conditioning, cooking, laundry and EV charging especially important.</p>
@@ -97,12 +98,21 @@ export default function UtilityRatesCompared() {
                 <li><strong>Separate generation from delivery.</strong> If you have a CCA, compare the combined cost and review the correct joint rate document.</li>
                 <li><strong>Model solar from your own interval data.</strong> A useful proposal should show consumption, production, imports, exports, rate-plan assumptions and battery behavior. A statewide savings percentage is not enough.</li>
               </ol>
-              <p>If PG&amp;E is the problem you are trying to diagnose, use our <Link href='/blog/why-is-my-pge-bill-so-high' className={sourceLink}>PG&amp;E high-bill checklist</Link> before requesting a system proposal.</p>
+              <p>Diagnose the specific utility before requesting a system proposal: the <Link href='/blog/why-is-my-pge-bill-so-high' className={sourceLink}>PG&amp;E high-bill checklist</Link>, the <Link href='/blog/why-is-my-sce-bill-so-high' className={sourceLink}>SCE high-bill checklist</Link> and the <Link href='/blog/why-is-my-sdge-bill-so-high' className={sourceLink}>SDG&amp;E high-bill checklist</Link> each work through the same evidence in that utility&apos;s own rate structure.</p>
             </div>
 
             <section className='mt-10'><h2 className='text-2xl font-bold'>Use your own bill and service address</h2><p className='mt-3'>Your utility is determined by the service address; this is not a menu of utilities you can switch between. Check the electric provider and any CCA generation charges on your bill. Start with the utility’s plan comparison, then test a solar proposal using the remaining annual utility bill it actually predicts.</p><p className='mt-3'>The calculator below uses your entries. It does not turn the dated statewide averages above into your tariff, solar production or savings.</p></section>
             <SolarCalculator />
             <SolarInquiry topic='California electricity bill comparison' />
+            <RelatedGuides
+              heading="What the bill looks like after solar"
+              intro="The same three utilities, read from the other side of an interconnection."
+              links={[
+                { href: "/solar-problems/true-up-bill-california-explained", label: "What the annual true-up bill contains" },
+                { href: "/solar-problems/do-i-still-get-a-utility-bill-with-solar", label: "Why a monthly bill still arrives" },
+                { href: "/solar-problems/solar-bill-still-high-california", label: "When the bill stays high after going solar" },
+              ]}
+            />
           </article>
         </div>
       </main>

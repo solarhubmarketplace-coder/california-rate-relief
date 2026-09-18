@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -99,6 +100,13 @@ export default function ADUSolarCA() {
           <div className="mt-8">
             <SolarInquiry topic="ADU solar in California" />
           </div>
+             <RelatedGuides
+               heading="Scope and cost lines to separate"
+               links={[
+                 { href: "/solar-problems/what-solar-doesnt-cover-california", label: "Loads and equipment a system does not carry" },
+                 { href: "/solar-problems/hidden-costs-of-solar-california", label: "Costs that arrive after the quote" },
+               ]}
+             />
 
           </article>
         </div>

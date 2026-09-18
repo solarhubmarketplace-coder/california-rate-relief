@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -247,6 +248,18 @@ export default function AreSolarPanelsAScam() {
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>
+            <RelatedGuides
+              heading="Where the complaints actually come from"
+              intro="Each of these is a specific practice, documented rather than characterised."
+              links={[
+                { href: "/solar-problems/why-solar-reps-get-a-bad-name", label: "Why the sales channel earns the reputation" },
+                { href: "/solar-problems/solar-sales-tactics-california", label: "What each common tactic obscures" },
+                { href: "/solar-problems/solar-door-to-door-sales-california", label: "What a door-to-door rep can legally do" },
+                { href: "/solar-problems/solar-company-took-my-money-california", label: "What to do if a contractor takes the money and stops" },
+                { href: "/solar-problems/does-solar-mean-free-electricity-california", label: "Why solar is not free electricity" },
+                { href: "/solar-problems", label: "All California solar problem guides" },
+              ]}
+            />
           </article>
         </div>
       </main>

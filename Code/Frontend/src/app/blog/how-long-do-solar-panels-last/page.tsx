@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -246,6 +247,13 @@ export default function HowLongDoSolarPanelsLast() {
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>
+            <RelatedGuides
+              heading="What the warranty years do not include"
+              links={[
+                { href: "/solar-problems/solar-panel-degradation-california", label: "Measured degradation against the warranty curve" },
+                { href: "/solar-problems/what-solar-doesnt-cover-california", label: "Equipment and loads a system does not carry" },
+              ]}
+            />
           </article>
         </div>
       </main>
