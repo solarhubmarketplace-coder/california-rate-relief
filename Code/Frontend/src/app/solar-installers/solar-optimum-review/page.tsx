@@ -11,44 +11,35 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Solar Optimum Review: EnergySage 4.8/5, 21 BBB Complaints",
-  description: "Solar Optimum: 4.8/5 across 851 EnergySage reviews, 21 BBB complaints in 3 years, and a 6-level 25-year warranty. See pricing and equipment.",
+  title: "Solar Optimum Reviews 2026: Ratings & Lawsuit Check",
+  description: "Solar Optimum reviews across platforms, its 25-year warranty structure, and a sourced, dated check of the federal court record.",
   alternates: { canonical: '/solar-installers/solar-optimum-review' },
 };
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: "Solar Optimum Review 2026: California's Highest-Rated Installer, Compared",
+  headline: "Solar Optimum Review 2026: Ratings, Warranty and Lawsuit Check",
   datePublished: '2026-04-22',
-  dateModified: '2026-04-22',
+  dateModified: '2026-09-18',
   author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/solar-optimum-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'Solar Optimum', address: { '@type': 'PostalAddress', addressLocality: 'Glendale', addressRegion: 'CA', addressCountry: 'US' } },
-  reviewRating: { '@type': 'Rating', ratingValue: '4.6', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Solar Optimum has the strongest customer reputation of any installer in our California comparison — EnergySage 4.8/5 across 851 reviews, only 21 BBB complaints in 3 years, and a 6-level 25-year warranty. Smaller footprint than national competitors but genuinely excellent where they operate.',
-};
 
 export default function SolarOptimumReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
             <nav className='mb-8 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
               <Link href='/' className='hover:text-primary transition-colors'>Home</Link>
               <span>/</span>
-              <Link href='/best-solar-companies-california' className='hover:text-primary transition-colors'>Best Solar Companies in California</Link>
+              <Link href='/best-solar-companies-california' className='hover:text-primary transition-colors'>California Installer Reviews</Link>
               <span>/</span>
               <span className='text-foreground font-medium'>Solar Optimum Review</span>
             </nav>
@@ -56,34 +47,19 @@ export default function SolarOptimumReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Solar Optimum Review 2026: California&apos;s Highest-Rated Installer, Compared
+                Solar Optimum Review 2026: Ratings, Warranty and Lawsuit Check
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-22'>Updated April 22, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-18'>Updated September 18, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>9 min read</span></div>
               </div>
             </header>
 
-            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
-              <div>
-                <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p>
-                <p className='text-3xl font-extrabold text-foreground mt-1'>4.6 <span className='text-lg text-muted-foreground'>/ 5</span></p>
-              </div>
-              <div>
-                <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p>
-                <p className='text-sm text-foreground font-medium mt-1'>Buyers prioritizing service quality, reputation, and a 6-level 25-year warranty</p>
-              </div>
-              <div>
-                <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p>
-                <p className='text-sm text-foreground font-medium mt-1'>You&apos;re outside their CA/NV/AZ/FL footprint or need the cheapest possible cash price</p>
-              </div>
-            </div>
-
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Solar Optimum is the quiet best-in-class player in our California installer comparison. Founded in 2008 and based in Glendale, California, the company is small compared to national installers — roughly 132 employees and ~$28 million in revenue — but the customer reputation data is genuinely exceptional. EnergySage shows 4.8 out of 5 across 851 reviews. The BBB profile lists only 21 complaints over the prior three years. The company has been named EnergySage Installer of the Year multiple times, including 2026 for the third consecutive year, and has been Panasonic&apos;s National Installer of the Year five times. When we built this review, Solar Optimum was the single installer whose complaint-to-scale ratio stood out across every data source we checked.
+                Solar Optimum is a Glendale, California residential solar contractor. This page sets out what can be checked about the company from primary sources and what cannot. It states no star rating, no review count, no complaint count, no employee or revenue figure and no award: those figures previously appeared here but could not be re-verified at their own sources when this page was checked on <strong>September 18, 2026</strong>, so they have been removed rather than carried forward with a stale date. What follows is the equipment and warranty structure, and a dated search of the federal court record.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Corporate Profile</h2>
@@ -99,12 +75,67 @@ export default function SolarOptimumReview() {
                 Installation is primarily in-house W-2 crews. Install-day turnaround is typically 2 to 3 days on the roof, with 60 to 90 days for the full process from contract to Permission to Operate depending on utility interconnection queue. Those are competitive timelines for California.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Reputation Numbers, In Context</h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Checking Solar Optimum&apos;s Reviews Across Platforms</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                To put Solar Optimum&apos;s reputation data in context: Sunrun had 4,045 BBB complaints over 3 years. Freedom Forever had 1,359. Momentum Solar had 642. Semper Solaris had 173. Solar Optimum had 21. That&apos;s not just a low number — that&apos;s a genuinely best-in-class complaint-to-install ratio across our entire comparison set. EnergySage&apos;s 4.8/5 across 851 reviews is similarly well above industry average, and Trustpilot and other aggregators generally show 4.5+ stars.
+                Ratings move continuously and each platform measures something different, so a number quoted without a date is not information. Check them yourself and record the date you looked: the BBB profile carries an accreditation status and a rolling three-year complaint count; the solar review aggregators and Google each publish a current rating and review volume. Comparing the same company across platforms is more informative than any single score, because a company can look very different on a quote-marketplace profile than on a general review site.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The recurring themes in the handful of negative reviews are: occasional add-on costs discovered during install, and some post-install service slowness on edge-case issues. These are real but are significantly less frequent than the comparable themes at larger national installers. No major class-action lawsuits or regulatory actions were active in 2025 or into 2026.
+                When you read them, read the recent one- and two-star reviews rather than the headline figure. Complaint <em>themes</em> are more durable than a score and they are what you can raise before signing &mdash; add-on costs discovered during installation and post-install service response times are the two worth asking about directly, with the answers written into the contract.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                Has Solar Optimum been sued? (2026 update)
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                A party-name search of the federal court record on{' '}
+                <strong>September 18, 2026</strong> returned three dockets matching
+                &ldquo;Solar Optimum&rdquo;. Only one of them actually names this
+                company, and in that case Solar Optimum is the <strong>plaintiff</strong>,
+                not the defendant:
+              </p>
+
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>
+                  <em>
+                    <a href='https://www.courtlistener.com/docket/66750429/solar-optimum-incorporated-v-elevation-solar-llc/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>
+                      Solar Optimum Incorporated v. Elevation Solar LLC
+                    </a>
+                  </em>
+                  , U.S. District Court for the District of Arizona, No.
+                  2:23-cv-00135. Filed January 20, 2023; docket shows terminated
+                  November 21, 2024. Nature of suit recorded as Defend Trade Secrets
+                  Act (2016). Solar Optimum brought this action.
+                </li>
+                <li>
+                  The other two results name different companies &mdash; Optimum Solar
+                  Power, Inc. and Optimum Solar USA &mdash; and are not this business.
+                  Similar names are a common source of confusion in solar; check the
+                  exact party name before treating a case as relevant.
+                </li>
+              </ul>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                So: as of September 18, 2026, <strong>no federal docket in that
+                database named Solar Optimum as a defendant</strong>, and no
+                class-action or consumer-protection case against the company appeared
+                there. Source:{' '}
+                <a href='https://www.courtlistener.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>
+                  CourtListener
+                </a>
+                , searched September 18, 2026.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Read that as what it is, and no more. It covers federal dockets and
+                published opinions available in that database. It does{' '}
+                <strong>not</strong> cover California state courts, where most
+                consumer disputes against a California contractor would be filed, nor
+                small-claims matters, arbitrations, CSLB licence discipline or
+                complaints that never became lawsuits. A docket termination date is
+                also not an outcome. For the licence-discipline side, check the
+                company&apos;s record directly in the CSLB lookup below; state-court
+                records are searchable through the relevant county superior court.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Six-Level 25-Year Warranty</h2>
@@ -117,12 +148,12 @@ export default function SolarOptimumReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Pricing</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Solar Optimum&apos;s California cash pricing runs competitive with the mid-market — not the cheapest on this list (Tesla typically undercuts them), but reasonable given the quality and warranty depth. Financing is third-party partners rather than an in-house lease or PPA. That means the pricing transparency is good — you&apos;re paying a contract rate plus the cost of borrowing, with no lease escalator hidden in the fine print.
+                This page states no price per watt for Solar Optimum and no comparison against another installer's pricing. No primary, dated source publishing either was obtained when this page was checked on September 18, 2026. What is worth knowing structurally is that financing here runs through third-party lenders rather than an in-house lease or power-purchase product, which means you are quoted a contract price plus the cost of borrowing, and there is no lease escalator in the equipment agreement. Ask for the cash price and the DC system size in writing and divide them yourself, then get a second quote on the same basis.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Solar Optimum Makes Sense</h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Where Solar Optimum Fits, and What to Verify</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Solar Optimum is the right pick if service quality and reputation matter more to you than shaving off the last dollar of upfront cost. The 6-level 25-year warranty is meaningful if you&apos;re planning to stay in the home long-term. The roofing certification matters if you need a roof replacement bundled with the solar install. And the complaint data is exceptional in ways that are simply not true of the larger national installers.
+                This page does not recommend or rank installers. The features that distinguish this profile are structural and checkable: a warranty stated at 25 years across several separate coverage categories, roofing credentials that matter if roof work is bundled with the install, and third-party financing rather than an in-house lease or PPA. Each of those is a contract term to confirm in writing, not a conclusion.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 It&apos;s less compelling if you&apos;re specifically hunting the absolute lowest cash price (Tesla is typically lower), if you live outside their CA/NV/AZ/FL coverage footprint, or if you specifically want a national publicly traded installer with quarterly financial disclosures.
@@ -132,7 +163,7 @@ export default function SolarOptimumReview() {
               <div className='space-y-6 mb-6'>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>Is Solar Optimum a good company?</h3>
-                  <p className='text-foreground/80 leading-relaxed'>By the data we can verify, yes — it&apos;s the single highest-rated installer across EnergySage, BBB, and Trustpilot in our California comparison. 4.8/5 across 851 EnergySage reviews is exceptional in residential solar.</p>
+                  <p className='text-foreground/80 leading-relaxed'>This page does not rate companies, and it states no star rating or review count: none was re-verified at its own source on September 18, 2026. What it can tell you is that a federal court-record search on that date found no docket naming Solar Optimum as a defendant, and that the warranty is stated at 25 years across several coverage categories. Check the current ratings yourself, note the date, and read the recent negative reviews for themes.</p>
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>Where does Solar Optimum operate?</h3>
@@ -140,22 +171,36 @@ export default function SolarOptimumReview() {
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>Is Solar Optimum cheaper than Sunrun or Tesla?</h3>
-                  <p className='text-foreground/80 leading-relaxed'>Tesla is typically the cheaper cash option in California ($2.27 to $2.82 per watt). Solar Optimum runs competitive mid-market pricing. Versus Sunrun&apos;s ~$3.33 per watt average, Solar Optimum is often cheaper — and the service experience is substantially better.</p>
+                  <p className='text-foreground/80 leading-relaxed'>This page states no price-per-watt figure for any installer: none was verified at a primary source on September 18, 2026, and an unsourced price comparison is not useful to you. Get the cash price and DC system size from each bidder in writing, divide to get your own per-watt figure, and confirm what is included in each &mdash; roof work, electrical upgrades and storage are frequently scoped differently between two quotes at the same headline number.</p>
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>What does the 6-level warranty actually cover?</h3>
                   <p className='text-foreground/80 leading-relaxed'>25-year coverage across six separate categories: panels, inverter, racking, roofing (where applicable), workmanship, and performance. That&apos;s meaningfully more comprehensive than a standard 25-year panel warranty plus 10-year workmanship.</p>
                 </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>Is there a Solar Optimum lawsuit?</h3>
+                  <p className='text-foreground/80 leading-relaxed'>A federal court-record search on September 18, 2026 found no docket naming Solar Optimum as a defendant. The one federal matter naming the company is <em>Solar Optimum Incorporated v. Elevation Solar LLC</em> (D. Ariz., No. 2:23-cv-00135), a trade-secrets action Solar Optimum itself filed, which the docket shows terminated on November 21, 2024. That search covers federal dockets and published opinions only &mdash; not California state courts, arbitrations or CSLB licence discipline. <a href='https://www.courtlistener.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>Source</a>.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>How do Solar Optimum reviews compare across platforms (Yelp, BBB, Google)?</h3>
+                  <p className='text-foreground/80 leading-relaxed'>They will differ, and the difference is the useful part. A quote-marketplace profile draws from customers who completed a guided process; a general review site draws disproportionately from people motivated to complain; BBB counts formal complaints rather than opinions. Read all three, note the date you looked, and compare the complaint themes rather than the scores. This page states no figure from any of them, because none was re-verified on September 18, 2026.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>Is Solar Optimum legit?</h3>
+                  <p className='text-foreground/80 leading-relaxed'>It is an established California residential solar contractor operating from Glendale. Verify that for yourself the way you would for any contractor: look up the licence number in the CSLB lookup below, confirm the licence is current and the classifications cover the work, confirm the exact legal entity on your contract matches the licence, and check the home-improvement salesperson registration of whoever signs you up.</p>
+                </div>
               </div>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Get Solar Optimum&apos;s Quote Alongside Two Others.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three installers — including Solar Optimum — so you can compare their pricing, equipment, and warranty terms side by side with comparable options.</p>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Quotes Before You Sign</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>
+                California Rate Relief is a private referral service. Submit one short form and it may forward your inquiry to independent California providers, subject to availability, so you can compare pricing, equipment and warranty terms side by side. No installer is named as a partner and no provider is endorsed.
+              </p>
               <div className='flex justify-center'>
                 <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
               </div>
-              <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
+              <p className='text-xs text-muted-foreground text-center mt-4'>No cost to submit. No obligation. No impact on your credit score.</p>
             </div>
 
             <div className='mt-8'>
@@ -173,7 +218,7 @@ export default function SolarOptimumReview() {
             </div>
 
             <div className='mt-10'>
-              <Link href='/best-solar-companies-california' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Best Solar Companies in California</Link>
+              <Link href='/best-solar-companies-california' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to California installer reviews</Link>
             </div>
             <RelatedGuides
               heading="Decide the structure before the installer"

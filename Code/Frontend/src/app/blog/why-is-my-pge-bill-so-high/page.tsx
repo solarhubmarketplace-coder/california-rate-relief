@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/blog/why-is-my-pge-bill-so-high' },
-  openGraph: { title, description, type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-11T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' },
+  openGraph: { title, description, type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-18T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' },
 };
 
 export default function WhyIsMyPGEBillSoHigh() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant='Article' domain='crr' headline={title} url='https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' datePublished='2026-04-24' dateModified='2026-09-11' description={description} />
+      <ArticleJsonLd variant='Article' domain='crr' headline={title} url='https://ratereliefca.com/blog/why-is-my-pge-bill-so-high' datePublished='2026-04-24' dateModified='2026-09-18' description={description} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -39,7 +39,7 @@ export default function WhyIsMyPGEBillSoHigh() {
               <p className='text-lg text-muted-foreground'>Start with the usage line. If your kilowatt-hours did not rise, the rate plan, billing period and line-item changes usually explain the rest.</p>
               <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground mt-4'>
                 <Link href='/author/chad-simpson' className='font-medium text-foreground hover:text-primary'>By Chad Simpson</Link>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-11'>Updated September 11, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-18'>Updated September 18, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>8 min read</span></div>
               </div>
             </header>
@@ -68,7 +68,7 @@ export default function WhyIsMyPGEBillSoHigh() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>3. The Base Services Charge Now Appears Separately</h2>
               <p>PG&amp;E began showing a Base Services Charge separately in March 2026. PG&amp;E describes it as a restructuring: some service costs moved out of the per-kWh price and into a daily fixed charge. It says most customers pay around $24 a month, CARE customers around $6 and FERA customers around $12. The exact monthly amount changes with the number of days in the billing period.</p>
-              <p>This line does not mean every bill rose by $24. PG&amp;E lowered the corresponding per-kWh prices and says the combined change can raise or lower an individual total depending on usage. Compare the whole bill, not the new line in isolation. Source: PG&amp;E&apos;s current <a href='https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html' target='_blank' rel='noopener noreferrer' className={sourceLink}>Base Services Charge explanation</a>.</p>
+              <p>This line does not mean every bill rose by $24. PG&amp;E lowered the corresponding per-kWh prices and says the combined change can raise or lower an individual total depending on usage. PG&amp;E also notes on that page that the amounts above are illustrative and may change over time, so check the current figure on your own statement. Compare the whole bill, not the new line in isolation. Source: PG&amp;E&apos;s current <a href='https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html' target='_blank' rel='noopener noreferrer' className={sourceLink}>Base Services Charge explanation</a>, verified September 18, 2026.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>4. Your Baseline Allowance or Season Changed</h2>
               <p>Some PG&amp;E plans include a baseline allowance or baseline credit. The allowance varies by climate zone, heating source and season. That means the amount of electricity receiving the lower price can change even when a household&apos;s habits do not.</p>
@@ -87,6 +87,11 @@ export default function WhyIsMyPGEBillSoHigh() {
               <p>A solar customer&apos;s statement can include imports, exports, monthly charges, credits and a running True-Up balance. The Base Services Charge cannot be offset by generation credits at True-Up. Do not diagnose that bill with a standard non-solar checklist.</p>
               <p>Compare production with the installer&apos;s estimate, check inverter or monitoring alerts, and compare household consumption with the prior year. A new EV, heat pump or air conditioner can turn a previously well-sized system into an undersized one. PG&amp;E publishes a <a href='https://www.pge.com/assets/pge/docs/account/billing-and-assistance/nem-monthly-transition-bill-base-services-charge.pdf' target='_blank' rel='noopener noreferrer' className={sourceLink}>sample 2026 NEM statement</a> showing the new charge and the monthly import/export fields.</p>
 
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Is My Bill Higher Than a Typical PG&amp;E Bill?</h2>
+              <p>A single dollar total means little without a reference point. The California Public Advocates Office publishes a quarterly electric rates report that states each large utility&apos;s residential average rate and sample monthly bills by climate zone. Its Q2 2026 report, published July 2026, put PG&amp;E&apos;s residential average at <strong>33.7 cents per kWh</strong> as of June 2026, against 34.4 cents for SCE and 45.5 cents for SDG&amp;E. Those figures exclude the California Climate Credit, which the report notes reduces the residential average rate by roughly 2 to 3 cents. Source: <a href='https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf' target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>, verified September 18, 2026.</p>
+              <p>Use that as a rate check, not a bill check. Divide your current electric charges by the kWh on the same statement and compare the result with 33.7 cents. If your effective rate is far above it, the likely causes are peak-period use on a time-of-use plan, a baseline allowance change or a CCA generation line — not a utility-wide rate increase. If your effective rate is close to it and the bill is still high, the driver is consumption, and the usage checks above are where to look.</p>
+              <p>The same report also shows why a neighbour&apos;s bill is a poor benchmark: its sample bills differ by climate zone and by the usage assumed in each zone, so two PG&amp;E households on the same rate schedule can sit far apart. Compare your own account against your own prior year first. For the full three-utility picture, see the <Link href='/blog/pge-vs-sce-vs-sdge-rates-compared' className={sourceLink}>PG&amp;E vs. SCE vs. SDG&amp;E rate comparison</Link>.</p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What to Do, in Order</h2>
               <ol className='list-decimal pl-6 space-y-3'>
                 <li>Compare kWh per day, billing days and weather with the same season last year.</li>
@@ -102,9 +107,38 @@ export default function WhyIsMyPGEBillSoHigh() {
               <p>A rate-plan switch or assistance program may solve the immediate problem. Solar becomes a relevant comparison when you own the property, have a suitable roof or site, expect to stay long enough for the contract or ownership model to make sense, and still have a persistent grid-electricity cost after the no-cost checks.</p>
               <p>California Rate Relief is a private referral service. It does not set PG&amp;E rates or administer a utility or government program. If you request an assessment, review the provider, equipment ownership, escalation terms, production assumptions, battery operation and transfer terms before signing.</p>
 
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
+              <div className='space-y-6'>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>Why is my PG&amp;E bill so high?</h3>
+                  <p>Work the usage line first. If total kWh and kWh per day are flat against the same month last year, the increase is coming from the rate side: peak-period use on a time-of-use plan, the Base Services Charge now shown as a separate line, a baseline allowance or seasonal change, a CCA generation charge, a credit that did not appear this cycle, or a longer billing period. If kWh did rise, look for a new continuous load — air conditioning, EV charging, a pool pump or a failing appliance.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>Why is my PG&amp;E bill higher than last year even though my usage didn&apos;t change?</h3>
+                  <p>Compare billing days before anything else; a 34-day cycle costs more than a 28-day cycle at identical daily use. Then check whether your rate schedule, baseline allowance or climate-zone season changed, and whether the Base Services Charge appears where it previously sat inside the per-kWh price. PG&amp;E states that it lowered per-kWh prices when it introduced that line, so the combined effect can go either way depending on how much electricity you use.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>What is PG&amp;E&apos;s Base Services Charge?</h3>
+                  <p>It is a fixed monthly charge that PG&amp;E began showing separately in March 2026, covering service costs that previously sat in the per-kWh price. PG&amp;E&apos;s own page states the charge is around $24 a month for most residential customers, around $6 for CARE customers and around $12 for FERA customers, and notes that these amounts are illustrative and may change. The exact monthly figure varies with the number of days in the billing period. Source: <a href='https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html' target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E Base Services Charge</a>, verified September 18, 2026.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>What is the average PG&amp;E bill in California?</h3>
+                  <p>PG&amp;E does not publish a single average bill, and any figure quoted as one is an average of very different households. What the state does publish is the residential average <em>rate</em>: 33.7 cents per kWh as of June 2026, excluding the Climate Credit, per the California Public Advocates Office&apos;s <a href='https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf' target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>, verified September 18, 2026. Multiply that by your own monthly kWh for a more meaningful comparison than a statewide bill average.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>Why did a CCA change my PG&amp;E generation charge?</h3>
+                  <p>If your city or county joined a community choice aggregator, the CCA supplies generation while PG&amp;E continues delivery, metering, billing and outage response. Your consolidated statement then shows a CCA generation charge, PG&amp;E delivery charges and a Power Charge Indifference Adjustment. The generation line moving to a new provider is not a duplicate charge — the two providers bill for different parts of the service. Compare the combined total using the joint rate comparison for your CCA and rate schedule.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>Can solar fix a high PG&amp;E bill?</h3>
+                  <p>Only after the no-cost checks. A rate-plan change, a CARE, FERA or Medical Baseline enrolment, or finding a failed appliance can resolve the problem without a contract. Solar becomes a relevant comparison when you own the property, the roof or site is suitable, you expect to stay long enough for the ownership model to make sense, and a persistent grid-electricity cost remains. Confirm the roof first: see <Link href='/blog/is-my-roof-good-for-solar-california' className={sourceLink}>whether your roof is a candidate for solar</Link>.</p>
+                </div>
+              </div>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Related Reading</h2>
               <ul className='list-disc pl-6 space-y-2'>
                 <li><Link href='/blog/pge-vs-sce-vs-sdge-rates-compared' className={sourceLink}>PG&amp;E vs. SCE vs. SDG&amp;E Rates Compared</Link></li>
+                <li><Link href='/blog/is-my-roof-good-for-solar-california' className={sourceLink}>Is My Roof Good for Solar in California?</Link></li>
                 <li><Link href='/blog/california-24-dollar-fixed-charge-explained' className={sourceLink}>The California Base Services Charge Explained</Link></li>
                 <li><Link href='/blog/pge-rate-increase-2026' className={sourceLink}>PG&amp;E Rate Changes in 2026</Link></li>
                 <li><Link href='/blog/solar-battery-backup-california' className={sourceLink}>Solar Battery Backup in California</Link></li>
