@@ -85,6 +85,7 @@ export default function SolarRebatesByCAUtility() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>NEM 3.0 Net Billing.</strong> Export credit ~5–8¢/kWh (vs ~45.7¢ retail rate — the highest utility rate in the nation, which makes solar self-consumption particularly valuable).</li>
                 <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; SDG&amp;E service alone does not establish eligibility.</li>
+                <li><strong>Rate plan, not a rebate.</strong> The largest change most SDG&amp;E customers can make without a rebate is the plan itself; <Link href='/blog/sdge-time-of-use-rates-2026' className='text-primary underline'>SDG&amp;E time-of-use rates</Link> sets out the peak windows and how to compare plans on your own usage.</li>
                 <li><strong>CARE &amp; FERA bill discounts.</strong> Same structure.</li>
                 <li><strong>EV-TOU-5 rate plan.</strong> San Diego-specific EV rate worth comparing when pairing with solar.</li>
                 <li><strong>Equity Resiliency battery incentive.</strong> Applies to back-country fire-prone zones (East County, Valley Center).</li>

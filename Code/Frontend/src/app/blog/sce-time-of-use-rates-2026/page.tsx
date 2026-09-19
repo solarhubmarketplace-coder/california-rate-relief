@@ -225,7 +225,16 @@ export default function SceTimeOfUsePage() {
           <Link href="/blog/solar-battery-backup-california" className={link}>
             battery options
           </Link>
-          .
+          . On a different utility, the peak windows are set separately and the plan names do not
+          carry across:{" "}
+          <Link href="/blog/pge-time-of-use-rates-2026" className={link}>
+            PG&amp;E time-of-use rates
+          </Link>{" "}
+          and{" "}
+          <Link href="/blog/sdge-time-of-use-rates-2026" className={link}>
+            SDG&amp;E time-of-use rates
+          </Link>{" "}
+          cover those.
         </p>
       </section>
       <SolarCalculator utility="sce" />

@@ -880,6 +880,15 @@ export const CITY_COST_ROWS: CityCostRow[] = [
   },
 ];
 
+/**
+ * The URL a row is served at. It lives in the data module rather than in the
+ * page template because the index at /solar-cost, the city route and the
+ * template all need it and a second copy of the shape would drift.
+ */
+export function cityCostPath(slug: string): string {
+  return `/solar-cost/${slug}`;
+}
+
 /** True when any rendered field is still a TODO placeholder. */
 export function unsourcedFields(row: CityCostRow): string[] {
   const missing = GATED_FIELDS.filter((field) => {

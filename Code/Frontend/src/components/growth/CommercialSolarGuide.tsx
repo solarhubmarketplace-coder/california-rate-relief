@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage, type Source } from "./DecisionPage";
+import { articleHref, articlesInCluster } from "@/data/article-pages";
 
 const path = "/commercial-solar";
 const title = "Commercial Solar in California: Build a Quote You Can Actually Compare";
@@ -67,6 +68,101 @@ function CommercialInquiry() {
   );
 }
 
+// =============================================================================
+// THE SECTION INDEX (added 2026-09-18, claude/audit-links-20260918)
+//
+// /commercial-solar held 29 inbound internal links across the 20 pages of its
+// own section and this hub linked exactly two of its nineteen children: the
+// cost page and the companies page, through DecisionPage's two nav slots. Three
+// children — Title 24, VNEM aggregation and the schools guide — had no inbound
+// internal link at all. A hub that does not link its section is not a hub, so
+// every child is listed below.
+//
+// The twelve data-driven guides are read from src/data/article-pages.commercial.json
+// rather than typed out, so a new guide in that file appears here the day it
+// ships instead of waiting for someone to remember this list. The seven
+// hand-written pages have no such registry and are named explicitly.
+// =============================================================================
+
+const WRITTEN_GUIDES: { href: string; anchor: string; blurb: string }[] = [
+  {
+    href: "/commercial-solar/cost-per-watt-california",
+    anchor: "Commercial solar cost per watt in California",
+    blurb:
+      "What the published per-watt figures are by system size, where they come from and the date they were checked, so a bid can be read against something.",
+  },
+  {
+    href: "/commercial-solar/financing-options",
+    anchor: "Commercial solar financing: PPA, lease, direct purchase and C-PACE",
+    blurb:
+      "What each structure obliges you to, who takes the tax position and what changes when the property is sold or refinanced.",
+  },
+  {
+    href: "/commercial-solar/cpace-financing-california",
+    anchor: "How C-PACE financing works in California",
+    blurb:
+      "Assessment-based financing on the property tax bill: which authority levies it, what lender consent it needs and how it transfers with the building.",
+  },
+  {
+    href: "/commercial-solar/companies-california",
+    anchor: "Comparing commercial solar companies in California",
+    blurb:
+      "The licence classifications, references and scope questions that separate bidders when every proposal claims the same savings.",
+  },
+  {
+    href: "/commercial-solar/title-24-requirements",
+    anchor: "Title 24 Part 6 solar and storage requirements for nonresidential buildings",
+    blurb:
+      "When the Energy Code's photovoltaic and battery provisions apply to a permit application, and what the Energy Commission says about alterations.",
+  },
+  {
+    href: "/commercial-solar/vnem-aggregation-multi-meter",
+    anchor: "VNEM and NEM aggregation for multi-meter properties",
+    blurb:
+      "The difference between virtual net metering and meter aggregation, and which one a property with several meters can actually use.",
+  },
+  {
+    href: "/commercial-solar/sgip-battery-storage",
+    anchor: "SGIP commercial battery storage: current category status",
+    blurb:
+      "Which commercial storage categories the program tracker shows closed, and why an existing reservation is a different question from a new application.",
+  },
+];
+
+function SectionIndex() {
+  const guides = articlesInCluster("commercial");
+  return (
+    <section>
+      <h2>Every commercial solar guide on this site</h2>
+      <p>
+        Start with whichever question is actually blocking the decision. Each page states its
+        sources and the date they were checked.
+      </p>
+      <ul className="mt-4 space-y-3">
+        {WRITTEN_GUIDES.map((guide) => (
+          <li key={guide.href}>
+            <Link className="font-semibold text-emerald-800 underline" href={guide.href}>
+              {guide.anchor}
+            </Link>
+            <span className="block text-sm text-slate-600">{guide.blurb}</span>
+          </li>
+        ))}
+      </ul>
+      <h3 className="mt-8">By property type and system size</h3>
+      <ul className="mt-3 space-y-3">
+        {guides.map((guide) => (
+          <li key={guide.slug}>
+            <Link className="font-semibold text-emerald-800 underline" href={articleHref(guide)}>
+              {guide.h1}
+            </Link>
+            <span className="block text-sm text-slate-600">{guide.metaDescription}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export function CommercialSolarGuide() {
   return (
     <DecisionPage
@@ -83,6 +179,8 @@ export function CommercialSolarGuide() {
       comparisonHref="/commercial-solar/companies-california"
       comparisonLabel="Compare commercial providers"
     >
+      <SectionIndex />
+
       <section>
         <h2>Start with the building. Then size the project.</h2>
         <p>A round-number system size or generic savings percentage is not a usable proposal. Give every bidder the same property and energy record. Ask each one to explain every gap.</p>

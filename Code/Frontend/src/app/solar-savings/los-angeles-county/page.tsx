@@ -12,6 +12,7 @@ import {
 } from '@/lib/canonical-redirects';
 import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 /**
@@ -203,6 +204,10 @@ export default function LosAngelesCountySolarPage() {
                 California.
               </p>
             </div>
+
+            {/* claude/audit-links-20260918 — the cost-layer cities in these
+                counties that this hub's own grid does not reach. */}
+            <RegionalCostCities region='Los Angeles County' counties={['Los Angeles County']} />
 
             <div className="bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight">

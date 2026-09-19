@@ -45,7 +45,7 @@ export default function UtilityRatesCompared() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                SDG&amp;E had the highest residential average electricity rate of California&apos;s three large investor-owned utilities in June 2026: 45.5 cents per kilowatt-hour. PG&amp;E averaged 33.7 cents and SCE averaged 34.4 cents. Those are utility-wide averages for bundled residential customers. Your actual price depends on your rate plan, when you use electricity, your climate zone, your baseline allowance and whether a community choice aggregator supplies your generation.
+                SDG&amp;E had the highest residential average electricity rate of California&apos;s three large investor-owned utilities in June 2026: 45.5 cents per kilowatt-hour. PG&amp;E averaged 33.7 cents and SCE averaged 34.4 cents. Those are utility-wide averages for bundled residential customers. Your actual price depends on your rate plan, when you use electricity, your climate zone, your baseline allowance and whether a community choice aggregator supplies your generation. All three figures are residential: a business is billed on a commercial tariff with demand charges of its own, and its solar is quoted per watt rather than as a household system price, which is the comparison <Link href='/commercial-solar/cost-per-watt-california' className={sourceLink}>commercial solar cost per watt in California</Link> sets out.
               </p>
               <div className='rounded-xl border border-border bg-muted/30 p-5 my-8'>
                 <p className='font-semibold text-foreground mb-2'>Quick answer</p>

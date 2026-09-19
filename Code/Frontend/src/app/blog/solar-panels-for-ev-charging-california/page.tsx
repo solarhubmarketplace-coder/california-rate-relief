@@ -65,7 +65,7 @@ export default function SolarForEvCharging() {
                 <strong>Battery-stored charging.</strong> If you&apos;re commuting and the EV is gone during the day, a home battery stores solar production for evening EV charging. Tesla Powerwall, Enphase IQ, and other home batteries work for this — the EV plug pulls from the battery overnight instead of the grid.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>TOU rate optimization.</strong> California utilities (PG&amp;E, SCE, SDG&amp;E) all have EV-specific Time-of-Use rate plans with very low overnight rates. Combining solar, battery, and a TOU plan can drop EV charging cost close to zero.
+                <strong>TOU rate optimization.</strong> California utilities (PG&amp;E, SCE, SDG&amp;E) all have EV-specific Time-of-Use rate plans with very low overnight rates. Combining solar, battery, and a TOU plan can drop EV charging cost close to zero. Check the windows on your own utility before you set a charge schedule &mdash; <Link href='/blog/sdge-time-of-use-rates-2026' className='text-primary hover:underline'>SDG&amp;E time-of-use rates</Link> sets out its peak hours and what changing plan does.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Charger Itself</h2>

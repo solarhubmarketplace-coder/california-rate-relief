@@ -119,6 +119,14 @@ export default function WhatSizeSolarSystemDoINeed() {
                 <strong>Example:</strong> If you use 7,200 kWh per year in San Diego (5.7 peak sun hours), your system size would be: 7,200 ÷ (5.7 × 365 × 0.80) = 7,200 ÷ 1,662 = 4.3 kW.
               </p>
 
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                A commercial building does not size this way. There the array is fitted to a demand
+                profile and to the meters it is expected to serve, and the bid arrives as a price
+                per watt rather than a system price &mdash;{' '}
+                <Link href='/commercial-solar/cost-per-watt-california' className='text-primary hover:underline'>commercial solar cost per watt in California</Link>{' '}
+                covers what those figures are and where they come from.
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 Step-by-Step Sizing Process
               </h2>

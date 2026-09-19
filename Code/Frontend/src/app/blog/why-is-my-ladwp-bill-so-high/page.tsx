@@ -244,8 +244,8 @@ export default function WhyIsMyLADWPBillSoHigh() {
             <h2>Keep comparing</h2>
             <ul>
               <li>
-                <Link href="/solar-companies/los-angeles" className={linkStyle}>
-                  What to compare between Los Angeles solar companies
+                <Link href="/solar-cost/los-angeles" className={linkStyle}>
+                  What sets the price of solar in Los Angeles
                 </Link>
               </li>
               <li>

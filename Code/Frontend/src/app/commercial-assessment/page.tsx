@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -22,6 +23,14 @@ export default function CommercialAssessmentPage() {
             <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl'>Tell us about the property and the project</h1>
             <p className='mt-4 text-lg leading-8 text-slate-600'>
               California Rate Relief is a private referral service. We collect the project basics and make them available for review by a matched commercial solar provider.
+            </p>
+            <p className='mt-4 text-base leading-7 text-slate-600'>
+              Worth doing before you submit anything: read{' '}
+              <Link href='/commercial-solar/cost-per-watt-california' className='text-primary underline'>
+                commercial solar cost per watt in California
+              </Link>{' '}
+              so the first proposal you see is being compared against a published figure rather than
+              against itself.
             </p>
           </div>
           <CommercialAssessmentForm />

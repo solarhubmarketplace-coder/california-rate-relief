@@ -48,6 +48,9 @@ export default function HowBigSolarSystem() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Rough rule of thumb in California: every 1 kW of solar panels produces about 1,400-1,800 kWh per year (roughly 4.0-5.0 sun-hours per day, accounting for the state&apos;s climate). So to offset a 900 kWh/month (10,800 kWh/year) household, you need roughly 6.5-7.5 kW of solar.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                This is a household calculation. A business property is sized against its own tariff, its demand profile and the meters the array is expected to serve, and it is quoted per watt rather than as a system price &mdash; <Link href='/commercial-solar/cost-per-watt-california' className='text-primary hover:underline'>commercial solar cost per watt in California</Link> is where that starts.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Sizing by Monthly Bill (Rough Guide)</h2>
               <div className='overflow-x-auto rounded-xl border border-border my-6'>

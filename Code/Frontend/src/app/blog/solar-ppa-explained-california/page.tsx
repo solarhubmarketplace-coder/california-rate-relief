@@ -152,7 +152,7 @@ export default function SolarPPAExplainedCalifornia() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Initial PPA rate:</strong> 8-15¢/kWh depending on location and utility rates. In high-rate territories like SDG&amp;E (45.7¢/kWh), a 10¢/kWh PPA represents a 78% savings. Even in lower-rate areas like PG&amp;E (41.46¢/kWh), a 12¢/kWh PPA is 71% below utility rates.
+                <strong>Initial PPA rate:</strong> 8-15¢/kWh depending on location and utility rates. The utility figures quoted here are class averages rather than the price at any one hour, so check the plan you are actually on before treating a percentage as your saving &mdash; <Link href='/blog/sdge-time-of-use-rates-2026' className='text-primary underline'>SDG&amp;E time-of-use rates</Link> sets out its peak windows. In high-rate territories like SDG&amp;E (45.7¢/kWh), a 10¢/kWh PPA represents a 78% savings. Even in lower-rate areas like PG&amp;E (41.46¢/kWh), a 12¢/kWh PPA is 71% below utility rates.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

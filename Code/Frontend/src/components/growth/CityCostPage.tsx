@@ -7,7 +7,7 @@ import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { IntentCTA } from '@/components/growth/IntentCTA';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { Calendar, MapPin } from 'lucide-react';
-import type { CityCostRow } from '@/data/city-cost-data';
+import { cityCostPath, type CityCostRow } from '@/data/city-cost-data';
 import {
   RATE_TRACKER_PATH,
   formatAverageRateCents,
@@ -112,9 +112,10 @@ export function cityCostDescription(city: string): string {
     : `What sets the price of solar in ${city}, CA: utility rate, permits, roof and main panel. Sourced, with no price estimate.`;
 }
 
-export function cityCostPath(slug: string): string {
-  return `/solar-cost/${slug}`;
-}
+// The URL shape now lives with the data (src/data/city-cost-data.ts) so the
+// /solar-cost index can build links without importing this template. Re-exported
+// here because the city route imports it from this module.
+export { cityCostPath } from '@/data/city-cost-data';
 
 function formatVerified(iso: string): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
@@ -192,6 +193,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
           <article className='max-w-3xl mx-auto'>
             <nav className='mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
               <Link href='/' className='hover:text-primary'>Home</Link><span>/</span>
+              <Link href='/solar-cost' className='hover:text-primary'>Solar cost by city</Link><span>/</span>
               <span className='text-foreground'>Solar cost in {row.city}</span>
             </nav>
 

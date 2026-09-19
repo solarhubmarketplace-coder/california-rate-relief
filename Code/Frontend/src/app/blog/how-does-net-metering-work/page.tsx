@@ -72,6 +72,7 @@ export default function HowDoesNetMeteringWork() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Municipal Utilities Run Their Own Rules</h2>
               <p>NEM 3.0 applies only to the three investor-owned utilities (PG&amp;E, SCE, SDG&amp;E). Municipal utilities — LADWP, SMUD, Roseville Electric, Glendale Water &amp; Power, Imperial Irrigation District, Modesto Irrigation District — each run their own net-metering programs, often more favorable than NEM 3.0.</p>
+              <p>Because an export is credited against the hour it happens in, the rate plan you are on decides what self-consumption is worth. On SDG&amp;E that is set out in <Link href="/blog/sdge-time-of-use-rates-2026" className="text-primary underline">SDG&amp;E time-of-use rates</Link>.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The True-Up Statement</h2>
               <p>Unlike most electric bills, net-metered solar customers get a monthly &ldquo;informational&rdquo; bill and one annual <strong>True-Up</strong> statement that reconciles 12 months of credits and charges. If your credits exceed your charges, you typically receive a small payout (often at a discount to retail — the &ldquo;NSC&rdquo; rate). If your charges exceed your credits, you owe the difference.</p>

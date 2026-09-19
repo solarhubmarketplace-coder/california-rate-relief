@@ -139,6 +139,9 @@ export default function CpaceFinancing() {
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Who administers CPACE in California?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>CSCDA Open PACE is the statewide program. Most California cities and counties have opted in. Individual PACE administrators (third-party companies) originate the loans in partnership with the program.</p>
+
+              <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Check the amount before you finance it</h3>
+              <p className='text-foreground/80 leading-relaxed mb-4'>C-PACE finances a project cost; it does not set one. The assessment runs with the property for the whole term, so the figure it is written against matters more here than under a structure you can refinance out of. Read the quoted amount against <Link href='/commercial-solar/cost-per-watt-california' className='text-primary hover:underline'>commercial solar cost per watt in California</Link>, which gives the published per-watt figures by system size and the date they were checked.</p>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>

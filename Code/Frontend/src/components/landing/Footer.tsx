@@ -103,6 +103,32 @@ export function Footer() {
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
                   </Link>
                 </li>
+                {/*
+                  Added 2026-09-18. Both of these sections were reachable only
+                  from the sitemap or from a handful of body links: twenty of the
+                  fifty-seven /solar-cost city pages and eight of the
+                  thirty-one installer reviews had no inbound internal link at
+                  all. Their indexes belong in the sitewide footer for the same
+                  reason /blog and /commercial-solar are here.
+                */}
+                <li>
+                  <Link
+                    href='/solar-cost'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Solar Cost by City
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/solar-installers'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Solar Company Reviews
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href='/solar-problems'

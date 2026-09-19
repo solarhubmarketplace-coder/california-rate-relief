@@ -14,8 +14,24 @@ export const metadata: Metadata = {
   },
 };
 
-// Blog post data. Add new posts here
-const blogPosts = [
+// Blog post data. Add new posts here.
+//
+// This array is the /blog index and the only listing of the section: a post that
+// is not in it is linked from nowhere unless another post happens to mention it.
+// scripts/assert-city-links.mjs fails when a published post has no inbound
+// internal link at all, which is how the fourteen added on 2026-09-18 were found.
+interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  /** The post's own last-modified date. Never a date this file invents. */
+  date: string;
+  /** Only where the post itself publishes a reading time. */
+  readTime?: string;
+  category: string;
+}
+
+const blogPosts: BlogPost[] = [
   // claude/ca-green-20260918
   {
     slug: 'can-you-cancel-solar-panel-contract-before-installation-california',
@@ -347,6 +363,148 @@ const blogPosts = [
     readTime: '8 min read',
     category: 'Solar Financing',
   },
+  // claude/audit-links-20260918 — fourteen posts that were published and then
+  // linked from nowhere. The 2026-09-18 link audit found them with zero inbound
+  // internal links anywhere on the site: they were in the sitemap, and that was
+  // the whole of their discovery path, because this array is hand-maintained and
+  // nobody added them to it. The excerpts below are written for this index and
+  // deliberately carry no figure: every number on these subjects lives on the
+  // post, beside its source. The date on each is that post's own last-modified
+  // date, read from the post. readTime is only set where the post itself
+  // publishes one, which is why it is optional in BlogPost above.
+  {
+    slug: 'solar-carport-california-guide',
+    title: 'Solar Carports in California: Cost, Scope, and Quotes',
+    excerpt:
+      'What a carport project includes beyond the panels \u2014 the structure, the foundations, the trenching \u2014 and the scope questions a quote has to answer before two quotes can be compared.',
+    date: '2026-09-18',
+    category: 'Getting Quotes',
+  },
+  {
+    slug: 'best-time-to-install-solar-panels-california',
+    title: 'Best Time to Install Solar Panels in California',
+    excerpt:
+      'There is no single best month. The right time is when the roof, the electricity use, the bids, the permit and the utility application are all ready.',
+    date: '2026-09-12',
+    category: 'Solar Decision',
+  },
+  {
+    slug: 'commercial-solar-financing-california',
+    title: 'Commercial Solar Financing in California',
+    excerpt:
+      'Purchase, loan, PPA, PACE and SBA paperwork compared for the same commercial project, so ownership and payment terms are chosen on documents rather than on a monthly figure.',
+    date: '2026-09-11',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'commercial-solar-installation-cost-california',
+    title: 'Commercial Solar Installation Cost in California',
+    excerpt:
+      'What a commercial price actually depends on, and the scope items a bid has to name before two bids are describing the same project.',
+    date: '2026-09-11',
+    category: 'Getting Quotes',
+  },
+  {
+    slug: 'solar-tax-credit-2026',
+    title: 'Solar Tax Credit in 2026: Completion Dates and Records',
+    excerpt:
+      'A payment receipt is not the whole record. The installation timeline and the correct tax year decide what can be claimed, and a deposit settles neither.',
+    date: '2026-09-10',
+    category: 'California Solar Incentives',
+  },
+  {
+    slug: 'ab-942-california-solar',
+    title: 'AB 942: California Solar Lease Transfer Rights',
+    excerpt:
+      'What the law changed for a homeowner selling a house with a leased or financed solar system, and what has to be disclosed to the buyer.',
+    date: '2026-04-24',
+    category: 'California Solar Rights',
+  },
+  {
+    slug: 'adu-solar-requirements-california',
+    title: 'ADU Solar Requirements in California',
+    excerpt:
+      'When an accessory dwelling unit triggers the Energy Code solar requirement, when it does not, and how the unit ends up metered.',
+    date: '2026-04-24',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'what-is-demand-charge-california',
+    title: 'What Is a Demand Charge, and Do California Homes Pay One?',
+    excerpt:
+      'What a demand charge bills you for rather than how much you used, which California customers pay one, and why a battery acts on it differently from solar.',
+    date: '2026-04-24',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'tech-clean-california-heat-pump-rebate',
+    title: 'TECH Clean California: Heat Pump Rebate Program',
+    excerpt:
+      'What the program covers, who administers it, and where a heat pump rebate sits alongside an electrification plan.',
+    date: '2026-04-24',
+    category: 'California Solar Programs',
+  },
+  {
+    slug: 'solar-panel-cleaning-california',
+    title: 'Solar Panel Cleaning in California: When It Actually Helps',
+    excerpt:
+      'When cleaning changes production and when it does not, what a pressure washer does to a panel warranty, and what to ask a cleaning service.',
+    date: '2026-04-24',
+    category: 'Solar Longevity',
+  },
+  {
+    slug: 'solar-pool-heating-california',
+    title: 'Solar Pool Heating in California: How It Compares',
+    excerpt:
+      'Solar pool heating is not photovoltaic solar. What it does to the swim season, what it cannot do, and how to compare it against a gas heater.',
+    date: '2026-04-24',
+    category: 'Solar Basics',
+  },
+  {
+    slug: 'how-long-do-solar-panels-last',
+    title: 'How Long Do Solar Panels Last?',
+    excerpt:
+      'What a degradation rate means in practice, what the manufacturer warranties actually cover, and how long the inverter is expected to last beside them.',
+    date: '2026-04-16',
+    readTime: '10 min read',
+    category: 'Solar Longevity',
+  },
+  {
+    slug: 'california-public-utilities-commission',
+    title: 'What Is the CPUC, and How Does It Affect Your Bill?',
+    excerpt:
+      'What the commission decides, which utilities it regulates, and where to read the decisions that move a residential rate.',
+    date: '2026-04-16',
+    readTime: '9 min read',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'solar-panel-maintenance-cost',
+    title: 'Solar Panel Maintenance Cost: What to Expect',
+    excerpt:
+      'What maintenance a rooftop system actually needs, which parts of it a warranty covers, and where the recurring costs land over the life of the system.',
+    date: '2026-04-16',
+    readTime: '6 min read',
+    category: 'Solar Longevity',
+  },
+  {
+    slug: 'solar-panel-bird-proofing',
+    title: 'Solar Panel Bird Proofing: Methods and Costs',
+    excerpt:
+      'Why pigeons nest under panels, what critter guards and mesh do about it, and what to check before paying for the work.',
+    date: '2026-04-16',
+    readTime: '5 min read',
+    category: 'Solar Longevity',
+  },
+  {
+    slug: 'are-solar-panels-a-scam',
+    title: 'Are Solar Panels a Scam? What California Buyers Should Know',
+    excerpt:
+      'Where the complaints actually come from \u2014 the sales call, the contract and the fees \u2014 and how to tell those apart from the equipment.',
+    date: '2026-04-16',
+    readTime: '7 min read',
+    category: 'Solar Decision',
+  },
 ];
 
 /**
@@ -436,10 +594,12 @@ export default function BlogPage() {
                         })}
                       </time>
                     </div>
-                    <div className='flex items-center gap-1 text-xs text-muted-foreground'>
-                      <Clock className='h-3 w-3' />
-                      <span>{post.readTime}</span>
-                    </div>
+                    {post.readTime ? (
+                      <div className='flex items-center gap-1 text-xs text-muted-foreground'>
+                        <Clock className='h-3 w-3' />
+                        <span>{post.readTime}</span>
+                      </div>
+                    ) : null}
                   </div>
 
                   <Link href={`/blog/${post.slug}`} className='block'>

@@ -111,6 +111,10 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     { url: `${base}/solar-problems/solar-homeowners-insurance`, lastModified: urlMtime('/solar-problems/solar-homeowners-insurance', today), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/panel-reviews`, lastModified: urlMtime('/panel-reviews', today), changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/commercial-solar`, lastModified: urlMtime('/commercial-solar', today), changeFrequency: 'weekly', priority: 0.9 },
+    // claude/audit-links-20260918 — the two section indexes added to close the
+    // orphan city and installer pages. Both list every child they cover.
+    { url: `${base}/solar-cost`, lastModified: new Date('2026-09-18T00:00:00.000Z'), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/solar-installers`, lastModified: new Date('2026-09-18T00:00:00.000Z'), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/about`, lastModified: urlMtime('/about', today), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/contact`, lastModified: urlMtime('/contact', today), changeFrequency: 'monthly', priority: 0.4 },
     { url: `${base}/methodology`, lastModified: urlMtime('/methodology', today), changeFrequency: 'monthly', priority: 0.5 },

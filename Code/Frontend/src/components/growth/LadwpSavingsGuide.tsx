@@ -1,4 +1,8 @@
 import Link from "next/link";
+import {
+  companiesCityHref,
+  hasCompaniesCityPage,
+} from "@/lib/canonical-redirects";
 import { DecisionPage } from "./DecisionPage";
 import { SolarCalculator } from "./SolarCalculator";
 
@@ -98,8 +102,16 @@ export function LadwpSavingsGuide() {
           LADWP usage, rate and assistance checklist
         </Link>
         . If you are choosing between bidders, use the{" "}
-        <Link href="/solar-companies/los-angeles">
-          Los Angeles solar company comparison
+        {/*
+          2026-09-18: /solar-companies/los-angeles now 301s to
+          /solar-cost/los-angeles. This link went through the redirect from every
+          LADWP savings page, so it is routed through the table instead and the
+          label follows whichever page it actually opens.
+        */}
+        <Link href={companiesCityHref("los-angeles")}>
+          {hasCompaniesCityPage("los-angeles")
+            ? "Los Angeles solar company comparison"
+            : "Los Angeles cost, permit and utility guide"}
         </Link>{" "}
         for scope and contractor questions.
       </p>
