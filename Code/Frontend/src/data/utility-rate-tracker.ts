@@ -42,7 +42,23 @@ export const PAO_REPORTS_INDEX_URL =
   'https://www.publicadvocates.cpuc.ca.gov/press-room/reports-and-analyses';
 
 /** Utilities the tracker covers. A city page may only reference one of these. */
-export type UtilityRateKey = 'pge' | 'sce' | 'sdge' | 'smud' | 'ladwp';
+export type UtilityRateKey =
+  | 'pge'
+  | 'sce'
+  | 'sdge'
+  | 'smud'
+  | 'ladwp'
+  // Publicly owned utilities. The CPUC Public Advocates Office quarterly rate
+  // reports cover the investor-owned utilities only, so these records carry no
+  // average rate and point the reader at the utility's own published schedule.
+  // They exist so that /solar-cost/<city> can name the correct biller for a
+  // municipal city instead of mis-stating it as PG&E or SCE. The rate-tracker
+  // page reads its rows by name and does not iterate this map, so adding them
+  // does not change what that page renders.
+  | 'roseville'
+  | 'mid'
+  | 'anaheim'
+  | 'corona';
 
 export interface UtilityRateRecord {
   key: UtilityRateKey;
@@ -139,6 +155,59 @@ const RECORDS: Record<UtilityRateKey, UtilityRateRecord> = {
     basisNote:
       'the only retrievable LADWP tariff document is dated July 1, 2009 and is not current, so no LADWP rate is published',
     fetchedAt: RATE_TRACKER_VERIFIED,
+  },
+
+  roseville: {
+    key: 'roseville',
+    name: 'Roseville Electric',
+    longName: 'Roseville Electric Utility',
+    averageResidentialRateCents: null,
+    averageResidentialRatePerKwh: null,
+    asOf: 'no CPUC average published; see the utility rate schedule',
+    sourceLabel: 'Roseville Electric Utility — Rates',
+    sourceUrl: 'https://www.roseville.ca.gov/electric_utility/rates/index.php',
+    basisNote:
+      'Roseville Electric is a publicly owned municipal utility, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only',
+    fetchedAt: '2026-09-18',
+  },
+  mid: {
+    key: 'mid',
+    name: 'MID',
+    longName: 'the Modesto Irrigation District',
+    averageResidentialRateCents: null,
+    averageResidentialRatePerKwh: null,
+    asOf: 'no CPUC average published; see the district rate schedule',
+    sourceLabel: 'Modesto Irrigation District — Electric Rates',
+    sourceUrl: 'https://www.mid.org/power/rates-service-rules/electric-rates/',
+    basisNote:
+      'MID is a publicly owned irrigation district that sells retail electricity, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only',
+    fetchedAt: '2026-09-18',
+  },
+  anaheim: {
+    key: 'anaheim',
+    name: 'APU',
+    longName: 'Anaheim Public Utilities',
+    averageResidentialRateCents: null,
+    averageResidentialRatePerKwh: null,
+    asOf: 'no CPUC average published; see the utility rate schedule',
+    sourceLabel: 'Anaheim Public Utilities — Residential Rates',
+    sourceUrl: 'https://www.anaheim.net/6335/Residential-Rates',
+    basisNote:
+      'Anaheim Public Utilities is a city-owned municipal utility, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only',
+    fetchedAt: '2026-09-18',
+  },
+  corona: {
+    key: 'corona',
+    name: 'Corona DWP',
+    longName: 'the City of Corona Department of Water and Power',
+    averageResidentialRateCents: null,
+    averageResidentialRatePerKwh: null,
+    asOf: 'no CPUC average published; see the department rate schedule',
+    sourceLabel: 'City of Corona Department of Water and Power — Electric Rates',
+    sourceUrl: 'https://www.coronaca.gov/departments/utilities/customer-care/services/electric-rates',
+    basisNote:
+      'Corona runs a city-owned electric utility, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only',
+    fetchedAt: '2026-09-18',
   },
 };
 
