@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { CITIES, type CityData } from '@/data/cities-data';
-import { hasSavingsCityPage, savingsCityHref } from '@/lib/canonical-redirects';
+import {
+  companiesCityHref,
+  hasCompaniesCityPage,
+  hasSavingsCityPage,
+  savingsCityHref,
+} from '@/lib/canonical-redirects';
 
 /**
  * Nearby-cities + companion-page internal linking block.
@@ -39,17 +44,26 @@ export function NearbyCities({
   // it is suppressed rather than retargeted. See src/lib/canonical-redirects.ts.
   const showCompanion =
     variant === 'savings' || hasSavingsCityPage(city.slug);
+  // 2026-09-18: the companies city page for a city with a /solar-cost twin now
+  // 301s there, so the companion link resolves through companiesCityHref() and
+  // the label follows the page it actually opens.
+  const companionRetired =
+    variant === 'savings' && !hasCompaniesCityPage(city.slug);
   const companionHref =
     variant === 'savings'
-      ? `/solar-companies/${city.slug}`
+      ? companiesCityHref(city.slug)
       : `/solar-savings/${city.slug}`;
   const companionLabel =
     variant === 'savings'
-      ? `Compare solar companies in ${city.name}`
+      ? companionRetired
+        ? `What solar costs in ${city.name}`
+        : `Compare solar companies in ${city.name}`
       : `See solar costs and savings in ${city.name}`;
   const companionBlurb =
     variant === 'savings'
-      ? `Installer-by-installer comparison for ${city.name}, including who actually serves the area and where each one fits.`
+      ? companionRetired
+        ? `Installed cost, the local utility rate and what changes the payback period in ${city.name}.`
+        : `Installer-by-installer comparison for ${city.name}, including who actually serves the area and where each one fits.`
       : `What ${city.name} homeowners pay now, what solar costs here, and the local rules that change the maths.`;
 
   return (
@@ -85,13 +99,15 @@ export function NearbyCities({
                 href={
                   variant === 'savings'
                     ? savingsCityHref(c.slug)
-                    : `/solar-companies/${c.slug}`
+                    : companiesCityHref(c.slug)
                 }
                 className="text-primary hover:underline font-medium text-sm"
               >
                 {variant === 'savings' && hasSavingsCityPage(c.slug)
                   ? `Solar savings in ${c.name}`
-                  : `Solar companies in ${c.name}`}
+                  : hasCompaniesCityPage(c.slug)
+                    ? `Solar companies in ${c.name}`
+                    : `Solar costs in ${c.name}`}
               </Link>
             ))}
           </div>
