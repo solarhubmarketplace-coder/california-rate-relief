@@ -54,7 +54,7 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // --- 24 same-city twins: /solar-savings earned 0 impressions while
   //     /solar-companies earned the figure in the comment
   //     (2026-08-12..2026-09-08 GSC window).
-  '/solar-savings/los-angeles': '/solar-companies/los-angeles', // twin 3,076 impr
+  '/solar-savings/los-angeles': '/solar-cost/los-angeles', // twin 3,076 impr
   '/solar-savings/fresno': '/solar-cost/fresno', // twin 1,717 impr → retargeted 2026-09-18
   '/solar-savings/monterey': '/solar-cost/monterey', // twin 1,287 impr → retargeted 2026-09-18
   '/solar-savings/san-francisco': '/solar-companies/san-francisco', // twin 1,020 impr
@@ -63,7 +63,7 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   '/solar-savings/salinas': '/solar-cost/salinas', // twin 789 impr → retargeted 2026-09-18
   '/solar-savings/san-bernardino': '/solar-companies/san-bernardino', // twin 714 impr
   '/solar-savings/temecula': '/solar-cost/temecula', // twin 688 impr → retargeted 2026-09-18
-  '/solar-savings/seaside': '/solar-companies/seaside', // twin 635 impr
+  '/solar-savings/seaside': '/solar-cost/seaside', // twin 635 impr
   '/solar-savings/roseville': '/solar-cost/roseville', // twin 571 impr → retargeted 2026-09-18
   '/solar-savings/el-cajon': '/solar-cost/el-cajon', // twin 432 impr → retargeted 2026-09-18
   '/solar-savings/san-jose': '/solar-cost/san-jose', // twin 417 impr → retargeted 2026-09-18
@@ -74,7 +74,7 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   '/solar-savings/anaheim': '/solar-cost/anaheim', // twin 223 impr → retargeted 2026-09-18
   '/solar-savings/long-beach': '/solar-companies/long-beach', // twin 185 impr
   '/solar-savings/mountain-view': '/solar-companies/mountain-view', // twin 142 impr
-  '/solar-savings/encinitas': '/solar-companies/encinitas', // twin 118 impr
+  '/solar-savings/encinitas': '/solar-cost/encinitas', // twin 118 impr
   '/solar-savings/lake-elsinore': '/solar-companies/lake-elsinore', // twin 102 impr
   '/solar-savings/san-jacinto': '/solar-companies/san-jacinto', // twin 100 impr
   '/solar-savings/perris': '/solar-companies/perris', // twin 58 impr
@@ -140,6 +140,16 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   '/solar-companies/watsonville': '/solar-cost/watsonville',
   '/solar-companies/winchester': '/solar-cost/winchester',
 
+  // --- Added 2026-09-18 (second wave). These six /solar-companies city pages
+  //     had no cost twin when the layer was first retired; the re-screen pass
+  //     qualified them and their /solar-cost pages now exist, so they join the
+  //     same consolidation as the other 37.
+  '/solar-companies/beaumont': '/solar-cost/beaumont',
+  '/solar-companies/encinitas': '/solar-cost/encinitas',
+  '/solar-companies/los-angeles': '/solar-cost/los-angeles',
+  '/solar-companies/palm-springs': '/solar-cost/palm-springs',
+  '/solar-companies/seaside': '/solar-cost/seaside',
+  '/solar-companies/vallejo': '/solar-cost/vallejo',
 };
 
 /**

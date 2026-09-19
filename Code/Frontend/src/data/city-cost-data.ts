@@ -695,6 +695,189 @@ export const CITY_COST_ROWS: CityCostRow[] = [
       "Yes for permits generally, through the Yucaipa Permit Exchange portal. The City's pages do not state whether solar has a dedicated or automated path, and SolarAPP+ is not mentioned.",
     sourcesFetchedAt: "2026-09-18",
   },
+  // Added 2026-09-18 from the re-screen pass: 5 AMBER cities that flipped GREEN
+  // on an alternate phrasing, 5 confirmed AMBER, and the three cities whose
+  // original RED was a keyword collision with a same-named city in another
+  // state (Ontario, Windsor, Auburn) rather than a hard SERP. Ledger:
+  // Growth_200/city_data_parts/part_rescreen13.csv.
+  {
+    slug: "auburn",
+    city: "Auburn",
+    county: "Placer County",
+    utilityKey: "pge",
+    cca: "Pioneer Community Energy",
+    permitUrl: "https://www.auburn.ca.gov/700/Symbium-Permits",
+    permitFeeNote:
+      "The Solar Photovoltaic Submittal Guidelines state Auburn \"encourages the installation of solar photovoltaic systems through low permit fees\" but neither that document nor the Symbium Permits page gives an actual dollar amount.",
+    permitFeeSource: "City of Auburn Symbium Permits page / Solar Photovoltaic Submittal Guidelines",
+    permitOnline:
+      "Yes: the Symbium Permits page describes a two-step process \u2014 apply and pay fees through the Symbium portal for instantaneous plan review, then apply for the permit type \"Online Residential Solar Permit (Symbium)\" through the city's Civic Access system. SolarAPP+ is not named \u2014 Auburn uses Symbium instead.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "beaumont",
+    city: "Beaumont",
+    county: "Riverside County",
+    utilityKey: "sce",
+    permitUrl: "https://beaumontca.gov/1456/Photovoltaic-Permit-Streamlining",
+    permitFeeNote:
+      "The page states \"There will be additional fees charged by that vendor for the service\" (referring to the Symbium automated-review vendor) but does not give a dollar figure for either the vendor fee or the city's own building permit fee.",
+    permitFeeSource: "City of Beaumont Photovoltaic Permit Streamlining page",
+    permitOnline:
+      "Yes, online: submittals and inspections go through the \"City of Beaumont Citizen Self Service (CSS) Portal,\" using Symbium's automated permitting platform for expedited review. SolarAPP+ is not named \u2014 Beaumont uses Symbium instead.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "danville",
+    city: "Danville",
+    county: "Contra Costa County",
+    utilityKey: "pge",
+    cca: "MCE (Marin Clean Energy)",
+    permitUrl: "https://www.danville.ca.gov/1042/SolarApp-Submittals",
+    permitFeeNote:
+      "The page states \"A processing fee from SolarAPP+ and Town of Danville permit fees will be charged\" but does not specify a dollar amount for either fee.",
+    permitFeeSource: "Town of Danville SolarApp+ Submittals page",
+    permitOnline:
+      "Yes, explicitly: the page is titled \"SolarApp+ Submittals\" and states SolarAPP+ \"is designed to provide a code-compliance check for the majority of residential, roof-mounted, retrofit photovoltaic systems.\"",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "encinitas",
+    city: "Encinitas",
+    county: "San Diego County",
+    utilityKey: "sdge",
+    cca: "San Diego Community Power",
+    permitUrl: "https://www.encinitasca.gov/government/departments/applications-and-information/solar-photovoltaic-permit-application",
+    permitFeeNote:
+      "The page does not give a dollar amount. It links to an \"Energy Efficiency Permit Fee Waiver Flyer\" described as \"information regarding waiver or reduction of permit fees for solar systems and electric vehicle charging systems,\" but the flyer's specific terms are not quoted on the page itself.",
+    permitFeeSource: "City of Encinitas Solar Photovoltaic Permit Application page",
+    permitOnline:
+      "Yes, online: submittal documents are uploaded through the City's Customer Self Service (CSS) portal (registration required). SolarAPP+ is not named on this specific page.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "los-angeles",
+    city: "Los Angeles",
+    county: "Los Angeles County",
+    utilityKey: "ladwp",
+    permitUrl: "https://dbs.lacity.gov/sites/default/files/efs/forms/pc17/ib-p-gi-2020-003-express-permits_rev-5-28-2024.pdf",
+    permitFeeNote:
+      "LADBS Information Bulletin P/GI 2020-003 (Express Permits) lists rooftop PV systems on one- or two-family dwellings up to 10kW as eligible for Express Permits, stating these are \"issued only online at https://dbs.lacity.gov/\"; the bulletin does not name a dollar figure for the permit fee.",
+    permitFeeSource: "LADBS Information Bulletin P/GI 2020-003, Express Permits (No Plan Check Required)",
+    permitOnline:
+      "Yes for qualifying residential rooftop PV (\u226410kW): per the bulletin, licensed-contractor Express Permits for these systems are issued only online through the LADBS website (dbs.lacity.gov). SolarAPP+ is not named in this bulletin.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "ontario",
+    city: "Ontario",
+    county: "San Bernardino County",
+    utilityKey: "sce",
+    permitUrl: "https://www.ontarioca.gov/government/community-development/building/apply-residential-solar-permits",
+    permitFeeNote:
+      "This dedicated solar-permit page returned a server error (HTTP 500) at every attempt to fetch it during research and could not be reached. The general Building Department Fees page (https://www.ontarioca.gov/Building/Fees) lists fee Tables A-F (building, electrical, mechanical, plumbing, grading) but gives no separate dollar figure for solar/photovoltaic permits, and directs applicants to call permit technicians at 909-395-2023 for specifics.",
+    permitFeeSource: "City of Ontario Building Department Fees page (the Apply for Residential Reroof and Solar Permits page itself returned a 500 error and could not be read)",
+    permitOnline:
+      "Could not be determined: the city's dedicated \"Apply for Residential Reroof and Solar Permits\" page returned a server error (HTTP 500) on every fetch attempt during research and its online-filing/SolarAPP+ details could not be confirmed.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "palm-springs",
+    city: "Palm Springs",
+    county: "Riverside County",
+    utilityKey: "sce",
+    cca: "Desert Community Energy",
+    permitUrl: "https://www.palmspringsca.gov/government/departments/building/permits",
+    permitFeeNote:
+      "The Building Permit and Review Fees page lists categories of fees the city collects but does not give a specific dollar figure for a residential solar photovoltaic permit.",
+    permitFeeSource: "City of Palm Springs Building Permit and Review Fees page",
+    permitOnline:
+      "Yes, online: the Permits page directs applicants to \"Create an account at Palm Springs Online, select apply on home page, and search for the application specific to your project.\" SolarAPP+ is not named on this page.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "rocklin",
+    city: "Rocklin",
+    county: "Placer County",
+    utilityKey: "pge",
+    cca: "Pioneer Community Energy",
+    permitUrl: "https://www.rocklin.ca.us/online-solar-permitting",
+    permitFeeNote:
+      "The page states: \"SolarAPP+ is an additional $25.00 paid directly to SolarAPP+.\" This is the SolarAPP+ processing fee; the city's own building permit fee is separate and not quantified on this page.",
+    permitFeeSource: "City of Rocklin Online Solar Permitting page",
+    permitOnline:
+      "Yes: \"licensed contractors may complete an application first using SolarAPP+ in lieu of submitting construction plans and other required supplemental technical documentation.\" SolarAPP+ is explicitly named.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "seaside",
+    city: "Seaside",
+    county: "Monterey County",
+    utilityKey: "pge",
+    cca: "Central Coast Community Energy (3CE)",
+    permitUrl: "https://ci.seaside.ca.us/852/Solar-App",
+    permitFeeNote:
+      "The page states \"A processing fee will be charged by SolarAPP+\" for the automated review but does not give a dollar amount; it directs applicants to pay the separate city permit fee when applying through the City of Seaside Permitting System.",
+    permitFeeSource: "City of Seaside Solar App+ page (Building & Code Enforcement Department)",
+    permitOnline:
+      "Yes, explicitly: qualifying residential PV and PV+battery-storage projects are submitted for automated review through SolarAPP+, then the SolarAPP+ approval documents are uploaded to apply for the permit online via the City of Seaside Permitting System.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "tracy",
+    city: "Tracy",
+    county: "San Joaquin County",
+    utilityKey: "pge",
+    cca: "Ava Community Energy",
+    permitUrl: "https://www.cityoftracy.org/Departments/Community-and-Economic-Development/Building-Safety/Permit-Process-and-Fees",
+    permitFeeNote:
+      "The page does not give a dollar figure for a solar permit. It only directs photovoltaic project submittals to a dedicated email address, \"photovoltaic@cityoftracy.org,\" rather than listing fee amounts.",
+    permitFeeSource: "City of Tracy Permit Process and Fees page",
+    permitOnline:
+      "The page does not say whether solar permits specifically can be filed online or whether SolarAPP+ is used; PV submittals are routed by email to the Building Safety division.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "vallejo",
+    city: "Vallejo",
+    county: "Solano County",
+    utilityKey: "pge",
+    cca: "MCE (Marin Clean Energy)",
+    permitUrl: "https://www.vallejo.gov/our_city/departments_divisions/planning_development_services/building_division",
+    permitFeeNote:
+      "The Building Division page does not give a dollar figure for solar permits; it points to the general permit process and the city's Master Fee Schedule for cost information rather than listing a solar-specific fee.",
+    permitFeeSource: "City of Vallejo Building Division page",
+    permitOnline:
+      "The page does not say whether solar permits specifically can be filed online or whether SolarAPP+ is used; general permits are tracked through the city's eTRAKiT system.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "windsor",
+    city: "Windsor",
+    county: "Sonoma County",
+    utilityKey: "pge",
+    cca: "Sonoma Clean Power",
+    permitUrl: "https://www.townofwindsor.ca.gov/1570/Residential-Solar-Applications",
+    permitFeeNote:
+      "The page does not give a dollar figure. It states Symbium's platform will \"instantaneously check for code compliance, collect a service fee, and direct the applicant back to the Town's eTRAKiT system for permit issuance,\" where the Town's own building permit fee is then assessed (amount not stated on this page).",
+    permitFeeSource: "Town of Windsor Residential Solar Applications page (Building Division)",
+    permitOnline:
+      "Yes: \"The Town has partnered with Symbium to provide an automated permitting platform that automatically checks applications for code compliance and allows for instant permit approval for residential solar and energy storage systems.\" SolarAPP+ is not named \u2014 Windsor uses Symbium, and applicants are routed to the Town's eTRAKiT system for permit issuance.",
+    sourcesFetchedAt: "2026-09-18",
+  },
+  {
+    slug: "yuba-city",
+    city: "Yuba City",
+    county: "Sutter County",
+    utilityKey: "pge",
+    permitUrl: "https://www.yubacity.net/departments/development_services/solar_app.php",
+    permitFeeNote:
+      "The page states \"A processing fee from SolarAPP+ will be charged\" for the automated review service but does not specify the dollar amount; it separately notes \"The City will review the application and invoice the building permit fees,\" again without an amount.",
+    permitFeeSource: "City of Yuba City Solar APP+ page",
+    permitOnline:
+      "Yes: \"Log in and submit your design through the SolarAPP+ Webpage\" (gosolarapp.org), then \"creating a Building Permit Application Through the City's Online Citizen Portal.\" SolarAPP+ is explicitly named.",
+    sourcesFetchedAt: "2026-09-18",
+  },
 ];
 
 /** True when any rendered field is still a TODO placeholder. */
