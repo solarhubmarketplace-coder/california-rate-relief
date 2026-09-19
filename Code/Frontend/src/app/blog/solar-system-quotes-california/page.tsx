@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { IntentCTA } from '@/components/growth/IntentCTA';
 
 export const metadata: Metadata = {
   title: "Solar System Quotes in California: Get 3 Real Quotes Fast",
@@ -73,12 +74,7 @@ export default function SolarSystemQuotes() {
               <p className='text-foreground/80 leading-relaxed mb-6'><strong>No battery in the proposal under NEM 3.0.</strong> Under California&apos;s current Net Billing Tariff, a solar-only system has much weaker economics. Batteries should be the default, not an upsell.</p>
             </div>
 
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Get 3 Real Quotes in 60 Seconds</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief works with multiple top-rated California installers. Fill out one form, get up to three itemized quotes, compare apples to apples.</p>
-              <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
-              <p className='text-xs text-muted-foreground mt-4'>Free. No obligation. No impact on your credit score.</p>
-            </div>
+            <IntentCTA cta='article_cta' variant='review' />
           </article>
         </div>
       </main>

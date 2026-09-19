@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
+import { IntentCTA } from '@/components/growth/IntentCTA';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -300,24 +301,7 @@ export default function NEM2vsNEM3() {
               </p>
             </div>
 
-            {/* CTA */}
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>
-                See What NEM 3.0 Solar Looks Like for Your Home
-              </h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                The California Rate Relief Program can show you what you&apos;d
-                actually save under current NEM 3.0 rules — based on your utility,
-                your bill, and your address. Takes 60 seconds.
-              </p>
-              <Link
-                href='/#qualify'
-                className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-              >
-                Check My Eligibility
-                <ArrowRight className='h-4 w-4' />
-              </Link>
-            </div>
+            <IntentCTA cta='article_cta' variant='bill' />
 
             {/* Navigation */}
             <div className='mt-10 pt-8 border-t border-border flex justify-between items-center'>

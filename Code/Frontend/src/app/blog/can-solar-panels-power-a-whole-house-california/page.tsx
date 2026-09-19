@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { IntentCTA } from '@/components/growth/IntentCTA';
 
 export const metadata: Metadata = {
   title: 'Can Solar Panels Power a Whole House in California?',
@@ -96,11 +97,7 @@ export default function CanSolarPowerWholeHouse() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Typical 8-11 kW solar + 1-2 battery install runs $30,000-$55,000 cash price in California in 2026. That is the price you pay: the 30% federal residential credit ended for expenditures made after December 31, 2025, so a purchase in 2026 gets no federal offset. Loan, lease, and PPA financing are all available to avoid upfront cost, and on a lease or PPA the provider owns the system and claims any commercial credit it qualifies for.</p>
             </div>
 
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Get a Whole-Home Solar Quote</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers that design whole-home or critical-loads solar + battery systems. Free 60-second eligibility check.</p>
-              <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Check My Eligibility<ArrowRight className='h-4 w-4' /></Link>
-            </div>
+            <IntentCTA cta='article_cta' variant='default' />
           </article>
         </div>
       </main>
