@@ -1,5 +1,9 @@
 import Link from "next/link";
 import { growthCities } from "@/data/growth-cities";
+import {
+  companiesCityHref,
+  hasCompaniesCityPage,
+} from "@/lib/canonical-redirects";
 import { formatSourceCheckedDate } from "./DecisionPage";
 
 export function CityLocalChecks({ slug }: { slug: string }) {
@@ -120,8 +124,11 @@ export function CityRegionalLinks({ slug }: { slug: string }) {
       <ul className="space-y-2">
         {city.nearby.map((neighbor) => (
           <li key={neighbor}>
-            <Link href={`/solar-companies/${neighbor}`} className="underline">
-              {growthCities[neighbor].name}, California: quote comparison
+            <Link href={companiesCityHref(neighbor)} className="underline">
+              {growthCities[neighbor].name}, California:{" "}
+              {hasCompaniesCityPage(neighbor)
+                ? "quote comparison"
+                : "solar cost"}
             </Link>
           </li>
         ))}

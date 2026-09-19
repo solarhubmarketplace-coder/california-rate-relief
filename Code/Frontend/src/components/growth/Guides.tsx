@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from '@/components/shared/RelatedGuides';
+import {
+  companiesCityHref,
+  hasCompaniesCityPage,
+} from '@/lib/canonical-redirects';
 import { DecisionPage, QuoteChecklist, type Source } from './DecisionPage';
 import { SolarCalculator } from './SolarCalculator';
 import { SolarFinancingComparison } from './SolarFinancingComparison';
@@ -249,7 +253,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               <Link
                 key={slug}
                 className="rounded-lg border p-4 capitalize text-emerald-800 underline"
-                href={`/solar-companies/${slug}`}
+                href={companiesCityHref(slug)}
               >
                 {slug.replaceAll('-', ' ')}, California
               </Link>
@@ -275,9 +279,11 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               <Link
                 key={slug}
                 className="rounded-lg border p-4 text-emerald-800 underline"
-                href={`/solar-companies/${slug}`}
+                href={companiesCityHref(slug)}
               >
-                {label}
+                {hasCompaniesCityPage(slug)
+                  ? label
+                  : `${label.replace(/ solar (companies|installers)$/, '')} solar costs`}
               </Link>
             ))}
           </div>
@@ -742,8 +748,8 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
         <SolarCalculator utility="sdge" />
         <p>
           For project and permitting checks, see the{' '}
-          <Link className={link} href="/solar-companies/san-diego">
-            San Diego solar comparison
+          <Link className={link} href={companiesCityHref('san-diego')}>
+            San Diego solar cost and comparison guide
           </Link>
           . The tool carries your inputs into the optional inquiry below.
         </p>

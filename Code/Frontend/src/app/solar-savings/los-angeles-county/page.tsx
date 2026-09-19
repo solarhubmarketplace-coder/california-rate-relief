@@ -6,6 +6,10 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowRight, MapPin, Home, AlertTriangle } from 'lucide-react';
 import { CITIES, UTILITY_DATA } from '@/data/cities-data';
+import {
+  companiesCityHref,
+  hasCompaniesCityPage,
+} from '@/lib/canonical-redirects';
 import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
@@ -176,10 +180,12 @@ export default function LosAngelesCountySolarPage() {
                           Costs &amp; savings →
                         </Link>
                         <Link
-                          href={`/solar-companies/${city.slug}`}
+                          href={companiesCityHref(city.slug)}
                           className="text-primary hover:underline font-medium"
                         >
-                          Compare installers →
+                          {hasCompaniesCityPage(city.slug)
+                            ? 'Compare installers →'
+                            : 'What solar costs →'}
                         </Link>
                       </div>
 
