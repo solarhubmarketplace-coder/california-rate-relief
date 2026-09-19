@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "LA Solar Group Review 2026: Ratings & Complaints",
+  title: "LA Solar Group Reviews (2026): Ratings & Complaints",
   description: "LA Solar Group makes its own panels. What the federal court record shows as of September 2026, plus the warranty trade-off that follows.",
   alternates: { canonical: '/solar-installers/la-solar-group-review' },
 };
@@ -42,7 +42,7 @@ export default function LASolarGroupReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                LA Solar Group Review 2026: They Make Their Own Panels (Mixed Reputation)
+                LA Solar Group Reviews (2026): They Make Their Own Panels (Mixed Reputation)
               </h1>
               
               <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunlux Solar Review: Google 4.7/5, BBB A+ Rating",
+  title: "Sunlux Solar Reviews (2026): Google 4.7/5, BBB A+ Rating",
   description: "Sunlux has completed 7,000+ installs with Google 4.7/5 across 550+ reviews and a BBB A+ file. In-house crews, no PPA focus. The honest review.",
   alternates: { canonical: '/solar-installers/sunlux-solar-review' },
 };
@@ -50,7 +50,7 @@ export default function SunluxReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunlux Solar Review 2026: One of SoCal&apos;s Higher-Rated Regional Installers
+                Sunlux Solar Reviews (2026): One of SoCal&apos;s Higher-Rated Regional Installers
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

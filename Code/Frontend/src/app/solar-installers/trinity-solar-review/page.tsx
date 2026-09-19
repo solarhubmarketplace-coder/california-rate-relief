@@ -16,14 +16,14 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Trinity Solar Review: Northeast Installer, Not California",
+  title: "Trinity Solar Reviews (2026): Northeast Installer, Not CA",
   description: "Trinity Solar, founded in 1994, serves NJ, NY, CT, MA, PA and MD. It has no meaningful California operations, so compare installers that serve your address.",
   alternates: {
     canonical: '/solar-installers/trinity-solar-review',
   },
   openGraph: {
     title:
-      'Trinity Solar Review 2026: Northeast-Only Installer',
+      'Trinity Solar Reviews (2026): Northeast-Only Installer',
     description:
       'Trinity Solar serves the Northeast, not California. What the company offers, its reputation, and what California homeowners should do instead.',
     type: 'article',
@@ -152,7 +152,7 @@ export default function TrinitySolarReview() {
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Trinity Solar Review 2026: Northeast Installer, Not a
+                Trinity Solar Reviews (2026): Northeast Installer, Not a
                 California Option
               </h1>
               

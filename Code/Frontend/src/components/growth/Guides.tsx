@@ -102,9 +102,9 @@ const definitions = {
     title: 'SDG&E time-of-use rates: compare your 2026 bill',
     intro:
       'Start with the rate-plan name and the generation provider on your bill. SDG&E’s delivery price alone is not the complete price for a community choice customer.',
-    metaTitle: 'SDG&E Time-of-Use Rates: Peak Hours and Plans',
+    metaTitle: 'SDG&E Time-of-Use Rates (2026): Compare Your Plan',
     metaDescription:
-      "SDG&E's peak window runs 4-9 p.m. for TOU-DR1 and TOU-DR2, including weekends. Compare your plan before shifting usage.",
+      "See which SDG&E time-of-use plan is on your bill and what it costs. Peak runs 4-9 p.m. for TOU-DR1 and TOU-DR2, including weekends.",
   },
 };
 export type GuideKey = keyof typeof definitions;

@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Powur Solar Review: 150+ BBB Complaints, MLM Model",
+  title: "Powur Solar Reviews (2026): 150+ BBB Complaints, MLM Model",
   description: "Powur Solar has 150+ BBB complaints in 3 years and a 2.9/5 SolarReviews score, with installs reported to take 6 to 16+ months. How the MLM sales model works.",
   alternates: { canonical: '/solar-installers/powur-solar-review' },
 };
@@ -50,7 +50,7 @@ export default function PowurReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Powur Solar Review 2026: MLM Sales Model and the Complaint Record
+                Powur Solar Reviews (2026): MLM Sales Model and the Complaint Record
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "SunPower Review 2026: Complete Solaria Rebrand Review",
+  title: "SunPower Reviews (2026): Complete Solaria Rebrand Review",
   description: "SunPower review after its 2024 Chapter 11 bankruptcy: Complete Solaria acquisition, Maxeon panel availability, and legacy warranty service.",
   alternates: { canonical: '/solar-installers/sunpower-review' },
 };
@@ -55,7 +55,7 @@ export default function SunPowerReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                SunPower Review 2026: The Complete Solaria Rebrand, Explained
+                SunPower Reviews (2026): The Complete Solaria Rebrand, Explained
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

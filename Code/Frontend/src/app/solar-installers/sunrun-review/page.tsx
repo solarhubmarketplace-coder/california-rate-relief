@@ -11,14 +11,14 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunrun Review 2026: Is It Still in Business?",
+  title: "Sunrun Reviews (2026): Is It Still in Business?",
   description: "Sunrun 2026 business status from its own investor filings, plus PPA vs. lease terms and Tesla Powerwall availability, sourced and dated.",
   alternates: {
     canonical: '/solar-installers/sunrun-review',
   },
   openGraph: {
     title:
-      'Sunrun Review 2026: California Solar + Vivint Solar, Compared',
+      'Sunrun Reviews (2026): California Solar + Vivint Solar, Compared',
     description:
       'What California homeowners need to know about Sunrun in 2026, including the Vivint Solar absorption and current reputation data.',
     type: 'article',
@@ -88,7 +88,7 @@ export default function SunrunReview() {
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunrun Review 2026: California Solar + Vivint Solar,
+                Sunrun Reviews (2026): California Solar + Vivint Solar,
                 Compared
               </h1>
               

@@ -16,14 +16,14 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunnova Review: 2025 Chapter 11 Bankruptcy, Explained",
+  title: "Sunnova Reviews (2026): 2025 Chapter 11 Bankruptcy, Explained",
   description: "Sunnova filed Chapter 11 in June 2025; assets moved to SunStrong. What it means for your lease, warranty, and service in 2026.",
   alternates: {
     canonical: '/solar-installers/sunnova-review',
   },
   openGraph: {
     title:
-      'Sunnova Review 2026: Chapter 11 Aftermath, Explained',
+      'Sunnova Reviews (2026): Chapter 11 Aftermath, Explained',
     description:
       'What the 2025 Sunnova bankruptcy and SunStrong asset sale mean for the ~500,000 legacy customers and for California solar shoppers in 2026.',
     type: 'article',
@@ -138,7 +138,7 @@ export default function SunnovaReview() {
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunnova Review 2026: What the 2025 Chapter 11 Means for
+                Sunnova Reviews (2026): What the 2025 Chapter 11 Means for
                 Customers
               </h1>
               

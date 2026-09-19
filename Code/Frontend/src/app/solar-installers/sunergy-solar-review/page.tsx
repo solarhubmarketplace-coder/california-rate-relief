@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunergy Solar Review: 4.7/5 on EnergySage, 92 Reviews",
+  title: "Sunergy Solar Reviews (2026): 4.7/5 on EnergySage, 92 Reviews",
   description: "Sunergy Solar holds a 4.7/5 EnergySage rating across 92 reviews and uses Enphase equipment. Ownership focus, plus the delay complaints to expect.",
   alternates: { canonical: '/solar-installers/sunergy-solar-review' },
 };
@@ -50,7 +50,7 @@ export default function SunergyReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunergy Solar Review 2026: CA-Focused Installer With a 4.7/5 EnergySage Rating
+                Sunergy Solar Reviews (2026): CA-Focused Installer With a 4.7/5 EnergySage Rating
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

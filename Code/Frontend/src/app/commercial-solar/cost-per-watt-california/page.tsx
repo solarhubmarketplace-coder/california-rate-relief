@@ -8,9 +8,9 @@ import { Footer } from '@/components/landing/Footer';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
-const title = "Commercial Solar Cost Per Watt in California (2026)";
+const title = "Commercial Solar Panel Cost in California (2026)";
 const description =
-  "See California commercial solar cost per watt by system size, sourced and dated, before you compare bids.";
+  "See commercial solar panel cost in California by system size, sourced and dated, before you compare bids.";
 const lbnlReport =
   'https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf';
 const trackingTheSun = 'https://emp.lbl.gov/tracking-the-sun';

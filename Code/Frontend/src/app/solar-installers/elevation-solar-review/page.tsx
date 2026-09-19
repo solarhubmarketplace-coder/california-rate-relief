@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Elevation Solar Review: 4.6/5 EnergySage, 90 BBB Complaints",
+  title: "Elevation Solar Reviews (2026): 4.6/5 Rating, 90 Complaints",
   description: "Elevation Solar has 19,000+ installs and a 4.6/5 EnergySage score, but 90 BBB complaints in 3 years and reported 6 to 12+ month activation delays.",
   alternates: { canonical: '/solar-installers/elevation-solar-review' },
 };
@@ -50,7 +50,7 @@ export default function ElevationReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Elevation Solar Review 2026: Strong EnergySage Ratings, Activation Delays
+                Elevation Solar Reviews (2026): Strong EnergySage Ratings, Activation Delays
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

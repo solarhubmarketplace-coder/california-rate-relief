@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "New Day Solar Review 2026: Family-Owned, Murrieta, CA",
+  title: "New Day Solar Reviews (2026): Family-Owned, Murrieta, CA",
   description: "New Day Solar is a family-owned Murrieta installer with 31+ years of combined solar and electrical experience, Enphase inverters, and FranklinWH batteries.",
   alternates: { canonical: '/solar-installers/new-day-solar-review' },
 };
@@ -50,7 +50,7 @@ export default function NewDayReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                New Day Solar Review 2026: Family-Owned, Ownership-Only, Murrieta
+                New Day Solar Reviews (2026): Family-Owned, Ownership-Only, Murrieta
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

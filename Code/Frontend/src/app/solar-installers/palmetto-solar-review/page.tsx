@@ -11,7 +11,7 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 
 export const metadata: Metadata = {
-  title: "Palmetto Solar Reviews 2026: Pricing & Complaints",
+  title: "Palmetto Solar Reviews (2026): Contracts and What to Check",
   description: "What Palmetto's LightReach energy plan actually is in its own words, the California court record, and how it compares to Sunrun. Sourced and dated.",
   alternates: { canonical: '/solar-installers/palmetto-solar-review' },
 };
@@ -45,7 +45,7 @@ export default function PalmettoReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Palmetto Solar Review 2026: Honest Look at a High-Volume National Installer
+                Palmetto Solar Reviews (2026): Honest Look at a High-Volume National Installer
               </h1>
               
               <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

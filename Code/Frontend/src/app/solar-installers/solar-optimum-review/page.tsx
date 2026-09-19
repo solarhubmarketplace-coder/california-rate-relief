@@ -11,7 +11,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Solar Optimum Reviews 2026: Ratings & Lawsuit Check",
+  title: "Solar Optimum Reviews (2026): Ratings & Lawsuit Check",
   description: "Solar Optimum reviews across platforms, its 25-year warranty structure, and a sourced, dated check of the federal court record.",
   alternates: { canonical: '/solar-installers/solar-optimum-review' },
 };
@@ -47,7 +47,7 @@ export default function SolarOptimumReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Solar Optimum Review 2026: Ratings, Warranty and Lawsuit Check
+                Solar Optimum Reviews (2026): Ratings, Warranty and Lawsuit Check
               </h1>
               
               <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

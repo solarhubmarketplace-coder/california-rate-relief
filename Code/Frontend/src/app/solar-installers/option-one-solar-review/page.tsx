@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Option One Solar Review 2026: 25-Yr Warranty, Labor Incl.",
+  title: "Option One Solar Reviews (2026): 25-Yr Warranty, Labor Incl.",
   description: "Option One Solar (Apple Valley) covers equipment, workmanship, and labor for 25 years and pushes ownership over leases. Yelp runs 4.9/5 in top listings.",
   alternates: { canonical: '/solar-installers/option-one-solar-review' },
 };
@@ -50,7 +50,7 @@ export default function OptionOneReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Option One Solar Review 2026: Cleanest Service Profile in the High Desert
+                Option One Solar Reviews (2026): Cleanest Service Profile in the High Desert
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

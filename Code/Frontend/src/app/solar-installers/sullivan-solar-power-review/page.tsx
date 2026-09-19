@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sullivan Solar Power Review 2026: Defunct Installer",
+  title: "Sullivan Solar Power Reviews (2026): Defunct Installer",
   description: "Sullivan Solar Power went out of business in late 2021. What stranded San Diego customers should do for maintenance, inverter repairs, and warranties.",
   alternates: { canonical: '/solar-installers/sullivan-solar-power-review' },
 };
@@ -41,7 +41,7 @@ export default function SullivanReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full uppercase tracking-wide'>⚠️ Defunct — Do Not Use</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sullivan Solar Power: The Company Is Defunct (What Former Customers Should Know)
+                Sullivan Solar Power Reviews (2026): The Company Is Defunct (What Former Customers Should Know)
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Momentum Solar Review 2026: Powerwall & Pricing",
+  title: "Momentum Solar Reviews (2026): Powerwall & Pricing",
   description: "Does Momentum Solar install the Tesla Powerwall? What its own site says, its PPA and lease structure, and the federal court record, dated.",
   alternates: {
     canonical: '/solar-installers/momentum-solar-review',
@@ -64,7 +64,7 @@ export default function MomentumSolarReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Momentum Solar Review 2026: In-House Crews, But What About the Complaints?
+                Momentum Solar Reviews (2026): In-House Crews, But What About the Complaints?
               </h1>
               
               <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

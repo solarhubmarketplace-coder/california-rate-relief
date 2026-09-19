@@ -16,7 +16,7 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
-    "Freedom Forever Solar Review 2026: Chapter 11 Bankruptcy",
+    "Freedom Forever Solar Reviews (2026): Chapter 11 Bankruptcy",
   description:
     "Freedom Forever filed Chapter 11 on April 15, 2026. What it means for existing customers, pending installs, and California shoppers.",
   alternates: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      'Freedom Forever Solar Review 2026: The Chapter 11 Bankruptcy, Explained',
+      'Freedom Forever Solar Reviews (2026): The Chapter 11 Bankruptcy, Explained',
     description:
       'What the April 15 Chapter 11 filing means for existing Freedom Forever customers and anyone shopping for solar in California right now.',
     type: 'article',
@@ -145,7 +145,7 @@ export default function FreedomForeverReview() {
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Freedom Forever Solar Review 2026: What the Chapter 11
+                Freedom Forever Solar Reviews (2026): What the Chapter 11
                 Bankruptcy Means
               </h1>
               

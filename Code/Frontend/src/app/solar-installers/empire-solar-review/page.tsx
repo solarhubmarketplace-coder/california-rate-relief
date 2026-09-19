@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Empire Solar Review: Verify Which Entity You're Hiring",
+  title: "Empire Solar Reviews (2026): Verify Which Entity You Hire",
   description: "\"Empire Solar\" names multiple companies nationwide, one with a bankruptcy in Utah. The CA operation has complaints on delays; verify its CSLB license first.",
   alternates: { canonical: '/solar-installers/empire-solar-review' },
 };
@@ -50,7 +50,7 @@ export default function EmpireReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Empire Solar Review 2026: Verify Which Empire Solar You&apos;re Actually Hiring
+                Empire Solar Reviews (2026): Verify Which Empire Solar You&apos;re Actually Hiring
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

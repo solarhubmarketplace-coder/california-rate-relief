@@ -10,7 +10,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Baker Electric Solar Review 2026: San Diego Ratings",
+  title: "Baker Electric Solar Reviews (2026): San Diego Ratings",
   description: "Baker Electric Solar in San Diego: the Baker Home Energy naming question resolved at source, plus licences, warranty and what to verify.",
   alternates: { canonical: '/solar-installers/baker-electric-solar-review' },
 };
@@ -42,7 +42,7 @@ export default function BakerReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Baker Electric Solar Review 2026: San Diego, and the Baker Home Energy Question
+                Baker Electric Solar Reviews (2026): San Diego, and the Baker Home Energy Question
               </h1>
               
               <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

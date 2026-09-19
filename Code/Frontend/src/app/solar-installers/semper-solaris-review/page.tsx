@@ -10,7 +10,7 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
-    "Semper Solaris Review 2026: Veteran-Owned CA Solar",
+    "Semper Solaris Reviews (2026): Veteran-Owned CA Solar",
   description:
     "Semper Solaris is a private, veteran-owned CA solar, roofing, and HVAC installer with in-house crews \u2014 but Trustpilot 1.6/5 and 173+ BBB complaints.",
   alternates: { canonical: '/solar-installers/semper-solaris-review' },
@@ -56,7 +56,7 @@ export default function SemperSolarisReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Semper Solaris Review 2026: Veteran-Owned California Solar, Honest Look
+                Semper Solaris Reviews (2026): Veteran-Owned California Solar, Honest Look
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
