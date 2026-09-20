@@ -150,6 +150,8 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   '/solar-companies/palm-springs': '/solar-cost/palm-springs',
   '/solar-companies/seaside': '/solar-cost/seaside',
   '/solar-companies/vallejo': '/solar-cost/vallejo',
+  // Corrected 2026-09-20: Rocklin's growth-only route also has a cost twin.
+  '/solar-companies/rocklin': '/solar-cost/rocklin',
 };
 
 /**
@@ -204,9 +206,9 @@ export function hasSavingsCityPage(slug: string): boolean {
 
 /**
  * Where a "solar companies in <city>" link should point. Mirrors
- * `savingsCityHref()`: for one of the 37 cities retired on 2026-09-18 it
- * returns the `/solar-cost/<city>` destination read from the table; for the 49
- * cities with no cost twin it returns the still-live `/solar-companies` page.
+ * `savingsCityHref()`: for retired cities it returns the `/solar-cost/<city>`
+ * destination read from the table; cities with no cost twin retain their
+ * still-live `/solar-companies` page.
  */
 export function companiesCityHref(slug: string): string {
   return CRR_CANONICAL_REDIRECTS[`/solar-companies/${slug}`] ?? `/solar-companies/${slug}`;
