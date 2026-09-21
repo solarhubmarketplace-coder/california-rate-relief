@@ -14,6 +14,7 @@ export const growthCities: Record<
     sourceCheckedDate?: string;
     hasSavingsGuide?: boolean;
     checks?: [string, string][];
+    projectLinks?: { href: string; label: string; note?: string }[];
     provider?: { name: string; url: string; detail: string; ask: string };
     nearby?: string[];
     faq?: [string, string][];
@@ -708,6 +709,14 @@ export const growthCities: Record<
         "Application record",
         "Identify Clariti or the existing application record, inspection responsibility and utility interconnection as separate scope items.",
       ],
+      [
+        "Structure and authority",
+        "Confirm whether the home is conventional or manufactured, which authority controls this installation, whether the mounting design is accepted for that structure, and who signs off on access, attachments and warranty responsibility.",
+      ],
+      [
+        "Production assumptions",
+        "Ask each bidder to identify the temperature, roof-plane and obstruction inputs in its monthly production estimate, alongside the household's seasonal use assumptions.",
+      ],
     ],
     provider: {
       name: "Hot Purple Energy",
@@ -726,12 +735,22 @@ export const growthCities: Record<
         url: "https://www.palmdesert.gov/build-develop/permit",
       },
       {
-        label: "Palm Desert: solar forms and handouts",
+        label: "Palm Desert: solar forms and handouts (manufactured-home and solar materials checked September 20, 2026)",
         url: "https://www.palmdesert.gov/build-develop/forms",
+      },
+      {
+        label: "California HCD: manufactured-home modifications and alterations (checked September 20, 2026)",
+        url: "https://www.hcd.ca.gov/mmh/residents/modifications-alterations",
       },
       {
         label: "Hot Purple Energy: published service scope",
         url: "https://hotpurpleenergy.com/",
+      },
+    ],
+    projectLinks: [
+      {
+        href: "/blog/is-my-roof-good-for-solar-california",
+        label: "Check whether the roof is suited to solar",
       },
     ],
     nearby: ["palm-springs"],
@@ -743,6 +762,79 @@ export const growthCities: Record<
       [
         "Where should I look for my Palm Desert permit?",
         "The city directs current applications through Clariti and provides a solar application link. For an older eTRAKiT submission, follow its instructions to contact the Development Services Center.",
+      ],
+      [
+        "Can a manufactured Palm Desert home use the same solar permit path as a conventional home?",
+        "Do not assume so. Palm Desert publishes separate manufactured-home and solar materials, while California HCD regulates alterations of existing HUD-labeled manufactured homes. Confirm the property type, responsible authority and the proposed mounting and electrical scope before relying on a permit path.",
+      ],
+    ],
+  },
+  menifee: {
+    name: "Menifee",
+    county: "Riverside County",
+    utility: "other",
+    sourceCheckedDate: "2026-09-20",
+    hasSavingsGuide: false,
+    bill: "Read the utility name, tariff and any generation-provider line on the actual bill before comparing a proposal. A city name does not establish the account's provider or solar-billing treatment.",
+    local:
+      "Menifee's solar submittal requirements direct applicants to the permit portal. Eligible plans may use SolarAPP+, while the City distinguishes new solar from additions to existing systems and energy-storage work. Ask the bidder to identify the route and the approved scope for this property.",
+    example:
+      "Compare written bids only after the roof, electrical work, equipment ownership and project scope are clear. A lower payment can hide roof work, removal and reinstallation, backup equipment, or a different system design.",
+    checks: [
+      [
+        "Roof work before a new array",
+        "Ask whether roof repair or replacement belongs before the new array, who owns that scope, and whether it is included or excluded from the written bid.",
+      ],
+      [
+        "Roof work with existing panels",
+        "For an existing system, ask who owns the equipment, who may authorize work, and who accepts removal, reinstallation and warranty responsibility. Do not assume that a new-system bidder provides those services.",
+      ],
+      [
+        "Outage goal and selected loads",
+        "If backup is part of the project, name the selected loads, intended outage duration and the equipment proposed for that job. Keep backup capability separate from a bill-savings model.",
+      ],
+      [
+        "New array and written bid scope",
+        "Have each bidder list the proposed array, roof and electrical scope, permit responsibilities, monthly production assumptions, and every excluded item in writing.",
+      ],
+    ],
+    projectLinks: [
+      {
+        href: "/blog/is-my-roof-good-for-solar-california",
+        label: "Check whether the roof is suited to solar",
+      },
+      {
+        href: "/blog/solar-panel-removal-reinstall-cost",
+        label: "Questions to ask about panel removal and reinstallation",
+      },
+      {
+        href: "/blog/do-solar-panels-work-during-power-outage-california",
+        label: "What solar does during an outage",
+      },
+      {
+        href: "/battery/home-battery-cost-california",
+        label: "Home battery cost and backup scope",
+      },
+    ],
+    sources: [
+      {
+        label: "City of Menifee: Solar Photovoltaic System Submittal Requirements (Version 1/26)",
+        url: "https://www.cityofmenifee.us/DocumentCenter/View/4463/Solar-Photovoltaic-System-Submittal-Requirements",
+      },
+      {
+        label: "City of Menifee: Building & Safety permit application and portal",
+        url: "https://www.cityofmenifee.us/DocumentCenter/View/6511/Building--Safety-Permit-Application",
+      },
+    ],
+    nearby: ["murrieta", "temecula", "palm-desert"],
+    faq: [
+      [
+        "Does Menifee use one solar permit route for every project?",
+        "No. Menifee's published requirements distinguish eligible SolarAPP+ plans from other plans, and distinguish new solar from additions to existing systems and energy-storage work. Confirm the route and approved scope for the actual project.",
+      ],
+      [
+        "Should an existing solar system be handled like a new Menifee array?",
+        "No. Confirm equipment ownership, authorization for roof work, removal and reinstallation responsibility, and warranty responsibility before treating an existing-system job as a new-array proposal.",
       ],
     ],
   },

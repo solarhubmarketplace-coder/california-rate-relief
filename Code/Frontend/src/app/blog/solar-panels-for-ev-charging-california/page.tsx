@@ -11,16 +11,16 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: "Solar Panels for EV Charging in California: Size & Cost",
-  description: "Sizing solar panels for electric vehicle charging in California: how many extra kWh you need, Level 2 charger loads, and payback calculations.",
+  title: 'Solar Panels for EV Charging in California: Plan the Added Load',
+  description: 'Plan for EV charging with your actual household kWh, expected driving, vehicle efficiency, and a site-specific solar-production estimate.',
   alternates: { canonical: '/blog/solar-panels-for-ev-charging-california' },
-  openGraph: { title: 'Solar Panels for EV Charging in California: Size, Cost, and ROI', description: 'How to size solar for EV charging in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Solar Panels for EV Charging in California: Plan the Added Load', description: 'A California guide to adding an EV load to a solar-sizing conversation.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', modifiedTime: '2026-09-20T00:00:00Z' },
 };
 
 export default function SolarForEvCharging() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Panels for EV Charging in California: Size, Cost, and ROI"} url="https://ratereliefca.com/blog/solar-panels-for-ev-charging-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Sizing solar for an electric vehicle in California — how much extra capacity you need, what it adds to your system cost, and why EV + solar pays back faster than solar alone."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline="Solar Panels for EV Charging in California: Plan the Added Load" url="https://ratereliefca.com/blog/solar-panels-for-ev-charging-california" datePublished="2026-04-23" dateModified="2026-09-20" description="Plan for EV charging with actual household kWh, expected driving, vehicle efficiency, and a site-specific solar-production estimate." />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -29,89 +29,67 @@ export default function SolarForEvCharging() {
 
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar + EV</span>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Solar Panels for EV Charging in California: Size, Cost, and ROI</h1>
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Solar Panels for EV Charging in California: Plan the Added Load</h1>
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-23'>April 23, 2026</time></div>
-                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>7 min read</span></div>
+                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>6 min read</span></div>
+                <span>Updated September 20, 2026</span>
               </div>
             </header>
 
             <div className='prose prose-slate max-w-none'>
-              <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                California has over 2 million electric vehicles on the road in 2026 — more than any other state, by a wide margin. Charging one at home adds roughly 200-400 kWh per month to a typical household&apos;s electricity consumption, which at California rates ($0.35-$0.46 per kWh) translates to $70-$180 per month in extra utility bills. Pairing the EV with solar changes that math completely. Here&apos;s how to size solar for EV charging and why the combined system usually pays back faster than solar alone.
-              </p>
+              <p className='text-lg text-foreground/80 leading-relaxed mb-6'>An EV changes the load a solar design must serve. It does not produce one universal number of panels or kilowatts. Start with the household&apos;s measured electricity use, add the driving you actually expect to do, and then test that combined energy need against a site-specific production estimate.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How Much Extra Solar You Need</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Rule of thumb: every 1,000 miles per month of driving needs roughly 1 kW of additional solar capacity to offset. A California household driving 12,000 miles/year (1,000/month) on an EV that gets 3 miles per kWh needs about 3 kW of additional solar. A two-EV household driving 24,000 miles/year needs about 6 kW of additional solar.
-              </p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Typical California home solar without EV is sized around 6-8 kW. With one EV, bump to 8-11 kW. With two EVs, 11-15 kW. Not every roof has space for that much, but most California single-family homes can fit at least 10 kW if the roof orientation is reasonable.
-              </p>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Start With Energy, Not a Panel Count</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>Pull 12 months of utility bills and record the household&apos;s total kWh. Then write down the planned annual EV miles, including a second EV if one is expected. For the vehicle input, use the combined electricity-use figure on that model&apos;s EPA fuel-economy label or its <a href='https://www.fueleconomy.gov/' className='text-primary hover:underline'>FuelEconomy.gov</a> listing. The <a href='https://www.energy.gov/cmei/vehicles/articles/fotw-1373-december-16-2024-efficiency-evs-model-year-2024-ranges-53-140-mpge' className='text-primary hover:underline'>Department of Energy reports</a> that model-year 2024 EV combined ratings ranged from 1.49 to 4.17 miles per kWh, so substituting one generic efficiency for every vehicle can distort the result.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>A useful planning calculation is: <strong>expected annual miles charged at home ÷ the vehicle&apos;s EPA combined miles per kWh = estimated annual home-charging energy.</strong> Count only the share of driving expected to charge at home; exclude miles normally charged at work or at public stations. If the 12-month bill history already includes this EV, do not add its existing charging energy again. Add only the forecast change in home-charged miles. If the bills predate the EV, add the estimated home-charging energy to the household&apos;s measured annual kWh. This is a driving-energy estimate, not a promise about a bill or array size.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>The array comes last. Use the address, proposed array layout and production assumptions in <a href='https://pvwatts.nrel.gov/' className='text-primary hover:underline'>NREL&apos;s PVWatts calculator</a>, then ask each proposal to show its annual production estimate and the inputs behind it. That is the site-specific step a miles-only rule cannot replace. For the household-side sizing workflow, see <Link href='/blog/how-big-of-a-solar-system-do-i-need-california' className='text-primary hover:underline'>how big a solar system may need to be in California</Link>.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Why EV + Solar Pays Back Faster Than Solar Alone</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Under NEM 3.0, self-consumed solar is worth 5-10× more than exported solar. An EV is one of the best loads you can add to your home because you can charge it during the day (if working from home or charging on weekends) or overnight using battery-stored solar. Either way, you&apos;re self-consuming electricity that would otherwise either export at low rates or require grid purchase at high rates.
-              </p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                The payback math: the incremental cost of adding 3-4 kW of solar to handle an EV runs roughly $6,000-$10,000. The avoided utility cost for charging that EV from the grid runs $70-$180 per month, or $840-$2,160 per year. That&apos;s a 3-5 year payback on the incremental solar cost — significantly faster than the 9-12 year payback on a solar-only system sized for household load.
-              </p>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Pick the Charging Goal Before Comparing Designs</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'><strong>Daytime charging.</strong> If the vehicle is home while the array is producing, a charge schedule can line up more of that load with those hours. Whether that is the better bill outcome depends on the household&apos;s tariff, export treatment and actual charging pattern. Check the current plan before assuming a winner.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'><strong>Grid charging.</strong> If the vehicle is usually away during the day, the practical question may be when grid charging occurs. Some utilities offer EV-oriented or time-of-use plans, but plan details and household results differ. Use the rate comparison offered by the serving utility and the current bill; California customers in SDG&amp;E territory can begin with this <Link href='/blog/sdge-time-of-use-rates-2026' className='text-primary hover:underline'>SDG&amp;E time-of-use guide</Link>.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'><strong>Backup.</strong> Backup is a resilience decision: identify the outage loads, how long they must run, and the equipment configuration needed to support them. An EV charging goal does not itself establish a home-battery requirement or a particular battery size. Ask for a separate outage-load plan if backup is part of the project.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Smart Charging Strategies</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Daytime charging.</strong> If you&apos;re home during the day (work-from-home, retired, etc.) or charge on weekends, scheduling EV charging during solar production hours lets you self-consume directly without needing a battery to store the solar first. Most modern EVs (Tesla, Ford Lightning, Hyundai Ioniq, Chevy Bolt) can be scheduled to charge during specific hours via the app.
-              </p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Battery-stored charging.</strong> If you&apos;re commuting and the EV is gone during the day, a home battery stores solar production for evening EV charging. Tesla Powerwall, Enphase IQ, and other home batteries work for this — the EV plug pulls from the battery overnight instead of the grid.
-              </p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>TOU rate optimization.</strong> California utilities (PG&amp;E, SCE, SDG&amp;E) all have EV-specific Time-of-Use rate plans with very low overnight rates. Combining solar, battery, and a TOU plan can drop EV charging cost close to zero. Check the windows on your own utility before you set a charge schedule &mdash; <Link href='/blog/sdge-time-of-use-rates-2026' className='text-primary hover:underline'>SDG&amp;E time-of-use rates</Link> sets out its peak hours and what changing plan does.
-              </p>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Keep the Charging Equipment in Scope</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>The vehicle, charging equipment and home electrical service all affect the installation conversation. The Department of Energy&apos;s <a href='https://afdc.energy.gov/fuels/electricity-charging-home' className='text-primary hover:underline'>Alternative Fuels Data Center</a> advises checking vehicle guidance and equipment specifications before buying equipment or electrical services. Have the proposal state whether it includes the charger, electrical work, permits and any service-panel work, or whether those items are separate.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Charger Itself</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                A Level 2 home EV charger (240V, 7-11 kW) costs roughly $500-$1,200 for the equipment plus $500-$1,500 for installation depending on panel capacity and run length from panel to garage. Tesla Wall Connector, Wallbox Pulsar Plus, ChargePoint Home Flex, and Grizzl-E are common California residential chargers.
-              </p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Some California solar installers include the charger in the solar project and handle the 200A panel upgrade if needed. Ask whether the charger is in the quoted price or a separate add-on.
-              </p>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Questions to Put on Every Proposal</h2>
+              <ul className='text-foreground/80 leading-relaxed mb-6'>
+                <li>What household kWh period, expected home-charged miles and home-charging share did you use?</li>
+                <li>Which vehicle efficiency figure did you use, and where is it published?</li>
+                <li>Does the bill history already include this EV, and if so, what forecast change in home charging was added?</li>
+                <li>What annual production does the proposed array model show for this address?</li>
+                <li>How does the charge schedule fit the current utility plan and the vehicle&apos;s time at home?</li>
+                <li>Which charger, electrical, permit and backup items are included, excluded or still subject to a site review?</li>
+              </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
-              <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can solar panels fully charge an EV in California?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Yes, for typical daily driving (25-40 miles). A correctly sized solar + battery system handles the average California household&apos;s EV charging without grid import most months.</p>
-
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>How many solar panels do I need to charge an EV?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Roughly 8-10 additional panels (3-4 kW) for a single EV driving average California miles. Double that for a two-EV household.</p>
-
-              <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Do I need a battery to charge my EV with solar?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Not strictly, but strongly recommended under NEM 3.0. Without a battery, you&apos;re limited to charging during solar production hours or accepting that most charging uses grid electricity.</p>
-
-              <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Does my solar system upgrade when I get an EV?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>If you&apos;re grandfathered under NEM 2.0, adding panels beyond a small threshold will move the new capacity to NEM 3.0 while the original stays on NEM 2.0. If you&apos;re already on NEM 3.0, capacity expansion is straightforward. Your utility handles the new interconnection paperwork.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>There is no reliable statewide panel count. Use the vehicle&apos;s published EPA combined miles per kWh and only the miles expected to charge at home; do not include workplace or public charging. If the household bills already include the EV, add only the forecast change in home charging. Then compare designs using a production estimate for the actual address and array.</p>
+              <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Do I need a battery to charge an EV with solar?</h3>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Not automatically. A battery can be evaluated when the goal is shifting energy to another time or supporting selected loads during an outage. Its value and size depend on those goals, the tariff and the specific system design.</p>
+              <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can solar fully cover my EV charging?</h3>
+              <p className='text-foreground/80 leading-relaxed mb-4'>A design can model annual production against planned driving energy, but production timing, household use, the utility plan and changing driving all matter. Review the annual model and the bill assumptions instead of treating a solar design as a guarantee of no grid charging.</p>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Sizing Solar For Your EV?</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief runs the numbers for your specific usage, EV driving patterns, and roof space. Get up to three quotes including EV charger setup.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Check My Eligibility<ArrowRight className='h-4 w-4' /></Link>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Planning for an EV and Solar?</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>Share your recent household kWh, planned driving and charging goal so a proposal can state the assumptions it uses.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Start My Inquiry<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
-            <div className='mt-8'>
-              <SolarInquiry topic="Solar panels for EV charging in California" />
-            </div>
-            <RelatedGuides
-              heading="Charging overnight without the grid"
-              links={[
-                { href: "/battery/how-many-batteries-do-i-need-california", label: "How much storage an overnight charge needs" },
-                { href: "/solar-problems/running-ac-with-solar-california", label: "What happens when a second large load runs" },
-              ]}
-            />
+            <div className='mt-8'><SolarInquiry topic="Solar panels for EV charging in California" /></div>
+            <RelatedGuides heading="Plan the full household load" links={[
+              { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'How to size the full household system' },
+              { href: '/battery/how-many-batteries-do-i-need-california', label: 'How backup loads affect storage planning' },
+              { href: '/solar-problems/running-ac-with-solar-california', label: 'Planning around another large household load' },
+            ]} />
           </article>
         </div>
       </main>
       <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="premium" /></div>
+      <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
+      <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="premium" /></div>
     </PublicLayout>
   );
 }

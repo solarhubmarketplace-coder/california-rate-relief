@@ -85,6 +85,14 @@ const chulaVistaPermit: LocalGuidanceSource = {
     'The City publishes an online Citizen Access process with SolarAPP+ as the expedited route and a traditional review route. The correct route and inspections still depend on the submitted project.',
 };
 
+const sdgeInterconnection: LocalGuidanceSource = {
+  label: 'SDG&E — Applying for Solar/Battery/Other Interconnection Authorizations',
+  url: 'https://www.sdge.com/solar/solar-and-battery-installation-center',
+  verifiedAt: verified20260920,
+  scope:
+    'SDG&E says the customer or contractor submits the interconnection application in DIIS. After the Authority Having Jurisdiction inspection release, SDG&E conducts any required inspection or final review before sending permission to operate; the source does not promise approval or timing for a specific project.',
+};
+
 const palmSpringsPermit: LocalGuidanceSource = {
   label: 'City of Palm Springs — Permits',
   url: 'https://www.palmspringsca.gov/government/departments/building/permits',
@@ -164,11 +172,16 @@ export const LOCAL_PROJECT_GUIDANCE = {
         title: 'Panel work is a separate permit item',
         body: 'The City says a solar-related service-panel upgrade requires a separate permit. A proposal that omits it is not the same scope as one that includes it.',
       },
+      {
+        title: 'A business property needs its own project brief',
+        body: 'For a business property, use its own bill and load history, property and roof authority, and electrical and project scope. Keep that comparison separate from a home project.',
+      },
     ],
     related: [
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
       { href: '/blog/do-solar-panels-work-during-power-outage-california', label: 'Decide which loads need backup' },
       { href: '/solar-savings/inland-empire', label: 'Inland Empire bill and project guide' },
+      { href: '/commercial-assessment', label: 'Start a commercial project assessment' },
     ],
     sources: [murrietaPermit],
   },
@@ -245,12 +258,16 @@ export const LOCAL_PROJECT_GUIDANCE = {
         title: 'Do not confuse a permit task with a complete installation',
         body: 'Filing and permit charges do not cover equipment, construction, utility interconnection or warranty responsibility. Those items belong in the same written comparison.',
       },
+      {
+        title: 'City approval is separate from permission to operate',
+        body: 'After the City inspection release, SDG&E still completes any required inspection or final review before it sends permission to operate. Put the owner of each handoff in the written scope.',
+      },
     ],
     related: [
       { href: '/solar-savings/san-diego-county', label: 'San Diego County project guide' },
       { href: '/blog/sdge-time-of-use-rates-2026', label: 'Check SDG&E time-of-use periods' },
     ],
-    sources: [chulaVistaPermit],
+    sources: [chulaVistaPermit, sdgeInterconnection],
   },
   'palm-springs': {
     city: 'Palm Springs',

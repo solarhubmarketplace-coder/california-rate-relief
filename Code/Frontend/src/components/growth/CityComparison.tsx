@@ -36,6 +36,13 @@ export function CityComparison({ slug }: { slug: string }) {
       </section>
       <CityLocalChecks slug={slug} />
       <QuoteChecklist />
+      {city.projectLinks?.length ? (
+        <RelatedGuides
+          heading={`Related ${city.name} project questions`}
+          intro="Use these guides to prepare the specific questions a written bid needs to answer."
+          links={city.projectLinks}
+        />
+      ) : null}
       <section>
         <h2>A comparison to ask for</h2>
         <p>{city.example}</p>

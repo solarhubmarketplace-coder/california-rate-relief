@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description,
     type: 'article',
     publishedTime: '2026-04-23T00:00:00Z',
-    modifiedTime: '2026-09-18T00:00:00Z',
+    modifiedTime: '2026-09-20T00:00:00Z',
     url: 'https://ratereliefca.com/commercial-solar/cost-per-watt-california',
   },
 };
@@ -37,7 +37,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: title,
   datePublished: '2026-04-23',
-  dateModified: '2026-09-18',
+  dateModified: '2026-09-20',
   author: {
     '@type': 'Organization',
     name: 'California Rate Relief',
@@ -89,7 +89,7 @@ export default function CommercialSolarCost() {
               </p>
               <div className="mt-4 flex items-center gap-1 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4" />
-                <time dateTime="2026-09-18">Updated September 18, 2026</time>
+                <time dateTime="2026-09-20">Updated September 20, 2026</time>
               </div>
             </header>
 
@@ -98,12 +98,11 @@ export default function CommercialSolarCost() {
                 How much does commercial solar cost per watt in California in 2026?
               </h2>
               <p>
-                The most recent published benchmark for this question is Lawrence
-                Berkeley National Laboratory&apos;s{' '}
+                Lawrence Berkeley National Laboratory&apos;s{' '}
                 <a href={lbnlReport} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   U.S. Distributed Solar and Storage 2026 Data Update
                 </a>
-                , dated August 2026, which reports non-residential installed prices
+                , dated August 2026, reports non-residential installed prices
                 for systems installed in 2024 and 2025. That report is a historical
                 median of completed installations, not a current quote. Verified{' '}
                 {VERIFIED}.
@@ -211,9 +210,9 @@ export default function CommercialSolarCost() {
                   review can sit inside or outside the quoted price.
                 </li>
                 <li>
-                  <strong>Electrical service capacity.</strong> Main switchgear,
-                  transformer and panel work is frequently the largest single
-                  variable between two otherwise similar bids.
+                  <strong>Electrical service capacity.</strong> Ask each bidder to
+                  itemize any main switchgear, transformer and panel work so it can
+                  be compared separately from the solar equipment.
                 </li>
                 <li>
                   <strong>Interconnection.</strong> Utility study results and any
@@ -244,6 +243,30 @@ export default function CommercialSolarCost() {
                   </Link>
                   .
                 </li>
+              </ul>
+
+              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Regional project checklist before requesting an assessment
+              </h2>
+              <p>
+                A county name does not identify the utility, tariff or project
+                scope. Before submitting a Riverside County or San Diego County
+                inquiry, gather the property details below and use the bill rather
+                than an assumed provider or rate schedule.
+              </p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>Property address and the permit authority that serves that address.</li>
+                <li>Utility provider and the actual rate schedule shown on the current bill.</li>
+                <li>
+                  Interval/load information and billed demand, when the tariff uses
+                  demand charges. See{' '}
+                  <Link href="/blog/what-is-demand-charge-california" className="text-primary underline">
+                    what a demand charge is
+                  </Link>{' '}
+                  before treating annual kWh as the whole bill picture.
+                </li>
+                <li>Who has authority to approve roof, site and electrical work: the owner, tenant or both.</li>
+                <li>Written inclusions for roof work, electrical upgrades, storage and interconnection.</li>
               </ul>
 
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
@@ -420,7 +443,7 @@ export default function CommercialSolarCost() {
             </div>
           <RelatedGuides
             heading="What a per-watt figure leaves out"
-            intro="Two cost categories sit outside the equipment price on almost every proposal."
+            intro="Compare each proposal&apos;s written scope before using a per-watt figure."
             links={[
               { href: "/solar-problems/hidden-costs-of-solar-california", label: "The cost lines that arrive after the quote" },
               { href: "/solar-problems/solar-dealer-fees-explained", label: "How a financing fee is folded into the price per watt" },
