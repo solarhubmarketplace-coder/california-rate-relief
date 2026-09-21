@@ -38,10 +38,15 @@ const CRR_GREEN_20260918 = new Set([
   '/blog/free-solar-panels-california',
   '/blog/solar-ppa-vs-lease-california',
 ]);
+const CRR_NEW_QUESTION_20260920 = new Set([
+  '/blog/adding-solar-panels-existing-system-california',
+  '/blog/solar-installation-timeline-california',
+]);
 const LOCAL_RELEASE_REVIEW_ROUTE_SET = new Set<string>(LOCAL_RELEASE_REVIEW_ROUTES);
 
 function fileMtime(_relPath: string, _fallback: Date): Date {
   const route = _relPath.replace(/^src\/app/, '').replace(/\/page\.[tj]sx?$/, '');
+  if (CRR_NEW_QUESTION_20260920.has(route)) return new Date('2026-09-20T00:00:00.000Z');
   if (CRR_GREEN_20260918.has(route)) return new Date('2026-09-17T00:00:00.000Z'); // claude/ca-green-20260918
   if (LOCAL_RELEASE_REVIEW_ROUTE_SET.has(route)) return new Date('2026-09-12T00:00:00.000Z');
   if (GROWTH_ROUTES.includes(route) || route === '/blog/why-is-my-pge-bill-so-high') return new Date('2026-09-10T00:00:00.000Z');
@@ -59,6 +64,7 @@ function reviewMtime(slug: string, fallback: Date): Date {
  * runtime filesystem I/O.
  */
 function urlMtime(_urlPath: string, _fallback: Date): Date {
+  if (CRR_NEW_QUESTION_20260920.has(_urlPath)) return new Date('2026-09-20T00:00:00.000Z');
   if (CRR_GREEN_20260918.has(_urlPath)) return new Date('2026-09-17T00:00:00.000Z'); // claude/ca-green-20260918
   if (LOCAL_RELEASE_REVIEW_ROUTE_SET.has(_urlPath)) return new Date('2026-09-12T00:00:00.000Z');
   if (GROWTH_ROUTES.includes(_urlPath) || _urlPath === '/blog/why-is-my-pge-bill-so-high') return new Date('2026-09-10T00:00:00.000Z');
@@ -126,6 +132,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
 
   const blogSlugs = [
     'best-time-to-install-solar-panels-california',
+    'adding-solar-panels-existing-system-california', 'solar-installation-timeline-california',
     'what-happens-if-stop-paying-solar-lease-california',
     'is-community-solar-worth-it',
     'sce-time-of-use-rates-2026',

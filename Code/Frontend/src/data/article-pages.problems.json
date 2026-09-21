@@ -2906,183 +2906,135 @@
     "slug": "true-up-bill-california-explained",
     "cluster": "problems",
     "metaTitle": "California Solar True-Up Bill Explained",
-    "metaDescription": "Your solar true-up bill settles a full year of credits and charges at once. Here's how the 12-month reconciliation works, and how to avoid a shock.",
+    "metaDescription": "Read a solar settlement bill by checking the provider, generation supplier, program, billing period, amount due, imports, exports and recorded production.",
     "h1": "The True-Up Bill in California, Explained",
-    "intro": "If you have solar in California, once a year you get a bill that looks nothing like the ones before it, often several hundred dollars, sometimes over a thousand, arriving all at once. That is your true-up bill. It is not a billing error, a rate hike, or a sign your system failed.\n\nNet metering, the billing arrangement almost every California solar owner is on, does not settle month to month. State law, Cal. Pub. Util. Code section 2827, requires your utility to net your grid usage against your solar generation over a full 12-month cycle, then reconcile the account once, at the end of that cycle, into a single true-up statement. Every monthly bill in between is a running tally, not a real bill. PG&E, SCE, and SDG&E each describe it that way on their own billing pages.\n\nThe bill can be a genuine surprise if you assumed summer credits were sitting in a bank account, or if you moved from NEM 2.0 to the newer Net Billing Tariff without adjusting your expectations. This page covers why the true-up works this way, what happens to unused credits, how NEM 2.0 and NEM 3.0 true-ups differ, how to read the actual line items on your statement, and how to check your account mid-year so the number does not blindside you.",
+    "intro": "Start with the bill, not the word true-up. Identify the utility, any generation supplier, and the program shown on the account. Then read the billing or settlement period, the amount currently due, imported and exported energy, and the system-production record. A monthly payment and an annual settlement can coexist, but the timing and treatment depend on the provider and account option.\n\nFor an unexplained charge, compare the current statement with a comparable prior period, note changes in household load or system operation, and use the utility or generation supplier's billing support for the line item in question. A total alone does not establish a billing error, a production problem, or a need for more panels.",
     "keyStats": [
       {
-        "label": "Legal basis",
-        "value": "Cal. Pub. Util. Code § 2827",
-        "note": "Requires 12-month netting and account reconciliation. As of 2026-09-05."
+        "label": "Provider shown on the bill",
+        "value": "Check before interpreting charges",
+        "note": "A utility and a community-choice generation supplier can have separate bill roles."
       },
       {
-        "label": "Net Surplus Compensation rate",
-        "value": "~2-4 cents/kWh",
-        "note": "Wholesale-based cash-out for unused surplus credit, vs. 34.5-45.7c/kWh retail rates. Per PG&E and CPUC NEM pages, as-of 2026-09-05."
+        "label": "Billing option",
+        "value": "Account-specific",
+        "note": "SCE describes Annual and Monthly Billing Options for its NEM customers."
       },
       {
-        "label": "PG&E new Base Services Charge",
-        "value": "~$24/month",
-        "note": "Replaces the old Minimum Electric Charge starting March 2026 for most residential customers; reduced for CARE/FERA and affordable-housing residents. pge.com, as-of 2026-09-05."
+        "label": "Current amount due",
+        "value": "Read the statement",
+        "note": "Do not infer the current payment obligation from a credit, annual total, or neighbor's bill."
       },
       {
-        "label": "NEM 3.0 legacy protection",
-        "value": "9 years",
-        "note": "Vs. 20 years for NEM 2.0 enrollees. CPUC NEM/Net Billing page, as-of 2026-09-05."
+        "label": "Production and usage",
+        "value": "Compare both records",
+        "note": "A bill total alone does not identify a system or billing cause."
       },
       {
-        "label": "NBT application cutoff",
-        "value": "April 15, 2023",
-        "note": "Applications on or after this date fall under Net Billing Tariff (NEM 3.0) instead of NEM 2.0. CPUC, as-of 2026-09-05."
+        "label": "Support path",
+        "value": "Utility or generation supplier",
+        "note": "Use the provider responsible for the charge or credit shown on the bill."
       }
     ],
     "sections": [
       {
-        "heading": "What \"true-up\" actually means",
-        "body": "True-up is the once-a-year reconciliation of your net energy metering (NEM) account. California Public Utilities Code section 2827 defines net metering as measuring the difference between electricity you pull from the grid and electricity your system generates, and it requires your utility to settle that difference at the end of each 12-month period following your interconnection date. That settlement is your true-up bill, and every utility uses roughly the same three names for it: PG&E calls it the True-Up Statement, SCE calls it the Annual Settlement Statement under its Annual Billing Option, and SDG&E prints \"Net Energy Metering True-Up Bill\" directly on the statement.\n\nThe reason it exists is structural, not punitive. Solar production and household electricity use don't match up in real time, or even month to month. A rooftop system overproduces in July and August and underproduces in December and January. Rather than charge or credit you every single month based on that mismatch, state law lets the utility net the whole year together, so summer surplus offsets winter draw before any money changes hands. The tradeoff is that the settlement itself only happens once, and it can be large, because it is absorbing twelve months of imbalance in a single statement instead of spreading it out.\n\nYour NEM Start Date, meaning the day you were first interconnected, sets the clock. Every subsequent 12-month period restarts from your last true-up date. That is why two neighbors with systems installed a few months apart can get true-up bills in different months of the year."
+        "heading": "Start with the account and the bill period",
+        "body": "Read the utility name, any community-choice or other generation supplier, and the solar program shown on the account. Then compare the billing or settlement dates, current amount due, detailed energy charges, imports and exports with a comparable prior statement. A utility and a generation supplier can have separate roles on one bill, so a provider name or a city name alone is not enough to identify the charge."
       },
       {
-        "heading": "Why every monthly bill before it isn't the real number",
-        "body": "During the 12-month cycle, your monthly statement is doing bookkeeping, not billing. PG&E's own description is direct: your net energy charges and credits over the entire year are only reconciled after 12 months, in the True-Up Statement. The monthly NEM Electric Statement in between shows current-month activity and a year-to-date running total, tracking your progress toward that reconciliation, but it is not a final number.\n\nSCE splits this into two named options. Under the Annual Billing Option (ABO), fixed charges are billed monthly but total energy usage charges are calculated once, at the end of the twelve-month cycle, in what SCE calls the Annual Settlement Statement. Under the Monthly Billing Option (MBO), by contrast, energy charges are billed monthly instead of deferred — ask your utility which option your account is on, since it changes how much of a swing to expect at year-end.\n\nThis is the single biggest source of true-up confusion. A customer watching a $40 credit balance build over the summer reasonably assumes that money is theirs. It isn't settled yet. It's an in-progress tally that can, and often does, get consumed by winter usage and non-bypassable charges before the 12-month clock runs out. The number on your July statement and the number on your true-up statement are answering two different questions."
+        "heading": "Monthly payment and annual settlement are different account questions",
+        "body": "Use the account's published billing guidance. SCE, for example, describes an Annual Billing Option in which set fees are paid monthly and net energy charges are due at the end of a 12-month cycle, and a Monthly Billing Option in which set fees and net energy charges are paid monthly. Its annual settlement guidance applies regardless of that billing option. Other providers and generation suppliers can use their own billing and settlement processes."
       },
       {
-        "heading": "Why summer credits don't carry forward as cash",
-        "body": "Under both NEM 2.0 and the newer Net Billing Tariff, credits earned from excess solar export are only guaranteed to offset charges within the same 12-month period. If you produce more than you use across the full year, you become what the utility calls a net surplus generator, and you can elect Net Surplus Compensation (NSC) for that excess.\n\nHere is the part that surprises people: NSC pays at a wholesale rate, roughly 2 to 4 cents per kilowatt-hour based on CPUC and PG&E figures, not the retail rate of 34.5 to 45.7 cents per kilowatt-hour your credits were valued at while offsetting your own usage. That is a 10-to-20x gap. Practically, this means the value of your solar export was only ever \"retail-rate money\" as an offset against your own bill. Once the 12-month period closes, whatever is left over converts to a wholesale-rate cash-out, not a retail-rate refund, and only if you actively elect it.\n\nIf you don't elect NSC, the utility keeps the excess kWh at no cost to them and no payment to you. SDG&E states this plainly on its NEM billing guide: unused remaining credits do not carry to the next 12-month period. PG&E's language is nearly identical: by law, remaining credits are reset to zero at the end of the cycle. Neither utility is being unusual here; this reset is the standard mechanic, not a policy either one chose independently."
+        "heading": "Read generation and delivery separately",
+        "body": "If the bill shows a community-choice supplier, read its generation charge or credit separately from the utility's delivery charges. SCE says the CCA generation line is separate from SCE delivery and is not an additional charge. For a question about generation credits or charges, contact the supplier named on that line. For delivery, meter, recorded-usage or account questions, contact the utility."
       },
       {
-        "heading": "The charges that show up no matter how much solar credit you have",
-        "body": "Even a customer who produced far more energy than they used all year can still owe money at true-up, because a category of charges is explicitly walled off from credit offset. SDG&E calls its version a Base Services Charge and states directly that it is a non-bypassable charge that is not eligible to be offset by generation credits. SCE describes its version as Delivery or Nonbypassable charges that apply to all SCE customers and are due monthly regardless of energy use.\n\nPG&E is in the middle of changing this specific charge. Through February 2026, PG&E used a Minimum Electric Charge; starting with billing cycles in March 2026, it is replacing that with a Base Services Charge of approximately $24 per month for most residential customers, reduced for CARE/FERA-enrolled and affordable-housing residents. If you're a PG&E solar customer reading a true-up statement dated after March 2026, this is a new line item, not an error.\n\nThe practical takeaway: a $0 true-up balance was never realistic for most solar households, even ones with well-sized systems, because these charges accrue on a fixed monthly basis independent of how much you generate. Budget for something showing up every year. The question that actually matters is whether that something is a manageable non-bypassable charge, or a large net-usage bill that signals your system is undersized for your household's draw."
+        "heading": "Check the system record before drawing a conclusion",
+        "body": "Compare the bill's imported and exported energy with the system's recorded production for the same period. Note changes in occupancy, vehicles, heating or cooling, charging schedules, equipment settings, weather-related use, or a change in the billing plan. A balance can prompt questions, but it does not by itself establish a billing error, failed equipment, or a need for more panels."
       },
       {
-        "heading": "NEM 2.0 vs. NEM 3.0: how the true-up itself changed",
-        "body": "If your system interconnected on or before April 14, 2023, you're almost certainly on NEM 2.0, with a 20-year legacy protection period from your interconnection date. If you interconnected on or after April 15, 2023, you're on the Net Billing Tariff (commonly called NEM 3.0), with a shorter 9-year legacy period, per the CPUC's own NEM/Net Billing page.\n\nThe billing frequency changed: NEM 3.0 requires monthly billing of net charges, rather than deferring the whole year to a single true-up. But the annual reconciliation itself didn't go away — excess credits still roll over month to month until the year-end true-up, where the same reset-to-zero rule applies unless you elect NSC.\n\nThe bigger change is what your export is worth. NEM 2.0 credits excess generation at close to the full retail rate. NEM 3.0 values export using the CPUC's Avoided Cost Calculator, a rate that shifts by time of day, day of week, and season to reflect when power actually costs more to deliver, and that the CPUC describes as usually lower than import rates. PG&E's own description of the export credit only goes as far as saying it varies like Time-of-Use rates vary; it does not itself quantify how that compares to retail rates, so treat the size of the gap as CPUC's characterization, not PG&E's. PG&E's Solar Billing Plan page does confirm non-bypassable charges and demand charges are excluded from credit offset under NBT too, the same wall-off described above for NEM 2.0. If you're comparing a neighbor's true-up bill to yours and one of you is on NEM 2.0 and the other on NEM 3.0, don't expect the numbers to be comparable even with similar usage."
-      },
-      {
-        "heading": "How to read your actual true-up statement",
-        "body": "The exact field names vary by utility, but they map to the same underlying mechanic. On an SDG&E statement, look for: NEM Start Date and NEM True-Up Date (the 12-month window itself), Total kWh, NEM Charges and NEM Credits (what you were billed and credited during the cycle), Applied Credits and Remaining Credits (how much credit offset actual charges vs. what's left), Cumulative Balance and YTD Net Metering Charges/Credits (the running annual total), Minimum Charge Adjustment (the non-bypassable floor charge), and Current Account Balance / Payment Required This Month (the actual amount due). SDG&E, PG&E, and CPUC materials use \"relevant period,\" \"true-up period,\" and \"settlement period\" interchangeably for the same 12-month window, so don't assume different wording means a different mechanic.\n\nOn a PG&E statement, look for the monthly NEM Electric Statement (shows current and year-to-date charges and credits, with a running note on how you're tracking toward True-Up) versus the annual True-Up Statement itself, which is the final reconciliation. On an SCE statement under the Annual Billing Option, look for Amount Due, Year-to-Date Charges, and the itemized Detailed Energy Charges and Detailed Energy Use sections.\n\nAcross all three, the number that matters is the cumulative or year-to-date balance shown on your monthly statements in the months leading up to true-up — that's your best early warning, not the final bill itself."
-      },
-      {
-        "heading": "Checking mid-year so the number doesn't blindside you",
-        "body": "There's no CPUC or utility guidance that formally tells homeowners to check their account at the six-month mark; this is practical advice, not a cited regulatory recommendation. But the mechanism to do it is built into every monthly statement each utility already sends: the year-to-date running balance described in the previous section.\n\nPull your NEM statement around month 6 or 7 of your cycle and look at the cumulative balance. If it's already deeply negative (meaning you owe, not you're owed), that's your signal to check whether your usage has changed, whether panels are shaded or underperforming, or whether you simply added a load like an EV or a heat pump that your system wasn't sized for. Catching that in month 7 gives you five months to adjust usage patterns before the annual number locks in; catching it in month 12 gives you nothing but the bill.\n\nIf the number is going to be large regardless, PG&E explicitly offers a payment arrangement option for customers who can't pay the True-Up bill in full — call and ask before the due date, not after. There's no cited penalty for asking, and it's a far better outcome than an unexpected large balance landing on a fixed budget with no plan."
+        "heading": "Use the right support path for an unexplained line item",
+        "body": "Keep the bill, production record and prior comparable statement together. Ask the utility or generation supplier responsible for the line item to explain it under the account's current program and billing option. If a project is considered later, compare written assumptions about the actual bill, current program and measured production; do not use a settlement total alone as a design recommendation."
       }
     ],
     "dataTable": {
-      "caption": "NEM 2.0 vs. Net Billing Tariff (NEM 3.0): what changes at true-up",
+      "caption": "Bill-first sequence for a solar settlement question",
       "columns": [
-        "Feature",
-        "NEM 2.0 (legacy, pre-4/15/2023)",
-        "Net Billing Tariff / NEM 3.0 (4/15/2023 onward)"
+        "Check",
+        "What to read",
+        "Who can answer it"
       ],
       "rows": [
         [
-          "Billing frequency",
-          "Charges deferred to annual true-up",
-          "Net charges billed monthly; annual true-up still applies"
+          "Provider and supplier",
+          "Utility name and any generation supplier shown on the bill",
+          "The provider named on the relevant charge or credit"
         ],
         [
-          "Export credit rate",
-          "Full retail rate (generation + delivery)",
-          "CPUC Avoided Cost Calculator rate, time- and season-varying"
+          "Program and billing option",
+          "NEM, Solar Billing Plan or another program, plus the account's billing or settlement period",
+          "Utility or generation supplier account guidance"
         ],
         [
-          "Typical export value",
-          "34.5-45.7c/kWh, same as retail import rate",
-          "Roughly 5-8c/kWh on PG&E, SCE, SDG&E per NEM 3.0 export terms"
+          "Current obligation",
+          "Amount due now, detailed energy charges and year-to-date or settlement figures",
+          "Utility billing support"
         ],
         [
-          "Unused credit at year-end",
-          "Reset to zero unless Net Surplus Compensation elected",
-          "Same — resets to zero unless NSC elected"
+          "Energy records",
+          "Imported energy, exported energy and system production for the same period",
+          "Utility, supplier or system-record provider as applicable"
         ],
         [
-          "Net Surplus Compensation rate",
-          "~2-4 cents/kWh (wholesale-based)",
-          "~2-4 cents/kWh (wholesale-based, unchanged mechanism)"
-        ],
-        [
-          "Non-bypassable charges",
-          "Apply monthly, not offset by credits",
-          "Apply monthly; also excludes demand charges from credit offset"
-        ],
-        [
-          "Legacy protection period",
-          "20 years from interconnection",
-          "9 years from interconnection"
-        ],
-        [
-          "Applies to accounts that interconnected",
-          "On or before 4/14/2023",
-          "On or after 4/15/2023"
+          "Changed conditions",
+          "Loads, operating settings and schedule changes since the comparable period",
+          "Household records and the account provider"
         ]
       ]
     },
-    "whenThisIsWrong": "If you're on a publicly owned utility such as LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial ID, or Turlock ID, none of this applies as written — those utilities aren't subject to CPUC-regulated NEM 2.0/NEM 3.0 rules and set their own net metering terms, so check your specific utility's tariff instead of assuming this structure. If your true-up bill is small, under roughly $100 to $150, that's likely just non-bypassable charges doing what they're designed to do, not a sign your system is undersized. Relax about a one-time true-up bill that matches your first-year estimate; the shock is usually about timing and terminology, not an actual cost overrun. And if you're a genuine net surplus generator getting a true-up credit rather than a bill, the \"why don't I get more cash\" question answered above is the real story, not a billing error worth disputing.",
+    "whenThisIsWrong": "This page cannot assign a billing process from a city, interconnection date, account total or neighbor's bill. Publicly owned utilities and community-choice suppliers can have their own programs and settlement practices. Use the account's current utility and generation-supplier guidance for the actual program and line item.",
     "faqs": [
       {
-        "question": "Is the true-up bill a scam or a mistake?",
-        "answer": "No. It is required by state law. Cal. Pub. Util. Code section 2827 requires your utility to reconcile your net metering account once every 12 months. PG&E, SCE, and SDG&E all bill this way; a large annual charge showing up once a year is the system working as designed, not a billing error."
+        "question": "Is a true-up bill a mistake?",
+        "answer": "Not necessarily. First identify the provider, program, settlement period, amount due, usage and production entries. If a line remains unexplained, ask the provider responsible for it to review the account."
       },
       {
-        "question": "Why didn't my monthly bills warn me this was coming?",
-        "answer": "They did, technically. PG&E's monthly statement is literally called a NEM Electric Statement and shows a year-to-date running balance and progress toward true-up. SCE's Annual Billing Option statements show year-to-date charges too. The information is there, but it is easy to ignore a $0.14 line item for eleven months and then get hit by the twelfth."
+        "question": "Why am I being billed monthly and also seeing settlement information?",
+        "answer": "Monthly payment and annual settlement can answer different account questions. Check the billing option and the utility or generation supplier's published guidance for your account."
       },
       {
-        "question": "Can I ask my utility to bill me monthly instead of annually?",
-        "answer": "For legacy NEM 2.0 accounts, SCE offers a Monthly Billing Option (MBO) as an alternative to the Annual Billing Option, so ask your utility if MBO is available on your account. Under the newer Net Billing Tariff, monthly billing of net charges is already standard, though the annual true-up for surplus-credit rollover still applies."
+        "question": "Can a community-choice supplier change what I see on the bill?",
+        "answer": "It can administer generation charges and credits while the utility continues delivery and billing functions. Read the supplier line separately and contact the supplier for generation questions."
       },
       {
-        "question": "What if I can't pay the true-up bill in full?",
-        "answer": "PG&E offers a payment arrangement option specifically for customers who can't pay the True-Up bill in one payment (pge.com, NEM Bill page). Ask your utility directly. It's a routine request, not a red flag on your account."
+        "question": "Does a high balance prove the solar system has a problem?",
+        "answer": "No. Compare imports, exports, recorded production, billing dates and changes in household load or settings before reaching a conclusion."
       },
       {
-        "question": "Does true-up mean I made a mistake going solar?",
-        "answer": "Not by itself. A true-up balance is normal even for a well-sized system, because non-bypassable charges apply every month regardless of production and export credits (especially under NEM 3.0) are worth less than retail power. A true-up bill only signals a sizing problem if it is large and has been growing year over year — that's a production-vs-usage mismatch worth a second look, not a red flag from the bill format itself."
+        "question": "What should I do about an unexplained charge?",
+        "answer": "Keep the current bill, a comparable earlier statement and the production record. Contact the utility or generation supplier responsible for the charge and ask for its billing explanation under your current program."
       }
     ],
-    "bottomLine": "The true-up bill is not a penalty and not a sign your system underperformed — it is the once-a-year settlement Cal. Pub. Util. Code § 2827 requires, and monthly statements before it are running tallies, not real bills. What catches people off guard is real, though: summer credits don't carry forward as cash, non-bypassable charges apply every month regardless of production, and NEM 3.0's export rate is a fraction of NEM 2.0's. Pull your utility's monthly NEM statement around month 6 or 7, check the YTD balance, and the annual number stops being a surprise.",
+    "bottomLine": "Use the bill's provider, generation supplier, program, billing period, amount due, imports, exports and production record before diagnosing a settlement balance. Ask the provider responsible for an unexplained line item to review it; do not treat the total alone as proof of an error or a system problem.",
     "sources": [
       {
-        "name": "Cal. Pub. Util. Code § 2827",
-        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PUC&sectionNum=2827",
-        "supports": "Statutory basis for 12-month netting and account reconciliation"
-      },
-      {
-        "name": "CPUC, Net Energy Metering / Net Billing",
-        "url": "https://www.cpuc.ca.gov/nem",
-        "supports": "NEM 2.0 vs. Net Billing Tariff structure, legacy periods, Avoided Cost Calculator export valuation"
-      },
-      {
-        "name": "PG&E, Net Energy Metering (NEM) Bill",
-        "url": "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/net-energy-metering-bill.html",
-        "supports": "Monthly vs. annual reconciliation, True-Up Statement, payment arrangement option"
-      },
-      {
-        "name": "PG&E, Solar Bill",
-        "url": "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
-        "supports": "Credit reset to zero, NSC rate range, Base Services Charge replacing Minimum Electric Charge in March 2026"
-      },
-      {
-        "name": "PG&E, Solar Billing Plan",
-        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
-        "supports": "NBT application cutoff, non-bypassable/demand charge exclusion from credit offset"
-      },
-      {
-        "name": "SCE, Understanding Your NEM Bill",
+        "name": "SCE — Understanding Your NEM Bill",
         "url": "https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill",
-        "supports": "Annual Billing Option vs. Monthly Billing Option, Annual Settlement Statement terminology, nonbypassable charges"
+        "supports": "SCE describes Annual Billing and Monthly Billing Options and identifies the Annual Settlement Statement; the account option determines how those bill elements are handled. Checked September 20, 2026."
       },
       {
-        "name": "SDG&E, Net Energy Metering",
-        "url": "https://www.sdge.com/solar/net-energy-metering",
-        "supports": "Base Services Charge non-bypassable status"
+        "name": "SCE — Community Choice Aggregation",
+        "url": "https://www.sce.com/customer-service-center/community-choice-aggregation",
+        "supports": "A CCA may take over generation charges while SCE continues delivery, meter reading, billing, maintenance and outage response; the CCA generation line is separate. Checked September 20, 2026."
       },
       {
-        "name": "SDG&E, Understanding Your NEM Bill",
-        "url": "https://www.sdge.com/solar/net-energy-metering/UnderstandingYourNEMBill",
-        "supports": "True-Up Bill terminology, credit non-carryover, statement field names"
+        "name": "Desert Community Energy — Solar Customers",
+        "url": "https://desertcommunityenergy.org/your-options/solar-customers/",
+        "supports": "DCE describes separate generation charges and credits, with SCE delivery and other service charges, and says its generation balances settle monthly with a May annual true-up. This is a bill-confirmed example, not a universal CCA schedule. Checked September 20, 2026."
       }
     ],
-    "reviewedAt": "2026-09-08"
+    "reviewedAt": "2026-09-20"
   },
   {
     "slug": "ucc-1-lien-solar-california",

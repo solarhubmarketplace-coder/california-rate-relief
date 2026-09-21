@@ -48,7 +48,7 @@ export function BestTimeToInstallSolarGuide() {
       topic="best time to install solar panels in California"
       primaryResourceHref="/tools/solar-panel-calculator"
       primaryResourceLabel="Normalize the bill and quote"
-      comparisonHref="/blog/how-long-does-solar-installation-take-california"
+      comparisonHref="/blog/solar-installation-timeline-california"
       comparisonLabel="California installation timeline"
     >
       <section className="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
@@ -100,7 +100,7 @@ export function BestTimeToInstallSolarGuide() {
       <section>
         <h2>A simple go-or-wait rule</h2>
         <p>
-          Go forward when the roof is ready, the usage record is representative, three comparable bids are complete, the contractor and equipment are identified, and the permit-to-operation schedule is written into the deal. Wait when any of those facts are still moving. Use the <Link className="underline" href="/blog/how-long-does-solar-installation-take-california">full installation timeline</Link> to challenge an optimistic schedule before signing.
+          Go forward when the roof is ready, the usage record is representative, three comparable bids are complete, the contractor and equipment are identified, and the permit-to-operation schedule is written into the deal. Wait when any of those facts are still moving. Use the <Link className="underline" href="/blog/solar-installation-timeline-california">full installation timeline</Link> to challenge an optimistic schedule before signing.
         </p>
       </section>
     </DecisionPage>

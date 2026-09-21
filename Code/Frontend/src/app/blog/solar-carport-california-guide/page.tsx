@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description,
     type: 'article',
     publishedTime: '2026-04-24T00:00:00Z',
-    modifiedTime: '2026-09-18T00:00:00Z',
+    modifiedTime: '2026-09-20T00:00:00Z',
     url: 'https://ratereliefca.com/blog/solar-carport-california-guide',
   },
 };
@@ -36,7 +36,7 @@ export default function SolarCarportCAGuide() {
         headline={title}
         url="https://ratereliefca.com/blog/solar-carport-california-guide"
         datePublished="2026-04-24"
-        dateModified="2026-09-18"
+        dateModified="2026-09-20"
         description={description}
       />
       <Header />
@@ -63,7 +63,7 @@ export default function SolarCarportCAGuide() {
                 parking area. It may solve a different property problem than a roof
                 installation, so it needs a separate scope and quote comparison.
               </p>
-              <p className="mt-4 text-sm text-muted-foreground">Updated September 18, 2026</p>
+              <p className="mt-4 text-sm text-muted-foreground">Updated September 20, 2026</p>
             </header>
 
             <div className="prose prose-slate max-w-none">
@@ -110,8 +110,8 @@ export default function SolarCarportCAGuide() {
               <ul className="list-disc space-y-3 pl-6">
                 <li>
                   Ask for the <strong>canopy structure and foundations</strong> priced
-                  as a line item, excluding solar equipment. This is the cost a roof
-                  mount does not have, and it is where carport quotes diverge most.
+                  as a line item, excluding solar equipment, so the structure can be
+                  compared separately from the solar portion.
                 </li>
                 <li>
                   Ask for the <strong>solar equipment and DC system size</strong>{' '}
@@ -125,13 +125,12 @@ export default function SolarCarportCAGuide() {
                 </li>
                 <li>
                   Ask for the <strong>electrical run</strong> from the canopy to the
-                  service panel as its own line. A detached structure is often a
-                  longer and more expensive run than a roof array.
+                  service panel as its own line. Ask for the proposed route, length,
+                  included work and separately priced costs.
                 </li>
                 <li>
-                  Get at least two quotes on that same broken-out basis. With no
-                  published benchmark to check against, a second quote is the only
-                  real price reference available.
+                  Get at least two quotes on that same broken-out basis and compare
+                  the written inclusions, exclusions and change-order terms.
                 </li>
               </ul>
               <p>
@@ -158,14 +157,14 @@ export default function SolarCarportCAGuide() {
                   economics work.
                 </li>
                 <li>
-                  <strong>Local review is usually broader.</strong> A freestanding
-                  structure can bring setback, lot-coverage, height and design review
-                  into scope where a roof mount would not.
+                  <strong>Confirm the local review scope.</strong> Ask the relevant
+                  office whether setback, lot-coverage, height or design questions
+                  apply to the proposed structure.
                 </li>
                 <li>
-                  <strong>Orientation becomes a design choice.</strong> A canopy can
-                  be oriented and tilted for production rather than following an
-                  existing roof plane.
+                  <strong>Orientation needs a written assumption.</strong> Ask the
+                  designer to state the proposed canopy orientation and tilt, the
+                  production assumptions, and the property constraints considered.
                 </li>
                 <li>
                   <strong>Roof age stops being the gating question.</strong> A carport
@@ -174,9 +173,9 @@ export default function SolarCarportCAGuide() {
                   project you should be pricing.
                 </li>
                 <li>
-                  <strong>EV charging is a natural pairing.</strong> The electrical
-                  run already terminates where the vehicle parks, so charging
-                  equipment belongs in the same scope conversation.
+                  <strong>EV charging needs its own scope.</strong> If charging is a
+                  goal, ask whether it is included, where the equipment would go, and
+                  what electrical work is separately priced.
                 </li>
               </ul>
               <p>
@@ -268,10 +267,10 @@ export default function SolarCarportCAGuide() {
                   </h3>
                   <p>
                     It depends on the structure before it depends on the panels. Span,
-                    number of bays, foundation design, soil conditions and the length
-                    of the electrical run to the service panel move the total more than
-                    the module choice does. That is why a single number quoted without
-                    a site visit is not meaningful.
+                    number of bays, foundation design, soil conditions, module choice
+                    and the electrical run to the service panel can each affect the
+                    total. That is why a single number quoted without a project scope
+                    is not meaningful.
                   </p>
                 </div>
                 <div>
@@ -289,7 +288,11 @@ export default function SolarCarportCAGuide() {
                     <Link href="/commercial-solar/companies-california" className="text-primary underline">
                       compare commercial bidders on scope
                     </Link>
-                    .
+                    {' '}or use the{' '}
+                    <Link href="/commercial-assessment" className="text-primary underline">
+                      commercial assessment
+                    </Link>
+                    {' '}to describe a business property.
                   </p>
                 </div>
                 <div>

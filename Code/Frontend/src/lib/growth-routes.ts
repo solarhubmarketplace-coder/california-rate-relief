@@ -30,6 +30,8 @@ export const GROWTH_ROUTES = [
   '/blog/string-inverter-vs-microinverter',
   '/blog/tech-clean-california-heat-pump-rebate',
   '/blog/what-is-a-solar-inverter',
+  '/blog/adding-solar-panels-existing-system-california',
+  '/blog/solar-installation-timeline-california',
   ...getAllCitySlugs().map((city) => `/solar-savings/${city}`),
   ...[
     'orange-county',

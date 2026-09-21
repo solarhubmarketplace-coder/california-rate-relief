@@ -5,69 +5,55 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowRight, MapPin, Home } from 'lucide-react';
-import {
-  CITIES,
-  UTILITY_DATA,
-  type CityData,
-} from '@/data/cities-data';
+import { CITIES } from '@/data/cities-data';
 import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
-import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: "Inland Empire Solar Savings: Riverside & San Bernardino",
-  description: "Inland Empire solar guide: compare savings across Riverside and San Bernardino counties, navigate SCE rate tiers, and evaluate battery storage.",
+  title: "Inland Empire Solar Guide: Riverside & San Bernardino",
+  description: "Editorial solar-planning links for Riverside and San Bernardino: city guides, bill review, roof and storage questions, and commercial projects.",
   alternates: {
     canonical: '/solar-savings/inland-empire',
   },
   openGraph: {
-    title: 'Inland Empire Solar Companies: Riverside & San Bernardino',
+    title: 'Inland Empire Solar Guide: Riverside & San Bernardino',
     description:
-      'Reduce your Inland Empire electric bill with solar. Save 30-50% on SCE and Kern County rates, zero money down.',
+      'Find city guides, bill review, roof and storage questions, and commercial solar planning links for the Inland Empire.',
     type: 'website',
   },
 };
 
-// Inland Empire counties: Riverside, San Bernardino, Kern (partially), Ventura (partially)
 const inlandEmpireCounties = [
   'Riverside County',
   'San Bernardino County',
-  'Kern County',
 ];
 
 const inlandEmpireCities = CITIES.filter((city) =>
   inlandEmpireCounties.includes(city.county)
-).sort((a, b) => b.avgMonthlyBill - a.avgMonthlyBill);
+).sort((a, b) => a.name.localeCompare(b.name));
 
 function buildRegionalCollectionSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Inland Empire Solar Energy & Cost Reduction',
+    name: 'Inland Empire Solar Guide',
     description:
-      'A guide to solar energy options and electric bill reduction strategies for Inland Empire homeowners in Riverside, San Bernardino, and Kern County.',
+      'Editorial navigation for solar-planning resources in Riverside and San Bernardino counties.',
     url: 'https://ratereliefca.com/solar-savings/inland-empire',
     mainEntity: {
-      '@type': 'LocalBusiness',
-      name: 'California Rate Relief Program — Inland Empire',
-      description:
-        'Helping Inland Empire homeowners qualify for affordable solar energy programs.',
-      areaServed: [
-        { '@type': 'City', name: 'Riverside' },
-        { '@type': 'City', name: 'San Bernardino' },
-        { '@type': 'City', name: 'Corona' },
-        { '@type': 'City', name: 'Murrieta' },
-        { '@type': 'City', name: 'Temecula' },
-        { '@type': 'City', name: 'Bakersfield' },
-      ],
+      '@type': 'ItemList',
+      itemListElement: inlandEmpireCities.map((city, position) => ({
+        '@type': 'ListItem',
+        position: position + 1,
+        name: `${city.name} solar guide`,
+        url: `https://ratereliefca.com${savingsCityHref(city.slug)}`,
+      })),
     },
   };
 }
 
 export default function InlandEmpireSolarPage() {
-  const sceUtility = UTILITY_DATA['sce'];
-
   return (
     <PublicLayout>
       <Header />
@@ -93,7 +79,7 @@ export default function InlandEmpireSolarPage() {
                 Solar Energy in the Inland Empire
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
-                The Inland Empire experiences some of California's hottest summers and highest solar potential. Residents of Riverside, San Bernardino, and surrounding areas pay {(sceUtility.ratePerKwh * 100).toFixed(1)}¢ per kWh on average to SCE, with peak rates climbing to {sceUtility.peakTouRate}. A typical Inland Empire household spends $3,200+ annually on cooling and electricity — solar with a fixed-rate agreement slashes that by 30-50%.
+                Start with the actual account, property and project goal. This editorial hub collects current city guides and the planning paths that help you compare a new solar project, roof work, storage, or a business property without assuming one utility or outcome for the whole region.
               </p>
             </div>
 
@@ -102,19 +88,19 @@ export default function InlandEmpireSolarPage() {
               <div className='bg-card rounded-xl border border-border p-6'>
                 <div className='flex items-center gap-3 mb-3'>
                   <MapPin className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Service Area</h3>
+                  <h3 className='font-semibold text-foreground'>Editorial guide coverage</h3>
                 </div>
                 <p className='text-sm text-muted-foreground'>
-                  Covering Riverside, San Bernardino, and Kern County served by SCE and local utilities.
+                  Editorial coverage for Riverside and San Bernardino counties. Confirm the address and utility account before relying on any rate or program information.
                 </p>
               </div>
               <div className='bg-card rounded-xl border border-border p-6'>
                 <div className='flex items-center gap-3 mb-3'>
                   <Home className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Homeowners Only</h3>
+                  <h3 className='font-semibold text-foreground'>Project type</h3>
                 </div>
                 <p className='text-sm text-muted-foreground'>
-                  Program available for owner-occupied homes. Renters should contact their landlord.
+                  Start with the property decision: new solar, roof-first work, an existing system or storage, or a business property.
                 </p>
               </div>
               <div className='bg-card rounded-xl border border-border p-6'>
@@ -123,7 +109,7 @@ export default function InlandEmpireSolarPage() {
                   <h3 className='font-semibold text-foreground'>Next Step</h3>
                 </div>
                 <p className='text-sm text-muted-foreground'>
-                  Verify your address and utility account, then schedule a free 15-minute savings consultation.
+                  Use the bill-review links before comparing a proposal, then use the inquiry below if you want to describe a project.
                 </p>
               </div>
             </div>
@@ -131,39 +117,31 @@ export default function InlandEmpireSolarPage() {
             {/* Content Section */}
             <div className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
-                Why Inland Empire Homeowners Are Going Solar
+                Choose the next question
               </h2>
               <ul className='space-y-3 text-muted-foreground leading-relaxed'>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Extreme cooling demands:</strong> Summers in the Inland Empire push
-                    air conditioning to the limit. SCE rates spike during peak summer hours
-                    (2-8 PM), making solar production during peak times exceptionally valuable.
+                    <strong>Read the current bill first:</strong> identify the provider, tariff and recent charges before treating a regional utility label as your own account.
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Outstanding solar resource:</strong> The Inland Empire receives 5.8+
-                    peak sun hours daily on average — among California's best. Your roof is a
-                    power plant.
+                    <strong>Check the roof before the equipment:</strong> roof age, condition, shade and access can change which project should be priced.
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>SCE's ongoing rate increases:</strong> Southern California Edison has
-                    already approved rate increases through 2028, plus new $24/month fixed charges.
-                    Lock in a lower rate now with solar.
+                    <strong>Separate an existing system from a new project:</strong> storage and retrofit questions need the current equipment and utility records.
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Zero down Power Purchase Agreement:</strong> No upfront costs. Pay a
-                    fixed monthly rate for clean solar electricity. Inland Empire homes typically
-                    save $120-200/month from day one.
+                    <strong>Use the commercial path for a business property:</strong> a commercial bill, property authority and operating schedule need their own review.
                   </span>
                 </li>
               </ul>
@@ -172,11 +150,10 @@ export default function InlandEmpireSolarPage() {
             {/* Cities Grid */}
             <div className='mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-6 tracking-tight'>
-                Solar in Inland Empire Cities
+                Inland Empire city guides
               </h2>
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {inlandEmpireCities.map((city) => {
-                  const utility = UTILITY_DATA[city.utilityCode];
                   return (
                     <Link
                       key={city.slug}
@@ -188,19 +165,9 @@ export default function InlandEmpireSolarPage() {
                           <h3 className='text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2'>
                             {city.name}
                           </h3>
-                          <div className='space-y-1 text-sm text-muted-foreground'>
-                            <p>
-                              <span className='font-medium text-foreground'>
-                                ${city.avgMonthlyBill}/mo
-                              </span>{' '}
-                              avg bill
-                            </p>
-                            <p>
-                              {city.utilityConfirmationRequired
-                                ? city.utilityDisplayName
-                                : `${utility.shortName} service area`}
-                            </p>
-                          </div>
+                          <p className='text-sm text-muted-foreground'>
+                            Open the current city guide
+                          </p>
                         </div>
                         <div className='text-primary/0 group-hover:text-primary transition-colors'>
                           <ArrowRight className='h-5 w-5' />
@@ -216,25 +183,52 @@ export default function InlandEmpireSolarPage() {
                 counties that this hub's own grid does not reach. */}
             <RegionalCostCities region='Inland Empire' counties={inlandEmpireCounties} />
 
+            <div className='grid gap-4 md:grid-cols-2 mb-12'>
+              <Link href='/blog/why-is-my-sce-bill-so-high' className='rounded-xl border border-border bg-card p-5 hover:border-primary/50'>
+                <h2 className='font-semibold text-foreground'>SCE bill review</h2>
+                <p className='mt-2 text-sm text-muted-foreground'>Use the account and bill details before comparing solar estimates.</p>
+              </Link>
+              <Link href='/blog/is-my-roof-good-for-solar-california' className='rounded-xl border border-border bg-card p-5 hover:border-primary/50'>
+                <h2 className='font-semibold text-foreground'>Roof-first planning</h2>
+                <p className='mt-2 text-sm text-muted-foreground'>Check the roof questions that belong in a solar scope.</p>
+              </Link>
+              <Link href='/battery' className='rounded-xl border border-border bg-card p-5 hover:border-primary/50'>
+                <h2 className='font-semibold text-foreground'>Existing system or storage</h2>
+                <p className='mt-2 text-sm text-muted-foreground'>Start with the equipment and backup goal, then compare configurations.</p>
+              </Link>
+              <Link href='/commercial-assessment' className='rounded-xl border border-border bg-card p-5 hover:border-primary/50'>
+                <h2 className='font-semibold text-foreground'>Business property</h2>
+                <p className='mt-2 text-sm text-muted-foreground'>Use the commercial assessment for a property with a business account or operating schedule.</p>
+              </Link>
+            </div>
+
+            <p className='mb-12 text-sm text-muted-foreground'>
+              Comparing payment structures? Read the{' '}
+              <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>
+                California PPA, loan, lease and cash guide
+              </Link>
+              .
+            </p>
+
             {/* CTA Section */}
             <div className='bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center'>
               <h2 className='text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight'>
-                Ready to Beat the Inland Empire Heat & High Bills?
+                Describe your project
               </h2>
               <p className='text-muted-foreground mb-6 max-w-xl mx-auto'>
-                Get a custom solar savings estimate in 60 seconds. No fees, no obligation.
+                Share the property, utility account and project goal. A response or proposal depends on later review.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Start an inquiry
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>
 
             <div className='mt-8'>
-              <SolarInquiry utility="sce" topic="Inland Empire solar savings and quote comparison" />
+              <SolarInquiry topic="Inland Empire solar planning and quote comparison" />
             </div>
           </div>
         </div>
@@ -246,28 +240,6 @@ export default function InlandEmpireSolarPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(buildRegionalCollectionSchema()),
         }}
-      />
-
-      {/*
-        Article, alongside the CollectionPage node above — not instead of it.
-        The two describe different things and neither is redundant:
-          - CollectionPage  the index of city pages this hub links to
-          - Article         the regional guide prose above that index, which is
-                            original editorial content and needs an author,
-                            a reviewer and a last-reviewed date for E-E-A-T
-        Only the Article node claims mainEntityOfPage, so there is no competing
-        "this page is really an X" assertion.
-
-        dateModified is the 2026-09-10 schema/QC review. datePublished is
-        deliberately omitted: this page carries no recorded first-publish date
-        and inventing one would put an unverifiable date into structured data.
-      */}
-      <ArticleJsonLd
-        variant='Article'
-        domain='crr'
-        headline='Solar Energy in the Inland Empire'
-        url='https://ratereliefca.com/solar-savings/inland-empire'
-        dateModified='2026-09-10'
       />
 
       <Footer />

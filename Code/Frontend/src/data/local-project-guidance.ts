@@ -149,6 +149,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
     related: [
       { href: '/blog/is-my-roof-good-for-solar-california', label: 'Check the roof before solar' },
       { href: '/blog/free-roof-replacement-with-solar-panels-california', label: 'Separate roof work from the solar offer' },
+      { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
       { href: '/solar-savings/inland-empire', label: 'Inland Empire bill and project guide' },
     ],
     sources: [temeculaPermit],
@@ -266,6 +267,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
     related: [
       { href: '/solar-savings/san-diego-county', label: 'San Diego County project guide' },
       { href: '/blog/sdge-time-of-use-rates-2026', label: 'Check SDG&E time-of-use periods' },
+      { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
     ],
     sources: [chulaVistaPermit, sdgeInterconnection],
   },

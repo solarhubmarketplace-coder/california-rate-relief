@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
@@ -194,10 +195,13 @@ export function ArticleHub({
   cluster,
   title,
   intro,
+  content,
 }: {
   cluster: ArticleCluster;
   title: string;
   intro: string;
+  /** Optional hub-specific guidance rendered before the cluster list. */
+  content?: ReactNode;
 }) {
   const pages = articlesInCluster(cluster);
   return (
@@ -217,6 +221,7 @@ export function ArticleHub({
           <p className="text-lg text-foreground/80 leading-relaxed mb-10">
             {intro}
           </p>
+          {content}
           {pages.length === 0 ? (
             <p className="text-muted-foreground">
               Guides in this section are being published now. Check back shortly.

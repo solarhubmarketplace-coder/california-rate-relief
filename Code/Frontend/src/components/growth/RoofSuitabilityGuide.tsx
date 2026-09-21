@@ -30,6 +30,10 @@ const sources: Source[] = [
     url: "https://pvwatts.nrel.gov/",
   },
   {
+    label: "U.S. Department of Energy: Solar Photovoltaic Performance and Efficiency Basics (temperature check September 20, 2026)",
+    url: "https://www.energy.gov/cmei/systems/solar-photovoltaic-performance-and-efficiency-basics",
+  },
+  {
     label: "CPUC: California Solar Consumer Protection Guide",
     url: "https://www.cpuc.ca.gov/solarguide/",
   },
@@ -44,7 +48,7 @@ export const roofSuitabilityMetadata: Metadata = {
     description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
-    modifiedTime: "2026-09-12T00:00:00Z",
+    modifiedTime: "2026-09-20T00:00:00Z",
   },
 };
 
@@ -57,6 +61,7 @@ export function RoofSuitabilityGuide() {
       sources={sources}
       topic="California solar roof suitability"
       sourceCheckedDate="2026-09-12"
+      contentModifiedDate="2026-09-20"
       primaryResourceHref="/blog/solar-panels-tile-roof-california"
       primaryResourceLabel="Tile-roof solar guide"
       comparisonHref="/blog/solar-panel-removal-reinstall-cost"
@@ -108,7 +113,18 @@ export function RoofSuitabilityGuide() {
       </section>
 
       <section>
-        <h2>4. Make the mounting and roof responsibilities visible</h2>
+        <h2>4. Ask how heat is reflected in the production model</h2>
+        <p>
+          Sunlight and equipment temperature are different inputs. The Department
+          of Energy explains that higher cell temperatures affect photovoltaic
+          performance, so ask which module temperature and installation
+          assumptions the monthly model uses. That is a request to show the
+          model&apos;s inputs, not a promise about output on a particular roof.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Make the mounting and roof responsibilities visible</h2>
         <p>
           Roof material changes the attachment and flashing plan. Structure and
           local code determine what the roof can support. Get the mounting method,

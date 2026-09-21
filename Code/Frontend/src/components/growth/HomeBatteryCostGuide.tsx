@@ -37,6 +37,10 @@ const sources: Source[] = [
     label: "IRS: Residential Clean Energy Credit",
     url: "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
   },
+  {
+    label: "Tesla: Powerwall system design for systems without solar (configuration check September 20, 2026)",
+    url: "https://service.tesla.com/docs/Public/Energy/Powerwall/Powerwall-2-Owners-Manual-NA-EN/GUID-DDDC3718-3289-49C9-B055-3B2767BE0CBE.html",
+  },
 ];
 
 export const homeBatteryCostMetadata: Metadata = {
@@ -48,7 +52,7 @@ export const homeBatteryCostMetadata: Metadata = {
     description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
-    modifiedTime: "2026-09-12T00:00:00Z",
+    modifiedTime: "2026-09-20T00:00:00Z",
   },
 };
 
@@ -61,6 +65,7 @@ export function HomeBatteryCostGuide() {
       sources={sources}
       topic="California home solar battery cost and quote"
       sourceCheckedDate="2026-09-12"
+      contentModifiedDate="2026-09-20"
       primaryResourceHref="/blog/solar-battery-backup-california"
       primaryResourceLabel="Battery and backup decision guide"
       comparisonHref="/blog/do-solar-panels-work-during-power-outage-california"
@@ -110,6 +115,24 @@ export function HomeBatteryCostGuide() {
         <h2>A retrofit needs an equipment-compatibility answer</h2>
         <p>
           If solar is already installed, give the bidder the module, inverter, monitoring and interconnection records. Ask what existing equipment stays, what changes and whether the work affects any warranty. Get the new one-line electrical diagram and the exact shutdown, restart and grid-loss behavior before signing.
+        </p>
+      </section>
+
+      <section>
+        <h2>Choose the battery project before comparing the price</h2>
+        <p>
+          A battery with a new solar array, a retrofit to an existing array and
+          storage without solar are different scopes. For new solar, compare the
+          array, inverter, backup equipment and utility steps together. For a
+          retrofit, start with the existing equipment, ownership, warranty,
+          monitoring and interconnection records. For storage without solar, ask
+          the bidder to identify the supported configuration, charging source,
+          utility approval and the loads it will serve. Tesla documents a
+          storage-only configuration that charges from the grid, but that example
+          does not establish what any other system, installer or utility allows.
+        </p>
+        <p className="mt-3">
+          If the question is added generation rather than storage, use the <Link className="underline" href="/blog/adding-solar-panels-existing-system-california">existing-system expansion checklist</Link> before treating a battery proposal as the same project.
         </p>
       </section>
 

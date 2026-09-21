@@ -286,6 +286,27 @@ export default function CommercialSolarCompanies() {
           address does not identify the tariff; confirm the utility account.
         </p>
       </section>
+      <section id="regional-project-brief">
+        <h2>Regional project brief: Riverside or San Diego</h2>
+        <p>
+          A Riverside or San Diego location is not enough to identify the work or
+          tariff. Give each bidder the exact address, the permit authority for that
+          property, the current tariff and utility account, the owner or leaseholder
+          with authority over the roof or site, the operating hours, and written
+          confirmation that it accepts the address and project type. Keep that brief
+          with every proposal so the scopes can be compared.
+        </p>
+      </section>
+      <section id="existing-system-maintenance">
+        <h2>Existing-system cleaning or maintenance is a separate question</h2>
+        <p>
+          A guide to selecting a new installation contractor is not a promise of
+          cleaning, maintenance or repair for an existing system. Start with the
+          original installer, manufacturer support and the system records. If those
+          do not resolve the need, verify a separate service provider&apos;s written
+          scope and address acceptance before arranging work.
+        </p>
+      </section>
       <section id="manufacturing">
         <h2>Manufacturing and industrial solar projects</h2>
         <p>

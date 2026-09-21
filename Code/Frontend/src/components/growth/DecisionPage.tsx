@@ -68,6 +68,7 @@ export function DecisionPage({
   inquiry,
   commercial = false,
   sourceCheckedDate = "2026-09-10",
+  contentModifiedDate,
   regionLabel = "California",
   market = "CA",
   primaryResourceHref,
@@ -85,6 +86,7 @@ export function DecisionPage({
   inquiry?: ReactNode;
   commercial?: boolean;
   sourceCheckedDate?: string;
+  contentModifiedDate?: string;
   regionLabel?: string;
   market?: ServiceMarket;
   primaryResourceHref?: string;
@@ -109,7 +111,7 @@ export function DecisionPage({
           "@context": "https://schema.org",
           "@type": "Article",
           headline: title,
-          dateModified: sourceCheckedDate,
+          dateModified: contentModifiedDate || sourceCheckedDate,
           author: {
             "@type": "Organization",
             name: "California Rate Relief",
@@ -140,7 +142,7 @@ export function DecisionPage({
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-slate-700">{intro}</p>
           <p className="mt-3 text-sm text-slate-500">
-            Updated {formatSourceCheckedDate(sourceCheckedDate)} · California
+            Updated {formatSourceCheckedDate(contentModifiedDate || sourceCheckedDate)} · California
             Rate Relief is a private solar referral service.
           </p>
         </header>
