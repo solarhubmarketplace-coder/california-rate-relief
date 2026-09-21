@@ -6,6 +6,8 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { BillComparison } from '@/components/growth/BillComparison';
+import { LocalProjectGuidance } from '@/components/growth/LocalProjectGuidance';
+import { NearbyCostCities } from '@/components/growth/NearbyCostCities';
 import { Calendar, MapPin } from 'lucide-react';
 import { cityCostPath, type CityCostRow } from '@/data/city-cost-data';
 import {
@@ -130,6 +132,7 @@ function formatVerified(iso: string): string {
 
 export function CityCostPage({ row }: { row: CityCostRow }) {
   const utility = getUtilityRate(row.utilityKey);
+  const hasAddressSpecificUtility = row.slug === 'corona';
   const path = cityCostPath(row.slug);
   const canonicalUrl = `https://ratereliefca.com${path}`;
   const title = cityCostTitle(row.city);
@@ -149,6 +152,13 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       url: utility.sourceUrl ?? `https://ratereliefca.com${RATE_TRACKER_PATH}`,
       verifiedAt: utility.fetchedAt,
     },
+    ...(hasAddressSpecificUtility
+      ? [{
+          label: 'City of Corona Department of Water and Power — Electric Service',
+          url: 'https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service',
+          verifiedAt: '2026-09-20',
+        }]
+      : []),
     ...STATE_SOURCES,
   ];
 
@@ -162,7 +172,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
     {
       question: `Is solar worth it in ${row.city}?`,
       answer:
-        `That depends on the bill the system would offset and on the contract you are offered, not on the city. The CPUC's California Solar Consumer Protection Guide requires a standardised bill savings estimate with the inputs and assumptions behind it, and caps any electricity rate escalation used in such a calculation at 10 percent. Compare ${utility.name}'s own billed usage history against that estimate, and check that the estimate's assumptions match your household.`,
+        `That depends on the bill the system would offset and on the contract you are offered, not on the city. The CPUC's California Solar Consumer Protection Guide requires a standardised bill savings estimate with the inputs and assumptions behind it, and caps any electricity rate escalation used in such a calculation at 10 percent. Compare ${hasAddressSpecificUtility ? 'the utility named on your bill' : `${utility.name}'s own`} billed usage history against that estimate, and check that the estimate's assumptions match your household.`,
     },
     {
       question: `Do I need a permit for solar in ${row.city}?`,
@@ -172,7 +182,9 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
     {
       question: `Which utility serves ${row.city}?`,
       answer:
-        `${utility.longName} (${utility.name}). Its current average residential rate is ${rate}, as of ${utility.asOf}, per ${utility.sourceLabel}, fetched ${formatVerified(utility.fetchedAt)}. That rate is ${utility.basisNote}.`,
+        hasAddressSpecificUtility
+          ? 'The City of Corona Department of Water and Power states that its electric service is limited to its service area; some Corona addresses are served by Southern California Edison. Check the utility named on your actual bill or confirm the address with the utility before using a rate, a bill comparison, or a project estimate. Source: City of Corona Department of Water and Power, Electric Service, verified September 20, 2026.'
+          : `${utility.longName} (${utility.name}). Its current average residential rate is ${rate}, as of ${utility.asOf}, per ${utility.sourceLabel}, fetched ${formatVerified(utility.fetchedAt)}. That rate is ${utility.basisNote}.`,
     },
   ];
 
@@ -232,19 +244,37 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
 
               {/* ---------- Utility ---------- */}
               <h2 id='utility' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
-                Your utility: {utility.name}
+                {hasAddressSpecificUtility ? 'Confirm the utility on this address' : `Your utility: ${utility.name}`}
               </h2>
-              <p>
-                {row.city} is billed by {utility.longName} ({utility.name}).
-                {utility.averageResidentialRateCents === null ? (
-                  <> No comparable average residential rate is published for {utility.name} on our
-                  tracker: {utility.basisNote}. Read your own tariff schedule and your own bill
-                  instead of an average.</>
-                ) : (
-                  <> Its current average residential rate is <strong>{rate}</strong>, as of{' '}
-                  {utility.asOf}. That figure is {utility.basisNote}.</>
-                )}
-              </p>
+              {hasAddressSpecificUtility ? (
+                <>
+                  <p>
+                    The City of Corona Department of Water and Power says its electric service is
+                    limited to its service area. Some Corona addresses are served by Southern
+                    California Edison. Read the utility name on the actual bill before treating a
+                    DWP schedule, an SCE schedule, or an online estimate as yours.
+                  </p>
+                  <p className='text-foreground/60 text-sm'>
+                    Source:{' '}
+                    <a href='https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service' target='_blank' rel='noopener noreferrer' className={link}>
+                      City of Corona Department of Water and Power — Electric Service
+                    </a>
+                    . Verified September 20, 2026.
+                  </p>
+                </>
+              ) : (
+                <p>
+                  {row.city} is billed by {utility.longName} ({utility.name}).
+                  {utility.averageResidentialRateCents === null ? (
+                    <> No comparable average residential rate is published for {utility.name} on our
+                    tracker: {utility.basisNote}. Read your own tariff schedule and your own bill
+                    instead of an average.</>
+                  ) : (
+                    <> Its current average residential rate is <strong>{rate}</strong>, as of{' '}
+                    {utility.asOf}. That figure is {utility.basisNote}.</>
+                  )}
+                </p>
+              )}
               {row.cca ? (
                 <p>
                   Generation for many addresses in {row.city} is supplied by {row.cca} rather than by
@@ -252,7 +282,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                   generation line appears on your own bill before comparing any estimate.
                 </p>
               ) : null}
-              <p className='text-foreground/60 text-sm'>
+              {!hasAddressSpecificUtility && <p className='text-foreground/60 text-sm'>
                 {utility.sourceUrl ? (
                   <>
                     Source:{' '}
@@ -268,13 +298,13 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 cannot drift from the tracker &mdash;{' '}
                 <Link href={RATE_TRACKER_PATH} className={link}>see the tracker</Link> for the rate
                 history, the fixed charges and the per-row sources behind it.
-              </p>
-              <p>
+              </p>}
+              {!hasAddressSpecificUtility && <p>
                 Why the rate matters to a cost question at all: the rate is what the system is worth
                 against, not what it costs. A higher rate does not make a system cheaper to install
                 in {row.city}; it changes how quickly the same install offsets a bill. Those are two
                 different questions and quotes routinely blur them.
-              </p>
+              </p>}
 
               {/* ---------- Permits ---------- */}
               <h2 id='permits' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
@@ -301,6 +331,8 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 quote that leaves permitting out of its scope is not the same quote as one that
                 includes it, whatever the two bottom lines look like side by side.
               </p>
+
+              <LocalProjectGuidance citySlug={row.slug} />
 
               {/* ---------- Cost drivers ---------- */}
               <h2 id='drivers' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
@@ -435,12 +467,12 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
               </h2>
               <p>
                 A quote is only checkable against real usage. This compares two of your own{' '}
-                {utility.name} bills on the same basis &mdash; billing days, kWh and charges &mdash;
+                {hasAddressSpecificUtility ? 'utility' : utility.name} bills on the same basis &mdash; billing days, kWh and charges &mdash;
                 so you can see what actually moved before anyone tells you what a system would do
                 about it. Nothing is sent anywhere; the arithmetic runs in your browser.
               </p>
               <div className='not-prose my-8'>
-                <BillComparison utilityName={utility.name} />
+                <BillComparison utilityName={hasAddressSpecificUtility ? 'utility' : utility.name} />
               </div>
 
               {/* ---------- FAQ ---------- */}
@@ -475,14 +507,17 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 <Link href={RATE_TRACKER_PATH} className={link}>California utility rate tracker</Link>,{' '}
                 <Link href='/solar-problems/solar-dealer-fees-explained' className={link}>dealer fees</Link>,{' '}
                 <Link href='/solar-problems/solar-escalator-clause-explained' className={link}>escalator clauses</Link>,{' '}
-                <Link href='/blog/is-it-better-to-buy-or-lease-solar-panels-california' className={link}>buy or lease</Link>,{' '}
-                <Link href='/blog/is-my-roof-good-for-solar-california' className={link}>is my roof suited to solar</Link>.
+                 <Link href='/blog/is-it-better-to-buy-or-lease-solar-panels-california' className={link}>buy or lease</Link>,{' '}
+                <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className={link}>PPA, loan, lease and cash comparison</Link>,{' '}
+                 <Link href='/blog/is-my-roof-good-for-solar-california' className={link}>is my roof suited to solar</Link>.
               </p>
             </div>
 
+            <NearbyCostCities row={row} />
+
             <SolarInquiry
               variant='bill'
-              utility={utility.name}
+              utility={hasAddressSpecificUtility ? '' : utility.name}
               topic={`Solar project in ${row.city}`}
             />
           </article>

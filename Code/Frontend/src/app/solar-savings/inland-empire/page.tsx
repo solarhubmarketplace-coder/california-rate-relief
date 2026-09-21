@@ -195,7 +195,11 @@ export default function InlandEmpireSolarPage() {
                               </span>{' '}
                               avg bill
                             </p>
-                            <p>{utility.shortName} service area</p>
+                            <p>
+                              {city.utilityConfirmationRequired
+                                ? city.utilityDisplayName
+                                : `${utility.shortName} service area`}
+                            </p>
                           </div>
                         </div>
                         <div className='text-primary/0 group-hover:text-primary transition-colors'>

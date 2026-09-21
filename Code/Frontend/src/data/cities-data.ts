@@ -287,6 +287,12 @@ export interface CityData {
 
   // Utility
   utilityCode: string;       // key into UTILITY_DATA (e.g. "sce")
+  /** Public label for cities where the city name does not settle the serving utility. */
+  utilityDisplayName?: string;
+  /** Prevents templates from treating utilityCode as an address-level service finding. */
+  utilityConfirmationRequired?: boolean;
+  /** Official sources a visitor can use to confirm the provider shown on the bill. */
+  utilityLookupUrls?: { label: string; url: string }[];
 
   // Stats (displayed in quick stats grid)
   avgMonthlyBill: number;    // dollars
@@ -375,6 +381,13 @@ const MUNI_RELATED_ARTICLES = [
   { slug: 'nem-3-california-still-worth-it', title: 'Is Solar Still Worth It Under NEM 3.0?' },
   { slug: 'solar-tax-credit-expired-2026-options', title: 'Solar Tax Credit Expired — Your Options Now' },
   { slug: 'prepaid-ppa-california-2026', title: 'Prepaid PPA in California: 2026 Guide' },
+];
+
+const ADDRESS_CHECK_RELATED_ARTICLES = [
+  { slug: 'are-solar-panels-worth-it-california', title: 'Are Solar Panels Worth It in California?' },
+  { slug: 'is-my-roof-good-for-solar-california', title: 'Is My Roof Good for Solar?' },
+  { slug: 'how-big-of-a-solar-system-do-i-need-california', title: 'How Big Should a Solar System Be?' },
+  { slug: 'is-it-better-to-buy-or-lease-solar-panels-california', title: 'Buy or Lease Solar in California?' },
 ];
 
 const LADWP_RELATED_ARTICLES = [
@@ -988,7 +1001,20 @@ export const CITIES: CityData[] = [
     slug: 'corona',
     county: 'Riverside County',
     state: 'California',
+    // Technical fallback for legacy calculators. The city name does not establish the provider.
     utilityCode: 'sce',
+    utilityDisplayName: 'Check the bill: Corona Electric or SCE',
+    utilityConfirmationRequired: true,
+    utilityLookupUrls: [
+      {
+        label: 'City of Corona electric service area and solar connection information',
+        url: 'https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service',
+      },
+      {
+        label: 'SCE service-area lookup',
+        url: 'https://www.sce.com/customer-service-center/help-center/stop-start-move-service/faq/how-to-know-if-sce-is-my-electric-utility',
+      },
+    ],
     avgMonthlyBill: 357,
     peakSunHours: 5.6,
     annualSunshineHours: 3150,
@@ -996,27 +1022,27 @@ export const CITIES: CityData[] = [
     systemSizeKw: 7.3,
     systemCostCash: 17000,
     introText:
-      'Corona is one of the largest cities in western Riverside County with a population of around 157,000. Situated in SCE territory at the gateway between the IE and Orange County, Corona homeowners face high electricity rates compounded by hot summers.',
+      'Corona sits at the western edge of Riverside County, but the city name does not identify the electric utility. The City of Corona provides bundled electric service inside its defined service area; other Corona addresses may receive an SCE bill. Confirm the provider on the current bill before applying a rate plan, export rule or interconnection process.',
     electricitySection:
-      'The average Corona household pays approximately $357 per month for electricity, or about $4,284 per year — one of the highest averages in the IE. Corona\'s mix of older and newer homes, combined with the Inland Empire heat, drives significant AC usage.\n\nSCE\'s average residential rate is around 34.5 cents per kWh, with peak TOU rates of 58-74 cents during 4-9 PM. The $24.15 monthly fixed charge applies to all customers.',
+      'Start with the provider, rate schedule and twelve months of usage printed on the actual account. Corona says its municipal utility serves customers inside the City\'s electric service area, subject to available capacity for new developments, and distinguishes those customers from people who receive an SCE bill.\n\nA proposal should use the confirmed provider\'s current solar and interconnection rules. A citywide bill estimate cannot replace the account, and an SCE assumption should not be applied to a Corona Electric customer.',
     solarPotentialText:
       'Corona averages approximately 3,150 hours of sunshine per year with 5.6 peak sun hours per day. While slightly less than deeper IE cities (due to some marine layer influence), it is still excellent for solar production.',
     localTips: [
       {
         title: 'EV owners:',
         content:
-          'Corona has a high rate of EV adoption. Solar + EV charging is one of the strongest financial cases — you are essentially driving on free fuel. If you charge during the day (home office, retired), solar directly offsets your EV charging costs.',
+          'Include the vehicle\'s annual charging load and usual charging hours in every proposal. Ask bidders to show that load separately so a future EV is not hidden inside an oversized production claim.',
       },
       {
         title: 'Pool ownership:',
         content:
-          'Pool pumps running during peak hours can add $50-$80/month. Switch your pool pump to morning hours and size your solar system to include pool energy usage.',
+          'Record the pool pump schedule and annual usage before sizing the system. Any time-of-use recommendation must match the confirmed utility and rate plan on the account.',
       },
     ],
     whenSolarDoesntWork:
       'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
     bottomLine:
-      'Corona\'s high average bills ($357/month), strong sunshine, and growing EV adoption make it one of the best solar markets in western Riverside County.',
+      'For a Corona quote, the first comparison point is the serving utility. Confirm Corona Electric or SCE from the bill and official lookup, then compare the same usage history, roof layout, equipment and contract scope.',
     faqs: [
       {
         question: 'How much does solar cost in Corona in 2026?',
@@ -1024,7 +1050,7 @@ export const CITIES: CityData[] = [
       },
       {
         question: 'What is the average electric bill in Corona?',
-        answer: 'Corona residents pay approximately $357 per month on average, or about $4,284 per year.',
+        answer: 'A citywide average cannot identify what this address pays or which utility serves it. Use the current bill for the provider, rate schedule, usage and charges that belong in a proposal.',
       },
       {
         question: 'Can my HOA block solar panels?',
@@ -1036,12 +1062,12 @@ export const CITIES: CityData[] = [
       },
     ],
     metaTitle: 'Solar Panels in Corona, CA: 2026 Cost & Savings',
-    metaDescription: 'Corona residents pay ~$357/month for electricity. Learn your SCE rate, solar costs, and every option to lower your bill.',
+    metaDescription: 'Compare a Corona solar quote after confirming whether the electric bill is from Corona Electric or SCE. Check scope, roof, storage and contract terms.',
     ogTitle: 'Solar Savings in Corona, CA: 2026 Rates, Costs & Options',
-    ogDescription: 'Corona residents pay ~$357/month for electricity. Here\'s what solar costs and saves.',
+    ogDescription: 'Confirm the electric provider on the bill, then compare the same solar, roof, storage and contract scope for a Corona home.',
     energySageUrl: 'https://www.energysage.com/local-data/solar-panel-cost/ca/riverside-county/corona/',
     googleSunroofUrl: 'https://sunroof.withgoogle.com',
-    relatedArticles: SCE_RELATED_ARTICLES,
+    relatedArticles: ADDRESS_CHECK_RELATED_ARTICLES,
     seoData: { primaryKeyword: 'solar panels corona ca', volume: 70, kd: 2, verdict: 'BUILD' },
   },
 
@@ -1114,7 +1140,20 @@ export const CITIES: CityData[] = [
     slug: 'riverside',
     county: 'Riverside County',
     state: 'California',
+    // RPU is the primary legacy rendering path; the current bill and service map control.
     utilityCode: 'rpu',
+    utilityDisplayName: 'Check the bill: RPU or SCE where applicable',
+    utilityConfirmationRequired: true,
+    utilityLookupUrls: [
+      {
+        label: 'Riverside Public Utilities electric service-area map',
+        url: 'https://riversideca.gov/utilities/about-rpu/service-area-maps',
+      },
+      {
+        label: 'SCE service-area lookup',
+        url: 'https://www.sce.com/customer-service-center/help-center/stop-start-move-service/faq/how-to-know-if-sce-is-my-electric-utility',
+      },
+    ],
     avgMonthlyBill: 260,
     peakSunHours: 5.7,
     annualSunshineHours: 3200,
@@ -1122,16 +1161,16 @@ export const CITIES: CityData[] = [
     systemSizeKw: 11.15,
     systemCostCash: 25786,
     introText:
-      'Riverside is the county seat and largest city in Riverside County with a population of around 320,000. Unlike most of its neighbors, Riverside has its own municipal utility — Riverside Public Utilities (RPU) — which means different rates, different net metering rules, and different solar economics than SCE territory.',
+      'Riverside Public Utilities is the City\'s primary electric distributor, but the city name alone should not select a utility for a proposal. Riverside\'s planning record documents SCE-served areas during annexation transitions. Confirm the current provider with the bill and the official service-area lookup before applying utility rules.',
     electricitySection:
-      'The average Riverside household on RPU pays approximately $260 per month for electricity, or about $3,120 per year. While RPU rates are lower than SCE (around 28 cents per kWh average), they are still significant — especially for larger homes or heavy AC users.\n\nRPU\'s peak TOU rates are in the 32-38 cent range, considerably lower than SCE\'s 58-74 cents. RPU does not currently charge the $24.15 fixed charge that SCE customers pay.',
+      'Use the provider, rate schedule and twelve months of usage printed on the current account. If RPU serves the address, use RPU\'s current rules, rates and solar process. If the bill identifies SCE, use the current SCE account and interconnection path instead.\n\nDo not compare bids built on different utilities or citywide averages. Each proposal should show the same usage history, onsite use, imports, exports and remaining charges under the confirmed account.',
     solarPotentialText:
       'Riverside averages approximately 3,200 hours of sunshine per year with 5.7 peak sun hours per day. The city has a mix of older neighborhoods (with mature trees that may cause shading) and newer developments with excellent solar exposure.',
     localTips: [
       {
-        title: 'Municipal utility advantage:',
+        title: 'Confirm the serving utility:',
         content:
-          'RPU\'s net metering program may offer more favorable export rates than SCE\'s NEM 3.0. Check with RPU directly for their current net metering terms — municipal utilities are not bound by the same CPUC rules as investor-owned utilities.',
+          'Read the current bill and check the official RPU and SCE service tools before using a tariff, export rule or interconnection assumption. The city name is not enough.',
       },
       {
         title: 'Mature tree shade:',
@@ -1140,17 +1179,17 @@ export const CITIES: CityData[] = [
       },
     ],
     whenSolarDoesntWork:
-      'If your bill is under $100/month (more possible with RPU\'s lower rates), your property has heavy mature tree shade, or you plan to sell within 1-2 years. RPU\'s lower rates also mean slightly longer payback periods for purchased systems.',
+      'A proposal needs another pass when the serving utility is unconfirmed, the property has heavy mature-tree shade, major roof or electrical work is missing, or the contract horizon does not match the owner\'s plans.',
     bottomLine:
-      'Riverside\'s municipal utility means lower rates than SCE, but solar still makes strong financial sense — especially for higher-usage households. The key difference is RPU\'s net metering may be more favorable than SCE\'s NEM 3.0.',
+      'Start with the current bill and service-area check. Then compare bids on the same utility, annual usage, roof layout, equipment, project scope and contract obligations.',
     faqs: [
       {
         question: 'How much does solar cost in Riverside in 2026?',
-        answer: 'A typical 11.15 kW system costs approximately $25,786 before incentives. With a PPA, there is no upfront cost.',
+        answer: 'A citywide figure cannot price a Riverside project. Compare written cash prices for the same system, roof, storage, electrical, permit and interconnection scope before comparing financing.',
       },
       {
         question: 'What is the average electric bill in Riverside with RPU?',
-        answer: 'Riverside residents on RPU pay approximately $260 per month on average, or about $3,120 per year.',
+        answer: 'Use the actual RPU bill and current rate schedule for an RPU-served address. First confirm the provider, because the city name alone does not establish the account utility.',
       },
       {
         question: 'Can my HOA block solar panels?',
@@ -1162,12 +1201,12 @@ export const CITIES: CityData[] = [
       },
     ],
     metaTitle: 'Solar Panels in Riverside, CA: 2026 RPU Rates & Cost',
-    metaDescription: 'Riverside households on RPU pay about $260/month for electricity. See RPU rates, what a typical solar system costs here, and other ways to cut the bill.',
+    metaDescription: 'Compare Riverside solar quotes after confirming RPU or SCE from the current bill and official service map. Check roof, storage, electrical and contract scope.',
     ogTitle: 'Solar Savings in Riverside, CA: 2026 RPU Rates, Costs & Options',
-    ogDescription: 'Riverside residents pay ~$260/month with Riverside Public Utilities. Here\'s what solar costs and saves.',
+    ogDescription: 'Confirm the serving utility, then compare Riverside solar quotes on the same usage, roof, equipment and contract scope.',
     energySageUrl: 'https://www.energysage.com/local-data/solar-panel-cost/ca/riverside-county/riverside/',
     googleSunroofUrl: 'https://sunroof.withgoogle.com',
-    relatedArticles: MUNI_RELATED_ARTICLES,
+    relatedArticles: ADDRESS_CHECK_RELATED_ARTICLES,
     seoData: { primaryKeyword: 'solar panels riverside', volume: 210, kd: 3, verdict: 'PRIORITY BUILD' },
   },
 
@@ -4108,7 +4147,20 @@ export const CITIES: CityData[] = [
   slug: 'palm-desert',
   county: 'Riverside County',
   state: 'California',
+  // Technical fallback for legacy calculators. Palm Desert includes a limited IID area.
   utilityCode: 'sce',
+  utilityDisplayName: 'Check the bill: SCE or IID',
+  utilityConfirmationRequired: true,
+  utilityLookupUrls: [
+    {
+      label: 'City of Palm Desert General Plan utility discussion',
+      url: 'https://www.palmdesert.gov/build-develop/general-plan',
+    },
+    {
+      label: 'SCE service-area lookup',
+      url: 'https://www.sce.com/customer-service-center/help-center/stop-start-move-service/faq/how-to-know-if-sce-is-my-electric-utility',
+    },
+  ],
   avgMonthlyBill: 340,
   peakSunHours: 6.55,
   annualSunshineHours: 3500,
@@ -4116,47 +4168,47 @@ export const CITIES: CityData[] = [
   systemSizeKw: 10.0,
   systemCostCash: 30000,
   introText:
-    'Palm Desert is a premier desert resort community in Riverside County with a population of around 53,000, known for championship golf courses, luxury homes, and consistently sunny weather. Like much of the Coachella Valley, Palm Desert sits in Southern California Edison territory where electricity rates are among the highest in the nation. The combination of extreme desert heat, wealthy homeowners with high energy needs, and SCE\'s premium rates make this an ideal market for solar energy.',
+    'Palm Desert includes more than one electric-service context. The City\'s General Plan describes SCE facilities across the city and an IID service area in a limited portion. Read the current bill before using either utility\'s tariff, export treatment or interconnection process in a proposal.',
   electricitySection:
-    'The average Palm Desert household pays approximately $340 per month for electricity, or about $4,080 per year. This exceptionally high bill reflects several factors: SCE\'s average residential rate of 34.5 cents per kWh, peak TOU rates of 58-74 cents during 4-9 PM, the $24.15 monthly fixed charge, and the reality that desert homes often use air conditioning heavily from May through October.\n\nDesert properties with pools, spas, or extensive outdoor lighting push consumption even higher. A single pool pump running during peak hours can add $60-100/month to your bill during summer.',
+    'Start with the provider, rate schedule and twelve months of usage printed on the actual account. Do not apply an SCE rate or solar rule to an IID-served meter, or an IID rule to an SCE account.\n\nCooling, pools, spas and seasonal occupancy can materially change the load shape. Each bidder should use the same annual usage and equipment schedule, then show onsite use, imports, exports and remaining charges under the confirmed utility.',
   solarPotentialText:
     'Palm Desert is one of the sunniest locations in California, averaging 3,500 hours of sunshine per year with 6.55 peak sun hours per day — the highest of any major California city. The low humidity, minimal cloud cover, and consistent clear skies year-round create exceptional conditions for solar energy production. Most Palm Desert homes have excellent south and west-facing roof exposure, and the mature landscaping in many neighborhoods provides minimal shade.',
   localTips: [
     {
       title: 'Resort and golf community considerations:',
       content:
-        'Palm Desert\'s resort-oriented neighborhoods often have restrictive HOAs focused on aesthetic uniformity. However, California\'s Solar Rights Act still protects your right to install. The key is working with a solar installer experienced in resort community coordination to design a system that satisfies both aesthetic and efficiency requirements.',
+        'Ask for the property\'s current architectural-review requirements before the final design. The proposal should identify who submits the package, what roof appearance or equipment-location changes are included and who pays for a redesign.',
     },
     {
       title: 'Pool and spa energy optimization:',
       content:
-        'If you own a pool or spa — extremely common in Palm Desert — these are your biggest electricity consumers. Moving pool pump operation from peak hours (4-9 PM) to early morning (6-9 AM) can save $50-80/month immediately. Adding a solar-powered pool heater alongside your rooftop system can nearly eliminate heating costs.',
+        'Record pump and heating schedules before bidders size the system. Any load-shifting recommendation must use the time periods on the confirmed account rather than an assumed SCE schedule.',
     },
     {
       title: 'Winter visitor advantage:',
       content:
-        'Palm Desert attracts snowbird retirees who occupy homes seasonally. If you are a seasonal resident, a solar PPA protects you: you pay only for electricity you actually use, avoiding the fixed charge trap of higher winter usage years. For year-round residents, the consistent 6.55 peak sun hours mean strong production even during cooler months.',
+        'For a seasonally occupied home, separate occupied and unoccupied months and list equipment that keeps running. Compare the full contract obligation with that actual load instead of assuming a PPA or purchase fits every seasonal owner.',
     },
   ],
   whenSolarDoesntWork:
     'Solar is an excellent fit for nearly all Palm Desert homes, but there are exceptions. If your monthly bill is under $150 (unusual for a desert property with AC), the savings may not justify the installation. If your roof faces north with significant shade from mature palms or hillsides, production will be limited — check Google Project Sunroof first. And if you are a seasonal resident planning to leave the valley permanently within 1-2 years, timing and contract structure matter significantly for a PPA.',
   bottomLine:
-    'With 6.55 peak sun hours per day — the highest of any major California city — combined with SCE rates and bills averaging $340/month, Palm Desert is one of the absolute best solar markets in California. Snowbirds particularly benefit from the solar PPA model. Start by optimizing your pool pump schedule and SCE rate plan, then explore whether solar can cut your $4,080 annual bill by 40-60% or more.',
+    'First confirm whether the meter is served by SCE or IID. Then compare proposals using the same seasonal usage, roof and shade inputs, pool and cooling loads, equipment scope and contract terms.',
   faqs: [
     {
       question: 'How much does solar cost in Palm Desert in 2026?',
       answer:
-        'A typical 10.0 kW solar system in Palm Desert costs approximately $30,000 before incentives if purchased outright. With a PPA, there is no upfront cost — you pay a fixed per-kWh rate (typically 18-25 cents) compared to SCE\'s 34.5 cents per kWh, translating to immediate monthly savings.',
+        'A citywide figure cannot price a Palm Desert project. Compare written cash prices for the same production, roof, storage, electrical, permit and interconnection scope before comparing financing or a PPA.',
     },
     {
       question: 'What is the average electric bill in Palm Desert?',
       answer:
-        'Palm Desert residents pay approximately $340 per month for electricity, or about $4,080 per year. This is among the highest in California, driven by extreme desert heat, SCE\'s premium rates, and common high-energy amenities like pools and spas.',
+        'Use the actual bill. Palm Desert includes SCE service and a limited IID service area, and seasonal occupancy, cooling and pool equipment can make one household a poor proxy for another.',
     },
     {
-      question: 'Can my HOA block solar panels in Palm Desert?',
+      question: 'Should every Palm Desert proposal use SCE assumptions?',
       answer:
-        'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot prohibit solar panel installation, even in luxury resort communities. They can impose reasonable aesthetic restrictions like black frames or low-profile mounting, but any restriction that increases cost by more than $1,000 or reduces efficiency by more than 10% is unenforceable.',
+        'No. The City\'s General Plan identifies a limited IID service area. Use the provider shown on the bill and have each bidder state the utility rules used in the proposal.',
     },
     {
       question: 'How many hours of sun does Palm Desert get?',
@@ -4166,13 +4218,13 @@ export const CITIES: CityData[] = [
   ],
   metaTitle: 'Solar Panels in Palm Desert, CA: 2026 Cost & Savings',
   metaDescription:
-    'Palm Desert residents pay ~$340/month for electricity. Learn your actual SCE rate, what solar costs in Palm Desert in 2026, pool energy optimization, HOA.',
+    'Compare Palm Desert solar quotes after confirming SCE or IID from the current bill. Check seasonal usage, roof, pool, storage and contract scope.',
   ogTitle: 'Solar Savings in Palm Desert, CA: 2026 Rates, Costs & Options',
   ogDescription:
-    'Palm Desert residents pay ~$340/month for electricity. With 6.55 peak sun hours daily, here\'s what solar costs and saves in California\'s sunniest city.',
+    'Confirm SCE or IID from the bill, then compare Palm Desert quotes using the same seasonal usage, roof, equipment and contract scope.',
   energySageUrl: 'https://www.energysage.com/local-data/solar-panel-cost/ca/riverside-county/palm-desert/',
   googleSunroofUrl: 'https://sunroof.withgoogle.com',
-  relatedArticles: SCE_RELATED_ARTICLES,
+  relatedArticles: ADDRESS_CHECK_RELATED_ARTICLES,
   seoData: { primaryKeyword: 'solar panels palm desert', volume: 90, kd: 0, verdict: 'BUILD' },
 },
 

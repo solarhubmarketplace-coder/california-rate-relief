@@ -69,6 +69,12 @@ export function CityComparison({ slug }: { slug: string }) {
             bill and quote calculator
           </Link>{" "}
           to compare your own inputs.
+          {" "}
+          Compare the same scope across a{" "}
+          <Link className="underline" href="/blog/ppa-loan-vs-solar-lease-vs-cash-california">
+            PPA, loan, lease and cash purchase
+          </Link>{" "}
+          before treating a monthly payment as a project price.
           {city.hasSavingsGuide !== false && hasSavingsCityPage(slug) && (
             <>
               {" "}

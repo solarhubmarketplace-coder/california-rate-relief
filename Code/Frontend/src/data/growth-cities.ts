@@ -807,23 +807,31 @@ export const growthCities: Record<
     county: "Riverside County",
     utility: "other",
     sourceCheckedDate: "2026-09-12",
-    bill: "Riverside Public Utilities explains that solar customers remain connected to the grid and continue to receive utility bills. Start with the last 12 months of actual usage and the rate schedule on the account. A proposal should show its assumptions and the remaining charges, rather than promise that a bill disappears.",
+    bill: "Start with the provider printed on the current bill. Check the current RPU service-area map and the bill before a bidder applies RPU assumptions. If the provider remains uncertain, use SCE’s official lookup rather than inferring a provider from the city name. For an RPU account, RPU explains that grid-connected solar customers continue to receive utility bills.",
     local:
-      "Riverside Public Utilities says a grid-tied solar project needs City permit approval and interconnection before operation. Ask the bidder to name the permit, inspection and interconnection responsibilities for the exact address, along with any roof or electrical work excluded from the contract.",
+      "For an RPU-served address, RPU describes City permit approval and utility interconnection before operation. Have each bidder identify the actual permit authority, inspection sequence, interconnection application and meter work for this address. New solar, solar plus storage, roof-first work, an expansion to an existing system and a commercial project are different scopes. The written proposal should say which one it covers.",
     example:
-      "Put the same twelve months of usage, roof layout and equipment scope into each proposal. Then separate solar, storage, roof repair, electrical work, permits and utility-interconnection steps. Compare cash and financing obligations alongside the remaining utility bill.",
+      "Give every bidder the same twelve months of usage, serving utility, requested system size, roof layout, shade information and backup-load scope. Require each bidder to show its monthly production estimate and explain material differences. Get a separate cash price for solar, storage, roof and electrical work before comparing a loan, lease or PPA. Then compare total obligations, exclusions, service responsibility and the modeled remaining bill.",
     checks: [
       [
-        "Usage and billing",
-        "Use the account's actual usage history and applicable RPU schedule. Ask the bidder to state the remaining utility charges and any solar-billing assumption.",
+        "Serving utility",
+        "Match the proposal to the provider and rate schedule on the current bill. Use the official RPU map or SCE lookup when the provider is uncertain; do not infer it from the city name.",
       ],
       [
-        "Permit and interconnection",
-        "Identify who handles City permit approval, final inspection, the interconnection agreement and the meter work.",
+        "Project type and handoffs",
+        "State whether the bid covers new solar, solar plus storage, roof-first work, an existing-system expansion or a commercial project. Identify the permit, inspection, interconnection and meter responsibilities for that scope.",
       ],
       [
-        "Solar and storage scope",
-        "List module, inverter, battery and backup-circuit scope separately from roof and electrical work.",
+        "Comparable design",
+        "Use the same requested DC system size, equipment class, roof planes, shade information and backup-load scope in each bid. Require each bidder to show its own monthly production estimate and explain material differences.",
+      ],
+      [
+        "Itemized price and finance",
+        "Separate the cash prices for solar, battery, roof, panel work, permits and interconnection. Compare financing only after the underlying cash scope matches.",
+      ],
+      [
+        "Installer and service",
+        "Name the legal contracting business, CSLB license, installation crew and company responsible for roof penetrations, equipment service and warranty claims. Confirm address coverage in writing.",
       ],
     ],
     sources: [
@@ -836,18 +844,30 @@ export const growthCities: Record<
         url: "https://www.riversideca.gov/utilities/residents/rates/electric-rules-rates",
       },
       {
+        label: "Riverside Public Utilities: electric service-area map (checked 2026-09-20)",
+        url: "https://riversideca.gov/utilities/about-rpu/service-area-maps",
+      },
+      {
+        label: "SCE: service-area lookup (checked 2026-09-20)",
+        url: "https://www.sce.com/customer-service-center/help-center/stop-start-move-service/faq/how-to-know-if-sce-is-my-electric-utility",
+      },
+      {
         label: "CSLB: Solar Smart license and consumer information",
         url: "https://www.cslb.ca.gov/solar",
       },
     ],
     faq: [
       [
+        "Does every Riverside address use RPU?",
+        "Do not assume that from the city name. Check the provider on the current bill and use the official RPU map or SCE lookup before applying a utility-specific rate or interconnection rule.",
+      ],
+      [
         "Will Riverside solar eliminate every utility bill?",
-        "RPU says grid-connected solar customers continue to receive utility bills. Ask the bidder to model remaining charges using your actual usage and rate schedule.",
+        "For an RPU account, RPU says grid-connected solar customers continue to receive utility bills. Ask the bidder to model remaining charges using the actual provider, usage and rate schedule.",
       ],
       [
         "Does every Riverside project have the same interconnection process?",
-        "RPU describes a City permit and interconnection process. The bidder should identify the steps, equipment scope and responsible parties for your specific address.",
+        "No. The utility and project scope control. The bidder should identify the permit, inspection, interconnection, equipment scope and responsible parties for the specific address.",
       ],
     ],
   },

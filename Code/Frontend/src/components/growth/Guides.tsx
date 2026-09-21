@@ -753,6 +753,20 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
           </Link>
           . The tool carries your inputs into the optional inquiry below.
         </p>
+        <section>
+          <h2>Local project decisions in San Diego County</h2>
+          <p>
+            A rate plan does not answer permit scope, roof work or the utility named on a
+            particular address. These city guides keep those checks with the published local
+            process before you compare a proposal.
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li><Link className={link} href="/solar-cost/escondido">Escondido solar cost and project checks</Link></li>
+            <li><Link className={link} href="/solar-cost/chula-vista">Chula Vista solar cost and project checks</Link></li>
+            <li><Link className={link} href="/solar-cost/carlsbad">Carlsbad solar cost and project checks</Link></li>
+            <li><Link className={link} href="/solar-cost/oceanside">Oceanside solar cost and project checks</Link></li>
+          </ul>
+        </section>
         <RelatedGuides
           heading="What a peak window does after solar is installed"
           links={[

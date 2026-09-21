@@ -1,89 +1,88 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
-import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { RelatedGuides } from '@/components/shared/RelatedGuides';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
-import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
-export const metadata: Metadata = {
-  title: "Why Is My SCE Bill So High? The Real Reasons",
-  description: "Why your Southern California Edison bill jumped; TOU plan mismatches, the 4–9 PM peak window, the $24 fixed charge, hidden loads, and what to do.",
+import { BillComparison } from '@/components/growth/BillComparison';
+
+const sourceLink = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
+
+export const metadata = {
+  title: 'Why Is My SCE Bill So High? A Bill-First Checklist',
+  description: 'Compare billing days, daily kWh, rate plan, fixed charges, delivery and generation before deciding whether a solar project belongs in the conversation.',
   alternates: { canonical: '/blog/why-is-my-sce-bill-so-high' },
-  openGraph: { title: 'Why Is My SCE Bill So High?', description: 'Real reasons your SCE bill jumped and what to do.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/why-is-my-sce-bill-so-high' },
+  openGraph: {
+    title: 'Why Is My SCE Bill So High? A Bill-First Checklist',
+    description: 'A bill-first SCE diagnosis: days, kWh, rate plan, fixed charges, delivery and generation.',
+    type: 'article',
+    publishedTime: '2026-04-24T00:00:00Z',
+    modifiedTime: '2026-09-20T00:00:00Z',
+    url: 'https://ratereliefca.com/blog/why-is-my-sce-bill-so-high',
+  },
 };
 
 export default function WhyIsMySCEBillSoHigh() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Why Is My SCE Bill So High? The Real Reasons (and What to Do About Them)"} url="https://ratereliefca.com/blog/why-is-my-sce-bill-so-high" datePublished="2026-04-24" dateModified="2026-04-24" description={"Why your Southern California Edison bill jumped; TOU plan mismatches, the 4–9 PM peak window, the $24 fixed charge, hidden loads, and what to do."} />
+      <ArticleJsonLd variant='Article' domain='crr' headline='Why Is My SCE Bill So High? A Bill-First Checklist' url='https://ratereliefca.com/blog/why-is-my-sce-bill-so-high' datePublished='2026-04-24' dateModified='2026-09-20' description='Compare billing days, daily kWh, rate plan, fixed charges, delivery and generation before deciding whether a solar project belongs in the conversation.' />
       <Header />
-      <main className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <article className="max-w-3xl mx-auto">
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link><span>/</span><Link href="/blog" className="hover:text-primary">Blog</Link><span>/</span><span className="text-foreground">Why Is My SCE Bill So High?</span>
+      <main className='py-16 bg-background'>
+        <div className='container mx-auto px-4'>
+          <article className='max-w-3xl mx-auto'>
+            <nav className='mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
+              <Link href='/' className='hover:text-primary'>Home</Link><span>/</span><Link href='/blog' className='hover:text-primary'>Blog</Link><span>/</span><span className='text-foreground'>Why Is My SCE Bill So High?</span>
             </nav>
-            <header className="mb-10">
-              <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">SCE · Billing</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Why Is My SCE Bill So High? The Real Reasons</h1>
-              <p className="text-lg text-muted-foreground">Southern California Edison rates average 34.5¢/kWh in 2026, with peak TOU rates hitting 58–74¢. If your bill jumped, here are the usual suspects.</p>
+            <header className='mb-10'>
+              <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>SCE · Billing</span>
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Why Is My SCE Bill So High?</h1>
+              <p className='text-lg text-muted-foreground'>Start with the bill. A higher total can come from more days, more daily use, a different rate plan, fixed charges, delivery charges, generation charges, or more than one of those at once.</p>
             </header>
-            <div className="prose prose-slate max-w-none">
-              <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">1. The 4–9 PM Peak Window</h2>
-              <p>SCE&apos;s default TOU plan charges 58–74¢/kWh during 4–9 PM on summer weekdays — more than double the average rate. If you run AC hard during that window, cook dinner with an electric range, or charge your EV before 9 PM, you&apos;re paying premium pricing on high-usage hours.</p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">2. The $24 Base Services Charge</h2>
-              <p>All SCE residential customers now pay $24/month regardless of usage. Low-use households took the biggest proportional hit.</p>
+            <div className='prose prose-slate max-w-none'>
+              <h2 className='text-2xl font-bold text-foreground mt-8 mb-4'>Start with two bills from comparable periods</h2>
+              <p>Pull the current bill and the same season from last year if you have it. Record the billing days, total kWh, electric charges, rate-plan name and any generation-provider line. A larger bill over more days is not the same change as a larger bill over the same number of days.</p>
+              <div className='not-prose my-8'><BillComparison utilityName='SCE' /></div>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">3. You&apos;re on the Wrong Rate Plan</h2>
-              <p>SCE offers TOU-D-4-9PM (the default), TOU-D-PRIME (EV-friendly), and a tiered non-TOU plan. Many households save 15–25% simply by switching plans. Log in to SCE My Account and run the rate comparison.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">4. Summer AC Runaway</h2>
-              <p>Inland Empire and Central Valley SCE customers often see 2–4× summer bills. Shift cooling before 4 PM (pre-cool), raise thermostat setpoint during peak window, use ceiling fans, close west-facing shades. A programmable or smart thermostat pays for itself in one summer.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">5. EV or Pool Pump Timing</h2>
-              <p>Charging an EV or running a pool pump during 4–9 PM costs triple vs after 9 PM or before noon. Schedule both to run 10 PM–6 AM.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">6. Medical Equipment / New Load</h2>
-              <p>A new window AC, hot tub, or medical equipment can add $30–$200/month. Medical-equipment households qualify for the Medical Baseline allowance.</p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What to Do</h2>
-              <ol className="list-decimal pl-6 space-y-2">
-                <li>Switch rate plans in SCE My Account after running the comparison tool.</li>
-                <li>Apply for CARE (30–35% discount) or FERA (18% discount) if income-qualified.</li>
-                <li>Shift high-use devices to off-peak hours.</li>
-                <li>Consider solar + battery. At 34.5¢ retail and 5–8¢ NEM 3.0 export rate, self-consumption is dramatically more valuable — a battery captures the arbitrage. See <Link href="/blog/solar-battery-backup-california" className="text-primary underline">Solar Battery Backup in California</Link>.</li>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Read the change in this order</h2>
+              <ol className='list-decimal pl-6 space-y-3'>
+                <li><strong>Billing days and kWh per day.</strong> Divide total kWh by billing days on each bill. This separates a longer cycle from a change in daily use.</li>
+                <li><strong>Rate plan and time of use.</strong> Compare the rate-plan name on the bill against SCE&apos;s <a href='https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans' target='_blank' rel='noopener noreferrer' className={sourceLink}>current time-of-use plan information</a>. The relevant hours and charges are the ones attached to your plan and effective dates, not a statewide average.</li>
+                <li><strong>Fixed charges.</strong> SCE explains that the <a href='https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc' target='_blank' rel='noopener noreferrer' className={sourceLink}>Base Services Charge</a> varies for CARE, FERA and qualified-housing customers and is tied to the billing period. Solar does not remove that charge. Read its line and amount on the bill before treating it as usage.</li>
+                <li><strong>Generation and delivery.</strong> Keep the generation line separate from SCE delivery charges. If a community-choice provider appears on the bill, that provider&apos;s generation charge and SCE&apos;s delivery charge answer different questions.</li>
               </ol>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><Link href="/blog/sce-rate-increase-2026" className="text-primary underline">SCE Rate Increase 2026</Link></li>
-                <li><Link href="/blog/pge-vs-sce-vs-sdge-rates-compared" className="text-primary underline">PG&amp;E vs SCE vs SDG&amp;E Rates Compared</Link></li>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Use SCE&apos;s own comparison before changing plans</h2>
+              <p>SCE&apos;s <a href='https://www.sce.com/save-money/rates-financing/rate-plan-comparison' target='_blank' rel='noopener noreferrer' className={sourceLink}>Rate Plan Comparison</a> uses your account history to compare eligible plans. Review the result beside the actual hours your household uses electricity. A plan change is a billing decision; it does not require a solar project.</p>
+              <p>If the utility on the bill, the service address, or a charge does not match what you expected, contact <a href='https://www.sce.com/customer-service/contact-us' target='_blank' rel='noopener noreferrer' className={sourceLink}>SCE customer support</a> before asking a private referral service to interpret or correct it.</p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When a project comparison is useful</h2>
+              <p>Once you know the bill pattern, you can decide whether to compare a solar or battery proposal. Ask for the same billing period, rate-plan assumption, remaining fixed charges, delivery and generation treatment, and any battery settings in writing. A proposal that cannot show those inputs is not ready for comparison.</p>
+              <p>If roof work or backup is part of the decision, start with <Link href='/blog/is-my-roof-good-for-solar-california' className={sourceLink}>whether the roof is suited to solar</Link> and <Link href='/blog/solar-battery-backup-california' className={sourceLink}>the separate backup and battery decision</Link>. For address-level permit and project checks, see the local guides for <Link href='/solar-cost/temecula' className={sourceLink}>Temecula</Link>, <Link href='/solar-cost/murrieta' className={sourceLink}>Murrieta</Link>, and <Link href='/solar-companies/palm-desert' className={sourceLink}>Palm Desert</Link>; confirm the utility named on your own bill rather than assuming it from the city.</p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Related reading</h2>
+              <ul className='list-disc pl-6 space-y-2'>
+                <li><Link href='/blog/sce-rate-increase-2026' className={sourceLink}>SCE rate context</Link></li>
+                <li><Link href='/blog/pge-vs-sce-vs-sdge-rates-compared' className={sourceLink}>PG&amp;E, SCE and SDG&amp;E billing comparison</Link></li>
+                <li><Link href='/solar-panels-california' className={sourceLink}>California solar bill and quote decisions</Link></li>
               </ul>
             </div>
-          <ArticleCTA />
-          <div className="mt-8">
-            <SolarInquiry topic="SCE bill review" />
-          </div>
-             <RelatedGuides
-               heading="Before treating solar as the fix"
-               links={[
-                 { href: "/solar-problems/solar-bill-still-high-california", label: "When a bill stays high after going solar" },
-                 { href: "/solar-problems/running-ac-with-solar-california", label: "Whether solar covers all-day air conditioning" },
-               ]}
-             />
-
+            <ArticleCTA />
+            <div className='mt-8'><SolarInquiry utility='SCE' topic='SCE bill review' variant='bill' /></div>
+            <RelatedGuides heading='Before treating solar as the fix' links={[
+              { href: '/solar-problems/solar-bill-still-high-california', label: 'When a bill stays high after going solar' },
+              { href: '/solar-problems/running-ac-with-solar-california', label: 'Whether solar covers all-day air conditioning' },
+            ]} />
           </article>
         </div>
       </main>
       <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
+      <div className='container mx-auto px-4 max-w-3xl'><TrustedSources domain='crr' variant='compact' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
+      <div className='container mx-auto px-4 max-w-3xl'><RelatedInstallers picks='general' /></div>
     </PublicLayout>
   );
 }

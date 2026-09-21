@@ -5,6 +5,7 @@ import { PublicLayout } from "@/components/layout/PublicLayout";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import SavingsCalculator from "@/components/SavingsCalculator";
+import { BillComparison } from "@/components/growth/BillComparison";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import {
   CheckCircle2,
@@ -199,6 +200,7 @@ export async function generateMetadata({
 // =============================================================================
 function buildFAQSchema(city: CityData) {
   const utility = UTILITY_DATA[city.utilityCode];
+  const needsUtilityConfirmation = city.utilityConfirmationRequired === true;
   const faqs = [
     {
       question: `How many solar companies operate in ${city.name}?`,
@@ -206,7 +208,9 @@ function buildFAQSchema(city: CityData) {
     },
     {
       question: `What's the average cost of solar in ${city.name}?`,
-      answer: `A typical ${city.name} home needs a ${city.systemSizeKw} kW system, which runs roughly $${city.systemCostCash.toLocaleString()} as a cash purchase — with no federal tax credit to subtract, since IRC § 25D ended for expenditures made after December 31, 2025. Loan and PPA options are $0 down with monthly payments usually below the ${utility.shortName} bill they replace.`,
+      answer: needsUtilityConfirmation
+        ? `A citywide estimate cannot price a specific ${city.name} project or identify its electric provider. Confirm the utility from the current bill, then compare written cash prices, financing terms, equipment, production estimates, and remaining utility charges using the same project scope.`
+        : `A typical ${city.name} home needs a ${city.systemSizeKw} kW system, which runs roughly $${city.systemCostCash.toLocaleString()} as a cash purchase — with no federal tax credit to subtract, since IRC § 25D ended for expenditures made after December 31, 2025. Loan and PPA options are $0 down with monthly payments usually below the ${utility.shortName} bill they replace.`,
     },
     {
       question: `Are solar companies in ${city.name} licensed?`,
@@ -218,7 +222,9 @@ function buildFAQSchema(city: CityData) {
     },
     {
       question: `What rebates apply to solar in ${city.name}?`,
-      answer: `A ${city.name} homeowner who buys a system in 2026 gets no federal tax credit — IRC § 25D does not apply to expenditures made after December 31, 2025 — but the Self-Generation Incentive Program (SGIP) for battery storage still applies, and low-income households may qualify for DAC-SASH or SASH. On a lease or PPA the provider owns the system and is the one that may claim the § 48E commercial credit, if its project clears the federal deadlines. ${utility.shortName}'s net billing under NEM 3.0 pays ${utility.exportRate} for exports. Significantly less than pre-2023 net metering.`,
+      answer: needsUtilityConfirmation
+        ? `Programs and solar-billing rules depend on the electric provider and account. Confirm the provider from the current bill, then check that utility's current published eligibility, interconnection, export-credit, and battery-program information before relying on a proposal.`
+        : `A ${city.name} homeowner who buys a system in 2026 gets no federal tax credit — IRC § 25D does not apply to expenditures made after December 31, 2025 — but the Self-Generation Incentive Program (SGIP) for battery storage still applies, and low-income households may qualify for DAC-SASH or SASH. On a lease or PPA the provider owns the system and is the one that may claim the § 48E commercial credit, if its project clears the federal deadlines. ${utility.shortName}'s net billing under NEM 3.0 pays ${utility.exportRate} for exports. Significantly less than pre-2023 net metering.`,
     },
   ];
   return {
@@ -259,6 +265,8 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
   if (!city) notFound();
 
   const utility = UTILITY_DATA[city.utilityCode];
+  const needsUtilityConfirmation = city.utilityConfirmationRequired === true;
+  const utilityDisplayName = city.utilityDisplayName || utility.shortName;
   const faqSchema = buildFAQSchema(city);
   const listSchema = buildListSchema(city);
 
@@ -337,10 +345,12 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                   Utility
                 </div>
                 <div className="text-2xl font-bold text-foreground">
-                  {utility.shortName}
+                  {utilityDisplayName}
                 </div>
                 <div className="text-xs text-muted-foreground mt-1">
-                  {(utility.ratePerKwh * 100).toFixed(1)}¢/kWh avg rate
+                  {needsUtilityConfirmation
+                    ? 'Confirm from current bill'
+                    : `${(utility.ratePerKwh * 100).toFixed(1)}¢/kWh avg rate`}
                 </div>
               </div>
             </div>
@@ -348,12 +358,21 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
             {/* Intro */}
             <div className="prose prose-slate max-w-none mb-10">
               <p className="text-lg text-foreground/80 leading-relaxed">
-                {city.name} sits in {utility.shortName} territory, where
-                residential electricity costs roughly{" "}
-                {(utility.ratePerKwh * 100).toFixed(1)}¢/kWh — among the highest
-                in the nation. That puts residential solar in a strong payback
-                window for {city.name} homeowners, but the right{" "}
-                <em>installer</em> matters as much as the economics.
+                {needsUtilityConfirmation ? (
+                  <>
+                    The city name does not establish the electric provider for
+                    every {city.name} address. Confirm the utility on the current
+                    bill, then require each installer to use that account&apos;s
+                    usage and the same project scope in its proposal.
+                  </>
+                ) : (
+                  <>
+                    {city.name} sits in {utility.shortName} territory, where
+                    residential electricity costs roughly{' '}
+                    {(utility.ratePerKwh * 100).toFixed(1)}¢/kWh. The right{' '}
+                    <em>installer</em> matters as much as the estimate.
+                  </>
+                )}
               </p>
               <p className="text-foreground/80 leading-relaxed mt-4">
                 This page cuts through sales-brochure copy. For each of the 9
@@ -453,10 +472,9 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                     Price per watt installed.
                   </strong>{" "}
                   <span className="text-foreground/80">
-                    In {city.name} today, cash-purchase pricing typically lands
-                    $3.00–$4.50 per watt installed. PPA and lease pricing should
-                    equate to 60–75% of your {utility.shortName} bill in year
-                    one with a ≤2.9% annual escalator.
+                    {needsUtilityConfirmation
+                      ? `Compare written cash prices and complete financing terms using the same ${city.name} project scope. Keep the confirmed utility bill separate so proposals do not substitute another provider's rates.`
+                      : `Compare written cash prices and complete financing terms using the same project scope and ${utility.shortName} usage history.`}
                   </span>
                 </div>
               </li>
@@ -505,11 +523,9 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 <div>
                   <strong className="text-foreground">NEM 3.0 realism.</strong>{" "}
                   <span className="text-foreground/80">
-                    Under NEM 3.0 (net billing), {utility.shortName} pays only{" "}
-                    {utility.exportRate} for exports — about 75% less than
-                    pre-2023 rates. Payback math depends heavily on
-                    self-consumption and battery storage. A good installer
-                    explains this; a bad one hides it.
+                    {needsUtilityConfirmation
+                      ? 'Confirm the electric provider first. Each proposal should name the current export and interconnection rules it applies to the account, then show the same production and battery assumptions.'
+                      : `Have each proposal name the current ${utility.shortName} export and interconnection rules it uses, then show the production and battery assumptions behind the estimate.`}
                   </span>
                 </div>
               </li>
@@ -562,18 +578,21 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               Estimate Your {city.name} Solar Savings
             </h2>
             <p className="text-foreground/80 mb-6">
-              Input your {utility.shortName} bill below. We calculate system
-              size, cost under PPA / loan / cash options, and projected savings.
-              Then funnel you to up to 3 verified installer quotes so you can
-              compare for real.
+              {needsUtilityConfirmation
+                ? `Use the current ${city.name} bill below without selecting a provider by city name. Confirm the utility before comparing any proposal's rate or export assumptions.`
+                : `Input your ${utility.shortName} bill below to compare the calculator's purchase and service options.`}
             </p>
             <div className="mb-12">
-              <SavingsCalculator />
+              {needsUtilityConfirmation ? (
+                <BillComparison utilityName="utility" />
+              ) : (
+                <SavingsCalculator />
+              )}
             </div>
 
             <div className="mb-12">
               <SolarInquiry
-                utility={city.utilityCode}
+                utility={needsUtilityConfirmation ? '' : city.utilityCode}
                 topic={`Solar companies in ${city.name} and quote comparison`}
               />
             </div>

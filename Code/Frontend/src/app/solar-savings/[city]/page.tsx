@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import SavingsCalculator from '@/components/SavingsCalculator';
+import { BillComparison } from '@/components/growth/BillComparison';
 import { LadwpSavingsGuide, ladwpSavingsTitle, ladwpSavingsDescription } from '@/components/growth/LadwpSavingsGuide';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import Link from 'next/link';
@@ -108,8 +109,11 @@ export default async function CityPage({ params }: PageProps) {
   if (!city) notFound();
 
   const utility = UTILITY_DATA[city.utilityCode];
-  const rateDisplay = utility.rateDisplay || `${(utility.ratePerKwh * 100).toFixed(1)}¢`;
-  const annualBill = city.avgMonthlyBill * 12;
+  const needsUtilityConfirmation = city.utilityConfirmationRequired === true;
+  const utilityDisplayName = city.utilityDisplayName || utility.shortName;
+  const rateDisplay = needsUtilityConfirmation
+    ? 'Check bill'
+    : utility.rateDisplay || `${(utility.ratePerKwh * 100).toFixed(1)}¢`;
 
   const localBusinessSchema = buildLocalBusinessSchema(city);
   const faqSchema = buildFAQSchema(city);
@@ -154,16 +158,18 @@ export default async function CityPage({ params }: PageProps) {
                   {rateDisplay}
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  {utility.rateLabel || `${utility.shortName} avg. rate/kWh`}
+                  {needsUtilityConfirmation
+                    ? utilityDisplayName
+                    : utility.rateLabel || `${utility.shortName} avg. rate/kWh`}
                 </div>
               </div>
               <div className="bg-card rounded-xl border border-border p-4 text-center">
                 <DollarSign className="h-5 w-5 text-primary mx-auto mb-2" />
                 <div className="text-2xl font-bold text-foreground">
-                  ${city.avgMonthlyBill}
+                  {needsUtilityConfirmation ? 'Use bill' : `$${city.avgMonthlyBill}`}
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  Avg. monthly bill
+                  {needsUtilityConfirmation ? 'Actual account' : 'Avg. monthly bill'}
                 </div>
               </div>
               <div className="bg-card rounded-xl border border-border p-4 text-center">
@@ -206,59 +212,87 @@ export default async function CityPage({ params }: PageProps) {
                 </p>
               ))}
 
-              {/* Step 1: Check Rate Plan */}
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-                Step 1: Check Your {utility.shortName} Rate Plan (Free, 10
-                Minutes)
-              </h2>
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                Before anything else, log into your{' '}
-                <a
-                  href={utility.accountUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  {utility.shortName} account
-                </a>{' '}
-                and check which rate plan you&apos;re on. {utility.ratePlanAdvice}
-              </p>
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                If you can shift heavy electricity use (laundry, dishwasher, EV
-                charging, pool pump) to off-peak hours (before 4 PM or after 9
-                PM), you can save 10-15% just by being on the right TOU plan.
-                {city.name === 'Temecula' &&
-                  ' In Temecula specifically, pre-cooling your home before 4 PM during summer and running the pool pump in the morning are two of the highest-impact changes.'}
-              </p>
-
-              {/* Step 2: Discounts */}
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-                Step 2: Check If You Qualify for Discounts
-              </h2>
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                {utility.shortName} offers income-based discount programs that
-                many qualifying {city.name} households haven&apos;t applied
-                for. <strong>CARE</strong> provides a 30-35% discount on your
-                entire bill if your household income is below certain
-                thresholds. <strong>FERA</strong> offers an 18% discount for
-                families of 3+ with slightly higher income limits. Check
-                eligibility and apply at{' '}
-                <a
-                  href={utility.careFeraUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  {utility.shortName}&apos;s assistance page
-                </a>
-                .
-              </p>
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                If anyone in your household relies on electricity-dependent
-                medical equipment (CPAP, home dialysis, powered wheelchair,
-                etc.), you may qualify for <strong>Medical Baseline</strong>,
-                which gives you additional electricity at the lowest rate tier.
-              </p>
+              {needsUtilityConfirmation ? (
+                <>
+                  <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
+                    Step 1: Confirm the Utility on Your Bill
+                  </h2>
+                  <p className="text-foreground/80 leading-relaxed mb-4">
+                    A {city.name} address alone does not establish the electric
+                    provider. Read the utility name and current rate schedule on
+                    the bill before using any rate, export-credit, assistance,
+                    or solar-savings assumption.
+                  </p>
+                  {city.utilityLookupUrls && city.utilityLookupUrls.length > 0 && (
+                    <ul className="mb-6 space-y-2">
+                      {city.utilityLookupUrls.map((source) => (
+                        <li key={source.url}>
+                          <a
+                            href={source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline"
+                          >
+                            {source.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
+                    Step 2: Check the Confirmed Utility&apos;s Current Options
+                  </h2>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    Once the provider is confirmed, use its current account and
+                    published pages to check the rate plan, income-qualified
+                    assistance, medical programs, and solar rules that apply to
+                    that account. Do not carry one utility&apos;s programs or
+                    assumptions over to another utility.
+                  </p>
+                </>
+              ) : (
+                <>
+                  {/* Step 1: Check Rate Plan */}
+                  <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
+                    Step 1: Check Your {utility.shortName} Rate Plan (Free, 10
+                    Minutes)
+                  </h2>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    Before anything else, log into your{' '}
+                    <a href={utility.accountUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      {utility.shortName} account
+                    </a>{' '}
+                    and check which rate plan you&apos;re on. {utility.ratePlanAdvice}
+                  </p>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    If you can shift heavy electricity use (laundry, dishwasher, EV
+                    charging, pool pump) to off-peak hours (before 4 PM or after 9
+                    PM), you can save 10-15% just by being on the right TOU plan.
+                    {city.name === 'Temecula' &&
+                      ' In Temecula specifically, pre-cooling your home before 4 PM during summer and running the pool pump in the morning are two of the highest-impact changes.'}
+                  </p>
+                  <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
+                    Step 2: Check If You Qualify for Discounts
+                  </h2>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    {utility.shortName} offers income-based discount programs that
+                    many qualifying {city.name} households haven&apos;t applied
+                    for. <strong>CARE</strong> provides a 30-35% discount on your
+                    entire bill if your household income is below certain
+                    thresholds. <strong>FERA</strong> offers an 18% discount for
+                    families of 3+ with slightly higher income limits. Check
+                    eligibility and apply at{' '}
+                    <a href={utility.careFeraUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      {utility.shortName}&apos;s assistance page
+                    </a>.
+                  </p>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    If anyone in your household relies on electricity-dependent
+                    medical equipment, check the utility&apos;s current medical
+                    assistance eligibility and terms.
+                  </p>
+                </>
+              )}
 
               {/* Solar Potential */}
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
@@ -290,14 +324,51 @@ export default async function CityPage({ params }: PageProps) {
               ))}
 
               {/* What Solar Costs */}
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-                What Solar Costs in {city.name} (2026 Numbers)
-              </h2>
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                The average {city.name} household needs a {city.systemSizeKw} kW
-                solar system to cover their electricity usage. Here&apos;s what
-                that looks like across different options.
-              </p>
+              {needsUtilityConfirmation ? (
+                <>
+                  <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
+                    Compare Written Solar Quotes in {city.name}
+                  </h2>
+                  <p className="text-foreground/80 leading-relaxed mb-4">
+                    A citywide system size, payment, or payback estimate is not a
+                    substitute for the actual account and project. Give each
+                    bidder the same confirmed utility, twelve months of usage,
+                    roof and shade information, and requested backup loads.
+                  </p>
+                  <ul className="space-y-3 text-foreground/80 mb-8">
+                    <li>
+                      <strong>Comparable design:</strong> require the DC system
+                      size, module and inverter models, roof planes, shade
+                      assumptions, and each bidder&apos;s monthly production estimate.
+                    </li>
+                    <li>
+                      <strong>Itemized cash scope:</strong> separate solar,
+                      battery, roof, electrical, permit, and interconnection work
+                      before comparing loans, leases, or PPAs.
+                    </li>
+                    <li>
+                      <strong>Complete obligations:</strong> compare the written
+                      payment schedule, escalation if any, term, transfer terms,
+                      service responsibility, exclusions, and modeled remaining
+                      utility charges.
+                    </li>
+                    <li>
+                      <strong>Utility assumptions:</strong> have each bidder name
+                      the rate, export, and interconnection rules used for the
+                      confirmed account.
+                    </li>
+                  </ul>
+                </>
+              ) : (
+                <>
+                  <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
+                    What Solar Costs in {city.name} (2026 Numbers)
+                  </h2>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    The average {city.name} household needs a {city.systemSizeKw} kW
+                    solar system to cover their electricity usage. Here&apos;s what
+                    that looks like across different options.
+                  </p>
 
               {/* Cost Comparison Table */}
               <div className="overflow-x-auto mb-8">
@@ -363,13 +434,13 @@ export default async function CityPage({ params }: PageProps) {
                     </tr>
                     <tr>
                       <td className="py-3 pr-4 font-medium text-foreground/80">
-                        No solar ({utility.shortName} only)
+                        No solar ({needsUtilityConfirmation ? 'current utility' : `${utility.shortName} only`})
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
                         —
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        ${city.avgMonthlyBill}+ (rising)
+                        {needsUtilityConfirmation ? 'Use actual bill' : `$${city.avgMonthlyBill}+ (rising)`}
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
                         —
@@ -383,25 +454,29 @@ export default async function CityPage({ params }: PageProps) {
                 Costs are approximate based on 2026 EnergySage data for{' '}
                 {city.name}. Actual costs vary by roof, system size, and
                 provider. PPA monthly costs include remaining utility charges
-                {utility.fixedCharge > 0
+                {needsUtilityConfirmation
+                  ? ' from the confirmed utility bill'
+                  : utility.fixedCharge > 0
                   ? ` ($${utility.fixedCharge} fixed charge + any grid usage)`
                   : ' (any grid usage)'}
                 .
               </p>
 
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                To compare quotes from local installers for a purchased system,{' '}
-                <a
-                  href={city.energySageUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  EnergySage&apos;s {city.name} page
-                </a>{' '}
-                lets you get multiple quotes side by side. Always get at least 3
-                quotes before committing to any option.
-              </p>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    To compare quotes from local installers for a purchased system,{' '}
+                    <a
+                      href={city.energySageUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      EnergySage&apos;s {city.name} page
+                    </a>{' '}
+                    lets you get multiple quotes side by side. Always get at least 3
+                    quotes before committing to any option.
+                  </p>
+                </>
+              )}
 
               {/* HOA Rules */}
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
@@ -429,32 +504,42 @@ export default async function CityPage({ params }: PageProps) {
                 they unreasonably block your installation.
               </p>
 
-              {/* NEM & Battery */}
+              {/* Utility rules & battery */}
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-                {utility.nemVersion} and Battery Storage in {city.name}
+                {needsUtilityConfirmation ? 'Utility Rules' : utility.nemVersion} and Battery Storage in {city.name}
               </h2>
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                {city.name} is on {utility.shortName}&apos;s{' '}
-                {utility.nemVersion} tariff, which means the excess solar
-                energy you send back to the grid earns only {utility.exportRate}{' '}
-                — far less than the {rateDisplay}+ you pay to buy it back
-                during peak hours. This is why battery storage has become
-                essential for maximizing savings.
-              </p>
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                With a battery, you store excess daytime solar and use it during
-                peak evening hours (4-9 PM) when {utility.shortName} rates are
-                highest. A solar + battery system typically offsets 70-90% of
-                your grid usage, compared to 40-60% with solar alone. For more
-                detail on how this works, see our{' '}
+              {needsUtilityConfirmation ? (
+                <p className="text-foreground/80 leading-relaxed mb-6">
+                  Confirm the electric provider before comparing export credits,
+                  interconnection rules, time-of-use periods, or battery value.
+                  Have each proposal use the same actual usage history, confirmed
+                  utility, roof design, and backup-load scope. For background on
+                  California investor-owned utility billing, see our{' '}
+                  <Link href="/blog/nem-3-california-still-worth-it" className="text-primary hover:underline">
+                    NEM 3.0 guide
+                  </Link>, then verify the rule for the account.
+                </p>
+              ) : (
+                <>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    {city.name} is on {utility.shortName}&apos;s {utility.nemVersion} tariff,
+                    which means the excess solar energy you send back to the grid earns
+                    only {utility.exportRate} — far less than the {rateDisplay}+ you pay
+                    to buy it back during peak hours.
+                  </p>
+                  <p className="text-foreground/80 leading-relaxed mb-6">
+                    A battery can store excess daytime solar for later use. Compare
+                    the battery settings and backup loads alongside the{' '}
                 <Link
                   href="/blog/nem-3-california-still-worth-it"
                   className="text-primary hover:underline"
                 >
                   NEM 3.0 guide
                 </Link>
-                .
-              </p>
+                    .
+                  </p>
+                </>
+              )}
               <p className="text-foreground/80 leading-relaxed mb-6">
                 California&apos;s Self-Generation Incentive Program (SGIP) may
                 still offer rebates for battery storage — check current
@@ -539,10 +624,14 @@ export default async function CityPage({ params }: PageProps) {
             </div>
 
             {/* Savings Calculator */}
-            <SavingsCalculator
-              defaultUtility={city.utilityCode}
-              cityName={city.name}
-            />
+            {needsUtilityConfirmation ? (
+              <BillComparison utilityName="utility" />
+            ) : (
+              <SavingsCalculator
+                defaultUtility={city.utilityCode}
+                cityName={city.name}
+              />
+            )}
 
             {/* CTA */}
             <div className="mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center">
@@ -565,7 +654,7 @@ export default async function CityPage({ params }: PageProps) {
 
             <div className="mt-8">
               <SolarInquiry
-                utility={city.utilityCode}
+                utility={needsUtilityConfirmation ? '' : city.utilityCode}
                 topic={`${city.name} solar savings and quote comparison`}
               />
             </div>

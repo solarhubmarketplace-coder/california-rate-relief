@@ -20,6 +20,7 @@ export const GROWTH_ROUTES = [
   '/solar-companies/santa-barbara',
   '/blog/solar-panels-tile-roof-california',
   '/blog/why-is-my-sce-bill-so-high',
+  '/blog/why-is-my-sdge-bill-so-high',
   '/blog/adu-solar-requirements-california',
   '/blog/solar-pool-heating-california',
   '/blog/sdge-rate-increase-2026',
