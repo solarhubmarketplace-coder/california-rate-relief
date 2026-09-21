@@ -18,5 +18,7 @@ export function isCommercialIntentPath(pathname: string): boolean {
 
 export function intakeHrefForPath(pathname: string): string {
   if (isCommercialIntentPath(pathname)) return '/commercial-assessment';
+  // The rate tracker is content-only; its CTA box is not an inquiry form.
+  if (pathname === '/california-utility-rate-tracker') return '/#qualify';
   return GROWTH_ROUTES.includes(pathname) ? '#solar-inquiry' : '/#qualify';
 }

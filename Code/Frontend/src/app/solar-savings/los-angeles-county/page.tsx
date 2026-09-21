@@ -190,9 +190,6 @@ export default function LosAngelesCountySolarPage() {
                         </Link>
                       </div>
 
-            <div className='mt-8'>
-              <SolarInquiry topic="Los Angeles County solar savings and quote comparison" />
-            </div>
                     </div>
                   );
                 })}
@@ -214,15 +211,18 @@ export default function LosAngelesCountySolarPage() {
                 See what solar is worth at your address
               </h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                Check your eligibility in about 60 seconds. No cost, no obligation.
+                Request a solar referral to discuss your project. A provider decides what it can offer.
               </p>
               <Link
                 href='#solar-inquiry'
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
               >
-                Check My Eligibility
+                Solar Inquiry
                 <ArrowRight className="h-4 w-4" />
               </Link>
+            </div>
+            <div className='mt-8'>
+              <SolarInquiry topic="Los Angeles County solar savings and quote comparison" />
             </div>
           </div>
         </div>

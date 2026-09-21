@@ -19,6 +19,8 @@ test('commercial hubs, spokes, and commercial blog routes use commercial intake'
   // The homepage fallback still applies to residential pages with no on-page
   // intake of their own.
   assert.equal(intakeHrefForPath('/about'), '/#qualify');
+  assert.equal(intakeHrefForPath('/california-utility-rate-tracker'), '/#qualify');
+  assert.equal(intakeHrefForPath('/solar-cost/temecula'), '#solar-inquiry');
   assert.equal(intakeHrefForPath('/solar-installers/palmetto-solar-review'), '#solar-inquiry');
   assert.equal(intakeHrefForPath('/solar-installers/sunrun-review'), '#solar-inquiry');
   assert.equal(intakeHrefForPath('/solar-installers/sunrun-vs-tesla-solar'), '#solar-inquiry');

@@ -7,11 +7,9 @@
 // the service is and is not. Rendered beside the intake form, where the
 // question "who am I actually sending this to" is asked.
 //
-// DRAFT COPY — every string below is listed in the copy review file and is not
-// to be deployed before Chad's review. The third bullet in particular states a
-// behaviour (no call centre, no marketing texts) that Chad must confirm before
-// it is published, and it must stay consistent with the consent checkbox on the
-// form, which says a solar provider may follow up.
+// Corrected 20 Sep 2026: describe the existing referral/consent workflow rather
+// than promising an unverified contact channel or a completed provider match.
+// Exact provider arrangements remain a business-record verification item.
 // =============================================================================
 
 export const TRUST_BLOCK_POINTS = [
@@ -23,12 +21,12 @@ export const TRUST_BLOCK_POINTS = [
   {
     title: 'What happens after the form',
     body:
-      'Your project details are recorded and referred to a solar provider. The provider decides whether it can help and what it can offer; availability, design and price are determined after its own review.',
+      'Your project details are recorded for referral to a solar provider. The provider decides whether it can help and what it can offer; availability, design and price are determined after its own review.',
   },
   {
     title: 'How you are contacted',
     body:
-      'California Rate Relief does not run a call centre and does not send marketing text messages. Follow-up about your inquiry comes from the solar provider your details are referred to.',
+      'Read the consent wording before submitting. Your inquiry includes contact details for follow-up about the project; a provider decides whether it can serve it.',
   },
   {
     title: 'Using the site without submitting',

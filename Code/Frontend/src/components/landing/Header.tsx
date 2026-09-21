@@ -1,83 +1,155 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { intakeHrefForPath, isCommercialIntentPath } from '@/lib/intake-routing';
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  intakeHrefForPath,
+  isCommercialIntentPath,
+} from "@/lib/intake-routing";
+
+export const HEADER_GUIDE_LINKS = [
+  { href: "/tools/solar-panel-calculator", label: "Calculator" },
+  { href: "/best-solar-companies-california", label: "Solar Companies" },
+  { href: "/solar-panels-california", label: "Solar in CA" },
+  { href: "/solar-problems", label: "Solar Problems" },
+  { href: "/battery", label: "Batteries" },
+  { href: "/commercial-solar", label: "Commercial" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
+] as const;
+
+export function headerInquiryLabel(isCommercial: boolean, compact = false) {
+  if (isCommercial) return compact ? "Commercial" : "Commercial Inquiry";
+  return compact ? "Inquiry" : "Solar Inquiry";
+}
 
 export function Header() {
   const pathname = usePathname();
   const isCommercial = isCommercialIntentPath(pathname);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => setMenuOpen(false), [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
 
   return (
-    <header className='bg-card border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-card/95'>
-      <div className='container mx-auto px-4'>
-        <div className='flex items-center justify-between h-16'>
+    <header className="bg-card border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-card/95">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href='/' className='flex items-center' aria-label='California Rate Relief home'>
+          <Link
+            href="/"
+            className="flex min-w-0 items-center"
+            aria-label="California Rate Relief home"
+          >
             <Image
-              src='/img/logo.svg'
-              alt='California Rate Relief'
+              src="/img/logo.svg"
+              alt="California Rate Relief"
               width={36}
               height={36}
-              className='h-9 w-9'
+              className="h-8 w-8 sm:h-9 sm:w-9"
             />
-            <div className='hidden min-[360px]:block ml-3'>
-              <span className='font-bold text-foreground text-sm sm:text-lg tracking-tight'>
-                California Rate Relief
+            <div className="ml-2 min-[360px]:ml-3">
+              <span className="block text-[10px] font-bold leading-[1.05] tracking-tight text-foreground min-[360px]:hidden">
+                California
+                <br />
+                Rate Relief
               </span>
-              <span className='text-xs text-muted-foreground block -mt-1 font-medium tracking-wide uppercase'>
+              <span className="font-bold text-foreground text-sm sm:text-lg tracking-tight">
+                <span className="hidden min-[360px]:inline">California Rate Relief</span>
+              </span>
+              <span className="hidden text-xs text-muted-foreground -mt-1 font-medium tracking-wide uppercase min-[360px]:block">
                 Solar referrals
               </span>
             </div>
           </Link>
 
           {/* Nav + CTA */}
-          <div className='flex items-center gap-2 sm:gap-4'>
-            <nav className='hidden lg:flex items-center gap-5'>
-              <Link href='/tools/solar-panel-calculator' className='text-sm font-medium text-muted-foreground hover:text-foreground'>Calculator</Link>
-              <Link href='/best-solar-companies-california' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
-                Solar Companies
-              </Link>
-              <Link href='/solar-panels-california' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
-                Solar in CA
-              </Link>
-              <Link href='/solar-problems' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
-                Solar Problems
-              </Link>
-              <Link href='/battery' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
-                Batteries
-              </Link>
-              <Link href='/commercial-solar' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
-                Commercial
-              </Link>
-              <Link href='/blog' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
-                Blog
-              </Link>
-              <Link href='/about' className='text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
-                About
-              </Link>
+          <div className="flex items-center gap-1.5 sm:gap-4">
+            <nav
+              className="hidden lg:flex items-center gap-5"
+              aria-label="Guides"
+            >
+              {HEADER_GUIDE_LINKS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
-            <Link href='/blog' className='hidden sm:block lg:hidden text-sm font-medium text-muted-foreground hover:text-foreground transition-colors'>
-              Blog
-            </Link>
-              <Button
-                asChild
-                size='sm'
-                className='bg-primary hover:bg-primary/90 text-primary-foreground font-medium shadow-md hover:shadow-lg transition-all text-sm'
-              >
-                <Link href={intakeHrefForPath(pathname)}>{isCommercial ? <><span className='sm:hidden'>Commercial</span><span className='hidden sm:inline'>Commercial Assessment</span></> : intakeHrefForPath(pathname)==='#solar-inquiry' ? 'Solar Inquiry' : 'Check Eligibility'}</Link>
-              </Button>
-              <Button
-                asChild
-                variant='outline'
-                className='hidden xl:inline-flex border-border text-foreground hover:bg-muted font-medium'
-              >
-                <Link href='/login'>Login</Link>
-              </Button>
+            <button
+              ref={menuButtonRef}
+              type="button"
+              className="lg:hidden min-h-11 rounded-md border border-border px-2.5 text-sm font-semibold text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:px-3"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-guide-menu"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? "Close" : "Guides"}
+            </button>
+            <Button
+              asChild
+              size="sm"
+                className="min-h-11 bg-primary px-2.5 hover:bg-primary/90 text-primary-foreground font-medium shadow-md hover:shadow-lg transition-all text-sm sm:px-3"
+            >
+                <Link
+                  href={intakeHrefForPath(pathname)}
+                  onClick={() => setMenuOpen(false)}
+                >
+                <span className="sm:hidden">
+                  {headerInquiryLabel(isCommercial, true)}
+                </span>
+                <span className="hidden sm:inline">
+                  {headerInquiryLabel(isCommercial)}
+                </span>
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="hidden xl:inline-flex border-border text-foreground hover:bg-muted font-medium"
+            >
+              <Link href="/login">Login</Link>
+            </Button>
           </div>
         </div>
+        {menuOpen && (
+          <nav
+            id="mobile-guide-menu"
+            aria-label="Mobile guides"
+            className="lg:hidden border-t border-border py-3"
+          >
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {HEADER_GUIDE_LINKS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex min-h-11 items-center rounded-md px-3 text-sm font-medium text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        )}
       </div>
     </header>
   );

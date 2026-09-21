@@ -4,7 +4,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
-import { IntentCTA } from '@/components/growth/IntentCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { Calendar, MapPin } from 'lucide-react';
 import { cityCostPath, type CityCostRow } from '@/data/city-cost-data';
@@ -460,7 +460,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
               <h2 id='sources' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
                 Sources
               </h2>
-              <ul className='list-disc pl-6 space-y-2 text-sm'>
+              <ul className='list-disc pl-6 space-y-2 text-sm [overflow-wrap:anywhere]'>
                 {sources.map((source) => (
                   <li key={`${source.url}-${source.label}`}>
                     <a href={source.url} target='_blank' rel='noopener noreferrer' className={link}>
@@ -480,7 +480,11 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
               </p>
             </div>
 
-            <IntentCTA variant='bill' />
+            <SolarInquiry
+              variant='bill'
+              utility={utility.name}
+              topic={`Solar project in ${row.city}`}
+            />
           </article>
         </div>
       </main>

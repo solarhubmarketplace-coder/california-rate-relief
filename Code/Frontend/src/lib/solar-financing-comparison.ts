@@ -22,6 +22,16 @@ export interface SolarFinancingComparisonInput {
   };
 }
 
+export type FinancingOption = "cash" | "loan" | "lease" | "ppa";
+
+export interface SelectedSolarFinancingComparisonInput {
+  horizonMonths: number;
+  cash?: SolarFinancingComparisonInput["cash"];
+  loan?: SolarFinancingComparisonInput["loan"];
+  lease?: SolarFinancingComparisonInput["lease"];
+  ppa?: SolarFinancingComparisonInput["ppa"];
+}
+
 export type EscalatedPaymentRow = {
   contractYear: number;
   months: number;
@@ -135,97 +145,145 @@ function contractSummary(
   };
 }
 
+/** Totals only the selected, actually entered contract terms. */
+export function calculateSelectedSolarFinancingComparison(
+  input: SelectedSolarFinancingComparisonInput,
+) {
+  const selectedOptions = (["cash", "loan", "lease", "ppa"] as const).filter(
+    (option) => input[option] !== undefined,
+  );
+  if (selectedOptions.length < 2)
+    throw new Error("Select at least two actual proposals to compare.");
+  positiveWholeMonths(input.horizonMonths, "Comparison horizon");
+  const result: {
+    horizonMonths: number;
+    selectedOptions: FinancingOption[];
+    cash?: { upfrontPrice: number; knownCostThroughHorizon: number };
+    loan?: ContractSummary;
+    lease?: ContractSummary & {
+      paymentRowsThroughHorizon: EscalatedPaymentRow[];
+      paymentRowsAfterHorizon: EscalatedPaymentRow[];
+    };
+    ppa?: ContractSummary & {
+      annualProductionKwh: number;
+      paymentRowsThroughHorizon: PpaPaymentRow[];
+      paymentRowsAfterHorizon: PpaPaymentRow[];
+    };
+  } = {
+    horizonMonths: input.horizonMonths,
+    selectedOptions: [...selectedOptions],
+  };
+
+  if (input.cash) {
+    finiteNonNegative(input.cash.upfrontPrice, "Cash upfront price");
+    result.cash = {
+      upfrontPrice: input.cash.upfrontPrice,
+      knownCostThroughHorizon: input.cash.upfrontPrice,
+    };
+  }
+
+  if (input.loan) {
+    finiteNonNegative(input.loan.upfrontCost, "Loan upfront cost");
+    finiteNonNegative(input.loan.monthlyPayment, "Loan monthly payment");
+    positiveWholeMonths(input.loan.termMonths, "Loan term");
+    const knownMonths = Math.min(input.horizonMonths, input.loan.termMonths);
+    result.loan = contractSummary(
+      input.horizonMonths,
+      input.loan.termMonths,
+      input.loan.monthlyPayment * knownMonths,
+      input.loan.monthlyPayment *
+        Math.max(input.loan.termMonths - input.horizonMonths, 0),
+      input.loan.upfrontCost,
+    );
+  }
+
+  if (input.lease) {
+    finiteNonNegative(input.lease.upfrontCost, "Lease upfront cost");
+    finiteNonNegative(
+      input.lease.initialMonthlyPayment,
+      "Lease monthly payment",
+    );
+    finiteNonNegative(input.lease.annualEscalator, "Lease annual escalator");
+    positiveWholeMonths(input.lease.termMonths, "Lease term");
+    const knownMonths = Math.min(input.horizonMonths, input.lease.termMonths);
+    const through = escalatedMonthlyRows(
+      input.lease.initialMonthlyPayment,
+      input.lease.annualEscalator,
+      0,
+      knownMonths,
+    );
+    const after = escalatedMonthlyRows(
+      input.lease.initialMonthlyPayment,
+      input.lease.annualEscalator,
+      input.horizonMonths,
+      Math.max(input.horizonMonths, input.lease.termMonths),
+    );
+    result.lease = {
+      ...contractSummary(
+        input.horizonMonths,
+        input.lease.termMonths,
+        sum(through),
+        sum(after),
+        input.lease.upfrontCost,
+      ),
+      paymentRowsThroughHorizon: through,
+      paymentRowsAfterHorizon: after,
+    };
+  }
+
+  if (input.ppa) {
+    positive(input.ppa.annualProductionKwh, "PPA annual production");
+    finiteNonNegative(
+      input.ppa.initialPricePerKwh,
+      "PPA initial price per kWh",
+    );
+    finiteNonNegative(input.ppa.annualEscalator, "PPA annual escalator");
+    positiveWholeMonths(input.ppa.termMonths, "PPA term");
+    const knownMonths = Math.min(input.horizonMonths, input.ppa.termMonths);
+    const through = ppaRows(
+      input.ppa.annualProductionKwh,
+      input.ppa.initialPricePerKwh,
+      input.ppa.annualEscalator,
+      0,
+      knownMonths,
+    );
+    const after = ppaRows(
+      input.ppa.annualProductionKwh,
+      input.ppa.initialPricePerKwh,
+      input.ppa.annualEscalator,
+      input.horizonMonths,
+      Math.max(input.horizonMonths, input.ppa.termMonths),
+    );
+    result.ppa = {
+      ...contractSummary(
+        input.horizonMonths,
+        input.ppa.termMonths,
+        sum(through),
+        sum(after),
+      ),
+      annualProductionKwh: input.ppa.annualProductionKwh,
+      paymentRowsThroughHorizon: through,
+      paymentRowsAfterHorizon: after,
+    };
+  }
+
+  return result;
+}
+
 /**
- * Totals only entered contract terms. It intentionally does not add assumed
- * utility bills, maintenance, resale value, tax treatment, or a recommendation.
+ * Backward-compatible all-four entrypoint. It intentionally does not add
+ * assumed utility bills, maintenance, resale value, tax treatment, or a
+ * recommendation.
  */
 export function calculateSolarFinancingComparison(
   input: SolarFinancingComparisonInput,
 ) {
-  positiveWholeMonths(input.horizonMonths, 'Comparison horizon');
-  finiteNonNegative(input.cash.upfrontPrice, 'Cash upfront price');
-  finiteNonNegative(input.loan.upfrontCost, 'Loan upfront cost');
-  finiteNonNegative(input.loan.monthlyPayment, 'Loan monthly payment');
-  positiveWholeMonths(input.loan.termMonths, 'Loan term');
-  finiteNonNegative(input.lease.upfrontCost, 'Lease upfront cost');
-  finiteNonNegative(input.lease.initialMonthlyPayment, 'Lease monthly payment');
-  finiteNonNegative(input.lease.annualEscalator, 'Lease annual escalator');
-  positiveWholeMonths(input.lease.termMonths, 'Lease term');
-  positive(input.ppa.annualProductionKwh, 'PPA annual production');
-  finiteNonNegative(input.ppa.initialPricePerKwh, 'PPA initial price per kWh');
-  finiteNonNegative(input.ppa.annualEscalator, 'PPA annual escalator');
-  positiveWholeMonths(input.ppa.termMonths, 'PPA term');
-
-  const loanKnownMonths = Math.min(input.horizonMonths, input.loan.termMonths);
-  const loanKnownRecurringCost = input.loan.monthlyPayment * loanKnownMonths;
-  const loanAfterHorizonRecurringCost =
-    input.loan.monthlyPayment *
-    Math.max(input.loan.termMonths - input.horizonMonths, 0);
-
-  const leaseKnownMonths = Math.min(input.horizonMonths, input.lease.termMonths);
-  const leaseRowsThroughHorizon = escalatedMonthlyRows(
-    input.lease.initialMonthlyPayment,
-    input.lease.annualEscalator,
-    0,
-    leaseKnownMonths,
-  );
-  const leaseRowsAfterHorizon = escalatedMonthlyRows(
-    input.lease.initialMonthlyPayment,
-    input.lease.annualEscalator,
-    input.horizonMonths,
-    Math.max(input.horizonMonths, input.lease.termMonths),
-  );
-
-  const ppaKnownMonths = Math.min(input.horizonMonths, input.ppa.termMonths);
-  const ppaRowsThroughHorizon = ppaRows(
-    input.ppa.annualProductionKwh,
-    input.ppa.initialPricePerKwh,
-    input.ppa.annualEscalator,
-    0,
-    ppaKnownMonths,
-  );
-  const ppaRowsAfterHorizon = ppaRows(
-    input.ppa.annualProductionKwh,
-    input.ppa.initialPricePerKwh,
-    input.ppa.annualEscalator,
-    input.horizonMonths,
-    Math.max(input.horizonMonths, input.ppa.termMonths),
-  );
-
+  const result = calculateSelectedSolarFinancingComparison(input);
   return {
-    horizonMonths: input.horizonMonths,
-    cash: {
-      upfrontPrice: input.cash.upfrontPrice,
-      knownCostThroughHorizon: input.cash.upfrontPrice,
-    },
-    loan: contractSummary(
-      input.horizonMonths,
-      input.loan.termMonths,
-      loanKnownRecurringCost,
-      loanAfterHorizonRecurringCost,
-      input.loan.upfrontCost,
-    ),
-    lease: {
-      ...contractSummary(
-        input.horizonMonths,
-        input.lease.termMonths,
-        sum(leaseRowsThroughHorizon),
-        sum(leaseRowsAfterHorizon),
-        input.lease.upfrontCost,
-      ),
-      paymentRowsThroughHorizon: leaseRowsThroughHorizon,
-      paymentRowsAfterHorizon: leaseRowsAfterHorizon,
-    },
-    ppa: {
-      ...contractSummary(
-        input.horizonMonths,
-        input.ppa.termMonths,
-        sum(ppaRowsThroughHorizon),
-        sum(ppaRowsAfterHorizon),
-      ),
-      annualProductionKwh: input.ppa.annualProductionKwh,
-      paymentRowsThroughHorizon: ppaRowsThroughHorizon,
-      paymentRowsAfterHorizon: ppaRowsAfterHorizon,
-    },
+    horizonMonths: result.horizonMonths,
+    cash: result.cash!,
+    loan: result.loan!,
+    lease: result.lease!,
+    ppa: result.ppa!,
   };
 }

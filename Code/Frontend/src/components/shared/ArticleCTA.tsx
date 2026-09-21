@@ -11,9 +11,9 @@ import { IntentCTA } from '@/components/growth/IntentCTA';
 // 17 Sep 2026: the box itself moved to components/growth/IntentCTA so the
 // heading, body and button label follow the page's own intent (bill review,
 // assistance, competing quote, before-you-sign) instead of one generic ask, and
-// so `cta_click` carries `cta_variant`. The destination, the DOM id and the
-// `cta: 'article_cta'` parameter are unchanged; a page that passes its own
-// heading or body still overrides the variant copy.
+// so `cta_click` carries `cta_variant`. The article_cta event parameter and
+// heading/body overrides are preserved. Corrected 20 Sep: the box no longer
+// claims the solar-inquiry DOM id; that anchor belongs to an actual form.
 // =============================================================================
 
 interface ArticleCTAProps {

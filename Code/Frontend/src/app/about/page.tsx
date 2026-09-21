@@ -39,9 +39,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const domain = await getDomain();
   const meta: Record<Domain, { title: string; description: string; canonical: string }> = {
     crr: {
-      title: 'About California Rate Relief Program',
+      title: 'About California Rate Relief',
       description:
-        'How California Rate Relief works, who we are, and how we connect homeowners with vetted California solar installers.',
+        'How California Rate Relief guides, comparison tools, and optional solar referral inquiries work.',
       canonical: 'https://ratereliefca.com/about',
     },
     grh: {
@@ -124,36 +124,128 @@ function CrrAbout() {
   return (
     <PublicLayout>
       <CRRHeader />
-      <main className='py-16 bg-background'>
-        <div className='container mx-auto px-4'>
-          <article className='max-w-3xl mx-auto'>
-            <nav className='mb-6 text-sm text-muted-foreground flex items-center gap-2'>
-              <Link href='/' className='hover:text-primary'>Home</Link>
-              <ChevronRight className='h-3 w-3' />
-              <span className='text-foreground'>About</span>
+      <main className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <article className="max-w-3xl mx-auto">
+            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2">
+              <Link href="/" className="hover:text-primary">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3" />
+              <span className="text-foreground">About</span>
             </nav>
-            <header className='mb-10'>
-              <h1 className='text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight'>About California Rate Relief</h1>
-              <p className='text-lg text-muted-foreground'>An honest broker for California homeowners deciding whether solar is worth it, and which installer to trust.</p>
+            <header className="mb-10">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
+                About California Rate Relief
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                Compare the information before you commit. California Rate
+                Relief publishes California solar, battery and utility guides,
+                with tools you can use before deciding whether to request a
+                solar referral.
+              </p>
             </header>
-            <div className='prose prose-slate max-w-none space-y-6 text-foreground/80'>
-              <h2 className='text-2xl font-bold text-foreground'>What We Do</h2>
-              <p>California Rate Relief helps California homeowners cut their electric bills by connecting them to vetted local solar installers. Each homeowner who fills out our 60-second quote form gets matched with up to three installers who actively serve their city, so they can compare pricing, warranty, and equipment side by side.</p>
-              <p>We also publish editorial content on California solar economics: NEM 3.0, utility rate plans, installer reviews, panel and battery product reviews, and city-specific solar guides. Everything we publish is grounded in CPUC filings, utility tariffs, and the contractors&apos; own license records.</p>
-              <h2 className='text-2xl font-bold text-foreground'>How We Make Money</h2>
-              <p>We earn a referral fee when a homeowner who uses our quote form signs a contract with one of the installers in our network. We do not earn money from displaying ads, selling personal data, or charging homeowners. The 3-quote service is free to the homeowner.</p>
-              <p>Our installer rankings, comparison pages, and individual reviews are editorial, not pay-to-play. The installers we cover were selected based on California Contractors State License Board (CSLB) status, BBB reputation, customer review data, and verified service area — not on referral economics.</p>
-              <h2 className='text-2xl font-bold text-foreground'>How We Stay Honest</h2>
-              <ol className='list-decimal pl-6 space-y-2'>
-                <li><strong>CSLB-verified installers only.</strong> Every installer we route quotes to has an active California C-46 (Solar) or C-10 (Electrical) license that we verified at <a href='https://www.cslb.ca.gov' target='_blank' rel='noopener noreferrer' className='text-primary underline'>cslb.ca.gov</a>.</li>
-                <li><strong>Editorial independence.</strong> No installer pays for placement. We publish honest trade-offs even on installers we partner with.</li>
-                <li><strong>NEM 3.0 realism.</strong> We don&apos;t pitch &ldquo;pay nothing, save everything&rdquo; messaging. NEM 3.0 changed the math; we publish what the math actually says.</li>
-                <li><strong>Corrections.</strong> If we get a fact wrong, we fix it and note the correction on the page. Email corrections through our <Link href='/contact' className='text-primary underline'>contact page</Link>.</li>
-              </ol>
-              <h2 className='text-2xl font-bold text-foreground'>Who We Are</h2>
-              <p>California Rate Relief is operated by a small team that has been working in California residential solar since the NEM 2.0 era. We watched the rules change with NEM 3.0, watched some installers walk away from California while others doubled down, and watched a lot of homeowners get locked into 25-year PPA contracts they didn&apos;t fully understand. This site is our attempt to make sure the next round of homeowners has better information.</p>
-              <h2 className='text-2xl font-bold text-foreground'>Contact</h2>
-              <p>Questions, corrections, partnership inquiries: see our <Link href='/contact' className='text-primary underline'>contact page</Link>. Affiliate details on our <Link href='/affiliate-disclosure' className='text-primary underline'>affiliate disclosure page</Link>.</p>
+            <div className="prose prose-slate max-w-none space-y-6 text-foreground/80">
+              <h2 className="text-2xl font-bold text-foreground">
+                What this service does
+              </h2>
+              <p>
+                California Rate Relief is a private solar referral service. It
+                does not install systems, provide financing, issue utility bills
+                or decide eligibility for an assistance program.
+              </p>
+              <p>
+                You can read the guides and use the calculators without sending
+                contact details. If you want to discuss a project, you can
+                submit an inquiry for referral to a solar provider.
+              </p>
+
+              <h2 className="text-2xl font-bold text-foreground">
+                A referral is not a quote
+              </h2>
+              <p>
+                The form sends your project and contact details for follow-up. A
+                provider decides whether it can serve the project and what it
+                can offer after its own review. Submitting does not guarantee a
+                quote, a particular price or a number of competing offers.
+              </p>
+
+              <h2 className="text-2xl font-bold text-foreground">
+                Use the evidence, then compare the offer
+              </h2>
+              <p>
+                Check the source, the date and the assumptions behind a number.
+                An average utility rate is not your rate plan. A monthly solar
+                payment is not the full cost of a project.
+              </p>
+              <p>
+                The comparison tools and checklists help you put written offers
+                on the same basis. The provider&apos;s proposal should identify
+                the equipment, project scope, payment terms and service
+                responsibilities.
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  <Link
+                    href="/california-utility-rate-tracker"
+                    className="text-primary underline"
+                  >
+                    California utility rate tracker
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog/ppa-loan-vs-solar-lease-vs-cash-california"
+                    className="text-primary underline"
+                  >
+                    Compare cash, loan, lease and PPA terms
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/tools/solar-panel-calculator"
+                    className="text-primary underline"
+                  >
+                    Bill and solar quote calculator
+                  </Link>
+                </li>
+              </ul>
+
+              <h2 className="text-2xl font-bold text-foreground">
+                How inquiries work
+              </h2>
+              <p>
+                Read the{" "}
+                <Link
+                  href="/affiliate-disclosure"
+                  className="text-primary underline"
+                >
+                  referral disclosure
+                </Link>{" "}
+                and the consent wording before submitting. Those explain the
+                purpose of the inquiry and follow-up about the project. You can
+                also read the{" "}
+                <Link href="/privacy" className="text-primary underline">
+                  privacy policy
+                </Link>{" "}
+                or{" "}
+                <Link href="/#qualify" className="text-primary underline">
+                  open the referral request
+                </Link>
+                .
+              </p>
+
+              <h2 className="text-2xl font-bold text-foreground">
+                Corrections and questions
+              </h2>
+              <p>
+                Found something that needs correcting? Send the page address and
+                the specific claim through the{" "}
+                <Link href="/contact" className="text-primary underline">
+                  contact page
+                </Link>
+                .
+              </p>
             </div>
           </article>
         </div>

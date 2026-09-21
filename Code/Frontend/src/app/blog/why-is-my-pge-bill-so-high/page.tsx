@@ -7,7 +7,7 @@ import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { Calendar, Clock } from 'lucide-react';
 
@@ -145,7 +145,7 @@ export default function WhyIsMyPGEBillSoHigh() {
               </ul>
             </div>
 
-            <ArticleCTA heading='Still Paying a High PG&E Bill?' body='After checking usage, rate plan and assistance options, California homeowners can request a no-obligation solar assessment from our private referral service.' />
+            <SolarInquiry utility='PG&E' topic='PG&E bill review' variant='bill' />
             <RelatedGuides
               heading="If solar is the next question you ask"
               intro="Three checks that change the answer before any proposal is worth reading."

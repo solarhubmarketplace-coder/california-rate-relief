@@ -28,9 +28,9 @@ export function ToolReportRequest({
   variant = 'bill',
   topic,
   sectionId,
-  label = 'Send me this comparison',
+  label = 'Ask about this comparison',
   description =
-    'Optional. Your entries stay on this page. Opening this sends your utility, your monthly bill and your contact details to California Rate Relief as a referral request, along with a note of which comparison you used.',
+    'Optional. Your entries stay on this page. Submitting the inquiry sends your utility, your monthly bill and your contact details to California Rate Relief as a referral request, along with a note of which comparison you used.',
 }: {
   /** Stable id stored on the submission, e.g. 'pge_bill_comparison'. */
   sourceTool: string;

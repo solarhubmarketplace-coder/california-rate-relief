@@ -4,6 +4,24 @@ export interface SubmissionAttempt<T> {
   payload: T;
 }
 
+/** A replay is a successful receipt, but never another analytics conversion. */
+export function isNewConfirmedSubmission(data: unknown, expectedId: string): boolean {
+  if (!data || typeof data !== 'object') {
+    throw new Error('Storage was not confirmed. Retry this submission.');
+  }
+  const receipt = data as Record<string, unknown>;
+  if (
+    receipt.submission_id !== expectedId ||
+    typeof receipt.lead_id !== 'string' ||
+    !receipt.lead_id ||
+    receipt.status !== 'received' ||
+    typeof receipt.duplicate !== 'boolean'
+  ) {
+    throw new Error('Storage was not confirmed. Retry this submission.');
+  }
+  return !receipt.duplicate;
+}
+
 export function createSubmissionId(): string {
   if (!globalThis.crypto?.randomUUID) {
     throw new Error('This browser cannot create a secure submission identifier.');

@@ -11,11 +11,9 @@ import { trackEvent } from '@/components/GoogleAnalyticsClient';
 // IntentCTA — the one CTA box for CRR content pages, asking the question the
 // page's own visitors arrived with.
 //
-// The destination is unchanged: it is still whatever intakeHrefForPath() has
-// always returned for this path (the in-page form on the ~200 form pages, the
-// home wizard elsewhere, the commercial route on commercial pages). Only the
-// wording and the emitted `cta_variant` are new, so this can be compared
-// before/after without a routing change in the middle of it.
+// Destination comes from the shared intake route policy: actual in-page forms,
+// the home wizard on content-only pages, or commercial assessment. This box
+// must never take the solar-inquiry ID away from the actual form.
 //
 // DRAFT COPY — see lib/cta-intent.ts and the copy review file.
 // =============================================================================
@@ -31,11 +29,7 @@ export interface IntentCTAProps {
   action?: string;
   /** GA4 `cta` parameter, so placements stay distinguishable. */
   cta?: string;
-  /**
-   * DOM id of the box. Defaults to the id the article CTA has carried since it
-   * shipped, because `intakeHrefForPath()` returns '#solar-inquiry' on the
-   * ~200 form routes and that anchor must keep resolving.
-   */
+  /** Optional box anchor. The inquiry anchor belongs to the actual form. */
   id?: string;
   className?: string;
 }
@@ -60,7 +54,7 @@ export function IntentCTA({
   body,
   action,
   cta = 'intent_cta',
-  id = 'solar-inquiry',
+  id,
   className = '',
 }: IntentCTAProps) {
   const resolved = useCtaVariant(variant);

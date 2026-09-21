@@ -38,11 +38,100 @@ const META = {
 
 export async function generateMetadata(): Promise<Metadata> {
   const d = await getDomain();
+  if (d === "crr") {
+    return {
+      title: "Referral Service Disclosure | California Rate Relief",
+      description:
+        "What California Rate Relief's solar referral form does, what it sends, and what a provider decides after review.",
+      alternates: { canonical: META.crr.canonical },
+    };
+  }
   return {
     title: `Affiliate Disclosure — ${META[d].name}`,
     description: `How ${META[d].name} earns money, how affiliate relationships work, and why they do not influence our recommendations.`,
     alternates: { canonical: META[d].canonical },
   };
+}
+
+function CrrReferralDisclosure() {
+  return (
+    <PublicLayout>
+      <CRRHeader />
+      <main className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <article className="max-w-3xl mx-auto">
+            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2">
+              <Link href="/" className="hover:text-primary">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3" />
+              <span className="text-foreground">
+                Referral service disclosure
+              </span>
+            </nav>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
+              Referral service disclosure
+            </h1>
+            <div className="text-foreground/80 leading-relaxed space-y-6 [&_h2]:!text-foreground [&_a]:!text-primary">
+              <h2 className="text-2xl font-bold">A private referral service</h2>
+              <p>
+                California Rate Relief publishes solar information and accepts
+                voluntary project inquiries for referral. This is a private
+                service with a commercial referral purpose. It is not a utility,
+                a government program or an assistance application.
+              </p>
+
+              <h2 className="text-2xl font-bold">What submitting means</h2>
+              <p>
+                Submitting sends the project and contact details entered in the
+                form for a solar referral. The form&apos;s consent wording
+                explains the requested follow-up. A provider decides whether it
+                can serve the project and what it can offer.
+              </p>
+              <p>
+                A submission is not a quote, financing approval or program
+                eligibility decision. It does not guarantee three quotes or a
+                particular provider.
+              </p>
+
+              <h2 className="text-2xl font-bold">Using the information</h2>
+              <p>
+                The guides, source links, calculators and checklists can be used
+                without submitting an inquiry. Compare any offer against its own
+                written terms and scope. A provider appearing in an article is
+                not a promise that your inquiry will be sent to that provider.
+              </p>
+
+              <h2 className="text-2xl font-bold">
+                Questions about the service
+              </h2>
+              <p>
+                Use the{" "}
+                <Link href="/contact" className="underline">
+                  contact page
+                </Link>{" "}
+                for questions about the referral process or a statement on this
+                site. For handling of submitted information, read the{" "}
+                <Link href="/privacy" className="underline">
+                  privacy policy
+                </Link>{" "}
+                and the consent shown on the{" "}
+                <Link href="/#qualify" className="underline">
+                  referral form
+                </Link>
+                . More information about the service is on the{" "}
+                <Link href="/about" className="underline">
+                  About page
+                </Link>
+                .
+              </p>
+            </div>
+          </article>
+        </div>
+      </main>
+      <CRRFooter />
+    </PublicLayout>
+  );
 }
 
 function CommonContent({ name, domain }: { name: string; domain: Domain }) {
@@ -207,26 +296,5 @@ export default async function AffiliateDisclosurePage() {
     );
   }
 
-  return (
-    <PublicLayout>
-      <CRRHeader />
-      <main className='py-16 bg-background'>
-        <div className='container mx-auto px-4'>
-          <article className='max-w-3xl mx-auto'>
-            <nav className='mb-6 text-sm text-muted-foreground flex items-center gap-2'>
-              <Link href='/' className='hover:text-primary'>Home</Link>
-              <ChevronRight className='h-3 w-3' />
-              <span className='text-foreground'>Affiliate Disclosure</span>
-            </nav>
-            <h1 className='text-4xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight'>Affiliate Disclosure</h1>
-            <p className='text-lg text-muted-foreground mb-8'>How {cfg.name} earns money and stays editorially independent.</p>
-            <div className='text-foreground/80 leading-relaxed [&_h2]:!text-foreground [&_a]:!text-primary'>
-              <CommonContent name={cfg.name} domain={d} />
-            </div>
-          </article>
-        </div>
-      </main>
-      <CRRFooter />
-    </PublicLayout>
-  );
+  return <CrrReferralDisclosure />;
 }

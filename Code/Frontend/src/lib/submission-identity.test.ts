@@ -1,6 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { getOrCreateSubmissionAttempt, submissionIdAfterResult } from './submission-identity.ts';
+import { getOrCreateSubmissionAttempt, isNewConfirmedSubmission, submissionIdAfterResult } from './submission-identity.ts';
+
+test('a newly stored matching receipt is eligible for one conversion', () => {
+  assert.equal(isNewConfirmedSubmission({
+    submission_id: 'attempt-1', lead_id: 'lead-1', status: 'received', duplicate: false,
+  }, 'attempt-1'), true);
+});
+
+test('a successful replay is received without another conversion', () => {
+  assert.equal(isNewConfirmedSubmission({
+    submission_id: 'attempt-1', lead_id: 'lead-1', status: 'received', duplicate: true,
+  }, 'attempt-1'), false);
+});
+
+test('missing, mismatched, or ambiguous receipts cannot confirm success', () => {
+  const valid = { submission_id: 'attempt-1', lead_id: 'lead-1', status: 'received', duplicate: false };
+  for (const data of [undefined, null, {}, { ...valid, submission_id: 'other' },
+    { ...valid, lead_id: '' }, { ...valid, status: 'pending' },
+    { ...valid, duplicate: undefined }, { ...valid, duplicate: 'false' }]) {
+    assert.throws(() => isNewConfirmedSubmission(data, 'attempt-1'), /Storage was not confirmed/);
+  }
+});
 
 test('a failed network attempt retains the same submission id', () => {
   let calls = 0;

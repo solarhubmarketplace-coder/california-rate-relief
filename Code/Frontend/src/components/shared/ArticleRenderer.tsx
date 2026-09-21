@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { ArrowRight, AlertTriangle } from 'lucide-react';
 import type { ArticlePage } from '@/data/article-types';
+import { ArticleContents } from './ArticleContents';
 
 /**
  * Renders a data-driven long-form page.
@@ -30,6 +31,30 @@ function Paragraphs({ text, className }: { text: string; className?: string }) {
   );
 }
 
+export function articleAnchorId(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '') || 'section';
+}
+
+export function uniqueArticleAnchors(headings: string[]): string[] {
+  const used = new Set<string>();
+  return headings.map((heading) => {
+    const base = articleAnchorId(heading);
+    let candidate = base;
+    let suffix = 2;
+    while (used.has(candidate)) {
+      candidate = `${base}-${suffix}`;
+      suffix += 1;
+    }
+    used.add(candidate);
+    return candidate;
+  });
+}
+
 export function ArticleRenderer({
   page,
   related,
@@ -41,6 +66,19 @@ export function ArticleRenderer({
   inquiryHref?: string;
   tools?: ReactNode;
 }) {
+  const sectionIds = uniqueArticleAnchors(page.sections.map((section) => section.heading))
+    .map((id) => `section-${id}`);
+  const contents = [
+    ...page.sections.map((section, index) => ({ id: sectionIds[index], label: section.heading })),
+    ...(page.dataTable.rows.length > 0
+      ? [{ id: 'comparison-table', label: page.dataTable.caption }]
+      : []),
+    ...(page.faqs.length > 0
+      ? [{ id: 'frequently-asked-questions', label: 'Frequently asked questions' }]
+      : []),
+    ...(page.sources.length > 0 ? [{ id: 'sources', label: 'Sources' }] : []),
+  ];
+
   return (
     <article className="max-w-3xl mx-auto">
       <header className="mb-8">
@@ -49,9 +87,17 @@ export function ArticleRenderer({
         </h1>
         <p className="text-sm text-muted-foreground">
           Last verified {page.reviewedAt}. Figures carry their sources at the
-          foot of this page.
+          foot of this page.{page.sources.length > 0 && (
+            <> <a href="#sources" className="text-primary underline underline-offset-2">Review the sources</a>.</>
+          )}
         </p>
       </header>
+
+      <div className="prose-content">
+        <Paragraphs text={page.intro} className="text-lg text-foreground/85 leading-relaxed mb-5" />
+      </div>
+
+      <ArticleContents items={contents} />
 
       {page.keyStats.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
@@ -75,11 +121,10 @@ export function ArticleRenderer({
       )}
 
       <div className="prose-content">
-        <Paragraphs text={page.intro} className="text-lg text-foreground/85 leading-relaxed mb-5" />
         {tools}
 
-        {page.sections.map((s) => (
-          <section key={s.heading}>
+        {page.sections.map((s, index) => (
+          <section key={`${s.heading}-${index}`} id={sectionIds[index]} className="scroll-mt-24">
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
               {s.heading}
             </h2>
@@ -88,12 +133,13 @@ export function ArticleRenderer({
         ))}
 
         {page.dataTable.rows.length > 0 && (
-          <div className="my-10">
+          <div id="comparison-table" className="my-10 scroll-mt-24">
             <h2 className="text-2xl font-bold text-foreground mb-4">
               {page.dataTable.caption}
             </h2>
             <div className="overflow-x-auto rounded-xl border border-border">
               <table className="w-full text-sm">
+                <caption className="sr-only">{page.dataTable.caption}</caption>
                 <thead>
                   <tr className="bg-muted/50">
                     {page.dataTable.columns.map((c) => (
@@ -130,7 +176,7 @@ export function ArticleRenderer({
           <Paragraphs text={page.whenThisIsWrong} />
         </div>
 
-        <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
+        <h2 id="frequently-asked-questions" className="scroll-mt-24 text-2xl font-bold text-foreground mt-10 mb-4">
           Frequently asked questions
         </h2>
         <div className="space-y-6">
@@ -186,7 +232,7 @@ export function ArticleRenderer({
       )}
 
       {page.sources.length > 0 && (
-        <div className="mt-10 pt-8 border-t border-border">
+        <div id="sources" className="mt-10 scroll-mt-24 pt-8 border-t border-border">
           <h3 className="text-lg font-bold text-foreground mb-1">Sources</h3>
           <p className="text-sm text-muted-foreground mb-4">
             Rates and incentive programs change. Each figure above traces to one

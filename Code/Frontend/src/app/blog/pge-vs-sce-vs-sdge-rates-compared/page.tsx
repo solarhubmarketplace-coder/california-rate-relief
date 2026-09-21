@@ -27,13 +27,13 @@ export default function UtilityRatesCompared() {
     <PublicLayout>
       <ArticleJsonLd variant='Article' domain='crr' headline={title} url='https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared' datePublished='2026-04-14' dateModified='2026-09-18' description={description} />
       <Header />
-      <main className='py-16 bg-background'>
+      <main className='py-8 md:py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
-            <nav className='mb-8'>
+            <nav className='mb-6 md:mb-8'>
               <Link href='/blog' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Blog</Link>
             </nav>
-            <header className='mb-10'>
+            <header className='mb-6 md:mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Utility Rates</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>PG&amp;E vs. SCE vs. SDG&amp;E: Which California Utility Customers Pay the Most in 2026?</h1>
               <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground'>
@@ -41,20 +41,40 @@ export default function UtilityRatesCompared() {
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-18'>Updated September 18, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>9 min read</span></div>
               </div>
+              <a href='#rate-sources' className={`${sourceLink} mt-3 inline-block text-sm`}>Review the rate source and methodology</a>
             </header>
 
             <div className='prose prose-slate max-w-none'>
-              <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                SDG&amp;E had the highest residential average electricity rate of California&apos;s three large investor-owned utilities in June 2026: 45.5 cents per kilowatt-hour. PG&amp;E averaged 33.7 cents and SCE averaged 34.4 cents. Those are utility-wide averages for bundled residential customers. Your actual price depends on your rate plan, when you use electricity, your climate zone, your baseline allowance and whether a community choice aggregator supplies your generation. All three figures are residential: a business is billed on a commercial tariff with demand charges of its own, and its solar is quoted per watt rather than as a household system price, which is the comparison <Link href='/commercial-solar/cost-per-watt-california' className={sourceLink}>commercial solar cost per watt in California</Link> sets out.
-              </p>
-              <div className='rounded-xl border border-border bg-muted/30 p-5 my-8'>
+              <div className='rounded-xl border border-border bg-muted/30 p-5 mb-6'>
                 <p className='font-semibold text-foreground mb-2'>Quick answer</p>
                 <p className='text-foreground/80 m-0'>SDG&amp;E is the most expensive by average residential rate. But SCE&apos;s sample hot-climate bill was the highest in the state&apos;s June report because those households used more electricity. The utility name tells only half the story. Usage and location finish it.</p>
               </div>
 
+              <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
+                SDG&amp;E had the highest residential average electricity rate of California&apos;s three large investor-owned utilities in June 2026: 45.5 cents per kilowatt-hour. PG&amp;E averaged 33.7 cents and SCE averaged 34.4 cents. Those are utility-wide averages for bundled residential customers. Your actual price depends on your rate plan, when you use electricity, your climate zone, your baseline allowance and whether a community choice aggregator supplies your generation.
+              </p>
+
+              <aside className='rounded-lg border-l-4 border-primary bg-primary/5 px-4 py-3 text-sm text-foreground/75'>
+                <strong className='text-foreground'>Related commercial project:</strong> Businesses use commercial tariffs with demand charges, and solar proposals are commonly compared per watt. See <Link href='/commercial-solar/cost-per-watt-california' className={sourceLink}>commercial solar cost per watt in California</Link>.
+              </aside>
+
+              <nav aria-label='On this page' className='not-prose my-8 rounded-xl border border-border bg-muted/20 p-5'>
+                <h2 className='text-base font-bold text-foreground'>On this page</h2>
+                <ul className='mt-3 grid gap-2 text-sm sm:grid-cols-2'>
+                  <li><a href='#rate-comparison' className={sourceLink}>2026 rate comparison</a></li>
+                  <li><a href='#average-rate-vs-plan' className={sourceLink}>Average rate vs. your plan</a></li>
+                  <li><a href='#utility-details' className={sourceLink}>Utility details</a></li>
+                  <li><a href='#cca-bill' className={sourceLink}>What a CCA changes</a></li>
+                  <li><a href='#before-solar' className={sourceLink}>Checks before solar</a></li>
+                  <li><a href='#highest-rate' className={sourceLink}>Which utility is highest</a></li>
+                  <li><a href='#frequently-asked-questions' className={sourceLink}>Frequently asked questions</a></li>
+                  <li><a href='#rate-sources' className={sourceLink}>Rate source and methodology</a></li>
+                </ul>
+              </nav>
+
               <p className='text-sm text-foreground/70'>Correction September 10, 2026: the earlier version transposed PG&amp;E and SCE’s June averages. The report shows PG&amp;E at 33.7¢/kWh and SCE at 34.4¢/kWh. PG&amp;E’s cooler-zone non-CARE sample bill is $125.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>2026 Rate Comparison</h2>
+              <h2 id='rate-comparison' className='scroll-mt-24 text-2xl font-bold text-foreground mt-10 mb-4'>2026 Rate Comparison</h2>
               <div className='overflow-x-auto mb-5'>
                 <table className='w-full border-collapse text-sm'>
                   <thead><tr className='border-b-2 border-border'><th className='text-left py-3 pr-4'>June 2026 measure</th><th className='text-center py-3 px-3'>PG&amp;E</th><th className='text-center py-3 px-3'>SCE</th><th className='text-center py-3 px-3'>SDG&amp;E</th></tr></thead>
@@ -66,16 +86,16 @@ export default function UtilityRatesCompared() {
                   </tbody>
                 </table>
               </div>
-              <p className='text-foreground/60 text-xs mb-8'>
+              <p id='rate-sources' className='scroll-mt-24 text-foreground/60 text-xs mb-8'>
                 Source: the California Public Advocates Office&apos;s <a href='https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf' target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>, pp. 8, 13–15 and 20–24. Rates exclude the California Climate Credit. Sample bills use different reported usage and climate zones, so they are examples, not utility-wide average bills. *SDG&amp;E&apos;s report notes that its coastal sample used more electricity than its desert sample.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Average Rate Is Not Your Rate Plan</h2>
+              <h2 id='average-rate-vs-plan' className='scroll-mt-24 text-2xl font-bold text-foreground mt-10 mb-4'>Average Rate Is Not Your Rate Plan</h2>
               <p>The 33.7, 34.4 and 45.5 cent figures answer a statewide comparison question. They do not tell you what one kilowatt-hour will cost at 6 p.m. tonight. The state calculates a residential average from utility revenue and residential electricity sales. A time-of-use tariff, by contrast, prices your electricity by season and hour. A baseline credit, CARE or FERA discount, fixed charge, local tax and CCA generation charge can change the total again.</p>
               <p>That is why two neighbors can use the same number of kilowatt-hours and still receive different bills. Before comparing utilities, read the rate-schedule name on the bill and compare the total kWh, billing days and peak-period use.</p>
               <p>For the full quarterly history behind these numbers &mdash; including each utility&apos;s 12-month change, fixed-charge tiers and source citations &mdash; see the <Link href='/california-utility-rate-tracker' className={sourceLink}>California Utility Rate Tracker</Link>.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>PG&amp;E: Similar Average Rate, Different TOU Choices</h2>
+              <h2 id='utility-details' className='scroll-mt-24 text-2xl font-bold text-foreground mt-10 mb-4'>PG&amp;E: Similar Average Rate, Different TOU Choices</h2>
               <p>PG&amp;E&apos;s June residential average was 33.7 cents per kWh after a March 1 rate change lowered the residential average by about 3.7% from January 1. PG&amp;E also began showing a Base Services Charge separately in March. PG&amp;E says most customers pay around $24 a month, while CARE and FERA customers generally pay lower amounts. It also says the restructuring lowered per-kWh prices and may raise or lower an individual total bill depending on usage.</p>
               <p>The two broad residential TOU choices have meaningfully different windows. E-TOU-C charges peak prices from 4–9 p.m. every day and includes a baseline credit. E-TOU-D uses a shorter 5–8 p.m. peak on non-holiday weekdays and no baseline credit. Our <Link href='/blog/pge-time-of-use-rates-2026' className={sourceLink}>PG&amp;E time-of-use guide</Link> compares the current schedules and the usage patterns each one tends to fit.</p>
 
@@ -87,11 +107,11 @@ export default function UtilityRatesCompared() {
               <p>SDG&amp;E remained the clear rate outlier at 45.5 cents per kWh in June, even after a June 1 update reduced its residential average by about 2% from April. Its TOU schedules can place a wide spread between on-peak and lower-priced periods. That makes the specific plan and the timing of air conditioning, cooking, laundry and EV charging especially important.</p>
               <p>Start with the current schedule rather than a statewide average. The <Link href='/blog/sdge-time-of-use-rates-2026' className={sourceLink}>SDG&amp;E time-of-use rate guide</Link> explains the major residential options and peak windows.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What a CCA Changes on Your Bill</h2>
+              <h2 id='cca-bill' className='scroll-mt-24 text-2xl font-bold text-foreground mt-10 mb-4'>What a CCA Changes on Your Bill</h2>
               <p>A community choice aggregator buys or generates electricity for customers in participating cities and counties. The investor-owned utility still delivers the power, reads the meter, sends the consolidated bill, maintains the distribution system and handles outages. A CCA customer therefore sees utility delivery charges plus CCA generation charges, and may also see a Power Charge Indifference Adjustment.</p>
               <p>Do not compare only the CCA generation line with a bundled utility&apos;s all-in rate. Use the joint rate comparison for your CCA and rate schedule, or the CPUC&apos;s <a href='https://www.cpuc.ca.gov/RateComparison' target='_blank' rel='noopener noreferrer' className={sourceLink}>California Electric Rate Comparison</a> tool. That is the closest apples-to-apples check.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What to Check Before Considering Solar</h2>
+              <h2 id='before-solar' className='scroll-mt-24 text-2xl font-bold text-foreground mt-10 mb-4'>What to Check Before Considering Solar</h2>
               <ol className='list-decimal pl-6 space-y-3'>
                 <li><strong>Compare usage, not just dollars.</strong> Check kWh per day against the same season last year and account for a longer billing cycle.</li>
                 <li><strong>Run the utility&apos;s rate comparison.</strong> A plan change can help when your load falls outside the peak window; it cannot fix unusually high consumption by itself.</li>
@@ -102,7 +122,7 @@ export default function UtilityRatesCompared() {
               <p>Diagnose the specific utility before requesting a system proposal: the <Link href='/blog/why-is-my-pge-bill-so-high' className={sourceLink}>PG&amp;E high-bill checklist</Link>, the <Link href='/blog/why-is-my-sce-bill-so-high' className={sourceLink}>SCE high-bill checklist</Link> and the <Link href='/blog/why-is-my-sdge-bill-so-high' className={sourceLink}>SDG&amp;E high-bill checklist</Link> each work through the same evidence in that utility&apos;s own rate structure.</p>
             </div>
 
-            <section className='mt-12'>
+            <section className='mt-12 scroll-mt-24' id='highest-rate'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>Which Utility Has the Highest Rate in California Right Now?</h2>
               <p className='mt-3'>SDG&amp;E. On the most recent quarterly figures available when this page was checked, SDG&amp;E&apos;s residential average rate was 45.5 cents per kWh as of June 2026 &mdash; about 11 cents above SCE at 34.4 cents and about 12 cents above PG&amp;E at 33.7 cents. All three exclude the California Climate Credit, which the report notes reduces the residential average rate by roughly 2 to 3 cents. Source: the California Public Advocates Office&apos;s <a href='https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf' target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>, published July 2026, verified September 18, 2026.</p>
               <p className='mt-3'>That ordering has been stable across the last several quarterly reports, but the gap between PG&amp;E and SCE is narrow enough that it can invert between editions: the June 2026 figures put them within seven-tenths of a cent of each other. Treat PG&amp;E and SCE as effectively comparable on average rate, and SDG&amp;E as the clear outlier.</p>
@@ -110,7 +130,7 @@ export default function UtilityRatesCompared() {
               <p className='mt-3'>The Public Advocates Office publishes a new electric rates report each quarter, so the figures above carry a shelf life. If you are reading this well after the verification date, check the current edition before relying on the numbers.</p>
             </section>
 
-            <section className='mt-12'>
+            <section className='mt-12 scroll-mt-24' id='frequently-asked-questions'>
               <h2 className='text-2xl font-bold text-foreground mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6'>
                 <div>

@@ -30,6 +30,7 @@ import {
   type IntakePayload,
 } from '@/lib/intake';
 import { isFiveDigitZip, serviceLocationFields, serviceMarkets, type ServiceMarket } from '@/lib/service-market';
+import { isNewConfirmedSubmission } from '@/lib/submission-identity';
 import { useToast } from '@/hooks/use-toast';
 import usePlacesAutocomplete, {
   getGeocode,
@@ -350,11 +351,12 @@ export function QualificationWizard() {
         consent: { status: 'opted_in', timestamp: new Date().toISOString() },
       }));
       attemptRef.current = attempt;
-      await submitIntake(attempt.payload);
+      const result = await submitIntake(attempt.payload);
+      const isNewSubmission = isNewConfirmedSubmission(result.data, attempt.id);
 
       // Standard GA4 lead event. Fire only after the API confirms creation and
       // never attach contact details or other personally identifying fields.
-      if (!trackedSuccessIdsRef.current.has(attempt.id)) {
+      if (isNewSubmission && !trackedSuccessIdsRef.current.has(attempt.id)) {
         trackEvent('generate_lead', {
           segment: 'residential',
           landing_page: firstTouch?.landing_page ?? 'unknown',
@@ -395,7 +397,7 @@ export function QualificationWizard() {
   // Disqualification Screen (Renter)
   if (isDisqualified) {
     return (
-      <section id='qualify' className='py-16 bg-slate-100'>
+      <section className='py-16 bg-slate-100'>
         <div className='container mx-auto px-4'>
           <div className='max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-8 min-h-[650px] flex flex-col items-center justify-center'>
             <div className='text-center max-w-md'>
@@ -450,7 +452,7 @@ export function QualificationWizard() {
   // Success Screen
   if (isSuccess) {
     return (
-      <section id='qualify' className='py-16 bg-slate-50'>
+      <section className='py-16 bg-slate-50'>
         <div className='container mx-auto px-4'>
           <div className='max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-8 min-h-[650px] flex flex-col justify-center'>
             <div className='w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6'>
@@ -480,7 +482,7 @@ export function QualificationWizard() {
   }
 
   return (
-    <section id='qualify' className='py-16 bg-slate-100'>
+    <section className='py-16 bg-slate-100'>
       <div className='container mx-auto px-4'>
         <div className='mx-auto max-w-5xl'>
           {/* Card Container */}
