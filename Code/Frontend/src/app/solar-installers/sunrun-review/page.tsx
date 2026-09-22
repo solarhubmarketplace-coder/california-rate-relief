@@ -33,7 +33,7 @@ const articleSchema = {
   description:
     'An honest 2026 review of Sunrun for California homeowners, including what the Vivint Solar acquisition means for legacy customers.',
   datePublished: '2026-04-22',
-  dateModified: '2026-09-18',
+  dateModified: '2026-09-22',
   author: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
@@ -92,11 +92,11 @@ export default function SunrunReview() {
                 Compared
               </h1>
               
-              <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-09-18'>Updated September 18, 2026</time>
+                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
@@ -332,7 +332,7 @@ export default function SunrunReview() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Warranty
+                Warranty and the Sunrun Guarantee
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -344,6 +344,135 @@ export default function SunrunReview() {
                 battery warranties are from the underlying manufacturers
                 (Maxeon, REC, Enphase, SolarEdge, Tesla, etc.) and are
                 unaffected by Sunrun-specific issues.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunrun brands this coverage the &quot;Sunrun Guarantee,&quot;
+                and its scope is narrower than &quot;25-year warranty&quot;
+                suggests: it applies to Sunrun&apos;s Subscription (lease)
+                and Protection Plus plans, not automatically to a cash
+                purchase or third-party loan, per{' '}
+                <a
+                  href='https://www.sunrun.com/why-sunrun/your-guarantee'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-primary underline'
+                >
+                  Sunrun&apos;s own guarantee page
+                </a>
+                , accessed September 22, 2026. What it covers:
+              </p>
+
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>
+                  <strong>Production guarantee:</strong> at least 90% of
+                  estimated lifetime output; if the system falls short,
+                  Sunrun pays the difference.
+                </li>
+                <li>
+                  <strong>Free repairs and maintenance:</strong> replacement
+                  parts and the labor to fix the system are covered for 25
+                  years, with no separate parts or service-call invoice.
+                </li>
+                <li>
+                  <strong>Roof (watertight) warranty:</strong> covers roof
+                  leaks or holes tied to the installation.
+                </li>
+                <li>
+                  <strong>Battery guarantee:</strong> on covered battery
+                  installs, Sunrun guarantees the battery keeps your system
+                  powered during a grid outage.
+                </li>
+                <li>
+                  <strong>24/7 monitoring:</strong> the system is monitored
+                  continuously, so a production drop is meant to reach
+                  Sunrun before you&apos;d notice it yourself.
+                </li>
+              </ul>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Panel, inverter, and battery hardware still carry their own
+                manufacturer warranties underneath this, unaffected by
+                Sunrun&apos;s guarantee. If you purchase in cash or finance
+                with a third-party loan, confirm in writing whether
+                Protection Plus (or an equivalent) is included — otherwise
+                you&apos;re relying on manufacturer coverage alone, not the
+                Sunrun Guarantee.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                How a Service Request Actually Works
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunrun&apos;s monitoring is built to catch problems before
+                you do: the system reports production in near real time,
+                and Sunrun says it can often detect and start resolving an
+                underperformance issue before a customer notices anything,
+                per{' '}
+                <a
+                  href='https://www.sunrun.com/go-solar-center/solar-faq/how-much-maintenance-is-required-for-solar-panels'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-primary underline'
+                >
+                  Sunrun&apos;s own maintenance FAQ
+                </a>
+                , accessed September 22, 2026. You can also check system
+                health yourself in the Sunrun app. For Subscription and
+                Protection Plus customers, a confirmed problem — faulty
+                wiring, an inverter fault, panel damage — is repaired at no
+                charge under the guarantee above; Sunrun does not publish a
+                response-time commitment for how fast that repair happens.
+                If your system was originally installed by Vivint Solar or
+                another company Sunrun has since absorbed and you&apos;re
+                unsure who services it now, Sunrun&apos;s{' '}
+                <a
+                  href='https://www.sunrun.com/lighthouse'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-primary underline'
+                >
+                  Lighthouse program
+                </a>{' '}
+                is built specifically for homeowners who&apos;ve lost
+                access to their original installer.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                Verify Sunrun&apos;s CSLB License Yourself
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunrun&apos;s own{' '}
+                <a
+                  href='https://www.sunrun.com/state-contractor-license-information'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-primary underline'
+                >
+                  state-by-state contractor-license page
+                </a>{' '}
+                lists two California numbers — CSLB #750184 and CSLB
+                #969975 — accessed September 22, 2026 and corroborated by
+                Sunrun&apos;s own contractor-licenses PDF linked from that
+                page. Those are not the #925340 shown in the
+                installer-verification box on this page, which does not
+                appear on Sunrun&apos;s published license page. We could
+                not independently confirm current status, classification,
+                or bond for any of the three numbers this session:
+                CSLB&apos;s online lookup returned only its blank search
+                form, with no rendered license record. Don&apos;t treat
+                &quot;licensed&quot; as settled from this page — verify each
+                number yourself at CSLB&apos;s Check License tool before
+                signing anything. For what else to check beyond the license
+                number itself — workers&apos;-comp status,
+                PACE/financing-company verification, the CPUC disclosure
+                document — see our{' '}
+                <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>
+                  full contractor-verification walkthrough
+                </Link>
+                .
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -410,6 +539,120 @@ export default function SunrunReview() {
                   cash, loan, lease and PPA obligations side by side
                 </Link>{' '}
                 before choosing.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                What Happens to Your Sunrun Lease or PPA When You Sell Your Home
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                A Sunrun lease or PPA doesn&apos;t automatically follow you
+                when you move, and it doesn&apos;t automatically disappear
+                either — it has to be formally transferred. Sunrun
+                describes a four-step process on its own site, per{' '}
+                <a
+                  href='https://www.sunrun.com/go-solar-center/solar-faq/what-happens-if-i-move'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-primary underline'
+                >
+                  Sunrun&apos;s move/transfer FAQ
+                </a>{' '}
+                and{' '}
+                <a
+                  href='https://www.sunrun.com/go-solar-center/solar-articles/service-transfer-buying-a-sunrun-solar-home'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-primary underline'
+                >
+                  its buyer-facing transfer guide
+                </a>
+                , both accessed September 22, 2026:
+              </p>
+
+              <ol className='list-decimal pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>
+                  You and the buyer submit contact information and escrow
+                  details through Sunrun&apos;s transfer portal.
+                </li>
+                <li>Both sides confirm the details and submit the closing date.</li>
+                <li>
+                  Both sides e-sign the transfer agreement; the buyer
+                  completes a soft credit check that Sunrun says
+                  doesn&apos;t affect their credit score.
+                </li>
+                <li>
+                  Once escrow closes, the transfer finalizes and the seller
+                  receives a final invoice for energy produced up to that
+                  date.
+                </li>
+              </ol>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                If a lien was filed against the home for the system (a
+                NOIEPC or UCC-1 filing), Sunrun says it removes that filing
+                during the transfer at no cost. For what that kind of
+                filing means more generally, see our{' '}
+                <Link href='/solar-problems/ucc-1-lien-solar-california' className='text-primary underline'>
+                  UCC-1 solar lien explainer
+                </Link>
+                .
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                If the buyer doesn&apos;t want to assume the agreement, the
+                seller can instead prepay the remaining balance and roll it
+                into the sale price — the buyer then gets the solar benefit
+                for whatever term is left, and Sunrun removes the system at
+                no extra charge once the agreement ends. A system you
+                purchased outright, rather than leased, is yours to sell
+                with the house like any other home improvement — there&apos;s
+                no Sunrun contract to transfer.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-2'>
+                <strong>Questions to ask before you rely on any of this:</strong>
+              </p>
+
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>
+                  What&apos;s the remaining term and current monthly
+                  payment — escalator already applied — and is that
+                  disclosed to the buyer in writing before they sign?
+                </li>
+                <li>
+                  Is there a NOIEPC/UCC-1 filing on the property for this
+                  system, and has it actually been released (not just
+                  &quot;in process&quot;) before closing?
+                </li>
+                <li>
+                  What does the prepay/buyout option cost if the buyer
+                  won&apos;t assume the agreement, and is that already
+                  reflected in the asking price?
+                </li>
+                <li>
+                  Does the buyer&apos;s soft credit check happen early
+                  enough in escrow that a decline doesn&apos;t put closing
+                  at risk?
+                </li>
+                <li>
+                  If the system was originally installed by Vivint Solar,
+                  does the transferred agreement carry the original Vivint
+                  contract terms or a new Sunrun one?
+                </li>
+              </ul>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                This isn&apos;t a substitute for reading your own contract
+                or talking to your escrow officer — it&apos;s the sequence
+                Sunrun itself describes; get the specifics of your
+                agreement in writing. For the general mechanics that apply
+                to any California solar lease, not just Sunrun&apos;s,
+                see{' '}
+                <Link href='/blog/what-happens-to-solar-lease-when-i-sell-california' className='text-primary underline'>
+                  what happens to a solar lease when you sell your home
+                </Link>
+                .
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -558,6 +801,32 @@ export default function SunrunReview() {
                     crew will be Sunrun-direct or subcontracted, and get the
                     contracting entity&apos;s California licence number so you can
                     check it in the CSLB lookup below.
+                  </p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>
+                    Does the Sunrun Guarantee cover a system I bought in cash?
+                  </h3>
+                  <p className='text-foreground/80 leading-relaxed'>
+                    Only if Protection Plus is added. The standard Sunrun
+                    Guarantee (production, free repairs, roof warranty)
+                    applies to Subscription and Protection Plus plans, not
+                    automatically to a cash purchase or third-party loan. A
+                    cash-purchased system still carries its own manufacturer
+                    warranties on the panels, inverter, and battery.
+                  </p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>
+                    What CSLB license number does Sunrun use in California?
+                  </h3>
+                  <p className='text-foreground/80 leading-relaxed'>
+                    Sunrun&apos;s own site lists two: #750184 and #969975.
+                    This page previously cited a third number, #925340,
+                    which doesn&apos;t appear on Sunrun&apos;s published
+                    list — that discrepancy hasn&apos;t been resolved, so
+                    verify whichever number you&apos;re given directly at
+                    CSLB before signing.
                   </p>
                 </div>
               </div>
