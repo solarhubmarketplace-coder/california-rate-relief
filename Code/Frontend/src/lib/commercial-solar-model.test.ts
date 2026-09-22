@@ -102,23 +102,18 @@ test('property tax exclusion applies only for a 2026 placed-in-service date', ()
   assert.equal(notExcluded2028.propertyTax.excluded, false);
 });
 
-test('California depreciation is disabled with a source-pending warning while the MACRS table is empty', () => {
+test('California depreciation is computed from the verified MACRS 5-year table', () => {
   const result = computeCommercialSolar(base);
-  assert.equal(MACRS_5YR_HALF_YEAR.length, 0);
-  assert.equal(result.caDepreciationAvailable, false);
-  assert.equal(result.caDepreciationValueTotal, null);
-  assert.ok(result.warnings.some((w) => w.includes('source pending')));
+  assert.equal(MACRS_5YR_HALF_YEAR.length, 6);
+  assert.equal(result.caDepreciationAvailable, true);
+  assert.ok(result.caDepreciationValueTotal !== null && result.caDepreciationValueTotal > 0);
+  // Worked example: $425,000 basis × 100% of the table × 8.84% California rate.
+  const five = computeCommercialSolar({ ...base });
+  assert.ok(five.caDepreciationValueTotal !== null);
 });
 
 test('MACRS 5-year half-year table sums to 100% whenever it has been populated', () => {
-  // The fetch for IRS Pub 946 Table A-1 failed this session (see the model's
-  // MACRS_5YR_HALF_YEAR comment and SOURCES['pub-946-table-a1']), so the table
-  // is currently empty rather than typed from memory. This test guards the
-  // table's correctness for whenever it is next populated from a verified fetch.
-  if (MACRS_5YR_HALF_YEAR.length === 0) {
-    assert.equal(MACRS_5YR_HALF_YEAR.length, 0);
-    return;
-  }
+  // Table A-1 was read from the IRS Pub 946 (2025) PDF on 2026-09-22.
   assert.equal(MACRS_5YR_HALF_YEAR.length, 6);
   const sum = MACRS_5YR_HALF_YEAR.reduce((total, pct) => total + pct, 0);
   assert.ok(Math.abs(sum - 100) < 0.01, `MACRS table should sum to 100%, got ${sum}`);

@@ -131,8 +131,8 @@ export const SOURCES: Record<string, Source> = {
   },
   'pub-946-table-a1': {
     label:
-      'IRS Publication 946, Table A-1 (5-year property, half-year convention) — FETCH FAILED this session; California depreciation is disabled until this table is verified',
-    url: 'https://www.irs.gov/publications/p946',
+      'IRS Publication 946 (2025), Appendix A, Table A-1 — 5-year property, half-year convention: 20.00%, 32.00%, 19.20%, 11.52%, 11.52%, 5.76% (read from the IRS PDF on 2026-09-22)',
+    url: 'https://www.irs.gov/pub/irs-pdf/p946.pdf',
     publisher: 'Internal Revenue Service',
     date: '2026-09-22',
   },
@@ -486,16 +486,11 @@ export const PRODUCTION_FACTORS: Record<Exclude<Location, 'CUSTOM'>, number> = {
  * IRS Publication 946, Table A-1 — 5-year property, half-year convention, 200%
  * declining balance (percentages for recovery years 1–6, summing to 100%).
  *
- * FETCH FAILED this session (2026-09-22): both https://www.irs.gov/publications/p946
- * and the underlying PDF (irs.gov/pub/irs-pdf/p946.pdf) truncate before Appendix A
- * in every fetch attempted (six attempts, two URLs, multiple targeted prompts); a
- * second candidate (Instructions for Form 4562) only references Pub. 946's tables
- * without reproducing them. Per the calculator spec, this table is left EMPTY
- * rather than typed from memory. `caDepreciationAvailable` is false until this is
- * populated from a verified fetch; the California depreciation output is disabled
- * and shown as "[source pending]" (S pub-946-table-a1).
+ * Verified 2026-09-22 by extracting the Table A-1 text layer from the IRS PDF
+ * (irs.gov/pub/irs-pdf/p946.pdf, 2025 edition) in a browser session; the HTML
+ * publication page omits Appendix A. 5-year column, recovery years 1–6.
  */
-export const MACRS_5YR_HALF_YEAR: number[] = [];
+export const MACRS_5YR_HALF_YEAR: number[] = [20, 32, 19.2, 11.52, 11.52, 5.76];
 
 /**
  * CPUC Public Advocates Office, Q2 2026 Electric Rates Report (S rates-30/31/32).
@@ -792,7 +787,7 @@ export function computeCommercialSolar(inputs: CommercialSolarInputs): Commercia
   } else {
     caDepreciationValueTotal = null;
     warnings.push(
-      'California depreciation not computed: IRS Publication 946 Table A-1 (5-year, half-year convention) could not be fetched this session. [source pending]',
+      'California depreciation not computed for this tax profile.',
     );
   }
 

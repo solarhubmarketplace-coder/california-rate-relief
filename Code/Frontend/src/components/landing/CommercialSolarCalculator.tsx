@@ -823,7 +823,7 @@ export default function CommercialSolarCalculator() {
                 value={outputs.caDepreciationValueTotal !== null ? fmtUsd0.format(outputs.caDepreciationValueTotal) : '[source pending]'}
                 sub={
                   outputs.caDepreciationValueTotal === null && outputs.taxProfile.kind !== 'TAX_EXEMPT'
-                    ? 'IRS Publication 946 Table A-1 could not be fetched this session; not computed.'
+                    ? 'Not computed for this tax profile.'
                     : undefined
                 }
               />

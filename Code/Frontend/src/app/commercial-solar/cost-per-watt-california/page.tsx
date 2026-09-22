@@ -228,13 +228,13 @@ export default function CommercialSolarCost() {
                 <a href={trackingTheSunSummary} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   Tracking the Sun 2024 Edition
                 </a>{' '}
-                (August 2024) {/* costs-20, costs-24, costs-25, costs-26 */}. Two dates now drive
+                (August 2024).{/* costs-20, costs-24, costs-25, costs-26 */} Two dates now drive
                 whether a project captures the federal credit and the state property-tax break at
                 all: construction must have started by <strong>July 4, 2026</strong> or the
                 system must be placed in service by <strong>December 31, 2027</strong> to get any
-                federal Section 48E credit {/* fedtax-13, fedtax-14 */}, and the California
+                federal Section 48E credit,{/* fedtax-13, fedtax-14 */} and the California
                 property-tax exclusion for solar goes inoperative on{' '}
-                <strong>January 1, 2027</strong> {/* catax-05 */}. Verified {VERIFIED}.
+                <strong>January 1, 2027</strong>.{/* catax-05 */} Verified {VERIFIED}.
               </p>
 
               <div className="my-8 grid gap-4 sm:grid-cols-2">
@@ -245,11 +245,10 @@ export default function CommercialSolarCost() {
                   </div>
                   <p className="text-sm text-foreground/90">
                     Section 48E does not apply to a wind or solar facility placed in service after
-                    December 31, 2027, unless construction began on or before July 4, 2026{' '}
-                    {/* fedtax-13, fedtax-14 */}. That date has already passed. Any California
+                    December 31, 2027, unless construction began on or before July 4, 2026{' '}.{/* fedtax-13, fedtax-14 */} That date has already passed. Any California
                     commercial solar project starting construction now needs a firm placed-in-service
                     date no later than December 31, 2027, or the federal credit is zero
-                    {' '}{/* fedtax-14 */}.
+                    {' '}.{/* fedtax-14 */}
                   </p>
                 </div>
                 <div className="rounded-xl border-2 border-status-warning/30 bg-status-warning/10 p-5">
@@ -260,10 +259,10 @@ export default function CommercialSolarCost() {
                   <p className="text-sm text-foreground/90">
                     Revenue &amp; Taxation Code §73 keeps a solar system&apos;s added value off your
                     property&apos;s reassessed value. That exclusion goes inoperative January 1, 2027
-                    {' '}{/* catax-05 */}. A system in process or completed before then keeps the
-                    exclusion permanently, until the property changes ownership {/* catax-06 */}; a
+                    {' '}.{/* catax-05 */} A system in process or completed before then keeps the
+                    exclusion permanently, until the property changes ownership;{/* catax-06 */} a
                     system placed in service on or after January 1, 2027 currently gets none
-                    {' '}{/* catax-06, catax-10 */}.
+                    {' '}.{/* catax-06, catax-10 */}
                   </p>
                 </div>
               </div>
@@ -361,25 +360,25 @@ export default function CommercialSolarCost() {
                 year-over-year from $1.57 in Q3 2024, driven mainly by a 50% year-over-year jump
                 in racking and electrical balance-of-system costs offsetting cheaper modules
                 {' '}{/* costs-29 */} &mdash; the first sustained increase in over a decade of
-                declines {/* costs-27 */}.
+                declines.{/* costs-27 */}
               </p>
               <p>
                 One caveat on NREL&apos;s figures, which show up often in solar pricing
                 discussions: since 2023, NREL&apos;s annual &ldquo;commercial&rdquo; cost
                 benchmark models a 3-MWdc <strong>ground-mount</strong> system, not a rooftop or
                 carport project in the 25 kW&ndash;1 MW range most California businesses build
-                {' '}{/* costs-01, costs-07 */}. Its 2024 figure, $1.55 per watt{' '}
+                {' '}.{/* costs-01, costs-07 */} Its 2024 figure, $1.55 per watt{' '}
                 <a href={nrel2024Benchmark} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   (NREL/TP-7A40-92536)
                 </a>
-                , should not be read as a rooftop number {/* costs-01 */}. NREL&apos;s last
+                , should not be read as a rooftop number.{/* costs-01 */} NREL&apos;s last
                 rooftop-scale (200 kW) commercial benchmark, from Q1 2022, was $1.84 per watt
                 modeled market price{' '}
                 <a href={nrel2022Benchmark} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   (NREL/TP-7A40-83586)
                 </a>{' '}
                 &mdash; four years stale, but still the most recent size-appropriate NREL figure
-                {' '}{/* costs-08 */}.
+                {' '}.{/* costs-08 */}
               </p>
               <p>
                 For a manufacturing or warehouse site, an industrial system is reported in the
@@ -474,10 +473,10 @@ export default function CommercialSolarCost() {
                 about $0.09 per watt &mdash; including a $5,713 fixed permitting fee, a national
                 average sales tax of 5.8% on hardware, EPC overhead of 13% on materials and 54% on
                 labor, developer overhead of 30%, contingency of 4%, and profit margin of 7%
-                {' '}{/* costs-09 */}. No NREL or LBNL source publishes a commercial
+                {' '}.{/* costs-09 */} No NREL or LBNL source publishes a commercial
                 carport-specific cost premium over rooftop; the only mounting-type coefficient
                 either publishes ($0.40/W for ground-mounting) is explicitly scoped to residential
-                systems {/* costs-28 */}, so ask a carport bidder to itemize the structural cost
+                systems,{/* costs-28 */} so ask a carport bidder to itemize the structural cost
                 separately rather than assume a rule of thumb.
               </p>
               <p>
@@ -506,20 +505,20 @@ export default function CommercialSolarCost() {
                 </a>
                 , not the older Section 48. The base rate is 6%; it rises to 30% for a facility
                 under 1 MW net output, or one meeting prevailing-wage and apprenticeship rules
-                {' '}{/* fedtax-01, fedtax-02, fedtax-03 */}. Bonus adders exist for energy
+                {' '}.{/* fedtax-01, fedtax-02, fedtax-03 */} Bonus adders exist for energy
                 communities, domestic content, and low-income siting, but each carries its own
                 eligibility test and a shrinking domestic-content cost-ratio schedule (50% in
                 2026, rising to 55% after December 31, 2026) {/* fedtax-05, fedtax-08 */} &mdash;
                 confirm any bonus with your tax advisor before counting on it. As the callouts
                 above state, the credit does not apply at all to a facility placed in service
                 after December 31, 2027 unless construction began on or before July 4, 2026, a
-                date that has already passed {/* fedtax-13, fedtax-14 */}.
+                date that has already passed.{/* fedtax-13, fedtax-14 */}
               </p>
               <p>
                 On depreciation, commercial solar is 5-year MACRS property, and 100% federal bonus
                 depreciation currently applies to property acquired and placed in service after
-                January 19, 2025 {/* fedtax-28, fedtax-30 */}. The depreciable basis is reduced by
-                only 50% of the ITC claimed, not the full credit {/* fedtax-33 */}. Here is what
+                January 19, 2025.{/* fedtax-28, fedtax-30 */} The depreciable basis is reduced by
+                only 50% of the ITC claimed, not the full credit.{/* fedtax-33 */} Here is what
                 that looks like on a representative project, combining the credit with year-one
                 bonus depreciation at the federal level only:
               </p>
@@ -578,25 +577,25 @@ export default function CommercialSolarCost() {
                 general IRC conformity date is fixed at January 1, 2025, before the federal law
                 creating the current 100% bonus even existed, a California return must add back
                 the bonus and instead depreciate the same $425,000 basis on the standard,
-                non-bonus 5-year MACRS schedule {/* fedtax-41, catax-29 */}. California&apos;s
+                non-bonus 5-year MACRS schedule.{/* fedtax-41, catax-29 */} California&apos;s
                 corporate tax rate is 8.84% for C corporations (1.5% for S corporations), plus an
-                $800 minimum franchise tax regardless of profitability {/* fedtax-38, fedtax-39,
-                catax-26, catax-27, catax-28 */}, and there is no California state solar tax
-                credit {/* catax-30 */}.
+                $800 minimum franchise tax regardless of profitability,{/* fedtax-38, fedtax-39,
+                catax-26, catax-27, catax-28 */} and there is no California state solar tax
+                credit.{/* catax-30 */}
               </p>
               <p>
                 The credit also remains transferable under §6418 and eligible for elective (direct)
-                pay under §6417 for tax-exempt and governmental entities {/* fedtax-22,
-                fedtax-24 */}, though both are now subject to new foreign-entity restrictions
+                pay under §6417 for tax-exempt and governmental entities,{/* fedtax-22,
+                fedtax-24 */} though both are now subject to new foreign-entity restrictions
                 phased in mostly for construction beginning after December 31, 2025 or tax years
-                beginning after July 4, 2025 {/* fedtax-18, fedtax-19, fedtax-21 */}; for an
+                beginning after July 4, 2025;{/* fedtax-18, fedtax-19, fedtax-21 */} for an
                 ordinary California business with no foreign ownership or foreign-sourced
                 equipment financing, these are unlikely to bite, but panel, inverter and racking
                 sourcing should be checked against current guidance before relying on the full
                 credit amount. Recapture follows a five-year vesting schedule if the property is
                 sold or changes use before then: 100% of the credit is recaptured in year one,
-                declining 80/60/40/20% in years two through five, and zero after {/* fedtax-34,
-                fedtax-35 */}.
+                declining 80/60/40/20% in years two through five, and zero after.{/* fedtax-34,
+                fedtax-35 */}
               </p>
 
               <ArticleCTA />
@@ -670,9 +669,9 @@ export default function CommercialSolarCost() {
                 </table>
                 <p className="px-4 pb-4 text-xs text-muted-foreground">
                   * TOU-M&apos;s demand charge is non-coincident, applied to the higher of monthly
-                  maximum demand or 50% of annual maximum demand{' '}{/* rates-13 */}. Both SDG&amp;E
+                  maximum demand or 50% of annual maximum demand{' '}.{/* rates-13 */} Both SDG&amp;E
                   schedules also carry a wildfire-fund plus DWR-bond non-bypassable charge of
-                  $0.00591/kWh, constant across every period and season{' '}{/* rates-15 */}.
+                  $0.00591/kWh, constant across every period and season{' '}.{/* rates-15 */}
                 </p>
               </div>
               <p>
@@ -683,18 +682,18 @@ export default function CommercialSolarCost() {
                 </a>{' '}
                 (D.22-12-056, adopted December 15, 2022): hourly, Avoided Cost Calculator-based
                 values, locked in as a &ldquo;vintage&rdquo; for nine years from interconnection
-                {' '}{/* rates-23, rates-24 */}. PG&amp;E&apos;s own billing system did not start
+                {' '}.{/* rates-23, rates-24 */} PG&amp;E&apos;s own billing system did not start
                 billing business customers under its{' '}
                 <a href={pgeSolarBillingPlan} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   Solar Billing Plan
                 </a>{' '}
                 until March 2026, roughly three years after the policy&apos;s effective date
-                {' '}{/* rates-25 */}. SMUD, outside CPUC jurisdiction, pays a flat{' '}
+                {' '}.{/* rates-25 */} SMUD, outside CPUC jurisdiction, pays a flat{' '}
                 <a href={smudSsr} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   9.6 cents per kWh
                 </a>{' '}
                 for exported commercial, industrial and agricultural solar, effective June 1, 2026,
-                regardless of time of day or season {/* rates-35 */}. SCE&apos;s current,
+                regardless of time of day or season.{/* rates-35 */} SCE&apos;s current,
                 non-real-time-pricing commercial TOU-GS tariff sheets and LADWP&apos;s current
                 commercial $/kWh rate levels could not be verified from a primary source at
                 publication &mdash; rather than estimate, we are saying so plainly and pointing you
@@ -715,12 +714,12 @@ export default function CommercialSolarCost() {
                   Valuation Advisory #9
                 </a>{' '}
                 (2018) direct appraisers to the income approach as primary for solar on
-                income-producing property, using the cost approach as a check {/* value-01,
-                value-09 */}. Where solar is leased or under a PPA, VA-9 instructs appraisers to
+                income-producing property, using the cost approach as a check.{/* value-01,
+                value-09 */} Where solar is leased or under a PPA, VA-9 instructs appraisers to
                 examine the contract terms for how they affect &ldquo;the amount and durability of
-                net income&rdquo; {/* value-10 */}, and both bodies flag the sales-comparison
+                net income&rdquo;,{/* value-10 */} and both bodies flag the sales-comparison
                 approach as limited by thin transaction data for specialized systems like solar
-                {' '}{/* value-12 */}.
+                {' '}.{/* value-12 */}
               </p>
               <p>
                 Peer-reviewed evidence isolating a solar-specific value premium for California
@@ -732,16 +731,16 @@ export default function CommercialSolarCost() {
                 value-16, value-17 */} &mdash; labeled certification-based, not solar-specific. The
                 closest solar-only figures are industry, not academic, and not Californian: CBRE
                 found a 4.2% value uplift on logistics property from on-site rooftop solar in{' '}
-                <strong>Continental Europe</strong>{' '}{/* value-23 */}, and JLL documented two U.S.
+                <strong>Continental Europe</strong>{' '},{/* value-23 */} and JLL documented two U.S.
                 industrial-property case examples, 4.4% (New Jersey) and 3.7% (Baltimore-D.C.),
                 from third-party rooftop-solar leases valued by discounted cash flow of the lease
-                income {/* value-24 */}. The well-established residential literature &mdash; LBNL&apos;s
+                income.{/* value-24 */} The well-established residential literature &mdash; LBNL&apos;s
                 &ldquo;Selling Into the Sun&rdquo; (about $4/W, or roughly $15,000, for an average
                 home) and a California-specific NBER study of San Diego and Sacramento County home
                 sales (3.5&ndash;3.6%) &mdash; is <strong>residential</strong> and should not be
-                applied to commercial property {/* value-21, value-20 */}. National commercial cap
+                applied to commercial property.{/* value-21, value-20 */} National commercial cap
                 rates were &ldquo;broadly stable&rdquo; around 6.6% in CBRE&apos;s H1 2026 survey,
-                with no California-specific table publicly available {/* value-27 */}.
+                with no California-specific table publicly available.{/* value-27 */}
               </p>
 
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
@@ -751,14 +750,13 @@ export default function CommercialSolarCost() {
                 Under R&amp;T §73, the construction or addition of an active solar energy system
                 is excluded from &ldquo;newly constructed&rdquo; for reassessment purposes; storage
                 devices and power-conditioning equipment through the point of electricity
-                conveyance are included as part of the excluded system {/* catax-01, catax-03 */}.
+                conveyance are included as part of the excluded system.{/* catax-01, catax-03 */}
                 The exclusion applies to commercial and industrial property, including utility-scale
                 solar &mdash; a 2012 Board of Equalization annotation found no language restricting
                 it{' '}
                 <a href={boeAnnotation610} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   (Assessors&apos; Handbook annotation 610.0089)
-                </a>{' '}
-                {/* catax-13 */}. Systems 20 MW or larger instead get a phased-down schedule
+                </a>{' '}.{/* catax-13 */} Systems 20 MW or larger instead get a phased-down schedule
                 (Nonqualified Active Solar Energy Systems), starting at 100% exclusion and
                 stepping to roughly 80/60/50% at years 1, 4 and 7 {/* catax-14 */} &mdash; most
                 behind-the-meter C&amp;I systems are far under that threshold. Per{' '}
@@ -766,13 +764,13 @@ export default function CommercialSolarCost() {
                   BOE Letter to Assessors 2026/034
                 </a>{' '}
                 (September 1, 2026, the most current guidance available), the exclusion goes
-                inoperative January 1, 2027 {/* catax-05 */}; a system in process or completed
+                inoperative January 1, 2027;{/* catax-05 */} a system in process or completed
                 before then keeps the exclusion until a subsequent change of ownership
-                {' '}{/* catax-06 */}, and there is currently no successor statute for a system
-                placed in service on or after that date {/* catax-06, catax-10 */}. A separate
+                {' '},{/* catax-06 */} and there is currently no successor statute for a system
+                placed in service on or after that date.{/* catax-06, catax-10 */} A separate
                 filing rule, effective the same date, gives an initial purchaser of a newly built
                 structure with incorporated solar three years to file the exclusion claim
-                {' '}{/* catax-12 */}.
+                {' '}.{/* catax-12 */}
               </p>
               <p>
                 On sales and use tax, CDTFA{' '}
@@ -783,16 +781,16 @@ export default function CommercialSolarCost() {
                 rooftop and free-standing ground-mount arrays are &ldquo;fixtures,&rdquo; taxed to
                 the contractor as retailer on the full selling price, while true
                 building-integrated PV (roofing-integrated panels or PV skylights) is taxed as a
-                &ldquo;material&rdquo; on cost only {/* catax-17 */}; labor to affix a finished
-                panel to its racking is separately exempt {/* catax-18 */}. A partial exemption
+                &ldquo;material&rdquo; on cost only;{/* catax-17 */} labor to affix a finished
+                panel to its racking is separately exempt.{/* catax-18 */} A partial exemption
                 under{' '}
                 <a href={cdtfa6377} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   R&amp;T §6377.1
                 </a>{' '}
-                shaves 3.9375 percentage points off the combined rate {/* catax-21 */}, but it only
+                shaves 3.9375 percentage points off the combined rate,{/* catax-21 */} but it only
                 reaches a business that is itself a manufacturer, R&amp;D firm, or electric
                 utility/generator by NAICS code &mdash; a typical non-manufacturing business
-                installing solar on its own building generally does not qualify {/* catax-23 */}.
+                installing solar on its own building generally does not qualify.{/* catax-23 */}
               </p>
               <p>
                 Permit fees are capped statewide by Government Code §66015 at $1,000 for a
@@ -800,15 +798,13 @@ export default function CommercialSolarCost() {
                 $5 per kW above 250 kW{' '}
                 <a href={govCode66015} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   (effective through January 1, 2034)
-                </a>{' '}
-                {/* catax-33 */}. Actual city schedules are often lower: San Diego charges $758
+                </a>{' '}.{/* catax-33 */} Actual city schedules are often lower: San Diego charges $758
                 plan-check plus $290 inspection for the first 100 kW, and $264 plan-check plus
                 $145 inspection for each additional 100 kW, plus a separate electrical permit fee
                 {' '}
                 <a href={sanDiegoBulletin301} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   (Information Bulletin 301)
-                </a>{' '}
-                {/* catax-35 */}. Confirm your own jurisdiction&apos;s current fee schedule
+                </a>{' '}.{/* catax-35 */} Confirm your own jurisdiction&apos;s current fee schedule
                 directly.
               </p>
 
@@ -821,9 +817,9 @@ export default function CommercialSolarCost() {
                 <a href={sgipMetrics} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   Closed
                 </a>{' '}
-                in both PG&amp;E ($12.0M step) and SCE ($2.3M step) territory {/* programs-01,
-                programs-02, programs-03 */}; equity tiers ($0.85&ndash;$1.00/Wh) have narrower
-                site-eligibility rules {/* programs-04, programs-05 */}. See{' '}
+                in both PG&amp;E ($12.0M step) and SCE ($2.3M step) territory;{/* programs-01,
+                programs-02, programs-03 */} equity tiers ($0.85&ndash;$1.00/Wh) have narrower
+                site-eligibility rules.{/* programs-04, programs-05 */} See{' '}
                 <Link href="/commercial-solar/sgip-battery-storage" className="text-primary underline">
                   our SGIP battery storage page
                 </Link>{' '}
@@ -831,7 +827,7 @@ export default function CommercialSolarCost() {
                 USDA REAP grants (up to 50% of eligible cost for IRA-funded categories) are
                 currently paused while the agency rescinds its prior notice and rewrites the
                 underlying rule under Executive Order 14315; guaranteed loans, up to 75% of
-                eligible project cost, remain open {/* programs-16, programs-12 */}.
+                eligible project cost, remain open.{/* programs-16, programs-12 */}
               </p>
               <p>
                 C-PACE assessments are collected on the county property tax bill under Streets
@@ -840,10 +836,10 @@ export default function CommercialSolarCost() {
                   DFPI-licensed program administrators
                 </a>{' '}
                 currently operate statewide (Renew Financial/CaliforniaFirst, PACE Funding Group,
-                FortiFi, and Ygrene) {/* programs-21 */}, and commercial-focused providers PACE
+                FortiFi, and Ygrene),{/* programs-21 */} and commercial-focused providers PACE
                 Equity (up to 30-year term, up to 30% of property value, non-recourse, fixed rate)
                 and CleanFund (up to 100% of project cost) also operate here via county and JPA
-                program agreements {/* programs-22, programs-23 */}. Full mechanics, eligible
+                program agreements.{/* programs-22, programs-23 */} Full mechanics, eligible
                 improvements, and how to apply are on our{' '}
                 <Link href="/commercial-solar/cpace-financing-california" className="text-primary underline">
                   CPACE financing page
@@ -855,23 +851,23 @@ export default function CommercialSolarCost() {
                 effect for permits filed on or after January 1, 2026) mandates solar PV, and in
                 most cases battery storage, under §140.10 for a broad list of nonresidential
                 building types, sized at Solar Access Roof Area times 18 W/ft² for steep-sloped
-                roofs or 14 W/ft² for low-sloped roofs {/* programs-29 */}. See our{' '}
+                roofs or 14 W/ft² for low-sloped roofs.{/* programs-29 */} See our{' '}
                 <Link href="/commercial-solar/title-24-requirements" className="text-primary underline">
                   Title 24 requirements page
                 </Link>{' '}
                 for the full building-type list, sizing equations, and battery exceptions
-                {' '}{/* programs-30, programs-31 */}.
+                {' '}.{/* programs-30, programs-31 */}
               </p>
               <p>
                 On utility rebates: SMUD explicitly{' '}
                 <a href={smudBusiness} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   states it does not offer
                 </a>{' '}
-                solar installation rebates {/* programs-42 */}, and PG&amp;E, SCE, SDG&amp;E and
+                solar installation rebates,{/* programs-42 */} and PG&amp;E, SCE, SDG&amp;E and
                 LADWP&apos;s current business pages show no PV cash rebate either &mdash; each
-                offers interconnection, net billing, or (for storage) SGIP instead {/* programs-43,
-                programs-44 */}. SGIP itself is a CPUC-authorized, ratepayer-funded program, not a
-                utility&apos;s own discretionary rebate {/* programs-45 */}.
+                offers interconnection, net billing, or (for storage) SGIP instead.{/* programs-43,
+                programs-44 */} SGIP itself is a CPUC-authorized, ratepayer-funded program, not a
+                utility&apos;s own discretionary rebate.{/* programs-45 */}
               </p>
 
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
@@ -886,24 +882,23 @@ export default function CommercialSolarCost() {
                 and a $2,500 supplemental-review fee at both utilities{' '}
                 <a href={sceRule21Faq} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   (confirmed for SCE)
-                </a>{' '}
-                {/* rates-19, rates-22 */}. PG&amp;E&apos;s{' '}
+                </a>{' '}.{/* rates-19, rates-22 */} PG&amp;E&apos;s{' '}
                 <a href={pgeInterconnectionTimeline} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   own posted timeline
                 </a>{' '}
                 runs application review 10&ndash;20 business days, engineering review 15&ndash;95
                 business days across up to three phases, and, if grid upgrades are needed,
-                implementation adds 3&ndash;12 months on top {/* costs-38, costs-39 */}; once no
+                implementation adds 3&ndash;12 months on top;{/* costs-38, costs-39 */} once no
                 upgrades are required, final inspection is within 30 business days and
-                interconnection approval follows about 3 business days later {/* costs-40 */}.
+                interconnection approval follows about 3 business days later.{/* costs-40 */}
                 PG&amp;E&apos;s{' '}
                 <a href={pgeHandbook} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   Distribution Interconnection Handbook
                 </a>{' '}
                 gives an overall typical range of 3&ndash;6 months for Simplified/Fast Track
                 review, 3&ndash;7 months for Supplemental Review, and 4&ndash;10 months for a full
-                Detailed Interconnection Study {/* rates-20 */}, with a 15-business-day initial
-                Fast Track review {/* rates-41 */}.
+                Detailed Interconnection Study,{/* rates-20 */} with a 15-business-day initial
+                Fast Track review.{/* rates-41 */}
               </p>
               <p>
                 Separately, Assembly Bill 2143 requires prevailing wage on renewable facilities
@@ -911,8 +906,7 @@ export default function CommercialSolarCost() {
                 SDG&amp;E, with certified payroll filed with the CPUC twice yearly{' '}
                 <a href={cpucAb2143} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   through the SURGE portal
-                </a>{' '}
-                {/* programs-39 */}. Confirm whether your project&apos;s interconnection tariff
+                </a>{' '}.{/* programs-39 */} Confirm whether your project&apos;s interconnection tariff
                 triggers this before pricing labor.
               </p>
 
@@ -928,8 +922,8 @@ export default function CommercialSolarCost() {
                 <a href={cslbC46} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   C-46 (Solar)
                 </a>{' '}
-                classifications both explicitly cover photovoltaic installation {/* programs-35,
-                programs-36 */}. Verify the exact contracting entity and its current license,
+                classifications both explicitly cover photovoltaic installation.{/* programs-35,
+                programs-36 */} Verify the exact contracting entity and its current license,
                 bond, and disciplinary record at the CSLB lookup before signing anything. Ask each
                 bidder to state the DC system size and cash price separately from any financing
                 terms; itemize roof work, electrical upgrades, storage, and interconnection
