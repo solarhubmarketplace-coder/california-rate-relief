@@ -18,6 +18,8 @@ export const GROWTH_ROUTES = [
   '/solar-companies/petaluma',
   '/solar-companies/rancho-cucamonga',
   '/solar-companies/santa-barbara',
+  '/solar-companies/camarillo', // 2026-09-22: growthCities-only slug, reinstated from the redirect table
+  '/solar-companies/rocklin', // 2026-09-22: growthCities-only slug, reinstated from the redirect table
   '/blog/solar-panels-tile-roof-california',
   '/blog/why-is-my-sce-bill-so-high',
   '/blog/why-is-my-sdge-bill-so-high',
