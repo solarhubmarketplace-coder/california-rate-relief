@@ -47,6 +47,37 @@
  * `/solar-companies/<city>`, the 12 of them whose destination became a source
  * were retargeted to `/solar-cost/<city>` in place. No destination in this
  * table is a key in it; `canonical-redirects.test.ts` asserts that.
+ *
+ * 2026-09-22 — third pass: 24 of the 44 /solar-companies redirects reversed
+ * ---------------------------------------------------------------------------
+ * The 2026-09-18 consolidation assumed the "solar companies <city>" query
+ * intent was unwinnable for a referral site with no Google Business Profile
+ * — a Google local pack a blue-link page can never enter. A fresh Ahrefs
+ * SERP pull (exported 2026-09-21/22) shows that assumption does not hold
+ * everywhere: the lowest domain rating holding a page-1 organic slot for
+ * "solar companies <city>" is DR 1 Bakersfield, DR 2 Modesto, DR 2 Santa
+ * Rosa, DR 2 Sacramento, DR 2 Visalia, DR 0 San Jose, DR 6 Los Angeles, DR 8
+ * Oakland, DR 10 Fresno, DR 11 Riverside, DR 11 Santa Ana, DR 15 San
+ * Bernardino — all beatable by this site. San Francisco (DR 23) and San
+ * Diego (DR 25) are not, so San Diego's row below stays.
+ *
+ * Separately, CODE_INVENTORY_DELTA.md §3 found that 25 of the 38
+ * `growthCities` entries in `src/data/growth-cities.ts` carry real, sourced
+ * `CityComparison` content (provider names, bill/permit copy, FAQs) that can
+ * never render while the matching row below fires first in middleware —
+ * sourced content the redirect makes permanently unreachable.
+ *
+ * Decision of record for this branch: every `/solar-companies/<city>` row
+ * below whose slug is a `growthCities` key is un-redirected, except
+ * `san-diego` (its page-1 floor is DR 25 per the Ahrefs pull above). GSC
+ * impressions cited elsewhere in this file describe the 2026-08-12..
+ * 2026-09-08 window; the more recent `CITY_PAGES_GSC.csv` window
+ * (2026-08-21..2026-09-17) confirms these 24 pages still draw real
+ * impressions at ~0 clicks under the redirect — e.g. Los Angeles 2,118,
+ * Fresno 1,601, Modesto 1,341, Santa Rosa 968, Bakersfield 680, San Jose
+ * 330 — impression demand a ranking attempt can now try to convert. See the
+ * removed-slugs comments inline below for exactly which 24 rows this
+ * removed.
  */
 
 /** Source path -> destination path. Both are absolute, no trailing slash. */
@@ -102,40 +133,31 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   //     untouched — they are not redirected, deleted or pointed at a hub.
   //     The /solar-companies hub/index path is not a key here: only city
   //     children are redirected.
-  '/solar-companies/anaheim': '/solar-cost/anaheim',
+  //
+  //     2026-09-22 — 21 of this block's rows were reversed (see the
+  //     file-level "third pass" comment above): anaheim, bakersfield,
+  //     camarillo, el-cajon, escondido, fresno, grass-valley, livermore,
+  //     modesto, murrieta, petaluma, rancho-cucamonga, roseville, san-jose,
+  //     san-luis-obispo, santa-cruz, santa-rosa, stockton, temecula,
+  //     thousand-oaks, ventura — each is a `growthCities` key whose
+  //     `CityComparison` content is a sourced, ranking target again per the
+  //     2026-09-22 Ahrefs SERP pull. `san-diego` is the one growthCities/
+  //     redirected city kept below: its page-1 floor is DR 25.
   '/solar-companies/aptos': '/solar-cost/aptos',
-  '/solar-companies/bakersfield': '/solar-cost/bakersfield',
-  '/solar-companies/camarillo': '/solar-cost/camarillo',
   '/solar-companies/carlsbad': '/solar-cost/carlsbad',
   '/solar-companies/chula-vista': '/solar-cost/chula-vista',
   '/solar-companies/corona': '/solar-cost/corona',
-  '/solar-companies/el-cajon': '/solar-cost/el-cajon',
   '/solar-companies/el-dorado-hills': '/solar-cost/el-dorado-hills',
-  '/solar-companies/escondido': '/solar-cost/escondido',
-  '/solar-companies/fresno': '/solar-cost/fresno',
-  '/solar-companies/grass-valley': '/solar-cost/grass-valley',
-  '/solar-companies/livermore': '/solar-cost/livermore',
   '/solar-companies/manteca': '/solar-cost/manteca',
   '/solar-companies/marina': '/solar-cost/marina',
-  '/solar-companies/modesto': '/solar-cost/modesto',
   '/solar-companies/monterey': '/solar-cost/monterey',
-  '/solar-companies/murrieta': '/solar-cost/murrieta',
   '/solar-companies/oceanside': '/solar-cost/oceanside',
   '/solar-companies/pacific-grove': '/solar-cost/pacific-grove',
-  '/solar-companies/petaluma': '/solar-cost/petaluma',
   '/solar-companies/rancho-cordova': '/solar-cost/rancho-cordova',
-  '/solar-companies/rancho-cucamonga': '/solar-cost/rancho-cucamonga',
-  '/solar-companies/roseville': '/solar-cost/roseville',
   '/solar-companies/salinas': '/solar-cost/salinas',
+  // Kept 2026-09-22: San Diego's page-1 floor for "solar companies san diego"
+  // is DR 25 (Ahrefs, exported 2026-09-22) — not a beatable SERP.
   '/solar-companies/san-diego': '/solar-cost/san-diego',
-  '/solar-companies/san-jose': '/solar-cost/san-jose',
-  '/solar-companies/san-luis-obispo': '/solar-cost/san-luis-obispo',
-  '/solar-companies/santa-cruz': '/solar-cost/santa-cruz',
-  '/solar-companies/santa-rosa': '/solar-cost/santa-rosa',
-  '/solar-companies/stockton': '/solar-cost/stockton',
-  '/solar-companies/temecula': '/solar-cost/temecula',
-  '/solar-companies/thousand-oaks': '/solar-cost/thousand-oaks',
-  '/solar-companies/ventura': '/solar-cost/ventura',
   '/solar-companies/walnut-creek': '/solar-cost/walnut-creek',
   '/solar-companies/watsonville': '/solar-cost/watsonville',
   '/solar-companies/winchester': '/solar-cost/winchester',
@@ -144,14 +166,13 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   //     had no cost twin when the layer was first retired; the re-screen pass
   //     qualified them and their /solar-cost pages now exist, so they join the
   //     same consolidation as the other 37.
+  //     2026-09-22 — los-angeles and palm-springs reversed; see above.
   '/solar-companies/beaumont': '/solar-cost/beaumont',
   '/solar-companies/encinitas': '/solar-cost/encinitas',
-  '/solar-companies/los-angeles': '/solar-cost/los-angeles',
-  '/solar-companies/palm-springs': '/solar-cost/palm-springs',
   '/solar-companies/seaside': '/solar-cost/seaside',
   '/solar-companies/vallejo': '/solar-cost/vallejo',
   // Corrected 2026-09-20: Rocklin's growth-only route also has a cost twin.
-  '/solar-companies/rocklin': '/solar-cost/rocklin',
+  // Reversed 2026-09-22; see the file-level "third pass" comment above.
 };
 
 /**

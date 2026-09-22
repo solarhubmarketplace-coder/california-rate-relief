@@ -20,13 +20,29 @@ test('no destination is itself a redirect source (no chains)', () => {
   assert.deepEqual(chained, []);
 });
 
-test('every /solar-companies city page with a /solar-cost twin redirects there', () => {
+// 2026-09-22: the 25 orphaned growthCities slugs from CODE_INVENTORY_DELTA.md
+// §3 (a growthCities key whose /solar-companies page was a redirect source,
+// so its CityComparison content could never render) minus san-diego, which
+// stays redirected — its page-1 floor is DR 25 per the Ahrefs pull cited in
+// canonical-redirects.ts. These 24 are reinstated: no longer redirected even
+// though each one has a /solar-cost twin.
+const REINSTATED_GROWTH_CITY_SLUGS = new Set([
+  'anaheim', 'bakersfield', 'camarillo', 'el-cajon', 'escondido', 'fresno',
+  'grass-valley', 'livermore', 'los-angeles', 'modesto', 'murrieta',
+  'palm-springs', 'petaluma', 'rancho-cucamonga', 'rocklin', 'roseville',
+  'san-jose', 'san-luis-obispo', 'santa-cruz', 'santa-rosa', 'stockton',
+  'temecula', 'thousand-oaks', 'ventura',
+]);
+
+test('every /solar-companies city page with a /solar-cost twin redirects there, unless it is a reinstated growthCities entry', () => {
   const companies = new Set([
     ...getAllCitySlugs(),
     ...Object.keys(growthCities),
   ]);
   const cost = new Set(getPublishableCityCostSlugs());
-  const twins = [...companies].filter((slug) => cost.has(slug));
+  const twins = [...companies].filter(
+    (slug) => cost.has(slug) && !REINSTATED_GROWTH_CITY_SLUGS.has(slug),
+  );
   assert.ok(twins.length > 0, 'the twin-route check must not be vacuous');
   for (const slug of twins) {
     assert.equal(
@@ -52,6 +68,33 @@ test('a /solar-companies city page with no cost twin is left alone', () => {
   }
 });
 
+test('the 24 evidence-backed growthCities entries are reinstated (not redirected); san-diego stays redirected', () => {
+  assert.ok(
+    REINSTATED_GROWTH_CITY_SLUGS.size === 24,
+    `expected 24 reinstated slugs, found ${REINSTATED_GROWTH_CITY_SLUGS.size}`,
+  );
+  for (const slug of REINSTATED_GROWTH_CITY_SLUGS) {
+    assert.ok(
+      Object.prototype.hasOwnProperty.call(growthCities, slug),
+      `${slug} must be a growthCities key`,
+    );
+  }
+  for (const slug of REINSTATED_GROWTH_CITY_SLUGS) {
+    assert.equal(
+      canonicalRedirectFor(`/solar-companies/${slug}`),
+      null,
+      `expected /solar-companies/${slug} to be reinstated (no redirect)`,
+    );
+    assert.equal(companiesCityHref(slug), `/solar-companies/${slug}`);
+    assert.equal(hasCompaniesCityPage(slug), true);
+  }
+  assert.equal(
+    canonicalRedirectFor('/solar-companies/san-diego'),
+    '/solar-cost/san-diego',
+    'san-diego is the one growthCities entry kept redirected (DR 25 SERP floor)',
+  );
+});
+
 test('the /solar-companies hub path is not redirected', () => {
   assert.equal(canonicalRedirectFor('/solar-companies'), null);
   assert.equal(canonicalRedirectFor('/solar-companies/'), null);
@@ -66,5 +109,7 @@ test('city href helpers never return a redirect source', () => {
 });
 
 test('the table holds the expected number of rows', () => {
-  assert.equal(sources.length, 72);
+  // 2026-09-22: 24 /solar-companies rows reversed (72 - 24 = 48). See the
+  // dated comment block in canonical-redirects.ts.
+  assert.equal(sources.length, 48);
 });

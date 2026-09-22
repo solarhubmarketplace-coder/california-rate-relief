@@ -8,13 +8,16 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { LocalProjectGuidance } from '@/components/growth/LocalProjectGuidance';
 import { NearbyCostCities } from '@/components/growth/NearbyCostCities';
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import { cityCostPath, type CityCostRow } from '@/data/city-cost-data';
 import {
   RATE_TRACKER_PATH,
   formatAverageRateCents,
   getUtilityRate,
 } from '@/data/utility-rate-tracker';
+import { growthCities } from '@/data/growth-cities';
+import { getCityBySlug } from '@/data/cities-data';
+import { companiesCityHref, hasCompaniesCityPage } from '@/lib/canonical-redirects';
 
 // =============================================================================
 // CityCostPage — the template behind /solar-cost/[city]
@@ -138,6 +141,14 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
   const title = cityCostTitle(row.city);
   const description = cityCostDescription(row.city);
   const rate = formatAverageRateCents(utility);
+
+  // 2026-09-22: cross-link to the companion /solar-companies/<city> page when
+  // one is actually live — not redirected, and present in growthCities or
+  // CITIES so the route renders instead of 404ing. See the dated comment
+  // block in canonical-redirects.ts for why some of these are live again.
+  const companiesPageIsLive =
+    hasCompaniesCityPage(row.slug) &&
+    (Boolean(growthCities[row.slug]) || Boolean(getCityBySlug(row.slug)));
 
   const sources: CityCostSource[] = [
     {
@@ -512,6 +523,21 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                  <Link href='/blog/is-my-roof-good-for-solar-california' className={link}>is my roof suited to solar</Link>.
               </p>
             </div>
+
+            {companiesPageIsLive && (
+              <Link
+                href={companiesCityHref(row.slug)}
+                className="group not-prose mt-10 block rounded-xl border border-primary/25 bg-primary/5 p-5 transition-colors hover:border-primary/50"
+              >
+                <span className="flex items-center gap-2 font-semibold text-foreground">
+                  Compare solar companies in {row.city}
+                  <ArrowRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-0.5" />
+                </span>
+                <span className="mt-1 block text-sm text-muted-foreground">
+                  See who actually serves {row.city} and what each written proposal should include.
+                </span>
+              </Link>
+            )}
 
             <NearbyCostCities row={row} />
 

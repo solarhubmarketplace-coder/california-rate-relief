@@ -4,6 +4,7 @@ import { hasSavingsCityPage } from "@/lib/canonical-redirects";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, QuoteChecklist } from "./DecisionPage";
 import { CityProviderOptions } from "./CityProviderOptions";
+import { cityCostPath, getPublishableCityCostSlugs } from "@/data/city-cost-data";
 import {
   CityLocalChecks,
   CityPublishedProvider,
@@ -12,6 +13,10 @@ import {
 } from "./CityLocalDetails";
 export function CityComparison({ slug }: { slug: string }) {
   const city = growthCities[slug];
+  // 2026-09-22: link to the /solar-cost/<city> twin when one is actually
+  // publishable (sourced, gated) — see canonical-redirects.ts for the SERP
+  // reasoning behind this route being live again instead of redirected.
+  const hasCostTwin = getPublishableCityCostSlugs().includes(slug);
   return (
     <DecisionPage
       title={`Compare solar companies in ${city.name}, California`}
@@ -95,6 +100,20 @@ export function CityComparison({ slug }: { slug: string }) {
           )}
         </p>
       </section>
+      {hasCostTwin && (
+        <section>
+          <h2>What solar costs in {city.name}</h2>
+          <p>
+            The utility rate, {city.name}&apos;s permit process, and the ownership and
+            property-tax rules that actually set the price for a project here are
+            covered separately, with no company list involved. See{" "}
+            <Link className="underline" href={cityCostPath(slug)}>
+              what solar costs in {city.name}
+            </Link>
+            .
+          </p>
+        </section>
+      )}
       <CityQuestions slug={slug} />
       {/*
         Phase 1 of the 2026-09-17 California strategy. The /solar-companies city

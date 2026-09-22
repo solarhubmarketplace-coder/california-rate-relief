@@ -27,6 +27,7 @@ import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { hasSavingsCityPage } from "@/lib/canonical-redirects";
 import { growthCities } from "@/data/growth-cities";
 import { CityComparison } from "@/components/growth/CityComparison";
+import { cityCostPath, getPublishableCityCostSlugs } from "@/data/city-cost-data";
 
 // =============================================================================
 // STATIC PARAMS — Pre-renders all city pages at build time
@@ -671,6 +672,19 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 </Link>
                 <span className="text-foreground/60">
                   ; rates, system sizing, and incentive deep-dive.
+                </span>
+              </li>
+              )}
+              {getPublishableCityCostSlugs().includes(city.slug) && (
+              <li>
+                <Link
+                  href={cityCostPath(city.slug)}
+                  className="text-primary hover:underline"
+                >
+                  What Solar Costs in {city.name}
+                </Link>
+                <span className="text-foreground/60">
+                  ; the utility rate, permits, and ownership rules that set the price.
                 </span>
               </li>
               )}
