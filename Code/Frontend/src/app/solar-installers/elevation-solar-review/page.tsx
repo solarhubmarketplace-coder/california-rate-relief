@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "Elevation Solar Review 2026",
-  datePublished: '2026-04-24', dateModified: '2026-04-24',
+  datePublished: '2026-04-24', dateModified: '2026-09-22',
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/elevation-solar-review' },
@@ -53,9 +53,9 @@ export default function ElevationReview() {
                 Elevation Solar Reviews (2026): Strong EnergySage Ratings, Activation Delays
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-24'>Updated April 24, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-22'>Updated September 22, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>8 min read</span></div>
               </div>
             </header>
@@ -98,15 +98,40 @@ export default function ElevationReview() {
                 <li>Communication breakdowns — sales-to-permitting-to-install handoff has visible friction.</li>
               </ul>
 
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What Elevation&apos;s Contract Actually Promises</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Elevation&apos;s own purchase agreement &mdash; not a marketing page &mdash; states the workmanship warranty precisely: <strong>10 years</strong> on &ldquo;the installation and/or repair of solar panels, inverters, racking and railing,&rdquo; measured &ldquo;from the date of completed installation or repair,&rdquo; plus a separate <strong>10-year roof-penetration warranty</strong> for roof work Elevation performs (<a href='https://poweredbyelevation.com/purchase-agreement-terms/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>poweredbyelevation.com, Purchase Agreement Terms</a>, accessed September 22, 2026). That resolves the &ldquo;confirm specifics&rdquo; hedge this page used to carry. Above that, product warranties run through the original manufacturer &mdash; the agreement names SolarInsure, REC Solar, Enphase, Tesla, and Generac among the brands whose products it installs (same source). One limiting clause worth flagging directly: Elevation&apos;s own contract states that its repair of a defect is your &ldquo;sole and exclusive remedy,&rdquo; which is standard contract language but worth knowing before you sign, not after a dispute.
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Elevation offers all four finance paths — cash, loans, leases, and PPAs — through third-party partners. This broad option set is a genuine positive for buyers with specific tax or cash flow constraints.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing, and What Actually Qualifies for the Tax Credit</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Standard 25-year equipment coverage with manufacturer warranties passed through. Workmanship warranty terms vary by contract; confirm the specific length (10-year is common) before signing.
+                Elevation&apos;s own FAQ specifically states that &ldquo;leasing and PPA do not qualify&rdquo; for the federal solar tax credit, while a qualifying cash or loan purchase can apply the credit against the system price, subject to a tax professional&apos;s confirmation (<a href='https://poweredbyelevation.com/faq-categories/solar-energy/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>poweredbyelevation.com</a>, accessed September 22, 2026). No specific escalator rate, lease term, or loan APR is published on any Elevation page &mdash; get those in writing before you sign. For how the four financing types generally compare, see our <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>Solar Lease vs. PPA vs. Loan vs. Cash explainer</Link>.
               </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Service After Installation, and Your 3-Day Right to Cancel</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Elevation&apos;s service page describes an ongoing scope beyond the original install: system repairs, detailed inspections, ongoing maintenance, and proactive monitoring, and it states it will service &ldquo;all systems, no matter where you bought your panels&rdquo; &mdash; meaning a system another installer put on your roof (<a href='https://poweredbyelevation.com/solar-service/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>poweredbyelevation.com/solar-service</a>, accessed September 22, 2026). No specific response-time commitment is published.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Separately, and specific to California: Elevation&apos;s own purchase agreement states you &ldquo;have at least three business days to cancel your contract for any reason,&rdquo; extended to <strong>five business days if you&apos;re 65 or older</strong> &mdash; rights that apply in California but aren&apos;t specified for other states in the same document (<a href='https://poweredbyelevation.com/purchase-agreement-terms/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>poweredbyelevation.com, Purchase Agreement Terms</a>, accessed September 22, 2026). That&apos;s a real, usable right if you sign and change your mind fast.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The One Thing Elevation Doesn&apos;t Publish: a CSLB Number</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                We checked Elevation&apos;s homepage, its <a href='https://poweredbyelevation.com/terms/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>Terms page</a>, its Purchase Agreement Terms, and its <a href='https://poweredbyelevation.com/faq/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>general FAQ</a> and found no CSLB or other state contractor-license number published anywhere on poweredbyelevation.com (checked September 22, 2026). That&apos;s different from Sunrun, Palmetto, and Freedom Forever, each of which publishes at least one number on its own site. This doesn&apos;t mean Elevation is unlicensed &mdash; we were unable to independently cross-check CSLB&apos;s own online license lookup this week &mdash; but it does mean you can&apos;t verify the license from Elevation&apos;s own marketing before you&apos;re in a sales conversation. Ask for the exact license number and entity name in writing, then check it yourself; see our <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>full contractor-verification walkthrough</Link>.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-2'><strong>Questions to ask before you rely on any of this:</strong></p>
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>What&apos;s the exact CSLB license number and the legal entity name on your contract &mdash; not just &ldquo;Elevation Solar&rdquo;?</li>
+                <li>Elevation&apos;s own purchase agreement states its warranties transfer to &ldquo;all transferees of the structures to which products are installed&rdquo; &mdash; so a buyer should inherit the remaining workmanship and roof-penetration coverage. Get written confirmation of this at time of sale, since the agreement also requires notification and proof-of-coverage steps to make a claim.</li>
+                <li>If you&apos;re financing with a loan to qualify for the tax credit, does your specific plan actually qualify, confirmed by your own tax professional?</li>
+                <li>What&apos;s Elevation&apos;s actual response-time commitment for a service request, in writing, not just &ldquo;ongoing maintenance&rdquo; as a category?</li>
+              </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Elevation Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -118,6 +143,9 @@ export default function ElevationReview() {
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Elevation Solar a good company?</h3><p className='text-foreground/80'>Mixed. Strong EnergySage scores (4.6/5, 697 reviews) suggest good design/sales experience; 90 BBB complaints and 2.9 Yelp suggest back-half friction at permitting, inspection, and activation.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What&apos;s the typical Elevation install timeline?</h3><p className='text-foreground/80'>Install day is usually fast. Full process to Permission to Operate has been reported at 6 to 12+ months — longer than California industry average.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Elevation manufacture their own panels?</h3><p className='text-foreground/80'>No. Elevation uses Tier-1 third-party panels, Enphase microinverters are the default, and battery options are mainstream brands.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>What&apos;s Elevation&apos;s actual workmanship warranty length?</h3><p className='text-foreground/80'>10 years on panel, inverter, and racking installation or repair, plus a separate 10-year roof-penetration warranty (<a href='https://poweredbyelevation.com/purchase-agreement-terms/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>poweredbyelevation.com, Purchase Agreement Terms</a>, accessed September 22, 2026) &mdash; more specific than a general &ldquo;25-year&rdquo; figure, which applies to manufacturer product warranties, not Elevation&apos;s own installation work.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Elevation publish a CSLB license number?</h3><p className='text-foreground/80'>Not on any page we could find (homepage, terms, purchase agreement, or FAQ). Ask for it directly and verify it at CSLB before signing.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Can I cancel after signing?</h3><p className='text-foreground/80'>In California, yes &mdash; at least three business days for any reason, five if you&apos;re 65 or older, per Elevation&apos;s own purchase agreement (<a href='https://poweredbyelevation.com/purchase-agreement-terms/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>poweredbyelevation.com</a>, accessed September 22, 2026).</p></div>
               </div>
             </div>
 
