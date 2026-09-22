@@ -23,7 +23,7 @@ const articleSchema = {
   headline:
     'Momentum Solar Review 2026: In-House Crews, But What About the Complaints?',
   datePublished: '2026-04-22',
-  dateModified: '2026-09-18',
+  dateModified: '2026-09-22',
   author: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
@@ -67,9 +67,9 @@ export default function MomentumSolarReview() {
                 Momentum Solar Reviews (2026): In-House Crews, But What About the Complaints?
               </h1>
               
-              <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-18'>Updated September 18, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-22'>Updated September 22, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>9 min read</span></div>
               </div>
             </header>
@@ -77,6 +77,14 @@ export default function MomentumSolarReview() {
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Momentum Solar is a privately held residential solar installer headquartered in New Jersey. This page states no employee count, revenue figure, star rating or complaint count: none was re-verified at its own source when the page was checked on <strong>September 18, 2026</strong>. It covers three things that were checked at primary sources that day &mdash; what Momentum&apos;s own website says about its equipment and coverage, what the federal court record shows, and what the company&apos;s financing structure means for you.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Does Momentum Solar Serve California Right Now?</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Momentum&apos;s own homepage currently lists its service states by name: <strong>&ldquo;CT, FL, MA, NV, NJ, and TX&rdquo;</strong> (<a href='https://www.momentumsolar.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>momentumsolar.com</a>, accessed September 22, 2026) &mdash; states named across the abbreviations and full names used on the page, and California isn&apos;t among them. The &ldquo;Does Momentum Solar Serve California?&rdquo; section below already states this same finding, checked September 18, 2026 and sourced to Momentum&apos;s state incentive pages; this re-verifies it four days later, tightens the sourcing, and promotes it to the top of the page given how consequential it is.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                That doesn&apos;t mean Momentum has never operated in California. Court records (below) show the company &mdash; under its legal name, Pro Custom Solar LLC, doing business as Momentum Solar &mdash; has been a defendant in federal lawsuits filed in California courts as recently as 2025, and as far back as 2017. What can&apos;t be determined from a public website fetch is whether that reflects active sales in California today, historical activity that&apos;s since stopped, or something narrower like a licensed entity that no longer markets here. <strong>If you&apos;re a California homeowner, the first question to ask Momentum directly is whether they currently install in your ZIP code</strong> &mdash; not whether they&apos;ve ever done business in the state.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
@@ -114,8 +122,28 @@ export default function MomentumSolarReview() {
                 Source: <a href='https://www.courtlistener.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>CourtListener</a>, searched September 18, 2026. Read this carefully: a filed complaint is an allegation, not a finding, and a termination date records that a docket closed rather than who prevailed. What the record does establish is a repeated, dated, multi-year pattern of TCPA filings against this company &mdash; which is a documented fact about marketing conduct allegations, not a judgment about installation quality.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
+                A fresh CourtListener RECAP search this session (party name &ldquo;Momentum Solar&rdquo;) confirms the count above: <strong>23 federal dockets</strong> naming Momentum Solar or its legal entity, Pro Custom Solar LLC d/b/a Momentum Solar, filed between 2017 and 2026 (<a href='https://www.courtlistener.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>courtlistener.com</a>, accessed September 22, 2026). Most are TCPA claims as described above, with the rest split across employment claims (race, sex, and disability discrimination), a Fair Debt/credit dispute, and contract disputes with vendors. The <em>Gordon v. Momentum Solar, LLC</em> docket cited above is real and correctly dated &mdash; April 17, 2024, docket 3:24-cv-00693, Southern District of California &mdash; independently reconfirmed this session.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Two more California-filed dockets weren&apos;t previously listed here and are worth adding: <em>Vianca Velasco v. Momentum Solar, LLC</em> (Central District of California, filed January 2, 2025, docket 2:25-cv-00016) and <em>Amini v. Pro Custom Solar LLC dba Momentum Solar</em> (Central District of California, filed December 26, 2017, docket 8:17-cv-02243) (courtlistener.com, accessed September 22, 2026). That&apos;s <strong>three California-filed dockets out of 23</strong>, spanning 2017 to 2025 &mdash; the most direct evidence found this session that the company, under its legal name, has had some California-connected activity, even though its current marketing site doesn&apos;t list the state. As before: filed allegations, not court findings.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
                 This page states no settlement amount. A previously stated figure could not be verified at a primary source on September 18, 2026, so it has been removed. The practical takeaway does not depend on a dollar amount: if you receive an unsolicited call or text about solar, from any company, you did not initiate that contact, and a company that reaches you that way is one to verify more carefully rather than less. Federal and California rules both restrict unsolicited marketing calls.
               </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>CSLB License &mdash; Attempted, Unverified</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                This page cites CSLB license <strong>#997872</strong>. That number was checked again this session; CSLB&apos;s online lookup was rate-limited on every attempt and returned no rendered record (<a href='https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx?LicNum=997872' target='_blank' rel='noopener noreferrer' className='text-primary underline'>cslb.ca.gov</a>, attempted September 22, 2026). No license or legal-disclosures page confirming that number independently could be found on momentumsolar.com itself either. Given the open question about current California activity above, verifying this number directly with CSLB &mdash; including confirming the entity name matches &ldquo;Pro Custom Solar LLC&rdquo; or &ldquo;Momentum Solar&rdquo; as it appears on your specific contract &mdash; matters more here than on a page for an installer with an undisputed California presence. See our <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>full contractor-verification walkthrough</Link>.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-2'>
+                <strong>Questions to ask before you rely on any of this:</strong>
+              </p>
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>Do you currently install in my specific ZIP code in California, confirmed today, not based on past activity?</li>
+                <li>What&apos;s the legal entity name on my contract, and does CSLB #997872 (or whatever number you&apos;re given) match it exactly?</li>
+                <li>If you don&apos;t currently serve my area, can you name the licensed California installer who would actually complete the work?</li>
+                <li>For a comparison of California-active installers, see our <Link href='/best-solar-companies-california' className='text-primary underline'>Best Solar Companies in California guide</Link>.</li>
+              </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -138,7 +166,7 @@ export default function MomentumSolarReview() {
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>Should I get a PPA or lease with Momentum Solar?</h3>
-                  <p className='text-foreground/80 leading-relaxed'>Under a power-purchase agreement you pay per kilowatt-hour produced; under a lease you pay a fixed amount for the equipment regardless of production. Both leave the system owned by a third party, which means the owner claims any tax credit and the agreement has to be dealt with when you sell the home. Decide on four written terms rather than the label: the annual escalator, the term length, the end-of-term options, and the home-sale transfer provisions. Compare against buying outright in <a href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>cash, loan, lease and PPA obligations side by side</a>.</p>
+                  <p className='text-foreground/80 leading-relaxed'>Under a power-purchase agreement you pay per kilowatt-hour produced; under a lease you pay a fixed amount for the equipment regardless of production. Both leave the system owned by a third party, which means the owner claims any tax credit and the agreement has to be dealt with when you sell the home. Decide on four written terms rather than the label: the annual escalator, the term length, the end-of-term options, and the home-sale transfer provisions. Compare against buying outright in <a href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>cash, loan, lease and PPA obligations side by side</a>. Beyond those four terms, Momentum&apos;s own site this session only described financing in general terms &mdash; &ldquo;solar financing plans&rdquo; and &ldquo;battery storage financing options&rdquo; &mdash; without itemizing whether a straight cash purchase or a bank loan (as opposed to lease/PPA) is offered, or naming rates and terms for any of them. Not guessed at here; see the <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>Solar Lease vs. PPA vs. Loan vs. Cash explainer</Link> for what each financing type generally means.</p>
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>How does Momentum Solar compare to Sunrun?</h3>
@@ -155,6 +183,10 @@ export default function MomentumSolarReview() {
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>Does Momentum Solar use subcontractors?</h3>
                   <p className='text-foreground/80 leading-relaxed'>Ask, and get the answer in writing. Whatever the general model, the question that matters for your job is which licensed entity signs your contract and pulls the permit. Get that entity&apos;s California licence number and check it in the CSLB lookup below before signing.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>Does Momentum Solar currently install in California?</h3>
+                  <p className='text-foreground/80 leading-relaxed'>Its own site lists Connecticut, Florida, Massachusetts, Nevada, New Jersey, New York, and Texas as service states as of this session &mdash; California is not listed (<a href='https://www.momentumsolar.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>momentumsolar.com</a>, accessed September 22, 2026). Federal court records show the company has had some California-connected activity as recently as 2025, but that&apos;s not the same as active local installation today. Confirm directly by ZIP code before relying on a quote.</p>
                 </div>
               </div>
             </div>
