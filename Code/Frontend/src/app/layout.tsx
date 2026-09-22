@@ -253,6 +253,7 @@ export default async function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
+      data-site={domainKey}
       className={`${plusJakartaSans.variable} ${dmSerifDisplay.variable}`}
     >
       <head>

@@ -64,6 +64,79 @@
     --sidebar-ring: 188 84% 19%;
   }
 
+  /* =========================================================================
+     CRR (ratereliefca.com) — scoped design tokens (redesign, 2026-09-22)
+     =========================================================================
+     Scoped via the `data-site` attribute layout.tsx stamps on <html>, NOT
+     written into :root, because globals.css/tailwind.config.ts are shared
+     across all 5 hostnames (CRR, GRH, SHG, AHB, GLP1) and every shadcn/ui
+     primitive reads :root directly. `data-site={domainKey}` in layout.tsx
+     emits the actual DOMAIN_DEFAULTS key for this host, which for CRR is
+     "ratereliefca" (NOT the short "crr" code used elsewhere in the codebase,
+     e.g. ArticleJsonLd's `domain` prop) — this selector matches that real
+     runtime value on purpose.
+     `:root` and `[data-site="ratereliefca"]` both match the same <html>
+     element, so this is a specificity tie (0-1-0 vs 0-1-0); CSS resolves
+     ties by source order, and this block is written after :root, so it wins
+     with no !important needed. `.dark` is untouched — out of scope.
+     ========================================================================= */
+  [data-site="ratereliefca"] {
+    --background: 210 20% 98%;
+    --foreground: 217 33% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 33% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 33% 17%;
+
+    /* Deep blue primary (reviewer override, 2026-09-22 — plan's D.2 called
+       for a deepened teal; the owner's reviewer asked for deep blue instead).
+       White-on-primary contrast ≈10.6:1, see JOB_LOG / report for the full
+       recomputed contrast table. */
+    --primary: 216 72% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 95%;
+    --secondary-foreground: 217 33% 17%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 16% 42%;
+
+    /* Neutral hover-surface token (shadcn `accent` slot) — deliberately NOT
+       the warm CTA color, see D.3. accent-foreground = new primary. */
+    --accent: 210 20% 95%;
+    --accent-foreground: 216 72% 28%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 216 72% 28%;
+
+    --radius: 0.625rem;
+
+    --status-success: 142 71% 45%;
+    --status-warning: 38 92% 50%;
+    --status-error: 0 84% 60%;
+    --status-info: 188 43% 36%;
+
+    /* Chart ramp re-hued to the new primary's hue (216°), same 5-step
+       saturation/lightness structure as the plan's D.2 ramp. */
+    --chart-1: 216 88% 22%;
+    --chart-2: 216 60% 38%;
+    --chart-3: 216 45% 52%;
+    --chart-4: 216 35% 68%;
+    --chart-5: 216 45% 85%;
+
+    /* The one warm accent — CTA buttons only. Never wired into --accent
+       (see D.3): every outline/ghost button and dropdown/select hover state
+       is a shared shadcn primitive across all 5 domains. */
+    --cta: 21 90% 42%;
+    --cta-foreground: 0 0% 100%;
+  }
+
   .dark {
     --background: 200 20% 8%;
     --foreground: 188 15% 95%;
@@ -142,6 +215,90 @@
     font-family: 'DM Serif Display', serif;
     font-weight: 400;
     letter-spacing: -0.02em;
+  }
+
+  /* =========================================================================
+     CRR (ratereliefca.com) — scoped typography (D.4)
+     Attribute selector (0-1-1) beats the bare `h1, h2, ...` rule above
+     (0-0-1) within this same @layer base, so these win regardless of source
+     order. Mobile-first; desktop step applied at the md (768px) breakpoint,
+     matching the rest of the codebase's responsive convention.
+     ========================================================================= */
+  [data-site="ratereliefca"] body {
+    line-height: 1.65;
+  }
+
+  [data-site="ratereliefca"] h1,
+  [data-site="ratereliefca"] .crr-h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  [data-site="ratereliefca"] h2,
+  [data-site="ratereliefca"] .crr-h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+
+  [data-site="ratereliefca"] h3,
+  [data-site="ratereliefca"] .crr-h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  [data-site="ratereliefca"] h4,
+  [data-site="ratereliefca"] .crr-h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  [data-site="ratereliefca"] .crr-lede {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  [data-site="ratereliefca"] .crr-small {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  [data-site="ratereliefca"] .crr-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  @media (min-width: 768px) {
+    [data-site="ratereliefca"] h1,
+    [data-site="ratereliefca"] .crr-h1 {
+      font-size: 2.75rem;
+    }
+
+    [data-site="ratereliefca"] h2,
+    [data-site="ratereliefca"] .crr-h2 {
+      font-size: 2rem;
+    }
+
+    [data-site="ratereliefca"] h3,
+    [data-site="ratereliefca"] .crr-h3 {
+      font-size: 1.5rem;
+    }
+
+    [data-site="ratereliefca"] h4,
+    [data-site="ratereliefca"] .crr-h4 {
+      font-size: 1.25rem;
+    }
   }
 }
 
