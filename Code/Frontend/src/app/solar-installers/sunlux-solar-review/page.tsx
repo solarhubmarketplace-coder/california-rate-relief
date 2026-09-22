@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "Sunlux Solar Review 2026: One of SoCal's Higher-Rated Regional Installers",
-  datePublished: '2026-04-24', dateModified: '2026-04-24',
+  datePublished: '2026-04-24', dateModified: '2026-09-22',
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/sunlux-solar-review' },
@@ -53,9 +53,9 @@ export default function SunluxReview() {
                 Sunlux Solar Reviews (2026): One of SoCal&apos;s Higher-Rated Regional Installers
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-24'>Updated April 24, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-22'>Updated September 22, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>8 min read</span></div>
               </div>
             </header>
@@ -110,10 +110,43 @@ export default function SunluxReview() {
                 Sunlux provides standard 25-year equipment coverage and what the company describes as full component and workmanship guarantees. Specific terms vary by contract — get the warranty language in writing before signing, especially for workmanship length (10 years is common; 25 years is excellent).
               </p>
 
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Products: What Sunlux&apos;s Site Says</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunlux&apos;s own site doesn&apos;t name a specific panel brand — it cites &ldquo;world-leading solar manufacturers&rdquo; generically — but prominently features the Tesla Powerwall 3 as its battery, plus EV charging and electrical work (panel upgrades, subpanels, rewiring, outlets and breakers) alongside solar (<a href='https://sunlux.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>sunlux.com</a>, accessed September 22, 2026). The equipment section above instead names Panasonic panels, SolarEdge inverters, and LG batteries; we couldn&apos;t confirm those brands on Sunlux&apos;s reachable pages this session. Treat that as this page&apos;s own prior reporting rather than a current Sunlux claim, and confirm which brands are proposed with your rep before signing.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing: What Sunlux Doesn&apos;t Publish</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                A customer testimonial on <a href='https://sunlux.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>sunlux.com</a> mentions being offered &ldquo;a variety of financing options,&rdquo; and a separate testimonial mentions having &ldquo;bought the solar panels outright&rdquo; — but Sunlux does not publish a dedicated financing-terms page naming a lender, APR, term, or a formal cash/loan/lease menu on any page reached this session (accessed September 22, 2026). Combined with the note above that Sunlux focuses on cash and loan, ask directly whether your specific offer is a purchase (you own the system) or a use agreement (lease or PPA, someone else owns it) — that determines who can claim any tax credit and what happens at resale. For the tradeoffs in plain terms, see our guide to <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>compare cash, loan, lease, and PPA</Link>.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty and Guarantee: The Published Terms</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunlux&apos;s warranty page states: &ldquo;Every hardware component — including the solar panels, inverter and racking — is completely covered for 25 years,&rdquo; plus 24/7 system monitoring and access to Sunlux&apos;s Tech Support line (<a href='https://sunlux.com/solar-warranty/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>sunlux.com, Solar Warranty</a>, accessed September 22, 2026). Not stated on pages reached this session: a numeric production or output guarantee, a roof or leak warranty, a battery-specific term, or which purchase type the 25-year coverage applies to. Given the slow-response complaint pattern above, get the actual warranty document, not the marketing page, before signing.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Service Process and Selling the Home</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunlux runs separate service intake for new versus existing customers and lists repair coverage for panel, inverter, battery, EV charging, and racking equipment, with a main line and a separate service line (<a href='https://sunlux.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>sunlux.com</a>, accessed September 22, 2026). No written response-time commitment was found; the &ldquo;2–4 week&rdquo; figure above is a customer complaint, not a Sunlux commitment. Because Sunlux&apos;s own site emphasizes cash and loan ownership over lease or PPA, a financed-or-owned Sunlux system typically transfers with the home like any other home improvement — no separate assignment to file. If yours is a loan, ask your lender (not Sunlux) whether it must be paid off or can be assumed at closing.
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Sunlux Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Sunlux is a strong pick for SoCal cash or loan buyers who value a regional installer with in-house crews, competitive pricing, and above-average customer reputation metrics. It&apos;s particularly attractive if you&apos;re in Orange County, LA Metro, or coastal San Diego where Sunlux has its strongest service history. The main caveat is timeline. Expect standard California industry 3 to 6 months, and build margin in your planning.
               </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>CSLB Number and Questions to Ask</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                No CSLB license number appears on Sunlux&apos;s homepage or warranty page, the two pages reached this session. Don&apos;t rely on a third-party site&apos;s number — search &ldquo;Sunlux&rdquo; yourself at CSLB&apos;s <a href='https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx' target='_blank' rel='noopener noreferrer' className='text-primary underline'>Check License tool</a> and confirm the entity name matches your contract — the same step our guide to <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>verify a California solar contractor</Link> walks through.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-2 font-semibold'>Questions to ask before you sign:</p>
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>What is Sunlux&apos;s current CSLB license number, and does the business name match your contract?</li>
+                <li>Cash, loan, or lease/PPA — and if a loan, what&apos;s the APR, term, and is there a UCC-1 filing?</li>
+                <li>What&apos;s the exact production guarantee percentage, if any, written into the contract (not just marketing copy)?</li>
+                <li>What response-time commitment for a warranty repair is in writing?</li>
+                <li>Which panel, inverter, and battery models are proposed, and does the 25-year warranty cover all equally?</li>
+              </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
