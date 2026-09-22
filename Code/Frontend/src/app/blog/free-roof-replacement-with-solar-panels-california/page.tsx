@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "How to separate roof work, solar equipment and payment terms in a California proposal.",
     type: "article",
     url: "https://ratereliefca.com/blog/free-roof-replacement-with-solar-panels-california",
-    modifiedTime: "2026-09-18T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -40,7 +40,7 @@ export default function FreeRoofReplacementWithSolarCalifornia() {
       intro="A solar proposal can include roof work, but a headline does not establish that the roof is free. Compare the roof, solar equipment and payment terms as separate pieces before signing."
       path="/blog/free-roof-replacement-with-solar-panels-california"
       sources={sources}
-      sourceCheckedDate="2026-09-18"
+      sourceCheckedDate="2026-09-22"
       topic="Solar and roof proposal comparison"
     >
       <section>
@@ -86,9 +86,15 @@ export default function FreeRoofReplacementWithSolarCalifornia() {
         <p>
           A project may have no payment due at signing while still charging for
           roof work through a loan, lease, power-purchase agreement or other
-          contract. The California Public Utilities Commission warns consumers
-          to understand all costs over time rather than relying on a free-solar
-          claim. A roof proposal needs the same care.
+          contract &mdash; see{" "}
+          <Link className="underline" href="/blog/solar-ppa-explained-california">
+            How a Solar PPA Actually Works
+          </Link>{" "}
+          for how PPA payments are structured &mdash; the mechanism matters for
+          what &ldquo;free&rdquo; actually means in each case. The California
+          Public Utilities Commission warns consumers to understand all costs
+          over time rather than relying on a free-solar claim. A roof proposal
+          needs the same care.
         </p>
         <p className="mt-3">
           Ask for the solar scope, roof scope, financing agreement and any
@@ -175,6 +181,41 @@ export default function FreeRoofReplacementWithSolarCalifornia() {
       </section>
 
       <section>
+        <h2>Does DAC-SASH or another state program cover the roof?</h2>
+        <p>
+          No &mdash; not based on what the program&apos;s own administrator
+          publishes. GRID Alternatives, which administers DAC-SASH
+          (Disadvantaged Communities Single-family Solar Homes) statewide,
+          describes the program on its own site as bundling &ldquo;state
+          funding for solar with other local incentives and private
+          philanthropy to make solar technology available at low to no
+          cost&rdquo; (
+          <a
+            className="underline"
+            href="https://gridalternatives.org/what-we-do/program-administration/dac-sash"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GRID Alternatives, DAC-SASH Program
+          </a>
+          , accessed September 22, 2026) &mdash; the program&apos;s own
+          description covers the solar system, not roof work, and nothing on
+          GRID&apos;s page mentions roof replacement or roof repair as a
+          covered cost.
+        </p>
+        <p className="mt-3">
+          If your roof needs work before solar can go on it, that is a
+          separate expense outside DAC-SASH, SOMAH, or any other state
+          solar-assistance program this site has verified. For general
+          no-cost-solar eligibility (DAC-SASH, SOMAH, who qualifies), see{" "}
+          <Link className="underline" href="/blog/free-solar-panels-california">
+            Free Solar Panels in California
+          </Link>{" "}
+          rather than repeating it here.
+        </p>
+      </section>
+
+      <section>
         <h2>Verify the people and documents</h2>
         <ol className="list-decimal space-y-2 pl-5">
           <li>Obtain the license number for every contractor named in the work scope.</li>
@@ -183,6 +224,22 @@ export default function FreeRoofReplacementWithSolarCalifornia() {
           <li>Check that every claimed roof, solar, warranty and payment term appears in the signed documents.</li>
           <li>Keep copies of the proposal, disclosure documents and change orders for later roof, repair or sale questions.</li>
         </ol>
+        <p className="mt-3">
+          CPUC&apos;s{" "}
+          <a
+            className="underline"
+            href="https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            California Solar Consumer Protection Guide
+          </a>{" "}
+          (Version 4, 2025) specifically lists &ldquo;you can get free solar
+          energy at no cost to you&rdquo; as a red-flag claim providers should
+          not make &mdash; the same logic applies to a &ldquo;free roof&rdquo;
+          pitch: solar is rarely free, and a bundled roof is a financed cost,
+          not a waived one.
+        </p>
       </section>
 
       <section>
