@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { RelatedGuides } from '@/components/shared/RelatedGuides';
 import {
@@ -34,6 +35,23 @@ const lbnlPricing: Source = {
   label:
     'Lawrence Berkeley National Laboratory: 2026 Distributed Solar and Storage Pricing Data Update',
   url: 'https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf',
+};
+const cpucSolarConsumerGuide: Source = {
+  label: 'CPUC: California Solar Consumer Protection Guide',
+  url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide',
+};
+const irsObbbFaq: Source = {
+  label:
+    'IRS: FAQs on OBBB modifications to residential energy credits (Sections 25C/25D/etc.)',
+  url: 'https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb',
+};
+const irsForm5695: Source = {
+  label: 'IRS: 2025 Instructions for Form 5695 (Residential Energy Credits)',
+  url: 'https://www.irs.gov/instructions/i5695',
+};
+const dfpiPace: Source = {
+  label: 'California DFPI: PACE consumer protections',
+  url: 'https://dfpi.ca.gov/consumers/housing/pace/',
 };
 const link = 'text-emerald-800 underline underline-offset-2';
 const definitions = {
@@ -111,7 +129,9 @@ export type GuideKey = keyof typeof definitions;
 export function guideMetadata(key: GuideKey): Metadata {
   const d = definitions[key];
   const modifiedTime =
-    key === 'panels' || key === 'financing'
+    key === 'financing'
+      ? '2026-09-22T00:00:00Z'
+      : key === 'panels'
       ? '2026-09-11T00:00:00Z'
       : '2026-09-10T00:00:00Z';
   // `intro` is visible body copy (DecisionPage renders it as the opening
@@ -187,6 +207,101 @@ function FinancingTable() {
           ))}
         </tbody>
       </table>
+    </div>
+  );
+}
+function FourWayDetailTable() {
+  const rows: [string, string, string, string, string][] = [
+    ['Who owns the system', 'You', 'You', 'Solar provider', 'Solar provider'],
+    [
+      'Federal tax credit, for a system installed now',
+      "None — expenditures after 12/31/2025 don’t qualify",
+      'Same as cash: you own the equipment, but the credit ended for expenditures after 12/31/2025',
+      'Not applicable at any date — the credit is for your cost of buying the property, and a lease payment isn’t that',
+      'Not applicable at any date, same reason as a lease',
+    ],
+    [
+      'Monthly cost shape',
+      'None, after the one-time payment',
+      'Fixed loan payment (principal and interest) set by the loan term',
+      'Fixed monthly rent',
+      'Payment tracks the electricity the system actually produces, priced per kWh',
+    ],
+    [
+      'Escalator',
+      'None',
+      'None — the payment is fixed by the loan agreement',
+      'Typically increases 1%–3% a year over the prior year’s payment; CPUC’s guide advises caution above that range',
+      'Same 1%–3% typical range, applied to the per-kWh price',
+    ],
+    [
+      'What happens if you sell the home',
+      'System transfers with the house “just like any other major home improvement”',
+      'Same, but ask about payoff: some solar loans are secured against the home, and missed payments “could result in foreclosure”',
+      'Buyer assumes the contract, you keep paying, or you buy out the remaining value',
+      'Same three options as a lease',
+    ],
+    [
+      'Who maintains and repairs it',
+      'You',
+      'You',
+      'Provider is “responsible for all monitoring, maintenance, and repairs”',
+      'Same as lease',
+    ],
+    [
+      'Buyout terms',
+      'Not applicable — no buyout, you already own it',
+      'Pay off the remaining loan balance',
+      'CPUC’s guide sets no fixed formula, only that a buyout “could be thousands of dollars”',
+      'Same as lease',
+    ],
+  ];
+  return (
+    <div className="overflow-x-auto rounded-xl border">
+      <table className="w-full text-left text-sm">
+        <caption className="p-4 text-left font-semibold">
+          Cash, loan, lease and PPA: ownership, cost and what changes at sale
+        </caption>
+        <thead className="bg-slate-100">
+          <tr>
+            <th className="p-3"></th>
+            <th className="p-3">Cash purchase</th>
+            <th className="p-3">Solar loan</th>
+            <th className="p-3">Lease</th>
+            <th className="p-3">PPA</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row[0]} className="border-t">
+              <th scope="row" className="p-3 align-top">
+                {row[0]}
+              </th>
+              {row.slice(1).map((cell, i) => (
+                <td key={i} className="p-3 align-top">
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="border-t bg-slate-50 p-3 text-xs text-slate-600">
+        Checked September 22, 2026 against the{' '}
+        <a className={link} href={cpucSolarConsumerGuide.url}>
+          CPUC California Solar Consumer Protection Guide
+        </a>{' '}
+        (ownership, escalator range, sale and buyout terms, maintenance
+        responsibility) and the IRS&rsquo;s{' '}
+        <a className={link} href={irsForm5695.url}>
+          2025 Form 5695 instructions
+        </a>{' '}
+        and{' '}
+        <a className={link} href={irsObbbFaq.url}>
+          OBBB tax-law FAQs
+        </a>{' '}
+        (federal tax credit).
+      </p>
     </div>
   );
 }
@@ -445,6 +560,122 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
         <FinancingTable />
         <SolarFinancingComparison />
         <section>
+          <h2>The federal tax credit changed for a system installed now</h2>
+          <p>
+            The{' '}
+            <a className={link} href={irsForm5695.url}>
+              IRS confirms
+            </a>{' '}
+            the Residential Clean Energy Credit — the 30% credit homeowners
+            could claim for buying a solar system — is over for new installs:
+            “You can’t claim residential clean energy credits for
+            expenditures made after December 31, 2025.” A separate{' '}
+            <a className={link} href={irsObbbFaq.url}>
+              IRS FAQ on the same law
+            </a>{' '}
+            is more specific about timing: “If installation is completed
+            after December 31, 2025, the expenditure will be treated as made
+            after December 31, 2025, which will prevent the taxpayer from
+            claiming the section 25D credit.” Installation date controls, not
+            when you signed the contract or made a deposit.
+          </p>
+          <p className="mt-3">
+            That credit was only ever available to the person who bought the
+            system. The IRS describes it as a percentage of “your costs of
+            qualified solar electric property” — a purchase cost, not a
+            rental payment or a per-kWh charge. A lease payment or a PPA’s
+            electricity price was never “your cost” of buying the property,
+            so lease and PPA customers were not the ones claiming this credit
+            even when it was active. For anyone installing now, the credit
+            doesn’t change the cash-vs-loan-vs-lease-vs-PPA decision at all,
+            because none of the four paths gets it anymore.
+          </p>
+        </section>
+        <section>
+          <h2>Four-way comparison</h2>
+          <p>
+            Every row below is sourced to California’s own consumer guide or
+            the IRS — see “Sources checked” below for the full links.
+          </p>
+          <FourWayDetailTable />
+        </section>
+        <section>
+          <h2>Which one, when</h2>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>
+              <strong>Cash</strong> fits if you have the capital, want to own
+              the system with no monthly payment and no loan lien to think
+              about, and are comfortable handling your own maintenance and
+              repairs.
+            </li>
+            <li>
+              <strong>Loan</strong> fits if you want the same ownership and
+              maintenance responsibility as a cash purchase but need to
+              spread the cost out. Confirm whether the loan is secured
+              against the home before signing — some solar loans place a
+              lien on the property, and CPUC’s guide is direct that this
+              “could result in foreclosure” if payments are missed.
+            </li>
+            <li>
+              <strong>Lease</strong> fits if a fixed, predictable monthly
+              payment matters more than ownership, and you’d rather the
+              provider handle all monitoring, maintenance and repairs. See{' '}
+              <Link
+                className={link}
+                href="/solar-problems/solar-escalator-clause-explained"
+              >
+                how solar escalator clauses work
+              </Link>{' '}
+              and{' '}
+              <Link
+                className={link}
+                href="/blog/what-happens-if-stop-paying-solar-lease-california"
+              >
+                what happens if you stop paying a solar lease
+              </Link>{' '}
+              before you sign.
+            </li>
+            <li>
+              <strong>PPA</strong> fits the same profile as a lease, except
+              the payment tracks actual production instead of a flat rent —
+              useful if you’d rather pay only for power the system produces,
+              with the tradeoff that the payment can move with weather and
+              system performance in a way a flat lease payment does not. See{' '}
+              <Link className={link} href="/blog/solar-ppa-vs-lease-california">
+                a closer look at lease vs. PPA
+              </Link>
+              .
+            </li>
+            <li>
+              The federal credit no longer separates these paths: it doesn’t
+              apply to any of the four for a system installed now, so it
+              isn’t a reason to prefer ownership (cash or loan) over a lease
+              or PPA the way it was before 2026.
+            </li>
+          </ul>
+          <p className="mt-4">
+            For more detail on any one path:{' '}
+            <Link
+              className={link}
+              href="/blog/is-it-better-to-buy-or-lease-solar-panels-california"
+            >
+              buy vs. lease, in more depth
+            </Link>
+            ,{' '}
+            <Link
+              className={link}
+              href="/blog/how-much-does-it-cost-to-lease-solar-panels-california"
+            >
+              what a solar lease costs in California
+            </Link>
+            , or{' '}
+            <Link className={link} href="/blog/solar-ppa-explained-california">
+              how a solar PPA works
+            </Link>
+            .
+          </p>
+        </section>
+        <section>
           <h2>A fair PPA-versus-ownership comparison</h2>
           <p>
             Use the same annual production, self-consumption, battery
@@ -478,6 +709,86 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             responsible company named in the paperwork.
           </p>
         </section>
+        <section>
+          <h2>Questions to ask before you sign</h2>
+          <p>
+            The sections above already cover escalator questions and what
+            happens to the contract on a roof change or ownership change.
+            Beyond those, ask:
+          </p>
+          <ol className="list-decimal space-y-3 pl-5">
+            <li>
+              <strong>
+                Is this a standard solar loan, or a PACE assessment repaid
+                through your property tax bill?
+              </strong>{' '}
+              If it’s PACE, the{' '}
+              <a className={link} href={dfpiPace.url}>
+                DFPI requires
+              </a>{' '}
+              the program administrator to get your oral confirmation of the
+              key terms and check your reasonable ability to repay before
+              work begins.
+            </li>
+            <li>
+              <strong>Is the loan secured against your home?</strong> CPUC’s
+              guide flags this directly — some solar loans place a lien on
+              the property, and missed payments “could result in
+              foreclosure.” See{' '}
+              <Link
+                className={link}
+                href="/solar-problems/ucc-1-lien-solar-california"
+              >
+                UCC-1 liens on solar loans
+              </Link>{' '}
+              for what that filing actually attaches to.
+            </li>
+            <li>
+              <strong>
+                What is the APR, and will this loan make it harder to sell or
+                refinance the home?
+              </strong>{' '}
+              Both are CPUC’s own suggested questions to put to a lender.
+            </li>
+            <li>
+              <strong>
+                If a salesperson mentions a federal tax credit, ask for the
+                exact installation completion date it would apply to.
+              </strong>{' '}
+              The residential credit doesn’t apply to any system with
+              expenditures made after December 31, 2025, regardless of
+              financing type.
+            </li>
+            <li>
+              <strong>
+                How exactly is a lease or PPA buyout priced if you sell
+                before the contract ends?
+              </strong>{' '}
+              CPUC’s guide confirms a buyout is possible but sets no formula
+              — get the actual number from the provider, in writing, before
+              you sign. See{' '}
+              <Link
+                className={link}
+                href="/blog/what-happens-to-solar-lease-when-i-sell-california"
+              >
+                what happens to a solar lease when you sell your home
+              </Link>
+              .
+            </li>
+            <li>
+              <strong>What’s your right to cancel?</strong> California gives
+              you at least three business days to cancel a solar contract for
+              any reason, five if you’re 65 or older — see{' '}
+              <Link
+                className={link}
+                href="/blog/can-you-cancel-solar-panel-contract-before-installation-california"
+              >
+                your right to cancel a solar contract
+              </Link>{' '}
+              for the full mechanics.
+            </li>
+          </ol>
+        </section>
         <QuoteChecklist />
         <section>
           <h2>Keep incentives outside the base comparison</h2>
@@ -508,7 +819,10 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
         />
       </>
     );
-  if (kind === 'financing') sourceCheckedDate = '2026-09-11';
+  if (kind === 'financing') {
+    sources = [consumer, nem, cpucSolarConsumerGuide, irsForm5695, irsObbbFaq, dfpiPace];
+    sourceCheckedDate = '2026-09-22';
+  }
   if (kind === 'nem')
     content = (
       <>
