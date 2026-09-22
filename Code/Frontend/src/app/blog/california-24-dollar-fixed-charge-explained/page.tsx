@@ -68,13 +68,12 @@ export default function FixedChargeExplained() {
             {/* Article Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                If you&apos;ve noticed a new line item on your California
-                electric bill that wasn&apos;t there before, this is probably it.
-                Starting in late 2025 and rolling into early 2026, PG&E, SCE, and
-                SDG&E all added a monthly fixed charge of approximately $24 to
-                every residential electric bill. Here&apos;s what it actually is,
-                why it exists, whether you can reduce it, and how it affects the
-                math on solar.
+                PG&amp;E, SCE and SDG&amp;E all added a new monthly fixed
+                charge of approximately $24 to residential electric bills,
+                phased in starting late 2025 into early 2026. It shows up as
+                its own line item, separate from usage charges. Below: what
+                it is, why it exists, whether you can reduce it, and how it
+                changes the math on solar.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

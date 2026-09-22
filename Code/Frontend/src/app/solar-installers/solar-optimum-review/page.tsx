@@ -11,15 +11,15 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Solar Optimum Reviews (2026): Ratings & Lawsuit Check",
-  description: "Solar Optimum reviews across platforms, its 25-year warranty structure, and a sourced, dated check of the federal court record.",
+  title: "Solar Optimum Reviews: Warranty & Lawsuit Check (2026)",
+  description: "See what's independently verifiable about Solar Optimum: warranty terms and a court-record check, current as of September 2026.",
   alternates: { canonical: '/solar-installers/solar-optimum-review' },
 };
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: "Solar Optimum Review 2026: Ratings, Warranty and Lawsuit Check",
+  headline: "Solar Optimum Reviews: Warranty & Lawsuit Check (2026)",
   datePublished: '2026-04-22',
   dateModified: '2026-09-18',
   author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
@@ -47,7 +47,7 @@ export default function SolarOptimumReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Solar Optimum Reviews (2026): Ratings, Warranty and Lawsuit Check
+                Solar Optimum Reviews: What&apos;s Verifiable (Warranty, Lawsuit Check, 2026)
               </h1>
               
               <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
@@ -59,7 +59,7 @@ export default function SolarOptimumReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Solar Optimum is a Glendale, California residential solar contractor. This page sets out what can be checked about the company from primary sources and what cannot. It states no star rating, no review count, no complaint count, no employee or revenue figure and no award: those figures previously appeared here but could not be re-verified at their own sources when this page was checked on <strong>September 18, 2026</strong>, so they have been removed rather than carried forward with a stale date. What follows is the equipment and warranty structure, and a dated search of the federal court record.
+                Solar Optimum is a Glendale, California solar contractor, and this page reports only what could be independently verified about the company as of <strong>September 18, 2026</strong>. It does not publish a star rating, review count or complaint count, because those figures could not be re-confirmed at their original sources. What follows is the equipment and warranty structure, plus a dated federal court-record check.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Corporate Profile</h2>

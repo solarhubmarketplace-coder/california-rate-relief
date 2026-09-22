@@ -19,16 +19,16 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Selling a CA Home With a Solar Lease or PPA: What to Check",
+  title: "Selling a CA Home With Solar Lease or PPA: Buyout Guide",
   description:
-    "Selling a California home with a solar lease or PPA? Check the transfer, payment, buyout, and disclosure terms in the signed agreement first.",
+    "Selling a home with a solar lease or PPA? See how transfer, buyout and end-of-term options work before you list.",
   alternates: {
     canonical: "/blog/what-happens-to-solar-lease-when-i-sell-california",
   },
   openGraph: {
-    title: "Selling a California home with a solar lease or PPA: documents to check",
+    title: "Selling a CA Home With Solar Lease or PPA: Buyout Guide",
     description:
-      "A contract-first checklist for a California home sale involving a solar lease or PPA.",
+      "Selling a home with a solar lease or PPA? See how transfer, buyout and end-of-term options work before you list.",
     type: "article",
     url: "https://ratereliefca.com/blog/what-happens-to-solar-lease-when-i-sell-california",
     modifiedTime: "2026-09-11T00:00:00Z",
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
 export default function SolarLeaseHomeSaleCA() {
   return (
     <DecisionPage
-      title="Selling a California home with a solar lease or PPA: documents to check"
-      intro="A solar lease or power-purchase agreement can continue beyond a home sale. The contract controls the available transfer, payment and end-of-term paths, so collect the documents before listing rather than relying on a general rule."
+      title="Selling a California Home With a Solar Lease or PPA: Transfer or Buyout"
+      intro="A solar lease or power-purchase agreement doesn't end when you sell — it can transfer to the buyer, be bought out, or reach an end-of-term option, depending on what the contract allows. The contract itself controls which of those paths are available, so pull the actual documents before you list rather than relying on a general rule. This page covers transfer, buyout and end-of-term, in that order."
       path="/blog/what-happens-to-solar-lease-when-i-sell-california"
       sources={sources}
       sourceCheckedDate="2026-09-11"

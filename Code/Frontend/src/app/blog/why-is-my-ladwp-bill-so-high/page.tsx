@@ -7,9 +7,9 @@ import { Footer } from "@/components/landing/Footer";
 import { ArticleJsonLd } from "@/components/shared/ArticleJsonLd";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 
-const title = "Why Is My LADWP Bill So High? Rates, Fees, and Billing Days";
+const title = "Why Is My LADWP Bill So High? Rates & Fees Explained";
 const description =
-  "Separate electricity from water and sanitation, compare billing days, and check your LADWP rate schedule (R-1A or R-1B) before assuming a rate hike.";
+  "See what makes an LADWP bill jump: water and sanitation charges, an old balance, daily usage and your rate plan.";
 const path = "/blog/why-is-my-ladwp-bill-so-high";
 const linkStyle = "text-primary underline underline-offset-2";
 const sources = {
@@ -71,9 +71,12 @@ export default function WhyIsMyLADWPBillSoHigh() {
               Why Is My LADWP Bill So High?
             </h1>
             <p className="text-lg text-muted-foreground">
-              Start with the electricity subtotal. Your total amount due can
-              include water, sanitation and an old balance. Once those are
-              separated, compare daily usage, billing dates and the rate plan.
+              Your LADWP bill total isn&apos;t just electricity — it can
+              include water, sanitation charges and any old balance carried
+              over, so start by separating those out. Once you&apos;re
+              looking at the electricity subtotal alone, compare your daily
+              usage, billing dates and rate plan against a typical month. The
+              breakdown below walks through each of these in order.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
               <Link href="/author/chad-simpson" className={linkStyle}>

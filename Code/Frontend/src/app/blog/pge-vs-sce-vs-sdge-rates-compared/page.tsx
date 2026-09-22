@@ -35,7 +35,7 @@ export default function UtilityRatesCompared() {
             </nav>
             <header className='mb-6 md:mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Utility Rates</span>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>PG&amp;E vs. SCE vs. SDG&amp;E: Which California Utility Customers Pay the Most in 2026?</h1>
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>PG&amp;E vs. SCE vs. SDG&amp;E: How Their Rates Compare in 2026</h1>
               <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground'>
                 <Link href='/author/chad-simpson' className='font-medium text-foreground hover:text-primary'>By Chad Simpson</Link>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-18'>Updated September 18, 2026</time></div>
@@ -47,7 +47,7 @@ export default function UtilityRatesCompared() {
             <div className='prose prose-slate max-w-none'>
               <div className='rounded-xl border border-border bg-muted/30 p-5 mb-6'>
                 <p className='font-semibold text-foreground mb-2'>Quick answer</p>
-                <p className='text-foreground/80 m-0'>SDG&amp;E is the most expensive by average residential rate. But SCE&apos;s sample hot-climate bill was the highest in the state&apos;s June report because those households used more electricity. The utility name tells only half the story. Usage and location finish it.</p>
+                <p className='text-foreground/80 m-0'>SDG&amp;E has the highest average residential rate of the three; PG&amp;E and SCE are close behind depending on your usage and climate zone. If you&apos;re comparing PG&amp;E specifically to SDG&amp;E, or to SCE, the utility name only explains part of the difference &mdash; how much electricity you use and where you live account for the rest. The breakdown below covers each pairing directly.</p>
               </div>
 
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>

@@ -65,12 +65,12 @@ const definitions = {
   },
   seniors: {
     path: "/blog/free-solar-for-seniors-california",
-    title: "Free solar for seniors in California: check the actual program",
+    title: "Free Solar for Seniors in California: Which Programs Actually Apply",
     intro:
-      "Start with the program name. Being a senior does not, by itself, establish solar-program eligibility. Income, the property, the utility and available funding need to be checked.",
-    metaTitle: "Free Solar for Seniors in California: Check DAC-SASH First",
+      "Being a senior does not, by itself, qualify you for free solar in California. Eligibility depends on your income, your property, your utility territory and whether program funding is currently available — starting with DAC-SASH, the state's low-income solar program. This page checks what actually applies to you, not just what the ads promise.",
+    metaTitle: "Free Solar for Seniors in California: Are You Eligible?",
     metaDescription:
-      "Age alone does not qualify you for free solar in California. Check DAC-SASH income and property rules before signing anything. SASH is closed.",
+      "Being a senior alone doesn't qualify you for free solar in California — see which income and utility-based programs actually apply.",
   },
   // 2026-09-17 refresh (claude/ca-green-20260918). The 2026-09-10 reviewed
   // wording was: title "Free solar panels in California: what does the offer

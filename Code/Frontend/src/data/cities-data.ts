@@ -2959,7 +2959,7 @@ export const CITIES: CityData[] = [
     systemSizeKw: 8.0,
     systemCostCash: 28000,
     introText:
-      'San Mateo is a prosperous Peninsula city of around 105,000 residents, located between San Francisco and San Jose. Part of the Silicon Valley region, San Mateo benefits from a strong economy and educated population, but residents face two major solar challenges: persistent coastal fog and PG&E\'s high rates. Nevertheless, clever design and energy management can still make solar valuable, especially when paired with storage for evening peak hours.',
+      'Solar in San Mateo comes with two factors a generic cost estimate misses: persistent coastal fog, which cuts into production, and PG&E\'s above-average rates, which change the payback math. The cost and savings breakdown below accounts for both, before getting into city background. Compare your own roof and usage against these local factors rather than a statewide average.',
     electricitySection:
       'The average San Mateo household on PG&E pays approximately $240 per month for electricity, or about $2,880 per year. PG&E\'s rate of 41.46¢/kWh with peak TOU rates of 55-67¢ makes San Mateo bills substantial. The marine layer fog characteristic of the Peninsula reduces solar output approximately 15% June through August compared to inland areas. The $24 Base Services Charge applies to all PG&E customers.',
     solarPotentialText:

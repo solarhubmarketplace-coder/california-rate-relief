@@ -72,12 +72,12 @@ const definitions = {
   },
   financing: {
     path: '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
-    title: 'Solar PPA vs loan, lease and cash in California',
+    title: 'Solar Lease vs. PPA vs. Loan vs. Cash Purchase in California',
     intro:
-      'Compare the same system before comparing payments. A PPA purchases power; a loan finances equipment. The monthly number means something different in each contract.',
-    metaTitle: 'PPA vs Loan vs Lease vs Cash: Solar in California',
+      'A solar lease and a PPA both mean you don’t own the system: with a lease you pay a fixed monthly rent, with a PPA you pay for the power it produces. A loan and a cash purchase both mean you own the system: a loan finances it over time, while cash pays for it outright from day one with no ongoing third-party payment. Compare the same system size across all four financing paths before comparing the payment amounts, since each one prices a different thing.',
+    metaTitle: 'Solar Lease vs. PPA vs. Purchase: California Guide',
     metaDescription:
-      'Compare cash, loan, lease and PPA the same way: same system and production, plus what each contract actually obligates you to pay.',
+      'Solar lease, PPA and cash purchase, compared side by side for California homes: what you own, what you pay monthly, and how the numbers differ.',
   },
   nem: {
     path: '/blog/what-is-nem-3-california',
@@ -99,9 +99,9 @@ const definitions = {
   },
   sdge: {
     path: '/blog/sdge-time-of-use-rates-2026',
-    title: 'SDG&E time-of-use rates: compare your 2026 bill',
+    title: 'SDG&E Time-of-Use Rates: TOU-DR1 Peak Hours Explained',
     intro:
-      'Start with the rate-plan name and the generation provider on your bill. SDG&E’s delivery price alone is not the complete price for a community choice customer.',
+      'SDG&E’s TOU-DR1 residential plan has a peak and off-peak window that runs 4–9 p.m. every day, including weekends — that’s what most searchers are actually looking for. Your generation provider, whether SDG&E or a community choice aggregator, is billed separately from delivery, but the plan’s hourly schedule is what determines when you pay the higher rate. This page opens with the TOU-DR1 hours, then explains how generation charges add to the delivery price.',
     metaTitle: 'SDG&E Time-of-Use Rates (2026): Compare Your Plan',
     metaDescription:
       "See which SDG&E time-of-use plan is on your bill and what it costs. Peak runs 4-9 p.m. for TOU-DR1 and TOU-DR2, including weekends.",
