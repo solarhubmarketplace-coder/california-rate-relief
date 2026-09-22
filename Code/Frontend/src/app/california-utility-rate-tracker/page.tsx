@@ -14,12 +14,23 @@ import {
   Q3_2025_URL,
   Q2_2025_URL,
   DECISION_24_05_028_URL,
-  SMUD_SCHEDULE_R_URL,
+  SMUD_RATE_GUIDE_URL,
+  SMUD_RESIDENTIAL_RATES_URL,
   LADWP_STALE_PDF_URL,
+  LADWP_RESIDENTIAL_RATES_URL,
   PAO_REPORTS_INDEX_URL,
   formatAverageRateWithPerKwh,
   getUtilityRate,
 } from '@/data/utility-rate-tracker';
+
+// Page-specific driver sources cited in "Why Rates Moved in 2026" and the
+// Income-Graduated Fixed Charge section — not rate figures, so they live here
+// rather than in the shared data file. Sourced from the 2026-09-22 reviewed
+// draft's source ledger (rows 17 and 20).
+const SMUD_RATE_FACTSHEET_URL =
+  'https://www.smud.org/-/media/Documents/Rate-Information/2026-2027-Rate-Action/0211-25_RatesProposal_Factsheet--F.ashx';
+const PGE_BASE_SERVICES_CHARGE_URL =
+  'https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html';
 
 // =============================================================================
 // California Utility Rate Tracker — /california-utility-rate-tracker
@@ -36,14 +47,15 @@ import {
 // The single CTA below the content is the standing site component.
 // =============================================================================
 
-const title = 'CA Utility Rate Tracker: PG&E, SCE, SDG&E Rates';
+const title = 'California Utility Rate Tracker: PG&E, SCE, SDG&E, SMUD';
 const description =
-  'Sourced, dated tracker of PG&E, SCE, and SDG&E residential electric rates, fixed charges, and rate history — updated monthly from CPUC data.';
+  "See current average residential electric rates for PG&E, SCE, SDG&E and SMUD, verified against CPUC and utility sources on Sept. 22, 2026.";
 const canonicalPath = '/california-utility-rate-tracker';
 const canonicalUrl = `https://ratereliefca.com${canonicalPath}`;
-const lastUpdated = '2026-09-18';
-const lastUpdatedDisplay = 'September 18, 2026';
-const dataVerifiedDisplay = '17 Sep 2026';
+const datePublished = '2026-09-18';
+const lastUpdated = '2026-09-22';
+const lastUpdatedDisplay = 'September 22, 2026';
+const dataVerifiedDisplay = '22 Sep 2026';
 
 export const metadata: Metadata = {
   title,
@@ -54,7 +66,7 @@ export const metadata: Metadata = {
     description,
     type: 'article',
     publishedTime: '2026-09-18T00:00:00Z',
-    modifiedTime: '2026-09-18T00:00:00Z',
+    modifiedTime: '2026-09-22T00:00:00Z',
     url: canonicalUrl,
   },
 };
@@ -98,13 +110,15 @@ const datasetJsonLd = {
     Q2_2025_URL,
     DECISION_24_05_028_URL,
   ],
-  datePublished: lastUpdated,
+  datePublished,
   dateModified: lastUpdated,
 };
 
 const TOC: Array<{ id: string; label: string }> = [
   { id: 'current-rates', label: 'Current Average Residential Rates by Utility' },
   { id: 'what-changed', label: 'What Changed This Month' },
+  { id: 'why-rates-moved', label: 'Why Rates Moved in 2026' },
+  { id: 'read-rate-schedule', label: 'How to Read a Rate Schedule' },
   { id: 'rate-history', label: '12-Month Rate History' },
   { id: 'igfc', label: 'The Income-Graduated Fixed Charge, Explained' },
   { id: 'pge-history', label: 'PG&E Rate History and Recent Changes' },
@@ -121,9 +135,9 @@ export default function CaliforniaUtilityRateTrackerPage() {
       <ArticleJsonLd
         variant='Article'
         domain='crr'
-        headline='California Utility Rate Tracker'
+        headline={title}
         url={canonicalUrl}
-        datePublished={lastUpdated}
+        datePublished={datePublished}
         dateModified={lastUpdated}
         description={description}
       />
@@ -143,7 +157,7 @@ export default function CaliforniaUtilityRateTrackerPage() {
 
             <header className='mb-8'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Utility Rates &middot; Reference</span>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>California Utility Rate Tracker</h1>
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>California Utility Rate Tracker: Current PG&amp;E, SCE, SDG&amp;E and SMUD Rates</h1>
               <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground'>
                 <Link href='/author/chad-simpson' className='font-medium text-foreground hover:text-primary'>By Chad Simpson</Link>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime={lastUpdated}>Updated {lastUpdatedDisplay}</time></div>
@@ -158,7 +172,7 @@ export default function CaliforniaUtilityRateTrackerPage() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                California&apos;s big investor-owned utilities change their electricity rates several times a year, and the changes are buried in regulatory filings most people never see. This page collects, in one place, the current average residential rate for California&apos;s major electric utilities, how that rate has moved over the last year and over time, and the fixed monthly charges that ride along with it &mdash; all sourced directly from the California Public Utilities Commission&apos;s own watchdog office and each utility&apos;s own published tariffs. It exists so a reporter, researcher or ratepayer can find a sourced, dated number without digging through PDFs.
+                As of June 2026, the average California residential electricity rate is 33.7&cent;/kWh at PG&amp;E, 34.4&cent;/kWh at SCE, and 45.5&cent;/kWh at SDG&amp;E, based on the CPUC Public Advocates Office&apos;s most recent quarterly rate report. SMUD customers on the Fixed Rate plan &mdash; an opt-in alternative to SMUD&apos;s default Time-of-Day rate &mdash; pay a $27.00 monthly fixed charge plus 13.71&cent;/kWh (October&ndash;May) or 21.89&cent;/kWh (June&ndash;September), effective January 1, 2026. These figures &mdash; and the income-graduated fixed charge now in effect at all three investor-owned utilities &mdash; are checked against CPUC and utility sources below, last verified September 22, 2026.
               </p>
               <p className='text-sm text-foreground/70 mb-8'>This is a reference page, not a savings estimate. It does not compare solar, name an installer, or state what any household would save. Figures are restated exactly as the cited sources report them, with the one exception noted below: the 12-month change figures, which this page calculates itself and labels as such.</p>
 
@@ -225,13 +239,13 @@ export default function CaliforniaUtilityRateTrackerPage() {
                     </tr>
                     <tr className='border-b border-border align-top'>
                       <td className='py-3 pr-3 font-semibold'>SMUD&sup1;</td>
-                      <td className='py-3 px-3'>Fixed $26.20/month + 13.31&cent;/kWh (Oct&ndash;May) / 21.26&cent;/kWh (Jun&ndash;Sep) on Schedule R (RF01)</td>
-                      <td className='py-3 px-3'>Effective May 1, 2025 (document version dated June 20, 2025)</td>
+                      <td className='py-3 px-3'>Fixed Rate plan (opt-in): $27.00/month + 13.71&cent;/kWh (Oct&ndash;May) / 21.89&cent;/kWh (Jun&ndash;Sep)</td>
+                      <td className='py-3 px-3'>Effective January 1, 2026 &mdash; supersedes the May 2025 figures previously shown here</td>
                       <td className='py-3 px-3'>Not sourced (see note 1 below) &mdash; SMUD does not publish a CPUC-style blended average rate</td>
-                      <td className='py-3 px-3'>May 1, 2025 (current version)</td>
+                      <td className='py-3 px-3'>January 1, 2026 (current version); a further &asymp;3% adjustment is board-approved for January 1, 2027</td>
                       <td className='py-3 px-3'>Not sourced (see note 1 below)</td>
-                      <td className='py-3 px-3'>$26.20/month base charge on Schedule R</td>
-                      <td className='py-3 px-3'><a href={SMUD_SCHEDULE_R_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD Residential Rate Schedule R</a></td>
+                      <td className='py-3 px-3'>$27.00/month System Infrastructure Fixed Charge (SIFC)</td>
+                      <td className='py-3 px-3'><a href={SMUD_RATE_GUIDE_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD 2026 Residential Rate Guide</a></td>
                       <td className='py-3 pl-3'>{dataVerifiedDisplay}</td>
                     </tr>
                     <tr className='align-top'>
@@ -249,8 +263,8 @@ export default function CaliforniaUtilityRateTrackerPage() {
                 </table>
               </div>
               <p className='text-foreground/60 text-xs mb-2'>PG&amp;E, SCE and SDG&amp;E figures: CPUC Public Advocates Office, <a href={Q2_2026_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>, p.8, 20, 22, 24. Fetched {dataVerifiedDisplay}.</p>
-              <p className='text-foreground/60 text-xs mb-2'><strong>Note 1 (SMUD):</strong> SMUD is a publicly owned utility and is not covered by the CPUC Public Advocates Office reports. SMUD does not publish a single blended, CPUC-style average rate, so no comparable 12-month change or &ldquo;most recent change&rdquo; percentage can be sourced for it. The $26.20/month figure differs from the &asymp;$27/month figure sometimes referenced elsewhere; $26.20 is the figure printed in the sourced schedule. A 2026/2027 SMUD board-approved rate change was not found this pass (the &ldquo;2026-2027 proposed rate changes&rdquo; page returned a 404).</p>
-              <p className='text-foreground/60 text-xs mb-8'><strong>Note 2 (LADWP):</strong> LADWP is a publicly owned utility and is not covered by the CPUC Public Advocates Office reports. The only LADWP tariff document retrievable in this research pass (<a href={LADWP_STALE_PDF_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>ladwp.com/.../LADWP_Electric_Rates.pdf</a>) is dated July 1, 2009 and is not current; the ladwp.com residential-rates page and the rates.ladwp.com portal returned access errors to the research tool. No current LADWP rate is published on this page as a result.</p>
+              <p className='text-foreground/60 text-xs mb-2'><strong>Note 1 (SMUD):</strong> SMUD is a publicly owned utility and is not covered by the CPUC Public Advocates Office reports, and it does not publish a single blended, CPUC-style average rate, so no comparable 12-month change or &ldquo;most recent change&rdquo; percentage can be sourced for it. The figures above are for SMUD&apos;s Fixed Rate plan, an opt-in alternative &mdash; SMUD&apos;s actual default rate for smart-meter customers is the Time-of-Day (5&ndash;8 p.m.) Rate, not the flat rate shown here; see <a href={SMUD_RESIDENTIAL_RATES_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD&apos;s own rate page</a> for those figures. SMUD raised rates 3% effective January 1, 2026, superseding the $26.20/month + 13.31&cent;/21.26&cent; figures previously shown here, and its board has approved a further &asymp;3% adjustment effective January 1, 2027.</p>
+              <p className='text-foreground/60 text-xs mb-8'><strong>Note 2 (LADWP):</strong> LADWP is a municipal utility outside CPUC jurisdiction, and unlike PG&amp;E, SCE and SDG&amp;E it doesn&apos;t publish a single composite average-residential-rate figure. Its residential rate page uses zone- and tier-based pricing (Zone 1 vs. Zone 2, with usage tiers inside each) and points customers to Schedule R-1 for the actual per-kWh dollar figures rather than stating one blended number. The most recent full LADWP rate-summary document we could locate (<a href={LADWP_STALE_PDF_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>ladwp.com/.../LADWP_Electric_Rates.pdf</a>) was dated 2019, so we&apos;re not publishing a current LADWP cents/kWh figure until we can verify one against a current primary source. For your specific rate, use <a href={LADWP_RESIDENTIAL_RATES_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP&apos;s residential electric rates page</a>.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-8 mb-3'>Officially reported multi-year change (source-stated, not calculated)</h3>
               <div className='overflow-x-auto mb-3 not-prose'>
@@ -292,6 +306,26 @@ export default function CaliforniaUtilityRateTrackerPage() {
               </ul>
               <p className='text-sm text-foreground/70'>No savings estimate, solar comparison or program-eligibility claim is made anywhere in this section; it restates only what the cited sources state. Source: <a href={Q2_2026_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>. Fetched {dataVerifiedDisplay}.</p>
 
+              <h2 id='why-rates-moved' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>Why Rates Moved in 2026</h2>
+              <p><strong>PG&amp;E (&minus;3.7%, effective March 1, 2026).</strong> Two wildfire-cost recovery programs finished paying off their balances &mdash; the 2021 Wildfire Mitigation and Catastrophic Events (WMCE) charge and its Interim Rate Relief add-on &mdash; cutting rates by about 4.9%. That was partly offset by a new 2023 WMCE charge (about $746.6 million in added distribution revenue) and by the rollout of the income-graduated Base Services Charge, which on its own lowered CARE customers&apos; per-kWh rate by about 6.8%.</p>
+              <p><strong>SCE (roughly flat, &minus;0.1%, effective June 1, 2026).</strong> SCE&apos;s wildfire self-insurance reserve rose to $650 million in the June filing, up about $380.7 million from the prior quarter &mdash; the largest single cost pressure &mdash; offset by other adjustments. Earlier in the year (January 1, 2026), SCE&apos;s rate had already moved on a $444 million net revenue change tied to energy-cost-recovery accounting.</p>
+              <p><strong>SDG&amp;E (&minus;2.0%, effective June 1, 2026, after an 11.4% increase on January 1, 2026).</strong> The January increase traced to a $184.6 million jump in the Portfolio Allocation Balancing Account (which recovers generation costs) plus prior-year under-collections. The June filing reversed part of that, driven mainly by a $112.2 million transmission-cost reduction ordered at the federal level.</p>
+              <p><strong>SMUD (+3%, effective January 1, 2026).</strong> SMUD&apos;s board approved matching 3% increases for 2026 and 2027, citing new generation and storage projects for state clean-energy compliance, grid infrastructure spending (including a new operations building), rising commodity costs, wildfire prevention, and inflation.</p>
+              <p><strong>The income-graduated fixed charge is now live everywhere.</strong> All three CPUC-regulated utilities have implemented it &mdash; SCE and SDG&amp;E in Q4 2025, PG&amp;E on March 1, 2026. Details in the status section below.</p>
+              <p className='text-foreground/60 text-xs mb-10'>Sources: CPUC Public Advocates Office <a href={Q1_2026_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>Q1 2026</a> and <a href={Q2_2026_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Reports</a>; SMUD <a href={SMUD_RATE_FACTSHEET_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>2026-2027 Rate Proposal Fact Sheet</a>. Fetched {dataVerifiedDisplay}.</p>
+
+              <h2 id='read-rate-schedule' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>How to Read a Rate Schedule</h2>
+              <p>A utility &ldquo;rate&rdquo; isn&apos;t one price &mdash; it&apos;s several charges stacked together, and the composite cents-per-kWh figures above blend all of them into a single average. When you read your own bill or a utility&apos;s published tariff, you&apos;ll typically see:</p>
+              <ul className='list-disc pl-6 space-y-2'>
+                <li><strong>Generation charge</strong> &mdash; what you pay for the electricity itself. On a Community Choice Aggregation (CCA) account, this line comes from your CCA, not the utility.</li>
+                <li><strong>Delivery / transmission &amp; distribution charge</strong> &mdash; what you pay the utility to move that power over its wires, regardless of who generated it.</li>
+                <li><strong>Fixed (customer/base services) charge</strong> &mdash; a flat monthly amount that doesn&apos;t depend on usage. Since late 2025&ndash;early 2026, this is income-graduated at PG&amp;E, SCE and SDG&amp;E (see below).</li>
+                <li><strong>Time-of-use (TOU) periods</strong> &mdash; most residential plans price electricity higher during a &ldquo;peak&rdquo; window, commonly late afternoon into evening, and lower overnight or midday. Exact peak and off-peak hours differ by utility and plan &mdash; see <Link href='/blog/pge-time-of-use-rates-2026' className={sourceLink}>PG&amp;E&apos;s time-of-use schedule</Link>, <Link href='/blog/sce-time-of-use-rates-2026' className={sourceLink}>SCE&apos;s time-of-use plans</Link> and <Link href='/blog/sdge-time-of-use-rates-2026' className={sourceLink}>SDG&amp;E&apos;s time-of-use schedule</Link> for the current hour-by-hour schedules rather than reading them off this page.</li>
+                <li><strong>Tiers</strong> &mdash; some plans, including SMUD&apos;s flat-rate schedule, charge more per kWh once usage crosses a threshold within a billing period.</li>
+                <li><strong>California Climate Credit</strong> &mdash; a twice-yearly bill credit, not a rate. The composite figures on this page use the CPUC&apos;s Residential Average Rate (RAR) methodology, which excludes the credit, so your actual bill can look lower than these &cent;/kWh figures suggest in the months the credit lands.</li>
+              </ul>
+              <p className='mb-10'>If you want the peak/off-peak breakdown for a specific plan rather than the current composite average, use the utility-specific guide linked above.</p>
+
               <h2 id='rate-history' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>12-Month Rate History</h2>
               <p>The CPUC Public Advocates Office publishes this data <strong>quarterly</strong>, not monthly &mdash; so this table reflects the quarter-end snapshot each report captures rather than 12 separate calendar months. Where the underlying report gives a specific rate-change date within the quarter, that date is used instead of the report&apos;s cover date.</p>
               <div className='overflow-x-auto mb-3 not-prose'>
@@ -318,19 +352,31 @@ export default function CaliforniaUtilityRateTrackerPage() {
               <p className='text-foreground/60 text-xs mb-10'>Fetched {dataVerifiedDisplay} for every row shown. The CPUC Public Advocates Office&apos;s cadence has been to publish roughly one month after quarter-end, so a Q3 2026 report is expected around late October&ndash;early November 2026; this table will be updated with that snapshot once it publishes. See <a href={PAO_REPORTS_INDEX_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>publicadvocates.cpuc.ca.gov/press-room/reports-and-analyses</a>.</p>
 
               <h2 id='igfc' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>The Income-Graduated Fixed Charge, Explained</h2>
-              <p>By <strong>CPUC Decision 24-05-028</strong> (issued 15 May 2024), PG&amp;E, SCE and SDG&amp;E (plus Bear Valley Electric, Liberty Utilities and PacifiCorp) were ordered to add an income-graduated fixed monthly charge alongside a reduced per-kWh volumetric rate:</p>
+              <p><strong>CPUC Decision 24-05-028</strong> (issued May 15, 2024) ordered PG&amp;E, SCE and SDG&amp;E (plus Bear Valley Electric, Liberty Utilities and PacifiCorp) to replace part of their per-kWh rate with a flat monthly charge that scales with household income:</p>
+              <div className='overflow-x-auto mb-4 not-prose'>
+                <table className='w-full border-collapse text-sm'>
+                  <thead>
+                    <tr className='border-b-2 border-border'>
+                      <th className='text-left py-2 pr-4'>Tier</th>
+                      <th className='text-left py-2 px-3'>Who</th>
+                      <th className='text-left py-2 pl-3'>Approved charge</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className='border-b border-border'><td className='py-2 pr-4'>1</td><td className='py-2 px-3'>CARE-enrolled households</td><td className='py-2 pl-3'>&asymp; $6/month</td></tr>
+                    <tr className='border-b border-border'><td className='py-2 pr-4'>2</td><td className='py-2 px-3'>FERA-enrolled / deed-restricted affordable housing</td><td className='py-2 pl-3'>&asymp; $12/month</td></tr>
+                    <tr><td className='py-2 pr-4'>3</td><td className='py-2 px-3'>All other residential customers</td><td className='py-2 pl-3'>$24.15/month</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>All three utilities have now implemented it:</p>
               <ul className='list-disc pl-6 space-y-2'>
-                <li><strong>Tier 1 (CARE-enrolled households):</strong> &asymp; $6/month</li>
-                <li><strong>Tier 2 (FERA-enrolled or deed-restricted affordable housing):</strong> &asymp; $12/month</li>
-                <li><strong>Tier 3 (all other residential customers):</strong> $24.15/month</li>
+                <li><strong>SCE and SDG&amp;E</strong> &mdash; Q4 2025 (SDG&amp;E&apos;s effective date was October 1, 2025)</li>
+                <li><strong>PG&amp;E</strong> &mdash; Q1 2026 (effective March 1, 2026; PG&amp;E&apos;s own billing page describes the standard-tier charge as &ldquo;around $24.00 per month&rdquo;)</li>
               </ul>
-              <p>Implementation was staggered by utility:</p>
-              <ul className='list-disc pl-6 space-y-2'>
-                <li><strong>SCE and SDG&amp;E:</strong> began Q4 2025 (SDG&amp;E&apos;s Base Services Charge took effect October 1, 2025 per the CPUC Public Advocates Office Q4 2025 report)</li>
-                <li><strong>PG&amp;E, Bear Valley Electric, Liberty Utilities, PacifiCorp:</strong> began Q1 2026 (PG&amp;E&apos;s Base Services Charge took effect March 1, 2026 per Advice Letter 7846-E)</li>
-              </ul>
+              <p>The tradeoff, per PG&amp;E&apos;s own explanation: the per-kWh energy price drops to offset the new fixed charge, so your total bill may or may not change &mdash; it depends on how much electricity you use. For the full mechanics and bill examples, see our <Link href='/blog/california-24-dollar-fixed-charge-explained' className={sourceLink}>California&apos;s $24 fixed charge, explained</Link> page.</p>
               <p>This is a <strong>flat charge that does not vary with usage</strong>, layered on top of (and, for CARE customers, partly offset against) the volumetric rate &mdash; it is not the same thing as the &ldquo;current average rate&rdquo; figures above, which already reflect its effect on the class-average RAR where applicable.</p>
-              <p className='text-foreground/60 text-xs mb-10'>Sources: <a href={DECISION_24_05_028_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>CPUC Decision 24-05-028</a>, fetched {dataVerifiedDisplay}; <a href={Q2_2026_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>CPUC Public Advocates Office Q2 2026 Report</a>, pp. 20&ndash;24, fetched {dataVerifiedDisplay}.</p>
+              <p className='text-foreground/60 text-xs mb-10'>Sources: <a href={DECISION_24_05_028_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>CPUC Decision 24-05-028</a>, fetched {dataVerifiedDisplay}; <a href={Q2_2026_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>CPUC Public Advocates Office Q2 2026 Report</a>, pp. 20&ndash;24, fetched {dataVerifiedDisplay}; <a href={PGE_BASE_SERVICES_CHARGE_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E Base Services Charge page</a>, fetched {dataVerifiedDisplay}.</p>
 
               <h2 id='pge-history' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>PG&amp;E Rate History and Recent Changes</h2>
               <p>PG&amp;E&apos;s residential average rate was 33.7&cent;/kWh as of June 2026, unchanged since a March 1, 2026 decrease of about 3.7% from January 1, 2026 rates (Advice Letter 7846-E). Over the trailing five quarterly snapshots this page tracks, PG&amp;E&apos;s reported rate moved 38.6&cent; (June 2025) &rarr; 37.8&cent; (Oct 2025) &rarr; 35.0&cent; (Jan 2026) &rarr; 33.7&cent; (Mar 2026) &rarr; 33.7&cent; (Jun 2026, no change). Over longer horizons, the Public Advocates Office reports PG&amp;E&apos;s rate up 8% over three years, 39% over five years and 69% over ten years. PG&amp;E&apos;s income-graduated Base Services Charge began March 1, 2026. See the current-rates and 12-month history tables above for full sourcing.</p>
@@ -346,7 +392,7 @@ export default function CaliforniaUtilityRateTrackerPage() {
               <ol className='list-decimal pl-6 space-y-2'>
                 <li><strong>CPUC Public Advocates Office quarterly Electric Rates Reports</strong> &mdash; the authoritative, independent (not utility-authored) source for the Residential Average Rate (RAR) figure used throughout this page. Published roughly one month after each quarter closes, at <a href={PAO_REPORTS_INDEX_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>publicadvocates.cpuc.ca.gov/press-room/reports-and-analyses</a>.</li>
                 <li><strong>CPUC decisions and advice letters</strong> (docs.cpuc.ca.gov) for structural changes such as the income-graduated fixed charge (Decision 24-05-028) and the utility advice-letter filings cited by the Public Advocates Office reports.</li>
-                <li><strong>Utility-published rate schedules</strong> (e.g. SMUD&apos;s Schedule R) for publicly owned utilities not covered by the CPUC Public Advocates Office reports.</li>
+                <li><strong>Utility-published rate schedules</strong> (e.g. SMUD&apos;s Residential Rate Guide) for publicly owned utilities not covered by the CPUC Public Advocates Office reports.</li>
               </ol>
 
               <p className='font-semibold text-foreground mt-6 mb-2'>Definitions</p>
@@ -409,12 +455,25 @@ export default function CaliforniaUtilityRateTrackerPage() {
                     <tr className='border-b border-border'><td className='py-2 pr-4'>4</td><td className='py-2 px-3'><a href={Q3_2025_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>CPUC Public Advocates Office, Q3 2025 Electric Rates Report</a></td><td className='py-2 pl-3'>{dataVerifiedDisplay}</td></tr>
                     <tr className='border-b border-border'><td className='py-2 pr-4'>5</td><td className='py-2 px-3'><a href={Q2_2025_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>CPUC Public Advocates Office, Q2 2025 Electric Rates Report</a></td><td className='py-2 pl-3'>{dataVerifiedDisplay}</td></tr>
                     <tr className='border-b border-border'><td className='py-2 pr-4'>6</td><td className='py-2 px-3'><a href={DECISION_24_05_028_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>CPUC Decision 24-05-028</a> (income-graduated fixed charge)</td><td className='py-2 pl-3'>{dataVerifiedDisplay}</td></tr>
-                    <tr className='border-b border-border'><td className='py-2 pr-4'>7</td><td className='py-2 px-3'><a href={SMUD_SCHEDULE_R_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD Residential Rate Schedule R (RF01)</a></td><td className='py-2 pl-3'>{dataVerifiedDisplay}</td></tr>
-                    <tr><td className='py-2 pr-4'>8</td><td className='py-2 px-3'><a href={LADWP_STALE_PDF_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP electric rate PDF</a> (found to be stale &mdash; dated 2009; not used as current)</td><td className='py-2 pl-3'>Attempted {dataVerifiedDisplay} (rejected as non-current)</td></tr>
+                    <tr className='border-b border-border'><td className='py-2 pr-4'>7</td><td className='py-2 px-3'><a href={SMUD_RATE_GUIDE_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD 2026 Residential Rate Guide</a></td><td className='py-2 pl-3'>{dataVerifiedDisplay}</td></tr>
+                    <tr className='border-b border-border'><td className='py-2 pr-4'>8</td><td className='py-2 px-3'><a href={SMUD_RESIDENTIAL_RATES_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD Residential Rates page</a></td><td className='py-2 pl-3'>{dataVerifiedDisplay}</td></tr>
+                    <tr className='border-b border-border'><td className='py-2 pr-4'>9</td><td className='py-2 px-3'><a href={SMUD_RATE_FACTSHEET_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD 2026-2027 Rate Proposal Fact Sheet</a></td><td className='py-2 pl-3'>{dataVerifiedDisplay}</td></tr>
+                    <tr className='border-b border-border'><td className='py-2 pr-4'>10</td><td className='py-2 px-3'><a href={LADWP_STALE_PDF_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP electric rate PDF</a> (found to be stale &mdash; dated 2019; not used as current)</td><td className='py-2 pl-3'>Attempted {dataVerifiedDisplay} (rejected as non-current)</td></tr>
+                    <tr className='border-b border-border'><td className='py-2 pr-4'>11</td><td className='py-2 px-3'><a href={LADWP_RESIDENTIAL_RATES_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP residential electric rates page</a></td><td className='py-2 pl-3'>{dataVerifiedDisplay}</td></tr>
+                    <tr><td className='py-2 pr-4'>12</td><td className='py-2 px-3'><a href={PGE_BASE_SERVICES_CHARGE_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E Base Services Charge page</a></td><td className='py-2 pl-3'>{dataVerifiedDisplay}</td></tr>
                   </tbody>
                 </table>
               </div>
               <p className='text-sm text-foreground/70 mb-10'>This page is reviewed monthly; the rate tables above are substantively updated only when a new CPUC Public Advocates Office quarterly report publishes or a utility files a rate-changing advice letter the Public Advocates Office has not yet rolled up. See our <Link href='/methodology' className={sourceLink}>methodology page</Link> for how California Rate Relief sources and corrects its content generally.</p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Related Reading</h2>
+              <ul className='list-disc pl-6 space-y-2 mb-10'>
+                <li><Link href='/blog/why-is-my-california-electric-bill-so-high' className={sourceLink}>why your bill can run higher than the average rate suggests</Link></li>
+                <li><Link href='/blog/net-billing-vs-net-metering-california' className={sourceLink}>how solar export credits are calculated</Link></li>
+                <li><Link href='/blog/nem-2-vs-nem-3-california' className={sourceLink}>NEM 2.0 vs. NEM 3.0</Link></li>
+                <li><Link href='/blog/how-to-lower-electric-bill-california' className={sourceLink}>ways to lower your bill</Link></li>
+                <li><Link href='/solar-cost' className={sourceLink}>what solar costs in California</Link></li>
+              </ul>
             </div>
 
             <IntentCTA cta='article_cta' variant='bill' />

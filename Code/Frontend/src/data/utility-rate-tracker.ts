@@ -18,9 +18,9 @@
 // =============================================================================
 
 export const RATE_TRACKER_PATH = '/california-utility-rate-tracker';
-export const RATE_TRACKER_LAST_UPDATED = '2026-09-18';
-export const RATE_TRACKER_VERIFIED = '2026-09-17';
-export const RATE_TRACKER_VERIFIED_DISPLAY = '17 Sep 2026';
+export const RATE_TRACKER_LAST_UPDATED = '2026-09-22';
+export const RATE_TRACKER_VERIFIED = '2026-09-22';
+export const RATE_TRACKER_VERIFIED_DISPLAY = '22 Sep 2026';
 
 export const Q2_2026_URL =
   'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf';
@@ -36,8 +36,18 @@ export const DECISION_24_05_028_URL =
   'https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M531/K686/531686019.PDF';
 export const SMUD_SCHEDULE_R_URL =
   'https://www.smud.org/-/media/Documents/Rate-Information/Rates/1-R.ashx';
+// 2026-09-22 reviewed draft (source ledger #15/#16): SMUD's own Schedule R
+// tariff PDF above (1-R.ashx) still displays stale May 2025 figures. The
+// Rate Guide and Residential Rates page below carry the current, effective
+// January 1, 2026 figures and are what this tracker cites for SMUD now.
+export const SMUD_RATE_GUIDE_URL =
+  'https://www.smud.org/-/media/Documents/Rate-Information/Residential-Rates/Residential-Rate-Guide.ashx';
+export const SMUD_RESIDENTIAL_RATES_URL =
+  'https://www.smud.org/Rate-Information/Residential-rates';
 export const LADWP_STALE_PDF_URL =
   'https://www.ladwp.com/sites/default/files/documents/LADWP_Electric_Rates.pdf';
+export const LADWP_RESIDENTIAL_RATES_URL =
+  'https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates';
 export const PAO_REPORTS_INDEX_URL =
   'https://www.publicadvocates.cpuc.ca.gov/press-room/reports-and-analyses';
 
@@ -136,11 +146,14 @@ const RECORDS: Record<UtilityRateKey, UtilityRateRecord> = {
     // figure exists to state, so none is stated.
     averageResidentialRateCents: null,
     averageResidentialRatePerKwh: null,
-    asOf: 'Schedule R (RF01) effective May 1, 2025',
-    sourceLabel: 'SMUD Residential Rate Schedule R',
-    sourceUrl: SMUD_SCHEDULE_R_URL,
+    // 2026-09-22: updated from the stale May 1, 2025 Schedule R figures to
+    // the current Fixed Rate plan, effective January 1, 2026 (reviewed
+    // draft source ledger #15, SMUD 2026 Residential Rate Guide).
+    asOf: 'Fixed Rate plan effective January 1, 2026',
+    sourceLabel: 'SMUD 2026 Residential Rate Guide',
+    sourceUrl: SMUD_RATE_GUIDE_URL,
     basisNote:
-      'SMUD is a publicly owned utility and publishes a seasonal tiered schedule rather than a single blended average rate, so no comparable average is published here',
+      'SMUD is a publicly owned utility and publishes a seasonal Fixed Rate schedule (an opt-in alternative to its default Time-of-Day plan) rather than a single blended average rate, so no comparable average is published here',
     fetchedAt: RATE_TRACKER_VERIFIED,
   },
   ladwp: {
