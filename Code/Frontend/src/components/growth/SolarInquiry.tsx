@@ -28,7 +28,7 @@ import { isCommercialIntentPath } from '@/lib/intake-routing';
 import { TrustBlock } from './TrustBlock';
 
 const field =
-  'mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-600';
+  'mt-1 w-full rounded-lg border border-input bg-white px-3 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring';
 const ATTEMPT_KEY = 'crr_review_submission_v1';
 
 // Two steps, not one long form. Step 1 asks the utility and the monthly bill
@@ -390,12 +390,12 @@ export function SolarInquiry({
     <section
       ref={sectionRef}
       id={sectionId}
-      className="my-10 scroll-mt-24 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 md:p-8"
+      className="my-10 scroll-mt-24 rounded-2xl border border-primary/20 bg-primary/5 p-5 md:p-8"
     >
-      <h2 className="text-2xl font-bold text-slate-900">
+      <h2 className="text-2xl font-bold text-foreground">
         {heading ?? copy.formHeading}
       </h2>
-      <p className="mt-2 text-slate-700">{copy.formIntro}</p>
+      <p className="mt-2 text-foreground/80">{copy.formIntro}</p>
       {saved ? (
         <div role="status" className="mt-5 rounded-lg bg-white p-5">
           <p className="font-semibold">Your inquiry is saved.</p>
@@ -410,12 +410,12 @@ export function SolarInquiry({
           onFocusCapture={markStarted}
           className="mt-6 space-y-4"
         >
-          <p className="text-sm font-medium text-slate-600" aria-live="polite">
+          <p className="text-sm font-medium text-muted-foreground" aria-live="polite">
             Step {step} of 2 —{' '}
             {step === 1 ? 'your bill' : 'where and who to send it to'}
           </p>
           {pending && (
-            <p role="status" className="rounded-lg bg-amber-50 p-3 text-sm">
+            <p role="status" className="rounded-lg bg-secondary p-3 text-sm">
               A submission is awaiting confirmation. Retry sends the same saved
               information and reference. Your browser tab keeps this attempt
               until it is confirmed.
@@ -465,7 +465,7 @@ export function SolarInquiry({
                   }
                 />
               </label>
-              <p className="text-xs text-slate-600 md:col-span-2">
+              <p className="text-xs text-muted-foreground md:col-span-2">
                 No contact details on this step. Nothing is sent until you
                 submit the second step.
               </p>
@@ -584,7 +584,7 @@ export function SolarInquiry({
             </fieldset>
           )}
           {error && (
-            <p role="alert" className="text-sm font-medium text-red-800">
+            <p role="alert" className="text-sm font-medium text-destructive">
               {error}
             </p>
           )}
@@ -593,7 +593,7 @@ export function SolarInquiry({
               type="button"
               disabled={busy || pending}
               onClick={advance}
-              className="rounded-lg bg-emerald-800 px-6 py-3 font-semibold text-white disabled:opacity-50"
+              className="rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
             >
               Continue
             </button>
@@ -601,7 +601,7 @@ export function SolarInquiry({
             <div className="flex flex-wrap items-center gap-3">
               <button
                 disabled={busy}
-                className="rounded-lg bg-emerald-800 px-6 py-3 font-semibold text-white disabled:opacity-50"
+                className="rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
               >
                 {busy
                   ? 'Saving…'
@@ -617,14 +617,14 @@ export function SolarInquiry({
                     setError('');
                     setStep(1);
                   }}
-                  className="rounded-lg border border-emerald-800 px-4 py-3 text-sm font-semibold text-emerald-900 disabled:opacity-50"
+                  className="rounded-lg border border-primary px-4 py-3 text-sm font-semibold text-primary disabled:opacity-50"
                 >
                   Back to bill details
                 </button>
               )}
             </div>
           )}
-          <p className="text-xs text-slate-600">
+          <p className="text-xs text-muted-foreground">
             Submitting does not guarantee a quote, savings, program funding or
             eligibility.
           </p>

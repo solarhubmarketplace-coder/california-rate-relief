@@ -5,6 +5,10 @@ import { Footer } from "@/components/landing/Footer";
 import { PublicLayout } from "@/components/layout/PublicLayout";
 import { SolarInquiry } from "./SolarInquiry";
 import type { ServiceMarket } from "@/lib/service-market";
+import { ArticleContents, type ArticleContentsItem } from "@/components/shared/ArticleContents";
+
+/** Key-facts box entry — same shape as ArticleRenderer's `keyStats` (ported, D.5/C.2#5). */
+export type KeyStat = { label: string; value: string; note?: string };
 
 export type Source = { label: string; url: string };
 export function formatSourceCheckedDate(sourceCheckedDate: string) {
@@ -36,8 +40,8 @@ export function SourceList({
   sourceCheckedDate?: string;
 }) {
   return (
-    <aside className="my-8 border-t pt-5 text-sm text-slate-600">
-      <h2 className="font-bold text-slate-900">
+    <aside className="my-8 border-t pt-5 text-sm text-muted-foreground">
+      <h2 className="font-bold text-foreground">
         Sources checked {formatSourceCheckedDate(sourceCheckedDate)}
       </h2>
       <ul className="mt-2 space-y-2">
@@ -76,6 +80,10 @@ export function DecisionPage({
   primaryResourceLabel,
   comparisonHref,
   comparisonLabel,
+  author = "Chad Simpson",
+  authorHref = "/author/chad-simpson",
+  keyStats = [],
+  toc = [],
 }: {
   title: string;
   intro: string;
@@ -96,6 +104,13 @@ export function DecisionPage({
   primaryResourceLabel?: string;
   comparisonHref?: string;
   comparisonLabel?: string;
+  /** Byline name shown next to the "Updated" date (D.5). */
+  author?: string;
+  authorHref?: string;
+  /** Key-facts box near the top, ported from ArticleRenderer's `keyStats` (D.5/C.2#5). Omit for no box. */
+  keyStats?: KeyStat[];
+  /** Sticky desktop "On this page" nav, ported from ArticleContents (D.5/C.2#4). Omit for no TOC. */
+  toc?: ArticleContentsItem[];
 }) {
   const schema =
     path === "/tools/solar-panel-calculator"
@@ -137,21 +152,43 @@ export function DecisionPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
         <header className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-emerald-800">
+          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
             {regionLabel} solar decisions
           </p>
-          <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-5xl">
+          <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-5xl">
             {title}
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-slate-700">{intro}</p>
-          <p className="mt-3 text-sm text-slate-500">
-            Updated {formatSourceCheckedDate(contentModifiedDate || sourceCheckedDate)} · California
+          <p className="mt-5 text-lg leading-relaxed text-foreground/80">{intro}</p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            By{' '}
+            <Link href={authorHref} className="font-medium text-foreground hover:text-primary hover:underline">
+              {author}
+            </Link>
+            {' '}· Updated {formatSourceCheckedDate(contentModifiedDate || sourceCheckedDate)} · California
             Rate Relief is a private solar referral service.
           </p>
         </header>
+        {toc.length > 0 && (
+          <div className="lg:sticky lg:top-24 lg:z-10">
+            <ArticleContents items={toc} />
+          </div>
+        )}
+        {keyStats.length > 0 && (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-2">
+            {keyStats.map((s) => (
+              <div key={s.label} className="rounded-xl border border-border bg-card p-4">
+                <div className="text-2xl font-bold text-primary tabular-nums">{s.value}</div>
+                <div className="mt-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {s.label}
+                </div>
+                {s.note && <div className="mt-2 text-sm leading-snug text-foreground/70">{s.note}</div>}
+              </div>
+            ))}
+          </div>
+        )}
         <nav
           aria-label="Decision tools"
-          className="my-7 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-emerald-800"
+          className="my-7 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-primary"
         >
           <Link
             href={
@@ -179,7 +216,7 @@ export function DecisionPage({
             Optional inquiry
           </a>
         </nav>
-        <div className="space-y-8 [&_h2]:mb-3 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_p]:leading-relaxed [&_li]:leading-relaxed">
+        <div className="mx-auto max-w-[72ch] space-y-8 [&_h2]:mb-3 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_p]:leading-relaxed [&_li]:leading-relaxed">
           {children}
         </div>
         <SourceList sources={sources} sourceCheckedDate={sourceCheckedDate} />
@@ -229,7 +266,7 @@ export function QuoteChecklist() {
           <caption className="sr-only">
             Equivalent solar quote checklist
           </caption>
-          <thead className="bg-slate-100">
+          <thead className="bg-muted">
             <tr>
               <th className="p-4">Compare</th>
               <th className="p-4">Get it in writing</th>

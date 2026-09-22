@@ -16,13 +16,13 @@ export function FinalCTA() {
           className='w-full h-full object-cover'
           loading='lazy'
         />
-        <div className='absolute inset-0 bg-gradient-to-r from-emerald-900/95 via-emerald-800/90 to-emerald-700/85' />
+        <div className='absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/90 to-primary/85' />
       </div>
       <div className='relative container mx-auto px-4 max-w-4xl text-center text-white'>
-        <div className='inline-flex items-center gap-2 bg-amber-400/95 text-emerald-900 font-bold text-xs md:text-sm px-3 py-1.5 rounded-full mb-5'>
-          RESIDENTIAL SOLAR ASSESSMENT
-        </div>
-        <h2 className='text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5'>
+        <p className='text-xs md:text-sm font-semibold uppercase tracking-wide text-white/80 mb-5'>
+          Residential solar assessment
+        </p>
+        <h2 className='text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-5'>
           Get a property-specific review.
         </h2>
         <p className='text-lg md:text-xl text-white/95 max-w-2xl mx-auto mb-8'>
@@ -31,7 +31,7 @@ export function FinalCTA() {
         <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center'>
           <Link
             href='/#qualify'
-            className='inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-emerald-900 font-extrabold text-lg px-8 py-4 rounded-xl shadow-2xl'
+            className='inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta/90 text-cta-foreground font-semibold text-lg px-8 py-4 rounded-xl transition-colors'
           >
             Request a Residential Review
             <ArrowRight className='w-5 h-5' />

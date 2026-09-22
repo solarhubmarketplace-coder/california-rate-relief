@@ -10,15 +10,15 @@ import {
   isCommercialIntentPath,
 } from "@/lib/intake-routing";
 
+// Trimmed to 5 (redesign D.5, 2026-09-22). The four dropped links (Solar in
+// CA, Solar Problems, Batteries, About) are not orphaned — they have homes in
+// the footer (see Footer.tsx) and in cross-links from /blog and /battery.
 export const HEADER_GUIDE_LINKS = [
-  { href: "/tools/solar-panel-calculator", label: "Calculator" },
-  { href: "/best-solar-companies-california", label: "Solar Companies" },
-  { href: "/solar-panels-california", label: "Solar in CA" },
-  { href: "/solar-problems", label: "Solar Problems" },
-  { href: "/battery", label: "Batteries" },
+  { href: "/solar-cost", label: "Cost" },
+  { href: "/best-solar-companies-california", label: "Companies" },
+  { href: "/blog", label: "Guides" },
   { href: "/commercial-solar", label: "Commercial" },
-  { href: "/blog", label: "Blog" },
-  { href: "/about", label: "About" },
+  { href: "/tools/solar-panel-calculator", label: "Tools" },
 ] as const;
 
 export function headerInquiryLabel(isCommercial: boolean, compact = false) {
@@ -107,7 +107,7 @@ export function Header() {
             <Button
               asChild
               size="sm"
-                className="min-h-11 bg-primary px-2.5 hover:bg-primary/90 text-primary-foreground font-medium shadow-md hover:shadow-lg transition-all text-sm sm:px-3"
+                className="min-h-11 bg-primary px-2.5 hover:bg-primary/90 text-primary-foreground font-medium transition-colors text-sm sm:px-3"
             >
                 <Link
                   href={intakeHrefForPath(pathname)}
@@ -136,7 +136,7 @@ export function Header() {
             aria-label="Mobile guides"
             className="lg:hidden border-t border-border py-3"
           >
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               {HEADER_GUIDE_LINKS.map((item) => (
                 <Link
                   key={item.href}

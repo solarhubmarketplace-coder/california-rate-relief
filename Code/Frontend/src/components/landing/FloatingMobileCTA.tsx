@@ -70,7 +70,7 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
       {/* Reserves the bar's height so the bar never covers the end of the page. */}
       <div aria-hidden="true" className="md:hidden h-[72px]" />
       <div
-        className={`md:hidden fixed bottom-0 left-0 right-0 z-40 flex items-center gap-2 border-t border-slate-200 bg-white p-3 shadow-2xl ${
+        className={`md:hidden fixed bottom-0 left-0 right-0 z-40 flex items-center gap-2 border-t border-border bg-card p-3 shadow-lg ${
           reducedMotion
             ? ''
             : 'transition-transform duration-200 motion-reduce:transition-none'
@@ -87,7 +87,7 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
               page_path: pathname || 'unknown',
             })
           }
-          className="block flex-1 rounded-lg bg-emerald-700 py-3 text-center text-sm font-extrabold text-white shadow-md"
+          className="block flex-1 rounded-lg bg-primary py-3 text-center text-sm font-semibold text-primary-foreground"
         >
           {label}
         </Link>
@@ -108,7 +108,7 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
               page_path: pathname || 'unknown',
             });
           }}
-          className="shrink-0 rounded-lg border border-slate-300 p-2 text-slate-600"
+          className="shrink-0 rounded-lg border border-border p-2 text-muted-foreground"
         >
           <X className="h-5 w-5" />
         </button>

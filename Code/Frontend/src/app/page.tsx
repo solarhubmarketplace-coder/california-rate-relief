@@ -10,7 +10,6 @@ import { FinalCTA } from '@/components/landing/FinalCTA';
 import { QualificationWizard } from '@/components/landing/QualificationWizard';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
-import { ServiceMarkets } from '@/components/landing/ServiceMarkets';
 
 const BASE_URL = 'https://ratereliefca.com';
 
@@ -97,7 +96,12 @@ export default function HomePage() {
         {/* New 3-card How-It-Works */}
         <HowItWorksV2 />
 
-        <ServiceMarkets />
+        {/* ServiceMarkets ("Solar decision guides by state") removed from the
+            CRR homepage 2026-09-22 (redesign D.5) — page.tsx renders only on
+            the ratereliefca.com host (every other host's "/" is rewritten to
+            its own home route in middleware.ts), so this is CRR-only and safe
+            to drop here. The component itself is left in place, restyled, in
+            case it is revived elsewhere. */}
 
         {/* Testimonials removed 2026-08-24. The eight entries here were
             fabricated placeholders with Unsplash stock portraits, presented as

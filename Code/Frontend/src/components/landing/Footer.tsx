@@ -12,7 +12,7 @@ export function Footer() {
     <footer className='bg-primary border-t border-primary/20 py-16'>
       <div className='container mx-auto px-4'>
         <div className='max-w-6xl mx-auto'>
-          <div className='grid md:grid-cols-3 gap-10 mb-12'>
+          <div className='grid md:grid-cols-4 gap-10 mb-12'>
             {/* Brand */}
             <div className='space-y-4'>
               <div className='flex items-center gap-3'>
@@ -217,6 +217,63 @@ export function Footer() {
                     <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
                       &rarr;
                     </span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* About/trust column (D.7, 2026-09-22). Reuses existing routes —
+                no new pages. /about, /methodology and /author/chad-simpson
+                had no footer link at all before this; this also gives the
+                two header nav items dropped in the D.5 trim (Solar in CA,
+                About) a guaranteed inbound link. */}
+            <div>
+              <h4 className='text-white font-bold text-lg mb-6 tracking-tight'>
+                About
+              </h4>
+              <ul className='space-y-3'>
+                <li>
+                  <Link
+                    href='/about'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    About
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/methodology'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Our Methodology
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/affiliate-disclosure'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    How We Make Money
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/author/chad-simpson'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Meet the Editor
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/corrections'
+                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                  >
+                    Corrections
+                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
                   </Link>
                 </li>
               </ul>

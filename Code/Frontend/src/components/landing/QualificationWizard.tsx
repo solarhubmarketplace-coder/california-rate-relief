@@ -397,22 +397,22 @@ export function QualificationWizard() {
   // Disqualification Screen (Renter)
   if (isDisqualified) {
     return (
-      <section className='py-16 bg-slate-100'>
+      <section className='py-16 bg-muted'>
         <div className='container mx-auto px-4'>
-          <div className='max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-8 min-h-[650px] flex flex-col items-center justify-center'>
+          <div className='max-w-5xl mx-auto bg-card rounded-xl border border-border p-8 min-h-[650px] flex flex-col items-center justify-center'>
             <div className='text-center max-w-md'>
-              <div className='w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6'>
-                <XCircle className='h-8 w-8 text-amber-600' />
+              <div className='w-16 h-16 bg-status-warning/10 rounded-full flex items-center justify-center mx-auto mb-6'>
+                <XCircle className='h-8 w-8 text-status-warning' />
               </div>
               <h3 className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
                 Residential assessment requires property ownership
               </h3>
-              <p className='text-slate-600 mb-6'>
+              <p className='text-muted-foreground mb-6'>
                 This form is for California homeowners. If you control a business
                 or commercial property, use the commercial assessment instead.
               </p>
-              <div className='bg-teal-50 rounded-lg p-4 mb-6 border border-teal-200'>
-                <p className='text-sm text-teal-800'>
+              <div className='bg-primary/5 rounded-lg p-4 mb-6 border border-primary/20'>
+                <p className='text-sm text-primary'>
                   <a href='/commercial-assessment' className='font-semibold underline'>
                     Open the commercial solar assessment
                   </a>
@@ -452,24 +452,24 @@ export function QualificationWizard() {
   // Success Screen
   if (isSuccess) {
     return (
-      <section className='py-16 bg-slate-50'>
+      <section className='py-16 bg-muted'>
         <div className='container mx-auto px-4'>
-          <div className='max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-8 min-h-[650px] flex flex-col justify-center'>
-            <div className='w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6'>
-              <CheckCircle className='h-8 w-8 text-emerald-600' />
+          <div className='max-w-5xl mx-auto bg-card rounded-xl border border-border p-8 min-h-[650px] flex flex-col justify-center'>
+            <div className='w-16 h-16 bg-status-success/10 rounded-full flex items-center justify-center mx-auto mb-6'>
+              <CheckCircle className='h-8 w-8 text-status-success' />
             </div>
-            <h3 className='text-2xl font-bold text-slate-900 mb-4'>
+            <h3 className='text-2xl font-bold text-foreground mb-4'>
               Your assessment was received
             </h3>
-            <p className='text-slate-600 mb-6'>
+            <p className='text-muted-foreground mb-6'>
               We saved your information for review. A submission is not an
               approval, quote, or final eligibility decision.
             </p>
-            <div className='bg-emerald-50 rounded-lg p-4 mb-6 text-left'>
-              <h4 className='font-semibold text-emerald-800 mb-2'>
+            <div className='bg-status-success/10 rounded-lg p-4 mb-6 text-left'>
+              <h4 className='font-semibold text-status-success mb-2'>
                 What Happens Next?
               </h4>
-              <ul className='text-sm text-emerald-700 space-y-1'>
+              <ul className='text-sm text-status-success space-y-1'>
                 <li>✓ Your answers are available for review</li>
                 <li>✓ A matched provider may contact you about next steps</li>
                 <li>✓ Any project terms require a separate written quote</li>
@@ -482,16 +482,16 @@ export function QualificationWizard() {
   }
 
   return (
-    <section className='py-16 bg-slate-100'>
+    <section className='py-16 bg-muted'>
       <div className='container mx-auto px-4'>
         <div className='mx-auto max-w-5xl'>
           {/* Card Container */}
-          <div className='bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-10 lg:p-12 min-h-[650px] relative'>
+          <div className='bg-card rounded-xl border border-border p-6 md:p-10 lg:p-12 min-h-[650px] relative'>
             {/* Back Button - Fixed top-left position for all steps */}
             {currentStep > 1 && (
               <button
                 onClick={prevStep}
-                className='absolute top-6 left-6 md:top-10 md:left-10 flex items-center text-slate-500 hover:text-slate-700 transition-colors z-10'
+                className='absolute top-6 left-6 md:top-10 md:left-10 flex items-center text-muted-foreground hover:text-foreground transition-colors z-10'
               >
                 <ArrowLeft className='h-4 w-4 mr-2' />
                 Back
@@ -502,8 +502,8 @@ export function QualificationWizard() {
             {currentStep === 1 && (
               <div className='space-y-6'>
                 <div className='text-center mb-8'>
-                  <div className='w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4'>
-                    <Zap className='h-6 w-6 text-teal-600' />
+                  <div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
+                    <Zap className='h-6 w-6 text-primary' />
                   </div>
                   <h3 className='text-3xl md:text-4xl font-extrabold text-foreground mb-3 tracking-tight'>
                     Who is your current electric provider?
@@ -555,8 +555,8 @@ export function QualificationWizard() {
             {currentStep === 2 && (
               <div className='space-y-6'>
                 <div className='text-center mb-8'>
-                  <div className='w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4'>
-                    <DollarSign className='h-6 w-6 text-teal-600' />
+                  <div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
+                    <DollarSign className='h-6 w-6 text-primary' />
                   </div>
                   <h3 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
                     What is your average monthly bill?
@@ -591,8 +591,8 @@ export function QualificationWizard() {
             {currentStep === 3 && (
               <div className='space-y-6'>
                 <div className='text-center mb-8'>
-                  <div className='w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4'>
-                    <Home className='h-6 w-6 text-teal-600' />
+                  <div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
+                    <Home className='h-6 w-6 text-primary' />
                   </div>
                   <h3 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
                     Do you own your home?
@@ -791,7 +791,7 @@ export function QualificationWizard() {
                               autoComplete='off'
                             />
                             {status === 'OK' && data.length > 0 && (
-                              <div className='absolute z-50 w-full mt-1 bg-white border-2 border-border rounded-lg shadow-lg max-h-60 overflow-y-auto'>
+                              <div className='absolute z-50 w-full mt-1 bg-card border-2 border-border rounded-lg shadow-lg max-h-60 overflow-y-auto'>
                                 {data.map(({ place_id, description }) => (
                                   <button
                                     key={place_id}
@@ -928,7 +928,7 @@ export function QualificationWizard() {
 
                   <div className='pt-2'>
                     {hasUnconfirmedAttempt && (
-                      <div className='mb-4 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900'>
+                      <div className='mb-4 rounded-lg border border-status-warning/30 bg-status-warning/10 p-4 text-sm text-foreground'>
                         Receipt was not confirmed. Retry to send the exact same attempt, or start a new submission before changing any answer.
                         <Button type='button' variant='outline' className='mt-3 w-full' onClick={() => {
                           attemptRef.current = null;
@@ -969,17 +969,17 @@ export function QualificationWizard() {
           </div>
 
           {/* Service details */}
-          <div className='mt-8 flex flex-wrap justify-center gap-6 text-xs text-slate-500'>
+          <div className='mt-8 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground'>
             <div className='flex items-center gap-1'>
-              <CheckCircle className='h-4 w-4 text-emerald-500' />
+              <CheckCircle className='h-4 w-4 text-status-success' />
               <span>SSL Secured</span>
             </div>
             <div className='flex items-center gap-1'>
-              <CheckCircle className='h-4 w-4 text-emerald-500' />
+              <CheckCircle className='h-4 w-4 text-status-success' />
               <span>California referral service</span>
             </div>
             <div className='flex items-center gap-1'>
-              <CheckCircle className='h-4 w-4 text-emerald-500' />
+              <CheckCircle className='h-4 w-4 text-status-success' />
               <span>No final eligibility decision in this form</span>
             </div>
           </div>
