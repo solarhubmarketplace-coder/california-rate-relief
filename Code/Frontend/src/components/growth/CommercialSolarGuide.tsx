@@ -179,6 +179,14 @@ export function CommercialSolarGuide() {
       comparisonHref="/commercial-solar/companies-california"
       comparisonLabel="Compare commercial providers"
     >
+      <p className="text-foreground/80">
+        Before requesting bids, the commercial solar cost page and calculator lets you{" "}
+        <Link className="font-semibold text-primary underline" href="/commercial-solar/cost-per-watt-california">
+          estimate your after-tax cost, payback and property-value impact
+        </Link>
+        .
+      </p>
+
       <SectionIndex />
 
       <section>

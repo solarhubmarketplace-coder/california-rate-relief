@@ -8,6 +8,7 @@ import { SavingsCalculator } from '@/components/landing/SavingsCalculator';
 import { FAQAccordion, FAQS } from '@/components/landing/FAQAccordion';
 import { FinalCTA } from '@/components/landing/FinalCTA';
 import { QualificationWizard } from '@/components/landing/QualificationWizard';
+import { HomeGuides } from '@/components/landing/HomeGuides';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 
@@ -92,6 +93,10 @@ export default function HomePage() {
         <div id='qualify' className='scroll-mt-24'>
           <WizardWithSuspense />
         </div>
+
+        {/* Publisher content: surfaces the site's own guides so the homepage
+            reads as an independent information source, not only a lead form. */}
+        <HomeGuides />
 
         {/* New 3-card How-It-Works */}
         <HowItWorksV2 />

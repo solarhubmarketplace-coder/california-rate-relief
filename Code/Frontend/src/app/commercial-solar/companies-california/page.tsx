@@ -79,6 +79,16 @@ export default function CommercialSolarCompanies() {
         </section>
       }
     >
+      <p className="text-foreground/80">
+        Before comparing bidders, the commercial solar cost page and calculator lets you{" "}
+        <Link
+          href="/commercial-solar/cost-per-watt-california"
+          className="font-semibold text-primary underline"
+        >
+          estimate your after-tax cost, payback and property-value impact
+        </Link>
+        .
+      </p>
       <section id="what-is-an-epc">
         <h2>What is a commercial solar EPC, and how is it different from an installer?</h2>
         <p className="mb-4">
