@@ -226,7 +226,7 @@ export default function ZeroDownSolarCalifornia() {
             <caption className="sr-only">
               Where the cost sits in a no-down-payment solar offer, by structure
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Structure</th>
                 <th className="p-4">Where the cost sits</th>

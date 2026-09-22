@@ -87,7 +87,7 @@ export default function WhyIsMyLADWPBillSoHigh() {
             </p>
           </header>
 
-          <div className="max-w-none [&>h2]:mb-4 [&>h2]:mt-10 [&>h2]:text-2xl [&>h2]:font-bold [&_p]:my-4 [&_p]:leading-7 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_li]:my-2 [&_table]:w-full [&_table]:border-collapse [&_th]:border-b [&_th]:border-slate-300 [&_th]:p-3 [&_th]:text-left [&_td]:border-b [&_td]:border-slate-200 [&_td]:p-3">
+          <div className="max-w-none [&>h2]:mb-4 [&>h2]:mt-10 [&>h2]:text-2xl [&>h2]:font-bold [&_p]:my-4 [&_p]:leading-7 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_li]:my-2 [&_table]:w-full [&_table]:border-collapse [&_th]:border-b [&_th]:border-border [&_th]:p-3 [&_th]:text-left [&_td]:border-b [&_td]:border-border [&_td]:p-3">
             <aside className="rounded-xl border border-border bg-muted/30 p-5">
               <h2 className="mt-0 text-xl">Check these four lines first</h2>
               <ol className="mb-0 pl-5">

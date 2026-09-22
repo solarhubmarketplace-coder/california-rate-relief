@@ -102,9 +102,9 @@ export default function LosAngelesCountySolarPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-amber-500/40 bg-amber-500/5 p-6 md:p-8 mb-12">
+            <div className="rounded-2xl border border-cta/40 bg-cta/5 p-6 md:p-8 mb-12">
               <h2 className="flex items-center gap-2 text-xl font-bold text-foreground mb-3">
-                <AlertTriangle className="h-5 w-5 text-amber-600" />
+                <AlertTriangle className="h-5 w-5 text-status-warning" />
                 Check your utility before you believe any quote
               </h2>
               <p className="text-muted-foreground leading-relaxed">

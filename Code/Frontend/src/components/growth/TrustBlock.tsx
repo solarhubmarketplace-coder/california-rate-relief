@@ -48,16 +48,16 @@ export function TrustBlock({
   return (
     <section
       aria-labelledby={`${id}-heading`}
-      className={`my-8 rounded-2xl border border-slate-200 bg-white p-5 md:p-6 ${className}`}
+      className={`my-8 rounded-2xl border border-border bg-white p-5 md:p-6 ${className}`}
     >
-      <h2 id={`${id}-heading`} className="text-lg font-bold text-slate-900">
+      <h2 id={`${id}-heading`} className="text-lg font-bold text-foreground">
         {heading}
       </h2>
       <dl className="mt-4 grid gap-4 md:grid-cols-2">
         {TRUST_BLOCK_POINTS.map((point) => (
           <div key={point.title}>
-            <dt className="text-sm font-semibold text-slate-900">{point.title}</dt>
-            <dd className="mt-1 text-sm text-slate-700">{point.body}</dd>
+            <dt className="text-sm font-semibold text-foreground">{point.title}</dt>
+            <dd className="mt-1 text-sm text-foreground/80">{point.body}</dd>
           </div>
         ))}
       </dl>

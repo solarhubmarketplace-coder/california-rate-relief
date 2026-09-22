@@ -12,18 +12,18 @@ export function ProgressBar({ currentStep, totalSteps }: ProgressBarProps) {
     <div className="w-full mb-8">
       {/* Step Indicator */}
       <div className="flex justify-between items-center mb-3">
-        <span className="text-sm font-medium text-slate-600">
+        <span className="text-sm font-medium text-muted-foreground">
           Step {currentStep} of {totalSteps}
         </span>
-        <span className="text-sm font-medium text-teal-600">
+        <span className="text-sm font-medium text-primary">
           {Math.round(progress)}% Complete
         </span>
       </div>
 
       {/* Progress Track */}
-      <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+      <div className="h-2 bg-border rounded-full overflow-hidden">
         <div
-          className="h-full bg-gradient-to-r from-teal-500 to-teal-600 rounded-full transition-all duration-500 ease-out"
+          className="h-full bg-gradient-to-r from-primary to-primary rounded-full transition-all duration-500 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -34,8 +34,8 @@ export function ProgressBar({ currentStep, totalSteps }: ProgressBarProps) {
           <div
             key={step}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${step <= currentStep
-                ? 'bg-teal-600 scale-110'
-                : 'bg-slate-300'
+                ? 'bg-primary scale-110'
+                : 'bg-border'
               }`}
           />
         ))}

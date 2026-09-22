@@ -69,7 +69,7 @@ export default function SolarLeaseHomeSaleCA() {
             <caption className="sr-only">
               Solar lease or PPA home-sale document checklist
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Question</th>
                 <th className="p-4">Document or clause to review</th>

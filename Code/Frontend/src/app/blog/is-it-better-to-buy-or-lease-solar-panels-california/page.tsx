@@ -196,7 +196,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
           separate matter and does not create a credit for a project that misses
           the expenditure date.
         </p>
-        <p className="mt-3 rounded-lg border-l-4 border-slate-300 bg-slate-50 p-4 text-slate-700">
+        <p className="mt-3 rounded-lg border-l-4 border-border bg-muted p-4 text-foreground/80">
           This is a reading of the statutory text, not tax advice, and it states
           no tax outcome for you. Take your own facts to a qualified tax
           professional and check current IRS guidance before relying on any of
@@ -266,7 +266,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
               Structural differences between a cash purchase, a loan, a lease and
               a power purchase agreement
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Question</th>
                 <th className="p-4">Cash purchase</th>

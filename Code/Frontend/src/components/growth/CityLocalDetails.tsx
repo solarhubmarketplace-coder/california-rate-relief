@@ -17,7 +17,7 @@ export function CityLocalChecks({ slug }: { slug: string }) {
           <caption className="sr-only">
             Local project questions for {city.name}
           </caption>
-          <thead className="bg-slate-100">
+          <thead className="bg-muted">
             <tr>
               <th className="p-4">Check</th>
               <th className="p-4">Ask each bidder</th>
@@ -58,7 +58,7 @@ export function CityPublishedProvider({ slug }: { slug: string }) {
           <caption className="sr-only">
             Published service scope and quote questions
           </caption>
-          <thead className="bg-slate-100">
+          <thead className="bg-muted">
             <tr>
               <th className="p-4">Company source</th>
               <th className="p-4">Published scope</th>

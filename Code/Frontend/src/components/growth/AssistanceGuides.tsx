@@ -3,7 +3,7 @@ import Link from "next/link";
 import { DecisionPage } from "./DecisionPage";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 
-const link = "text-emerald-800 underline underline-offset-2";
+const link = "text-primary underline underline-offset-2";
 const law25 =
   "https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A25D+edition%3Aprelim%29";
 const law48 =
@@ -160,7 +160,7 @@ function ProgramPaths() {
           <caption className="sr-only">
             California assistance and solar program paths
           </caption>
-          <thead className="bg-slate-100">
+          <thead className="bg-muted">
             <tr>
               <th className="p-4">Path</th>
               <th className="p-4">What to check</th>
@@ -654,7 +654,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               solar energy at no cost to you” first among the false claims it
               tells consumers to watch for, and answers it directly:
             </p>
-            <blockquote className="mt-4 border-l-4 border-emerald-700 pl-4 italic">
+            <blockquote className="mt-4 border-l-4 border-primary pl-4 italic">
               “Solar energy is rarely free. An honest company will be upfront
               about all the costs you will pay over time. There is one exception:
               a few government-funded solar programs offer free or low-cost solar
@@ -694,7 +694,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
                 <caption className="sr-only">
                   What an advertisement marketed as free can actually mean
                 </caption>
-                <thead className="bg-slate-100">
+                <thead className="bg-muted">
                   <tr>
                     <th className="p-4">What the ad means</th>
                     <th className="p-4">What you actually have</th>

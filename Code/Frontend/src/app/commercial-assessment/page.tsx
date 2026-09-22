@@ -16,15 +16,15 @@ export default function CommercialAssessmentPage() {
   return (
     <PublicLayout>
       <Header />
-      <main className='bg-slate-50 py-12 md:py-16'>
+      <main className='bg-muted py-12 md:py-16'>
         <div className='container mx-auto max-w-4xl px-4'>
           <div className='mx-auto mb-8 max-w-3xl text-center'>
             <p className='mb-3 text-sm font-semibold uppercase tracking-wider text-primary'>California commercial solar</p>
-            <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl'>Tell us about the property and the project</h1>
-            <p className='mt-4 text-lg leading-8 text-slate-600'>
+            <h1 className='text-3xl font-extrabold tracking-tight text-foreground md:text-5xl'>Tell us about the property and the project</h1>
+            <p className='mt-4 text-lg leading-8 text-muted-foreground'>
               California Rate Relief is a private referral service. We collect the project basics and make them available for review by a matched commercial solar provider.
             </p>
-            <p className='mt-4 text-base leading-7 text-slate-600'>
+            <p className='mt-4 text-base leading-7 text-muted-foreground'>
               Worth doing before you submit anything: read{' '}
               <Link href='/commercial-solar/cost-per-watt-california' className='text-primary underline'>
                 commercial solar cost per watt in California

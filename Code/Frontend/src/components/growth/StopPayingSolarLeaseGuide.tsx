@@ -52,7 +52,7 @@ export function StopPayingSolarLeaseGuide() {
       comparisonHref="/blog/what-happens-to-solar-lease-when-i-sell-california"
       comparisonLabel="Lease and home-sale checklist"
     >
-      <section className="rounded-xl border border-amber-200 bg-amber-50 p-5">
+      <section className="rounded-xl border border-status-warning/30 bg-status-warning/10 p-5">
         <h2>Do not assume nonpayment ends the agreement</h2>
         <p>
           A solar lease is a long-term contract for equipment owned by another company. Missing a payment and ending the lease are different events. California&apos;s CSLB warns consumers to look for contract language that permits a lien or makes all remaining payments due after a missed payment or other default. Those remedies are not identical in every agreement. Your signed lease, amendments and servicing notices are the starting point.
@@ -63,7 +63,7 @@ export function StopPayingSolarLeaseGuide() {
         <h2>Find the six clauses that control the next step</h2>
         <div className="mt-4 overflow-x-auto rounded-xl border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-slate-100"><tr><th className="p-4">Clause</th><th className="p-4">What to record</th></tr></thead>
+            <thead className="bg-muted"><tr><th className="p-4">Clause</th><th className="p-4">What to record</th></tr></thead>
             <tbody>
               {[
                 ["Payment", "Due date, grace period, late charge, returned-payment charge and payment method."],

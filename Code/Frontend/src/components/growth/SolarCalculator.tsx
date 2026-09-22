@@ -45,7 +45,7 @@ export function SolarCalculator({ utility = '' }: { utility?: string }) {
     trackEvent('calculator_start', { form_kind: 'solar_calculator' });
   };
   const inputClass =
-    'mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-slate-900';
+    'mt-1 w-full rounded-lg border border-border bg-white px-3 py-3 text-foreground';
   const fields: [keyof CalculatorContext, string, boolean][] = [
     ['zip', 'California ZIP', true],
     ['monthlyBill', 'Average monthly electricity bill ($)', true],
@@ -58,12 +58,12 @@ export function SolarCalculator({ utility = '' }: { utility?: string }) {
   return (
     <section
       id="calculator"
-      className="my-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-8"
+      className="my-8 rounded-2xl border border-border bg-muted p-5 md:p-8"
     >
       <h2 className="text-2xl font-bold">
         Check the numbers in your bill and quote
       </h2>
-      <p className="mt-2 text-slate-700">
+      <p className="mt-2 text-foreground/80">
         Start with your electricity bill. If you have a quote, add its system
         size, cash price and remaining utility bill. Leave unknown values blank.
         After changing values, calculate again to update the optional inquiry.
@@ -149,7 +149,7 @@ export function SolarCalculator({ utility = '' }: { utility?: string }) {
             />
           </label>
         ))}
-        <button className="rounded-lg bg-slate-900 px-5 py-3 font-semibold text-white md:col-span-2">
+        <button className="rounded-lg bg-foreground px-5 py-3 font-semibold text-white md:col-span-2">
           Calculate without contact details
         </button>
       </form>
@@ -196,12 +196,12 @@ export function SolarCalculator({ utility = '' }: { utility?: string }) {
               ],
             ].map(([label, value]) => (
               <div key={label}>
-                <dt className="text-sm text-slate-600">{label}</dt>
+                <dt className="text-sm text-muted-foreground">{label}</dt>
                 <dd className="mt-1 text-xl font-bold">{value}</dd>
               </div>
             ))}
           </dl>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-muted-foreground">
             Arithmetic from your inputs, not a production or savings forecast.
             Annual bill = monthly bill × 12. Price per watt excludes the
             battery. Simple payback = entered cash price ÷ positive annual bill
@@ -212,7 +212,7 @@ export function SolarCalculator({ utility = '' }: { utility?: string }) {
           </p>
           <a
             href="#solar-inquiry"
-            className="inline-block rounded-lg bg-emerald-800 px-4 py-3 font-semibold text-white"
+            className="inline-block rounded-lg bg-primary px-4 py-3 font-semibold text-white"
           >
             Use these details in an optional inquiry
           </a>

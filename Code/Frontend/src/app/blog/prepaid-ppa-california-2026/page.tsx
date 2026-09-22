@@ -115,7 +115,7 @@ export default function PrepaidPpaCalifornia2026() {
             <caption className="sr-only">
               Prepaid PPA contract comparison checklist
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Question</th>
                 <th className="p-4">Document to check</th>

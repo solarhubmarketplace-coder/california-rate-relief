@@ -13,7 +13,7 @@ export function SdgeRateTable() {
           <caption className="p-3 text-left font-semibold">
             TOU-DR1 · cents per kWh · checked September 22, 2026
           </caption>
-          <thead className="bg-slate-100">
+          <thead className="bg-muted">
             <tr>
               <th className="p-3">Season</th>
               <th className="p-3">Customer and usage band</th>
@@ -90,14 +90,14 @@ export function SdgeRateTable() {
         generation-and-delivery price. CCA delivery-only winter figures were
         not available this session — check your own bill and the{' '}
         <a
-          className="text-emerald-800 underline"
+          className="text-primary underline"
           href="https://www.sdge.com/residential/pricing-plans"
         >
           current plan chooser
         </a>{' '}
         and{' '}
         <a
-          className="text-emerald-800 underline"
+          className="text-primary underline"
           href="https://www.sdge.com/total-electric-rates"
         >
           complete rate schedules

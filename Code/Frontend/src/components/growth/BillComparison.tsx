@@ -57,7 +57,7 @@ export function BillComparison({ utilityName = 'PG&E' }: { utilityName?: string 
     typeof calculateBillComparison
   > | null>(null);
   const inputClass =
-    'mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-slate-900';
+    'mt-1 w-full rounded-lg border border-border bg-white px-3 py-3 text-foreground';
   const field = (
     key: keyof BillValues,
     label: string,
@@ -65,7 +65,7 @@ export function BillComparison({ utilityName = 'PG&E' }: { utilityName?: string 
     minimum?: string,
   ) => (
     <label className="text-sm font-medium" key={key}>
-      <span className="block text-slate-700">{group}</span>
+      <span className="block text-foreground/80">{group}</span>
       {label}
       <input
         className={inputClass}
@@ -85,15 +85,15 @@ export function BillComparison({ utilityName = 'PG&E' }: { utilityName?: string 
   return (
     <section
       id="bill-comparison"
-      className="my-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-8"
+      className="my-8 rounded-2xl border border-border bg-muted p-5 md:p-8"
     >
       <h2 className="text-2xl font-bold">Compare two {utilityName} bills</h2>
-      <p className="mt-2 text-slate-700">
+      <p className="mt-2 text-foreground/80">
         Enter the billing days, total kWh and current electric charges from a
         current bill and a prior bill. Blank fields stay blank; this is
         arithmetic only and does not diagnose a rate plan or cause of a change.
       </p>
-      <p className="mt-2 text-sm text-slate-600">
+      <p className="mt-2 text-sm text-muted-foreground">
         Use the current-electric-charges line rather than the total account
         balance. Credits can make that charge negative.
       </p>
@@ -141,7 +141,7 @@ export function BillComparison({ utilityName = 'PG&E' }: { utilityName?: string 
         {field('priorKwh', 'Total electricity use (kWh)', 'Prior bill', '0')}
         {field('currentElectricCharges', 'Current electric charges ($)', 'Current bill')}
         {field('priorElectricCharges', 'Current electric charges ($)', 'Prior bill')}
-        <button className="rounded-lg bg-slate-900 px-5 py-3 font-semibold text-white md:col-span-2">
+        <button className="rounded-lg bg-foreground px-5 py-3 font-semibold text-white md:col-span-2">
           Compare without contact details
         </button>
       </form>
@@ -155,41 +155,41 @@ export function BillComparison({ utilityName = 'PG&E' }: { utilityName?: string 
           <h3 className="text-lg font-bold">Daily comparison</h3>
           <dl className="grid gap-4 sm:grid-cols-2">
             <div>
-              <dt className="text-sm text-slate-600">Current electricity use</dt>
+              <dt className="text-sm text-muted-foreground">Current electricity use</dt>
               <dd className="mt-1 text-xl font-bold">{number(result.currentKwhPerDay)} kWh/day</dd>
             </div>
             <div>
-              <dt className="text-sm text-slate-600">Prior electricity use</dt>
+              <dt className="text-sm text-muted-foreground">Prior electricity use</dt>
               <dd className="mt-1 text-xl font-bold">{number(result.priorKwhPerDay)} kWh/day</dd>
             </div>
             <div>
-              <dt className="text-sm text-slate-600">Current electric charges</dt>
+              <dt className="text-sm text-muted-foreground">Current electric charges</dt>
               <dd className="mt-1 text-xl font-bold">{currency(result.currentChargesPerDay)}/day</dd>
             </div>
             <div>
-              <dt className="text-sm text-slate-600">Prior electric charges</dt>
+              <dt className="text-sm text-muted-foreground">Prior electric charges</dt>
               <dd className="mt-1 text-xl font-bold">{currency(result.priorChargesPerDay)}/day</dd>
             </div>
             <div>
-              <dt className="text-sm text-slate-600">Daily use difference</dt>
+              <dt className="text-sm text-muted-foreground">Daily use difference</dt>
               <dd className="mt-1 text-xl font-bold">
                 {signed(result.kwhPerDayDifference, ' kWh/day')}
               </dd>
-              <p className="mt-1 text-sm text-slate-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Absolute difference: {number(result.absoluteKwhPerDayDifference)} kWh/day · Percent: {percent(result.kwhPerDayPercentChange)}
               </p>
             </div>
             <div>
-              <dt className="text-sm text-slate-600">Daily charge difference</dt>
+              <dt className="text-sm text-muted-foreground">Daily charge difference</dt>
               <dd className="mt-1 text-xl font-bold">
                 {currency(result.chargesPerDayDifference)}/day
               </dd>
-              <p className="mt-1 text-sm text-slate-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Absolute difference: {currency(result.absoluteChargesPerDayDifference)}/day · Percent: {percent(result.chargesPerDayPercentChange)}
               </p>
             </div>
             <div>
-              <dt className="text-sm text-slate-600">Current blended charges per kWh</dt>
+              <dt className="text-sm text-muted-foreground">Current blended charges per kWh</dt>
               <dd className="mt-1 text-xl font-bold">
                 {result.currentBlendedChargesPerKwh === null
                   ? 'Not available when kWh is zero'
@@ -197,7 +197,7 @@ export function BillComparison({ utilityName = 'PG&E' }: { utilityName?: string 
               </dd>
             </div>
             <div>
-              <dt className="text-sm text-slate-600">Prior blended charges per kWh</dt>
+              <dt className="text-sm text-muted-foreground">Prior blended charges per kWh</dt>
               <dd className="mt-1 text-xl font-bold">
                 {result.priorBlendedChargesPerKwh === null
                   ? 'Not available when kWh is zero'
@@ -205,7 +205,7 @@ export function BillComparison({ utilityName = 'PG&E' }: { utilityName?: string 
               </dd>
             </div>
           </dl>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-muted-foreground">
             “Blended charges per kWh” divides the entered current electric
             charges by total bill kWh. It is not a tariff or an explanation for
             the difference between bills.

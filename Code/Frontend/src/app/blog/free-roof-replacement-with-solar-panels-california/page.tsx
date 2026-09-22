@@ -118,7 +118,7 @@ export default function FreeRoofReplacementWithSolarCalifornia() {
             <caption className="sr-only">
               Roof and solar proposal comparison checklist
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Item</th>
                 <th className="p-4">What to obtain before signing</th>

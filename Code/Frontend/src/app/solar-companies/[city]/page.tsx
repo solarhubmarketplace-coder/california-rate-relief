@@ -520,7 +520,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 </div>
               </li>
               <li className="flex gap-3 items-start">
-                <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                <AlertTriangle className="h-5 w-5 text-cta flex-shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-foreground">NEM 3.0 realism.</strong>{" "}
                   <span className="text-foreground/80">
@@ -564,7 +564,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                       <p className="text-foreground/80">{ins.bestFor}</p>
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-amber-600 uppercase tracking-wide mb-1">
+                      <div className="text-xs font-semibold text-status-warning uppercase tracking-wide mb-1">
                         Honest trade-off
                       </div>
                       <p className="text-foreground/80">{ins.tradeoff}</p>

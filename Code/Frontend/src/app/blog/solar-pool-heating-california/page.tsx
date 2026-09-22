@@ -158,7 +158,7 @@ export default function SolarPoolHeatingCA() {
                   <div><strong>Minimum 10 years of remaining roof life.</strong> You don&apos;t want to pull panels to replace a roof in 3 years.</div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                  <AlertTriangle className="h-5 w-5 text-cta flex-shrink-0 mt-0.5" />
                   <div><strong>No tile-roof premium here.</strong> Unlike PV, solar thermal panels don&apos;t require tile removal under the mats — they mount on brackets over the tile. Tile homes are actually cheaper to install on than PV.</div>
                 </li>
               </ul>

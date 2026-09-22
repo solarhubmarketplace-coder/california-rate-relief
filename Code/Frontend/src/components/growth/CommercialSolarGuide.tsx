@@ -55,15 +55,15 @@ export const commercialSolarMetadata: Metadata = {
 
 function CommercialInquiry() {
   return (
-    <section id="solar-inquiry" className="mt-10 rounded-2xl border border-emerald-200 bg-emerald-50 p-6 md:p-8">
-      <h2 className="text-2xl font-bold text-slate-900">Put the property and bills in front of a commercial provider</h2>
-      <p className="mt-3 max-w-3xl leading-relaxed text-slate-700">
+    <section id="solar-inquiry" className="mt-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8">
+      <h2 className="text-2xl font-bold text-foreground">Put the property and bills in front of a commercial provider</h2>
+      <p className="mt-3 max-w-3xl leading-relaxed text-foreground/80">
         Tell California Rate Relief about the site, utility, electricity use and project goal. We review the inquiry and may connect a suitable project with an independent provider, subject to service availability.
       </p>
-      <Link className="mt-5 inline-block rounded-lg bg-emerald-800 px-5 py-3 font-semibold text-white" href="/commercial-assessment">
+      <Link className="mt-5 inline-block rounded-lg bg-primary px-5 py-3 font-semibold text-white" href="/commercial-assessment">
         Request a commercial assessment
       </Link>
-      <p className="mt-3 text-xs text-slate-600">No cost to submit. No obligation. Project fit, service, design, price and savings must be confirmed.</p>
+      <p className="mt-3 text-xs text-muted-foreground">No cost to submit. No obligation. Project fit, service, design, price and savings must be confirmed.</p>
     </section>
   );
 }
@@ -141,10 +141,10 @@ function SectionIndex() {
       <ul className="mt-4 space-y-3">
         {WRITTEN_GUIDES.map((guide) => (
           <li key={guide.href}>
-            <Link className="font-semibold text-emerald-800 underline" href={guide.href}>
+            <Link className="font-semibold text-primary underline" href={guide.href}>
               {guide.anchor}
             </Link>
-            <span className="block text-sm text-slate-600">{guide.blurb}</span>
+            <span className="block text-sm text-muted-foreground">{guide.blurb}</span>
           </li>
         ))}
       </ul>
@@ -152,10 +152,10 @@ function SectionIndex() {
       <ul className="mt-3 space-y-3">
         {guides.map((guide) => (
           <li key={guide.slug}>
-            <Link className="font-semibold text-emerald-800 underline" href={articleHref(guide)}>
+            <Link className="font-semibold text-primary underline" href={articleHref(guide)}>
               {guide.h1}
             </Link>
-            <span className="block text-sm text-slate-600">{guide.metaDescription}</span>
+            <span className="block text-sm text-muted-foreground">{guide.metaDescription}</span>
           </li>
         ))}
       </ul>
@@ -216,7 +216,7 @@ export function CommercialSolarGuide() {
         <h2>Compare ownership and service, not just monthly payment</h2>
         <div className="mt-4 overflow-x-auto rounded-xl border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-slate-100"><tr><th className="p-4">Structure</th><th className="p-4">Questions the proposal must answer</th></tr></thead>
+            <thead className="bg-muted"><tr><th className="p-4">Structure</th><th className="p-4">Questions the proposal must answer</th></tr></thead>
             <tbody>
               {[
                 ["Direct ownership", "Who uses the tax benefits, funds replacements, operates the system and carries performance risk?"],

@@ -238,12 +238,12 @@ export default function CommercialSolarCost() {
               </p>
 
               <div className="my-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-5">
+                <div className="rounded-xl border-2 border-status-warning/30 bg-status-warning/10 p-5">
                   <div className="mb-2 flex items-start gap-2">
-                    <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-600" aria-hidden="true" />
-                    <h3 className="font-bold text-amber-900">Federal credit: December 31, 2027</h3>
+                    <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-status-warning" aria-hidden="true" />
+                    <h3 className="font-bold text-foreground">Federal credit: December 31, 2027</h3>
                   </div>
-                  <p className="text-sm text-amber-900/90">
+                  <p className="text-sm text-foreground/90">
                     Section 48E does not apply to a wind or solar facility placed in service after
                     December 31, 2027, unless construction began on or before July 4, 2026{' '}
                     {/* fedtax-13, fedtax-14 */}. That date has already passed. Any California
@@ -252,12 +252,12 @@ export default function CommercialSolarCost() {
                     {' '}{/* fedtax-14 */}.
                   </p>
                 </div>
-                <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-5">
+                <div className="rounded-xl border-2 border-status-warning/30 bg-status-warning/10 p-5">
                   <div className="mb-2 flex items-start gap-2">
-                    <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-600" aria-hidden="true" />
-                    <h3 className="font-bold text-amber-900">Property tax: inoperative January 1, 2027</h3>
+                    <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-status-warning" aria-hidden="true" />
+                    <h3 className="font-bold text-foreground">Property tax: inoperative January 1, 2027</h3>
                   </div>
-                  <p className="text-sm text-amber-900/90">
+                  <p className="text-sm text-foreground/90">
                     Revenue &amp; Taxation Code §73 keeps a solar system&apos;s added value off your
                     property&apos;s reassessed value. That exclusion goes inoperative January 1, 2027
                     {' '}{/* catax-05 */}. A system in process or completed before then keeps the

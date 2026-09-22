@@ -168,9 +168,9 @@ export function ArticleRenderer({
           </div>
         )}
 
-        <div className="my-10 rounded-xl border border-amber-500/40 bg-amber-500/5 p-6">
+        <div className="my-10 rounded-xl border border-cta/40 bg-cta/5 p-6">
           <h2 className="flex items-center gap-2 text-xl font-bold text-foreground mb-3">
-            <AlertTriangle className="h-5 w-5 text-amber-600" />
+            <AlertTriangle className="h-5 w-5 text-status-warning" />
             When this is the wrong move
           </h2>
           <Paragraphs text={page.whenThisIsWrong} />

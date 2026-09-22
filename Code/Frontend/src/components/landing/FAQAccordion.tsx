@@ -37,31 +37,31 @@ export const FAQS = [
 
 export function FAQAccordion() {
   return (
-    <section className='py-16 md:py-24 bg-white'>
+    <section className='py-16 md:py-24 bg-background'>
       <div className='container mx-auto px-4 max-w-4xl'>
         <div className='text-center mb-12'>
-          <div className='inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide uppercase'>
+          <p className='text-xs font-bold uppercase tracking-wide text-primary mb-3'>
             Common questions
-          </div>
-          <h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-3'>
+          </p>
+          <h2 className='text-3xl md:text-5xl font-extrabold text-foreground tracking-tight mb-3'>
             Everything you want to know
           </h2>
-          <p className='text-lg text-slate-600'>
+          <p className='text-lg text-muted-foreground'>
             Straight answers about the referral and review process.
           </p>
         </div>
 
-        <div className='divide-y divide-slate-200 border-y border-slate-200'>
+        <div className='divide-y divide-border border-y border-border'>
           {FAQS.map((item, i) => (
             <details key={i} className='group py-5'>
               <summary className='flex items-center justify-between gap-4 cursor-pointer list-none'>
-                <span className='font-bold text-lg text-slate-900'>{item.q}</span>
+                <span className='font-bold text-lg text-foreground'>{item.q}</span>
                 <ChevronDown
-                  className='w-5 h-5 text-slate-400 transition-transform shrink-0 group-open:rotate-180'
+                  className='w-5 h-5 text-muted-foreground transition-transform shrink-0 group-open:rotate-180'
                   aria-hidden='true'
                 />
               </summary>
-              <p className='mt-3 text-slate-600 leading-relaxed'>{item.a}</p>
+              <p className='mt-3 text-muted-foreground leading-relaxed'>{item.a}</p>
             </details>
           ))}
         </div>

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 function CommercialInquiry() {
   return (
-    <section id="solar-inquiry" className="mt-10 rounded-2xl border border-emerald-200 bg-emerald-50 p-7">
+    <section id="solar-inquiry" className="mt-10 rounded-2xl border border-primary/20 bg-primary/5 p-7">
       <h2>Discuss a commercial solar project</h2>
       <p>
         California Rate Relief is a private referral service. A commercial
@@ -43,7 +43,7 @@ function CommercialInquiry() {
       </p>
       <Link
         href="/commercial-assessment"
-        className="mt-5 inline-block rounded-lg bg-emerald-800 px-5 py-3 font-semibold text-white"
+        className="mt-5 inline-block rounded-lg bg-primary px-5 py-3 font-semibold text-white"
       >
         Request a commercial assessment
       </Link>
@@ -86,7 +86,7 @@ export default function CommercialSolarFinancingCalifornia() {
             <caption className="sr-only">
               Commercial solar financing document comparison checklist
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Structure</th>
                 <th className="p-4">Questions that the documents must answer</th>

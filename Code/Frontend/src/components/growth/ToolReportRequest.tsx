@@ -43,9 +43,9 @@ export function ToolReportRequest({
   const [open, setOpen] = useState(false);
   const id = sectionId || `tool-report-${sourceTool.replace(/_/g, '-')}`;
   return (
-    <div className="mt-6 rounded-xl border border-slate-200 bg-white p-5">
-      <h3 className="text-base font-bold text-slate-900">{label}</h3>
-      <p className="mt-2 text-sm text-slate-700">{description}</p>
+    <div className="mt-6 rounded-xl border border-border bg-white p-5">
+      <h3 className="text-base font-bold text-foreground">{label}</h3>
+      <p className="mt-2 text-sm text-foreground/80">{description}</p>
       {open ? (
         <SolarInquiry
           variant={variant}
@@ -68,7 +68,7 @@ export function ToolReportRequest({
               destination: `#${id}`,
             });
           }}
-          className="mt-4 rounded-lg border border-emerald-800 px-4 py-2 text-sm font-semibold text-emerald-900"
+          className="mt-4 rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary"
         >
           {label}
         </button>

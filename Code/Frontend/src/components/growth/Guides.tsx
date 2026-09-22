@@ -53,7 +53,7 @@ const dfpiPace: Source = {
   label: 'California DFPI: PACE consumer protections',
   url: 'https://dfpi.ca.gov/consumers/housing/pace/',
 };
-const link = 'text-emerald-800 underline underline-offset-2';
+const link = 'text-primary underline underline-offset-2';
 const definitions = {
   calculator: {
     path: '/tools/solar-panel-calculator',
@@ -161,7 +161,7 @@ function FinancingTable() {
         <caption className="p-4 text-left font-semibold">
           Same equipment, different payment obligations
         </caption>
-        <thead className="bg-slate-100">
+        <thead className="bg-muted">
           <tr>
             <th className="p-3">Option</th>
             <th className="p-3">What you pay for</th>
@@ -262,7 +262,7 @@ function FourWayDetailTable() {
         <caption className="p-4 text-left font-semibold">
           Cash, loan, lease and PPA: ownership, cost and what changes at sale
         </caption>
-        <thead className="bg-slate-100">
+        <thead className="bg-muted">
           <tr>
             <th className="p-3"></th>
             <th className="p-3">Cash purchase</th>
@@ -286,7 +286,7 @@ function FourWayDetailTable() {
           ))}
         </tbody>
       </table>
-      <p className="border-t bg-slate-50 p-3 text-xs text-slate-600">
+      <p className="border-t bg-muted p-3 text-xs text-muted-foreground">
         Checked September 22, 2026 against the{' '}
         <a className={link} href={cpucSolarConsumerGuide.url}>
           CPUC California Solar Consumer Protection Guide
@@ -368,7 +368,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             ].map((slug) => (
               <Link
                 key={slug}
-                className="rounded-lg border p-4 capitalize text-emerald-800 underline"
+                className="rounded-lg border p-4 capitalize text-primary underline"
                 href={companiesCityHref(slug)}
               >
                 {slug.replaceAll('-', ' ')}, California
@@ -394,7 +394,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             ].map(([slug, label]) => (
               <Link
                 key={slug}
-                className="rounded-lg border p-4 text-emerald-800 underline"
+                className="rounded-lg border p-4 text-primary underline"
                 href={companiesCityHref(slug)}
               >
                 {hasCompaniesCityPage(slug)
@@ -1072,7 +1072,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                 Time-of-use requirements by utility under the Net Billing
                 Tariff
               </caption>
-              <thead className="bg-slate-100">
+              <thead className="bg-muted">
                 <tr>
                   <th className="p-3">Utility</th>
                   <th className="p-3">What’s required</th>
@@ -1436,7 +1436,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               <caption className="p-3 text-left font-semibold">
                 Off-peak and super off-peak windows · checked September 22, 2026
               </caption>
-              <thead className="bg-slate-100">
+              <thead className="bg-muted">
                 <tr>
                   <th className="p-3">Plan</th>
                   <th className="p-3">Weekday off-peak</th>
@@ -1474,7 +1474,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             practical answer to &ldquo;best time to run appliances&rdquo; on
             SDG&amp;E — outside the 4–9 p.m. window, any day.
           </p>
-          <p className="mt-3 text-sm text-slate-600">
+          <p className="mt-3 text-sm text-muted-foreground">
             Source checked September 22, 2026:{' '}
             <a className={link} href="https://www.sdge.com/whenmatters">
               SDG&amp;E, when rates matter
@@ -1501,7 +1501,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               <caption className="p-3 text-left font-semibold">
                 Total Rate by schedule · checked September 22, 2026
               </caption>
-              <thead className="bg-slate-100">
+              <thead className="bg-muted">
                 <tr>
                   <th className="p-3">Plan</th>
                   <th className="p-3">Hours</th>

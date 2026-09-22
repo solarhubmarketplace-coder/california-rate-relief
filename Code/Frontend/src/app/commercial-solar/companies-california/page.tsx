@@ -10,7 +10,7 @@ const title =
 const description =
   "Compare bids on license, electrical scope, tariff, demand charges, interconnection and financing before choosing a California commercial solar company.";
 const path = "/commercial-solar/companies-california";
-const link = "text-emerald-800 underline underline-offset-2";
+const link = "text-primary underline underline-offset-2";
 const businessRates =
   "https://www.sce.com/business/rates-financing/rate-plans/business-time-of-use-rate-plans";
 const cslbClassifications =
@@ -70,7 +70,7 @@ export default function CommercialSolarCompanies() {
           <h2 className="mb-3 text-2xl font-bold">
             Discuss a California commercial project
           </h2>
-          <p className="mb-5 text-slate-700">
+          <p className="mb-5 text-foreground/80">
             Send the property basics to California Rate Relief. This is a
             private referral inquiry. Project review, provider availability and
             a proposal come later.
@@ -135,7 +135,7 @@ export default function CommercialSolarCompanies() {
             <caption className="sr-only">
               Commercial solar proposal comparison
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Project item</th>
                 <th className="p-4">Evidence to request</th>

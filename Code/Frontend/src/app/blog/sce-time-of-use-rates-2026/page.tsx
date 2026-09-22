@@ -15,7 +15,7 @@ const cca =
   "https://www.sce.com/customer-service-center/community-choice-aggregation";
 const bsc =
   "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc";
-const link = "text-emerald-800 underline underline-offset-2";
+const link = "text-primary underline underline-offset-2";
 const plans = [
   [
     "TOU-D 4–9 PM",
@@ -111,7 +111,7 @@ export default function SceTimeOfUsePage() {
             <caption className="sr-only">
               SCE residential time-of-use peak windows
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Plan</th>
                 <th className="p-4">Higher-priced window</th>

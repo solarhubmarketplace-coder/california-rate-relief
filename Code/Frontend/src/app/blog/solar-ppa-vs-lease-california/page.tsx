@@ -201,7 +201,7 @@ export default function SolarPPAVsLeaseCalifornia() {
             <caption className="sr-only">
               Solar PPA and lease mechanism comparison
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">What it is</th>
                 <th className="p-4">PPA</th>

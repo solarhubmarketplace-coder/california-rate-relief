@@ -113,7 +113,7 @@ export default function SolarPanelCleaningCA() {
                   <div><strong>When production drops 10%+ below the prior year&apos;s same month.</strong> Check your monitoring app (Enphase Enlighten, SolarEdge, Tesla, etc.) against the year-over-year baseline.</div>
                 </li>
                 <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                  <AlertTriangle className="h-5 w-5 text-cta flex-shrink-0 mt-0.5" />
                   <div><strong>Winter rain often does the job for free.</strong> In coastal California, the first 2–3 heavy rains typically restore production to within 2–3% of clean. Central Valley and inland Southern California do not reliably get enough winter rain for this.</div>
                 </li>
               </ul>

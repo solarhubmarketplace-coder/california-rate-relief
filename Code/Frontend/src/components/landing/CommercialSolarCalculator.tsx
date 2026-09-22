@@ -493,7 +493,7 @@ export default function CommercialSolarCalculator() {
           <CardTitle>Tax position</CardTitle>
         </CardHeader>
         <CardContent className="space-y-5">
-          <div className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+          <div className="rounded-lg border border-status-warning/30 bg-status-warning/10 p-3 text-sm text-foreground">
             <div className="flex gap-2">
               <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
               <p>

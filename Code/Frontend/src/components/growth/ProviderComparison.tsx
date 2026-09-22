@@ -48,7 +48,7 @@ export function ProviderComparison() {
           <caption className="sr-only">
             Published company options and questions for a written quote
           </caption>
-          <thead className="bg-slate-100">
+          <thead className="bg-muted">
             <tr>
               <th className="p-3">Company and source</th>
               <th className="p-3">Published options</th>
@@ -63,7 +63,7 @@ export function ProviderComparison() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-emerald-800 underline"
+                    className="text-primary underline"
                   >
                     {p.name}
                   </a>
@@ -79,7 +79,7 @@ export function ProviderComparison() {
         Add a local contractor to the comparison. Search the{' '}
         <a
           href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"
-          className="text-emerald-800 underline"
+          className="text-primary underline"
         >
           CSLB license lookup
         </a>{' '}

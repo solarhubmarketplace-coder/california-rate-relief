@@ -51,7 +51,7 @@ export function BestTimeToInstallSolarGuide() {
       comparisonHref="/blog/solar-installation-timeline-california"
       comparisonLabel="California installation timeline"
     >
-      <section className="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
+      <section className="rounded-xl border border-primary/20 bg-primary/5 p-5">
         <h2>The best time is the first complete, defensible project window</h2>
         <p>
           A calendar month cannot repair a bad roof, incomplete proposal or missing utility step. Start when the roof is ready, your recent electricity use reflects the load you expect to keep, and at least three written bids price the same scope. Then make the contractor put the permit, inspection, interconnection and permission-to-operate responsibilities on a dated schedule.

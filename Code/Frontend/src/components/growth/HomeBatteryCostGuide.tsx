@@ -82,7 +82,7 @@ export function HomeBatteryCostGuide() {
         <h2>Require one price table from every bidder</h2>
         <div className="mt-4 overflow-x-auto rounded-xl border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-slate-100"><tr><th className="p-4">Line item</th><th className="p-4">What the quote should identify</th></tr></thead>
+            <thead className="bg-muted"><tr><th className="p-4">Line item</th><th className="p-4">What the quote should identify</th></tr></thead>
             <tbody>
               {[
                 ["Battery hardware", "Manufacturer, model, quantity, usable energy, power output and included warranty."],

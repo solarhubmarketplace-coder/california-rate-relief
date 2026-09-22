@@ -225,7 +225,7 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
             compensation on your tariff.
           </li>
         </ul>
-        <p className="mt-4 text-sm text-slate-600">
+        <p className="mt-4 text-sm text-muted-foreground">
           Before relying on any statement about export compensation or the size
           of the remaining bill, ask the provider for the tariff and the
           assumptions in writing and check them against your own utility
@@ -303,7 +303,7 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
             <caption className="sr-only">
               Solar lease and PPA contract terms to locate before signing
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Term</th>
                 <th className="p-4">What to ask for in writing</th>

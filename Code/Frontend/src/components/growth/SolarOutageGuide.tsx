@@ -101,7 +101,7 @@ export function SolarOutageGuide() {
         <h2>Backup proposal checklist</h2>
         <div className="mt-4 overflow-x-auto rounded-xl border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr><th className="p-4">Get in writing</th><th className="p-4">What it should answer</th></tr>
             </thead>
             <tbody>

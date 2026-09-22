@@ -209,21 +209,21 @@ function ContractNotice({
 }) {
   if (missingHorizonMonths > 0)
     return (
-      <p className="mt-2 text-sm text-amber-800">
+      <p className="mt-2 text-sm text-status-warning">
         The entered term ends {missingHorizonMonths} months before the
         comparison horizon. Later costs are missing from this option.
       </p>
     );
   if (afterHorizon > 0)
     return (
-      <p className="mt-2 text-sm text-slate-600">
+      <p className="mt-2 text-sm text-muted-foreground">
         The entered {termMonths}-month term continues past the {horizonMonths}
         -month horizon. Scheduled payments after the horizon:{" "}
         {currency(afterHorizon)}.
       </p>
     );
   return (
-    <p className="mt-2 text-sm text-slate-600">
+    <p className="mt-2 text-sm text-muted-foreground">
       The entered term ends at the comparison horizon.
     </p>
   );
@@ -237,7 +237,7 @@ export function SolarFinancingComparison() {
   const [error, setError] = useState("");
   const [result, setResult] = useState<SelectedComparisonResult | null>(null);
   const inputClass =
-    "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-slate-900";
+    "mt-1 w-full rounded-lg border border-border bg-white px-3 py-3 text-foreground";
   const input = (
     key: keyof FinancingValues,
     label: string,
@@ -271,16 +271,16 @@ export function SolarFinancingComparison() {
   );
 
   return (
-    <section className="my-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-8">
+    <section className="my-8 rounded-2xl border border-border bg-muted p-5 md:p-8">
       <h2 className="text-2xl font-bold">
         Compare the contract payments you were quoted
       </h2>
-      <p className="mt-2 text-slate-700">
+      <p className="mt-2 text-foreground/80">
         Enter only written proposal terms. This tool totals those inputs without
         choosing a winner or adding a utility-bill, production, tax or resale
         assumption.
       </p>
-      <p className="mt-2 text-sm text-amber-900">
+      <p className="mt-2 text-sm text-foreground">
         Compare proposals with the same equipment, system size, production and
         project scope. Different scopes do not produce like-for-like totals.
       </p>
@@ -305,11 +305,11 @@ export function SolarFinancingComparison() {
           }
         }}
       >
-        <fieldset className="rounded-xl border border-slate-300 bg-white p-4">
+        <fieldset className="rounded-xl border border-border bg-white p-4">
           <legend className="px-1 font-semibold">
             Actual proposals to compare
           </legend>
-          <p className="mb-3 text-sm text-slate-700">
+          <p className="mb-3 text-sm text-foreground/80">
             Select at least two written offers. Unselected offers are ignored
             and are not treated as zero-dollar alternatives.
           </p>
@@ -392,7 +392,7 @@ export function SolarFinancingComparison() {
             {input("ppaTermMonths", "Term (months)", "1", "1")}
           </div>
         </fieldset>
-        <button className="rounded-lg bg-slate-900 px-5 py-3 font-semibold text-white">
+        <button className="rounded-lg bg-foreground px-5 py-3 font-semibold text-white">
           Compare entered terms without contact details
         </button>
       </form>
@@ -404,7 +404,7 @@ export function SolarFinancingComparison() {
       {result && (
         <div role="status" className="mt-6 space-y-5 rounded-xl bg-white p-5">
           <h3 className="text-lg font-bold">Entered contract totals</h3>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-muted-foreground">
             Compared: {selectedComparisonLabel(result.selectedOptions)}.
           </p>
           <div className="grid gap-4 lg:grid-cols-2">
@@ -414,7 +414,7 @@ export function SolarFinancingComparison() {
                 <p className="mt-2 text-2xl font-bold">
                   {currency(result.cash.knownCostThroughHorizon)}
                 </p>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Upfront price. No recurring contract payment was entered.
                 </p>
               </div>
@@ -425,7 +425,7 @@ export function SolarFinancingComparison() {
                 <p className="mt-2 text-2xl font-bold">
                   {currency(result.loan.knownCostThroughHorizon)}
                 </p>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Known payments through the selected horizon.
                 </p>
                 <ContractNotice
@@ -441,7 +441,7 @@ export function SolarFinancingComparison() {
                 <p className="mt-2 text-2xl font-bold">
                   {currency(result.lease.knownCostThroughHorizon)}
                 </p>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Known payments through the selected horizon.
                 </p>
                 <ContractNotice
@@ -457,7 +457,7 @@ export function SolarFinancingComparison() {
                 <p className="mt-2 text-2xl font-bold">
                   {currency(result.ppa.knownCostThroughHorizon)}
                 </p>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Known PPA charges through the selected horizon.
                 </p>
                 <ContractNotice
@@ -475,7 +475,7 @@ export function SolarFinancingComparison() {
                   <h4 className="font-semibold">Lease payment schedule</h4>
                   <div className="mt-2 overflow-x-auto rounded-lg border">
                     <table className="w-full text-left text-sm">
-                      <thead className="bg-slate-100">
+                      <thead className="bg-muted">
                         <tr>
                           <th className="p-2">Year</th>
                           <th className="p-2">Months</th>
@@ -502,14 +502,14 @@ export function SolarFinancingComparison() {
               {result.ppa && (
                 <div>
                   <h4 className="font-semibold">PPA charge schedule</h4>
-                  <p className="mt-1 text-sm text-slate-600">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Uses the entered annual production of{" "}
                     {number(result.ppa.annualProductionKwh)} kWh for each
                     contract year. Partial periods are prorated.
                   </p>
                   <div className="mt-2 overflow-x-auto rounded-lg border">
                     <table className="w-full text-left text-sm">
-                      <thead className="bg-slate-100">
+                      <thead className="bg-muted">
                         <tr>
                           <th className="p-2">Year</th>
                           <th className="p-2">Months</th>
@@ -539,7 +539,7 @@ export function SolarFinancingComparison() {
               )}
             </div>
           )}
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-muted-foreground">
             These totals exclude utility bills, maintenance, equipment
             replacement, tax treatment, transfer or buyout terms, and resale.
             They do not establish savings or identify a best option.

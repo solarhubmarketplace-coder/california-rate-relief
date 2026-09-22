@@ -60,8 +60,8 @@ export default function PowurReview() {
               </div>
             </header>
 
-            <div className='p-4 rounded-lg border border-amber-500/40 bg-amber-500/10 flex gap-3 items-start mb-8'>
-              <AlertTriangle className='h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5' />
+            <div className='p-4 rounded-lg border border-cta/40 bg-cta/10 flex gap-3 items-start mb-8'>
+              <AlertTriangle className='h-5 w-5 text-status-warning flex-shrink-0 mt-0.5' />
               <div className='text-sm text-foreground/80'>
                 <strong className='text-foreground'>Use caution:</strong> Powur has one of the most consistently negative customer reputation profiles in our California comparison. Multi-month install delays and unresponsive support are recurring themes across BBB, SolarReviews, Reddit, and consumer forums.
               </div>

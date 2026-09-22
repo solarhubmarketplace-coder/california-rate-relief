@@ -65,7 +65,7 @@ export default function SolarPanelRemovalReinstallCost() {
             <caption className="sr-only">
               Solar removal and reinstallation scope checklist
             </caption>
-            <thead className="bg-slate-100">
+            <thead className="bg-muted">
               <tr>
                 <th className="p-4">Scope</th>
                 <th className="p-4">What the written proposal should identify</th>

@@ -82,7 +82,7 @@ export function CityProviderOptions({
           <caption className="sr-only">
             Published company options and local quote questions
           </caption>
-          <thead className="bg-slate-100">
+          <thead className="bg-muted">
             <tr>
               <th className="p-3">Company and source</th>
               <th className="p-3">What the site publishes</th>
