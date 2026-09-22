@@ -66,6 +66,7 @@ export function DecisionPage({
   utility = "",
   topic,
   inquiry,
+  faq,
   commercial = false,
   sourceCheckedDate = "2026-09-10",
   contentModifiedDate,
@@ -84,6 +85,8 @@ export function DecisionPage({
   utility?: string;
   topic?: string;
   inquiry?: ReactNode;
+  /** Optional FAQ block rendered after the sources list and before the inquiry form. */
+  faq?: ReactNode;
   commercial?: boolean;
   sourceCheckedDate?: string;
   contentModifiedDate?: string;
@@ -180,6 +183,7 @@ export function DecisionPage({
           {children}
         </div>
         <SourceList sources={sources} sourceCheckedDate={sourceCheckedDate} />
+        {faq}
         {inquiry ?? <SolarInquiry utility={utility} topic={topic || title} market={market} />}
       </main>
       <Footer />

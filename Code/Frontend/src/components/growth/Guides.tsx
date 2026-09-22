@@ -129,7 +129,7 @@ export type GuideKey = keyof typeof definitions;
 export function guideMetadata(key: GuideKey): Metadata {
   const d = definitions[key];
   const modifiedTime =
-    key === 'financing'
+    key === 'financing' || key === 'nem'
       ? '2026-09-22T00:00:00Z'
       : key === 'panels'
       ? '2026-09-11T00:00:00Z'
@@ -311,6 +311,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
   let sources: Source[] = [consumer, nem];
   let sourceCheckedDate = '2026-09-10';
   let utility = '';
+  let faq: ReactNode = null;
   if (kind === 'calculator')
     content = (
       <>
@@ -823,9 +824,316 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
     sources = [consumer, nem, cpucSolarConsumerGuide, irsForm5695, irsObbbFaq, dfpiPace];
     sourceCheckedDate = '2026-09-22';
   }
-  if (kind === 'nem')
+  if (kind === 'nem') {
+    sourceCheckedDate = '2026-09-22';
+    sources = [
+      nem,
+      {
+        label: 'CPUC: Net Billing Tariff (NBT) proceeding history',
+        url: 'https://www.cpuc.ca.gov/nbt',
+      },
+      {
+        label: 'CPUC: Avoided Cost Calculator documentation (2024, v1b)',
+        url: 'https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/demand-side-management/acc-models-latest-version/updated-2024-acc-documentation-v1b.pdf',
+      },
+      {
+        label: 'PG&E: Solar Billing Plan overview',
+        url: 'https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html',
+      },
+      {
+        label: 'PG&E: Understand your solar bill (legacy NEM window)',
+        url: 'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html',
+      },
+      {
+        label: 'PG&E: Electric Home (E-ELEC) rate plan',
+        url: 'https://www.pge.com/en/account/rate-plans/electric-home.html',
+      },
+      {
+        label: 'SCE: Solar Billing Plan overview',
+        url: 'https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/solar-billing-plan',
+      },
+      {
+        label: 'SCE: Understanding export pricing',
+        url: 'https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/understanding-export-pricing',
+      },
+      {
+        label: 'SCE: Solar Billing Plan FAQs',
+        url: 'https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs',
+      },
+      {
+        label: 'SDG&E: Understanding your solar bill',
+        url: 'https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill',
+      },
+      {
+        label: 'SDG&E: Export pricing',
+        url: 'https://www.sdge.com/solar/solar-billing-plan/export-pricing',
+      },
+    ];
+    faq = (
+      <section>
+        <h2>FAQ</h2>
+        <div className="space-y-6">
+          <div>
+            <h3>What is NEM 3.0?</h3>
+            <p className="mt-2">
+              It’s the common name for California’s Net Billing Tariff,
+              adopted by the CPUC in Decision D.22-12-056 and in effect for
+              PG&E, SCE and SDG&E customers who applied for solar
+              interconnection on or after April 15, 2023.
+            </p>
+          </div>
+          <div>
+            <h3>When did NEM 3.0 start?</h3>
+            <p className="mt-2">
+              The CPUC adopted the decision on December 15, 2022; it took
+              effect for new interconnection applications on April 15, 2023.
+              It’s been in effect for new solar since then — there’s no
+              pending vote to “pass” it.
+            </p>
+          </div>
+          <div>
+            <h3>How is NEM 3.0 different from NEM 2.0?</h3>
+            <p className="mt-2">
+              The core difference is export compensation: NEM 2.0 credited
+              exports near the retail rate, while NEM 3.0 credits them using
+              the CPUC’s Avoided Cost Calculator, which is usually lower and
+              varies by hour. See the full{' '}
+              <Link className={link} href="/blog/nem-2-vs-nem-3-california">
+                NEM 2.0 vs. NEM 3.0 comparison
+              </Link>{' '}
+              for the side-by-side.
+            </p>
+          </div>
+          <div>
+            <h3>Does NEM 3.0 apply to LADWP or SMUD customers?</h3>
+            <p className="mt-2">
+              No. LADWP and SMUD are municipal utilities, not regulated by
+              the CPUC, and each publishes its own net metering rules
+              separately from the Net Billing Tariff.
+            </p>
+          </div>
+          <div>
+            <h3>
+              How much do PG&E, SCE or SDG&E pay for exported solar under NEM
+              3.0?
+            </h3>
+            <p className="mt-2">
+              There’s no single fixed rate. Each utility calculates an hourly
+              export credit from the CPUC’s Avoided Cost Calculator, so the
+              value changes by hour, month and enrollment year. Check your
+              utility’s export-pricing page for the current numbers for your
+              plan vintage.
+            </p>
+          </div>
+          <div>
+            <h3>What rate plan do I have to be on with NEM 3.0?</h3>
+            <p className="mt-2">
+              A time-of-use rate is required at all three utilities. PG&E
+              defaults residential solar customers to Electric Home
+              (E-ELEC); SCE moves them to TOU-D-Prime; SDG&E also requires
+              TOU service — confirm the specific plan with SDG&E.
+            </p>
+          </div>
+          <div>
+            <h3>
+              Do I keep my NEM 2.0 grandfathering if I sell my house or add
+              panels?
+            </h3>
+            <p className="mt-2">
+              At PG&E and SCE, the legacy period is tied to the system and
+              its original interconnection date, not the owner, so a new
+              owner inherits the remaining years. Adding panels beyond a
+              small threshold (1 kW at PG&E; the greater of 1 kW or 10% of
+              system size at SCE) moves the account to the Net Billing
+              Tariff. SDG&E did not state an equivalent rule on the pages
+              checked.
+            </p>
+          </div>
+          <div>
+            <h3>Does a battery help under NEM 3.0?</h3>
+            <p className="mt-2">
+              It can, because it lets you use your own solar at night
+              instead of exporting it for a lower credit — but whether it
+              pays back depends on your utility and usage. See{' '}
+              <Link
+                className={link}
+                href="/battery/battery-payback-nem-3-california"
+              >
+                battery payback under NEM 3.0
+              </Link>{' '}
+              for the math.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
     content = (
       <>
+        <section>
+          <h2>What the Net Billing Tariff actually is</h2>
+          <p>
+            The Net Billing Tariff (NBT) — what most people call NEM 3.0 — is
+            the billing structure the California Public Utilities Commission
+            adopted in Decision D.22-12-056 on December 15, 2022, as the
+            successor to Net Energy Metering 2.0. As with NEM, your solar
+            output first offsets the electricity you use in the home; only
+            what’s left over gets exported to the grid. The difference from
+            NEM 2.0 is in how that exported electricity is valued: instead of
+            a credit close to your retail rate, it’s compensated at a rate
+            meant to reflect what that power is actually worth to the grid
+            at that hour.
+          </p>
+        </section>
+        <section>
+          <h2>Who’s on NEM 3.0, and who’s grandfathered</h2>
+          <p>
+            Your tariff depends on when you applied for interconnection, not
+            when your system was installed or turned on. If you (or the
+            home’s previous owner) submitted an interconnection application
+            to PG&E, SCE or SDG&E on or after April 15, 2023, you’re on the
+            Net Billing Tariff. Applications submitted before that date
+            stayed on NEM 1.0 or NEM 2.0.
+          </p>
+          <p className="mt-3">
+            Legacy customers aren’t grandfathered forever. The CPUC states
+            that NEM 2.0 customer-generators may remain on that tariff for
+            20 years from their interconnection date, under authority the
+            commission traces to an earlier decision, D.14-03-041. PG&E
+            states the same 20-year window for its original NEM 1.0
+            customers, counted the same way — from the date of
+            interconnection, not the purchase date of the home or system.
+            LADWP and SMUD aren’t part of this — they’re municipal utilities
+            outside CPUC jurisdiction and set their own net metering rules.
+            See the{' '}
+            <Link className={link} href="/blog/nem-2-vs-nem-3-california">
+              NEM 2.0 vs. NEM 3.0 comparison
+            </Link>{' '}
+            for how the two tariffs differ.
+          </p>
+        </section>
+        <section>
+          <h2>How export compensation works</h2>
+          <p>
+            There’s no single published cents-per-kWh number for NEM 3.0
+            exports, and this page won’t invent one. Instead, PG&E, SCE and
+            SDG&E each calculate an hourly export credit using the CPUC’s
+            Avoided Cost Calculator (ACC) — a model that estimates what a
+            kilowatt-hour delivered to the grid at a given hour is worth
+            over a 30-year horizon, built separately for each utility’s
+            climate zones. The CPUC notes these credits are “usually lower
+            than import rates” but “can rise above the retail rate on late
+            summer evenings,” when grid demand peaks. In practice this
+            means:
+          </p>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>
+              <strong>PG&E</strong> issues an Energy Export Credit that
+              “will vary by time of day, day of the week and season,”
+              recalculated using the CPUC-approved ACC values, with
+              published hourly/daily/monthly credit tables available for
+              download for 2023–2026.
+            </li>
+            <li>
+              <strong>SCE</strong> calculates its Energy Export Credit
+              hourly, using the ACC “approved as of January 1 of the
+              calculation year,” split into delivery (transmission,
+              distribution, GHG adder) and generation components. Customers
+              who enroll before January 1, 2028 get those prices locked for
+              their first nine years on the plan.
+            </li>
+            <li>
+              <strong>SDG&E</strong> builds its export credit from 8,760
+              hourly ACC values per climate zone, averaged across zones and
+              split into a generation component (bundled customers only)
+              and a delivery component (all customers), calculated
+              separately for weekday and weekend/holiday hours each month.
+            </li>
+          </ul>
+          <p className="mt-3">
+            For the current dollar figures — which change by plan vintage
+            and update periodically — see your utility’s own export-pricing
+            page rather than a fixed number here; the structure above is
+            what won’t change month to month.
+          </p>
+        </section>
+        <section>
+          <h2>Your TOU rate (the import side)</h2>
+          <p>
+            All three investor-owned utilities require Net Billing Tariff
+            customers to take electricity service on a time-of-use (TOU)
+            rate, with the CPUC describing this as “high differential”
+            pricing — lower off-peak prices, higher on-peak prices — so your
+            bill reflects when you’re actually pulling from the grid, not
+            just how much.
+          </p>
+          <div className="mt-4 overflow-x-auto rounded-xl border">
+            <table className="w-full text-left text-sm">
+              <caption className="sr-only">
+                Time-of-use requirements by utility under the Net Billing
+                Tariff
+              </caption>
+              <thead className="bg-slate-100">
+                <tr>
+                  <th className="p-3">Utility</th>
+                  <th className="p-3">What’s required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top">
+                    PG&E
+                  </th>
+                  <td className="p-3 align-top">
+                    Residential Solar Billing Plan customers are
+                    automatically enrolled on Electric Home (E-ELEC), a TOU
+                    rate with peak pricing 4–9 p.m. daily, partial-peak 3–4
+                    p.m. and 9 p.m.–midnight, and off-peak the rest of the
+                    day.
+                  </td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top">
+                    SCE
+                  </th>
+                  <td className="p-3 align-top">
+                    Residential customers are transitioned to the
+                    TOU-D-Prime rate and are charged the full retail rate
+                    for everything they import — there’s no separate
+                    “solar rate” for usage.
+                  </td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top">
+                    SDG&E
+                  </th>
+                  <td className="p-3 align-top">
+                    SDG&E confirms Net Billing Tariff accounts take TOU
+                    service, consistent with the CPUC’s general rule; a
+                    single named residential TOU plan could not be
+                    confirmed from SDG&E’s own pages with enough confidence
+                    to publish here, so verify the specific plan with SDG&E
+                    for your address.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3">
+            For current TOU rate periods and pricing by utility, see{' '}
+            <Link className={link} href="/blog/pge-time-of-use-rates-2026">
+              PG&E’s 2026 time-of-use rates
+            </Link>
+            ,{' '}
+            <Link className={link} href="/blog/sce-time-of-use-rates-2026">
+              SCE’s 2026 time-of-use rates
+            </Link>
+            , and{' '}
+            <Link className={link} href="/blog/sdge-time-of-use-rates-2026">
+              SDG&E’s 2026 time-of-use rates
+            </Link>
+            .
+          </p>
+        </section>
         <section>
           <h2>Which California utilities does this cover?</h2>
           <p>
@@ -868,6 +1176,77 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             separately about outage operation and backed-up circuits.
           </p>
         </section>
+        <section>
+          <h2>The annual true-up, briefly</h2>
+          <p>
+            Like NEM 2.0, the Net Billing Tariff settles annually. PG&E
+            states any remaining credit balance is reset to zero at the
+            start of your new 12-month cycle; SDG&E settles net exporters
+            against import charges and pays any true annual surplus at Net
+            Surplus Compensation rates, which are separate from and lower
+            than the monthly export credit. What changed under NEM 3.0 is
+            the size of that annual number, because the export side of the
+            math now runs on ACC values instead of retail-rate credits. For
+            how to read your own true-up statement and what the line items
+            mean, see{' '}
+            <Link
+              className={link}
+              href="/solar-problems/true-up-bill-california-explained"
+            >
+              how the annual true-up is settled
+            </Link>
+            .
+          </p>
+        </section>
+        <section>
+          <h2>Why batteries matter under NEM 3.0</h2>
+          <p>
+            Because exported power is now worth less than the power you’d
+            otherwise buy back in the evening, storing your solar and using
+            it yourself during peak TOU hours — instead of exporting it for
+            a lower credit — is the main lever NEM 3.0 gives homeowners to
+            control their bill. Whether that pencils out, and by how much,
+            depends on your utility’s export credit, your TOU rate spread,
+            and your evening usage. For the utility-by-utility payback math,
+            see{' '}
+            <Link
+              className={link}
+              href="/battery/battery-payback-nem-3-california"
+            >
+              battery payback under NEM 3.0
+            </Link>
+            .
+          </p>
+        </section>
+        <section>
+          <h2>If you sell your home or add panels</h2>
+          <p>
+            Selling the home: PG&E states its 20-year NEM legacy rules “are
+            tied to the system, not the owner” — if the prior owner had used
+            15 of their 20 years, the new owner inherits the remaining five
+            on the same tariff. SCE similarly states that “account changes,
+            such as moving in or out of a residence with an NEM system or
+            transferring the account to someone else’s name, do not affect
+            the NEM eligibility period of the original system.” SDG&E’s
+            Solar Billing Plan pages reviewed did not address this directly
+            — confirm with SDG&E if you’re buying or selling a home with a
+            legacy system there.
+          </p>
+          <p className="mt-3">
+            Adding panels: expanding a grandfathered NEM 1.0/2.0 system can
+            move the whole account onto the Net Billing Tariff. PG&E moves
+            accounts to the Solar Billing Plan at the next true-up date if
+            the expansion is either more than 10% of the original system’s
+            nameplate capacity or more than 1 kW — whichever threshold is
+            reached first. SCE allows growth up to “the greater of 1 kW or
+            10 percent of the original system size” while staying on the
+            legacy tariff, filed under a specific “NEM 1.0/2.0 Expansion”
+            interconnection option — exceed that, or skip that filing, and
+            the account moves to the Solar Billing Plan. Again, SDG&E’s own
+            pages did not state an equivalent threshold in the pages
+            checked.
+          </p>
+        </section>
         <QuoteChecklist />
         <section>
           <h2>Follow the question you are trying to answer</h2>
@@ -906,6 +1285,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
         />
       </>
     );
+  }
   if (kind === 'battery') {
     sources = [
       sgip,
@@ -1316,6 +1696,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
       sources={sources}
       sourceCheckedDate={sourceCheckedDate}
       utility={utility}
+      faq={faq}
     >
       {content}
     </DecisionPage>
