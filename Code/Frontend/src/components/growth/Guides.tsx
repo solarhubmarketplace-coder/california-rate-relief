@@ -667,6 +667,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
   }
   if (kind === 'sdge') {
     utility = 'sdge';
+    sourceCheckedDate = '2026-09-22';
     sources = [
       sdge,
       {
@@ -676,6 +677,38 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
       {
         label: 'San Diego Community Power: billing and NEM',
         url: 'https://sdcommunitypower.org/net-energy-metering/',
+      },
+      {
+        label: 'SDG&E: when rates matter, plan hours by schedule',
+        url: 'https://www.sdge.com/whenmatters',
+      },
+      {
+        label: 'SDG&E: Schedule TOU-DR1 total rates table (eff. 8/1/2026)',
+        url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf',
+      },
+      {
+        label: 'SDG&E: Schedule TOU-DR2 total rates table (eff. 8/1/2026)',
+        url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR2%20Total%20Rates%20Table.pdf',
+      },
+      {
+        label: 'SDG&E: Schedule TOU-DR-P total rates table (eff. 1/1/2026)',
+        url: 'https://www.sdge.com/sites/default/files/regulatory/1-1-26%20Schedule%20TOU-DR-P%20Total%20Rates%20Table.pdf',
+      },
+      {
+        label: 'SDG&E: Schedule EV-TOU-5 total rates table (eff. 1/1/2026)',
+        url: 'https://www.sdge.com/sites/default/files/regulatory/1-1-26%20Schedule%20EV-TOU-5%20Total%20Rates%20Table.pdf',
+      },
+      {
+        label: 'SDG&E: Schedule DR total rates table (eff. 8/1/2026)',
+        url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20DR%20Total%20Rates%20Table.pdf',
+      },
+      {
+        label: 'SDG&E: Reduce Your Use demand response program',
+        url: 'https://www.sdge.com/residential/savings-center/energy-saving-programs/reduce-your-use/demand-response-residential-programs',
+      },
+      {
+        label: 'SDG&E: Solar Billing Plan',
+        url: 'https://www.sdge.com/solar/solar-billing-plan',
       },
     ];
     content = (
@@ -697,8 +730,184 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             . The page identifies prices effective August 1, 2026 and separates
             CCA delivery-only prices from generation costs.
           </p>
+          <h3 className="mt-6">Off-peak and super off-peak hours (weekday vs. weekend/holiday)</h3>
+          <p>
+            On-peak is 4–9 p.m. every day for TOU-DR1, TOU-DR2, EV-TOU-5 and
+            TOU-DR-P — there is no separate weekend on-peak window. Off-peak
+            and super off-peak <em>do</em> shift on weekends and holidays,
+            because the weekday morning commute-hours block disappears.
+          </p>
+          <div className="mt-4 overflow-x-auto rounded-xl border">
+            <table className="w-full text-left text-sm">
+              <caption className="p-3 text-left font-semibold">
+                Off-peak and super off-peak windows · checked September 22, 2026
+              </caption>
+              <thead className="bg-slate-100">
+                <tr>
+                  <th className="p-3">Plan</th>
+                  <th className="p-3">Weekday off-peak</th>
+                  <th className="p-3">Weekend/holiday off-peak</th>
+                  <th className="p-3">Weekday super off-peak</th>
+                  <th className="p-3">Weekend/holiday super off-peak</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top font-normal">
+                    TOU-DR1, EV-TOU-5, TOU-DR-P
+                  </th>
+                  <td className="p-3">6 a.m.–10 a.m., 2 p.m.–4 p.m., 9 p.m.–12 a.m.</td>
+                  <td className="p-3">2 p.m.–4 p.m., 9 p.m.–12 a.m.</td>
+                  <td className="p-3">12 a.m.–6 a.m., 10 a.m.–2 p.m.</td>
+                  <td className="p-3">12 a.m.–2 p.m. (one continuous block)</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top font-normal">
+                    TOU-DR2
+                  </th>
+                  <td className="p-3" colSpan={4}>
+                    12 a.m.–4 p.m., 9 p.m.–12 a.m. (no weekday/weekend difference; no super off-peak tier)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3">
+            Holidays, for this purpose: New Year&rsquo;s Day, Presidents Day,
+            Memorial Day, Independence Day, Labor Day, Veterans Day,
+            Thanksgiving Day and Christmas Day. Since off-peak and super
+            off-peak cost less than on-peak on every plan, that is also the
+            practical answer to &ldquo;best time to run appliances&rdquo; on
+            SDG&amp;E — outside the 4–9 p.m. window, any day.
+          </p>
+          <p className="mt-3 text-sm text-slate-600">
+            Source checked September 22, 2026:{' '}
+            <a className={link} href="https://www.sdge.com/whenmatters">
+              SDG&amp;E, when rates matter
+            </a>
+            , corroborating the pricing-plan chooser above.
+          </p>
         </section>
         <SdgeRateTable />
+        <section>
+          <h2>TOU-DR2, TOU-DR-P, EV-TOU-5 and DR: the other four plans</h2>
+          <p>
+            SDG&amp;E&rsquo;s own tariff title for the plan most people mean
+            by &ldquo;TOU-DR1&rdquo; is Schedule TOU-DR1 &ndash; Residential
+            Time-of-Use Service. Four more residential schedules exist.
+            Figures below are SDG&amp;E&rsquo;s bundled Total Rate (delivery +
+            SDG&amp;E generation); a community choice aggregation (CCA)
+            customer pays SDG&amp;E&rsquo;s delivery-only portion of the same
+            schedule plus their CCA&rsquo;s generation charge — delivery-only
+            figures for these four plans were not independently available
+            this session.
+          </p>
+          <div className="mt-4 overflow-x-auto rounded-xl border">
+            <table className="w-full text-left text-sm">
+              <caption className="p-3 text-left font-semibold">
+                Total Rate by schedule · checked September 22, 2026
+              </caption>
+              <thead className="bg-slate-100">
+                <tr>
+                  <th className="p-3">Plan</th>
+                  <th className="p-3">Hours</th>
+                  <th className="p-3">Summer Total Rate</th>
+                  <th className="p-3">Winter Total Rate</th>
+                  <th className="p-3">Fixed charge</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top font-normal">TOU-DR2 — 2-period Residential TOU</th>
+                  <td className="p-3">Same as TOU-DR2 row above</td>
+                  <td className="p-3">Tier 1: 31.0¢ off-pk / 58.9¢ on-pk · Tier 2: 41.7¢ / 69.6¢</td>
+                  <td className="p-3">Tier 1: 36.7¢ / 50.8¢ · Tier 2: 47.4¢ / 61.5¢</td>
+                  <td className="p-3">$0.79343/day standard</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top font-normal">TOU-DR-P — adds Reduce Your Use event days</th>
+                  <td className="p-3">Same clock hours as TOU-DR1</td>
+                  <td className="p-3">Tier 1: 31.0¢ SOP / 38.5¢ off-pk / 43.0¢ on-pk · Tier 2: 41.7¢ / 49.2¢ / 53.7¢</td>
+                  <td className="p-3">Tier 1: 32.1¢ / 40.7¢ / 48.4¢ · Tier 2: 42.8¢ / 51.4¢ / 59.1¢</td>
+                  <td className="p-3">Same, $0.79343/day</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top font-normal">EV-TOU-5 — for homes with a DMV-registered EV</th>
+                  <td className="p-3">Same clock hours as TOU-DR1</td>
+                  <td className="p-3">13.1¢ SOP / 49.6¢ off-pk / 80.2¢ on-pk</td>
+                  <td className="p-3">12.3¢ / 46.6¢ / 52.4¢</td>
+                  <td className="p-3">Same, $0.79343/day</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top font-normal">DR — flat, no time-of-use</th>
+                  <td className="p-3">Not time-of-use; same price all hours</td>
+                  <td className="p-3">Tier 1: 41.3¢ · Tier 2: 52.0¢</td>
+                  <td className="p-3">Same as summer (not seasonal)</td>
+                  <td className="p-3">Same, $0.79343/day</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4">
+            On TOU-DR-P, SDG&amp;E can call up to 18 Reduce Your Use event
+            days a year; on those days, 4–9 p.m. usage costs an extra
+            $1.16/kWh on top of the on-peak rate above. CARE, FERA and
+            DRAH-enrolled households pay a lower fixed charge, $0.39688/day,
+            on every plan above (about $12/month vs. about{' '}
+            <Link className={link} href="/blog/california-24-dollar-fixed-charge-explained">
+              the ~$24/month fixed charge, explained
+            </Link>
+            {' '}for standard accounts).
+          </p>
+          <p className="mt-3">
+            All five schedules above (TOU-DR1, TOU-DR2, TOU-DR-P, EV-TOU-5 and
+            DR) are effective August 1, 2026, per SDG&amp;E&rsquo;s own
+            tariff-rate tables for each schedule.
+          </p>
+          <p className="mt-4 font-semibold">Which plan when</p>
+          <ul className="mt-2 list-disc space-y-2 pl-5">
+            <li>Can shift most usage to midday or overnight: TOU-DR1&rsquo;s super off-peak is the lowest non-EV rate found (26.7¢ summer).</li>
+            <li>Wants the simplest schedule, no midday tier to track: TOU-DR2 (on-peak/off-peak only).</li>
+            <li>Can meaningfully cut usage on ~18 called afternoons a year: TOU-DR-P trades a lower baseline on-peak rate for the event-day adder.</li>
+            <li>
+              Owns an EV and{' '}
+              <Link className={link} href="/blog/solar-ev-charging-california">
+                charges an EV on the super off-peak window
+              </Link>
+              : EV-TOU-5&rsquo;s super off-peak (11.7¢–12.4¢) is the lowest rate on any plan here, but its on-peak rate (up to 80.0¢) is also the highest.
+            </li>
+            <li>Can&rsquo;t or won&rsquo;t shift usage by time of day: DR is flat, but at 41.3¢/52.0¢ it is priced above most plans&rsquo; off-peak and super off-peak rates.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>The Solar Billing Plan and your rate plan</h2>
+          <p>
+            SDG&amp;E&rsquo;s Solar Billing Plan is the billing structure a
+            solar account moves to once a legacy Net Energy Metering
+            agreement&rsquo;s 20-year term ends. SDG&amp;E states that
+            residential Solar Billing Plan customers are placed on EV-TOU-5
+            (above), not TOU-DR1 or TOU-DR2, and that exported energy earns
+            separate Generation and Delivery Export Credits priced by time of
+            day and season, set by the CPUC. For the export-credit mechanics
+            and how this compares to a legacy agreement, see our{' '}
+            <Link className={link} href="/blog/nem-2-vs-nem-3-california">
+              NEM 2.0 vs. the Solar Billing Plan
+            </Link>{' '}
+            and{' '}
+            <Link className={link} href="/blog/what-is-nem-3-california">
+              what the Solar Billing Plan changes for solar owners
+            </Link>{' '}
+            pages rather than duplicating that here.
+          </p>
+        </section>
+        <section>
+          <h2>How to switch SDG&amp;E rate plans</h2>
+          <p>
+            Log in to My Energy Center, open the Billing menu, select Pricing
+            Plans, scroll to the eligible plans list, and click Enroll next to
+            the plan you want.
+          </p>
+        </section>
         <section>
           <h2>Compare a plan using your own load</h2>
           <ol className="list-decimal space-y-2 pl-5">
@@ -733,7 +942,15 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               California utility comparison
             </Link>{' '}
             explains why a utility average cannot price your individual
-            proposal.
+            proposal. For the{' '}
+            <Link className={link} href="/california-utility-rate-tracker">
+              current composite SDG&amp;E rate and why rates moved in 2026
+            </Link>
+            , and for{' '}
+            <Link className={link} href="/blog/why-is-my-california-electric-bill-so-high">
+              why your bill can run higher than the rate alone suggests
+            </Link>
+            , see those pages rather than a rate-plan schedule alone.
           </p>
         </section>
         <section>
