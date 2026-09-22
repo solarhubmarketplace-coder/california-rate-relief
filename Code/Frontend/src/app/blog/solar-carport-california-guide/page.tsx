@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description,
     type: 'article',
     publishedTime: '2026-04-24T00:00:00Z',
-    modifiedTime: '2026-09-20T00:00:00Z',
+    modifiedTime: '2026-09-22T00:00:00Z',
     url: 'https://ratereliefca.com/blog/solar-carport-california-guide',
   },
 };
@@ -36,7 +36,7 @@ export default function SolarCarportCAGuide() {
         headline={title}
         url="https://ratereliefca.com/blog/solar-carport-california-guide"
         datePublished="2026-04-24"
-        dateModified="2026-09-20"
+        dateModified="2026-09-22"
         description={description}
       />
       <Header />
@@ -63,7 +63,7 @@ export default function SolarCarportCAGuide() {
                 parking area. It may solve a different property problem than a roof
                 installation, so it needs a separate scope and quote comparison.
               </p>
-              <p className="mt-4 text-sm text-muted-foreground">Updated September 20, 2026</p>
+              <p className="mt-4 text-sm text-muted-foreground">Updated September 22, 2026</p>
             </header>
 
             <div className="prose prose-slate max-w-none">
@@ -85,6 +85,51 @@ export default function SolarCarportCAGuide() {
                 for a freestanding structure. It is not automatically comparable to
                 a roof quote with the same panel count. The canopy, foundation and
                 site work can change both price and project sequence.
+              </p>
+
+              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Carport, ground mount, or roof: which structure fits
+              </h2>
+              <p>
+                A carport and a ground-mounted array solve the same underlying
+                problem &mdash; putting panels somewhere other than the roof &mdash;
+                but they aren&apos;t the same product. A carport is a roofed
+                structure over a parking area; the panels sit on or form the
+                roof, and the structure has standalone value as covered
+                parking. A ground mount is a rack anchored directly in a yard
+                or other open ground, with no parking or shelter function of
+                its own.
+              </p>
+              <p>
+                Ground-mounting is uncommon on houses. Lawrence Berkeley
+                National Laboratory&apos;s most recent residential/commercial
+                solar tracking dataset describes ground-mounting as
+                &ldquo;rarely used&rdquo; for residential systems, versus
+                30-60% of large non-residential installations each year from
+                2010-2025 (
+                <a
+                  href="https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf"
+                  target="_blank"
+                  rel="noopener external"
+                  className="text-primary underline"
+                >
+                  LBNL, U.S. Distributed Solar and Storage 2026 Data Update
+                </a>
+                , accessed 2026-09-22). That dataset does not publish a
+                separate installed-price premium for residential ground
+                mounts, so no dollar comparison against rooftop pricing is
+                available from it.
+              </p>
+              <p>
+                Start with{' '}
+                <Link href="/blog/is-my-roof-good-for-solar-california" className="text-primary underline">
+                  whether the roof is a candidate at all
+                </Link>
+                . If it&apos;s shaded, undersized, or near the end of its
+                life, a carport or ground mount becomes a real option rather
+                than an afterthought &mdash; and if covered parking or open
+                yard space has value on its own, that shifts the comparison
+                further toward a freestanding structure.
               </p>
 
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
@@ -191,6 +236,82 @@ export default function SolarCarportCAGuide() {
               </p>
 
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Permitting a carport or ground mount as an accessory structure
+              </h2>
+              <p>
+                California requires cities and counties to run an automated,
+                same-day permitting path for residential solar under SB 379,
+                tracked on the California Energy Commission&apos;s{' '}
+                <a
+                  href="https://www.energy.ca.gov/residential-solar-permitting-program-dashboard"
+                  target="_blank"
+                  rel="noopener external"
+                  className="text-primary underline"
+                >
+                  permitting dashboard
+                </a>{' '}
+                (last updated August 3, 2026). In practice, that fast lane
+                &mdash; usually SolarAPP+ or a similar local platform &mdash;
+                is built for rooftop PV on a house or duplex. The City of
+                Fresno&apos;s own{' '}
+                <a
+                  href="https://www.fresno.gov/planning/get-an-instantly-approved-solar-permit-through-solar-app/"
+                  target="_blank"
+                  rel="noopener external"
+                  className="text-primary underline"
+                >
+                  SolarAPP+ page
+                </a>
+                , for example, scopes instant approval to &ldquo;rooftop solar
+                systems&rdquo; for single-family and duplex projects and sends
+                other work to a standard permit instead (City of Fresno,
+                accessed 2026-09-22).{' '}
+                <a
+                  href="https://solarapp.nrel.gov/faq"
+                  target="_blank"
+                  rel="noopener external"
+                  className="text-primary underline"
+                >
+                  SolarAPP+&apos;s own FAQ
+                </a>{' '}
+                lists ground mount among the system types it &ldquo;does not
+                currently support&rdquo; (SolarAPP+, accessed 2026-09-22).
+              </p>
+              <p>
+                A freestanding carport or ground mount is a new accessory
+                structure, not solar equipment added to an existing roof, so
+                expect the standard building-permit review your city or
+                county already runs for patio covers and detached structures
+                &mdash; evaluated under the{' '}
+                <a
+                  href="https://www.dgs.ca.gov/BSC/Codes"
+                  target="_blank"
+                  rel="noopener external"
+                  className="text-primary underline"
+                >
+                  California Residential Code (Title 24, Part 2.5)
+                </a>
+                , the state code your jurisdiction adopts and enforces
+                locally (California Building Standards Commission, accessed
+                2026-09-22). That review is where setback, lot-coverage, and
+                height limits apply, as noted elsewhere on this page. Confirm
+                the process and any fee with your own city or county building
+                department before finalizing a design &mdash; this varies by
+                jurisdiction and was not itemized here for any single city.
+              </p>
+              <p>
+                If the property is in an HOA,{' '}
+                <Link href="/blog/hoa-solar-rights-california" className="text-primary underline">
+                  check what the HOA can and can&apos;t restrict
+                </Link>{' '}
+                before finalizing placement. California&apos;s Solar Rights
+                Act limits an HOA&apos;s ability to block solar, but a
+                freestanding structure&apos;s footprint and appearance can
+                still go through architectural review separately from the
+                solar question.
+              </p>
+
+              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
                 Ask for a scope that separates the moving parts
               </h2>
               <div className="my-6 overflow-x-auto rounded-xl border border-border">
@@ -216,7 +337,7 @@ export default function SolarCarportCAGuide() {
               </h2>
               <ul className="list-disc space-y-3 pl-6">
                 <li>Ask the relevant local office what review applies to the exact property and proposed structure.</li>
-                <li>Check any HOA, lease, easement or parking-use restriction that could affect the design.</li>
+                <li>Check any <Link href="/blog/hoa-solar-rights-california" className="text-primary underline">HOA, lease, or easement restriction</Link> that could affect the design, and confirm setback and height limits with the local building department before finalizing plans.</li>
                 <li>Ask who will be named in the project paperwork and who is responsible for work outside the solar equipment.</li>
                 <li>Get the roof alternative on the same usage history, equipment scope and payment basis before choosing between designs.</li>
                 <li>Keep a battery or EV charger as a separate line item unless the proposal states exactly what is included.</li>
@@ -320,6 +441,38 @@ export default function SolarCarportCAGuide() {
                     structure, foundation work and cure time, canopy erection, solar
                     installation, inspection and utility permission to operate. Get the
                     responsible party and a date range for each step in writing.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="mb-2 text-lg font-bold text-foreground">
+                    Do I need a special permit for a solar carport or ground
+                    mount in California?
+                  </h3>
+                  <p>
+                    Plan on standard local building-permit review rather than
+                    the instant rooftop-only path. California&apos;s SB 379
+                    permitting platforms &mdash; SolarAPP+ and similar tools
+                    tracked on the CEC&apos;s dashboard &mdash; are built for
+                    rooftop PV; SolarAPP+ itself does not currently support
+                    ground-mount systems, and a carport is a new accessory
+                    structure. Expect your city or county&apos;s regular
+                    review under the California Residential Code, including
+                    setback and height limits, and confirm the process with
+                    your local building department.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="mb-2 text-lg font-bold text-foreground">
+                    What&apos;s the difference between a solar carport and a
+                    ground-mounted system?
+                  </h3>
+                  <p>
+                    A carport is a roofed structure over a parking area that
+                    also functions as covered parking; a ground mount is a
+                    rack anchored in open ground with no parking function.
+                    Ground-mounting is uncommon on houses &mdash; LBNL&apos;s
+                    national tracking data describes it as &ldquo;rarely
+                    used&rdquo; for residential systems.
                   </p>
                 </div>
               </div>
