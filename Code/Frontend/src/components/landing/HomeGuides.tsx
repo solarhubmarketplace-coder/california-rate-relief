@@ -23,7 +23,7 @@ const GUIDE_CARDS: GuideCard[] = [
     href: '/solar-cost',
     icon: DollarSign,
     title: 'Solar cost by city',
-    description: 'City-level installed-price ranges from public benchmark data, not a sales quote.',
+    description: 'What sets the price in your city — utility, permits and incentives — with no sales quote and no invented number.',
   },
   {
     href: '/best-solar-companies-california',
