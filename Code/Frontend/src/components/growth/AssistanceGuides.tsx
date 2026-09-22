@@ -35,6 +35,12 @@ const disclosureDoc =
   "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7169";
 const cancelWindow =
   "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1689.6";
+// 2026-09-22 delta (integrate:/blog/free-solar-panels-california): LIWP as
+// the other state no-cost program, and the utility-giveaway FAQ.
+const liwpFactSheet =
+  "https://www.csd.ca.gov/Shared%20Documents/LIWP-Fact-Sheet.pdf";
+const liwpProgramPage =
+  "https://www.csd.ca.gov/Pages/Low-Income-Weatherization-Program.aspx";
 const definitions = {
   options: {
     path: "/blog/solar-tax-credit-expired-2026-options",
@@ -116,7 +122,7 @@ export function assistanceMetadata(kind: AssistanceKey): Metadata {
       type: "article",
       url: `https://ratereliefca.com${path}`,
       modifiedTime:
-        kind === "free" ? "2026-09-17T00:00:00Z" : "2026-09-10T00:00:00Z",
+        kind === "free" ? "2026-09-22T00:00:00Z" : "2026-09-10T00:00:00Z",
     },
   };
 }
@@ -326,7 +332,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
       title={d.title}
       intro={d.intro}
       path={d.path}
-      sourceCheckedDate={kind === "free" ? "2026-09-17" : "2026-09-10"}
+      sourceCheckedDate={kind === "free" ? "2026-09-22" : "2026-09-10"}
       sources={[
         ...(kind === "options" || kind === "records" || kind === "california"
           ? [
@@ -394,6 +400,14 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
                 label:
                   "California Civil Code § 1689.6 (three- and five-business-day cancellation window)",
                 url: cancelWindow,
+              },
+              {
+                label: "CSD: Low-Income Weatherization Program (LIWP) Fact Sheet",
+                url: liwpFactSheet,
+              },
+              {
+                label: "CSD: Low-Income Weatherization Program page",
+                url: liwpProgramPage,
               },
             ]
           : []),
@@ -619,6 +633,17 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
         Rule applied throughout: "free" and "no cost" appear only inside an
         attributed government quotation, or as a description of what an
         advertisement claims, immediately qualified.
+
+        2026-09-22 delta (integrate:/blog/free-solar-panels-california, from
+        wave1/drafts_final/blog-free-solar-panels-california.md): added the
+        "Does PG&E, SCE, or SDG&E run its own free solar program?" FAQ item
+        and the LIWP paragraph at the end of the DAC-SASH section, plus a
+        "How a solar PPA actually works" link. The draft's other two link
+        edits (linking "CARE" to /programs/care-california and "PACE
+        financing" to /programs/hero-pace-california) were held: neither
+        route exists under src/app and the draft does not mark them
+        "publishing alongside this page," so those two sentences are left
+        unlinked pending those pages going live.
       */}
       {kind === "free" && (
         <>
@@ -856,6 +881,34 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               annually,” and states “the DAC-SASH program runs through 2030.”
               (Verified 2026-09-17.) Intake status changes; ask the administrator
               what is open before you rely on a page for it.
+            </p>
+            <p className="mt-3">
+              <strong>
+                LIWP is the other state no-cost program, with an open question
+                on single-family status.
+              </strong>{" "}
+              The Low-Income Weatherization Program (LIWP), run by the
+              Department of Community Services &amp; Development (CSD), also
+              provides “solar photovoltaic (PV) systems and energy efficiency
+              upgrades to low-income single-family households and
+              multi-family affordable housing at no cost” (
+              <a href={liwpFactSheet} className={link}>
+                LIWP Fact Sheet
+              </a>
+              , updated July 2024). Checked live on September 22, 2026:
+              CSD’s LIWP page links to active pages for its Multi-Family
+              Energy Efficiency and Renewables and Farmworker Housing
+              components only — no separate single-family LIWP application
+              page was found live, and CSD’s own single-family fact sheet has
+              not been updated since July 2024. Ask CSD directly whether
+              single-family LIWP is currently accepting applicants before
+              treating it as a second guaranteed no-cost path alongside
+              DAC-SASH, whose own handbook was updated more recently (August
+              1, 2025). (
+              <a href={liwpProgramPage} className={link}>
+                CSD, Low-Income Weatherization Program
+              </a>
+              , verified 2026-09-22.)
             </p>
           </section>
           <section id="somah">
@@ -1154,6 +1207,30 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
                 </p>
               </div>
               <div>
+                <h3>
+                  Does PG&amp;E, SCE, or SDG&amp;E run its own free solar
+                  program?
+                </h3>
+                <p>
+                  No utility operates a free-panel giveaway as a company
+                  benefit. DAC-SASH — the program this page already describes
+                  — requires being “a billing customer of Pacific Gas &amp;
+                  Electric (PG&amp;E), Southern California Edison (SCE), or
+                  San Diego Gas &amp; Electric (SDG&amp;E)” (
+                  <a href={gridDac} className={link}>
+                    GRID Alternatives
+                  </a>
+                  ), but that is a state eligibility rule, not something the
+                  utility itself funds or hands out: the program is
+                  administered by GRID Alternatives, a nonprofit — not by
+                  PG&amp;E, SCE, or SDG&amp;E. An ad describing “PG&amp;E’s
+                  no-cost solar program” is borrowing a real eligibility
+                  requirement — you must be a PG&amp;E customer — to describe
+                  a state program PG&amp;E does not run. (Verified
+                  2026-09-22.)
+                </p>
+              </div>
+              <div>
                 <h3>I rent. Is there anything for me?</h3>
                 <p>
                   DAC-SASH requires the applicant to own and occupy the residence.
@@ -1203,6 +1280,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               { href: "/solar-problems/solar-sales-tactics-california", label: "What each sales tactic obscures" },
               { href: "/solar-problems/why-solar-reps-get-a-bad-name", label: "Why the sales channel earns its reputation" },
               { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+              { href: "/blog/solar-ppa-explained-california", label: "How a solar PPA actually works" },
               { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA side by side" },
               { href: "/blog/can-you-cancel-solar-panel-contract-before-installation-california", label: "The statutory cancellation window" },
               { href: "/blog/solar-tax-credit-expired-2026-options", label: "The 2026 federal-credit position" },
