@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "Option One Solar Review 2026",
-  datePublished: '2026-04-24', dateModified: '2026-04-24',
+  datePublished: '2026-04-24', dateModified: '2026-09-22',
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/option-one-solar-review' },
@@ -53,9 +53,9 @@ export default function OptionOneReview() {
                 Option One Solar Reviews (2026): Cleanest Service Profile in the High Desert
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-24'>Updated April 24, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-22'>Updated September 22, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>7 min read</span></div>
               </div>
             </header>
@@ -73,7 +73,7 @@ export default function OptionOneReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Option One operates from Apple Valley and serves the High Desert, Inland Empire, parts of LA County, and occasional extensions into Orange County. The company is intentionally small and locally focused. Not a 10-state operation chasing scale. That&apos;s part of why the service quality holds.
+                Option One operates from Apple Valley. The company&apos;s own service-area page (optiononesolar.com, accessed September 2026) lists 65 cities across four Southern California counties &mdash; San Bernardino (20 cities), Riverside (20), San Diego (19), and Orange (6) &mdash; and does not currently list Los Angeles County. Ten of those 65 cities have non-standard utility arrangements (a different serving utility, split territory, or community-choice generation) that can change your savings estimate. The company describes its list as &ldquo;not a fence&rdquo; and says it will still evaluate a project just past the mapped edge on request. The company is intentionally small and locally focused. Not a 10-state operation chasing scale. That&apos;s part of why the service quality holds.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
@@ -102,11 +102,43 @@ export default function OptionOneReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Option One is unusual in residential solar: the company actively discourages PPAs and leases. Cash and loans are the focus. That used to mean capturing the 30% federal credit; it no longer does, because IRC § 25D does not apply to expenditures made after December 31, 2025. What ownership still buys you is no 20-year contract complicating a future home sale and cleaner total cost-of-ownership math. Whether this fits your cash flow is a separate question, if $0-down lease/PPA is a must, Option One isn&apos;t the right pick.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>
+                Option One&apos;s own site names three specific paths, all built around ownership rather than a recurring bill to the installer (optiononesolar.com, accessed September 2026):
+              </p>
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li><strong>$0-down ownership loan</strong> &mdash; a fixed monthly payment with no money due at signing; the site&apos;s own worked example shows 5.49% APR over 20 years, a $206/month payment on a roughly $27,200 system.</li>
+                <li><strong>Cash or home equity</strong> &mdash; the lowest lifetime cost, with no finance charge, and eligible for the same discount program below.</li>
+                <li><strong>25% Discount Program</strong> &mdash; framed on the site as a &ldquo;Tax Credit Replacement&rdquo; for eligible homeowners: a one-time price reduction, not a monthly credit, available with cash or loan. The site doesn&apos;t define eligibility criteria; ask the company directly what qualifies you.</li>
+              </ul>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Separately, Option One offers what it calls a <strong>Prepaid PPA</strong>: one lump payment, no monthly bill, no escalator, the same 25% discount applied up front, and the system&apos;s ownership transfers into your name at year six (optiononesolar.com, accessed September 2026). The company is explicit that this differs from a conventional lease or PPA: &ldquo;We have never sold a conventional lease or PPA, and we never will.&rdquo; For how these financing structures compare generally, see our <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>lease vs. PPA vs. loan vs. cash comparison</Link>.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty, 25-Year Bumper-to-Bumper</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Option One&apos;s headline warranty covers equipment, workmanship, and, critically, labor for 25 years. That&apos;s rare. Most California installers offer 25-year manufacturer equipment warranties plus a separate, shorter workmanship warranty that excludes labor costs on repair visits. Option One rolling everything including labor into a single 25-year term is meaningfully more comprehensive — if you have faith in the company still being there in year 20.
+                Option One&apos;s headline warranty covers equipment, workmanship, and, critically, labor for 25 years. That&apos;s rare. Most California installers offer 25-year manufacturer equipment warranties plus a separate, shorter workmanship warranty that excludes labor costs on repair visits. Option One rolling everything including labor into a single 25-year term is meaningfully more comprehensive — if you have faith in the company still being there in year 20. The company&apos;s own pages do not separately state a production guarantee or a roof/watertight warranty the way some competitors do; panel, inverter, and battery hardware carry their own manufacturer warranties underneath the workmanship coverage (optiononesolar.com, accessed September 2026). Option One also says it will pursue manufacturer warranty claims on a customer&apos;s behalf even for systems it didn&apos;t originally install.
               </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>License and Verification</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Option One Solar&apos;s own site lists CSLB license #985340, classifications C-10 (Electrical) and C-46 (Solar) (optiononesolar.com, accessed September 2026). We could not retrieve a status, expiration, or bond record for this number this session &mdash; CSLB&apos;s online lookup returned only its blank search form to an automated fetch, not a rendered license record. Don&apos;t treat this as &ldquo;active&rdquo; or &ldquo;in good standing&rdquo; from this page; verify it yourself using the CSLB lookup below before signing anything. For what else to check beyond the number itself, see our <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>full contractor-verification walkthrough</Link>.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How a Repair or Service Call Works</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Option One describes a four-step process for an existing system, including ones it didn&apos;t install (optiononesolar.com, accessed September 2026): someone from the Apple Valley office calls back within one business day to book the visit; a technician tests the inverter, panels, wiring, and monitoring end to end; findings and repair costs go in writing; and you decide, with no pressure or obligation to proceed. The company markets this specifically to owners of &ldquo;orphaned&rdquo; systems from installers that are no longer operating, and says it will pursue existing manufacturer warranty claims on your behalf even though it didn&apos;t sell the equipment.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                On a home sale: an owned system (cash or loan) transfers like any other home improvement &mdash; no separate Option One process is described, because none is needed. The Prepaid PPA is structured so there&apos;s no ongoing payment stream to assume if you sell before the year-six ownership transfer; get that in writing from Option One directly, since no formal transfer document is published on the site.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-3'>Questions to ask before you sign:</p>
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>What exactly qualifies a homeowner for the 25% Discount Program, and is that confirmed in writing before the proposal is finalized?</li>
+                <li>For the $206/month loan example, what system size, panel count, and rate does that actually assume for your roof &mdash; ask for your own numbers, not the site&apos;s illustration.</li>
+                <li>If you&apos;re in one of the ten cities Option One flags for non-standard utility arrangements, how does that change your bill savings estimate?</li>
+                <li>Is your project inside the four-county area the company currently publishes, or will it need a case-by-case yes?</li>
+                <li>For the Prepaid PPA, what happens in writing if you sell before year six?</li>
+              </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Option One Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -115,9 +147,9 @@ export default function OptionOneReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Option One offer PPAs or leases?</h3><p className='text-foreground/80'>Not meaningfully. The company actively discourages them and focuses on ownership (cash or loan). If $0-down PPA/lease is required, this isn&apos;t your installer.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Option One offer PPAs or leases?</h3><p className='text-foreground/80'>Not a conventional one &mdash; the company says &ldquo;we have never sold a conventional lease or PPA, and we never will&rdquo; (optiononesolar.com, accessed September 2026). It does offer what it calls a Prepaid PPA: one lump payment, no monthly bill, no escalator, and ownership transfers to you at year six. Ask specifically which of the three structures &mdash; loan, cash, or Prepaid PPA &mdash; any quote assumes.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What does the 25-year warranty actually cover?</h3><p className='text-foreground/80'>Equipment, workmanship, AND labor for 25 years — unusual in residential solar. Most competitors cap labor coverage at 10 years or exclude labor entirely from their workmanship warranty.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Option One serve Los Angeles County?</h3><p className='text-foreground/80'>Yes, parts of LA County and Orange County are within their service area. Coverage is strongest in High Desert (Apple Valley area) and Inland Empire. Confirm for your zip.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Option One serve Los Angeles County?</h3><p className='text-foreground/80'>Option One&apos;s own service-area page (optiononesolar.com, accessed September 2026) lists San Bernardino, Riverside, San Diego, and Orange counties &mdash; it does not currently list Los Angeles County. Coverage is strongest in High Desert (Apple Valley area) and Inland Empire. Call (855) 502-6363 to confirm your address before assuming coverage.</p></div>
               </div>
             </div>
 
@@ -140,7 +172,7 @@ export default function OptionOneReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Option One" />
+        <VerifyInstallerBox installerName="Option One" cslbLicenseNumber="985340" />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
