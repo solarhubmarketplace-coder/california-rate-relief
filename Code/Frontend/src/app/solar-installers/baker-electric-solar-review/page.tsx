@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "Baker Electric Solar Review 2026",
-  datePublished: '2026-04-24', dateModified: '2026-09-18',
+  datePublished: '2026-04-24', dateModified: '2026-09-22',
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/baker-electric-solar-review' },
@@ -45,9 +45,9 @@ export default function BakerReview() {
                 Baker Electric Solar Reviews (2026): San Diego, and the Baker Home Energy Question
               </h1>
               
-              <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-18'>Updated September 18, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-22'>Updated September 22, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>7 min read</span></div>
               </div>
             </header>
@@ -87,6 +87,9 @@ export default function BakerReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Why this matters practically: your contract, your warranty and your licence check all attach to a specific legal entity. Confirm which entity is named on the proposal, then look that licence number up in the CSLB lookup below and confirm it is current and that the classifications cover the work. This page does not assert the current status of either licence &mdash; licence status must be read from the CSLB record on the day you check it, and it was not retrieved for this update.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Baker Home Energy&apos;s own site corroborates the residential licence this page already cites: its footer states &ldquo;CA License #858088 C10, C46, C39, C20&rdquo; (<a href='https://bakerhomeenergy.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>bakerhomeenergy.com</a>, accessed September 22, 2026). A follow-up attempt to confirm that licence&apos;s current status through CSLB&apos;s online lookup returned only the tool&apos;s blank search interface, not a rendered licence record, for both #858088 and #161756 (<a href='https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx?LicNum=858088' target='_blank' rel='noopener noreferrer' className='text-primary underline'>cslb.ca.gov</a>, attempted September 22, 2026) &mdash; the same blank-form result the sibling installer reviews on this site have already recorded with that tool. That does not mean anything is wrong with either licence; it means this page still cannot state &ldquo;active&rdquo; as a verified fact from that lookup alone. Check both numbers yourself at CSLB&apos;s Check License tool before signing anything, and confirm the exact entity name on your contract matches the licence record &mdash; see our <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>full contractor-verification walkthrough</Link>.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -96,6 +99,13 @@ export default function BakerReview() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Baker Electric does not manufacture panels. The company installs Tier-1 options with Enphase microinverters as the default and Franklin Home Power or Tesla Powerwall batteries depending on quote. Install-day typically runs 1 to 3 days on the roof; full process from contract to Permission to Operate is often among the faster in SD County thanks to the company&apos;s experience navigating local permitting offices.
+              </p>
+              <h3 className='text-lg font-bold text-foreground mt-8 mb-3'>What Baker Home Energy Actually Sells</h3>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Baker Home Energy&apos;s own homepage shows brand-partner content (Tesla, Sonnen and Enphase, and in at least one fetch, Franklin) that was inconsistent across repeated automated fetches of the same page, likely because it is carousel- or script-rendered rather than static text. That is worth flagging against this page&apos;s own statement above that Baker offers &ldquo;Franklin Home Power or Tesla Powerwall&rdquo; batteries: no automated fetch this cycle could reliably confirm or rule out Franklin&apos;s current presence among Baker&apos;s featured partners. This is not a confirmed contradiction &mdash; check Baker&apos;s homepage and dedicated products page directly before assuming either battery list is current.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Baker Home Energy is also not a solar-only company. The same site sells and installs HVAC systems and heat pumps, roofing, water filtration and water heaters, Generac generators and EV chargers, alongside electrical panel upgrades (<a href='https://www.bakerhomeenergy.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>bakerhomeenergy.com</a>, accessed September 22, 2026). If you are comparing a solar-focused installer to a broader home-services company, that is worth weighing alongside price and warranty terms.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
@@ -120,6 +130,9 @@ export default function BakerReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Baker Electric focuses on ownership — cash or loans through third-party financing partners. PPAs/leases are available but not the default pitch. The workmanship warranty is 25 years, which is at the top of the industry range and one of the things that makes the company&apos;s longevity actually meaningful: a 25-year workmanship warranty is only worth what it&apos;s worth if the installer is still there to honor it in year 20.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Baker&apos;s own site is deliberately light on specifics in the same way this page already is: it describes walking customers through &ldquo;cash purchase, loan structures, and any incentives you may qualify for&rdquo; without naming a specific lender, and distinguishes &ldquo;equipment warranties,&rdquo; which &ldquo;cover the hardware,&rdquo; from &ldquo;workmanship coverage,&rdquo; which &ldquo;protects the installation itself,&rdquo; again without stating a specific number of years on the page fetched this session (<a href='https://www.bakerhomeenergy.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>bakerhomeenergy.com</a>, accessed September 22, 2026). That matches, rather than contradicts, this page&apos;s own caution about not overstating price or warranty specifics. The 25-year workmanship figure above was not independently reconfirmed against Baker&apos;s dedicated warranty page this session &mdash; it was not reachable &mdash; so get that term in writing before relying on it.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Where This Profile Fits, and What to Verify</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -135,6 +148,7 @@ export default function BakerReview() {
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What is NB Baker Electric Inc?</h3><p className='text-foreground/80'>That name appears in searches but is not a name either Baker website publishes for itself as of September 18, 2026 &mdash; the two published names are Baker Home Energy and Baker Electric. Treat a third variant as unverified: ask which exact legal entity will sign your contract, then look that name and licence number up in the CSLB record rather than matching on a similar name.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Which licence number should I check?</h3><p className='text-foreground/80'>The one printed on your own proposal or contract. If the residential entity is named, that is CA License #858088 as published by Baker Home Energy on September 18, 2026. Verify it is current, that the classifications cover your scope, and that the business name on the licence matches the name on your contract exactly.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Baker more expensive than national brands?</h3><p className='text-foreground/80'>This page states no price comparison: no primary, dated pricing source for any installer was obtained on September 18, 2026. Get the cash price and DC system size from each bidder in writing, compute your own per-watt figure, and check what each quote includes before comparing. A lease or PPA is not comparable to a cash price at all &mdash; compare total obligations over the term instead.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Baker Home Energy finance solar directly, or through a third party?</h3><p className='text-foreground/80'>Baker&apos;s own site describes walking customers through cash purchase and loan options rather than naming its own in-house financing product (bakerhomeenergy.com, accessed September 22, 2026). For how a cash purchase, loan, lease and PPA compare generally, see <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>PPA vs. loan vs. lease vs. cash in California</Link>.</p></div>
               </div>
             </div>
 
