@@ -3,15 +3,16 @@ import { writeFile } from "node:fs/promises";
 
 const base = (process.env.CRR_REVIEW_BASE || "http://127.0.0.1:3101").replace(/\/$/, "");
 const output = process.env.CRR_REVIEW_OUT;
+// H1s changed 2026-09-22 (src/lib/city-pages.ts companiesPageSeo).
 const cases = [
-  ["/solar-companies/thousand-oaks", /Compare solar companies in Thousand Oaks/i, /Clean Power Alliance/i],
-  ["/solar-companies/escondido", /Compare solar companies in Escondido/i, /SolarAPP\+/i],
-  ["/solar-companies/anaheim", /Compare solar companies in Anaheim/i, /Anaheim Public Utilities/i],
-  ["/solar-companies/roseville", /Compare solar companies in Roseville/i, /permission to operate/i],
-  ["/solar-companies/irvine", /Compare solar companies in Irvine/i, /Orange County Power Authority/i],
-  ["/solar-companies/stockton", /Compare solar companies in Stockton/i, /Community Development Department/i],
-  ["/solar-companies/murrieta", /Compare solar companies in Murrieta/i, /revised documents/i],
-  ["/solar-companies/visalia", /Compare solar companies in Visalia/i, /solar permit application/i],
+  ["/solar-companies/thousand-oaks", /Solar Companies in Thousand Oaks, CA: How to Compare Solar Panel Quotes/i, /Clean Power Alliance/i],
+  ["/solar-companies/escondido", /Solar Companies in Escondido, CA: How to Compare Solar Panel Quotes/i, /SolarAPP\+/i],
+  ["/solar-companies/anaheim", /Solar Companies in Anaheim, CA: How to Compare Solar Panel Quotes/i, /Anaheim Public Utilities/i],
+  ["/solar-companies/roseville", /Solar Companies in Roseville, CA: How to Compare Solar Panel Quotes/i, /permission to operate/i],
+  ["/solar-companies/irvine", /Solar Companies in Irvine, CA: How to Compare Solar Panel Quotes/i, /Orange County Power Authority/i],
+  ["/solar-companies/stockton", /Solar Companies in Stockton, CA: How to Compare Solar Panel Quotes/i, /Community Development Department/i],
+  ["/solar-companies/murrieta", /Solar Companies in Murrieta, CA: How to Compare Solar Panel Quotes/i, /revised documents/i],
+  ["/solar-companies/visalia", /Solar Companies in Visalia, CA: How to Compare Solar Panel Quotes/i, /solar permit application/i],
 ];
 
 const results = [];
