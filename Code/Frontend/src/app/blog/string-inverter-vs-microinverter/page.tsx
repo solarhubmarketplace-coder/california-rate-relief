@@ -48,7 +48,7 @@ export default function StringVsMicro() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Upfront cost</td><td className="text-center">Lower</td><td className="text-center">15–25% higher</td></tr>
+                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Upfront cost</td><td className="text-center">Lower</td><td className="text-center">Usually higher</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Performance with shade</td><td className="text-center">Poor (weakest panel drags string)</td><td className="text-center">Excellent (panels operate independently)</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Per-panel monitoring</td><td className="text-center">No (optional adder)</td><td className="text-center">Built in</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Warranty</td><td className="text-center">10–12 years typical</td><td className="text-center">25 years typical (Enphase)</td></tr>

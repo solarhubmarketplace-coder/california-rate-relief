@@ -219,13 +219,13 @@ export default function SolarPanelInspectionCalifornia() {
                 Curious About Your System&apos;s Health?
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                If you&apos;re evaluating solar or want to understand your options, check your eligibility with the California Rate Relief Program in about 60 seconds.
+                If you want a solar provider to review your project, you can send your details through the form on this page. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

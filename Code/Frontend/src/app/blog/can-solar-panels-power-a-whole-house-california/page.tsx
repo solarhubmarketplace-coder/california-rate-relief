@@ -94,7 +94,7 @@ export default function CanSolarPowerWholeHouse() {
               <p className='text-foreground/80 leading-relaxed mb-4'>No, and most California homes don&apos;t. Grid-tied solar + battery gives you backup-ready self-sufficiency while keeping the grid as a rarely-used safety net. Going fully off-grid is more expensive and rarely needed in California.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>How much does whole-home solar cost in California?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Typical 8-11 kW solar + 1-2 battery install runs $30,000-$55,000 cash price in California in 2026. That is the price you pay: the 30% federal residential credit ended for expenditures made after December 31, 2025, so a purchase in 2026 gets no federal offset. Loan, lease, and PPA financing are all available to avoid upfront cost, and on a lease or PPA the provider owns the system and claims any commercial credit it qualifies for.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>No primary source publishes a whole-home price for California; it depends on the system size, the number of batteries and the installer. For the solar part, LBNL&apos;s Tracking the Sun (2024 Edition) found host-owned residential systems installed in 2023 priced at $3.20 to $5.50 per watt (20th to 80th percentile, national). A purchase in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. Loans, leases and PPAs spread the cost over time, and on a lease or PPA the provider owns the system and claims any commercial credit it qualifies for.</p>
             </div>
 
             <IntentCTA cta='article_cta' variant='default' />

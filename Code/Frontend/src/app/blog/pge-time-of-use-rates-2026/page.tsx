@@ -109,7 +109,7 @@ export default function PGETimeOfUseRates2026() {
               </ul>
             </div>
 
-            <ArticleCTA heading='Compare a Solar Plan With Your PG&E Bill' body='California Rate Relief is a private referral service. Homeowners can request a no-obligation assessment using their actual utility, usage and property details.' />
+            <ArticleCTA heading='Compare a Solar Plan With Your PG&E Bill' body='California Rate Relief is a private referral service. Homeowners can request a review using their actual utility, usage and property details.' />
           </article>
         </div>
       </main>

@@ -291,8 +291,8 @@ export default function FreeRoofReplacementWithSolarCalifornia() {
               components serving a roofing or structural function generally do not
               qualify, naming roof trusses and traditional shingles specifically, while
               solar roofing tiles and solar shingles do because they generate energy.
-              The IRS also states the credit is not available for property placed in
-              service after December 31, 2025. Verified September 18, 2026. Tax
+              The IRS also states the credit is not allowed for expenditures made
+              after December 31, 2025. Verified September 18, 2026. Tax
               treatment depends on your facts and tax year; confirm with a qualified
               tax professional rather than a sales estimate.
             </p>

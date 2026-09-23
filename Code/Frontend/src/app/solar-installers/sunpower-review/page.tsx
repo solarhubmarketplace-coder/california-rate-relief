@@ -103,7 +103,7 @@ export default function SunPowerReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Pricing and Timeline (California)</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Historical California pricing has run approximately $2.80 to $3.20 per watt, which is competitive but not the lowest on the market. Install-to-PTO timelines typically run 1 to 4 months depending on your utility&apos;s interconnection queue and whether the local crew is direct or dealer-installed.
+                This review does not have a verified California price for SunPower; compare its written cash price per watt with other quotes for the same system. Install-to-PTO timelines typically run 1 to 4 months depending on your utility&apos;s interconnection queue and whether the local crew is direct or dealer-installed.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What Happens to Legacy SunPower Customers?</h2>
@@ -116,7 +116,7 @@ export default function SunPowerReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reputation and Complaint History</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                BBB and Trustpilot profiles for SunPower carry a mix of legacy complaints (from before the bankruptcy) and newer complaints (from post-rebrand installs). Average composite ratings across Trustpilot and SolarReviews sit in the 2.8 to 3.5 range. The legacy complaint base is still meaningful — pre-2024 SunPower was subject to lawsuits covering deceptive practices and service failures, and some of that reputational residue carries into the new entity&apos;s online profile.
+                BBB and Trustpilot profiles for SunPower carry a mix of legacy complaints (from before the bankruptcy) and newer complaints (from post-rebrand installs). Trustpilot ratings are mixed. The legacy complaint base is still meaningful — pre-2024 SunPower was subject to lawsuits covering deceptive practices and service failures, and some of that reputational residue carries into the new entity&apos;s online profile.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
@@ -154,12 +154,12 @@ export default function SunPowerReview() {
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Considering SunPower? Get 2 Comparison Quotes First.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll bring you quotes from up to three installers — including SunPower — so you can compare pricing, equipment, and warranty terms side by side before you sign.</p>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Considering SunPower? Compare Written Quotes First.</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
               <div className='flex justify-center'>
-                <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+                <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
               </div>
-              <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
+              <p className='text-xs text-muted-foreground text-center mt-4'>California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
             </div>
 
             <div className='mt-8'>

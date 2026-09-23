@@ -238,7 +238,7 @@ export default function SolarTileRoofCalifornia() {
 
             <ArticleCTA
               heading='Compare the written scope before you decide'
-              body='California Rate Relief is a private referral service. You can request a no-obligation solar review of a written quote; provider availability, design and price are determined after review.'
+              body='California Rate Relief is a private referral service. You can request a solar review of a written quote; provider availability, design and price are determined after review.'
             />
 
             <div className="mt-8">

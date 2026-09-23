@@ -178,7 +178,7 @@ export default function CaliforniaEnergyCommission() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The CEC does administer various energy efficiency and clean energy programs, but these tend to focus on building retrofits, appliance standards, and research — not direct solar rebates for homeowners. If you&apos;re looking for financial help with solar, the main options in 2026 are PPAs (which require no upfront cost), SGIP battery incentives (administered by the CPUC), and the DAC-SASH program for qualifying low-income households.
+                The CEC does administer various energy efficiency and clean energy programs, but these tend to focus on building retrofits, appliance standards, and research — not direct solar rebates for homeowners. If you&apos;re looking for financial help with solar, the main options in 2026 are leases and PPAs (often with no down payment, in exchange for a long contract), SGIP battery incentives (a CPUC program whose categories open and close), and the DAC-SASH program for qualifying low-income households.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

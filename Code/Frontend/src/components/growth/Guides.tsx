@@ -692,7 +692,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
           <div>
             <h3>How do I check a California solar company&rsquo;s CSLB license myself?</h3>
             <p className="mt-2">
-              Use CSLB&rsquo;s own free lookup tool &mdash; the exact steps are
+              Use CSLB&rsquo;s own license lookup tool &mdash; the exact steps are
               covered on our{' '}
               <Link
                 className={link}

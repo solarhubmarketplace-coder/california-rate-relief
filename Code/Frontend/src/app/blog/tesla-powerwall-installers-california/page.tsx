@@ -12,7 +12,7 @@ import { IntentCTA } from '@/components/growth/IntentCTA';
 
 export const metadata: Metadata = {
   title: "Tesla Powerwall Installers in California: 2026 Guide",
-  description: "Find Tesla Certified Installers in California, how the certified network works, and what Powerwall 3 costs installed before incentives.",
+  description: "Who can install a Tesla Powerwall in California, how Tesla's certified installer program works, and what drives the installed price.",
   alternates: { canonical: '/blog/tesla-powerwall-installers-california' },
   openGraph: { title: 'Tesla Powerwall Installers in California: 2026 Guide', description: 'Guide to Tesla Powerwall installation in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -44,10 +44,10 @@ export default function TeslaPowerwallInstallers() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Who Can Install a Tesla Powerwall in California?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Tesla sells Powerwall directly through two channels: <strong>Tesla&apos;s own installation teams</strong> (operating in major California metros) and the <strong>Tesla Certified Installer network</strong>, which has over 1,000 certified partners nationwide with hundreds active in California.
+                Tesla sells Powerwall directly through two channels: <strong>Tesla&apos;s own installation teams</strong> (operating in major California metros) and the <strong>Tesla Certified Installer</strong> program, whose installers Tesla lists in its own installer finder.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Most California solar companies are Tesla Certified Installers — including{' '}<Link href='/solar-installers/sunrun-review' className='text-primary hover:underline'>Sunrun</Link>,{' '}<Link href='/solar-installers/semper-solaris-review' className='text-primary hover:underline'>Semper Solaris</Link>,{' '}<Link href='/solar-installers/solar-optimum-review' className='text-primary hover:underline'>Solar Optimum</Link>, and most regional installers that serve the California market. If you want a Powerwall installed, you have many options beyond going direct to Tesla.
+                Many California solar companies install batteries. Before choosing one, read the reviews of installers you are considering, such as{' '}<Link href='/solar-installers/sunrun-review' className='text-primary hover:underline'>Sunrun</Link>,{' '}<Link href='/solar-installers/semper-solaris-review' className='text-primary hover:underline'>Semper Solaris</Link>{' '}and{' '}<Link href='/solar-installers/solar-optimum-review' className='text-primary hover:underline'>Solar Optimum</Link>, and ask each whether it is a Tesla Certified Installer; confirm the answer in Tesla&apos;s installer finder.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Powerwall 3 vs Powerwall 2</h2>
@@ -55,20 +55,20 @@ export default function TeslaPowerwallInstallers() {
                 Powerwall 3 is Tesla&apos;s current-generation residential battery, with 13.5 kWh of usable storage and an integrated 11.5 kW solar inverter. It&apos;s the version most new California installs include. Powerwall 2 (13.5 kWh, no built-in inverter) is still supported but being phased out for new installs.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The integrated inverter in Powerwall 3 matters because it eliminates the need for a separate solar inverter (saves $1,500-$3,000 on new solar-plus-battery installs) and simplifies the electrical design. For existing solar customers adding a battery, Powerwall 3 still works but the integrated inverter doesn&apos;t help since your existing inverter handles your panels.
+                The integrated inverter in Powerwall 3 matters because it can remove the need for a separate solar inverter on a new solar-plus-battery install and simplifies the electrical design. For existing solar customers adding a battery, Powerwall 3 still works but the integrated inverter doesn&apos;t help since your existing inverter handles your panels.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Typical California Installed Cost</h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What Drives the Installed Cost in California</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                A single Powerwall 3 installed in California runs approximately $12,000-$15,000 before incentives. Adding a second Powerwall for expanded capacity typically costs an additional $9,000-$11,000. Tesla often price-matches competing quotes, so the range varies.
+                Tesla does not publish a consumer installed price for California, and this page does not quote one. The price depends on the number of units, the electrical work, whether a panel upgrade is needed, and the installer. Get written quotes for the same configuration.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                After the federal tax credit (30% through end of 2025; check current-year status for your install date) and California&apos;s SGIP battery rebate (tiered by grid conditions — typically $200-$1,000 per kWh, highest for DAC-resilient customers), the net cost drops meaningfully. A single Powerwall can end up costing $6,000-$10,000 after all incentives applied.
+                There is no federal residential credit on a battery bought outright and installed in 2026: IRC § 25D does not apply to expenditures made after December 31, 2025. SGIP battery categories open, close and waitlist separately, so check the official tracker before counting on a rebate; a waitlist does not promise one.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Why Powerwall Matters Under NEM 3.0</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                California&apos;s Net Billing Tariff (NEM 3.0) values exported solar at 5-8 cents per kWh while you pay the utility 35-46 cents per kWh for consumed electricity. A Powerwall captures solar that would otherwise be exported at the low rate and stores it for use in the evening when rates are highest. That self-consumption shift is worth hundreds per year for the typical California household.
+                Under California&apos;s Net Billing Tariff (NEM 3.0), the CPUC says the credit for exported solar is usually lower than the retail rate you pay for grid power; the CPUC Public Advocates Office put the June 2026 residential averages at 33.7&cent; (PG&amp;E), 34.4&cent; (SCE) and 45.5&cent; (SDG&amp;E) per kWh. A Powerwall captures solar that would otherwise be exported and stores it for use in the evening, when time-of-use prices are highest. What that shift is worth depends on your evening usage and rate plan.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Powerwall also enables whole-home or partial-home backup during PG&amp;E, SCE, or SDG&amp;E outages — and with the frequency of Public Safety Power Shutoff (PSPS) events in fire-risk California regions, that resilience has real value beyond the bill savings.
@@ -79,7 +79,7 @@ export default function TeslaPowerwallInstallers() {
                 Tesla&apos;s own direct installation is available in major California metros but with longer lead times. Certified installers typically install faster but quality varies by specific company. The certification program ensures technical competence on the Powerwall itself but doesn&apos;t guarantee install-quality or post-sale service.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Get at least 2 quotes — one from Tesla direct and one from a Certified Installer — before deciding. The price spread is often significant.
+                Get at least 2 quotes — one from Tesla direct and one from a Certified Installer — before deciding, and compare them on the same configuration.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>

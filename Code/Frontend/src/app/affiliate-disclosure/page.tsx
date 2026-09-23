@@ -140,7 +140,7 @@ function CommonContent({ name, domain }: { name: string; domain: Domain }) {
     <>
       <h2 className='text-2xl font-bold mb-3'>How {name} Earns Money</h2>
       {isInstaller ? (
-        <p>{name} earns a referral fee when a homeowner who uses our 3-quote form signs a contract with one of the California solar installers in our network. We do not earn money from displaying ads, selling personal data, or charging homeowners. The 3-quote service is free to the homeowner.</p>
+        <p>California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. A submission is not a quote, financing approval or program eligibility decision.</p>
       ) : (
         <p>{name} is a participant in affiliate programs from major retailers and direct-from-manufacturer affiliate programs. When you click an affiliate link on our site and complete a purchase, we may earn a referral commission at no extra cost to you.</p>
       )}
@@ -154,7 +154,7 @@ function CommonContent({ name, domain }: { name: string; domain: Domain }) {
       </ul>
 
       <h2 className='text-2xl font-bold mt-8 mb-3'>How Rankings Are Determined</h2>
-      <p>Editorial rankings are based on verifiable factors: published specifications, independent customer review data (BBB, Trustpilot, retailer aggregate reviews, Reddit, specialized review sites), warranty terms, corporate stability and licensing, and real-world fit for specific use cases. {isInstaller && 'For California solar installers we also verify CSLB license status, bond, and worker comp.'}</p>
+      <p>Editorial rankings are based on verifiable factors: published specifications, independent customer review data (BBB, Trustpilot, retailer aggregate reviews, Reddit, specialized review sites), warranty terms, corporate stability and licensing, and real-world fit for specific use cases.</p>
 
       <h2 className='text-2xl font-bold mt-8 mb-3'>FTC Compliance</h2>
       <p>This site complies with FTC 16 CFR Part 255 (Guides Concerning Endorsements and Testimonials in Advertising). All material connections — including affiliate relationships — are disclosed on every page that contains affiliate links. Disclosure is also restated in this page.</p>

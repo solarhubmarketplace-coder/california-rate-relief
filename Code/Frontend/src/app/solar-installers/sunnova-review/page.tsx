@@ -342,8 +342,8 @@ export default function SunnovaReview() {
                 monthly rate stays the same, your annual escalator stays the
                 same, the 90% production guarantee persists. In practice,
                 post-bankruptcy service response times have lengthened
-                according to customer reports aggregated on BBB, Trustpilot,
-                Reddit, and SolarReviews, as the new entity focuses on
+                according to customer reports on BBB, Trustpilot and Reddit,
+                as the new entity focuses on
                 portfolio management rather than growth.
               </p>
 
@@ -473,8 +473,8 @@ export default function SunnovaReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Sunnova&apos;s pre-bankruptcy reputation was a weak point.
                 BBB complaint volume ran into the thousands over the prior
-                three-year period. Trustpilot and SolarReviews composite
-                ratings sat in the mixed-to-poor range, with install-phase
+                three-year period. Trustpilot ratings sat in the
+                mixed-to-poor range, with install-phase
                 experiences rated more positively than post-install service.
                 Reddit&apos;s r/solar regularly warned new buyers about
                 Sunnova&apos;s service response times. Legacy class-action
@@ -639,28 +639,23 @@ export default function SunnovaReview() {
             {/* Multi-Quote CTA */}
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>
-                Shopping Solar in California? Get 3 Quotes From Financially
-                Stable Installers.
+                Shopping Solar in California? Compare Written Quotes Before
+                You Sign.
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>
-                California Rate Relief works with multiple top-rated
-                California solar installers. Fill out one 60-second form and
-                we&apos;ll bring you quotes from up to three installers for
-                your address — so you can compare pricing, equipment, and
-                warranty terms side by side before you commit to a 25-year
-                decision.
+                California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.
               </p>
               <div className='flex justify-center'>
                 <Link
                   href='#solar-inquiry'
                   className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
                 >
-                  Get My 3 Quotes
+                  Request a solar review
                   <ArrowRight className='h-4 w-4' />
                 </Link>
               </div>
               <p className='text-xs text-muted-foreground text-center mt-4'>
-                Free. No obligation. No impact on your credit score.
+                California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
             </div>
 

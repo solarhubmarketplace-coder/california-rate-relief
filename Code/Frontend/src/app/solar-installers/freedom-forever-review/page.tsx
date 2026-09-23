@@ -380,8 +380,8 @@ export default function FreedomForeverReview() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                California pricing ran roughly $2.79 to $3.20 per watt
-                installed, competitive with the national mid-market.
+                This review does not have a verified California price for
+                Freedom Forever systems.
                 Install-to-PTO timelines ran 1 to 3 months for installation
                 and 2 to 6 months for full PTO, in line with other large
                 installers working through utility interconnection
@@ -459,8 +459,6 @@ export default function FreedomForeverReview() {
                 Trustpilot&apos;s rating sat at roughly 3.9 out of 5,
                 buoyed by positive install-phase reviews but dragged down
                 by a steady stream of post-install complaints.
-                SolarReviews gave the company a composite of about 3.31
-                out of 5.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -480,7 +478,7 @@ export default function FreedomForeverReview() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Beyond the BBB, Trustpilot, and SolarReviews figures above, federal court records offer a different, primary-source view. A search of CourtListener&apos;s RECAP database (federal PACER filings) for &ldquo;Freedom Forever&rdquo; turns up 42 dockets naming a Freedom Forever entity as a party, filed between 2019 and 2026 (courtlistener.com, accessed September 22, 2026). The largest single category is claims under the <strong>Telephone Consumer Protection Act</strong> — unsolicited sales calls or texts — filed in Texas, California, Pennsylvania, and Massachusetts federal courts; the rest include diversity-jurisdiction fraud claims, a Fair Credit Reporting Act claim, a Truth in Lending Act claim, and a Magnuson-Moss Warranty Act claim (courtlistener.com, accessed September 22, 2026). Eight of the 42 are consumer telephone-marketing (TCPA) claims filed in California federal courts — four in the Southern District (<em>Ewing v. Freedom Forever, LLC</em>, filed 2020, 2023, 2024, and 2025), three in the Central District (<em>Bales</em>, 2023; <em>Clark</em>, 2024; <em>Shelton</em>, 2025), and one in the Northern District (<em>Naiman v. Freedom Forever, LLC</em>, filed 2019). Two more California federal dockets name the company but aren&apos;t consumer complaints: an employment-discrimination removal (<em>Gomez</em>, C.D. Cal., 2022) and a supplier breach-of-contract claim Freedom Forever itself filed as plaintiff (<em>v. Silfab Solar Inc.</em>, S.D. Cal., 2024) (courtlistener.com, accessed September 22, 2026). These are filed allegations, not court findings — a docket existing doesn&apos;t mean a court ruled against the company — but the pattern (repeated TCPA claims specifically) is a more concrete signal than a star rating.
+                Beyond the BBB and Trustpilot figures above, federal court records offer a different, primary-source view. A search of CourtListener&apos;s RECAP database (federal PACER filings) for &ldquo;Freedom Forever&rdquo; turns up 42 dockets naming a Freedom Forever entity as a party, filed between 2019 and 2026 (courtlistener.com, accessed September 22, 2026). The largest single category is claims under the <strong>Telephone Consumer Protection Act</strong> — unsolicited sales calls or texts — filed in Texas, California, Pennsylvania, and Massachusetts federal courts; the rest include diversity-jurisdiction fraud claims, a Fair Credit Reporting Act claim, a Truth in Lending Act claim, and a Magnuson-Moss Warranty Act claim (courtlistener.com, accessed September 22, 2026). Eight of the 42 are consumer telephone-marketing (TCPA) claims filed in California federal courts — four in the Southern District (<em>Ewing v. Freedom Forever, LLC</em>, filed 2020, 2023, 2024, and 2025), three in the Central District (<em>Bales</em>, 2023; <em>Clark</em>, 2024; <em>Shelton</em>, 2025), and one in the Northern District (<em>Naiman v. Freedom Forever, LLC</em>, filed 2019). Two more California federal dockets name the company but aren&apos;t consumer complaints: an employment-discrimination removal (<em>Gomez</em>, C.D. Cal., 2022) and a supplier breach-of-contract claim Freedom Forever itself filed as plaintiff (<em>v. Silfab Solar Inc.</em>, S.D. Cal., 2024) (courtlistener.com, accessed September 22, 2026). These are filed allegations, not court findings — a docket existing doesn&apos;t mean a court ruled against the company — but the pattern (repeated TCPA claims specifically) is a more concrete signal than a star rating.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -658,28 +656,23 @@ export default function FreedomForeverReview() {
             {/* Multi-Quote CTA */}
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>
-                Holding a Freedom Forever Quote? Get 3 Competing Quotes
-                Before You Sign.
+                Holding a Freedom Forever Quote? Compare It Before You
+                Sign.
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>
-                California Rate Relief works with multiple top-rated
-                California solar installers. Fill out one 60-second form
-                and we&apos;ll bring you quotes from up to three
-                financially stable installers for your address. So you
-                can compare pricing, equipment, and warranty terms side
-                by side before you commit to a 25-year decision.
+                California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.
               </p>
               <div className='flex justify-center'>
                 <Link
                   href='/#qualify'
                   className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
                 >
-                  Get My 3 Quotes
+                  Request a solar review
                   <ArrowRight className='h-4 w-4' />
                 </Link>
               </div>
               <p className='text-xs text-muted-foreground text-center mt-4'>
-                Free. No obligation. No impact on your credit score.
+                California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
             </div>
 

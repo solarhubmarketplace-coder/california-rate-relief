@@ -5113,6 +5113,6 @@ export const CITIES: CityData[] = [
     'Roseville Electric offers California\'s most favorable municipal net-metering outside NEM 3.0. Here\'s what solar actually costs and saves in Roseville in 2026.',
   googleSunroofUrl: 'https://sunroof.withgoogle.com',
   relatedArticles: MUNI_RELATED_ARTICLES,
-  seoData: { primaryKeyword: 'solar companies in roseville', volume: 150, kd: 0, verdict: 'BUILD — EnergySage pos 2, no CRR page' },
+  seoData: { primaryKeyword: 'solar companies in roseville', volume: 150, kd: 0, verdict: 'BUILD — marketplace competitor pos 2, no CRR page' },
 },
 ];

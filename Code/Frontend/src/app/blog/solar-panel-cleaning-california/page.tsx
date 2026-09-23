@@ -128,7 +128,7 @@ export default function SolarPanelCleaningCA() {
                 </li>
                 <li className="flex gap-3 items-start">
                   <AlertTriangle className="h-5 w-5 text-status-warning flex-shrink-0 mt-0.5" />
-                  <div><strong>Winter rain often does the job for free.</strong> In coastal California, the first 2–3 heavy rains typically restore production to within 2–3% of clean. Central Valley and inland Southern California do not reliably get enough winter rain for this.</div>
+                  <div><strong>Winter rain often does the job.</strong> In coastal California, heavy winter rains can wash off most dust. Central Valley and inland Southern California do not reliably get enough winter rain for this.</div>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -141,7 +141,7 @@ export default function SolarPanelCleaningCA() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">DIY Risks (And What Kills Your Warranty)</h2>
               <p>
-                Doing it yourself can save $200+, but several common mistakes void your panel manufacturer warranty.
+                Doing it yourself avoids a service fee, but several common mistakes void your panel manufacturer warranty.
               </p>
               <ul className="space-y-3">
                 <li className="flex gap-3 items-start">

@@ -10,8 +10,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Tesla Solar Reviews (2026): $2.27-$2.82/W, Slow Service",
-  description: "Tesla Solar's California cash pricing runs about $2.27 to $2.82 per watt, the lowest in this comparison, but post-install service is its weakest part.",
+  title: "Tesla Solar Reviews (2026): Pricing, Service and Contracts",
+  description: "Tesla Solar sells solar and Powerwall in California. Post-install service is its weakest part. What to compare in its written quote before you sign.",
   alternates: { canonical: '/solar-installers/tesla-solar-review' },
 };
 
@@ -82,7 +82,7 @@ export default function TeslaSolarReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Tesla Solar — the residential solar division of Tesla Inc. — is the price leader in our California comparison, with cash pricing of $2.27 to $2.82 per watt and a vertically integrated equipment stack that nobody else on this list matches. Tesla designs and manufactures its own panels, its own inverter, and its own Powerwall battery. The ecosystem is tight, the pricing is aggressive, and the app is legitimately the best in the industry. The catch — and it is a real one — is that post-install customer service is consistently the weakest part of the experience.
+                Tesla Solar — the residential solar division of Tesla Inc. — sells solar with a vertically integrated equipment stack that nobody else on this list matches. Tesla designs and manufactures its own panels, its own inverter, and its own Powerwall battery. The ecosystem is tight and the app ties the panels and battery together. The catch — and it is a real one — is that post-install customer service is consistently the weakest part of the experience.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Equipment Stack</h2>
@@ -95,7 +95,7 @@ export default function TeslaSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Pricing and Install Timeline (California)</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                California cash pricing runs approximately $2.27 to $2.82 per watt — the lowest in our major-installer comparison. Tesla offers price matching against other major quotes in many markets, which can push the effective price even lower. Financing options include cash, loan, Tesla&apos;s own lease, and PPA.
+                This review does not have a verified California price for Tesla Solar. Get its written cash price, divide it by the system size in watts, and compare that per-watt figure with other written quotes for the same system. For a national benchmark, Lawrence Berkeley National Laboratory, Tracking the Sun, 2024 Edition, found host-owned residential systems installed in 2023 priced at $3.20 to $5.50 per watt (20th to 80th percentile). Ask Tesla in writing whether it will match a competing quote. Financing options include cash, loan, Tesla&apos;s own lease, and PPA.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Install timelines in California typically run 8 to 12 weeks to Permission to Operate in normal-demand markets, stretching to 4 to 6 months in high-demand regions or when utility interconnection queues are backed up. Installation uses a hybrid model — direct Tesla-badged crews in major metros, plus a Tesla Certified Installer network of over 1,000 partners for broader geographic coverage. Direct Tesla crews generally deliver more consistent install quality; Certified Installers vary.
@@ -106,7 +106,7 @@ export default function TeslaSolarReview() {
                 This is the near-universal theme in Tesla Solar reviews: the hardware is excellent, the install day is fine, and then something goes wrong six months or two years in and getting a human on the phone is a grind. Roof leaks (a common issue with any solar install) can take weeks to months to schedule a tech for. Inverter or Powerwall errors sometimes resolve themselves via firmware updates, but when they don&apos;t, the escalation path is slow.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                BBB profiles vary meaningfully by Tesla service region — some service centers have low complaint volume, others are very high. Trustpilot and SolarReviews composite ratings for Tesla Solar specifically (separate from Tesla the automaker) sit in the 2.8 to 3.2 range. The legacy Solar Roof price-hike class action was settled for approximately $6 million in a prior year, and there have been subsequent smaller disputes but no current major class actions active on the solar division.
+                BBB profiles vary meaningfully by Tesla service region — some service centers have low complaint volume, others are very high. Trustpilot ratings for Tesla Solar specifically (separate from Tesla the automaker) are mixed. The legacy Solar Roof price-hike class action was settled for approximately $6 million in a prior year, and there have been subsequent smaller disputes but no current major class actions active on the solar division.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The honest framing: you are making a trade-off. You get better-than-average equipment at the best price with the best app, and in exchange you accept that when you need service, it is going to be slower than you would like. If you are mechanically competent and willing to troubleshoot basic issues yourself, that trade-off often makes sense. If you want a phone number that answers in ten minutes, Tesla is not that company.
@@ -137,22 +137,22 @@ export default function TeslaSolarReview() {
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>Is Tesla cheaper than other solar companies?</h3>
-                  <p className='text-foreground/80 leading-relaxed'>Yes — at $2.27 to $2.82 per watt in California, Tesla Solar is typically the cheapest major installer by cash price. Tesla also offers price matching in many markets, which can reduce the effective price further. Compare against 2 to 3 competing quotes to see the real-world spread for your address.</p>
+                  <p className='text-foreground/80 leading-relaxed'>This review does not have a verified California price for Tesla Solar, so it cannot say Tesla is the cheapest. Compare its written cash price per watt against 2 to 3 competing quotes for the same system at your address.</p>
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>How is Tesla&apos;s customer service?</h3>
-                  <p className='text-foreground/80 leading-relaxed'>It&apos;s the weakest part of the Tesla Solar experience. Install-day service is typically fine, but post-install service response times are consistently slow across Trustpilot, SolarReviews, and BBB feedback. If responsive post-install service is critical for you, factor that into the decision.</p>
+                  <p className='text-foreground/80 leading-relaxed'>It&apos;s the weakest part of the Tesla Solar experience. Install-day service is typically fine, but post-install service response times are consistently slow across Trustpilot and BBB feedback. If responsive post-install service is critical for you, factor that into the decision.</p>
                 </div>
               </div>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Considering Tesla Solar? Compare Real Pricing.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll bring you quotes from up to three installers — including Tesla Solar — so you can compare real pricing, equipment, and warranty terms side by side.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
               <div className='flex justify-center'>
-                <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+                <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
               </div>
-              <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
+              <p className='text-xs text-muted-foreground text-center mt-4'>California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
             </div>
 
             <div className='mt-8'>

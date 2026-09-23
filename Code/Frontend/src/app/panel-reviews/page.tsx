@@ -32,10 +32,10 @@ interface Panel {
 }
 
 const panels: Panel[] = [
-  { name: 'Trina Solar', slug: 'trina-solar-panels-review', origin: 'China', series: 'Vertex S series', ownership: 'Public (SSE: 688599)', usedBy: 'Momentum Solar, Freedom Forever, broader installer base' },
-  { name: 'Silfab Solar', slug: 'silfab-solar-panels-review', origin: 'Canada (US manufacturing)', series: 'Cascade / Prime / Elite series', ownership: 'Private, Mississauga Ontario HQ', usedBy: 'Semper Solaris (enhanced labor warranty partner)' },
-  { name: 'REC Solar', slug: 'rec-solar-panels-review', origin: 'Norway (now Reliance-owned)', series: 'Alpha Pure series', ownership: 'Reliance Industries subsidiary', usedBy: 'Sunrun, Momentum, Freedom Forever' },
-  { name: 'Canadian Solar', slug: 'canadian-solar-panels-review', origin: 'Canada', series: 'HiKu / BiHiKu / TOPHiKu series', ownership: 'Public (NASDAQ: CSIQ)', usedBy: 'Major residential and commercial installers' },
+  { name: 'Trina Solar', slug: 'trina-solar-panels-review', origin: 'China', series: 'Vertex S series', ownership: 'Public (SSE: 688599)', usedBy: 'Made mainly in China; check the Vertex S datasheet' },
+  { name: 'Silfab Solar', slug: 'silfab-solar-panels-review', origin: 'Canada (US manufacturing)', series: 'Cascade / Prime / Elite series', ownership: 'Private, Mississauga Ontario HQ', usedBy: 'US and Canadian plants; ask whether the installer offers Silfab labor coverage' },
+  { name: 'REC Solar', slug: 'rec-solar-panels-review', origin: 'Norway (now Reliance-owned)', series: 'Alpha Pure series', ownership: 'Reliance Industries subsidiary', usedBy: 'Made in Singapore; ProTrust coverage needs an REC-certified installer' },
+  { name: 'Canadian Solar', slug: 'canadian-solar-panels-review', origin: 'Canada', series: 'HiKu / BiHiKu / TOPHiKu series', ownership: 'Public (NASDAQ: CSIQ)', usedBy: 'Made mainly in Asia; check the HiKu or TOPHiKu datasheet' },
 ];
 
 export default function PanelReviewsHub() {
@@ -63,7 +63,7 @@ export default function PanelReviewsHub() {
 
             <div className='prose prose-slate max-w-none mb-10'>
               <p className='text-lg text-foreground/80 leading-relaxed'>
-                Your California installer will propose a specific solar panel brand — and that choice matters. Panel reliability, efficiency, warranty depth, and long-term company solvency all differ between tier-1 manufacturers. These reviews cover the panel brands most commonly installed in California in 2026, what makes each one distinct, and which California installers tend to use them.
+                Your California installer will propose a specific solar panel brand — and that choice matters. Panel reliability, efficiency, warranty depth, and long-term company solvency all differ between tier-1 manufacturers. These reviews cover the panel brands most commonly installed in California in 2026, what makes each one distinct, and what to ask the installer quoting you.
               </p>
               <p className='text-foreground/80 leading-relaxed'>
                 Short version: most tier-1 panels in the current market produce similar output and carry similar 25-year warranties. The bigger differences are the manufacturer&apos;s financial stability (will they exist in year 20 to honor the warranty?), their US manufacturing presence (matters for IRA domestic-content bonuses), and how they pair with specific inverter brands.
@@ -79,7 +79,7 @@ export default function PanelReviewsHub() {
                     <h3 className='font-bold text-foreground mb-2'>{p.name}</h3>
                     <p className='text-xs text-muted-foreground mb-2'>{p.origin} — {p.ownership}</p>
                     <p className='text-sm text-foreground/80'>Series: {p.series}</p>
-                    <p className='text-xs text-muted-foreground mt-2'>Used by: {p.usedBy}</p>
+                    <p className='text-xs text-muted-foreground mt-2'>Note: {p.usedBy}</p>
                   </Link>
                 ))}
               </div>
@@ -91,23 +91,23 @@ export default function PanelReviewsHub() {
                 <strong>Company solvency.</strong> A 25-year warranty is only as good as the company behind it. Public companies file quarterly reports you can read. Private companies vary. After multiple installer bankruptcies in 2024-2026, panel-manufacturer financial health matters more to buyers than ever.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                <strong>US manufacturing.</strong> The domestic-content bonus (up to 10% additional credit) rides on the <em>commercial</em> ITC under IRC § 48E, on top of the 30% rate. It is not something a homeowner claims — the federal residential credit ended for expenditures made after December 31, 2025, so this matters to a business buyer or to the third-party owner on a lease or PPA. Qualifying requires panels meet domestic-content thresholds. Silfab, Qcells (via Axia Solar), and Tesla have US manufacturing footprints. Trina, Canadian Solar, REC, Jinko, and Longi primarily manufacture overseas.
+                <strong>US manufacturing.</strong> The domestic-content bonus (10 percentage points for a project under 1 MW or one meeting prevailing-wage and apprenticeship rules, 2 points otherwise) rides on the <em>commercial</em> credit under IRC § 48E. It is not something a homeowner claims — the federal residential credit ended for expenditures made after December 31, 2025, so this matters to a business buyer or to the third-party owner on a lease or PPA. Qualifying requires the project to meet the IRS thresholds for US-made steel, iron and manufactured products, not just the panels. Silfab and Qcells have US manufacturing footprints. Trina, Canadian Solar, REC, Jinko, and Longi primarily manufacture overseas.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                <strong>Warranty structure.</strong> Standard is 25-year product (defect) + 25-year performance (power warranty). The year-25 guaranteed output level varies by panel: tier-1 baseline is roughly 80-85%; premium panels (Qcells, REC Alpha, Silfab) guarantee 86-92%+ at year 25.
+                <strong>Warranty structure.</strong> Standard is 25-year product (defect) + 25-year performance (power warranty). The year-25 guaranteed output level varies by panel and is printed on each model&apos;s warranty sheet; compare it across the quotes you get.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                <strong>Efficiency.</strong> Modern tier-1 residential panels run 20-22% efficiency. A 2-3 percentage-point efficiency difference translates to 5-10% more annual production from the same roof area. Matters most if roof space is limited.
+                <strong>Efficiency.</strong> A higher-efficiency panel produces more from the same roof area; the datasheet gives each model&apos;s efficiency. It matters most if roof space is limited.
               </p>
               <p className='text-foreground/80 leading-relaxed'>
-                <strong>Your installer&apos;s relationship.</strong> Some installers have strong partnerships with specific panel brands (supply agreements, enhanced labor warranties, etc.). Semper Solaris for example offers enhanced labor coverage on Silfab panels. That kind of partnership is worth more than a small spec difference.
+                <strong>Your installer&apos;s relationship.</strong> Some installers have strong partnerships with specific panel brands (supply agreements, enhanced labor warranties, etc.). Ask whether the installer quoting you offers any manufacturer labor coverage; that can matter more than a small spec difference.
               </p>
             </section>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Get Quotes With Multiple Panel Options</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers offering different panel brands. Fill out one form, get up to three quotes — compare pricing and panel specs side by side.</p>
-              <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Compare Panel Options in Written Quotes</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
+              <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
           </article>
         </div>

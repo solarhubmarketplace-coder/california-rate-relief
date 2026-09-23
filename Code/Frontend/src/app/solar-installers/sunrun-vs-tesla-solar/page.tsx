@@ -62,14 +62,14 @@ export default function SunrunVsTeslaSolar() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Where Tesla Solar Wins</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Lowest cash-purchase pricing in the California market.</strong> Tesla Solar routinely quotes $2.50–$3.00/W installed. Well below the $3.50–$4.50/W California average. This alone moves a lot of cash buyers to Tesla.</li>
+                <li><strong>Cash-purchase pricing.</strong> This comparison does not have a verified California price for either company. Compare Tesla&apos;s written cash price per watt with other quotes for the same system.</li>
                 <li><strong>Native Powerwall integration.</strong> One app (Tesla app) controls solar, battery, EV charging, and home energy. No other installer offers this level of integration.</li>
                 <li><strong>Tesla Solar Roof option.</strong> If you&apos;re replacing your roof anyway, the integrated shingle-style solar roof is more aesthetically seamless than any panel-based system.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Where Sunrun Wins</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>PPA and lease options.</strong> Tesla doesn&apos;t offer $0-down PPA/lease. If you don&apos;t have the cash or tax appetite to claim the ITC, Sunrun is the alternative.</li>
+                <li><strong>PPA and lease options.</strong> Tesla doesn&apos;t offer $0-down PPA/lease. If you want a lease or PPA rather than buying, Sunrun offers both directly.</li>
                 <li><strong>Installation timelines.</strong> Sunrun typically completes installs in 6–12 weeks. Tesla Solar installs have been criticized for dragging to 4–6 months due to limited installation capacity.</li>
                 <li><strong>Post-install service.</strong> Sunrun has a nationwide service organization; Tesla Solar support has been notoriously thin and phone-unresponsive.</li>
                 <li><strong>Equipment flexibility.</strong> Sunrun can spec whichever panel/inverter combo fits your roof and needs. Tesla installs only Tesla-made components (panels from third-party contract manufacturers, Tesla-branded inverter, Tesla Powerwall).</li>

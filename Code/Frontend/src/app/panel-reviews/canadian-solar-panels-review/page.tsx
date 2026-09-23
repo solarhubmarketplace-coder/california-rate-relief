@@ -61,12 +61,12 @@ export default function CanadianSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Panel Series</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Canadian Solar&apos;s current residential lineup includes the <strong>HiKu</strong>, <strong>BiHiKu</strong>, and <strong>TOPHiKu</strong> series. HiKu is the standard residential module; BiHiKu is the bifacial variant (produces power from both sides if mounted where reflected light can reach the back); TOPHiKu uses TOPCon cell technology for improved efficiency and temperature performance. Typical wattages in the 400-440W range with efficiencies around 20-22% depending on specific model year.
+                Canadian Solar&apos;s current residential lineup includes the <strong>HiKu</strong>, <strong>BiHiKu</strong>, and <strong>TOPHiKu</strong> series. HiKu is the standard residential module; BiHiKu is the bifacial variant (produces power from both sides if mounted where reflected light can reach the back); TOPHiKu uses TOPCon cell technology for improved efficiency and temperature performance. Wattage and efficiency vary by model and model year; the datasheet for the quoted model gives both.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Canadian Solar offers a standard 25-year product defect warranty + 25-year linear power warranty on most current residential panels. Year-25 guaranteed output is typically in the 82-85% range for baseline HiKu, higher for the premium TOPHiKu TOPCon models. Specific percentages on the panel spec sheet — verify with your installer.
+                Canadian Solar offers a standard 25-year product defect warranty + 25-year linear power warranty on most current residential panels. The guaranteed output at year 25 is printed on the warranty sheet for each model; ask your installer for the sheet that matches the model on your quote.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Who Uses Canadian Solar in California</h2>
@@ -76,7 +76,7 @@ export default function CanadianSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Canadian Solar Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>You want tier-1 quality at a competitive price.</strong> Canadian Solar typically prices at or slightly below the Trina/Longi tier. For a budget-conscious California homeowner getting standard residential solar, Canadian Solar is a defensible spec.
+                <strong>You want tier-1 quality at a competitive price.</strong> Canadian Solar is usually offered as a value option. For a budget-conscious California homeowner getting standard residential solar, Canadian Solar is a defensible spec.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>You value company financial transparency.</strong> As a NASDAQ-listed company, Canadian Solar files quarterly 10-Q and annual 10-K reports you can read on SEC EDGAR. If warranty durability matters to you and you want to verify the parent company&apos;s financial health periodically, that transparency is useful.
@@ -105,9 +105,9 @@ export default function CanadianSolarReview() {
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Get Quotes With Canadian Solar (or Other Tier-1) Panels</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers that offer Canadian Solar alongside other tier-1 panel options. One form, multiple quotes.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Ask for Canadian Solar (or Other Tier-1) Panels in a Written Quote</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

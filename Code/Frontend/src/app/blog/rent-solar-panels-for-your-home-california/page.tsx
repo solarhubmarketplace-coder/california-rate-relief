@@ -103,7 +103,7 @@ export default function RentSolarPanels() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Trade-Offs</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Pros:</strong> no upfront cost, no maintenance responsibility, system and battery are included, contract usually transfers to the next buyer if you sell, monthly payment is almost always less than your utility bill.
+                <strong>Pros:</strong> often no down payment, the provider usually handles maintenance, and the contract may transfer to the next buyer if the provider approves them. Whether the payment is less than your current bill depends on the contract; compare the total in writing.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Cons:</strong> you don&apos;t own the system, you don&apos;t get the federal tax credit, lifetime savings are lower than cash or loan (though still substantial — typically $30K-$40K over 25 years), annual escalator can add up over 25 years, transfer to a new owner adds a step when selling your home.
@@ -119,7 +119,7 @@ export default function RentSolarPanels() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can you actually rent solar panels?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. The industry calls it a &quot;solar lease&quot; or &quot;PPA.&quot; You don&apos;t own the panels; you pay monthly for the electricity they produce. No upfront cost.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. The industry calls it a &quot;solar lease&quot; or &quot;PPA.&quot; You don&apos;t own the panels; you pay monthly for the system or for the electricity it produces, often with no down payment.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>What happens if I sell my house?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>The lease/PPA transfers to the buyer if the buyer qualifies. It adds a step to closing but is routine for California real-estate transactions. Some buyers see the lower monthly energy bill as a selling point; others balk at the transfer. Disclose the lease in your MLS listing.</p>
@@ -139,8 +139,8 @@ export default function RentSolarPanels() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>See What Renting Solar Would Cost For Your Home</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a PPA product — $0 down, fixed monthly rate below your current utility bill. Free eligibility check, no impact on your credit score.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Check My Eligibility<ArrowRight className='h-4 w-4' /></Link>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service, not a PPA provider. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

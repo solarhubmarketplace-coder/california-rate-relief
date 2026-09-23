@@ -9,7 +9,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
   title: "CPACE Financing California: How Commercial PACE Works",
-  description: "CPACE lets California commercial property owners finance solar up to 30 years, fixed-rate, non-recourse, repaid via property tax.",
+  description: "CPACE lets California commercial property owners finance solar and repay it through the property tax bill. How CSCDA Open PACE works and what to ask.",
   alternates: { canonical: '/commercial-solar/cpace-financing-california' },
   openGraph: { title: 'CPACE Financing California: How Commercial PACE Works for Solar', description: 'CPACE solar financing in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -48,12 +48,12 @@ export default function CpaceFinancing() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                CPACE — Commercial Property Assessed Clean Energy — is a California financing structure specifically designed for commercial clean-energy projects (solar, storage, efficiency upgrades). It&apos;s repaid via an assessment on the property tax bill rather than as a conventional loan. The terms are longer, the structure is non-recourse, and the obligation transfers with the property if you sell. For commercial property owners evaluating how to pay for solar, CPACE is worth understanding alongside direct purchase, lease, and PPA.
+                CPACE — Commercial Property Assessed Clean Energy — is a California financing structure specifically designed for commercial clean-energy projects (solar, storage, efficiency upgrades). It&apos;s repaid via an assessment on the property tax bill rather than as a conventional loan. Terms are set by the PACE administrator, and the obligation stays with the property if you sell. For commercial property owners evaluating how to pay for solar, CPACE is worth understanding alongside direct purchase, lease, and PPA.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How CPACE Works</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The mechanics: your property&apos;s taxing authority places a special assessment on the property equal to the financed amount. You repay the assessment via your property tax bill over the loan term (up to 30 years). The lender is secured by the assessment, not by your personal or corporate credit. If you sell the property, the remaining assessment stays with the property and transfers to the buyer.
+                The mechanics: your property&apos;s taxing authority places a special assessment on the property equal to the financed amount. You repay the assessment via your property tax bill over the financing term, which the administrator sets. The financing is secured by the assessment on the property. If you sell the property, the remaining assessment stays with the property and transfers to the buyer.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Because CPACE is property-secured rather than personal/corporate-credit-secured, it&apos;s structurally closer to a mortgage than to a conventional business loan. Approval is based on the property&apos;s loan-to-value, existing mortgage consent (if applicable), and the project&apos;s energy-savings economics.
@@ -61,30 +61,30 @@ export default function CpaceFinancing() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>California CPACE Program: CSCDA Open PACE</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                California&apos;s statewide commercial PACE program is the <strong>CSCDA Open PACE program</strong>, administered by the California Statewide Communities Development Authority. Most major California cities and counties have opted in; property owners apply locally through a PACE administrator.
+                One statewide option is the <strong>CSCDA Open PACE program</strong> of the California Statewide Communities Development Authority, which covers residential and commercial property owners. CSCDA says a city or county must be a CSCDA member and adopt a resolution opting in to Open PACE before property owners there can use it; owners apply through one of the program&apos;s commercial PACE providers.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Program features as of 2026:
+                What CSCDA says its Open PACE administrators do, and what to confirm with them:
               </p>
               <ul className='space-y-2 text-foreground/80 mb-6'>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Term:</strong> up to 30 years</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Rate:</strong> fixed for the full term</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Structure:</strong> non-recourse; no personal or corporate guarantee</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Repayment:</strong> property tax assessment; transfers with property sale</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Max loan-to-value:</strong> approximately 30% of property value</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Eligible uses:</strong> solar, battery storage, energy efficiency upgrades, water conservation</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Status in 2025-2026:</strong> program continues unchanged</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Financing:</strong> CSCDA says its administrators provide 100% financing for eligible projects</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Rate and term:</strong> set by the administrator; ask whether the rate is fixed for the whole term</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Structure:</strong> ask whether the financing carries any personal or corporate guarantee</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Repayment:</strong> through the property tax bill; the assessment stays with the property</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Size limit:</strong> ask the administrator how it caps the assessment against property value</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Eligible uses:</strong> energy efficiency, renewable energy, water conservation and seismic improvements, per CSCDA</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Local availability:</strong> confirm your city or county has opted in</span></li>
               </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Who CPACE Fits</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Commercial property owners with long-term hold horizons.</strong> The 30-year term only makes sense if you expect to own the property long enough for the solar savings to offset the PACE assessment. If you&apos;re planning to sell in 3 years, PACE transfers with the property — which is fine but makes your sale more complex.
+                <strong>Commercial property owners with long-term hold horizons.</strong> A long term only makes sense if you expect to own the property long enough for the bill reductions to cover the PACE assessment. If you&apos;re planning to sell soon, the assessment stays with the property — which is fine but makes your sale more complex.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Property owners who need non-recourse structure.</strong> CPACE is secured by the property, not by personal or corporate credit. For owners who don&apos;t want solar debt on their corporate balance sheet or who don&apos;t want personal guarantees, CPACE is uniquely useful.
+                <strong>Property owners who want property-secured financing.</strong> CPACE is secured by an assessment on the property. For owners who don&apos;t want a conventional business loan, that can be useful; confirm the guarantee and balance-sheet treatment with the administrator and your accountant.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Property owners whose existing mortgage lender consents.</strong> Most commercial mortgage lenders have to consent to the PACE assessment because it takes super-priority ahead of the mortgage lien. Getting lender consent is one of the main hurdles to overcome before CPACE funds.
+                <strong>Property owners whose existing mortgage lender consents.</strong> A PACE assessment is collected with property taxes, so a mortgage lender will usually want to approve it; getting that consent is one of the main hurdles before CPACE funds.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>CPACE vs Direct Purchase vs PPA</h2>
@@ -105,8 +105,8 @@ export default function CpaceFinancing() {
                     <tr className='border-t border-border'><td className='px-4 py-3 font-semibold text-foreground'>Upfront cost</td><td className='px-4 py-3 text-foreground/80'>Full</td><td className='px-4 py-3 text-foreground/80'>None (100% financed)</td><td className='px-4 py-3 text-foreground/80'>None</td></tr>
                     <tr className='border-t border-border'><td className='px-4 py-3 font-semibold text-foreground'>System ownership</td><td className='px-4 py-3 text-foreground/80'>You own</td><td className='px-4 py-3 text-foreground/80'>You own</td><td className='px-4 py-3 text-foreground/80'>Developer owns</td></tr>
                     <tr className='border-t border-border'><td className='px-4 py-3 font-semibold text-foreground'>Tax benefits (ITC, MACRS)</td><td className='px-4 py-3 text-foreground/80'>You claim</td><td className='px-4 py-3 text-foreground/80'>You claim</td><td className='px-4 py-3 text-foreground/80'>Developer claims</td></tr>
-                    <tr className='border-t border-border'><td className='px-4 py-3 font-semibold text-foreground'>Term</td><td className='px-4 py-3 text-foreground/80'>N/A</td><td className='px-4 py-3 text-foreground/80'>Up to 30 years</td><td className='px-4 py-3 text-foreground/80'>15-25 years</td></tr>
-                    <tr className='border-t border-border'><td className='px-4 py-3 font-semibold text-foreground'>Recourse</td><td className='px-4 py-3 text-foreground/80'>N/A</td><td className='px-4 py-3 text-foreground/80'>Non-recourse</td><td className='px-4 py-3 text-foreground/80'>N/A</td></tr>
+                    <tr className='border-t border-border'><td className='px-4 py-3 font-semibold text-foreground'>Term</td><td className='px-4 py-3 text-foreground/80'>N/A</td><td className='px-4 py-3 text-foreground/80'>Set by administrator</td><td className='px-4 py-3 text-foreground/80'>Set by contract</td></tr>
+                    <tr className='border-t border-border'><td className='px-4 py-3 font-semibold text-foreground'>Recourse</td><td className='px-4 py-3 text-foreground/80'>N/A</td><td className='px-4 py-3 text-foreground/80'>Secured by the property</td><td className='px-4 py-3 text-foreground/80'>N/A</td></tr>
                     <tr className='border-t border-border'><td className='px-4 py-3 font-semibold text-foreground'>Transfer at sale</td><td className='px-4 py-3 text-foreground/80'>System conveys</td><td className='px-4 py-3 text-foreground/80'>Assessment transfers</td><td className='px-4 py-3 text-foreground/80'>PPA transfers or buyer must qualify</td></tr>
                   </tbody>
                 </table>
@@ -118,27 +118,27 @@ export default function CpaceFinancing() {
               </p>
               <ol className='space-y-2 text-foreground/80 mb-6 list-decimal pl-6'>
                 <li>Apply through a PACE administrator with property financials and project specs</li>
-                <li>Get preliminary underwriting (typically 2-4 weeks)</li>
+                <li>Get preliminary underwriting</li>
                 <li>Obtain existing mortgage lender consent (most important gate)</li>
                 <li>Close the PACE assessment (paperwork is routed through the county recorder)</li>
                 <li>Project funds disburse to the EPC and construction begins</li>
               </ol>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                From application to funded close typically takes 60-120 days for a commercial solar project.
+                Ask the administrator for its expected time from application to funded close, and build it into the project schedule.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>What is CPACE in California?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Commercial Property Assessed Clean Energy — a property-secured financing structure for commercial clean-energy projects in California. Up to 30 years, fixed-rate, non-recourse, repaid via property tax assessment.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Commercial Property Assessed Clean Energy — a property-secured financing structure for commercial clean-energy projects in California, repaid through the property tax bill.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Does CPACE transfer when I sell the property?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes. The assessment stays with the property. The buyer takes over the remaining PACE payments. This is sometimes framed as a benefit (no payoff required at sale) and sometimes a complication (sale process includes disclosing the PACE assessment).</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>What are CPACE interest rates in California?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Fixed-rate, typically in the 6-9% range in 2026 depending on term, property quality, and market conditions. Rates are higher than traditional commercial mortgages but the 30-year term and non-recourse structure make up for it in many scenarios.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>This page does not publish a rate: the administrator sets it by term, property and market conditions. Ask for the rate, whether it is fixed, all fees and the total repayment, and compare them with a conventional loan.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Who administers CPACE in California?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>CSCDA Open PACE is the statewide program. Most California cities and counties have opted in. Individual PACE administrators (third-party companies) originate the loans in partnership with the program.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>CSCDA Open PACE is one statewide program; a city or county has to opt in before owners there can use it. PACE providers (third-party companies) originate the financing through the program.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Check the amount before you finance it</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>C-PACE finances a project cost; it does not set one. The assessment runs with the property for the whole term, so the figure it is written against matters more here than under a structure you can refinance out of. Read the quoted amount against <Link href='/commercial-solar/cost-per-watt-california' className='text-primary hover:underline'>commercial solar cost per watt in California</Link>, which gives the published per-watt figures by system size and the date they were checked.</p>
@@ -148,7 +148,7 @@ export default function CpaceFinancing() {
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Request a Commercial Solar Assessment</h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto leading-relaxed'>Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.</p>
               <Link href='/commercial-assessment' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a Commercial Assessment<ArrowRight className='h-4 w-4' /></Link>
-              <p className='text-xs text-muted-foreground mt-4'>No cost to submit. No obligation. Provider availability and project fit must be confirmed.</p>
+              <p className='text-xs text-muted-foreground mt-4'>A submission is a referral request, not a quote or contract. Provider availability and project fit must be confirmed.</p>
             </div>
 
             <div className='mt-10'><Link href='/commercial-solar' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Commercial Solar Hub</Link></div>

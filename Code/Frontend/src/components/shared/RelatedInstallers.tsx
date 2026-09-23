@@ -73,15 +73,15 @@ const INSTALLER_PICKS: Record<string, InstallerCard[]> = {
   ],
   // NEM 3 / NBT-relevant posts — favor installers with battery + post-NEM 3 economics
   nem3: [
-    { slug: 'tesla-solar-review', name: 'Tesla Solar', tagline: 'Powerwall integration is the strongest NEM 3 hedge' },
-    { slug: 'baker-electric-solar-review', name: 'Baker Electric Solar', tagline: 'CA-only, NEM 3 quoting transparent' },
+    { slug: 'tesla-solar-review', name: 'Tesla Solar', tagline: 'Solar with Powerwall; ask for net billing assumptions' },
+    { slug: 'baker-electric-solar-review', name: 'Baker Electric Solar', tagline: 'California installer; ask for net billing assumptions in writing' },
     { slug: 'semper-solaris-review', name: 'Semper Solaris', tagline: 'Veteran-owned CA installer; battery-forward post-NEM 3' },
   ],
   // Low-income / affordability posts
   affordability: [
-    { slug: 'powur-solar-review', name: 'Powur', tagline: 'Network-model — wide CA coverage, no-money-down options' },
-    { slug: 'sunrun-review', name: 'Sunrun', tagline: '$0-down PPA / lease with no upfront cost' },
-    { slug: 'la-solar-group-review', name: 'LA Solar Group', tagline: 'Strong rebate / DAC-SASH navigation in LA basin' },
+    { slug: 'powur-solar-review', name: 'Powur', tagline: 'Network model; check who installs and services your system' },
+    { slug: 'sunrun-review', name: 'Sunrun', tagline: 'Leases and PPAs; read the escalator and transfer terms' },
+    { slug: 'la-solar-group-review', name: 'LA Solar Group', tagline: 'Los Angeles-area installer; compare its written terms' },
   ],
   // Premium / panel-focused posts
   premium: [
@@ -101,7 +101,7 @@ const INSTALLER_PICKS: Record<string, InstallerCard[]> = {
       },
     },
     { slug: 'solar-optimum-review', name: 'Solar Optimum', tagline: 'Boutique CA installer; Panasonic / REC panels' },
-    { slug: 'baker-electric-solar-review', name: 'Baker Electric Solar', tagline: 'Commercial-grade installs; transparent pricing' },
+    { slug: 'baker-electric-solar-review', name: 'Baker Electric Solar', tagline: 'California installer; compare its written price and warranty' },
   ],
   // Bankruptcy / failed-installer focus
   defunct: [

@@ -37,7 +37,7 @@ export default function SolarSystemQuotes() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Getting real solar quotes in California in 2026 is frustrating for two reasons: too many installers compete for leads, so opting into one quote usually triggers 10+ follow-up calls from sales reps you didn&apos;t ask to hear from, and too many &quot;quotes&quot; come back with missing information that makes them impossible to compare. Here&apos;s how to get three solid, comparable California solar quotes without the spam, and what each quote needs to contain for it to actually be useful.
+                Getting real solar quotes in California in 2026 is frustrating for two reasons: many installers compete for the same homeowners, so opting into one quote can bring follow-up calls from sales reps you didn&apos;t ask to hear from, and too many &quot;quotes&quot; come back with missing information that makes them impossible to compare. Here&apos;s how to get three solid, comparable California solar quotes without the spam, and what each quote needs to contain for it to actually be useful.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What a Real Solar Quote Should Contain</h2>
@@ -50,28 +50,28 @@ export default function SolarSystemQuotes() {
                 <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Estimated annual production</strong> in kWh</span></li>
                 <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Total cash price</strong> AND financed/lease/PPA price broken out separately</span></li>
                 <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Monthly payment</strong> (if financed or lease/PPA) with annual escalator if applicable</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Production guarantee</strong> (should be 90%+)</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Production guarantee</strong> (whether there is one, and what share of the estimate it covers)</span></li>
                 <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Warranty terms</strong> — equipment, workmanship, roof penetrations (years for each)</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Projected year-one and year-25 savings</strong> vs your current utility bill</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Projected bills</strong> the provider assumes, with the utility rates and export credits behind them</span></li>
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>If a quote is missing any of the above, request it in writing before comparing. Quotes that only give you a monthly payment without the underlying math are incomplete.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How to Get Quotes Without the Sales Spam</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>There are three practical paths:</p>
               <p className='text-foreground/80 leading-relaxed mb-6'><strong>1. Direct installer request.</strong> Call or email the installer you&apos;re interested in. Ask for a quote. Downside: one quote at a time, and you&apos;ll get repeat sales contact.</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'><strong>2. Marketplace platforms.</strong> EnergySage, SolarReviews, and similar marketplaces connect you with multiple installers at once. Useful but your information gets shared widely — expect 3-5+ calls from installers on the platform over the following week.</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'><strong>3. Referral networks.</strong> Programs like California Rate Relief match you with a small curated set (typically 3) of pre-vetted installers. Lower spam volume, but the installer roster is determined by the program&apos;s partnerships.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'><strong>2. Marketplace platforms.</strong> Online solar marketplaces connect you with multiple installers at once. Useful, but your information goes to several installers, so expect calls from more than one.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'><strong>3. Referral services.</strong> A referral service such as California Rate Relief passes your request to a solar provider, which decides whether it can serve your address and what it can offer. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. A referral does not guarantee a set number of quotes or a particular provider, and the providers you hear from depend on the service&apos;s arrangements; see <Link href='/how-we-make-money' className='text-primary hover:underline'>how we make money</Link>.</p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The 3-Quote Sweet Spot</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>Industry research consistently shows that getting 3 quotes captures most of the available price variance — 2 quotes isn&apos;t enough to see the spread, 4+ doesn&apos;t materially improve the decision quality but dramatically increases the sales-contact volume. 3 is the right number.</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>When comparing the 3, line them up on a single spreadsheet with the itemized elements above in rows. The spread on total price for the same-spec system in California is often 15-30% across installers — significant enough to be worth the comparison.</p>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Why Three Quotes Is a Practical Target</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>The CPUC&apos;s California Solar Consumer Protection Guide says: &ldquo;Make sure to get bids from at least 3 different solar providers.&rdquo; Two quotes rarely show you whether a price is high or low; a third gives you a middle.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>When comparing the 3, line them up on a single spreadsheet with the itemized elements above in rows. Compare the total price for the same system size and equipment, not the monthly payment alone.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Red Flags in Solar Quotes</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'><strong>No cash price listed.</strong> Financed-only quotes hide the dealer fee. Always ask for both.</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'><strong>&quot;Same-day signing only&quot; pressure.</strong> Legitimate solar quotes are good for at least 30 days. Pressure tactics are a sales-training technique, not a real constraint.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'><strong>&quot;Same-day signing only&quot; pressure.</strong> A legitimate quote gives you time to compare it. Pressure tactics are a sales-training technique, not a real constraint.</p>
               <p className='text-foreground/80 leading-relaxed mb-6'><strong>Production estimates based on 6+ hours of daily sun without shade analysis.</strong> Real quotes include PVWatts or equivalent modeling specific to your roof.</p>
               <p className='text-foreground/80 leading-relaxed mb-6'><strong>Quotes from installers in Chapter 11.</strong>{' '}<Link href='/solar-installers/freedom-forever-review' className='text-primary hover:underline'>Freedom Forever</Link>{' '}(April 2026) and{' '}<Link href='/solar-installers/sunnova-review' className='text-primary hover:underline'>Sunnova / SunStrong</Link>{' '}(June 2025) are both continuing to operate but warranty durability is questionable.</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'><strong>No battery in the proposal under NEM 3.0.</strong> Under California&apos;s current Net Billing Tariff, a solar-only system has much weaker economics. Batteries should be the default, not an upsell.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'><strong>No battery in the proposal under NEM 3.0.</strong> Under California&apos;s Net Billing Tariff, the CPUC says export credits are usually lower than the retail rate, so a battery changes the math. Ask each installer to show the system with and without one.</p>
             </div>
 
             <IntentCTA cta='article_cta' variant='review' />

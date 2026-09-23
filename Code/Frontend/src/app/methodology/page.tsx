@@ -69,8 +69,6 @@ const CONFIGS: Record<Domain, DomainConfig> = {
       'Better Business Bureau (BBB) complaint files',
       'California Department of Insurance bond and license registry',
       'Court of California Superior Court records (small claims and civil)',
-      'Solar Reviews aggregated homeowner ratings',
-      'EnergySage installer ratings (when available)',
       'Public NEM 3 enrollment data from CPUC',
       'Direct interviews with homeowners (when arranged)',
     ],

@@ -38,7 +38,7 @@ export default function WhatHappensAfter25Years() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                The 25-year solar panel warranty doesn&apos;t mean your panels die at 25 years. It means the manufacturer guarantees at least a certain output level (typically 80-87%) at that 25-year mark. Panels keep producing electricity for decades past warranty expiration — just at slightly reduced output. Here&apos;s what actually happens to California solar systems over time, and what homeowners do when warranties expire.
+                The 25-year solar panel warranty doesn&apos;t mean your panels die at 25 years. It means the manufacturer guarantees at least a certain output level at that 25-year mark; the percentage is on your panel&apos;s warranty sheet. Panels keep producing electricity for decades past warranty expiration — just at slightly reduced output. Here&apos;s what actually happens to California solar systems over time, and what homeowners do when warranties expire.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How Solar Panels Degrade</h2>
@@ -110,7 +110,7 @@ export default function WhatHappensAfter25Years() {
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Want Solar with Best-in-Class Warranties?</h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers offering 25-year product AND workmanship warranties — plus manufacturer warranties that protect you even if the installer closes.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Check My Eligibility<ArrowRight className='h-4 w-4' /></Link>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

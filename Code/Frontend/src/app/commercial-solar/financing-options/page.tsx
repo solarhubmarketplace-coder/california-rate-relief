@@ -10,7 +10,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
   title: "Commercial Solar Financing in California: PPA to CPACE",
-  description: "How to finance commercial solar in California: PPA, lease, direct ownership with the 48E credit (up to 30%) + MACRS, and CPACE up to 30 years.",
+  description: "How to finance commercial solar in California: PPA, lease, direct ownership with the 48E credit and MACRS, and CPACE repaid through the property tax bill.",
   alternates: { canonical: '/commercial-solar/financing-options' },
   openGraph: { title: 'Commercial Solar Financing in California: PPA, Lease, Direct, CPACE', description: 'Complete guide to commercial solar financing options in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -56,10 +56,10 @@ export default function CommercialFinancing() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Option 1: Direct Ownership</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Direct ownership means you (or your company) buys the solar system outright — with cash, a commercial loan, or project financing. You own the equipment, claim the full tax benefits, and capture all the long-term savings.
+                Direct ownership means you (or your company) buys the solar system outright — with cash, a commercial loan, or project financing. You own the equipment, claim the tax benefits, and keep whatever the system saves on the bill.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The tax benefits in 2026 are substantial but they are now on a clock. The federal Investment Tax Credit for commercial solar lives in IRC § 48E. The base rate is 6%; it rises to 30% for a facility under 1 MW AC or one meeting the prevailing-wage and apprenticeship standards, which covers most California commercial rooftop projects. Public Law 119-21 added a termination for solar facilities placed in service after December 31, 2027 — but that termination only reaches facilities whose construction begins after July 4, 2026. Start construction on or before that date and the deadline does not touch you. Miss it and you have to be operating by the end of 2027. Bonus adders for domestic content and energy communities can push the effective credit higher. On top of the ITC, commercial solar qualifies for 5-year MACRS depreciation, which accelerates the tax shield. Between the ITC and MACRS, the effective after-tax cost of a commercial solar system is often 40-50% below the sticker price for a project that qualifies. All of which is applied to a sticker price, so establish that first: <Link href='/commercial-solar/cost-per-watt-california' className='text-primary hover:underline'>commercial solar cost per watt in California</Link> gives the published per-watt figures by system size and the date they were checked.
+                The tax benefits in 2026 are substantial but they are now on a clock. The federal Investment Tax Credit for commercial solar lives in IRC § 48E. The base rate is 6%; it rises to 30% for a facility under 1 MW AC or one meeting the prevailing-wage and apprenticeship standards. Public Law 119-21 added a termination for solar facilities placed in service after December 31, 2027 — but that termination only reaches facilities whose construction begins after July 4, 2026. Start construction on or before that date and the deadline does not touch you. Miss it and you have to be operating by the end of 2027. Bonus adders for domestic content and energy communities can push the credit higher; the IRS sets the domestic-content adder at 10 percentage points for a project under 1 MW or one meeting prevailing-wage and apprenticeship rules, and 2 points otherwise. On top of the ITC, commercial solar qualifies for 5-year MACRS depreciation, which accelerates the tax shield. The ITC and MACRS together can take a large share off the after-tax cost of a project that qualifies; your tax advisor can run the numbers on your own tax position. All of which is applied to a sticker price, so establish that first: <Link href='/commercial-solar/cost-per-watt-california' className='text-primary hover:underline'>commercial solar cost per watt in California</Link> gives the published per-watt figures by system size and the date they were checked.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Direct ownership fits:</strong> Companies with sufficient capital, taxable income to use the ITC and MACRS, long-term property ownership, and a desire for the lowest total lifetime cost.
@@ -67,7 +67,7 @@ export default function CommercialFinancing() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Option 2: Commercial Lease</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                A commercial solar lease is similar in structure to a residential lease but with longer terms (15-25 years) and stricter credit requirements (typically corporate balance sheet or investment-grade rating). The lessor owns the system, claims the ITC and MACRS, and charges you a fixed monthly payment with a 1-3.5% annual escalator.
+                A commercial solar lease is similar in structure to a residential lease but with stricter credit requirements (typically a corporate balance sheet). The lessor owns the system, claims the ITC and MACRS, and charges you a monthly payment, often with an annual escalator; the contract sets the term and escalator.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The main advantage of a lease is balance-sheet treatment — the lease payment is an operating expense, not capex. The main disadvantage is total cost: the lessor takes a margin, so the lifetime cost is higher than direct ownership. You also can&apos;t claim the tax benefits.
@@ -78,10 +78,10 @@ export default function CommercialFinancing() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Option 3: Power Purchase Agreement (PPA)</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                A commercial PPA is structurally similar to a lease but priced per kWh rather than flat monthly. The developer owns the system, sells you the electricity at a contracted rate (typically below your current utility rate), and handles all maintenance. Terms run 15-25 years, with 1-3.5% annual escalators.
+                A commercial PPA is structurally similar to a lease but priced per kWh rather than flat monthly. The developer owns the system, sells you the electricity at a contracted rate, and usually handles maintenance. The contract sets the term and any annual escalator; compare the contracted rate with your utility tariff over the whole term.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Commercial PPAs differ from residential PPAs on credit requirements (much stricter for commercial — typically corporate balance sheet or investment-grade), term length (commercial is often 20-25 years), and complexity of off-taker arrangements (multi-tenant commercial properties add legal structure).
+                Commercial PPAs differ from residential PPAs on credit requirements (much stricter for commercial — typically corporate balance sheet or investment-grade), term length, and complexity of off-taker arrangements (multi-tenant commercial properties add legal structure).
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>PPA fits:</strong> Companies with predictable load, no desire to own the system, strong corporate credit, and a preference for paying only for electricity actually delivered.
@@ -89,13 +89,13 @@ export default function CommercialFinancing() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Option 4: CPACE (Commercial Property Assessed Clean Energy)</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                CPACE is a property-based financing mechanism specifically designed for commercial clean-energy projects. The loan is repaid via an assessment on your property tax bill — the mechanism is non-recourse and transfers with the property if you sell.
+                CPACE is a property-based financing mechanism specifically designed for commercial clean-energy projects. The financing is repaid via an assessment on your property tax bill, and the assessment stays with the property if you sell.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                In California, CPACE is administered statewide via the <strong>CSCDA Open PACE program</strong>. Most major California cities and counties have opted in; property owners apply locally. Terms: up to 30 years, fixed-rate, non-recourse, maximum ~30% loan-to-value. Funds can cover solar, battery storage, and related energy-efficiency upgrades.
+                One statewide option is the <strong>CSCDA Open PACE program</strong>; CSCDA says a city or county must opt in before owners there can use it. The administrator sets the rate, term and size limit. CSCDA lists energy efficiency, renewable energy, water conservation and seismic improvements as eligible.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>CPACE fits:</strong> Companies that want longer financing terms than a typical commercial loan, non-recourse debt, property-based repayment that transfers at sale, and can use the capital efficiency (PACE doesn&apos;t require personal or corporate guarantees the way a standard loan does). Detailed program mechanics on our{' '}<Link href='/commercial-solar/cpace-financing-california' className='text-primary hover:underline'>CPACE California page</Link>.
+                <strong>CPACE fits:</strong> Companies that want property-secured financing repaid through the tax bill, with the assessment staying with the property at sale. Ask the administrator whether any guarantee is required. Detailed program mechanics on our{' '}<Link href='/commercial-solar/cpace-financing-california' className='text-primary hover:underline'>CPACE California page</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Non-Profit and Tax-Exempt Path: Direct Pay</h2>
@@ -114,7 +114,7 @@ export default function CommercialFinancing() {
                 <li><strong>Profitable company with strong balance sheet and taxable income:</strong> Direct ownership usually wins on total cost because you capture ITC + MACRS.</li>
                 <li><strong>Profitable company but wanting to avoid capex:</strong> PPA or lease, depending on whether you want kWh-based or flat-rate pricing.</li>
                 <li><strong>Thin margins or limited taxable income:</strong> PPA or lease — you&apos;re giving up tax benefits you couldn&apos;t use anyway, and the developer values them more.</li>
-                <li><strong>Multi-year property ownership plus a desire for long-term financing:</strong> CPACE, because the 30-year term and non-recourse structure is hard to match elsewhere.</li>
+                <li><strong>Multi-year property ownership plus a desire for long-term financing:</strong> CPACE, if your city or county has opted in and your mortgage lender consents.</li>
                 <li><strong>Non-profit or tax-exempt:</strong> Direct ownership + direct pay on the ITC.</li>
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -123,23 +123,23 @@ export default function CommercialFinancing() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>What is the federal tax credit for commercial solar in California in 2026?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>The § 48E Investment Tax Credit is 6% base and 30% for a facility under 1 MW AC or one meeting prevailing-wage and apprenticeship standards. It is still available in 2026, on a deadline: begin construction by July 4, 2026, or place the system in service by December 31, 2027. Bonuses of 10% each are available for domestic-content and energy-community qualifying projects, so the effective credit can reach 40-50%. Confirm your project&apos;s qualification with your tax advisor.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>The § 48E Investment Tax Credit is 6% base and 30% for a facility under 1 MW AC or one meeting prevailing-wage and apprenticeship standards. It is still available in 2026, on a deadline: begin construction by July 4, 2026, or place the system in service by December 31, 2027. Domestic-content and energy-community bonuses can add to that; the IRS sets the domestic-content bonus at 10 percentage points for a project under 1 MW or one meeting prevailing-wage and apprenticeship rules, and 2 points otherwise. Confirm your project&apos;s qualification with your tax advisor.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can a non-profit get the solar tax credit in California?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes, via &quot;direct pay&quot; (elective pay). The IRS issues a cash payment equivalent to the § 48E ITC — 6% base, 30% where the facility is under 1 MW AC or meets the prevailing-wage and apprenticeship requirements — for tax-exempt entities that own the system directly. Non-profits, schools, churches, and government entities all qualify, subject to the same July 4, 2026 begin-construction / December 31, 2027 placed-in-service deadlines.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>What is CPACE and how does it differ from a regular loan?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>CPACE is a property-based financing structure repaid via an assessment on your property tax bill, up to 30 years, fixed-rate, non-recourse. It transfers with the property if you sell. Regular commercial loans are typically 5-15 years with personal or corporate guarantees. CPACE uses the property as security rather than the borrower&apos;s credit.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>CPACE is a property-based financing structure repaid via an assessment on your property tax bill. The assessment stays with the property if you sell. A regular commercial loan is repaid by the borrower and often carries a personal or corporate guarantee; CPACE is secured by the property.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Are commercial PPAs different from residential PPAs?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. Commercial PPAs run 15-25 years (residential typically 10-20). Credit requirements are stricter — corporate balance sheet or investment-grade rather than consumer credit. Escalators 1-3.5%. Multi-tenant properties add legal complexity. Beyond that, the core structure (developer owns, you pay per kWh) is similar.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. Credit requirements are stricter (a corporate balance sheet rather than consumer credit), and term and escalator are negotiated in the contract. Multi-tenant properties add legal complexity. Beyond that, the core structure (developer owns, you pay per kWh) is similar.</p>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Request a Commercial Solar Assessment</h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto leading-relaxed'>Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.</p>
               <Link href='/commercial-assessment' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a Commercial Assessment<ArrowRight className='h-4 w-4' /></Link>
-              <p className='text-xs text-muted-foreground mt-4'>No cost to submit. No obligation. Provider availability and project fit must be confirmed.</p>
+              <p className='text-xs text-muted-foreground mt-4'>A submission is a referral request, not a quote or contract. Provider availability and project fit must be confirmed.</p>
             </div>
 
             <div className='mt-10'>

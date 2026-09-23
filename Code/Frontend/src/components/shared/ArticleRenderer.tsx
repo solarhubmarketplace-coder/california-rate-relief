@@ -202,7 +202,7 @@ export function ArticleRenderer({
           <p>
             Share your property and project details. California Rate Relief reviews
             inquiries and forwards suitable projects to an independent provider,
-            subject to service availability. No cost to submit and no obligation.
+            subject to service availability. A submission is not a quote, financing approval or program eligibility decision.
           </p>
         }
       >

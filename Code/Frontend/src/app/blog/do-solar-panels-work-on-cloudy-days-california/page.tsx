@@ -97,9 +97,9 @@ export default function DoSolarPanelsWorkOnCloudyDays() {
                 Your production app — Tesla, Enphase Enlighten, SolarEdge, or whatever your installer uses — is built to show this swing, not hide it. Tesla&apos;s own support documentation puts it plainly: &quot;Clouds block sunlight from reaching your solar system, significantly reducing production,&quot; and if your system gets intermittent sun through the day, &quot;you may see drops in production on the solar generation graph.&quot; That&apos;s the expected picture: a jagged, lower line that still tracks the sun&apos;s arc from sunrise to sunset, dipping as clouds thicken and recovering as they thin. What&apos;s not normal is a flat zero in the middle of a bright, sunny day, or a system-offline or no-communication alert — those point to a real fault (a tripped breaker, an offline gateway, an inverter problem), not weather, and are worth a call to your installer.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Production Guarantees Cover You</h2>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Check Whether Your Contract Has a Production Guarantee</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Most reputable California installers offer a 25-year production guarantee — typically 90%+ of modeled annual output. If a full year of unusual weather drops your actual production below the guarantee, the installer writes you a check for the shortfall. This is an important contract term to verify before signing; check our{' '}<Link href='/blog/solar-system-quotes-california' className='text-primary hover:underline'>quotes guide</Link>{' '}for what a complete proposal should include.
+                Some California solar contracts include a production guarantee: if the system produces less than a stated share of its modeled annual output, the provider compensates you for the shortfall. Not every contract has one, and the share, the review period and the remedy differ. This is an important contract term to verify before signing; check our{' '}<Link href='/blog/solar-system-quotes-california' className='text-primary hover:underline'>quotes guide</Link>{' '}for what a complete proposal should include.
               </p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Why the true-up looks at the year, not the day</h3>
@@ -126,8 +126,8 @@ export default function DoSolarPanelsWorkOnCloudyDays() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>See Your Annual Solar Production Estimate</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief runs the numbers for your specific roof orientation, regional cloud cover, and annual shading. Free 60-second eligibility check.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Check My Eligibility<ArrowRight className='h-4 w-4' /></Link>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

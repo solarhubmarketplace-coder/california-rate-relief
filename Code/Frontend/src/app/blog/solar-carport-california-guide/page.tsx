@@ -490,7 +490,7 @@ export default function SolarCarportCAGuide() {
 
             <ArticleCTA
               heading="Compare a solar carport with roof options"
-              body="California homeowners can request a no-obligation solar assessment from this private referral service after reviewing the property and contract questions above."
+              body="California homeowners can request a solar review from this private referral service after reviewing the property and contract questions above."
             />
             <RelatedGuides
               heading="Before choosing a carport over the roof"

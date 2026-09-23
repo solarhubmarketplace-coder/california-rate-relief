@@ -130,7 +130,7 @@ const CA_INSTALLERS: InstallerRef[] = [
     shortName: "Freedom Forever",
     type: "national",
     serviceNote:
-      "National company that sells through a dealer network; California is one of its markets.",
+      "Sold through a dealer network; California has been one of its markets. It filed for Chapter 11 on April 15, 2026 (U.S. Bankruptcy Court, D. Del.), so read the review before signing or relying on a warranty.",
     bestFor:
       "Homeowners comparing a dealer-sold system who will read the production terms closely.",
     tradeoff:
@@ -164,11 +164,12 @@ const CA_INSTALLERS: InstallerRef[] = [
     name: "Trinity Solar",
     shortName: "Trinity",
     type: "national",
-    serviceNote: "National installer that sells solar in some California markets.",
+    serviceNote:
+      "Serves the Northeast. Its review found no meaningful California operations, so it is listed here only so you can rule it out if its name comes up.",
     bestFor:
-      "Homeowners who want to ask who will do the install before signing.",
+      "Homeowners outside California. In California, compare other bidders.",
     tradeoff:
-      "Newer to some California markets; confirm it currently serves your ZIP code.",
+      "Do not count it as one of your California bids unless it confirms in writing that it serves your address.",
   },
 ];
 
@@ -214,7 +215,7 @@ function buildFaqs(city: CityData): FaqJsonLdItem[] {
   return [
     {
       question: `How many solar companies operate in ${city.name}?`,
-      answer: `This page does not count them, and it does not confirm that any company listed above serves your address. The nine companies above sell solar in California; other California installers may also bid on a ${city.county} project. Check each company's license at cslb.ca.gov and ask for written confirmation that it serves your address before you compare bids.`,
+      answer: `This page does not count them, and it does not confirm that any company listed above serves your address. Eight of the nine companies above sell solar in California; the ninth, Trinity Solar, serves the Northeast. Other California installers may also bid on a ${city.county} project. Check each company's license at cslb.ca.gov and ask for written confirmation that it serves your address before you compare bids.`,
     },
     {
       question: `What's the average cost of solar in ${city.name}?`,
@@ -348,7 +349,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               </h1>
               <Byline updated={dates.modified} className="mb-4" />
               <p className="text-lg text-muted-foreground">
-                Nine companies that sell solar in California, with notes on who
+                Nine companies California homeowners ask about, with notes on who
                 each one fits and the trade-off to ask about. This page does not
                 confirm that any of them serves your address: check the license
                 and written coverage for your home before you compare bids.
@@ -413,8 +414,8 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 )}
               </p>
               <p className="text-foreground/80 leading-relaxed mt-4">
-                For each of nine companies that sell solar in California, this
-                page describes who it fits, the trade-off to ask about, and
+                For each of nine companies California homeowners ask about,
+                this page describes who it fits, the trade-off to ask about, and
                 where to read the detailed review. California Rate Relief is
                 compensated by a solar provider when a homeowner we refer signs
                 an agreement. The site does not accept payment for placement.

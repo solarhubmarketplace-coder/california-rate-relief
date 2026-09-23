@@ -198,7 +198,7 @@ export default function WhatSizeSolarSystemDoINeed() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Most residential roofs have enough space, but shading from trees, chimneys, or vent stacks can significantly reduce your available area. South-facing roof space is ideal in California. East- and west-facing orientations work but are less efficient (20-30% less production). North-facing is rarely viable.
+                Most residential roofs have enough space, but shading from trees, chimneys, or vent stacks can significantly reduce your available area. South-facing roof space is ideal in California. East- and west-facing orientations work but produce less than south-facing ones. North-facing is rarely viable.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -292,7 +292,7 @@ export default function WhatSizeSolarSystemDoINeed() {
                 Not Sure About Your Roof or System Size?
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                The California Rate Relief Program connects you with qualified specialists who can assess your home and recommend the right system size. Get started in 60 seconds.
+                California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.
               </p>
               <Link
                 href='#solar-inquiry'

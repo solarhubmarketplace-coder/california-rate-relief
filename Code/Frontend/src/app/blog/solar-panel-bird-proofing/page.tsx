@@ -157,7 +157,7 @@ export default function SolarPanelBirdProofing() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Many installers now include basic bird proofing at little or no cost</strong> as a standard feature, especially in fire zones. Ask your installer if it&apos;s included before requesting a quote.
+                <strong>Some installers include basic bird proofing</strong> in their standard scope. Ask your installer whether it&apos;s included, and at what price, before requesting a quote.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -213,7 +213,7 @@ export default function SolarPanelBirdProofing() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Bird proofing is a smart investment for California solar systems, costing $200 to $500 for professional installation. Mesh guards are the most effective and common method. If you live in a fire zone, bird proofing moves from optional maintenance to safety requirement — nesting debris under solar panels is a genuine fire hazard. Many modern installers include basic proofing at no extra cost; ask if it&apos;s standard on your quote. If your system already has birds nesting, address it promptly to prevent wiring damage and soiling losses. Regular inspection keeps proofing effective over years of California sun and dry seasons.
+                Bird proofing is worth pricing for California solar systems; get a written quote for professional installation. Mesh guards are the most effective and common method. If you live in a fire zone, bird proofing moves from optional maintenance to safety requirement — nesting debris under solar panels is a genuine fire hazard. Ask whether basic proofing is included in your quote. If your system already has birds nesting, address it promptly to prevent wiring damage and soiling losses. Regular inspection keeps proofing effective over years of California sun and dry seasons.
               </p>
             </div>
 
@@ -223,13 +223,13 @@ export default function SolarPanelBirdProofing() {
                 Ready to Explore Solar with All Protections Included?
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                If you&apos;re evaluating solar options that come fully installed and maintained, check your eligibility with the California Rate Relief Program in about 60 seconds.
+                If you want a solar provider to review your project, you can send your details through the form on this page. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

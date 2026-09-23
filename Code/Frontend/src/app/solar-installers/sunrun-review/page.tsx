@@ -851,12 +851,12 @@ export default function SunrunReview() {
                   href='#solar-inquiry'
                   className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
                 >
-                  Get My 3 Quotes
+                  Request a solar review
                   <ArrowRight className='h-4 w-4' />
                 </Link>
               </div>
               <p className='text-xs text-muted-foreground text-center mt-4'>
-                No cost to submit. No obligation. No impact on your credit score.
+                California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
             </div>
 

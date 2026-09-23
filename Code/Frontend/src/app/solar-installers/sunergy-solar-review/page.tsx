@@ -10,14 +10,14 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunergy Solar Reviews (2026): 4.7/5 on EnergySage, 92 Reviews",
-  description: "Sunergy Solar holds a 4.7/5 EnergySage rating across 92 reviews and uses Enphase equipment. Ownership focus, plus the delay complaints to expect.",
+  title: "Sunergy Solar Reviews (2026): Ownership Focus, Delays",
+  description: "Sunergy Solar is a California installer that uses Enphase equipment and sells ownership, not PPAs. The delay complaints to expect and what to put in writing.",
   alternates: { canonical: '/solar-installers/sunergy-solar-review' },
 };
 
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
-  headline: "Sunergy Solar Review 2026: CA-Focused Installer With Strong EnergySage Ratings",
+  headline: "Sunergy Solar Review 2026: CA-Focused Installer, Ownership Model",
   datePublished: '2026-04-24', dateModified: '2026-04-24',
   author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
@@ -29,7 +29,7 @@ const reviewSchema = {
   itemReviewed: { '@type': 'LocalBusiness', name: 'Sunergy Solar', address: { '@type': 'PostalAddress', addressLocality: 'Ladera Ranch', addressRegion: 'CA', addressCountry: 'US' } },
   reviewRating: { '@type': 'Rating', ratingValue: '4.0', bestRating: '5' },
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Sunergy Solar is a California-focused installer with a 4.7/5 EnergySage score across 92 reviews and a simple ownership (not PPA) model. Strong on equipment and ownership economics. Recurring complaint is communication and install date slippage — worth setting tight expectations in the contract.',
+  reviewBody: 'Sunergy Solar is a California-focused installer with a simple ownership (not PPA) model. Strong on equipment and ownership economics. Recurring complaint is communication and install date slippage — worth setting tight expectations in the contract.',
 };
 
 export default function SunergyReview() {
@@ -50,7 +50,7 @@ export default function SunergyReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunergy Solar Reviews (2026): CA-Focused Installer With a 4.7/5 EnergySage Rating
+                Sunergy Solar Reviews (2026): CA-Focused Installer With an Ownership Model
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
@@ -77,7 +77,7 @@ export default function SunergyReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Sunergy Solar is a California-focused installer based in the Ladera Ranch / LA area with several regional locations. (Note: don&apos;t confuse this company with Sunergy Systems in Washington; a different operation.) The CA Sunergy has built a solid customer reputation — 4.7/5 across 92 EnergySage reviews — and focuses on straight-ownership financing rather than the PPA-heavy models favored by larger national installers. The trade-off: a handful of recurring complaints about communication and install date slippage.
+                Sunergy Solar is a California-focused installer based in the Ladera Ranch / LA area with several regional locations. (Note: don&apos;t confuse this company with Sunergy Systems in Washington; a different operation.) The CA Sunergy focuses on straight-ownership financing rather than the PPA-heavy models favored by larger national installers. The trade-off: a handful of recurring complaints about communication and install date slippage.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
@@ -92,7 +92,7 @@ export default function SunergyReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                EnergySage shows 4.7/5 across 92 reviews; genuinely above industry average for a residential solar installer. SolarReviews has a smaller sample but skews positive. Yelp is mixed, negative reviews are concentrated around communication and install date slippage rather than equipment or workmanship. BBB complaint volume is modest for the company&apos;s size.
+                Yelp is mixed, negative reviews are concentrated around communication and install date slippage rather than equipment or workmanship. BBB complaint volume is modest for the company&apos;s size.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Common Complaints</h2>
@@ -120,7 +120,7 @@ export default function SunergyReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Sunergy Solar a good company?</h3><p className='text-foreground/80'>EnergySage reviews are genuinely strong (4.7/5 / 92 reviews) and the ownership-model focus is customer-friendly. Main risk is communication slippage during the permitting/install window.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Sunergy Solar a good company?</h3><p className='text-foreground/80'>The ownership-model focus avoids a long lease or PPA contract. Main risk is communication slippage during the permitting/install window.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunergy install their own panels?</h3><p className='text-foreground/80'>No; Sunergy uses Tier-1 third-party panels with Enphase microinverters. Installation is done by Sunergy&apos;s own crews.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunergy offer PPAs or leases?</h3><p className='text-foreground/80'>Primarily no, the company&apos;s default is cash or loan (Sungage Financial). You own the system.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Is this the same company as Sunergy Systems in Washington?</h3><p className='text-foreground/80'>No. The CA Sunergy Solar (based in Ladera Ranch / LA) is a different company. Reviews for Sunergy Systems WA do not apply here.</p></div>
@@ -128,10 +128,10 @@ export default function SunergyReview() {
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Get Sunergy&apos;s Quote Alongside Two Others.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three installers — so you can compare their pricing, equipment, and warranty terms side by side.</p>
-              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
-              <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Sunergy&apos;s Quote Before You Sign.</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
+              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Request a solar review<ArrowRight className='h-4 w-4' /></Link></div>
+              <p className='text-xs text-muted-foreground text-center mt-4'>California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
             </div>
 
             <div className='mt-8'>

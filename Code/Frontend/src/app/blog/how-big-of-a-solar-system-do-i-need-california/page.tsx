@@ -178,8 +178,8 @@ export default function HowBigSolarSystem() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Get Sized for Your Specific Home</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief runs the math for your specific usage, roof, and future electrification plans. Free 60-second eligibility check.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Check My Eligibility<ArrowRight className='h-4 w-4' /></Link>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

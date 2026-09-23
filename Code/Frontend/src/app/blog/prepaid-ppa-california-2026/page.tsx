@@ -78,20 +78,17 @@ export default function PrepaidPpaCalifornia2026() {
       <section>
         <h2>How a prepaid PPA is actually structured</h2>
         <p>
-          Most PPAs default to $0 down with a monthly rate. Palmetto&apos;s
-          LightReach program describes itself as &ldquo;lower and more stable
-          than your current utility bill, with no upfront cost,&rdquo; over a
-          25-year term (Palmetto, accessed 2026-09-22). Prepaid is the
-          alternative: Sunrun pays &ldquo;for the system equipment/energy
+          Many PPAs are sold with no down payment and a monthly payment; the
+          CPUC&apos;s solar consumer guide notes that lease and PPA customers
+          receive a monthly bill from the solar provider as well as their
+          utility bill. Prepaid is the alternative: Sunrun pays &ldquo;for the system equipment/energy
           cost upfront,&rdquo; and the customer will &ldquo;forgo the annual
           escalator and will not have a monthly solar bill&rdquo; (Sunrun,
           &ldquo;What&apos;s a Solar Lease or PPA?,&rdquo; accessed
           2026-09-22) — but Sunrun is explicit this is still &ldquo;without
           the hassle of ownership&rdquo;: the customer is buying electricity,
-          not equipment. Tesla&apos;s own numbers show the range of upfront
-          amounts across its options: about $600 to start a lease, roughly
-          10% down on a loan, and full cost for cash (Tesla, &ldquo;Buying
-          Out Your Tesla Solar Panel Lease,&rdquo; accessed 2026-09-22) —
+          not equipment. Upfront amounts across the options run from little or
+          nothing on a monthly PPA or lease to the full price for cash;
           prepaid sits at the far end.
         </p>
         <p className="mt-3">
@@ -180,16 +177,15 @@ export default function PrepaidPpaCalifornia2026() {
         <p>
           Prepaying doesn&apos;t change who owns the system, and ownership
           decides who can claim a credit tied to it. Tesla says so directly
-          for its own lease/PPA: Tesla &ldquo;claims the Section 48E
-          investment tax credit and passes savings through&rdquo; to the
-          customer, not the reverse (Tesla, accessed 2026-09-22). The
-          homeowner-side credit, Section 25D, ended for new homeowner
-          purchases as of January 1, 2026 per the same page — only relevant
+          for its own lease/PPA: Tesla says it claims the Section 48E
+          investment tax credit on those systems (Tesla, accessed
+          2026-09-22). The homeowner-side credit, Section 25D, does not apply
+          to expenditures made after December 31, 2025 (IRS) — only relevant
           if buying outright, since under a PPA it was never the
           customer&apos;s credit: the IRS computes the Residential Clean
           Energy Credit on property the taxpayer acquires, and that credit
-          is unavailable for property placed in service after December 31,
-          2025 (IRS, accessed 2026-09-22). This page found no source stating
+          is not allowed for expenditures made after December 31, 2025 (IRS,
+          accessed 2026-09-22). This page found no source stating
           whether a prepaid PPA provider issues a 1099 or any other tax form
           for the arrangement — don&apos;t assume either way; ask the
           provider in writing what tax documents, if any, it sends for a

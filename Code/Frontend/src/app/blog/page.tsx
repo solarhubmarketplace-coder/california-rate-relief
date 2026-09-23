@@ -105,7 +105,7 @@ const blogPosts: BlogPost[] = [
     slug: 'nem-3-california-still-worth-it',
     title: 'Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)',
     excerpt:
-      'NEM 3.0 cut export credits by 75%. Here\'s why solar is still worth it in 2026, and why battery storage changes everything.',
+      'NEM 3.0 credits exports at values usually below the retail rate. When solar can still work in 2026, and what a battery changes.',
     date: '2026-04-14',
     readTime: '9 min read',
     category: 'Solar Education',
@@ -186,7 +186,7 @@ const blogPosts: BlogPost[] = [
     slug: 'nem-2-vs-nem-3-california',
     title: 'NEM 2.0 vs NEM 3.0 California: What Changed and What It Means For You',
     excerpt:
-      "NEM 2.0 and NEM 3.0 are not the same. California's 2023 tariff change cut export credits by ~75%. Here is the side-by-side comparison.",
+      "NEM 2.0 and NEM 3.0 are not the same. California's 2023 tariff change moved export credits to hourly avoided-cost values. Here is the side-by-side comparison.",
     date: '2026-04-23',
     readTime: '8 min read',
     category: 'California Solar Policy',
@@ -231,7 +231,7 @@ const blogPosts: BlogPost[] = [
     slug: 'tesla-powerwall-installers-california',
     title: 'Tesla Powerwall Installers in California: 2026 Guide',
     excerpt:
-      "Find certified Tesla Powerwall installers in California; how Tesla's certified installer network works, what Powerwall 3 costs installed, and which California installers are certified.",
+      "Who can install a Tesla Powerwall in California, how Tesla's certified installer program works, and what drives the installed price.",
     date: '2026-04-23',
     readTime: '7 min read',
     category: 'Battery Storage',
@@ -626,17 +626,17 @@ export default function BlogPage() {
             {/* CTA Section */}
             <div className='mt-16 bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center'>
               <h2 className='text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight'>
-                Ready to Cut Your Electric Bill?
+                Want a Provider to Review Your Project?
               </h2>
               <p className='text-muted-foreground mb-6 max-w-xl mx-auto'>
-                Check if you qualify for the California Rate Relief Program in 60
-                seconds. No obligation, no cost.
+                If you want a solar provider to review your project, send your
+                details through the form. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='/#qualify'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

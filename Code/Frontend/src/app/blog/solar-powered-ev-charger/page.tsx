@@ -146,7 +146,7 @@ export default function SolarPoweredEvCharger() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Off-peak hours (typically 12 AM-6 AM):</strong> The cheapest rates, often $0.15-$0.25/kWh. Charging overnight during off-peak hours can save you 40-70% compared to peak charging. Most EVs and Level 2 chargers support scheduled charging — set it to start at midnight and you&apos;re paying the lowest rate automatically.
+                <strong>Off-peak hours (typically overnight):</strong> The cheapest period on most time-of-use plans; your plan&apos;s tariff sheet lists the exact price. Charging overnight costs less than charging in the evening peak. Most EVs and Level 2 chargers support scheduled charging — set it to start at midnight and you&apos;re paying the lowest rate automatically.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -194,7 +194,7 @@ export default function SolarPoweredEvCharger() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Here&apos;s the bottom line: if you drive an electric vehicle in California, your electricity bill is higher than a non-EV household. That means the savings from solar are larger. A household spending $200/month on electricity might save $80-$120 with solar. A household spending $350-$450/month because of EV charging might save $150-$250. The bigger your bill, the bigger the payoff.
+                Here&apos;s the bottom line: if you drive an electric vehicle in California, your electricity use is higher than it would be without one, so a solar system has more of your own usage to cover. How much that is worth depends on the system price or contract, your rate plan and when you charge; compare written proposals on your own twelve months of bills.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

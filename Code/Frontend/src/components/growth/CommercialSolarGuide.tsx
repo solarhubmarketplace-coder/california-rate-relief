@@ -66,7 +66,7 @@ function CommercialInquiry() {
           Tell California Rate Relief about the site, utility, electricity use and project goal. We review the inquiry and may connect a suitable project with an independent provider, subject to service availability.
         </p>
       }
-      footnote="No cost to submit. No obligation. Project fit, service, design, price and savings must be confirmed."
+      footnote="A submission is a referral request, not a quote or contract. Project fit, service, design, price and savings must be confirmed."
     >
       <Link className={CTA_BUTTON_CLASS} href="/commercial-assessment">
         Request a commercial assessment
