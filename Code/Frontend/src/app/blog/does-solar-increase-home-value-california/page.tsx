@@ -54,6 +54,19 @@ const sources: Source[] = [
     label: "California Business and Professions Code § 7169 (solar disclosure document)",
     url: "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7169",
   },
+  {
+    label:
+      "Berkeley Lab: Appraising into the Sun — Six-State Solar Home Paired-Sales Analysis",
+    url: "https://emp.lbl.gov/publications/appraising-sun-six-state-solar-home",
+  },
+  {
+    label: "Appraisal Institute: Residential Green and Energy Efficient Addendum (Form 820.07)",
+    url: "https://www.appraisalinstitute.org/assets/1/7/ResidentialGreenandEnergyEfficientAddendum.pdf",
+  },
+  {
+    label: "Southern California Edison: Net Energy Metering FAQ",
+    url: "https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/faq",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -67,7 +80,7 @@ export const metadata: Metadata = {
       "What Revenue and Taxation Code section 73 settles, what it does not, and where the sale-price research stops.",
     type: "article",
     url: "https://ratereliefca.com/blog/does-solar-increase-home-value-california",
-    modifiedTime: "2026-09-17T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -78,7 +91,7 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
       intro="Two different questions get answered as one. California property tax law treats a qualifying solar system a particular way while you own the home, and separate sale-price research asks what buyers paid. Neither one produces a number for your address."
       path="/blog/does-solar-increase-home-value-california"
       sources={sources}
-      sourceCheckedDate="2026-09-17"
+      sourceCheckedDate="2026-09-22"
       topic="Solar and home value in California"
       inquiry={
         <SolarInquiry
@@ -300,6 +313,168 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
       </section>
 
       <section>
+        <h2>Does the NEM agreement transfer when you sell?</h2>
+        <p>
+          For most California homes, yes — the transfer runs through the
+          utility account, not the escrow paperwork. SCE automatically
+          enrolls a new owner under the system’s existing net energy
+          metering agreement for systems under 30 kW when they request
+          turn-on service: “If the renewable energy system is still under
+          the NEM eligibility period and the system size is less than 30
+          kilowatts (kW), you do not need to do anything. You will be
+          automatically enrolled in the NEM program when you request turn-on
+          service.” (SCE, verified 2026-09-22.) PG&amp;E and SDG&amp;E do
+          not publish an equivalent explicit statement, so a customer of
+          either utility should confirm directly before close of escrow. See{" "}
+          <Link
+            className="underline"
+            href="/blog/what-happens-to-solar-lease-when-i-sell-california"
+          >
+            what happens to the NEM or interconnection agreement when you
+            sell
+          </Link>{" "}
+          for the full utility-by-utility mechanics, and{" "}
+          <Link className="underline" href="/blog/what-is-nem-3-california">
+            how NEM tiers differ
+          </Link>{" "}
+          or{" "}
+          <Link className="underline" href="/blog/nem-2-vs-nem-3-california">
+            NEM 2 vs. NEM 3
+          </Link>{" "}
+          for what tier a given system might be carrying.
+        </p>
+      </section>
+
+      <section>
+        <h2>What appraisers actually put on the paper</h2>
+        <p>
+          Two documents most buyers never see answer the appraisal question
+          more directly than a sale-price average can. The first is Berkeley
+          Lab’s <em>Appraising into the Sun</em> study, which had licensed
+          appraisers build paired-sales comparisons — a solar home matched
+          against a nearly identical non-solar home that sold around the
+          same time — across seven metro areas in six states, including San
+          Diego. After screening 208 PV home sales down to 43 usable
+          comparable pairs, the study found premiums of $2.68 to $4.31 per
+          watt depending on state, averaging $3.78/W, or about $14,000 for an
+          average-size 3.8-kW system — a figure the study describes as
+          consistent with the larger statistical premium reported in{" "}
+          <em>Selling Into the Sun</em>, above. (LBNL, verified 2026-09-22.)
+        </p>
+        <p className="mt-3">
+          The second is the form an appraiser actually fills out. The
+          Appraisal Institute’s Residential Green and Energy Efficient
+          Addendum (Form 820.07) asks the appraiser to record a solar
+          system’s ownership status — owned, leased, financed with a UCC-1
+          solar loan, or under a power purchase agreement — along with
+          system size, production, age, and inverter and battery detail. The
+          form is explicit about the ownership distinction that runs through
+          this whole page: a system carrying a UCC-1 filing is treated as
+          personal property and is not supposed to be folded into the home’s
+          market value. (Appraisal Institute, verified 2026-09-22.) See{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/ucc-1-lien-solar-california"
+          >
+            what a UCC-1 filing on a solar system means at title
+          </Link>{" "}
+          for how that shows up during a sale.
+        </p>
+        <p className="mt-3">
+          Practically, this means the appraisal that decides a buyer’s loan
+          amount depends on whether the appraiser has comparable solar sales
+          nearby and correctly logs ownership status on the addendum.
+          Neither Berkeley Lab’s paired-sales method nor the addendum
+          guarantees a specific dollar add-on for any one property; both
+          describe how the number gets built, not what it will be for your
+          address.
+        </p>
+      </section>
+
+      <section>
+        <h2>Do solar homes sell faster? The honest answer</h2>
+        <p>
+          Search interest asks this directly, and the honest answer is that
+          the two most-cited studies on this page — Berkeley Lab’s{" "}
+          <em>Selling Into the Sun</em> and Zillow’s 2019 research —
+          measured sale price, not days on market. Neither publishes a
+          verified time-to-sell figure, and no California-specific
+          days-on-market dataset for solar homes was found this session.
+          Treat any specific “sells X days faster” number you see elsewhere
+          as unsourced until you can trace it to a study that actually
+          measured time on market rather than price.
+        </p>
+        <p className="mt-3">
+          What the price research does support is buyer demand: homes with
+          solar sold for more, on average, in every dataset above, which is
+          consistent with — but is not proof of — faster sales. If time on
+          market matters to your decision, ask a local real estate agent for
+          recent solar-home closings in your specific ZIP code rather than
+          relying on a national or older figure.
+        </p>
+      </section>
+
+      <section>
+        <h2>What California buyers actually ask before they sign</h2>
+        <p>
+          The documentation questions above come up in a fairly consistent
+          order once a solar home goes into escrow:
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            <strong>Who owns the system?</strong> Owned and loan-financed
+            systems transfer with the house; leased and PPA systems require
+            an assignment, buyout, or payoff — see{" "}
+            <Link
+              className="underline"
+              href="/blog/what-happens-to-solar-lease-when-i-sell-california"
+            >
+              what happens when you sell a home with a solar lease or PPA
+            </Link>
+            .
+          </li>
+          <li>
+            <strong>Is there a UCC-1 filing?</strong> A solar loan often
+            files one against the system as collateral; it shows up in a
+            title search and needs a payoff or release before close — see{" "}
+            <Link
+              className="underline"
+              href="/solar-problems/ucc-1-lien-solar-california"
+            >
+              what a UCC-1 filing means
+            </Link>
+            .
+          </li>
+          <li>
+            <strong>Will my property taxes jump because of the panels?</strong>{" "}
+            No — not from the system itself. The exclusion above protects the
+            seller’s assessment while they own the home; the buyer’s own
+            purchase-price reassessment happens with or without solar.
+          </li>
+          <li>
+            <strong>
+              What NEM tier does the system carry, and does it come with me?
+            </strong>{" "}
+            See the NEM section above — generally yes for systems under 30
+            kW, but confirm with your specific utility.
+          </li>
+          <li>
+            <strong>Will the appraisal reflect the system?</strong> Only if
+            the appraiser has comparable solar sales and correctly logs
+            ownership status on the green addendum described above — ask
+            your lender’s appraiser directly rather than assuming it happens
+            automatically.
+          </li>
+        </ul>
+        <p className="mt-3">
+          None of this is a promise about what a specific home will sell
+          for. It is the checklist that turns “does solar add value” into
+          questions a specific seller, buyer, or appraiser can actually
+          answer.
+        </p>
+      </section>
+
+      <section>
         <h2>How to get an answer for your actual address</h2>
         <p>None of the above is a valuation. These are the steps that produce one.</p>
         <ol className="mt-3 list-decimal space-y-2 pl-5">
@@ -423,6 +598,37 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
               A licensed appraiser for value, the county assessor for assessment,
               and your own tax professional for anything with a tax consequence.
               None of those answers can be produced from a web page.
+            </p>
+          </div>
+          <div>
+            <h3>Does my net metering agreement transfer when I sell my home?</h3>
+            <p>
+              For systems under 30 kW on SCE’s system, yes — a new owner is
+              automatically enrolled under the existing NEM agreement when
+              they request turn-on service, without a separate application.
+              PG&amp;E and SDG&amp;E do not publish the same explicit
+              statement; confirm directly with your utility before close of
+              escrow.
+            </p>
+          </div>
+          <div>
+            <h3>Are solar panels included in a home appraisal?</h3>
+            <p>
+              They can be, if the appraiser has comparable solar sales and
+              uses the Appraisal Institute’s green addendum to record
+              ownership status and system details. A system with a UCC-1
+              filing is supposed to be treated as personal property, not
+              folded into market value.
+            </p>
+          </div>
+          <div>
+            <h3>Do homes with solar sell faster in California?</h3>
+            <p>
+              No verified California-specific data on this exists as of this
+              session — the LBNL and Zillow studies on this page measured
+              price, not days on market. Don’t rely on a “sells X days
+              faster” figure unless it cites a study that actually measured
+              time to sell.
             </p>
           </div>
         </div>
