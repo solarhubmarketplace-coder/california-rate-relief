@@ -167,6 +167,73 @@ export function ctaCopyFor(variant: CtaVariant): CtaCopy {
 }
 
 /**
+ * HeroQuickCheck: the bill-first first step that sits in a page hero and hands
+ * its two answers to the page's full form. Same claim discipline as CTA_COPY:
+ * it asks, it never promises. DRAFT, for the same review as CTA_COPY.
+ */
+export const QUICK_CHECK_COPY = {
+  heading: 'Start with your bill',
+  intro:
+    'Two answers, no contact details. They carry into the full form, and nothing is sent until you finish it.',
+  utilityLabel: 'Utility on your bill',
+  utilityPlaceholder: 'Choose utility',
+  utilityOtherLabel: 'Utility company (optional)',
+  billLabel: 'Average monthly bill',
+  chipsLabel: 'Or tap a typical amount',
+  action: 'Continue',
+  utilityError:
+    'Choose the utility on your bill. Pick "Other / not sure" if yours is not listed.',
+  billError: 'Enter your average monthly bill in dollars, for example 180.',
+} as const;
+
+/** Home page QualificationWizard: button copy on the contact step. */
+export const HOME_WIZARD_COPY = {
+  // Was "Check My Eligibility". The form makes no eligibility decision (the
+  // strip under it says so), so the button now says what it does.
+  submitLabel: 'Send my details for review',
+  submittingLabel: 'Sending…',
+  back: 'Back',
+  edit: 'Edit',
+} as const;
+
+/**
+ * The "what happens next" panel shown after a confirmed submission. It repeats
+ * only what the consent text and /how-we-make-money already say: who may get in
+ * touch, that there is no obligation, and what a submission is not. No timing.
+ */
+export const INQUIRY_RECEIVED_COPY = {
+  heading: 'Your inquiry is saved.',
+  receivedLabel: 'What we received',
+  nextLabel: 'What happens next',
+  noObligation:
+    'You are under no obligation. A submission is not a quote, financing approval or eligibility decision, and a provider decides whether it can serve your project.',
+  paidLink: 'How California Rate Relief is paid',
+  guidesLabel: 'Worth reading before you talk to a provider',
+  referenceLabel: 'Reference for follow-up',
+  // SolarInquiry — mirrors its consent checkbox.
+  inquiryReceived:
+    'Your utility, average monthly bill, ZIP code, homeowner answer and contact details.',
+  inquiryContact:
+    'California Rate Relief may contact you at the phone number or email you gave about this inquiry, and may share your project details with a solar provider for follow-up.',
+  // QualificationWizard — mirrors its consent sentence.
+  wizardReceived:
+    'Your utility, bill range, homeowner and credit answers, project address and contact details.',
+  wizardContact:
+    'California Rate Relief or a matched solar provider may contact you at the phone number or email you gave about this inquiry.',
+} as const;
+
+export const INQUIRY_RECEIVED_GUIDES = [
+  {
+    href: '/blog/solar-system-quotes-california',
+    label: 'What to compare in a solar quote',
+  },
+  {
+    href: '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
+    label: 'Cash, loan, lease or PPA: how the payment options differ',
+  },
+] as const;
+
+/**
  * Roof-age bands for the qualification question. Bands, not a year, because a
  * homeowner rarely knows the install year and a band is enough to tell a
  * re-roof-first project from a ready one. "unsure" is a real answer and must
