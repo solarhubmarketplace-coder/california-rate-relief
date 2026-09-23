@@ -875,6 +875,22 @@
       {
         "heading": "Which battery fits which house",
         "body": "A new-build solar-plus-storage install with no existing panels is Powerwall 3's best case — the integrated hybrid inverter removes a design step and reduces installer complexity, and its per-unit output (up to 11.5 kW configurable) covers most whole-home backup needs with one or two units.\n\nA house that already has an Enphase microinverter solar array is the clearest fit for the IQ Battery 5P — it retrofits without an AC-coupling adapter, and the distributed six-microinverter architecture means no single component failure takes the whole battery offline. It's the right call for a smaller, space-constrained install or a homeowner who wants precise control over exactly how much capacity to add, unit by 5.0 kWh unit.\n\nA house with high simultaneous loads during an outage — a well pump plus HVAC compressor plus other heavy draws at once — and an existing non-Enphase solar inverter is the strongest case for FranklinWH's aPower 2, given its 10 kW continuous / 15 kW peak per-unit output and inverter-agnostic AC coupling. Its OSHPD seismic certification (AC 156 / OSHPD / IEEE 693-2005 high, per the aPower 2 datasheet's compliance table — the same standard used for California hospital facilities) is also a notable, if underreported, compliance data point for anyone weighing CA-specific installation standards. The tradeoff: the mandatory aGate controller adds cost, and the unit itself is the largest and heaviest of the three at 357 lb."
+      },
+      {
+        "heading": "Which system fits NEM 3.0 export-shifting vs. whole-home backup",
+        "body": "These are two different jobs, and the three systems aren't equally good at both.\n\nBuying mainly to shift solar export under NEM 3.0 — storing daytime solar to use in the evening instead of exporting it for a lower credit — usually means you want to size storage to your actual evening load, not buy more capacity than you'll cycle daily. The Enphase IQ Battery 5P's 5.0 kWh module size is built for that: you add capacity in 5 kWh increments rather than committing to 13.5-15 kWh up front. A single Powerwall 3 or aPower 2 can still do export-shifting, but their per-unit capacity is sized more for backup than for a strictly evening-shifting strategy — excess capacity isn't wasted if you also want outage protection, but it's not the efficient buy if export-shifting is the only goal.\n\nBuying mainly for whole-home backup — keeping HVAC, a well pump, an EV charger, and general household load running together during an outage — favors continuous and peak output over pure capacity. FranklinWH's aPower 2 (10 kW continuous, 15 kW peak) is built for simultaneous heavy loads from a single unit. A Powerwall 3 configured to its top continuous rating (11.5 kW) covers most whole-home scenarios with one or two units. Reaching comparable output from Enphase 5P units requires stacking several 5.0 kWh/3.84 kVA modules plus a System Controller — workable, but it's a different design path than a single higher-output unit.\n\nMost homeowners want some of both. For sizing your own system against your actual bill and load rather than a spec sheet, see our sizing guide, How many batteries do I need in California. For the utility-by-utility export-credit math behind the NEM 3.0 side of this decision, see our battery payback under NEM 3.0 page."
+      },
+      {
+        "heading": "Ecosystem and Installer Lock-In, Stated Neutrally",
+        "body": "Each of these three systems ties you to specific companion hardware and, to some degree, to an installer network trained on that brand. None of this is a reason to avoid a system — it's a cost-of-switching question worth asking before you sign.\n\nTesla Powerwall 3 is designed around Tesla's own hardware: an integrated hybrid inverter in its native configuration, or a Backup Gateway 2 if you're adding it AC-coupled to existing solar. Expanding later generally means more Tesla-compatible hardware, and installation is typically done by Tesla-certified installers. Enphase IQ Battery 5P assumes an Enphase ecosystem — it retrofits cleanest onto an existing Enphase microinverter array, and backup mode specifically requires Enphase's IQ System Controller 3 INT. It's the only one of the three whose datasheet states an open API for third-party monitoring, which is a partial offset on the software side even though the hardware ecosystem is proprietary. FranklinWH aPower 2 requires its aGate controller as mandatory companion hardware, regardless of which solar inverter you already have. That's what makes it inverter-agnostic on the solar side — but it locks the storage system itself into FranklinWH's own controller and app.\n\nWhat locks you in is the companion hardware, not the installer — ask what a future capacity add-on costs and requires before you commit to one ecosystem."
+      },
+      {
+        "heading": "Does SGIP Eligibility Change by Which System You Pick?",
+        "body": "No. California's Self-Generation Incentive Program pays a per-kWh rebate based on installed storage capacity and your utility territory and household tier — not on battery brand (CPUC, accessed 2026-09-22). A 13.5 kWh Powerwall 3, a stack of Enphase 5P units totaling 13.5 kWh, and a 15 kWh aPower 2 are evaluated by the same $/kWh mechanics; whichever system you choose, budget availability in your utility's territory is what determines whether SGIP has funds left, not the brand on the unit. For the live per-utility budget status, see our SGIP battery rebate status page."
+      },
+      {
+        "heading": "Questions to Ask Any Installer Before You Sign",
+        "body": "Which specific model and configuration are you quoting, and does the continuous-power number on your quote match the manufacturer's own datasheet for that configuration? Is the install AC-coupled or DC-coupled with your existing solar, and does that change the output or the companion hardware you're paying for? Is the required companion hardware — Backup Gateway 2, IQ System Controller, or aGate — included in the quoted price, or itemized separately? Is the installer a manufacturer-certified installer for this specific brand, and what happens to your workmanship warranty if their company closes? Is SGIP funding actually reserved for your project, or only “eligible” on paper — what changes on your contract if the budget closes before installation? Are you buying mainly for whole-home backup, evening export-shifting under NEM 3.0, or both — and does the system size on your quote match that goal? And what is the unit's manufacturer-stated round-trip efficiency and capacity-retention guarantee, in writing, for the exact model you're buying?"
       }
     ],
     "dataTable": {
@@ -945,6 +961,24 @@
           "$12,000-$16,500 single unit",
           "$6,000-$10,000 single unit",
           "$15,000-$20,000 incl. aGate"
+        ],
+        [
+          "Round-trip efficiency",
+          "Not published as one round-trip figure — datasheet states path efficiencies: 89% solar→battery→home/grid; 97.5% solar→home/grid (bypass path)",
+          "90% AC round-trip (50% power rating, 25°C, beginning of life); 96% DC round-trip (beginning of life)",
+          "90% round-trip, grid–battery–load"
+        ],
+        [
+          "Backup mode",
+          "Whole-home or partial-home (critical-loads) backup configurations; automatic disconnect for transition during an outage",
+          "Requires the IQ System Controller 3 INT as companion hardware; also runs Self-Consumption and Time-of-Use modes",
+          "Time-of-Use, Emergency Backup, and off-grid-ready modes; per-unit output supports higher simultaneous loads than a single unit of either other system"
+        ],
+        [
+          "App / monitoring",
+          "Tesla mobile app; revenue-grade metering (±0.5%, ANSI C12.20); no third-party API integration stated",
+          "Enphase app, Enphase Installer Platform, and an open API — the only one of the three with a stated third-party API",
+          "FranklinWH app; no third-party API integration stated in the datasheet"
         ]
       ]
     },
@@ -1021,9 +1055,14 @@
         "name": "IndexBox — Freedom Forever Bankruptcy: What 150,000 Solar Homeowners Need to Know",
         "url": "https://www.indexbox.io/blog/freedom-forever-bankruptcy-what-150000-solar-homeowners-need-to-know/",
         "supports": "Freedom Forever lifetime installation count (~150,000), cited here as company history, not a confirmed count of bankruptcy-affected customers"
+      },
+      {
+        "name": "CPUC — Self-Generation Incentive Program overview",
+        "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+        "supports": "Confirms SGIP pays a per-kWh storage rebate based on installed capacity and utility territory/customer tier, with no manufacturer or brand-based rate differential stated"
       }
     ],
-    "reviewedAt": "2026-09-05"
+    "reviewedAt": "2026-09-22"
   },
   {
     "slug": "sgip-battery-rebate-california",
