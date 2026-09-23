@@ -27,21 +27,17 @@ const articleSchema = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/sunpower-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'SunPower', address: { '@type': 'PostalAddress', addressLocality: 'Fremont', addressRegion: 'CA', addressCountry: 'US' } },
-  reviewRating: { '@type': 'Rating', ratingValue: '3.0', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'The current SunPower is Complete Solaria after an April 2025 rebrand that followed the original SunPower 2024 Chapter 11. Public company with 45+ state footprint and aggressive growth targets, but legacy customer complaints continue and the balance sheet is still in early-stage restructuring.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function SunPowerReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

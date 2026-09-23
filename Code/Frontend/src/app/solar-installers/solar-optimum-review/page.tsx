@@ -175,7 +175,7 @@ export default function SolarOptimumReview() {
                 This page does not recommend or rank installers. The features that distinguish this profile are structural and checkable: a warranty stated at 25 years across several separate coverage categories, roofing credentials that matter if roof work is bundled with the install, and third-party financing rather than an in-house lease or PPA. Each of those is a contract term to confirm in writing, not a conclusion.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                It&apos;s less compelling if you&apos;re specifically hunting the absolute lowest cash price (Tesla is typically lower), if you live outside their CA/NV/AZ/FL coverage footprint, or if you specifically want a national publicly traded installer with quarterly financial disclosures.
+                It&apos;s less compelling if you&apos;re shopping on cash price alone (compare written per-watt quotes for that), if you live outside their CA/NV/AZ/FL coverage footprint, or if you specifically want a national publicly traded installer with quarterly financial disclosures.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>

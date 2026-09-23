@@ -45,7 +45,7 @@ export default function SunrunVsTeslaSolar() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunrun vs Tesla Solar: Which Is Better for California Homes?</h1>
               
               <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
-<p className="text-lg text-muted-foreground">Sunrun is the biggest residential solar installer in America. Tesla Solar is the only installer that builds its own panels, inverters, batteries, and app. Here&apos;s the real comparison.</p>
+<p className="text-lg text-muted-foreground">Sunrun offers leases and PPAs, where it owns the system, alongside cash purchases. Tesla Solar sells a Tesla-branded package: panels, inverter, Powerwall and app. Here is how their published terms compare.</p>
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -64,7 +64,7 @@ export default function SunrunVsTeslaSolar() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Pricing (cash purchase)</td><td className="text-center">Mid-tier</td><td className="text-center">Lowest in CA</td></tr>
+                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Pricing (cash purchase)</td><td className="text-center">No verified California price</td><td className="text-center">No verified California price</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Finance options</td><td className="text-center">Lease / PPA / cash</td><td className="text-center">Cash, loan, or a newly advertised <a href="https://www.tesla.com/solarpanels" target="_blank" rel="noopener external" className="text-primary underline">lease</a> (terms not yet published)</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Equipment</td><td className="text-center">Multiple panel &amp; inverter brands</td><td className="text-center">Tesla-only ecosystem</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Battery</td><td className="text-center">Tesla Powerwall, Enphase</td><td className="text-center">Tesla Powerwall (only)</td></tr>
@@ -112,7 +112,7 @@ export default function SunrunVsTeslaSolar() {
               <p>This isn&apos;t a ranking. Read the full reviews for service history and complaint patterns before deciding: <Link href="/solar-installers/sunrun-review" className="text-primary underline">Full Sunrun Review</Link> and <Link href="/solar-installers/tesla-solar-review" className="text-primary underline">Full Tesla Solar Review</Link>.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Bottom Line</h2>
-              <p>For California homeowners: <strong>Tesla Solar</strong> wins on pure cost and Powerwall integration if you&apos;re a cash buyer who doesn&apos;t mind minimal support. <strong>Sunrun</strong> wins if you want a PPA/lease, faster installation, or more hand-holding through the process. Both use Powerwall, so the battery experience ends up similar either way.</p>
+              <p>For California homeowners: <strong>Tesla Solar</strong> fits a cash or loan buyer who wants one company&apos;s panels, inverter and Powerwall and can accept thinner post-install support. <strong>Sunrun</strong> fits if you want a PPA or lease, or more hand-holding through the process. Neither company&apos;s price is verified here, so compare written quotes by price per watt for the same system. Both install Powerwall, so the battery itself does not separate them.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
               <ul className="list-disc pl-6 space-y-2">

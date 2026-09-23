@@ -38,20 +38,17 @@ const articleSchema = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/elevation-solar-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org', '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'Elevation Solar', address: { '@type': 'PostalAddress', addressRegion: 'Multi-state', addressCountry: 'US' } },
-  reviewRating: { '@type': 'Rating', ratingValue: '3.5', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Elevation Solar has a mixed reputation profile: 90 BBB complaints and Yelp 2.9/5. Strong at sales and install, weaker at permitting and inspection coordination. Works for patient buyers.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function ElevationReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
@@ -82,7 +79,7 @@ export default function ElevationReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Elevation is a multi-state solar installer with operations in California, Arizona, Nevada, Texas, and Florida. The company reports more than 19,000 installations but carries a 90-complaint BBB record in 3 years and a Yelp score of 2.9. That split suggests an installer that does design and sales well but struggles with the back half of the install process in California: permitting, inspections, and utility interconnection.
+                Elevation is a multi-state solar installer, and California is one of its markets. Its own purchase agreement is specific about warranties and cancellation rights, and this review quotes it below. The complaints homeowners describe in public forums concentrate on the back half of the job in California: permitting, inspections and utility interconnection. We did not verify Elevation&apos;s BBB or Yelp record for this update, so check both yourself before you sign.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -92,7 +89,7 @@ export default function ElevationReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Elevation operates across 5 states with CA as one of its primary markets. A+ BBB rating despite the complaint volume, suggesting the company responds to and resolves most complaints; but that&apos;s separate from how long the original issues took to surface.
+                Elevation operates in several states, with California as one of its markets. We did not verify its current BBB rating or complaint count for this update. When you look up the BBB profile, read how recent complaints were answered and how long they took to resolve, not just the letter grade.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
@@ -103,8 +100,7 @@ export default function ElevationReview() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
                 
-                <li>BBB: A+, but 90 complaints in 3 years.</li>
-                <li>Yelp: 2.9/5 — negative-skewing, common for post-install issues.</li>
+                <li>BBB and Yelp: not verified for this update. Check the current rating and read the newest complaints yourself.</li>
                 <li>Reddit (r/solar): mixed; specific threads describe 6 to 12+ month activation timelines.</li>
               </ul>
 
@@ -159,7 +155,7 @@ export default function ElevationReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Elevation Solar a good company?</h3><p className='text-foreground/80'>Mixed. 90 BBB complaints and a 2.9 Yelp score point to friction at permitting, inspection, and activation.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Elevation Solar a good company?</h3><p className='text-foreground/80'>Mixed. Its contract terms are specific, but public complaints point to friction at permitting, inspection and activation. We did not verify its BBB or Yelp record for this update; check both yourself.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What&apos;s the typical Elevation install timeline?</h3><p className='text-foreground/80'>Install day is usually fast. Full process to Permission to Operate has been reported at 6 to 12+ months — longer than California industry average.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Elevation manufacture their own panels?</h3><p className='text-foreground/80'>No. Elevation uses Tier-1 third-party panels, Enphase microinverters are the default, and battery options are mainstream brands.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What&apos;s Elevation&apos;s actual workmanship warranty length?</h3><p className='text-foreground/80'>10 years on panel, inverter, and racking installation or repair, plus a separate 10-year roof-penetration warranty (<a href='https://poweredbyelevation.com/purchase-agreement-terms/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>poweredbyelevation.com, Purchase Agreement Terms</a>, accessed September 22, 2026) &mdash; more specific than a general &ldquo;25-year&rdquo; figure, which applies to manufacturer product warranties, not Elevation&apos;s own installation work.</p></div>

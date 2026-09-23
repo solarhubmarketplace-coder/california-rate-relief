@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -12,10 +13,11 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Solar Panels for EV Charging in California: Plan the Added Load',
+  title: 'Solar Panels for EV Charging in California: Plan the Load',
   description: 'Plan for EV charging with your actual household kWh, expected driving, vehicle efficiency, and a site-specific solar-production estimate.',
   alternates: { canonical: '/blog/solar-panels-for-ev-charging-california' },
-  openGraph: { title: 'Solar Panels for EV Charging in California: Plan the Added Load', description: 'A California guide to adding an EV load to a solar-sizing conversation.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', modifiedTime: '2026-09-20T00:00:00Z' },
+  openGraph: { title: 'Solar Panels for EV Charging in California: Plan the Load', description: 'A California guide to adding an EV load to a solar-sizing conversation.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', modifiedTime: '2026-09-20T00:00:00Z', images: [CRR_SOCIAL_CARD] },
+  twitter: crrTwitter('Solar Panels for EV Charging in California: Plan the Load', 'Plan for EV charging with your actual household kWh, expected driving, vehicle efficiency, and a site-specific solar-production estimate.'),
 };
 
 export default function SolarForEvCharging() {

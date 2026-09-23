@@ -25,20 +25,17 @@ const articleSchema = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/ameco-solar-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org', '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'Ameco Solar', address: { '@type': 'PostalAddress', addressLocality: 'Paramount', addressRegion: 'CA', addressCountry: 'US' } },
-  reviewRating: { '@type': 'Rating', ratingValue: '4.2', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Ameco Solar is a long-established California regional installer with roofing integration, strong 25-year warranty options, and a mostly positive reputation on Yelp. Tesla battery shortages and subcontractor coordination show up in complaints.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function AmecoReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

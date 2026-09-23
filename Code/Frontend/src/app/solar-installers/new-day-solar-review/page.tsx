@@ -12,7 +12,7 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: "New Day Solar Reviews (2026): Family-Owned, Murrieta, CA",
-  description: "New Day Solar is a family-owned Murrieta installer with 31+ years of combined solar and electrical experience, Enphase inverters, and FranklinWH batteries.",
+  description: "New Day Solar is a family-owned Murrieta installer that sells ownership (cash or loan) with Enphase inverters and FranklinWH batteries. What to confirm.",
   alternates: { canonical: '/solar-installers/new-day-solar-review' },
 };
 
@@ -25,20 +25,17 @@ const articleSchema = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/new-day-solar-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org', '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'New Day Solar', address: { '@type': 'PostalAddress', addressLocality: 'Murrieta', addressRegion: 'CA', addressCountry: 'US' } },
-  reviewRating: { '@type': 'Rating', ratingValue: '4.7', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'New Day Solar is a family-owned Murrieta-based installer with 31+ years of experience, ownership-only financing, strong Yelp reputation, FranklinWH battery pairing, and very fast post-install PTO turnaround. One of the cleanest reputations in SoCal.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function NewDayReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
@@ -69,7 +66,7 @@ export default function NewDayReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                New Day Solar is a family-owned California installer based in Murrieta with more than 31 years of combined solar and electrical experience. The company focuses on ownership (cash or loan) and actively steers customers away from PPAs and leases. Customer reviews across Yelp, the company website, and solar forums run very positive. Post-install PTO turnaround is often 2 weeks or less — among the faster timelines in our California comparison.
+                New Day Solar is a family-owned California installer based in Murrieta. The company focuses on ownership (cash or loan) and steers customers away from PPAs and leases. We did not verify its Yelp, Google or BBB ratings or its years in business for this update, so check its CSLB license record and recent reviews yourself. Get the install and Permission to Operate timeline in writing.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -89,15 +86,14 @@ export default function NewDayReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Yelp: Very strong ratings (4.5–5 range).</li>
-                <li>Own-site testimonials: Consistent positive case studies.</li>
+                <li>Yelp, Google and BBB: not verified for this update. Check the current ratings and read the newest complaints yourself.</li>
+                <li>Own-site testimonials: these are marketing, not independent reviews.</li>
                 <li>Solar forums and Reddit: Positive mentions in r/solar discussions about Inland Empire installers.</li>
-                <li>BBB: Low complaint volume, typically A+ rating.</li>
               </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Common Complaints</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Complaint volume is light. Occasional inspection hiccups — which is largely controlled by the county, not the installer. Are the main theme. Nothing significant shows up around workmanship, post-install support, or contract disputes.
+                The main theme in the complaints this review found is inspection delays, which the county largely controls rather than the installer. We did not verify total complaint volume; check the BBB record yourself.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing</h2>

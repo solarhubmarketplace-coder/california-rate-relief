@@ -29,21 +29,17 @@ const articleSchema = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/semper-solaris-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'Semper Solaris', address: { '@type': 'PostalAddress', addressLocality: 'El Cajon', addressRegion: 'CA', addressCountry: 'US' } },
-  reviewRating: { '@type': 'Rating', ratingValue: '2.7', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Semper Solaris is a California-native veteran-owned installer with in-house crews and a solar + roofing + HVAC bundle. Trustpilot and BBB complaint data show meaningful post-install service issues that prospective buyers should weigh carefully.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function SemperSolarisReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

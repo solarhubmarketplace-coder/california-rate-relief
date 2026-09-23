@@ -205,14 +205,16 @@ function changedRoutes() {
 /**
  * Pull the metadata title.
  *
- * Three shapes are in use across this repo and all three must resolve, because a
+ * Six shapes are in use across this repo and all six must resolve, because a
  * gate that reports "no title" on a page that plainly has one trains people to
  * ignore it:
  *   1. inline          export const metadata = { title: "..." }
  *   2. const shorthand const title = '...';  export const metadata = { title, ... }
  *   3. nested          title: { absolute: "..." } | { default: "..." }
+ *   4-6. named const, imported metadata object, imported data-table helper —
+ *        see resolveBuiltTitle() below.
  */
-function extractTitle(src) {
+function extractTitle(src, file) {
   const block = src.match(/export const metadata[^=]*=\s*\{([\s\S]*?)\n\};/);
   const scope = block ? block[1] : src;
 
@@ -236,11 +238,240 @@ function extractTitle(src) {
     if (decl) return decode(decl[1]);
   }
 
+  // 4-6. Titles built through a named const, an imported metadata object or an
+  // imported helper that reads a data table. See resolveBuiltTitle().
+  if (file) {
+    const built = resolveBuiltTitle(src, file, block ? block[1] : null);
+    if (built) return built;
+  }
+
   // generateMetadata() builds the title at request time; a static read cannot
   // resolve it. Signalled distinctly so it is reviewed, not reported as missing.
   if (/export\s+(?:async\s+)?function\s+generateMetadata/.test(src)) return '__DYNAMIC__';
 
+  // A route whose only job is to redirect renders no <title> of its own.
+  if (isRedirectOnly(src)) return '__REDIRECT__';
+
   return null;
+}
+
+// ---------------------------------------------------------------------------
+// title resolution for metadata built outside the literal `metadata` object
+// ---------------------------------------------------------------------------
+//
+// About fifty CRR routes set a real title that the three shapes above cannot
+// see, and the gate reported every one of them as "no metadata title found":
+//
+//   4. named const     const metaTitle = "...";  metadata = { title: metaTitle }
+//   5. imported object export const metadata = homeBatteryCostMetadata;
+//                      (an exported `Metadata` object in a shared component)
+//   6. imported helper export const metadata = guideMetadata('worth');
+//                      (a function that reads one entry of a data table and
+//                      returns { title: entry.metaTitle ?? entry.title, ... })
+//
+// Each is resolved statically, by reading the same source the page imports, so
+// the TITLE check measures the string that actually ships. Anything that cannot
+// be resolved with certainty (a computed string, an unknown helper shape)
+// still returns null and still fails — the gate does not guess.
+
+/** Remove comments without touching `//` inside URLs (e.g. "https://"). */
+function stripComments(src) {
+  return src.replace(/\/\*[\s\S]*?\*\//g, ' ').replace(/(^|[^:"'`\\])\/\/[^\n]*/g, '$1');
+}
+
+/** A single string literal at the start of `text`; template literals only without `${}`. */
+function leadingString(text) {
+  const m = text.match(/^\s*(["'`])((?:(?!\1)[^\\]|\\.)*)\1/);
+  if (!m) return null;
+  if (m[1] === '`' && m[2].includes('${')) return null;
+  return decode(m[2]);
+}
+
+/** `const name = "..."` (value may start on the next line) in the given source. */
+function resolveConstString(name, src) {
+  const re = new RegExp(`(?:^|[\\n;])\\s*(?:export\\s+)?const\\s+${name}\\s*(?::\\s*string\\s*)?=`, 'g');
+  const m = re.exec(src);
+  if (!m) return null;
+  return leadingString(src.slice(m.index + m[0].length));
+}
+
+/** Text between the brace at `open` and its matching close, quote-aware. */
+function balancedBlock(src, open) {
+  if (src[open] !== '{') return null;
+  let depth = 0;
+  let quote = null;
+  for (let i = open; i < src.length; i += 1) {
+    const c = src[i];
+    if (quote) {
+      if (c === '\\') i += 1;
+      else if (c === quote) quote = null;
+      continue;
+    }
+    if (c === '"' || c === "'" || c === '`') quote = c;
+    else if (c === '{') depth += 1;
+    else if (c === '}') {
+      depth -= 1;
+      if (depth === 0) return src.slice(open + 1, i);
+    }
+  }
+  return null;
+}
+
+/**
+ * Find a key at the top level of an object body (depth 0 of `body`) and return
+ * the text that follows its colon, or `{ shorthand: true }` for `{ key, ... }`.
+ */
+function topLevelValue(body, key) {
+  let depth = 0;
+  let quote = null;
+  for (let i = 0; i < body.length; i += 1) {
+    const c = body[i];
+    if (quote) {
+      if (c === '\\') i += 1;
+      else if (c === quote) quote = null;
+      continue;
+    }
+    if (c === '"' || c === "'" || c === '`') {
+      quote = c;
+      continue;
+    }
+    if (c === '{' || c === '[' || c === '(') depth += 1;
+    else if (c === '}' || c === ']' || c === ')') depth -= 1;
+    else if (depth === 0 && body.startsWith(key, i) && !/[\w$]/.test(body[i - 1] || ' ')) {
+      const rest = body.slice(i + key.length);
+      const colon = rest.match(/^\s*:/);
+      if (colon) return { text: rest.slice(colon[0].length) };
+      if (/^\s*(?:,|$)/.test(rest)) return { shorthand: true };
+    }
+  }
+  return null;
+}
+
+/** Resolve `title` inside a metadata object body, reading consts from `moduleSrc`. */
+function titleFromMetadataBody(body, moduleSrc) {
+  const v = topLevelValue(body, 'title');
+  if (!v) return null;
+  if (v.shorthand) return resolveConstString('title', moduleSrc);
+  const text = v.text;
+  const nested = text.match(/^\s*\{/);
+  if (nested) {
+    const inner = balancedBlock(text, text.indexOf('{'));
+    if (!inner) return null;
+    for (const k of ['absolute', 'default']) {
+      const kv = topLevelValue(inner, k);
+      if (kv && kv.text) {
+        const s = leadingString(kv.text) ?? identValue(kv.text, moduleSrc);
+        if (s) return s;
+      }
+    }
+    return null;
+  }
+  return leadingString(text) ?? identValue(text, moduleSrc);
+}
+
+function identValue(text, moduleSrc) {
+  const id = text.match(/^\s*([A-Za-z_$][\w$]*)\s*(?:,|\n|$)/);
+  return id ? resolveConstString(id[1], moduleSrc) : null;
+}
+
+/** Map an import specifier used by `page` to a readable source file. */
+function resolveModule(spec, fromFile) {
+  let base;
+  if (spec.startsWith('@/')) base = join(ROOT, 'src', spec.slice(2));
+  else if (spec.startsWith('.')) base = join(dirname(fromFile), spec);
+  else return null;
+  for (const cand of [base, `${base}.tsx`, `${base}.ts`, join(base, 'index.tsx'), join(base, 'index.ts')]) {
+    try {
+      if (existsSync(cand) && statSync(cand).isFile()) return cand;
+    } catch {
+      /* next */
+    }
+  }
+  return null;
+}
+
+/** Which module does `name` come from in this page? Returns { file, exported }. */
+function importOf(name, src, fromFile) {
+  for (const m of src.matchAll(/import\s*(?:type\s+)?\{([^}]*)\}\s*from\s*['"]([^'"]+)['"]/g)) {
+    for (const part of m[1].split(',')) {
+      const [exported, local] = part.trim().split(/\s+as\s+/).map((s) => s.trim());
+      if ((local || exported) === name) {
+        const file = resolveModule(m[2], fromFile);
+        return file ? { file, exported } : null;
+      }
+    }
+  }
+  return null;
+}
+
+function resolveBuiltTitle(src, file, metadataBody) {
+  const code = stripComments(src);
+
+  // 4. `title: someConst` inside the page's own metadata object.
+  if (metadataBody) {
+    const t = titleFromMetadataBody(stripComments(metadataBody), code);
+    if (t) return t;
+  }
+
+  // 5. `export const metadata = importedObject;`
+  const objRef = code.match(/export\s+const\s+metadata\s*(?::\s*Metadata\s*)?=\s*([A-Za-z_$][\w$]*)\s*;/);
+  if (objRef) {
+    const imp = importOf(objRef[1], code, file);
+    if (!imp) return null;
+    const mod = stripComments(readFileSync(imp.file, 'utf8'));
+    const decl = new RegExp(`export\\s+const\\s+${imp.exported}\\s*(?::\\s*Metadata\\s*)?=\\s*\\{`).exec(mod);
+    if (!decl) return null;
+    const body = balancedBlock(mod, decl.index + decl[0].length - 1);
+    return body ? titleFromMetadataBody(body, mod) : null;
+  }
+
+  // 6. `export const metadata = helper('key');`
+  const call = code.match(/export\s+const\s+metadata\s*(?::\s*Metadata\s*)?=\s*([A-Za-z_$][\w$]*)\(\s*(["'])([\w-]+)\2\s*\)\s*;/);
+  if (call) {
+    const imp = importOf(call[1], code, file);
+    if (!imp) return null;
+    const mod = stripComments(readFileSync(imp.file, 'utf8'));
+    const fn = new RegExp(`export\\s+function\\s+${imp.exported}\\s*\\(\\s*([A-Za-z_$][\\w$]*)[^)]*\\)[^{]*\\{`).exec(mod);
+    if (!fn) return null;
+    const fnBody = balancedBlock(mod, fn.index + fn[0].length - 1);
+    if (!fnBody) return null;
+    // The helper must index one table by its parameter: `const d = table[param]`.
+    const pick = fnBody.match(new RegExp(`const\\s+([A-Za-z_$][\\w$]*)\\s*=\\s*([A-Za-z_$][\\w$]*)\\[\\s*${fn[1]}\\s*\\]`));
+    if (!pick) return null;
+    const [, entryVar, tableName] = pick;
+    // And must return a title from that entry. Only two shapes are accepted:
+    //   title: entry.title                            -> use `title`
+    //   metaTitle = entry.metaTitle ... : entry.title -> `metaTitle`, else `title`
+    const ret = [...fnBody.matchAll(/return\s*\{/g)].pop();
+    const retBody = ret ? balancedBlock(fnBody, ret.index + ret[0].length - 1) : null;
+    if (!retBody || !topLevelValue(retBody, 'title')) return null;
+    const prefersMeta = new RegExp(`${entryVar}\\.metaTitle`).test(fnBody);
+    const table = new RegExp(`const\\s+${tableName}\\s*(?::[^=]+)?=\\s*\\{`).exec(mod);
+    if (!table) return null;
+    const tableBody = balancedBlock(mod, table.index + table[0].length - 1);
+    if (!tableBody) return null;
+    const entry = topLevelValue(tableBody, call[3]);
+    if (!entry || !entry.text || !/^\s*\{/.test(entry.text)) return null;
+    const entryBody = balancedBlock(entry.text, entry.text.indexOf('{'));
+    if (!entryBody) return null;
+    const read = (k) => {
+      const kv = topLevelValue(entryBody, k);
+      return kv && kv.text ? leadingString(kv.text) ?? identValue(kv.text, mod) : null;
+    };
+    return (prefersMeta ? read('metaTitle') : null) ?? read('title');
+  }
+
+  return null;
+}
+
+/** True when the default export does nothing but redirect (no JSX, no metadata). */
+function isRedirectOnly(src) {
+  const code = stripComments(src);
+  return (
+    /\b(?:permanentRedirect|redirect)\s*\(/.test(code) &&
+    !/export\s+const\s+metadata\b/.test(code) &&
+    !/<[A-Za-z]/.test(code)
+  );
 }
 
 function extractCanonical(src) {
@@ -589,7 +820,7 @@ function main() {
       prose,
       wordCount: words(prose).length,
       shingles: shingles(prose),
-      title: extractTitle(src),
+      title: extractTitle(src, file),
       canonical: extractCanonical(src),
     };
   });
@@ -604,6 +835,8 @@ function main() {
   for (const p of pages) {
     if (p.title === '__DYNAMIC__') {
       add(reviews, p, 'TITLE', 'title is built in generateMetadata() — length cannot be checked statically');
+    } else if (p.title === '__REDIRECT__') {
+      add(reviews, p, 'TITLE', 'route only redirects — it renders no title of its own');
     } else if (!p.title) {
       add(fails, p, 'TITLE', 'no metadata title found');
     } else {
@@ -646,7 +879,7 @@ function main() {
 
   // 4 UTILITY
   for (const p of pages) {
-    const named = p.title === '__DYNAMIC__' ? null : utilityInTitle(p.title);
+    const named = p.title === '__DYNAMIC__' || p.title === '__REDIRECT__' ? null : utilityInTitle(p.title);
     const m = p.route.match(/^\/solar-(?:savings|companies)\/([a-z0-9-]+)$/);
     if (!named || !m) continue;
     const city = m[1];

@@ -25,20 +25,17 @@ const articleSchema = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/sunergy-solar-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org', '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'Sunergy Solar', address: { '@type': 'PostalAddress', addressLocality: 'Ladera Ranch', addressRegion: 'CA', addressCountry: 'US' } },
-  reviewRating: { '@type': 'Rating', ratingValue: '4.0', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Sunergy Solar is a California-focused installer with a simple ownership (not PPA) model. Strong on equipment and ownership economics. Recurring complaint is communication and install date slippage — worth setting tight expectations in the contract.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function SunergyReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>

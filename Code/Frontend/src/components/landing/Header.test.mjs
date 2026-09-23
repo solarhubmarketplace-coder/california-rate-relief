@@ -65,18 +65,15 @@ test.after(async () => {
   await rm(outputDirectory, { recursive: true, force: true });
 });
 
-test("mobile menu exposes the same eight approved guide destinations", () => {
+test("header menu exposes the five approved guide destinations", () => {
   assert.deepEqual(
     HEADER_GUIDE_LINKS.map(({ href, label }) => [href, label]),
     [
-      ["/tools/solar-panel-calculator", "Calculator"],
-      ["/best-solar-companies-california", "Solar Companies"],
-      ["/solar-panels-california", "Solar in CA"],
-      ["/solar-problems", "Solar Problems"],
-      ["/battery", "Batteries"],
+      ["/solar-cost", "Cost"],
+      ["/best-solar-companies-california", "Companies"],
+      ["/blog", "Guides"],
       ["/commercial-solar", "Commercial"],
-      ["/blog", "Blog"],
-      ["/about", "About"],
+      ["/tools/solar-panel-calculator", "Tools"],
     ],
   );
 });

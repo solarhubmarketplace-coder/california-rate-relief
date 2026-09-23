@@ -61,6 +61,43 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
     }
   }, []);
 
+  // Hide the bar while an ask is already on screen (the hero quick check, an
+  // inquiry form, the home wizard). Two asks on one screen compete, and on a
+  // phone the bar sat over the quick check's Continue button.
+  const [askInView, setAskInView] = useState(false);
+  useEffect(() => {
+    if (!mounted || dismissed || typeof IntersectionObserver === 'undefined') return;
+    const visible = new Set<Element>();
+    const observed = new Set<Element>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) visible.add(entry.target);
+          else visible.delete(entry.target);
+        }
+        setAskInView(visible.size > 0);
+      },
+      { threshold: 0 },
+    );
+    const scan = () => {
+      document
+        .querySelectorAll('main form, #qualify, #solar-inquiry, #commercial-review')
+        .forEach((node) => {
+          if (observed.has(node)) return;
+          observed.add(node);
+          observer.observe(node);
+        });
+    };
+    scan();
+    // The home wizard mounts inside Suspense and forms can swap to their
+    // success panel, so look again once the page has settled.
+    const timers = [600, 2000].map((ms) => window.setTimeout(scan, ms));
+    return () => {
+      timers.forEach((t) => window.clearTimeout(t));
+      observer.disconnect();
+    };
+  }, [mounted, dismissed]);
+
   if (!mounted || dismissed) return null;
 
   const label = isCommercial ? 'Request Commercial Review' : copy.stickyAction;
@@ -70,14 +107,16 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
       {/* Reserves the bar's height so the bar never covers the end of the page. */}
       <div aria-hidden="true" className="md:hidden h-[72px]" />
       <div
+        aria-hidden={askInView || undefined}
         className={`md:hidden fixed bottom-0 left-0 right-0 z-40 flex items-center gap-2 border-t border-border bg-card p-3 shadow-lg ${
           reducedMotion
             ? ''
             : 'transition-transform duration-200 motion-reduce:transition-none'
-        }`}
+        } ${askInView ? 'translate-y-full pointer-events-none' : ''}`}
       >
         <Link
           href={href}
+          tabIndex={askInView ? -1 : undefined}
           onClick={() =>
             trackEvent('cta_click', {
               cta: 'sticky_mobile',
@@ -93,6 +132,7 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
         </Link>
         <button
           type="button"
+          tabIndex={askInView ? -1 : undefined}
           aria-label="Dismiss this bar"
           onClick={() => {
             setDismissed(true);
