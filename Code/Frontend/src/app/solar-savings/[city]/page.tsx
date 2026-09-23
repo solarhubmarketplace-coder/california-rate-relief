@@ -20,6 +20,9 @@ import {
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { NearbyCities } from '@/components/shared/NearbyCities';
+import { Byline } from '@/components/trust/Byline';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { cityPageDates, cityPageMetadata, regionalHubsFor, savingsPageSeo } from '@/lib/city-pages';
 
 // =============================================================================
 // STATIC PARAMS — Pre-renders all city pages at build time
@@ -43,22 +46,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: { canonical: '/solar-savings/los-angeles' },
     openGraph: { title: ladwpSavingsTitle, description: ladwpSavingsDescription, type: 'article', modifiedTime: '2026-09-11T00:00:00Z', url: 'https://ratereliefca.com/solar-savings/los-angeles' },
   };
-  const city = getCityBySlug(slug);
-  if (!city) return {};
-
-  return {
-    title: city.metaTitle,
-    description: city.metaDescription,
-    alternates: {
-      canonical: `/solar-savings/${city.slug}`,
-    },
-    openGraph: {
-      title: city.ogTitle,
-      description: city.ogDescription,
-      type: 'article',
-      publishedTime: '2026-04-14T00:00:00Z',
-    },
-  };
+  // Title, description, canonical, Open Graph and Twitter from one place
+  // (src/lib/city-pages.ts). city.metaTitle / ogTitle are no longer read: they
+  // had drifted apart (the og title said "Solar Savings…" under a "Solar
+  // Panels…" <title>, and Twitter fell back to the site default).
+  return cityPageMetadata('savings', slug) ?? {};
 }
 
 // =============================================================================
@@ -101,9 +93,24 @@ export default async function CityPage({ params }: PageProps) {
     : utility.rateDisplay || `${(utility.ratePerKwh * 100).toFixed(1)}¢`;
 
   const faqSchema = buildFAQSchema(city);
+  const seo = savingsPageSeo(city);
+  const dates = cityPageDates('savings', city.slug);
+  const hub = regionalHubsFor(city.slug)[0];
 
   return (
-    <PublicLayout>
+    <PublicLayout
+      breadcrumbLabel={`Solar savings in ${city.name}`}
+      breadcrumbParent={hub ? { label: `${hub.region} solar guide`, href: hub.href } : undefined}
+    >
+      <ArticleJsonLd
+        variant='Article'
+        domain='crr'
+        headline={seo.h1}
+        url={`https://ratereliefca.com/solar-savings/${city.slug}`}
+        datePublished={dates.published}
+        dateModified={dates.modified}
+        description={seo.description}
+      />
       <Header />
       <script
         type="application/ld+json"
@@ -112,15 +119,28 @@ export default async function CityPage({ params }: PageProps) {
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
+            {/* Breadcrumb (matches the BreadcrumbList schema) */}
+            <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
+              <Link href="/" className="hover:text-primary">Home</Link>
+              <span>/</span>
+              {hub && (
+                <>
+                  <Link href={hub.href} className="hover:text-primary">{hub.region} solar guide</Link>
+                  <span>/</span>
+                </>
+              )}
+              <span className="text-foreground">Solar savings in {city.name}</span>
+            </nav>
+
             {/* Header */}
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">
                 {city.name}, CA
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
-                Solar Savings in {city.name}: What It Actually Costs and What
-                You&apos;ll Save in 2026
+                {seo.h1}
               </h1>
+              <Byline updated={dates.modified} className="mb-4" />
               <p className="text-lg text-muted-foreground">
                 A data-driven guide for {city.name} homeowners — your local
                 rates, solar costs, incentives, HOA rules, and every option for
