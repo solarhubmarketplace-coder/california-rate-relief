@@ -36,7 +36,19 @@ import usePlacesAutocomplete, {
   getGeocode,
   getZipCode,
 } from 'use-places-autocomplete';
-import { parsePhoneNumber, isValidPhoneNumber, AsYouType } from 'libphonenumber-js';
+import { HOME_WIZARD_COPY, INQUIRY_RECEIVED_COPY } from '@/lib/cta-intent';
+import { US_PHONE_HINT, formatUsPhoneInput, isValidUsPhone, toE164Us, usPhoneError } from '@/lib/phone';
+import {
+  HOME_WIZARD_TARGET,
+  QUICK_START_EVENT,
+  formatBill,
+  quickStartFromEvent,
+  takeQuickStart,
+  wizardBillBracket,
+  wizardUtilityFor,
+  type QuickStart,
+} from '@/lib/quick-start';
+import { InquiryReceived } from '@/components/growth/InquiryReceived';
 
 type WizardStep = 1 | 2 | 3 | 4 | 5;
 
@@ -119,13 +131,44 @@ const billAmounts = [
   { id: '500+', label: '$500+', value: 600 },
 ];
 
+/** Contact-step fields that can carry an inline error. */
+type ContactField = 'phone' | 'city' | 'serviceMarket' | 'serviceZip';
+
+const initialFormData: FormData = {
+  utilityProvider: '',
+  utilityProviderOther: '',
+  billAmount: '',
+  isHomeowner: null,
+  creditScore: '',
+  name: '',
+  phone: '',
+  email: '',
+  address: '',
+  city: '',
+  serviceZip: '',
+  // This wizard sits on the California home page; the visitor can still change
+  // it. Pre-selecting removes one required tap without changing what is sent.
+  serviceMarket: 'CA',
+};
+
+/** Minimal window shape for the Maps script loaded in layout.tsx. */
+type MapsWindow = Window & {
+  google?: { maps?: { places?: unknown } };
+  gm_authFailure?: () => void;
+};
+
 const creditOptions = [
   { id: 'yes', label: 'Yes', sublabel: 'Above 650' },
   { id: 'no', label: 'No', sublabel: 'Below 650' },
   { id: 'unsure', label: "I'm Not Sure", sublabel: "We'll help verify" },
 ];
 
-export function QualificationWizard() {
+export function QualificationWizard({
+  quickStartTargetId = HOME_WIZARD_TARGET,
+}: {
+  /** id of the element wrapping this wizard; HeroQuickCheck addresses it. */
+  quickStartTargetId?: string;
+} = {}) {
   const [currentStep, setCurrentStep] = useState<WizardStep>(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDisqualified, setIsDisqualified] = useState(false);
@@ -135,6 +178,15 @@ export function QualificationWizard() {
   const attemptRef = useRef<{ id: string; payload: IntakePayload } | null>(null);
   const trackedSuccessIdsRef = useRef(new Set<string>());
   const submitInFlightRef = useRef(false);
+  const [savedReference, setSavedReference] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<ContactField, string>>>({});
+  const fieldRefs = useRef<Partial<Record<ContactField, HTMLElement | null>>>({});
+  // HeroQuickCheck handoff (see src/lib/quick-start.ts). prefill_source is a
+  // new param on the wizard's existing events; the event names are unchanged.
+  const prefillRef = useRef<'none' | 'quick_check'>('none');
+  const [quickBill, setQuickBill] = useState('');
+  const stepHeadingRef = useRef<HTMLHeadingElement | null>(null);
+  const focusHeadingRef = useRef(false);
 
   // Record the first page of the session so a lead can be credited to the page
   // that earned it rather than to whichever page hosts the wizard.
@@ -154,23 +206,11 @@ export function QualificationWizard() {
       landing_page: ft?.landing_page ?? 'unknown',
       landing_page_type: ft?.landing_page_type ?? 'unknown',
       landing_city_slug: ft?.landing_city_slug ?? 'none',
+      prefill_source: prefillRef.current,
     });
   };
 
-  const [formData, setFormData] = useState<FormData>({
-    utilityProvider: '',
-    utilityProviderOther: '',
-    billAmount: '',
-    isHomeowner: null,
-    creditScore: '',
-    name: '',
-    phone: '',
-    email: '',
-    address: '',
-    city: '',
-    serviceZip: '',
-    serviceMarket: '',
-  });
+  const [formData, setFormData] = useState<FormData>(initialFormData);
 
   // A ZIP-to-utility inference is deliberately California-only.
   const zipWarning =
@@ -193,69 +233,56 @@ export function QualificationWizard() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  // ✨ Google Places Autocomplete for address field
+  // Google Places suggestions for the address field. The hook is created with
+  // initOnMount: false and init() runs only once window.google.maps.places
+  // exists; initialising without it is what logged "use-places-autocomplete:
+  // Google Maps Places API library must be loaded". The address input is one
+  // plain input either way, so typing works with or without Maps.
   const {
     ready: placesReady,
-    value: placesValue,
     setValue: setPlacesValue,
     suggestions: { status, data },
     clearSuggestions,
+    init: initPlaces,
   } = usePlacesAutocomplete({
     requestOptions: {
       componentRestrictions: { country: 'us' }, // US addresses only
     },
     debounce: 300,
+    initOnMount: false,
   });
+  const [placesFailed, setPlacesFailed] = useState(false);
+  const placesActive = placesReady && !placesFailed;
 
-  // ✨ Phone number formatting with +1 prefix
-  const formatPhoneNumber = (value: string): string => {
-    // If already starts with +, don't format it (preserve international numbers)
-    if (value.trim().startsWith('+')) {
-      return value;
-    }
-    
-    // Remove all non-digit characters
-    const digits = value.replace(/\D/g, '');
-    
-    // If starts with 1, assume it's already +1 format
-    if (digits.startsWith('1') && digits.length === 11) {
-      const formatter = new AsYouType('US');
-      return formatter.input(digits.substring(1)); // Format without leading 1
-    }
-    
-    // Format as US number
-    const formatter = new AsYouType('US');
-    return formatter.input(digits);
-  };
-
-  const normalizePhoneNumber = (phone: string): string => {
-    // If already starts with +, validate and return as-is (preserve international numbers)
-    if (phone.trim().startsWith('+')) {
-      const cleaned = phone.replace(/[^\d+]/g, '');
-      // Must have + followed by country code and number (minimum 8 digits total after +)
-      if (/^\+[1-9]\d{7,14}$/.test(cleaned)) {
-        return cleaned;
+  useEffect(() => {
+    const mapsWindow = window as MapsWindow;
+    // Google calls this global when the key is rejected (for example
+    // ApiNotActivatedMapError); fall back to the plain input quietly.
+    const previousAuthFailure = mapsWindow.gm_authFailure;
+    const onAuthFailure = () => {
+      setPlacesFailed(true);
+      clearSuggestions();
+      previousAuthFailure?.();
+    };
+    mapsWindow.gm_authFailure = onAuthFailure;
+    let tries = 0;
+    let timer: number | undefined;
+    const tryInit = () => {
+      if (mapsWindow.google?.maps?.places) {
+        initPlaces();
+        return;
       }
-      // If invalid format, return original for validation error
-      return phone;
-    }
-    
-    // Remove all non-digit characters
-    const digits = phone.replace(/\D/g, '');
-    
-    // If already has country code (starts with 1), return with +
-    if (digits.startsWith('1') && digits.length === 11) {
-      return `+${digits}`;
-    }
-    
-    // If 10 digits, add +1
-    if (digits.length === 10) {
-      return `+1${digits}`;
-    }
-    
-    // If less than 10 digits, return as is (will be validated)
-    return phone;
-  };
+      // layout.tsx loads the script only when a key is configured; stop
+      // looking after ~10 s so a page without Maps does no further work.
+      if (++tries < 20) timer = window.setTimeout(tryInit, 500);
+    };
+    tryInit();
+    return () => {
+      if (timer) window.clearTimeout(timer);
+      if (mapsWindow.gm_authFailure === onAuthFailure) mapsWindow.gm_authFailure = previousAuthFailure;
+    };
+    // initPlaces and clearSuggestions are stable useCallbacks in the hook.
+  }, [clearSuggestions, initPlaces]);
 
   const nextStep = () => {
     markStarted();
@@ -263,10 +290,73 @@ export function QualificationWizard() {
       trackEvent('wizard_step_completed', {
         step: currentStep,
         landing_page_type: getFirstTouch()?.landing_page_type ?? 'unknown',
+        prefill_source: prefillRef.current,
       });
       setCurrentStep((prev) => (prev + 1) as WizardStep);
     }
   };
+
+  // HeroQuickCheck handoff: fill utility and bill, then skip the steps they
+  // answer. The skipped steps are recorded as wizard_step_completed with
+  // prefill_source=quick_check (they were answered, just not here), and
+  // wizard_start fires through the usual once-only guard, so nothing is
+  // double-counted and the step funnel stays monotonic.
+  const applyQuickStart = (value: QuickStart) => {
+    if (isSuccess || isDisqualified || hasUnconfirmedAttempt || attemptRef.current) return;
+    const utility = wizardUtilityFor(value);
+    const bracket = wizardBillBracket(Number(value.monthlyBill));
+    prefillRef.current = 'quick_check';
+    setQuickBill(value.monthlyBill);
+    setFormData((prev) => ({
+      ...prev,
+      utilityProvider: utility.utilityProvider,
+      utilityProviderOther: utility.utilityProviderOther,
+      // Below $150 there is no matching range; the visitor picks one on step 2
+      // rather than the form recording a range they did not give.
+      billAmount: bracket ?? '',
+    }));
+    markStarted();
+    const target: WizardStep = bracket ? (Math.max(currentStep, 3) as WizardStep) : 2;
+    for (let step = currentStep; step < target; step++) {
+      trackEvent('wizard_step_completed', {
+        step,
+        landing_page_type: getFirstTouch()?.landing_page_type ?? 'unknown',
+        prefill_source: 'quick_check',
+      });
+    }
+    focusHeadingRef.current = true;
+    setCurrentStep(target);
+  };
+  const applyQuickStartRef = useRef(applyQuickStart);
+  applyQuickStartRef.current = applyQuickStart;
+
+  useEffect(() => {
+    const onQuickStart = (event: Event) => {
+      const value = quickStartFromEvent(event, quickStartTargetId);
+      if (value) applyQuickStartRef.current(value);
+    };
+    window.addEventListener(QUICK_START_EVENT, onQuickStart);
+    // Arrived from another page's quick check (sessionStorage or qc_* params).
+    const handoff = takeQuickStart(quickStartTargetId);
+    if (handoff) applyQuickStartRef.current(handoff);
+    return () => window.removeEventListener(QUICK_START_EVENT, onQuickStart);
+  }, [quickStartTargetId]);
+
+  // After a handoff, move keyboard/screen-reader focus to the current question.
+  useEffect(() => {
+    if (!focusHeadingRef.current) return;
+    focusHeadingRef.current = false;
+    stepHeadingRef.current?.focus({ preventScroll: true });
+  }, [currentStep]);
+
+  const clearFieldError = (field: ContactField) =>
+    setFieldErrors((current) => {
+      if (!current[field]) return current;
+      const next = { ...current };
+      delete next[field];
+      return next;
+    });
+  const fieldErrorId = (field: ContactField) => `wizard-${field}-error`;
 
   const prevStep = () => {
     if (currentStep > 1) {
@@ -285,6 +375,28 @@ export function QualificationWizard() {
 
   const handleSubmit = async () => {
     if (submitInFlightRef.current) return;
+
+    // Inline errors next to the field, in page order, instead of a toast that
+    // disappears. The first invalid field takes focus.
+    const errors: Partial<Record<ContactField, string>> = {};
+    if (!formData.city.trim()) errors.city = 'Enter the city for the project address.';
+    if (!isFiveDigitZip(formData.serviceZip)) errors.serviceZip = 'Enter the 5-digit ZIP code for the project.';
+    if (!formData.serviceMarket) errors.serviceMarket = 'Select the state or district where the project is.';
+    const phoneMessage = usPhoneError(formData.phone);
+    if (phoneMessage) errors.phone = phoneMessage;
+    const order: ContactField[] = ['city', 'serviceZip', 'serviceMarket', 'phone'];
+    const firstInvalid = order.find((field) => errors[field]);
+    if (firstInvalid) {
+      setFieldErrors(errors);
+      fieldRefs.current[firstInvalid]?.focus();
+      trackEvent('wizard_validation_error', {
+        reason: firstInvalid,
+        prefill_source: prefillRef.current,
+      });
+      return;
+    }
+    setFieldErrors({});
+
     submitInFlightRef.current = true;
     setIsSubmitting(true);
     const firstTouch = getFirstTouch();
@@ -293,46 +405,17 @@ export function QualificationWizard() {
       const billOption = billAmounts.find((b) => b.id === formData.billAmount);
       const billValue = billOption?.value || 0;
 
-      // ✨ CRITICAL FIX: Normalize phone number with +1 prefix
-      const normalizedPhone = normalizePhoneNumber(formData.phone);
-      
-      // Validate phone number
-      if (!isValidPhoneNumber(normalizedPhone, 'US')) {
-        toast({
-          title: 'Invalid Phone Number',
-          description: 'Please enter a valid US phone number.',
-          variant: 'destructive',
-        });
-        setIsSubmitting(false);
-        return;
-      }
-
-      if (!formData.serviceMarket || !isFiveDigitZip(formData.serviceZip)) {
-        toast({
-          title: 'Invalid ZIP Code',
-          description: 'Select the project state or district and enter its 5-digit ZIP code.',
-          variant: 'destructive',
-        });
-        setIsSubmitting(false);
-        return;
-      }
-
-      if (!formData.city.trim()) {
-        toast({
-          title: 'City Required',
-          description: 'Enter the city for the project address.',
-          variant: 'destructive',
-        });
-        setIsSubmitting(false);
-        return;
-      }
+      // E.164, exactly what the old normalizer produced for a US number and
+      // what the backend's normalizePhone stores.
+      const normalizedPhone = toE164Us(formData.phone) ?? formData.phone;
 
       // The ZIP-derived territory is recorded ALONGSIDE the visitor's own
       // utility answer, never on top of it. utility_provider stays exactly what
       // the visitor picked, derived_utility is what the seed table says, and a
       // disagreement between the two is a review signal rather than a silent
       // overwrite. The seed table is the less reliable of the two sources.
-      const location = serviceLocationFields(formData.serviceMarket, formData.serviceZip, formData.city, formData.utilityProvider);
+      // serviceMarket was checked non-empty above.
+      const location = serviceLocationFields(formData.serviceMarket as ServiceMarket, formData.serviceZip, formData.city, formData.utilityProvider);
 
       const attempt = getOrCreateSubmissionAttempt<IntakePayload>(attemptRef.current, submissionId => ({
         submission_id: submissionId,
@@ -342,7 +425,9 @@ export function QualificationWizard() {
           email: formData.email.trim(), address: formData.address.trim(),
         },
         qualification_data: {
-          utility_provider: formData.utilityProvider === 'other' ? formData.utilityProviderOther : formData.utilityProvider, bill_amount: billValue,
+          // "Other" with no name typed sends 'other' (the backend's canonical
+          // 'Other') instead of an empty string the backend would reject.
+          utility_provider: formData.utilityProvider === 'other' ? formData.utilityProviderOther.trim() || 'other' : formData.utilityProvider, bill_amount: billValue,
           monthly_bill_range: formData.billAmount, credit_score: formData.creditScore,
           homeowner: formData.isHomeowner === true,
           ...location,
@@ -365,16 +450,16 @@ export function QualificationWizard() {
           utility_provider: formData.utilityProvider || 'unknown',
           derived_utility: location.derived_utility ?? 'unknown',
           bill_bracket: formData.billAmount || 'unknown',
+          prefill_source: prefillRef.current,
         });
         trackedSuccessIdsRef.current.add(attempt.id);
       }
+      // The panel that replaces the form is the confirmation; a toast on top
+      // of it would announce the same thing twice.
+      setSavedReference(attempt.id);
       setIsSuccess(true);
       setHasUnconfirmedAttempt(false);
       attemptRef.current = null;
-      toast({
-        title: 'Assessment received',
-        description: 'Your information was saved for review.',
-      });
     } catch (error) {
       setHasUnconfirmedAttempt(true);
       // Without this, a backend outage looks identical to "no traffic" in GA4.
@@ -404,9 +489,9 @@ export function QualificationWizard() {
               <div className='w-16 h-16 bg-status-warning/10 rounded-full flex items-center justify-center mx-auto mb-6'>
                 <XCircle className='h-8 w-8 text-status-warning' />
               </div>
-              <h3 className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
+              <h2 className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
                 Residential assessment requires property ownership
-              </h3>
+              </h2>
               <p className='text-muted-foreground mb-6'>
                 This form is for California homeowners. If you control a business
                 or commercial property, use the commercial assessment instead.
@@ -422,20 +507,8 @@ export function QualificationWizard() {
                 onClick={() => {
                   setIsDisqualified(false);
                   setCurrentStep(1);
-                  setFormData({
-                    utilityProvider: '',
-                    utilityProviderOther: '',
-                    billAmount: '',
-                    isHomeowner: null,
-                    creditScore: '',
-                    name: '',
-                    phone: '',
-                    email: '',
-                    address: '',
-                    city: '',
-                    serviceZip: '',
-                    serviceMarket: '',
-                  });
+                  setFormData(initialFormData);
+                  setFieldErrors({});
                 }}
                 variant='outline'
                 className='w-full'
@@ -449,37 +522,39 @@ export function QualificationWizard() {
     );
   }
 
-  // Success Screen
+  // Success Screen: what was received, who may get in touch, no obligation,
+  // two guides, and the reference. Display only; generate_lead fired above.
   if (isSuccess) {
     return (
       <section className='py-16 bg-muted'>
         <div className='container mx-auto px-4'>
-          <div className='max-w-5xl mx-auto bg-card rounded-xl border border-border p-8 min-h-[650px] flex flex-col justify-center'>
-            <div className='w-16 h-16 bg-status-success/10 rounded-full flex items-center justify-center mx-auto mb-6'>
-              <CheckCircle className='h-8 w-8 text-status-success' />
-            </div>
-            <h3 className='text-2xl font-bold text-foreground mb-4'>
-              Your assessment was received
-            </h3>
-            <p className='text-muted-foreground mb-6'>
-              We saved your information for review. A submission is not an
-              approval, quote, or final eligibility decision.
-            </p>
-            <div className='bg-status-success/10 rounded-lg p-4 mb-6 text-left'>
-              <h4 className='font-semibold text-status-success mb-2'>
-                What Happens Next?
-              </h4>
-              <ul className='text-sm text-status-success space-y-1'>
-                <li>✓ Your answers are available for review</li>
-                <li>✓ A matched provider may contact you about next steps</li>
-                <li>✓ Any project terms require a separate written quote</li>
-              </ul>
-            </div>
+          <div className='mx-auto max-w-3xl'>
+            <InquiryReceived
+              headingLevel='h2'
+              reference={savedReference}
+              received={INQUIRY_RECEIVED_COPY.wizardReceived}
+              contact={INQUIRY_RECEIVED_COPY.wizardContact}
+            />
           </div>
         </div>
       </section>
     );
   }
+
+  const utilityLabel =
+    formData.utilityProvider === 'other'
+      ? formData.utilityProviderOther.trim() || 'Other'
+      : utilityProviders.find((provider) => provider.id === formData.utilityProvider)?.label ?? '';
+  const billOptionLabel = billAmounts.find((amount) => amount.id === formData.billAmount)?.label ?? '';
+  // Show the figure the visitor typed in the quick check while it still
+  // matches the selected range; otherwise the range itself.
+  const billLabel =
+    quickBill && formData.billAmount && wizardBillBracket(Number(quickBill)) === formData.billAmount
+      ? formatBill(quickBill)
+      : billOptionLabel;
+  const showSummary = prefillRef.current === 'quick_check' && currentStep > 1 && Boolean(utilityLabel);
+  const quickBillBelowRanges =
+    prefillRef.current === 'quick_check' && quickBill !== '' && wizardBillBracket(Number(quickBill)) === null;
 
   return (
     <section className='py-16 bg-muted'>
@@ -487,15 +562,43 @@ export function QualificationWizard() {
         <div className='mx-auto max-w-5xl'>
           {/* Card Container */}
           <div className='bg-card rounded-xl border border-border p-6 md:p-10 lg:p-12 min-h-[650px] relative'>
-            {/* Back Button - Fixed top-left position for all steps */}
+            {/* Back (44px tap target) and, after a quick-check handoff, the
+                answers carried over so the visitor sees the continuity. */}
             {currentStep > 1 && (
-              <button
-                onClick={prevStep}
-                className='absolute top-6 left-6 md:top-10 md:left-10 flex items-center text-muted-foreground hover:text-foreground transition-colors z-10'
-              >
-                <ArrowLeft className='h-4 w-4 mr-2' />
-                Back
-              </button>
+              <div className='-mt-2 mb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-1'>
+                <button
+                  type='button'
+                  onClick={prevStep}
+                  className='-ml-2 inline-flex min-h-[44px] items-center rounded-md px-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
+                >
+                  <ArrowLeft className='h-4 w-4 mr-2' aria-hidden='true' />
+                  {HOME_WIZARD_COPY.back}
+                </button>
+                {showSummary && (
+                  <p className='flex flex-wrap items-center gap-x-2 text-sm text-foreground'>
+                    <span>
+                      Utility: <strong>{utilityLabel}</strong>
+                    </span>
+                    {billLabel && (
+                      <>
+                        <span aria-hidden='true'>·</span>
+                        <span>
+                          Bill: <strong>{billLabel}</strong>
+                        </span>
+                      </>
+                    )}
+                    <span aria-hidden='true'>·</span>
+                    <button
+                      type='button'
+                      onClick={() => setCurrentStep(1)}
+                      aria-label='Edit utility and bill'
+                      className='inline-flex min-h-[44px] items-center px-1 font-semibold text-primary underline'
+                    >
+                      {HOME_WIZARD_COPY.edit}
+                    </button>
+                  </p>
+                )}
+              </div>
             )}
 
             {/* Step 1: Utility Provider */}
@@ -505,9 +608,9 @@ export function QualificationWizard() {
                   <div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <Zap className='h-6 w-6 text-primary' />
                   </div>
-                  <h3 className='text-3xl md:text-4xl font-extrabold text-foreground mb-3 tracking-tight'>
+                  <h2 ref={stepHeadingRef} tabIndex={-1} className='text-3xl md:text-4xl font-extrabold text-foreground mb-3 tracking-tight outline-none'>
                     Who is your current electric provider?
-                  </h3>
+                  </h2>
                   <p className='text-base text-muted-foreground font-medium'>
                     Select the utility that supplies your property
                   </p>
@@ -517,6 +620,8 @@ export function QualificationWizard() {
                   {utilityProviders.map((provider) => (
                     <button
                       key={provider.id}
+                      type='button'
+                      aria-pressed={formData.utilityProvider === provider.id}
                       onClick={() => {
                         updateFormData('utilityProvider', provider.id);
                         nextStep();
@@ -558,18 +663,25 @@ export function QualificationWizard() {
                   <div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <DollarSign className='h-6 w-6 text-primary' />
                   </div>
-                  <h3 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
+                  <h2 ref={stepHeadingRef} tabIndex={-1} className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight outline-none'>
                     What is your average monthly bill?
-                  </h3>
+                  </h2>
                   <p className='text-base text-muted-foreground font-medium'>
                     This helps us estimate your potential savings
                   </p>
+                  {quickBillBelowRanges && (
+                    <p className='mt-3 text-sm text-foreground'>
+                      You entered {formatBill(quickBill)} a month. Choose the range closest to your typical bill.
+                    </p>
+                  )}
                 </div>
 
                 <div className='grid grid-cols-2 gap-6 max-w-2xl mx-auto'>
                   {billAmounts.map((amount) => (
                     <button
                       key={amount.id}
+                      type='button'
+                      aria-pressed={formData.billAmount === amount.id}
                       onClick={() => {
                         updateFormData('billAmount', amount.id);
                         nextStep();
@@ -594,9 +706,9 @@ export function QualificationWizard() {
                   <div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <Home className='h-6 w-6 text-primary' />
                   </div>
-                  <h3 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
+                  <h2 ref={stepHeadingRef} tabIndex={-1} className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight outline-none'>
                     Do you own your home?
-                  </h3>
+                  </h2>
                   <p className='text-base text-muted-foreground font-medium'>
                     This residential assessment is for property owners
                   </p>
@@ -604,6 +716,7 @@ export function QualificationWizard() {
 
                 <div className='grid grid-cols-2 gap-6 max-w-2xl mx-auto'>
                   <button
+                    type='button'
                     onClick={() => handleHomeownerSelect(true)}
                     className='p-6 rounded-xl border-2 border-border bg-card hover:border-status-success hover:bg-status-success/5 transition-all duration-200'
                   >
@@ -613,6 +726,7 @@ export function QualificationWizard() {
                     </span>
                   </button>
                   <button
+                    type='button'
                     onClick={() => handleHomeownerSelect(false)}
                     className='p-6 rounded-xl border-2 border-border bg-card hover:border-muted-foreground/50 transition-all duration-200'
                   >
@@ -632,9 +746,9 @@ export function QualificationWizard() {
                   <div className='w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <CreditCard className='h-7 w-7 text-primary' />
                   </div>
-                  <h3 className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight'>
+                  <h2 ref={stepHeadingRef} tabIndex={-1} className='text-2xl md:text-3xl font-extrabold text-foreground mb-3 tracking-tight outline-none'>
                     Is your credit score above 650?
-                  </h3>
+                  </h2>
                   <p className='text-base text-muted-foreground font-medium'>
                     This helps a provider understand potential financing options
                   </p>
@@ -644,6 +758,8 @@ export function QualificationWizard() {
                   {creditOptions.map((option) => (
                     <button
                       key={option.id}
+                      type='button'
+                      aria-pressed={formData.creditScore === option.id}
                       onClick={() => {
                         updateFormData('creditScore', option.id);
                         nextStep();
@@ -673,9 +789,9 @@ export function QualificationWizard() {
                   <div className='w-16 h-16 bg-status-success/10 rounded-full flex items-center justify-center mx-auto mb-5'>
                     <CheckCircle className='h-8 w-8 text-status-success' />
                   </div>
-                  <h3 className='text-2xl md:text-2xl lg:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
+                  <h2 ref={stepHeadingRef} tabIndex={-1} className='text-2xl md:text-2xl lg:text-4xl font-extrabold text-foreground mb-4 tracking-tight outline-none'>
                     Send your information for review
-                  </h3>
+                  </h2>
                   <p className='text-lg md:text-xl text-muted-foreground font-medium'>
                     A provider must review the property before confirming options or savings
                   </p>
@@ -688,7 +804,195 @@ export function QualificationWizard() {
                   }}
                   className='space-y-6'
                 >
+                  {/* Location first (a picked suggestion fills city and ZIP),
+                      contact details last, next to the consent line. */}
                   <div className='grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5'>
+                    <div className='space-y-3 md:col-span-2'>
+                      <Label
+                        htmlFor='address'
+                        className='text-base font-bold text-foreground'
+                      >
+                        Home Address
+                      </Label>
+                      <div className='relative'>
+                        <MapPin className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground z-10' aria-hidden='true' />
+                        <Input
+                          id='address'
+                          type='text'
+                          maxLength={500}
+                          value={formData.address}
+                          onChange={(e) => {
+                            const value = e.target.value;
+                            updateFormData('address', value);
+                            if (placesActive && !hasUnconfirmedAttempt) setPlacesValue(value);
+                          }}
+                          required
+                          autoComplete={placesActive ? 'off' : 'street-address'}
+                          aria-describedby='address-help'
+                          className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
+                        />
+                        {placesActive && status === 'OK' && data.length > 0 && (
+                          <div className='absolute z-50 w-full mt-1 bg-card border-2 border-border rounded-lg shadow-lg max-h-60 overflow-y-auto'>
+                            {data.map(({ place_id, description }) => (
+                              <button
+                                key={place_id}
+                                type='button'
+                                onClick={async () => {
+                                  if (hasUnconfirmedAttempt) {
+                                    updateFormData('address', description);
+                                    return;
+                                  }
+                                  setPlacesValue(description, false);
+                                  updateFormData('address', description);
+                                  clearSuggestions();
+
+                                  // Auto-fill city and ZIP from the selected
+                                  // place. Both stay editable, and a geocode
+                                  // failure must not block the submission.
+                                  try {
+                                    const results = await getGeocode({ address: description });
+                                    const first = results?.[0];
+                                    if (first) {
+                                      const city = cityFromComponents(
+                                        (first as unknown as { address_components?: AddressComponent[] }).address_components,
+                                      );
+                                      if (city) {
+                                        updateFormData('city', city);
+                                        clearFieldError('city');
+                                      }
+                                      const zip = getZipCode(first, false);
+                                      if (zip && /^\d{5}$/.test(zip)) {
+                                        updateFormData('serviceZip', zip);
+                                        clearFieldError('serviceZip');
+                                      }
+                                    }
+                                  } catch (error) {
+                                    console.error('Error getting address details:', error);
+                                  }
+                                }}
+                                className='w-full min-h-[44px] text-left px-4 py-3 hover:bg-muted transition-colors border-b border-border last:border-b-0'
+                              >
+                                <p className='text-sm text-foreground'>{description}</p>
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                      <p id='address-help' className='text-xs text-muted-foreground'>
+                        {placesActive
+                          ? 'Start typing, then pick a suggestion to fill in the city and ZIP.'
+                          : 'Street address, for example 123 Main St.'}
+                      </p>
+                    </div>
+
+                    <div className='space-y-3'>
+                      <Label
+                        htmlFor='service-city'
+                        className='text-base font-bold text-foreground'
+                      >
+                        City
+                      </Label>
+                      <Input
+                        id='service-city'
+                        type='text'
+                        autoComplete='address-level2'
+                        maxLength={80}
+                        ref={(node) => {
+                          fieldRefs.current.city = node;
+                        }}
+                        value={formData.city}
+                        onChange={(e) => {
+                          updateFormData('city', e.target.value);
+                          clearFieldError('city');
+                        }}
+                        required
+                        aria-invalid={Boolean(fieldErrors.city) || undefined}
+                        aria-describedby={fieldErrors.city ? fieldErrorId('city') : 'service-city-help'}
+                        className={`h-12 text-base border-2 focus:border-primary transition-colors ${fieldErrors.city ? 'border-destructive' : 'border-border'}`}
+                      />
+                      {fieldErrors.city ? (
+                        <p id={fieldErrorId('city')} className='text-sm font-medium text-destructive'>
+                          {fieldErrors.city}
+                        </p>
+                      ) : (
+                        placesActive && (
+                          <p id='service-city-help' className='text-xs text-muted-foreground'>
+                            Filled in automatically when you pick a suggested address
+                          </p>
+                        )
+                      )}
+                    </div>
+
+                    <div className='space-y-3'>
+                      <Label
+                        htmlFor='service-zip'
+                        className='text-base font-bold text-foreground'
+                      >
+                        Project ZIP Code
+                      </Label>
+                      <Input
+                        id='service-zip'
+                        type='text'
+                        inputMode='numeric'
+                        autoComplete='postal-code'
+                        pattern='[0-9]{5}'
+                        ref={(node) => {
+                          fieldRefs.current.serviceZip = node;
+                        }}
+                        value={formData.serviceZip}
+                        onChange={(e) => {
+                          updateFormData('serviceZip', e.target.value.replace(/\D/g, '').slice(0, 5));
+                          clearFieldError('serviceZip');
+                        }}
+                        required
+                        aria-invalid={Boolean(fieldErrors.serviceZip || zipWarning) || undefined}
+                        aria-describedby='service-zip-help'
+                        className={`h-12 text-base border-2 focus:border-primary transition-colors ${fieldErrors.serviceZip ? 'border-destructive' : 'border-border'}`}
+                      />
+                      <p
+                        id='service-zip-help'
+                        className={`text-xs ${fieldErrors.serviceZip || zipWarning ? 'text-sm font-medium text-destructive' : 'text-muted-foreground'}`}
+                      >
+                        {fieldErrors.serviceZip || zipWarning || 'Enter the 5-digit ZIP code for the selected project market'}
+                      </p>
+                    </div>
+
+                    <div className='space-y-3'>
+                      <Label htmlFor='service-market' className='text-base font-bold text-foreground'>
+                        Project state or district
+                      </Label>
+                      <select
+                        id='service-market'
+                        ref={(node) => {
+                          fieldRefs.current.serviceMarket = node;
+                        }}
+                        value={formData.serviceMarket}
+                        onChange={(e) => {
+                          updateFormData('serviceMarket', e.target.value as ServiceMarket);
+                          clearFieldError('serviceMarket');
+                        }}
+                        required
+                        aria-invalid={Boolean(fieldErrors.serviceMarket) || undefined}
+                        aria-describedby={fieldErrors.serviceMarket ? fieldErrorId('serviceMarket') : undefined}
+                        className={`h-12 w-full rounded-md border-2 bg-background px-3 text-base focus:border-primary focus:outline-none ${fieldErrors.serviceMarket ? 'border-destructive' : 'border-border'}`}
+                      >
+                        <option value=''>Select project market</option>
+                        {serviceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
+                      </select>
+                      {fieldErrors.serviceMarket && (
+                        <p id={fieldErrorId('serviceMarket')} className='text-sm font-medium text-destructive'>
+                          {fieldErrors.serviceMarket}
+                        </p>
+                      )}
+                    </div>
+
+                    {formData.utilityProvider === 'other' && (
+                      <div className='space-y-3'>
+                        <Label htmlFor='utility-provider-other' className='text-base font-bold text-foreground'>Electric utility on your bill (optional)</Label>
+                        <Input id='utility-provider-other' type='text' maxLength={120} autoComplete='off' value={formData.utilityProviderOther} onChange={(e) => updateFormData('utilityProviderOther', e.target.value)} className='h-12 text-base border-2 border-border focus:border-primary transition-colors' />
+                      </div>
+                    )}
+
                     <div className='space-y-3'>
                       <Label
                         htmlFor='name'
@@ -697,11 +1001,13 @@ export function QualificationWizard() {
                         Full Name
                       </Label>
                       <div className='relative'>
-                        <User className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
+                        <User className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' aria-hidden='true' />
                         <Input
                           id='name'
                           type='text'
-                          placeholder='John Smith'
+                          autoComplete='name'
+                          autoCapitalize='words'
+                          maxLength={160}
                           value={formData.name}
                           onChange={(e) =>
                             updateFormData('name', e.target.value)
@@ -720,26 +1026,42 @@ export function QualificationWizard() {
                         Phone Number
                       </Label>
                       <div className='relative'>
-                        <Phone className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
+                        <Phone className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' aria-hidden='true' />
                         <Input
                           id='phone'
                           type='tel'
-                          placeholder='(555) 123-4567'
+                          inputMode='tel'
+                          autoComplete='tel'
+                          maxLength={20}
+                          ref={(node) => {
+                            fieldRefs.current.phone = node;
+                          }}
                           value={formData.phone}
                           onChange={(e) => {
-                            const formatted = formatPhoneNumber(e.target.value);
-                            updateFormData('phone', formatted);
+                            const phone = formatUsPhoneInput(e.target.value);
+                            updateFormData('phone', phone);
+                            if (fieldErrors.phone && isValidUsPhone(phone)) clearFieldError('phone');
+                          }}
+                          onBlur={() => {
+                            if (!formData.phone) return;
+                            const message = usPhoneError(formData.phone);
+                            if (message) setFieldErrors((current) => ({ ...current, phone: message }));
                           }}
                           required
-                          className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
+                          aria-invalid={Boolean(fieldErrors.phone) || undefined}
+                          aria-describedby='phone-help'
+                          className={`pl-12 h-12 text-base border-2 focus:border-primary transition-colors ${fieldErrors.phone ? 'border-destructive' : 'border-border'}`}
                         />
                       </div>
-                      <p className='text-xs text-muted-foreground'>
-                        Phone number will be automatically formatted with country code
+                      <p
+                        id='phone-help'
+                        className={`text-xs ${fieldErrors.phone ? 'font-medium text-destructive' : 'text-muted-foreground'}`}
+                      >
+                        {fieldErrors.phone || US_PHONE_HINT}
                       </p>
                     </div>
 
-                    <div className='space-y-3'>
+                    <div className='space-y-3 md:col-span-2'>
                       <Label
                         htmlFor='email'
                         className='text-base font-bold text-foreground'
@@ -747,11 +1069,14 @@ export function QualificationWizard() {
                         Email Address
                       </Label>
                       <div className='relative'>
-                        <Mail className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
+                        <Mail className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' aria-hidden='true' />
                         <Input
                           id='email'
                           type='email'
-                          placeholder='john@example.com'
+                          autoComplete='email'
+                          autoCapitalize='none'
+                          spellCheck={false}
+                          maxLength={254}
                           value={formData.email}
                           onChange={(e) =>
                             updateFormData('email', e.target.value)
@@ -760,169 +1085,6 @@ export function QualificationWizard() {
                           className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
                         />
                       </div>
-                    </div>
-
-                    <div className='space-y-3'>
-                      <Label
-                        htmlFor='address'
-                        className='text-base font-bold text-foreground'
-                      >
-                        Home Address
-                      </Label>
-                      <div className='relative'>
-                        <MapPin className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground z-10' />
-                        {placesReady ? (
-                          <>
-                            <Input
-                              id='address'
-                              type='text'
-                              placeholder='123 Main St, City, CA 90210'
-                              value={placesValue}
-                              onChange={(e) => {
-                                if (hasUnconfirmedAttempt) {
-                                  updateFormData('address', e.target.value);
-                                  return;
-                                }
-                                setPlacesValue(e.target.value);
-                                updateFormData('address', e.target.value);
-                              }}
-                              required
-                              className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
-                              autoComplete='off'
-                            />
-                            {status === 'OK' && data.length > 0 && (
-                              <div className='absolute z-50 w-full mt-1 bg-card border-2 border-border rounded-lg shadow-lg max-h-60 overflow-y-auto'>
-                                {data.map(({ place_id, description }) => (
-                                  <button
-                                    key={place_id}
-                                    type='button'
-                                    onClick={async () => {
-                                      if (hasUnconfirmedAttempt) {
-                                        updateFormData('address', description);
-                                        return;
-                                      }
-                                      setPlacesValue(description, false);
-                                      updateFormData('address', description);
-                                      clearSuggestions();
-
-                                      // Auto-fill city and ZIP from the selected
-                                      // place. Both stay editable, and a geocode
-                                      // failure must not block the submission.
-                                      try {
-                                        const results = await getGeocode({ address: description });
-                                        const first = results?.[0];
-                                        if (first) {
-                                          const city = cityFromComponents(
-                                            (first as unknown as { address_components?: AddressComponent[] }).address_components,
-                                          );
-                                          if (city) updateFormData('city', city);
-                                          const zip = getZipCode(first, false);
-                                          if (zip && /^\d{5}$/.test(zip)) updateFormData('serviceZip', zip);
-                                        }
-                                      } catch (error) {
-                                        console.error('Error getting address details:', error);
-                                      }
-                                    }}
-                                    className='w-full text-left px-4 py-3 hover:bg-muted transition-colors border-b border-border last:border-b-0'
-                                  >
-                                    <p className='text-sm text-foreground'>{description}</p>
-                                  </button>
-                                ))}
-                              </div>
-                            )}
-                          </>
-                        ) : (
-                          <Input
-                            id='address'
-                            type='text'
-                            placeholder='123 Main St, City, CA 90210'
-                            value={formData.address}
-                            onChange={(e) =>
-                              updateFormData('address', e.target.value)
-                            }
-                            required
-                            className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
-                          />
-                        )}
-                      </div>
-                      <p className='text-xs text-muted-foreground'>
-                        Start typing your address and select from suggestions
-                      </p>
-                    </div>
-
-                    {formData.utilityProvider === 'other' && (
-                      <div className='space-y-3'>
-                        <Label htmlFor='utility-provider-other' className='text-base font-bold text-foreground'>Electric utility on your bill</Label>
-                        <Input id='utility-provider-other' type='text' maxLength={120} value={formData.utilityProviderOther} onChange={(e) => updateFormData('utilityProviderOther', e.target.value)} required className='h-12 text-base border-2 border-border focus:border-primary transition-colors' />
-                      </div>
-                    )}
-
-                    <div className='space-y-3'>
-                      <Label
-                        htmlFor='service-city'
-                        className='text-base font-bold text-foreground'
-                      >
-                        City
-                      </Label>
-                      <Input
-                        id='service-city'
-                        type='text'
-                        autoComplete='address-level2'
-                        maxLength={80}
-                        placeholder='Bakersfield'
-                        value={formData.city}
-                        onChange={(e) => updateFormData('city', e.target.value)}
-                        required
-                        className='h-12 text-base border-2 border-border focus:border-primary transition-colors'
-                      />
-                      <p className='text-xs text-muted-foreground'>
-                        Filled in automatically when you pick a suggested address
-                      </p>
-                    </div>
-
-                    <div className='space-y-3'>
-                      <Label htmlFor='service-market' className='text-base font-bold text-foreground'>
-                        Project state or district
-                      </Label>
-                      <select
-                        id='service-market'
-                        value={formData.serviceMarket}
-                        onChange={(e) => updateFormData('serviceMarket', e.target.value as ServiceMarket)}
-                        required
-                        className='h-12 w-full rounded-md border-2 border-border bg-background px-3 text-base focus:border-primary focus:outline-none'
-                      >
-                        <option value=''>Select project market</option>
-                        {serviceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
-                      </select>
-                    </div>
-
-                    <div className='space-y-3'>
-                      <Label
-                        htmlFor='service-zip'
-                        className='text-base font-bold text-foreground'
-                      >
-                        Project ZIP Code
-                      </Label>
-                      <Input
-                        id='service-zip'
-                        type='text'
-                        inputMode='numeric'
-                        autoComplete='postal-code'
-                        pattern='[0-9]{5}'
-                        maxLength={5}
-                        placeholder='90210'
-                        value={formData.serviceZip}
-                        onChange={(e) => updateFormData('serviceZip', e.target.value.replace(/\D/g, '').slice(0, 5))}
-                        required
-                        aria-describedby='service-zip-help'
-                        className='h-12 text-base border-2 border-border focus:border-primary transition-colors'
-                      />
-                      <p
-                        id='service-zip-help'
-                        className={`text-xs ${zipWarning ? 'font-semibold text-destructive' : 'text-muted-foreground'}`}
-                      >
-                        {zipWarning || 'Enter the 5-digit ZIP code for the selected project market'}
-                      </p>
                     </div>
                   </div>
 
@@ -946,13 +1108,13 @@ export function QualificationWizard() {
                     >
                       {isSubmitting ? (
                         <>
-                          <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-                          Sending...
+                          <Loader2 className='mr-2 h-4 w-4 animate-spin' aria-hidden='true' />
+                          {HOME_WIZARD_COPY.submittingLabel}
                         </>
                       ) : (
                         <>
-                          Check My Eligibility
-                          <ArrowRight className='ml-2 h-4 w-4' />
+                          {HOME_WIZARD_COPY.submitLabel}
+                          <ArrowRight className='ml-2 h-4 w-4' aria-hidden='true' />
                         </>
                       )}
                     </Button>
