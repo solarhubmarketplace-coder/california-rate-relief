@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
+import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 
 const path = "/blog/solar-installation-timeline-california";
+// `title` is the on-page H1; `metaTitle` is the search title (60 chars max).
 const title = "Solar Installation Timeline in California: From Quote to Permission to Operate";
+const metaTitle = "Solar Installation Timeline in California: 6 Stages to PTO";
+const description =
+  "Map a California solar project from quote to permission to operate: each approval, inspection and handoff, and who owns it. No statewide week count fits all.";
 const sources: Source[] = [
   { label: "City of Temecula: Photovoltaic systems", url: "https://www.temeculaca.gov/304/Photovoltaic-Systems" },
   { label: "City of Murrieta: Self-issuing permits and SolarAPP+", url: "https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App" },
@@ -12,10 +17,11 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title,
-  description: "A California solar schedule needs every approval, inspection and responsible handoff from quote through permission to operate—not one statewide promise in weeks.",
+  title: metaTitle,
+  description,
   alternates: { canonical: path },
-  openGraph: { title, description: "Map a California solar project from quote through permission to operate.", type: "article", url: `https://ratereliefca.com${path}`, publishedTime: "2026-09-20T00:00:00Z", modifiedTime: "2026-09-20T00:00:00Z" },
+  openGraph: { title: metaTitle, description, type: "article", url: `https://ratereliefca.com${path}`, publishedTime: "2026-09-20T00:00:00Z", modifiedTime: "2026-09-20T00:00:00Z", images: [CRR_SOCIAL_CARD] },
+  twitter: crrTwitter(metaTitle, description),
 };
 
 const stages = [
