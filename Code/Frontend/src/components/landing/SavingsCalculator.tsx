@@ -56,6 +56,7 @@ export function SavingsCalculator() {
             </div>
             <input
               type='range'
+              aria-label='Average monthly power bill, slider'
               min={100}
               max={800}
               step={5}
