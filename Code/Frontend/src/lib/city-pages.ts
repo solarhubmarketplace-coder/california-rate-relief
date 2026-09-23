@@ -1,0 +1,532 @@
+// =============================================================================
+// city-pages.ts — one place that knows every live city page on ratereliefca.com
+//
+// Three templates render city pages: /solar-cost/<city> (city-cost-data.ts),
+// /solar-companies/<city> (growth-cities.ts, or the older cities-data.ts
+// template) and /solar-savings/<city> (cities-data.ts). Before 2026-09-22 each
+// template wrote its own title, picked its own sibling links from its own data
+// file and dated itself differently. This module is the shared layer:
+//
+//   - which city pages answer 200 (not redirected, not gated out)
+//   - which page owns "solar panels <city>" when a city has more than one
+//   - titles, meta descriptions and H1s, built from each page's own data so a
+//     title never promises something the page does not carry
+//   - the 4-6 nearest live city pages for the "Solar near <city>" block
+//   - the regional hub a city belongs to
+//   - the one date a page shows as "Updated" and emits as dateModified
+//
+// Imports are relative, not '@/…', so scripts (assert-city-links.mjs, the
+// before/after title export) can import this file with Node's type stripping.
+// =============================================================================
+
+import { CITIES, UTILITY_DATA, getCityBySlug, type CityData } from '../data/cities-data.ts';
+import { growthCities } from '../data/growth-cities.ts';
+import { CITY_COORDINATES } from '../data/city-coordinates.ts';
+import { CITY_PAGE_DATES } from '../data/city-page-dates.ts';
+import {
+  COST_TEMPLATE_CSLB_VERIFIED,
+  cityCostPath,
+  getCityCostRow,
+  getPublishableCityCostRows,
+  type CityCostRow,
+} from '../data/city-cost-data.ts';
+import { formatAverageRateCents, getUtilityRate } from '../data/utility-rate-tracker.ts';
+import { hasCompaniesCityPage, hasSavingsCityPage } from './canonical-redirects.ts';
+
+export type CityPageType = 'cost' | 'companies' | 'savings';
+
+const BASE: Record<CityPageType, string> = {
+  cost: '/solar-cost',
+  companies: '/solar-companies',
+  savings: '/solar-savings',
+};
+
+export function cityPagePath(type: CityPageType, slug: string): string {
+  return type === 'cost' ? cityCostPath(slug) : `${BASE[type]}/${slug}`;
+}
+
+// -----------------------------------------------------------------------------
+// Which pages exist
+// -----------------------------------------------------------------------------
+
+/**
+ * True when the page renders with a 200. Cost pages pass the source gate;
+ * companies and savings pages exist in their data file and are not a key in
+ * the 301 table in canonical-redirects.ts.
+ */
+export function isLiveCityPage(type: CityPageType, slug: string): boolean {
+  if (type === 'cost') return Boolean(getCityCostRow(slug));
+  if (type === 'companies') {
+    return Boolean(growthCities[slug] || getCityBySlug(slug)) && hasCompaniesCityPage(slug);
+  }
+  return Boolean(getCityBySlug(slug)) && hasSavingsCityPage(slug);
+}
+
+/** Order in which a city's pages claim the head term "solar panels <city>". */
+const OWNER_ORDER: CityPageType[] = ['companies', 'cost', 'savings'];
+
+export function liveCityPageTypes(slug: string): CityPageType[] {
+  return OWNER_ORDER.filter((type) => isLiveCityPage(type, slug));
+}
+
+/**
+ * The one page per city whose title leads with "Solar Panels in <city>".
+ * Search Console (2026-08-21..09-17) put 98% of city-page impressions on the
+ * /solar-companies layer, so that page leads where it is live; otherwise the
+ * cost page, which the retired companies URLs 301 to. Savings pages never
+ * lead: every live one shares its city with one of the other two.
+ */
+export function primaryCityPageType(slug: string): CityPageType | null {
+  return liveCityPageTypes(slug)[0] ?? null;
+}
+
+let allSlugsCache: string[] | null = null;
+export function allCitySlugs(): string[] {
+  if (!allSlugsCache) {
+    allSlugsCache = [
+      ...new Set([
+        ...getPublishableCityCostRows().map((row) => row.slug),
+        ...CITIES.map((city) => city.slug),
+        ...Object.keys(growthCities),
+      ]),
+    ].sort();
+  }
+  return allSlugsCache;
+}
+
+/** Every live city page, as [type, slug] pairs. */
+export function allLiveCityPages(): { type: CityPageType; slug: string; path: string }[] {
+  return allCitySlugs().flatMap((slug) =>
+    liveCityPageTypes(slug).map((type) => ({ type, slug, path: cityPagePath(type, slug) })),
+  );
+}
+
+export function cityName(slug: string): string {
+  return (
+    getCityCostRow(slug)?.city ?? growthCities[slug]?.name ?? getCityBySlug(slug)?.name ?? slug
+  );
+}
+
+/** "El Dorado County — unincorporated…" reads as "El Dorado County". */
+export function normalizeCounty(county: string): string {
+  return (/^[A-Za-z .'-]+? County/.exec(county)?.[0] ?? county).trim();
+}
+
+export function cityCounty(slug: string): string {
+  const raw =
+    growthCities[slug]?.county ?? getCityBySlug(slug)?.county ?? getCityCostRow(slug)?.county ?? '';
+  return normalizeCounty(raw);
+}
+
+// -----------------------------------------------------------------------------
+// Nearby city pages
+// -----------------------------------------------------------------------------
+
+export interface NearbyCityLink {
+  slug: string;
+  name: string;
+  county: string;
+  type: CityPageType;
+  href: string;
+  label: string;
+  sameCounty: boolean;
+}
+
+const LINK_LABEL: Record<CityPageType, (name: string) => string> = {
+  cost: (name) => `Solar panel cost in ${name}`,
+  companies: (name) => `Solar companies in ${name}`,
+  savings: (name) => `Solar savings in ${name}`,
+};
+
+/** Great-circle distance in km between two city points (Census internal points). */
+function distanceKm(a: string, b: string): number {
+  const p = CITY_COORDINATES[a];
+  const q = CITY_COORDINATES[b];
+  if (!p || !q) return Number.POSITIVE_INFINITY;
+  const rad = Math.PI / 180;
+  const dLat = (q[0] - p[0]) * rad;
+  const dLon = (q[1] - p[1]) * rad;
+  const h =
+    Math.sin(dLat / 2) ** 2 + Math.cos(p[0] * rad) * Math.cos(q[0] * rad) * Math.sin(dLon / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
+/**
+ * The nearest live city pages for the "Solar near <city>" block: same county
+ * first (nearest first), then the nearest cities anywhere. Each neighbour links
+ * to its page of the same type as the current page when that page is live, and
+ * otherwise to its lead page, so every link answers 200.
+ */
+export function nearbyCityLinks(slug: string, currentType: CityPageType, max = 6): NearbyCityLink[] {
+  const county = cityCounty(slug);
+  const byDistance = (a: string, b: string) =>
+    distanceKm(slug, a) - distanceKm(slug, b) || cityName(a).localeCompare(cityName(b));
+  const candidates = allCitySlugs().filter((other) => other !== slug && liveCityPageTypes(other).length > 0);
+  const same = candidates.filter((other) => cityCounty(other) === county).sort(byDistance);
+  const rest = candidates.filter((other) => cityCounty(other) !== county).sort(byDistance);
+  return [...same, ...rest].slice(0, max).map((other) => {
+    const types = liveCityPageTypes(other);
+    const type = types.includes(currentType) ? currentType : types[0];
+    const name = cityName(other);
+    return {
+      slug: other,
+      name,
+      county: cityCounty(other),
+      type,
+      href: cityPagePath(type, other),
+      label: LINK_LABEL[type](name),
+      sameCounty: cityCounty(other) === county,
+    };
+  });
+}
+
+/** The city's other live pages, for the "Also for <city>" links. */
+export function companionCityLinks(slug: string, currentType: CityPageType): NearbyCityLink[] {
+  const name = cityName(slug);
+  return liveCityPageTypes(slug)
+    .filter((type) => type !== currentType)
+    .map((type) => ({
+      slug,
+      name,
+      county: cityCounty(slug),
+      type,
+      href: cityPagePath(type, slug),
+      label: LINK_LABEL[type](name),
+      sameCounty: true,
+    }));
+}
+
+// -----------------------------------------------------------------------------
+// Regional hubs (the six /solar-savings/<region> pages)
+// -----------------------------------------------------------------------------
+
+export interface RegionalHub {
+  href: string;
+  /** Region name as the hub's own H1 uses it. */
+  region: string;
+  counties: readonly string[];
+}
+
+/**
+ * Mirrors the county lists the hub pages filter their city grids by
+ * (src/app/solar-savings/<region>/page.tsx). Monterey and Santa Cruz counties
+ * appear on both the Bay Area and Central Valley hubs, so they list both.
+ */
+export const REGIONAL_HUBS: readonly RegionalHub[] = [
+  { href: '/solar-savings/orange-county', region: 'Orange County', counties: ['Orange County'] },
+  { href: '/solar-savings/los-angeles-county', region: 'Los Angeles County', counties: ['Los Angeles County'] },
+  { href: '/solar-savings/san-diego-county', region: 'San Diego County', counties: ['San Diego County'] },
+  { href: '/solar-savings/inland-empire', region: 'Inland Empire', counties: ['Riverside County', 'San Bernardino County'] },
+  {
+    href: '/solar-savings/bay-area',
+    region: 'Bay Area',
+    counties: [
+      'Santa Clara County', 'San Francisco County', 'Alameda County', 'Contra Costa County',
+      'Santa Cruz County', 'Sonoma County', 'San Mateo County', 'Monterey County',
+    ],
+  },
+  {
+    href: '/solar-savings/central-valley',
+    region: 'Central Valley',
+    counties: [
+      'Kern County', 'Tulare County', 'Kings County', 'Fresno County', 'Sacramento County',
+      'San Joaquin County', 'Stanislaus County', 'Merced County', 'Butte County',
+      'Monterey County', 'Santa Cruz County', 'San Luis Obispo County',
+    ],
+  },
+];
+
+export function regionalHubsFor(slug: string): RegionalHub[] {
+  const county = cityCounty(slug);
+  return REGIONAL_HUBS.filter((hub) => hub.counties.includes(county));
+}
+
+// -----------------------------------------------------------------------------
+// Dates: the one date a page shows as "Updated" and emits as dateModified
+// -----------------------------------------------------------------------------
+
+/** The companies route for the older template shipped in commit ff1ecfb. */
+const LEGACY_COMPANIES_LAUNCHED = '2026-04-24';
+/** growth-cities.ts: "Sources default to 2026-09-10". */
+const GROWTH_DEFAULT_CHECKED = '2026-09-10';
+
+export interface CityPageDateInfo {
+  /** ISO date shown as "Updated" and emitted as dateModified / lastModified. */
+  modified: string;
+  /** ISO date the page first shipped, when the record shows it. */
+  published?: string;
+}
+
+const maxIso = (...dates: (string | undefined)[]) =>
+  dates.filter((d): d is string => Boolean(d)).sort().pop() as string;
+
+/**
+ * The newest verified fact on a /solar-cost page: the row's own sources, any
+ * utility-split sources, and the template-wide CSLB section.
+ */
+export function costPageModified(row: CityCostRow): string {
+  return maxIso(
+    row.sourcesFetchedAt,
+    COST_TEMPLATE_CSLB_VERIFIED,
+    ...(row.utilitySplit?.sources.map((s) => s.verifiedAt) ?? []),
+  );
+}
+
+export function cityPageDates(type: CityPageType, slug: string): CityPageDateInfo {
+  if (type === 'cost') {
+    const row = getCityCostRow(slug);
+    return { modified: row ? costPageModified(row) : GROWTH_DEFAULT_CHECKED };
+  }
+  if (type === 'companies' && growthCities[slug]) {
+    return { modified: growthCities[slug].sourceCheckedDate || GROWTH_DEFAULT_CHECKED };
+  }
+  const record = CITY_PAGE_DATES[slug];
+  if (type === 'companies') {
+    const published = maxIso(LEGACY_COMPANIES_LAUNCHED, record?.added);
+    return { published, modified: maxIso(published, record?.updated) };
+  }
+  return { published: record?.added, modified: maxIso(record?.added, record?.updated) };
+}
+
+// -----------------------------------------------------------------------------
+// Titles, descriptions and H1s
+// -----------------------------------------------------------------------------
+
+export interface CitySeo {
+  title: string;
+  description: string;
+  h1: string;
+}
+
+const TITLE_MAX = 60;
+const DESCRIPTION_MAX = 155;
+const YEAR = '2026';
+
+/** First candidate that fits, else the last one. */
+function fit(max: number, ...candidates: string[]): string {
+  return candidates.find((c) => c.length <= max) ?? candidates[candidates.length - 1];
+}
+
+/** "Salinas'" rather than "Salinas's", as the site's copy writes it. */
+function possessive(name: string): string {
+  return name.endsWith('s') ? `${name}'` : `${name}'s`;
+}
+
+function shortDate(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso);
+  if (!m) return iso;
+  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][Number(m[2]) - 1];
+  return `${month} ${Number(m[3])}, ${m[1]}`;
+}
+
+/** Utility label for a cities-data page, as the page itself names it. */
+function legacyUtilityLabel(city: CityData): string {
+  if (city.utilityConfirmationRequired) {
+    return (city.utilityDisplayName || 'your utility')
+      .replace(/^Check the bill:\s*/i, '')
+      .replace(/\s+where applicable$/i, '')
+      .trim();
+  }
+  return city.utilityDisplayName || UTILITY_DATA[city.utilityCode]?.shortName || 'your utility';
+}
+
+const GROWTH_UTILITY_LABEL: Record<string, string> = {
+  pge: 'PG&E',
+  sce: 'SCE',
+  sdge: 'SDG&E',
+  ladwp: 'LADWP',
+  smud: 'SMUD',
+  apu: 'Anaheim Public Utilities',
+  reu: 'Roseville Electric',
+};
+
+/** /solar-cost/<city> */
+export function costPageSeo(row: CityCostRow): CitySeo {
+  const city = row.city;
+  const utility = getUtilityRate(row.utilityKey);
+  const leads = primaryCityPageType(row.slug) === 'cost';
+  const title = leads
+    ? fit(
+        TITLE_MAX,
+        `Solar Panels in ${city}, CA: Cost & Installer Checks (${YEAR})`,
+        `${city} Solar Panels: Cost & Installer Checks (${YEAR})`,
+        `Solar Panels in ${city}, CA: Cost Guide (${YEAR})`,
+      )
+    : fit(
+        TITLE_MAX,
+        `Solar Panel Cost in ${city}, CA: What Sets the Price (${YEAR})`,
+        `${city} Solar Panel Cost: What Sets the Price (${YEAR})`,
+        `Solar Panel Cost in ${city}, CA (${YEAR})`,
+      );
+
+  const checked = shortDate(costPageModified(row));
+  let description: string;
+  if (row.slug === 'corona' || row.utilitySplit) {
+    const others = row.slug === 'corona' ? 'SCE' : row.utilitySplit!.others;
+    description = fit(
+      DESCRIPTION_MAX,
+      `${city} is split between ${utility.name} and ${others}. See which bills your address, ${possessive(city)} permit rules and what changes a solar quote. Sources checked ${checked}.`,
+      `${city} is split between ${utility.name} and ${others}. See which bills your address, the permit rules and what changes a solar quote.`,
+    );
+  } else if (utility.averageResidentialRateCents !== null) {
+    const rate = formatAverageRateCents(utility);
+    description = fit(
+      DESCRIPTION_MAX,
+      `No guessed price: ${utility.name}'s ${rate} average rate, ${possessive(city)} permit fee and filing rules, and what changes a solar quote. Sources checked ${checked}.`,
+      `No guessed price: ${utility.name}'s ${rate} average rate, ${possessive(city)} permit rules and what changes a solar quote. Sources checked ${checked}.`,
+      `${utility.name}'s ${rate} average rate, ${possessive(city)} permit rules and what changes a solar quote here, with every source linked.`,
+    );
+  } else {
+    const territory = utility.longName.replace(/^the /, '');
+    // LADWP has no retrievable current tariff on the tracker, so its pages
+    // point at no rate schedule and the description must not either.
+    description = utility.sourceUrl === null
+      ? fit(
+          DESCRIPTION_MAX,
+          `${city} is ${utility.name} territory, not PG&E or SCE. See ${possessive(city)} permit fee and filing rules and what changes a solar quote here, with sources linked.`,
+          `${city} is ${utility.name} territory. See the permit rules and what changes a solar quote here, with every source linked.`,
+        )
+      : fit(
+      DESCRIPTION_MAX,
+      `${city} is ${territory} territory, not PG&E or SCE. See where its rates are published, ${possessive(city)} permit rules and what changes a solar quote.`,
+      `${city} is ${territory} territory. See where its rates are published, the permit rules and what changes a solar quote here.`,
+      `${city} is ${utility.name} territory. See its rate schedule, the city's permit rules and what changes a solar quote here.`,
+    );
+  }
+  return {
+    title,
+    description,
+    h1: `How Much Do Solar Panels Cost in ${city}? What Sets the Price`,
+  };
+}
+
+/** /solar-companies/<city>, both the comparison template and the older one. */
+export function companiesPageSeo(slug: string): CitySeo | null {
+  const growth = growthCities[slug];
+  const legacy = getCityBySlug(slug);
+  const city = growth?.name ?? legacy?.name;
+  if (!city) return null;
+  const title = fit(
+    TITLE_MAX,
+    `Solar Panels & Solar Companies in ${city}, CA (${YEAR})`,
+    `${city} Solar Panels & Solar Companies (${YEAR})`,
+  );
+  if (growth) {
+    const utility = GROWTH_UTILITY_LABEL[growth.utility];
+    const bill = utility ? `the ${utility} bill` : 'which utility bills you';
+    const checked = shortDate(growth.sourceCheckedDate || GROWTH_DEFAULT_CHECKED);
+    return {
+      title,
+      description: fit(
+        DESCRIPTION_MAX,
+        `Comparing solar companies in ${city}? Check ${bill}, ${possessive(city)} permit route and 6 quote items side by side. Sources checked ${checked}.`,
+        `Comparing solar companies in ${city}? Check ${bill}, the permit route and 6 quote items side by side. Sources checked ${checked}.`,
+        `Comparing solar companies in ${city}? Check ${bill}, the permit route and 6 quote items side by side.`,
+      ),
+      h1: `Solar Companies in ${city}, CA: How to Compare Solar Panel Quotes`,
+    };
+  }
+  const utility = legacyUtilityLabel(legacy!);
+  return {
+    title,
+    description: fit(
+      DESCRIPTION_MAX,
+      `9 solar companies compared for ${city}, CA homeowners: who each one fits, the honest trade-off, and the ${utility} and contract checks before you sign.`,
+      `9 solar companies compared for ${city}, CA: who each one fits, the honest trade-off, and the contract checks before you sign.`,
+    ),
+    h1: `Solar Companies in ${city}, CA: 9 Solar Panel Installers Compared`,
+  };
+}
+
+/** /solar-savings/<city> */
+export function savingsPageSeo(city: CityData): CitySeo {
+  const name = city.name;
+  const utility = legacyUtilityLabel(city);
+  const confirm = city.utilityConfirmationRequired === true;
+  const title = confirm
+    ? fit(
+        TITLE_MAX,
+        `${name} Solar Savings: ${utility} Rates & Quotes (${YEAR})`,
+        `${name} Solar Savings: ${utility} (${YEAR})`,
+        `${name} Solar Savings: Rates & Quotes (${YEAR})`,
+      )
+    : fit(
+        TITLE_MAX,
+        `${name} Solar Savings: ${utility} Rates & Costs (${YEAR})`,
+        `${name} Solar Savings: ${utility} Rates (${YEAR})`,
+        `${name} Solar Savings: Rates & Costs (${YEAR})`,
+      );
+  const split = / or /.test(utility);
+  const description = confirm
+    ? fit(
+        DESCRIPTION_MAX,
+        split
+          ? `${name} is split between ${utility.replace(' or ', ' and ')}. Confirm which bills your address, then compare solar quotes on the same usage, roof and contract terms.`
+          : `${name} is ${utility} territory. Confirm the utility on your bill, then compare solar quotes on the same usage, roof, equipment and contract terms.`,
+        `Confirm which utility bills your ${name} address, then compare solar quotes on the same usage, roof, equipment and contract terms.`,
+      )
+    : fit(
+        DESCRIPTION_MAX,
+        `${name} solar savings on ${utility}: rate-plan and CARE/FERA checks, what a system costs, HOA rules under Civil Code 714 and when solar doesn't pay.`,
+        `${name} solar savings on ${utility}: rate-plan checks, system costs, HOA rules under Civil Code 714 and when solar doesn't pay.`,
+        `${name} solar savings: rate-plan checks, system costs, HOA rules and when solar doesn't pay.`,
+      );
+  return {
+    title,
+    description,
+    h1: `Solar Savings in ${name}, CA: Rates, Costs and Your Options in ${YEAR}`,
+  };
+}
+
+/** Title/description/H1 for any live city page. */
+export function cityPageSeo(type: CityPageType, slug: string): CitySeo | null {
+  if (type === 'cost') {
+    const row = getCityCostRow(slug);
+    return row ? costPageSeo(row) : null;
+  }
+  if (type === 'companies') return companiesPageSeo(slug);
+  const city = getCityBySlug(slug);
+  return city ? savingsPageSeo(city) : null;
+}
+
+// -----------------------------------------------------------------------------
+// Metadata: title, description, canonical, Open Graph and Twitter in one object
+// -----------------------------------------------------------------------------
+
+/** The CRR social card the root layout uses; repeated because a page-level
+ *  openGraph object replaces the layout's rather than merging with it. */
+const SOCIAL_CARD = {
+  url: '/crr-social-card',
+  width: 1200,
+  height: 630,
+  alt: 'California Rate Relief: understand your bill and explore your solar options',
+};
+
+export function cityPageMetadata(type: CityPageType, slug: string) {
+  const seo = cityPageSeo(type, slug);
+  if (!seo) return null;
+  const path = cityPagePath(type, slug);
+  const dates = cityPageDates(type, slug);
+  return {
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: path },
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      type: 'article' as const,
+      url: `https://ratereliefca.com${path}`,
+      siteName: 'California Rate Relief',
+      locale: 'en_US',
+      ...(dates.published ? { publishedTime: `${dates.published}T00:00:00Z` } : {}),
+      modifiedTime: `${dates.modified}T00:00:00Z`,
+      images: [SOCIAL_CARD],
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title: seo.title,
+      description: seo.description,
+      images: [SOCIAL_CARD.url],
+    },
+  };
+}

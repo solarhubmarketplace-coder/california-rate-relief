@@ -116,6 +116,14 @@ export interface CityCostRow {
 }
 
 /**
+ * The date the /solar-cost template's own CSLB sources (Check a License; Solar
+ * Requirements, which reproduces B&P §7169) were last fetched and the
+ * template's "check the company" section checked against them. Every city row
+ * renders that section, so a page is at least this fresh.
+ */
+export const COST_TEMPLATE_CSLB_VERIFIED = '2026-09-22';
+
+/**
  * California Energy Commission, Electric Load Serving Entities (IOU & POU):
  * the statewide service-territory layer. Queried 2026-09-22 against Census
  * TIGERweb city boundaries to find cities that more than one utility serves.
