@@ -40,17 +40,20 @@ export function toE164Us(value: string): string | null {
   return isValidUsPhone(value) ? `+1${usPhoneDigits(value)}` : null;
 }
 
-/** Inline error text, or '' when the number is complete and plausible. */
+/** Shown under a phone field until there is an error to show instead. */
+export const US_PHONE_HINT = '10-digit US number, area code first.';
+
+/**
+ * Inline error text, or '' when the number is complete and plausible. Every
+ * message fits on one short line, so swapping the hint for an error never
+ * moves the fields below it (a blur-time shift makes the next tap miss).
+ */
 export function usPhoneError(value: string): string {
   const digits = usPhoneDigits(value);
   if (!digits) return 'Enter your phone number.';
-  if (digits.length < 10)
-    return `Enter all 10 digits, area code first. You have ${digits.length}.`;
-  if (digits.length > 10)
-    return 'Enter a 10-digit US phone number, without an extension.';
-  if (/^[01]/.test(digits))
-    return 'A US area code starts with a digit from 2 to 9. Check the first digit.';
-  if (/^\d{3}[01]/.test(digits))
-    return 'The three digits after the area code start with 2 to 9. Check the number.';
+  if (digits.length < 10) return `Enter all 10 digits. You have ${digits.length}.`;
+  if (digits.length > 10) return 'Too many digits. Use a 10-digit number.';
+  if (/^[01]/.test(digits)) return "An area code can't start with 0 or 1.";
+  if (/^\d{3}[01]/.test(digits)) return 'Check the 3 digits after the area code.';
   return '';
 }

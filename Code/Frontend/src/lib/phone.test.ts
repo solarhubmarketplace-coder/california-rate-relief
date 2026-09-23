@@ -6,6 +6,7 @@ import {
   toE164Us,
   usPhoneDigits,
   usPhoneError,
+  US_PHONE_HINT,
 } from './phone.ts';
 
 test('formats progressively without trailing separators', () => {
@@ -49,11 +50,14 @@ test('E.164 output matches what the backend normalizes to', () => {
   assert.equal(toE164Us('555-0123'), null);
 });
 
-test('errors say what to fix', () => {
+test('errors say what to fix, on one short line', () => {
   assert.equal(usPhoneError('(916) 555-0123'), '');
   assert.match(usPhoneError(''), /Enter your phone number/);
-  assert.match(usPhoneError('916555'), /all 10 digits.*You have 6/);
-  assert.match(usPhoneError('91655501234'), /without an extension/);
+  assert.match(usPhoneError('916555'), /all 10 digits\. You have 6/);
+  assert.match(usPhoneError('91655501234'), /Too many digits/);
   assert.match(usPhoneError('0165550123'), /area code/);
   assert.match(usPhoneError('9160550123'), /after the area code/);
+  for (const value of ['', '9', '91655501234', '0165550123', '9160550123'])
+    assert.ok(usPhoneError(value).length <= 45, usPhoneError(value));
+  assert.ok(US_PHONE_HINT.length <= 45);
 });
