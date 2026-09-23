@@ -16,14 +16,14 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Sunnova Reviews (2026): 2025 Chapter 11 Bankruptcy, Explained",
-  description: "Sunnova filed Chapter 11 in June 2025; assets moved to SunStrong. What it means for your lease, warranty, and service in 2026.",
+  title: "Sunnova Reviews 2026: Is It Still in Business?",
+  description: "Sunnova filed Chapter 11 in June 2025. What SEC and bankruptcy court filings show about the case, the dealer model, and what it means for customers.",
   alternates: {
     canonical: '/solar-installers/sunnova-review',
   },
   openGraph: {
     title:
-      'Sunnova Reviews (2026): Chapter 11 Aftermath, Explained',
+      'Sunnova Reviews (2026): Is It Still in Business?',
     description:
       'What the 2025 Sunnova bankruptcy and SunStrong asset sale mean for the ~500,000 legacy customers and for California solar shoppers in 2026.',
     type: 'article',
@@ -35,11 +35,11 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Sunnova Review 2026: What the 2025 Chapter 11 Bankruptcy Means for Customers',
+    'Sunnova Reviews (2026): Is It Still in Business?',
   description:
     'Sunnova filed Chapter 11 in June 2025 and assets transitioned to Solaris Assets / SunStrong Management. A plain-English review of what it means for customers.',
   datePublished: '2026-04-23',
-  dateModified: '2026-04-23',
+  dateModified: '2026-09-22',
   author: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
@@ -138,15 +138,14 @@ export default function SunnovaReview() {
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunnova Reviews (2026): What the 2025 Chapter 11 Means for
-                Customers
+                Sunnova Reviews (2026): Is It Still in Business?
               </h1>
-              
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-23'>Updated April 23, 2026</time>
+                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
@@ -278,6 +277,49 @@ export default function SunnovaReview() {
                 Sunnova.
               </p>
 
+              <h3 className='text-xl font-bold text-foreground mt-8 mb-3'>
+                The bankruptcy, from the source documents
+              </h3>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunnova Energy International Inc., along with affiliates
+                Sunnova Energy Corporation and Sunnova Intermediate Holdings,
+                LLC, filed for Chapter 11 protection on June 8, 2025, in the
+                U.S. Bankruptcy Court for the Southern District of Texas
+                (Houston Division), jointly administered under Case No.
+                25-90160 before Judge Alfredo R. Perez (Sunnova Energy
+                International Inc., Case No. 25-90160, U.S. Bankruptcy Court,
+                S.D. Tex., accessed via court docket September 22, 2026). A
+                related developer entity, Sunnova TEP Developer, LLC, had
+                already filed on June 1, 2025 (Case No. 25-90153).
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunnova&apos;s own SEC filing made the same day confirms the
+                company intended to &ldquo;continue to operate their
+                businesses and manage their properties as &lsquo;debtors in
+                possession&rsquo;&rdquo; during the case, and separately
+                disclosed that it expected the New York Stock Exchange to
+                move to delist its common stock &mdash; while noting that
+                delisting &ldquo;does not change its reporting requirements
+                under the rules of the U.S. Securities and Exchange
+                Commission&rdquo; (Form 8-K, Item 1.03 and Item 3.01, filed
+                2025-06-09, accessed September 22, 2026). The filing also
+                listed defaults triggered under four debt instruments &mdash;
+                two bond indentures and two warehouse credit facilities
+                &mdash; under Item 2.04.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The case closed out several months later: the
+                court-approved plan&apos;s Effective Date was November 14,
+                2025, at which point the plan was formally consummated (case
+                docket, via restructuring.ra.kroll.com/Sunnova, the case&apos;s
+                official noticing agent, accessed September 22, 2026).
+                That&apos;s the point at which the asset sale and the shift
+                to SunStrong Management became final, not just proposed.
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What It Means for Existing Sunnova Customers
               </h2>
@@ -325,6 +367,22 @@ export default function SunnovaReview() {
                 before listing.
               </p>
 
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunnova&apos;s own site states plainly: &ldquo;new owners have
+                acquired substantially all of Sunnova&apos;s assets&rdquo;
+                through the court-supervised sale process, and instructs
+                existing customers to &ldquo;continue to make payments as
+                usual until you receive updated instructions directly from
+                SunStrong&rdquo; (sunnova.com, accessed September 22, 2026).
+                For anyone with an installation that was still in progress
+                when the case closed, the same page states SunStrong is
+                working with GoodLeap, a financing company, &ldquo;to
+                facilitate completion of certain in-progress
+                installations,&rdquo; and that affected customers would be
+                contacted by their original dealer or a GoodLeap
+                representative (sunnova.com, accessed September 22, 2026).
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 Business Model & Why It Struggled
               </h2>
@@ -352,6 +410,60 @@ export default function SunnovaReview() {
                 closes, Sunnova/SunStrong becomes the default servicer for
                 systems the dealer installed, and the service queue
                 backs up.
+              </p>
+
+              <h3 className='text-xl font-bold text-foreground mt-8 mb-3'>
+                What &ldquo;dealer model&rdquo; means for a Sunnova customer
+              </h3>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunnova didn&apos;t design, manufacture, or (in most cases)
+                directly install anything. It financed and owned systems
+                that independent local solar dealers sold and installed on
+                its behalf, then bundled the resulting customer contracts
+                &mdash; leases, loans, and power-purchase agreements &mdash;
+                into portfolios (sunnova.com, accessed September 22, 2026).
+                That&apos;s a materially different relationship than working
+                with a company like Sunrun or Tesla Energy, which employ or
+                directly manage their own install crews: with Sunnova, the
+                entity that showed up at your house and the entity that owns
+                your contract were usually two different companies.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                That split matters for two practical reasons. First, service
+                quality varied by dealer, not just by Sunnova &mdash; a
+                complaint pattern the reputation section below already
+                reflects. Second, <strong>the CSLB license that matters for
+                your installation is the dealer&apos;s, not Sunnova&apos;s</strong>
+                &mdash; Sunnova itself does not appear to publish its own
+                California contractor license, because Sunnova wasn&apos;t
+                the licensed installer of record; your dealer was. Check
+                whichever company&apos;s name is actually on your contract
+                and permit at CSLB directly &mdash; see{' '}
+                <Link
+                  href='/solar-installers/how-to-verify-a-solar-contractor-california'
+                  className='text-primary hover:underline font-medium'
+                >
+                  how to verify a California solar contractor
+                </Link>
+                . For how the dealer-fee markup embedded in a solar loan
+                works more generally, see{' '}
+                <Link
+                  href='/solar-problems/solar-dealer-fees-explained'
+                  className='text-primary hover:underline font-medium'
+                >
+                  solar dealer fees, explained
+                </Link>
+                , and for how lease, PPA, loan, and cash purchase compare as
+                structures, see{' '}
+                <Link
+                  href='/blog/ppa-loan-vs-solar-lease-vs-cash-california'
+                  className='text-primary hover:underline font-medium'
+                >
+                  PPA vs. loan vs. lease vs. cash in California
+                </Link>
+                .
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -484,6 +596,41 @@ export default function SunnovaReview() {
                     home is usually the cheaper option — SunStrong should
                     have a transfer process documented. Consult the specific
                     terms of your contract before making any decision.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>
+                    What court handled the Sunnova bankruptcy, and is the
+                    case over?
+                  </h3>
+                  <p className='text-foreground/80 leading-relaxed'>
+                    The U.S. Bankruptcy Court for the Southern District of
+                    Texas, Case No. 25-90160, filed June 8, 2025. The
+                    court-approved plan took effect November 14, 2025,
+                    closing out the case (SEC Form 8-K; case docket via
+                    restructuring.ra.kroll.com/Sunnova, accessed September
+                    22, 2026).
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>
+                    Whose CSLB license should I check if I already have a
+                    Sunnova system?
+                  </h3>
+                  <p className='text-foreground/80 leading-relaxed'>
+                    Not Sunnova&apos;s &mdash; check the license of the
+                    dealer who actually installed your system, since that&apos;s
+                    the company that held the contractor license for the
+                    job. See our{' '}
+                    <Link
+                      href='/solar-installers/how-to-verify-a-solar-contractor-california'
+                      className='text-primary hover:underline font-medium'
+                    >
+                      contractor-verification walkthrough
+                    </Link>
+                    .
                   </p>
                 </div>
               </div>

@@ -76,6 +76,11 @@ const sources: Source[] = [
     url:
       "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
   },
+  {
+    label:
+      "Tesla: Buying Out Your Tesla Solar Panel Lease — 3% annual escalator on the monthly lease payment (accessed 22 September 2026)",
+    url: "https://www.tesla.com/learn/tesla-solar-lease-buyout-guide",
+  },
 ];
 
 const faqs = [
@@ -124,7 +129,7 @@ export const metadata: Metadata = {
       "A no-down-payment solar offer is a statement about timing. Where the cost sits, what California already caps, and the document that has to show the total.",
     type: "article",
     url: "https://ratereliefca.com/blog/zero-down-solar-california",
-    modifiedTime: "2026-09-18T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -135,7 +140,7 @@ export default function ZeroDownSolarCalifornia() {
       intro="It means the first payment is not due at signing. It does not tell you the term, the rate, the escalator, the total of payments, or who ends up owning the equipment. This page is about where the cost actually sits in a no-down-payment offer and which document is required to show you the total."
       path="/blog/zero-down-solar-california"
       sources={sources}
-      sourceCheckedDate="2026-09-18"
+      sourceCheckedDate="2026-09-22"
       topic="Understanding a no-down-payment solar offer"
       primaryResourceHref="/blog/how-much-does-it-cost-to-lease-solar-panels-california"
       primaryResourceLabel="What sets a lease payment"
@@ -292,6 +297,76 @@ export default function ZeroDownSolarCalifornia() {
             what a UCC-1 filing on a solar system is
           </Link>
           .
+        </p>
+      </section>
+
+      <section>
+        <h2>What each structure costs as the term goes on</h2>
+        <p className="mb-4">
+          &ldquo;$0 down&rdquo; only sets the first payment. What happens
+          after decides your total cost, not the starting number.
+        </p>
+        <p className="mb-4">
+          A <strong>loan</strong> payment is generally fixed: you owe the
+          same amount until it&apos;s paid off, then only the utility&apos;s
+          charges and, past the workmanship warranty, your own repairs. A{" "}
+          <strong>lease or PPA</strong> with an escalator does the opposite —
+          the payment or rate rises yearly on a schedule set at signing.
+          CPUC&apos;s guide puts a number on it: &ldquo;Escalators are
+          typically in the range of a 1 percent to 3 percent increase above
+          the rate you paid in the previous year. Be cautious of entering
+          into a contract with an escalator higher than that&rdquo; (CPUC,
+          California Solar Consumer Protection Guide, accessed 2026-09-22).
+          Tesla&apos;s own lease terms show one named provider&apos;s
+          version: a &ldquo;3% annual escalator&rdquo; on the monthly payment
+          (Tesla, &ldquo;Buying Out Your Tesla Solar Panel Lease,&rdquo;
+          accessed 2026-09-22) — at the top of CPUC&apos;s typical range.
+        </p>
+        <p>
+          Compounded over 20-25 years, a small annual percentage moves the
+          payment a lot — see the year-by-year index at{" "}
+          <Link
+            className="underline"
+            href="/blog/how-much-does-it-cost-to-lease-solar-panels-california"
+          >
+            what a solar lease actually costs
+          </Link>{" "}
+          and{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/solar-escalator-clause-explained"
+          >
+            what a solar escalator clause does
+          </Link>{" "}
+          for the full math. Neither shape is inherently cheaper — that
+          depends on your rate, term, and how long you keep the system — but
+          &ldquo;$0 down&rdquo; tells you nothing about which one you&apos;re
+          getting. Ask directly before comparing payment numbers across
+          offers.
+        </p>
+        <h3 className="mt-6 text-lg font-semibold">
+          Why a $0-down loan&apos;s dealer fee lands in full
+        </h3>
+        <p className="mt-3">
+          The site&apos;s dealer-fee explainer describes a fee, expressed as
+          a percentage of system cost, that a lender bills the installer to
+          fund the low advertised rate —{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/solar-dealer-fees-explained"
+          >
+            see where a dealer fee sits inside a price
+          </Link>{" "}
+          for the mechanics. That fee doesn&apos;t shrink because you put $0
+          down. A down payment, when there is one, reduces the amount
+          financed; a $0-down loan finances the full cost, so the same fee
+          percentage lands on a larger base and is carried in full from the
+          first payment — a structural fact about how the fee is added to
+          principal, not a new claim about any lender&apos;s pricing (the
+          linked page is the source for the fee figures themselves). If a
+          $0-down quote looks unusually low, ask for the cash price and
+          financed amount in writing, so the fee shows as its own line
+          rather than buried in the rate.
         </p>
       </section>
 

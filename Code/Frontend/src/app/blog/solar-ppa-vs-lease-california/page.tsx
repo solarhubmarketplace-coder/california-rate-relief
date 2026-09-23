@@ -74,6 +74,14 @@ const sources: Source[] = [
     label: "CSLB: Solar Energy System Supporting Information form",
     url: "https://www.cslb.ca.gov/Resources/Contractors/SOLAR_ENERGY_SYSTEM_SUPPORTING_INFORMATION.pdf",
   },
+  {
+    label: "Sunrun: What's a solar lease or PPA?",
+    url: "https://www.sunrun.com/go-solar-center/solar-faq/whats-a-solar-lease-or-ppa",
+  },
+  {
+    label: "Tesla: Solar lease buyout guide",
+    url: "https://www.tesla.com/learn/tesla-solar-lease-buyout-guide",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -89,7 +97,7 @@ export const metadata: Metadata = {
       "The structural difference between a PPA and a lease, what the law requires a provider to disclose, and the questions that decide the cost.",
     type: "article",
     url: "https://ratereliefca.com/blog/solar-ppa-vs-lease-california",
-    modifiedTime: "2026-09-17T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -100,7 +108,7 @@ export default function SolarPPAVsLeaseCalifornia() {
       intro="If you don’t want to pay for a solar system outright or with a loan, a power purchase agreement (PPA) and a lease are the two common third-party-ownership structures. In both, a provider — not you — owns the equipment. This page explains the structural difference between them, what the law requires a provider to disclose, and the questions that actually decide the cost and the transfer terms for your specific contract. It does not quote a price, a rate or a market-share figure for either structure: those numbers vary by provider, roof and contract, and the ones a prior version of this page carried were not sourced to anything. Where a number does appear below, it is a quoted rate, statute, or study result, with its source and verified date."
       path="/blog/solar-ppa-vs-lease-california"
       sources={sources}
-      sourceCheckedDate="2026-09-17"
+      sourceCheckedDate="2026-09-22"
       topic="California solar PPA vs lease comparison"
       inquiry={
         <SolarInquiry
@@ -192,6 +200,75 @@ export default function SolarPPAVsLeaseCalifornia() {
             does not go to zero. (Verified 17 Sep 2026.)
           </li>
         </ol>
+        <h3 className="mt-6">
+          How big is a typical escalator, and how long does the contract run?
+        </h3>
+        <p className="mt-3">
+          California&rsquo;s solar consumer guide puts a number on the contract
+          escalator this page already tells you to ask about:
+          &ldquo;Escalators are typically in the range of a 1 percent to 3
+          percent increase above the rate you paid in the previous year,&rdquo;
+          and shoppers should &ldquo;be cautious of entering into a contract
+          with an escalator higher than that&rdquo; (CPUC, California Solar
+          Consumer Protection Guide, verified 22 Sep 2026). Real contracts can
+          sit above that range on either structure: Sunrun&rsquo;s own
+          materials describe lease and PPA escalators running
+          &ldquo;somewhere between 1 and 5 percent&rdquo; a year, and
+          Tesla&rsquo;s published lease terms show payments rising &ldquo;3%
+          annually&rdquo; — at the top edge of what CPUC calls typical, not
+          above it, but worth confirming rather than assuming. (Sunrun and
+          Tesla, verified 22 Sep 2026.)
+        </p>
+        <p className="mt-3">
+          The same CPUC guide states a typical lease or PPA runs 20-25 years,
+          for both structures equally. That figure doesn&rsquo;t distinguish a
+          PPA from a lease — it applies to each the same way — but it does set
+          how many years an escalator has to compound against, whichever one
+          you sign. See{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/solar-escalator-clause-explained"
+          >
+            the escalator clause explainer
+          </Link>{" "}
+          for what 1%, 3%, and 5% look like in dollars over that span.
+        </p>
+        <h3 className="mt-6">
+          Why a production guarantee matters more for a lease than a PPA
+        </h3>
+        <p className="mt-3">
+          The comparison table above tells you to ask whether your contract
+          has a production guarantee. The reason that question lands
+          differently depending on the structure is worth stating plainly. A
+          PPA already prices around output: the table&rsquo;s own
+          &ldquo;if output is low&rdquo; row notes your bill is
+          &ldquo;generally lower that period, since you&rsquo;re billed on
+          metered output&rdquo; — a shortfall reduces what the provider
+          charges you, not what you receive for your money. A lease works the
+          opposite way: the fee is fixed by the contract no matter what the
+          system produces, so a production shortfall is a cost you absorb
+          unless the contract includes a guarantee that credits you back for
+          the gap.
+        </p>
+        <p className="mt-3">
+          Providers structure that guarantee differently, and the two
+          aren&rsquo;t interchangeable. Sunrun&rsquo;s guarantee compensates
+          for a shortfall in output; Tesla&rsquo;s instead guarantees uptime
+          rather than kilowatt-hours — see{" "}
+          <Link
+            className="underline"
+            href="/blog/how-much-does-it-cost-to-lease-solar-panels-california"
+          >
+            what a production guarantee actually does
+          </Link>{" "}
+          for both providers&rsquo; exact wording. An output guarantee and an
+          availability guarantee protect against different failures — one
+          covers how much the system made, the other how often it was working
+          at all — and neither is required by law to exist. Ask which model,
+          if either, is written into your specific contract; don&rsquo;t
+          assume one applies because the other provider offers it. (Sunrun
+          and Tesla, verified 22 Sep 2026.)
+        </p>
       </section>
 
       <section>

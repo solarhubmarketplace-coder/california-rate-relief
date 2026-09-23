@@ -14,7 +14,7 @@ const intro = "Stopping payment usually does not cancel a solar lease. The agree
 // paragraph on the SDG&E guide.
 const metaTitle = "What Happens If You Stop Paying a Solar Lease?";
 const metaDescription =
-  "Stopping payment usually does not cancel a solar lease. The agreement controls notices, default, collection and termination terms.";
+  "What Sunrun, Tesla and other providers say about default, UCC-1 filings and repossession — plus your transfer and buyout options in California.";
 
 const sources: Source[] = [
   { label: "California CSLB: Solar Smart", url: "https://cslb.ca.gov/Consumers/Solar_Smart/" },
@@ -23,6 +23,11 @@ const sources: Source[] = [
   { label: "CFPB: dispute a credit-report error", url: "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-an-error-on-my-credit-report-en-314/" },
   { label: "California CSLB: solar complaint form", url: "https://web.cslb.ca.gov/OnlineServices/SolarComplaint/SolarComplaintFormProcess.aspx" },
   { label: "California DFPI: submit a complaint", url: "https://dfpi.ca.gov/submit-a-complaint/" },
+  { label: "Tesla: Property & Title (UCC-1 filing)", url: "https://www.tesla.com/support/energy/solar-panels/documents/property-title" },
+  { label: "Tesla: Removal & Reinstallation", url: "https://www.tesla.com/support/energy/solar-panels/after-installation/removal-reinstallation" },
+  { label: "Tesla: Solar lease buyout guide", url: "https://www.tesla.com/learn/tesla-solar-lease-buyout-guide" },
+  { label: "Sunrun: Terms of Service", url: "https://www.sunrun.com/sunrun-terms-of-service" },
+  { label: "Sunrun: Moving Made Easy", url: "https://www.sunrun.com/moving-made-easy" },
 ];
 
 export const stopPayingSolarLeaseMetadata: Metadata = {
@@ -34,7 +39,7 @@ export const stopPayingSolarLeaseMetadata: Metadata = {
     description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
-    modifiedTime: "2026-09-12T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -45,7 +50,7 @@ export function StopPayingSolarLeaseGuide() {
       intro={intro}
       path={path}
       sources={sources}
-      sourceCheckedDate="2026-09-12"
+      sourceCheckedDate="2026-09-22"
       topic="California solar lease payment and contract review"
       primaryResourceHref="/blog/ppa-loan-vs-solar-lease-vs-cash-california"
       primaryResourceLabel="Identify the financing structure"
@@ -115,6 +120,56 @@ export function StopPayingSolarLeaseGuide() {
         <h2>Use the complaint channel that matches the problem</h2>
         <p>
           California&apos;s CSLB accepts solar complaints involving cash, lease, PPA and financed projects, including workmanship, abandonment and misrepresentation issues. DFPI accepts complaints about financial institutions and financial service providers within its jurisdiction. A complaint is a record and review request; it is not automatic contract cancellation. For a threatened lawsuit, lien, acceleration or large disputed balance, take the complete file to a qualified California consumer attorney promptly.
+        </p>
+      </section>
+
+      <section>
+        <h2>What Sunrun and Tesla&apos;s own sites say about default — and what they don&apos;t</h2>
+        <p>
+          The live page is right that the signed agreement controls, not a general rule. This session checked what Sunrun and Tesla actually publish on their own websites about missed payments, and the finding itself is useful: <strong>neither company publishes its default, late-fee, or repossession terms publicly.</strong>
+        </p>
+        <p className="mt-3">
+          Checked this session and confirmed to contain no default, late-payment, or repossession language: Tesla&apos;s billing page, its Removal &amp; Reinstallation page, its Solar Service and Warranty page, Sunrun&apos;s &ldquo;Our Guarantee&rdquo; page, and Sunrun&apos;s monthly-lease plan page. Sunrun&apos;s own website Terms of Service makes the separation explicit: it states that if you have &ldquo;entered into a Solar Power Purchase Agreement or Lease Agreement with Sunrun,&rdquo; that is a distinct document from the site terms you&apos;re reading (sunrun.com, accessed 2026-09-22). In other words, the default, cure, and remedies language the six-clause table above tells you to pull is real, but it lives only in the contract you signed — not on either company&apos;s public site. Request your specific clause language in writing, exactly as the &ldquo;Contact the current servicer&rdquo; section above already recommends.
+        </p>
+      </section>
+
+      <section>
+        <h2>Repossession, removal, and the UCC-1 filing</h2>
+        <p>
+          Tesla&apos;s public Removal &amp; Reinstallation page documents exactly three removal scenarios — roof work, a home remodel, and relocation — all initiated by the customer, and it notes that during a voluntary removal &ldquo;your energy contract remains active, so you are still responsible for any monthly payments during this time&rdquo; (tesla.com, accessed 2026-09-22). It does not describe an involuntary removal or repossession process for nonpayment. That gap doesn&apos;t mean it can&apos;t happen; it means the procedure, if one exists, is in the private agreement&apos;s default and remedies clauses, not on either company&apos;s support site.
+        </p>
+        <p className="mt-3">
+          What both companies do state publicly is narrower and more mechanical: the UCC-1 filing itself. Tesla&apos;s Property &amp; Title page says plainly, &ldquo;This UCC-1 filing is not a lien — this is filed on the solar system itself and not the home&rdquo; (tesla.com, accessed 2026-09-22). That matches what our own UCC-1 explainer documents in more depth — the filing secures the company&apos;s interest in the equipment, not the house, and foreclosure is a separate legal remedy under mortgage law that a UCC-1 alone doesn&apos;t trigger. For the full mechanics of what a UCC-1 fixture filing means, how it shows up on title, and how it gets released, see our{" "}
+          <Link className="underline" href="/solar-problems/ucc-1-lien-solar-california">
+            UCC-1 solar lien explainer
+          </Link>
+          .
+        </p>
+        <p className="mt-3">
+          Credit reporting: the &ldquo;Check the credit record for accuracy&rdquo; section above already covers this correctly and isn&apos;t changed here. Neither provider&apos;s public pages checked this session added anything not already stated in that section.
+        </p>
+      </section>
+
+      <section>
+        <h2>Options besides letting it go to default</h2>
+        <p>Two alternatives are documented on the providers&apos; own sites, and one gap is worth naming plainly.</p>
+        <ul className="mt-3 list-disc space-y-3 pl-5">
+          <li>
+            <strong>Transfer.</strong> If the issue is that you no longer want or can afford the system at this address, both companies run a formal transfer process — moving the agreement to a new owner, typically with a soft credit check on their end. That process, and what it does to a UCC-1 filing during a sale, is covered in full on our sibling page — see{" "}
+            <Link className="underline" href="/blog/what-happens-to-solar-lease-when-i-sell-california">
+              what happens to a solar lease when you sell
+            </Link>{" "}
+            rather than repeating it here.
+          </li>
+          <li>
+            <strong>Buyout.</strong> Tesla publishes a specific early-buyout formula: the price is &ldquo;whichever amount is lower, the estimated price from your contract or the appraised FMV,&rdquo; with a standard buyout timing of year six of the term (tesla.com, accessed 2026-09-22). Sunrun&apos;s published buyout path is prepaying the remaining balance and bundling it into a home sale price (sunrun.com, accessed 2026-09-22). Paying off the remaining obligation ends the payment relationship without a default ever being declared.
+          </li>
+          <li>
+            <strong>Hardship programs.</strong> This session found no publicly published hardship or forbearance program for either company. Tesla&apos;s documented early-buyout exception applies only &ldquo;in cases where you&apos;re selling your home and relocating,&rdquo; not for financial hardship generally (tesla.com, accessed 2026-09-22). If your situation is a temporary inability to pay rather than a wish to sell or buy out, the only sourced path is the advice above: contact the servicer in writing before you miss a payment and ask directly what arrangements, if any, they offer — because none is stated in advance on either company&apos;s site.
+          </li>
+        </ul>
+        <p className="mt-3">
+          This is general information about what providers publish, not legal advice about your specific contract. If you&apos;re facing default, review your actual agreement&apos;s Default, Cure, and Remedies sections and consider talking to a consumer-rights or real-estate attorney before deciding how to proceed. If your question is really about whether the system and your rate plan still make sense for your home, California Rate Relief can walk through a no-cost bill review with you.
         </p>
       </section>
 
