@@ -22,7 +22,11 @@
 // =============================================================================
 
 import { utilityOptions, type CalculatorContext } from './calculator-context.ts';
-import { intakeHrefForPath } from './intake-routing.ts';
+import {
+  COMMERCIAL_ASSESSMENT_PATH,
+  COMMERCIAL_FORM_ID,
+  intakeHrefForPath,
+} from './intake-routing.ts';
 
 export type UtilityCode = (typeof utilityOptions)[number][0];
 
@@ -221,7 +225,9 @@ export type QuickCheckHandoff =
 /**
  * Scroll to the preferred form when it is on this page; otherwise follow the
  * site's intake routing (intakeHrefForPath). A same-page anchor whose form is
- * missing falls back to the home page wizard rather than a dead anchor.
+ * missing falls back to the form's own page rather than a dead anchor: the
+ * standalone commercial form for the inline commercial anchor, the home page
+ * wizard for everything else.
  */
 export function resolveQuickCheckHandoff(
   pathname: string,
@@ -235,6 +241,8 @@ export function resolveQuickCheckHandoff(
   const hash = hashAt === -1 ? '' : href.slice(hashAt + 1);
   if ((path === '' || path === pathname) && hash && hasTarget(hash))
     return { mode: 'scroll', targetId: hash };
+  if (path === '' && hash === COMMERCIAL_FORM_ID)
+    return { mode: 'navigate', href: COMMERCIAL_ASSESSMENT_PATH, targetId: '' };
   if (path === '')
     return { mode: 'navigate', href: `/#${HOME_WIZARD_TARGET}`, targetId: HOME_WIZARD_TARGET };
   return { mode: 'navigate', href, targetId: hash };
@@ -242,8 +250,9 @@ export function resolveQuickCheckHandoff(
 
 /** Which form a handoff lands on, for the quick_check_submit event. */
 export function quickCheckTargetForm(handoff: QuickCheckHandoff): string {
-  if (handoff.mode === 'navigate' && handoff.href.startsWith('/commercial-assessment'))
+  if (handoff.mode === 'navigate' && handoff.href.startsWith(COMMERCIAL_ASSESSMENT_PATH))
     return 'commercial_assessment';
+  if (handoff.targetId === COMMERCIAL_FORM_ID) return 'commercial_assessment';
   if (handoff.targetId === HOME_WIZARD_TARGET) return 'qualification_wizard';
   return 'solar_inquiry';
 }

@@ -161,9 +161,20 @@ test('handoff scrolls when the form is on the page, otherwise follows intake rou
     href: '/#qualify',
     targetId: 'qualify',
   });
+  // A commercial page whose inline form (#commercial-review) is missing falls
+  // back to the standalone commercial form, never to the home page wizard.
   const commercial = resolveQuickCheckHandoff('/commercial-solar/cost-per-watt-california', 'solar-inquiry', none);
   assert.deepEqual(commercial, { mode: 'navigate', href: '/commercial-assessment', targetId: '' });
   assert.equal(quickCheckTargetForm(commercial), 'commercial_assessment');
+  // With the inline form on the page the handoff scrolls to it.
+  const inline = resolveQuickCheckHandoff('/commercial-solar/cost-per-watt-california', 'solar-inquiry', only('commercial-review'));
+  assert.deepEqual(inline, { mode: 'scroll', targetId: 'commercial-review' });
+  assert.equal(quickCheckTargetForm(inline), 'commercial_assessment');
+  // A page that gained a residential form on 2026-09-23 scrolls to it.
+  assert.deepEqual(resolveQuickCheckHandoff('/solar-problems/solar-dealer-fees-explained', 'solar-inquiry', only('solar-inquiry')), {
+    mode: 'scroll',
+    targetId: 'solar-inquiry',
+  });
   assert.equal(quickCheckTargetForm({ mode: 'scroll', targetId: 'qualify' }), 'qualification_wizard');
   assert.equal(quickCheckTargetForm({ mode: 'scroll', targetId: 'solar-inquiry' }), 'solar_inquiry');
 });
