@@ -68,7 +68,7 @@ export function ToolReportRequest({
               destination: `#${id}`,
             });
           }}
-          className="mt-4 rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary"
+          className="mt-4 min-h-[44px] rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary"
         >
           {label}
         </button>
