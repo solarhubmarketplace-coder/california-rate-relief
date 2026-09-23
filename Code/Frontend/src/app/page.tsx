@@ -6,11 +6,11 @@ import { HeroV2 } from '@/components/landing/HeroV2';
 import { HowItWorksV2 } from '@/components/landing/HowItWorksV2';
 import { SavingsCalculator } from '@/components/landing/SavingsCalculator';
 import { FAQAccordion, FAQS } from '@/components/landing/FAQAccordion';
-import { FinalCTA } from '@/components/landing/FinalCTA';
 import { QualificationWizard } from '@/components/landing/QualificationWizard';
 import { HomeGuides } from '@/components/landing/HomeGuides';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
+import { WhyTrust } from '@/components/trust/WhyTrust';
 
 const BASE_URL = 'https://ratereliefca.com';
 
@@ -86,7 +86,7 @@ export default function HomePage() {
       />
       <Header />
       <main>
-        {/* New full-bg hero with urgency badge + dual CTA */}
+        {/* Hero: light surface, ink text, one brand-color button (design pass 2) */}
         <HeroV2 />
 
         {/* Existing qualification wizard (Tally-driven) — kept as the conversion form */}
@@ -122,24 +122,30 @@ export default function HomePage() {
         {/* 12-question FAQ accordion */}
         <FAQAccordion />
 
-        {/* Final CTA (background-image section) */}
-        <FinalCTA />
+        {/* How the site works and how it is paid (22b: the "why trust" block
+            the big publishers carry). Replaces the photo-background FinalCTA
+            section: the page already asks once, in the wizard above, and the
+            neutral-publisher design keeps one calm ask per page. */}
+        <WhyTrust />
+
+        {/* Primary sources list — was rendered after <Footer />; moved inside
+            main so it sits above the footer. */}
+        <div className='container mx-auto px-4 max-w-3xl'>
+          <TrustedSources
+            domain='crr'
+            variant='compact'
+            palette={{
+              fg: 'hsl(var(--foreground))',
+              muted: 'hsl(var(--foreground) / 0.85)',
+              mutedFg: 'hsl(var(--muted-foreground))',
+              accent: 'hsl(var(--primary))',
+              cardBg: 'hsl(var(--card))',
+              cardBorder: 'hsl(var(--border))',
+            }}
+          />
+        </div>
       </main>
       <Footer />
-      <div className='container mx-auto px-4 max-w-3xl'>
-        <TrustedSources
-          domain='crr'
-          variant='compact'
-          palette={{
-            fg: 'hsl(var(--foreground))',
-            muted: 'hsl(var(--foreground) / 0.85)',
-            mutedFg: 'hsl(var(--muted-foreground))',
-            accent: 'hsl(var(--primary))',
-            cardBg: 'hsl(var(--card))',
-            cardBorder: 'hsl(var(--border))',
-          }}
-        />
-      </div>
     </PublicLayout>
   );
 }

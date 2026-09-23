@@ -18,20 +18,20 @@ export function SavingsCalculator() {
   };
 
   return (
-    <section className='py-16 md:py-24 bg-gradient-to-br from-primary to-primary/85 text-white'>
+    <section className='py-16 md:py-24 bg-muted border-y border-border text-foreground'>
       <div className='container mx-auto px-4'>
         <div className='grid lg:grid-cols-2 gap-10 items-center max-w-5xl mx-auto'>
           <div>
-            <p className='text-xs font-bold uppercase tracking-wide text-white/80 mb-3'>
+            <p className='text-xs font-bold uppercase tracking-wide text-primary mb-3'>
               Bill calculator
             </p>
             <h2 className='text-3xl md:text-5xl font-extrabold tracking-tight mb-4'>
               Start with your current bill.
             </h2>
-            <p className='text-white/90 text-lg leading-relaxed mb-2'>
+            <p className='text-foreground/80 text-lg leading-relaxed mb-2'>
               Enter your average monthly power bill to see your current annual and five-year baseline.
             </p>
-            <p className='text-xs text-white/80'>
+            <p className='text-xs text-muted-foreground'>
               This is current-dollar arithmetic, not a solar quote or forecast. A provider must model any project savings.
             </p>
           </div>
