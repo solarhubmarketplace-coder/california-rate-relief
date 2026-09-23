@@ -55,15 +55,20 @@ export function Header() {
     <header className="bg-card border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-card/95">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo. The link's accessible name is its visible text ("California
+              Rate Relief" + "Solar referrals"), so speech-input users can say
+              what they see (WCAG 2.5.3). No aria-label: the old "California
+              Rate Relief home" did not contain "Solar referrals" and failed
+              Lighthouse label-content-name-mismatch. The mark is decorative
+              next to the wordmark, so its alt is empty to avoid reading the
+              name twice. */}
           <Link
             href="/"
             className="flex min-w-0 items-center"
-            aria-label="California Rate Relief home"
           >
             <Image
               src="/img/logo.svg"
-              alt="California Rate Relief"
+              alt=""
               width={36}
               height={36}
               className="h-8 w-8 sm:h-9 sm:w-9"
