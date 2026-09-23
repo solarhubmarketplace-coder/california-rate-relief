@@ -1993,4 +1993,295 @@ export const growthCities: Record<
       ],
     ],
   },
+
+  // ---------------------------------------------------------------------
+  // 2026-09-22 — 12 evidence-backed cities added off CITY_SERP_GATE_v2.csv
+  // (verdict "open" or "likely open" on a checked page-1 SERP). Each city
+  // was already a full legacy CityData entry in cities-data.ts with no
+  // growthCities counterpart, so /solar-companies/<slug> was still serving
+  // the legacy template instead of this sourced CityComparison content.
+  // No `provider` field: CSLB's license lookup blocks automation, so no
+  // installer license number here could be verified this session, and an
+  // installer roster is deliberately not added. `checks`/`faq` are also
+  // left out rather than filled with unsourced filler.
+  // ---------------------------------------------------------------------
+  fallbrook: {
+    name: "Fallbrook",
+    county: "San Diego County",
+    utility: "sdge",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Fallbrook is unincorporated San Diego County, so San Diego Gas & Electric (SDG&E) bills delivery. San Diego Community Power (SDCP) is the county's community choice aggregator; SDCP's own site names San Diego, Chula Vista, Encinitas, Imperial Beach, La Mesa and National City as member cities and says it also serves \"unincorporated areas of San Diego County,\" but it does not name Fallbrook specifically. Read the generation provider printed on the current bill — SDCP or SDG&E — before a proposal assumes either one.",
+    local:
+      "Fallbrook has no city government of its own. Building permits for unincorporated San Diego County, Fallbrook included, are issued by the County of San Diego's Planning & Development Services (PDS), which states it \"supports safe, sustainable, and well-planned growth in the unincorporated areas of the County of San Diego.\" Ask the bidder to identify PDS's current permit path and any additional review for the actual scope. Fallbrook's inland North County valley setting runs hotter and clearer than the San Diego coast, which generally helps solar production but also means more summer afternoon heat de-rating panel output.",
+    example:
+      "Put the same roof planes, shading and annual usage into every Fallbrook bid. Then compare total price, financing terms, equipment, the PDS permit scope and what SDG&E delivery charges (and SDCP generation charges, if enrolled) remain after the system is installed.",
+    sources: [
+      {
+        label: "San Diego Community Power — Our Community (member jurisdictions)",
+        url: "https://sdcommunitypower.org/our-community/",
+      },
+      {
+        label: "San Diego County Planning & Development Services — Building Permits & Forms",
+        url: "https://www.sandiegocounty.gov/content/sdc/pds/bldgforms.html",
+      },
+      {
+        label: "SDG&E — official site",
+        url: "https://www.sdge.com/",
+      },
+    ],
+  },
+
+  fontana: {
+    name: "Fontana",
+    county: "San Bernardino County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Fontana is billed by Southern California Edison (SCE) for both generation and delivery. No community choice aggregator was found operating in Fontana or the rest of San Bernardino County as of this check — read the provider name printed on the current bill to confirm before a proposal assumes SCE supplies both charges.",
+    local:
+      "Fontana's Building Safety division issues residential building permits, including solar; the city's own site could not be reached in enough depth this session to confirm whether it has adopted SolarAPP+ instant permitting, so ask the bidder to name the current permit path and timeline directly. Fontana sits in the inland Inland Empire valley, with hot, largely cloudless summers that favor solar production but also raise panel temperatures and can reduce output on the hottest afternoons.",
+    example:
+      "Put the same roof layout, shading and twelve months of SCE usage into every Fontana bid. Then compare total price, financing terms, equipment, the city's permit scope and the SCE bill that remains after the system is installed — SCE's NEM 3.0 export rate is far below the retail rate it charges for imports.",
+    sources: [
+      {
+        label: "City of Fontana — official site",
+        url: "https://www.fontana.org/",
+      },
+      {
+        label: "SCE — official site",
+        url: "https://www.sce.com/",
+      },
+    ],
+  },
+
+  fremont: {
+    name: "Fremont",
+    county: "Alameda County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Check the generation provider and enrolled program on the PG&E bill before comparing proposals. Ava Community Energy (formerly East Bay Community Energy) lists Fremont among the 16 cities and unincorporated areas it serves; Ava supplies generation while PG&E delivers the electricity, maintains the wires and sends the bill. Have each bidder use both portions of the actual account.",
+    local:
+      "Fremont's Community Development Department issues residential building permits, including solar; the city's own site could not be reached in enough depth this session to confirm its current permit path, so ask the bidder to name it and the review timeline directly. Fremont's inland-Bay-Area location, away from the coastal fog belt, generally sees more clear-sky solar hours than cities directly on the coast.",
+    example:
+      "Put the same roof layout, shade model and monthly production in every Fremont bid. Then separate solar, storage, roof and electrical work, and compare the remaining bill under the same Ava generation and PG&E delivery enrollment shown on the account.",
+    sources: [
+      {
+        label: "Ava Community Energy — Who We Serve",
+        url: "https://avaenergy.org/community/who-we-serve/",
+      },
+      {
+        label: "City of Fremont — official site",
+        url: "https://www.fremont.gov/",
+      },
+    ],
+  },
+
+  "half-moon-bay": {
+    name: "Half Moon Bay",
+    county: "San Mateo County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Check the generation provider and enrolled program on the PG&E bill. Peninsula Clean Energy renamed itself WestLight Energy in 2026 and describes serving \"San Mateo County and Los Banos,\" but its site did not name Half Moon Bay specifically among member jurisdictions as of this check — confirm current enrollment on the actual bill rather than assuming it either way. PG&E delivers the electricity and sends the bill regardless of the generation provider.",
+    local:
+      "Half Moon Bay's Building Division issues residential building permits, including solar; the city's own site could not be reached in enough depth this session to confirm its current permit path, so ask the bidder to name it and the review timeline directly. Half Moon Bay sits directly on the coast, and the Pacific marine layer brings more fog and overcast mornings than inland San Mateo County — a proposal's production estimate should account for that coastal shading pattern, not an inland default.",
+    example:
+      "Put the same roof layout, shade model and monthly production in every Half Moon Bay bid. Then compare total price, financing terms, equipment, the city's permit scope and the remaining PG&E (and WestLight Energy, if enrolled) bill after installation.",
+    sources: [
+      {
+        label: "WestLight Energy (formerly Peninsula Clean Energy) — official site",
+        url: "https://www.westlightenergy.org/",
+      },
+      {
+        label: "City of Half Moon Bay — official site",
+        url: "https://www.half-moon-bay.ca.us/",
+      },
+    ],
+  },
+
+  hayward: {
+    name: "Hayward",
+    county: "Alameda County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Check the generation provider and enrolled program on the PG&E bill. Ava Community Energy lists Hayward among the 16 cities and unincorporated areas it serves; Ava supplies generation while PG&E delivers the electricity and sends the bill. Have each bidder use both portions of the actual account.",
+    local:
+      "Hayward runs its permitting through the city's Permit Center and e-Permits online portal. Ask the bidder to confirm the current solar permit path and required inspections through that portal before signing. Hayward's inland-Bay-Area location, away from the coastal fog belt, generally sees more clear-sky solar hours than cities directly on the coast.",
+    example:
+      "Put the same roof layout, shade model and monthly production in every Hayward bid. Then separate solar, storage, roof and electrical work, and compare the remaining bill under the same Ava generation and PG&E delivery enrollment shown on the account.",
+    sources: [
+      {
+        label: "Ava Community Energy — Who We Serve",
+        url: "https://avaenergy.org/community/who-we-serve/",
+      },
+      {
+        label: "City of Hayward — Permit Center",
+        url: "https://www.hayward-ca.gov/services/permit-center",
+      },
+      {
+        label: "City of Hayward — e-Permits online portal",
+        url: "https://www.hayward-ca.gov/epermits",
+      },
+    ],
+  },
+
+  hemet: {
+    name: "Hemet",
+    county: "Riverside County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Hemet is billed by Southern California Edison (SCE) for both generation and delivery. No community choice aggregator was found operating in Hemet as of this check (San Jacinto Power, the nearby Riverside County CCA, is named for and appears limited to the separate city of San Jacinto) — read the provider name printed on the current bill to confirm.",
+    local:
+      "Hemet's Building & Safety Division issues residential building permits, including solar. Ask the bidder to confirm the current permit path and inspection requirements directly with that division. Hemet sits in an inland Riverside County valley with hot, largely cloudless summers that favor solar production but also raise panel temperatures on the hottest afternoons.",
+    example:
+      "Put the same roof layout, shading and twelve months of SCE usage into every Hemet bid. Then compare total price, financing terms, equipment, the Building & Safety permit scope and the SCE bill that remains after the system is installed.",
+    sources: [
+      {
+        label: "City of Hemet — Building & Safety Division",
+        url: "https://www.hemetca.gov/68/Building-Safety",
+      },
+      {
+        label: "SCE — official site",
+        url: "https://www.sce.com/",
+      },
+    ],
+  },
+
+  "lake-elsinore": {
+    name: "Lake Elsinore",
+    county: "Riverside County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Lake Elsinore is billed by Southern California Edison (SCE) for both generation and delivery. No community choice aggregator was found operating in Lake Elsinore as of this check — read the provider name printed on the current bill to confirm.",
+    local:
+      "Lake Elsinore's Community Development Department issues residential building permits, including solar; the city's own site could not be reached in enough depth this session to confirm its current permit path, so ask the bidder to name it and the review timeline directly. Lake Elsinore sits in an inland Riverside County valley with hot, largely cloudless summers that favor solar production but also raise panel temperatures on the hottest afternoons.",
+    example:
+      "Put the same roof layout, shading and twelve months of SCE usage into every Lake Elsinore bid. Then compare total price, financing terms, equipment, the city's permit scope and the SCE bill that remains after the system is installed.",
+    sources: [
+      {
+        label: "City of Lake Elsinore — official site",
+        url: "https://www.lake-elsinore.org/",
+      },
+      {
+        label: "SCE — official site",
+        url: "https://www.sce.com/",
+      },
+    ],
+  },
+
+  lakewood: {
+    name: "Lakewood",
+    county: "Los Angeles County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Lakewood is billed by Southern California Edison (SCE) for both generation and delivery. Clean Power Alliance, the community choice aggregator covering many Los Angeles and Ventura County cities, does not list Lakewood among its member communities as of this check — read the provider name printed on the current bill to confirm.",
+    local:
+      "Lakewood's Development Services Department handles residential building permits through its Building Permits process. Ask the bidder to confirm the current solar permit path and required inspections directly.",
+    example:
+      "Put the same roof layout, shading and twelve months of SCE usage into every Lakewood bid. Then compare total price, financing terms, equipment, the Development Services permit scope and the SCE bill that remains after the system is installed.",
+    sources: [
+      {
+        label: "City of Lakewood — Development Services: Building Permits",
+        url: "https://www.lakewoodca.gov/Development-Services/Building/Building-Permits",
+      },
+      {
+        label: "Clean Power Alliance — member communities",
+        url: "https://cleanpoweralliance.org/place/",
+      },
+    ],
+  },
+
+  "long-beach": {
+    name: "Long Beach",
+    county: "Los Angeles County",
+    utility: "sce",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Long Beach is billed by Southern California Edison (SCE) for both generation and delivery. Clean Power Alliance, the community choice aggregator covering many Los Angeles and Ventura County cities, does not list Long Beach among its member communities as of this check — read the provider name printed on the current bill to confirm.",
+    local:
+      "Long Beach's Building and Safety Bureau, inside its Development Services department, handles residential building permits, including the mechanical, electrical and plumbing work a solar install involves. Ask the bidder to confirm the current permit path, appointment process and required inspections directly with the Bureau.",
+    example:
+      "Put the same roof layout, shading and twelve months of SCE usage into every Long Beach bid. Then compare total price, financing terms, equipment, the Building and Safety Bureau's permit scope and the SCE bill that remains after the system is installed.",
+    sources: [
+      {
+        label: "City of Long Beach — Building and Safety Bureau",
+        url: "https://www.longbeach.gov/lbds/building/",
+      },
+      {
+        label: "Clean Power Alliance — member communities",
+        url: "https://cleanpoweralliance.org/place/",
+      },
+    ],
+  },
+
+  merced: {
+    name: "Merced",
+    county: "Merced County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Merced is billed by Pacific Gas and Electric (PG&E) for both generation and delivery. No community choice aggregator was found operating in Merced as of this check — read the provider name printed on the current bill to confirm.",
+    local:
+      "Merced's Development Services Department issues residential building permits, including solar, but the city's own site returned an access error every time it was checked this session, so its current permit path could not be independently confirmed here. Ask the bidder to name the department's current process, required inspections and timeline directly, and confirm it against the department before signing. Merced's Central Valley location has hot, clear summers that favor solar production but also raise panel temperatures on the hottest afternoons, and winter tule fog can reduce output for stretches of December and January.",
+    example:
+      "Put the same roof layout, shading and twelve months of PG&E usage into every Merced bid. Then compare total price, financing terms, equipment, the Development Services permit scope and the PG&E bill that remains after the system is installed.",
+    sources: [
+      {
+        label: "PG&E — official site",
+        url: "https://www.pge.com/",
+      },
+    ],
+  },
+
+  "moreno-valley": {
+    name: "Moreno Valley",
+    county: "Riverside County",
+    utility: "mvu",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Moreno Valley runs its own municipal utility, Moreno Valley Utility (MVU), rather than being served by SCE — MVU bills both generation and delivery directly, so a citywide SCE or CCA rate does not apply here. Confirm the current rate schedule with MVU rather than assuming an investor-owned utility's figures.",
+    local:
+      "Moreno Valley's Community Development Department issues residential building permits, with online submission through the city's Building Services and SimpliCITY portals. Ask the bidder to confirm the current solar permit path and required inspections directly. Moreno Valley sits in an inland Riverside County valley with hot, largely cloudless summers that favor solar production but also raise panel temperatures on the hottest afternoons.",
+    example:
+      "Put the same roof layout, shading and twelve months of MVU usage into every Moreno Valley bid. Then compare total price, financing terms, equipment, the city's permit scope and the MVU bill that remains after the system is installed — MVU sets its own net-metering terms and is not bound by the CPUC's NEM 3.0 decision.",
+    sources: [
+      {
+        label: "City of Moreno Valley — Building Services / Permits",
+        url: "https://www.moval.org/cdd/services/permits-new.html",
+      },
+      {
+        label: "City of Moreno Valley — Utilities",
+        url: "https://www.moval.org/resident-services/utilities.html",
+      },
+    ],
+  },
+
+  "mountain-view": {
+    name: "Mountain View",
+    county: "Santa Clara County",
+    utility: "pge",
+    sourceCheckedDate: "2026-09-22",
+    bill:
+      "Check the generation provider and enrolled program on the PG&E bill. Silicon Valley Clean Energy (SVCE) lists Mountain View among its thirteen member communities in Santa Clara County; SVCE supplies generation while PG&E delivers the electricity and sends the bill. Have each bidder use both portions of the actual account.",
+    local:
+      "Mountain View's Building Division issues residential building permits, including solar; the city's own site could not be reached in enough depth this session to confirm its current permit path, so ask the bidder to name it and the review timeline directly. Mountain View's inland South Bay location, away from the coastal fog belt, generally sees more clear-sky solar hours than cities directly on the coast.",
+    example:
+      "Put the same roof layout, shade model and monthly production in every Mountain View bid. Then separate solar, storage, roof and electrical work, and compare the remaining bill under the same SVCE generation and PG&E delivery enrollment shown on the account.",
+    sources: [
+      {
+        label: "Silicon Valley Clean Energy — Communities",
+        url: "https://www.svcleanenergy.org/communities/",
+      },
+      {
+        label: "City of Mountain View — official site",
+        url: "https://www.mountainview.gov/",
+      },
+    ],
+  },
 };
