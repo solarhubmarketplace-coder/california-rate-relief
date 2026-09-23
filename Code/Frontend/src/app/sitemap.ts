@@ -8,6 +8,7 @@ import { GLP1_INDEX_ROUTES } from '@/lib/glp1-seo-routes';
 import { GROWTH_ROUTES, LOCAL_RELEASE_REVIEW_ROUTES } from '@/lib/growth-routes';
 import { getPublishableCityCostRows } from '@/data/city-cost-data';
 import { isRedirectedPath } from '@/lib/canonical-redirects';
+import { cityPageDates } from '@/lib/city-pages';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
 // =============================================================================
@@ -259,7 +260,6 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   // Regional hub pages route through src/app/solar-savings/[city]/page.tsx; use that
   // file's mtime as the stable proxy (per-slug mtime would always be the same).
   const solarSavingsRouteMtime = fileMtime('src/app/solar-savings/[city]/page.tsx', today);
-  const solarCompaniesRouteMtime = fileMtime('src/app/solar-companies/[city]/page.tsx', today);
 
   const regionalPages: MetadataRoute.Sitemap = regionalSlugs.map((slug) => ({
     url: `${base}/solar-savings/${slug}`,
@@ -268,10 +268,15 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  // City pages (76+ from cities-data.ts) — both /solar-savings and /solar-companies
+  // City pages (76+ from cities-data.ts) — both /solar-savings and /solar-companies.
+  // 2026-09-22: lastModified is the same date the page shows as "Updated" and
+  // emits as dateModified (cityPageDates in src/lib/city-pages.ts), rather
+  // than one audit date for every city.
+  const cityDate = (type: 'companies' | 'savings', slug: string) =>
+    new Date(`${cityPageDates(type, slug).modified}T00:00:00.000Z`);
   const citySavingsPages: MetadataRoute.Sitemap = getAllCitySlugs().map((slug) => ({
     url: `${base}/solar-savings/${slug}`,
-    lastModified: solarSavingsRouteMtime,
+    lastModified: cityDate('savings', slug),
     changeFrequency: 'monthly',
     priority: 0.75,
   }));
@@ -282,7 +287,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
       .map(route => route.split('/').pop()!),
   ])].map((slug) => ({
     url: `${base}/solar-companies/${slug}`,
-    lastModified: solarCompaniesRouteMtime,
+    lastModified: cityDate('companies', slug),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
@@ -312,11 +317,12 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
 
   // claude/ca-citycost-20260918 — /solar-cost/[city]. Built from the same gate
   // the route's generateStaticParams uses, so a city with an unsourced permit
-  // or utility field is not advertised here. lastModified is the row's own
-  // sourcesFetchedAt rather than a run date: the gate guarantees it is real.
+  // or utility field is not advertised here. lastModified is the page's own
+  // verified date (the row's sourcesFetchedAt, or a newer template or
+  // utility-split source), the same one its byline and dateModified carry.
   const cityCostPages: MetadataRoute.Sitemap = getPublishableCityCostRows().map((row) => ({
     url: `${base}/solar-cost/${row.slug}`,
-    lastModified: new Date(`${row.sourcesFetchedAt}T00:00:00.000Z`),
+    lastModified: new Date(`${cityPageDates('cost', row.slug).modified}T00:00:00.000Z`),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));
