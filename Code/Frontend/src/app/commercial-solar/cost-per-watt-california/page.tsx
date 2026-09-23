@@ -225,11 +225,16 @@ export default function CommercialSolarCost() {
                 <strong>January 1, 2027</strong>.{/* catax-05 */} Verified {VERIFIED}.
               </p>
 
+              {/* The two deadline cards sit before the first h2. Their titles stay
+                  h3 elements (the prose and CRR type rules style by tag), but are
+                  exposed as level 2 so the outline does not skip from h1 to h3
+                  (Lighthouse heading-order). The TOC rail only collects h2
+                  elements, so it is unchanged. */}
               <div className="my-8 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-xl border-2 border-status-warning/30 bg-status-warning/10 p-5">
                   <div className="mb-2 flex items-start gap-2">
                     <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-status-warning" aria-hidden="true" />
-                    <h3 className="font-bold text-foreground">Federal credit: December 31, 2027</h3>
+                    <h3 aria-level={2} className="font-bold text-foreground">Federal credit: December 31, 2027</h3>
                   </div>
                   <p className="text-sm text-foreground/90">
                     Section 48E does not apply to a wind or solar facility placed in service after
@@ -242,7 +247,7 @@ export default function CommercialSolarCost() {
                 <div className="rounded-xl border-2 border-status-warning/30 bg-status-warning/10 p-5">
                   <div className="mb-2 flex items-start gap-2">
                     <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0 text-status-warning" aria-hidden="true" />
-                    <h3 className="font-bold text-foreground">Property tax: inoperative January 1, 2027</h3>
+                    <h3 aria-level={2} className="font-bold text-foreground">Property tax: inoperative January 1, 2027</h3>
                   </div>
                   <p className="text-sm text-foreground/90">
                     Revenue &amp; Taxation Code §73 keeps a solar system&apos;s added value off your
