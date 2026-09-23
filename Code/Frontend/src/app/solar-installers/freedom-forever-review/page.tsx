@@ -16,15 +16,15 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title:
-    "Freedom Forever Solar Reviews (2026): Chapter 11 Bankruptcy",
+    "Freedom Forever Reviews (2026): Licenses & Financing",
   description:
-    "Freedom Forever filed Chapter 11 on April 15, 2026. What it means for existing customers, pending installs, and California shoppers.",
+    "Freedom Forever filed Chapter 11 in April 2026. Here is what its own site says about financing, warranty terms, CSLB licenses, and court filings.",
   alternates: {
     canonical: '/solar-installers/freedom-forever-review',
   },
   openGraph: {
     title:
-      'Freedom Forever Solar Reviews (2026): The Chapter 11 Bankruptcy, Explained',
+      'Freedom Forever Solar Reviews (2026): Licenses, Financing, and What Its Site Doesn’t Say',
     description:
       'What the April 15 Chapter 11 filing means for existing Freedom Forever customers and anyone shopping for solar in California right now.',
     type: 'article',
@@ -36,11 +36,11 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Freedom Forever Solar Review 2026: What the Chapter 11 Bankruptcy Means',
+    'Freedom Forever Solar Reviews (2026): Licenses, Financing, and What Its Site Doesn’t Say',
   description:
     'Freedom Forever filed Chapter 11 on April 15, 2026. A plain-English review of what it means for customers and what Californians should do if they have a pending quote.',
   datePublished: '2026-04-22',
-  dateModified: '2026-04-22',
+  dateModified: '2026-09-22',
   author: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
@@ -145,21 +145,24 @@ export default function FreedomForeverReview() {
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Freedom Forever Solar Reviews (2026): What the Chapter 11
-                Bankruptcy Means
+                Freedom Forever Solar Reviews (2026): Licenses, Financing,
+                and What Its Site Doesn&apos;t Say
               </h1>
-              
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-22'>Updated April 22, 2026</time>
+                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
                   <span>11 min read</span>
                 </div>
               </div>
+              <p className='text-foreground/80 leading-relaxed mt-6'>
+                Freedom Forever filed for Chapter 11 reorganization on April 15, 2026 (already covered in detail below on the live page). Separately from that, its own site currently advertises three financing paths — Purchase, Lease, and PPA — a 25-year production guarantee, and three California contractor licenses that don&apos;t match the single number this page previously cited. Below is what we could confirm on freedomforever.com this week, what its site still doesn&apos;t publish (a transfer-on-sale process), and what federal court records — not review-site scores — show about the complaint pattern.
+              </p>
             </header>
 
             {/* TL;DR */}
@@ -386,6 +389,64 @@ export default function FreedomForeverReview() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                California Contractor Licenses Freedom Forever Publishes
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Freedom Forever&apos;s own published license page lists three California CSLB numbers, not one: <strong>#1029644</strong> for Freedom Forever LLC (C10 Electrical, B General Building Contractor, C39 Roofing, C46 Solar), <strong>#1125479</strong> for Freedom Forever Northern California, LLC, and <strong>#1124448</strong> for Freedom Forever Southern California, LLC (freedomforever.com, Contractor Licenses, accessed September 22, 2026). None of these is the #1015697 this page previously cited below, and that number doesn&apos;t appear anywhere on Freedom Forever&apos;s own license page. We couldn&apos;t confirm current status, bond, or complaint history for any of the four numbers this session — CSLB&apos;s online lookup was unreachable to automated fetch (rate-limited on every attempt, September 22, 2026). Don&apos;t treat any of them as &ldquo;active&rdquo; until you verify directly at CSLB; see our{' '}
+                <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary hover:underline font-medium'>
+                  full contractor-verification walkthrough
+                </Link>
+                . Given the Chapter 11 case, confirming the specific entity name on your contract against one of these three numbers matters more than usual — a lease, PPA, or service agreement is with a specific LLC, not the &ldquo;Freedom Forever&rdquo; brand generally.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                How Freedom Forever Structures a Purchase
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Freedom Forever&apos;s own site names three financing paths: <strong>Purchase, Lease, and PPA</strong> (freedomforever.com, accessed September 22, 2026), on top of the third-party Mosaic loan financing already described above. It also brands a financing option <strong>&ldquo;Aura by Freedom Forever&rdquo;</strong> on its services page, without publishing rate, term, or down-payment detail there (freedomforever.com, accessed September 22, 2026). The site states that lease and PPA customers can &ldquo;take advantage of available tax credit benefits&rdquo; through those structures (freedomforever.com/why-go-solar/, accessed September 22, 2026) — get the specific mechanism in writing, since a lease or PPA customer typically doesn&apos;t claim the federal tax credit directly; the financing company does. No escalator rate, lease term length, or down-payment figure is published on any page we could reach this session — ask for those in writing before signing, and see our{' '}
+                <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary hover:underline font-medium'>
+                  Solar Lease vs. PPA vs. Loan vs. Cash explainer
+                </Link>{' '}
+                for what each structure generally means.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                How the Guarantee Actually Works, Bankruptcy Aside
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Independent of the bankruptcy question above, here&apos;s how the guarantee is supposed to work day-to-day: your system is monitored continuously, and if it underproduces relative to the estimate, Freedom Forever says it will &ldquo;make it right through repairs, equipment replacement, or financial compensation&rdquo; (freedomforever.com/faq/, accessed September 22, 2026). Underneath that guarantee, equipment carries its own manufacturer terms — solar panels typically 25-year product-and-performance coverage, inverters typically 10 to 25 years &ldquo;depending on brand and model&rdquo; (same source) — and workmanship is covered under Freedom Forever&apos;s own installation warranty. The company&apos;s stated exclusions include &ldquo;major shading changes or natural disasters.&rdquo; None of this changes what the bankruptcy risk section above already tells you: whether any of it is honored going forward depends on the Chapter 11 outcome, not on what the website currently promises.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                Requesting Service, and What Happens If You Sell
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                For a roof leak, Freedom Forever&apos;s own instructions say to email customer support &ldquo;right away&rdquo; and states the company will &ldquo;respond with urgency&rdquo;; for a production or equipment issue, it asks you to check the monitoring app, inverter status, and breakers first, then says it will &ldquo;schedule a service visit if needed&rdquo; (freedomforever.com/faq/, accessed September 22, 2026). No published response-time commitment (a number of hours or days) appears on any service page we could reach.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                We searched Freedom Forever&apos;s FAQ, guarantee page, and both service pages this session and found <strong>no published process for transferring the system, the guarantee, or a Lease/PPA agreement to a home buyer</strong> — unlike Sunrun and Palmetto, which each publish a step-by-step transfer flow on their own sites. That&apos;s a real gap, not an oversight in this review, and it&apos;s more consequential than usual given the open bankruptcy case.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-2'><strong>Questions to ask before you rely on any of this:</strong></p>
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>Which of the three licensed entities — Freedom Forever LLC, Northern California LLC, or Southern California LLC — is the actual counterparty on your contract, and does its CSLB number match one of the three above?</li>
+                <li>What&apos;s the written escalator rate and term length for a lease or PPA, and does &ldquo;Aura by Freedom Forever&rdquo; financing carry different terms than a third-party Mosaic loan?</li>
+                <li>In writing: what happens to your guarantee, service commitment, and any remaining financing balance if you sell the home before the Chapter 11 case resolves?</li>
+                <li>
+                  If you already have a signed contract or an open Chapter 11 claim question, see our{' '}
+                  <Link href='/solar-problems/solar-company-took-my-money-california' className='text-primary hover:underline font-medium'>
+                    solar company took my money guide
+                  </Link>{' '}
+                  for what recourse generally looks like.
+                </li>
+              </ul>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 Reputation & Complaint History
               </h2>
 
@@ -412,6 +473,14 @@ export default function FreedomForeverReview() {
                 surprises after install, subcontractor quality
                 variability, and difficulty getting warranty work
                 scheduled.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                What Federal Court Records Show (Not Review-Site Scores)
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Beyond the BBB, Trustpilot, and SolarReviews figures above, federal court records offer a different, primary-source view. A search of CourtListener&apos;s RECAP database (federal PACER filings) for &ldquo;Freedom Forever&rdquo; turns up 42 dockets naming a Freedom Forever entity as a party, filed between 2019 and 2026 (courtlistener.com, accessed September 22, 2026). The largest single category is claims under the <strong>Telephone Consumer Protection Act</strong> — unsolicited sales calls or texts — filed in Texas, California, Pennsylvania, and Massachusetts federal courts; the rest include diversity-jurisdiction fraud claims, a Fair Credit Reporting Act claim, a Truth in Lending Act claim, and a Magnuson-Moss Warranty Act claim (courtlistener.com, accessed September 22, 2026). Eight of the 42 are consumer telephone-marketing (TCPA) claims filed in California federal courts — four in the Southern District (<em>Ewing v. Freedom Forever, LLC</em>, filed 2020, 2023, 2024, and 2025), three in the Central District (<em>Bales</em>, 2023; <em>Clark</em>, 2024; <em>Shelton</em>, 2025), and one in the Northern District (<em>Naiman v. Freedom Forever, LLC</em>, filed 2019). Two more California federal dockets name the company but aren&apos;t consumer complaints: an employment-discrimination removal (<em>Gomez</em>, C.D. Cal., 2022) and a supplier breach-of-contract claim Freedom Forever itself filed as plaintiff (<em>v. Silfab Solar Inc.</em>, S.D. Cal., 2024) (courtlistener.com, accessed September 22, 2026). These are filed allegations, not court findings — a docket existing doesn&apos;t mean a court ruled against the company — but the pattern (repeated TCPA claims specifically) is a more concrete signal than a star rating.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -563,6 +632,24 @@ export default function FreedomForeverReview() {
                     Forever used to finance many customer systems, is
                     listed as the largest creditor with a claim of
                     approximately $120 million.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>
+                    What CSLB license does Freedom Forever use in California?
+                  </h3>
+                  <p className='text-foreground/80 leading-relaxed'>
+                    Freedom Forever&apos;s own site lists three: #1029644, #1125479, and #1124448 (freedomforever.com, accessed September 22, 2026) — not the #1015697 previously cited here. None were verified for current status this session; check whichever number is on your contract at CSLB before signing.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>
+                    Does Freedom Forever say what happens to my contract if I sell my home?
+                  </h3>
+                  <p className='text-foreground/80 leading-relaxed'>
+                    Not on its public site as of this session. Get that answer in writing from your sales rep before signing, especially while the Chapter 11 case is open.
                   </p>
                 </div>
               </div>
