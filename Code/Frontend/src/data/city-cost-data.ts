@@ -40,17 +40,36 @@ import type { UtilityRateKey } from './utility-rate-tracker';
 // =============================================================================
 
 // FIGURES ON THIS LANE
-// The page states no system price, no price range, no per-watt figure and no
-// payback period: none of those can be sourced for a city, and inventing them
-// is the defect that forced this project's 42-page correction.
+// The page states no CITY-specific system price, no price range invented for
+// a city, no per-watt figure attributed to a city, and no payback period:
+// none of those can be sourced for a city, and inventing them is the defect
+// that forced this project's 42-page correction.
 //
-// A CITY PERMIT FEE is the one exception, and it is not an exception to the
-// rule so much as an instance of it: where a city publishes an exact figure in
-// an adopted fee schedule, the row quotes that figure and renders it beside a
-// link to the document it came from. It is a published municipal charge, not an
-// estimate of what solar costs. Where a city publishes no figure, the row says
-// so plainly — that is itself the answer to what the permit will cost, and it
-// is never rounded up into a guess.
+// A CITY PERMIT FEE is the one per-city exception, and it is not an exception
+// to the rule so much as an instance of it: where a city publishes an exact
+// figure in an adopted fee schedule, the row quotes that figure and renders it
+// beside a link to the document it came from. It is a published municipal
+// charge, not an estimate of what solar costs. Where a city publishes no
+// figure, the row says so plainly — that is itself the answer to what the
+// permit will cost, and it is never rounded up into a guess.
+//
+// STATEWIDE BENCHMARK, added 2026-09-22 (Chad's decision)
+// The page may also state ONE sourced, statewide installed-price benchmark —
+// currently Lawrence Berkeley National Laboratory's Tracking the Sun figure —
+// defined once in src/data/solar-cost-benchmark.ts and rendered by the
+// StatewideCostBenchmark component. That is a second, narrow exception to the
+// rule above, and it is bounded tightly:
+//   - It must always read as statewide/national, never as this city's price.
+//     The component's own copy enforces the wording; this file does not carry
+//     a per-row benchmark value, so a row cannot drift from it or restate it
+//     as local.
+//   - It is the same figure on every row. If a city-specific installed-price
+//     figure is ever sourced for an individual city, it does not belong in
+//     this benchmark file or component — it would need its own field here,
+//     gated through GATED_FIELDS/unsourcedFields() like every other rendered
+//     fact, and it still could not be a payback period or a savings estimate.
+//   - It does not relax anything above: still no city-specific price, no
+//     invented range for a city, no payback period, no savings promise.
 //
 // SEED STATE NOTE, superseded 2026-09-18: all 44 rows below now carry sourced
 // values. The five that could not have an exact fee confirmed say what the
@@ -127,12 +146,12 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: 'San Diego County',
     utilityKey: 'sdge',
     cca: 'San Diego Community Power (generation); SDG&E remains the delivery utility',
-    permitUrl: 'https://www.sandiego.gov/development-services/permits/solar-photovoltaic-permit',
+    permitUrl: 'https://www.sandiego.gov/development-services/forms-publications/information-bulletins/301',
     permitFeeNote:
-      'The City states that inspection, review and other fees vary with project scope and refers applicants to Information Bulletin 301; no flat solar fee is published.',
-    permitFeeSource: 'City of San Diego Development Services, Solar Photovoltaic Permit page and Information Bulletin 301',
-    permitOnline: 'Yes. Applications are filed online through the Accela portal.',
-    sourcesFetchedAt: '2026-09-18',
+      "Information Bulletin 301 publishes the actual schedule: a self-certified rooftop system (up to 38.4 kW AC, no fire-plan or structural review) costs a $275.80 first system/inverter inspection fee with no plan-check fee; a system needing full plan review costs a $154.20 plan-check fee plus the $275.80 inspection fee. Since August 8, 2023 the City self-certifies qualifying residential solar and battery permits instantly instead of routing them through staff review, which the City says previously took 7-10 days on average.",
+    permitFeeSource: 'City of San Diego Development Services, Information Bulletin 301',
+    permitOnline: 'Yes. Self-certified systems issue instantly; other applications are filed online through the Accela portal.',
+    sourcesFetchedAt: '2026-09-22',
   },
   {
     slug: 'escondido',
@@ -443,11 +462,11 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     cca: "Central Coast Community Energy (3CE)",
     permitUrl: "https://www.cityofpacificgrove.gov/our_city/departments/community_development/planning/SolarAppPlus.php",
     permitFeeNote:
-      "Page states plainly: \"The Solar App+ System is not in service at this time for the City of Pacific Grove.\" No fee information or fee schedule is given on this page. A separate iworq-based online \"Solar Permit Application\" form exists (portal.iworq.net/PACIFICGROVE/new-permit/608/10808) but fee details were not confirmed there.",
-    permitFeeSource: "City of Pacific Grove SolarAppPlus.php page",
+      "The City's own page states plainly: \"The Solar App+ System is not in service at this time for the City of Pacific Grove.\" In the absence of SolarAPP+'s automated fee calculation, the City's Master Fee Schedule (Community Development fees effective 11/4/2024) lists a flat \"Solar voltaic system\" fee of $670 under Miscellaneous Building Permits.",
+    permitFeeSource: "City of Pacific Grove SolarAppPlus.php page and Master Fee Schedule (Community Development fees effective 11/4/2024)",
     permitOnline:
-      "No. The City's own page states that SolarAPP+ is not in service for Pacific Grove at this time. The page does not describe another online route for a solar permit, so treat it as a counter or email submittal until the City says otherwise.",
-    sourcesFetchedAt: "2026-09-18",
+      "No. The City's own page states that SolarAPP+ is not in service for Pacific Grove at this time; applicants apply through the City's online Solar Permit Application portal (portal.iworq.net) or an over-the-counter form instead.",
+    sourcesFetchedAt: "2026-09-22",
   },
   {
     slug: "petaluma",
@@ -594,11 +613,11 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     cca: "Ava Community Energy (formerly East Bay Community Energy) \u2014 began serving Stockton in April 2025 for generation only; \"PG&E delivers the power",
     permitUrl: "https://www.stocktonca.gov/business/building___life_safety/automated_solar_permitting.php",
     permitFeeNote:
-      "Page does not give a City permit dollar amount; states \"A processing fee will be charged by SolarApp+ NREL\" and \"The initial processing fee charged by the SolarApp+ website covers up to three revisions\" \u2014 no dollar figure specified",
-    permitFeeSource: "City of Stockton Automated Solar Permitting page",
+      "The City's own building-permit fee, separate from SolarAPP+'s processing fee, is published in the FY 2025-26 Adopted Fee Schedule: a residential photovoltaic system permit is $314.00 flat for 15 kW or less, or $450.00 plus $15.00 per kW above 15 kW. SolarAPP+'s own processing fee (covering up to three revisions) is charged separately and its dollar amount is not published by the City.",
+    permitFeeSource: "City of Stockton FY 2025-26 Adopted Fee Schedule (effective 7/1/2025) and City of Stockton Automated Solar Permitting page",
     permitOnline:
       "yes \u2014 SolarAPP+ named (submission at gosolarapp.org) plus City of Stockton Accela Citizen Portal for permit application/inspection scheduling; described as \"Residential Solar One Stop\" with auto-issued permit",
-    sourcesFetchedAt: "2026-09-18",
+    sourcesFetchedAt: "2026-09-22",
   },
   {
     slug: "thousand-oaks",

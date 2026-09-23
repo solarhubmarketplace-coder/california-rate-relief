@@ -4,6 +4,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { IntentCTA } from '@/components/growth/IntentCTA';
+import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
 import { cityCostPath, getPublishableCityCostRows } from '@/data/city-cost-data';
 import { getUtilityRate, RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
 
@@ -24,11 +25,19 @@ import { getUtilityRate, RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
 // link. scripts/assert-city-links.mjs fails the moment that stops being true.
 //
 // WHAT IT MAY AND MAY NOT SAY
-// The cost layer publishes no system price, no price range, no per-watt figure
-// and no payback period, and neither does its index. The only facts stated per
-// city here are the two the row already carries with a source: the county and
-// the utility that bills the address. Everything quantitative stays on the city
-// page beside the document it came from.
+// The cost layer publishes no city-specific system price, no price range
+// invented for a city, no per-watt figure attributed to a city, and no
+// payback period, and neither does its index. The only per-city facts stated
+// here are the two the row already carries with a source: the county and the
+// utility that bills the address. Everything quantitative beyond that stays
+// on the city page beside the document it came from.
+//
+// The one exception, added 2026-09-22 (Chad's decision): this index and every
+// city page may also state ONE sourced, statewide installed-price benchmark
+// (currently Lawrence Berkeley National Laboratory's Tracking the Sun figure)
+// via the shared StatewideCostBenchmark component. It always reads as
+// statewide, never as a city's price — see the policy comment atop
+// src/data/city-cost-data.ts and src/data/solar-cost-benchmark.ts.
 // =============================================================================
 
 const path = '/solar-cost';
@@ -136,10 +145,11 @@ export default function SolarCostIndex() {
 
             <p className='text-lg text-foreground/80 leading-relaxed mb-5'>
               {rows.length} California cities have a page here, and not one of them prints a
-              price. That is deliberate. The number that governs your project is the one on the
-              contract you are handed, and under California Business and Professions Code section
-              7169 it has to arrive in writing, on the front or cover page, in boldface 16-point
-              type, showing the total cost of the system including financing costs.
+              price for your home. That is deliberate: what a system actually costs depends on
+              your roof, your utility and the contract your own installer hands you &mdash; not a
+              website. Under California Business and Professions Code section 7169 that number has
+              to arrive in writing, on the front or cover page, in boldface 16-point type, showing
+              the total cost of the system including financing costs.
             </p>
             <p className='text-foreground/80 leading-relaxed mb-5'>
               What a city page does carry is the part that genuinely differs by address: which
@@ -149,6 +159,9 @@ export default function SolarCostIndex() {
               everywhere. Every one of those is stated beside the document it came from and the
               date it was checked.
             </p>
+
+            <StatewideCostBenchmark />
+
             <p className='text-foreground/80 leading-relaxed mb-5'>
               The rate you pay now is the other half of the arithmetic, and it is not a city
               fact but a utility one. The{' '}
