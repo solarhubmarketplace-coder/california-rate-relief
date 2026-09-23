@@ -4,289 +4,163 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Mail, MapPin, Shield } from 'lucide-react';
 import { FloatingMobileCTA } from '@/components/landing/FloatingMobileCTA';
+import { FOOTER_TRUST_LINKS, TRUST_LINKS } from '@/components/trust/trust-links';
+
+// =============================================================================
+// CRR footer (design pass 2, 2026-09-22)
+//
+// Ink surface rather than a brand-color band: in the neutral-publisher palette
+// the brand color is kept for links, buttons and the one ask. The trust column
+// is the set 22b §3 asks for — About, Editorial policy, How we make money,
+// Methodology, Corrections, Sources we use, Privacy / Do not sell — read from
+// components/trust/trust-links.ts so the footer and the pages cannot drift.
+//
+// Guide links are the same as before (the two section indexes were added
+// 2026-09-18 because twenty /solar-cost city pages and eight installer reviews
+// had no other inbound internal link; keep them).
+// =============================================================================
+
+const GUIDE_LINKS = [
+  { href: '/commercial-solar', label: 'Commercial solar' },
+  { href: '/solar-cost', label: 'Solar cost by city' },
+  { href: '/solar-installers', label: 'Solar company reviews' },
+  { href: '/solar-problems', label: 'Solar problems' },
+  { href: '/battery', label: 'Home batteries' },
+  { href: '/blog', label: 'Blog' },
+];
+
+const linkClass =
+  'text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline';
+const headingClass =
+  '!mb-4 !text-sm !font-semibold uppercase !tracking-wider text-white';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='bg-primary border-t border-primary/20 py-16'>
+    <footer className='bg-foreground py-14 text-white'>
       <div className='container mx-auto px-4'>
-        <div className='max-w-6xl mx-auto'>
-          <div className='grid md:grid-cols-4 gap-10 mb-12'>
+        <div className='mx-auto max-w-6xl'>
+          <div className='mb-12 grid gap-10 md:grid-cols-2 lg:grid-cols-4'>
             {/* Brand */}
             <div className='space-y-4'>
               <div className='flex items-center gap-3'>
-                <div className='relative'>
-                  <Image
-                    src='/img/logo.svg'
-                    alt='California Rate Relief Program'
-                    width={40}
-                    height={40}
-                    className='h-10 w-10'
-                  />
-                </div>
+                <Image
+                  src='/img/logo.svg'
+                  alt='California Rate Relief Program'
+                  width={40}
+                  height={40}
+                  className='h-10 w-10'
+                />
                 <div>
-                  <span className='text-white font-bold text-xl tracking-tight block'>
+                  <span className='block text-lg font-bold tracking-tight text-white'>
                     California Rate Relief
                   </span>
-                  <span className='text-white/80 text-xs font-medium tracking-wide uppercase'>
+                  <span className='text-xs font-medium uppercase tracking-wide text-white/70'>
                     Program
                   </span>
                 </div>
               </div>
-              <p className='text-white/90 text-sm leading-relaxed font-medium'>
+              <p className='text-sm leading-relaxed text-white/80'>
                 California Rate Relief collects residential and commercial
                 project information and connects California property owners with
                 solar providers for further review.
               </p>
-              <div className='flex items-center gap-2 pt-2'>
-                <Shield className='h-4 w-4 text-white/80' />
-                <span className='text-white/80 text-xs font-medium'>
+              <div className='flex items-center gap-2'>
+                <Shield className='h-4 w-4 text-white/70' aria-hidden='true' />
+                <span className='text-xs font-medium text-white/80'>
                   Private referral service
                 </span>
               </div>
-              <p className='text-white/80 text-xs leading-relaxed pt-2'>
+              <p className='text-xs leading-relaxed text-white/70'>
                 California Rate Relief is a private referral service. We are not
                 a government agency or utility, and are not affiliated with or
                 endorsed by any government agency, utility, or the CPUC.
               </p>
             </div>
 
-            {/* Contact */}
+            {/* Guides */}
             <div>
-              <h4 className='text-white font-bold text-lg mb-6 tracking-tight'>
-                Contact Us
-              </h4>
-              <ul className='space-y-4'>
-                <li className='flex items-center gap-3'>
-                  <div className='w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center'>
-                    <Mail className='h-5 w-5 text-white' />
-                  </div>
-                  <div>
-                    <a
-                      href='mailto:info@ratereliefca.com'
-                      className='text-white font-semibold hover:text-white/80 transition-colors block'
-                    >
-                      info@ratereliefca.com
-                    </a>
-                    <span className='text-white/70 text-xs'>Email support</span>
-                  </div>
-                </li>
-                <li className='flex items-start gap-3'>
-                  <div className='w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mt-0.5'>
-                    <MapPin className='h-5 w-5 text-white' />
-                  </div>
-                  <div>
-                    <span className='text-white font-semibold block'>
-                      Serving all of California
-                    </span>
-                    <span className='text-white/70 text-xs'>
-                      Statewide coverage
-                    </span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            {/* Links */}
-            <div>
-              <h4 className='text-white font-bold text-lg mb-6 tracking-tight'>
-                Information
-              </h4>
-              <ul className='space-y-3'>
-                <li>
-                  <Link
-                    href='/commercial-solar'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Commercial Solar
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
-                  </Link>
-                </li>
-                {/*
-                  Added 2026-09-18. Both of these sections were reachable only
-                  from the sitemap or from a handful of body links: twenty of the
-                  fifty-seven /solar-cost city pages and eight of the
-                  thirty-one installer reviews had no inbound internal link at
-                  all. Their indexes belong in the sitewide footer for the same
-                  reason /blog and /commercial-solar are here.
-                */}
-                <li>
-                  <Link
-                    href='/solar-cost'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Solar Cost by City
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/solar-installers'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Solar Company Reviews
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/solar-problems'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Solar Problems
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      &rarr;
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/battery'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Home Batteries
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      &rarr;
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/blog'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Blog
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      &rarr;
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/privacy'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Privacy Policy
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      &rarr;
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/terms'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Terms of Service
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      &rarr;
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/corrections'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Corrections
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      &rarr;
-                    </span>
-                  </Link>
-                </li>
+              <h2 className={headingClass}>Guides</h2>
+              <ul className='space-y-2.5 text-sm'>
+                {GUIDE_LINKS.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className={linkClass}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
                 <li>
                   <a
                     href='https://www.cpuc.ca.gov/consumer-support/consumer-programs-az/solar-energy'
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
+                    className={linkClass}
                   >
-                    CPUC Consumer Information
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      &rarr;
-                    </span>
+                    CPUC consumer information
                   </a>
-                </li>
-                <li>
-                  <Link
-                    href='/privacy#california-privacy-rights'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Do Not Sell My Information
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>
-                      &rarr;
-                    </span>
-                  </Link>
                 </li>
               </ul>
             </div>
-            {/* About/trust column (D.7, 2026-09-22). Reuses existing routes —
-                no new pages. /about, /methodology and /author/chad-simpson
-                had no footer link at all before this; this also gives the
-                two header nav items dropped in the D.5 trim (Solar in CA,
-                About) a guaranteed inbound link. */}
+
+            {/* Trust and policies (22b §3.9) */}
             <div>
-              <h4 className='text-white font-bold text-lg mb-6 tracking-tight'>
-                About
-              </h4>
-              <ul className='space-y-3'>
-                <li>
-                  <Link
-                    href='/about'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    About
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
-                  </Link>
+              <h2 className={headingClass}>Trust and policies</h2>
+              <ul className='space-y-2.5 text-sm'>
+                {FOOTER_TRUST_LINKS.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className={linkClass}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h2 className={headingClass}>Contact</h2>
+              <ul className='space-y-4 text-sm'>
+                <li className='flex items-start gap-3'>
+                  <Mail className='mt-0.5 h-4 w-4 flex-shrink-0 text-white/70' aria-hidden='true' />
+                  <div>
+                    <a href='mailto:info@ratereliefca.com' className={`font-medium ${linkClass}`}>
+                      info@ratereliefca.com
+                    </a>
+                    <span className='block text-xs text-white/70'>Email support</span>
+                  </div>
+                </li>
+                <li className='flex items-start gap-3'>
+                  <MapPin className='mt-0.5 h-4 w-4 flex-shrink-0 text-white/70' aria-hidden='true' />
+                  <div>
+                    <span className='block font-medium text-white/90'>
+                      Serving all of California
+                    </span>
+                    <span className='text-xs text-white/70'>Statewide coverage</span>
+                  </div>
                 </li>
                 <li>
-                  <Link
-                    href='/methodology'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Our Methodology
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/affiliate-disclosure'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    How We Make Money
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/author/chad-simpson'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Meet the Editor
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/corrections'
-                    className='text-white/90 hover:text-white font-medium transition-colors inline-flex items-center gap-2 group'
-                  >
-                    Corrections
-                    <span className='opacity-0 group-hover:opacity-100 transition-opacity'>&rarr;</span>
+                  <Link href={TRUST_LINKS.author.href} className={linkClass}>
+                    About the author
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Bottom Bar */}
-          <div className='pt-8 border-t border-white/10'>
-            <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
-              <p className='text-white/80 text-sm font-medium'>
-                &copy; {currentYear} California Rate Relief Program. All rights reserved.
-              </p>
-            </div>
+          {/* Bottom bar */}
+          <div className='flex flex-col gap-3 border-t border-white/15 pt-6 text-sm md:flex-row md:items-center md:justify-between'>
+            <p className='text-white/70'>
+              &copy; {currentYear} California Rate Relief Program. All rights reserved.
+            </p>
+            <p className='flex flex-wrap gap-x-5 gap-y-2'>
+              <Link href='/terms' className={linkClass}>
+                Terms of service
+              </Link>
+              <Link href='/affiliate-disclosure' className={linkClass}>
+                Referral service disclosure
+              </Link>
+            </p>
           </div>
         </div>
       </div>

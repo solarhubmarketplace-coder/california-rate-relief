@@ -143,8 +143,12 @@ const PAIRS = [
   ['white/0.9 over primary', 'primary', TEXT, 'text-white/90 on brand band'],
   ['white/0.85 over primary', 'primary', TEXT, 'text-white/85 on brand card'],
   ['white/0.8 over primary', 'primary', TEXT, 'text-white/80 on brand band'],
-  ['white/0.7 over primary', 'primary', TEXT, 'text-white/70 on brand band (footer captions)'],
+  ['white/0.7 over primary', 'primary', TEXT, 'text-white/70 on brand band (captions)'],
   // (text-white/60 on the brand band is 4.46:1 and is not used on CRR chrome)
+  // footer: ink surface
+  ['white', 'foreground', TEXT, 'footer heading on ink'],
+  ['white/0.8 over foreground', 'foreground', TEXT, 'footer link on ink'],
+  ['white/0.7 over foreground', 'foreground', TEXT, 'footer caption on ink'],
   // accent
   ['highlight-foreground', 'highlight-soft', TEXT, 'accent text on accent tint (step badges, key-facts label)'],
   ['highlight-foreground', 'card', TEXT, 'accent text on card'],
