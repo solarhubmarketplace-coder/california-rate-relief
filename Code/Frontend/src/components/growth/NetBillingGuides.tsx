@@ -11,17 +11,28 @@ const cpucConsumerGuide: Source = {
   label: "CPUC: California Solar Consumer Protection Guide",
   url: "https://www.cpuc.ca.gov/solarguide/",
 };
+const cpucNbtOverview: Source = {
+  label: "CPUC: Net Billing Tariff (NBT) overview",
+  url: "https://www.cpuc.ca.gov/nbt",
+};
+const pgeSolarBillingPlan: Source = {
+  label: "PG&E: Solar Billing Plan",
+  url: "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+};
 const sources = [cpucNem, cpucConsumerGuide];
+// Additional sources cited only by the "comparison" guide's 2026-09-22 delta.
+// Kept separate so the other three guides' source lists are unaffected.
+const comparisonOnlySources = [cpucNbtOverview, pgeSolarBillingPlan];
 
 const guides = {
   comparison: {
     path: "/blog/nem-2-vs-nem-3-california",
-    title: "NEM 2.0 vs. NEM 3.0 in California: what changed",
+    title: "NEM 2.0 vs NEM 3.0 California: What Changed and What It Means For You",
     intro:
-      "NEM 3.0 is the common name for California's Net Billing Tariff. The rule that applies to a specific account depends on its utility, interconnection history and current tariff—not a sales claim.",
-    metaTitle: "NEM 2.0 vs NEM 3.0 in California: What Changed",
+      "California's solar billing tariff changed from NEM 2.0 to NEM 3.0 (officially the Net Billing Tariff) in April 2023. If you installed solar before April 15, 2023, you're grandfathered onto NEM 2.0 for 20 years; after that date, you're on NEM 3.0. The two differ mainly in export compensation, which is what this page compares side by side.",
+    metaTitle: "NEM 2.0 vs NEM 3.0 California: Export Compensation",
     metaDescription:
-      "NEM 3.0, the Net Billing Tariff, applies to new interconnection applicants in the large IOU territories from April 15, 2023. Check your tariff.",
+      "NEM 2.0 vs NEM 3.0 in California: how solar export compensation changed after April 2023, and what it means if you're grandfathered in.",
   },
   timeline: {
     path: "/blog/nem-3-california-timeline",
@@ -74,7 +85,7 @@ export function netBillingMetadata(kind: NetBillingGuideKind): Metadata {
       description: metaDescription,
       type: "article",
       url: `https://ratereliefca.com${guide.path}`,
-      modifiedTime: "2026-09-12T00:00:00Z",
+      modifiedTime: kind === "comparison" ? "2026-09-22T00:00:00Z" : "2026-09-12T00:00:00Z",
     },
   };
 }
@@ -98,6 +109,82 @@ function ComparisonContent() {
           compensation usually differs from the retail rate and can vary by
           time; the account's current utility documents control the actual
           calculation.
+        </p>
+      </section>
+      <section>
+        <h2>The side-by-side: NEM 2.0 vs. NEM 3.0</h2>
+        <p>
+          Both tariffs work the same basic way &mdash; your solar offsets
+          what you use first, and only the leftover gets exported &mdash;
+          but they price that leftover, and the years you&apos;re locked
+          into a plan, differently.
+        </p>
+        <div className="overflow-x-auto rounded-xl border my-4">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">NEM 2.0 versus NEM 3.0 comparison</caption>
+            <thead className="bg-muted">
+              <tr>
+                <th className="p-4"></th>
+                <th className="p-4">NEM 2.0</th>
+                <th className="p-4">NEM 3.0 (Net Billing Tariff)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t">
+                <th scope="row" className="p-4 align-top">Export compensation basis</th>
+                <td className="p-4">Bill credits at the full retail rate &mdash; generation, distribution and transmission components together, per the CPUC</td>
+                <td className="p-4">Credits from the CPUC&apos;s Avoided Cost Calculator (ACC), a value &ldquo;usually lower than import rates&rdquo; that varies by time of day, day of week and season, per the CPUC and PG&amp;E</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-4 align-top">Time-of-use requirement</th>
+                <td className="p-4">Must take service on a time-of-use rate &mdash; any qualifying TOU plan, per the CPUC</td>
+                <td className="p-4">Must take service on &ldquo;a specific TOU rate&rdquo; with a steeper on-peak/off-peak spread than other TOU rates, per the CPUC (PG&amp;E auto-enrolls residential NEM 3.0 customers on Electric Home, E-ELEC)</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-4 align-top">Grandfathering / legacy period</th>
+                <td className="p-4">20 years from your interconnection date, under D.14-03-041, per the CPUC</td>
+                <td className="p-4">No 20-year legacy period. The original customer is &ldquo;guaranteed the use of the NBT tariff for nine years,&rdquo; per the CPUC</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-4 align-top">What ends it early</th>
+                <td className="p-4">
+                  Expanding the system past your utility&apos;s threshold moves the account onto NEM 3.0 before the 20 years is up &mdash; PG&amp;E&apos;s is more than 10% of the original nameplate capacity or more than 1 kW, per PG&amp;E. Full utility-by-utility thresholds:{" "}
+                  <Link className="underline" href="/blog/what-is-nem-3-california">What is NEM 3.0 in California?</Link>
+                </td>
+                <td className="p-4">The nine-year tariff lock is the floor. PG&amp;E and SCE (not SDG&amp;E) customers who interconnect an NEM 3.0 system before the end of 2027 also get nine years of enhanced export credits on top of that, per the CPUC</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-4 align-top">True-up billing cadence</th>
+                <td className="p-4">Annual billing &mdash; both charges and credits roll over for the full 12 months, per the CPUC</td>
+                <td className="p-4">
+                  Monthly billing &mdash; you&apos;re billed or credited every month, and only unresolved solar credits carry forward to the annual true-up, per the CPUC. See{" "}
+                  <Link className="underline" href="/solar-problems/true-up-bill-california-explained">how the annual true-up is settled</Link>{" "}
+                  for what that looks like utility by utility
+                </td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-4 align-top">Battery economics</th>
+                <td className="p-4">Exporting paid close to what you&apos;d otherwise pay to buy the power back, so storing it yourself added little financial upside</td>
+                <td className="p-4">
+                  Exporting now pays less than buying power back at your TOU rate, so using stored solar in the evening is the main lever NEM 3.0 gives homeowners to control the bill &mdash; nearly 70% of NEM 3.0 (NBT) customers had paired a battery with solar by the end of 2024, per the CPUC. See{" "}
+                  <Link className="underline" href="/battery/battery-payback-nem-3-california">battery payback under NEM 3.0</Link>{" "}
+                  for the utility-by-utility math
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2>NEM 1.0, briefly</h2>
+        <p>
+          If you&apos;re comparing all three: NEM 1.0 was the original
+          tariff, closed to new interconnections after its 2016&ndash;2017
+          sunset dates, per the CPUC. Like NEM 2.0, it carries a 20-year
+          legacy period from the interconnection date &mdash; PG&amp;E
+          states this for its own NEM 1.0 customers. Nothing on this page
+          changes for a NEM 1.0 account; the comparison above is
+          specifically NEM 2.0 vs. NEM 3.0.
         </p>
       </section>
       <section>
@@ -132,12 +219,105 @@ function ComparisonContent() {
       </section>
       <RelatedGuides
         heading="What the tariff change does to a battery and a true-up"
+        intro="The table above covers both at a glance: NEM 3.0's lower, hourly export credit is what makes self-consuming stored solar worth more than exporting it, and its true-up runs on a monthly billing cycle instead of NEM 2.0's fully annual one. For the two specific questions this raises:"
         links={[
           { href: "/battery/battery-payback-nem-3-california", label: "Whether a battery pays back under NEM 3.0" },
           { href: "/solar-problems/true-up-bill-california-explained", label: "How the annual true-up is settled" },
         ]}
       />
     </>
+  );
+}
+
+// Rendered via DecisionPage's `faq` prop (after the source list), matching
+// the draft's placement instruction ("after Sources checked, before Have
+// your bill reviewed"). Only used for kind === "comparison".
+function ComparisonFaq() {
+  return (
+    <section>
+      <h2>FAQ</h2>
+      <div className="mt-3 space-y-6">
+        <div>
+          <h3>What&apos;s the actual difference between NEM 2.0 and NEM 3.0 in California?</h3>
+          <p>
+            Mainly export compensation. NEM 2.0 credits exported solar near
+            the full retail rate; NEM 3.0 (the Net Billing Tariff) credits
+            it using the CPUC&apos;s Avoided Cost Calculator, which is
+            usually lower and changes by hour. NEM 3.0 also drops the
+            20-year legacy period in favor of a nine-year tariff-lock
+            guarantee, and bills monthly instead of annually. See the table
+            above for the full side-by-side.
+          </p>
+        </div>
+        <div>
+          <h3>Is NEM 2.0 better than NEM 3.0?</h3>
+          <p>
+            For export credits alone, NEM 2.0 pays more per kilowatt-hour
+            sent to the grid. Whether that makes NEM 2.0 &ldquo;better&rdquo;
+            for your household depends on how much you export versus use
+            yourself, and whether a battery is in the picture &mdash;
+            NEM 3.0&apos;s economics improve when you can shift usage to
+            match your own solar output. Neither this page nor the CPUC
+            states a single answer that applies to every home.
+          </p>
+        </div>
+        <div>
+          <h3>What about NEM 1.0 vs. NEM 2.0 vs. NEM 3.0?</h3>
+          <p>
+            NEM 1.0 is closed to new interconnections and, like NEM 2.0,
+            carries a 20-year legacy period. This page focuses on the
+            NEM 2.0-to-NEM 3.0 change specifically; see &ldquo;NEM 1.0,
+            briefly&rdquo; above for where NEM 1.0 fits.
+          </p>
+        </div>
+        <div>
+          <h3>I have PG&amp;E NEM 2.0 (&ldquo;PGE NEM2&rdquo;) &mdash; what happens if I add panels or a battery?</h3>
+          <p>
+            Adding capacity can move your account onto NEM 3.0 before your
+            20 years are up if it crosses PG&amp;E&apos;s threshold &mdash;
+            more than 10% of your original system&apos;s nameplate
+            capacity, or more than 1 kW, per PG&amp;E. See{" "}
+            <Link className="underline" href="/blog/adding-solar-panels-existing-system-california">
+              Adding solar panels to an existing system in California
+            </Link>{" "}
+            for the filing steps and how to stay under that line.
+          </p>
+        </div>
+        <div>
+          <h3>Does a battery pay back differently under NEM 2.0 vs. NEM 3.0?</h3>
+          <p>
+            Under NEM 2.0, exporting paid close to retail value, so a
+            battery&apos;s main draw was backup power, not bill savings.
+            Under NEM 3.0, exporting pays less than buying the same power
+            back, so a battery that shifts your usage to your own solar has
+            a real bill-savings case &mdash; but the size of that case
+            depends on your utility and usage. See{" "}
+            <Link className="underline" href="/battery/battery-payback-nem-3-california">
+              battery payback under NEM 3.0
+            </Link>{" "}
+            for the math.
+          </p>
+        </div>
+        <div>
+          <h3>Does this change if my solar is leased or under a PPA (like Sunrun)?</h3>
+          <p>
+            The tariff (NEM 2.0 vs. NEM 3.0) is tied to the system&apos;s
+            interconnection date, not who owns it. But what a leased or
+            PPA&apos;d system&apos;s export credits mean for your bill, and
+            what happens on a sale, is a contract question with your
+            leaseholder, separate from the utility tariff. See{" "}
+            <Link className="underline" href="/blog/what-happens-to-solar-lease-when-i-sell-california">
+              Selling a home with a solar lease or PPA
+            </Link>{" "}
+            and{" "}
+            <Link className="underline" href="/blog/solar-ppa-vs-lease-california">
+              Solar PPA vs. lease
+            </Link>
+            .
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -319,13 +499,15 @@ function BillingContent() {
 export function NetBillingGuide({ kind }: { kind: NetBillingGuideKind }) {
   const guide = guides[kind];
   const content = kind === "comparison" ? <ComparisonContent /> : kind === "timeline" ? <TimelineContent /> : kind === "decision" ? <DecisionContent /> : <BillingContent />;
+  const faq = kind === "comparison" ? <ComparisonFaq /> : undefined;
   return (
     <DecisionPage
       title={guide.title}
       intro={guide.intro}
       path={guide.path}
-      sources={sources}
-      sourceCheckedDate="2026-09-12"
+      sources={kind === "comparison" ? [...sources, ...comparisonOnlySources] : sources}
+      sourceCheckedDate={kind === "comparison" ? "2026-09-22" : "2026-09-12"}
+      faq={faq}
     >
       {content}
     </DecisionPage>
