@@ -14,7 +14,7 @@ const intro = "There is no single best month for every California home. The righ
 // paragraph on the SDG&E guide.
 const metaTitle = "Best Time to Install Solar Panels in California";
 const metaDescription =
-  "There is no single best month. The right time is when the roof, electricity use, bids, permits and utility application are all ready.";
+  "Season doesn't set your solar timeline — your true-up date, the SGIP budget clock, and utility rate changes do. Here's how to time it in California.";
 
 const sources: Source[] = [
   { label: "CPUC: California Solar Consumer Protection Guide", url: "https://www.cpuc.ca.gov/solarguide/" },
@@ -22,6 +22,8 @@ const sources: Source[] = [
   { label: "CPUC: Rule 21 interconnection", url: "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/infrastructure/rule-21-interconnection" },
   { label: "U.S. Department of Energy: consumer solar installation steps", url: "https://www.energy.gov/cmei/systems/articles/walk-me-through-it-step-step-guide-consumers-going-solar" },
   { label: "IRS: Residential Clean Energy Credit", url: "https://www.irs.gov/credits-deductions/residential-clean-energy-credit" },
+  { label: "SGIP Program Administrator: statewide program metrics", url: "https://www.selfgenca.com/home/program_metrics/" },
+  { label: "CPUC Public Advocates Office: Q2 2026 electric rates report", url: "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf" },
 ];
 
 export const bestTimeToInstallSolarMetadata: Metadata = {
@@ -33,7 +35,7 @@ export const bestTimeToInstallSolarMetadata: Metadata = {
     description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
-    modifiedTime: "2026-09-12T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -44,7 +46,7 @@ export function BestTimeToInstallSolarGuide() {
       intro={intro}
       path={path}
       sources={sources}
-      sourceCheckedDate="2026-09-12"
+      sourceCheckedDate="2026-09-22"
       topic="best time to install solar panels in California"
       primaryResourceHref="/tools/solar-panel-calculator"
       primaryResourceLabel="Normalize the bill and quote"
@@ -94,6 +96,45 @@ export function BestTimeToInstallSolarGuide() {
         <h2>Do not let an expired federal deadline rush the decision</h2>
         <p>
           The current IRS page says the residential clean energy credit is unavailable for property placed in service after December 31, 2025. A salesperson should not use the former residential credit as a reason to sign a 2026 California contract. Verify any tax, utility or local incentive from the agency that administers it before putting it into the price comparison.
+        </p>
+      </section>
+
+      <section>
+        <h2>Your first bill isn&apos;t your true-up — installation month matters less than you&apos;d think</h2>
+        <p>
+          A written turn-on date matters for a reason beyond the calendar: it sets your personal true-up clock, not just your first monthly bill. Under the Net Billing Tariff, your NEM Start Date — the day you were first interconnected — starts that clock, and every subsequent 12-month period resets from your last true-up date. The annual settlement nets a full year of production against a full year of usage, so a summer surplus offsets a winter deficit within that same 12-month window regardless of which month the window starts.
+        </p>
+        <p className="mt-3">
+          Chasing a specific install month to &ldquo;catch summer production first&rdquo; does not change the annual outcome, because true-up nets a full year no matter when it begins — it only changes which calendar month your true-up bill lands in. Knowing that date in advance, and giving the system a full 12-month cycle before judging results, matters more than the season you started in. See the{" "}
+          <Link className="underline" href="/solar-problems/true-up-bill-california-explained">
+            true-up bill explainer
+          </Link>{" "}
+          for what builds up monthly versus what settles at true-up.
+        </p>
+      </section>
+
+      <section>
+        <h2>If a battery rebate is part of the plan, that clock runs separately</h2>
+        <p>
+          For a paired battery, the incentive that most affects timing is not seasonal — it is the Self-Generation Incentive Program&apos;s step-down budget, which the statewide administrator portal tracks in real time rather than by season. Budget steps close whenever the dollars run out, not on a fixed calendar date, so &ldquo;wait until spring&rdquo; or &ldquo;wait until fall&rdquo; is not a real strategy here; checking the current status before signing is.
+        </p>
+        <p className="mt-3">
+          See the{" "}
+          <Link className="underline" href="/battery/sgip-battery-rebate-california">
+            SGIP battery rebate page
+          </Link>{" "}
+          for the current category-by-category budget status and eligibility rules.
+        </p>
+      </section>
+
+      <section>
+        <h2>Utility rate changes don&apos;t follow a solar season either</h2>
+        <p>
+          The same logic applies to waiting for a rate hike to make the math better. PG&amp;E&apos;s, SCE&apos;s and SDG&amp;E&apos;s average residential rates each last changed on their own schedule, driven by separate Advice Letter filings rather than a shared seasonal calendar — there is no single &ldquo;rates go up in January&rdquo; pattern to plan around. If a rate comparison is part of the decision, use the current published numbers rather than assuming a seasonal trend; see the{" "}
+          <Link className="underline" href="/california-utility-rate-tracker">
+            California utility rate tracker
+          </Link>{" "}
+          for the full table.
         </p>
       </section>
 

@@ -129,7 +129,7 @@ export type GuideKey = keyof typeof definitions;
 export function guideMetadata(key: GuideKey): Metadata {
   const d = definitions[key];
   const modifiedTime =
-    key === 'financing' || key === 'nem'
+    key === 'financing' || key === 'nem' || key === 'companies'
       ? '2026-09-22T00:00:00Z'
       : key === 'panels'
       ? '2026-09-11T00:00:00Z'
@@ -333,6 +333,224 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
     content = (
       <>
         <ProviderComparison />
+        <section id="reviewed-installers">
+          <h2>The installers with full reviews on this site, side by side</h2>
+          <p className="mb-4">
+            Of the companies mentioned above, four &mdash; Sunrun, Tesla, SunPower and
+            Palmetto &mdash; have a dedicated review page on this site with its own
+            CSLB-verification attempt. The table below pulls one fact per category
+            from each company&rsquo;s own site, fetched September 22, 2026, so you can
+            compare them on the same basis before you click through to the full
+            review.
+          </p>
+          <div className="overflow-x-auto rounded-xl border">
+            <table className="w-full text-left text-sm">
+              <caption className="sr-only">
+                Comparison of the four solar installers with full reviews on this
+                site
+              </caption>
+              <thead className="bg-muted">
+                <tr>
+                  <th className="p-3">Company</th>
+                  <th className="p-3">Ownership models offered</th>
+                  <th className="p-3">Warranty / guarantee</th>
+                  <th className="p-3">Service &amp; transfer on sale</th>
+                  <th className="p-3">Published CSLB license(s)</th>
+                  <th className="p-3">California service area</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top">
+                    <Link href="/solar-installers/sunrun-review" className={link}>
+                      Sunrun
+                    </Link>
+                  </th>
+                  <td className="p-3 align-top">
+                    Subscription (Sunrun&rsquo;s lease) or Protection Plus, plus cash
+                    purchase or loan &mdash; Sunrun&rsquo;s own guarantee page draws this
+                    exact line (sunrun.com, accessed 2026-09-22).
+                  </td>
+                  <td className="p-3 align-top">
+                    90% lifetime production guarantee (Sunrun pays any shortfall);
+                    free replacement parts and labor for 25 years; watertight roof
+                    warranty; a battery-backup guarantee during outages; 24/7
+                    monitoring &mdash; all tied to Subscription/Protection Plus, not
+                    cash or loan (sunrun.com, accessed 2026-09-22).
+                  </td>
+                  <td className="p-3 align-top">
+                    Transfer isn&rsquo;t automatic: buyer and seller exchange info
+                    through Sunrun&rsquo;s own portal, confirm the closing date, e-sign,
+                    and the buyer completes a soft credit check that doesn&rsquo;t
+                    affect their score; a lien filed for the system is released at
+                    no cost during the transfer; if the buyer won&rsquo;t assume it,
+                    the seller can prepay the balance into the sale price
+                    (sunrun.com, accessed 2026-09-22).
+                  </td>
+                  <td className="p-3 align-top">
+                    #750184 and #969975 (sunrun.com, accessed 2026-09-22)
+                  </td>
+                  <td className="p-3 align-top">
+                    Not published as a static coverage map; confirm your address on
+                    Sunrun&rsquo;s own site.
+                  </td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top">
+                    <Link href="/solar-installers/tesla-solar-review" className={link}>
+                      Tesla
+                    </Link>
+                  </th>
+                  <td className="p-3 align-top">
+                    Tesla&rsquo;s own product page currently leads with a &ldquo;Tesla
+                    Solar Lease&rdquo; (tesla.com, accessed 2026-09-22); cash and loan
+                    purchase weren&rsquo;t independently reconfirmed on tesla.com this
+                    session &mdash; ask which options apply to your address.
+                  </td>
+                  <td className="p-3 align-top">
+                    Solar panels: manufacturer-backed guarantee of at least 80% of
+                    nameplate power capacity for at least 25 years; Tesla processes
+                    the claim and performs the labor at its own cost (tesla.com,
+                    accessed 2026-09-22).
+                  </td>
+                  <td className="p-3 align-top">
+                    Not itemized on the tesla.com pages reachable this session
+                    &mdash; see the full Tesla review.
+                  </td>
+                  <td className="p-3 align-top">
+                    #888104 and #1127593 (tesla.com, accessed 2026-09-22)
+                  </td>
+                  <td className="p-3 align-top">
+                    Not published as a static coverage map; confirm your address on
+                    Tesla&rsquo;s own site.
+                  </td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top">
+                    <Link href="/solar-installers/sunpower-review" className={link}>
+                      SunPower
+                    </Link>
+                  </th>
+                  <td className="p-3 align-top">
+                    New installs go through SunPower&rsquo;s dealer network (the
+                    CA-licensed entity is &ldquo;Complete Solar, Inc. DBA
+                    SunPower&rdquo;); specific payment types weren&rsquo;t itemized on the
+                    pages fetched this session. Legacy pre-9/30/2024 lease/PPA
+                    accounts are serviced by SunStrong Management, not new
+                    originations (us.sunpower.com, accessed 2026-09-22).
+                  </td>
+                  <td className="p-3 align-top">
+                    New installs: two years of &ldquo;Worry-Free Support,&rdquo; a
+                    10-year workmanship warranty, a production guarantee (SunPower
+                    adds panels or compensates if output falls below 50% for 3
+                    straight months, or 85% for 18), and up to 25-year manufacturer
+                    warranties on premium panels/microinverters &mdash; SunPower
+                    covers claim costs the first 2 years, then the homeowner pays
+                    claim fees (us.sunpower.com, accessed 2026-09-22).
+                  </td>
+                  <td className="p-3 align-top">
+                    Systems installed before Sept. 30, 2024 under the original
+                    SunPower Corporation: SunPower Inc. did not assume the
+                    obligation &mdash; cash/loan customers contact their lender,
+                    lease/PPA customers contact SunStrong Management, (833)
+                    514-1858. Systems installed after that date carry SunPower
+                    Inc.&rsquo;s own coverage (us.sunpower.com, accessed 2026-09-22).
+                    Home-sale transfer mechanics specifically weren&rsquo;t itemized
+                    this session.
+                  </td>
+                  <td className="p-3 align-top">
+                    #961988, held by &ldquo;Complete Solar, Inc. DBA SunPower,&rdquo;
+                    classified C-10 (Electrical) and C-46 (Solar) (us.sunpower.com,
+                    accessed 2026-09-22)
+                  </td>
+                  <td className="p-3 align-top">
+                    Sold through SunPower&rsquo;s dealer/partner network; coverage
+                    varies by dealer and wasn&rsquo;t published as a single list this
+                    session.
+                  </td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className="p-3 align-top">
+                    <Link href="/solar-installers/palmetto-solar-review" className={link}>
+                      Palmetto
+                    </Link>
+                  </th>
+                  <td className="p-3 align-top">
+                    The Palmetto Energy Plan &mdash; a PPA or a lease depending on
+                    state, $0 down, with a 0&ndash;3.5% annual rate escalator
+                    (help.palmetto.com, accessed 2026-09-22). Outright cash or loan
+                    purchase wasn&rsquo;t itemized on the pages fetched this session.
+                  </td>
+                  <td className="p-3 align-top">
+                    90% performance/production guarantee, reviewed every 3 years,
+                    with a bill credit for any shortfall, plus 25 years of bundled
+                    service (help.palmetto.com, accessed 2026-09-22).
+                  </td>
+                  <td className="p-3 align-top">
+                    Not itemized on the palmetto.com pages reachable this session
+                    &mdash; see the full Palmetto review for the transfer options
+                    documented there.
+                  </td>
+                  <td className="p-3 align-top">
+                    #1048921, classified Electrical Contractor (palmetto.com,
+                    accessed 2026-09-22)
+                  </td>
+                  <td className="p-3 align-top">
+                    Sold through Palmetto&rsquo;s own crews and partner network;
+                    coverage varies by address and wasn&rsquo;t published as a single
+                    list this session.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4">
+            None of these license numbers&rsquo; current status &mdash; active,
+            suspended, bond on file &mdash; was independently verified this session;
+            CSLB&rsquo;s own lookup tool is the only place to confirm that.{' '}
+            <Link
+              className={link}
+              href="/solar-installers/how-to-verify-a-solar-contractor-california"
+            >
+              Full contractor-verification walkthrough
+            </Link>
+            .
+          </p>
+        </section>
+        <section>
+          <h2>How &ldquo;best&rdquo; actually gets decided</h2>
+          <p className="mb-3">
+            The section above this one already tells you the right first
+            questions &mdash; who&rsquo;s actually installing (the company itself, a
+            subcontractor, or a financing-only middleman) and what their legal
+            name is, so you can look them up. Two things extend that.
+          </p>
+          <p className="mb-3">
+            Get more than one bid. The same evaluation applies to every company
+            on this page and to any company not on it &mdash; a single quote is a
+            price, not a comparison. Checking a contractor&rsquo;s CSLB license,
+            bond, and complaint history before you sign is covered in full, with
+            the exact lookup steps, on our{' '}
+            <Link
+              className={link}
+              href="/solar-installers/how-to-verify-a-solar-contractor-california"
+            >
+              how-to-verify guide
+            </Link>
+            ; the checklist there is built from the CPUC&rsquo;s own
+            consumer-protection guidance, not from this page&rsquo;s opinion.
+          </p>
+          <p>
+            Then judge each bid on the specifics in the table above: which
+            ownership model it&rsquo;s actually offering you, what the guarantee
+            covers (and whether it applies to your payment type &mdash; Sunrun&rsquo;s
+            and Palmetto&rsquo;s guarantees explicitly don&rsquo;t cover a cash or loan
+            purchase), and what happens if you sell the house before the term
+            is up. A company that&rsquo;s &ldquo;best&rdquo; on price and worst on
+            transfer terms isn&rsquo;t automatically the right pick for a five-year
+            owner versus a thirty-year one.
+          </p>
+        </section>
         <section>
           <h2>Choose by scope and evidence</h2>
           <p>
@@ -405,6 +623,32 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
           </div>
         </section>
         <section>
+          <h2>Why a &ldquo;solar companies near me&rdquo; search shows a map first</h2>
+          <p className="mb-3">
+            Search &ldquo;solar companies near me&rdquo; or &ldquo;best solar companies in
+            [city],&rdquo; and Google leads with a Local Pack &mdash; a map with a
+            handful of nearby businesses &mdash; before any article, including this
+            one. That&rsquo;s true whether the search is generic or has a city
+            attached to it, and it&rsquo;s not something a comparison page is built
+            to outrank. What this page and the four reviews above it are built
+            for is the step after the map: once the Local Pack has given you
+            two or three names, the table above tells you what to actually
+            check on each one. Our{' '}
+            <Link className={link} href="/solar-installers">
+              solar-installers hub
+            </Link>{' '}
+            covers this in more depth, including how to compare the quotes you
+            get back.
+          </p>
+          <p>
+            Southern California readers searching &ldquo;best solar company in
+            southern california&rdquo; or &ldquo;best solar companies orange
+            california&rdquo;: OC Solar, already listed above, states it serves
+            Southern California specifically &mdash; confirm your own address is
+            in range before treating it as a lead.
+          </p>
+        </section>
+        <section>
           <h2>Before you request a proposal</h2>
           <p>
             Have your electricity usage, rate plan, roof age and expected
@@ -417,6 +661,69 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
           </p>
         </section>
       </>
+    );
+  if (kind === 'companies')
+    faq = (
+      <section>
+        <h2>FAQ</h2>
+        <div className="space-y-6">
+          <div>
+            <h3>What makes a solar company the &ldquo;best&rdquo; in California?</h3>
+            <p className="mt-2">
+              No single company is &ldquo;best&rdquo; for every homeowner &mdash; the
+              right one depends on your roof, your bill, and which ownership
+              model you want. Judge each bid the same way: is the
+              installer&rsquo;s legal name and CSLB license verified, does the
+              warranty match your payment type, and what happens to the
+              contract if you sell your home. See the comparison table and
+              the verify-a-contractor guide above.
+            </p>
+          </div>
+          <div>
+            <h3>Does California Rate Relief rank or rate solar companies?</h3>
+            <p className="mt-2">
+              No. This page compares companies on facts you can check
+              yourself &mdash; license numbers, warranty terms, ownership models
+              &mdash; not a 1-to-5 star score or a &ldquo;top 10&rdquo; list. As the
+              existing page states, the list of companies shown is unranked,
+              and inclusion doesn&rsquo;t mean a referral relationship exists.
+            </p>
+          </div>
+          <div>
+            <h3>How do I check a California solar company&rsquo;s CSLB license myself?</h3>
+            <p className="mt-2">
+              Use CSLB&rsquo;s own free lookup tool &mdash; the exact steps are
+              covered on our{' '}
+              <Link
+                className={link}
+                href="/solar-installers/how-to-verify-a-solar-contractor-california"
+              >
+                how-to-verify guide
+              </Link>
+              . None of the license numbers listed on this page had
+              their current status re-verified this session, so check before
+              you sign.
+            </p>
+          </div>
+          <div>
+            <h3>
+              Are Sunrun, Tesla, SunPower, and Palmetto the only solar
+              companies in California?
+            </h3>
+            <p className="mt-2">
+              No. They&rsquo;re the four with a full, CSLB-check-attempted review
+              on this site. The company list above this table also includes
+              NRG Clean Power and OC Solar, and many more installers operate
+              in California &mdash; the Local Pack for your specific city, plus
+              our growing list of{' '}
+              <Link className={link} href="/solar-installers">
+                solar-installer reviews
+              </Link>
+              , will surface others.
+            </p>
+          </div>
+        </div>
+      </section>
     );
   if (kind === 'panels')
     content = (

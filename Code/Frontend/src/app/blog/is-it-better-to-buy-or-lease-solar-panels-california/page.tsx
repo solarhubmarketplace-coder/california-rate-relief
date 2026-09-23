@@ -140,7 +140,7 @@ export const metadata: Metadata = {
     type: "article",
     url:
       "https://ratereliefca.com/blog/is-it-better-to-buy-or-lease-solar-panels-california",
-    modifiedTime: "2026-09-18T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -151,7 +151,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
       intro="One input to this decision changed for 2026: the federal residential clean energy credit no longer applies to expenditures made after 31 December 2025, and the statute dates the expenditure to completion of installation. That breaks comparisons built on subtracting a homeowner credit. It does not decide the question, and this page does not decide it for you."
       path="/blog/is-it-better-to-buy-or-lease-solar-panels-california"
       sources={sources}
-      sourceCheckedDate="2026-09-18"
+      sourceCheckedDate="2026-09-22"
       topic="Comparing a solar purchase and a solar lease"
       primaryResourceHref="/blog/how-much-does-it-cost-to-lease-solar-panels-california"
       primaryResourceLabel="What sets a lease payment"
@@ -349,6 +349,175 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
             what a UCC-1 filing on a solar system is
           </Link>
           .
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          Lease terms, escalators, and maintenance: what the state&rsquo;s
+          consumer guide says for 2026
+        </h2>
+        <p>
+          The sections above establish what changed on the ownership side for
+          2026: no federal credit for installations completed after December
+          31, 2025. The rest of the decision runs on inputs that did not
+          change this year and that the comparison table above only
+          summarizes in general terms &mdash; how long a lease or PPA
+          actually runs, how much its payment is allowed to grow, and who is
+          contractually on the hook for keeping the system working.
+          California&rsquo;s solar consumer protection guide, published by
+          the California Public Utilities Commission, puts numbers on both.
+        </p>
+        <p className="mt-3">
+          A typical solar lease or PPA in California runs{" "}
+          <strong>20 to 25 years</strong>, per the CPUC guide. Within that
+          term, lease and PPA payments commonly rise on a schedule called an
+          escalator, and the guide states that escalators are &ldquo;typically
+          in the range of a 1 percent to 3 percent increase&rdquo; above what
+          you paid the prior year, adding: &ldquo;Be cautious of entering
+          into a contract with an escalator higher than that.&rdquo; See{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/solar-escalator-clause-explained"
+          >
+            what a solar escalator clause does
+          </Link>{" "}
+          for how that compounds over a 20-to-25-year term. A cash purchase
+          or loan carries no escalator, because there is no recurring
+          equipment or electricity charge to escalate.
+        </p>
+        <p className="mt-3">
+          The same guide is specific about maintenance. Under a lease or
+          PPA, &ldquo;solar provider is responsible for all monitoring,
+          maintenance, and repairs&rdquo; for the contract term, because the
+          provider owns the equipment. Under a cash purchase or loan,
+          &ldquo;you are typically responsible for repairs and
+          maintenance&rdquo; once the manufacturer&rsquo;s or installer&rsquo;s
+          workmanship warranty runs out, because you own the equipment. That
+          split follows directly from who holds title, which is why the
+          table above lists it by ownership rather than by payment type.
+        </p>
+      </section>
+
+      <section>
+        <h2>Buy if / lease if</h2>
+        <p>
+          Neither structure is better in general. The questions below are
+          what the sourced differences above answer for a specific household
+          &mdash; this is not a savings estimate, and no figure here is a
+          projection of what you would save.
+        </p>
+        <p className="mt-4">
+          <strong>Buy (cash or loan) if:</strong>
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            You want to hold title to the equipment yourself, with no lien
+            beyond a lender&rsquo;s security interest on a loan.
+          </li>
+          <li>
+            You are prepared to be responsible for monitoring and repairs
+            once the workmanship warranty ends, or to budget separately for
+            an extended service plan.
+          </li>
+          <li>
+            You plan to stay long enough, or are comfortable that a sale
+            will transfer or pay off the system as part of the property
+            rather than requiring a lease assignment &mdash; see{" "}
+            <Link
+              className="underline"
+              href="/blog/what-happens-to-solar-lease-when-i-sell-california"
+            >
+              what happens when you sell a home with a solar lease or PPA
+            </Link>
+            .
+          </li>
+          <li>
+            You want the option to claim any tax credit current law allows
+            for the year the system is placed in service (see the
+            federal-credit section above for what that is worth on a 2026
+            installation &mdash; currently nothing under §25D).
+          </li>
+        </ul>
+        <p className="mt-4">
+          <strong>Lease or PPA if:</strong>
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            You want the provider, not you, contractually responsible for
+            monitoring, maintenance, and repairs for the full term, per the
+            CPUC guide quoted above.
+          </li>
+          <li>
+            You are comfortable with a payment that can rise on the
+            escalator named in your specific contract, and you have
+            confirmed it falls within (not above) the 1-3 percent range the
+            state guide describes as typical.
+          </li>
+          <li>
+            You accept that selling before the term ends means assignment, a
+            buyer taking over payments, or a buyout, and you will confirm
+            which options your specific contract allows before you sign
+            &mdash; see{" "}
+            <Link
+              className="underline"
+              href="/blog/what-happens-to-solar-lease-when-i-sell-california"
+            >
+              what happens when you sell a home with a solar lease or PPA
+            </Link>
+            .
+          </li>
+          <li>
+            You do not want the system counted as owned equipment on your
+            side of a future home-sale negotiation.
+          </li>
+        </ul>
+        <p className="mt-4">
+          Whichever direction you lean, get the{" "}
+          <Link
+            className="underline"
+            href="/blog/ppa-loan-vs-solar-lease-vs-cash-california"
+          >
+            cash, loan, lease and PPA comparison
+          </Link>{" "}
+          and the state-required disclosure document before you sign
+          anything.
+        </p>
+      </section>
+
+      <section>
+        <h2>Comparing a specific provider&rsquo;s buyout terms</h2>
+        <p>
+          The{" "}
+          <Link
+            className="underline"
+            href="/blog/ppa-loan-vs-solar-lease-vs-cash-california"
+          >
+            cash, loan, lease and PPA comparison
+          </Link>{" "}
+          and{" "}
+          <Link
+            className="underline"
+            href="/blog/what-happens-to-solar-lease-when-i-sell-california"
+          >
+            what happens to a solar lease when you sell
+          </Link>{" "}
+          cover what CPUC&rsquo;s guide says generally about buyout costs and
+          mechanics. If you are comparing a specific provider&rsquo;s buyout
+          terms &mdash; Sunrun&rsquo;s or Tesla&rsquo;s, for example &mdash;
+          ask that provider in writing for the buyout schedule named in your
+          agreement;{" "}
+          <Link className="underline" href="/solar-installers/sunrun-review">
+            Sunrun reviews
+          </Link>{" "}
+          and{" "}
+          <Link
+            className="underline"
+            href="/solar-installers/tesla-solar-review"
+          >
+            Tesla Solar reviews
+          </Link>{" "}
+          cover what to check before you sign with each.
         </p>
       </section>
 

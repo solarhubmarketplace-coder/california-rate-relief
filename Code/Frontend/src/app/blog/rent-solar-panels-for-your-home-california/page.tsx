@@ -12,7 +12,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
   title: "Rent Solar Panels For Your Home: California 2026 Guide",
-  description: "Renting solar panels in California — how solar leases and PPAs actually work, typical monthly costs, who qualifies, and when renting beats owning.",
+  description: "California solar lease and PPA options explained, plus what renters and apartment residents can do instead through community solar and SOMAH.",
   alternates: { canonical: '/blog/rent-solar-panels-for-your-home-california' },
   openGraph: { title: "Rent Solar Panels For Your Home: California 2026 Guide", description: "How to rent solar panels in California via lease or PPA.", type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function RentSolarPanels() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Rent Solar Panels For Your Home: California 2026 Guide"} url="https://ratereliefca.com/blog/rent-solar-panels-for-your-home-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Renting solar panels in California — how solar leases and PPAs actually work, typical monthly costs, who qualifies, and when renting beats owning."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Rent Solar Panels For Your Home: California 2026 Guide"} url="https://ratereliefca.com/blog/rent-solar-panels-for-your-home-california" datePublished="2026-04-23" dateModified="2026-09-22" description={"California solar lease and PPA options explained, plus what renters and apartment residents can do instead through community solar and SOMAH."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -38,7 +38,7 @@ export default function RentSolarPanels() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                &quot;Renting&quot; solar panels is the everyday way people describe two very specific California solar products: a <strong>solar lease</strong> and a <strong>power purchase agreement (PPA)</strong>. In both cases, the solar installer or a financing partner owns the system on your roof, and you pay a monthly amount for the electricity it produces. You don&apos;t own the hardware and you don&apos;t claim the federal tax credit — but you also don&apos;t pay anything upfront, and the monthly payment is almost always lower than your current utility bill. Here&apos;s how the &quot;rent solar&quot; model actually works in California in 2026.
+                &quot;Renting&quot; solar panels usually means one of two things. If you own your home, it&apos;s a solar lease or power purchase agreement (PPA) — you pay a fixed or per-kWh rate for the electricity panels on your roof produce, with no purchase required. If you rent your home or live in an apartment, you can&apos;t put panels on a roof you don&apos;t own, but two California programs — community solar and, for qualifying affordable housing, SOMAH — let you get discounted or bill-credited solar power without one.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Lease vs PPA — The Two Ways to &quot;Rent&quot; Solar</h2>
@@ -58,6 +58,39 @@ export default function RentSolarPanels() {
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Renters can&apos;t rent solar (the homeowner has to sign the lease/PPA — it&apos;s attached to the property). Homes with structural roof issues, severe shade, or wood shake roofs may be declined until those are resolved.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Can Renters or Apartment Residents Get Solar in California?</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Not as a rooftop lease or PPA — those require you to own the property, as the qualifications above show. But two state programs let you get solar power without owning a roof.
+              </p>
+
+              <h3 className='text-xl font-bold text-foreground mt-6 mb-3'>Community solar through your utility</h3>
+              <p className='text-foreground/80 leading-relaxed mb-4'>
+                California runs two ongoing community solar options, both administered through your electric utility or community choice aggregator (CCA), not a rooftop installer:
+              </p>
+              <ul className='list-disc pl-6 space-y-2 mb-4 text-foreground/80'>
+                <li><strong>Disadvantaged Communities Green Tariff (DAC-GT):</strong> a 20% discount off your electric rate. You qualify if you&apos;re income-eligible for CARE or FERA and live in a census tract in the top 25% most disadvantaged statewide, or the top 5% for pollution burden, under CalEnviroScreen. It&apos;s offered through PG&amp;E and SCE directly, and through 11 community choice aggregators including Clean Power Alliance, CleanPowerSF, and MCE. In most cases eligible customers are enrolled automatically — check your utility or CCA account, or the <a href='https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities/the-disadvantaged-communities-green-tariff-dac-gt-program' className='text-primary hover:underline'>CPUC&apos;s DAC-GT program page</a>, to see if you already qualify.</li>
+                <li><strong>Green Tariff:</strong> open to any income level. You opt in to source 50-100% of your electricity from renewables and pay the difference between your standard generation charge and that renewable rate — it&apos;s a way to buy greener power, not a bill discount. PG&amp;E, SCE, and SDG&amp;E each offer it under their own name (for example, PG&amp;E Solar Choice, SCE Green Rate, SDG&amp;E EcoChoice), per the <a href='https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/community-solar-in-california' className='text-primary hover:underline'>CPUC&apos;s community solar program page</a>.</li>
+              </ul>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Because Green Tariff changes only the generation-charge portion of your bill, it&apos;s worth checking{' '}<Link href='/california-utility-rate-tracker' className='text-primary hover:underline'>how your utility&apos;s overall rates compare</Link>{' '}before opting in.
+              </p>
+
+              <h3 className='text-xl font-bold text-foreground mt-6 mb-3'>A program built for renters is coming, but isn&apos;t open yet</h3>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                In June 2026 the CPUC finalized implementation rules for a new Community Renewable Energy (CRE) Program, designed specifically so renters, multifamily residents, nonprofits, and businesses can subscribe to a share of a local solar project and get a bill credit for it — the first California community solar program built with renters as a named eligible group from the start, per the <a href='https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-updates-existing-community-solar-programs' className='text-primary hover:underline'>CPUC&apos;s June 2026 announcement</a>. As of today, it is not open for enrollment: investor-owned utilities still have to submit implementation and marketing plans for CPUC approval before subscriptions can start, and no enrollment date has been published. Check the CPUC&apos;s community solar page for an opening date before assuming it&apos;s available.
+              </p>
+
+              <h3 className='text-xl font-bold text-foreground mt-6 mb-3'>If your apartment building is income-restricted: ask about SOMAH</h3>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                <a href='https://www.calsomah.org/property-owners' className='text-primary hover:underline'>SOMAH (Solar on Multifamily Affordable Housing)</a> pays incentives for solar — and in some cases storage — installed on qualifying apartment buildings. The property owner applies and the system gets installed on the building; tenants don&apos;t apply for anything and get the benefit automatically through bill credits.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                A building qualifies with 5 or more deed-restricted, separately metered units, plus one of: at least 66% of residents at or below 80% of area median income; location in a top-25% disadvantaged-community census tract; ownership by a California Native American tribe; or ownership by a public housing authority. The building must also be a customer of PG&amp;E, SCE, SDG&amp;E, Pacific Power, or Liberty Utilities.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Tenants see the result as a lower line-item on their monthly bill once the system is turned on —{' '}<a href='https://www.calsomah.org/tenants' className='text-primary hover:underline'>real tenants in the program</a>{' '}have reported credits such as $50 a month and, on average, around $80 a month, though the amount depends on the building&apos;s system size and your usage. If you live in income-restricted housing and don&apos;t see solar on your building, ask your property manager whether it has applied, or call the SOMAH tenant hotline at 1-800-843-9728.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How Much It Actually Costs</h2>
@@ -96,6 +129,12 @@ export default function RentSolarPanels() {
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Is renting solar worth it in California under NEM 3.0?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>For most California homeowners, yes — especially with a battery included in the lease/PPA. Monthly savings are usually $30-$80 vs the utility-only bill, locked in for 20-25 years, with the installer absorbing all NEM 3.0 export-economics complexity on your behalf.</p>
+
+              <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can renters get community solar in California?</h3>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Yes, in two ways today: if you&apos;re income-qualified and live in an eligible census tract, you may already qualify for the DAC-GT 20% bill discount through your utility or CCA. A newer program built specifically for renters and multifamily residents, the Community Renewable Energy Program, was finalized by the CPUC in June 2026 but has not opened for enrollment yet. Neither option requires owning a roof.</p>
+
+              <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Is there a solar program for my apartment building?</h3>
+              <p className='text-foreground/80 leading-relaxed mb-4'>If your building is income-restricted affordable housing with 5 or more units, it may qualify for SOMAH, which pays incentives for solar the property owner installs and passes the savings to tenants automatically through bill credits. Ask your property manager whether the building has applied, or call SOMAH&apos;s tenant hotline at 1-800-843-9728 to check.</p>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
@@ -116,6 +155,7 @@ export default function RentSolarPanels() {
                 // claude/ca-financing-20260918
                 { href: "/blog/how-much-does-it-cost-to-lease-solar-panels-california", label: "What determines a lease or PPA payment" },
                 { href: "/blog/zero-down-solar-california", label: "What a no-down-payment offer does and does not tell you" },
+                { href: "/blog/what-happens-to-solar-lease-when-i-sell-california", label: "What happens at the end of a solar lease term" },
               ]}
             />
           </article>
