@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import '@/app/globals.css';
-import { Providers } from '@/app/providers';
+import { DashboardProviders } from './dashboard-providers';
 
 export const metadata: Metadata = {
   title: 'California Rate Relief - Solar CRM',
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return <Providers>{children}</Providers>;
+  return <DashboardProviders>{children}</DashboardProviders>;
 }
