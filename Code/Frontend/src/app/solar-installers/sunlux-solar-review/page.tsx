@@ -38,20 +38,17 @@ const articleSchema = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/sunlux-solar-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org', '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'Sunlux Solar', address: { '@type': 'PostalAddress', addressRegion: 'CA', addressCountry: 'US' } },
-  reviewRating: { '@type': 'Rating', ratingValue: '4.4', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Sunlux is a strong SoCal + Texas installer with 7,000+ completed installs, Google 4.7/5, BBB A+, and competitive cash pricing. Primary complaint theme is permitting/activation delays — real, but less severe than the national PPA-heavy competitors.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function SunluxReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
@@ -76,13 +73,13 @@ export default function SunluxReview() {
 
             <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p><p className='text-3xl font-extrabold text-foreground mt-1'>4.4 <span className='text-lg text-muted-foreground'>/ 5</span></p></div>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>SoCal cash/loan buyers who want competitive pricing and a strong Google/BBB record</p></div>
+              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>SoCal cash or loan buyers who want a regional installer with a published 25-year hardware warranty</p></div>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You need a locked install-by date, permitting and activation delays are the main complaint</p></div>
             </div>
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Sunlux is a Southern California solar installer (with Texas operations) that has built a meaningful scale — more than 7,000 completed installations, while maintaining customer reputation metrics well above the national PPA-heavy installers. Google shows 4.7/5 across 550+ reviews, Yelp holds at 3.8/5, and the BBB profile is A+ (not accredited, which is common and not a red flag). For SoCal cash and loan buyers, Sunlux sits in the upper tier of our comparison.
+                Sunlux is a Southern California solar installer that also works in Texas. It emphasizes cash and loan ownership, and its warranty page promises 25 years of coverage on panels, inverter and racking. We did not verify its install count or its Google, Yelp or BBB ratings for this update, so check those yourself. The sections below separate what Sunlux publishes from what you should confirm in writing.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -102,13 +99,12 @@ export default function SunluxReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The reputation data is one of the stronger profiles in our California comparison:
+                We did not verify Sunlux&apos;s Google, Yelp or BBB ratings for this update. Ratings change, and a star average can hide the complaints that matter. Before you sign:
               </p>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Google: 4.7/5 across 550+ reviews — genuinely strong.</li>
-                <li>Yelp: 3.8/5. Mixed but positive-skewing.</li>
-                <li>BBB: A+, not accredited, modest complaint volume relative to company scale.</li>
-                
+                <li>Read the newest low-star reviews on Google and Yelp for permitting, activation and service delays.</li>
+                <li>Open the BBB profile and read how recent complaints were answered, not just the letter grade.</li>
+                <li>Ask for two or three recent California customers you can call.</li>
               </ul>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Common Complaints</h2>
@@ -151,7 +147,7 @@ export default function SunluxReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Sunlux Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux is a strong pick for SoCal cash or loan buyers who value a regional installer with in-house crews, competitive pricing, and above-average customer reputation metrics. It&apos;s particularly attractive if you&apos;re in Orange County, LA Metro, or coastal San Diego where Sunlux has its strongest service history. The main caveat is timeline. Expect standard California industry 3 to 6 months, and build margin in your planning.
+                Sunlux can fit Southern California cash or loan buyers who want a regional installer. Ask whether its own crews or a subcontractor will do your install, and get that in writing. The main caveat is timeline: permitting and activation delays are the most common complaint, so build margin into your plans.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>CSLB Number and Questions to Ask</h2>
@@ -169,7 +165,7 @@ export default function SunluxReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Sunlux Solar a reputable company?</h3><p className='text-foreground/80'>Yes, by the data we can verify, 7,000+ installs, Google 4.7/5, BBB A+. One of the cleaner reputations in SoCal regional solar.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Sunlux Solar a reputable company?</h3><p className='text-foreground/80'>We did not verify its install count or its Google, Yelp or BBB ratings for this update. Check the CSLB license yourself, read recent reviews and the BBB complaint record, and get the warranty terms in writing.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunlux offer PPAs or leases?</h3><p className='text-foreground/80'>Not as the primary offering. Sunlux focuses on cash and loan financing where you own the system.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What panels does Sunlux use?</h3><p className='text-foreground/80'>Tier-1 options — Panasonic has been a frequent panel brand with SolarEdge inverters and LG or other name-brand batteries. Sunlux does not manufacture its own panels.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunlux serve all of California?</h3><p className='text-foreground/80'>Strongest coverage is Southern California. Confirm serviceability for your specific zip code in the first call.</p></div>

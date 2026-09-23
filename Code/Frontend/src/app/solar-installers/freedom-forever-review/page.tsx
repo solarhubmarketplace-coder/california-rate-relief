@@ -64,31 +64,11 @@ const articleSchema = {
   },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: {
-    '@type': 'LocalBusiness',
-    name: 'Freedom Forever Solar',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Temecula',
-      addressRegion: 'CA',
-      addressCountry: 'US',
-    },
-  },
-  reviewRating: {
-    '@type': 'Rating',
-    ratingValue: '2.5',
-    bestRating: '5',
-  },
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-  },
-  reviewBody:
-    'Freedom Forever filed for Chapter 11 bankruptcy on April 15, 2026. Existing customers face uncertainty on long-term service and warranty fulfillment. New shoppers should obtain multiple quotes from financially stable installers before making a decision.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function FreedomForeverReview() {
   return (
@@ -97,10 +77,6 @@ export default function FreedomForeverReview() {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>

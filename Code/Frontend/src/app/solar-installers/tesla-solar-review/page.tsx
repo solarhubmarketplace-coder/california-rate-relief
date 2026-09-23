@@ -40,21 +40,17 @@ const articleSchema = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/tesla-solar-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'Tesla Solar' },
-  reviewRating: { '@type': 'Rating', ratingValue: '3.1', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Tesla Solar offers the lowest cash pricing in the California comparison with vertically integrated equipment (own panels, inverter, Powerwall). Post-install customer service is consistently the weakest part of the experience.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function TeslaSolarReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
@@ -86,7 +82,7 @@ export default function TeslaSolarReview() {
               </div>
               <div>
                 <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p>
-                <p className='text-sm text-foreground font-medium mt-1'>Price-sensitive buyers who want a vertically integrated Tesla ecosystem</p>
+                <p className='text-sm text-foreground font-medium mt-1'>Buyers who want one company&apos;s panels, inverter and battery in one app</p>
               </div>
               <div>
                 <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p>
@@ -128,7 +124,7 @@ export default function TeslaSolarReview() {
                 BBB profiles vary meaningfully by Tesla service region — some service centers have low complaint volume, others are very high. Trustpilot ratings for Tesla Solar specifically (separate from Tesla the automaker) are mixed. The legacy Solar Roof price-hike class action was settled for approximately $6 million in a prior year, and there have been subsequent smaller disputes but no current major class actions active on the solar division.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The honest framing: you are making a trade-off. You get better-than-average equipment at the best price with the best app, and in exchange you accept that when you need service, it is going to be slower than you would like. If you are mechanically competent and willing to troubleshoot basic issues yourself, that trade-off often makes sense. If you want a phone number that answers in ten minutes, Tesla is not that company.
+                The honest framing: you are making a trade-off. You get one company&apos;s equipment and one app, and in exchange you accept that when you need service, it may be slower than you would like. If you are mechanically competent and willing to troubleshoot basic issues yourself, that trade-off often makes sense. If you want a phone number that answers in ten minutes, Tesla is not that company.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
@@ -138,7 +134,7 @@ export default function TeslaSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Tesla Solar Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Tesla is a strong choice for price-sensitive California buyers who want the best equipment-per-dollar, already own or are considering a Tesla vehicle (charging integration is seamless), or specifically want the Tesla app ecosystem. The low cash price, U.S.-made panels, and vertically integrated hardware stack are real advantages.
+                Tesla can fit California buyers who already own or are considering a Tesla vehicle, or who specifically want the Tesla app ecosystem. The single-brand hardware stack is the real difference. Price is not verified here, so compare Tesla&apos;s written cash price per watt with other quotes for the same system.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 It is less compelling if you value a hands-on installer relationship with a responsive local service team, if you need a specific non-Tesla panel brand, or if slow post-install service would be a significant lifestyle friction point.

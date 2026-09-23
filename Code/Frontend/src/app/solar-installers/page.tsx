@@ -67,7 +67,7 @@ const REVIEWS: Entry[] = [
   {
     href: '/solar-installers/elevation-solar-review',
     anchor: 'Elevation Solar review',
-    blurb: 'What the marketplace ratings and the complaint record say about this installer, and what its contracts cover.',
+    blurb: 'What its purchase agreement covers, where homeowner complaints concentrate, and what to check before signing.',
   },
   {
     href: '/solar-installers/empire-solar-review',
@@ -132,7 +132,7 @@ const REVIEWS: Entry[] = [
   {
     href: '/solar-installers/sunlux-solar-review',
     anchor: 'Sunlux review',
-    blurb: 'A Southern California installer: licence record, ratings and how its proposals are put together.',
+    blurb: 'A Southern California installer: its published warranty, the licence check and how its proposals are put together.',
   },
   {
     href: '/solar-installers/sunnova-review',

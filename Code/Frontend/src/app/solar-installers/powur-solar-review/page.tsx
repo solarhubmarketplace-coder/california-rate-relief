@@ -25,20 +25,17 @@ const articleSchema = {
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/powur-solar-review' },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org', '@type': 'Review',
-  itemReviewed: { '@type': 'LocalBusiness', name: 'Powur Solar', address: { '@type': 'PostalAddress', addressLocality: 'Del Mar', addressRegion: 'CA', addressCountry: 'US' } },
-  reviewRating: { '@type': 'Rating', ratingValue: '2.3', bestRating: '5' },
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Powur Solar operates on an MLM-style sales model that layers recruiter commissions over the install itself. The result is widespread complaints. BBB 150+ in 3 years and frequent 6–16 month delay reports. Use caution.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function PowurReview() {
   return (
     <PublicLayout>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
@@ -140,7 +137,7 @@ export default function PowurReview() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Cleaner California Alternatives</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
                 <li><Link href='/solar-installers/baker-electric-solar-review' className='text-primary underline'>Baker Electric Solar</Link>, family-owned since 1938, Escondido, clean reputation.</li>
-                <li><Link href='/solar-installers/new-day-solar-review' className='text-primary underline'>New Day Solar</Link>. 31+ years, Murrieta, strong customer record.</li>
+                <li><Link href='/solar-installers/new-day-solar-review' className='text-primary underline'>New Day Solar</Link>, family-owned, Murrieta, ownership-only financing.</li>
                 <li><Link href='/solar-installers/option-one-solar-review' className='text-primary underline'>Option One Solar</Link>; High Desert, 25-year bumper-to-bumper warranty.</li>
               </ul>
             </div>

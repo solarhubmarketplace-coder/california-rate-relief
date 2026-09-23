@@ -61,31 +61,11 @@ const articleSchema = {
   },
 };
 
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: {
-    '@type': 'LocalBusiness',
-    name: 'Trinity Solar',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Wall Township',
-      addressRegion: 'NJ',
-      addressCountry: 'US',
-    },
-  },
-  reviewRating: {
-    '@type': 'Rating',
-    ratingValue: '3.4',
-    bestRating: '5',
-  },
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-  },
-  reviewBody:
-    'Trinity Solar is a large private family-owned residential installer founded in 1994, primarily serving the Northeast. It has a strong install-phase reputation but mixed post-install service feedback. Trinity does not meaningfully operate in California.',
-};
+// No Review/Rating JSON-LD here: Google's review-snippet rules require
+// ratings for a local business or organization to come directly from users,
+// not from editors, and this site does not collect user ratings
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
+// fetched 2026-09-23).
 
 export default function TrinitySolarReview() {
   return (
@@ -94,10 +74,6 @@ export default function TrinitySolarReview() {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
