@@ -17,8 +17,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['DM Serif Display', 'serif'],
+        // Variables are set by next/font in src/app/layout.tsx (self-hosted files;
+        // no Google Fonts request).
+        sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['var(--font-display)', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

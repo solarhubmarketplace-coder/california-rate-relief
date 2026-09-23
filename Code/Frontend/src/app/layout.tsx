@@ -13,8 +13,18 @@ import FirstTouchCapture from '@/components/FirstTouchCapture';
 // =============================================================================
 // FONTS — self-hosted via next/font (2026-04-30, Batch 3.5)
 // =============================================================================
-// Replaces the two render-blocking Google Fonts @import statements that lived
-// in globals.css. CSS variables are wired into tailwind.config.ts fontFamily.
+// The only font source for all five hosts. The two CSS variables are set on
+// <html> below and read by globals.css (body, headings, the display class) and
+// by the sans and display families in tailwind.config.ts. The Google Fonts
+// @import lines that duplicated these were removed from globals.css on
+// 2026-09-22.
+//
+// DM Serif Display is not preloaded: no page currently uses the display class
+// or the Tailwind display family, so the preload fetched ~18 KB on every page
+// for nothing. Its @font-face rule is still emitted, so any element that does
+// use it downloads the file on demand.
+// (Class names are deliberately not spelled out here: Tailwind scans this file
+// and would generate the rules for them.)
 // =============================================================================
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -29,6 +39,7 @@ const dmSerifDisplay = DM_Serif_Display({
   weight: ['400'],
   variable: '--font-display',
   display: 'swap',
+  preload: false,
 });
 
 // =============================================================================
