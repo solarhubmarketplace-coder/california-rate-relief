@@ -513,8 +513,8 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               href="/solar-installers/how-to-verify-a-solar-contractor-california"
             >
               Full contractor-verification walkthrough
-            </Link>{' '}
-            (publishing alongside this page &mdash; confirm both go live together).
+            </Link>
+            .
           </p>
         </section>
         <section>
@@ -536,9 +536,8 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               href="/solar-installers/how-to-verify-a-solar-contractor-california"
             >
               how-to-verify guide
-            </Link>{' '}
-            (publishing alongside this page &mdash; confirm both go live together);
-            the checklist there is built from the CPUC&rsquo;s own
+            </Link>
+            ; the checklist there is built from the CPUC&rsquo;s own
             consumer-protection guidance, not from this page&rsquo;s opinion.
           </p>
           <p>
@@ -700,9 +699,8 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                 href="/solar-installers/how-to-verify-a-solar-contractor-california"
               >
                 how-to-verify guide
-              </Link>{' '}
-              (publishing alongside this page &mdash; confirm both go live
-              together). None of the license numbers listed on this page had
+              </Link>
+              . None of the license numbers listed on this page had
               their current status re-verified this session, so check before
               you sign.
             </p>

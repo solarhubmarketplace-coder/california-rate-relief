@@ -360,9 +360,8 @@ export default function FixedChargeExplained() {
                   className='text-primary hover:underline'
                 >
                   do you still get a utility bill with solar?
-                </Link>{' '}
-                (publishing alongside this page — confirm both go live
-                together).
+                </Link>
+                .
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
