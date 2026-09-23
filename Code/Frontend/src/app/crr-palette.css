@@ -1,0 +1,115 @@
+/* =============================================================================
+   CRR (ratereliefca.com) PALETTE — the one file to edit to re-color the site
+   =============================================================================
+
+   Register: "neutral publisher" (Chad, 2026-09-22) — one brand color, one
+   restrained accent, ink text, light gray surfaces, semantic colors only where
+   they carry meaning. Replaces pass 1's blue primary + orange CTA.
+
+   CHOSEN: "Logo teal + sun gold"
+     brand      #084E59  hsl(188 84% 19%)  links, primary buttons, the single CTA
+                                            (the dark stop of /img/logo.svg is
+                                            #084F5A, so the header logo and the
+                                            site finally match)
+     accent     #BB861B  hsl(40 75% 42%)   key-fact markers, small badges; accent-
+                                            family text uses #7D5207 (38 89% 26%)
+     ink        #12191C  hsl(195 21% 9%)   body text
+     muted ink  #56666C  hsl(197 11% 38%)  secondary text
+     surfaces   #F6F8F8 page, #FFFFFF cards, #EAEFF0 gray bands, #D6DEE0 hairlines,
+                #7B898E form-field borders
+     semantic   success #1C6D49 (verified), warning #A34900 (deadlines),
+                error #B6281B — meaning only, never decoration
+
+   ALTERNATES (swap the listed tokens below; `node scripts/check-crr-palette-
+   contrast.mjs --all` checks each one). Lines starting "@alt" are read by that
+   script, so keep their format.
+
+     A. "Evergreen + sky" — NerdWallet-like green brand, cool blue accent
+        brand #1D5E3F, accent #3B7BBF, accent text #1F5A98
+     @alt evergreen --primary: 152 53% 24%;
+     @alt evergreen --ring: 152 53% 24%;
+     @alt evergreen --accent-foreground: 152 53% 24%;
+     @alt evergreen --highlight: 211 53% 49%;
+     @alt evergreen --highlight-soft: 211 60% 94%;
+     @alt evergreen --highlight-foreground: 211 66% 36%;
+     @alt evergreen --chart-1: 152 53% 24%;
+
+     B. "Civic navy + gold" — closest to USWDS (government-information look);
+        a blue brand but with NO orange CTA — gold is an accent only
+        brand #1A447F, accent #BB861B, accent text #7D5207
+     @alt civic --primary: 215 66% 30%;
+     @alt civic --ring: 215 66% 30%;
+     @alt civic --accent-foreground: 215 66% 30%;
+     @alt civic --chart-1: 215 66% 30%;
+
+   RULES THIS FILE ENFORCES
+   - One ask color: --cta is an alias of --primary, so every legacy `bg-cta`
+     button renders in the brand color. There is no second CTA hue.
+   - shadcn's --accent stays the neutral hover surface (it is used by outline /
+     ghost buttons and menu hovers). The design accent is --highlight.
+   - Values are HSL triplets because Tailwind reads them as
+     `hsl(var(--token) / <alpha>)`.
+   - Every text/background pair is checked by
+     scripts/check-crr-palette-contrast.mjs (WCAG 2.1 AA). Run it after any edit.
+
+   SCOPE
+   Loaded from app/layout.tsx on every host, but the selector only matches the
+   <html data-site="ratereliefca"> element that layout.tsx renders for
+   ratereliefca.com. greenreviewshub, securehomegear, athomebiohacking and
+   glp1comparehub render a different data-site value and never match.
+   `html[...]` (specificity 0-1-1) beats `:root` (0-1-0) in globals.css
+   regardless of stylesheet order.
+   ============================================================================= */
+
+html[data-site="ratereliefca"] {
+  /* Surfaces */
+  --background: 195 14% 97%;
+  --card: 0 0% 100%;
+  --popover: 0 0% 100%;
+  --muted: 195 16% 93%;
+  --secondary: 195 16% 93%;
+  --accent: 195 16% 93%;
+
+  /* Ink */
+  --foreground: 195 21% 9%;
+  --card-foreground: 195 21% 9%;
+  --popover-foreground: 195 21% 9%;
+  --secondary-foreground: 195 21% 9%;
+  --muted-foreground: 197 11% 38%;
+
+  /* Brand — the only ask color */
+  --primary: 188 84% 19%;
+  --primary-foreground: 0 0% 100%;
+  --accent-foreground: 188 84% 19%;
+  --ring: 188 84% 19%;
+  --cta: var(--primary);
+  --cta-foreground: var(--primary-foreground);
+
+  /* Accent — used sparingly: key-fact markers, small badges */
+  --highlight: 40 75% 42%;
+  --highlight-soft: 44 78% 93%;
+  --highlight-foreground: 38 89% 26%;
+
+  /* Lines. --input is darker than --border so form fields meet the 3:1
+     non-text contrast rule (WCAG 1.4.11). */
+  --border: 192 14% 86%;
+  --input: 195 8% 52%;
+
+  /* Semantic — meaning only */
+  --status-success: 153 59% 27%;
+  --status-warning: 27 100% 32%;
+  --status-error: 5 74% 41%;
+  --status-info: 196 70% 28%;
+  --destructive: 5 74% 41%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Charts: the logo's own gradient stops, dark to light */
+  --chart-1: 188 84% 19%;
+  --chart-2: 190 38% 36%;
+  --chart-3: 190 26% 51%;
+  --chart-4: 190 30% 67%;
+  --chart-5: 188 40% 86%;
+
+  /* Shape (not color, but CRR-only, so it lives with the other CRR tokens) */
+  --radius: 0.625rem;
+}

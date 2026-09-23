@@ -45,7 +45,7 @@ export function Footer() {
                   Private referral service
                 </span>
               </div>
-              <p className='text-white/60 text-xs leading-relaxed pt-2'>
+              <p className='text-white/80 text-xs leading-relaxed pt-2'>
                 California Rate Relief is a private referral service. We are not
                 a government agency or utility, and are not affiliated with or
                 endorsed by any government agency, utility, or the CPUC.

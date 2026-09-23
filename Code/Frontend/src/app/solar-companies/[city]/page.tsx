@@ -520,7 +520,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 </div>
               </li>
               <li className="flex gap-3 items-start">
-                <AlertTriangle className="h-5 w-5 text-cta flex-shrink-0 mt-0.5" />
+                <AlertTriangle className="h-5 w-5 text-status-warning flex-shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-foreground">NEM 3.0 realism.</strong>{" "}
                   <span className="text-foreground/80">

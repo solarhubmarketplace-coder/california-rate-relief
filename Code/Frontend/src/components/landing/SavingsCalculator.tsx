@@ -23,7 +23,7 @@ export function SavingsCalculator() {
         <div className='grid lg:grid-cols-2 gap-10 items-center max-w-5xl mx-auto'>
           <div>
             <p className='text-xs font-bold uppercase tracking-wide text-white/80 mb-3'>
-              Free calculator
+              Bill calculator
             </p>
             <h2 className='text-3xl md:text-5xl font-extrabold tracking-tight mb-4'>
               Start with your current bill.
@@ -31,7 +31,7 @@ export function SavingsCalculator() {
             <p className='text-white/90 text-lg leading-relaxed mb-2'>
               Enter your average monthly power bill to see your current annual and five-year baseline.
             </p>
-            <p className='text-xs text-white/60'>
+            <p className='text-xs text-white/80'>
               This is current-dollar arithmetic, not a solar quote or forecast. A provider must model any project savings.
             </p>
           </div>

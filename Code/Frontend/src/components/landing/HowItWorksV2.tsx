@@ -23,7 +23,7 @@ export function HowItWorksV2() {
         <div className='grid md:grid-cols-3 gap-6 md:gap-8'>
           {/* Card 1 — primary fill, flattened (no gradient, per D.4) */}
           <div className='relative bg-primary rounded-xl p-7 text-white border border-primary hover:shadow-md transition-shadow'>
-            <div className='w-14 h-14 bg-cta text-cta-foreground rounded-xl flex items-center justify-center mb-5 font-black text-2xl'>
+            <div className='w-14 h-14 bg-highlight-soft text-highlight-foreground rounded-xl flex items-center justify-center mb-5 font-black text-2xl'>
               1
             </div>
             <Search className='w-12 h-12 text-white/90 mb-4' />
@@ -35,7 +35,7 @@ export function HowItWorksV2() {
 
           {/* Card 2 — primary border, white fill */}
           <div className='relative bg-card rounded-xl p-7 border-2 border-primary hover:shadow-md transition-shadow'>
-            <div className='w-14 h-14 bg-primary text-primary-foreground rounded-xl flex items-center justify-center mb-5 font-black text-2xl'>
+            <div className='w-14 h-14 bg-highlight-soft text-highlight-foreground rounded-xl flex items-center justify-center mb-5 font-black text-2xl'>
               2
             </div>
             <Wrench className='w-12 h-12 text-primary mb-4' />
@@ -48,7 +48,7 @@ export function HowItWorksV2() {
           {/* Card 3 — neutral border. text-blue-700 icon was an unexplained
               4th color (pre-existing bug) — fixed to text-primary. */}
           <div className='relative bg-card rounded-xl p-7 border-2 border-border hover:shadow-md transition-shadow'>
-            <div className='w-14 h-14 bg-cta text-cta-foreground rounded-xl flex items-center justify-center mb-5 font-black text-2xl'>
+            <div className='w-14 h-14 bg-highlight-soft text-highlight-foreground rounded-xl flex items-center justify-center mb-5 font-black text-2xl'>
               3
             </div>
             <TrendingDown className='w-12 h-12 text-primary mb-4' />

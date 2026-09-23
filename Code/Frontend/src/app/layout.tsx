@@ -3,6 +3,9 @@ import { headers } from 'next/headers';
 import Script from 'next/script';
 import { Plus_Jakarta_Sans, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
+// CRR color tokens. Scoped to html[data-site="ratereliefca"], so the other four
+// hosts load the rules but never match them.
+import './crr-palette.css';
 import { Providers } from './providers';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import FirstTouchCapture from '@/components/FirstTouchCapture';

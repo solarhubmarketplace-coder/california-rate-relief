@@ -31,7 +31,7 @@ export function FinalCTA() {
         <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center'>
           <Link
             href='/#qualify'
-            className='inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta/90 text-cta-foreground font-semibold text-lg px-8 py-4 rounded-xl transition-colors'
+            className='inline-flex items-center justify-center gap-2 bg-white hover:bg-white/90 text-primary font-semibold text-lg px-8 py-4 rounded-xl transition-colors'
           >
             Request a Residential Review
             <ArrowRight className='w-5 h-5' />
