@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle, Loader2 } from "lucide-react";
-import { isValidPhoneNumber } from "libphonenumber-js";
 import { trackEvent } from "@/components/GoogleAnalyticsClient";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,6 +14,8 @@ import {
   type IntakePayload,
 } from "@/lib/intake";
 import { isFiveDigitZip, serviceLocationFields, serviceMarkets, type ServiceMarket } from "@/lib/service-market";
+import { CTA_COPY } from "@/lib/cta-intent";
+import { US_PHONE_HINT, formatUsPhoneInput, isValidUsPhone, toE164Us, usPhoneError } from "@/lib/phone";
 
 interface CommercialFormData {
   companyName: string;
@@ -50,25 +51,44 @@ const initialForm: CommercialFormData = {
   consent: false,
 };
 
-function normalizePhone(phone: string): string {
-  if (phone.trim().startsWith("+")) return phone.replace(/[^\d+]/g, "");
-  const digits = phone.replace(/\D/g, "");
-  if (digits.length === 10) return `+1${digits}`;
-  if (digits.length === 11 && digits.startsWith("1")) return `+${digits}`;
-  return phone;
-}
-
 const selectClass =
   "h-12 w-full rounded-md border-2 border-border bg-background px-3 text-base focus:border-primary focus:outline-none";
 const ATTEMPT_KEY = "crr_commercial_submission_v1";
 
+export interface CommercialAssessmentFormProps {
+  defaultMarket?: ServiceMarket | '';
+  defaultUtility?: string;
+  /**
+   * Set to embed the form inline on a content page: it then renders inside
+   * <section id={sectionId}> with its own h2 and intro, and every field id is
+   * prefixed with sectionId so it cannot collide with the page. Omitted, the
+   * form renders bare, exactly as on /commercial-assessment.
+   */
+  sectionId?: string;
+  /** h2 above the inline form. Default: CTA_COPY.commercial.formHeading. */
+  heading?: string;
+  /** Sentence under the h2. Default: CTA_COPY.commercial.formIntro. */
+  intro?: string;
+  /** Classes for the outermost element (the section when inline). */
+  className?: string;
+}
+
 export function CommercialAssessmentForm({
   defaultMarket = '',
   defaultUtility = '',
-}: {
-  defaultMarket?: ServiceMarket | '';
-  defaultUtility?: string;
-} = {}) {
+  sectionId,
+  heading,
+  intro,
+  className = '',
+}: CommercialAssessmentFormProps = {}) {
+  const inline = Boolean(sectionId);
+  // Field ids stay exactly as they were on /commercial-assessment; inline
+  // copies are prefixed so a page can hold the form without id collisions.
+  const fid = (name: string) => (sectionId ? `${sectionId}-${name}` : name);
+  // New analytics param on the existing events: where the form was placed.
+  const placement = inline ? "inline" : "page";
+  const [phoneError, setPhoneError] = useState("");
+  const rootRef = useRef<HTMLElement | null>(null);
   const [form, setForm] = useState({
     ...initialForm,
     serviceMarket: defaultMarket,
@@ -119,8 +139,32 @@ export function CommercialAssessmentForm({
     trackEvent("commercial_form_start", {
       landing_page: touch?.landing_page ?? "unknown",
       landing_page_type: touch?.landing_page_type ?? "unknown",
+      placement,
+      section_id: sectionId ?? "none",
     });
   };
+
+  // commercial_form_view (new): the denominator for commercial_form_start, so
+  // an inline placement on a content page can be compared with the page form.
+  useEffect(() => {
+    const node = rootRef.current;
+    if (!node || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        const touch = getFirstTouch();
+        trackEvent("commercial_form_view", {
+          landing_page_type: touch?.landing_page_type ?? "unknown",
+          placement,
+          section_id: sectionId ?? "none",
+        });
+        observer.disconnect();
+      },
+      { threshold: 0 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [placement, sectionId]);
 
   const update = (field: keyof CommercialFormData, value: string | boolean) => {
     if (submitInFlightRef.current) return;
@@ -139,11 +183,15 @@ export function CommercialAssessmentForm({
     if (submitInFlightRef.current) return;
     setError("");
 
-    const phone = normalizePhone(form.phone);
-    if (!isValidPhoneNumber(phone, "US")) {
-      setError("Enter a valid US phone number.");
+    // E.164 for a valid US number — the same string the old normalizer sent
+    // and the backend's normalizePhone stores.
+    const phoneMessage = usPhoneError(form.phone);
+    if (phoneMessage) {
+      setPhoneError(phoneMessage);
+      document.getElementById(fid("commercial-phone"))?.focus();
       return;
     }
+    const phone = toE164Us(form.phone) ?? form.phone;
     if (!form.consent) {
       setError("Confirm contact consent before submitting.");
       return;
@@ -220,6 +268,7 @@ export function CommercialAssessmentForm({
             attempt.payload.attribution.landing_page_type ?? "unknown",
           property_type: form.propertyType,
           bill_bracket: form.monthlyBillRange,
+          placement,
         });
         trackedSuccessIdsRef.current.add(attempt.id);
       }
@@ -252,6 +301,7 @@ export function CommercialAssessmentForm({
       trackEvent("form_submit_error", {
         segment: "commercial",
         landing_page_type: touch?.landing_page_type ?? "unknown",
+        placement,
       });
     } finally {
       submitInFlightRef.current = false;
@@ -259,27 +309,27 @@ export function CommercialAssessmentForm({
     }
   };
 
-  if (success) {
-    return (
-      <div className="rounded-2xl border border-emerald-200 bg-white p-8 text-center shadow-lg">
-        <CheckCircle className="mx-auto mb-4 h-12 w-12 text-emerald-600" />
-        <h2 className="text-2xl font-bold text-slate-900">
-          Project information received
-        </h2>
-        <p className="mt-3 text-slate-600">
-          California Rate Relief saved your information for review. A matched
-          commercial solar provider may contact you about the project. This is
-          not a quote or approval.
-        </p>
-      </div>
-    );
-  }
-
-  return (
+  const SuccessHeading = inline ? "h3" : "h2";
+  const content = success ? (
+    <div
+      role="status"
+      className="rounded-2xl border border-border bg-card p-8 text-center shadow-lg"
+    >
+      <CheckCircle className="mx-auto mb-4 h-12 w-12 text-status-success" aria-hidden="true" />
+      <SuccessHeading className="text-2xl font-bold text-foreground">
+        Project information received
+      </SuccessHeading>
+      <p className="mt-3 text-muted-foreground">
+        California Rate Relief saved your information for review. A matched
+        commercial solar provider may contact you about the project. This is
+        not a quote or approval.
+      </p>
+    </div>
+  ) : (
     <form
       onSubmit={handleSubmit}
       onFocus={markStarted}
-      className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl md:p-10"
+      className="rounded-2xl border border-border bg-card p-6 shadow-xl md:p-10"
     >
       <fieldset
         disabled={submitting || hasUnconfirmedAttempt}
@@ -287,20 +337,21 @@ export function CommercialAssessmentForm({
       >
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-2 md:col-span-2">
-            <Label htmlFor="company-name">Company or organization</Label>
+            <Label htmlFor={fid("company-name")}>Company or organization</Label>
             <Input
-              id="company-name"
+              id={fid("company-name")}
               value={form.companyName}
               onChange={(e) => update("companyName", e.target.value)}
               required
-              className="h-12"
+              autoComplete="organization"
+              className="h-12 text-base"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="property-type">Property type</Label>
+            <Label htmlFor={fid("property-type")}>Property type</Label>
             <select
-              id="property-type"
+              id={fid("property-type")}
               value={form.propertyType}
               onChange={(e) => update("propertyType", e.target.value)}
               required
@@ -323,11 +374,11 @@ export function CommercialAssessmentForm({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="property-control">
+            <Label htmlFor={fid("property-control")}>
               Your control of the property
             </Label>
             <select
-              id="property-control"
+              id={fid("property-control")}
               value={form.propertyControl}
               onChange={(e) => update("propertyControl", e.target.value)}
               required
@@ -347,47 +398,46 @@ export function CommercialAssessmentForm({
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <Label htmlFor="commercial-location">Project address or city</Label>
+            <Label htmlFor={fid("commercial-location")}>Project address or city</Label>
             <Input
-              id="commercial-location"
+              id={fid("commercial-location")}
               value={form.location}
               onChange={(e) => update("location", e.target.value)}
               required
-              className="h-12"
+              autoComplete="street-address"
+              className="h-12 text-base"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="commercial-city">Project city</Label>
+            <Label htmlFor={fid("commercial-city")}>Project city</Label>
             <Input
-              id="commercial-city"
+              id={fid("commercial-city")}
               value={form.city}
               onChange={(e) => update("city", e.target.value)}
               maxLength={80}
               autoComplete="address-level2"
               required
-              className="h-12"
+              className="h-12 text-base"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="commercial-market">Project state or district</Label>
-            <select id="commercial-market" value={form.serviceMarket} onChange={(e) => update("serviceMarket", e.target.value as ServiceMarket)} required className={selectClass}>
+            <Label htmlFor={fid("commercial-market")}>Project state or district</Label>
+            <select id={fid("commercial-market")} value={form.serviceMarket} onChange={(e) => update("serviceMarket", e.target.value as ServiceMarket)} required className={selectClass}>
               <option value="">Select project market</option>
               {serviceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
             </select>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="commercial-service-zip">Project ZIP code</Label>
+            <Label htmlFor={fid("commercial-service-zip")}>Project ZIP code</Label>
             <Input
-              id="commercial-service-zip"
+              id={fid("commercial-service-zip")}
               type="text"
               inputMode="numeric"
               autoComplete="postal-code"
               pattern="[0-9]{5}"
-              maxLength={5}
-              placeholder="90210"
               value={form.serviceZip}
               onChange={(e) =>
                 update(
@@ -396,28 +446,29 @@ export function CommercialAssessmentForm({
                 )
               }
               required
-              className="h-12"
+              className="h-12 text-base"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="commercial-utility">Electric utility</Label>
+            <Label htmlFor={fid("commercial-utility")}>Electric utility</Label>
             <Input
-              id="commercial-utility"
+              id={fid("commercial-utility")}
               value={form.utilityProvider}
               onChange={(e) => update("utilityProvider", e.target.value)}
               placeholder="PG&E, SCE, SDG&E, municipal, or other"
               required
-              className="h-12"
+              autoComplete="off"
+              className="h-12 text-base"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="commercial-bill">
+            <Label htmlFor={fid("commercial-bill")}>
               Typical monthly electric bill
             </Label>
             <select
-              id="commercial-bill"
+              id={fid("commercial-bill")}
               value={form.monthlyBillRange}
               onChange={(e) => update("monthlyBillRange", e.target.value)}
               required
@@ -434,9 +485,9 @@ export function CommercialAssessmentForm({
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <Label htmlFor="project-timeline">Project timing</Label>
+            <Label htmlFor={fid("project-timeline")}>Project timing</Label>
             <select
-              id="project-timeline"
+              id={fid("project-timeline")}
               value={form.projectTimeline}
               onChange={(e) => update("projectTimeline", e.target.value)}
               required
@@ -452,51 +503,70 @@ export function CommercialAssessmentForm({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="commercial-contact-name">Contact name</Label>
+            <Label htmlFor={fid("commercial-contact-name")}>Contact name</Label>
             <Input
-              id="commercial-contact-name"
+              id={fid("commercial-contact-name")}
               value={form.contactName}
               onChange={(e) => update("contactName", e.target.value)}
               required
-              className="h-12"
+              className="h-12 text-base"
               autoComplete="name"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="commercial-phone">Phone</Label>
+            <Label htmlFor={fid("commercial-phone")}>Phone</Label>
             <Input
-              id="commercial-phone"
+              id={fid("commercial-phone")}
               type="tel"
+              inputMode="tel"
+              maxLength={20}
               value={form.phone}
-              onChange={(e) => update("phone", e.target.value)}
+              onChange={(e) => {
+                const phone = formatUsPhoneInput(e.target.value);
+                update("phone", phone);
+                if (phoneError && isValidUsPhone(phone)) setPhoneError("");
+              }}
+              onBlur={() => {
+                if (form.phone) setPhoneError(usPhoneError(form.phone));
+              }}
               required
-              className="h-12"
+              aria-invalid={Boolean(phoneError) || undefined}
+              aria-describedby={fid("commercial-phone-help")}
+              className={`h-12 text-base ${phoneError ? "border-destructive" : ""}`}
               autoComplete="tel"
             />
+            <p
+              id={fid("commercial-phone-help")}
+              className={`text-xs ${phoneError ? "font-medium text-destructive" : "text-muted-foreground"}`}
+            >
+              {phoneError || US_PHONE_HINT}
+            </p>
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <Label htmlFor="commercial-email">Email</Label>
+            <Label htmlFor={fid("commercial-email")}>Email</Label>
             <Input
-              id="commercial-email"
+              id={fid("commercial-email")}
               type="email"
               value={form.email}
               onChange={(e) => update("email", e.target.value)}
               required
-              className="h-12"
+              className="h-12 text-base"
               autoComplete="email"
+              autoCapitalize="none"
+              spellCheck={false}
             />
           </div>
         </div>
 
-        <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm leading-6 text-slate-600">
+        <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm leading-6 text-muted-foreground">
           <input
             type="checkbox"
             checked={form.consent}
             onChange={(e) => update("consent", e.target.checked)}
             required
-            className="mt-1 h-5 w-5 rounded border-slate-300"
+            className="mt-1 h-5 w-5 rounded border-input"
           />
           <span>
             I authorize California Rate Relief and a matched commercial solar
@@ -509,7 +579,7 @@ export function CommercialAssessmentForm({
       {error && (
         <div
           role="alert"
-          className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-700"
+          className="mt-4 rounded-lg bg-destructive/10 p-3 text-sm text-destructive"
         >
           <p>{error}</p>
           {hasUnconfirmedAttempt && (
@@ -548,9 +618,33 @@ export function CommercialAssessmentForm({
           "Request a commercial project review"
         )}
       </Button>
-      <p className="mt-3 text-center text-xs text-slate-500">
+      <p className="mt-3 text-center text-xs text-muted-foreground">
         Submitting does not create a quote, approval, or obligation.
       </p>
     </form>
+  );
+
+  if (!inline) {
+    return (
+      <div ref={(node) => { rootRef.current = node; }} className={className || undefined}>
+        {content}
+      </div>
+    );
+  }
+  return (
+    <section
+      ref={(node) => { rootRef.current = node; }}
+      id={sectionId}
+      aria-labelledby={fid("heading")}
+      className={`scroll-mt-24 ${className}`}
+    >
+      <h2 id={fid("heading")} className="text-2xl font-bold text-foreground">
+        {heading ?? CTA_COPY.commercial.formHeading}
+      </h2>
+      <p className="mb-6 mt-2 text-foreground/80">
+        {intro ?? CTA_COPY.commercial.formIntro}
+      </p>
+      {content}
+    </section>
   );
 }
