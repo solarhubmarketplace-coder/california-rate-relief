@@ -9,6 +9,7 @@ import {
   intakeHrefForPath,
   isCommercialIntentPath,
 } from "@/lib/intake-routing";
+import { TrustStrip } from "@/components/trust/TrustStrip";
 
 // Trimmed to 5 (redesign D.5, 2026-09-22). The four dropped links (Solar in
 // CA, Solar Problems, Batteries, About) are not orphaned — they have homes in
@@ -47,6 +48,10 @@ export function Header() {
   }, [menuOpen]);
 
   return (
+    <>
+    {/* Slim disclosure line above the header (design pass 2, 22b §3.1). It
+        scrolls away; only the header below it is sticky. */}
+    <TrustStrip />
     <header className="bg-card border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-card/95">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="flex items-center justify-between h-16">
@@ -152,5 +157,6 @@ export function Header() {
         )}
       </div>
     </header>
+    </>
   );
 }

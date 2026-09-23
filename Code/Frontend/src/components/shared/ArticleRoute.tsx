@@ -91,7 +91,9 @@ function buildSchema(page: ArticlePage) {
       acceptedAnswer: { '@type': 'Answer', text: f.answer },
     })),
   };
-  return [article, faq];
+  // No FAQPage node for a page with no questions: an empty mainEntity is an
+  // invalid FAQPage. The visible block (FaqBlock) also renders nothing then.
+  return page.faqs.length > 0 ? [article, faq] : [article];
 }
 
 export function ArticleRoute({
@@ -119,24 +121,32 @@ export function ArticleRoute({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
-      <main className="py-12 md:py-16">
+      <main className="py-10 md:py-14">
         <div className="container mx-auto px-4">
-          <Link
-            href={backHref}
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8 max-w-3xl mx-auto w-full"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            {backLabel}
-          </Link>
+          {/* Same max-w-6xl frame as ArticleRenderer's article + rail grid, so
+              the back link lines up with the article column. */}
+          <div className="mx-auto mb-6 max-w-6xl">
+            <Link
+              href={backHref}
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {backLabel}
+            </Link>
+          </div>
           <ArticleRenderer page={page} related={relatedArticles(page)} inquiryHref={isSgip?'#solar-inquiry':undefined}
             tools={isSgip?<nav aria-label="SGIP decision tools" className="my-6 flex flex-wrap gap-4 text-sm font-semibold text-primary underline"><Link href="/tools/solar-panel-calculator">Check the quote without a rebate</Link><Link href="/blog/solar-battery-backup-california">Compare battery and backup needs</Link><Link href="#solar-inquiry">Optional solar inquiry</Link></nav>:undefined}/>
-          {isSgip&&<div className="mx-auto max-w-3xl"><p className="mt-8 text-sm">California Rate Relief is a private solar referral service. This inquiry is not an SGIP application or eligibility decision. <Link className="text-primary underline" href="/commercial-solar/sgip-battery-storage">Commercial storage projects</Link> follow a separate review.</p><SolarInquiry topic="SGIP residential solar and storage"/></div>}
+          {isSgip&&<div className="mx-auto max-w-6xl"><div className="max-w-3xl"><p className="mt-8 text-sm">California Rate Relief is a private solar referral service. This inquiry is not an SGIP application or eligibility decision. <Link className="text-primary underline" href="/commercial-solar/sgip-battery-storage">Commercial storage projects</Link> follow a separate review.</p><SolarInquiry topic="SGIP residential solar and storage"/></div></div>}
+          {/* Was rendered after <Footer />; moved inside main so it sits above
+              the footer, aligned with the article column. */}
+          <div className="mx-auto max-w-6xl">
+            <div className="max-w-3xl">
+              <TrustedSources domain="crr" variant="compact" palette={SOURCE_PALETTE} />
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
-      <div className="container mx-auto px-4 max-w-3xl">
-        <TrustedSources domain="crr" variant="compact" palette={SOURCE_PALETTE} />
-      </div>
     </PublicLayout>
   );
 }

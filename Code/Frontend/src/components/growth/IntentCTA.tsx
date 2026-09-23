@@ -62,12 +62,12 @@ export function IntentCTA({
   return (
     <div
       id={id}
-      className={`mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center ${className}`}
+      className={`mt-12 rounded-lg border border-border border-t-4 border-t-primary bg-card p-6 md:p-8 ${className}`}
     >
       <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight">
         {heading ?? copy.heading}
       </h3>
-      <p className="text-muted-foreground mb-6 max-w-lg mx-auto">{body ?? copy.body}</p>
+      <p className="text-muted-foreground mb-5 max-w-2xl leading-relaxed">{body ?? copy.body}</p>
       <Link
         href={resolved.href}
         onClick={() =>
@@ -82,7 +82,7 @@ export function IntentCTA({
             page_path: resolved.pathname || 'unknown',
           })
         }
-        className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
+        className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
       >
         {action ?? copy.action}
         <ArrowRight className="h-4 w-4" />

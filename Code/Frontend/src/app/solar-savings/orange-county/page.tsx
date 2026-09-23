@@ -43,20 +43,8 @@ function buildRegionalCollectionSchema() {
     description:
       'A guide to solar energy options and electric bill reduction strategies for Orange County, California homeowners.',
     url: 'https://ratereliefca.com/solar-savings/orange-county',
-    mainEntity: {
-      '@type': 'LocalBusiness',
-      name: 'California Rate Relief Program — Orange County',
-      description:
-        'Helping Orange County homeowners qualify for affordable solar energy programs.',
-      areaServed: [
-        { '@type': 'City', name: 'Irvine' },
-        { '@type': 'City', name: 'Huntington Beach' },
-        { '@type': 'City', name: 'Anaheim' },
-        { '@type': 'City', name: 'Santa Ana' },
-        { '@type': 'City', name: 'Westminister' },
-        { '@type': 'City', name: 'San Clemente' },
-      ],
-    },
+    // mainEntity was a LocalBusiness for this region; CRR has no premises
+    // anywhere, so it was removed (design pass 2, 2026-09-22).
   };
 }
 

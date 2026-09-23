@@ -128,6 +128,13 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     { url: `${base}/affiliate-disclosure`, lastModified: urlMtime('/affiliate-disclosure', today), changeFrequency: 'yearly', priority: 0.3 },
     { url: `${base}/privacy`, lastModified: urlMtime('/privacy', today), changeFrequency: 'yearly', priority: 0.3 },
     { url: `${base}/terms`, lastModified: urlMtime('/terms', today), changeFrequency: 'yearly', priority: 0.3 },
+    // claude/ca-design-20260922 — CRR-only trust pages (design pass 2). The
+    // three new ones are drafts for Chad to confirm before release;
+    // /corrections already existed but was missing from the sitemap.
+    { url: `${base}/editorial-policy`, lastModified: new Date('2026-09-22T00:00:00.000Z'), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/how-we-make-money`, lastModified: new Date('2026-09-22T00:00:00.000Z'), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/sources-we-use`, lastModified: new Date('2026-09-22T00:00:00.000Z'), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/corrections`, lastModified: urlMtime('/corrections', today), changeFrequency: 'monthly', priority: 0.3 },
   ];
 
   const blogSlugs = [

@@ -53,20 +53,8 @@ function buildRegionalCollectionSchema() {
     description:
       'A guide to solar energy options and electric bill reduction strategies for Bay Area homeowners served by PG&E.',
     url: 'https://ratereliefca.com/solar-savings/bay-area',
-    mainEntity: {
-      '@type': 'LocalBusiness',
-      name: 'California Rate Relief Program — Bay Area',
-      description:
-        'Helping Bay Area homeowners qualify for affordable solar energy programs under PG&E service.',
-      areaServed: [
-        { '@type': 'City', name: 'San Jose' },
-        { '@type': 'City', name: 'San Francisco' },
-        { '@type': 'City', name: 'Oakland' },
-        { '@type': 'City', name: 'Fremont' },
-        { '@type': 'City', name: 'Pleasanton' },
-        { '@type': 'City', name: 'Sunnyvale' },
-      ],
-    },
+    // mainEntity was a LocalBusiness for this region; CRR has no premises
+    // anywhere, so it was removed (design pass 2, 2026-09-22).
   };
 }
 
