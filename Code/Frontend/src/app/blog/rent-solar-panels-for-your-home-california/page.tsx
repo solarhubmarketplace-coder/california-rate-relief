@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -11,17 +12,29 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+const metaTitle = "Rent Solar Panels for Your Home in California: Lease vs PPA";
+const metaDescription =
+  "“Renting” solar in California means a lease or a PPA. How each is billed, what you still pay the utility, and renter options: community solar and SOMAH.";
+
 export const metadata: Metadata = {
-  title: "Rent Solar Panels For Your Home: California 2026 Guide",
-  description: "California solar lease and PPA options explained, plus what renters and apartment residents can do instead through community solar and SOMAH.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/blog/rent-solar-panels-for-your-home-california' },
-  openGraph: { title: "Rent Solar Panels For Your Home: California 2026 Guide", description: "How to rent solar panels in California via lease or PPA.", type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/blog/rent-solar-panels-for-your-home-california',
+    publishedTime: '2026-04-23T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 export default function RentSolarPanels() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Rent Solar Panels For Your Home: California 2026 Guide"} url="https://ratereliefca.com/blog/rent-solar-panels-for-your-home-california" datePublished="2026-04-23" dateModified="2026-09-22" description={"California solar lease and PPA options explained, plus what renters and apartment residents can do instead through community solar and SOMAH."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Rent Solar Panels for Your Home in California: Lease vs PPA"} url="https://ratereliefca.com/blog/rent-solar-panels-for-your-home-california" datePublished="2026-04-23" dateModified="2026-09-22" description={"California solar lease and PPA options explained, plus what renters and apartment residents can do instead through community solar and SOMAH."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -30,7 +43,7 @@ export default function RentSolarPanels() {
 
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Financing</span>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Rent Solar Panels For Your Home: California 2026 Guide</h1>
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Rent Solar Panels for Your Home in California: Lease vs PPA</h1>
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-23'>April 23, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>7 min read</span></div>

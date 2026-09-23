@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -11,16 +12,28 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Solar Optimum Reviews (2026): Lawsuits, Ratings, Warranty";
+const metaDescription =
+  "A Sept. 18, 2026 federal docket search found none naming Solar Optimum as a defendant. Plus its 6-level, 25-year warranty and how to read its ratings.";
+
 export const metadata: Metadata = {
-  title: "Solar Optimum Reviews: Warranty & Lawsuit Check (2026)",
-  description: "See what's independently verifiable about Solar Optimum: warranty terms and a court-record check, current as of September 2026.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/solar-optimum-review' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/solar-optimum-review',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: "Solar Optimum Reviews: Warranty & Lawsuit Check (2026)",
+  headline: "Solar Optimum Reviews: What's Verifiable (Warranty, Lawsuit Check, 2026)",
   datePublished: '2026-04-22',
   dateModified: '2026-09-18',
   author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },

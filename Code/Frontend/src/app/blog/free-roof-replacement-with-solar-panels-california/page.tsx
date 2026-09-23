@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
@@ -18,25 +19,29 @@ const sources: Source[] = [
   },
 ];
 
+const metaTitle = "Is Free Roof Replacement With Solar Real? What to Check";
+const metaDescription =
+  "No California or federal program pays for a new roof because solar goes on it. How a “free roof” offer is paid for, and what to get in writing first.";
+
 export const metadata: Metadata = {
-  title: "Free Roof Replacement with Solar in California: Verify First",
-  description:
-    "A solar proposal can include roof work, but a headline does not make it free. Separate the roof, solar and financing terms before you sign.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: "/blog/free-roof-replacement-with-solar-panels-california" },
   openGraph: {
-    title: "Free roof replacement with solar in California: what to verify",
-    description:
-      "How to separate roof work, solar equipment and payment terms in a California proposal.",
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: "https://ratereliefca.com/blog/free-roof-replacement-with-solar-panels-california",
     modifiedTime: "2026-09-22T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 export default function FreeRoofReplacementWithSolarCalifornia() {
   return (
     <DecisionPage
-      title="Free roof replacement with solar in California: what to verify"
+      title="Is free roof replacement with solar real? What to verify in California"
       intro="A solar proposal can include roof work, but a headline does not establish that the roof is free. Compare the roof, solar equipment and payment terms as separate pieces before signing."
       path="/blog/free-roof-replacement-with-solar-panels-california"
       sources={sources}

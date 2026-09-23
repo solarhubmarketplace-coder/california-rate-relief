@@ -1,14 +1,17 @@
 // Reviewed local replacement. Original company claims remain at base e605685.
 import type { Metadata } from "next";
+import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage } from "@/components/growth/DecisionPage";
 import { CommercialReviewButton, CommercialReviewForm } from "@/components/growth/CommercialReview";
 
+// `title` is the on-page H1; `metaTitle` is the search title.
 const title =
-  "Commercial Solar Companies in California: Compare by Scope";
+  "Commercial Solar Companies and EPCs in California: Compare by Scope";
+const metaTitle = "Commercial Solar Companies & EPCs in California: 6 Checks";
 const description =
-  "Compare bids on license, electrical scope, tariff, demand charges, interconnection and financing before choosing a California commercial solar company.";
+  "EPC, developer or owner? How California commercial solar companies split the work, and 6 items to get in writing from every bidder before comparing prices.";
 const path = "/commercial-solar/companies-california";
 const link = "text-primary underline underline-offset-2";
 const businessRates =
@@ -19,19 +22,19 @@ const lbnlReport =
   "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf";
 const VERIFIED = "September 18, 2026";
 export const metadata: Metadata = {
-  title: "Commercial Solar Companies in California: What to Compare",
-  description:
-    "Compare California commercial solar companies and EPCs on scope, tariff, demand charges and financing — not just the sticker price.",
+  title: metaTitle,
+  description,
   alternates: { canonical: path },
   openGraph: {
-    title: "Commercial Solar Companies in California: What to Compare",
-    description:
-      "Compare California commercial solar companies and EPCs on scope, tariff, demand charges and financing — not just the sticker price.",
+    title: metaTitle,
+    description,
     type: "article",
     url: `https://ratereliefca.com${path}`,
     publishedTime: "2026-04-23T00:00:00Z",
     modifiedTime: "2026-09-18T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, description),
 };
 
 export default function CommercialSolarCompanies() {

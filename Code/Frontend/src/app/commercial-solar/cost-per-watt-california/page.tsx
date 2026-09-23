@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { RelatedGuides } from '@/components/shared/RelatedGuides';
 import { ArrowLeft, AlertTriangle } from 'lucide-react';
@@ -14,10 +15,10 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 import CommercialSolarCalculator from '@/components/landing/CommercialSolarCalculator';
 
-const title = 'Commercial Solar Cost in California: What You Pay (2026)';
+const title = "Commercial Solar Panel Cost (2026): California $/W by Size";
 const description =
-  'California commercial solar runs $2.0-$4.3/W by size and type (LBNL). See after-tax cost, utility savings, property tax, and the two 2027 deadlines.';
-const h1 = 'Commercial Solar Cost in California: What You Actually Pay';
+  "LBNL's California medians for 2023 installs over 100 kW: $2.00/W agricultural, $2.30/W commercial, $4.10/W tax-exempt. After-tax cost and 2027 deadlines.";
+const h1 = 'Commercial Solar Panel Cost in California: What You Actually Pay';
 const canonicalUrl = 'https://ratereliefca.com/commercial-solar/cost-per-watt-california';
 const VERIFIED = 'September 22, 2026';
 const DATE_MODIFIED = '2026-09-22';
@@ -159,7 +160,9 @@ export const metadata: Metadata = {
     publishedTime: `${DATE_PUBLISHED}T00:00:00Z`,
     modifiedTime: `${DATE_MODIFIED}T00:00:00Z`,
     url: canonicalUrl,
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(title, description),
 };
 
 export default function CommercialSolarCost() {

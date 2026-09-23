@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { RelatedGuides } from '@/components/shared/RelatedGuides';
@@ -75,7 +76,7 @@ const definitions = {
     title: 'Solar panels in California: cost, size and bill comparison',
     intro:
       'The system price is only part of the decision. Put the solar equipment, battery, roof work and remaining electricity bill on separate lines. Then compare the total.',
-    metaTitle: 'California Solar Panel Cost: 2025 Residential Benchmark',
+    metaTitle: "Solar Panels in California: $3.30/W Median Cost and Sizing",
     metaDescription:
       'LBNL\'s 2026 update reports a $3.30 per WDC median price for California host-owned residential solar installed in 2025. A benchmark, not a quote.',
   },
@@ -93,9 +94,9 @@ const definitions = {
     title: 'Solar Lease vs. PPA vs. Loan vs. Cash Purchase in California',
     intro:
       'A solar lease and a PPA both mean you don’t own the system: with a lease you pay a fixed monthly rent, with a PPA you pay for the power it produces. A loan and a cash purchase both mean you own the system: a loan finances it over time, while cash pays for it outright from day one with no ongoing third-party payment. Compare the same system size across all four financing paths before comparing the payment amounts, since each one prices a different thing.',
-    metaTitle: 'Solar Lease vs. PPA vs. Purchase: California Guide',
+    metaTitle: "Solar Lease vs PPA vs Purchase (2026): 7 Terms Compared",
     metaDescription:
-      'Solar lease, PPA and cash purchase, compared side by side for California homes: what you own, what you pay monthly, and how the numbers differ.',
+      "Cash, loan, lease and PPA side by side for a California home: who owns it, monthly cost, escalator, repairs, buyout and home sale. Sourced to CPUC and IRS.",
   },
   nem: {
     path: '/blog/what-is-nem-3-california',
@@ -120,9 +121,9 @@ const definitions = {
     title: 'SDG&E Time-of-Use Rates: TOU-DR1 Peak Hours Explained',
     intro:
       'SDG&E’s TOU-DR1 residential plan has a peak and off-peak window that runs 4–9 p.m. every day, including weekends — that’s what most searchers are actually looking for. Your generation provider, whether SDG&E or a community choice aggregator, is billed separately from delivery, but the plan’s hourly schedule is what determines when you pay the higher rate. This page opens with the TOU-DR1 hours, then explains how generation charges add to the delivery price.',
-    metaTitle: 'SDG&E Time-of-Use Rates (2026): Compare Your Plan',
+    metaTitle: "SDG&E Peak Hours & TOU-DR1 Rates (2026): 5 Plans Compared",
     metaDescription:
-      "See which SDG&E time-of-use plan is on your bill and what it costs. Peak runs 4-9 p.m. for TOU-DR1 and TOU-DR2, including weekends.",
+      "SDG&E peak is 4-9 p.m. every day, weekends included. Off-peak windows plus summer and winter cents per kWh for TOU-DR1, TOU-DR2, TOU-DR-P, EV-TOU-5 and DR.",
   },
 };
 export type GuideKey = keyof typeof definitions;
@@ -151,7 +152,9 @@ export function guideMetadata(key: GuideKey): Metadata {
       type: 'article',
       url: `https://ratereliefca.com${d.path}`,
       modifiedTime,
+      images: [CRR_SOCIAL_CARD],
     },
+    twitter: crrTwitter(metaTitle, metaDescription),
   };
 }
 function FinancingTable() {

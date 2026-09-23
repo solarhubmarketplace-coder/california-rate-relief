@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -9,11 +10,23 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
+const metaTitle = "Silfab Solar Panels Review (2026): US-Made, Silfab vs Qcells";
+const metaDescription =
+  "Silfab builds panels in Washington State and Canada. Specs, the 25-year warranty, how it compares with Qcells, and who the domestic-content bonus pays.";
+
 export const metadata: Metadata = {
-  title: "Silfab Solar Panels Review 2026: US-Made Tier-1",
-  description: "Silfab, founded 2010, builds panels in Washington State and Canada. Tier-1 specs, 25-year warranty, and who the IRA domestic-content bonus actually pays.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/panel-reviews/silfab-solar-panels-review' },
-  openGraph: { title: 'Silfab Solar Panels Review 2026: The US-Manufactured Tier-1 Choice', description: 'Silfab Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/panel-reviews/silfab-solar-panels-review',
+    publishedTime: '2026-04-23T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {

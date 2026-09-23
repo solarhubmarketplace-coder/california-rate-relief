@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
@@ -34,19 +35,23 @@ const sources: Source[] = [
   },
 ];
 
+const metaTitle = "Prepaid Solar PPA in California (2026): 5 Terms to Check";
+const metaDescription =
+  "A prepaid PPA still leaves the provider owning the system. Who owns it, what is still owed, buyout, home-sale transfer and the utility bill that remains.";
+
 export const metadata: Metadata = {
-  title: "Prepaid Solar PPA California: What to Check Before Signing",
-  description:
-    "A prepaid label does not decide ownership, future payments, buyout, transfer, or utility bills. Compare the signed contract, not the name.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: "/blog/prepaid-ppa-california-2026" },
   openGraph: {
-    title: "Prepaid solar PPA in California: contract checklist for 2026",
-    description:
-      "How to compare a prepaid solar PPA with other California solar payment structures.",
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: "https://ratereliefca.com/blog/prepaid-ppa-california-2026",
     modifiedTime: "2026-09-22T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 export default function PrepaidPpaCalifornia2026() {

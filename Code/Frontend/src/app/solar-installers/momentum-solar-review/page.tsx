@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -10,19 +11,28 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Momentum Solar Reviews (2026): Does It Serve California?";
+const metaDescription =
+  "Momentum's own site lists CT, FL, MA, NV, NJ and TX, not California (checked Sept. 22, 2026). Plus 23 federal dockets, most of them TCPA calling cases.";
+
 export const metadata: Metadata = {
-  title: "Momentum Solar Reviews (2026): Powerwall & Pricing",
-  description: "Does Momentum Solar install the Tesla Powerwall? What its own site says, its PPA and lease structure, and the federal court record, dated.",
-  alternates: {
-    canonical: '/solar-installers/momentum-solar-review',
+  title: metaTitle,
+  description: metaDescription,
+  alternates: { canonical: '/solar-installers/momentum-solar-review' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/momentum-solar-review',
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline:
-    'Momentum Solar Review 2026: In-House Crews, But What About the Complaints?',
+  headline: 'Momentum Solar Reviews (2026): Does It Serve California?',
   datePublished: '2026-04-22',
   dateModified: '2026-09-22',
   author: {
@@ -65,7 +75,7 @@ export default function MomentumSolarReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Momentum Solar Reviews (2026): In-House Crews, But What About the Complaints?
+                Momentum Solar Reviews (2026): Does It Serve California?
               </h1>
               
               <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
