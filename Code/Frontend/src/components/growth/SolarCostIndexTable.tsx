@@ -54,7 +54,8 @@ const SOURCE_KIND_LABEL: Record<IndexSourceKind, string> = {
   cca: 'CCA',
 };
 
-const link = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
+// inline-block + vertical padding gives each link a 24px+ tap target (WCAG 2.5.8).
+const link = 'inline-block py-1 text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
 const control =
   'w-full rounded-lg border border-input bg-white px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring';
 
@@ -419,7 +420,7 @@ export function SolarCostIndexTable({
                         onClick={() => setOpen((prev) => ({ ...prev, [row.slug]: !prev[row.slug] }))}
                         aria-expanded={isOpen}
                         aria-controls={isOpen ? detailsId : undefined}
-                        className='mt-1 flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground'
+                        className='mt-1 flex min-h-6 items-center gap-1 py-1 text-xs text-muted-foreground hover:text-foreground'
                       >
                         {isOpen ? (
                           <ChevronDown className='h-3.5 w-3.5' aria-hidden='true' />
