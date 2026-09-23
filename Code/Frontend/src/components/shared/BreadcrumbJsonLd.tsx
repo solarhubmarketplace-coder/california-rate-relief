@@ -139,11 +139,18 @@ export interface BreadcrumbJsonLdProps {
   currentLabel?: string;
   /** Absolute origin used for every item URL. */
   baseUrl?: string;
+  /**
+   * An explicit middle crumb (e.g. the /solar-cost index or a regional hub).
+   * Replaces the section crumb derived from the first path segment, so the
+   * schema trail matches the page's visible breadcrumb.
+   */
+  parent?: { label: string; href: string };
 }
 
 export function BreadcrumbJsonLd({
   currentLabel,
   baseUrl = DEFAULT_BASE_URL,
+  parent,
 }: BreadcrumbJsonLdProps): ReactElement | null {
   const pathname = usePathname();
 
@@ -186,7 +193,9 @@ export function BreadcrumbJsonLd({
   ];
 
   // The section index earns its own crumb only when the page sits below it.
-  if (segments.length > 1 && section && section.href) {
+  if (parent && parent.href.startsWith('/')) {
+    trail.push({ name: parent.label, item: `${origin}${parent.href}` });
+  } else if (segments.length > 1 && section && section.href) {
     trail.push({ name: section.label, item: `${origin}${section.href}` });
   }
 

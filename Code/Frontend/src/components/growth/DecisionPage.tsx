@@ -97,6 +97,9 @@ export function DecisionPage({
   authorHref = "/author/chad-simpson",
   keyStats = [],
   toc = [],
+  authorSchema = "organization",
+  breadcrumbs = [],
+  breadcrumbLabel,
 }: {
   title: string;
   intro: string;
@@ -132,7 +135,27 @@ export function DecisionPage({
    * list from the body's own <h2> headings (shown when there are 3 or more).
    */
   toc?: ArticleContentsItem[];
+  /**
+   * "person" makes the Article schema's author the same Chad Simpson Person
+   * node the byline links to (and that ArticleJsonLd emits on the /solar-cost
+   * pages). Defaults to the Organization author every other caller has.
+   */
+  authorSchema?: "organization" | "person";
+  /**
+   * Visible trail between Home and this page; the last entry also becomes the
+   * BreadcrumbList parent so the schema matches what the reader sees.
+   */
+  breadcrumbs?: { label: string; href: string }[];
+  /** Short name for this page at the end of the trail. Defaults to the title. */
+  breadcrumbLabel?: string;
 }) {
+  const personAuthor = {
+    "@type": "Person",
+    "@id": "https://ratereliefca.com/author/chad-simpson#person",
+    name: author,
+    url: `https://ratereliefca.com${authorHref}`,
+    jobTitle: "Editor at California Rate Relief",
+  };
   const schema =
     path === "/tools/solar-panel-calculator"
       ? {
@@ -151,11 +174,15 @@ export function DecisionPage({
           "@type": "Article",
           headline: title,
           dateModified: contentModifiedDate || sourceCheckedDate,
-          author: {
-            "@type": "Organization",
-            name: "California Rate Relief",
-            url: "https://ratereliefca.com/about",
-          },
+          author:
+            authorSchema === "person"
+              ? personAuthor
+              : {
+                  "@type": "Organization",
+                  name: "California Rate Relief",
+                  url: "https://ratereliefca.com/about",
+                },
+          ...(authorSchema === "person" ? { reviewedBy: personAuthor } : {}),
           publisher: {
             "@type": "Organization",
             name: "California Rate Relief",
@@ -165,7 +192,7 @@ export function DecisionPage({
           citation: sources.map((s) => s.url),
         };
   return (
-    <PublicLayout breadcrumbLabel={title}>
+    <PublicLayout breadcrumbLabel={breadcrumbLabel || title} breadcrumbParent={breadcrumbs[breadcrumbs.length - 1]}>
       <Header />
       <main className="mx-auto max-w-6xl px-4 pb-20 pt-8 md:pt-12">
         <script
@@ -175,6 +202,19 @@ export function DecisionPage({
         <div className={RAIL_GRID}>
           <div className="min-w-0">
             <header className="max-w-3xl">
+              {breadcrumbs.length > 0 && (
+                <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                  <Link href="/" className="hover:text-primary">Home</Link>
+                  {breadcrumbs.map((crumb) => (
+                    <span key={crumb.href} className="flex items-center gap-2">
+                      <span aria-hidden="true">/</span>
+                      <Link href={crumb.href} className="hover:text-primary">{crumb.label}</Link>
+                    </span>
+                  ))}
+                  <span aria-hidden="true">/</span>
+                  <span className="text-foreground">{breadcrumbLabel || title}</span>
+                </nav>
+              )}
               <p className="text-sm font-semibold uppercase tracking-wide text-primary">
                 {regionLabel} solar decisions
               </p>
