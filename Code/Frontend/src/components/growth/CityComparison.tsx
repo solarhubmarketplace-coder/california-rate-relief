@@ -9,17 +9,25 @@ import {
   CityLocalChecks,
   CityPublishedProvider,
   CityQuestions,
-  CityRegionalLinks,
 } from "./CityLocalDetails";
+import { NearbyCityPages } from "./NearbyCostCities";
+import { companiesPageSeo } from "@/lib/city-pages";
 export function CityComparison({ slug }: { slug: string }) {
   const city = growthCities[slug];
   // 2026-09-22: link to the /solar-cost/<city> twin when one is actually
   // publishable (sourced, gated) — see canonical-redirects.ts for the SERP
   // reasoning behind this route being live again instead of redirected.
   const hasCostTwin = getPublishableCityCostSlugs().includes(slug);
+  const seo = companiesPageSeo(slug);
   return (
     <DecisionPage
-      title={`Compare solar companies in ${city.name}, California`}
+      title={seo?.h1 ?? `Compare solar companies in ${city.name}, California`}
+      // The inquiry topic keeps its pre-2026-09-22 wording: it travels with the
+      // lead, and the H1 change is not a reason to change intake data.
+      topic={`Compare solar companies in ${city.name}, California`}
+      authorSchema="person"
+      breadcrumbs={[{ label: "Solar companies in California", href: "/best-solar-companies-california" }]}
+      breadcrumbLabel={`Solar companies in ${city.name}`}
       intro={`A useful ${city.county} quote starts with the actual property, electric bill and scope of work. Compare the same system. Then compare the contract.`}
       path={`/solar-companies/${slug}`}
       sources={city.sources}
@@ -156,7 +164,9 @@ export function CityComparison({ slug }: { slug: string }) {
           },
         ]}
       />
-      <CityRegionalLinks slug={slug} />
+      {/* 2026-09-22: replaces the hand-picked CityRegionalLinks list (15 of 50
+          cities had one) with the nearest live city pages, same county first. */}
+      <NearbyCityPages slug={slug} type="companies" />
     </DecisionPage>
   );
 }
