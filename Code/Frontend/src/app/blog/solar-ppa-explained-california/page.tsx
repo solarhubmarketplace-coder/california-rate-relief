@@ -7,8 +7,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Solar PPA in California: Pay 8-15 Cents per kWh",
-  description: "A solar PPA charges 8-15 cents per kWh with no money down, versus 35-46 cents per kWh from the utility. How the contract, escalator, and buyout work.",
+  title: "Solar PPA Explained: How California's $0-Down Solar Works",
+  description: "How a California solar PPA works: the $/kWh rate, escalator, term, and what CPUC's consumer guide requires providers to disclose before you sign.",
   alternates: {
     canonical: '/blog/solar-ppa-explained-california',
   },
@@ -30,7 +30,7 @@ const articleSchema = {
   description:
     'How a solar PPA works, what you pay, and why it makes sense for California homeowners. Complete breakdown with cost comparisons.',
   datePublished: '2026-04-16',
-  dateModified: '2026-04-16',
+  dateModified: '2026-09-22',
   author: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
@@ -179,6 +179,34 @@ export default function SolarPPAExplainedCalifornia() {
                 Always request the exact escalator percentage in writing before signing. Ask the company for a 25-year cost projection showing the escalator applied year by year.
               </p>
 
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                For how far an escalator can run before it stops paying off against utility rate growth, see <Link href='/solar-problems/solar-escalator-clause-explained' className='text-primary underline'>Solar Escalator Clauses, Explained</Link>.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                What California Requires Providers to Disclose
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Two state-level requirements apply specifically to leases and PPAs, on top of general solar sales rules.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                <strong>The CPUC&apos;s Solar Consumer Protection Guide.</strong> The state treats leases and PPAs as third-party-owned systems and requires the sale-related risk to be explained up front: &ldquo;If you sell your house before the Lease or PPA contract is over, you will have to pay the Solar Provider the remainder of the value of the Lease or PPA or transfer the contract to the new property owner&rdquo; (CPUC, California Solar Consumer Protection Guide, p. 12). The guide confirms the escalator range this page uses above and adds a caution: &ldquo;Escalators are typically in the range of a 1 percent to 3 percent increase,&rdquo; and shoppers should &ldquo;be cautious of entering into a contract with an escalator higher than that&rdquo; (CPUC, California Solar Consumer Protection Guide Overview &amp; FAQ). Providers interconnecting through PG&amp;E, SCE, SDG&amp;E, Bear Valley Electric Service, PacifiCorp, or Liberty are required to collect your initials and signature on this guide before you sign a contract (CPUC, California Solar Consumer Protection Guide Overview &amp; FAQ) — if you weren&apos;t handed one, ask for it first.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                <strong>The CSLB disclosure forms.</strong> Separately, your contractor must give you two CSLB forms before you sign. On the &ldquo;Solar Energy System Supporting Information&rdquo; form, a PPA entry requires the provider to write in the energy rate in $/kWh and the escalator percentage; a lease entry requires the monthly payment and escalator; both require a yes/no answer to &ldquo;Can the customer transfer the system to a new homeowner if they want to sell their house?&rdquo; — with a note that transfer &ldquo;may require the customer to pay off the agreement in full&rdquo; (CSLB, Solar Energy System Supporting Information, Version 2). The companion cover-page form shows the total system cost and a one-year bill-savings estimate. You also have a right to cancel — see <Link href='/blog/can-you-cancel-solar-panel-contract-before-installation-california' className='text-primary underline'>your right to cancel a solar contract</Link> for the exact window and how to exercise it. Ask for both CSLB forms filled in, not blank, before you sign the contract itself.
+              </p>
+
+              <h3 className='text-xl font-bold text-foreground mt-8 mb-3'>
+                Where DFPI does — and doesn&apos;t — fit in
+              </h3>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The Department of Financial Protection and Innovation licenses and regulates PACE program administrators, a separate property-tax-assessment financing option, and it has licensed California Finance Lenders who make solar loans since it took on PACE oversight in 2019 (DFPI, PACE). DFPI does not license or directly regulate solar leases or PPAs — they aren&apos;t loans. If a PPA or lease goes wrong, DFPI generally isn&apos;t the right agency; your first calls are the provider itself, then CSLB if the dispute involves the contractor&apos;s license or the disclosure forms above.
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What Happens After 25 Years
               </h2>
@@ -215,6 +243,10 @@ export default function SolarPPAExplainedCalifornia() {
                 To ease the sale, you can negotiate the buyout with the buyer (they pay $3,000-$5,000 and own the system free and clear) or the buyer can assume the contract. Most home sale contracts address the PPA explicitly. If you anticipate selling within the contract term, discuss buyout options with the solar company upfront.
               </p>
 
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                For the full mechanics of transferring, buying out, or ending a lease or PPA at sale — including what most home-sale contracts say and how buyers typically respond — see <Link href='/blog/what-happens-to-solar-lease-when-i-sell-california' className='text-primary underline'>What Happens to a Solar Lease When You Sell in California</Link>.
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 PPA vs Buying vs Leasing
               </h2>
@@ -233,6 +265,10 @@ export default function SolarPPAExplainedCalifornia() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 PPAs are best for homeowners who want $0 down and immediate savings without ownership hassle. Purchasing is best for those with capital or financing who plan to stay 15+ years and want maximum savings.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                For a full side-by-side of loan, lease, and cash across more scenarios, see <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>PPA vs. Loan vs. Lease vs. Cash in California</Link>; for a closer look at PPA vs. lease specifically, see <Link href='/blog/solar-ppa-vs-lease-california' className='text-primary underline'>Solar PPA vs. Lease in California</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -261,6 +297,10 @@ export default function SolarPPAExplainedCalifornia() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
+                Eligibility and program terms vary by provider — Tesla&apos;s PPA program, for example, sets its own requirements, covered in the <Link href='/solar-installers/tesla-solar-review' className='text-primary underline'>Tesla Solar review</Link> rather than here.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
                 PPAs don&apos;t make sense if your roof needs replacement soon, if you&apos;re planning to sell within 5-10 years, or if your electricity consumption is under $100/month (savings may not justify the contract).
               </p>
 
@@ -270,6 +310,39 @@ export default function SolarPPAExplainedCalifornia() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 A solar PPA is a straightforward way to get solar at $0 down and lock in savings for 20-25 years. You don&apos;t own the system, don&apos;t maintain it, and can&apos;t claim tax benefits — but you get immediate bill savings without any upfront capital. In California&apos;s high-rate environment, especially with the residential tax credit gone, PPAs often offer better economics than purchasing for homeowners without substantial cash. If you qualify, it&apos;s worth exploring.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                Ask before you sign
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                California&apos;s consumer guide recommends putting these questions to your PPA or lease provider directly, in writing (CPUC, California Solar Consumer Protection Guide, p. 12):
+              </p>
+
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>What is the total cost of the solar electricity over the entire contract term?</li>
+                <li>How much will I pay up front, how much over time, and for how long?</li>
+                <li>Will my payments increase over time — by how much, and how often?</li>
+                <li>What happens if I want to end the contract early? Will I owe a balloon payment or an early termination fee, and how much?</li>
+                <li>How does this contract affect my ability to sell or refinance my home?</li>
+                <li>Are there fees to transfer the contract to a new homeowner?</li>
+              </ul>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Ask for the 25-year cost projection mentioned above and both CSLB disclosure forms, filled in with these answers, before you sign — not promised verbally.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                What Trips Up California Solar Shoppers, Per State Research
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                CPUC-commissioned interviews with solar adopters found people get tripped up by specific, recurring gaps rather than one bad actor. Some adopters said they &ldquo;rushed into solar to later find that the cost was higher than expected, or that there were contingencies that had not been clearly stated&rdquo; — a pre-signing problem, not a post-installation one (CPUC/ILLUME Advising, Solar Consumer Protection Guide Research Findings, 2020, p. 20). Others described monthly bills they couldn&apos;t explain — one shopper put it as &ldquo;I don&apos;t even know... I got a bill each month... I don&apos;t know what&apos;s going to happen when I have a true-up, I mean, it&apos;s sort of a mystery to me&rdquo; (CPUC/ILLUME Advising, Solar Consumer Protection Guide Research Findings, 2020, p. 20). With a PPA, ask your provider to walk through a sample monthly bill — what you&apos;re charged for production, what the utility bills separately — before you sign, not after your first one arrives.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Separately, California&apos;s consumer guide names specific claims to treat as red flags, not facts — see <Link href='/blog/free-solar-panels-california' className='text-primary underline'>Are free solar panels really free in California?</Link> for the full list and what each one actually means. A legitimate PPA quote puts a number on the rate, the escalator, and the term — if a provider won&apos;t commit any of those three to writing, that alone is reason to ask again before signing.
               </p>
             </div>
 
