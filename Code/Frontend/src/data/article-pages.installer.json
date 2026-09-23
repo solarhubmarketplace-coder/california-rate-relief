@@ -5,7 +5,7 @@
     "metaTitle": "Freedom Forever Bankruptcy: What Customers Should Do",
     "metaDescription": "Freedom Forever converted to Chapter 7 liquidation Aug 7, 2026. Here's what's recoverable, what isn't, and exactly where California customers file claims now.",
     "h1": "Freedom Forever Went Into Chapter 7 Liquidation. Here's What to Do About Your System.",
-    "intro": "Freedom Forever filed Chapter 11 in Delaware on April 15, 2026 (Case No. 26-10522, U.S. Bankruptcy Court for the District of Delaware, Judge Brendan L. Shannon). On July 31, 2026, the company told the court a proposed sale of the business had collapsed and it would seek to convert the case to Chapter 7 liquidation. The judge signed the conversion order on August 7, 2026. Trustee Alfred T. Giuliano and claims agent Kroll Restructuring Administration LLC are now winding the company down. News coverage of the case has put the number of affected homeowners nationwide above 150,000; we could not confirm that exact figure against a primary court filing as of this writing, but it is consistent with Freedom Forever having been the No. 2 residential solar installer in the country in 2025.\n\nFreedom Forever is not answering phones, not honoring service calls, and not standing behind its workmanship warranty. None of that means your solar system stopped working, and it does not mean you have no recourse at all. It means the recourse changed, and this page tells you exactly where it moved to.",
+    "intro": "Freedom Forever filed Chapter 11 in Delaware on April 15, 2026 (Case No. 26-10522, U.S. Bankruptcy Court for the District of Delaware, Judge Brendan L. Shannon). On July 31, 2026, the company told the court a proposed sale of the business had collapsed and it would seek to convert the case to Chapter 7 liquidation. The judge signed the conversion order on August 7, 2026. Trustee Alfred T. Giuliano and claims agent Kroll Restructuring Administration LLC are now winding the company down.\n\nFreedom Forever is not answering phones, not honoring service calls, and not standing behind its workmanship warranty. None of that means your solar system stopped working, and it does not mean you have no recourse at all. It means the recourse changed, and this page tells you exactly where it moved to.",
     "keyStats": [
       {
         "label": "Total debt at Chapter 11 filing",
@@ -198,7 +198,7 @@
     "metaTitle": "How to Verify a CA Solar Contractor Before You Sign",
     "metaDescription": "Check a California solar contractor's CSLB license, bond, and disclosure document before signing. Classifications, red flags, and your 3-day cancel right.",
     "h1": "How to Verify a California Solar Contractor Before You Sign",
-    "intro": "A California solar contractor needs one of a short list of state licenses to legally sign your job, and you can check that license, its bond, and its complaint history for free in about two minutes at cslb.ca.gov (Contractors State License Board, checked 2026-09-05). Most homeowners never run that check. They take the license number off a business card or a truck door and move straight to the contract.\n\nThat habit has gotten expensive. Freedom Forever converted its April 2026 Chapter 11 into a full Chapter 7 liquidation on July 31, 2026, leaving more than 150,000 homeowners with a solar system and no company on the other end of the warranty (Law360, Solar Power World, checked 2026-09-05). Sunnova filed Chapter 11 in June 2025 and sold its residential servicing platform and existing customer portfolio; SunStrong now administers those legacy accounts (Solar Power World, checked 2026-09-05). SunPower filed in August 2024 (Solar Power World, checked 2026-09-05). None of that means the CSLB license lookup would have predicted a bankruptcy filing years out. It does mean that a contractor's paperwork is the only piece of this transaction that is a matter of public record, verifiable before you sign, rather than a promise made across your kitchen table.\n\nThis page walks through what the license lookup tool actually tells you, what the state requires the contractor to disclose before you sign anything, and where the sales pitch itself is the tell.",
+    "intro": "A California solar contractor needs one of a short list of state licenses to legally sign your job, and you can check that license, its bond, and its complaint history for free in about two minutes at cslb.ca.gov (Contractors State License Board, checked 2026-09-05). Most homeowners never run that check. They take the license number off a business card or a truck door and move straight to the contract.\n\nThat habit has gotten expensive. Freedom Forever's April 2026 Chapter 11 was converted to Chapter 7 liquidation in summer 2026, leaving its homeowners with a solar system and no company on the other end of the warranty (Law360, Solar Power World, checked 2026-09-05). Sunnova filed Chapter 11 in June 2025 and sold its residential servicing platform and existing customer portfolio; SunStrong now administers those legacy accounts (Solar Power World, checked 2026-09-05). SunPower filed in August 2024 (Solar Power World, checked 2026-09-05). None of that means the CSLB license lookup would have predicted a bankruptcy filing years out. It does mean that a contractor's paperwork is the only piece of this transaction that is a matter of public record, verifiable before you sign, rather than a promise made across your kitchen table.\n\nThis page walks through what the license lookup tool actually tells you, what the state requires the contractor to disclose before you sign anything, and where the sales pitch itself is the tell.",
     "keyStats": [
       {
         "label": "Contractor's bond",
@@ -399,7 +399,7 @@
       {
         "name": "Solar Power World — Residential solar installer Freedom Forever files bankruptcy",
         "url": "https://www.solarpowerworldonline.com/2026/04/residential-solar-installer-freedom-forever-files-bankruptcy/",
-        "supports": "150,000+ homeowners affected, April 2026 Chapter 11 filing date"
+        "supports": "April 2026 Chapter 11 filing date"
       },
       {
         "name": "PV Magazine USA — Sunnova files for bankruptcy",
@@ -633,9 +633,9 @@
         "note": "Agreements transferred to buyers instead of bought out — Sunrun FAQ, 2026-09-05"
       },
       {
-        "label": "Annual cost of skipping a buyout window",
-        "value": "$300-$1,000",
-        "note": "Industry-wide carrying-fee range, not Sunrun-specific — EnergySage, 2026"
+        "label": "Cost of skipping a buyout window",
+        "value": "Set by your contract",
+        "note": "Sunrun does not publish a carrying fee; read your agreement for any charge tied to holding rather than buying"
       }
     ],
     "sections": [
@@ -645,7 +645,7 @@
       },
       {
         "heading": "Why buyout windows open at year 5, not sooner",
-        "body": "Sunrun's contract bars an ownership-transferring purchase before the 5th anniversary of your system going into service, and there's a specific tax-law reason this is a common floor across third-party-owned solar generally, not just Sunrun's house preference.\n\nThird-party-owned solar systems carry the federal investment tax credit (ITC), which the third-party owner — Sunrun, not you — claims. Under 26 U.S.C. § 50(a)(1), that credit is subject to recapture if the underlying property is sold within 5 years of being placed in service: 100% recapture if disposed of in year 1, dropping to 80% in year 2, 60% in year 3, 40% in year 4, and 20% in year 5. Selling you the system earlier would expose Sunrun to giving back a meaningful chunk of a credit it already claimed.\n\nThis is a reasoned inference connecting two verified facts — Sunrun's 5-year contractual floor and the recapture statute's 5-year window — not a sentence found stated together in one Sunrun document. EnergySage's own consumer-facing material backs the same logic loosely, describing industry buyout floors (it frames the general industry pattern around year 6, not Sunrun's specific year 5) as tied to \"IRS rules governing when financiers can legally sell leased systems to homeowners,\" without citing the specific code section. Treat the mechanism as solid and the exact number as Sunrun-contract-specific."
+        "body": "Sunrun's contract bars an ownership-transferring purchase before the 5th anniversary of your system going into service, and there's a specific tax-law reason this is a common floor across third-party-owned solar generally, not just Sunrun's house preference.\n\nThird-party-owned solar systems carry the federal investment tax credit (ITC), which the third-party owner — Sunrun, not you — claims. Under 26 U.S.C. § 50(a)(1), that credit is subject to recapture if the underlying property is sold within 5 years of being placed in service: 100% recapture if disposed of in year 1, dropping to 80% in year 2, 60% in year 3, 40% in year 4, and 20% in year 5. Selling you the system earlier would expose Sunrun to giving back a meaningful chunk of a credit it already claimed.\n\nThis is a reasoned inference connecting two verified facts — Sunrun's 5-year contractual floor and the recapture statute's 5-year window — not a sentence found stated together in one Sunrun document.  Treat the mechanism as solid and the exact number as Sunrun-contract-specific."
       },
       {
         "heading": "Home sale: transfer is the default path, not buyout",
@@ -653,11 +653,11 @@
       },
       {
         "heading": "Mid-term buyout versus end-of-term: what actually changes",
-        "body": "A mid-term buyout (year 5 or year 20) and an end-of-term buyout use the identical pricing mechanism — FMV via independent appraiser — but the leverage and the alternatives differ.\n\nMid-term, at year 5 or year 20, you're one of three choices Sunrun offers on a fixed schedule; if you skip the window, you're locked into your existing lease payments (or PPA rate) until the next one opens, which per EnergySage's industry-wide figures can mean an ongoing carrying cost in the $300-$1,000/year range if there's an annual fee structure attached to holding rather than buying (this is a general industry figure, not confirmed as Sunrun's specific fee).\n\nAt end of term, per Sunrun's current FAQ, you get three options with no obligation to buy: purchase at FMV, renew the lease or PPA annually at a reset rate, or have Sunrun remove the system at no cost. The 2018 contract's renewal formula ties the reset rate to the local utility's on-peak residential rate with a contract-set floor — worth re-verifying against a current agreement before assuming it's unchanged eight years later. The free-removal option is the one lever mid-term buyouts don't offer: you cannot ask Sunrun to simply take the system back before the term ends without triggering default consequences instead."
+        "body": "A mid-term buyout (year 5 or year 20) and an end-of-term buyout use the identical pricing mechanism — FMV via independent appraiser — but the leverage and the alternatives differ.\n\nMid-term, at year 5 or year 20, you're one of three choices Sunrun offers on a fixed schedule; if you skip the window, you're locked into your existing lease payments (or PPA rate) until the next one opens; read your agreement for any fee attached to holding rather than buying.\n\nAt end of term, per Sunrun's current FAQ, you get three options with no obligation to buy: purchase at FMV, renew the lease or PPA annually at a reset rate, or have Sunrun remove the system without a removal charge. The 2018 contract's renewal formula ties the reset rate to the local utility's on-peak residential rate with a contract-set floor — worth re-verifying against a current agreement before assuming it's unchanged eight years later. The free-removal option is the one lever mid-term buyouts don't offer: you cannot ask Sunrun to simply take the system back before the term ends without triggering default consequences instead."
       },
       {
         "heading": "What we could not verify — and what to ignore online",
-        "body": "Two gaps are worth naming directly rather than papering over.\n\nFirst, no verified 2025-2026 real-dollar figures exist for what actual Sunrun customers have paid in buyouts recently. Reddit and consumer complaint boards were not accessible for this research, and no reliable published source gives a current $/watt or aggregate buyout range specific to Sunrun. If you see a specific dollar figure attached to \"typical Sunrun buyout\" anywhere online, it is not traceable to a verified source as of this writing (2026-09-05).\n\nSecond, a cluster of low-quality domains surfaced repeatedly in searches on this exact topic — sites with suspiciously uniform \"fresh 2026\" dates, template SEO writing, and in one case a domain built to look like an official Sunrun property. One such source produced a buyout figure of roughly $1,000-$1,800 per watt, which fails a basic sanity check: full installed solar systems run $2-4 per watt total, so a buyout at 500 times that rate is not physically or financially plausible. None of these sites should inform your expectations. The only reliable path to a real number is your own contract's Section G language plus a direct FMV quote request to Sunrun."
+        "body": "Two gaps are worth naming directly rather than papering over.\n\nFirst, no verified 2025-2026 real-dollar figures exist for what actual Sunrun customers have paid in buyouts recently. Reddit and consumer complaint boards were not accessible for this research, and no reliable published source gives a current $/watt or aggregate buyout range specific to Sunrun. If you see a specific dollar figure attached to \"typical Sunrun buyout\" anywhere online, it is not traceable to a verified source as of this writing (2026-09-05).\n\nSecond, a cluster of low-quality domains surfaced repeatedly in searches on this exact topic — sites with suspiciously uniform \"fresh 2026\" dates, template SEO writing, and in one case a domain built to look like an official Sunrun property. One such source produced a buyout figure of roughly $1,000-$1,800 per watt, which fails a basic sanity check: LBNL's Tracking the Sun (2024 Edition) put host-owned residential systems installed in 2023 at $3.20 to $5.50 per watt in total (20th to 80th percentile, national), so a buyout at hundreds of times that rate is not plausible. None of these sites should inform your expectations. The only reliable path to a real number is your own contract's Section G language plus a direct FMV quote request to Sunrun."
       }
     ],
     "dataTable": {
@@ -690,7 +690,7 @@
         [
           "End of Initial Term",
           "End of the contract term (25 years in the 2018 template)",
-          "Purchase at FMV, or renew annually, or Sunrun removes the system free",
+          "Purchase at FMV, or renew annually, or Sunrun removes the system without a removal charge",
           "Yes, only if you choose the purchase option"
         ],
         [
@@ -715,7 +715,7 @@
       },
       {
         "question": "How does Sunrun calculate the buyout price?",
-        "answer": "By fair market value, not a fixed formula. Sunrun's contract language states the price will be \"the fair market value ('FMV') of the Solar System at the time of the purchase,\" determined by an independent appraiser Sunrun hires, who looks at a comparable in-service system's age, location, size, equipment, service costs, local electricity value, and any incentives already used. EnergySage, describing the industry generally, puts it bluntly: the financier sets the number, not you and not your installer. There is no published table you can look up in advance."
+        "answer": "By fair market value, not a fixed formula. Sunrun's contract language states the price will be \"the fair market value ('FMV') of the Solar System at the time of the purchase,\" determined by an independent appraiser Sunrun hires, who looks at a comparable in-service system's age, location, size, equipment, service costs, local electricity value, and any incentives already used. The financier's appraiser sets the number, not you and not your installer. There is no published table you can look up in advance."
       },
       {
         "question": "Why can't I buy out before year 5?",
@@ -735,7 +735,7 @@
       },
       {
         "question": "What if I don't want to buy out at all?",
-        "answer": "You have options that don't involve a lump-sum payment. Let the contract run to its end and have Sunrun remove the system at no cost under the End of Term Warranty. Renew the lease or PPA annually instead of buying, though the renewal rate resets — Sunrun's 2018 template tied it to the local utility's on-peak residential rate with a contract-set floor, and this should be re-verified against a current agreement rather than assumed unchanged. Or, per EnergySage's industry-wide figures, expect a $300 to $1,000 annual carrying fee in some arrangements if you skip a buyout window without renewing or removing."
+        "answer": "You have options that don't involve a lump-sum payment. Let the contract run to its end and have Sunrun remove the system without a removal charge under the End of Term Warranty. Renew the lease or PPA annually instead of buying, though the renewal rate resets — Sunrun's 2018 template tied it to the local utility's on-peak residential rate with a contract-set floor, and this should be re-verified against a current agreement rather than assumed unchanged. Read your agreement for any fee that applies if you skip a buyout window without renewing or removing."
       }
     ],
     "bottomLine": "Sunrun does not let you buy your way out of a lease or PPA whenever you feel like it, and it does not price the buyout off a simple chart. Ownership purchases open at year 5, year 20, end of term, or when you sell the house — everywhere else, an independent appraiser sets the fair market value, and neither you nor Sunrun controls that number in advance. A separate \"prepayment\" option exists inside the term, but it only pays off the lease early; Sunrun still owns the panels. The 5-year floor tracks a real IRS rule (26 U.S.C. § 50 ITC recapture), which is the most credible explanation available for why early ownership transfer isn't offered. Every specific dollar figure circulating online for a Sunrun buyout should be treated as noise until you have your own contract's Section G in hand and a quote from Sunrun directly — do not let a marketing page or forum post set your expectations before that call.",
@@ -751,19 +751,14 @@
         "supports": "Confirms FMV-via-independent-appraiser mechanism is current as of 2026-09-05; end-of-term three options; 98% home-sale transfer success claim"
       },
       {
-        "name": "EnergySage — Solar Leases vs. PPAs",
-        "url": "https://www.energysage.com/solar/solar-leases-vs-ppas",
-        "supports": "Industry-wide buyout window framing, who controls the FMV number, general context on financier-set pricing"
-      },
-      {
-        "name": "EnergySage — Top Questions About Solar Leasing",
-        "url": "https://www.energysage.com/solar/top-questions-about-solar-leasing",
-        "supports": "Industry-wide annual carrying fee range ($300-$1,000), general IRS-timing rationale for buyout floors"
-      },
-      {
         "name": "26 U.S.C. § 50 — Cornell Legal Information Institute",
         "url": "https://www.law.cornell.edu/uscode/text/26/50",
         "supports": "ITC recapture schedule (100% year 1 down to 20% year 5) underlying the year-5 buyout floor explanation"
+      },
+      {
+        "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
+        "url": "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "supports": "Host-owned residential systems installed in 2023: $3.2-5.5 per watt, 20th-80th percentile, national"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -788,8 +783,8 @@
       },
       {
         "label": "NEM 3.0 export credit",
-        "value": "5-8¢/kWh",
-        "note": "PG&E, SCE, SDG&E; the reason oversizing doesn't pay off under either contract"
+        "value": "Usually below retail",
+        "note": "CPUC: export credits under the Net Billing Tariff are usually lower than the retail rate but can rise above it on late summer evenings"
       },
       {
         "label": "Residential tax credit (25D) end date",
@@ -808,7 +803,7 @@
       },
       {
         "heading": "Escalators Apply to Both, Not Just the PPA",
-        "body": "Here's a common assumption worth correcting directly: that a lease is flat forever and only a PPA rises over time. Sunrun's 10-K says otherwise. \"Rates for both forms of our Customer Agreements can be fixed for the duration of the contract or escalated at a predetermined percentage annually.\" Read that again: both. A lease can carry a rising annual rent just as easily as a PPA can carry a rising per-kWh rate, and in principle a PPA could be offered with no escalator at all.\n\nWhat the escalator actually indexes to is the real product-level difference: a lease escalator raises a flat dollar figure, a PPA escalator raises a per-kWh rate that then still moves with production on top of that. Sunrun's 10-K doesn't disclose a specific current escalator percentage. A secondary, non-Sunrun-specific source (solar.com's lease-vs-PPA explainer) describes the broader third-party-owned solar industry commonly offering escalator tiers around 0.99%, 1.99%, or 2.99% annually, with a higher escalator buying a lower starting payment, but that's industry-general commentary, not a confirmed Sunrun rate. Get the exact escalator percentage in writing in your specific contract before signing; don't assume a generic industry figure applies to your quote."
+        "body": "Here's a common assumption worth correcting directly: that a lease is flat forever and only a PPA rises over time. Sunrun's 10-K says otherwise. \"Rates for both forms of our Customer Agreements can be fixed for the duration of the contract or escalated at a predetermined percentage annually.\" Read that again: both. A lease can carry a rising annual rent just as easily as a PPA can carry a rising per-kWh rate, and in principle a PPA could be offered with no escalator at all.\n\nWhat the escalator actually indexes to is the real product-level difference: a lease escalator raises a flat dollar figure, a PPA escalator raises a per-kWh rate that then still moves with production on top of that. Sunrun's 10-K doesn't disclose a specific current escalator percentage. A higher escalator usually buys a lower starting payment, so compare the total over the term, not month one. Get the exact escalator percentage in writing in your specific contract before signing; don't assume a generic industry figure applies to your quote."
       },
       {
         "heading": "Who Eats a Bad Production Year",
@@ -820,7 +815,7 @@
       },
       {
         "heading": "Which One Fits Your Usage Pattern",
-        "body": "This section is analysis built from the mechanics above, not a claim sourced to Sunrun or an independent report; no source available found Sunrun or a third party explicitly advising customers on this by usage pattern, so treat it as reasoning to apply to your own numbers, not a quoted recommendation.\n\nIf your household usage is flat and high year-round, a heat pump, EV charging, or a pool pump running consistently, a lease's fixed payment is easier to budget against and avoids a seasonal bill spike layered on top of your utility bill. If your usage is strongly seasonal, air conditioning load dominating the summer months, a PPA's per-kWh bill rises and falls with production in a way that can track your usage pattern more naturally. But notice the catch: that's also exactly when the system is producing the most, so the PPA charge peaks at the same time your utility bill would otherwise peak too. That's a billing-shape alignment, not an automatic savings advantage.\n\nOne more constraint applies regardless of which contract you pick. Under NEM 3.0, a system that overproduces relative to your onsite usage exports that surplus at roughly 5 to 8 cents per kWh on PG&E, SCE, or SDG&E, a low credit rate either way. That argues for right-sizing the system to your actual consumption as the real lever, not treating the lease-versus-PPA choice as a way to fix export economics, because it doesn't."
+        "body": "This section is analysis built from the mechanics above, not a claim sourced to Sunrun or an independent report; no source available found Sunrun or a third party explicitly advising customers on this by usage pattern, so treat it as reasoning to apply to your own numbers, not a quoted recommendation.\n\nIf your household usage is flat and high year-round, a heat pump, EV charging, or a pool pump running consistently, a lease's fixed payment is easier to budget against and avoids a seasonal bill spike layered on top of your utility bill. If your usage is strongly seasonal, air conditioning load dominating the summer months, a PPA's per-kWh bill rises and falls with production in a way that can track your usage pattern more naturally. But notice the catch: that's also exactly when the system is producing the most, so the PPA charge peaks at the same time your utility bill would otherwise peak too. That's a billing-shape alignment, not an automatic savings advantage.\n\nOne more constraint applies regardless of which contract you pick. Under NEM 3.0, a system that overproduces relative to your onsite usage exports that surplus at avoided-cost values the CPUC says are usually lower than the retail rate on PG&E, SCE, or SDG&E, a low credit either way. That argues for right-sizing the system to your actual consumption as the real lever, not treating the lease-versus-PPA choice as a way to fix export economics, because it doesn't."
       },
       {
         "heading": "Why This Choice Exists Right Now: The Tax Credit Behind the Price",
@@ -907,7 +902,7 @@
       },
       {
         "question": "Does NEM 3.0 change which one I should pick?",
-        "answer": "Not directly between lease and PPA, no. NEM 3.0's low export credit (roughly 5 to 8 cents per kWh for PG&E, SCE, and SDG&E customers) affects the economics of an oversized system under either contract type equally, since export value doesn't depend on whether you're paying flat rent or per-kWh. What NEM 3.0 does change is the case for pairing either contract with a battery, and the case for right-sizing the system to your actual consumption rather than your roof's full capacity, regardless of which financing product you pick."
+        "answer": "Not directly between lease and PPA, no. NEM 3.0's low export credit (usually lower than the retail rate for PG&E, SCE, and SDG&E customers, per the CPUC) affects the economics of an oversized system under either contract type equally, since export value doesn't depend on whether you're paying flat rent or per-kWh. What NEM 3.0 does change is the case for pairing either contract with a battery, and the case for right-sizing the system to your actual consumption rather than your roof's full capacity, regardless of which financing product you pick."
       },
       {
         "question": "Is Sunrun financially stable enough to honor a 20 to 25-year contract?",
@@ -915,7 +910,7 @@
       },
       {
         "question": "Can I actually still get a PPA from Sunrun in California right now?",
-        "answer": "This is the single most important open question on this page, and as of 2026-09-05 it isn't settled. Sunrun's current site navigation leads with a 'Subscription Plan' lease product and an 'owned plans' loan/purchase option; PPA doesn't appear as its own marketed product page, only surfacing in FAQ language and SEC filing text that describes it as one of two historical 'Customer Agreement' types. That's consistent with PPA having become a legacy contract type serviced for existing customers while new sales are steered toward the lease, but it isn't confirmed either way. Call a Sunrun CA sales line or request quotes through a marketplace like EnergySage before assuming a PPA is on the table."
+        "answer": "This is the single most important open question on this page, and as of 2026-09-05 it isn't settled. Sunrun's current site navigation leads with a 'Subscription Plan' lease product and an 'owned plans' loan/purchase option; PPA doesn't appear as its own marketed product page, only surfacing in FAQ language and SEC filing text that describes it as one of two historical 'Customer Agreement' types. That's consistent with PPA having become a legacy contract type serviced for existing customers while new sales are steered toward the lease, but it isn't confirmed either way. Ask Sunrun's California sales line in writing whether a PPA is offered before assuming it is on the table."
       },
       {
         "question": "Does the federal tax credit lower my Sunrun lease or PPA payment?",
@@ -950,9 +945,9 @@
         "supports": "Beginning-of-construction rules (Physical Work Test and 5% Safe Harbor) governing Section 48E eligibility for the July 4, 2026 deadline"
       },
       {
-        "name": "solar.com, \"Solar Lease vs. PPA\"",
-        "url": "https://www.solar.com/learn/solar-lease-vs-ppa/",
-        "supports": "Secondary, non-Sunrun-specific commentary on industry-general escalator tiers (0.99%/1.99%/2.99%), cited as hedged context only"
+        "name": "CPUC — Net Energy Metering and Net Billing",
+        "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "supports": "Net Billing Tariff since April 15, 2023; export credits usually lower than the retail rate but can rise above it on late summer evenings; nine-year guarantee; early-adopter export adder for residential PG&E and SCE customers applying before the end of 2027; approved rates E-ELEC (PG&E), TOU-D-PRIME (SCE), EV-TOU-5 (SDG&E)"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -993,7 +988,7 @@
       },
       {
         "heading": "The Escalator: Why There Isn't One Published Number",
-        "body": "Sunrun's 10-K states plainly that rates \"can be fixed for the duration of the contract or escalated at a predetermined percentage annually.\" No specific percentage appears anywhere in the filing. Sunrun's own FAQ confirms the escalator is \"outlined in your Sunrun agreement\" — meaning it's set contract-by-contract, likely varying by state, installer relationship, and product tier, not published as one company-wide rate. If you want a payment with no annual increase at all, Sunrun's FAQ points to its prepaid plan as the escalator-free option.\n\nGeneral industry guides (not Sunrun-specific — this figure should not be read as Sunrun's rate) describe typical escalator tiers around 0.99%, 1.99%, or 2.99% annually across the solar-lease/PPA industry broadly, and note that no-escalator contracts tend to save more over the full term. Whatever tier applies to your specific offer, get it in writing before signing. On a 20-25 year contract, the difference between a 1% and a 3% annual increase compounds into thousands of dollars by year 20 — this is worth more scrutiny than the sticker price of month one."
+        "body": "Sunrun's 10-K states plainly that rates \"can be fixed for the duration of the contract or escalated at a predetermined percentage annually.\" No specific percentage appears anywhere in the filing. Sunrun's own FAQ confirms the escalator is \"outlined in your Sunrun agreement\" — meaning it's set contract-by-contract, likely varying by state, installer relationship, and product tier, not published as one company-wide rate. If you want a payment with no annual increase at all, Sunrun's FAQ points to its prepaid plan as the escalator-free option.\n\nWhatever escalator applies to your specific offer, get it in writing before signing. Over a long contract, a higher annual increase compounds into a much larger total by the final years, so ask the provider to show the payment in the first and last year and the total over the term; this is worth more scrutiny than the sticker price of month one."
       },
       {
         "heading": "The Production Guarantee, and Its Fine Print",
@@ -1001,7 +996,7 @@
       },
       {
         "heading": "End of the Initial Term: Three Choices, One Unpublished Number",
-        "body": "This is the single highest-value fact in Sunrun's 10-K for anyone comparing a 20-25 year commitment: at the end of the initial term, you get three options. Renew the agreement for the remaining life of the system — Sunrun states this is \"typically at a 10% discount to then-prevailing power prices.\" Purchase the system outright at its fair market value. Or have Sunrun remove it at no cost to you.\n\nWhat Sunrun has not published, in the 10-K or anywhere else checked for this page, is the formula behind that fair-market-value buyout number. There's no percentage, no depreciation schedule, no worked example. If your plan is to buy the system at year 20 or 25, don't budget around an assumed number today — request a written quote as that date approaches, since \"fair market value\" gives Sunrun latitude that isn't quantified in advance."
+        "body": "This is the single highest-value fact in Sunrun's 10-K for anyone comparing a 20-25 year commitment: at the end of the initial term, you get three options. Renew the agreement for the remaining life of the system — Sunrun states this is \"typically at a 10% discount to then-prevailing power prices.\" Purchase the system outright at its fair market value. Or have Sunrun remove it without a removal charge.\n\nWhat Sunrun has not published, in the 10-K or anywhere else checked for this page, is the formula behind that fair-market-value buyout number. There's no percentage, no depreciation schedule, no worked example. If your plan is to buy the system at year 20 or 25, don't budget around an assumed number today — request a written quote as that date approaches, since \"fair market value\" gives Sunrun latitude that isn't quantified in advance."
       },
       {
         "heading": "Selling Your Home With the System Still Attached",
@@ -1017,7 +1012,7 @@
       },
       {
         "heading": "Sunrun's Financial Position, in Context",
-        "body": "Given how many solar financiers have failed in the past two years, this matters as much as the contract math. Freedom Forever filed Chapter 11 in April 2026 and converted to Chapter 7 liquidation on July 31, 2026 — it no longer operates, leaving more than 150,000 homeowners in limbo. Sunnova filed Chapter 11 in June 2025; its legacy contracts are now run down by SunStrong rather than originating new business. SunPower filed Chapter 11 in August 2024.\n\nSunrun, as of this writing, has not filed for bankruptcy. Its investor relations page shows continued quarterly reporting through Q2 2026 (released August 5, 2026), two 2026 asset-backed securitizations ($584 million in April, $267 million in August), and a Fortune 1000 listing for 2026. That's a materially different fact pattern than its failed competitors — but it's a snapshot, not a forecast, and this page did not pull Sunrun's specific balance-sheet or cash-position figures, so treat \"still operating and still securitizing\" as the confirmed fact, not a guarantee of the next 20 years."
+        "body": "Given how many solar financiers have failed in the past two years, this matters as much as the contract math. Freedom Forever filed Chapter 11 in April 2026 and was converted to Chapter 7 liquidation in summer 2026 — it no longer operates, leaving its homeowners in limbo. Sunnova filed Chapter 11 in June 2025; its legacy contracts are now run down by SunStrong rather than originating new business. SunPower filed Chapter 11 in August 2024.\n\nSunrun, as of this writing, has not filed for bankruptcy. Its investor relations page shows continued quarterly reporting through Q2 2026 (released August 5, 2026), two 2026 asset-backed securitizations ($584 million in April, $267 million in August), and a Fortune 1000 listing for 2026. That's a materially different fact pattern than its failed competitors — but it's a snapshot, not a forecast, and this page did not pull Sunrun's specific balance-sheet or cash-position figures, so treat \"still operating and still securitizing\" as the confirmed fact, not a guarantee of the next 20 years."
       }
     ],
     "dataTable": {
@@ -1077,7 +1072,7 @@
       },
       {
         "question": "Will my monthly payment go up every year?",
-        "answer": "It depends on which agreement you sign, and Sunrun does not publish one standard escalator percentage. Its own FAQ says your bill \"will increase based on an escalator outlined in your Sunrun agreement,\" and that a no-escalator option exists if you choose the prepaid plan instead. Industry-wide, escalator tiers in the 1-3% annual range are common (per general industry guides, not a Sunrun-published figure), but treat any number you hear before reading your actual contract as unconfirmed. This is the single most important number to nail down before signing, because it compounds for two decades."
+        "answer": "It depends on which agreement you sign, and Sunrun does not publish one standard escalator percentage. Its own FAQ says your bill \"will increase based on an escalator outlined in your Sunrun agreement,\" and that a no-escalator option exists if you choose the prepaid plan instead. Treat any number you hear before reading your actual contract as unconfirmed. This is the single most important number to nail down before signing, because it compounds for two decades."
       },
       {
         "question": "Do I get the federal solar tax credit with a Sunrun PPA?",
@@ -1085,7 +1080,7 @@
       },
       {
         "question": "What happens at the end of my Sunrun contract?",
-        "answer": "Per Sunrun's 10-K, you get three choices: renew the agreement for the system's remaining life (Sunrun states this is \"typically at a 10% discount to then-prevailing power prices\"), buy the system outright at its fair market value, or have Sunrun remove it at no cost to you. Sunrun has not published the formula it uses to calculate that fair-market-value buyout price, so if you're planning around a specific buyout number, get a written quote near the end of your term rather than estimating today."
+        "answer": "Per Sunrun's 10-K, you get three choices: renew the agreement for the system's remaining life (Sunrun states this is \"typically at a 10% discount to then-prevailing power prices\"), buy the system outright at its fair market value, or have Sunrun remove it without a removal charge. Sunrun has not published the formula it uses to calculate that fair-market-value buyout price, so if you're planning around a specific buyout number, get a written quote near the end of your term rather than estimating today."
       },
       {
         "question": "What happens if I sell my house before the contract ends?",
@@ -1122,11 +1117,6 @@
         "name": "Sunrun Investor Relations, press releases",
         "url": "https://investors.sunrun.com/news-events/press-releases",
         "supports": "No bankruptcy filing, Q1/Q2 2026 quarterly reporting, 2026 securitizations, Fortune 1000 2026 listing"
-      },
-      {
-        "name": "Solar.com, solar lease vs. PPA guide (updated 2026-01-22)",
-        "url": "https://www.solar.com/learn/solar-lease-vs-ppa/",
-        "supports": "General industry escalator tier context (0.99%/1.99%/2.99%) — explicitly not attributed to Sunrun specifically"
       }
     ],
     "reviewedAt": "2026-09-05"
