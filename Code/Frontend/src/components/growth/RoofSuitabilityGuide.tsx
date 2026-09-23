@@ -3,8 +3,8 @@ import Link from "next/link";
 import { DecisionPage, QuoteChecklist, type Source } from "./DecisionPage";
 
 const path = "/blog/is-my-roof-good-for-solar-california";
-const title = "What Roof Is Best for Solar Panels? A California Suitability Checklist";
-const intro = "An unshaded, south-facing roof with a moderate slope is a strong starting point, but it is not the only roof that can work. Age, condition, shade, usable area, structure and the proposed mounting plan all belong in the decision.";
+const title = "Is My Roof Good for Solar? A California Suitability Checklist";
+const intro = "Most California roofs — composition shingle, tile, metal and flat — can support solar, but yours needs a few things confirmed before it's a good candidate: enough usable, unshaded area; a structure that can carry the added weight; and enough roof life left that you aren't paying to remove and reinstall the array a few years in. The sections below walk through each check in the order a site survey and permit review actually apply them, including the state fire code's roof access rules.";
 
 
 // The two consts above are visible copy: `title` heads the page and `intro` is the
@@ -12,9 +12,9 @@ const intro = "An unshaded, south-facing roof with a moderate slope is a strong 
 // hard length budget, so it is declared separately here. Reusing `intro` as the
 // meta description is what caused a draft pass to overwrite a live opening
 // paragraph on the SDG&E guide.
-const metaTitle = "Best Roof for Solar Panels? A California Checklist";
+const metaTitle = "Is My Roof Good for Solar? California Suitability Guide";
 const metaDescription =
-  "An unshaded, south-facing roof with a moderate slope is a strong start, but not the only roof that works. Age, shade, usable area and structure matter too.";
+  "Check your roof type, age, shade, orientation and structure against California's fire code and permit rules before you get a solar quote.";
 
 const sources: Source[] = [
   {
@@ -37,6 +37,18 @@ const sources: Source[] = [
     label: "CPUC: California Solar Consumer Protection Guide",
     url: "https://www.cpuc.ca.gov/solarguide/",
   },
+  {
+    label: "U.S. Department of Energy: Replacing Your Roof? It's a Great Time to Add Solar",
+    url: "https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar",
+  },
+  {
+    label: "California Solar Permitting Guidebook, 4th Edition (Governor's Office of Planning and Research)",
+    url: "https://lci.ca.gov/docs/20190226-Solar_Permitting_Guidebook_4th_Edition.pdf",
+  },
+  {
+    label: "CAL FIRE / Office of the State Fire Marshal: Solar Photovoltaic Installation Guideline",
+    url: "https://cdi.santacruzcountyca.gov/Portals/35/CDI/UnifiedPermitCenter/Building/Forms%20&%20Publications/Fire/CalFiresolarphotovoltaicguideline.pdf",
+  },
 ];
 
 export const roofSuitabilityMetadata: Metadata = {
@@ -48,7 +60,7 @@ export const roofSuitabilityMetadata: Metadata = {
     description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
-    modifiedTime: "2026-09-20T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -60,8 +72,8 @@ export function RoofSuitabilityGuide() {
       path={path}
       sources={sources}
       topic="California solar roof suitability"
-      sourceCheckedDate="2026-09-12"
-      contentModifiedDate="2026-09-20"
+      sourceCheckedDate="2026-09-22"
+      contentModifiedDate="2026-09-22"
       primaryResourceHref="/blog/solar-panels-tile-roof-california"
       primaryResourceLabel="Tile-roof solar guide"
       comparisonHref="/blog/solar-panel-removal-reinstall-cost"
@@ -91,6 +103,30 @@ export function RoofSuitabilityGuide() {
       </section>
 
       <section>
+        <h2>How your roof&apos;s remaining life compares to a 25&ndash;30 year system</h2>
+        <p>
+          A solar system and a roof age on different clocks, and the
+          mismatch is the real reason to check this before signing anything.
+          The U.S. Department of Energy puts panel life at roughly 25 to 30
+          years, while a roof&apos;s lifespan runs anywhere from 20 to 50
+          years depending on the roofing material &mdash; so a shingle roof
+          already partway through its life can force a mid-system tear-off,
+          while a newer tile or metal roof more comfortably outlasts the
+          array. DOE&apos;s guidance is direct about the sequencing:
+          installing solar at the same time as a roof replacement avoids
+          paying twice to remove and reinstall the array later.
+          California&apos;s own consumer guide backs this up in plain terms:
+          &ldquo;If you plan to replace your roof soon, you should replace
+          it before installing a rooftop solar system.&rdquo; Ask any bidder
+          for your roof&apos;s installation or last-replacement date and get
+          a written estimate of remaining life before you compare system
+          quotes &mdash; a system sized for a roof that needs work in five
+          years is a different proposal than one sized for a roof good for
+          twenty.
+        </p>
+      </section>
+
+      <section>
         <h2>2. Map shade and usable roof area</h2>
         <p>
           Trees, neighboring buildings, chimneys, vents, roof peaks and other
@@ -102,6 +138,22 @@ export function RoofSuitabilityGuide() {
       </section>
 
       <section>
+        <h2>Shade and direct sunlight: what actually cuts production</h2>
+        <p>
+          Solar panels don&apos;t need unbroken direct sun to produce power
+          &mdash; they respond to diffuse daylight too, which is why they
+          still generate on overcast days. What matters more is partial
+          shade on part of an array: because panels are wired together in
+          strings, shade falling on even a portion of one panel can drag
+          down output from panels around it, not just the shaded one. This
+          is a bigger factor than most homeowners expect, and it&apos;s
+          exactly why the section above recommends getting a shade map and a
+          facet-by-facet production estimate rather than accepting a single
+          roof-wide percentage from a bidder.
+        </p>
+      </section>
+
+      <section>
         <h2>3. Separate orientation from the household&apos;s actual need</h2>
         <p>
           A south-facing facet can produce well across the day. Other orientations
@@ -109,6 +161,27 @@ export function RoofSuitabilityGuide() {
           tariff and when the home uses electricity. Ask for monthly production by
           roof facet instead of accepting a single annual percentage or a claim
           that one compass direction automatically wins.
+        </p>
+      </section>
+
+      <section>
+        <h2>If your roof doesn&apos;t face south, or isn&apos;t at an ideal pitch</h2>
+        <p>
+          A roof does not have to face true south to work. East-, west-,
+          southeast- and southwest-facing roofs can still carry a workable
+          system &mdash; the tradeoff is that production spreads across more
+          of the day instead of concentrating around midday, which can
+          actually suit a household that uses more power in the morning or
+          evening. What California&apos;s solar consumer guide flags as a
+          real problem is narrower: a roof that is mostly shaded or faces
+          due north. Rather than rely on a rule of thumb for your own roof,
+          ask your installer to run NREL&apos;s PVWatts calculator &mdash;
+          the same government modeling tool referenced above &mdash; using
+          your roof&apos;s actual measured tilt and compass heading, and to
+          hand you the projected output by month, not just a single annual
+          number. That&apos;s the only way to see what your specific
+          orientation actually costs you in production, instead of guessing
+          from a generic best-case figure.
         </p>
       </section>
 
@@ -135,6 +208,58 @@ export function RoofSuitabilityGuide() {
       </section>
 
       <section>
+        <h2>How solar panels are mounted on California&apos;s common roof types</h2>
+        <p>
+          The mounting approach &mdash; and how much it will disturb your
+          roof covering &mdash; depends on what the roof is made of. In
+          general terms, useful for comparing bids rather than specifying
+          hardware:
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            <strong>Composition shingle</strong>, the most common California
+            roof, is mounted with flashed attachment points set into the
+            rafters, with a rail or rail-less racking system carrying the
+            panels above the roof surface.
+          </li>
+          <li>
+            <strong>Tile roofs</strong> need tile-specific attachment
+            hardware &mdash; either a raised hook under a full or cut tile,
+            or removing tiles at each mount point and replacing them with
+            waterproof flashing. This adds cost and installer skill
+            requirements beyond a shingle job; see our{" "}
+            <Link className="underline" href="/blog/solar-panels-tile-roof-california">
+              dedicated guide to solar on tile roofs
+            </Link>{" "}
+            for that scope in detail.
+          </li>
+          <li>
+            <strong>Metal roofs</strong> split into two mounting approaches:
+            standing-seam metal can usually be clamped to the raised seams
+            with no new penetrations at all, while corrugated or trapezoidal
+            panel roofs typically need a bracket bolted through the metal
+            and sealed, since there&apos;s no seam to clamp.
+          </li>
+          <li>
+            <strong>Flat or foam roofs</strong> are usually mounted with a
+            ballasted, tilted rack that adds weight instead of adding
+            penetrations &mdash; which is one more reason the structural
+            check below matters more on this roof type than on a pitched
+            one.
+          </li>
+        </ul>
+        <p className="mt-3">
+          Any of these methods, done correctly, should be flashed or sealed
+          at every attachment point, covered by a workmanship warranty, and
+          documented in writing &mdash; which is what the section above on
+          mounting and roof responsibilities already asks you to get from a
+          bidder. Most reports of solar &ldquo;damaging&rdquo; a roof trace
+          back to a bad install on a marginal roof, not to a properly
+          flashed mount on a sound structure.
+        </p>
+      </section>
+
+      <section>
         <h2>Photos and records to collect before the site visit</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>Aerial or street view showing the roof facets and nearby shade.</li>
@@ -149,6 +274,66 @@ export function RoofSuitabilityGuide() {
         </p>
       </section>
 
+      <section>
+        <h2>Fire code setbacks and roof access pathways</h2>
+        <p>
+          California requires rooftop PV arrays on homes to leave clear
+          pathways for firefighters, and this is one of the few parts of a
+          solar layout that isn&apos;t negotiable with your installer &mdash;
+          it comes from the fire code, not from equipment choice. The
+          Office of the State Fire Marshal&apos;s Solar Photovoltaic
+          Installation Guideline sets the baseline figures for one- and
+          two-family homes:
+        </p>
+        <div className="overflow-x-auto rounded-xl border my-4">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">
+              Fire-code roof access requirements for residential solar
+            </caption>
+            <thead className="bg-muted">
+              <tr>
+                <th className="p-4">Requirement</th>
+                <th className="p-4">Figure</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t">
+                <td className="p-4">Clear access pathway, eave to ridge (hip roof layout)</td>
+                <td className="p-4">One 3-foot-wide pathway per roof slope with modules</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">Clear access pathway, eave to ridge (single-ridge layout)</td>
+                <td className="p-4">Two 3-foot-wide pathways per roof slope with modules</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">Setback below the ridge (for smoke ventilation)</td>
+                <td className="p-4">Modules no higher than 3 feet below the ridge</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">Clearance from a hip or valley (modules on both sides)</td>
+                <td className="p-4">1.5 feet minimum</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">Plan review trigger</td>
+                <td className="p-4">Required when the array covers more than 50% of the roof area</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3">
+          California&apos;s Solar Permitting Guidebook confirms the same
+          principle at the state level: &ldquo;The installation of solar PV
+          systems must also allow for fire department smoke ventilation
+          operations. The California Building, Residential and Fire Codes
+          outline the requirements for a roof access point and clear access
+          pathways along the roof,&rdquo; and requires your installer to
+          submit a roof plan showing these pathways as part of the permit
+          package. Your installer&apos;s proposal should show these
+          pathways on your actual roof plan, not just state that the system
+          is &ldquo;code compliant.&rdquo;
+        </p>
+      </section>
+
       <QuoteChecklist />
 
       <section>
@@ -160,6 +345,81 @@ export function RoofSuitabilityGuide() {
           contractors and warranty claim process as separate written items. If the
           roof may need service later, use the <Link className="underline" href="/blog/solar-panel-removal-reinstall-cost">removal and reinstallation checklist</Link> before signing.
         </p>
+      </section>
+
+      <section>
+        <h2>Structural review and the permit sequence</h2>
+        <p>
+          Before a system goes on your roof, two separate things get
+          checked: whether the structure can carry it, and whether the
+          local building department signs off on the plan. On the
+          structural side, California&apos;s Solar Permitting Guidebook is
+          explicit that &ldquo;the additional weight must be accounted for
+          to ensure that the building can safely bear the weight of the
+          solar installation,&rdquo; and that building codes give an
+          engineer or architect the design criteria to calculate the
+          support a given roof needs &mdash; some smaller systems qualify
+          for a simplified, prescriptive check instead of a full
+          engineering review, but that&apos;s a determination your
+          installer or the city makes, not an assumption to accept on
+          faith. DOE&apos;s consumer guide frames it the same way for
+          homeowners: &ldquo;A solar installer, roofing expert, or
+          structural engineer can help you determine your roof&apos;s solar
+          suitability.&rdquo;
+        </p>
+        <p className="mt-3">
+          On the permit side, California&apos;s solar consumer guide lays
+          out the actual sequence: the installer performs a home site visit
+          to confirm the roof, ground and electrical conditions match the
+          proposal; the solar provider then finalizes the system design and
+          applies for a building permit with your city or county; and a
+          city or county inspector inspects the completed system for permit
+          compliance. What that site visit checks is largely the same list
+          the section above on photos and records already asks you to
+          prepare &mdash; roof condition, obstructions, electrical panel
+          location and capacity &mdash; because the visit exists to confirm
+          those assumptions in person before the design is finalized. For
+          what happens after the permit is issued, see the{" "}
+          <Link className="underline" href="/blog/solar-installation-timeline-california">
+            full installation timeline
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section>
+        <h2>Quick answers</h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            <strong>Do solar panels need direct sunlight?</strong> No &mdash;
+            they produce from diffuse daylight too, but shade on even part
+            of an array cuts output more than the shaded area alone
+            suggests, because panels share wiring in strings.
+          </li>
+          <li>
+            <strong>Can you put solar panels on a metal roof?</strong> Yes.
+            Standing-seam metal usually clamps on with no new penetrations;
+            corrugated or trapezoidal metal typically needs a sealed,
+            bolted bracket instead.
+          </li>
+          <li>
+            <strong>Do solar panels damage your roof?</strong> Not when a
+            mount is properly flashed or sealed and the roof was
+            structurally sound to begin with &mdash; most damage complaints
+            trace back to one of those two things being skipped, not to
+            solar mounting itself.
+          </li>
+          <li>
+            <strong>Do home warranties cover solar panels?</strong> That
+            depends on your specific homeowners policy and the system&apos;s
+            own workmanship warranty, not on solar panels generally &mdash;
+            see{" "}
+            <Link className="underline" href="/solar-problems/solar-homeowners-insurance">
+              how solar affects your homeowners insurance
+            </Link>{" "}
+            before you assume either way.
+          </li>
+        </ul>
       </section>
     </DecisionPage>
   );
