@@ -72,6 +72,24 @@ const sources: Source[] = [
     url:
       "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1689.5",
   },
+  {
+    label:
+      "Sunrun: “What’s a Solar Lease or PPA?” — escalator range and production guarantee description (verified 22 September 2026)",
+    url: "https://www.sunrun.com/go-solar-center/solar-faq/whats-a-solar-lease-or-ppa",
+  },
+  {
+    label:
+      "Tesla: “Buying Out Your Tesla Solar Panel Lease” — production guarantee and buyout pricing mechanics (verified 22 September 2026)",
+    url: "https://www.tesla.com/learn/tesla-solar-lease-buyout-guide",
+  },
+  {
+    label: "Sunrun: “Moving Made Easy” — prepay-and-bundle option at a home sale (verified 22 September 2026)",
+    url: "https://www.sunrun.com/moving-made-easy",
+  },
+  {
+    label: "IRS: Residential Clean Energy Credit (verified 22 September 2026)",
+    url: "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+  },
 ];
 
 const faqs = [
@@ -122,7 +140,7 @@ export const metadata: Metadata = {
     type: "article",
     url:
       "https://ratereliefca.com/blog/how-much-does-it-cost-to-lease-solar-panels-california",
-    modifiedTime: "2026-09-18T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -133,7 +151,7 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
       intro="This page gives no payment figure, because any figure here would be invented and would not describe your roof, your usage or your tariff. What it does give you is the mechanism: what a lease or PPA payment is built from, which contract terms move it, and the document California requires the provider to hand you with the total on it."
       path="/blog/how-much-does-it-cost-to-lease-solar-panels-california"
       sources={sources}
-      sourceCheckedDate="2026-09-18"
+      sourceCheckedDate="2026-09-22"
       topic="Understanding a solar lease or PPA quote"
       primaryResourceHref="/blog/solar-ppa-vs-lease-california"
       primaryResourceLabel="Lease and PPA compared"
@@ -272,6 +290,96 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
       </section>
 
       <section>
+        <h2>What the escalator range actually is, and what it compounds to</h2>
+        <p>
+          California&rsquo;s solar consumer guide puts a number on the
+          contract escalator this page already tells you to ask about:
+          &ldquo;Escalators are typically in the range of a 1 percent to 3
+          percent increase above the rate you paid in the previous year. Be
+          cautious of entering into a contract with an escalator higher than
+          that&rdquo; (CPUC, California Solar Consumer Protection Guide,
+          verified 22 September 2026). Sunrun&rsquo;s own materials describe
+          a wider band for its leases and PPAs &mdash; &ldquo;somewhere
+          between 1 and 5 percent&rdquo; each year (Sunrun, &ldquo;What&rsquo;s
+          a Solar Lease or PPA?,&rdquo; verified 22 September 2026) &mdash;
+          which is exactly why the state guide&rsquo;s caution matters: a
+          contract can be entirely real and still sit above what CPUC calls
+          typical.
+        </p>
+        <p className="mt-3">
+          An escalator compounds, so small percentages move more than they
+          sound like over a 20-25-year term. Indexing year one&rsquo;s
+          payment at 100, here is what each rate alone does to that index
+          &mdash; no dollar figure, because none applies to your contract:
+        </p>
+        <div className="overflow-x-auto rounded-xl border my-4">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">
+              Escalator compounding index by year, at 1%, 2% and 3%
+            </caption>
+            <thead className="bg-muted">
+              <tr>
+                <th className="p-4">Year</th>
+                <th className="p-4">1% escalator</th>
+                <th className="p-4">2% escalator</th>
+                <th className="p-4">3% escalator</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t">
+                <td className="p-4">1</td>
+                <td className="p-4">100</td>
+                <td className="p-4">100</td>
+                <td className="p-4">100</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">5</td>
+                <td className="p-4">104</td>
+                <td className="p-4">108</td>
+                <td className="p-4">113</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">10</td>
+                <td className="p-4">109</td>
+                <td className="p-4">120</td>
+                <td className="p-4">130</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">15</td>
+                <td className="p-4">115</td>
+                <td className="p-4">132</td>
+                <td className="p-4">151</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">20</td>
+                <td className="p-4">121</td>
+                <td className="p-4">146</td>
+                <td className="p-4">175</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">25</td>
+                <td className="p-4">127</td>
+                <td className="p-4">161</td>
+                <td className="p-4">203</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3">
+          At a 3% escalator, a 25-year payment schedule runs almost double
+          where it started. For the full dollar-denominated version of this
+          math against real California utility rate history, see{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/solar-escalator-clause-explained"
+          >
+            what a solar escalator clause does
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section>
         <h2>The bill does not go to zero</h2>
         <p>
           The CPUC lists &ldquo;You will never pay an electricity bill ever
@@ -374,6 +482,162 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section>
+        <h2>What a production guarantee actually does</h2>
+        <p>
+          The table above tells you to ask whether your contract has one.
+          Here is what that answer typically covers, in two providers&rsquo;
+          own words. Sunrun states: &ldquo;If your system produces less than
+          Sunrun predicted, you may be eligible for a Production Guarantee
+          that compensates you for the difference between what we guaranteed
+          and what the system actually produced&rdquo; (Sunrun, &ldquo;What&rsquo;s
+          a Solar Lease or PPA?,&rdquo; verified 22 September 2026).
+          Tesla&rsquo;s solar subscription guarantees &ldquo;95% system
+          availability, calculated every two years; if your system ever
+          falls short, Tesla compensates you&rdquo; (Tesla, &ldquo;Buying Out
+          Your Tesla Solar Panel Lease,&rdquo; verified 22 September 2026).
+          Both describe the same shape: a floor on output or uptime, checked
+          on a stated schedule, with compensation if the system falls under
+          it.
+        </p>
+        <p className="mt-3">
+          A production guarantee is not protection against the escalator. It
+          insures the electricity side of the bargain &mdash; what the
+          panels generate &mdash; not the payment side, which can still rise
+          on schedule even in a year the guarantee pays out. Confirm both
+          separately: what output or uptime level is guaranteed, how a
+          shortfall is measured, and what triggers payment, per the
+          checklist above.
+        </p>
+      </section>
+
+      <section>
+        <h2>What &ldquo;$0 down&rdquo; changes about this math, and what it doesn&rsquo;t</h2>
+        <p>
+          CPUC&rsquo;s guide lists paying more up front to lower the monthly
+          payment as one of the standard ways leases and PPAs &ldquo;can be
+          arranged&rdquo; &mdash; the flip side of $0 down. &ldquo;$0
+          down&rdquo; only sets when the first payment is due. It does not
+          remove the escalator from a monthly-pay contract, does not change
+          the contract term, and does not change what you owe in total. For
+          what the claim does and doesn&rsquo;t mean, including
+          California&rsquo;s cap on required down payments, see{" "}
+          <Link className="underline" href="/blog/zero-down-solar-california">
+            what a $0-down solar offer means
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section>
+        <h2>How buyout pricing actually works, in two providers&rsquo; own terms</h2>
+        <p>
+          The table above tells you to get the buyout formula in writing
+          rather than a verbal estimate. CPUC&rsquo;s guide describes the
+          outcome only in general terms &mdash; buying out a lease or PPA
+          &ldquo;can cost thousands of dollars,&rdquo; with the number set by
+          your contract (CPUC, California Solar Consumer Protection Guide,
+          verified 22 September 2026). Two providers publish more of the
+          mechanism.
+        </p>
+        <p className="mt-3">
+          Tesla&rsquo;s published guide sets the buyout at &ldquo;whichever
+          amount is lower, the estimated price from your contract or the
+          appraised FMV&rdquo; (Tesla, &ldquo;Buying Out Your Tesla Solar
+          Panel Lease,&rdquo; verified 22 September 2026). The full mechanics
+          &mdash; the year-six standard-buyout window, the tax-credit
+          vesting rule behind it, and why an earlier buyout (commonly at a
+          home sale) is priced higher &mdash; are covered at{" "}
+          <Link
+            className="underline"
+            href="/blog/what-happens-to-solar-lease-when-i-sell-california"
+          >
+            what happens to a solar lease when you sell in California
+          </Link>
+          .
+        </p>
+        <p className="mt-3">
+          Sunrun does not publish a fixed buyout formula, but its own
+          home-sale guidance describes a related option: a seller
+          &ldquo;can prepay for the remainder of your service and bundle it
+          into the price of your home&rdquo; rather than transferring the
+          agreement to the buyer (Sunrun, &ldquo;Moving Made Easy,&rdquo;
+          verified 22 September 2026). See{" "}
+          <Link className="underline" href="/solar-installers/sunrun-review">
+            Sunrun reviews
+          </Link>{" "}
+          and{" "}
+          <Link className="underline" href="/solar-installers/tesla-solar-review">
+            Tesla Solar reviews
+          </Link>{" "}
+          for what to check with each before you sign, and{" "}
+          <Link
+            className="underline"
+            href="/blog/what-happens-to-solar-lease-when-i-sell-california"
+          >
+            what happens to a solar lease when you sell in California
+          </Link>{" "}
+          for the full sale mechanics. Neither company&rsquo;s terms above
+          substitute for your own contract&rsquo;s buyout schedule.
+        </p>
+      </section>
+
+      <section>
+        <h2>The lifetime cost shape: lease or PPA versus buying</h2>
+        <p>
+          This page does not tell you which structure costs less over its
+          life &mdash; that depends on the same inputs named above, applied
+          to one roof. What differs by structure, on cost shape alone:
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            <strong>A lease or PPA is a payment stream that can grow.</strong>{" "}
+            If it carries an escalator, the payment rises on the schedule
+            above for the full term &mdash; 20-25 years, per CPUC&rsquo;s
+            guide &mdash; and stops only at contract end, buyout, or an
+            assumed transfer at sale.
+          </li>
+          <li>
+            <strong>A cash purchase or loan has no escalator</strong>,
+            because there is no recurring equipment or electricity charge to
+            escalate; a loan&rsquo;s payment is typically fixed, and once
+            paid off (or from day one, for cash), the only remaining charges
+            are the utility&rsquo;s and, past the workmanship warranty, your
+            own repair costs.
+          </li>
+          <li>
+            <strong>
+              The federal credit is out of this comparison for a 2026
+              installation, either way.
+            </strong>{" "}
+            The Residential Clean Energy Credit &ldquo;is not available for
+            any property placed in service after December 31, 2025&rdquo;
+            (IRS, Residential Clean Energy Credit, verified 22 September
+            2026) &mdash; that removes it from a purchase made now. Under a
+            lease or PPA it was never the homeowner&rsquo;s credit to claim
+            regardless of that cutoff: the credit is calculated on
+            &ldquo;the costs of new, qualified clean energy property&rdquo;
+            you acquire (IRS, Residential Clean Energy Credit), and a
+            lessee does not acquire the equipment. That also answers whether
+            a lease or PPA <em>payment</em> itself is a tax credit or
+            deduction &mdash; it is not; the credit, where it applied,
+            attached to ownership of the property, not to a monthly payment
+            for someone else&rsquo;s.
+          </li>
+        </ul>
+        <p className="mt-3">
+          For the CPUC-sourced maintenance-responsibility split and a
+          buy-if/lease-if checklist, see{" "}
+          <Link
+            className="underline"
+            href="/blog/is-it-better-to-buy-or-lease-solar-panels-california"
+          >
+            buy or lease solar panels in California
+          </Link>
+          .
+        </p>
       </section>
 
       <section>
