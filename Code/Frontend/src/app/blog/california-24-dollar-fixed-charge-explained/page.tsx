@@ -10,8 +10,8 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 export const metadata: Metadata = {
-  title: "California's $24 Fixed Charge on PG&E, SCE, SDG&E Bills",
-  description: "PG&E, SCE, and SDG&E added a fixed charge of about $24 a month to residential bills. CARE pays about $6, FERA about $12, per the rate table.",
+  title: "California's New $24 Fixed Charge, Explained",
+  description: "PG&E, SCE and SDG&E added a roughly $24 monthly fixed charge starting late 2025 into 2026 — what it is and what it means for solar.",
   alternates: {
     canonical: '/blog/california-24-dollar-fixed-charge-explained',
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function FixedChargeExplained() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"The New $24 Fixed Charge on Your California Electric Bill, Explained"} url="https://ratereliefca.com/blog/california-24-dollar-fixed-charge-explained" datePublished="2026-04-14" dateModified="2026-04-24" description={"PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every residential bill. Learn exactly what it is, why it exists, who pays less, and how it affects solar savings."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"The New $24 Fixed Charge on Your California Electric Bill, Explained"} url="https://ratereliefca.com/blog/california-24-dollar-fixed-charge-explained" datePublished="2026-04-14" dateModified="2026-09-22" description={"PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every residential bill. Learn exactly what it is, why it exists, who pays less, and how it affects solar savings."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -103,6 +103,16 @@ export default function FixedChargeExplained() {
                 .
               </p>
 
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                This restructuring was ordered in CPUC Decision D.24-05-028,
+                issued May 9, 2024. The decision states it &quot;authorizes all
+                investor-owned electric utilities to change the structure of
+                residential customer bills in accordance with Assembly Bill
+                205, Stats. 2022, ch. 61&quot; — confirming the connection some
+                searchers already suspect (see &quot;Where AB 205 Fits In&quot;
+                below).
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 Why Does It Exist?
               </h2>
@@ -132,6 +142,26 @@ export default function FixedChargeExplained() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                What Changed on the Per-kWh Side
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                D.24-05-028 directs that &quot;the revenues from fixed charges
+                will be applied to reduce volumetric rates equally across all
+                time-of-use periods&quot; — the flat charge is meant to
+                replace, not add to, part of what used to be billed per kWh.
+                SDG&amp;E&apos;s own page quantifies this for its territory:
+                customers &quot;may pay about 10% less per kWh for the energy
+                you use (roughly 5 cents per kWh on electric delivery).&quot;
+                PG&amp;E&apos;s own page confirms the same direction — &quot;the
+                price per kWh for electricity is lowered... so you are paying
+                less for the electricity you use&quot; — without stating a
+                specific cents-per-kWh figure. Whether the fixed charge nets
+                out to more or less on a given bill still depends on how much
+                electricity that account uses.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 How Much Is It by Utility?
               </h2>
 
@@ -152,6 +182,9 @@ export default function FixedChargeExplained() {
                       <th className='text-center py-3 px-4 font-bold text-foreground'>
                         FERA
                       </th>
+                      <th className='text-center py-3 px-4 font-bold text-foreground'>
+                        Effective
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -160,13 +193,17 @@ export default function FixedChargeExplained() {
                         PG&E
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$24.15/mo
+                        around $24.00/mo (billed per day, so the total shifts
+                        slightly with billing-cycle length)
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$6/mo
+                        around $6.00/mo
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$12/mo
+                        around $12.00/mo
+                      </td>
+                      <td className='text-center py-3 px-4 text-foreground/80'>
+                        March 2026
                       </td>
                     </tr>
                     <tr className='border-b border-border'>
@@ -174,13 +211,17 @@ export default function FixedChargeExplained() {
                         SCE
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$24.15/mo
+                        $0.79/day (about $24/mo) — same figure across all
+                        residential TOU plans
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$6/mo
+                        not broken out on SCE&apos;s own page
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$12/mo
+                        not broken out on SCE&apos;s own page
+                      </td>
+                      <td className='text-center py-3 px-4 text-foreground/80'>
+                        not dated on SCE&apos;s page; CPUC-ordered for Q4 2025
                       </td>
                     </tr>
                     <tr>
@@ -188,13 +229,17 @@ export default function FixedChargeExplained() {
                         SDG&E
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$24.15/mo
+                        $0.793/day — about $22.22 to $26.18/mo depending on the
+                        28- to 33-day billing cycle
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$6/mo
+                        $0.197/day (about $6/mo)
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        ~$12/mo
+                        $0.396/day (about $12/mo)
+                      </td>
+                      <td className='text-center py-3 px-4 text-foreground/80'>
+                        October 2025
                       </td>
                     </tr>
                   </tbody>
@@ -202,8 +247,38 @@ export default function FixedChargeExplained() {
               </div>
 
               <p className='text-foreground/60 text-xs mb-8 italic'>
-                Amounts are approximate and subject to annual adjustment by the
-                CPUC. CARE and FERA are income-based discount programs.
+                The CPUC decision that created this structure, D.24-05-028,
+                sets the standard-tier ceiling at exactly $24.15/month, with
+                CARE and FERA both described as &quot;approximately&quot; $6
+                and $12. PG&amp;E and SDG&amp;E both round their own published
+                figures to about $24 rather than quoting $24.15 directly; the
+                small difference is a billing-cycle-length effect, not a
+                different policy. SCE&apos;s own residential rate page states
+                the $0.79/day figure but doesn&apos;t break out a separate CARE
+                or FERA amount the way PG&amp;E&apos;s and SDG&amp;E&apos;s
+                pages do.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                Where AB 205 Fits In
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Assembly Bill 205 (2022) directed the CPUC to authorize an
+                income-graduated fixed charge on electric bills. The
+                commission adopted the specific structure — the three tiers
+                above — in Decision D.24-05-028. AB 205 is the law that
+                required this; the CPUC decision is what actually set the
+                dollar amounts and the rollout dates. The two reduced tiers
+                above track the state&apos;s{' '}
+                <Link
+                  href='/programs/care-california'
+                  className='text-primary hover:underline'
+                >
+                  CARE and FERA program
+                </Link>{' '}
+                (publishing alongside this page — confirm both go live
+                together).
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -265,26 +340,29 @@ export default function FixedChargeExplained() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you have solar panels (or are considering them), the fixed
-                charge still applies. Even if your solar system produces 100% of
-                the electricity you use, you&apos;ll still pay the $24 monthly
-                fixed charge to the utility for your grid connection. This is true
-                whether you own the system, lease it, or have a PPA.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                That said, $24 per month ($290 per year) is a small fraction of
-                most households&apos; total energy costs. If your bill is $250 per
-                month, the fixed charge represents less than 10%. The other 90%+
-                is consumption-based charges that solar directly offsets.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                To put it in perspective: without solar, a typical SCE household
-                pays about $3,000 to $4,500 per year in electricity. With solar
-                (assuming 70-90% offset), you&apos;d pay the $290 annual fixed
-                charge plus perhaps $300 to $900 in remaining grid charges. The fixed charge is a real cost but not a
-                deal-breaker for solar economics.
+                The charge applies whether or not the account has solar, and
+                it isn&apos;t offset by production. PG&amp;E states this
+                directly: &quot;Solar customers, even though they are
+                producing clean energy, still use the electric grid, and
+                therefore pay the same Base Services Charge as non-solar
+                customers.&quot; SDG&amp;E&apos;s solar billing pages describe
+                the same charge as &quot;non-bypassable&quot; for Net Energy
+                Metering accounts and &quot;non-nettable&quot; for Solar
+                Billing Plan accounts — in both cases, not eligible to be
+                offset by generation or export credits. In practice: a solar
+                account that exports more than it imports over a full year
+                still owes the standard, CARE, or FERA charge above, every
+                month, before any other charge applies. For the rest of what
+                stays on a solar account&apos;s bill — non-bypassable charges,
+                gas, and the annual true-up — see{' '}
+                <Link
+                  href='/solar-problems/do-i-still-get-a-utility-bill-with-solar'
+                  className='text-primary hover:underline'
+                >
+                  do you still get a utility bill with solar?
+                </Link>{' '}
+                (publishing alongside this page — confirm both go live
+                together).
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
