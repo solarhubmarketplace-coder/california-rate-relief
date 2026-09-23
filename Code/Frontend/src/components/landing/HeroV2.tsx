@@ -61,21 +61,34 @@ export function HeroV2() {
           </p>
         </div>
 
-        {/* Photo column — large screens only, so the CTA stays above the fold on phones */}
+        {/* Photo column — large screens only, so the CTA stays above the fold on phones.
+            The photo is offered only through a <source> gated on the same
+            1024px (lg) breakpoint. An eager, high-priority <img> inside a
+            display:none column is still fetched, so phones were downloading
+            the 95 KB 800w file (at high priority, competing with the CSS and
+            fonts) for a column they never show. Below lg the <img> falls back
+            to a 1x1 inline GIF, so no request is made. At lg and up the
+            browser picks the same srcset candidates as before. */}
         <div className='hidden lg:block'>
           <div className='relative overflow-hidden rounded-2xl border border-border shadow-sm aspect-[6/5]'>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src='/img/hero-home-solar.webp'
-              srcSet='/img/hero-home-solar-800.webp 800w, /img/hero-home-solar.webp 1320w'
-              sizes='(min-width: 1024px) 45vw, 100vw'
-              width={1320}
-              height={1100}
-              alt='Two-story California craftsman home with black rooftop solar panels, palm trees and a waterfront lawn at golden hour'
-              className='absolute inset-0 w-full h-full object-cover'
-              loading='eager'
-              fetchPriority='high'
-            />
+            <picture>
+              <source
+                media='(min-width: 1024px)'
+                type='image/webp'
+                srcSet='/img/hero-home-solar-800.webp 800w, /img/hero-home-solar.webp 1320w'
+                sizes='45vw'
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+                width={1320}
+                height={1100}
+                alt='Two-story California craftsman home with black rooftop solar panels, palm trees and a waterfront lawn at golden hour'
+                className='absolute inset-0 w-full h-full object-cover'
+                loading='eager'
+                fetchPriority='high'
+              />
+            </picture>
           </div>
         </div>
       </div>
