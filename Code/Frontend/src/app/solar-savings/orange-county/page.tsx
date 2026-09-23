@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowRight, MapPin, Home } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import {
   CITIES,
   UTILITY_DATA,
@@ -17,6 +17,14 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+// Region-specific sources for the prose below, fetched 2026-09-23; see the
+// Sources line on the page.
+const CHECKED = 'September 23, 2026';
+const ANAHEIM_RATES_URL = 'https://www.anaheim.net/6335/Residential-Rates';
+const SDGE_ABOUT_URL = 'https://www.sdge.com/more-information/our-company/about-us';
+const OCPA_URL = 'https://www.ocpower.org/';
+const SCE_CCA_URL = 'https://www.sce.com/partners/partnerships/community-choice-aggregation';
+
 export const metadata: Metadata = {
   title: 'Solar Companies in Orange County, California | Rate Relief',
   description:
@@ -27,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Orange County Solar & Savings Guide',
     description:
-      'Orange County solar: the SCE rate, the fixed charge, coastal and inland production and how to compare quotes.',
+      'Orange County solar: SCE, Anaheim Public Utilities or SDG&E, where Orange County Power Authority fits, and how to compare quotes.',
     type: 'website',
   },
 };
@@ -52,6 +60,7 @@ function buildRegionalCollectionSchema() {
 
 export default function OrangeCountySolarPage() {
   const sceUtility = UTILITY_DATA['sce'];
+  const sdgeUtility = UTILITY_DATA['sdge'];
 
   return (
     <PublicLayout>
@@ -78,76 +87,45 @@ export default function OrangeCountySolarPage() {
                 Solar Energy in Orange County
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
-                Most Orange County cities in this guide are served by Southern California Edison; Anaheim runs its own utility and San Clemente sits in SDG&amp;E territory. {utilityRateText(sceUtility).sentence} What solar is worth for your home depends on your usage, your roof and the contract you sign.
+                Three utilities serve the Orange County cities in this guide. Southern California Edison serves most of them, Anaheim runs its own city utility, and San Clemente is in SDG&amp;E territory. They price electricity very differently, so start with the name on your bill.
               </p>
             </div>
 
             {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
             <HeroQuickCheck topic="Orange County solar savings and quote comparison" utility="sce" className='mb-12' />
 
-            {/* Info Section */}
-            <div className='grid md:grid-cols-3 gap-6 mb-12'>
-              <div className='bg-card rounded-xl border border-border p-6'>
-                <div className='flex items-center gap-3 mb-3'>
-                  <MapPin className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Editorial guide coverage</h3>
-                </div>
-                <p className='text-sm text-muted-foreground'>
-                  Editorial coverage for Orange County cities. Confirm the address and utility account before relying on any rate or program information.
-                </p>
-              </div>
-              <div className='bg-card rounded-xl border border-border p-6'>
-                <div className='flex items-center gap-3 mb-3'>
-                  <Home className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Homeowners</h3>
-                </div>
-                <p className='text-sm text-muted-foreground'>
-                  Rooftop solar decisions assume you own the home. Renters can ask the landlord or look at community solar.
-                </p>
-              </div>
-              <div className='bg-card rounded-xl border border-border p-6'>
-                <div className='flex items-center gap-3 mb-3'>
-                  <ArrowRight className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Next Step</h3>
-                </div>
-                <p className='text-sm text-muted-foreground'>
-                  Compare written quotes on the same usage and contract terms, then use the inquiry below if you want a provider to review your project.
-                </p>
-              </div>
-            </div>
-
-            {/* Content Section */}
-            <div className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
+            <section className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
-                What to Check Before Going Solar in Orange County
+                Three utilities, three different bills
               </h2>
-              <ul className='space-y-3 text-muted-foreground leading-relaxed'>
-                <li className='flex gap-3'>
-                  <span className='text-primary font-bold min-w-fit'>•</span>
-                  <span>
-                    <strong>SCE&apos;s average rate:</strong> {utilityRateText(sceUtility).sentence}
-                  </span>
-                </li>
-                <li className='flex gap-3'>
-                  <span className='text-primary font-bold min-w-fit'>•</span>
-                  <span>
-                    <strong>The fixed charge:</strong> SCE residential customers not on CARE or FERA pay a $24.15 monthly fixed charge under CPUC Decision 24-05-028. Solar does not reduce it.
-                  </span>
-                </li>
-                <li className='flex gap-3'>
-                  <span className='text-primary font-bold min-w-fit'>•</span>
-                  <span>
-                    <strong>Coastal and inland sun differ:</strong> the coastal marine layer cuts early-summer output compared with inland cities, so ask each bidder for a production estimate for your roof.
-                  </span>
-                </li>
-                <li className='flex gap-3'>
-                  <span className='text-primary font-bold min-w-fit'>•</span>
-                  <span>
-                    <strong>Leases and PPAs are contracts:</strong> a PPA sets a price for the power your system produces, often with an annual escalator. Add up every payment and the remaining utility charges before comparing it with your bill.
-                  </span>
-                </li>
-              </ul>
-            </div>
+              <h3 className='text-lg font-semibold text-foreground mt-6 mb-2'>SCE: Irvine, Santa Ana, Huntington Beach, Westminster</h3>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                {utilityRateText(sceUtility).sentence} That covers <Link href={savingsCityHref('irvine')} className='text-primary underline'>Irvine</Link>, <Link href={savingsCityHref('santa-ana')} className='text-primary underline'>Santa Ana</Link>, <Link href={savingsCityHref('huntington-beach')} className='text-primary underline'>Huntington Beach</Link> and <Link href={savingsCityHref('westminster')} className='text-primary underline'>Westminster</Link>. The <Link href='/blog/why-is-my-sce-bill-so-high' className='text-primary underline'>SCE bill guide</Link> and the <Link href='/blog/sce-time-of-use-rates-2026' className='text-primary underline'>SCE time-of-use guide</Link> explain the charges an estimate should start from.
+              </p>
+              <h3 className='text-lg font-semibold text-foreground mt-6 mb-2'>Anaheim Public Utilities: Anaheim</h3>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                Anaheim&apos;s posted domestic rate is an $8.00 monthly charge, 14.00¢ per kWh for the first 10 kWh a day, and 21.49¢ per kWh after that, with a time-of-use option alongside it (Anaheim Public Utilities, Residential Rates, checked September 23, 2026). The page shows no effective date, so confirm the current schedule with the utility. An estimate built on SCE&apos;s average does not describe a bill in <Link href={savingsCityHref('anaheim')} className='text-primary underline'>Anaheim</Link>.
+              </p>
+              <h3 className='text-lg font-semibold text-foreground mt-6 mb-2'>SDG&amp;E: San Clemente</h3>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                SDG&amp;E says it has powered San Diego and southern Orange counties for over 140 years, and <Link href={savingsCityHref('san-clemente')} className='text-primary underline'>San Clemente</Link> is inside that territory. {utilityRateText(sdgeUtility).sentence} The <Link href='/solar-savings/san-diego-county' className='text-primary underline'>San Diego County guide</Link> covers SDG&amp;E and the community choice aggregators on its side of the line.
+              </p>
+            </section>
+
+            <section className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
+              <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
+                Where Orange County Power Authority fits
+              </h2>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                Orange County Power Authority (OCPA) is a community choice aggregator. Its site names Buena Park, Fullerton, <Link href={savingsCityHref('irvine')} className='text-primary underline'>Irvine</Link> and Fountain Valley as communities it serves. SCE lists OCPA among the CCAs in its territory and says it keeps providing CCA customers with meter reading, billing, maintenance and outage response.
+              </p>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                So an Irvine bill can carry OCPA generation charges next to SCE delivery charges. Ask each bidder which provider the estimate uses for generation, and have both portions modeled from your own bill.
+              </p>
+              <p className='text-sm text-muted-foreground leading-relaxed'>
+                Sources, each checked {CHECKED}: <a href={ANAHEIM_RATES_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Anaheim Public Utilities, Residential Rates</a>; <a href={SDGE_ABOUT_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>SDG&amp;E, About Us</a>; <a href={OCPA_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Orange County Power Authority</a>; <a href={SCE_CCA_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>SCE, Community Choice Aggregation</a>.
+              </p>
+            </section>
 
             {/* Cities Grid */}
             <div className='mb-12'>
@@ -193,7 +171,7 @@ export default function OrangeCountySolarPage() {
                 Want a Provider to Review Your Orange County Project?
               </h2>
               <p className='text-muted-foreground mb-6 max-w-xl mx-auto'>
-                Send your project details through the form below. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
+                Say which utility bills your address, and whether OCPA appears on the bill, when you send the form below. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
@@ -238,7 +216,7 @@ export default function OrangeCountySolarPage() {
         domain='crr'
         headline='Solar Energy in Orange County'
         url='https://ratereliefca.com/solar-savings/orange-county'
-        dateModified='2026-09-10'
+        dateModified='2026-09-23'
       />
 
       <Footer />

@@ -5,23 +5,32 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowRight, MapPin, Home } from 'lucide-react';
-import { CITIES } from '@/data/cities-data';
+import { ArrowRight } from 'lucide-react';
+import { CITIES, UTILITY_DATA, utilityRateText } from '@/data/cities-data';
 import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+
+// Region-specific sources for the prose below, fetched 2026-09-23; see the
+// Sources line on the page.
+const CHECKED = 'September 23, 2026';
+const SDCP_URL = 'https://sdcommunitypower.org/our-community/';
+const CEA_URL = 'https://thecleanenergyalliance.org/';
+const SDGE_TOU_URL = 'https://www.sdge.com/whenmatters';
+const SDGE_ABOUT_URL = 'https://www.sdge.com/more-information/our-company/about-us';
 
 export const metadata: Metadata = {
   title: 'San Diego County Solar Guide: City, Bill and Project Paths',
   description:
-    'Editorial solar-planning links for San Diego County: city guides, SDG&E bill review, roof and storage questions, and commercial projects.',
+    'San Diego County solar: the SDG&E average rate, the 4-9 p.m. peak, and whether San Diego Community Power or Clean Energy Alliance is on your bill.',
   alternates: {
     canonical: '/solar-savings/san-diego-county',
   },
   openGraph: {
     title: 'San Diego County Solar Guide: City, Bill and Project Paths',
     description:
-      'Find city guides, SDG&E bill review, roof and storage questions, and commercial solar planning links for San Diego County.',
+      'SDG&E delivers power to every city in this guide; a community choice aggregator supplies it in most. What that means for a quote.',
     type: 'website',
   },
 };
@@ -52,6 +61,8 @@ function buildRegionalCollectionSchema() {
 }
 
 export default function SanDiegoCountySolarPage() {
+  const sdgeUtility = UTILITY_DATA['sdge'];
+
   return (
     <PublicLayout>
       <Header />
@@ -77,76 +88,42 @@ export default function SanDiegoCountySolarPage() {
                 Solar Energy in San Diego County
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
-                Start with the actual account, property and project goal. This editorial hub collects current city guides and the planning paths that help you compare a new solar project, roof work, storage, or a business property without assuming a result for every household.
+                SDG&amp;E delivers electricity to every city in this guide, and its residential average is the highest of California&apos;s three large investor-owned utilities. {utilityRateText(sdgeUtility).sentence} The same report puts PG&amp;E at {utilityRateText(UTILITY_DATA['pge']).cents} and SCE at {utilityRateText(UTILITY_DATA['sce']).cents}. In most of these cities a community choice aggregator now supplies the power by default, so the bill has two parts.
               </p>
             </div>
 
             {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
             <HeroQuickCheck topic="San Diego County solar planning and quote comparison" className='mb-12' />
 
-            {/* Info Section */}
-            <div className='grid md:grid-cols-3 gap-6 mb-12'>
-              <div className='bg-card rounded-xl border border-border p-6'>
-                <div className='flex items-center gap-3 mb-3'>
-                  <MapPin className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Editorial guide coverage</h3>
-                </div>
-                <p className='text-sm text-muted-foreground'>
-                  Editorial coverage for San Diego County. Confirm the address and utility account before relying on any rate or program information.
-                </p>
-              </div>
-              <div className='bg-card rounded-xl border border-border p-6'>
-                <div className='flex items-center gap-3 mb-3'>
-                  <Home className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Project type</h3>
-                </div>
-                <p className='text-sm text-muted-foreground'>
-                  Start with the property decision: new solar, roof-first work, an existing system or storage, or a business property.
-                </p>
-              </div>
-              <div className='bg-card rounded-xl border border-border p-6'>
-                <div className='flex items-center gap-3 mb-3'>
-                  <ArrowRight className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Next Step</h3>
-                </div>
-                <p className='text-sm text-muted-foreground'>
-                  Use the bill-review links before comparing a proposal, then use the inquiry below if you want to describe a project.
-                </p>
-              </div>
-            </div>
-
-            {/* Content Section */}
-            <div className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
+            <section className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
-                Choose the next question
+                San Diego Community Power or Clean Energy Alliance?
               </h2>
-              <ul className='space-y-3 text-muted-foreground leading-relaxed'>
-                <li className='flex gap-3'>
-                  <span className='text-primary font-bold min-w-fit'>•</span>
-                  <span>
-                    <strong>Read the current bill first:</strong> identify the provider, tariff and recent charges before treating a county utility label as your own account.
-                  </span>
-                </li>
-                <li className='flex gap-3'>
-                  <span className='text-primary font-bold min-w-fit'>•</span>
-                  <span>
-                    <strong>Check the roof before the equipment:</strong> roof age, condition, shade and access can change which project should be priced.
-                  </span>
-                </li>
-                <li className='flex gap-3'>
-                  <span className='text-primary font-bold min-w-fit'>•</span>
-                  <span>
-                    <strong>Separate an existing system from a new project:</strong> storage and retrofit questions need the current equipment and utility records.
-                  </span>
-                </li>
-                <li className='flex gap-3'>
-                  <span className='text-primary font-bold min-w-fit'>•</span>
-                  <span>
-                    <strong>Use the commercial path for a business property:</strong> a commercial bill, property authority and operating schedule need their own review.
-                  </span>
-                </li>
-              </ul>
-            </div>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                <strong>San Diego Community Power</strong> serves the cities of San Diego, Chula Vista, Encinitas, Imperial Beach, La Mesa and National City and the unincorporated areas of San Diego County. In this guide that means <Link href={savingsCityHref('san-diego')} className='text-primary underline'>San Diego</Link>, <Link href={savingsCityHref('chula-vista')} className='text-primary underline'>Chula Vista</Link>, <Link href={savingsCityHref('encinitas')} className='text-primary underline'>Encinitas</Link> and unincorporated <Link href={savingsCityHref('fallbrook')} className='text-primary underline'>Fallbrook</Link>.
+              </p>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                <strong>Clean Energy Alliance</strong> is the default power provider for Carlsbad, Del Mar, Escondido, Oceanside, San Marcos, Solana Beach and Vista, which covers <Link href={savingsCityHref('carlsbad')} className='text-primary underline'>Carlsbad</Link>, <Link href={savingsCityHref('escondido')} className='text-primary underline'>Escondido</Link> and <Link href={savingsCityHref('oceanside')} className='text-primary underline'>Oceanside</Link>. In CEA&apos;s words, SDG&amp;E delivers energy, handles billing and serves customers.
+              </p>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                Neither CCA&apos;s page names <Link href={savingsCityHref('el-cajon')} className='text-primary underline'>El Cajon</Link>. Check an El Cajon bill for a generation provider before comparing quotes.
+              </p>
+            </section>
+
+            <section className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
+              <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
+                The 4 to 9 p.m. peak
+              </h2>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                SDG&amp;E&apos;s time-of-use pricing puts the peak between 4 p.m. and 9 p.m. Solar output falls away through those hours, so a proposal should show how much of your evening use it covers and what a battery would add. The <Link href='/blog/sdge-time-of-use-rates-2026' className='text-primary underline'>SDG&amp;E time-of-use guide</Link> lists the current plans, and the <Link href='/blog/why-is-my-sdge-bill-so-high' className='text-primary underline'>SDG&amp;E bill guide</Link> walks through the charges.
+              </p>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                SDG&amp;E also serves southern Orange County, San Clemente included; the <Link href='/solar-savings/orange-county' className='text-primary underline'>Orange County guide</Link> covers that side of the county line.
+              </p>
+              <p className='text-sm text-muted-foreground leading-relaxed'>
+                Sources, each checked {CHECKED}: <a href={SDCP_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>San Diego Community Power, Our Community</a>; <a href={CEA_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Clean Energy Alliance</a>; <a href={SDGE_TOU_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>SDG&amp;E, When Matters</a>; <a href={SDGE_ABOUT_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>SDG&amp;E, About Us</a>.
+              </p>
+            </section>
 
             {/* Cities Grid */}
             <div className='mb-12'>
@@ -184,46 +161,23 @@ export default function SanDiegoCountySolarPage() {
                 counties that this hub's own grid does not reach. */}
             <RegionalCostCities region='San Diego County' counties={['San Diego County']} />
 
-            <div className='grid gap-4 md:grid-cols-2 mb-12'>
-              <Link href='/blog/why-is-my-sdge-bill-so-high' className='rounded-xl border border-border bg-card p-5 hover:border-primary/50'>
-                <h2 className='font-semibold text-foreground'>SDG&E bill review</h2>
-                <p className='mt-2 text-sm text-muted-foreground'>Use the account and bill details before comparing solar estimates.</p>
-              </Link>
-              <Link href='/blog/is-my-roof-good-for-solar-california' className='rounded-xl border border-border bg-card p-5 hover:border-primary/50'>
-                <h2 className='font-semibold text-foreground'>Roof-first planning</h2>
-                <p className='mt-2 text-sm text-muted-foreground'>Check the roof questions that belong in a solar scope.</p>
-              </Link>
-              <Link href='/battery' className='rounded-xl border border-border bg-card p-5 hover:border-primary/50'>
-                <h2 className='font-semibold text-foreground'>Existing system or storage</h2>
-                <p className='mt-2 text-sm text-muted-foreground'>Start with the equipment and backup goal, then compare configurations.</p>
-              </Link>
-              <Link href='/commercial-assessment' className='rounded-xl border border-border bg-card p-5 hover:border-primary/50'>
-                <h2 className='font-semibold text-foreground'>Business property</h2>
-                <p className='mt-2 text-sm text-muted-foreground'>Use the commercial assessment for a property with a business account or operating schedule.</p>
-              </Link>
-            </div>
-
-            <p className='mb-12 text-sm text-muted-foreground'>
-              Comparing payment structures? Read the{' '}
-              <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>
-                California PPA, loan, lease and cash guide
-              </Link>
-              .
+            <p className='mb-12 text-muted-foreground leading-relaxed'>
+              Storage questions start on the <Link href='/battery' className='text-primary underline'>battery hub</Link>, and the <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>PPA, loan, lease and cash guide</Link> compares ways to pay.
             </p>
 
             {/* CTA Section */}
             <div className='bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center'>
               <h2 className='text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight'>
-                Describe your project
+                Describe your San Diego County project
               </h2>
               <p className='text-muted-foreground mb-6 max-w-xl mx-auto'>
-                Share the property, utility account and project goal. A response or proposal depends on later review.
+                Include the generation provider on your SDG&amp;E bill, SDCP, CEA or SDG&amp;E itself, when you send the form below. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Start an inquiry
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>
@@ -241,6 +195,20 @@ export default function SanDiegoCountySolarPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(buildRegionalCollectionSchema()),
         }}
+      />
+
+      {/*
+        Article, alongside the CollectionPage node above, as on the Bay Area,
+        Orange County and Central Valley hubs: the regional prose above the
+        city index is original and sourced (2026-09-23). datePublished is
+        omitted because no first-publish date is recorded for this page.
+      */}
+      <ArticleJsonLd
+        variant='Article'
+        domain='crr'
+        headline='Solar Energy in San Diego County'
+        url='https://ratereliefca.com/solar-savings/san-diego-county'
+        dateModified='2026-09-23'
       />
 
       <Footer />

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowRight, MapPin, Home } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import {
   CITIES,
   UTILITY_DATA,
@@ -17,17 +17,28 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
+// Region-specific sources for the prose below, fetched 2026-09-23; see the
+// Sources line on the page. Which utility serves which city comes from
+// src/data/cities-data.ts (CEC service-territory check, 2026-09-22).
+const CHECKED = 'September 23, 2026';
+const SMUD_RATES_URL = 'https://www.smud.org/Rate-Information/Residential-rates';
+const MID_RATES_URL = 'https://www.mid.org/power/rates-service-rules/electric-rates/';
+const TID_URL = 'https://www.tid.org/about-tid/';
+const MERCED_ID_URL = 'https://www.mercedid.org/';
+const LODI_URL = 'https://www.lodi.gov/352/Electric-Utility';
+const AVA_URL = 'https://avaenergy.org/community/who-we-serve/';
+
 export const metadata: Metadata = {
   title: 'Central Valley Solar Companies: Fresno & Sacramento',
   description:
-    'Solar for Central Valley homes in Fresno, Sacramento, Stockton, Modesto and beyond: utility rates, summer production and how to compare quotes.',
+    'Solar for Central Valley homes: which utility bills Fresno, Sacramento, Stockton, Modesto and Lodi, how SMUD prices power, and how to compare quotes.',
   alternates: {
     canonical: '/solar-savings/central-valley',
   },
   openGraph: {
     title: 'Central Valley Solar Companies: Fresno & Sacramento',
     description:
-      'Central Valley solar: PG&E and municipal utility rates, summer production and how to compare quotes.',
+      'Central Valley solar: PG&E, SCE, SMUD and the district and city utilities, and what each changes in a quote.',
     type: 'website',
   },
 };
@@ -67,6 +78,7 @@ function buildRegionalCollectionSchema() {
 
 export default function CentralValleySolarPage() {
   const pgeUtility = UTILITY_DATA['pge'];
+  const sceUtility = UTILITY_DATA['sce'];
 
   return (
     <PublicLayout>
@@ -93,76 +105,80 @@ export default function CentralValleySolarPage() {
                 Solar Energy in the Central Valley
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
-                The Central Valley is California's agricultural heartland, with hot summers and strong sunshine. Homes here are served by PG&E, SCE or a publicly owned utility such as SMUD, MID or Lodi Electric, so start with the utility on your bill. {utilityRateText(pgeUtility).sentence}
+                No single utility serves the cities in this guide. PG&amp;E, SCE and SMUD cover most of them, and city or irrigation-district utilities serve Lodi and parts of Modesto and Merced. The rate a quote should start from is the one on your own bill.
               </p>
             </div>
 
             {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
             <HeroQuickCheck topic="Central Valley solar savings and quote comparison" utility="pge" className='mb-12' />
 
-            {/* Info Section */}
-            <div className='grid md:grid-cols-3 gap-6 mb-12'>
-              <div className='bg-card rounded-xl border border-border p-6'>
-                <div className='flex items-center gap-3 mb-3'>
-                  <MapPin className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Editorial guide coverage</h3>
-                </div>
-                <p className='text-sm text-muted-foreground'>
-                  Editorial coverage for Central Valley cities. Confirm the address and utility account before relying on any rate or program information.
-                </p>
-              </div>
-              <div className='bg-card rounded-xl border border-border p-6'>
-                <div className='flex items-center gap-3 mb-3'>
-                  <Home className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Homeowners</h3>
-                </div>
-                <p className='text-sm text-muted-foreground'>
-                  Rooftop solar decisions assume you own the home. Renters can ask the landlord or look at community solar.
-                </p>
-              </div>
-              <div className='bg-card rounded-xl border border-border p-6'>
-                <div className='flex items-center gap-3 mb-3'>
-                  <ArrowRight className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Next Step</h3>
-                </div>
-                <p className='text-sm text-muted-foreground'>
-                  Compare written quotes on the same usage and contract terms, then use the inquiry below if you want a provider to review your project.
-                </p>
-              </div>
-            </div>
-
-            {/* Content Section */}
-            <div className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
+            <section className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
-                What to Check Before Going Solar in the Central Valley
+                Who bills which Central Valley city
               </h2>
-              <ul className='space-y-3 text-muted-foreground leading-relaxed'>
+              <ul className='space-y-3 text-muted-foreground leading-relaxed mb-4'>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Strong summer production:</strong> hot, dry summers bring strong sunshine. Ask each bidder for a production estimate for your roof, including winter tule fog where it applies.
+                    <strong>PG&amp;E</strong> bills <Link href={savingsCityHref('fresno')} className='text-primary underline'>Fresno</Link>, <Link href={savingsCityHref('bakersfield')} className='text-primary underline'>Bakersfield</Link>, <Link href={savingsCityHref('stockton')} className='text-primary underline'>Stockton</Link>, <Link href={savingsCityHref('manteca')} className='text-primary underline'>Manteca</Link> and <Link href={savingsCityHref('chico')} className='text-primary underline'>Chico</Link>. {utilityRateText(pgeUtility).sentence}
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Know your utility&apos;s rate:</strong> {utilityRateText(pgeUtility).sentence} Publicly owned utilities such as SMUD set their own rates and solar rules.
+                    <strong>SCE</strong> serves <Link href={savingsCityHref('visalia')} className='text-primary underline'>Visalia</Link>. {utilityRateText(sceUtility).sentence}
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Hot summers drive AC use:</strong> cooling loads run into the evening, after solar output falls off, so ask how each proposal handles evening use.
+                    <strong>SMUD</strong> serves <Link href={savingsCityHref('sacramento')} className='text-primary underline'>Sacramento</Link> and <Link href={savingsCityHref('rancho-cordova')} className='text-primary underline'>Rancho Cordova</Link>.
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Leases and PPAs are contracts:</strong> a PPA sets a price for the power your system produces, often with an annual escalator. Add up every payment and the remaining utility charges before comparing it with your bill.
+                    <strong>Two utilities, one city:</strong> <Link href={savingsCityHref('modesto')} className='text-primary underline'>Modesto</Link> addresses are served by either the Modesto Irrigation District or the Turlock Irrigation District, and <Link href={savingsCityHref('merced')} className='text-primary underline'>Merced</Link> addresses by either the Merced Irrigation District or PG&amp;E.
+                  </span>
+                </li>
+                <li className='flex gap-3'>
+                  <span className='text-primary font-bold min-w-fit'>•</span>
+                  <span>
+                    <strong>Lodi Electric Utility</strong> serves <Link href={savingsCityHref('lodi')} className='text-primary underline'>Lodi</Link>.
                   </span>
                 </li>
               </ul>
-            </div>
+            </section>
+
+            <section className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
+              <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
+                How SMUD prices power
+              </h2>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                SMUD&apos;s default residential plan is its Time-of-Day (5&ndash;8 p.m.) Rate, with peak pricing on weekdays from 5 p.m. to 8 p.m. An optional Fixed Rate charges one price at every hour and, according to SMUD, is on average 4% higher than the Time-of-Day rate. Standard residential accounts also pay a System Infrastructure Fixed Charge of $27.00 a month (SMUD, Residential Rates, checked September 23, 2026).
+              </p>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                SMUD posts a separate Solar and Storage Rate as well. Ask which SMUD plan a proposal assumes before and after the system goes in, because the peak window decides how much of your evening use the panels can offset.
+              </p>
+            </section>
+
+            <section className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
+              <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
+                District and city utilities set their own terms
+              </h2>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                The Modesto Irrigation District posts its own residential schedules and its own solar schedules, listed as NEM1, NEM2 and a feed-in tariff. The Turlock Irrigation District says it serves more than 240,000 people across 662 square miles. Merced Irrigation District calls itself a local public power utility serving customers in Livingston, Atwater, Winton and Merced.
+              </p>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                Lodi Electric Utility was founded in 1910 and is community-owned, with about 27,400 electric accounts in a 14-square-mile territory. For any of these utilities, get the current schedule from the utility itself; a PG&amp;E-based estimate does not describe the bill.
+              </p>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                One more split to know: Ava Community Energy, which serves most of Alameda County, is also the default provider in Stockton, Tracy, Lathrop and unincorporated San Joaquin County. A <Link href={savingsCityHref('stockton')} className='text-primary underline'>Stockton</Link> bill can show Ava generation charges next to PG&amp;E delivery. Manteca is not on Ava&apos;s list.
+              </p>
+              <p className='text-sm text-muted-foreground leading-relaxed'>
+                Sources, each checked {CHECKED}: <a href={SMUD_RATES_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>SMUD, Residential Rates</a>; <a href={MID_RATES_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>MID, Electric Rates</a>; <a href={TID_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>TID, About TID</a>; <a href={MERCED_ID_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Merced Irrigation District</a>; <a href={LODI_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Lodi Electric Utility</a>; <a href={AVA_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Ava, Who We Serve</a>.
+              </p>
+            </section>
 
             {/* Cities Grid */}
             <div className='mb-12'>
@@ -208,7 +224,7 @@ export default function CentralValleySolarPage() {
                 Want a Provider to Review Your Central Valley Project?
               </h2>
               <p className='text-muted-foreground mb-6 max-w-xl mx-auto'>
-                Send your project details through the form below. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
+                Name the utility on your bill, and any CCA, when you send the form below. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
@@ -253,7 +269,7 @@ export default function CentralValleySolarPage() {
         domain='crr'
         headline='Solar Energy in the Central Valley'
         url='https://ratereliefca.com/solar-savings/central-valley'
-        dateModified='2026-09-10'
+        dateModified='2026-09-23'
       />
 
       <Footer />
