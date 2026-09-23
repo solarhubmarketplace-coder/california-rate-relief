@@ -54,7 +54,7 @@ export default function HowDoesNetMeteringWork() {
               <p>These sound identical but differ significantly:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Net metering</strong> (NEM 1.0 and 2.0) — exports are credited at the full <em>retail</em> rate you pay for imports. A 1-kWh export earns you a 40¢ credit because you pay 40¢ to import.</li>
-                <li><strong>Net billing</strong> (NEM 3.0) — exports are credited at a lower <em>avoided cost</em> rate, often 5–8¢/kWh. A 1-kWh export earns 5–8¢; a 1-kWh import still costs 40¢. Imbalance favors self-consumption.</li>
+                <li><strong>Net billing</strong> (NEM 3.0) — exports are credited at an hourly <em>avoided cost</em> value that the CPUC says is usually lower than the retail rate, while each kWh you import is billed at your plan&apos;s retail price. The imbalance favors self-consumption.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">California&apos;s NEM Generations</h2>
@@ -70,7 +70,7 @@ export default function HowDoesNetMeteringWork() {
                   <tbody>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">NEM 1.0</td><td className="text-center">2007–2016</td><td className="text-center">Full retail rate</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">NEM 2.0</td><td className="text-center">2016–2023</td><td className="text-center">Full retail minus ~2–3¢ non-bypassable fees</td></tr>
-                    <tr><td className="py-3 pr-4 font-medium">NEM 3.0 / NBT</td><td className="text-center">April 2023–</td><td className="text-center">Avoided cost (~5–8¢/kWh)</td></tr>
+                    <tr><td className="py-3 pr-4 font-medium">NEM 3.0 / NBT</td><td className="text-center">April 2023–</td><td className="text-center">Avoided cost (usually below retail, per CPUC)</td></tr>
                   </tbody>
                 </table>
               </div>

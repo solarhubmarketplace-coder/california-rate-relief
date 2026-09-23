@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title:
     "NEM 2.0 vs NEM 3.0: What Changed for California Solar",
   description:
-    "NEM 3.0 slashed solar export credits by 75-85%. NEM 2.0 vs NEM 3.0 side by side: export rates, payback, and grandfathering rules.",
+    "NEM 3.0 credits solar exports at hourly avoided-cost values, usually below the retail rate. NEM 2.0 vs NEM 3.0 side by side: exports, legacy periods and payback drivers.",
   alternates: {
     canonical: '/blog/nem-2-vs-nem-3',
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title:
       'NEM 2.0 vs NEM 3.0: What Changed and What It Means for California Solar in 2026',
     description:
-      'NEM 3.0 cut export credits 75-85%. Side-by-side comparison of the old and new net metering rules, and what they mean for going solar in 2026.',
+      'NEM 3.0 credits exports at values usually below the retail rate. Side-by-side comparison of the old and new rules, and what they mean for going solar in 2026.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
   },
@@ -30,7 +30,7 @@ const articleSchema = {
   headline:
     'NEM 2.0 vs NEM 3.0: What Changed and What It Means for California Solar in 2026',
   description:
-    'NEM 3.0 slashed solar export credits by 75-85%. Compare NEM 2.0 vs NEM 3.0 side by side — export rates, payback periods, grandfathering rules, and why solar PPAs make more sense than ever.',
+    'NEM 3.0 credits exports at values usually below the retail rate. Compare NEM 2.0 vs NEM 3.0 side by side: export credits, legacy periods, payback drivers and what to check in a proposal.',
   datePublished: '2026-04-16',
   dateModified: '2026-04-16',
   author: {
@@ -103,8 +103,8 @@ export default function NEM2vsNEM3() {
                 is the single biggest factor affecting solar economics in the state
                 right now. Here&apos;s a clear, no-spin breakdown of what changed,
                 what it means for your wallet, and whether solar still makes
-                financial sense in 2026. Spoiler: it does — but the strategy is
-                different now.
+                financial sense in 2026. The short answer: it can, but the strategy
+                is different now, and it depends on your usage and the contract.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -116,21 +116,19 @@ export default function NEM2vsNEM3() {
                 California the solar capital of the country. The concept was simple:
                 when your solar panels produced more electricity than your home used,
                 the excess flowed back to the grid and you received a credit at
-                roughly the full retail rate. That meant export credits of $0.30 to
-                $0.45 per kWh, depending on your utility and rate plan.
+                close to the retail rate you paid for grid power, depending on your
+                utility and rate plan.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The math was generous. A kWh you sent to the grid at noon was worth
                 almost the same as a kWh you pulled from the grid at 8 PM. You could
                 oversize your system, bank credits during sunny months, and draw them
-                down in winter. Many homeowners saw their annual utility bills drop
-                to just the minimum connection charges. Payback periods for purchased
-                systems typically ran 5 to 8 years.
+                down in winter.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                What NEM 3.0 Changed: The 75-85% Export Rate Cut
+                What NEM 3.0 Changed: Lower, Hourly Export Credits
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -142,23 +140,19 @@ export default function NEM2vsNEM3() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The result: average export credits dropped to roughly 5 to 8 cents
-                per kWh. That&apos;s a 75-85% reduction from NEM 2.0 rates. And
-                unlike NEM 2.0&apos;s relatively flat credits, NEM 3.0 export values
-                fluctuate by hour, month, and utility. Peak afternoon hours pay
-                slightly more, while midday — when solar production is highest and
-                the grid is already flooded with solar — export values can drop to
-                near zero.
+                The result, in the CPUC&apos;s words: the value of export
+                compensation &ldquo;is usually lower than the retail rate,&rdquo;
+                though it &ldquo;can rise above the retail rate on late summer
+                evenings.&rdquo; Unlike NEM 2.0&apos;s credits near the retail
+                rate, NEM 3.0 export values change by hour, month, and utility.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Here&apos;s what that looks like by utility. Under NEM 2.0, PG&amp;E
-                customers earned around $0.35-$0.42/kWh for exports. Under NEM 3.0,
-                that same export earns roughly 5-8 cents. SCE went from $0.30-$0.38
-                to the same 5-8 cent range. SDG&amp;E dropped from $0.38-$0.45 down
-                to 5-8 cents. The exact values vary by time of day and season, but
-                the magnitude of the cut is consistent across all three major
-                investor-owned utilities.
+                The same pattern applies at all three investor-owned utilities
+                (PG&amp;E, SCE and SDG&amp;E): the export credit is set hour by
+                hour from the CPUC&apos;s Avoided Cost Calculator rather than from
+                your retail rate. Ask any proposal to state the export values it
+                assumed for your utility and when your system exports.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -166,9 +160,9 @@ export default function NEM2vsNEM3() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If your solar system received Permission to Operate (PTO) before
-                April 15, 2023, you were grandfathered into NEM 2.0 for 15 to 20
-                years from your interconnection date — depending on your utility. You
+                If you applied for interconnection before April 15, 2023, your
+                system stays on NEM 2.0 for 20 years from its interconnection
+                date, under CPUC Decision 14-03-041. You
                 keep the old retail-rate export credits for the duration of that
                 grandfathering period. Nothing about NEM 3.0 affects you unless you
                 make a significant modification to your system.
@@ -188,21 +182,23 @@ export default function NEM2vsNEM3() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                This is where the impact hits hardest for homeowners buying systems
-                outright. Under NEM 2.0, typical payback periods were 5 to 8 years
-                for a cash purchase. Under NEM 3.0, without a battery, payback
-                stretches to 9 to 14+ years. That&apos;s a meaningful difference —
-                especially if you&apos;re not planning to stay in your home for 15+
-                years.
+                This is where the change hits hardest for homeowners buying
+                systems outright. Because exports now earn less than they did
+                under NEM 2.0, a purchased system that exports a lot takes longer
+                to pay back than the same system would have. How much longer
+                depends on how much of your production you use yourself, whether
+                you add a battery, your rate plan and the system price. This page
+                does not quote a payback period because no primary source
+                publishes one for your home.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The extended payback is entirely driven by the lower export value.
-                You&apos;re still saving money on every kWh you consume directly
-                from your panels. But the kWh you export — which used to be worth
-                $0.30-$0.45 — now earns a fraction of that. If your household is
-                empty during the day and you&apos;re exporting 50-60% of production,
-                the hit is substantial.
+                The difference comes from the export value. Power you use
+                directly from your panels still offsets what you would have
+                bought at your retail rate; power you export earns the lower
+                hourly credit. If your household is empty during the day and
+                exports much of what the system produces, the change matters
+                more.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -210,40 +206,37 @@ export default function NEM2vsNEM3() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Battery storage is the single most important factor in making NEM 3.0
-                economics work. The logic is straightforward: instead of exporting
-                midday solar to the grid at 5-8 cents per kWh, you store it in a
-                battery and use it yourself during peak evening hours when utility
-                rates hit 40-70+ cents per kWh.
+                Under NEM 3.0 a battery can change the numbers. The logic is
+                straightforward: instead of exporting midday solar for the hourly
+                export credit, you store it in a battery and use it yourself during
+                the evening peak, when time-of-use rates are highest.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                With a properly sized battery, self-consumption rises from roughly
-                40-60% (solar only) to 80-90% (solar + battery). Every kWh you keep
-                and use yourself retains its full retail value rather than being
-                exported at the discounted NEM 3.0 rate. For a household paying $300
-                per month, a battery can add $70-$100 in monthly savings compared to
-                a solar-only system under NEM 3.0.
+                A battery raises the share of your solar you use yourself. Every kWh
+                you keep and use offsets power you would have bought at your retail
+                rate rather than being exported for the lower credit. Whether that
+                covers the cost of the battery depends on its price, your evening
+                usage and your rate plan, so ask for a proposal with and without
+                the battery.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                March 2026 Court Ruling: NEM 3.0 Is Here to Stay
+                NEM 3.0 Is the Tariff That Applies Now
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you were holding out hope that NEM 3.0 would be overturned or
-                significantly modified, the March 2026 court ruling put that to rest.
-                The court upheld the CPUC&apos;s Net Billing Tariff with no major
-                modifications. NEM 3.0 is the law of the land for the foreseeable
-                future. Waiting for a policy reversal is not a viable strategy.
+                New solar customers of PG&amp;E, SCE and SDG&amp;E have taken
+                service on the Net Billing Tariff since April 15, 2023, per the
+                CPUC. Waiting for a policy reversal is not a plan: price solar on
+                the tariff that applies to your application today.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Meanwhile, utility rates continue climbing. PG&amp;E, SCE, and
-                SDG&amp;E have all filed for or received rate increases through 2028.
-                Every year you wait, the utility cost you&apos;re trying to offset
-                gets higher — but so does the gap between what you pay the utility
-                and what you&apos;d pay with solar.
+                Rates also change several times a year, and not only upward: the
+                CPUC Public Advocates Office reported that PG&amp;E&apos;s March 1,
+                2026 update lowered its residential average by about 3.7% from
+                January 1. Use the current rate on your own bill, not a forecast.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -254,18 +247,15 @@ export default function NEM2vsNEM3() {
                 Yes — but the strategy has fundamentally shifted. Under NEM 2.0, the
                 playbook was &quot;produce as much as possible and export the
                 excess.&quot; Under NEM 3.0, the playbook is &quot;produce, store,
-                and consume as much as possible yourself.&quot; The economics still
-                work because California utility rates are among the highest in the
-                nation. Even with reduced export credits, the savings from
-                self-consumed solar power — especially with a battery — are
-                substantial.
+                and consume as much as possible yourself.&quot; Whether the
+                economics work for your home depends on how much of the system&apos;s
+                output you use yourself, your rate plan and the price you pay.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The homeowners who benefit most are those paying $200+ per month to
-                their utility, with good roof exposure, and a system that includes
-                battery storage. For those homeowners, solar + battery typically
-                delivers 30-50% monthly savings compared to utility-only costs.
+                Homeowners with high electricity use, good roof exposure and evening
+                usage a battery can cover are the ones most likely to benefit.
+                Compare written proposals on your own twelve months of usage.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -273,31 +263,25 @@ export default function NEM2vsNEM3() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Here&apos;s where things get interesting. The longer payback period
-                under NEM 3.0 is a problem if you&apos;re buying a system outright —
-                you&apos;re tying up $25,000-$40,000 and waiting 9-14 years to break
-                even. But with a Power Purchase Agreement (PPA), the payback period
-                is irrelevant to you. The PPA provider owns the system, handles the
-                economics, and sells you the power at a fixed rate that&apos;s lower
-                than what your utility charges.
+                With a Power Purchase Agreement (PPA), the provider owns the system
+                and pays for it, and you pay a set price per kWh, usually with an
+                annual escalator. That shifts the question from payback to contract
+                cost: add up the PPA payments and the utility charges you would
+                still pay, and compare them with your current bills.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                You get panels on your roof at no cost out of pocket. Instead of
-                paying your utility a different amount every month and never knowing
-                what your bill will be, you pay a fixed monthly payment that&apos;s
-                typically 30 to 50% less than your current utility cost. All year
-                round, for as long as you live there. The PPA provider takes on the
-                NEM 3.0 risk — the longer payback, the battery optimization, the
-                export rate fluctuations. You just get a lower, predictable bill.
+                A PPA does not remove your utility bill. The CPUC&apos;s consumer
+                guide notes that lease and PPA customers also receive a monthly
+                bill from the solar provider, and the utility still bills for grid
+                power and its fixed charge. Ask the provider to show both bills for
+                a sample month before you sign.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                This is arguably why PPAs have become the dominant solar model in
-                California since NEM 3.0. The economics shifted in a way that makes
-                third-party ownership more attractive for the homeowner than buying
-                outright — unless you have the capital, plan to stay 15+ years, and
-                want to capture the full long-term value.
+                Buying can still make sense if you have the capital or financing,
+                plan to stay in the home, and can use most of what the system
+                produces. Compare the total cost of each option in writing.
               </p>
             </div>
 

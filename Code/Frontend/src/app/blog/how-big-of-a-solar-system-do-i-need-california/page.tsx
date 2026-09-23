@@ -173,7 +173,7 @@ export default function HowBigSolarSystem() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes — if you expect to add an EV or electrify within 5 years, size the solar for that future load. It&apos;s cheaper to install a larger system upfront than to expand later (each capacity addition can split you between NEM tariff versions).</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can I oversize to sell electricity back to PG&amp;E/SCE/SDG&amp;E?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Under NEM 3.0, the export economics don&apos;t reward oversizing. Credits are at avoided cost (5-8 cents/kWh), not retail (35-46 cents/kWh). Installers shouldn&apos;t propose systems massively larger than your consumption.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Under NEM 3.0, the export economics don&apos;t reward oversizing. Credits are at avoided cost, which the CPUC says is usually lower than the retail rate, not at retail. Installers shouldn&apos;t propose systems massively larger than your consumption.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Do I need a battery?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>Under NEM 3.0, for most California homeowners — yes. Solar without a battery exports daytime production at low rates and pulls evening load from the grid at high rates. Battery self-consumption flips that math.</p>
@@ -184,8 +184,8 @@ export default function HowBigSolarSystem() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Get Sized for Your Specific Home</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief runs the math for your specific usage, roof, and future electrification plans. Free 60-second eligibility check.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Check My Eligibility<ArrowRight className='h-4 w-4' /></Link>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

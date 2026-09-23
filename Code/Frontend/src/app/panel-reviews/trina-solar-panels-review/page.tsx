@@ -11,7 +11,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
   title: "Trina Solar Panels Review: Tier-1, 25-Year Warranty",
-  description: "Trina Solar is a tier-1 manufacturer with a 25-year product and power warranty. Vertex S modules run 400-450W. Where California installers use Trina panels.",
+  description: "Trina Solar is a tier-1 manufacturer with a 25-year product and power warranty. What the Vertex S series offers and what to ask a California installer.",
   alternates: { canonical: '/panel-reviews/trina-solar-panels-review' },
   openGraph: { title: 'Trina Solar Panels Review 2026: California Homeowner Guide', description: 'Trina Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -67,7 +67,7 @@ export default function TrinaSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Panel Series</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trina&apos;s current flagship residential line is the <strong>Vertex S series</strong> (compact residential modules) and <strong>Vertex / Vertex S+</strong> (larger format for commercial). The Vertex S residential modules typically come in the 400-450W range with efficiencies in the 21-22% range depending on specific model year.
+                Trina&apos;s current flagship residential line is the <strong>Vertex S series</strong> (compact residential modules) and <strong>Vertex / Vertex S+</strong> (larger format for commercial). Wattage and efficiency vary by model year; the datasheet for the quoted model gives both.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Trina is investing in TOPCon (Tunnel Oxide Passivated Contact) cell technology, which is the current industry-wide successor to PERC cells for residential use. TOPCon panels have better temperature-coefficient behavior and slightly better bifacial performance than older PERC generations.
@@ -75,12 +75,12 @@ export default function TrinaSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trina Solar offers a standard 25-year product warranty (defects) + 25-year power/performance warranty on residential panels. Specific degradation curves and year-25 guaranteed output percentages vary by model year and series — a Vertex S module typically guarantees ~84-87% of original output at year 25, depending on the specific datasheet. Verify with your installer for the exact specification sheet on the specific Trina model being quoted.
+                Trina Solar offers a standard 25-year product warranty (defects) + 25-year power/performance warranty on residential panels. Specific degradation curves and year-25 guaranteed output percentages vary by model year and series — the year-25 guarantee for a Vertex S module is on its datasheet. Verify with your installer for the exact specification sheet on the specific Trina model being quoted.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Who Uses Trina in California</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trina panels are installed by a broad range of California installers — they&apos;re a common tier-1 choice across residential and commercial. Based on our installer research,{' '}<Link href='/solar-installers/momentum-solar-review' className='text-primary hover:underline'>Momentum Solar</Link>{' '}and{' '}<Link href='/solar-installers/freedom-forever-review' className='text-primary hover:underline'>Freedom Forever</Link>{' '}both include Trina among their panel choices (alongside Qcells, Longi, and others). Trina supply is typically reliable — one reason installers use them is availability.
+                Trina panels are installed by a broad range of California installers — they&apos;re a common tier-1 choice across residential and commercial. Which brands an installer offers changes with its supply agreements, so ask each installer, including companies such as{' '}<Link href='/solar-installers/momentum-solar-review' className='text-primary hover:underline'>Momentum Solar</Link>, which panel its quote specifies.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Trina Makes Sense</h2>
@@ -88,12 +88,12 @@ export default function TrinaSolarReview() {
                 Trina panels are a solid tier-1 baseline choice for most California homeowners. They&apos;re competitively priced, reliably available, and backed by a large public company. If your installer proposes Trina as part of a standard residential install, it&apos;s a defensible choice.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Trina may be less compelling if:</strong> you specifically want US-manufactured panels (Trina is primarily manufactured in China, so it doesn&apos;t qualify for the IRA domestic-content bonus), you want the absolute highest year-25 output guarantee (Qcells Q.Peak Duo or REC Alpha Pure guarantee higher), or you prefer a panel with enhanced-labor warranty coverage from your installer (Silfab Prime has this with Semper Solaris).
+                <strong>Trina may be less compelling if:</strong> you specifically want US-manufactured panels (Trina is primarily manufactured in China, so it doesn&apos;t qualify for the IRA domestic-content bonus), you want a higher year-25 output guarantee (compare the warranty sheets), or you prefer a panel with enhanced-labor warranty coverage from your installer (ask whether Silfab&apos;s is offered).
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Trina vs Other Tier-1 Brands</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Compared to{' '}<Link href='/panel-reviews/canadian-solar-panels-review' className='text-primary hover:underline'>Canadian Solar</Link>,{' '}<Link href='/panel-reviews/rec-solar-panels-review' className='text-primary hover:underline'>REC</Link>, and{' '}<Link href='/panel-reviews/silfab-solar-panels-review' className='text-primary hover:underline'>Silfab</Link>, Trina is generally similar on residential panel spec and warranty, with differences in country of origin, installer relationships, and US-manufacturing status. Modern tier-1 panels from any of these brands will produce within a few percent of each other on the same roof. Pick based on your installer&apos;s supply chain, warranty depth, and whether domestic-content is important to you.
+                Compared to{' '}<Link href='/panel-reviews/canadian-solar-panels-review' className='text-primary hover:underline'>Canadian Solar</Link>,{' '}<Link href='/panel-reviews/rec-solar-panels-review' className='text-primary hover:underline'>REC</Link>, and{' '}<Link href='/panel-reviews/silfab-solar-panels-review' className='text-primary hover:underline'>Silfab</Link>, Trina is generally similar on residential panel spec and warranty, with differences in country of origin, installer relationships, and US-manufacturing status. Modern tier-1 panels of similar wattage produce similar output on the same roof. Pick based on your installer&apos;s supply chain, warranty depth, and whether domestic-content is important to you.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
@@ -104,16 +104,16 @@ export default function TrinaSolarReview() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Primarily in China, with some manufacturing in Southeast Asia and Brazil. Trina panels do not qualify for the IRA domestic-content bonus.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>How long do Trina panels last?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Warranty covers 25 years of product defects and power output. Expected useful life 30-40 years with gradual degradation.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Warranty covers 25 years of product defects and power output. Panels usually keep producing past the warranty term, at gradually lower output.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Is Trina Solar publicly traded?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes. Trina Solar Co., Ltd. is listed on the Shanghai Stock Exchange under ticker 688599.</p>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Want Trina (or Other Tier-1) Panels on Your Home?</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers offering Trina, Qcells, REC, Silfab, and other tier-1 panels. Fill out one form, compare quotes.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Ask for Trina (or Other Tier-1) Panels in a Written Quote</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

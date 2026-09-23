@@ -68,7 +68,7 @@ export default function SullivanReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-4 mb-4'>What Happened</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sullivan Solar Power was founded in San Diego in 2004 and for more than 15 years was one of the most respected residential solar installers in Southern California. The company routinely ranked among the top local installers on EnergySage and SolarReviews, with excellent ratings from its active years. That reputation is why the 2021 closure caught many customers off guard.
+                Sullivan Solar Power was founded in San Diego in 2004 and for more than 15 years was one of the most respected residential solar installers in Southern California. It was well known locally during its active years. That reputation is why the 2021 closure caught many customers off guard.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 In late 2021 Sullivan Solar Power abruptly ceased operations. Reports from former customers surfaced across Reddit, BBB, and San Diego local news covering the same themes:
@@ -112,7 +112,7 @@ export default function SullivanReview() {
               </p>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
                 <li><Link href='/solar-installers/baker-electric-solar-review' className='text-primary underline'>Baker Electric Solar</Link>; Escondido-based, family-owned since 1938, strong reputation.</li>
-                <li><Link href='/solar-installers/solar-optimum-review' className='text-primary underline'>Solar Optimum</Link> — 4.8/5 EnergySage, covers SoCal including San Diego County.</li>
+                <li><Link href='/solar-installers/solar-optimum-review' className='text-primary underline'>Solar Optimum</Link> — Southern California installer; confirm it serves your address.</li>
                 <li><Link href='/solar-installers/sunpower-review' className='text-primary underline'>SunPower (Complete Solaria)</Link>. National installer with strong SD footprint.</li>
               </ul>
 
@@ -127,9 +127,9 @@ export default function SullivanReview() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Looking for a Live San Diego Solar Installer?</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple active, licensed California installers serving San Diego County. Fill out one 60-second form and get quotes from up to three, so you can compare real options side by side.</p>
-              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
-              <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
+              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Request a solar review<ArrowRight className='h-4 w-4' /></Link></div>
+              <p className='text-xs text-muted-foreground text-center mt-4'>California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
             </div>
 
             <div className='mt-8'>

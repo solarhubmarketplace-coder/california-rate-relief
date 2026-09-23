@@ -176,7 +176,7 @@ export default function CaliforniaPublicUtilitiesCommission() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Between 2021 and 2026, California&apos;s three investor-owned utilities have imposed cumulative rate increases ranging from 25% to 76%. The drivers are wildfire liability costs, grid hardening (burying power lines, installing covered conductors), renewable energy procurement mandates, and the utilities&apos; guaranteed return on equity for shareholders. Each of these costs flows directly to your bill.
+                California&apos;s three investor-owned utilities have raised residential rates repeatedly in recent years; the CPUC Public Advocates Office tracks each change in its quarterly Electric Rates Reports. The drivers include wildfire liability costs, grid hardening (burying power lines, installing covered conductors), renewable energy procurement mandates, and the return on equity the CPUC authorizes for shareholders. Each of these costs flows to your bill.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -208,7 +208,7 @@ export default function CaliforniaPublicUtilitiesCommission() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The CPUC&apos;s trajectory is clear: rates are going up, fixed charges are here to stay, and NEM 3.0 has changed the solar export math. For homeowners, this creates a straightforward calculation. You can continue paying rates that have increased 25-76% in five years and are projected to keep climbing. Or you can lock in a fixed rate through a solar PPA that&apos;s typically 30-50% below your current utility rate.
+                The CPUC&apos;s recent decisions set the frame: a fixed monthly charge is now on every PG&amp;E, SCE and SDG&amp;E residential bill, and NEM 3.0 changed the solar export math. For homeowners, the useful step is to compare your own bills with any written solar proposal, including a PPA&apos;s starting price, its escalator and the utility charges you would still pay.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

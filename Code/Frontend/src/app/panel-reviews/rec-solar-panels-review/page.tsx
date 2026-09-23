@@ -11,7 +11,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
 export const metadata: Metadata = {
   title: "REC Solar Panels Review: Alpha Pure HJT Series Specs",
-  description: "REC's Alpha Pure uses HJT cells for better hot-weather output, about 22% efficiency. Reliance-owned since 2021, made in Singapore. Warranty and CA installers.",
+  description: "REC's Alpha Pure uses HJT cells for better hot-weather output. Reliance-owned, made in Singapore. Warranty terms and what to ask a California installer.",
   alternates: { canonical: '/panel-reviews/rec-solar-panels-review' },
   openGraph: { title: 'REC Solar Panels Review 2026: Alpha Pure Series for California', description: 'REC Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
@@ -70,25 +70,25 @@ export default function RecSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Panel Series</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The flagship residential line is the <strong>REC Alpha Pure</strong> series, using heterojunction (HJT) cell technology. HJT is a premium cell architecture that offers better temperature coefficient (less efficiency loss as panels heat up in California&apos;s hot summers) and better low-light performance than traditional PERC cells. The Alpha Pure series typically comes in 400-430W residential modules with efficiencies around 22% and a higher year-25 power warranty than baseline tier-1 panels.
+                The flagship residential line is the <strong>REC Alpha Pure</strong> series, using heterojunction (HJT) cell technology. HJT is a premium cell architecture that offers better temperature coefficient (less efficiency loss as panels heat up in California&apos;s hot summers) and better low-light performance than traditional PERC cells. Wattage, efficiency and the year-25 power warranty vary by model; the datasheet and warranty sheet for the quoted model give them.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                REC offers a strong warranty on the Alpha Pure series — 25-year product + 25-year power, with the Alpha Pure typically guaranteeing higher year-25 output than the industry-baseline 80-84%. Specific percentages are on the panel spec sheet (verify with your installer for the exact model year being quoted). REC&apos;s &quot;ProTrust&quot; warranty (when installed by certified installers) also includes enhanced labor coverage similar to Silfab&apos;s arrangement.
+                REC offers a strong warranty on the Alpha Pure series — 25-year product + 25-year power, and the guaranteed year-25 output is on the warranty sheet for the exact model being quoted. REC also runs a &quot;ProTrust&quot; warranty through REC-certified installers; ask whether the installer quoting you is certified and what that warranty adds.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Who Uses REC in California</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                REC panels are a common choice on mid-to-premium residential installs. Based on our installer research, {' '}<Link href='/solar-installers/sunrun-review' className='text-primary hover:underline'>Sunrun</Link>,{' '}<Link href='/solar-installers/momentum-solar-review' className='text-primary hover:underline'>Momentum Solar</Link>, and{' '}<Link href='/solar-installers/freedom-forever-review' className='text-primary hover:underline'>Freedom Forever</Link>{' '}all use REC panels among other tier-1 options depending on project specifications and current supply chain availability.
+                REC panels are usually offered on mid-to-premium residential installs. Which brands an installer offers changes with its supply agreements, so ask each installer, including companies such as{' '}<Link href='/solar-installers/sunrun-review' className='text-primary hover:underline'>Sunrun</Link>{' '}or{' '}<Link href='/solar-installers/momentum-solar-review' className='text-primary hover:underline'>Momentum Solar</Link>, which panel its quote specifies.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When REC Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>You want premium warranty depth.</strong> REC Alpha Pure&apos;s year-25 power guarantee is among the stronger in the industry.
+                <strong>You want premium warranty depth.</strong> Compare REC Alpha Pure&apos;s year-25 power guarantee on its warranty sheet with the other panels you are quoted.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>You live in hot inland California.</strong> HJT cells have a better temperature coefficient than PERC, meaning Alpha Pure panels lose less efficiency during hot summer days in places like Bakersfield, Fresno, Palm Springs. A 3-5% difference in hot-day performance compounds across thousands of hours of annual production.
+                <strong>You live in hot inland California.</strong> HJT cells have a better temperature coefficient than PERC, meaning Alpha Pure panels lose less efficiency during hot summer days in places like Bakersfield, Fresno, Palm Springs. The temperature coefficient on each datasheet shows how much output a panel loses per degree of heat.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>You want the ProTrust enhanced labor warranty</strong> (installer must be REC-certified to offer it).
@@ -99,12 +99,12 @@ export default function RecSolarReview() {
                 Price. REC Alpha Pure typically costs more per watt than baseline tier-1 panels like Trina Vertex S or Canadian Solar HiKu. On a budget-first install, the price premium may not be worth it.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Domestic content. REC panels are manufactured in Singapore — they do NOT qualify for the domestic-content bonus on the commercial ITC (IRC § 48E), which a business or third-party system owner claims, not a homeowner (10% additional credit). If domestic-content is important, consider Silfab (Washington State) or Qcells (Georgia) instead.
+                Domestic content. REC panels are manufactured in Singapore, so they do not count as US-made manufactured products toward the domestic-content bonus on the commercial credit (IRC § 48E), which a business or third-party system owner claims, not a homeowner. If domestic content is important, consider panels made in the US, such as Silfab (Washington State) or Qcells (Georgia).
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Are REC solar panels good?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. REC Alpha Pure is a premium tier-1 panel with HJT cell technology, strong warranty depth, and good hot-weather performance. Commonly considered among the best residential panels available.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. REC Alpha Pure is a premium tier-1 panel with HJT cell technology, strong warranty depth, and good hot-weather performance. Widely offered as a premium residential option.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Where are REC panels made?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>Primarily in Singapore. REC panels do not qualify for the domestic-content bonus on the commercial ITC (IRC § 48E), which a business or third-party system owner claims, not a homeowner.</p>
@@ -117,9 +117,9 @@ export default function RecSolarReview() {
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Get Quotes With REC Alpha Pure Panels</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers offering REC alongside other tier-1 panels. Fill out one form, compare quotes with specific panel options.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Ask for REC Alpha Pure Panels in a Written Quote</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

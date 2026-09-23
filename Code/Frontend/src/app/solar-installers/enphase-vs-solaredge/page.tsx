@@ -79,7 +79,7 @@ export default function EnphaseVsSolarEdge() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Where SolarEdge Wins</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Slightly lower installed cost.</strong> Typically 5–10% cheaper than Enphase for an equivalent system.</li>
+                <li><strong>Installed cost.</strong> Installers price the two differently; compare the written price for each on the same system.</li>
                 <li><strong>Centralized service access.</strong> The central inverter is on the garage wall, easy for installers to service. Enphase failures require roof access.</li>
                 <li><strong>Generally more efficient at DC-DC conversion.</strong> Slightly higher peak efficiency than microinverter pairs (though the advantage is small in real-world annual production).</li>
               </ul>

@@ -59,10 +59,10 @@ export default function SwitchToSolar() {
                 California has four common ways to pay for solar:
               </p>
               <ul className='space-y-2 text-foreground/80 mb-6'>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Cash:</strong> $22-$35K upfront, own the system, lowest lifetime cost, claim the federal tax credit.</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Solar loan:</strong> $0 down typical, own the system, finance $30-$45K over 15-25 years. Watch for dealer fees.</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Solar lease:</strong> $0 down, installer owns system, fixed monthly rate. No tax credit for you.</span></li>
-                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>PPA:</strong> $0 down, installer owns system, per-kWh rate. California Rate Relief Program is a PPA.</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Cash:</strong> pay the full price upfront and own the system. There is no federal residential credit on a system installed in 2026 (IRC &sect; 25D ended for expenditures after December 31, 2025).</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Solar loan:</strong> often no down payment, own the system, and repay over the loan term. Watch for dealer fees.</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>Solar lease:</strong> often no down payment, the provider owns the system, set monthly payment. No tax credit for you.</span></li>
+                <li className='flex items-start gap-2'><span className='text-primary font-bold mt-1'>•</span><span><strong>PPA:</strong> often no down payment, the provider owns the system, per-kWh price. California Rate Relief is a referral service, not a PPA provider.</span></li>
               </ul>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The best fit depends on your credit, savings, and how long you&apos;ll stay in the house. Our{' '}<Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary hover:underline'>cash vs loan vs lease vs PPA breakdown</Link>{' '}runs the numbers for each.
@@ -70,13 +70,13 @@ export default function SwitchToSolar() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Step 3 — Get Multiple Quotes</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Don&apos;t sign with the first installer. Get at least 2-3 quotes and compare system size, equipment (panel brand, inverter type, battery capacity), total cost, monthly payment (for financed/lease/PPA), and warranty length. Insist on a production guarantee of 90%+.
+                Don&apos;t sign with the first installer. Get at least 2-3 quotes and compare system size, equipment (panel brand, inverter type, battery capacity), total cost, monthly payment (for financed/lease/PPA), and warranty length. Ask whether the contract includes a production guarantee and what share of modeled output it covers.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Active California installers in 2026 include{' '}<Link href='/solar-installers/sunrun-review' className='text-primary hover:underline'>Sunrun</Link>,{' '}<Link href='/solar-installers/tesla-solar-review' className='text-primary hover:underline'>Tesla Solar</Link>,{' '}<Link href='/solar-installers/sunpower-review' className='text-primary hover:underline'>SunPower</Link>,{' '}<Link href='/solar-installers/momentum-solar-review' className='text-primary hover:underline'>Momentum</Link>,{' '}<Link href='/solar-installers/semper-solaris-review' className='text-primary hover:underline'>Semper Solaris</Link>,{' '}<Link href='/solar-installers/solar-optimum-review' className='text-primary hover:underline'>Solar Optimum</Link>, and several regional players. See our full{' '}<Link href='/best-solar-companies-california' className='text-primary hover:underline'>Best Solar Companies in California</Link>{' '}hub.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Avoid companies in bankruptcy:{' '}<Link href='/solar-installers/freedom-forever-review' className='text-primary hover:underline'>Freedom Forever</Link>{' '}filed Chapter 11 in April 2026 and <strong>converted to Chapter 7 liquidation on July 31, 2026</strong> — it is no longer operating, and more than 150,000 homeowners are affected.{' '}<Link href='/solar-installers/sunnova-review' className='text-primary hover:underline'>Sunnova</Link>{' '}(Chapter 11 June 2025) has been sold and its legacy portfolio is administered by SunStrong; it is not originating new contracts. Do not sign with either.
+                Avoid companies in bankruptcy:{' '}<Link href='/solar-installers/freedom-forever-review' className='text-primary hover:underline'>Freedom Forever</Link>{' '}filed Chapter 11 in April 2026 and <strong>was converted to Chapter 7 liquidation in summer 2026</strong> — it is no longer operating.{' '}<Link href='/solar-installers/sunnova-review' className='text-primary hover:underline'>Sunnova</Link>{' '}(Chapter 11 June 2025) has been sold and its legacy portfolio is administered by SunStrong; it is not originating new contracts. Do not sign with either.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Step 4 — Sign, Install, Interconnect</h2>
@@ -112,8 +112,8 @@ export default function SwitchToSolar() {
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Ready to Switch to Solar?</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief works with multiple top-rated California installers. Fill out one 60-second form, get up to three quotes, compare side by side.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

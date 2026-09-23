@@ -6,7 +6,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowRight, MapPin, Home, AlertTriangle } from 'lucide-react';
-import { CITIES, UTILITY_DATA } from '@/data/cities-data';
+import { CITIES, UTILITY_DATA, utilityRateText } from '@/data/cities-data';
 import {
   companiesCityHref,
   hasCompaniesCityPage,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 const LA_CITIES = CITIES.filter((c) => c.county === 'Los Angeles County').sort(
-  (a, b) => b.avgMonthlyBill - a.avgMonthlyBill,
+  (a, b) => a.name.localeCompare(b.name),
 );
 
 function buildSchema() {
@@ -136,11 +136,10 @@ export default function LosAngelesCountySolarPage() {
               <div className="bg-card rounded-xl border border-border p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <Home className="h-5 w-5 text-primary" />
-                  <h3 className="font-semibold text-foreground">Homeowners only</h3>
+                  <h3 className="font-semibold text-foreground">Homeowners</h3>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  These programs need an owner-occupied home. LA County&apos;s high
-                  renter share means this rules a lot of households out.
+                  Rooftop solar decisions assume you own the home. Renters can ask the landlord or look at community solar.
                 </p>
               </div>
               <div className="bg-card rounded-xl border border-border p-6">
@@ -149,8 +148,7 @@ export default function LosAngelesCountySolarPage() {
                   <h3 className="font-semibold text-foreground">Next step</h3>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Find your city below, confirm the utility matches your bill, then
-                  check eligibility.
+                  Find your city below, confirm the utility matches your bill, then compare written quotes against that bill.
                 </p>
               </div>
             </div>
@@ -174,7 +172,7 @@ export default function LosAngelesCountySolarPage() {
                         {utility.code === 'ladwp' ? (
                           <>LADWP · Use your electricity subtotal · See schedule</>
                         ) : (
-                          <><span className="font-medium text-foreground">${city.avgMonthlyBill}/mo</span>{' '}average bill · {utility.shortName} · {(utility.ratePerKwh * 100).toFixed(1)}¢/kWh</>
+                          <>{utility.shortName} · {utilityRateText(utility).short}</>
                         )}
                       </div>
                       <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">

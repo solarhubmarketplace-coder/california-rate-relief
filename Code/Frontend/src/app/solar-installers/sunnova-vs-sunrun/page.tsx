@@ -80,7 +80,7 @@ export default function SunnovaVsSunrun() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Long contract transfers at home sale.</strong> Both companies&apos; 20–25 year contracts can complicate a home sale. Verify transfer terms <em>before</em> signing, not at closing.</li>
                 <li><strong>Sales pressure at the dealer level.</strong> Dealer-network models (both companies use them) create variance in sales practices. Get the final contract in writing and walk away from any rep demanding same-day signature.</li>
-                <li><strong>NEM 3.0 savings projections.</strong> Any rep quoting &ldquo;90% savings&rdquo; under NEM 3.0 without a battery is optimistic. Without storage, self-consumption drives 40–60% savings for most households.</li>
+                <li><strong>NEM 3.0 savings projections.</strong> Ask any rep who quotes a savings percentage under NEM 3.0 to show the export-credit, self-consumption and rate assumptions behind it.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Bottom Line</h2>

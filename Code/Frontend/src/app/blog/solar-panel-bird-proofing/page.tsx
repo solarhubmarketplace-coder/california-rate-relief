@@ -98,7 +98,7 @@ export default function SolarPanelBirdProofing() {
             {/* Article Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Birds love solar panels — pigeons, doves, and starlings nest underneath, peck at wiring, and leave droppings that reduce output. In California, bird proofing is increasingly important, especially in fire zones where nesting debris poses a genuine fire risk. Bird proofing costs $200 to $500 for a typical residential system, and many California installers now include basic protection. This article covers the most effective methods, costs, whether you should DIY, and why fire-safety rules make bird proofing critical in high-risk zones.
+                Birds love solar panels — pigeons, doves, and starlings nest underneath, peck at wiring, and leave droppings that reduce output. In California, bird proofing is increasingly important, especially in fire zones where nesting debris poses a genuine fire risk. Some California installers include basic protection; otherwise get a written price for it. This article covers the most effective methods, costs, whether you should DIY, and why fire-safety rules make bird proofing critical in high-risk zones.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -115,7 +115,7 @@ export default function SolarPanelBirdProofing() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>The damage they cause:</strong> Bird droppings are corrosive and cause soiling that reduces output by 10 to 25 percent. More problematically, nesting material and feathers accumulate under panels and along wiring. In dry California summers, this debris becomes a fire hazard. Nests can ignite from electrical sparks or external fires. Damaged wiring insulation creates shock and fire risk. Nests also trap moisture, leading to rust and corrosion.
+                <strong>The damage they cause:</strong> Bird droppings are corrosive and cause soiling that reduces output. More problematically, nesting material and feathers accumulate under panels and along wiring. In dry California summers, this debris becomes a fire hazard. Nests can ignite from electrical sparks or external fires. Damaged wiring insulation creates shock and fire risk. Nests also trap moisture, leading to rust and corrosion.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -127,19 +127,19 @@ export default function SolarPanelBirdProofing() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Mesh bird guards (most popular):</strong> Thin mesh or netting installed along the edges and underneath panels, creating a barrier that blocks birds from nesting while allowing airflow for cooling. Cost: $100 to $300 for a typical 8 kW system. Effectiveness: 85 to 95 percent if properly installed with no gaps. Durability: 5 to 10 years (UV degradation of netting eventually occurs).
+                <strong>Mesh bird guards (most popular):</strong> Thin mesh or netting installed along the edges and underneath panels, creating a barrier that blocks birds from nesting while allowing airflow for cooling. Works well if properly installed with no gaps. UV exposure eventually degrades the netting.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Polycarbonate clips and guards:</strong> Rigid plastic clips attached along panel edges that prevent birds from squeezing into gaps. Cost: $150 to $400. Effectiveness: 70 to 85 percent. Durability: 10+ years. Less maintenance than mesh but slightly lower effectiveness.
+                <strong>Polycarbonate clips and guards:</strong> Rigid plastic clips attached along panel edges that prevent birds from squeezing into gaps. Less maintenance than mesh, though gaps can remain.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Spike strips:</strong> Thin rows of spikes (humane, not sharp enough to injure birds significantly) that make perching uncomfortable. Cost: $50 to $200. Effectiveness: 40 to 60 percent — birds often ignore them or find ways around. Use in combination with other methods.
+                <strong>Spike strips:</strong> Thin rows of spikes (humane, not sharp enough to injure birds significantly) that make perching uncomfortable. Birds often ignore them or find ways around. Use in combination with other methods.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Visual deterrents (hawk kites, reflective tape):</strong> Temporary, psychological deterrents. Cost: $20 to $100. Effectiveness: 20 to 40 percent — birds quickly habituate to them. Not reliable for long-term protection.
+                <strong>Visual deterrents (hawk kites, reflective tape):</strong> Temporary, psychological deterrents. Birds quickly get used to them. Not reliable for long-term protection.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -163,7 +163,7 @@ export default function SolarPanelBirdProofing() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Many installers now include basic bird proofing at little or no cost</strong> as a standard feature, especially in fire zones. Ask your installer if it&apos;s included before requesting a quote.
+                <strong>Some installers include basic bird proofing</strong> in their standard scope. Ask your installer whether it&apos;s included, and at what price, before requesting a quote.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -219,7 +219,7 @@ export default function SolarPanelBirdProofing() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Bird proofing is a smart investment for California solar systems, costing $200 to $500 for professional installation. Mesh guards are the most effective and common method. If you live in a fire zone, bird proofing moves from optional maintenance to safety requirement — nesting debris under solar panels is a genuine fire hazard. Many modern installers include basic proofing at no extra cost; ask if it&apos;s standard on your quote. If your system already has birds nesting, address it promptly to prevent wiring damage and soiling losses. Regular inspection keeps proofing effective over years of California sun and dry seasons.
+                Bird proofing is worth pricing for California solar systems; get a written quote for professional installation. Mesh guards are the most effective and common method. If you live in a fire zone, bird proofing moves from optional maintenance to safety requirement — nesting debris under solar panels is a genuine fire hazard. Ask whether basic proofing is included in your quote. If your system already has birds nesting, address it promptly to prevent wiring damage and soiling losses. Regular inspection keeps proofing effective over years of California sun and dry seasons.
               </p>
             </div>
 
@@ -229,13 +229,13 @@ export default function SolarPanelBirdProofing() {
                 Ready to Explore Solar with All Protections Included?
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                If you&apos;re evaluating solar options that come fully installed and maintained, check your eligibility with the California Rate Relief Program in about 60 seconds.
+                If you want a solar provider to review your project, you can send your details through the form on this page. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

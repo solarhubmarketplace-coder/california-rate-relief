@@ -385,8 +385,8 @@ export default function FreedomForeverReview() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                California pricing ran roughly $2.79 to $3.20 per watt
-                installed, competitive with the national mid-market.
+                This review does not have a verified California price for
+                Freedom Forever systems.
                 Install-to-PTO timelines ran 1 to 3 months for installation
                 and 2 to 6 months for full PTO, in line with other large
                 installers working through utility interconnection
@@ -464,8 +464,6 @@ export default function FreedomForeverReview() {
                 Trustpilot&apos;s rating sat at roughly 3.9 out of 5,
                 buoyed by positive install-phase reviews but dragged down
                 by a steady stream of post-install complaints.
-                SolarReviews gave the company a composite of about 3.31
-                out of 5.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -485,7 +483,7 @@ export default function FreedomForeverReview() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Beyond the BBB, Trustpilot, and SolarReviews figures above, federal court records offer a different, primary-source view. A search of CourtListener&apos;s RECAP database (federal PACER filings) for &ldquo;Freedom Forever&rdquo; turns up 42 dockets naming a Freedom Forever entity as a party, filed between 2019 and 2026 (courtlistener.com, accessed September 22, 2026). The largest single category is claims under the <strong>Telephone Consumer Protection Act</strong> — unsolicited sales calls or texts — filed in Texas, California, Pennsylvania, and Massachusetts federal courts; the rest include diversity-jurisdiction fraud claims, a Fair Credit Reporting Act claim, a Truth in Lending Act claim, and a Magnuson-Moss Warranty Act claim (courtlistener.com, accessed September 22, 2026). Eight of the 42 are consumer telephone-marketing (TCPA) claims filed in California federal courts — four in the Southern District (<em>Ewing v. Freedom Forever, LLC</em>, filed 2020, 2023, 2024, and 2025), three in the Central District (<em>Bales</em>, 2023; <em>Clark</em>, 2024; <em>Shelton</em>, 2025), and one in the Northern District (<em>Naiman v. Freedom Forever, LLC</em>, filed 2019). Two more California federal dockets name the company but aren&apos;t consumer complaints: an employment-discrimination removal (<em>Gomez</em>, C.D. Cal., 2022) and a supplier breach-of-contract claim Freedom Forever itself filed as plaintiff (<em>v. Silfab Solar Inc.</em>, S.D. Cal., 2024) (courtlistener.com, accessed September 22, 2026). These are filed allegations, not court findings — a docket existing doesn&apos;t mean a court ruled against the company — but the pattern (repeated TCPA claims specifically) is a more concrete signal than a star rating.
+                Beyond the BBB and Trustpilot figures above, federal court records offer a different, primary-source view. A search of CourtListener&apos;s RECAP database (federal PACER filings) for &ldquo;Freedom Forever&rdquo; turns up 42 dockets naming a Freedom Forever entity as a party, filed between 2019 and 2026 (courtlistener.com, accessed September 22, 2026). The largest single category is claims under the <strong>Telephone Consumer Protection Act</strong> — unsolicited sales calls or texts — filed in Texas, California, Pennsylvania, and Massachusetts federal courts; the rest include diversity-jurisdiction fraud claims, a Fair Credit Reporting Act claim, a Truth in Lending Act claim, and a Magnuson-Moss Warranty Act claim (courtlistener.com, accessed September 22, 2026). Eight of the 42 are consumer telephone-marketing (TCPA) claims filed in California federal courts — four in the Southern District (<em>Ewing v. Freedom Forever, LLC</em>, filed 2020, 2023, 2024, and 2025), three in the Central District (<em>Bales</em>, 2023; <em>Clark</em>, 2024; <em>Shelton</em>, 2025), and one in the Northern District (<em>Naiman v. Freedom Forever, LLC</em>, filed 2019). Two more California federal dockets name the company but aren&apos;t consumer complaints: an employment-discrimination removal (<em>Gomez</em>, C.D. Cal., 2022) and a supplier breach-of-contract claim Freedom Forever itself filed as plaintiff (<em>v. Silfab Solar Inc.</em>, S.D. Cal., 2024) (courtlistener.com, accessed September 22, 2026). These are filed allegations, not court findings — a docket existing doesn&apos;t mean a court ruled against the company — but the pattern (repeated TCPA claims specifically) is a more concrete signal than a star rating.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

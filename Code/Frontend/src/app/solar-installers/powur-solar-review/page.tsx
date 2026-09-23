@@ -12,7 +12,7 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
   title: "Powur Solar Reviews (2026): 150+ BBB Complaints, MLM Model",
-  description: "Powur Solar has 150+ BBB complaints in 3 years and a 2.9/5 SolarReviews score, with installs reported to take 6 to 16+ months. How the MLM sales model works.",
+  description: "Powur Solar has 150+ BBB complaints in 3 years, with installs reported to take 6 to 16+ months. How its MLM-style sales model works and what to check.",
   alternates: { canonical: '/solar-installers/powur-solar-review' },
 };
 
@@ -30,7 +30,7 @@ const reviewSchema = {
   itemReviewed: { '@type': 'LocalBusiness', name: 'Powur Solar', address: { '@type': 'PostalAddress', addressLocality: 'Del Mar', addressRegion: 'CA', addressCountry: 'US' } },
   reviewRating: { '@type': 'Rating', ratingValue: '2.3', bestRating: '5' },
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Powur Solar operates on an MLM-style sales model that layers recruiter commissions over the install itself. The result is widespread complaints. BBB 150+ in 3 years, ~2.9/5 SolarReviews, and frequent 6–16 month delay reports. Use caution.',
+  reviewBody: 'Powur Solar operates on an MLM-style sales model that layers recruiter commissions over the install itself. The result is widespread complaints. BBB 150+ in 3 years and frequent 6–16 month delay reports. Use caution.',
 };
 
 export default function PowurReview() {
@@ -64,7 +64,7 @@ export default function PowurReview() {
             <div className='p-4 rounded-lg border border-status-warning/30 bg-status-warning/10 flex gap-3 items-start mb-8'>
               <AlertTriangle className='h-5 w-5 text-status-warning flex-shrink-0 mt-0.5' />
               <div className='text-sm text-foreground/80'>
-                <strong className='text-foreground'>Use caution:</strong> Powur has one of the most consistently negative customer reputation profiles in our California comparison. Multi-month install delays and unresponsive support are recurring themes across BBB, SolarReviews, Reddit, and consumer forums.
+                <strong className='text-foreground'>Use caution:</strong> Powur has one of the most consistently negative customer reputation profiles in our California comparison. Multi-month install delays and unresponsive support are recurring themes across BBB, Reddit, and consumer forums.
               </div>
             </div>
 
@@ -101,7 +101,7 @@ export default function PowurReview() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
                 <li>BBB: Heavy complaint volume, approximately 150+ complaints over the prior 3 years for a company of Powur&apos;s scale is a notable outlier.</li>
-                <li>SolarReviews: ~2.9/5 average.</li>
+                
                 <li>Reddit (r/solar) and consumer forums: repeated first-hand accounts of multi-month delays and abandoned projects.</li>
               </ul>
 
@@ -146,10 +146,10 @@ export default function PowurReview() {
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Get Quotes From California Installers With Cleaner Records.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll line up quotes from up to three. So you can compare side by side.</p>
-              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
-              <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Written Quotes Before You Sign.</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
+              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Request a solar review<ArrowRight className='h-4 w-4' /></Link></div>
+              <p className='text-xs text-muted-foreground text-center mt-4'>California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
             </div>
 
             <div className='mt-8'>

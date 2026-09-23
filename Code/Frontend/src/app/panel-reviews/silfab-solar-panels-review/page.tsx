@@ -52,7 +52,7 @@ export default function SilfabSolarReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Silfab Solar is a tier-1 residential panel manufacturer with a major differentiator: it manufactures panels in the United States and Canada, which qualifies Silfab modules for the Inflation Reduction Act&apos;s domestic-content bonus. For California homeowners who want US-made panels without paying the premium for Tesla or Qcells, Silfab is often the top pick. Here&apos;s an honest review.
+                Silfab Solar is a tier-1 residential panel manufacturer with a major differentiator: it manufactures panels in the United States and Canada, and US-made modules can count toward the domestic-content bonus on the commercial federal credit. For California homeowners who want US-made panels, Silfab is one of the options to ask about. Here&apos;s an honest review.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -70,17 +70,17 @@ export default function SilfabSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Panel Series</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Silfab&apos;s residential lineup includes the <strong>Cascade</strong>, <strong>Prime</strong>, and <strong>Elite</strong> series. Prime and Elite are the premium options with higher efficiency and stronger warranty specs. Typical wattages in the 400-440W range for current-generation residential panels, with efficiencies in the 21-22% range.
+                Silfab&apos;s residential lineup includes the <strong>Cascade</strong>, <strong>Prime</strong>, and <strong>Elite</strong> series. Prime and Elite are the premium options with higher efficiency and stronger warranty specs. Wattage and efficiency vary by series; the datasheet for the quoted model gives both.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Silfab offers a standard 25-year product defect warranty + 25-year power/performance warranty. The premium series (Prime, Elite) typically guarantee higher year-25 output than the baseline Cascade — specific percentages vary by product spec sheet. What&apos;s distinctive: Silfab also offers an <strong>enhanced labor warranty</strong> when installed by certain partner installers, covering the labor cost of replacement beyond just the panel itself.
+                Silfab offers a standard 25-year product defect warranty + 25-year power/performance warranty. The premium series (Prime, Elite) typically guarantee higher year-25 output than the baseline Cascade — specific percentages vary by product spec sheet. Silfab also describes an <strong>enhanced labor warranty</strong> available through some installers, covering the labor cost of replacement beyond the panel itself; ask whether the installer quoting you offers it.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Who Uses Silfab in California</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>{' '}<Link href='/solar-installers/semper-solaris-review' className='text-primary hover:underline'>Semper Solaris</Link>{' '}</strong> is a notable California installer that offers enhanced labor coverage on Silfab Prime panels — that&apos;s a specific partnership that means the workmanship warranty from Semper + the Silfab labor warranty stack to produce stronger coverage than you&apos;d get from a generic panel-installer pairing.
+                If an installer such as{' '}<Link href='/solar-installers/semper-solaris-review' className='text-primary hover:underline'>Semper Solaris</Link>{' '}offers Silfab, ask it in writing whether the Silfab labor coverage applies to your system and how it combines with the installer&apos;s own workmanship warranty.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Other California installers also use Silfab, particularly those targeting customers who want US-made panels.
@@ -88,7 +88,7 @@ export default function SilfabSolarReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The IRA Domestic-Content Advantage</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The 10% domestic-content bonus requires that panels (and related components) meet US-manufacturing threshold requirements. Silfab&apos;s US manufacturing presence qualifies. Read who benefits carefully: this bonus sits on the <em>commercial</em> credit under IRC § 48E, so a qualifying project can reach 40% rather than 30%. A homeowner buying a system in 2026 claims none of it — the residential credit under IRC § 25D ended for expenditures made after December 31, 2025. The party that benefits is a business buyer, or the third-party owner on a lease or PPA.
+                The IRS domestic-content bonus requires the project to be built with set percentages of US-made steel, iron and manufactured products; it adds 10 percentage points for a project under 1 MW or one meeting prevailing-wage and apprenticeship rules, and 2 points otherwise. US-made Silfab modules can count toward the manufactured-products share, but the panel alone does not qualify a project. Read who benefits carefully: this bonus sits on the <em>commercial</em> credit under IRC § 48E, so a qualifying project can reach 40% rather than 30%. A homeowner buying a system in 2026 claims none of it — the residential credit under IRC § 25D ended for expenditures made after December 31, 2025. The party that benefits is a business buyer, or the third-party owner on a lease or PPA.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Verify with your installer whether your specific install qualifies for the domestic-content bonus — it depends on more than just the panel (inverters, racking, and other components factor in). But Silfab panels give you a strong start on that pathway.
@@ -99,35 +99,35 @@ export default function SilfabSolarReview() {
                 <strong>You want US-made panels</strong> for the domestic-content ITC bonus or for supply-chain considerations.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>You want enhanced labor coverage</strong> via an installer like Semper Solaris that offers the Silfab partner warranty.
+                <strong>You want enhanced labor coverage</strong> and the installer quoting you offers Silfab&apos;s labor warranty.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>You don&apos;t need the absolute cheapest panel.</strong> Silfab typically prices slightly above baseline Chinese tier-1 panels — you&apos;re paying for US manufacturing and North American service.
+                <strong>You don&apos;t need the cheapest panel.</strong> Compare the per-watt price of a Silfab quote with an otherwise identical quote using another tier-1 brand.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Silfab May Not Be The Best Fit</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If your installer doesn&apos;t stock Silfab or have a partnership in place, you may not get the enhanced labor warranty — in which case you could get similar panel spec from{' '}<Link href='/panel-reviews/rec-solar-panels-review' className='text-primary hover:underline'>REC</Link>{' '}or{' '}<Link href='/panel-reviews/canadian-solar-panels-review' className='text-primary hover:underline'>Canadian Solar</Link>{' '}at potentially lower cost. If price is the dominant factor, Chinese tier-1 panels (Trina, Longi, Canadian Solar) typically run a bit cheaper per watt.
+                If your installer doesn&apos;t stock Silfab or have a partnership in place, you may not get the enhanced labor warranty — in which case you could get similar panel spec from{' '}<Link href='/panel-reviews/rec-solar-panels-review' className='text-primary hover:underline'>REC</Link>{' '}or{' '}<Link href='/panel-reviews/canadian-solar-panels-review' className='text-primary hover:underline'>Canadian Solar</Link>{' '}; if price is the dominant factor, ask each installer for the same system with a different panel brand and compare.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Are Silfab panels good?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. Tier-1 manufacturer, 15+ year operating history, strong warranties, and US manufacturing. Premium-tier quality in the residential market.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Yes. Tier-1 manufacturer with US manufacturing and 25-year product and power warranties.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Where are Silfab panels made?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Silfab operates manufacturing facilities in Washington State (US) and Mississauga, Ontario (Canada). US-manufactured panels qualify for the IRA domestic-content bonus on the federal ITC.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Silfab operates manufacturing facilities in Washington State (US) and Mississauga, Ontario (Canada). US-made modules can count toward the domestic-content bonus on the commercial federal credit; the whole project has to meet the IRS thresholds.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Does Silfab have an enhanced warranty?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Standard is 25-year product + 25-year power. Certain Silfab Prime installs via partner installers include enhanced labor coverage — meaning the labor to replace a defective panel is also covered, not just the panel itself. Ask your installer whether your install qualifies.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Standard is 25-year product + 25-year power. Silfab describes enhanced labor coverage through some installers, meaning the labor to replace a defective panel is also covered, not just the panel itself. Ask your installer whether your install qualifies.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>How does Silfab compare to Qcells?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Both are US-manufactured tier-1 panels. Qcells (used by Axia Solar) has US manufacturing in Dalton and Cartersville, Georgia. Silfab has US manufacturing in Washington State. Spec-wise similar; warranty structure and installer relationships are the more meaningful differentiator.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Both are US-manufactured tier-1 panels. Qcells has US manufacturing in Georgia. Silfab has US manufacturing in Washington State. Spec-wise similar; warranty structure and installer relationships are the more meaningful differentiator.</p>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Want US-Made Silfab Panels on Your Home?</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers that offer Silfab plus enhanced labor warranty options. Fill out one form, compare quotes.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Ask for US-Made Silfab Panels in a Written Quote</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

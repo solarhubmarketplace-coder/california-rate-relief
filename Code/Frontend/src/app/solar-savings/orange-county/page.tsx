@@ -9,6 +9,7 @@ import { ArrowRight, MapPin, Home } from 'lucide-react';
 import {
   CITIES,
   UTILITY_DATA,
+  utilityRateText,
   type CityData,
 } from '@/data/cities-data';
 import { savingsCityHref } from '@/lib/canonical-redirects';
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Orange County Solar & Savings Guide',
     description:
-      'Explore solar energy options for Orange County homeowners. Reduce your SCE electric bill by 30-50% with zero money down.',
+      'Orange County solar: the SCE rate, the fixed charge, coastal and inland production and how to compare quotes.',
     type: 'website',
   },
 };
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
 // Filter cities in Orange County
 const orangeCountyCities = CITIES.filter(
   (city) => city.county === 'Orange County'
-).sort((a, b) => b.avgMonthlyBill - a.avgMonthlyBill);
+).sort((a, b) => a.name.localeCompare(b.name));
 
 function buildRegionalCollectionSchema() {
   return {
@@ -77,7 +78,7 @@ export default function OrangeCountySolarPage() {
                 Solar Energy in Orange County
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
-                Orange County homeowners pay some of the highest electricity rates in California. Southern California Edison rates average {(sceUtility.ratePerKwh * 100).toFixed(1)}¢ per kWh, with time-of-use peak rates reaching {sceUtility.peakTouRate}. A typical Orange County household spends $3,000+ annually on electricity — but solar can cut that by 30-50% with zero money down.
+                Most Orange County cities in this guide are served by Southern California Edison; Anaheim runs its own utility and San Clemente sits in SDG&amp;E territory. {utilityRateText(sceUtility).sentence} What solar is worth for your home depends on your usage, your roof and the contract you sign.
               </p>
             </div>
 
@@ -89,19 +90,19 @@ export default function OrangeCountySolarPage() {
               <div className='bg-card rounded-xl border border-border p-6'>
                 <div className='flex items-center gap-3 mb-3'>
                   <MapPin className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Service Area</h3>
+                  <h3 className='font-semibold text-foreground'>Editorial guide coverage</h3>
                 </div>
                 <p className='text-sm text-muted-foreground'>
-                  Covering all cities served by Southern California Edison in Orange County.
+                  Editorial coverage for Orange County cities. Confirm the address and utility account before relying on any rate or program information.
                 </p>
               </div>
               <div className='bg-card rounded-xl border border-border p-6'>
                 <div className='flex items-center gap-3 mb-3'>
                   <Home className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Homeowners Only</h3>
+                  <h3 className='font-semibold text-foreground'>Homeowners</h3>
                 </div>
                 <p className='text-sm text-muted-foreground'>
-                  Program available for owner-occupied homes. Renters should contact their landlord.
+                  Rooftop solar decisions assume you own the home. Renters can ask the landlord or look at community solar.
                 </p>
               </div>
               <div className='bg-card rounded-xl border border-border p-6'>
@@ -110,7 +111,7 @@ export default function OrangeCountySolarPage() {
                   <h3 className='font-semibold text-foreground'>Next Step</h3>
                 </div>
                 <p className='text-sm text-muted-foreground'>
-                  Confirm your address and utility info, then book a 15-min savings assessment.
+                  Compare written quotes on the same usage and contract terms, then use the inquiry below if you want a provider to review your project.
                 </p>
               </div>
             </div>
@@ -118,38 +119,31 @@ export default function OrangeCountySolarPage() {
             {/* Content Section */}
             <div className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
-                Why Orange County Residents Choose Solar Now
+                What to Check Before Going Solar in Orange County
               </h2>
               <ul className='space-y-3 text-muted-foreground leading-relaxed'>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>SCE rates are climbing:</strong> Orange County Edison customers have seen
-                    cumulative rate increases of 15-20% over the past three years, with more
-                    approved through 2028.
+                    <strong>SCE&apos;s average rate:</strong> {utilityRateText(sceUtility).sentence}
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>New fixed charges:</strong> SCE added a $24.15/month fixed charge to all
-                    residential bills. Solar doesn't reduce this, but it protects you from future
-                    usage-based rate hikes.
+                    <strong>The fixed charge:</strong> SCE residential customers not on CARE or FERA pay a $24.15 monthly fixed charge under CPUC Decision 24-05-028. Solar does not reduce it.
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Excellent sun exposure:</strong> Orange County averages 5.5+ peak sun
-                    hours daily, making solar highly productive year-round.
+                    <strong>Coastal and inland sun differ:</strong> the coastal marine layer cuts early-summer output compared with inland cities, so ask each bidder for a production estimate for your roof.
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>No money down:</strong> Qualify for a Power Purchase Agreement (PPA) and
-                    pay a fixed monthly rate instead of SCE's unpredictable bills. Many households
-                    save 30-50%.
+                    <strong>Leases and PPAs are contracts:</strong> a PPA sets a price for the power your system produces, often with an annual escalator. Add up every payment and the remaining utility charges before comparing it with your bill.
                   </span>
                 </li>
               </ul>
@@ -175,12 +169,7 @@ export default function OrangeCountySolarPage() {
                             {city.name}
                           </h3>
                           <div className='space-y-1 text-sm text-muted-foreground'>
-                            <p>
-                              <span className='font-medium text-foreground'>
-                                ${city.avgMonthlyBill}/mo
-                              </span>{' '}
-                              avg bill
-                            </p>
+                            <p>{city.county}</p>
                             <p>{utility.shortName} service area</p>
                           </div>
                         </div>
@@ -201,16 +190,16 @@ export default function OrangeCountySolarPage() {
             {/* CTA Section */}
             <div className='bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center'>
               <h2 className='text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight'>
-                Ready to Lower Your Orange County Electric Bill?
+                Want a Provider to Review Your Orange County Project?
               </h2>
               <p className='text-muted-foreground mb-6 max-w-xl mx-auto'>
-                Find out if you qualify for a fixed-rate solar program. Takes 60 seconds, no obligation.
+                Send your project details through the form below. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check Your Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

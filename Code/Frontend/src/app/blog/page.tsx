@@ -8,7 +8,7 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
-  title: 'Solar Savings Blog | California Rate Relief Program',
+  title: 'Solar Savings Blog | California Rate Relief',
   description:
     'Understand California utility bills, time-of-use plans and solar options. Sourced guides for PG&E, SCE and SDG&E customers.',
   alternates: {
@@ -107,7 +107,7 @@ const blogPosts: BlogPost[] = [
     slug: 'nem-3-california-still-worth-it',
     title: 'Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)',
     excerpt:
-      'NEM 3.0 cut export credits by 75%. Here\'s why solar is still worth it in 2026, and why battery storage changes everything.',
+      'NEM 3.0 credits exports at values usually below the retail rate. When solar can still work in 2026, and what a battery changes.',
     date: '2026-04-14',
     readTime: '9 min read',
     category: 'Solar Education',
@@ -188,7 +188,7 @@ const blogPosts: BlogPost[] = [
     slug: 'nem-2-vs-nem-3-california',
     title: 'NEM 2.0 vs NEM 3.0 California: What Changed and What It Means For You',
     excerpt:
-      "NEM 2.0 and NEM 3.0 are not the same. California's 2023 tariff change cut export credits by ~75%. Here is the side-by-side comparison.",
+      "NEM 2.0 and NEM 3.0 are not the same. California's 2023 tariff change moved export credits to hourly avoided-cost values. Here is the side-by-side comparison.",
     date: '2026-04-23',
     readTime: '8 min read',
     category: 'California Solar Policy',
@@ -233,7 +233,7 @@ const blogPosts: BlogPost[] = [
     slug: 'tesla-powerwall-installers-california',
     title: 'Tesla Powerwall Installers in California: 2026 Guide',
     excerpt:
-      "Find certified Tesla Powerwall installers in California; how Tesla's certified installer network works, what Powerwall 3 costs installed, and which California installers are certified.",
+      "Who can install a Tesla Powerwall in California, how Tesla's certified installer program works, and what drives the installed price.",
     date: '2026-04-23',
     readTime: '7 min read',
     category: 'Battery Storage',

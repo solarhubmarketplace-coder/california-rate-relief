@@ -115,7 +115,7 @@ export default function SolarPanelInspectionCalifornia() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Get an inspection if:</strong> Your system is over 10 years old and has never been formally inspected. You notice a production drop of more than 10 to 15 percent compared to historical output (check your monitoring app). You see visible damage — cracked glass, loose wiring, corrosion, or pest nesting. You&apos;re selling your home and want to verify system condition for buyers. You live in a high-fire-risk zone and need to verify fire-safety compliance.
+                <strong>Get an inspection if:</strong> Your system is over 10 years old and has never been formally inspected. You notice a clear production drop compared to the same months in earlier years (check your monitoring app). You see visible damage — cracked glass, loose wiring, corrosion, or pest nesting. You&apos;re selling your home and want to verify system condition for buyers. You live in a high-fire-risk zone and need to verify fire-safety compliance.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -151,7 +151,7 @@ export default function SolarPanelInspectionCalifornia() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Some installers include a complimentary annual inspection for the first few years after installation. If you&apos;re past that window and considering an inspection, expect to budget $200 to $300. That&apos;s a one-time cost — not a recurring maintenance bill — and it can prevent expensive repairs later.
+                Some installers include a complimentary annual inspection for the first few years after installation. If you&apos;re past that window and considering an inspection, get a written price first. It&apos;s a one-time cost — not a recurring maintenance bill — and it can prevent expensive repairs later.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -215,7 +215,7 @@ export default function SolarPanelInspectionCalifornia() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Solar panel inspections are not legally required in California, but they&apos;re a smart investment if your system is over 10 years old, has visible damage, or shows unexpected performance drops. A comprehensive inspection costs roughly $200 to $300 and can catch problems before they become expensive repairs. If you live in a high-fire-risk zone, an inspection provides peace of mind and verification of fire-safety compliance. For owned systems, treat an inspection as optional maintenance — not mandatory — but worthwhile every 3 to 5 years.
+                Solar panel inspections are not legally required in California, but they&apos;re a smart investment if your system is over 10 years old, has visible damage, or shows unexpected performance drops. A comprehensive inspection can catch problems before they become expensive repairs; get a written price first. If you live in a high-fire-risk zone, an inspection provides peace of mind and verification of fire-safety compliance. For owned systems, treat an inspection as optional maintenance — not mandatory — but worthwhile every few years.
               </p>
             </div>
 
@@ -225,13 +225,13 @@ export default function SolarPanelInspectionCalifornia() {
                 Curious About Your System&apos;s Health?
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                If you&apos;re evaluating solar or want to understand your options, check your eligibility with the California Rate Relief Program in about 60 seconds.
+                If you want a solar provider to review your project, you can send your details through the form on this page. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

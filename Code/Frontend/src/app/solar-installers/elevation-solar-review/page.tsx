@@ -11,8 +11,8 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
 export const metadata: Metadata = {
-  title: "Elevation Solar Reviews (2026): 4.6/5 Rating, 90 Complaints",
-  description: "Elevation Solar has 19,000+ installs and a 4.6/5 EnergySage score, but 90 BBB complaints in 3 years and reported 6 to 12+ month activation delays.",
+  title: "Elevation Solar Reviews (2026): 90 BBB Complaints, Delays",
+  description: "Elevation Solar reports 19,000+ installs but carries 90 BBB complaints in 3 years and reported 6 to 12+ month activation delays. What to check first.",
   alternates: { canonical: '/solar-installers/elevation-solar-review' },
 };
 
@@ -30,7 +30,7 @@ const reviewSchema = {
   itemReviewed: { '@type': 'LocalBusiness', name: 'Elevation Solar', address: { '@type': 'PostalAddress', addressRegion: 'Multi-state', addressCountry: 'US' } },
   reviewRating: { '@type': 'Rating', ratingValue: '3.5', bestRating: '5' },
   author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  reviewBody: 'Elevation Solar has a mixed reputation profile; 4.6/5 EnergySage (697 reviews) vs 90 BBB complaints and Yelp 2.9/5. Strong at sales and install, weaker at permitting and inspection coordination. Works for patient buyers.',
+  reviewBody: 'Elevation Solar has a mixed reputation profile: 90 BBB complaints and Yelp 2.9/5. Strong at sales and install, weaker at permitting and inspection coordination. Works for patient buyers.',
 };
 
 export default function ElevationReview() {
@@ -51,7 +51,7 @@ export default function ElevationReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Elevation Solar Reviews (2026): Strong EnergySage Ratings, Activation Delays
+                Elevation Solar Reviews (2026): Install Record and Activation Delays
               </h1>
               
               <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
@@ -69,7 +69,7 @@ export default function ElevationReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Elevation is a multi-state solar installer with operations in California, Arizona, Nevada, Texas, and Florida. The company has completed more than 19,000 installations, has a 4.6/5 EnergySage score across 697 reviews, genuinely above average, but also carries a 90-complaint BBB record in 3 years and a Yelp score of 2.9. That split suggests an installer that does design and sales well but struggles with the back half of the install process in California: permitting, inspections, and utility interconnection.
+                Elevation is a multi-state solar installer with operations in California, Arizona, Nevada, Texas, and Florida. The company reports more than 19,000 installations but carries a 90-complaint BBB record in 3 years and a Yelp score of 2.9. That split suggests an installer that does design and sales well but struggles with the back half of the install process in California: permitting, inspections, and utility interconnection.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -84,12 +84,12 @@ export default function ElevationReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Elevation is Enphase-heavy on microinverters, with a mix of Tier-1 panels and batteries depending on your specific quote. Install-day is usually quick and clean based on EnergySage reviews; the problems come after. Inspection failures, missing paperwork, and gateway communication issues are the recurring themes that keep systems offline for extended windows.
+                Elevation is Enphase-heavy on microinverters, with a mix of Tier-1 panels and batteries depending on your specific quote. Complaints concentrate after install day. Inspection failures, missing paperwork, and gateway communication issues are the recurring themes that keep systems offline for extended windows.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>EnergySage: 4.6/5, 697 reviews, above average.</li>
+                
                 <li>BBB: A+, but 90 complaints in 3 years.</li>
                 <li>Yelp: 2.9/5 — negative-skewing, common for post-install issues.</li>
                 <li>Reddit (r/solar): mixed; specific threads describe 6 to 12+ month activation timelines.</li>
@@ -146,7 +146,7 @@ export default function ElevationReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
               <div className='space-y-6 mb-6'>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Elevation Solar a good company?</h3><p className='text-foreground/80'>Mixed. Strong EnergySage scores (4.6/5, 697 reviews) suggest good design/sales experience; 90 BBB complaints and 2.9 Yelp suggest back-half friction at permitting, inspection, and activation.</p></div>
+                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Elevation Solar a good company?</h3><p className='text-foreground/80'>Mixed. 90 BBB complaints and a 2.9 Yelp score point to friction at permitting, inspection, and activation.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What&apos;s the typical Elevation install timeline?</h3><p className='text-foreground/80'>Install day is usually fast. Full process to Permission to Operate has been reported at 6 to 12+ months — longer than California industry average.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Elevation manufacture their own panels?</h3><p className='text-foreground/80'>No. Elevation uses Tier-1 third-party panels, Enphase microinverters are the default, and battery options are mainstream brands.</p></div>
                 <div><h3 className='text-lg font-bold text-foreground mb-2'>What&apos;s Elevation&apos;s actual workmanship warranty length?</h3><p className='text-foreground/80'>10 years on panel, inverter, and racking installation or repair, plus a separate 10-year roof-penetration warranty (<a href='https://poweredbyelevation.com/purchase-agreement-terms/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>poweredbyelevation.com, Purchase Agreement Terms</a>, accessed September 22, 2026) &mdash; more specific than a general &ldquo;25-year&rdquo; figure, which applies to manufacturer product warranties, not Elevation&apos;s own installation work.</p></div>
@@ -156,10 +156,10 @@ export default function ElevationReview() {
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Elevation Against Two California Alternatives.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>Fill out one 60-second form and we&apos;ll line up quotes from up to three California solar installers — so you can compare side by side.</p>
-              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link></div>
-              <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Elevation With Other Written Quotes.</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
+              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Request a solar review<ArrowRight className='h-4 w-4' /></Link></div>
+              <p className='text-xs text-muted-foreground text-center mt-4'>California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
             </div>
 
             <div className='mt-8'>

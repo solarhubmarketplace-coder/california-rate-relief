@@ -155,11 +155,11 @@ export default function HowLongDoSolarPanelsLast() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Performance warranty</strong> guarantees that your panel will maintain a minimum output level over time. The standard promise is that your panel will produce at least 90 percent of its rated output after 10 years, and at least 80 percent after 25 years. Most manufacturers guarantee 25 years, though some now extend this to 30, 35, or even 40 years.
+                <strong>Performance warranty</strong> states a minimum share of rated output the panel will keep producing by given years of its life. The percentages and the term differ by manufacturer and panel line, so read them on your panel&apos;s warranty sheet rather than assuming a standard.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                This is critical: if your panels degrade faster than the warranty allows, the manufacturer replaces them at no cost. Given that most panels degrade at 0.5 percent annually — which means they&apos;ll hit 80 percent at year 40, not year 25 — the warranty is actually protective insurance for worst-case scenarios, not an expiration date.
+                This is critical: if your panels degrade faster than the warranty allows, the warranty&apos;s remedy applies, which may be repair, replacement or compensation, depending on its terms. The warranty is protection for worst-case scenarios, not an expiration date.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -171,11 +171,11 @@ export default function HowLongDoSolarPanelsLast() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                An inverter converts the DC power from panels into AC power your home uses. String inverters (one box for the whole system) typically last 10 to 15 years and cost $1,000 to $3,000 to replace. Microinverters (one per panel) last 20 to 25 years but are cheaper per unit to replace ($200 to $400 each). Battery inverters (if you have storage) typically last 10 to 15 years as well.
+                An inverter converts the DC power from panels into AC power your home uses. String inverters (one box for the whole system) usually need replacing before the panels do. Microinverters (one per panel) usually carry longer warranties and are replaced one unit at a time. Battery inverters (if you have storage) also wear out before the panels. The warranty sheet for your model gives its term.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Budget for replacement.</strong> If you&apos;re keeping your solar system for 30 years, plan on replacing the main inverter at least once, possibly twice. That&apos;s $1,500 to $5,000 out of pocket — roughly $50 to $165 per year over the system lifetime. It&apos;s worth factoring into your long-term ROI calculations, but it doesn&apos;t change the fundamental math. Solar still makes financial sense; you just account for this maintenance cost.
+                <strong>Budget for replacement.</strong> If you&apos;re keeping your solar system for 30 years, plan on replacing the main inverter at least once, possibly twice. Get a written replacement price before the warranty ends and factor it into your long-term cost; it is part of the math, not a reason to skip it.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -203,7 +203,7 @@ export default function HowLongDoSolarPanelsLast() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The one scenario where replacement makes sense: if a performance warranty claim is valid (degradation exceeding the manufacturer&apos;s guarantee), you get replacement panels at no cost. That&apos;s different from planned obsolesce — it&apos;s manufacturer liability if they fail to meet their promise.
+                The one scenario where replacement makes sense: if a performance warranty claim is valid (degradation beyond what the warranty allows), the manufacturer&apos;s warranty remedy applies. That&apos;s different from planned obsolesce — it&apos;s manufacturer liability if they fail to meet their promise.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -221,13 +221,13 @@ export default function HowLongDoSolarPanelsLast() {
                 Ready to Explore Solar for the Long Term?
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                If you&apos;re curious what a 30-year solar investment might look like for your home, you can check your eligibility with the California Rate Relief Program in about 60 seconds.
+                If you want a solar provider to review your project, you can send your details through the form on this page. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

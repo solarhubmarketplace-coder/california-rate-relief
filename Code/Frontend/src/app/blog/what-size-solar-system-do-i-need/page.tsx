@@ -164,7 +164,7 @@ export default function WhatSizeSolarSystemDoINeed() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Step 3: Calculate your ideal system size using the formula above.</strong> This is your baseline — the system size that produces roughly 80-100% of your annual electricity consumption.
+                <strong>Step 3: Calculate your ideal system size using the formula above.</strong> This is your baseline — the system size that produces about your annual electricity consumption, not more.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -172,15 +172,15 @@ export default function WhatSizeSolarSystemDoINeed() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Before NEM 3.0 (which took effect in April 2023), the financial incentive was to oversize your system as much as possible. You&apos;d get paid the full retail rate for excess electricity you fed back to the grid. Now, with NEM 3.0, export credits are just 5-8 cents per kWh (depending on your utility and time of export), while you still pay 30-60 cents per kWh for electricity you buy from the grid. This dramatically changes the math.
+                Before NEM 3.0 (which took effect in April 2023), the financial incentive was to oversize your system as much as possible. You&apos;d get paid the full retail rate for excess electricity you fed back to the grid. Now, with NEM 3.0, the CPUC says export credits are usually lower than the retail rate and vary by hour, while you still pay the retail price for electricity you buy from the grid. This changes the math.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>The key principle:</strong> Every kilowatt-hour you generate and use yourself is worth 30-60 cents. Every kWh you export is worth only 5-8 cents. Overproducing to export is a money loser.
+                <strong>The key principle:</strong> Every kilowatt-hour you generate and use yourself is worth your retail price at that hour. Every kWh you export earns the lower export credit. Overproducing to export rarely pays.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For most homeowners, this means sizing your system to cover 80-100% of your annual usage — not 110-150% as was common before. Right-sizing is especially important if you&apos;re not adding battery storage (see below). If you have seasonal usage variation (high in summer for AC, low in winter), consider a slightly conservative size that avoids excess winter production that you can&apos;t use.
+                For most homeowners, this means sizing your system to cover up to your annual usage rather than well beyond it, as was common before. Right-sizing is especially important if you&apos;re not adding battery storage (see below). If you have seasonal usage variation (high in summer for AC, low in winter), consider a slightly conservative size that avoids excess winter production that you can&apos;t use.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -188,7 +188,7 @@ export default function WhatSizeSolarSystemDoINeed() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you&apos;re adding battery storage (like a Tesla Powerwall), you can and should size your system 10-20% larger than the baseline formula suggests. Here&apos;s why: the battery absorbs excess midday production that you can&apos;t use immediately, stores it, and lets you use it in the evening when rates are highest. This dramatically improves the economics of the extra generation.
+                If you&apos;re adding battery storage (like a Tesla Powerwall), a somewhat larger system than the baseline formula suggests can make sense. Here&apos;s why: the battery absorbs excess midday production that you can&apos;t use immediately, stores it, and lets you use it in the evening when rates are highest. This dramatically improves the economics of the extra generation.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -204,7 +204,7 @@ export default function WhatSizeSolarSystemDoINeed() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Most residential roofs have enough space, but shading from trees, chimneys, or vent stacks can significantly reduce your available area. South-facing roof space is ideal in California. East- and west-facing orientations work but are less efficient (20-30% less production). North-facing is rarely viable.
+                Most residential roofs have enough space, but shading from trees, chimneys, or vent stacks can significantly reduce your available area. South-facing roof space is ideal in California. East- and west-facing orientations work but produce less than south-facing ones. North-facing is rarely viable.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -288,7 +288,7 @@ export default function WhatSizeSolarSystemDoINeed() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Right-sizing your system is critical in 2026. With NEM 3.0&apos;s low export credits, oversizing is a money loser — every kWh you export is worth just 5-8 cents instead of the 30-60 cents you&apos;re paying to buy it. Use the formula above with your actual annual usage and your location&apos;s peak sun hours, then size to cover 80-100% of your consumption. If you&apos;re adding battery storage, you can comfortably go 10-20% larger. Most California homes need 5-7 kW systems, requiring 300-420 square feet of south-facing roof space. When you talk to installers, ask them to run a PVWatts simulation showing your expected annual production — that&apos;s your validation that the system size is correct.
+                Right-sizing your system is critical in 2026. With NEM 3.0&apos;s low export credits, oversizing is a money loser — every kWh you export earns less than the retail price you pay to buy one. Use the formula above with your actual annual usage and your location&apos;s peak sun hours, then size to cover up to your consumption. If you&apos;re adding battery storage, a somewhat larger system can make sense. When you talk to installers, ask them to run a PVWatts simulation showing your expected annual production — that&apos;s your validation that the system size is correct.
               </p>
             </div>
 
@@ -298,7 +298,7 @@ export default function WhatSizeSolarSystemDoINeed() {
                 Not Sure About Your Roof or System Size?
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                The California Rate Relief Program connects you with qualified specialists who can assess your home and recommend the right system size. Get started in 60 seconds.
+                California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.
               </p>
               <Link
                 href='#solar-inquiry'

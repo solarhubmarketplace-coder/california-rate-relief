@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title:
       'SCE Rates Decreased in January 2026, But Remain Extremely High',
     description:
-      'SCE rates fell 2-3% in January 2026, but bills are still crushing. Here\'s what to do about it.',
+      'SCE\'s residential average fell about 2.3% on January 1, 2026, per the CPUC Public Advocates Office. Why bills stay high and what to do about it.',
     type: 'article',
     publishedTime: '2026-04-14T00:00:00Z',
   },
@@ -68,7 +68,7 @@ export default function SCERateIncrease2026() {
             {/* Article Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Contrary to earlier projections, Southern California Edison rates actually decreased by approximately 2-3% as of January 1, 2026. However, don&apos;t celebrate too soon — SCE&apos;s rates remain among the highest in the country at 34.5 cents per kilowatt-hour, with peak time-of-use rates reaching 58-74 cents. For most SCE customers, the rate decrease barely offsets inflationary pressures, and with multi-year rate increases already approved through 2028, the relief is temporary. If you&apos;re an SCE customer, this article breaks down what&apos;s really happening, why rates are still crushing, and what you can actually do about it.
+                Southern California Edison&apos;s residential average rate fell about 2.3% on January 1, 2026, to 34.5 cents per kilowatt-hour, and stood at 34.4 cents as of June 1, 2026 (CPUC Public Advocates Office, Q1 and Q2 2026 Electric Rates Reports). California&apos;s average residential price was 34.74 cents in June 2026, second only to Hawaii among the states and nearly double the U.S. average of 18.34 cents (EIA, Electric Power Monthly, Table 5.6.A). If you&apos;re an SCE customer, this article breaks down what&apos;s really happening, why rates are still crushing, and what you can actually do about it.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -81,15 +81,18 @@ export default function SCERateIncrease2026() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE residential rates currently average around 34.5 cents per
-                kilowatt-hour (kWh). For context, the national average is roughly
-                18 cents per kWh, meaning SCE customers are already paying roughly
-                double what most Americans pay for electricity. The 2-3% rate decrease that went into effect January 1 knocked the average down slightly from 35.5 cents, but this relief is temporary and modest. What matters more for your pocketbook are the peak TOU rates, which can reach 58-74 cents per kWh during evening hours.
+                SCE&apos;s residential average was 34.4 cents per kilowatt-hour (kWh)
+                as of June 1, 2026 (CPUC Public Advocates Office). For context, the
+                U.S. average residential price was 18.34 cents per kWh in June 2026
+                (EIA). What matters more for your bill is the price during the hours
+                you use power: on a time-of-use plan, the evening peak costs the
+                most, and your plan&apos;s tariff sheet lists the exact prices.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                On top of the per-kWh rate increase, SCE added a new monthly fixed
-                charge of approximately $24.15 starting in late 2025. This flat fee
+                On top of the per-kWh price, SCE began applying a monthly fixed
+                charge of $24.15 for customers not on CARE or FERA in late 2025,
+                under CPUC Decision 24-05-028. This flat fee
                 appears on every residential bill regardless of how much electricity
                 you use. (We have a{' '}
                 <Link
@@ -102,11 +105,9 @@ export default function SCERateIncrease2026() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For a household using 900 kWh per month — typical for a 3-bedroom
-                home with central air in the Inland Empire or San Fernando Valley
-                — the combined effect means monthly bills could approach $330 to
-                $375 depending on your rate plan and time-of-use schedule. Over a
-                full year, that&apos;s $3,960 to $4,500 just in electricity.
+                A household with central air in the Inland Empire or San Fernando
+                Valley uses far more in summer than in winter, so look at your own
+                twelve months of bills rather than a typical-home estimate.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -137,10 +138,9 @@ export default function SCERateIncrease2026() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Multi-year rate plans already approved.</strong> The CPUC
-                has already approved rate increase frameworks extending through
-                2028. This means the 2026 increase isn&apos;t a one-off — there
-                are more increases built into the pipeline. You can review SCE&apos;s
+                <strong>Multi-year rate cases.</strong> Utility revenue is set in
+                multi-year general rate cases before the CPUC, so rate changes
+                arrive in steps over several years. You can review SCE&apos;s
                 rate case filings on the{' '}
                 <a
                   href='https://www.cpuc.ca.gov/industries-and-topics/electrical-energy'
@@ -154,17 +154,14 @@ export default function SCERateIncrease2026() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Step 1: Check if You&apos;re on the Right Rate Plan (Free, 10
-                Minutes)
+                Step 1: Check if You&apos;re on the Right Rate Plan
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Before doing anything else, check whether you&apos;re on the most
-                cost-effective SCE rate plan for your usage pattern. Many
-                households are on a default TOU (time-of-use) plan that isn&apos;t
-                optimal for them. SCE offers a free rate comparison tool that
-                analyzes your actual usage history and recommends the cheapest
-                plan.
+                cost-effective SCE rate plan for your usage pattern. SCE&apos;s
+                online rate comparison uses your actual usage history to show
+                what you would pay on each plan.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -188,8 +185,9 @@ export default function SCERateIncrease2026() {
                 The main plans to compare are TOU-D-4-9PM (peak hours 4-9 PM),
                 TOU-D-5-8PM (peak hours 5-8 PM), and TOU-D-PRIME (for EV
                 owners). If you can run your dishwasher, laundry, and EV charger
-                outside peak hours, the right TOU plan alone can save you 10-15%
-                with zero upfront cost.
+                outside peak hours, the right TOU plan may cost you less than your
+                current one; the rate comparison shows the difference for your
+                own usage.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -197,8 +195,9 @@ export default function SCERateIncrease2026() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE&apos;s TOU rates swing dramatically — from around 20 cents per
-                kWh off-peak to 58-74 cents during peak evening hours. Shifting
+                SCE&apos;s time-of-use prices are highest in the evening peak and
+                lower at other times; your plan&apos;s tariff sheet lists the exact
+                prices. Shifting
                 heavy electricity use away from 4-9 PM makes a real difference.
                 Practical moves include setting your thermostat to pre-cool the
                 house by 3:30 PM, running the dishwasher and laundry before 4 PM
@@ -230,10 +229,9 @@ export default function SCERateIncrease2026() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>CARE (California Alternate Rates for Energy)</strong>{' '}
-                provides a 30-35% discount on your entire electric bill if your
-                household income falls below certain thresholds (roughly $40,000
-                for a household of two, $61,000 for a household of four — check
-                current limits on{' '}
+                provides a 30-35% discount on the electric bill if your household
+                income falls below its limits, according to the CPUC. The limits
+                change each June; check the current table on{' '}
                 <a
                   href='https://www.sce.com/residential/assistance/care-fera'
                   target='_blank'
@@ -248,8 +246,9 @@ export default function SCERateIncrease2026() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>FERA (Family Electric Rate Assistance)</strong> offers an
-                18% discount for families of three or more whose income slightly
-                exceeds CARE limits. It&apos;s worth checking even if you think
+                18% discount on the electric bill for households of any size with
+                income between the CARE limit and 250% of the federal poverty
+                guidelines, according to the CPUC. It&apos;s worth checking even if you think
                 you might not qualify.
               </p>
 
@@ -267,8 +266,8 @@ export default function SCERateIncrease2026() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If the steps above aren&apos;t enough — or you want to protect
-                yourself against the rate increases that are already approved
-                through 2028 — there are bigger moves worth evaluating.
+                yourself against future rate changes — there are bigger moves
+                worth evaluating.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -284,40 +283,33 @@ export default function SCERateIncrease2026() {
                 >
                   GoGreen Financing
                 </a>{' '}
-                with low-interest loans. If your home is poorly insulated, this
-                can reduce your kWh usage by 15-25%.
+                with loans for qualifying upgrades. If your home is poorly
+                insulated, this can reduce your cooling usage.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Solar (purchased system).</strong> Buying a solar system
-                outright or through a loan gives you full ownership and the longest
-                payback. Without the federal residential tax credit (which expired
-                at the end of 2025), the payback period for a purchased system is
-                now roughly 9 to 12 years in SCE territory, compared to 6 to 7
-                years when the credit was available. This makes sense if you plan
-                to stay in your home for 15+ years and have the upfront capital or
-                strong borrowing terms. You can get free quotes through platforms
-                like{' '}
-                <a
-                  href='https://www.energysage.com'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  EnergySage
-                </a>{' '}
-                to compare installers.
+                outright or through a loan gives you full ownership. There is no
+                federal residential credit on a system installed in 2026: IRC
+                &sect; 25D does not apply to expenditures made after December 31,
+                2025. How long a purchase takes to pay back depends on the price,
+                how much of the output you use yourself and your rate plan, so ask
+                each bidder to show its assumptions. This makes more sense if you
+                plan to stay in your home and have the capital or financing. Get
+                at least three written quotes for the same system to compare
+                installers.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Solar PPA (Power Purchase Agreement).</strong> If you
                 don&apos;t want to buy a system or take out a loan, a PPA puts
-                solar on your roof at no upfront cost. You pay a fixed rate per
-                kWh for the energy the panels produce, typically 30-50% below
-                utility rates. The trade-off is you don&apos;t own the system and
-                can&apos;t claim tax benefits (though the residential credit is
-                gone anyway). PPAs are strongest when utility rates are high and
-                rising — which is exactly the situation SCE customers are in.
+                solar on your roof that the provider owns, often with no down
+                payment. You pay a set price per kWh for the energy the panels
+                produce, usually with an annual escalator, and you still pay SCE
+                for grid power and its fixed charge. The trade-off is you
+                don&apos;t own the system and can&apos;t claim a tax credit. Add
+                up every payment in the contract before comparing it with your
+                SCE bills.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -344,8 +336,7 @@ export default function SCERateIncrease2026() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Solar isn&apos;t the right move for everyone, even with rates this
                 high. It generally doesn&apos;t make financial sense if your
-                monthly bill is under $100 (the savings may not justify the
-                complexity), if you&apos;re planning to sell your home within the
+                monthly bill is already low, if you&apos;re planning to sell your home within the
                 next 2-3 years (though a PPA can be transferred to the buyer), if
                 your roof has heavy shading from trees or neighboring buildings
                 that can&apos;t be mitigated, or if your roof needs replacement
@@ -354,7 +345,7 @@ export default function SCERateIncrease2026() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If you&apos;re not sure about your roof&apos;s solar potential,
-                Google&apos;s free{' '}
+                Google&apos;s{' '}
                 <a
                   href='https://sunroof.withgoogle.com'
                   target='_blank'
@@ -372,12 +363,11 @@ export default function SCERateIncrease2026() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE rates decreased 2-3% as of January 1, 2026, but that&apos;s a
-                brief respite. More increases are already in the pipeline through 2028,
-                and at current rates of 34.5 cents per kWh, you need immediate action.
-                The cheapest thing you can do right now is log into your SCE account
-                and make sure you&apos;re on the optimal rate plan — that&apos;s free
-                and takes 10 minutes. After that, check if you qualify for CARE or FERA
+                SCE&apos;s average residential rate was 34.4 cents per kWh as of June
+                1, 2026, per the CPUC Public Advocates Office&apos;s Q2 2026 Electric
+                Rates Report. The first step costs nothing but time: log into your
+                SCE account and make sure you&apos;re on the plan that fits your
+                usage. After that, check if you qualify for CARE or FERA
                 discounts. For longer-term protection, evaluate whether solar (purchased
                 or PPA), energy efficiency upgrades, or community solar makes sense for
                 your specific situation. The right answer depends on your home,
@@ -391,15 +381,15 @@ export default function SCERateIncrease2026() {
                 Curious What a Fixed Solar Rate Would Look Like?
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                If you&apos;re exploring the PPA route, you can check your
-                eligibility for the California Rate Relief Program in about 60
-                seconds. No cost, no obligation.
+                If you are exploring a PPA and want a provider to review your
+                project, you can send your details through the form on this
+                page. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

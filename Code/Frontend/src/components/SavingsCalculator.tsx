@@ -1,52 +1,38 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { DollarSign, Zap, Sun, TrendingDown, ArrowRight } from 'lucide-react';
+import { DollarSign, Zap, CalendarClock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { intakeHrefForPath } from '@/lib/intake-routing';
+import { getUtilityRate, Q2_2026_URL } from '@/data/utility-rate-tracker';
 
-// Utility rate data (cents per kWh, as of 2026)
-const UTILITY_DATA: Record<
-  string,
-  { name: string; rate: number; annualIncrease: number; label: string }
-> = {
-  sce: {
-    name: 'Southern California Edison',
-    rate: 0.345,
-    annualIncrease: 0.06,
-    label: 'SCE — 34.5¢/kWh',
-  },
-  sdge: {
-    name: 'San Diego Gas & Electric',
-    rate: 0.457,
-    annualIncrease: 0.07,
-    label: 'SDG&E — 45.7¢/kWh',
-  },
-  pge: {
-    name: 'Pacific Gas & Electric',
-    rate: 0.415,
-    annualIncrease: 0.055,
-    label: 'PG&E — 41.5¢/kWh',
-  },
-  mvu: {
-    name: 'Moreno Valley Utility',
-    rate: 0.32,
-    annualIncrease: 0.04,
-    label: 'MVU — 32¢/kWh',
-  },
-  rpu: {
-    name: 'Riverside Public Utilities',
-    rate: 0.28,
-    annualIncrease: 0.035,
-    label: 'RPU — 28¢/kWh',
-  },
-};
+// =============================================================================
+// Quote check calculator for the older /solar-savings/[city] and
+// /solar-companies/[city] templates.
+//
+// 2026-09-23 compliance pass. The previous version assumed a 20¢/kWh PPA price,
+// a 1.9% escalator, 6–7% yearly utility increases and 5.5 peak sun hours —
+// none of them sourced — and printed "Monthly Savings", "% less" and
+// "25-Year Savings" from those guesses. It also fell back to SCE's rate for
+// any utility it did not list, so a SMUD or Glendale page showed SCE numbers.
+//
+// Now: the only rates shown are the CPUC Public Advocates Office averages in
+// utility-rate-tracker.ts. The quote figures (first-year payment, escalator,
+// term) are whatever the visitor's own contract says. The tool adds up the
+// contract's payments; it produces no savings figure and no projection of
+// future utility rates, because no primary source supports one.
+// =============================================================================
 
-const PPA_RATE = 0.2; // 20¢/kWh fixed PPA rate
-const PPA_ESCALATOR = 0.019; // 1.9% annual PPA escalator
-const PEAK_SUN_HOURS = 5.5; // SoCal average
-const SYSTEM_LOSS = 0.14; // 14% system losses (inverter, wiring, soiling)
+const IOU_KEYS = ['sce', 'sdge', 'pge'] as const;
+type IouKey = (typeof IOU_KEYS)[number];
+
+/** CPUC Decision 24-05-028: $24.15 a month for customers not on CARE or FERA. */
+const IOU_FIXED_CHARGE = 24.15;
+
+function isIouKey(key: string): key is IouKey {
+  return (IOU_KEYS as readonly string[]).includes(key);
+}
 
 interface SavingsCalculatorProps {
   /** Pre-select utility for the city page */
@@ -55,67 +41,53 @@ interface SavingsCalculatorProps {
   cityName?: string;
 }
 
+const formatCurrency = (n: number) =>
+  n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+function readNumber(raw: string): number | null {
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+  const value = Number(trimmed);
+  return Number.isFinite(value) && value >= 0 ? value : null;
+}
+
 export default function SavingsCalculator({
   defaultUtility = 'sce',
   cityName,
 }: SavingsCalculatorProps) {
   const [monthlyBill, setMonthlyBill] = useState(300);
-  const [utility, setUtility] = useState(defaultUtility);
+  const [utility, setUtility] = useState<string>(isIouKey(defaultUtility) ? defaultUtility : 'other');
+  const [payment, setPayment] = useState('');
+  const [escalator, setEscalator] = useState('');
+  const [term, setTerm] = useState('');
   const pathname = usePathname();
   const intakeHref = pathname ? intakeHrefForPath(pathname) : '/#qualify';
 
-  const results = useMemo(() => {
-    const util = UTILITY_DATA[utility] || UTILITY_DATA.sce;
-    const monthlyKwh = monthlyBill / util.rate;
-    const annualKwh = monthlyKwh * 12;
+  const rate = isIouKey(utility) ? getUtilityRate(utility) : null;
 
-    // System size needed
-    const dailyKwh = annualKwh / 365;
-    const systemKw = dailyKwh / (PEAK_SUN_HOURS * (1 - SYSTEM_LOSS));
+  const usage = useMemo(() => {
+    if (!rate || rate.averageResidentialRateCents === null) return null;
+    const energyDollars = Math.max(monthlyBill - IOU_FIXED_CHARGE, 0);
+    return Math.round(energyDollars / (rate.averageResidentialRateCents / 100));
+  }, [monthlyBill, rate]);
 
-    // Year 1 PPA cost
-    const annualPpaCost = annualKwh * PPA_RATE;
-    const monthlyPpaCost = annualPpaCost / 12;
-
-    // Year 1 savings
-    const year1Savings = monthlyBill * 12 - annualPpaCost;
-    const monthlySavings = year1Savings / 12;
-    const savingsPercent = Math.round((monthlySavings / monthlyBill) * 100);
-
-    // 25-year cumulative comparison
-    let totalUtilityCost = 0;
-    let totalPpaCost = 0;
-    let currentUtilityRate = util.rate;
-    let currentPpaRate = PPA_RATE;
-
-    for (let year = 1; year <= 25; year++) {
-      const yearlyUtility = annualKwh * currentUtilityRate;
-      const yearlyPpa = annualKwh * currentPpaRate;
-      totalUtilityCost += yearlyUtility;
-      totalPpaCost += yearlyPpa;
-      currentUtilityRate *= 1 + util.annualIncrease;
-      currentPpaRate *= 1 + PPA_ESCALATOR;
+  const contract = useMemo(() => {
+    const first = readNumber(payment);
+    const years = readNumber(term);
+    const esc = readNumber(escalator) ?? 0;
+    if (first === null || years === null || years < 1 || years > 40) return null;
+    const wholeYears = Math.round(years);
+    let total = 0;
+    let monthly = first;
+    for (let year = 1; year <= wholeYears; year++) {
+      total += monthly * 12;
+      if (year < wholeYears) monthly *= 1 + esc / 100;
     }
+    return { first, finalMonthly: monthly, total, years: wholeYears, esc };
+  }, [payment, escalator, term]);
 
-    const totalSavings = totalUtilityCost - totalPpaCost;
-
-    return {
-      monthlyKwh: Math.round(monthlyKwh),
-      systemKw: Math.round(systemKw * 10) / 10,
-      monthlyPpaCost: Math.round(monthlyPpaCost),
-      monthlySavings: Math.round(monthlySavings),
-      savingsPercent,
-      year1Savings: Math.round(year1Savings),
-      totalSavings: Math.round(totalSavings),
-      totalUtilityCost: Math.round(totalUtilityCost),
-      totalPpaCost: Math.round(totalPpaCost),
-      utilityName: util.name,
-      utilityRate: util.rate,
-    };
-  }, [monthlyBill, utility]);
-
-  const formatCurrency = (n: number) =>
-    n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  const inputClass =
+    'w-full rounded-lg border border-border bg-background px-4 py-3 text-sm font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50';
 
   return (
     <div className="my-12 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-background to-primary/5 p-6 md:p-8 shadow-sm">
@@ -123,20 +95,21 @@ export default function SavingsCalculator({
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-3">
           <Zap className="h-3.5 w-3.5" />
-          Interactive Calculator
+          Quote check
         </div>
         <h3 className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
           {cityName
-            ? `How Much Could You Save in ${cityName}?`
-            : 'How Much Could You Save With Solar?'}
+            ? `Check a Solar Quote Against Your ${cityName} Bill`
+            : 'Check a Solar Quote Against Your Bill'}
         </h3>
         <p className="text-sm text-muted-foreground mt-1 max-w-md mx-auto">
-          Adjust your bill and utility to see estimated PPA savings. No login required.
+          Enter your bill and the terms from a lease, PPA or loan quote. The
+          tool adds up the contract&apos;s payments; it does not predict savings.
         </p>
       </div>
 
       {/* Controls */}
-      <div className="grid md:grid-cols-2 gap-6 mb-8">
+      <div className="grid md:grid-cols-2 gap-6 mb-6">
         {/* Bill slider */}
         <div>
           <label className="block text-sm font-medium text-foreground mb-2">
@@ -148,7 +121,7 @@ export default function SavingsCalculator({
           </div>
           <input
             type="range"
-            min={100}
+            min={50}
             max={800}
             step={10}
             value={monthlyBill}
@@ -156,7 +129,7 @@ export default function SavingsCalculator({
             className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer accent-primary"
           />
           <div className="flex justify-between text-xs text-muted-foreground mt-1">
-            <span>$100</span>
+            <span>$50</span>
             <span>$800</span>
           </div>
         </div>
@@ -169,82 +142,116 @@ export default function SavingsCalculator({
           <select
             value={utility}
             onChange={(e) => setUtility(e.target.value)}
-            className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm font-medium text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className={inputClass}
           >
-            {Object.entries(UTILITY_DATA).map(([key, u]) => (
+            {IOU_KEYS.map((key) => (
               <option key={key} value={key}>
-                {u.label}
+                {getUtilityRate(key).name}
               </option>
             ))}
+            <option value="other">Other or publicly owned utility</option>
           </select>
           <p className="text-xs text-muted-foreground mt-2">
-            Current rate: {(UTILITY_DATA[utility]?.rate * 100).toFixed(1)}¢/kWh →
-            PPA rate: {(PPA_RATE * 100).toFixed(0)}¢/kWh fixed
+            {rate && rate.averageResidentialRateCents !== null ? (
+              <>
+                {rate.name} average residential rate:{' '}
+                {rate.averageResidentialRateCents.toFixed(1)}¢/kWh as of{' '}
+                {rate.asOf.replace(/ \(.*\)$/, '')} (
+                <a href={Q2_2026_URL} target="_blank" rel="noopener noreferrer" className="underline">
+                  CPUC Public Advocates Office
+                </a>
+                ). Your own rate plan may differ.
+              </>
+            ) : (
+              'Publicly owned utilities set their own rates. Use the kWh and charges printed on your bill.'
+            )}
           </p>
         </div>
       </div>
 
+      {/* Quote inputs */}
+      <div className="grid md:grid-cols-3 gap-4 mb-8">
+        <label className="text-sm font-medium text-foreground">
+          First-year monthly payment in the quote ($)
+          <input
+            className={`${inputClass} mt-1`}
+            type="number"
+            inputMode="decimal"
+            min={0}
+            step="any"
+            value={payment}
+            onChange={(e) => setPayment(e.target.value)}
+          />
+        </label>
+        <label className="text-sm font-medium text-foreground">
+          Annual escalator in the quote (%)
+          <input
+            className={`${inputClass} mt-1`}
+            type="number"
+            inputMode="decimal"
+            min={0}
+            step="any"
+            value={escalator}
+            onChange={(e) => setEscalator(e.target.value)}
+          />
+        </label>
+        <label className="text-sm font-medium text-foreground">
+          Contract term (years)
+          <input
+            className={`${inputClass} mt-1`}
+            type="number"
+            inputMode="numeric"
+            min={1}
+            max={40}
+            step={1}
+            value={term}
+            onChange={(e) => setTerm(e.target.value)}
+          />
+        </label>
+      </div>
+
       {/* Results grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <ResultCard
-          icon={<TrendingDown className="h-5 w-5 text-green-600" />}
-          label="Monthly Savings"
-          value={formatCurrency(results.monthlySavings)}
-          sublabel={`${results.savingsPercent}% less`}
-          highlight
+          icon={<DollarSign className="h-5 w-5 text-primary" />}
+          label="Your current bill"
+          value={formatCurrency(monthlyBill)}
+          sublabel="per month, as entered"
+        />
+        <ResultCard
+          icon={<Zap className="h-5 w-5 text-amber-500" />}
+          label="Rough monthly usage"
+          value={usage === null ? 'See bill' : `${usage.toLocaleString('en-US')} kWh`}
+          sublabel={usage === null ? 'kWh is printed on your bill' : 'bill less fixed charge ÷ avg rate'}
+        />
+        <ResultCard
+          icon={<CalendarClock className="h-5 w-5 text-primary" />}
+          label="Final-year payment"
+          value={contract ? formatCurrency(contract.finalMonthly) : '—'}
+          sublabel={contract ? `per month in year ${contract.years}` : 'enter payment and term'}
         />
         <ResultCard
           icon={<DollarSign className="h-5 w-5 text-primary" />}
-          label="New Monthly Cost"
-          value={formatCurrency(results.monthlyPpaCost)}
-          sublabel="Fixed PPA rate"
-        />
-        <ResultCard
-          icon={<Sun className="h-5 w-5 text-amber-500" />}
-          label="System Size"
-          value={`${results.systemKw} kW`}
-          sublabel={`${results.monthlyKwh} kWh/mo`}
-        />
-        <ResultCard
-          icon={<DollarSign className="h-5 w-5 text-green-600" />}
-          label="25-Year Savings"
-          value={formatCurrency(results.totalSavings)}
-          sublabel="vs. staying with utility"
+          label="Total contract payments"
+          value={contract ? formatCurrency(contract.total) : '—'}
+          sublabel={contract ? `${contract.years} years at ${contract.esc}% a year` : 'enter payment and term'}
         />
       </div>
 
-      {/* 25-year comparison bar */}
-      <div className="bg-background rounded-xl p-5 border border-border mb-6">
-        <p className="text-sm font-semibold text-foreground mb-3">25-Year Cost Comparison</p>
-        <div className="space-y-3">
-          <div>
-            <div className="flex justify-between text-xs mb-1">
-              <span className="text-muted-foreground">{results.utilityName}</span>
-              <span className="font-semibold text-red-600">{formatCurrency(results.totalUtilityCost)}</span>
-            </div>
-            <div className="w-full bg-muted rounded-full h-3">
-              <div className="bg-red-500 h-3 rounded-full" style={{ width: '100%' }} />
-            </div>
-          </div>
-          <div>
-            <div className="flex justify-between text-xs mb-1">
-              <span className="text-muted-foreground">Solar PPA (fixed rate)</span>
-              <span className="font-semibold text-green-600">{formatCurrency(results.totalPpaCost)}</span>
-            </div>
-            <div className="w-full bg-muted rounded-full h-3">
-              <div
-                className="bg-green-500 h-3 rounded-full transition-all duration-500"
-                style={{
-                  width: `${Math.round((results.totalPpaCost / results.totalUtilityCost) * 100)}%`,
-                }}
-              />
-            </div>
-          </div>
-        </div>
-        <p className="text-xs text-muted-foreground mt-3">
-          Assumes {((UTILITY_DATA[utility]?.annualIncrease || 0.06) * 100).toFixed(0)}% annual utility rate
-          increases and {(PPA_ESCALATOR * 100).toFixed(1)}% PPA escalator. Actual savings vary by usage
-          and rate tier.
+      <div className="bg-background rounded-xl p-5 border border-border mb-6 text-xs text-muted-foreground space-y-2">
+        <p>
+          The contract totals come only from the numbers you entered. A lease
+          or PPA payment does not replace your whole bill: you still pay the
+          utility for power the system does not cover
+          {isIouKey(utility)
+            ? `, plus the $${IOU_FIXED_CHARGE.toFixed(2)} monthly fixed charge most PG&E, SCE and SDG&E customers pay under CPUC Decision 24-05-028 (about $6 on CARE and $12 on FERA)`
+            : ''}
+          . Ask the provider for its production estimate and add those
+          remaining charges before comparing the quote with your current bill.
+        </p>
+        <p>
+          The usage figure is a rough estimate from an average rate; the kWh on
+          your own bill is more accurate.
         </p>
       </div>
 
@@ -254,11 +261,13 @@ export default function SavingsCalculator({
           href={intakeHref}
           className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
         >
-          Check My Eligibility — Free, 60 Seconds
+          Request a solar review
           <ArrowRight className="h-4 w-4" />
         </Link>
         <p className="text-xs text-muted-foreground mt-2">
-          No cost, no obligation. See if you qualify for the Rate Relief Program.
+          California Rate Relief is compensated by a solar provider when a
+          homeowner we refer signs an agreement. A submission is not a quote,
+          financing approval or program eligibility decision.
         </p>
       </div>
     </div>
@@ -270,22 +279,14 @@ function ResultCard({
   label,
   value,
   sublabel,
-  highlight,
 }: {
   icon: React.ReactNode;
   label: string;
   value: string;
   sublabel: string;
-  highlight?: boolean;
 }) {
   return (
-    <div
-      className={`rounded-xl p-4 text-center border ${
-        highlight
-          ? 'border-green-200 bg-green-50 dark:border-green-900 dark:bg-green-950'
-          : 'border-border bg-background'
-      }`}
-    >
+    <div className="rounded-xl p-4 text-center border border-border bg-background">
       <div className="flex justify-center mb-2">{icon}</div>
       <p className="text-xs text-muted-foreground mb-1">{label}</p>
       <p className="text-lg md:text-xl font-bold text-foreground">{value}</p>

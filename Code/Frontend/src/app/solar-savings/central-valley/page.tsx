@@ -9,6 +9,7 @@ import { ArrowRight, MapPin, Home } from 'lucide-react';
 import {
   CITIES,
   UTILITY_DATA,
+  utilityRateText,
   type CityData,
 } from '@/data/cities-data';
 import { savingsCityHref } from '@/lib/canonical-redirects';
@@ -19,14 +20,14 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 export const metadata: Metadata = {
   title: 'Central Valley Solar Companies: Fresno & Sacramento',
   description:
-    'Solar for Central Valley homes in Fresno, Sacramento, Stockton, Modesto, and beyond. Reduce your electricity bill by 30-50% with zero down solar programs.',
+    'Solar for Central Valley homes in Fresno, Sacramento, Stockton, Modesto and beyond: utility rates, summer production and how to compare quotes.',
   alternates: {
     canonical: '/solar-savings/central-valley',
   },
   openGraph: {
     title: 'Central Valley Solar Companies: Fresno & Sacramento',
     description:
-      'Reduce your Central Valley electric bill with solar. Save 30-50% on PG&E rates, zero money down.',
+      'Central Valley solar: PG&E and municipal utility rates, summer production and how to compare quotes.',
     type: 'website',
   },
 };
@@ -49,7 +50,7 @@ const centralValleyCounties = [
 
 const centralValleyCities = CITIES.filter((city) =>
   centralValleyCounties.includes(city.county)
-).sort((a, b) => b.avgMonthlyBill - a.avgMonthlyBill);
+).sort((a, b) => a.name.localeCompare(b.name));
 
 function buildRegionalCollectionSchema() {
   return {
@@ -92,7 +93,7 @@ export default function CentralValleySolarPage() {
                 Solar Energy in the Central Valley
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
-                The Central Valley is California's agriculture heartland and a solar powerhouse. Residents pay {(pgeUtility.ratePerKwh * 100).toFixed(1)}¢ per kWh on average to PG&E, with peak rates spiking to {pgeUtility.peakTouRate} during summer months. A typical Central Valley household spends $2,800-3,500 annually on electricity — but solar combined with a fixed-rate power purchase agreement can reduce that by 30-50%.
+                The Central Valley is California's agricultural heartland, with hot summers and strong sunshine. Homes here are served by PG&E, SCE or a publicly owned utility such as SMUD, MID or Lodi Electric, so start with the utility on your bill. {utilityRateText(pgeUtility).sentence}
               </p>
             </div>
 
@@ -104,19 +105,19 @@ export default function CentralValleySolarPage() {
               <div className='bg-card rounded-xl border border-border p-6'>
                 <div className='flex items-center gap-3 mb-3'>
                   <MapPin className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Service Area</h3>
+                  <h3 className='font-semibold text-foreground'>Editorial guide coverage</h3>
                 </div>
                 <p className='text-sm text-muted-foreground'>
-                  Covering Central Valley towns and cities served by PG&E and local utilities: Fresno, Sacramento, Stockton, and beyond.
+                  Editorial coverage for Central Valley cities. Confirm the address and utility account before relying on any rate or program information.
                 </p>
               </div>
               <div className='bg-card rounded-xl border border-border p-6'>
                 <div className='flex items-center gap-3 mb-3'>
                   <Home className='h-5 w-5 text-primary' />
-                  <h3 className='font-semibold text-foreground'>Homeowners Only</h3>
+                  <h3 className='font-semibold text-foreground'>Homeowners</h3>
                 </div>
                 <p className='text-sm text-muted-foreground'>
-                  Program available for owner-occupied homes. Renters should contact their landlord.
+                  Rooftop solar decisions assume you own the home. Renters can ask the landlord or look at community solar.
                 </p>
               </div>
               <div className='bg-card rounded-xl border border-border p-6'>
@@ -125,7 +126,7 @@ export default function CentralValleySolarPage() {
                   <h3 className='font-semibold text-foreground'>Next Step</h3>
                 </div>
                 <p className='text-sm text-muted-foreground'>
-                  Enter your address and current bill, then schedule your free 15-minute savings assessment.
+                  Compare written quotes on the same usage and contract terms, then use the inquiry below if you want a provider to review your project.
                 </p>
               </div>
             </div>
@@ -133,39 +134,31 @@ export default function CentralValleySolarPage() {
             {/* Content Section */}
             <div className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
-                Why Central Valley Homeowners Are Switching to Solar
+                What to Check Before Going Solar in the Central Valley
               </h2>
               <ul className='space-y-3 text-muted-foreground leading-relaxed'>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Exceptional solar production:</strong> The Central Valley experiences
-                    6.0+ peak sun hours daily on average, with clear dry conditions ideal for
-                    year-round solar generation.
+                    <strong>Strong summer production:</strong> hot, dry summers bring strong sunshine. Ask each bidder for a production estimate for your roof, including winter tule fog where it applies.
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>PG&E rates climbing steeply:</strong> Rates have increased 15-20% over
-                    three years, with further increases locked in through 2028. A fixed solar rate
-                    shields you from future volatility.
+                    <strong>Know your utility&apos;s rate:</strong> {utilityRateText(pgeUtility).sentence} Publicly owned utilities such as SMUD set their own rates and solar rules.
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Hot summers demand AC:</strong> Central Valley summers push cooling
-                    costs to their peak. Your solar system generates the most power exactly when
-                    you need (and use) electricity most.
+                    <strong>Hot summers drive AC use:</strong> cooling loads run into the evening, after solar output falls off, so ask how each proposal handles evening use.
                   </span>
                 </li>
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>Zero-down Power Purchase Agreement:</strong> No upfront cost. Pay a
-                    fixed monthly rate for all solar electricity your system produces. Central
-                    Valley homes typically save $100-180/month immediately.
+                    <strong>Leases and PPAs are contracts:</strong> a PPA sets a price for the power your system produces, often with an annual escalator. Add up every payment and the remaining utility charges before comparing it with your bill.
                   </span>
                 </li>
               </ul>
@@ -191,12 +184,7 @@ export default function CentralValleySolarPage() {
                             {city.name}
                           </h3>
                           <div className='space-y-1 text-sm text-muted-foreground'>
-                            <p>
-                              <span className='font-medium text-foreground'>
-                                ${city.avgMonthlyBill}/mo
-                              </span>{' '}
-                              avg bill
-                            </p>
+                            <p>{city.county}</p>
                             <p>{utility.shortName} service area</p>
                           </div>
                         </div>
@@ -217,16 +205,16 @@ export default function CentralValleySolarPage() {
             {/* CTA Section */}
             <div className='bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center'>
               <h2 className='text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight'>
-                Ready to Lower Your Central Valley Electric Bill?
+                Want a Provider to Review Your Central Valley Project?
               </h2>
               <p className='text-muted-foreground mb-6 max-w-xl mx-auto'>
-                Get your custom solar savings estimate in 60 seconds. Free, no strings attached.
+                Send your project details through the form below. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

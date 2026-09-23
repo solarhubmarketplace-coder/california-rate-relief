@@ -39,7 +39,7 @@ export default function WhatHappensAfter25Years() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                The 25-year solar panel warranty doesn&apos;t mean your panels die at 25 years. It means the manufacturer guarantees at least a certain output level (typically 80-87%) at that 25-year mark. Panels keep producing electricity for decades past warranty expiration — just at slightly reduced output. Here&apos;s what actually happens to California solar systems over time, and what homeowners do when warranties expire.
+                The 25-year solar panel warranty doesn&apos;t mean your panels die at 25 years. It means the manufacturer guarantees at least a certain output level at that 25-year mark; the percentage is on your panel&apos;s warranty sheet. Panels keep producing electricity for decades past warranty expiration — just at slightly reduced output. Here&apos;s what actually happens to California solar systems over time, and what homeowners do when warranties expire.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -63,7 +63,7 @@ export default function WhatHappensAfter25Years() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What Else Happens Over 25 Years?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Inverters don&apos;t last as long as panels.</strong> String inverters typically have 10-15 year warranties and often need replacement once during a system&apos;s life — around $2,000-$4,000. Microinverters (Enphase) have 25-year warranties and generally last the full panel life. Tesla Solar Inverters are warranted 12.5-25 years depending on model.
+                <strong>Inverters don&apos;t last as long as panels.</strong> String inverters usually carry shorter warranties than panels and often need replacement once during a system&apos;s life; get a written price for the replacement. Microinverters (Enphase) have 25-year warranties and generally last the full panel life. Tesla Solar Inverters are warranted 12.5-25 years depending on model.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Batteries need replacement.</strong> Home batteries (Tesla Powerwall, Enphase IQ, FranklinWH) typically warranty 10-15 years. Beyond that, they degrade more meaningfully than panels and are often replaced. Figure $8,000-$15,000 for a battery replacement in year 15+.
@@ -114,9 +114,9 @@ export default function WhatHappensAfter25Years() {
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Want Solar with Best-in-Class Warranties?</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers offering 25-year product AND workmanship warranties — plus manufacturer warranties that protect you even if the installer closes.</p>
-              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Check My Eligibility<ArrowRight className='h-4 w-4' /></Link>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Want a Provider to Review Your Project?</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. Compare each quote&apos;s product and workmanship warranties in writing.</p>
+              <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 
             <div className='mt-8'>

@@ -108,7 +108,7 @@ export default function SemperSolarisReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Pricing</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Cash pricing in California runs roughly $2.80 to $3.20 per watt, competitive with the mid-market. Financing is all third-party partners — Semper does not own its own lease or PPA product. The bundled solar + roofing + HVAC option can be genuinely useful for homeowners who need multiple trades done at once, both for coordination and because roof penetrations get a single-contractor warranty rather than two contractors pointing fingers at each other if something leaks.
+                This review does not have a verified California price for Semper Solaris; get its written cash price per watt and compare it with other quotes for the same scope. Financing is all third-party partners — Semper does not own its own lease or PPA product. The bundled solar + roofing + HVAC option can be genuinely useful for homeowners who need multiple trades done at once, both for coordination and because roof penetrations get a single-contractor warranty rather than two contractors pointing fingers at each other if something leaks.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reputation and Complaint Data</h2>
@@ -116,7 +116,7 @@ export default function SemperSolarisReview() {
                 Semper Solaris holds a Better Business Bureau A+ rating, but the BBB profile lists approximately 173 to 175 complaints closed in the prior three years. For a company of Semper&apos;s size, that&apos;s not as alarming as Sunrun&apos;s 4,045 or Freedom Forever&apos;s 1,359, but it is higher than Solar Optimum&apos;s 21 complaints over the same period, which is the most directly comparable California-focused installer in our data set.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The weaker data point is Trustpilot, which sits at 1.6 out of 5 based on 51 reviews. SolarReviews and Yelp are mixed to poor. No major class-action lawsuits were active in 2025 or into 2026. The recurring themes across complaints are slow technician response on post-install service calls, roof leak issues (a common industry issue but one Semper should be well-positioned to handle given their roofing division), billing surprises, and communication gaps during longer interconnection delays.
+                The weaker data point is Trustpilot, which sits at 1.6 out of 5 based on 51 reviews. Yelp is mixed to poor. No major class-action lawsuits were active in 2025 or into 2026. The recurring themes across complaints are slow technician response on post-install service calls, roof leak issues (a common industry issue but one Semper should be well-positioned to handle given their roofing division), billing surprises, and communication gaps during longer interconnection delays.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Honest read: the sales-and-install phase is generally fine, and the equipment and workmanship are solid. The friction shows up most in the months after install when something needs attention and the service queue is slow. That pattern is similar to many mid-sized installers — the economics of post-install service are tough for anyone operating outside the very largest players.
@@ -147,7 +147,7 @@ export default function SemperSolarisReview() {
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>What does Semper Solaris cost in California?</h3>
-                  <p className='text-foreground/80 leading-relaxed'>Cash pricing runs roughly $2.80 to $3.20 per watt, which is mid-market competitive. PPA and lease pricing depends on your specific utility and address. Compare against 2 to 3 other quotes for your exact project.</p>
+                  <p className='text-foreground/80 leading-relaxed'>This review does not have a verified California price for Semper Solaris. Get its written cash price per watt and compare it with 2 to 3 other quotes for your exact project; PPA and lease pricing depends on your utility and address.</p>
                 </div>
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>Can Semper do solar and roofing together?</h3>

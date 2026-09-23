@@ -58,7 +58,7 @@ export default function SDGERateIncrease2026() {
                 <li><strong>Switch to the right TOU plan.</strong> SDG&amp;E offers EV-TOU-5 and other plans that can dramatically reduce costs for households that can shift usage to super-off-peak hours. Which plan wins depends on <Link href="/blog/sdge-time-of-use-rates-2026" className="text-primary underline">SDG&amp;E peak hours</Link> and how much of your usage falls inside them.</li>
                 <li><strong>CARE &amp; FERA.</strong> Income-qualified discounts (30–35% and 18% respectively).</li>
                 <li><strong>Medical Baseline allowance.</strong> Extra low-tier electricity for medical-equipment households.</li>
-                <li><strong>Solar + battery is particularly attractive.</strong> At 45.7¢/kWh retail and 5–8¢/kWh NEM 3.0 export credit, self-consumed solar is 6–8× more valuable than exported solar. A battery tips the payback math meaningfully positive. See <Link href="/blog/solar-battery-backup-california" className="text-primary underline">Solar Battery Backup in California</Link>.</li>
+                <li><strong>Solar + battery is particularly attractive.</strong> SDG&amp;E&apos;s residential average was 45.5¢/kWh in June 2026 (CPUC Public Advocates Office), and the CPUC says NEM 3.0 export credits are usually lower than the retail rate, so self-consumed solar is worth more than exported solar. A battery shifts more of it to self-consumption; run the numbers for your own plan. See <Link href="/blog/solar-battery-backup-california" className="text-primary underline">Solar Battery Backup in California</Link>.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>

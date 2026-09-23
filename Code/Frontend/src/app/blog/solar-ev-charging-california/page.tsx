@@ -8,7 +8,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Solar EV Charging in California: The Complete 2026 Guide",
-  description: "California EV owners pay $500-$1,200/year to charge at home. Solar cuts that toward zero and can bring cost per mile down to $0.03-$0.05.",
+  description: "How to size solar for EV charging in California, when to charge on a time-of-use plan, and how to work out your own cost per mile.",
   alternates: {
     canonical: '/blog/solar-ev-charging-california',
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title:
       'Solar EV Charging in California: The Complete 2026 Guide',
     description:
-      'Stop paying sky-high electricity rates to charge your EV. Solar cuts your cost per mile from $0.15-$0.20 (gas) to $0.03-$0.05. Here is the complete breakdown.',
+      'How to size solar for EV charging in California, when to charge on a time-of-use plan, and how to work out your own cost per mile.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
   },
@@ -28,7 +28,7 @@ const articleSchema = {
   headline:
     'Solar EV Charging in California: The Complete 2026 Guide',
   description:
-    'California EV owners pay $500-$1,200/year to charge at home. Solar cuts that to near zero. Learn how much solar you need, when to charge, and how to slash your cost per mile.',
+    'How to size solar for EV charging in California, when to charge on a time-of-use plan, and how to work out your own cost per mile.',
   datePublished: '2026-04-16',
   dateModified: '2026-04-16',
   author: {
@@ -96,12 +96,13 @@ export default function SolarEVChargingCalifornia() {
             {/* Article Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                California has the highest EV adoption rate in the country. It also
-                has some of the highest electricity rates. If you&apos;re charging an
-                electric vehicle at home on a standard utility plan, you&apos;re
-                likely spending $500 to $1,200 per year just on charging — and
-                that&apos;s before the next rate increase. Solar changes that math
-                entirely. Here&apos;s how.
+                California&apos;s average residential electricity price was 34.74
+                cents per kWh in June 2026, second only to Hawaii among the states
+                (EIA, Electric Power Monthly, Table 5.6.A). If you charge an electric
+                vehicle at home, you pay that kind of price for every kWh the car
+                uses unless you shift charging to cheaper hours or cover it with
+                solar. Here&apos;s how to work out what charging costs you and how
+                solar changes it.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -111,8 +112,8 @@ export default function SolarEVChargingCalifornia() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Most California EV owners charge at home, which means the electricity
                 comes from your utility at whatever rate plan you&apos;re on. The
-                problem: California&apos;s average residential rate is already among
-                the highest in the nation, and it keeps climbing. If you&apos;re on a
+                problem: California&apos;s average residential price is among the
+                highest in the nation (EIA). If you&apos;re on a
                 flat-rate plan, you&apos;re paying the same elevated per-kWh rate
                 whether you charge at noon or midnight.
               </p>
@@ -120,17 +121,16 @@ export default function SolarEVChargingCalifornia() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If you&apos;re on a time-of-use (TOU) plan — which most utilities
                 push EV owners toward — your cost depends heavily on when you charge.
-                Charge during peak hours (typically 4-9 PM) and you could be paying
-                40-70+ cents per kWh. Charge off-peak (typically 12 AM-6 AM) and
-                you&apos;re closer to 20-30 cents. But even the off-peak rate in
-                California is higher than the average rate in most other states.
+                The evening peak is the most expensive period, and overnight hours
+                are among the cheapest. Your plan&apos;s tariff sheet lists the exact
+                prices for each period.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The annual cost varies by vehicle and driving habits, but at current
-                California rates, most EV owners are spending $500 to $1,200 per year
-                on home charging. That&apos;s cheaper than gas — but it&apos;s not
-                cheap, and it&apos;s going up every year.
+                The annual cost depends on your vehicle and driving. To estimate it,
+                multiply the kWh your car uses per mile (on its EPA label at
+                fueleconomy.gov) by the miles you drive in a year, then by the price
+                you pay per kWh in the hours you charge.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -164,27 +164,24 @@ export default function SolarEVChargingCalifornia() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                This is where the numbers get compelling. A gasoline car in
-                California costs roughly $0.15 to $0.20 per mile in fuel (at current
-                gas prices and average fuel efficiency). A solar-charged EV costs
-                roughly $0.03 to $0.05 per mile — because the &quot;fuel&quot; is
-                sunlight hitting panels you&apos;ve already paid for (or are paying
-                for through a PPA at a fixed rate well below utility pricing).
+                Cost per mile is simple arithmetic you can do with your own numbers.
+                For a gas car, divide the price per gallon by the car&apos;s miles per
+                gallon. For an EV, multiply the price per kWh by the car&apos;s kWh
+                per mile. Both efficiency figures are on the EPA label at
+                fueleconomy.gov.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Even charging from the grid at off-peak rates, an EV costs about
-                $0.06 to $0.10 per mile. Solar drops that further because once the
-                system is producing, the marginal cost of an additional kWh is
-                essentially zero (for owned systems) or a fixed PPA rate that&apos;s
-                typically 30-50% below utility rates.
+                With solar, the kWh the car takes from your own system cost you what
+                that system costs: no extra charge per kWh once you own it, or the
+                PPA price per kWh (with its escalator) if a provider owns it. Power
+                the car draws from the grid is still billed at your utility&apos;s
+                price for that hour.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For a household driving 15,000 miles per year, the difference between
-                gas ($2,250-$3,000/year) and solar-charged EV ($450-$750/year) is
-                $1,500-$2,250 in annual savings on transportation fuel alone. That
-                adds up fast.
+                Run the comparison with your own gas price, electricity rate, car
+                and annual miles rather than a published average.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -200,25 +197,24 @@ export default function SolarEVChargingCalifornia() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Best time to charge (grid only):</strong> Off-peak hours,
-                typically 12 AM to 6 AM. This is when rates are lowest — around 20-30
-                cents per kWh depending on your utility and plan. Most EVs let you
+                typically overnight. This is when rates are lowest on most
+                time-of-use plans; check your plan for the exact hours. Most EVs let you
                 schedule charging to start automatically at midnight.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Worst time to charge:</strong> Peak hours, typically 4 PM to
-                9 PM. Rates can hit 40-70+ cents per kWh during peak. Plugging in
+                <strong>Worst time to charge:</strong> the evening peak on your plan.
+                Plugging in
                 right when you get home from work is the most expensive possible
                 choice. Set a timer.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>With solar + battery:</strong> The math changes completely.
-                Your panels produce during the day. A battery stores the excess. You
-                charge your EV in the evening or overnight using stored solar energy
-                — bypassing peak rates entirely. No need to stay up until midnight or
-                set complicated charging schedules. The battery handles the
-                time-shifting for you.
+                <strong>With solar + battery:</strong> your panels produce during
+                the day and a battery can store the excess, so you can charge in the
+                evening or overnight from stored solar instead of buying at peak
+                prices. How much of the charging it covers depends on the
+                battery&apos;s size and how far you drive.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -234,8 +230,8 @@ export default function SolarEVChargingCalifornia() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The Ford F-150 Lightning is the most prominent example, capable of
-                delivering up to 9.6 kW back to your home — enough to power an
-                average house for 2-3 days. Several Hyundai, Kia, and GM models also
+                sending power back to a home with the right equipment; how long it
+                lasts depends on the home&apos;s load. Several Hyundai, Kia, and GM models also
                 support bidirectional charging. The technology is still in its early
                 stages and requires compatible hardware (a bidirectional charger,
                 transfer switch, and sometimes utility approval), but the potential
@@ -257,20 +253,20 @@ export default function SolarEVChargingCalifornia() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                California utilities offer rebates specifically for EV charging
-                infrastructure. PG&amp;E and SCE&apos;s Charge Ready programs
-                provide $500 to $4,200 in rebates toward the cost of installing a
-                Level 2 (240V) home charger. The exact amount depends on your utility,
-                your location, and whether you&apos;re in a disadvantaged community.
+                California utilities have offered rebates for home EV charging
+                equipment, with amounts that depend on the utility, the location and
+                sometimes income. Check your utility&apos;s current EV charger rebate
+                page before you buy a Level 2 (240V) charger; programs open and
+                close.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 These rebates are separate from any solar incentives. If you&apos;re
                 installing solar and a home EV charger at the same time, you can
                 potentially stack rebates — the EV charger rebate plus whatever solar
-                incentives apply to your situation. The solar system itself may
-                qualify for federal tax credits if you purchase outright, or the
-                savings are built into your PPA rate if you go that route.
+                incentives apply to your situation. A solar system you buy in 2026
+                gets no federal residential credit: IRC &sect; 25D does not apply to
+                expenditures made after December 31, 2025.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -280,27 +276,23 @@ export default function SolarEVChargingCalifornia() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If you already own an EV — or plan to buy one — you&apos;re adding a
                 significant new electricity load to your home. In California, that
-                load comes at some of the highest rates in the country. Solar
-                eliminates or drastically reduces that cost. The more you drive, the
-                more solar saves you.
+                load comes at some of the highest prices in the country (EIA). Solar
+                can cover part or all of it, depending on the system size and when
+                you charge.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Think of it this way: without solar, every mile you drive costs you
-                money in electricity purchased from the utility at ever-increasing
-                rates. With solar, every mile you drive costs you almost nothing
-                because the fuel is produced on your roof. The EV was supposed to
-                save you money over gas — solar is what actually makes that promise
-                real in a state where electricity costs 35-45+ cents per kWh.
+                Think of it this way: without solar, every mile you drive is bought
+                from the utility at its price for that hour. With solar, the miles
+                you charge from your own system cost whatever the system costs you,
+                so compare that with your utility price before deciding.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                And with a PPA, there&apos;s no upfront cost. You get panels on your
-                roof, charge your EV with solar power, and pay a fixed rate
-                that&apos;s lower than what your utility charges. The savings start
-                from month one. No $25,000-$40,000 system purchase. No waiting 9-14
-                years for payback. Just a lower, predictable energy cost for your
-                home and your car.
+                With a PPA, the provider owns the system, often with no down
+                payment, and you pay a set price per kWh with an annual escalator,
+                plus the utility charges you still owe. Add up both before comparing
+                it with your current bills and fuel costs.
               </p>
             </div>
 

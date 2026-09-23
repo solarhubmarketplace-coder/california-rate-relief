@@ -429,15 +429,15 @@ export default function FixedChargeExplained() {
                 Wondering What Your Bill Would Look Like with Solar?
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                The Rate Relief Program is one option for addressing the
-                consumption-based portion of your bill. Check eligibility in 60
-                seconds if you&apos;re curious.
+                Solar can offset part of the usage-based portion of your bill,
+                not the fixed charge. If you want a provider to review your
+                project, send your details through the form on this page.
               </p>
               <Link
                 href='#solar-inquiry'
                 className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className='h-4 w-4' />
               </Link>
             </div>

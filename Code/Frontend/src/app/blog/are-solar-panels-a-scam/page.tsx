@@ -123,7 +123,7 @@ export default function AreSolarPanelsAScam() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The technology works. A typical California residential solar system produces 400-600 kilowatt-hours (kWh) per month, offsetting 60-90% of a home&apos;s electricity consumption depending on roof size, orientation, and shading. That production is real and measurable. Your utility company verifies the production through the meter. You either get credits on your bill or payments for excess power, depending on your utility and net metering agreement.
+                The technology works. How much a residential system produces, and how much of your usage it covers, depends on its size, the roof&apos;s orientation and shading; a proposal should state its production estimate in kWh. That production is real and measurable. Your utility company verifies the production through the meter. You either get credits on your bill or payments for excess power, depending on your utility and net metering agreement.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -139,7 +139,7 @@ export default function AreSolarPanelsAScam() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Misleading savings claims.</strong> A company promises you&apos;ll save $50,000 over 25 years based on inflated assumptions — utility rates rising 15% annually (unrealistic), your electricity consumption staying constant (most homes use less over time), and the solar system producing 5-10% more than realistic models suggest. When the actual savings are $20,000, you feel scammed. Always ask for a detailed, itemized projection using conservative assumptions and your actual 12-month usage history, not estimates.
+                <strong>Misleading savings claims.</strong> A company promises a large lifetime savings figure built on inflated assumptions: utility rates rising faster every year than their history supports, your electricity use never changing, and the system producing more than a realistic model of your roof suggests. When the actual savings come in far lower, you feel scammed. Always ask for a detailed, itemized projection using conservative assumptions and your actual 12-month usage history, not estimates.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

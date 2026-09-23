@@ -13,11 +13,16 @@ import { ArrowRight, Sun, Zap, DollarSign, Home } from 'lucide-react';
 import {
   CITIES,
   UTILITY_DATA,
+  CPUC_IOU_CODES,
   getCityBySlug,
   getAllCitySlugs,
   type CityData,
   type UtilityData,
 } from '@/data/cities-data';
+import {
+  STATEWIDE_COST_BENCHMARK,
+  formatStatewideBenchmarkRange,
+} from '@/data/solar-cost-benchmark';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { NearbyCities } from '@/components/shared/NearbyCities';
@@ -98,6 +103,11 @@ export default async function CityPage({ params }: PageProps) {
   const rateDisplay = needsUtilityConfirmation
     ? 'Check bill'
     : utility.rateDisplay || `${(utility.ratePerKwh * 100).toFixed(1)}¢`;
+  // CARE, FERA, DAC-SASH, SGIP and the Net Billing Tariff are CPUC programs for
+  // PG&E, SCE and SDG&E customers. A city on SMUD, GWP or Lodi Electric was
+  // being told about programs its utility does not run (2026-09-23 pass).
+  const isCpucIou = !needsUtilityConfirmation && CPUC_IOU_CODES.has(city.utilityCode);
+  const benchmark = STATEWIDE_COST_BENCHMARK;
 
   const faqSchema = buildFAQSchema(city);
   const seo = savingsPageSeo(city);
@@ -160,9 +170,9 @@ export default async function CityPage({ params }: PageProps) {
                 className="mb-6"
               />
               <p className="text-lg text-muted-foreground">
-                A data-driven guide for {city.name} homeowners — your local
-                rates, solar costs, incentives, HOA rules, and every option for
-                lowering your electric bill.
+                A guide for {city.name} homeowners: your utility&apos;s rate
+                plans and assistance programs, what drives the cost of solar,
+                HOA rules, and the options for lowering your electric bill.
               </p>
             </header>
 
@@ -182,10 +192,10 @@ export default async function CityPage({ params }: PageProps) {
               <div className="bg-card rounded-xl border border-border p-4 text-center">
                 <DollarSign className="h-5 w-5 text-primary mx-auto mb-2" />
                 <div className="text-2xl font-bold text-foreground">
-                  {needsUtilityConfirmation ? 'Use bill' : `$${city.avgMonthlyBill}`}
+                  {isCpucIou ? `$${utility.fixedCharge.toFixed(2)}` : 'Use bill'}
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  {needsUtilityConfirmation ? 'Actual account' : 'Avg. monthly bill'}
+                  {isCpucIou ? 'Monthly fixed charge (CPUC D.24-05-028)' : 'Actual account'}
                 </div>
               </div>
               <div className="bg-card rounded-xl border border-border p-4 text-center">
@@ -270,8 +280,7 @@ export default async function CityPage({ params }: PageProps) {
                 <>
                   {/* Step 1: Check Rate Plan */}
                   <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-                    Step 1: Check Your {utility.shortName} Rate Plan (Free, 10
-                    Minutes)
+                    Step 1: Check Your {utility.shortName} Rate Plan
                   </h2>
                   <p className="text-foreground/80 leading-relaxed mb-6">
                     Before anything else, log into your{' '}
@@ -282,8 +291,10 @@ export default async function CityPage({ params }: PageProps) {
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-6">
                     If you can shift heavy electricity use (laundry, dishwasher, EV
-                    charging, pool pump) to off-peak hours (before 4 PM or after 9
-                    PM), you can save 10-15% just by being on the right TOU plan.
+                    charging, pool pump) to the lower-priced hours on a
+                    time-of-use plan, that plan may cost you less than the one
+                    you are on. The rate comparison in your account shows the
+                    difference using your own usage, not an average.
                     {city.name === 'Temecula' &&
                       ' In Temecula specifically, pre-cooling your home before 4 PM during summer and running the pool pump in the morning are two of the highest-impact changes.'}
                   </p>
@@ -291,13 +302,25 @@ export default async function CityPage({ params }: PageProps) {
                     Step 2: Check If You Qualify for Discounts
                   </h2>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    {utility.shortName} offers income-based discount programs that
-                    many qualifying {city.name} households haven&apos;t applied
-                    for. <strong>CARE</strong> provides a 30-35% discount on your
-                    entire bill if your household income is below certain
-                    thresholds. <strong>FERA</strong> offers an 18% discount for
-                    families of 3+ with slightly higher income limits. Check
-                    eligibility and apply at{' '}
+                    {isCpucIou ? (
+                      <>
+                        {utility.shortName} runs the CPUC&apos;s income-based
+                        discount programs. According to the CPUC,{' '}
+                        <strong>CARE</strong> gives a 30–35% discount on the
+                        electric bill for households under its income limits,
+                        and <strong>FERA</strong> gives an 18% discount on the
+                        electric bill for households of any size with income
+                        between the CARE limit and 250% of the federal poverty
+                        guidelines. Check eligibility and apply at{' '}
+                      </>
+                    ) : (
+                      <>
+                        {utility.shortName} is a publicly owned utility, so the
+                        CPUC&apos;s CARE and FERA programs are not its programs.
+                        Check its own income-qualified and medical discount
+                        programs at{' '}
+                      </>
+                    )}
                     <a href={utility.careFeraUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                       {utility.shortName}&apos;s assistance page
                     </a>.
@@ -323,8 +346,7 @@ export default async function CityPage({ params }: PageProps) {
                   {i === city.solarPotentialText.split('\n\n').length - 1 && (
                     <>
                       {' '}
-                      You can check your specific home&apos;s solar potential
-                      for free at{' '}
+                      You can check your specific home&apos;s roof at{' '}
                       <a
                         href={city.googleSunroofUrl}
                         target="_blank"
@@ -378,12 +400,22 @@ export default async function CityPage({ params }: PageProps) {
               ) : (
                 <>
                   <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-                    What Solar Costs in {city.name} (2026 Numbers)
+                    What Solar Costs in {city.name}
                   </h2>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    The average {city.name} household needs a {city.systemSizeKw} kW
-                    solar system to cover their electricity usage. Here&apos;s what
-                    that looks like across different options.
+                    No primary source publishes a solar price for {city.name}.
+                    The price of your system depends on the size your usage
+                    needs, the roof, the equipment and the installer. As a
+                    benchmark, Lawrence Berkeley National Laboratory&apos;s{' '}
+                    <a href={benchmark.source.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                      Tracking the Sun
+                    </a>{' '}
+                    ({benchmark.source.publishedDate}) found that host-owned
+                    residential systems installed in {benchmark.source.dataYear}{' '}
+                    were priced at {formatStatewideBenchmarkRange()} (
+                    {benchmark.percentileBand}, national sample), with
+                    California near the middle. It is not a price for{' '}
+                    {city.name}. Here is how the payment options differ.
                   </p>
 
               {/* Cost Comparison Table */}
@@ -401,51 +433,51 @@ export default async function CityPage({ params }: PageProps) {
                         Monthly Cost
                       </th>
                       <th className="text-center py-3 px-3 font-bold text-foreground">
-                        Payback
+                        What to compare
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-border">
                       <td className="py-3 pr-4 font-medium text-foreground/80">
-                        Cash purchase ({city.systemSizeKw} kW)
+                        Cash purchase
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        ~${city.systemCostCash.toLocaleString()}
+                        Full system price
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        $0
+                        Remaining utility charges
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        ~6-7 years
+                        Cash price, equipment, warranty
                       </td>
                     </tr>
                     <tr className="border-b border-border">
                       <td className="py-3 pr-4 font-medium text-foreground/80">
-                        Solar loan ({city.systemSizeKw} kW)
+                        Solar loan
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        $0
+                        Set by the loan terms
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        $180-$250
+                        Loan payment + remaining utility charges
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        ~9-12 years
+                        APR, term, dealer fee, total of payments
                       </td>
                     </tr>
                     <tr className="border-b border-border">
                       <td className="py-3 pr-4 font-medium text-foreground/80">
-                        Solar PPA
+                        Solar PPA or lease
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        $0
+                        Set by the contract
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        $150-$200
+                        PPA or lease payment + remaining utility charges
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        Day 1 savings
+                        Starting price, escalator, term, transfer terms
                       </td>
                     </tr>
                     <tr>
@@ -456,7 +488,7 @@ export default async function CityPage({ params }: PageProps) {
                         —
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
-                        {needsUtilityConfirmation ? 'Use actual bill' : `$${city.avgMonthlyBill}+ (rising)`}
+                        {needsUtilityConfirmation ? 'Use actual bill' : `Your current ${utility.shortName} bill`}
                       </td>
                       <td className="text-center py-3 px-3 text-foreground/80">
                         —
@@ -467,29 +499,22 @@ export default async function CityPage({ params }: PageProps) {
               </div>
 
               <p className="text-foreground/60 text-xs mb-8 italic">
-                Costs are approximate based on 2026 EnergySage data for{' '}
-                {city.name}. Actual costs vary by roof, system size, and
-                provider. PPA monthly costs include remaining utility charges
+                No city-level prices, payments or payback periods are shown
+                because no primary source publishes them for {city.name}. Every
+                option still leaves remaining utility charges
                 {needsUtilityConfirmation
                   ? ' from the confirmed utility bill'
-                  : utility.fixedCharge > 0
-                  ? ` ($${utility.fixedCharge} fixed charge + any grid usage)`
-                  : ' (any grid usage)'}
+                  : isCpucIou
+                  ? ` (the $${utility.fixedCharge.toFixed(2)} monthly fixed charge under CPUC Decision 24-05-028, plus any power you still buy)`
+                  : ' (any power you still buy)'}
                 .
               </p>
 
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    To compare quotes from local installers for a purchased system,{' '}
-                    <a
-                      href={city.energySageUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline"
-                    >
-                      EnergySage&apos;s {city.name} page
-                    </a>{' '}
-                    lets you get multiple quotes side by side. Always get at least 3
-                    quotes before committing to any option.
+                    Get at least three written quotes for the same system
+                    before committing to any option, and compare the cash
+                    price, the price per watt, the equipment, the warranty and
+                    the total of every payment line by line.
                   </p>
                 </>
               )}
@@ -510,14 +535,13 @@ export default async function CityPage({ params }: PageProps) {
                 more than 10% is legally unenforceable.
               </p>
               <p className="text-foreground/80 leading-relaxed mb-6">
-                In practice, most {city.name} HOAs have streamlined their solar
-                approval process because so many homeowners are going solar. You
-                typically submit an architectural review application, and if the
-                HOA doesn&apos;t respond with a written denial within 45 days,
-                your application is deemed approved by default. If your HOA
-                gives you pushback, the law is clearly on your side — and they
-                can be liable for damages plus your attorney&apos;s fees if
-                they unreasonably block your installation.
+                In practice, you typically submit an architectural review
+                application. Under Civil Code § 714, if the HOA doesn&apos;t
+                deny it in writing within 45 days of receiving it, the
+                application is deemed approved. An HOA that willfully violates
+                the law can owe actual damages and a civil penalty of up to
+                $1,000, and in a court action the prevailing party is awarded
+                reasonable attorney&apos;s fees.
               </p>
 
               {/* Utility rules & battery */}
@@ -538,10 +562,9 @@ export default async function CityPage({ params }: PageProps) {
               ) : (
                 <>
                   <p className="text-foreground/80 leading-relaxed mb-6">
-                    {city.name} is on {utility.shortName}&apos;s {utility.nemVersion} tariff,
-                    which means the excess solar energy you send back to the grid earns
-                    only {utility.exportRate} — far less than the {rateDisplay}+ you pay
-                    to buy it back during peak hours.
+                    {isCpucIou
+                      ? `${city.name} is in ${utility.shortName} territory, where new solar customers have taken service on the CPUC Net Billing Tariff since April 15, 2023. According to the CPUC, the credit for the excess solar energy you send back to the grid is usually lower than the retail rate you pay for grid power, though it can rise above it on late summer evenings.`
+                      : `${city.name} is served by ${utility.shortName}, a publicly owned utility that sets its own rules for solar customers; the CPUC Net Billing Tariff covers only PG&E, SCE and SDG&E. Ask ${utility.shortName} what an exported kWh earns, and when, before comparing proposals.`}
                   </p>
                   <p className="text-foreground/80 leading-relaxed mb-6">
                     A battery can store excess daytime solar for later use. Compare
@@ -557,18 +580,18 @@ export default async function CityPage({ params }: PageProps) {
                 </>
               )}
               <p className="text-foreground/80 leading-relaxed mb-6">
-                California&apos;s Self-Generation Incentive Program (SGIP) may
-                still offer rebates for battery storage — check current
-                availability at{' '}
+                {isCpucIou
+                  ? "California's Self-Generation Incentive Program (SGIP) has offered battery storage rebates, but its categories open, close and waitlist separately. Check the exact category on the official tracker at "
+                  : `California's Self-Generation Incentive Program (SGIP) is run for customers of the investor-owned utilities. Ask ${needsUtilityConfirmation ? 'your confirmed utility' : utility.shortName} about any battery program of its own, and check SGIP eligibility with the administrator at `}
                 <a
-                  href="https://www.selfgenca.com"
+                  href="https://www.selfgenca.com/home/program_metrics/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline"
                 >
                   selfgenca.com
                 </a>
-                . SGIP funds are limited and allocated first-come, first-served.
+                . A waitlist or remaining balance does not promise a rebate.
               </p>
 
               {/* When Solar Doesn't Work */}
@@ -616,11 +639,13 @@ export default async function CityPage({ params }: PageProps) {
                 Is the federal solar tax credit still available?
               </h3>
               <p className="text-foreground/80 leading-relaxed mb-6">
-                The residential tax credit (Section 25D) expired at the end of
-                2025. If you buy a system outright, there is no federal credit.
-                However, the commercial credit (Section 48E) is still
-                available, which is how PPA providers can offer $0-down solar
-                at rates below utility prices. See our{' '}
+                No. IRC § 25D does not apply to expenditures made after
+                December 31, 2025, and the IRS treats the expenditure as made
+                when installation is complete, so a system you buy in 2026 gets
+                no federal residential credit. On a lease or PPA the provider
+                owns the system and is the one that may claim the § 48E
+                business credit; that is the provider&apos;s tax position, not
+                a savings figure for you. See our{' '}
                 <Link
                   href="/blog/solar-tax-credit-expired-2026-options"
                   className="text-primary hover:underline"
@@ -655,15 +680,17 @@ export default async function CityPage({ params }: PageProps) {
                 {city.name} Homeowner? See Your Options
               </h3>
               <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-                If you&apos;re exploring the PPA route, check your eligibility
-                for the California Rate Relief Program in about 60 seconds. No
-                cost, no obligation.
+                If you want a solar provider to review your project, send your
+                details through the form below. California Rate Relief is
+                compensated by a solar provider when a homeowner we refer signs
+                an agreement. A submission is not a quote, financing approval or
+                program eligibility decision.
               </p>
               <Link
                 href="#solar-inquiry"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
               >
-                Check My Eligibility
+                Request a solar review
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

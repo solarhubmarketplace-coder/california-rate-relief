@@ -306,8 +306,7 @@ export default function TrinitySolarReview() {
                 Trinity holds a BBB A+ rating. The BBB profile lists
                 approximately 214 complaints closed in the prior three
                 years, which is a moderate volume for a company of this
-                size. SolarReviews and EnergySage composite ratings sit in
-                the 3.2 to 3.8 range. The recurring themes across complaints
+                size. The recurring themes across complaints
                 are: communication gaps during longer-than-expected
                 permitting or utility interconnection delays, slow
                 post-install service response, and occasional billing
@@ -514,28 +513,23 @@ export default function TrinitySolarReview() {
             {/* CA-focused CTA */}
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>
-                California Shopper? Compare 3 Installers That Actually Serve
-                Your Address.
+                California Shopper? Compare Installers That Confirm They
+                Serve Your Address.
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>
-                Trinity doesn&apos;t serve California — but California Rate
-                Relief works with multiple top-rated California solar
-                installers. Fill out one 60-second form and we&apos;ll bring
-                you quotes from up to three installers for your address, so
-                you can compare pricing, equipment, and warranty terms side
-                by side.
+                Trinity doesn&apos;t serve California. California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.
               </p>
               <div className='flex justify-center'>
                 <Link
                   href='#solar-inquiry'
                   className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
                 >
-                  Get My 3 Quotes
+                  Request a solar review
                   <ArrowRight className='h-4 w-4' />
                 </Link>
               </div>
               <p className='text-xs text-muted-foreground text-center mt-4'>
-                Free. No obligation. No impact on your credit score.
+                California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
               </p>
             </div>
 

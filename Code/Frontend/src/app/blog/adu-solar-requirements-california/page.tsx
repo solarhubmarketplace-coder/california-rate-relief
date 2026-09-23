@@ -85,7 +85,7 @@ export default function ADUSolarCA() {
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Cost Impact on ADU Budget</h2>
-              <p>A 2 kW ADU solar system typically adds $8,000–$12,000 to construction cost, and that is what it costs you now. This is usually rolled into the construction loan or home-equity line financing the ADU build. Budget the full amount: the 30% federal residential credit used to bring it down to $5,600–$8,400, but IRC § 25D no longer applies to expenditures made after December 31, 2025.</p>
+              <p>The solar system adds to the ADU&apos;s construction cost; get it priced as its own line in the builder&apos;s bid. It is usually rolled into the construction loan or home-equity line financing the ADU build. Budget the full amount: IRC § 25D no longer applies to expenditures made after December 31, 2025, so there is no federal residential credit to subtract.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Practical Tips</h2>
               <ul className="list-disc pl-6 space-y-2">

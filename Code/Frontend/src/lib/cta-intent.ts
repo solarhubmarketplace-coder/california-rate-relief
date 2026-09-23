@@ -140,7 +140,7 @@ export const CTA_COPY: Record<CtaVariant, CtaCopy> = {
     // Preserves the wording the commercial pages already use today.
     heading: 'Ready to compare your solar options?',
     body:
-      'California Rate Relief is a private referral service. You can request a no-obligation solar review; provider availability, design and price are determined after review.',
+      'California Rate Relief is a private referral service. You can request a solar review; provider availability, design and price are determined after review.',
     action: 'Request Commercial Review',
     stickyAction: 'Request Commercial Review',
     formHeading: 'Request a commercial solar review',
@@ -152,7 +152,7 @@ export const CTA_COPY: Record<CtaVariant, CtaCopy> = {
     // Preserves the wording that shipped on 15 September.
     heading: 'Ready to compare your solar options?',
     body:
-      'California Rate Relief is a private referral service. You can request a no-obligation solar review; provider availability, design and price are determined after review.',
+      'California Rate Relief is a private referral service. You can request a solar review; provider availability, design and price are determined after review.',
     action: 'Request a Solar Review',
     stickyAction: 'Request a solar review',
     formHeading: 'Want to discuss your solar options?',

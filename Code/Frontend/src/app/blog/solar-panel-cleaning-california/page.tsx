@@ -53,7 +53,7 @@ export default function SolarPanelCleaningCA() {
 
             <div className="prose prose-slate max-w-none">
               <p className="p-4 rounded-lg border border-border bg-card text-sm">
-                <strong>TL;DR:</strong> Professional solar panel cleaning in California runs $150–$450 per residential system, once or twice a year. Clean panels after wildfire smoke events, post-Santa Ana winds, or when production drops more than 10% below the prior year&apos;s same-month benchmark. Do NOT pressure-wash. It voids most manufacturer warranties. DIY with a soft brush and deionized water is fine if the roof is safely accessible; otherwise pay a professional.
+                <strong>TL;DR:</strong> Professional solar panel cleaning in California runs $150–$450 per residential system, once or twice a year. Clean panels after wildfire smoke events, post-Santa Ana winds, or when production drops clearly below the prior year&apos;s same month. Do NOT pressure-wash. It voids most manufacturer warranties. DIY with a soft brush and deionized water is fine if the roof is safely accessible; otherwise pay a professional.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -134,7 +134,7 @@ export default function SolarPanelCleaningCA() {
                 </li>
                 <li className="flex gap-3 items-start">
                   <AlertTriangle className="h-5 w-5 text-status-warning flex-shrink-0 mt-0.5" />
-                  <div><strong>Winter rain often does the job for free.</strong> In coastal California, the first 2–3 heavy rains typically restore production to within 2–3% of clean. Central Valley and inland Southern California do not reliably get enough winter rain for this.</div>
+                  <div><strong>Winter rain often does the job.</strong> In coastal California, heavy winter rains can wash off most dust. Central Valley and inland Southern California do not reliably get enough winter rain for this.</div>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -147,7 +147,7 @@ export default function SolarPanelCleaningCA() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">DIY Risks (And What Kills Your Warranty)</h2>
               <p>
-                Doing it yourself can save $200+, but several common mistakes void your panel manufacturer warranty.
+                Doing it yourself avoids a service fee, but several common mistakes void your panel manufacturer warranty.
               </p>
               <ul className="space-y-3">
                 <li className="flex gap-3 items-start">
@@ -219,7 +219,7 @@ export default function SolarPanelCleaningCA() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Do robotic cleaners work?</h3>
-                  <p className="text-foreground/80">Yes, and they&apos;re a growing category for commercial systems. For residential 10–20 panel systems, the $500–$1,200 price tag for a consumer robotic cleaner (Solabot, iSolarCleaner) only pencils out in high-rate territories with heavy soiling. A $250/year pro cleaning is usually cheaper over a 10-year horizon.</p>
+                  <p className="text-foreground/80">Yes, and they&apos;re a growing category for commercial systems. For residential 10–20 panel systems, a consumer robotic cleaner (Solabot, iSolarCleaner) makes sense mainly with heavy soiling; compare its price with a professional cleaning quote over the years you expect to use it.</p>
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Should I wait for rain instead?</h3>
