@@ -7,6 +7,7 @@ import { ARTICLE_PAGES, articleHref, articlesInCluster } from '@/data/article-pa
 import { GLP1_INDEX_ROUTES } from '@/lib/glp1-seo-routes';
 import { GROWTH_ROUTES, LOCAL_RELEASE_REVIEW_ROUTES } from '@/lib/growth-routes';
 import { getPublishableCityCostRows } from '@/data/city-cost-data';
+import { COST_INDEX_PATH, COST_INDEX_UPDATED } from '@/data/solar-cost-index';
 import { isRedirectedPath } from '@/lib/canonical-redirects';
 import { cityPageDates } from '@/lib/city-pages';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
@@ -121,6 +122,9 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     // claude/audit-links-20260918 — the two section indexes added to close the
     // orphan city and installer pages. Both list every child they cover.
     { url: `${base}/solar-cost`, lastModified: new Date('2026-09-18T00:00:00.000Z'), changeFrequency: 'weekly', priority: 0.9 },
+    // claude/upg-index-20260922 — the linkable cost index. lastModified is the
+    // index's own updated date, the one its byline and dateModified carry.
+    { url: `${base}${COST_INDEX_PATH}`, lastModified: new Date(`${COST_INDEX_UPDATED}T00:00:00.000Z`), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/solar-installers`, lastModified: new Date('2026-09-18T00:00:00.000Z'), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/about`, lastModified: urlMtime('/about', today), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/contact`, lastModified: urlMtime('/contact', today), changeFrequency: 'monthly', priority: 0.4 },

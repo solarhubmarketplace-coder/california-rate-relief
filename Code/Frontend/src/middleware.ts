@@ -47,6 +47,13 @@ export async function middleware(request: NextRequest) {
   const isCRRCalculator = pathname === '/tools/solar-panel-calculator';
   // Exact exception: keep other /tools routes assigned to the affiliate site.
   if (isCRRCalculator && !isCRR && !isLocalPreview) return new NextResponse(null,{status:404});
+  // CRR-only data page and its CSV (claude/upg-index-20260922). The page would
+  // already 404 on the other hosts through their allow-lists, but the CSV has a
+  // file extension, which the GRH/SHG/AHB branches pass through as a static
+  // file. Close both here so the index is served on ratereliefca.com only.
+  const isCRRCostIndexPath =
+    pathname === '/california-solar-cost-index' || pathname.startsWith('/california-solar-cost-index/');
+  if (isCRRCostIndexPath && !isCRR) return new NextResponse(null, { status: 404 });
   const isSecureHomeGear = /^(www\.)?securehomegear\.com$/.test(hostname);
   const isAtHomeBiohacking = /^(www\.)?athomebiohacking\.com$/.test(hostname);
   const isGLP1CompareHub = /^(www\.)?glp1comparehub\.com$/.test(hostname);

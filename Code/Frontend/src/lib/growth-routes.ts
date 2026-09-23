@@ -91,6 +91,7 @@ export const GROWTH_ROUTES = [
   "/battery/home-battery-cost-california",
   "/blog/pge-vs-sce-vs-sdge-rates-compared",
   "/california-utility-rate-tracker", // claude/ca-ratetracker-20260918
+  "/california-solar-cost-index", // claude/upg-index-20260922
   // claude/ca-citycost-20260918 — /solar-cost/[city]. Derived from the gate in
   // city-cost-data.ts, so a city whose permit or utility fields are still TODO
   // is absent here exactly as it is absent from generateStaticParams.
@@ -193,6 +194,9 @@ export const PUBLIC_CRR_NO_SESSION_ROUTES = [
   '/email/bill-review',
   '/email/quote-review',
   '/blog/is-solar-worth-it-california-2026',
+  // claude/upg-index-20260922: the cost index's CSV download. A file, not a
+  // page, so it stays out of GROWTH_ROUTES (and so out of the sitemap).
+  '/california-solar-cost-index/data.csv',
   ...GROWTH_ROUTES,
   ...LOCAL_RELEASE_REVIEW_ROUTES,
 ] as const;

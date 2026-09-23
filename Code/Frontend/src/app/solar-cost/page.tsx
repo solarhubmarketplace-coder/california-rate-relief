@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { IntentCTA } from '@/components/growth/IntentCTA';
 import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
 import { cityCostPath, getPublishableCityCostRows } from '@/data/city-cost-data';
+import { COST_INDEX_PATH } from '@/data/solar-cost-index';
 import { getUtilityRate, RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
 
 // =============================================================================
@@ -158,6 +159,14 @@ export default function SolarCostIndex() {
               the permit can be filed online, and the California rules that apply the same way
               everywhere. Every one of those is stated beside the document it came from and the
               date it was checked.
+            </p>
+            <p className='text-foreground/80 leading-relaxed mb-5'>
+              To compare cities side by side, the{' '}
+              <Link href={COST_INDEX_PATH} className={link}>
+                California Solar Cost Index
+              </Link>{' '}
+              lays out the permit fee, the permit path, the utility and the community choice
+              aggregator for all {rows.length} cities in one table you can sort, filter and download.
             </p>
 
             <StatewideCostBenchmark />
