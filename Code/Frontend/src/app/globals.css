@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap');
+/* Fonts are self-hosted by next/font in app/layout.tsx, which sets --font-sans
+   (Plus Jakarta Sans) and --font-display (DM Serif Display) on <html> for every
+   host. Do not add a Google Fonts @import here: it is render-blocking, chains a
+   second CSS request behind this file, and downloads the same font twice. */
 
 @tailwind base;
 @tailwind components;
@@ -129,21 +131,21 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
     font-feature-settings: 'kern' 1;
     letter-spacing: -0.015em;
     line-height: 1.5;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
     font-weight: 700;
     letter-spacing: -0.025em;
     line-height: 1.2;
   }
 
   .display-font {
-    font-family: 'DM Serif Display', serif;
+    font-family: var(--font-display), serif;
     font-weight: 400;
     letter-spacing: -0.02em;
   }

@@ -1,5 +1,25 @@
 import axios from 'axios';
-import { isSupabaseConfigured, supabase } from './supabaseClient';
+
+// The Supabase client is loaded on demand, not imported at the top of this
+// file. lib/intake.ts (the public intake forms) imports this module, so a
+// static import put @supabase/supabase-js (~57 KB gzipped) into the first-load
+// JS of every page with a form and created an auth client during page load,
+// only to find no session for an anonymous visitor. Now the chunk is fetched
+// the first time a request goes out. On dashboard pages it is already loaded
+// (AuthProvider imports it), so the import resolves at once.
+type SupabaseModule = typeof import('./supabaseClient');
+let supabaseModule: Promise<SupabaseModule> | null = null;
+
+function loadSupabase(): Promise<SupabaseModule> {
+    if (!supabaseModule) {
+        supabaseModule = import('./supabaseClient').catch((error) => {
+            // Allow a later request to retry instead of caching the failure.
+            supabaseModule = null;
+            throw error;
+        });
+    }
+    return supabaseModule;
+}
 
 // Backend API URL - Update this when backend is deployed
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
@@ -18,7 +38,22 @@ axiosClient.interceptors.request.use(
     async (config) => {
         // Private API routes use the same Supabase session as the owner login.
         // The public intake endpoint works without a session.
-        if (isSupabaseConfigured && !config.headers.Authorization) {
+        if (config.headers.Authorization) return config;
+
+        let isSupabaseConfigured: SupabaseModule['isSupabaseConfigured'];
+        let supabase: SupabaseModule['supabase'];
+        try {
+            ({ isSupabaseConfigured, supabase } = await loadSupabase());
+        } catch (error) {
+            // The client chunk could not be fetched (offline, or a deploy
+            // replaced the build this page was served from). Send the request
+            // without a token, exactly as an anonymous visitor's request goes
+            // out, rather than failing a form submission over it.
+            console.error('Could not load the Supabase client:', error);
+            return config;
+        }
+
+        if (isSupabaseConfigured) {
             const { data } = await supabase.auth.getSession();
             if (data.session?.access_token) {
                 config.headers.Authorization = `Bearer ${data.session.access_token}`;

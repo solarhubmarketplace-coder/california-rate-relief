@@ -3,6 +3,17 @@ const nextConfig = {
   // Keep local review output separate so dev and release-build checks cannot collide.
   distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next',
   reactStrictMode: false,
+  // Always render <title>, meta description, canonical and OG tags inside
+  // <head>. Since 15.2, Next streams metadata into <body> for any user agent
+  // that is not on its "HTML-limited bot" list, which is every browser and
+  // Lighthouse; the meta-description audit then fails and non-JS readers of
+  // the HTML miss the tags. A catch-all pattern puts every request on the
+  // blocking path. Every page is already rendered per request (the root layout
+  // reads headers()), and generateMetadata here does no network I/O, so this
+  // does not delay the first byte in any measurable way.
+  // Option shape confirmed against next@15.5.25:
+  // dist/server/config-shared.d.ts (htmlLimitedBots?: RegExp).
+  htmlLimitedBots: /.*/,
   images: {
     remotePatterns: [
       {

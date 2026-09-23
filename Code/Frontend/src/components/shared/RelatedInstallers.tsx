@@ -183,7 +183,10 @@ export function RelatedInstallers({ picks = 'general', heading }: Props) {
               <div className='text-sm text-muted-foreground leading-snug'>{inst.tagline}</div>
             </Link>
             {inst.statusSource ? (
-              <p className='text-xs text-muted-foreground/80 mt-2 leading-snug'>
+              // Full-strength muted ink (#56666C, 5.6:1 on the card's page-color
+              // fill). The previous /80 tint measured 3.66:1, below WCAG AA
+              // 4.5:1 for 12px text; the link inherits this color.
+              <p className='text-xs text-muted-foreground mt-2 leading-snug'>
                 Source:{' '}
                 <a
                   href={inst.statusSource.url}

@@ -91,6 +91,12 @@ export default function HomePage() {
 
         {/* Existing qualification wizard (Tally-driven) — kept as the conversion form */}
         <div id='qualify' className='scroll-mt-24'>
+          {/* The wizard's step titles are h3s, and this is the first section
+              after the hero h1. A visually hidden h2 keeps the outline
+              h1 > h2 > h3 (Lighthouse heading-order) without changing the look
+              or touching the wizard. Wording matches the hero button that
+              scrolls here. */}
+          <h2 className='sr-only'>Request a residential review</h2>
           <WizardWithSuspense />
         </div>
 
