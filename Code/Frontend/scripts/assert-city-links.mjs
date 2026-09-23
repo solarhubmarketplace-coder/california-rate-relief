@@ -57,10 +57,12 @@
  * that produces them. Each mirror is named here so that when the component
  * changes, the reader knows to change this too; assertMirrors() below fails the
  * run if the mirrored code no longer looks the way it did on 2026-09-18.
- *   - NearbyCities (src/components/shared/NearbyCities.tsx) renders six sibling
- *     city links chosen by county then by utility. pickNearby() below is that
- *     selection, so a city page is credited with the six links it really has and
- *     not with all seventy-seven it could have.
+ *   - NearbyCityPages (src/components/growth/NearbyCostCities.tsx), used by
+ *     all three city templates directly or through NearbyCities
+ *     (src/components/shared/NearbyCities.tsx), renders the nearest live city
+ *     pages plus companion and regional-hub links. Since 2026-09-22 the
+ *     selection lives in src/lib/city-pages.ts and this script imports it, so
+ *     a city page is credited with exactly the links it renders.
  *   - relatedArticles (src/data/article-pages.ts) renders six sibling links on a
  *     data-driven article page, same cluster first.
  *   - ArticleHub (src/components/shared/ArticleRoute.tsx) renders every article
@@ -126,6 +128,8 @@ const mod = (rel) => import(pathToFileURL(join(SRC, rel)).href);
 const cityCost = await mod('data/city-cost-data.ts');
 const citiesData = await mod('data/cities-data.ts');
 const redirects = await mod('lib/canonical-redirects.ts');
+const cityPages = await mod('lib/city-pages.ts');
+const growthCities = (await mod('data/growth-cities.ts')).growthCities;
 const growthRoutes = await mod('lib/growth-routes.ts');
 
 const COST_ROWS = cityCost.getPublishableCityCostRows();
@@ -393,6 +397,7 @@ if (existsSync(join(FRONTEND, '.next', 'app-path-routes-manifest.json'))) {
 // mirrors of the three components that build links from data
 // ---------------------------------------------------------------------------
 const NEARBY = join(SRC, 'components', 'shared', 'NearbyCities.tsx');
+const NEARBY_PAGES = join(SRC, 'components', 'growth', 'NearbyCostCities.tsx');
 const ARTICLE_ROUTE = join(SRC, 'components', 'shared', 'ArticleRoute.tsx');
 const ARTICLE_DATA = join(SRC, 'data', 'article-pages.ts');
 const RELATED_INSTALLERS = join(SRC, 'components', 'shared', 'RelatedInstallers.tsx');
@@ -421,9 +426,10 @@ const INSTALLER_PICKS = parseInstallerPicks();
 function assertMirrors() {
   const problems = [];
   const nearby = modules.get(NEARBY)?.code ?? '';
-  if (!/pickNearby\(city[^)]*\)/.test(nearby) || !/limit = 6/.test(nearby) ||
-      !/c\.county === city\.county/.test(nearby) || !/c\.utilityCode === city\.utilityCode/.test(nearby)) {
-    problems.push('NearbyCities.pickNearby no longer matches pickNearby() in this script');
+  const nearbyPages = modules.get(NEARBY_PAGES)?.code ?? '';
+  if (!/companionCityLinks\(city\.slug, variant\)/.test(nearby) || !/<NearbyCityPages\b/.test(nearby) ||
+      !/nearbyCityLinks\(slug, type\)/.test(nearbyPages) || !/regionalHubsFor\(slug\)/.test(nearbyPages)) {
+    problems.push('NearbyCities / NearbyCityPages no longer call the src/lib/city-pages.ts selectors this script credits');
   }
   const data = modules.get(ARTICLE_DATA)?.code ?? '';
   if (!/limit = 6/.test(data) || !/p\.cluster === page\.cluster/.test(data)) {
@@ -436,12 +442,17 @@ function assertMirrors() {
 }
 assertMirrors();
 
-/** Mirrors pickNearby() in src/components/shared/NearbyCities.tsx. */
-function pickNearby(city, limit = 6) {
-  const others = CITIES.filter((c) => c.slug !== city.slug);
-  const sameCounty = others.filter((c) => c.county === city.county);
-  const sameUtility = others.filter((c) => c.county !== city.county && c.utilityCode === city.utilityCode);
-  return [...sameCounty, ...sameUtility].slice(0, limit);
+/**
+ * The links NearbyCityPages renders for one city page (nearest pages,
+ * companions of the listed types, regional hubs), from the same functions.
+ */
+function nearbyPageLinks(slug, type, companionTypes) {
+  const out = cityPages.nearbyCityLinks(slug, type).map((n) => n.href);
+  for (const c of cityPages.companionCityLinks(slug, type)) {
+    if (companionTypes.includes(c.type)) out.push(c.href);
+  }
+  for (const hub of cityPages.regionalHubsFor(slug)) out.push(hub.href);
+  return out;
 }
 
 /** Mirrors relatedArticles() in src/data/article-pages.ts. */
@@ -562,21 +573,23 @@ function outboundFor(route, file) {
     noteExpansion(RELATED_INSTALLERS, '/solar-installers/', set.length);
   }
 
-  // NearbyCities: the six siblings this particular city page really renders.
-  if (closure.has(NEARBY)) {
-    const slug = route.split('/')[2];
-    const city = CITIES.find((c) => c.slug === slug);
-    if (city) {
-      const variant = route.startsWith('/solar-savings/') ? 'savings' : 'companies';
-      const companionBase = variant === 'savings' ? `/solar-companies/${slug}` : `/solar-savings/${slug}`;
-      if (variant === 'savings' || !redirects.isRedirectedPath(`/solar-savings/${slug}`)) {
-        links.add(CRR_CANONICAL_REDIRECTS[companionBase] ?? companionBase);
-      }
-      for (const c of pickNearby(city)) {
-        const base = variant === 'savings' ? `/solar-savings/${c.slug}` : `/solar-companies/${c.slug}`;
-        links.add(CRR_CANONICAL_REDIRECTS[base] ?? base);
-      }
+  // City templates: what NearbyCityPages / NearbyCities render for this city.
+  const cityRoute = /^\/solar-(cost|companies|savings)\/([a-z0-9-]+)$/.exec(route);
+  if (cityRoute && (closure.has(NEARBY) || closure.has(NEARBY_PAGES))) {
+    const type = cityRoute[1];
+    const slug = cityRoute[2];
+    if (type === 'cost') {
+      for (const href of nearbyPageLinks(slug, 'cost', ['savings'])) links.add(href);
+    } else if (type === 'companies' && growthCities[slug]) {
+      for (const href of nearbyPageLinks(slug, 'companies', [])) links.add(href);
+    } else if (CITIES.some((c) => c.slug === slug)) {
+      // NearbyCities: a companion card (the first other live page) and the
+      // rest as "Also for" links, plus the nearby list and hubs.
+      const others = cityPages.companionCityLinks(slug, type);
+      if (others[0]) links.add(others[0].href);
+      for (const href of nearbyPageLinks(slug, type, others.slice(1).map((o) => o.type))) links.add(href);
     }
+    noteExpansion(NEARBY_PAGES, `${route.split('/').slice(0, 2).join('/')}/ (nearby)`, 1);
   }
 
   // Data-driven article pages: the six related-reading siblings.
