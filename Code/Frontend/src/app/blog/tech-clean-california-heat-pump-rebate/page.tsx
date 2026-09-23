@@ -47,13 +47,13 @@ export default function TECHCleanCAGuide() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Heat pump water heater</td><td className="text-center">$1,000–$2,000</td><td className="text-center">$2,500–$4,500</td></tr>
-                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Heat pump HVAC (full replacement)</td><td className="text-center">$3,000–$4,000</td><td className="text-center">$6,000–$8,000</td></tr>
-                    <tr><td className="py-3 pr-4 font-medium">Panel upgrade (if triggered)</td><td className="text-center">$0–$1,500 add-on</td><td className="text-center">$2,000+ add-on</td></tr>
+                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Heat pump water heater</td><td className="text-center">See current program table</td><td className="text-center">See current program table</td></tr>
+                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Heat pump HVAC (full replacement)</td><td className="text-center">See current program table</td><td className="text-center">See current program table</td></tr>
+                    <tr><td className="py-3 pr-4 font-medium">Panel upgrade (if triggered)</td><td className="text-center">Ask the contractor</td><td className="text-center">Ask the contractor</td></tr>
                   </tbody>
                 </table>
               </div>
-              <p>Rebate amounts have varied over program phases. Confirm current levels with your contractor.</p>
+              <p>Rebate amounts have varied over program phases and by territory, so this page does not list them. Confirm current levels on the TECH Clean California site and with your contractor.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Stacking with Federal Tax Credits</h2>
               <p>What the federal Inflation Reduction Act (IRA) left behind:</p>

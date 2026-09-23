@@ -165,11 +165,11 @@ export default function HowLongDoSolarPanelsLast() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                An inverter converts the DC power from panels into AC power your home uses. String inverters (one box for the whole system) typically last 10 to 15 years and cost $1,000 to $3,000 to replace. Microinverters (one per panel) last 20 to 25 years but are cheaper per unit to replace ($200 to $400 each). Battery inverters (if you have storage) typically last 10 to 15 years as well.
+                An inverter converts the DC power from panels into AC power your home uses. String inverters (one box for the whole system) usually need replacing before the panels do. Microinverters (one per panel) usually carry longer warranties and are replaced one unit at a time. Battery inverters (if you have storage) also wear out before the panels. The warranty sheet for your model gives its term.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Budget for replacement.</strong> If you&apos;re keeping your solar system for 30 years, plan on replacing the main inverter at least once, possibly twice. That&apos;s $1,500 to $5,000 out of pocket — roughly $50 to $165 per year over the system lifetime. It&apos;s worth factoring into your long-term ROI calculations, but it doesn&apos;t change the fundamental math. Solar still makes financial sense; you just account for this maintenance cost.
+                <strong>Budget for replacement.</strong> If you&apos;re keeping your solar system for 30 years, plan on replacing the main inverter at least once, possibly twice. Get a written replacement price before the warranty ends and factor it into your long-term cost; it is part of the math, not a reason to skip it.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

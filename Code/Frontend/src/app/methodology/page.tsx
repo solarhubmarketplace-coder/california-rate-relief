@@ -82,7 +82,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     freshness:
       'Installer reviews are reviewed at least every 90 days, sooner if a CSLB action, BBB pattern shift, or major news event occurs. Each review carries a "Last reviewed" date stamp visible to readers.',
     conflictsBlurb:
-      'California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. We do not accept payment for placement; ratings reflect our research, not commercial relationships. Any installer who pays us a referral fee is disclosed explicitly on their review page.',
+      'California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. We do not accept payment for placement; ratings reflect our research, not commercial relationships.',
   },
   grh: {
     brand: 'GreenReviewsHub',

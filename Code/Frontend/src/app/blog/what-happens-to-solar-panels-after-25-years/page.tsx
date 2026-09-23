@@ -57,7 +57,7 @@ export default function WhatHappensAfter25Years() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What Else Happens Over 25 Years?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Inverters don&apos;t last as long as panels.</strong> String inverters typically have 10-15 year warranties and often need replacement once during a system&apos;s life — around $2,000-$4,000. Microinverters (Enphase) have 25-year warranties and generally last the full panel life. Tesla Solar Inverters are warranted 12.5-25 years depending on model.
+                <strong>Inverters don&apos;t last as long as panels.</strong> String inverters usually carry shorter warranties than panels and often need replacement once during a system&apos;s life; get a written price for the replacement. Microinverters (Enphase) have 25-year warranties and generally last the full panel life. Tesla Solar Inverters are warranted 12.5-25 years depending on model.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Batteries need replacement.</strong> Home batteries (Tesla Powerwall, Enphase IQ, FranklinWH) typically warranty 10-15 years. Beyond that, they degrade more meaningfully than panels and are often replaced. Figure $8,000-$15,000 for a battery replacement in year 15+.

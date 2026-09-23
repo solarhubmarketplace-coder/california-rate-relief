@@ -57,7 +57,7 @@ export default function SolarDuringPSPSCA() {
               </ul>
 
               <h3 className="text-xl font-bold text-foreground mt-8 mb-3">Option 3: Portable Power Stations + Solar Panels</h3>
-              <p>EcoFlow Delta Pro, Jackery 3000 Pro, Bluetti AC500, large portable batteries that can be paired with portable solar panels. Much cheaper than installed battery systems ($3,000–$6,000 for a robust setup) but require manual plugging of appliances and cannot power hard-wired loads.</p>
+              <p>EcoFlow Delta Pro, Jackery 3000 Pro, Bluetti AC500, large portable batteries that can be paired with portable solar panels. Usually cheaper than installed battery systems, but require manual plugging of appliances and cannot power hard-wired loads.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SGIP Equity Resiliency Program</h2>
               <p>California&apos;s SGIP Equity Resiliency tier specifically subsidizes batteries for homes in HFTD Tier 2 / Tier 3 zones, the same areas PG&amp;E targets for PSPS shutoffs. Eligible households can receive up to 100% battery-cost coverage. Check your address against the <a href="https://ia.cpuc.ca.gov/firemap/" target="_blank" rel="noopener noreferrer" className="text-primary underline">CPUC Fire-Threat Map</a>. If you&apos;re in Tier 2 or 3 and have been subject to multiple PSPS events, you likely qualify.</p>

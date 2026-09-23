@@ -6,7 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Solar Savings Blog | California Rate Relief Program',
+  title: 'Solar Savings Blog | California Rate Relief',
   description:
     'Understand California utility bills, time-of-use plans and solar options. Sourced guides for PG&E, SCE and SDG&E customers.',
   alternates: {

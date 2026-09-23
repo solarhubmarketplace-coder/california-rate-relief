@@ -78,7 +78,7 @@ export default function SunrunVsTeslaSolar() {
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Tesla Solar Caveats</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>No subsystem choices.</strong> You get Tesla&apos;s 400W panels, Tesla Solar Inverter, and Tesla Powerwall. If a part fails in year 11, you&apos;re dependent on Tesla&apos;s parts supply.</li>
-                <li><strong>Solar Roof pricing is much higher than panels.</strong> Tesla Solar Roof runs $18–$25/sq ft of roof, versus $4–$6/sq ft for conventional panels. Only makes sense on a full roof replacement.</li>
+                <li><strong>Solar Roof pricing is much higher than panels.</strong> Tesla Solar Roof replaces the roof itself, so it costs far more than panels on an existing roof. Only makes sense on a full roof replacement; get both priced.</li>
                 <li><strong>Sales process is transactional.</strong> Tesla is notorious for minimal human contact pre-install; if you need hand-holding through the buying process, Sunrun is much more responsive.</li>
               </ul>
 

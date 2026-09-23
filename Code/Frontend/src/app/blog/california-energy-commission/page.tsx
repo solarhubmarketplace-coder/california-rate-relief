@@ -166,7 +166,7 @@ export default function CaliforniaEnergyCommission() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For existing homeowners considering an EV, the connection to solar is direct. Charging an EV at home adds 200-400 kWh per month to your electricity usage. At PG&amp;E rates of 35 cents per kWh, that&apos;s $70-140 per month in additional electricity costs. At SDG&amp;E rates of 45.7 cents, it&apos;s $91-183 per month. If you&apos;re powering your EV with solar, that charging cost drops dramatically — often to the equivalent of $0.08-0.12 per kWh through a PPA.
+                For existing homeowners considering an EV, the connection to solar is direct. Charging an EV at home adds 200-400 kWh per month to your electricity usage. At the CPUC Public Advocates Office&apos;s June 2026 residential averages — 33.7 cents per kWh at PG&amp;E and 45.5 cents at SDG&amp;E — that&apos;s about $67-135 or $91-182 a month in additional electricity costs. Charging from solar can lower the cost of those kWh; what it costs depends on the system price or the contract rate.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

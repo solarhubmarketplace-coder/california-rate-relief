@@ -94,7 +94,7 @@ export const CRR_SOURCES: AuthoritativeSource[] = [
     url: 'https://www.irs.gov/credits-deductions/residential-clean-energy-credit',
     category: 'government',
     description:
-      'Authoritative IRS guidance on the 30% federal solar tax credit (residential clean energy credit).',
+      'IRS guidance on the residential clean energy credit (Section 25D), which does not apply to expenditures made after December 31, 2025.',
     primary: true,
   },
   {

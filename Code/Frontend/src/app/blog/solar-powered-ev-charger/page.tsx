@@ -98,7 +98,7 @@ export default function SolarPoweredEvCharger() {
             {/* Article Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                You bought an electric vehicle to save on gas. But if you&apos;re charging at home on a California utility rate, you may have noticed your electricity bill climbing by $100-$200 per month — or more if you&apos;re charging during peak hours. That&apos;s the hidden cost of EV ownership in a state with some of the highest electricity rates in the country. Solar panels change the equation entirely. By generating your own electricity, you can offset most or all of your EV charging cost and lock in a fixed energy rate for decades. Here&apos;s how it works, what it costs, and what rebates are available.
+                You bought an electric vehicle to save on gas. But if you&apos;re charging at home on a California utility rate, you may have noticed your electricity bill climbing, especially if you&apos;re charging during peak hours. That&apos;s the hidden cost of EV ownership in a state with some of the highest electricity rates in the country. Solar panels change the equation. By generating your own electricity, you can offset part of your EV charging cost. Here&apos;s how it works, what it costs, and what rebates are available.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -110,11 +110,11 @@ export default function SolarPoweredEvCharger() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                At current California utility rates (PG&E, SCE, and SDG&E all charge $0.30-$0.45+ per kWh on standard residential plans), that translates to $80-$215 per month in added electricity costs. If you charge during peak TOU hours — which many people do when they get home from work — the cost is even higher. Peak rates on SCE and SDG&E can exceed $0.50/kWh during summer months.
+                The CPUC Public Advocates Office put June 2026 residential average rates at 33.7 cents per kWh (PG&E), 34.4 cents (SCE) and 45.5 cents (SDG&E); multiply your charging kWh by your own plan&apos;s price for the hours you charge. If you charge during peak TOU hours — which many people do when they get home from work — the cost is higher than the average.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Compare that to the gas cost it replaced: at $4.50/gallon with a 30 MPG car driving 35 miles/day, you&apos;d spend about $160/month on gas. If your EV charging bill is $150-$200/month at peak rates, the &quot;fuel savings&quot; from going electric are minimal. Solar fixes this by making your electricity cost approach zero.
+                Compare that to the gas cost it replaced, using your own mileage and fuel price. If you charge at peak rates, the fuel savings from going electric can be small. Solar can lower the cost of the kWh you charge with, but the system has its own price.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -170,7 +170,7 @@ export default function SolarPoweredEvCharger() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Charger installation costs:</strong> A typical Level 2 charger installation runs $1,200-$2,500 including the unit itself, wiring, and any electrical panel upgrades needed. If your panel is already at capacity (common in older California homes), you may need a panel upgrade ($2,000-$4,000 additional) — though solar installation often addresses this as part of the project.
+                <strong>Charger installation costs:</strong> A Level 2 charger installation includes the unit, wiring and any electrical work; get it priced in writing. If your panel is already at capacity (common in older California homes), you may need a panel upgrade, priced separately — though a solar project sometimes addresses this.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

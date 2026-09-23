@@ -52,7 +52,7 @@ export default function SolarPanelCleaningCA() {
 
             <div className="prose prose-slate max-w-none">
               <p className="p-4 rounded-lg border border-border bg-card text-sm">
-                <strong>TL;DR:</strong> Professional solar panel cleaning in California runs $150–$450 per residential system, once or twice a year. Clean panels after wildfire smoke events, post-Santa Ana winds, or when production drops more than 10% below the prior year&apos;s same-month benchmark. Do NOT pressure-wash. It voids most manufacturer warranties. DIY with a soft brush and deionized water is fine if the roof is safely accessible; otherwise pay a professional.
+                <strong>TL;DR:</strong> Professional solar panel cleaning in California runs $150–$450 per residential system, once or twice a year. Clean panels after wildfire smoke events, post-Santa Ana winds, or when production drops clearly below the prior year&apos;s same month. Do NOT pressure-wash. It voids most manufacturer warranties. DIY with a soft brush and deionized water is fine if the roof is safely accessible; otherwise pay a professional.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Much Does Dirt Actually Cost You?</h2>
@@ -213,7 +213,7 @@ export default function SolarPanelCleaningCA() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Do robotic cleaners work?</h3>
-                  <p className="text-foreground/80">Yes, and they&apos;re a growing category for commercial systems. For residential 10–20 panel systems, the $500–$1,200 price tag for a consumer robotic cleaner (Solabot, iSolarCleaner) only pencils out in high-rate territories with heavy soiling. A $250/year pro cleaning is usually cheaper over a 10-year horizon.</p>
+                  <p className="text-foreground/80">Yes, and they&apos;re a growing category for commercial systems. For residential 10–20 panel systems, a consumer robotic cleaner (Solabot, iSolarCleaner) makes sense mainly with heavy soiling; compare its price with a professional cleaning quote over the years you expect to use it.</p>
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Should I wait for rain instead?</h3>
