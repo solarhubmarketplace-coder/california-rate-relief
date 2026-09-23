@@ -11,7 +11,7 @@ import { Byline } from '@/components/trust/Byline';
 import { TocRail, RAIL_GRID } from '@/components/trust/TocRail';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 import CommercialSolarCalculator from '@/components/landing/CommercialSolarCalculator';
 
 const title = 'Commercial Solar Cost in California: What You Pay (2026)';
@@ -734,6 +734,11 @@ export default function CommercialSolarCost() {
                 with no California-specific table publicly available.{/* value-27 */}
               </p>
 
+              {/* One mid-page ask; its button scrolls to the form at the end of the page. */}
+              <div className="not-prose">
+                <CommercialReviewButton />
+              </div>
+
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
                 Property tax, sales tax, and permit fees
               </h2>
@@ -986,10 +991,11 @@ export default function CommercialSolarCost() {
               </ul>
             </div>
 
-            {/* The page's one CTA card: the existing ArticleCTA (commercial
-                intent, tracked as article_cta), unchanged. It replaces a second,
-                hand-built card that repeated the same ask. */}
-            <ArticleCTA />
+            {/* The page's closing ask (2026-09-23): the inline commercial form. It
+                replaces the link-only ArticleCTA card that pointed at
+                /commercial-assessment; the header button, the sticky bar and the
+                mid-page button below all scroll here. */}
+            <CommercialReviewForm legacyAnchor className="mt-12" />
 
             <div className="mt-10">
               <Link href="/commercial-solar" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
+import { CommercialReviewButton, CommercialReviewForm } from "@/components/growth/CommercialReview";
 
 const lbnlReport =
   "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf";
@@ -30,22 +31,14 @@ export const metadata: Metadata = {
   },
 };
 
+// The page's one ask (2026-09-23): the inline commercial form, which replaced
+// a link to /commercial-assessment. Heading and sentence keep the old wording.
 function CommercialInquiry() {
   return (
-    <section id="solar-inquiry" className="mt-10 rounded-2xl border border-primary/20 bg-primary/5 p-7">
-      <h2>Discuss a commercial solar project</h2>
-      <p>
-        California Rate Relief is a private referral service. A commercial
-        assessment request does not establish a project price, tax result,
-        utility outcome, financing approval or provider availability.
-      </p>
-      <Link
-        href="/commercial-assessment"
-        className="mt-5 inline-block rounded-lg bg-primary px-5 py-3 font-semibold text-white"
-      >
-        Request a commercial assessment
-      </Link>
-    </section>
+    <CommercialReviewForm
+      heading="Discuss a commercial solar project"
+      intro="California Rate Relief is a private referral service. A commercial assessment request does not establish a project price, tax result, utility outcome, financing approval or provider availability."
+    />
   );
 }
 
@@ -60,6 +53,7 @@ export default function CommercialSolarInstallationCostCalifornia() {
       topic="Commercial solar cost and quote review"
       commercial
       inquiry={<CommercialInquiry />}
+      midContent={<CommercialReviewButton />}
     >
       <section>
         <h2>Start with the same technical project</h2>

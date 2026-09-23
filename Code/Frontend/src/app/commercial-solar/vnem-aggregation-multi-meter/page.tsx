@@ -4,9 +4,10 @@ import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 
 export const metadata: Metadata = {
   title: "California VNEM vs NEM Aggregation: Multi-Meter Solar",
@@ -79,6 +80,11 @@ export default function VnemAggregation() {
                 Legacy VNEM arrangements (pre-April 2023) continue under NEM 2.0 rules for the duration of their grandfather period (typically 20 years from interconnection). New commercial VNEM projects face the same self-consumption-favors-storage economics as residential NEM 3.0 — driving inclusion of on-site battery storage in most new commercial multi-meter projects.
               </p>
 
+              {/* One mid-page ask; its button scrolls to the form at the end of the page. */}
+              <div className='not-prose'>
+                <CommercialReviewButton />
+              </div>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>AB 2175 and Expanded Eligibility (2025-2026)</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 California Assembly Bill 2175, enacted in the 2025-2026 legislative cycle, expanded VNEM eligibility for logistics and manufacturing businesses that operate across multiple meters on contiguous or nearby parcels. Prior rules were stricter on what counted as a single property for aggregation purposes. AB 2175 broadens the definition and explicitly enables more industrial multi-meter configurations.
@@ -129,12 +135,13 @@ export default function VnemAggregation() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes for common-area offset. Tenant-account allocation depends on your ownership structure and specific utility tariff. Consult with an EPC familiar with multifamily VNEM and your local utility&apos;s specific schedule before assuming tenant allocation will work.</p>
             </div>
 
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Request a Commercial Solar Assessment</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto leading-relaxed'>Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.</p>
-              <Link href='/commercial-assessment' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a Commercial Assessment<ArrowRight className='h-4 w-4' /></Link>
-              <p className='text-xs text-muted-foreground mt-4'>No cost to submit. No obligation. Provider availability and project fit must be confirmed.</p>
-            </div>
+            {/* The closing ask (2026-09-23): the inline commercial form, in place of
+                a link to /commercial-assessment. Heading and intro keep the old box's wording. */}
+            <CommercialReviewForm
+              heading='Request a commercial solar assessment'
+              intro='Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.'
+              className='mt-12'
+            />
 
             <div className='mt-10'><Link href='/commercial-solar' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Commercial Solar Hub</Link></div>
           <RelatedGuides

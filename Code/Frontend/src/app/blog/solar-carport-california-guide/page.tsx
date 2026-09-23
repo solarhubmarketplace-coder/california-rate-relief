@@ -7,7 +7,7 @@ import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 
 const title = "Solar Carports in California: Cost, Scope, and Quotes";
 const description =
@@ -311,6 +311,11 @@ export default function SolarCarportCAGuide() {
                 solar question.
               </p>
 
+              {/* One mid-page ask; its button scrolls to the form at the end of the page. */}
+              <div className="not-prose">
+                <CommercialReviewButton />
+              </div>
+
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
                 Ask for a scope that separates the moving parts
               </h2>
@@ -488,10 +493,10 @@ export default function SolarCarportCAGuide() {
               </ul>
             </div>
 
-            <ArticleCTA
-              heading="Compare a solar carport with roof options"
-              body="California homeowners can request a no-obligation solar assessment from this private referral service after reviewing the property and contract questions above."
-            />
+            {/* The closing ask (2026-09-23): the inline commercial form. This path is
+                commercial intent in src/lib/intake-routing.ts, so its header button,
+                sticky bar and mid-page button all scroll here. */}
+            <CommercialReviewForm legacyAnchor className="mt-12" />
             <RelatedGuides
               heading="Before choosing a carport over the roof"
               links={[

@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 
 export const metadata: Metadata = {
   title: "CPACE Financing California: How Commercial PACE Works",
@@ -87,6 +88,11 @@ export default function CpaceFinancing() {
                 <strong>Property owners whose existing mortgage lender consents.</strong> Most commercial mortgage lenders have to consent to the PACE assessment because it takes super-priority ahead of the mortgage lien. Getting lender consent is one of the main hurdles to overcome before CPACE funds.
               </p>
 
+              {/* One mid-page ask; its button scrolls to the form at the end of the page. */}
+              <div className='not-prose'>
+                <CommercialReviewButton />
+              </div>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>CPACE vs Direct Purchase vs PPA</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For a quick comparison:
@@ -144,12 +150,13 @@ export default function CpaceFinancing() {
               <p className='text-foreground/80 leading-relaxed mb-4'>C-PACE finances a project cost; it does not set one. The assessment runs with the property for the whole term, so the figure it is written against matters more here than under a structure you can refinance out of. Read the quoted amount against <Link href='/commercial-solar/cost-per-watt-california' className='text-primary hover:underline'>commercial solar cost per watt in California</Link>, which gives the published per-watt figures by system size and the date they were checked.</p>
             </div>
 
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Request a Commercial Solar Assessment</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto leading-relaxed'>Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.</p>
-              <Link href='/commercial-assessment' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a Commercial Assessment<ArrowRight className='h-4 w-4' /></Link>
-              <p className='text-xs text-muted-foreground mt-4'>No cost to submit. No obligation. Provider availability and project fit must be confirmed.</p>
-            </div>
+            {/* The closing ask (2026-09-23): the inline commercial form, in place of
+                a link to /commercial-assessment. Heading and intro keep the old box's wording. */}
+            <CommercialReviewForm
+              heading='Request a commercial solar assessment'
+              intro='Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.'
+              className='mt-12'
+            />
 
             <div className='mt-10'><Link href='/commercial-solar' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Commercial Solar Hub</Link></div>
           </article>
