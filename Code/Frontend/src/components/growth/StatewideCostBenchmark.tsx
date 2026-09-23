@@ -43,7 +43,7 @@ export function StatewideCostBenchmark({ cityName }: StatewideCostBenchmarkProps
   return (
     <div className='not-prose my-8 rounded-xl border border-border bg-card p-5'>
       <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
-        California statewide benchmark
+        National benchmark &middot; LBNL
       </span>
       <p className='mt-3 text-foreground/90'>
         Homeowners who installed residential solar in {source.dataYear} paid{' '}
@@ -51,7 +51,7 @@ export function StatewideCostBenchmark({ cityName }: StatewideCostBenchmarkProps
         Berkeley National Laboratory&apos;s <em>Tracking the Sun</em> research. {californiaContext}
       </p>
       <p className='mt-2 text-sm text-foreground/70'>
-        This is a statewide research figure, not a quote. {notAPriceFor}
+        This is a national research figure, not a quote. {notAPriceFor}
       </p>
       <p className='mt-3 text-xs text-foreground/60 [overflow-wrap:anywhere]'>
         Source:{' '}
