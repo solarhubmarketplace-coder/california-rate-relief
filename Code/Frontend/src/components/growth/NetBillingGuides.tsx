@@ -56,10 +56,10 @@ const guides = {
     path: "/blog/net-billing-vs-net-metering-california",
     title: "Net Billing vs. Net Metering in California: check your tariff",
     intro:
-      "California's Net Billing Tariff and the older Net Energy Metering tariffs credit exports differently. The current bill, utility territory and interconnection record determine what applies to a specific account.",
-    metaTitle: "Net Billing vs. Net Metering in California: check tariff",
+      "California's Net Billing Tariff (NBT) is what most people call NEM 3.0 — they're the same tariff, not two different things. The CPUC's own program page uses \"Net Billing Tariff (NBT)\" throughout and doesn't use the term \"NEM 3.0\" anywhere; NEM 3.0 is industry and consumer shorthand for the same CPUC decision. Net Metering (NEM 1.0 and NEM 2.0) is the older, separate system NBT replaced for new interconnection applicants starting April 15, 2023.",
+    metaTitle: "Net Billing vs. Net Metering in California",
     metaDescription:
-      "Net Billing and the older Net Energy Metering tariffs credit exports differently. Your bill, utility territory and interconnection record decide which applies.",
+      "The CPUC calls it the Net Billing Tariff; most people call it NEM 3.0. See how it differs from the older Net Metering (NEM) system, per the CPUC.",
   },
 } as const;
 
@@ -85,7 +85,7 @@ export function netBillingMetadata(kind: NetBillingGuideKind): Metadata {
       description: metaDescription,
       type: "article",
       url: `https://ratereliefca.com${guide.path}`,
-      modifiedTime: kind === "comparison" ? "2026-09-22T00:00:00Z" : "2026-09-12T00:00:00Z",
+      modifiedTime: kind === "comparison" || kind === "billing" ? "2026-09-22T00:00:00Z" : "2026-09-12T00:00:00Z",
     },
   };
 }
@@ -321,6 +321,55 @@ function ComparisonFaq() {
   );
 }
 
+// Rendered via DecisionPage's `faq` prop (after the source list), matching
+// the draft's placement instruction ("appended after the existing 'Sources
+// checked' section and before 'Have your bill reviewed'"). Only used for
+// kind === "billing".
+function BillingFaq() {
+  return (
+    <section>
+      <h2>FAQ</h2>
+      <div className="mt-3 space-y-6">
+        <div>
+          <h3>Is NEM 3.0 the same thing as the Net Billing Tariff?</h3>
+          <p>
+            Yes. &ldquo;Net Billing Tariff (NBT)&rdquo; is the CPUC&apos;s own
+            name for the program; &ldquo;NEM 3.0&rdquo; is the common name
+            everyone else uses for the same tariff, adopted by the CPUC in
+            Decision D.22-12-056.
+          </p>
+        </div>
+        <div>
+          <h3>Is Net Billing the same as Net Metering?</h3>
+          <p>
+            No. Net Metering (NEM 1.0 and NEM 2.0) is the older system,
+            closed to new interconnection applicants. Net Billing (NBT, also
+            called NEM 3.0) is the separate tariff that replaced it for
+            applications submitted on or after April 15, 2023.
+          </p>
+        </div>
+        <div>
+          <h3>What does the CPUC actually call NEM 3.0 in its own materials?</h3>
+          <p>
+            &ldquo;Net Billing Tariff (NBT).&rdquo; The CPUC&apos;s own Net
+            Energy Metering program page doesn&apos;t use the term &ldquo;NEM
+            3.0&rdquo; anywhere in its text.
+          </p>
+        </div>
+        <div>
+          <h3>Is &ldquo;Solar Billing Plan&rdquo; a different program from NEM 3.0?</h3>
+          <p>
+            No &mdash; it&apos;s PG&amp;E&apos;s and SCE&apos;s own branded
+            name for how they implement the Net Billing Tariff on a
+            customer&apos;s account. It&apos;s the same underlying CPUC
+            tariff as NBT/NEM 3.0, not a fourth program.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TimelineContent() {
   return (
     <>
@@ -425,6 +474,78 @@ function BillingContent() {
   return (
     <>
       <section>
+        <h2>Two names, one tariff: NBT and NEM 3.0</h2>
+        <p>
+          The CPUC&apos;s own Net Energy Metering program page refers to the
+          newer tariff as the &ldquo;net billing tariff (NBT)&rdquo;
+          throughout &mdash; the term &ldquo;NEM 3.0&rdquo; doesn&apos;t
+          appear anywhere in that page&apos;s own text. &ldquo;NEM 3.0&rdquo;
+          is the name installers, media and homeowners use for the same
+          CPUC decision, D.22-12-056, not a separate program. On top of
+          that, PG&amp;E and SCE each brand their own implementation of NBT
+          as the &ldquo;Solar Billing Plan&rdquo; &mdash; a third name for
+          the same underlying CPUC tariff, specific to how those two
+          utilities present it on a bill.
+        </p>
+      </section>
+      <section>
+        <h2>Net Billing (NBT / NEM 3.0) vs. Net Metering (NEM 1.0 / 2.0)</h2>
+        <p>
+          &ldquo;Net Metering&rdquo; is the CPUC&apos;s umbrella term for the
+          two earlier tariffs, NEM 1.0 and NEM 2.0, which credit exported
+          solar close to the full retail rate. &ldquo;Net Billing&rdquo; is
+          the separate, newer system that applies to interconnection
+          applications submitted on or after April 15, 2023, and
+          compensates exports using the CPUC&apos;s Avoided Cost Calculator
+          instead &mdash; a value the CPUC states is &ldquo;usually lower
+          than import rates.&rdquo; For the full side-by-side of what that
+          changes on a bill, see{" "}
+          <Link className="underline" href="/blog/nem-2-vs-nem-3-california">
+            NEM 2.0 vs. NEM 3.0 in California
+          </Link>
+          . To find out which one actually applies to a specific account,
+          see{" "}
+          <Link className="underline" href="/blog/what-is-nem-3-california">
+            What is NEM 3.0 in California?
+          </Link>
+          .
+        </p>
+        <div className="overflow-x-auto rounded-xl border my-4">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">Quick reference: net metering and net billing terminology</caption>
+            <thead className="bg-muted">
+              <tr>
+                <th className="p-4">Term</th>
+                <th className="p-4">What it means</th>
+                <th className="p-4">Who uses it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t">
+                <td className="p-4">Net Energy Metering (NEM)</td>
+                <td className="p-4">The CPUC&apos;s umbrella term for NEM 1.0 and NEM 2.0 &mdash; legacy tariffs crediting exports near the retail rate</td>
+                <td className="p-4">CPUC, utilities</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">Net Billing Tariff (NBT)</td>
+                <td className="p-4">The CPUC&apos;s official name for the tariff that replaced NEM for new interconnection applicants after April 15, 2023</td>
+                <td className="p-4">CPUC</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">NEM 3.0</td>
+                <td className="p-4">The common name for NBT &mdash; same tariff, same CPUC decision (D.22-12-056), not a separate program</td>
+                <td className="p-4">Installers, media, homeowners</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">Solar Billing Plan</td>
+                <td className="p-4">PG&amp;E&apos;s and SCE&apos;s own product name for their implementation of NBT/NEM 3.0</td>
+                <td className="p-4">PG&amp;E, SCE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
         <h2>Start with the utility territory</h2>
         <p>
           The CPUC&apos;s standard Net Energy Metering and Net Billing guidance
@@ -499,14 +620,14 @@ function BillingContent() {
 export function NetBillingGuide({ kind }: { kind: NetBillingGuideKind }) {
   const guide = guides[kind];
   const content = kind === "comparison" ? <ComparisonContent /> : kind === "timeline" ? <TimelineContent /> : kind === "decision" ? <DecisionContent /> : <BillingContent />;
-  const faq = kind === "comparison" ? <ComparisonFaq /> : undefined;
+  const faq = kind === "comparison" ? <ComparisonFaq /> : kind === "billing" ? <BillingFaq /> : undefined;
   return (
     <DecisionPage
       title={guide.title}
       intro={guide.intro}
       path={guide.path}
-      sources={kind === "comparison" ? [...sources, ...comparisonOnlySources] : sources}
-      sourceCheckedDate={kind === "comparison" ? "2026-09-22" : "2026-09-12"}
+      sources={kind === "comparison" || kind === "billing" ? [...sources, ...comparisonOnlySources] : sources}
+      sourceCheckedDate={kind === "comparison" || kind === "billing" ? "2026-09-22" : "2026-09-12"}
       faq={faq}
     >
       {content}
