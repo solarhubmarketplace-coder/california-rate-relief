@@ -58,20 +58,8 @@ function buildRegionalCollectionSchema() {
     description:
       'A guide to solar energy options and electric bill reduction strategies for Central Valley homeowners in Fresno, Sacramento, Stockton, and surrounding regions.',
     url: 'https://ratereliefca.com/solar-savings/central-valley',
-    mainEntity: {
-      '@type': 'LocalBusiness',
-      name: 'California Rate Relief Program — Central Valley',
-      description:
-        'Helping Central Valley homeowners qualify for affordable solar energy programs.',
-      areaServed: [
-        { '@type': 'City', name: 'Fresno' },
-        { '@type': 'City', name: 'Sacramento' },
-        { '@type': 'City', name: 'Stockton' },
-        { '@type': 'City', name: 'Modesto' },
-        { '@type': 'City', name: 'Visalia' },
-        { '@type': 'City', name: 'Bakersfield' },
-      ],
-    },
+    // mainEntity was a LocalBusiness for this region; CRR has no premises
+    // anywhere, so it was removed (design pass 2, 2026-09-22).
   };
 }
 

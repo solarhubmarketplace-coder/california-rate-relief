@@ -64,25 +64,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 // =============================================================================
 // JSON-LD SCHEMA GENERATORS
 // =============================================================================
-function buildLocalBusinessSchema(city: CityData) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: `California Rate Relief Program — ${city.name}`,
-    url: `https://ratereliefca.com/solar-savings/${city.slug}`,
-    description: `A private referral service helping ${city.name} homeowners reduce their electricity bills through solar energy programs. We connect homeowners with CSLB-licensed solar contractors. Not a government agency or utility.`,
-    areaServed: {
-      '@type': 'City',
-      name: city.name,
-      containedInPlace: {
-        '@type': 'State',
-        name: 'California',
-      },
-    },
-    serviceType: 'Solar Power Purchase Agreement (PPA)',
-    priceRange: '$0 down',
-  };
-}
+// No LocalBusiness schema (design pass 2, 2026-09-22). California Rate Relief
+// has no premises in any city, so a per-city LocalBusiness node — with an
+// areaServed city and a "$0 down" priceRange — described something that does
+// not exist. Removed rather than reworded.
 
 function buildFAQSchema(city: CityData) {
   return {
@@ -115,18 +100,11 @@ export default async function CityPage({ params }: PageProps) {
     ? 'Check bill'
     : utility.rateDisplay || `${(utility.ratePerKwh * 100).toFixed(1)}¢`;
 
-  const localBusinessSchema = buildLocalBusinessSchema(city);
   const faqSchema = buildFAQSchema(city);
 
   return (
     <PublicLayout>
       <Header />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(localBusinessSchema),
-        }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
