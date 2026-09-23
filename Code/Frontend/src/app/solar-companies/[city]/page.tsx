@@ -28,6 +28,10 @@ import { hasSavingsCityPage } from "@/lib/canonical-redirects";
 import { growthCities } from "@/data/growth-cities";
 import { CityComparison } from "@/components/growth/CityComparison";
 import { cityCostPath, getPublishableCityCostSlugs } from "@/data/city-cost-data";
+import { cityPageDates, cityPageMetadata, companiesPageSeo } from "@/lib/city-pages";
+import { Byline } from "@/components/trust/Byline";
+import { ArticleJsonLd } from "@/components/shared/ArticleJsonLd";
+import { FaqJsonLd, type FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
 
 // =============================================================================
 // STATIC PARAMS — Pre-renders all city pages at build time
@@ -168,44 +172,29 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { city: slug } = await params;
-  const city = growthCities[slug] || getCityBySlug(slug);
-  if (!city) return {};
-
-  const title = growthCities[slug]
-    ? `Compare Solar Companies in ${city.name}, California`
-    : `Solar Companies in ${city.name}, CA: 2026 Cost & Reviews`;
-  const description = growthCities[slug]
-    ? `Compare solar quotes in ${city.name}, California: local utility and permit checks, equivalent system scope, battery options and an optional referral inquiry.`
-    : `Solar companies serving ${city.name}, CA — compare 9 installers by pricing, warranty, and fit. ${city.county} coverage. Get free quotes.`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `/solar-companies/${slug}`,
-    },
-    openGraph: {
-      title: `Solar Companies in ${city.name}, CA — Compared`,
-      description,
-      type: "article",
-      ...(growthCities[slug]
-        ? { modifiedTime: `${growthCities[slug].sourceCheckedDate || "2026-09-10"}T00:00:00Z` }
-        : { publishedTime: "2026-04-24T00:00:00Z" }),
-      url: `https://ratereliefca.com/solar-companies/${slug}`,
-    },
-  };
+  // One source for <title>, description, canonical, Open Graph and Twitter:
+  // src/lib/city-pages.ts. It also dates the page (sourceCheckedDate for the
+  // comparison template, git history of the city entry for this one).
+  return cityPageMetadata("companies", slug) ?? {};
 }
 
 // =============================================================================
 // JSON-LD SCHEMA
 // =============================================================================
-function buildFAQSchema(city: CityData) {
+/**
+ * The FAQ as data, rendered visibly below and emitted as FAQPage JSON-LD from
+ * the same strings (2026-09-22). Before that the schema and the visible block
+ * were written separately and had drifted: the visible cost answer still said
+ * "before the federal tax credit" after § 25D ended, and a split-utility city
+ * showed an average the schema had already withdrawn.
+ */
+function buildFaqs(city: CityData): FaqJsonLdItem[] {
   const utility = UTILITY_DATA[city.utilityCode];
   const needsUtilityConfirmation = city.utilityConfirmationRequired === true;
-  const faqs = [
+  return [
     {
       question: `How many solar companies operate in ${city.name}?`,
-      answer: `Dozens of solar installers operate in ${city.name}, from national providers like Sunrun, SunPower, and Tesla Solar to California-focused companies like Semper Solaris and Solar Optimum and regional installers serving ${city.county}. The 9 we track on this page all confirm service in ${city.name} and carry active California CSLB licenses.`,
+      answer: `Dozens. The 9 we track above all confirm service in ${city.name} and carry active California CSLB licenses. Dozens more regional California-only installers also serve ${city.county} — expect to see additional bids from local players when you request quotes.`,
     },
     {
       question: `What's the average cost of solar in ${city.name}?`,
@@ -215,28 +204,39 @@ function buildFAQSchema(city: CityData) {
     },
     {
       question: `Are solar companies in ${city.name} licensed?`,
-      answer: `Any legitimate solar installer in California must hold an active C-46 (Solar) or C-10 (Electrical) license from the California Contractors State License Board (CSLB). You can verify any installer's license at cslb.ca.gov before signing a contract.`,
+      answer: `Any legitimate solar installer in California must hold an active C-46 (Solar) or C-10 (Electrical) license from the California Contractors State License Board (CSLB). Verify any installer's license at cslb.ca.gov before signing a contract.`,
     },
     {
       question: `How do I compare solar quotes in ${city.name}?`,
-      answer: `Get at least three quotes. Compare total system cost per watt (should be $3.00–$4.50 per watt installed in ${city.name}), panel and inverter brands, workmanship warranty length, and production guarantee. Don't focus only on monthly payment, a 25-year PPA at 2.9% escalator can cost more over the life of the contract than a 12-year loan.`,
+      answer: `Get at least three quotes. Compare total system cost per watt (should be $3.00–$4.50 per watt installed in ${city.name}), panel and inverter brands, workmanship warranty length, and production guarantee. A 25-year PPA at a 2.9% escalator can cost more over the life of the contract than a 12-year loan, run both totals before signing.`,
     },
     {
       question: `What rebates apply to solar in ${city.name}?`,
       answer: needsUtilityConfirmation
         ? `Programs and solar-billing rules depend on the electric provider and account. Confirm the provider from the current bill, then check that utility's current published eligibility, interconnection, export-credit, and battery-program information before relying on a proposal.`
-        : `A ${city.name} homeowner who buys a system in 2026 gets no federal tax credit — IRC § 25D does not apply to expenditures made after December 31, 2025 — but the Self-Generation Incentive Program (SGIP) for battery storage still applies, and low-income households may qualify for DAC-SASH or SASH. On a lease or PPA the provider owns the system and is the one that may claim the § 48E commercial credit, if its project clears the federal deadlines. ${utility.shortName}'s net billing under NEM 3.0 pays ${utility.exportRate} for exports. Significantly less than pre-2023 net metering.`,
+        : `A ${city.name} homeowner who buys a system in 2026 gets no federal tax credit — IRC § 25D does not apply to expenditures made after December 31, 2025. Still available in ${utility.shortName} territory: the Self-Generation Incentive Program (SGIP) for battery storage and low-income programs like DAC-SASH and SASH. On a lease or PPA the provider owns the system and is the one that may claim the § 48E commercial credit. ${utility.shortName}'s net billing under NEM 3.0 pays ${utility.exportRate} for exports.`,
     },
   ];
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
+}
+
+/** Renders "cslb.ca.gov" inside an answer as the link it names. */
+function FaqAnswer({ text }: { text: string }) {
+  const [before, after] = text.split("cslb.ca.gov");
+  if (after === undefined) return <>{text}</>;
+  return (
+    <>
+      {before}
+      <a
+        href="https://www.cslb.ca.gov"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary underline"
+      >
+        cslb.ca.gov
+      </a>
+      {after}
+    </>
+  );
 }
 
 function buildListSchema(city: CityData) {
@@ -268,16 +268,28 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
   const utility = UTILITY_DATA[city.utilityCode];
   const needsUtilityConfirmation = city.utilityConfirmationRequired === true;
   const utilityDisplayName = city.utilityDisplayName || utility.shortName;
-  const faqSchema = buildFAQSchema(city);
+  const faqs = buildFaqs(city);
   const listSchema = buildListSchema(city);
+  const seo = companiesPageSeo(slug);
+  const dates = cityPageDates("companies", slug);
+  const canonicalUrl = `https://ratereliefca.com/solar-companies/${slug}`;
 
   return (
-    <PublicLayout>
+    <PublicLayout
+      breadcrumbLabel={`Solar companies in ${city.name}`}
+      breadcrumbParent={{ label: "Solar companies in California", href: "/best-solar-companies-california" }}
+    >
       <Header />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      <ArticleJsonLd
+        variant="Article"
+        domain="crr"
+        headline={seo?.h1 ?? `Solar companies in ${city.name}`}
+        url={canonicalUrl}
+        datePublished={dates.published}
+        dateModified={dates.modified}
+        description={seo?.description}
       />
+      <FaqJsonLd items={faqs} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listSchema) }}
@@ -295,10 +307,10 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 href="/best-solar-companies-california"
                 className="hover:text-primary"
               >
-                Solar Companies CA
+                Solar companies in California
               </Link>
               <span>/</span>
-              <span className="text-foreground">{city.name}</span>
+              <span className="text-foreground">Solar companies in {city.name}</span>
             </nav>
 
             {/* Header */}
@@ -308,8 +320,9 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 {city.name}, CA · {city.county}
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
-                Best Solar Companies in {city.name}, California (2026 Reviews)
+                {seo?.h1}
               </h1>
+              <Byline updated={dates.modified} className="mb-4" />
               <p className="text-lg text-muted-foreground">
                 9 installers compared, each holding an active CSLB licence and
                 confirmed to serve {city.name}. Honest notes on who each company
@@ -719,80 +732,14 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               Frequently Asked Questions, Solar Companies in {city.name}
             </h2>
             <div className="space-y-6 mb-12">
-              <div>
-                <h3 className="font-bold text-foreground mb-2">
-                  How many solar companies operate in {city.name}?
-                </h3>
-                <p className="text-foreground/80">
-                  Dozens. The 9 we track above all confirm service in{" "}
-                  {city.name} and carry active California CSLB licenses. Dozens
-                  more regional California-only installers also serve{" "}
-                  {city.county} — expect to see additional bids from local
-                  players when you request quotes.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-bold text-foreground mb-2">
-                  What&apos;s the average cost of solar in {city.name}?
-                </h3>
-                <p className="text-foreground/80">
-                  A typical {city.name} home needs a {city.systemSizeKw} kW
-                  system, which runs roughly $
-                  {city.systemCostCash.toLocaleString()} in cash purchase before
-                  the federal tax credit. Loan and PPA options are $0 down with
-                  monthly payments usually below the {utility.shortName} bill
-                  they replace.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-bold text-foreground mb-2">
-                  Are solar companies in {city.name} licensed?
-                </h3>
-                <p className="text-foreground/80">
-                  Any legitimate solar installer in California must hold an
-                  active C-46 (Solar) or C-10 (Electrical) license from the
-                  California Contractors State License Board (CSLB). Verify any
-                  installer&apos;s license at{" "}
-                  <a
-                    href="https://www.cslb.ca.gov"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary underline"
-                  >
-                    cslb.ca.gov
-                  </a>{" "}
-                  before signing a contract.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-bold text-foreground mb-2">
-                  How do I compare solar quotes in {city.name}?
-                </h3>
-                <p className="text-foreground/80">
-                  Get at least three quotes. Compare total system cost per watt
-                  (should be $3.00–$4.50 per watt installed in {city.name}),
-                  panel and inverter brands, workmanship warranty length, and
-                  production guarantee. A 25-year PPA at a 2.9% escalator can
-                  cost more over the life of the contract than a 12-year loan,
-                  run both totals before signing.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-bold text-foreground mb-2">
-                  What rebates apply to solar in {city.name}?
-                </h3>
-                <p className="text-foreground/80">
-                  A {city.name} homeowner who buys a system in 2026 gets no
-                  federal tax credit — IRC § 25D does not apply to expenditures
-                  made after December 31, 2025. Still available in{" "}
-                  {utility.shortName} territory: the Self-Generation Incentive
-                  Program (SGIP) for battery storage and low-income programs
-                  like DAC-SASH and SASH. On a lease or PPA the provider owns
-                  the system and is the one that may claim the § 48E commercial
-                  credit. {utility.shortName}&apos;s net billing under NEM 3.0
-                  pays {utility.exportRate} for exports.
-                </p>
-              </div>
+              {faqs.map((faq) => (
+                <div key={faq.question}>
+                  <h3 className="font-bold text-foreground mb-2">{faq.question}</h3>
+                  <p className="text-foreground/80">
+                    <FaqAnswer text={faq.answer} />
+                  </p>
+                </div>
+              ))}
             </div>
 
             {/* Disclaimer */}

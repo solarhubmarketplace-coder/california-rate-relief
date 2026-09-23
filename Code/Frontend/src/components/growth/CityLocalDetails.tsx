@@ -5,6 +5,7 @@ import {
   hasCompaniesCityPage,
 } from "@/lib/canonical-redirects";
 import { formatSourceCheckedDate } from "./DecisionPage";
+import { FaqJsonLd } from "@/components/shared/FaqJsonLd";
 
 export function CityLocalChecks({ slug }: { slug: string }) {
   const city = growthCities[slug];
@@ -98,6 +99,8 @@ export function CityQuestions({ slug }: { slug: string }) {
   if (!city.faq) return null;
   return (
     <section>
+      {/* FAQPage schema built from exactly the strings rendered below. */}
+      <FaqJsonLd items={city.faq.map(([question, answer]) => ({ question, answer }))} />
       <h2>{city.name} solar quote questions</h2>
       <div className="space-y-5">
         {city.faq.map(([question, answer]) => (

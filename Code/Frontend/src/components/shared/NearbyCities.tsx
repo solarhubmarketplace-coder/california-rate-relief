@@ -1,34 +1,44 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { CITIES, type CityData } from '@/data/cities-data';
-import {
-  companiesCityHref,
-  hasCompaniesCityPage,
-  hasSavingsCityPage,
-  savingsCityHref,
-} from '@/lib/canonical-redirects';
+import type { CityData } from '@/data/cities-data';
+import { NearbyCityPages } from '@/components/growth/NearbyCostCities';
+import { companionCityLinks, type CityPageType } from '@/lib/city-pages';
 
 /**
- * Nearby-cities + companion-page internal linking block.
+ * Companion-page card + nearby-city links for the /solar-savings/<city> and
+ * older /solar-companies/<city> templates.
  *
  * Why this exists: as of 2026-09-05 all 77 /solar-companies/<city> pages had ZERO
  * inbound internal links anywhere on the site (sitemap-only discovery), while
  * Search Console showed that layer earning 90,600 impressions in 90 days — 41% of
  * the whole site — stuck at average position 37.4. /solar-savings/<city> pages
  * averaged just 2.0 inbound links. This component gives every city page links to
- * its companion route and to same-county / same-utility siblings.
+ * its companion route and to its neighbours.
+ *
+ * 2026-09-22: the neighbours are no longer six cities-data.ts entries chosen by
+ * county and then by utility (a Temecula page could list Bakersfield). They are
+ * the nearest live city pages of any template, same county first, chosen by
+ * nearbyCityLinks() in src/lib/city-pages.ts; scripts/assert-city-links.mjs
+ * calls the same function. The companion card now opens the city's live
+ * /solar-companies page, else its /solar-cost page, and never a redirect.
  */
 
 export type CityLinkVariant = 'savings' | 'companies';
 
-function pickNearby(city: CityData, limit = 6): CityData[] {
-  const others = CITIES.filter((c) => c.slug !== city.slug);
-  const sameCounty = others.filter((c) => c.county === city.county);
-  const sameUtility = others.filter(
-    (c) => c.county !== city.county && c.utilityCode === city.utilityCode,
-  );
-  return [...sameCounty, ...sameUtility].slice(0, limit);
-}
+const BLURB: Record<CityPageType, (name: string) => string> = {
+  companies: (name) =>
+    `Solar companies for ${name}, and what each written proposal should include before you sign.`,
+  cost: (name) =>
+    `What sets the price of a solar system in ${name}: the utility rate, the city's permit rules, and the ownership and property-tax rules.`,
+  savings: (name) =>
+    `The ${name} savings guide: the utility checks, HOA rules and when solar doesn't make sense.`,
+};
+
+const CARD_LABEL: Record<CityPageType, (name: string) => string> = {
+  companies: (name) => `Compare solar companies in ${name}`,
+  cost: (name) => `What solar costs in ${name}`,
+  savings: (name) => `See solar costs and savings in ${name}`,
+};
 
 export function NearbyCities({
   city,
@@ -37,82 +47,29 @@ export function NearbyCities({
   city: CityData;
   variant: CityLinkVariant;
 }) {
-  const nearby = pickNearby(city);
-  // Phase 3 (2026-09-17): 25 /solar-savings city pages now 301 to their
-  // /solar-companies twin. On a /solar-companies page for one of those cities
-  // the companion link would point at a redirect straight back to this page, so
-  // it is suppressed rather than retargeted. See src/lib/canonical-redirects.ts.
-  const showCompanion =
-    variant === 'savings' || hasSavingsCityPage(city.slug);
-  // 2026-09-18: the companies city page for a city with a /solar-cost twin now
-  // 301s there, so the companion link resolves through companiesCityHref() and
-  // the label follows the page it actually opens.
-  const companionRetired =
-    variant === 'savings' && !hasCompaniesCityPage(city.slug);
-  const companionHref =
-    variant === 'savings'
-      ? companiesCityHref(city.slug)
-      : `/solar-savings/${city.slug}`;
-  const companionLabel =
-    variant === 'savings'
-      ? companionRetired
-        ? `What solar costs in ${city.name}`
-        : `Compare solar companies in ${city.name}`
-      : `See solar costs and savings in ${city.name}`;
-  const companionBlurb =
-    variant === 'savings'
-      ? companionRetired
-        ? `Installed cost, the local utility rate and what changes the payback period in ${city.name}.`
-        : `Installer-by-installer comparison for ${city.name}, including who actually serves the area and where each one fits.`
-      : `What ${city.name} homeowners pay now, what solar costs here, and the local rules that change the maths.`;
+  const others = companionCityLinks(city.slug, variant);
+  const card = others[0];
+  const remaining = others.slice(1).map((other) => other.type);
 
   return (
     <div className="mt-10 pt-8 border-t border-border">
       {/* Companion route for the same city */}
-      {showCompanion && (
-      <Link
-        href={companionHref}
-        className="group block rounded-xl border border-primary/25 bg-primary/5 p-5 mb-8 transition-colors hover:border-primary/50"
-      >
-        <span className="flex items-center gap-2 font-semibold text-foreground">
-          {companionLabel}
-          <ArrowRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-0.5" />
-        </span>
-        <span className="mt-1 block text-sm text-muted-foreground">
-          {companionBlurb}
-        </span>
-      </Link>
+      {card && (
+        <Link
+          href={card.href}
+          className="group block rounded-xl border border-primary/25 bg-primary/5 p-5 mb-8 transition-colors hover:border-primary/50"
+        >
+          <span className="flex items-center gap-2 font-semibold text-foreground">
+            {CARD_LABEL[card.type](city.name)}
+            <ArrowRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-0.5" />
+          </span>
+          <span className="mt-1 block text-sm text-muted-foreground">
+            {BLURB[card.type](city.name)}
+          </span>
+        </Link>
       )}
 
-      {nearby.length > 0 && (
-        <>
-          <h3 className="text-lg font-bold text-foreground mb-1">
-            Solar near {city.name}
-          </h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Nearby cities in {city.county} and other areas on the same utility.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
-            {nearby.map((c) => (
-              <Link
-                key={c.slug}
-                href={
-                  variant === 'savings'
-                    ? savingsCityHref(c.slug)
-                    : companiesCityHref(c.slug)
-                }
-                className="text-primary hover:underline font-medium text-sm"
-              >
-                {variant === 'savings' && hasSavingsCityPage(c.slug)
-                  ? `Solar savings in ${c.name}`
-                  : hasCompaniesCityPage(c.slug)
-                    ? `Solar companies in ${c.name}`
-                    : `Solar costs in ${c.name}`}
-              </Link>
-            ))}
-          </div>
-        </>
-      )}
+      <NearbyCityPages slug={city.slug} type={variant} companionTypes={remaining} className="my-0" />
     </div>
   );
 }
