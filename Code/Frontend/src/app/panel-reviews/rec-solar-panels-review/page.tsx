@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -9,11 +10,23 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 
+const metaTitle = "REC Solar Panels Review: Alpha Pure, Where They're Made";
+const metaDescription =
+  "REC is Reliance-owned and makes panels in Singapore, so they miss the domestic-content bonus. Alpha Pure HJT specs, warranty and California installers.";
+
 export const metadata: Metadata = {
-  title: "REC Solar Panels Review: Alpha Pure HJT Series Specs",
-  description: "REC's Alpha Pure uses HJT cells for better hot-weather output. Reliance-owned, made in Singapore. Warranty terms and what to ask a California installer.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/panel-reviews/rec-solar-panels-review' },
-  openGraph: { title: 'REC Solar Panels Review 2026: Alpha Pure Series for California', description: 'REC Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/panel-reviews/rec-solar-panels-review',
+    publishedTime: '2026-04-23T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {

@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -10,10 +11,22 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Option One Solar Apple Valley Reviews (2026): 25-Yr Warranty";
+const metaDescription =
+  "Apple Valley's Option One Solar: a 25-year warranty that includes labor, cash or loan ownership only, and CSLB #985340 as listed on its own site.";
+
 export const metadata: Metadata = {
-  title: "Option One Solar Reviews (2026): 25-Yr Warranty, Labor Incl.",
-  description: "Option One Solar (Apple Valley) covers equipment, workmanship, and labor for 25 years and pushes ownership over leases. Yelp runs 4.9/5 in top listings.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/option-one-solar-review' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/option-one-solar-review',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {

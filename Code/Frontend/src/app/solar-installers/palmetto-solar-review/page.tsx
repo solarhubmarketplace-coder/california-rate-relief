@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -11,10 +12,22 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
+const metaTitle = "Palmetto Solar Reviews (2026): LightReach & Court Record";
+const metaDescription =
+  "Palmetto's LightReach plan in its own words, what happens when you sell, its CSLB license, and 8 federal dockets naming Palmetto, searched Sept. 18, 2026.";
+
 export const metadata: Metadata = {
-  title: "Palmetto Solar Reviews (2026): Contracts and What to Check",
-  description: "What Palmetto's LightReach Energy Plan is in its own words, the sale-transfer process, CSLB license, and California court record. Sourced and dated.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/palmetto-solar-review' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/palmetto-solar-review',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {

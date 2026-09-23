@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -9,9 +10,9 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 
-const title = "Solar Carports in California: Cost, Scope, and Quotes";
+const title = "Residential Solar Carports in California: Permits & Quotes";
 const description =
-  "What a California solar carport actually costs versus a roof mount, and the scope items to separate before you sign.";
+  "Why a California solar carport usually needs a standard building permit, not SolarAPP+, and the scope lines to price separately from the solar equipment.";
 
 export const metadata: Metadata = {
   title,
@@ -24,7 +25,9 @@ export const metadata: Metadata = {
     publishedTime: '2026-04-24T00:00:00Z',
     modifiedTime: '2026-09-22T00:00:00Z',
     url: 'https://ratereliefca.com/blog/solar-carport-california-guide',
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(title, description),
 };
 
 export default function SolarCarportCAGuide() {

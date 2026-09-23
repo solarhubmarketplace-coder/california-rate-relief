@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -12,24 +13,29 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
+const metaTitle = "Solar Pool Heating in California: Cost and Season by Region";
+const metaDescription =
+  "Solar pool heater sizing and cost by pool size, extra swim weeks from coastal SoCal to Palm Springs and the Bay Area, and solar vs heat pump vs gas.";
+
 export const metadata: Metadata = {
-  title: "Solar Pool Heating in California: Cost by Region & ROI",
-  description:
-    "What a solar pool heater costs in California, how much swim season it adds by region, and when a heat pump wins instead.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/blog/solar-pool-heating-california' },
   openGraph: {
-    title: 'Solar Pool Heating in California: Cost by Region & ROI',
-    description: 'What a solar pool heater costs in California, how much swim season it adds by region, and when a heat pump wins instead.',
+    title: metaTitle,
+    description: metaDescription,
     type: 'article',
-    publishedTime: '2026-04-24T00:00:00Z',
     url: 'https://ratereliefca.com/blog/solar-pool-heating-california',
+    publishedTime: '2026-04-24T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 export default function SolarPoolHeatingCA() {
   return (
     <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Pool Heating in California: Cost by Region & ROI"} url="https://ratereliefca.com/blog/solar-pool-heating-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar pool heating cost in California, how panels work, when they beat heat-pump pool heaters, permits, and realistic swim-season extension. No fluff — real 2026 numbers."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Pool Heating in California: Cost and Season by Region"} url="https://ratereliefca.com/blog/solar-pool-heating-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Solar pool heating cost in California, how panels work, when they beat heat-pump pool heaters, permits, and realistic swim-season extension. No fluff — real 2026 numbers."} />
       <Header />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
@@ -45,7 +51,7 @@ export default function SolarPoolHeatingCA() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Pool Heating · California</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
-                Solar Pool Heating in California: Cost and ROI by Region
+                Solar Pool Heating in California: Cost and Season by Region
               </h1>
               <p className="text-lg text-muted-foreground">
                 Solar pool heaters cost and pay back differently depending on where you live in California &mdash; a hot inland climate like Palm Springs behaves differently than the coast or Los Angeles. This page breaks down installation cost, how many swim weeks you actually gain, and when a heat-pump pool heater is the smarter choice instead. Find your region before comparing the numbers.

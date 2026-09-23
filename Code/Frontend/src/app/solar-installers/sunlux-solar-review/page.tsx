@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -10,10 +11,22 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Sunlux Solar Reviews (2026): 25-Year Warranty, CSLB Check";
+const metaDescription =
+  "Sunlux's warranty page covers panels, inverter and racking for 25 years. No CSLB number appears on its site (Sept. 2026). What to confirm before signing.";
+
 export const metadata: Metadata = {
-  title: "Sunlux Solar Reviews (2026): Google 4.7/5, BBB A+ Rating",
-  description: "Sunlux has completed 7,000+ installs with Google 4.7/5 across 550+ reviews and a BBB A+ file. In-house crews, no PPA focus. The honest review.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/sunlux-solar-review' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/sunlux-solar-review',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {

@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -11,26 +12,29 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Sunrun Reviews (2026): Is Sunrun Going Out of Business?";
+const metaDescription =
+  "What Sunrun's investor site showed on Sept. 18, 2026 about bankruptcy or a wind-down, plus PPA vs. lease terms, the Sunrun Guarantee and Vivint contracts.";
+
 export const metadata: Metadata = {
-  title: "Sunrun Reviews (2026): Is It Still in Business?",
-  description: "Sunrun 2026 business status from its own investor filings, plus PPA vs. lease terms and Tesla Powerwall availability, sourced and dated.",
-  alternates: {
-    canonical: '/solar-installers/sunrun-review',
-  },
+  title: metaTitle,
+  description: metaDescription,
+  alternates: { canonical: '/solar-installers/sunrun-review' },
   openGraph: {
-    title:
-      'Sunrun Reviews (2026): California Solar + Vivint Solar, Compared',
-    description:
-      'What California homeowners need to know about Sunrun in 2026, including the Vivint Solar absorption and current reputation data.',
+    title: metaTitle,
+    description: metaDescription,
     type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/sunrun-review',
     publishedTime: '2026-04-22T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Sunrun Review 2026: California Solar + Vivint Solar, Compared',
+  headline: 'Sunrun Reviews (2026): Business Status, Contracts and Vivint Solar',
   description:
     'An honest 2026 review of Sunrun for California homeowners, including what the Vivint Solar acquisition means for legacy customers.',
   datePublished: '2026-04-22',
@@ -89,8 +93,7 @@ export default function SunrunReview() {
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunrun Reviews (2026): California Solar + Vivint Solar,
-                Compared
+                Sunrun Reviews (2026): Business Status, Contracts and Vivint Solar
               </h1>
               
               <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

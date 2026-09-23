@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -10,10 +11,22 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Elevation Solar Reviews (2026): What the Contract Says";
+const metaDescription =
+  "Elevation's own purchase agreement: 10-year workmanship and roof-penetration warranties and a 3-day cancel right (5 if 65+). No CSLB number on its site.";
+
 export const metadata: Metadata = {
-  title: "Elevation Solar Reviews (2026): 90 BBB Complaints, Delays",
-  description: "Elevation Solar reports 19,000+ installs but carries 90 BBB complaints in 3 years and reported 6 to 12+ month activation delays. What to check first.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/elevation-solar-review' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/elevation-solar-review',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {

@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -8,13 +9,25 @@ import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Sunrun vs SunPower (2026): After SunPower's Bankruptcy";
+const metaDescription =
+  "SunPower filed Chapter 11 in 2024; Complete Solaria now runs the brand. Sunrun vs SunPower on warranty, ownership, CSLB license and pre-2024 systems.";
+
 export const metadata: Metadata = {
-  title: "Sunrun vs SunPower: Comparison After the 2024 Bankruptcy",
-  description: "SunPower filed Chapter 11 in 2024; Complete Solaria now runs the brand for California customers. Here's how Sunrun and SunPower actually compare now.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/sunrun-vs-sunpower' },
-  openGraph: { title: 'Sunrun vs SunPower: Comparison After the 2024 Bankruptcy', description: "SunPower filed Chapter 11 in 2024; Complete Solaria now runs the brand for California customers. Here's how Sunrun and SunPower actually compare now.", type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunrun-vs-sunpower' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/sunrun-vs-sunpower',
+    publishedTime: '2026-04-24T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Sunrun vs SunPower: Comparison After the 2024 Bankruptcy', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
+const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: "Sunrun vs. SunPower: How They Compare After SunPower's 2024 Bankruptcy", datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function SunrunVsSunPower() {
   return (
@@ -29,7 +42,7 @@ export default function SunrunVsSunPower() {
             </nav>
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Installer Comparison</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunrun vs. SunPower: How They Compare After the 2024 Bankruptcy</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunrun vs. SunPower: How They Compare After SunPower&apos;s 2024 Bankruptcy</h1>
 
               <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <p className="text-lg text-muted-foreground">SunPower filed for Chapter 11 bankruptcy in 2024; Complete Solaria acquired the business and now runs it under the SunPower brand for California customers. That ownership change is the main thing to know before comparing the two companies on price, equipment and service. Here&apos;s how Sunrun and SunPower actually stack up now.</p>

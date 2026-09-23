@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -10,10 +11,22 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "LA Solar Group Reviews (2026): In-House Panels, Court Check";
+const metaDescription =
+  "LA Solar Group makes its own panels. What that means for the warranty, the complaint themes, and the 2 federal dockets naming it (searched Sept. 18, 2026).";
+
 export const metadata: Metadata = {
-  title: "LA Solar Group Reviews (2026): Ratings & Complaints",
-  description: "LA Solar Group makes its own panels. What the federal court record shows as of September 2026, plus the warranty trade-off that follows.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/la-solar-group-review' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/la-solar-group-review',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {

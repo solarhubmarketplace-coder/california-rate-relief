@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -10,10 +11,22 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Baker Electric San Diego vs Baker Home Energy: Solar Review";
+const metaDescription =
+  "Two Baker websites, two CSLB license numbers (#161756 and #858088). Which entity handles home solar in San Diego, plus warranty and what to verify.";
+
 export const metadata: Metadata = {
-  title: "Baker Electric Solar Reviews (2026): San Diego Ratings",
-  description: "Baker Electric Solar in San Diego: the Baker Home Energy naming question resolved at source, plus licences, warranty and what to verify.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/baker-electric-solar-review' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/baker-electric-solar-review',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {

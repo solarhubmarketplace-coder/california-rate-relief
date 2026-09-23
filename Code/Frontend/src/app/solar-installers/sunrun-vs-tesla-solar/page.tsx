@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -8,11 +9,23 @@ import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Sunrun vs Tesla Solar (2026): Warranty, Lease and Powerwall";
+const metaDescription =
+  "Sunrun vs Tesla in California, side by side: each one's published warranty, CSLB license numbers, lease and PPA options, Powerwall and home-sale transfer.";
+
 export const metadata: Metadata = {
-  title: "Sunrun vs Tesla Solar (2026): Price, Install Time Compared",
-  description: "Sunrun vs Tesla Solar: cash pricing, finance options, Powerwall integration, install timelines and service, compared for California.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/sunrun-vs-tesla-solar' },
-  openGraph: { title: 'Sunrun vs Tesla Solar (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunrun-vs-tesla-solar' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/sunrun-vs-tesla-solar',
+    publishedTime: '2026-04-24T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Sunrun vs Tesla Solar', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 

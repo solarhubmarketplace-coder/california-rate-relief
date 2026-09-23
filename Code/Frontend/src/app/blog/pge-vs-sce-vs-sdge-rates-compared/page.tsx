@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import { SolarCalculator } from '@/components/growth/SolarCalculator';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
@@ -11,14 +12,16 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 
-const title = "PG&E vs SCE vs SDG&E Rates: Which Costs More in 2026";
-const description = "SDG&E averaged 45.5c/kWh, SCE 34.4c and PG&E 33.7c per kWh in June 2026, per the CPUC Public Advocates Office. See rate plans and sample bills.";
+const title = "PG&E vs SCE vs SDG&E (2026): Rates per kWh and Sample Bills";
+const description =
+  "Is PG&E the most expensive? No: SDG&E's June 2026 average is highest, and PG&E and SCE sit within a cent. Public Advocates data, sample bills, CCA effects.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/blog/pge-vs-sce-vs-sdge-rates-compared' },
-  openGraph: { title, description, type: 'article', publishedTime: '2026-04-14T00:00:00Z', modifiedTime: '2026-09-18T00:00:00Z', url: 'https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared' },
+  openGraph: { title, description, type: 'article', publishedTime: '2026-04-14T00:00:00Z', modifiedTime: '2026-09-18T00:00:00Z', url: 'https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared', images: [CRR_SOCIAL_CARD] },
+  twitter: crrTwitter(title, description),
 };
 
 const sourceLink = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';

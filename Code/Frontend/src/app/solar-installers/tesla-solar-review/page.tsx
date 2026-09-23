@@ -1,6 +1,7 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -10,16 +11,28 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 
+const metaTitle = "Tesla Solar Reviews (2026): Panels, Powerwall, Weak Service";
+const metaDescription =
+  "Tesla sells its own-brand panels, inverter and Powerwall. The equipment, warranty and install model, and why post-install service is the common complaint.";
+
 export const metadata: Metadata = {
-  title: "Tesla Solar Reviews (2026): Pricing, Service and Contracts",
-  description: "Tesla Solar sells solar and Powerwall in California. Post-install service is its weakest part. What to compare in its written quote before you sign.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/solar-installers/tesla-solar-review' },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-installers/tesla-solar-review',
+    images: [CRR_SOCIAL_CARD],
+  },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Tesla Solar Review 2026: Best Price, But Watch the Service',
+  headline: 'Tesla Solar Reviews (2026): Panels, Powerwall, Weak Service',
   datePublished: '2026-04-22',
   dateModified: '2026-04-22',
   author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
@@ -56,7 +69,7 @@ export default function TeslaSolarReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Tesla Solar Reviews (2026): Best Price, But Watch the Service
+                Tesla Solar Reviews (2026): Panels, Powerwall, Weak Service
               </h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />

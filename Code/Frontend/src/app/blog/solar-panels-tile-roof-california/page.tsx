@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -25,19 +26,23 @@ const TRI_SOLAR_TECH_BRIEF_URL =
 const DOE_ROOF_REPLACEMENT_URL =
   'https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar';
 
+const metaTitle = "Solar Roof Tiles vs Panels on a Tile Roof in California";
+const metaDescription =
+  "Clay or concrete tile mounts, what breaks tiles, setbacks and a future re-roof, and how solar roof tiles differ as a project. Get these in writing first.";
+
 export const metadata: Metadata = {
-  title: "Solar Panels on a Tile Roof in California: What to Ask",
-  description:
-    "Panels mounted on a tile roof and solar roof tiles are different scopes. Get the roof, permit and license details in writing before you compare quotes.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: '/blog/solar-panels-tile-roof-california' },
   openGraph: {
-    title: 'Solar Roof Tiles vs. Panels on a Tile Roof in California',
-    description:
-      'Understand the difference between solar panels on an existing tile roof and solar tiles that serve as the roof covering.',
+    title: metaTitle,
+    description: metaDescription,
     type: 'article',
-    modifiedTime: '2026-09-22T00:00:00Z',
     url: 'https://ratereliefca.com/blog/solar-panels-tile-roof-california',
+    modifiedTime: '2026-09-22T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 export default function SolarTileRoofCalifornia() {

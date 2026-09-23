@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 import Link from "next/link";
 import { DecisionPage } from "./DecisionPage";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
@@ -74,9 +75,9 @@ const definitions = {
     title: "Free Solar for Seniors in California: Which Programs Actually Apply",
     intro:
       "Being a senior does not, by itself, qualify you for free solar in California. Eligibility depends on your income, your property, your utility territory and whether program funding is currently available — starting with DAC-SASH, the state's low-income solar program. This page checks what actually applies to you, not just what the ads promise.",
-    metaTitle: "Free Solar for Seniors in California: Are You Eligible?",
+    metaTitle: "Free Solar for Seniors in California? What Actually Applies",
     metaDescription:
-      "Being a senior alone doesn't qualify you for free solar in California — see which income and utility-based programs actually apply.",
+      "Age alone doesn't qualify a California homeowner for no-cost solar. DAC-SASH turns on income and location; CARE and FERA cut the bill. What to check first.",
   },
   // 2026-09-17 refresh (claude/ca-green-20260918). The 2026-09-10 reviewed
   // wording was: title "Free solar panels in California: what does the offer
@@ -91,9 +92,9 @@ const definitions = {
     title: "Can you get solar panels for free in California?",
     intro:
       "Usually not, and the CPUC says so in those terms. A small number of government-funded programmes are genuinely no-cost for households that qualify. Everything else advertised as free is a payment contract with the payment moved somewhere you have not looked yet.",
-    metaTitle: "Can You Get Solar Panels for Free in California?",
+    metaTitle: "Are Free Solar Panels Real in California? The CPUC Answer",
     metaDescription:
-      "Most offers advertised as free are financing, a lease or a PPA. A small number of government programs are genuinely no-cost. How to tell which one you are in.",
+      "The CPUC says solar is “rarely free.” The 4 things a free-solar ad can mean, the no-cost state program for income-qualified homeowners, and SOMAH.",
   },
   income: {
     path: "/blog/low-income-solar-california",
@@ -123,7 +124,9 @@ export function assistanceMetadata(kind: AssistanceKey): Metadata {
       url: `https://ratereliefca.com${path}`,
       modifiedTime:
         kind === "free" ? "2026-09-22T00:00:00Z" : "2026-09-10T00:00:00Z",
+      images: [CRR_SOCIAL_CARD],
     },
+    twitter: crrTwitter(metaTitle, metaDescription),
   };
 }
 function TaxTiming() {

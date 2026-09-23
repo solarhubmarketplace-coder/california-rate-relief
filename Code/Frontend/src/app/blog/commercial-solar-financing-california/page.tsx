@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 import { CommercialReviewButton, CommercialReviewForm } from "@/components/growth/CommercialReview";
 
@@ -17,18 +18,23 @@ const sources: Source[] = [
   },
 ];
 
+const metaTitle = "Commercial Solar Financing in California: 4 Options Compared";
+const metaDescription =
+  "Four ways a California business can pay for solar: purchase or loan, PPA, PACE and SBA-backed lending. Who owns the system and which documents to compare.";
+
 export const metadata: Metadata = {
-  title: "Commercial Solar Financing in California: PACE, SBA, PPA",
-  description: "Compare purchase, loan, PPA, PACE and SBA financing documents for the same commercial solar project before choosing ownership and payment terms.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: "/blog/commercial-solar-financing-california" },
   openGraph: {
-    title: "Commercial solar financing in California: documents to compare",
-    description:
-      "A contract-first checklist for California commercial solar financing proposals.",
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: "https://ratereliefca.com/blog/commercial-solar-financing-california",
     modifiedTime: "2026-09-11T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 // The page's one ask (2026-09-23): the inline commercial form, which replaced

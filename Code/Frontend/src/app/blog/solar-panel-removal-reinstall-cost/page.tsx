@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
@@ -18,18 +19,23 @@ const sources: Source[] = [
   },
 ];
 
+const metaTitle = "Solar Panel Removal for Roof Replacement: CA Quote Checklist";
+const metaDescription =
+  "Removing panels for roof work? Check who owns the system and what the contract requires, then get removal, storage, reinstall and permits itemized.";
+
 export const metadata: Metadata = {
-  title: "Solar Panel Removal and Reinstall Quotes in California",
-  description: "Before roof work or a solar-system change, compare the removal, storage, reinstallation, permit, warranty and contract terms in writing.",
+  title: metaTitle,
+  description: metaDescription,
   alternates: { canonical: "/blog/solar-panel-removal-reinstall-cost" },
   openGraph: {
-    title: "Solar panel removal and reinstallation in California: quote checklist",
-    description:
-      "How to compare the scope and documents for a California solar removal and reinstallation project.",
+    title: metaTitle,
+    description: metaDescription,
     type: "article",
     url: "https://ratereliefca.com/blog/solar-panel-removal-reinstall-cost",
     modifiedTime: "2026-09-11T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 export default function SolarPanelRemovalReinstallCost() {
