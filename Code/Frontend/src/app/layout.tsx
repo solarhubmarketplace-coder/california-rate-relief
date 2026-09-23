@@ -52,8 +52,11 @@ const DOMAIN_DEFAULTS = {
     siteName: 'California Rate Relief',
     ogImage: '/crr-social-card',
     ogAlt: 'California Rate Relief: understand your bill and explore your solar options',
-    favicon: '/favicon.ico',
-    appleTouchIcon: '/favicon.ico',
+    // CRR's own tab icon (the header logo's teal circle and lightning bolt,
+    // simplified to read at 16px). The shared /favicon.ico is a generic heart
+    // used by other sites in this codebase; CRR no longer uses it.
+    favicon: '/img/favicons/crr-favicon.ico',
+    appleTouchIcon: '/img/favicons/crr-apple-touch-icon.png',
   },
   greenreviewshub: {
     base: 'https://greenreviewshub.com',
