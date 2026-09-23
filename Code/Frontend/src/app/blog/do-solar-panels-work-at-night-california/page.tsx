@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
@@ -40,6 +41,11 @@ export default function DoSolarPanelsWorkAtNight() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Short answer: no. Solar panels do not produce electricity at night. Solar photovoltaic (PV) cells need sunlight to generate current, and without sunlight they sit idle. But that&apos;s not the end of the story — homes with solar still run electricity through the night, either from a battery that stored the day&apos;s solar production, or from the utility grid. Here&apos;s exactly how it works in California and how NEM 3.0 changes the calculation.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="California solar and battery night power" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How Solar Panels Actually Produce Power</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

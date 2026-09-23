@@ -2004,6 +2004,9 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
       sourceCheckedDate={sourceCheckedDate}
       utility={utility}
       faq={faq}
+      // The calculator page opens with the calculator itself; a bill-first
+      // quick check above it would be a second first step on the same screen.
+      quickCheck={kind === 'calculator' ? false : undefined}
     >
       {content}
     </DecisionPage>

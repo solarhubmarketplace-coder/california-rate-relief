@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
@@ -40,6 +41,11 @@ export default function DoSolarPanelsWorkOnCloudyDays() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Yes. Solar panels work on cloudy days — just at reduced output. Diffuse light still contains photons, and solar cells still produce current, just less of it. For California homeowners, cloudy-day performance typically runs somewhere between 10% and 25% of peak sunny-day output, depending on cloud thickness. Over a full year, California&apos;s typical 260-300 sunny days leave relatively few fully cloudy days to worry about — and even those contribute meaningfully to annual production.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="California solar panels on cloudy days" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How Much Power Do Solar Panels Make on Cloudy Days?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

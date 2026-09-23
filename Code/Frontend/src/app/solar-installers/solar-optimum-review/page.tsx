@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
@@ -61,6 +62,11 @@ export default function SolarOptimumReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Solar Optimum is a Glendale, California solar contractor, and this page reports only what could be independently verified about the company as of <strong>September 18, 2026</strong>. It does not publish a star rating, review count or complaint count, because those figures could not be re-confirmed at their original sources. What follows is the equipment and warranty structure, plus a dated federal court-record check.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Solar Optimum review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Corporate Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

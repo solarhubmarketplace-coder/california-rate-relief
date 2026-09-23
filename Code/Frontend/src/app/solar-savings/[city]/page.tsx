@@ -4,6 +4,7 @@ import SavingsCalculator from '@/components/SavingsCalculator';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { LadwpSavingsGuide, ladwpSavingsTitle, ladwpSavingsDescription } from '@/components/growth/LadwpSavingsGuide';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -22,7 +23,13 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { NearbyCities } from '@/components/shared/NearbyCities';
 import { Byline } from '@/components/trust/Byline';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { cityPageDates, cityPageMetadata, regionalHubsFor, savingsPageSeo } from '@/lib/city-pages';
+import {
+  cityPageDates,
+  cityPageMetadata,
+  cityQuickCheckUtility,
+  regionalHubsFor,
+  savingsPageSeo,
+} from '@/lib/city-pages';
 
 // =============================================================================
 // STATIC PARAMS — Pre-renders all city pages at build time
@@ -116,11 +123,13 @@ export default async function CityPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="py-16 bg-background">
+      {/* Top spacing is tighter on phones so the quick check under the byline
+          fits a 390x844 screen whole (2026-09-23); md and up unchanged. */}
+      <main className="pb-16 pt-8 md:pt-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
             {/* Breadcrumb (matches the BreadcrumbList schema) */}
-            <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
+            <nav aria-label="Breadcrumb" className="mb-4 md:mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
               <Link href="/" className="hover:text-primary">Home</Link>
               <span>/</span>
               {hub && (
@@ -141,6 +150,15 @@ export default async function CityPage({ params }: PageProps) {
                 {seo.h1}
               </h1>
               <Byline updated={dates.modified} className="mb-4" />
+              {/* Bill-first step, right under the H1 and byline so it is on a
+                  phone's first screen. It sends nothing; it opens the inquiry
+                  form further down at step 2. */}
+              <HeroQuickCheck
+                compact
+                utility={cityQuickCheckUtility('savings', city.slug)}
+                topic={`${city.name} solar savings and quote comparison`}
+                className="mb-6"
+              />
               <p className="text-lg text-muted-foreground">
                 A data-driven guide for {city.name} homeowners — your local
                 rates, solar costs, incentives, HOA rules, and every option for

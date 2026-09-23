@@ -4,6 +4,8 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title: 'Solar Savings Blog | California Rate Relief Program',
@@ -573,6 +575,10 @@ export default function BlogPage() {
               </p>
             </div>
 
+            {/* Bill-first step (2026-09-23); it opens the inquiry form at the
+                end of the list at step 2. */}
+            <HeroQuickCheck topic="California solar guides" className="mb-12" />
+
             {/* Blog Posts */}
             <div className='space-y-8'>
               {blogPosts.map((post) => (
@@ -623,22 +629,10 @@ export default function BlogPage() {
               ))}
             </div>
 
-            {/* CTA Section */}
-            <div className='mt-16 bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center'>
-              <h2 className='text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight'>
-                Ready to Cut Your Electric Bill?
-              </h2>
-              <p className='text-muted-foreground mb-6 max-w-xl mx-auto'>
-                Check if you qualify for the California Rate Relief Program in 60
-                seconds. No obligation, no cost.
-              </p>
-              <Link
-                href='/#qualify'
-                className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-              >
-                Check My Eligibility
-                <ArrowRight className='h-4 w-4' />
-              </Link>
+            {/* The closing ask (2026-09-23): the inquiry form itself, in place of
+                a link-only box that sent readers to the home page. */}
+            <div className='mt-16'>
+              <SolarInquiry topic="California solar guides" />
             </div>
           </div>
         </div>

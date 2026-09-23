@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { IntentCTA } from '@/components/growth/IntentCTA';
 import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
 import { cityCostPath, getPublishableCityCostRows } from '@/data/city-cost-data';
 import { getUtilityRate, RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 // =============================================================================
 // /solar-cost — the index of the city cost layer.
@@ -160,6 +161,10 @@ export default function SolarCostIndex() {
               date it was checked.
             </p>
 
+            {/* Bill-first step after the intro (2026-09-23); it opens the inquiry
+                form at the end of the page at step 2. */}
+            <HeroQuickCheck topic="California solar cost by city" className='mb-10' />
+
             <StatewideCostBenchmark />
 
             <p className='text-foreground/80 leading-relaxed mb-5'>
@@ -242,7 +247,9 @@ export default function SolarCostIndex() {
               </ul>
             </section>
 
-            <IntentCTA variant='bill' />
+            {/* The closing ask (2026-09-23): the inquiry form itself, in place of
+                the link-only box that sent readers to the home page. */}
+            <SolarInquiry variant='bill' topic="California solar cost by city" />
           </div>
         </div>
       </main>

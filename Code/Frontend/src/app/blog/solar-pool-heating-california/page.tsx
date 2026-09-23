@@ -11,6 +11,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 export const metadata: Metadata = {
   title: "Solar Pool Heating in California: Cost by Region & ROI",
   description:
@@ -55,6 +56,11 @@ export default function SolarPoolHeatingCA() {
               <p className="p-4 rounded-lg border border-border bg-card text-sm">
                 <strong>TL;DR:</strong> A solar pool heater in California costs $3,000–$7,000 installed and extends your swim season by 2–4 months (typically May through October instead of June through September). Payback vs gas heating is 2–3 years. Heat-pump pool heaters cost more upfront ($4,500–$9,000) but work year-round and perform better with cloud cover — worth comparing if you want a true 12-month pool.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="California solar pool heating" />
+              </div>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Solar Pool Heating Works</h2>
               <p>

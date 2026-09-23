@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { IntentCTA } from '@/components/growth/IntentCTA';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title:
@@ -100,6 +101,11 @@ export default function CaliforniaPublicUtilitiesCommission() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Every time your electricity rate goes up, a fixed charge appears on your bill, or net metering rules change, one agency is behind it: the California Public Utilities Commission (CPUC). If you pay an electric bill in California, the CPUC&apos;s decisions directly determine how much you pay. Here&apos;s what this agency actually does, who runs it, and what their recent rulings mean for your wallet.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="CPUC rules and solar comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What Is the CPUC?
@@ -210,8 +216,9 @@ export default function CaliforniaPublicUtilitiesCommission() {
               </p>
             </div>
 
-            <IntentCTA cta='article_cta' variant='bill' />
-
+            {/* The closing ask is the inquiry form itself (2026-09-23); the link-only
+                box it replaced sent this form-less page to the home page. */}
+            <SolarInquiry topic="CPUC rules and solar comparison" variant="bill" />
             {/* Navigation */}
             <div className='mt-10 pt-8 border-t border-border flex justify-between items-center'>
               <Link

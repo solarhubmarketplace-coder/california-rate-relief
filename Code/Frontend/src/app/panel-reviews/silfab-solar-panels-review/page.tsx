@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -53,6 +54,11 @@ export default function SilfabSolarReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Silfab Solar is a tier-1 residential panel manufacturer with a major differentiator: it manufactures panels in the United States and Canada, which qualifies Silfab modules for the Inflation Reduction Act&apos;s domestic-content bonus. For California homeowners who want US-made panels without paying the premium for Tesla or Qcells, Silfab is often the top pick. Here&apos;s an honest review.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Silfab Solar panels review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Company</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

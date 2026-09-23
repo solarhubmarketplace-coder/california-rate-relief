@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { IntentCTA } from '@/components/growth/IntentCTA';
 import { articleHref, articlesInCluster } from '@/data/article-pages';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 // =============================================================================
 // /solar-installers — the index of the installer review section.
@@ -289,6 +290,10 @@ export default function SolarInstallersIndex() {
               is where a commercial bid gets checked against a published figure.
             </p>
 
+            {/* Bill-first step after the intro (2026-09-23); it opens the inquiry
+                form at the end of the page at step 2. */}
+            <HeroQuickCheck topic="California solar installer comparison" className='mb-12' />
+
             <section className='mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
                 Company reviews
@@ -325,7 +330,9 @@ export default function SolarInstallersIndex() {
               </ul>
             </section>
 
-            <IntentCTA variant='review' />
+            {/* The closing ask (2026-09-23): the inquiry form itself, in place of
+                the link-only box that sent readers to the home page. */}
+            <SolarInquiry variant='review' topic="California solar installer comparison" />
           </div>
         </div>
       </main>

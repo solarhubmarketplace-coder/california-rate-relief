@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -69,6 +70,11 @@ export default function SCERateIncrease2026() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Contrary to earlier projections, Southern California Edison rates actually decreased by approximately 2-3% as of January 1, 2026. However, don&apos;t celebrate too soon — SCE&apos;s rates remain among the highest in the country at 34.5 cents per kilowatt-hour, with peak time-of-use rates reaching 58-74 cents. For most SCE customers, the rate decrease barely offsets inflationary pressures, and with multi-year rate increases already approved through 2028, the relief is temporary. If you&apos;re an SCE customer, this article breaks down what&apos;s really happening, why rates are still crushing, and what you can actually do about it.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="SCE rate increase and solar comparison" utility="sce" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What&apos;s Actually Changing

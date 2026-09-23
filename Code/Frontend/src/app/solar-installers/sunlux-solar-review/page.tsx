@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -70,6 +71,11 @@ export default function SunluxReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Sunlux is a Southern California solar installer (with Texas operations) that has built a meaningful scale — more than 7,000 completed installations, while maintaining customer reputation metrics well above the national PPA-heavy installers. Google shows 4.7/5 across 550+ reviews, Yelp holds at 3.8/5, and the BBB profile is A+ (not accredited, which is common and not a red flag). For SoCal cash and loan buyers, Sunlux sits in the upper tier of our comparison.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Sunlux Solar review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

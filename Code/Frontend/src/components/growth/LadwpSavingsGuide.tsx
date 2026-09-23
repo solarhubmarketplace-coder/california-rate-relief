@@ -19,6 +19,7 @@ export function LadwpSavingsGuide() {
       path="/solar-savings/los-angeles"
       utility="ladwp"
       topic="Los Angeles LADWP solar savings comparison"
+      quickCheck="afterByline"
       sourceCheckedDate="2026-09-11"
       sources={[
         {

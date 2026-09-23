@@ -11,7 +11,7 @@ import {
   CityQuestions,
 } from "./CityLocalDetails";
 import { NearbyCityPages } from "./NearbyCostCities";
-import { companiesPageSeo } from "@/lib/city-pages";
+import { cityQuickCheckUtility, companiesPageSeo } from "@/lib/city-pages";
 export function CityComparison({ slug }: { slug: string }) {
   const city = growthCities[slug];
   // 2026-09-22: link to the /solar-cost/<city> twin when one is actually
@@ -33,6 +33,10 @@ export function CityComparison({ slug }: { slug: string }) {
       sources={city.sources}
       utility={city.utility}
       sourceCheckedDate={city.sourceCheckedDate}
+      // Bill-first step right under the H1 and byline (a phone's first
+      // screen); no utility pre-selected for a city split between utilities.
+      quickCheck="afterByline"
+      quickCheckUtility={cityQuickCheckUtility("companies", slug)}
     >
       {city.provider ? (
         <CityPublishedProvider slug={slug} />

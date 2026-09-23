@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -34,6 +35,11 @@ export default function SunrunVsTeslaSolar() {
 <p className="text-lg text-muted-foreground">Sunrun is the biggest residential solar installer in America. Tesla Solar is the only installer that builds its own panels, inverters, batteries, and app. Here&apos;s the real comparison.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="Sunrun vs Tesla Solar comparison" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">At a Glance</h2>
               <div className="overflow-x-auto my-6">
                 <table className="w-full border-collapse text-sm">

@@ -6,6 +6,7 @@ import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { ArticleJsonLd } from "@/components/shared/ArticleJsonLd";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 
 const title = "Why Is My LADWP Bill So High? Rates & Fees Explained";
 const description =
@@ -86,6 +87,11 @@ export default function WhyIsMyLADWPBillSoHigh() {
               <time dateTime="2026-09-11">September 11, 2026</time>
             </p>
           </header>
+
+          {/* Bill-first step after the intro; it opens the inquiry form below
+              at step 2. Outside the body wrapper, whose descendant p rules
+              would restyle it. */}
+          <HeroQuickCheck topic="LADWP bill and solar comparison" utility="ladwp" className="mb-8" />
 
           <div className="max-w-none [&>h2]:mb-4 [&>h2]:mt-10 [&>h2]:text-2xl [&>h2]:font-bold [&_p]:my-4 [&_p]:leading-7 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_li]:my-2 [&_table]:w-full [&_table]:border-collapse [&_th]:border-b [&_th]:border-border [&_th]:p-3 [&_th]:text-left [&_td]:border-b [&_td]:border-border [&_td]:p-3">
             <aside className="rounded-xl border border-border bg-muted/30 p-5">

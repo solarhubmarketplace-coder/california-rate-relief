@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
@@ -99,6 +100,11 @@ export default function SolarPanelInspectionCalifornia() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Solar panel inspections are not legally required in California, but they&apos;re increasingly recommended for system owners. If your panels are more than 3 to 5 years old, production has dropped unexpectedly, or you&apos;re preparing to sell your home, an inspection can identify problems early and keep your system running efficiently. Here&apos;s what a professional inspection includes, what it costs, and when you actually need one.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Solar panel inspection and maintenance in California" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 Do You Need a Solar Inspection? (The Honest Answer)

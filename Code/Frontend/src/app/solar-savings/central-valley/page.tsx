@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -94,6 +95,9 @@ export default function CentralValleySolarPage() {
                 The Central Valley is California's agriculture heartland and a solar powerhouse. Residents pay {(pgeUtility.ratePerKwh * 100).toFixed(1)}¢ per kWh on average to PG&E, with peak rates spiking to {pgeUtility.peakTouRate} during summer months. A typical Central Valley household spends $2,800-3,500 annually on electricity — but solar combined with a fixed-rate power purchase agreement can reduce that by 30-50%.
               </p>
             </div>
+
+            {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+            <HeroQuickCheck topic="Central Valley solar savings and quote comparison" utility="pge" className='mb-12' />
 
             {/* Info Section */}
             <div className='grid md:grid-cols-3 gap-6 mb-12'>

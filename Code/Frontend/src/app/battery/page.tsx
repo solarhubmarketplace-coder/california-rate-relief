@@ -13,8 +13,8 @@ export const metadata: Metadata = {
  *   - CollectionPage + ItemList of the cluster's guides. This route is an index,
  *     not an article — the writing is on the child pages, each of which emits its
  *     own Article node. Do not add an Article here.
- *   - <Header/> for the sitewide eligibility CTA and <ArticleCTA/> for the
- *     in-body one.
+ *   - <Header/> for the sitewide eligibility CTA, and HeroQuickCheck after the
+ *     intro with SolarInquiry at the end as the in-body ask (2026-09-23).
  */
 export default function Page() {
   return (

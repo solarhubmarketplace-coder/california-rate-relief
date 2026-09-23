@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -98,6 +99,11 @@ export default function SolarPPAExplainedCalifornia() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 A solar PPA (Power Purchase Agreement) is a financing model that puts solar panels on your roof with zero upfront cost. Instead of owning the system, you pay the company a fixed rate per kilowatt-hour (kWh) of power it produces. For California homeowners facing electricity rates of 35-46 cents per kWh, a PPA locking in 8-15 cents per kWh represents dramatic savings. This article explains how PPAs work, what you actually pay, and whether one makes sense for your situation.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="California solar PPA explanation and options" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What Is a Solar PPA?

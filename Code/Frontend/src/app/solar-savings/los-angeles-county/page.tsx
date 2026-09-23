@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -101,6 +102,9 @@ export default function LosAngelesCountySolarPage() {
                 {' '}before using a county-wide estimate.
               </p>
             </div>
+
+            {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+            <HeroQuickCheck topic="Los Angeles County solar savings and quote comparison" className="mb-12" />
 
             <div className="rounded-2xl border border-status-warning/30 bg-status-warning/10 p-6 md:p-8 mb-12">
               <h2 className="flex items-center gap-2 text-xl font-bold text-foreground mb-3">

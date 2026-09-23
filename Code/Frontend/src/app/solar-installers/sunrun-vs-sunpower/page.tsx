@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -34,6 +35,11 @@ export default function SunrunVsSunPower() {
 <p className="text-lg text-muted-foreground">SunPower filed for Chapter 11 bankruptcy in 2024; Complete Solaria acquired the business and now runs it under the SunPower brand for California customers. That ownership change is the main thing to know before comparing the two companies on price, equipment and service. Here&apos;s how Sunrun and SunPower actually stack up now.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="Sunrun vs SunPower comparison" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Key Differences</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>SunPower = premium panels.</strong> Industry-leading 22%+ efficiency and up to 25 years of manufacturer warranty coverage on premium panels and microinverters (<a href="https://us.sunpower.com/warranty-and-resources" target="_blank" rel="noopener external" className="text-primary underline">SunPower Inc., warranty and resources</a>, checked 2026-09-22). Best-in-class panels if you care about maximum watts per square foot.</li>

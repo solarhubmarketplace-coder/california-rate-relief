@@ -8,7 +8,8 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { IntentCTA } from '@/components/growth/IntentCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title: "Tesla Powerwall Installers in California: 2026 Guide",
@@ -41,6 +42,11 @@ export default function TeslaPowerwallInstallers() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Tesla Powerwall is the most widely installed residential battery in California in 2026. Under NEM 3.0&apos;s net billing rules, battery storage is essentially mandatory for solid solar economics — and Powerwall is the default choice for most California installers. Here&apos;s how to find a certified Tesla Powerwall installer in California, what installation actually costs, and what to watch for in quotes.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Tesla Powerwall installation in California" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Who Can Install a Tesla Powerwall in California?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -96,7 +102,9 @@ export default function TeslaPowerwallInstallers() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Under NEM 3.0, yes — the self-consumption gain alone usually justifies the cost over a 10-year horizon, plus the resilience benefit during PSPS events and storms.</p>
             </div>
 
-            <IntentCTA cta='article_cta' variant='review' />
+            {/* The closing ask is the inquiry form itself (2026-09-23); the link-only
+                box it replaced sent this form-less page to the home page. */}
+            <SolarInquiry topic="Tesla Powerwall installation in California" variant="review" />
           </article>
         </div>
       </main>

@@ -6,10 +6,15 @@ import { ArrowLeft } from 'lucide-react';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArticleRenderer } from '@/components/shared/ArticleRenderer';
+import { ArticleRenderer, articleWordCount } from '@/components/shared/ArticleRenderer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { IntentCTA } from '@/components/growth/IntentCTA';
+import {
+  CommercialReviewButton,
+  CommercialReviewForm,
+} from '@/components/growth/CommercialReview';
 import type { ArticleCluster, ArticlePage } from '@/data/article-types';
 import {
   getArticle,
@@ -96,6 +101,17 @@ function buildSchema(page: ArticlePage) {
   return page.faqs.length > 0 ? [article, faq] : [article];
 }
 
+/**
+ * A page over this many words of prose gets one in-content ask halfway
+ * through its sections, pointing at the form at the end of the page.
+ */
+export const LONG_ARTICLE_WORDS = 2500;
+
+/** Inquiry topic for a cluster page: its H1 up to the first colon. */
+function articleTopic(page: ArticlePage): string {
+  return page.h1.split(':')[0].trim() || page.h1;
+}
+
 export function ArticleRoute({
   cluster,
   slug,
@@ -110,6 +126,40 @@ export function ArticleRoute({
   const page = getArticle(cluster, slug);
   if (!page) notFound();
   const isSgip = cluster === 'battery' && slug === 'sgip-battery-rebate-california';
+  const commercial = cluster === 'commercial';
+  const topic = isSgip ? 'SGIP residential solar and storage' : articleTopic(page);
+  const long = articleWordCount(page) > LONG_ARTICLE_WORDS;
+
+  // Lead capture (2026-09-23). Residential clusters: the bill-first quick
+  // check after the intro and SolarInquiry as the closing ask. Commercial
+  // cluster: no quick check, the inline commercial form as the closing ask and
+  // one mid-page button that scrolls to it. A long residential page also gets
+  // one mid-article box pointing at its form.
+  const quickCheck = commercial ? undefined : (
+    <HeroQuickCheck topic={topic} className="mb-8" />
+  );
+  const midArticle = commercial ? (
+    <CommercialReviewButton />
+  ) : long ? (
+    <IntentCTA cta="mid_article" className="mb-10" />
+  ) : undefined;
+  const inquiry = commercial ? (
+    <CommercialReviewForm className="mt-12" />
+  ) : (
+    <>
+      {isSgip && (
+        <p className="mt-10 text-sm">
+          California Rate Relief is a private solar referral service. This inquiry is not an SGIP
+          application or eligibility decision.{' '}
+          <Link className="text-primary underline" href="/commercial-solar/sgip-battery-storage">
+            Commercial storage projects
+          </Link>{' '}
+          follow a separate review.
+        </p>
+      )}
+      <SolarInquiry topic={topic} />
+    </>
+  );
 
   return (
     <PublicLayout>
@@ -134,9 +184,9 @@ export function ArticleRoute({
               {backLabel}
             </Link>
           </div>
-          <ArticleRenderer page={page} related={relatedArticles(page)} inquiryHref={isSgip?'#solar-inquiry':undefined}
+          <ArticleRenderer page={page} related={relatedArticles(page)}
+            quickCheck={quickCheck} midArticle={midArticle} inquiry={inquiry}
             tools={isSgip?<nav aria-label="SGIP decision tools" className="my-6 flex flex-wrap gap-4 text-sm font-semibold text-primary underline"><Link href="/tools/solar-panel-calculator">Check the quote without a rebate</Link><Link href="/blog/solar-battery-backup-california">Compare battery and backup needs</Link><Link href="#solar-inquiry">Optional solar inquiry</Link></nav>:undefined}/>
-          {isSgip&&<div className="mx-auto max-w-6xl"><div className="max-w-3xl"><p className="mt-8 text-sm">California Rate Relief is a private solar referral service. This inquiry is not an SGIP application or eligibility decision. <Link className="text-primary underline" href="/commercial-solar/sgip-battery-storage">Commercial storage projects</Link> follow a separate review.</p><SolarInquiry topic="SGIP residential solar and storage"/></div></div>}
           {/* Was rendered after <Footer />; moved inside main so it sits above
               the footer, aligned with the article column. */}
           <div className="mx-auto max-w-6xl">
@@ -228,9 +278,12 @@ export function ArticleHub({
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 tracking-tight leading-tight">
             {title}
           </h1>
-          <p className="text-lg text-foreground/80 leading-relaxed mb-10">
+          <p className="text-lg text-foreground/80 leading-relaxed mb-8">
             {intro}
           </p>
+          {cluster !== 'commercial' && (
+            <HeroQuickCheck topic={title} className="mb-10" />
+          )}
           {content}
           {pages.length === 0 ? (
             <p className="text-muted-foreground">
@@ -255,11 +308,16 @@ export function ArticleHub({
             </div>
           )}
           {/*
-            In-body eligibility CTA. <Header/> above already carries the
-            sitewide one, but a hub is where a reader decides whether to act, so
-            it gets the same in-body box every article page gets.
+            In-body ask. <Header/> above already carries the sitewide one, but a
+            hub is where a reader decides whether to act. Since 2026-09-23 it is
+            the inquiry form itself (the link-only ArticleCTA box it replaced
+            pointed at the home page), opened at step 2 by the quick check above.
           */}
-          <ArticleCTA />
+          {cluster === 'commercial' ? (
+            <CommercialReviewForm className="mt-12" />
+          ) : (
+            <SolarInquiry topic={title} />
+          )}
         </div>
       </main>
       <Footer />

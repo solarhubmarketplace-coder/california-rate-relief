@@ -9,6 +9,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 export const metadata: Metadata = {
   title: "SDG&E Rate Increase 2026: Highest Rates in America",
   description: "SDG&E's 2026 rate changes explained: why San Diego hit 45.7\u00a2/kWh, the $24 Base Services Charge, and what customers can do.",
@@ -35,6 +36,11 @@ export default function SDGERateIncrease2026() {
               <p className="text-lg text-muted-foreground">SDG&amp;E residential rates average 45.7¢/kWh in 2026 — the highest utility rate in the United States. Here&apos;s why, and what San Diego County customers can do about it.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="SDG&E rate review" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The 2026 Numbers</h2>
               <p>Average residential SDG&amp;E rate in 2026: approximately 45.7¢/kWh. Peak time-of-use rates: 60–80¢/kWh during summer late-afternoon windows. On top of that, the $24/month Base Services Charge (effective March 2026) applies regardless of usage.</p>
 

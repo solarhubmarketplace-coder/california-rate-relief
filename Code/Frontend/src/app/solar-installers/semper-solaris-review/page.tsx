@@ -7,6 +7,8 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title:
@@ -86,6 +88,11 @@ export default function SemperSolarisReview() {
                 Semper Solaris is a private, veteran-owned solar, roofing, and HVAC installer headquartered in El Cajon, near San Diego. The company was founded in 2012 by ex-Marine Kelly Shawhan and has built a strong local brand around its California-native, California-focused positioning. On paper, the offer is attractive: in-house installation crews, NABCEP-certified technicians, and the ability to do a roof replacement, HVAC upgrade, and solar installation as a single coordinated project. In practice, the customer experience data tells a more mixed story — and any prospective California buyer should weigh both sides.
               </p>
 
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Semper Solaris review and quote comparison" />
+              </div>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Company</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Semper Solaris employs between 201 and 500 people, with revenue estimates ranging roughly $85 million to $415 million depending on the source. The company is primarily focused on California — particularly San Diego, Los Angeles, the Inland Empire, and parts of the Central Valley — rather than national expansion. That&apos;s a deliberate strategy: a California-only installer can build deeper local knowledge of SCE, PG&amp;E, SDG&amp;E, and municipal utility interconnection processes than a 22-state national player can.
@@ -149,14 +156,13 @@ export default function SemperSolarisReview() {
               </div>
             </div>
 
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Considering Semper Solaris? Compare With Two Others.</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief works with multiple top-rated California solar installers. Fill out one 60-second form and we&apos;ll bring you quotes from up to three installers — including Semper Solaris — so you can compare pricing, equipment, and warranty terms side by side.</p>
-              <div className='flex justify-center'>
-                <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
-              </div>
-              <p className='text-xs text-muted-foreground text-center mt-4'>Free. No obligation. No impact on your credit score.</p>
-            </div>
+            {/* The closing ask (2026-09-23): the inquiry form itself. It replaces a
+                link-only box that sent this page's readers to the home page and
+                promised quotes this site cannot promise. */}
+            <SolarInquiry
+              variant="review"
+              topic="Semper Solaris review and quote comparison"
+            />
 
             <div className='mt-10 pt-8 border-t border-border'>
               <h3 className='text-lg font-bold text-foreground mb-4'>More California Installer Reviews</h3>

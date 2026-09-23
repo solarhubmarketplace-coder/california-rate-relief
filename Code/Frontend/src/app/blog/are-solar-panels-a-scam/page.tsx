@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
@@ -99,6 +100,11 @@ export default function AreSolarPanelsAScam() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Short answer: Solar panels themselves are not a scam. Rooftop solar is a mature, proven technology that has reduced electricity bills for millions of California homeowners over the past 15 years. However, some solar companies absolutely are scams. They use high-pressure sales tactics, hide contract terms, make false savings claims, and exploit homeowners&apos; trust in renewable energy. This article separates fact from fiction and gives you the tools to spot predatory solar companies before they lock you into a bad deal.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="California solar legitimacy and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 Let&apos;s Address This Head-On

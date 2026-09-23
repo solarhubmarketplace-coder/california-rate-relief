@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -98,6 +99,11 @@ export default function SolarPanelMaintenanceCost() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Solar panels are one of the lowest-maintenance energy systems you can own. Annual maintenance typically costs $390 to $720 for an average residential system, and much of that comes down to optional cleaning. For many California homeowners, maintenance is negligible. But if you own your system, it&apos;s worth understanding what maintenance involves, when it&apos;s critical, and how to budget for it. PPA and lease holders have a big advantage here — maintenance is usually included in the contract.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Solar panel maintenance cost and comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What Maintenance Actually Costs

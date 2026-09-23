@@ -9,6 +9,7 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title: "Palmetto Solar Reviews (2026): Contracts and What to Check",
@@ -66,6 +67,11 @@ export default function PalmettoReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Palmetto Solar is a national residential solar company that sells in California and installs largely through regional partner contractors rather than its own crews. Its primary offering is a third-party-ownership product called LightReach. This page does not rate or rank installers. It sets out what Palmetto publishes about that product, what the federal court record shows as of September 18, 2026, and the specific contract terms to settle before signing.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Palmetto Solar review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Corporate Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

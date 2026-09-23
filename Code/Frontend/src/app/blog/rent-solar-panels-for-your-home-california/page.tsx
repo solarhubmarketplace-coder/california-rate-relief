@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
@@ -40,6 +41,11 @@ export default function RentSolarPanels() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 &quot;Renting&quot; solar panels usually means one of two things. If you own your home, it&apos;s a solar lease or power purchase agreement (PPA) — you pay a fixed or per-kWh rate for the electricity panels on your roof produce, with no purchase required. If you rent your home or live in an apartment, you can&apos;t put panels on a roof you don&apos;t own, but two California programs — community solar and, for qualifying affordable housing, SOMAH — let you get discounted or bill-credited solar power without one.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Renting solar panels in California" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Lease vs PPA — The Two Ways to &quot;Rent&quot; Solar</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

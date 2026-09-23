@@ -125,9 +125,11 @@ function PepcoCredits() {
   </>;
 }
 
+// High-bill pages open with the two-bill comparison tool, so they carry no
+// HeroQuickCheck above it (one first step per screen).
 export function UtilityDecisionPage({ config }: { config: UtilityGuideConfig }) {
   const stateHref = config.market === 'DC' ? '/washington-dc/solar' : config.market === 'DE' ? '/delaware/solar-cost' : '/maryland/solar-cost';
-  return <DecisionPage title={config.title} intro={config.intro} path={config.path} sources={config.sources} sourceCheckedDate='2026-09-12' regionLabel={config.regionLabel} market={config.market} utility={config.utilityCode} topic={config.topic} primaryResourceHref={stateHref} primaryResourceLabel='State solar cost guide' comparisonHref='/tools/solar-panel-calculator' comparisonLabel='Compare a solar quote'>
+  return <DecisionPage title={config.title} intro={config.intro} path={config.path} sources={config.sources} sourceCheckedDate='2026-09-12' regionLabel={config.regionLabel} market={config.market} utility={config.utilityCode} topic={config.topic} primaryResourceHref={stateHref} primaryResourceLabel='State solar cost guide' comparisonHref='/tools/solar-panel-calculator' comparisonLabel='Compare a solar quote' quickCheck={config.kind === 'high-bill' ? false : undefined}>
     {config.kind === 'rates' ? <BgeRates /> : config.kind === 'solar-credits' ? <PepcoCredits /> : <BillAudit utilityName={config.utilityName} />}
     <section><h2>When solar belongs in the comparison</h2><p>Solar cannot correct a billing error or erase every charge. After the bill is understood, compare a written solar proposal against the home’s actual annual use, the correct utility treatment, the cash project price and the remaining bill. Use the <Link className={linkClass} href={stateHref}>state quote guide</Link> before submitting the optional inquiry below.</p></section>
   </DecisionPage>;

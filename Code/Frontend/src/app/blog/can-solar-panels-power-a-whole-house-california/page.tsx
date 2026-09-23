@@ -7,7 +7,8 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { IntentCTA } from '@/components/growth/IntentCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title: 'Can Solar Panels Power a Whole House in California?',
@@ -39,6 +40,11 @@ export default function CanSolarPowerWholeHouse() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Yes, absolutely — a correctly sized solar + battery system can power a whole California home, day and night, year-round. But the specifics matter: how much electricity your home actually uses, whether you add a battery, what loads you prioritize, and whether you&apos;re connected to the grid as a backstop. Here&apos;s what it actually takes to run a California home entirely on solar in 2026.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Whole-house solar and battery sizing" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Three Setups That &quot;Power a Whole House&quot;</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -97,7 +103,9 @@ export default function CanSolarPowerWholeHouse() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Typical 8-11 kW solar + 1-2 battery install runs $30,000-$55,000 cash price in California in 2026. That is the price you pay: the 30% federal residential credit ended for expenditures made after December 31, 2025, so a purchase in 2026 gets no federal offset. Loan, lease, and PPA financing are all available to avoid upfront cost, and on a lease or PPA the provider owns the system and claims any commercial credit it qualifies for.</p>
             </div>
 
-            <IntentCTA cta='article_cta' variant='default' />
+            {/* The closing ask is the inquiry form itself (2026-09-23); the link-only
+                box it replaced sent this form-less page to the home page. */}
+            <SolarInquiry topic="Whole-house solar and battery sizing" variant="default" />
           </article>
         </div>
       </main>

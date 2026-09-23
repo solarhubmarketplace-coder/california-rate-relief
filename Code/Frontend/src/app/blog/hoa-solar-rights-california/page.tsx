@@ -7,7 +7,8 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { IntentCTA } from '@/components/growth/IntentCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title:
@@ -79,6 +80,11 @@ export default function HoaSolarRights() {
                 solar. Here&apos;s what the law actually says and how to
                 handle an HOA that&apos;s pushing back.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="HOA solar rights in California" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 The Law: California&apos;s Solar Rights Act
@@ -314,7 +320,9 @@ export default function HoaSolarRights() {
               </p>
             </div>
 
-            <IntentCTA cta='article_cta' variant='default' />
+            {/* The closing ask is the inquiry form itself (2026-09-23); the link-only
+                box it replaced sent this form-less page to the home page. */}
+            <SolarInquiry topic="HOA solar rights in California" variant="default" />
           </article>
         </div>
       </main>

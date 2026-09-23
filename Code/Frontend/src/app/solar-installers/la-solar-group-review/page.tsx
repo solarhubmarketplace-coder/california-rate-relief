@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -60,6 +61,11 @@ export default function LASolarGroupReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This page states no star rating and no complaint count. The figures previously shown here could not be re-verified at their own sources when the page was checked on <strong>September 18, 2026</strong>, so they were removed rather than carried forward with a stale date. What the page does carry is a dated search of the federal court record, set out below, and the structural consequence of the vertical-integration model for your warranty.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="LA Solar Group review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

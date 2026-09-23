@@ -9,6 +9,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 export const metadata: Metadata = {
   title: "How Does Net Metering Work? Plain-English Guide (2026)",
   description: "Net metering explained in plain English: how export credits are calculated and the difference between NEM 1.0, 2.0, 3.0 and net billing.",
@@ -33,6 +34,11 @@ export default function HowDoesNetMeteringWork() {
               <p className="text-lg text-muted-foreground">Net metering is the billing arrangement that makes residential solar economics work. Here&apos;s how it actually works, step by step.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="California net metering review" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Concept</h2>
               <p>Solar panels don&apos;t produce electricity on a nice, matching-your-usage schedule. They produce most of their output in the middle of the day, when most households use the least. Net metering is the accounting rule that lets you export excess daytime solar to the grid and get credited for it — then pull from the grid at night and apply those credits.</p>
 

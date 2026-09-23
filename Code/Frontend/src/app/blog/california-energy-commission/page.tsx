@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { IntentCTA } from '@/components/growth/IntentCTA';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title:
@@ -101,6 +102,11 @@ export default function CaliforniaEnergyCommission() {
                 Most California homeowners have heard of the CPUC — the agency that sets electricity rates. But there&apos;s another state agency that shapes your energy costs in less obvious ways: the California Energy Commission (CEC). The CEC doesn&apos;t set your utility rate, but it decides what goes into new buildings, which appliances can be sold, and how the state&apos;s energy future is planned. If you own a home or plan to buy one, the CEC&apos;s decisions affect you.
               </p>
 
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="California Energy Commission solar questions" />
+              </div>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What Is the California Energy Commission?
               </h2>
@@ -194,8 +200,9 @@ export default function CaliforniaEnergyCommission() {
               </p>
             </div>
 
-            <IntentCTA cta='article_cta' variant='default' />
-
+            {/* The closing ask is the inquiry form itself (2026-09-23); the link-only
+                box it replaced sent this form-less page to the home page. */}
+            <SolarInquiry topic="California Energy Commission solar questions" variant="default" />
             {/* Navigation */}
             <div className='mt-10 pt-8 border-t border-border flex justify-between items-center'>
               <Link

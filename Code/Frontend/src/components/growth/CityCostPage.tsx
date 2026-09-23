@@ -7,6 +7,7 @@ import { TocRail, RAIL_GRID } from '@/components/trust/TocRail';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { LocalProjectGuidance } from '@/components/growth/LocalProjectGuidance';
 import { NearbyCostCities } from '@/components/growth/NearbyCostCities';
@@ -25,7 +26,7 @@ import {
 import { growthCities } from '@/data/growth-cities';
 import { getCityBySlug } from '@/data/cities-data';
 import { companiesCityHref, hasCompaniesCityPage } from '@/lib/canonical-redirects';
-import { costPageModified, costPageSeo } from '@/lib/city-pages';
+import { cityQuickCheckUtility, costPageModified, costPageSeo } from '@/lib/city-pages';
 
 // =============================================================================
 // CityCostPage — the template behind /solar-cost/[city]
@@ -231,18 +232,20 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       />
       <FaqJsonLd items={faqs} />
       <Header />
-      <main className='py-16 bg-background'>
+      {/* Top spacing is tighter on phones so the quick check below the byline
+          fits a 390x844 screen whole (2026-09-23); md and up unchanged. */}
+      <main className='pb-16 pt-8 md:pt-16 bg-background'>
         <div className='container mx-auto px-4'>
           {/* Article column plus the desktop "On this page" rail (design pass 2). */}
           <div className={`mx-auto max-w-6xl ${RAIL_GRID}`}>
           <article className='min-w-0 max-w-3xl'>
-            <nav className='mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
+            <nav className='mb-4 md:mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
               <Link href='/' className='hover:text-primary'>Home</Link><span>/</span>
               <Link href='/solar-cost' className='hover:text-primary'>Solar cost by city</Link><span>/</span>
               <span className='text-foreground'>Solar cost in {row.city}</span>
             </nav>
 
-            <header className='mb-8'>
+            <header className='mb-6 md:mb-8'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
                 {row.county} &middot; Cost drivers
               </span>
@@ -253,6 +256,16 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 <span className='inline-flex items-center gap-1'><MapPin className='h-4 w-4' aria-hidden='true' />{row.city}, {row.county}</span>
               </Byline>
             </header>
+
+            {/* Bill-first step, above the fold on a phone. It sends nothing; it
+                opens the inquiry form at the end of the page at step 2. The
+                utility is pre-selected only for a single-utility city. */}
+            <HeroQuickCheck
+              compact
+              utility={cityQuickCheckUtility('cost', row.slug)}
+              topic={`Solar project in ${row.city}`}
+              className='mb-8'
+            />
 
             <div id='city-cost-body' className='prose prose-slate max-w-none [&_h2]:scroll-mt-24'>
               {/* ---------- Short answer: no price, and why ---------- */}

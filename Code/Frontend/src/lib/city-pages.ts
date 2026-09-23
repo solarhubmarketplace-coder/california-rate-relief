@@ -478,6 +478,36 @@ export function savingsPageSeo(city: CityData): CitySeo {
   };
 }
 
+// -----------------------------------------------------------------------------
+// The utility a city page's HeroQuickCheck may pre-select
+// -----------------------------------------------------------------------------
+
+/**
+ * The one utility the page's own data names for this city, as a code or a
+ * label (HeroQuickCheck maps either onto its options and leaves anything it
+ * does not list unselected), or '' when no single utility should be
+ * pre-selected:
+ *   - the city is split between utilities (a sourced utilitySplit on the cost
+ *     row, Corona's address-specific DWP/SCE service, growth-city data marked
+ *     'other', or a cities-data page that asks the reader to confirm the
+ *     utility from the bill);
+ *   - the page is not live.
+ * A split recorded in any one dataset applies to every page for that city,
+ * because it is a fact about the city, not about a template.
+ */
+export function cityQuickCheckUtility(type: CityPageType, slug: string): string {
+  const cost = getCityCostRow(slug);
+  if (slug === 'corona' || cost?.utilitySplit) return '';
+  if (type === 'cost') return cost ? getUtilityRate(cost.utilityKey).name : '';
+  const legacy = getCityBySlug(slug);
+  if (legacy?.utilityConfirmationRequired) return '';
+  if (type === 'companies' && growthCities[slug]) {
+    const code = growthCities[slug].utility;
+    return code && code !== 'other' ? code : '';
+  }
+  return legacy ? legacy.utilityCode : '';
+}
+
 /** Title/description/H1 for any live city page. */
 export function cityPageSeo(type: CityPageType, slug: string): CitySeo | null {
   if (type === 'cost') {

@@ -6,8 +6,9 @@ import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { SolarInquiry } from "@/components/growth/SolarInquiry";
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
   title: "AB 942 California: Solar Lease Transfer Rights (2026)",
   description: "What AB 942 did for California solar homeowners: lease/PPA transfer rules, UCC lien relief, and disclosure requirements when you sell.",
@@ -32,6 +33,11 @@ export default function AB942CASolar() {
               <p className="text-lg text-muted-foreground">AB 942 tackled one of the biggest real-world pain points in residential solar, what happens to a 20–25 year lease or PPA when the homeowner sells. Here&apos;s what the law actually did.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="AB 942 and solar on a home sale" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Problem AB 942 Addressed</h2>
               <p>Homeowners with solar leases or PPAs had been reporting consistent friction when selling:</p>
               <ul className="list-disc pl-6 space-y-2">
@@ -84,8 +90,9 @@ export default function AB942CASolar() {
                 <li><Link href="/blog/hoa-solar-rights-california" className="text-primary underline">HOA Solar Rights in California</Link></li>
               </ul>
             </div>
-          <ArticleCTA />
-
+          {/* The closing ask is the inquiry form itself (2026-09-23); the link-only
+              box it replaced sent this form-less page to the home page. */}
+          <SolarInquiry topic="AB 942 and solar on a home sale" />
           </article>
         </div>
       </main>

@@ -10,6 +10,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 export const metadata: Metadata = {
   title: "ADU Solar Requirements in California (2026)",
   description: "Does your California ADU need solar? A plain-English guide to Title 24 solar requirements for ADUs, metering options, and when the requirement is waived.",
@@ -34,6 +35,11 @@ export default function ADUSolarCA() {
               <p className="text-lg text-muted-foreground">Does your new California ADU need solar? The answer depends on ADU type, size, and whether it&apos;s detached. Here&apos;s the current Title 24 rule in plain English.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="ADU solar in California" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Short Answer</h2>
               <p><strong>Detached ADUs</strong> built as new construction generally require solar under California Title 24 Part 6 (Building Energy Efficiency Standards). <strong>Attached ADUs</strong> and ADU conversions of existing space have different requirements and often don&apos;t trigger the solar mandate.</p>
 

@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -77,6 +78,11 @@ export default function PowurReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Powur Solar is a California-based company (headquartered in Del Mar) that operates an MLM-style (&ldquo;network marketing&rdquo;) sales model. Independent sales consultants recruit customers, earn commissions on solar sales, and in turn can recruit additional consultants and earn override commissions. This layered incentive structure is the core of the business and it is also the core of the complaint record.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Powur Solar review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How the Powur Model Actually Works</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

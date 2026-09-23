@@ -7,7 +7,8 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { IntentCTA } from '@/components/growth/IntentCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title: "Solar System Quotes in California: Get 3 Real Quotes Fast",
@@ -39,6 +40,11 @@ export default function SolarSystemQuotes() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Getting real solar quotes in California in 2026 is frustrating for two reasons: too many installers compete for leads, so opting into one quote usually triggers 10+ follow-up calls from sales reps you didn&apos;t ask to hear from, and too many &quot;quotes&quot; come back with missing information that makes them impossible to compare. Here&apos;s how to get three solid, comparable California solar quotes without the spam, and what each quote needs to contain for it to actually be useful.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Solar quote comparison in California" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What a Real Solar Quote Should Contain</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>A complete California solar quote should itemize:</p>
@@ -74,7 +80,9 @@ export default function SolarSystemQuotes() {
               <p className='text-foreground/80 leading-relaxed mb-6'><strong>No battery in the proposal under NEM 3.0.</strong> Under California&apos;s current Net Billing Tariff, a solar-only system has much weaker economics. Batteries should be the default, not an upsell.</p>
             </div>
 
-            <IntentCTA cta='article_cta' variant='review' />
+            {/* The closing ask is the inquiry form itself (2026-09-23); the link-only
+                box it replaced sent this form-less page to the home page. */}
+            <SolarInquiry topic="Solar quote comparison in California" variant="review" />
           </article>
         </div>
       </main>
