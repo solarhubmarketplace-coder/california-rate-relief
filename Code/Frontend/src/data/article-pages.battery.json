@@ -588,7 +588,19 @@
       },
       {
         "heading": "What a Single Battery Actually Covers",
-        "body": "For load-shifting only, that same study puts a single 6-10 kWh battery as typically sufficient — no partial or whole-home backup involved. For partial backup on essential circuits, a single battery around 10 kWh can carry roughly three days of essential-load draw in most locations per the cited study.\n\nIn hardware terms, current single units in this range include a Tesla Powerwall 3 (roughly 13.5 kWh usable capacity, roughly 11.5 kW continuous output per published specs), an Enphase IQ Battery 5P (roughly 5 kWh capacity and 3.84 kW continuous output per unit, commonly stacked two or more), and a FranklinWH aPower (roughly 13.6 kWh usable capacity, roughly 5 kW continuous, the only one of these three with secondary-source corroboration this research pulled). Manufacturers revise capacity, output, and pricing tiers periodically — pull the current datasheet from your contractor before you sign, do not quote spec-sheet numbers from an old brochure or a Claude answer as gospel."
+        "body": "For load-shifting only, that same study puts a single 6-10 kWh battery as typically sufficient — no partial or whole-home backup involved. For partial backup on essential circuits, a single battery around 10 kWh can carry roughly three days of essential-load draw in most locations per the cited study.\n\nIn hardware terms, current single units in this range include a Tesla Powerwall 3 (13.5 kWh nominal AC battery energy, up to 11.5 kW continuous output per published specs), an Enphase IQ Battery 5P (5.0 kWh usable capacity and 3.84 kVA continuous output per unit, commonly stacked two or more), and a FranklinWH aPower 2 (15 kWh AC usable capacity and 10 kW continuous output, per the manufacturer's current datasheet). Manufacturers revise capacity, output, and pricing tiers periodically — pull the current datasheet from your contractor before you sign, do not quote spec-sheet numbers from an old brochure or a Claude answer as gospel."
+      },
+      {
+        "heading": "Do the Arithmetic: Turning Your Bill Into a Battery Count",
+        "body": "The sections above tell you to pull your peak-TOU and daily-average kWh off your bill. Two worked checks turn that into an actual battery count: one for usable kWh (does a day's energy fit), and one for continuous kW (can the battery push out what your chosen circuits draw at once).\n\nUsable-kWh check (example numbers only — use your own bill): say your peak-TOU window runs about 9 kWh on a typical day. One Enphase IQ Battery 5P (5.0 kWh usable, per Enphase's datasheet) covers close to half of that; two units (10.0 kWh) clear it with margin for a weaker solar day. One Tesla Powerwall 3 or FranklinWH aPower 2 (13.5-15 kWh usable, per their datasheets) clears the same window in a single unit.\n\nContinuous-kW check (example numbers only — use your installer's load calc): say the circuits you'd actually put on backup — refrigerator, some lighting and outlets, Wi-Fi/router, garage door, and a well pump when it cycles — add up to roughly 2.5 kW of running draw, with the pump's start-up surge briefly higher. A single Enphase 5P (3.84 kVA continuous) or FranklinWH aPower 2 (10 kW continuous) clears that on paper; so does a Powerwall 3 configured at 5.8 kW or above (Tesla's four continuous-power tiers run 5.8, 7.6, 10, and 11.5 kW). The number that actually decides whether you need a second unit is more often continuous kW under a motor's starting surge than total kWh — ask your installer for the surge/LRA rating against your largest single motor, not just the running total."
+      },
+      {
+        "heading": "How Many Can You Stack, Per Manufacturer",
+        "body": "Raw capacity isn't unlimited — each system has a published ceiling, set by the battery's own hardware or by its gateway or controller. A Tesla Powerwall 3 holds 13.5 kWh of nominal AC battery energy per unit and can be configured for 5.8, 7.6, 10, or 11.5 kW of continuous output; natively, Tesla supports up to 4 Powerwall 3 units plus 3 Expansion units (7 total, roughly 94.5 kWh), while an AC-coupled install through Backup Gateway 2 supports up to 10 Powerwalls. An Enphase IQ Battery 5P holds 5.0 kWh of usable energy per unit at 3.84 kVA continuous output (7.68 kVA peak in backup); its IQ System Controller 3 supports up to 40 kWh of 5P capacity without a separate power control system (8 units) or 80 kWh with one (16 units). A FranklinWH aPower 2 holds 15 kWh AC per unit at 10 kW continuous discharge (8 kW charge, 15 kW peak for 10 seconds), and FranklinWH's required aGate controller supports up to 15 units per aGate — up to 225 kWh total.\n\nTwo figures elsewhere on this page have been updated to match: the hardware-examples paragraph above and the FAQ comparing the three brands both used to cite an older FranklinWH aPower figure (roughly 13.6 kWh, roughly 5 kW continuous). FranklinWH's current shipping unit, the aPower 2, is rated at 15 kWh AC and 10 kW continuous, per the manufacturer's own datasheet — the number used throughout this page now."
+      },
+      {
+        "heading": "What the Gateway or Controller Changes About Your Number",
+        "body": "Battery kWh isn't the only ceiling. Each system routes backup power through a separate piece of hardware, and that piece has its own limits. Tesla's Backup Gateway 2 sits between your meter and panel and decides what's on the backed-up side; in a native, non-Gateway-2 install, one Powerwall 3 acts as the system controller for the others. Enphase's backup mode requires the IQ System Controller 3, whose Neutral-Forming Transformer is rated at 3,600 VA continuous — a separate number from total battery capacity, and one your installer should size against your backed-up circuits, not just against 5P count. FranklinWH's aGate is the required controller for every aPower 2 install; it's what sets the 15-unit stacking limit above.\n\nIn every case, how much of your home you can actually run at once is also capped by your electrical panel or a dedicated critical-loads subpanel — whole-home backup, not just battery count, is often a panel conversation with your installer. For a full spec-by-spec comparison of all three systems — efficiency, backup-mode detail, and app or monitoring features — see our Powerwall vs. Enphase vs. FranklinWH comparison."
       },
       {
         "heading": "The Critical Loads Panel Nobody Explains Upfront",
@@ -678,7 +690,7 @@
       },
       {
         "question": "Is a Tesla Powerwall, Enphase battery, or FranklinWH unit better for a California home?",
-        "answer": "Each covers a different capacity and output profile per unit: current published specs put the Powerwall 3 around 13.5 kWh usable with roughly 11.5 kW continuous output, an Enphase IQ 5P around 5 kWh and 3.84 kW per unit designed to be stacked, and a FranklinWH aPower around 13.6 kWh and 5 kW continuous. Which fits depends on your peak-load surge needs (Powerwall 3's higher per-unit output matters more if you're backing up AC or a well pump) versus wanting granular capacity added in smaller increments (Enphase's stackable model). Pull current datasheets before deciding, since manufacturers revise these figures."
+        "answer": "Each covers a different capacity and output profile per unit: current published specs put the Powerwall 3 around 13.5 kWh usable with roughly 11.5 kW continuous output, an Enphase IQ 5P around 5 kWh and 3.84 kW per unit designed to be stacked, and a FranklinWH aPower 2 around 15 kWh and 10 kW continuous. Which fits depends on your peak-load surge needs (Powerwall 3's higher per-unit output matters more if you're backing up AC or a well pump) versus wanting granular capacity added in smaller increments (Enphase's stackable model). Pull current datasheets before deciding, since manufacturers revise these figures."
       },
       {
         "question": "What happened to Freedom Forever, and does it affect my existing battery?",
@@ -687,6 +699,22 @@
       {
         "question": "What license should my battery installer have?",
         "answer": "California requires a CSLB-licensed contractor, and industry practice treats battery storage installation as falling under a C-10 Electrical or a C-46 Solar contractor's license, with no separate standalone classification specifically for batteries. Ask for the contractor's license number and confirm its classification and standing directly through CSLB (cslb.ca.gov or 1-800-321-2752) before signing anything, rather than relying on a verbal claim."
+      },
+      {
+        "question": "How long will a solar battery last at night, or power my house?",
+        "answer": "The rule of thumb elsewhere on this page — about three days of essential-load draw from a 10 kWh battery, per a 2022 study — is a starting estimate, not your number. For your own home, runtime is usable kWh divided by the average kW your backed-up circuits are actually drawing, and that draw shifts constantly as things cycle on and off. Use the usable-kWh and continuous-kW checks above with your own bill and your installer's load calc — a load calculation from your installer, not a spec sheet, gives you the draw side of that math. See our guide on what a battery actually backs up during a Public Safety Power Shutoff for how that plays out in a real outage."
+      },
+      {
+        "question": "Is there a runtime calculator?",
+        "answer": "Not one we publish, for the same reason: a fixed number would imply a guarantee this page can't make. Use the usable-kWh and continuous-kW checks above with your own bill and your installer's load calc instead."
+      },
+      {
+        "question": "What's the FranklinWH battery's usable capacity?",
+        "answer": "The current aPower 2, per FranklinWH's own datasheet, is 15 kWh AC per unit, stacking up to 15 units (225 kWh) per aGate. An older, lower figure for a previous aPower model still circulates in some solar industry material — the aPower 2 is FranklinWH's current shipping unit, and the number this page now uses throughout."
+      },
+      {
+        "question": "How many solar panels and batteries do I need together?",
+        "answer": "This page answers the battery side. For panel count and system-kW sizing, see our guide on how big a solar system you need in California."
       }
     ],
     "bottomLine": "Size to your evening peak first, not to a sales rep's chart. Pull your last 12 months of bills, find your 4-9pm usage, and you will usually land on a single battery in the 10-13 kWh range for load-shifting or partial backup — that is a Tesla Powerwall 3, an Enphase 5P bank, or one FranklinWH aPower, depending on brand. Two units only earn their keep when you are running an all-electric home with a heat pump and EV charging, backing up a well pump, or genuinely need whole-home HVAC coverage through a multi-day outage. As of September 5, 2026, there is no federal credit and no open SGIP reservation step to cushion an oversized system — both relevant SGIP steps are closed to new applicants — so every extra kWh is effectively full retail cost with no subsidy behind it. Get your utility's export-credit table before you assume solar will offset the bill, confirm your installer's parent company is actually still operating given the wave of 2025-2026 bankruptcies, and treat \"you need two for whole-home backup\" as a claim to verify against your own circuit list, not a default to accept.",
@@ -770,9 +798,29 @@
         "name": "Modesto Irrigation District — Electric Rates",
         "url": "https://www.mid.org/power/rates-service-rules/electric-rates/",
         "supports": "MID's published residential electric rate schedule; cited as the primary source readers should check directly rather than relying on one blended figure"
+      },
+      {
+        "name": "Tesla — Powerwall 3 Datasheet",
+        "url": "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "supports": "Confirms Powerwall 3's 13.5 kWh nominal AC battery energy, configurable 5.8/7.6/10/11.5 kW continuous output, and native/Backup-Gateway-2 stacking limits used in the sizing arithmetic and stacking sections"
+      },
+      {
+        "name": "Enphase — IQ Battery 5P Data Sheet",
+        "url": "https://enphase.com/en-in/download/iq-battery-5p-data-sheet",
+        "supports": "Confirms IQ Battery 5P's 5.0 kWh usable energy and 3.84 kVA continuous / 7.68 kVA peak backup output used in the sizing arithmetic and stacking sections"
+      },
+      {
+        "name": "Enphase — IQ System Controller 3 Data Sheet",
+        "url": "https://enphase.com/download/iq-system-controller-3-data-sheet",
+        "supports": "Confirms IQ System Controller 3 supports up to 40 kWh of 5P capacity without PCS (8 units) or 80 kWh with PCS (16 units), and its Neutral-Forming Transformer rating"
+      },
+      {
+        "name": "FranklinWH — aPower 2 Datasheet",
+        "url": "https://www.franklinwh.com/document/apower-2-datasheet",
+        "supports": "Confirms aPower 2's current 15 kWh AC usable capacity, 10 kW continuous/8 kW charge/15 kW 10-second peak output, and 15-unit-per-aGate stacking limit — replaces an earlier, lower figure used elsewhere on this page for a previous aPower model"
       }
     ],
-    "reviewedAt": "2026-09-05"
+    "reviewedAt": "2026-09-22"
   },
   {
     "slug": "powerwall-vs-enphase-vs-franklinwh",
