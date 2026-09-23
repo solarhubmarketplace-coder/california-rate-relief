@@ -11,6 +11,21 @@ const sources: Source[] = [
   { label: "CPUC: Medical Baseline", url: "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/medical-baseline" },
 ];
 
+// Additional sources cited only by the "lower" guide's 2026-09-22 delta.
+// Kept separate from `sources` above so the "high" guide's source list is
+// unaffected.
+const lowerOnlySources: Source[] = [
+  { label: "PG&E: Time-of-use rate plans", url: "https://www.pge.com/en/account/rate-plans/find-your-best-rate-plan/time-of-use-rate-plans.html" },
+  { label: "SCE: Time-of-Use Residential Rate Plans", url: "https://www.sce.com/residential/rates/Time-Of-Use-Residential-Rate-Plans" },
+  { label: "SDG&E: When Matters (TOU peak window)", url: "https://www.sdge.com/whenmatters" },
+  { label: "PG&E: Baseline allowance", url: "https://www.pge.com/en/account/rate-plans/how-rates-work/baseline-allowance.html" },
+  { label: "CPUC: CARE/FERA program (income limits and Base Services Charge)", url: "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program" },
+  { label: "PG&E: Medical Baseline program", url: "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/medical-baseline-program.html" },
+  { label: "CPUC: California Climate Credit", url: "https://www.cpuc.ca.gov/climatecredit" },
+  { label: "CPUC: California Climate Credit FAQ", url: "https://www.cpuc.ca.gov/industries-and-topics/natural-gas/greenhouse-gas-cap-and-trade-program/california-climate-credit/california-climate-credit---faq" },
+  { label: "U.S. EIA: California electricity profile", url: "https://www.eia.gov/electricity/state/california/" },
+];
+
 const guides = {
   high: {
     path: "/blog/why-is-my-california-electric-bill-so-high",
@@ -26,7 +41,7 @@ const guides = {
     intro: "Start with the current bill, rate plan and programs you may already qualify for. Then price efficiency or solar against the same usage history. That order keeps a sales estimate from becoming the baseline.",
     metaTitle: "How to Lower Your Electric Bill in California: 6 Steps",
     metaDescription:
-      "Start with the current bill, rate plan and programs you may already qualify for before pricing efficiency or solar against the same usage history.",
+      "The four things that actually change a California electric bill: rate plan, baseline, fixed charges, and usage — plus CARE, FERA, and the Climate Credit.",
   },
 } as const;
 
@@ -52,7 +67,7 @@ export function californiaBillMetadata(kind: CaliforniaBillGuideKind): Metadata 
       description: metaDescription,
       type: "article",
       url: `https://ratereliefca.com${guide.path}`,
-      modifiedTime: "2026-09-12T00:00:00Z",
+      modifiedTime: kind === "lower" ? "2026-09-22T00:00:00Z" : "2026-09-12T00:00:00Z",
     },
   };
 }
@@ -139,6 +154,52 @@ function LowerBillContent() {
   return (
     <>
       <section>
+        <h2>The four things that actually move a California bill</h2>
+        <p>Everything below sorts into one of four levers:</p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            <strong>Rate plan and timing.</strong> Under time-of-use pricing,
+            the same kilowatt-hour costs more or less depending on when
+            it&apos;s used. PG&amp;E, SCE, and SDG&amp;E each set their own
+            on-peak window (Step 2 below has the current hours for each), and
+            shifting laundry, EV charging, or the dishwasher outside that
+            window is the highest-leverage change most households can make
+            without spending anything.
+          </li>
+          <li>
+            <strong>Baseline allowance and tiers.</strong> Utilities are
+            required to price a &ldquo;baseline&rdquo; block of energy
+            &mdash; sized to roughly 50&ndash;60% of an average
+            customer&apos;s usage in the local climate zone &mdash; at the
+            lowest rate, then charge more for usage above it. Baseline
+            territory, heating source, and the season all move where that
+            line falls.
+          </li>
+          <li>
+            <strong>Fixed charges.</strong> California&apos;s investor-owned
+            utilities also bill a flat monthly Base Services Charge that
+            doesn&apos;t move with usage &mdash; currently $24.15 for most
+            residential accounts. See the{" "}
+            <Link className="underline" href="/blog/california-24-dollar-fixed-charge-explained">
+              fixed-charge breakdown
+            </Link>{" "}
+            for what it covers and why it exists.
+          </li>
+          <li>
+            <strong>Usage.</strong> What&apos;s left is the part under direct
+            control &mdash; air conditioning, water heating, and any other
+            high-draw equipment. Step 5 below covers finding it from the
+            account&apos;s own billing data.
+          </li>
+        </ul>
+        <p className="mt-3">
+          For scale, California&apos;s statewide average electricity price
+          was 27.04 cents per kWh in 2024, the second-highest of any state.
+          In a rate environment like that, the first three levers matter as
+          much as cutting usage.
+        </p>
+      </section>
+      <section>
         <h2>1. Establish the real baseline</h2>
         <p>
           Gather at least two bills and, when available, a full year of usage.
@@ -157,6 +218,71 @@ function LowerBillContent() {
           actually apply at the service address. Look at when the household uses
           electricity before switching a time-of-use plan.
         </p>
+        <p className="mt-3">
+          <strong>On-peak hours by utility (2026):</strong>
+        </p>
+        <div className="overflow-x-auto rounded-xl border my-4">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">On-peak hours by utility, 2026</caption>
+            <thead className="bg-muted">
+              <tr>
+                <th className="p-4">Utility</th>
+                <th className="p-4">Plan</th>
+                <th className="p-4">On-peak window</th>
+                <th className="p-4">Applies</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t">
+                <td className="p-4">PG&amp;E</td>
+                <td className="p-4">E-TOU-C</td>
+                <td className="p-4">4&ndash;9 p.m.</td>
+                <td className="p-4">Every day</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">PG&amp;E</td>
+                <td className="p-4">E-TOU-D</td>
+                <td className="p-4">5&ndash;8 p.m.</td>
+                <td className="p-4">Weekdays only</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">SCE</td>
+                <td className="p-4">4&ndash;9 p.m. TOU plan</td>
+                <td className="p-4">4&ndash;9 p.m.</td>
+                <td className="p-4">Summer weekdays</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">SCE</td>
+                <td className="p-4">5&ndash;8 p.m. TOU plan</td>
+                <td className="p-4">5&ndash;8 p.m.</td>
+                <td className="p-4">Summer weekdays</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">SDG&amp;E</td>
+                <td className="p-4">Standard residential TOU</td>
+                <td className="p-4">4&ndash;9 p.m.</td>
+                <td className="p-4">Every day, including weekends and holidays</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3">
+          Each utility runs more than one time-of-use plan, and the window can
+          shift by season &mdash; confirm the current plan and window for the
+          account before moving usage around it. Full rate-plan detail:{" "}
+          <Link className="underline" href="/blog/pge-time-of-use-rates-2026">
+            PG&amp;E&apos;s time-of-use rates
+          </Link>
+          ,{" "}
+          <Link className="underline" href="/blog/sce-time-of-use-rates-2026">
+            SCE&apos;s time-of-use rates
+          </Link>
+          ,{" "}
+          <Link className="underline" href="/blog/sdge-time-of-use-rates-2026">
+            SDG&amp;E&apos;s time-of-use rates
+          </Link>
+          .
+        </p>
       </section>
       <section>
         <h2>3. Check CARE and FERA before buying anything</h2>
@@ -166,6 +292,65 @@ function LowerBillContent() {
           bill discount for qualifying households above the CARE income range.
           Income limits change, so use the current CPUC table and apply through
           the utility instead of relying on an old article or salesperson.
+        </p>
+        <p className="mt-3">
+          Both discounts also cut the flat monthly Base Services Charge: CARE
+          customers pay $6/month instead of the standard $24.15, and FERA
+          customers pay $12/month &mdash; savings of about $18 and $12 a
+          month respectively, on top of the percentage discount. Current
+          income limits, effective June 1, 2026 through May 31, 2027:
+        </p>
+        <div className="overflow-x-auto rounded-xl border my-4">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">CARE and FERA income limits by household size</caption>
+            <thead className="bg-muted">
+              <tr>
+                <th className="p-4">Household size</th>
+                <th className="p-4">CARE limit (200% of federal poverty level)</th>
+                <th className="p-4">FERA limit (250% of federal poverty level)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t">
+                <td className="p-4">1&ndash;2 people</td>
+                <td className="p-4">$43,280</td>
+                <td className="p-4">$54,100</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">3 people</td>
+                <td className="p-4">$54,640</td>
+                <td className="p-4">$68,300</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">4 people</td>
+                <td className="p-4">$66,000</td>
+                <td className="p-4">$82,500</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">5 people</td>
+                <td className="p-4">$77,360</td>
+                <td className="p-4">$96,700</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">6 people</td>
+                <td className="p-4">$88,720</td>
+                <td className="p-4">$110,900</td>
+              </tr>
+              <tr className="border-t">
+                <td className="p-4">Each additional person</td>
+                <td className="p-4">+$11,360</td>
+                <td className="p-4">+$14,200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3">
+          See the{" "}
+          <Link className="underline" href="/programs/care-california">
+            CARE and FERA program page
+          </Link>{" "}
+          (publishing alongside this page &mdash; confirm both go live
+          together) for how to apply through each utility.
         </p>
       </section>
       <section>
@@ -177,6 +362,15 @@ function LowerBillContent() {
           can provide no-cost weatherization and certain efficient equipment to
           income-qualified households. Eligibility and available measures belong
           to the current utility program.
+        </p>
+        <p className="mt-3">
+          At PG&amp;E, that additional allotment is about 500 kWh a month
+          &mdash; roughly 16.7 kWh a day &mdash; on top of the standard
+          baseline, granted on medical need rather than income, with a
+          doctor&apos;s certification. SCE, SDG&amp;E, and LADWP run
+          comparable Medical Baseline programs at the account&apos;s own
+          utility; confirm the exact allotment there, since it isn&apos;t
+          necessarily the same number.
         </p>
       </section>
       <section>
@@ -199,6 +393,51 @@ function LowerBillContent() {
           show those numbers, it has not shown what happens to the bill.
         </p>
       </section>
+      <section>
+        <h2>Where solar fits among these four levers</h2>
+        <p>
+          Solar addresses the usage lever most directly. It doesn&apos;t touch
+          the fixed charge, and under net billing it interacts with &mdash;
+          rather than replaces &mdash; the rate plan and baseline structure
+          above: a system sized to the account&apos;s own usage history can
+          reduce what&apos;s billed at retail rates, but the Base Services
+          Charge still applies, baseline and tier boundaries still apply, and
+          the time-of-use window still determines what solar production is
+          worth at each hour. None of that argues for or against it.
+          It&apos;s the same measuring stick as everywhere else on this page:
+          pull the usage history, compare it to what a proposal claims, and
+          treat a solar quote as one more rate scenario to check against the
+          current bill.
+        </p>
+      </section>
+      <section>
+        <h2>Check the bill for the California Climate Credit</h2>
+        <p>
+          This one isn&apos;t an action &mdash; it&apos;s a line item to
+          expect. Funded by the state&apos;s Cap-and-Invest program, the
+          credit is applied automatically to PG&amp;E, SCE, and SDG&amp;E
+          residential electric accounts (and their CCA customers), with no
+          enrollment, no income test, and no effect from having solar or net
+          metering. LADWP and SMUD customers don&apos;t get it &mdash; the
+          credit only applies to utilities the CPUC regulates, and those two
+          are municipal.
+        </p>
+        <p className="mt-3">
+          For 2026, PG&amp;E and SCE residential electric customers are
+          getting $36.18 and $36.00, and SDG&amp;E customers $49.36 &mdash;
+          each split across two credits, posted in August and September
+          2026. That&apos;s a change from the April/October pattern of past
+          years: the CPUC moved the schedule to land during the
+          higher-usage summer months instead. It shows up as its own line
+          on the statement, separate from usage charges, so it won&apos;t
+          turn up in a rate comparison. Full amounts and dates:{" "}
+          <Link className="underline" href="/programs/climate-credit-california">
+            California Climate Credit page
+          </Link>{" "}
+          (publishing alongside this page &mdash; confirm both go live
+          together).
+        </p>
+      </section>
       <UtilityGuideLinks />
       <RelatedGuides
         heading="If the load itself is the problem"
@@ -206,6 +445,7 @@ function LowerBillContent() {
           { href: "/solar-problems/running-ac-with-solar-california", label: "What all-day cooling does, with or without solar" },
           { href: "/solar-problems/do-i-still-get-a-utility-bill-with-solar", label: "What stays on the bill after solar" },
           { href: "/blog/is-community-solar-worth-it", label: "When a shared project fits better than a rooftop" },
+          { href: "/solar-problems/true-up-bill-california-explained", label: "The annual true-up bill, explained" },
         ]}
       />
     </>
@@ -219,9 +459,9 @@ export function CaliforniaBillDecisionPage({ kind }: { kind: CaliforniaBillGuide
       title={guide.title}
       intro={guide.intro}
       path={guide.path}
-      sources={sources}
+      sources={kind === "lower" ? [...sources, ...lowerOnlySources] : sources}
       topic={kind === "high" ? "California high electric bill" : "Lower a California electric bill"}
-      sourceCheckedDate="2026-09-12"
+      sourceCheckedDate={kind === "lower" ? "2026-09-22" : "2026-09-12"}
       primaryResourceHref={kind === "high" ? "/blog/how-to-lower-electric-bill-california" : "/blog/why-is-my-california-electric-bill-so-high"}
       primaryResourceLabel={kind === "high" ? "Steps to lower the bill" : "Diagnose a high bill"}
       comparisonHref="/blog/net-billing-vs-net-metering-california"
