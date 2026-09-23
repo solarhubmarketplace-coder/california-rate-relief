@@ -12,7 +12,11 @@ import { LocalProjectGuidance } from '@/components/growth/LocalProjectGuidance';
 import { NearbyCostCities } from '@/components/growth/NearbyCostCities';
 import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
-import { cityCostPath, type CityCostRow } from '@/data/city-cost-data';
+import {
+  COST_TEMPLATE_CSLB_VERIFIED,
+  cityCostPath,
+  type CityCostRow,
+} from '@/data/city-cost-data';
 import {
   RATE_TRACKER_PATH,
   formatAverageRateCents,
@@ -21,6 +25,7 @@ import {
 import { growthCities } from '@/data/growth-cities';
 import { getCityBySlug } from '@/data/cities-data';
 import { companiesCityHref, hasCompaniesCityPage } from '@/lib/canonical-redirects';
+import { costPageModified, costPageSeo } from '@/lib/city-pages';
 
 // =============================================================================
 // CityCostPage — the template behind /solar-cost/[city]
@@ -78,12 +83,12 @@ const STATE_SOURCES: CityCostSource[] = [
   {
     label: 'CSLB, Solar Requirements (reproduces §7169; disclosure and Supporting Information forms)',
     url: 'https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx',
-    verifiedAt: '2026-09-17',
+    verifiedAt: COST_TEMPLATE_CSLB_VERIFIED,
   },
   {
     label: 'CSLB licence and home improvement salesperson lookup',
     url: 'https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx',
-    verifiedAt: '2026-09-17',
+    verifiedAt: COST_TEMPLATE_CSLB_VERIFIED,
   },
   {
     label: 'California Revenue and Taxation Code §73 — active solar energy system new construction exclusion (§73(a), §73(i)(1)-(2))',
@@ -104,21 +109,9 @@ const STATE_SOURCES: CityCostSource[] = [
 
 const link = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
 
-/** Titles are capped at 60 characters, so a long city name falls back. */
-export function cityCostTitle(city: string): string {
-  const full = `Solar Panel Cost in ${city}, CA: What Sets the Price (2026)`;
-  return full.length <= 60 ? full : `Solar Panel Cost in ${city}, CA (2026)`;
-}
-
-/** Meta descriptions are capped at 155 characters. */
-export function cityCostDescription(city: string): string {
-  const full =
-    `What actually sets the price of a solar system in ${city}, CA: the utility rate, ` +
-    'city permit rules, the roof and the main panel. Sourced, with no price estimate.';
-  return full.length <= 155
-    ? full
-    : `What sets the price of solar in ${city}, CA: utility rate, permits, roof and main panel. Sourced, with no price estimate.`;
-}
+// Titles, descriptions and the H1 now come from costPageSeo() in
+// src/lib/city-pages.ts, which also decides whether this page or the city's
+// /solar-companies page leads with "Solar Panels in <city>".
 
 // The URL shape now lives with the data (src/data/city-cost-data.ts) so the
 // /solar-cost index can build links without importing this template. Re-exported
@@ -158,8 +151,9 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
   const utilityForTools = hasAddressSpecificUtility || split ? '' : utility.name;
   const path = cityCostPath(row.slug);
   const canonicalUrl = `https://ratereliefca.com${path}`;
-  const title = cityCostTitle(row.city);
-  const description = cityCostDescription(row.city);
+  const seo = costPageSeo(row);
+  const description = seo.description;
+  const updated = costPageModified(row);
   const rate = formatAverageRateCents(utility);
 
   // 2026-09-22: cross-link to the companion /solar-companies/<city> page when
@@ -223,13 +217,16 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
   ];
 
   return (
-    <PublicLayout breadcrumbLabel={`Solar cost in ${row.city}`}>
+    <PublicLayout
+      breadcrumbLabel={`Solar cost in ${row.city}`}
+      breadcrumbParent={{ label: 'Solar cost by city', href: '/solar-cost' }}
+    >
       <ArticleJsonLd
         variant='Article'
         domain='crr'
-        headline={`How Much Does Solar Cost in ${row.city}? What Actually Sets the Price`}
+        headline={seo.h1}
         url={canonicalUrl}
-        dateModified={row.sourcesFetchedAt}
+        dateModified={updated}
         description={description}
       />
       <FaqJsonLd items={faqs} />
@@ -250,9 +247,9 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 {row.county} &middot; Cost drivers
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                How Much Does Solar Cost in {row.city}? What Actually Sets the Price
+                {seo.h1}
               </h1>
-              <Byline updated={row.sourcesFetchedAt} dateLabel='Sources verified' sourceCount={sources.length} sourcesHref='#sources'>
+              <Byline updated={updated} dateLabel='Updated' sourceCount={sources.length} sourcesHref='#sources'>
                 <span className='inline-flex items-center gap-1'><MapPin className='h-4 w-4' aria-hidden='true' />{row.city}, {row.county}</span>
               </Byline>
             </header>
@@ -493,6 +490,48 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 <Link href='/solar-problems/solar-escalator-clause-explained' className={link}>
                   escalator clauses
                 </Link>.
+              </p>
+
+              {/* ---------- The company behind a quote ---------- */}
+              {/* 2026-09-22. Every statement below was checked that day against
+                  the two CSLB pages it cites (STATE_SOURCES[4] and [5]). No
+                  installer is named, ranked or recommended. */}
+              <h2 id='company' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
+                Checking the solar company behind a {row.city} quote
+              </h2>
+              <p>
+                California Rate Relief does not rank or recommend installers. Whoever you get quotes
+                from, three checks come from the state rather than from the company:
+              </p>
+              <ul className='list-disc pl-6 space-y-2'>
+                <li>
+                  <strong>The license.</strong> The Contractors State License Board&apos;s{' '}
+                  <a href={STATE_SOURCES[5].url} target='_blank' rel='noopener noreferrer' className={link}>
+                    Check a License
+                  </a>{' '}
+                  page looks up a contractor license or a home improvement salesperson registration,
+                  including complaint disclosure. Look up the company on each quote, and the person
+                  who sold it.
+                </li>
+                <li>
+                  <strong>The front page of the contract.</strong> Section 7169 requires the solar
+                  energy system disclosure document on the front or cover page of every solar
+                  contract, stating the total cost and payments including financing costs, how and
+                  to whom you can complain, and your right to the applicable cancellation period
+                  under Business and Professions Code section 7159.
+                </li>
+                <li>
+                  <strong>The supporting pages.</strong> The supporting information that may follow
+                  that page includes the salesperson&apos;s calculations of how many panels you need
+                  and how much energy they will generate, and the company&apos;s contractor&apos;s
+                  license number. If a quote leaves them out, ask for them before comparing it.
+                </li>
+              </ul>
+              <p className='text-foreground/60 text-sm'>
+                Sources:{' '}
+                <a href={STATE_SOURCES[5].url} target='_blank' rel='noopener noreferrer' className={link}>CSLB, Check a License</a>{' '}and{' '}
+                <a href={STATE_SOURCES[4].url} target='_blank' rel='noopener noreferrer' className={link}>CSLB, Solar Requirements</a>.
+                Verified {formatVerified(COST_TEMPLATE_CSLB_VERIFIED)}.
               </p>
 
               {/* ---------- Property taxes ---------- */}

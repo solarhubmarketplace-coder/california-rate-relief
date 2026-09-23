@@ -1,15 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import {
-  CityCostPage,
-  cityCostDescription,
-  cityCostPath,
-  cityCostTitle,
-} from '@/components/growth/CityCostPage';
+import { CityCostPage } from '@/components/growth/CityCostPage';
 import {
   getCityCostRow,
   getPublishableCityCostSlugs,
 } from '@/data/city-cost-data';
+import { cityPageMetadata } from '@/lib/city-pages';
 
 // =============================================================================
 // /solar-cost/[city] — "solar panel cost <city>" without a price on the page.
@@ -34,23 +30,9 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { city: slug } = await params;
-  const row = getCityCostRow(slug);
-  if (!row) return { title: 'Page not found' };
-  const title = cityCostTitle(row.city);
-  const description = cityCostDescription(row.city);
-  const canonicalPath = cityCostPath(row.slug);
-  return {
-    title,
-    description,
-    alternates: { canonical: canonicalPath },
-    openGraph: {
-      title,
-      description,
-      type: 'article',
-      modifiedTime: `${row.sourcesFetchedAt}T00:00:00Z`,
-      url: `https://ratereliefca.com${canonicalPath}`,
-    },
-  };
+  // Title, description, canonical, Open Graph and Twitter come from one place
+  // (src/lib/city-pages.ts) so the social titles cannot drift from <title>.
+  return cityPageMetadata('cost', slug) ?? { title: 'Page not found' };
 }
 
 export default async function SolarCostCityPage({ params }: PageProps) {
