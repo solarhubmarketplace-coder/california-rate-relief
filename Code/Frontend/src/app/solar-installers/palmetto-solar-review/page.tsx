@@ -12,14 +12,14 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 
 export const metadata: Metadata = {
   title: "Palmetto Solar Reviews (2026): Contracts and What to Check",
-  description: "What Palmetto's LightReach energy plan actually is in its own words, the California court record, and how it compares to Sunrun. Sourced and dated.",
+  description: "What Palmetto's LightReach Energy Plan is in its own words, the sale-transfer process, CSLB license, and California court record. Sourced and dated.",
   alternates: { canonical: '/solar-installers/palmetto-solar-review' },
 };
 
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
-  headline: "Palmetto Solar Review 2026: Honest Look at a National Installer",
-  datePublished: '2026-04-24', dateModified: '2026-09-18',
+  headline: "Palmetto Solar Reviews (2026): LightReach and the Palmetto Energy Plan Explained",
+  datePublished: '2026-04-24', dateModified: '2026-09-22',
   author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/palmetto-solar-review' },
@@ -45,12 +45,12 @@ export default function PalmettoReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Palmetto Solar Reviews (2026): Honest Look at a High-Volume National Installer
+                Palmetto Solar Reviews (2026): LightReach and the Palmetto Energy Plan Explained
               </h1>
-              
-              <LastReviewedStamp date="2026-09-18" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-18'>Updated September 18, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-22'>Updated September 22, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>9 min read</span></div>
               </div>
             </header>
@@ -121,7 +121,45 @@ export default function PalmettoReview() {
                 Read that first sentence closely, because it is the most important thing on this page: <strong>&ldquo;we own the system&rdquo; means you do not own the panels on your roof.</strong> Whatever the product is called, third-party ownership has four consequences you should price in. The owner, not you, claims any tax credit. The agreement has to be transferred or settled when you sell the home, and a buyer must be willing to assume it. Responsibility for a roof leak under the array sits with whoever the contract says, which may not be the party you would expect. And the payment continues for the full term regardless of how your circumstances change.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Because the escalator is not published, treat it as the first question you ask, not the last: request the annual escalation percentage in writing, then calculate the payment in year 10 and year 25, not just year one. A rate that starts below your utility bill does not necessarily stay below it. Compare the whole structure against buying outright in <a href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>cash, loan, lease and PPA obligations side by side</a> and <a href='/blog/solar-ppa-vs-lease-california' className='text-primary underline'>how a PPA differs from a lease</a>.
+                Because the escalator is not published on that particular page, treat it as the first question you ask, not the last: request the annual escalation percentage in writing, then calculate the payment in year 10 and year 25, not just year one. A rate that starts below your utility bill does not necessarily stay below it. Compare the whole structure against buying outright in <a href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>cash, loan, lease and PPA obligations side by side</a> and <a href='/blog/solar-ppa-vs-lease-california' className='text-primary underline'>how a PPA differs from a lease</a>.
+              </p>
+
+              <h3 className='text-xl font-bold text-foreground mt-8 mb-3'>The product has two names: LightReach and the Palmetto Energy Plan</h3>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Palmetto&apos;s consumer financing product is called the <strong>Palmetto Energy Plan</strong>: a 25-year agreement, structured as either a lease (fixed monthly payment) or a PPA (a fixed rate per kWh produced), depending on what your state allows (<a href='https://palmetto.com' target='_blank' rel='noopener noreferrer' className='text-primary underline'>palmetto.com</a>, accessed September 22, 2026). &ldquo;LightReach&rdquo; is Palmetto&apos;s name for the partner network that sells this plan, not a separate financing company &mdash; Palmetto describes it as &ldquo;a premiere partner network offering the Palmetto Energy Plan&rdquo; (<a href='https://palmetto.com/business/lightreach-solar' target='_blank' rel='noopener noreferrer' className='text-primary underline'>palmetto.com/business/lightreach-solar</a>, accessed September 22, 2026). If a contractor pitched you a &ldquo;LightReach&rdquo; agreement, you were offered the Palmetto Energy Plan &mdash; the plan and the network carry the same terms described here.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                On the specific rate escalator: the <strong>Annual Rate Escalator</strong> &mdash; the plan&apos;s built-in yearly price increase &mdash; runs 0% to 3.5%, set in your specific agreement (<a href='https://help.palmetto.com/en/articles/9948784-palmetto-energy-plan-faqs' target='_blank' rel='noopener noreferrer' className='text-primary underline'>help.palmetto.com, &ldquo;Palmetto Energy Plan FAQs&rdquo;</a>, accessed September 22, 2026). That is a more specific figure than the LightReach product page above states; get the actual percentage in your own agreement in writing rather than relying on either source alone.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Every Palmetto Energy Plan also bundles 25 years of service and a 90% Performance and Production Guarantee (<a href='https://help.palmetto.com/en/articles/9948784-palmetto-energy-plan-faqs' target='_blank' rel='noopener noreferrer' className='text-primary underline'>help.palmetto.com, &ldquo;Palmetto Energy Plan FAQs&rdquo;</a>, accessed September 22, 2026). If your system produces less than 90% of its estimated output over a review period &mdash; checked every 36 months from your first payment &mdash; Palmetto pays the shortfall directly to your bank account within 30 days, calculated against your contracted energy rate, with no claim to file (<a href='https://help.palmetto.com/en/articles/10250514-understanding-your-palmetto-solar-performance-guarantee' target='_blank' rel='noopener noreferrer' className='text-primary underline'>help.palmetto.com, &ldquo;Understanding Your Palmetto Solar Performance Guarantee&rdquo;</a>, accessed September 22, 2026). Palmetto states this guarantee applies only to Energy Plan customers &mdash; it does not cover a system you bought or financed with a loan and own outright (same source). Palmetto separately markets this protection under the name <strong>Palmetto Protect</strong>, described on its own site as also covering parts, labor, remote issue detection, and a nationwide service network (<a href='https://palmetto.com/protect' target='_blank' rel='noopener noreferrer' className='text-primary underline'>palmetto.com/protect</a>, accessed September 22, 2026); whether that is purchasable separately by a cash or loan buyer was not confirmed.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What happens to your Palmetto Energy Plan when you sell your home</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Selling before your 25-year term is up gives you three options, per Palmetto&apos;s own support documentation (<a href='https://help.palmetto.com/en/articles/9948792-selling-your-home-we-can-help' target='_blank' rel='noopener noreferrer' className='text-primary underline'>help.palmetto.com, &ldquo;Selling Your Home? We Can Help!&rdquo;</a>, accessed September 22, 2026):
+              </p>
+              <ol className='list-decimal pl-6 space-y-3 text-foreground/80 mb-6'>
+                <li><strong>Transfer the agreement to the buyer.</strong> The buyer applies for their own Palmetto Energy Plan contract and has to pass Palmetto&apos;s credit and underwriting check. Once approved and the sale closes, the plan &mdash; and any remaining warranty &mdash; transfers to their name.</li>
+                <li><strong>Prepay the remaining balance.</strong> You pay off what&apos;s left up front; Palmetto keeps ownership and stays responsible for maintenance.</li>
+                <li><strong>Buy the system outright at fair market value.</strong> Only available once the agreement has run at least five years. You get ownership, but Palmetto&apos;s maintenance coverage ends with the sale.</li>
+              </ol>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Two things to get right before you rely on this. First, Palmetto says you remain financially responsible for the agreement until a written transfer is signed &mdash; closing a home sale without that in place is treated as a default (same source). Second, the notice window is not consistent across Palmetto&apos;s own documentation: the sale-transfer article says to submit your request &ldquo;at least 60 days before the closing date,&rdquo; while a separate Palmetto article on canceling or transferring the agreement cites a 15-day prior-written-notice requirement instead (<a href='https://help.palmetto.com/en/articles/11049616-how-to-cancel-or-transfer-your-solar-lease-agreement' target='_blank' rel='noopener noreferrer' className='text-primary underline'>help.palmetto.com, &ldquo;How to Cancel or Transfer Your Solar Lease Agreement&rdquo;</a>, accessed September 22, 2026). Nothing on Palmetto&apos;s own site reconciled those two figures as of this check &mdash; ask Palmetto directly for the deadline on your specific file rather than relying on either number alone.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-2'>
+                <strong>Questions to ask before you rely on any of this:</strong>
+              </p>
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>Has the buyer been pre-qualified for Palmetto&apos;s credit/underwriting check, confirmed in writing, before you&apos;re past the point of no return in escrow?</li>
+                <li>What notice deadline is Palmetto actually giving you on your file &mdash; the 60-day figure or the 15-day figure &mdash; and is a written transfer agreement signed before closing?</li>
+                <li>If you&apos;re prepaying or buying out instead of transferring, what&apos;s the payoff or fair-market-value quote, and is it reflected in your asking price?</li>
+                <li>Is your system old enough (at least five years under contract) to qualify for the buyout option, if that&apos;s the path you want?</li>
+              </ul>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Palmetto&apos;s California Contractor License</h2>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                This page previously cited no CSLB license number for Palmetto itself. Palmetto&apos;s own published license page lists California license <strong>#1048921</strong>, classified as an Electrical Contractor (<a href='https://palmetto.com/state-contractor-license-information' target='_blank' rel='noopener noreferrer' className='text-primary underline'>palmetto.com/state-contractor-license-information</a>, accessed September 22, 2026). Its current status, bond, and complaint history were not confirmed at CSLB&apos;s own lookup as of this check. Verify it yourself before signing anything; see our <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>full contractor-verification walkthrough</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
@@ -166,6 +204,18 @@ export default function PalmettoReview() {
                 <div>
                   <h3 className='text-lg font-bold text-foreground mb-2'>How long does a Palmetto install actually take?</h3>
                   <p className='text-foreground/80 leading-relaxed'>Ask for a written schedule rather than an average. Install day itself is usually short; the length sits in design, permitting and utility interconnection, which vary by jurisdiction and utility queue. Get a date range for each stage and the remedy if a stage slips, and note that the payment obligation under a third-party-owned agreement generally begins at activation, not at signing &mdash; confirm that in your contract.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>What happens to my Palmetto plan if I sell my house?</h3>
+                  <p className='text-foreground/80 leading-relaxed'>You have three options: transfer the agreement to the buyer (they must pass Palmetto&apos;s credit check), prepay the remaining balance, or buy the system outright at fair market value if you&apos;re at least five years into the term (help.palmetto.com, accessed September 22, 2026). Get the exact notice deadline from Palmetto directly &mdash; its own published articles give two different numbers. See the full breakdown above.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>What CSLB license number does Palmetto use in California?</h3>
+                  <p className='text-foreground/80 leading-relaxed'>Palmetto&apos;s own site lists #1048921, an Electrical Contractor license (palmetto.com/state-contractor-license-information, accessed September 22, 2026). Its current status was not verified at CSLB&apos;s lookup as of this check &mdash; check it yourself at CSLB before signing.</p>
+                </div>
+                <div>
+                  <h3 className='text-lg font-bold text-foreground mb-2'>How does the Palmetto Energy Plan compare to buying with cash or a loan?</h3>
+                  <p className='text-foreground/80 leading-relaxed'>The plan itself is a lease or a PPA &mdash; you don&apos;t own the system either way. For how that compares generally to a loan or cash purchase, not specific to Palmetto, see: <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>Solar Lease vs. PPA vs. Loan vs. Cash in California</Link>.</p>
                 </div>
               </div>
             </div>
@@ -214,7 +264,7 @@ export default function PalmettoReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Palmetto" />
+        <VerifyInstallerBox installerName="Palmetto" cslbLicenseNumber="1048921" />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
