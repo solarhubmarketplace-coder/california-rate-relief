@@ -19,13 +19,13 @@
       },
       {
         "label": "Whole-house standby generator, installed",
-        "value": "$8,000-$18,000+",
-        "note": "CA-typical range, size and fuel-source dependent"
+        "value": "Varies by size and fuel",
+        "note": "Get an itemized installed quote; no primary-source California figure is published"
       },
       {
         "label": "Whole-home battery system, installed",
-        "value": "$25,000-$40,000+",
-        "note": "2-3 stacked units, before any incentive"
+        "value": "Varies by capacity",
+        "note": "Depends on how many units the home needs; get an itemized installed quote"
       }
     ],
     "sections": [
@@ -69,9 +69,9 @@
       "rows": [
         [
           "Installed cost",
-          "$25,000-$40,000+ before any incentive (2-3 stacked units, CA-typical)",
-          "$8,000-$18,000+ (auto transfer switch, gas line or propane tank if needed)",
-          "$500-$2,500 equipment + $500-$900 manual/interlock switch"
+          "Varies by capacity; get an itemized quote",
+          "Varies by size and fuel; get an itemized quote",
+          "Varies; get an itemized quote for the unit and transfer switch"
         ],
         [
           "Fuel during an outage",

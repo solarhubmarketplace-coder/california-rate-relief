@@ -60,7 +60,7 @@ export default function EmpireReview() {
               </div>
             </header>
 
-            <div className='p-4 rounded-lg border border-cta/40 bg-cta/10 flex gap-3 items-start mb-8'>
+            <div className='p-4 rounded-lg border border-status-warning/30 bg-status-warning/10 flex gap-3 items-start mb-8'>
               <AlertTriangle className='h-5 w-5 text-status-warning flex-shrink-0 mt-0.5' />
               <div className='text-sm text-foreground/80'>
                 <strong className='text-foreground'>Name confusion warning:</strong> &ldquo;Empire Solar&rdquo; is a name used by multiple solar entities across different states. Some of these have had bankruptcies or closures. Before signing, verify the specific California entity you&apos;re hiring has an active CSLB license at <a href='https://www.cslb.ca.gov' target='_blank' rel='noopener noreferrer' className='text-primary underline'>cslb.ca.gov</a>.

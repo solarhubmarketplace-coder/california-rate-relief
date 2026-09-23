@@ -55,8 +55,8 @@ export default function PalmettoReview() {
               </div>
             </header>
 
-            <div className='p-4 rounded-lg border border-cta/30 bg-cta/5 flex gap-3 items-start mb-10'>
-              <AlertTriangle className='h-5 w-5 text-cta flex-shrink-0 mt-0.5' />
+            <div className='p-4 rounded-lg border border-status-warning/30 bg-status-warning/10 flex gap-3 items-start mb-10'>
+              <AlertTriangle className='h-5 w-5 text-status-warning flex-shrink-0 mt-0.5' />
               <div className='text-sm text-foreground/80'>
                 <strong className='text-foreground'>What this page does and does not state:</strong> no star rating and no complaint count appear here. Those figures could not be re-verified at their own sources when this page was checked on September 18, 2026, so they were removed rather than carried forward with a stale date. What the page does carry is Palmetto&apos;s own description of its LightReach energy plan and a dated search of the federal court record, both below.
               </div>

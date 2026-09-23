@@ -238,11 +238,11 @@ export default async function ContactPage() {
             <p className='text-lg text-muted-foreground mb-8'>How to reach us, and what to expect for response time.</p>
             <div className='prose prose-slate max-w-none space-y-6 text-foreground/80'>
               <h2 className='text-2xl font-bold text-foreground'>General Inquiries</h2>
-              <p>Email <a href={`mailto:${cfg.email}`} className='text-primary underline'>{cfg.email}</a>. Typical response time is one business day. For solar quote requests, fill out the 60-second form on our <Link href='/' className='text-primary underline'>homepage</Link> and we&apos;ll route you to up to three vetted California installers.</p>
+              <p>Email <a href={`mailto:${cfg.email}`} className='text-primary underline'>{cfg.email}</a>. Typical response time is one business day. For solar quote requests, fill out the form on our <Link href='/' className='text-primary underline'>homepage</Link>.</p>
               <h2 className='text-2xl font-bold text-foreground'>Corrections and Editorial Feedback</h2>
               <p>If you spot a factual error in any of our articles or installer reviews, email the page URL plus the correction. We log corrections at the bottom of the corrected page.</p>
               <h2 className='text-2xl font-bold text-foreground'>Installer and Vendor Inquiries</h2>
-              <p>If you operate a California solar installation business and want to be considered for our installer network or editorial reviews, email <a href={`mailto:${cfg.email}`} className='text-primary underline'>{cfg.email}</a> with your CSLB license number, primary California service area, and a recent customer reference list. We do not accept paid placements.</p>
+              <p>If you operate a California solar installation business and have a question about our editorial coverage, email <a href={`mailto:${cfg.email}`} className='text-primary underline'>{cfg.email}</a> with your CSLB license number, primary California service area, and a recent customer reference list. We do not accept paid placements.</p>
               <h2 className='text-2xl font-bold text-foreground'>Press and Partnerships</h2>
               <p>Same address. Please include &ldquo;Press&rdquo; or &ldquo;Partnership&rdquo; in the subject line.</p>
             </div>
