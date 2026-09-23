@@ -8,6 +8,7 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { LocalProjectGuidance } from '@/components/growth/LocalProjectGuidance';
 import { NearbyCostCities } from '@/components/growth/NearbyCostCities';
+import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import { cityCostPath, type CityCostRow } from '@/data/city-cost-data';
 import {
@@ -252,6 +253,8 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 California Rate Relief is a private solar referral service. It is not a contractor,
                 it does not install anything, and it does not estimate what a system would cost you.
               </p>
+
+              <StatewideCostBenchmark cityName={row.city} />
 
               {/* ---------- Utility ---------- */}
               <h2 id='utility' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
