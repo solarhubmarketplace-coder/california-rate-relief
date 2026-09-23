@@ -74,6 +74,22 @@ const sources: Source[] = [
     label: "CSLB: Solar Energy System Supporting Information form",
     url: "https://www.cslb.ca.gov/Resources/Contractors/SOLAR_ENERGY_SYSTEM_SUPPORTING_INFORMATION.pdf",
   },
+  {
+    label: "CSLB: Home Improvement Contracts Consumer Guide",
+    url: "https://www.cslb.ca.gov/Resources/GuidesAndPublications/HomeImprovementContractsConsumerGuide.pdf",
+  },
+  {
+    label: "CFPB: Regulation Z, 12 CFR §1026.23 (right of rescission)",
+    url: "https://www.consumerfinance.gov/rules-policy/regulations/1026/23/",
+  },
+  {
+    label: "CFPB: Right to Cancel explainer",
+    url: "https://files.consumerfinance.gov/f/201410-right_to_cancel_explainer.pdf",
+  },
+  {
+    label: "DFPI: File a Complaint",
+    url: "https://dfpi.ca.gov/file-a-complaint/",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -91,7 +107,7 @@ export const metadata: Metadata = {
       "The statutory cancellation window, when the clock starts, how to send the notice, and where a cancellation fee sits relative to the statutory right.",
     type: "article",
     url: "https://ratereliefca.com/blog/can-you-cancel-solar-panel-contract-before-installation-california",
-    modifiedTime: "2026-09-17T00:00:00Z",
+    modifiedTime: "2026-09-22T00:00:00Z",
   },
 };
 
@@ -102,7 +118,7 @@ export default function CancelSolarContractBeforeInstallationCalifornia() {
       intro="California gives a cancellation right that runs on a clock, and the clock does not start where most people assume. What the statute allows, when the window opens, how to send the notice, and where a contractual cancellation fee sits relative to the statutory right."
       path="/blog/can-you-cancel-solar-panel-contract-before-installation-california"
       sources={sources}
-      sourceCheckedDate="2026-09-17"
+      sourceCheckedDate="2026-09-22"
       topic="Solar contract review before signing"
       inquiry={
         <SolarInquiry
@@ -274,6 +290,118 @@ export default function CancelSolarContractBeforeInstallationCalifornia() {
             the solar contract red flags guide
           </Link>
           .
+        </p>
+      </section>
+
+      <section>
+        <h2>How much can a contractor ask for up front?</h2>
+        <p>
+          For the installation contract itself — a home improvement contract,
+          whether you are paying cash or financing it with a loan — California
+          caps the down payment at $1,000 or 10% of the contract price,
+          whichever is less, not counting finance charges. (CSLB, Home
+          Improvement Contracts Consumer Guide, verified 2026-09-22.) A small
+          number of contractors that carry a blanket performance and payment
+          bond are exempt from this cap. (Same source.) The cap applies to the
+          installation price; it does not apply to a lease or PPA’s monthly
+          payment, or to how a separate loan agreement structures its own
+          terms. The contract also has to be in writing, legible, and state
+          the right to cancel or rescind. (CSLB, Home Improvement Contracts
+          Consumer Guide; CSLB, Learn About Home Improvement Contracts;
+          verified 2026-09-22.)
+        </p>
+        <p className="mt-3">
+          If a contractor asked for more than this before starting work, that
+          belongs in a CSLB complaint.{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/solar-company-took-my-money-california"
+          >
+            Solar Company Took Your Money? What To Do in California
+          </Link>{" "}
+          walks through that sequence if a deposit was mishandled.
+        </p>
+      </section>
+
+      <section>
+        <h2>After the window closes, what governs cancellation?</h2>
+        <p>
+          Once the three (or five) business days pass, canceling is no longer
+          a right you can use for any reason — it is whatever the contract
+          says about termination, and possibly a cancellation-fee or
+          liquidated-damages clause. The CPUC’s Solar Consumer Protection
+          Guide sets the 3-/5-day right but does not set a fee schedule for
+          canceling after it closes. (CPUC, California Solar Consumer
+          Protection Guide, verified 2026-09-22.) Read the contract’s own
+          termination section before assuming a number. If the contract is
+          silent, or a fee looks out of proportion to the work actually done,
+          that is a fact pattern for a CSLB complaint rather than something to
+          resolve alone — see{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/solar-company-took-my-money-california"
+          >
+            Solar Company Took Your Money? What To Do in California
+          </Link>{" "}
+          for the complaint and small-claims path. This is not legal advice;
+          for a specific, high-dollar dispute, talk to an attorney.
+        </p>
+      </section>
+
+      <section>
+        <h2>Canceling a lease, PPA, or financing agreement</h2>
+        <p>
+          <strong>Lease and PPA agreements.</strong> The CPUC’s guide states
+          the 3-/5-day cancellation right applies to “your contract” for any
+          reason, without carving out a lease or power-purchase agreement — it
+          applies the same way regardless of how the system is paid for.
+          (CPUC, California Solar Consumer Protection Guide, verified
+          2026-09-22.) Inside the window, cancel it the same way described
+          above: written notice to the address on the contract, kept as
+          proof. After the window, the lease or PPA’s own end-of-term,
+          transfer and buyout terms take over — see{" "}
+          <Link
+            className="underline"
+            href="/blog/what-happens-if-stop-paying-solar-lease-california"
+          >
+            What Happens if I Stop Paying My Solar Lease in California?
+          </Link>{" "}
+          for what happens if you try to walk away later, and{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/solar-escalator-clause-explained"
+          >
+            Solar Escalator Clauses, Explained
+          </Link>{" "}
+          for how the ongoing payment itself is structured.
+        </p>
+        <p className="mt-3">
+          <strong>Loans and other financing agreements.</strong> The company
+          that installs the system and the company that finances it are often
+          separate legal entities with separate contracts. A federal right —
+          Truth in Lending Act (TILA) rescission — gives three business days
+          to cancel a loan, but only when that loan is secured by a lien on
+          the buyer’s principal dwelling: a home-equity loan, a HELOC, or a
+          cash-out refinance used to pay for solar. (12 CFR §1026.23; CFPB,
+          Right to Cancel explainer; verified 2026-09-22.) Most standalone
+          solar loans are not secured that way — many are unsecured, or
+          secured only by a UCC-1 filing against the solar equipment itself
+          rather than the home;{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/ucc-1-lien-solar-california"
+          >
+            UCC-1 Liens and Solar in California
+          </Link>{" "}
+          explains what that filing does and does not do. If TILA rescission
+          does not apply to a given loan, put the cancellation request to the
+          lender in writing, and if it is a licensed California Finance
+          Lender or PACE program administrator, file with the Department of
+          Financial Protection and Innovation (DFPI); the online form takes
+          about five minutes, though DFPI “does not act as a court of law or
+          as a lawyer on your behalf” and will not resolve the underlying
+          contract dispute itself. (DFPI, File a Complaint, verified
+          2026-09-22.)
         </p>
       </section>
 
@@ -593,6 +721,45 @@ export default function CancelSolarContractBeforeInstallationCalifornia() {
               section 7159(a)(6) gives the same route where the required Notice of
               Cancellation was not included or attached to the contract. (Verified
               2026-09-17.)
+            </p>
+          </div>
+          <div>
+            <h3>
+              Does the 3-day right to cancel apply to a solar lease or PPA,
+              not just a purchase?
+            </h3>
+            <p>
+              Yes. The CPUC’s consumer guide states the cancellation right
+              applies to the contract “for any reason,” the same way whether
+              you are buying, financing, leasing, or signing a PPA. (CPUC,
+              California Solar Consumer Protection Guide, verified
+              2026-09-22.)
+            </p>
+          </div>
+          <div>
+            <h3>
+              Is there a cap on the down payment a solar contractor can ask
+              for?
+            </h3>
+            <p>
+              Yes, for the installation contract itself: $1,000 or 10% of the
+              contract price, whichever is less, not counting finance
+              charges, with a narrow exception for contractors carrying a
+              blanket performance and payment bond. (CSLB, Home Improvement
+              Contracts Consumer Guide, verified 2026-09-22.)
+            </p>
+          </div>
+          <div>
+            <h3>
+              Does my solar loan have its own 3-day right to cancel, separate
+              from the installation contract?
+            </h3>
+            <p>
+              Only in a specific situation: federal Truth in Lending
+              rescission applies when the loan is secured by a lien on the
+              home, such as a home-equity loan or a cash-out refinance — not
+              to most standard, unsecured solar loans. (12 CFR §1026.23,
+              verified 2026-09-22.)
             </p>
           </div>
         </div>
