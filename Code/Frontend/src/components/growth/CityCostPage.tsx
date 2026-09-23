@@ -125,6 +125,18 @@ export function cityCostDescription(city: string): string {
 // here because the city route imports it from this module.
 export { cityCostPath } from '@/data/city-cost-data';
 
+/** The tracker-rate sentence, for a city where the utility serves only part of it. */
+function utilityRateSentence(
+  utility: ReturnType<typeof getUtilityRate>,
+  rate: string,
+  lead: string,
+): string {
+  if (utility.averageResidentialRateCents === null) {
+    return `${lead}no comparable average residential rate is published for ${utility.name}: ${utility.basisNote}.`;
+  }
+  return `${lead}its current average residential rate is ${rate}, as of ${utility.asOf}, per ${utility.sourceLabel}. That rate is ${utility.basisNote}.`;
+}
+
 function formatVerified(iso: string): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
   if (!match) return iso;
@@ -139,6 +151,11 @@ function formatVerified(iso: string): string {
 export function CityCostPage({ row }: { row: CityCostRow }) {
   const utility = getUtilityRate(row.utilityKey);
   const hasAddressSpecificUtility = row.slug === 'corona';
+  // 2026-09-22: a city that more than one utility serves carries a sourced
+  // note naming the others. The tracker utility is then described as serving
+  // part of the city, and nothing downstream pre-selects it for the reader.
+  const split = row.utilitySplit;
+  const utilityForTools = hasAddressSpecificUtility || split ? '' : utility.name;
   const path = cityCostPath(row.slug);
   const canonicalUrl = `https://ratereliefca.com${path}`;
   const title = cityCostTitle(row.city);
@@ -166,6 +183,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       url: utility.sourceUrl ?? `https://ratereliefca.com${RATE_TRACKER_PATH}`,
       verifiedAt: utility.fetchedAt,
     },
+    ...(split ? split.sources : []),
     ...(hasAddressSpecificUtility
       ? [{
           label: 'City of Corona Department of Water and Power — Electric Service',
@@ -186,7 +204,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
     {
       question: `Is solar worth it in ${row.city}?`,
       answer:
-        `That depends on the bill the system would offset and on the contract you are offered, not on the city. The CPUC's California Solar Consumer Protection Guide requires a standardised bill savings estimate with the inputs and assumptions behind it, and caps any electricity rate escalation used in such a calculation at 10 percent. Compare ${hasAddressSpecificUtility ? 'the utility named on your bill' : `${utility.name}'s own`} billed usage history against that estimate, and check that the estimate's assumptions match your household.`,
+        `That depends on the bill the system would offset and on the contract you are offered, not on the city. The CPUC's California Solar Consumer Protection Guide requires a standardised bill savings estimate with the inputs and assumptions behind it, and caps any electricity rate escalation used in such a calculation at 10 percent. Compare ${hasAddressSpecificUtility || split ? 'the utility named on your bill' : `${utility.name}'s own`} billed usage history against that estimate, and check that the estimate's assumptions match your household.`,
     },
     {
       question: `Do I need a permit for solar in ${row.city}?`,
@@ -198,7 +216,9 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       answer:
         hasAddressSpecificUtility
           ? 'The City of Corona Department of Water and Power states that its electric service is limited to its service area; some Corona addresses are served by Southern California Edison. Check the utility named on your actual bill or confirm the address with the utility before using a rate, a bill comparison, or a project estimate. Source: City of Corona Department of Water and Power, Electric Service, verified September 20, 2026.'
-          : `${utility.longName} (${utility.name}). Its current average residential rate is ${rate}, as of ${utility.asOf}, per ${utility.sourceLabel}, fetched ${formatVerified(utility.fetchedAt)}. That rate is ${utility.basisNote}.`,
+          : split
+            ? `${split.note} ${utilityRateSentence(utility, rate, `Where ${utility.name} serves the address, `)}`
+            : `${utility.longName} (${utility.name}). Its current average residential rate is ${rate}, as of ${utility.asOf}, per ${utility.sourceLabel}, fetched ${formatVerified(utility.fetchedAt)}. That rate is ${utility.basisNote}.`,
     },
   ];
 
@@ -260,7 +280,11 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
 
               {/* ---------- Utility ---------- */}
               <h2 id='utility' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
-                {hasAddressSpecificUtility ? 'Confirm the utility on this address' : `Your utility: ${utility.name}`}
+                {hasAddressSpecificUtility
+                  ? 'Confirm the utility on this address'
+                  : split
+                    ? `Your utility: ${utility.name} or ${split.others}`
+                    : `Your utility: ${utility.name}`}
               </h2>
               {hasAddressSpecificUtility ? (
                 <>
@@ -276,6 +300,33 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                       City of Corona Department of Water and Power — Electric Service
                     </a>
                     . Verified September 20, 2026.
+                  </p>
+                </>
+              ) : split ? (
+                <>
+                  <p>{split.note}</p>
+                  <p>
+                    Where {utility.longName} ({utility.name}) serves the address:
+                    {utility.averageResidentialRateCents === null ? (
+                      <> no comparable average residential rate is published for {utility.name} on
+                      our tracker: {utility.basisNote}. Read your own tariff schedule and your own
+                      bill instead of an average.</>
+                    ) : (
+                      <> its current average residential rate is <strong>{rate}</strong>, as of{' '}
+                      {utility.asOf}. That figure is {utility.basisNote}.</>
+                    )}
+                  </p>
+                  <p className='text-foreground/60 text-sm'>
+                    Sources:{' '}
+                    {split.sources.map((source, index) => (
+                      <span key={source.url}>
+                        {index > 0 ? '; ' : ''}
+                        <a href={source.url} target='_blank' rel='noopener noreferrer' className={link}>
+                          {source.label}
+                        </a>
+                      </span>
+                    ))}
+                    . Verified {formatVerified(split.sources[0].verifiedAt)}.
                   </p>
                 </>
               ) : (
@@ -483,12 +534,12 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
               </h2>
               <p>
                 A quote is only checkable against real usage. This compares two of your own{' '}
-                {hasAddressSpecificUtility ? 'utility' : utility.name} bills on the same basis &mdash; billing days, kWh and charges &mdash;
+                {utilityForTools || 'utility'} bills on the same basis &mdash; billing days, kWh and charges &mdash;
                 so you can see what actually moved before anyone tells you what a system would do
                 about it. Nothing is sent anywhere; the arithmetic runs in your browser.
               </p>
               <div className='not-prose my-8'>
-                <BillComparison utilityName={hasAddressSpecificUtility ? 'utility' : utility.name} />
+                <BillComparison utilityName={utilityForTools || 'utility'} />
               </div>
 
               {/* ---------- FAQ ---------- */}
@@ -548,7 +599,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
 
             <SolarInquiry
               variant='bill'
-              utility={hasAddressSpecificUtility ? '' : utility.name}
+              utility={utilityForTools}
               topic={`Solar project in ${row.city}`}
             />
           </article>

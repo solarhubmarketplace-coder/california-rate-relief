@@ -28,6 +28,12 @@
  * A flag here means "verify this", not "this is wrong". A city with no flag has
  * not been verified either; it has only failed to disagree with a coarse rule.
  *
+ * 2026-09-22: also audits src/data/city-cost-data.ts (/solar-cost) and
+ * src/data/growth-cities.ts (/solar-companies comparison pages), knows the
+ * cities checked as split between utilities (SPLIT_CITIES) and the city-level
+ * exceptions (CITY_OVERRIDES), each verified against the CEC layer and the
+ * utility's own service-area statement that day.
+ *
  * USAGE
  *   node scripts/audit-city-utility.mjs
  *   node scripts/audit-city-utility.mjs --json scripts/out/city-utility-audit.json
@@ -114,11 +120,15 @@ const MUNICIPAL_CITIES = {
   anaheim: 'apu',
   riverside: 'rpu',
   'palo-alto': 'cpau',
-  redding: 'reu',
+  // 'reu' is the key cities-data.ts gives Roseville Electric Utility, so
+  // Redding Electric Utility (no page yet) takes its own key. Before
+  // 2026-09-22 this table mapped roseville to 'roseville', which flagged a
+  // correct assignment as SERIOUS on every run.
+  redding: 'redding',
   lodi: 'lodi',
   healdsburg: 'healdsburg',
   alameda: 'amp',
-  roseville: 'roseville',
+  roseville: 'reu',
   modesto: 'mid',
   turlock: 'tid',
   indio: 'iid',
@@ -128,6 +138,57 @@ const MUNICIPAL_CITIES = {
   colton: 'colton',
   banning: 'banning',
 };
+
+/**
+ * Cities that more than one utility serves, checked against primary sources on
+ * 2026-09-22 (California Energy Commission Electric Load Serving Entities layer
+ * intersected with Census TIGERweb city boundaries, plus each utility's own
+ * service-area statement). A page for one of these must not present a single
+ * utility as the city's: cities-data.ts sets utilityConfirmationRequired,
+ * city-cost-data.ts carries utilitySplit (Corona has its own template path),
+ * and growth-cities.ts uses 'other' or names the split in its copy.
+ */
+const SPLIT_CITIES = {
+  'moreno-valley': ['mvu', 'sce'], // moval.org/mvu: new developments only
+  merced: ['pge', 'meid'], // mercedid.org/power
+  modesto: ['mid', 'tid'], // mid.org: north of the Tuolumne River
+  riverside: ['rpu', 'sce'],
+  corona: ['corona', 'sce'],
+  'palm-desert': ['sce', 'iid'],
+  'rancho-cucamonga': ['sce', 'rcmu'], // cityofrc.us/rcmu: SCE is the main provider
+  vallejo: ['pge', 'pittsburg'], // CEC layer only
+};
+
+/**
+ * Non-municipal city exceptions to the county rule. San Clemente is in Orange
+ * County but SDG&E territory: SDG&E serves "San Diego and southern Orange
+ * counties", SCE's own city list (updated 2025-03-17) omits San Clemente, and
+ * the CEC layer places the whole city in SDG&E.
+ */
+const CITY_OVERRIDES = {
+  'san-clemente': 'sdge',
+  // Kern County is PG&E-dominant, but SCE's city list includes California City.
+  'california-city': 'sce',
+};
+
+/** How each utility in SPLIT_CITIES is named in page copy. */
+const UTILITY_NAME_PATTERN = {
+  sce: 'Southern California Edison|\\bSCE\\b',
+  pge: 'PG&E|Pacific Gas',
+  mvu: 'Moreno Valley Utility|\\bMVU\\b',
+  meid: 'Merced Irrigation',
+  mid: 'Modesto Irrigation|\\bMID\\b',
+  tid: 'Turlock Irrigation|\\bTID\\b',
+  rpu: 'Riverside Public Utilities|\\bRPU\\b',
+  corona: 'Corona',
+  iid: 'Imperial Irrigation|\\bIID\\b',
+  rcmu: 'RCMU|Rancho Cucamonga Municipal',
+  pittsburg: 'Pittsburg',
+};
+
+/** city-cost-data.ts and growth-cities.ts key some utilities differently. */
+const KEY_ALIASES = { roseville: 'reu', anaheim: 'apu' };
+const norm = (code) => KEY_ALIASES[code] ?? code;
 
 // ---------------------------------------------------------------------------
 // parse cities-data.ts without executing it
@@ -143,7 +204,48 @@ function parseCities(src) {
   return cities;
 }
 
-function main() {
+function expectedFor(slug, county) {
+  if (SPLIT_CITIES[slug]) return { split: SPLIT_CITIES[slug] };
+  if (CITY_OVERRIDES[slug]) return { code: CITY_OVERRIDES[slug] };
+  if (MUNICIPAL_CITIES[slug]) return { code: MUNICIPAL_CITIES[slug] };
+  const rule = COUNTY_UTILITY[(county.match(/^[A-Za-z .]+ County/) || [county])[0]];
+  return rule ? { code: rule.dominant, soft: rule.split } : null;
+}
+
+async function auditOtherLayers() {
+  const out = [];
+  const cost = await import(join(ROOT, 'src', 'data', 'city-cost-data.ts'));
+  for (const row of cost.getPublishableCityCostRows()) {
+    const exp = expectedFor(row.slug, row.county);
+    const code = norm(row.utilityKey);
+    const base = { name: row.city, slug: `cost:${row.slug}`, county: row.county.slice(0, 24), utilityCode: code };
+    if (!exp) continue;
+    if (exp.split) {
+      const handled = Boolean(row.utilitySplit) || row.slug === 'corona';
+      if (!handled) out.push({ ...base, severity: 'SERIOUS', expected: exp.split.join('|'), why: `/solar-cost/${row.slug} names one utility for a split city; add utilitySplit` });
+    } else if (code !== exp.code) {
+      out.push({ ...base, severity: exp.soft ? 'REVIEW' : 'SERIOUS', expected: exp.code, why: `/solar-cost/${row.slug} says ${code.toUpperCase()}` });
+    }
+  }
+  const growth = await import(join(ROOT, 'src', 'data', 'growth-cities.ts'));
+  for (const [slug, g] of Object.entries(growth.growthCities)) {
+    const exp = expectedFor(slug, g.county);
+    const code = norm(g.utility);
+    const base = { name: g.name, slug: `companies:${slug}`, county: g.county.slice(0, 24), utilityCode: code };
+    if (!exp) continue;
+    if (exp.split) {
+      // 'other' means "no single utility pre-selected"; a named code must be
+      // matched by copy that names the split.
+      const namesSplit = exp.split.every((u) => new RegExp(UTILITY_NAME_PATTERN[u] ?? u, 'i').test(g.bill));
+      if (!namesSplit && code !== 'other') out.push({ ...base, severity: 'REVIEW', expected: exp.split.join('|'), why: `growth copy for ${slug} does not name every utility in the split` });
+    } else if (code !== 'other' && code !== exp.code) {
+      out.push({ ...base, severity: exp.soft ? 'REVIEW' : 'SERIOUS', expected: exp.code, why: `/solar-companies/${slug} says ${code.toUpperCase()}` });
+    }
+  }
+  return out;
+}
+
+async function main() {
   if (!existsSync(DATA)) {
     console.error(`cities-data.ts not found at ${DATA}`);
     process.exit(1);
@@ -160,6 +262,22 @@ function main() {
   const unknownCounty = [];
 
   for (const c of cities) {
+    if (SPLIT_CITIES[c.slug]) {
+      const at = src.indexOf(`slug: '${c.slug}'`);
+      const entry = src.slice(at, src.indexOf('\n  },', at) + 1 || undefined);
+      const confirm = /utilityConfirmationRequired:\s*true/.test(entry);
+      const namesAll = SPLIT_CITIES[c.slug].every((u) => new RegExp(UTILITY_NAME_PATTERN[u] ?? u, 'i').test(entry));
+      if (!confirm && !namesAll) {
+        flags.push({ ...c, severity: 'SERIOUS', expected: SPLIT_CITIES[c.slug].join('|'), why: `${c.name} is split between ${SPLIT_CITIES[c.slug].join(' and ').toUpperCase()}; set utilityConfirmationRequired or name every utility in the copy` });
+      }
+      continue;
+    }
+    if (CITY_OVERRIDES[c.slug]) {
+      if (c.utilityCode !== CITY_OVERRIDES[c.slug]) {
+        flags.push({ ...c, severity: 'SERIOUS', expected: CITY_OVERRIDES[c.slug], why: `${c.name} is ${CITY_OVERRIDES[c.slug].toUpperCase()} territory, page says ${c.utilityCode.toUpperCase()}` });
+      }
+      continue;
+    }
     const muni = MUNICIPAL_CITIES[c.slug];
     if (muni) {
       if (c.utilityCode !== muni) {
@@ -189,6 +307,12 @@ function main() {
       });
     }
   }
+
+  // The two newer city layers: /solar-cost (city-cost-data.ts) and the
+  // /solar-companies comparison pages (growth-cities.ts). Imported rather than
+  // regex-parsed; Node strips the types.
+  const layerFlags = await auditOtherLayers();
+  flags.push(...layerFlags);
 
   const byUtility = cities.reduce((acc, c) => {
     acc[c.utilityCode] = (acc[c.utilityCode] || 0) + 1;
@@ -255,4 +379,4 @@ function main() {
   }
 }
 
-main();
+await main();

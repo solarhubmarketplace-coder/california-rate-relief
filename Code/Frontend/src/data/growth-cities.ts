@@ -455,7 +455,9 @@ export const growthCities: Record<
     name: "Modesto",
     county: "Stanislaus County",
     utility: "other",
-    bill: "Check the electric utility first. For a Modesto Irrigation District account, use MID’s own solar program and interconnection rules. MID currently describes its NEM program separately from the investor-owned utilities’ Solar Billing Plans. A PG&E export model does not answer an MID homeowner’s question.",
+    // 2026-09-22: every source below re-checked, and the TID split added.
+    sourceCheckedDate: "2026-09-22",
+    bill: "Check the electric utility first. MID describes its electric service area as the greater Modesto area north of the Tuolumne River, and the California Energy Commission’s service-territory map places part of the city in the Turlock Irrigation District’s territory. For a Modesto Irrigation District account, use MID’s own solar program and interconnection rules: MID says it currently offers only NEM 2, separate from the investor-owned utilities’ Solar Billing Plans. For a TID account, use TID’s own rules. A PG&E export model does not answer a Modesto homeowner’s question.",
     local:
       "MID requires project approval before installation and a completed city or county permit before its interconnection inspection. Its sizing review uses demonstrated load and does not count anticipated load. The City of Modesto’s expedited checklist also asks for roof, electrical and fire-access information.",
     example:
@@ -485,6 +487,14 @@ export const growthCities: Record<
       {
         label: "MID: solar program and interconnection requirements",
         url: "https://www.mid.org/saving-energy-money/solar/",
+      },
+      {
+        label: "MID: Who We Are (electric service area north of the Tuolumne River)",
+        url: "https://www.mid.org/about-us/who-we-are/",
+      },
+      {
+        label: "California Energy Commission: Electric Load Serving Entities (IOU & POU) service-territory map",
+        url: "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
       },
       {
         label: "Modesto: expedited solar eligibility checklist",
@@ -1522,9 +1532,10 @@ export const growthCities: Record<
     name: "Rancho Cucamonga",
     county: "San Bernardino County",
     utility: "sce",
-    sourceCheckedDate: "2026-09-12",
+    // 2026-09-22: every source below re-checked, and the RCMU split added.
+    sourceCheckedDate: "2026-09-22",
     hasSavingsGuide: false,
-    bill: "Use the provider, rate plan and usage history on the actual electricity account. A proposal should disclose its system-production and remaining-bill assumptions for the property rather than substitute a citywide rate or an advertised savings figure.",
+    bill: "The City says Southern California Edison is the main electric provider in Rancho Cucamonga, and that its own Rancho Cucamonga Municipal Utility (RCMU) serves over 3,900 metered businesses and residents in a selected area in the southeastern part of the city. Use the provider, rate plan and usage history on the actual electricity account. A proposal should disclose its system-production and remaining-bill assumptions for the property rather than substitute a citywide rate or an advertised savings figure.",
     local:
       "Rancho Cucamonga publishes both an online solar-photovoltaic permit route and SolarAPP+ information for eligible residential projects. Ask the bidder to identify the route, the responsible contractor, submitted plan, inspection schedule and scope for any roof, storage or electrical work.",
     example:
@@ -1551,6 +1562,10 @@ export const growthCities: Record<
       {
         label: "City of Rancho Cucamonga: building-safety solar permit guidance",
         url: "https://www.cityofrc.us/community-development/building-safety/building-safety-guidelines",
+      },
+      {
+        label: "City of Rancho Cucamonga: Welcome to RCMU (service area; SCE is the main provider)",
+        url: "https://www.cityofrc.us/rcmu",
       },
       {
         label: "SCE: residential rate-plan information",
@@ -2223,15 +2238,26 @@ export const growthCities: Record<
   merced: {
     name: "Merced",
     county: "Merced County",
-    utility: "pge",
+    // Corrected 2026-09-22: Merced is split between Merced Irrigation District
+    // and PG&E (mercedid.org/power; CEC load-serving-entity layer), so no single
+    // utility is pre-selected for the inquiry.
+    utility: "other",
     sourceCheckedDate: "2026-09-22",
     bill:
-      "Merced is billed by Pacific Gas and Electric (PG&E) for both generation and delivery. No community choice aggregator was found operating in Merced as of this check — read the provider name printed on the current bill to confirm.",
+      "Merced has two electric utilities. Merced Irrigation District says it provides electric service to customers in the cities of Livingston, Atwater and Merced, and the California Energy Commission's service-territory map shows both Merced Irrigation District and PG&E territory inside the city limits. Read the utility name on the current bill, then have every bidder use that utility's rate schedule and solar rules.",
     local:
       "Merced's Development Services Department issues residential building permits, including solar, but the city's own site returned an access error every time it was checked this session, so its current permit path could not be independently confirmed here. Ask the bidder to name the department's current process, required inspections and timeline directly, and confirm it against the department before signing. Merced's Central Valley location has hot, clear summers that favor solar production but also raise panel temperatures on the hottest afternoons, and winter tule fog can reduce output for stretches of December and January.",
     example:
-      "Put the same roof layout, shading and twelve months of PG&E usage into every Merced bid. Then compare total price, financing terms, equipment, the Development Services permit scope and the PG&E bill that remains after the system is installed.",
+      "Put the same roof layout, shading and twelve months of usage from the account's actual utility into every Merced bid. Then compare total price, financing terms, equipment, the Development Services permit scope and the bill that remains after the system is installed.",
     sources: [
+      {
+        label: "Merced Irrigation District — MID Power (electric service area)",
+        url: "https://mercedid.org/power/",
+      },
+      {
+        label: "California Energy Commission — Electric Load Serving Entities (IOU & POU) service-territory map",
+        url: "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+      },
       {
         label: "PG&E — official site",
         url: "https://www.pge.com/",
@@ -2242,22 +2268,33 @@ export const growthCities: Record<
   "moreno-valley": {
     name: "Moreno Valley",
     county: "Riverside County",
-    utility: "mvu",
+    // Corrected 2026-09-22: MVU serves new developments inside its own service
+    // area; SCE serves other Moreno Valley addresses (moval.org/mvu; SCE's
+    // list of incorporated cities served; CEC load-serving-entity layer).
+    utility: "other",
     sourceCheckedDate: "2026-09-22",
     bill:
-      "Moreno Valley runs its own municipal utility, Moreno Valley Utility (MVU), rather than being served by SCE — MVU bills both generation and delivery directly, so a citywide SCE or CCA rate does not apply here. Confirm the current rate schedule with MVU rather than assuming an investor-owned utility's figures.",
+      "Moreno Valley has two electric utilities. Moreno Valley Utility (MVU), the City's own utility, serves new commercial and residential developments inside its service area, and Southern California Edison lists Moreno Valley among the incorporated cities it serves. Check the address with MVU's service-area lookup or read the name on the current bill, then have every bidder use that utility's rate schedule and solar rules.",
     local:
       "Moreno Valley's Community Development Department issues residential building permits, with online submission through the city's Building Services and SimpliCITY portals. Ask the bidder to confirm the current solar permit path and required inspections directly. Moreno Valley sits in an inland Riverside County valley with hot, largely cloudless summers that favor solar production but also raise panel temperatures on the hottest afternoons.",
     example:
-      "Put the same roof layout, shading and twelve months of MVU usage into every Moreno Valley bid. Then compare total price, financing terms, equipment, the city's permit scope and the MVU bill that remains after the system is installed — MVU sets its own net-metering terms and is not bound by the CPUC's NEM 3.0 decision.",
+      "Put the same roof layout, shading and twelve months of usage from the account's actual utility, MVU or SCE, into every Moreno Valley bid. Then compare total price, financing terms, equipment, the city's permit scope and the bill that remains after the system is installed under that utility's own solar rules.",
     sources: [
       {
         label: "City of Moreno Valley — Building Services / Permits",
         url: "https://www.moval.org/cdd/services/permits-new.html",
       },
       {
-        label: "City of Moreno Valley — Utilities",
-        url: "https://www.moval.org/resident-services/utilities.html",
+        label: "Moreno Valley Utility — About MVU and service-area lookup",
+        url: "https://www.moval.org/mvu/about-mvu.html",
+      },
+      {
+        label: "SCE — incorporated cities and counties it serves (fact sheet updated March 17, 2025)",
+        url: "https://newsroom.edison.com/_gallery/get_file/?file_id=5cc32d492cfac24d21aecf4c&ir=1",
+      },
+      {
+        label: "California Energy Commission — Electric Load Serving Entities (IOU & POU) service-territory map",
+        url: "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
       },
     ],
   },

@@ -30,6 +30,15 @@
 //     tiered Schedule R-1 rate (fetched 2026-09-22); REU, like PWP, publishes
 //     no single blended average, so none is stated as a flat rate.
 //
+//   - RESOLVED 2026-09-22: utility territory checked against the California
+//     Energy Commission's Electric Load Serving Entities layer (intersected
+//     with Census city boundaries) and each utility's own service-area page.
+//     San Clemente was coded SCE but is SDG&E territory. Moreno Valley (MVU and
+//     SCE), Merced (Merced Irrigation District and PG&E) and Modesto (MID and
+//     TID) are split, so their pages now ask for the utility on the bill
+//     instead of naming one. Vallejo's copy names the City of Pittsburg area.
+//     scripts/audit-city-utility.mjs holds the split list.
+//
 // IMPORTANT: All rate data, bill amounts, and savings projections MUST be
 // verified through Gronk before deploying. Do NOT use Claude's training data.
 // Last full data audit: April 15, 2026.
@@ -245,8 +254,9 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     peakTouRate: '22-28¢',
     annualIncrease: 0.03,
     fixedCharge: 0,
-    accountUrl: 'https://www.lodi.gov/306/Electric-Utility',
-    careFeraUrl: 'https://www.lodi.gov/306/Electric-Utility',
+    // 2026-09-22: /306 now serves an unrelated page; /352 is Lodi Electric's own page.
+    accountUrl: 'https://www.lodi.gov/352/Electric-Utility',
+    careFeraUrl: 'https://www.lodi.gov/352/Electric-Utility',
     ratePlanAdvice:
       'Lodi Electric is a municipal utility with some of the lowest rates in California. Check with the city for available rate plans and any net metering programs.',
     nemVersion: 'Lodi Electric Net Metering',
@@ -1265,7 +1275,31 @@ export const CITIES: CityData[] = [
     slug: 'moreno-valley',
     county: 'Riverside County',
     state: 'California',
+    // Corrected 2026-09-22: the city is split. MVU serves newly developed areas
+    // inside its own service area (moval.org/mvu, 2025-2045 Utility Business
+    // Plan); SCE lists Moreno Valley among the cities it serves; the CEC layer
+    // shows both territories inside the city limits.
     utilityCode: 'mvu',
+    utilityDisplayName: 'Check the bill: MVU or SCE',
+    utilityConfirmationRequired: true,
+    utilityLookupUrls: [
+      {
+        label: 'Moreno Valley Utility: service-area address lookup',
+        url: 'https://www.moval.org/mvu/',
+      },
+      {
+        label: 'Moreno Valley Utility: About MVU (serves new developments inside its service area)',
+        url: 'https://www.moval.org/mvu/about-mvu.html',
+      },
+      {
+        label: 'SCE: incorporated cities and counties it serves (fact sheet updated March 17, 2025)',
+        url: 'https://newsroom.edison.com/_gallery/get_file/?file_id=5cc32d492cfac24d21aecf4c&ir=1',
+      },
+      {
+        label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU) service-territory map',
+        url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about',
+      },
+    ],
     avgMonthlyBill: 325,
     peakSunHours: 5.6,
     annualSunshineHours: 3200,
@@ -1273,16 +1307,16 @@ export const CITIES: CityData[] = [
     systemSizeKw: 9.3,
     systemCostCash: 21900,
     introText:
-      'Moreno Valley is the second-largest city in Riverside County with a population of around 214,000. Served by its own municipal utility (MVU), Moreno Valley residents have a unique situation compared to SCE or RPU territory — including a 15-year net metering grandfathering period that makes solar particularly attractive.',
+      'Moreno Valley is split between two electric utilities. Moreno Valley Utility (MVU), the City\'s own utility, serves new commercial and residential developments inside its service area, and Southern California Edison lists Moreno Valley among the incorporated cities it serves. The California Energy Commission\'s service-territory map shows both utilities inside the city limits. Read the utility name on your bill, or check the address with MVU, before using any rate or solar-billing assumption.',
     electricitySection:
-      'The average Moreno Valley household pays approximately $325 per month for electricity, or about $3,900 per year. Extreme summer heat and the city\'s inland location drive heavy AC usage.\n\nMVU\'s average residential rate is around 32 cents per kWh, with peak TOU rates in the 35-42 cent range. While lower than SCE, the extreme heat means higher total usage.',
+      'If the bill is from MVU, use MVU\'s current rate schedule, its solar interconnection process and the account\'s own twelve months of usage. If the bill is from SCE, use the SCE account and its current solar billing rules instead.\n\nDo not compare bids built on different utilities or on a citywide average. Each proposal should show the same usage history, onsite use, imports, exports and remaining charges under the confirmed account.',
     solarPotentialText:
       'Moreno Valley averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day. The city\'s relatively flat terrain provides good solar exposure for most properties.',
     localTips: [
       {
-        title: 'MVU 15-year NEM grandfathering:',
+        title: 'Confirm the serving utility:',
         content:
-          'MVU\'s net metering program offers 15-year grandfathering at current terms — significantly longer than what SCE customers get. This makes the economics of solar especially favorable if you install now and lock in current export rates.',
+          'MVU serves addresses inside its own service area and SCE serves others in the city. Use the address lookup on MVU\'s site or the name on your bill before accepting any rate, export rule or interconnection assumption.',
       },
       {
         title: 'Extreme heat management:',
@@ -1293,15 +1327,15 @@ export const CITIES: CityData[] = [
     whenSolarDoesntWork:
       'If your bill is under $100/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
     bottomLine:
-      'Moreno Valley\'s municipal utility with 15-year NEM grandfathering, extreme sunshine, and high heat-driven usage make it one of the strongest solar markets in the IE.',
+      'Start with the utility named on your bill: MVU or SCE. Then compare bids on the same usage, roof layout, equipment, project scope and contract obligations.',
     faqs: [
       {
         question: 'How much does solar cost in Moreno Valley in 2026?',
-        answer: 'A typical 9.3 kW system costs approximately $21,900 before incentives. With a PPA, there is no upfront cost.',
+        answer: 'A citywide figure cannot price a Moreno Valley project. Compare written cash prices for the same system, roof, storage, electrical, permit and interconnection scope before comparing financing.',
       },
       {
-        question: 'What is the average electric bill in Moreno Valley?',
-        answer: 'Moreno Valley residents pay approximately $325 per month on average.',
+        question: 'Is Moreno Valley served by MVU or SCE?',
+        answer: 'Both, depending on the address. Moreno Valley Utility serves new developments inside its own service area, and Southern California Edison serves other parts of the city. Check the name on your bill or MVU\'s address lookup before comparing proposals.',
       },
       {
         question: 'Can my HOA block solar panels?',
@@ -1312,13 +1346,17 @@ export const CITIES: CityData[] = [
         answer: 'Moreno Valley averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day.',
       },
     ],
-    metaTitle: 'Solar Panels in Moreno Valley, CA: 2026 MVU Rates & Cost',
-    metaDescription: 'Moreno Valley households pay about $325/month for electricity, driven by extreme summer heat. See MVU rates, solar costs, and other ways to cut the bill.',
-    ogTitle: 'Solar Savings in Moreno Valley, CA: 2026 MVU Rates, Costs & Options',
-    ogDescription: 'Moreno Valley residents pay ~$325/month with MVU. Here\'s what solar costs and saves.',
+    metaTitle:
+      'Solar Panels in Moreno Valley, CA: MVU or SCE? (2026)',
+    metaDescription:
+      'Moreno Valley is split between MVU and SCE. Confirm which one bills your address, then compare solar quotes on the same usage, roof and contract scope.',
+    ogTitle:
+      'Solar in Moreno Valley, CA: MVU or SCE, Quotes and Options',
+    ogDescription:
+      'Moreno Valley addresses are served by MVU or SCE. Confirm yours before comparing solar proposals.',
     energySageUrl: 'https://www.energysage.com/local-data/solar-panel-cost/ca/riverside-county/moreno-valley/',
     googleSunroofUrl: 'https://sunroof.withgoogle.com',
-    relatedArticles: MUNI_RELATED_ARTICLES,
+    relatedArticles: ADDRESS_CHECK_RELATED_ARTICLES,
   },
 
   // =========================================================================
@@ -1947,35 +1985,62 @@ export const CITIES: CityData[] = [
     slug: 'modesto',
     county: 'Stanislaus County',
     state: 'California',
+    // Corrected 2026-09-22: MID describes its electric service area as the
+    // greater Modesto area north of the Tuolumne River (mid.org, Who We Are);
+    // the CEC layer places part of the city in Turlock Irrigation District.
     utilityCode: 'mid',
+    utilityDisplayName: 'Check the bill: MID or TID',
+    utilityConfirmationRequired: true,
+    utilityLookupUrls: [
+      {
+        label: 'Modesto Irrigation District: Who We Are (electric service area)',
+        url: 'https://www.mid.org/about-us/who-we-are/',
+      },
+      {
+        label: 'Modesto Irrigation District: solar program and interconnection requirements',
+        url: 'https://www.mid.org/saving-energy-money/solar/',
+      },
+      {
+        label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU) service-territory map',
+        url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about',
+      },
+    ],
     avgMonthlyBill: 280,
     peakSunHours: 5.6,
     annualSunshineHours: 3200,
     population: '218K',
     systemSizeKw: 7.5,
     systemCostCash: 17600,
-    introText: 'Modesto is a Central Valley city of about 218,000, and it is not on PG&E. Modesto Irrigation District is a publicly owned utility with a residential rate of roughly 17\u00a2/kWh, less than half of PG&E\'s 41.5\u00a2. Modesto households do face brutal summer cooling loads, but they face them at some of the lowest electricity prices in California.',
-    electricitySection: 'The average Modesto household pays approximately $280 per month for electricity, or about $3,360 per year. That figure comes from consumption, not from an expensive rate: summer temperatures regularly exceed 100\u00b0F and air conditioning runs for months. Because MID is publicly owned it sets its own rates and net-metering rules and is not subject to the CPUC\'s NEM 3.0 decision, so the export-credit changes driving urgency in PG&E territory do not apply to a Modesto account. Check MID\'s current residential schedule directly.',
+    introText:
+      'Modesto\'s electricity does not come from PG&E. The Modesto Irrigation District describes its electric service area as including the greater Modesto area north of the Tuolumne River, and the California Energy Commission\'s service-territory map places part of the city in the Turlock Irrigation District\'s territory. Both are publicly owned utilities that publish their own rates and solar rules, so read the utility name on your bill before comparing proposals.',
+    electricitySection:
+      'If the bill is from MID, use MID\'s own solar program. MID says it currently offers only NEM 2, must approve a project before installation, and limits a system to 115% of the meter\'s demonstrated annual load, without counting anticipated load. If the bill is from TID, use TID\'s own rate schedule and solar rules instead.\n\nEither way, each proposal should show the same twelve months of usage, onsite use, imports, exports and remaining charges under the confirmed account.',
     solarPotentialText:
       'Modesto averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day. The Central Valley climate is excellent for solar production.',
     localTips: [
       { title: 'Agricultural community:', content: 'Modesto\'s agricultural roots mean many properties have larger lots and outbuildings. Ground-mount solar systems are an option for properties where roof space is limited.' },
     ],
-    whenSolarDoesntWork: 'Be careful here. At roughly 17\u00a2/kWh, every kilowatt-hour solar displaces in Modesto is worth less than half what it is worth in PG&E territory, so payback periods are materially longer and any quote built on PG&E rates is wrong for this address. If your bill is under about $180 a month, your roof is shaded or needs work, you may move within a few years, or a salesperson is quoting you PG&E rates or NEM 3.0 deadlines, stop and get the numbers redone against MID\'s actual tariff.',
-    bottomLine: 'Modesto has abundant sun and punishing summer cooling loads, which is the case for solar. MID\'s low rate is the case against it, and both are true at once. Solar works here for high-consumption households with real cooling bills; it works poorly for average users, and it will never pay back as fast as the same system in Fresno or Stockton on PG&E. Anyone quoting you a PG&E-based payback for a Modesto address has not checked your utility.',
+    whenSolarDoesntWork:
+      'Be careful when a proposal for a Modesto address uses PG&E rates, PG&E solar billing rules or NEM 3.0 deadlines: neither MID nor TID is PG&E. If your bill is low, your roof is shaded or needs work, or you may move within a few years, have the numbers redone against your own utility\'s tariff before deciding.',
+    bottomLine:
+      'Modesto has strong sun and heavy summer cooling loads, and it is served by publicly owned utilities rather than PG&E. Confirm whether MID or TID bills your address, then compare bids on the same usage, roof layout, equipment, project scope and contract terms.',
     faqs: [
-      { question: 'How much does solar cost in Modesto in 2026?', answer: 'A typical 7.5 kW system costs approximately $17,600. With a PPA, there is no upfront cost.' },
-      { question: 'What is the average electric bill in Modesto?', answer: 'Modesto residents pay approximately $280 per month on MID.' },
+      { question: 'How much does solar cost in Modesto in 2026?', answer: 'A citywide figure cannot price a Modesto project. Compare written cash prices for the same system, roof, storage, electrical, permit and interconnection scope before comparing financing.' },
+      { question: 'Which utility serves Modesto?', answer: 'Not PG&E. The Modesto Irrigation District describes its electric service area as the greater Modesto area north of the Tuolumne River, and the California Energy Commission\'s service-territory map places part of the city in the Turlock Irrigation District. Read the utility name on your bill.' },
       { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
       { question: 'How many hours of sun does Modesto get?', answer: 'Modesto averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day.' },
     ],
-    metaTitle: 'Solar Panels in Modesto, CA: 2026 MID Rates & Cost',
-    metaDescription: 'Modesto residents on MID pay ~$280/month at 41.5¢/kWh. Learn solar costs and every option to lower your bill.',
-    ogTitle: 'Solar Savings in Modesto, CA: 2026 MID Rates & Options',
-    ogDescription: 'Modesto residents pay ~$280/month on MID. Here\'s what solar costs and saves.',
+    metaTitle:
+      'Solar Panels in Modesto, CA: MID or TID, Not PG&E (2026)',
+    metaDescription:
+      'Modesto is served by MID or TID, not PG&E. Confirm your utility, then compare solar quotes against its own solar rules, usage and contract scope.',
+    ogTitle:
+      'Solar in Modesto, CA: MID or TID, Quotes and Options',
+    ogDescription:
+      'Modesto addresses are served by MID or TID. Confirm yours before comparing solar proposals.',
     energySageUrl: 'https://www.energysage.com/local-data/solar-panel-cost/ca/stanislaus-county/modesto/',
     googleSunroofUrl: 'https://sunroof.withgoogle.com',
-    relatedArticles: PGE_RELATED_ARTICLES,
+    relatedArticles: MUNI_RELATED_ARTICLES,
     seoData: { primaryKeyword: 'solar panels modesto', volume: 180, kd: 2, verdict: 'PRIORITY BUILD' },
   },
 
@@ -2338,7 +2403,28 @@ export const CITIES: CityData[] = [
     slug: 'san-clemente',
     county: 'Orange County',
     state: 'California',
-    utilityCode: 'sce',
+    // Corrected 2026-09-22: San Clemente is SDG&E territory. SDG&E describes its
+    // service area as San Diego and southern Orange counties; SCE's own list of
+    // incorporated cities served (updated 2025-03-17) omits San Clemente; the
+    // CEC Electric Load Serving Entities layer places the whole city in SDG&E.
+    // The confirmation path keeps the legacy SCE/SDG&E averages off the page.
+    utilityCode: 'sdge',
+    utilityDisplayName: 'SDG&E',
+    utilityConfirmationRequired: true,
+    utilityLookupUrls: [
+      {
+        label: 'SDG&E: About us (service area: San Diego and southern Orange counties)',
+        url: 'https://www.sdge.com/more-information/our-company/about-us',
+      },
+      {
+        label: 'SCE: incorporated cities and counties it serves (fact sheet updated March 17, 2025)',
+        url: 'https://newsroom.edison.com/_gallery/get_file/?file_id=5cc32d492cfac24d21aecf4c&ir=1',
+      },
+      {
+        label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU) service-territory map',
+        url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about',
+      },
+    ],
     avgMonthlyBill: 250,
     peakSunHours: 5.5,
     annualSunshineHours: 3150,
@@ -2346,29 +2432,40 @@ export const CITIES: CityData[] = [
     systemSizeKw: 7.0,
     systemCostCash: 16500,
     introText:
-      'San Clemente is a coastal Orange County city of about 65,000 on SCE territory. Known as the "Spanish Village by the Sea," San Clemente homeowners face SCE rates at 34.5¢/kWh with excellent coastal sunshine.',
+      'San Clemente is a coastal Orange County city in San Diego Gas & Electric\'s service territory, not Southern California Edison\'s. SDG&E describes its service area as San Diego and southern Orange counties, SCE\'s list of the incorporated cities it serves (updated March 17, 2025) does not include San Clemente, and the California Energy Commission\'s utility service-territory map places the city inside SDG&E\'s territory. Read the utility name and rate schedule on your own bill before comparing solar proposals.',
     electricitySection:
-      'The average San Clemente household pays approximately $250 per month for electricity, or about $3,000 per year. SCE\'s 34.5¢/kWh rate and $24.15 monthly fixed charge drive costs.',
+      'Use the rate schedule and twelve months of usage printed on the current SDG&E bill. A proposal built on SCE rates, or on an Orange County average, is built on the wrong utility for a San Clemente address.\n\nAsk each bidder to show the same usage history, the electricity used on site, the electricity bought from and sent to the grid, and the charges that remain on the bill under the confirmed SDG&E account.',
     solarPotentialText:
       'San Clemente averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day. The south-facing coastal exposure provides reliable solar production.',
     localTips: [
       { title: 'Coastal Orange County:', content: 'San Clemente\'s mild climate and south-facing coastal orientation make it ideal for solar. Less AC usage means smaller systems can cover your needs effectively.' },
     ],
     whenSolarDoesntWork: 'If your bill is under $80/month, your roof has heavy shade, or you plan to sell within 1-2 years.',
-    bottomLine: 'San Clemente\'s SCE rates, coastal sunshine, and high home values make solar a strong investment.',
+    bottomLine:
+      'San Clemente is SDG&E territory. Start from your own SDG&E bill, then compare proposals on the same usage, roof layout, equipment, project scope and contract terms.',
     faqs: [
-      { question: 'How much does solar cost in San Clemente in 2026?', answer: 'A typical 7.0 kW system costs approximately $16,500. With a PPA, there is no upfront cost.' },
-      { question: 'What is the average electric bill in San Clemente?', answer: 'San Clemente residents pay approximately $250 per month on SCE.' },
+      {
+        question: 'How much does solar cost in San Clemente in 2026?',
+        answer: 'A citywide figure cannot price a San Clemente project. Compare written cash prices for the same system, roof, storage, electrical, permit and interconnection scope before comparing financing.',
+      },
+      {
+        question: 'Which utility serves San Clemente?',
+        answer: 'San Diego Gas & Electric. SDG&E describes its service area as San Diego and southern Orange counties, and the California Energy Commission\'s service-territory map places San Clemente inside it. Compare proposals against your own SDG&E bill, not an SCE rate.',
+      },
       { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
       { question: 'How many hours of sun does San Clemente get?', answer: 'San Clemente averages approximately 3,150 hours of sunshine per year with 5.5 peak sun hours per day.' },
     ],
-    metaTitle: 'Solar Panels in San Clemente, CA: 2026 SCE Rates & Cost',
-    metaDescription: 'San Clemente residents on SCE pay ~$250/month. Learn solar costs and every option to lower your bill.',
-    ogTitle: 'Solar Savings in San Clemente, CA: 2026 SCE Rates & Options',
-    ogDescription: 'San Clemente residents pay ~$250/month on SCE. Here\'s what solar costs and saves.',
+    metaTitle:
+      'Solar Panels in San Clemente, CA: SDG&E Territory (2026)',
+    metaDescription:
+      'San Clemente is SDG&E territory, not SCE. Check the utility on your bill, then compare solar quotes on the same usage, roof and contract scope.',
+    ogTitle:
+      'Solar in San Clemente, CA: SDG&E Territory, Quotes and Options',
+    ogDescription:
+      'San Clemente is served by SDG&E, not SCE. Start from your own bill before comparing solar proposals.',
     energySageUrl: 'https://www.energysage.com/local-data/solar-panel-cost/ca/orange-county/san-clemente/',
     googleSunroofUrl: 'https://sunroof.withgoogle.com',
-    relatedArticles: SCE_RELATED_ARTICLES,
+    relatedArticles: SDGE_RELATED_ARTICLES,
     seoData: { primaryKeyword: 'solar panels san clemente', volume: 100, kd: 1, verdict: 'PRIORITY BUILD' },
   },
 
@@ -4125,7 +4222,22 @@ export const CITIES: CityData[] = [
   slug: 'merced',
   county: 'Merced County',
   state: 'California',
+  // Corrected 2026-09-22: the city is split. Merced Irrigation District says it
+  // serves electric customers in Livingston, Atwater and Merced (mercedid.org/
+  // power); the CEC layer shows MeID and PG&E territory inside the city limits.
   utilityCode: 'pge',
+  utilityDisplayName: 'Check the bill: Merced ID or PG&E',
+  utilityConfirmationRequired: true,
+  utilityLookupUrls: [
+    {
+      label: 'Merced Irrigation District: MID Power (electric service area)',
+      url: 'https://mercedid.org/power/',
+    },
+    {
+      label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU) service-territory map',
+      url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about',
+    },
+  ],
   avgMonthlyBill: 290,
   peakSunHours: 5.6,
   annualSunshineHours: 3200,
@@ -4133,9 +4245,9 @@ export const CITIES: CityData[] = [
   systemSizeKw: 9.0,
   systemCostCash: 27000,
   introText:
-    'Merced is a growing Central Valley city with around 86,000 residents, located in Merced County at the heart of California\'s agricultural region. Home to UC Merced (the state\'s newest UC campus) and surrounded by vast irrigation districts, Merced is experiencing rapid growth in clean-energy adoption. The city sits in Pacific Gas and Electric territory with intense Central Valley heat and significant agricultural water-pumping demand. Here is what Merced homeowners should know about solar.',
+    'Merced is a Central Valley city in Merced County and home to UC Merced. Two electric utilities serve it: Merced Irrigation District says it provides electric service to customers in the cities of Livingston, Atwater and Merced, and the California Energy Commission\'s service-territory map shows both Merced Irrigation District and PG&E territory inside the city limits. Read the utility name on your bill before comparing solar proposals.',
   electricitySection:
-    'The average Merced household pays approximately $290 per month for electricity, or about $3,480 per year. The Central Valley\'s intense summer heat (100-115 degrees regularly) drives massive AC usage, especially June through September.\n\nPG&E\'s average residential rate is around 27 cents per kWh with peak TOU rates of 37-46 cents during 4-9 PM. The $17.50 monthly fixed charge applies to all PG&E customers. Merced Irrigation District in surrounding areas may have different rate structures for agricultural vs. residential properties.',
+    'If the bill is from Merced Irrigation District, use its current residential rate schedule and solar interconnection rules. If the bill is from PG&E, use the PG&E account and its current solar billing rules instead.\n\nThe Central Valley\'s summer heat drives heavy air-conditioning use, so each proposal should use the account\'s own twelve months of usage and show onsite use, imports, exports and the charges that remain under the confirmed utility.',
   solarPotentialText:
     'Merced averages approximately 3,200 hours of sunshine per year with 5.6 peak sun hours per day — excellent for solar. The Central Valley\'s clear skies and low humidity create ideal production conditions year-round.\n\nMost Merced homes built after 1990 have south or southwest-facing roof exposure with minimal tree canopy. The flat to gently rolling terrain means unobstructed solar access on most properties. Downtown Merced properties with older architecture may have more complex rooflines, but most residential areas are straightforward.',
   localTips: [
@@ -4145,30 +4257,25 @@ export const CITIES: CityData[] = [
         'Merced experiences heavy tule fog from November through February, which can reduce winter solar production by 20-30%. This is normal for the Central Valley. System design should account for lower winter output, and PPAs should factor in seasonal variation.',
     },
     {
-      title: 'UC Merced clean-energy adoption:',
+      title: 'Confirm the serving utility:',
       content:
-        'UC Merced\'s rapidly expanding campus is driving community interest in clean energy. The university has invested heavily in solar + storage research, and local contractors are increasingly experienced with cutting-edge residential solar systems.',
-    },
-    {
-      title: 'Merced Irrigation District unique net-metering:',
-      content:
-        'Properties in the Merced Irrigation District (many Merced-area residences) may have unique net-metering policies tied to agricultural water agreements. Verify your specific district and rate structure — some have different export credit calculations than standard PG&E.',
+        'Merced Irrigation District and PG&E both serve parts of Merced. Read the utility name on your bill before accepting any rate, export rule or interconnection assumption in a proposal.',
     },
   ],
   whenSolarDoesntWork:
-    'Solar is excellent for most Merced homes but reconsider if: your monthly bill is under $100 (very rare in Merced); your roof is heavily shaded (uncommon but possible in older downtown areas); your roof needs replacement within 3-5 years; or you plan to sell within 1-2 years. Tule fog reduces winter output, but annual production is still strong.',
+    'Reconsider or re-run the numbers if your monthly bill is low, your roof is heavily shaded or needs replacement within a few years, you plan to sell soon, or a proposal assumes a utility other than the one named on your bill. Tule fog reduces winter output, so ask for monthly production estimates, not just an annual total.',
   bottomLine:
-    'Merced\'s 5.6 peak sun hours per day, 100+ degree summers, PG&E rate climbs, and UC Merced clean-energy momentum make solar an excellent investment. Winter tule fog is a factor but doesn\'t significantly impact overall economics. Verify your Merced Irrigation District rate structure if applicable, then get a professional assessment. Your savings will be substantial.',
+    'Merced has hot, clear summers and a split electric map. Confirm whether Merced Irrigation District or PG&E bills your address, then compare bids on the same usage, roof layout, equipment, project scope and contract terms.',
   faqs: [
     {
       question: 'How much does solar cost in Merced in 2026?',
       answer:
-        'A typical 9.0 kW solar system in Merced costs approximately $27,000 before incentives if purchased outright. With a PPA, there is no upfront cost — you pay a fixed per-kWh rate (typically 16-22 cents) compared to PG&E\'s 27 cents per kWh average.',
+        'A citywide figure cannot price a Merced project. Compare written cash prices for the same system, roof, storage, electrical, permit and interconnection scope before comparing financing.',
     },
     {
-      question: 'What is the average electric bill in Merced?',
+      question: 'Which utility serves Merced?',
       answer:
-        'Merced residents pay approximately $290 per month for electricity on average, or about $3,480 per year. Summer AC usage drives bills to $400+ during June-September peaks.',
+        'It depends on the address. Merced Irrigation District says it provides electric service to customers in Merced, and the California Energy Commission\'s service-territory map shows PG&E territory inside the city as well. Read the utility name on your bill.',
     },
     {
       question: 'How does tule fog affect solar production in Merced?',
@@ -4176,20 +4283,22 @@ export const CITIES: CityData[] = [
         'Tule fog in winter (November-February) can reduce solar production by 20-30% during those months. However, Merced\'s 3,200 annual sunshine hours and 5.6 peak sun hours per day mean annual production remains strong. System sizing should account for seasonal variation, and PPAs should reflect this in production estimates.',
     },
     {
-      question: 'What is the Merced Irrigation District rate structure?',
+      question: 'What changes if Merced Irrigation District is my utility?',
       answer:
-        'Properties in the Merced Irrigation District may have different net-metering policies and rate structures than standard PG&E customers. Some district properties have agricultural rate tiers or different export credit calculations. Check your bill or contact your district to verify your specific rate schedule and solar export credits.',
+        'Merced Irrigation District is a publicly owned utility with its own rates and solar rules. Ask each bidder to use its current residential rate schedule and interconnection requirements, not PG&E\'s, for an address it serves.',
     },
   ],
-  metaTitle: 'Solar Panels in Merced: Central Valley Rates & Tule Fog',
+  metaTitle:
+    'Solar Panels in Merced, CA: Merced ID or PG&E? (2026)',
   metaDescription:
-    'Merced residents pay ~$290/month for electricity. Learn solar costs, tule fog winter impacts, Merced Irrigation District rates, and UC Merced clean-energy.',
-  ogTitle: 'Solar in Merced, CA: 2026 Costs, Tule Fog & Central Valley Production',
+    'Merced is split between Merced Irrigation District and PG&E. Confirm your utility, then compare solar quotes on the same usage, roof and contract scope.',
+  ogTitle:
+    'Solar in Merced, CA: Merced ID or PG&E, Quotes and Options',
   ogDescription:
-    'Merced residents pay ~$290/month. Solar thrives despite winter tule fog. Learn costs and UC Merced clean-energy benefits.',
+    'Merced addresses are served by Merced Irrigation District or PG&E. Confirm yours before comparing solar proposals.',
   energySageUrl: 'https://www.energysage.com/local-data/solar-panel-cost/ca/merced-county/merced/',
   googleSunroofUrl: 'https://sunroof.withgoogle.com',
-  relatedArticles: PGE_RELATED_ARTICLES,
+  relatedArticles: ADDRESS_CHECK_RELATED_ARTICLES,
   seoData: { primaryKeyword: 'solar panels merced', volume: 90, kd: 0, verdict: 'EASY BUILD' },
 },
 {
@@ -4583,7 +4692,7 @@ export const CITIES: CityData[] = [
   systemSizeKw: 8.5,
   systemCostCash: 25500,
   introText:
-    'Vallejo is the largest city in Solano County with a population of around 121,000, serving as a hub connecting the North Bay to the East Bay and San Francisco region. Known for its maritime heritage, waterfront revitalization, and proximity to the Carquinez Strait, Vallejo sits in PG&E territory but is also served by Marin Clean Energy (MCE), a Community Choice Aggregation that offers lower rates and higher renewable content than PG&E default. Vallejo homeowners have a unique opportunity: solar benefits are enhanced by CCA programs and export incentives.',
+    'Vallejo is the largest city in Solano County with a population of around 121,000, serving as a hub connecting the North Bay to the East Bay and San Francisco region. Known for its maritime heritage, waterfront revitalization, and proximity to the Carquinez Strait, Vallejo sits in PG&E territory but is also served by Marin Clean Energy (MCE), a Community Choice Aggregation that offers lower rates and higher renewable content than PG&E default. Vallejo homeowners have a unique opportunity: solar benefits are enhanced by CCA programs and export incentives. The California Energy Commission\'s service-territory map also places part of Vallejo inside the City of Pittsburg\'s electric service territory rather than PG&E\'s, so read the utility name on your bill before comparing proposals.',
   electricitySection:
     'The average Vallejo household pays approximately $255 per month for electricity, or about $3,060 per year. PG&E\'s residential rate in the Vallejo area is around 32 cents per kWh, with peak TOU rates of 50-60 cents during summer afternoons. The $24.15 monthly fixed charge applies to all PG&E customers. However, customers who choose Marin Clean Energy (MCE) receive approximately 15-25% lower rates than PG&E standard rates, bringing effective rates closer to 25-27 cents per kWh.\n\nVallejo summers are warm but moderated by bay influences — not as intense as the Inland Empire. Most homes use air conditioning moderately, keeping summer bills below $300-350.',
   solarPotentialText:

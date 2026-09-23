@@ -99,7 +99,32 @@ export interface CityCostRow {
   permitOnline: string;
   /** ISO date every field above was fetched and verified. Rendered. */
   sourcesFetchedAt: string;
+  /**
+   * Set when more than one electric utility serves addresses inside the city.
+   * `utilityKey` stays the utility whose tracker record the page quotes; the
+   * note names the others and says which applies where, in the sources' own
+   * terms. Every source carries its own verified date. Rendered in the utility
+   * section, the "Which utility serves" answer and the sources list.
+   */
+  utilitySplit?: {
+    /** Short names of the other utilities, e.g. 'TID', for the section heading. */
+    others: string;
+    /** One to three sentences, each traceable to a source below. */
+    note: string;
+    sources: { label: string; url: string; verifiedAt: string }[];
+  };
 }
+
+/**
+ * California Energy Commission, Electric Load Serving Entities (IOU & POU):
+ * the statewide service-territory layer. Queried 2026-09-22 against Census
+ * TIGERweb city boundaries to find cities that more than one utility serves.
+ */
+export const CEC_SERVICE_TERRITORY_SOURCE = {
+  label: 'California Energy Commission, Electric Load Serving Entities (IOU & POU) service-territory map',
+  url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about',
+  verifiedAt: '2026-09-22',
+};
 
 /**
  * The fields that reach the rendered page and therefore must be sourced.
@@ -411,6 +436,21 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "yes \u2014 online filing available via the City's eTRAKiT permit portal (mode-trk.aspgov.com/eTRAKiT); an older city document titled \"SOLAR-APP\" (Community and Economic Development) suggests SolarAPP+ has been used, but that specific link now 404s and was not independently reconfirmed on a live page",
     sourcesFetchedAt: "2026-09-18",
+    // Added 2026-09-22: MID's own service-area statement stops at the
+    // Tuolumne River, and the CEC layer places part of the city in TID.
+    utilitySplit: {
+      others: "TID",
+      note:
+        "The Modesto Irrigation District describes its electric service area as including the greater Modesto area north of the Tuolumne River, and the California Energy Commission's service-territory map places part of Modesto in the Turlock Irrigation District's territory. Neither is PG&E. Read the utility name on your bill before using either district's rates or solar rules.",
+      sources: [
+        {
+          label: "Modesto Irrigation District, Who We Are (electric service area)",
+          url: "https://www.mid.org/about-us/who-we-are/",
+          verifiedAt: "2026-09-22",
+        },
+        CEC_SERVICE_TERRITORY_SOURCE,
+      ],
+    },
   },
   {
     slug: "monterey",
@@ -507,6 +547,20 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes, via the city's Online Permit Center; SolarAPP+ named and available for single-family/duplex residential projects (all other projects must use the standard online permit center)",
     sourcesFetchedAt: "2026-09-18",
+    // Added 2026-09-22: the City's RCMU page names SCE as the main provider
+    // and RCMU as serving a selected southeastern area.
+    utilitySplit: {
+      others: "RCMU",
+      note:
+        "The City of Rancho Cucamonga says Southern California Edison is the main electric provider in the city, and that its own Rancho Cucamonga Municipal Utility (RCMU) serves over 3,900 metered businesses and residents in a selected area in the southeastern part of the city. Read the utility name on your bill before using an SCE rate.",
+      sources: [
+        {
+          label: "City of Rancho Cucamonga, Welcome to RCMU",
+          url: "https://www.cityofrc.us/rcmu",
+          verifiedAt: "2026-09-22",
+        },
+      ],
+    },
   },
   {
     slug: "roseville",
@@ -869,6 +923,14 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "The page does not say whether solar permits specifically can be filed online or whether SolarAPP+ is used; general permits are tracked through the city's eTRAKiT system.",
     sourcesFetchedAt: "2026-09-18",
+    // Added 2026-09-22: the CEC layer places part of Vallejo in the City of
+    // Pittsburg's electric service territory.
+    utilitySplit: {
+      others: "City of Pittsburg",
+      note:
+        "The California Energy Commission's service-territory map places part of Vallejo inside the City of Pittsburg's electric service territory rather than PG&E's. Read the utility name on your bill before using a PG&E rate.",
+      sources: [CEC_SERVICE_TERRITORY_SOURCE],
+    },
   },
   {
     slug: "windsor",
@@ -915,6 +977,14 @@ export function unsourcedFields(row: CityCostRow): string[] {
     return typeof value !== 'string' || value.trim() === '' || value.includes(UNSOURCED);
   }).map((field) => String(field));
   if (typeof row.cca === 'string' && row.cca.includes(UNSOURCED)) missing.push('cca');
+  if (
+    row.utilitySplit &&
+    (row.utilitySplit.note.includes(UNSOURCED) ||
+      row.utilitySplit.sources.length === 0 ||
+      row.utilitySplit.sources.some((source) => !/^\d{4}-\d{2}-\d{2}$/.test(source.verifiedAt)))
+  ) {
+    missing.push('utilitySplit');
+  }
   return missing;
 }
 
