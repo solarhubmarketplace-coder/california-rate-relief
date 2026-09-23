@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -34,6 +35,11 @@ export default function EnphaseVsSolarEdge() {
 <p className="text-lg text-muted-foreground">The two dominant inverter platforms in American residential solar. Here&apos;s how they actually compare — technically, commercially, and in real-world reliability.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="Enphase vs SolarEdge comparison" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Architectural Difference</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Enphase</strong> uses microinverters. One small inverter under each panel, converting DC to AC at the panel. Panels operate independently.</li>

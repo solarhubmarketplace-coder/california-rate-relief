@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -82,6 +83,9 @@ export default function InlandEmpireSolarPage() {
                 Start with the actual account, property and project goal. This editorial hub collects current city guides and the planning paths that help you compare a new solar project, roof work, storage, or a business property without assuming one utility or outcome for the whole region.
               </p>
             </div>
+
+            {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+            <HeroQuickCheck topic="Inland Empire solar planning and quote comparison" className='mb-12' />
 
             {/* Info Section */}
             <div className='grid md:grid-cols-3 gap-6 mb-12'>

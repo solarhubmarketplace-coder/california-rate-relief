@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -53,6 +54,11 @@ export default function TrinaSolarReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Trina Solar is one of the world&apos;s largest tier-1 solar panel manufacturers — publicly traded on the Shanghai Stock Exchange (688599), founded in 1997, and producing panels in high volume for residential, commercial, and utility-scale markets worldwide. If your California installer proposes Trina panels, you&apos;re getting mainstream tier-1 hardware from a company with meaningful financial scale. Here&apos;s the plain review for California homeowners.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Trina Solar panels review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Company</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

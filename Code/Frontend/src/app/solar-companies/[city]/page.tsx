@@ -7,6 +7,7 @@ import { Footer } from "@/components/landing/Footer";
 import SavingsCalculator from "@/components/SavingsCalculator";
 import { BillComparison } from "@/components/growth/BillComparison";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import {
   CheckCircle2,
   AlertTriangle,
@@ -28,7 +29,12 @@ import { hasSavingsCityPage } from "@/lib/canonical-redirects";
 import { growthCities } from "@/data/growth-cities";
 import { CityComparison } from "@/components/growth/CityComparison";
 import { cityCostPath, getPublishableCityCostSlugs } from "@/data/city-cost-data";
-import { cityPageDates, cityPageMetadata, companiesPageSeo } from "@/lib/city-pages";
+import {
+  cityPageDates,
+  cityPageMetadata,
+  cityQuickCheckUtility,
+  companiesPageSeo,
+} from "@/lib/city-pages";
 import { Byline } from "@/components/trust/Byline";
 import { ArticleJsonLd } from "@/components/shared/ArticleJsonLd";
 import { FaqJsonLd, type FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
@@ -294,11 +300,13 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listSchema) }}
       />
-      <main className="py-16 bg-background">
+      {/* Top spacing is tighter on phones so the quick check under the byline
+          fits a 390x844 screen whole (2026-09-23); md and up unchanged. */}
+      <main className="pb-16 pt-8 md:pt-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
             {/* Breadcrumb */}
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
+            <nav className="mb-4 md:mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
               <Link href="/" className="hover:text-primary">
                 Home
               </Link>
@@ -323,6 +331,15 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 {seo?.h1}
               </h1>
               <Byline updated={dates.modified} className="mb-4" />
+              {/* Bill-first step, right under the H1 and byline so it is on a
+                  phone's first screen. It sends nothing; it opens the inquiry
+                  form further down at step 2. */}
+              <HeroQuickCheck
+                compact
+                utility={cityQuickCheckUtility("companies", slug)}
+                topic={`Solar companies in ${city.name} and quote comparison`}
+                className="mb-6"
+              />
               <p className="text-lg text-muted-foreground">
                 9 installers compared, each holding an active CSLB licence and
                 confirmed to serve {city.name}. Honest notes on who each company

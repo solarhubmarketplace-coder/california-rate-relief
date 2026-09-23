@@ -9,6 +9,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 export const metadata: Metadata = {
   title: "What Is a Solar Inverter? Types, Brands, and Lifespans",
   description: "A plain-English explanation of solar inverters: the main types, how long they last, which brands are reliable, and warranty realities.",
@@ -33,6 +34,11 @@ export default function WhatIsASolarInverter() {
               <p className="text-lg text-muted-foreground">Solar panels produce DC electricity. Your home uses AC. The inverter is the device in the middle that makes it work, and it&apos;s the component most likely to need replacement during your system&apos;s lifetime.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="Solar inverter comparison" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">What It Actually Does</h2>
               <p>Solar panels generate direct current (DC) electricity. Your home&apos;s outlets, lights, and appliances run on alternating current (AC) at 120V/240V and 60Hz. The inverter converts DC from the panels into AC that matches the utility grid&apos;s frequency and voltage exactly, so it can seamlessly flow into your home&apos;s breaker panel or back onto the grid.</p>
               <p>It also performs several other critical functions:</p>

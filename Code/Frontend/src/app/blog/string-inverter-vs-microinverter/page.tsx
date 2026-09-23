@@ -9,6 +9,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 export const metadata: Metadata = {
   title: "String Inverter vs Microinverter: Which Is Right for You?",
   description: "Head-to-head comparison of string inverter vs microinverter solar systems. Cost, performance under shade, warranty, rapid shutdown, and repairability.",
@@ -33,6 +34,11 @@ export default function StringVsMicro() {
               <p className="text-lg text-muted-foreground">The single most consequential equipment choice in your solar install. Here&apos;s how each type works, what the real-world tradeoffs are, and when to pick which.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="Solar inverter comparison" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Core Difference</h2>
               <p>A <strong>string inverter</strong> is one large central inverter (typically garage-wall mounted) connected to a &ldquo;string&rdquo; of panels wired in series. All panels share one inverter.</p>
               <p><strong>Microinverters</strong> are small inverters attached to each individual panel on the roof. Every panel operates independently.</p>

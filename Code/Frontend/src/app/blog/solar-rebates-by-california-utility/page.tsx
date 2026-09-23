@@ -11,6 +11,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 export const metadata: Metadata = {
   title: "Solar Rebates by California Utility (2026): PG&E to SMUD",
   description:
@@ -54,6 +55,11 @@ export default function SolarRebatesByCAUtility() {
             </header>
 
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="California solar rebates" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Statewide Programs (Apply Everywhere in California)</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Federal Residential Clean Energy Credit (ITC) — no longer available.</strong> Public Law 119-21 amended IRC § 25D so the credit does not apply to expenditures made after December 31, 2025. A homeowner who buys solar or a battery in 2026 gets nothing federally, in any utility territory. The commercial credit (IRC § 48E) still exists, but the system owner claims it — which on a lease or PPA is the provider, not you.</li>

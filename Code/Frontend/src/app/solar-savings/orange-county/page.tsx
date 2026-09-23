@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -79,6 +80,9 @@ export default function OrangeCountySolarPage() {
                 Orange County homeowners pay some of the highest electricity rates in California. Southern California Edison rates average {(sceUtility.ratePerKwh * 100).toFixed(1)}¢ per kWh, with time-of-use peak rates reaching {sceUtility.peakTouRate}. A typical Orange County household spends $3,000+ annually on electricity — but solar can cut that by 30-50% with zero money down.
               </p>
             </div>
+
+            {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+            <HeroQuickCheck topic="Orange County solar savings and quote comparison" utility="sce" className='mb-12' />
 
             {/* Info Section */}
             <div className='grid md:grid-cols-3 gap-6 mb-12'>

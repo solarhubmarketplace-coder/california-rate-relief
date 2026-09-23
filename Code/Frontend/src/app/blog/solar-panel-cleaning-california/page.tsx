@@ -11,6 +11,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 export const metadata: Metadata = {
   title: "Solar Panel Cleaning in California: Is It Worth It?",
   description: "Does cleaning solar panels help in California? A UC San Diego study, when to clean, safe DIY steps, and what voids your panel warranty.",
@@ -54,6 +55,11 @@ export default function SolarPanelCleaningCA() {
               <p className="p-4 rounded-lg border border-border bg-card text-sm">
                 <strong>TL;DR:</strong> Professional solar panel cleaning in California runs $150–$450 per residential system, once or twice a year. Clean panels after wildfire smoke events, post-Santa Ana winds, or when production drops more than 10% below the prior year&apos;s same-month benchmark. Do NOT pressure-wash. It voids most manufacturer warranties. DIY with a soft brush and deionized water is fine if the roof is safely accessible; otherwise pay a professional.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="California solar maintenance" />
+              </div>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Much Does Dirt Actually Cost You?</h2>
               <p>

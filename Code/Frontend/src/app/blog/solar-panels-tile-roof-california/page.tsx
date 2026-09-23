@@ -7,6 +7,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 const CALIFORNIA_RESIDENTIAL_CODE_URL =
   'https://codes.iccsafe.org/content/CARC2022P3/chapter-3-building-planning';
@@ -79,6 +80,11 @@ export default function SolarTileRoofCalifornia() {
               <p>
                 Yes — clay and concrete tile roofs are common in California and installers work on them routinely, but the attachment method is different from a composition shingle roof, and that difference affects labor, tile breakage risk, and what you should get in writing before you sign. The sections below cover how tile-specific mounting hardware actually works, what causes tile breakage, and what a tile roof changes about your structural check, fire-code setbacks, and a future re-roof.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Tile roof solar in California" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-8 mb-4'>First: identify which project you are pricing</h2>
               <p>

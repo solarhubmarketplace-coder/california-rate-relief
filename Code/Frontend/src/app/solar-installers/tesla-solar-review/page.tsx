@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -84,6 +85,11 @@ export default function TeslaSolarReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Tesla Solar — the residential solar division of Tesla Inc. — is the price leader in our California comparison, with cash pricing of $2.27 to $2.82 per watt and a vertically integrated equipment stack that nobody else on this list matches. Tesla designs and manufactures its own panels, its own inverter, and its own Powerwall battery. The ecosystem is tight, the pricing is aggressive, and the app is legitimately the best in the industry. The catch — and it is a real one — is that post-install customer service is consistently the weakest part of the experience.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Tesla Solar review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Equipment Stack</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

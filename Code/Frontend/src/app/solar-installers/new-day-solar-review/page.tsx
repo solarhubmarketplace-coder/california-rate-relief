@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -70,6 +71,11 @@ export default function NewDayReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 New Day Solar is a family-owned California installer based in Murrieta with more than 31 years of combined solar and electrical experience. The company focuses on ownership (cash or loan) and actively steers customers away from PPAs and leases. Customer reviews across Yelp, the company website, and solar forums run very positive. Post-install PTO turnaround is often 2 weeks or less — among the faster timelines in our California comparison.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="New Day Solar review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

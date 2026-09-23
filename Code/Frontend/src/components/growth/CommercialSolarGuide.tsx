@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage, type Source } from "./DecisionPage";
 import { articleHref, articlesInCluster } from "@/data/article-pages";
-import { CtaCard, CTA_BUTTON_CLASS } from "@/components/trust/CtaCard";
+import { CommercialReviewButton, CommercialReviewForm } from "./CommercialReview";
 
 const path = "/commercial-solar";
 const title = "Commercial Solar in California: Build a Quote You Can Actually Compare";
@@ -54,24 +54,18 @@ export const commercialSolarMetadata: Metadata = {
   },
 };
 
-// The page's one ask, framed by the shared CtaCard (design pass 2). Copy, id
-// and destination are unchanged.
+// The page's one ask (2026-09-23): the inline commercial form, which replaced
+// the link to /commercial-assessment. Heading and intro keep the wording of the
+// card it replaced. The wrapper keeps the #solar-inquiry id and a text link to
+// /commercial-assessment, both asserted by scripts/review-commercial-solar-refresh.mjs.
 function CommercialInquiry() {
   return (
-    <CtaCard
-      id="solar-inquiry"
+    <CommercialReviewForm
+      legacyAnchor
+      standaloneLink
       heading="Put the property and bills in front of a commercial provider"
-      body={
-        <p>
-          Tell California Rate Relief about the site, utility, electricity use and project goal. We review the inquiry and may connect a suitable project with an independent provider, subject to service availability.
-        </p>
-      }
-      footnote="No cost to submit. No obligation. Project fit, service, design, price and savings must be confirmed."
-    >
-      <Link className={CTA_BUTTON_CLASS} href="/commercial-assessment">
-        Request a commercial assessment
-      </Link>
-    </CtaCard>
+      intro="Tell California Rate Relief about the site, utility, electricity use and project goal. We review the inquiry and may connect a suitable project with an independent provider, subject to service availability."
+    />
   );
 }
 
@@ -181,6 +175,7 @@ export function CommercialSolarGuide() {
       sourceCheckedDate="2026-09-12"
       commercial
       inquiry={<CommercialInquiry />}
+      midContent={<CommercialReviewButton />}
       primaryResourceHref="/commercial-solar/cost-per-watt-california"
       primaryResourceLabel="Commercial cost and scope checklist"
       comparisonHref="/commercial-solar/companies-california"

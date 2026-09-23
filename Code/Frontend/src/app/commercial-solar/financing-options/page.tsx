@@ -4,9 +4,10 @@ import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 
 export const metadata: Metadata = {
   title: "Commercial Solar Financing in California: PPA to CPACE",
@@ -87,6 +88,11 @@ export default function CommercialFinancing() {
                 <strong>PPA fits:</strong> Companies with predictable load, no desire to own the system, strong corporate credit, and a preference for paying only for electricity actually delivered.
               </p>
 
+              {/* One mid-page ask; its button scrolls to the form at the end of the page. */}
+              <div className='not-prose'>
+                <CommercialReviewButton />
+              </div>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Option 4: CPACE (Commercial Property Assessed Clean Energy)</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 CPACE is a property-based financing mechanism specifically designed for commercial clean-energy projects. The loan is repaid via an assessment on your property tax bill — the mechanism is non-recourse and transfers with the property if you sell.
@@ -135,12 +141,13 @@ export default function CommercialFinancing() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes. Commercial PPAs run 15-25 years (residential typically 10-20). Credit requirements are stricter — corporate balance sheet or investment-grade rather than consumer credit. Escalators 1-3.5%. Multi-tenant properties add legal complexity. Beyond that, the core structure (developer owns, you pay per kWh) is similar.</p>
             </div>
 
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Request a Commercial Solar Assessment</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto leading-relaxed'>Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.</p>
-              <Link href='/commercial-assessment' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a Commercial Assessment<ArrowRight className='h-4 w-4' /></Link>
-              <p className='text-xs text-muted-foreground mt-4'>No cost to submit. No obligation. Provider availability and project fit must be confirmed.</p>
-            </div>
+            {/* The closing ask (2026-09-23): the inline commercial form, in place of
+                a link to /commercial-assessment. Heading and intro keep the old box's wording. */}
+            <CommercialReviewForm
+              heading='Request a commercial solar assessment'
+              intro='Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.'
+              className='mt-12'
+            />
 
             <div className='mt-10'>
               <Link href='/commercial-solar' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Commercial Solar Hub</Link>

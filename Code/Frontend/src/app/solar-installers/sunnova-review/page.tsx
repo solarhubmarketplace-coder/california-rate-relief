@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -234,6 +235,9 @@ export default function SunnovaReview() {
                 </li>
               </ul>
             </div>
+
+            {/* Bill-first step after the TL;DR; it opens the inquiry form below at step 2. */}
+            <HeroQuickCheck topic="Sunnova review and quote comparison" className="mb-10" />
 
             {/* Body */}
             <div className='prose prose-slate max-w-none'>

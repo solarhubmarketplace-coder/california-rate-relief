@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -39,6 +40,11 @@ export default function SwitchToSolar() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Switching to solar in California in 2026 is a different process than it was three years ago. The NEM 3.0 tariff changed the math. Battery storage is now essentially mandatory for solid economics. The federal tax credit situation shifted. And the installer landscape has consolidated — Freedom Forever filed Chapter 11 last week, Sunnova went through Chapter 11 in June 2025. This guide walks through the complete process: deciding if solar is right for you, comparing installers and financing, getting through installation and interconnection, and what to expect on your first few utility bills.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Switching to solar in California" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Step 1 — Decide If You Should Switch</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

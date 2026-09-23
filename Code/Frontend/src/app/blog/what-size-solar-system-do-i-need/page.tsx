@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -98,6 +99,11 @@ export default function WhatSizeSolarSystemDoINeed() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 One of the most common questions homeowners ask is: &quot;How many solar panels do I need?&quot; The answer depends on three things: your annual electricity usage, the amount of sunlight your roof gets, and (in 2026) California&apos;s net metering rules. Oversizing your system wastes money on excess generation you can&apos;t use efficiently. Undersizing means you don&apos;t eliminate your electric bill. This guide walks you through the math, explains how NEM 3.0 changes the game, and shows you exactly how much roof space you need.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Solar system sizing and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 The Quick Formula

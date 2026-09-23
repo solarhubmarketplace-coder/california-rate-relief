@@ -5,7 +5,8 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { IntentCTA } from '@/components/growth/IntentCTA';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { Calendar, Clock } from 'lucide-react';
 import {
   Q2_2026_URL,
@@ -175,6 +176,13 @@ export default function CaliforniaUtilityRateTrackerPage() {
                 As of June 2026, the average California residential electricity rate is 33.7&cent;/kWh at PG&amp;E, 34.4&cent;/kWh at SCE, and 45.5&cent;/kWh at SDG&amp;E, based on the CPUC Public Advocates Office&apos;s most recent quarterly rate report. SMUD customers on the Fixed Rate plan &mdash; an opt-in alternative to SMUD&apos;s default Time-of-Day rate &mdash; pay a $27.00 monthly fixed charge plus 13.71&cent;/kWh (October&ndash;May) or 21.89&cent;/kWh (June&ndash;September), effective January 1, 2026. These figures &mdash; and the income-graduated fixed charge now in effect at all three investor-owned utilities &mdash; are checked against CPUC and utility sources below, last verified September 22, 2026.
               </p>
               <p className='text-sm text-foreground/70 mb-8'>This is a reference page, not a savings estimate. It does not compare solar, name an installer, or state what any household would save. Figures are restated exactly as the cited sources report them, with the one exception noted below: the 12-month change figures, which this page calculates itself and labels as such.</p>
+
+              {/* Bill-first step after the intro (2026-09-23); it opens the inquiry
+                  form at the end of the page at step 2. The reference content
+                  above and below is unchanged. */}
+              <div className='not-prose mb-10'>
+                <HeroQuickCheck topic="California utility rates and solar comparison" />
+              </div>
 
               <nav aria-label='Table of contents' className='rounded-xl border border-border p-5 mb-10 not-prose'>
                 <p className='font-semibold text-foreground mb-3 text-sm'>On this page</p>
@@ -476,7 +484,9 @@ export default function CaliforniaUtilityRateTrackerPage() {
               </ul>
             </div>
 
-            <IntentCTA cta='article_cta' variant='bill' />
+            {/* The closing ask (2026-09-23): the inquiry form itself, in place of
+                the link-only box that sent readers to the home page. */}
+            <SolarInquiry variant='bill' topic="California utility rates and solar comparison" />
           </article>
         </div>
       </main>

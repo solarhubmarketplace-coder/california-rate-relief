@@ -725,8 +725,10 @@ function main() {
   // route whose whole body is <ArticleHub/> has a working eligibility CTA even
   // though its own source contains neither string. Verified 2026-09-10 in
   // src/components/shared/ArticleRoute.tsx.
-  const HAS_CTA = /#qualify|<ArticleCTA\b|<ArticleHub\b|<Header\b|intakeHrefForPath|<FloatingMobileCTA\b|<FinalCTA\b/;
-  const HAS_INBODY_CTA = /#qualify|intakeHrefForPath|<ArticleCTA\b|<ArticleHub\b/;
+  // An on-page intake form is the strongest in-body CTA there is; since
+  // 2026-09-23 many pages close with the form itself instead of a link box.
+  const HAS_CTA = /#qualify|<ArticleCTA\b|<ArticleHub\b|<Header\b|intakeHrefForPath|<FloatingMobileCTA\b|<FinalCTA\b|<SolarInquiry\b|<CommercialReviewForm\b/;
+  const HAS_INBODY_CTA = /#qualify|intakeHrefForPath|<ArticleCTA\b|<ArticleHub\b|<SolarInquiry\b|<CommercialReviewForm\b/;
   for (const p of pages) {
     if (!HAS_CTA.test(p.src)) add(fails, p, 'LINKS', 'no eligibility CTA found (no /#qualify link, ArticleCTA, ArticleHub or Header)');
     else if (!HAS_INBODY_CTA.test(p.src)) {

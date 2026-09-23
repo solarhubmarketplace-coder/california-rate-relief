@@ -7,7 +7,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 export const metadata: Metadata = {
   title: "What Is a Demand Charge? Do CA Residential Customers Pay?",
   description: "Demand charges explained in plain English: what they are, who pays them in California, and how solar/battery eliminates them.",
@@ -47,6 +47,11 @@ export default function WhatIsDemandChargeCA() {
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Why Utilities Bill This Way</h2>
               <p>The grid is sized to handle everyone&apos;s peak demand simultaneously. If every business runs AC, pumps, and lighting at 3 PM on a hot day, the utility needs enough capacity to handle that simultaneous load. Demand charges recover the cost of having grid capacity standing by for your biggest moment, regardless of whether you used much total energy.</p>
 
+              {/* One mid-page ask; its button scrolls to the form at the end of the page. */}
+              <div className="not-prose">
+                <CommercialReviewButton />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Solar and Battery Reduce Demand Charges</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Solar lowers energy charges but often doesn&apos;t eliminate demand charges.</strong> Your peak demand often happens on cloudy days or at dusk when solar isn&apos;t producing.</li>
@@ -65,7 +70,9 @@ export default function WhatIsDemandChargeCA() {
                 <li><Link href="/commercial-solar" className="text-primary underline">Commercial Solar in California</Link></li>
               </ul>
             </div>
-          <ArticleCTA />
+          {/* The closing ask (2026-09-23): the inline commercial form, in place of the
+              link-only card that pointed at /commercial-assessment. */}
+          <CommercialReviewForm className="mt-12" />
 
           </article>
         </div>

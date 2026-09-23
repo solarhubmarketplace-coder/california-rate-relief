@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SolarCalculator } from '@/components/growth/SolarCalculator';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -57,6 +58,11 @@ export default function UtilityRatesCompared() {
               <aside className='rounded-lg border-l-4 border-primary bg-primary/5 px-4 py-3 text-sm text-foreground/75'>
                 <strong className='text-foreground'>Related commercial project:</strong> Businesses use commercial tariffs with demand charges, and solar proposals are commonly compared per watt. See <Link href='/commercial-solar/cost-per-watt-california' className={sourceLink}>commercial solar cost per watt in California</Link>.
               </aside>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic='California electricity bill comparison' />
+              </div>
 
               <nav aria-label='On this page' className='not-prose my-8 rounded-xl border border-border bg-muted/20 p-5'>
                 <h2 className='text-base font-bold text-foreground'>On this page</h2>

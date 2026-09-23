@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -53,6 +54,11 @@ export default function CanadianSolarReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Canadian Solar is one of the largest publicly traded tier-1 panel manufacturers globally, headquartered in Guelph, Ontario, Canada, and listed on the NASDAQ under ticker CSIQ. The company has been producing panels at massive scale for over two decades and is a common choice on California residential and commercial installs when value is the priority over premium specs. Here&apos;s a plain review.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Canadian Solar panels review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Company</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

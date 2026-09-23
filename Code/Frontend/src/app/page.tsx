@@ -94,8 +94,9 @@ export default function HomePage() {
           {/* The wizard's step titles are h3s, and this is the first section
               after the hero h1. A visually hidden h2 keeps the outline
               h1 > h2 > h3 (Lighthouse heading-order) without changing the look
-              or touching the wizard. Wording matches the hero button that
-              scrolls here. */}
+              or touching the wizard. The hero's quick check (HeroQuickCheck,
+              2026-09-23) scrolls here and opens the wizard past the answers
+              it already has. */}
           <h2 className='sr-only'>Request a residential review</h2>
           <WizardWithSuspense />
         </div>

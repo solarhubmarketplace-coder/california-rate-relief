@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -78,6 +79,11 @@ export default function MomentumSolarReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Momentum Solar is a privately held residential solar installer headquartered in New Jersey. This page states no employee count, revenue figure, star rating or complaint count: none was re-verified at its own source when the page was checked on <strong>September 18, 2026</strong>. It covers three things that were checked at primary sources that day &mdash; what Momentum&apos;s own website says about its equipment and coverage, what the federal court record shows, and what the company&apos;s financing structure means for you.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Momentum Solar review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Does Momentum Solar Serve California Right Now?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

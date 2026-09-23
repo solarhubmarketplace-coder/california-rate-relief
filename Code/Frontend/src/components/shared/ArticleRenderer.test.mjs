@@ -32,7 +32,7 @@ await build({
   }],
 });
 
-const { articleAnchorId, uniqueArticleAnchors } = await import(`${pathToFileURL(outputPath).href}?v=${Date.now()}`);
+const { articleAnchorId, uniqueArticleAnchors, articleWordCount, midArticleIndex } = await import(`${pathToFileURL(outputPath).href}?v=${Date.now()}`);
 
 test.after(async () => rm(outputDirectory, { recursive: true, force: true }));
 
@@ -62,4 +62,34 @@ test("the existing introduction stays ahead of contents and stat cards", () => {
   const contents = componentSource.indexOf("<ArticleContents items={contents}");
   const stats = componentSource.indexOf("page.keyStats.length > 0");
   assert.ok(intro > -1 && intro < contents && contents < stats);
+});
+
+test("the quick check slot sits after the introduction and before the contents", () => {
+  const intro = componentSource.indexOf("<Paragraphs text={page.intro}");
+  const quickCheck = componentSource.indexOf("{quickCheck}");
+  const contents = componentSource.indexOf("<ArticleContents items={contents}");
+  assert.ok(intro > -1 && intro < quickCheck && quickCheck < contents);
+});
+
+test("the mid-article ask goes halfway through the sections, never at an end", () => {
+  assert.equal(midArticleIndex(0), -1);
+  assert.equal(midArticleIndex(1), -1);
+  assert.equal(midArticleIndex(2), 0);
+  assert.equal(midArticleIndex(7), 3);
+  assert.equal(midArticleIndex(8), 3);
+});
+
+test("the inquiry slot replaces the link-only card, so the page keeps one closing ask", () => {
+  assert.ok(componentSource.includes("{inquiry ?? <CtaCard"));
+});
+
+test("article word count covers the prose a reader scrolls through", () => {
+  const page = {
+    intro: "one two three",
+    sections: [{ heading: "Four", body: "five six" }],
+    whenThisIsWrong: "seven",
+    faqs: [{ question: "eight?", answer: "nine ten" }],
+    bottomLine: "eleven",
+  };
+  assert.equal(articleWordCount(page), 11);
 });

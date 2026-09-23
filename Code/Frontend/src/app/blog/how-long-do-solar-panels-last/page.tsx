@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
@@ -99,6 +100,11 @@ export default function HowLongDoSolarPanelsLast() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 The short answer: solar panels last 30 to 40+ years in real-world use. But that&apos;s not the full story. The long answer involves understanding degradation rates, what happens after year 25, inverter lifespan, how warranties actually work, and why California&apos;s dry climate gives your panels a significant advantage. If you&apos;re deciding whether to invest in solar or evaluating a current system, you need to understand these facts.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Solar panel lifespan and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 The Real Lifespan: 30-40+ Years

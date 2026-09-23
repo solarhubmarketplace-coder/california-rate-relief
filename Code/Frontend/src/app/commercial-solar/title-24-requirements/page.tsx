@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, AlertTriangle } from 'lucide-react';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 
 export const metadata: Metadata = {
   title: "California Title 24 Part 6 Commercial Solar Requirements",
@@ -96,6 +97,11 @@ export default function Title24Requirements() {
                 Wherever PV is required, battery storage is now required alongside it. Sizing methodology follows the 2025 code&apos;s specific rules based on PV capacity and building type. The battery is intended to enable load-shifting and reduce peak-hour grid draw — aligning with California&apos;s grid-reliability goals and the NEM 3.0 / Net Billing Tariff economics that already favor on-site storage.
               </p>
 
+              {/* One mid-page ask; its button scrolls to the form at the end of the page. */}
+              <div className='not-prose'>
+                <CommercialReviewButton />
+              </div>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What About Existing Commercial Buildings?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Title 24 Part 6 is a new-construction and major-renovation code. Existing commercial buildings that aren&apos;t being permitted for substantial alteration are not subject to the new PV + storage mandate. That said, if you&apos;re doing a significant tenant improvement, addition, or reroof, Title 24 alteration requirements may trigger PV or efficiency upgrades depending on scope — check with your project architect.
@@ -126,12 +132,13 @@ export default function Title24Requirements() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes. The federal Investment Tax Credit (§ 48E — 6% base, 30% where the facility is under 1 MW AC or meets prevailing-wage and apprenticeship requirements) applies regardless of whether the solar is code-required or voluntary, provided the project begins construction by July 4, 2026 or is placed in service by December 31, 2027. Same with 5-year MACRS depreciation. Title 24 compliance and federal incentives don&apos;t conflict.</p>
             </div>
 
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Request a Commercial Solar Assessment</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto leading-relaxed'>Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.</p>
-              <Link href='/commercial-assessment' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a Commercial Assessment<ArrowRight className='h-4 w-4' /></Link>
-              <p className='text-xs text-muted-foreground mt-4'>No cost to submit. No obligation. Provider availability and project fit must be confirmed.</p>
-            </div>
+            {/* The closing ask (2026-09-23): the inline commercial form, in place of
+                a link to /commercial-assessment. Heading and intro keep the old box's wording. */}
+            <CommercialReviewForm
+              heading='Request a commercial solar assessment'
+              intro='Tell us about your property and project. California Rate Relief reviews inquiries and forwards suitable projects to an independent provider, subject to service availability.'
+              className='mt-12'
+            />
 
             <div className='mt-10'><Link href='/commercial-solar' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Commercial Solar Hub</Link></div>
           </article>

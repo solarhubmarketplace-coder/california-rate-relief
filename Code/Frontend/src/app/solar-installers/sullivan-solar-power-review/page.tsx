@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -60,6 +61,11 @@ export default function SullivanReview() {
             </div>
 
             <div className='prose prose-slate max-w-none'>
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Sullivan Solar Power review and quote comparison" />
+              </div>
+
               <h2 className='text-2xl font-bold text-foreground mt-4 mb-4'>What Happened</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Sullivan Solar Power was founded in San Diego in 2004 and for more than 15 years was one of the most respected residential solar installers in Southern California. The company routinely ranked among the top local installers on EnergySage and SolarReviews, with excellent ratings from its active years. That reputation is why the 2021 closure caught many customers off guard.

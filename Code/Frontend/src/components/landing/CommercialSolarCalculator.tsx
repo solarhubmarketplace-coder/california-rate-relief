@@ -2,8 +2,10 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { AlertTriangle, Info } from 'lucide-react';
 import { trackEvent } from '@/components/GoogleAnalyticsClient';
+import { intakeHrefForPath } from '@/lib/intake-routing';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -301,6 +303,9 @@ function buildSummary(state: FormState, outputs: CommercialSolarOutputs): string
 }
 
 export default function CommercialSolarCalculator() {
+  // The results' review button goes to the page's own commercial form when it
+  // has one (#commercial-review since 2026-09-23), else /commercial-assessment.
+  const reviewHref = intakeHrefForPath(usePathname() || '/commercial-assessment');
   const [state, setState] = useState<FormState>(initialState);
   const [escalationFromPao, setEscalationFromPao] = useState(false);
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'error'>('idle');
@@ -923,7 +928,7 @@ export default function CommercialSolarCalculator() {
                   {copyStatus === 'copied' ? 'Copied' : copyStatus === 'error' ? 'Copy failed — select text manually' : 'Copy this summary'}
                 </Button>
                 <Button asChild>
-                  <Link href="/commercial-assessment">Request a commercial project review</Link>
+                  <Link href={reviewHref}>Request a commercial project review</Link>
                 </Button>
               </div>
             </div>

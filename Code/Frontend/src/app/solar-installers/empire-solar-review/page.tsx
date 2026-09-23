@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -77,6 +78,11 @@ export default function EmpireReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 &ldquo;Empire Solar&rdquo; or &ldquo;Empire Solar Group&rdquo; is a name that has been used by several distinct solar companies across multiple states over the past decade. At least one namesake entity in Utah went through bankruptcy; others have pivoted or closed. The California operation, with mentions tied to the Pasadena area, has a mixed reputation with some older positive reviews and more recent complaints around delays and unfinished work. Before proceeding, homeowners should verify exactly which legal entity is quoting them.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Empire Solar review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>The Verification Checklist</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

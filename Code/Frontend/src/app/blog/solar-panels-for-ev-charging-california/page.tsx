@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
@@ -39,6 +40,11 @@ export default function SolarForEvCharging() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>An EV changes the load a solar design must serve. It does not produce one universal number of panels or kilowatts. Start with the household&apos;s measured electricity use, add the driving you actually expect to do, and then test that combined energy need against a site-specific production estimate.</p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Solar panels for EV charging in California" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Start With Energy, Not a Panel Count</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>Pull 12 months of utility bills and record the household&apos;s total kWh. Then write down the planned annual EV miles, including a second EV if one is expected. For the vehicle input, use the combined electricity-use figure on that model&apos;s EPA fuel-economy label or its <a href='https://www.fueleconomy.gov/' className='text-primary hover:underline'>FuelEconomy.gov</a> listing. The <a href='https://www.energy.gov/cmei/vehicles/articles/fotw-1373-december-16-2024-efficiency-evs-model-year-2024-ranges-53-140-mpge' className='text-primary hover:underline'>Department of Energy reports</a> that model-year 2024 EV combined ratings ranged from 1.49 to 4.17 miles per kWh, so substituting one generic efficiency for every vehicle can distort the result.</p>

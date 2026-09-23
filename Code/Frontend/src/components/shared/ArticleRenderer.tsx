@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import { ArrowRight, AlertTriangle } from 'lucide-react';
 import type { ArticlePage } from '@/data/article-types';
 import { ArticleContents } from './ArticleContents';
@@ -63,17 +63,52 @@ export function uniqueArticleAnchors(headings: string[]): string[] {
   });
 }
 
+/** Words of body prose on a data-driven page (intro, sections, FAQ, wrap-up). */
+export function articleWordCount(page: ArticlePage): number {
+  return [
+    page.intro,
+    ...page.sections.map((section) => `${section.heading} ${section.body}`),
+    page.whenThisIsWrong,
+    ...page.faqs.map((faq) => `${faq.question} ${faq.answer}`),
+    page.bottomLine,
+  ]
+    .join(' ')
+    .split(/\s+/)
+    .filter(Boolean).length;
+}
+
+/**
+ * Index of the section after which a mid-article block goes: halfway through
+ * the sections, never before the first or after the last.
+ */
+export function midArticleIndex(sectionCount: number): number {
+  return sectionCount < 2 ? -1 : Math.ceil(sectionCount / 2) - 1;
+}
+
 export function ArticleRenderer({
   page,
   related,
   inquiryHref,
   tools,
+  quickCheck,
+  midArticle,
+  inquiry,
 }: {
   page: ArticlePage;
   related?: { href: string; title: string }[];
   inquiryHref?: string;
   tools?: ReactNode;
+  /** Bill-first step (HeroQuickCheck) rendered right after the intro. */
+  quickCheck?: ReactNode;
+  /** One in-content ask rendered halfway through the sections (long pages). */
+  midArticle?: ReactNode;
+  /**
+   * The page's inquiry form. When given it takes the place of the link-only
+   * CtaCard at the end of the article, so the page keeps one closing ask.
+   */
+  inquiry?: ReactNode;
 }) {
+  const midAfter = midArticle ? midArticleIndex(page.sections.length) : -1;
   const sectionIds = uniqueArticleAnchors(page.sections.map((section) => section.heading))
     .map((id) => `section-${id}`);
   const contents = [
@@ -110,6 +145,8 @@ export function ArticleRenderer({
         <Paragraphs text={page.intro} className="text-lg text-foreground/85 leading-relaxed mb-5" />
       </div>
 
+      {quickCheck}
+
       <div className="lg:hidden">
         <ArticleContents items={contents} />
       </div>
@@ -126,12 +163,15 @@ export function ArticleRenderer({
         {tools}
 
         {page.sections.map((s, index) => (
-          <section key={`${s.heading}-${index}`} id={sectionIds[index]} className="scroll-mt-24">
-            <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-              {s.heading}
-            </h2>
-            <Paragraphs text={s.body} />
-          </section>
+          <Fragment key={`${s.heading}-${index}`}>
+            <section id={sectionIds[index]} className="scroll-mt-24">
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
+                {s.heading}
+              </h2>
+              <Paragraphs text={s.body} />
+            </section>
+            {index === midAfter && midArticle}
+          </Fragment>
         ))}
 
         {page.dataTable.rows.length > 0 && (
@@ -193,9 +233,10 @@ export function ArticleRenderer({
         <Paragraphs text={page.bottomLine} />
       </div>
 
-      {/* The page's one ask. Copy, href and label logic unchanged; only the
-          frame moved to the shared CtaCard. */}
-      <CtaCard
+      {/* The page's one closing ask: the inquiry form when the route passes
+          one (2026-09-23), otherwise the link-only card. Card copy, href and
+          label logic unchanged; only the frame moved to the shared CtaCard. */}
+      {inquiry ?? <CtaCard
         headingAs="h3"
         heading="See what your options actually look like"
         body={
@@ -213,7 +254,7 @@ export function ArticleRenderer({
           {inquiryHref ? 'Optional solar inquiry' : page.cluster === 'commercial' ? 'Request a Commercial Assessment' : 'Request a Residential Assessment'}
           <ArrowRight className="h-4 w-4" />
         </Link>
-      </CtaCard>
+      </CtaCard>}
 
       {related && related.length > 0 && (
         <div className="mt-10 pt-8 border-t border-border">

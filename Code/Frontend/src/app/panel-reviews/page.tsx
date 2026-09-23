@@ -3,9 +3,11 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowRight, Calendar, Clock, Factory } from 'lucide-react';
+import { Calendar, Clock, Factory } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 export const metadata: Metadata = {
   title: "Solar Panel Brand Reviews for California Homeowners (2026)",
@@ -70,6 +72,10 @@ export default function PanelReviewsHub() {
               </p>
             </div>
 
+            {/* Bill-first step after the intro (2026-09-23); it opens the inquiry
+                form at the end of the page at step 2. */}
+            <HeroQuickCheck topic="Solar panel brand comparison" className='mb-12' />
+
             <section className='mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-6 tracking-tight'>Panel Brand Reviews</h2>
               <div className='grid md:grid-cols-2 gap-4'>
@@ -104,11 +110,9 @@ export default function PanelReviewsHub() {
               </p>
             </section>
 
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Get Quotes With Multiple Panel Options</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers offering different panel brands. Fill out one form, get up to three quotes — compare pricing and panel specs side by side.</p>
-              <Link href='/#qualify' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Get My 3 Quotes<ArrowRight className='h-4 w-4' /></Link>
-            </div>
+            {/* The closing ask (2026-09-23): the inquiry form itself, in place of
+                a link-only box that sent readers to the home page. */}
+            <SolarInquiry variant='review' topic="Solar panel brand comparison" />
           </article>
         </div>
       </main>

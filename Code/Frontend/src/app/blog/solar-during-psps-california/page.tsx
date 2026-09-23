@@ -6,8 +6,9 @@ import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { SolarInquiry } from "@/components/growth/SolarInquiry";
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
 export const metadata: Metadata = {
   title: "Solar During a PSPS in California: Will My Panels Work?",
   description: "Does solar work during a PG&E PSPS outage? Why grid-tied solar shuts off, how batteries change that, and what you need to survive a blackout.",
@@ -32,6 +33,11 @@ export default function SolarDuringPSPSCA() {
               <p className="text-lg text-muted-foreground">If you have grid-tied solar and PG&amp;E cuts power during a Public Safety Power Shutoff, your panels will <em>not</em> keep your lights on. Here&apos;s why — and what it takes to actually keep the lights on.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="Solar and battery backup during PSPS" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Short Answer</h2>
               <p>Standard grid-tied solar <strong>shuts off automatically</strong> when the grid loses power. This is required by UL 1741 safety standards — the inverter must detect grid outage and disconnect within 2 seconds to prevent backfeeding dead lines and electrocuting utility workers.</p>
               <p>During a PSPS, your solar panels literally cannot power your home unless you have one of the following:</p>
@@ -79,8 +85,9 @@ export default function SolarDuringPSPSCA() {
                 <li><Link href="/blog/tesla-powerwall-installers-california" className="text-primary underline">Tesla Powerwall Installers California</Link></li>
               </ul>
             </div>
-          <ArticleCTA />
-
+          {/* The closing ask is the inquiry form itself (2026-09-23); the link-only
+              box it replaced sent this form-less page to the home page. */}
+          <SolarInquiry topic="Solar and battery backup during PSPS" />
           </article>
         </div>
       </main>

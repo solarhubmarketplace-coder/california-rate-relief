@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -56,6 +57,11 @@ export default function BakerReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Baker Electric has been a family-owned electrical contractor in Escondido since 1938. 87 years of continuous California operations. The company&apos;s solar division layers residential PV onto that electrical foundation, which matters. Complex main-panel upgrades, EV charger integration, and backup-battery transfer-switch work — all of which involve electrical expertise as much as solar expertise — tend to go smoother with an installer whose core business was licensed electrical work before solar was even a product category.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="Baker Electric Solar review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Baker Electric Solar vs. Baker Home Energy</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

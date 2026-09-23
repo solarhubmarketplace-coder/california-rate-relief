@@ -1,9 +1,11 @@
-import type { ReactNode } from "react";
+import { Children, Fragment, isValidElement, type ReactNode } from "react";
 import Link from "next/link";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { PublicLayout } from "@/components/layout/PublicLayout";
 import { SolarInquiry } from "./SolarInquiry";
+import { HeroQuickCheck } from "./HeroQuickCheck";
+import { intakeHrefForPath } from "@/lib/intake-routing";
 import type { ServiceMarket } from "@/lib/service-market";
 import type { ArticleContentsItem } from "@/components/shared/ArticleContents";
 import type { FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
@@ -73,6 +75,26 @@ export function SourceList({
     </aside>
   );
 }
+/**
+ * Place `node` halfway through the page body. A body passed as one fragment
+ * (GrowthGuide does this) is split on the fragment's own children.
+ */
+function withMidContent(children: ReactNode, node: ReactNode): ReactNode {
+  if (!node) return children;
+  let items = Children.toArray(children);
+  if (items.length === 1 && isValidElement(items[0]) && items[0].type === Fragment) {
+    items = Children.toArray((items[0].props as { children?: ReactNode }).children);
+  }
+  const at = Math.max(1, Math.ceil(items.length / 2));
+  return (
+    <>
+      {items.slice(0, at)}
+      {node}
+      {items.slice(at)}
+    </>
+  );
+}
+
 export function DecisionPage({
   title,
   intro,
@@ -100,6 +122,9 @@ export function DecisionPage({
   authorSchema = "organization",
   breadcrumbs = [],
   breadcrumbLabel,
+  quickCheck,
+  quickCheckUtility,
+  midContent,
 }: {
   title: string;
   intro: string;
@@ -148,7 +173,33 @@ export function DecisionPage({
   breadcrumbs?: { label: string; href: string }[];
   /** Short name for this page at the end of the trail. Defaults to the title. */
   breadcrumbLabel?: string;
+  /**
+   * Where the HeroQuickCheck bill-first step goes (2026-09-23):
+   * "afterIntro" (default for residential pages) puts it after the intro and
+   * before the key facts and the body; "afterByline" puts it right under the
+   * H1 and byline, for city pages that must show it on a phone's first
+   * screen; false leaves it out (commercial pages, which never carry it, and
+   * pages whose first body block is already a tool). It sends nothing; it
+   * opens the page's inquiry form at step 2.
+   */
+  quickCheck?: "afterIntro" | "afterByline" | false;
+  /**
+   * Utility the quick check pre-selects. Defaults to `utility` unless that is
+   * "other". Pass "" for a city split between utilities.
+   */
+  quickCheckUtility?: string;
+  /** Rendered halfway through the body, e.g. the commercial mid-page button. */
+  midContent?: ReactNode;
 }) {
+  const quickCheckAt = commercial ? false : (quickCheck ?? "afterIntro");
+  const quickCheckNode = quickCheckAt ? (
+    <HeroQuickCheck
+      compact={quickCheckAt === "afterByline"}
+      topic={topic || title}
+      utility={quickCheckUtility ?? (utility === "other" ? "" : utility)}
+      className={quickCheckAt === "afterByline" ? "mt-5" : "mt-6"}
+    />
+  ) : null;
   const personAuthor = {
     "@type": "Person",
     "@id": "https://ratereliefca.com/author/chad-simpson#person",
@@ -194,7 +245,9 @@ export function DecisionPage({
   return (
     <PublicLayout breadcrumbLabel={breadcrumbLabel || title} breadcrumbParent={breadcrumbs[breadcrumbs.length - 1]}>
       <Header />
-      <main className="mx-auto max-w-6xl px-4 pb-20 pt-8 md:pt-12">
+      {/* City pages (quickCheck "afterByline") sit a little tighter on phones
+          so the quick check under the byline fits a 390x844 screen whole. */}
+      <main className={`mx-auto max-w-6xl px-4 pb-20 md:pt-12 ${quickCheckAt === "afterByline" ? "pt-6" : "pt-8"}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -215,10 +268,18 @@ export function DecisionPage({
                   <span className="text-foreground">{breadcrumbLabel || title}</span>
                 </nav>
               )}
-              <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+              <p
+                className={`text-sm font-semibold uppercase tracking-wide text-primary ${
+                  quickCheckAt === "afterByline" ? "hidden sm:block" : ""
+                }`}
+              >
                 {regionLabel} solar decisions
               </p>
-              <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-5xl">
+              <h1
+                className={`text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-5xl ${
+                  quickCheckAt === "afterByline" ? "sm:mt-3" : "mt-3"
+                }`}
+              >
                 {title}
               </h1>
               {/* Byline above the first paragraph (22b §3.2). The date is the
@@ -230,10 +291,12 @@ export function DecisionPage({
                 sourceCount={sources.length}
                 sourcesHref="#sources"
               />
+              {quickCheckAt === "afterByline" && quickCheckNode}
               <p className="mt-5 text-lg leading-relaxed text-foreground/80">{intro}</p>
               <p className="mt-3 text-sm text-muted-foreground">
                 California Rate Relief is a private solar referral service.
               </p>
+              {quickCheckAt === "afterIntro" && quickCheckNode}
             </header>
             <KeyFacts facts={keyStats} sourcesHref="#sources" className="max-w-3xl" />
             <nav
@@ -262,7 +325,7 @@ export function DecisionPage({
               >
                 {comparisonLabel || (commercial ? "Commercial solar resources" : "Compare solar quotes")}
               </Link>
-              <a href="#solar-inquiry" className="underline">
+              <a href={commercial ? intakeHrefForPath(path) : "#solar-inquiry"} className="underline">
                 Optional inquiry
               </a>
             </nav>
@@ -270,7 +333,7 @@ export function DecisionPage({
                 here, so a section added to any page shows up on its own. */}
             <div id="decision-body" className="max-w-3xl [&_h2]:scroll-mt-24">
               <div className="max-w-[72ch] space-y-8 [&_h2]:mb-3 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_p]:leading-relaxed [&_li]:leading-relaxed">
-                {children}
+                {withMidContent(children, midContent)}
               </div>
               <SourceList sources={sources} sourceCheckedDate={sourceCheckedDate} />
               <FaqBlock items={faqs} id="faq" />

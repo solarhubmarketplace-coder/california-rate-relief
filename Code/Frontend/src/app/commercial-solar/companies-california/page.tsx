@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage } from "@/components/growth/DecisionPage";
-import { CommercialAssessmentForm } from "@/components/landing/CommercialAssessmentForm";
+import { CommercialReviewButton, CommercialReviewForm } from "@/components/growth/CommercialReview";
 
 const title =
   "Commercial Solar Companies in California: Compare by Scope";
@@ -65,19 +65,17 @@ export default function CommercialSolarCompanies() {
         },
       ]}
       sourceCheckedDate="2026-09-18"
+      // The form moved into the shared inline placement (#commercial-review)
+      // on 2026-09-23; heading and intro keep this page's wording. The
+      // #solar-inquiry wrapper stays for scripts/test-commercial-growth.mjs.
       inquiry={
-        <section id="solar-inquiry" className="my-10 scroll-mt-24">
-          <h2 className="mb-3 text-2xl font-bold">
-            Discuss a California commercial project
-          </h2>
-          <p className="mb-5 text-foreground/80">
-            Send the property basics to California Rate Relief. This is a
-            private referral inquiry. Project review, provider availability and
-            a proposal come later.
-          </p>
-          <CommercialAssessmentForm />
-        </section>
+        <CommercialReviewForm
+          legacyAnchor
+          heading="Discuss a California commercial project"
+          intro="Send the property basics to California Rate Relief. This is a private referral inquiry. Project review, provider availability and a proposal come later."
+        />
       }
+      midContent={<CommercialReviewButton />}
     >
       <p className="text-foreground/80">
         Before comparing bidders, the commercial solar cost page and calculator lets you{" "}

@@ -6,8 +6,9 @@ import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
 const title = 'PG&E Time-of-Use Rates: 2026 Plan Guide';
 const description = 'Compare PG&E E-TOU-C and E-TOU-D peak hours, March 2026 prices, baseline credits and fit. See which usage patterns can lower your electricity bill.';
@@ -46,6 +47,11 @@ export default function PGETimeOfUseRates2026() {
               <div className='rounded-xl border border-border bg-muted/30 p-5 my-8'>
                 <p className='font-semibold text-foreground mb-2'>Quick answer</p>
                 <p className='text-foreground/80 m-0'>E-TOU-C can favor a lower-usage household that stays near its baseline allowance and can avoid 4–9 p.m. every day. E-TOU-D removes the baseline credit but uses a shorter weekday peak, which can fit higher-usage households or people who use more electricity on weekends. PG&amp;E&apos;s personalized comparison is the deciding test.</p>
+              </div>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="PG&E time-of-use rates and solar comparison" utility="pge" />
               </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>PG&amp;E TOU Rates Effective March 1, 2026</h2>
@@ -109,7 +115,9 @@ export default function PGETimeOfUseRates2026() {
               </ul>
             </div>
 
-            <ArticleCTA heading='Compare a Solar Plan With Your PG&E Bill' body='California Rate Relief is a private referral service. Homeowners can request a no-obligation assessment using their actual utility, usage and property details.' />
+            {/* The closing ask is the inquiry form itself (2026-09-23); the link-only
+                box it replaced sent this form-less page to the home page. */}
+            <SolarInquiry topic="PG&E time-of-use rates and solar comparison" utility="pge" heading="Compare a Solar Plan With Your PG&E Bill" />
           </article>
         </div>
       </main>

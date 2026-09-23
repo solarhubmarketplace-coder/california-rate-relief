@@ -1,4 +1,5 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -84,6 +85,11 @@ export default function SunPowerReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 The SunPower name is one of the most recognizable in U.S. residential solar — but the SunPower you&apos;d hire today is not the same legal entity that existed two years ago. In August 2024, the original SunPower Corporation filed Chapter 11 bankruptcy. In early 2025, Complete Solaria acquired the key operating assets for approximately $45 million, then rebranded itself to SunPower in April 2025 and reclaimed the SPWR ticker on Nasdaq. Here&apos;s what that means for California buyers in 2026.
               </p>
+
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic="SunPower review and quote comparison" />
+              </div>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What &quot;SunPower&quot; Actually Is Now</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

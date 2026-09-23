@@ -9,6 +9,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 export const metadata: Metadata = {
   title: "TECH Clean California: Heat Pump Rebate Amounts (2026)",
   description: "TECH Clean California pays $1,000-$2,000 for a heat pump water heater and $3,000-$4,000 for HVAC, with higher rebates for income-qualified households.",
@@ -33,6 +34,11 @@ export default function TECHCleanCAGuide() {
               <p className="text-lg text-muted-foreground">TECH Clean California is the state&apos;s main incentive program for replacing gas heating with electric heat pumps. Rebates stack with federal tax credits and solar — here&apos;s how it all fits together.</p>
             </header>
             <div className="prose prose-slate max-w-none">
+              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
+              <div className="not-prose my-8">
+                <HeroQuickCheck topic="California home electrification" />
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">What Is TECH Clean California?</h2>
               <p>TECH Clean California is a $200M+ statewide initiative administered by the CPUC and implemented through participating contractors. It pays rebates for replacing natural-gas water heaters and HVAC systems with electric heat-pump equivalents, on a point-of-sale basis.</p>
 
