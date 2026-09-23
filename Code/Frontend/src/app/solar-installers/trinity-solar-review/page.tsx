@@ -39,7 +39,7 @@ const articleSchema = {
   description:
     'A 2026 review of Trinity Solar, a Northeast-focused residential solar installer, and what California homeowners should know about it.',
   datePublished: '2026-04-23',
-  dateModified: '2026-04-23',
+  dateModified: '2026-09-22',
   author: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
@@ -156,11 +156,11 @@ export default function TrinitySolarReview() {
                 California Option
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-23'>Updated April 23, 2026</time>
+                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
@@ -214,6 +214,19 @@ export default function TrinitySolarReview() {
                 doesn&apos;t fit) in the national installer comparison.
               </p>
 
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Trinity Solar&apos;s own site lists its service area as
+                Connecticut, Delaware, Maryland, Massachusetts, New Jersey,
+                New York, Ohio, Pennsylvania, and Rhode Island &mdash; all
+                Northeast and Mid-Atlantic states (trinitysolar.com, accessed
+                September 22, 2026). California does not appear anywhere in
+                that list, in the site&apos;s footer service-area links, or
+                in its coverage-map navigation. Note for anyone citing the
+                company by its older domain: <strong>trinity-solar.com</strong>{' '}
+                now redirects to <strong>trinitysolar.com</strong>; both
+                point to the same company.
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 The Company
               </h2>
@@ -258,10 +271,25 @@ export default function TrinitySolarReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Trinity does not own its own financing product. Lease and
                 PPA options are offered through third-party partners —
-                including, historically, a financing partnership with
-                Sunnova before Sunnova&apos;s 2025 bankruptcy. Loan
-                financing is through standard third-party solar lenders.
-                Cash purchase is always available.
+                including, historically, a financing partnership with{' '}
+                <Link
+                  href='/solar-installers/sunnova-review'
+                  className='text-primary hover:underline font-medium'
+                >
+                  Sunnova
+                </Link>{' '}
+                before Sunnova&apos;s 2025 bankruptcy moved those legacy
+                contracts to SunStrong Management. Loan financing is through
+                standard third-party solar lenders. Cash purchase is always
+                available. For what that bankruptcy actually involved and
+                what it means if you&apos;re evaluating Sunnova directly, see{' '}
+                <Link
+                  href='/solar-installers/sunnova-review'
+                  className='text-primary hover:underline font-medium'
+                >
+                  our Sunnova review
+                </Link>
+                .
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -361,6 +389,44 @@ export default function TrinitySolarReview() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                Comparing Installers in California
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-4'>
+                Since Trinity Solar isn&apos;t an option here, the useful
+                next step is a California-specific list rather than more
+                research on a company that won&apos;t take your project:
+              </p>
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>
+                  <Link
+                    href='/solar-installers'
+                    className='text-primary hover:underline font-medium'
+                  >
+                    California solar company reviews and comparisons
+                  </Link>{' '}
+                  &mdash; CRR&apos;s full installer hub, including how to
+                  check a company&apos;s CSLB license before you sign.
+                </li>
+                <li>
+                  <Link
+                    href='/best-solar-companies-california'
+                    className='text-primary hover:underline font-medium'
+                  >
+                    Best solar companies in California
+                  </Link>{' '}
+                  &mdash; a shorter, vetted starting list.
+                </li>
+              </ul>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                If you found this page searching for Trinity Solar reviews
+                from New Jersey, Connecticut, Massachusetts, New York,
+                Pennsylvania, Maryland, Delaware, Rhode Island, or Ohio
+                &mdash; the states Trinity actually serves &mdash; this site
+                is California-only and can&apos;t help with that comparison.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 Frequently Asked Questions
               </h2>
 
@@ -370,11 +436,20 @@ export default function TrinitySolarReview() {
                     Does Trinity Solar serve California?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    No, not in any meaningful capacity. Trinity operates
-                    primarily in the Northeast — New Jersey, New York,
-                    Connecticut, Massachusetts, Pennsylvania, and Maryland.
-                    California homeowners should focus on installers that
-                    actually serve the state.
+                    No. Trinity&apos;s own site lists nine service states
+                    &mdash; Connecticut, Delaware, Maryland, Massachusetts,
+                    New Jersey, New York, Ohio, Pennsylvania, and Rhode
+                    Island &mdash; and California isn&apos;t one of them
+                    (trinitysolar.com, accessed September 22, 2026).
+                    California homeowners should compare installers that
+                    actually operate here; see our{' '}
+                    <Link
+                      href='/solar-installers'
+                      className='text-primary hover:underline font-medium'
+                    >
+                      installer hub
+                    </Link>
+                    .
                   </p>
                 </div>
 
