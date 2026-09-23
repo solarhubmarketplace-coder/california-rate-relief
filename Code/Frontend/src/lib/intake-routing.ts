@@ -57,6 +57,7 @@ export const RESIDENTIAL_FORM_SECTIONS = [
   '/battery',
   '/panel-reviews',
   '/california-utility-rate-tracker',
+  '/california-solar-cost-index',
   '/tools/solar-panel-calculator',
   '/best-solar-companies-california',
   '/solar-panels-california',

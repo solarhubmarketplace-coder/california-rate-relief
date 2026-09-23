@@ -272,9 +272,10 @@ export function QualificationWizard({
         initPlaces();
         return;
       }
-      // layout.tsx loads the script only when a key is configured; stop
-      // looking after ~10 s so a page without Maps does no further work.
-      if (++tries < 20) timer = window.setTimeout(tryInit, 500);
+      // The home page loads the script afterInteractive, only when a key is
+      // configured; stop looking after ~30 s so a page without Maps does no
+      // further work.
+      if (++tries < 60) timer = window.setTimeout(tryInit, 500);
     };
     tryInit();
     return () => {

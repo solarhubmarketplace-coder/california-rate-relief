@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import Script from 'next/script';
 import type { Metadata } from 'next';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
@@ -84,6 +85,15 @@ export default function HomePage() {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      {/* Google Places for the wizard's address suggestions. Home only, and
+          afterInteractive so it never delays first paint; the wizard waits for
+          window.google.maps.places and falls back to a plain input. */}
+      {process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY && (
+        <Script
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}&libraries=places`}
+          strategy='afterInteractive'
+        />
+      )}
       <Header />
       <main>
         {/* Hero: light surface, ink text, one brand-color button (design pass 2) */}

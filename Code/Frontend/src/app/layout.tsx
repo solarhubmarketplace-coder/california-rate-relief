@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import Script from 'next/script';
 import { Plus_Jakarta_Sans, DM_Serif_Display } from 'next/font/google';
 import './globals.css';
 // CRR color tokens. Scoped to html[data-site="ratereliefca"], so the other four
@@ -221,7 +220,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const googlePlacesApiKey = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
 
   // Host-gate the Google Maps Places script (Batch 3.4). Only CRR uses Places
   // autocomplete in the qualification wizard. Loading on GRH/SHG/AHB cost ~80KB
@@ -306,12 +304,9 @@ export default async function RootLayout({
         />}
         <GoogleAnalytics />
         {isCRR && <FirstTouchCapture />}
-        {googlePlacesApiKey && isCRR && (
-          <Script
-            src={`https://maps.googleapis.com/maps/api/js?key=${googlePlacesApiKey}&libraries=places`}
-            strategy="beforeInteractive"
-          />
-        )}
+        {/* The Google Places script is loaded by the home page only (src/app/page.tsx),
+            the one CRR page whose form uses address suggestions. Loading it
+            beforeInteractive here made every CRR page fetch and run Maps JS. */}
         <Providers>
           {/* display: contents — wrapper carries the skip-link target id without
               affecting layout flow. Sub-layouts keep their own <main> tags. */}
