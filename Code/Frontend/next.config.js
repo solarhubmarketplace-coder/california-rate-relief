@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Lower peak build memory (slower compile, same output). The 2026-09-23
+  // release build was OOM-killed at ~5.9 GB without it.
+  experimental: { webpackMemoryOptimizations: true },
   // Keep local review output separate so dev and release-build checks cannot collide.
   distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next',
   reactStrictMode: false,
