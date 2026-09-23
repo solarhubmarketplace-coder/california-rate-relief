@@ -109,7 +109,7 @@ export function BestTimeToInstallSolarGuide() {
           <Link className="underline" href="/solar-problems/true-up-bill-california-explained">
             true-up bill explainer
           </Link>{" "}
-          (publishing alongside this page — confirm both go live together) for what builds up monthly versus what settles at true-up.
+          for what builds up monthly versus what settles at true-up.
         </p>
       </section>
 
@@ -123,7 +123,7 @@ export function BestTimeToInstallSolarGuide() {
           <Link className="underline" href="/battery/sgip-battery-rebate-california">
             SGIP battery rebate page
           </Link>{" "}
-          (publishing alongside this page — confirm both go live together) for the current category-by-category budget status and eligibility rules.
+          for the current category-by-category budget status and eligibility rules.
         </p>
       </section>
 
