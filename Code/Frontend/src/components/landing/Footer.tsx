@@ -23,6 +23,7 @@ import { FOOTER_TRUST_LINKS, TRUST_LINKS } from '@/components/trust/trust-links'
 const GUIDE_LINKS = [
   { href: '/commercial-solar', label: 'Commercial solar' },
   { href: '/solar-cost', label: 'Solar cost by city' },
+  { href: '/california-solar-cost-index', label: 'California solar cost index' },
   { href: '/solar-installers', label: 'Solar company reviews' },
   { href: '/solar-problems', label: 'Solar problems' },
   { href: '/battery', label: 'Home batteries' },
