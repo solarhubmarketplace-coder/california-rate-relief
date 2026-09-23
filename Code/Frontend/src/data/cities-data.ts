@@ -15,15 +15,20 @@
 // instruction above is the reason the job keeps getting under-scoped.
 //
 // Known data issues, recorded 15 September 2026:
-//   - Pasadena carries utilityCode 'gwp' (Glendale Water & Power) and its own
-//     copy concedes those rates are a proxy. There is no UTILITY_DATA entry for
-//     the utility that serves it, so this needs sourced data, not a key change.
+//   - RESOLVED 2026-09-22: Pasadena carried utilityCode 'gwp' (Glendale Water &
+//     Power) and its own copy conceded those rates were a proxy for Pasadena
+//     Water and Power. Added a sourced 'pwp' UTILITY_DATA entry (PWP's own
+//     tiered rate schedule, fetched 2026-09-22) and pointed Pasadena at it.
 //   - SMUD contradicts itself: ratePerKwh is 0.19 while its own
-//     rateIncreaseHistory text says "roughly 16-22¢/kWh".
-//   - An earlier defect list recorded Roseville as showing Redding's rates.
-//     That looks wrong: 'reu' is Roseville Electric Utility, Roseville is in
-//     Placer County, and "Redding" appears nowhere in this file. Probably an
-//     abbreviation collision. Verify before acting on it either way.
+//     rateIncreaseHistory text says "roughly 16-22¢/kWh". (unresolved — SMUD is
+//     out of scope for the 2026-09-22 Pasadena/Roseville fix below.)
+//   - RESOLVED 2026-09-22: an earlier defect list recorded Roseville as showing
+//     Redding's rates. That was a red herring — 'reu' is correctly keyed to
+//     Roseville Electric Utility and "Redding" appears nowhere in this file.
+//     The real defect was that reu.ratePerKwh (0.17) was an unsourced guess,
+//     not a figure REU actually publishes. Replaced with REU's sourced,
+//     tiered Schedule R-1 rate (fetched 2026-09-22); REU, like PWP, publishes
+//     no single blended average, so none is stated as a flat rate.
 //
 // IMPORTANT: All rate data, bill amounts, and savings projections MUST be
 // verified through Gronk before deploying. Do NOT use Claude's training data.
@@ -49,6 +54,14 @@ export interface UtilityData {
   nemVersion: string;        // NEM 2.0, NEM 3.0, or custom
   exportRate: string;        // what excess solar earns (e.g. "5-8¢/kWh")
   rateIncreaseHistory: string; // brief description of recent increases
+  /**
+   * Optional citation for a municipal utility with no single CPUC-style
+   * average rate. Mirrors the sourced-record pattern in
+   * utility-rate-tracker.ts. Not required (older entries have none) and not
+   * rendered by any template — it exists so the tiered figures folded into
+   * ratePlanAdvice / rateIncreaseHistory above trace back to a fetched date.
+   */
+  rateSource?: { label: string; url: string; fetchedAt: string };
 }
 
 export const UTILITY_DATA: Record<string, UtilityData> = {
@@ -245,24 +258,61 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
     code: 'reu',
     name: 'Roseville Electric Utility',
     shortName: 'Roseville Electric',
-    ratePerKwh: 0.17,
-    peakTouRate: '20-26¢',
-    annualIncrease: 0.03,
-    fixedCharge: 0,
-    accountUrl: 'https://www.roseville.ca.us/government/departments/roseville_electric',
-    careFeraUrl: 'https://www.roseville.ca.us/government/departments/roseville_electric/customer_care/assistance_programs',
+    // REU bills a tiered residential rate (Schedule R-1), not a single
+    // blended average the way the CPUC computes for the IOUs — see
+    // rateSource below. ratePerKwh is a sentinel, not a guessed average;
+    // rateDisplay/rateLabel are what templates that check them show instead.
+    ratePerKwh: 0,
+    rateDisplay: 'See schedule',
+    rateLabel: 'Roseville Electric: tiered rate — see schedule',
+    peakTouRate: 'n/a — tiered, not time-of-use',
+    annualIncrease: 0,
+    fixedCharge: 30.0,
+    accountUrl: 'https://www.roseville.ca.gov/electric_utility/rates/index.php',
+    careFeraUrl: 'https://www.roseville.ca.gov/electric_utility/rates/index.php',
     ratePlanAdvice:
-      'Roseville Electric is a municipal utility owned by the City of Roseville with some of the lowest electricity rates in California — roughly half of PG&E or SCE. Check your account for the current residential schedule and any available TOU options.',
+      'Roseville Electric is a municipal utility owned by the City of Roseville. It bills a tiered residential rate (Schedule R-1), not a single flat price: $0.1469/kWh for the first 500 kWh per month and $0.1912/kWh above that, plus a $30.00 monthly Basic Service Charge and small renewable-energy, greenhouse-gas, hydroelectric and state-energy surcharges, effective July 1, 2026. Check your account for the current schedule and any available assistance programs.',
     nemVersion: 'Roseville Electric Net Metering',
     exportRate: '~retail rate (varies)',
     rateIncreaseHistory:
-      'Roseville Electric rates have remained among the most stable and lowest in California, typically 15–18¢/kWh versus 40¢+ in IOU territory.',
+      'Roseville Electric publishes no single blended average rate, so none is stated here. Its current Schedule R-1, effective July 1, 2026 and confirmed on the utility\'s own rates page, is well below IOU territory: $0.1469–$0.1912/kWh depending on usage tier, versus 40¢+/kWh for PG&E or SCE.',
+    rateSource: {
+      label: 'Roseville Electric Utility — Rates',
+      url: 'https://www.roseville.ca.gov/electric_utility/rates/index.php',
+      fetchedAt: '2026-09-22',
+    },
+  },
+  pwp: {
+    code: 'pwp',
+    name: 'Pasadena Water and Power',
+    shortName: 'PWP',
+    // PWP bills a tiered residential rate, not a single blended average —
+    // see rateSource below. ratePerKwh is a sentinel, not a guessed average;
+    // rateDisplay/rateLabel are what templates that check them show instead.
+    ratePerKwh: 0,
+    rateDisplay: 'See schedule',
+    rateLabel: 'PWP: tiered residential rate — see schedule',
+    peakTouRate: 'n/a — tiered, not time-of-use',
+    annualIncrease: 0,
+    fixedCharge: 17.5,
+    accountUrl: 'https://myaccount.pwpweb.com/',
+    careFeraUrl: 'https://pwp.cityofpasadena.net/low-income/',
+    ratePlanAdvice:
+      'Pasadena Water and Power is a municipal utility that bills a tiered residential rate, not a single flat price: effective July 1, 2026, a $0.100825/kWh Energy Charge and a $0.01609/kWh Transmission Charge apply to every kWh, and the Distribution Charge itself is tiered — $0.03505/kWh for the first 350 kWh per month, $0.14018/kWh for the next 400 kWh, and $0.25233/kWh beyond that — on top of a combined $17.50 monthly Customer Charge and Grid Access Charge. Check your account for the current schedule before assuming a single average rate.',
+    nemVersion: 'PWP Net Metering',
+    exportRate: '~retail rate (varies)',
+    rateIncreaseHistory:
+      'PWP publishes no single blended average rate, so none is stated here. Its current rate card, effective July 1, 2026 and confirmed on the utility\'s own rates page, tiers the Distribution Charge from $0.03505/kWh up to $0.25233/kWh depending on usage, on top of flat Energy and Transmission charges (see ratePlanAdvice) — well below PG&E or SCE\'s 40¢+/kWh, but not reducible to one number.',
+    rateSource: {
+      label: 'Pasadena Water and Power — Water & Electric Rates',
+      url: 'https://pwp.cityofpasadena.net/water-and-electric-rates',
+      fetchedAt: '2026-09-22',
+    },
   },
   // FUTURE UTILITIES — Add when expanding to new territories
   // bwp: { ... },    // Burbank Water & Power
-  // pwp: { ... },    // Pasadena Water & Power
   // iid: { ... },    // Imperial Irrigation District
-  // mid: { ... },    // Modesto Irrigation District
+  // mid2: { ... },   // (Modesto Irrigation District is already keyed as 'mid' above)
 };
 
 // ---------------------------------------------------------------------------
@@ -2329,7 +2379,7 @@ export const CITIES: CityData[] = [
     slug: 'pasadena',
     county: 'Los Angeles County',
     state: 'California',
-    utilityCode: 'gwp',
+    utilityCode: 'pwp',
     avgMonthlyBill: 180,
     peakSunHours: 5.6,
     annualSunshineHours: 3200,
@@ -2337,7 +2387,7 @@ export const CITIES: CityData[] = [
     systemSizeKw: 6.0,
     systemCostCash: 14100,
     introText:
-      'Pasadena is a city of about 138,000 in LA County, served by its own municipal utility — Glendale Water & Power (GWP) rates are used as a proxy for Pasadena Water & Power. Municipal utility rates are significantly lower than SCE or PG&E, but solar still makes sense for many homeowners.',
+      'Pasadena is a city of about 138,000 in LA County, served by its own municipal utility, Pasadena Water and Power (PWP) — not by SCE or PG&E. PWP bills a tiered residential rate rather than a single blended average; municipal rates are generally lower than the investor-owned utilities, but solar can still make sense for many homeowners.',
     electricitySection:
       'The average Pasadena household pays approximately $180 per month for electricity, or about $2,160 per year. Municipal utility rates are lower than SCE but still represent a significant household expense.',
     solarPotentialText:
