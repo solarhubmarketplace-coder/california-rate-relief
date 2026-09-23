@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
+import { Byline } from '@/components/trust/Byline';
+import { TocRail, RAIL_GRID } from '@/components/trust/TocRail';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
@@ -213,7 +215,9 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
-          <article className='max-w-3xl mx-auto'>
+          {/* Article column plus the desktop "On this page" rail (design pass 2). */}
+          <div className={`mx-auto max-w-6xl ${RAIL_GRID}`}>
+          <article className='min-w-0 max-w-3xl'>
             <nav className='mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
               <Link href='/' className='hover:text-primary'>Home</Link><span>/</span>
               <Link href='/solar-cost' className='hover:text-primary'>Solar cost by city</Link><span>/</span>
@@ -227,14 +231,12 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
                 How Much Does Solar Cost in {row.city}? What Actually Sets the Price
               </h1>
-              <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground'>
-                <Link href='/author/chad-simpson' className='font-medium text-foreground hover:text-primary'>By Chad Simpson</Link>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime={row.sourcesFetchedAt}>Sources verified {formatVerified(row.sourcesFetchedAt)}</time></div>
-                <div className='flex items-center gap-1'><MapPin className='h-4 w-4' /><span>{row.city}, {row.county}</span></div>
-              </div>
+              <Byline updated={row.sourcesFetchedAt} dateLabel='Sources verified' sourceCount={sources.length} sourcesHref='#sources'>
+                <span className='inline-flex items-center gap-1'><MapPin className='h-4 w-4' aria-hidden='true' />{row.city}, {row.county}</span>
+              </Byline>
             </header>
 
-            <div className='prose prose-slate max-w-none'>
+            <div id='city-cost-body' className='prose prose-slate max-w-none [&_h2]:scroll-mt-24'>
               {/* ---------- Short answer: no price, and why ---------- */}
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 There is no reliable public price for a solar system in {row.city}, and this page
@@ -547,6 +549,8 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
               topic={`Solar project in ${row.city}`}
             />
           </article>
+          <TocRail rootId='city-cost-body' />
+          </div>
         </div>
       </main>
       <Footer />

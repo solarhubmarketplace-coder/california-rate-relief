@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage, type Source } from "./DecisionPage";
 import { articleHref, articlesInCluster } from "@/data/article-pages";
+import { CtaCard, CTA_BUTTON_CLASS } from "@/components/trust/CtaCard";
 
 const path = "/commercial-solar";
 const title = "Commercial Solar in California: Build a Quote You Can Actually Compare";
@@ -53,18 +54,24 @@ export const commercialSolarMetadata: Metadata = {
   },
 };
 
+// The page's one ask, framed by the shared CtaCard (design pass 2). Copy, id
+// and destination are unchanged.
 function CommercialInquiry() {
   return (
-    <section id="solar-inquiry" className="mt-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8">
-      <h2 className="text-2xl font-bold text-foreground">Put the property and bills in front of a commercial provider</h2>
-      <p className="mt-3 max-w-3xl leading-relaxed text-foreground/80">
-        Tell California Rate Relief about the site, utility, electricity use and project goal. We review the inquiry and may connect a suitable project with an independent provider, subject to service availability.
-      </p>
-      <Link className="mt-5 inline-block rounded-lg bg-primary px-5 py-3 font-semibold text-white" href="/commercial-assessment">
+    <CtaCard
+      id="solar-inquiry"
+      heading="Put the property and bills in front of a commercial provider"
+      body={
+        <p>
+          Tell California Rate Relief about the site, utility, electricity use and project goal. We review the inquiry and may connect a suitable project with an independent provider, subject to service availability.
+        </p>
+      }
+      footnote="No cost to submit. No obligation. Project fit, service, design, price and savings must be confirmed."
+    >
+      <Link className={CTA_BUTTON_CLASS} href="/commercial-assessment">
         Request a commercial assessment
       </Link>
-      <p className="mt-3 text-xs text-muted-foreground">No cost to submit. No obligation. Project fit, service, design, price and savings must be confirmed.</p>
-    </section>
+    </CtaCard>
   );
 }
 

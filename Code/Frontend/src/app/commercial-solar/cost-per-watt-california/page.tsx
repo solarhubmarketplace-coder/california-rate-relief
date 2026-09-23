@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from '@/components/shared/RelatedGuides';
-import { ArrowLeft, ArrowRight, Calendar, Clock, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, AlertTriangle } from 'lucide-react';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
-import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { Byline } from '@/components/trust/Byline';
+import { TocRail, RAIL_GRID } from '@/components/trust/TocRail';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
@@ -177,7 +178,9 @@ export default function CommercialSolarCost() {
       <FaqJsonLd items={faqs} />
       <main className="bg-background py-16">
         <div className="container mx-auto px-4">
-          <article className="mx-auto max-w-3xl">
+          {/* Article column plus the desktop "On this page" rail (design pass 2). */}
+          <div className={`mx-auto max-w-6xl ${RAIL_GRID}`}>
+          <article className="min-w-0 max-w-3xl">
             <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
               <Link href="/" className="transition-colors hover:text-primary">Home</Link>
               <span>/</span>
@@ -193,34 +196,19 @@ export default function CommercialSolarCost() {
               <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl">
                 {h1}
               </h1>
+              {/* Byline above the first paragraph; the date is DATE_MODIFIED,
+                  the same value the Article schema carries. */}
+              <Byline updated={DATE_MODIFIED} sourcesHref="#sources">
+                <span>16 min read</span>
+              </Byline>
               <p className="mt-4 text-lg text-muted-foreground">
                 Installed cost, the federal and state tax mechanics, what the system saves on
                 the utility bill, and what it does to a property&apos;s tax bill and value &mdash;
                 worked through with sourced, dated figures, not a sales estimate.
               </p>
-              <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
-                  <time dateTime={DATE_MODIFIED}>Updated September 22, 2026</time>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Clock className="h-4 w-4" />
-                  <span>16 min read</span>
-                </div>
-              </div>
-              <LastReviewedStamp
-                date={DATE_MODIFIED}
-                variant="reviewed"
-                palette={{
-                  fg: 'hsl(var(--foreground))',
-                  muted: 'hsl(var(--muted-foreground))',
-                  border: 'hsl(var(--border))',
-                  accent: 'hsl(var(--primary))',
-                }}
-              />
             </header>
 
-            <div className="prose prose-slate max-w-none">
+            <div id="cost-per-watt-body" className="prose prose-slate max-w-none [&_h2]:scroll-mt-24">
               <p>
                 California non-residential solar ran a median $2.0 to $4.1 per watt for systems
                 over 100 kW in 2023, split by customer type, and $2.5 to $4.3 per watt nationally
@@ -598,8 +586,6 @@ export default function CommercialSolarCost() {
                 fedtax-35 */}
               </p>
 
-              <ArticleCTA />
-
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
                 What commercial solar saves on the utility bill
               </h2>
@@ -962,7 +948,7 @@ export default function CommercialSolarCost() {
                 <Link href="/commercial-solar/commercial-solar-ppa-vs-purchase-california" className="text-primary underline">PPA versus purchase</Link>.
               </p>
 
-              <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">Sources</h2>
+              <h2 id="sources" className="mb-4 mt-10 text-2xl font-bold text-foreground">Sources</h2>
               <p className="text-sm text-muted-foreground">
                 Every figure above traces to one of the primary sources below, checked {VERIFIED}.
                 Rates, incentive budgets, and program status change; confirm anything you intend to
@@ -995,23 +981,10 @@ export default function CommercialSolarCost() {
               </ul>
             </div>
 
-            <div id="solar-inquiry" className="mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center">
-              <h2 className="mb-3 text-xl font-bold tracking-tight text-foreground md:text-2xl">
-                Request a Commercial Solar Assessment
-              </h2>
-              <p className="mx-auto mb-6 max-w-lg text-muted-foreground">
-                Tell us about the property and project. California Rate Relief may
-                forward a suitable inquiry to an independent provider, subject to
-                service availability.
-              </p>
-              <Link href="/commercial-assessment" className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg">
-                Request a Commercial Assessment <ArrowRight className="h-4 w-4" />
-              </Link>
-              <p className="mt-4 text-xs text-muted-foreground">
-                No cost to submit. No obligation. Provider availability and project
-                fit must be confirmed.
-              </p>
-            </div>
+            {/* The page's one CTA card: the existing ArticleCTA (commercial
+                intent, tracked as article_cta), unchanged. It replaces a second,
+                hand-built card that repeated the same ask. */}
+            <ArticleCTA />
 
             <div className="mt-10">
               <Link href="/commercial-solar" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
@@ -1028,6 +1001,8 @@ export default function CommercialSolarCost() {
             ]}
           />
           </article>
+          <TocRail rootId="cost-per-watt-body" />
+          </div>
         </div>
       </main>
       <Footer />

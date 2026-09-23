@@ -3,6 +3,14 @@ import type { ReactNode } from 'react';
 import { ArrowRight, AlertTriangle } from 'lucide-react';
 import type { ArticlePage } from '@/data/article-types';
 import { ArticleContents } from './ArticleContents';
+// Relative imports on purpose: ArticleRenderer.test.mjs bundles this file with
+// esbuild and stubs only next/link and lucide-react.
+import { Byline } from '../trust/Byline';
+import { KeyFacts } from '../trust/KeyFacts';
+import { FaqBlock } from '../trust/FaqBlock';
+import { CtaCard, CTA_BUTTON_CLASS } from '../trust/CtaCard';
+import { SourceChip } from '../trust/SourceChip';
+import { TocRail, RAIL_GRID } from '../trust/TocRail';
 
 /**
  * Renders a data-driven long-form page.
@@ -80,44 +88,38 @@ export function ArticleRenderer({
   ];
 
   return (
-    <article className="max-w-3xl mx-auto">
-      <header className="mb-8">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 tracking-tight leading-tight">
+    // Desktop: article column plus a sticky "On this page" rail (22b §3.7).
+    // Below lg the rail is not rendered and the inline contents box is shown.
+    <div className={`mx-auto max-w-6xl ${RAIL_GRID}`}>
+    <article className="min-w-0 max-w-3xl">
+      <header className="mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-2 tracking-tight leading-tight">
           {page.h1}
         </h1>
-        <p className="text-sm text-muted-foreground">
-          Last verified {page.reviewedAt}. Figures carry their sources at the
-          foot of this page.{page.sources.length > 0 && (
-            <> <a href="#sources" className="text-primary underline underline-offset-2">Review the sources</a>.</>
-          )}
-        </p>
+        {/* Byline above the first paragraph. reviewedAt is the date the page
+            declares it was last verified; it is also the schema dateModified. */}
+        <Byline
+          updated={page.reviewedAt}
+          dateLabel="Last verified"
+          sourceCount={page.sources.length}
+          sourcesHref="#sources"
+        />
       </header>
 
       <div className="prose-content">
         <Paragraphs text={page.intro} className="text-lg text-foreground/85 leading-relaxed mb-5" />
       </div>
 
-      <ArticleContents items={contents} />
+      <div className="lg:hidden">
+        <ArticleContents items={contents} />
+      </div>
 
       {page.keyStats.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-          {page.keyStats.map((s) => (
-            <div
-              key={s.label}
-              className="rounded-xl border border-border bg-card p-4"
-            >
-              <div className="text-2xl font-bold text-primary tabular-nums">
-                {s.value}
-              </div>
-              <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mt-1">
-                {s.label}
-              </div>
-              <div className="text-sm text-foreground/70 mt-2 leading-snug">
-                {s.note}
-              </div>
-            </div>
-          ))}
-        </div>
+        <KeyFacts
+          facts={page.keyStats}
+          sourcesHref={page.sources.length > 0 ? '#sources' : undefined}
+          className="mb-10"
+        />
       )}
 
       <div className="prose-content">
@@ -176,17 +178,14 @@ export function ArticleRenderer({
           <Paragraphs text={page.whenThisIsWrong} />
         </div>
 
-        <h2 id="frequently-asked-questions" className="scroll-mt-24 text-2xl font-bold text-foreground mt-10 mb-4">
-          Frequently asked questions
-        </h2>
-        <div className="space-y-6">
-          {page.faqs.map((f) => (
-            <div key={f.question}>
-              <h3 className="font-semibold text-foreground mb-2">{f.question}</h3>
-              <Paragraphs text={f.answer} />
-            </div>
-          ))}
-        </div>
+        {/* FAQPage JSON-LD for these same items is emitted by ArticleRoute,
+            so the block renders the visible Q&A only. */}
+        <FaqBlock
+          items={page.faqs}
+          id="frequently-asked-questions"
+          schema={false}
+          renderAnswer={(answer) => <Paragraphs text={answer} />}
+        />
 
         <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
           The bottom line
@@ -194,23 +193,27 @@ export function ArticleRenderer({
         <Paragraphs text={page.bottomLine} />
       </div>
 
-      <div className="mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center">
-        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight">
-          See what your options actually look like
-        </h3>
-        <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-          Share your property and project details. California Rate Relief reviews
-          inquiries and forwards suitable projects to an independent provider,
-          subject to service availability. No cost to submit and no obligation.
-        </p>
+      {/* The page's one ask. Copy, href and label logic unchanged; only the
+          frame moved to the shared CtaCard. */}
+      <CtaCard
+        headingAs="h3"
+        heading="See what your options actually look like"
+        body={
+          <p>
+            Share your property and project details. California Rate Relief reviews
+            inquiries and forwards suitable projects to an independent provider,
+            subject to service availability. No cost to submit and no obligation.
+          </p>
+        }
+      >
         <Link
           href={inquiryHref || (page.cluster === 'commercial' ? '/commercial-assessment' : '/#qualify')}
-          className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
+          className={CTA_BUTTON_CLASS}
         >
           {inquiryHref ? 'Optional solar inquiry' : page.cluster === 'commercial' ? 'Request a Commercial Assessment' : 'Request a Residential Assessment'}
           <ArrowRight className="h-4 w-4" />
         </Link>
-      </div>
+      </CtaCard>
 
       {related && related.length > 0 && (
         <div className="mt-10 pt-8 border-t border-border">
@@ -238,7 +241,7 @@ export function ArticleRenderer({
             Rates and incentive programs change. Each figure above traces to one
             of these.
           </p>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-3 text-sm">
             {page.sources.map((s) => (
               <li key={s.url} className="text-foreground/75">
                 <a
@@ -248,7 +251,10 @@ export function ArticleRenderer({
                   className="text-primary hover:underline font-medium"
                 >
                   {s.name}
-                </a>
+                </a>{' '}
+                {/* publisher · date: the link's own host and the page's stated
+                    verification date. */}
+                <SourceChip href={s.url} date={page.reviewedAt} dateVerb="verified" />
                 <span className="text-muted-foreground"> — {s.supports}</span>
               </li>
             ))}
@@ -256,6 +262,8 @@ export function ArticleRenderer({
         </div>
       )}
     </article>
+    <TocRail items={contents} />
+    </div>
   );
 }
 

@@ -5,10 +5,19 @@ import { Footer } from "@/components/landing/Footer";
 import { PublicLayout } from "@/components/layout/PublicLayout";
 import { SolarInquiry } from "./SolarInquiry";
 import type { ServiceMarket } from "@/lib/service-market";
-import { ArticleContents, type ArticleContentsItem } from "@/components/shared/ArticleContents";
+import type { ArticleContentsItem } from "@/components/shared/ArticleContents";
+import type { FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
+import { Byline } from "@/components/trust/Byline";
+import { KeyFacts, type KeyFact } from "@/components/trust/KeyFacts";
+import { SourceChip, sourceHost } from "@/components/trust/SourceChip";
+import { FaqBlock } from "@/components/trust/FaqBlock";
+import { TocRail, RAIL_GRID } from "@/components/trust/TocRail";
 
-/** Key-facts box entry — same shape as ArticleRenderer's `keyStats` (ported, D.5/C.2#5). */
-export type KeyStat = { label: string; value: string; note?: string };
+/**
+ * Key-facts box entry. Same shape as ArticleRenderer's `keyStats`, plus an
+ * optional per-fact source that renders as a publisher · date chip.
+ */
+export type KeyStat = KeyFact;
 
 export type Source = { label: string; url: string };
 export function formatSourceCheckedDate(sourceCheckedDate: string) {
@@ -40,21 +49,24 @@ export function SourceList({
   sourceCheckedDate?: string;
 }) {
   return (
-    <aside className="my-8 border-t pt-5 text-sm text-muted-foreground">
-      <h2 className="font-bold text-foreground">
+    <aside id="sources" className="my-8 scroll-mt-24 border-t border-border pt-5 text-sm text-muted-foreground">
+      <h2 className="font-bold text-foreground" data-toc-label="Sources">
         Sources checked {formatSourceCheckedDate(sourceCheckedDate)}
       </h2>
-      <ul className="mt-2 space-y-2">
+      <ul className="mt-3 space-y-3">
         {sources.map((s) => (
-          <li key={s.url}>
+          <li key={s.url} className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
             <a
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="break-words underline underline-offset-2"
+              className="break-words text-foreground underline decoration-border underline-offset-2 hover:text-primary hover:decoration-primary"
             >
               {s.label}
             </a>
+            {/* publisher · date chip: the host the link already points at and
+                the check date this list already states. */}
+            {sourceHost(s.url) && <SourceChip href={s.url} date={sourceCheckedDate} />}
           </li>
         ))}
       </ul>
@@ -71,6 +83,7 @@ export function DecisionPage({
   topic,
   inquiry,
   faq,
+  faqs = [],
   commercial = false,
   sourceCheckedDate = "2026-09-10",
   contentModifiedDate,
@@ -95,6 +108,11 @@ export function DecisionPage({
   inquiry?: ReactNode;
   /** Optional FAQ block rendered after the sources list and before the inquiry form. */
   faq?: ReactNode;
+  /**
+   * FAQ as data. Rendered as a visible FAQ block WITH FAQPage JSON-LD built
+   * from the same strings. Prefer this to `faq` when the Q&A is plain text.
+   */
+  faqs?: FaqJsonLdItem[];
   commercial?: boolean;
   sourceCheckedDate?: string;
   contentModifiedDate?: string;
@@ -104,12 +122,15 @@ export function DecisionPage({
   primaryResourceLabel?: string;
   comparisonHref?: string;
   comparisonLabel?: string;
-  /** Byline name shown next to the "Updated" date (D.5). */
+  /** Byline name (links to authorHref). No title or credential is shown. */
   author?: string;
   authorHref?: string;
-  /** Key-facts box near the top, ported from ArticleRenderer's `keyStats` (D.5/C.2#5). Omit for no box. */
+  /** Key-facts box under the intro. Rendered only when the page supplies facts. */
   keyStats?: KeyStat[];
-  /** Sticky desktop "On this page" nav, ported from ArticleContents (D.5/C.2#4). Omit for no TOC. */
+  /**
+   * Explicit "On this page" entries for the desktop rail. Omit to generate the
+   * list from the body's own <h2> headings (shown when there are 3 or more).
+   */
   toc?: ArticleContentsItem[];
 }) {
   const schema =
@@ -146,82 +167,83 @@ export function DecisionPage({
   return (
     <PublicLayout breadcrumbLabel={title}>
       <Header />
-      <main className="mx-auto max-w-5xl px-4 pb-20 pt-10 md:pt-16">
+      <main className="mx-auto max-w-6xl px-4 pb-20 pt-8 md:pt-12">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
-        <header className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            {regionLabel} solar decisions
-          </p>
-          <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-5xl">
-            {title}
-          </h1>
-          <p className="mt-5 text-lg leading-relaxed text-foreground/80">{intro}</p>
-          <p className="mt-3 text-sm text-muted-foreground">
-            By{' '}
-            <Link href={authorHref} className="font-medium text-foreground hover:text-primary hover:underline">
-              {author}
-            </Link>
-            {' '}· Updated {formatSourceCheckedDate(contentModifiedDate || sourceCheckedDate)} · California
-            Rate Relief is a private solar referral service.
-          </p>
-        </header>
-        {toc.length > 0 && (
-          <div className="lg:sticky lg:top-24 lg:z-10">
-            <ArticleContents items={toc} />
-          </div>
-        )}
-        {keyStats.length > 0 && (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-2">
-            {keyStats.map((s) => (
-              <div key={s.label} className="rounded-xl border border-border bg-card p-4">
-                <div className="text-2xl font-bold text-primary tabular-nums">{s.value}</div>
-                <div className="mt-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                  {s.label}
-                </div>
-                {s.note && <div className="mt-2 text-sm leading-snug text-foreground/70">{s.note}</div>}
+        <div className={RAIL_GRID}>
+          <div className="min-w-0">
+            <header className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                {regionLabel} solar decisions
+              </p>
+              <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-5xl">
+                {title}
+              </h1>
+              {/* Byline above the first paragraph (22b §3.2). The date is the
+                  page's own dateModified, the same value the schema carries. */}
+              <Byline
+                author={author}
+                authorHref={authorHref}
+                updated={contentModifiedDate || sourceCheckedDate}
+                sourceCount={sources.length}
+                sourcesHref="#sources"
+              />
+              <p className="mt-5 text-lg leading-relaxed text-foreground/80">{intro}</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                California Rate Relief is a private solar referral service.
+              </p>
+            </header>
+            <KeyFacts facts={keyStats} sourcesHref="#sources" className="max-w-3xl" />
+            <nav
+              aria-label="Decision tools"
+              className="my-7 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-primary"
+            >
+              <Link
+                href={
+                  primaryResourceHref || (commercial
+                    ? "/commercial-solar/cost-per-watt-california"
+                    : "/tools/solar-panel-calculator")
+                }
+                className="underline"
+              >
+                {primaryResourceLabel || (commercial
+                  ? "Commercial project costs"
+                  : "Bill and quote calculator")}
+              </Link>
+              <Link
+                href={
+                  comparisonHref || (commercial
+                    ? "/commercial-solar"
+                    : "/best-solar-companies-california")
+                }
+                className="underline"
+              >
+                {comparisonLabel || (commercial ? "Commercial solar resources" : "Compare solar quotes")}
+              </Link>
+              <a href="#solar-inquiry" className="underline">
+                Optional inquiry
+              </a>
+            </nav>
+            {/* The rail's "On this page" list is generated from the <h2>s in
+                here, so a section added to any page shows up on its own. */}
+            <div id="decision-body" className="max-w-3xl [&_h2]:scroll-mt-24">
+              <div className="max-w-[72ch] space-y-8 [&_h2]:mb-3 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_p]:leading-relaxed [&_li]:leading-relaxed">
+                {children}
               </div>
-            ))}
+              <SourceList sources={sources} sourceCheckedDate={sourceCheckedDate} />
+              <FaqBlock items={faqs} id="faq" />
+              {faq}
+            </div>
+            {/* The page's one ask: the existing inquiry form or the caller's own
+                inquiry block, unchanged. Kept out of the contents list. */}
+            <div data-toc-ignore="" className="max-w-3xl">
+              {inquiry ?? <SolarInquiry utility={utility} topic={topic || title} market={market} />}
+            </div>
           </div>
-        )}
-        <nav
-          aria-label="Decision tools"
-          className="my-7 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-primary"
-        >
-          <Link
-            href={
-              primaryResourceHref || (commercial
-                ? "/commercial-solar/cost-per-watt-california"
-                : "/tools/solar-panel-calculator")
-            }
-            className="underline"
-          >
-            {primaryResourceLabel || (commercial
-              ? "Commercial project costs"
-              : "Bill and quote calculator")}
-          </Link>
-          <Link
-            href={
-              comparisonHref || (commercial
-                ? "/commercial-solar"
-                : "/best-solar-companies-california")
-            }
-            className="underline"
-          >
-            {comparisonLabel || (commercial ? "Commercial solar resources" : "Compare solar quotes")}
-          </Link>
-          <a href="#solar-inquiry" className="underline">
-            Optional inquiry
-          </a>
-        </nav>
-        <div className="mx-auto max-w-[72ch] space-y-8 [&_h2]:mb-3 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_p]:leading-relaxed [&_li]:leading-relaxed">
-          {children}
+          <TocRail items={toc.length > 0 ? toc : undefined} rootId="decision-body" />
         </div>
-        <SourceList sources={sources} sourceCheckedDate={sourceCheckedDate} />
-        {faq}
-        {inquiry ?? <SolarInquiry utility={utility} topic={topic || title} market={market} />}
       </main>
       <Footer />
     </PublicLayout>
