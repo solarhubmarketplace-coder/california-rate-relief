@@ -54,6 +54,8 @@ export function SavingsCalculator() {
               />
               <span className='text-muted-foreground px-4 text-sm'>/ mo</span>
             </div>
+            {/* The visible <label> above belongs to the number field, so the
+                slider carries its own name (Lighthouse "label", WCAG 4.1.2). */}
             <input
               type='range'
               min={100}
@@ -61,6 +63,8 @@ export function SavingsCalculator() {
               step={5}
               value={Math.min(800, Math.max(100, bill))}
               onChange={(e) => setBill(parseInt(e.target.value, 10))}
+              aria-label='Adjust your average monthly power bill'
+              aria-valuetext={`$${Math.min(800, Math.max(100, bill))} per month`}
               className='w-full mt-4 accent-primary'
             />
             <div className='flex justify-between text-[10px] text-muted-foreground mb-6'>
