@@ -16,10 +16,16 @@ import {
 } from "lucide-react";
 import {
   UTILITY_DATA,
+  CPUC_IOU_CODES,
   getCityBySlug,
   getAllCitySlugs,
+  utilityRateText,
   type CityData,
 } from "@/data/cities-data";
+import {
+  STATEWIDE_COST_BENCHMARK,
+  formatStatewideBenchmarkRange,
+} from "@/data/solar-cost-benchmark";
 import { RelatedInstallers } from "@/components/shared/RelatedInstallers";
 import { TrustedSources } from "@/components/shared/TrustedSources";
 import { NearbyCities } from "@/components/shared/NearbyCities";
@@ -56,6 +62,11 @@ interface InstallerRef {
   tradeoff: string; // honest downside
 }
 
+// 2026-09-23 compliance pass: the notes below describe what each company sells
+// and what to check. They no longer claim that a company serves a given city,
+// holds a license, is the "largest", or offers a guarantee or a $0-down price:
+// none of that was verified against a primary source. Confirm coverage and the
+// CSLB license for your own address before comparing bids.
 const CA_INSTALLERS: InstallerRef[] = [
   {
     slug: "sunrun-review",
@@ -63,10 +74,10 @@ const CA_INSTALLERS: InstallerRef[] = [
     shortName: "Sunrun",
     type: "national",
     serviceNote:
-      "Operates statewide in California. Largest residential solar provider in the US.",
-    bestFor: "Homeowners who want a PPA / lease path with no upfront cost.",
+      "National company that sells solar in California, mostly as leases and PPAs.",
+    bestFor: "Homeowners who want a lease or PPA rather than owning the system.",
     tradeoff:
-      "Long contract terms (20–25 years); transfer at home-sale can be friction.",
+      "Lease and PPA terms run for many years; read the escalator, the term and the home-sale transfer terms.",
   },
   {
     slug: "sunnova-review",
@@ -74,10 +85,10 @@ const CA_INSTALLERS: InstallerRef[] = [
     shortName: "Sunnova",
     type: "national",
     serviceNote:
-      "Works through a dealer network — California coverage varies by local partner.",
-    bestFor: "Homeowners who want lease/PPA with strong warranty wraparound.",
+      "Works through local dealers, so the company that installs and services your system may not be Sunnova. Read the review for its current status.",
+    bestFor: "Homeowners comparing a lease or PPA with a service agreement.",
     tradeoff:
-      "Service quality depends on the dealer in your area; verify the local partner.",
+      "Service quality depends on the dealer in your area; confirm who does the install and who handles repairs.",
   },
   {
     slug: "sunpower-review",
@@ -85,11 +96,11 @@ const CA_INSTALLERS: InstallerRef[] = [
     shortName: "SunPower",
     type: "national",
     serviceNote:
-      "Premium Maxeon panels. California service continues through Complete Solaria post-bankruptcy.",
+      "SunPower went through bankruptcy; the brand now belongs to Complete Solaria. Read the review before relying on an old warranty.",
     bestFor:
-      "Homeowners buying cash or loan who want the highest-efficiency panels.",
+      "Homeowners buying cash or with a loan who want a specific premium panel line.",
     tradeoff:
-      "Premium pricing; post-bankruptcy warranty questions worth confirming.",
+      "Premium pricing, and warranty questions after the bankruptcy are worth confirming in writing.",
   },
   {
     slug: "tesla-solar-review",
@@ -97,21 +108,21 @@ const CA_INSTALLERS: InstallerRef[] = [
     shortName: "Tesla",
     type: "national",
     serviceNote:
-      "Strong California presence, especially SF Bay Area and LA. Tesla-native Powerwall integration.",
-    bestFor: "Homeowners who want Powerwall + solar as one integrated app.",
+      "Sells solar with its own Powerwall battery in California.",
+    bestFor: "Homeowners who want solar and a Powerwall managed in one app.",
     tradeoff:
-      "Limited customization; install timelines vary widely; only Tesla equipment.",
+      "Limited customization and Tesla equipment only; ask for a written install timeline.",
   },
   {
     slug: "momentum-solar-review",
     name: "Momentum Solar",
     shortName: "Momentum",
     type: "national",
-    serviceNote: "In-house install crews in multiple California metros.",
+    serviceNote: "National installer that sells solar in California.",
     bestFor:
-      "Homeowners who want a company that self-performs (not subcontracted) installation.",
+      "Homeowners who want to ask one company to handle the full installation.",
     tradeoff:
-      "Sales process has been criticized as high-pressure; verify final contract carefully.",
+      "Its sales process has drawn complaints about pressure; read the final contract carefully.",
   },
   {
     slug: "freedom-forever-review",
@@ -119,11 +130,11 @@ const CA_INSTALLERS: InstallerRef[] = [
     shortName: "Freedom Forever",
     type: "national",
     serviceNote:
-      "Large national dealer network; California is a primary service territory.",
+      "National company that sells through a dealer network; California is one of its markets.",
     bestFor:
-      "Homeowners who want a 25-year production guarantee with PPA pricing.",
+      "Homeowners comparing a dealer-sold system who will read the production terms closely.",
     tradeoff:
-      "Quality varies by dealer; verify the local installation partner before signing.",
+      "Quality varies by dealer; confirm the local installer and what, if anything, the contract guarantees about production.",
   },
   {
     slug: "semper-solaris-review",
@@ -131,11 +142,11 @@ const CA_INSTALLERS: InstallerRef[] = [
     shortName: "Semper Solaris",
     type: "regional-statewide",
     serviceNote:
-      "California-based, veteran-owned. Solar, roofing, heating, and battery storage under one roof.",
+      "California-based company that sells solar, roofing, heating and battery storage.",
     bestFor:
-      "Homeowners in California who want solar + roof replacement bundled.",
+      "Homeowners in California who want solar and a roof replacement from one company.",
     tradeoff:
-      "Pricing can be above market for standalone solar; best value when bundling roof.",
+      "Compare the solar price on its own, not only as part of a bundle with the roof.",
   },
   {
     slug: "solar-optimum-review",
@@ -143,21 +154,21 @@ const CA_INSTALLERS: InstallerRef[] = [
     shortName: "Solar Optimum",
     type: "regional-socal",
     serviceNote:
-      "Southern California focused. Panasonic Authorized Premium Installer.",
+      "Focused on Southern California.",
     bestFor:
-      "SoCal homeowners buying cash or loan who want Panasonic-tier panels.",
-    tradeoff: "Limited service area outside SoCal; may not serve your city.",
+      "Southern California homeowners buying cash or with a loan.",
+    tradeoff: "Its service area is limited; it may not serve your city.",
   },
   {
     slug: "trinity-solar-review",
     name: "Trinity Solar",
     shortName: "Trinity",
     type: "national",
-    serviceNote: "Expanding California footprint. In-house install model.",
+    serviceNote: "National installer that sells solar in some California markets.",
     bestFor:
-      "Homeowners who value an in-house install crew over subcontracted work.",
+      "Homeowners who want to ask who will do the install before signing.",
     tradeoff:
-      "Newer to some California markets; confirm they currently serve your zip.",
+      "Newer to some California markets; confirm it currently serves your ZIP code.",
   },
 ];
 
@@ -191,30 +202,43 @@ export async function generateMetadata({
 function buildFaqs(city: CityData): FaqJsonLdItem[] {
   const utility = UTILITY_DATA[city.utilityCode];
   const needsUtilityConfirmation = city.utilityConfirmationRequired === true;
+  const benchmark = STATEWIDE_COST_BENCHMARK;
+  // 2026-09-23 compliance pass. The cost answer used to quote a city cash
+  // price and a "$3.00–$4.50 per watt" range taken from a lead-generation
+  // site, promised "$0 down" payments "below the bill", and said every company
+  // above was licensed and confirmed to serve the city. None of that was
+  // sourced. The one price figure left is LBNL's national benchmark
+  // (src/data/solar-cost-benchmark.ts); the license answer follows CSLB.
+  const benchmarkSentence = `As a benchmark, Lawrence Berkeley National Laboratory's Tracking the Sun (${benchmark.source.publishedDate}) found that host-owned residential systems installed in ${benchmark.source.dataYear} were priced at ${formatStatewideBenchmarkRange()} (${benchmark.percentileBand}, national sample), and that California sits near the middle of that range. It is not a price for ${city.name} or for your home.`;
+  const isCpucIou = CPUC_IOU_CODES.has(city.utilityCode);
   return [
     {
       question: `How many solar companies operate in ${city.name}?`,
-      answer: `Dozens. The 9 we track above all confirm service in ${city.name} and carry active California CSLB licenses. Dozens more regional California-only installers also serve ${city.county} — expect to see additional bids from local players when you request quotes.`,
+      answer: `This page does not count them, and it does not confirm that any company listed above serves your address. The nine companies above sell solar in California; other California installers may also bid on a ${city.county} project. Check each company's license at cslb.ca.gov and ask for written confirmation that it serves your address before you compare bids.`,
     },
     {
       question: `What's the average cost of solar in ${city.name}?`,
       answer: needsUtilityConfirmation
-        ? `A citywide estimate cannot price a specific ${city.name} project or identify its electric provider. Confirm the utility from the current bill, then compare written cash prices, financing terms, equipment, production estimates, and remaining utility charges using the same project scope.`
-        : `A typical ${city.name} home needs a ${city.systemSizeKw} kW system, which runs roughly $${city.systemCostCash.toLocaleString()} as a cash purchase — with no federal tax credit to subtract, since IRC § 25D ended for expenditures made after December 31, 2025. Loan and PPA options are $0 down with monthly payments usually below the ${utility.shortName} bill they replace.`,
+        ? `A citywide estimate cannot price a specific ${city.name} project or identify its electric provider. Confirm the utility from the current bill, then compare written cash prices, financing terms, equipment, production estimates, and remaining utility charges using the same project scope. ${benchmarkSentence}`
+        : `No primary source publishes an average price for ${city.name}. Your price depends on the system size your usage needs, the roof, the equipment and the installer. ${benchmarkSentence} There is no federal tax credit to subtract on a system you buy in 2026: IRC § 25D does not apply to expenditures made after December 31, 2025. A loan, lease or PPA is priced by its own contract, so compare its total payments, not only the monthly figure.`,
     },
     {
       question: `Are solar companies in ${city.name} licensed?`,
-      answer: `Any legitimate solar installer in California must hold an active C-46 (Solar) or C-10 (Electrical) license from the California Contractors State License Board (CSLB). Verify any installer's license at cslb.ca.gov before signing a contract.`,
+      answer: `Check each one. The California Contractors State License Board (CSLB) lists the C-46 Solar classification, plus the A General Engineering, B General Building and some other specialty classifications, as licenses that can cover solar work, each within its own scope. CSLB's advice is not to use a contractor who is not licensed for solar work. Look up the license number and its classification at cslb.ca.gov before signing a contract.`,
     },
     {
       question: `How do I compare solar quotes in ${city.name}?`,
-      answer: `Get at least three quotes. Compare total system cost per watt (should be $3.00–$4.50 per watt installed in ${city.name}), panel and inverter brands, workmanship warranty length, and production guarantee. A 25-year PPA at a 2.9% escalator can cost more over the life of the contract than a 12-year loan, run both totals before signing.`,
+      answer: `Get at least three written quotes for the same project. Compare the total cash price and the price per watt, the panel and inverter make and model, the workmanship warranty and who performs repairs, and any production guarantee the contract actually includes. For comparison, LBNL's national benchmark for 2023 installations was ${formatStatewideBenchmarkRange()} (${benchmark.percentileBand}). A PPA or lease with an annual escalator can cost more over its term than a loan for the same system, so add up every payment in each contract before signing.`,
     },
     {
       question: `What rebates apply to solar in ${city.name}?`,
       answer: needsUtilityConfirmation
         ? `Programs and solar-billing rules depend on the electric provider and account. Confirm the provider from the current bill, then check that utility's current published eligibility, interconnection, export-credit, and battery-program information before relying on a proposal.`
-        : `A ${city.name} homeowner who buys a system in 2026 gets no federal tax credit — IRC § 25D does not apply to expenditures made after December 31, 2025. Still available in ${utility.shortName} territory: the Self-Generation Incentive Program (SGIP) for battery storage and low-income programs like DAC-SASH and SASH. On a lease or PPA the provider owns the system and is the one that may claim the § 48E commercial credit. ${utility.shortName}'s net billing under NEM 3.0 pays ${utility.exportRate} for exports.`,
+        : `A ${city.name} homeowner who buys a system in 2026 gets no federal tax credit: IRC § 25D does not apply to expenditures made after December 31, 2025. On a lease or PPA the provider owns the system and is the one that may claim the § 48E business credit; that is the provider's tax position, not a savings figure for you. ${
+            isCpucIou
+              ? `State programs have their own rules and funding status: check the Self-Generation Incentive Program (SGIP) tracker for battery categories, and DAC-SASH, which the CPUC describes as open to income-qualified homeowners in disadvantaged communities. The original SASH program is closed. Under the CPUC Net Billing Tariff, ${utility.shortName} credits exported power at a value that is usually lower than the retail rate.`
+              : `${utility.shortName} is a publicly owned utility, so the CPUC Net Billing Tariff and its programs do not set its solar rules. Ask ${utility.shortName} for its current solar, export-credit and rebate terms.`
+          }`,
     },
   ];
 }
@@ -324,9 +348,10 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               </h1>
               <Byline updated={dates.modified} className="mb-4" />
               <p className="text-lg text-muted-foreground">
-                9 installers compared, each holding an active CSLB licence and
-                confirmed to serve {city.name}. Honest notes on who each company
-                actually fits, including the trade-offs sales reps skip over.
+                Nine companies that sell solar in California, with notes on who
+                each one fits and the trade-off to ask about. This page does not
+                confirm that any of them serves your address: check the license
+                and written coverage for your home before you compare bids.
               </p>
             </header>
 
@@ -334,24 +359,24 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
               <div className="bg-card rounded-xl border border-border p-4">
                 <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">
-                  Typical system size
+                  Installed price benchmark
                 </div>
                 <div className="text-2xl font-bold text-foreground">
-                  {city.systemSizeKw} kW
+                  ${STATEWIDE_COST_BENCHMARK.lowPerWatt.toFixed(2)}–${STATEWIDE_COST_BENCHMARK.highPerWatt.toFixed(2)}/W
                 </div>
                 <div className="text-xs text-muted-foreground mt-1">
-                  for a typical {city.name} home
+                  national, {STATEWIDE_COST_BENCHMARK.source.dataYear} installs (LBNL); not a {city.name} price
                 </div>
               </div>
               <div className="bg-card rounded-xl border border-border p-4">
                 <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">
-                  Cash purchase cost
+                  Federal credit on a 2026 purchase
                 </div>
                 <div className="text-2xl font-bold text-foreground">
-                  ~${city.systemCostCash.toLocaleString()}
+                  None
                 </div>
                 <div className="text-xs text-muted-foreground mt-1">
-                  no federal credit on a 2026 purchase
+                  IRC § 25D ended for expenditures after 2025
                 </div>
               </div>
               <div className="bg-card rounded-xl border border-border p-4">
@@ -364,7 +389,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 <div className="text-xs text-muted-foreground mt-1">
                   {needsUtilityConfirmation
                     ? 'Confirm from current bill'
-                    : `${(utility.ratePerKwh * 100).toFixed(1)}¢/kWh avg rate`}
+                    : utilityRateText(utility).short}
                 </div>
               </div>
             </div>
@@ -381,27 +406,33 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                   </>
                 ) : (
                   <>
-                    {city.name} sits in {utility.shortName} territory, where
-                    residential electricity costs roughly{' '}
-                    {(utility.ratePerKwh * 100).toFixed(1)}¢/kWh. The right{' '}
+                    {city.name} sits in {utility.shortName} territory.{' '}
+                    {utilityRateText(utility).sentence} The right{' '}
                     <em>installer</em> matters as much as the estimate.
                   </>
                 )}
               </p>
               <p className="text-foreground/80 leading-relaxed mt-4">
-                This page cuts through sales-brochure copy. For each of the 9
-                solar companies that actively serve {city.name} in 2026, we
-                describe who they fit, what their honest trade-off is, and where
-                to read the detailed review. None of this is paid placement.
-                We&apos;re an affiliate site, but the comparison is editorial.
-                See the{" "}
+                For each of nine companies that sell solar in California, this
+                page describes who it fits, the trade-off to ask about, and
+                where to read the detailed review. California Rate Relief is
+                compensated by a solar provider when a homeowner we refer signs
+                an agreement. The site does not accept payment for placement.
+                See{" "}
+                <Link
+                  href="/how-we-make-money"
+                  className="text-primary underline"
+                >
+                  how we make money
+                </Link>
+                , the{" "}
                 <Link
                   href="/affiliate-disclosure"
                   className="text-primary underline"
                 >
-                  affiliate disclosure
+                  referral service disclosure
                 </Link>{" "}
-                and{" "}
+                and the{" "}
                 <Link href="/about" className="text-primary underline">
                   editorial approach
                 </Link>
@@ -465,10 +496,12 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                     CSLB license and classification.
                   </strong>{" "}
                   <span className="text-foreground/80">
-                    Every installer must hold an active C-46 (Solar) or C-10
-                    (Electrical) license. Verify at{" "}
+                    CSLB lists the C-46 Solar classification, plus A, B and some
+                    other specialty licenses, as able to cover solar work within
+                    their own scope. Look up the license number and its
+                    classification at{" "}
                     <a
-                      href="https://www.cslb.ca.gov"
+                      href="https://www.cslb.ca.gov/solar"
                       className="text-primary underline"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -499,9 +532,9 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                     Workmanship warranty length.
                   </strong>{" "}
                   <span className="text-foreground/80">
-                    10 years is table-stakes. 25 years is the gold standard.
-                    Anything under 10 years should eliminate the installer from
-                    your shortlist.
+                    Get the workmanship warranty term in writing, along with who
+                    performs repairs and what the warranty excludes. Terms vary
+                    by company, so compare them line by line across bids.
                   </span>
                 </div>
               </li>
@@ -512,10 +545,9 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                     Panel and inverter brands.
                   </strong>{" "}
                   <span className="text-foreground/80">
-                    Tier-1 panels (Qcells, Silfab, REC, Canadian Solar, Maxeon)
-                    and name-brand inverters (Enphase, SolarEdge, Tesla)
-                    significantly out-perform house-brand private labels. Insist
-                    on specific brand and model before signing.
+                    Insist on the exact panel and inverter make and model in the
+                    contract, so you can check each datasheet and manufacturer
+                    warranty yourself before signing.
                   </span>
                 </div>
               </li>
@@ -547,7 +579,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
 
             {/* Installer List */}
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-              9 Solar Companies Serving {city.name} in 2026
+              9 Solar Companies to Compare for a {city.name} Home
             </h2>
             <div className="space-y-4 mb-10">
               {CA_INSTALLERS.map((ins) => (
@@ -589,12 +621,12 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
 
             {/* Calculator */}
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-              Estimate Your {city.name} Solar Savings
+              Check a {city.name} Solar Quote
             </h2>
             <p className="text-foreground/80 mb-6">
               {needsUtilityConfirmation
                 ? `Use the current ${city.name} bill below without selecting a provider by city name. Confirm the utility before comparing any proposal's rate or export assumptions.`
-                : `Input your ${utility.shortName} bill below to compare the calculator's purchase and service options.`}
+                : `Enter your ${utility.shortName} bill and the terms from a lease, PPA or loan quote to add up what the contract costs over its term.`}
             </p>
             <div className="mb-12">
               {needsUtilityConfirmation ? (
@@ -745,20 +777,27 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
             {/* Disclaimer */}
             <div className="p-5 rounded-xl border border-border bg-card text-sm">
               <div className="font-bold text-foreground mb-2">
-                Affiliate Disclosure &amp; Editorial Note
+                How California Rate Relief is paid
               </div>
               <p className="text-foreground/70">
-                California Rate Relief is an affiliate site. We may earn a
-                referral fee when you request a quote through one of the
-                installers listed. Editorial rankings and trade-off notes are
-                based on publicly available contracts, licensing data, Better
-                Business Bureau records, and independent customer reviews — not
-                on referral compensation. Read our full{" "}
+                California Rate Relief is compensated by a solar provider when a
+                homeowner we refer signs an agreement. It does not install
+                anything and is not a contractor. A company appearing on this
+                page is not a promise that your inquiry will be sent to that
+                company, and the site does not accept payment for placement.
+                Read{" "}
+                <Link
+                  href="/how-we-make-money"
+                  className="text-primary underline"
+                >
+                  how we make money
+                </Link>{" "}
+                and the{" "}
                 <Link
                   href="/affiliate-disclosure"
                   className="text-primary underline"
                 >
-                  affiliate disclosure
+                  referral service disclosure
                 </Link>
                 .
               </p>
