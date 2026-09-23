@@ -11,6 +11,16 @@ const sources: Source[] = [
   { label: "CPUC: Medical Baseline", url: "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/medical-baseline" },
 ];
 
+// Added only to the "high" guide's source list — kept separate from the
+// shared `sources` array above so the "lower" guide (a different page) is
+// unaffected.
+const highBillAdditionalSources: Source[] = [
+  {
+    label: "CPUC Public Advocates Office: Q2 2026 Electric Rates Report",
+    url: "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+  },
+];
+
 const guides = {
   high: {
     path: "/blog/why-is-my-california-electric-bill-so-high",
@@ -18,7 +28,9 @@ const guides = {
     intro: "A higher California electric bill can come from more daily use, a different rate or billing period, a credit or adjustment, or a combination of them. Compare two bills on the same daily basis, then check the account with the utility.",
     metaTitle: "Why Is My California Electric Bill So High? Check First",
     metaDescription:
-      "A higher bill can come from more use, a different rate or billing period, or a credit. Compare two bills on the same daily basis, then check with the utility.",
+      "California electric rates are up 69–101% since 2016 on wildfire, transmission, and NEM costs, per CPUC. See what's driving yours and what to check first.",
+    modifiedTime: "2026-09-22T00:00:00Z",
+    sourceCheckedDate: "2026-09-22",
   },
   lower: {
     path: "/blog/how-to-lower-electric-bill-california",
@@ -52,7 +64,10 @@ export function californiaBillMetadata(kind: CaliforniaBillGuideKind): Metadata 
       description: metaDescription,
       type: "article",
       url: `https://ratereliefca.com${guide.path}`,
-      modifiedTime: "2026-09-12T00:00:00Z",
+      modifiedTime:
+        "modifiedTime" in guide && guide.modifiedTime
+          ? guide.modifiedTime
+          : "2026-09-12T00:00:00Z",
     },
   };
 }
@@ -79,6 +94,47 @@ function UtilityGuideLinks() {
 function HighBillContent() {
   return (
     <>
+      <section>
+        <h2>What CPUC says is driving rates up statewide</h2>
+        <p>
+          The CPUC&apos;s Public Advocates Office publishes a quarterly rate
+          report. Its most recent edition — the Q2 2026 report, covering rates
+          through June 2026 — names three drivers of the statewide increase:
+          &ldquo;Wildfire mitigation and wildfire liability costs,&rdquo;
+          &ldquo;Transmission &amp; distribution investments,&rdquo; and
+          &ldquo;Rooftop solar incentives (&lsquo;net energy
+          metering&rsquo;).&rdquo;
+        </p>
+        <p className="mt-3">
+          Over the last ten years (January 2016 to June 2026), the same
+          report shows average residential rates up 69% at PG&amp;E, 101% at
+          SCE, and 97% at SDG&amp;E. As of June 2026, that puts the average
+          residential rate at 33.7 cents/kWh at PG&amp;E, 34.4 cents/kWh at
+          SCE, and 45.5 cents/kWh at SDG&amp;E — see the{" "}
+          <Link className="underline" href="/california-utility-rate-tracker">
+            California Utility Rate Tracker
+          </Link>{" "}
+          for the full current table and how each utility&apos;s most recent
+          change broke down in dollars.
+        </p>
+        <p className="mt-3">
+          Those three categories are the statewide pattern, not a diagnosis
+          of your bill specifically. Each utility&apos;s own rate case or
+          cost-recovery proceeding moves the actual dollars — SCE&apos;s 2026
+          rate, for example, reflects its wildfire self-insurance reserve and
+          a 2023 Energy Resource Recovery Account proceeding; PG&amp;E&apos;s
+          reflects the wind-down of two wildfire-cost recovery programs. For
+          that utility-by-utility detail, see{" "}
+          <Link className="underline" href="/california-utility-rate-tracker">
+            why rates moved in 2026
+          </Link>
+          .
+        </p>
+        <p className="mt-3">
+          For what&apos;s actually causing <em>your</em> bill to be high this
+          month, start with the usage and charge comparison below.
+        </p>
+      </section>
       <section>
         <h2>First question: did you use more electricity each day?</h2>
         <p>
@@ -129,6 +185,62 @@ function HighBillContent() {
           purchases, exports and remaining charges. A promised percentage is not
           a bill model. Get the assumptions in writing and compare the proposal
           with the same bill history you used above.
+        </p>
+      </section>
+      <section>
+        <h2>Programs that lower what you owe, regardless of the cause</h2>
+        <p>
+          If the higher rate itself is the issue rather than a billing error,
+          CARE and FERA reduce both the per-kWh price and the flat monthly
+          Base Services Charge for income-qualified households — see the{" "}
+          <Link className="underline" href="/programs/care-california">
+            CARE and FERA program page
+          </Link>{" "}
+          (publishing alongside this page — confirm both go live together)
+          {" "}for current income limits and how to apply through your utility.
+          For what that fixed charge is and how it&apos;s calculated for
+          non-qualifying households, see{" "}
+          <Link
+            className="underline"
+            href="/blog/california-24-dollar-fixed-charge-explained"
+          >
+            California&apos;s $24 fixed charge, explained
+          </Link>
+          . For the full list of what actually moves a California bill —
+          rate plan timing, the baseline allowance, and usage — see{" "}
+          <Link
+            className="underline"
+            href="/blog/how-to-lower-electric-bill-california"
+          >
+            how to lower your electric bill
+          </Link>
+          .
+        </p>
+      </section>
+      <section>
+        <h2>Frequently asked questions</h2>
+        <p className="font-semibold">
+          Why is my electric bill high even though I have solar panels?
+        </p>
+        <p className="mt-2">
+          Solar doesn&apos;t remove every charge. The monthly Base Services
+          Charge (about $24 for most households, less for CARE/FERA),
+          non-bypassable charges, and — on a combined PG&amp;E or SDG&amp;E
+          account — gas charges keep showing up regardless of how much the
+          system produced. See{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/do-i-still-get-a-utility-bill-with-solar"
+          >
+            do you still get a utility bill with solar?
+          </Link>{" "}
+          for the full breakdown.
+        </p>
+        <p className="mt-4 font-semibold">Is my gas bill part of this?</p>
+        <p className="mt-2">
+          No. This page covers electricity only. A combined PG&amp;E or
+          SDG&amp;E statement bills gas separately, on its own meter and its
+          own rate, unrelated to what&apos;s driving electric rates.
         </p>
       </section>
     </>
@@ -219,9 +331,13 @@ export function CaliforniaBillDecisionPage({ kind }: { kind: CaliforniaBillGuide
       title={guide.title}
       intro={guide.intro}
       path={guide.path}
-      sources={sources}
+      sources={kind === "high" ? [...sources, ...highBillAdditionalSources] : sources}
       topic={kind === "high" ? "California high electric bill" : "Lower a California electric bill"}
-      sourceCheckedDate="2026-09-12"
+      sourceCheckedDate={
+        "sourceCheckedDate" in guide && guide.sourceCheckedDate
+          ? guide.sourceCheckedDate
+          : "2026-09-12"
+      }
       primaryResourceHref={kind === "high" ? "/blog/how-to-lower-electric-bill-california" : "/blog/why-is-my-california-electric-bill-so-high"}
       primaryResourceLabel={kind === "high" ? "Steps to lower the bill" : "Diagnose a high bill"}
       comparisonHref="/blog/net-billing-vs-net-metering-california"
