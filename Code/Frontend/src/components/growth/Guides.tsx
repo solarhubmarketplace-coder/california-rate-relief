@@ -1872,7 +1872,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             <li>Can meaningfully cut usage on ~18 called afternoons a year: TOU-DR-P trades a lower baseline on-peak rate for the event-day adder.</li>
             <li>
               Owns an EV and{' '}
-              <Link className={link} href="/blog/solar-ev-charging-california">
+              <Link className={link} href="/blog/solar-panels-for-ev-charging-california">
                 charges an EV on the super off-peak window
               </Link>
               : EV-TOU-5&rsquo;s super off-peak (11.7¢–12.4¢) is the lowest rate on any plan here, but its on-peak rate (up to 80.0¢) is also the highest.

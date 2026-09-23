@@ -313,7 +313,7 @@ export default function NEM2vsNEM3() {
                 All Articles
               </Link>
               <Link
-                href='/blog/solar-ev-charging-california'
+                href='/blog/solar-panels-for-ev-charging-california'
                 className='text-primary hover:underline font-medium inline-flex items-center gap-2'
               >
                 Next Article
