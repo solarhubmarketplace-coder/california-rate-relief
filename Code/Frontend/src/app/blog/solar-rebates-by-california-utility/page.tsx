@@ -65,7 +65,7 @@ export default function SolarRebatesByCAUtility() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">PG&amp;E (Pacific Gas &amp; Electric)</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>NEM 3.0 Net Billing.</strong> Export credit ~5–8¢/kWh (vs ~41¢ retail rate).</li>
+                <li><strong>NEM 3.0 Net Billing.</strong> Export credits usually below the retail rate (CPUC); PG&amp;E&apos;s residential average was 33.7¢/kWh in June 2026 (CPUC Public Advocates Office).</li>
                 <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; PG&amp;E service alone does not establish eligibility. Equity Resiliency tier applies to Tier 2/3 HFTD zones (which covers large portions of Sonoma, Napa, Sierra foothills, and rural PG&amp;E territory).</li>
                 <li><strong>CARE &amp; FERA bill discounts.</strong> 30–35% (CARE) or 18% (FERA) off entire bill for income-qualified households.</li>
                 <li><strong>Medical Baseline allowance.</strong> Additional baseline electricity at lowest-tier pricing for medical-equipment households.</li>
@@ -74,7 +74,7 @@ export default function SolarRebatesByCAUtility() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SCE (Southern California Edison)</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>NEM 3.0 Net Billing.</strong> Export credit ~5–8¢/kWh (vs ~34.5¢ retail rate).</li>
+                <li><strong>NEM 3.0 Net Billing.</strong> Export credits usually below the retail rate (CPUC); SCE&apos;s residential average was 34.4¢/kWh in June 2026 (CPUC Public Advocates Office).</li>
                 <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; SCE service alone does not establish eligibility. Equity Resiliency tier applies to Tier 2/3 HFTD zones (covers parts of Riverside, San Bernardino, LA mountain communities).</li>
                 <li><strong>CARE &amp; FERA bill discounts.</strong> Same structure as PG&amp;E.</li>
                 <li><strong>Medical Baseline.</strong> Same structure as PG&amp;E.</li>
@@ -83,7 +83,7 @@ export default function SolarRebatesByCAUtility() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SDG&amp;E (San Diego Gas &amp; Electric)</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>NEM 3.0 Net Billing.</strong> Export credit ~5–8¢/kWh (vs ~45.7¢ retail rate — the highest utility rate in the nation, which makes solar self-consumption particularly valuable).</li>
+                <li><strong>NEM 3.0 Net Billing.</strong> Export credits usually below the retail rate (CPUC); SDG&amp;E&apos;s residential average was 45.5¢/kWh in June 2026, the highest of the three investor-owned utilities (CPUC Public Advocates Office), which makes self-consumption particularly valuable.</li>
                 <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; SDG&amp;E service alone does not establish eligibility.</li>
                 <li><strong>Rate plan, not a rebate.</strong> The largest change most SDG&amp;E customers can make without a rebate is the plan itself; <Link href='/blog/sdge-time-of-use-rates-2026' className='text-primary underline'>SDG&amp;E time-of-use rates</Link> sets out the peak windows and how to compare plans on your own usage.</li>
                 <li><strong>CARE &amp; FERA bill discounts.</strong> Same structure.</li>

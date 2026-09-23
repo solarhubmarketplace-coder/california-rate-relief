@@ -108,8 +108,8 @@ export default function WhatHappensAfter25Years() {
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Want Solar with Best-in-Class Warranties?</h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief connects you with installers offering 25-year product AND workmanship warranties — plus manufacturer warranties that protect you even if the installer closes.</p>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>Want a Provider to Review Your Project?</h3>
+              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. Compare each quote&apos;s product and workmanship warranties in writing.</p>
               <Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link>
             </div>
 

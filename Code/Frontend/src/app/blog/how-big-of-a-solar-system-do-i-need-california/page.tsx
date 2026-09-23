@@ -167,7 +167,7 @@ export default function HowBigSolarSystem() {
               <p className='text-foreground/80 leading-relaxed mb-4'>Yes — if you expect to add an EV or electrify within 5 years, size the solar for that future load. It&apos;s cheaper to install a larger system upfront than to expand later (each capacity addition can split you between NEM tariff versions).</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Can I oversize to sell electricity back to PG&amp;E/SCE/SDG&amp;E?</h3>
-              <p className='text-foreground/80 leading-relaxed mb-4'>Under NEM 3.0, the export economics don&apos;t reward oversizing. Credits are at avoided cost (5-8 cents/kWh), not retail (35-46 cents/kWh). Installers shouldn&apos;t propose systems massively larger than your consumption.</p>
+              <p className='text-foreground/80 leading-relaxed mb-4'>Under NEM 3.0, the export economics don&apos;t reward oversizing. Credits are at avoided cost, which the CPUC says is usually lower than the retail rate, not at retail. Installers shouldn&apos;t propose systems massively larger than your consumption.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-6 mb-2'>Do I need a battery?</h3>
               <p className='text-foreground/80 leading-relaxed mb-4'>Under NEM 3.0, for most California homeowners — yes. Solar without a battery exports daytime production at low rates and pulls evening load from the grid at high rates. Battery self-consumption flips that math.</p>

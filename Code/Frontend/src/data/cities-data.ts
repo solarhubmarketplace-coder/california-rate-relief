@@ -63,7 +63,7 @@ export interface UtilityData {
   careFeraUrl: string;       // link to CARE/FERA discount page
   ratePlanAdvice: string;    // advice on checking/switching rate plans
   nemVersion: string;        // NEM 2.0, NEM 3.0, or custom
-  exportRate: string;        // what excess solar earns (e.g. "5-8¢/kWh")
+  exportRate: string;        // what excess solar earns, in words (see the header note on sources)
   rateIncreaseHistory: string; // brief description of recent increases
   /**
    * Optional citation for a municipal utility with no single CPUC-style
