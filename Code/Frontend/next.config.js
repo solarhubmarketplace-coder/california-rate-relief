@@ -52,13 +52,20 @@ const nextConfig = {
         permanent: true,
       },
       // /blog/nem-3-california has returned 404 since at least 10 September and
-      // is not in the sitemap. Nothing on the site links to it, so this costs
-      // nothing, but it is a plausible hand-typed and externally-linked path for
-      // the topic. Sent to the NEM page that actually ranks: 370 impressions at
-      // position 9.8, against 0 for every other NEM post.
+      // is not in the sitemap. Nothing on the site links to it, but it is a
+      // plausible hand-typed and externally-linked path for the topic.
+      //
+      // Retargeted 2026-09-23 (Decision 16): it first went to
+      // /blog/nem-2-vs-nem-3-california, the NEM page with impressions. The
+      // redirect intent audit (topicmap block 06, redirect_intent_audit.csv)
+      // found the source keyword "nem 3.0" sits in SERP cluster 16 and the
+      // comparison page's "nem 2 vs nem 3" in cluster 169: different SERPs, so
+      // a visitor typing this path wanted the definition, not the comparison.
+      // /blog/what-is-nem-3-california is the cluster-16 page. The source had
+      // no Search Console impressions, so nothing ranking is moved.
       {
         source: '/blog/nem-3-california',
-        destination: '/blog/nem-2-vs-nem-3-california',
+        destination: '/blog/what-is-nem-3-california',
         permanent: true,
       },
     ];

@@ -37,6 +37,41 @@ test('no destination is itself a redirect source (no chains)', () => {
   assert.deepEqual(chained, []);
 });
 
+// ---------------------------------------------------------------------------
+// next.config.js redirects() — the second redirect mechanism (308, not
+// host-scoped). Checked here so a rule in one mechanism can never point at a
+// source in the other and form a chain.
+// ---------------------------------------------------------------------------
+type NextRedirect = { source: string; destination: string; permanent: boolean };
+async function nextConfigRedirects(): Promise<NextRedirect[]> {
+  const { createRequire } = await import('node:module');
+  const config = createRequire(import.meta.url)('../../next.config.js') as {
+    redirects: () => Promise<NextRedirect[]>;
+  };
+  return config.redirects();
+}
+
+test('no redirect chain across next.config.js and the canonical table', async () => {
+  const rules = await nextConfigRedirects();
+  const configSources = new Set(rules.map((r) => r.source));
+  for (const r of rules) {
+    assert.equal(configSources.has(r.destination), false, `${r.source} -> ${r.destination} chains inside next.config.js`);
+    assert.equal(isRedirectedPath(r.destination), false, `${r.source} -> ${r.destination} lands on a canonical-table source`);
+    assert.equal(isRedirectedPath(r.source), false, `${r.source} is claimed by both mechanisms`);
+  }
+  for (const dest of destinations) {
+    assert.equal(configSources.has(dest), false, `canonical-table destination ${dest} is a next.config.js source`);
+  }
+});
+
+// 2026-09-23, Decision 16: retarget in next.config.js, not in the table.
+test('Decision 16: /blog/nem-3-california goes to the NEM 3.0 definition page', async () => {
+  const rule = (await nextConfigRedirects()).find((r) => r.source === '/blog/nem-3-california');
+  assert.ok(rule, 'next.config.js must keep the /blog/nem-3-california rule');
+  assert.equal(rule.destination, '/blog/what-is-nem-3-california');
+  assert.equal(rule.permanent, true);
+});
+
 // 2026-09-22: the 25 orphaned growthCities slugs from CODE_INVENTORY_DELTA.md
 // §3 (a growthCities key whose /solar-companies page was a redirect source,
 // so its CityComparison content could never render) minus san-diego, which
