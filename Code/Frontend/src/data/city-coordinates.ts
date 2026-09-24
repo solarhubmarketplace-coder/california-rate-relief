@@ -20,6 +20,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   bakersfield: [35.3528015, -119.0359555], // Bakersfield city, GEOID 0603526
   beaumont: [33.9083764, -116.9785403], // Beaumont city, GEOID 0604758
   'california-city': [35.1578139, -117.8722241], // California City city, GEOID 0609780
+  berkeley: [37.8663942, -122.2989164], // Berkeley city, GEOID 0606000 (queried 2026-09-23)
   camarillo: [34.2229954, -119.0321552], // Camarillo city, GEOID 0610046
   carlsbad: [33.1246265, -117.2835437], // Carlsbad city, GEOID 0611194
   chico: [39.7571245, -121.8172296], // Chico city, GEOID 0613014
@@ -73,6 +74,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   pleasanton: [37.6663228, -121.8804974], // Pleasanton city, GEOID 0657792
   'rancho-cordova': [38.5736650, -121.2527201], // Rancho Cordova city, GEOID 0659444
   'rancho-cucamonga': [34.1306095, -117.5621696], // Rancho Cucamonga city, GEOID 0659451
+  redding: [40.5702465, -122.3655747], // Redding city, GEOID 0659920 (queried 2026-09-23)
   redlands: [34.0511294, -117.1711567], // Redlands city, GEOID 0659962
   richmond: [37.9517605, -122.3602500], // Richmond city, GEOID 0660620
   vacaville: [38.3586717, -121.9673440], // Vacaville city, GEOID 0681554 (queried 2026-09-23)
@@ -114,6 +116,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   wildomar: [33.6172783, -117.2583117], // Wildomar city, GEOID 0685446
   winchester: [33.7146079, -117.0774331], // Winchester CDP, GEOID 0685894
   windsor: [38.5422826, -122.8088032], // Windsor town, GEOID 0685922
+  'yorba-linda': [33.8890131, -117.7712954], // Yorba Linda city, GEOID 0686832 (queried 2026-09-23)
   'yuba-city': [39.1322915, -121.6394821], // Yuba City city, GEOID 0686972
   yucaipa: [34.0335696, -117.0428872], // Yucaipa city, GEOID 0687042
 };

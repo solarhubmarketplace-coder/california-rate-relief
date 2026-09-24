@@ -1573,50 +1573,110 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "San Luis Obispo",
     county: "San Luis Obispo County",
     utility: "pge",
-    sourceCheckedDate: "2026-09-12",
-    bill: "Use the electricity provider, rate plan and any generation information printed on the actual bill. PG&E directs customers to its current rate plans and tariffs; a citywide average rate is not a substitute for the account details used in a proposal.",
-    local:
-      "San Luis Obispo publishes a SolarAPP+ permit route for eligible residential solar projects. Its process includes the SolarAPP+ approval document, a City application and inspection. Ask whether your roof, electrical scope and any storage work qualify, and have the bidder identify the actual permit path.",
-    example:
-      "Use the same full-year usage, roof layout and production assumptions in every proposal. Keep solar, battery, roof repairs, electrical work, permits and utility steps as separate line items. Compare total payment obligations with the modeled remaining bill.",
+    sourceCheckedDate: "2026-09-23",
+    bill: "San Luis Obispo homes get generation from Central Coast Community Energy (3CE) and delivery from PG&E; the Energy Commission's map places the whole city in both areas. That gives a solar account two true-ups a year: PG&E's for delivery and 3CE's, every December, for generation. A proposal should show both, using your own 3CE and PG&E charges.",
+    local: "The City of San Luis Obispo permits rooftop solar through SolarAPP+ and its InfoSLO portal. SolarAPP+ charges $35 to review a solar application and $60 for solar plus storage; the contractor then submits the permit in InfoSLO, pays the City's permit fees online, and the permit is issued automatically within about a minute. Inspection requests made by 5:00 p.m. can be scheduled for the next business day.",
+    example: "Ask each San Luis Obispo bidder whether it is filing a solar-only or a solar-plus-storage SolarAPP+ application, since the review fee differs ($35 or $60) and so does the equipment. Then ask which month each true-up falls in, PG&E's and 3CE's December one, and what the model expects each to show.",
     checks: [
       [
-        "Bill assumptions",
-        "Use the provider and rate plan shown on the bill. Show energy use, onsite use, imports, exports and retained charges separately.",
+        "SolarAPP+ and InfoSLO",
+        "Confirm the job will be approved in SolarAPP+ and permitted in InfoSLO, and who requests the inspection."
       ],
       [
-        "SolarAPP+ eligibility",
-        "Ask whether the project is eligible for SolarAPP+ and whether storage, roof work or electrical changes require additional scope.",
+        "Storage in the application",
+        "Say whether the SolarAPP+ application is solar-only ($35) or solar plus storage ($60)."
       ],
       [
-        "Comparable contract",
-        "Match equipment, roof layout, warranty responsibility, cash price and financing terms across bids before selecting one.",
+        "3CE and PG&E true-ups",
+        "Show 3CE's December generation true-up and PG&E's delivery true-up separately."
       ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license and who handles service calls after installation."
+      ]
     ],
     sources: [
       {
-        label: "City of San Luis Obispo: SolarAPP+ permit process",
-        url: "https://www.slocity.org/government/department-directory/community-development/building-safety/permit-forms-and-applications/solar-documents",
+        "label": "City of San Luis Obispo: solar information (SolarAPP+ and InfoSLO)",
+        "url": "https://www.slocity.org/government/department-directory/community-development/building-safety/permit-forms-and-applications/solar-documents"
       },
       {
-        label: "PG&E: residential rate plans and tariff resources",
-        url: "https://www.pge.com/en/account/rate-plans.html",
+        "label": "Central Coast Community Energy: Net Energy Metering 1.0 and 2.0 tariffs",
+        "url": "https://3cenergy.org/billing/nem/"
       },
       {
-        label: "CSLB: Solar Smart license and consumer information",
-        url: "https://www.cslb.ca.gov/solar",
+        "label": "Central Coast Community Energy: Solar Billing Plan",
+        "url": "https://3cenergy.org/solar-billing-plan/"
       },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
     ],
     faq: [
       [
-        "Does every San Luis Obispo solar project use the same permit path?",
-        "No. The City describes a SolarAPP+ route for eligible residential systems. Ask the bidder to state whether the actual project qualifies and list any additional review in writing.",
+        "How fast is a solar permit in San Luis Obispo?",
+        "After SolarAPP+ approval and payment of the City's permit fees in InfoSLO, the City says the permit is issued automatically within about a minute. Inspection requests received by 5:00 p.m. may be scheduled for the next business day."
       ],
       [
-        "Should a proposal use a San Luis Obispo average electric rate?",
-        "Use the provider and rate plan shown on the account. PG&E publishes current rate-plan and tariff information, but a proposal still needs the customer's actual usage and enrollment.",
+        "What does SolarAPP+ cost in San Luis Obispo?",
+        "SolarAPP+ charges $35 for a solar application and $60 for solar plus storage. The City's permit fees are separate and paid online in InfoSLO."
       ],
+      [
+        "When does 3CE true up solar customers?",
+        "Every December for the generation side. Net energy metering customers are paid Net Surplus Compensation at 3CE's rate, $0.023 per kWh in PG&E territory since December 1, 2025, and residential customers with at least $200 in combined credits can ask for a check within 45 days."
+      ]
     ],
+    answer: "Solar companies in San Luis Obispo get the permit in about a minute: after SolarAPP+ approves the design ($35 for solar, $60 with storage), the contractor pays the City's fees in InfoSLO and the permit is issued automatically. Central Coast Community Energy supplies the city's generation and PG&E delivers it, with 3CE's true-up every December. Compare at least three written bids built on your own 3CE and PG&E bill.",
+    keyFacts: [
+      {
+        "label": "SolarAPP+ review fee",
+        "value": "$35 solar, $60 with storage",
+        "note": "City permit fees are separate",
+        "source": {
+          "publisher": "City of San Luis Obispo",
+          "date": "2026-09-23",
+          "url": "https://www.slocity.org/government/department-directory/community-development/building-safety/permit-forms-and-applications/solar-documents"
+        }
+      },
+      {
+        "label": "Permit issued",
+        "value": "About a minute",
+        "note": "After fees are paid in InfoSLO",
+        "source": {
+          "publisher": "City of San Luis Obispo",
+          "date": "2026-09-23",
+          "url": "https://www.slocity.org/government/department-directory/community-development/building-safety/permit-forms-and-applications/solar-documents"
+        }
+      },
+      {
+        "label": "3CE true-up",
+        "value": "Every December",
+        "note": "Generation side; PG&E trues up delivery separately",
+        "source": {
+          "publisher": "Central Coast Community Energy",
+          "date": "2026-09-23",
+          "url": "https://3cenergy.org/billing/nem/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "San Luis Obispo's five permit steps",
+        "paragraphs": [
+          "The City lists the path in order. The contractor registers or signs in to SolarAPP+, submits the design and pays SolarAPP+'s review fee: $35 for a solar application or $60 for solar plus storage. It then registers or logs in to InfoSLO, the City's permit portal, and submits the permit with the required documents. Once the permit fees are paid online, the permit is issued automatically in about a minute.",
+          "The last step is the inspection, requested in the same portal. The City says requests received by 5:00 p.m. may be scheduled for the following business day. Ask your installer who will make the request and who will be on site when the inspector arrives."
+        ]
+      },
+      {
+        "heading": "3CE's rules for a San Luis Obispo solar account",
+        "paragraphs": [
+          "Central Coast Community Energy handles generation and PG&E handles transmission and delivery, so a 3CE solar customer sees PG&E's minimum monthly delivery charges and has two annual true-ups. Customers whose interconnection was approved before April 15, 2023 stay on net energy metering for their 20-year term: 3CE bills them monthly for net use, gives retail credits for excess, and at its December true-up pays Net Surplus Compensation as a bill credit. In PG&E territory that rate has been $0.023 per kWh since December 1, 2025. Residential customers with at least $200 in combined credits can ask for a check within 45 days of the true-up statement.",
+          "Newer systems are on 3CE's Solar Billing Plan, which its board adopted in February 2024 and opened to residential customers in June 2024. Generation charges use 3CE's rates, exports earn Energy Export Credits priced hourly from the CPUC's Avoided Cost Calculator, and the balance is trued up each December. Ask each bidder which hours its model assumes you export in."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   temecula: {
     name: "Temecula",
@@ -3319,27 +3379,110 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Hayward",
     county: "Alameda County",
     utility: "pge",
-    sourceCheckedDate: "2026-09-22",
-    bill:
-      "Check the generation provider and enrolled program on the PG&E bill. Ava Community Energy lists Hayward among the 16 cities and unincorporated areas it serves; Ava supplies generation while PG&E delivers the electricity and sends the bill. Have each bidder use both portions of the actual account.",
-    local:
-      "Hayward runs its permitting through the city's Permit Center and e-Permits online portal. Ask the bidder to confirm the current solar permit path and required inspections through that portal before signing. Hayward's inland-Bay-Area location, away from the coastal fog belt, generally sees more clear-sky solar hours than cities directly on the coast.",
-    example:
-      "Put the same roof layout, shade model and monthly production in every Hayward bid. Then separate solar, storage, roof and electrical work, and compare the remaining bill under the same Ava generation and PG&E delivery enrollment shown on the account.",
+    sourceCheckedDate: "2026-09-23",
+    bill: "Most Hayward homes get generation from Ava Community Energy and delivery from PG&E, which sends the bill; the Energy Commission's map places the city's land in both areas. Ava settles its side of a solar account each April and PG&E settles delivery on its own date. Ask every bidder to model both, using the Ava plan and PG&E rate on your current bill.",
+    local: "Hayward accepts residential solar permits through SolarAPP+, and in March 2025 the automated route carried most of the volume: the City's own permit log for March 2025 lists 25 photovoltaic permits issued through SolarAPP+ against 10 conventional flush-mount permits. Before applying, the City asks you to confirm the address is inside Hayward rather than unincorporated Alameda County, and whether it falls in Hayward's Airport Safety Zone, where an FAA glare review comes first.",
+    example: "If you live near Hayward's airport, ask each bidder to check the City's map for the Airport Safety Zone before quoting a start date. Inside the zone, the City will not process the permit until the FAA has reviewed a glare study with Form 7460-1 and issued a finding of No Hazard.",
     sources: [
       {
-        label: "Ava Community Energy — Who We Serve",
-        url: "https://avaenergy.org/community/who-we-serve/",
+        "label": "City of Hayward: permits issued by work class, March 2025 (SolarAPP+ photovoltaic permits)",
+        "url": "https://www.hayward-ca.gov/sites/default/files/documents/Permit-Log-March-2025.pdf"
       },
       {
-        label: "City of Hayward — Permit Center",
-        url: "https://www.hayward-ca.gov/services/permit-center",
+        "label": "City of Hayward: residential solar requirements checklist (airport glare, drawings, inspection)",
+        "url": "https://www.hayward-ca.gov/sites/default/files/documents/005-Residential-Solar-Checklist.pdf"
       },
       {
-        label: "City of Hayward — e-Permits online portal",
-        url: "https://www.hayward-ca.gov/epermits",
+        "label": "Ava Community Energy: Solar Billing Plan",
+        "url": "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/"
       },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
     ],
+    faq: [
+      [
+        "Does Hayward use SolarAPP+ for solar permits?",
+        "Yes. The City's March 2025 permit log lists 25 residential photovoltaic permits issued through SolarAPP+ that month, along with SolarAPP+ revision permits, and 10 conventional flush-mount permits."
+      ],
+      [
+        "Do homes near Hayward's airport need extra approval for solar?",
+        "Yes, if they are in the City's Airport Safety Zone. The applicant prepares a glare study, files FAA Form 7460-1, and gives the City the FAA's finding of No Hazard before the permit is processed."
+      ],
+      [
+        "What does the inspector need at a Hayward solar final?",
+        "The City's checklist asks for a safe ladder rated for at least 250 pounds, extending 3 feet above the roof and secured, and access to check smoke and carbon monoxide alarms, or a signed self-certification for them."
+      ],
+    ],
+    checks: [
+      [
+        "City or county",
+        "Confirm on the City's map that the address is in Hayward, not unincorporated Alameda County, which permits separately."
+      ],
+      [
+        "Airport Safety Zone",
+        "Check whether the home is in the zone; if so, say who prepares the glare study and files FAA Form 7460-1."
+      ],
+      [
+        "Mounting",
+        "Say whether panels are flush-mounted; tilted panels need engineer-stamped structural calculations and hourly plan review."
+      ],
+      [
+        "Ava and PG&E bill",
+        "Model Ava generation, the E-ELEC rate it requires on the Solar Billing Plan, and PG&E delivery."
+      ]
+    ],
+    answer: "Solar companies in Hayward can file home solar permits through SolarAPP+; the City's March 2025 permit log lists 25 SolarAPP+ photovoltaic permits that month. Two local checks come first: that the address is in Hayward rather than unincorporated Alameda County, and whether it sits in the Airport Safety Zone, which needs an FAA glare review. Ava supplies Hayward's generation and PG&E delivers it. Compare at least three written bids.",
+    keyFacts: [
+      {
+        "label": "SolarAPP+ permits, March 2025",
+        "value": "25",
+        "note": "Plus 10 conventional flush-mount permits",
+        "source": {
+          "publisher": "City of Hayward",
+          "date": "2026-09-23",
+          "url": "https://www.hayward-ca.gov/sites/default/files/documents/Permit-Log-March-2025.pdf"
+        }
+      },
+      {
+        "label": "Near the airport",
+        "value": "FAA No Hazard finding",
+        "note": "Required in the Airport Safety Zone before the City processes the permit",
+        "source": {
+          "publisher": "City of Hayward",
+          "date": "2026-09-23",
+          "url": "https://www.hayward-ca.gov/sites/default/files/documents/005-Residential-Solar-Checklist.pdf"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Ava Community Energy",
+        "note": "PG&E delivers and bills",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Hayward's airport glare rule",
+        "paragraphs": [
+          "Hayward's solar checklist has a section on aviation. The City notes that some installations near the airport could affect the vision of pilots, air traffic controllers and passengers, or interfere with VHF radio. So before applying, you check the City's web map for two things: that the address is within Hayward and not unincorporated Alameda County, and whether it lies in the Airport Safety Zone.",
+          "Inside the zone, the applicant prepares a glare study, using the FAA's Solar Glare Hazard Analysis Tool, to go with FAA Form 7460-1, and submits the package to the FAA. The City processes the permit only after it receives the FAA's finding of No Hazard. Outside the zone, the application proceeds normally."
+        ]
+      },
+      {
+        "heading": "Mounting, inspection and Ava's solar rules",
+        "paragraphs": [
+          "The City's checklist says flush-mounted panels do not need structural calculations, but panels tilted steeper than the roof do, to verify wind resistance, and those calculations must be stamped and signed by an engineer and are reviewed at hourly rates. At the final inspection, the permit holder provides a safe ladder rated for at least 250 pounds that extends 3 feet above the roof and is secured, and the home must be open so the inspector can check smoke and carbon monoxide alarms; a signed self-certification can be offered instead.",
+          "On the bill, a new system in Hayward goes on the Solar Billing Plan, and Ava requires its residential customers on that plan to take PG&E's E-ELEC rate. Ava pays an extra $0.025 per kWh for exports between 3 and 8 p.m. to customers not on CARE or FERA, and $0.01 per kWh on all exports to CARE and FERA customers. Ask each bidder how many of your exports its model places in those hours."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
 
   hemet: {
@@ -5344,6 +5487,340 @@ export const growthCities: Record<string, GrowthCity> = {
         "paragraphs": [
           "Lancaster Energy splits the job with SCE: it buys and builds cleaner energy supplies, and SCE delivers the energy, repairs the lines and handles the bill. Its Clear Choice option is described as its lowest-rate option with higher renewable content than SCE, Smart Choice supplies 100% renewable energy, and customers may opt out to SCE.",
           "Solar owners are placed in Personal Choice. If you are already on net energy metering with SCE, enrollment is automatic; a new system enrolls through SCE, usually with the installer's help, and is then moved into Personal Choice. At the end of each month Lancaster Energy tallies the energy you drew and sent to the grid, billing you if you used more and crediting you if you sent more. Each October at the true-up, if production exceeded consumption over the year, it issues a rebate based on $0.06 per kWh. SCE's fixed Base Services Charge, $24.15 a month for customers not on CARE or FERA, stays on the delivery side."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  berkeley: {
+    name: "Berkeley",
+    county: "Alameda County",
+    utility: "pge",
+    bill: "Berkeley homes get generation from Ava Community Energy and delivery from PG&E, which sends the bill; the Energy Commission's map places the city's land in both areas. Ava and PG&E settle their halves of a solar account separately, Ava in April and PG&E on its own date. Ask each bidder to model both, using your current Ava plan and PG&E rate.",
+    local: "Berkeley gives solar three permit routes. Single-family and duplex homes adding rooftop solar and a battery can get a real-time permit through SolarAPP+ and then create a record in the City's Permits Online. Systems of 10 kW AC or less that pass every item on the City's eligibility checklist can use a streamlined permit. Everything else goes through the standard process, which the City says it reviews within one working day.",
+    example: "Ask each Berkeley bidder which of the City's three routes it is using and why. A 10 kW AC or smaller system on a single-family home or duplex should normally fit SolarAPP+ or the streamlined checklist; if a bid plans the standard process, ask what in the design, such as the roof structure or the battery, rules the faster routes out.",
+    sourceCheckedDate: "2026-09-23",
+    hasSavingsGuide: false,
+    checks: [
+      [
+        "Permit route",
+        "Name the route: SolarAPP+ and Permits Online, the streamlined checklist, or the standard process at the Permit Service Center."
+      ],
+      [
+        "Ava and PG&E bill",
+        "Model Ava generation and PG&E delivery, and the E-ELEC rate Ava requires on the Solar Billing Plan."
+      ],
+      [
+        "Export timing",
+        "Show how many exported kWh fall between 3 and 8 p.m., the hours Ava pays extra for."
+      ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license and who handles service calls after installation."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Berkeley: solar permits (SolarAPP+, streamlined and standard routes)",
+        "url": "https://berkeleyca.gov/construction-development/permits-design-parameters/permit-types/solar-permits"
+      },
+      {
+        "label": "Ava Community Energy: Solar Billing Plan",
+        "url": "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/"
+      },
+      {
+        "label": "Ava Community Energy: who we serve",
+        "url": "https://avaenergy.org/community/who-we-serve/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How do I get a solar permit in Berkeley?",
+        "Most single-family and duplex solar and battery projects can get a real-time permit through SolarAPP+ and a record in the City's Permits Online. Systems of 10 kW AC or less that pass the City's eligibility checklist can use the streamlined process, and other projects use the standard process at the Permit Service Center."
+      ],
+      [
+        "How long does Berkeley take to review a solar permit?",
+        "SolarAPP+ approvals are real-time. For projects on the standard permit process, the City says it reviews them within one working day."
+      ],
+      [
+        "Who supplies electricity in Berkeley?",
+        "Ava Community Energy supplies generation for most Berkeley homes; PG&E delivers the power and sends the bill."
+      ]
+    ],
+    answer: "Berkeley permits most home solar and battery projects in real time through SolarAPP+, offers a streamlined permit for systems of 10 kW AC or less that pass its checklist, and says it reviews standard applications within one working day. Ava Community Energy supplies Berkeley's generation and PG&E delivers it. Compare at least three written bids that name the permit route and model your own Ava and PG&E bill.",
+    keyFacts: [
+      {
+        "label": "Real-time permit",
+        "value": "SolarAPP+",
+        "note": "Single-family and duplex solar and storage",
+        "source": {
+          "publisher": "City of Berkeley",
+          "date": "2026-09-23",
+          "url": "https://berkeleyca.gov/construction-development/permits-design-parameters/permit-types/solar-permits"
+        }
+      },
+      {
+        "label": "Standard review",
+        "value": "Within 1 working day",
+        "note": "For projects outside SolarAPP+ and the streamlined route",
+        "source": {
+          "publisher": "City of Berkeley",
+          "date": "2026-09-23",
+          "url": "https://berkeleyca.gov/construction-development/permits-design-parameters/permit-types/solar-permits"
+        }
+      },
+      {
+        "label": "Ava export bonus",
+        "value": "+$0.025/kWh, 3 to 8 p.m.",
+        "note": "Solar Billing Plan customers not on CARE or FERA",
+        "source": {
+          "publisher": "Ava Community Energy",
+          "date": "2026-09-23",
+          "url": "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Berkeley's three solar permit routes",
+        "paragraphs": [
+          "The City says it encourages solar and storage through minimal permit fees, standardized guidelines and online applications. For SolarAPP+, the installer registers with the platform, submits the design, and then creates a record in Berkeley's Permits Online; the City notes that most residential solar and storage systems qualify, subject to SolarAPP+'s eligibility rules.",
+          "The streamlined route is for small rooftop systems, 10 kW AC or less, on a single-family home or duplex, where every item on the City's eligibility checklist can be marked Yes. The applicant submits the code compliance checklist, the permit application, a schematic site plan, the City's standard plan for either string or central inverters or microinverters, and its structural criteria for flush-mounted arrays, online or by appointment at the Permit Service Center. Larger or unusual projects use the standard process with full plans, and the City says it reviews those within one working day."
+        ]
+      },
+      {
+        "heading": "How Ava credits a Berkeley solar system",
+        "paragraphs": [
+          "A new Berkeley system goes on the Solar Billing Plan, and Ava requires residential customers on it to take PG&E's E-ELEC rate. Exports earn credits that vary by hour. Ava adds $0.025 per kWh for exports between 3 and 8 p.m. for customers not on CARE or FERA, and $0.01 per kWh on all exports for CARE and FERA customers.",
+          "The statewide Energy Export Bonus Credit is locked for nine years at the value for the year you interconnect; Ava lists it at $0.009 per kWh for a standard residential system interconnected in 2026 and $0.036 for income-qualified households. Ava settles its side each April and pays out a surplus of $100 or more, while PG&E settles delivery on its own date. Ask each bidder which hours its model assumes your exports happen in."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  redding: {
+    name: "Redding",
+    county: "Shasta County",
+    utility: "redding",
+    bill: "Redding homes buy electricity from Redding Electric Utility, the City's own utility, not PG&E. REU's Zero Net Energy Service bills a solar home monthly: energy drawn from the grid is charged at the retail rate, and surplus sent to the grid is credited at what REU calls the current value of solar. A proposal built on PG&E's Solar Billing Plan does not describe a Redding bill.",
+    local: "In Redding, the utility comes before the building permit. REU must receive every item on its Solar PV Checklist and issue a Generator Number before the City's Building Division will accept a solar permit application. The City's SolarAPP+ route then requires a City of Redding business license, the signed REU interconnection agreement, a design for a 30 PSF roof snow load, and a home built in 1970 or later.",
+    example: "Before comparing Redding bids, check each system size against your last twelve months of use. REU caps a net-generation system at 1 kW DC for every 1,752 kWh you used; at 12,000 kWh a year that is about 6.85 kW DC. A bid sized above your cap will not be allowed to interconnect as a net generator, and REU says it is not buying solar power under purchase agreements.",
+    sourceCheckedDate: "2026-09-23",
+    hasSavingsGuide: false,
+    checks: [
+      [
+        "System size cap",
+        "Show the size against REU's limit of 1 kW DC per 1,752 kWh of your prior twelve months' use."
+      ],
+      [
+        "REU Generator Number",
+        "Say who submits REU's Solar PV Checklist and when the Generator Number is expected; the City will not take the permit without it."
+      ],
+      [
+        "Roof and home age",
+        "Confirm the roof is designed for a 30 PSF snow load, and whether a pre-1970 home rules out SolarAPP+ or needs reinforcement."
+      ],
+      [
+        "Warranty and inverter",
+        "Confirm every component carries a manufacturer warranty of 10 years or more and the inverter meets REU's listing rules."
+      ]
+    ],
+    sources: [
+      {
+        "label": "Redding Electric Utility: Solar PV program (Zero Net Energy Service, sizing, Generator Number)",
+        "url": "https://www.cityofredding.gov/government/departments/redding_electric_utility/going_green/solar_photovoltaic_(pv)_program.php"
+      },
+      {
+        "label": "City of Redding: automated residential solar permitting with SolarAPP+",
+        "url": "https://files.cityofredding.gov/Document%20Center/Departments/Development%20Services/Building/Building%20Resources%20And%20Learning/Complete%20Permit%20Application%20Packages/C.O.R.%20SolarAPP%20Landing%20Page%20v5.pdf"
+      },
+      {
+        "label": "Redding Electric Utility: Solar PV information sheet (rev. 01.24)",
+        "url": "https://files.cityofredding.gov/Document%20Center/Departments/Redding%20Electric%20Utility/Going%20Green/Solar%20Power/Solar%20PV%20Information%20Sheet.pdf"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "Who provides electricity in Redding, CA?",
+        "Redding Electric Utility, a department of the City of Redding. Solar homes are billed under REU's Zero Net Energy Service, not PG&E's Solar Billing Plan."
+      ],
+      [
+        "How big a solar system can I install in Redding?",
+        "REU limits a net-generation system to 1 kW DC for every 1,752 kWh of on-site use over the previous 12 months, so a home using 12,000 kWh a year could install about 6.85 kW DC. REU says the average residential system in Redding is 7.75 kW."
+      ],
+      [
+        "Can I use SolarAPP+ for a solar permit in Redding?",
+        "Yes, if the contractor is registered with SolarAPP+, holds a City of Redding business license, uploads the signed REU interconnection agreement, designs for a 30 PSF roof snow load, and the home was built in 1970 or later."
+      ]
+    ],
+    answer: "Redding's electricity comes from Redding Electric Utility, not PG&E, and REU sets the rules a solar company has to follow: a system capped at 1 kW DC per 1,752 kWh of your last year's use, an REU Generator Number before the City will accept the permit, and monthly billing where surplus is credited at REU's value of solar. Compare at least three written bids sized to your own usage.",
+    keyFacts: [
+      {
+        "label": "Electric utility",
+        "value": "Redding Electric Utility",
+        "note": "City-owned; not PG&E",
+        "source": {
+          "publisher": "Redding Electric Utility",
+          "date": "2026-09-23",
+          "url": "https://www.cityofredding.gov/government/departments/redding_electric_utility/going_green/solar_photovoltaic_(pv)_program.php"
+        }
+      },
+      {
+        "label": "Size cap",
+        "value": "1 kW DC per 1,752 kWh",
+        "note": "Of on-site use over the previous 12 months",
+        "source": {
+          "publisher": "Redding Electric Utility",
+          "date": "2026-09-23",
+          "url": "https://www.cityofredding.gov/government/departments/redding_electric_utility/going_green/solar_photovoltaic_(pv)_program.php"
+        }
+      },
+      {
+        "label": "Average home system",
+        "value": "7.75 kW",
+        "note": "Residential systems in Redding, per REU",
+        "source": {
+          "publisher": "Redding Electric Utility",
+          "date": "2026-09-23",
+          "url": "https://www.cityofredding.gov/government/departments/redding_electric_utility/going_green/solar_photovoltaic_(pv)_program.php"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "REU's steps come first",
+        "paragraphs": [
+          "Redding Electric Utility asks customers to size a system from their own twelve months of use, which you can see by logging into your REU account or calling (530) 339-7200. It will not interconnect a system that exceeds on-site demand as a net generator. The installer submits REU's Solar PV Checklist forms to REU Customer Service, and only after REU approves them and issues a Generator Number will the City's Building Division accept a building permit application.",
+          "REU also sends specifications for a Generator Disconnect nameplate, which must be mounted on the AC disconnect within 10 feet of the meter and in sight of it. The disconnect stays off until the system passes the City's final inspection and REU commissions it; REU personnel switch it on. If the design changes during the City's review, the contractor must send REU revised drawings before the City issues its final. REU's information sheet adds that all equipment needs a manufacturer warranty of at least 10 years and that one project in every seven gets a HERS energy-efficiency inspection."
+        ]
+      },
+      {
+        "heading": "Redding's SolarAPP+ conditions",
+        "paragraphs": [
+          "The City of Redding accepts SolarAPP+ for most residential roof-mounted retrofit systems, from contractors registered with the platform who hold a City business license. For REU customers, the signed interconnection agreement must be uploaded to the City's portal. The design must carry a 30 PSF roof snow load, non-reducible, with roof attachments no more than 48 inches apart and staggered.",
+          "Homes built before 1970 cannot use SolarAPP+. The City has required roofs to resist a 30 PSF snow load since 1970, and for older roofs it adds panel weight only if the roof is reinforced or shown to carry the load. After SolarAPP+ approval, the contractor applies in the City's CSS portal under the Electrical Photovoltaic (SolarAPP) permit, pays the fees and prints the construction ePermit. REU says it does not endorse or partner with any contractor, and recommends talking to at least three."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  "yorba-linda": {
+    name: "Yorba Linda",
+    county: "Orange County",
+    utility: "sce",
+    bill: "Yorba Linda is Southern California Edison territory; the Energy Commission's map puts the city in SCE's area with no community choice provider, and Orange County Power Authority's member cities do not include it. SCE supplies and delivers the power and adds its fixed Base Services Charge. A new system goes on SCE's Solar Billing Plan, so a proposal should model SCE's export credits, not the retail price, for the power you send back.",
+    local: "Yorba Linda permits most residential rooftop solar through SolarAPP+ with three City conditions: the contractor uploads the City's Solar Self-Certification form to SolarAPP+, holds an active City of Yorba Linda business license, and is on SolarAPP+'s program eligibility list for the City. The permit itself is then applied for, paid for and downloaded in the City's Accela Citizen Access, and the signed permit card goes back to the City.",
+    example: "Before comparing Yorba Linda bids on price, ask each bidder whether it already holds a City of Yorba Linda business license and is on SolarAPP+'s eligibility list for the City, since it cannot file until both are in place. Then ask who will sign and return the permit card and who meets the inspector.",
+    sourceCheckedDate: "2026-09-23",
+    hasSavingsGuide: false,
+    checks: [
+      [
+        "City setup",
+        "Confirm an active City of Yorba Linda business license and a place on SolarAPP+'s program eligibility list for the City."
+      ],
+      [
+        "Self-certification",
+        "Say who signs the City's Solar Self-Certification form uploaded to SolarAPP+."
+      ],
+      [
+        "Permit card and inspection",
+        "Say who returns the signed permit card and books the inspection."
+      ],
+      [
+        "SCE bill",
+        "Model SCE's Solar Billing Plan and the fixed Base Services Charge from your own twelve months of bills."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Yorba Linda: Solar Permits (SolarAPP+ and Accela Citizen Access)",
+        "url": "https://www.yorbalindaca.gov/880/Solar-Permits"
+      },
+      {
+        "label": "SCE: Solar Billing Plan",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "SCE: Base Services Charge",
+        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+      },
+      {
+        "label": "Orange County Power Authority: about and member cities",
+        "url": "https://www.ocpower.org/about-us/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How do I get a solar permit in Yorba Linda?",
+        "Most residential rooftop systems go through SolarAPP+. The contractor uploads the City's Solar Self-Certification form, must hold an active City business license and be on SolarAPP+'s eligibility list for Yorba Linda, then applies and pays in the City's Accela Citizen Access and returns the signed permit card."
+      ],
+      [
+        "How do I schedule a solar inspection in Yorba Linda?",
+        "Call the Building Inspection Hotline at 714-854-7411 or use the City's online inspection request tool; if neither works, the Building Division is at 714-961-7120."
+      ],
+      [
+        "Who provides electricity in Yorba Linda?",
+        "Southern California Edison supplies and delivers it. Yorba Linda is not a member of Orange County Power Authority."
+      ]
+    ],
+    answer: "Solar companies in Yorba Linda permit most rooftop systems through SolarAPP+, but only after three City steps: an active City business license, a place on SolarAPP+'s eligibility list for Yorba Linda, and the City's Solar Self-Certification form. The permit is then issued through Accela Citizen Access. SCE supplies and delivers Yorba Linda's power. Compare at least three written bids built on your own SCE bill.",
+    keyFacts: [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+, then Accela",
+        "note": "Self-certification form and City business license required",
+        "source": {
+          "publisher": "City of Yorba Linda",
+          "date": "2026-09-23",
+          "url": "https://www.yorbalindaca.gov/880/Solar-Permits"
+        }
+      },
+      {
+        "label": "Inspection hotline",
+        "value": "714-854-7411",
+        "note": "Or the City's online inspection request tool",
+        "source": {
+          "publisher": "City of Yorba Linda",
+          "date": "2026-09-23",
+          "url": "https://www.yorbalindaca.gov/880/Solar-Permits"
+        }
+      },
+      {
+        "label": "SCE fixed charge",
+        "value": "$24.15/month",
+        "note": "Base Services Charge, customers not on CARE or FERA",
+        "source": {
+          "publisher": "SCE",
+          "date": "2026-09-23",
+          "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Yorba Linda's SolarAPP+ steps",
+        "paragraphs": [
+          "The City describes three stages. First, the contractor registers with SolarAPP+, submits the design for automated review, pays SolarAPP+'s processing fee and downloads the approved plans. SolarAPP+ checks most residential, roof-mounted retrofit systems; the City's eligibility checklist lists which ones qualify, and only projects that meet it can use the instant route.",
+          "Second comes the City's part. The contractor completes the Solar Self-Certification form and uploads it to SolarAPP+, must hold an active City of Yorba Linda business license, and must be added to SolarAPP+'s program eligibility list for the City by emailing SolarAPP+. It then applies for the City solar permit in Accela Citizen Access, uploads the documents, pays and returns the signed permit card. Third, the inspection is booked by calling the Building Inspection Hotline at 714-854-7411 or through the online request tool, with the Building Division at 714-961-7120 as the fallback."
+        ]
+      },
+      {
+        "heading": "What SCE's rules mean for a Yorba Linda system",
+        "paragraphs": [
+          "On SCE's Solar Billing Plan, each kWh you send to the grid earns an Energy Export Credit whose value depends on the hour, and SCE settles the account once a year in the month the system started service. Surplus that remains after the settlement is paid at SCE's Net Surplus Compensation Rate, which SCE gives as about $0.02 per kWh. SCE points out that storing your own energy for expensive hours is now worth more than exporting it.",
+          "The Base Services Charge, which SCE began billing in November 2025, is $24.15 a month for customers not on CARE or FERA, $12.08 on FERA and $6.00 on CARE, and solar does not change it. When you compare Yorba Linda bids, check that each savings estimate leaves that charge on the bill."
         ]
       }
     ],
