@@ -21,7 +21,7 @@ const checked = '2026-09-23';
 
 const metaTitle = 'Tesla Solar Reviews (2026): Are Tesla Solar Panels Good?';
 const metaDescription =
-  "Tesla's panels, Solar Inverter and Powerwall 3 on their own datasheets, how Tesla prices a system in California, the inverter price question, and service.";
+  "Tesla's panels, inverter and Powerwall 3 on their datasheets, how a Tesla solar quote and lease work in California, SolarCity, ADT, and service.";
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -66,6 +66,15 @@ const SRC = {
   rec: 'https://www.recgroup.com/en-us/rec-alpha-pure-rx',
   silfab: 'https://silfabsolar.com/wp-content/uploads/2026/05/Silfab-SIL-430-QD-Data-Final.pdf',
   irs: 'https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb',
+  lease: 'https://www.tesla.com/support/energy/solar-panels/learn/leasing-solar',
+  energyDesign: 'https://www.tesla.com/energy/design',
+  costBreakdown: 'https://www.tesla.com/learn/solar-panel-cost-breakdown',
+  licenses: 'https://www.tesla.com/support/energy/more/legal/contractor-licenses',
+  solarcity8k: 'https://www.sec.gov/Archives/edgar/data/1318605/000119312516773705/d292845d8k.htm',
+  adt: 'https://investor.adt.com/News--Events/news/news-details/2024/ADT-Provides-Solar-Business-Update-and-Advances-Capital-Allocation-Strategy/default.aspx',
+  adtFy24: 'https://investor.adt.com/News--Events/news/news-details/2025/ADT-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx',
+  momentum: 'https://www.momentumsolar.com/',
+  pwRebate: 'https://www.tesla.com/support/energy/powerwall/order/rebate',
 };
 
 const sources: ReviewSource[] = [
@@ -80,6 +89,15 @@ const sources: ReviewSource[] = [
   { name: 'REC Group — Alpha Pure-RX', url: SRC.rec, supports: 'Comparison: up to 22.6% efficiency', checked },
   { name: 'Silfab Solar — SIL-430 QD datasheet', url: SRC.silfab, supports: 'Comparison: 22.1% efficiency', checked },
   { name: 'IRS — FAQs on Public Law 119-21 changes to 25D', url: SRC.irs, supports: 'No residential credit for expenditures made after December 31, 2025', checked },
+  { name: 'Tesla Support — How leasing solar with Tesla works', url: SRC.lease, supports: '25-year term; 3% annual escalator; $600 upfront ($100 deposit + $500 progress payment); payments start after PTO; Tesla covers maintenance incl. battery and inverter replacement; 95% availability guarantee; end-of-term, transfer and year-5 buyout options; direct service territories', checked },
+  { name: 'Tesla — Design your Solar + Powerwall system', url: SRC.energyDesign, supports: 'Asks for address and average electric bill before a system recommendation; no price shown without them', checked },
+  { name: 'Tesla — Solar panel cost breakdown (updated October 3, 2025)', url: SRC.costBreakdown, supports: 'Tesla permitting fees to building and electrical departments ranged from about $110 to $760 per installation in 2024', checked },
+  { name: 'Tesla Support — Contractor licenses', url: SRC.licenses, supports: 'California: CSLB 888104 and CSLB 1127593', checked },
+  { name: 'Tesla Motors, Inc. — Form 8-K (November 21, 2016), SEC EDGAR', url: SRC.solarcity8k, supports: 'Tesla completed its acquisition of SolarCity on November 21, 2016', checked },
+  { name: 'ADT — Solar business update (January 24, 2024)', url: SRC.adt, supports: 'ADT will exit its residential solar business', checked },
+  { name: 'ADT — Fourth quarter and full year 2024 results (February 27, 2025)', url: SRC.adtFy24, supports: 'Solar business substantially wound down; reported as discontinued operations', checked },
+  { name: 'Momentum Solar — homepage', url: SRC.momentum, supports: 'Service states CT, FL, MA, NV, NJ, NY and TX; California not listed', checked },
+  { name: 'Tesla Support — Next Million Powerwall Rebate', url: SRC.pwRebate, supports: '$500 per Powerwall 3, up to $1,000; registration deadline June 30, 2026; claims by December 31, 2026', checked },
 ];
 
 const faqs = [
@@ -91,7 +109,22 @@ const faqs = [
   {
     question: 'How much do Tesla solar panels cost in California?',
     answer:
-      'Tesla does not publish a price without an address. Its order tools ask where the system will go and then quote that system. Get the cash price, divide it by the system size in watts, and compare with at least one other written quote for the same size. Tesla also advertises a solar lease, which you would compare on the monthly payment, term and escalator.',
+      'Tesla does not publish a price without an address. Its design tool asks for your address and your average electric bill, then recommends and prices a system. Get the cash price, divide it by the system size in watts, and compare with at least one other written quote for the same size. If you lease instead, Tesla’s lease runs 25 years with a 3% yearly payment increase, so compare the year-one payment and the year-25 payment.',
+  },
+  {
+    question: 'How do I get a Tesla solar quote?',
+    answer:
+      'Through Tesla’s online design tool, which asks for the installation address and your average monthly bill in dollars or kWh before it shows a system recommendation. Ask for the written quote to list the system size, panel count, inverter or Powerwall, permit fees and any electrical or roof work as separate lines, and for the cash price and the lease terms side by side.',
+  },
+  {
+    question: 'Does Tesla lease solar panels?',
+    answer:
+      'Yes. Tesla’s support page describes a 25-year lease with a 3% annual escalator, $600 due upfront ($100 deposit plus a $500 progress payment) and payments that start after the utility grants permission to operate. Tesla owns the system, covers maintenance including battery and inverter replacement, and guarantees 95% system availability. Tesla says the lease is offered in its direct service territories without listing them, so confirm it for your address.',
+  },
+  {
+    question: 'Is Tesla Solar the same company as SolarCity?',
+    answer:
+      'SolarCity is now part of Tesla. Tesla’s SEC filing records that it completed the acquisition on November 21, 2016, and the BBB still lists SolarCity as an alternate name on a Tesla profile. A SolarCity lease or warranty is serviced by Tesla.',
   },
   {
     question: 'How much does a Tesla solar inverter cost?',
@@ -106,7 +139,12 @@ const faqs = [
   {
     question: 'Can I get a Tesla Powerwall at no cost?',
     answer:
-      'Not from Tesla as a general offer. Some households qualify for income-limited state battery rebates, and some battery owners are paid for sharing power with the grid, but neither makes a Powerwall costless. Our Powerwall 3 cost page covers the current rebate status and what grid programs pay.',
+      'Not from Tesla as a general offer. Tesla’s own rebate of $500 per Powerwall 3 closed to new registrations on June 30, 2026. Some households qualify for local or income-limited battery rebates, such as PG&E’s $7,500 rebate for homes with repeated wildfire shutoffs, and some battery owners are paid for sharing power with the grid, but none of these makes a Powerwall costless. Our Powerwall 3 cost page lists each rebate and its status.',
+  },
+  {
+    question: 'Tesla Solar vs ADT Solar: which should I choose?',
+    answer:
+      'There is no ADT Solar to choose in 2026. ADT announced on January 24, 2024 that it was exiting residential solar, and its 2024 annual results say the solar business was substantially wound down and is reported as discontinued operations. Compare Tesla with a company that still sells in California instead.',
   },
   {
     question: 'How is Tesla solar customer service?',
@@ -143,7 +181,7 @@ export default function TeslaSolarReview() {
               <LastReviewedStamp date={checked} variant='reviewed' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime={checked}>Updated September 23, 2026</time></div>
-                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>9 min read</span></div>
+                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>11 min read</span></div>
               </div>
             </header>
 
@@ -171,8 +209,9 @@ export default function TeslaSolarReview() {
               </p>
               <p className={p}>
                 This review goes component by component using Tesla’s own datasheets and support pages, checked on
-                September 23, 2026, then covers pricing, the inverter price question, service and how Tesla relates to
-                Sunrun. It does not rank Tesla against other installers.
+                September 23, 2026, then covers how a Tesla quote and lease work, the inverter price question, service,
+                SolarCity, and how Tesla relates to Sunrun, ADT and Momentum. It does not rank Tesla against other
+                installers.
               </p>
 
               <div className='not-prose'>
@@ -251,6 +290,36 @@ export default function TeslaSolarReview() {
                 <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className={a}>lease, PPA, loan and cash comparison</Link>.
               </p>
 
+              <h2 className={h2}>How to get a Tesla solar quote, and what to check in it</h2>
+              <p className={p}>
+                Tesla quotes online. Its design tool asks for the installation address and your average monthly electric
+                bill, in dollars or kWh, and uses them to size the system before it shows a recommendation and a price.
+                <Cite href={SRC.energyDesign} date={checked} /> The number you get is for that address, which is why two
+                neighbors can see different figures. Tesla’s own cost article says its permit fees to building and electrical
+                departments ran from about $110 to $760 per installation in 2024, one of the lines that varies by city.
+                <Cite href={SRC.costBreakdown} date={checked} />
+              </p>
+              <p className={p}>
+                The Tesla solar lease has published terms. Tesla’s support page describes a 25-year term with a 3% annual
+                escalator, $600 due upfront ($100 deposit plus a $500 progress payment), and monthly payments that begin
+                once the utility grants permission to operate. Tesla owns the system and says it covers maintenance, service
+                and monitoring for the full term, including battery and inverter replacement, and guarantees 95% system
+                availability, calculated every two years. At the end you can renew for five years, buy at fair market
+                value or have Tesla remove the system; if you sell the house, the lease can transfer to the buyer, and a
+                buyout is available after year five.<Cite href={SRC.lease} date={checked} /> Tesla says the lease is
+                offered in its direct service territories without listing the states, so confirm it for your address.
+              </p>
+              <p className={p}>
+                A 3% escalator compounds: over 25 years the last payment is roughly double the first (1.03 to the 24th
+                power is about 2.03). Put the year-one and year-25 payments side by side with the cash price before you
+                choose, and read how a{' '}
+                <Link href='/solar-problems/solar-escalator-clause-explained' className={a}>solar escalator clause compounds</Link>.
+                If the quote includes a Powerwall, check which rebates still apply on our{' '}
+                <Link href='/battery/tesla-powerwall-3-cost-california' className={a}>Powerwall price and rebate page</Link>;
+                Tesla’s own $500-per-unit rebate closed to registrations on June 30, 2026.
+                <Cite href={SRC.pwRebate} date={checked} />
+              </p>
+
               <h2 className={h2}>Tesla solar reviews in California: service</h2>
               <p className={p}>
                 Tesla’s support page says it provides technical support remotely and sends in-house crews or certified
@@ -267,6 +336,35 @@ export default function TeslaSolarReview() {
                 who covers roof leaks at the mounting points. Get the answers in writing. For the upkeep an owner handles
                 between service visits, see our guide to{' '}
                 <Link href='/solar-panel-maintenance-california' className={a}>solar panel maintenance in California</Link>.
+              </p>
+
+              <h2 className={h2}>Tesla Solar and SolarCity</h2>
+              <p className={p}>
+                Many older California systems were sold as SolarCity. Tesla’s Form 8-K records that it completed its
+                acquisition of SolarCity on November 21, 2016,<Cite href={SRC.solarcity8k} date={checked} /> and the BBB
+                profile above still lists SolarCity as an alternate name for Tesla. If you have a SolarCity lease, PPA or
+                warranty, Tesla is the company that services it. Tesla lists two California contractor licenses, CSLB
+                888104 and CSLB 1127593;<Cite href={SRC.licenses} date={checked} /> check that the one on your contract is
+                current before you sign.
+              </p>
+
+              <h2 className={h2}>Tesla Solar vs ADT Solar, and vs Momentum Solar</h2>
+              <p className={p}>
+                Two comparisons people search for do not work for a California home in 2026. ADT announced on January 24,
+                2024 that it would exit residential solar,<Cite href={SRC.adt} date={checked} /> and its 2024 annual results
+                say the solar business was substantially wound down and is now reported as discontinued operations.
+                <Cite href={SRC.adtFy24} date={checked} /> There is no ADT Solar quote to set against Tesla’s. If you are an
+                existing ADT Solar customer, our{' '}
+                <Link href='/solar-installers/adt-solar-vs-momentum-solar' className={a}>ADT Solar page</Link> covers what
+                ADT has and has not said about service.
+              </p>
+              <p className={p}>
+                Momentum Solar is an operating company, but its homepage lists Connecticut, Florida, Massachusetts, Nevada,
+                New Jersey, New York and Texas as service states, and not California.<Cite href={SRC.momentum} date={checked} />{' '}
+                Tesla lists California licenses. If a Momentum representative contacts you about a California home, ask for
+                the California license number first; the{' '}
+                <Link href='/solar-installers/momentum-solar-review' className={a}>Momentum Solar review</Link> sets out its
+                BBB file and court record.
               </p>
 
               <h2 className={h2}>Is Sunrun owned by Tesla?</h2>

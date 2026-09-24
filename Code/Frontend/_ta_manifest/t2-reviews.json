@@ -1,0 +1,179 @@
+{
+  "agent": "t2-reviews",
+  "branch": "claude/t2-reviews-20260923",
+  "checked": "2026-09-23",
+  "summary": "14 rows: 7 done on 5 assigned URLs; 5 folded into existing pages (no new URLs); 2 skipped. 7 files touched: 5 owned review/battery pages + /solar-installers/momentum-solar-review and /solar-installers (both granted in the lane notes).",
+  "pages": [
+    {
+      "path": "/battery/tesla-powerwall-3-cost-california",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/data/article-pages.battery.json",
+      "title": "Tesla Powerwall 3 Cost in California (2026): Price, Rebates",
+      "clusters": [77, 228, 532],
+      "sources": [
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/2/Datasheet/en-us/Powerwall-2-Datasheet.pdf",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://www.tesla.com/support/energy/powerwall/learn/how-powerwall-works",
+        "https://www.tesla.com/support/energy/powerwall/order/rebate",
+        "https://www.tesla.com/support/energy/powerwall/learn/incentives",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.smud.org/Going-Green/Battery-storage/Homeowner",
+        "https://sdcommunitypower.org/solar-battery-savings/",
+        "https://cleanpoweralliance.org/sun-storage-rebate/",
+        "https://www.anaheim.net/5730/Battery-Storage",
+        "https://3cenergy.org/rebates/residential-battery-rebate-program/"
+      ],
+      "status": "done",
+      "note": "Rows 'cost of tesla powerwall' and 'powerwall 2 vs 3' done; 'tesla powerwall rebate california' folded here. Adds 'Powerwall 2 vs Powerwall 3' (datasheets + Tesla support: 5 vs 11.5 kW, 106 vs 185 LRA, integrated inverter) and 'Which rebates apply to a Powerwall in California': Tesla Next Million rebate (registration closed 6/30/2026, claims by 12/31/2026), PG&E $7,500 (179 left on 9/18), SMUD (cut to $300/kWh, max $6,000, on 9/23/2026), SDCP, CPA, Anaheim, 3CE (closed 3/19/2026). Table now lists rebates; the old payment-path table content is kept in the tax section. Tesla's incentives page is stale (still lists 3CE, SMUD up to $8,000) and says Powerwall 'is designed to qualify for the Federal ITC'; the page says the IRS rule governs owned 2026 installs. Next-question links added to src/data/json-article-links.ts (append only). qc-gate PASS."
+    },
+    {
+      "path": "/solar-installers/tesla-solar-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/tesla-solar-review/page.tsx",
+      "title": "Tesla Solar Reviews (2026): Are Tesla Solar Panels Good?",
+      "clusters": [41, 116, 1819],
+      "sources": [
+        "https://www.tesla.com/support/energy/solar-panels/learn/leasing-solar",
+        "https://www.tesla.com/energy/design",
+        "https://www.tesla.com/learn/solar-panel-cost-breakdown",
+        "https://www.tesla.com/support/energy/more/legal/contractor-licenses",
+        "https://www.sec.gov/Archives/edgar/data/1318605/000119312516773705/d292845d8k.htm",
+        "https://investor.adt.com/News--Events/news/news-details/2024/ADT-Provides-Solar-Business-Update-and-Advances-Capital-Allocation-Strategy/default.aspx",
+        "https://investor.adt.com/News--Events/news/news-details/2025/ADT-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx",
+        "https://www.momentumsolar.com/",
+        "https://www.tesla.com/support/energy/powerwall/order/rebate"
+      ],
+      "status": "done",
+      "note": "Rows 'tesla solar panels review' and 'tesla solar quote' done; 'tesla solar vs adt' folded here as a short section (ADT exit 1/24/2024; wound down, discontinued ops per FY2024 results). New H2s: how to get a Tesla solar quote (design tool needs address + bill; 2024 permit fees $110-760) and the published Tesla lease (25 yrs, 3% escalator, $600 upfront, 95% availability, year-5 buyout); Tesla Solar and SolarCity (acquisition completed 11/21/2016, SEC 8-K; CA licenses 888104, 1127593); Tesla vs ADT and vs Momentum. Four new FAQs. Title kept; description updated. 'Our take 3.1/5' block untouched."
+    },
+    {
+      "path": "/solar-installers/sunrun-vs-tesla-solar",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/sunrun-vs-tesla-solar/page.tsx",
+      "title": "Sunrun vs Tesla Solar (2026): Warranty, Lease and Powerwall",
+      "clusters": [192],
+      "sources": [
+        "https://investors.sunrun.com/news-events/press-releases/detail/378/sunrun-reports-second-quarter-2026-financial-results",
+        "https://investors.sunrun.com/news-events/press-releases/detail/381/sunrun-and-tesla-dispatch-580-megawatts-to-californias",
+        "https://investors.sunrun.com/news-events/press-releases/detail/348/sunrun-and-tesla-launch-home-energy-plan-to",
+        "https://www.tesla.com/support/tesla-electric/sunrun-flex",
+        "https://investors.sunrun.com/news-events/press-releases/detail/372/sunrun-renew-home-and-tesla-team-up-to-deliver-more",
+        "https://www.sunrun.com/why-sunrun/your-guarantee",
+        "https://www.sunrun.com/solar-battery-storage/tesla-powerwall",
+        "https://www.sunrun.com/roofing",
+        "https://www.tesla.com/support/energy/solar-panels/learn/leasing-solar",
+        "https://www.tesla.com/energy/design",
+        "https://www.tesla.com/support/energy/more/legal/contractor-licenses",
+        "https://energylibrary.tesla.com/docs/Public/Solar/Retrofit/Datasheet/TeslaPanelMount/DatasheetTeslaSolarPanel.pdf",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf"
+      ],
+      "status": "done",
+      "note": "Rewritten in the review pattern (KeyFacts, Cite, FAQ JSON-LD, SourceList, HubSpokeLinks, breadcrumb to /solar-installers). Removed unsourced install times (6-12 / 8-20+ weeks), 'thin post-install support', 'notoriously' claims, '400W panels', 'Tesla doesn't offer $0-down lease' (Tesla now publishes a lease) and Solar Roof claims. Answers: is Sunrun owned by Tesla (no; 9/9/2026 dispatch, Texas-only Sunrun Flex plan, 16 GW LOI), cost, Sunrun battery vs Powerwall (incl. Brightbox), is Sunrun going bankrupt (Q2 2026: $1.1B cash, no going-concern statement), will Sunrun replace my roof (Remi Roofing, 5-yr workmanship). Four table cells keep 9/22 checks (Sunrun licenses and move/transfer; Tesla panel and Powerwall warranty) because tesla.com rate-limited the warranty page (HTTP 429) on 9/23; dated as 9/22 in the sources list. qc-gate-tsx: 0 fail."
+    },
+    {
+      "path": "/solar-installers/palmetto-solar-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/palmetto-solar-review/page.tsx",
+      "title": "Palmetto Solar and LightReach Reviews (2026): BBB, Contract",
+      "clusters": [1791],
+      "sources": [
+        "https://www.bbb.org/us/nc/charlotte/profile/solar-energy-contractors/palmetto-solar-0473-92033792",
+        "https://www.bbb.org/us/nc/charlotte/profile/solar-energy-contractors/palmetto-solar-0473-92033792/complaints",
+        "https://www.courtlistener.com/?type=r&party_name=%22Palmetto%20Solar%22",
+        "https://www.courtlistener.com/docket/74814421/weisent-v-palmetto-solar-llc-dba-lightreach/",
+        "https://palmetto.com/lightreach",
+        "https://palmetto.com/business/lightreach-solar"
+      ],
+      "status": "done",
+      "note": "Retitled for 'lightreach solar reviews'. BBB (Charlotte, NC) lists LightReach as an alternate name: Not Rated, 340 complaints/3 yrs, 148 service or repair. Nine federal dockets (was eight on 9/18; new: Weisent v. Palmetto Solar LLC dba Lightreach, W.D. Tex., filed 9/18/2026); none is a Palmetto bankruptcy (answers 'is palmetto solar going out of business'). Removed unsourced footprint, 395-405 W / Sonnen equipment, '6 to 12+ months', 'BBB and Reddit' complaint list, 25-year warranty and paid-monitoring claims. FAQs now FaqBlock + JSON-LD. Energy Plan, transfer and license paragraphs keep their 9/22 checks. Row 'palmetto solar logo' skipped (see skipped)."
+    },
+    {
+      "path": "/solar-installers/sunlux-solar-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/sunlux-solar-review/page.tsx",
+      "title": "Sunlux Solar Reviews (2026): Is Sunlux Legit? BBB, License",
+      "clusters": [1816],
+      "sources": [
+        "https://www.bbb.org/us/ca/ontario/profile/solar-energy-design/sunlux-energy-1066-89087902",
+        "https://www.bbb.org/us/ca/ontario/profile/solar-energy-design/sunlux-energy-1066-89087902/complaints",
+        "https://www.courtlistener.com/?type=r&party_name=Sunlux",
+        "https://sunlux.com/",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Retitled for 'is sunlux legit'. Old H1 claimed 'One of SoCal's Higher-Rated Regional Installers' with no source; replaced. BBB: Sunlux, Corona, A+, not accredited, since 1/29/2015, 7 complaints/3 yrs (4 service/repair). CourtListener party search: 0 dockets. Removed unsourced county coverage, Panasonic/SolarEdge/LG, '3 to 6 months', '2-4 week' response, complaint list. 'No third-party installers' attributed to a customer testimonial, not the company. Links the six sibling 'is X legit' reviews (sub-questions). 'Our take 4.4/5' untouched (see decisions)."
+    },
+    {
+      "path": "/solar-installers/momentum-solar-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/momentum-solar-review/page.tsx",
+      "title": "Momentum Solar Reviews (2026): Is It Legit in California?",
+      "clusters": [251, 1785],
+      "sources": [
+        "https://consumer.ftc.gov/articles/multi-level-marketing-businesses-pyramid-schemes",
+        "https://www.momentumsolar.com/careers/sales/",
+        "https://www.courtlistener.com/?type=r&q=%28%22Momentum%20Solar%22%20OR%20%22Pro%20Custom%20Solar%22%29%20AND%20pyramid",
+        "https://www.courtlistener.com/docket/67599227/munoz-v-pro-custom-solar/",
+        "https://www.courtlistener.com/docket/18422447/tapia-v-pro-custom-solar-llc/",
+        "https://www.courtlistener.com/docket/17140910/greer-v-pro-custom-solar-llc/",
+        "https://www.tesla.com/support/energy/more/legal/contractor-licenses"
+      ],
+      "status": "done",
+      "note": "Folded rows 'momentum solar pyramid scheme' and 'tesla solar vs momentum solar' (lane notes grant this page). New H2 + FAQ 'Is Momentum Solar a pyramid scheme?' built only on primary records: FTC definition (income from recruiting vs retail sales), Momentum's own sales careers page (base + commission on sales to homeowners, benefits, no recruiting pay mentioned), CourtListener search (no case alleging a pyramid scheme; FLSA wage cases Munoz/Tapia/Greer; TCPA cases), BBB (113 sales and advertising complaints of 561). Never characterizes the company. The old combined 'scam or pyramid scheme' FAQ is split in two. New H2 'Tesla Solar vs Momentum Solar in California' (Momentum lists no CA; Tesla lists CA licenses)."
+    },
+    {
+      "path": "/solar-installers",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/page.tsx",
+      "title": "Solar Reviews for California Homeowners (2026)",
+      "clusters": [1820],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx"
+      ],
+      "status": "done",
+      "note": "Folded row 'local solar reviews' as section #local-solar-reviews: license + HIS registration (CPUC), the CSLB solar disclosure document and the CPUC Solar Consumer Protection Guide signature, BBB and docket lookup under the contract name, local proof. Links /solar-installers/licensed-solar-installer and four /solar-companies city pages. Palmetto and Sunlux blurbs updated to match their new pages."
+    }
+  ],
+  "sitemap_add": [],
+  "blog_index_add": [],
+  "redirect_requests": [],
+  "hub_links": [
+    {"hub": "installer_reviews", "href": "/battery/tesla-powerwall-3-cost-california", "label": "Tesla Powerwall 3 Cost in California (2026): Price, Rebates", "why": "refresh label (topic-hubs.ts lines ~38 and ~1126 still show 'Installed Price')"},
+    {"hub": "battery", "href": "/battery/tesla-powerwall-3-cost-california", "label": "Tesla Powerwall 3 Cost in California (2026): Price, Rebates", "why": "refresh label"},
+    {"hub": "installer_reviews", "href": "/solar-installers/palmetto-solar-review", "label": "Palmetto Solar and LightReach Reviews (2026): BBB, Contract", "why": "refresh label (retitled)"},
+    {"hub": "installer_reviews", "href": "/solar-installers/sunlux-solar-review", "label": "Sunlux Solar Reviews (2026): Is Sunlux Legit? BBB, License", "why": "refresh label (retitled)"}
+  ],
+  "link_requests": [
+    {"from": "/battery/pge-permanent-battery-storage-rebate", "to": "/battery/tesla-powerwall-3-cost-california", "anchor": "what a Powerwall 3 costs after the rebate", "why": "Powerwall buyers are the largest group asking about this rebate; the cost page now does the after-rebate arithmetic. Also: PG&E's page showed 179 rebates left as of 9/18/2026; this page still says 200 as of 9/14."},
+    {"from": "/battery/sgip-battery-rebate-california", "to": "/battery/tesla-powerwall-3-cost-california", "anchor": "Powerwall rebates by utility and community energy program", "why": "Answers 'tesla powerwall rebate california' (cluster 532), folded into the Powerwall page instead of a new URL."},
+    {"from": "/battery/pge-solar-battery-rebate", "to": "/battery/tesla-powerwall-3-cost-california", "anchor": "which rebates apply to a Powerwall in California", "why": "Same cluster 532; the PG&E page covers PG&E only, the Powerwall page covers SMUD, SDCP, CPA, Anaheim and Tesla's own rebate."},
+    {"from": "/blog/solar-rebates-by-california-utility", "to": "/battery/tesla-powerwall-3-cost-california", "anchor": "Powerwall rebates, including Tesla's own", "why": "Adds the Powerwall-specific answer (Tesla Next Million rebate, closed 6/30/2026). Note for its owner: SMUD's incentive dropped to $300/kWh, max $6,000, for interconnection applications from 9/23/2026; 3CE's battery rebate closed 3/19/2026."},
+    {"from": "/solar-companies/san-bernardino", "to": "/solar-installers#local-solar-reviews", "anchor": "how to check a local solar installer's reviews", "why": "'local solar reviews' (65 impr, pos 18.3) lands on this city page; the answer now lives on the reviews index."}
+  ],
+  "skipped": [
+    {"url": "/solar-installers/tesla-solar-vs-momentum-solar", "why": "folded into /solar-installers/momentum-solar-review (H2 'Tesla Solar vs Momentum Solar in California') plus a paragraph on /solar-installers/tesla-solar-review. Momentum's site lists CT, FL, MA, NV, NJ, NY, TX and not California (checked 9/23/2026), so a comparison page would not serve a California reader; the 3 impressions already land on the Momentum review."},
+    {"url": "/solar-installers/tesla-solar-vs-adt", "why": "folded into /solar-installers/tesla-solar-review (H2 + FAQ). ADT exited residential solar (announced 1/24/2024; wound down per FY2024 results). T2 brief §4: no new page for a company that has left the market."},
+    {"url": "/solar-installers/momentum-solar-pyramid-scheme", "why": "folded into /solar-installers/momentum-solar-review (H2 + FAQ from primary records only). T2 brief §4: no page on an accusation premise."},
+    {"url": "/solar-installers/local-solar-reviews", "why": "folded into /solar-installers#local-solar-reviews, per lane notes."},
+    {"url": "/battery/tesla-powerwall-rebate-california", "why": "folded into /battery/tesla-powerwall-3-cost-california. None of the battery lane's three rebate pages mentions Powerwall, but the cost page already carried SGIP and grid-program answers and /blog/solar-rebates-by-california-utility covers battery incentives by utility; a fourth rebate page would split the intent. Tesla's own rebate, which this SERP is about, closed to registrations on 6/30/2026."},
+    {"url": "/solar-installers/elevate-solar-reviews", "why": "small/obscure name (T2 §4). 'Elevate Solar' is used by several unrelated small businesses, e.g. Elevate Solar Solutions LLC, Collinsville CT (BBB: started 2/9/2022, F rating, no Elevation or California tie); none is Elevation (poweredbyelevation.com). The 6 impressions already land on /solar-installers/elevation-solar-review. Optional, unowned this wave: one line on that page noting it is not affiliated with businesses named 'Elevate Solar'."},
+    {"url": "/solar-installers/palmetto-solar-review (row 'palmetto solar logo', cluster 277)", "why": "non-intent per lane notes: a logo image query; no content answers it."}
+  ],
+  "decisions_for_chad": [
+    "'Our take' editorial scores (Tesla 3.1/5, Sunlux 4.4/5) have no published method; left untouched as in Tier 1. Keep, add a method, or remove?",
+    "Elevation review (unowned in T2): add a one-line disambiguation for 'Elevate Solar'? Optional."
+  ],
+  "unreadable_sources": [
+    "https://www.tesla.com/support/energy/solar-panels/learn/warranty (HTTP 429 rate limit on 9/23; the Sunrun vs Tesla table keeps its 9/22 check, dated as such)",
+    "https://www.tesla.com/solarroof (no body text returned); Solar Roof cost claims were removed rather than sourced",
+    "CSLB license detail pages (not fetchable); license status is not claimed anywhere, readers are sent to the CSLB lookup"
+  ]
+}

@@ -69,13 +69,13 @@ const REVIEWS: Entry[] = [
   { href: '/solar-installers/momentum-solar-review', anchor: 'Momentum Solar review', blurb: 'Whether it serves California at all, its BBB complaint file and the lawsuits over marketing calls.' },
   { href: '/solar-installers/new-day-solar-review', anchor: 'New Day Solar review', blurb: 'A Riverside County installer: service area, licence record and what its warranty covers.' },
   { href: '/solar-installers/option-one-solar-review', anchor: 'Option One Solar review', blurb: 'An Inland Empire installer: what its warranty includes, whether labour is covered and how it is licensed.' },
-  { href: '/solar-installers/palmetto-solar-review', anchor: 'Palmetto Solar review', blurb: 'How the partner-installer model works, what the monitoring subscription is, and what the complaint record shows.' },
+  { href: '/solar-installers/palmetto-solar-review', anchor: 'Palmetto Solar and LightReach review', blurb: 'LightReach is Palmetto’s partner network: its BBB file, the federal dockets and the 25-year Energy Plan terms.' },
   { href: '/solar-installers/powur-solar-review', anchor: 'Powur review', blurb: 'A network sales model with third-party crews: who is accountable for the install and what the complaint record shows.' },
   { href: '/solar-installers/semper-solaris-review', anchor: 'Semper Solaris review', blurb: 'A California solar, roofing and HVAC contractor with in-house crews, and what its reviews report.' },
   { href: '/solar-installers/solar-optimum-review', anchor: 'Solar Optimum review', blurb: 'A California installer: equipment lines, licence record and any litigation a buyer should know to check.' },
   { href: '/solar-installers/sullivan-solar-power-review', anchor: 'Sullivan Solar Power review', blurb: 'A defunct installer, kept here because its former customers still need to know where the warranty went.' },
   { href: '/solar-installers/sunergy-solar-review', anchor: 'Sunergy Solar review', blurb: 'A Lake Forest installer: what it publishes about warranties and equipment, and which Sunergy you are dealing with.' },
-  { href: '/solar-installers/sunlux-solar-review', anchor: 'Sunlux review', blurb: 'A Southern California installer: its published warranty, the licence check and how its proposals are put together.' },
+  { href: '/solar-installers/sunlux-solar-review', anchor: 'Sunlux review: is it legit?', blurb: 'A Corona installer: its BBB file, the docket search, its published 25-year hardware warranty and the licence check.' },
   { href: '/solar-installers/sunnova-review', anchor: 'Sunnova review', blurb: 'A financier rather than an installer, and what its insolvency proceedings mean for an existing agreement.' },
   { href: '/solar-installers/sunpower-review', anchor: 'SunPower review after the rebrand', blurb: 'What happened to the original company, who holds the warranties now and who answers a service call.' },
   { href: '/solar-installers/sunrun-review', anchor: 'Sunrun review', blurb: 'Business status from its own filings, its BBB file, the Sunrun Guarantee, roof work and Vivint contracts.' },
@@ -120,6 +120,8 @@ const SRC = {
   sunnova: 'https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/',
   sunpower: 'https://www.courtlistener.com/docket/69017070/sunpower-corporation/',
   cslb: 'https://www.cslb.ca.gov/onlineservices/checklicenseii/checklicense.aspx',
+  cpucGuide: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide',
+  cslbSolar: 'https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx',
 };
 
 const sources: ReviewSource[] = [
@@ -134,6 +136,8 @@ const sources: ReviewSource[] = [
   { name: 'CourtListener — In re Freedom Forever LLC, Bankr. D. Del. No. 26-10522', url: SRC.ff, supports: 'Chapter 11 filed April 15, 2026; converted to Chapter 7 by order signed August 7, 2026', checked },
   { name: 'CourtListener — In re Sunnova Energy International Inc., Bankr. S.D. Tex. No. 25-90160', url: SRC.sunnova, supports: 'Chapter 11 filed June 8, 2025', checked },
   { name: 'CourtListener — In re SunPower Corporation, Bankr. D. Del. No. 24-11649', url: SRC.sunpower, supports: 'Chapter 11 filed August 5, 2024', checked },
+  { name: 'CPUC — California Solar Consumer Protection Guide overview', url: SRC.cpucGuide, supports: 'Signature and initials required with residential interconnection applications in PG&E, SCE, SDG&E, BVES, PacifiCorp and Liberty territory; get the CSLB license and HIS registration numbers; 800-321-CSLB; version 4 published in 2025', checked },
+  { name: 'CSLB — Solar requirements', url: SRC.cslbSolar, supports: 'Solar energy system disclosure document before the sale is completed: total cost and payments including financing costs, and the cancellation right under Section 7159', checked },
 ];
 
 const articleSchema = {
@@ -277,6 +281,56 @@ export default function SolarInstallersIndex() {
                 and make sure the business name on the license matches the name on the contract. For a public
                 company, bankruptcy or a wind-down must be announced, so its investor-relations site is the first
                 place to look; for any company, a bankruptcy filing appears on the federal court docket.
+              </p>
+            </section>
+
+            <section id='local-solar-reviews' className='mb-12 scroll-mt-24'>
+              <h2 className={h2}>Local solar reviews: how to check a local installer</h2>
+              <p className={p}>
+                A local installer often has too few online reviews to average, and the ones it has may belong to another
+                branch or to a company with a similar name. The records that are tied to the business itself tell you more.
+                Four checks cover most of it, and none takes long.
+              </p>
+              <h3 className='text-lg font-semibold text-foreground mt-6 mb-2'>Match the license to the contract</h3>
+              <p className={p}>
+                The CPUC tells homeowners to get the contractor’s CSLB license number and the salesperson’s Home Improvement
+                Salesperson (HIS) registration number before signing, and to check both at CSLB or by calling
+                800-321-CSLB.<Cite href={SRC.cpucGuide} date={checked} /> Make sure the business name on the license is the
+                name on the contract. Several companies we review trade under names close to someone else’s, and a
+                national brand can sell through a local partner that holds its own license.
+              </p>
+              <h3 className='text-lg font-semibold text-foreground mt-6 mb-2'>Ask for the two documents the rules require</h3>
+              <p className={p}>
+                CSLB requires a solar contractor to give you a solar energy system disclosure document before the sale is
+                complete. It has to show the total cost and payments for the system, including financing costs, and your
+                right to cancel under Business and Professions Code section 7159.<Cite href={SRC.cslbSolar} date={checked} />{' '}
+                If an investor-owned utility such as PG&amp;E, SCE or SDG&amp;E serves you, the installer must also collect
+                your initials and signature on the CPUC’s California Solar Consumer Protection Guide before it applies to
+                connect your system; version 4 was published in 2025.<Cite href={SRC.cpucGuide} date={checked} /> An
+                installer that has not handed you both has not given you a complete offer.
+              </p>
+              <h3 className='text-lg font-semibold text-foreground mt-6 mb-2'>Look up the complaint and court record under the contract name</h3>
+              <p className={p}>
+                Search the BBB by the business name and city on the contract, not by the brand in the ad. The profile for{' '}
+                <Link href='/solar-installers/sunlux-solar-review' className={a}>Sunlux</Link>, for example, is filed under
+                Corona, and the one for{' '}
+                <Link href='/solar-installers/palmetto-solar-review' className={a}>LightReach</Link> sits under Palmetto Solar in
+                Charlotte, North Carolina. Read what the complaints are about, not just the grade. Then search federal dockets
+                on CourtListener under the same name. A small local company often has none, which is a starting point
+                rather than a clean record, because that search does not reach California’s state courts.
+              </p>
+              <h3 className='text-lg font-semibold text-foreground mt-6 mb-2'>Ask for local proof</h3>
+              <p className={p}>
+                Ask for two or three systems it installed near you in the past year, with the permit numbers, and the name
+                of the person who will answer a service call once the system is running. Service after installation is the
+                largest complaint category in almost every BBB file we have read. To find licensed solar contractors in
+                your county, see{' '}
+                <Link href='/solar-installers/licensed-solar-installer' className={a}>how to find a licensed solar installer</Link>;
+                for the utility, permit and cost picture where you live, see solar companies in{' '}
+                <Link href='/solar-companies/los-angeles' className={a}>Los Angeles</Link>,{' '}
+                <Link href='/solar-companies/san-bernardino' className={a}>San Bernardino</Link>,{' '}
+                <Link href='/solar-companies/riverside' className={a}>Riverside</Link> and{' '}
+                <Link href='/solar-companies/sacramento' className={a}>Sacramento</Link>.
               </p>
             </section>
 
