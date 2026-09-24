@@ -1,0 +1,254 @@
+{
+  "agent": "t2-maint",
+  "branch": "claude/t2-maint-20260923",
+  "pages": [
+    {
+      "path": "/blog/solar-panel-cleaning-california",
+      "action": "UPGRADE",
+      "hub": "maintenance",
+      "file": "src/app/blog/solar-panel-cleaning-california/page.tsx",
+      "title": "Solar Panel Cleaning in California: Is It Worth It?",
+      "clusters": [
+        8
+      ],
+      "sources": [
+        "https://jacobsschool.ucsd.edu/news/release/1393?id=1393",
+        "https://escholarship.org/uc/item/5kd297nm",
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.cslb.ca.gov/solar",
+        "https://atb.nrel.gov/electricity/2024/residential_pv"
+      ],
+      "status": "done",
+      "note": "Ownership decision: the head term 'solar panel maintenance' (cluster 8, 7,460/mo) belongs to the hub /solar-panel-maintenance-california, not this page. This page keeps cleaning intent: topic strings changed to cleaning, H2 'What you need to clean solar panels yourself, and how' (matches the GSC query reaching the page), cleaning-subscription FAQ, and a closing section handing maintenance intent to the hub. Supporting kws 'tesla solar reviews', 'tesla solar roof alternatives', 'solar system rental', 'tesla solar lease reviews' are off-intent noise in the cluster and were not targeted. The hub received the additions (next entry)."
+    },
+    {
+      "path": "/solar-panel-maintenance-california",
+      "action": "UPGRADE",
+      "hub": "maintenance",
+      "file": "src/app/solar-panel-maintenance-california/page.tsx",
+      "title": "Solar Panel Maintenance in California: Complete Guide",
+      "clusters": [
+        8
+      ],
+      "sources": [
+        "https://www.cslb.ca.gov/solar",
+        "https://www.ladwp.com/sites/default/files/2026-01/Revised%20SRP%20Guidelines%20(BES%2011-3-25%20v.2).pdf",
+        "https://www2.cslb.ca.gov/Newsletter/2018-summer/Find_My_Licensed_Contractor.asp",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PRC&sectionNum=25982",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PRC&sectionNum=25983",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PRC&sectionNum=25984",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PRC&sectionNum=25985",
+        "https://www.law.cornell.edu/regulations/california/22-CCR-66261.9",
+        "https://jacobsschool.ucsd.edu/news/release/1393?id=1393",
+        "https://www.cpuc.ca.gov/solarguide/"
+      ],
+      "status": "done",
+      "note": "Hub owns 'solar panel maintenance'. Added what it was missing: DIY vs licensed-contractor table, California seasonal upkeep calendar, Solar Shade Control Act (PRC 25982-25985, fetched from leginfo with curl; WebFetch is blocked by robots), finding a licensed repair company (CSLB Find My Licensed Contractor), universal-waste disposal (22 CCR 66261.9), two FAQs, links to tile and flat roof pages. Not in qc-gate-tsx CRR_PREFIXES, so the gate does not cover it; tsc clean."
+    },
+    {
+      "path": "/blog/solar-panels-tile-roof-california",
+      "action": "UPGRADE",
+      "hub": "roof_structures",
+      "file": "src/app/blog/solar-panels-tile-roof-california/page.tsx",
+      "title": "Solar Roof Tiles vs Panels on a Tile Roof in California",
+      "clusters": [
+        17,
+        63,
+        100
+      ],
+      "sources": [
+        "https://lci.ca.gov/docs/20190226-Solar_Permitting_Guidebook_4th_Edition.pdf",
+        "https://www.cslb.ca.gov/solar",
+        "https://www.stocktonca.gov/business/building___life_safety/automated_solar_permitting.php",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit"
+      ],
+      "status": "done",
+      "note": "Title kept (already matches 'solar roof tiles' queries; G07 still held). Meta description now leads with 'solar roofing'. Added: three meanings of solar roofing with the Permitting Guidebook's BIPV and PV-shingle definitions; who may install (CSLB list has no roofing class); fire classification and ASTM D 3161 wind-label checks; Stockton SolarAPP+ BIPV exclusion; how to compare a solar-tile bid with a panel bid via price per watt of the solar share; FAQs on roofers installing solar, 'will a solar company replace my roof' (c100, links to the free-roof page), and whether solar shingles are worth it. No price figures: no primary source publishes current California solar-tile prices."
+    },
+    {
+      "path": "/blog/lease-roof-for-solar-panels",
+      "action": "CREATE_DEDICATED",
+      "hub": "roof_structures",
+      "file": "src/app/blog/lease-roof-for-solar-panels/page.tsx",
+      "title": "Leasing Your Roof for Solar in California: How It Works",
+      "clusters": [
+        261
+      ],
+      "sources": [
+        "https://www.ladwp.com/residential-services/solar-programs/solar-rooftops",
+        "https://www.ladwp.com/sites/default/files/2026-01/Revised%20SRP%20Guidelines%20(BES%2011-3-25%20v.2).pdf",
+        "https://www.ladwp.com/commercial-services/programs-and-rebates-commercial/feed-tariff-fit-program",
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/community-solar-in-california",
+        "https://www.cslb.ca.gov/solar"
+      ],
+      "status": "done",
+      "note": "Covers the general question, not only LADWP: roof lease vs solar lease vs PPA table, LADWP Solar Rooftops payment table and contract terms (as a benchmark), no equivalent found for PG&E/SCE/SDG&E homes, CPUC community solar as the subscription alternative, LADWP Feed-in Tariff for business roofs (30 kW+, 14.5 c/kWh in-basin 30-500 kW as of 2026-09-18). Kept short on LADWP details and links to /blog/ladwp-solar-rooftops-program to avoid overlap. LADWP pages fetched with curl (WebFetch 403). The holder link from /blog/rent-solar-panels-for-your-home-california is a link_request (costfin owns it)."
+    },
+    {
+      "path": "/blog/flat-roof-solar-panels",
+      "action": "CREATE",
+      "hub": "roof_structures",
+      "file": "src/app/blog/flat-roof-solar-panels/page.tsx",
+      "title": "Flat Roof Solar Panels in California: Mounts and Permits",
+      "clusters": [
+        99
+      ],
+      "sources": [
+        "https://lci.ca.gov/docs/20190226-Solar_Permitting_Guidebook_4th_Edition.pdf",
+        "https://jacobsschool.ucsd.edu/news/release/1393?id=1393",
+        "https://help.gosolarapp.org/article/43-what-types-of-systems-are-eligible-for-solarapp-review",
+        "https://www.oaklandca.gov/My-Household/Building-and-Remodeling/Homeowner-Projects-Permits/Solar-Energy-Systems-Facilities",
+        "https://www.stocktonca.gov/business/building___life_safety/automated_solar_permitting.php",
+        "https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar",
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.cslb.ca.gov/solar",
+        "https://pvwatts.nrel.gov/"
+      ],
+      "status": "done",
+      "note": "Checked first: no residential flat-roof page existed (commercial-solar-roofing covers commercial low-slope and is linked). Residential scope. Ballasted/attached/hybrid table, tilt and soiling, structural/wind/seismic checklist from the 2019 guidebook, membrane protection, permit path (SolarAPP+ excludes ballasted), re-roof timing, alternatives. No price figures. Could not run PVWatts for a tilt comparison: developer.nrel.gov is blocked by the egress proxy."
+    },
+    {
+      "path": "/blog/solar-panel-removal-reinstall-cost",
+      "action": "UPGRADE",
+      "hub": "maintenance",
+      "file": "src/app/blog/solar-panel-removal-reinstall-cost/page.tsx",
+      "title": "Solar Panel Removal and Reinstall Cost in California",
+      "clusters": [
+        1848,
+        62,
+        220,
+        137
+      ],
+      "sources": [
+        "https://www.cslb.ca.gov/solar",
+        "https://www2.cslb.ca.gov/Newsletter/2018-summer/Find_My_Licensed_Contractor.asp",
+        "https://www.law.cornell.edu/regulations/california/22-CCR-66261.9",
+        "https://rcwaste.org/solar-panels",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "'solar panel removal' (167 impr) and 'solar removal' (146) reach this page, but it only covered remove-and-reinstall. Added removing panels for good (ownership, utility, permit, roof patching, universal-waste disposal), finding a company that removes and reinstalls (CSLB Find My Licensed Contractor, original installer first), partial removal for a roof repair, FAQs on DIY removal and trashing panels. Meta description updated; title kept. Still no price figures: no primary source publishes removal prices. DTSC's PV-module page returns 403 to both WebFetch and curl, so the regulation text (via Cornell LII) and Riverside County's waste department are cited instead."
+    },
+    {
+      "path": "/blog/solar-panels-over-canals-california",
+      "action": "CREATE",
+      "hub": "roof_structures",
+      "file": "src/app/blog/solar-panels-over-canals-california/page.tsx",
+      "title": "California Solar Panels Over Canals: Projects and Results",
+      "clusters": [
+        1973
+      ],
+      "sources": [
+        "https://www.tid.org/current-projects/project-nexus/",
+        "https://www.gov.ca.gov/2026/04/29/governor-newsom-announces-the-completion-of-first-of-its-kind-solar-covered-canal-in-the-central-valley-piloting-a-new-way-to-save-water-and-reduce-costs/",
+        "https://news.ucmerced.edu/news/2026/states-first-solar-canal-project-moves-uc-merced-lab-real-world",
+        "https://news.ucmerced.edu/news/2021/solar-panels-over-canals-can-save-money-energy-and-water-study-shows",
+        "https://www.nature.com/articles/s41893-021-00693-8",
+        "https://www.doi.gov/pressreleases/biden-harris-administration-announces-19-million-investing-america-agenda-innovative",
+        "https://sldmwa.org/san-luis-delta-mendota-water-authority-receives-15-million-grant-for-delta-mendota-canal-floating-solar-project/"
+      ],
+      "status": "done",
+      "note": "Evergreen framing with dated figures; modeled estimates (63B gallons, 13 GW, NPV +20-50%) kept separate from built/measured facts (1.6 MW, up to 70% less evaporation). Includes a what-it-means-for-your-bill section with no savings claims. Parented to roof_structures per the CSV (canal canopies as solar structures); the news hub has no hub page. Override at integration if wanted."
+    },
+    {
+      "path": "/blog/is-my-roof-good-for-solar-california",
+      "action": "UPGRADE",
+      "hub": "roof_structures",
+      "file": "src/app/blog/is-my-roof-good-for-solar-california/page.tsx",
+      "title": "Is My Roof Good for Solar? California Suitability Guide",
+      "clusters": [],
+      "sources": [
+        "https://www.energy.gov/cmei/systems/homeowners-guide-solar",
+        "https://www.energy.gov/cmei/systems/articles/walk-me-through-it-step-step-guide-consumers-going-solar",
+        "https://www.energy.gov/cmei/systems/solar-photovoltaic-performance-and-efficiency-basics",
+        "https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar",
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://lci.ca.gov/docs/20190226-Solar_Permitting_Guidebook_4th_Edition.pdf",
+        "https://help.gosolarapp.org/article/43-what-types-of-systems-are-eligible-for-solarapp-review"
+      ],
+      "status": "done",
+      "note": "Roof hub (owned this wave). Moved from the DecisionPage component RoofSuitabilityGuide.tsx into the route with GuideShell (component deleted; nothing else imported it) so qc-gate-tsx passes (it failed before: no Article schema or CTA visible in route source). Quick answers became FAQs with FAQPage schema. Fire-access table replaced: it cited the 2008 draft CAL FIRE guideline; now the 2019 Solar Permitting Guidebook checklist (CFC 605.11 / CRC R324.6). Links to every roof page incl. the three new ones, plus the Tier 1 link request (roof-leak, LADWP) is satisfied. One unverifiable sentence (a CPUC-attributed permit sequence) was reworded without attribution."
+    }
+  ],
+  "sitemap_add": [
+    "/blog/flat-roof-solar-panels",
+    "/blog/lease-roof-for-solar-panels",
+    "/blog/solar-panels-over-canals-california"
+  ],
+  "blog_index_add": [
+    {
+      "slug": "flat-roof-solar-panels",
+      "title": "Flat Roof Solar Panels in California: Mounts and Permits",
+      "hub": "roof_structures"
+    },
+    {
+      "slug": "lease-roof-for-solar-panels",
+      "title": "Leasing Your Roof for Solar in California: How It Works",
+      "hub": "roof_structures"
+    },
+    {
+      "slug": "solar-panels-over-canals-california",
+      "title": "California Solar Panels Over Canals: Projects and Results",
+      "hub": "roof_structures"
+    }
+  ],
+  "redirect_requests": [],
+  "hub_links": [
+    {
+      "hub": "roof_structures",
+      "href": "/blog/flat-roof-solar-panels",
+      "label": "Solar panels on a flat roof"
+    },
+    {
+      "hub": "roof_structures",
+      "href": "/blog/lease-roof-for-solar-panels",
+      "label": "Leasing your roof for solar"
+    },
+    {
+      "hub": "roof_structures",
+      "href": "/blog/solar-panels-over-canals-california",
+      "label": "California's solar canal projects"
+    },
+    {
+      "hub": "maintenance",
+      "href": "/blog/solar-panel-removal-reinstall-cost",
+      "label": "Solar panel removal and reinstall cost",
+      "note": "relabel: topic-hubs.ts still shows the old title 'Solar Panel Removal for Roof Replacement: CA Quote Checklist'"
+    }
+  ],
+  "link_requests": [
+    {
+      "from": "/blog/rent-solar-panels-for-your-home-california",
+      "to": "/blog/lease-roof-for-solar-panels",
+      "anchor": "leasing your roof to a utility instead",
+      "why": "CREATE_DEDICATED holder: 'lease roof for solar panels' impressions land on the rent page (pos 70-79). Owned by costfin."
+    },
+    {
+      "from": "/blog/ladwp-solar-rooftops-program",
+      "to": "/blog/lease-roof-for-solar-panels",
+      "anchor": "how roof leases work outside Los Angeles",
+      "why": "The LADWP page answers the LA case; the general roof-lease page is its natural next question. Not in my T2 ownership list."
+    },
+    {
+      "from": "/commercial-solar/commercial-solar-roofing",
+      "to": "/blog/flat-roof-solar-panels",
+      "anchor": "flat-roof solar on a home",
+      "why": "Commercial low-slope page; homeowners landing there need the residential flat-roof page. Owned by the commercial lane."
+    }
+  ],
+  "skipped": [
+    {
+      "url": "/blog/solar-panel-cleaning-california sub-question 'how much do solar panel cleaners make' (c2387)",
+      "why": "no primary wage source for this occupation; left out rather than guessed (same as Tier 1)"
+    },
+    {
+      "url": "/blog/solar-panels-tile-roof-california: solar roof tile prices",
+      "why": "no government or research source publishes current California solar-tile prices; page gives a bid-comparison method instead of figures"
+    }
+  ],
+  "decisions_for_chad": [
+    "Canal page is parented to roof_structures per the CSV; the news hub has no hub page. Keep or move.",
+    "Roof hub fire-access table now uses the 2019 Solar Permitting Guidebook figures instead of the 2008 draft CAL FIRE guideline it cited; the current CFC/CRC text on codes.iccsafe.org could not be fetched (403)."
+  ]
+}

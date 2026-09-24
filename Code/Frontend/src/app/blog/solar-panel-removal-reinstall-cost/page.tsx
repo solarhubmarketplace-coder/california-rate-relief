@@ -86,7 +86,7 @@ const faqs = [
   {
     question: 'Can I remove solar panels myself?',
     answer:
-      'It isn’t a safe do-it-yourself job. Panels produce voltage whenever light hits them, and removal means disconnecting live circuits, lifting fragile glass on a roof and sealing the holes the mounts leave. CSLB tells consumers not to use anyone who is not licensed for solar work, and a leased system’s contract usually forbids anyone but the owner’s crew from touching it.',
+      'It isn’t a safe do-it-yourself job. Panels produce voltage whenever light hits them, and removal means disconnecting live circuits, lifting fragile glass on a roof and sealing the holes the mounts leave. CSLB tells consumers not to use anyone who is not licensed for solar work, and a leased system’s contract may allow only the owner’s crew to touch it.',
   },
   {
     question: 'Can I throw old solar panels in the trash?',
