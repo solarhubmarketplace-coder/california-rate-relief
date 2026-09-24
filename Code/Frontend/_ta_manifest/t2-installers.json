@@ -7,7 +7,16 @@
       "hub": "installers",
       "file": "src/app/best-solar-companies-california/page.tsx",
       "title": "Solar Installers in California: Compare and Verify (2026)",
-      "clusters": [5, 6, 13, 45, 87, 117, 231, 1842],
+      "clusters": [
+        5,
+        6,
+        13,
+        45,
+        87,
+        117,
+        231,
+        1842
+      ],
       "sources": [
         "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
         "https://www.californiadgstats.ca.gov/find_installer/",
@@ -31,7 +40,12 @@
       "hub": "cost_value",
       "file": "src/app/solar-panels-california/page.tsx",
       "title": "Solar Panels in California (2026): Cost, Rules, Worth It",
-      "clusters": [1, 95, 75, 168],
+      "clusters": [
+        1,
+        95,
+        75,
+        168
+      ],
       "sources": [
         "https://www.californiadgstats.ca.gov/find_installer/",
         "https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists",
@@ -41,12 +55,40 @@
       ],
       "status": "done",
       "note": "Title kept. Stays on cost/rules/worth-it; installer choice routed to /best-solar-companies-california#near-me. Added: local cost check via CPUC DGStats (AC vs DC caveat), links to city cost guides named in supporting kws (LA, San Diego, San Jose, Bakersfield, Fresno, Rancho Cucamonga), cost-per-kWh method, CPUC 'good fit' screen (should I get solar), 'solar panels near me' section (installer vs buying panels: CEC equipment lists, owner-builder rules), 3 new FAQs. Not added: solar farm cost and solar pool heating cost sub-questions (off-intent for this page)."
+    },
+    {
+      "path": "/blog/solar-system-quotes-california",
+      "action": "UPGRADE",
+      "hub": "installers",
+      "file": "src/app/blog/solar-system-quotes-california/page.tsx",
+      "title": "Solar Quotes in California: How to Get and Compare Bids",
+      "clusters": [
+        55
+      ],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.cpuc.ca.gov/NEM/",
+        "https://www.californiadgstats.ca.gov/find_installer/",
+        "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+        "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx",
+        "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+        "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+        "https://pvwatts.nrel.gov/"
+      ],
+      "status": "done",
+      "note": "Retitled from 'Solar System Quotes in California: Get 3 Real Quotes Fast' to match 'solar quote' intent. Rewritten on the Byline/KeyFacts/SourceList/FaqBlock pattern; kept HeroQuickCheck, SolarInquiry and the referral-compensation paragraph verbatim. Removed unsourced product examples and bankruptcy dates (now links to the sourced bankruptcy pages). Added: what to have ready, where to get quotes (CSLB city search, DGStats), broker cannot quote (CSLB), the two state forms (disclosure cover page, SESSI standardized savings estimate, 10%/yr escalation cap), 5-step comparison, fairness checks, red flags, cancellation window, 6 FAQs, HubSpokeLinks, AuthorBio. dateModified 2026-09-23. qc-gate-tsx: 0 fail, 0 warn."
     }
   ],
   "sitemap_add": [],
   "blog_index_add": [],
   "redirect_requests": [],
-  "hub_links": [],
+  "hub_links": [
+    {
+      "hub": "installers",
+      "href": "/blog/solar-system-quotes-california",
+      "label": "Solar quotes in California: how to get and compare bids"
+    }
+  ],
   "link_requests": [],
   "skipped": []
 }

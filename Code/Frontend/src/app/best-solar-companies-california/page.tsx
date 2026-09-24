@@ -588,9 +588,9 @@ export default function BestSolarCompaniesCalifornia() {
                 <th scope="row" className="p-3 align-top">System size</th>
                 <td className="p-3 align-top">
                   Built from your last 12 months of use. The CPUC notes systems are typically
-                  sized to around 80&ndash;85% of the previous year&rsquo;s use, and Net Billing
-                  Tariff customers cannot exceed 150% of it without attesting that their use
-                  will grow.
+                  sized to around 80&ndash;85% of the previous year&rsquo;s use; on net billing,
+                  going above your history takes a signed attestation that your use will grow,
+                  with a ceiling of 150%.
                 </td>
                 <td className="p-3 align-top">Sized to &ldquo;cover your whole bill&rdquo; with no usage history attached.</td>
               </tr>
