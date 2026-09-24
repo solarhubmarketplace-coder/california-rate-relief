@@ -145,6 +145,22 @@ export interface CityCostRow {
    * the FAQPage JSON-LD.
    */
   extraFaqs?: { question: string; answer: string }[];
+  /**
+   * Added 2026-09-24 (Tier 3 city-cost wave). A short "Electricity rates in
+   * <city>" section for a city whose /solar-savings bill page 301s to this
+   * page, so the "electricity rates <city>" question is answered here: who
+   * supplies the power and what the utility's own residential schedule
+   * charges, with the schedule's effective date. Every figure is restated
+   * from the sources below. The tracker's average rate is NOT retyped here;
+   * the utility section already imports it. Rendered as its own H2 after the
+   * utility section, as one FAQ entry, and in the sources list.
+   */
+  localRates?: {
+    heading: string;
+    paragraphs: string[];
+    faq: { question: string; answer: string };
+    sources: CityCostRowSource[];
+  };
 }
 
 /**
@@ -234,6 +250,17 @@ export const CEC_SB379_DATA: CityCostRowSource = {
   label: 'California Energy Commission, Residential Solar Permitting Program data (SB 379 platform status as self-reported by each jurisdiction; data last updated August 3, 2026)',
   url: 'https://www.energy.ca.gov/media/9247',
   verifiedAt: '2026-09-23',
+};
+// Added 2026-09-23 (Tier 3 city-cost wave).
+export const PIONEER_ABOUT: CityCostRowSource = {
+  label: 'Pioneer Community Energy, About Us (Auburn, Colfax, Lincoln, Rocklin, Loomis and most of unincorporated Placer County; Grass Valley and Nevada City since 2024)',
+  url: 'https://pioneercommunityenergy.org/about-us/',
+  verifiedAt: CCA_VERIFIED_0923,
+};
+export const SCP_WHO: CityCostRowSource = {
+  label: 'Sonoma Clean Power, Who We Are (governed by the Counties of Sonoma and Mendocino and cities including Petaluma, Santa Rosa and Windsor)',
+  url: 'https://sonomacleanpower.org/who-we-are',
+  verifiedAt: CCA_VERIFIED_0923,
 };
 export const OCPA_HOME: CityCostRowSource = {
   label: 'Orange County Power Authority, member communities (Buena Park, Fullerton, Irvine, Fountain Valley)',
@@ -363,6 +390,36 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes, for small residential rooftop solar through the City's own Accela-based Online Permit Center (Solar Permit Online). The City's page does not name SolarAPP+, and the California Energy Commission's SB 379 data lists Anaheim's platform as a custom one.",
     sourcesFetchedAt: "2026-09-18",
+    // 2026-09-24 (Tier 3): /solar-savings/anaheim 301s here, and "anaheim
+    // electric rates" passes Rule 3, so the page now answers it from Anaheim
+    // Public Utilities' own residential rates page.
+    localRates: {
+      heading: 'Electricity provider and rates in Anaheim',
+      paragraphs: [
+        "Anaheim runs its own electric utility. The California Energy Commission's service-territory map names it the City of Anaheim Public Utilities Department and places 98.7 percent of the city in its territory, so a home in that territory is billed on Anaheim Public Utilities' own schedules.",
+        "APU says most homes are on its Standard Domestic Rate: an $8.00 monthly charge, 14.00¢ per kWh for the first 10 kWh a day (the basic residential lifeline allowance, with medical allowance usage at the same 14.00¢), and 21.49¢ per kWh for everything above that. APU puts the average home at 29 kWh a day, so the extra energy a home adds, such as EV charging, is billed at 21.49¢.",
+        "The optional Domestic Time-of-Use Rate, APU's Schedule TOU-2, took effect May 1, 2024 under Resolution No. 2024-022. It keeps the $8.00 monthly charge and prices on-peak energy, 4 to 9 p.m. on weekdays except holidays, at 33.20¢ per kWh in summer (July 1 to October 31; APU's rates page shows 33.22¢) and 31.25¢ in winter (November 1 to June 30). Off-peak energy is 16.65¢ in summer and 16.15¢ in winter, and winter super off-peak energy, 8 a.m. to 4 p.m. on weekdays and every hour outside 4 to 9 p.m. on winter weekends and holidays, is 12.00¢.",
+        "APU's rates page does not print an effective date for the Standard Domestic Rate, and the Domestic Service schedule it links could not be read on September 24, 2026, so check the rate named on your own bill. A solar savings estimate for an Anaheim home should be built on these APU prices.",
+      ],
+      faq: {
+        question: 'What are electricity rates in Anaheim?',
+        answer:
+          "Anaheim Public Utilities, the City's own utility, supplies electricity to most of Anaheim. Its Standard Domestic Rate, which APU says most homes are on, is an $8.00 monthly charge plus 14.00¢ per kWh for the first 10 kWh a day and 21.49¢ per kWh above that. The optional time-of-use schedule, TOU-2, effective May 1, 2024, charges 33.20¢ on-peak (4 to 9 p.m. on weekdays) in summer and 31.25¢ in winter, with other hours from 12.00¢ to 16.65¢. APU's rates page and schedule were read September 24, 2026.",
+      },
+      sources: [
+        {
+          label: 'Anaheim Public Utilities, Residential Rates (Domestic Rate; Domestic Time-of-Use Rate)',
+          url: 'https://www.anaheim.net/6335/Residential-Rates',
+          verifiedAt: '2026-09-24',
+        },
+        {
+          label: 'Anaheim Public Utilities, Electric Rate Schedule TOU-2, Domestic Time-of-Use (page 2.10.1 effective May 1, 2024, Resolution No. 2024-022; page 2.10.2 effective March 1, 2022)',
+          url: 'https://www.anaheim.net/DocumentCenter/View/25947/Schedule-TOU-2-',
+          verifiedAt: '2026-09-24',
+        },
+        { ...CEC_SERVICE_TERRITORY_SOURCE, verifiedAt: '2026-09-24' },
+      ],
+    },
   },
   {
     slug: "aptos",
@@ -409,14 +466,23 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Camarillo",
     county: "Ventura County",
     utilityKey: "sce",
+    // 2026-09-23 (Tier 3): the Master Fee Schedule 2026 is now readable.
     cca: "Clean Power Alliance",
-    permitUrl: "https://www.cityofcamarillo.org/departments/building___safety/building___safety_handouts.php",
+    ccaSource: SCE_CCA_LIST,
+    permitUrl: "https://www.cityofcamarillo.org/departments/building___safety/index.php",
     permitFeeNote:
-      "The City publishes dedicated photovoltaic handouts \u2014 a Photovoltaic Solar Systems sheet, a Solar Eligibility Checklist and Solar Structure Criteria \u2014 but states no dollar figure for the solar permit on that page, and its Master User Fee Schedule is served through a document centre that did not return the file when checked. Ask Building & Safety for the current amount before accepting a quote that folds the permit in.",
-    permitFeeSource: "City of Camarillo Building & Safety handouts page; Master User Fee Schedule not retrievable when checked",
+      "Camarillo's Master Fee Schedule 2026 (updated February 26, 2026) sets a residential photovoltaic permit at $450 up to 15 kW, plus $15 for each kW above, citing Government Code section 66015. An energy storage system is $206 for the first unit, or $121 when it is included as part of a solar install. Since July 1, 2025 the City adds an 11.34 percent technology surcharge to these fees.",
+    permitFeeSource: "City of Camarillo, Building & Safety",
+    permitSources: [
+      {
+        label: 'City of Camarillo, Master Fee Schedule 2026 (updated February 26, 2026), Community Development Exhibit A: 5 Energy Storage Systems; 16 Photovoltaic (Solar)',
+        url: 'https://www.cityofcamarillo.org/Master%20Fee%20Schedule%202026%20-%20Updated%202.26.26%20FOR%20WEBSITE.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes - Camarillo is listed as a live jurisdiction on SolarAPP+'s own directory (gosolarapp.org/where-is-solarapp-available) supporting PV, PV+storage, and storage-only permits.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Eligible new residential rooftop systems are permitted automatically through SolarAPP+. Systems that include a main panel upgrade or battery storage are not currently eligible for that route and go through the City's regular permit process.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "carlsbad",
@@ -533,34 +599,101 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes. Single-family and duplex projects can use SolarAPP+ and then the City's Accela Citizens Access portal. Commercial systems do not qualify for SolarAPP+ and apply for a standard solar permit in the same portal.",
     sourcesFetchedAt: "2026-09-23",
+    // 2026-09-24 (Tier 3): /solar-savings/fresno 301s here, and "electricity
+    // rates fresno" passes Rule 3, so the page now answers it from PG&E's
+    // own tariffs.
+    localRates: {
+      heading: 'Electricity provider and rates in Fresno',
+      paragraphs: [
+        "PG&E supplies both generation and delivery in Fresno. The California Energy Commission's service-territory map places the whole city in PG&E's territory, and PG&E's list of community choice aggregators names none serving Fresno, so the rates below are the bundled PG&E prices a Fresno bill uses.",
+        "On E-1, PG&E's tiered residential schedule, energy costs $0.32561 per kWh up to the home's baseline allowance and $0.40702 per kWh above it. On E-TOU-C, which treats 4 to 9 p.m. every day as peak, summer energy (June 1 through September 30) is $0.52240 per kWh at peak and $0.39940 off-peak, and winter energy is $0.39757 and $0.36757, with a $0.08140 per kWh credit on baseline usage. Both schedules add a base services charge, $0.79343 a day for a household that does not qualify for the two lower income tiers. These rates took effect June 1, 2026.",
+        "The baseline allowance is set by territory, and that is where a Fresno bill differs from one elsewhere in PG&E's territory. PG&E's Preliminary Statement Part A puts the part of Fresno County below 3,500 feet in baseline territory R, and the U.S. Geological Survey puts a point near the center of the city at about 310 feet. In territory R, E-1's basic baseline is 17.7 kWh a day in summer and 10.4 kWh a day in winter, or 19.9 and 26.7 kWh for an all-electric home.",
+        "A solar quote's savings estimate should say which of these schedules it assumes, because the same kWh is priced differently on each.",
+      ],
+      faq: {
+        question: 'What are electricity rates in Fresno?',
+        answer:
+          "Fresno is served by PG&E for both generation and delivery. Since June 1, 2026, PG&E's tiered E-1 schedule charges $0.32561 per kWh within the baseline allowance and $0.40702 above it, plus a base services charge of $0.79343 a day for households outside the two lower income tiers. Fresno sits in PG&E baseline territory R, where the basic summer allowance is 17.7 kWh a day and the winter allowance 10.4 kWh. The time-of-use schedule E-TOU-C charges $0.52240 per kWh from 4 to 9 p.m. in summer.",
+      },
+      sources: [
+        {
+          label: 'PG&E, Electric Schedule E-1, Residential Services (total bundled rates effective June 1, 2026, Advice 7921-E; baseline quantities by territory)',
+          url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-1.pdf',
+          verifiedAt: '2026-09-24',
+        },
+        {
+          label: 'PG&E, Electric Schedule E-TOU-C, Residential Time-of-Use (Peak Pricing 4-9 p.m. Every Day) (total bundled rates effective June 1, 2026, Advice 7921-E)',
+          url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-C.pdf',
+          verifiedAt: '2026-09-24',
+        },
+        {
+          label: 'PG&E, Electric Preliminary Statement Part A (baseline territories by county and elevation: Fresno County under 3,500 feet, territory R)',
+          url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_PRELIM_A.pdf',
+          verifiedAt: '2026-09-24',
+        },
+        {
+          label: 'U.S. Geological Survey, Elevation Point Query Service (Census internal point of the City of Fresno, 36.7829, -119.7936: about 310 feet)',
+          url: 'https://epqs.nationalmap.gov/v1/json?x=-119.7936074&y=36.7829379&wkid=4326&units=Feet&includeDate=false',
+          verifiedAt: '2026-09-24',
+        },
+        { ...PGE_CCA_LIST, verifiedAt: '2026-09-24' },
+        { ...CEC_SERVICE_TERRITORY_SOURCE, verifiedAt: '2026-09-24' },
+      ],
+    },
   },
   {
     slug: "grass-valley",
     city: "Grass Valley",
     county: "Nevada County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): the linked fee schedule is now quoted, as dated.
     cca: "Pioneer Community Energy",
+    ccaSource: PIONEER_ABOUT,
     permitUrl: "https://www.grassvalleyca.gov/pod/solarapp-submittals",
     permitFeeNote:
-      "Names a specific dollar amount: a \"$25 administration fee to use SolarAPP+.\" Notes \"Separate City fees for a solar permit are charged through the building permit application process\" (amount not stated on this page).",
-    permitFeeSource: "City of Grass Valley SolarAPP+ Submittals page",
+      "Grass Valley's SolarAPP+ page says applicants pay a $25 administration fee to SolarAPP+ and that separate City fees for a solar permit are charged through the building permit application. The fee schedule the Building page links is for fiscal year 2021/22, effective August 5, 2021, and lists residential solar at $373.00 with plan review and one final inspection; confirm the current amount with the City.",
+    permitFeeSource: "City of Grass Valley, SolarAPP+ Submittals",
+    permitSources: [
+      {
+        label: 'City of Grass Valley, Fee Schedule Fiscal Year 2021/2022 (Resolutions 2021-39 and 2021-44, effective August 5, 2021), item 238 Residential Solar',
+        url: 'https://www.grassvalleyca.gov/sites/main/files/file-attachments/fee_schedule_21-22_0.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes, online. SolarAPP+ is explicitly named; after SolarAPP+ approval, apply for the city permit via Accela Citizen Access selecting 'Express Permit' and uploading SolarAPP+ documentation.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. After SolarAPP+ approval, the permit is applied for in Accela Citizen Access under Express Permit applications, with the SolarAPP+ approval ID and documents uploaded, and inspections are scheduled in the same portal.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "hollister",
     city: "Hollister",
     county: "San Benito County",
     utilityKey: "pge",
+    // 2026-09-24 (Tier 3): the Building Division's current fee schedule,
+    // effective August 18, 2025, is a scanned PDF; its solar line was read by
+    // OCR and checked against the page image. CCA sourced to 3CE's own list.
     cca: "Central Coast Community Energy (3CE)",
+    ccaSource: CCE_MEMBERS,
     permitUrl: "https://hollister.ca.gov/government/development_services/solar_permits_for_photovoltaic_(pv)_systems_and_ev_charging_stations.php",
     permitFeeNote:
-      "The City's adopted Building Permit Fee Schedule (effective August 2022) includes a specific, separately-listed flat fee line item for a residential photovoltaic permit. The schedule is published as a scanned image PDF, and the dollar figure was not reliably machine-readable, so it is not reported here; consult the fee schedule PDF directly for the current amount.",
-    permitFeeSource: "City of Hollister Building Permit Fee Schedule (effective August 2022, PDF) - amount not machine-readable",
+      "Hollister's Building Division fee schedule, effective August 18, 2025, lists a flat $400.00 fee for a solar photovoltaic permit. The schedule marks it as subject to the state's Strong Motion Instrumentation fee and California Building Standards fee, both calculated on the project's valuation, and says 65 percent of a building permit fee is paid as a plan review deposit at submittal, with the rest at issuance. A standard reroof is a separate $495.00 permit.",
+    permitFeeSource: "City of Hollister, Solar Permits for Photovoltaic (PV) Systems and EV Charging Stations",
+    permitSources: [
+      {
+        label: "City of Hollister, Building Division Fee Schedule, effective August 18, 2025 (Solar - Photovoltaic; Standard Reroof; plan review deposit), linked as the Building Division 2025 Fee Schedule",
+        url: "https://hollister.ca.gov/Community%20Development%20Department/Building/Building%20Fee%20Schedule%202025.pdf",
+        verifiedAt: "2026-09-24",
+      },
+      {
+        label: "City of Hollister, Application Forms and Fees (Building Division forms and Permit Center submittal appointments)",
+        url: "https://hollister.ca.gov/government/departments/development_services/application_forms_and_fees.php",
+        verifiedAt: "2026-09-24",
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "Not yet available per the Building Division page, which lists \"Online Permitting (Coming Soon)\" as of fetch. SolarAPP+ is not mentioned on the city's solar permit page found.",
-    sourcesFetchedAt: "2026-09-18",
+      "No online solar route is described. Hollister's Building Division pages offer no online or automated permit filing: the City's solar page lists only the building permit application, and the forms page books submittal appointments with the Permit Center. The California Energy Commission's SB 379 data, which each city reports itself, lists Hollister as without a platform, with a September 2024 deadline.",
+    sourcesFetchedAt: "2026-09-24",
   },
   {
     slug: "lincoln",
@@ -712,14 +845,25 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Napa",
     county: "Napa County",
     utilityKey: "pge",
-    cca: "MCE (Marin Clean Energy)",
+    // 2026-09-23 (Tier 3): fee now quoted from the Master Fee Schedule
+    // effective July 1, 2025; CCA sourced to MCE's own member list.
+    cca: "MCE",
+    ccaSource: MCE_ABOUT,
     permitUrl: "https://www.cityofnapa.org/1037/Solar-PV",
     permitFeeNote:
-      "No dollar amount given on this page. States residential Solar & Battery Backup systems are handled \"over-the-counter by walk-in Monday-Thursday between 8:30am-3:30pm\"; the related Permits and Plan Review Information page notes rooftop PV under 10kW qualifies for expedited \"Express Review\" counter service and links to a separate Master Fee Schedule for actual fee amounts.",
-    permitFeeSource: "City of Napa Solar PV page and Permits and Plan Review Information page",
+      "Napa's Master Fee Schedule, effective July 1, 2025, lists a residential solar photovoltaic permit and inspection at $472, based on a 10 kW system and including the minimum electrical permit processing fee, and notes a maximum fee of $500. A Fire Prevention plan check review for a residential system, $85, is charged in addition.",
+    permitFeeSource: "City of Napa, Solar PV (Building Division)",
+    permitSources: [
+      {
+        label: 'City of Napa, Master Fee Schedule effective July 1, 2025 (2.2.47a Residential Solar Photovoltaic Permit & Inspection; 6.11.17 Fire Prevention plan check review)',
+        url: 'https://www.cityofnapa.org/Archive.aspx?ADID=245',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "Not indicated as available online on the pages found; described as in-person/walk-in submission. SolarAPP+ is not mentioned.",
-    sourcesFetchedAt: "2026-09-18",
+      "No. Residential solar and battery backup permits are handled over the counter, by walk-in, Monday through Thursday from 8:30 a.m. to 3:30 p.m., and no permit is issued without an active City of Napa business license. The California Energy Commission's SB 379 data lists the City of Napa as without an automated solar permitting platform.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "oceanside",
@@ -755,14 +899,24 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Petaluma",
     county: "Sonoma County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): re-read with the City's SolarAPP+ FAQ; CCA sourced
+    // to Sonoma Clean Power's own page.
     cca: "Sonoma Clean Power",
+    ccaSource: SCP_WHO,
     permitUrl: "https://cityofpetaluma.org/solar-permit/",
     permitFeeNote:
-      "Names a specific dollar amount: \"A $25 processing fee will be charged by the SolarAPP+ website.\" Separate city permit fees apply but are not itemized on this page (linked elsewhere as \"full list of requirements\").",
-    permitFeeSource: "City of Petaluma SolarApp+ Solar Permit page",
+      "Petaluma's SolarAPP+ page says SolarAPP+ charges a one-time $25.00 processing fee, which covers up to three revisions, and that the City's application fee is separate and the same as for a regular solar permit, without stating that amount. If the main panel is modified, the City also charges its Electrical Service, Meter Replacement fee.",
+    permitFeeSource: "City of Petaluma, SolarApp+ Solar Permit",
+    permitSources: [
+      {
+        label: 'City of Petaluma, SolarAPP+ Solar Permit FAQs (fees, panel upgrades, revisions)',
+        url: 'https://cityofpetaluma.org/solarapp-solar-permit-faqs/',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes, online. SolarAPP+ is explicitly named ('Submit your design here'); after SolarAPP+ approval, apply for the city permit online with the approval ID and supporting documents.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Licensed contractors registered with SolarAPP+ can permit a rooftop system on a permitted main dwelling the same day, then apply in the City's online permit portal with the SolarAPP+ approval ID, plans and contractor disclosure form. Ballasted systems, homes in a City flood zone and permit runners cannot use SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "rancho-cordova",
@@ -897,14 +1051,24 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "San Marcos",
     county: "San Diego County",
     utilityKey: "sdge",
+    // 2026-09-23 (Tier 3): the Development Fees schedule effective September
+    // 1, 2026 is now readable, so the fee is quoted from it.
     cca: "Clean Energy Alliance",
+    ccaSource: SDGE_ACTIVE_CCAS,
     permitUrl: "https://www.sanmarcosca.gov/Business-Services/Building-Division/Solar-Permits",
     permitFeeNote:
-      "The City instructs contractors to pay the processing fee for SolarAPP+ but publishes no dollar figure on that page; it points to a separate Development Service Fees schedule, which did not return the document when checked. Ask the City for the current figure rather than assuming the SolarAPP+ charge is the whole of it.",
-    permitFeeSource: "City of San Marcos Solar Permits page (sanmarcosca.gov)",
+      "San Marcos's Development Fees schedule, effective September 1, 2026, lists a residential solar system on a roof at $57 for plan check plus $67 for the permit, $124 in all, and an energy storage system at $52. A carport with solar is $980 for plan check plus $454 for the permit. SolarAPP+ charges its own processing fee.",
+    permitFeeSource: "City of San Marcos, Solar Permits (Building Division)",
+    permitSources: [
+      {
+        label: 'City of San Marcos, Development Fees, effective September 1, 2026 (Building: Residential Solar System on Roof; Carport w/ Solar; Electrical: Energy storage system)',
+        url: 'https://www.sanmarcosca.gov/files/assets/city/v/2/development-svs/fees/development-fees-schedule-september-2026.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes, online - homeowners select \"Roof Mounted Solar PV Expedited\" in the online portal, contractors use SolarAPP+; SolarAPP+ named",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. A homeowner can use the City's standard central-inverter or micro-inverter plans and apply online under \"Roof Mounted Solar PV Expedited\", which the City estimates at 1-3 business days. Contractors use SolarAPP+, need a City of San Marcos business license and attach a permit declaration form in the City's online permitting system, without which no inspection can be scheduled. Systems that qualify for neither submit full plans online, estimated at 5-10 business days.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "santa-cruz",
@@ -1000,27 +1164,38 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Tulare",
     county: "Tulare County",
     utilityKey: "sce",
+    // 2026-09-23 (Tier 3): re-read. The City's fee pages now load; the Master
+    // Fee Schedule they link has no solar line, so the note says so.
     permitUrl: "https://www.tulare.ca.gov/government/departments/community-development/building/solar-app",
     permitFeeNote:
-      "Page states \"A processing fee from SolarAPP+ and City of Tulare permit fees will be charged\" but gives no dollar amount; page directs applicants to call (559) 684-4218 for a permit fee estimate. The City's separate Fee Schedule page (tulare.ca.gov/business/fee-schedule) returned a 403/access error on fetch, so the dollar figure could not be independently verified",
-    permitFeeSource: "City of Tulare Solar APP+ page (fee schedule PDF link blocked \u2014 403)",
+      "Tulare's SolarAPP+ page says a SolarAPP+ processing fee and City of Tulare permit fees will be charged but states neither amount, and the City's Master Fee Schedule adopted May 17, 2022, the one its fee page links, has no separate solar line. Ask the Building Division for the City's figure.",
+    permitFeeSource: "City of Tulare, Solar App+ for Solar Installers",
+    permitSources: [
+      {
+        label: 'City of Tulare, Master Fee Schedule adopted May 17, 2022 (2022-2023 schedule; no solar line)',
+        url: 'https://www.tulare.ca.gov/home/showpublisheddocument/19310/637943585895770000',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "yes \u2014 SolarAPP+ named on page (\"SolarAPP+ is designed to provide a code-compliance check for... residential, roof-mounted, retrofit photovoltaic systems\"); applicant receives City permit number by email within 24 business hours",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Eligible residential, roof-mounted retrofit systems go through SolarAPP+, and the City emails its permit number within 24 business hours for scheduling inspections, which can be requested for a morning or afternoon slot but are not guaranteed for it.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "ventura",
     city: "Ventura",
     county: "Ventura County",
     utilityKey: "sce",
+    // 2026-09-23 (Tier 3): re-read; CCA sourced to SCE's list.
     cca: "Clean Power Alliance",
+    ccaSource: SCE_CCA_LIST,
     permitUrl: "https://www.cityofventura.ca.gov/2554/Contractor-Solar-Permits-SB-379",
     permitFeeNote:
-      "Page describes an automated permitting partnership with Symbium (not SolarAPP+): \"Permit applications submitted using Symbium will be issued in real time, in a matter of minutes.\" Payment happens through Symbium during application, but no dollar fee amounts are published on this page or on the related Photovoltaic Information page.",
-    permitFeeSource: "City of Ventura Contractor Solar Permits (SB-379) page",
+      "Ventura's Contractor Solar Permits page says Symbium's processing fee is non-refundable but states no dollar amount for it or for the City's own permit, so ask the installer what the City permit line in a quote covers.",
+    permitFeeSource: "City of Ventura, Contractor Solar Permits (SB 379)",
     permitOnline:
-      "Yes, real-time online issuance via Symbium for eligible residential systems up to 38.4 kW AC, for licensed A/B/C-10/C-46 contractors with a Ventura business license, submitted through Ventura OPS. SolarAPP+ is not mentioned/used.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Licensed contractors holding an A, B, C-10 or C-46 license and an active Ventura business license can permit a residential solar system up to 38.4 kW AC, including energy storage, through Symbium in real time, then view and print the permit in Ventura OPS. Inspections must be requested by 5 p.m. the business day before and are made between 8:30 a.m. and 3 p.m. Systems outside Symbium can still be filed the traditional way.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "walnut-creek",
@@ -1080,13 +1255,15 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Yucaipa",
     county: "San Bernardino County",
     utilityKey: "sce",
+    // 2026-09-23 (Tier 3): re-read; the platform is now sourced to the CEC.
     permitUrl: "https://yucaipa.gov/building-safety/",
     permitFeeNote:
-      "The City has no dedicated solar or SolarAPP+ page. Building & Safety points residents to the general Yucaipa Permit Exchange portal and its fee estimator, and the Comprehensive User Fee Schedule did not return the document when checked, so no photovoltaic line item could be confirmed. Use the City's own estimator, or ask Building & Safety, for the current figure.",
-    permitFeeSource: "City of Yucaipa Building & Safety page (yucaipa.gov); fee schedule PDF inaccessible",
+      "Yucaipa publishes no solar permit fee. Its Building & Safety page points to a permit fee estimator in the Yucaipa Permit Exchange portal rather than a fee schedule for solar, so use the estimator or ask Building & Safety for the City's figure. SolarAPP+, where used, charges its own processing fee.",
+    permitFeeSource: "City of Yucaipa, Building & Safety (Permit Center)",
+    permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "Yes for permits generally, through the Yucaipa Permit Exchange portal. The City's pages do not state whether solar has a dedicated or automated path, and SolarAPP+ is not mentioned.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes for permits generally: the Yucaipa Permit Exchange portal takes applications, payments and inspection requests. The City's pages do not describe a solar-specific route; the California Energy Commission's SB 379 data, which each city reports itself, lists Yucaipa's platform as SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
   },
   // Added 2026-09-18 from the re-screen pass: 5 AMBER cities that flipped GREEN
   // on an alternate phrasing, 5 confirmed AMBER, and the three cities whose
@@ -1098,14 +1275,23 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Auburn",
     county: "Placer County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): fee now quoted from the FY 2026-27 schedule.
     cca: "Pioneer Community Energy",
+    ccaSource: PIONEER_ABOUT,
     permitUrl: "https://www.auburn.ca.gov/700/Symbium-Permits",
     permitFeeNote:
-      "The Solar Photovoltaic Submittal Guidelines state Auburn \"encourages the installation of solar photovoltaic systems through low permit fees\" but neither that document nor the Symbium Permits page gives an actual dollar amount.",
-    permitFeeSource: "City of Auburn Symbium Permits page / Solar Photovoltaic Submittal Guidelines",
+      "Auburn's Adopted Fee Schedule for fiscal year 2026-27, dated July 1, 2026, lists a residential solar photovoltaic permit, ground or roof mounted, at $347 for 15 kW or less and at $450 plus $15 per kW above 15 kW for a larger system, with inspection and plan review included and permit processing fees added. A residential battery backup storage permit and a residential service panel upgrade are $174 each.",
+    permitFeeSource: "City of Auburn, Symbium Permits",
+    permitSources: [
+      {
+        label: 'City of Auburn, Adopted Fee Schedule FY 2026-27 (Building Fees A.7 Battery Backup Storage; A.10 Residential Solar Photovoltaic System)',
+        url: 'https://www.auburn.ca.gov/DocumentCenter/View/4398/Auburn---Adopted-Fee-Schedule---FY-2627',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes: the Symbium Permits page describes a two-step process \u2014 apply and pay fees through the Symbium portal for instantaneous plan review, then apply for the permit type \"Online Residential Solar Permit (Symbium)\" through the city's Civic Access system. SolarAPP+ is not named \u2014 Auburn uses Symbium instead.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Auburn uses Symbium, not SolarAPP+: the applicant files and pays in Symbium for instantaneous plan review, then applies in the City's Civic Access portal for an Online Residential Solar Permit (Symbium), uploading the Symbium approval, inspection checklist and plans, and the permit issues once paid.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "beaumont",
@@ -1139,14 +1325,30 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Encinitas",
     county: "San Diego County",
     utilityKey: "sdge",
+    // 2026-09-23 (Tier 3): re-read; the fee-waiver flyer's terms are now
+    // stated, the CCA is sourced to SDG&E's list and the platform to the CEC.
     cca: "San Diego Community Power",
+    ccaSource: SDGE_ACTIVE_CCAS,
     permitUrl: "https://www.encinitasca.gov/government/departments/applications-and-information/solar-photovoltaic-permit-application",
     permitFeeNote:
-      "The page does not give a dollar amount. It links to an \"Energy Efficiency Permit Fee Waiver Flyer\" described as \"information regarding waiver or reduction of permit fees for solar systems and electric vehicle charging systems,\" but the flyer's specific terms are not quoted on the page itself.",
-    permitFeeSource: "City of Encinitas Solar Photovoltaic Permit Application page",
+      "Encinitas publishes no dollar figure for a solar permit. Its Solar Photovoltaic Permit Application page links an Energy Efficiency Permit Fee Waiver flyer, which says the City and EsGil Corporation waive permitting fees for basic home solar photovoltaic installations and reduce them by an equivalent amount for larger or more complex ones. The flyer carries no date, so confirm with Development Services at (760) 633-2710 that it still applies.",
+    permitFeeSource: "City of Encinitas, Solar Photovoltaic Permit Application",
+    permitSources: [
+      {
+        label: 'City of Encinitas, Energy Efficiency Permit Fee Waiver flyer (undated)',
+        url: 'https://www.encinitasca.gov/home/showpublisheddocument/5146/638065976521930000',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of Encinitas, Small Solar Energy Systems (Ordinance 2015-13, Municipal Code Chapter 23.13)',
+        url: 'https://www.encinitasca.gov/government/departments/development-services/land-development-building/building/small-solar-energy-systems',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "Yes, online: submittal documents are uploaded through the City's Customer Self Service (CSS) portal (registration required). SolarAPP+ is not named on this specific page.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Solar applications and their required documents go through the City's Customer Self Service (CSS) portal, which needs registration, and the City's standard plans cover central-inverter and micro-inverter systems up to 10 kW. The City's pages do not name SolarAPP+; the California Energy Commission's SB 379 data, which each city reports itself, lists Encinitas's platform as SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "los-angeles",
@@ -1160,6 +1362,30 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes for qualifying residential rooftop PV (\u226410kW): per the bulletin, licensed-contractor Express Permits for these systems are issued only online through the LADBS website (dbs.lacity.gov). SolarAPP+ is not named in this bulletin.",
     sourcesFetchedAt: "2026-09-18",
+    // 2026-09-23 (Tier 3 city-cost wave): the "solar panel cost van nuys" and
+    // "solar panel cost wilmington" topics are answered here rather than on
+    // their own pages, because both are communities inside the City of Los
+    // Angeles with the same permit office and utility as the rest of the city.
+    permitSources: [
+      {
+        label: 'City of Los Angeles Planning, Van Nuys - North Sherman Oaks Community Plan (a community plan area of the City)',
+        url: 'https://planning.lacity.gov/plans-policies/community-plan-area/van-nuys-north-sherman-oaks',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of Los Angeles Planning, Wilmington - Harbor City Community Plan (a community plan area of the City)',
+        url: 'https://planning.lacity.gov/plans-policies/community-plan-area/wilmington-harbor-city',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SERVICE_TERRITORY_SOURCE_0923,
+    ],
+    extraFaqs: [
+      {
+        question: 'Does solar cost differ in Van Nuys or Wilmington?',
+        answer:
+          "Not because of the neighborhood. Van Nuys and Wilmington are not separate cities: each sits in a community plan area of the City of Los Angeles, so the permit rules above apply there, and the California Energy Commission's service-territory map places both in LADWP's territory rather than SCE's. No public source prices an installation for either community. What changes a quote is the house itself: the roof, the main panel, shade and whether a battery is included.",
+      },
+    ],
   },
   {
     slug: "ontario",
@@ -1204,14 +1430,17 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Rocklin",
     county: "Placer County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): re-read; CCA sourced to Pioneer's own list.
     cca: "Pioneer Community Energy",
+    ccaSource: PIONEER_ABOUT,
     permitUrl: "https://www.rocklin.ca.us/online-solar-permitting",
     permitFeeNote:
-      "The page states: \"SolarAPP+ is an additional $25.00 paid directly to SolarAPP+.\" This is the SolarAPP+ processing fee; the city's own building permit fee is separate and not quantified on this page.",
-    permitFeeSource: "City of Rocklin Online Solar Permitting page",
+      "Rocklin's Online Solar Permitting page says SolarAPP+ costs an additional $25.00, paid directly to SolarAPP+, and that City of Rocklin permit fees and inspections apply, without stating the City's amount.",
+    permitFeeSource: "City of Rocklin, Online Solar Permitting",
+    permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "Yes: \"licensed contractors may complete an application first using SolarAPP+ in lieu of submitting construction plans and other required supplemental technical documentation.\" SolarAPP+ is explicitly named.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Licensed contractors can apply through SolarAPP+ in place of submitting plans, then file the permit application online through eTRAKiT or at the Permit Center and schedule inspections in eTRAKiT or by phone. Owner-builders and projects that include an energy storage system are not eligible for SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "seaside",
@@ -1289,27 +1518,31 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Windsor",
     county: "Sonoma County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): re-read; CCA sourced to Sonoma Clean Power.
     cca: "Sonoma Clean Power",
+    ccaSource: SCP_WHO,
     permitUrl: "https://www.townofwindsor.ca.gov/1570/Residential-Solar-Applications",
     permitFeeNote:
-      "The page does not give a dollar figure. It states Symbium's platform will \"instantaneously check for code compliance, collect a service fee, and direct the applicant back to the Town's eTRAKiT system for permit issuance,\" where the Town's own building permit fee is then assessed (amount not stated on this page).",
-    permitFeeSource: "Town of Windsor Residential Solar Applications page (Building Division)",
+      "Windsor's Residential Solar Applications page says Symbium collects a service fee before sending the applicant to the Town's eTRAKiT system for the permit, but it states neither that fee nor the Town's own permit fee.",
+    permitFeeSource: "Town of Windsor, Residential Solar Applications (Building Division)",
+    permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "Yes: \"The Town has partnered with Symbium to provide an automated permitting platform that automatically checks applications for code compliance and allows for instant permit approval for residential solar and energy storage systems.\" SolarAPP+ is not named \u2014 Windsor uses Symbium, and applicants are routed to the Town's eTRAKiT system for permit issuance.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. The Town's Symbium platform checks residential solar and energy storage applications for code compliance and allows instant permit approval, with the permit issued in eTRAKiT. Applications can still be sent by email or in person, with plan review of 1-3 business days, and every contractor needs an active Town business license before a permit issues.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "yuba-city",
     city: "Yuba City",
     county: "Sutter County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): re-read and reworded; no CCA per PG&E's list.
     permitUrl: "https://www.yubacity.net/departments/development_services/solar_app.php",
     permitFeeNote:
-      "The page states \"A processing fee from SolarAPP+ will be charged\" for the automated review service but does not specify the dollar amount; it separately notes \"The City will review the application and invoice the building permit fees,\" again without an amount.",
-    permitFeeSource: "City of Yuba City Solar APP+ page",
+      "Yuba City's SolarAPP+ page says SolarAPP+ charges a processing fee and that the City reviews the application and invoices the building permit fees, without stating either amount.",
+    permitFeeSource: "City of Yuba City, Solar APP+",
     permitOnline:
-      "Yes: \"Log in and submit your design through the SolarAPP+ Webpage\" (gosolarapp.org), then \"creating a Building Permit Application Through the City's Online Citizen Portal.\" SolarAPP+ is explicitly named.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. After SolarAPP+ approval, the contractor applies through the City's Accela Citizen Portal; the City invoices the permit fees and issues the permit once they are paid. Inspections are requested in the portal, or by phone by 5 p.m. the business day before, for a morning or afternoon slot.",
+    sourcesFetchedAt: "2026-09-23",
   },
   // ---------------------------------------------------------------------------
   // Added 2026-09-23, Tier 2 city-cost wave. Each city's search impressions for
@@ -1707,6 +1940,473 @@ export const CITY_COST_ROWS: CityCostRow[] = [
       },
     ],
   },
+  // ---------------------------------------------------------------------------
+  // Added 2026-09-23, Tier 3 city-cost wave. Each row answers a "solar panel
+  // cost <city>" cluster that passed a California page-one check that day.
+  // Every field was fetched that day from the city, the utility, the CCA or
+  // the CEC; the serving utility was checked against the CEC service-territory
+  // layer overlaid on the Census TIGERweb city boundary.
+  // ---------------------------------------------------------------------------
+  {
+    slug: 'concord',
+    city: 'Concord',
+    county: 'Contra Costa County',
+    utilityKey: 'pge',
+    cca: 'MCE',
+    ccaSource: MCE_ABOUT,
+    permitUrl: 'https://www.cityofconcord.org/718/Solar-PV-Projects',
+    permitFeeNote:
+      "Concord's Building Division fee schedule (Resolution 26.6042.1, last adopted April 28, 2026) prices a residential SolarAPP+ permit, up to 38.4 kW, at a $70 administrative fee plus a $380 inspection fee, and a residential permit reviewed from drawings at $70 plus $115 for plan review and $265 for inspection; both come to $450 for a system up to 15 kW and rise per kW above that. Inspecting a main service panel upgrade adds $192. The schedule says the City's administrative, technology and General Plan fees do not apply to solar permits. SolarAPP+ charges its own processing fee.",
+    permitFeeSource: 'City of Concord, Solar PV Projects',
+    permitSources: [
+      {
+        label: 'City of Concord, Building Division and Building Permit Fees (Exhibit A, Resolution 78 6042; Res. No. 26.6042.1, last adopted April 28, 2026), section 6, Solar Energy System Permits',
+        url: 'https://www.cityofconcord.org/DocumentCenter/View/2580/Building-Permit-Fees-Schedule-PDF',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      'Yes. All residential rooftop applications go through the City\'s Permit Portal. Contractors can use SolarAPP+ and apply under the "Solar PV (Solar APP)" permit type; otherwise the design comes from a design professional or from the City\'s standardized central-inverter and micro-inverter plans, filed under "Solar PV".',
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'richmond',
+    city: 'Richmond',
+    county: 'Contra Costa County',
+    utilityKey: 'pge',
+    cca: 'MCE',
+    ccaSource: MCE_ABOUT,
+    permitUrl: 'https://www.richmondca.gov/4174/SolarAPP-For-Solar-Installers',
+    permitFeeNote:
+      "Richmond's Master Fee Schedule for fiscal year 2026-27, which the City lists as effective July 23, 2026, sets the building fee for a residential solar system (Solar Structure - Residential System) at $450. SolarAPP+ charges its own processing fee, which the City's page does not state.",
+    permitFeeSource: 'City of Richmond, SolarAPP+ For Solar Installers',
+    permitSources: [
+      {
+        label: 'City of Richmond, Master Fee Schedule FY 2026-27 (Community Development - Building Permits: Solar Structure - Residential System)',
+        url: 'https://www.ci.richmond.ca.us/DocumentCenter/View/80176',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of Richmond, Residential Solar Systems (standard plans and expedited eligibility checklist)',
+        url: 'https://www.ci.richmond.ca.us/2771/Residential-Solar-Systems',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Eligible residential, roof-mounted retrofit systems go through SolarAPP+, and the City's iMS system creates an instant permit once the contractor's CSLB license and Richmond business tax certificate are current and the SolarAPP+ approval and signed permit application are uploaded under the names the City specifies. A home on the Richmond Historic Register needs a certificate of appropriateness from the Planning Division before the SolarAPP+ application.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'berkeley',
+    city: 'Berkeley',
+    county: 'Alameda County',
+    utilityKey: 'pge',
+    cca: 'Ava Community Energy',
+    ccaSource: AVA_COMMUNITIES,
+    permitUrl: 'https://berkeleyca.gov/construction-development/permits-design-parameters/permit-types/solar-permits',
+    permitFeeNote:
+      "Berkeley's Planning and Development Fee Schedule, effective July 1, 2025, lists a residential solar permit filed through SolarAPP+ at $100 per system. A residential system of 15 kW or less that goes through City review is $200 with plan check included, and a larger one is $250 plus $15 per kW above 15 kW. A residential energy storage system up to 50 kW in aggregate is $150. The same schedule adds a 5 percent technology enhancement fee to building and electrical permit fees.",
+    permitFeeSource: 'City of Berkeley, Solar Permits',
+    permitSources: [
+      {
+        label: 'City of Berkeley, Planning and Development Fee Schedule, effective July 1, 2025 (V. Electrical Permits: Solar/Photovoltaic Residential; Energy Storage System; XIV. Technology Enhancement Fee)',
+        url: 'https://berkeleyca.gov/sites/default/files/2026-04/City%20of%20Berkeley%20Planning%20and%20Development%20Fee%20Schedule%20July%202025.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. A rooftop system with or without storage on a single-family home or duplex can get a real-time permit through SolarAPP+ and a record in Berkeley's Permits Online. A system of 10 kW AC or less that passes the City's eligibility checklist can use the streamlined process instead, online or by appointment, and other projects go through the standard process, which the City says is reviewed within one working day.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'santa-clara',
+    city: 'Santa Clara',
+    county: 'Santa Clara County',
+    utilityKey: 'svp',
+    permitUrl: 'https://www.santaclaraca.gov/our-city/departments-a-f/community-development/building-division/solarapp',
+    permitFeeNote:
+      "Santa Clara's Municipal Fee Schedule for fiscal year 2026/27, adopted April 21, 2026, lists a residential photovoltaic building permit at $450 for 15 kW or less plus $15 for each kW above, citing Government Code section 66015, and a separate Fire Prevention construction-permit fee of $463 for a residential solar photovoltaic power system. The schedule marks both as subject to its 3.37 percent technology fee. SolarAPP+ charges its own processing fee.",
+    permitFeeSource: 'City of Santa Clara, SolarAPP+ (Building Division)',
+    permitSources: [
+      {
+        label: 'City of Santa Clara, FY 2026/27 Municipal Fee Schedule, adopted April 21, 2026 (Building: Photovoltaic - Residential; Fire / Construction Permits: Solar Photovoltaic Power Systems - Residential)',
+        url: 'https://www.santaclaraca.gov/home/showpublisheddocument/86787/639046974163330000',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. Licensed contractors can permit an eligible project through SolarAPP+, with energy storage limited to one battery of no more than 20 kWh, and must include Silicon Valley Power's interconnection agreement pre-approval letter. Projects that do not qualify are filed through the City's Permitting Online Portal (POP). The City inspects the installation either way.",
+    sourcesFetchedAt: '2026-09-23',
+    extraFaqs: [
+      {
+        question: 'Is net metering still available in Santa Clara?',
+        answer:
+          "Yes, for now. Silicon Valley Power, not PG&E, serves the city, and its Rate Schedule NM offers net metering under Public Utilities Code section 2827. SVP says it has not reached the 5 percent threshold in that section, after which a utility of its size need not offer net metering to new customers, and that a successor tariff, if the City Council adopts one, may be priced differently from NEM 2.0 or NEM 3.0 elsewhere. Solar quotes written for PG&E's Solar Billing Plan do not apply to an SVP account.",
+      },
+    ],
+  },
+  {
+    slug: 'san-clemente',
+    city: 'San Clemente',
+    county: 'Orange County',
+    utilityKey: 'sdge',
+    permitUrl: 'https://www.sanclemente.gov/258/Permits',
+    permitFeeNote:
+      "San Clemente's Solar Permit Fees sheet lists a residential photovoltaic permit at $400 for a system up to 15 kW plus $15 for each kW above 15 kW. The City's submittal bulletin for systems of 10 kW or less adds a plan check fee of 25 percent of the electrical permit fee and calls $450 typical for most solar systems. Neither document carries a date, so confirm the amount with the Building Division. SolarAPP+ charges its own $25 processing fee.",
+    permitFeeSource: 'City of San Clemente, Permits (Solar/Photovoltaic Permits)',
+    permitSources: [
+      {
+        label: 'City of San Clemente, Solar Permit Fees (undated)',
+        url: 'https://www.sanclemente.gov/DocumentCenter/View/660',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of San Clemente, Submittal Requirements Bulletin: Solar Photovoltaic Installations 10 kW or Less in One- and Two-Family Dwellings (undated)',
+        url: 'https://www.sanclemente.gov/DocumentCenter/View/666/SC-Solar-PV-Step-1-Submittal-Requirements-PDF',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Licensed contractors registered with SolarAPP+ can permit a rooftop system on a permitted main dwelling, not ballasted, and upload the approval and plans to the City's eTRAKiT portal; permit runners may not request SolarAPP+ permits. Other solar applications are emailed to the Building Division as PDFs.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'clovis',
+    city: 'Clovis',
+    county: 'Fresno County',
+    utilityKey: 'pge',
+    permitUrl: 'https://www.clovisca.gov/services/planning_development/building/index.php',
+    permitFeeNote:
+      "Clovis's Building Division page says residential roof-mounted and ground-mounted photovoltaic permits have their own fee structure, but neither that page nor the City's solar submittal documents state the amount. Ask the Building Division, or the installer, for the City's figure. SolarAPP+ charges its own processing fee.",
+    permitFeeSource: 'City of Clovis, Building Division (Solar Information)',
+    permitSources: [
+      {
+        label: 'City of Clovis, Eligibility List for SolarAPP+ residential roof-mounted photovoltaic systems',
+        url: 'https://www.clovisca.gov/documents/Services/Planning%20Development/Building/Photovoltaic-System-Eligibility-List.pdf',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of Clovis, Residential Roof-Mounted Photovoltaic Submittal Requirements (Rev. 05-24-2024)',
+        url: 'https://www.clovisca.gov/documents/Services/Planning%20Development/Building/Photovoltaic%20Minimum%20Submittal%20Requirements%20for%20Roof%20Mounted%20Systems%202025.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Since September 30, 2023 there are three routes: plans filed in person, plans filed online through the City's CSS portal, or a SolarAPP+ application through the same portal. SolarAPP+ is for contractors only, so an owner-builder uses one of the first two.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'lakewood',
+    city: 'Lakewood',
+    county: 'Los Angeles County',
+    utilityKey: 'sce',
+    permitUrl: 'https://www.lakewoodca.gov/Development-Services/Building/Solar-Permitting-for-Homes',
+    permitFeeNote:
+      "Lakewood's Building Permits page says the City charges Los Angeles County's Building and Safety fee schedules plus an 18 percent overhead charge under City Council Resolutions 2010-22 and 2012-42, and that those fees rose 3 percent on July 1, 2025. The County electrical fee schedule it links did not open when checked, so no solar figure is quoted here. SolarAPP+ charges its own processing fee, which covers up to three revisions.",
+    permitFeeSource: 'City of Lakewood, Solar Permitting for Homes',
+    permitSources: [
+      {
+        label: 'City of Lakewood, Building Permits (permit fee schedules; 18% overhead charge on the County fee schedule)',
+        url: 'https://www.lakewoodca.gov/Development-Services/Building/Building-Permits',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Licensed contractors submit eligible rooftop solar and storage through SolarAPP+, then pay the remaining City fees when prompted and print the permit. A system that does not qualify follows the City's submittal checklist and goes through the Online Permit Center. Inspections are requested by phone or by email to the inspection address the City lists.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'elk-grove',
+    city: 'Elk Grove',
+    county: 'Sacramento County',
+    utilityKey: 'smud',
+    permitUrl: 'https://www.elkgrovecity.org/departments-and-divisions/building-safety-inspection-and-permits',
+    permitFeeNote:
+      "Elk Grove's Building Safety, Inspection and Permits page does not publish a solar permit fee, so ask the Building Division or the installer for the City's figure before comparing quotes. If the job goes through SolarAPP+, SolarAPP+ charges its own processing fee.",
+    permitFeeSource: 'City of Elk Grove, Building Safety, Inspection and Permits',
+    permitSources: [CEC_SB379_DATA],
+    permitOnline:
+      "Yes. Elk Grove's Building Division requires electronic submittals for permit applications and related documents. Its page does not describe a solar-specific route; the California Energy Commission's SB 379 data, which each city reports itself, lists Elk Grove's platform as SolarAPP+.",
+    sourcesFetchedAt: '2026-09-23',
+    extraFaqs: [
+      {
+        question: 'How does SMUD pay for solar exports in Elk Grove?',
+        answer:
+          "Elk Grove is SMUD territory, not PG&E, so PG&E's Solar Billing Plan does not apply. A home approved to install solar on or after March 1, 2022 goes on SMUD's Solar and Storage Rate, which since June 1, 2026 pays 9.6 cents per kWh for exported power regardless of time of day or season. The customer stays on SMUD's Time-of-Day (5-8 p.m.) rate, credits carry over to later bills, and SMUD charges a one-time fee to connect a new system.",
+      },
+    ],
+  },
+  {
+    slug: 'mission-viejo',
+    city: 'Mission Viejo',
+    county: 'Orange County',
+    utilityKey: 'sce',
+    permitUrl: 'https://cityofmissionviejo.org/departments/community-development/building-services',
+    permitFeeNote:
+      "Mission Viejo's Master Fee Schedule for building fees, effective April 1, 2023, which the Building Services page links, sets a residential solar system up to and including 15 kW at $450 and adds $15 for each kW above 15 kW, citing AB 1414. Where SolarAPP+ is used, it charges its own processing fee.",
+    permitFeeSource: 'City of Mission Viejo, Building Services',
+    permitSources: [
+      {
+        label: 'City of Mission Viejo, Master Fee Schedule, Building Fees, effective April 1, 2023 (14a-14b, Residential Solar Systems)',
+        url: 'https://www.missionviejo.gov/sites/default/files/building-fee-schedule-4-1-23.pdf',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. All permits and inspections in Mission Viejo are submitted and scheduled online through the City's Client Self Service portal, and every contact listed on a permit needs an account there. Inspections are next business day when requested by 4 p.m. The City's page does not describe a solar route; the California Energy Commission's SB 379 data lists Mission Viejo's platform as SolarAPP+.",
+    sourcesFetchedAt: '2026-09-23',
+    utilitySplit: {
+      others: 'SDG&E',
+      note:
+        "The California Energy Commission's service-territory map places about 72 percent of Mission Viejo in Southern California Edison's territory and about 28 percent, in the southern part of the city, in San Diego Gas & Electric's. Read the utility name on your bill before using either utility's rate.",
+      sources: [CEC_SERVICE_TERRITORY_SOURCE_0923],
+    },
+  },
+  {
+    slug: 'victorville',
+    city: 'Victorville',
+    county: 'San Bernardino County',
+    utilityKey: 'sce',
+    permitUrl: 'https://www.victorvilleca.gov/Government/City-Departments/Building/SolarApp-Automated-Solar-Plan-Reviews',
+    permitFeeNote:
+      "Victorville's Stand Alone Permits Fee Calculation Chart, updated January 8, 2026, lists a residential photovoltaic system up to 15 kW at $372.00 and a commercial system up to 50 kW at $1,000.00. The City's SolarAPP+ page says SolarAPP+ charges its own processing fee in addition to the City's permit fees.",
+    permitFeeSource: 'City of Victorville, SolarApp+ Automated Solar Plan Reviews',
+    permitSources: [
+      {
+        label: 'City of Victorville, Stand Alone Permits Fee Calculation Chart (updated January 8, 2026): Photovoltaic System (Residential up to 15kw)',
+        url: 'https://www.victorvilleca.gov/files/assets/city/v/1/building/documents/fees/stand_alone_fees_2026.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Eligible residential rooftop systems go through SolarAPP+, and the City then emails a Victorville permit number for scheduling inspections. Inspections can be booked in the City's Citizen Self Service portal until midnight before the requested day, or by phone with a live person by the business day before; the City does not take inspection requests by voicemail or email.",
+    sourcesFetchedAt: '2026-09-23',
+    utilitySplit: {
+      others: 'Victorville Municipal Utilities Services',
+      note:
+        "The California Energy Commission's service-territory map places Victorville in Southern California Edison's territory and also shows about 6 percent of the city's area, in its northern part, in the territory of Victorville Municipal Utilities Services. Read the utility name on your bill before using an SCE rate.",
+      sources: [CEC_SERVICE_TERRITORY_SOURCE_0923],
+    },
+  },
+  {
+    slug: 'glendale',
+    city: 'Glendale',
+    county: 'Los Angeles County',
+    utilityKey: 'gwp',
+    permitUrl:
+      'https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-pv-interconnection-and-nem-for-under-15-kw-cec-ac-residential-systems',
+    permitFeeNote:
+      "Glendale does not publish its solar permit fee. Under the City's process, Building and Safety reviews the plans after Glendale Water & Power approves the interconnection application and then contacts the contractor for payment, so ask the installer what the City permit line in a quote covers.",
+    permitFeeSource: 'Glendale Water & Power, Guide for Applying for PV Interconnection and NEM (residential systems under 15 kW CEC-AC)',
+    permitSources: [
+      {
+        label: 'Glendale Water & Power, Net Energy Metering (NEM) Program (changes effective November 1, 2023 and January 19, 2026; historic NEM compensation rates)',
+        url: 'https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-interconnection',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes, in two steps. The customer or contractor first files the interconnection application in GWP's PowerClerk portal, which GWP says it typically reviews in 3-5 business days; the full plan set then goes to Building and Safety through the Glendale Permits portal for building, electrical and fire review. The California Energy Commission's SB 379 data lists Glendale's platform as a custom one.",
+    sourcesFetchedAt: '2026-09-23',
+    extraFaqs: [
+      {
+        question: 'Does Glendale Water & Power still offer net metering?',
+        answer:
+          "Yes. GWP says it continues to make net energy metering available and credits excess generation to the account, although it no longer offers solar incentives. Since November 1, 2023, a system up to 10 kW CEC-AC is exempt from GWP's cap of 110 percent of the past 12 months' usage and may be paired with up to 30 kWh of storage. GWP's published NEM compensation rate for 2025 was $0.05639 per kWh. PG&E's and SCE's Solar Billing Plans do not apply to a GWP account.",
+      },
+    ],
+  },
+  {
+    slug: 'santa-barbara',
+    city: 'Santa Barbara',
+    county: 'Santa Barbara County',
+    utilityKey: 'sce',
+    cca: 'Santa Barbara Clean Energy',
+    ccaSource: SCE_CCA_LIST,
+    permitUrl: 'https://santabarbaraca.gov/services/construction-land-development/fee-information',
+    permitFeeNote:
+      "Santa Barbara's Building and Safety fee schedule for September 1, 2026 through August 31, 2027 lists a residential photovoltaic system of 15 kW or less at $450, plus $15 for each kW above 15 kW.",
+    permitFeeSource: 'City of Santa Barbara, Fee Information (Building & Safety)',
+    permitSources: [
+      {
+        label: 'City of Santa Barbara, Building and Safety Fees, effective September 1, 2026 through August 31, 2027 (Photovoltaic (PV) System, Residential)',
+        url: 'https://santabarbaraca.gov/sites/default/files/2026-08/FY27%20B%26S%20Fee%20Schedule%20-%20Print%20Ready%20FINAL_AOD.pdf',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of Santa Barbara, Photovoltaic System Requirements for AB 2188 Expedited Review (updated November 20, 2019)',
+        url: 'https://santabarbaraca.gov/sites/default/files/documents/Community%20Development/Electrical/City%20PV1%20System%20Requirements%20for%20AB2188%20Expedited%20Review.pdf',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. Applications, resubmittals and fees go through the City's Accela Citizen Access portal. A roof-mounted system of 10 kW AC or less on a one- or two-family home, no more than 10 inches above the roof and without battery storage, qualifies for the City's AB 2188 expedited review; anything else goes through standard review. The California Energy Commission's SB 379 data lists Santa Barbara's platform as a custom one.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'vacaville',
+    city: 'Vacaville',
+    county: 'Solano County',
+    utilityKey: 'pge',
+    permitUrl: 'https://www.cityofvacaville.gov/government/community-development/building/building-permits/apply-for-residential-solar-permits',
+    permitFeeNote:
+      "Vacaville's solar page does not state the permit fee. The City's fiscal year 2026-27 fee schedule includes a solar panels line, but the posted copy could not be read in a form that ties an amount to it, so no figure is quoted here. The City says refunds are generally not available for photovoltaic permits issued online.",
+    permitFeeSource: 'City of Vacaville, Apply for Residential Solar Permits',
+    permitSources: [
+      {
+        label: 'City of Vacaville, Service & Facility Fees FY 2026-27 (Building Plan Check & Inspection Fees)',
+        url: 'https://www.cityofvacaville.gov/home/showpublisheddocument/27043/639222220803330000',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Residential rooftop solar permits of any size are available online, and a solar permit includes a main panel change-out if one is wanted. The City's Symbium portal gives instantaneous plan review for qualifying solar and storage; other residential solar and battery applications go through eTRAKiT with plan review, which the City estimates at 1-3 business days.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'saratoga',
+    city: 'Saratoga',
+    county: 'Santa Clara County',
+    utilityKey: 'pge',
+    cca: 'Silicon Valley Clean Energy',
+    ccaSource: SVCE_ABOUT,
+    permitUrl: 'https://www.saratoga.ca.us/building',
+    permitFeeNote:
+      "Saratoga's Path to Permits guide lists fee assessment as a step after an application is filed in eTRAKiT, but the City's building pages reached did not state a solar permit fee. Ask the Building Division or the installer for the City's figure.",
+    permitFeeSource: "City of Saratoga, Path to Permits (Community Development)",
+    permitSources: [CEC_SB379_DATA],
+    permitOnline:
+      "Yes. Saratoga's Path to Permits guide sends building applications through the City's eTRAKiT portal. The City's pages reached do not describe a solar route; the California Energy Commission's SB 379 data, which each city reports itself, lists Saratoga's platform as Symbium.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'gilroy',
+    city: 'Gilroy',
+    county: 'Santa Clara County',
+    utilityKey: 'pge',
+    cca: 'Silicon Valley Clean Energy',
+    ccaSource: SVCE_ABOUT,
+    permitUrl: 'https://www.cityofgilroy.org/975/SolarApp-for-Residential-Solar-Installer',
+    permitFeeNote:
+      "Gilroy's SolarAPP+ page lists the City's solar photovoltaic permit fee at $450.00 for a residential system of 15 kW or less and $500.00 plus $15.00 per kW above 15 kW for a larger one. An energy storage system adds a $103.27 permit fee and a $146.77 Building Division inspection, and a system over 50 kWh also needs a $260.00 Fire Prevention inspection. SolarAPP+ charges its own processing fee, and a revision submittal is $137.03 plus hourly staff time.",
+    permitFeeSource: 'City of Gilroy, SolarApp+ for Residential Solar Installers',
+    permitSources: [CEC_SB379_DATA],
+    permitOnline:
+      "Yes. Eligible residential, roof-mounted retrofit systems go through SolarAPP+ for instant permitting. The City says a rooftop system of 38.4 kW or less needs a City building permit but no separate planning or fire review. Inspections are requested online or by email and are scheduled about 72 hours out.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'san-ramon',
+    city: 'San Ramon',
+    county: 'Contra Costa County',
+    utilityKey: 'pge',
+    cca: 'MCE',
+    ccaSource: MCE_ABOUT,
+    permitUrl: 'https://www.sanramon.ca.gov/our_city/departments_and_divisions/community_development/building_and_safety_services/solar_a_p_p_/',
+    permitFeeNote:
+      "San Ramon's Master Fee Schedule for fiscal year 2026-27 lists SolarAPP+ permit designs at $450 each, and a residential photovoltaic installation reviewed by the City at $566 for a system of 10 kW or less plus $17 per additional kW. A first residential battery is $396 and each additional battery $35. The schedule also lists an $89 permit issuance fee and a 4.60 percent technology surcharge among its additional building fees.",
+    permitFeeSource: 'City of San Ramon, SolarApp+ For Solar Installers',
+    permitSources: [
+      {
+        label: 'City of San Ramon, Master Fee Schedule FY26-27, Exhibit 1 (Flat Fees: Photovoltaic (PV) Installation; Residential Solar Energy Storage; Additional Fees)',
+        url: 'https://www.sanramon.ca.gov/our_city/permit_center/fee_resolution',
+        verifiedAt: '2026-09-24',
+      },
+    ],
+    permitOnline:
+      "Yes. Contractors with an active San Ramon business license who have been added to the City's SolarAPP+ eligibility list apply for an Electrical Photovoltaic (SolarAPP) permit in the City's CSS portal, pay and return the signed permit card; inspections are scheduled in the same portal.",
+    sourcesFetchedAt: '2026-09-24',
+  },
+  {
+    slug: 'redding',
+    city: 'Redding',
+    county: 'Shasta County',
+    utilityKey: 'reu',
+    permitUrl: 'https://www.cityofredding.gov/government/departments/redding_electric_utility/going_green/solar_photovoltaic_(pv)_program.php',
+    permitFeeNote:
+      "Redding's Master Fee Schedule for fiscal year 2025-26 lists a residential photovoltaic system of 7 to 15 kW at $450.00, and a system of 16 kW and up at $450.00 plus $15.00 for each kW above 15 kW; the schedule has no line for a smaller system. The fiscal year 2026-27 schedule, whose building permit fees take effect October 19, 2026, keeps both figures. A battery is permitted separately, under the schedule's alternative power source line: $187.50, rising to $193.00 when the new building fees take effect. Redding Electric Utility's own solar paperwork and Generator Number come before the City permit.",
+    permitFeeSource: 'Redding Electric Utility, Solar Photovoltaic (PV) Program',
+    permitSources: [
+      {
+        label: 'City of Redding, Adopted FY 2025-26 Master Fee Schedule (Building Division, Electric Permit Fees: Photo Voltaic Systems - Residential; Alternative Power Source Other Than Solar Permit)',
+        url: 'https://www.cityofredding.gov/Document%20Center/Departments/Finance/Accounting/Adopted%20FY%202025-26%20Master%20Fee%20Schedule.pdf',
+        verifiedAt: '2026-09-24',
+      },
+      {
+        label: 'City of Redding, Adopted FY 2026-27 Master Fee Schedule (development and building permit fees effective October 19, 2026, per the City\'s Master Fee Schedule page)',
+        url: 'https://www.cityofredding.gov/Document%20Center/Departments/Finance/Accounting/Adopted%20FY%202026-27%20Master%20Fee%20Schedule.pdf',
+        verifiedAt: '2026-09-24',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. The Building Division's Apply for a Permit link opens the City's EnerGov Self Service portal, but the City will not accept a solar building permit application until Redding Electric Utility has received every item on its Solar PV Checklist and issued a Generator Number. The California Energy Commission's SB 379 data lists Redding's platform as SolarAPP+.",
+    sourcesFetchedAt: '2026-09-24',
+    extraFaqs: [
+      {
+        question: 'How does Redding Electric Utility credit solar?',
+        answer:
+          "Redding is served by Redding Electric Utility, not PG&E, so PG&E's Solar Billing Plan does not apply. Under REU's Zero Net Energy Service, a solar home is billed monthly for the energy it uses at the applicable retail rate, and power it sends to the grid is credited at what REU calls the current value of solar. REU limits a home system to 1 kW DC for every 1,752 kWh used on site in the previous 12 months, so 12,000 kWh a year allows about 6.85 kW DC, and a system sized beyond on-site demand does not qualify as a net generator. REU's residential rate (E1) has been a $40.00 monthly fixed charge plus $0.1492 per kWh since January 1, 2025.",
+      },
+    ],
+  },
+  {
+    slug: 'redwood-city',
+    city: 'Redwood City',
+    county: 'San Mateo County',
+    utilityKey: 'pge',
+    cca: 'WestLight Energy (formerly Peninsula Clean Energy)',
+    ccaSource: WESTLIGHT_HOME,
+    permitUrl: 'https://www.redwoodcity.org/departments/community-development-and-transportation/building-inspection-code-enforcement/solarapp-automatic-permitting',
+    permitFeeNote:
+      "Redwood City's Master Fee Schedule for fiscal year 2026-27, effective July 1, 2026, lists a residential solar system of 15 kW or less at $450.00 and one of 16 kW or more at $450.00 plus $15.00 per kW. The same building fee table lists an electrical service permit of up to 200 amperes at $431.65 and a residential reroof at $645.25, and it adds a GIS maintenance and technology fee of 13 percent of the building permit fee without saying whether that applies to a solar permit.",
+    permitFeeSource: 'City of Redwood City, SolarAPP+ Automatic Permitting',
+    permitSources: [
+      {
+        label: 'City of Redwood City, Master Fee Schedule FY 2026-2027, effective July 1, 2026 (Building Inspection & Code Enforcement: Photovoltaic Solar Systems; Electrical Permit Fees, Services; Reroof; GIS maintenance/Technology Fee)',
+        url: 'https://www.redwoodcity.org/home/showpublisheddocument/31457/639191130428800000',
+        verifiedAt: '2026-09-24',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. Redwood City offers automatic solar permitting through SolarAPP+, and residential solar permits are then pulled through the City's eTRAKiT portal following its SolarAPP+ permitting guide. The California Energy Commission's SB 379 data lists Redwood City's platform as SolarAPP+.",
+    sourcesFetchedAt: '2026-09-24',
+  },
+  {
+    slug: 'cupertino',
+    city: 'Cupertino',
+    county: 'Santa Clara County',
+    utilityKey: 'pge',
+    cca: 'Silicon Valley Clean Energy',
+    ccaSource: SVCE_ABOUT,
+    permitUrl: 'https://www.cupertino.gov/Your-City/Departments/Community-Development/Building/Permits/Instant-Solar-Permit-SolarAPP',
+    permitFeeNote:
+      "Cupertino's building fee schedule (Resolution 26-047, fees effective July 1, 2026) lists a residential photovoltaic system up to 15 kW at $450, plus $15 for each kW above 15 kW. A battery energy storage system is $746 for up to three batteries and $439 for each additional one, and an electrical service of up to 200 amperes is $99. The schedule adds a 5.8 percent technology fee per permit. The City says the solar permit fee is an inspection fee that covers two inspections of the same item, and SolarAPP+ charges its own processing fee, currently $25.",
+    permitFeeSource: 'City of Cupertino, Instant Solar Permit - SolarAPP+',
+    permitSources: [
+      {
+        label: 'City of Cupertino, Fee Schedule - Building Fees (Resolution 26-047, fees effective July 1, 2026): Schedule D, Table 2 Services; Table 3 Photovoltaic System, Battery Energy Storage System and Technology Fee',
+        url: 'https://www.cupertino.gov/files/assets/city/v/1/departments/documents/community-development/building/forms-amp-handouts-amp-fees/fees/fee-schedule-building-fees.pdf',
+        verifiedAt: '2026-09-24',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Paused for now. Contractors registered with SolarAPP+ can normally get an Instant Solar Permit for a residential rooftop system, with or without storage and optionally with a main electrical service upgrade, by uploading the SolarAPP+ approval to the City's Citizen Access portal. On September 24, 2026 the City's page said the instant permit service is not available at this time due to an upgrade with its business license system, and that all permits must be submitted by email to the Permit Center.",
+    sourcesFetchedAt: '2026-09-24',
+    extraFaqs: [
+      {
+        question: 'Can I still get an instant solar permit in Cupertino?',
+        answer:
+          "Not at the moment. Cupertino's Instant Solar Permit runs through SolarAPP+ and the City's Citizen Access portal, but on September 24, 2026 the City's page said the service is not available during an upgrade of its business license system and that all permits must be submitted by email to the Permit Center. Ask the installer which route your permit is taking and how that affects the schedule. The City's fee schedule has one residential solar line, $450 up to 15 kW, and SolarAPP+ adds its own $25 processing fee when it is used.",
+      },
+    ],
+  },
 ];
 
 /**
@@ -1754,6 +2454,18 @@ export function unsourcedFields(row: CityCostRow): string[] {
     )
   ) {
     missing.push('extraFaqs');
+  }
+  if (row.localRates) {
+    const { heading, paragraphs, faq, sources } = row.localRates;
+    const texts = [heading, ...paragraphs, faq.question, faq.answer];
+    if (
+      paragraphs.length === 0 ||
+      texts.some((text) => text.trim() === '' || text.includes(UNSOURCED)) ||
+      sources.length === 0 ||
+      sources.some(badSource)
+    ) {
+      missing.push('localRates');
+    }
   }
   return missing;
 }

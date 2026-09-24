@@ -1,0 +1,896 @@
+{
+ "agent": "t3-citycost",
+ "branch": "claude/t3-citycost-20260923",
+ "pages": [
+  {
+   "path": "/solar-cost/concord",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Concord, CA: What Sets the Price (2026)",
+   "clusters": [
+    612
+   ],
+   "sources": [
+    "https://www.cityofconcord.org/718/Solar-PV-Projects",
+    "https://www.cityofconcord.org/DocumentCenter/View/2580/Building-Permit-Fees-Schedule-PDF",
+    "https://www.mcecleanenergy.org/about-us/",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://mcecleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + MCE; Concord's fee schedule (Res. 26.6042.1, adopted 2026-04-28) prices both the SolarAPP+ path ($70 + $380) and the drawings path ($70 + $115 + $265) at $450 up to 15 kW; panel upgrade inspection $192; admin/technology/General Plan fees excluded for solar. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/richmond",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Richmond, CA: What Sets the Price (2026)",
+   "clusters": [
+    645
+   ],
+   "sources": [
+    "https://www.richmondca.gov/4174/SolarAPP-For-Solar-Installers",
+    "https://www.ci.richmond.ca.us/2771/Residential-Solar-Systems",
+    "https://www.ci.richmond.ca.us/DocumentCenter/View/80176",
+    "https://www.mcecleanenergy.org/service-area/"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + MCE; FY 2026-27 MFS Solar Structure - Residential System $450; instant permit conditions (CSLB, business tax certificate, named uploads); historic-register certificate of appropriateness. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/berkeley",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Berkeley, CA: What Sets the Price (2026)",
+   "clusters": [
+    648
+   ],
+   "sources": [
+    "https://berkeleyca.gov/construction-development/permits-design-parameters/permit-types/solar-permits",
+    "https://berkeleyca.gov/sites/default/files/2026-04/City%20of%20Berkeley%20Planning%20and%20Development%20Fee%20Schedule%20July%202025.pdf",
+    "https://avaenergy.org/community/who-we-serve/",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + Ava; fee schedule effective 2025-07-01 (the newest the City posts): SolarAPP+ $100/system, City review $200 up to 15 kW, storage $150, 5% technology fee; three filing routes; Ava export bonuses. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/santa-clara",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Santa Clara Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    641
+   ],
+   "sources": [
+    "https://www.santaclaraca.gov/our-city/departments-a-f/community-development/building-division/solarapp",
+    "https://www.santaclaraca.gov/home/showpublisheddocument/86787/639046974163330000",
+    "https://www.siliconvalleypower.com/residents/rates-and-fees",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New row on a new tracker utility 'svp' (Silicon Valley Power, ~99% of the city per the CEC layer). SVP still offers net metering (Rate Schedule NM, under the PUC 2827 5% threshold) - extra FAQ. FY 2026/27 fee schedule: $450 building PV permit + a separate $463 Fire Prevention fee, 3.37% technology fee. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/san-clemente",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "San Clemente Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    621
+   ],
+   "sources": [
+    "https://www.sanclemente.gov/258/Permits",
+    "https://www.sanclemente.gov/DocumentCenter/View/660",
+    "https://www.sanclemente.gov/DocumentCenter/View/666/SC-Solar-PV-Step-1-Submittal-Requirements-PDF",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas"
+   ],
+   "status": "done",
+   "note": "New row: SDG&E (CEC layer), no CCA (SDG&E active-CCA member lists). Two undated City fee documents ($400 up to 15 kW; bulletin calls $450 typical) - index status 'conflicting'. Companies twin (legacy template) registered."
+  },
+  {
+   "path": "/solar-cost/clovis",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Clovis, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    630
+   ],
+   "sources": [
+    "https://www.clovisca.gov/services/planning_development/building/index.php",
+    "https://www.clovisca.gov/documents/Services/Planning%20Development/Building/Photovoltaic-System-Eligibility-List.pdf",
+    "https://www.clovisca.gov/documents/Services/Planning%20Development/Building/Photovoltaic%20Minimum%20Submittal%20Requirements%20for%20Roof%20Mounted%20Systems%202025.pdf",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html"
+   ],
+   "status": "done",
+   "note": "New row: PG&E, no CCA; fee not published (the City's fee letter is a scanned image); SolarAPP+ eligibility excludes service upgrades and existing systems; 36-inch street-side access pathway. No companies page on this branch; citycos is creating /solar-companies/clovis this wave."
+  },
+  {
+   "path": "/solar-cost/encinitas",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Encinitas Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    626
+   ],
+   "sources": [
+    "https://www.encinitasca.gov/government/departments/applications-and-information/solar-photovoltaic-permit-application",
+    "https://www.encinitasca.gov/home/showpublisheddocument/5146/638065976521930000",
+    "https://www.encinitasca.gov/government/departments/development-services/land-development-building/building/small-solar-energy-systems",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas",
+    "https://sdcommunitypower.org/net-energy-metering/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: fee-waiver flyer terms stated (City + EsGil waive fees for basic home solar), Ordinance 2015-13 expedited path to 10 kW, CCA sourced to SDG&E's list, platform SolarAPP+ per CEC SB 379; new local guidance entry (SDCP surplus bonus). No City fee figure is published; fire-department fee schedule checked, no solar line."
+  },
+  {
+   "path": "/solar-cost/san-marcos",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "San Marcos Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    676
+   ],
+   "sources": [
+    "https://www.sanmarcosca.gov/Business-Services/Building-Division/Solar-Permits",
+    "https://www.sanmarcosca.gov/files/assets/city/v/2/development-svs/fees/development-fees-schedule-september-2026.pdf",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas",
+    "https://thecleanenergyalliance.org/net-energy-metering/"
+   ],
+   "status": "done",
+   "note": "Upgraded: fee now quoted from the Development Fees schedule effective 2026-09-01 ($57 plan check + $67 permit = $124; ESS $52; solar carport $980 + $454); homeowner expedited route vs contractor SolarAPP+ with business license and declaration form; CEA 6-cent NSC; index fee status now 'published'."
+  },
+  {
+   "path": "/solar-cost/lakewood",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Lakewood, CA: What Sets the Price (2026)",
+   "clusters": [
+    652
+   ],
+   "sources": [
+    "https://www.lakewoodca.gov/Development-Services/Building/Solar-Permitting-for-Homes",
+    "https://www.lakewoodca.gov/Development-Services/Building/Building-Permits",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "New row: SCE (100% on the CEC layer), no CCA; fees = LA County schedules + 18% City overhead (the linked County electrical schedule returned Page Not Found, so no figure); SolarAPP+ then Online Permit Center. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/elk-grove",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Elk Grove Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    661
+   ],
+   "sources": [
+    "https://www.elkgrovecity.org/departments-and-divisions/building-safety-inspection-and-permits",
+    "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row on SMUD (100% on the CEC layer): SMUD Solar and Storage Rate (9.6 cents/kWh exports since 2026-06-01) as an extra FAQ and local check. The City's building page publishes no solar fee or route (elkgrove.gov solar pages refused every request), so the fee note says so; platform per CEC SB 379. Citycos is creating /solar-companies/elk-grove this wave - not registered here."
+  },
+  {
+   "path": "/solar-cost/mission-viejo",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Mission Viejo Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    683
+   ],
+   "sources": [
+    "https://cityofmissionviejo.org/departments/community-development/building-services",
+    "https://www.missionviejo.gov/sites/default/files/building-fee-schedule-4-1-23.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ocpower.org/",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas"
+   ],
+   "status": "done",
+   "note": "New row with a utility split: CEC layer puts ~72% of the city in SCE and ~28% (the south) in SDG&E; no CCA (OCPA members and SDG&E CCA lists). Fee: $450 up to 15 kW + $15/kW (building fee schedule effective 2023-04-01, the one the City links). Citycos is creating /solar-companies/mission-viejo this wave - not registered here."
+  },
+  {
+   "path": "/solar-cost/victorville",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Victorville Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    672
+   ],
+   "sources": [
+    "https://www.victorvilleca.gov/Government/City-Departments/Building/SolarApp-Automated-Solar-Plan-Reviews",
+    "https://www.victorvilleca.gov/files/assets/city/v/1/building/documents/fees/stand_alone_fees_2026.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "New row: $372 residential PV permit (Stand Alone Permits chart updated 2026-01-08); utility split note (CEC layer: SCE, with ~6% of the city, in the north, in Victorville Municipal Utilities Services' territory); no CCA (Apple Valley Choice Energy serves Apple Valley only). Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/glendale",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Glendale, CA: What Sets the Price (2026)",
+   "clusters": [
+    681
+   ],
+   "sources": [
+    "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-pv-interconnection-and-nem-for-under-15-kw-cec-ac-residential-systems",
+    "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-interconnection",
+    "https://www.glendaleca.gov/government/departments/glendale-water-and-power/rates",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row on a new tracker utility 'gwp' (Glendale Water & Power, ~99.5% of the city on the CEC layer). GWP still offers NEM (2025 compensation rate $0.05639/kWh; 10 kW CEC-AC systems exempt from the 110% usage cap) - extra FAQ. The City's fee is not published (Building and Safety invoices after GWP review). Index platform 'Could not confirm' (CEC says custom, City describes staff review). Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/tulare",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Tulare, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    677
+   ],
+   "sources": [
+    "https://www.tulare.ca.gov/government/departments/community-development/building/solar-app",
+    "https://www.tulare.ca.gov/home/showpublisheddocument/19310/637943585895770000",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: fee pages now load; the Master Fee Schedule the City links (adopted 2022-05-17) has no solar line, so no figure; SolarAPP+ permit number emailed within 24 business hours; SCE with no CCA; new guidance entry."
+  },
+  {
+   "path": "/solar-cost/napa",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Napa, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    671
+   ],
+   "sources": [
+    "https://www.cityofnapa.org/1037/Solar-PV",
+    "https://www.cityofnapa.org/Archive.aspx?ADID=245",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://mcecleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded: fee now quoted from the Master Fee Schedule effective 2025-07-01 ($472 residential PV permit and inspection, 10 kW basis, $500 maximum noted; $85 Fire Prevention review); walk-in counter only, business license required; CEC lists Napa without a platform; MCE sourced to MCE's list."
+  },
+  {
+   "path": "/solar-cost/yucaipa",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Yucaipa, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    712
+   ],
+   "sources": [
+    "https://yucaipa.gov/building-safety/",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "Upgraded: no solar page or fee exists; the note now points to the Permit Exchange fee estimator; platform SolarAPP+ per CEC SB 379; SCE with no CCA; new guidance entry."
+  },
+  {
+   "path": "/solar-cost/rocklin",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Rocklin, CA: What Sets the Price (2026)",
+   "clusters": [
+    710
+   ],
+   "sources": [
+    "https://www.rocklin.ca.us/online-solar-permitting",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/going-solar-with-pioneer/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded: re-read (owner-builders and energy storage projects excluded from SolarAPP+; eTRAKiT or Permit Center); Pioneer sourced to its own list; Pioneer's monthly billing and +$0.005/kWh terms; City fee still unstated."
+  },
+  {
+   "path": "/solar-cost/grass-valley",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Grass Valley Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    722
+   ],
+   "sources": [
+    "https://www.grassvalleyca.gov/pod/solarapp-submittals",
+    "https://www.grassvalleyca.gov/sites/main/files/file-attachments/fee_schedule_21-22_0.pdf",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/going-solar-with-pioneer/"
+   ],
+   "status": "done",
+   "note": "Upgraded: the fee schedule the City links (FY 2021/22) is quoted as dated ($373.00 residential solar; index status 'dated'); Express Permit in Accela; Pioneer since 2024."
+  },
+  {
+   "path": "/solar-cost/santa-barbara",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Santa Barbara Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    713
+   ],
+   "sources": [
+    "https://santabarbaraca.gov/services/construction-land-development/fee-information",
+    "https://santabarbaraca.gov/sites/default/files/2026-08/FY27%20B%26S%20Fee%20Schedule%20-%20Print%20Ready%20FINAL_AOD.pdf",
+    "https://santabarbaraca.gov/sites/default/files/documents/Community%20Development/Electrical/City%20PV1%20System%20Requirements%20for%20AB2188%20Expedited%20Review.pdf",
+    "https://santabarbaraca.gov/apply-permit",
+    "https://www.sbcleanenergy.com/",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "New row: SCE + Santa Barbara Clean Energy (City-run CCA; new CCA entry in the index); FY27 fee schedule (eff. 2026-09-01) $450 up to 15 kW + $15/kW; AB 2188 expedited review limits (10 kW AC, no battery); Accela Citizen Access. Index platform 'Could not confirm' (CEC says custom). Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/petaluma",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Petaluma, CA: What Sets the Price (2026)",
+   "clusters": [
+    716
+   ],
+   "sources": [
+    "https://cityofpetaluma.org/solar-permit/",
+    "https://cityofpetaluma.org/solarapp-solar-permit-faqs/",
+    "https://sonomacleanpower.org/who-we-are",
+    "https://sonomacleanpower.org/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "Upgraded: re-read with the City's SolarAPP+ FAQ (City fee same as a regular solar permit, not stated; panel modification adds the Electrical Service, Meter Replacement fee; flood-zone parcels excluded); SCP sourced to its own page; new guidance entry. The City's permit-fee page now redirects to its self-service portal, so no figure."
+  },
+  {
+   "path": "/solar-cost/vacaville",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Vacaville Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    717
+   ],
+   "sources": [
+    "https://www.cityofvacaville.gov/government/community-development/building/building-permits/apply-for-residential-solar-permits",
+    "https://www.cityofvacaville.gov/home/showpublisheddocument/27043/639222220803330000",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E with no CCA (MCE's service-area list excludes Vacaville); Symbium instant review, any-size rooftop solar online, panel change-out included in the solar permit, no refunds on online PV permits. The FY 2026-27 fee schedule has a solar line but its posted copy could not be read reliably (layout scrambled), so no figure - index 'not-retrievable'. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/camarillo",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Camarillo Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    691
+   ],
+   "sources": [
+    "https://www.cityofcamarillo.org/departments/building___safety/index.php",
+    "https://www.cityofcamarillo.org/Master%20Fee%20Schedule%202026%20-%20Updated%202.26.26%20FOR%20WEBSITE.pdf",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation",
+    "https://cleanpoweralliance.org/solar/"
+   ],
+   "status": "done",
+   "note": "Upgraded: the Master Fee Schedule 2026 is now readable ($450 up to 15 kW; storage $121 with solar; 11.34% technology surcharge); SolarAPP+ excludes panel upgrades and batteries; CPA sourced to SCE's list; CPA April true-up. Note: the CEC SB 379 data lists Camarillo 'Without Platform', which the City's own page contradicts; the page follows the City."
+  },
+  {
+   "path": "/solar-cost/saratoga",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Saratoga, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    709
+   ],
+   "sources": [
+    "https://www.saratoga.ca.us/building",
+    "https://svcleanenergy.org/about/",
+    "https://www.svcleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + SVCE. Saratoga's site exposes no solar page or fee to this environment (search is JS-only, Building Division page has no solar links), so the permit fields rest on the City's Path to Permits guide and the CEC SB 379 data (Symbium). Thinnest row of the wave; worth a manual look at the Building Division if the City publishes a solar handout. No companies page exists."
+  },
+  {
+   "path": "/solar-cost/auburn",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Auburn, CA: What Sets the Price (2026)",
+   "clusters": [
+    687
+   ],
+   "sources": [
+    "https://www.auburn.ca.gov/700/Symbium-Permits",
+    "https://www.auburn.ca.gov/DocumentCenter/View/4398/Auburn---Adopted-Fee-Schedule---FY-2627",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/going-solar-with-pioneer/"
+   ],
+   "status": "done",
+   "note": "Upgraded: fee now quoted from the FY 2026-27 schedule ($347 up to 15 kW; battery backup and panel upgrade $174 each); Symbium two-step process; Pioneer sourced to its own list; new guidance entry."
+  },
+  {
+   "path": "/solar-cost/gilroy",
+   "action": "CREATE",
+   "title": "Solar Panels in Gilroy, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    690
+   ],
+   "sources": [
+    "https://www.cityofgilroy.org/975/SolarApp-for-Residential-Solar-Installer",
+    "https://svcleanenergy.org/about/",
+    "https://www.svcleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + Silicon Valley Clean Energy. Gilroy's SolarAPP+ page publishes every fee: $450.00 up to 15 kW, $500.00 + $15.00/kW above; ESS permit $103.27 + $146.77 inspection; $260.00 Fire inspection for ESS over 50 kWh; $137.03 revision. No separate planning/fire review up to 38.4 kW; inspections 72 hours out. No companies page on this branch: registered in the pending-twin set.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/ventura",
+   "action": "UPGRADE",
+   "title": "Solar Panel Cost in Ventura, CA: What Sets the Price (2026)",
+   "clusters": [
+    702
+   ],
+   "sources": [
+    "https://www.cityofventura.ca.gov/2554/Contractor-Solar-Permits-SB-379",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation",
+    "https://cleanpoweralliance.org/solar/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: re-read; Symbium real-time permits for A/B/C-10/C-46 contractors with a Ventura business license up to 38.4 kW AC; Symbium fee non-refundable, no City fee published; inspection timing; CPA sourced to SCE's list; new guidance entry.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/windsor",
+   "action": "UPGRADE",
+   "title": "Solar Panels in Windsor, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    693
+   ],
+   "sources": [
+    "https://www.townofwindsor.ca.gov/1570/Residential-Solar-Applications",
+    "https://sonomacleanpower.org/who-we-are",
+    "https://sonomacleanpower.org/solar-billing-plan",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: re-read; Symbium instant permits, then eTRAKiT; email/in-person route with 1-3 business days of plan review; Town business license required; no fee published; Sonoma Clean Power sourced; new guidance entry. The 'how much does solar cost in windsor ca' sub-question is the template's first FAQ.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/san-ramon",
+   "action": "CREATE",
+   "title": "San Ramon Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    694
+   ],
+   "sources": [
+    "https://www.sanramon.ca.gov/our_city/departments_and_divisions/community_development/building_and_safety_services/solar_a_p_p_/",
+    "https://www.sanramon.ca.gov/our_city/permit_center/fee_resolution",
+    "https://www.mcecleanenergy.org/about-us/",
+    "https://mcecleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + MCE. FY2026-27 Master Fee Schedule: SolarAPP+ permit designs $450; City-reviewed residential PV $566 up to 10 kW + $17/kW; first battery $396, each additional $35; $89 permit issuance fee; 4.60% technology surcharge. Contractors must be on the City's SolarAPP+ eligibility list. Companies twin (growthCities) registered.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/yuba-city",
+   "action": "UPGRADE",
+   "title": "Yuba City Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    696
+   ],
+   "sources": [
+    "https://www.yubacity.net/departments/development_services/solar_app.php",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: re-read; City invoices permit fees after review (no amount published); Accela Citizen Portal; inspection request rules; PG&E with no CCA per PG&E's list; new guidance entry. Citycos is building /solar-companies/yuba-city (CREATE_DEDICATED); that lane registers it.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/redding",
+   "action": "CREATE",
+   "title": "Solar Panel Cost in Redding, CA: What Sets the Price (2026)",
+   "clusters": [
+    728
+   ],
+   "sources": [
+    "https://www.cityofredding.gov/government/departments/redding_electric_utility/going_green/solar_photovoltaic_(pv)_program.php",
+    "https://www.cityofredding.gov/government/departments/utilities/customer_service/rates___fees.php",
+    "https://www.cityofredding.gov/Document%20Center/Departments/Finance/Accounting/Adopted%20FY%202025-26%20Master%20Fee%20Schedule.pdf",
+    "https://www.cityofredding.gov/Document%20Center/Departments/Finance/Accounting/Adopted%20FY%202026-27%20Master%20Fee%20Schedule.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row on tracker utility 'reu' (Redding Electric Utility). Master Fee Schedule FY 2025-26 (and FY 2026-27, building fees effective 2026-10-19): residential PV 7-15 kW $450.00, 16 kW+ $450.00 + $15.00/kW; battery (alternative power source) $187.50 -> $193.00. REU's Zero Net Energy Service, the 1 kW DC per 1,752 kWh size cap, the Generator Number the City requires before a permit application, and REU's E1 rate ($40.00/meter + $0.1492/kWh since 2025-01-01) - extra FAQ. Companies twin registered.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/redwood-city",
+   "action": "CREATE",
+   "title": "Redwood City Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    738
+   ],
+   "sources": [
+    "https://www.redwoodcity.org/departments/community-development-and-transportation/building-inspection-code-enforcement/solarapp-automatic-permitting",
+    "https://www.redwoodcity.org/home/showpublisheddocument/31457/639191130428800000",
+    "https://www.westlightenergy.org/",
+    "https://www.westlightenergy.org/residential/solar-battery/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E (54% of the TIGER boundary on the CEC layer; the rest is bay water, plus a 0.24% CCSF sliver) + WestLight Energy. FY 2026-27 Master Fee Schedule (effective 2026-07-01): residential solar $450.00 up to 15 kW, +$15.00/kW above; electrical service up to 200 A $431.65; residential reroof $645.25; 13% GIS/technology fee (applicability to solar not stated). SolarAPP+ then eTRAKiT. The City's linked SolarAPP+ guide PDF is a reused City of Modesto document, so only the page text is relied on. No companies page on this branch: registered in the pending-twin set.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/cupertino",
+   "action": "CREATE",
+   "title": "Cupertino Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    744
+   ],
+   "sources": [
+    "https://www.cupertino.gov/Your-City/Departments/Community-Development/Building/Permits/Instant-Solar-Permit-SolarAPP",
+    "https://www.cupertino.gov/files/assets/city/v/1/departments/documents/community-development/building/forms-amp-handouts-amp-fees/fees/fee-schedule-building-fees.pdf",
+    "https://svcleanenergy.org/about/",
+    "https://www.svcleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + SVCE (the CEC layer also shows PWRPA, a wholesale pooling agency, overlapping the whole city; not a retail supplier to homes). Building fees (Res. 26-047, effective 2026-07-01): residential PV $450 up to 15 kW + $15/kW; batteries $746 up to three, $439 each after; service up to 200 A $99; 5.8% technology fee; SolarAPP+ $25. The City's Instant Solar Permit is paused during a business license system upgrade (permits by email) - stated with the date, extra FAQ, and a new index online value 'paused' ('Paused for now'). Companies twin (growthCities) registered.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/hollister",
+   "action": "UPGRADE",
+   "title": "Hollister Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    746
+   ],
+   "sources": [
+    "https://hollister.ca.gov/government/development_services/solar_permits_for_photovoltaic_(pv)_systems_and_ev_charging_stations.php",
+    "https://hollister.ca.gov/Community%20Development%20Department/Building/Building%20Fee%20Schedule%202025.pdf",
+    "https://hollister.ca.gov/government/departments/development_services/application_forms_and_fees.php",
+    "https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf",
+    "https://3cenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row, which had no fee: the current Building Division fee schedule (effective 2025-08-18) is a scanned PDF; OCR at 300 and 400 dpi plus a visual check of the page image read 'Solar - Photovoltaic ** $400.00' (subject to state SMIP and CBSC fees on valuation); reroof $495.00; 65% plan review deposit at submittal. The old 'Online Permitting (Coming Soon)' line is gone; no online solar route is described and the CEC lists Hollister without a platform (deadline Sept 2024) - index online value now 'Not stated'. 3CE sourced. Citycos is building /solar-companies/hollister (CREATE_DEDICATED); that lane registers it.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/fresno",
+   "action": "UPGRADE",
+   "title": "Solar Panel Cost in Fresno, CA: What Sets the Price (2026)",
+   "clusters": [
+    753
+   ],
+   "sources": [
+    "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-1.pdf",
+    "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-C.pdf",
+    "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_PRELIM_A.pdf",
+    "https://epqs.nationalmap.gov/v1/json?x=-119.7936074&y=36.7829379&wkid=4326&units=Feet&includeDate=false",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Extra row (lane note): /solar-savings/fresno 301s here and 'electricity rates fresno' passes Rule 3. New 'Electricity provider and rates in Fresno' H2 (cluster 753 'electricity provider fresno california') plus FAQ from a new gated row field localRates: PG&E bundled (100% on the CEC layer; no CCA on PG&E's list); E-1 $0.32561/$0.40702 per kWh and E-TOU-C peak/off-peak by season, $0.79343/day base services charge (Income Tier 3), all effective 2026-06-01 (Advice 7921-E); baseline territory R (Fresno County under 3,500 ft; USGS ~310 ft at the city's Census point): 17.7/10.4 kWh/day basic, 19.9/26.7 all-electric. Permit fields unchanged (verified 2026-09-23).",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/anaheim",
+   "action": "UPGRADE",
+   "title": "Solar Panel Cost in Anaheim, CA: What Sets the Price (2026)",
+   "clusters": [
+    783
+   ],
+   "sources": [
+    "https://www.anaheim.net/6335/Residential-Rates",
+    "https://www.anaheim.net/DocumentCenter/View/25947/Schedule-TOU-2-",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "partial",
+   "note": "Extra row (lane note): /solar-savings/anaheim 301s here and 'anaheim electric rates' (cluster 783) passes Rule 3. New 'Electricity provider and rates in Anaheim' H2 plus FAQ (localRates): APU (98.7% of the city on the CEC layer); Standard Domestic Rate $8.00/month, 14.00¢ first 10 kWh/day, 21.49¢ above (APU rates page); Schedule TOU-2 effective 2024-05-01 (Res. 2024-022): on-peak 4-9 p.m. weekdays 33.20¢ summer / 31.25¢ winter, off-peak 16.65¢/16.15¢, winter super off-peak 12.00¢. Partial: (1) the Domestic Service schedule PDF sat behind anaheim.net's bot check / 429 all session, so the Standard Domestic Rate carries no effective date and the page says so; (2) APU's rates page shows 33.22¢ for summer on-peak while the TOU-2 sheet prints 33.20¢ - the page states the schedule figure and notes the page's; (3) the permit fields keep their 2026-09-18 verification (not re-read).",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  }
+ ],
+ "new_cost_slugs": [
+  "concord",
+  "richmond",
+  "berkeley",
+  "santa-clara",
+  "san-clemente",
+  "clovis",
+  "lakewood",
+  "elk-grove",
+  "mission-viejo",
+  "victorville",
+  "glendale",
+  "santa-barbara",
+  "vacaville",
+  "saratoga",
+  "gilroy",
+  "san-ramon",
+  "redding",
+  "redwood-city",
+  "cupertino"
+ ],
+ "new_cost_slugs_with_live_companies_twin_registered": [
+  "concord",
+  "richmond",
+  "berkeley",
+  "santa-clara",
+  "san-clemente",
+  "lakewood",
+  "victorville",
+  "glendale",
+  "santa-barbara",
+  "vacaville",
+  "san-ramon",
+  "redding",
+  "cupertino"
+ ],
+ "new_cost_slugs_for_citycos_to_reconcile": [
+  "clovis",
+  "elk-grove",
+  "mission-viejo"
+ ],
+ "sitemap_add": [],
+ "blog_index_add": [],
+ "redirect_requests": [],
+ "hub_links": [
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/concord",
+   "label": "Solar panel cost in Concord"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/richmond",
+   "label": "Solar panel cost in Richmond"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/berkeley",
+   "label": "Solar panel cost in Berkeley"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/santa-clara",
+   "label": "Solar panel cost in Santa Clara"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/san-clemente",
+   "label": "Solar panel cost in San Clemente"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/clovis",
+   "label": "Solar panel cost in Clovis"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/lakewood",
+   "label": "Solar panel cost in Lakewood"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/elk-grove",
+   "label": "Solar panel cost in Elk Grove"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/mission-viejo",
+   "label": "Solar panel cost in Mission Viejo"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/victorville",
+   "label": "Solar panel cost in Victorville"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/glendale",
+   "label": "Solar panel cost in Glendale"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/santa-barbara",
+   "label": "Solar panel cost in Santa Barbara"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/vacaville",
+   "label": "Solar panel cost in Vacaville"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/saratoga",
+   "label": "Solar panel cost in Saratoga"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/gilroy",
+   "label": "Solar panel cost in Gilroy"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/san-ramon",
+   "label": "Solar panel cost in San Ramon"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/redding",
+   "label": "Solar panel cost in Redding"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/redwood-city",
+   "label": "Solar panel cost in Redwood City"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/cupertino",
+   "label": "Solar panel cost in Cupertino"
+  }
+ ],
+ "link_requests": [],
+ "shared_changes": [
+  "src/data/city-cost-data.ts: Tier 3 rows appended in a dated section; no template or gate change.",
+  "src/data/local-project-guidance.ts: Tier 3 source constants and entries appended (rendered only by CityCostPage).",
+  "src/data/utility-rate-tracker.ts: new publicly owned utility records 'svp' (Silicon Valley Power) and 'reu' (Redding Electric Utility), rate null with the utility's own rate page as source; the tracker page reads rows by name and does not render them.",
+  "src/data/solar-cost-index.ts: FEES/PLATFORMS entries for each new row; UTILITY_TYPE gains svp and reu (CEC layer names); CCAS membership additions. solar-cost-index.test.ts passes.",
+  "src/data/city-coordinates.ts: Census TIGERweb internal points added for new slugs that had none (nearby-city ordering only).",
+  "src/lib/canonical-redirects.test.ts: new dated registry section T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added.",
+  "src/data/city-cost-data.ts: the los-angeles row (not in this lane's assignment, not owned by any Tier 3 lane) gains two LA City Planning community-plan sources, the CEC layer source and one extra FAQ answering the van-nuys and wilmington topics. Its permit fields are unchanged.",
+  "src/data/utility-rate-tracker.ts: 'gwp' (Glendale Water & Power) record added as well; UTILITY_TYPE in solar-cost-index.ts gains gwp.",
+  "src/data/city-cost-data.ts: new optional, gated row field localRates (heading, paragraphs, faq, sources) for a short 'Electricity provider and rates in <city>' section; used only by anaheim and fresno.",
+  "src/components/growth/CityCostPage.tsx: renders localRates as an H2 after the utility section, adds its FAQ entry before 'Which utility serves' and its sources to the sources list. Rows without the field render exactly as before.",
+  "src/data/solar-cost-index.ts: OnlineFiling gains 'paused' ('Paused for now') for Cupertino; hollister's online value moves from 'not-yet' to 'not-stated' because the City's 'coming soon' line is gone.",
+  "src/lib/canonical-redirects.test.ts: T3 live-twin set gains san-ramon, redding, cupertino; new dated set T3_COST_PAGES_PENDING_COMPANIES_TWIN (clovis, elk-grove, mission-viejo, saratoga, gilroy, redwood-city) added to REINSTATED_COMPANIES_SLUGS so a companies twin landing at integration stays live. No redirect rows added."
+ ],
+ "integration_notes": [
+  "/solar-cost/<city> pages enter the sitemap and the /solar-cost index automatically from getPublishableCityCostRows(); no sitemap_add needed.",
+  "WebSearch budget for the session was exhausted early; city pages were found by navigating each city's own site. Sites that refuse direct requests (santaclaraca.gov, sanclemente.gov, siliconvalleypower.com, mcecleanenergy.org) were read with WebFetch or the r.jina.ai reader, which returns the publisher's own text.",
+  "Citycos (Tier 3) is creating /solar-companies pages for clovis, elk-grove and mission-viejo, which get new cost pages here. When both land, canonical-redirects.test.ts's cross-cutting check needs each of them in a reinstated registry; the citycos lane registers its own slugs. Also check the title owner: costPageSeo switches a cost page to the 'What Sets the Price' title once a live companies twin exists.",
+  "redwoodcity.org returns 403 to plain requests; its SolarAPP+ page was read through the r.jina.ai reader (raw HTML mode) and the FY 2026-27 fee schedule PDF was downloaded directly with browser headers. The City's linked 'SolarAPP+ Permitting Guide' PDF is a reused City of Modesto document, so the page relies only on the City's page text.",
+  "Hollister's current fee schedule is a scanned PDF; the $400.00 solar line was read by OCR at 300 and 400 dpi and checked against the page image.",
+  "anaheim.net put its DocumentCenter behind a bot check and 429s for most of the session; the TOU-2 sheet was read once through WebFetch, the Domestic Service sheet never.",
+  "The worktree still has two uncommitted lines in src/data/city-coordinates.ts (gilroy, san-ramon) left by the earlier run; they are deliberately not committed (see map_points)."
+ ],
+ "decisions_for_chad": [
+  "Anaheim is partial: the Standard Domestic Rate is sourced to APU's rates page, which prints no effective date, and the Domestic Service schedule could not be read. The page says so. Also, APU's rates page shows 33.22¢ summer on-peak while the TOU-2 sheet prints 33.20¢; the page states the schedule figure and notes the other. OK to ship like that, or hold until the schedule is re-read by hand?",
+  "Cupertino's instant permit is paused 'due to an upgrade with Business License system' (checked 2026-09-24). The page states it with the date; re-check before deploy and flip permitOnline/index back if it has reopened.",
+  "city-coordinates.ts: this branch's earlier commits added clovis, elk-grove, mission-viejo, santa-clara and saratoga, against this wave's lane rule. My revert was refused by the session's permission check. At merge, keep one copy of each key (citycos adds some of the same). Redwood City, Cupertino, Gilroy and San Ramon have no map point on this branch (values in map_points).",
+  "Hollister and Cupertino state the CEC's self-reported SB 379 listing as-is (Hollister: without a platform, deadline Sept 2024), the same neutral approach Tier 2 used for Chico and Arcata."
+ ],
+ "skipped": [
+  {
+   "url": "/solar-cost/wilmington",
+   "why": "folded into /solar-cost/los-angeles (extra FAQ 'Does solar cost differ in Van Nuys or Wilmington?'). The California page-one SERP for 'solar panel cost wilmington' is entirely Wilmington, NC; Wilmington, CA is a City of Los Angeles community plan area (LADBS permits, LADWP per the CEC layer at a Census-geocoded Wilmington address), so a separate page would have no local difference."
+  },
+  {
+   "url": "/solar-cost/van-nuys",
+   "why": "folded into /solar-cost/los-angeles (same FAQ). Van Nuys is a City of Los Angeles community plan area served by LADWP (CEC layer at a Census-geocoded Van Nuys address); its page-one SERP is mostly camper-van solar. A separate page would repeat the Los Angeles page."
+  }
+ ],
+ "map_points": {
+  "note": "Lane rule: this lane must not edit src/data/city-coordinates.ts (the parallel citycos lane adds points). Earlier commits on this branch (d77e7c8, 33ce5db, 75a0515) had already added five points; a revert was attempted on 2026-09-24 and was refused by the session's permission check, so those five stay on the branch and integration should keep one copy of each key if citycos adds the same ones. Two further points (gilroy, san-ramon) exist only as uncommitted edits in this worktree and are NOT on the branch. Missing points only change the order of the 'nearby' links (city-pages.ts falls back to county order); nothing fails.",
+  "on_branch_possible_duplicates": {
+   "clovis": [
+    36.8308604,
+    -119.6838769,
+    "Census TIGERweb, GEOID 0614218"
+   ],
+   "elk-grove": [
+    38.4155297,
+    -121.383632,
+    "GEOID 0622020"
+   ],
+   "mission-viejo": [
+    33.6095503,
+    -117.6551443,
+    "GEOID 0648256"
+   ],
+   "santa-clara": [
+    37.3646205,
+    -121.9679735,
+    "GEOID 0669084"
+   ],
+   "saratoga": [
+    37.2683275,
+    -122.0262235,
+    "GEOID 0670280"
+   ]
+  },
+  "needed_not_on_branch": {
+   "gilroy": [
+    37.0046354,
+    -121.5854086,
+    "Census TIGERweb Places, GEOID 0629504, queried 2026-09-23"
+   ],
+   "san-ramon": [
+    37.7620479,
+    -121.9354251,
+    "GEOID 0668378, queried 2026-09-23"
+   ],
+   "redwood-city": [
+    37.5173859,
+    -122.211347,
+    "GEOID 0660102, queried 2026-09-24"
+   ],
+   "cupertino": [
+    37.3168277,
+    -122.046533,
+    "GEOID 0617610, queried 2026-09-24"
+   ]
+  }
+ },
+ "new_cost_slugs_pending_companies_twin_registered": [
+  "clovis",
+  "elk-grove",
+  "mission-viejo",
+  "saratoga",
+  "gilroy",
+  "redwood-city"
+ ],
+ "existing_cost_pages_citycos_is_twinning": {
+  "slugs": [
+   "yuba-city",
+   "napa",
+   "hollister"
+  ],
+  "note": "Citycos T3 is creating /solar-companies pages (CREATE_DEDICATED) for these existing cost cities; that lane registers them in canonical-redirects.test.ts. costPageSeo will switch each cost page's title to 'What Sets the Price' once its companies twin is live. (Petaluma's companies page is already live; citycos only upgrades it.)"
+ }
+}

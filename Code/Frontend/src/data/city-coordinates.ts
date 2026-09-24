@@ -110,6 +110,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   santee: [32.8554240, -116.9851413], // Santee city, GEOID 0670224 (queried 2026-09-23)
   'scotts-valley': [37.0554989, -122.0117689], // Scotts Valley city, GEOID 0670588 (queried 2026-09-23)
   tustin: [33.7309206, -117.8105909], // Tustin city, GEOID 0680854 (queried 2026-09-23)
+  saratoga: [37.2683275, -122.0262235], // Saratoga city, GEOID 0670280 (queried 2026-09-23)
   vacaville: [38.3586717, -121.9673440], // Vacaville city, GEOID 0681554 (queried 2026-09-23)
   riverside: [33.9381301, -117.3949083], // Riverside city, GEOID 0662000
   rocklin: [38.8074883, -121.2487164], // Rocklin city, GEOID 0662364
