@@ -1,0 +1,1085 @@
+{
+ "agent": "t3-citycos",
+ "branch": "claude/t3-citycos-20260923",
+ "pages": [
+  {
+   "path": "/solar-companies/brentwood",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Brentwood, CA (2026)",
+   "clusters": [
+    601
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer"
+   ],
+   "status": "done",
+   "note": "New page: PG&E-only city (not an MCE member, unlike Oakley and Pittsburg; unincorporated neighbors are MCE), SolarAPP+ scope (no main breaker derate), SB 379 2023-2024 counts, FAQ disambiguating Brentwood in Los Angeles (LADWP, Census point check). City SolarAPP+ page returned 403 to every fetcher, so the route is sourced from the CEC platform file and the SolarAPP+ jurisdiction list."
+  },
+  {
+   "path": "/solar-companies/la-mesa",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in La Mesa, CA (2026)",
+   "clusters": [
+    751
+   ],
+   "sources": [
+    "https://www.cityoflamesa.gov/1322/Residential-Rooftop-Solar",
+    "https://www.cityoflamesa.gov/DocumentCenter/View/21318",
+    "https://sdcommunitypower.org/our-community/",
+    "https://sdcommunitypower.org/net-energy-metering/",
+    "https://www.sdge.com/solar/solar-billing-plan",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New page: Symbium instant review (38.4 kW AC, launched Oct 18 2023), AB 2188 expedited route, MaintStar submittals, SDCP member city (NSC + $0.0075/kWh), SDG&E EV-TOU-5, SB 379 2023 counts."
+  },
+  {
+   "path": "/solar-companies/elk-grove",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Elk Grove, CA (2026)",
+   "clusters": [
+    634
+   ],
+   "sources": [
+    "https://elkgrove.gov/plan-review-and-permits/streamlining-solar-permitting-solarapp",
+    "https://elkgrove.gov/solar-and-electric-vehicle-ev-permits/residential-solar-photovoltaic-permits",
+    "https://www.smud.org/Going-Green/Solar-for-your-home",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New page: SMUD territory; SMUD approval letter required before any City application; CCSD Fire approval for SolarAPP+ and batteries; eTRAKiT; SolarAPP+ limits (38.4 kW, 400 A service); SMUD SSR 9.6 cents export, 110%/120% sizing, interconnection fee. Cost twin is being built by the T3 citycost lane."
+  },
+  {
+   "path": "/solar-companies/woodland-hills",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    666
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "folded into /solar-companies/los-angeles: Woodland Hills is a neighborhood of the City of Los Angeles (TIGERweb point checks at Warner Center, Ventura Blvd and the hills to the south all fall in Los Angeles city, GEOID 0644000) and LADWP territory on the CEC map, so its utility (LADWP rider) and permit office (LADBS Express Permit) are the Los Angeles page's. Added a Woodland Hills FAQ there, as Tier 2 did for Sherman Oaks."
+  },
+  {
+   "path": "/solar-companies/clovis",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Clovis, CA (2026)",
+   "clusters": [
+    628
+   ],
+   "sources": [
+    "https://www.clovisca.gov/services/planning_development/building/index.php",
+    "https://www.clovisca.gov/services/planning_development/building/photovoltaic_reports.php",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+   ],
+   "status": "done",
+   "note": "New page: three filing routes since Sept 30 2023 (in person, CSS online, SolarAPP+ contractors only); the City's monthly Photovoltaic Report used for a sourced median wait (7 days roof mount, same day Real Time Solar, Oct 2025, 110 permits); SB 379 2023. Cost twin is being built by the T3 citycost lane."
+  },
+  {
+   "path": "/solar-companies/yuba-city",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Yuba City, CA (2026)",
+   "clusters": [
+    703
+   ],
+   "sources": [
+    "https://www.yubacity.net/departments/development_services/solar_app.php",
+    "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_239174/File/Development%20Services/Building/Information%20Bulletin/Solar%20Permit%20Submittals.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+   ],
+   "status": "done",
+   "note": "CREATE_DEDICATED: SolarAPP+ then the City's online portal, inspection-day rules from the City bulletin, SB 379 2023, Sutter County exempt. The cost page /solar-cost/yuba-city (where impressions landed) links here automatically through CitySiblingLinks."
+  },
+  {
+   "path": "/solar-companies/davis",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Davis, CA (2026)",
+   "clusters": [
+    745
+   ],
+   "sources": [
+    "https://valleycleanenergy.org/rates-billing/vce-solar/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+   ],
+   "status": "done",
+   "note": "New page: Valley Clean Energy terms (penny-per-kWh bonus on monthly excess and cash-out, February or true-up-date cash-out, opt-out), SolarAPP+ platform and scope. City solar page returned 403 to every fetcher; permit route sourced from the CEC platform file and SolarAPP+ list."
+  },
+  {
+   "path": "/solar-companies/novato",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Novato, CA (2026)",
+   "clusters": [
+    658
+   ],
+   "sources": [
+    "https://www.novato.gov/government/community-development/building-division/residential-solar",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.mcecleanenergy.org/solar-customers/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+   ],
+   "status": "done",
+   "note": "New page: SolarAPP+ for B/C-46/C-10 contractors, three free revisions, owner-builders on the standard permit; MCE (NSC + $0.02/kWh at spring cash-out)."
+  },
+  {
+   "path": "/solar-companies/san-rafael",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Rafael, CA (2026)",
+   "clusters": [
+    765
+   ],
+   "sources": [
+    "https://www.cityofsanrafael.org/solarapp-permits/",
+    "https://www.cityofsanrafael.org/renewable-energy/",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.mcecleanenergy.org/solar-customers/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "done",
+   "note": "New page: SolarAPP+ review then OpenGov permit, permit description rules, two-year permit validity, solar+battery+panel upgrade on one permit, SB 379 2022-2023 (all online), MCE."
+  },
+  {
+   "path": "/solar-companies/tracy",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Tracy, CA (2026)",
+   "clusters": [
+    766
+   ],
+   "sources": [
+    "https://www.cityoftracy.org/Departments/Community-and-Economic-Development/Building-Safety/Permit-Process-and-Fees",
+    "https://avaenergy.org/community/who-we-serve/",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+   ],
+   "status": "done",
+   "note": "CREATE_DEDICATED: Ava Community Energy (3-8 p.m. export bonus, April true-up, $100 payout threshold), photovoltaic@cityoftracy.org submittals, custom platform, SB 379 2023 vs 2024 swing (83% to 0% online). Cost page links here automatically."
+  },
+  {
+   "path": "/solar-companies/vallejo",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Vallejo, CA (2026)",
+   "clusters": [
+    714
+   ],
+   "sources": [
+    "https://www.vallejo.gov/our_city/departments_divisions/planning_development_services/building_division",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.mcecleanenergy.org/solar-customers/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "done",
+   "note": "REINSTATED (T3 brief section 3): the one remaining /solar-companies redirect; the T3 SERP check passes it (pass_serp). Row removed from canonical-redirects.ts, registered in canonical-redirects.test.ts with ROW_DELTAS -1; the Decision 15 assertion that pinned the redirect and the twin-check vacuity assertion were rewritten with dated comments. Page: Symbium instant permit, eTRAKiT, MCE, small City of Pittsburg territory on the CEC map, SB 379 2024. Enters the sitemap automatically (cities-data slug no longer redirected)."
+  },
+  {
+   "path": "/solar-companies/antioch",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Antioch, CA (2026)",
+   "clusters": [
+    733
+   ],
+   "sources": [
+    "https://www.antiochca.gov/community-development-department/building-division/solar-permits/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+   ],
+   "status": "done",
+   "note": "New page: SolarAPP+ via Citizen Access ($25, auto-issued), inspection documents, PG&E-only (not MCE), SB 379 2023-2024 (90% storage in 2024)."
+  },
+  {
+   "path": "/solar-companies/napa",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Napa, CA (2026)",
+   "clusters": [
+    654
+   ],
+   "sources": [
+    "https://www.cityofnapa.org/1037/Solar-PV",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.mcecleanenergy.org/solar-customers/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+   ],
+   "status": "done",
+   "note": "CREATE_DEDICATED: walk-in over-the-counter permits Mon-Thu, City business license, signed contract and plan set requirements, no automated platform reported, MCE. Cost page links here automatically."
+  },
+  {
+   "path": "/solar-companies/westminster",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Westminster, CA (2026)",
+   "clusters": [
+    773
+   ],
+   "sources": [
+    "https://www.westminster-ca.gov/departments/community-development/building-division/solar-permit-process",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ocpower.org/faq/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "UPGRADE: legacy cities-data page moved onto the sourced growth template (growth entry now renders): SolarAPP+ and Energov, 38.4 kW, SB 379 2025 (2% storage, 3% online), SCE (not OCPA), SCE Solar Billing Plan terms."
+  },
+  {
+   "path": "/solar-companies/fairfield",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Fairfield, CA (2026)",
+   "clusters": [
+    810
+   ],
+   "sources": [
+    "https://www.fairfield.ca.gov/government/city-departments/community-development/building-safety/solar-app",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.mcecleanenergy.org/solar-customers/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "done",
+   "note": "New page: SolarAPP+ then BUILD, business license, subdivision master plans, no derate; MCE member (Suisun City is not); Solano County 2025 figures for unincorporated homes."
+  },
+  {
+   "path": "/solar-companies/poway",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Poway, CA (2026)",
+   "clusters": [
+    739
+   ],
+   "sources": [
+    "https://poway.org/854/Solar-Photovoltaic-PV-Permits-AB-2188",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://sdcommunitypower.org/our-community/",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.sdge.com/solar/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: AB 2188 expedited route, electronic-only submittals since June 1 2022, no automated platform reported, SB 379 2024 (none online), SDG&E only (not SDCP)."
+  },
+  {
+   "path": "/solar-companies/hollister",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Hollister, CA (2026)",
+   "clusters": [
+    682
+   ],
+   "sources": [
+    "https://hollister.ca.gov/government/development_services/solar_permits_for_photovoltaic_(pv)_systems_and_ev_charging_stations.php",
+    "https://hollister.ca.gov/government/development_services/building.php",
+    "https://3cenergy.org/rates/nem/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+   ],
+   "status": "done",
+   "note": "CREATE_DEDICATED: 3CE December true-up and NSC rate, no automated platform reported, Building Division by appointment, bird-proofing question. Cost page links here automatically."
+  },
+  {
+   "path": "/solar-companies/burbank",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Burbank, CA (2026)",
+   "clusters": [
+    732
+   ],
+   "sources": [
+    "https://www.burbankwaterandpower.com/solar-net-billing",
+    "https://www.burbankwaterandpower.com/solar-net-billing-faq",
+    "https://www.burbankwaterandpower.com/solar-installer-instructions",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New page: Burbank Water and Power Solar Net Billing (Jan 1 2026; avoided-cost exports; 150% sizing; 10 kW exemption; NEM 1.0 grandfathered to 2046), BWP installer steps and performance meter, Symbium, SB 379 2023. Added 'bwp' to GROWTH_UTILITY_LABEL in src/lib/city-pages.ts so the inquiry form shows the name."
+  },
+  {
+   "path": "/solar-companies/la-habra",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in La Habra, CA (2026)",
+   "clusters": [
+    629
+   ],
+   "sources": [
+    "https://www.lahabraca.gov/DocumentCenter/View/4307",
+    "https://www.lahabraca.gov/DocumentCenter/View/15918/Solar-Panel-Remove-and-Re-install-",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ocpower.org/faq/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: 10 kW toolkit (combination permit, 3 working days, $500 fee cap on standard plan), removal-and-reinstall permit requirements, SB 379 2024, SCE."
+  },
+  {
+   "path": "/solar-companies/coachella-valley",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Coachella Valley Solar Companies: How to Compare (2026)",
+   "clusters": [
+    895
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.iid.com/energy/about-iid-energy",
+    "https://desertcommunityenergy.org/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+   ],
+   "status": "done",
+   "note": "New region page (keyword: solar energy diagnostics / residential solar Coachella Valley): SCE vs IID by city, DCE and RMEA, each city's platform and SB 379 figures, County of Riverside for unincorporated communities, a section and FAQ on diagnosing an existing system. No inbound links yet except via link_requests (region pages get no nearby links)."
+  },
+  {
+   "path": "/solar-companies/ventura-county",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Ventura County Solar Companies: How to Compare Quotes (2026)",
+   "clusters": [
+    668
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://cleanpoweralliance.org/solar/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://vcrma.org/en/divisions/building-and-safety"
+   ],
+   "status": "done",
+   "note": "New region page: SCE countywide, Clean Power Alliance everywhere except Santa Paula, Fillmore and Port Hueneme (CEC point checks incl. unincorporated CDPs), each city's platform and SB 379 figures, County RMA permits and 2025 County building code."
+  },
+  {
+   "path": "/solar-companies/palmdale",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Palmdale, CA (2026)",
+   "clusters": [
+    620
+   ],
+   "sources": [
+    "https://www.cityofpalmdaleca.gov/1513/SolarAPP",
+    "https://www.cityofpalmdaleca.gov/DocumentCenter/View/17041/Solar-APP-Instructions",
+    "https://palmdaleepicenergy.com/about/faqs/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: SolarAPP+ express permits via Accela (no batteries, no mobile homes), EPIC Energy (October $100 check), NEM 3.0 question from supporting keywords, SB 379 2023. Links the T2 High Desert page."
+  },
+  {
+   "path": "/solar-companies/hesperia",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Hesperia, CA (2026)",
+   "clusters": [
+    743
+   ],
+   "sources": [
+    "https://www.cityofhesperia.us/1520/SolarAPP",
+    "https://wp.sbcounty.gov/ezop/permits/solar-with-solarapp/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page (keyword: solar panel removal hesperia): SolarAPP+ eligibility excludes homes with existing PV or batteries, so removal/reinstall and add-ons take the regular permit; permit within 2 business days; >15 kW roof-mount inspection; San Bernardino County EZOP for Oak Hills (HCD for manufactured homes); SB 379 2023-2024."
+  },
+  {
+   "path": "/solar-companies/merced",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Merced, CA (2026)",
+   "clusters": [
+    663
+   ],
+   "sources": [
+    "https://mercedid.org/power/",
+    "https://mercedid.org/power/solar-power/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+   ],
+   "status": "done",
+   "note": "UPGRADE: thin entry replaced: Merced Irrigation District (~78% of area) NEM 2.0 open, $600 application, interconnection steps; PG&E for the rest; SolarAPP+; SB 379 2024-2025. Dropped the old unsourced climate claims."
+  },
+  {
+   "path": "/solar-companies/fullerton",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Fullerton, CA (2026)",
+   "clusters": [
+    747
+   ],
+   "sources": [
+    "https://www.cityoffullerton.com/government/departments/community-and-economic-development/solar-installation-maps-data-metrics",
+    "https://www.ocpower.org/faq/",
+    "https://www.ocpower.org/energy-programs/solar-net-energy-metering/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: OCPA member city (10% premium, April true-up, NBT treated as NEM 2.0), SolarAPP+ scope, City's quarterly Solar Permit Dashboard, SB 379 2023, small Anaheim Public Utilities edge. City SolarAPP+ page returned 403; route sourced from the CEC platform file and SolarAPP+ list."
+  },
+  {
+   "path": "/solar-companies/petaluma",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Petaluma, CA (2026)",
+   "clusters": [
+    807
+   ],
+   "sources": [
+    "https://cityofpetaluma.org/solar-permit/",
+    "https://sonomacleanpower.org/solar-customers",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.cslb.ca.gov/solar"
+   ],
+   "status": "done",
+   "note": "UPGRADE: SolarAPP+ limits (no city flood zone, no permit runners, Contractor Disclosures Form), Sonoma Clean Power spring payout (up to $5,000, check over $200), SB 379 2022-2024 (all online), lease FAQ for the GSC lease queries."
+  },
+  {
+   "path": "/solar-companies/diamond-bar",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Diamond Bar, CA (2026)",
+   "clusters": [
+    770
+   ],
+   "sources": [
+    "https://www.diamondbarca.gov/1149/Instant-Solar-Permit-ISP",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: Instant Solar Permit via SolarAPP+ (service upgrade allowed), business license, LA County Fire inspects batteries first, Mon-Thu inspections, SB 379 2023, SCE."
+  },
+  {
+   "path": "/solar-companies/downey",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Downey, CA (2026)",
+   "clusters": [
+    806
+   ],
+   "sources": [
+    "https://cleanpoweralliance.org/solar/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "partial",
+   "note": "New page: Clean Power Alliance over ~97% of the city (April true-up, NSC +10%, CPA Solar Billing Plan after Aug 31 2023, battery rebates), SolarAPP+ platform accepting all four project types. PARTIAL: the City's site returned 403 to every fetcher and no City solar page URL was found, so there are no City-published permit steps; no SB 379 report filed."
+  },
+  {
+   "path": "/solar-companies/fallbrook",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Fallbrook, CA (2026)",
+   "clusters": [
+    813
+   ],
+   "sources": [
+    "https://www.sandiegocounty.gov/content/sdc/pds/bldgforms.html",
+    "https://sdcommunitypower.org/our-community/",
+    "https://sdcommunitypower.org/net-energy-metering/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.sdge.com/solar/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "UPGRADE: unincorporated; County PDS permits (no automated platform reported), SDCP over all of Fallbrook on the CEC map, SDCP bonus and check threshold, SDG&E EV-TOU-5."
+  },
+  {
+   "path": "/solar-companies/newport-beach",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Newport Beach, CA (2026)",
+   "clusters": [
+    818
+   ],
+   "sources": [
+    "https://www.newportbeachca.gov/government/departments/community-development-/building-division/solar-photovoltaic",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ocpower.org/faq/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: online-only submittals, SolarAPP+ for single-family and duplex, CiViC for the rest, Guideline D.07 for storage, SB 379 2023 (51% storage), SCE."
+  },
+  {
+   "path": "/solar-companies/aliso-viejo",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Aliso Viejo, CA (2026)",
+   "clusters": [
+    897
+   ],
+   "sources": [
+    "https://avcity.org/400/Solar-Permits",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.sdge.com/solar/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: SCE/SDG&E split (~58/42 by area), Instant Solar Permit via SolarAPP+, OCFA-approved plan for garage batteries, SB 379 2023 and 2025."
+  },
+  {
+   "path": "/solar-companies/mission-viejo",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Mission Viejo, CA (2026)",
+   "clusters": [
+    900
+   ],
+   "sources": [
+    "https://www.missionviejo.gov/departments/community-development/solarapp",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.gosolarapp.org/where-is-solarapp-available",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.sdge.com/solar/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: SCE/SDG&E split (~78/22), SolarAPP+ via Client Self Service incl. revision flow, no panel upgrades on SolarAPP+, SB 379 2023-2024. Cost twin is being built by the T3 citycost lane."
+  },
+  {
+   "path": "/solar-companies/galt",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Galt, CA (2026)",
+   "clusters": [
+    706
+   ],
+   "sources": [
+    "https://www.smud.org/Going-Green/Solar-for-your-home",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+   ],
+   "status": "partial",
+   "note": "New page (keyword: solar roof installation galt): SMUD territory, SMUD SSR terms and sizing, no automated platform reported, SB 379 2024 (43 permits, none online), reroof guidance. PARTIAL: City of Galt site returned 403 to every fetcher, so the City's own permit steps are not on the page."
+  },
+  {
+   "path": "/solar-companies/lake-forest",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Lake Forest, CA (2026)",
+   "clusters": [
+    828
+   ],
+   "sources": [
+    "https://www.lakeforestca.gov/departments/community_development/building/solar.php",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ocpower.org/faq/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: SolarAPP+ since Sept 25 2023 via eLakeForest and MyGovPay (3.29%), panel upgrades on a separate permit with SCE spot sticker, revocation warning, SB 379 2023-2024, SCE."
+  },
+  {
+   "path": "/solar-companies/tustin",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Tustin, CA (2026)",
+   "clusters": [
+    920
+   ],
+   "sources": [
+    "https://www.tustinca.org/1436/SolarApp-for-Solar-Installers",
+    "https://pwds.oc.gov/service-areas/oc-development-services/building-safety/building-grading-information/solar-pv",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ocpower.org/faq/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page (keyword: best solar companies north tustin): City SolarAPP+ with four permit types and historic-district exclusion; North Tustin is unincorporated and permitted by OC Development Services (SolarAPP+); County 2023 count; SCE."
+  },
+  {
+   "path": "/solar-companies/santee",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Santee, CA (2026)",
+   "clusters": [
+    886
+   ],
+   "sources": [
+    "https://www.cityofsanteeca.gov/departments/planning-building/solar",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://sdcommunitypower.org/our-community/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.sdge.com/solar/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "New page: SolarAPP+ on SanteePortal.org with business license, Permit Declaration Form, battery-in-garage guidelines, 10-day review, SB 379 2023-2024, SDG&E only (not SDCP)."
+  },
+  {
+   "path": "/solar-companies/moreno-valley",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Moreno Valley, CA (2026)",
+   "clusters": [
+    781
+   ],
+   "sources": [
+    "https://www.moval.org/mvu/solar-prog.html",
+    "https://www.moval.org/cdd/services/permits-new.html",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "UPGRADE: MVU vs SCE (~58/42), MVU Rate B TOU, no oversizing, audit for older homes, $75 review fee, 15-year grandfathering; SimpliCITY permit types (separate electrical permit for panel upgrades or stand-alone batteries); SB 379 2023."
+  },
+  {
+   "path": "/solar-companies/wildomar",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Wildomar, CA (2026)",
+   "clusters": [
+    788
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+   ],
+   "status": "partial",
+   "note": "UPGRADE: legacy cities-data page moved onto the growth template: SCE only, Symbium platform vs neighbors' SolarAPP+/custom, SB 379 deadline from Gov. Code 65850.52, bird-proofing question. PARTIAL: the City's site reset every connection, so no City-published permit steps are on the page."
+  },
+  {
+   "path": "/solar-companies/los-angeles",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Los Angeles, CA (2026)",
+   "clusters": [
+    666
+   ],
+   "sources": [
+    "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Fold target for row /solar-companies/woodland-hills: one FAQ added (Woodland Hills is inside the City of Los Angeles and LADWP territory; LADBS Express Permit and LADWP NEM rider apply). No other change."
+  }
+ ],
+ "reinstated": [
+  {
+   "path": "/solar-companies/vallejo",
+   "was": "/solar-cost/vallejo",
+   "why": "Decision 15 kept it (no_serp); Tier 3 rule3_gate_new = pass_serp (displaceable DR 9 result on page one for 'solar panels vallejo'). Row removed from src/lib/canonical-redirects.ts; test section 'Tier 3 wave: vallejo is reinstated' with ROW_DELTAS -1. No /solar-companies redirects remain in the table."
+  }
+ ],
+ "sitemap_add": [
+  "/solar-companies/brentwood",
+  "/solar-companies/la-mesa",
+  "/solar-companies/elk-grove",
+  "/solar-companies/clovis",
+  "/solar-companies/yuba-city",
+  "/solar-companies/davis",
+  "/solar-companies/novato",
+  "/solar-companies/san-rafael",
+  "/solar-companies/tracy",
+  "/solar-companies/antioch",
+  "/solar-companies/napa",
+  "/solar-companies/fairfield",
+  "/solar-companies/poway",
+  "/solar-companies/hollister",
+  "/solar-companies/burbank",
+  "/solar-companies/la-habra",
+  "/solar-companies/coachella-valley",
+  "/solar-companies/ventura-county",
+  "/solar-companies/palmdale",
+  "/solar-companies/hesperia",
+  "/solar-companies/fullerton",
+  "/solar-companies/diamond-bar",
+  "/solar-companies/downey",
+  "/solar-companies/newport-beach",
+  "/solar-companies/aliso-viejo",
+  "/solar-companies/mission-viejo",
+  "/solar-companies/galt",
+  "/solar-companies/lake-forest",
+  "/solar-companies/tustin",
+  "/solar-companies/santee"
+ ],
+ "sitemap_note": "Growth-only companies slugs enter the sitemap through GROWTH_ROUTES in src/lib/growth-routes.ts (not edited here). Vallejo, Westminster, Wildomar, Merced, Fallbrook and Moreno Valley are cities-data slugs and Petaluma is already in GROWTH_ROUTES, so they are listed automatically.",
+ "blog_index_add": [],
+ "redirect_requests": [],
+ "hub_links": [
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/brentwood",
+   "label": "Solar companies in Brentwood"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/la-mesa",
+   "label": "Solar companies in La Mesa"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/elk-grove",
+   "label": "Solar companies in Elk Grove"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/clovis",
+   "label": "Solar companies in Clovis"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/yuba-city",
+   "label": "Solar companies in Yuba City"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/davis",
+   "label": "Solar companies in Davis"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/novato",
+   "label": "Solar companies in Novato"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/san-rafael",
+   "label": "Solar companies in San Rafael"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/tracy",
+   "label": "Solar companies in Tracy"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/antioch",
+   "label": "Solar companies in Antioch"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/napa",
+   "label": "Solar companies in Napa"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/fairfield",
+   "label": "Solar companies in Fairfield"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/poway",
+   "label": "Solar companies in Poway"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/hollister",
+   "label": "Solar companies in Hollister"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/burbank",
+   "label": "Solar companies in Burbank"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/la-habra",
+   "label": "Solar companies in La Habra"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/coachella-valley",
+   "label": "Solar companies in Coachella Valley"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/ventura-county",
+   "label": "Solar companies in Ventura County"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/palmdale",
+   "label": "Solar companies in Palmdale"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/hesperia",
+   "label": "Solar companies in Hesperia"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/fullerton",
+   "label": "Solar companies in Fullerton"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/diamond-bar",
+   "label": "Solar companies in Diamond Bar"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/downey",
+   "label": "Solar companies in Downey"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/newport-beach",
+   "label": "Solar companies in Newport Beach"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/aliso-viejo",
+   "label": "Solar companies in Aliso Viejo"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/mission-viejo",
+   "label": "Solar companies in Mission Viejo"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/galt",
+   "label": "Solar companies in Galt"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/lake-forest",
+   "label": "Solar companies in Lake Forest"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/tustin",
+   "label": "Solar companies in Tustin"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/santee",
+   "label": "Solar companies in Santee"
+  }
+ ],
+ "link_requests": [
+  {
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/coachella-valley",
+   "anchor": "Coachella Valley solar companies: SCE or IID by city",
+   "why": "New region page with no inbound links yet (region pages get no nearby-city links); the statewide hub is its natural parent."
+  },
+  {
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/ventura-county",
+   "anchor": "Ventura County solar companies and permit offices",
+   "why": "New region page; statewide hub is the parent."
+  },
+  {
+   "from": "/solar-companies/palm-springs",
+   "to": "/solar-companies/coachella-valley",
+   "anchor": "Utilities and permit offices across the Coachella Valley",
+   "why": "Add to projectLinks (growth-cities.ts); Palm Springs is in the region table."
+  },
+  {
+   "from": "/solar-companies/palm-desert",
+   "to": "/solar-companies/coachella-valley",
+   "anchor": "Which Coachella Valley cities are SCE and which are IID",
+   "why": "Add to projectLinks; Palm Desert is in the region table."
+  },
+  {
+   "from": "/solar-companies/riverside-county",
+   "to": "/solar-companies/coachella-valley",
+   "anchor": "The Coachella Valley in more detail",
+   "why": "Add to projectLinks; the county page's Indio/Coachella/La Quinta rows are covered in depth there."
+  },
+  {
+   "from": "/solar-companies/riverside-county",
+   "to": "/solar-companies/wildomar",
+   "anchor": "Wildomar",
+   "why": "Region table: split Wildomar out of the 'Hemet, Perris, Wildomar, Canyon Lake' row (permit: City of Wildomar, Symbium) and set slug 'wildomar' so the table links the new page."
+  },
+  {
+   "from": "/solar-companies/ventura",
+   "to": "/solar-companies/ventura-county",
+   "anchor": "Ventura County providers and permit offices",
+   "why": "Add to projectLinks on the Ventura, Oxnard, Camarillo, Thousand Oaks and Simi Valley companies pages (all in the region table)."
+  },
+  {
+   "from": "/solar-companies/orange-county",
+   "to": "/solar-companies/fullerton",
+   "anchor": "Fullerton",
+   "why": "Region table: set slug 'fullerton' on the existing Fullerton row."
+  },
+  {
+   "from": "/solar-companies/orange-county",
+   "to": "/solar-companies/newport-beach",
+   "anchor": "Newport Beach, Tustin, Lake Forest",
+   "why": "Region table: split the 'Costa Mesa, Garden Grove, Newport Beach, Orange, Tustin, Lake Forest' row so newport-beach, tustin and lake-forest rows carry slugs (City permit via SolarAPP+; North Tustin is County of Orange)."
+  },
+  {
+   "from": "/solar-companies/orange-county",
+   "to": "/solar-companies/mission-viejo",
+   "anchor": "Mission Viejo, Aliso Viejo",
+   "why": "Region table: split the 'Mission Viejo, Aliso Viejo, Laguna Hills, Laguna Niguel' row and set slugs mission-viejo and aliso-viejo; add a La Habra row (SCE, SCE, City of La Habra) with slug la-habra."
+  },
+  {
+   "from": "/solar-companies/high-desert",
+   "to": "/solar-companies/hesperia",
+   "anchor": "Hesperia",
+   "why": "Region table: set slug 'hesperia' on the Hesperia row and 'palmdale' on the Palmdale row."
+  },
+  {
+   "from": "/solar-companies/bay-area",
+   "to": "/solar-companies/novato",
+   "anchor": "Novato and San Rafael",
+   "why": "Region table: split the Marin row into San Rafael (slug san-rafael) and Novato (slug novato); consider rows for Napa, Vallejo, Fairfield (MCE), Brentwood and Antioch (PG&E only), which now have pages."
+  },
+  {
+   "from": "/solar-companies/sacramento",
+   "to": "/solar-companies/elk-grove",
+   "anchor": "Elk Grove, where SMUD's approval letter comes first",
+   "why": "Optional projectLinks addition; Elk Grove already receives nearby-city links from Sacramento-area pages."
+  }
+ ],
+ "shared_files_touched": [
+  {
+   "file": "src/lib/canonical-redirects.ts",
+   "why": "Vallejo row removed (T3 brief section 3, citycos lane only)."
+  },
+  {
+   "file": "src/lib/canonical-redirects.test.ts",
+   "why": "New dated Tier 3 sections: vallejo reinstatement (ROW_DELTAS -1) and T3_CITYCOS_COMPANIES_SLUGS registry of every page this lane built or upgraded; Decision 15 vallejo assertion and the twin-check vacuity assertion rewritten with comments."
+  },
+  {
+   "file": "src/data/city-coordinates.ts",
+   "why": "TIGERweb internal points for 24 new slugs and for 8 live T2/citycost pages that had none (arcata, bellflower, cupertino, palo-alto, san-ramon, santa-clara, santa-monica, scotts-valley). The T3 citycost lane may add clovis, elk-grove or mission-viejo too: a duplicate key would fail tsc at merge; keep one line."
+  },
+  {
+   "file": "src/lib/city-pages.ts",
+   "why": "GROWTH_UTILITY_LABEL gains bwp: 'Burbank Water and Power'."
+  }
+ ],
+ "skipped": [
+  {
+   "url": "/solar-companies/woodland-hills",
+   "why": "folded into /solar-companies/los-angeles: Woodland Hills is a neighborhood of the City of Los Angeles (TIGERweb point checks at Warner Center, Ventura Blvd and the hills to the south all fall in Los Angeles city, GEOID 0644000) and LADWP territory on the CEC map, so its utility (LADWP rider) and permit office (LADBS Express Permit) are the Los Angeles page's. Added a Woodland Hills FAQ there, as Tier 2 did for Sherman Oaks."
+  }
+ ]
+}

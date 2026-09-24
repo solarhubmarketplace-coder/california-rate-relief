@@ -11033,7 +11033,7 @@ export const growthCities: Record<string, GrowthCity> = {
     "utility": "pge",
     "sourceCheckedDate": "2026-09-23",
     "bill": "A Novato bill has two halves: PG&E's delivery charges and MCE's generation charges, with MCE's generation credits shown on MCE's page of the statement. Novato is an MCE member, and MCE enrolls solar customers in its own program automatically: Net Energy Metering for systems that applied by April 14, 2023, and its Solar Billing Plan after that. Each bidder should model both halves from your own statement.",
-    "local": "Novato's SolarAPP+ route checks code compliance for most residential roof-mounted systems, new or retrofit, with or without energy storage, and the City issues the permit instantly when the design passes. It is open only to contractors holding a General B, Solar C-46 or Electrical C-10 license, and SolarAPP+ includes three free revisions. Contractors may still choose the standard building permit, and owner-builders and projects that do not fit the checklist must use it.",
+    "local": "Novato's SolarAPP+ route checks code compliance for most residential roof-mounted systems, new or retrofit, with or without energy storage, and the City issues the permit instantly when the design passes. It is open only to contractors holding a General B, Solar C-46 or Electrical C-10 license, and the SolarAPP+ fee covers up to three revisions. Contractors may still choose the standard building permit, and owner-builders and projects that do not fit the checklist must use it.",
     "example": "Ask each Novato bidder whether its design fits the SolarAPP+ checklist. If it does, the permit can issue the same day; if not, the standard permit adds plan review and the schedule should show it. Then compare the MCE and PG&E bill each proposal leaves you with, not a single savings percentage.",
     "checks": [
       [
@@ -11124,7 +11124,7 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "label": "Instant permit",
         "value": "SolarAPP+",
-        "note": "B, C-46 or C-10 license; three free revisions",
+        "note": "B, C-46 or C-10 license; up to three revisions",
         "source": {
           "publisher": "City of Novato",
           "date": "2026-09-23",
@@ -11157,7 +11157,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "heading": "Who can use Novato's SolarAPP+ permit",
         "paragraphs": [
           "Novato adopted SolarAPP+ to give residential rooftop solar a code-compliance check without a full plan set. The City describes the route as covering the majority of residential, roof-mounted, new and retrofit photovoltaic systems with and without energy storage systems, and only projects that conform to the SolarAPP+ checklist can use it. When they do, the automated review replaces plan review and the City issues the permit instantly.",
-          "The route is limited to contractors: the City names General B, Solar C-46 and Electrical C-10 licenses. It is not mandatory; a licensed contractor can still apply through the standard building permit process, and owner-builders and applications that do not fit the checklist must. SolarAPP+ supports three free revisions. Novato has not yet filed an annual SB 379 report with the Energy Commission, so there is no published count of how many local permits used the instant route."
+          "The route is limited to contractors: the City names General B, Solar C-46 and Electrical C-10 licenses. It is not mandatory; a licensed contractor can still apply through the standard building permit process, and owner-builders and applications that do not fit the checklist must. A SolarAPP+ submission covers up to three revisions. Novato has not yet filed an annual SB 379 report with the Energy Commission, so there is no published count of how many local permits used the instant route."
         ]
       },
       {
