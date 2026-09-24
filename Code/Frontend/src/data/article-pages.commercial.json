@@ -130,7 +130,7 @@
         "answer": "Often, yes — some irrigation districts operate under their own power arrangements or wholesale contracts rather than a standard utility ag tariff, and district-level incentive programs for pump electrification or solar do exist in some areas. We have not independently researched specific district programs for this page. If your pumping is billed through a water or irrigation district rather than directly by PG&E or SCE, ask your district for its own rate schedule and any solar or efficiency incentive it runs before assuming standard AG-A/AG-B/TOU-PA numbers apply."
       }
     ],
-    "bottomLine": "The financing picture for California farm solar in 2026 is worse than it was in 2025, not better. REAP grants have been closed since April 1, 2026, with no reopening date, and guaranteed loans are the only USDA channel still open. Federal residential and commercial tax credit changes don't hit agricultural entities the same way rooftop homeowners feel them, but the loss of a grant cost-share is a real hole in the capital stack for any farm that was counting on one. Farm operations organized as businesses may still reach the Section 48E commercial clean-electricity credit that residential 25D can no longer offer after 2025 — but we did not verify eligibility rules or construction-start deadlines for ag ground-mount systems under this pass, so confirm with a tax professional before assuming 48E fills the REAP gap. What still works: PG&E and SCE both let you aggregate a single array across every meter you own or lease on contiguous land, which is the only way pump-season-only load ever pencils against a year-round bill, and agricultural customers are confirmed exempt from AB 942's narrower successor-owner NEM downgrade. SGMA-driven fallowing and AB 1156's Williamson Act fee waiver (once signed) point toward ground-mount on retired acreage as a live opportunity. Get your utility's exact ag rate sheet and a farm-scale contractor quote before running numbers — the generic residential $/watt figures floating around the internet don't apply to your acreage.",
+    "bottomLine": "The financing picture for California farm solar in 2026 is worse than it was in 2025, not better. REAP grants have been closed since April 1, 2026, with no reopening date, and guaranteed loans are the only USDA channel still open. Federal residential and commercial tax credit changes don't hit agricultural entities the same way rooftop homeowners feel them, but the loss of a grant cost-share is a real hole in the capital stack for any farm that was counting on one. Farm businesses can look to the §48E commercial credit, since the residential §25D credit does not apply to expenditures made after December 31, 2025; a solar facility whose construction began after July 4, 2026 must be placed in service by December 31, 2027 to get it. Confirm eligibility with a tax professional before assuming 48E fills the REAP gap. What still works: PG&E and SCE both let you aggregate a single array across every meter you own or lease on contiguous land, which is the only way pump-season-only load ever pencils against a year-round bill, and agricultural customers are confirmed exempt from AB 942's narrower successor-owner NEM downgrade. SGMA-driven fallowing and AB 1156's Williamson Act fee waiver (once signed) point toward ground-mount on retired acreage as a live opportunity. Get your utility's exact ag rate sheet and a farm-scale contractor quote before running numbers — the generic residential $/watt figures floating around the internet don't apply to your acreage.",
     "sources": [
       {
         "name": "DTN Progressive Farmer — USDA halts REAP grant applications",
@@ -191,6 +191,16 @@
         "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
         "url": "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
         "supports": "2023 installed prices, 20th-80th percentile, national: small non-residential (100 kWdc or less) $2.5-4.3/W; large non-residential (over 100 kWdc) $1.7-3.1/W"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §25D (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section25D&num=0&edition=prelim",
+        "supports": "Residential clean energy credit does not apply to expenditures after December 31, 2025"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -434,8 +444,8 @@
       },
       {
         "label": "Federal 48E investment tax credit",
-        "value": "30% through 2033",
-        "note": "Steps down to 22.5% (2034) and 15% (2035); standalone storage qualifies without a solar pairing, unlike the now-expired residential 25D credit. Source: 26 U.S.C. §48E via Tax Notes, as of 2026-09-05."
+        "value": "Up to 30%",
+        "note": "30% for storage under 1 MW or meeting wage and apprenticeship rules; full credit for construction starting through 2033, 75% for 2034 starts, 50% for 2035, none after. Standalone storage qualifies. 26 U.S.C. §48E(e) and §45Y(d)(3), text in effect September 22, 2026."
       },
       {
         "label": "SGIP commercial (Large-Scale Storage) status",
@@ -467,7 +477,7 @@
       },
       {
         "heading": "The federal 48E credit is the incentive that matters now",
-        "body": "With SGIP closed to new commercial applicants, the federal Section 48E investment tax credit is the primary incentive lever left standing, and it's arguably a stronger one than SGIP ever was for storage specifically. Standalone commercial battery storage qualifies for the 48E credit at 30% through tax year 2033, stepping down to 22.5% in 2034 and 15% in 2035, contingent on national grid emissions staying under statutory targets. Unlike the residential 25D credit, which expired for good on December 31, 2025, 48E does not require the storage to be paired with solar — a storage-only commercial project qualifies on its own.\n\nThere's a compliance wrinkle worth knowing before you sign a contract: Foreign Entity of Concern (\"FEOC\") material-assistance rules require a minimum non-restricted-source cost share for the credit to apply — at least 55% for projects beginning construction in 2026, rising to 60% in 2027 and eventually 75% for projects starting in 2030 or later. Most of the commercial battery market still uses Chinese-sourced cells and modules, so a project that can't document its sourcing cost ratio risks losing the credit entirely. Ask your integrator directly how they document FEOC compliance before you sign anything.\n\nOne more flag: sources disagree on the exact safe-harbor cutoff date for pre-FEOC treatment — some cite July 4, 2026, others July 6, 2026, tied to the One Big Beautiful Bill Act's July 2025 enactment. Treat the cutoff as \"mid-2026\" rather than a specific date until you've verified it against IRS guidance or the statute directly, and don't let anyone quote you an exact date without a citation. Separately, whether standard MACRS depreciation still stacks on top of the 48E credit for storage assets was not confirmed in the research behind this page — verify that with a tax professional before it goes into a return model, rather than assuming it works the way solar MACRS historically has."
+        "body": "With SGIP closed to new commercial applicants, the federal Section 48E investment tax credit is the primary incentive lever left standing, and it's arguably a stronger one than SGIP ever was for storage specifically. Energy storage technology qualifies for §48E on its own. The rate is 30% for storage with a capacity under 1 MW or meeting the prevailing-wage and apprenticeship rules (6% otherwise), and the statute phases the credit out by construction-start year: with the applicable year fixed at 2032 by §45Y(d)(3), storage whose construction begins in 2033 keeps 100% of the credit, 2034 starts get 75%, 2035 starts get 50%, and later starts get nothing. Unlike the residential 25D credit, which expired for good on December 31, 2025, 48E does not require the storage to be paired with solar — a storage-only commercial project qualifies on its own.\n\nThere's a compliance wrinkle worth knowing before you sign a contract: Foreign Entity of Concern (\"FEOC\") material-assistance rules require a minimum non-restricted-source cost share for the credit to apply — at least 55% for projects beginning construction in 2026, rising to 60% in 2027 and eventually 75% for projects starting in 2030 or later. A project that can't document its sourcing cost ratio risks losing the credit entirely. Ask your integrator directly how they document FEOC compliance before you sign anything.\n\nThe prohibited-foreign-entity rules apply to storage whose construction begins after December 31, 2025, under §48E(c)(3). On depreciation, §168(e)(3)(B)(viii) classifies energy storage technology as 5-year property, §168(k) provides a 100% first-year allowance for qualified property acquired after January 19, 2025, and §50(c)(3) reduces the basis by half the credit; have a tax professional confirm how these apply before they go into a return model."
       },
       {
         "heading": "Sizing: follow the load, not the solar array",
@@ -521,7 +531,7 @@
       },
       {
         "question": "What's the actual federal tax credit for a commercial battery now?",
-        "answer": "The Section 48E investment tax credit, at 30% through tax year 2033, stepping down to 22.5% in 2034 and 15% in 2035 (contingent on national grid emissions staying under statutory targets). Unlike the residential solar credit that expired December 31, 2025, 48E doesn't require the battery to be paired with solar — a standalone commercial storage project qualifies on its own. There's a sourcing-compliance rule (Foreign Entity of Concern cost-ratio requirements) that can disqualify a project using undocumented Chinese-sourced cells, so ask your integrator how they document it."
+        "answer": "The Section 48E credit: 30% for storage under 1 MW or meeting the wage and apprenticeship rules, with the full credit for construction beginning through 2033, 75% of it for 2034 starts and 50% for 2035 starts. Unlike the residential solar credit that expired December 31, 2025, 48E doesn't require the battery to be paired with solar — a standalone commercial storage project qualifies on its own. There's a sourcing-compliance rule (Foreign Entity of Concern cost-ratio requirements) that can disqualify a project whose sourcing cost ratio isn't documented, so ask your integrator how they document it."
       },
       {
         "question": "How much does a commercial battery system cost installed in California?",
@@ -544,7 +554,7 @@
         "answer": "Yes, substantially. Publicly owned utilities — LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial Irrigation District, Turlock Irrigation District among them — are not regulated by the CPUC and are not subject to NEM 3.0 or investor-owned-utility rate structures. Their demand charges, rate schedules, and any storage incentive programs are set independently by each utility's own board. Nothing in this page's IOU-specific figures (SCE, PG&E, SDG&E rates) applies to a publicly owned utility account — get that utility's own current commercial tariff before running any numbers."
       }
     ],
-    "bottomLine": "SGIP's commercial storage categories show closed on the program administrators' tracker (as of September 22, 2026) — plan the economics without them. The federal 48E credit, 30% through 2033, now carries the incentive case on its own, without a solar pairing requirement, though FEOC sourcing rules can disqualify an undocumented project. No primary source publishes a California commercial storage price, so compare itemized bids in dollars per usable kWh. Demand-charge reduction, not backup power, is what pays for the system: get your utility's actual current demand rate and twelve months of interval data, and run the math (rate x kW shaved x 12, against net cost after the credit) rather than accepting a payback figure from vendor marketing. Flat-load buildings, small demand-charge exposure, and publicly owned utility accounts are different conversations. California Rate Relief doesn't install systems or hold a contractor's license; it forwards commercial inquiries to an independent provider, subject to service availability.",
+    "bottomLine": "SGIP's commercial storage categories show closed on the program administrators' tracker (as of September 22, 2026) — plan the economics without them. The federal 48E credit, at full value for storage whose construction begins through 2033, now carries the incentive case on its own, without a solar pairing requirement, though FEOC sourcing rules can disqualify an undocumented project. No primary source publishes a California commercial storage price, so compare itemized bids in dollars per usable kWh. Demand-charge reduction, not backup power, is what pays for the system: get your utility's actual current demand rate and twelve months of interval data, and run the math (rate x kW shaved x 12, against net cost after the credit) rather than accepting a payback figure from vendor marketing. Flat-load buildings, small demand-charge exposure, and publicly owned utility accounts are different conversations. California Rate Relief doesn't install systems or hold a contractor's license; it forwards commercial inquiries to an independent provider, subject to service availability.",
     "sources": [
       {
         "name": "Self-Generation Incentive Program — Program Metrics (selfgenca.com)",
@@ -555,21 +565,6 @@
         "name": "CPUC Self-Generation Incentive Program page",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
         "supports": "Independent confirmation that Large-Scale Storage funding was available only through 2025"
-      },
-      {
-        "name": "Tax Notes — 26 U.S.C. §48E",
-        "url": "https://www.taxnotes.com/research/federal/usc26/48E",
-        "supports": "48E investment tax credit rate (30%) and taper schedule (22.5% 2034, 15% 2035)"
-      },
-      {
-        "name": "Mayfield Energy — The 48E Investment Tax Credit in the C&I Space",
-        "url": "https://mayfield.energy/technical-articles/the-48e-investment-tax-credit-in-the-ci-space/",
-        "supports": "Standalone storage eligibility without solar pairing; FEOC material-assistance cost-ratio phase-in schedule; one of two conflicting safe-harbor dates"
-      },
-      {
-        "name": "BuildWithBasis — Battery Storage Tax Credits: What's Next Amid the OBBB Act",
-        "url": "https://buildwithbasis.com/insights/battery-storage-tax-credits-whats-next-amid-the-obbb-act",
-        "supports": "Second, conflicting safe-harbor cutoff date, cited to show the discrepancy rather than as a settled fact"
       },
       {
         "name": "OpenEI U.S. Utility Rate Database — SCE TOU-GS-3, Option R",
@@ -585,6 +580,31 @@
         "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
         "url": "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
         "supports": "Residential storage price premium of roughly $750-1,000 per kWh for paired residential systems installed in 2023 (national regression estimate); California residential storage attachment rate of 14% in 2023"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §45Y (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45Y&num=0&edition=prelim",
+        "supports": "Applicable year of 2032 used by the §48E(e) phase-out; §45Y(g)(12) elective pay domestic content rule"
+      },
+      {
+        "name": "26 U.S.C. §168 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "supports": "§168(e)(3)(B)(viii) 5-year class for §48E property and storage; §168(k) 100% allowance for property acquired after January 19, 2025"
+      },
+      {
+        "name": "26 U.S.C. §50 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section50&num=0&edition=prelim",
+        "supports": "Basis reduced by 50% of the credit; recapture schedule"
+      },
+      {
+        "name": "26 U.S.C. §7701(a)(52) (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "supports": "Material assistance cost ratio thresholds for solar and storage"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -610,7 +630,7 @@
       {
         "label": "ITC Placed-in-Service Deadline",
         "value": "Dec 31, 2027",
-        "note": "New projects must be fully operational by this date or the 30% credit is zero, per IRS Notice 2025-42"
+        "note": "Solar projects whose construction began after July 4, 2026 must be placed in service by this date or the credit is zero, per 26 U.S.C. §48E(e)(4)"
       },
       {
         "label": "SGIP Commercial Storage",
@@ -629,7 +649,7 @@
       },
       {
         "heading": "The Tax Credit Deadline That Actually Matters Now",
-        "body": "Section 48E, the federal investment tax credit, still pays 30% of installed cost for a system under 1 MW AC, and 100 kW is comfortably under that threshold. Systems below that 1 MW AC nameplate-capacity line are also exempt from the prevailing-wage and apprenticeship documentation that larger projects need to hit the full 30% rate, per the IRS's own published FAQ on the requirement.\n\nWhat changed is the deadline. IRS Notice 2025-42, issued under the One Big Beautiful Bill Act (Public Law 119-21, signed July 4, 2025), set a construction-start cutoff of July 4, 2026, twelve months after enactment. Projects that began construction before that date keep the normal placed-in-service timeline. Projects that begin construction after it, which as of today, September 5, 2026, means any project not yet underway, must be fully placed in service, energized, inspected, and cleared to operate by December 31, 2027, or the credit falls to zero. That leaves roughly 15 to 16 months from today to design, permit, interconnect, and commission a system.\n\nA 100 kW system still qualifies as a \"low output\" facility (1.5 MW AC or less) under Notice 2025-42, which lets it establish a construction-start date either through the physical-work test or by meeting the 5% safe harbor, actually paying or incurring at least 5% of total project cost before the same cutoff, not merely by signing a contract. For a project starting today with no cost yet incurred, the number that matters is the placed-in-service deadline, not the safe harbor. Separately, the OBBBA also restored 100% bonus depreciation on a permanent basis for qualifying equipment placed in service after January 19, 2025, meaning a commercial system can pair the 30% ITC with first-year depreciation of most of the remaining basis (the depreciable basis is reduced by half the credit taken, leaving about 85% of cost depreciable in year one). Get the exact interaction of the credit, the basis reduction, and any state-level depreciation treatment confirmed by a CPA before it goes into a payback model."
+        "body": "Section 48E pays 30% of the qualified investment for a facility with a maximum net output under 1 MW AC, and 100 kW is comfortably under that line. Below that line the 30% rate does not depend on the prevailing-wage and apprenticeship requirements, per 26 U.S.C. §48E(a)(2).\n\nWhat changed is the deadline. The cutoff comes from the statute: §48E(e)(4) ends the credit for solar property placed in service after December 31, 2027, and Public Law 119-21 (signed July 4, 2025) applies that rule to facilities whose construction begins after July 4, 2026, twelve months after enactment. Projects that began construction by that date are outside the December 31, 2027 cutoff. For any project not yet underway, the system has to be placed in service by December 31, 2027 or the credit is zero; ask a tax professional what placed-in-service evidence you will need. That leaves roughly 15 to 16 months from today to design, permit, interconnect, and commission a system.\n\nIRS Notice 2025-42 had let a solar facility of 1.5 MW AC or less, such as a 100 kW system, show that construction began either through physical work of a significant nature or through a 5% cost safe harbor; the U.S. District Court for the District of Columbia vacated that notice in full on June 6, 2026, so ask a tax professional which method applies to your facts. For a project starting today with no cost yet incurred, the number that matters is the placed-in-service deadline, not the safe harbor. Under 26 U.S.C. §168(e)(3)(B)(viii), §48E qualified property and energy storage technology are 5-year property, and §168(k) provides a 100% first-year allowance for qualified property acquired after January 19, 2025. Under §50(c)(3), the depreciable basis is reduced by half of the credit, leaving about 85% of the qualified cost depreciable when the credit is 30%. Get the exact interaction of the credit, the basis reduction, and any state-level depreciation treatment confirmed by a CPA before it goes into a payback model."
       },
       {
         "heading": "Annual Production: What 100 kW Actually Generates",
@@ -700,7 +720,7 @@
       },
       {
         "question": "Is the federal solar tax credit still available for commercial systems?",
-        "answer": "Yes. The Section 48E investment tax credit still pays 30% for systems under 1 MW AC, which covers a 100 kW system with room to spare, and systems that size don't need prevailing-wage documentation to get the full rate. The catch is timing: per IRS Notice 2025-42, any project that hasn't already started construction, which as of today is most projects still being planned, must be fully placed in service by December 31, 2027, or the credit is zero. That's roughly 15 to 16 months from today."
+        "answer": "Yes. The Section 48E investment tax credit still pays 30% for systems under 1 MW AC, which covers a 100 kW system with room to spare, and systems that size don't need prevailing-wage documentation to get the full rate. The catch is timing: under §48E(e)(4), any project that hasn't already started construction, which as of today is most projects still being planned, must be fully placed in service by December 31, 2027, or the credit is zero. That's roughly 15 to 16 months from today."
       },
       {
         "question": "Will solar reduce my demand charges?",
@@ -723,7 +743,7 @@
         "answer": "Freedom Forever converted to Chapter 7 liquidation on August 7, 2026, after a Chapter 11 filing in April 2026, affecting its homeowners. Sunnova (Chapter 11, June 2025; assets acquired by Solaris Assets that September, with SunStrong Management now servicing the legacy portfolio) and SunPower (Chapter 11, August 2024) also failed, though all three were mainly residential dealer-network businesses. For a six-figure commercial contract, verify the contractor's CSLB license class and bond status directly at cslb.ca.gov, and ask specifically how long they've operated as a commercial EPC, not just how long the company brand has existed."
       }
     ],
-    "bottomLine": "No primary source publishes a California price for a 100 kW commercial system; LBNL's 2023 national benchmarks put systems of this size somewhere between $1.70 and $4.30 per watt, and engineering, permitting, interconnection and margin typically cost as much as the hardware. The 30% Section 48E credit is still available and doesn't require prevailing-wage paperwork at this size, and it can now be paired with 100% first-year bonus depreciation on the remaining basis. But any project not already under construction must be placed in service by December 31, 2027 to keep the credit at all. SGIP's commercial storage categories are closed, so a battery to chase demand-charge savings is now a fully unsubsidized cost. Confirm production with PVWatts and demand charges with your utility's current tariff sheet before signing anything. Vet any contractor's CSLB license and bond status before committing to them. California Rate Relief doesn't install systems or hold a contractor's license; it forwards commercial inquiries to an independent provider, subject to service availability.",
+    "bottomLine": "No primary source publishes a California price for a 100 kW commercial system; LBNL's 2023 national benchmarks put systems of this size somewhere between $1.70 and $4.30 per watt, and engineering, permitting, interconnection and margin typically cost as much as the hardware. The 30% Section 48E credit is still available and doesn't depend on prevailing-wage compliance at this size, and it can be paired with the 100% first-year allowance §168(k) provides for qualified property acquired after January 19, 2025. But any project not already under construction must be placed in service by December 31, 2027 to keep the credit at all. SGIP's commercial storage categories are closed, so a battery to chase demand-charge savings is now a fully unsubsidized cost. Confirm production with PVWatts and demand charges with your utility's current tariff sheet before signing anything. Vet any contractor's CSLB license and bond status before committing to them. California Rate Relief doesn't install systems or hold a contractor's license; it forwards commercial inquiries to an independent provider, subject to service availability.",
     "sources": [
       {
         "name": "NREL, \"Documenting 15 Years of Reductions in U.S. Solar Photovoltaic System Costs\" (NREL/TP-7A40-92536, Jan. 2025)",
@@ -736,19 +756,9 @@
         "supports": "Section 48E construction-start deadline (July 4, 2026) and placed-in-service cliff (Dec. 31, 2027)"
       },
       {
-        "name": "McGuireWoods, \"IRS Notice 2025-42 ... Limits 5% Safe Harbor to Low-Output Solar Facilities\" (Aug. 2025)",
-        "url": "https://www.mcguirewoods.com/client-resources/alerts/2025/8/irs-notice-2025-42-leaves-beginning-of-construction-guidance-for-wind-and-solar-mostly-unchanged-but-limits-5-safe-harbor-to-low-output-solar-facilities/",
-        "supports": "Clarifies that the 1.5 MW AC low-output safe harbor requires paying/incurring 5% of project cost (or the physical-work test), not merely signing a contract"
-      },
-      {
         "name": "IRS, \"FAQs about the prevailing wage and apprenticeship under the Inflation Reduction Act\"",
         "url": "https://www.irs.gov/credits-deductions/frequently-asked-questions-about-the-prevailing-wage-and-apprenticeship-under-the-inflation-reduction-act",
         "supports": "1 MW AC nameplate-capacity exemption from prevailing-wage/apprenticeship documentation for the full 30% credit"
-      },
-      {
-        "name": "RSM US, \"Restored 100% bonus depreciation: IRS interim guidance helps clarify OBBBA rules\" (2026)",
-        "url": "https://rsmus.com/insights/tax-alerts/2026/restored-bonus-depreciation-irs-interim-guidance-obbba-rules.html",
-        "supports": "100% bonus depreciation restored permanently under OBBBA for qualifying property placed in service after Jan. 19, 2025, and the 15%-basis-reduction interaction with the ITC"
       },
       {
         "name": "Self-Generation Incentive Program — Program Metrics (selfgenca.com)",
@@ -784,6 +794,26 @@
         "name": "NREL — U.S. Solar Photovoltaic System and Energy Storage Cost Benchmarks, Q1 2022 (NREL/TP-7A40-83586)",
         "url": "https://www.nrel.gov/docs/fy22osti/83586.pdf",
         "supports": "Commercial rooftop (200 kWdc) modeled market price $1.84/Wdc in Q1 2022 (2021 USD); national average; costs vary by region and installer"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §168 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "supports": "§168(e)(3)(B)(viii) 5-year class for §48E property and storage; §168(k) 100% allowance for property acquired after January 19, 2025"
+      },
+      {
+        "name": "26 U.S.C. §50 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section50&num=0&edition=prelim",
+        "supports": "Basis reduced by 50% of the credit; recapture schedule"
+      },
+      {
+        "name": "Oregon Environmental Council v. Internal Revenue Service, No. 25-cv-4400 (D.D.C. June 6, 2026), via CourtListener",
+        "url": "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "supports": "Notice 2025-42 vacated in full and remanded to the IRS"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -794,7 +824,7 @@
     "metaTitle": "1 MW Commercial Solar Cost in California (2026)",
     "metaDescription": "What a 1 MW commercial solar system costs in California, using LBNL's benchmark, and what the 48E tax credit, interconnection, and financing actually require.",
     "h1": "What a 1 MW Commercial Solar System Costs in California in 2026",
-    "intro": "No primary source publishes a California price for a 1 MW commercial system. LBNL's Tracking the Sun (2024 Edition) put 2023 installed prices for large non-residential systems (over 100 kWdc) at $1.70 to $3.10 per watt, 20th to 80th percentile, national, which puts a 1 MW system at roughly $1.7 million to $3.1 million before any tax credit. That's the headline. It is not the number that decides whether the project makes sense.\n\nThe number that decides it is 1 MW itself. Under the federal 48E investment tax credit, a facility's AC nameplate output sitting at or above 1 megawatt triggers prevailing wage and apprenticeship requirements to unlock the full 30% credit — miss those requirements and the credit falls to a 6% base rate. A facility under 1 MW AC is automatically exempt from that requirement and gets 30% regardless. A 1 MW commercial system sits directly on that line, and the answer depends on how the project is sized and measured, not just its label.\n\nLayer onto that a federal construction-start deadline that already passed as of today, an interconnection process that won't fast-track a system this size, and a state battery incentive that's technically closed in every California utility territory right now. This page walks through what's actually true, with sources, as of September 5, 2026.",
+    "intro": "No primary source publishes a California price for a 1 MW commercial system. LBNL's Tracking the Sun (2024 Edition) put 2023 installed prices for large non-residential systems (over 100 kWdc) at $1.70 to $3.10 per watt, 20th to 80th percentile, national, which puts a 1 MW system at roughly $1.7 million to $3.1 million before any tax credit. That's the headline. It is not the number that decides whether the project makes sense.\n\nThe number that decides it is 1 MW itself. Under the federal §48E credit, a facility whose maximum net output is 1 megawatt AC or more gets the 30% rate only if it meets the prevailing-wage and apprenticeship requirements; otherwise the rate is the 6% base. A facility under 1 MW AC is automatically exempt from that requirement and gets 30% regardless. A 1 MW commercial system sits directly on that line, and the answer depends on how the project is sized and measured, not just its label.\n\nLayer onto that a federal construction-start deadline that already passed as of today, an interconnection process that won't fast-track a system this size, and a state battery incentive that's technically closed in every California utility territory right now. This page walks through what's actually true, with sources, as of September 5, 2026.",
     "keyStats": [
       {
         "label": "Installed price benchmark, large non-residential",
@@ -832,11 +862,11 @@
       },
       {
         "heading": "The Deadline That Already Passed",
-        "body": "This is the fact that should reshape how this page is read: under the One Big Beautiful Bill Act, signed July 4, 2025, solar facilities under 48E face an early termination structure with two clocks. The first required beginning construction by July 4, 2026 to preserve credit eligibility on the original timeline. As of today, September 5, 2026, that date has already passed.\n\nThe second clock now governs: any project beginning construction after July 4, 2026 must be placed in service by December 31, 2027, or there is no investment tax credit at all — not the reduced 6% rate, none. For a 1 MW project, that's a real construction and commissioning timeline to hit, not a distant planning consideration.\n\n'Beginning construction' is established one of two ways: the Physical Work Test (actual physical work of a significant nature on the project) or a 5% cost safe-harbor method. That safe-harbor path has genuinely been a moving target this year. IRS Notice 2025-42, issued August 15, 2025, initially limited the 5% safe harbor to 'low-output' solar facilities of 1.5 MW AC or less — which would have mattered directly for a project sized right at 1 MW, since it kept the easier safe-harbor route open here while pushing larger projects to the Physical Work Test only. Then, on June 6, 2026, a federal district court vacated Notice 2025-42 in full, ruling the IRS had not adequately justified singling out wind and solar for the change. That restores the 5% safe harbor for solar projects of any size, at least for now — the government is expected to seek a stay and likely appeal, so treat this as unsettled rather than final as of September 5, 2026. None of this changes the underlying July 4, 2026 / December 31, 2027 statutory deadlines above, which come from the OBBBA itself and are unaffected by the notice's litigation status. Confirm the live status of both the notice and your construction-start method with tax counsel before filing anything on the strength of either test."
+        "body": "This is the fact that should reshape how this page is read: under the One Big Beautiful Bill Act, signed July 4, 2025, solar facilities under 48E face an early termination structure with two clocks. The first required beginning construction by July 4, 2026 to preserve credit eligibility on the original timeline. As of today, September 5, 2026, that date has already passed.\n\nThe second clock now governs: any project beginning construction after July 4, 2026 must be placed in service by December 31, 2027, or there is no investment tax credit at all — not the reduced 6% rate, none. For a 1 MW project, that's a real construction and commissioning timeline to hit, not a distant planning consideration.\n\n'Beginning construction' was defined by IRS Notice 2025-42 as either physical work of a significant nature or, for smaller solar facilities, a 5% cost safe harbor. The notice limited the 5% safe harbor to 'low-output' solar facilities of 1.5 MW AC or less, which mattered directly for a project sized right at 1 MW. On June 6, 2026, the U.S. District Court for the District of Columbia vacated Notice 2025-42 in full as arbitrary and capricious and remanded it to the IRS, in Oregon Environmental Council v. IRS. Which construction-start rules apply after that ruling is a question for tax counsel; treat it as unsettled. None of this changes the underlying July 4, 2026 / December 31, 2027 statutory deadlines above, which come from the OBBBA itself and are unaffected by the notice's litigation status. Confirm the live status of both the notice and your construction-start method with tax counsel before filing anything on the strength of either test."
       },
       {
         "heading": "Depreciation: 100% Bonus, and Check the Class Life",
-        "body": "OBBBA made 100% bonus depreciation permanent for qualified property acquired after January 19, 2025, with no scheduled phase-down. That's a meaningful benefit on its own: the full depreciable basis can be expensed in year one, separate from the ITC.\n\nThe recovery period that applies if you don't take bonus depreciation, or can't use all of it in year one, is a question for your CPA: OBBBA changed several energy-property rules, and this page has not confirmed the current class life for a solar project against IRS text. It matters more as a contingency if bonus depreciation is reduced in a future tax year, or for a project owner without enough taxable income to use the full deduction in year one."
+        "body": "Section 168(k)(1)(A) now provides a 100% first-year allowance for qualified property acquired after January 19, 2025, and the statute as amended in 2025 sets no phase-down. That's a meaningful benefit on its own: the full depreciable basis can be expensed in year one, separate from the ITC.\n\nIf you elect out of the allowance or cannot use all of it in year one, 26 U.S.C. §168(e)(3)(B)(viii) classifies §48E qualified property and energy storage technology as 5-year property. It matters more as a contingency if bonus depreciation is reduced in a future tax year, or for a project owner without enough taxable income to use the full deduction in year one."
       },
       {
         "heading": "Interconnection: Rule 21 Won't Fast-Track You",
@@ -896,7 +926,7 @@
       },
       {
         "question": "Is it too late to get the solar tax credit for a project starting now?",
-        "answer": "Not automatically, but the clock changed under the One Big Beautiful Bill Act. Projects needed to begin construction by July 4, 2026 to preserve credit eligibility on the original timeline — a date that has already passed. A project starting construction after that date must be placed in service by December 31, 2027 or it gets no investment tax credit at all, not even the 6% floor. 'Beginning construction' is established through the Physical Work Test or a 5% cost safe-harbor method — and the safe-harbor picture is currently unsettled: IRS Notice 2025-42 limited it to solar facilities of 1.5 MW AC or less, then a federal court vacated that notice on June 6, 2026, restoring the safe harbor for projects of any size pending an expected government appeal. Check the live status with tax counsel before relying on either method to lock in a construction-start date."
+        "answer": "Not automatically, but the clock changed under the One Big Beautiful Bill Act. Projects needed to begin construction by July 4, 2026 to preserve credit eligibility on the original timeline — a date that has already passed. A project starting construction after that date must be placed in service by December 31, 2027 or it gets no investment tax credit at all, not even the 6% floor. 'Beginning construction' was defined by IRS Notice 2025-42, which limited the 5% cost safe harbor to solar facilities of 1.5 MW AC or less; a federal court vacated that notice in full on June 6, 2026, so what now governs is unsettled. Check the live status with tax counsel before relying on either method to lock in a construction-start date."
       },
       {
         "question": "Will a 1 MW system qualify for Fast Track interconnection?",
@@ -943,11 +973,6 @@
         "supports": "Original August 15, 2025 guidance limiting the 5% cost safe-harbor to 'low-output' solar facilities of 1.5 MW AC or less; superseded in practice by a June 2026 court vacatur (see KPMG source below), though the notice has not been formally withdrawn by IRS pending appeal."
       },
       {
-        "name": "KPMG TaxNewsFlash, \"Federal district court vacates Notice 2025-42, which eliminated five percent safe harbor for establishing beginning of construction for wind and solar projects\"",
-        "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/06/court-vacates-notice-2025-42-eliminated-safe-harbor-construction-wind-solar.html",
-        "supports": "June 6, 2026 court vacatur of IRS Notice 2025-42, restoring the 5% safe harbor for wind/solar projects of any size pending an expected government appeal; confirms the OBBBA's July 4, 2026 / December 31, 2027 statutory deadlines are unaffected by the vacatur."
-      },
-      {
         "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
         "url": "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
         "supports": "2023 installed prices, 20th-80th percentile, national: small non-residential (100 kWdc or less) $2.5-4.3/W; large non-residential (over 100 kWdc) $1.7-3.1/W"
@@ -961,6 +986,21 @@
         "name": "IRS — Domestic Content Bonus Credit",
         "url": "https://www.irs.gov/credits-deductions/domestic-content-bonus-credit",
         "supports": "Domestic-content bonus of 10 percentage points (projects under 1 MW, construction begun before January 29, 2023, or meeting prevailing-wage and apprenticeship rules) or 2 points otherwise; US-made steel, iron and manufactured products"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §168 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "supports": "§168(e)(3)(B)(viii) 5-year class for §48E property and storage; §168(k) 100% allowance for property acquired after January 19, 2025"
+      },
+      {
+        "name": "Oregon Environmental Council v. Internal Revenue Service, No. 25-cv-4400 (D.D.C. June 6, 2026), via CourtListener",
+        "url": "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "supports": "Notice 2025-42 vacated in full and remanded to the IRS"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -986,7 +1026,7 @@
       {
         "label": "48E placed-in-service deadline",
         "value": "Dec 31, 2027",
-        "note": "For construction begun after July 4, 2026 — cross-checked against IRS Notice 2025-42 and independent tax-industry summaries, as of 2026-09-05"
+        "note": "For solar construction begun after July 4, 2026, per 26 U.S.C. §48E(e)(4)"
       },
       {
         "label": "NEM 3.0 export value",
@@ -1017,7 +1057,7 @@
       },
       {
         "heading": "The 48E Tax Credit Deadline and Bonus Depreciation",
-        "body": "The federal residential credit (25D) is dead — it ended December 31, 2025. The commercial credit, Section 48E, is still active, but the One Big Beautiful Bill Act tightened its deadline structure, and the date matters more than usual right now: projects that began construction on or before July 4, 2026 have until December 31, 2030 to be placed in service and still qualify (facilities that started construction before December 31, 2025 get the slightly longer December 31, 2029 date under the same continuity safe harbor). Projects beginning construction after July 4, 2026 — which, as of today, September 5, 2026, means essentially any 500 kW project just starting design — must be placed in service by December 31, 2027 to claim the credit. That's a hard, roughly 16-month clock from today. Weigh the Rule 21 timeline risk from earlier in this page before you assume you'll make it. We cross-checked this deadline structure against IRS Notice 2025-42 (Treasury's beginning-of-construction guidance implementing the OBBBA's changes to the clean electricity credits) and multiple independent tax-industry summaries this cycle; have your tax counsel still confirm your specific begin-construction date qualifies before you finalize financing — this is the number the whole urgency argument on this page rests on.\n\nOne more detail worth knowing: the flat 30% figure this page uses assumes prevailing-wage and apprenticeship (PWA) compliance, which is normally required to get above a 6% base credit rate. A facility with a nameplate capacity under 1 MW measured in AC — which a 500 kW system is — is exempt from the PWA requirement and still receives the full 30%-equivalent rate. That's why this page can state 30% without attaching a PWA compliance program to it. A project sized closer to the 1 MW line should confirm the exemption still applies to its exact AC nameplate rating before assuming the same.\n\nBonus depreciation is more solid ground. IRS Notice 2026-11, released January 14, 2026, confirms the OBBBA made 100% bonus depreciation permanent for qualified property acquired after January 19, 2025 — not the 40% figure some 2026 vendor blog posts still cite, which describes an older phase-down schedule that no longer applies. For a cash or loan purchase, that means a business with real tax liability can pair the 30% credit with a 100% first-year write-off on the remaining basis — a substantial year-one tax shield that only has value if you have the tax appetite to use it."
+        "body": "The federal residential credit (25D) is dead — it ended December 31, 2025. The commercial credit, Section 48E, is still active, but the One Big Beautiful Bill Act added a cutoff: under §48E(e)(4), a solar facility whose construction began after July 4, 2026 gets no credit for property placed in service after December 31, 2027. A project that began earlier is outside that cutoff; IRS Notice 2025-42 had tied that status to a continuous program of construction, and a federal court vacated the notice in full on June 6, 2026. Projects beginning construction after July 4, 2026 — which, as of today, September 5, 2026, means essentially any 500 kW project just starting design — must be placed in service by December 31, 2027 to claim the credit. That's a hard, roughly 16-month clock from today. Weigh the Rule 21 timeline risk from earlier in this page before you assume you'll make it. Have your tax counsel confirm your begin-construction facts before you finalize financing; this is the date the urgency on this page rests on.\n\nOne more detail worth knowing: the flat 30% figure this page uses assumes prevailing-wage and apprenticeship (PWA) compliance, which is normally required to get above a 6% base credit rate. A facility with a nameplate capacity under 1 MW measured in AC — which a 500 kW system is — is exempt from the PWA requirement and still receives the full 30%-equivalent rate. That's why this page can state 30% without attaching a PWA compliance program to it. A project sized closer to the 1 MW line should confirm the exemption still applies to its exact AC nameplate rating before assuming the same.\n\nBonus depreciation is more solid ground. Section 168(k)(1)(A) now provides a 100% first-year allowance for qualified property acquired after January 19, 2025, and IRS Notice 2026-11 gives interim guidance on it. A 40% figure some vendors still cite reflects the old phase-down; the current statute keeps 40% only as an election for the first taxable year ending after January 19, 2025. For a cash or loan purchase, that means a business with real tax liability can pair the 30% credit with a 100% first-year write-off on the remaining basis — a substantial year-one tax shield that only has value if you have the tax appetite to use it."
       },
       {
         "heading": "Battery Storage: The State Rebate Is Closed",
@@ -1100,7 +1140,7 @@
         "answer": "No primary source publishes a commercial-specific payback period for a 500 kW system, and residential figures don't transfer: a commercial project has demand charges to offset and real tax liability to absorb the ITC and depreciation against. Build your own number from the installed price on your bids, the tax benefits you can actually use, your real demand-charge offset, and export value from your utility's avoided-cost tables."
       }
     ],
-    "bottomLine": "No primary source publishes a California price for a 500 kW commercial system; LBNL's 2023 national benchmark for large non-residential systems, $1.70 to $3.10 per watt, puts one at roughly $850,000 to $1,550,000 before incentives, and lower per watt than a small system. Size isn't the interconnection obstacle — Rule 21 Fast Track covers you at every utility — but a saturated local circuit, or missing a Distribution Group Study window, can turn a few-month process into a year. The 48E tax credit is alive but the clock tightened after July 4, 2026; 100% bonus depreciation is real and permanent; SGIP's non-residential storage categories are closed. Whether cash or a PPA wins depends on your tax position and, given the string of installer bankruptcies, on your PPA provider's balance sheet. Get your actual Large C&I rate schedule and a pre-application report before you finalize a design.",
+    "bottomLine": "No primary source publishes a California price for a 500 kW commercial system; LBNL's 2023 national benchmark for large non-residential systems, $1.70 to $3.10 per watt, puts one at roughly $850,000 to $1,550,000 before incentives, and lower per watt than a small system. Size isn't the interconnection obstacle — Rule 21 Fast Track covers you at every utility — but a saturated local circuit, or missing a Distribution Group Study window, can turn a few-month process into a year. The 48E tax credit is alive but the clock tightened after July 4, 2026; the §168(k) 100% first-year allowance applies to qualified property acquired after January 19, 2025; SGIP's non-residential storage categories are closed. Whether cash or a PPA wins depends on your tax position and, given the string of installer bankruptcies, on your PPA provider's balance sheet. Get your actual Large C&I rate schedule and a pre-application report before you finalize a design.",
     "sources": [
       {
         "name": "SCE Rule 21 FAQ and Generator Interconnection Processes pages",
@@ -1156,6 +1196,21 @@
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
         "supports": "Net Billing Tariff since April 15, 2023; export credits usually lower than the retail rate but can rise above it on late summer evenings; nine-year guarantee; early-adopter export adder for residential PG&E and SCE customers applying before the end of 2027; approved rates E-ELEC (PG&E), TOU-D-PRIME (SCE), EV-TOU-5 (SDG&E)"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §168 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "supports": "§168(e)(3)(B)(viii) 5-year class for §48E property and storage; §168(k) 100% allowance for property acquired after January 19, 2025"
+      },
+      {
+        "name": "Oregon Environmental Council v. Internal Revenue Service, No. 25-cv-4400 (D.D.C. June 6, 2026), via CourtListener",
+        "url": "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "supports": "Notice 2025-42 vacated in full and remanded to the IRS"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -1166,12 +1221,12 @@
     "metaTitle": "Commercial Solar PPA vs Purchase vs C-PACE (CA)",
     "metaDescription": "California commercial solar financing in 2026: the Dec 31, 2027 ITC deadline, 30% 48E credit rules, and how PPA, purchase, lease, and C-PACE compare.",
     "h1": "Commercial Solar PPA vs. Direct Purchase vs. Capital Lease vs. C-PACE in California",
-    "intro": "A commercial solar project that hasn't started construction yet has until December 31, 2027 to be placed in service, or its federal tax credit is zero. That's not a soft planning target. The One Big Beautiful Bill Act (OBBBA, signed July 4, 2025) rewrote Section 48E for solar and wind: facilities that began construction by early July 2026 keep a glide path through 2030, but that window already closed as of today. Anything starting construction now runs on the hard rule above, with no phase-down cushion the way some other clean-electricity technologies get.\n\nThat deadline sits underneath every financing decision on this page, because whichever structure you choose determines who's racing the clock. Direct purchase means your business owns the risk and the reward. A PPA shifts both to a third-party developer. A capital lease splits the difference and, since 2019's accounting rule change, lands on your balance sheet either way. C-PACE finances against the property itself rather than your business's credit.\n\nThis page works through who each structure actually suits, based on tax appetite, balance sheet treatment, and how much of the 30% credit you get to keep versus rent back through a rate.",
+    "intro": "A commercial solar project that hasn't started construction yet has until December 31, 2027 to be placed in service, or its federal tax credit is zero. That's not a soft planning target. The One Big Beautiful Bill Act (signed July 4, 2025) rewrote Section 48E for solar and wind: facilities that began construction by July 4, 2026 are outside the new cutoff, but that window has closed. Anything starting construction now runs on the hard rule above, with no phase-down cushion the way some other clean-electricity technologies get.\n\nThat deadline sits underneath every financing decision on this page, because whichever structure you choose determines who's racing the clock. Direct purchase means your business owns the risk and the reward. A PPA shifts both to a third-party developer. A capital lease splits the difference and, since 2019's accounting rule change, lands on your balance sheet either way. C-PACE finances against the property itself rather than your business's credit.\n\nThis page works through who each structure actually suits, based on tax appetite, balance sheet treatment, and how much of the 30% credit you get to keep versus rent back through a rate.",
     "keyStats": [
       {
         "label": "48E placed-in-service deadline",
         "value": "Dec 31, 2027",
-        "note": "For solar facilities starting construction after the OBBBA cutoff (early July 2026 — advisories differ on whether it's July 3 or July 4) — miss it and the credit is $0 (OBBBA, IRC §48E; ICS Tax, The Tax Adviser, Holland & Knight)."
+        "note": "For solar facilities whose construction began after July 4, 2026 — miss it and the credit is $0 (26 U.S.C. §48E(e)(4))."
       },
       {
         "label": "Installed price benchmark, non-residential",
@@ -1192,15 +1247,15 @@
     "sections": [
       {
         "heading": "The Deadline That Overrides Every Financing Decision",
-        "body": "OBBBA rewrote Section 48E for solar and wind on a hard countdown. Facilities that began construction by early July 2026 keep the old glide path — placed in service by December 31, 2030, subject to normal adders and restrictions. The exact cutoff date is contested among advisories: ICS Tax and McGuireWoods put it at July 4, 2026 (one year from OBBBA's July 4, 2025 enactment), while Holland & Knight computes it as July 3, 2026 under a different counting convention. Either way, that start-construction window has already closed as of today — if your project's start date falls in that one-day gap, confirm the applicable cutoff with a tax advisor before relying on it. Anything beginning construction now falls under the harder rule: placed in service by December 31, 2027, or the credit is zero. There's no multi-year phase-down cushion the way geothermal, storage, and some other clean-electricity technologies get through the early 2030s — for solar and wind, the credit just ends.\n\nFor a 100kW-2MW commercial rooftop project, that's roughly 16 months of runway from today, once you account for permitting, Rule 21 interconnection review, and equipment lead times. Whichever financing structure you choose, whoever owns the system for tax purposes needs to hit that in-service date to get anything. If your realistic timeline runs past 2027, don't build your decision around a 30% credit that won't exist when the system goes live — price the project on its own economics instead."
+        "body": "OBBBA rewrote Section 48E for solar and wind on a hard countdown. Facilities that began construction by July 4, 2026 are outside the new cutoff. The statute's effective-date note applies the cutoff to facilities whose construction begins after \"the date which is 12 months after\" July 4, 2025, and IRS Notice 2025-42 read that as construction beginning after July 4, 2026. Either way, that start-construction window has already closed as of today — if your project's start date falls in that one-day gap, confirm the applicable cutoff with a tax advisor before relying on it. Anything beginning construction now falls under the harder rule: placed in service by December 31, 2027, or the credit is zero. There's no multi-year phase-down cushion the way geothermal, storage, and some other clean-electricity technologies get through the early 2030s — for solar and wind, the credit just ends.\n\nFor a 100kW-2MW commercial rooftop project, that's roughly 16 months of runway from today, once you account for permitting, Rule 21 interconnection review, and equipment lead times. Whichever financing structure you choose, whoever owns the system for tax purposes needs to hit that in-service date to get anything. If your realistic timeline runs past 2027, don't build your decision around a 30% credit that won't exist when the system goes live — price the project on its own economics instead."
       },
       {
         "heading": "Getting to the Full 30% — and Why the Safe Harbor Got Harder",
-        "body": "The base 48E rate is 6%. The full 30% requires meeting prevailing wage (Davis-Bacon rates for all construction, alteration, and repair labor) and apprenticeship requirements (at least 15% of labor hours from registered apprenticeship programs) — but projects under 1 MW AC are automatically deemed to meet these and get the full 30% regardless. That carve-out covers most commercial rooftop systems; above 1 MW AC, the full 30% depends on documenting actual compliance, or the credit drops back to the 6% base rate.\n\nEstablishing a construction-start date also got harder. IRS Notice 2025-42 (August 15, 2025) eliminated the 5% cost safe harbor for all wind projects and for solar above 1.5 MW AC. Only solar facilities of 1.5 MW or less that began construction before July 5, 2026 could still use the 5% safe harbor — a window that has now closed. Any commercial project starting construction today has to establish beginning-of-construction status through the \"physical work of a significant nature\" test instead, a higher documentation bar than writing a 5% deposit check.\n\nA separate sourcing rule also applies: for construction beginning in 2026, at least 40% of system component value must come from non-prohibited-foreign-entity sources, rising 5 points a year toward 60% by 2030, and no specified or foreign-influenced entity can claim 48E at all. This is set by Treasury/IRS Notice 2026-15 (Feb. 2026) implementing OBBBA's material-assistance cost-ratio rule. Ask your EPC for component sourcing documentation before signing anything."
+        "body": "The base 48E rate is 6%. For a facility of 1 MW AC or more, the full 30% requires meeting the prevailing-wage and apprenticeship requirements; a facility under 1 MW AC gets 30% regardless, under 26 U.S.C. §48E(a)(2). That carve-out covers most commercial rooftop systems; above 1 MW AC, the full 30% depends on documenting actual compliance, or the credit drops back to the 6% base rate.\n\nEstablishing a construction-start date also got harder. IRS Notice 2025-42 made the 5% cost safe harbor unavailable for wind projects and for solar above 1.5 MW AC, and a federal court vacated that notice in full on June 6, 2026. Only solar facilities of 1.5 MW or less that began construction before July 5, 2026 could still use the 5% safe harbor — a window that has now closed. Any commercial project starting construction today has to establish beginning-of-construction status through the \"physical work of a significant nature\" test instead, a higher documentation bar than writing a 5% deposit check.\n\nA separate sourcing rule also applies: for construction beginning in 2026, at least 40% of system component value must come from non-prohibited-foreign-entity sources, rising 5 points a year toward 60% by 2030, and no specified or foreign-influenced entity can claim 48E at all. The thresholds are in 26 U.S.C. §7701(a)(52); IRS Notice 2026-15 provides interim safe harbors for calculating the ratio. Ask your EPC for component sourcing documentation before signing anything."
       },
       {
         "heading": "Direct Purchase — You Own the Tax Benefits, and the Risk",
-        "body": "Buy the system outright and you claim the 48E credit directly, plus 100% federal bonus depreciation — restored permanently, with no phase-down, by OBBBA for property acquired after January 19, 2025. That lets you expense the entire depreciable basis at the federal level in year one. Which recovery period applies if you don't take bonus depreciation is a question for your CPA; this page has not confirmed it against IRS text. Once you're taking 100% bonus depreciation, the whole federal basis is expensed in year one regardless.\n\nCalifornia doesn't conform to federal bonus depreciation, though. You'll still be depreciating the asset on a normal schedule for state tax purposes, so talk to your CPA about the add-back before assuming the federal bonus depreciation number is your total benefit. Direct purchase only pays off if your business has enough taxable income to use both the credit and the depreciation the year the system is placed in service — a business with thin or negative taxable income leaves both on the table."
+        "body": "Buy the system outright and you claim the 48E credit directly, plus the 100% first-year allowance §168(k) now provides for qualified property acquired after January 19, 2025. That lets you expense the entire depreciable basis at the federal level in year one. If you elect out of that allowance, §168(e)(3)(B)(viii) classifies §48E qualified property as 5-year property. Once you're taking 100% bonus depreciation, the whole federal basis is expensed in year one regardless.\n\nCalifornia doesn't conform to §168(k), though, according to the FTB's 2025 Form 100 booklet. You'll still be depreciating the asset on a normal schedule for state tax purposes, so talk to your CPA about the add-back before assuming the federal bonus depreciation number is your total benefit. Direct purchase only pays off if your business has enough taxable income to use both the credit and the depreciation the year the system is placed in service — a business with thin or negative taxable income leaves both on the table."
       },
       {
         "heading": "PPA — Someone Else Owns the Tax Benefits, You Buy the Output",
@@ -1247,7 +1302,7 @@
           "Usually little or nothing — developer-financed",
           "Set by contract",
           "Buyout offered at set contract years — insist on a fixed price or defined formula, not open-ended \"fair market value\"",
-          "Nonprofits, schools, government entities, and any business with light or negative taxable income"
+          "Businesses with light or negative taxable income; nonprofits and public agencies that choose not to own the system and use elective pay"
         ],
         [
           "Capital (Finance) Lease",
@@ -1273,11 +1328,11 @@
     "faqs": [
       {
         "question": "Can a nonprofit or government building still get any benefit from the 48E credit?",
-        "answer": "Not directly — nonprofits and government entities don't have federal tax liability to offset against a credit. But they can still benefit indirectly through a PPA: the third-party developer who owns the system claims the 30% credit and depreciation, then passes part of that value through in a lower per-kWh rate. That's the entire reason PPAs exist as a financing category — a mechanism for routing a tax benefit to an entity that can't use it directly. A separate elective-pay mechanism for tax-exempt and government entities exists post-OBBBA in narrower form; confirm current eligibility with a tax advisor rather than assuming it covers your project, since this research pass did not verify elective-pay specifics under the current rules."
+        "answer": "Not against a tax bill — nonprofits and government entities don't have federal tax liability to offset. But they can still benefit indirectly through a PPA: the third-party developer who owns the system claims the 30% credit and depreciation, then passes part of that value through in a lower per-kWh rate. That's the entire reason PPAs exist as a financing category — a mechanism for routing a tax benefit to an entity that can't use it directly. They can also own the system and elect to receive the §48E credit as a payment under 26 U.S.C. §6417, which covers tax-exempt organizations and state and local governments; the IRS says the entity must own the property. For a facility of 1 MW AC or more whose construction began after December 31, 2025, an elective pay claim is reduced to zero unless the domestic content requirement is met or a Treasury exception applies, so confirm the details with a tax professional."
       },
       {
         "question": "What happens if my system isn't placed in service by December 31, 2027?",
-        "answer": "If construction began after the OBBBA cutoff (early July 2026 — advisories differ on whether it's July 3 or July 4), the 48E credit for that solar facility drops to zero once the placed-in-service deadline is missed — there's no partial credit and no multi-year phase-down the way some other clean-electricity technologies get through the early 2030s. The system still works and still cuts utility bills, but the roughly 30% tax credit that may be built into your project's financial model disappears entirely. That's why permitting timeline and Rule 21 interconnection queue position matter as much as equipment selection right now — build enough runway from signing to placed-in-service that a permitting delay doesn't decide whether you get $0 or 30% of project cost back."
+        "answer": "If construction began after July 4, 2026, the §48E credit for that solar facility is zero for property placed in service after December 31, 2027 — there is no partial credit, and no multi-year phase-down of the kind §48E gives energy storage. The system still works and still cuts utility bills, but the roughly 30% tax credit that may be built into your project's financial model disappears entirely. That's why permitting timeline and Rule 21 interconnection queue position matter as much as equipment selection right now — build enough runway from signing to placed-in-service that a permitting delay doesn't decide whether you get $0 or 30% of project cost back."
       },
       {
         "question": "Is a capital lease for solar actually off my balance sheet?",
@@ -1300,43 +1355,8 @@
         "answer": "Only if you're a customer of PG&E, SCE, or SDG&E — the three investor-owned utilities the CPUC regulates. The Net Billing Tariff took effect April 15, 2023. A narrow safe-harbor that let customers who'd already filed a NEM 2.0 interconnection application before that cutover still finish construction and qualify for NEM 2.0 expired April 15, 2026 — largely irrelevant to a new commercial project today, since no project starting now was ever eligible for NEM 2.0 in the first place. Publicly owned utilities — LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial Irrigation District, and Turlock Irrigation District — are not subject to CPUC net billing rules and set their own interconnection and export-compensation terms, which are often better than NBT. Don't apply investor-owned-utility urgency to a project on a municipal utility without checking that utility's actual tariff first."
       }
     ],
-    "bottomLine": "No tax appetite this year, or you're a nonprofit or government entity: a PPA is almost certainly the right structure — you can't waste a credit you were never going to use, and the developer's ownership is what makes the 30% credit and bonus depreciation work for you at all. Real tax appetite and cash on hand: direct purchase captures the full 30% credit plus 100% federal bonus depreciation yourself, which is worth more than anything a PPA passes through. Want a fixed payment and eventual ownership without paying cash upfront: a capital lease, budgeted as debt because ASC 842 now puts it on your balance sheet either way. Want to finance against the property rather than the business, especially if you plan to hold or sell to a buyer who'll accept the assessment: C-PACE. Whichever you pick, the December 31, 2027 placed-in-service deadline is the clock everyone's financing math is running against.",
+    "bottomLine": "No tax appetite this year: a PPA is often the better structure, because you can't waste a credit you were never going to use. A nonprofit or government entity should also compare owning the system with elective pay under §6417. Real tax appetite and cash on hand: direct purchase captures the full credit and the §168(k) first-year allowance yourself, value a PPA passes through only in part. Want a fixed payment and eventual ownership without paying cash upfront: a capital lease, budgeted as debt because ASC 842 now puts it on your balance sheet either way. Want to finance against the property rather than the business, especially if you plan to hold or sell to a buyer who'll accept the assessment: C-PACE. Whichever you pick, the December 31, 2027 placed-in-service deadline is the clock everyone's financing math is running against.",
     "sources": [
-      {
-        "name": "ICS Tax LLC — 48E ITC OBBBA Phaseout",
-        "url": "https://ics-tax.com/news/48e-investment-tax-credit-obba-phaseout/",
-        "supports": "Dec 31, 2027 placed-in-service deadline and July 4, 2026 construction-start cutoff for solar/wind under 48E"
-      },
-      {
-        "name": "The Tax Adviser (Jan 2026) — IRS eliminates 5% safe harbor for wind and solar",
-        "url": "https://www.thetaxadviser.com/issues/2026/jan/irs-generally-eliminates-5-safe-harbor-for-determining-beginning-of-construction-for-wind-and-solar-projects/",
-        "supports": "48E deadline confirmation and elimination of the 5% cost safe harbor"
-      },
-      {
-        "name": "The Tax Adviser (Feb 2026) — Navigating safe harbor rules for Sec. 48E facilities",
-        "url": "https://www.thetaxadviser.com/issues/2026/feb/navigating-safe-harbor-rules-for-solar-and-wind-sec-48e-facilities/",
-        "supports": "Physical work test and safe harbor mechanics for solar/wind construction start"
-      },
-      {
-        "name": "McGuireWoods — IRS Notice 2025-42 analysis",
-        "url": "https://www.mcguirewoods.com/client-resources/alerts/2025/8/irs-notice-2025-42-leaves-beginning-of-construction-guidance-for-wind-and-solar-mostly-unchanged-but-limits-5-safe-harbor-to-low-output-solar-facilities/",
-        "supports": "1.5 MW AC threshold, July 5, 2026 cutoff for the 5% safe harbor, and July 4, 2026 general BOC cutoff"
-      },
-      {
-        "name": "Novogradac — Managing IRS Notice 2025-42",
-        "url": "https://www.novoco.com/notes-from-novogradac/managing-the-new-irs-notice-2025-42-treasury-and-irs-guidance-on-eliminating-5-safe-harbor-and-clarifying-physical-work-test-for-wind-and-solar-construction",
-        "supports": "Beginning-of-construction guidance and physical work test standard"
-      },
-      {
-        "name": "Holland & Knight — Beginning of construction for solar and wind facilities",
-        "url": "https://www.hklaw.com/en/insights/publications/2025/09/beginning-of-construction-for-solar-and-wind-facilities",
-        "supports": "Alternative July 3, 2026 computation of the BOC cutoff, cross-checked against ICS Tax/McGuireWoods' July 4, 2026"
-      },
-      {
-        "name": "Foley Hoag — New IRS Guidance Clarifies Material Assistance FEOC Requirements",
-        "url": "https://foleyhoag.com/news-and-insights/publications/alerts-and-updates/2026/february/new-irs-guidance-clarifies-material-assistance-feoc-requirements/",
-        "supports": "40% material assistance cost ratio threshold for solar/wind construction beginning 2026, rising to 60% by 2030, under Treasury/IRS Notice 2026-15"
-      },
       {
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
@@ -1366,6 +1386,51 @@
         "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
         "url": "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
         "supports": "2023 installed prices, 20th-80th percentile, national: small non-residential (100 kWdc or less) $2.5-4.3/W; large non-residential (over 100 kWdc) $1.7-3.1/W"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §168 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "supports": "§168(e)(3)(B)(viii) 5-year class for §48E property and storage; §168(k) 100% allowance for property acquired after January 19, 2025"
+      },
+      {
+        "name": "26 U.S.C. §6417, elective payment (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6417&num=0&edition=prelim",
+        "supports": "Tax-exempt organizations and governments may elect payment of the §48E credit"
+      },
+      {
+        "name": "26 U.S.C. §7701(a)(52) (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "supports": "Material assistance cost ratio thresholds for solar and storage"
+      },
+      {
+        "name": "IRS Notice 2025-42",
+        "url": "https://www.irs.gov/pub/irs-drop/n-25-42.pdf",
+        "supports": "Beginning-of-construction rules for applicable wind and solar facilities (vacated June 6, 2026)"
+      },
+      {
+        "name": "IRS Notice 2026-15",
+        "url": "https://www.irs.gov/pub/irs-drop/n-26-15.pdf",
+        "supports": "Interim safe harbors for the material assistance cost ratio"
+      },
+      {
+        "name": "Oregon Environmental Council v. Internal Revenue Service, No. 25-cv-4400 (D.D.C. June 6, 2026), via CourtListener",
+        "url": "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "supports": "Notice 2025-42 vacated in full and remanded to the IRS"
+      },
+      {
+        "name": "California Franchise Tax Board, 2025 Form 100 booklet",
+        "url": "https://www.ftb.ca.gov/forms/2025/2025-100-booklet.html",
+        "supports": "California does not conform to §168(k)"
+      },
+      {
+        "name": "IRS, Elective pay and transferability FAQs: elective pay (reviewed March 7, 2026)",
+        "url": "https://www.irs.gov/credits-deductions/elective-pay-and-transferability-frequently-asked-questions-elective-pay",
+        "supports": "Applicable entities; ownership requirement; Form 990-T"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -1396,7 +1461,7 @@
       {
         "label": "48E placed-in-service deadline",
         "value": "Dec 31, 2027",
-        "note": "For projects starting construction after July 4, 2026 — no credit if missed. IRS Notice 2025-42; a federal court vacated that notice's construction-start test June 6, 2026, but left both dates in force (appeal expected)"
+        "note": "For projects starting construction after July 4, 2026 — no credit if missed. 26 U.S.C. §48E(e)(4). A federal court vacated IRS Notice 2025-42 on June 6, 2026; the statutory dates are unaffected"
       }
     ],
     "sections": [
@@ -1422,7 +1487,7 @@
       },
       {
         "heading": "The federal tax credit deadline most multifamily owners don't know about",
-        "body": "Multifamily solar — whether serving common areas, tenant meters, or both — is a commercial-use asset when owned by the property owner or a third party, so it accesses Section 48E (the Clean Electricity Investment Credit), not the residential 25D credit that ended December 31, 2025. This applies whether or not the property is SOMAH-eligible.\n\nSOMAH-eligible affordable housing gets an additional lever: the 48E(h) Low-Income Communities Bonus Credit, available for facilities under 5 MW. It adds 10% for a project located in a low-income community or on tribal land, or 20% for a \"qualified low-income residential building project\" — which explicitly includes multifamily rental property where at least 50% of the financial value of the energy produced goes to low-income occupants. The 2026 application window for this bonus ran February 2 through August 7, 2026, and has already closed as of today; the timing for the next application cycle hadn't been announced as of this writing.\n\nThe deadline that matters most for anyone weighing a project right now: a solar facility under 48E that begins construction after July 4, 2026 must be placed in service by December 31, 2027 to get any credit at all — not a reduced credit, none (this is the statutory rule from the One Big Beautiful Bill Act, signed July 4, 2025, with IRS mechanics in Notice 2025-42). A project that began construction on or before July 4, 2026 isn't subject to that placed-in-service cliff at all — it only has to show continuous work toward completion, which the IRS treats as automatically satisfied if the project is placed in service within four years of the year construction began. A project that broke ground in 2025, for example, is covered through the end of 2029 without having to prove anything further; miss that four-year window and the project can still qualify, but only by showing continuous construction as a facts-and-circumstances matter, a harder standard to document.\n\nOne complication as of this writing: a federal court (D.D.C., in Oregon Environmental Council v. IRS, decided June 6, 2026) vacated Notice 2025-42 itself, ruling the IRS had acted arbitrarily in how it tightened the test for proving when construction began — specifically, its near-elimination of the older 5% safe-harbor test for solar projects over 1.5 MW. That ruling reopened the older, more permissive standard, under which a project can show it began construction either through physical work of a significant nature or by having paid or incurred 5% of total project cost. It did not disturb the two dates that matter most here — July 4, 2026 and December 31, 2027 both remain in force — but the government is expected to appeal, on a timeline that will likely run past July 4, 2026 itself. Treat which construction-start test currently applies as unsettled, and confirm it with a tax professional before treating any contractor's \"we already started\" representation as bankable.\n\nAs of September 5, 2026, the July 4 begin-construction cutoff has already passed. Any multifamily solar project not already under construction is racing the December 31, 2027 placed-in-service deadline with no way around it. Battery storage that isn't paired with solar or wind has a materially longer runway, with a start-of-construction deadline of 2033 — a real point of contrast if a project is deciding whether to prioritize PV now and storage later."
+        "body": "Multifamily solar — whether serving common areas, tenant meters, or both — is a commercial-use asset when owned by the property owner or a third party, so it accesses Section 48E (the Clean Electricity Investment Credit), not the residential 25D credit that ended December 31, 2025. This applies whether or not the property is SOMAH-eligible.\n\nSOMAH-eligible affordable housing gets an additional lever: the 48E(h) Low-Income Communities Bonus Credit, available for facilities under 5 MW. It adds 10% for a project located in a low-income community or on tribal land, or 20% for a \"qualified low-income residential building project\" — which explicitly includes multifamily rental property where at least 50% of the financial value of the energy produced goes to low-income occupants. The bonus applies only to capacity the Treasury and IRS allocate under §48E(h), so check the current allocation round before counting on it.\n\nThe deadline that matters most for anyone weighing a project right now: a solar facility under 48E that begins construction after July 4, 2026 must be placed in service by December 31, 2027 to get any credit at all — not a reduced credit, none (this is the statutory rule from the One Big Beautiful Bill Act, signed July 4, 2025, with IRS mechanics in Notice 2025-42). A project that began construction on or before July 4, 2026 is not subject to that cutoff; IRS Notice 2025-42 had required such projects to maintain a continuous program of construction, with a safe harbor for facilities placed in service within four calendar years, but that notice has since been vacated.\n\nOne complication as of this writing: on June 6, 2026 the U.S. District Court for the District of Columbia vacated Notice 2025-42 in full as arbitrary and capricious and remanded it to the IRS, in Oregon Environmental Council v. IRS. The July 4, 2026 and December 31, 2027 dates come from the statute and are unaffected by the ruling. Treat which construction-start test currently applies as unsettled, and confirm it with a tax professional before treating any contractor's \"we already started\" representation as bankable.\n\nAs of September 5, 2026, the July 4 begin-construction cutoff has already passed. Any multifamily solar project not already under construction is racing the December 31, 2027 placed-in-service deadline with no way around it. Battery storage has a longer runway: it is excepted from the 2027 solar cutoff, and under §48E(e) and §45Y(d)(3) storage whose construction begins in 2033 keeps the full credit, 2034 starts get 75%, 2035 starts get 50%, and later starts get nothing — a real point of contrast if a project is deciding whether to prioritize PV now and storage later."
       },
       {
         "heading": "Batteries: near-mandatory in practice, unevenly subsidized right now",
@@ -1455,7 +1520,7 @@
           "SOMAH (open, no waitlist, all 5 IOU territories — solar; storage add-on separately waitlisted in some territories)",
           "Legacy VNEM (SOMAH/MASH keep the old tariff)",
           "SOMAH incentive, tiered by whether ITC/LIHTC also used",
-          "48E, plus 48E(h) bonus: +10% (low-income community/tribal) or +20% (qualified low-income residential project)"
+          "48E, plus 48E(h) bonus: +10 points (low-income community or tribal land) or +20 points (qualified low-income residential building project)"
         ],
         [
           "New construction, low-rise (≤3 stories)",
@@ -1469,7 +1534,7 @@
           "Title 24 PV + battery mandate (since Jan 1, 2023); PV sized to 60% of estimated use",
           "VNBT unless SOMAH-eligible",
           "SOMAH if eligible; otherwise none",
-          "48E for PV; battery storage has a longer runway (2033 start-of-construction deadline) than solar's 2027 placed-in-service cutoff"
+          "48E for PV; battery storage keeps the full credit for construction beginning through 2033 (75% for 2034 starts, 50% for 2035) instead of solar's 2027 placed-in-service cutoff"
         ]
       ]
     },
@@ -1493,7 +1558,7 @@
       },
       {
         "question": "If I start a multifamily solar project now, will I still get the federal tax credit?",
-        "answer": "It depends on when construction began, and there's a live wrinkle worth knowing. Projects that began construction on or before July 4, 2026 aren't subject to a placed-in-service deadline at all under current law — they just have to show continuous work toward completion, automatically satisfied if the project is placed in service within four years of the year construction began. Projects that begin construction after July 4, 2026 must be placed in service by December 31, 2027 to get any credit — there's no partial credit and no extension for that group. The wrinkle: a federal court vacated the IRS's guidance on how to prove when construction began (Notice 2025-42) on June 6, 2026, reopening an older, more permissive test for establishing a construction start date; the government is expected to appeal, and the July 4 and December 31, 2027 dates themselves are unaffected, but exactly how a project documents its start date is unsettled right now. As of today, September 5, 2026, the July 4 window has already closed, so any project not yet under construction is racing the December 31, 2027 deadline. Get tax counsel involved before treating any construction-start documentation as settled."
+        "answer": "It depends on when construction began, and there's a live wrinkle worth knowing. Projects that began construction on or before July 4, 2026 aren't subject to that cutoff; the IRS guidance on proving continuous construction for them was vacated in June 2026, so confirm the documentation needed with a tax professional. Projects that begin construction after July 4, 2026 must be placed in service by December 31, 2027 to get any credit — there's no partial credit and no extension for that group. The wrinkle: a federal court vacated the IRS's guidance on how to prove when construction began (Notice 2025-42) on June 6, 2026. The July 4, 2026 and December 31, 2027 dates come from the statute and are unaffected, but exactly how a project documents its start date is unsettled. As of today, September 5, 2026, the July 4 window has already closed, so any project not yet under construction is racing the December 31, 2027 deadline. Get tax counsel involved before treating any construction-start documentation as settled."
       },
       {
         "question": "Are battery storage rebates available for apartment buildings right now?",
@@ -1597,11 +1662,6 @@
         "supports": "48E(h) bonus percentages and 2026 application window (Feb 2 - Aug 7, 2026)"
       },
       {
-        "name": "The Tax Adviser — Navigating safe harbor rules for solar and wind Sec. 48E facilities",
-        "url": "https://www.thetaxadviser.com/issues/2026/feb/navigating-safe-harbor-rules-for-solar-and-wind-sec-48e-facilities/",
-        "supports": "48E placed-in-service and begin-construction deadlines, four-year continuity safe harbor"
-      },
-      {
         "name": "Olson and Partners Law — 48E solar ITC terminates end of 2027",
         "url": "https://www.olsonpartnerslaw.com/articles/48e-solar-itc-terminates-end-of-2027/",
         "supports": "48E deadline corroboration"
@@ -1610,11 +1670,6 @@
         "name": "IRS Notice 2025-42",
         "url": "https://www.irs.gov/pub/irs-drop/n-25-42.pdf",
         "supports": "Begin-construction and continuity safe harbor rules as originally issued"
-      },
-      {
-        "name": "McGuireWoods — Federal Court Vacates IRS Notice 2025-42, Restores 5% Safe Harbor for Wind and Solar Projects",
-        "url": "https://www.mcguirewoods.com/client-resources/alerts/2026/6/federal-court-vacates-irs-notice-2025-42-restores-5-safe-harbor-for-wind-and-solar-projects/",
-        "supports": "June 6, 2026 vacatur of Notice 2025-42, restored 5% safe harbor, July 4 2026/Dec 31 2027 dates unaffected, expected appeal"
       },
       {
         "name": "Plante Moran — IRS Notice 2025-42 vacated: What does it mean to begin a solar or wind project now?",
@@ -1640,6 +1695,21 @@
         "name": "Self-Generation Incentive Program — Program Metrics (selfgenca.com)",
         "url": "https://www.selfgenca.com/home/program_metrics/",
         "supports": "Residential storage category status as of September 22, 2026: Small Residential Storage closed at Step 7 ($0.15/Wh) for CSE, SCE, SoCalGas and PG&E; ratepayer Residential Solar and Storage Equity ($1.10/Wh) and Equity Resiliency ($1.00/Wh) closed; AB 209 Residential Solar and Storage Equity ($1.10/Wh) waitlisted for CSE, SoCalGas and LADWP"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §45Y (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45Y&num=0&edition=prelim",
+        "supports": "Applicable year of 2032 used by the §48E(e) phase-out; §45Y(g)(12) elective pay domestic content rule"
+      },
+      {
+        "name": "Oregon Environmental Council v. Internal Revenue Service, No. 25-cv-4400 (D.D.C. June 6, 2026), via CourtListener",
+        "url": "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "supports": "Notice 2025-42 vacated in full and remanded to the IRS"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -1650,7 +1720,7 @@
     "metaTitle": "Retail Solar in California: Costs, Rules, Ownership",
     "metaDescription": "Retail solar in California, 2026: NEM 3.0 export credits sit below retail rates, the 48E ITC needs service by end of 2027, and SGIP storage is closed.",
     "h1": "Solar for California Retail: Shopping Centers, Strip Malls, and Restaurants",
-    "intro": "Since April 15, 2023, California's Net Billing Tariff has credited solar exports at hourly avoided-cost values that the CPUC says are usually lower than the retail rate, instead of the retail-rate credit net metering paid before. For a shopping center, strip mall, or restaurant that runs its heaviest loads from opening bell through the evening rush, that changes the entire calculation: a system sized to your own daytime and early-evening operating load gets more value from each kilowatt-hour than a system sized to sell power back to the utility.\n\nRetail solar has a second complication residential solar doesn't: most retail buildings aren't owned by the people paying the electric bill. A shopping-center landlord who owns the roof and a triple-net tenant who pays the utility bill have opposite incentives — the landlord would front the cost, the tenant would keep the savings. California now has two real mechanisms addressing that split, Virtual Net Billing Tariff for credit allocation and C-PACE for financing that rides the property tax bill, and this page covers both.\n\nThe clock matters too. The federal 48E investment tax credit is live but requires construction to start by July 4, 2026 to lock in the current rate and safe-harbor timeline, SGIP's commercial storage incentive is currently closed to new funded applicants, and California's solar property-tax exclusion is scheduled to sunset January 1, 2027. None of that is a reason to rush a bad decision, but it is a reason to get your demand-charge numbers and roof condition assessed now rather than in a year.",
+    "intro": "Since April 15, 2023, California's Net Billing Tariff has credited solar exports at hourly avoided-cost values that the CPUC says are usually lower than the retail rate, instead of the retail-rate credit net metering paid before. For a shopping center, strip mall, or restaurant that runs its heaviest loads from opening bell through the evening rush, that changes the entire calculation: a system sized to your own daytime and early-evening operating load gets more value from each kilowatt-hour than a system sized to sell power back to the utility.\n\nRetail solar has a second complication residential solar doesn't: most retail buildings aren't owned by the people paying the electric bill. A shopping-center landlord who owns the roof and a triple-net tenant who pays the utility bill have opposite incentives — the landlord would front the cost, the tenant would keep the savings. California now has two real mechanisms addressing that split, Virtual Net Billing Tariff for credit allocation and C-PACE for financing that rides the property tax bill, and this page covers both.\n\nThe clock matters too. The federal 48E credit is live, but a solar project whose construction began after July 4, 2026 must be placed in service by December 31, 2027 to get any of it, SGIP's commercial storage incentive is currently closed to new funded applicants, and California's solar property-tax exclusion becomes inoperative January 1, 2027. None of that is a reason to rush a bad decision, but it is a reason to get your demand-charge numbers and roof condition assessed now rather than in a year.",
     "keyStats": [
       {
         "label": "NEM 3.0 export credit",
@@ -1704,7 +1774,7 @@
       },
       {
         "heading": "The Incentive Clock: 48E ITC, Bonus Depreciation, SGIP, and Property Tax",
-        "body": "The federal Section 48E investment tax credit phases out for solar placed in service after December 31, 2027 unless construction begins on or before July 4, 2026, per the One Big Beautiful Bill Act (signed July 4, 2025) — projects that start construction by that date can use a continuity safe harbor reaching a December 31, 2029 or 2030 placed-in-service deadline depending on exactly when construction started. Systems over 1.5 MW starting construction on or after September 2, 2025 face a stricter physical-work-only test rather than the easier cost safe-harbor, per Notice 2025-42 — most retail rooftop and carport jobs fall under that 1.5 MW threshold. 100% bonus depreciation is now permanent for property placed in service in the first tax year ending after January 19, 2025, and it can stack with the ITC in year one, though standard MACRS convention requires reducing depreciable basis by half the ITC claimed. Credit transferability (selling the ITC for cash) survives OBBBA too, which matters if your business doesn't have tax appetite to use the credit directly — ask about foreign-entity-of-concern restrictions on the supply chain if that route is being discussed.\n\nSGIP's commercial storage incentive is currently closed: per SelfGenCA's own program-metrics page, the Large-Scale Storage budget (covering non-residential storage of essentially any size) shows closed for every administrator as of September 22, 2026, at Step 5, $0.25/Wh. Separately, California's Active Solar Energy System property-tax exclusion is scheduled to sunset January 1, 2027 absent a legislative extension — a large commercial system adds meaningfully more assessed value than a home system, so completing before that date matters more here. Whether a pending extension bill has actually passed is unresolved as of this writing; don't assume it has."
+        "body": "Under 26 U.S.C. §48E(e)(4), the credit ends for solar property placed in service after December 31, 2027 if the facility's construction began after July 4, 2026. IRS Notice 2025-42 had required a continuous program of construction for earlier starts, with a safe harbor for facilities placed in service within four calendar years, but a federal court vacated that notice in full on June 6, 2026. Under that notice, systems over 1.5 MW AC starting construction on or after September 2, 2025 faced a physical-work-only test rather than the 5% cost safe harbor. Section 168(k) now provides a 100% first-year allowance for qualified property acquired after January 19, 2025, and §50(c)(3) reduces the depreciable basis by half the credit claimed; if you elect out, §168(e)(3)(B)(viii) makes §48E property 5-year property. Credit transfer under 26 U.S.C. §6418 remains available if your business doesn't have tax appetite to use the credit directly, though not to a specified foreign entity; ask about prohibited-foreign-entity rules on the supply chain if that route is being discussed.\n\nSGIP's commercial storage incentive is currently closed: per SelfGenCA's own program-metrics page, the Large-Scale Storage budget (covering non-residential storage of essentially any size) shows closed for every administrator as of September 22, 2026, at Step 5, $0.25/Wh. Separately, California's new-construction exclusion for active solar energy systems becomes inoperative on January 1, 2027; systems that qualify before then stay excluded until the property changes ownership, according to BOE Letter to Assessors 2026/034. A large commercial system adds more assessed value than a home system, so completing before that date matters more here."
       }
     ],
     "dataTable": {
@@ -1767,7 +1837,7 @@
       },
       {
         "question": "What does the July 4, 2026 deadline actually require us to have done?",
-        "answer": "Under the One Big Beautiful Bill Act, the Section 48E investment tax credit phases out for solar placed in service after December 31, 2027, unless construction begins on or before July 4, 2026 — in which case a safe harbor extends the placed-in-service deadline to December 31, 2029 or 2030 depending on exactly when construction started. \"Construction begins\" is a documented legal test (physical work of a significant nature, or in some cases a cost safe-harbor), not just signing a contract — ask your contractor how they document construction start and keep that paperwork. Most retail rooftop and carport jobs are under 1.5 MW, so they aren't caught by the stricter physical-work-only rule that applies to larger systems starting construction on or after September 2, 2025."
+        "answer": "Under 26 U.S.C. §48E(e)(4), the credit does not apply to solar property placed in service after December 31, 2027 when the facility's construction began after July 4, 2026. For earlier starts, the IRS notice that set continuity rules was vacated in June 2026, so ask a tax professional what documentation you need. \"Construction begins\" is a documented legal test (physical work of a significant nature, or in some cases a cost safe-harbor), not just signing a contract — ask your contractor how they document construction start and keep that paperwork. Most retail rooftop and carport jobs are under 1.5 MW, so they aren't caught by the stricter physical-work-only rule that applies to larger systems starting construction on or after September 2, 2025."
       },
       {
         "question": "We're served by LADWP or SMUD, not PG&E/SCE/SDG&E — does any of this NEM 3.0 urgency apply to us?",
@@ -1780,16 +1850,6 @@
     ],
     "bottomLine": "Retail solar in California is a demand-charge and load-timing problem before it's a rooftop problem. The CPUC says NEM 3.0 export credits are usually below the retail rate, so a system sized to your own daytime and evening operating hours beats one sized to sell power back to SCE, PG&E, or SDG&E. The ownership question — landlord versus triple-net tenant — has real mechanisms behind it now: Virtual Net Billing Tariff for credit allocation across tenant meters, C-PACE for financing that passes through as a tax-bill line item. The federal ITC and 100% bonus depreciation are live, but a project that did not begin construction by July 4, 2026 must be placed in service by December 31, 2027, and SGIP's commercial storage category is closed. Get an actual demand-charge line item from a recent utility bill before anyone quotes you a system size.",
     "sources": [
-      {
-        "name": "Sidley Austin LLP — OBBBA client alert",
-        "url": "https://www.sidley.com/en/insights/newsupdates/2025/07/the-one-big-beautiful-bill-act-navigating-the-new-energy-landscape",
-        "supports": "48E ITC construction-start deadline, safe harbor dates, bonus depreciation permanence, FEOC restrictions, ITC transferability — re-verified against the live alert"
-      },
-      {
-        "name": "The Tax Adviser — Section 48E safe harbor rules",
-        "url": "https://www.thetaxadviser.com/issues/2026/feb/navigating-safe-harbor-rules-for-solar-and-wind-sec-48e-facilities/",
-        "supports": "Cross-check of 48E construction-start and safe-harbor timeline, 1.5 MW / Notice 2025-42 physical-work-only threshold"
-      },
       {
         "name": "CPUC — Virtual Net Metering program page",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/virtual-net-metering",
@@ -1826,11 +1886,6 @@
         "supports": "Contractor licensing requirements, $500 threshold"
       },
       {
-        "name": "Nevada County CA / Cox Castle & Nicholson — solar property tax exclusion",
-        "url": "https://www.coxcastle.com",
-        "supports": "Active Solar Energy System property tax exclusion sunset date"
-      },
-      {
         "name": "Electrek / CNN — big-box rooftop solar potential (2022)",
         "url": "https://electrek.co",
         "supports": "Big-box roof structural and equipment-coordination considerations (dated 2022 context, flagged as such)"
@@ -1839,6 +1894,41 @@
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
         "supports": "Net Billing Tariff since April 15, 2023; export credits usually lower than the retail rate but can rise above it on late summer evenings; nine-year guarantee; early-adopter export adder for residential PG&E and SCE customers applying before the end of 2027; approved rates E-ELEC (PG&E), TOU-D-PRIME (SCE), EV-TOU-5 (SDG&E)"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §168 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "supports": "§168(e)(3)(B)(viii) 5-year class for §48E property and storage; §168(k) 100% allowance for property acquired after January 19, 2025"
+      },
+      {
+        "name": "26 U.S.C. §50 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section50&num=0&edition=prelim",
+        "supports": "Basis reduced by 50% of the credit; recapture schedule"
+      },
+      {
+        "name": "26 U.S.C. §6418, transfer of credits (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6418&num=0&edition=prelim",
+        "supports": "Transfer of the §48E credit to an unrelated taxpayer; no transfer to a specified foreign entity"
+      },
+      {
+        "name": "IRS Notice 2025-42",
+        "url": "https://www.irs.gov/pub/irs-drop/n-25-42.pdf",
+        "supports": "Beginning-of-construction rules for applicable wind and solar facilities (vacated June 6, 2026)"
+      },
+      {
+        "name": "Oregon Environmental Council v. Internal Revenue Service, No. 25-cv-4400 (D.D.C. June 6, 2026), via CourtListener",
+        "url": "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "supports": "Notice 2025-42 vacated in full and remanded to the IRS"
+      },
+      {
+        "name": "California State Board of Equalization, Letter to Assessors 2026/034 (September 1, 2026)",
+        "url": "https://www.boe.ca.gov/proptaxes/pdf/lta26034.pdf",
+        "supports": "Section 73 solar exclusion inoperative January 1, 2027; prior exclusions continue until change in ownership"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -1887,7 +1977,7 @@
       },
       {
         "heading": "Financing: PPA versus district-owned with elective pay",
-        "body": "Districts historically leaned on third-party PPAs because they're tax-exempt entities that can't use a federal tax credit the way a private company can. Under a solar power purchase agreement, a third-party developer owns, operates, and maintains the system and sells the district power at a fixed rate for up to 25 years, with no upfront capital from the district. Government Code §4217.12 authorizes this structure — a school district entering an energy service contract, plus any necessarily related facility ground lease — provided the governing board holds a public hearing with at least two weeks' notice and makes the required findings. Verify the statute's exact wording against leginfo.legislature.ca.gov before citing it in board materials.\n\nWhat's changed is that district ownership is viable again. The Inflation Reduction Act's elective pay provision (IRC §6417) lets a tax-exempt district file for the underlying credit itself and receive it as a direct cash payment from the IRS — a base 30% under Section 48E, with bonus adders that can push the figure higher in a best-case stacking scenario, though that ceiling is not typical and shouldn't be presented as a baseline expectation.\n\nOne complication for 2026 planning: under the One Big Beautiful Bill Act, elective-pay projects beginning construction in 2026 or later generally must meet federal domestic content requirements or risk losing the credit, with a narrow exception for projects under 1 MW net output, and separate foreign-entity-of-concern material assistance limits also apply starting in 2026. Some industry sources describe a construction-start safe harbor around July 4, 2026 for avoiding the newer, stricter rules; that date is a widely repeated industry shorthand, not something confirmed against the bill text or Treasury guidance, so it needs a primary-source check before any district treats it as a hard deadline."
+        "body": "Districts historically leaned on third-party PPAs because they're tax-exempt entities that can't use a federal tax credit the way a private company can. Under a solar power purchase agreement, a third-party developer owns, operates, and maintains the system and sells the district power at a fixed rate for up to 25 years, with no upfront capital from the district. Government Code §4217.12 authorizes this structure — a school district entering an energy service contract, plus any necessarily related facility ground lease — provided the governing board holds a public hearing with at least two weeks' notice and makes the required findings. Verify the statute's exact wording against leginfo.legislature.ca.gov before citing it in board materials.\n\nWhat's changed is that district ownership is viable again. The Inflation Reduction Act's elective pay provision (26 U.S.C. §6417) lets a district that owns its system receive the §48E credit as a direct payment from the IRS: 30% for a facility under 1 MW AC or one meeting the prevailing-wage and apprenticeship rules, 6% otherwise, with bonus amounts that can add more in some cases. That best case is not a baseline expectation.\n\nOne complication for 2026 planning: for an elective pay claim on a facility of 1 MW AC or more whose construction began after December 31, 2025, §48E(d)(5) and §45Y(g)(12) reduce the credit to zero unless the domestic content requirement is met or a Treasury exception applies; facilities under 1 MW AC are not reduced. Separate prohibited-foreign-entity material assistance limits also apply to construction beginning after December 31, 2025. The July 4, 2026 date is in the statute: §48E(e)(4) ends the credit for solar property placed in service after December 31, 2027 when the facility's construction began after that date."
       },
       {
         "heading": "NEM 3.0, NEMA, and the deadline that actually matters",
@@ -1933,7 +2023,7 @@
           "Carport structure lease + third-party PV",
           "Developer owns the PV; district owns or leases the carport structure",
           "Structure cost only, if district-funded",
-          "Developer claims the ITC on the PV system; structure-related costs are not credit-eligible",
+          "Developer claims the ITC on the PV system; whether structure costs count toward the credit basis is a question for a tax professional, since §48E excludes a building or its structural components",
           "Term matched to the PPA, often 20-25 years",
           "Combines Gov. Code §4217.12 authority with the district's facility lease authority; DSA Pre-Check (PR 07-01) can apply to the structure design"
         ]
@@ -1951,7 +2041,7 @@
       },
       {
         "question": "Can a school district claim the federal solar tax credit directly?",
-        "answer": "Not the way a homeowner or private business does, but yes in substance. School districts are tax-exempt public entities, so they can't offset a tax bill they don't owe. The Inflation Reduction Act's elective pay provision (IRC §6417) fixes that: a district that owns its solar project can file the appropriate federal return and receive a cash payment from the IRS equal to the credit's value — a base 30% under Section 48E, with bonus adders (domestic content, energy community, low-income) that can push the ceiling higher in the best case, though that ceiling is not a typical or guaranteed outcome. This is why district-owned solar has become viable again, as an alternative to a third-party PPA."
+        "answer": "Not the way a homeowner or private business does, but yes in substance. School districts are tax-exempt public entities, so they can't offset a tax bill they don't owe. The Inflation Reduction Act's elective pay provision (26 U.S.C. §6417) fixes that: a district that owns its solar project can file the appropriate federal return and receive a payment from the IRS equal to the credit — 30% under Section 48E for a facility under 1 MW AC or one meeting the wage and apprenticeship rules, 6% otherwise, with bonus amounts that can raise it in some cases, though that is not a typical or guaranteed outcome. This is why district-owned solar has become viable again, as an alternative to a third-party PPA."
       },
       {
         "question": "What's the deadline for a California school to lock in NEM 2.0 rates instead of the lower net billing rate?",
@@ -2031,6 +2121,26 @@
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
         "supports": "Net Billing Tariff since April 15, 2023; export credits usually lower than the retail rate but can rise above it on late summer evenings; nine-year guarantee; early-adopter export adder for residential PG&E and SCE customers applying before the end of 2027; approved rates E-ELEC (PG&E), TOU-D-PRIME (SCE), EV-TOU-5 (SDG&E)"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §45Y (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45Y&num=0&edition=prelim",
+        "supports": "Applicable year of 2032 used by the §48E(e) phase-out; §45Y(g)(12) elective pay domestic content rule"
+      },
+      {
+        "name": "26 U.S.C. §6417, elective payment (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6417&num=0&edition=prelim",
+        "supports": "Tax-exempt organizations and governments may elect payment of the §48E credit"
+      },
+      {
+        "name": "IRS, Elective pay and transferability FAQs: elective pay (reviewed March 7, 2026)",
+        "url": "https://www.irs.gov/credits-deductions/elective-pay-and-transferability-frequently-asked-questions-elective-pay",
+        "supports": "Applicable entities; ownership requirement; Form 990-T"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -2051,7 +2161,7 @@
       {
         "label": "48E ITC placed-in-service deadline",
         "value": "Dec. 31, 2027",
-        "note": "Applies to any project starting construction after July 4, 2026 — a date already passed as of this writing (thetaxadviser.com, Feb. 2026)"
+        "note": "Applies to any project starting construction after July 4, 2026 — a date already passed as of this writing (26 U.S.C. §48E(e)(4))"
       },
       {
         "label": "Property tax exclusion qualification deadline",
@@ -2079,7 +2189,7 @@
       },
       {
         "heading": "What actually pays: depreciation, and the 48E deadline you're already racing",
-        "body": "The most reliable value driver for self-storage solar isn't the export credit — it's depreciation, because it's tied to what the system costs, not to how much power it exports. Widely reported (though not independently verified against IRS Pub. 946 in this research pass) is that the OBBBA restored 100% bonus depreciation for equipment placed in service after January 19, 2025, stacked on the standard 5-year MACRS schedule solar already qualified for. For a for-profit owner, this is often where the numbers work even when the export side looks thin.\n\nThe federal Section 48E clean electricity ITC is the more urgent piece. OBBBA accelerated its sunset into two tracks. Construction begun by July 4, 2026 keeps the full credit, and under the standard 4-year continuity safe harbor IRS guidance has preserved for 48E, that track is presumed to satisfy the continuity requirement if the system is placed in service by December 31, 2030. Miss that date and the credit isn't automatically forfeited — the safe-harbor presumption just goes away, and the taxpayer has to prove continuous construction on the facts, a materially weaker position to be in. Construction begun after July 4, 2026 faces a harder rule: placed in service by December 31, 2027, full stop, with no safe-harbor presumption and no extension track. Today is September 5, 2026. The July 4 construction-start date has already passed. Any self-storage owner starting a project now is in that second track: the system has to be placed in service, not just started, by the end of 2027, or the credit is lost entirely. Given how long commercial interconnection studies commonly run at PG&E, SCE, and SDG&E, this is a tight window — worth moving on within the next one to two quarters, not a project to let drift.\n\nOne more item worth flagging, now with a source attached: 48E carries a foreign-content rule under Section 48E(b)(6), added by OBBBA, that can disqualify a project if too much of its equipment traces to a \"prohibited foreign entity,\" for construction beginning after December 31, 2025. Treasury and the IRS published interim guidance on this in Notice 2026-15 (February 2026), which ties eligibility to a percentage-based Material Assistance Cost Ratio test rather than a flat country-of-origin rule — legal-industry summaries of the notice put the 2026 threshold near 55%, rising in steps in later years — but Treasury has not yet finalized the detailed per-component tables the notice references. Confirm your EPC's supply chain against the current guidance before signing; this isn't a number to take on faith from a sales rep."
+        "body": "The most reliable value driver for self-storage solar isn't the export credit — it's depreciation, because it's tied to what the system costs, not to how much power it exports. Under 26 U.S.C. §168(e)(3)(B)(viii), §48E qualified property and energy storage technology are 5-year property, and §168(k) provides a 100% first-year allowance for qualified property acquired after January 19, 2025. For a for-profit owner, this is often where the numbers work even when the export side looks thin.\n\nThe federal Section 48E clean electricity ITC is the more urgent piece. OBBBA accelerated its sunset into two tracks. Solar whose construction began by July 4, 2026 is outside the statute's 2027 cutoff; IRS Notice 2025-42 had tied that status to a continuous program of construction, with a safe harbor for facilities placed in service within four calendar years, but a federal court vacated the notice in full on June 6, 2026. Construction begun after July 4, 2026 faces a harder rule: placed in service by December 31, 2027, full stop, with no safe-harbor presumption and no extension track. Today is September 5, 2026. The July 4 construction-start date has already passed. Any self-storage owner starting a project now is in that second track: the system has to be placed in service, not just started, by the end of 2027, or the credit is lost entirely. Given how long commercial interconnection studies commonly run at PG&E, SCE, and SDG&E, this is a tight window — worth moving on within the next one to two quarters, not a project to let drift.\n\nOne more item worth flagging, now with a source attached: 48E carries a foreign-content rule under Section 48E(b)(6), added by OBBBA, that can disqualify a project if too much of its equipment traces to a \"prohibited foreign entity,\" for construction beginning after December 31, 2025. The statute sets the required material assistance cost ratio: under 26 U.S.C. §7701(a)(52), 40% for a solar facility beginning construction in 2026 and 45% in 2027 (55% and 60% for energy storage), and IRS Notice 2026-15 provides interim safe harbors for the calculation. Confirm your EPC's supply chain against the current guidance before signing; this isn't a number to take on faith from a sales rep."
       },
       {
         "heading": "The property tax deadline riding alongside the ITC",
@@ -2193,11 +2303,6 @@
     "bottomLine": "Self-storage is a genuine case where \"huge free roof\" marketing oversells the opportunity. The building's real load is small, California's Net Billing Tariff pays a fraction of retail for anything exported, and a system sized to fill the roof will export most of what it makes. The fix is straightforward: size to the meter, not the roof, and lean on depreciation — which doesn't care how much gets exported — as the primary value driver. Two deadlines make timing matter more than usual: the federal 48E credit needs the system placed in service by December 31, 2027 for any project starting now, and the state property tax exclusion needs the system to qualify — in practice, be operational — before January 1, 2027 to lock in permanently. Publicly owned utility territories and batteries are the two places to check assumptions rather than apply this page's defaults blind. Get the sizing and timing right, and this vertical can work. Get either wrong, and the roof was never the asset it looked like.",
     "sources": [
       {
-        "name": "The Tax Adviser — \"Navigating safe-harbor rules for solar and wind Sec. 48E facilities\"",
-        "url": "https://www.thetaxadviser.com/issues/2026/feb/navigating-safe-harbor-rules-for-solar-and-wind-sec-48e-facilities/",
-        "supports": "48E two-track sunset (July 4, 2026 construction-start / Dec. 31, 2027 placed-in-service for the later track) and the 4-year continuity safe-harbor mechanics for the earlier track"
-      },
-      {
         "name": "IRS Notice 2026-15 — Interim guidance on material assistance from a prohibited foreign entity",
         "url": "https://www.irs.gov/pub/irs-drop/n-26-15.pdf",
         "supports": "Section 48E(b)(6) foreign-content rule and its percentage-based Material Assistance Cost Ratio phase-in, cited via legal-industry summaries of the notice"
@@ -2236,6 +2341,31 @@
         "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
         "url": "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
         "supports": "2023 installed prices, 20th-80th percentile, national: small non-residential (100 kWdc or less) $2.5-4.3/W; large non-residential (over 100 kWdc) $1.7-3.1/W"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §168 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "supports": "§168(e)(3)(B)(viii) 5-year class for §48E property and storage; §168(k) 100% allowance for property acquired after January 19, 2025"
+      },
+      {
+        "name": "26 U.S.C. §7701(a)(52) (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "supports": "Material assistance cost ratio thresholds for solar and storage"
+      },
+      {
+        "name": "IRS Notice 2025-42",
+        "url": "https://www.irs.gov/pub/irs-drop/n-25-42.pdf",
+        "supports": "Beginning-of-construction rules for applicable wind and solar facilities (vacated June 6, 2026)"
+      },
+      {
+        "name": "Oregon Environmental Council v. Internal Revenue Service, No. 25-cv-4400 (D.D.C. June 6, 2026), via CourtListener",
+        "url": "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "supports": "Notice 2025-42 vacated in full and remanded to the IRS"
       }
     ],
     "reviewedAt": "2026-09-05"
@@ -2256,7 +2386,7 @@
       {
         "label": "48E credit rate without prevailing wage compliance",
         "value": "6% base, 30% with PWA",
-        "note": "Full rate requires Davis-Bacon prevailing wage + 15%+ apprentice labor hours; confirmed against IRS guidance"
+        "note": "At 1 MW AC and above, the 30% rate requires the prevailing-wage and apprenticeship rules; under 1 MW AC it is 30% either way (26 U.S.C. §48E(a)(2))"
       },
       {
         "label": "Title 24 solar-ready roof reservation",
@@ -2276,7 +2406,7 @@
       },
       {
         "heading": "The federal tax credit: 48E, prevailing wage, and a deadline that already passed",
-        "body": "Section 48E is the credit that matters for a warehouse project now that the residential 25D credit is gone. The base rate is only 6% of project cost. Getting to the full 30% requires meeting prevailing wage and apprenticeship requirements: Davis-Bacon prevailing wages for construction, alteration, and repair labor, plus a minimum share of labor hours (at least 15%) performed by registered apprentices. This condition gets glossed over in a lot of secondary sources that just say \"30% ITC\" without mentioning it, and it is the single most load-bearing fact in this section. These rates were checked directly against IRS guidance on the Section 48E Clean Electricity Investment Credit this session and match.\n\nOn top of the 30% PWA rate, a domestic content adder adds 10 points and an energy community adder adds another 10, though the domestic content cost-ratio threshold is rising over time: 45% for projects starting construction after June 16, 2025 (up from 40% for earlier starts), 50% for 2026 starts, and 55% for anything starting after 2026, per Treasury Notice 2025-08 and multiple 2025-2026 law-firm summaries checked this session.\n\nThe sharper and more current fact: the One Big Beautiful Bill Act accelerated the phase-out. Projects that began construction on or before July 4, 2026 keep a multi-year completion runway (a four-year continuity safe harbor running to December 31, 2030). Projects starting construction after that date must be placed in service by December 31, 2027 to claim any 48E credit at all, with no exceptions. This was independently re-verified this session against IRS Notice 2025-42 and multiple 2026 law-firm alerts, and it holds. That July deadline has already passed as of today, September 5, 2026, so any warehouse project starting construction now falls into the must-be-operational-by-2027 bucket. Starting in 2026, foreign entity of concern (FEOC) restrictions also apply to equipment sourcing tied to China, Russia, North Korea, or Iran-linked supply chains; ask your EPC directly how their panel and inverter sourcing handles this rather than assuming it's someone else's problem. One thing this page won't do is state a specific bonus depreciation percentage for 2026 solar equipment as settled fact: get that confirmed by a CPA against current IRS guidance before it goes into your pro forma."
+        "body": "Section 48E is the credit that matters for a warehouse project now that the residential 25D credit is gone. The base rate is 6% of the qualified investment. For a facility of 1 MW AC or more, getting to the full 30% requires meeting the prevailing-wage and apprenticeship requirements that §48E(d) applies. This condition gets glossed over in a lot of secondary sources that just say \"30% ITC\" without mentioning it, and it is the single most load-bearing fact in this section. These rates are set in 26 U.S.C. §48E(a)(2), which also gives the 30% rate to any facility with a maximum net output under 1 MW AC regardless of wage and apprenticeship compliance.\n\nOn top of the 30% rate, a domestic content bonus adds 10 points and an energy community bonus adds another 10, and the domestic manufactured-products share required rises over time: 40% for construction beginning before June 16, 2025, 45% from then through 2025, 50% for 2026 starts and 55% for starts after 2026, per §48E(a)(3)(B).\n\nThe sharper and more current fact: the One Big Beautiful Bill Act accelerated the phase-out. Solar projects that began construction on or before July 4, 2026 are outside the statute's 2027 cutoff; the IRS notice that set continuity rules for them was vacated by a federal court on June 6, 2026. Projects starting construction after that date must be placed in service by December 31, 2027 to claim any 48E credit at all, with no exceptions. The cutoff is in 26 U.S.C. §48E(e)(4) and the Public Law 119-21 effective-date note. That July deadline has already passed as of today, September 5, 2026, so any warehouse project starting construction now falls into the must-be-operational-by-2027 bucket. For construction beginning after December 31, 2025, prohibited-foreign-entity material assistance limits also apply, starting at a 40% cost ratio for 2026 solar starts under §7701(a)(52); ask your EPC directly how their panel and inverter sourcing is documented rather than assuming it's someone else's problem. Section 168(k) provides a 100% first-year allowance for qualified property acquired after January 19, 2025; have a CPA confirm how it applies to your project before it goes into your pro forma."
       },
       {
         "heading": "Net Billing Tariff (NEM 3.0) for commercial accounts",
@@ -2356,7 +2486,7 @@
       },
       {
         "question": "Is the 30% federal solar tax credit still available for a warehouse project in 2026?",
-        "answer": "Yes, but only at the full rate if the project meets prevailing wage and apprenticeship requirements under Section 48E; the base credit without that compliance is just 6%. On top of the 30% PWA rate, domestic content and energy community adders can each add 10 points. The bigger issue is timing: under the One Big Beautiful Bill Act, projects that broke ground after July 4, 2026 must be placed in service by December 31, 2027 to claim any 48E credit at all, no exceptions. Since that July deadline has already passed as of today, any warehouse project starting construction now sits in that hard 2027 bucket, which makes early interconnection filing a financial issue, not just a scheduling one."
+        "answer": "Yes. Under Section 48E the rate is 30% for a facility under 1 MW AC or one meeting the prevailing-wage and apprenticeship requirements, and 6% otherwise. On top of the 30% PWA rate, domestic content and energy community adders can each add 10 points. The bigger issue is timing: under the One Big Beautiful Bill Act, projects that broke ground after July 4, 2026 must be placed in service by December 31, 2027 to claim any 48E credit at all, no exceptions. Since that July deadline has already passed as of today, any warehouse project starting construction now sits in that hard 2027 bucket, which makes early interconnection filing a financial issue, not just a scheduling one."
       },
       {
         "question": "Does NEM 3.0 apply to my warehouse's solar export credits?",
@@ -2387,19 +2517,9 @@
         "supports": "OBBBA construction-start and placed-in-service deadline mechanics, verified directly this session"
       },
       {
-        "name": "The Tax Adviser, safe-harbor rules for Sec. 48E facilities (Feb 2026)",
-        "url": "https://www.thetaxadviser.com/issues/2026/feb/navigating-safe-harbor-rules-for-solar-and-wind-sec-48e-facilities/",
-        "supports": "July 4, 2026 / December 31, 2027 deadline confirmation"
-      },
-      {
         "name": "Williams Mullen OBBBA renewable energy tax credit summary",
         "url": "https://www.williamsmullen.com/insights/news/legal-news/one-big-beautiful-bill-amends-renewable-energy-tax-credits-summary-key",
         "supports": "Domestic content adder thresholds"
-      },
-      {
-        "name": "RSM: Treasury issues Notice 2025-08 for domestic content bonus credit rules",
-        "url": "https://rsmus.com/insights/tax-alerts/2025/treasury-issues-notice-2025-08-for-domestic-content-bonus-credit.html",
-        "supports": "June 16, 2025 domestic content threshold step-up, verified directly this session"
       },
       {
         "name": "SEIA clean energy provisions of the Big Beautiful Bill",
@@ -2490,6 +2610,26 @@
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
         "supports": "Net Billing Tariff since April 15, 2023; export credits usually lower than the retail rate but can rise above it on late summer evenings; nine-year guarantee; early-adopter export adder for residential PG&E and SCE customers applying before the end of 2027; approved rates E-ELEC (PG&E), TOU-D-PRIME (SCE), EV-TOU-5 (SDG&E)"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Credit rates, §48E(e)(4) wind and solar cutoff for construction beginning after July 4, 2026, storage exception and phase-out, prohibited-foreign-entity rules, domestic content percentages"
+      },
+      {
+        "name": "26 U.S.C. §168 (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "supports": "§168(e)(3)(B)(viii) 5-year class for §48E property and storage; §168(k) 100% allowance for property acquired after January 19, 2025"
+      },
+      {
+        "name": "26 U.S.C. §7701(a)(52) (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "supports": "Material assistance cost ratio thresholds for solar and storage"
+      },
+      {
+        "name": "Oregon Environmental Council v. Internal Revenue Service, No. 25-cv-4400 (D.D.C. June 6, 2026), via CourtListener",
+        "url": "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "supports": "Notice 2025-42 vacated in full and remanded to the IRS"
       }
     ],
     "reviewedAt": "2026-09-05"
