@@ -219,6 +219,11 @@ export const WESTLIGHT_HOME: CityCostRowSource = {
   url: 'https://www.westlightenergy.org/',
   verifiedAt: CCA_VERIFIED_0923,
 };
+export const CCE_MEMBERS: CityCostRowSource = {
+  label: 'Central Coast Community Energy, Implementation Plan Addendum No. 5 (May 2023): member agencies',
+  url: 'https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf',
+  verifiedAt: CCA_VERIFIED_0923,
+};
 export const OCPA_HOME: CityCostRowSource = {
   label: 'Orange County Power Authority, member communities (Buena Park, Fullerton, Irvine, Fountain Valley)',
   url: 'https://www.ocpower.org/',
@@ -411,13 +416,21 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "San Diego County",
     utilityKey: "sdge",
     cca: "San Diego Community Power",
+    ccaSource: SDGE_ACTIVE_CCAS,
     permitUrl: "https://www.chulavistaca.gov/departments/development-services/build-green/residential-solar-energy",
     permitFeeNote:
-      "Official Master Fee Schedule (Fee Bulletin 10-400, Sept 2024) lists: Residential (SFD/Duplex) expedited (SolarAPP+) = $30 intake + $0 plan check + $423 inspection = $453 total; Residential (SFD/Duplex) traditional = $70 intake + $158 plan check + $494 inspection = $722 total; panel upgrade only = $203 total; commercial/multifamily first 500 panels = $1,683 total.",
-    permitFeeSource: "City of Chula Vista Master Fee Schedule Fee Bulletin 10-400, Photovoltaic System section (Sept 2024)",
+      "Chula Vista's Fee Bulletin 10-400 (September 2024), which the City links as its current photovoltaic fees, lists a SolarAPP+ permit for a single-family home or duplex at $453 ($30 intake, no plan check, $423 inspection) and a traditional permit at $722 ($70 intake, $158 plan check, $494 inspection). A panel upgrade done with a new solar system is $203.",
+    permitFeeSource: "City of Chula Vista, Residential Solar Energy Permits",
+    permitSources: [
+      {
+        label: "City of Chula Vista, Master Fee Schedule Fee Bulletin 10-400, Miscellaneous Item Permit Fees (September 2024): Photovoltaic System",
+        url: "https://www.chulavistaca.gov/home/showpublisheddocument/2416/638638971096170000",
+        verifiedAt: "2026-09-23",
+      },
+    ],
     permitOnline:
-      "Yes, via Citizen Access online portal; SolarAPP+ named as the required expedited path since June 28 2023, traditional path also submittable online",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Since June 28, 2023, expedited solar permits must go through SolarAPP+, then the Solar Permit with Solar App Plus application in the City's Citizen Access portal, which returns an approved permit number on submission. Other systems use the standard Residential Solar Energy application online or at the permit counter.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "corona",
@@ -533,13 +546,14 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Alameda County",
     utilityKey: "pge",
     cca: "Ava Community Energy",
+    ccaSource: AVA_COMMUNITIES,
     permitUrl: "https://www.livermoreca.gov/departments/community-development/permit-center/residential-photovoltaic/solarapp",
     permitFeeNote:
-      "No dollar amount given. Page states: \"A processing fee will be charged by SolarAPP+.\"",
-    permitFeeSource: "City of Livermore SolarApp+ page (live site blocked automated fetch; content confirmed via web.archive.org capture)",
+      "Livermore's SolarAPP+ page does not state a dollar figure. It says SolarAPP+ charges a processing fee, and that the City emails the approved permit and receipt once the City's fee is paid.",
+    permitFeeSource: "City of Livermore, SolarApp+ (Permit Center)",
     permitOnline:
-      "Yes, online. SolarAPP+ is explicitly named; register/submit design in SolarAPP+, then apply for the City of Livermore permit through the city's Online Permitting portal (active Livermore business license required for contractor).",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Single-family, roof-mounted retrofit systems go through SolarAPP+, then a Solar Permit with SolarAPP+ application in the City's Online Permitting system, which Permit Center staff review before approval. An active City of Livermore business license is required.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "manteca",
@@ -630,13 +644,14 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "San Diego County",
     utilityKey: "sdge",
     cca: "Clean Energy Alliance",
+    ccaSource: SDGE_ACTIVE_CCAS,
     permitUrl: "https://www.ci.oceanside.ca.us/government/development-services/building/solarapp",
     permitFeeNote:
-      "Page states a \"$25 processing fee will be charged by the SolarAPP+ website\" for the automated review; separately the applicant must \"Pay City Permit Fees\" through eTRAKiT, but no dollar amount for the city's own permit fee is published on this page.",
-    permitFeeSource: "City of Oceanside SolarAPP+ page (ci.oceanside.ca.us)",
+      "Oceanside's SolarAPP+ page says SolarAPP+ charges a $25 processing fee that covers up to three revisions, and that City permit fees are paid online when the permit is applied for; it does not state the City's amount. The City adds that it may charge fees for a resubmittal, as it does for a re-inspection.",
+    permitFeeSource: "City of Oceanside, SolarAPP+ (Development Services, Building)",
     permitOnline:
-      "Yes, online via eTRAKiT after SolarAPP+ approval; SolarAPP+ named and required for eligible contractors",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. C-10 and C-46 contractors registered with SolarAPP+ apply in the City's online permitting portal under the BLD SOLAR APP PV permit type, upload the approval, pay and receive the permit right away. Permit runners and B-license holders cannot use SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "pacific-grove",
@@ -803,13 +818,33 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Santa Cruz County",
     utilityKey: "pge",
     cca: "Central Coast Community Energy (3CE)",
+    ccaSource: CCE_MEMBERS,
     permitUrl: "https://www.santacruzca.gov/Government/City-Departments/Community-Development/Building-Safety/SolarApp",
     permitFeeNote:
-      "Page states \"All the applicable permit fees will be assessed per the City of Santa Cruz Master Fee Schedule\" and that a separate processing fee is charged by SolarApp+/NREL; no dollar amount is given on this page itself. The Citywide Fee Schedule (effective 1/1/2026) itemizes: Residential System up to 15kW = $360.00 (PL-BLD142), each kW above 15kW = $24.00 (PL-BLD143), Commercial up to 50kW = $862.00 (PL-BLD144).",
-    permitFeeSource: "City of Santa Cruz SolarApp+ page; Citywide Fee Schedule effective 1-1-26 (santacruzca.gov)",
+      "Santa Cruz's Planning and Community Development fee schedule, effective January 1, 2026, sets a residential solar permit at $360 for a system up to 15 kW plus $24 for each kW above 15 kW, and marks both for the City's 6 percent technology surcharge. SolarAPP+ charges its own processing fee.",
+    permitFeeSource: "City of Santa Cruz, SolarApp+ (Building & Safety)",
+    permitSources: [
+      {
+        label: "City of Santa Cruz, Planning & Community Development Department Fee Schedule, January 1 to December 31, 2026 (Solar Permits, PL-BLD142 and PL-BLD143)",
+        url: "https://www.santacruzca.gov/files/assets/city/v/4/pl/documents/pl-fee-schedule-effective-1-1-26.pdf",
+        verifiedAt: "2026-09-23",
+      },
+      {
+        label: "County of Santa Cruz, SolarAPP+ (County ePermit process)",
+        url: "https://cdi.santacruzcountyca.gov/UPC/BuildingPermitsSafety/ApplyforaBuildingPermit/Solar(PV)SystemBatteryPermits/SolarAPPPlus.aspx",
+        verifiedAt: "2026-09-23",
+      },
+    ],
     permitOnline:
-      "Yes, via SolarAPP+; approved applicants receive a City of Santa Cruz permit number by email and pay/schedule inspections online.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes, for licensed contractors installing new rooftop solar on detached one- and two-family homes, townhomes and their accessory structures. After SolarAPP+ approval the City emails a permit number, fees are paid online and inspections are booked by phone. Owner-builders, and properties in a flood zone or with an open code case or voided permit, take the regular plan-check route.",
+    sourcesFetchedAt: "2026-09-23",
+    extraFaqs: [
+      {
+        question: "How much does solar panel installation cost in Santa Cruz County?",
+        answer:
+          "No public source prices an installation for the county. What varies by address is who permits the work and what they charge. Inside the City of Santa Cruz the residential solar permit is $360 up to 15 kW in the 2026 fee schedule, plus $24 per kW above that and a technology surcharge. The County of Santa Cruz runs its own SolarAPP+ and ePermit process for rooftop systems up to 38.4 kW on the homes it permits, and says its costs are lower for these pre-approved applications. Central Coast Community Energy's members include the County of Santa Cruz and its cities, with PG&E delivering the power and sending the bill.",
+      },
+    ],
   },
   {
     slug: "santa-rosa",
@@ -857,13 +892,14 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Ventura County",
     utilityKey: "sce",
     cca: "Clean Power Alliance",
+    ccaSource: SCE_CCA_LIST,
     permitUrl: "https://toaks.gov/solarsystems",
     permitFeeNote:
-      "Page does not display specific fee amounts or link to a fee schedule; it notes that \"additional fees associated with the SolarAPP+ web-based services are independent\" of city charges and are managed by the Alliance for Sustainable Energy, LLC (the SolarAPP+ operator). Applicants are told to contact the Building Division directly for current fees.",
-    permitFeeSource: "City of Thousand Oaks Solar PV Systems page (toaks.gov/solarsystems)",
+      "Thousand Oaks' solar page does not state the City's permit fee. It says any fees for the SolarAPP+ web service are independent of and unrelated to the City's own.",
+    permitFeeSource: "City of Thousand Oaks, Solar PV Systems",
     permitOnline:
-      "Yes for eligible residential roof-mounted systems under 38.4 kW via SolarAPP+, then submitted to the city's TO/24 online portal; requires a CA-licensed contractor.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Licensed B, C-10 and C-46 contractors can use SolarAPP+ for roof-mounted residential systems up to 38.4 kW AC, then apply through the City's TO/24 online services. Ballasted, ground-mounted and carport systems need a standard solar permit, also filed through TO/24.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "tulare",

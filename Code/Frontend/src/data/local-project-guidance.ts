@@ -61,14 +61,6 @@ const ceaBill: LocalGuidanceSource = {
     'CEA names Carlsbad, Escondido and Oceanside among its member cities and explains its generation role alongside SDG&E delivery and billing. City membership does not prove an account is enrolled.',
 };
 
-const chulaVistaPermit: LocalGuidanceSource = {
-  label: 'City of Chula Vista — Residential Solar Energy',
-  url: 'https://www.chulavistaca.gov/departments/development-services/build-green/residential-solar-energy',
-  verifiedAt: verified20260918,
-  scope:
-    'The City publishes an online Citizen Access process with SolarAPP+ as the expedited route and a traditional review route. The correct route and inspections still depend on the submitted project.',
-};
-
 const sdgeInterconnection: LocalGuidanceSource = {
   label: 'SDG&E — Applying for Solar/Battery/Other Interconnection Authorizations',
   url: 'https://www.sdge.com/solar/solar-and-battery-installation-center',
@@ -99,14 +91,6 @@ const carlsbadPermit: LocalGuidanceSource = {
   verifiedAt: verified20260918,
   scope:
     'The City routes eligible licensed-contractor rooftop projects through SolarAPP+ and then its Customer Self Service portal. The page does not make that route universal for every solar, roof, panel or storage scope.',
-};
-
-const oceansidePermit: LocalGuidanceSource = {
-  label: 'City of Oceanside — SolarAPP+',
-  url: 'https://www.ci.oceanside.ca.us/government/development-services/building/solarapp',
-  verifiedAt: verified20260918,
-  scope:
-    'The City routes eligible projects through SolarAPP+ and then eTRAKiT for the City permit. The page does not establish that every project qualifies for automated review.',
 };
 
 
@@ -497,6 +481,86 @@ const pleasantonPvHandout: LocalGuidanceSource = {
     'For PV 10 kW or smaller: no Planning review for flush rooftop arrays (parallel, under 12 inches, not past ridge or hip); no Fire Department approval; inspection checks that the main and inverter breakers total no more than 120% of the bus bar rating.',
 };
 
+
+const santaCruzSolarApp: LocalGuidanceSource = {
+  label: 'City of Santa Cruz — SolarApp+',
+  url: 'https://www.santacruzca.gov/Government/City-Departments/Community-Development/Building-Safety/SolarApp',
+  verifiedAt: verified20260923,
+  scope:
+    'Only new rooftop PV on detached one- and two-family dwellings, townhomes and accessory structures; licensed contractors only (owner-builders use regular plan check); properties with active code cases, unverified complaints, voided permits or in a flood zone excluded; permit number emailed; fees paid online; inspections by phone.',
+};
+
+const santaCruzFees2026: LocalGuidanceSource = {
+  label: 'City of Santa Cruz — Planning & Community Development Fee Schedule, 2026',
+  url: 'https://www.santacruzca.gov/files/assets/city/v/4/pl/documents/pl-fee-schedule-effective-1-1-26.pdf',
+  verifiedAt: verified20260923,
+  scope: 'Solar permits: residential system up to 15 kW $360; each kW above 15 kW $24; both marked for the 6% technology surcharge.',
+};
+
+const cceMembers: LocalGuidanceSource = {
+  label: 'Central Coast Community Energy — Implementation Plan Addendum No. 5 (May 2023)',
+  url: 'https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Program launched March 1, 2018 to initial members including the counties of Monterey, Santa Cruz and San Benito and the cities of Capitola, Santa Cruz, Scotts Valley, Watsonville, Salinas, Monterey, Pacific Grove, Carmel and Seaside; the member list includes the City of Monterey, City of San Luis Obispo and City of Santa Cruz.',
+};
+
+const oceansidePermit0923: LocalGuidanceSource = {
+  label: 'City of Oceanside — SolarAPP+',
+  url: 'https://www.ci.oceanside.ca.us/government/development-services/building/solarapp',
+  verifiedAt: verified20260923,
+  scope:
+    'C-10 or C-46 contractors registered with SolarAPP+ only (no permit runners or B licenses); main-dwelling rooftop, no ballasted systems; BLD SOLAR APP PV permit type in the City portal; $25 SolarAPP+ fee covers up to three revisions; City may charge for resubmittals; printed job card and SolarAPP+ documents on site for inspection. City fee amount not stated.',
+};
+
+const chulaVistaPermit0923: LocalGuidanceSource = {
+  label: 'City of Chula Vista — Residential Solar Energy Permits',
+  url: 'https://www.chulavistaca.gov/departments/development-services/build-green/residential-solar-energy',
+  verifiedAt: verified20260923,
+  scope:
+    'Since June 28, 2023 expedited permits must use SolarAPP+ and the Citizen Access Solar Permit with Solar App Plus application; standard permits online or at the counter; designated or eligible historic structures need Historic Eligibility Clearance first and must follow the Secretary of the Interior standards for solar.',
+};
+
+const chulaVistaFees: LocalGuidanceSource = {
+  label: 'City of Chula Vista — Fee Bulletin 10-400, Miscellaneous Item Permit Fees (September 2024)',
+  url: 'https://www.chulavistaca.gov/home/showpublisheddocument/2416/638638971096170000',
+  verifiedAt: verified20260923,
+  scope:
+    'Photovoltaic system, residential SFD/duplex: expedited $453 ($30 intake, $0 plan check, $423 inspection); traditional $722 ($70, $158, $494); panel upgrade with new PV $203.',
+};
+
+const sdcpNem: LocalGuidanceSource = {
+  label: 'San Diego Community Power — Net Energy Metering',
+  url: 'https://sdcommunitypower.org/net-energy-metering/',
+  verifiedAt: verified20260923,
+  scope:
+    'Monthly surplus credited by time-of-use period; annual Net Surplus Compensation at the wholesale rate plus a $0.0075 per kWh SDCP bonus; checks issued automatically above $100; SDCP credits offset only SDCP generation charges, not SDG&E delivery.',
+};
+
+const livermoreSolarApp: LocalGuidanceSource = {
+  label: 'City of Livermore — SolarApp+',
+  url: 'https://www.livermoreca.gov/departments/community-development/permit-center/residential-photovoltaic/solarapp',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ for single-family roof-mounted retrofit PV; active City business license required; Permit Center staff review the Solar Permit with SolarAPP+ submittal; permit and receipt emailed on payment; Smoke Detector Compliance form required on site or the project is not finaled; revisions need a Revision Application.',
+};
+
+const thousandOaksSolar: LocalGuidanceSource = {
+  label: 'City of Thousand Oaks — Solar PV Systems',
+  url: 'https://toaks.gov/solarsystems',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ for roof-mounted residential systems up to 38.4 kW AC by B, C-10 and C-46 contractors; ballasted, ground-mounted and carport systems need a standard permit; both filed through TO/24; SolarAPP+ fees are independent of City fees. No City fee amount stated.',
+};
+
+const cpaSolar: LocalGuidanceSource = {
+  label: 'Clean Power Alliance — Solar / Net Energy Metering',
+  url: 'https://cleanpoweralliance.org/solar/',
+  verifiedAt: verified20260923,
+  scope:
+    'Solar Billing Plan (approved after August 31, 2023): hourly Energy Export Credits from CPUC Avoided Cost Calculator prices; Energy Export Bonus Credit for systems installed before 2028; Net Surplus Compensation 10% above SCE’s; annual true-up in April; SCE applies delivery charges and credits.',
+};
+
 export const LOCAL_PROJECT_GUIDANCE = {
   temecula: {
     city: 'Temecula',
@@ -626,26 +690,30 @@ export const LOCAL_PROJECT_GUIDANCE = {
   },
   'chula-vista': {
     city: 'Chula Vista',
-    actionIds: ['CA11'],
+    actionIds: ['CA11', 'T2-CITYCOST'],
     intro:
-      'A permit service is one part of a solar project. The proposal should also assign design, corrections, inspection, interconnection and the physical work.',
+      'Chula Vista publishes both of its solar permit prices, and the gap between them is the reason to confirm the route before signing.',
     quoteQuestions: [
-      'Which City route applies to this design: the expedited SolarAPP+ path or traditional review?',
+      'Does the design qualify for the expedited SolarAPP+ permit ($453), or will it need the traditional permit ($722)?',
+      "If the main panel is upgraded with the new system, is the City's $203 panel-upgrade permit in the quote?",
       'Who handles plan submission, corrections, inspection and SDG&E interconnection through permission to operate?',
-      'Does the written total include the array, roof work, electrical work, storage and every stated payment obligation?',
     ],
     localChecks: [
       {
-        title: 'Name the complete local path',
-        body: 'Chula Vista publishes expedited and traditional online routes. Ask the bidder to identify the applicable route and the inspection stages for the submitted design.',
+        title: 'Two published prices',
+        body: "Chula Vista's Fee Bulletin 10-400 charges $453 for an expedited SolarAPP+ permit on a single-family home or duplex and $722 for a traditional one, plus $203 for a panel upgrade done with a new solar system.",
       },
       {
-        title: 'Do not confuse a permit task with a complete installation',
-        body: 'Filing and permit charges do not cover equipment, construction, utility interconnection or warranty responsibility. Those items belong in the same written comparison.',
+        title: 'Historic homes need clearance first',
+        body: "For a structure that is designated or eligible to be designated historic, the City requires Historic Eligibility Clearance before the solar permit, and the design has to follow the Secretary of the Interior's standards for solar in a rehabilitation project.",
       },
       {
         title: 'City approval is separate from permission to operate',
         body: 'After the City inspection release, SDG&E still completes any required inspection or final review before it sends permission to operate. Put the owner of each handoff in the written scope.',
+      },
+      {
+        title: "San Diego Community Power's surplus payment",
+        body: 'San Diego Community Power credits monthly surplus by time-of-use period, pays annual surplus at the wholesale rate plus a $0.0075 per kWh bonus, and mails a check when that amount tops $100. Its credits offset only its own generation charges, not SDG&E delivery.',
       },
     ],
     related: [
@@ -653,7 +721,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/blog/sdge-time-of-use-rates-2026', label: 'Check SDG&E time-of-use periods' },
       { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
     ],
-    sources: [chulaVistaPermit, sdgeInterconnection],
+    sources: [chulaVistaPermit0923, chulaVistaFees, sdgeInterconnection, sdgeActiveCcas, sdcpNem],
   },
   'palm-springs': {
     city: 'Palm Springs',
@@ -741,29 +809,34 @@ export const LOCAL_PROJECT_GUIDANCE = {
   },
   oceanside: {
     city: 'Oceanside',
-    actionIds: ['CA28'],
+    actionIds: ['CA28', 'T2-CITYCOST'],
     intro:
-      'Oceanside uses SolarAPP+ and the City permit portal for eligible work. Compare who owns each handoff and what happens when the design changes.',
+      'Oceanside lets only C-10 and C-46 contractors use SolarAPP+ and issues the permit online as soon as the approval is uploaded and paid. Compare who owns each handoff and what happens when the design changes.',
     quoteQuestions: [
-      'Does the design qualify for SolarAPP+, and who moves the approved package into eTRAKiT?',
-      'Who handles revisions, inspection, utility interconnection and permission to operate?',
+      'Does the contractor hold a C-10 or C-46 license? Oceanside does not accept SolarAPP+ permits from B-license holders or permit runners.',
+      'Who handles revisions, inspection, SDG&E interconnection and permission to operate?',
       'Are array, battery, roof and electrical work shown as the same scope across every proposal?',
     ],
     localChecks: [
       {
-        title: 'Track both permit steps',
-        body: 'Oceanside directs eligible projects through SolarAPP+ and then eTRAKiT for the City permit. A bidder should identify the responsible party for both steps and for any corrections.',
+        title: 'Revisions have a limit',
+        body: "SolarAPP+'s $25 fee covers up to three approved revisions, each uploaded to the existing City permit under a new SolarAPP+ ID. The City says it may charge for a resubmittal, as it does for a re-inspection.",
       },
       {
-        title: 'Use the account’s generation provider',
-        body: 'Clean Energy Alliance names Oceanside as a member city, while SDG&E continues delivery and billing. City membership alone does not prove that a particular account is enrolled.',
+        title: 'Paperwork on site',
+        body: 'The City asks for the printed online inspection job card and the approved SolarAPP+ documents to be on site for the inspector.',
+      },
+      {
+        title: 'Clean Energy Alliance on the bill',
+        body: 'SDG&E lists Oceanside among the cities Clean Energy Alliance serves, while SDG&E keeps delivery and billing. At the annual true-up CEA pays surplus generation at $0.06 per kWh and sends a check once the amount reaches $100.',
       },
     ],
     related: [
       { href: '/solar-savings/san-diego-county', label: 'San Diego County project guide' },
       { href: '/battery/home-battery-cost-california', label: 'Separate storage from the array quote' },
+      { href: '/blog/sdge-time-of-use-rates-2026', label: 'Check SDG&E time-of-use periods' },
     ],
-    sources: [oceansidePermit, ceaBill],
+    sources: [oceansidePermit0923, sdgeActiveCcas, ceaBill, ceaNem],
   },
   fresno: {
     city: 'Fresno',
@@ -1163,6 +1236,106 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [pleasantonPermits, pleasantonFees2026, pleasantonPvHandout, avaSolarBilling, avaCommunities],
+  },
+  'santa-cruz': {
+    city: 'Santa Cruz',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      'The City of Santa Cruz publishes its solar permit fee, but not every property can use the automated route: open code cases, flood-zone parcels and owner-builders go through regular plan check.',
+    quoteQuestions: [
+      'Is the property eligible for SolarAPP+, or does a flood zone, an open code case or a voided permit send it to regular plan check?',
+      "Is the system over 15 kW? The City's fee rises $24 per kW above that.",
+      "Does the savings estimate use 3CE's hourly export credits and its December true-up?",
+    ],
+    localChecks: [
+      {
+        title: 'Who can use the automated route',
+        body: 'Santa Cruz limits SolarAPP+ to licensed contractors installing new rooftop solar on detached one- and two-family homes, townhomes and accessory structures such as a garage or ADU. Owner-builders apply for a regular solar permit.',
+      },
+      {
+        title: 'Parcels with open issues are excluded',
+        body: 'The City keeps properties with active code compliance cases, unverified complaints, voided permits or a flood-zone location out of SolarAPP+. Check the parcel before a quote assumes the fast route.',
+      },
+      {
+        title: 'A fee plus a technology surcharge',
+        body: "The City's 2026 fee schedule lists $360 for a residential system up to 15 kW and $24 per kW above that, both marked for its 6 percent technology surcharge.",
+      },
+      {
+        title: "3CE's December true-up",
+        body: "The City of Santa Cruz was one of Central Coast Community Energy's first members when service launched in March 2018. 3CE trues up generation each December and will pay $200 or more of Net Surplus Compensation by check on request; PG&E runs a separate delivery true-up.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area and Central Coast bill guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/blog/is-my-roof-good-for-solar-california', label: 'Check the roof before solar' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [santaCruzSolarApp, santaCruzFees2026, cceMembers, cceSolarBilling],
+  },
+  livermore: {
+    city: 'Livermore',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      'Livermore puts a staff review between SolarAPP+ approval and the permit, and will not final a project without a smoke detector compliance form. Small steps, but each belongs to someone in the quote.',
+    quoteQuestions: [
+      'Does the contractor have an active City of Livermore business license? The City requires one before it takes a SolarAPP+ permit.',
+      'Who prints and keeps on site the permit, approved documents, job card and Smoke Detector Compliance form the inspector needs?',
+      "If the design changes after approval, who files the SolarAPP+ revision and the City's Revision Application?",
+    ],
+    localChecks: [
+      {
+        title: 'A staff review, not an instant permit',
+        body: "After SolarAPP+ approves the design, the contractor applies through Livermore's Online Permitting, Permit Center staff review the submittal, and the permit and receipt arrive by email once the fee is paid.",
+      },
+      {
+        title: 'The smoke detector form',
+        body: 'Livermore says a project will not be finaled without a completed Smoke Detector Compliance form on site at inspection.',
+      },
+      {
+        title: 'Ava pays bonuses on some exports',
+        body: "Ava's Solar Billing Plan adds $0.025 per kWh for exports from 3 to 8 pm for customers not on CARE or FERA, and $0.01 per kWh on all exports for CARE and FERA households. It settles generation each April, separately from PG&E's delivery true-up.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [livermoreSolarApp, avaSolarBilling, avaCommunities],
+  },
+  'thousand-oaks': {
+    city: 'Thousand Oaks',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      'Thousand Oaks keeps its fast SolarAPP+ route for roof-mounted home systems; carports and ground mounts take a standard permit. Clean Power Alliance, the generation provider, sets how exports are paid.',
+    quoteQuestions: [
+      'Is the design a roof-mounted system of 38.4 kW AC or less, or a carport, ground-mounted or ballasted system that needs a standard permit?',
+      'Does the contractor hold a B, C-10 or C-46 license, the only classes the City accepts for SolarAPP+?',
+      "Does the savings estimate use Clean Power Alliance's export credits, its bonus credit for systems installed before 2028 and its April true-up?",
+    ],
+    localChecks: [
+      {
+        title: 'Carports and ground mounts take a standard permit',
+        body: 'Thousand Oaks sends ballasted, ground-mounted and carport systems to a standard solar permit instead of SolarAPP+. If a quote includes one, ask how the permit step is scheduled and priced.',
+      },
+      {
+        title: 'SolarAPP+ fees are separate',
+        body: 'The City says fees for the SolarAPP+ web service are independent of and unrelated to its own permit fees.',
+      },
+      {
+        title: 'How Clean Power Alliance pays for exports',
+        body: "Clean Power Alliance credits Solar Billing Plan exports hourly from CPUC avoided-cost prices, adds an Energy Export Bonus Credit for systems installed before 2028, trues up every April, and pays surplus at a rate 10 percent above SCE's. SCE applies the delivery charges and credits.",
+      },
+    ],
+    related: [
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
+      { href: '/blog/solar-carport-california-guide', label: 'Solar carports and ground mounts' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [thousandOaksSolar, sceCcaList, cpaSolar],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 

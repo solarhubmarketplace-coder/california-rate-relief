@@ -178,7 +178,7 @@ const FEES: Record<string, FeeEntry> = {
     components: [{
       label: 'expedited (SolarAPP+) path: intake, plan check and inspection',
       usd: 453,
-      quote: 'expedited (SolarAPP+) = $30 intake + $0 plan check + $423 inspection = $453 total',
+      quote: '$453 ($30 intake, no plan check, $423 inspection)',
     }],
     extra: 'The traditional path totals $722.',
   },
@@ -208,7 +208,7 @@ const FEES: Record<string, FeeEntry> = {
     }],
     extra: 'Above 15 kW: $15 per kW.',
   },
-  livermore: { status: 'not-published', evidence: 'No dollar amount given' },
+  livermore: { status: 'not-published', evidence: 'does not state a dollar figure' },
   manteca: { status: 'not-published', evidence: 'Page does not give a dollar amount' },
   marina: {
     status: 'published',
@@ -239,7 +239,7 @@ const FEES: Record<string, FeeEntry> = {
   oceanside: {
     status: 'not-published',
     extra: 'The City states a $25 SolarAPP+ processing fee; its own permit fee is not published on the page.',
-    evidence: 'no dollar amount for the city\'s own permit fee is published on this page',
+    evidence: "it does not state the City's amount",
   },
   'pacific-grove': {
     status: 'published',
@@ -288,9 +288,9 @@ const FEES: Record<string, FeeEntry> = {
     components: [{
       label: 'residential system up to 15 kW',
       usd: 360,
-      quote: 'Residential System up to 15kW = $360.00',
+      quote: 'at $360 for a system up to 15 kW',
     }],
-    extra: 'Each kW above 15 kW adds $24.',
+    extra: 'Each kW above 15 kW adds $24; both fees carry a 6% technology surcharge.',
   },
   'santa-rosa': { status: 'not-published', evidence: 'does not state a dollar figure' },
   stockton: {
@@ -302,7 +302,7 @@ const FEES: Record<string, FeeEntry> = {
     }],
     extra: 'Above 15 kW: $450 plus $15 per kW above 15 kW.',
   },
-  'thousand-oaks': { status: 'not-published', evidence: 'Page does not display specific fee amounts' },
+  'thousand-oaks': { status: 'not-published', evidence: "does not state the City's permit fee" },
   tulare: { status: 'not-retrievable', evidence: 'returned a 403/access error on fetch' },
   ventura: { status: 'not-published', evidence: 'no dollar fee amounts are published on this page' },
   'walnut-creek': {
@@ -430,7 +430,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     },
   },
   carlsbad: { platform: 'solarapp', evidence: 'rooftop projects use SolarAPP+' },
-  'chula-vista': { platform: 'solarapp', evidence: 'SolarAPP+ named as the required expedited path' },
+  'chula-vista': { platform: 'solarapp', evidence: 'expedited solar permits must go through SolarAPP+' },
   corona: {
     platform: 'symbium',
     evidence: 'Symbium Solar Permits',
@@ -446,7 +446,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   'grass-valley': { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   hollister: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
   lincoln: { platform: 'symbium', evidence: 'online filing via the Symbium portal' },
-  livermore: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
+  livermore: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
   manteca: { platform: 'symbium', evidence: 'online instant permitting via Symbium' },
   marina: { platform: 'none-named', evidence: 'the page does not mention SolarAPP+ specifically' },
   modesto: {
@@ -456,7 +456,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   },
   monterey: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned on this page' },
   napa: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
-  oceanside: { platform: 'solarapp', evidence: 'SolarAPP+ named and required' },
+  oceanside: { platform: 'solarapp', evidence: 'registered with SolarAPP+ apply' },
   'pacific-grove': {
     platform: 'none-named',
     evidence: 'SolarAPP+ is not in service for Pacific Grove at this time',
@@ -470,10 +470,10 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   'san-jose': { platform: 'none-named', evidence: 'SolarAPP+ is not named on this page' },
   'san-luis-obispo': { platform: 'solarapp', evidence: 'After SolarAPP+ review' },
   'san-marcos': { platform: 'solarapp', evidence: 'contractors use SolarAPP+' },
-  'santa-cruz': { platform: 'solarapp', evidence: 'Yes, via SolarAPP+' },
+  'santa-cruz': { platform: 'solarapp', evidence: 'After SolarAPP+ approval' },
   'santa-rosa': { platform: 'solarapp', evidence: 'through SolarAPP+ and then apply' },
   stockton: { platform: 'solarapp', evidence: 'SolarAPP+ named' },
-  'thousand-oaks': { platform: 'solarapp', evidence: 'via SolarAPP+' },
+  'thousand-oaks': { platform: 'solarapp', evidence: 'can use SolarAPP+' },
   tulare: { platform: 'solarapp', evidence: 'SolarAPP+ named on page' },
   ventura: { platform: 'symbium', evidence: 'Symbium (not SolarAPP+)' },
   'walnut-creek': { platform: 'none-named', evidence: 'does not say whether solar permits go through SolarAPP+' },

@@ -267,6 +267,94 @@
    ],
    "status": "done",
    "note": "New row: PG&E + Ava; $250 up to 10 kW (Jan 2026 fee list), 5% technology fee; SolarAPP+ via Accela with business license; 2017 handout (no planning/fire review for flush arrays; 120% bus bar check). Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/santa-cruz",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Santa Cruz, CA: What Sets the Price (2026)",
+   "clusters": [
+    640
+   ],
+   "sources": [
+    "https://www.santacruzca.gov/Government/City-Departments/Community-Development/Building-Safety/SolarApp",
+    "https://www.santacruzca.gov/files/assets/city/v/4/pl/documents/pl-fee-schedule-effective-1-1-26.pdf",
+    "https://cdi.santacruzcountyca.gov/UPC/BuildingPermitsSafety/ApplyforaBuildingPermit/Solar(PV)SystemBatteryPermits/SolarAPPPlus.aspx",
+    "https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf",
+    "https://3cenergy.org/solar-billing-plan/"
+   ],
+   "status": "done",
+   "note": "Fee re-sourced to the 2026 department fee schedule ($360 up to 15 kW, $24/kW above, 6% tech surcharge; read via r.jina.ai); SolarAPP+ exclusions (flood zone, code cases, owner-builders); 3CE member source; Santa Cruz County FAQ (GSC query) with County SolarAPP+/ePermit route."
+  },
+  {
+   "path": "/solar-cost/oceanside",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Oceanside, CA: What Sets the Price (2026)",
+   "clusters": [
+    650
+   ],
+   "sources": [
+    "https://www.ci.oceanside.ca.us/government/development-services/building/solarapp",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas",
+    "https://thecleanenergyalliance.org/net-energy-metering/"
+   ],
+   "status": "done",
+   "note": "Re-verified (via r.jina.ai; site 403s): C-10/C-46 only, $25 SolarAPP+ fee covers 3 revisions, BLD SOLAR APP PV permit type, resubmittal fees possible; City fee amount not published; CEA surplus terms."
+  },
+  {
+   "path": "/solar-cost/chula-vista",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Chula Vista, CA: What Sets the Price (2026)",
+   "clusters": [
+    635
+   ],
+   "sources": [
+    "https://www.chulavistaca.gov/departments/development-services/build-green/residential-solar-energy",
+    "https://www.chulavistaca.gov/home/showpublisheddocument/2416/638638971096170000",
+    "https://sdcommunitypower.org/net-energy-metering/",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas"
+   ],
+   "status": "done",
+   "note": "Re-verified (via r.jina.ai): Fee Bulletin 10-400 still the linked schedule ($453 expedited, $722 traditional, $203 panel upgrade with PV); SolarAPP+ required for expedited since 2023-06-28; historic clearance rule; SDCP surplus terms."
+  },
+  {
+   "path": "/solar-cost/livermore",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Livermore, CA: What Sets the Price (2026)",
+   "clusters": [
+    649
+   ],
+   "sources": [
+    "https://www.livermoreca.gov/departments/community-development/permit-center/residential-photovoltaic/solarapp",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/",
+    "https://avaenergy.org/community/who-we-serve/"
+   ],
+   "status": "done",
+   "note": "Re-verified (via r.jina.ai): staff review after SolarAPP+, business license, smoke detector form required to final, revision process; Ava export bonuses. No City fee figure published on the page; fee schedule not found."
+  },
+  {
+   "path": "/solar-cost/thousand-oaks",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Thousand Oaks, CA: What Sets the Price (2026)",
+   "clusters": [
+    643
+   ],
+   "sources": [
+    "https://toaks.gov/solarsystems",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation",
+    "https://cleanpoweralliance.org/solar/"
+   ],
+   "status": "done",
+   "note": "Re-verified: SolarAPP+ limits (38.4 kW AC, roof-mounted, B/C-10/C-46), carports/ground mounts standard permit via TO/24; City fee not published; Clean Power Alliance Solar Billing Plan terms (bonus credit before 2028, NSC 10% above SCE, April true-up)."
   }
  ],
  "sitemap_add": [],
