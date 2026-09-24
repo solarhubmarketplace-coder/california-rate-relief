@@ -132,6 +132,42 @@ test('a /solar-companies city page with no cost twin is left alone', () => {
   }
 });
 
+// 2026-09-23, Decision 15: the /solar-companies redirect sources whose page
+// passes Rule 3 in topicmap/blocks/05_structure/hub_page_map.csv (conflict
+// contains target_redirected, rule3_gate pass_gsc or pass_serp). Reinstated:
+// no longer redirected even though each one has a /solar-cost twin.
+const RULE3_REINSTATED_CITY_SLUGS = new Set([
+  'aptos', 'beaumont', 'carlsbad', 'chula-vista', 'corona', 'el-dorado-hills',
+  'encinitas', 'manteca', 'marina', 'monterey', 'oceanside', 'pacific-grove',
+  'rancho-cordova', 'salinas', 'seaside', 'walnut-creek', 'watsonville',
+  'winchester',
+]);
+for (const slug of RULE3_REINSTATED_CITY_SLUGS) REINSTATED_COMPANIES_SLUGS.add(slug);
+ROW_DELTAS.push(-RULE3_REINSTATED_CITY_SLUGS.size);
+
+test('Decision 15: the Rule 3 cities are reinstated and each one renders', () => {
+  const cost = new Set(getPublishableCityCostSlugs());
+  assert.equal(RULE3_REINSTATED_CITY_SLUGS.size, 18);
+  for (const slug of RULE3_REINSTATED_CITY_SLUGS) {
+    assert.ok(
+      COMPANIES_ROUTE_SLUGS.has(slug),
+      `${slug} must be in the /solar-companies/[city] static params, or the reinstated URL 404s`,
+    );
+    assert.equal(canonicalRedirectFor(`/solar-companies/${slug}`), null, slug);
+    assert.equal(companiesCityHref(slug), `/solar-companies/${slug}`);
+    assert.equal(hasCompaniesCityPage(slug), true);
+    // The cost twin stays live, so the city keeps one page per intent.
+    assert.ok(cost.has(slug), `${slug} should keep its /solar-cost page`);
+    assert.equal(isRedirectedPath(`/solar-cost/${slug}`), false);
+  }
+  // The seven Monterey Bay cities the intent audit rated high severity.
+  for (const slug of ['monterey', 'salinas', 'seaside', 'pacific-grove', 'watsonville', 'aptos', 'marina']) {
+    assert.ok(RULE3_REINSTATED_CITY_SLUGS.has(slug), slug);
+  }
+  // Vallejo does not pass Rule 3 (no_serp) and keeps its redirect.
+  assert.equal(canonicalRedirectFor('/solar-companies/vallejo'), '/solar-cost/vallejo');
+});
+
 test('the /solar-companies hub path is not redirected', () => {
   assert.equal(canonicalRedirectFor('/solar-companies'), null);
   assert.equal(canonicalRedirectFor('/solar-companies/'), null);

@@ -78,6 +78,24 @@
  * 330 — impression demand a ranking attempt can now try to convert. See the
  * removed-slugs comments inline below for exactly which 24 rows this
  * removed.
+ *
+ * 2026-09-23 — fourth pass (Decision 15): Rule 3 cities reinstated
+ * ---------------------------------------------------------------
+ * The topic map (topicmap blocks 05/06) found the redirected "solar
+ * companies <city>" pages still drawing installer queries through the
+ * redirect, and the /solar-cost pages they land on answer a different SERP:
+ * installer and cost results for the same place share 3+ top-10 URLs in only
+ * 2 of 29 keyword pairs (7%, city_pairs.pkl). For the seven Monterey Bay
+ * cities the retired URLs earned 9,968 installer-query impressions in 90 days
+ * at average positions 10.4-18.2 (redirect_intent_audit.csv).
+ *
+ * Every remaining /solar-companies row whose page passes Rule 3 in
+ * hub_page_map.csv (rule3_gate pass_gsc or pass_serp) is removed, so the
+ * installer page renders again and the cost page keeps the cost intent.
+ * Each reinstated slug is in cities-data.ts (the page's generateStaticParams
+ * source), so the route renders. Vallejo (no_serp) stays redirected. The
+ * /solar-savings rows are unchanged: bill/rate queries share more of their
+ * SERP with cost pages (36%) than with installer pages (0%).
  */
 
 /** Source path -> destination path. Both are absolute, no trailing slash. */
@@ -143,33 +161,26 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   //     `CityComparison` content is a sourced, ranking target again per the
   //     2026-09-22 Ahrefs SERP pull. `san-diego` is the one growthCities/
   //     redirected city kept below: its page-1 floor is DR 25.
-  '/solar-companies/aptos': '/solar-cost/aptos',
-  '/solar-companies/carlsbad': '/solar-cost/carlsbad',
-  '/solar-companies/chula-vista': '/solar-cost/chula-vista',
-  '/solar-companies/corona': '/solar-cost/corona',
-  '/solar-companies/el-dorado-hills': '/solar-cost/el-dorado-hills',
-  '/solar-companies/manteca': '/solar-cost/manteca',
-  '/solar-companies/marina': '/solar-cost/marina',
-  '/solar-companies/monterey': '/solar-cost/monterey',
-  '/solar-companies/oceanside': '/solar-cost/oceanside',
-  '/solar-companies/pacific-grove': '/solar-cost/pacific-grove',
-  '/solar-companies/rancho-cordova': '/solar-cost/rancho-cordova',
-  '/solar-companies/salinas': '/solar-cost/salinas',
+  //
+  //     2026-09-23 — Decision 15: every row here whose /solar-companies page
+  //     passes Rule 3 was removed (fourth pass; see the file-level comment).
+  //     Removed: aptos, carlsbad, chula-vista, corona, el-dorado-hills,
+  //     manteca, marina, monterey, oceanside, pacific-grove, rancho-cordova,
+  //     salinas, walnut-creek, watsonville, winchester, and from the second
+  //     wave below beaumont, encinitas, seaside.
   // Kept 2026-09-22: San Diego's page-1 floor for "solar companies san diego"
   // is DR 25 (Ahrefs, exported 2026-09-22) — not a beatable SERP.
   '/solar-companies/san-diego': '/solar-cost/san-diego',
-  '/solar-companies/walnut-creek': '/solar-cost/walnut-creek',
-  '/solar-companies/watsonville': '/solar-cost/watsonville',
-  '/solar-companies/winchester': '/solar-cost/winchester',
 
   // --- Added 2026-09-18 (second wave). These six /solar-companies city pages
   //     had no cost twin when the layer was first retired; the re-screen pass
   //     qualified them and their /solar-cost pages now exist, so they join the
   //     same consolidation as the other 37.
   //     2026-09-22 — los-angeles and palm-springs reversed; see above.
-  '/solar-companies/beaumont': '/solar-cost/beaumont',
-  '/solar-companies/encinitas': '/solar-cost/encinitas',
-  '/solar-companies/seaside': '/solar-cost/seaside',
+  //     2026-09-23 — beaumont, encinitas and seaside reversed (Decision 15).
+  // Kept 2026-09-23: Vallejo is the one redirected companies page that does
+  // not pass Rule 3 (hub_page_map.csv rule3_gate = no_serp: no Search Console
+  // rows for its queries and no checked SERP).
   '/solar-companies/vallejo': '/solar-cost/vallejo',
   // Corrected 2026-09-20: Rocklin's growth-only route also has a cost twin.
   // Reversed 2026-09-22; see the file-level "third pass" comment above.
