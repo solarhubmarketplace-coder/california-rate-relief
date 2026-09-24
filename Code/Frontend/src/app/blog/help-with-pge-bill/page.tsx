@@ -33,9 +33,51 @@ const sources = rateSources(
   'csdLiheap',
   'pgeBudgetBilling',
   'pgeMedicalBaselineProgram',
+  'pgeRule9',
+  'pgeRule10',
+  'pgeRule17_1',
+  'pgeBillForecast',
+  'pgeCompareBills',
+  'pgeRatePlans',
+  'pgeBscNews',
+  'pgeResRatesCurrent',
+  'pgeNscFaq',
+  'cpucClimateCredit',
+  'cpucMyBill',
+  'pgeBillsDownNews',
 );
 
 const faqs = [
+  {
+    question: "What can I do if I can't afford my PG&E bill?",
+    answer:
+      'Call PG&E before the due date and ask for a payment plan or an extension of up to 30 days. If you have a disconnection notice and a low income, apply for REACH (up to $800). Apply for LIHEAP through your local agency (PG&E says up to $1,000). Enroll in CARE or FERA if you qualify, which lowers every future bill and opens the Arrearage Management Plan, which can forgive up to $8,000 of old debt.',
+  },
+  {
+    question: 'Can PG&E fix an incorrect bill?',
+    answer:
+      "Yes. Under PG&E's Electric Rule 10, if you question a bill PG&E must explain it and issue a corrected bill if it was wrong. Under Rule 17.1, PG&E refunds a billing-error overcharge for up to three years, and can back-bill a residential undercharge for only three months. If you and PG&E still disagree, you can take the dispute to the CPUC; a residential customer who cannot pay the disputed amount does not have to deposit it during the CPUC's review.",
+  },
+  {
+    question: 'How often does PG&E bill?',
+    answer:
+      "Monthly. PG&E's Electric Rule 9 sets a regular billing period of once each month, prorated when a period is shorter than 27 days or longer than 33 days because meter-read dates vary. Solar customers on net energy metering also get an annual true-up statement.",
+  },
+  {
+    question: 'Can I see my projected PG&E bill?',
+    answer:
+      "Yes, with PG&E's free Bill Forecast Alert. You set a bill amount, and PG&E emails, texts or calls if your bill is on track to exceed it, so you have time to cut use before the statement. It is open to single-location customers with a SmartMeter; net energy metering and Direct Access customers are not eligible.",
+  },
+  {
+    question: 'Why is my PG&E bill negative?',
+    answer:
+      'A negative amount is a credit: you have paid more than you owe, or credits such as the California Climate Credit or solar credits were larger than that period’s charges. The credit is applied to future bills. If a solar true-up statement ends below zero, PG&E lets you leave the credit on the account or request a check when it is over $1.',
+  },
+  {
+    question: 'Is there a PG&E bill calculator or estimator?',
+    answer:
+      "Signed in to your PG&E account, the compare-bills tool explains why this month's charges differ from past bills and the rate comparison prices your usage on other plans. To estimate by hand, multiply your kWh by your plan's price and add the daily Base Services Charge: 400 kWh on E-TOU-C at the 39.940-cent summer off-peak price, plus 30 days at $0.79343, is about $183.56 before any baseline credit, peak use or taxes.",
+  },
   {
     question: 'Can PG&E help me pay my past-due bill?',
     answer:
@@ -220,11 +262,11 @@ export default function HelpWithPgeBillPage() {
               <h2>Discounts that lower every future bill</h2>
               <p>
                 Help with one past-due bill does not fix the next one. PG&amp;E lists CARE at 35% or more off electricity and 20%
-                or more off gas, and FERA at 18% off, for income-qualified households. How to qualify and apply is covered in{' '}
+                or more off gas, and FERA at 18% off, for income-qualified households. The 2026 income limits and steps are in{' '}
                 <Link href="/blog/income-qualified-bill-discount-pge" className={guideLink}>
-                  PG&amp;E&apos;s CARE and FERA discounts
-                </Link>
-                . Enrollment in CARE or FERA is also what makes you eligible for the Arrearage Management Plan above.
+                  how to qualify and apply for PG&amp;E CARE
+                </Link>{' '}
+                and FERA. Enrollment in CARE or FERA is also what makes you eligible for the Arrearage Management Plan above.
               </p>
               <p>
                 <strong>Medical Baseline</strong> is not income-based. If someone in the home depends on power for a qualifying
@@ -241,6 +283,68 @@ export default function HelpWithPgeBillPage() {
                 leave it at any time; any remaining balance moves to your next bill.
               </p>
 
+              <h2>Checking a PG&amp;E bill before you pay it</h2>
+              <p>
+                A bill that looks wrong or unaffordable is worth checking before you set up a payment plan. These are the
+                questions PG&amp;E customers ask most, answered from PG&amp;E&apos;s own tariff rules and account tools.
+              </p>
+              <h3>How often PG&amp;E bills, and why totals move</h3>
+              <p>
+                PG&amp;E bills monthly. Its Electric Rule 9 sets a regular billing period of once each month, with a pro-rata
+                correction when a period runs shorter than 27 days or longer than 33, because meter reads cannot always fall on
+                the same day. A 33-day bill after a 28-day one will look higher with no change in use, so compare kWh per day.
+                If PG&amp;E cannot read the meter, Rule 9 lets it bill an estimate based on your past use; an estimate caused by
+                something within PG&amp;E&apos;s control is treated as a billing error.
+              </p>
+              <h3>What changed on PG&amp;E bills in 2026</h3>
+              <p>
+                Three things. On March 1, 2026 PG&amp;E began the income-based Base Services Charge, about $24 a month for most
+                customers, $12 for FERA and deed-restricted affordable housing and $6 for CARE, and cut per-kWh prices to offset
+                it. PG&amp;E says prices were then 13% lower than in January 2024, but whether your total fell depends on your use.
+                And the California Climate Credit moved: in 2026 PG&amp;E electric customers receive $36.18 on the August bill and
+                again on the September bill, instead of the spring and fall credits of past years.
+              </p>
+              <h3>A bill higher than usual</h3>
+              <p>
+                Signed in to your account, PG&amp;E&apos;s compare-bills tool puts this month next to last month or the same month
+                last year and shows why the charges changed, with usage by day and hour and next to the weather. If daily use
+                is up, look at heating, cooling, a pool pump or a new EV. If use is flat but charges rose, check the season,
+                your plan&apos;s peak hours and whether a credit from last month is missing. The{' '}
+                <Link href="/blog/why-is-my-pge-bill-so-high" className={guideLink}>
+                  PG&amp;E high-bill checklist
+                </Link>{' '}
+                goes through each cause.
+              </p>
+              <h3>A projected bill, and estimating your own</h3>
+              <p>
+                PG&amp;E&apos;s free Bill Forecast Alert lets you set a limit for the month and warns you by email, text or phone
+                when you are on track to exceed it. It is open to single-location customers with a SmartMeter, but not to net
+                energy metering or Direct Access customers. PG&amp;E&apos;s other estimating tool also sits inside your online
+                account: the rate plan comparison prices your own usage on each plan. To estimate by hand, multiply kWh by your
+                plan&apos;s price and add the daily Base Services Charge. For example, 400 kWh at E-TOU-C&apos;s summer off-peak
+                price of 39.940 cents is $159.76, plus 30 days at $0.79343 is $23.80, about $183.56 before the baseline credit,
+                any peak-hour use and taxes. Every plan&apos;s prices are in{' '}
+                <Link href="/blog/pge-rate-schedules" className={guideLink}>
+                  PG&amp;E&apos;s residential rate schedules
+                </Link>
+                .
+              </p>
+              <h3>Why a PG&amp;E bill can be negative</h3>
+              <p>
+                A negative balance is a credit, not an error. It happens when you paid more than you owed, or when credits such
+                as the Climate Credit or solar credits exceed that period&apos;s charges. The credit carries to your next bill. On
+                a solar true-up statement that ends below zero, PG&amp;E says you can leave the credit on the account for future
+                energy charges or ask for a check if it is more than $1.
+              </p>
+              <h3>If the bill is wrong</h3>
+              <p>
+                Ask PG&amp;E for an explanation first; its Electric Rule 10 says that if a bill is found incorrect, PG&amp;E will
+                issue a corrected bill. When a billing error overcharged you, Rule 17.1 has PG&amp;E refund up to three years of
+                the overcharge; when it undercharged a residential customer, PG&amp;E can back-bill only three months. If you and
+                PG&amp;E cannot agree, you can take the dispute to the CPUC, and a residential customer who cannot pay the
+                disputed amount does not have to deposit it with the CPUC while it reviews the case.
+              </p>
+
               <h2>After the emergency: cutting the bill itself</h2>
               <p>
                 Once the account is current, the question becomes why the bill got that high. Check your rate plan, your daily
@@ -253,7 +357,12 @@ export default function HelpWithPgeBillPage() {
                   how to read a PG&amp;E bill
                 </Link>{' '}
                 shows where each charge appears. Solar is a long-term decision, not a fix for a past-due balance, and several
-                assistance programs above are not open to net energy metering customers.
+                assistance programs above are not open to net energy metering customers. When you are ready to look at it,
+                start with{' '}
+                <Link href="/blog/pge-solar-program" className={guideLink}>
+                  PG&amp;E&apos;s solar and community solar programs
+                </Link>
+                .
               </p>
             </div>
 

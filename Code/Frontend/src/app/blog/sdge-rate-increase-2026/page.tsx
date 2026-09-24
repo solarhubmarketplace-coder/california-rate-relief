@@ -42,6 +42,8 @@ const sources = rateSources(
   'sdgeTouDr1Jan2024',
   'sdgeTouDr1Jan2023',
   'sdgeWhenMatters',
+  'sdgeEvTou5Aug2026',
+  'sdgePricingPlans',
   'cpucNbt',
   'cpucCareFera',
 );
@@ -77,6 +79,11 @@ const faqs = [
     question: 'Will SDG&E rates go up again?',
     answer:
       "The office's July 2026 report projects SDG&E's residential average at about 46.1 cents per kWh by December 31, 2026, slightly above June's 45.5 cents, and warns the projection counts only requests already filed.",
+  },
+  {
+    question: 'What are SDG&E’s EV rates?',
+    answer:
+      "SDG&E's whole-home EV plan is EV-TOU-5, for customers with an electric vehicle registered with the DMV. From August 1, 2026 it charges 13.090 cents per kWh super off-peak in summer and 12.332 cents in winter (midnight to 6 a.m., plus 10 a.m. to 2 p.m. on weekdays and midnight to 2 p.m. on weekends), against 80.205 cents on summer on-peak, 4 to 9 p.m. It adds the $0.79343 daily Base Services Charge. SDG&E also offers EV-TOU and EV-TOU-2.",
   },
   {
     question: 'Do SDG&E solar customers get the export bonus?',

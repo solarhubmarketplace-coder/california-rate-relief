@@ -202,6 +202,7 @@ export const SRC = {
   pgeBillForecast: { label: 'PG&E: Bill Forecast Alert', url: 'https://www.pge.com/en/account/manage-my-account/online-account-preferences/bill-forecast-alert.html' },
   pgeCompareBills: { label: 'PG&E: Compare bills and view energy usage', url: 'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/compare-bills-and-view-usage-history.html' },
   // SCE, SDG&E, SMUD, LADWP and Los Angeles.
+  scePastBills: { label: 'SCE: View or download past SCE bills (36 months online; Copy of Bill form, 3 years)', url: 'https://www.sce.com/customer-service-center/help-center/billing-payments/understand-your-bill/view-or-download-past-bills' },
   sceDeposit: { label: 'SCE: How is the amount of the deposit determined for starting service?', url: 'https://www.sce.com/customer-service-center/help-center/stop-start-move-service/faq/how-deposit-amount-is-determined' },
   sdgeBaselineCalc: { label: 'SDG&E: Baseline allowance calculator (daily allowances by climate zone and season)', url: 'https://www.sdge.com/baseline-allowance-calculator' },
   smudCompare: { label: 'SMUD: How our rates compare (750 kWh residential bills as of June 1, 2026)', url: 'https://www.smud.org/Rate-Information/Compare-rates' },
