@@ -228,7 +228,12 @@ export default function WhatPercentageOfCaliforniaPowerIsSolar() {
           <h2 className={h2}>What a solar-heavy grid means for your bill</h2>
           <p className={p}>
             When a large share of the state&rsquo;s power arrives in the middle of the day, midday
-            electricity becomes less valuable and evening electricity more so. That pattern is behind
+            electricity becomes less valuable and evening electricity more so. On sunny spring and fall
+            days the grid can have more renewable power than it can use, which is{' '}
+            <Link href="/blog/solar-duck-curve-california" className={link}>
+              why midday solar gets curtailed (the duck curve)
+            </Link>
+            . That pattern is behind
             the CPUC&rsquo;s Net Billing Tariff. For PG&amp;E, SCE and SDG&amp;E customers who applied
             to connect since April 15, 2023, exported solar is credited at values from the CPUC&rsquo;s
             Avoided Cost Calculator, which are usually lower than the price of power you import (CPUC,

@@ -186,7 +186,11 @@ export default function SceSettlementBillPage() {
               <p>
                 Systems that applied after the net billing tariff took effect are on SCE&apos;s Solar Billing Plan and must take
                 TOU-D-PRIME. The CPUC says those customers pay their bills monthly so they are not surprised by a large annual
-                bill; export credits still roll over for 12 months and true up once a year. The differences are laid out in{' '}
+                bill; export credits still roll over for 12 months and true up once a year. The SCE guide to{' '}
+                <Link href="/blog/sce-solar-billing-plan" className={guideLink}>
+                  how the Solar Billing Plan settlement and EEC Adjustment work
+                </Link>{' '}
+                explains that annual bill line by line. The differences are laid out in{' '}
                 <Link href="/blog/net-billing-vs-net-metering-california" className={guideLink}>
                   net billing vs. net metering
                 </Link>{' '}

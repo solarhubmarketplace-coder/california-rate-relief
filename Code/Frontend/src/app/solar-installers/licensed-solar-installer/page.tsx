@@ -174,7 +174,12 @@ export default function LicensedSolarInstallerPage() {
             connects electrical equipment, and its scope lists &ldquo;solar photovoltaic cells&rdquo; by
             name (CSLB, checked September 23, 2026). A C-46 company that only does solar and an
             electrical contractor who also installs panels can both be properly licensed for a rooftop
-            system.
+            system. The license is the only installer credential California law requires; for how it
+            compares with voluntary ones such as NABCEP certification, see{' '}
+            <Link href="/best-solar-companies-california#accredited" className={link}>
+              what licensed, NABCEP-certified and accredited mean
+            </Link>
+            .
           </p>
           <p className={p}>
             A general building contractor is different. The CSLB describes general contractors as

@@ -249,7 +249,23 @@ export default function CommercialSolarCost() {
                 <Link href="/solar-panels-california" className="text-primary underline">
                   what a home rooftop solar system costs in California
                 </Link>{' '}
-                instead; residential prices, tariffs and incentives work differently.
+                instead; residential prices, tariffs and incentives work differently. The{' '}
+                <Link href="/blog/10-kw-solar-system-cost" className="text-primary underline">
+                  cost of a 10 kW home system
+                </Link>{' '}
+                is worked through on its own page, and the city guides cover{' '}
+                <Link href="/solar-cost" className="text-primary underline">
+                  home solar permit fees and utilities by California city
+                </Link>
+                , from{' '}
+                <Link href="/solar-cost/tracy" className="text-primary underline">
+                  Tracy
+                </Link>{' '}
+                to{' '}
+                <Link href="/solar-cost/arcata" className="text-primary underline">
+                  Arcata
+                </Link>
+                .
               </p>
 
               {/* The two deadline cards sit before the first h2. Their titles stay
@@ -449,7 +465,12 @@ export default function CommercialSolarCost() {
               </h2>
               <p>
                 NREL&apos;s 2024 component breakdown (on its 3-MW ground-mount model, so treat the
-                total with the caveat above) splits as follows:
+                total with the caveat above) splits as follows. Modules are priced per watt, so the
+                panel count in a bid depends on{' '}
+                <Link href="/commercial-solar/average-wattage-of-a-commercial-solar-panel" className="text-primary underline">
+                  what wattage commercial panels are
+                </Link>
+                .
               </p>
               <div className="my-8 overflow-x-auto rounded-xl border border-border">
                 <table className="min-w-full text-sm">
@@ -532,7 +553,12 @@ export default function CommercialSolarCost() {
                 December 31, 2026.{/* fedtax-05, fedtax-08 */} As the callouts above state, the
                 credit does not apply to solar property placed in service after December 31, 2027
                 when the facility began construction after July 4, 2026.{/* fedtax-13, fedtax-14 */}{' '}
-                Confirm any rate or bonus with a tax professional before counting on it.
+                Confirm any rate or bonus with a tax professional before counting on it. The bonus
+                tests, the foreign-entity rules, selling the credit and recapture are covered in{' '}
+                <Link href="/commercial-solar/commercial-solar-tax-credit" className="text-primary underline">
+                  what the §48E credit rules say in 2026
+                </Link>
+                .
               </p>
               <p>
                 On depreciation, 26 U.S.C. §168(e)(3)(B)(viii) classifies §48E qualified property

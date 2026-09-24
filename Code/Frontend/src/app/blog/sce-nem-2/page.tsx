@@ -169,7 +169,9 @@ export default function SceNem2Page() {
                 On the Solar Billing Plan, SCE says customers are on the TOU-D-PRIME rate, pay regular
                 monthly charges, including taxes, fees and the Base Services Charge, and receive a
                 settlement, or True-Up, bill once a year. Export credits cannot cover set charges such as
-                the Base Services Charge.
+                the Base Services Charge. This section is the short version; for the rate, the export
+                credit tables and the True-Up, read{' '}
+                <Link href="/blog/sce-solar-billing-plan" className={link}>SCE’s Solar Billing Plan in full</Link>.
               </p>
               <p>
                 Exports earn Energy Export Credits that vary by hour. SCE says the values are fixed for nine

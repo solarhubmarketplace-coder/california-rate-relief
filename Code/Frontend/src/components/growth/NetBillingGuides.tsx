@@ -128,7 +128,12 @@ function ComparisonContent() {
           exported generation is credited. The CPUC says Net Billing export
           compensation usually differs from the retail rate and can vary by
           time; the account's current utility documents control the actual
-          calculation.
+          calculation. Why midday exports earn so little and evening exports so
+          much comes down to the grid pattern known as{" "}
+          <Link className="underline" href="/blog/solar-duck-curve-california">
+            the duck curve behind net billing
+          </Link>
+          .
         </p>
       </section>
       <section>

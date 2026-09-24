@@ -211,7 +211,8 @@ export default function TeslaSolarReview() {
                 This review goes component by component using Tesla’s own datasheets and support pages, checked on
                 September 23, 2026, then covers how a Tesla quote and lease work, the inverter price question, service,
                 SolarCity, and how Tesla relates to Sunrun, ADT and Momentum. It does not rank Tesla against other
-                installers.
+                installers; to read the same kind of check on other companies, see{' '}
+                <Link href='/best-solar-companies-california#company-reviews' className={a}>other California solar company reviews</Link>.
               </p>
 
               <div className='not-prose'>

@@ -248,7 +248,9 @@ export default function SdgeNetMeteringPage() {
               </p>
               <p>
                 The values are set by the CPUC and vary by time of day and season. SDG&amp;E posts them in an Export Data
-                and Pricing spreadsheet in its My Energy Center. The CPUC says the original customer keeps net billing
+                and Pricing spreadsheet in its My Energy Center; a month-by-month reading of that file is in{' '}
+                <Link href="/blog/sdge-and-solar" className={link}>SDG&amp;E Solar Billing Plan rate and 2026 export credits</Link>.
+                The CPUC says the original customer keeps net billing
                 terms for nine years. For how SDG&amp;E’s values compare with the other utilities’, see{' '}
                 <Link href="/blog/nem-3-export-rates-california" className={link}>NEM 3.0 export rates across California</Link>.
               </p>

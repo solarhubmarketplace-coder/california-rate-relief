@@ -462,11 +462,16 @@ function LowerBillContent() {
           </table>
         </div>
         <p className="mt-3">
-          See the{" "}
+          On PG&amp;E, the guide to{" "}
+          <Link className="underline" href="/blog/income-qualified-bill-discount-pge">
+            CARE and FERA discounts
+          </Link>{" "}
+          shows what each discount takes off the bill and how to enroll. Source
+          for the limits above, and for how to apply through each utility: the{" "}
           <a className="underline" href="https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program" target="_blank" rel="noopener noreferrer">
             CPUC&apos;s CARE and FERA page
-          </a>{" "}
-          for how to apply through each utility.
+          </a>
+          .
         </p>
       </section>
       <section>

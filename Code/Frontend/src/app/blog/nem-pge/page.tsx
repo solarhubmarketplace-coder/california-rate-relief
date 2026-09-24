@@ -233,6 +233,8 @@ export default function NemPgePage() {
                 to non-bypassable charges and demand charges. Leftover credits roll into the annual True-Up. For
                 what those credits are worth hour by hour, see{' '}
                 <Link href="/blog/nem-3-export-rates-california" className={link}>PG&amp;E’s NEM 3.0 export values</Link>.
+                For the rate you must take, battery rules and how the True-Up works on this plan, see{' '}
+                <Link href="/blog/pge-solar-billing-plan" className={link}>how PG&amp;E’s Solar Billing Plan works</Link>.
               </p>
 
               <FaqBlock items={faqs} schema={false} id="faq" />

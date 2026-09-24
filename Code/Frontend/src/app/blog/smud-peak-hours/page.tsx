@@ -180,7 +180,11 @@ export default function SmudPeakHoursPage() {
                 plug-in electric vehicle, so the cheapest SMUD power is overnight. Solar customers on SMUD&apos;s Solar and Storage
                 Rate earn 9.6 cents per kWh for power sent to the grid, less than every retail price in the tables above, so solar
                 pays off mainly through power you use yourself. A battery that covers 5 to 8 p.m. in summer avoids the 37.65-cent
-                hours. Local numbers are in the{' '}
+                hours. The rules behind both, including who qualifies, are in{' '}
+                <Link href="/blog/smud-solar-program" className={guideLink}>
+                  SMUD&apos;s solar export rate and battery incentive
+                </Link>
+                . Local numbers are in the{' '}
                 <Link href="/solar-savings/sacramento" className={guideLink}>
                   Sacramento solar and bill guide
                 </Link>

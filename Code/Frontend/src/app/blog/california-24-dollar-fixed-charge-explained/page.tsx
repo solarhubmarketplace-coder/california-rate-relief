@@ -329,7 +329,15 @@ export default function FixedChargeExplained() {
                 >
                   SDG&E assistance programs
                 </a>
-                .
+                . On PG&amp;E, the guide to{' '}
+                <Link
+                  href='/blog/income-qualified-bill-discount-pge'
+                  className='text-primary hover:underline'
+                >
+                  CARE and FERA discounts
+                </Link>{' '}
+                shows the daily charge for each tier and the rules that trip
+                people up when they enroll.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

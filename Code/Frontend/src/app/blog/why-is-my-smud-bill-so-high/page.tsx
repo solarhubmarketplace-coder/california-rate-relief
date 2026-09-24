@@ -126,7 +126,11 @@ export default function WhyIsMySmudBillSoHighPage() {
                 holiday list counts too: New Year&apos;s Day, Martin Luther King Jr. Day, Presidents Day, Memorial Day,
                 Juneteenth, Independence Day, Labor Day, Indigenous Peoples&apos; Day, Veterans Day, Thanksgiving and Christmas
                 are off-peak all day, though a fixed-date holiday that falls on a weekend does not move its off-peak price to
-                the observed weekday.
+                the observed weekday. A chart of every period, and the hours on SMUD&apos;s other plans, is in{' '}
+                <Link href="/blog/smud-peak-hours" className={guideLink}>
+                  SMUD peak hours and summer rate dates
+                </Link>
+                .
               </p>
 
               <h2>2. The $27 System Infrastructure Fixed Charge</h2>

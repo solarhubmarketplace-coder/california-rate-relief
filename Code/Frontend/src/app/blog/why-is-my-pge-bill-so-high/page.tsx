@@ -67,7 +67,7 @@ export default function WhyIsMyPGEBillSoHigh() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>2. Peak-Hour Use Does Not Fit Your TOU Plan</h2>
               <p>On E-TOU-C, peak prices run from 4–9 p.m. every day. E-TOU-D uses a shorter 5–8 p.m. peak on non-holiday weekdays. The schedules also differ by season, and E-TOU-C includes a baseline credit while E-TOU-D does not. A household that cooks, cools the house, dries clothes and charges a vehicle during its peak window can pay more without using more total electricity.</p>
-              <p>Use the <Link href='/blog/pge-time-of-use-rates-2026' className={sourceLink}>2026 PG&amp;E time-of-use comparison</Link>, then run PG&amp;E&apos;s personalized rate analysis with your own interval data. A generic “best plan” does not exist.</p>
+              <p>Use the <Link href='/blog/pge-time-of-use-rates-2026' className={sourceLink}>2026 PG&amp;E time-of-use comparison</Link>, then run PG&amp;E&apos;s personalized rate analysis with your own interval data. A generic “best plan” does not exist. Current prices for every plan, tiered and time-of-use, are in <Link href='/blog/pge-rate-schedules' className={sourceLink}>PG&amp;E rate schedules and prices</Link>.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>3. The Base Services Charge Now Appears Separately</h2>
               <p>PG&amp;E began showing a Base Services Charge separately in March 2026. PG&amp;E describes it as a restructuring: some service costs moved out of the per-kWh price and into a daily fixed charge. It says most customers pay around $24 a month, CARE customers around $6 and FERA customers around $12. The exact monthly amount changes with the number of days in the billing period.</p>
@@ -105,6 +105,7 @@ export default function WhyIsMyPGEBillSoHigh() {
                 <li>For solar, separate current monthly charges from the running True-Up balance and check system production.</li>
                 <li>Only then compare efficiency, storage or solar proposals using your own usage and rate schedule.</li>
               </ol>
+              <p className='mt-4'>Each of these is worked through in the <Link href='/blog/how-to-lower-pge-bill' className={sourceLink}>steps to lower a PG&amp;E bill</Link>. If the balance is already past due, PG&amp;E&apos;s payment plans and one-time assistance are covered in <Link href='/blog/help-with-pge-bill' className={sourceLink}>help paying a past-due PG&amp;E bill</Link>.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When a Solar Assessment Is Relevant</h2>
               <p>A rate-plan switch or assistance program may solve the immediate problem. Solar becomes a relevant comparison when you own the property, have a suitable roof or site, expect to stay long enough for the contract or ownership model to make sense, and still have a persistent grid-electricity cost after the no-cost checks.</p>

@@ -253,7 +253,11 @@ export default function SolarRebatesByCAUtility() {
               <Link className={link} href="/battery/sgip-battery-rebate-california">
                 the SGIP battery rebate status guide
               </Link>
-              .
+              . If the battery you are pricing is a Tesla, the{' '}
+              <Link className={link} href="/battery/tesla-powerwall-3-cost-california">
+                Powerwall rebates, including Tesla&rsquo;s own
+              </Link>
+              , are listed program by program in the Powerwall 3 cost guide.
             </li>
             <li>
               <strong>DAC-SASH.</strong> The CPUC says it &ldquo;enables income-qualified
@@ -280,7 +284,12 @@ export default function SolarRebatesByCAUtility() {
               <a className={link} href={S.cpucCareFera}>
                 CPUC
               </a>
-              ). These cut the bill; they do not pay for panels.
+              ). These cut the bill; they do not pay for panels. For PG&amp;E customers, the
+              income limits and enrollment rules are in{' '}
+              <Link className={link} href="/blog/income-qualified-bill-discount-pge">
+                how CARE and FERA work on a PG&amp;E bill
+              </Link>
+              .
             </li>
             <li>
               <strong>Property tax exclusion.</strong> A qualifying system does not raise your
@@ -313,7 +322,12 @@ export default function SolarRebatesByCAUtility() {
           <ul className="mt-3 list-disc space-y-3 pl-5">
             <li>
               <strong>No PG&amp;E rebate on solar panels.</strong> PG&amp;E administers SGIP for
-              its territory; status is by category, above.
+              its territory; status is by category, above. Everything else PG&amp;E offers solar
+              customers, from Green Saver to DAC-SASH, is in{' '}
+              <Link className={link} href="/blog/pge-solar-program">
+                PG&amp;E&rsquo;s solar programs and their status
+              </Link>
+              .
             </li>
             <li>
               <strong>Generator and Battery Rebate Program.</strong> For portable generators and
@@ -440,7 +454,12 @@ export default function SolarRebatesByCAUtility() {
               <a className={link} href={S.smudBattery}>
                 SMUD
               </a>
-              , checked September 23, 2026).
+              , checked September 23, 2026). SolarShares, system sizing and the connection steps
+              are in{' '}
+              <Link className={link} href="/blog/smud-solar-program">
+                the SMUD solar program guide
+              </Link>
+              .
             </li>
           </ul>
         </section>
@@ -460,7 +479,11 @@ export default function SolarRebatesByCAUtility() {
             </a>{' '}
             refused automated retrieval when this page was checked, so this guide does not
             restate its current incentive amounts. Check that page or call LADWP before a
-            proposal counts on an LADWP incentive. Bills are covered in{' '}
+            proposal counts on an LADWP incentive. A separate guide walks through{' '}
+            <Link className={link} href="/blog/ladwp-solar-program">
+              every LADWP solar program
+            </Link>
+            , from Solar Rooftops to the Feed-in Tariff. Bills are covered in{' '}
             <Link className={link} href="/blog/why-is-my-ladwp-bill-so-high">
               why LADWP bills run high
             </Link>

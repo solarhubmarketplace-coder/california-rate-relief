@@ -185,7 +185,12 @@ export default function CommercialSolarRoofing() {
                 resist seismic forces by friction alone to be designed under its own section on
                 ballasted systems, and requires the added seismic weight on the building to be
                 evaluated. Local building departments apply the California Building Code to
-                private buildings; the same questions belong in your structural review.
+                private buildings; the same questions belong in your structural review. If the
+                low-slope roof is on a house, not a business, see{' '}
+                <Link href="/blog/flat-roof-solar-panels" className={link}>
+                  flat-roof solar on a home
+                </Link>
+                .
               </p>
               <p>
                 <strong>Standing-seam metal roofs</strong> can take clamps that grip the seams,
