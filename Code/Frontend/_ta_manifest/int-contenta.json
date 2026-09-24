@@ -1,0 +1,207 @@
+{
+ "agent": "int-contenta",
+ "branch": "claude/int-contenta-20260924",
+ "updated": "2026-09-24",
+ "scope": "Link requests from /battery pages and /blog pages a-m (int_links_contenta.json, 19), plus three fact fixes.",
+ "requests": [
+  {
+   "from": "/blog/how-does-net-metering-work",
+   "to": "/blog/ladwp-net-metering",
+   "status": "already_done",
+   "note": "The 'Municipal Utilities Run Their Own Rules' section already links it with this anchor."
+  },
+  {
+   "from": "/blog/ladwp-rates",
+   "to": "/blog/ladwp-net-metering",
+   "status": "already_done",
+   "note": "Already linked as 'LADWP net metering rules'."
+  },
+  {
+   "from": "/blog/ladwp-solar-rooftops-program",
+   "to": "/blog/ladwp-solar-program",
+   "status": "done",
+   "file": "src/app/blog/ladwp-solar-rooftops-program/page.tsx",
+   "anchor": "LADWP’s other solar programs",
+   "note": "Who qualifies section, after 'Applying does not guarantee a place', naming Shared Solar and SGIP."
+  },
+  {
+   "from": "/blog/ladwp-solar-program",
+   "to": "/blog/ladwp-net-metering",
+   "status": "done",
+   "file": "src/app/blog/ladwp-solar-program/page.tsx",
+   "anchor": "LADWP net metering",
+   "note": "'Is there an LADWP solar rebate?' section, after the NEM 3.0 scope note."
+  },
+  {
+   "from": "/blog/ladwp-net-metering",
+   "to": "/blog/ladwp-solar-program",
+   "status": "done",
+   "file": "src/app/blog/ladwp-net-metering/page.tsx",
+   "anchor": "LADWP’s solar programs",
+   "note": "Batteries, SGIP and other LADWP solar programs section, before the Solar Rooftops link."
+  },
+  {
+   "from": "/blog/how-much-does-it-cost-to-lease-solar-panels-california",
+   "to": "/blog/solar-leasing-company",
+   "status": "done",
+   "file": "src/app/blog/how-much-does-it-cost-to-lease-solar-panels-california/page.tsx",
+   "anchor": "how to compare solar leasing companies",
+   "note": "'Check the provider before you compare the payment' section."
+  },
+  {
+   "from": "/blog/income-qualified-bill-discount-pge",
+   "to": "/blog/pge-solar-program",
+   "status": "done",
+   "file": "src/app/blog/income-qualified-bill-discount-pge/page.tsx",
+   "anchor": "PG&E's solar programs, including Green Saver",
+   "note": "New short paragraph at the end of 'How the discount fits with rates and your plan'. Green Saver facts (20% off, CARE/FERA eligible, disadvantaged or tribal community, PG&E supply, currently at capacity) re-read from PG&E's Green Saver page on 2026-09-24."
+  },
+  {
+   "from": "/blog/help-with-pge-bill",
+   "to": "/blog/pge-solar-program",
+   "status": "already_done",
+   "note": "Already linked in 'After the emergency: cutting the bill itself'."
+  },
+  {
+   "from": "/blog/ladwp-solar-rooftops-program",
+   "to": "/blog/lease-roof-for-solar-panels",
+   "status": "done",
+   "file": "src/app/blog/ladwp-solar-rooftops-program/page.tsx",
+   "anchor": "how roof leases work outside Los Angeles",
+   "note": "End of 'Solar Rooftops compared with owning or leasing solar'."
+  },
+  {
+   "from": "/blog/help-with-pge-bill",
+   "to": "/blog/pge-care-program",
+   "status": "already_done",
+   "note": "/blog/pge-care-program does not exist (folded into /blog/income-qualified-bill-discount-pge). The 'Discounts that lower every future bill' section already links /blog/income-qualified-bill-discount-pge, which answers the CARE question."
+  },
+  {
+   "from": "/blog/how-to-lower-electric-bill-california",
+   "to": "/blog/how-to-lower-pge-bill",
+   "status": "done",
+   "file": "src/components/growth/CaliforniaBillDecisionPages.tsx (LowerBillContent, step 1)",
+   "anchor": "PG&E-specific steps to lower the bill",
+   "note": "Only the 'lower' guide renders this step; the shared UtilityGuideLinks block was left alone."
+  },
+  {
+   "from": "/blog/income-qualified-bill-discount-pge",
+   "to": "/blog/help-with-pge-bill",
+   "status": "done",
+   "file": "src/app/blog/income-qualified-bill-discount-pge/page.tsx",
+   "anchor": "REACH, LIHEAP and debt forgiveness for past-due bills",
+   "note": "After the program list in 'If you are already behind on the bill'."
+  },
+  {
+   "from": "/battery/pge-permanent-battery-storage-rebate",
+   "to": "/battery/tesla-powerwall-3-cost-california",
+   "status": "done",
+   "file": "src/app/battery/[slug]/page.tsx",
+   "anchor": "What a Powerwall 3 costs after the rebate",
+   "note": "t3-misc had filed it in src/data/json-article-links.ts, but /battery/[slug] rendered only BATTERY_TOPIC_LINKS, so it never showed. The route now also renders JSON_ARTICLE_RELATED (deduped against the topic block), which makes this link live. The same fix makes the t2-reviews block on /battery/tesla-powerwall-3-cost-california render. The 179-rebates count on this page was already current."
+  },
+  {
+   "from": "/battery/sgip-battery-rebate-california",
+   "to": "/battery/tesla-powerwall-3-cost-california",
+   "status": "done",
+   "file": "src/app/battery/[slug]/topic-links.ts",
+   "anchor": "Powerwall rebates by utility and community energy program",
+   "note": "Added to the page's existing 'Other incentives to check' block instead of a second json-article-links block."
+  },
+  {
+   "from": "/battery/pge-solar-battery-rebate",
+   "to": "/battery/tesla-powerwall-3-cost-california",
+   "status": "done",
+   "file": "src/app/battery/[slug]/topic-links.ts",
+   "anchor": "Which rebates apply to a Powerwall in California",
+   "note": "Added to the page's existing 'Next questions for a PG&E customer' block."
+  },
+  {
+   "from": "/blog/can-you-cancel-solar-panel-contract-before-installation-california",
+   "to": "/solar-problems/solar-cancellation-california",
+   "status": "done",
+   "file": "src/app/blog/can-you-cancel-solar-panel-contract-before-installation-california/page.tsx",
+   "anchor": "what to do after the cancellation window closes",
+   "note": "'After the window closes, what governs cancellation?' section."
+  },
+  {
+   "from": "/battery/battery-storage-capacity-california",
+   "to": "/blog/solar-duck-curve-california",
+   "status": "done",
+   "file": "src/app/battery/[slug]/topic-links.ts",
+   "anchor": "What the batteries are flattening: the duck curve",
+   "note": "First item in the page's 'What the grid numbers mean at home' block."
+  },
+  {
+   "from": "/blog/average-pge-bill-for-1-bedroom-apartment",
+   "to": "/blog/average-sdge-bill-2-bedroom-apartment",
+   "status": "done",
+   "file": "src/app/blog/average-pge-bill-for-1-bedroom-apartment/page.tsx",
+   "anchor": "the same estimate for an SDG&E two-bedroom",
+   "note": "'If the bill is higher than this math' section."
+  },
+  {
+   "from": "/blog/electricity-peak-hours-california",
+   "to": "/blog/does-pool-pump-use-a-lot-of-electricity",
+   "status": "done",
+   "file": "src/app/blog/electricity-peak-hours-california/page.tsx",
+   "anchor": "when to run a pool pump",
+   "note": "'What is the best time to use electricity?' section, where pool pumps are named."
+  }
+ ],
+ "fixes": [
+  {
+   "id": "pge-battery-rebate-count",
+   "status": "done",
+   "source": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+   "checked": "2026-09-24",
+   "finding": "PG&E page reads \"179 rebates remain. As of 09/18/2026\"; deadline still December 31, 2026.",
+   "changed": [
+    "src/data/article-pages.battery.json: battery-backup-vs-generator-california (body + source note)",
+    "src/data/article-pages.battery.json: pge-solar-battery-rebate (body, status table cell, source note)",
+    "src/data/article-pages.battery.json: add-powerwall-to-existing-solar (body + source note)"
+   ],
+   "note": "Repo-wide grep finds no other '200 rebates/remaining/left' mention in src. pge-permanent-battery-storage-rebate, /battery and solar-battery-backup-california already said 179 as of 9/18. Mentions remain in older _ta_manifest records only."
+  },
+  {
+   "id": "climate-credit-wording",
+   "status": "done",
+   "source": "https://www.cpuc.ca.gov/industries-and-topics/natural-gas/greenhouse-gas-cap-and-trade-program/california-climate-credit",
+   "checked": "2026-09-24",
+   "finding": "2026 table lists PG&E $36.18, SCE $36.00, SDG&E $49.36 in both the Aug. and Sept. columns, so each amount is paid twice.",
+   "changed": [
+    "src/components/growth/CaliforniaBillDecisionPages.tsx (LowerBillContent): 'each split across two credits' -> each amount paid twice, in August and again in September 2026 ($72.36 in all at PG&E); checked date added."
+   ],
+   "note": "Other pages (how-to-read-pge-bill, how-to-lower-pge-bill, help-with-pge-bill, pge-rate-schedules, why-is-my-california-electric-bill-so-high, problems JSON) already describe it as paid twice."
+  },
+  {
+   "id": "cpuc-net-billing-quote",
+   "status": "done",
+   "source": "https://www.cpuc.ca.gov/NEM/ (same page as .../customer-generation/net-energy-metering-and-net-billing); https://www.cpuc.ca.gov/nbt also fetched",
+   "checked": "2026-09-24",
+   "finding": "https://www.cpuc.ca.gov/nbt is the NBT proceeding-history page and contains neither phrase. The NEM and Net Billing page (the one every quote links) says in prose that the export value \"is usually lower than the retail rate ... but can rise above the retail rate on late summer evenings\"; its comparison table still says \"CPUC Avoided Cost Calculator values (usually lower than import rates)\". So the old quote was not wrong, but it quoted a table cell while 40+ other pages quote the prose.",
+   "changed": [
+    "src/components/growth/NetBillingGuides.tsx (3)",
+    "src/components/growth/Guides.tsx (nem guide, 1)",
+    "src/components/growth/FinancingHubExtras.tsx (1)",
+    "src/app/blog/rent-solar-panels-for-your-home-california/page.tsx",
+    "src/app/blog/solar-rate/page.tsx (FAQ + body)",
+    "src/app/blog/pros-and-cons-of-solar-panels-california/page.tsx",
+    "src/app/blog/pge-solar-calculator/page.tsx (FAQ + body)",
+    "src/app/blog/rooftop-solar-credits-ruling-california/page.tsx",
+    "src/app/blog/adu-solar-requirements-california/page.tsx",
+    "src/app/blog/solar-payback-period-california/page.tsx (FAQ, key fact, body)",
+    "src/app/blog/solar-battery-backup-california/page.tsx",
+    "src/app/blog/solar-system-quotes-california/page.tsx",
+    "src/app/blog/prepaid-ppa-california-2026/page.tsx",
+    "src/app/blog/no-upfront-cost-solar-panels/page.tsx"
+   ],
+   "note": "All now read 'usually lower than the retail rate'. Visible 'checked September 23, 2026' next to a changed quote moved to September 24. No 'lower than import rates' remains in src."
+  }
+ ],
+ "checks": {
+  "tsc": "pass",
+  "canonical-redirects.test.ts": "pass (20/20)",
+  "assert:citylinks": "not run; no city files touched"
+ }
+}
