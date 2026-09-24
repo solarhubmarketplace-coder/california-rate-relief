@@ -37,9 +37,10 @@ import {
   cityPageMetadata,
   cityQuickCheckUtility,
   growthUtilityForForm,
-  regionalHubsFor,
+  savingsCityCrumbs,
   savingsPageSeo,
 } from '@/lib/city-pages';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
 
 /** The utility's own high-bill explainer, where the site has one (Block 5 §4.2). */
 const HIGH_BILL_POST: Record<string, { href: string; label: string }> = {
@@ -129,13 +130,14 @@ export default async function CityPage({ params }: PageProps) {
   const faqSchema = buildFAQSchema(city);
   const seo = savingsPageSeo(city);
   const dates = cityPageDates('savings', city.slug);
-  const hub = regionalHubsFor(city.slug)[0];
+  // Home > Region > City, or Home > California utility rate tracker > City
+  // when the city has no regional hub (Block 5 §5.6). One list for the visible
+  // trail and the BreadcrumbList schema.
+  const crumbs = savingsCityCrumbs(city.slug);
+  const crumbLabel = city.bills ? `${city.name} bills and rates` : `Solar savings in ${city.name}`;
 
   return (
-    <PublicLayout
-      breadcrumbLabel={city.bills ? `${city.name} bills and rates` : `Solar savings in ${city.name}`}
-      breadcrumbParent={hub ? { label: `${hub.region} solar guide`, href: hub.href } : undefined}
-    >
+    <PublicLayout breadcrumbLabel={crumbLabel} breadcrumbParents={crumbs}>
       <ArticleJsonLd
         variant='Article'
         domain='crr'
@@ -156,17 +158,11 @@ export default async function CityPage({ params }: PageProps) {
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
             {/* Breadcrumb (matches the BreadcrumbList schema) */}
-            <nav aria-label="Breadcrumb" className="mb-4 md:mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link>
-              <span>/</span>
-              {hub && (
-                <>
-                  <Link href={hub.href} className="hover:text-primary">{hub.region} solar guide</Link>
-                  <span>/</span>
-                </>
-              )}
-              <span className="text-foreground">{city.bills ? `${city.name} bills and rates` : `Solar savings in ${city.name}`}</span>
-            </nav>
+            <BreadcrumbTrail
+              crumbs={crumbs}
+              current={crumbLabel}
+              className="mb-4 md:mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap"
+            />
 
             {/* Header */}
             <header className="mb-10">

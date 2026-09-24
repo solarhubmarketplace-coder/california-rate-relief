@@ -3,6 +3,7 @@ import {
   companiesCityHref,
   hasCompaniesCityPage,
 } from "@/lib/canonical-redirects";
+import { savingsCityCrumbs } from "@/lib/city-pages";
 import { DecisionPage } from "./DecisionPage";
 import { SolarCalculator } from "./SolarCalculator";
 
@@ -17,6 +18,11 @@ export function LadwpSavingsGuide() {
       title={ladwpSavingsTitle}
       intro="The useful number is the difference between your current electricity cost and the full cost after solar. Start with your own bill and a written proposal. Leave unknown amounts blank."
       path="/solar-savings/los-angeles"
+      // Home > Los Angeles County solar guide > page, like every other
+      // /solar-savings city with a regional hub (Block 5 §5.6, 2026-09-24).
+      // Before, this page had no visible trail and a schema of Home > page.
+      breadcrumbs={savingsCityCrumbs("los-angeles")}
+      breadcrumbLabel="Solar savings in Los Angeles"
       utility="ladwp"
       topic="Los Angeles LADWP solar savings comparison"
       quickCheck="afterByline"

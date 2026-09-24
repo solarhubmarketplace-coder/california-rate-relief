@@ -30,8 +30,9 @@ import {
   getPublishableCityCostRows,
   type CityCostRow,
 } from '../data/city-cost-data.ts';
-import { formatAverageRateCents, getUtilityRate } from '../data/utility-rate-tracker.ts';
+import { RATE_TRACKER_PATH, formatAverageRateCents, getUtilityRate } from '../data/utility-rate-tracker.ts';
 import { hasCompaniesCityPage, hasSavingsCityPage } from './canonical-redirects.ts';
+import { CRUMB_LABELS, type Crumb } from './breadcrumb-sections.ts';
 import { utilityOptions } from './calculator-context.ts';
 
 export type CityPageType = 'cost' | 'companies' | 'savings';
@@ -327,6 +328,29 @@ export const REGIONAL_HUBS: readonly RegionalHub[] = [
 export function regionalHubsFor(slug: string): RegionalHub[] {
   const county = cityCounty(slug);
   return REGIONAL_HUBS.filter((hub) => hub.counties.includes(county));
+}
+
+// -----------------------------------------------------------------------------
+// Breadcrumbs for the /solar-savings layer (topic map Block 5 §5.6, 2026-09-24)
+// -----------------------------------------------------------------------------
+
+/** The bill-and-rate section's top: /solar-savings itself has no index page. */
+export const RATE_TRACKER_CRUMB: Crumb = {
+  label: CRUMB_LABELS[RATE_TRACKER_PATH] ?? 'California utility rate tracker',
+  href: RATE_TRACKER_PATH,
+};
+
+/**
+ * The crumbs between Home and a /solar-savings city page: its regional hub
+ * when it has one (Home > Region > City), otherwise the rate tracker
+ * (Home > California utility rate tracker > City). The page renders this list
+ * and passes the same list to PublicLayout, so the visible trail and the
+ * BreadcrumbList schema match. The regional hubs themselves use
+ * [RATE_TRACKER_CRUMB] (Home > California utility rate tracker > Region).
+ */
+export function savingsCityCrumbs(slug: string): Crumb[] {
+  const hub = regionalHubsFor(slug)[0];
+  return hub ? [{ label: `${hub.region} solar guide`, href: hub.href }] : [RATE_TRACKER_CRUMB];
 }
 
 // -----------------------------------------------------------------------------
