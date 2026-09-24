@@ -111,6 +111,115 @@
    ],
    "status": "done",
    "note": "New row: PG&E, no CCA; fee not published (the City's fee letter is a scanned image); SolarAPP+ eligibility excludes service upgrades and existing systems; 36-inch street-side access pathway. No companies page on this branch; citycos is creating /solar-companies/clovis this wave."
+  },
+  {
+   "path": "/solar-cost/encinitas",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Encinitas Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    626
+   ],
+   "sources": [
+    "https://www.encinitasca.gov/government/departments/applications-and-information/solar-photovoltaic-permit-application",
+    "https://www.encinitasca.gov/home/showpublisheddocument/5146/638065976521930000",
+    "https://www.encinitasca.gov/government/departments/development-services/land-development-building/building/small-solar-energy-systems",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas",
+    "https://sdcommunitypower.org/net-energy-metering/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: fee-waiver flyer terms stated (City + EsGil waive fees for basic home solar), Ordinance 2015-13 expedited path to 10 kW, CCA sourced to SDG&E's list, platform SolarAPP+ per CEC SB 379; new local guidance entry (SDCP surplus bonus). No City fee figure is published; fire-department fee schedule checked, no solar line."
+  },
+  {
+   "path": "/solar-cost/san-marcos",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "San Marcos Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    676
+   ],
+   "sources": [
+    "https://www.sanmarcosca.gov/Business-Services/Building-Division/Solar-Permits",
+    "https://www.sanmarcosca.gov/files/assets/city/v/2/development-svs/fees/development-fees-schedule-september-2026.pdf",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas",
+    "https://thecleanenergyalliance.org/net-energy-metering/"
+   ],
+   "status": "done",
+   "note": "Upgraded: fee now quoted from the Development Fees schedule effective 2026-09-01 ($57 plan check + $67 permit = $124; ESS $52; solar carport $980 + $454); homeowner expedited route vs contractor SolarAPP+ with business license and declaration form; CEA 6-cent NSC; index fee status now 'published'."
+  },
+  {
+   "path": "/solar-cost/lakewood",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Lakewood, CA: What Sets the Price (2026)",
+   "clusters": [
+    652
+   ],
+   "sources": [
+    "https://www.lakewoodca.gov/Development-Services/Building/Solar-Permitting-for-Homes",
+    "https://www.lakewoodca.gov/Development-Services/Building/Building-Permits",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "New row: SCE (100% on the CEC layer), no CCA; fees = LA County schedules + 18% City overhead (the linked County electrical schedule returned Page Not Found, so no figure); SolarAPP+ then Online Permit Center. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/elk-grove",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Elk Grove Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    661
+   ],
+   "sources": [
+    "https://www.elkgrovecity.org/departments-and-divisions/building-safety-inspection-and-permits",
+    "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row on SMUD (100% on the CEC layer): SMUD Solar and Storage Rate (9.6 cents/kWh exports since 2026-06-01) as an extra FAQ and local check. The City's building page publishes no solar fee or route (elkgrove.gov solar pages refused every request), so the fee note says so; platform per CEC SB 379. Citycos is creating /solar-companies/elk-grove this wave - not registered here."
+  },
+  {
+   "path": "/solar-cost/mission-viejo",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Mission Viejo Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    683
+   ],
+   "sources": [
+    "https://cityofmissionviejo.org/departments/community-development/building-services",
+    "https://www.missionviejo.gov/sites/default/files/building-fee-schedule-4-1-23.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ocpower.org/",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas"
+   ],
+   "status": "done",
+   "note": "New row with a utility split: CEC layer puts ~72% of the city in SCE and ~28% (the south) in SDG&E; no CCA (OCPA members and SDG&E CCA lists). Fee: $450 up to 15 kW + $15/kW (building fee schedule effective 2023-04-01, the one the City links). Citycos is creating /solar-companies/mission-viejo this wave - not registered here."
+  },
+  {
+   "path": "/solar-cost/victorville",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Victorville Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    672
+   ],
+   "sources": [
+    "https://www.victorvilleca.gov/Government/City-Departments/Building/SolarApp-Automated-Solar-Plan-Reviews",
+    "https://www.victorvilleca.gov/files/assets/city/v/1/building/documents/fees/stand_alone_fees_2026.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "New row: $372 residential PV permit (Stand Alone Permits chart updated 2026-01-08); utility split note (CEC layer: SCE, with ~6% of the city, in the north, in Victorville Municipal Utilities Services' territory); no CCA (Apple Valley Choice Energy serves Apple Valley only). Companies twin registered."
   }
  ],
  "new_cost_slugs": [
@@ -119,17 +228,25 @@
   "berkeley",
   "santa-clara",
   "san-clemente",
-  "clovis"
+  "clovis",
+  "lakewood",
+  "elk-grove",
+  "mission-viejo",
+  "victorville"
  ],
  "new_cost_slugs_with_live_companies_twin_registered": [
   "concord",
   "richmond",
   "berkeley",
   "santa-clara",
-  "san-clemente"
+  "san-clemente",
+  "lakewood",
+  "victorville"
  ],
  "new_cost_slugs_for_citycos_to_reconcile": [
-  "clovis"
+  "clovis",
+  "elk-grove",
+  "mission-viejo"
  ],
  "sitemap_add": [],
  "blog_index_add": [],
@@ -164,6 +281,26 @@
    "hub": "city_cost",
    "href": "/solar-cost/clovis",
    "label": "Solar panel cost in Clovis"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/lakewood",
+   "label": "Solar panel cost in Lakewood"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/elk-grove",
+   "label": "Solar panel cost in Elk Grove"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/mission-viejo",
+   "label": "Solar panel cost in Mission Viejo"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/victorville",
+   "label": "Solar panel cost in Victorville"
   }
  ],
  "link_requests": [],
@@ -173,7 +310,8 @@
   "src/data/utility-rate-tracker.ts: new publicly owned utility records 'svp' (Silicon Valley Power) and 'reu' (Redding Electric Utility), rate null with the utility's own rate page as source; the tracker page reads rows by name and does not render them.",
   "src/data/solar-cost-index.ts: FEES/PLATFORMS entries for each new row; UTILITY_TYPE gains svp and reu (CEC layer names); CCAS membership additions. solar-cost-index.test.ts passes.",
   "src/data/city-coordinates.ts: Census TIGERweb internal points added for new slugs that had none (nearby-city ordering only).",
-  "src/lib/canonical-redirects.test.ts: new dated registry section T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added."
+  "src/lib/canonical-redirects.test.ts: new dated registry section T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added.",
+  "src/data/city-cost-data.ts: the los-angeles row (not in this lane's assignment, not owned by any Tier 3 lane) gains two LA City Planning community-plan sources, the CEC layer source and one extra FAQ answering the van-nuys and wilmington topics. Its permit fields are unchanged."
  ],
  "integration_notes": [
   "/solar-cost/<city> pages enter the sitemap and the /solar-cost index automatically from getPublishableCityCostRows(); no sitemap_add needed.",
@@ -181,5 +319,14 @@
   "Citycos (Tier 3) is creating /solar-companies pages for clovis, elk-grove and mission-viejo, which get new cost pages here. When both land, canonical-redirects.test.ts's cross-cutting check needs each of them in a reinstated registry; the citycos lane registers its own slugs. Also check the title owner: costPageSeo switches a cost page to the 'What Sets the Price' title once a live companies twin exists."
  ],
  "decisions_for_chad": [],
- "skipped": []
+ "skipped": [
+  {
+   "url": "/solar-cost/wilmington",
+   "why": "folded into /solar-cost/los-angeles (extra FAQ 'Does solar cost differ in Van Nuys or Wilmington?'). The California page-one SERP for 'solar panel cost wilmington' is entirely Wilmington, NC; Wilmington, CA is a City of Los Angeles community plan area (LADBS permits, LADWP per the CEC layer at a Census-geocoded Wilmington address), so a separate page would have no local difference."
+  },
+  {
+   "url": "/solar-cost/van-nuys",
+   "why": "folded into /solar-cost/los-angeles (same FAQ). Van Nuys is a City of Los Angeles community plan area served by LADWP (CEC layer at a Census-geocoded Van Nuys address); its page-one SERP is mostly camper-van solar. A separate page would repeat the Los Angeles page."
+  }
+ ]
 }

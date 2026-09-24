@@ -300,6 +300,7 @@ test('Tier 2 wave (citycos): its companies pages render and are not redirected',
 // redirect table, so the table's row count does not change.
 const T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN = new Set([
   'concord', 'richmond', 'berkeley', 'santa-clara', 'san-clemente',
+  'lakewood', 'victorville',
 ]);
 for (const slug of T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
 

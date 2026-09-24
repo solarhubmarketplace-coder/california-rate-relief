@@ -987,7 +987,7 @@ const cecSb379T3: LocalGuidanceSource = {
   url: 'https://www.energy.ca.gov/media/9247',
   verifiedAt: verified20260923,
   scope:
-    'Self-reported platform status per jurisdiction, data last updated August 3, 2026; the CEC says it does not certify compliance. Rows used for the Tier 3 cities: Santa Clara, Clovis, Berkeley, Concord, Richmond and San Clemente (SolarAPP+).',
+    'Self-reported platform status per jurisdiction, data last updated August 3, 2026; the CEC says it does not certify compliance. Rows used for the Tier 3 cities: Santa Clara, Clovis, Berkeley, Concord, Richmond, San Clemente, Encinitas, San Marcos, Lakewood, Elk Grove, Mission Viejo and Victorville (SolarAPP+).',
 };
 
 const concordSolarPv: LocalGuidanceSource = {
@@ -1121,6 +1121,105 @@ const clovisSubmittal: LocalGuidanceSource = {
   url: 'https://www.clovisca.gov/documents/Services/Planning%20Development/Building/Photovoltaic%20Minimum%20Submittal%20Requirements%20for%20Roof%20Mounted%20Systems%202025.pdf',
   verifiedAt: verified20260923,
   scope: 'Roof plans must show two access pathways at least 36 inches wide, one of them from the street side of the house, in front of the fence.',
+};
+
+const encinitasPv: LocalGuidanceSource = {
+  label: 'City of Encinitas — Solar Photovoltaic Permit Application',
+  url: 'https://www.encinitasca.gov/government/departments/applications-and-information/solar-photovoltaic-permit-application',
+  verifiedAt: verified20260923,
+  scope:
+    'Required documents are submitted through the Customer Self Service (CSS) portal, registration required; standard plans for central/string-inverter and micro-inverter/ACM systems up to 10 kW; links the fee-waiver flyer. No fee amount and no mention of SolarAPP+.',
+};
+
+const encinitasWaiver: LocalGuidanceSource = {
+  label: 'City of Encinitas — Energy Efficiency Permit Fee Waiver flyer (undated)',
+  url: 'https://www.encinitasca.gov/home/showpublisheddocument/5146/638065976521930000',
+  verifiedAt: verified20260923,
+  scope:
+    'The City and EsGil Corporation waive permitting fees for basic home solar PV installations and reduce them by an equivalent amount for larger and more complex ones; contact Development Services at (760) 633-2710.',
+};
+
+const encinitasSmallSolar: LocalGuidanceSource = {
+  label: 'City of Encinitas — Small Solar Energy Systems',
+  url: 'https://www.encinitasca.gov/government/departments/development-services/land-development-building/building/small-solar-energy-systems',
+  verifiedAt: verified20260923,
+  scope: 'Ordinance 2015-13 (August 19, 2015) added Municipal Code Chapter 23.13, an expedited process for small residential rooftop solar systems (no larger than 10 kW for PV) under AB 2188.',
+};
+
+const sanMarcosSolar: LocalGuidanceSource = {
+  label: 'City of San Marcos — Solar Permits',
+  url: 'https://www.sanmarcosca.gov/Business-Services/Building-Division/Solar-Permits',
+  verifiedAt: verified20260923,
+  scope:
+    'Homeowners: City standard plans and the "Roof Mounted Solar PV Expedited" option, estimated 1-3 business days. Contractors: SolarAPP+, a City business license and a permit declaration form, required before an inspection can be scheduled. Full plan review estimated 5-10 business days.',
+};
+
+const sanMarcosFees2026: LocalGuidanceSource = {
+  label: 'City of San Marcos — Development Fees, effective September 1, 2026',
+  url: 'https://www.sanmarcosca.gov/files/assets/city/v/2/development-svs/fees/development-fees-schedule-september-2026.pdf',
+  verifiedAt: verified20260923,
+  scope: 'Residential Solar System on Roof: plan check $57, permit $67. Carport w/ Solar: plan check $980, permit $454. Energy storage system (ESS): $52.',
+};
+
+const lakewoodSolar: LocalGuidanceSource = {
+  label: 'City of Lakewood — Solar Permitting for Homes',
+  url: 'https://www.lakewoodca.gov/Development-Services/Building/Solar-Permitting-for-Homes',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ for eligible rooftop solar and storage; SolarAPP+ fee covers up to three revisions; remaining fees paid when prompted; ineligible systems follow the submittal checklist through the Online Permit Center; inspections by phone (562-866-9771 ext. 2350) or email.',
+};
+
+const lakewoodPermits: LocalGuidanceSource = {
+  label: 'City of Lakewood — Building Permits (permit fee schedules)',
+  url: 'https://www.lakewoodca.gov/Development-Services/Building/Building-Permits',
+  verifiedAt: verified20260923,
+  scope:
+    'Building and Safety fees follow the Los Angeles County fee schedules plus an 18% overhead charge (Resolutions 2010-22 and 2012-42); fees rose 3% on July 1, 2025. The linked County electrical fee schedule returned "Page Not Found" when checked.',
+};
+
+const elkGroveBuilding: LocalGuidanceSource = {
+  label: 'City of Elk Grove — Building Safety, Inspection and Permits',
+  url: 'https://www.elkgrovecity.org/departments-and-divisions/building-safety-inspection-and-permits',
+  verifiedAt: verified20260923,
+  scope: 'Electronic submittals required for permit applications; lists SMUD\'s solar photovoltaic line (916-732-6420) among outside agencies. No solar fee or solar route described.',
+};
+
+const smudSsr0923: LocalGuidanceSource = {
+  label: 'SMUD — Solar and Storage Rate',
+  url: 'https://www.smud.org/Rate-Information/Solar-and-Storage-Rate',
+  verifiedAt: verified20260923,
+  scope:
+    'For customers approved to install solar or storage on or after March 1, 2022; residential customers stay on the Time-of-Day (5-8 p.m.) rate; exports paid 9.6 cents per kWh regardless of time or season from June 1, 2026; credits carry over; one-time fee to connect a new system (amount not stated).',
+};
+
+const missionViejoBuilding: LocalGuidanceSource = {
+  label: 'City of Mission Viejo — Building Services',
+  url: 'https://cityofmissionviejo.org/departments/community-development/building-services',
+  verifiedAt: verified20260923,
+  scope:
+    'All permits and inspections submitted and scheduled online in Client Self Service; every contact on a permit needs an account; next-business-day inspections when requested by 4 p.m.; building services provided under contract with Charles Abbott Associates.',
+};
+
+const missionViejoFees2023: LocalGuidanceSource = {
+  label: 'City of Mission Viejo — Master Fee Schedule, Building Fees, effective April 1, 2023',
+  url: 'https://www.missionviejo.gov/sites/default/files/building-fee-schedule-4-1-23.pdf',
+  verifiedAt: verified20260923,
+  scope: 'Fee 14a: residential solar systems up to and including 15 kW, $450 each; 14b: $15 per kW above 15 kW (AB 1414).',
+};
+
+const victorvilleSolarApp: LocalGuidanceSource = {
+  label: 'City of Victorville — SolarApp+ Automated Solar Plan Reviews',
+  url: 'https://www.victorvilleca.gov/Government/City-Departments/Building/SolarApp-Automated-Solar-Plan-Reviews',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ processing fee plus City permit fees; permit number emailed; inspections in Citizen Self Service until midnight before, or by phone with a live person by the prior business day; no voicemail or email requests.',
+};
+
+const victorvilleFees2026: LocalGuidanceSource = {
+  label: 'City of Victorville — Stand Alone Permits Fee Calculation Chart (updated January 8, 2026)',
+  url: 'https://www.victorvilleca.gov/files/assets/city/v/1/building/documents/fees/stand_alone_fees_2026.pdf',
+  verifiedAt: verified20260923,
+  scope: 'Photovoltaic System (Residential up to 15kw) $372.00; Photovoltaic System (Commercial up to 50kw) $1,000.00.',
 };
 
 export const LOCAL_PROJECT_GUIDANCE = {
@@ -2797,6 +2896,202 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [clovisBuilding, clovisEligibility, clovisSubmittal, pgeCcaList, cecSb379T3],
+  },
+  encinitas: {
+    city: 'Encinitas',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Encinitas publishes no solar permit fee, but it runs a fee waiver for basic home solar systems with its plan-check contractor. A quote that charges a full City permit fee for a simple rooftop system should say why.",
+    quoteQuestions: [
+      "Does the quote apply Encinitas's permit fee waiver for a basic installation, and has the installer confirmed with Development Services that it still applies?",
+      "Is the system 10 kW or smaller, so it can use the City's standard plans and expedited review?",
+      "Does the bill estimate keep San Diego Community Power's generation credits separate from SDG&E's delivery charges, which those credits cannot offset?",
+    ],
+    localChecks: [
+      {
+        title: 'A waiver for basic systems',
+        body: "The City's fee-waiver flyer says Encinitas and EsGil Corporation waive permitting fees for basic home solar installations and cut them by an equivalent amount for larger or more complex ones. The flyer is undated, so ask Development Services at (760) 633-2710.",
+      },
+      {
+        title: 'Standard plans up to 10 kW',
+        body: 'Ordinance 2015-13 set up an expedited process for small rooftop systems, 10 kW or less for solar PV, and the City posts standard plans for string-inverter and micro-inverter systems in that size range. Applications go through the CSS portal.',
+      },
+      {
+        title: "SDCP's surplus bonus",
+        body: 'San Diego Community Power pays annual net surplus at the wholesale rate plus $0.0075 per kWh and mails a check when the amount is over $100. Its credits offset SDCP generation charges only, not SDG&E delivery charges.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/san-diego-county', label: 'San Diego County project guide' },
+      { href: '/blog/sdge-time-of-use-rates-2026', label: 'Check SDG&E time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [encinitasPv, encinitasWaiver, encinitasSmallSolar, sdgeActiveCcas, sdcpNem, cecSb379T3],
+  },
+  'san-marcos': {
+    city: 'San Marcos',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "San Marcos charges $124 in City fees for a rooftop home system under its September 2026 schedule, so the permit is a small line in a San Marcos quote. The paperwork is where contractors differ.",
+    quoteQuestions: [
+      "Is the City permit line close to the published $124 for a rooftop system, plus $52 if a battery is included?",
+      'Does the contractor hold a City of San Marcos business license and file the permit declaration form, without which the City will not schedule an inspection?',
+      "Does the savings estimate use Clean Energy Alliance's 6-cent surplus rate and SDG&E's delivery charges?",
+    ],
+    localChecks: [
+      {
+        title: '$124 for a rooftop system',
+        body: 'The Development Fees schedule effective September 1, 2026 lists a residential rooftop solar system at $57 for plan check and $67 for the permit, and an energy storage system at $52. A solar carport is far more: $980 plan check plus $454 permit.',
+      },
+      {
+        title: 'A homeowner route',
+        body: 'A homeowner can use the City\'s standard central-inverter or micro-inverter plans and apply online as "Roof Mounted Solar PV Expedited", which the City estimates at 1-3 business days. Full plan review is estimated at 5-10 business days.',
+      },
+      {
+        title: "CEA's 6-cent surplus",
+        body: 'Clean Energy Alliance pays net surplus at $0.06 per kWh, which it describes as slightly higher than SDG&E, sends a check for $100 or more, and rolls smaller amounts forward. The true-up falls on the anniversary of NEM enrollment.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/san-diego-county', label: 'San Diego County project guide' },
+      { href: '/blog/sdge-time-of-use-rates-2026', label: 'Check SDG&E time-of-use periods' },
+      { href: '/blog/solar-carport-california-guide', label: 'Solar carports and ground mounts' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [sanMarcosSolar, sanMarcosFees2026, sdgeActiveCcas, ceaNem, cecSb379T3],
+  },
+  lakewood: {
+    city: 'Lakewood',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Lakewood prices building permits from Los Angeles County's fee schedules plus an 18 percent City overhead charge, and it publishes no solar figure of its own, so the permit amount in a Lakewood quote is worth asking about.",
+    quoteQuestions: [
+      'Is the design eligible for SolarAPP+, or will it go through the City\'s submittal checklist and the Online Permit Center?',
+      "Does the permit line include Lakewood's 18 percent overhead on top of the County fee?",
+      "Does the bill estimate use SCE's rates for both generation and delivery, since no community choice provider serves Lakewood?",
+    ],
+    localChecks: [
+      {
+        title: 'County fees plus 18 percent',
+        body: "Lakewood's building fees follow Los Angeles County's schedules plus an 18 percent overhead charge set by City Council resolution, and they rose 3 percent on July 1, 2025. The County electrical schedule the City links did not open when checked.",
+      },
+      {
+        title: 'SolarAPP+, then pay',
+        body: 'Licensed contractors submit through SolarAPP+, whose fee covers up to three revisions, then pay the remaining City fees when prompted and print the permit. Inspections are requested by phone or email.',
+      },
+      {
+        title: 'SCE with no CCA',
+        body: "The CEC service-territory map places Lakewood entirely in SCE's territory, and SCE's list of community choice aggregators does not name Lakewood, so SCE supplies generation and delivery.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/los-angeles-county', label: 'Los Angeles County bill guide' },
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [lakewoodSolar, lakewoodPermits, sceCcaList, cecTerritory0923, cecSb379T3],
+  },
+  'elk-grove': {
+    city: 'Elk Grove',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Elk Grove is SMUD territory, not PG&E, so a savings estimate built on PG&E rates or PG&E's Solar Billing Plan does not describe an Elk Grove bill. SMUD pays a flat rate for exported power.",
+    quoteQuestions: [
+      "Does the savings estimate use SMUD's Solar and Storage Rate, 9.6 cents per exported kWh, and SMUD's Time-of-Day (5-8 p.m.) rate?",
+      "Does the quote include SMUD's one-time fee to connect a new solar system?",
+      'What City permit fee is in the quote? Elk Grove does not publish it.',
+    ],
+    localChecks: [
+      {
+        title: 'SMUD, not PG&E',
+        body: "The California Energy Commission's service-territory map places all of Elk Grove in SMUD's territory. SMUD is a publicly owned utility with its own solar rate, described below.",
+      },
+      {
+        title: 'A flat export rate',
+        body: 'A home approved to install solar on or after March 1, 2022 is on the Solar and Storage Rate, which pays 9.6 cents per kWh for exports at any hour or season since June 1, 2026. Credits carry over to later bills.',
+      },
+      {
+        title: 'Electronic submittals',
+        body: "Elk Grove's Building Division requires permit applications and documents to be submitted electronically. The CEC's SB 379 data, self-reported, lists the City's automated platform as SolarAPP+.",
+      },
+    ],
+    related: [
+      { href: '/blog/smud-peak-hours', label: 'Check SMUD peak hours' },
+      { href: '/blog/why-is-my-smud-bill-so-high', label: 'Why a SMUD bill runs high' },
+      { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [elkGroveBuilding, smudSsr0923, cecTerritory0923, cecSb379T3],
+  },
+  'mission-viejo': {
+    city: 'Mission Viejo',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      'Mission Viejo is split between two utilities: most of the city is SCE, and the southern part is SDG&E, whose average rate is much higher. Which one bills the house changes what a system is worth, not what it costs to install.',
+    quoteQuestions: [
+      'Which utility is on your bill, SCE or SDG&E, and is the savings estimate built on that utility\'s rates?',
+      "Does the City permit line match Mission Viejo's $450 for a system up to 15 kW?",
+      "Is the installer set up in the City's Client Self Service portal with every contact listed, so inspections can be booked?",
+    ],
+    localChecks: [
+      {
+        title: 'SCE or SDG&E by address',
+        body: "The CEC service-territory map puts about 72 percent of Mission Viejo in SCE's territory and about 28 percent, in the south of the city, in SDG&E's. Neither utility's list of community choice aggregators names Mission Viejo.",
+      },
+      {
+        title: '$450 up to 15 kW',
+        body: "The building fee schedule effective April 1, 2023 sets a residential solar system up to 15 kW at $450 and adds $15 per kW above that, the same figures as the state limit.",
+      },
+      {
+        title: 'Online only',
+        body: 'Every permit and inspection is handled through the Client Self Service portal, and each contact on the permit needs an account. Inspections are next business day when requested by 4 p.m.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/orange-county', label: 'Orange County bill guide' },
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
+      { href: '/blog/sdge-time-of-use-rates-2026', label: 'Check SDG&E time-of-use periods' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [missionViejoBuilding, missionViejoFees2023, cecTerritory0923, sceCcaList, ocpaMembers, sdgeActiveCcas, cecSb379T3],
+  },
+  victorville: {
+    city: 'Victorville',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Victorville's published permit fee for a home solar system is $372, below the state limit. Most of the city is SCE, but a smaller area in the north falls in Victorville Municipal Utilities Services' territory on the CEC map, so check the bill first.",
+    quoteQuestions: [
+      'Which utility is on your bill: SCE, or Victorville Municipal Utilities Services?',
+      "Does the permit line match the City's $372 for a residential system up to 15 kW, plus the SolarAPP+ processing fee?",
+      "Is the savings estimate built on SCE's rates without a community choice line? Apple Valley Choice Energy serves Apple Valley, not Victorville.",
+    ],
+    localChecks: [
+      {
+        title: '$372 up to 15 kW',
+        body: "The Stand Alone Permits Fee Calculation Chart, updated January 8, 2026, lists a residential photovoltaic system up to 15 kW at $372.00. SolarAPP+ adds its own processing fee.",
+      },
+      {
+        title: 'Two utilities on the map',
+        body: "The CEC service-territory map places Victorville in SCE's territory and also shows about 6 percent of the city's area, in its north, in Victorville Municipal Utilities Services' territory.",
+      },
+      {
+        title: 'No CCA in Victorville',
+        body: "SCE's list names Apple Valley Choice Energy as serving the city of Apple Valley only, and no community choice provider for Victorville, so SCE supplies generation and delivery.",
+      },
+      {
+        title: 'Book inspections, do not email',
+        body: 'The City emails a permit number after SolarAPP+ approval. Inspections are booked in Citizen Self Service or by phone with a live person; voicemail and email requests are not accepted.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/inland-empire', label: 'Inland Empire bill and project guide' },
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [victorvilleSolarApp, victorvilleFees2026, cecTerritory0923, sceCcaList, cecSb379T3],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 

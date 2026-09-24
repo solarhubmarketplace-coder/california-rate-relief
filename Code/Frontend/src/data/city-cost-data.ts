@@ -897,14 +897,24 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "San Marcos",
     county: "San Diego County",
     utilityKey: "sdge",
+    // 2026-09-23 (Tier 3): the Development Fees schedule effective September
+    // 1, 2026 is now readable, so the fee is quoted from it.
     cca: "Clean Energy Alliance",
+    ccaSource: SDGE_ACTIVE_CCAS,
     permitUrl: "https://www.sanmarcosca.gov/Business-Services/Building-Division/Solar-Permits",
     permitFeeNote:
-      "The City instructs contractors to pay the processing fee for SolarAPP+ but publishes no dollar figure on that page; it points to a separate Development Service Fees schedule, which did not return the document when checked. Ask the City for the current figure rather than assuming the SolarAPP+ charge is the whole of it.",
-    permitFeeSource: "City of San Marcos Solar Permits page (sanmarcosca.gov)",
+      "San Marcos's Development Fees schedule, effective September 1, 2026, lists a residential solar system on a roof at $57 for plan check plus $67 for the permit, $124 in all, and an energy storage system at $52. A carport with solar is $980 for plan check plus $454 for the permit. SolarAPP+ charges its own processing fee.",
+    permitFeeSource: "City of San Marcos, Solar Permits (Building Division)",
+    permitSources: [
+      {
+        label: 'City of San Marcos, Development Fees, effective September 1, 2026 (Building: Residential Solar System on Roof; Carport w/ Solar; Electrical: Energy storage system)',
+        url: 'https://www.sanmarcosca.gov/files/assets/city/v/2/development-svs/fees/development-fees-schedule-september-2026.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes, online - homeowners select \"Roof Mounted Solar PV Expedited\" in the online portal, contractors use SolarAPP+; SolarAPP+ named",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. A homeowner can use the City's standard central-inverter or micro-inverter plans and apply online under \"Roof Mounted Solar PV Expedited\", which the City estimates at 1-3 business days. Contractors use SolarAPP+, need a City of San Marcos business license and attach a permit declaration form in the City's online permitting system, without which no inspection can be scheduled. Systems that qualify for neither submit full plans online, estimated at 5-10 business days.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "santa-cruz",
@@ -1139,14 +1149,30 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Encinitas",
     county: "San Diego County",
     utilityKey: "sdge",
+    // 2026-09-23 (Tier 3): re-read; the fee-waiver flyer's terms are now
+    // stated, the CCA is sourced to SDG&E's list and the platform to the CEC.
     cca: "San Diego Community Power",
+    ccaSource: SDGE_ACTIVE_CCAS,
     permitUrl: "https://www.encinitasca.gov/government/departments/applications-and-information/solar-photovoltaic-permit-application",
     permitFeeNote:
-      "The page does not give a dollar amount. It links to an \"Energy Efficiency Permit Fee Waiver Flyer\" described as \"information regarding waiver or reduction of permit fees for solar systems and electric vehicle charging systems,\" but the flyer's specific terms are not quoted on the page itself.",
-    permitFeeSource: "City of Encinitas Solar Photovoltaic Permit Application page",
+      "Encinitas publishes no dollar figure for a solar permit. Its Solar Photovoltaic Permit Application page links an Energy Efficiency Permit Fee Waiver flyer, which says the City and EsGil Corporation waive permitting fees for basic home solar photovoltaic installations and reduce them by an equivalent amount for larger or more complex ones. The flyer carries no date, so confirm with Development Services at (760) 633-2710 that it still applies.",
+    permitFeeSource: "City of Encinitas, Solar Photovoltaic Permit Application",
+    permitSources: [
+      {
+        label: 'City of Encinitas, Energy Efficiency Permit Fee Waiver flyer (undated)',
+        url: 'https://www.encinitasca.gov/home/showpublisheddocument/5146/638065976521930000',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of Encinitas, Small Solar Energy Systems (Ordinance 2015-13, Municipal Code Chapter 23.13)',
+        url: 'https://www.encinitasca.gov/government/departments/development-services/land-development-building/building/small-solar-energy-systems',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "Yes, online: submittal documents are uploaded through the City's Customer Self Service (CSS) portal (registration required). SolarAPP+ is not named on this specific page.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Solar applications and their required documents go through the City's Customer Self Service (CSS) portal, which needs registration, and the City's standard plans cover central-inverter and micro-inverter systems up to 10 kW. The City's pages do not name SolarAPP+; the California Energy Commission's SB 379 data, which each city reports itself, lists Encinitas's platform as SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "los-angeles",
@@ -1160,6 +1186,30 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes for qualifying residential rooftop PV (\u226410kW): per the bulletin, licensed-contractor Express Permits for these systems are issued only online through the LADBS website (dbs.lacity.gov). SolarAPP+ is not named in this bulletin.",
     sourcesFetchedAt: "2026-09-18",
+    // 2026-09-23 (Tier 3 city-cost wave): the "solar panel cost van nuys" and
+    // "solar panel cost wilmington" topics are answered here rather than on
+    // their own pages, because both are communities inside the City of Los
+    // Angeles with the same permit office and utility as the rest of the city.
+    permitSources: [
+      {
+        label: 'City of Los Angeles Planning, Van Nuys - North Sherman Oaks Community Plan (a community plan area of the City)',
+        url: 'https://planning.lacity.gov/plans-policies/community-plan-area/van-nuys-north-sherman-oaks',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of Los Angeles Planning, Wilmington - Harbor City Community Plan (a community plan area of the City)',
+        url: 'https://planning.lacity.gov/plans-policies/community-plan-area/wilmington-harbor-city',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SERVICE_TERRITORY_SOURCE_0923,
+    ],
+    extraFaqs: [
+      {
+        question: 'Does solar cost differ in Van Nuys or Wilmington?',
+        answer:
+          "Not because of the neighborhood. Van Nuys and Wilmington are not separate cities: each sits in a community plan area of the City of Los Angeles, so the permit rules above apply there, and the California Energy Commission's service-territory map places both in LADWP's territory rather than SCE's. No public source prices an installation for either community. What changes a quote is the house itself: the roof, the main panel, shade and whether a battery is included.",
+      },
+    ],
   },
   {
     slug: "ontario",
@@ -1862,6 +1912,100 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes. Since September 30, 2023 there are three routes: plans filed in person, plans filed online through the City's CSS portal, or a SolarAPP+ application through the same portal. SolarAPP+ is for contractors only, so an owner-builder uses one of the first two.",
     sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'lakewood',
+    city: 'Lakewood',
+    county: 'Los Angeles County',
+    utilityKey: 'sce',
+    permitUrl: 'https://www.lakewoodca.gov/Development-Services/Building/Solar-Permitting-for-Homes',
+    permitFeeNote:
+      "Lakewood's Building Permits page says the City charges Los Angeles County's Building and Safety fee schedules plus an 18 percent overhead charge under City Council Resolutions 2010-22 and 2012-42, and that those fees rose 3 percent on July 1, 2025. The County electrical fee schedule it links did not open when checked, so no solar figure is quoted here. SolarAPP+ charges its own processing fee, which covers up to three revisions.",
+    permitFeeSource: 'City of Lakewood, Solar Permitting for Homes',
+    permitSources: [
+      {
+        label: 'City of Lakewood, Building Permits (permit fee schedules; 18% overhead charge on the County fee schedule)',
+        url: 'https://www.lakewoodca.gov/Development-Services/Building/Building-Permits',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Licensed contractors submit eligible rooftop solar and storage through SolarAPP+, then pay the remaining City fees when prompted and print the permit. A system that does not qualify follows the City's submittal checklist and goes through the Online Permit Center. Inspections are requested by phone or by email to the inspection address the City lists.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'elk-grove',
+    city: 'Elk Grove',
+    county: 'Sacramento County',
+    utilityKey: 'smud',
+    permitUrl: 'https://www.elkgrovecity.org/departments-and-divisions/building-safety-inspection-and-permits',
+    permitFeeNote:
+      "Elk Grove's Building Safety, Inspection and Permits page does not publish a solar permit fee, so ask the Building Division or the installer for the City's figure before comparing quotes. If the job goes through SolarAPP+, SolarAPP+ charges its own processing fee.",
+    permitFeeSource: 'City of Elk Grove, Building Safety, Inspection and Permits',
+    permitSources: [CEC_SB379_DATA],
+    permitOnline:
+      "Yes. Elk Grove's Building Division requires electronic submittals for permit applications and related documents. Its page does not describe a solar-specific route; the California Energy Commission's SB 379 data, which each city reports itself, lists Elk Grove's platform as SolarAPP+.",
+    sourcesFetchedAt: '2026-09-23',
+    extraFaqs: [
+      {
+        question: 'How does SMUD pay for solar exports in Elk Grove?',
+        answer:
+          "Elk Grove is SMUD territory, not PG&E, so PG&E's Solar Billing Plan does not apply. A home approved to install solar on or after March 1, 2022 goes on SMUD's Solar and Storage Rate, which since June 1, 2026 pays 9.6 cents per kWh for exported power regardless of time of day or season. The customer stays on SMUD's Time-of-Day (5-8 p.m.) rate, credits carry over to later bills, and SMUD charges a one-time fee to connect a new system.",
+      },
+    ],
+  },
+  {
+    slug: 'mission-viejo',
+    city: 'Mission Viejo',
+    county: 'Orange County',
+    utilityKey: 'sce',
+    permitUrl: 'https://cityofmissionviejo.org/departments/community-development/building-services',
+    permitFeeNote:
+      "Mission Viejo's Master Fee Schedule for building fees, effective April 1, 2023, which the Building Services page links, sets a residential solar system up to and including 15 kW at $450 and adds $15 for each kW above 15 kW, citing AB 1414. Where SolarAPP+ is used, it charges its own processing fee.",
+    permitFeeSource: 'City of Mission Viejo, Building Services',
+    permitSources: [
+      {
+        label: 'City of Mission Viejo, Master Fee Schedule, Building Fees, effective April 1, 2023 (14a-14b, Residential Solar Systems)',
+        url: 'https://www.missionviejo.gov/sites/default/files/building-fee-schedule-4-1-23.pdf',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. All permits and inspections in Mission Viejo are submitted and scheduled online through the City's Client Self Service portal, and every contact listed on a permit needs an account there. Inspections are next business day when requested by 4 p.m. The City's page does not describe a solar route; the California Energy Commission's SB 379 data lists Mission Viejo's platform as SolarAPP+.",
+    sourcesFetchedAt: '2026-09-23',
+    utilitySplit: {
+      others: 'SDG&E',
+      note:
+        "The California Energy Commission's service-territory map places about 72 percent of Mission Viejo in Southern California Edison's territory and about 28 percent, in the southern part of the city, in San Diego Gas & Electric's. Read the utility name on your bill before using either utility's rate.",
+      sources: [CEC_SERVICE_TERRITORY_SOURCE_0923],
+    },
+  },
+  {
+    slug: 'victorville',
+    city: 'Victorville',
+    county: 'San Bernardino County',
+    utilityKey: 'sce',
+    permitUrl: 'https://www.victorvilleca.gov/Government/City-Departments/Building/SolarApp-Automated-Solar-Plan-Reviews',
+    permitFeeNote:
+      "Victorville's Stand Alone Permits Fee Calculation Chart, updated January 8, 2026, lists a residential photovoltaic system up to 15 kW at $372.00 and a commercial system up to 50 kW at $1,000.00. The City's SolarAPP+ page says SolarAPP+ charges its own processing fee in addition to the City's permit fees.",
+    permitFeeSource: 'City of Victorville, SolarApp+ Automated Solar Plan Reviews',
+    permitSources: [
+      {
+        label: 'City of Victorville, Stand Alone Permits Fee Calculation Chart (updated January 8, 2026): Photovoltaic System (Residential up to 15kw)',
+        url: 'https://www.victorvilleca.gov/files/assets/city/v/1/building/documents/fees/stand_alone_fees_2026.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Eligible residential rooftop systems go through SolarAPP+, and the City then emails a Victorville permit number for scheduling inspections. Inspections can be booked in the City's Citizen Self Service portal until midnight before the requested day, or by phone with a live person by the business day before; the City does not take inspection requests by voicemail or email.",
+    sourcesFetchedAt: '2026-09-23',
+    utilitySplit: {
+      others: 'Victorville Municipal Utilities Services',
+      note:
+        "The California Energy Commission's service-territory map places Victorville in Southern California Edison's territory and also shows about 6 percent of the city's area, in its northern part, in the territory of Victorville Municipal Utilities Services. Read the utility name on your bill before using an SCE rate.",
+      sources: [CEC_SERVICE_TERRITORY_SOURCE_0923],
+    },
   },
 ];
 

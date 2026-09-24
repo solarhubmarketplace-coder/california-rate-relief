@@ -295,7 +295,15 @@ const FEES: Record<string, FeeEntry> = {
     components: [{ label: 'photovoltaic system, residential roof mount (IT surcharge included)', usd: 332.5, quote: 'at $332.50' }],
     extra: 'SolarAPP+ review: $35 solar only, $60 solar plus storage.',
   },
-  'san-marcos': { status: 'not-retrievable', evidence: 'did not return the document when checked' },
+  // 2026-09-23 (Tier 3): the September 2026 schedule is now readable.
+  'san-marcos': {
+    status: 'published',
+    components: [
+      { label: 'plan check, residential rooftop solar', usd: 57, quote: 'at $57 for plan check' },
+      { label: 'permit, residential rooftop solar', usd: 67, quote: 'plus $67 for the permit' },
+    ],
+    extra: 'Energy storage system: $52.',
+  },
   'santa-cruz': {
     status: 'published',
     components: [{
@@ -340,10 +348,11 @@ const FEES: Record<string, FeeEntry> = {
   auburn: { status: 'not-published', evidence: 'neither that document nor the Symbium Permits page gives an actual dollar amount' },
   beaumont: { status: 'not-published', evidence: 'does not give a dollar figure' },
   danville: { status: 'not-published', evidence: 'does not specify a dollar amount' },
+  // 2026-09-23 (Tier 3): re-keyed to the rewritten note.
   encinitas: {
     status: 'not-published',
-    extra: 'The City links a flyer on waiving or reducing permit fees for solar systems.',
-    evidence: 'The page does not give a dollar amount',
+    extra: 'An undated City flyer says permit fees are waived for basic home solar installations.',
+    evidence: 'Encinitas publishes no dollar figure for a solar permit',
   },
   'los-angeles': { status: 'not-published', evidence: 'the bulletin does not name a dollar figure' },
   ontario: {
@@ -496,6 +505,21 @@ const FEES: Record<string, FeeEntry> = {
     status: 'not-published',
     evidence: "neither that page nor the City's solar submittal documents state the amount",
   },
+  lakewood: {
+    status: 'not-retrievable',
+    extra: 'Los Angeles County fee schedules plus an 18% City overhead charge.',
+    evidence: 'did not open when checked',
+  },
+  'elk-grove': { status: 'not-published', evidence: 'does not publish a solar permit fee' },
+  'mission-viejo': {
+    status: 'published',
+    components: [{ label: 'residential solar system up to 15 kW (April 2023 schedule)', usd: 450, quote: 'at $450' }],
+    extra: 'Above 15 kW: $15 per kW.',
+  },
+  victorville: {
+    status: 'published',
+    components: [{ label: 'photovoltaic system, residential up to 15 kW', usd: 372, quote: 'at $372.00' }],
+  },
 };
 
 // -----------------------------------------------------------------------------
@@ -580,7 +604,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     note: 'Online permits at SJPermits.org; the CEC SB 379 data (self-reported) lists a custom platform.',
   },
   'san-luis-obispo': { platform: 'solarapp', evidence: 'After SolarAPP+ review' },
-  'san-marcos': { platform: 'solarapp', evidence: 'contractors use SolarAPP+' },
+  'san-marcos': { platform: 'solarapp', evidence: 'Contractors use SolarAPP+' },
   'santa-cruz': { platform: 'solarapp', evidence: 'After SolarAPP+ approval' },
   'santa-rosa': { platform: 'solarapp', evidence: 'through SolarAPP+ and then apply' },
   stockton: { platform: 'solarapp', evidence: 'SolarAPP+ named' },
@@ -594,7 +618,11 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   auburn: { platform: 'symbium', evidence: 'Auburn uses Symbium instead' },
   beaumont: { platform: 'symbium', evidence: 'Beaumont uses Symbium instead' },
   danville: { platform: 'solarapp', evidence: 'SolarApp+ Submittals' },
-  encinitas: { platform: 'none-named', evidence: 'SolarAPP+ is not named on this specific page' },
+  encinitas: {
+    platform: 'solarapp',
+    evidence: "lists Encinitas's platform as SolarAPP+",
+    note: 'Per the CEC SB 379 data (self-reported); the City pages checked do not name it.',
+  },
   'los-angeles': { platform: 'none-named', evidence: 'SolarAPP+ is not named in this bulletin' },
   ontario: { platform: 'symbium', evidence: "through Symbium's real-time permitting platform" },
   'palm-springs': { platform: 'none-named', evidence: 'SolarAPP+ is not named on this page' },
@@ -640,6 +668,18 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   'santa-clara': { platform: 'solarapp', evidence: 'permit an eligible project through SolarAPP+' },
   'san-clemente': { platform: 'solarapp', evidence: 'registered with SolarAPP+' },
   clovis: { platform: 'solarapp', evidence: 'a SolarAPP+ application through the same portal' },
+  lakewood: { platform: 'solarapp', evidence: 'submit eligible rooftop solar and storage through SolarAPP+' },
+  'elk-grove': {
+    platform: 'solarapp',
+    evidence: "lists Elk Grove's platform as SolarAPP+",
+    note: 'Per the CEC SB 379 data (self-reported); the City page checked does not describe a solar route.',
+  },
+  'mission-viejo': {
+    platform: 'solarapp',
+    evidence: "lists Mission Viejo's platform as SolarAPP+",
+    note: 'Per the CEC SB 379 data (self-reported); the City page checked does not describe a solar route.',
+  },
+  victorville: { platform: 'solarapp', evidence: 'Eligible residential rooftop systems go through SolarAPP+' },
 };
 
 export type OnlineFiling = 'yes' | 'general-portal' | 'not-yet' | 'in-person' | 'not-stated' | 'unclassified';

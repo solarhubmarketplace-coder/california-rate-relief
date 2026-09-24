@@ -31,6 +31,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   danville: [37.8121416, -121.9698235], // Danville town, GEOID 0617988
   'el-cajon': [32.8016733, -116.9604685], // El Cajon city, GEOID 0621712
   'el-dorado-hills': [38.6749746, -121.0489390], // El Dorado Hills CDP, GEOID 0621880
+  'elk-grove': [38.4155297, -121.3836320], // Elk Grove city, GEOID 0622020 (queried 2026-09-23)
   encinitas: [33.0490536, -117.2611729], // Encinitas city, GEOID 0622678
   escondido: [33.1347266, -117.0722438], // Escondido city, GEOID 0622804
   fallbrook: [33.3693279, -117.2258948], // Fallbrook CDP, GEOID 0623462
@@ -57,6 +58,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   marina: [36.6835160, -121.7916540], // Marina city, GEOID 0645778
   menifee: [33.6909262, -117.1848746], // Menifee city, GEOID 0646842
   merced: [37.3116235, -120.4706983], // Merced city, GEOID 0646898
+  'mission-viejo': [33.6095503, -117.6551443], // Mission Viejo city, GEOID 0648256 (queried 2026-09-23)
   modesto: [37.6377640, -121.0029887], // Modesto city, GEOID 0648354
   monterey: [36.6012840, -121.8830093], // Monterey city, GEOID 0648872
   'moreno-valley': [33.9243763, -117.2043332], // Moreno Valley city, GEOID 0649270
