@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
@@ -17,17 +19,20 @@ export const metadata: Metadata = {
   openGraph: { title: 'What Is a Solar Inverter?', description: 'Plain-English solar inverter guide.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-a-solar-inverter' },
 };
 
+// Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
+// feeds both the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs('/blog/what-is-a-solar-inverter');
+const CRUMB_LABEL = 'What Is a Solar Inverter?';
+
 export default function WhatIsASolarInverter() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd variant="Article" domain="crr" headline={"What Is a Solar Inverter? (Plain-English Guide with Types, Brands, and Lifespans)"} url="https://ratereliefca.com/blog/what-is-a-solar-inverter" datePublished="2026-04-24" dateModified="2026-04-24" description={"A plain-English explanation of solar inverters, what they do, the main types (string, micro, hybrid), how long they last, which brands are reliable, and warranty realities."} />
       <Header />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link><span>/</span><Link href="/blog" className="hover:text-primary">Blog</Link><span>/</span><span className="text-foreground">What Is a Solar Inverter?</span>
-            </nav>
+            <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className='mb-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground' />
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Basics</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">What Is a Solar Inverter?</h1>

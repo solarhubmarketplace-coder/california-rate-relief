@@ -3,9 +3,11 @@ import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
@@ -17,15 +19,20 @@ export const metadata: Metadata = {
   openGraph: { title: 'Switch to Solar in California: The 2026 Complete Guide', description: 'A complete step-by-step guide to switching to solar in California in 2026.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
+// Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
+// feeds both the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs('/blog/switch-to-solar-california');
+const CRUMB_LABEL = 'Switching to solar';
+
 export default function SwitchToSolar() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd variant="Article" domain="crr" headline={"Switch to Solar in California: The 2026 Complete Guide"} url="https://ratereliefca.com/blog/switch-to-solar-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Everything California homeowners need to know about switching to solar in 2026 — the NEM 3.0 rules, financing options, what it costs, how long it takes, and the 5-step process."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
-            <nav className='mb-8'><Link href='/blog' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Blog</Link></nav>
+            <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className='mb-8 flex flex-wrap items-center gap-2 text-sm text-muted-foreground' />
 
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Getting Started</span>

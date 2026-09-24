@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
@@ -15,17 +17,20 @@ export const metadata: Metadata = {
   openGraph: { title: 'What Is a Demand Charge?', description: 'Plain-English explanation of electric demand charges.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-demand-charge-california' },
 };
 
+// Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
+// feeds both the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs('/blog/what-is-demand-charge-california');
+const CRUMB_LABEL = 'What Is a Demand Charge?';
+
 export default function WhatIsDemandChargeCA() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd variant="Article" domain="crr" headline={"What Is a Demand Charge? (And Do California Residential Customers Pay One?)"} url="https://ratereliefca.com/blog/what-is-demand-charge-california" datePublished="2026-04-24" dateModified="2026-04-24" description={"Demand charges explained in plain English. What they are, why commercial and some California residential customers pay them, and how solar/battery eliminate them."} />
       <Header />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link><span>/</span><Link href="/blog" className="hover:text-primary">Blog</Link><span>/</span><span className="text-foreground">What Is a Demand Charge?</span>
-            </nav>
+            <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className='mb-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground' />
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Electricity Basics · California</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">What Is a Demand Charge? (And Do California Residential Customers Pay One?)</h1>

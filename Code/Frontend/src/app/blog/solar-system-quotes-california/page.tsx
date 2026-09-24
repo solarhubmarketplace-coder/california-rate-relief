@@ -10,6 +10,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
@@ -107,12 +109,14 @@ const h3 = 'text-lg font-semibold text-foreground mt-6 mb-2';
 const p = 'leading-relaxed text-foreground/80 mb-4';
 const link = 'text-primary underline underline-offset-2';
 
+// Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
+// feeds both the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs(PATH);
+const CRUMB_LABEL = 'Solar quotes';
+
 export default function SolarSystemQuotes() {
   return (
-    <PublicLayout
-      breadcrumbLabel="Solar quotes"
-      breadcrumbParent={{ label: 'California solar companies', href: '/best-solar-companies-california' }}
-    >
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd
         variant="Article"
         domain="crr"
@@ -125,13 +129,7 @@ export default function SolarSystemQuotes() {
       <FaqJsonLd items={faqs} />
       <Header />
       <main className="mx-auto max-w-3xl px-4 pb-16 pt-8 md:pt-12">
-        <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-primary">Home</Link>
-          <span aria-hidden="true">/</span>
-          <Link href="/best-solar-companies-california" className="hover:text-primary">California solar companies</Link>
-          <span aria-hidden="true">/</span>
-          <span className="text-foreground">Solar quotes</span>
-        </nav>
+        <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} />
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">Getting quotes</p>
         <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-5xl">
           How to get solar quotes in California and compare them fairly

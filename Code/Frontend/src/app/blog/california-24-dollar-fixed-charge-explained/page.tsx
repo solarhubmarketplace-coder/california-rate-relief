@@ -3,6 +3,8 @@ import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
@@ -26,24 +28,21 @@ export const metadata: Metadata = {
   },
 };
 
+// Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
+// feeds both the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs('/blog/california-24-dollar-fixed-charge-explained');
+const CRUMB_LABEL = 'The $24 fixed charge explained';
+
 export default function FixedChargeExplained() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd variant="Article" domain="crr" headline={"The New $24 Fixed Charge on Your California Electric Bill, Explained"} url="https://ratereliefca.com/blog/california-24-dollar-fixed-charge-explained" datePublished="2026-04-14" dateModified="2026-09-22" description={"PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every residential bill. Learn exactly what it is, why it exists, who pays less, and how it affects solar savings."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
             {/* Breadcrumb */}
-            <nav className='mb-8'>
-              <Link
-                href='/blog'
-                className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'
-              >
-                <ArrowLeft className='h-4 w-4' />
-                Back to Blog
-              </Link>
-            </nav>
+            <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className='mb-8 flex flex-wrap items-center gap-2 text-sm text-muted-foreground' />
 
             {/* Article Header */}
             <header className='mb-10'>

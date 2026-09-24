@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
@@ -50,17 +52,20 @@ export const metadata: Metadata = {
   openGraph: { title: 'How Does Net Metering Work?', description: 'Plain-English net metering guide for 2026.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-23T00:00:00Z', url: 'https://ratereliefca.com/blog/how-does-net-metering-work' },
 };
 
+// Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
+// feeds both the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs('/blog/how-does-net-metering-work');
+const CRUMB_LABEL = 'How Does Net Metering Work?';
+
 export default function HowDoesNetMeteringWork() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd variant="Article" domain="crr" headline={"How Does Net Metering Work? Plain-English Guide (2026)"} url="https://ratereliefca.com/blog/how-does-net-metering-work" datePublished="2026-04-24" dateModified="2026-09-23" description={"A plain-English explanation of net metering, how it works, how the credits are calculated, the difference between NEM 1.0/2.0/3.0 and net billing, and what"} />
       <Header />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link><span>/</span><Link href="/blog" className="hover:text-primary">Blog</Link><span>/</span><span className="text-foreground">How Does Net Metering Work?</span>
-            </nav>
+            <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className='mb-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground' />
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Basics</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">How Does Net Metering Work? (And Why It&apos;s Not the Same as Net Billing)</h1>
