@@ -1,0 +1,112 @@
+{
+  "agent": "t2-rates",
+  "pages": [
+    {
+      "path": "/blog/sce-time-of-use-rates-2026",
+      "action": "UPGRADE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/sce-time-of-use-rates-2026/page.tsx",
+      "title": "SCE Time-of-Use Rates 2026: Peak Hours and Prices",
+      "clusters": [
+        64,
+        446
+      ],
+      "sources": [
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/save-money/rates-financing/electric-vehicle-plan",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.sce.com/save-money/rates-financing/rate-plan-comparison",
+        "https://www.sce.com/customer-service-center/community-choice-aggregation/sce-ccce-joint-rate-comparisons",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "Rewritten on RateGuideParts: periods by plan/season, SCE-listed prices, baseline credit, TOU-D-PRIME, per-kWh average (PAO June 2026), BSC, CCA, switching. Folds cluster 446 (sce ev rates) as an \"SCE EV rates\" section."
+    },
+    {
+      "path": "/blog/smud-peak-hours",
+      "action": "CREATE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/smud-peak-hours/page.tsx",
+      "title": "SMUD Peak Hours 2026: Summer and Time-of-Day Rates",
+      "clusters": [
+        70
+      ],
+      "sources": [
+        "https://www.smud.org/Rate-Information/Residential-rates/Time-of-Day-5-8pm-Rate/Rate-details",
+        "https://www.smud.org/Rate-Information/Residential-rates",
+        "https://www.smud.org/Rate-Information/Residential-rates/Critical-Peak-Pricing",
+        "https://www.smud.org/Rate-Information/Rate-archive",
+        "https://www.smud.org/Rate-Information/Low-income-and-nonprofits"
+      ],
+      "status": "done",
+      "note": "SMUD TOD 5-8 p.m. periods and 2026 prices, summer June 1-Sept 30 (when summer rates end), 11 holidays, Low Use/Fixed/CPP, EV overnight discount, SSR, 2026/2027 increases. Distinct from why-is-my-smud-bill-so-high (bills hub)."
+    },
+    {
+      "path": "/blog/pge-ev-rates",
+      "action": "CREATE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/pge-ev-rates/page.tsx",
+      "title": "PG&E EV Rates 2026: EV2-A, EV-B and E-ELEC Prices",
+      "clusters": [
+        143
+      ],
+      "sources": [
+        "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_EV2%20(Sch).pdf",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_EV%20(Sch).pdf",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-ELEC.pdf",
+        "https://www.pge.com/en/account/rate-plans/electric-vehicles.html",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_260101-260228.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250901-251231.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250301-250831.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_240101-240229.xlsx",
+        "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance.html",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "EV2-A/EV-B/E-ELEC prices (Mar 1, 2026), EV2 and EV tariff periods/eligibility (800% cap, EV-A eliminated Nov 30, 2025), EV2-A price history 2024-2026, charging-cost arithmetic, CARE/FERA/BSC tiers."
+    }
+  ],
+  "sitemap_add": [
+    "/blog/smud-peak-hours",
+    "/blog/pge-ev-rates"
+  ],
+  "blog_index_add": [
+    {
+      "slug": "smud-peak-hours",
+      "title": "SMUD Peak Hours 2026: Summer and Time-of-Day Rates",
+      "hub": "utility_rates"
+    },
+    {
+      "slug": "pge-ev-rates",
+      "title": "PG&E EV Rates 2026: EV2-A, EV-B and E-ELEC Prices",
+      "hub": "utility_rates"
+    }
+  ],
+  "redirect_requests": [],
+  "hub_links": [
+    {
+      "hub": "utility_rates",
+      "href": "/blog/smud-peak-hours",
+      "label": "SMUD peak hours and summer rates"
+    },
+    {
+      "hub": "utility_rates",
+      "href": "/blog/pge-ev-rates",
+      "label": "PG&E EV rate plans"
+    }
+  ],
+  "link_requests": [],
+  "skipped": [
+    {
+      "url": "/blog/sce-ev-rates",
+      "why": "folded into /blog/sce-time-of-use-rates-2026 (SCE has one EV plan, TOU-D-PRIME, which that page prices; 50/mo volume did not need its own page)"
+    }
+  ],
+  "notes_for_integration": [
+    "Added Tier 2 source entries to src/data/rate-sources.ts inside the existing PG&E, SCE, SDG&E and SMUD sections (no existing entries changed)."
+  ]
+}

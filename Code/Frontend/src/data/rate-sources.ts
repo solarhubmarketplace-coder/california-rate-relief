@@ -83,6 +83,21 @@ export const SRC = {
   pgeElectricHome: { label: 'PG&E: Electric Home Rate Plan (E-ELEC)', url: 'https://www.pge.com/en/account/rate-plans/electric-home.html' },
   pgeSolarBilling: { label: 'PG&E: Solar Billing Plan', url: 'https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html' },
   pgeEecValues: { label: 'PG&E: Solar Billing Plan Energy Export Credit price sheets, 2023 to 2026 (ZIP)', url: 'https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip' },
+  // Tier 2 additions (2026-09-23): tariff sheets and bill-help pages.
+  pgeEv2Tariff: { label: 'PG&E: Electric Schedule EV2 tariff (EV2-A prices effective March 1, 2026; time periods and eligibility)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_EV2%20(Sch).pdf' },
+  pgeEvBTariff: { label: 'PG&E: Electric Schedule EV tariff, Rate B (separately metered EV; time periods and seasons)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_EV%20(Sch).pdf' },
+  pgeEtoucTariff: { label: 'PG&E: Electric Schedule E-TOU-C tariff (effective March 1, 2026)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-C.pdf' },
+  pgeEelecTariff: { label: 'PG&E: Electric Schedule E-ELEC tariff (applicability sheet effective August 28, 2026)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-ELEC.pdf' },
+  pgeWaysToLower: { label: 'PG&E: Ways to Lower Your Bill', url: 'https://www.pge.com/en/save-energy-and-money/ways-to-lower-your-bill.html' },
+  pgeSolarBill: { label: 'PG&E: Solar Bill (how to read a NEM statement and true-up)', url: 'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html' },
+  pgeReach: { label: 'PG&E: Relief for Energy Assistance through Community Help (REACH)', url: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance/relief-for-energy-assistance-through-community-help.html' },
+  pgeMatchMyPayment: { label: 'PG&E: Match My Payment Program (on hold for 2026)', url: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance/match-my-payment-program.html' },
+  pgeAmp: { label: 'PG&E: Arrearage Management Plan (AMP)', url: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance/arrearage-management-plan-amp.html' },
+  pgePaymentPlan: { label: 'PG&E: Payment plans and due date extensions', url: 'https://www.pge.com/en/account/billing-and-assistance/pay-my-bill/payment-plan-and-due-date-extension.html' },
+  pgeBudgetBilling: { label: 'PG&E: Budget Billing', url: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance/budget-billing-program.html' },
+  pgeLiheap: { label: 'PG&E: Low Income Home Energy Assistance Program (LIHEAP)', url: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance/low-income-home-energy-assistance-program.html' },
+  pgeMedicalBaselineProgram: { label: 'PG&E: Medical Baseline Program', url: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance/medical-baseline-program.html' },
+  csdLiheap: { label: 'California Department of Community Services and Development: LIHEAP energy bill help (2026 income limits)', url: 'https://www.csd.ca.gov/energybills' },
 
   // --- SCE -----------------------------------------------------------------
   sceTou: { label: 'SCE: Time-of-Use Residential Rate Plans', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans' },
@@ -95,6 +110,8 @@ export const SRC = {
   sceRateCompare: { label: 'SCE: Rate Plan Comparison tool', url: 'https://www.sce.com/save-money/rates-financing/rate-plan-comparison' },
   dceSolar: { label: 'Desert Community Energy: Solar customers (true-up timing)', url: 'https://desertcommunityenergy.org/your-options/solar-customers/' },
   sceHistorical: { label: 'SCE: Historical Prices and Rate Schedules', url: 'https://www.sce.com/regulatory/tariff-books/historical-rates' },
+  sceEvPlan: { label: 'SCE: Electric Vehicle (EV) Rate Plans (TOU-D-PRIME)', url: 'https://www.sce.com/save-money/rates-financing/electric-vehicle-plan' },
+  sceJointRates: { label: 'SCE: Joint rate comparisons with community choice providers', url: 'https://www.sce.com/customer-service-center/community-choice-aggregation/sce-ccce-joint-rate-comparisons' },
 
   // --- SDG&E ---------------------------------------------------------------
   sdgeTotalRates: { label: 'SDG&E: Total Electric Rates (schedule rate tables by effective date)', url: 'https://www.sdge.com/total-electric-rates' },
@@ -107,6 +124,19 @@ export const SRC = {
   sdgeTouDr1Jan2023: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective January 1, 2023', url: 'https://www.sdge.com/sites/default/files/regulatory/1-1-23%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf' },
   sdgeWhenMatters: { label: 'SDG&E: When Matters (time-of-use plans and pricing periods)', url: 'https://www.sdge.com/whenmatters' },
   sdgeDrAug2026: { label: 'SDG&E: Schedule DR total rates, effective August 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20DR%20Total%20Rates%20Table.pdf' },
+  sdgePricingPlans: { label: 'SDG&E: Residential pricing plans (hours and prices effective August 1, 2026)', url: 'https://www.sdge.com/residential/pricing-plans' },
+  sdgeTouDr2Aug2026: { label: 'SDG&E: Schedule TOU-DR2 total rates, effective August 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR2%20Total%20Rates%20Table.pdf' },
+  sdgeTouDrAug2026: { label: 'SDG&E: Schedule TOU-DR total rates, effective August 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR%20Total%20Rates%20Table.pdf' },
+  sdgeTouDrPAug2026: { label: 'SDG&E: Schedule TOU-DR-P total rates, effective August 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR-P%20Total%20Rates%20Table.pdf' },
+  sdgeEvTou5Aug2026: { label: 'SDG&E: Schedule EV-TOU-5 total rates, effective August 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU-5%20Total%20Rates%20Table.pdf' },
+  sdgeEvTouAug2026: { label: 'SDG&E: Schedules EV-TOU and EV-TOU-2 total rates, effective August 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU%20%26%20EV-TOU-2%20Total%20Rates%20Tables.pdf' },
+  sdgeTouElecAug2026: { label: 'SDG&E: Schedule TOU-ELEC total rates, effective August 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-ELEC%20Total%20Rates%20Table.pdf' },
+  sdgeSolarBillingPlan: { label: 'SDG&E: Solar Billing Plan', url: 'https://www.sdge.com/solar/solar-billing-plan' },
+  sdgeSolarBill: { label: 'SDG&E: Understanding Your Solar Billing Plan Bill', url: 'https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill' },
+  sdgeNemBill: { label: 'SDG&E: Understanding Your NEM Bill', url: 'https://www.sdge.com/solar/net-energy-metering/UnderstandingYourNEMBill' },
+  sdgeNetMeterSheet: { label: 'SDG&E: How to read your smart electric meter, for net metering customers (fact sheet)', url: 'https://www.sdge.com/sites/default/files/SDGE%20Net%20Meter%20Fact%20Sheet.pdf' },
+  sdgeSmartMeter: { label: 'SDG&E: How to read your smart meter', url: 'https://www.sdge.com/residential/savings-center/smart-meters/your-smart-meter/how-to-read-your-smart-meter' },
+  sdgeMyBill: { label: 'SDG&E: Understanding your SDG&E bill (bill features)', url: 'https://www.sdge.com/mybill/new-features' },
 
   // --- LADWP ---------------------------------------------------------------
   ladwpResRates: { label: 'LADWP: Residential Rates (R-1A and R-1B totals by period, 2025 and 2026)', url: 'https://www.ladwp.com/account/customer-service/electric-rates/residential-rates' },
@@ -123,6 +153,7 @@ export const SRC = {
   smudTodDetails: { label: 'SMUD: Time-of-Day (5-8 p.m.) Rate details and holidays', url: 'https://www.smud.org/Rate-Information/Residential-rates/Time-of-Day-5-8pm-Rate/Rate-details' },
   smudLowIncome: { label: 'SMUD: Low income and nonprofits (EAPR limits effective Feb. 1, 2026)', url: 'https://www.smud.org/Rate-Information/Low-income-and-nonprofits' },
   smudRateArchive: { label: 'SMUD: Rate change archive (2026 and 2027 increases)', url: 'https://www.smud.org/Rate-Information/Rate-archive' },
+  smudCpp: { label: 'SMUD: Critical Peak Pricing', url: 'https://www.smud.org/Rate-Information/Residential-rates/Critical-Peak-Pricing' },
 
   // --- EIA, CEC, CDFA ------------------------------------------------------
   eiaEpm56a: { label: 'U.S. EIA, Electric Power Monthly, Table 5.6.A (June 2026)', url: 'https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a' },
