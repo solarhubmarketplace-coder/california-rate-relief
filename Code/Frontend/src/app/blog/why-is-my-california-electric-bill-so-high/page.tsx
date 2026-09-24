@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
@@ -170,22 +172,22 @@ export const metadata: Metadata = {
   openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z` },
 };
 
+// Breadcrumb (Block 5 section 5.6): this is the electric_bills hub page, so it
+// tops its own trail (Home / page, no 'Blog'); defaultCrumbs returns [] for a
+// hub page. One list feeds the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs(path);
+const CRUMB_LABEL = 'Why California electric bills are high';
+
 export default function WhyIsMyCaliforniaElectricBillSoHigh() {
   return (
-    <PublicLayout breadcrumbLabel="Why is my California electric bill so high?" breadcrumbParent={{ label: 'Blog', href: '/blog' }}>
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd variant="Article" domain="crr" headline={title} url={url} datePublished={published} dateModified={updated} description={description} />
       <Header />
       <main className="bg-background py-16">
         <div className="container mx-auto px-4">
           <article className="mx-auto max-w-3xl">
             <header className="mb-8">
-              <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                <Link href="/" className="hover:text-primary">Home</Link>
-                <span aria-hidden="true">/</span>
-                <Link href="/blog" className="hover:text-primary">Blog</Link>
-                <span aria-hidden="true">/</span>
-                <span className="text-foreground">Why California electric bills are high</span>
-              </nav>
+              <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className="mb-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground" />
               <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">California · Electric bills</span>
               <h1 className="mb-4 mt-4 text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl">{h1}</h1>
               <Byline updated={updated} sourceCount={sources.length} sourcesHref="#sources" />
@@ -431,6 +433,7 @@ export default function WhyIsMyCaliforniaElectricBillSoHigh() {
               <p className="mt-4 text-sm text-muted-foreground">
                 California Rate Relief is a referral service. We are not a licensed contractor.
               </p>
+              <HubSpokeLinks hub="electric_bills" currentPath={path} title="More on electric bills" />
               <HubSpokeLinks hub="utility_rates" currentPath={path} title="More on utility rates" />
             </div>
 
