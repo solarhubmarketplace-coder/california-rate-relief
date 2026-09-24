@@ -2177,55 +2177,115 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Ventura",
     county: "Ventura County",
     utility: "sce",
-    sourceCheckedDate: "2026-09-12",
+    sourceCheckedDate: "2026-09-23",
     hasSavingsGuide: false,
-    bill: "Use the electricity provider and rate schedule shown on the account. A proposal should model the actual usage history and show the utility charges that remain after installation instead of treating a citywide average as a project result.",
-    local:
-      "Ventura publishes an instant-permit route for eligible contractor-submitted residential rooftop PV and an online permit process for projects outside that route. Ask who submits the plans, which permit path applies and how the bidder will handle inspection, roof work and electrical changes.",
-    example:
-      "Use the same roof layout, annual bill history and equipment scope in each proposal. Keep solar, storage, roof repairs, service work, permits and inspections on separate lines. Compare the full written obligations before comparing any advertised payment.",
+    bill: "Ventura's default generation provider is Clean Power Alliance, which has served the city since 2019 with its 100% Green option as the default; SCE delivers the power and sends the bill. CPA runs its own solar rules on the generation side: an April true-up for every customer and surplus paid at 10% above SCE's rate. Ask each bidder to model your actual CPA option and SCE delivery charges.",
+    local: "The City of Ventura uses Symbium for automated solar permits under Senate Bill 379, and says eligible applications are issued in real time, in a matter of minutes. To use it, the applicant must be a contractor holding an A, B, C-10 or C-46 license with an active City of Ventura business license, and the system must be no larger than 38.4 kW AC. Inspections are booked through Ventura OPS or the City's inspection request line.",
+    example: "Ask each Ventura bidder to confirm three things in writing: the CSLB license class it will file under, its active City of Ventura business license, and that the design is 38.4 kW AC or smaller. Those are the conditions for the City's instant Symbium permit; a bid that cannot meet them is headed for a slower route.",
     checks: [
       [
-        "Bill and system model",
-        "Use the account's actual rate plan and usage history, with output, imports, exports and remaining charges identified separately.",
+        "Symbium eligibility",
+        "Confirm an A, B, C-10 or C-46 license, an active City of Ventura business license and a system no larger than 38.4 kW AC."
       ],
       [
-        "Permit route",
-        "Ask whether the project uses the City's instant-permit route or Ventura OPS and identify the party responsible for plans, payment and inspection scheduling.",
+        "Ventura OPS account",
+        "Say who holds the Ventura OPS account used to apply and to schedule the inspection."
+      ],
+      [
+        "CPA option",
+        "Model your actual Clean Power Alliance option, 100% Green by default in Ventura, plus SCE delivery charges."
       ],
       [
         "Roof and electrical scope",
-        "Separate roof work, service or subpanel changes, storage and backup circuits from the core array proposal.",
-      ],
+        "Separate roof work, service or subpanel changes, storage and backup circuits from the core array price."
+      ]
     ],
     sources: [
       {
-        label: "City of Ventura: photovoltaic information and permit routes",
-        url: "https://www.cityofventura.ca.gov/300/Photovoltaic-Information",
+        "label": "City of Ventura: contractor solar permits under SB 379 (Symbium)",
+        "url": "https://www.cityofventura.ca.gov/2554/Contractor-Solar-Permits-SB-379"
       },
       {
-        label: "City of Ventura: contractor solar permits and inspections",
-        url: "https://www.cityofventura.ca.gov/2554/Contractor-Solar-Permits-SB-379",
+        "label": "Clean Power Alliance: Ventura (default option, service start)",
+        "url": "https://cleanpoweralliance.org/place/ventura/"
       },
       {
-        label: "SCE: residential rate-plan information",
-        url: "https://www.sce.com/customer-service-center/help-center/rate-plans-pricing/resources/rates-faq",
+        "label": "Clean Power Alliance: solar, NEM and Solar Billing Plan",
+        "url": "https://cleanpoweralliance.org/solar/"
       },
       {
-        label: "CSLB: Solar Smart license and consumer information",
-        url: "https://www.cslb.ca.gov/solar",
+        "label": "SCE: Base Services Charge",
+        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
       },
+      {
+        "label": "CSLB: Solar Smart license and consumer information",
+        "url": "https://www.cslb.ca.gov/solar"
+      }
     ],
     faq: [
       [
-        "Does every Ventura rooftop project use the instant permit route?",
-        "No. Ventura describes an instant route for eligible contractor-submitted projects and directs other scopes to its online process. Ask the bidder to name the route for the address and design.",
+        "How fast is a solar permit in Ventura?",
+        "The City says applications submitted through Symbium are issued in real time, in a matter of minutes, when the contractor and system meet its eligibility rules. Symbium's processing fee is non-refundable."
       ],
       [
-        "Can I compare Ventura solar offers from the monthly payment alone?",
-        "No. Compare the contract total, equipment, roof and electrical scope, permit duties, production assumptions and remaining utility charges in writing.",
+        "Who can pull an instant solar permit in Ventura?",
+        "A contractor with an A, B, C-10 or C-46 license and an active City of Ventura business license, for a system no larger than 38.4 kW AC."
       ],
+      [
+        "What does Clean Power Alliance pay for extra solar in Ventura?",
+        "CPA trues up solar customers every April and pays annual surplus at a rate 10% higher than SCE's Net Surplus Compensation rate. Credits over $100 are paid by check; smaller credits stay on the bill unless you ask for a check."
+      ]
     ],
+    answer: "Ventura issues eligible solar permits in minutes through Symbium, the City's automated platform under Senate Bill 379, when the contractor holds an A, B, C-10 or C-46 license and an active City business license and the system is 38.4 kW AC or smaller. Clean Power Alliance supplies Ventura's generation, 100% Green by default, and SCE delivers it. Compare at least three written bids built on your own bill.",
+    keyFacts: [
+      {
+        "label": "Permit platform",
+        "value": "Symbium",
+        "note": "Issued in real time for eligible applications",
+        "source": {
+          "publisher": "City of Ventura",
+          "date": "2026-09-23",
+          "url": "https://www.cityofventura.ca.gov/2554/Contractor-Solar-Permits-SB-379"
+        }
+      },
+      {
+        "label": "Size limit",
+        "value": "38.4 kW AC",
+        "note": "Plus A, B, C-10 or C-46 license and City business license",
+        "source": {
+          "publisher": "City of Ventura",
+          "date": "2026-09-23",
+          "url": "https://www.cityofventura.ca.gov/2554/Contractor-Solar-Permits-SB-379"
+        }
+      },
+      {
+        "label": "Default generation option",
+        "value": "CPA 100% Green",
+        "note": "Serving Ventura since 2019; SCE delivers",
+        "source": {
+          "publisher": "Clean Power Alliance",
+          "date": "2026-09-23",
+          "url": "https://cleanpoweralliance.org/place/ventura/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Ventura's Symbium permit in five steps",
+        "paragraphs": [
+          "The City lays out five steps: check that the project and contractor qualify, register for or sign in to a Ventura OPS account, apply through Symbium, receive the permit, and schedule the inspection. Qualification has three parts: an A, B, C-10 or C-46 contractor license, an active City of Ventura business license, and a system no larger than 38.4 kilowatts alternating current. Energy storage can be included.",
+          "When those conditions are met, the City says the permit is issued in real time, in a matter of minutes. Symbium's processing fee is non-refundable. Inspections are scheduled through Ventura OPS or by calling the inspection request line at 805-654-7874 between 8:30 a.m. and 3:00 p.m., and the City gives a three-hour arrival window."
+        ]
+      },
+      {
+        "heading": "Clean Power Alliance on a Ventura solar bill",
+        "paragraphs": [
+          "Clean Power Alliance became Ventura's default provider in 2019, with 100% Green Power as the city's default option. A home whose solar was approved by SCE on or before August 31, 2023 stays on CPA's net energy metering tariff for the rest of its 20-year eligibility; systems applying after that date are on CPA's Solar Billing Plan for generation and SCE's for delivery. Under the Solar Billing Plan, each monthly bill charges for energy drawn from the grid at your time-of-use rate and credits exports with Energy Export Credits priced by the CPUC's Avoided Cost Calculator.",
+          "CPA trues up all of its solar customers each April rather than on each customer's own anniversary, and pays yearly surplus at a rate 10% above SCE's Net Surplus Compensation rate. Credits over $100 arrive by check; smaller ones offset future CPA charges unless you ask for a check. SCE's fixed Base Services Charge, $24.15 a month for customers not on CARE or FERA, remains on the delivery side."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   "grass-valley": {
     name: "Grass Valley",
@@ -3332,46 +3392,228 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Lakewood",
     county: "Los Angeles County",
     utility: "sce",
-    sourceCheckedDate: "2026-09-22",
-    bill:
-      "Lakewood is billed by Southern California Edison (SCE) for both generation and delivery. Clean Power Alliance, the community choice aggregator covering many Los Angeles and Ventura County cities, does not list Lakewood among its member communities as of this check — read the provider name printed on the current bill to confirm.",
-    local:
-      "Lakewood's Development Services Department handles residential building permits through its Building Permits process. Ask the bidder to confirm the current solar permit path and required inspections directly.",
-    example:
-      "Put the same roof layout, shading and twelve months of SCE usage into every Lakewood bid. Then compare total price, financing terms, equipment, the Development Services permit scope and the SCE bill that remains after the system is installed.",
+    sourceCheckedDate: "2026-09-23",
+    bill: "Lakewood homes buy both generation and delivery from Southern California Edison; the Energy Commission's map shows no community choice provider over the city. The Public Advocates Office estimated June 2026 SCE bills for customers not on CARE at about $152 a month where homes use around 385 kWh and $254 where they use around 700 kWh. Your own twelve months of SCE bills are the number a proposal should start from.",
+    local: "The City of Lakewood permits residential rooftop solar through SolarAPP+, an automated online platform that runs a code-compliance check on most residential roof-mounted retrofit systems. The contractor registers with its license information, submits the design, and on approval receives a checklist and SolarAPP+ ID, pays the remaining fees and prints the permit. SolarAPP+'s initial processing fee covers up to three revisions.",
+    example: "Ask each Lakewood bidder for its SolarAPP+ approval plan before you compare prices, and whether the design is a standard roof-mounted retrofit that SolarAPP+ can check. A bid that needs changes after approval should say whether they fall within the three revisions SolarAPP+'s fee covers, and who books the City inspection.",
     sources: [
       {
-        label: "City of Lakewood — Development Services: Building Permits",
-        url: "https://www.lakewoodca.gov/Development-Services/Building/Building-Permits",
+        "label": "City of Lakewood: solar permitting for homes (SolarAPP+)",
+        "url": "https://www.lakewoodca.gov/Development-Services/Building/Solar-Permitting-for-Homes"
       },
       {
-        label: "Clean Power Alliance — member communities",
-        url: "https://cleanpoweralliance.org/place/",
+        "label": "SCE: Solar Billing Plan",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
       },
+      {
+        "label": "SCE: Base Services Charge",
+        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+      },
+      {
+        "label": "CPUC Public Advocates Office: Q2 2026 Electric Rates Report",
+        "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
     ],
+    faq: [
+      [
+        "How do I get a solar permit in Lakewood, CA?",
+        "Lakewood uses SolarAPP+. A licensed contractor registers, submits the design, and once SolarAPP+ approves it receives a checklist and SolarAPP+ ID, pays the remaining fees and prints the permit. Inspections are requested through the City's Building and Safety inspection line."
+      ],
+      [
+        "Who provides electricity in Lakewood, California?",
+        "Southern California Edison supplies and delivers the power. The Energy Commission's map shows no community choice provider over the city."
+      ],
+      [
+        "What happens to extra solar power in Lakewood?",
+        "A new system is on SCE's Solar Billing Plan: exports earn Energy Export Credits, the account is settled once a year in the month the system started service, and leftover surplus is paid at SCE's Net Surplus Compensation Rate, about $0.02 per kWh."
+      ],
+    ],
+    checks: [
+      [
+        "SolarAPP+ eligibility",
+        "Confirm the design is a residential, roof-mounted retrofit that meets SolarAPP+'s requirements."
+      ],
+      [
+        "Revisions",
+        "Ask how design changes after approval are handled and whether they fit within the three revisions the fee covers."
+      ],
+      [
+        "Inspection",
+        "Say who requests the City inspection and who meets the inspector."
+      ],
+      [
+        "SCE bill",
+        "Model SCE's Solar Billing Plan, its yearly settlement month and the fixed Base Services Charge from your own bill."
+      ]
+    ],
+    answer: "Lakewood permits residential rooftop solar through SolarAPP+: the contractor submits the design online, gets an approval ID and checklist, pays the remaining fees and prints the permit, and SolarAPP+'s fee covers up to three revisions. SCE supplies and delivers Lakewood's electricity, and new systems go on SCE's Solar Billing Plan. Compare at least three written bids built on your own twelve months of SCE bills.",
+    keyFacts: [
+      {
+        "label": "Permit platform",
+        "value": "SolarAPP+",
+        "note": "Residential roof-mounted retrofit systems",
+        "source": {
+          "publisher": "City of Lakewood",
+          "date": "2026-09-23",
+          "url": "https://www.lakewoodca.gov/Development-Services/Building/Solar-Permitting-for-Homes"
+        }
+      },
+      {
+        "label": "Revisions covered",
+        "value": "Up to 3",
+        "note": "Included in SolarAPP+'s initial processing fee",
+        "source": {
+          "publisher": "City of Lakewood",
+          "date": "2026-09-23",
+          "url": "https://www.lakewoodca.gov/Development-Services/Building/Solar-Permitting-for-Homes"
+        }
+      },
+      {
+        "label": "SCE fixed charge",
+        "value": "$24.15/month",
+        "note": "Base Services Charge, customers not on CARE or FERA",
+        "source": {
+          "publisher": "SCE",
+          "date": "2026-09-23",
+          "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Lakewood's SolarAPP+ steps",
+        "paragraphs": [
+          "Lakewood's Building and Safety Division lists five steps. The contractor submits the design through SolarAPP+, registering with its contractor license information. When the design is approved, SolarAPP+ issues a checklist and a SolarAPP+ ID. The contractor then pays the remaining City fees when prompted and prints the permit. SolarAPP+ charges its own processing fee for the plan review, and that initial fee covers up to three revisions.",
+          "Inspections are requested through the Building and Safety Division's inspection line at 562-866-9771, extension 2350, or by the inspection-request email address on the City's page. Because the platform is built for standard roof-mounted retrofits, a ground mount or an unusual roof structure may need a different path; ask the bidder to confirm eligibility against SolarAPP+'s requirements before quoting a start date."
+        ]
+      },
+      {
+        "heading": "Reading an SCE proposal in Lakewood",
+        "paragraphs": [
+          "Since November 2025, SCE bills have carried a Base Services Charge of $24.15 a month for customers not on CARE or FERA, $12.08 on FERA and $6.00 on CARE. It pays for the grid rather than the energy you use, so solar does not shrink it. Any savings figure in a Lakewood proposal should come off the part of the bill that solar can actually reduce.",
+          "Under SCE's Solar Billing Plan, energy sent to the grid earns Energy Export Credits whose value changes with the hour, and SCE settles the account once a year in the month the system began service. Surplus left after that settlement is paid at SCE's Net Surplus Compensation Rate, which SCE puts at about two cents per kWh. SCE also says that storing your own energy for expensive hours is now worth more than exporting it, which is why a battery quote deserves its own line."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
 
   "long-beach": {
     name: "Long Beach",
     county: "Los Angeles County",
     utility: "sce",
-    sourceCheckedDate: "2026-09-22",
-    bill:
-      "Long Beach is billed by Southern California Edison (SCE) for both generation and delivery. Clean Power Alliance, the community choice aggregator covering many Los Angeles and Ventura County cities, does not list Long Beach among its member communities as of this check — read the provider name printed on the current bill to confirm.",
-    local:
-      "Long Beach's Building and Safety Bureau, inside its Development Services department, handles residential building permits, including the mechanical, electrical and plumbing work a solar install involves. Ask the bidder to confirm the current permit path, appointment process and required inspections directly with the Bureau.",
-    example:
-      "Put the same roof layout, shading and twelve months of SCE usage into every Long Beach bid. Then compare total price, financing terms, equipment, the Building and Safety Bureau's permit scope and the SCE bill that remains after the system is installed.",
+    sourceCheckedDate: "2026-09-23",
+    bill: "The City's own solar bulletin names Southern California Edison as the utility that provides electrical power in Long Beach, and the Energy Commission's map shows no community choice provider over the city, so SCE supplies both generation and delivery. SCE must approve the interconnection before a system may run, a step separate from the City's permit. A new system goes on SCE's Solar Billing Plan, and the fixed Base Services Charge stays on the bill.",
+    local: "Long Beach issues an express electrical permit for flush-mounted rooftop solar of 38.4 kW or less that passes its Express Checklist, FORM-016 for homes, under Information Bulletin IB-023. The bulletin lists the total fee, surcharges and inspections included: $386.62 for solar without storage, $447.45 for solar with a battery, and $264.95 for a battery alone. Applications go through the City's online portal.",
+    example: "Two Long Beach bids for the same roof should quote the same City permit fee: $386.62 without a battery or $447.45 with one, if the design passes the Express Checklist. If a bid carries a larger permit line, ask which checklist item it expects to fail, since that triggers planning, electrical, building or fire review and extra fees.",
     sources: [
       {
-        label: "City of Long Beach — Building and Safety Bureau",
-        url: "https://www.longbeach.gov/lbds/building/",
+        "label": "City of Long Beach: Information Bulletin IB-023, express permit for rooftop solar PV of 38.4 kW or less (rev. 07-17-2024)",
+        "url": "https://longbeach.gov/globalassets/lbcd/media-library/documents/building--safety/information-bulletins/ib-023"
       },
       {
-        label: "Clean Power Alliance — member communities",
-        url: "https://cleanpoweralliance.org/place/",
+        "label": "City of Long Beach: solar permit",
+        "url": "https://longbeach.gov/lbcd/building/permit-center/solar-permit/"
       },
+      {
+        "label": "SCE: Solar Billing Plan",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "SCE: Base Services Charge",
+        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
     ],
+    faq: [
+      [
+        "How much is a solar permit in Long Beach?",
+        "Under Information Bulletin IB-023, the express permit for a flush-mounted rooftop system of 38.4 kW or less costs $386.62 for solar without storage, $447.45 for solar with a battery and $264.95 for a battery alone, including surcharges, filing fees and inspections. Projects that need extra review can cost more."
+      ],
+      [
+        "Do historic homes in Long Beach need extra approval for solar?",
+        "Yes. If the project is in a historic district or on a qualified historical building, it needs planning review and a Planning Permit or Certificate of Appropriateness in addition to the express permit."
+      ],
+      [
+        "Is Long Beach served by SCE?",
+        "Yes. The City's solar bulletin names Southern California Edison as the utility that provides electrical power in Long Beach, and SCE's interconnection approval is required before a system may operate."
+      ],
+    ],
+    checks: [
+      [
+        "Express Checklist",
+        "Confirm every item on FORM-016 is a Yes, so the job gets the express permit rather than full plan review."
+      ],
+      [
+        "Historic status",
+        "Check whether the home is in a historic district or is a qualified historical building, which adds planning review and a certificate of appropriateness."
+      ],
+      [
+        "SCE interconnection",
+        "Say who files SCE's interconnection request and when, since the system cannot operate until SCE approves it."
+      ],
+      [
+        "Permit fee in the price",
+        "Show the City's permit fee as its own line and whether it matches the IB-023 figure for your system."
+      ]
+    ],
+    answer: "Long Beach publishes its solar permit price: an express permit for a flush-mounted rooftop system of 38.4 kW or less costs $386.62 without storage and $447.45 with a battery, inspections included, if the design passes the City's Express Checklist. SCE supplies and delivers Long Beach's power and must approve the interconnection. Compare at least three written bids that show the same permit fee and model your own SCE bill.",
+    keyFacts: [
+      {
+        "label": "Express permit, solar only",
+        "value": "$386.62",
+        "note": "Includes surcharges, filing fees and inspections",
+        "source": {
+          "publisher": "City of Long Beach, IB-023",
+          "date": "2026-09-23",
+          "url": "https://longbeach.gov/globalassets/lbcd/media-library/documents/building--safety/information-bulletins/ib-023"
+        }
+      },
+      {
+        "label": "Express permit, solar + battery",
+        "value": "$447.45",
+        "note": "Battery alone: $264.95",
+        "source": {
+          "publisher": "City of Long Beach, IB-023",
+          "date": "2026-09-23",
+          "url": "https://longbeach.gov/globalassets/lbcd/media-library/documents/building--safety/information-bulletins/ib-023"
+        }
+      },
+      {
+        "label": "Size limit for express route",
+        "value": "38.4 kW",
+        "note": "Flush-mounted rooftop systems",
+        "source": {
+          "publisher": "City of Long Beach, IB-023",
+          "date": "2026-09-23",
+          "url": "https://longbeach.gov/globalassets/lbcd/media-library/documents/building--safety/information-bulletins/ib-023"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Long Beach's express solar permit",
+        "paragraphs": [
+          "Information Bulletin IB-023, revised in July 2024, is the City's guide to its streamlined solar permit. It covers flush-mounted systems of 38.4 kW or less on the roofs of one- and two-family homes, apartment buildings and nonresidential buildings. For a home, the applicant completes the Community Development Permit application and FORM-016, the Express Checklist for residential rooftop solar, and every item must be answered Yes. The submittal adds electrical plans, a site diagram and a roof plan showing access points, clear pathways, the system's fire classification and required labels.",
+          "A project that passes gets an express electrical permit with no separate planning, electrical, building or fire review. Any No on the checklist sends that part of the project to review, with added fees. Planning review is triggered when the property is in a historic district or is a qualified historical building, in which case a Planning Permit or Certificate of Appropriateness is also needed. Once the permit is issued, installation can start and the inspections can be scheduled when the applicant is ready."
+        ]
+      },
+      {
+        "heading": "Inspection day and SCE's approval",
+        "paragraphs": [
+          "At inspection, the checklist, construction documents and job card must be on site, every part of the installation must be accessible, and any ladder the inspector needs must meet OSHA requirements and be set up safely. Approval comes with the final inspection. Ask your installer who will be there to meet the inspector.",
+          "The City's approval is not the last step. IB-023 tells applicants to contact SCE at the start of planning, because SCE's interconnection approval is a separate process and the system may not operate until it is granted. After that, SCE's Solar Billing Plan credits exports with Energy Export Credits and settles the account once a year, in the month the system started service."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
 
   merced: {
@@ -3442,23 +3684,110 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Mountain View",
     county: "Santa Clara County",
     utility: "pge",
-    sourceCheckedDate: "2026-09-22",
-    bill:
-      "Check the generation provider and enrolled program on the PG&E bill. Silicon Valley Clean Energy (SVCE) lists Mountain View among its thirteen member communities in Santa Clara County; SVCE supplies generation while PG&E delivers the electricity and sends the bill. Have each bidder use both portions of the actual account.",
-    local:
-      "Mountain View's Building Division issues residential building permits, including solar; the city's own site could not be reached in enough depth this session to confirm its current permit path, so ask the bidder to name it and the review timeline directly. Mountain View's inland South Bay location, away from the coastal fog belt, generally sees more clear-sky solar hours than cities directly on the coast.",
-    example:
-      "Put the same roof layout, shade model and monthly production in every Mountain View bid. Then separate solar, storage, roof and electrical work, and compare the remaining bill under the same SVCE generation and PG&E delivery enrollment shown on the account.",
+    sourceCheckedDate: "2026-09-23",
+    bill: "Most Mountain View homes get generation from Silicon Valley Clean Energy and delivery from PG&E, which sends the bill; the Energy Commission's map places almost all of the city in both areas. SVCE settles its generation charges on each monthly bill rather than in PG&E's annual true-up. Ask each bidder to model your actual SVCE and PG&E enrollment, not a PG&E-only account.",
+    local: "Mountain View offers SolarAPP+ for roof-mounted or building-integrated solar on single-family homes, with or without batteries or an electrical service panel upgrade: the platform checks code compliance without traditional plans and issues the permit automatically, and the inspection can be held at least one business day after the permit is approved. Multifamily projects and single-family jobs SolarAPP+ does not cover go through ePermitsMV with building plans.",
+    example: "If one Mountain View bid includes a battery and a panel upgrade and another does not, both can still use SolarAPP+, since the City's route covers single-family systems with or without storage or a service panel upgrade. Ask each bidder to confirm the route in writing, then compare the equipment and the SVCE and PG&E bill it leaves you with.",
     sources: [
       {
-        label: "Silicon Valley Clean Energy — Communities",
-        url: "https://www.svcleanenergy.org/communities/",
+        "label": "City of Mountain View: solar permits (SolarAPP+ and ePermitsMV)",
+        "url": "https://developmentpermits.mountainview.gov/about-permits/apply-for-permit/building-permits/solar-permits"
       },
       {
-        label: "City of Mountain View — official site",
-        url: "https://www.mountainview.gov/",
+        "label": "Silicon Valley Clean Energy: net energy metering",
+        "url": "https://svcleanenergy.org/net-energy-metering/"
       },
+      {
+        "label": "Silicon Valley Clean Energy: solar customer FAQ (Solar Billing Plan, sizing, panel upgrade)",
+        "url": "https://svcleanenergy.org/solar2/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
     ],
+    faq: [
+      [
+        "How fast is a solar permit in Mountain View?",
+        "For single-family systems that qualify for SolarAPP+, the City says the platform issues the permit automatically, and the inspection can be held at least one business day after approval. Other projects go through ePermitsMV with plans and fees paid before issuance."
+      ],
+      [
+        "Is Mountain View served by Silicon Valley Clean Energy?",
+        "Yes. SVCE supplies generation for most Mountain View homes, and PG&E delivers the power and sends the bill."
+      ],
+      [
+        "What does SVCE pay for extra solar?",
+        "For net energy metering customers, SVCE pays PG&E's Net Surplus Compensation rate on annual surplus each April, by check from $100 up to $5,000 and as a bill credit below $100. Income-qualified customers get 2.5 times that rate."
+      ],
+    ],
+    checks: [
+      [
+        "Permit route",
+        "Confirm the job qualifies for SolarAPP+ or say why it needs ePermitsMV and plan review."
+      ],
+      [
+        "SVCE and PG&E bill",
+        "Model SVCE generation and PG&E delivery, and say whether the system is on net energy metering or the Solar Billing Plan."
+      ],
+      [
+        "System size",
+        "Show the sizing against your usage; SVCE notes PG&E does not generally interconnect systems above 110% of on-site demand."
+      ],
+      [
+        "Panel upgrade",
+        "If the main panel is being upgraded, say whether SVCE's $1,000 panel-upgrade offer applies and who claims it."
+      ]
+    ],
+    answer: "Solar companies in Mountain View can permit most single-family systems through SolarAPP+, which the City uses for roof-mounted solar with or without a battery or panel upgrade and which issues the permit automatically; the inspection can follow one business day later. Silicon Valley Clean Energy supplies generation and PG&E delivers it. Compare at least three written bids built on your own SVCE and PG&E bill.",
+    keyFacts: [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+",
+        "note": "Single-family, with or without storage or a panel upgrade",
+        "source": {
+          "publisher": "City of Mountain View",
+          "date": "2026-09-23",
+          "url": "https://developmentpermits.mountainview.gov/about-permits/apply-for-permit/building-permits/solar-permits"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Silicon Valley Clean Energy",
+        "note": "PG&E delivers and bills",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "SVCE annual cashout",
+        "value": "Each April",
+        "note": "Checks from $100 up to $5,000 for NEM customers",
+        "source": {
+          "publisher": "Silicon Valley Clean Energy",
+          "date": "2026-09-23",
+          "url": "https://svcleanenergy.org/net-energy-metering/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Mountain View's two solar permit paths",
+        "paragraphs": [
+          "The City splits solar permits by building type. SolarAPP+ is for roof-mounted or building-integrated panels on single-family homes, and it covers storage and electrical service panel upgrades in the same application. It verifies code compliance instantly without a traditional plan set and issues the permit automatically; the City then allows the inspection at least one business day after approval.",
+          "Everything else, including multifamily, commercial and industrial installations and any single-family job SolarAPP+ does not cover, goes through ePermitsMV. There the applicant uploads building plans and supporting documents, and the City collects the fee before issuing the permit. If a bid for your house names ePermitsMV, ask what about the design keeps it off SolarAPP+."
+        ]
+      },
+      {
+        "heading": "How SVCE treats a Mountain View solar account",
+        "paragraphs": [
+          "Silicon Valley Clean Energy bills its generation monthly and rolls credits forward month to month, so SVCE customers do not face a year of generation charges at once. For systems on net energy metering, meaning applications filed by April 14, 2023, SVCE pays annual surplus each April at PG&E's Net Surplus Compensation rate, with income-qualified customers paid 2.5 times that rate. Customers on SVCE's GreenPrime option pay $0.0074 more per kWh they draw and get $0.0074 more per kWh of monthly surplus.",
+          "Newer systems follow the Solar Billing Plan, which SVCE applies as designed by PG&E; since April 15, 2024, exports under it have been valued using the CPUC's Avoided Cost Calculator. SVCE also says PG&E does not generally interconnect systems larger than 110% of on-site demand, and offers its customers $1,000 off an electrical panel upgrade needed for solar through its Solar + Battery Assistant."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   "santa-clarita": {
     name: "Santa Clarita",
@@ -4451,6 +4780,570 @@ export const growthCities: Record<string, GrowthCity> = {
         "paragraphs": [
           "Richmond adds one local step. If a property is listed on the Richmond Historic Register, the applicant must obtain a certificate of appropriateness from the Planning Division before using SolarAPP+, and the Division issues it only when the installation is consistent with the Secretary of the Interior's standards for rehabilitation. Ask the bidder to check the register for your address before promising a timeline.",
           "On the bill side, MCE serves Richmond. Systems whose applications were filed before April 14, 2023 stay on net energy metering; later ones are on the Solar Billing Plan. MCE's annual cycle runs April through March and pays surplus at the Net Surplus Compensation rate plus $0.02 per kWh, up to $5,000 a year, with another $0.01 per kWh for customers on its Deep Green option; amounts of $200 or less arrive as a bill credit."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  carlsbad: {
+    name: "Carlsbad",
+    county: "San Diego County",
+    utility: "sdge",
+    bill: "Carlsbad was one of the three cities that launched Clean Energy Alliance in May 2021, with Del Mar and Solana Beach, so most Carlsbad homes buy generation from CEA while SDG&E delivers the power and sends one bill. SDG&E's Base Services Charge sits on the delivery side for every residential customer, CEA or not, and solar customers pay it too. A proposal should model both halves of your own bill.",
+    local: "In Carlsbad, a residential solar permit is issued as soon as the contractor has a SolarAPP+ approval and applies on the City's Customer Self Service online portal. The City describes SolarAPP+ as the route for licensed contractors to permit standard residential rooftop solar and storage systems, and it separately notes that the 2019 state green building code added photovoltaic requirements for some residential projects, checked through its Climate Action Plan consistency checklist.",
+    example: "If you are adding panels to an existing Carlsbad house, ask each bidder to confirm the job fits SolarAPP+ and to name who files on the Customer Self Service portal. If you are building or substantially remodeling, ask first whether the City's Climate Action Plan checklist already requires solar on the project, since that changes what you are shopping for.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "Permit route",
+        "Confirm the design qualifies for SolarAPP+ and say who applies on the City's Customer Self Service portal."
+      ],
+      [
+        "CEA and SDG&E bill",
+        "Model Clean Energy Alliance generation and SDG&E delivery, including the Base Services Charge, from your own bill."
+      ],
+      [
+        "True-up date",
+        "Show the month your NEM or Solar Billing Plan year closes and what the model assumes you export."
+      ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license and who answers service calls after installation."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Carlsbad: Go Green (SolarAPP+ and residential solar permits)",
+        "url": "https://www.carlsbadca.gov/departments/community-development/building/go-green"
+      },
+      {
+        "label": "Clean Energy Alliance: FAQs (service start dates, opt-out, Base Services Charge)",
+        "url": "https://thecleanenergyalliance.org/faqs/"
+      },
+      {
+        "label": "Clean Energy Alliance: Net Energy Metering explained",
+        "url": "https://thecleanenergyalliance.org/net-energy-metering-explained/"
+      },
+      {
+        "label": "SDG&E: Base Services Charge",
+        "url": "https://www.sdge.com/electric-billing"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How fast can I get a solar permit in Carlsbad?",
+        "The City says residential solar permits are issued immediately once the applicant has SolarAPP+ approval and applies on its Customer Self Service portal. Designs that SolarAPP+ does not approve go through the City's regular review instead."
+      ],
+      [
+        "Is Carlsbad served by Clean Energy Alliance?",
+        "Yes. Clean Energy Alliance began serving Carlsbad, Del Mar and Solana Beach in May 2021. SDG&E still delivers the power and sends the bill. You can opt out; if you do so more than 60 days after service began, SDG&E bars a return to CEA for one year."
+      ],
+      [
+        "What does Clean Energy Alliance pay for extra solar?",
+        "For a net energy metering account that produces more than it uses over its 12-month period, CEA pays Net Surplus Compensation of $0.06 per kWh, by check if the amount is $100 or more and as a credit toward the next period if it is less."
+      ]
+    ],
+    answer: "Solar companies in Carlsbad can get a permit the same day: the City issues residential solar permits as soon as the contractor has a SolarAPP+ approval and applies on its Customer Self Service portal. Clean Energy Alliance supplies Carlsbad's generation and SDG&E delivers it, and CEA pays 6 cents per kWh for a net energy metering account's yearly surplus. Compare at least three written bids built on your own bill.",
+    keyFacts: [
+      {
+        "label": "Permit timing",
+        "value": "Issued immediately",
+        "note": "After SolarAPP+ approval and a Customer Self Service application",
+        "source": {
+          "publisher": "City of Carlsbad",
+          "date": "2026-09-23",
+          "url": "https://www.carlsbadca.gov/departments/community-development/building/go-green"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Clean Energy Alliance",
+        "note": "Serving Carlsbad since May 2021; SDG&E delivers",
+        "source": {
+          "publisher": "Clean Energy Alliance",
+          "date": "2026-09-23",
+          "url": "https://thecleanenergyalliance.org/faqs/"
+        }
+      },
+      {
+        "label": "CEA surplus payment",
+        "value": "$0.06/kWh",
+        "note": "Net energy metering accounts; checks at $100 or more",
+        "source": {
+          "publisher": "Clean Energy Alliance",
+          "date": "2026-09-23",
+          "url": "https://thecleanenergyalliance.org/net-energy-metering-explained/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "How Carlsbad issues a rooftop solar permit",
+        "paragraphs": [
+          "Carlsbad uses SolarAPP+, an automated online plan review, for standard residential rooftop solar and battery systems. A licensed contractor enters the design in SolarAPP+, and once it is approved, applies on the City's Customer Self Service portal, where the City says the permit is issued immediately. That leaves little room for a bidder to blame the City for a long wait on a standard retrofit.",
+          "Two things can move a Carlsbad job off that fast track. A design SolarAPP+ will not approve, such as an unusual structure, goes to regular review. And for new homes and larger residential projects, the City points to photovoltaic requirements that arrived with the 2019 state green building code and asks applicants to use its Climate Action Plan consistency checklist to see whether they apply. Ask your bidder which of these cases your project is."
+        ]
+      },
+      {
+        "heading": "Clean Energy Alliance's solar rules",
+        "paragraphs": [
+          "Clean Energy Alliance, a community choice provider each of whose member city councils voted to join, started in Carlsbad, Del Mar and Solana Beach in May 2021 and has since added Escondido, San Marcos, Oceanside and Vista. Existing solar customers moved to CEA at their annual SDG&E true-up so their credits were not disrupted, and they kept their net energy metering version. To join CEA's solar program, called Personal Impact, you first enroll in SDG&E's program and are then enrolled with CEA automatically.",
+          "CEA settles charges and credits monthly and trues each account up at the end of its own 12-month period, which starts on the date the customer enrolled in net energy metering. Leftover credits are then zeroed out. If the system produced more than the home used over the year, CEA pays Net Surplus Compensation of $0.06 per kWh; $100 or more arrives as a check and smaller amounts roll into the next period.",
+          "Solar does not remove SDG&E's Base Services Charge, the fixed monthly delivery charge the CPUC approved in May 2024 under Assembly Bill 205. CEA notes that it applies to every residential customer whether CEA or SDG&E supplies the generation, and that solar homes pay it because they remain connected to the grid."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  "san-marcos": {
+    name: "San Marcos",
+    county: "San Diego County",
+    utility: "sdge",
+    bill: "San Marcos joined Clean Energy Alliance in April 2023, together with Escondido, and the Energy Commission's map places nearly the whole city inside CEA's area. On most San Marcos bills CEA supplies the generation and SDG&E delivers the power, adds its fixed Base Services Charge and sends the statement. Ask every bidder to start from that bill, not a generic SDG&E rate.",
+    local: "San Marcos runs two solar permit routes. A homeowner installing a roof-mounted system of 10 kW or less can apply online by choosing Roof Mounted Solar PV Expedited, which the City estimates takes one to three business days. Contractors use SolarAPP+, get a City of San Marcos business license, attach the City's Permit Declaration Form when they file, and cannot schedule an inspection until that form is complete.",
+    example: "Before you compare two San Marcos bids on price, ask each one which route it is using. A contractor bid should name its SolarAPP+ application, its City business license and who signs the Permit Declaration Form. If you are thinking of doing part of the work yourself, the homeowner route is limited to roof-mounted systems of 10 kW or less.",
+    sourceCheckedDate: "2026-09-23",
+    hasSavingsGuide: false,
+    checks: [
+      [
+        "Permit route",
+        "Say whether the job goes through SolarAPP+ or the homeowner expedited route, and who files it."
+      ],
+      [
+        "City paperwork",
+        "Confirm a current City of San Marcos business license and who completes the Permit Declaration Form."
+      ],
+      [
+        "Zoning height",
+        "Confirm the panels stay within the height limit set by the property's zoning."
+      ],
+      [
+        "CEA and SDG&E bill",
+        "Model Clean Energy Alliance generation and SDG&E delivery from your own bill, including the Base Services Charge."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of San Marcos: Solar Permits",
+        "url": "https://www.sanmarcosca.gov/Business-Services/Building-Division/Solar-Permits"
+      },
+      {
+        "label": "Clean Energy Alliance: FAQs (service start dates, Base Services Charge)",
+        "url": "https://thecleanenergyalliance.org/faqs/"
+      },
+      {
+        "label": "Clean Energy Alliance: Net Energy Metering explained",
+        "url": "https://thecleanenergyalliance.org/net-energy-metering-explained/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How do I get a solar permit in San Marcos, CA?",
+        "A contractor applies through SolarAPP+, pays its processing fee, gets a City of San Marcos business license and files the City forms, including the Permit Declaration Form, in the City's permitting system. A homeowner with a roof-mounted system of 10 kW or less can use the Roof Mounted Solar PV Expedited option instead."
+      ],
+      [
+        "How long does a San Marcos solar permit take?",
+        "For the homeowner expedited route, the City estimates one to three business days. It does not publish a time for SolarAPP+ applications on the same page."
+      ],
+      [
+        "Who supplies electricity in San Marcos?",
+        "Clean Energy Alliance has supplied generation in San Marcos since April 2023. SDG&E delivers the power and sends the bill."
+      ]
+    ],
+    answer: "San Marcos gives solar two permit routes: contractors use SolarAPP+ plus a City business license and a Permit Declaration Form, and homeowners with a roof-mounted system of 10 kW or less can apply online on an expedited path the City estimates at one to three business days. Clean Energy Alliance supplies San Marcos generation and SDG&E delivers it. Get at least three written bids that name the route and model your own bill.",
+    keyFacts: [
+      {
+        "label": "Homeowner expedited permit",
+        "value": "1 to 3 business days",
+        "note": "Roof-mounted systems of 10 kW or less",
+        "source": {
+          "publisher": "City of San Marcos",
+          "date": "2026-09-23",
+          "url": "https://www.sanmarcosca.gov/Business-Services/Building-Division/Solar-Permits"
+        }
+      },
+      {
+        "label": "Before inspection",
+        "value": "Permit Declaration Form",
+        "note": "Inspection cannot be scheduled without it",
+        "source": {
+          "publisher": "City of San Marcos",
+          "date": "2026-09-23",
+          "url": "https://www.sanmarcosca.gov/Business-Services/Building-Division/Solar-Permits"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Clean Energy Alliance",
+        "note": "Since April 2023; SDG&E delivers",
+        "source": {
+          "publisher": "Clean Energy Alliance",
+          "date": "2026-09-23",
+          "url": "https://thecleanenergyalliance.org/faqs/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "The contractor route and the homeowner route",
+        "paragraphs": [
+          "The City of San Marcos lays out six steps for contractors: confirm the project is eligible, submit the design to SolarAPP+, pay SolarAPP+'s processing fee, obtain a City of San Marcos business license, log into the City's permitting system to submit the forms and pay the permit fees with the Permit Declaration Form attached, and schedule the inspection. The City is explicit that the inspection cannot be booked without a completed Permit Declaration Form.",
+          "Homeowners doing their own project have a separate path. A roof-mounted system that produces 10 kW or less can be submitted through the City's online portal under the Roof Mounted Solar PV Expedited option, with an estimated one to three business days of processing. The City also publishes an eligibility checklist, standard plans for string or central inverters and for microinverters, and a reroofing certification. Either way, panels cannot exceed the height limit set by the property's zoning."
+        ]
+      },
+      {
+        "heading": "What Clean Energy Alliance means for a San Marcos solar home",
+        "paragraphs": [
+          "Clean Energy Alliance began serving San Marcos in April 2023. A home that already had solar kept its net energy metering version when it moved to CEA; a new system first enrolls in SDG&E's program and is then placed in CEA's solar program automatically. CEA calculates charges and credits monthly and closes each account's year on the anniversary of its net metering enrollment.",
+          "At that annual true-up, CEA zeroes out leftover credits, and a net energy metering account that produced more than it used is paid $0.06 per kWh of surplus, by check at $100 or more and otherwise as a credit toward the next year. The fixed SDG&E Base Services Charge stays on the delivery side whether or not you have solar. Ask each bidder how much of the system's output its model sends to the grid, and at what value."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  "santa-ana": {
+    name: "Santa Ana",
+    county: "Orange County",
+    utility: "sce",
+    bill: "Santa Ana is Southern California Edison territory for both generation and delivery. The Energy Commission's map shows no community choice provider over the city, and Orange County Power Authority's member cities do not include Santa Ana. Since November 2025 SCE bills have carried a fixed Base Services Charge that solar does not reduce, so a proposal should show what remains on your SCE bill, not just what it offsets.",
+    local: "Since June 1, 2026, the City of Santa Ana issues residential solar permits only after SolarAPP+ approval; projects without it are not processed. Only licensed contractors registered with SolarAPP+ may apply, permit runners may not, and ballasted systems and unpermitted structures are not eligible. SolarAPP+ charges $35, which covers up to three revisions, and the City's own permit fee is the same as for a regular solar permit.",
+    example: "If a Santa Ana bid includes a battery, ask where it will go before you sign. The Planning Division does not allow storage equipment where it can be seen from the street without approved screening, and a battery in a garage cannot push the equipment or its protective bollard into the required parking space. The Fire Department also requires smoke alarms, and in some rooms an interconnected heat alarm, where storage is installed.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "SolarAPP+ approval",
+        "Confirm the contractor is a licensed company registered with SolarAPP+ and will file the approval in the City's PBx portal."
+      ],
+      [
+        "Structure eligibility",
+        "Confirm every structure getting panels is permitted and the design is not ballasted."
+      ],
+      [
+        "Battery location",
+        "Show where storage goes, how it is screened from the street and that it stays out of the required parking space."
+      ],
+      [
+        "SCE bill",
+        "Model SCE's Solar Billing Plan and the fixed Base Services Charge from your own bill."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Santa Ana: SolarAPP+ automated solar plan review (eligibility, fees, FAQ)",
+        "url": "https://www.santa-ana.org/solarapp-automated-solar-plan-review/"
+      },
+      {
+        "label": "City of Santa Ana: residential solar permit changes effective June 1, 2026",
+        "url": "https://www.santa-ana.org/upcoming-changes-to-the-residential-solar-permit-requirement-effective-june-1st-2026/"
+      },
+      {
+        "label": "SCE: Solar Billing Plan",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "SCE: Base Services Charge",
+        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+      },
+      {
+        "label": "Orange County Power Authority: about and member cities",
+        "url": "https://www.ocpower.org/about-us/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "Do I need SolarAPP+ for a solar permit in Santa Ana?",
+        "Yes. Since June 1, 2026 the City issues residential solar permits only after SolarAPP+ approval, and applications without it are not processed."
+      ],
+      [
+        "How much is the SolarAPP+ fee in Santa Ana?",
+        "SolarAPP+ charges a one-time $35 fee that covers up to three revisions. The City's application fee is separate and the same as for a regular solar permit."
+      ],
+      [
+        "Where can a home battery go in Santa Ana?",
+        "Not where it is visible from the public right-of-way unless it is screened with a design the Planning Division approves. In a garage, the battery and its protective bollard cannot encroach into the required parking space."
+      ]
+    ],
+    answer: "Every residential solar permit in Santa Ana now goes through SolarAPP+: since June 1, 2026 the City will not process an application without its approval, and only licensed contractors registered with SolarAPP+ can apply. Batteries face extra local rules on screening, parking space and alarms. SCE supplies and delivers Santa Ana's power. Compare at least three written bids that model your own SCE bill.",
+    keyFacts: [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+ only",
+        "note": "Required for residential solar since June 1, 2026",
+        "source": {
+          "publisher": "City of Santa Ana",
+          "date": "2026-09-23",
+          "url": "https://www.santa-ana.org/upcoming-changes-to-the-residential-solar-permit-requirement-effective-june-1st-2026/"
+        }
+      },
+      {
+        "label": "SolarAPP+ fee",
+        "value": "$35",
+        "note": "Covers up to 3 revisions; City permit fee is separate",
+        "source": {
+          "publisher": "City of Santa Ana",
+          "date": "2026-09-23",
+          "url": "https://www.santa-ana.org/solarapp-automated-solar-plan-review/"
+        }
+      },
+      {
+        "label": "Electric utility",
+        "value": "SCE",
+        "note": "No community choice provider mapped over the city",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Santa Ana's SolarAPP+ rules",
+        "paragraphs": [
+          "SolarAPP+ in Santa Ana covers single-family homes, duplexes, accessory dwelling units and other permitted residential structures inside the city. The contractor answers a question in SolarAPP+ confirming the building is permitted; an unpermitted structure is ineligible for the automated route. Once SolarAPP+ approves the design, the contractor enters the approval ID in the City's PBx portal, uploads the approval documents and prints the construction permit and job card right away.",
+          "Changes after approval follow a set path. SolarAPP+ allows up to three revisions under the original $35 fee, each with a new approval ID, and the contractor then files a revision request in PBx, which the City says it processes within 72 business hours. A main panel upgrade can be added in the SolarAPP+ application itself. At inspection, the approval and permit must be printed and on site, and the inspector may still ask for plans."
+        ]
+      },
+      {
+        "heading": "Battery placement and SCE's bill",
+        "paragraphs": [
+          "Santa Ana adds two conditions to storage that many cities leave to the general code. Planning does not allow batteries, power walls and similar equipment where they are visible from the public right-of-way, and any screening needs Planning Division approval. Fire rules require smoke alarms in rooms, basements and attached garages where storage is installed, with a listed heat alarm interconnected to them where a smoke alarm cannot go. A bid that includes a battery should show its location on the plan.",
+          "On the bill side, a new Santa Ana system is on SCE's Solar Billing Plan. Exports earn Energy Export Credits, SCE sends a yearly settlement bill in the month the system started service, and any leftover surplus is paid at SCE's Net Surplus Compensation Rate, which SCE puts at about $0.02 per kWh. SCE's fixed Base Services Charge, $24.15 a month for customers not on CARE or FERA, stays either way."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  "san-bernardino": {
+    name: "San Bernardino",
+    county: "San Bernardino County",
+    utility: "sce",
+    bill: "San Bernardino is Southern California Edison territory, and the Energy Commission's map shows no community choice provider over the city, so SCE supplies generation and delivery on one bill. A new system goes on SCE's Solar Billing Plan, with exports credited monthly and a yearly settlement. SCE's fixed Base Services Charge stays on the bill whatever the system produces.",
+    local: "The City of San Bernardino sends residential solar and storage permits under 38.4 kilowatts to the Symbium portal for instantaneous plan review under Senate Bill 379, and says processing may take about one to three business days. An active City business license is required before the permit is issued, and a main panel upgrade needs its own electrical permit from the City's Solar Division of Community Development and Housing.",
+    example: "Ask each San Bernardino bidder whether the job will go through Symbium or the Building and Safety counter at Vanir Tower, and whether the price includes the separate electrical permit if your main panel needs upgrading. A bid that skips either answer may be assuming a timeline or a permit the City will not give.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "Permit route",
+        "Say whether the project uses Symbium or an in-person counter submittal, and why."
+      ],
+      [
+        "City business license",
+        "Confirm the contractor holds an active City of San Bernardino business license."
+      ],
+      [
+        "Panel upgrade permit",
+        "If the main panel is being replaced, confirm the separate electrical permit is in the scope and price."
+      ],
+      [
+        "Agent authorization",
+        "If someone other than the license holder signs for the permit, ask for the notarized letter of authorization the City requires."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of San Bernardino: apply for residential solar permits (Symbium, SB 379)",
+        "url": "https://www.sanbernardino.gov/1650/Apply-for-Residential-Solar-Permits"
+      },
+      {
+        "label": "SCE: Solar Billing Plan",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "SCE: Base Services Charge",
+        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How long does a solar permit take in San Bernardino?",
+        "The City says permits processed through its Symbium portal may take about one to three business days, depending on staff availability; missing documents can delay them."
+      ],
+      [
+        "Can I get a solar permit in San Bernardino without Symbium?",
+        "Yes. Applicants who are not eligible for Symbium, or who prefer not to use it, can apply in person at the Building and Safety counter. Those applications get standard plan review unless a system of 10 kW or less meets the City's expedited eligibility checklist."
+      ],
+      [
+        "Does a panel upgrade need its own permit in San Bernardino?",
+        "Yes. The City says electric panel upgrades require a separate electrical permit, which is obtained through the Solar Division of Community Development and Housing."
+      ]
+    ],
+    answer: "Solar companies in San Bernardino apply for residential solar and battery permits through the City's Symbium portal, which the City says may take about one to three business days, and need an active City business license before the permit is issued. A main panel upgrade needs a separate electrical permit. SCE supplies and delivers San Bernardino's power. Compare at least three written bids that model your own SCE bill.",
+    keyFacts: [
+      {
+        "label": "Permit platform",
+        "value": "Symbium",
+        "note": "Solar and storage under 38.4 kW, per SB 379",
+        "source": {
+          "publisher": "City of San Bernardino",
+          "date": "2026-09-23",
+          "url": "https://www.sanbernardino.gov/1650/Apply-for-Residential-Solar-Permits"
+        }
+      },
+      {
+        "label": "Processing time",
+        "value": "About 1 to 3 business days",
+        "note": "Depends on staff availability",
+        "source": {
+          "publisher": "City of San Bernardino",
+          "date": "2026-09-23",
+          "url": "https://www.sanbernardino.gov/1650/Apply-for-Residential-Solar-Permits"
+        }
+      },
+      {
+        "label": "Electric utility",
+        "value": "SCE",
+        "note": "No community choice provider mapped over the city",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "What San Bernardino asks for with a solar permit",
+        "paragraphs": [
+          "The Symbium application needs a permit application and the contractor or owner-builder declarations; an owner-builder completes the City's Permit Application Declaration. If a representative of the contracting company signs for the permit instead of the license holder, the City requires a notarized letter of authorization. An active City of San Bernardino business license must be in place before the permit is issued.",
+          "The inspection has its own paperwork. The documents submitted through Symbium, bearing their submittal date and time stamp, must be on site in legible hard copy: an 11 by 14 inch site map, the single-line diagram, 8 by 11 inch equipment specification sheets, the inspection checklist and the job card. Ask your installer who prints and brings them."
+        ]
+      },
+      {
+        "heading": "When a San Bernardino job goes to the counter",
+        "paragraphs": [
+          "The City strongly encourages Symbium but keeps a counter route at Vanir Tower, 290 North D Street, for projects that are not eligible or applicants who prefer it. Those applications get standard plan review unless a system of 10 kW or less meets the City's Eligibility Checklist for Expedited Residential Solar Permitting. A counter submittal needs one hard-copy set of 11 by 17 inch plans with specification sheets, structural calculations, the application, the declaration, the expedited checklist and a valid business license.",
+          "Once the system is running, SCE's Solar Billing Plan credits exports with Energy Export Credits that vary by hour, and a yearly settlement bill arrives in the month the system started service. SCE puts its Net Surplus Compensation Rate for any leftover surplus at about $0.02 per kWh, and says that storing your own energy for expensive hours is now worth more than exporting it. Ask each bidder how much of your output its model assumes you export."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  lancaster: {
+    name: "Lancaster",
+    county: "Los Angeles County",
+    utility: "sce",
+    bill: "Lancaster runs its own community choice program, Lancaster Energy, which buys the electricity while Southern California Edison delivers it, repairs the lines and sends the bill. Lancaster Energy's options include Clear Choice, Smart Choice at 100% renewable content and Personal Choice for solar owners, and you can opt out. A proposal should model whichever option is on your bill plus SCE's delivery charges.",
+    local: "The City of Lancaster issues rooftop solar and battery storage permits instantly through Symbium: you enter the property address, choose the rooftop solar or battery storage option, answer questions about the system, and submit and pay online, and the permit is issued automatically without manual review or a trip to the counter. Symbium also checks the contractor's license and business license automatically.",
+    example: "Because Lancaster's Symbium portal verifies the contractor's license and business license on its own, a bidder that says it cannot get the instant permit is telling you something about its paperwork. Ask each bidder to confirm it will file through Symbium, then compare the Personal Choice credit its model assumes for your exports.",
+    sourceCheckedDate: "2026-09-23",
+    hasSavingsGuide: false,
+    checks: [
+      [
+        "Instant permit",
+        "Confirm the bidder will file through the City's Symbium portal and that its license and business license will pass Symbium's check."
+      ],
+      [
+        "Lancaster Energy option",
+        "Model the Lancaster Energy option on your bill, or SCE if you opted out, plus SCE delivery charges."
+      ],
+      [
+        "Personal Choice credit",
+        "Show what the model assumes for monthly export credits and for the October true-up."
+      ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license and who handles service calls after installation."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Lancaster: instant permits (Symbium) for rooftop solar and battery storage",
+        "url": "https://www.cityoflancasterca.org/our-city/departments-services/community-development/building-and-safety/instant-permits"
+      },
+      {
+        "label": "Lancaster Energy: options and how it works with SCE",
+        "url": "https://lancasterenergy.com/"
+      },
+      {
+        "label": "Lancaster Energy: Personal Choice for solar customers",
+        "url": "https://lancasterenergy.com/your-options/personal-choice/"
+      },
+      {
+        "label": "SCE: Base Services Charge",
+        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How do I get a solar permit in Lancaster, CA?",
+        "Through the City's Symbium portal. Enter the address, choose rooftop solar or battery storage, answer the questions about the system and submit and pay online; the City says permits are issued automatically, without manual review or an in-person visit."
+      ],
+      [
+        "What is Lancaster Energy?",
+        "Lancaster's community choice program. It buys the electricity for Lancaster customers, while SCE delivers it, maintains the lines and sends the bill. Customers can choose among its options or opt out."
+      ],
+      [
+        "What does Lancaster Energy pay solar customers?",
+        "Solar customers on net energy metering with SCE are enrolled in Personal Choice. Usage and exports are tallied monthly, and at the October true-up, production above consumption earns a rebate based on $0.06 per kWh."
+      ]
+    ],
+    answer: "Solar companies in Lancaster, California can get a rooftop solar or battery permit instantly through the City's Symbium portal, which issues it automatically and checks the contractor's licenses on its own. Lancaster Energy, the city's own community choice program, buys the power and SCE delivers it; its Personal Choice plan pays solar owners $0.06 per kWh for surplus at an October true-up. Compare at least three written bids.",
+    keyFacts: [
+      {
+        "label": "Permit platform",
+        "value": "Symbium, instant",
+        "note": "Rooftop solar or battery storage, issued automatically",
+        "source": {
+          "publisher": "City of Lancaster",
+          "date": "2026-09-23",
+          "url": "https://www.cityoflancasterca.org/our-city/departments-services/community-development/building-and-safety/instant-permits"
+        }
+      },
+      {
+        "label": "Buys the power",
+        "value": "Lancaster Energy",
+        "note": "SCE delivers and bills",
+        "source": {
+          "publisher": "Lancaster Energy",
+          "date": "2026-09-23",
+          "url": "https://lancasterenergy.com/"
+        }
+      },
+      {
+        "label": "Solar surplus rebate",
+        "value": "$0.06/kWh",
+        "note": "Personal Choice, at the October true-up",
+        "source": {
+          "publisher": "Lancaster Energy",
+          "date": "2026-09-23",
+          "url": "https://lancasterenergy.com/your-options/personal-choice/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Lancaster's instant permit",
+        "paragraphs": [
+          "Lancaster issues instant residential solar permits through Symbium. The portal starts from the property address and pulls in the parcel's data and permit history. You choose Rooftop Solar or Battery Storage Installation, answer questions about the proposed system, and submit the application and payment online. The City says the permit is then issued automatically, without manual review or an in-person visit, and status updates arrive by email and on a dashboard.",
+          "Symbium also verifies the contractor's license and business license as part of the application. That makes the permit a quick check on the company you hire, since the application depends on licenses the portal can confirm. Ask who will schedule the inspection once the work is done."
+        ]
+      },
+      {
+        "heading": "Lancaster Energy and solar",
+        "paragraphs": [
+          "Lancaster Energy splits the job with SCE: it buys and builds cleaner energy supplies, and SCE delivers the energy, repairs the lines and handles the bill. Its Clear Choice option is described as its lowest-rate option with higher renewable content than SCE, Smart Choice supplies 100% renewable energy, and customers may opt out to SCE.",
+          "Solar owners are placed in Personal Choice. If you are already on net energy metering with SCE, enrollment is automatic; a new system enrolls through SCE, usually with the installer's help, and is then moved into Personal Choice. At the end of each month Lancaster Energy tallies the energy you drew and sent to the grid, billing you if you used more and crediting you if you sent more. Each October at the true-up, if production exceeded consumption over the year, it issues a rebate based on $0.06 per kWh. SCE's fixed Base Services Charge, $24.15 a month for customers not on CARE or FERA, stays on the delivery side."
         ]
       }
     ],

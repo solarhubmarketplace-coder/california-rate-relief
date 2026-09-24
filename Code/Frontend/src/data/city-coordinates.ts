@@ -45,6 +45,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   irvine: [33.6772013, -117.7738402], // Irvine city, GEOID 0636770
   'lake-elsinore': [33.6846868, -117.3344535], // Lake Elsinore city, GEOID 0639486
   lakewood: [33.8470755, -118.1221583], // Lakewood city, GEOID 0639892
+  lancaster: [34.6934638, -118.1753047], // Lancaster city, GEOID 0640130 (queried 2026-09-23)
   lincoln: [38.8774847, -121.3044800], // Lincoln city, GEOID 0641474
   livermore: [37.6867558, -121.7606574], // Livermore city, GEOID 0641992
   lodi: [38.1218057, -121.2930667], // Lodi city, GEOID 0642202
