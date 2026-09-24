@@ -145,6 +145,22 @@ export interface CityCostRow {
    * the FAQPage JSON-LD.
    */
   extraFaqs?: { question: string; answer: string }[];
+  /**
+   * Added 2026-09-24 (Tier 3 city-cost wave). A short "Electricity rates in
+   * <city>" section for a city whose /solar-savings bill page 301s to this
+   * page, so the "electricity rates <city>" question is answered here: who
+   * supplies the power and what the utility's own residential schedule
+   * charges, with the schedule's effective date. Every figure is restated
+   * from the sources below. The tracker's average rate is NOT retyped here;
+   * the utility section already imports it. Rendered as its own H2 after the
+   * utility section, as one FAQ entry, and in the sources list.
+   */
+  localRates?: {
+    heading: string;
+    paragraphs: string[];
+    faq: { question: string; answer: string };
+    sources: CityCostRowSource[];
+  };
 }
 
 /**
@@ -553,6 +569,47 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes. Single-family and duplex projects can use SolarAPP+ and then the City's Accela Citizens Access portal. Commercial systems do not qualify for SolarAPP+ and apply for a standard solar permit in the same portal.",
     sourcesFetchedAt: "2026-09-23",
+    // 2026-09-24 (Tier 3): /solar-savings/fresno 301s here, and "electricity
+    // rates fresno" passes Rule 3, so the page now answers it from PG&E's
+    // own tariffs.
+    localRates: {
+      heading: 'Electricity rates in Fresno',
+      paragraphs: [
+        "PG&E supplies both generation and delivery in Fresno. The California Energy Commission's service-territory map places the whole city in PG&E's territory, and PG&E's list of community choice aggregators names none serving Fresno, so the rates below are the bundled PG&E prices a Fresno bill uses.",
+        "On E-1, PG&E's tiered residential schedule, energy costs $0.32561 per kWh up to the home's baseline allowance and $0.40702 per kWh above it. On E-TOU-C, which treats 4 to 9 p.m. every day as peak, summer energy (June 1 through September 30) is $0.52240 per kWh at peak and $0.39940 off-peak, and winter energy is $0.39757 and $0.36757, with a $0.08140 per kWh credit on baseline usage. Both schedules add a base services charge, $0.79343 a day for a household that does not qualify for the two lower income tiers. These rates took effect June 1, 2026.",
+        "The baseline allowance is set by territory, and that is where a Fresno bill differs from one elsewhere in PG&E's territory. PG&E's Preliminary Statement Part A puts the part of Fresno County below 3,500 feet in baseline territory R, and the U.S. Geological Survey puts a point near the center of the city at about 310 feet. In territory R, E-1's basic baseline is 17.7 kWh a day in summer and 10.4 kWh a day in winter, or 19.9 and 26.7 kWh for an all-electric home.",
+        "A solar quote's savings estimate should say which of these schedules it assumes, because the same kWh is priced differently on each.",
+      ],
+      faq: {
+        question: 'What are electricity rates in Fresno?',
+        answer:
+          "Fresno is served by PG&E for both generation and delivery. Since June 1, 2026, PG&E's tiered E-1 schedule charges $0.32561 per kWh within the baseline allowance and $0.40702 above it, plus a base services charge of $0.79343 a day for households outside the two lower income tiers. Fresno sits in PG&E baseline territory R, where the basic summer allowance is 17.7 kWh a day and the winter allowance 10.4 kWh. The time-of-use schedule E-TOU-C charges $0.52240 per kWh from 4 to 9 p.m. in summer.",
+      },
+      sources: [
+        {
+          label: 'PG&E, Electric Schedule E-1, Residential Services (total bundled rates effective June 1, 2026, Advice 7921-E; baseline quantities by territory)',
+          url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-1.pdf',
+          verifiedAt: '2026-09-24',
+        },
+        {
+          label: 'PG&E, Electric Schedule E-TOU-C, Residential Time-of-Use (Peak Pricing 4-9 p.m. Every Day) (total bundled rates effective June 1, 2026, Advice 7921-E)',
+          url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-C.pdf',
+          verifiedAt: '2026-09-24',
+        },
+        {
+          label: 'PG&E, Electric Preliminary Statement Part A (baseline territories by county and elevation: Fresno County under 3,500 feet, territory R)',
+          url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_PRELIM_A.pdf',
+          verifiedAt: '2026-09-24',
+        },
+        {
+          label: 'U.S. Geological Survey, Elevation Point Query Service (Census internal point of the City of Fresno, 36.7829, -119.7936: about 310 feet)',
+          url: 'https://epqs.nationalmap.gov/v1/json?x=-119.7936074&y=36.7829379&wkid=4326&units=Feet&includeDate=false',
+          verifiedAt: '2026-09-24',
+        },
+        { ...PGE_CCA_LIST, verifiedAt: '2026-09-24' },
+        { ...CEC_SERVICE_TERRITORY_SOURCE, verifiedAt: '2026-09-24' },
+      ],
+    },
   },
   {
     slug: "grass-valley",
@@ -582,14 +639,31 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Hollister",
     county: "San Benito County",
     utilityKey: "pge",
+    // 2026-09-24 (Tier 3): the Building Division's current fee schedule,
+    // effective August 18, 2025, is a scanned PDF; its solar line was read by
+    // OCR and checked against the page image. CCA sourced to 3CE's own list.
     cca: "Central Coast Community Energy (3CE)",
+    ccaSource: CCE_MEMBERS,
     permitUrl: "https://hollister.ca.gov/government/development_services/solar_permits_for_photovoltaic_(pv)_systems_and_ev_charging_stations.php",
     permitFeeNote:
-      "The City's adopted Building Permit Fee Schedule (effective August 2022) includes a specific, separately-listed flat fee line item for a residential photovoltaic permit. The schedule is published as a scanned image PDF, and the dollar figure was not reliably machine-readable, so it is not reported here; consult the fee schedule PDF directly for the current amount.",
-    permitFeeSource: "City of Hollister Building Permit Fee Schedule (effective August 2022, PDF) - amount not machine-readable",
+      "Hollister's Building Division fee schedule, effective August 18, 2025, lists a flat $400.00 fee for a solar photovoltaic permit. The schedule marks it as subject to the state's Strong Motion Instrumentation fee and California Building Standards fee, both calculated on the project's valuation, and says 65 percent of a building permit fee is paid as a plan review deposit at submittal, with the rest at issuance. A standard reroof is a separate $495.00 permit.",
+    permitFeeSource: "City of Hollister, Solar Permits for Photovoltaic (PV) Systems and EV Charging Stations",
+    permitSources: [
+      {
+        label: "City of Hollister, Building Division Fee Schedule, effective August 18, 2025 (Solar - Photovoltaic; Standard Reroof; plan review deposit), linked as the Building Division 2025 Fee Schedule",
+        url: "https://hollister.ca.gov/Community%20Development%20Department/Building/Building%20Fee%20Schedule%202025.pdf",
+        verifiedAt: "2026-09-24",
+      },
+      {
+        label: "City of Hollister, Application Forms and Fees (Building Division forms and Permit Center submittal appointments)",
+        url: "https://hollister.ca.gov/government/departments/development_services/application_forms_and_fees.php",
+        verifiedAt: "2026-09-24",
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "Not yet available per the Building Division page, which lists \"Online Permitting (Coming Soon)\" as of fetch. SolarAPP+ is not mentioned on the city's solar permit page found.",
-    sourcesFetchedAt: "2026-09-18",
+      "No online solar route is described. Hollister's Building Division pages offer no online or automated permit filing: the City's solar page lists only the building permit application, and the forms page books submittal appointments with the Permit Center. The California Energy Commission's SB 379 data, which each city reports itself, lists Hollister as without a platform, with a September 2024 deadline.",
+    sourcesFetchedAt: "2026-09-24",
   },
   {
     slug: "lincoln",
@@ -2250,6 +2324,59 @@ export const CITY_COST_ROWS: CityCostRow[] = [
       },
     ],
   },
+  {
+    slug: 'redwood-city',
+    city: 'Redwood City',
+    county: 'San Mateo County',
+    utilityKey: 'pge',
+    cca: 'WestLight Energy (formerly Peninsula Clean Energy)',
+    ccaSource: WESTLIGHT_HOME,
+    permitUrl: 'https://www.redwoodcity.org/departments/community-development-and-transportation/building-inspection-code-enforcement/solarapp-automatic-permitting',
+    permitFeeNote:
+      "Redwood City's Master Fee Schedule for fiscal year 2026-27, effective July 1, 2026, lists a residential solar system of 15 kW or less at $450.00 and one of 16 kW or more at $450.00 plus $15.00 per kW. The same building fee table lists an electrical service permit of up to 200 amperes at $431.65 and a residential reroof at $645.25, and it adds a GIS maintenance and technology fee of 13 percent of the building permit fee without saying whether that applies to a solar permit.",
+    permitFeeSource: 'City of Redwood City, SolarAPP+ Automatic Permitting',
+    permitSources: [
+      {
+        label: 'City of Redwood City, Master Fee Schedule FY 2026-2027, effective July 1, 2026 (Building Inspection & Code Enforcement: Photovoltaic Solar Systems; Electrical Permit Fees, Services; Reroof; GIS maintenance/Technology Fee)',
+        url: 'https://www.redwoodcity.org/home/showpublisheddocument/31457/639191130428800000',
+        verifiedAt: '2026-09-24',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. Redwood City offers automatic solar permitting through SolarAPP+, and residential solar permits are then pulled through the City's eTRAKiT portal following its SolarAPP+ permitting guide. The California Energy Commission's SB 379 data lists Redwood City's platform as SolarAPP+.",
+    sourcesFetchedAt: '2026-09-24',
+  },
+  {
+    slug: 'cupertino',
+    city: 'Cupertino',
+    county: 'Santa Clara County',
+    utilityKey: 'pge',
+    cca: 'Silicon Valley Clean Energy',
+    ccaSource: SVCE_ABOUT,
+    permitUrl: 'https://www.cupertino.gov/Your-City/Departments/Community-Development/Building/Permits/Instant-Solar-Permit-SolarAPP',
+    permitFeeNote:
+      "Cupertino's building fee schedule (Resolution 26-047, fees effective July 1, 2026) lists a residential photovoltaic system up to 15 kW at $450, plus $15 for each kW above 15 kW. A battery energy storage system is $746 for up to three batteries and $439 for each additional one, and an electrical service of up to 200 amperes is $99. The schedule adds a 5.8 percent technology fee per permit. The City says the solar permit fee is an inspection fee that covers two inspections of the same item, and SolarAPP+ charges its own processing fee, currently $25.",
+    permitFeeSource: 'City of Cupertino, Instant Solar Permit - SolarAPP+',
+    permitSources: [
+      {
+        label: 'City of Cupertino, Fee Schedule - Building Fees (Resolution 26-047, fees effective July 1, 2026): Schedule D, Table 2 Services; Table 3 Photovoltaic System, Battery Energy Storage System and Technology Fee',
+        url: 'https://www.cupertino.gov/files/assets/city/v/1/departments/documents/community-development/building/forms-amp-handouts-amp-fees/fees/fee-schedule-building-fees.pdf',
+        verifiedAt: '2026-09-24',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Paused for now. Contractors registered with SolarAPP+ can normally get an Instant Solar Permit for a residential rooftop system, with or without storage and optionally with a main electrical service upgrade, by uploading the SolarAPP+ approval to the City's Citizen Access portal. On September 24, 2026 the City's page said the instant permit service is not available at this time due to an upgrade with its business license system, and that all permits must be submitted by email to the Permit Center.",
+    sourcesFetchedAt: '2026-09-24',
+    extraFaqs: [
+      {
+        question: 'Can I still get an instant solar permit in Cupertino?',
+        answer:
+          "Not at the moment. Cupertino's Instant Solar Permit runs through SolarAPP+ and the City's Citizen Access portal, but on September 24, 2026 the City's page said the service is not available during an upgrade of its business license system and that all permits must be submitted by email to the Permit Center. Ask the installer which route your permit is taking and how that affects the schedule. The City's fee schedule has one residential solar line, $450 up to 15 kW, and SolarAPP+ adds its own $25 processing fee when it is used.",
+      },
+    ],
+  },
 ];
 
 /**
@@ -2297,6 +2424,18 @@ export function unsourcedFields(row: CityCostRow): string[] {
     )
   ) {
     missing.push('extraFaqs');
+  }
+  if (row.localRates) {
+    const { heading, paragraphs, faq, sources } = row.localRates;
+    const texts = [heading, ...paragraphs, faq.question, faq.answer];
+    if (
+      paragraphs.length === 0 ||
+      texts.some((text) => text.trim() === '' || text.includes(UNSOURCED)) ||
+      sources.length === 0 ||
+      sources.some(badSource)
+    ) {
+      missing.push('localRates');
+    }
   }
   return missing;
 }

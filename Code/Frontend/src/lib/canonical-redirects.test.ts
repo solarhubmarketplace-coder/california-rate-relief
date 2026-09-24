@@ -299,7 +299,7 @@ test('Tier 2 wave (citycos): its companies pages render and are not redirected',
 const T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN = new Set([
   'concord', 'richmond', 'berkeley', 'santa-clara', 'san-clemente',
   'lakewood', 'victorville', 'glendale', 'santa-barbara', 'vacaville',
-  'san-ramon', 'redding',
+  'san-ramon', 'redding', 'cupertino',
 ]);
 for (const slug of T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
 
@@ -324,7 +324,7 @@ test('Tier 3 city-cost wave: each new cost page renders and its companies twin s
 // redirect check below. The full list is in _ta_manifest/t3-citycost.json.
 // No row is added to the redirect table.
 const T3_COST_PAGES_PENDING_COMPANIES_TWIN = new Set([
-  'clovis', 'elk-grove', 'mission-viejo', 'saratoga', 'gilroy',
+  'clovis', 'elk-grove', 'mission-viejo', 'saratoga', 'gilroy', 'redwood-city',
 ]);
 for (const slug of T3_COST_PAGES_PENDING_COMPANIES_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
 

@@ -987,7 +987,7 @@ const cecSb379T3: LocalGuidanceSource = {
   url: 'https://www.energy.ca.gov/media/9247',
   verifiedAt: verified20260923,
   scope:
-    'Self-reported platform status per jurisdiction, data last updated August 3, 2026; the CEC says it does not certify compliance. Rows used for the Tier 3 cities: Santa Clara, Clovis, Berkeley, Concord, Richmond, San Clemente, Encinitas, San Marcos, Lakewood, Elk Grove, Mission Viejo, Victorville, Tulare, Yucaipa, Rocklin and Grass Valley (SolarAPP+); Glendale and Santa Barbara (custom platform); Saratoga and Vacaville (Symbium); Napa (without a platform); Gilroy, San Ramon, Redding and Yuba City (SolarAPP+); Windsor and Ventura (Symbium).',
+    'Self-reported platform status per jurisdiction, data last updated August 3, 2026; the CEC says it does not certify compliance. Rows used for the Tier 3 cities: Santa Clara, Clovis, Berkeley, Concord, Richmond, San Clemente, Encinitas, San Marcos, Lakewood, Elk Grove, Mission Viejo, Victorville, Tulare, Yucaipa, Rocklin and Grass Valley (SolarAPP+); Glendale and Santa Barbara (custom platform); Saratoga and Vacaville (Symbium); Napa (without a platform); Gilroy, San Ramon, Redding and Yuba City (SolarAPP+); Windsor and Ventura (Symbium); Redwood City and Cupertino (SolarAPP+); Hollister (without a platform, deadline Sept 2024).',
 };
 
 const concordSolarPv: LocalGuidanceSource = {
@@ -1508,6 +1508,68 @@ const reddingFees2526: LocalGuidanceSource = {
   verifiedAt: verified20260924,
   scope:
     'Building Division electric permit fees: Photo Voltaic Systems - Residential, 7 to 15 kW $450.00, 16 kW and up $450.00 plus $15.00 per kW above 15 kW (Reso 2025-048, AB 1132); Alternative Power Source Other Than Solar Permit (batteries, generator, wind turbine) $187.50; permit issuance $58.00 per permit. The FY 2026-27 schedule keeps the PV figures and lists $193.00 for the alternative power source line, with building permit fees effective October 19, 2026.',
+};
+
+const redwoodCitySolarApp: LocalGuidanceSource = {
+  label: 'City of Redwood City — SolarAPP+ Automatic Permitting',
+  url: 'https://www.redwoodcity.org/departments/community-development-and-transportation/building-inspection-code-enforcement/solarapp-automatic-permitting',
+  verifiedAt: verified20260924,
+  scope:
+    "Automatic solar permitting through SolarAPP+; residential solar permits are pulled through the City's eTRAKiT portal following its SolarAPP+ permitting guide; SolarAPP+ questions go to a named Building Division contact.",
+};
+
+const redwoodCityFees2627: LocalGuidanceSource = {
+  label: 'City of Redwood City — Master Fee Schedule FY 2026-2027 (effective July 1, 2026)',
+  url: 'https://www.redwoodcity.org/home/showpublisheddocument/31457/639191130428800000',
+  verifiedAt: verified20260924,
+  scope:
+    'Building Inspection & Code Enforcement: photovoltaic solar systems, residential 15 kW or less $450.00, 16 kW or more $450.00 plus $15.00 per kW; electrical services up to 200 amperes $431.65; residential reroof $645.25; re-inspection $211.06 per hour; GIS maintenance/technology fee 13% of the building permit fee.',
+};
+
+const westlightSolar0924: LocalGuidanceSource = {
+  label: 'WestLight Energy — Solar & Battery (residential)',
+  url: 'https://www.westlightenergy.org/residential/solar-battery/',
+  verifiedAt: verified20260924,
+  scope:
+    "WestLight pays for electricity a customer generates but does not use and, unlike PG&E's annual true-up, balances what it owes the customer (or is owed) every month; it says it does not install solar panels or batteries.",
+};
+
+const cupertinoIsp: LocalGuidanceSource = {
+  label: 'City of Cupertino — Instant Solar Permit - SolarAPP+',
+  url: 'https://www.cupertino.gov/Your-City/Departments/Community-Development/Building/Permits/Instant-Solar-Permit-SolarAPP',
+  verifiedAt: verified20260924,
+  scope:
+    'On 2026-09-24 the page said the instant permit service is not available at this time due to an upgrade with the business license system, and all permits must be submitted by email to the Permit Center. Normally: Instant Solar Permit for SolarAPP+-registered contractors, residential rooftop PV with or without storage, optional main electrical service upgrade; SolarAPP+ processing fee currently $25; applied for in Citizen Access; one fee payment, an inspection fee covering two inspections of the same element, re-inspection fees beyond that; inspections scheduled in Citizen Access.',
+};
+
+const cupertinoFees2627: LocalGuidanceSource = {
+  label: 'City of Cupertino — Fee Schedule, Building Fees (Resolution 26-047, effective July 1, 2026)',
+  url: 'https://www.cupertino.gov/files/assets/city/v/1/departments/documents/community-development/building/forms-amp-handouts-amp-fees/fees/fee-schedule-building-fees.pdf',
+  verifiedAt: verified20260924,
+  scope:
+    'Photovoltaic system, residential: up to 15 kW $450, each additional kW above 15 kW $15; battery energy storage system up to three $746, each additional $439; electrical services up to 200 amperes $99; technology fee 5.8% per permit.',
+};
+
+const hollisterSolar: LocalGuidanceSource = {
+  label: 'City of Hollister — Solar Permits for Photovoltaic (PV) Systems and EV Charging Stations',
+  url: 'https://hollister.ca.gov/government/development_services/solar_permits_for_photovoltaic_(pv)_systems_and_ev_charging_stations.php',
+  verifiedAt: verified20260924,
+  scope: 'Lists the Building Permit Application and the EV Charger Checklist; describes no online or automated solar permit route.',
+};
+
+const hollisterFees2025: LocalGuidanceSource = {
+  label: 'City of Hollister — Building Division Fee Schedule (effective August 18, 2025)',
+  url: 'https://hollister.ca.gov/Community%20Development%20Department/Building/Building%20Fee%20Schedule%202025.pdf',
+  verifiedAt: verified20260924,
+  scope:
+    'Scanned PDF, read by OCR and checked against the page image. Solar - Photovoltaic $400.00, marked as subject to the Strong Motion Instrumentation fee (.00013 x valuation, residential) and the California Building Standards fee ($1 per $25,000 of valuation); Standard Reroof $495.00; 65% of the building permit fee paid at submittal as a plan review deposit, the rest at issuance; staff review does not begin until fees are paid in full; fee estimates on request by email with a detailed project description.',
+};
+
+const hollisterForms: LocalGuidanceSource = {
+  label: 'City of Hollister — Application Forms and Fees (Building)',
+  url: 'https://hollister.ca.gov/government/departments/development_services/application_forms_and_fees.php',
+  verifiedAt: verified20260924,
+  scope: 'Links the Building Division 2025 Fee Schedule and the building permit application, and books submittal appointments with the Permit Center.',
 };
 
 export const LOCAL_PROJECT_GUIDANCE = {
@@ -3968,6 +4030,114 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [reuSolarPv, reuRates, reddingFees2526, cecTerritory0923, cecSb379T3],
+  },
+  'redwood-city': {
+    city: 'Redwood City',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Redwood City permits rooftop solar through SolarAPP+ and its eTRAKiT portal and charges $450 for a home system up to 15 kW. WestLight Energy, San Mateo County's community electricity provider, supplies generation and balances solar credits every month.",
+    quoteQuestions: [
+      "Does the permit line match Redwood City's $450.00 for a system of 15 kW or less, and does the quote say whether the City's 13 percent technology fee is included?",
+      'If the main panel or the roof is being replaced, are the $431.65 electrical service permit and the $645.25 reroof permit in the quote?',
+      "Does the bill estimate reflect WestLight Energy's monthly balancing of solar credits rather than a single annual true-up?",
+    ],
+    localChecks: [
+      {
+        title: 'SolarAPP+, then eTRAKiT',
+        body: "Redwood City offers automatic permitting through SolarAPP+. The contractor then pulls the residential solar permit in the City's eTRAKiT portal, following the City's SolarAPP+ permitting guide.",
+      },
+      {
+        title: '$450 up to 15 kW',
+        body: 'The fiscal year 2026-27 Master Fee Schedule lists $450.00 for a residential system of 15 kW or less and $450.00 plus $15.00 per kW for one of 16 kW or more. Its building table also carries a 13 percent GIS maintenance and technology fee and re-inspections at $211.06 an hour.',
+      },
+      {
+        title: 'Panel and roof have their own lines',
+        body: 'The same schedule lists an electrical service permit of up to 200 amperes at $431.65 and a residential reroof at $645.25, each separate from the solar permit.',
+      },
+      {
+        title: "WestLight's monthly balance",
+        body: "WestLight Energy pays for solar power a home exports but does not use, and balances what it owes, or is owed, every month instead of once a year.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/blog/is-my-roof-good-for-solar-california', label: 'Check the roof before a quote' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [redwoodCitySolarApp, redwoodCityFees2627, westlightHome, westlightSolar0924, cecSb379T3],
+  },
+  cupertino: {
+    city: 'Cupertino',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Cupertino publishes a $450 solar permit fee and normally issues instant permits through SolarAPP+, but on September 24, 2026 that service was paused and permits were going to the City by email. Silicon Valley Clean Energy supplies generation and settles it monthly.",
+    quoteQuestions: [
+      "While Cupertino's instant permit is paused, is the permit going to the City by email, and does the schedule allow for that?",
+      'Does the permit line match $450 for a system up to 15 kW, plus $746 for up to three batteries and the 5.8 percent technology fee?',
+      "Does the bill estimate follow SVCE's monthly settlement for generation and PG&E's annual true-up for delivery?",
+    ],
+    localChecks: [
+      {
+        title: 'Instant permit on hold',
+        body: "Cupertino's page says the instant permit service is not available at this time because of an upgrade to its business license system, and that all permits must be emailed to the Permit Center. Checked September 24, 2026.",
+      },
+      {
+        title: 'One fee, two inspections',
+        body: 'The instant permit fee is an inspection fee that covers two inspections of the same item, so one failed inspection, or a cancellation after 2 p.m. the day before, is covered. Further visits carry re-inspection fees.',
+      },
+      {
+        title: 'Storage and service upgrades',
+        body: 'Batteries are $746 for up to three and $439 for each additional one, and an electrical service of up to 200 amperes is $99. The instant permit can include a main electrical service upgrade.',
+      },
+      {
+        title: "SVCE's monthly settlement",
+        body: 'Silicon Valley Clean Energy, which lists Cupertino among its communities, settles generation charges within the monthly bill, while PG&E settles delivery charges at its annual true-up.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/blog/solar-installation-timeline-california', label: 'How long permitting takes' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [cupertinoIsp, cupertinoFees2627, svceAbout0923, svceSbp0923, cecSb379T3],
+  },
+  hollister: {
+    city: 'Hollister',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Hollister charges a flat $400 for a solar permit, before two small state fees figured on valuation, and its pages describe no online solar route. Central Coast Community Energy supplies generation and trues it up each December.",
+    quoteQuestions: [
+      "Does the permit line match Hollister's flat $400.00 solar fee plus the state's valuation-based fees?",
+      'Who books the Permit Center submittal and pays the 65 percent plan review deposit, since review does not start until fees are paid?',
+      "Does the bill estimate reflect 3CE's December true-up for generation, separate from PG&E's true-up for delivery?",
+    ],
+    localChecks: [
+      {
+        title: 'A flat $400 fee',
+        body: "The Building Division fee schedule effective August 18, 2025 lists Solar - Photovoltaic at $400.00, marked as subject to the state's Strong Motion Instrumentation and Building Standards fees, which are figured on the project's valuation.",
+      },
+      {
+        title: 'No online route described',
+        body: "The City's solar page lists only the building permit application, and submittals are booked as appointments with the Permit Center. The CEC's SB 379 data, as Hollister reported it, lists no platform.",
+      },
+      {
+        title: 'Deposit before review',
+        body: 'Sixty-five percent of the building permit fee is due at submittal as a plan review deposit, and staff review does not begin until fees are paid in full. The Building Division gives fee estimates by email for a fully described project.',
+      },
+      {
+        title: "3CE's December true-up",
+        body: 'Central Coast Community Energy, of which Hollister was an initial member, trues up generation every December, separately from the PG&E true-up for delivery. Residential customers owed at least $200 can ask for a check.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/central-valley', label: 'Central Coast and Valley bill guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [hollisterSolar, hollisterFees2025, hollisterForms, cceMembers, cceSolarBilling, cecSb379T3],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 

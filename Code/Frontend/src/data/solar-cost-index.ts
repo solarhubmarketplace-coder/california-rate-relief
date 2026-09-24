@@ -208,7 +208,11 @@ const FEES: Record<string, FeeEntry> = {
     extra: 'The linked FY 2021/22 schedule lists residential solar at $373.00; SolarAPP+ charges $25.',
     evidence: 'is for fiscal year 2021/22',
   },
-  hollister: { status: 'not-retrievable', evidence: 'the dollar figure was not reliably machine-readable' },
+  hollister: {
+    status: 'published',
+    components: [{ label: 'solar photovoltaic permit (flat)', usd: 400, quote: 'lists a flat $400.00 fee for a solar photovoltaic permit' }],
+    extra: 'Plus the state SMIP and building standards fees on valuation; a standard reroof is $495.00.',
+  },
   lincoln: {
     status: 'published',
     components: [{
@@ -558,6 +562,16 @@ const FEES: Record<string, FeeEntry> = {
     components: [{ label: 'residential PV, 7 to 15 kW', usd: 450, quote: 'a residential photovoltaic system of 7 to 15 kW at $450.00' }],
     extra: 'Above 15 kW: $450.00 plus $15.00 per kW; battery (alternative power source) $187.50.',
   },
+  'redwood-city': {
+    status: 'published',
+    components: [{ label: 'residential solar system, 15 kW or less', usd: 450, quote: 'a residential solar system of 15 kW or less at $450.00' }],
+    extra: 'Above 15 kW: $450.00 plus $15.00 per kW; 13% GIS/technology fee listed for building permits.',
+  },
+  cupertino: {
+    status: 'published',
+    components: [{ label: 'residential PV, up to 15 kW', usd: 450, quote: 'residential photovoltaic system up to 15 kW at $450' }],
+    extra: 'Battery storage $746 (up to three); 5.8% technology fee; SolarAPP+ $25.',
+  },
 };
 
 // -----------------------------------------------------------------------------
@@ -613,7 +627,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   'el-dorado-hills': { platform: 'symbium', evidence: 'through Symbium for residential parcels' },
   fresno: { platform: 'solarapp', evidence: 'Single-family and duplex projects can use SolarAPP+' },
   'grass-valley': { platform: 'solarapp', evidence: 'After SolarAPP+ approval' },
-  hollister: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
+  hollister: { platform: 'none-named', evidence: 'lists Hollister as without a platform' },
   lincoln: { platform: 'symbium', evidence: 'online filing via the Symbium portal' },
   livermore: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
   manteca: { platform: 'symbium', evidence: 'issued instantly online through Symbium' },
@@ -745,14 +759,23 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     evidence: "lists Redding's platform as SolarAPP+",
     note: 'Per the CEC SB 379 data (self-reported); REU paperwork and a Generator Number come before the City permit.',
   },
+  'redwood-city': { platform: 'solarapp', evidence: 'automatic solar permitting through SolarAPP+' },
+  cupertino: {
+    platform: 'solarapp',
+    evidence: 'Contractors registered with SolarAPP+',
+    note: 'The City says its instant permit service is paused during a business license system upgrade; permits go by email for now.',
+  },
 };
 
-export type OnlineFiling = 'yes' | 'general-portal' | 'not-yet' | 'in-person' | 'not-stated' | 'unclassified';
+// 'paused' added 2026-09-24 (Tier 3): Cupertino's instant permit is offline while
+// the City upgrades its business license system.
+export type OnlineFiling = 'yes' | 'general-portal' | 'not-yet' | 'paused' | 'in-person' | 'not-stated' | 'unclassified';
 
 export const ONLINE_LABEL: Record<OnlineFiling, string> = {
   yes: 'Yes',
   'general-portal': 'General portal only',
   'not-yet': 'Not yet',
+  paused: 'Paused for now',
   'in-person': 'In person',
   'not-stated': 'Not stated',
   unclassified: 'See city page',
@@ -763,7 +786,8 @@ export const ONLINE_LABEL: Record<OnlineFiling, string> = {
  * the start of its permitOnline text, which isOnlineYes() checks.
  */
 const ONLINE_EXCEPTIONS: Record<string, { value: Exclude<OnlineFiling, 'yes' | 'unclassified'> | 'yes'; evidence: string }> = {
-  hollister: { value: 'not-yet', evidence: 'Online Permitting (Coming Soon)' },
+  hollister: { value: 'not-stated', evidence: 'No online solar route is described' },
+  cupertino: { value: 'paused', evidence: 'the instant permit service is not available at this time' },
   chico: { value: 'general-portal', evidence: 'digitally through its eTRAKiT permit portal' },
   marina: { value: 'general-portal', evidence: 'Yes for general building permits' },
   napa: { value: 'in-person', evidence: 'handled over the counter, by walk-in' },
@@ -928,7 +952,7 @@ const CCAS: CcaEntry[] = [
   {
     name: 'Silicon Valley Clean Energy',
     match: 'Silicon Valley Clean Energy',
-    members: ['sunnyvale', 'mountain-view', 'saratoga', 'gilroy'],
+    members: ['sunnyvale', 'mountain-view', 'saratoga', 'gilroy', 'cupertino'],
     source: {
       label: 'Silicon Valley Clean Energy, About (communities served)',
       url: 'https://svcleanenergy.org/about/',
@@ -970,7 +994,7 @@ const CCAS: CcaEntry[] = [
     name: 'WestLight Energy',
     match: 'WestLight Energy',
     // WestLight says it serves San Mateo County and Los Banos.
-    members: ['san-mateo'],
+    members: ['san-mateo', 'redwood-city'],
     source: {
       label: 'WestLight Energy (formerly Peninsula Clean Energy), home page',
       url: 'https://www.westlightenergy.org/',

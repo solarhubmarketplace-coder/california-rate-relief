@@ -223,6 +223,8 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       verifiedAt: utility.fetchedAt,
     },
     ...(split ? split.sources : []),
+    // 2026-09-24: the city's own rate section, when it has one.
+    ...(row.localRates ? row.localRates.sources : []),
     // 2026-09-23: the City now calls its utility the Utilities Department;
     // the CEC layer (re-queried that day) shows how its area sits inside SCE's.
     ...(hasAddressSpecificUtility
@@ -264,6 +266,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       answer:
         `Yes. A rooftop solar installation is permitted construction, and ${row.city} publishes its own fee schedule and filing process: ${row.permitFeeNote} Online filing: ${row.permitOnline} Verified ${formatVerified(row.sourcesFetchedAt)}.`,
     },
+    ...(row.localRates ? [row.localRates.faq] : []),
     {
       question: `Which utility serves ${row.city}?`,
       answer:
@@ -471,6 +474,33 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 in {row.city}; it changes how quickly the same install offsets a bill. Those are two
                 different questions and quotes routinely blur them.
               </p>}
+
+              {/* ---------- Local rates (2026-09-24) ----------
+                  Only for a city whose /solar-savings bill page redirects
+                  here. Every figure comes from the row's own sources, each
+                  with the tariff's effective date in the text. */}
+              {row.localRates ? (
+                <>
+                  <h2 id='rates' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
+                    {row.localRates.heading}
+                  </h2>
+                  {row.localRates.paragraphs.map((paragraph) => (
+                    <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                  ))}
+                  <p className='text-foreground/60 text-sm'>
+                    Sources:{' '}
+                    {row.localRates.sources.map((source, index) => (
+                      <span key={source.url}>
+                        {index > 0 ? '; ' : ''}
+                        <a href={source.url} target='_blank' rel='noopener noreferrer' className={link}>
+                          {source.label}
+                        </a>
+                      </span>
+                    ))}
+                    . Verified {formatVerified(row.localRates.sources[0].verifiedAt)}.
+                  </p>
+                </>
+              ) : null}
 
               {/* ---------- Permits ---------- */}
               <h2 id='permits' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>

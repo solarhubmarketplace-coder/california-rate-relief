@@ -547,6 +547,82 @@
    "note": "New row on tracker utility 'reu' (Redding Electric Utility). Master Fee Schedule FY 2025-26 (and FY 2026-27, building fees effective 2026-10-19): residential PV 7-15 kW $450.00, 16 kW+ $450.00 + $15.00/kW; battery (alternative power source) $187.50 -> $193.00. REU's Zero Net Energy Service, the 1 kW DC per 1,752 kWh size cap, the Generator Number the City requires before a permit application, and REU's E1 rate ($40.00/meter + $0.1492/kWh since 2025-01-01) - extra FAQ. Companies twin registered.",
    "hub": "city_cost",
    "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/redwood-city",
+   "action": "CREATE",
+   "title": "Redwood City Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    738
+   ],
+   "sources": [
+    "https://www.redwoodcity.org/departments/community-development-and-transportation/building-inspection-code-enforcement/solarapp-automatic-permitting",
+    "https://www.redwoodcity.org/home/showpublisheddocument/31457/639191130428800000",
+    "https://www.westlightenergy.org/",
+    "https://www.westlightenergy.org/residential/solar-battery/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E (54% of the TIGER boundary on the CEC layer; the rest is bay water, plus a 0.24% CCSF sliver) + WestLight Energy. FY 2026-27 Master Fee Schedule (effective 2026-07-01): residential solar $450.00 up to 15 kW, +$15.00/kW above; electrical service up to 200 A $431.65; residential reroof $645.25; 13% GIS/technology fee (applicability to solar not stated). SolarAPP+ then eTRAKiT. The City's linked SolarAPP+ guide PDF is a reused City of Modesto document, so only the page text is relied on. No companies page on this branch: registered in the pending-twin set.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/cupertino",
+   "action": "CREATE",
+   "title": "Cupertino Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    744
+   ],
+   "sources": [
+    "https://www.cupertino.gov/Your-City/Departments/Community-Development/Building/Permits/Instant-Solar-Permit-SolarAPP",
+    "https://www.cupertino.gov/files/assets/city/v/1/departments/documents/community-development/building/forms-amp-handouts-amp-fees/fees/fee-schedule-building-fees.pdf",
+    "https://svcleanenergy.org/about/",
+    "https://www.svcleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + SVCE (the CEC layer also shows PWRPA, a wholesale pooling agency, overlapping the whole city; not a retail supplier to homes). Building fees (Res. 26-047, effective 2026-07-01): residential PV $450 up to 15 kW + $15/kW; batteries $746 up to three, $439 each after; service up to 200 A $99; 5.8% technology fee; SolarAPP+ $25. The City's Instant Solar Permit is paused during a business license system upgrade (permits by email) - stated with the date, extra FAQ, and a new index online value 'paused' ('Paused for now'). Companies twin (growthCities) registered.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/hollister",
+   "action": "UPGRADE",
+   "title": "Hollister Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    746
+   ],
+   "sources": [
+    "https://hollister.ca.gov/government/development_services/solar_permits_for_photovoltaic_(pv)_systems_and_ev_charging_stations.php",
+    "https://hollister.ca.gov/Community%20Development%20Department/Building/Building%20Fee%20Schedule%202025.pdf",
+    "https://hollister.ca.gov/government/departments/development_services/application_forms_and_fees.php",
+    "https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf",
+    "https://3cenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row, which had no fee: the current Building Division fee schedule (effective 2025-08-18) is a scanned PDF; OCR at 300 and 400 dpi plus a visual check of the page image read 'Solar - Photovoltaic ** $400.00' (subject to state SMIP and CBSC fees on valuation); reroof $495.00; 65% plan review deposit at submittal. The old 'Online Permitting (Coming Soon)' line is gone; no online solar route is described and the CEC lists Hollister without a platform (deadline Sept 2024) - index online value now 'Not stated'. 3CE sourced. Citycos is building /solar-companies/hollister (CREATE_DEDICATED); that lane registers it.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/fresno",
+   "action": "UPGRADE",
+   "title": "Solar Panel Cost in Fresno, CA: What Sets the Price (2026)",
+   "clusters": [],
+   "sources": [
+    "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-1.pdf",
+    "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-C.pdf",
+    "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_PRELIM_A.pdf",
+    "https://epqs.nationalmap.gov/v1/json?x=-119.7936074&y=36.7829379&wkid=4326&units=Feet&includeDate=false",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Extra row (lane note): /solar-savings/fresno 301s here and 'electricity rates fresno' passes Rule 3. New 'Electricity rates in Fresno' H2 plus FAQ from a new gated row field localRates: PG&E bundled (100% on the CEC layer; no CCA on PG&E's list); E-1 $0.32561/$0.40702 per kWh and E-TOU-C peak/off-peak by season, $0.79343/day base services charge (Income Tier 3), all effective 2026-06-01 (Advice 7921-E); baseline territory R (Fresno County under 3,500 ft; USGS ~310 ft at the city's Census point): 17.7/10.4 kWh/day basic, 19.9/26.7 all-electric. Permit fields unchanged (verified 2026-09-23).",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
   }
  ],
  "new_cost_slugs": [
@@ -566,7 +642,9 @@
   "saratoga",
   "gilroy",
   "san-ramon",
-  "redding"
+  "redding",
+  "redwood-city",
+  "cupertino"
  ],
  "new_cost_slugs_with_live_companies_twin_registered": [
   "concord",
@@ -580,7 +658,8 @@
   "santa-barbara",
   "vacaville",
   "san-ramon",
-  "redding"
+  "redding",
+  "cupertino"
  ],
  "new_cost_slugs_for_citycos_to_reconcile": [
   "clovis",
@@ -675,6 +754,16 @@
    "hub": "city_cost",
    "href": "/solar-cost/redding",
    "label": "Solar panel cost in Redding"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/redwood-city",
+   "label": "Solar panel cost in Redwood City"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/cupertino",
+   "label": "Solar panel cost in Cupertino"
   }
  ],
  "link_requests": [],
