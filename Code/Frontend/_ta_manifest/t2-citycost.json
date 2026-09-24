@@ -1,0 +1,124 @@
+{
+ "agent": "t2-citycost",
+ "branch": "claude/t2-citycost-20260923",
+ "pages": [
+  {
+   "path": "/solar-cost/fresno",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Fresno, CA: What Sets the Price (2026)",
+   "clusters": [
+    610
+   ],
+   "sources": [
+    "https://www.fresno.gov/planning/get-an-instantly-approved-solar-permit-through-solar-app/",
+    "https://www.fresno.gov/wp-content/uploads/2026/07/MFS-Planning_593_CPI_CPI-UGM_CPI-Parking-ED-2026.07.01-10w1657-10w1683.pdf",
+    "https://www.fresno.gov/wp-content/uploads/2023/07/New-Residential-Solar-Plan-Check-Submittal.pdf",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html"
+   ],
+   "status": "done",
+   "note": "Permit fee refreshed to the schedule effective 2026-07-01 (the 2026-09-18 row had a stale year and put the per-kW fee in the wrong column); SolarAPP+ scope; local checks (fee over 15 kW, standard plan-check checklist, no CCA per PG&E list)."
+  },
+  {
+   "path": "/solar-cost/murrieta",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Murrieta, CA: What Sets the Price (2026)",
+   "clusters": [
+    603
+   ],
+   "sources": [
+    "https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App",
+    "https://murrietaca.gov/DocumentCenter/View/14633/FY-2025-26-User-Fee-Schedule---updated-5-29",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "Fee now from the FY2026/27 fee schedule ($450 up to 15 kW; $500 + $15/kW above; separate permits for carports, ground mounts, lighting, EV); SolarAPP+ and zero-lot-line rule; panel upgrade separate C-10 permit; two inspection visits; no CCA per SCE list."
+  },
+  {
+   "path": "/solar-cost/san-mateo",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in San Mateo, CA: What Sets the Price (2026)",
+   "clusters": [
+    607
+   ],
+   "sources": [
+    "https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers",
+    "https://www.cityofsanmateo.org/DocumentCenter/View/105420",
+    "https://www.smcgov.org/planning/instant-residential-solar-and-energy-storage-system-permits",
+    "https://www.westlightenergy.org/"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + WestLight Energy; $450 combination permit and $450 standalone storage permit (2026-27 schedule); SolarAPP+; San Mateo County FAQ (county Symbium permits for unincorporated addresses). Companies page registered as a live twin in canonical-redirects.test.ts."
+  },
+  {
+   "path": "/solar-cost/irvine",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Irvine, CA: What Sets the Price (2026)",
+   "clusters": [
+    613
+   ],
+   "sources": [
+    "https://cityofirvine.gov/building-permits-and-inspections/adding-rooftop-solar-energy-system",
+    "https://www.cityofirvine.gov/sites/default/files/legacy-documents/cd-pws-fee-schedule-august-15_2026-27_0.pdf",
+    "https://www.ocpower.org/",
+    "https://www.ocpower.org/energy-programs/solar-net-energy-metering/"
+   ],
+   "status": "done",
+   "note": "New row: SCE + OCPA; 2026-27 fee schedule (plan check, inspection, per-kW over 15 kW, issuance fee); PermitsDIRECT! same-day limits; HOA; OCPA treats NBT customers as NEM 2.0 for generation. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/temecula",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Temecula, CA: What Sets the Price (2026)",
+   "clusters": [
+    609
+   ],
+   "sources": [
+    "https://temeculaca.gov/304/Photovoltaic-Systems",
+    "https://www.temeculaca.gov/DocumentCenter/View/19215/FY2025-26-User-Fee-Schedule",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas"
+   ],
+   "status": "done",
+   "note": "Fee now from the FY2026-27 user fee schedule ($568 roof, $970 ground); SolarAPP+ excludes expansions; fire inspection first; ESS garage rule; added SCE/SDG&E utility split (CEC layer: SW corner SDG&E), matching the companies page."
+  }
+ ],
+ "sitemap_add": [],
+ "blog_index_add": [],
+ "redirect_requests": [],
+ "hub_links": [
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/san-mateo",
+   "label": "Solar panel cost in San Mateo"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/irvine",
+   "label": "Solar panel cost in Irvine"
+  }
+ ],
+ "link_requests": [],
+ "shared_changes": [
+  "src/components/growth/CityCostPage.tsx (all /solar-cost pages): corrected the 'Is solar worth it' FAQ to the October 2025 CPUC guide (no fixed 10 percent escalation cap; estimate may use at most the CPUC's calculated average); added a 'without paying upfront' FAQ sourced to the CPUC guide; added Gov. Code 66015 (residential permit fee limit) and 65850.52 (automated permitting) to the permit section; renders row ccaSource, permitSources and extraFaqs; links /blog/no-upfront-cost-solar-panels.",
+  "src/data/city-cost-data.ts: optional gated fields ccaSource, permitSources, extraFaqs; CCA source constants; COST_TEMPLATE_CSLB_VERIFIED re-verified 2026-09-23 (so every cost page's dateModified is 2026-09-23).",
+  "src/data/local-project-guidance.ts: rendered only by CityCostPage; new and rewritten per-city entries.",
+  "src/lib/canonical-redirects.test.ts: new dated registry section T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added."
+ ],
+ "integration_notes": [
+  "/solar-cost/<city> pages enter the sitemap automatically from getPublishableCityCostRows(); no sitemap_add needed.",
+  "New cost pages are linked from their /solar-companies and /solar-savings twins automatically through CitySiblingLinks once they pass the gate."
+ ],
+ "decisions_for_chad": [],
+ "skipped": []
+}

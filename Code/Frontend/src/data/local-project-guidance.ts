@@ -29,22 +29,6 @@ export interface LocalProjectGuidanceEntry {
 const verified20260920 = '2026-09-20';
 const verified20260918 = '2026-09-18';
 
-const temeculaPermit: LocalGuidanceSource = {
-  label: 'City of Temecula — Photovoltaic Systems',
-  url: 'https://www.temeculaca.gov/304/Photovoltaic-Systems',
-  verifiedAt: verified20260920,
-  scope:
-    'Eligible projects use SolarAPP+ and the City portal. The City lists a fire inspection before the building inspection and a garage ESS condition tied to residential fire sprinklers. Eligibility and battery location remain project-specific.',
-};
-
-const murrietaPermit: LocalGuidanceSource = {
-  label: 'City of Murrieta — Self-Issuing Permits & SolarAPP+',
-  url: 'https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App',
-  verifiedAt: verified20260920,
-  scope:
-    'Eligible residential roof-mounted projects use SolarAPP+ and the City portal. Zero-lot-line properties do not use that automated route, and a solar-related service-panel upgrade requires a separate permit.',
-};
-
 const sanDiegoPermit: LocalGuidanceSource = {
   label: 'City of San Diego — Information Bulletin 301, Solar PV Systems',
   url: 'https://www.sandiego.gov/development-services/forms-publications/information-bulletins/301',
@@ -125,25 +109,184 @@ const oceansidePermit: LocalGuidanceSource = {
     'The City routes eligible projects through SolarAPP+ and then eTRAKiT for the City permit. The page does not establish that every project qualifies for automated review.',
 };
 
+
+// -----------------------------------------------------------------------------
+// Tier 2 city-cost wave, 2026-09-23. Every source below was fetched that day
+// and each scope line states exactly what the entry relies on it for.
+// -----------------------------------------------------------------------------
+const verified20260923 = '2026-09-23';
+
+const pgeCcaList: LocalGuidanceSource = {
+  label: 'PG&E — Community Choice Aggregation',
+  url: 'https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html',
+  verifiedAt: verified20260923,
+  scope:
+    'Lists the CCAs in PG&E territory and the areas each serves, and says PG&E continues to provide meter reading, billing, maintenance and outage response for CCA customers. A city missing from the list has no CCA named there; the bill is still the check for a given account.',
+};
+
+const sceCcaList: LocalGuidanceSource = {
+  label: 'SCE — Community Choice Aggregation',
+  url: 'https://www.sce.com/customer-service-center/community-choice-aggregation',
+  verifiedAt: verified20260923,
+  scope:
+    'Lists the CCAs in SCE territory and the cities each serves, and says SCE continues meter reading, billing, maintenance and outage response for CCA customers. A city missing from the list has no CCA named there.',
+};
+
+const sdgeActiveCcas: LocalGuidanceSource = {
+  label: 'SDG&E — Active CCAs',
+  url: 'https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas',
+  verifiedAt: verified20260923,
+  scope:
+    'Names the cities served by Clean Energy Alliance and San Diego Community Power. A city missing from both lists has no active CCA named there.',
+};
+
+const cecTerritory0923: LocalGuidanceSource = {
+  label: 'California Energy Commission — Electric Load Serving Entities (IOU & POU) service-territory layer',
+  url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about',
+  verifiedAt: verified20260923,
+  scope:
+    'Overlaid on the Census TIGERweb city boundary to see which utility territories fall inside the city. A map layer, not an address lookup: the bill names the utility for a given home.',
+};
+
+const fresnoSolarApp: LocalGuidanceSource = {
+  label: 'City of Fresno — SolarAPP+ instantly approved solar permits',
+  url: 'https://www.fresno.gov/planning/get-an-instantly-approved-solar-permit-through-solar-app/',
+  verifiedAt: verified20260923,
+  scope:
+    'Single-family and duplex projects may use SolarAPP+ and then Accela Citizens Access; commercial installations do not qualify and apply for a standard solar permit. The page states no fee.',
+};
+
+const fresnoFees2026: LocalGuidanceSource = {
+  label: 'City of Fresno — Master Fee Schedule, Planning & Development (fees effective July 1, 2026)',
+  url: 'https://www.fresno.gov/wp-content/uploads/2026/07/MFS-Planning_593_CPI_CPI-UGM_CPI-Parking-ED-2026.07.01-10w1657-10w1683.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential photovoltaic: $170.37 plan check and $162.85 inspection for the first 15 kW; $11.27 inspection for each additional kW. The schedule adjusts these fees each July 1 by a Consumer Price Index.',
+};
+
+const fresnoChecklist: LocalGuidanceSource = {
+  label: 'City of Fresno — Residential Solar Plan Check Submittal Requirements (updated July 2023)',
+  url: 'https://www.fresno.gov/wp-content/uploads/2023/07/New-Residential-Solar-Plan-Check-Submittal.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'For the standard plan-check route: structural calculations for ground-mount and reverse-tilt (over 24 inches at the tall side) arrays, and electrical load calculations when derating the main service panel.',
+};
+
+const murrietaSelfIssue: LocalGuidanceSource = {
+  label: 'City of Murrieta — Self-Issuing Permits & SolarAPP+',
+  url: 'https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App',
+  verifiedAt: verified20260923,
+  scope:
+    'Eligible residential roof-mounted solar goes through SolarAPP+ and the CSS portal; zero-lot-line homes do not qualify; every service-panel upgrade needs a separate permit that only C-10 electrical contractors may obtain; inspection fees cover two site visits.',
+};
+
+const murrietaFees2627: LocalGuidanceSource = {
+  label: 'City of Murrieta — User Fee Schedule, fiscal year 2026/27 (Solar Permit Fees)',
+  url: 'https://murrietaca.gov/DocumentCenter/View/14633/FY-2025-26-User-Fee-Schedule---updated-5-29',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential PV: $450 at 15 kW or less; $500 base plus $15 per kW over 15 kW. Separate permits and fees for structural work and non-solar items such as carports, ground-mount supports, exterior lighting and EV charging.',
+};
+
+const temeculaPermit0923: LocalGuidanceSource = {
+  label: 'City of Temecula — Photovoltaic Systems',
+  url: 'https://temeculaca.gov/304/Photovoltaic-Systems',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ available since September 30, 2023; expansions of existing PV systems do not qualify for SolarAPP+ or expedited review; a passed fire inspection is required before the building inspection; no ESS in a garage without residential fire sprinklers.',
+};
+
+const temeculaFees2627: LocalGuidanceSource = {
+  label: 'City of Temecula — User Fee Schedule, effective fiscal year 2026-27',
+  url: 'https://www.temeculaca.gov/DocumentCenter/View/19215/FY2025-26-User-Fee-Schedule',
+  verifiedAt: verified20260923,
+  scope:
+    'Photovoltaic system: residential roof-mounted $568 total ($326 building plan check, $242 building inspection); residential ground-mounted $970 total, including a $228 fire plan check.',
+};
+
+const sanMateoSolarApp: LocalGuidanceSource = {
+  label: 'City of San Mateo — SolarApp+ for Solar Installers',
+  url: 'https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ covers most residential, roof-mounted, retrofit PV systems that meet its eligibility checklist; the City permit is then applied for at the Online Permit Center; SolarAPP+ charges its own processing fee.',
+};
+
+const sanMateoFees2627: LocalGuidanceSource = {
+  label: 'City of San Mateo — Adopted Comprehensive Fee Schedule 2026-2027',
+  url: 'https://www.cityofsanmateo.org/DocumentCenter/View/105420',
+  verifiedAt: verified20260923,
+  scope:
+    'Solar energy systems, single-family dwellings: $450 each combination permit; new energy storage systems only: $450 flat. Both noted as set by state law.',
+};
+
+const sanMateoCountyInstant: LocalGuidanceSource = {
+  label: 'County of San Mateo — Instant Residential Solar and Energy Storage System Permits',
+  url: 'https://www.smcgov.org/planning/instant-residential-solar-and-energy-storage-system-permits',
+  verifiedAt: verified20260923,
+  scope:
+    'The County issues instant solar and storage permits through Symbium for unincorporated addresses only; homes inside a city or town are permitted by that city or town.',
+};
+
+const westlightHome: LocalGuidanceSource = {
+  label: 'WestLight Energy (formerly Peninsula Clean Energy)',
+  url: 'https://www.westlightenergy.org/',
+  verifiedAt: verified20260923,
+  scope:
+    'Serves San Mateo County and Los Banos; PG&E delivers the power and customers get one PG&E bill with WestLight generation charges and PG&E delivery charges.',
+};
+
+const irvineRooftop: LocalGuidanceSource = {
+  label: 'City of Irvine — Adding a Rooftop Solar Energy System',
+  url: 'https://cityofirvine.gov/building-permits-and-inspections/adding-rooftop-solar-energy-system',
+  verifiedAt: verified20260923,
+  scope:
+    'Same-day PermitsDIRECT! (Symbium) permits for rooftop systems up to 38.4 kW with no more than one battery, submitted by a licensed contractor; others through IrvineReady!, with five working days expected for initial plan check; plans note any main panel upgrade or derated main breaker; HOAs may have their own approval process.',
+};
+
+const irvineFees2627: LocalGuidanceSource = {
+  label: 'City of Irvine — CD/PW fee schedule 2026-27, Schedule II Building and Safety (Resolution 24-41)',
+  url: 'https://www.cityofirvine.gov/sites/default/files/legacy-documents/cd-pws-fee-schedule-august-15_2026-27_0.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Solar panels per system, residential: $349.11 plan check, $299.00 inspection, $12.08 per additional kW over 15 kW; $31.88 residential permit issuance fee (other than new construction).',
+};
+
+const ocpaSolarNem: LocalGuidanceSource = {
+  label: 'Orange County Power Authority — Solar Net Energy Metering',
+  url: 'https://www.ocpower.org/energy-programs/solar-net-energy-metering/',
+  verifiedAt: verified20260923,
+  scope:
+    'OCPA runs solar true-ups ahead of summer, pays unused credits at the Net Surplus Compensation rate, treats Net Billing Tariff customers as if their generation were under NEM 2.0, and SCE handles the delivery charges and credits. Membership: the OCPA home page lists Irvine among its member communities.',
+};
+
 export const LOCAL_PROJECT_GUIDANCE = {
   temecula: {
     city: 'Temecula',
-    actionIds: ['CA02'],
+    actionIds: ['CA02', 'T2-CITYCOST'],
     intro:
-      'A Temecula bid is incomplete until it says whether roof work, battery placement and both City inspections are included.',
+      'A Temecula bid is incomplete until it says whether roof work, battery placement and both City inspections are included, and which utility serves the address.',
     quoteQuestions: [
       'Did every bidder use the same 12 months of electricity use and the same roof and shade assumptions?',
-      'Are roof work, battery location and main-panel work identified and priced separately?',
+      'Is this a new system or an expansion of an existing one? Temecula does not let expansions use SolarAPP+ or expedited review.',
       'Who files the permit, schedules the fire and building inspections, handles corrections and completes the utility application?',
     ],
     localChecks: [
       {
-        title: 'Confirm the permit path',
-        body: 'SolarAPP+ is for eligible projects. Ask the contractor to name the route for this design instead of treating automated review as guaranteed.',
+        title: 'The fire inspection comes first',
+        body: 'Temecula requires a fire inspection for every SolarAPP+ permit, and it has to be passed before a building inspection can be scheduled.',
       },
       {
-        title: 'Resolve roof and battery scope before signing',
-        body: 'Temecula lists the fire inspection before the building inspection. Its page also says an ESS cannot be installed in a garage unless the home has residential fire sprinklers, so the proposed location belongs in the written scope.',
+        title: 'Battery location is a permit question',
+        body: 'The City says an energy storage system may not go in a garage unless the home has a residential fire sprinkler system, so the proposed battery location belongs in the written scope.',
+      },
+      {
+        title: 'A ground mount costs more to permit',
+        body: "Temecula's 2026-27 fee schedule charges $970 to permit a residential ground-mounted system against $568 for a roof-mounted one; the ground mount adds a fire plan check and higher building fees.",
+      },
+      {
+        title: 'Check which utility bills the address',
+        body: "The California Energy Commission's map puts a small area in Temecula's southwest corner in SDG&E territory and the rest in SCE's. Neither SCE's nor SDG&E's list of community choice aggregators includes Temecula.",
       },
     ],
     related: [
@@ -152,39 +295,43 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
       { href: '/solar-savings/inland-empire', label: 'Inland Empire bill and project guide' },
     ],
-    sources: [temeculaPermit],
+    sources: [temeculaPermit0923, temeculaFees2627, cecTerritory0923, sceCcaList, sdgeActiveCcas],
   },
   murrieta: {
     city: 'Murrieta',
-    actionIds: ['CA08'],
+    actionIds: ['CA08', 'T2-CITYCOST'],
     intro:
-      'Murrieta separates some work that can look like one line in a proposal. Make the array, battery and service-panel scope visible before comparing totals.',
+      'Murrieta sets its residential solar permit fee by system size and treats a service-panel upgrade as a separate permit. Make both visible before comparing totals.',
     quoteQuestions: [
-      'Is this a new array, a battery added to an existing system, or both, and is compatibility documented?',
-      'Does the property and design qualify for SolarAPP+, or will it use another City review path?',
-      'Is any service-panel upgrade separately priced, permitted and assigned to a licensed contractor?',
+      "Is the system 15 kW or smaller? Murrieta's permit fee changes above that size, so the permit line should match the design.",
+      'Does the design need a service-panel upgrade, and is that separate permit pulled by a C-10 electrical contractor and priced on its own line?',
+      'Are carports, ground-mount supports, lighting or EV charging part of the job? Murrieta permits and charges for those separately.',
     ],
     localChecks: [
       {
-        title: 'Zero-lot-line properties take another route',
-        body: 'Murrieta excludes zero-lot-line properties from its SolarAPP+ route. Ask which City path applies before relying on an automated-review schedule.',
+        title: 'Zero-lot-line homes take another route',
+        body: "Murrieta excludes homes with zero lot lines from SolarAPP+; those projects file through the City's Citizen Self Service portal instead. Ask which route applies before relying on an automated-review schedule.",
       },
       {
-        title: 'Panel work is a separate permit item',
-        body: 'The City says a solar-related service-panel upgrade requires a separate permit. A proposal that omits it is not the same scope as one that includes it.',
+        title: 'Panel upgrades are their own permit',
+        body: 'The City says every service-panel upgrade needs a separate permit, even when it appears on the solar plans, and that only C-10 electrical contractors may obtain one. A proposal that omits it is not the same scope as one that includes it.',
       },
       {
-        title: 'A business property needs its own project brief',
-        body: 'For a business property, use its own bill and load history, property and roof authority, and electrical and project scope. Keep that comparison separate from a home project.',
+        title: 'Two inspection visits are included',
+        body: 'Murrieta says its inspection fee covers two site visits and that more visits cost extra. Ask who pays if an inspection has to be repeated.',
+      },
+      {
+        title: 'SCE supplies generation as well',
+        body: "SCE's list of the community choice aggregators in its territory does not include Murrieta, so a Murrieta bill normally shows SCE for both generation and delivery.",
       },
     ],
     related: [
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
       { href: '/blog/do-solar-panels-work-during-power-outage-california', label: 'Decide which loads need backup' },
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
       { href: '/solar-savings/inland-empire', label: 'Inland Empire bill and project guide' },
-      { href: '/commercial-assessment', label: 'Start a commercial project assessment' },
     ],
-    sources: [murrietaPermit],
+    sources: [murrietaSelfIssue, murrietaFees2627, sceCcaList],
   },
   'san-diego': {
     city: 'San Diego',
@@ -375,6 +522,102 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/battery/home-battery-cost-california', label: 'Separate storage from the array quote' },
     ],
     sources: [oceansidePermit, ceaBill],
+  },
+  fresno: {
+    city: 'Fresno',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Fresno prices its solar permit by system size and resets the figures every July 1. Whether the design goes through SolarAPP+ or the City's standard plan check decides what paperwork the bid has to include.",
+    quoteQuestions: [
+      'What size is the system in kW? Fresno adds an inspection fee for each kW over 15, so the permit line should match the proposed size.',
+      'Does this design qualify for SolarAPP+, or will it go through standard plan check, and who uploads it to Accela Citizens Access?',
+      'If the main service panel is being derated instead of replaced, does the plan set include the electrical load calculation the City asks for?',
+    ],
+    localChecks: [
+      {
+        title: 'The permit fee grows past 15 kW',
+        body: "Fresno's fee schedule sets one plan-check and inspection charge for the first 15 kW of a residential system and adds an inspection fee for each kW above that. The City adjusts these fees each July 1, so check that a quote uses the current schedule.",
+      },
+      {
+        title: 'Standard plan check has its own checklist',
+        body: "For a project outside SolarAPP+, Fresno's residential solar checklist asks for structural calculations on ground-mount arrays and on reverse-tilt arrays taller than 24 inches at the high side, and for electrical load calculations when the main service panel is derated. That is design work a quote should include or exclude in writing.",
+      },
+      {
+        title: 'PG&E on both lines of the bill',
+        body: "PG&E's list of the community choice aggregators in its territory does not include Fresno, so a Fresno home bill normally shows PG&E for generation as well as delivery. Your own bill is the check.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
+      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
+    ],
+    sources: [fresnoSolarApp, fresnoFees2026, fresnoChecklist, pgeCcaList],
+  },
+  'san-mateo': {
+    city: 'San Mateo',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "San Mateo's permit fee is a flat figure set by state law, so the parts of a quote that vary are the design, the roof and the electrical work. Make each bid show them.",
+    quoteQuestions: [
+      "Does the design fit SolarAPP+'s eligibility checklist for a roof-mounted retrofit system, or will it need another review?",
+      'Is a battery included now or planned for later? A new storage system installed on its own carries its own $450 City permit.',
+      "Does the bill model use WestLight Energy's generation charges and PG&E's delivery charges from your own bill?",
+    ],
+    localChecks: [
+      {
+        title: 'The City permit fee is fixed',
+        body: "San Mateo's 2026-2027 schedule charges $450 per combination permit for solar on a single-family home. If a bid's permit line is much larger, ask what else it covers.",
+      },
+      {
+        title: 'Unincorporated addresses use the County',
+        body: 'If the home is in unincorporated San Mateo County rather than inside city limits, the County issues the permit through its Symbium instant-permit platform, not the City.',
+      },
+      {
+        title: 'One PG&E bill, two providers',
+        body: "WestLight Energy says its customers get one bill from PG&E carrying WestLight's generation charges and PG&E's delivery charges. Check which generation provider your account shows before comparing bids.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+    ],
+    sources: [sanMateoSolarApp, sanMateoFees2627, sanMateoCountyInstant, westlightHome],
+  },
+  irvine: {
+    city: 'Irvine',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Irvine's same-day permit covers most home systems, but not every design. Confirm the route, the battery count and the generation provider before comparing bids.",
+    quoteQuestions: [
+      'Is the system 38.4 kW or smaller with at most one battery, so it can use the same-day PermitsDIRECT! route, or will it go through IrvineReady! plan check?',
+      'Does the plan set say whether the main panel is being upgraded or its breaker derated, as Irvine asks?',
+      'If the home is in a homeowners association, has the HOA approved the design?',
+    ],
+    localChecks: [
+      {
+        title: 'Same-day permits have limits',
+        body: 'PermitsDIRECT!, powered by Symbium, issues permits the same day to licensed contractors for rooftop systems up to 38.4 kW with no more than one battery. Anything else goes through the IrvineReady! portal, where the City says to plan on five working days for the first plan check.',
+      },
+      {
+        title: 'Your HOA may have its own process',
+        body: 'The City tells homeowners that their homeowners association may have its own approval process and to review its policies before going ahead.',
+      },
+      {
+        title: 'How OCPA credits solar exports',
+        body: 'Orange County Power Authority, which lists Irvine as a member community, says it treats solar customers on the Net Billing Tariff as if their generation were under NEM 2.0, runs true-ups ahead of summer and pays unused credits at the lower Net Surplus Compensation rate. SCE still handles the delivery charges and credits.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/orange-county', label: 'Orange County bill and project guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [irvineRooftop, irvineFees2627, ocpaSolarNem],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 

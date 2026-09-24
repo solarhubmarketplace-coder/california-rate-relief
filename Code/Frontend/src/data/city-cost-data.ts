@@ -78,6 +78,14 @@ import type { UtilityRateKey } from './utility-rate-tracker';
 /** The marker for a field that has not been verified against a source yet. */
 export const UNSOURCED = 'TODO';
 
+/** A document a row's rendered sentence was checked against. */
+export interface CityCostRowSource {
+  label: string;
+  url: string;
+  /** ISO date the document was fetched and the sentence checked against it. */
+  verifiedAt: string;
+}
+
 export interface CityCostRow {
   /** URL slug: /solar-cost/<slug>. */
   slug: string;
@@ -113,6 +121,30 @@ export interface CityCostRow {
     note: string;
     sources: { label: string; url: string; verifiedAt: string }[];
   };
+  // ---------------------------------------------------------------------------
+  // Added 2026-09-23 (Tier 2 city-cost wave). All optional, so rows written
+  // before then still pass the gate; every one of them is gated when present.
+  // ---------------------------------------------------------------------------
+  /**
+   * The document that names the CCA as serving this city: the CCA's own
+   * member list, or the delivery utility's list of active CCAs. Rendered next
+   * to the CCA sentence and in the sources list.
+   */
+  ccaSource?: CityCostRowSource;
+  /**
+   * Documents behind permitFeeNote beyond permitUrl, usually the adopted fee
+   * schedule the dollar figures come from. Rendered in the permit section and
+   * the sources list.
+   */
+  permitSources?: CityCostRowSource[];
+  /**
+   * City-specific questions a reader asks that the template's four FAQs do
+   * not cover (for example the county-level form of the cost question). Every
+   * sentence must restate a fact already sourced on this row or in the city's
+   * entry in src/data/local-project-guidance.ts. Rendered in the FAQ and in
+   * the FAQPage JSON-LD.
+   */
+  extraFaqs?: { question: string; answer: string }[];
 }
 
 /**
@@ -121,7 +153,9 @@ export interface CityCostRow {
  * template's "check the company" section checked against them. Every city row
  * renders that section, so a page is at least this fresh.
  */
-export const COST_TEMPLATE_CSLB_VERIFIED = '2026-09-22';
+// 2026-09-23: both CSLB pages re-fetched and the section re-checked against
+// them in the same pass that corrected the template's CPUC guide answer.
+export const COST_TEMPLATE_CSLB_VERIFIED = '2026-09-23';
 
 /**
  * California Energy Commission, Electric Load Serving Entities (IOU & POU):
@@ -132,6 +166,63 @@ export const CEC_SERVICE_TERRITORY_SOURCE = {
   label: 'California Energy Commission, Electric Load Serving Entities (IOU & POU) service-territory map',
   url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about',
   verifiedAt: '2026-09-22',
+};
+
+/**
+ * The same CEC layer, queried again on 2026-09-23 against Census TIGERweb
+ * boundaries for the Tier 2 city-cost wave (new rows and re-checked rows).
+ */
+export const CEC_SERVICE_TERRITORY_SOURCE_0923 = {
+  ...CEC_SERVICE_TERRITORY_SOURCE,
+  verifiedAt: '2026-09-23',
+};
+
+// -----------------------------------------------------------------------------
+// CCA membership sources, fetched 2026-09-23. A delivery utility's own list of
+// the CCAs in its territory is preferred where it names cities; otherwise the
+// CCA's own list of the communities it serves.
+// -----------------------------------------------------------------------------
+const CCA_VERIFIED_0923 = '2026-09-23';
+
+export const PGE_CCA_LIST: CityCostRowSource = {
+  label: 'PG&E, Community Choice Aggregation (the CCAs in PG&E territory and the areas each serves)',
+  url: 'https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html',
+  verifiedAt: CCA_VERIFIED_0923,
+};
+export const SCE_CCA_LIST: CityCostRowSource = {
+  label: 'SCE, Community Choice Aggregation (the CCAs in SCE territory and the cities each serves)',
+  url: 'https://www.sce.com/customer-service-center/community-choice-aggregation',
+  verifiedAt: CCA_VERIFIED_0923,
+};
+export const SDGE_ACTIVE_CCAS: CityCostRowSource = {
+  label: 'SDG&E, Active CCAs (the cities Clean Energy Alliance and San Diego Community Power serve)',
+  url: 'https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas',
+  verifiedAt: CCA_VERIFIED_0923,
+};
+export const AVA_COMMUNITIES: CityCostRowSource = {
+  label: 'Ava Community Energy, Communities We Serve',
+  url: 'https://avaenergy.org/community/who-we-serve/',
+  verifiedAt: CCA_VERIFIED_0923,
+};
+export const MCE_ABOUT: CityCostRowSource = {
+  label: 'MCE, About Us (member communities)',
+  url: 'https://www.mcecleanenergy.org/about-us/',
+  verifiedAt: CCA_VERIFIED_0923,
+};
+export const SVCE_ABOUT: CityCostRowSource = {
+  label: 'Silicon Valley Clean Energy, About (communities served)',
+  url: 'https://svcleanenergy.org/about/',
+  verifiedAt: CCA_VERIFIED_0923,
+};
+export const WESTLIGHT_HOME: CityCostRowSource = {
+  label: 'WestLight Energy (formerly Peninsula Clean Energy): serves San Mateo County and Los Banos; one PG&E bill',
+  url: 'https://www.westlightenergy.org/',
+  verifiedAt: CCA_VERIFIED_0923,
+};
+export const OCPA_HOME: CityCostRowSource = {
+  label: 'Orange County Power Authority, member communities (Buena Park, Fullerton, Irvine, Fountain Valley)',
+  url: 'https://www.ocpower.org/',
+  verifiedAt: CCA_VERIFIED_0923,
 };
 
 /**
@@ -155,23 +246,51 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: 'Riverside County',
     utilityKey: 'sce',
     permitUrl: 'https://temeculaca.gov/304/Photovoltaic-Systems',
+    // 2026-09-23: fee figures now come from the City's own fee schedule.
     permitFeeNote:
-      'The City states that a fee applies to SolarAPP+ plan check and the building permit; no dollar amount is published on the page.',
+      "Temecula's User Fee Schedule for fiscal year 2026-27 lists a residential roof-mounted photovoltaic system at $326 for building plan check plus $242 for building inspection, $568 in all, and a residential ground-mounted system at $970, which adds a $228 fire plan check. The City's photovoltaic page says a separate fee applies to the SolarAPP+ submission, without stating the amount.",
     permitFeeSource: 'City of Temecula, Photovoltaic Systems (temeculaca.gov/304)',
-    permitOnline: 'Yes. SolarAPP+ accepted since 30 September 2023; the Citizen Self Service portal is also available.',
-    sourcesFetchedAt: '2026-09-18',
+    permitSources: [
+      {
+        label: 'City of Temecula User Fee Schedule, effective fiscal year 2026-27 (Building - Miscellaneous: Photovoltaic System)',
+        url: 'https://www.temeculaca.gov/DocumentCenter/View/19215/FY2025-26-User-Fee-Schedule',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      'Yes. SolarAPP+ has been available since September 30, 2023; eligible projects then apply in the City\'s Citizen Self Service portal under the SolarApp+ Photovoltaic permit type. Expansions of an existing PV system do not qualify for SolarAPP+ or expedited review.',
+    sourcesFetchedAt: '2026-09-23',
+    // Added 2026-09-23: the CEC layer overlaid on the Census city boundary puts
+    // the city's southwest corner in SDG&E territory.
+    utilitySplit: {
+      others: 'SDG&E',
+      note:
+        "The California Energy Commission's service-territory map places most of Temecula in Southern California Edison's territory and a smaller area in the city's southwest corner in San Diego Gas & Electric's. Read the utility name on your bill before using an SCE rate.",
+      sources: [CEC_SERVICE_TERRITORY_SOURCE_0923],
+    },
   },
   {
     slug: 'murrieta',
     city: 'Murrieta',
     county: 'Riverside County',
     utilityKey: 'sce',
-    permitUrl: 'https://www.murrietaca.gov/DocumentCenter/View/2399/Solar-Permits-Residential-IB-125',
+    permitUrl: 'https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App',
+    // 2026-09-23: the May 2022 bulletin (IB-125) is superseded as the fee
+    // source by the FY 2026/27 fee schedule, which states the same $450 for
+    // 15 kW or less and adds the larger-system and separate-permit rules.
     permitFeeNote:
-      'Information Bulletin IB-125 states the residential solar permit fee is four hundred fifty dollars, payable when the permit is issued.',
-    permitFeeSource: 'City of Murrieta, Information Bulletin IB-125, Solar Permits (Residential)',
-    permitOnline: 'Yes. Submitted through the Development Services solar permit portal; the bulletin does not name SolarAPP+.',
-    sourcesFetchedAt: '2026-09-18',
+      "Murrieta's User Fee Schedule for fiscal year 2026/27 sets the residential photovoltaic permit at $450 for a system of 15 kW or less, and at a $500 base fee plus $15 for each kW over 15 kW for a larger one, citing Government Code section 66015. It adds that structural work and non-solar items installed with the system, such as carports, ground-mount supports, exterior lighting and EV charging equipment, need their own permits and fees. SolarAPP+ charges its own processing fee, which the City does not state, and the City says its inspection fee covers two site visits.",
+    permitFeeSource: 'City of Murrieta, Self-Issuing Permits & SolarAPP+',
+    permitSources: [
+      {
+        label: 'City of Murrieta User Fee Schedule, fiscal year 2026/27 (Solar Permit Fees)',
+        url: 'https://murrietaca.gov/DocumentCenter/View/14633/FY-2025-26-User-Fee-Schedule---updated-5-29',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Eligible residential roof-mounted systems must be submitted through SolarAPP+ and then the City's Citizen Self Service portal. Homes with zero lot lines do not qualify for SolarAPP+ and file through the portal instead.",
+    sourcesFetchedAt: '2026-09-23',
   },
   {
     slug: 'san-diego',
@@ -342,12 +461,22 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Fresno County",
     utilityKey: "pge",
     permitUrl: "https://www.fresno.gov/planning/get-an-instantly-approved-solar-permit-through-solar-app/",
+    // 2026-09-23: updated to the fee schedule effective July 1, 2026. The
+    // per-kW figure is an inspection fee, not plan check as the 2026-09-18
+    // row had it.
     permitFeeNote:
-      "Master Fee Schedule (Misc. Items) lists: Photovoltaic Systems, Residential \u2014 First 15kW: Plan Check $165.01 + Inspection Fee $157.72; Each additional kW: $10.92 (plan check) \u2014 exact line-item figures from the fee schedule PDF",
-    permitFeeSource: "City of Fresno Master Fee Schedule (MFS Amendment #585, Jan 2025; effective 07/01/2025)",
+      "Fresno's Master Fee Schedule, with fees effective July 1, 2026, charges a residential photovoltaic system $170.37 for plan check and $162.85 for inspection covering the first 15 kW, plus $11.27 in inspection fees for each additional kW. The schedule adjusts these fees every July 1 by the change in a Consumer Price Index, so a figure quoted before July 2026 may be last year's.",
+    permitFeeSource: "City of Fresno, SolarAPP+ instantly approved solar permits page",
+    permitSources: [
+      {
+        label: "City of Fresno Master Fee Schedule, Planning & Development fees (fees effective July 1, 2026): Photovoltaic Systems",
+        url: "https://www.fresno.gov/wp-content/uploads/2026/07/MFS-Planning_593_CPI_CPI-UGM_CPI-Parking-ED-2026.07.01-10w1657-10w1683.pdf",
+        verifiedAt: "2026-09-23",
+      },
+    ],
     permitOnline:
-      "yes \u2014 SolarAPP+ named on page (\"SolarAPP+ provides instantly approved solar permits\"); contractor uploads SolarAPP+ confirmation to City's Accela Citizens Access (ACA) online permitting system",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Single-family and duplex projects can use SolarAPP+ and then the City's Accela Citizens Access portal. Commercial systems do not qualify for SolarAPP+ and apply for a standard solar permit in the same portal.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "grass-valley",
@@ -967,6 +1096,67 @@ export const CITY_COST_ROWS: CityCostRow[] = [
       "Yes: \"Log in and submit your design through the SolarAPP+ Webpage\" (gosolarapp.org), then \"creating a Building Permit Application Through the City's Online Citizen Portal.\" SolarAPP+ is explicitly named.",
     sourcesFetchedAt: "2026-09-18",
   },
+  // ---------------------------------------------------------------------------
+  // Added 2026-09-23, Tier 2 city-cost wave. Each city's search impressions for
+  // its cost query were landing on its /solar-companies or /solar-savings page;
+  // this row gives the query its own page. Every field was fetched that day.
+  // ---------------------------------------------------------------------------
+  {
+    slug: 'san-mateo',
+    city: 'San Mateo',
+    county: 'San Mateo County',
+    utilityKey: 'pge',
+    cca: 'WestLight Energy (formerly Peninsula Clean Energy)',
+    ccaSource: WESTLIGHT_HOME,
+    permitUrl: 'https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers',
+    permitFeeNote:
+      "San Mateo's Adopted Comprehensive Fee Schedule for 2026-2027 charges $450 for each combination permit for a solar energy system on a single-family dwelling, and $450 flat for a new energy storage system installed on its own, and notes that both fees are set by state law. SolarAPP+ charges its own processing fee; the City's page does not state the amount.",
+    permitFeeSource: 'City of San Mateo, SolarApp+ for Solar Installers',
+    permitSources: [
+      {
+        label: 'City of San Mateo, Adopted Comprehensive Fee Schedule 2026-2027 (Building: solar energy systems; new energy storage systems)',
+        url: 'https://www.cityofsanmateo.org/DocumentCenter/View/105420',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'County of San Mateo, Instant Residential Solar and Energy Storage System Permits (unincorporated addresses only)',
+        url: 'https://www.smcgov.org/planning/instant-residential-solar-and-energy-storage-system-permits',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Eligible residential, roof-mounted retrofit systems go through SolarAPP+, and the City permit is then applied for at the City's Online Permit Center.",
+    sourcesFetchedAt: '2026-09-23',
+    extraFaqs: [
+      {
+        question: 'How much does solar panel installation cost in San Mateo County?',
+        answer:
+          "No public source prices an installation for the county, and the parts that differ from one address to the next are set locally. Each city and town in San Mateo County issues its own solar permits; the City of San Mateo charges $450 per combination permit for solar on a single-family home in its 2026-2027 fee schedule. Homes in unincorporated San Mateo County are permitted by the County, which issues instant residential solar and battery permits through Symbium and accepts only unincorporated addresses there. WestLight Energy is the generation provider for San Mateo County, and PG&E delivers the power and sends one bill with both sets of charges.",
+      },
+    ],
+  },
+  {
+    slug: 'irvine',
+    city: 'Irvine',
+    county: 'Orange County',
+    utilityKey: 'sce',
+    cca: 'Orange County Power Authority (OCPA)',
+    ccaSource: OCPA_HOME,
+    permitUrl: 'https://cityofirvine.gov/building-permits-and-inspections/adding-rooftop-solar-energy-system',
+    permitFeeNote:
+      "Irvine's Building and Safety fee schedule for 2026-27 (Resolution 24-41) lists solar panels on a residence at $349.11 for plan check and $299.00 for inspection per system, plus $12.08 for each additional kW over 15 kW. Residential permits other than new construction also carry a $31.88 permit issuance fee.",
+    permitFeeSource: 'City of Irvine, Adding a Rooftop Solar Energy System',
+    permitSources: [
+      {
+        label: 'City of Irvine, Community Development and Public Works fee schedule 2026-27, Schedule II Building and Safety Fees (Resolution 24-41): Solar Panels per System; Permit Issuance Fees',
+        url: 'https://www.cityofirvine.gov/sites/default/files/legacy-documents/cd-pws-fee-schedule-august-15_2026-27_0.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. PermitsDIRECT!, powered by Symbium, issues same-day permits to licensed contractors for a rooftop system up to 38.4 kW with no more than one battery. Larger systems, or more than one battery, are submitted through the IrvineReady! online portal, where the City says to expect five working days for the first plan check.",
+    sourcesFetchedAt: '2026-09-23',
+  },
 ];
 
 /**
@@ -992,6 +1182,28 @@ export function unsourcedFields(row: CityCostRow): string[] {
       row.utilitySplit.sources.some((source) => !/^\d{4}-\d{2}-\d{2}$/.test(source.verifiedAt)))
   ) {
     missing.push('utilitySplit');
+  }
+  const isoDate = /^\d{4}-\d{2}-\d{2}$/;
+  const badSource = (source: CityCostRowSource) =>
+    !source.url.startsWith('https://') ||
+    source.label.trim() === '' ||
+    source.label.includes(UNSOURCED) ||
+    !isoDate.test(source.verifiedAt);
+  if (row.ccaSource && badSource(row.ccaSource)) missing.push('ccaSource');
+  if (row.permitSources && (row.permitSources.length === 0 || row.permitSources.some(badSource))) {
+    missing.push('permitSources');
+  }
+  if (
+    row.extraFaqs &&
+    row.extraFaqs.some(
+      (faq) =>
+        faq.question.trim() === '' ||
+        faq.answer.trim() === '' ||
+        faq.question.includes(UNSOURCED) ||
+        faq.answer.includes(UNSOURCED),
+    )
+  ) {
+    missing.push('extraFaqs');
   }
   return missing;
 }
