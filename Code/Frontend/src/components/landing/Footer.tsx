@@ -15,19 +15,32 @@ import { FOOTER_TRUST_LINKS, TRUST_LINKS } from '@/components/trust/trust-links'
 // Methodology, Corrections, Sources we use, Privacy / Do not sell — read from
 // components/trust/trust-links.ts so the footer and the pages cannot drift.
 //
-// Guide links are the same as before (the two section indexes were added
-// 2026-09-18 because twenty /solar-cost city pages and eight installer reviews
-// had no other inbound internal link; keep them).
+// Guide links (2026-09-23, topic map Block 5 §5.8, approved by Chad): the
+// hub page of every topic hub that has one, and nothing else, so each hub is
+// one click from every page and each hub lists its own guides. Hubs only, no
+// spokes: the cost index is a spoke of the cost hub and is linked from it, and
+// /blog stays in the header ("Guides"). /solar-cost and /solar-installers are
+// still here (added 2026-09-18 because twenty /solar-cost city pages and eight
+// installer reviews had no other inbound link). Same list as the hub pages in
+// src/data/topic-hubs.ts; the news hub is added when its page exists.
 // =============================================================================
 
 const GUIDE_LINKS = [
-  { href: '/commercial-solar', label: 'Commercial solar' },
+  { href: '/solar-panels-california', label: 'Solar cost and value' },
   { href: '/solar-cost', label: 'Solar cost by city' },
-  { href: '/california-solar-cost-index', label: 'California solar cost index' },
+  { href: '/blog/ppa-loan-vs-solar-lease-vs-cash-california', label: 'Leases, PPAs and financing' },
+  { href: '/blog/california-solar-tax-credit-2026', label: 'Solar incentives' },
+  { href: '/best-solar-companies-california', label: 'Solar companies in California' },
   { href: '/solar-installers', label: 'Solar company reviews' },
-  { href: '/solar-problems', label: 'Solar problems' },
+  { href: '/solar-problems', label: 'Solar problems and scams' },
+  { href: '/california-utility-rate-tracker', label: 'Utility rate tracker' },
+  { href: '/blog/why-is-my-california-electric-bill-so-high', label: 'High electric bills' },
+  { href: '/blog/nem-2-vs-nem-3-california', label: 'NEM 3.0 and net billing' },
+  { href: '/blog/is-community-solar-worth-it', label: 'Community solar' },
   { href: '/battery', label: 'Home batteries' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/blog/is-my-roof-good-for-solar-california', label: 'Roofs and solar' },
+  { href: '/solar-panel-maintenance-california', label: 'Solar panel maintenance' },
+  { href: '/commercial-solar', label: 'Commercial solar' },
 ];
 
 const linkClass =

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Battery, Building2, DollarSign, RefreshCw, Scale, Zap } from 'lucide-react';
+import { Battery, Building2, DollarSign, Scale, Zap } from 'lucide-react';
 
 // =============================================================================
 // HomeGuides — server component, CRR homepage only
@@ -7,66 +7,135 @@ import { Battery, Building2, DollarSign, RefreshCw, Scale, Zap } from 'lucide-re
 // Surfaces the site's own published guides directly beneath the utility
 // picker / QualificationWizard, so the homepage reads as an independent
 // publisher with its own content rather than a single-purpose lead form.
-// Every href below is a route that exists in src/app at the time this was
-// written; verify with `ls src/app/...` before adding or changing one.
+//
+// 2026-09-23 (topic map Block 5 §5.7): the six topic cards became the site's
+// hub pages, every one that exists, grouped under the five headings the spec
+// names, one line each. A hub page is where a subject's guides are listed, so
+// linking all of them here puts every guide two clicks from home. The list
+// matches the hub pages in src/data/topic-hubs.ts (the news hub has no page
+// yet and is left out until it does). Every href below is a route that exists
+// in src/app; verify with `ls src/app/...` before adding or changing one.
 // =============================================================================
 
-type GuideCard = {
-  href: string;
-  icon: typeof DollarSign;
-  title: string;
-  description: string;
-};
+type HubLink = { href: string; title: string; line: string };
+type HubGroup = { heading: string; icon: typeof DollarSign; links: HubLink[] };
 
-const GUIDE_CARDS: GuideCard[] = [
+export const HOME_HUB_GROUPS: HubGroup[] = [
   {
-    href: '/solar-cost',
+    heading: 'Cost and paying',
     icon: DollarSign,
-    title: 'Solar cost by city',
-    description: 'What sets the price in your city — utility, permits and incentives — with no sales quote and no invented number.',
+    links: [
+      {
+        href: '/solar-panels-california',
+        title: 'Solar panels in California',
+        line: 'What a system costs per watt, how to size it and whether it pays back.',
+      },
+      {
+        href: '/solar-cost',
+        title: 'Solar cost by city',
+        line: 'What sets the price where you live: the utility, permit fees and local rules.',
+      },
+      {
+        href: '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
+        title: 'Lease, PPA, loan or cash',
+        line: 'The contract terms to compare before you choose how to pay.',
+      },
+      {
+        href: '/blog/california-solar-tax-credit-2026',
+        title: 'Solar incentives in 2026',
+        line: 'What California still offers now that the federal credit has ended.',
+      },
+    ],
   },
   {
-    href: '/best-solar-companies-california',
+    heading: 'Companies and reviews',
     icon: Scale,
-    title: 'Compare solar companies',
-    description: 'What to check on license, scope and service before putting two proposals side by side.',
+    links: [
+      {
+        href: '/best-solar-companies-california',
+        title: 'Compare solar companies',
+        line: 'What to check on license, scope and service before comparing proposals.',
+      },
+      {
+        href: '/solar-installers',
+        title: 'Solar company reviews',
+        line: 'Company records from BBB files, court dockets and company filings.',
+      },
+      {
+        href: '/solar-problems',
+        title: 'Solar problems and scams',
+        line: 'Contract red flags, dealer fees, liens and what to do when a job goes wrong.',
+      },
+    ],
   },
   {
-    href: '/california-utility-rate-tracker',
+    heading: 'Bills, rates and NEM',
     icon: Zap,
-    title: 'Current utility rates',
-    description: 'Sourced residential rates for PG&E, SCE, SDG&E and SMUD, checked against utility filings.',
+    links: [
+      {
+        href: '/california-utility-rate-tracker',
+        title: 'Utility rate tracker',
+        line: 'Sourced residential rates for PG&E, SCE, SDG&E and SMUD, checked against utility filings.',
+      },
+      {
+        href: '/blog/why-is-my-california-electric-bill-so-high',
+        title: 'Why California bills are high',
+        line: 'What drives California rates, and what to check on your own bill.',
+      },
+      {
+        href: '/blog/nem-2-vs-nem-3-california',
+        title: 'NEM 2.0 vs NEM 3.0',
+        line: 'How export credits changed under net billing, and what that means for a new system.',
+      },
+      {
+        href: '/blog/is-community-solar-worth-it',
+        title: 'Community solar',
+        line: 'When an off-site subscription fits better than rooftop panels, and the fees to check.',
+      },
+    ],
   },
   {
-    href: '/blog/what-is-nem-3-california',
-    icon: RefreshCw,
-    title: 'NEM 3.0 explained',
-    description: 'How the Net Billing Tariff prices exported electricity differently from electricity used at home.',
-  },
-  {
-    href: '/battery',
+    heading: 'Batteries and your home',
     icon: Battery,
-    title: 'Home batteries',
-    description: 'Sizing, cost and backup basics for a home battery, apart from any solar sales pitch.',
+    links: [
+      {
+        href: '/battery',
+        title: 'Home batteries',
+        line: 'Sizing, cost and backup basics for a home battery, apart from any sales pitch.',
+      },
+      {
+        href: '/blog/is-my-roof-good-for-solar-california',
+        title: 'Is your roof ready for solar?',
+        line: 'Usable unshaded area, structure and remaining roof life: what to confirm before a quote.',
+      },
+      {
+        href: '/solar-panel-maintenance-california',
+        title: 'Solar panel maintenance',
+        line: 'Cleaning, repairs, warranties and who to call when output drops.',
+      },
+    ],
   },
   {
-    href: '/commercial-solar/cost-per-watt-california',
+    heading: 'Commercial',
     icon: Building2,
-    title: 'Commercial solar cost and calculator',
-    description: 'Per-watt cost ranges by system size, plus a calculator for after-tax cost and payback.',
+    links: [
+      {
+        href: '/commercial-solar',
+        title: 'Commercial solar',
+        line: 'Build a comparable quote for a business, farm, school or multifamily property.',
+      },
+    ],
   },
 ];
 
 type RecentGuide = { href: string; title: string };
 
+// The rate tracker and the lease/PPA/loan guide were listed here too; both are
+// now in the hub list above, and a page links a target once (Block 5 §5.9).
 const RECENTLY_UPDATED: RecentGuide[] = [
   {
     href: '/commercial-solar/cost-per-watt-california',
     title: 'Commercial Solar Cost in California: What You Pay (2026)',
-  },
-  {
-    href: '/california-utility-rate-tracker',
-    title: 'California Utility Rate Tracker: PG&E, SCE, SDG&E, SMUD',
   },
   {
     href: '/blog/what-is-nem-3-california',
@@ -79,10 +148,6 @@ const RECENTLY_UPDATED: RecentGuide[] = [
   {
     href: '/solar-installers/sunrun-review',
     title: 'Sunrun Reviews (2026): Is It Still in Business?',
-  },
-  {
-    href: '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
-    title: 'Solar Lease vs. PPA vs. Loan vs. Cash Purchase in California',
   },
 ];
 
@@ -101,17 +166,24 @@ export function HomeGuides() {
           </h2>
         </div>
 
-        <div className='grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8'>
-          {GUIDE_CARDS.map(({ href, icon: Icon, title, description }) => (
-            <Link
-              key={href}
-              href={href}
-              className='flex flex-col rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md'
-            >
-              <Icon className='mb-4 h-8 w-8 text-primary' aria-hidden='true' />
-              <h3 className='mb-2 text-lg font-bold text-foreground'>{title}</h3>
-              <p className='text-sm leading-relaxed text-muted-foreground'>{description}</p>
-            </Link>
+        <div className='grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3'>
+          {HOME_HUB_GROUPS.map(({ heading, icon: Icon, links }) => (
+            <div key={heading} className='rounded-xl border border-border bg-card p-6'>
+              <div className='mb-4 flex items-center gap-3'>
+                <Icon className='h-6 w-6 shrink-0 text-primary' aria-hidden='true' />
+                <h3 className='text-lg font-bold text-foreground'>{heading}</h3>
+              </div>
+              <ul className='space-y-4'>
+                {links.map(({ href, title, line }) => (
+                  <li key={href}>
+                    <Link href={href} className='font-semibold text-primary hover:underline'>
+                      {title}
+                    </Link>
+                    <p className='mt-1 text-sm leading-relaxed text-muted-foreground'>{line}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
 

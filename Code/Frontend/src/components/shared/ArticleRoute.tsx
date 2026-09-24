@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArticleRenderer, articleWordCount } from '@/components/shared/ArticleRenderer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { IntentCTA } from '@/components/growth/IntentCTA';
 import {
@@ -115,14 +116,20 @@ function articleTopic(page: ArticlePage): string {
 export function ArticleRoute({
   cluster,
   slug,
-  backHref,
-  backLabel,
   after,
 }: {
   cluster: ArticleCluster;
   slug: string;
-  backHref: string;
-  backLabel: string;
+  /**
+   * No longer rendered. The "back to section" link these fed is replaced by a
+   * breadcrumb derived from the page's URL section, the same list the
+   * BreadcrumbList schema carries (Block 5 §5.6). For /solar-installers pages
+   * that section is /solar-installers, not the /best-solar-companies-california
+   * hub the old back link pointed at. Kept optional so the four [slug] routes
+   * still type-check unchanged.
+   */
+  backHref?: string;
+  backLabel?: string;
   /**
    * Optional block rendered under the article, in the article column (e.g.
    * <HubSpokeLinks/> and a per-page cross-link list). JSON article bodies are
@@ -137,6 +144,8 @@ export function ArticleRoute({
   const commercial = cluster === 'commercial';
   const topic = isSgip ? 'SGIP residential solar and storage' : articleTopic(page);
   const long = articleWordCount(page) > LONG_ARTICLE_WORDS;
+  const crumbs = defaultCrumbs(articleHref(page));
+  const crumbLabel = articleTopic(page);
 
   // Lead capture (2026-09-23). Residential clusters: the bill-first quick
   // check after the intro and SolarInquiry as the closing ask. Commercial
@@ -170,7 +179,7 @@ export function ArticleRoute({
   );
 
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel={crumbLabel} breadcrumbParents={crumbs}>
       <Header />
       {buildSchema(page).map((schema, i) => (
         <script
@@ -182,15 +191,13 @@ export function ArticleRoute({
       <main className="py-10 md:py-14">
         <div className="container mx-auto px-4">
           {/* Same max-w-6xl frame as ArticleRenderer's article + rail grid, so
-              the back link lines up with the article column. */}
+              the breadcrumb lines up with the article column. */}
           <div className="mx-auto mb-6 max-w-6xl">
-            <Link
-              href={backHref}
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {backLabel}
-            </Link>
+            <BreadcrumbTrail
+              crumbs={crumbs}
+              current={crumbLabel}
+              className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground"
+            />
           </div>
           <ArticleRenderer page={page} related={relatedArticles(page)}
             quickCheck={quickCheck} midArticle={midArticle} inquiry={inquiry}

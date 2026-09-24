@@ -210,11 +210,10 @@ function HighBillContent() {
           If the higher rate itself is the issue rather than a billing error,
           CARE and FERA reduce both the per-kWh price and the flat monthly
           Base Services Charge for income-qualified households — see the{" "}
-          <Link className="underline" href="/programs/care-california">
-            CARE and FERA program page
-          </Link>{" "}
-          (publishing alongside this page — confirm both go live together)
-          {" "}for current income limits and how to apply through your utility.
+          <a className="underline" href="https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program" target="_blank" rel="noopener noreferrer">
+            CPUC&apos;s CARE and FERA page
+          </a>{" "}
+          for current income limits and how to apply through your utility.
           For what that fixed charge is and how it&apos;s calculated for
           non-qualifying households, see{" "}
           <Link
@@ -460,11 +459,10 @@ function LowerBillContent() {
         </div>
         <p className="mt-3">
           See the{" "}
-          <Link className="underline" href="/programs/care-california">
-            CARE and FERA program page
-          </Link>{" "}
-          (publishing alongside this page &mdash; confirm both go live
-          together) for how to apply through each utility.
+          <a className="underline" href="https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program" target="_blank" rel="noopener noreferrer">
+            CPUC&apos;s CARE and FERA page
+          </a>{" "}
+          for how to apply through each utility.
         </p>
       </section>
       <section>
@@ -545,11 +543,10 @@ function LowerBillContent() {
           higher-usage summer months instead. It shows up as its own line
           on the statement, separate from usage charges, so it won&apos;t
           turn up in a rate comparison. Full amounts and dates:{" "}
-          <Link className="underline" href="/programs/climate-credit-california">
-            California Climate Credit page
-          </Link>{" "}
-          (publishing alongside this page &mdash; confirm both go live
-          together).
+          <a className="underline" href="https://www.cpuc.ca.gov/climatecredit" target="_blank" rel="noopener noreferrer">
+            the CPUC&apos;s California Climate Credit page
+          </a>
+          .
         </p>
       </section>
       <UtilityGuideLinks />

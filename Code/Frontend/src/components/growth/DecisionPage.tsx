@@ -14,6 +14,8 @@ import { KeyFacts, type KeyFact } from "@/components/trust/KeyFacts";
 import { SourceChip, sourceHost } from "@/components/trust/SourceChip";
 import { FaqBlock } from "@/components/trust/FaqBlock";
 import { TocRail, RAIL_GRID } from "@/components/trust/TocRail";
+import { BreadcrumbTrail } from "@/components/shared/BreadcrumbTrail";
+import { defaultCrumbs } from "@/lib/breadcrumbs";
 
 /**
  * Key-facts box entry. Same shape as ArticleRenderer's `keyStats`, plus an
@@ -120,7 +122,7 @@ export function DecisionPage({
   keyStats = [],
   toc = [],
   authorSchema = "organization",
-  breadcrumbs = [],
+  breadcrumbs,
   breadcrumbLabel,
   quickCheck,
   quickCheckUtility,
@@ -167,8 +169,10 @@ export function DecisionPage({
    */
   authorSchema?: "organization" | "person";
   /**
-   * Visible trail between Home and this page; the last entry also becomes the
-   * BreadcrumbList parent so the schema matches what the reader sees.
+   * Visible trail between Home and this page; the same list is the
+   * BreadcrumbList schema, so the two match. Omitted, the trail comes from
+   * lib/breadcrumbs.ts (defaultCrumbs): the URL section, else the page's topic
+   * hub, so a /blog post shows its hub rather than "Blog" (Block 5 §5.6).
    */
   breadcrumbs?: { label: string; href: string }[];
   /** Short name for this page at the end of the trail. Defaults to the title. */
@@ -192,6 +196,8 @@ export function DecisionPage({
   midContent?: ReactNode;
 }) {
   const quickCheckAt = commercial ? false : (quickCheck ?? "afterIntro");
+  const crumbs = breadcrumbs && breadcrumbs.length > 0 ? breadcrumbs : defaultCrumbs(path);
+  const crumbLabel = breadcrumbLabel || title;
   const quickCheckNode = quickCheckAt ? (
     <HeroQuickCheck
       compact={quickCheckAt === "afterByline"}
@@ -243,7 +249,7 @@ export function DecisionPage({
           citation: sources.map((s) => s.url),
         };
   return (
-    <PublicLayout breadcrumbLabel={breadcrumbLabel || title} breadcrumbParent={breadcrumbs[breadcrumbs.length - 1]}>
+    <PublicLayout breadcrumbLabel={crumbLabel} breadcrumbParents={crumbs}>
       <Header />
       {/* City pages (quickCheck "afterByline") sit a little tighter on phones
           so the quick check under the byline fits a 390x844 screen whole. */}
@@ -255,19 +261,9 @@ export function DecisionPage({
         <div className={RAIL_GRID}>
           <div className="min-w-0">
             <header className="max-w-3xl">
-              {breadcrumbs.length > 0 && (
-                <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                  <Link href="/" className="hover:text-primary">Home</Link>
-                  {breadcrumbs.map((crumb) => (
-                    <span key={crumb.href} className="flex items-center gap-2">
-                      <span aria-hidden="true">/</span>
-                      <Link href={crumb.href} className="hover:text-primary">{crumb.label}</Link>
-                    </span>
-                  ))}
-                  <span aria-hidden="true">/</span>
-                  <span className="text-foreground">{breadcrumbLabel || title}</span>
-                </nav>
-              )}
+              {/* A page with no middle crumb (a hub, an out-of-state page)
+                  shows no trail; its schema is then just Home > page. */}
+              {crumbs.length > 0 && <BreadcrumbTrail crumbs={crumbs} current={crumbLabel} />}
               <p
                 className={`text-sm font-semibold uppercase tracking-wide text-primary ${
                   quickCheckAt === "afterByline" ? "hidden sm:block" : ""

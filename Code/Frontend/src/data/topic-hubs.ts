@@ -2,6 +2,10 @@
  * Topic hubs (topical-authority program, SEO/24). Generated 2026-09-23 from
  * _AUDIT/2026-09-23_topicmap/blocks/05_structure/hub_page_map.csv (live pages only).
  * New pages are appended at integration. Consumed by components/growth/HubSpokeLinks.
+ *
+ * 2026-09-23 (t2-structure): every live page that orphans.csv (Block 5 §5.11)
+ * attaches to a hub is now a spoke of that hub, so each hub page lists it.
+ * Out-of-state, trust/legal, home and redirected URLs are left out on purpose.
  */
 export type TopicHubId =
   | 'battery'
@@ -104,6 +108,10 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/battery/tesla-powerwall-alternatives",
         "label": "Tesla Powerwall Alternatives for California Homes 2026"
+      },
+      {
+        "href": "/blog/solar-during-psps-california",
+        "label": "Solar during a PSPS power shutoff"
       }
     ]
   },
@@ -276,6 +284,74 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-savings/beaumont",
         "label": "Beaumont Solar Savings: SCE Rates & Costs (2026)"
+      },
+      {
+        "href": "/solar-savings/inland-empire",
+        "label": "Inland Empire utilities and solar guide"
+      },
+      {
+        "href": "/solar-savings/lakewood",
+        "label": "Lakewood electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/lodi",
+        "label": "Lodi electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/menifee",
+        "label": "Menifee electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/merced",
+        "label": "Merced electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/moreno-valley",
+        "label": "Moreno Valley electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/murrieta",
+        "label": "Murrieta electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/pacific-grove",
+        "label": "Pacific Grove electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/palm-desert",
+        "label": "Palm Desert electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/palm-springs",
+        "label": "Palm Springs electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/redlands",
+        "label": "Redlands electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/richmond",
+        "label": "Richmond electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/vallejo",
+        "label": "Vallejo electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/watsonville",
+        "label": "Watsonville electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/westminster",
+        "label": "Westminster electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/wildomar",
+        "label": "Wildomar electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/winchester",
+        "label": "Winchester electric rates and solar savings"
       }
     ]
   },
@@ -444,6 +520,22 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-cost/rocklin",
         "label": "Solar Panel Cost in Rocklin, CA: What Sets the Price (2026)"
+      },
+      {
+        "href": "/solar-cost/bakersfield",
+        "label": "Solar panel cost in Bakersfield"
+      },
+      {
+        "href": "/solar-cost/california-city",
+        "label": "Solar panel cost in California City"
+      },
+      {
+        "href": "/solar-cost/los-angeles",
+        "label": "Solar panel cost in Los Angeles"
+      },
+      {
+        "href": "/solar-cost/palm-springs",
+        "label": "Solar panel cost in Palm Springs"
       }
     ]
   },
@@ -756,6 +848,10 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-companies/huntington-beach",
         "label": "Huntington Beach Solar Panels & Solar Companies (2026)"
+      },
+      {
+        "href": "/solar-companies/rancho-cucamonga",
+        "label": "Solar companies in Rancho Cucamonga"
       }
     ]
   },
@@ -860,6 +956,18 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/commercial-solar/warehouse-solar-california",
         "label": "Warehouse Solar California: Cost, Sizing, and 2026 Rules"
+      },
+      {
+        "href": "/commercial-solar/cpace-financing-california",
+        "label": "C-PACE financing for commercial solar"
+      },
+      {
+        "href": "/commercial-solar/financing-options",
+        "label": "Commercial solar financing options"
+      },
+      {
+        "href": "/commercial-solar/sgip-battery-storage",
+        "label": "SGIP status for commercial battery storage"
       }
     ]
   },
@@ -932,6 +1040,54 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/solar-panel-removal-reinstall-cost",
         "label": "Solar Panel Removal for Roof Replacement: CA Quote Checklist"
+      },
+      {
+        "href": "/blog/are-solar-panels-worth-it-california",
+        "label": "Whether solar panels pay off in California"
+      },
+      {
+        "href": "/blog/switch-to-solar-california",
+        "label": "Switching to solar, step by step"
+      },
+      {
+        "href": "/blog/solar-installation-timeline-california",
+        "label": "Solar installation timeline, quote to PTO"
+      },
+      {
+        "href": "/blog/best-time-to-install-solar-panels-california",
+        "label": "Best time of year to install solar"
+      },
+      {
+        "href": "/blog/can-solar-panels-power-a-whole-house-california",
+        "label": "Can solar power a whole house?"
+      },
+      {
+        "href": "/blog/do-solar-panels-work-at-night-california",
+        "label": "What solar does at night"
+      },
+      {
+        "href": "/blog/do-solar-panels-work-on-cloudy-days-california",
+        "label": "Solar output on cloudy days"
+      },
+      {
+        "href": "/blog/solar-panels-for-ev-charging-california",
+        "label": "Sizing solar for EV charging"
+      },
+      {
+        "href": "/blog/adding-solar-panels-existing-system-california",
+        "label": "Adding panels to an existing system"
+      },
+      {
+        "href": "/blog/do-solar-panels-increase-property-taxes-california",
+        "label": "Solar and your property tax"
+      },
+      {
+        "href": "/solar-problems/hidden-costs-of-solar-california",
+        "label": "Solar costs that quotes leave out"
+      },
+      {
+        "href": "/california-solar-cost-index",
+        "label": "Solar permit fees by city (cost index)"
       }
     ]
   },
@@ -1008,6 +1164,26 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/california-24-dollar-fixed-charge-explained",
         "label": "California's New $24 Fixed Charge, Explained"
+      },
+      {
+        "href": "/solar-problems/do-i-still-get-a-utility-bill-with-solar",
+        "label": "The utility bill you still get with solar"
+      },
+      {
+        "href": "/solar-problems/does-solar-mean-free-electricity-california",
+        "label": "Why solar does not mean a zero bill"
+      },
+      {
+        "href": "/solar-problems/solar-bill-still-high-california",
+        "label": "When the bill stays high after solar"
+      },
+      {
+        "href": "/solar-problems/what-solar-doesnt-cover-california",
+        "label": "Charges solar does not cover"
+      },
+      {
+        "href": "/solar-problems/running-ac-with-solar-california",
+        "label": "Running air conditioning on solar"
       }
     ]
   },
@@ -1044,6 +1220,34 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/free-solar-panels-california",
         "label": "Are Free Solar Panels Real in California? The CPUC Answer"
+      },
+      {
+        "href": "/blog/how-much-does-it-cost-to-lease-solar-panels-california",
+        "label": "What a solar lease costs"
+      },
+      {
+        "href": "/blog/solar-ppa-explained-california",
+        "label": "How a solar PPA works"
+      },
+      {
+        "href": "/blog/zero-down-solar-california",
+        "label": "Zero-down solar offers, explained"
+      },
+      {
+        "href": "/blog/what-happens-if-stop-paying-solar-lease-california",
+        "label": "Stopping solar lease payments"
+      },
+      {
+        "href": "/solar-problems/solar-escalator-clause-explained",
+        "label": "Escalator clauses in leases and PPAs"
+      },
+      {
+        "href": "/solar-problems/solar-dealer-fees-explained",
+        "label": "Dealer fees inside solar loans"
+      },
+      {
+        "href": "/solar-problems/ucc-1-lien-solar-california",
+        "label": "UCC-1 filings on solar equipment"
       }
     ]
   },
@@ -1088,6 +1292,18 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/why-is-my-pge-bill-so-high",
         "label": "Why Is My PG&E Bill So High? 7 Causes to Check (2026)"
+      },
+      {
+        "href": "/blog/solar-tax-credit-2026",
+        "label": "Federal credit: completion dates and records"
+      },
+      {
+        "href": "/blog/solar-tax-credit-expired-2026-options",
+        "label": "Options after the federal credit ended"
+      },
+      {
+        "href": "/blog/tech-clean-california-heat-pump-rebate",
+        "label": "TECH Clean California heat pump rebates"
       }
     ]
   },
@@ -1248,6 +1464,54 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-installers/sunrun-ppa-explained",
         "label": "Sunrun PPA Explained: Terms From the 10-K"
+      },
+      {
+        "href": "/panel-reviews",
+        "label": "Solar panel brand reviews"
+      },
+      {
+        "href": "/panel-reviews/canadian-solar-panels-review",
+        "label": "Canadian Solar panels review"
+      },
+      {
+        "href": "/panel-reviews/trina-solar-panels-review",
+        "label": "Trina Solar panels review"
+      },
+      {
+        "href": "/solar-installers/ameco-solar-review",
+        "label": "Ameco Solar review"
+      },
+      {
+        "href": "/solar-installers/empire-solar-review",
+        "label": "Empire Solar review"
+      },
+      {
+        "href": "/solar-installers/freedom-forever-review",
+        "label": "Freedom Forever review"
+      },
+      {
+        "href": "/solar-installers/new-day-solar-review",
+        "label": "New Day Solar review"
+      },
+      {
+        "href": "/solar-installers/sullivan-solar-power-review",
+        "label": "Sullivan Solar Power review"
+      },
+      {
+        "href": "/solar-installers/sunnova-review",
+        "label": "Sunnova review"
+      },
+      {
+        "href": "/solar-installers/sunnova-vs-sunrun",
+        "label": "Sunnova vs Sunrun compared"
+      },
+      {
+        "href": "/blog/tesla-powerwall-installers-california",
+        "label": "Tesla Powerwall installers in California"
+      },
+      {
+        "href": "/battery/tesla-powerwall-alternatives",
+        "label": "Alternatives to the Tesla Powerwall"
       }
     ]
   },
@@ -1372,6 +1636,34 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/solar-panel-bird-proofing",
         "label": "Solar Panel Bird Proofing Cost: $200-$500 in California"
+      },
+      {
+        "href": "/blog/how-long-do-solar-panels-last",
+        "label": "How long solar panels last"
+      },
+      {
+        "href": "/solar-problems/solar-panel-degradation-california",
+        "label": "Panel degradation over time"
+      },
+      {
+        "href": "/solar-problems/solar-production-winter-california",
+        "label": "Lower output in winter"
+      },
+      {
+        "href": "/blog/what-is-a-solar-inverter",
+        "label": "What a solar inverter does"
+      },
+      {
+        "href": "/blog/string-inverter-vs-microinverter",
+        "label": "String inverters vs microinverters"
+      },
+      {
+        "href": "/blog/what-happens-to-solar-panels-after-25-years",
+        "label": "Solar panels after 25 years"
+      },
+      {
+        "href": "/solar-problems/solar-homeowners-insurance",
+        "label": "Homeowners insurance and solar panels"
       }
     ]
   },
@@ -1595,6 +1887,22 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-problems/why-solar-reps-get-a-bad-name",
         "label": "Why Solar Reps Get a Bad Name"
+      },
+      {
+        "href": "/blog/can-you-cancel-solar-panel-contract-before-installation-california",
+        "label": "Cancelling a solar contract before install"
+      },
+      {
+        "href": "/blog/hoa-solar-rights-california",
+        "label": "HOA rules and your solar rights"
+      },
+      {
+        "href": "/blog/ab-942-california-solar",
+        "label": "AB 942 and solar lease transfers"
+      },
+      {
+        "href": "/solar-installers/solar-installer-bankruptcy-california",
+        "label": "When a solar installer goes bankrupt"
       }
     ]
   },
@@ -1671,6 +1979,18 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/sce-time-of-use-rates-2026",
         "label": "SCE Time-of-Use Rates 2026: Plans, Prices, Peak Hours"
+      },
+      {
+        "href": "/blog/california-public-utilities-commission",
+        "label": "What the CPUC decides on rates"
+      },
+      {
+        "href": "/blog/california-energy-commission",
+        "label": "What the California Energy Commission does"
+      },
+      {
+        "href": "/blog/what-is-demand-charge-california",
+        "label": "Demand charges, explained"
       }
     ]
   }
@@ -1680,10 +2000,46 @@ export function topicHub(hub: TopicHubId): TopicHub | undefined {
   return TOPIC_HUBS.find((h) => h.hub === hub);
 }
 
-/** The hub a path belongs to: the hub whose page it is, else the first hub listing it as a spoke. */
+/**
+ * The parent hub of a page that more than one hub lists as a spoke.
+ *
+ * A page can sit in several hubs' lists (cross-hub links, §5.4), but it has one
+ * parent (§5.2). Without this table the parent would be whichever hub comes
+ * first in TOPIC_HUBS, which is alphabetical and says nothing about the page.
+ * Each entry is the page's hub in Block 5 (hub_page_map.csv via PAGE.json, or
+ * orphans.csv `proposed_hub` / `breadcrumb_parent`). Only pages whose
+ * first-listed hub differs from that parent need an entry. The parent decides
+ * the breadcrumb a shell derives for a /blog post (lib/breadcrumbs.ts), the
+ * group the post sits in on /blog, and the block JsonArticleLinks renders.
+ */
+export const PRIMARY_HUB: Readonly<Record<string, TopicHubId>> = {
+  '/blog/adu-solar-requirements-california': 'rules_permits',
+  '/blog/do-solar-panels-work-during-power-outage-california': 'roof_structures',
+  '/blog/free-roof-replacement-with-solar-panels-california': 'roof_structures',
+  '/blog/free-solar-panels-california': 'incentives',
+  '/blog/how-big-of-a-solar-system-do-i-need-california': 'installers',
+  '/blog/is-it-better-to-buy-or-lease-solar-panels-california': 'installers',
+  '/blog/pge-vs-sce-vs-sdge-rates-compared': 'utility_rates',
+  '/blog/sce-rate-increase-2026': 'utility_rates',
+  '/blog/sdge-time-of-use-rates-2026': 'utility_rates',
+  '/blog/solar-carport-california-guide': 'roof_structures',
+  '/blog/solar-panel-removal-reinstall-cost': 'maintenance',
+  '/blog/solar-panels-tile-roof-california': 'roof_structures',
+  '/panel-reviews/rec-solar-panels-review': 'installer_reviews',
+  '/solar-installers/solar-installer-bankruptcy-california': 'rules_permits',
+};
+
+/**
+ * The hub a path belongs to: the hub whose page it is, else its PRIMARY_HUB
+ * entry, else the first hub listing it as a spoke.
+ */
 export function hubForPath(path: string): TopicHubId | undefined {
+  const primary = PRIMARY_HUB[path];
   return (
     TOPIC_HUBS.find((h) => h.hubPage === path)?.hub ??
+    (primary && TOPIC_HUBS.some((h) => h.hub === primary && h.spokes.some((s) => s.href === path))
+      ? primary
+      : undefined) ??
     TOPIC_HUBS.find((h) => h.spokes.some((s) => s.href === path))?.hub
   );
 }

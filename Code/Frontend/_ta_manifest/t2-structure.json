@@ -1,0 +1,276 @@
+{
+  "agent": "structure",
+  "branch": "claude/t2-structure-20260923",
+  "updated": "2026-09-23",
+  "spec": "_AUDIT/2026-09-23_topicmap/blocks/05_structure/STRUCTURE_AND_LINK_RULES.md sections 5.6-5.11, 6.7; orphans.csv",
+  "commits": [
+    {
+      "sha": "1abdfea",
+      "task": 5,
+      "subject": "Attach Block 5 orphan pages to their hubs and give multi-hub pages one parent"
+    },
+    {
+      "sha": "0be7e6c",
+      "task": 1,
+      "subject": "Make shell breadcrumbs and BreadcrumbList one list, with hub crumbs for posts"
+    },
+    {
+      "sha": "6ef9406",
+      "task": 3,
+      "subject": "Add Bills & rates to the header and list every hub page in the footer"
+    },
+    {
+      "sha": "0c3e85a",
+      "task": 2,
+      "subject": "Link every hub page from the home page, grouped by subject"
+    },
+    {
+      "sha": "9f4bc26",
+      "task": 4,
+      "subject": "List every blog post on /blog, grouped under an H2 per topic hub"
+    },
+    {
+      "sha": "057ca54",
+      "task": 6,
+      "subject": "Repoint the /programs/* links, which 404, to the CPUC's CARE and Climate Credit pages"
+    }
+  ],
+  "tasks": {
+    "1_breadcrumbs": {
+      "files": [
+        "src/lib/breadcrumb-sections.ts (new)",
+        "src/lib/breadcrumbs.ts (new)",
+        "src/components/shared/BreadcrumbTrail.tsx (new)",
+        "src/components/shared/BreadcrumbJsonLd.tsx",
+        "src/components/layout/PublicLayout.tsx",
+        "src/components/growth/DecisionPage.tsx",
+        "src/components/shared/ArticleRoute.tsx",
+        "src/components/growth/CityCostPage.tsx"
+      ],
+      "changes": [
+        "Section table moved to lib/breadcrumb-sections.ts (no imports, safe for the client BreadcrumbJsonLd). Added solar-cost -> /solar-cost; solar-installers -> /solar-installers (was null). /solar-savings and /solar-companies stay unlinked (404). Labels aligned with the visible trails already on the site: 'Solar company reviews', 'Panel Reviews', 'Home batteries', 'Solar problems and scams', 'Solar cost by city'.",
+        "BreadcrumbJsonLd and PublicLayout take a full `parents` / `breadcrumbParents` list (mid-levels supported); an explicit empty list means no middle crumb. The single `parent` / `breadcrumbParent` still works.",
+        "lib/breadcrumbs.ts defaultCrumbs(path): URL section crumb; else the page's topic hub page (hubForPath) so a /blog post shows its hub, not 'Blog'; a hub page (including /blog hub posts) gets no middle crumb; a /blog post in no hub keeps 'Blog'.",
+        "DecisionPage: with no `breadcrumbs` prop it now renders the derived trail and passes the same list to the schema (before: no visible trail, schema Home > Blog > page). Covers ~25 in-state DecisionPage routes, e.g. /blog/zero-down-solar-california -> Leases, PPAs and financing; /blog/pge-rate-increase-2026 -> California utility rate tracker; /tools/solar-panel-calculator -> Solar cost and value. Out-of-state pages get no middle crumb (unchanged).",
+        "ArticleRoute (50 JSON pages under /battery, /commercial-solar, /solar-installers, /solar-problems): 'back to section' link replaced by a breadcrumb from the URL section, passed to the schema too. /solar-installers/<slug> now points at /solar-installers, not /best-solar-companies-california. backHref/backLabel props kept optional and unused so the [slug] routes are untouched.",
+        "CityCostPage already matched (Home > Solar cost by city > city); nav gets aria-label=Breadcrumb. CityComparison already matched; unchanged. GuideShell, CostFinGuideShell and RateGuideParts left as they are: all 21 GuideShell/CostFin callers pass the same crumb to the shell and to PublicLayout (checked)."
+      ],
+      "verified": "Static renders (esbuild + react-dom/server, Next stubs) of /blog/zero-down-solar-california, /blog/what-is-nem-3-california, /blog/is-it-better-to-buy-or-lease-solar-panels-california, /solar-installers/solar-installer-bankruptcy-california, /battery/battery-backup-vs-generator-california, /solar-problems/solar-dealer-fees-explained, /solar-companies/rancho-cucamonga, /solar-cost/fresno: visible trail and BreadcrumbList identical (hrefs and names). No crumb points at /solar-companies, /solar-savings, /utilities or a state root."
+    },
+    "2_home": {
+      "files": [
+        "src/components/landing/HomeGuides.tsx"
+      ],
+      "changes": "Six topic cards replaced by the 15 existing hub pages under the five §5.7 headings (Cost and paying; Companies and reviews; Bills, rates and NEM; Batteries and your home; Commercial), one line each. 'Recently updated' drops the rate tracker and lease/PPA guide (now in the hub list) so each target is linked once. News hub has no page and is left out.",
+      "hub_pages_linked": [
+        "/solar-panels-california",
+        "/solar-cost",
+        "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+        "/blog/california-solar-tax-credit-2026",
+        "/best-solar-companies-california",
+        "/solar-installers",
+        "/solar-problems",
+        "/california-utility-rate-tracker",
+        "/blog/why-is-my-california-electric-bill-so-high",
+        "/blog/nem-2-vs-nem-3-california",
+        "/blog/is-community-solar-worth-it",
+        "/battery",
+        "/blog/is-my-roof-good-for-solar-california",
+        "/solar-panel-maintenance-california",
+        "/commercial-solar"
+      ]
+    },
+    "3_header_footer": {
+      "files": [
+        "src/components/landing/Header.tsx",
+        "src/components/landing/Header.test.mjs",
+        "src/components/landing/Footer.tsx"
+      ],
+      "changes": [
+        "Header: 'Bills & rates' -> /california-utility-rate-tracker added after Companies (6 links). Header test updated; passes (node --test).",
+        "Footer Guides column: the 15 hub pages only (same list as the home page). Removed /california-solar-cost-index (a cost_value spoke, linked from /solar-panels-california and others) and /blog (in the header as 'Guides'). The CPUC consumer-information external link is kept. Trust column unchanged."
+      ]
+    },
+    "4_blog_index": {
+      "files": [
+        "src/app/blog/page.tsx"
+      ],
+      "changes": "Added the 24 live posts that were missing (119 listed = 126 post folders minus 7 redirected slugs). Each uses the post's own meta title, description and last-modified date; readTime only where the post prints one. Posts grouped by hubForPath with an H2 per hub (14 groups today), the hub's own post first or its hub page linked as 'Overview', a 'Guides by topic' jump list, and 'More guides' last for unassigned posts (none today). Existing entries' data unchanged; titles are now H3. ItemList schema follows the grouped order (119 items).",
+      "added_posts": [
+        "california-solar-tax-credit-2026",
+        "solar-rebates-by-california-utility",
+        "free-solar-panels-california",
+        "solar-battery-backup-california",
+        "sdge-rate-increase-2026",
+        "why-is-my-sce-bill-so-high",
+        "how-to-lower-electric-bill-california",
+        "solar-ppa-explained-california",
+        "what-happens-if-stop-paying-solar-lease-california",
+        "adding-solar-panels-existing-system-california",
+        "solar-installation-timeline-california",
+        "why-is-my-sdge-bill-so-high",
+        "why-is-my-pge-bill-so-high",
+        "pge-rate-increase-2026",
+        "is-community-solar-worth-it",
+        "what-happens-to-solar-lease-when-i-sell-california",
+        "why-is-my-ladwp-bill-so-high",
+        "sdge-time-of-use-rates-2026",
+        "how-does-net-metering-work",
+        "solar-during-psps-california",
+        "what-is-a-solar-inverter",
+        "string-inverter-vs-microinverter",
+        "california-energy-commission",
+        "solar-panel-inspection-california"
+      ],
+      "integration_note": "New posts from other agents' blog_index_add still need an entry in blogPosts; their group is picked automatically once the post is a spoke in topic-hubs.ts."
+    },
+    "5_orphans": {
+      "files": [
+        "src/data/topic-hubs.ts"
+      ],
+      "changes": [
+        "79 live orphans.csv pages added as spokes of their proposed hub, with short labels: battery 1, city_bills 18 (17 /solar-savings cities + /solar-savings/inland-empire), city_cost 4, city_installers 1, commercial 3, cost_value 12 (incl. /california-solar-cost-index), electric_bills 5, financing 7, incentives 3, installer_reviews 12 (incl. /panel-reviews sub-hub), maintenance 7, rules_permits 4, utility_rates 3.",
+        "Skipped per brief: 24 out-of-state, 12 trust/legal/home, 2 redirected (/blog/commercial-solar-installation-cost-california, /solar-problems/free-solar-california-is-it-real), plus hub pages themselves.",
+        "PRIMARY_HUB table added and hubForPath reads it: 14 pages several hubs list now resolve to their Block 5 parent instead of the alphabetically first hub (e.g. /blog/sdge-time-of-use-rates-2026 -> utility_rates, /blog/free-solar-panels-california -> incentives, /solar-installers/solar-installer-bankruptcy-california -> rules_permits).",
+        "Side effect (intended, per orphans.csv parents): JsonArticleLinks on 11 /solar-problems JSON pages now shows their proposed hub's block (cost_value, electric_bills, financing or maintenance) instead of rules_permits."
+      ],
+      "deviation": "/solar-companies/rancho-cucamonga: orphans.csv proposes hub 'battery' (its only cluster is a battery H2 it hosts) but parent /best-solar-companies-california. Filed under city_installers, not battery, so the /battery hub does not list a companies city page. Chad to confirm."
+    },
+    "6_broken_links": {
+      "files": [
+        "src/components/growth/CaliforniaBillDecisionPages.tsx",
+        "src/app/blog/california-24-dollar-fixed-charge-explained/page.tsx"
+      ],
+      "changes": [
+        "/programs/care-california (404): 3 links (fixed-charge post; how-to-lower-electric-bill via CaliforniaBillDecisionPages 'lower'; the unused 'high' body) repointed to https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program (200).",
+        "/programs/climate-credit-california (404): 1 link (how-to-lower) repointed to https://www.cpuc.ca.gov/climatecredit (200; carries the 2026 amounts table).",
+        "Removed the reader-visible editor notes '(publishing alongside this page — confirm both go live together)' next to each link.",
+        "/blog/free-roof-replacement-with-solar-panels-california no longer links /blog/is-solar-worth-it-california-2026 (already points at /blog/are-solar-panels-worth-it-california on the base commit); nothing to change.",
+        "/blog/why-is-my-california-electric-bill-so-high is now hand-written and has no /programs link; only the unused CaliforniaBillDecisionPage('high') body did, fixed above."
+      ]
+    }
+  },
+  "requests": [
+    {
+      "owner": "installers / reviews agents (individual pages)",
+      "files": [
+        "src/app/solar-installers/ameco-solar-review/page.tsx",
+        "src/app/solar-installers/empire-solar-review/page.tsx",
+        "src/app/solar-installers/enphase-vs-solaredge/page.tsx",
+        "src/app/solar-installers/freedom-forever-review/page.tsx",
+        "src/app/solar-installers/la-solar-group-review/page.tsx",
+        "src/app/solar-installers/new-day-solar-review/page.tsx",
+        "src/app/solar-installers/option-one-solar-review/page.tsx",
+        "src/app/solar-installers/palmetto-solar-review/page.tsx",
+        "src/app/solar-installers/powur-solar-review/page.tsx",
+        "src/app/solar-installers/semper-solaris-review/page.tsx",
+        "src/app/solar-installers/solar-optimum-review/page.tsx",
+        "src/app/solar-installers/sullivan-solar-power-review/page.tsx",
+        "src/app/solar-installers/sunlux-solar-review/page.tsx",
+        "src/app/solar-installers/sunnova-review/page.tsx",
+        "src/app/solar-installers/sunnova-vs-sunrun/page.tsx",
+        "src/app/solar-installers/sunpower-review/page.tsx",
+        "src/app/solar-installers/sunrun-vs-sunpower/page.tsx",
+        "src/app/solar-installers/sunrun-vs-tesla-solar/page.tsx"
+      ],
+      "ask": "Change the hand-written visible breadcrumb middle crumb from /best-solar-companies-california to { label: 'Solar company reviews', href: '/solar-installers' }. The BreadcrumbList for /solar-installers/* now says /solar-installers (§5.6), so these 18 visible trails disagree with the schema until changed. 11 other hand-built /solar-installers pages already showed /solar-installers without passing breadcrumbParent; their schema had no middle crumb and now matches (3 more already passed it)."
+    },
+    {
+      "owner": "cities agent / whoever owns src/app/solar-savings",
+      "files": [
+        "src/app/solar-savings/[city]/page.tsx"
+      ],
+      "ask": "§5.6: a /solar-savings city with no regional hub should show Home > California utility rate tracker > City. Today it shows Home > City. Set the visible middle crumb and breadcrumbParent to { label: 'California utility rate tracker', href: '/california-utility-rate-tracker' } when `hub` is undefined."
+    },
+    {
+      "owner": "cities agent / whoever owns src/app/solar-savings",
+      "files": [
+        "src/app/solar-savings/bay-area/page.tsx",
+        "src/app/solar-savings/central-valley/page.tsx",
+        "src/app/solar-savings/inland-empire/page.tsx",
+        "src/app/solar-savings/san-diego-county/page.tsx",
+        "src/app/solar-savings/los-angeles-county/page.tsx",
+        "src/app/solar-savings/orange-county/page.tsx"
+      ],
+      "ask": "Four regional pages show a middle crumb 'Solar Savings' linking to #solar-inquiry, which the schema does not have. Replace it with the rate tracker (Home > California utility rate tracker > Region) and pass the same crumb as breadcrumbParent; do the same on los-angeles-county and orange-county for consistency."
+    },
+    {
+      "owner": "article owners (optional, §5.6)",
+      "files": [
+        "src/app/blog/ab-942-california-solar/page.tsx",
+        "src/app/blog/california-24-dollar-fixed-charge-explained/page.tsx",
+        "src/app/blog/california-energy-commission/page.tsx",
+        "src/app/blog/california-public-utilities-commission/page.tsx",
+        "src/app/blog/can-solar-panels-power-a-whole-house-california/page.tsx",
+        "src/app/blog/do-solar-panels-work-at-night-california/page.tsx",
+        "src/app/blog/do-solar-panels-work-on-cloudy-days-california/page.tsx",
+        "src/app/blog/hoa-solar-rights-california/page.tsx",
+        "src/app/blog/how-big-of-a-solar-system-do-i-need-california/page.tsx",
+        "src/app/blog/how-does-net-metering-work/page.tsx",
+        "src/app/blog/how-long-do-solar-panels-last/page.tsx",
+        "src/app/blog/pge-vs-sce-vs-sdge-rates-compared/page.tsx",
+        "src/app/blog/solar-during-psps-california/page.tsx",
+        "src/app/blog/solar-panel-bird-proofing/page.tsx",
+        "src/app/blog/solar-panel-inspection-california/page.tsx",
+        "src/app/blog/solar-panels-for-ev-charging-california/page.tsx",
+        "src/app/blog/solar-pool-heating-california/page.tsx",
+        "src/app/blog/solar-ppa-explained-california/page.tsx",
+        "src/app/blog/solar-system-quotes-california/page.tsx",
+        "src/app/blog/string-inverter-vs-microinverter/page.tsx",
+        "src/app/blog/switch-to-solar-california/page.tsx",
+        "src/app/blog/tech-clean-california-heat-pump-rebate/page.tsx",
+        "src/app/blog/tesla-powerwall-installers-california/page.tsx",
+        "src/app/blog/what-happens-to-solar-panels-after-25-years/page.tsx",
+        "src/app/blog/what-is-a-solar-inverter/page.tsx",
+        "src/app/blog/what-is-demand-charge-california/page.tsx",
+        "src/app/blog/why-is-my-ladwp-bill-so-high/page.tsx",
+        "src/app/blog/why-is-my-pge-bill-so-high/page.tsx",
+        "src/app/blog/why-is-my-sdge-bill-so-high/page.tsx"
+      ],
+      "ask": "These live posts render their own 'Home / Blog / post' trail or a 'Back to Blog' link with no breadcrumbParent. Visible and schema match today (both 'Blog'), but §5.6 wants the topic hub as the crumb. To switch, pass breadcrumbParent={hubCrumb(path)} (lib/breadcrumbs.ts) to PublicLayout and render <BreadcrumbTrail crumbs={[crumb]} current=... /> in place of the hand-written trail."
+    },
+    {
+      "owner": "rates agent",
+      "files": [
+        "src/app/blog/why-is-my-california-electric-bill-so-high/page.tsx"
+      ],
+      "ask": "The electric_bills hub page renders only the utility_rates HubSpokeLinks block, so its 5 new spokes (/solar-problems/do-i-still-get-a-utility-bill-with-solar, does-solar-mean-free-electricity-california, solar-bill-still-high-california, what-solar-doesnt-cover-california, running-ac-with-solar-california) are not linked from their hub. Add <HubSpokeLinks hub=\"electric_bills\" currentPath={path} /> or link them in the body."
+    },
+    {
+      "owner": "reviews agent",
+      "files": [
+        "src/app/solar-installers/page.tsx"
+      ],
+      "ask": "The installer_reviews hub page does not list /panel-reviews/canadian-solar-panels-review, /panel-reviews/trina-solar-panels-review, /blog/tesla-powerwall-installers-california or /battery/tesla-powerwall-alternatives (now spokes). Add them to its lists or render <HubSpokeLinks hub='installer_reviews' .../>."
+    },
+    {
+      "owner": "rates / bills content owner",
+      "files": [
+        "src/components/growth/CaliforniaBillDecisionPages.tsx (LowerBillContent)"
+      ],
+      "ask": "Content check, not changed here: the Climate Credit paragraph says PG&E/SCE/SDG&E customers get $36.18/$36.00/$49.36 'each split across two credits'. The CPUC 2026 table (cpuc.ca.gov/climatecredit, read 2026-09-23) shows each amount paid twice (August and September), i.e. two credits of $36.18 for PG&E. The wording reads as if the total is split; please re-check against the source."
+    },
+    {
+      "owner": "incentives / bills content (when built)",
+      "files": [
+        "/blog/pge-care-program",
+        "/blog/california-climate-credit"
+      ],
+      "ask": "When these Block 5 pages are built, repoint the four CPUC links above to them (internal)."
+    }
+  ],
+  "decisions_for_chad": [
+    "Rancho Cucamonga companies page filed under city_installers instead of the proposed battery hub (see 5_orphans.deviation).",
+    "Footer Guides column drops the cost index and the Blog link (hubs only, as approved). Say if either should stay.",
+    "/blog/is-it-better-to-buy-or-lease-solar-panels-california now shows 'Solar companies in California' as its crumb (Block 5 breadcrumb_parent) although it is also a financing spoke; change PRIMARY_HUB to financing if you prefer 'Leases, PPAs and financing'."
+  ],
+  "checks": {
+    "tsc --noEmit": "pass",
+    "canonical-redirects.test.ts": "pass (14)",
+    "assert:citylinks": "pass",
+    "assert:linkspine": "pass (/blog average 30.98 -> 47.04 inbound per page)",
+    "test:growth": "pass (53)",
+    "Header.test.mjs": "pass (2)"
+  },
+  "not_touched": "forms, tracking, consent text, intake files, robots.ts, middleware.ts, sitemap.ts, growth-cities.ts, cities-data.ts, city-cost-data.ts, CommercialSolarGuide.tsx"
+}

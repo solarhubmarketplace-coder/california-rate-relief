@@ -6,6 +6,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { TOPIC_HUBS, hubForPath, topicHub, type TopicHubId } from '@/data/topic-hubs';
 
 export const metadata: Metadata = {
   title: 'Solar Savings Blog | California Rate Relief',
@@ -22,6 +23,11 @@ export const metadata: Metadata = {
 // is not in it is linked from nowhere unless another post happens to mention it.
 // scripts/assert-city-links.mjs fails when a published post has no inbound
 // internal link at all, which is how the fourteen added on 2026-09-18 were found.
+//
+// Every live post is listed (topic map Block 5 §5.11 rule 1). The page groups
+// the posts by topic hub (data/topic-hubs.ts, hubForPath), so a new post lands
+// under its hub's heading once it is a spoke there, and under "More guides"
+// until then; the order within a group is the order of this array.
 interface BlogPost {
   slug: string;
   title: string;
@@ -844,7 +850,289 @@ const blogPosts: BlogPost[] = [
     readTime: '7 min read',
     category: 'Solar Decision',
   },
+  // claude/t2-structure-20260923 — posts that were live but missing from this
+  // index (topic map Block 5 §1.2 and §5.11: /blog must list every post).
+  // Title, excerpt and date are each post's own meta title, meta description
+  // and last-modified date as its page file states them on 2026-09-23.
+  {
+    slug: 'california-solar-tax-credit-2026',
+    title: 'California Solar Tax Credit and Incentives (2026 Guide)',
+    excerpt:
+      'No state solar tax credit, and the 30% federal credit ended for systems installed after 2025. What California still offers: SGIP, DAC-SASH, CARE and more.',
+    date: '2026-09-23',
+    category: 'California Solar Incentives',
+  },
+  {
+    slug: 'solar-rebates-by-california-utility',
+    title: 'Solar Rebates and Incentives by California Utility (2026)',
+    excerpt:
+      'Solar and battery incentives by utility: PG&E, SCE, SDG&E, SMUD, LADWP and Roseville. What each pays in 2026, what is closed, and what ended.',
+    date: '2026-09-23',
+    category: 'California Solar Incentives',
+  },
+  {
+    slug: 'free-solar-panels-california',
+    title: 'Are Free Solar Panels Real in California? The CPUC Answer',
+    excerpt:
+      'The CPUC says solar is “rarely free.” The 4 things a free-solar ad can mean, the no-cost state program for income-qualified homeowners, and SOMAH.',
+    date: '2026-09-23',
+    category: 'California Solar Programs',
+  },
+  {
+    slug: 'solar-battery-backup-california',
+    title: 'Solar Battery Backup in California: Cost, Savings, Rebates',
+    excerpt:
+      'A solar battery runs key circuits in an outage and stores midday solar for evening use. California cost benchmarks, NEM 3.0 savings and 2026 rebates.',
+    date: '2026-09-23',
+    category: 'Battery Storage',
+  },
+  {
+    slug: 'sdge-rate-increase-2026',
+    title: 'SDG&E Rate Increase 2026: History, Chart and What Changed',
+    excerpt:
+      'SDG&E rates rose about 11.4% on January 1, 2026, then fell 2.0% in June. See every change since 2024, TOU-DR1 prices and why San Diego pays the most.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'why-is-my-sce-bill-so-high',
+    title: 'Why Is My Edison Bill So High? SCE Bill Checklist (2026)',
+    excerpt:
+      'An SCE bill runs high for five reasons: more days, more kWh, summer 4–9 p.m. prices, the Base Services Charge or a missing credit. Check each in order.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'how-to-lower-electric-bill-california',
+    title: 'How to Lower Your Electric Bill in California: 6 Steps',
+    excerpt:
+      'The four things that actually change a California electric bill: rate plan, baseline, fixed charges, and usage — plus CARE, FERA, and the Climate Credit.',
+    date: '2026-09-22',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'solar-ppa-explained-california',
+    title: 'Solar PPA Explained: How California’s $0-Down Solar Works',
+    excerpt:
+      'How a California solar PPA works: the $/kWh rate, escalator, term, and what CPUC’s consumer guide requires providers to disclose before you sign.',
+    date: '2026-09-22',
+    readTime: '8 min read',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'what-happens-if-stop-paying-solar-lease-california',
+    title: 'What Happens If You Stop Paying a Solar Lease?',
+    excerpt:
+      'What Sunrun, Tesla and other providers say about default, UCC-1 filings and repossession — plus your transfer and buyout options in California.',
+    date: '2026-09-22',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'adding-solar-panels-existing-system-california',
+    title: 'Adding Solar Panels to an Existing System in California',
+    excerpt:
+      'Adding solar capacity to an existing California system is a design, compatibility and approval decision. Start with the records and serving utility process.',
+    date: '2026-09-20',
+    category: 'Solar Decision',
+  },
+  {
+    slug: 'solar-installation-timeline-california',
+    title: 'Solar Installation Timeline in California: 6 Stages to PTO',
+    excerpt:
+      'Map a California solar project from quote to permission to operate: each approval, inspection and handoff, and who owns it. No statewide week count fits all.',
+    date: '2026-09-20',
+    category: 'Getting Started',
+  },
+  {
+    slug: 'why-is-my-sdge-bill-so-high',
+    title: 'Why Is My SDG&E Bill So High? A Bill-First Checklist',
+    excerpt:
+      'Compare billing days, daily kWh, rate plan, delivery and the generation line on your SDG&E bill before deciding whether a project belongs in the conversation.',
+    date: '2026-09-20',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'why-is-my-pge-bill-so-high',
+    title: 'Why Is My PG&E Bill So High? 7 Causes to Check (2026)',
+    excerpt:
+      'Check kWh per day, billing days, TOU peak use and PG&E’s Base Services Charge (about $24 a month for most customers, per PG&E). 7 causes, in order.',
+    date: '2026-09-18',
+    readTime: '8 min read',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'pge-rate-increase-2026',
+    title: 'PG&E Rate Changes 2026: How to Check Your California Bill',
+    excerpt:
+      'PG&E split some costs into a Base Services Charge in March 2026, around $24 a month for most customers. Check your own rate plan and usage, not an average.',
+    date: '2026-09-12',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'is-community-solar-worth-it',
+    title: 'Is Community Solar Worth It? Compare Credit vs Cost',
+    excerpt:
+      'Community solar can work for renters or homes without a usable roof. It depends on the subscription charge, bill credit, fees and contract terms.',
+    date: '2026-09-12',
+    category: 'Solar Decision',
+  },
+  {
+    slug: 'what-happens-to-solar-lease-when-i-sell-california',
+    title: 'Selling a CA Home With Solar Lease or PPA: Buyout Guide',
+    excerpt:
+      'Selling a home with a solar lease or PPA? See how transfer, buyout and end-of-term options work before you list.',
+    date: '2026-09-11',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'why-is-my-ladwp-bill-so-high',
+    title: 'Why Is My LADWP Bill So High? Rates & Fees Explained',
+    excerpt:
+      'See what makes an LADWP bill jump: water and sanitation charges, an old balance, daily usage and your rate plan.',
+    date: '2026-09-11',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'sdge-time-of-use-rates-2026',
+    title: 'SDG&E Peak Hours & TOU-DR1 Rates (2026): 5 Plans Compared',
+    excerpt:
+      'SDG&E peak is 4-9 p.m. every day, weekends included. Off-peak windows plus summer and winter cents per kWh for TOU-DR1, TOU-DR2, TOU-DR-P, EV-TOU-5 and DR.',
+    date: '2026-09-10',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'how-does-net-metering-work',
+    title: 'How Does Net Metering Work? Plain-English Guide (2026)',
+    excerpt:
+      'Net metering explained in plain English: how export credits are calculated and the difference between NEM 1.0, 2.0, 3.0 and net billing.',
+    date: '2026-04-24',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'solar-during-psps-california',
+    title: 'Solar During a PSPS in California: Will My Panels Work?',
+    excerpt:
+      'Does solar work during a PG&E PSPS outage? Why grid-tied solar shuts off, how batteries change that, and what you need to survive a blackout.',
+    date: '2026-04-24',
+    category: 'Solar + Outages',
+  },
+  {
+    slug: 'what-is-a-solar-inverter',
+    title: 'What Is a Solar Inverter? Types, Brands, and Lifespans',
+    excerpt:
+      'A plain-English explanation of solar inverters: the main types, how long they last, which brands are reliable, and warranty realities.',
+    date: '2026-04-24',
+    category: 'Solar Basics',
+  },
+  {
+    slug: 'string-inverter-vs-microinverter',
+    title: 'String Inverter vs Microinverter: Which Is Right for You?',
+    excerpt:
+      'Head-to-head comparison of string inverter vs microinverter solar systems. Cost, performance under shade, warranty, rapid shutdown, and repairability.',
+    date: '2026-04-24',
+    category: 'Solar Basics',
+  },
+  {
+    slug: 'california-energy-commission',
+    title: 'What the California Energy Commission Means for Your Bill',
+    excerpt:
+      'The CEC sets building energy standards, mandates solar on new homes, and shapes battery rules. How it affects homeowners in 2026.',
+    date: '2026-04-16',
+    readTime: '8 min read',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'solar-panel-inspection-california',
+    title: 'Solar Panel Inspection in California: $150 to $350',
+    excerpt:
+      'A solar inspection is not required by California law but typically costs $150 to $350. What a visual check, electrical test, and performance review each cover.',
+    date: '2026-04-16',
+    readTime: '6 min read',
+    category: 'Solar Longevity',
+  },
 ];
+/**
+ * Group headings on /blog, one per topic hub, in the order of the home page's
+ * five groups (cost and paying; companies and reviews; bills, rates and NEM;
+ * batteries and your home; commercial). A hub missing here is shown after these
+ * under its label from topic-hubs.ts.
+ */
+const GROUP_HEADINGS: [TopicHubId, string][] = [
+  ['cost_value', 'Solar cost and value'],
+  ['city_cost', 'Solar cost by city'],
+  ['financing', 'Leases, PPAs and financing'],
+  ['incentives', 'Tax credits, rebates and incentives'],
+  ['installers', 'Choosing a solar company'],
+  ['city_installers', 'Solar companies by city'],
+  ['installer_reviews', 'Company and panel reviews'],
+  ['rules_permits', 'Rules, permits and consumer protection'],
+  ['utility_rates', 'Utility rates and time-of-use plans'],
+  ['city_bills', 'Electric rates by city'],
+  ['electric_bills', 'Electric bills'],
+  ['nem', 'NEM 3.0 and net billing'],
+  ['news', 'News and policy updates'],
+  ['other_options', 'Community solar and other options'],
+  ['battery', 'Home batteries and backup'],
+  ['roof_structures', 'Roofs and solar'],
+  ['maintenance', 'Maintenance and repair'],
+  ['commercial', 'Commercial solar'],
+];
+
+interface PostGroup {
+  /** In-page anchor for the topic list at the top. */
+  id: string;
+  heading: string;
+  /** The hub's own page when it is not one of the posts listed under it. */
+  overview: { href: string; label: string } | null;
+  posts: BlogPost[];
+}
+
+function groupPosts(posts: BlogPost[]): PostGroup[] {
+  const byHub = new Map<TopicHubId, BlogPost[]>();
+  const rest: BlogPost[] = [];
+  for (const post of posts) {
+    const hub = hubForPath(`/blog/${post.slug}`);
+    if (!hub) {
+      rest.push(post);
+      continue;
+    }
+    const list = byHub.get(hub) ?? [];
+    list.push(post);
+    byHub.set(hub, list);
+  }
+  const order: [TopicHubId, string][] = [
+    ...GROUP_HEADINGS,
+    ...TOPIC_HUBS.filter((h) => !GROUP_HEADINGS.some(([id]) => id === h.hub)).map(
+      (h): [TopicHubId, string] => [h.hub, h.label],
+    ),
+  ];
+  const groups: PostGroup[] = [];
+  for (const [id, heading] of order) {
+    const list = byHub.get(id);
+    const hub = topicHub(id);
+    if (!list || !hub) continue;
+    // The hub's own post leads its group; otherwise the hub page is linked
+    // above the list as the overview.
+    const lead = list.filter((p) => `/blog/${p.slug}` === hub.hubPage);
+    const others = list.filter((p) => `/blog/${p.slug}` !== hub.hubPage);
+    groups.push({
+      id: `topic-${id.replace(/_/g, '-')}`,
+      heading,
+      overview:
+        hub.hubPage && lead.length === 0
+          ? { href: hub.hubPage, label: hub.hubPageLabel ?? hub.label }
+          : null,
+      posts: [...lead, ...others],
+    });
+  }
+  if (rest.length > 0) {
+    groups.push({ id: 'more-guides', heading: 'More guides', overview: null, posts: rest });
+  }
+  return groups;
+}
+
+/** The posts as /blog shows them: grouped by topic hub, "More guides" last. */
+const postGroups = groupPosts(blogPosts);
 
 /**
  * /blog is an index, not an article.
@@ -856,8 +1144,9 @@ const blogPosts: BlogPost[] = [
  * second Article in play for the same subject. CollectionPage with an ItemList
  * says what the page actually does: it indexes these posts, and names them.
  *
- * Every name, URL and count below is read from the blogPosts array rendered on
- * the page, so the schema cannot drift from what a reader sees. The list items
+ * Every name, URL and count below is read from postGroups, the grouped list
+ * rendered on the page, in the same order, so the schema cannot drift from
+ * what a reader sees. The list items
  * are plain ListItems rather than nested BlogPosting nodes on purpose: each
  * post's own page is the right place to describe the post.
  */
@@ -876,8 +1165,8 @@ function buildBlogIndexSchema() {
     },
     mainEntity: {
       '@type': 'ItemList',
-      numberOfItems: blogPosts.length,
-      itemListElement: blogPosts.map((post, i) => ({
+      numberOfItems: postGroups.reduce((n, g) => n + g.posts.length, 0),
+      itemListElement: postGroups.flatMap((g) => g.posts).map((post, i) => ({
         '@type': 'ListItem',
         position: i + 1,
         url: `https://ratereliefca.com/blog/${post.slug}`,
@@ -916,53 +1205,90 @@ export default function BlogPage() {
                 end of the list at step 2. */}
             <HeroQuickCheck topic="California solar guides" className="mb-12" />
 
-            {/* Blog Posts */}
-            <div className='space-y-8'>
-              {blogPosts.map((post) => (
-                <article
-                  key={post.slug}
-                  className='bg-card rounded-2xl border border-border p-6 md:p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group'
-                >
-                  <div className='flex items-center gap-3 mb-3'>
-                    <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
-                      {post.category}
-                    </span>
-                    <div className='flex items-center gap-1 text-xs text-muted-foreground'>
-                      <Calendar className='h-3 w-3' />
-                      <time dateTime={post.date}>
-                        {new Date(post.date).toLocaleDateString('en-US', {
-                          month: 'long',
-                          day: 'numeric',
-                          year: 'numeric',
-                        })}
-                      </time>
-                    </div>
-                    {post.readTime ? (
-                      <div className='flex items-center gap-1 text-xs text-muted-foreground'>
-                        <Clock className='h-3 w-3' />
-                        <span>{post.readTime}</span>
-                      </div>
-                    ) : null}
-                  </div>
+            {/* Topic list: jump links to each group below. */}
+            <nav aria-label='Guide topics' className='mb-12 rounded-xl border border-border bg-card p-6'>
+              <h2 className='mb-3 text-sm font-bold uppercase tracking-wide text-muted-foreground'>
+                Guides by topic
+              </h2>
+              <ul className='grid gap-x-6 gap-y-2 sm:grid-cols-2'>
+                {postGroups.map((group) => (
+                  <li key={group.id}>
+                    <a href={`#${group.id}`} className='text-primary hover:underline'>
+                      {group.heading}
+                    </a>{' '}
+                    <span className='text-sm text-muted-foreground'>({group.posts.length})</span>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-                  <Link href={`/blog/${post.slug}`} className='block'>
-                    <h2 className='text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors tracking-tight'>
-                      {post.title}
-                    </h2>
-                  </Link>
-
-                  <p className='text-foreground/70 leading-relaxed mb-4'>
-                    {post.excerpt}
-                  </p>
-
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className='inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all'
+            {/* Blog Posts, one section per topic hub (Block 5 §5.11). */}
+            <div className='space-y-16'>
+              {postGroups.map((group) => (
+                <section key={group.id} id={group.id} className='scroll-mt-24' aria-labelledby={`${group.id}-heading`}>
+                  <h2
+                    id={`${group.id}-heading`}
+                    className='text-2xl md:text-3xl font-extrabold text-foreground tracking-tight mb-3'
                   >
-                    Read Article
-                    <ArrowRight className='h-4 w-4' />
-                  </Link>
-                </article>
+                    {group.heading}
+                  </h2>
+                  {group.overview && (
+                    <p className='text-foreground/70 mb-6'>
+                      Overview:{' '}
+                      <Link href={group.overview.href} className='text-primary font-semibold hover:underline'>
+                        {group.overview.label}
+                      </Link>
+                    </p>
+                  )}
+                  <div className='space-y-8'>
+                    {group.posts.map((post) => (
+                      <article
+                        key={post.slug}
+                        className='bg-card rounded-2xl border border-border p-6 md:p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group'
+                      >
+                        <div className='flex items-center gap-3 mb-3'>
+                          <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
+                            {post.category}
+                          </span>
+                          <div className='flex items-center gap-1 text-xs text-muted-foreground'>
+                            <Calendar className='h-3 w-3' />
+                            <time dateTime={post.date}>
+                              {new Date(post.date).toLocaleDateString('en-US', {
+                                month: 'long',
+                                day: 'numeric',
+                                year: 'numeric',
+                              })}
+                            </time>
+                          </div>
+                          {post.readTime ? (
+                            <div className='flex items-center gap-1 text-xs text-muted-foreground'>
+                              <Clock className='h-3 w-3' />
+                              <span>{post.readTime}</span>
+                            </div>
+                          ) : null}
+                        </div>
+
+                        <Link href={`/blog/${post.slug}`} className='block'>
+                          <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors tracking-tight'>
+                            {post.title}
+                          </h3>
+                        </Link>
+
+                        <p className='text-foreground/70 leading-relaxed mb-4'>
+                          {post.excerpt}
+                        </p>
+
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          className='inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all'
+                        >
+                          Read Article
+                          <ArrowRight className='h-4 w-4' />
+                        </Link>
+                      </article>
+                    ))}
+                  </div>
+                </section>
               ))}
             </div>
 

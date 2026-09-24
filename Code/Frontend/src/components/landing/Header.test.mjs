@@ -65,12 +65,13 @@ test.after(async () => {
   await rm(outputDirectory, { recursive: true, force: true });
 });
 
-test("header menu exposes the five approved guide destinations", () => {
+test("header menu exposes the six approved guide destinations", () => {
   assert.deepEqual(
     HEADER_GUIDE_LINKS.map(({ href, label }) => [href, label]),
     [
       ["/solar-cost", "Cost"],
       ["/best-solar-companies-california", "Companies"],
+      ["/california-utility-rate-tracker", "Bills & rates"],
       ["/blog", "Guides"],
       ["/commercial-solar", "Commercial"],
       ["/tools/solar-panel-calculator", "Tools"],
