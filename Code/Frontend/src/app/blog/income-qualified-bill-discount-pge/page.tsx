@@ -174,6 +174,13 @@ export default function IncomeQualifiedBillDiscountPgePage() {
                 <li><strong>Payment arrangements and Budget Billing:</strong> spread a balance over several months, or even out seasonal peaks.</li>
                 <li><strong>Medical Baseline:</strong> not income-based; it helps customers who depend on power for certain medical needs.</li>
               </ul>
+              <p>
+                Who qualifies for each, which to apply for first and how to reach the agencies are covered in{' '}
+                <Link href="/blog/help-with-pge-bill" className={guideLink}>
+                  REACH, LIHEAP and debt forgiveness for past-due bills
+                </Link>
+                .
+              </p>
 
               <h2>How the discount fits with rates and your plan</h2>
               <p>
@@ -215,6 +222,16 @@ export default function IncomeQualifiedBillDiscountPgePage() {
                 exports are credited is a separate question, covered in{' '}
                 <Link href="/blog/net-billing-vs-net-metering-california" className={guideLink}>
                   net billing vs. net metering
+                </Link>
+                .
+              </p>
+              <p>
+                Without panels, CARE or FERA can also open a solar discount. PG&amp;E&apos;s Green Saver program takes 20% off
+                the electric bill for customers who buy their power from PG&amp;E, are eligible for CARE or FERA and live in a
+                disadvantaged or tribal community, though PG&amp;E says it is currently at capacity and enrolls eligible customers automatically as
+                space opens. The rules are in{' '}
+                <Link href="/blog/pge-solar-program" className={guideLink}>
+                  PG&amp;E&apos;s solar programs, including Green Saver
                 </Link>
                 .
               </p>

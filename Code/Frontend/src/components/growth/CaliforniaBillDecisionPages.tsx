@@ -319,7 +319,11 @@ function LowerBillContent() {
           Compare kWh per day and electric charges per day so weather, billing
           period length and one-time adjustments do not distort the decision.
           Then mark the rate plan and any separate generation provider shown on
-          the statement.
+          the statement. If PG&amp;E sends the bill, the{" "}
+          <Link className="underline" href="/blog/how-to-lower-pge-bill">
+            PG&amp;E-specific steps to lower the bill
+          </Link>{" "}
+          put its discounts, plans and peak hours in order.
         </p>
       </section>
       <BillComparison utilityName="California electric" />
