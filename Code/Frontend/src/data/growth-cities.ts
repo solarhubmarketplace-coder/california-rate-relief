@@ -624,6 +624,10 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     "projectLinks": [
       {
+        "href": "/blog/ladwp-solar-program",
+        "label": "LADWP solar programs and incentives, compared with a company quote"
+      },
+      {
         "href": "/solar-companies/santa-monica",
         "label": "Santa Monica, on SCE and Clean Power Alliance instead"
       },
@@ -638,6 +642,14 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "href": "/blog/solar-broker",
         "label": "What a solar broker can and cannot do for you"
+      },
+      {
+        "href": "/blog/solar-ppa-companies",
+        "label": "How to compare solar PPA companies before you sign"
+      },
+      {
+        "href": "/blog/solar-leasing-company",
+        "label": "What a solar leasing company does, and what its contract commits you to"
       }
     ],
     "faq": [
@@ -1565,6 +1577,12 @@ export const growthCities: Record<string, GrowthCity> = {
         url: "https://www.suntreksolar.com/solar-company-in-palm-springs/",
       },
     ],
+    projectLinks: [
+      {
+        href: "/solar-companies/coachella-valley",
+        label: "Utilities and permit offices across the Coachella Valley",
+      },
+    ],
     nearby: ["palm-desert"],
     faq: [
       [
@@ -1820,6 +1838,10 @@ export const growthCities: Record<string, GrowthCity> = {
       }
     ],
     "projectLinks": [
+      {
+        "href": "/solar-companies/coachella-valley",
+        "label": "Which Coachella Valley cities are SCE and which are IID"
+      },
       {
         "href": "/solar-companies/high-desert",
         "label": "The High Desert: Victor Valley and Antelope Valley"
@@ -6662,6 +6684,10 @@ export const growthCities: Record<string, GrowthCity> = {
         "label": "High Desert solar companies and the County's permit route"
       },
       {
+        "href": "/solar-installers#local-solar-reviews",
+        "label": "How to check a local solar installer's reviews"
+      },
+      {
         "href": "/blog/solar-battery-backup-california",
         "label": "When a battery is worth adding"
       }
@@ -10100,6 +10126,10 @@ export const growthCities: Record<string, GrowthCity> = {
       }
     ],
     "projectLinks": [
+      {
+        "href": "/solar-companies/coachella-valley",
+        "label": "The Coachella Valley in more detail, from Palm Springs to the IID cities"
+      },
       {
         "href": "/commercial-solar/companies-california",
         "label": "Commercial solar companies and what to ask them"
