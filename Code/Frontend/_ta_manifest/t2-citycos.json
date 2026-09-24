@@ -1,0 +1,106 @@
+{
+ "agent": "t2-citycos",
+ "branch": "claude/t2-citycos-20260923",
+ "pages": [
+  {
+   "path": "/solar-companies/corona",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Corona, CA (2026)",
+   "clusters": [
+    39
+   ],
+   "sources": [
+    "https://www.coronaca.gov/departments/building-division/expedited-permits",
+    "https://cdn.prod.website-files.com/65799af8ef225180fdf1ba2e/67f3e7ad6cd5d450969f193b_Permitting%20Guide%20for%20Symbium%20Solar.pdf",
+    "https://www.coronaca.gov/departments/utilities/customer-care/services/solar-generator-interconnection-request-application-and-process",
+    "https://cdn.prod.website-files.com/65799af8ef225180fdf1ba2e/6a0f47bbf28d13cfa5c31621_Eligible%20Renewable%20Generation%20Agreement_20260521.pdf",
+    "https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service",
+    "https://www.coronaca.gov/departments/utilities/customer-care/services/electric-rates",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Existing legacy companies page moved onto the sourced growth template: SCE vs City of Corona utility split, Corona Utilities NEM cap (March 2024) and ERG schedule, eTRAKiT expedited and Symbium permit routes. Cost twin /solar-cost/corona stays (citycost lane)."
+  },
+  {
+   "path": "/solar-savings/corona",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_bills",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    685
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "folded into /solar-companies/corona: /solar-savings/corona is a 301 source (canonical-redirects.ts -> /solar-cost/corona); never build at a redirect source. The provider and rate questions (electricity provider corona, electric rates corona, solar electric system corona) are answered on /solar-companies/corona (City of Corona tiered rate, SCE vs City utility)."
+  },
+  {
+   "path": "/solar-companies/orange-county",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Orange County, CA (2026)",
+   "clusters": [
+    146
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ocpower.org/faq/",
+    "https://www.ocpower.org/huntington-beach-2/",
+    "https://www.ocpower.org/energy-programs/solar-net-energy-metering/",
+    "https://www.sdge.com/more-information/our-company/about-us",
+    "https://www.sdge.com/solar/solar-billing-plan",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://pwds.oc.gov/service-areas/oc-development-services/building-safety/building-grading-information/solar-pv",
+    "https://pw.oc.gov/news/new-solar-app-platform-offers-fast-automated-process-obtaining-permit-solar-equipment",
+    "https://pwds.oc.gov/service-areas/oc-development-services/permitting-services/faqs",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+   ],
+   "status": "done",
+   "note": "New region page (growth entry with region table): utility and CCA by city (SCE, SDG&E, Anaheim, OCPA), County of Orange permits for unincorporated areas, SB 379 automated-permit schedule. Links every live OC city page and the /solar-savings/orange-county hub. Also corrected /solar-savings/orange-county: Huntington Beach left OCPA (returned to SCE 2024)."
+  },
+  {
+   "path": "/solar-companies/huntington-beach",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Huntington Beach, CA (2026)",
+   "clusters": [
+    684
+   ],
+   "sources": [
+    "https://www.huntingtonbeachca.gov/departments/community_development/building___inspection/solar_app.php",
+    "https://www.ocpower.org/huntington-beach-2/",
+    "https://www.ocpower.org/faq/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf",
+    "https://www.hcd.ca.gov/manufactured-and-mobilehomes/modifying-mobilehome",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Corrected a Tier 1 factual error: the page said Huntington Beach is an OCPA member city; OCPA says the city left (vote May 2023) and customers returned to SCE in 2024 (solar accounts April 2024). Rewrote billing to SCE Solar Billing Plan; added HCD permit section for mobile/manufactured homes (GSC queries)."
+  }
+ ],
+ "sitemap_add": [
+  "/solar-companies/orange-county"
+ ],
+ "blog_index_add": [],
+ "redirect_requests": [],
+ "hub_links": [
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/orange-county",
+   "label": "Orange County solar companies by city utility and permit office"
+  }
+ ],
+ "link_requests": [],
+ "skipped": [
+  {
+   "url": "/solar-savings/corona",
+   "why": "folded into /solar-companies/corona: /solar-savings/corona is a 301 source (canonical-redirects.ts -> /solar-cost/corona); never build at a redirect source. The provider and rate questions (electricity provider corona, electric rates corona, solar electric system corona) are answered on /solar-companies/corona (City of Corona tiered rate, SCE vs City utility)."
+  }
+ ]
+}

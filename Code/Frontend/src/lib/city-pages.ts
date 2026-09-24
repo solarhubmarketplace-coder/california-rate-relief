@@ -523,15 +523,18 @@ export function companiesPageSeo(slug: string): CitySeo | null {
     const utility = GROWTH_UTILITY_LABEL[growth.utility];
     const bill = utility ? `the ${utility} bill` : 'which utility bills you';
     const checked = shortDate(growth.sourceCheckedDate || GROWTH_DEFAULT_CHECKED);
+    // A county or region page (2026-09-23, Tier 2) writes its own
+    // description: "the permit route" is one office per city, not per region.
+    const own = growth.seo;
     return {
-      title,
-      description: fit(
+      title: own?.title ?? title,
+      description: own?.description ?? fit(
         DESCRIPTION_MAX,
         `Comparing solar companies in ${city}? Check ${bill}, ${possessive(city)} permit route and 6 quote items side by side. Sources checked ${checked}.`,
         `Comparing solar companies in ${city}? Check ${bill}, the permit route and 6 quote items side by side. Sources checked ${checked}.`,
         `Comparing solar companies in ${city}? Check ${bill}, the permit route and 6 quote items side by side.`,
       ),
-      h1: `Solar Companies in ${city}, CA: How to Compare Solar Panel Quotes`,
+      h1: own?.h1 ?? `Solar Companies in ${city}, CA: How to Compare Solar Panel Quotes`,
     };
   }
   const utility = legacyUtilityLabel(legacy!);

@@ -10,6 +10,7 @@ import {
   CityLocalSections,
   CityPublishedProvider,
   CityQuestions,
+  CityRegionPlaces,
 } from "./CityLocalDetails";
 import { CitySiblingLinks, NearbyCityPages } from "./NearbyCostCities";
 import { cityPageDates, cityQuickCheckUtility, companiesPageSeo, growthUtilityForForm, isLiveCityPage } from "@/lib/city-pages";
@@ -71,6 +72,9 @@ export function CityComparison({ slug }: { slug: string }) {
       quickCheckUtility={cityQuickCheckUtility("companies", slug)}
     >
       <CitySiblingLinks slug={slug} type="companies" />
+      {/* 2026-09-23 (Tier 2): a county or region page lists each place's
+          utility, generation provider and permit office, linking city pages. */}
+      <CityRegionPlaces slug={slug} />
       {city.provider ? (
         <CityPublishedProvider slug={slug} />
       ) : (

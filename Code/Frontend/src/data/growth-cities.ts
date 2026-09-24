@@ -29,6 +29,35 @@ export interface GrowthCityKeyFact {
   source?: { publisher?: string; date?: string; url?: string };
 }
 
+/**
+ * 2026-09-23 (Tier 2, citycos agent): a /solar-companies page for a county or
+ * region rather than one city. A region page is only built when it carries
+ * facts a city page cannot: which utility and community choice aggregator
+ * serve each place in it, and which office issues the building permit there.
+ * Every row is sourced in the entry's `sources`; `slug` is set when the place
+ * has its own city page, and the table links to it.
+ */
+export interface GrowthRegionPlace {
+  name: string;
+  slug?: string;
+  /** Who delivers the power and sends the bill. */
+  utility: string;
+  /** Generation provider by default (a CCA), or the utility itself. */
+  generation: string;
+  /** Who issues the building permit for a home solar system. */
+  permit: string;
+}
+
+export interface GrowthRegion {
+  heading: string;
+  intro: string[];
+  places: GrowthRegionPlace[];
+  /** Short note printed under the table (what the table cannot settle). */
+  note?: string;
+  /** The region's bills-and-rates hub, when one exists. */
+  hub?: { href: string; label: string };
+}
+
 export interface GrowthCity {
   name: string;
   county: string;
@@ -48,6 +77,9 @@ export interface GrowthCity {
   keyFacts?: GrowthCityKeyFact[];
   sections?: GrowthCitySection[];
   contentModified?: string;
+  region?: GrowthRegion;
+  /** Title, description or H1 to use instead of the template's (each ≤ its limit). */
+  seo?: { title?: string; description?: string; h1?: string };
 }
 
 export const growthCities: Record<string, GrowthCity> = {
@@ -6435,14 +6467,14 @@ export const growthCities: Record<string, GrowthCity> = {
     contentModified: "2026-09-23",
   },
   "huntington-beach": {
-    name: "Huntington Beach",
-    county: "Orange County",
-    utility: "sce",
-    bill: "Huntington Beach is a member city of Orange County Power Authority, so most homes get generation from OCPA and delivery from Southern California Edison, which sends the bill. OCPA reconciles generation charges monthly, runs its annual true-up in April and pays 10% more than SCE for yearly surplus. A proposal should model OCPA's rules, not SCE's generation rates.",
-    local: "Huntington Beach issues solar permits instantly through SolarAPP+. The contractor pays SolarAPP+'s $35 processing fee, downloads the approval documents, creates a Residential Photovoltaic System record in the City's HB ACA portal with the Permit and Asbestos Disclosure Form, pays the City's fees and requests inspections there. Homeowners installing their own systems cannot use SolarAPP+ unless they hold the appropriate contractor licenses.",
-    example: "For a Huntington Beach home with a 400-amp or smaller main service, ask each bidder whether its design stays within SolarAPP+'s equipment limits and whether it has completed the solar-plus-storage training if a battery is included. A bid that cannot use SolarAPP+ should say which route it will take instead.",
-    sourceCheckedDate: "2026-09-23",
-    checks: [
+    "name": "Huntington Beach",
+    "county": "Orange County",
+    "utility": "sce",
+    "bill": "Huntington Beach homes get both generation and delivery from Southern California Edison. The city was part of Orange County Power Authority from 2022, but the City Council voted to leave in May 2023 and OCPA returned its customers to SCE in 2024, solar customers first in April. A proposal written for Huntington Beach today should use SCE's Solar Billing Plan, not OCPA's April true-up or its surplus rate.",
+    "local": "Huntington Beach issues solar permits instantly through SolarAPP+. The contractor pays SolarAPP+'s $35 processing fee, downloads the approval documents, creates a Residential Photovoltaic System record in the City's HB ACA portal with the Permit and Asbestos Disclosure Form, pays the City's fees and requests inspections there. Homeowners installing their own systems cannot use SolarAPP+ unless they hold the appropriate contractor licenses.",
+    "example": "For a Huntington Beach home with a 400-amp or smaller main service, ask each bidder whether its design stays within SolarAPP+'s equipment limits and whether it has completed the solar-plus-storage training if a battery is included. A bid that cannot use SolarAPP+ should say which route it will take instead. For a manufactured home, the bid should name the state HCD permit instead.",
+    "sourceCheckedDate": "2026-09-23",
+    "checks": [
       [
         "SolarAPP+ limits",
         "Confirm the main service is 400 A or less and disconnects and busbars 225 A or less, and the system is 38.4 kW or smaller."
@@ -6456,29 +6488,59 @@ export const growthCities: Record<string, GrowthCity> = {
         "Say who creates the HB ACA record, uploads the Permit and Asbestos Disclosure Form and requests the inspection."
       ],
       [
-        "OCPA and SCE bill",
-        "Model OCPA generation with its April true-up and SCE delivery from your own bill."
+        "SCE billing",
+        "Model SCE's Solar Billing Plan from your own bill, with the nine-year export credit lock and the settlement month."
+      ],
+      [
+        "Manufactured home",
+        "On a mobile or manufactured home, show the HCD permit and a CSLB license before any work starts."
       ]
     ],
-    sources: [
+    "sources": [
       {
         "label": "City of Huntington Beach: SolarAPP+ instant solar permits",
         "url": "https://www.huntingtonbeachca.gov/departments/community_development/building___inspection/solar_app.php"
       },
       {
-        "label": "Orange County Power Authority: solar and net energy metering",
-        "url": "https://www.ocpower.org/energy-programs/solar-net-energy-metering/"
+        "label": "Orange County Power Authority: Huntington Beach customers return to SCE in 2024",
+        "url": "https://www.ocpower.org/huntington-beach-2/"
       },
       {
-        "label": "Orange County Power Authority: about and member cities",
-        "url": "https://www.ocpower.org/about-us/"
+        "label": "Orange County Power Authority: FAQ (current member cities)",
+        "url": "https://www.ocpower.org/faq/"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California HCD: advisory for manufactured home roof-mounted solar systems (PDF)",
+        "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+      },
+      {
+        "label": "California HCD: modifications and alterations to manufactured homes",
+        "url": "https://www.hcd.ca.gov/manufactured-and-mobilehomes/modifying-mobilehome"
       },
       {
         "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
       }
     ],
-    faq: [
+    "projectLinks": [
+      {
+        "href": "/solar-companies/orange-county",
+        "label": "Utilities, CCAs and permit offices across Orange County"
+      },
+      {
+        "href": "/blog/sce-settlement-bill",
+        "label": "What the SCE settlement bill reconciles once a year"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "Whether a battery pays for itself under net billing"
+      }
+    ],
+    "faq": [
       [
         "How do I get a solar permit in Huntington Beach?",
         "A licensed contractor submits the design in SolarAPP+, pays its $35 processing fee, then creates a Residential Photovoltaic System record in the City's HB ACA portal, uploads the SolarAPP+ approval and the Permit and Asbestos Disclosure Form, pays the City's fees and gets the permit."
@@ -6488,12 +6550,20 @@ export const growthCities: Record<string, GrowthCity> = {
         "Not unless the homeowner is a licensed contractor with the appropriate licenses. Owner-installed systems use the City's regular permit process."
       ],
       [
-        "What does OCPA pay for extra solar in Huntington Beach?",
-        "Orange County Power Authority pays 10% more than SCE for yearly surplus at its April true-up, reconciles generation charges monthly, and currently treats Solar Billing Plan customers' generation as if it were under NEM 2.0."
+        "Is Huntington Beach still served by Orange County Power Authority?",
+        "No. OCPA says the City Council voted to leave in May 2023. Solar customers were switched to SCE bundled service beginning in April 2024 and all other customers in June 2024, automatically and without fees. OCPA's current member cities are Buena Park, Fullerton and Irvine, with Fountain Valley joining."
+      ],
+      [
+        "I went solar under OCPA. What happened to my plan?",
+        "OCPA says the return to SCE did not change a customer's net metering type, whether NEM 1.0, NEM 2.0 or the Solar Billing Plan. OCPA trued up its solar accounts as of the April 2024 meter read, and generation charges and credits went back onto the SCE bill."
+      ],
+      [
+        "Can I put solar on a mobile home in Huntington Beach?",
+        "Yes, but the permit comes from the state. The California Department of Housing and Community Development says an HCD permit is required for any solar system installed on a manufactured home, and warns that roof damage from poor installation is not visible. Check the company's CSLB license and ask for the HCD permit before signing."
       ]
     ],
-    answer: "Huntington Beach issues rooftop solar permits instantly through SolarAPP+: a licensed contractor pays SolarAPP+'s $35 fee, then files and pays in the City's HB ACA portal. Orange County Power Authority supplies most of the city's generation and SCE delivers it; OCPA trues up in April, pays 10% more than SCE for surplus and treats new solar customers' generation as if it were under NEM 2.0. Compare at least three written bids.",
-    keyFacts: [
+    "answer": "Huntington Beach issues rooftop solar permits instantly through SolarAPP+: a licensed contractor pays SolarAPP+'s $35 fee, then files and pays in the City's HB ACA portal. SCE supplies both generation and delivery; the city left Orange County Power Authority, and OCPA returned its customers to SCE in 2024. Solar on a mobile or manufactured home needs a state HCD permit instead. Compare at least three written bids built on your own SCE bill.",
+    "keyFacts": [
       {
         "label": "SolarAPP+ fee",
         "value": "$35",
@@ -6505,27 +6575,27 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       },
       {
-        "label": "Supplies the generation",
-        "value": "Orange County Power Authority",
-        "note": "Member city; SCE delivers and bills",
+        "label": "Electric provider",
+        "value": "SCE",
+        "note": "Back from OCPA in 2024; solar accounts moved in April",
         "source": {
           "publisher": "Orange County Power Authority",
           "date": "2026-09-23",
-          "url": "https://www.ocpower.org/about-us/"
+          "url": "https://www.ocpower.org/huntington-beach-2/"
         }
       },
       {
-        "label": "OCPA true-up",
-        "value": "April",
-        "note": "Surplus paid 10% above SCE's rate",
+        "label": "Manufactured homes",
+        "value": "HCD permit required",
+        "note": "State permit, not the City's SolarAPP+",
         "source": {
-          "publisher": "Orange County Power Authority",
+          "publisher": "California HCD",
           "date": "2026-09-23",
-          "url": "https://www.ocpower.org/energy-programs/solar-net-energy-metering/"
+          "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "What SolarAPP+ checks in Huntington Beach",
         "paragraphs": [
@@ -6534,13 +6604,453 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       },
       {
-        "heading": "Orange County Power Authority's solar terms",
+        "heading": "Huntington Beach's return to SCE",
         "paragraphs": [
-          "Orange County Power Authority names Huntington Beach among its member cities. On a solar account, SCE handles delivery charges and credits and OCPA handles the generation side, reconciling generation charges every month. OCPA holds its annual true-up in April, before summer, so that credits earned in the sunny months can be used at the retail rate rather than cashed out early at the lower surplus rate.",
-          "When credits do remain at the true-up, OCPA pays 10% more than SCE's Net Surplus Compensation rate. OCPA also says it currently treats customers on the Net Billing Tariff, the Solar Billing Plan that applies to new systems, as if their generation were under NEM 2.0. That makes OCPA's generation credit different from SCE's, so ask each bidder whether its model reflects OCPA's rules."
+          "Orange County Power Authority became the default generation provider for Huntington Beach businesses on April 1, 2022 and for homes on October 1, 2022. In May 2023 the City Council voted to leave. OCPA switched the city's net metering customers back to SCE bundled service beginning in April 2024 and everyone else in June 2024, on each account's regular meter read date, with no action needed and no fee to customers; OCPA says the City covered the costs. Customers cannot stay with OCPA from Huntington Beach, because service is limited to member communities.",
+          "For a new system, that means SCE's Solar Billing Plan. Exports earn Energy Export Credits that change by hour and season, SCE locks the values for nine years from the year you start, and customers who enroll before 2028 get an extra credit of about $0.04 per kWh, or about $0.09 if income-qualified. The credits cannot cover the Base Services Charge, and the settlement bill arrives once a year in the month the system started service. Older articles and some proposals still describe OCPA's April true-up and 10% surplus premium for Huntington Beach; those terms no longer apply here."
+        ]
+      },
+      {
+        "heading": "Solar on a mobile or manufactured home",
+        "paragraphs": [
+          "A manufactured home follows a different permit path from a house. The California Department of Housing and Community Development says an HCD permit is required for any solar system installed on a manufactured home, and that a permit is needed before any alteration to a mobilehome or manufactured home begins. HCD's advisory warns owners that manufactured home roofs are not accessible, so damage from poor installation practices is not visible, and tells them to confirm the solar company is licensed by the Contractors State License Board and has obtained a permit from HCD before signing.",
+          "HCD's permit guidelines (form HCD MH 604) say when a job also needs form HCD MH 415, engineered plans, electrical load calculations or manufacturer specifications. Its Southern Area Office is in Riverside. Ask each bidder whether its design needs engineered plans for your roof, and who files with HCD."
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23"
+  },
+  "corona": {
+    "name": "Corona",
+    "county": "Riverside County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Find the utility's name on your bill before you compare any estimate. Most Corona homes are Southern California Edison customers, but the City of Corona runs its own electric utility in part of town, and the two have different prices and different solar rules. A proposal that uses SCE's numbers for a City of Corona account, or the reverse, is modeling a bill you do not have.",
+    "local": "Corona's Building Division takes solar permits through its eTRAKiT portal, either as an expedited plan check built on the City's own forms or as a Symbium solar permit. The City also warns that a separate application to, and approval from, the electric utility serving the address is required before any work starts, whether that is SCE or the City's Utilities Department.",
+    "example": "Ask two bidders to size the system from your last 12 months of kWh use and to show the monthly output next to it. On a City of Corona account the utility will not accept a system whose estimated annual output is larger than that usage, so a design sized for a future EV or pool may have to wait. On an SCE account, ask how much of the output the house uses directly, because SCE says export credits are worth less than the power you buy.",
+    "checks": [
+      [
+        "Which utility",
+        "Name the utility on your bill, SCE or the City of Corona, and use only that utility's rates and solar rules in the savings estimate."
+      ],
+      [
+        "Permit route",
+        "Say whether the permit goes through the City's expedited plan check or Symbium in eTRAKiT, and who pays the plan check fee."
+      ],
+      [
+        "Utility approval",
+        "Show the utility application for the address, and on a City account confirm when the bi-directional meter will be installed and tested."
+      ],
+      [
+        "System size",
+        "On a City of Corona account, show that estimated annual output does not exceed the last 12 months of use."
+      ],
+      [
+        "Backup switch",
+        "On a City of Corona meter, put any Tesla Backup Switch or similar device downstream in a separate panel, not on the meter."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Corona Building Division: expedited solar permits and Symbium",
+        "url": "https://www.coronaca.gov/departments/building-division/expedited-permits"
+      },
+      {
+        "label": "City of Corona: Permitting Guide for Symbium Solar (PDF)",
+        "url": "https://cdn.prod.website-files.com/65799af8ef225180fdf1ba2e/67f3e7ad6cd5d450969f193b_Permitting%20Guide%20for%20Symbium%20Solar.pdf"
+      },
+      {
+        "label": "Corona Utilities Department: solar interconnection process, NEM cap and ERG schedule",
+        "url": "https://www.coronaca.gov/departments/utilities/customer-care/services/solar-generator-interconnection-request-application-and-process"
+      },
+      {
+        "label": "Corona Utilities Department: Eligible Renewable Generation agreement (May 21, 2026, PDF)",
+        "url": "https://cdn.prod.website-files.com/65799af8ef225180fdf1ba2e/6a0f47bbf28d13cfa5c31621_Eligible%20Renewable%20Generation%20Agreement_20260521.pdf"
+      },
+      {
+        "label": "Corona Utilities Department: electric service",
+        "url": "https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service"
+      },
+      {
+        "label": "Corona Utilities Department: electric rates",
+        "url": "https://www.coronaca.gov/departments/utilities/customer-care/services/electric-rates"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/blog/sce-settlement-bill",
+        "label": "How SCE's once-a-year solar settlement bill works"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a home battery earns its place"
+      },
+      {
+        "href": "/blog/solar-panel-repair-cost",
+        "label": "What solar repairs cost and who pays for them"
+      }
+    ],
+    "faq": [
+      [
+        "Who is my electric utility in Corona?",
+        "Most Corona addresses are SCE customers. Addresses inside the City's electric service area, which new developments join when capacity is available, are served by the City of Corona Utilities Department. Check the name on your bill; the rates, the solar rules and the approval step all depend on it."
+      ],
+      [
+        "Can I still get net metering from the City of Corona?",
+        "Not at first. The City says its net metering schedule reached its cap, 5 percent of aggregate customer peak demand, in March 2024. New systems go on the Eligible Renewable Generation (ERG) schedule and a waiting list, and move to net metering in order of their original permission-to-operate date if capacity opens."
+      ],
+      [
+        "How fast is a Symbium solar permit in Corona?",
+        "The City's Symbium guide says staff review the eTRAKiT submittal within one business day at the latest, and the permit is issued immediately if every application, document and fee is in. Verify first that the address is inside Corona city limits."
+      ],
+      [
+        "What does electricity cost from the City of Corona?",
+        "The City's residential rate has a $16.54 monthly fixed charge and three tiers: $0.10504 per kWh up to baseline, $0.11544 from 101 to 130 percent of baseline and $0.21840 above that, plus a $0.00405 per kWh public benefits charge. SCE customers pay SCE's rates instead."
+      ],
+      [
+        "Who repairs solar panels in Corona?",
+        "Start with the contract: the workmanship warranty names who handles repairs and for how long, and the equipment warranties name the panel and inverter makers. If the original company is gone, get the repair scope and price in writing, and check the repair company's license at cslb.ca.gov before work begins."
+      ]
+    ],
+    "answer": "Corona is split between two electric utilities: Southern California Edison serves most of the city, and the City's own Utilities Department serves its electric service area. Solar companies file the permit with the City through eTRAKiT, as an expedited plan check or a Symbium permit, and need the serving utility's approval before starting work. City of Corona customers no longer get net metering at first. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Electric utility",
+        "value": "SCE or City of Corona",
+        "note": "About 97% of the city's area is SCE territory",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "City net metering",
+        "value": "Capped since March 2024",
+        "note": "New City customers go on the ERG schedule and a waiting list",
+        "source": {
+          "publisher": "Corona Utilities Department",
+          "date": "2026-09-23",
+          "url": "https://www.coronaca.gov/departments/utilities/customer-care/services/solar-generator-interconnection-request-application-and-process"
+        }
+      },
+      {
+        "label": "Permit filing",
+        "value": "eTRAKiT",
+        "note": "Expedited plan check or Symbium; Symbium review within one business day",
+        "source": {
+          "publisher": "City of Corona",
+          "date": "2026-09-23",
+          "url": "https://www.coronaca.gov/departments/building-division/expedited-permits"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Two utilities in one city",
+        "paragraphs": [
+          "Corona's electric utility dates to April 4, 2001, when the City Council created it by Resolution No. 2001-25 in response to the statewide rolling blackouts and electric price instability. It provides fully bundled service to homes and businesses within the City's electric service area, and new developments inside that area become its customers if capacity is available. The City puts its current peak demand at 25.8 MW. Everywhere else in Corona, SCE delivers the power and sends the bill. On the California Energy Commission's utility map, about 97% of the city's area lies in SCE territory and about 3% in the City's.",
+          "The City's residential rate is tiered: a $16.54 monthly fixed charge, then $0.10504 per kWh up to baseline, $0.11544 from 101% to 130% of baseline and $0.21840 above that, plus a public benefits charge of $0.00405 per kWh. Those are the City's prices, not SCE's. A proposal for an SCE address should use the SCE rate schedule printed on your bill."
+        ]
+      },
+      {
+        "heading": "The City's net metering cap and the ERG schedule",
+        "paragraphs": [
+          "The City of Corona offered net energy metering first come, first served, until the solar capacity on its system reached 5 percent of its aggregate customer peak demand. The City says total capacity, counting pending applications, reached that level in March 2024. New applications now go on the Eligible Renewable Generation (ERG) rate schedule, which the City Council approved on June 5, 2024, and onto a waiting list for net metering. The utility reviews its solar customers once a year, and if capacity opens, ERG customers move to net metering in order of their original permission-to-operate date. Under the ERG agreement, the City pays for power sent to the grid only if the customer assigns the system's renewable energy credits to the City.",
+          "The City's interconnection steps run in a fixed order. The utility needs a completed application, the solar review fee, a building permit pulled at the time of application and signed off before permission to operate, an electrical single-line diagram, a load schedule and a site plan. The load schedule compares 12 months of kWh use with the system's estimated monthly production: the estimated output may not exceed the previous year's use, and with less than 12 months of history the City applies a standard of 2 watts per square foot of the premises. Once the application is approved, the City drafts the agreement, installs and tests a bi-directional meter, and only then issues permission to operate."
+        ]
+      },
+      {
+        "heading": "Filing the permit in eTRAKiT",
+        "paragraphs": [
+          "For an expedited plan check, the City's package includes an application form, an eligibility checklist, a standard plan and a structural criteria form, with separate versions for central-inverter and microinverter systems. The submittal also needs a roof plan and installation or spec sheets for every component, as PDFs printed at no larger than 11 by 17 inches. Plan check processing does not begin until the fee is paid.",
+          "The Symbium route starts outside the City: the contractor gets Symbium's approval documents, then applies in eTRAKiT under the Symbium Solar permit type with those documents and the City's forms, and pays the fees. The City's guide says staff review the submittal within one business day at the latest and issue the permit immediately if nothing is missing. Both routes start by confirming the address is inside Corona city limits. On a City of Corona meter, the Utilities Department does not allow a Tesla Backup Switch or similar device on the meter itself; it has to go downstream in a separate panel or meter enclosure, with the utility's design approval first."
+        ]
+      },
+      {
+        "heading": "SCE's Solar Billing Plan for the rest of Corona",
+        "paragraphs": [
+          "On an SCE account, a new system goes on SCE's Solar Billing Plan. Power sent to the grid earns Energy Export Credits that change by hour and season, with higher values in June through September, and SCE locks the values for nine years based on the year a new customer starts. Customers who enroll before 2028 also get an Energy Export Bonus Credit of about $0.04 per kWh, or about $0.09 for income-qualified customers. The credits cannot pay the Base Services Charge, and the once-a-year settlement bill arrives in the month the system started service.",
+          "SCE itself says its export credits are worth less than what you pay for power from the grid, and that storing daytime output to use in the expensive evening hours is now worth more than exporting it. That is why a Corona bid for an SCE home should show how much of the output the house uses directly, and whether a battery changes the result."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "orange-county": {
+    "name": "Orange County",
+    "county": "Orange County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "seo": {
+      "description": "Orange County solar companies: which utility and CCA serve each city (SCE, SDG&E, Anaheim, OCPA), how permits work, and what to compare in quotes."
+    },
+    "bill": "In Orange County the bill decides more than the zip code does. SCE delivers power to most of the county, SDG&E to the south end, and the City of Anaheim to Anaheim. In Buena Park, Fullerton and Irvine, Orange County Power Authority supplies the generation on an SCE bill. Each of those four sets its own solar credit rules, so a quote has to start from the provider names printed on your own statement.",
+    "local": "Every incorporated city in the county issues its own solar permit, and homes in unincorporated areas such as Ladera Ranch and Rossmoor are permitted by the County of Orange through OC Development Services. State law has required each city of more than 50,000 people to offer an online, automated permit such as SolarAPP+ since September 30, 2023, and most smaller cities since September 30, 2024, so ask each bidder which route your city uses.",
+    "example": "Ask every Orange County bidder to put two things at the top of the proposal: the utility and generation provider from your bill, and the permit office for your address. A bid that assumes SCE and OCPA for a Mission Viejo or Laguna Niguel home that SDG&E actually serves, or that prices an Anaheim home at SCE's rates, is working from the wrong numbers before it gets to the roof.",
+    "checks": [
+      [
+        "Utility and CCA",
+        "Name the delivery utility (SCE, SDG&E or Anaheim) and the generation provider (OCPA or the utility) from your bill."
+      ],
+      [
+        "Credit rules",
+        "Model that provider's export credits and true-up month, not a county average."
+      ],
+      [
+        "Permit office",
+        "Say whether your city or the County of Orange issues the permit, and whether the job uses SolarAPP+ or a standard plan check."
+      ],
+      [
+        "Split cities",
+        "In Mission Viejo, Aliso Viejo, Laguna Hills or Laguna Niguel, confirm which utility serves the address before comparing savings."
+      ]
+    ],
+    "region": {
+      "heading": "Who serves each Orange County city, and who issues the permit",
+      "intro": [
+        "The California Energy Commission's utility map shows three delivery utilities in the county. SCE covers most of it, SDG&E serves the southern end (SDG&E describes its territory as San Diego and southern Orange counties), and the City of Anaheim runs its own public utility. A few cities in the south straddle the SCE and SDG&E line, so the table marks them as split.",
+        "Generation is a second layer. Orange County Power Authority, the county's community choice aggregator, lists its current member cities as Buena Park, Fullerton and Irvine, with Fountain Valley beginning service soon. Huntington Beach was a member but left: OCPA says its customers there were returned to SCE in 2024."
+      ],
+      "places": [
+        {
+          "name": "Anaheim",
+          "slug": "anaheim",
+          "utility": "Anaheim Public Utilities",
+          "generation": "Anaheim Public Utilities",
+          "permit": "City of Anaheim"
+        },
+        {
+          "name": "Buena Park",
+          "utility": "SCE",
+          "generation": "Orange County Power Authority",
+          "permit": "City of Buena Park"
+        },
+        {
+          "name": "Fullerton",
+          "utility": "SCE",
+          "generation": "Orange County Power Authority",
+          "permit": "City of Fullerton"
+        },
+        {
+          "name": "Irvine",
+          "slug": "irvine",
+          "utility": "SCE",
+          "generation": "Orange County Power Authority",
+          "permit": "City of Irvine"
+        },
+        {
+          "name": "Fountain Valley",
+          "utility": "SCE",
+          "generation": "SCE; OCPA service beginning soon",
+          "permit": "City of Fountain Valley"
+        },
+        {
+          "name": "Huntington Beach",
+          "slug": "huntington-beach",
+          "utility": "SCE",
+          "generation": "SCE (returned from OCPA in 2024)",
+          "permit": "City of Huntington Beach"
+        },
+        {
+          "name": "Santa Ana",
+          "slug": "santa-ana",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Santa Ana"
+        },
+        {
+          "name": "Westminster",
+          "slug": "westminster",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Westminster"
+        },
+        {
+          "name": "Yorba Linda",
+          "slug": "yorba-linda",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Yorba Linda"
+        },
+        {
+          "name": "Costa Mesa, Garden Grove, Newport Beach, Orange, Tustin, Lake Forest",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "Each city's own building department"
+        },
+        {
+          "name": "Mission Viejo, Aliso Viejo, Laguna Hills, Laguna Niguel",
+          "utility": "Split: SCE or SDG&E by address",
+          "generation": "The delivery utility",
+          "permit": "Each city's own building department"
+        },
+        {
+          "name": "San Clemente",
+          "slug": "san-clemente",
+          "utility": "SDG&E",
+          "generation": "SDG&E",
+          "permit": "City of San Clemente"
+        },
+        {
+          "name": "San Juan Capistrano, Dana Point",
+          "utility": "SDG&E",
+          "generation": "SDG&E",
+          "permit": "Each city's own building department"
+        },
+        {
+          "name": "Unincorporated areas (Ladera Ranch, Rossmoor and others)",
+          "utility": "SDG&E in Ladera Ranch; SCE in Rossmoor",
+          "generation": "The delivery utility",
+          "permit": "County of Orange (OC Development Services)"
+        }
+      ],
+      "note": "Utility and generation rows come from the Energy Commission's map, queried September 23, 2026, and OCPA's own member list, which is newer than the map's community choice layer. The map can still shade Huntington Beach as OCPA; OCPA's page is the current word. For any split city, the bill is the only reliable answer for one address.",
+      "hub": {
+        "href": "/solar-savings/orange-county",
+        "label": "Orange County electric rates and bills by provider"
+      }
+    },
+    "sources": [
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "Orange County Power Authority: FAQ (current member cities)",
+        "url": "https://www.ocpower.org/faq/"
+      },
+      {
+        "label": "Orange County Power Authority: Huntington Beach customers return to SCE in 2024",
+        "url": "https://www.ocpower.org/huntington-beach-2/"
+      },
+      {
+        "label": "Orange County Power Authority: solar and net energy metering",
+        "url": "https://www.ocpower.org/energy-programs/solar-net-energy-metering/"
+      },
+      {
+        "label": "SDG&E: About us (service territory)",
+        "url": "https://www.sdge.com/more-information/our-company/about-us"
+      },
+      {
+        "label": "SDG&E: Solar Billing Plan",
+        "url": "https://www.sdge.com/solar/solar-billing-plan"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "OC Development Services: expedited solar PV permits and SolarAPP+ (unincorporated Orange County)",
+        "url": "https://pwds.oc.gov/service-areas/oc-development-services/building-safety/building-grading-information/solar-pv"
+      },
+      {
+        "label": "OC Public Works: SolarAPP+ launch notice (August 23, 2024)",
+        "url": "https://pw.oc.gov/news/new-solar-app-platform-offers-fast-automated-process-obtaining-permit-solar-equipment"
+      },
+      {
+        "label": "OC Development Services: permit FAQs (unincorporated private property)",
+        "url": "https://pwds.oc.gov/service-areas/oc-development-services/permitting-services/faqs"
+      },
+      {
+        "label": "California Government Code § 65850.52 (automated solar permitting, SB 379)",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/best-solar-companies-california",
+        "label": "How to judge a solar company anywhere in California"
+      },
+      {
+        "href": "/blog/why-is-my-sce-bill-so-high",
+        "label": "Reading an SCE bill before you compare quotes"
+      },
+      {
+        "href": "/solar-installers/how-to-verify-a-solar-contractor-california",
+        "label": "Checking a contractor's license and salesperson registration"
+      }
+    ],
+    "faq": [
+      [
+        "What are the best solar companies in Orange County?",
+        "This site does not rank them, and no public source does in a way that fits your roof. Narrow the field to companies that hold a CSLB license covering solar, confirm in writing that they serve your address, and get at least three written bids for the same system built on your own bill. The table above tells you which utility rules each bid should use."
+      ],
+      [
+        "Is Huntington Beach still part of Orange County Power Authority?",
+        "No. OCPA says the Huntington Beach City Council voted to leave in May 2023, solar customers there were switched back to SCE in April 2024 and all other customers in June 2024. SCE now supplies both generation and delivery in Huntington Beach."
+      ],
+      [
+        "What does OCPA pay solar customers?",
+        "OCPA says it reconciles generation charges monthly, runs its annual true-up in April, pays 10% more than SCE for excess generation, and currently treats Net Billing Tariff customers' generation as if it were under NEM 2.0. SCE still handles delivery charges and credits on the same bill."
+      ],
+      [
+        "Who issues solar permits in unincorporated Orange County?",
+        "The County of Orange, through OC Development Services. It accepts SolarAPP+ submittals from registered licensed contractors, launched in August 2024, and also offers an expedited plan check on its standard plans, with applications filed online in myOCeServices."
+      ],
+      [
+        "Does every Orange County city have instant solar permits?",
+        "Not necessarily instant, but state law requires an online, automated permit option such as SolarAPP+ in cities of more than 50,000 people since September 30, 2023 and in most smaller cities since September 30, 2024, for systems up to 38.4 kW that the platform can process. Designs it cannot process still go through regular plan check."
+      ]
+    ],
+    "answer": "Orange County solar companies work across three delivery utilities: SCE for most of the county, SDG&E in the south and Anaheim Public Utilities in Anaheim. In Buena Park, Fullerton and Irvine, Orange County Power Authority supplies the generation; Huntington Beach left OCPA in 2024. Each city issues its own permit, and the County of Orange permits unincorporated areas. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Delivery utilities",
+        "value": "SCE, SDG&E, Anaheim",
+        "note": "SCE serves most of the county's area",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "OCPA member cities",
+        "value": "Buena Park, Fullerton, Irvine",
+        "note": "Fountain Valley beginning service soon",
+        "source": {
+          "publisher": "Orange County Power Authority",
+          "date": "2026-09-23",
+          "url": "https://www.ocpower.org/faq/"
+        }
+      },
+      {
+        "label": "Automated permits required",
+        "value": "Since Sept. 30, 2023",
+        "note": "Cities over 50,000; most smaller cities since 2024",
+        "source": {
+          "publisher": "California Legislature, Gov. Code § 65850.52",
+          "date": "2026-09-23",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Three solar credit rulebooks in one county",
+        "paragraphs": [
+          "On an SCE bill, a new system goes on SCE's Solar Billing Plan: exports earn Energy Export Credits that vary by hour and season, SCE locks the values for nine years from the year you start, and customers who enroll before 2028 get a bonus credit of about $0.04 per kWh, or about $0.09 if income-qualified. The settlement bill comes once a year, in the month the system started service.",
+          "In Buena Park, Fullerton and Irvine the generation half of that bill belongs to Orange County Power Authority. OCPA says SCE handles the delivery charges and credits while OCPA handles generation, reconciles generation charges monthly and holds its annual true-up in April, before summer, so that credits built up in sunny months can be used at the retail rate. It pays 10% more than SCE for surplus left at true-up.",
+          "In the SDG&E cities of the south county, the Solar Billing Plan runs on SDG&E's EV-TOU-5 time-of-use plan, with on-peak hours from 4 p.m. to 9 p.m. Export credits are priced by the hour, surplus credits roll forward month to month, and SDG&E says they cannot be applied to non-bypassable charges or the Base Services Charge. Anaheim Public Utilities, as a city utility, sets its own solar terms outside the CPUC's tariff."
+        ]
+      },
+      {
+        "heading": "How permits differ across the county",
+        "paragraphs": [
+          "Government Code section 65850.52, the law passed as SB 379, told every California city and county to offer an online, automated permitting platform such as SolarAPP+ for residential solar up to 38.4 kW, and for batteries paired with it. Cities of more than 50,000 people had to comply by September 30, 2023, and smaller cities by September 30, 2024, unless a city has fewer than 5,000 people or sits in a county of fewer than 150,000. Orange County is far larger than that, so the county exemption does not apply to its cities. The law also lets a jurisdiction send a design the platform cannot process through its regular review.",
+          "The County of Orange launched SolarAPP+ for unincorporated homes on August 23, 2024, for roof-mounted systems on existing homes, submitted by registered licensed contractors. It also keeps the expedited path that AB 2188 required every city and county to adopt by September 30, 2015: an eligibility checklist, standard plans for central-inverter and microinverter systems, structural criteria and an online application. The city pages linked in the table above describe each city's own steps where this site has checked them, such as Huntington Beach's SolarAPP+ record in its HB ACA portal."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
   },
 };
