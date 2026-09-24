@@ -38,6 +38,7 @@ const sources = rateSources(
   'cpucGrc',
   'cpucGrcProcess',
   'cpucCareFera',
+  'cpucClimateCredit',
 );
 
 /** Residential average rate, cents per kWh, as each CPUC Public Advocates Office report states it. */
@@ -78,6 +79,11 @@ const faqs = [
     question: 'Will SCE rates go up again?',
     answer:
       "The Public Advocates Office's July 2026 report projects SCE's residential average at about 33.5 cents per kWh by December 31, 2026, below today's 34.4 cents. It cautions that the projection counts only known requests and is likely to rise as SCE files new ones. This page does not project 2027.",
+  },
+  {
+    question: 'What changed on my SCE electric bill?',
+    answer:
+      "Since November 2025, SCE bills a flat Base Services Charge under Delivery Charges, $24.15 a month for most customers ($12.08 FERA, $6.00 CARE), and charges about 10% less per kWh. The minimum charge is gone, the Public Purpose Programs charge moved into the flat charge, and NEM customers' monthly credits shrank with the lower kWh price. Separately, rates rose about 13.1% on October 1, 2025 and dipped slightly in 2026, and the 2026 Climate Credit arrives in August and September.",
   },
   {
     question: 'What is the SCE Base Services Charge?',
@@ -213,13 +219,37 @@ export default function SceRateIncreasePage() {
                 SCE says appeared on bills in November 2025; the office notes it had no effect on the class average.
               </p>
 
-              <h2>What changed on SCE bills in 2026</h2>
+              <h2>SCE electricity bill changes since November 2025</h2>
               <p>
                 <strong>November 2025: the Base Services Charge.</strong> SCE replaced its old Basic Charge with a flat Base
                 Services Charge and cut the price of each kWh by about 10%, part of the bill restructuring Assembly Bill 205
                 required. SCE lists the
                 charge at $0.79 a day on its time-of-use and tiered plans, about $24 a month for most homes, $12 for FERA
                 customers and $6 for CARE customers. Low-use homes can see higher bills; high-use homes can see lower ones.
+              </p>
+              <p>
+                SCE&apos;s own questions-and-answers page on the charge spells out what else moved on the bill. The charge appears as &ldquo;Base Services
+                Charge&rdquo; under Delivery Charges, and the exact amount depends on the days in your billing cycle: $24.15 a
+                month for most customers, $12.08 for FERA customers and qualifying deed-restricted affordable housing, and $6.00
+                for CARE customers. The old minimum charge no longer applies; a month with zero usage now bills the Base Services
+                Charge alone. The Public Purpose Programs charge, which used to be billed per kWh, is now folded into the flat
+                charge. You cannot lower it by using less or opt out of it, it still applies during outages, and community choice
+                customers pay it too. Customers on the multifamily Schedule DM are exempt and keep the Basic Charge.
+              </p>
+              <p>
+                <strong>Solar customers</strong> pay the Base Services Charge every month under both NEM and the Solar Billing
+                Plan, and generation credits cannot offset it. SCE also notes a side effect for NEM 1.0 and 2.0 customers:
+                because their monthly credit is valued at the current per-kWh price, the roughly 10% lower price means a smaller
+                credit for the same exported energy. How that plays out at true-up is in{' '}
+                <Link href="/blog/sce-settlement-bill" className={guideLink}>
+                  the SCE annual settlement bill guide
+                </Link>
+                .
+              </p>
+              <p>
+                <strong>The Climate Credit moved.</strong> The CPUC says the 2026 electric California Climate Credit is paid in
+                high-bill months; for SCE customers that is $36.00 on the August bill and $36.00 on the September bill. SCE says
+                the Base Services Charge did not change the Climate Credit itself.
               </p>
               <p>
                 <strong>January 1, 2026: about −2.3%.</strong> The rate case decision set SCE&apos;s base revenue at $10.187

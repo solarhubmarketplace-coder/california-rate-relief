@@ -67,4 +67,13 @@ export const JSON_ARTICLE_RELATED: Record<string, JsonArticleRelated> = {
       { href: '/solar-installers/tesla-solar-review', label: 'Tesla Solar review: panels, inverter and service' },
     ],
   },
+  '/solar-problems/do-i-still-get-a-utility-bill-with-solar': {
+    heading: 'Read your own post-solar bill',
+    links: [
+      { href: '/blog/how-to-read-pge-bill', label: 'How to read a PG&E bill and solar statement' },
+      { href: '/blog/how-to-read-sdge-bill', label: 'How to read an SDG&E bill with solar' },
+      { href: '/blog/solar-rate', label: 'The rate plan solar homes pay at each utility' },
+      { href: '/blog/average-utility-bill-california', label: 'The average California utility bill' },
+    ],
+  },
 };

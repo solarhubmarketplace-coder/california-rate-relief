@@ -1,0 +1,599 @@
+{
+  "agent": "t2-rates",
+  "pages": [
+    {
+      "path": "/blog/sce-time-of-use-rates-2026",
+      "action": "UPGRADE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/sce-time-of-use-rates-2026/page.tsx",
+      "title": "SCE Time-of-Use Rates 2026: Peak Hours and Prices",
+      "clusters": [
+        64,
+        446
+      ],
+      "sources": [
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/save-money/rates-financing/electric-vehicle-plan",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.sce.com/save-money/rates-financing/rate-plan-comparison",
+        "https://www.sce.com/customer-service-center/community-choice-aggregation/sce-ccce-joint-rate-comparisons",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "Rewritten on RateGuideParts: periods by plan/season, SCE-listed prices, baseline credit, TOU-D-PRIME, per-kWh average (PAO June 2026), BSC, CCA, switching. Folds cluster 446 (sce ev rates) as an \"SCE EV rates\" section."
+    },
+    {
+      "path": "/blog/smud-peak-hours",
+      "action": "CREATE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/smud-peak-hours/page.tsx",
+      "title": "SMUD Peak Hours 2026: Summer and Time-of-Day Rates",
+      "clusters": [
+        70
+      ],
+      "sources": [
+        "https://www.smud.org/Rate-Information/Residential-rates/Time-of-Day-5-8pm-Rate/Rate-details",
+        "https://www.smud.org/Rate-Information/Residential-rates",
+        "https://www.smud.org/Rate-Information/Residential-rates/Critical-Peak-Pricing",
+        "https://www.smud.org/Rate-Information/Rate-archive",
+        "https://www.smud.org/Rate-Information/Low-income-and-nonprofits"
+      ],
+      "status": "done",
+      "note": "SMUD TOD 5-8 p.m. periods and 2026 prices, summer June 1-Sept 30 (when summer rates end), 11 holidays, Low Use/Fixed/CPP, EV overnight discount, SSR, 2026/2027 increases. Distinct from why-is-my-smud-bill-so-high (bills hub)."
+    },
+    {
+      "path": "/blog/pge-ev-rates",
+      "action": "CREATE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/pge-ev-rates/page.tsx",
+      "title": "PG&E EV Rates 2026: EV2-A, EV-B and E-ELEC Prices",
+      "clusters": [
+        143
+      ],
+      "sources": [
+        "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_EV2%20(Sch).pdf",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_EV%20(Sch).pdf",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-ELEC.pdf",
+        "https://www.pge.com/en/account/rate-plans/electric-vehicles.html",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_260101-260228.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250901-251231.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250301-250831.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_240101-240229.xlsx",
+        "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance.html",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "EV2-A/EV-B/E-ELEC prices (Mar 1, 2026), EV2 and EV tariff periods/eligibility (800% cap, EV-A eliminated Nov 30, 2025), EV2-A price history 2024-2026, charging-cost arithmetic, CARE/FERA/BSC tiers."
+    },
+    {
+      "path": "/blog/help-with-pge-bill",
+      "action": "CREATE",
+      "hub": "electric_bills",
+      "file": "src/app/blog/help-with-pge-bill/page.tsx",
+      "title": "Help Paying Your PG&E Bill: 2026 Assistance Programs",
+      "clusters": [
+        174
+      ],
+      "sources": [
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/relief-for-energy-assistance-through-community-help.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/arrearage-management-plan-amp.html",
+        "https://www.pge.com/en/account/billing-and-assistance/pay-my-bill/payment-plan-and-due-date-extension.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/match-my-payment-program.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/low-income-home-energy-assistance-program.html",
+        "https://www.csd.ca.gov/energybills",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/budget-billing-program.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/medical-baseline-program.html"
+      ],
+      "status": "done",
+      "note": "Payment plans/extensions, REACH ($800, DEF, 200% FPL), LIHEAP (CSD 2026 income table, up to $1,000 per PG&E), AMP ($8,000, rules), Match My Payment on hold for 2026, Medical Baseline, Budget Billing. CARE/FERA only summarized; links to /blog/income-qualified-bill-discount-pge (and should link to /blog/pge-care-program once costfin ships it; see link_requests)."
+    },
+    {
+      "path": "/blog/electricity-peak-hours-california",
+      "action": "CREATE_DEDICATED",
+      "hub": "utility_rates",
+      "file": "src/app/blog/electricity-peak-hours-california/page.tsx",
+      "title": "Electricity Peak Hours in California by Utility (2026)",
+      "clusters": [
+        171
+      ],
+      "sources": [
+        "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+        "https://www.pge.com/en/account/rate-plans/time-of-use-rate-plans.html",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-C.pdf",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_EV2%20(Sch).pdf",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.sdge.com/whenmatters",
+        "https://www.sdge.com/residential/pricing-plans",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/residential/pricing-plans/how-pricing-plans-work/how-rates-are-set",
+        "https://www.smud.org/Rate-Information/Residential-rates/Time-of-Day-5-8pm-Rate/Rate-details",
+        "https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates",
+        "https://www.ladwp.com/account/customer-service/electric-rates/residential-rates"
+      ],
+      "status": "done",
+      "note": "Statewide peak/off-peak/cheapest-hours tables for PG&E, SCE, SDG&E, SMUD, LADWP; weekends; holidays; why 4-9 p.m. Linked from the former holder /blog/sdge-time-of-use-rates-2026 (intro paragraph) and from the SCE/SMUD pages."
+    },
+    {
+      "path": "/blog/sdge-and-solar",
+      "action": "CREATE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/sdge-and-solar/page.tsx",
+      "title": "SDG&E and Solar: Solar Billing Plan, EV-TOU-5 and Credits",
+      "clusters": [
+        475
+      ],
+      "sources": [
+        "https://www.sdge.com/solar/solar-billing-plan",
+        "https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill",
+        "https://www.sdge.com/solar/solar-billing-plan/export-pricing",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU-5%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/residential/pricing-plans",
+        "https://www.sdge.com/solar/net-energy-metering/UnderstandingYourNEMBill",
+        "https://www.sdge.com/residential/pricing-plans/how-pricing-plans-work/how-rates-are-set",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+      ],
+      "status": "done",
+      "note": "SBP vs legacy NEM, EV-TOU-5 Aug 2026 prices, SDG&E 2026 hourly export credits computed from SDG&E NBT00/NBT26 files (noon vs 6 p.m. by month), monthly bill/non-nettable charges/true-up, 9-year lock-in, ACC Plus (CPUC names PG&E and SCE only). Overlaps battery lane /blog/sdge-net-metering on NEM detail; kept to the SDG&E-customer view and requested cross-links."
+    },
+    {
+      "path": "/blog/sdge-time-of-use-rates-2026",
+      "action": "UPGRADE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/sdge-time-of-use-rates-2026/page.tsx",
+      "title": "SDG&E Peak Hours and TOU-DR1 Rates 2026: Every Plan",
+      "clusters": [
+        1845,
+        2007
+      ],
+      "sources": [
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR2%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU-5%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-ELEC%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR-P%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU%20%26%20EV-TOU-2%20Total%20Rates%20Tables.pdf",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20DR%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/residential/pricing-plans",
+        "https://www.sdge.com/whenmatters",
+        "https://www.sdge.com/residential/pricing-plans/how-pricing-plans-work/how-rates-are-set",
+        "https://www.sdge.com/total-electric-rates",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "Replaced the GrowthGuide(kind=sdge) render with a hand-written page: weekday/weekend chart, \"Is SDG&E 4 to 9 on weekends?\" section (folds cluster 2007, sdge-4-to-9-weekends), TOU-DR1 and all-plan Aug 1, 2026 prices, DR, TOU-DR-P event adder, BSC, switching, summer season dates. Links to the new statewide peak-hours page."
+    },
+    {
+      "path": "/blog/sce-rate-increase-2026",
+      "action": "UPGRADE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/sce-rate-increase-2026/page.tsx",
+      "title": "SCE Rate Increase 2025–2026: History and Rate Chart",
+      "clusters": [
+        1776
+      ],
+      "sources": [
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260210-public-advocates-office-q4-2025-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/251106-public-advocates-office-q3-2025-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/250827-public-advocates-office-q2-2025-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/242005-public-advocates-office-q1-2025-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/250218-public-advocates-office-q4-2024-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/241205-public-advocates-office-q3-2024-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/240722-public-advocates-office-q2-2024-electric-rates-report.pdf",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+        "https://www.cpuc.ca.gov/generalratecase",
+        "https://www.cpuc.ca.gov/news-and-updates/all-news/understanding-how-the-cpuc-processes-a-general-rate-case",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+        "https://www.cpuc.ca.gov/climatecredit"
+      ],
+      "status": "done",
+      "note": "Fold target for /blog/sce-electricity-bill-changes (cluster 1776): H2 renamed \"SCE electricity bill changes since November 2025\" and expanded from SCE BSC FAQ (exact amounts, minimum charge gone, PPP moved, DM exempt, NEM credit effect) plus 2026 Climate Credit timing; new FAQ. Tier 1 rates page, not owned by any T2 lane."
+    },
+    {
+      "path": "/blog/how-to-lower-pge-bill",
+      "action": "CREATE",
+      "hub": "electric_bills",
+      "file": "src/app/blog/how-to-lower-pge-bill/page.tsx",
+      "title": "How to Lower Your PG&E Bill: Plans, Hours and Discounts",
+      "clusters": [
+        373
+      ],
+      "sources": [
+        "https://www.pge.com/en/save-energy-and-money/ways-to-lower-your-bill.html",
+        "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/ResElecBaselineCurrent.xlsx",
+        "https://www.pge.com/en/account/rate-plans/time-of-use-rate-plans.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/medical-baseline-program.html",
+        "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/budget-billing-program.html",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.cpuc.ca.gov/climatecredit",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "PG&E-specific: discounts first, plan comparison table (Mar 2026), peak-shift arithmetic, baseline territory table, what does not lower the bill, solar/battery fit, gas FAQ. Generic CA version stays at /blog/how-to-lower-electric-bill-california."
+    },
+    {
+      "path": "/blog/how-to-read-pge-bill",
+      "action": "CREATE",
+      "hub": "electric_bills",
+      "file": "src/app/blog/how-to-read-pge-bill/page.tsx",
+      "title": "How to Read Your PG&E Bill: Every Page and Charge",
+      "clusters": [
+        378
+      ],
+      "sources": [
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill.html",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_EV2%20(Sch).pdf",
+        "https://www.pge.com/assets/rates/tariffs/ResElecBaselineCurrent.xlsx",
+        "https://www.cpuc.ca.gov/climatecredit",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "Page-by-page table, page 3 reading, worked E-TOU-C example bill, PG&E glossary, CCA lines, solar NEM statement/true-up/NSC, disputes."
+    },
+    {
+      "path": "/blog/pge-time-of-use-rates-2026",
+      "action": "UPGRADE",
+      "hub": "utility_rates",
+      "file": "src/app/blog/pge-time-of-use-rates-2026/page.tsx",
+      "title": "PG&E Peak Hours and Time-of-Use Rates 2026: All Plans",
+      "clusters": [
+        397,
+        2164
+      ],
+      "sources": [
+        "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-C.pdf",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-ELEC.pdf",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_EV2%20(Sch).pdf",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_260101-260228.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250901-251231.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250301-250831.xlsx",
+        "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_240101-240229.xlsx",
+        "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+        "https://www.pge.com/en/account/rate-plans/time-of-use-rate-plans.html",
+        "https://www.pge.com/en/account/rate-plans/electric-vehicles.html",
+        "https://www.pge.com/en/account/rate-plans/electric-home.html",
+        "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+        "https://www.pge.com/assets/pge/transcripts/bill-explainer.pdf",
+        "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260210-public-advocates-office-q4-2025-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260305-public-advocates-office-pge-revenue-requests-fact-sheet.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "Added \"The best PG&E rate plan for solar\" (E-ELEC required for NBT per CPUC and E-ELEC tariff; NEM 2.0 TOU choice), \"What time of day are PG&E rates lowest?\", E-TOU-C tariff-title/all-days/bill-protection detail and three FAQs (folds cluster 2164, pge-e-tou-c-peak-hours-4-9-pm). Moved the EV2-A price-history table to /blog/pge-ev-rates to avoid duplication; merged the old solar paragraph."
+    },
+    {
+      "path": "/blog/solar-rate",
+      "action": "CREATE_DEDICATED",
+      "hub": "utility_rates",
+      "file": "src/app/blog/solar-rate/page.tsx",
+      "title": "Solar Rates in California: The Tariff and Rate Plan (2026)",
+      "clusters": [
+        405,
+        1850
+      ],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-ELEC.pdf",
+        "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU-5%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill",
+        "https://www.sdge.com/solar/solar-billing-plan/export-pricing",
+        "https://www.smud.org/Rate-Information/Residential-rates",
+        "https://www.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates"
+      ],
+      "status": "done",
+      "note": "One statewide page for \"solar rate\" and \"solar power tariff\" (both tiny, ambiguous, impressions on /solar-panels-california): NBT (D.22-12-056) as the solar tariff, required import plans with prices, SMUD/LADWP rules, SDG&E 2026 export examples, lock-in/ACC Plus, non-nettable BSC, NEM 1/2. Needs a link from /solar-panels-california (link request)."
+    },
+    {
+      "path": "/blog/how-to-read-sdge-bill",
+      "action": "CREATE",
+      "hub": "electric_bills",
+      "file": "src/app/blog/how-to-read-sdge-bill/page.tsx",
+      "title": "How to Read Your SDG&E Bill, With or Without Solar",
+      "clusters": [
+        480
+      ],
+      "sources": [
+        "https://www.sdge.com/mybill/new-features",
+        "https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill",
+        "https://www.sdge.com/solar/net-energy-metering/UnderstandingYourNEMBill",
+        "https://www.sdge.com/sites/default/files/SDGE%20Net%20Meter%20Fact%20Sheet.pdf",
+        "https://www.sdge.com/residential/savings-center/smart-meters/your-smart-meter/how-to-read-your-smart-meter",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/residential/pricing-plans",
+        "https://www.cpuc.ca.gov/climatecredit"
+      ],
+      "status": "done",
+      "note": "Bill sections table, TOU dashboard with TOU-DR1 arithmetic check, CCA/PCIA vintages (Aug 2026 table), Solar Billing Plan lines and true-up, legacy NEM statement, net-meter display codes (01/02/10/del/rec) from SDG&E net meter fact sheet."
+    },
+    {
+      "path": "/blog/why-is-my-sdge-bill-so-high",
+      "action": "UPGRADE",
+      "hub": "electric_bills",
+      "file": "src/app/blog/why-is-my-sdge-bill-so-high/page.tsx",
+      "title": "Why Is My SDG&E Bill So High? 2026 Prices and Causes",
+      "clusters": [
+        490
+      ],
+      "sources": [
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260430-public-advocates-office-q1-2026-electric-rates-report.pdf",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20DR%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/residential/pricing-plans",
+        "https://www.sdge.com/residential/pricing-plans/how-pricing-plans-work/how-rates-are-set",
+        "https://www.sdge.com/whenmatters",
+        "https://www.sdge.com/mybill/new-features",
+        "https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill",
+        "https://www.sdge.com/solar/net-energy-metering/UnderstandingYourNEMBill",
+        "https://www.cpuc.ca.gov/climatecredit"
+      ],
+      "status": "done",
+      "note": "Rewritten on RateGuideParts with numbers: PAO June 2026 average and Jan/Jun 2026 changes with drivers, June 1-Oct 31 summer, 7-day 4-9 peak, baseline 130% credit, BSC, 2026 Climate Credit timing, CCA/solar, arrears; kept BillComparison and the San Diego/Escondido/Chula Vista links."
+    },
+    {
+      "path": "/solar-problems/do-i-still-get-a-utility-bill-with-solar",
+      "action": "UPGRADE",
+      "hub": "electric_bills",
+      "file": "src/data/article-pages.problems.json",
+      "title": "Do You Still Get a Utility Bill With Solar in CA?",
+      "clusters": [
+        407
+      ],
+      "sources": [
+        "https://www.eia.gov/electricity/sales_revenue_price/xls/table_5A.xlsx",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.cpuc.ca.gov/climatecredit",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU-5%20Total%20Rates%20Table.pdf",
+        "https://www.sdge.com/solar/solar-billing-plan/export-pricing"
+      ],
+      "status": "done",
+      "note": "JSON page: new section \"What a real California solar bill looks like in 2026\" (EIA 2024 CA average bill, BSC and 2026 Climate Credit, worked SDG&E EV-TOU-5 December/August bills with 2026 export values), corrected SCE BSC amounts, Base Services Charge row in the data table, two FAQs (real bill; average CA bill), reviewedAt 2026-09-23. Added its \"next question\" links in src/data/json-article-links.ts. qc-gate.mjs passes."
+    }
+  ],
+  "sitemap_add": [
+    "/blog/smud-peak-hours",
+    "/blog/pge-ev-rates",
+    "/blog/help-with-pge-bill",
+    "/blog/electricity-peak-hours-california",
+    "/blog/sdge-and-solar",
+    "/blog/how-to-lower-pge-bill",
+    "/blog/how-to-read-pge-bill",
+    "/blog/solar-rate",
+    "/blog/how-to-read-sdge-bill"
+  ],
+  "blog_index_add": [
+    {
+      "slug": "smud-peak-hours",
+      "title": "SMUD Peak Hours 2026: Summer and Time-of-Day Rates",
+      "hub": "utility_rates"
+    },
+    {
+      "slug": "pge-ev-rates",
+      "title": "PG&E EV Rates 2026: EV2-A, EV-B and E-ELEC Prices",
+      "hub": "utility_rates"
+    },
+    {
+      "slug": "help-with-pge-bill",
+      "title": "Help Paying Your PG&E Bill: 2026 Assistance Programs",
+      "hub": "electric_bills"
+    },
+    {
+      "slug": "electricity-peak-hours-california",
+      "title": "Electricity Peak Hours in California by Utility (2026)",
+      "hub": "utility_rates"
+    },
+    {
+      "slug": "sdge-and-solar",
+      "title": "SDG&E and Solar: Solar Billing Plan, EV-TOU-5 and Credits",
+      "hub": "utility_rates"
+    },
+    {
+      "slug": "how-to-lower-pge-bill",
+      "title": "How to Lower Your PG&E Bill: Plans, Hours and Discounts",
+      "hub": "electric_bills"
+    },
+    {
+      "slug": "how-to-read-pge-bill",
+      "title": "How to Read Your PG&E Bill: Every Page and Charge",
+      "hub": "electric_bills"
+    },
+    {
+      "slug": "solar-rate",
+      "title": "Solar Rates in California: The Tariff and Rate Plan (2026)",
+      "hub": "utility_rates"
+    },
+    {
+      "slug": "how-to-read-sdge-bill",
+      "title": "How to Read Your SDG&E Bill, With or Without Solar",
+      "hub": "electric_bills"
+    }
+  ],
+  "redirect_requests": [],
+  "hub_links": [
+    {
+      "hub": "utility_rates",
+      "href": "/blog/smud-peak-hours",
+      "label": "SMUD peak hours and summer rates"
+    },
+    {
+      "hub": "utility_rates",
+      "href": "/blog/pge-ev-rates",
+      "label": "PG&E EV rate plans"
+    },
+    {
+      "hub": "electric_bills",
+      "href": "/blog/help-with-pge-bill",
+      "label": "Help paying a PG&E bill"
+    },
+    {
+      "hub": "utility_rates",
+      "href": "/blog/electricity-peak-hours-california",
+      "label": "California peak hours by utility"
+    },
+    {
+      "hub": "utility_rates",
+      "href": "/blog/sdge-and-solar",
+      "label": "SDG&E and solar: Solar Billing Plan"
+    },
+    {
+      "hub": "electric_bills",
+      "href": "/blog/how-to-lower-pge-bill",
+      "label": "How to lower a PG&E bill"
+    },
+    {
+      "hub": "electric_bills",
+      "href": "/blog/how-to-read-pge-bill",
+      "label": "How to read a PG&E bill"
+    },
+    {
+      "hub": "utility_rates",
+      "href": "/blog/solar-rate",
+      "label": "Solar rates and the solar tariff"
+    },
+    {
+      "hub": "nem",
+      "href": "/blog/solar-rate",
+      "label": "Which rate plan solar homes pay"
+    },
+    {
+      "hub": "electric_bills",
+      "href": "/blog/how-to-read-sdge-bill",
+      "label": "How to read an SDG&E bill"
+    },
+    {
+      "hub": "electric_bills",
+      "href": "/solar-problems/do-i-still-get-a-utility-bill-with-solar",
+      "label": "Do you still get a bill with solar?"
+    }
+  ],
+  "link_requests": [
+    {
+      "from": "/blog/pge-care-program",
+      "to": "/blog/help-with-pge-bill",
+      "anchor": "help paying a past-due PG&E bill",
+      "why": "costfin CARE page; REACH/AMP/LIHEAP/payment plans live on help-with-pge-bill, so costfin need not duplicate them"
+    },
+    {
+      "from": "/blog/help-with-pge-bill",
+      "to": "/blog/pge-care-program",
+      "anchor": "how to qualify and apply for PG&E CARE",
+      "why": "not linked yet because the costfin page does not exist on this branch; add at integration if /blog/pge-care-program ships (next to the existing /blog/income-qualified-bill-discount-pge link in the \"Discounts that lower every future bill\" section)"
+    },
+    {
+      "from": "/blog/sdge-net-metering",
+      "to": "/blog/sdge-and-solar",
+      "anchor": "SDG&E Solar Billing Plan rate and 2026 export credits",
+      "why": "battery-lane NEM page; sdge-and-solar carries EV-TOU-5 prices and the hourly export-credit table"
+    },
+    {
+      "from": "/blog/sdge-and-solar",
+      "to": "/blog/sdge-net-metering",
+      "anchor": "SDG&E net metering (NEM 2.0) rules",
+      "why": "add at integration if the battery page ships; not linked now because it does not exist on this branch"
+    },
+    {
+      "from": "/blog/pge-solar-billing-plan",
+      "to": "/blog/how-to-read-pge-bill",
+      "anchor": "reading a PG&E solar statement",
+      "why": "battery-lane page; bill-reading and true-up lines live here"
+    },
+    {
+      "from": "/solar-panels-california",
+      "to": "/blog/solar-rate",
+      "anchor": "what rate solar homes pay (the solar tariff)",
+      "why": "CREATE_DEDICATED: /solar-panels-california gets the \"solar rate\" and \"solar power tariff\" impressions but is off-topic for them"
+    },
+    {
+      "from": "/blog/pge-vs-sce-vs-sdge-rates-compared",
+      "to": "/blog/electricity-peak-hours-california",
+      "anchor": "peak hours at each California utility",
+      "why": "current comparison page for the three IOUs; statewide hours now live on their own page"
+    },
+    {
+      "from": "/blog/how-to-lower-electric-bill-california",
+      "to": "/blog/how-to-lower-pge-bill",
+      "anchor": "PG&E-specific steps to lower the bill",
+      "why": "generic CA page (CaliforniaBillDecisionPage lower); utility-specific version is new"
+    },
+    {
+      "from": "/blog/why-is-my-smud-bill-so-high",
+      "to": "/blog/smud-peak-hours",
+      "anchor": "SMUD peak hours and summer rate dates",
+      "why": "Tier 1 bills page; the rates-side SMUD page is new"
+    },
+    {
+      "from": "/blog/why-is-my-pge-bill-so-high",
+      "to": "/blog/help-with-pge-bill",
+      "anchor": "help paying a past-due PG&E bill",
+      "why": "high-bill readers who are behind need the assistance page"
+    },
+    {
+      "from": "/blog/why-is-my-pge-bill-so-high",
+      "to": "/blog/how-to-lower-pge-bill",
+      "anchor": "steps to lower a PG&E bill",
+      "why": "diagnosis page should hand off to the action page"
+    },
+    {
+      "from": "/blog/income-qualified-bill-discount-pge",
+      "to": "/blog/help-with-pge-bill",
+      "anchor": "REACH, LIHEAP and debt forgiveness for past-due bills",
+      "why": "CARE/FERA page mentions arrears programs; the full detail now lives on help-with-pge-bill"
+    },
+    {
+      "from": "/blog/why-is-my-sce-bill-so-high",
+      "to": "/blog/sce-rate-increase-2026",
+      "anchor": "what changed on SCE bills since November 2025",
+      "why": "sce-electricity-bill-changes was folded into that section"
+    }
+  ],
+  "skipped": [
+    {
+      "url": "/blog/sce-ev-rates",
+      "why": "folded into /blog/sce-time-of-use-rates-2026 (SCE has one EV plan, TOU-D-PRIME, which that page prices; 50/mo volume did not need its own page)"
+    },
+    {
+      "url": "/blog/sce-electricity-bill-changes",
+      "why": "folded into /blog/sce-rate-increase-2026 (its H2 \"What changed on SCE bills in 2026\" already answered the question; the SERP is SCE Base Services Charge pages, so the section was expanded and retitled instead of splitting the topic)"
+    },
+    {
+      "url": "/blog/sdge-4-to-9-weekends",
+      "why": "folded into /blog/sdge-time-of-use-rates-2026 (new section \"Is SDG&E’s 4-to-9 peak on weekends too?\" plus FAQ; the 83 impressions already land on that page)"
+    },
+    {
+      "url": "/blog/solar-power-tariff",
+      "why": "folded into /blog/solar-rate (same intent at 50/mo each; one statewide solar-tariff page instead of two that would split ranking)"
+    },
+    {
+      "url": "/blog/pge-e-tou-c-peak-hours-4-9-pm",
+      "why": "folded into /blog/pge-time-of-use-rates-2026 (E-TOU-C 4-9 p.m. every day already answered there; added tariff-title detail, bill-protection note and a dedicated FAQ)"
+    }
+  ],
+  "notes_for_integration": [
+    "Added Tier 2 source entries to src/data/rate-sources.ts inside the existing PG&E, SCE, SDG&E and SMUD sections (no existing entries changed).",
+    "/blog/sdge-time-of-use-rates-2026 no longer renders GrowthGuide kind=\"sdge\"; the sdge entries in src/components/growth/Guides.tsx (definition, content block, SdgeRateTable usage) are now unused but were left in place (shared file).",
+    "/solar-problems/do-i-still-get-a-utility-bill-with-solar is listed under the rules_permits hub in topic-hubs.ts; the assignment puts it in electric_bills (hub_links entry added).",
+    "Guides.tsx still holds the old sdge guide content (now unreferenced by any route)."
+  ]
+}
