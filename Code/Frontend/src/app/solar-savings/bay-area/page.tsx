@@ -16,6 +16,7 @@ import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { FaqBlock } from '@/components/trust/FaqBlock';
 
 // Region-specific sources for the prose below. Each CCA's own statement of
 // where it serves, fetched 2026-09-23; see the Sources line on the page.
@@ -28,17 +29,44 @@ const SVCE_URL = 'https://www.svcleanenergy.org/communities/';
 const WESTLIGHT_URL = 'https://www.westlightenergy.org/';
 const SCP_URL = 'https://sonomacleanpower.org/who-we-are';
 const THREECE_URL = 'https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf';
+// 2026-09-23 (Tier 2, citycos): bill-and-rate sources for the rates section
+// and FAQ below, each fetched that day.
+const PAO_Q2_2026_URL =
+  'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf';
+const PGE_BSC_URL = 'https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html';
+const PGE_SBP_URL = 'https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html';
+const SJCE_SOLAR_URL = 'https://sanjosecleanenergy.org/solar-billing-nem/';
+const SB379_DATA_URL =
+  'https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx';
+
+const FAQS = [
+  {
+    question: 'What are PG&E electric rates in the Bay Area?',
+    answer:
+      "PG&E's residential average rate was 33.7 cents per kWh as of June 2026, unchanged since March 2026, according to the CPUC Public Advocates Office. That is up 8% over three years and 69% since January 2016. Since March 2026 most PG&E bills also carry a Base Services Charge of about $24 a month ($6 on CARE, $12 on FERA), with lower per-kWh prices in exchange. Where a community choice provider supplies your power, it sets the generation part of that price.",
+  },
+  {
+    question: 'What is the average PG&E bill in the Bay Area?',
+    answer:
+      'No source publishes one average for the region: the Public Advocates Office estimates PG&E bills only for sample hot and cool climate zones, and usage varies widely between the coast and inland valleys. Use your own twelve months of bills. The office also reports that 1,356,481 PG&E customers, 24%, were behind on their energy bills in May 2026, owing $572 on average across electric and gas.',
+  },
+  {
+    question: 'Can solar save money on electricity in the Bay Area?',
+    answer:
+      "It can, but the savings depend on how much of the output you use at home. On PG&E's Solar Billing Plan, export credits change by hour, day and season, and PG&E says customers save the most when they use what they produce on-site. The Base Services Charge is not reduced by solar. Community choice providers credit the generation half of the bill on their own terms; San José Clean Energy, for example, credits generation while PG&E credits delivery.",
+  },
+];
 
 export const metadata: Metadata = {
-  title: "Bay Area Solar Savings: San Jose, San Francisco, Oakland",
-  description: "Bay Area solar: which community choice aggregator shares your PG&E bill in San Jose, San Francisco, Oakland and nearby cities, and how to compare quotes.",
+  title: "Bay Area Solar Savings & PG&E Rates by City (2026)",
+  description: "Bay Area electric rates and solar savings: PG&E's 33.7¢ average, the $24 Base Services Charge, and which CCA prices your solar credits in each city.",
   alternates: {
     canonical: '/solar-savings/bay-area',
   },
   openGraph: {
-    title: 'Bay Area Solar Companies: San Jose, San Francisco, Oakland',
+    title: 'Bay Area Solar Savings & PG&E Rates by City (2026)',
     description:
-      'Which community choice aggregator shares your PG&E bill in each Bay Area city, and what that changes in a solar quote.',
+      "PG&E's average rate, the Base Services Charge, and which community choice provider shares your PG&E bill in each Bay Area city.",
     type: 'website',
   },
 };
@@ -184,6 +212,29 @@ export default function BayAreaSolarPage() {
               </p>
             </section>
 
+            {/* 2026-09-23 (Tier 2, citycos): the bill-and-rate questions this
+                page gets searched for ("pge electric rates bay area",
+                "average pg&e bill bay area", "solar energy for saving
+                electricity bay area"). Every figure is in the Sources line. */}
+            <section className='bg-card rounded-2xl border border-border p-8 md:p-10 mb-12'>
+              <h2 className='text-2xl font-bold text-foreground mb-4 tracking-tight'>
+                What electricity costs on a Bay Area bill
+              </h2>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                The CPUC Public Advocates Office put PG&amp;E&apos;s residential average rate at 33.7 cents per kWh in June 2026, the same as in March. It has risen 8% over three years, 39% over five and 69% since January 2016, and the office reports that 1,356,481 PG&amp;E customers, about one in four, were behind on their energy bills in May 2026. Since March 2026 PG&amp;E has moved part of its costs into a Base Services Charge of about $24 a month, $6 for CARE households and $12 for FERA, and lowered its per-kWh prices; PG&amp;E says some customers&apos; total bills went down and others rose slightly.
+              </p>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                The 33.7-cent figure is PG&amp;E&apos;s bundled average. In a city with a community choice provider, the generation part of each kWh is priced by that provider instead, so compare the generation line on your own bill with the provider&apos;s posted rates rather than with the average.
+              </p>
+              <h3 className='text-lg font-semibold text-foreground mt-6 mb-2'>How solar changes that bill</h3>
+              <p className='text-muted-foreground leading-relaxed mb-4'>
+                A new system goes on PG&amp;E&apos;s Solar Billing Plan: exports earn credits that vary by time of day, day of the week and season, customers who start before 2028 get Energy Export Bonus Credits, and a True-Up statement closes each 12-month cycle. PG&amp;E says customers save the most when they use the energy they produce on-site, and the Base Services Charge stays on the bill either way. That is why storage has become common: the cities&apos; own 2024 permit reports to the Energy Commission show 79% of San Jose&apos;s residential solar permits and 74% of Fremont&apos;s included a battery. To line up installers city by city, see <Link href='/solar-companies/bay-area' className='text-primary underline'>how to compare solar companies across the Bay Area</Link>.
+              </p>
+              <p className='text-sm text-muted-foreground leading-relaxed'>
+                Sources, each checked {CHECKED}: <a href={PAO_Q2_2026_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>CPUC Public Advocates Office, Q2 2026 Electric Rates Report</a>; <a href={PGE_BSC_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>PG&amp;E, Base Services Charge</a>; <a href={PGE_SBP_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>PG&amp;E, Solar Billing Plan</a>; <a href={SJCE_SOLAR_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>San José Clean Energy, solar billing</a>; <a href={SB379_DATA_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>California Energy Commission, SB 379 solar permit reports</a>.
+              </p>
+            </section>
+
             {/* Cities Grid */}
             <div className='mb-12'>
               <h2 className='text-2xl font-bold text-foreground mb-6 tracking-tight'>
@@ -221,6 +272,8 @@ export default function BayAreaSolarPage() {
             {/* claude/audit-links-20260918 — the cost-layer cities in these
                 counties that this hub's own grid does not reach. */}
             <RegionalCostCities region='Bay Area' counties={bayAreaCounties} />
+
+            <FaqBlock items={FAQS} id='faq' className='mb-12' />
 
             {/* CTA Section */}
             <div className='bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center'>

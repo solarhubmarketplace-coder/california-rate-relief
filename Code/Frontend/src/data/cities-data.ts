@@ -2418,6 +2418,10 @@ export const CITIES: CityData[] = [
       ],
       faqs: [
         {
+          question: 'How much is electricity per kWh in San Diego?',
+          answer: 'SDG&E\'s residential average rate was 45.5 cents per kWh after its June 1, 2026 rate change, against 34.4 cents for SCE and 33.7 for PG&E (CPUC Public Advocates Office). What you pay per kWh depends on your plan and the hour: on SDG&E\'s EV-TOU-5 plan, which the Solar Billing Plan uses, on-peak runs from 4 p.m. to 9 p.m. For most homes San Diego Community Power prices the generation part of each kWh.',
+        },
+        {
           question: 'What is the average electric bill in San Diego?',
           answer: 'The CPUC Public Advocates Office estimated about $156 a month in June 2026 for a customer not on CARE in SDG&E\'s coastal climate zone, and $87 for a CARE customer there. In the desert zone the figures were $130 and $126. Your own twelve months of bills are the better guide for your home.',
         },
@@ -2438,6 +2442,7 @@ export const CITIES: CityData[] = [
         { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report (rates, bill estimates, drivers, arrears)', url: 'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf', fetchedAt: '2026-09-23' },
         { label: 'SDG&E: Base Services Charge', url: 'https://www.sdge.com/electric-billing', fetchedAt: '2026-09-23' },
         { label: 'San Diego Community Power: net energy metering and Solar Billing Plan', url: 'https://sdcommunitypower.org/net-energy-metering/', fetchedAt: '2026-09-23' },
+        { label: 'SDG&E: Solar Billing Plan (EV-TOU-5 on-peak hours)', url: 'https://www.sdge.com/solar/solar-billing-plan', fetchedAt: '2026-09-23' },
         { label: 'CPUC: CARE/FERA program', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program', fetchedAt: '2026-09-23' },
         { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers)', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
       ],

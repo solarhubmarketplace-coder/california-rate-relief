@@ -82,10 +82,197 @@
    ],
    "status": "done",
    "note": "Corrected a Tier 1 factual error: the page said Huntington Beach is an OCPA member city; OCPA says the city left (vote May 2023) and customers returned to SCE in 2024 (solar accounts April 2024). Rewrote billing to SCE Solar Billing Plan; added HCD permit section for mobile/manufactured homes (GSC queries)."
+  },
+  {
+   "path": "/solar-companies/san-mateo",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Mateo, CA (2026)",
+   "clusters": [
+    608
+   ],
+   "sources": [
+    "https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers",
+    "https://www.westlightenergy.org/",
+    "https://www.westlightenergy.org/residential/rates-billing/solar-rates/net-energy-metering/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.smcgov.org/planning/instant-residential-solar-and-energy-storage-system-permits"
+   ],
+   "status": "done",
+   "note": "Tier 1 page kept; added the City's 2024 SB 379 permit figures (333 permits, 47% storage, 31% online), County-vs-city permit FAQ, and links to the new San Mateo County page and maintenance cost page (GSC: solar panel maintenance san mateo)."
+  },
+  {
+   "path": "/solar-companies/san-francisco",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Francisco, CA (2026)",
+   "clusters": [
+    118
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://cleanpowersf.org/understanding-my-bill",
+    "https://cleanpowersf.org/net-energy-metering",
+    "https://www.sf.gov/new-solar-permit-cancelling-abandoned-otc-applications-recheck-escalation-reference-drawings-and-new-fee-rates",
+    "https://luminalt.com/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "done",
+   "note": "Tier 1 page kept; added 2024 SB 379 permit figures (887 permits, 17% online) and a link to the new Bay Area companies page for the bay-area sub-question."
+  },
+  {
+   "path": "/solar-companies/san-mateo-county",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Mateo County, CA (2026)",
+   "clusters": [
+    800
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.energy.ca.gov/programs-and-topics/programs/residential-solar-permit-reporting-program-sb-379/residential-solar-1",
+    "https://www.westlightenergy.org/",
+    "https://www.westlightenergy.org/residential/rates-billing/solar-rates/net-energy-metering/",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.smcgov.org/planning/instant-residential-solar-and-energy-storage-system-permits",
+    "https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers",
+    "https://www.dalycity.org/1157/SolarApp",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+   ],
+   "status": "done",
+   "note": "New county page: PG&E + WestLight across the county, County of San Mateo Symbium instant permits for unincorporated homes, and each city's 2024 SB 379 permit counts/online share. Impressions land on /solar-companies/san-mateo, which now links here."
+  },
+  {
+   "path": "/solar-companies/bay-area",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Bay Area Solar Companies: How to Compare Quotes (2026)",
+   "clusters": [
+    664
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://avaenergy.org/community/who-we-serve/",
+    "https://www.svcleanenergy.org/",
+    "https://www.svcleanenergy.org/solar/",
+    "https://sanjosecleanenergy.org/solar-billing-nem/",
+    "https://cleanpowersf.org/understanding-my-bill",
+    "https://www.westlightenergy.org/",
+    "https://sonomacleanpower.org/who-we-are",
+    "https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52",
+    "https://www.cityofsanrafael.org/solarapp-permits/",
+    "https://www.cityofsanrafael.org/renewable-energy/"
+   ],
+   "status": "done",
+   "note": "New region page (Tier 1 skipped it for lack of a region template): CCA or city utility by city (Ava, MCE, CleanPowerSF, SJCE, SVCE, WestLight, SCP, 3CE; Palo Alto, Santa Clara, Alameda munis) and each city's SB 379 permit figures. Carries the Marin County section (row 25 folded here)."
+  },
+  {
+   "path": "/solar-companies/marin-county",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    725
+   ],
+   "sources": [
+    "https://www.cityofsanrafael.org/solarapp-permits/",
+    "https://www.cityofsanrafael.org/renewable-energy/"
+   ],
+   "status": "skipped",
+   "note": "folded into /solar-companies/bay-area: a standalone Marin page could not carry enough sourced local content (MCE and County of Marin sites return 403); the Bay Area page has a Marin section with San Rafael's SolarAPP+/OpenGov route, MCE per the CEC map and SB 379 counts for San Rafael, Corte Madera and San Anselmo."
+  },
+  {
+   "path": "/solar-savings/bay-area",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/app/solar-savings/bay-area/page.tsx",
+   "title": "Bay Area Solar Savings & PG&E Rates by City (2026)",
+   "clusters": [
+    752
+   ],
+   "sources": [
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://sanjosecleanenergy.org/solar-billing-nem/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "done",
+   "note": "Added PG&E rate and bill section (33.7c average, Base Services Charge, arrears), how solar changes the bill, 3-question FAQ with FAQPage schema, link to /solar-companies/bay-area; retitled toward rates + savings."
+  },
+  {
+   "path": "/solar-savings/san-diego",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/data/cities-data.ts (bills block, rendered by src/app/solar-savings/[city]/page.tsx)",
+   "title": "San Diego Electric Bills & SDG&E Rates (2026)",
+   "clusters": [
+    415,
+    468
+   ],
+   "sources": [
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.sdge.com/solar/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "Tier 1 bills page already answers per-month and why-so-expensive; added a per-kWh FAQ (45.5c SDG&E average vs SCE/PG&E, EV-TOU-5 4-9 pm on-peak) for how much is electricity in san diego."
+  },
+  {
+   "path": "/solar-companies/simi-valley",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Simi Valley, CA (2026)",
+   "clusters": [
+    674
+   ],
+   "sources": [
+    "https://www.simivalley.org/departments/environmental-services/building-safety-division/photovoltaic-information",
+    "https://cleanpoweralliance.org/",
+    "https://cleanpoweralliance.org/solar/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Legacy page moved onto the sourced growth template (Tier 1 skipped: city site 403; fetched this time via WebFetch): SolarAPP+ mandatory since Jan 1 2023, one inspection, combined storage permit, CPA Lean Power default and Solar Billing Plan terms, 2024 SB 379 counts."
+  },
+  {
+   "path": "/solar-companies/scotts-valley",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Scotts Valley, CA (2026)",
+   "clusters": [
+    724
+   ],
+   "sources": [
+    "https://scottsvalley.gov/DocumentCenter/View/5409/Solar-Permits-and-Energy-Storage-Systems-10-2024",
+    "https://3cenergy.org/solar-billing-plan/",
+    "https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New growth page: SolarAPP+ then OpenGov (City handout Oct 2024), 3CE founding member (Mar 1 2018) with December true-up and NSC terms. Impressions land on /solar-companies/santa-cruz."
   }
  ],
  "sitemap_add": [
-  "/solar-companies/orange-county"
+  "/solar-companies/orange-county",
+  "/solar-companies/san-mateo-county",
+  "/solar-companies/bay-area",
+  "/solar-companies/scotts-valley"
  ],
  "blog_index_add": [],
  "redirect_requests": [],
@@ -94,6 +281,21 @@
    "hub": "city_installers",
    "href": "/solar-companies/orange-county",
    "label": "Orange County solar companies by city utility and permit office"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/san-mateo-county",
+   "label": "San Mateo County solar companies and permit offices"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/bay-area",
+   "label": "Bay Area solar companies by generation provider and permit office"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/scotts-valley",
+   "label": "Scotts Valley solar companies"
   }
  ],
  "link_requests": [],
@@ -101,6 +303,10 @@
   {
    "url": "/solar-savings/corona",
    "why": "folded into /solar-companies/corona: /solar-savings/corona is a 301 source (canonical-redirects.ts -> /solar-cost/corona); never build at a redirect source. The provider and rate questions (electricity provider corona, electric rates corona, solar electric system corona) are answered on /solar-companies/corona (City of Corona tiered rate, SCE vs City utility)."
+  },
+  {
+   "url": "/solar-companies/marin-county",
+   "why": "folded into /solar-companies/bay-area: a standalone Marin page could not carry enough sourced local content (MCE and County of Marin sites return 403); the Bay Area page has a Marin section with San Rafael's SolarAPP+/OpenGov route, MCE per the CEC map and SB 379 counts for San Rafael, Corte Madera and San Anselmo."
   }
  ]
 }
