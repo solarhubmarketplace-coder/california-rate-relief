@@ -9,6 +9,8 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { FaqBlock } from '@/components/trust/FaqBlock';
 
 const CALIFORNIA_RESIDENTIAL_CODE_URL =
   'https://codes.iccsafe.org/content/CARC2022P3/chapter-3-building-planning';
@@ -23,6 +25,7 @@ const TRI_FLASHING_BULLETIN_URL =
   'https://www.tileroofing.org/uploads/1/4/9/0/149044128/19tri036_tri-tech-bulletin-2016-001-recommendations-of-flashings-at-tile-penetration-june-2016_d2.pdf';
 const TRI_SOLAR_TECH_BRIEF_URL =
   'https://www.tileroofing.org/uploads/1/4/9/0/149044128/19tri036_2008-01-solar-panels_d2.pdf';
+const IRS_CREDIT_URL = 'https://www.irs.gov/credits-deductions/residential-clean-energy-credit';
 const DOE_ROOF_REPLACEMENT_URL =
   'https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar';
 
@@ -39,21 +42,49 @@ export const metadata: Metadata = {
     description: metaDescription,
     type: 'article',
     url: 'https://ratereliefca.com/blog/solar-panels-tile-roof-california',
-    modifiedTime: '2026-09-22T00:00:00Z',
+    modifiedTime: '2026-09-23T00:00:00Z',
     images: [CRR_SOCIAL_CARD],
   },
   twitter: crrTwitter(metaTitle, metaDescription),
 };
 
+const faqs = [
+  {
+    question: 'Can you put solar panels on a clay tile roof?',
+    answer:
+      'Yes. Installers use tile-specific hooks or a tile-replacement mount rather than the mounts used on composition-shingle roofs, with deck and tile flashing at every attachment point. The Tile Roofing Industry Alliance treats clay and concrete tile the same way for flashing; what changes the hardware is the tile profile.',
+  },
+  {
+    question: 'Do solar panels break roof tiles?',
+    answer:
+      'They can, mostly from cutting or grinding a tile to fit a hook, or from foot traffic during installation and later service. Tile-replacement mounts avoid some of this by removing the tile at each mount point. Ask for the installer’s written policy on cracked tiles before work starts.',
+  },
+  {
+    question: 'How much do solar roof tiles cost?',
+    answer:
+      'No government or research source we could check publishes a current California price for solar roof tiles, so compare written bids rather than advertised figures. Solar tiles replace the roof covering, so the bid includes tear-off, underlayment, inactive matching tiles and roofing labor as well as the solar equipment. Compare it with a conventional re-roof plus panels, and with panels on your existing tile roof.',
+  },
+  {
+    question: 'Is there a cost premium for putting solar on a tile roof?',
+    answer:
+      'Tile adds labor and breakage risk, but no source we could verify gives a specific premium. Ask your installer to show tile attachment and tile replacement as their own line items.',
+  },
+  {
+    question: 'Do solar roof tiles still qualify for the federal tax credit?',
+    answer:
+      'Not for new systems. The IRS says solar roofing tiles and solar shingles qualified because they generate energy, but that the Residential Clean Energy Credit is not available for any property placed in service after December 31, 2025. Traditional roofing that only supports panels generally did not qualify.',
+  },
+];
+
 export default function SolarTileRoofCalifornia() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel='Solar on tile roofs' breadcrumbParent={{ label: 'Roofs and solar', href: '/blog/is-my-roof-good-for-solar-california' }}>
       <ArticleJsonLd
         variant='Article'
         domain='crr'
         headline='Solar Roof Tiles vs. Panels on a Tile Roof in California'
         url='https://ratereliefca.com/blog/solar-panels-tile-roof-california'
-        dateModified='2026-09-22'
+        dateModified='2026-09-23'
         description='The difference between solar panels mounted on an existing tile roof and roof-integrated solar tiles in California, plus a source-linked scope and contract checklist.'
       />
       <Header />
@@ -63,9 +94,9 @@ export default function SolarTileRoofCalifornia() {
             <nav className='mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
               <Link href='/' className='hover:text-primary'>Home</Link>
               <span>/</span>
-              <Link href='/blog' className='hover:text-primary'>Blog</Link>
+              <Link href='/blog/is-my-roof-good-for-solar-california' className='hover:text-primary'>Roofs and solar</Link>
               <span>/</span>
-              <span className='text-foreground'>Solar Roof Tiles and Tile-Roof Panels</span>
+              <span className='text-foreground'>Solar on tile roofs</span>
             </nav>
 
             <header className='mb-10'>
@@ -77,7 +108,10 @@ export default function SolarTileRoofCalifornia() {
                 The phrase “solar roof tiles” can mean two different projects. One places conventional solar panels over an existing tile roof. The other uses photovoltaic material as part of the roof covering. Start by separating those jobs. They are not the same scope.
               </p>
               <p className='mt-3 text-sm text-muted-foreground'>
-                Reviewed <time dateTime='2026-09-22'>September 22, 2026</time>
+                Reviewed <time dateTime='2026-09-23'>September 23, 2026</time> · By <Link href='/author/chad-simpson' className='underline'>Chad Simpson</Link>
+              </p>
+              <p className='mt-2 text-sm text-muted-foreground'>
+                California Rate Relief is a referral service. We are not a licensed contractor.
               </p>
             </header>
 
@@ -149,13 +183,10 @@ export default function SolarTileRoofCalifornia() {
                 <li>Have you installed on this exact tile profile before? Can I see a past job?</li>
               </ul>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Quick answers</h2>
-              <ul className='list-disc pl-6 space-y-2'>
-                <li><strong>Can you put solar panels on a tile roof?</strong> Yes. Installers use tile-specific hooks or a tile-replacement mount, not the mounts used on composition-shingle roofs.</li>
-                <li><strong>Do solar panels break roof tiles?</strong> They can — mostly from cutting/grinding a tile to fit a hook, or foot traffic during install. Replacement mounts avoid this by removing the tile at the mount point instead.</li>
-                <li><strong>Is there a cost premium for tile-roof solar?</strong> Tile adds labor, but no sourced figure gives a specific premium — ask your installer to itemize it.</li>
-                <li><strong>Does clay vs. concrete change the hardware?</strong> Not by material — flashing guidance treats them the same. What matters is the tile&apos;s profile.</li>
-              </ul>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>If a leak or a re-roof comes later</h2>
+              <p>
+                Tile jobs raise two later questions: what happens if water gets in at a mount, and what it takes to lift the array for roof work. For the first, <Link href='/blog/roof-leak-after-solar-panel-install' className='text-primary underline'>what to do about a roof leak after solar</Link> covers the evidence to collect and who is responsible. For the second, <Link href='/blog/solar-panel-removal-reinstall-cost' className='text-primary underline'>solar panel removal and reinstall costs</Link> explains what a quote should itemize, and tile is one of the factors that moves it. Routine upkeep on any roof is in <Link href='/solar-panel-maintenance-california' className='text-primary underline'>our solar panel maintenance guide</Link>.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>If panels will be mounted on an existing tile roof</h2>
               <p>
@@ -171,6 +202,14 @@ export default function SolarTileRoofCalifornia() {
               </p>
               <p>
                 Get the product specification, the roof assembly scope, the permit plan, and the warranty documents before comparing proposals. Your local building department decides the permit and inspection requirements for the address. A website cannot approve a project.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Solar roof tiles price: what drives the cost</h2>
+              <p>
+                We could not find a government or research source that publishes current California prices for solar roof tiles, so this page does not print a per-square-foot figure. What a solar-tile bid covers is predictable, and it is much more than the solar equipment: tear-off of the existing roof, underlayment and flashing, the active solar tiles, inactive tiles that match them on the rest of the roof, electrical work, inverters and any battery, permits and inspection. Roof size, pitch, hips and valleys, and how much of the roof faces the sun all move the total.
+              </p>
+              <p>
+                The fair comparison is three bids on the same house: solar tiles as the new roof, a conventional re-roof with panels on top, and, if your tile roof has years left, panels mounted on the existing tile. The tax picture has also changed. The IRS says solar roofing tiles and solar shingles qualified for the Residential Clean Energy Credit because they generate energy, but that the credit &ldquo;is not available for any property placed in service after December 31, 2025.&rdquo; Source: <a href={IRS_CREDIT_URL} target='_blank' rel='noopener external' className='text-primary underline'>IRS, Residential Clean Energy Credit</a>, checked September 23, 2026. For how any roof bundle is financed, see <Link href='/blog/free-roof-replacement-with-solar-panels-california' className='text-primary underline'>what to check in a roof-plus-solar offer</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What to request in writing</h2>
@@ -239,6 +278,12 @@ export default function SolarTileRoofCalifornia() {
                   — structural load and flashing requirements for roof-mounted solar on tile.
                 </li>
                 <li>
+                  <a href={IRS_CREDIT_URL} target='_blank' rel='noopener external' className='text-primary underline'>
+                    IRS — Residential Clean Energy Credit
+                  </a>{' '}
+                  — solar roofing tiles and shingles vs. traditional roofing; credit ends for property placed in service after December 31, 2025.
+                </li>
+                <li>
                   <a href={DOE_ROOF_REPLACEMENT_URL} target='_blank' rel='noopener external' className='text-primary underline'>
                     U.S. Department of Energy — Replacing Your Roof? It&apos;s a Great Time to Add Solar
                   </a>{' '}
@@ -247,6 +292,8 @@ export default function SolarTileRoofCalifornia() {
               </ul>
             </div>
 
+            <FaqBlock items={faqs} id='common-questions' />
+            <HubSpokeLinks hub='roof_structures' currentPath='/blog/solar-panels-tile-roof-california' />
             <ArticleCTA
               heading='Compare the written scope before you decide'
               body='California Rate Relief is a private referral service. You can request a solar review of a written quote; provider availability, design and price are determined after review.'
