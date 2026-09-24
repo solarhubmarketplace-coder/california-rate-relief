@@ -117,11 +117,19 @@ export function ArticleRoute({
   slug,
   backHref,
   backLabel,
+  after,
 }: {
   cluster: ArticleCluster;
   slug: string;
   backHref: string;
   backLabel: string;
+  /**
+   * Optional block rendered under the article, in the article column (e.g.
+   * <HubSpokeLinks/> and a per-page cross-link list). JSON article bodies are
+   * plain text and cannot carry links, so a route passes its topical links
+   * here. Omitted, the page renders exactly as before.
+   */
+  after?: ReactNode;
 }) {
   const page = getArticle(cluster, slug);
   if (!page) notFound();
@@ -187,6 +195,11 @@ export function ArticleRoute({
           <ArticleRenderer page={page} related={relatedArticles(page)}
             quickCheck={quickCheck} midArticle={midArticle} inquiry={inquiry}
             tools={isSgip?<nav aria-label="SGIP decision tools" className="my-6 flex flex-wrap gap-4 text-sm font-semibold text-primary underline"><Link href="/tools/solar-panel-calculator">Check the quote without a rebate</Link><Link href="/blog/solar-battery-backup-california">Compare battery and backup needs</Link><Link href="#solar-inquiry">Optional solar inquiry</Link></nav>:undefined}/>
+          {after && (
+            <div className="mx-auto max-w-6xl">
+              <div className="max-w-3xl">{after}</div>
+            </div>
+          )}
           {/* Was rendered after <Footer />; moved inside main so it sits above
               the footer, aligned with the article column. */}
           <div className="mx-auto max-w-6xl">
@@ -256,12 +269,19 @@ export function ArticleHub({
   title,
   intro,
   content,
+  after,
 }: {
   cluster: ArticleCluster;
   title: string;
   intro: string;
   /** Optional hub-specific guidance rendered before the cluster list. */
   content?: ReactNode;
+  /**
+   * Optional block rendered after the cluster list and before the inquiry
+   * form (e.g. <HubSpokeLinks/> for the hub's non-section spokes and
+   * connected hubs). Omitted, the hub renders exactly as before.
+   */
+  after?: ReactNode;
 }) {
   const pages = articlesInCluster(cluster);
   return (
@@ -307,6 +327,7 @@ export function ArticleHub({
               ))}
             </div>
           )}
+          {after}
           {/*
             In-body ask. <Header/> above already carries the sitewide one, but a
             hub is where a reader decides whether to act. Since 2026-09-23 it is
