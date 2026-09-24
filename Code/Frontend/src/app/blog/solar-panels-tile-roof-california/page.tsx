@@ -28,10 +28,14 @@ const TRI_SOLAR_TECH_BRIEF_URL =
 const IRS_CREDIT_URL = 'https://www.irs.gov/credits-deductions/residential-clean-energy-credit';
 const DOE_ROOF_REPLACEMENT_URL =
   'https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar';
+const STOCKTON_SOLARAPP_URL =
+  'https://www.stocktonca.gov/business/building___life_safety/automated_solar_permitting.php';
+const PERMIT_GUIDEBOOK_URL =
+  'https://lci.ca.gov/docs/20190226-Solar_Permitting_Guidebook_4th_Edition.pdf';
 
 const metaTitle = "Solar Roof Tiles vs Panels on a Tile Roof in California";
 const metaDescription =
-  "Clay or concrete tile mounts, what breaks tiles, setbacks and a future re-roof, and how solar roof tiles differ as a project. Get these in writing first.";
+  "Solar roofing in California: panels on a clay or concrete tile roof vs solar roof tiles, what drives solar tile cost, and who is licensed to install it.";
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -68,6 +72,21 @@ const faqs = [
     question: 'Is there a cost premium for putting solar on a tile roof?',
     answer:
       'Tile adds labor and breakage risk, but no source we could verify gives a specific premium. Ask your installer to show tile attachment and tile replacement as their own line items.',
+  },
+  {
+    question: 'Can a roofing company install solar in California?',
+    answer:
+      'Only if it also holds a license class that covers solar work. The Contractors State License Board lists the classes that may install solar: A general engineering, B general building within its limits, C-10 electrical and C-46 solar, plus three classes for solar water and pool heating. Roofing is not on that list, so many roofers who sell solar bring in a licensed solar subcontractor. Get both license numbers in writing.',
+  },
+  {
+    question: 'Will a solar company replace my roof?',
+    answer:
+      'Some bundle a new roof with solar, but the roof is never free: it is priced into the contract or the financing. Ask for the roof and the solar as separate line items with separate warranties. Our guide to roof replacement offered with solar covers what to check, and if a roof leaks after an install, the installer’s workmanship warranty is the first place to go.',
+  },
+  {
+    question: 'Are solar shingles worth it in California?',
+    answer:
+      'They make the most sense when you need a new roof anyway and value the look. Because they are the roof covering, the bid includes a full re-roof, and roof repairs later involve the solar product too. Since January 1, 2026, a new system gets no federal Residential Clean Energy Credit. Compare the solar share of the price per watt with a panel quote on the same house before you decide.',
   },
   {
     question: 'Do solar roof tiles still qualify for the federal tax credit?',
@@ -131,6 +150,24 @@ export default function SolarTileRoofCalifornia() {
               </p>
               <p>
                 That distinction should be visible in the written scope before anyone quotes a total price. A low-profile panel array, a tile-roof attachment plan, and a roof-integrated solar-tile system are different designs with different roof work, equipment, and permit questions.
+              </p>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What &ldquo;solar roofing&rdquo; can mean: three different jobs</h2>
+              <p>
+                Search for solar roofing and you get three kinds of offers mixed together. Sorting yours into one of them tells you what the price should include and who needs to be licensed for it.
+              </p>
+              <ul className='list-disc pl-6 space-y-2'>
+                <li><strong>Panels on the roof you have.</strong> Standard modules on racking, attached through the existing covering. On tile, that means the hooks or replacement mounts described below. The roof itself is not replaced.</li>
+                <li><strong>Solar tiles or shingles that are the roof.</strong> The state&apos;s Solar Permitting Guidebook, drawing on the California Electrical Code, defines building-integrated photovoltaics as cells or modules &ldquo;integrated into the outer surface or structure of a building&rdquo; that &ldquo;serve as the outer protective surface of the building,&rdquo; and photovoltaic shingles as &ldquo;a roof covering resembling shingles that incorporates photovoltaic modules.&rdquo; Source: <a href={PERMIT_GUIDEBOOK_URL} target='_blank' rel='noopener external' className='text-primary underline'>California Solar Permitting Guidebook, 4th edition (2019)</a>, checked September 23, 2026.</li>
+                <li><strong>A new conventional roof plus panels, sold together.</strong> One contract, two trades. This is usually what &ldquo;roof and solar bundle&rdquo; offers mean; see <Link href='/blog/free-roof-replacement-with-solar-panels-california' className='text-primary underline'>what to check in a roof-plus-solar offer</Link>.</li>
+              </ul>
+
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Who may install solar roofing in California</h2>
+              <p>
+                The electrical side of every one of those jobs is solar work. The Contractors State License Board lists the classes allowed to install solar: A general engineering, B general building within its legal limits, C-10 electrical, and C-46 solar, which may &ldquo;install, modify, maintain, and repair thermal and photovoltaic solar energy systems,&rdquo; along with three classes limited to solar water and pool heating. Roofing is not on the list. Source: <a href={CSLB_SOLAR_URL} target='_blank' rel='noopener external' className='text-primary underline'>CSLB, Solar Smart</a>, checked September 23, 2026.
+              </p>
+              <p>
+                In practice, a roofing company that sells solar either holds one of those classes as well or subcontracts the solar part. Either can work. What matters is that the contract names every company doing work on your house, with a license number you have checked on the <a href={CSLB_LICENSE_LOOKUP_URL} target='_blank' rel='noopener external' className='text-primary underline'>CSLB lookup</a>, and says which one answers for leaks.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Clay tile, concrete tile, and what actually changes the mounting hardware</h2>
@@ -201,12 +238,19 @@ export default function SolarTileRoofCalifornia() {
                 Ask the seller to identify the system as building-integrated photovoltaic work in the written proposal and to show the roof-covering scope separately from the electrical scope. California&apos;s residential code treats photovoltaic shingles and building-integrated roof panels as roof-covering systems, rather than simply a panel array installed over the roof.
               </p>
               <p>
-                Get the product specification, the roof assembly scope, the permit plan, and the warranty documents before comparing proposals. Your local building department decides the permit and inspection requirements for the address. A website cannot approve a project.
+                Because the product is the roof, it has to pass roof tests as well as electrical ones. The state&apos;s permitting guidebook lists, among the fire-safety items a plan checker looks for, that rooftop modules have &ldquo;the proper fire classification rating,&rdquo; and it notes that photovoltaic shingle packaging must carry a label showing compliance with the ASTM D 3161 wind test. Ask the seller for the product&apos;s fire classification and wind rating documents along with its electrical listing.
+              </p>
+              <p>
+                Get the product specification, the roof assembly scope, the permit plan, and the warranty documents before comparing proposals. Your local building department decides the permit and inspection requirements for the address, and some fast-track solar permits leave these products out: Stockton&apos;s automated SolarAPP+ permit, for example, lists &ldquo;No building-integrated photovoltaic systems (BIPV)&rdquo; among its conditions (<a href={STOCKTON_SOLARAPP_URL} target='_blank' rel='noopener external' className='text-primary underline'>City of Stockton</a>, checked September 23, 2026). A website cannot approve a project.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Solar roof tiles price: what drives the cost</h2>
               <p>
                 We could not find a government or research source that publishes current California prices for solar roof tiles, so this page does not print a per-square-foot figure. What a solar-tile bid covers is predictable, and it is much more than the solar equipment: tear-off of the existing roof, underlayment and flashing, the active solar tiles, inactive tiles that match them on the rest of the roof, electrical work, inverters and any battery, permits and inspection. Roof size, pitch, hips and valleys, and how much of the roof faces the sun all move the total.
+              </p>
+              <h3 className='text-xl font-semibold text-foreground mt-6 mb-3'>How to compare a solar tile bid with a panel bid</h3>
+              <p>
+                A single total hides the part you can compare. Ask the seller to split the price into the solar share (the active tiles, inverters, electrical work and the system size in kilowatts) and the roofing share (tear-off, underlayment, inactive tiles and flashing). Divide the solar share by the system&apos;s watts to get a price per watt, and set it next to a panel quote; our <Link href='/solar-cost' className='text-primary underline'>California solar cost guide</Link> explains how per-watt prices are read. Then compare the roofing share with a plain re-roof bid for the same house.
               </p>
               <p>
                 The fair comparison is three bids on the same house: solar tiles as the new roof, a conventional re-roof with panels on top, and, if your tile roof has years left, panels mounted on the existing tile. The tax picture has also changed. The IRS says solar roofing tiles and solar shingles qualified for the Residential Clean Energy Credit because they generate energy, but that the credit &ldquo;is not available for any property placed in service after December 31, 2025.&rdquo; Source: <a href={IRS_CREDIT_URL} target='_blank' rel='noopener external' className='text-primary underline'>IRS, Residential Clean Energy Credit</a>, checked September 23, 2026. For how any roof bundle is financed, see <Link href='/blog/free-roof-replacement-with-solar-panels-california' className='text-primary underline'>what to check in a roof-plus-solar offer</Link>.
@@ -276,6 +320,18 @@ export default function SolarTileRoofCalifornia() {
                     Tile Roofing Industry Alliance, Technical Brief 2008-01
                   </a>{' '}
                   — structural load and flashing requirements for roof-mounted solar on tile.
+                </li>
+                <li>
+                  <a href={PERMIT_GUIDEBOOK_URL} target='_blank' rel='noopener external' className='text-primary underline'>
+                    California Solar Permitting Guidebook, 4th edition (2019)
+                  </a>{' '}
+                  — definitions of building-integrated PV and photovoltaic shingles; fire classification and wind-label checks.
+                </li>
+                <li>
+                  <a href={STOCKTON_SOLARAPP_URL} target='_blank' rel='noopener external' className='text-primary underline'>
+                    City of Stockton: automated solar permitting (SolarAPP+) eligibility
+                  </a>{' '}
+                  — example of a fast-track permit that excludes building-integrated PV.
                 </li>
                 <li>
                   <a href={IRS_CREDIT_URL} target='_blank' rel='noopener external' className='text-primary underline'>
