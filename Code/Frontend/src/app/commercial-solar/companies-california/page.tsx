@@ -185,7 +185,12 @@ export default function CommercialSolarCompanies() {
                   <Link href="/commercial-solar/cost-per-watt-california" className={link}>
                     commercial cost-per-watt benchmarks
                   </Link>{' '}
-                  give you a published baseline to hold each price against. Sources were checked{' '}
+                  give you a published baseline to hold each price against. Shopping for your house
+                  rather than a business? Start with{' '}
+                  <Link href="/best-solar-companies-california" className={link}>
+                    choosing a solar company for your home
+                  </Link>
+                  . Sources were checked{' '}
                   {CHECKED}.
                 </p>
                 <p className="text-sm text-muted-foreground">

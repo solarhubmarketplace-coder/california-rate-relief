@@ -154,6 +154,9 @@ const REGIONS: { heading: string; cities: CityRef[] }[] = [
       ['riverside-county', 'Riverside County'],
       ['high-desert', 'High Desert'],
       ['kern-county', 'Kern County'],
+      // Integration (int-contentb, 2026-09-24): the two t3-citycos region pages.
+      ['coachella-valley', 'Coachella Valley'],
+      ['ventura-county', 'Ventura County'],
     ],
   },
   {
@@ -526,10 +529,18 @@ export default function BestSolarCompaniesCalifornia() {
           ,{' '}
           <Link href="/solar-companies/high-desert" className={link}>
             High Desert solar companies
-          </Link>{' '}
-          or{' '}
+          </Link>
+          ,{' '}
           <Link href="/solar-companies/kern-county" className={link}>
             Kern County: PG&amp;E and SCE areas
+          </Link>
+          ,{' '}
+          <Link href="/solar-companies/coachella-valley" className={link}>
+            Coachella Valley solar companies: SCE or IID by city
+          </Link>{' '}
+          or{' '}
+          <Link href="/solar-companies/ventura-county" className={link}>
+            Ventura County solar companies and permit offices
           </Link>
           .
         </p>
