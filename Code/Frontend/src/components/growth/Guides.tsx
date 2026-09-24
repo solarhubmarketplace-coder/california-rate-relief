@@ -12,6 +12,8 @@ import { SolarCalculator } from './SolarCalculator';
 import { SolarFinancingComparison } from './SolarFinancingComparison';
 import { ProviderComparison } from './ProviderComparison';
 import { SdgeRateTable } from './SdgeRateTable';
+import { HubSpokeLinks } from './HubSpokeLinks';
+import { FinancingHubExtras, financingHubExtraSources } from './FinancingHubExtras';
 const consumer: Source = {
   label: 'CPUC: solar consumer guide and financing comparison',
   url: 'https://www.cpuc.ca.gov/solarguide/',
@@ -96,7 +98,7 @@ const definitions = {
       'A solar lease and a PPA both mean you don’t own the system: with a lease you pay a fixed monthly rent, with a PPA you pay for the power it produces. A loan and a cash purchase both mean you own the system: a loan finances it over time, while cash pays for it outright from day one with no ongoing third-party payment. Compare the same system size across all four financing paths before comparing the payment amounts, since each one prices a different thing.',
     metaTitle: "Solar Lease vs PPA vs Purchase (2026): 7 Terms Compared",
     metaDescription:
-      "Cash, loan, lease and PPA side by side for a California home: who owns it, monthly cost, escalator, repairs, buyout and home sale. Sourced to CPUC and IRS.",
+      "Cash, loan, lease and PPA for a California home: who owns it, PPA price per kWh vs utility rates, escalators, buyout and sale. CPUC and IRS sourced.",
   },
   nem: {
     path: '/blog/what-is-nem-3-california',
@@ -130,7 +132,9 @@ export type GuideKey = keyof typeof definitions;
 export function guideMetadata(key: GuideKey): Metadata {
   const d = definitions[key];
   const modifiedTime =
-    key === 'financing' || key === 'nem' || key === 'companies'
+    key === 'financing'
+      ? '2026-09-23T00:00:00Z'
+      : key === 'nem' || key === 'companies'
       ? '2026-09-22T00:00:00Z'
       : key === 'panels'
       ? '2026-09-11T00:00:00Z'
@@ -952,9 +956,9 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               useful if you’d rather pay only for power the system produces,
               with the tradeoff that the payment can move with weather and
               system performance in a way a flat lease payment does not. See{' '}
-              <Link className={link} href="/blog/solar-ppa-vs-lease-california">
-                a closer look at lease vs. PPA
-              </Link>
+              <a className={link} href="#lease-vs-ppa">
+                the lease-versus-PPA section below
+              </a>
               .
             </li>
             <li>
@@ -986,6 +990,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             .
           </p>
         </section>
+        <FinancingHubExtras />
         <section>
           <h2>A fair PPA-versus-ownership comparison</h2>
           <p>
@@ -1124,15 +1129,21 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             { href: "/solar-problems/solar-dealer-fees-explained", label: "How a dealer fee pays for a low advertised rate" },
             { href: "/solar-problems/solar-escalator-clause-explained", label: "What an annual escalator does to the later years" },
             { href: "/solar-problems/ucc-1-lien-solar-california", label: "UCC-1 liens and what they attach to" },
-            { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+            { href: "/blog/prepaid-lease-solar", label: "What prepaying a lease changes, and what it does not" },
             { href: "/blog/what-happens-to-solar-lease-when-i-sell-california", label: "What happens to the contract if the home is sold" },
           ]}
+        />
+        <HubSpokeLinks
+          hub="financing"
+          currentPath="/blog/ppa-loan-vs-solar-lease-vs-cash-california"
+          max={12}
+          title="Every guide on leases, PPAs and solar financing"
         />
       </>
     );
   if (kind === 'financing') {
-    sources = [consumer, nem, cpucSolarConsumerGuide, irsForm5695, irsObbbFaq, dfpiPace];
-    sourceCheckedDate = '2026-09-22';
+    sources = [consumer, nem, cpucSolarConsumerGuide, irsForm5695, irsObbbFaq, dfpiPace, ...financingHubExtraSources];
+    sourceCheckedDate = '2026-09-23';
   }
   if (kind === 'nem') {
     sourceCheckedDate = '2026-09-22';
