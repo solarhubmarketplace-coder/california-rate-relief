@@ -198,216 +198,226 @@
   {
     "slug": "church-solar-california",
     "cluster": "commercial",
-    "metaTitle": "California Church Solar: Elective Pay vs. PPA",
-    "metaDescription": "California churches can't use the solar tax credit directly. IRC §6417 elective pay turns 30% of system cost into an IRS cash payment. Here's the 2026 fork.",
-    "h1": "Solar for California Churches: Elective Pay, PPA, and the December 2027 Deadline",
-    "intro": "A California church that owns its own rooftop solar system can get 30% of the installed cost back in cash from the IRS, even though the church pays no income tax. That is elective pay under Internal Revenue Code Section 6417, created by the 2022 Inflation Reduction Act, and as of September 5, 2026 it is still the single biggest number in the church-solar math for any 501(c)(3) congregation in this state.\n\nThere is a catch most solar pitches skip. Elective pay only works if the church owns the equipment outright. A power purchase agreement or lease hands the federal credit to the third-party owner instead of the congregation. Own-and-file and lease-and-skip-the-paperwork are two separate roads to the same rooftop, not one path with a detour, and a church has to pick one before it signs anything.\n\nThere is also a clock running that most pitches don't mention. The safe-harbor window for starting construction under the pre-2026 federal rules closed July 4, 2026. Any project not already underway now has to be fully placed in service by December 31, 2027, or the federal solar credit disappears entirely. Add a building that sits nearly empty Monday through Saturday and peaks hard one day a week, and the sizing question looks nothing like a house or a warehouse. This page works through both paths, the deadline, and what a church should actually size for.",
+    "metaTitle": "Church Solar Projects in California: Elective Pay vs PPA",
+    "metaDescription": "How California church solar projects are owned, paid for and sized: IRS elective pay, developer PPAs, the 2027 federal deadline, net billing and property tax.",
+    "h1": "Church Solar Projects in California: Elective Pay, PPAs and the 2027 Deadline",
+    "intro": "A California church can own its solar system and receive the federal clean electricity credit as a payment from the IRS, even though it owes no income tax. That is elective pay under 26 U.S.C. §6417, and it only works if the congregation owns the equipment. The other road is a lease or power purchase agreement, where a developer owns the system and keeps the credit. Every church solar project in the state is one of those two deals.\n\nTiming now drives both. For a solar facility whose construction began after July 4, 2026, the federal credit does not apply to property placed in service after December 31, 2027. A building that sits mostly empty during the week and fills up on the weekend also sizes very differently from an office. This page works through ownership, the deadline, sizing under net billing, batteries, cost, property tax and what California church projects typically include. Statutes and program pages were checked September 23, 2026.",
     "keyStats": [
       {
-        "label": "Elective pay base rate",
+        "label": "Credit rate for a small church system",
         "value": "30%",
-        "note": "Of eligible system cost, paid as cash by the IRS to the church — only if the church owns the system. IRC §6417, IRS elective pay FAQ, irs.gov."
+        "note": "26 U.S.C. §48E: 30% for a facility under 1 MW AC; 6% base otherwise unless wage and apprenticeship rules are met. Paid as cash under §6417 only if the church owns the system."
       },
       {
-        "label": "Placed-in-service deadline",
+        "label": "Solar placed-in-service cutoff",
         "value": "Dec 31, 2027",
-        "note": "For projects that hadn't started construction by July 4, 2026 (already passed). OBBBA, per McGuireWoods and RSM analyses."
+        "note": "§48E(e)(4): applies to solar facilities whose construction began after July 4, 2026 (Pub. L. 119-21 effective-date note)."
       },
       {
-        "label": "Small non-residential price benchmark",
-        "value": "$2.50–$4.30/W",
-        "note": "LBNL Tracking the Sun 2024: systems 100 kWdc or less installed in 2023, 20th-80th percentile, national; get site bids"
+        "label": "California large tax-exempt median",
+        "value": "$4.1/W",
+        "note": "LBNL Tracking the Sun 2024: 2023 median for California systems over 100 kW at tax-exempt sites, before incentives."
       },
       {
-        "label": "SGIP status for churches",
+        "label": "SGIP non-residential storage",
         "value": "Closed",
-        "note": "SGIP non-residential storage categories closed for every administrator (selfgenca.com, as of September 22, 2026); the CPUC SGIP page lists Large-Scale Storage funding as available through 2025"
+        "note": "Large-Scale Storage and Non-Residential Storage Equity closed at Step 5 for all four administrators, per selfgenca.com as of September 23, 2026."
       }
     ],
     "sections": [
       {
-        "heading": "Own It or Lease It: The Fork Most Pitches Skip",
-        "body": "Section 6417 elective pay lets an \"applicable entity\" — 501(c)(3) nonprofits, including churches, plus state and local governments, tribes, and rural electric co-ops — receive the value of the federal solar Investment Tax Credit as a direct cash payment instead of a credit against tax owed, because a tax-exempt entity owes no tax to credit against. The base rate is 30% of eligible system cost. Source: IRS elective pay FAQ, irs.gov, and corroborated by BDO's June 2024 procedural summary and Lawyers for Good Government's Elective Pay 101 guide.\n\nThe eligibility condition that changes everything: the church has to own the solar equipment. If a third party owns the system under a PPA or lease, that third party has the tax liability, so that third party claims the credit, not the congregation. Source: Citadel RS, April 2026, corroborated by SunwiseUSA. A church cannot do both. Elective pay requires ownership; a PPA is the fallback for a congregation that can't or doesn't want to own the system, not a second way to reach the same tax credit.\n\nThat framing matters because a lot of solar sales conversations blur the two together, presenting a lease as just another way to \"get the tax credit.\" It isn't. If a church owns the system, files the paperwork, and waits for the IRS payment, it gets the 30% directly. If it leases, the third-party owner keeps the 30%, and the per-kWh rate may or may not reflect some of that value. Those are different deals with different risks, and the right one depends on whether the church has the capital and the administrative capacity to file, not on which one a sales rep is pushing that week."
+        "heading": "Own It or Lease It: The Fork Every Church Project Takes",
+        "body": "Section 6417 lets an \"applicable entity\" elect to be treated as having paid tax equal to an applicable credit, which the IRS then pays out. The statute's list of applicable entities starts with \"any organization exempt from the tax imposed by subtitle A,\" which covers a tax-exempt church, and it names the §48E clean electricity investment credit as an applicable credit.\n\nThe condition that decides everything is ownership. The IRS elective pay FAQ says that, apart from one manufacturing credit, \"the applicable entity or electing taxpayer must both own the underlying eligible credit property and conduct the activities giving rise to the credit.\" If a developer owns the panels under a PPA or lease, the developer claims the credit and the congregation cannot. A lease is not a second route to the same payment.\n\nSo the choice is about capital and capacity, not about which deal \"gets the credit.\" Owning means raising the full cost up front or borrowing it, handling IRS registration and a tax filing, and maintaining the equipment. Leasing means no capital outlay and no tax paperwork, in exchange for a long contract and a per-kWh or monthly price that may or may not pass much of the credit back to you."
       },
       {
-        "heading": "How Elective Pay Actually Works, Step by Step",
-        "body": "Assuming the church owns the system, the elective pay process runs in five steps, per Lawyers for Good Government's Elective Pay 101 and Citadel RS's 2026 guidance. First, complete construction and place the system in service, documented with a permission-to-operate or interconnection agreement from the utility. Second, pre-register the project at irs.gov/EPTRegister — this has to happen at least 120 days before the planned filing date, and the IRS itself can take up to 120 days to issue the registration number, so this is not a step to leave until the last quarter. Third, receive a unique registration number tied to the specific property and project. Fourth, file Form 990-T — even if the church has never filed one before — along with Form 3468 (or the relevant source-credit form) and Form 3800, by the standard return due date. For a calendar-year filer that is May 15, with a six-month automatic extension available under Rev. Proc. 2024-39. Fifth, wait for the payment, which one source states generally arrives within about 45 days of the filing deadline — treat that turnaround as a working estimate, not a guarantee, since it comes from a single source.\n\nThe practical takeaway: a church's finance committee or bookkeeper needs to own this timeline the same way they'd own a grant application. Missing the 120-day pre-registration window, or discovering in April that nobody has ever filed a 990-T for the organization, is how an elective-pay project stalls after the panels are already up and the capital is already spent."
+        "heading": "How Elective Pay Works for a Congregation",
+        "body": "The IRS describes a sequence that a finance committee should treat like a grant deadline. First, the system is placed in service; the IRS says pre-filing registration can be completed once you have all required information, including that placed-in-service date. Second, the church completes the IRS pre-filing registration, which the IRS calls \"a required electronic process\" for anyone making an elective payment election, and receives a registration number for the property.\n\nThird, the election is made on a return. The FAQ says a tax-exempt organization that does not otherwise file a return uses Form 990-T, due on the organization's normal return due date, generally the 15th day of the fifth month after year end, with a six-month extension available. The IRS registration page asks filers to register \"at least 120 days before the due date (including extensions) for the return where you report the credits.\" Build that 120 days into the calendar; waiting until the spring after installation is how a finished project misses its filing.\n\nThe church will also want a tax professional who has filed an elective pay return before. One statutory detail matters for larger campuses: for an elective pay claim on a facility of 1 MW AC or more whose construction began after December 31, 2025, §48E(d)(5) and §45Y(g)(12) reduce the credit to zero unless the domestic content requirement is met or a Treasury exception applies. A system under 1 MW AC is not reduced."
       },
       {
-        "heading": "The Deadline That Already Passed: OBBBA's Construction-Start Cliff",
-        "body": "This is the most time-sensitive fact on this page, and it is more urgent than most solar marketing lets on. The One Big Beautiful Bill Act, signed July 4, 2025, eliminates the Section 48E investment tax credit for solar facilities that begin construction on or after July 4, 2026, unless the project is placed in service by December 31, 2027. Facilities that began construction before July 4, 2026 still qualify under the older, more forgiving framework. Source: McGuireWoods (June 2026), corroborated by RSM (July 2025) and multiple solar-industry summaries.\n\nAs of today, September 5, 2026, that July 4, 2026 construction-start date has already passed. Any church that has not already broken ground, or established a construction safe harbor before that date, is now in the second bucket: the project has to be fully placed in service by December 31, 2027 — roughly 15 months from now — or it gets zero federal ITC through elective pay. That is not a soft planning target. A church exploring solar today needs contracts signed and equipment ordered soon enough to have a realistic shot at commissioning before the end of 2027, accounting for permitting, utility interconnection queues, and equipment lead times that regularly run 6-12 months on their own.\n\nOn top of the construction-start cliff, OBBBA also added foreign entity of concern restrictions that deny the 48E credit to projects with material ties to China, Russia, North Korea, or Iran, generally effective for tax years beginning after July 4, 2025, and applying to elective-pay filers the same as taxable ones (RSM, 2025). The specific compliance thresholds for panel and inverter sourcing have not been published clearly enough to state as fact here — a church should ask its installer directly which components are FEOC-compliant before signing, not assume."
+        "heading": "The Federal Deadline: What the Statute Says Now",
+        "body": "Section 48E(e)(4) says the credit \"shall not apply to any qualified property placed in service by the taxpayer after December 31, 2027, which is part of an applicable facility,\" meaning a wind or solar facility. The effective-date note from Public Law 119-21 applies that cutoff to facilities whose construction begins after July 4, 2026, twelve months after the law was enacted. As of September 23, 2026, a church that had not begun construction by July 4 must have its solar placed in service by December 31, 2027 to receive any credit.\n\nWhat counted as beginning construction was set out in IRS Notice 2025-42, which required physical work of a significant nature and kept a 5% cost safe harbor only for solar facilities of 1.5 MW AC or less. On June 6, 2026, the U.S. District Court for the District of Columbia vacated that notice in full and remanded it to the IRS in Oregon Environmental Council v. Internal Revenue Service. If a congregation believes its project began construction before July 5, 2026, it should get a written position from a tax professional that accounts for the ruling and anything the IRS has issued since.\n\nTwo other statutory rules matter to church projects. For construction beginning after December 31, 2025, the credit is denied if the facility includes material assistance from a prohibited foreign entity; under §7701(a)(52), the required cost ratio is 40% for a solar facility beginning construction in 2026 and 45% in 2027. And an owner that is itself a specified foreign entity or foreign-influenced entity cannot claim the credit. Ask any installer how it documents the sourcing ratio, and who bears the loss if it fails."
       },
       {
-        "heading": "The Small-System Safe Harbor Is Currently in Litigation",
-        "body": "Before OBBBA, a project could establish that it had \"begun construction\" — locking in the more favorable pre-cliff treatment — either by starting physical work or by spending at least 5% of the total project cost. IRS Notice 2025-42, issued August 15, 2025, eliminated that 5% cost test for most solar and wind projects, leaving only the physical-work test, with one exception: it preserved the 5% safe harbor for small-scale solar projects of 1.5 MW AC or less. A church-scale rooftop or parking-canopy system is almost always well under that threshold.\n\nThen, on June 6, 2026, a federal court vacated Notice 2025-42 in its entirety, which on its face restores the broader 5% safe harbor for everyone, not just small projects. But this is not settled law. Multiple law firms, including McGuireWoods and Foley Hoag, note in their June 2026 client alerts that the government will almost certainly seek a stay and appeal, meaning the restored safe harbor could be narrowed or reversed retroactively.\n\nThe practical read for a church: the 5% safe-harbor path may currently be available and may be a faster way to lock in favorable treatment before the physical-work test becomes the only option again, but any professional advising on this should flag it as an open legal question, not a settled rule. This is exactly the kind of program-status nuance worth getting from a CPA or tax attorney who tracks it in real time, not from a solar sales deck."
+        "heading": "If You Lease: Reading a Developer's PPA",
+        "body": "A PPA or lease suits a congregation that lacks capital, does not want to carry equipment, or cannot take on the filing. A developer owns and maintains the system and sells the church electricity or charges a fixed payment. LBNL's 2026 data update found third-party ownership roughly twice as common at tax-exempt sites as at commercial ones in 2025, with the highest rates at \"other\" tax-exempt sites, many of them houses of worship. Leasing is the common path for churches, not the exception.\n\nThe risk is in the contract terms, not the concept. Read the starting rate and escalator against the church's own tariff over the whole term, the buyout dates and prices, what happens if the developer sells the project, who removes the system if the roof needs replacing, and what happens if the congregation sells or repurposes the property. Confirm the developer's own tax position too: a PPA priced on a credit the developer cannot get is a PPA that may be repriced or abandoned."
       },
       {
-        "heading": "If You Can't or Won't Own: The PPA/Lease Route",
-        "body": "A PPA or lease exists for the church that doesn't have the capital, doesn't want the 990-T filing burden, or doesn't want to carry the equipment on its books. Under this structure, a third-party developer owns and maintains the system, claims the federal 48E credit itself (subject to the same FEOC rules), and sells the church electricity at a contracted rate, often pitched as below the utility's retail rate; compare it, with any escalator, against the church's own tariff over the whole term.\n\nThe real advantage for a church isn't the discount percentage, it's operational simplicity. A PPA sidesteps the IRS pre-registration, the first-time Form 990-T, and the 45-day-or-so wait for a federal payment entirely — the church just pays its monthly electric bill to the new provider instead of the utility, at (ideally) a lower rate. No capital outlay, no O&M responsibility, no tax paperwork.\n\nThe trade-off is contract length. PPAs run for many years, during which the panels and their easement sit on the church's roof or land regardless of what else changes about the building or the congregation's plans for it. A church weighing a PPA should read the termination, escalation, and end-of-term buyout clauses as carefully as it reads the rate, and should confirm the developer's FEOC compliance and financial stability before signing — a lesson underscored by Freedom Forever's move from Chapter 11 to Chapter 7 liquidation in summer 2026, which left its homeowners with contracts and no operating counterparty."
+        "heading": "What California Church Solar Projects Look Like",
+        "body": "Houses of worship are a visible share of the state's tax-exempt solar market. LBNL's Tracking the Sun 2024 summary says tax-exempt customers, including government, schools, religious and other nonprofits, made up 15% of U.S. non-residential installations in 2023. Its 2026 update puts roughly half of 2025 non-residential installs on commercial buildings, a third on agricultural land and the rest at tax-exempt sites.\n\nA church campus usually offers three surfaces. The sanctuary roof is often steep, visible and architecturally sensitive. The fellowship hall, offices or school buildings tend to have simpler roofs. The parking lot can take a canopy, which adds structure cost but shades cars on hot Sundays. Many campuses also have several utility meters, one per building, so ask whether one array can serve several accounts under the utility's aggregation or virtual net billing rules before sizing each building separately.\n\nNew construction changes the question. The California Energy Commission's 2025 nonresidential solar guidance lists religious worship among the building types that Section 140.10(a) of the 2025 Energy Code requires to have solar PV when newly constructed, generally with battery storage unless an exception applies. A congregation building a new sanctuary or hall should plan for solar in the design, not as an add-on.\n\nWhen you ask bidders for references, ask specifically for completed projects at other congregations with a similar roof and meter setup, and call them. Ask what the church's bill looked like in the first full year compared with the proposal."
       },
       {
-        "heading": "Sizing for a Sunday Peak Under California's Net Billing Tariff",
-        "body": "Since April 15, 2023, new solar interconnections in PG&E, SCE, and SDG&E territory go on the Net Billing Tariff (NBT) under CPUC Decision D.22-12-056, which replaced NEM 2.0. Under NBT, exported electricity is credited using an Avoided Cost Calculator (ACC) value that varies by hour and month, generally low at midday and higher in the early evening, rather than a flat retail-rate credit. Source: CPUC's net energy metering page and PG&E's NBT tariff sheet. Commercial and nonresidential exports run on the same ACC-based structure as residential NBT, and the CPUC says export credits are usually lower than the retail rate; each utility publishes its own hourly schedule rather than one fixed number — a church wanting a precise figure should pull the current advice letter from its own utility rather than rely on a blended average.\n\nThis matters directly for church sizing. A congregation's electric load is usually low Monday through Saturday and spikes hard one day a week for services, education programs, and events. It's tempting to size the system to fully cover that Sunday peak, but doing so means the system generates far more than the church uses on every other day of the week — and under NBT, that weekday surplus exports at the low ACC rate instead of offsetting retail-rate consumption the church would otherwise pay for. Publicly owned utilities such as LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial ID, and Turlock ID are not subject to CPUC's NBT rules and set their own export terms, so a church served by one of those should ask directly about its terms rather than assume NBT economics apply. For everyone else, the right-sized system usually tracks weekday baseline load, not the Sunday spike, with export economics as a secondary consideration rather than the design target."
+        "heading": "Sizing for a Weekend Peak Under Net Billing",
+        "body": "Since April 15, 2023, customers of PG&E, SCE and SDG&E who apply for interconnection take service on the CPUC's net billing tariff. The CPUC says export compensation reflects the value of that generation to the grid and \"is usually lower than the retail rate,\" using values from its Avoided Cost Calculator.\n\nThat matters more for a church than for most buildings. Many congregations use little power Monday through Friday and a lot on the weekend. A system sized to cover the weekend peak will export most of its weekday output at those lower export values instead of offsetting power bought at retail. For most churches on an investor-owned utility, the better starting point is weekday baseline load, with the weekend covered partly by solar and partly by the grid or a battery.\n\nPublicly owned utilities such as LADWP and SMUD are outside the CPUC tariff and set their own export terms, so a church served by one should get that utility's current rules before sizing."
       },
       {
-        "heading": "Battery Storage: What It Costs and Why SGIP Won't Help Most Churches",
-        "body": "The Self-Generation Incentive Program (SGIP), California's ratepayer-funded battery rebate administered through selfgenca.com, closed its General Market, Equity, and Equity Resiliency budgets to new applications as of December 31, 2025. The only budget still open is the income-qualified Residential Solar and Storage Equity track created under AB 209, and it is waitlist-only, funded as existing reservations cancel — and it targets income-qualified households, not nonprofit or commercial entities like a church. Source: CPUC's SGIP program page, corroborated by multiple 2026 industry summaries. In plain terms: a California church should not plan around an SGIP rebate for storage. Confirm current status directly at selfgenca.com before budgeting, since program status can shift.\n\nStandalone or paired battery storage remains eligible for the federal investment tax credit under Section 48/48E on its own, independent of whether it's paired with solar, which should still flow through to elective-pay filers the same way solar equipment does — though this wasn't independently re-verified against a fresh 2026 primary source this pass, so a church's tax preparer should confirm before filing.\n\nOn cost: no primary source publishes a California commercial battery price, so get the battery bid as its own line and compare it in dollars per usable kWh. Given NBT's low export credits, a battery that shifts weekday solar surplus into Sunday's peak load, rather than exporting it, can work even without a rebate — but the math has to be run for the specific building, not assumed."
+        "heading": "Batteries: What the Statute Allows and Why SGIP Won't Help Now",
+        "body": "The Self-Generation Incentive Program's own metrics page, checked September 23, 2026, showed the Large-Scale Storage budget closed at Step 5 ($0.25/Wh) and Non-Residential Storage Equity closed at Step 5 ($0.85/Wh) for PG&E, SCE, SoCalGas and the Center for Sustainable Energy. The categories still taking waitlist entries are residential equity budgets, which a church would not normally fit. Do not budget a storage project around an SGIP payment.\n\nFederal treatment of storage differs from solar. Section 48E(e)(4)(C) excepts energy storage placed at a solar facility from the December 31, 2027 cutoff. Instead, storage follows the §48E(e) phase-out: using the \"applicable year\" of 2032 set in §45Y(d)(3), storage whose construction begins in 2033 keeps the full credit, 2034 gets 75%, 2035 gets 50%, and later starts get nothing. The prohibited-foreign-entity cost ratio for storage is stricter than for solar: 55% for construction beginning in 2026 and 60% in 2027 under §7701(a)(52). A church that owns a battery can take the storage credit through elective pay on the same terms as solar equipment, subject to the same ownership requirement.\n\nA battery earns its keep by storing weekday solar for weekend use or by cutting demand charges. Get it priced as its own line, compare bids in dollars per usable kWh, and run the math on your own interval data."
       },
       {
-        "heading": "Cost Per Watt and Property Tax: The Two Numbers to Budget Against",
-        "body": "No primary source publishes a California price for a church-scale system. LBNL's Tracking the Sun (2024 Edition) put 2023 installed prices for small non-residential systems (100 kWdc or less) at $2.50 to $4.30 per watt and for large non-residential systems (over 100 kWdc) at $1.70 to $3.10 per watt, 20th to 80th percentile, national. A typical church system of 10-50 kW falls in the smaller band; use it to read a quote, not as a quote.\n\nSeparately, California's active solar energy system property tax exclusion (Rev. & Tax. Code § 73) is scheduled to sunset. Under SB 710, signed October 2025, systems completed and placed in service before January 1, 2027 keep the exclusion for as long as the current owner holds the property; systems already under construction as of January 1, 2026 qualify if completed by that same January 1, 2027 deadline. Source: DMA and Cox Castle, both referencing SB 710 and Board of Equalization guidance.\n\nMost sanctuaries already carry a religious or welfare property tax exemption under the California Constitution and aren't assessed regardless of this exclusion. But it matters in two situations: any commercial or rental space on the same parcel, and third-party-owned PPA equipment sitting on church land, which may not automatically inherit the church's religious-use exemption and could fall under this sunset timeline instead. A church considering a PPA should raise this specifically with its county assessor rather than assume the existing exemption covers leased equipment."
+        "heading": "Cost and Property Tax: The Two Numbers to Budget Against",
+        "body": "No public source publishes a California church solar price. The closest primary figures are LBNL's. Its Tracking the Sun 2024 summary reports that large California systems (over 100 kW) at tax-exempt sites had a 2023 median price of $4.1 per watt, against $2.3 for commercial sites, and the full report lists domestic-content or prevailing-wage requirements, the prevalence of shade or parking structures, and lower borrowing costs as possible reasons. For smaller systems, the same summary reports state-level medians of $2.6 to $4.1 per watt for small non-residential systems. Use these to read a quote, not as a quote.\n\nOn property tax, most sanctuaries already use California's religious exemption. The Board of Equalization says it covers property owned by a religious organization and used exclusively for religious worship and school purposes, under Revenue and Taxation Code section 207, and it requires a claim filed with the county assessor. Separately, the new-construction exclusion for active solar energy systems in section 73 becomes inoperative on January 1, 2027; systems excluded before then remain excluded until the property changes ownership, according to BOE Letter to Assessors 2026/034. That matters for parts of a campus that are not exempt and for developer-owned equipment on church land, which may not share the church's exemption. Ask the county assessor before signing a PPA."
       }
     ],
     "dataTable": {
-      "caption": "Direct ownership with elective pay vs. PPA/lease, factor by factor",
+      "caption": "Owning with elective pay vs. a developer PPA or lease",
       "columns": [
         "Factor",
-        "Own the system + elective pay (IRC §6417)",
-        "PPA / lease"
+        "Church owns + elective pay (§6417)",
+        "Developer PPA / lease"
       ],
       "rows": [
         [
-          "Upfront capital needed",
-          "Full system cost, financed or paid in cash",
-          "Typically $0 down"
+          "Up-front capital",
+          "Full system cost, paid or financed",
+          "Typically none"
         ],
         [
-          "Who gets the 30% federal ITC",
-          "The church, as a cash payment from the IRS",
-          "The third-party owner, passed through as a lower rate"
+          "Who receives the §48E credit",
+          "The church, as an IRS payment, if it owns the property",
+          "The developer that owns the system"
         ],
         [
-          "Paperwork burden",
-          "IRS pre-registration 120+ days ahead; Form 990-T, 3468, 3800",
-          "None — the owner files its own taxes"
+          "Paperwork",
+          "IRS pre-filing registration at least 120 days before the return due date; Form 990-T",
+          "The developer files its own taxes"
         ],
         [
-          "Payment timing",
-          "Generally ~45 days after the filing deadline (single-source estimate, not guaranteed)",
-          "N/A — savings appear as a lower monthly bill"
+          "Deadline risk",
+          "The church's, if construction began after July 4, 2026 and solar is not in service by Dec 31, 2027",
+          "Sits with the developer, but can reprice or end the deal"
         ],
         [
-          "OBBBA construction-start deadline exposure",
-          "Church bears the risk of missing Dec 31, 2027 placed-in-service",
-          "Risk sits with the developer, not the church"
+          "Maintenance",
+          "The church, unless it contracts it out",
+          "The developer, per the contract"
         ],
         [
-          "Property tax exposure (SB 710 sunset)",
-          "Church-owned equipment covered if placed in service before Jan 1, 2027",
-          "Leased equipment may not inherit the church's religious-use exemption — confirm with the assessor"
-        ],
-        [
-          "Contract/ownership length",
-          "Church owns outright once installed",
-          "15-25 year PPA/lease term typical"
+          "Property tax",
+          "Religious exemption for qualifying property; §73 solar exclusion ends for systems after Jan 1, 2027",
+          "Developer-owned equipment may not share the church's exemption; ask the assessor"
         ],
         [
           "Best fit",
-          "Congregations with capital and a bookkeeper who can own the filing timeline",
-          "Congregations wanting zero capital outlay and zero tax paperwork"
+          "Congregations with capital and someone to own the filing timeline",
+          "Congregations wanting no capital outlay and no tax filing"
         ]
       ]
     },
-    "whenThisIsWrong": "Elective pay is the wrong plan for a church that can't front the capital or doesn't have someone who can own IRS pre-registration and a first-time Form 990-T filing — miss the 120-day registration window or the May 15 deadline and the payment doesn't come, no matter how well the system was installed. A PPA is the wrong move if the church might sell, subdivide, or substantially repurpose the property inside the contract term, since the lease and its equipment travel with the land. Oversizing any system to fully cover Sunday's peak is usually a poor investment for a congregation served by PG&E, SCE, or SDG&E, because the resulting weekday surplus exports at the Net Billing Tariff's avoided-cost value, usually below the retail rate, instead of offsetting retail-rate consumption — size for weekday baseline load instead. And any project that hasn't already broken ground faces a hard December 31, 2027 placed-in-service deadline for the current federal credit; if permitting, financing, or interconnection realistically push completion past that date, the federal ITC math this page describes may not survive to closing.",
+    "whenThisIsWrong": "Owning with elective pay is the wrong plan if the congregation cannot raise the capital or has no one to own the IRS registration and the Form 990-T; missing the registration window can delay or forfeit the payment. It is also the wrong plan if the system cannot realistically be placed in service by December 31, 2027 and the project did not begin construction by July 4, 2026, because the solar credit is then zero. A PPA is the wrong move if the church may sell, subdivide or rebuild within the contract term without a clear buyout. Oversizing to cover the weekend peak is usually a poor investment for a church on PG&E, SCE or SDG&E, because the weekday surplus exports at net billing values below retail. And no statement on this page is tax advice: have a tax professional review the ownership structure, the construction-start facts and the sourcing documents before anyone signs.",
     "faqs": [
       {
-        "question": "Can a church really get a cash payment from the IRS for solar?",
-        "answer": "Yes, if the church owns the system. Section 6417 elective pay, created by the 2022 Inflation Reduction Act, lets 501(c)(3) nonprofits — including churches — receive the value of the federal 30% solar Investment Tax Credit as a direct IRS payment instead of a credit against tax owed, since a tax-exempt entity has no tax liability to credit against. The church has to pre-register the project at irs.gov/EPTRegister at least 120 days before filing, then file Form 990-T with Forms 3468 and 3800. Source: IRS elective pay FAQ, corroborated by BDO and Lawyers for Good Government."
+        "question": "Can a church get a cash payment from the IRS for solar?",
+        "answer": "Yes, if the church owns the system. Under 26 U.S.C. §6417, a tax-exempt organization is an applicable entity that can elect to receive the §48E credit as a payment. The IRS says the entity must own the property, register before filing (at least 120 days before the return due date, including extensions) and make the election on a return such as Form 990-T."
       },
       {
-        "question": "What's actually different between elective pay and a PPA?",
-        "answer": "Ownership. Elective pay requires the church to own the solar equipment outright — that's what makes it eligible to file for the credit itself. A PPA or lease means a third-party developer owns the system, and that developer claims the 30% federal credit instead, then typically passes some savings through as a lower per-kWh rate. A church picks one path, not both — a lease disqualifies elective pay entirely because the church never owned the equipment in the first place."
+        "question": "What's the difference between elective pay and a PPA for a church?",
+        "answer": "Ownership. Elective pay requires the church to own the equipment. Under a PPA or lease, the developer owns the system and claims the credit. A church cannot combine the two on the same equipment."
       },
       {
-        "question": "Is there a real deadline we need to hit, or is that just sales pressure?",
-        "answer": "It's real. The One Big Beautiful Bill Act eliminated the federal solar credit for projects that begin construction on or after July 4, 2026, unless they're fully placed in service by December 31, 2027. That construction-start date already passed as of this writing (September 5, 2026), so any church that hasn't broken ground is now racing the December 2027 backstop — about 15 months out, which is tight once permitting, financing, and utility interconnection queues are factored in."
+        "question": "Is the 2027 deadline real?",
+        "answer": "Yes. Section 48E(e)(4) ends the credit for solar property placed in service after December 31, 2027 when the facility's construction began after July 4, 2026. For a project that has not started, the calendar from contract to utility permission to operate is the constraint."
       },
       {
-        "question": "Does the small-project safe harbor still apply to a church-scale system?",
-        "answer": "It's genuinely unsettled. IRS Notice 2025-42 removed a 5%-cost safe harbor for most solar projects in August 2025 but kept it for systems under 1.5 MW AC — which covers essentially every church system. A federal court then vacated that notice entirely on June 6, 2026, which on paper restores the broader safe harbor for all project sizes, but law firms including McGuireWoods and Foley Hoag expect the government to appeal, so this could be narrowed or reversed. Get current guidance from a tax professional before relying on it."
+        "question": "Does the small-project safe harbor still apply to a church system?",
+        "answer": "It is unsettled. IRS Notice 2025-42 limited the 5% cost safe harbor to solar facilities of 1.5 MW AC or less, and a federal district court vacated that notice in full on June 6, 2026. Get a written position from a tax professional before relying on any construction-start method."
       },
       {
-        "question": "Should our church add a battery, and is there a rebate for it?",
-        "answer": "SGIP's non-residential storage categories show closed for every program administrator (selfgenca.com, as of September 22, 2026); the remaining residential category with a waitlist is income-qualified, which a church wouldn't typically fit. No primary source publishes a California commercial battery price, so get the battery bid separately. Given how little export credit California's Net Billing Tariff pays for weekday solar surplus, a battery that shifts that surplus into Sunday's peak can still make financial sense — but it needs its own calculation, not an assumption."
+        "question": "Is there a battery rebate for churches?",
+        "answer": "Not from SGIP right now. Its non-residential storage budgets showed closed for all four program administrators on September 23, 2026. A church that owns a battery can use elective pay for the storage credit, which follows its own phase-out schedule in §48E(e)."
       },
       {
-        "question": "What does a church-scale system actually cost?",
-        "answer": "No primary source publishes a California price at this size. LBNL's Tracking the Sun (2024 Edition) put 2023 installed prices for small non-residential systems (100 kWdc or less) at $2.50 to $4.30 per watt and for large non-residential systems (over 100 kWdc) at $1.70 to $3.10 per watt, 20th to 80th percentile, national. A 10-50 kW church system falls in the smaller band. These are national benchmarks, not a guarantee for any specific roof or site; get site bids."
+        "question": "What do California church solar projects usually include?",
+        "answer": "A roof array on the sanctuary or hall, sometimes a parking canopy, and often several meters across the campus. New churches built under the 2025 Energy Code generally have to include solar, because the CEC lists religious worship among the building types covered by Section 140.10(a)."
       },
       {
-        "question": "Will putting solar on church property trigger a property tax reassessment?",
-        "answer": "Most sanctuaries already carry a religious or welfare property tax exemption and aren't assessed regardless. Separately, California's solar-specific property tax exclusion under Revenue and Taxation Code Section 73 sunsets for new systems: under SB 710, a system has to be placed in service before January 1, 2027 to keep the exclusion for the life of the current ownership. This mostly matters for non-sanctuary space or third-party-owned PPA equipment, which may not automatically fall under the church's existing exemption — confirm with the county assessor before signing a PPA."
+        "question": "Will solar trigger a property tax reassessment on church property?",
+        "answer": "Property used exclusively for religious worship can be exempt under the religious exemption, which requires a claim with the county assessor. The separate solar new-construction exclusion becomes inoperative on January 1, 2027. Developer-owned equipment may be treated differently, so ask the assessor before signing a PPA."
       }
     ],
-    "bottomLine": "A California church deciding on solar in September 2026 is really deciding on two separate questions at once: own the system and file for a 30% IRS cash payment under Section 6417, or lease it to a third party and skip the paperwork for a lower monthly rate. Those paths don't combine. Layered on top is a real deadline — construction had to start before July 4, 2026 under the old rules, and anything starting now needs to be placed in service by December 31, 2027 to keep the federal credit at all — plus an unsettled legal question about the small-project safe harbor that a tax professional should be tracking, not a sales rep. Size the system for the low weekday load, not the Sunday spike, since California's Net Billing Tariff pays little for exported surplus. Don't count on an SGIP battery rebate. Get real numbers from a licensed CSLB contractor and a tax preparer who has actually filed a 990-T before signing anything.",
+    "bottomLine": "A California church choosing solar in late 2026 is choosing between two deals: own the system and receive the §48E credit as an IRS payment under §6417, or let a developer own it under a PPA or lease and keep the credit. The calendar sits on top of both. Solar that began construction after July 4, 2026 has to be placed in service by December 31, 2027 to earn any credit, and the construction-start rules are in flux after a June 2026 court ruling. Size for weekday load, not the weekend peak, because net billing pays less for exports than the retail rate. Do not count on an SGIP battery payment. Get bids that separate each piece of the scope, check the contractor's CSLB license, and have a tax professional who has filed an elective pay return review the plan. California Rate Relief doesn't install systems or hold a contractor's license; it forwards commercial inquiries to an independent provider, subject to service availability.",
     "sources": [
       {
-        "name": "IRS — Elective Pay and Transferability FAQ",
+        "name": "26 U.S.C. §6417, elective payment of applicable credits (Office of the Law Revision Counsel, text in effect September 22, 2026)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6417&num=0&edition=prelim",
+        "supports": "Applicable entities include tax-exempt organizations; §48E is an applicable credit"
+      },
+      {
+        "name": "26 U.S.C. §48E, clean electricity investment credit (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "6%/30% rates, under-1 MW AC rule, §48E(e)(4) wind and solar cutoff and storage exception, storage phase-out, foreign-entity rules, elective pay domestic content rule"
+      },
+      {
+        "name": "26 U.S.C. §45Y, clean electricity production credit (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45Y&num=0&edition=prelim",
+        "supports": "Applicable year of 2032 used by the §48E(e) phase-out"
+      },
+      {
+        "name": "26 U.S.C. §7701(a)(52), material assistance from a prohibited foreign entity (OLRC)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "supports": "Threshold cost ratios: solar 40% (2026) and 45% (2027); storage 55% (2026) and 60% (2027)"
+      },
+      {
+        "name": "IRS, Elective pay and transferability FAQs: elective pay (reviewed March 7, 2026)",
         "url": "https://www.irs.gov/credits-deductions/elective-pay-and-transferability-frequently-asked-questions-elective-pay",
-        "supports": "Section 6417 mechanism, 30% base rate, applicable-entity definition"
+        "supports": "Ownership requirement, pre-filing registration, Form 990-T and due dates"
       },
       {
-        "name": "Lawyers for Good Government — Elective Pay 101",
-        "url": "https://www.lawyersforgoodgovernment.org/elective-pay-101",
-        "supports": "Step-by-step elective pay filing process, 120-day pre-registration rule, Form 990-T/3468/3800"
+        "name": "IRS, Register for elective payment or transfer of credits (reviewed August 12, 2026)",
+        "url": "https://www.irs.gov/credits-deductions/register-for-elective-payment-or-transfer-of-credits",
+        "supports": "Register at least 120 days before the return due date, including extensions"
       },
       {
-        "name": "BDO — Elective Pay procedural summary (June 2024)",
-        "url": "https://www.bdo.com",
-        "supports": "Corroboration of elective pay mechanism and filing procedure"
+        "name": "IRS Notice 2025-42, beginning of construction for applicable wind and solar facilities",
+        "url": "https://www.irs.gov/pub/irs-drop/n-25-42.pdf",
+        "supports": "Physical work test and the 1.5 MW AC low-output 5% safe harbor"
       },
       {
-        "name": "McGuireWoods — OBBBA construction-start cliff and Notice 2025-42 litigation (June 2026)",
-        "url": "https://www.mcguirewoods.com/client-resources/alerts/2026/6/federal-court-vacates-irs-notice-2025-42-restores-5-safe-harbor-for-wind-and-solar-projects/",
-        "supports": "July 4, 2026 construction-start deadline, Dec 31, 2027 placed-in-service backstop, safe-harbor litigation status"
+        "name": "Oregon Environmental Council v. Internal Revenue Service, No. 25-cv-4400 (D.D.C. June 6, 2026), via CourtListener",
+        "url": "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "supports": "Notice 2025-42 vacated in full and remanded to the IRS"
       },
       {
-        "name": "RSM — OBBBA impact on clean energy tax credits (July 2025)",
-        "url": "https://rsmus.com/insights/services/business-tax/obbba-tax-clean-energy.html",
-        "supports": "OBBBA bonus-adder continuity, FEOC restrictions applying to elective-pay filers"
-      },
-      {
-        "name": "Foley Hoag — Notice 2025-42 vacatur client alert (June 2026)",
-        "url": "https://foleyhoag.com",
-        "supports": "Corroboration that the 5% safe-harbor restoration is subject to appeal"
-      },
-      {
-        "name": "CPUC — Self-Generation Incentive Program page",
-        "url": "https://www.cpuc.ca.gov",
-        "supports": "SGIP general-market budget closure Dec 31, 2025; RSSE income-qualified exception"
-      },
-      {
-        "name": "CPUC — Net Energy Metering and Net Billing page",
+        "name": "CPUC, Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
-        "supports": "Net Billing Tariff mechanism, Avoided Cost Calculator export pricing, April 15, 2023 effective date"
+        "supports": "Net billing tariff since April 15, 2023 for PG&E, SCE and SDG&E; export compensation usually lower than retail"
       },
       {
-        "name": "PG&E — Net Billing Tariff (NBT) tariff sheet",
-        "url": "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_NBT.pdf",
-        "supports": "NBT tariff structure detail"
-      },
-      {
-        "name": "DMA — California BOE clarifies solar property tax exclusion sunset dates",
-        "url": "https://www.dmainc.com/news-and-insights/california-boe-clarifies-sunset-dates-solar-energy-tax-exclusion/",
-        "supports": "SB 710 property tax exclusion sunset dates"
-      },
-      {
-        "name": "Cox Castle — SB 710 solar property tax exclusion guidance",
-        "url": "https://www.coxcastle.com",
-        "supports": "Corroboration of SB 710 sunset mechanics"
-      },
-      {
-        "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
-        "url": "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
-        "supports": "2023 installed prices, 20th-80th percentile, national: small non-residential (100 kWdc or less) $2.5-4.3/W; large non-residential (over 100 kWdc) $1.7-3.1/W"
-      },
-      {
-        "name": "Self-Generation Incentive Program — Program Metrics (selfgenca.com)",
+        "name": "Self-Generation Incentive Program, Program Metrics (as of September 23, 2026)",
         "url": "https://www.selfgenca.com/home/program_metrics/",
-        "supports": "As of September 22, 2026: Large-Scale Storage (Step 5, $0.25/Wh; $0.18/Wh with ITC) and Non-Residential Storage Equity (Step 5, $0.85/Wh) closed for CSE, SCE, SoCalGas and PG&E"
+        "supports": "Large-Scale Storage and Non-Residential Storage Equity closed at Step 5 for all four administrators"
+      },
+      {
+        "name": "LBNL, Tracking the Sun 2024 executive summary (August 2024)",
+        "url": "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf",
+        "supports": "California large tax-exempt median $4.1/W vs $2.3/W commercial; small non-residential state medians $2.6-4.1/W; tax-exempt 15% of 2023 non-residential installs"
+      },
+      {
+        "name": "LBNL, Tracking the Sun 2024 full report (October 2024)",
+        "url": "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "supports": "Possible reasons for higher tax-exempt prices, including parking structures"
+      },
+      {
+        "name": "LBNL, U.S. Distributed Solar and Storage: 2026 Data Update (August 2026)",
+        "url": "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "supports": "2025 segment shares and third-party ownership rates at houses of worship"
+      },
+      {
+        "name": "California Energy Commission, 2025 Nonresidential Solar PV",
+        "url": "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-15",
+        "supports": "Section 140.10(a) PV requirement for new buildings including religious worship"
+      },
+      {
+        "name": "California State Board of Equalization, Religious Exemption",
+        "url": "https://www.boe.ca.gov/proptaxes/religious_exemption.htm",
+        "supports": "Religious exemption scope, R&TC section 207, claim filed with the county assessor"
+      },
+      {
+        "name": "California State Board of Equalization, Letter to Assessors 2026/034 (September 1, 2026)",
+        "url": "https://www.boe.ca.gov/proptaxes/pdf/lta26034.pdf",
+        "supports": "Section 73 solar exclusion inoperative January 1, 2027; prior exclusions continue until change in ownership"
       }
     ],
-    "reviewedAt": "2026-09-05"
+    "reviewedAt": "2026-09-23"
   },
   {
     "slug": "commercial-battery-storage-california",
