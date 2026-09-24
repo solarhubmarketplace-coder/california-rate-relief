@@ -129,6 +129,9 @@ const spokeGroups: { heading: string; links: { href: string; label: string; blur
       { href: '/blog/average-utility-bill-california', label: 'Average utility bill in California', blurb: 'Electric and gas averages from EIA, and bills by utility.' },
       { href: '/blog/average-kwh-per-day-california', label: 'Average kWh per day in California', blurb: 'Daily use, baseline allowances and the cheapest hours.' },
       { href: '/blog/average-pge-bill-for-1-bedroom-apartment', label: 'PG&E bill for a one-bedroom apartment', blurb: 'What apartment-sized usage costs on PG&E plans.' },
+      { href: '/blog/average-sdge-bill-2-bedroom-apartment', label: 'SDG&E bill for a two-bedroom apartment', blurb: 'Apartment usage priced on SDG&E’s August 2026 rates.' },
+      { href: '/blog/does-pool-pump-use-a-lot-of-electricity', label: 'What a pool pump adds to the bill', blurb: 'Cost per kilowatt of pump power at each utility, and when to run it.' },
+      { href: '/blog/how-much-does-it-cost-to-turn-on-electricity', label: 'What it costs to turn on electricity', blurb: 'Start fees, deposits and the first bill at each utility.' },
       { href: '/blog/where-does-california-get-its-electricity', label: 'Where California gets its electricity', blurb: 'The 2024 power mix, imports and how much the state uses per day.' },
     ],
   },
@@ -146,6 +149,8 @@ const spokeGroups: { heading: string; links: { href: string; label: string; blur
     heading: 'Rates behind the bill',
     links: [
       { href: '/blog/pge-vs-sce-vs-sdge-rates-compared', label: 'PG&E vs. SCE vs. SDG&E rates', blurb: 'Rates per kWh and sample bills side by side.' },
+      { href: '/blog/electricity-rates-by-zip-code', label: 'Electricity rates by ZIP code', blurb: 'How to find the utility, CCA and plan price for an address.' },
+      { href: '/blog/pge-rate-schedules', label: 'PG&E rate schedules', blurb: 'Every PG&E residential tariff and its 2026 price.' },
       { href: '/blog/sce-rate-increase-2026', label: 'SCE rate increases, 2024 to 2026', blurb: 'The October 2025 jump and every change since.' },
     ],
   },
