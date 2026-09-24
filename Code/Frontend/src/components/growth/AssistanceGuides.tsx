@@ -5,6 +5,13 @@ import { DecisionPage } from "./DecisionPage";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { HubSpokeLinks } from "./HubSpokeLinks";
 import {
+  SeniorProtections,
+  FixedIncomeBillHelp,
+  LongContractsOnFixedIncome,
+  SeniorFaq,
+  seniorExtraSources,
+} from "./SeniorSolarExtras";
+import {
   IncentivesAnswer,
   IncentivesTable,
   IncentivesSpokeDirectory,
@@ -144,7 +151,7 @@ export function assistanceMetadata(kind: AssistanceKey): Metadata {
       type: "article",
       url: `https://ratereliefca.com${path}`,
       modifiedTime:
-        kind === "free" || kind === "california"
+        kind === "free" || kind === "california" || kind === "seniors"
           ? "2026-09-23T00:00:00Z"
           : "2026-09-10T00:00:00Z",
       images: [CRR_SOCIAL_CARD],
@@ -359,7 +366,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
       intro={d.intro}
       path={d.path}
       sourceCheckedDate={
-        kind === "free" || kind === "california"
+        kind === "free" || kind === "california" || kind === "seniors"
           ? "2026-09-23"
           : "2026-09-10"
       }
@@ -390,6 +397,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
         },
         { label: "CPUC: Solar Consumer Protection Guide", url: guide },
         ...(kind === "california" ? incentivesHubExtraSources : []),
+        ...(kind === "seniors" ? seniorExtraSources : []),
         ...(kind === "free"
           ? [
               {
@@ -600,8 +608,11 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               solar&rdquo; advertisement.
             </p>
           </section>
+          <SeniorProtections />
           <DacBoundary />
           <BillDiscounts />
+          <FixedIncomeBillHelp />
+          <LongContractsOnFixedIncome />
           <section>
             <h2>If you rent or share the home</h2>
             <p>
@@ -657,6 +668,8 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               application.
             </p>
           </section>
+          <SeniorFaq />
+          <HubSpokeLinks hub="incentives" currentPath={definitions.seniors.path} />
         </>
       )}
       {/*
