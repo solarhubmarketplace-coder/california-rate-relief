@@ -6675,7 +6675,8 @@ export const growthCities: Record<string, GrowthCity> = {
     local: "The City of Lancaster issues rooftop solar and battery storage permits instantly through Symbium: you enter the property address, choose the rooftop solar or battery storage option, answer questions about the system, and submit and pay online, and the permit is issued automatically without manual review or a trip to the counter. Symbium also checks the contractor's license and business license automatically.",
     example: "Because Lancaster's Symbium portal verifies the contractor's license and business license on its own, a bidder that says it cannot get the instant permit is telling you something about its paperwork. Ask each bidder to confirm it will file through Symbium, then compare the Personal Choice credit its model assumes for your exports.",
     sourceCheckedDate: "2026-09-23",
-    hasSavingsGuide: false,
+    // 2026-09-24 (integration): hasSavingsGuide: false removed now that
+    // /solar-savings/lancaster is live, so the template links it.
     checks: [
       [
         "Instant permit",
