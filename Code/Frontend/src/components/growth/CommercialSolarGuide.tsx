@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage, type Source } from "./DecisionPage";
+import type { FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
 import { articleHref, articlesInCluster } from "@/data/article-pages";
 import { CommercialReviewButton, CommercialReviewForm } from "./CommercialReview";
 
@@ -39,6 +40,44 @@ const sources: Source[] = [
     label: "U.S. Department of Energy: On-Site Solar Decision Guide",
     url: "https://betterbuildingssolutioncenter.energy.gov/solutions-at-a-glance/site-solar-decision-guide/printpdf",
   },
+  // 2026-09-23 Tier 3 (claude/t3-misc-20260923): sources for the hub FAQ.
+  {
+    label: "NREL: Best Practices for Operation and Maintenance of Photovoltaic and Energy Storage Systems, 3rd Edition (December 2018; checked September 23, 2026)",
+    url: "https://www.nrel.gov/docs/fy19osti/73822.pdf",
+  },
+  {
+    label: "SDG&E: Solar Billing Plan (residential only; commercial customers keep their pricing plan; checked September 23, 2026)",
+    url: "https://www.sdge.com/solar/solar-billing-plan",
+  },
+  {
+    label: "SGIP program metrics: budget category status by administrator (checked September 23, 2026)",
+    url: "https://www.selfgenca.com/home/program_metrics/",
+  },
+  {
+    label: "California Energy Commission: Renewable Energy for Agriculture Program (closed; checked September 23, 2026)",
+    url: "https://www.energy.ca.gov/programs-and-topics/programs/renewable-energy-agriculture-program",
+  },
+];
+
+// 2026-09-23 Tier 3 (claude/t3-misc-20260923): three small commercial questions
+// answered on the hub. DecisionPage renders them with FaqBlock, which emits the
+// FAQPage schema from the same strings. Sources fetched 2026-09-23.
+const commercialFaqs: FaqJsonLdItem[] = [
+  {
+    question: "What does commercial solar maintenance involve in California?",
+    answer:
+      "NREL’s best-practice guide for operation and maintenance divides the work into preventive maintenance on a schedule, corrective repairs when something fails, and condition-based maintenance driven by monitoring data. The routine tasks are performance monitoring, inspections such as thermal imaging of the array and electrical connections, inverter servicing, cleaning when soiling warrants it and, on ground mounts, vegetation control. The guide, from 2018, noted 10-year inverter warranties were common and 20-year extended plans were spreading. Before signing, get in writing who does each task, the response time for a fault, who pays for an inverter replacement and who owns the monitoring data; under a PPA or lease the provider usually carries it, under ownership you do.",
+  },
+  {
+    question: "Does SDG&E have a commercial solar program?",
+    answer:
+      "Not a rebate on panels. New business systems in SDG&E territory are interconnected under the CPUC’s net billing rules, with export credits that vary by hour and are usually below the retail rate. SDG&E’s Solar Billing Plan page says the plan is for residential customers and that commercial customers stay on their existing pricing plan, so a business proposal has to model the actual commercial tariff. If San Diego Community Power or another CCA supplies the business, SDG&E says the CCA sets the generation export credit. Battery incentives, where available, come through SGIP’s non-residential budgets; check the tracker’s status for your category before a bid counts on them.",
+  },
+  {
+    question: "Is there state funding for agricultural solar in California?",
+    answer:
+      "Not through the Energy Commission’s agricultural program right now. The Renewable Energy for Agriculture Program granted $10 million for renewable energy at farms; its only solicitation opened in January 2019, awards were announced that April, and the Energy Commission says all of the funding was used and it is not accepting applications. Farms use the same tools as other businesses: the federal business credit, subject to the cutoffs the 2025 tax law added for solar, SGIP for storage where budgets are open, and financing such as C-PACE. The agricultural solar guide on this site covers the tariffs and meter questions farms face.",
+  },
 ];
 
 export const commercialSolarMetadata: Metadata = {
@@ -50,7 +89,7 @@ export const commercialSolarMetadata: Metadata = {
     description: metaDescription,
     type: "article",
     url: `https://ratereliefca.com${path}`,
-    modifiedTime: "2026-09-12T00:00:00Z",
+    modifiedTime: "2026-09-23T00:00:00Z",
   },
 };
 
@@ -261,6 +300,7 @@ export function CommercialSolarGuide() {
       primaryResourceLabel="Commercial cost and scope checklist"
       comparisonHref="/commercial-solar/companies-california"
       comparisonLabel="Compare commercial providers"
+      faqs={commercialFaqs}
     >
       <p className="text-foreground/80">
         Before requesting bids, the commercial solar cost page and calculator lets you{" "}

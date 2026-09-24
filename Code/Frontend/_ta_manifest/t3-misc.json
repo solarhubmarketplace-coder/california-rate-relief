@@ -1,0 +1,1464 @@
+{
+ "agent": "t3-misc",
+ "branch": "claude/t3-misc-20260923",
+ "updated": "2026-09-23",
+ "pages": [
+  {
+   "path": "/solar-problems/solar-cancellation-california",
+   "action": "CREATE",
+   "hub": "rules_permits",
+   "file": "src/data/article-pages.problems.json (slug solar-cancellation-california)",
+   "title": "Solar Contract Cancellation in California: How to Get Out",
+   "clusters": [
+    1927,
+    1988,
+    2165
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/solar-guide/2025-versions/solarguide25.pdf",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+    "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx",
+    "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/",
+    "https://dfpi.ca.gov/consumers/housing/pace/",
+    "https://www.sunrun.com/faq",
+    "https://www.calbar.ca.gov/public/find-legal-professionals/find-lawyer-referral-service"
+   ],
+   "status": "done",
+   "note": "New JSON problems page (2,200 words; QC gate pass). Covers the cancellation window, pre-install options, cash/loan/lease/PPA/PACE after install, home sale, complaints and \"solar exit\" companies (no company named). Next-question links in src/data/json-article-links.ts. leginfo.legislature.ca.gov refused automated reads, so statute rules are stated through the CPUC guide and CSLB bulletin; no claim is made about SB 784."
+  },
+  {
+   "path": "/blog/solar-duck-curve-california",
+   "action": "CREATE",
+   "hub": "nem",
+   "file": "src/app/blog/solar-duck-curve-california/page.tsx",
+   "title": "California Solar Duck Curve: What It Is and Why It Matters",
+   "clusters": [
+    1875,
+    1980
+   ],
+   "sources": [
+    "https://www.caiso.com/documents/flexibleresourceshelprenewables_fastfacts.pdf",
+    "https://www.caiso.com/about/our-business/managing-the-evolving-grid",
+    "https://www.caiso.com/content/charts/curtailments-monthly.csv",
+    "https://www.eia.gov/todayinenergy/detail.php?id=56880",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/electric-generation-capacity-and-energy",
+    "https://www.energy.ca.gov/news/2026-08/california-surpasses-21000-megawatts-battery-resources-supporting-states",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+   ],
+   "status": "done",
+   "note": "CSV assigned hub \"installers\"; the page is a grid/billing explainer, so it renders HubSpokeLinks hub=\"nem\" and asks to be listed under nem. Curtailment row folded in. Annual curtailment totals are our sums of CAISO monthly chart data (file dated 9/10/2026). qc-gate-tsx: 0 fail, 0 warn."
+  },
+  {
+   "path": "/blog/solar-discount",
+   "action": "CREATE",
+   "hub": "incentives",
+   "file": "src/app/blog/solar-discount/page.tsx",
+   "title": "Solar Discount Programs in California: 20% Off, No Panels",
+   "clusters": [
+    1814
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/solarguide/lowincomesolar",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities",
+    "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/family-electric-rate-assistance-program",
+    "https://www.pge.com/en/save-energy-and-money/energy-saving-programs/green-saver-program.html",
+    "https://cloud.sce.com/DAC-enroll/",
+    "https://cleanpoweralliance.org/powershare/",
+    "https://avaenergy.org/your-energy-options/rate-discounts-assistance/ava-auto-enrolled-solar-discount/",
+    "https://sanjosecleanenergy.org/solar-access/",
+    "https://www.mcecleanenergy.org/green-access/",
+    "https://www.anaheim.net/5083/Community-Solar-Discount-Program"
+   ],
+   "status": "done",
+   "note": "Page one for \"solar discount\" is CCA and utility green-tariff pages, so the page lists each 20% discount program by provider (PG&E and SCE Green Saver, CPA Power Share, Ava, SJCE Solar Access, MCE Green Access, Anaheim). Other pages mention DAC-GT/CSGT in a paragraph; none answers \"who runs it for my address\". qc-gate-tsx: 0 fail."
+  },
+  {
+   "path": "/solar-panels-california",
+   "action": "UPGRADE",
+   "hub": "cost_value",
+   "file": "src/app/solar-panels-california/page.tsx",
+   "title": "Solar Panels in California (2026): Cost, Rules, Worth It",
+   "clusters": [
+    1869,
+    1941,
+    2021,
+    2076,
+    2088,
+    2112,
+    2134,
+    2168
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+    "https://www.roseville.ca.gov/electric_utility/rates/roseville_solar_2_0/index.php",
+    "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities"
+   ],
+   "status": "done",
+   "note": "Build row \"what if we (put) solar panels california\" (130/mo) plus folded CREATE rows for /blog/what-we-put-solar-panels-california. Added FAQs: condo/HOA, selling power back, ground mount, cheapest route. CPUC quote corrected to \"usually lower than the retail rate\". T2 link requests applied: /blog/10-kw-solar-system-cost, /blog/solar-rate (the /solar-cost request was already met by the existing \"solar cost guides for 57 California cities\" link). Added links to the duck curve, HOA and solar discount pages."
+  },
+  {
+   "path": "/best-solar-companies-california",
+   "action": "UPGRADE",
+   "hub": "installers",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "title": "Solar Installers in California: Compare and Verify (2026)",
+   "clusters": [
+    1933,
+    1987,
+    2116,
+    2154,
+    2167,
+    2169,
+    2218
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/solarguide/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+    "https://www.sce.com/save-money/income-qualified-programs/care-fera",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf"
+   ],
+   "status": "done",
+   "note": "Five FAQs (installation steps, designer, CPUC guide, fees, warranties/\"garantia\"). 26 rows assigned here: 9 answered here, 8 moved to the page that owns the subject, 9 skipped (brands, lighting products, \"solar w\"). Rule 5 kept: no ranking, no \"our\" installers, no \"free\". T2 citycos link requests applied: a \"Counties and regions\" directory group (bay-area, san-mateo-county, orange-county, riverside-county, high-desert, kern-county) and a sentence linking each with the requested anchors. assert:citylinks and assert:linkspine pass."
+  },
+  {
+   "path": "/blog/california-solar-tax-credit-2026",
+   "action": "UPGRADE",
+   "hub": "incentives",
+   "file": "src/components/growth/IncentivesHubExtras.tsx (AssistanceGuides kind \"california\")",
+   "title": "California Solar Tax Credit and Incentives (2026 Guide)",
+   "clusters": [
+    1906,
+    1965,
+    2115,
+    2166,
+    2177
+   ],
+   "sources": [
+    "https://www.sce.com/save-money/income-qualified-programs/care-fera",
+    "https://www.cpuc.ca.gov/solarguide/lowincomesolar",
+    "https://www.sdge.com/solar/considering-solar",
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities"
+   ],
+   "status": "done",
+   "note": "Four FAQs (ITC, SCE CARE discount, SDG&E solar program, no-cost solar eligibility); SGIP table row made precise; /blog/solar-discount added to the spoke directory. qc-gate-tsx FAILs on this route (no Article JSON-LD / CTA seen in the wrapper page.tsx) are pre-existing: the wrapper file is unchanged."
+  },
+  {
+   "path": "/blog/free-solar-panels-california",
+   "action": "UPGRADE",
+   "hub": "incentives",
+   "file": "src/components/growth/AssistanceGuides.tsx (kind \"free\")",
+   "title": "Are Free Solar Panels Real in California? The CPUC Answer",
+   "clusters": [
+    2183
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/solarguide/lowincomesolar"
+   ],
+   "status": "done",
+   "note": "One FAQ entry (low-income families: DAC-SASH, farmworker housing program, SGIP; 20% discount link). The page's FAQ is plain markup without FAQPage schema (as before). Pre-existing wrapper qc-gate-tsx FAILs unchanged."
+  },
+  {
+   "path": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "UPGRADE",
+   "hub": "financing",
+   "file": "src/components/growth/FinancingHubExtras.tsx",
+   "title": "Solar Lease vs PPA vs Purchase (2026): 7 Terms Compared",
+   "clusters": [
+    1930,
+    2077,
+    2114,
+    2139
+   ],
+   "sources": [
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/financing-options-for-solar.html",
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide"
+   ],
+   "status": "done",
+   "note": "Three FAQs (buy or lease, cancelling a lease, PG&E on-bill financing) and a paragraph linking the cancellation page and the buy-or-lease page. Pre-existing wrapper qc-gate-tsx FAILs unchanged."
+  },
+  {
+   "path": "/blog/pge-solar-program",
+   "action": "UPGRADE",
+   "hub": "incentives",
+   "file": "src/app/blog/pge-solar-program/page.tsx",
+   "title": "PG&E Solar Programs in 2026: What Is Open and What Is Not",
+   "clusters": [
+    1923,
+    2102,
+    2362
+   ],
+   "sources": [
+    "https://www.pge.com/en/clean-energy/clean-energy-calculator.html",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/financing-options-for-solar.html",
+    "https://www.pge.com/en/account/billing-and-assistance/financial-assistance.html"
+   ],
+   "status": "done",
+   "note": "Three FAQs (estimator, PG&E-owned rooftop solar, bill-help programs) and links to /blog/help-with-pge-bill. T2 link request applied: /blog/pge-solar-billing-plan (\"how the Solar Billing Plan bills you\"), now live."
+  },
+  {
+   "path": "/commercial-solar",
+   "action": "UPGRADE",
+   "hub": "commercial",
+   "file": "src/components/growth/CommercialSolarGuide.tsx",
+   "title": "Commercial Solar in California: Build a Comparable Quote",
+   "clusters": [
+    1962,
+    2091,
+    2159
+   ],
+   "sources": [
+    "https://www.nrel.gov/docs/fy19osti/73822.pdf",
+    "https://www.sdge.com/solar/solar-billing-plan",
+    "https://www.selfgenca.com/home/program_metrics/",
+    "https://www.energy.ca.gov/programs-and-topics/programs/renewable-energy-agriculture-program"
+   ],
+   "status": "done",
+   "note": "Three FAQs via DecisionPage faqs (O&M, SDG&E commercial, agricultural funding). modifiedTime set to 2026-09-23; sourceCheckedDate left at 2026-09-12 because the older sources were not re-checked. Pre-existing wrapper qc-gate-tsx FAILs unchanged."
+  },
+  {
+   "path": "/solar-problems",
+   "action": "UPGRADE",
+   "hub": "rules_permits",
+   "file": "src/app/solar-problems/page.tsx",
+   "title": "Solar Problems & Scams in California: Honest Guides",
+   "clusters": [
+    1879,
+    1916,
+    1928,
+    2079
+   ],
+   "sources": [
+    "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2025-building-energy-efficiency",
+    "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-12",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar.html",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.calbar.ca.gov/public/find-legal-professionals/find-lawyer-referral-service"
+   ],
+   "status": "done",
+   "note": "FaqBlock with four entries (new-home mandate, PG&E interconnection, cancelling, when to hire a lawyer) and links to both cancellation pages. The new JSON page appears in the hub list automatically."
+  },
+  {
+   "path": "/battery",
+   "action": "UPGRADE",
+   "hub": "battery",
+   "file": "src/app/battery/page.tsx",
+   "title": "Home Battery Storage in California: Sizing, Cost, SGIP",
+   "clusters": [
+    2101,
+    2226
+   ],
+   "sources": [
+    "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+    "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+    "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/reliability-battery-initiative.html",
+    "https://www.energy.ca.gov/news/2026-08/california-surpasses-21000-megawatts-battery-resources-supporting-states"
+   ],
+   "status": "done",
+   "note": "PG&E rebate count updated to its page as read 2026-09-23 (179 as of 09/18/2026); FaqBlock with two entries (PG&E no-charge battery programs, statewide storage total); link to Powerwall cost after rebate."
+  },
+  {
+   "path": "/battery/pge-permanent-battery-storage-rebate",
+   "action": "UPGRADE",
+   "hub": "battery",
+   "file": "src/data/article-pages.battery.json (slug pge-permanent-battery-storage-rebate)",
+   "title": "PG&E Permanent Battery Storage Rebate: $7,500 Rules",
+   "clusters": [
+    2155
+   ],
+   "sources": [
+    "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+    "https://www.epa.gov/ca/moss-landing-vistra-battery-fire",
+    "https://sf-fire.org/512-energy-storage-systems-r-3-occupancies"
+   ],
+   "status": "done",
+   "note": "Every \"200 rebates as of 9/14\" replaced with PG&E's \"179 rebates remain. As of 09/18/2026\" (page read 2026-09-23). Fire-safety FAQ added. T2 reviews link request applied through src/data/json-article-links.ts (-> /battery/tesla-powerwall-3-cost-california)."
+  },
+  {
+   "path": "/battery/how-many-batteries-do-i-need-california",
+   "action": "UPGRADE",
+   "hub": "battery",
+   "file": "src/data/article-pages.battery.json (slug how-many-batteries-do-i-need-california)",
+   "title": "How Many Home Batteries Do You Need?",
+   "clusters": [
+    1966
+   ],
+   "sources": [
+    "https://www.selfgenca.com/home/program_metrics/",
+    "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+    "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/reliability-battery-initiative.html",
+    "https://sf-fire.org/512-energy-storage-systems-r-3-occupancies",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+    "https://www.courtlistener.com/docket/73192534/freedom-forever-llc/",
+    "https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/",
+    "https://www.courtlistener.com/docket/69017070/sunpower-corporation/"
+   ],
+   "status": "done",
+   "note": "Build row \"home battery backup california\" (UPGRADE). Two sections and three FAQs added; SGIP status re-dated; Solar Power World and Law360 sources replaced with court dockets (unverified details about the Freedom Forever sale and trustee, and a SunStrong claim, removed); stale rate sources (EIA, SCE advisory, PG&E newsroom, CPUC homepage) dropped. Title kept: \"home battery backup\" already lands on /blog/solar-battery-backup-california."
+  },
+  {
+   "path": "/battery/tesla-powerwall-3-cost-california",
+   "action": "UPGRADE",
+   "hub": "battery",
+   "file": "src/data/article-pages.battery.json (slug tesla-powerwall-3-cost-california)",
+   "title": "Tesla Powerwall 3 Cost in California (2026): Price, Rebates",
+   "clusters": [
+    2026
+   ],
+   "sources": [
+    "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html"
+   ],
+   "status": "done",
+   "note": "Existing FAQ retitled to \"Can you get a free Tesla Powerwall in California?\" and extended with PG&E's Residential Storage Initiative."
+  },
+  {
+   "path": "/solar-installers/sunrun-lease-vs-ppa",
+   "action": "UPGRADE",
+   "hub": "installer_reviews",
+   "file": "src/data/article-pages.installer.json (slug sunrun-lease-vs-ppa)",
+   "title": "Sunrun Lease vs. PPA: The Actual Difference",
+   "clusters": [
+    1880,
+    1936,
+    2309
+   ],
+   "sources": [
+    "https://www.sunrun.com/faq",
+    "https://www.pge.com/assets/pge/docs/save-energy-and-money/rebate-and-incentives/res-generator-battery-rebate-app.pdf",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+   ],
+   "status": "done",
+   "note": "Three FAQs (buyout options, adding a battery, NEM 2.0 vs 3.0). Sunrun's own FAQ is used only for Sunrun's own contract terms, as the page already did. Next-question links added in json-article-links.ts."
+  },
+  {
+   "path": "/blog/solar-rebates-by-california-utility",
+   "action": "UPGRADE",
+   "hub": "incentives",
+   "file": "src/app/blog/solar-rebates-by-california-utility/page.tsx",
+   "title": "Solar Rebates and Incentives by California Utility (2026)",
+   "clusters": [],
+   "sources": [
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://www.cpuc.ca.gov/sgip",
+    "https://www.selfgenca.com/home/program_metrics/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities",
+    "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/family-electric-rate-assistance-program",
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+    "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/generator-and-battery-rebate-program.html",
+    "https://www.pge.com/en/clean-energy/clean-energy-calculator.html",
+    "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+    "https://www.sce.com/clean-energy-efficiency/solar-generation-storage/solar-billing-incentives",
+    "https://www.sdge.com/solar/considering-solar",
+    "https://sdcommunitypower.org/solar-battery-savings/",
+    "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+    "https://www.smud.org/Going-Green/Battery-storage/Homeowner",
+    "https://www.roseville.ca.gov/electric_utility/rates/roseville_solar_2_0/index.php",
+    "https://cleanpoweralliance.org/sun-storage-rebate/",
+    "https://3cenergy.org/rebates/residential-battery-rebate-program/",
+    "https://www.anaheim.net/5730/Battery-Storage",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+   ],
+   "status": "done",
+   "note": "Lane task: every program re-fetched 2026-09-23. SMUD already showed $300/kWh from 9/23 (confirmed). Fixed: CPUC NBT quote (\"usually lower than the retail rate\"), SGIP scope and the open AB 209 POU-only sub-category, SMUD legacy-NEM exceptions, SDG&E page's \"currently offering\" SGIP claim flagged against the tracker. Added: CCA section (Clean Power Alliance Sun Storage Rebate; 3CE battery rebate closed 2026-03-19) and Anaheim's battery rebate. Confirmed unchanged: IRS, CPUC DAC/CARE figures, BOE sunset, PG&E generator rebate and Base Services Charge, SCE list, SDCP amounts, SMUD 9.6 cents, Roseville $0.0691, Q2 2026 average rates. LADWP still 403."
+  }
+ ],
+ "sitemap_add": [
+  "/blog/solar-duck-curve-california",
+  "/blog/solar-discount"
+ ],
+ "sitemap_note": "/solar-problems/solar-cancellation-california enters the sitemap automatically from article-pages.problems.json.",
+ "blog_index_add": [
+  {
+   "slug": "solar-duck-curve-california",
+   "title": "California Solar Duck Curve: What It Is and Why It Matters",
+   "hub": "nem"
+  },
+  {
+   "slug": "solar-discount",
+   "title": "Solar Discount Programs in California: 20% Off, No Panels",
+   "hub": "incentives"
+  }
+ ],
+ "redirect_requests": [],
+ "hub_links": [
+  {
+   "hub": "nem",
+   "href": "/blog/solar-duck-curve-california",
+   "label": "The California duck curve and curtailment"
+  },
+  {
+   "hub": "incentives",
+   "href": "/blog/solar-discount",
+   "label": "Solar discount programs (20% off, no panels)"
+  },
+  {
+   "hub": "rules_permits",
+   "href": "/solar-problems/solar-cancellation-california",
+   "label": "How to get out of a solar contract"
+  }
+ ],
+ "link_requests": [
+  {
+   "from": "/blog/can-you-cancel-solar-panel-contract-before-installation-california",
+   "to": "/solar-problems/solar-cancellation-california",
+   "anchor": "what to do after the cancellation window closes",
+   "why": "The pre-install page covers the statutory window; the new page covers every later stage (lease, PPA, loan, PACE, home sale, complaints). Page not owned this wave."
+  },
+  {
+   "from": "/blog/solar-for-renters",
+   "to": "/blog/solar-discount",
+   "anchor": "which utility or CCA runs the 20% solar discount for your address",
+   "why": "The renters page explains DAC-GT/CSGT in general; the new page lists each provider's program, status and enrollment."
+  },
+  {
+   "from": "/blog/what-percentage-of-california-power-is-solar",
+   "to": "/blog/solar-duck-curve-california",
+   "anchor": "why midday solar gets curtailed (the duck curve)",
+   "why": "Natural next question after solar's share of the grid."
+  },
+  {
+   "from": "/blog/nem-2-vs-nem-3-california",
+   "to": "/blog/solar-duck-curve-california",
+   "anchor": "the duck curve behind net billing",
+   "why": "The duck curve is the grid pattern the Net Billing Tariff prices; the new page links back as its breadcrumb parent."
+  },
+  {
+   "from": "/battery/battery-storage-capacity-california",
+   "to": "/blog/solar-duck-curve-california",
+   "anchor": "what the batteries are flattening: the duck curve",
+   "why": "Capacity page explains MW; the duck curve page explains what the fleet does."
+  },
+  {
+   "from": "/blog/sce-time-of-use-rates-2026",
+   "to": "(answer on page)",
+   "anchor": "TOU-D-4-9PM baseline credit and basic charge",
+   "why": "Row 73 (\"sce tou-d-4-9 baseline credit basic charge\", 20/mo) was assigned to the incentives hub but is an SCE rate-plan question; rates lane should answer it on an SCE rate page."
+  }
+ ],
+ "corrections_for_other_owners": [
+  {
+   "path": "/battery/battery-backup-vs-generator-california, /battery/pge-solar-battery-rebate, /battery/add-powerwall-to-existing-solar",
+   "issue": "Still say PG&E had 200 Permanent Battery Storage rebates left on 2026-09-14. PG&E's page read 2026-09-23 says \"179 rebates remain. As of 09/18/2026.\" Not in this lane, so not edited."
+  },
+  {
+   "path": "src/components/growth/NetBillingGuides.tsx; /blog/rent-solar-panels-for-your-home-california; /blog/solar-rate; /blog/pros-and-cons-of-solar-panels-california; /blog/pge-solar-calculator; /blog/rooftop-solar-credits-ruling-california; /blog/adu-solar-requirements-california; /blog/solar-payback-period-california; /blog/solar-battery-backup-california",
+   "issue": "Quote the CPUC as saying export credits are \"usually lower than import rates.\" The CPUC page read 2026-09-23 says \"usually lower than the retail rate ... but can rise above the retail rate on late summer evenings.\" Fixed on this lane's pages only."
+  }
+ ],
+ "skipped": [
+  {
+   "url": "/blog/solar-magic",
+   "host": "/blog/solar-magic",
+   "row": 7,
+   "primary_kw": "solar magic",
+   "why": "Brand/nonsense: page one is superpower wikis, witchcraft and a DR 4 installer. No California homeowner solar question."
+  },
+  {
+   "url": "/solar-installers/solar-panel-installation-rancho-penasquitos",
+   "host": "/solar-installers/solar-panel-installation-rancho-penasquitos",
+   "row": 8,
+   "primary_kw": "solar panel installation rancho penasquitos",
+   "why": "Neighborhood installer query (Rancho Penasquitos, San Diego); page one is local installers and Yelp. No /solar-installers/<neighborhood> convention; /solar-companies/san-diego covers SDG&E and City of San Diego permits."
+  },
+  {
+   "url": "/blog/solar-panel-ideas",
+   "host": "/solar-panels-california",
+   "row": 16,
+   "primary_kw": "solar panel ideas",
+   "why": "DIY/decor ideas (Pinterest SERP): product/DIY content belongs to the separate affiliate site, not CRR."
+  },
+  {
+   "url": "/solar-panels-california",
+   "host": "/best-solar-companies-california",
+   "row": 17,
+   "primary_kw": "solar w",
+   "why": "\"solar w\" is not a question (page one: an off-grid products brand and a forum on panel wattage)."
+  },
+  {
+   "url": "/blog/solar-outdoor-lighting-california",
+   "host": "/best-solar-companies-california",
+   "row": 19,
+   "primary_kw": "solar outdoor lighting california",
+   "why": "Outdoor solar lighting products: product keyword, not CRR scope."
+  },
+  {
+   "url": "/blog/united-roofing-california-solar-shingles",
+   "host": "/blog/is-my-roof-good-for-solar-california",
+   "row": 24,
+   "primary_kw": "united roofing california solar shingles",
+   "why": "Brand (United Roofing California). Its sub-questions (do solar companies replace your roof) are answered on /blog/free-roof-replacement-with-solar-panels-california."
+  },
+  {
+   "url": "/blog/solar-star-california-579-mw-cost-acres",
+   "host": "/solar-panels-california",
+   "row": 25,
+   "primary_kw": "solar star california 579 mw cost acres",
+   "why": "Utility-scale project trivia (Solar Star acreage and cost); outside CRR's residential scope and no primary source fetched."
+  },
+  {
+   "url": "/blog/solar-site-lighting-california",
+   "host": "/best-solar-companies-california",
+   "row": 30,
+   "primary_kw": "solar site lighting california",
+   "why": "Site-lighting products (municipal/commercial fixtures): not CRR scope."
+  },
+  {
+   "url": "/blog/pell-solar",
+   "host": "/best-solar-companies-california",
+   "row": 33,
+   "primary_kw": "pell solar",
+   "why": "Small installer brand (Pell Solar)."
+  },
+  {
+   "url": "/solar-installers/solar-symphony-reviews",
+   "host": "/solar-installers",
+   "row": 34,
+   "primary_kw": "solar symphony reviews",
+   "why": "Small installer brand (Solar Symphony)."
+  },
+  {
+   "url": "/blog/should-i-lock-my-solar-panels-california",
+   "host": "/solar-panels-california",
+   "row": 51,
+   "primary_kw": "should i lock my solar panels in california",
+   "why": "No primary source found for locking panels or disconnects; product/safety-gear topic."
+  },
+  {
+   "url": "/blog/solar-panels-in-california-desert",
+   "host": "/solar-panels-california",
+   "row": 52,
+   "primary_kw": "solar panels in california desert",
+   "why": "Page one is utility-scale desert plants (Ivanpah, Mojave); outside CRR's residential scope."
+  },
+  {
+   "url": "/blog/electricity-shut-off-laws-california",
+   "host": "/solar-problems",
+   "row": 57,
+   "primary_kw": "electricity shut off laws california",
+   "why": "Utility disconnection rules: the CPUC and Attorney General pages could not be retrieved this session, and the topic belongs with bill-help pages (rates lane), not the solar rules hub."
+  },
+  {
+   "url": "/blog/nrg-solar-california",
+   "host": "/best-solar-companies-california",
+   "row": 58,
+   "primary_kw": "nrg solar california",
+   "why": "Installer brand (NRG Clean Power)."
+  },
+  {
+   "url": "/solar-installers/california-window-and-solar-review",
+   "host": "/best-solar-companies-california",
+   "row": 61,
+   "primary_kw": "california window & solar company",
+   "why": "Small company brand (California Window & Solar)."
+  },
+  {
+   "url": "/blog/solar-roof-valinda-california",
+   "host": "/blog/is-my-roof-good-for-solar-california",
+   "row": 64,
+   "primary_kw": "solar roof valinda ca",
+   "why": "Neighborhood/brand query (Valinda); page one is Yelp and local roofers."
+  },
+  {
+   "url": "/solar-panels-california",
+   "host": "/solar-installers",
+   "row": 66,
+   "primary_kw": "complete solar california",
+   "why": "Brand (\"Complete Solar\"). /solar-installers/sunpower-review already covers the Complete Solaria rebrand; SEC EDGAR refused automated retrieval, so nothing new was stated."
+  },
+  {
+   "url": "/blog/go-green-solar-clean",
+   "host": "/solar-panel-maintenance-california",
+   "row": 67,
+   "primary_kw": "go green solar clean",
+   "why": "Cleaning-company brand (Go Green Solar Clean)."
+  },
+  {
+   "url": "/blog/smart-home-solar-california",
+   "host": "/best-solar-companies-california",
+   "row": 69,
+   "primary_kw": "smart home solar california",
+   "why": "Installer brand (Smart Home Solar)."
+  },
+  {
+   "url": "/blog/rc-solar",
+   "host": "/best-solar-companies-california",
+   "row": 70,
+   "primary_kw": "rc solar",
+   "why": "Installer brand (RC Solar / My RC Home)."
+  },
+  {
+   "url": "/blog/altsys-solar",
+   "host": "/best-solar-companies-california",
+   "row": 72,
+   "primary_kw": "altsys solar",
+   "why": "Small installer brand (AltSys Solar, Tulare)."
+  },
+  {
+   "url": "/blog/sce-tou-d-4-9-baseline-credit-basic-charge",
+   "host": "/blog/california-solar-tax-credit-2026",
+   "row": 73,
+   "primary_kw": "sce tou-d-4-9 baseline credit basic charge",
+   "why": "SCE rate-plan question (TOU-D-4-9PM baseline credit and basic charge), not an incentive; belongs on /blog/sce-time-of-use-rates-2026 or /blog/sce-rate-schedules (rates lane). No SCE tariff fetched."
+  },
+  {
+   "url": "/blog/premier-solar-construction-california",
+   "host": "/best-solar-companies-california",
+   "row": 75,
+   "primary_kw": "california premier solar construction",
+   "why": "Installer brand (California Premier Solar Construction)."
+  }
+ ],
+ "rows": [
+  {
+   "rank": 1,
+   "cluster": 2076,
+   "primary_kw": "what if we solar panels california",
+   "decision": "build_page",
+   "work_url": "/solar-panels-california",
+   "status": "done",
+   "answered_on": "/solar-panels-california",
+   "note": "Intent per page-one SERP is \"should we put solar panels in California / is it worth it\"; the guide already answers it. Upgraded with condo/HOA, selling power back, ground-mount and lowest-cost FAQs; title kept (it matches the intent).",
+   "csv_url": "/solar-panels-california"
+  },
+  {
+   "rank": 2,
+   "cluster": 1814,
+   "primary_kw": "solar discount",
+   "decision": "build_page",
+   "work_url": "/blog/solar-discount",
+   "status": "done",
+   "answered_on": "/blog/solar-discount",
+   "note": "New page. Page-one results are utility/CCA green-tariff discount programs (Ava, SJCE, Anaheim, CPUC), so the page lists each 20% discount program by provider with enrollment and status.",
+   "csv_url": "/blog/solar-discount"
+  },
+  {
+   "rank": 3,
+   "cluster": 2112,
+   "primary_kw": "what we put solar panels california",
+   "decision": "build_page",
+   "work_url": "/blog/what-we-put-solar-panels-california",
+   "status": "folded",
+   "answered_on": "/solar-panels-california",
+   "note": "Same SERP as row 1 (is solar worth it in CA, new-home mandate); a separate /blog/what-we-put-solar-panels-california page would split the query. Sub-question \"can you put solar panels on a condo\" answered as an FAQ there.",
+   "csv_url": "/blog/what-we-put-solar-panels-california"
+  },
+  {
+   "rank": 4,
+   "cluster": 1875,
+   "primary_kw": "california solar duck curve",
+   "decision": "build_page",
+   "work_url": "/blog/solar-duck-curve-california",
+   "status": "done",
+   "answered_on": "/blog/solar-duck-curve-california",
+   "note": "New page; CAISO, EIA, CEC and CPUC sources; curtailment totals summed from CAISO monthly chart data.",
+   "csv_url": "/blog/solar-duck-curve-california"
+  },
+  {
+   "rank": 5,
+   "cluster": 2271,
+   "primary_kw": "is overtake california in battery storage",
+   "decision": "build_page",
+   "work_url": "/battery/is-overtake-california-in-battery-storage",
+   "status": "folded",
+   "answered_on": "/battery/battery-storage-capacity-california",
+   "note": "Existing page already has the H2 \"Is Texas overtaking California in battery storage?\" and a matching FAQ from CEC/EIA data. Not built (duplicate). Not in this lane, so not edited.",
+   "csv_url": "/battery/is-overtake-california-in-battery-storage"
+  },
+  {
+   "rank": 6,
+   "cluster": 1927,
+   "primary_kw": "solar cancellation california",
+   "decision": "build_page",
+   "work_url": "/solar-problems/solar-cancellation-california",
+   "status": "done",
+   "answered_on": "/solar-problems/solar-cancellation-california",
+   "note": "New JSON problems page: getting out of a solar contract at each stage (window, pre-install, cash/loan/lease/PPA/PACE, home sale, complaints, exit companies). Distinct from /blog/can-you-cancel-...-before-installation (the statutory window), which it links.",
+   "csv_url": "/solar-problems/solar-cancellation-california"
+  },
+  {
+   "rank": 7,
+   "cluster": 1946,
+   "primary_kw": "solar magic",
+   "decision": "build_page",
+   "work_url": "/blog/solar-magic",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Brand/nonsense: page one is superpower wikis, witchcraft and a DR 4 installer. No California homeowner solar question.",
+   "csv_url": "/blog/solar-magic"
+  },
+  {
+   "rank": 8,
+   "cluster": 2003,
+   "primary_kw": "solar panel installation rancho penasquitos",
+   "decision": "build_page",
+   "work_url": "/solar-installers/solar-panel-installation-rancho-penasquitos",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Neighborhood installer query (Rancho Penasquitos, San Diego); page one is local installers and Yelp. No /solar-installers/<neighborhood> convention; /solar-companies/san-diego covers SDG&E and City of San Diego permits.",
+   "csv_url": "/solar-installers/solar-panel-installation-rancho-penasquitos"
+  },
+  {
+   "rank": 9,
+   "cluster": 2168,
+   "primary_kw": "what if we put solar california",
+   "decision": "build_page",
+   "work_url": "/blog/what-we-put-solar-panels-california",
+   "status": "folded",
+   "answered_on": "/solar-panels-california",
+   "note": "Same intent as rows 1 and 3.",
+   "csv_url": "/blog/what-we-put-solar-panels-california"
+  },
+  {
+   "rank": 10,
+   "cluster": 1854,
+   "primary_kw": "who qualifies for california sgip",
+   "decision": "build_page",
+   "work_url": "/battery/who-qualifies-for-california-sgip",
+   "status": "folded",
+   "answered_on": "/battery/sgip-battery-rebate-california",
+   "note": "Existing page already has H2 \"Who qualifies for the equity budget\" and FAQ \"Who qualifies for California SGIP?\" (updated 2026-09-23). A second SGIP page would split the query. Not in this lane.",
+   "csv_url": "/battery/who-qualifies-for-california-sgip"
+  },
+  {
+   "rank": 11,
+   "cluster": 1966,
+   "primary_kw": "home battery backup california",
+   "decision": "build_page",
+   "work_url": "/battery/how-many-batteries-do-i-need-california",
+   "status": "done",
+   "answered_on": "/battery/how-many-batteries-do-i-need-california",
+   "note": "Upgraded: four routes to a home battery (buy, lease/PPA, retrofit, PG&E RSI), how to choose a battery (no ranking; fire-code limits), 3 FAQs, SGIP status re-dated 9/23, trade-press sources replaced with court dockets and CSLB. Not retitled to \"home battery backup\": that head term already lands on /blog/solar-battery-backup-california (GSC), which the page now links.",
+   "csv_url": "/battery/how-many-batteries-do-i-need-california"
+  },
+  {
+   "rank": 12,
+   "cluster": 2079,
+   "primary_kw": "california solar mandate law",
+   "decision": "faq_on_host",
+   "work_url": "/solar-problems",
+   "status": "done",
+   "answered_on": "/solar-problems",
+   "note": "FAQ \"Is solar required on new homes in California?\" (CEC 2025 Energy Code, PV sizing, exemptions).",
+   "csv_url": "/blog/solar-panel-law-california"
+  },
+  {
+   "rank": 13,
+   "cluster": 2088,
+   "primary_kw": "2024 all houses solar in california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/solar-panels-california",
+   "note": "Ambiguous (\"2024 all houses solar\"); answered by the existing new-home Energy Code FAQ there and the rooftop-solar count on /blog/what-percentage-of-california-power-is-solar.",
+   "csv_url": "/blog/all-houses-solar-california"
+  },
+  {
+   "rank": 14,
+   "cluster": 1906,
+   "primary_kw": "tax credit for solar installation california",
+   "decision": "faq_on_host",
+   "work_url": "/blog/california-solar-tax-credit-2026",
+   "status": "done",
+   "answered_on": "/blog/california-solar-tax-credit-2026",
+   "note": "Existing FAQs already answer how the credit works and how to claim it; added the ITC FAQ (row 46) alongside.",
+   "csv_url": "/blog/tax-credit-for-solar-installation-california"
+  },
+  {
+   "rank": 15,
+   "cluster": 1933,
+   "primary_kw": "solar energy system installation california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "done",
+   "answered_on": "/best-solar-companies-california",
+   "note": "FAQ \"What does getting solar installed in California involve?\" (CPUC, CSLB).",
+   "csv_url": "/best-solar-companies-california"
+  },
+  {
+   "rank": 16,
+   "cluster": 1949,
+   "primary_kw": "solar panel ideas",
+   "decision": "faq_on_host",
+   "work_url": "/solar-panels-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "DIY/decor ideas (Pinterest SERP): product/DIY content belongs to the separate affiliate site, not CRR.",
+   "csv_url": "/blog/solar-panel-ideas"
+  },
+  {
+   "rank": 17,
+   "cluster": 1913,
+   "primary_kw": "solar w",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "\"solar w\" is not a question (page one: an off-grid products brand and a forum on panel wattage).",
+   "csv_url": "/solar-panels-california"
+  },
+  {
+   "rank": 18,
+   "cluster": 1965,
+   "primary_kw": "sce care program discount rates california",
+   "decision": "faq_on_host",
+   "work_url": "/blog/california-solar-tax-credit-2026",
+   "status": "done",
+   "answered_on": "/blog/california-solar-tax-credit-2026",
+   "note": "FAQ \"How much is the SCE CARE discount?\" (SCE: 32.5% CARE, 18% FERA, 2026-27 limits, Base Services Charge).",
+   "csv_url": "/blog/sce-care-program-discount-rates-california"
+  },
+  {
+   "rank": 19,
+   "cluster": 1907,
+   "primary_kw": "solar outdoor lighting california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Outdoor solar lighting products: product keyword, not CRR scope.",
+   "csv_url": "/blog/solar-outdoor-lighting-california"
+  },
+  {
+   "rank": 20,
+   "cluster": 1980,
+   "primary_kw": "california solar energy curtailment",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/blog/solar-duck-curve-california",
+   "note": "Curtailment is the duck curve's other half; answered in an H2, a table and two FAQs there.",
+   "csv_url": "/blog/solar-energy-curtailment-california"
+  },
+  {
+   "rank": 21,
+   "cluster": 1879,
+   "primary_kw": "solar contract lawyer california",
+   "decision": "faq_on_host",
+   "work_url": "/solar-problems",
+   "status": "done",
+   "answered_on": "/solar-problems",
+   "note": "FAQ \"When do I need a lawyer for a solar contract dispute?\" (State Bar LRS facts); the hub already lists the attorney guide.",
+   "csv_url": "/solar-problems/solar-contract-lawyer-california"
+  },
+  {
+   "rank": 22,
+   "cluster": 1880,
+   "primary_kw": "sunrun solar lease buyout options california",
+   "decision": "faq_on_host",
+   "work_url": "/solar-installers/sunrun-lease-vs-ppa",
+   "status": "done",
+   "answered_on": "/solar-installers/sunrun-lease-vs-ppa",
+   "note": "FAQ on Sunrun lease buyout options (Sunrun FAQ quotes).",
+   "csv_url": "/solar-installers/sunrun-solar-lease-buyout-options-california"
+  },
+  {
+   "rank": 23,
+   "cluster": 1869,
+   "primary_kw": "selling solar power back to the grid california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/solar-panels-california",
+   "note": "Answered as FAQ \"Can you sell solar power back to the grid in California?\" on the solar guide (better fit than the installer hub); /blog/selling-electricity-back-to-the-grid-price-per-kwh is the dedicated page.",
+   "csv_url": "/blog/selling-solar-power-back-to-the-grid-california"
+  },
+  {
+   "rank": 24,
+   "cluster": 2019,
+   "primary_kw": "united roofing california solar shingles",
+   "decision": "faq_on_host",
+   "work_url": "/blog/is-my-roof-good-for-solar-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Brand (United Roofing California). Its sub-questions (do solar companies replace your roof) are answered on /blog/free-roof-replacement-with-solar-panels-california.",
+   "csv_url": "/blog/united-roofing-california-solar-shingles"
+  },
+  {
+   "rank": 25,
+   "cluster": 2411,
+   "primary_kw": "solar star california 579 mw cost acres",
+   "decision": "faq_on_host",
+   "work_url": "/solar-panels-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Utility-scale project trivia (Solar Star acreage and cost); outside CRR's residential scope and no primary source fetched.",
+   "csv_url": "/blog/solar-star-california-579-mw-cost-acres"
+  },
+  {
+   "rank": 26,
+   "cluster": 2362,
+   "primary_kw": "pg&e utility-owned rooftop solar program",
+   "decision": "faq_on_host",
+   "work_url": "/blog/is-my-roof-good-for-solar-california",
+   "status": "folded",
+   "answered_on": "/blog/pge-solar-program",
+   "note": "Answered as FAQ \"Does PG&E own or rent rooftop solar on homes?\" on the PG&E programs page (better fit than the roof page).",
+   "csv_url": "/blog/pge-utility-owned-rooftop-solar-program"
+  },
+  {
+   "rank": 27,
+   "cluster": 2309,
+   "primary_kw": "nem 2.0 vs nem 3.0 california sunrun",
+   "decision": "faq_on_host",
+   "work_url": "/solar-installers",
+   "status": "folded",
+   "answered_on": "/solar-installers/sunrun-lease-vs-ppa",
+   "note": "Answered as FAQ \"How do NEM 2.0 and NEM 3.0 differ for a Sunrun customer?\" (CPUC 20-year and nine-year rules) on the Sunrun page, which already had NEM content.",
+   "csv_url": "/solar-installers/nem-2-vs-nem-3-california-sunrun"
+  },
+  {
+   "rank": 28,
+   "cluster": 1987,
+   "primary_kw": "solar designers california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "done",
+   "answered_on": "/best-solar-companies-california",
+   "note": "FAQ \"Who designs a home solar system in California?\"",
+   "csv_url": "/blog/solar-designers-california"
+  },
+  {
+   "rank": 29,
+   "cluster": 1988,
+   "primary_kw": "how to get out of a solar contract in california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/solar-problems/solar-cancellation-california",
+   "note": "Same question as the new cancellation page (row 6).",
+   "csv_url": "/solar-problems/how-to-get-out-of-a-solar-contract-california"
+  },
+  {
+   "rank": 30,
+   "cluster": 1990,
+   "primary_kw": "solar site lighting california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Site-lighting products (municipal/commercial fixtures): not CRR scope.",
+   "csv_url": "/blog/solar-site-lighting-california"
+  },
+  {
+   "rank": 31,
+   "cluster": 1962,
+   "primary_kw": "commercial solar maintenance california",
+   "decision": "faq_on_host",
+   "work_url": "/commercial-solar",
+   "status": "done",
+   "answered_on": "/commercial-solar",
+   "note": "FAQ on commercial O&M (NREL O&M best-practice guide).",
+   "csv_url": "/commercial-solar/commercial-solar-maintenance-california"
+  },
+  {
+   "rank": 32,
+   "cluster": 1941,
+   "primary_kw": "california residential ground mount solar",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/solar-panels-california",
+   "note": "Answered as FAQ \"Can I put solar panels on the ground instead of the roof?\" (LBNL: ground mounts uncommon, +$0.40/W).",
+   "csv_url": "/blog/residential-ground-mount-solar-california"
+  },
+  {
+   "rank": 33,
+   "cluster": 1947,
+   "primary_kw": "pell solar",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Small installer brand (Pell Solar).",
+   "csv_url": "/blog/pell-solar"
+  },
+  {
+   "rank": 34,
+   "cluster": 1948,
+   "primary_kw": "solar symphony reviews",
+   "decision": "faq_on_host",
+   "work_url": "/solar-installers",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Small installer brand (Solar Symphony).",
+   "csv_url": "/solar-installers/solar-symphony-reviews"
+  },
+  {
+   "rank": 35,
+   "cluster": 1936,
+   "primary_kw": "sunrun add battery to existing lease california",
+   "decision": "faq_on_host",
+   "work_url": "/solar-installers/sunrun-lease-vs-ppa",
+   "status": "done",
+   "answered_on": "/solar-installers/sunrun-lease-vs-ppa",
+   "note": "FAQ \"Can I add a battery to an existing Sunrun lease?\" (Sunrun FAQ; PG&E rebate lease exclusion from its T&C PDF).",
+   "csv_url": "/battery/sunrun-add-battery-to-existing-lease-california"
+  },
+  {
+   "rank": 36,
+   "cluster": 1928,
+   "primary_kw": "cancel solar contract california",
+   "decision": "faq_on_host",
+   "work_url": "/solar-problems",
+   "status": "done",
+   "answered_on": "/solar-problems",
+   "note": "FAQ \"How do I cancel a solar contract in California?\" plus links to both cancellation pages.",
+   "csv_url": "/blog/can-you-cancel-solar-panel-contract-before-installation-california"
+  },
+  {
+   "rank": 37,
+   "cluster": 1930,
+   "primary_kw": "buy solar panels california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "note": "Buy-vs-lease is a financing question; answered as FAQ \"Is it better to buy or lease solar panels in California?\" on the financing hub, which links /blog/is-it-better-to-buy-or-lease-solar-panels-california.",
+   "csv_url": "/blog/is-it-better-to-buy-or-lease-solar-panels-california"
+  },
+  {
+   "rank": 38,
+   "cluster": 1916,
+   "primary_kw": "pg&e solar interconnection",
+   "decision": "faq_on_host",
+   "work_url": "/solar-problems",
+   "status": "done",
+   "answered_on": "/solar-problems",
+   "note": "FAQ \"How does PG&E solar interconnection work?\" (PG&E five steps, PTO 5-10 business days, max 30).",
+   "csv_url": "/blog/pge-solar-interconnection"
+  },
+  {
+   "rank": 39,
+   "cluster": 1923,
+   "primary_kw": "pge programs to help with electric bill",
+   "decision": "faq_on_host",
+   "work_url": "/blog/pge-solar-program",
+   "status": "done",
+   "answered_on": "/blog/pge-solar-program",
+   "note": "FAQ \"What PG&E programs help with the electric bill?\" (PG&E financial assistance page) and a link to /blog/help-with-pge-bill.",
+   "csv_url": "/blog/pge-programs-to-help-with-electric-bill"
+  },
+  {
+   "rank": 40,
+   "cluster": 2165,
+   "primary_kw": "solar exit california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/solar-problems/solar-cancellation-california",
+   "note": "Answered in the H2 \"Companies That Advertise Solar Contract Exits\" and FAQ \"What is a solar exit company, and do I need one?\" No company named or accused.",
+   "csv_url": "/blog/solar-exit-california"
+  },
+  {
+   "rank": 41,
+   "cluster": 2166,
+   "primary_kw": "sdge solar program",
+   "decision": "faq_on_host",
+   "work_url": "/blog/california-solar-tax-credit-2026",
+   "status": "done",
+   "answered_on": "/blog/california-solar-tax-credit-2026",
+   "note": "FAQ \"Does SDG&E have a solar program?\" (SDG&E considering-solar page).",
+   "csv_url": "/blog/sdge-solar-program"
+  },
+  {
+   "rank": 42,
+   "cluster": 2155,
+   "primary_kw": "battery storage fire california",
+   "decision": "faq_on_host",
+   "work_url": "/battery/pge-permanent-battery-storage-rebate",
+   "status": "done",
+   "answered_on": "/battery/pge-permanent-battery-storage-rebate",
+   "note": "FAQ \"Are home batteries a fire risk in California?\" (EPA Moss Landing page; SF Fire Dept on 2022 CFC limits).",
+   "csv_url": "/battery/battery-storage-fire-california"
+  },
+  {
+   "rank": 43,
+   "cluster": 2218,
+   "primary_kw": "california solar consumer protection guide cpuc",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "done",
+   "answered_on": "/best-solar-companies-california",
+   "note": "FAQ \"What is the California Solar Consumer Protection Guide?\" (CPUC).",
+   "csv_url": "/blog/solar-consumer-protection-guide-cpuc-california"
+  },
+  {
+   "rank": 44,
+   "cluster": 2074,
+   "primary_kw": "california residential solar repair and maintenance",
+   "decision": "faq_on_host",
+   "work_url": "/solar-panel-maintenance-california",
+   "status": "folded",
+   "answered_on": "/solar-panel-maintenance-california",
+   "note": "The page already answers repairs, who to call, finding a repair company and costs; no new text needed.",
+   "csv_url": "/blog/residential-solar-repair-and-maintenance-california"
+  },
+  {
+   "rank": 45,
+   "cluster": 2114,
+   "primary_kw": "lease or buy solar california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "note": "Same answer as row 37.",
+   "csv_url": "/blog/is-it-better-to-buy-or-lease-solar-panels-california"
+  },
+  {
+   "rank": 46,
+   "cluster": 2115,
+   "primary_kw": "solar investment tax credit california",
+   "decision": "faq_on_host",
+   "work_url": "/blog/california-solar-tax-credit-2026",
+   "status": "done",
+   "answered_on": "/blog/california-solar-tax-credit-2026",
+   "note": "FAQ \"What is the solar investment tax credit (ITC) in California?\"",
+   "csv_url": "/blog/solar-investment-tax-credit-california"
+  },
+  {
+   "rank": 47,
+   "cluster": 2116,
+   "primary_kw": "california solar fees",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "done",
+   "answered_on": "/best-solar-companies-california",
+   "note": "FAQ \"What fees come with going solar in California?\" (PG&E Base Services Charge, SCE CARE/FERA charge; dealer, permit and interconnection lines).",
+   "csv_url": "/solar-problems/solar-dealer-fees-explained"
+  },
+  {
+   "rank": 48,
+   "cluster": 2101,
+   "primary_kw": "pge free home battery program",
+   "decision": "faq_on_host",
+   "work_url": "/battery",
+   "status": "done",
+   "answered_on": "/battery",
+   "note": "FAQ \"Does PG&E have a free home battery program?\" (PG&E RSI and Reliability Battery Initiative pages).",
+   "csv_url": "/battery/pge-free-home-battery-program"
+  },
+  {
+   "rank": 49,
+   "cluster": 2154,
+   "primary_kw": "residential solar installation california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "done",
+   "answered_on": "/best-solar-companies-california",
+   "note": "Same FAQ as row 15.",
+   "csv_url": "/best-solar-companies-california"
+  },
+  {
+   "rank": 50,
+   "cluster": 2139,
+   "primary_kw": "cancel solar lease california",
+   "decision": "faq_on_host",
+   "work_url": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "status": "done",
+   "answered_on": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "note": "FAQ \"Can you cancel a solar lease in California?\" plus a link to the cancellation page.",
+   "csv_url": "/solar-problems/cancel-solar-lease-california"
+  },
+  {
+   "rank": 51,
+   "cluster": 2141,
+   "primary_kw": "should i lock my solar panels in california",
+   "decision": "faq_on_host",
+   "work_url": "/solar-panels-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "No primary source found for locking panels or disconnects; product/safety-gear topic.",
+   "csv_url": "/blog/should-i-lock-my-solar-panels-california"
+  },
+  {
+   "rank": 52,
+   "cluster": 2277,
+   "primary_kw": "solar panels in california desert",
+   "decision": "faq_on_host",
+   "work_url": "/solar-panels-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Page one is utility-scale desert plants (Ivanpah, Mojave); outside CRR's residential scope.",
+   "csv_url": "/blog/solar-panels-in-california-desert"
+  },
+  {
+   "rank": 53,
+   "cluster": 2077,
+   "primary_kw": "pge on bill financing",
+   "decision": "faq_on_host",
+   "work_url": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "status": "done",
+   "answered_on": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "note": "FAQ \"Does PG&E offer on-bill financing for home solar?\" (PG&E solar financing page lists none). PG&E's on-bill financing page itself could not be retrieved, so no program details are stated.",
+   "csv_url": "/blog/pge-on-bill-financing"
+  },
+  {
+   "rank": 54,
+   "cluster": 2226,
+   "primary_kw": "solar storage california powers up",
+   "decision": "faq_on_host",
+   "work_url": "/battery",
+   "status": "done",
+   "answered_on": "/battery",
+   "note": "FAQ \"How much battery storage does California have now?\" (CEC, August 7, 2026: 21,112 MW).",
+   "csv_url": "/battery/solar-storage-california-powers-up"
+  },
+  {
+   "rank": 55,
+   "cluster": 2102,
+   "primary_kw": "pg&e solar estimator",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/blog/pge-solar-program",
+   "note": "Answered as FAQ \"Does PG&E have a solar estimator?\" (Clean Energy Calculator) on the PG&E page, which links /blog/pge-solar-calculator.",
+   "csv_url": "/blog/pge-solar-estimator"
+  },
+  {
+   "rank": 56,
+   "cluster": 2159,
+   "primary_kw": "sdg&e commercial solar",
+   "decision": "faq_on_host",
+   "work_url": "/commercial-solar",
+   "status": "done",
+   "answered_on": "/commercial-solar",
+   "note": "FAQ \"Does SDG&E have a commercial solar program?\" (SDG&E Solar Billing Plan page: commercial keeps its pricing plan).",
+   "csv_url": "/commercial-solar/sdge-commercial-solar"
+  },
+  {
+   "rank": 57,
+   "cluster": 2157,
+   "primary_kw": "electricity shut off laws california",
+   "decision": "faq_on_host",
+   "work_url": "/solar-problems",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Utility disconnection rules: the CPUC and Attorney General pages could not be retrieved this session, and the topic belongs with bill-help pages (rates lane), not the solar rules hub.",
+   "csv_url": "/blog/electricity-shut-off-laws-california"
+  },
+  {
+   "rank": 58,
+   "cluster": 2171,
+   "primary_kw": "nrg solar california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Installer brand (NRG Clean Power).",
+   "csv_url": "/blog/nrg-solar-california"
+  },
+  {
+   "rank": 59,
+   "cluster": 2169,
+   "primary_kw": "garantia solar california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "done",
+   "answered_on": "/best-solar-companies-california",
+   "note": "\"Garantia\" = warranty: FAQ \"What warranties should a solar system in California come with? (¿Qué garantía debe tener?)\" from the CPUC's questions to ask.",
+   "csv_url": "/blog/garantia-solar-california"
+  },
+  {
+   "rank": 60,
+   "cluster": 2167,
+   "primary_kw": "local solar hire california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "folded",
+   "answered_on": "/best-solar-companies-california",
+   "note": "Finding a local installer is already answered by the #near-me section; no new text.",
+   "csv_url": "/blog/local-solar-hire-california"
+  },
+  {
+   "rank": 61,
+   "cluster": 2161,
+   "primary_kw": "california window & solar company",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Small company brand (California Window & Solar).",
+   "csv_url": "/solar-installers/california-window-and-solar-review"
+  },
+  {
+   "rank": 62,
+   "cluster": 2183,
+   "primary_kw": "free solar panels california for low-income",
+   "decision": "faq_on_host",
+   "work_url": "/blog/free-solar-panels-california",
+   "status": "done",
+   "answered_on": "/blog/free-solar-panels-california",
+   "note": "FAQ \"Are there free solar panels for low-income families in California?\" (CPUC low-income solar page) with a link to /blog/solar-discount.",
+   "csv_url": "/blog/free-solar-panels-california-for-low-income"
+  },
+  {
+   "rank": 63,
+   "cluster": 2177,
+   "primary_kw": "how do i qualify for free solar in california",
+   "decision": "faq_on_host",
+   "work_url": "/blog/california-solar-tax-credit-2026",
+   "status": "done",
+   "answered_on": "/blog/california-solar-tax-credit-2026",
+   "note": "FAQ \"How do I qualify for no-cost solar in California?\" (DAC-SASH eligibility, CPUC).",
+   "csv_url": "/blog/how-do-i-qualify-for-free-solar-california"
+  },
+  {
+   "rank": 64,
+   "cluster": 2109,
+   "primary_kw": "solar roof valinda ca",
+   "decision": "faq_on_host",
+   "work_url": "/blog/is-my-roof-good-for-solar-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Neighborhood/brand query (Valinda); page one is Yelp and local roofers.",
+   "csv_url": "/blog/solar-roof-valinda-california"
+  },
+  {
+   "rank": 65,
+   "cluster": 2091,
+   "primary_kw": "agricultural solar california",
+   "decision": "faq_on_host",
+   "work_url": "/commercial-solar",
+   "status": "done",
+   "answered_on": "/commercial-solar",
+   "note": "FAQ \"Is there state funding for agricultural solar in California?\" (CEC REAP closed); /commercial-solar/agricultural-solar-california covers the rest.",
+   "csv_url": "/commercial-solar/agricultural-solar-california"
+  },
+  {
+   "rank": 66,
+   "cluster": 2095,
+   "primary_kw": "complete solar california",
+   "decision": "faq_on_host",
+   "work_url": "/solar-installers",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Brand (\"Complete Solar\"). /solar-installers/sunpower-review already covers the Complete Solaria rebrand; SEC EDGAR refused automated retrieval, so nothing new was stated.",
+   "csv_url": "/solar-panels-california"
+  },
+  {
+   "rank": 67,
+   "cluster": 2020,
+   "primary_kw": "go green solar clean",
+   "decision": "faq_on_host",
+   "work_url": "/solar-panel-maintenance-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Cleaning-company brand (Go Green Solar Clean).",
+   "csv_url": "/blog/go-green-solar-clean"
+  },
+  {
+   "rank": 68,
+   "cluster": 2021,
+   "primary_kw": "cheap solar energy solutions",
+   "decision": "faq_on_host",
+   "work_url": "/solar-panels-california",
+   "status": "done",
+   "answered_on": "/solar-panels-california",
+   "note": "FAQ \"What is the cheapest way to get solar power in California?\"",
+   "csv_url": "/blog/cheap-solar-energy-solutions"
+  },
+  {
+   "rank": 69,
+   "cluster": 2147,
+   "primary_kw": "smart home solar california",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Installer brand (Smart Home Solar).",
+   "csv_url": "/blog/smart-home-solar-california"
+  },
+  {
+   "rank": 70,
+   "cluster": 2022,
+   "primary_kw": "rc solar",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Installer brand (RC Solar / My RC Home).",
+   "csv_url": "/blog/rc-solar"
+  },
+  {
+   "rank": 71,
+   "cluster": 2026,
+   "primary_kw": "free tesla powerwall california",
+   "decision": "faq_on_host",
+   "work_url": "/battery/tesla-powerwall-3-cost-california",
+   "status": "done",
+   "answered_on": "/battery/tesla-powerwall-3-cost-california",
+   "note": "Existing FAQ retitled \"Can you get a free Tesla Powerwall in California?\" and extended with PG&E's Residential Storage Initiative.",
+   "csv_url": "/battery/tesla-powerwall-alternatives"
+  },
+  {
+   "rank": 72,
+   "cluster": 2030,
+   "primary_kw": "altsys solar",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Small installer brand (AltSys Solar, Tulare).",
+   "csv_url": "/blog/altsys-solar"
+  },
+  {
+   "rank": 73,
+   "cluster": 2254,
+   "primary_kw": "sce tou-d-4-9 baseline credit basic charge",
+   "decision": "faq_on_host",
+   "work_url": "/blog/california-solar-tax-credit-2026",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "SCE rate-plan question (TOU-D-4-9PM baseline credit and basic charge), not an incentive; belongs on /blog/sce-time-of-use-rates-2026 or /blog/sce-rate-schedules (rates lane). No SCE tariff fetched.",
+   "csv_url": "/blog/sce-tou-d-4-9-baseline-credit-basic-charge"
+  },
+  {
+   "rank": 74,
+   "cluster": 2134,
+   "primary_kw": "california residenital solar panels",
+   "decision": "faq_on_host",
+   "work_url": "/solar-panels-california",
+   "status": "done",
+   "answered_on": "/solar-panels-california",
+   "note": "Typo of the guide's own head term; covered by the upgraded guide.",
+   "csv_url": "/blog/residenital-solar-panels-california"
+  },
+  {
+   "rank": 75,
+   "cluster": 2423,
+   "primary_kw": "california premier solar construction",
+   "decision": "faq_on_host",
+   "work_url": "/best-solar-companies-california",
+   "status": "skipped",
+   "answered_on": "",
+   "note": "Installer brand (California Premier Solar Construction).",
+   "csv_url": "/blog/premier-solar-construction-california"
+  }
+ ],
+ "row_counts": {
+  "build_page": {
+   "done": 5,
+   "folded": 4,
+   "skipped": 2
+  },
+  "faq_on_host": {
+   "done": 30,
+   "folded": 13,
+   "skipped": 21
+  }
+ },
+ "gates": {
+  "tsc": "clean",
+  "qc-gate.mjs": "PASSED (51 pages)",
+  "qc-gate-tsx": "new pages 0 fail / 0 warn; FAILs on component-wrapper routes (tax-credit, free-solar, ppa hub, commercial-solar) are pre-existing and unchanged",
+  "assert:citylinks": "ok",
+  "assert:linkspine": "ok"
+ }
+}

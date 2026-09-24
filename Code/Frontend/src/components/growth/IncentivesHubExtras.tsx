@@ -35,6 +35,9 @@ export const INC = {
   cecSfa: 'https://www.energy.ca.gov/programs-and-topics/programs/solar-all-program',
   cpucGuide:
     'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide',
+  // 2026-09-23 Tier 3 (agent misc): sources for the added FAQ entries.
+  sceCareFera: 'https://www.sce.com/save-money/income-qualified-programs/care-fera',
+  cpucLowIncome: 'https://www.cpuc.ca.gov/solarguide/lowincomesolar',
 } as const;
 
 export const incentivesHubExtraSources = [
@@ -48,6 +51,8 @@ export const incentivesHubExtraSources = [
   { label: 'U.S. Code: 26 U.S.C. § 48E, clean electricity investment credit (business credit)', url: INC.us48e },
   { label: 'California Energy Commission: Solar for All Program (status and August 2025 statement)', url: INC.cecSfa },
   { label: 'CPUC: California Solar Consumer Protection Guide', url: INC.cpucGuide },
+  { label: 'SCE: CARE and FERA discounts and income limits (June 1, 2026 to May 31, 2027)', url: INC.sceCareFera },
+  { label: 'CPUC: Low Income Solar Programs (DAC-SASH, DAC-GT, CSGT, farmworker housing)', url: INC.cpucLowIncome },
 ];
 
 /** The direct answer for the hub's head questions, placed first in the body. */
@@ -120,7 +125,7 @@ const rows: [string, string, string, string][] = [
   [
     'SGIP (Self-Generation Incentive Program)',
     'Battery storage incentives, by budget category',
-    'Most residential categories closed on September 23, 2026; the low-income AB 209 equity budget was waitlisted at most administrators, with one AB 209 sub-category open under PG&E and SCE',
+    'Most residential categories closed on September 23, 2026; the low-income AB 209 equity budget was waitlisted, except its sub-category for customers of publicly owned utilities under PG&E and SCE, which was open',
     'CPUC; SGIP tracker',
   ],
   [
@@ -253,6 +258,7 @@ const groups: { heading: string; links: { href: string; label: string; note: str
       { href: '/blog/low-income-solar-california', label: 'Low-income solar application paths', note: 'Bill help and rooftop programs, separately.' },
       { href: '/blog/free-solar-for-seniors-california', label: 'Solar programs for seniors', note: 'What age does and does not change.' },
       { href: '/blog/solar-for-renters', label: 'Solar options for renters', note: 'Bill discounts without a roof.' },
+      { href: '/blog/solar-discount', label: 'Solar discount programs by utility and CCA', note: '20% off the bill, no panels: who runs yours.' },
       { href: '/blog/free-roof-replacement-with-solar-panels-california', label: 'Roof replacement bundled with solar', note: 'Where a “free roof” sits in the price.' },
     ],
   },
@@ -363,6 +369,29 @@ const faqs: FaqJsonLdItem[] = [
     question: 'Is there a Solar for All program in California?',
     answer:
       'Not one a household can apply to. The California Energy Commission says the California Solar for All program is in the planning stage. In August 2025 the CPUC, the Energy Commission and the Labor and Workforce Development Agency called the EPA’s termination of Solar for All funding unlawful and asked the EPA to reverse it. The Energy Commission’s page gives no date for households to apply.',
+  },
+  // 2026-09-23 Tier 3 (agent misc): the remaining small incentive questions
+  // assigned to this hub. Sources fetched 2026-09-23: FTB, IRS, SCE, SDG&E and
+  // the CPUC's solar-in-disadvantaged-communities and low-income solar pages.
+  {
+    question: 'What is the solar investment tax credit (ITC) in California?',
+    answer:
+      'ITC is the usual name for the federal solar tax credit; California has no state version, and the Franchise Tax Board lists no solar credit. For homeowners, the federal credit is the Residential Clean Energy Credit, which paid 30% for systems installed from 2022 through 2025 and is not available for property placed in service after December 31, 2025. For businesses, the investment credit now runs under 26 U.S.C. § 48E, with the cutoff described in the business-incentives answer above. A lease or PPA provider may claim a business credit on equipment it owns; that is not a credit you can claim.',
+  },
+  {
+    question: 'How much is the SCE CARE discount?',
+    answer:
+      'SCE says qualifying CARE households receive 32.5% off their electric bills, and FERA households an 18% discount. CARE customers pay a Base Services Charge of about $6 a month and FERA customers about $12. For June 1, 2026 to May 31, 2027, the CARE income limit is $43,280 for a household of one or two, $54,640 for three and $66,000 for four; FERA covers incomes above those limits up to $54,100, $68,300 and $82,500. Apply online or at 1-800-798-5723.',
+  },
+  {
+    question: 'Does SDG&E have a solar program?',
+    answer:
+      'SDG&E does not pay a rebate on solar panels itself. Its considering-solar page lists SGIP battery incentives, DAC-SASH for income-qualified homeowners in disadvantaged communities, and the San Diego Solar Equity Program, which helps income-qualifying single-family homeowners in the City of San Diego with the cost of panels. The same page still mentions a 30% federal tax credit, which the IRS says is not available for systems placed in service after 2025. New SDG&E solar customers are on the CPUC’s Net Billing Tariff.',
+  },
+  {
+    question: 'How do I qualify for no-cost solar in California?',
+    answer:
+      'Through DAC-SASH, which GRID Alternatives runs for the CPUC and which was accepting applications on September 23, 2026. You must own a single-family home, be income-qualified (eligible for CARE or FERA), and live in a disadvantaged community, which the CPUC defines as a census tract in the top 25% statewide on CalEnviroScreen. Income-qualified renters, and owners whose roof cannot take solar, in those same communities may qualify for a 20% solar bill discount instead, and eligible farmworker households in 18 counties have a separate no-cost program.',
   },
 ];
 

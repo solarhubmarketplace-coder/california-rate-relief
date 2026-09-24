@@ -36,6 +36,11 @@ const LBNL_TPO = 'https://www.osti.gov/servlets/purl/1342946';
 const DG_STATS = 'https://www.californiadgstats.ca.gov/charts/nem/';
 const US_48E =
   'https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A48E+edition%3Aprelim%29';
+// 2026-09-23 Tier 3 (claude/t3-misc-20260923): sources for the three FAQ
+// entries added below (buy or lease, cancelling a lease, PG&E on-bill loans).
+const PGE_SOLAR_FINANCING =
+  'https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/financing-options-for-solar.html';
+const IRS_25D = 'https://www.irs.gov/credits-deductions/residential-clean-energy-credit';
 
 /** Sources the added sections cite, appended to the hub's own list. */
 export const financingHubExtraSources: Source[] = [
@@ -65,6 +70,14 @@ export const financingHubExtraSources: Source[] = [
   {
     label: 'U.S. Code: 26 U.S.C. § 48E(i), denial of credit for solar leasing arrangements',
     url: US_48E,
+  },
+  {
+    label: 'PG&E: financing options for solar (checked September 23, 2026)',
+    url: PGE_SOLAR_FINANCING,
+  },
+  {
+    label: 'IRS: Residential Clean Energy Credit (checked September 23, 2026)',
+    url: IRS_25D,
   },
 ];
 
@@ -98,6 +111,21 @@ const faqs: FaqJsonLdItem[] = [
     question: 'Can you buy out a solar PPA or lease?',
     answer:
       'Usually, on the contract’s terms. The CPUC says that if you sell before the contract ends you will have to pay the provider the remainder of its value or transfer it to the buyer, and that buying out a lease or PPA can cost thousands of dollars. Ask for the buyout price or formula for every year in writing before you sign.',
+  },
+  {
+    question: 'Is it better to buy or lease solar panels in California?',
+    answer:
+      'It depends on what you want to carry. Buying, with cash or a loan, means you own the system and its output, keep it if you sell, and pay for repairs once the warranties run out. A lease or PPA costs little or nothing up front and moves repairs to the provider, but you sign a long contract, often with a yearly escalator, that a buyer has to take over or you have to pay off. Two things no longer tilt the choice: the IRS says the homeowner credit is not available for property placed in service after December 31, 2025, and the property tax exclusion treats leased and owned systems the same. Compare both on the same system, usage and rate plan.',
+  },
+  {
+    question: 'Can you cancel a solar lease in California?',
+    answer:
+      'Only inside the cancellation window: at least three business days after you receive a signed, dated copy, or five if you are 65 or older, according to the CPUC’s consumer guide. After installation, a lease or PPA usually ends by transferring it to a home buyer, paying the provider the remaining value, buying the system at a time the contract allows, or reaching the end of the term. Stopping payments does not end it. Read the early-termination and purchase-option sections of your agreement first.',
+  },
+  {
+    question: 'Does PG&E offer on-bill financing for home solar?',
+    answer:
+      'Not on its solar financing page, which names buying, leasing and power purchase agreements as the most popular ways to pay and lists no PG&E loan for rooftop solar. If a salesperson says the payment will be “on your PG&E bill,” ask for the lender’s legal name and the loan agreement in writing. PACE financing is paid through the property tax bill, not the PG&E bill.',
   },
   {
     question: 'Can you lease solar panels in California?',
@@ -378,6 +406,18 @@ export function FinancingHubExtras() {
           .
         </p>
       </section>
+
+      <p className="mt-10">
+        Already in a lease or PPA and want out? Read{' '}
+        <Link className={link} href="/solar-problems/solar-cancellation-california">
+          how to get out of a solar contract in California
+        </Link>
+        . Still deciding whether to own? The{' '}
+        <Link className={link} href="/blog/is-it-better-to-buy-or-lease-solar-panels-california">
+          buy-or-lease guide
+        </Link>{' '}
+        works through the same choice with more detail.
+      </p>
 
       <FaqBlock items={faqs} id="financing-faq" heading="Lease, PPA and loan questions" />
     </>

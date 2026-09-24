@@ -2,6 +2,29 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArticleHub } from '@/components/shared/ArticleRoute';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { FaqBlock } from '@/components/trust/FaqBlock';
+import type { FaqJsonLdItem } from '@/components/shared/FaqJsonLd';
+
+// 2026-09-23 Tier 3 (claude/t3-misc-20260923): PG&E's rebate count updated to
+// the figure on its page when read on 2026-09-23 (179 as of 09/18/2026), and a
+// short FAQ added for two small questions this hub now answers: PG&E's
+// no-charge battery programs and California's statewide storage total. Sources
+// fetched 2026-09-23: PG&E (Residential Storage Initiative, Reliability Battery
+// Initiative, Permanent Battery Storage Rebate) and the California Energy
+// Commission's August 7, 2026 release. FaqBlock emits the FAQPage schema from
+// the same strings.
+const hubFaqs: FaqJsonLdItem[] = [
+  {
+    question: 'Does PG&E have a free home battery program?',
+    answer:
+      'For a narrow group, yes. PG&E’s Residential Storage Initiative says it provides permanent backup batteries “free of charge,” typically 10 to 13 kWh, to customers who have had five or more Enhanced Powerline Safety Settings outages since January 1, 2024, are served by an affected circuit, and are enrolled in CARE, FERA, Medical Baseline or the Self-Identified Vulnerable program. PG&E contacts eligible customers by letter or email, and on September 23, 2026 its page said batteries were almost gone for 2026. Its Reliability Battery Initiative, for circuits with worse-than-average reliability, said it was full for 2026. Everyone else pays for the battery; the $7,500 Permanent Battery Storage Rebate is the main PG&E offset, for accounts with five or more Wildfire Safety outages since January 1, 2024.',
+  },
+  {
+    question: 'How much battery storage does California have now?',
+    answer:
+      'The California Energy Commission counted 21,112 megawatts of battery storage serving the state’s grid on August 7, 2026, up from less than 700 megawatts in 2019. Nearly 16,000 megawatts are utility-scale systems in California, about 2,000 megawatts are in Nevada and Arizona serving California’s grid, and about 3,000 megawatts come from more than 300,000 smaller batteries at homes, schools, farms and businesses.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Home Battery Storage in California: Sizing, Cost, SGIP',
@@ -81,7 +104,7 @@ export default function Page() {
             <h2 id="battery-rebates" className="text-xl font-bold text-foreground">Battery rebates that still exist in 2026</h2>
             <p className="mt-3 text-sm leading-relaxed text-foreground/80">The federal residential clean energy credit does not apply to a battery whose installation is completed after December 31, 2025 (<a href="https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb" target="_blank" rel="noopener external" className="text-primary underline">IRS</a>, checked 2026-09-23). What is left is narrower:</p>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/80">
-              <li><strong>PG&amp;E&apos;s $7,500 rebate</strong> for first-time battery owners whose accounts have had five or more Wildfire Safety outages since January 1, 2024; PG&amp;E listed 200 rebates left on September 14, 2026 (<a href="https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html" target="_blank" rel="noopener external" className="text-primary underline">PG&amp;E</a>). Every condition, and the deadline: <Link href="/battery/pge-permanent-battery-storage-rebate" className="text-primary underline">the Permanent Battery Storage Rebate, explained</Link>.</li>
+              <li><strong>PG&amp;E&apos;s $7,500 rebate</strong> for first-time battery owners whose accounts have had five or more Wildfire Safety outages since January 1, 2024; PG&amp;E&apos;s page said 179 rebates remained as of September 18, 2026 when we read it on September 23 (<a href="https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html" target="_blank" rel="noopener external" className="text-primary underline">PG&amp;E</a>). Every condition, what it covers against a <Link href="/battery/tesla-powerwall-3-cost-california" className="text-primary underline">Powerwall 3&apos;s installed cost</Link>, and the deadline: <Link href="/battery/pge-permanent-battery-storage-rebate" className="text-primary underline">the Permanent Battery Storage Rebate, explained</Link>.</li>
               <li><strong>Everything else a PG&amp;E customer can use</strong>, from no-charge batteries for some CARE and Medical Baseline households to grid-event payments: <Link href="/battery/pge-solar-battery-rebate" className="text-primary underline">PG&amp;E solar battery incentives in one table</Link>.</li>
               <li><strong>SGIP&apos;s income-qualified equity budget</strong>, mostly waitlisted, covered in the SGIP section above and on the <Link href="/battery/sgip-battery-rebate-california" className="text-primary underline">SGIP status page</Link>. For solar incentives beyond storage, see the <Link href="/blog/california-solar-tax-credit-2026" className="text-primary underline">California solar incentives overview</Link>.</li>
             </ul>
@@ -115,6 +138,7 @@ export default function Page() {
       }
       after={
         <>
+          <FaqBlock items={hubFaqs} id="battery-faq" heading="Home battery questions" />
           <HubSpokeLinks hub="battery" currentPath="/battery" title="More battery and backup guides" />
           <HubSpokeLinks hub="nem" currentPath="/battery" title="NEM 3.0 and solar billing, where battery savings come from" />
         </>

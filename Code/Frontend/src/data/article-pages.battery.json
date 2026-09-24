@@ -605,7 +605,7 @@
     "metaTitle": "How Many Home Batteries Do You Need?",
     "metaDescription": "Most California homes need one battery, not two. Size by your evening kWh, not a sales chart. Updated for the 2025 credit end and SGIP's 2026 closure.",
     "h1": "How Many Batteries Do You Actually Need in California?",
-    "intro": "Most California homes that get quoted a two-battery system only need one. That is the blunt version, and it matters more this year than last. The federal residential Clean Energy Credit (25D) stopped covering any property placed in service after December 31, 2025 — battery storage included — per the IRS, whose credits-and-deductions page (last updated July 4, 2026) states the cutoff in plain language. The state rebate that used to backstop battery costs, SGIP, has also gone dark for new applicants: as of September 5, 2026, the program's own step tracker at selfgenca.com lists the general-market storage step and the wildfire/medical-baseline equity resiliency step both as closed to new reservations in every investor-owned utility territory. Closed does not mean zero dollars left on the books — the same tracker still shows residual, unspent funds in each step — but it does mean the step is no longer accepting new applications, so a homeowner signing a contract today cannot count on that money.\n\nThat means every kilowatt-hour of battery capacity you buy this year gets no 30 percent tax credit and no open rebate step behind it. You are paying full retail for whatever size a contractor writes on the proposal, so getting the size right is worth real money, not just peace of mind.\n\nSizing a home battery is not a guess. It is arithmetic: how many kWh you draw in the evening peak, how many circuits need to survive an outage, and which utility you are on. This page walks through that math and tells you plainly when a second unit earns its cost — and when it is an upsell you do not need.",
+    "intro": "Most California homes that get quoted a two-battery system only need one. That is the blunt version, and it matters more this year than last. The federal residential Clean Energy Credit (25D) stopped covering any property placed in service after December 31, 2025 — battery storage included — per the IRS, whose credits-and-deductions page (last updated July 4, 2026) states the cutoff in plain language. The state rebate that used to backstop battery costs, SGIP, has also gone dark for new applicants: on September 23, 2026, the program's own tracker at selfgenca.com listed the general-market Small Residential Storage step and the Equity Resiliency step as closed in every investor-owned utility territory. Closed does not mean zero dollars left on the books — the same tracker still shows residual, unspent funds in each step — but it does mean the step is no longer accepting new applications, so a homeowner signing a contract today cannot count on that money.\n\nThat means every kilowatt-hour of battery capacity you buy this year gets no 30 percent tax credit and no open rebate step behind it. You are paying full retail for whatever size a contractor writes on the proposal, so getting the size right is worth real money, not just peace of mind.\n\nSizing a home battery is not a guess. It is arithmetic: how many kWh you draw in the evening peak, how many circuits need to survive an outage, and which utility you are on. This page walks through that math and tells you plainly when a second unit earns its cost — and when it is an upsell you do not need.",
     "keyStats": [
       {
         "label": "Federal credit for batteries",
@@ -615,7 +615,7 @@
       {
         "label": "SGIP general-market rebate",
         "value": "Closed to new applicants",
-        "note": "Small Residential Storage and Equity Resiliency show closed for PG&E, SCE, SoCalGas and CSE (selfgenca.com, as of September 22, 2026)"
+        "note": "Small Residential Storage and Equity Resiliency show closed for PG&E, SCE, SoCalGas and CSE (selfgenca.com, September 23, 2026)"
       },
       {
         "label": "Largest single-unit usable capacity",
@@ -659,7 +659,7 @@
       },
       {
         "heading": "Why the Incentive Collapse Changes the Sizing Conversation",
-        "body": "Two years ago, a homeowner who bought a slightly oversized battery had a 30 percent federal credit and, in many cases, an SGIP rebate softening the mistake. Neither exists now in the same form. The 25D credit does not apply to expenditures after December 31, 2025. SGIP's general-market storage category and its Equity Resiliency category — historically the safety-net bucket for wildfire and medical-baseline customers — both show closed on the program's tracker as of September 22, 2026.\n\nThat combination removes most of the financial cushion that used to make \"buy a little extra capacity, just in case\" a low-stakes decision. With no federal credit and no open rebate step to apply to, nearly every additional kWh above what your bill math actually supports is now a dollar-for-dollar cost with no offset. If a proposal recommends two batteries, ask the installer to show you, using your own peak-window usage, why one is not enough — not why two is safer."
+        "body": "Two years ago, a homeowner who bought a slightly oversized battery had a 30 percent federal credit and, in many cases, an SGIP rebate softening the mistake. Neither exists now in the same form. The 25D credit does not apply to expenditures after December 31, 2025. SGIP's general-market storage category and its Equity Resiliency category — historically the safety-net bucket for wildfire and medical-baseline customers — both showed closed on the program's tracker on September 23, 2026.\n\nThat combination removes most of the financial cushion that used to make \"buy a little extra capacity, just in case\" a low-stakes decision. With no federal credit and no open rebate step to apply to, nearly every additional kWh above what your bill math actually supports is now a dollar-for-dollar cost with no offset. If a proposal recommends two batteries, ask the installer to show you, using your own peak-window usage, why one is not enough — not why two is safer."
       },
       {
         "heading": "When Two Batteries Actually Make Sense",
@@ -670,8 +670,16 @@
         "body": "If you are served by PG&E, SCE, or SDG&E, you are on the CPUC's Net Billing Tariff (NEM 3.0), where the CPUC says export credits are usually lower than the retail rate and vary by hour and season. The CPUC Public Advocates Office put residential average rates at 33.7 cents per kWh at PG&E, 34.4 cents at SCE and 45.5 cents at SDG&E as of June 2026. All three move with each utility's rate cases, so treat these as a snapshot, not a fixed number. That gap is the reason batteries matter now: exporting excess solar for a low credit and then buying power back at the evening price makes storing it yourself the better trade, once the math works for your usage pattern. Check your own utility's current published export-credit table and rate schedule before assuming a number.\n\nIf you are served by a municipally owned utility instead — LADWP, SMUD, MID, or similar publicly owned utilities like Anaheim, Roseville, Lodi, Imperial Irrigation District, or Turlock Irrigation District — none of the NEM 3.0 discussion above applies to you. Publicly owned utilities are not subject to CPUC jurisdiction and set their own net metering and rate terms. SMUD and MID both price power on tiered and time-of-day schedules rather than one flat rate, so pull the current residential rate schedule from each utility's own site (ladwp.com, smud.org, mid.org) rather than relying on a statewide average. The NEM 3.0 urgency driving battery sales in IOU territory does not exist on a muni bill in the same way; get your own utility's actual export and rate terms before accepting a sizing pitch built around NEM 3.0."
       },
       {
+        "heading": "How to Get a Home Battery in California: Four Routes",
+        "body": "There are four ways California homeowners end up with a battery, and the size question looks different in each.\n\nBuy it, with cash or a loan. You own the battery, choose the size, and pay for every kWh. This is where the sizing arithmetic above matters most, because nothing offsets an extra unit. The federal credit is gone for batteries installed after 2025, so compare the cash price first and the loan's total payments second.\n\nAdd it to a lease, PPA or subscription. Some solar providers offer a battery inside a third-party-owned contract. The provider owns the equipment and picks the hardware, so you are choosing a monthly payment and a contract length, not a kWh number. Read how the contract handles backup reserve and grid events before you sign.\n\nAdd it to solar you already own. Most retrofits connect on the AC side of the existing inverter. If you are still on NEM 2.0, ask the installer in writing whether the addition changes your tariff; our guide to adding a Powerwall to existing solar covers the rules.\n\nQualify for a utility program. PG&E's Residential Storage Initiative installs a battery, typically 10 to 13 kWh, at no charge for customers who have had five or more Enhanced Powerline Safety Settings outages since January 1, 2024, are served by an affected circuit, and are enrolled in CARE, FERA, Medical Baseline or the Self-Identified Vulnerable program. PG&E contacts eligible customers by letter or email, and on September 23, 2026 its page said batteries were almost gone for 2026. PG&E's Reliability Battery Initiative said it was full for 2026. In these programs the utility sets the size, so the question on this page does not arise."
+      },
+      {
+        "heading": "Which Home Battery Is Best for a California Home?",
+        "body": "No single battery is best for every California home, and this site does not rank brands. The right one is the one whose numbers fit your loads and whose installer will still be there to service it. Compare quotes on the same five points.\n\nUsable capacity per unit decides how many units your evening kWh needs. Continuous power output decides what can run at once: a central air conditioner or a well pump needs more kW than lights and a refrigerator, and an undersized inverter trips even when the battery is full. The stacking limit decides whether you can add a unit later without replacing the controller. The warranty should name both years and an energy-throughput or cycle limit, and it should come from the manufacturer, not only the installer.\n\nThe fifth point is where it can go. California's fire code, as San Francisco's fire department applies it, requires home batteries to be listed to UL 9540, limits each unit to 20 kWh, and caps the total at 40 kWh in a utility space inside the home and 80 kWh in an attached garage. A large stacked system may have to go outside or into a detached structure, which changes the install cost. If a rebate is part of the plan, check that the model is on that program's qualified list, as PG&E's $7,500 rebate requires."
+      },
+      {
         "heading": "Hardware and Contractor Risk Before You Sign",
-        "body": "The battery you buy is only as good as the company standing behind the warranty. Freedom Forever filed Chapter 11 in Delaware on April 15, 2026. After creditors rejected a proposed sale of the company to its own CEO, Freedom Forever told the bankruptcy court on July 31, 2026 that it intended to convert to liquidation; the judge signed the order converting the case to Chapter 7 effective August 7, 2026, and appointed a trustee. It is no longer operating as a going concern. Sunnova filed Chapter 11 in June 2025; its assets sold, and its legacy portfolio is now administered by SunStrong rather than the company that originally signed the contract. SunPower filed Chapter 11 in August 2024. None of this means every battery from these companies stopped working — it means the entity contractually obligated to honor a workmanship or performance warranty may no longer exist in the form that signed your paperwork.\n\nBefore signing with any installer, ask directly whether they are still an operating going concern, whether the battery manufacturer's warranty is backed by the manufacturer itself (Tesla, Enphase, and Franklin all warrant their own hardware independent of the installer) rather than a since-liquidated installer's in-house warranty, and who services the equipment if the installer folds. On licensing: California requires a CSLB-licensed contractor, and industry practice treats battery storage installation as falling under either a C-10 Electrical or C-46 Solar contractor's license — there is no separate battery-specific classification. Confirm the specific license number and classification directly with CSLB (cslb.ca.gov, 1-800-321-2752) before signing, rather than taking a salesperson's word for it."
+        "body": "The battery you buy is only as good as the company standing behind the warranty. Freedom Forever filed Chapter 11 in the U.S. Bankruptcy Court for the District of Delaware on April 15, 2026 (case 26-10522). It moved to convert the case to a Chapter 7 liquidation on August 3, 2026, and the judge signed the order converting it on August 7, 2026. Sunnova Energy International filed Chapter 11 in the Southern District of Texas on June 8, 2025, and SunPower filed Chapter 11 in Delaware on August 5, 2024. None of this means every battery from these companies stopped working — it means the entity contractually obligated to honor a workmanship or performance warranty may no longer exist in the form that signed your paperwork.\n\nBefore signing with any installer, ask directly whether they are still an operating going concern, whether the battery manufacturer's warranty is backed by the manufacturer itself (Tesla, Enphase, and Franklin all warrant their own hardware independent of the installer) rather than a since-liquidated installer's in-house warranty, and who services the equipment if the installer folds. On licensing: California requires a CSLB-licensed contractor. CSLB's C-10 Electrical classification covers anything that generates, transmits, transforms or uses electrical energy, and its C-46 Solar classification covers photovoltaic systems; neither definition mentions batteries by name, and there is no battery-specific classification. Confirm the specific license number and classification directly with CSLB (cslb.ca.gov, 1-800-321-2752) before signing, rather than taking a salesperson's word for it."
       }
     ],
     "dataTable": {
@@ -729,7 +737,7 @@
       },
       {
         "question": "Is there any rebate left for home batteries in California as of September 2026?",
-        "answer": "As of September 22, 2026, the Self-Generation Incentive Program's tracker at selfgenca.com shows the general-market Small Residential Storage category and the Equity Resiliency category (the wildfire and medical-baseline safety net) both closed for PG&E, SCE, SoCalGas and CSE customers. The AB 209 equity category shows a waitlist for CSE, SoCalGas and LADWP. Check the tracker yourself before assuming either way, and do not plan your battery budget around a rebate that is not confirmed open on the day you sign."
+        "answer": "On September 23, 2026, the Self-Generation Incentive Program's tracker at selfgenca.com shows the general-market Small Residential Storage category and the Equity Resiliency category (the wildfire and medical-baseline safety net) both closed for PG&E, SCE, SoCalGas and CSE customers. The income-qualified AB 209 equity category showed a waitlist for CSE, SoCalGas and LADWP, and for PG&E and SCE customers other than those of publicly owned utilities. Check the tracker yourself before assuming either way, and do not plan your battery budget around a rebate that is not confirmed open on the day you sign."
       },
       {
         "question": "Does the battery still qualify for a federal tax credit if I add it to existing solar?",
@@ -745,11 +753,11 @@
       },
       {
         "question": "What happened to Freedom Forever, and does it affect my existing battery?",
-        "answer": "Freedom Forever filed for Chapter 11 bankruptcy in Delaware on April 15, 2026. After a proposed sale of the company to its own CEO fell through, the case converted to Chapter 7 liquidation effective August 7, 2026 (the company told the court of its intent to convert on July 31), meaning it is no longer operating and is winding down rather than reorganizing. The battery hardware itself, if made by a third party like Tesla or Enphase, typically carries its own manufacturer warranty independent of the installer — check your specific warranty documents to see whose name is actually on the guarantee."
+        "answer": "Freedom Forever filed for Chapter 11 bankruptcy in Delaware on April 15, 2026. It asked the court to convert the case to a Chapter 7 liquidation on August 3, 2026, and the judge signed the conversion order on August 7, 2026, so the company is being wound down rather than reorganized. The battery hardware itself, if made by a third party like Tesla or Enphase, typically carries its own manufacturer warranty independent of the installer. Check your warranty documents to see whose name is on the guarantee."
       },
       {
         "question": "What license should my battery installer have?",
-        "answer": "California requires a CSLB-licensed contractor, and industry practice treats battery storage installation as falling under a C-10 Electrical or a C-46 Solar contractor's license, with no separate standalone classification specifically for batteries. Ask for the contractor's license number and confirm its classification and standing directly through CSLB (cslb.ca.gov or 1-800-321-2752) before signing anything, rather than relying on a verbal claim."
+        "answer": "A CSLB-licensed contractor. CSLB's C-10 Electrical classification covers electrical work of any kind, and its C-46 Solar classification covers photovoltaic systems; neither definition names batteries, and there is no separate battery classification. Ask for the contractor's license number and confirm its classification and standing with CSLB (cslb.ca.gov or 1-800-321-2752) before signing anything, rather than relying on a verbal claim."
       },
       {
         "question": "How long will a solar battery last at night, or power my house?",
@@ -766,9 +774,21 @@
       {
         "question": "How many solar panels and batteries do I need together?",
         "answer": "This page answers the battery side. For panel count and system-kW sizing, see our guide on how big a solar system you need in California."
+      },
+      {
+        "question": "How can I get a home battery in California?",
+        "answer": "Buy one outright or with a loan, add one to a solar lease, PPA or subscription, or add one to solar you already own. A small group of PG&E customers can get one through its Residential Storage Initiative, which PG&E says installs a battery at no charge for customers with five or more Enhanced Powerline Safety Settings outages since January 1, 2024 who are enrolled in CARE, FERA, Medical Baseline or the Self-Identified Vulnerable program. Rebates that were open on September 23, 2026 include PG&E's $7,500 Permanent Battery Storage Rebate for accounts with five or more Wildfire Safety outages, SMUD's battery incentive and some community choice aggregator programs."
+      },
+      {
+        "question": "What is the best home battery for California?",
+        "answer": "The one whose usable kWh covers your evening use, whose continuous kW covers the loads you want running in an outage, and whose warranty comes from a manufacturer that stands behind it. Compare quotes on those numbers rather than on a brand. Check the unit is listed to UL 9540 and, if you are counting on a rebate, that it is on the program's qualified product list."
+      },
+      {
+        "question": "Where can a home battery be installed?",
+        "answer": "Under the 2022 California Fire Code as San Francisco's fire department applies it, each unit can be at most 20 kWh, the total inside a home's utility space is capped at 40 kWh, and an attached garage at 80 kWh. Larger systems go outside or in a detached structure. Your city or county building department applies its own adopted code, so the permit review is the final word."
       }
     ],
-    "bottomLine": "Size to your evening peak first, not to a sales rep's chart. Pull your last 12 months of bills, find your 4-9pm usage, and for load-shifting or partial backup you will often land on a single battery — a Tesla Powerwall 3, an Enphase 5P bank, or one FranklinWH aPower, depending on brand. Two units only earn their keep when you are running an all-electric home with a heat pump and EV charging, backing up a well pump, or genuinely need whole-home HVAC coverage through a multi-day outage. As of September 22, 2026, there is no federal credit and no open general-market SGIP category to cushion an oversized system, so every extra kWh is effectively full retail cost with no subsidy behind it. Get your utility's export-credit table before you assume solar will offset the bill, confirm your installer's parent company is actually still operating given the wave of 2025-2026 bankruptcies, and treat \"you need two for whole-home backup\" as a claim to verify against your own circuit list, not a default to accept.",
+    "bottomLine": "Size to your evening peak first, not to a sales rep's chart. Pull your last 12 months of bills, find your 4-9pm usage, and for load-shifting or partial backup you will often land on a single battery — a Tesla Powerwall 3, an Enphase 5P bank, or one FranklinWH aPower, depending on brand. Two units only earn their keep when you are running an all-electric home with a heat pump and EV charging, backing up a well pump, or genuinely need whole-home HVAC coverage through a multi-day outage. As of September 23, 2026, there is no federal credit and no open general-market SGIP category to cushion an oversized system, so every extra kWh is effectively full retail cost with no subsidy behind it. Get your utility's export-credit table before you assume solar will offset the bill, confirm your installer's parent company is actually still operating given the wave of 2025-2026 bankruptcies, and treat \"you need two for whole-home backup\" as a claim to verify against your own circuit list, not a default to accept.",
     "sources": [
       {
         "name": "IRS — Residential Clean Energy Credit (25D)",
@@ -778,42 +798,7 @@
       {
         "name": "Self-Generation Incentive Program — Program Metrics (selfgenca.com)",
         "url": "https://www.selfgenca.com/home/program_metrics/",
-        "supports": "Residential storage category status as of September 22, 2026: Small Residential Storage closed at Step 7 ($0.15/Wh) for CSE, SCE, SoCalGas and PG&E; ratepayer Residential Solar and Storage Equity ($1.10/Wh) and Equity Resiliency ($1.00/Wh) closed; AB 209 Residential Solar and Storage Equity ($1.10/Wh) waitlisted for CSE, SoCalGas and LADWP"
-      },
-      {
-        "name": "U.S. EIA — California electricity profile",
-        "url": "https://www.eia.gov/electricity/state/california/",
-        "supports": "Context on blended statewide retail electricity price; not used for residential-specific rate claims"
-      },
-      {
-        "name": "CPUC — Net Billing Tariff (NEM 3.0) overview",
-        "url": "https://www.cpuc.ca.gov/",
-        "supports": "Confirms structure of time-and-season-varying export credits for PG&E, SCE, SDG&E under the Net Billing Tariff"
-      },
-      {
-        "name": "CSLB — Contractor License Classifications",
-        "url": "https://www.cslb.ca.gov/",
-        "supports": "C-10 Electrical and C-46 Solar classification categories referenced for battery installation licensing"
-      },
-      {
-        "name": "Solar Power World — Freedom Forever files bankruptcy (April 2026)",
-        "url": "https://www.solarpowerworldonline.com/2026/04/residential-solar-installer-freedom-forever-files-bankruptcy/",
-        "supports": "Confirms Freedom Forever filed Chapter 11 in Delaware on April 15, 2026"
-      },
-      {
-        "name": "Law360 Bankruptcy Authority — Freedom Forever Ch. 7 Shift OK'd With Reporting Terms",
-        "url": "https://www.law360.com/bankruptcy-authority/large-cap/articles/2510754/freedom-forever-ch-7-shift-ok-d-with-reporting-terms",
-        "supports": "Confirms court approved conversion of Freedom Forever's Chapter 11 case to Chapter 7, effective August 7, 2026, after a July 31, 2026 notice of intent to convert"
-      },
-      {
-        "name": "SCE — Rates Advisory, January 1, 2026",
-        "url": "https://www.sce.com/save-money/rates-financing/sce-rate-advisory/20260101",
-        "supports": "Confirms SCE's new average residential rate of 34.5 cents/kWh (33.2 cents with Climate Credit) effective 1/1/2026"
-      },
-      {
-        "name": "PG&E Newsroom — Electric bills down from last year, expected to drop again",
-        "url": "https://www.pge.com/en/newsroom/currents/energy-savings/pg-e-electric-bills-down-from-last-year--expected-to-drop-again-.html",
-        "supports": "Confirms PG&E residential rate decreases through 2026, supporting the corrected ~39-40 cent figure over the earlier ~41.5 cent figure"
+        "supports": "Residential storage category status on September 23, 2026: Small Residential Storage, ratepayer Residential Solar and Storage Equity and Equity Resiliency closed at CSE, SCE, SoCalGas and PG&E; AB 209 Residential Solar and Storage Equity waitlisted at CSE, SoCalGas and LADWP; AB 209 POU sub-category open and non-POU sub-category waitlisted at PG&E and SCE"
       },
       {
         "name": "SMUD — Rate Information",
@@ -854,9 +839,54 @@
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
         "supports": "Net Billing Tariff since April 15, 2023; export credits usually lower than the retail rate but can rise above it on late summer evenings; nine-year guarantee; early-adopter export adder for residential PG&E and SCE customers applying before the end of 2027; approved rates E-ELEC (PG&E), TOU-D-PRIME (SCE), EV-TOU-5 (SDG&E)"
+      },
+      {
+        "name": "CourtListener: In re Freedom Forever LLC, Bankr. D. Del. No. 26-10522",
+        "url": "https://www.courtlistener.com/docket/73192534/freedom-forever-llc/",
+        "supports": "Chapter 11 petition filed April 15, 2026; motion to convert to Chapter 7 filed August 3, 2026; conversion order signed August 7, 2026"
+      },
+      {
+        "name": "CourtListener: In re Sunnova Energy International Inc., Bankr. S.D. Tex. No. 25-90160",
+        "url": "https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/",
+        "supports": "Chapter 11 filed June 8, 2025"
+      },
+      {
+        "name": "CourtListener: In re SunPower Corporation, Bankr. D. Del. No. 24-11649",
+        "url": "https://www.courtlistener.com/docket/69017070/sunpower-corporation/",
+        "supports": "Chapter 11 filed August 5, 2024"
+      },
+      {
+        "name": "CSLB: C-10 Electrical Contractor classification",
+        "url": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+        "supports": "C-10 definition (checked 2026-09-23)"
+      },
+      {
+        "name": "CSLB: C-46 Solar Contractor classification",
+        "url": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+        "supports": "C-46 definition (checked 2026-09-23)"
+      },
+      {
+        "name": "PG&E: Residential Storage Initiative",
+        "url": "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+        "supports": "No-charge battery (typically 10 to 13 kWh), eligibility, letter or email contact, 'almost gone for 2026' status (checked 2026-09-23)"
+      },
+      {
+        "name": "PG&E: Reliability Battery Initiative",
+        "url": "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/reliability-battery-initiative.html",
+        "supports": "Full for 2026 and not accepting applications (checked 2026-09-23)"
+      },
+      {
+        "name": "PG&E: Permanent Battery Storage Rebate",
+        "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "supports": "$7,500 rebate, five Wildfire Safety outages since January 1, 2024, Qualified Product List (checked 2026-09-23)"
+      },
+      {
+        "name": "San Francisco Fire Department: 5.12 Energy Storage Systems in R-3 Occupancies",
+        "url": "https://sf-fire.org/512-energy-storage-systems-r-3-occupancies",
+        "supports": "UL 9540 listing; 20 kWh per unit; 40 kWh utility-space and 80 kWh attached-garage aggregate limits under the 2022 California Fire Code (checked 2026-09-23)"
       }
     ],
-    "reviewedAt": "2026-09-22"
+    "reviewedAt": "2026-09-23"
   },
   {
     "slug": "powerwall-vs-enphase-vs-franklinwh",
@@ -1531,8 +1561,8 @@
         "answer": "Start from your itemized installed quote and subtract only rebates you have confirmed in writing. On LBNL's benchmark of about $10,100 to $13,500 for one Powerwall 3, a PG&E customer who qualifies for the $7,500 Permanent Battery Storage Rebate would pay roughly $2,600 to $6,000 before any panel upgrade. Most households outside PG&E's outage test and the income-limited programs will get far less, or nothing."
       },
       {
-        "question": "Is there a program that pays for most or all of a Powerwall?",
-        "answer": "Not for most households in 2026. The SGIP equity categories that used to cover much of a battery's cost pay $1.10 per Wh, about $14,850 for 13.5 kWh, but they are limited by income and other rules. As of September 23, 2026 the AB 209 equity budgets were waitlisted for CSE, SoCalGas and LADWP and in the PG&E and SCE non-POU budgets, and open in the PG&E and SCE POU budgets. Confirm eligibility with the administrator. Be wary of any offer that calls a battery costless; read who owns it and what you pay over the term."
+        "question": "Can you get a free Tesla Powerwall in California?",
+        "answer": "Not from Tesla, and not for most households in 2026. The SGIP equity categories that used to cover much of a battery's cost pay $1.10 per Wh, about $14,850 for 13.5 kWh, but they are limited by income and other rules. As of September 23, 2026 the AB 209 equity budgets were waitlisted for CSE, SoCalGas and LADWP and in the PG&E and SCE non-POU budgets, and open in the PG&E and SCE POU budgets. PG&E's Residential Storage Initiative installs a battery at no charge, typically 10 to 13 kWh, for customers with five or more Enhanced Powerline Safety Settings outages since January 1, 2024 who are enrolled in CARE, FERA, Medical Baseline or the Self-Identified Vulnerable program; PG&E contacts eligible customers by letter or email, and its page does not name a battery brand. Be wary of any offer that calls a battery costless; read who owns it and what you pay over the term."
       },
       {
         "question": "Does Powerwall 3 qualify for the federal tax credit in 2026?",
@@ -1677,6 +1707,11 @@
         "name": "CourtListener — In re SunPower Corporation, Bankr. D. Del. No. 24-11649",
         "url": "https://www.courtlistener.com/docket/69017070/sunpower-corporation/",
         "supports": "Chapter 11 filed August 5, 2024"
+      },
+      {
+        "name": "PG&E: Residential Storage Initiative",
+        "url": "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+        "supports": "No-charge battery for eligible CARE, FERA, Medical Baseline and Self-Identified Vulnerable customers with 5+ EPSS outages since January 1, 2024; typically 10 to 13 kWh (checked 2026-09-23)"
       }
     ],
     "reviewedAt": "2026-09-23"
@@ -1937,7 +1972,7 @@
     "metaTitle": "PG&E Permanent Battery Storage Rebate: $7,500 Rules",
     "metaDescription": "PG&E pays $7,500 toward a permanent home battery if you've had 5+ Wildfire Safety outages since 2024. Who qualifies, the ELRP rule and the 2026 deadline.",
     "h1": "PG&E Permanent Battery Storage Rebate: Who Gets the $7,500",
-    "intro": "PG&E's Permanent Battery Storage Rebate pays $7,500 after you buy and install a qualifying home battery, but only if your account has had five or more Wildfire Safety outages since January 1, 2024. You also have to be a first-time battery customer, be on a time-of-use rate, and enroll the battery in PG&E's Emergency Load Reduction Program through your battery provider.\n\nThe money is limited. PG&E's rebate page showed 200 rebates remaining as of September 14, 2026, on a first-come, first-served basis. You must apply within 12 months of receiving Permission to Operate or by December 31, 2026, whichever comes first.\n\nThis page walks through every condition in PG&E's terms, what the outage test means, which batteries and contracts are excluded, how the grid-event enrollment works, and what to look at if you don't qualify.",
+    "intro": "PG&E's Permanent Battery Storage Rebate pays $7,500 after you buy and install a qualifying home battery, but only if your account has had five or more Wildfire Safety outages since January 1, 2024. You also have to be a first-time battery customer, be on a time-of-use rate, and enroll the battery in PG&E's Emergency Load Reduction Program through your battery provider.\n\nThe money is limited. PG&E's rebate page, when we read it on September 23, 2026, said \"179 rebates remain. As of 09/18/2026.\" Rebates go first come, first served, and the count only goes down. You must apply within 12 months of receiving Permission to Operate or by December 31, 2026, whichever comes first.\n\nThis page walks through every condition in PG&E's terms, what the outage test means, which batteries and contracts are excluded, how the grid-event enrollment works, and what to look at if you don't qualify.",
     "keyStats": [
       {
         "label": "Rebate amount",
@@ -1951,8 +1986,8 @@
       },
       {
         "label": "Rebates left",
-        "value": "200",
-        "note": "As PG&E posted on September 14, 2026. First-come, first-served while funding lasts."
+        "value": "179",
+        "note": "As of September 18, 2026, the latest count on PG&E's page when read on September 23, 2026. First-come, first-served while funding lasts."
       },
       {
         "label": "Last day to apply",
@@ -1983,7 +2018,7 @@
       },
       {
         "heading": "How to apply, and when the clock runs out",
-        "body": "You apply after installation, not before. The application goes through PG&E's online rebate portal at energyinsight.pge.com/eRebateApplication. PG&E says the purchase agreement or contract is the only document you need to attach.\n\nThe deadline is the earlier of two dates: 12 months after you receive Permission to Operate, or December 31, 2026. A battery that gets Permission to Operate in November 2026 still has to be submitted by year's end.\n\nBecause PG&E funds the rebate first come, first served, and posted 200 remaining on September 14, 2026, a project that won't reach Permission to Operate for several months carries real risk of arriving after the money is gone. Ask the installer for a written schedule from permit to Permission to Operate, and don't sign a contract that assumes the rebate unless you are comfortable paying full price."
+        "body": "You apply after installation, not before. The application goes through PG&E's online rebate portal at energyinsight.pge.com/eRebateApplication. PG&E says the purchase agreement or contract is the only document you need to attach.\n\nThe deadline is the earlier of two dates: 12 months after you receive Permission to Operate, or December 31, 2026. A battery that gets Permission to Operate in November 2026 still has to be submitted by year's end.\n\nBecause PG&E funds the rebate first come, first served, and showed 179 remaining as of September 18, 2026, a project that won't reach Permission to Operate for several months carries real risk of arriving after the money is gone. Ask the installer for a written schedule from permit to Permission to Operate, and don't sign a contract that assumes the rebate unless you are comfortable paying full price."
       },
       {
         "heading": "What $7,500 covers against a real battery price",
@@ -2007,7 +2042,7 @@
           "Permanent Battery Storage Rebate",
           "$7,500 after purchase and install",
           "5+ Wildfire Safety outages since Jan 1, 2024; TOU rate; ELRP enrollment",
-          "Open, 200 rebates left as of Sept 14, 2026; apply by Dec 31, 2026"
+          "Open, 179 rebates left as of Sept 18, 2026; apply by Dec 31, 2026"
         ],
         [
           "Residential Storage Initiative",
@@ -2039,7 +2074,7 @@
     "faqs": [
       {
         "question": "Is PG&E really giving $7,500 for home batteries?",
-        "answer": "Yes, but only to customers who meet every condition on PG&E's list, including five or more Wildfire Safety outages on the account since January 1, 2024. It is a rebate paid after purchase, installation and Permission to Operate, not a free battery, and PG&E showed 200 rebates remaining on September 14, 2026."
+        "answer": "Yes, but only to customers who meet every condition on PG&E's list, including five or more Wildfire Safety outages on the account since January 1, 2024. It is a rebate paid after purchase, installation and Permission to Operate, not a free battery, and PG&E showed 179 rebates remaining as of September 18, 2026, when we checked on September 23."
       },
       {
         "question": "Who qualifies for the PG&E Permanent Battery Storage Rebate?",
@@ -2064,14 +2099,18 @@
       {
         "question": "How do I apply?",
         "answer": "After the battery has Permission to Operate, submit the application through PG&E's online rebate portal at energyinsight.pge.com/eRebateApplication. PG&E says the purchase agreement or contract is the only attachment required."
+      },
+      {
+        "question": "Are home batteries a fire risk in California?",
+        "answer": "The fire most people have heard of was not a home battery. On January 16, 2025, a fire broke out at the Moss Landing power plant's 300-megawatt battery storage system, which held about 100,000 lithium-ion batteries, and the U.S. EPA has overseen the cleanup since. A home battery is a much smaller system installed under the California Fire Code: San Francisco's fire department, applying the 2022 code, limits each unit to 20 kWh and caps the total at 40 kWh in a utility space inside a home and 80 kWh in an attached garage, and requires listing to UL 9540. Ask the installer which listing the battery carries and where it will be mounted, and make sure the job gets a permit and inspection. PG&E's rebate also requires a battery on its Qualified Product List."
       }
     ],
-    "bottomLine": "The PG&E Permanent Battery Storage Rebate is real money, $7,500, for a narrow group: first-time battery owners whose accounts have had at least five Wildfire Safety outages since January 1, 2024. Confirm the outage count on your account, pick a battery from PG&E's Qualified Product List, plan for the grid-event enrollment, and make sure Permission to Operate lands before December 31, 2026. With 200 rebates left as of mid-September 2026, treat it as uncertain until PG&E pays it.",
+    "bottomLine": "The PG&E Permanent Battery Storage Rebate is real money, $7,500, for a narrow group: first-time battery owners whose accounts have had at least five Wildfire Safety outages since January 1, 2024. Confirm the outage count on your account, pick a battery from PG&E's Qualified Product List, plan for the grid-event enrollment, and make sure Permission to Operate lands before December 31, 2026. With 179 rebates left as of September 18, 2026, treat it as uncertain until PG&E pays it.",
     "sources": [
       {
         "name": "PG&E: Permanent Battery Storage Rebate",
         "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
-        "supports": "$7,500 amount, eligibility list, ELRP enrollment paths, application portal, deadline, 200 rebates remaining as of 09/14/2026, one per household"
+        "supports": "$7,500 amount, eligibility list, ELRP enrollment paths, application portal, deadline, 179 rebates remaining as of 09/18/2026 (page read 2026-09-23), one per household"
       },
       {
         "name": "PG&E: Residential Permanent Battery Storage rebate terms and conditions",
@@ -2117,6 +2156,16 @@
         "name": "Lawrence Berkeley National Laboratory: Distributed Solar and Storage, 2026 Data Update",
         "url": "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
         "supports": "Median residential storage capacity of 13.5 kWh in 2025"
+      },
+      {
+        "name": "U.S. EPA: Moss Landing Vistra Battery Fire Response",
+        "url": "https://www.epa.gov/ca/moss-landing-vistra-battery-fire",
+        "supports": "January 16, 2025 fire date, 300 MW system, about 100,000 lithium-ion batteries, EPA-overseen cleanup (checked 2026-09-23)"
+      },
+      {
+        "name": "San Francisco Fire Department: 5.12 Energy Storage Systems in R-3 Occupancies",
+        "url": "https://sf-fire.org/512-energy-storage-systems-r-3-occupancies",
+        "supports": "UL 9540 listing, 20 kWh per unit, 40 kWh utility-space and 80 kWh attached-garage aggregate limits under the 2022 California Fire Code (checked 2026-09-23)"
       }
     ],
     "reviewedAt": "2026-09-23"

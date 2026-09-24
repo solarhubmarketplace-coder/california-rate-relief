@@ -19,6 +19,16 @@
 // buying panels yourself (CEC equipment lists, owner-builder rules). Choosing a
 // company stays on /best-solar-companies-california; this page stays on cost,
 // rules and whether solar pays.
+//
+// Tier 3 (claude/t3-misc-20260923): the "what if we put solar panels in
+// california" rows (build_page, 130/mo; their /blog/what-we-put-solar-panels-
+// california CREATE rows fold in here, since the page-one results are "is solar
+// worth it in California" and new-home mandate pages this guide already answers)
+// add four FAQ answers: condos and HOAs, selling power back to the grid, ground
+// mounts (LBNL's $0.40/W ground-mount coefficient) and the lowest-cost routes.
+// The CPUC net billing quote now uses the CPUC's own words ("usually lower than
+// the retail rate"). Tier 2 link requests applied: /blog/10-kw-solar-system-cost
+// and /blog/solar-rate. Sources re-fetched 2026-09-23.
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
@@ -144,6 +154,26 @@ const faqs: FaqJsonLdItem[] = [
       'There is no single best panel. A reasonable floor is a model on the California Energy Commission’s Solar Equipment Lists, which include equipment that meets national safety and performance standards and are updated three times a month. Beyond that, compare warranty length, the degradation rate the warranty guarantees and the price per watt across quotes for the same system size.',
   },
   {
+    question: 'Can you put solar panels on a condo in California?',
+    answer:
+      'Often, but not on your own say-so. In a condominium the roof is usually common area that the homeowners association controls, so a condo owner needs the association’s approval and has to follow its reasonable rules on where and how panels go. Ask the association for its solar application before you get bids, and read the guide to HOA solar rights in California.',
+  },
+  {
+    question: 'Can you sell solar power back to the grid in California?',
+    answer:
+      'You are credited for it rather than paid a market price. PG&E, SCE and SDG&E customers who applied since April 15, 2023 are on the Net Billing Tariff, where the CPUC says export credits are usually lower than the retail rate but can rise above it on late summer evenings. City utilities set their own: SMUD credits exports at 9.6 cents per kWh from June 1, 2026, and Roseville Electric pays $0.0691 per kWh on its Solar 2.0 program.',
+  },
+  {
+    question: 'Can I put solar panels on the ground instead of the roof?',
+    answer:
+      'Yes, if you have unshaded space, and it still needs a permit and utility approval. It is uncommon: Lawrence Berkeley National Laboratory says ground mounting is much less common among residential systems, and its price analysis found ground mounting added about $0.40 per watt to installed prices. Ask each bidder to price the foundations and the trench back to your electrical panel as separate lines.',
+  },
+  {
+    question: 'What is the cheapest way to get solar power in California?',
+    answer:
+      'It depends on who you are. For income-qualified households in disadvantaged communities, a green-tariff solar discount takes 20% off the bill with no equipment, and DAC-SASH provides a rooftop system at no cost to qualifying homeowners. For everyone else, the lowest cost per kilowatt-hour usually comes from buying a right-sized system with cash after comparing at least three itemized bids; a lease or PPA lowers the upfront cost but not the total.',
+  },
+  {
     question: 'How much do solar panels save in California?',
     answer:
       'No honest page can give you one number. Savings depend on how much of the solar output you use at home, your utility’s rate plan and export credit, the price you pay and how long you keep the system. Ask each bidder to model your remaining bill on your own 12 months of usage and your actual tariff, and treat any quote that shows your bill disappearing entirely as a reason for questions.',
@@ -242,7 +272,11 @@ export default function SolarPanelsCalifornia() {
           <Link href="/blog/how-big-of-a-solar-system-do-i-need-california" className={link}>
             system sizing guide
           </Link>{' '}
-          explains how many kilowatts a household usually needs.
+          explains how many kilowatts a household usually needs, and{' '}
+          <Link href="/blog/10-kw-solar-system-cost" className={link}>
+            what a 10 kW system costs
+          </Link>{' '}
+          works one common size through the same data.
         </p>
       </section>
 
@@ -304,8 +338,9 @@ export default function SolarPanelsCalifornia() {
           For PG&amp;E, SCE and SDG&amp;E customers, the CPUC says that everyone applying to
           interconnect since April 15, 2023 takes service on the Net Billing Tariff. Exported
           power is credited at a rate reflecting its value to the grid, taken from the
-          CPUC&rsquo;s Avoided Cost Calculator, which is &ldquo;usually lower than import
-          rates.&rdquo; Customers on the older NEM 1.0 or 2.0 tariffs may stay on them for 20
+          CPUC&rsquo;s Avoided Cost Calculator, which is &ldquo;usually lower than the retail
+          rate&rdquo; but &ldquo;can rise above the retail rate on late summer evenings.&rdquo;
+          Customers on the older NEM 1.0 or 2.0 tariffs may stay on them for 20
           years from their interconnection date, and new net billing customers get a nine-year
           legacy period on their tariff (CPUC, checked September 23, 2026).
         </p>
@@ -328,6 +363,14 @@ export default function SolarPanelsCalifornia() {
           and{' '}
           <Link href="/solar-problems/do-i-still-get-a-utility-bill-with-solar" className={link}>
             why you still get a utility bill with solar
+          </Link>
+          . The rate plan a solar home is put on is its own question:{' '}
+          <Link href="/blog/solar-rate" className={link}>
+            what rate solar homes pay (the solar tariff)
+          </Link>
+          . Why exports are worth so little at midday, and more on summer evenings, is the{' '}
+          <Link href="/blog/solar-duck-curve-california" className={link}>
+            California duck curve
           </Link>
           .
         </p>
@@ -598,7 +641,16 @@ export default function SolarPanelsCalifornia() {
           <Link href="/blog/what-happens-to-solar-lease-when-i-sell-california" className={link}>
             home-sale rules for leased systems
           </Link>{' '}
-          before you sign.
+          before you sign. Live in a condo or an HOA community? Read{' '}
+          <Link href="/blog/hoa-solar-rights-california" className={link}>
+            HOA solar rights in California
+          </Link>{' '}
+          before you collect bids. If a roof system is out of reach, an income-qualified household
+          may get{' '}
+          <Link href="/blog/solar-discount" className={link}>
+            a 20% solar bill discount with no panels
+          </Link>
+          .
         </p>
       </section>
 
