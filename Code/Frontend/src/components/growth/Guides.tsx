@@ -8,6 +8,7 @@ import {
   hasCompaniesCityPage,
 } from '@/lib/canonical-redirects';
 import { DecisionPage, QuoteChecklist, type Source } from './DecisionPage';
+import type { FaqJsonLdItem } from '@/components/shared/FaqJsonLd';
 import { SolarCalculator } from './SolarCalculator';
 import { SolarFinancingComparison } from './SolarFinancingComparison';
 import { ProviderComparison } from './ProviderComparison';
@@ -141,7 +142,9 @@ export function guideMetadata(key: GuideKey): Metadata {
   const modifiedTime =
     key === 'financing' || key === 'calculator'
       ? '2026-09-23T00:00:00Z'
-      : key === 'nem' || key === 'companies'
+      : key === 'nem'
+      ? '2026-09-23T00:00:00Z'
+      : key === 'companies'
       ? '2026-09-22T00:00:00Z'
       : key === 'panels'
       ? '2026-09-11T00:00:00Z'
@@ -326,6 +329,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
   let sourceCheckedDate = '2026-09-10';
   let utility = '';
   let faq: ReactNode = null;
+  let faqs: FaqJsonLdItem[] = [];
   if (kind === 'calculator')
     content = (
       <>
@@ -1159,7 +1163,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
     sourceCheckedDate = '2026-09-23';
   }
   if (kind === 'nem') {
-    sourceCheckedDate = '2026-09-22';
+    sourceCheckedDate = '2026-09-23';
     sources = [
       nem,
       {
@@ -1203,104 +1207,61 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
         url: 'https://www.sdge.com/solar/solar-billing-plan/export-pricing',
       },
     ];
-    faq = (
-      <section>
-        <h2>FAQ</h2>
-        <div className="space-y-6">
-          <div>
-            <h3>What is NEM 3.0?</h3>
-            <p className="mt-2">
-              It’s the common name for California’s Net Billing Tariff,
-              adopted by the CPUC in Decision D.22-12-056 and in effect for
-              PG&E, SCE and SDG&E customers who applied for solar
-              interconnection on or after April 15, 2023.
-            </p>
-          </div>
-          <div>
-            <h3>When did NEM 3.0 start?</h3>
-            <p className="mt-2">
-              The CPUC adopted the decision on December 15, 2022; it took
-              effect for new interconnection applications on April 15, 2023.
-              It’s been in effect for new solar since then — there’s no
-              pending vote to “pass” it.
-            </p>
-          </div>
-          <div>
-            <h3>How is NEM 3.0 different from NEM 2.0?</h3>
-            <p className="mt-2">
-              The core difference is export compensation: NEM 2.0 credited
-              exports near the retail rate, while NEM 3.0 credits them using
-              the CPUC’s Avoided Cost Calculator, which is usually lower and
-              varies by hour. See the full{' '}
-              <Link className={link} href="/blog/nem-2-vs-nem-3-california">
-                NEM 2.0 vs. NEM 3.0 comparison
-              </Link>{' '}
-              for the side-by-side.
-            </p>
-          </div>
-          <div>
-            <h3>Does NEM 3.0 apply to LADWP or SMUD customers?</h3>
-            <p className="mt-2">
-              No. LADWP and SMUD are municipal utilities, not regulated by
-              the CPUC, and each publishes its own net metering rules
-              separately from the Net Billing Tariff.
-            </p>
-          </div>
-          <div>
-            <h3>
-              How much do PG&E, SCE or SDG&E pay for exported solar under NEM
-              3.0?
-            </h3>
-            <p className="mt-2">
-              There’s no single fixed rate. Each utility calculates an hourly
-              export credit from the CPUC’s Avoided Cost Calculator, so the
-              value changes by hour, month and enrollment year. Check your
-              utility’s export-pricing page for the current numbers for your
-              plan vintage.
-            </p>
-          </div>
-          <div>
-            <h3>What rate plan do I have to be on with NEM 3.0?</h3>
-            <p className="mt-2">
-              A time-of-use rate is required at all three utilities. PG&E
-              defaults residential solar customers to Electric Home
-              (E-ELEC); SCE moves them to TOU-D-Prime; SDG&E also requires
-              TOU service — confirm the specific plan with SDG&E.
-            </p>
-          </div>
-          <div>
-            <h3>
-              Do I keep my NEM 2.0 grandfathering if I sell my house or add
-              panels?
-            </h3>
-            <p className="mt-2">
-              At PG&E and SCE, the legacy period is tied to the system and
-              its original interconnection date, not the owner, so a new
-              owner inherits the remaining years. Adding panels beyond a
-              small threshold (1 kW at PG&E; the greater of 1 kW or 10% of
-              system size at SCE) moves the account to the Net Billing
-              Tariff. SDG&E did not state an equivalent rule on the pages
-              checked.
-            </p>
-          </div>
-          <div>
-            <h3>Does a battery help under NEM 3.0?</h3>
-            <p className="mt-2">
-              It can, because it lets you use your own solar at night
-              instead of exporting it for a lower credit — but whether it
-              pays back depends on your utility and usage. See{' '}
-              <Link
-                className={link}
-                href="/battery/battery-payback-nem-3-california"
-              >
-                battery payback under NEM 3.0
-              </Link>{' '}
-              for the math.
-            </p>
-          </div>
-        </div>
-      </section>
-    );
+    // FAQ as data (2026-09-23) so DecisionPage's FaqBlock emits FAQPage schema
+    // from the same strings. The links the old JSX answers carried (NEM 2.0 vs
+    // 3.0 comparison, battery payback) are in the body sections below.
+    faqs = [
+      {
+        question: 'What is NEM 3.0?',
+        answer:
+          'It is the common name for California’s Net Billing Tariff, adopted by the CPUC in Decision D.22-12-056 and in effect for PG&E, SCE and SDG&E customers who applied for solar interconnection on or after April 15, 2023.',
+      },
+      {
+        question: 'When did NEM 3.0 start?',
+        answer:
+          'The CPUC adopted the decision on December 15, 2022; it took effect for new interconnection applications on April 15, 2023. It has been in effect for new solar since then; there is no pending vote to “pass” it.',
+      },
+      {
+        question: 'What was the California NEM 3.0 proposal, and what passed?',
+        answer:
+          'NEM 3.0 came out of the CPUC’s NEM Revisit rulemaking (R.20-08-020) and was adopted as Decision D.22-12-056. What took effect: export credits based on the Avoided Cost Calculator instead of the retail rate, a required electrification time-of-use plan, a nine-year tariff guarantee for the original customer, monthly bill payment, and a small export adder for residential PG&E and SCE customers who apply before the end of 2027. It is no longer a proposal.',
+      },
+      {
+        question: 'How does billing work under NEM 3.0 (the Solar Billing Plan)?',
+        answer:
+          'You pay a bill every month instead of once a year. Each month nets the power you bought against export credits; if credits exceed charges, the extra credit rolls forward to later months until your annual true-up. The CPUC made billing monthly so customers are not surprised by a large annual bill.',
+      },
+      {
+        question: 'How is NEM 3.0 different from NEM 2.0?',
+        answer:
+          'The core difference is export compensation: NEM 2.0 credited exports near the retail rate, while NEM 3.0 credits them using the CPUC’s Avoided Cost Calculator, which is usually lower and varies by hour.',
+      },
+      {
+        question: 'Does NEM 3.0 apply to LADWP or SMUD customers?',
+        answer:
+          'No. LADWP and SMUD are municipal utilities, not regulated by the CPUC, and each publishes its own net metering rules separately from the Net Billing Tariff.',
+      },
+      {
+        question: 'How much do PG&E, SCE or SDG&E pay for exported solar under NEM 3.0?',
+        answer:
+          'There is no single fixed rate. Each utility calculates an hourly export credit from the CPUC’s Avoided Cost Calculator, so the value changes by hour, month and enrollment year. Check your utility’s export-pricing page for the current numbers for your plan vintage.',
+      },
+      {
+        question: 'What rate plan do I have to be on with NEM 3.0?',
+        answer:
+          'The CPUC requires a specific electrification time-of-use rate: E-ELEC at PG&E, TOU-D-PRIME at SCE and EV-TOU-5 at SDG&E.',
+      },
+      {
+        question: 'Do I keep my NEM 2.0 grandfathering if I sell my house or add panels?',
+        answer:
+          'At PG&E and SCE, the legacy period is tied to the system and its original interconnection date, not the owner, so a new owner inherits the remaining years. Adding panels beyond a small threshold (1 kW at PG&E; the greater of 1 kW or 10% of system size at SCE) moves the account to the Net Billing Tariff. SDG&E did not state an equivalent rule on the pages checked.',
+      },
+      {
+        question: 'Does a battery help under NEM 3.0?',
+        answer:
+          'It can, because it lets you use your own solar at night instead of exporting it for a lower credit, but whether it pays back depends on your utility and usage.',
+      },
+    ];
     content = (
       <>
         <section>
@@ -2031,6 +1992,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
       sourceCheckedDate={sourceCheckedDate}
       utility={utility}
       faq={faq}
+      faqs={faqs}
       // The calculator page opens with the calculator itself; a bill-first
       // quick check above it would be a second first step on the same screen.
       quickCheck={kind === 'calculator' ? false : undefined}
