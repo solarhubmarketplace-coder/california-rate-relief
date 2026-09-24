@@ -1,0 +1,64 @@
+{
+  "agent": "t2-commercial",
+  "branch": "claude/t2-commercial-20260923",
+  "pages": [
+    {
+      "path": "/commercial-solar/commercial-solar-lease-programs",
+      "action": "CREATE_DEDICATED",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/commercial-solar-lease-programs/page.tsx",
+      "title": "Commercial Solar Lease Programs in California (2026)",
+      "clusters": [1783],
+      "sources": [
+        "https://www.californiadgstats.ca.gov/downloads/",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section50&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6417&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "https://www.mcecleanenergy.org/feed-in-tariff/",
+        "https://www.boe.ca.gov/proptaxes/pdf/lta26034.pdf"
+      ],
+      "status": "partial",
+      "note": "Covers equipment leases and roof/site leases (the 'commercial roof lease for solar' intent), plus a section for commercial real-estate owners (absorbs the generic 'solar for commercial real estate' queries from row 17). Ownership counts are CRR's tabulation of the CPUC DGStats Interconnected Applications file (data through 2026-05-31): 2025-approved, Interconnected, PV, non-residential sectors. PARTIAL only because CREATE_DEDICATED also wants a link from the page holding the impressions (/blog/commercial-solar-financing-california); that link is added in this agent's financing-post upgrade later in this wave."
+    },
+    {
+      "path": "/commercial-solar/commercial-solar-tax-credit",
+      "action": "CREATE_DEDICATED",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/commercial-solar-tax-credit/page.tsx",
+      "title": "Commercial Solar Tax Credit 2026 (§48E) for California",
+      "clusters": [1780, 2540],
+      "sources": [
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45Y&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section50&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6417&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6418&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "https://www.irs.gov/credits-deductions/clean-electricity-investment-credit",
+        "https://www.irs.gov/pub/irs-drop/n-25-42.pdf",
+        "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "https://www.ftb.ca.gov/forms/2025/2025-100-booklet.html",
+        "https://www.californiadgstats.ca.gov/downloads/"
+      ],
+      "status": "partial",
+      "note": "Statute-only treatment (Decision 11), matching cost-per-watt and church: OLRC text in effect 2026-09-23; says what §48E/§45/§45Y/§50/§168/§6417/§6418/§7701 say, never what a business can claim. PARTIAL until the financing post (holder of the impressions) links it, later in this wave."
+    }
+  ],
+  "sitemap_add": [
+    "/commercial-solar/commercial-solar-lease-programs",
+    "/commercial-solar/commercial-solar-tax-credit"
+  ],
+  "sitemap_note": "src/app/sitemap.ts hard-codes commercialSlugs; add the new slugs there.",
+  "blog_index_add": [],
+  "redirect_requests": [],
+  "hub_links": [
+    {"hub": "commercial", "href": "/commercial-solar/commercial-solar-tax-credit", "label": "Commercial solar tax credit (§48E)"},
+    {"hub": "commercial", "href": "/commercial-solar/commercial-solar-lease-programs", "label": "Commercial solar leases and roof leases"}
+  ],
+  "link_requests": [],
+  "skipped": []
+}
