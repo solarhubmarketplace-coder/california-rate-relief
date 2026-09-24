@@ -208,7 +208,7 @@ const CRR_TOPICAL_20260923 = new Set<string>([
   '/solar-savings/sacramento',
   '/solar-savings/san-diego',
   '/solar-savings/san-mateo',
-  '/tools/solar-panel-calculator'
+  '/tools/solar-panel-calculator',
   '/battery',
   '/battery/how-many-batteries-do-i-need-california',
   '/battery/sgip-battery-rebate-california',
