@@ -1,0 +1,184 @@
+{
+  "agent": "cities",
+  "lane": "integration",
+  "branch": "claude/int-cities-20260924",
+  "date": "2026-09-24",
+  "requests_file": "out/topicmap/implement/int_links_cities.json",
+  "requests": [
+    {
+      "from": "/solar-savings/irvine",
+      "to": "/blog/sce-solar-billing-plan",
+      "status": "already_done",
+      "note": "Irvine's 'Solar on an OCPA account' section already links it (cities-data.ts bills.sections[].links). Confirmed in a static render."
+    },
+    {
+      "from": "/solar-savings/bay-area",
+      "to": "/solar-cost/san-mateo (and the other Bay Area /solar-cost pages)",
+      "status": "done",
+      "file": "src/app/solar-savings/bay-area/page.tsx; src/lib/city-pages.ts (REGIONAL_HUBS)",
+      "note": "RegionalCostCities was already rendered and already listed San Mateo and every cost page in the hub's eight counties. What was missing were the Napa, Vacaville and Vallejo cost pages: the hub's county list (and REGIONAL_HUBS, its mirror) now adds Marin, Napa and Solano. Rendered: all three cost pages listed, and the grid gains /solar-savings/vallejo."
+    },
+    {
+      "from": "/solar-companies/los-angeles",
+      "to": "/blog/ladwp-solar-program",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('los-angeles'.projectLinks)",
+      "anchor": "LADWP solar programs and incentives, compared with a company quote"
+    },
+    {
+      "from": "/solar-companies/los-angeles",
+      "to": "/blog/solar-ppa-companies",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('los-angeles'.projectLinks)",
+      "anchor": "How to compare solar PPA companies before you sign"
+    },
+    {
+      "from": "/solar-companies/los-angeles",
+      "to": "/blog/solar-leasing-company",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('los-angeles'.projectLinks)",
+      "anchor": "What a solar leasing company does, and what its contract commits you to"
+    },
+    {
+      "from": "/solar-companies/san-bernardino",
+      "to": "/solar-installers#local-solar-reviews",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('san-bernardino'.projectLinks)",
+      "anchor": "How to check a local solar installer's reviews"
+    },
+    {
+      "from": "/solar-companies/palm-springs",
+      "to": "/solar-companies/coachella-valley",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('palm-springs'.projectLinks, new)",
+      "anchor": "Utilities and permit offices across the Coachella Valley"
+    },
+    {
+      "from": "/solar-companies/palm-desert",
+      "to": "/solar-companies/coachella-valley",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('palm-desert'.projectLinks)",
+      "anchor": "Which Coachella Valley cities are SCE and which are IID"
+    },
+    {
+      "from": "/solar-companies/riverside-county",
+      "to": "/solar-companies/coachella-valley",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('riverside-county'.projectLinks)",
+      "anchor": "The Coachella Valley in more detail, from Palm Springs to the IID cities"
+    },
+    {
+      "from": "/solar-companies/riverside-county",
+      "to": "/solar-companies/wildomar",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('riverside-county'.region.places)",
+      "note": "Split 'Hemet, Perris, Wildomar, Canyon Lake' into Hemet (slug hemet, SolarAPP+), Wildomar (slug wildomar, Symbium), and 'Perris, Canyon Lake'. Hemet also has a companies page, so it got its own row. Platforms and 'no annual report' checked against the CEC SB 379 program data (updated 2026-08-03) and annual-report file; utility against the CEC layers. Source and note added."
+    },
+    {
+      "from": "/solar-companies/ventura (and Oxnard, Camarillo, Thousand Oaks, Simi Valley)",
+      "to": "/solar-companies/ventura-county",
+      "status": "already_done",
+      "note": "All five pages already link /solar-companies/ventura-county from the 'Solar near <City>' block (NearbyCityPages). Rendered and confirmed; a projectLinks entry would be a second link to the same target (rule 5.9)."
+    },
+    {
+      "from": "/solar-companies/orange-county",
+      "to": "/solar-companies/fullerton",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('orange-county'.region.places)"
+    },
+    {
+      "from": "/solar-companies/orange-county",
+      "to": "/solar-companies/newport-beach (and tustin, lake-forest)",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('orange-county'.region.places)",
+      "note": "Newport Beach, Tustin and Lake Forest split out of the Costa Mesa row with slugs; permit cells name SolarAPP+ (CEC SB 379 program data); Tustin's row notes unincorporated North Tustin is County of Orange (TIGERweb: North Tustin CDP). Costa Mesa, Garden Grove, Orange stay together."
+    },
+    {
+      "from": "/solar-companies/orange-county",
+      "to": "/solar-companies/mission-viejo (and aliso-viejo, la-habra)",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('orange-county'.region.places)",
+      "note": "Mission Viejo and Aliso Viejo split out with slugs (SCE/SDG&E split spot-checked on the CEC layer); Laguna Hills, Laguna Niguel stay together. La Habra row added (SCE on the CEC layer, no CCA; not on OCPA's member list; SolarAPP+)."
+    },
+    {
+      "from": "/solar-companies/high-desert",
+      "to": "/solar-companies/hesperia (and palmdale)",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('high-desert'.region.places)",
+      "note": "Slugs only; the rows' permit figures (Hesperia 920 in 2024, Palmdale 969 in 2023) match the SB 379 file."
+    },
+    {
+      "from": "/solar-companies/bay-area",
+      "to": "/solar-companies/novato (and san-rafael, napa, vallejo, fairfield, brentwood, antioch)",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('bay-area'.region.places)",
+      "note": "Marin row split into San Rafael (430 permits in 2023, 27% storage, all online) and Novato (no report), plus 'Other Marin County towns'. Rows added: Napa, Vallejo (1,022 in 2024; the CEC layer shows the City of Pittsburg's utility on part of Mare Island), Fairfield (MCE), Brentwood (574 in 2024) and Antioch (1,306 in 2024), both PG&E only. MCE membership checked on MCE's service-area page 2026-09-24; source added."
+    },
+    {
+      "from": "/solar-companies/sacramento",
+      "to": "/solar-companies/elk-grove",
+      "status": "already_done",
+      "note": "Already linked from the 'Solar near Sacramento' block (NearbyCityPages, 'Comparing Elk Grove solar installers'). Request was optional."
+    },
+    {
+      "from": "/solar-savings/los-angeles-county",
+      "to": "/solar-savings/altadena",
+      "status": "done",
+      "file": "src/app/solar-savings/los-angeles-county/page.tsx (SCE paragraph under 'What electricity costs')",
+      "anchor": "Altadena's SCE bill increase, explained"
+    },
+    {
+      "from": "/solar-companies/lancaster",
+      "to": "/solar-savings/lancaster",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('lancaster': hasSavingsGuide: false removed)",
+      "note": "The page's top 'this city's other pages' block already linked it; the flag only hid the in-body link in the verification section, which now renders."
+    }
+  ],
+  "fixes": [
+    {
+      "fix": "/solar-companies/palo-alto CPAU export rate",
+      "status": "done",
+      "file": "src/data/growth-cities.ts ('palo-alto')",
+      "note": "FAQ and 'How CPAU credits solar' now quote Schedule E-EEC-1 effective July 1, 2026: $0.0990 per kWh (sheet supersedes the 09-01-2025 version), read from the City PDF on 2026-09-24. Source replaced, key fact added with checked date, contentModified 2026-09-24. The index folder URL in the brief returns 404; the PDF itself is at .../residential-utility-rates/e-eec-1_effective_2026-07-01.pdf and needs browser headers to fetch.",
+      "source": "https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-eec-1_effective_2026-07-01.pdf"
+    },
+    {
+      "fix": "/solar-companies/lancaster links /solar-savings/lancaster",
+      "status": "done",
+      "note": "See request above. Static render confirms the link."
+    },
+    {
+      "fix": "/solar-companies/newport-beach template check",
+      "status": "no_change_needed",
+      "note": "Already renders the sourced CityComparison template from a growth-cities entry added by t3-citycos (answer, key facts, two sections, checks, FAQ, seven sources) and is registered in canonical-redirects.test.ts (Tier 3 wave list). Rechecked 2026-09-24: CEC layer SCE with no CCA; not an OCPA member; SolarAPP+ platform; 638 permits in 2023, 51% storage, 16% online; the City page says new PV and storage submittals are online only via SolarAPP+ (matches the entry)."
+    },
+    {
+      "fix": "Altadena link from /solar-savings/los-angeles-county",
+      "status": "done"
+    },
+    {
+      "fix": "Breadcrumbs on /solar-savings (structure rules 5.6)",
+      "status": "done",
+      "files": [
+        "src/lib/city-pages.ts (RATE_TRACKER_CRUMB, savingsCityCrumbs)",
+        "src/app/solar-savings/[city]/page.tsx",
+        "src/app/solar-savings/{bay-area,central-valley,inland-empire,san-diego-county,los-angeles-county,orange-county}/page.tsx",
+        "src/components/growth/LadwpSavingsGuide.tsx"
+      ],
+      "note": "No-hub cities (thousand-oaks, simi-valley, el-dorado-hills): Home > California utility rate tracker > City. Hub cities keep Home > Region solar guide > City. Six hubs: Home > California utility rate tracker > Region (the four '#solar-inquiry' crumbs removed). /solar-savings/los-angeles now shows Home > Los Angeles County solar guide > page (it had no visible trail). Visible trail and BreadcrumbList matched in static renders of all six hubs, Altadena and nine city pages."
+    }
+  ],
+  "also_changed": [
+    "Bay Area savings hub intro: 'Every city in this guide is on PG&E's grid' was untrue for Palo Alto (CPAU); now 'Nearly every city ... (Palo Alto runs its own utility)'."
+  ],
+  "checks": {
+    "tsc": "pass",
+    "canonical-redirects.test.ts": "20/20 pass",
+    "assert:citylinks": "pass (93 /solar-cost pages linked and reachable; no link to a redirected path)"
+  },
+  "for_chad": [
+    "growth-cities 'menifee' also has hasSavingsGuide: false while /solar-savings/menifee is live (since April). Not in this slice; left as is. Remove the flag if Menifee's companies page should link its savings page too.",
+    "Adding Marin, Napa and Solano to the Bay Area hub changes the 'More cities in the region' link and breadcrumb for those counties' city pages (Vallejo's savings page now sits under the Bay Area guide)."
+  ]
+}
