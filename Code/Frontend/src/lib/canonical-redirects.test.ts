@@ -187,6 +187,42 @@ test('city href helpers never return a redirect source', () => {
   }
 });
 
+// 2026-09-23, Decision 14: the high-confidence merge losers only.
+const DECISION_14_MERGES: Readonly<Record<string, string>> = {
+  '/blog/solar-ppa-vs-lease-california': '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
+  '/solar-problems/free-solar-california-is-it-real': '/blog/free-solar-panels-california',
+  '/blog/commercial-solar-installation-cost-california': '/commercial-solar/cost-per-watt-california',
+};
+ROW_DELTAS.push(Object.keys(DECISION_14_MERGES).length);
+
+test('Decision 14: each merge loser 301s straight to a live winner', async () => {
+  const { existsSync } = await import('node:fs');
+  for (const [loser, winner] of Object.entries(DECISION_14_MERGES)) {
+    assert.equal(canonicalRedirectFor(loser), winner, loser);
+    assert.equal(canonicalRedirectFor(`${loser}/`), winner, `${loser}/`);
+    assert.equal(isRedirectedPath(winner), false, `${winner} must not itself redirect`);
+    assert.ok(
+      existsSync(new URL(`../app${winner}/page.tsx`, import.meta.url)),
+      `${winner} must have a page file`,
+    );
+  }
+  // Nothing may still point at a loser: every rule that led to one now leads
+  // to its winner in one hop.
+  const losers = new Set(Object.keys(DECISION_14_MERGES));
+  assert.deepEqual(destinations.filter((dest) => losers.has(dest)), []);
+});
+
+test('Decision 14: the held merges (G05, G08, G10, G11) are not redirected', () => {
+  for (const held of [
+    '/blog/how-much-does-it-cost-to-lease-solar-panels-california', // G05
+    '/commercial-solar/financing-options', // G08
+    '/blog/nem-3-california-timeline', // G10
+    '/blog/nem-3-california-still-worth-it', // G11
+  ]) {
+    assert.equal(canonicalRedirectFor(held), null, held);
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Cross-cutting checks. These read the registries above.
 // ---------------------------------------------------------------------------

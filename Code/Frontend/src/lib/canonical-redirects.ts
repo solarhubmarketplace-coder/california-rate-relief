@@ -145,6 +145,26 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
     '/blog/solar-panels-for-ev-charging-california',
   '/blog/solar-powered-ev-charger':
     '/blog/solar-panels-for-ev-charging-california',
+
+  // --- 2026-09-23, Decision 14: high-confidence merges only (topicmap block
+  //     06, MERGE_CANDIDATES.md). Each loser answers the same question as its
+  //     winner and its head keyword is a SERP-verified member of a cluster the
+  //     winner holds. Figures are 90-day Search Console impressions
+  //     (page_inventory.csv). The medium/low-confidence merges (G05, G08,
+  //     G10, G11) are held and not in this table.
+  // G03: "solar ppa vs lease" is in cluster 65, held by the 3-way comparison
+  // (1,649 impr at pos 8.7 vs 888 at 14.9). The loser ranks better on "solar
+  // ppa price per kwh california"; carry that section into the winner.
+  '/blog/solar-ppa-vs-lease-california':
+    '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
+  // G06: same question ("Free Solar in California: Is It Real?"); its title
+  // keywords are in cluster 154, held by the winner (28 impr vs 2,585).
+  '/solar-problems/free-solar-california-is-it-real':
+    '/blog/free-solar-panels-california',
+  // G09: "commercial solar installation cost" is in cluster 120, held by the
+  // cost-per-watt page (8,813 impr vs 2).
+  '/blog/commercial-solar-installation-cost-california':
+    '/commercial-solar/cost-per-watt-california',
   // --- 2026-09-18: the /solar-companies city layer is consolidated into
   //     /solar-cost/<city>. 37 of the 86 live /solar-companies city routes have
   //     a published /solar-cost twin (every row in src/data/city-cost-data.ts
