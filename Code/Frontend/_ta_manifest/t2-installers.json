@@ -1,0 +1,52 @@
+{
+  "agent": "t2-installers",
+  "pages": [
+    {
+      "path": "/best-solar-companies-california",
+      "action": "UPGRADE",
+      "hub": "installers",
+      "file": "src/app/best-solar-companies-california/page.tsx",
+      "title": "Solar Installers in California: Compare and Verify (2026)",
+      "clusters": [5, 6, 13, 45, 87, 117, 231, 1842],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.californiadgstats.ca.gov/find_installer/",
+        "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C39",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+        "https://www.nabcep.org/certifications/nabcep-board-certifications/",
+        "https://www.nabcep.org/recertification-renewal/",
+        "https://www.nabcep.org/accredited/",
+        "https://www.bbb.org/bbb-accreditation-standards",
+        "https://www.consumerfinance.gov/data-research/research-reports/issue-spotlight-solar-financing/",
+        "https://www.sec.gov/Archives/edgar/data/1408356/000119312516773728/d275338d8k.htm",
+        "https://www.tesla.com/support/using-your-account"
+      ],
+      "status": "done",
+      "note": "Title kept (already matches installer intent). Added: state tools that list installers by ZIP (CPUC DGStats, CSLB city search), good-bid vs weak-bid table, company track-record check, licensed/certified/accredited table (NABCEP individual cert, NABCEP company accreditation with no California companies listed on 2026-09-23, BBB), solar-roof licensing (C-39 vs C-46 vs B), top-rated list reading, solar dealer definition (CFPB), C&I section handing off to /commercial-solar/companies-california, SolarCity paragraph + FAQ (SEC 8-K 2016-11-21), 3 new FAQs. Removed the old near-me-map section (folded into #near-me)."
+    },
+    {
+      "path": "/solar-panels-california",
+      "action": "UPGRADE",
+      "hub": "cost_value",
+      "file": "src/app/solar-panels-california/page.tsx",
+      "title": "Solar Panels in California (2026): Cost, Rules, Worth It",
+      "clusters": [1, 95, 75, 168],
+      "sources": [
+        "https://www.californiadgstats.ca.gov/find_installer/",
+        "https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists",
+        "https://www.cslb.ca.gov/consumers/building_officials/owner_builder_overview.aspx",
+        "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide"
+      ],
+      "status": "done",
+      "note": "Title kept. Stays on cost/rules/worth-it; installer choice routed to /best-solar-companies-california#near-me. Added: local cost check via CPUC DGStats (AC vs DC caveat), links to city cost guides named in supporting kws (LA, San Diego, San Jose, Bakersfield, Fresno, Rancho Cucamonga), cost-per-kWh method, CPUC 'good fit' screen (should I get solar), 'solar panels near me' section (installer vs buying panels: CEC equipment lists, owner-builder rules), 3 new FAQs. Not added: solar farm cost and solar pool heating cost sub-questions (off-intent for this page)."
+    }
+  ],
+  "sitemap_add": [],
+  "blog_index_add": [],
+  "redirect_requests": [],
+  "hub_links": [],
+  "link_requests": [],
+  "skipped": []
+}
