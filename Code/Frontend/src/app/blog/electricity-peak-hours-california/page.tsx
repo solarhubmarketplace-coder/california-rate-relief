@@ -173,7 +173,11 @@ export default function ElectricityPeakHoursCaliforniaPage() {
               <p>
                 For most California households on a 4-to-9 p.m. plan, run flexible loads before 4 p.m. or after 9 p.m. The
                 biggest savings come from loads you can schedule: EV charging, dishwashers, laundry, pool pumps and water heaters
-                with timers. Air conditioning is harder to move, but pre-cooling the house in early afternoon and letting it drift
+                with timers. If you have a pool, see{' '}
+                <Link href="/blog/does-pool-pump-use-a-lot-of-electricity" className={guideLink}>
+                  when to run a pool pump
+                </Link>{' '}
+                and what it costs. Air conditioning is harder to move, but pre-cooling the house in early afternoon and letting it drift
                 up during the peak shifts part of the load. On SDG&amp;E, the midday super off-peak window is cheap enough that
                 running the dishwasher at noon beats running it at 10 p.m.
               </p>

@@ -333,7 +333,15 @@ export default function CancelSolarContractBeforeInstallationCalifornia() {
           Guide sets the 3-/5-day right but does not set a fee schedule for
           canceling after it closes. (CPUC, California Solar Consumer
           Protection Guide, verified 2026-09-22.) Read the contract’s own
-          termination section before assuming a number. If the contract is
+          termination section before assuming a number. For each later stage,
+          from a signed lease or loan to a home sale, see{" "}
+          <Link
+            className="underline"
+            href="/solar-problems/solar-cancellation-california"
+          >
+            what to do after the cancellation window closes
+          </Link>
+          . If the contract is
           silent, or a fee looks out of proportion to the work actually done,
           that is a fact pattern for a CSLB complaint rather than something to
           resolve alone — see{" "}

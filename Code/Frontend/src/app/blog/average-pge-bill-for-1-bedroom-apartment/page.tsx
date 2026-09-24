@@ -200,7 +200,11 @@ export default function AveragePgeBillOneBedroomPage() {
                 <Link href="/blog/average-utility-bill-california" className={guideLink}>
                   statewide average utility bill
                 </Link>{' '}
-                shows where California households land overall. Renters who cannot put panels on the roof can read{' '}
+                shows where California households land overall. For a larger apartment in SDG&amp;E territory, see{' '}
+                <Link href="/blog/average-sdge-bill-2-bedroom-apartment" className={guideLink}>
+                  the same estimate for an SDG&amp;E two-bedroom
+                </Link>
+                . Renters who cannot put panels on the roof can read{' '}
                 <Link href="/blog/is-community-solar-worth-it" className={guideLink}>
                   whether community solar is worth it
                 </Link>
