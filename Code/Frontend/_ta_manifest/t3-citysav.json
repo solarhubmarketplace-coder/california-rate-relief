@@ -1,0 +1,245 @@
+{
+  "agent": "t3-citysav",
+  "branch": "claude/t3-citysav-20260923",
+  "pages": [
+    {
+      "path": "/solar-savings/lancaster",
+      "action": "CREATE",
+      "hub": "city_bills",
+      "file": "src/data/cities-data.ts (new CITIES entry 'lancaster', bills block) + src/lib/city-pages.ts SAVINGS_BILLS_SEO; rendered by src/app/solar-savings/[city]/page.tsx",
+      "title": "Lancaster Electricity Rates: SCE & Lancaster Energy",
+      "clusters": [602],
+      "sources": [
+        "https://lancasterenergy.com/",
+        "https://lancasterenergy.com/your-options/",
+        "https://lancasterenergy.com/billing-rates/residential-rates/",
+        "https://lancasterenergy.com/wp-content/uploads/2026/07/JRC_LCE_August-2024_SCE_June-1-2026_WEB-POST-VERSION.pdf",
+        "https://lancasterenergy.com/your-options/personal-choice/",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+        "https://www.sce.com/sites/default/files/inline-files/ce62-12.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/251106-public-advocates-office-q3-2025-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      ],
+      "status": "done",
+      "note": "Who provides Lancaster's electricity (SCE delivery + Lancaster Energy generation; CEC map SCE 100%, LE 99.9%), SCE baseline region 14/16, the LE/SCE joint rate comparison (659 kWh, Schedule D: SCE $249.05, Clear Choice $292.00, Smart Choice $302.00), BSC, Personal Choice October true-up at $0.06/kWh. Companies page stays on growth-cities.ts (renders first); see link_requests for its hasSavingsGuide flag."
+    },
+    {
+      "path": "/solar-savings/irvine",
+      "action": "UPGRADE",
+      "hub": "city_bills",
+      "file": "src/data/cities-data.ts (irvine: bills block, rewritten tips/FAQs/bottom line) + SAVINGS_BILLS_SEO",
+      "title": "Irvine Electricity Provider: OCPA & SCE Rates (2026)",
+      "clusters": [657],
+      "sources": [
+        "https://www.ocpower.org/about-us/",
+        "https://www.ocpower.org/faq/",
+        "https://www.ocpower.org/residential-rates/",
+        "https://www.ocpower.org/wp-content/uploads/SCE-and-OCPA-Joint-Rate-Comparison-Effective-June-1-2026.pdf",
+        "https://www.ocpower.org/energy-programs/solar-net-energy-metering/",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/sites/default/files/inline-files/ce62-12.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      ],
+      "status": "done",
+      "note": "Re-scoped to the provider/rate question: SCE + Orange County Power Authority (Irvine default Basic Choice), OCPA/SCE joint comparison (522 kWh TOU-D-4-9PM: SCE $202.09 vs Basic Choice $226.95), OCPA NEM (April true-up, NBT treated as NEM 2.0), BSC, baseline regions 6/8, PAO region-6 sample bill. Removed unsourced 'largest HOA in California', 'Irvine Ranch enforces AB 2188' and Title 24 claims, and the copy that said SCE alone served Irvine. T2 link request applied: section link to /blog/sce-solar-billing-plan with anchor 'How SCE’s Solar Billing Plan pays for exported solar'."
+    },
+    {
+      "path": "/solar-savings/anaheim",
+      "action": "CREATE",
+      "hub": "city_bills",
+      "file": "",
+      "title": "",
+      "clusters": [783],
+      "sources": [],
+      "status": "skipped",
+      "note": "Redirect source: canonical-redirects.ts sends /solar-savings/anaheim to /solar-cost/anaheim, which no T3 lane owns. Not built. See skipped and decisions_for_chad."
+    },
+    {
+      "path": "/solar-savings/altadena",
+      "action": "CREATE",
+      "hub": "city_bills",
+      "file": "src/app/solar-savings/altadena/page.tsx (hand-written; not a CITIES entry)",
+      "title": "SCE Electricity Bill Hike in Altadena: What Changed (2026)",
+      "clusters": [627],
+      "sources": [
+        "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/general-rate-cases/sce/fact-sheet-sce-grc-091825.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-rates/general-rate-case/southern-california-edison-grc-proceedings",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/251106-public-advocates-office-q3-2025-rates-report.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+        "https://www.sce.com/sites/default/files/inline-files/ce62-12.pdf",
+        "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+        "https://www.sce.com/disasterrecovery",
+        "https://www.sce.com/directclaims",
+        "https://files.cleanpoweralliance.org/uploads/2026/07/SCE-and-CPA-JRC-July-2026-1.pdf",
+        "https://cleanpoweralliance.org/place/unincorporated-los-angeles-county/",
+        "https://cleanpoweralliance.org/residential-rate/",
+        "https://cleanpoweralliance.org/nem/",
+        "https://cleanpoweralliance.org/wildfireresilience/",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+        "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      ],
+      "status": "done",
+      "note": "Altadena is an unincorporated CDP: CEC map SCE 99.5% (sliver in Pasadena Water and Power), Clean Power Alliance 99.1%; CPA's default for unincorporated LA County is 100% Green Power. The 'bill hike' is SCE's 2025 GRC (D.25-09-030) reaching rates Oct 1, 2025 (+13.1% PAO; CPUC +$15.52 on 500 kWh). Page states the CPUC summary does not mention the Eaton Fire and gives PAO's wildfire share of revenue (14%, incl. Wildfire Fund Charge); SCE's Altadena rebuild hub, NEM-on-rebuild, claims program (deadline Nov 30, 2026); CPA JRC table. Built hand-written because a CITIES entry would also create /solar-companies/altadena and an installer card on the LA County hub. qc-gate-tsx: 0 fail, 0 warn, 4 review (standard machine-undecidable checks)."
+    },
+    {
+      "path": "/solar-savings/fresno",
+      "action": "CREATE",
+      "hub": "city_bills",
+      "file": "",
+      "title": "",
+      "clusters": [753],
+      "sources": [],
+      "status": "skipped",
+      "note": "Redirect source: canonical-redirects.ts sends /solar-savings/fresno to /solar-cost/fresno, which no T3 lane owns. The provider question is already answered on /solar-companies/fresno (growth-cities.ts: PG&E for generation and delivery, no CCA on the CEC map, PAO sample bills, BSC). Not built."
+    },
+    {
+      "path": "/solar-savings/newport-beach",
+      "action": "CREATE",
+      "hub": "city_bills",
+      "file": "src/data/cities-data.ts (new CITIES entry 'newport-beach', bills block) + SAVINGS_BILLS_SEO",
+      "title": "Newport Beach Electricity Provider: SCE Rates (2026)",
+      "clusters": [707],
+      "sources": [
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+        "https://www.sce.com/sites/default/files/inline-files/ce62-12.pdf",
+        "https://www.ocpower.org/wp-content/uploads/SCE-and-OCPA-Joint-Rate-Comparison-Effective-June-1-2026.pdf",
+        "https://www.ocpower.org/faq/",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      ],
+      "status": "done",
+      "note": "SCE only (CEC map: all land SCE; not an OCPA member city). SCE June 1, 2026 tier and TOU-D-4-9PM prices, BSC, baseline regions 6/8 allocations, PAO region-6 sample bill ($152 non-CARE, $81 CARE, ~385 kWh), SCE Green Rate waitlist, Solar Billing Plan. NOTE: a CITIES entry also renders the older /solar-companies/newport-beach template until the citycos lane's T3 build of that URL (expected in growth-cities.ts, which takes precedence) merges."
+    },
+    {
+      "path": "/solar-savings/oakland",
+      "action": "UPGRADE",
+      "hub": "city_bills",
+      "file": "src/data/cities-data.ts (oakland: bills block, rewritten tips/FAQs/bottom line) + SAVINGS_BILLS_SEO",
+      "title": "Oakland Electricity Provider: Ava & PG&E Rates (2026)",
+      "clusters": [708],
+      "sources": [
+        "https://avaenergy.org/your-energy-options/how-it-works/",
+        "https://avaenergy.org/community/who-we-serve/",
+        "https://avaenergy.org/your-energy-options/plans-and-rates/rates/",
+        "https://avaenergy.org/your-energy-options/plans-and-rates/rates/net-energy-metering/",
+        "https://www.pge.com/assets/pge/docs/account/alternate-energy-providers/ava-rcc.pdf",
+        "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      ],
+      "status": "done",
+      "note": "Re-scoped to the provider/bill question: PG&E + Ava Community Energy (Oakland default Bright Choice, 0.5% below PG&E), PG&E/Ava joint comparison (E-TOU-C 338 kWh: PG&E $138.52, Bright Choice $138.33, Renewable 100 $144.43; E-1 and CARE rows), PG&E BSC, Ava NEM (April true-up, monthly billing default), CEC map (PG&E ~91% of land, Port of Oakland POU ~9%). Removed unsourced sunshine-hour figures and neighbourhood fog claims."
+    },
+    {
+      "path": "/solar-savings/palo-alto",
+      "action": "CREATE",
+      "hub": "city_bills",
+      "file": "src/data/cities-data.ts (new CITIES entry 'palo-alto' + new UTILITY_DATA 'cpau') + SAVINGS_BILLS_SEO",
+      "title": "Palo Alto Electricity Provider: CPAU Rates (2026)",
+      "clusters": [750],
+      "sources": [
+        "https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-1_effective_2026-07-01.pdf",
+        "https://www.paloalto.gov/Departments/Utilities/Customer-Service/Utilities-Rates/Residential-Rates",
+        "https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-eec-1_effective_2026-07-01.pdf",
+        "https://www.paloalto.gov/Departments/Utilities/Electrification/Electrify-My-Home/Consider-Solar/Net-Energy-Metering",
+        "https://www.paloalto.gov/Departments/Utilities/Customer-Service/Utilities-Assistance/Rate-Assistance-Program-RAP",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      ],
+      "status": "done",
+      "note": "City of Palo Alto Utilities (CEC map ~99% of land), Schedule E-1 effective July 1, 2026 ($5.38 customer charge; 21.494¢ Tier 1 to 15 kWh/day; 23.975¢ Tier 2), E-1-TOU not open to NEM, Rate Assistance Program (35% electric; 80% AMI limits), NEM 2 export rate E-EEC-1 $0.0990/kWh from July 1, 2026. The growth-cities companies page still quotes the July 2021 EEC-1 rate; see content_requests."
+    }
+  ],
+  "sitemap_add": ["/solar-savings/altadena"],
+  "sitemap_note": "/solar-savings/lancaster, /solar-savings/newport-beach and /solar-savings/palo-alto enter the sitemap automatically through getAllCitySlugs(). So does /solar-companies/newport-beach (older template) until citycos's growth-cities entry for that slug merges.",
+  "blog_index_add": [],
+  "redirect_requests": [],
+  "hub_links": [
+    { "hub": "city_bills", "href": "/solar-savings/lancaster", "label": "Who provides electricity in Lancaster: SCE and Lancaster Energy" },
+    { "hub": "city_bills", "href": "/solar-savings/newport-beach", "label": "Newport Beach electricity: SCE rates and bills" },
+    { "hub": "city_bills", "href": "/solar-savings/palo-alto", "label": "Palo Alto electricity: City of Palo Alto Utilities rates" },
+    { "hub": "city_bills", "href": "/solar-savings/altadena", "label": "The SCE bill increase in Altadena" },
+    { "hub": "city_bills", "href": "/solar-savings/irvine", "label": "Irvine electricity: Orange County Power Authority and SCE (label update)" },
+    { "hub": "city_bills", "href": "/solar-savings/oakland", "label": "Oakland electricity: Ava Community Energy and PG&E (label update)" }
+  ],
+  "link_requests": [
+    {
+      "from": "/solar-savings/los-angeles-county",
+      "to": "/solar-savings/altadena",
+      "anchor": "Altadena's SCE bill increase, explained",
+      "why": "The Altadena page is hand-written (not a CITIES entry), so the county hub's city grid does not list it; the county hub is its breadcrumb parent and should link down to it."
+    },
+    {
+      "from": "/blog/sce-rate-increase-2026",
+      "to": "/solar-savings/altadena",
+      "anchor": "what the October 2025 increase meant for Altadena",
+      "why": "The rate-history page's October 2025 section is the parent topic of 'sce electricity bill hike altadena'; the Altadena page links back to it."
+    },
+    {
+      "from": "/solar-companies/lancaster",
+      "to": "/solar-savings/lancaster",
+      "anchor": "Lancaster electricity rates and bills",
+      "why": "growth-cities.ts sets hasSavingsGuide: false on 'lancaster', so CityComparison hides the savings link even now that /solar-savings/lancaster is live. Removing that flag (growth-cities.ts, citycos lane) turns the link on."
+    }
+  ],
+  "content_requests": [
+    {
+      "page": "/solar-companies/palo-alto",
+      "file": "src/data/growth-cities.ts ('palo-alto')",
+      "request": "Its NEM FAQ and 'How CPAU credits solar' section quote the July 1, 2021 E-EEC-1 rate ($0.107809/kWh). CPAU's schedule effective July 1, 2026 is $0.0990/kWh: https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-eec-1_effective_2026-07-01.pdf"
+    }
+  ],
+  "t2_link_requests_applied": [
+    {
+      "from": "/solar-savings/irvine",
+      "to": "/blog/sce-solar-billing-plan",
+      "anchor": "How SCE’s Solar Billing Plan pays for exported solar",
+      "status": "done",
+      "where": "cities-data.ts irvine bills section 'Solar on an OCPA account' links"
+    }
+  ],
+  "shared_changes": [
+    "src/data/cities-data.ts: CityBillsContent sections gain optional links (backward-compatible); new UTILITY_DATA 'cpau'.",
+    "src/app/solar-savings/[city]/page.tsx: renders section links; SolarInquiry gets growthUtilityForForm(city.utilityCode) so a code the form does not list reaches it as the utility's name (affects gwp/apu/pwp/reu/cpau cities only).",
+    "src/lib/city-pages.ts: SAVINGS_BILLS_SEO entries for lancaster, irvine, newport-beach, oakland, palo-alto; GROWTH_UTILITY_LABEL cpau.",
+    "src/data/city-coordinates.ts: newport-beach and palo-alto points (Census TIGERweb CENTLAT/CENTLON, queried 2026-09-23)."
+  ],
+  "skipped": [
+    {
+      "url": "/solar-savings/anaheim",
+      "why": "Redirect source (canonical-redirects.ts -> /solar-cost/anaheim); /solar-cost/anaheim has no T3 owner, so the 'anaheim electric rates' topic was not built anywhere. Needs Chad's decision (see decisions_for_chad)."
+    },
+    {
+      "url": "/solar-savings/fresno",
+      "why": "Redirect source (canonical-redirects.ts -> /solar-cost/fresno); destination has no T3 owner. Provider question already answered on /solar-companies/fresno (PG&E, no CCA, PAO sample bills, BSC)."
+    }
+  ],
+  "decisions_for_chad": [
+    "Anaheim and Fresno bill/rate topics (Tier 3 pass_serp) sit on redirect sources. Options: reinstate /solar-savings/anaheim and /solar-savings/fresno as bills pages (remove their canonical-redirects rows), or have the /solar-cost owner add a provider-and-rates section there. Anaheim has no page that states APU's actual residential rates today.",
+    "Newport Beach: the new CITIES entry also turns on the older /solar-companies/newport-beach template in this branch. The citycos lane owns that URL (T3 CREATE); if its growth-cities entry merges, it takes precedence. If citycos skipped it, decide whether to keep the older template page or redirect it.",
+    "Altadena is a hand-written page outside the city data layer: it needs the sitemap entry and the LA County hub link in this manifest to be found."
+  ],
+  "gates": {
+    "canonical_redirects_test": "16/16 pass",
+    "city_pages_test": "4/4 pass",
+    "assert_citylinks": "ok (74 /solar-cost pages linked and reachable; no link to a redirected path)",
+    "tsc": "clean (flock /tmp/crr-tsc.lock)",
+    "qc_gate_tsx_altadena": "0 fail, 0 warn, 4 review"
+  }
+}
