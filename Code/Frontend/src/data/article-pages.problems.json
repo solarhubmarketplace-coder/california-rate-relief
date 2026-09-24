@@ -1487,6 +1487,10 @@
         "body": "The fastest way to see your dealer fee is to ask for two numbers in writing, before you sign anything: the cash price for the exact system, and the total amount financed under the loan you're being offered. Subtract the first from the second. What's left over is approximately the dealer fee (it may include small additional lender charges, but the dealer fee is almost always the bulk of the gap).\n\nThis isn't a CSLB-mandated script — the Board's own consumer guidance tells you to get competing bids from at least three contractors and get all costs in writing, but doesn't use the term \"dealer fee\" or instruct you to request a cash quote specifically. The technique itself comes from general consumer-finance practice built on the CFPB's findings, not from a state disclosure form.\n\nGet a cash quote from at least one other installer too, and compare. If a company won't give you a cash price, or gives you one that moves once you mention financing, treat that as your answer.\n\nA note for anyone reading this after early 2026: California Senate Bill 784 would require lenders to give a specific written disclosure of the dealer fee's dollar amount before loan signing. As of its last recorded action (2026-08-13), it remains a two-year bill held under submission in the Assembly Appropriations Committee — it is not law, and its status should be verified before relying on it."
       },
       {
+        "heading": "What a \"solar dealer\" is, and how to find one near you",
+        "body": "The \"dealer\" in dealer fee is the company that sells you the system and arranges the loan. It may put the panels on your roof with its own crews, or it may be a sales company that hands the installation to another licensed contractor. The CFPB's Issue Spotlight on Solar Financing (2024-08-07) describes solar salespeople, installers and lenders that often have agreements with one another, so that sales, installation and financing \"often blend into a single interaction.\" That is why the rate you are offered and the company you are hiring tend to arrive in the same pitch.\n\nIf you are searching for solar dealers near you, what you actually need is a licensed contractor that works in your area. Two public tools help. The CPUC's California Solar Consumer Protection Guide (version 4, 2025) tells homeowners to use the Contractors State License Board's contractor search by city and pick the C-46 (Solar), C-10 (Electrical) or B (General Building) classification. The CPUC's California DG Statistics site has a Find an Installer search that lists solar projects interconnected in the last 24 months near a ZIP code, city or county. It covers PG&E, SCE and SDG&E territory only, and its cost figures are self-reported by applicants with no further verification (californiadgstats.ca.gov, checked 2026-09-23).\n\nBefore you sign with any dealer, ask the two questions the CPUC guide suggests: is the salesperson an employee of your company, and will you subcontract with another company to install the system? If the answer to the second is yes, get that company's CSLB license number as well and look up both. Then ask the dealer for the cash price and the financed price in writing. The gap between them is the fee this page is about."
+      },
+      {
         "heading": "Comparing your options",
         "body": "If you're deciding between a loan, a lease, a PPA, or cash before you even get to the fee question, this site has a separate guide comparing solar PPA, loan, lease and cash purchase side by side. And if a \"$0 down\" offer is what's on the table, see this site's explainer on what $0 down solar actually means in California — a dealer fee can be rolled into a $0-down loan the same way it's rolled into any other solar loan."
       }
@@ -1542,6 +1546,10 @@
       {
         "question": "Does a lease or PPA have a dealer fee?",
         "answer": "The dealer-fee mechanic described here is specific to loans you hold. A lease or power purchase agreement is a different structure with its own cost tradeoffs — it isn't a loan with a principal balance, so this particular markup doesn't apply the same way."
+      },
+      {
+        "question": "What is a solar dealer?",
+        "answer": "A solar dealer is the company that sells you a solar system and arranges its financing. Some dealers install with their own crews; others sell the job and hand the installation to a separate licensed contractor. Ask whether the salesperson is the company's employee and whether the installation will be subcontracted, and check every license number with the Contractors State License Board."
       }
     ],
     "bottomLine": "A dealer fee isn't a scam by itself — it's how a below-market advertised rate gets paid for, and it's already disclosed in aggregate on your contract's required cover page. Get the cash price in writing, compare it to the loan amount, and you've found your number.",
@@ -1580,9 +1588,19 @@
         "name": "CPUC, \"CSLB Disclosure Documents\" guidance page",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/cslb-disclosure-documents",
         "supports": "SESSI (Solar Energy System Supporting Information) version 2 issued 2025-07-28; CPUC Resolution E-5364 requiring the SESSI form be typewritten, not handwritten"
+      },
+      {
+        "name": "CPUC, California Solar Consumer Protection Guide (version 4, 2025)",
+        "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "supports": "Finding licensed contractors by city and C-46/C-10/B classification; questions on whether the salesperson is an employee and whether installation is subcontracted"
+      },
+      {
+        "name": "CPUC California DG Statistics, Find an Installer",
+        "url": "https://www.californiadgstats.ca.gov/find_installer/",
+        "supports": "Search by ZIP code, city or county; interconnections in the last 24 months; PG&E, SCE and SDG&E only; self-reported, unverified costs"
       }
     ],
-    "reviewedAt": "2026-09-22"
+    "reviewedAt": "2026-09-23"
   },
   {
     "slug": "solar-door-to-door-sales-california",

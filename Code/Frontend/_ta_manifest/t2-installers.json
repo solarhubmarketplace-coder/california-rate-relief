@@ -77,6 +77,23 @@
       ],
       "status": "done",
       "note": "Retitled from 'Solar System Quotes in California: Get 3 Real Quotes Fast' to match 'solar quote' intent. Rewritten on the Byline/KeyFacts/SourceList/FaqBlock pattern; kept HeroQuickCheck, SolarInquiry and the referral-compensation paragraph verbatim. Removed unsourced product examples and bankruptcy dates (now links to the sourced bankruptcy pages). Added: what to have ready, where to get quotes (CSLB city search, DGStats), broker cannot quote (CSLB), the two state forms (disclosure cover page, SESSI standardized savings estimate, 10%/yr escalation cap), 5-step comparison, fairness checks, red flags, cancellation window, 6 FAQs, HubSpokeLinks, AuthorBio. dateModified 2026-09-23. qc-gate-tsx: 0 fail, 0 warn."
+    },
+    {
+      "path": "/solar-problems/solar-dealer-fees-explained",
+      "action": "UPGRADE",
+      "hub": "rules_permits",
+      "file": "src/data/article-pages.problems.json (slug solar-dealer-fees-explained); src/data/json-article-links.ts",
+      "title": "Solar Dealer Fees: What They Really Cost You",
+      "clusters": [
+        268
+      ],
+      "sources": [
+        "https://www.consumerfinance.gov/data-research/research-reports/issue-spotlight-solar-financing/",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.californiadgstats.ca.gov/find_installer/"
+      ],
+      "status": "done",
+      "note": "Row 'solar dealers near me'. Title kept (dealer-fee intent is the page's main job). Added a section defining a solar dealer (CFPB) and how to find/check one locally (CSLB city search, DGStats, CPUC's employee/subcontract questions), a 'What is a solar dealer?' FAQ, two sources, reviewedAt 2026-09-23. Added a json-article-links.ts entry (append-only) linking the companies hub, quotes guide, broker page and financing comparison. qc-gate.mjs passed."
     }
   ],
   "sitemap_add": [],
