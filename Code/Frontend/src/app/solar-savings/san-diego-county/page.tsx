@@ -3,6 +3,8 @@ import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { RATE_TRACKER_CRUMB } from '@/lib/city-pages';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowRight } from 'lucide-react';
@@ -64,23 +66,18 @@ export default function SanDiegoCountySolarPage() {
   const sdgeUtility = UTILITY_DATA['sdge'];
 
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel='San Diego County' breadcrumbParents={[RATE_TRACKER_CRUMB]}>
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <div className='max-w-5xl mx-auto'>
-            {/* Breadcrumbs */}
-            <nav className='flex items-center gap-2 text-sm text-muted-foreground mb-8'>
-              <Link href='/' className='hover:text-foreground'>
-                Home
-              </Link>
-              <span>/</span>
-              <Link href='#solar-inquiry' className='hover:text-foreground'>
-                Solar Savings
-              </Link>
-              <span>/</span>
-              <span className='text-foreground font-medium'>San Diego County</span>
-            </nav>
+            {/* Breadcrumbs: Home > California utility rate tracker > San Diego County, the same
+                list PublicLayout emits as BreadcrumbList (Block 5 §5.6). */}
+            <BreadcrumbTrail
+              crumbs={[RATE_TRACKER_CRUMB]}
+              current='San Diego County'
+              className='flex flex-wrap items-center gap-2 text-sm text-muted-foreground mb-8'
+            />
 
             {/* Page Header */}
             <div className='mb-12'>

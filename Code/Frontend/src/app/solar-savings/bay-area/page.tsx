@@ -3,6 +3,8 @@ import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { RATE_TRACKER_CRUMB } from '@/lib/city-pages';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowRight } from 'lucide-react';
@@ -71,7 +73,10 @@ export const metadata: Metadata = {
   },
 };
 
-// Bay Area counties: Santa Clara, San Francisco, Alameda, Contra Costa, Santa Cruz, Sonoma, San Mateo, Monterey, etc.
+// Bay Area counties: Santa Clara, San Francisco, Alameda, Contra Costa, Santa Cruz, Sonoma, San Mateo, Monterey,
+// and since 2026-09-24 Marin, Napa and Solano, so the grid and the cost list
+// below reach Vallejo, Napa and Vacaville. REGIONAL_HUBS in lib/city-pages.ts
+// mirrors this list.
 const bayAreaCounties = [
   'Santa Clara County',
   'San Francisco County',
@@ -81,6 +86,9 @@ const bayAreaCounties = [
   'Sonoma County',
   'San Mateo County',
   'Monterey County',
+  'Marin County',
+  'Napa County',
+  'Solano County',
 ];
 
 const bayAreaCities = CITIES.filter((city) =>
@@ -104,23 +112,18 @@ export default function BayAreaSolarPage() {
   const pgeUtility = UTILITY_DATA['pge'];
 
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel='Bay Area' breadcrumbParents={[RATE_TRACKER_CRUMB]}>
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <div className='max-w-5xl mx-auto'>
-            {/* Breadcrumbs */}
-            <nav className='flex items-center gap-2 text-sm text-muted-foreground mb-8'>
-              <Link href='/' className='hover:text-foreground'>
-                Home
-              </Link>
-              <span>/</span>
-              <Link href='#solar-inquiry' className='hover:text-foreground'>
-                Solar Savings
-              </Link>
-              <span>/</span>
-              <span className='text-foreground font-medium'>Bay Area</span>
-            </nav>
+            {/* Breadcrumbs: Home > California utility rate tracker > Bay Area, the same
+                list PublicLayout emits as BreadcrumbList (Block 5 §5.6). */}
+            <BreadcrumbTrail
+              crumbs={[RATE_TRACKER_CRUMB]}
+              current='Bay Area'
+              className='flex flex-wrap items-center gap-2 text-sm text-muted-foreground mb-8'
+            />
 
             {/* Page Header */}
             <div className='mb-12'>
@@ -128,7 +131,7 @@ export default function BayAreaSolarPage() {
                 Solar Energy in the Bay Area
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
-                Every city in this guide is on PG&amp;E&apos;s grid, and in almost every one a community choice aggregator (CCA) supplies the electricity by default while PG&amp;E delivers it and sends the bill. {utilityRateText(pgeUtility).sentence} That is PG&amp;E&apos;s bundled figure. If a CCA supplies your power, part of your bill is priced by the CCA instead.
+                Nearly every city in this guide is on PG&amp;E&apos;s grid (Palo Alto runs its own utility), and in almost every one a community choice aggregator (CCA) supplies the electricity by default while PG&amp;E delivers it and sends the bill. {utilityRateText(pgeUtility).sentence} That is PG&amp;E&apos;s bundled figure. If a CCA supplies your power, part of your bill is priced by the CCA instead.
               </p>
             </div>
 

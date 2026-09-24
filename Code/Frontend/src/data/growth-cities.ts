@@ -624,6 +624,10 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     "projectLinks": [
       {
+        "href": "/blog/ladwp-solar-program",
+        "label": "LADWP solar programs and incentives, compared with a company quote"
+      },
+      {
         "href": "/solar-companies/santa-monica",
         "label": "Santa Monica, on SCE and Clean Power Alliance instead"
       },
@@ -638,6 +642,14 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "href": "/blog/solar-broker",
         "label": "What a solar broker can and cannot do for you"
+      },
+      {
+        "href": "/blog/solar-ppa-companies",
+        "label": "How to compare solar PPA companies before you sign"
+      },
+      {
+        "href": "/blog/solar-leasing-company",
+        "label": "What a solar leasing company does, and what its contract commits you to"
       }
     ],
     "faq": [
@@ -1565,6 +1577,12 @@ export const growthCities: Record<string, GrowthCity> = {
         url: "https://www.suntreksolar.com/solar-company-in-palm-springs/",
       },
     ],
+    projectLinks: [
+      {
+        href: "/solar-companies/coachella-valley",
+        label: "Utilities and permit offices across the Coachella Valley",
+      },
+    ],
     nearby: ["palm-desert"],
     faq: [
       [
@@ -1820,6 +1838,10 @@ export const growthCities: Record<string, GrowthCity> = {
       }
     ],
     "projectLinks": [
+      {
+        "href": "/solar-companies/coachella-valley",
+        "label": "Which Coachella Valley cities are SCE and which are IID"
+      },
       {
         "href": "/solar-companies/high-desert",
         "label": "The High Desert: Victor Valley and Antelope Valley"
@@ -6662,6 +6684,10 @@ export const growthCities: Record<string, GrowthCity> = {
         "label": "High Desert solar companies and the County's permit route"
       },
       {
+        "href": "/solar-installers#local-solar-reviews",
+        "label": "How to check a local solar installer's reviews"
+      },
+      {
         "href": "/blog/solar-battery-backup-california",
         "label": "When a battery is worth adding"
       }
@@ -6675,7 +6701,8 @@ export const growthCities: Record<string, GrowthCity> = {
     local: "The City of Lancaster issues rooftop solar and battery storage permits instantly through Symbium: you enter the property address, choose the rooftop solar or battery storage option, answer questions about the system, and submit and pay online, and the permit is issued automatically without manual review or a trip to the counter. Symbium also checks the contractor's license and business license automatically.",
     example: "Because Lancaster's Symbium portal verifies the contractor's license and business license on its own, a bidder that says it cannot get the instant permit is telling you something about its paperwork. Ask each bidder to confirm it will file through Symbium, then compare the Personal Choice credit its model assumes for your exports.",
     sourceCheckedDate: "2026-09-23",
-    hasSavingsGuide: false,
+    // 2026-09-24 (integration): hasSavingsGuide: false removed now that
+    // /solar-savings/lancaster is live, so the template links it.
     checks: [
       [
         "Instant permit",
@@ -7696,6 +7723,7 @@ export const growthCities: Record<string, GrowthCity> = {
         },
         {
           "name": "Fullerton",
+          "slug": "fullerton",
           "utility": "SCE",
           "generation": "Orange County Power Authority",
           "permit": "City of Fullerton"
@@ -7742,13 +7770,55 @@ export const growthCities: Record<string, GrowthCity> = {
           "permit": "City of Yorba Linda"
         },
         {
-          "name": "Costa Mesa, Garden Grove, Newport Beach, Orange, Tustin, Lake Forest",
+          "name": "La Habra",
+          "slug": "la-habra",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of La Habra (SolarAPP+)"
+        },
+        {
+          "name": "Newport Beach",
+          "slug": "newport-beach",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Newport Beach (SolarAPP+)"
+        },
+        {
+          "name": "Tustin",
+          "slug": "tustin",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Tustin (SolarAPP+); unincorporated North Tustin: County of Orange"
+        },
+        {
+          "name": "Lake Forest",
+          "slug": "lake-forest",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Lake Forest (SolarAPP+)"
+        },
+        {
+          "name": "Costa Mesa, Garden Grove, Orange",
           "utility": "SCE",
           "generation": "SCE",
           "permit": "Each city's own building department"
         },
         {
-          "name": "Mission Viejo, Aliso Viejo, Laguna Hills, Laguna Niguel",
+          "name": "Mission Viejo",
+          "slug": "mission-viejo",
+          "utility": "Split: SCE or SDG&E by address",
+          "generation": "The delivery utility",
+          "permit": "City of Mission Viejo (SolarAPP+)"
+        },
+        {
+          "name": "Aliso Viejo",
+          "slug": "aliso-viejo",
+          "utility": "Split: SCE or SDG&E by address",
+          "generation": "The delivery utility",
+          "permit": "City of Aliso Viejo (SolarAPP+)"
+        },
+        {
+          "name": "Laguna Hills, Laguna Niguel",
           "utility": "Split: SCE or SDG&E by address",
           "generation": "The delivery utility",
           "permit": "Each city's own building department"
@@ -7773,7 +7843,7 @@ export const growthCities: Record<string, GrowthCity> = {
           "permit": "County of Orange (OC Development Services)"
         }
       ],
-      "note": "Utility and generation rows come from the Energy Commission's map, queried September 23, 2026, and OCPA's own member list, which is newer than the map's community choice layer. The map can still shade Huntington Beach as OCPA; OCPA's page is the current word. For any split city, the bill is the only reliable answer for one address.",
+      "note": "Utility and generation rows come from the Energy Commission's map, queried September 23, 2026, and OCPA's own member list, which is newer than the map's community choice layer. The map can still shade Huntington Beach as OCPA; OCPA's page is the current word. For any split city, the bill is the only reliable answer for one address. Where a permit platform is named, it is the one the city reported to the Energy Commission under SB 379 (program data updated August 3, 2026, checked September 24, 2026).",
       "hub": {
         "href": "/solar-savings/orange-county",
         "label": "Orange County electric rates and bills by provider"
@@ -7787,6 +7857,10 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "label": "Orange County Power Authority: FAQ (current member cities)",
         "url": "https://www.ocpower.org/faq/"
+      },
+      {
+        "label": "California Energy Commission: Residential Solar Permitting Program data, SB 379 platform each jurisdiction reported (updated August 3, 2026)",
+        "url": "https://www.energy.ca.gov/media/9247"
       },
       {
         "label": "Orange County Power Authority: Huntington Beach customers return to SCE in 2024",
@@ -7911,7 +7985,7 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    "contentModified": "2026-09-23"
+    "contentModified": "2026-09-24"
   },
   "san-mateo-county": {
     "name": "San Mateo County",
@@ -8288,6 +8362,20 @@ export const growthCities: Record<string, GrowthCity> = {
           "permit": "City of San Ramon: 694 permits in 2024, all online"
         },
         {
+          "name": "Brentwood",
+          "slug": "brentwood",
+          "utility": "PG&E",
+          "generation": "PG&E (not an MCE member)",
+          "permit": "City of Brentwood: 574 permits in 2024, 72% with storage, 24% online"
+        },
+        {
+          "name": "Antioch",
+          "slug": "antioch",
+          "utility": "PG&E",
+          "generation": "PG&E (not an MCE member)",
+          "permit": "City of Antioch: 1,306 permits in 2024, 90% with storage, 38% online"
+        },
+        {
           "name": "Sunnyvale",
           "slug": "sunnyvale",
           "utility": "PG&E",
@@ -8349,10 +8437,45 @@ export const growthCities: Record<string, GrowthCity> = {
           "permit": "City of Petaluma: 334 permits in 2024, 84% with storage, all online"
         },
         {
-          "name": "Marin County: San Rafael, Novato, Mill Valley and others",
+          "name": "San Rafael",
+          "slug": "san-rafael",
           "utility": "PG&E",
           "generation": "MCE",
-          "permit": "Each town or city, or the County of Marin; San Rafael: 430 permits in 2023, all online"
+          "permit": "City of San Rafael: 430 permits in 2023, 27% with storage, all online"
+        },
+        {
+          "name": "Novato",
+          "slug": "novato",
+          "utility": "PG&E",
+          "generation": "MCE",
+          "permit": "City of Novato (no SB 379 report in the Commission's file)"
+        },
+        {
+          "name": "Other Marin County towns: Mill Valley and others",
+          "utility": "PG&E",
+          "generation": "MCE",
+          "permit": "Each town or city, or the County of Marin"
+        },
+        {
+          "name": "Napa",
+          "slug": "napa",
+          "utility": "PG&E",
+          "generation": "MCE",
+          "permit": "City of Napa (no SB 379 report in the Commission's file)"
+        },
+        {
+          "name": "Vallejo",
+          "slug": "vallejo",
+          "utility": "PG&E (the City of Pittsburg's utility on part of Mare Island)",
+          "generation": "MCE",
+          "permit": "City of Vallejo: 1,022 permits in 2024, 25% with storage, 8% online"
+        },
+        {
+          "name": "Fairfield",
+          "slug": "fairfield",
+          "utility": "PG&E",
+          "generation": "MCE",
+          "permit": "City of Fairfield (no SB 379 report in the Commission's file)"
         },
         {
           "name": "Santa Cruz",
@@ -8369,7 +8492,7 @@ export const growthCities: Record<string, GrowthCity> = {
           "permit": "City of Scotts Valley"
         }
       ],
-      "note": "Utility and CCA rows are from the Energy Commission's map, queried September 23, 2026, and each provider's own list of communities where it publishes one. Permit counts are the jurisdictions' own SB 379 reports in the Commission's data file dated May 2026. A high count reflects demand and city size, not a faster process.",
+      "note": "Utility and CCA rows are from the Energy Commission's map, queried September 23, 2026, and each provider's own list of communities where it publishes one; the Marin, Napa, Solano, Brentwood and Antioch rows were checked against the map and MCE's member list on September 24, 2026. Permit counts are the jurisdictions' own SB 379 reports in the Commission's data file dated May 2026. A high count reflects demand and city size, not a faster process.",
       "hub": {
         "href": "/solar-savings/bay-area",
         "label": "Bay Area electric rates and community choice providers"
@@ -8411,6 +8534,10 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "label": "Sonoma Clean Power: who we are",
         "url": "https://sonomacleanpower.org/who-we-are"
+      },
+      {
+        "label": "MCE: service area (member communities by county)",
+        "url": "https://www.mcecleanenergy.org/service-area/"
       },
       {
         "label": "Central Coast Community Energy: Implementation Plan Addendum No. 5 (May 2023, PDF)",
@@ -8529,7 +8656,7 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    "contentModified": "2026-09-23"
+    "contentModified": "2026-09-24"
   },
   "simi-valley": {
     "name": "Simi Valley",
@@ -9254,8 +9381,8 @@ export const growthCities: Record<string, GrowthCity> = {
         "url": "https://www.paloalto.gov/Departments/Utilities/Electrification/Electrify-My-Home/Consider-Solar/Net-Energy-Metering"
       },
       {
-        "label": "City of Palo Alto: Utility Rate Schedule E-EEC-1, Export Electricity Compensation (effective July 1, 2021, PDF)",
-        "url": "https://www.cityofpaloalto.org/files/assets/public/v/2/agendas-minutes-reports/reports/city-manager-reports-cmrs/attachments/06-21-2021-id-12240-attachment-a2-electric-rates.pdf"
+        "label": "City of Palo Alto Utilities: Utility Rate Schedule E-EEC-1, Export Electricity Compensation (effective July 1, 2026, PDF)",
+        "url": "https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-eec-1_effective_2026-07-01.pdf"
       },
       {
         "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
@@ -9287,7 +9414,7 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
       [
         "What net metering program is Palo Alto on?",
-        "New solar customers have been served by the City's NEM 2 program since January 1, 2018, when CPAU's NEM 1 program had reached its 10.8 MW cap. NEM 2 customers are paid for exported electricity at the Export Electricity Compensation (EEC-1) rate; the version of that schedule effective July 1, 2021 set $0.107809 per kWh, so ask CPAU for the current figure."
+        "New solar customers have been served by the City's NEM 2 program since January 1, 2018, when CPAU's NEM 1 program had reached its 10.8 MW cap. NEM 2 customers are paid for exported electricity at the Export Electricity Compensation rate, Schedule E-EEC-1, which is $0.0990 per kWh from July 1, 2026 (checked September 24, 2026). CPAU revises it from time to time, so have each bidder cite the schedule in force when you sign."
       ],
       [
         "How do I get a SolarAPP+ permit in Palo Alto?",
@@ -9325,6 +9452,16 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       },
       {
+        "label": "Export credit",
+        "value": "$0.0990 per kWh",
+        "note": "Schedule E-EEC-1, effective July 1, 2026",
+        "source": {
+          "publisher": "City of Palo Alto Utilities",
+          "date": "2026-09-24",
+          "url": "https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-eec-1_effective_2026-07-01.pdf"
+        }
+      },
+      {
         "label": "Permission to operate",
         "value": "At final inspection",
         "note": "Issued by the Building Inspector",
@@ -9346,12 +9483,12 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "heading": "How CPAU credits solar",
         "paragraphs": [
-          "CPAU's original net metering program closed when it reached its cap of 10.8 MW of installed solar on December 31, 2017. NEM 1 customers are credited at retail rates for exports; everyone who went solar from January 1, 2018 on is on NEM 2 and paid for exports at the Export Electricity Compensation rate, Schedule E-EEC-1. The version of that schedule effective July 1, 2021 paid $0.107809 per kWh for all exported electricity. Rates change, so a proposal should cite the schedule in force when you sign.",
+          "CPAU's original net metering program closed when it reached its cap of 10.8 MW of installed solar on December 31, 2017. NEM 1 customers are credited at retail rates for exports; everyone who went solar from January 1, 2018 on is on NEM 2 and paid for exports at the Export Electricity Compensation rate, Schedule E-EEC-1. The schedule effective July 1, 2026 pays $0.0990 per kWh for all exported electricity (checked September 24, 2026). Rates change, so a proposal should cite the schedule in force when you sign.",
           "In Palo Alto the utility and the building department finish the job together. CPAU asks customers to schedule its electric meter inspection before the final building inspection, and the Building Inspector issues interconnection approval, permission to operate, at that final inspection. The City reported 155 residential solar permits for 2024 to the Energy Commission, 36% of them issued online."
         ]
       }
     ],
-    "contentModified": "2026-09-23"
+    "contentModified": "2026-09-24"
   },
   "chula-vista": {
     "name": "Chula Vista",
@@ -9999,7 +10136,21 @@ export const growthCities: Record<string, GrowthCity> = {
           "permit": "City of San Jacinto: 495 permits, 44% with storage, 20% online"
         },
         {
-          "name": "Hemet, Perris, Wildomar, Canyon Lake",
+          "name": "Hemet",
+          "slug": "hemet",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Hemet (SolarAPP+; no annual report filed)"
+        },
+        {
+          "name": "Wildomar",
+          "slug": "wildomar",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Wildomar (Symbium; no annual report filed)"
+        },
+        {
+          "name": "Perris, Canyon Lake",
           "utility": "SCE",
           "generation": "SCE",
           "permit": "Each city; Canyon Lake: 136 permits, 80% with storage, all online"
@@ -10044,7 +10195,7 @@ export const growthCities: Record<string, GrowthCity> = {
           "permit": "County of Riverside"
         }
       ],
-      "note": "Utility and community choice rows come from the Energy Commission's map, queried September 23, 2026; the shares are of city land area, not of homes. Permit counts are the cities' own SB 379 reports in the Commission's data file dated May 2026; cities with no report are shown without figures.",
+      "note": "Utility and community choice rows come from the Energy Commission's map, queried September 23, 2026; the shares are of city land area, not of homes. Permit counts are the cities' own SB 379 reports in the Commission's data file dated May 2026; cities with no report are shown without figures. Where a platform is named, it is the one the city reported to the Commission (program data updated August 3, 2026, checked September 24, 2026).",
       "hub": {
         "href": "/solar-savings/inland-empire",
         "label": "Inland Empire electric rates and bills by utility"
@@ -10058,6 +10209,10 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
         "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Residential Solar Permitting Program data, SB 379 platform each jurisdiction reported (updated August 3, 2026)",
+        "url": "https://www.energy.ca.gov/media/9247"
       },
       {
         "label": "Riverside Public Utilities: Self-Generation Program",
@@ -10089,6 +10244,10 @@ export const growthCities: Record<string, GrowthCity> = {
       }
     ],
     "projectLinks": [
+      {
+        "href": "/solar-companies/coachella-valley",
+        "label": "The Coachella Valley in more detail, from Palm Springs to the IID cities"
+      },
       {
         "href": "/commercial-solar/companies-california",
         "label": "Commercial solar companies and what to ask them"
@@ -10173,7 +10332,7 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    "contentModified": "2026-09-23"
+    "contentModified": "2026-09-24"
   },
   "high-desert": {
     "name": "High Desert",
@@ -10228,6 +10387,7 @@ export const growthCities: Record<string, GrowthCity> = {
         },
         {
           "name": "Hesperia",
+          "slug": "hesperia",
           "utility": "SCE",
           "generation": "SCE",
           "permit": "City of Hesperia: 920 permits, 50% with storage, 16% online"
@@ -10259,6 +10419,7 @@ export const growthCities: Record<string, GrowthCity> = {
         },
         {
           "name": "Palmdale",
+          "slug": "palmdale",
           "utility": "SCE",
           "generation": "Palmdale EPIC Energy",
           "permit": "City of Palmdale: 969 permits in 2023, 8% with storage, 15% online"
