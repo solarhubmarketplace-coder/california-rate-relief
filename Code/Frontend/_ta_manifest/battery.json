@@ -1,0 +1,491 @@
+{
+  "agent": "battery",
+  "branch": "claude/ta-battery-20260923",
+  "updated": "2026-09-23",
+  "pages": [
+    {
+      "path": "/battery/pge-permanent-battery-storage-rebate",
+      "action": "CREATE",
+      "hub": "battery",
+      "file": "src/data/article-pages.battery.json",
+      "title": "PG&E Permanent Battery Storage Rebate: $7,500 Rules",
+      "clusters": [1857],
+      "sources": [
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.pge.com/assets/pge/docs/save-energy-and-money/rebate-and-incentives/res-generator-battery-rebate-app.pdf",
+        "https://www.pge.com/en/outages-and-safety/safety/community-wildfire-safety-program/enhanced-powerline-safety-settings.html",
+        "https://www.pge.com/en/save-energy-and-money/energy-saving-programs/demand-response-programs/automated-response-technology.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/reliability-battery-initiative.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/generator-and-battery-rebate-program.html",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf"
+      ],
+      "status": "done",
+      "note": "PG&E page showed 200 rebates remaining as of 09/14/2026; deadline Dec 31, 2026. Recheck the count before publish."
+    },
+    {
+      "path": "/blog/sce-nem-2",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/sce-nem-2/page.tsx",
+      "title": "SCE NEM 2.0 vs Solar Billing Plan: Net Metering Rules",
+      "clusters": [235],
+      "sources": [
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/net-energy-metering",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/solar-billing-plan",
+        "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs",
+        "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/understanding-export-pricing",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+      ],
+      "status": "done",
+      "note": "New self-contained blog post (ArticleJsonLd, FAQPage, breadcrumb parent = NEM hub). Covers sce net metering, sce nem 3.0 / Solar Billing Plan, NEM 2.0 expiry, NEM 2 vs 3."
+    },
+    {
+      "path": "/battery/solar-battery-company",
+      "action": "CREATE_DEDICATED",
+      "hub": "battery",
+      "file": "src/data/article-pages.battery.json",
+      "title": "Solar Battery Companies in California: How to Choose",
+      "clusters": [187],
+      "sources": [
+        "https://www.cslb.ca.gov/About_Us/Library/Laws/Default.aspx",
+        "https://www.cslb.ca.gov/Resources/LawsAndRegulations/2024/BESS%20FINAL%20PACKAGE_(3)_Order%20of%20Adoption%20Final.pdf",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+        "https://www.selfgenca.com/documents/developer/approved",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://enphase.com/download/iq-battery-5p-data-sheet",
+        "https://www.franklinwh.com/document/apower-2-datasheet",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf"
+      ],
+      "status": "partial",
+      "note": "Page built. The CREATE_DEDICATED link from the impression holder /solar-companies/los-angeles was NOT added: that page belongs to the cities agent (see link_requests). No installer names, no service-area claims."
+    },
+    {
+      "path": "/battery/battery-storage-capacity-california",
+      "action": "CREATE",
+      "hub": "battery",
+      "file": "src/data/article-pages.battery.json",
+      "title": "California Battery Storage Capacity: 21,112 MW in 2026",
+      "clusters": [467],
+      "sources": [
+        "https://www.energy.ca.gov/news/2026-08/california-surpasses-21000-megawatts-battery-resources-supporting-states",
+        "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/california-energy-storage-system-survey",
+        "https://www.energy.ca.gov/news/2025-11/californias-battery-storage-fleet-continues-record-growth-strengthening-grid",
+        "https://www.energy.ca.gov/news/2026-05/california-energy-leaders-report-progress-grid-reliability-ahead-summer-2026",
+        "https://www.gov.ca.gov/2024/10/15/california-exceeds-another-clean-energy-milestone",
+        "https://www.gov.ca.gov/2025/05/19/since-governor-newsom-took-office-californias-battery-storage-has-increased-1944-and-just-achieved-a-major-milestone",
+        "https://www.eia.gov/todayinenergy/detail.php?id=67925",
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf"
+      ],
+      "status": "done",
+      "note": "Covers 2024/2025/2026 totals, Texas comparison (CEC wording), home share. The 2026 total includes ~2,000 MW out-of-state CAISO batteries (CEC methodology change June 2026); page says so."
+    },
+    {
+      "path": "/battery/powerwall-vs-enphase-vs-franklinwh",
+      "action": "UPGRADE",
+      "hub": "battery",
+      "file": "src/data/article-pages.battery.json",
+      "title": "Powerwall 3 vs Enphase 5P vs FranklinWH aPower 2",
+      "clusters": [263],
+      "sources": [
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/General/Warranty/en-us/Powerwall-Warranty-EN.pdf",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/SystemDesign/en-us/GUID-23D242D1-8D65-47B9-9118-57002FFD84D2.html",
+        "https://tesla.com/support/energy/powerwall/learn/what-expect-powerwall-3",
+        "https://enphase.com/download/iq-battery-5p-data-sheet",
+        "https://www.franklinwh.com/document/apower-2-datasheet",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.selfgenca.com/home/about/",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Title kept (already names Powerwall and FranklinWH). Added FranklinWH vs Powerwall 3 head-to-head for 'franklin powerwall', verified Tesla warranty terms (rev 2.6: 70%/10y, internet condition, at least 4y), PG&E rebate brand paths, SGIP status as of 9/23. Removed unverified Sunnova/SunStrong claims and the IndexBox source; fixed root-domain source URLs."
+    },
+    {
+      "path": "/blog/why-are-my-nem-charges-so-high",
+      "action": "CREATE_DEDICATED",
+      "hub": "nem",
+      "file": "src/app/blog/why-are-my-nem-charges-so-high/page.tsx",
+      "title": "Why Are My NEM Charges So High? 7 Causes on a Solar Bill",
+      "clusters": [391],
+      "sources": [
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.pge.com/assets/pge/transcripts/net-energy-metering-bill-explainer.pdf",
+        "https://www.pge.com/assets/pge/docs/account/billing-and-assistance/nem-monthly-transition-bill-base-services-charge.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/net-energy-metering"
+      ],
+      "status": "done",
+      "note": "Holder link added: one sentence + link in section 7 of /blog/why-is-my-pge-bill-so-high (no content removed; that page is in no agent's CSV)."
+    },
+    {
+      "path": "/blog/solar-battery-backup-california",
+      "action": "UPGRADE",
+      "hub": "battery",
+      "file": "src/app/blog/solar-battery-backup-california/page.tsx",
+      "title": "Solar Battery Backup in California: Cost, Savings, Rebates",
+      "clusters": [321, 1911],
+      "sources": [
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/solar-billing-plan",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://enphase.com/download/iq-battery-5p-data-sheet",
+        "https://www.franklinwh.com/document/apower-2-datasheet",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/reliability-battery-initiative.html",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/self-generation-incentive-program.html",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Retitled (old title missed 'savings'/'cost' intent): was 'California Solar Batteries: Backup and Cost Comparison'. Now a self-contained page; Guides.tsx kind='battery' is no longer used by any route (left in place to avoid cross-agent conflicts; safe to delete at integration). Breadcrumb parent now /battery."
+    },
+    {
+      "path": "/battery/pge-solar-battery-rebate",
+      "action": "CREATE",
+      "hub": "battery",
+      "file": "src/data/article-pages.battery.json",
+      "title": "PG&E Solar Battery Rebates in 2026: What's Still Open",
+      "clusters": [377],
+      "sources": [
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/self-generation-incentive-program.html",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.selfgenca.com/home/about/",
+        "https://www.energy.ca.gov/programs-and-topics/programs/demand-side-grid-support-program",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+        "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF"
+      ],
+      "status": "done",
+      "note": "Differentiated from the permanent-rebate page: organized by household situation (outages / income / POU customer / everyone) plus Solar Billing Plan value of storage and the 2027 export-bonus deadline."
+    },
+    {
+      "path": "/blog/nem-3-lawsuit",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/nem-3-lawsuit/page.tsx",
+      "title": "NEM 3.0 Lawsuit: What the Courts Decided (2026 Update)",
+      "clusters": [421],
+      "sources": [
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-modernizes-solar-tariff-to-support-reliability-and-decarbonization",
+        "https://www.courtlistener.com/opinion/10649729/center-for-biological-diversity-inc-v-public-utilities-com/",
+        "https://supreme.courts.ca.gov/case/s283614-center-biological-diversity-v-public-utilities-commission-pacific-gas-and-electric",
+        "https://law.justia.com/cases/california/court-of-appeal/2026/a167721a.html",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.cpuc.ca.gov/nbt"
+      ],
+      "status": "done",
+      "note": "Timeline ends at the Mar 9, 2026 Court of Appeal affirmance. A June 2026 Supreme Court denial of review is reported by trade press but could not be confirmed on a primary court source this session (courts.ca.gov blocks the fetch tool), so it is not stated. Add it if Chad or a later check confirms the docket."
+    },
+    {
+      "path": "/blog/nem-3-california-timeline",
+      "action": "UPGRADE",
+      "hub": "nem",
+      "file": "src/app/blog/nem-3-california-timeline/page.tsx",
+      "title": "NEM 3.0 California Timeline: Every Date and Deadline",
+      "clusters": [447],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.cpuc.ca.gov/nbt",
+        "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-modernizes-solar-tariff-to-support-reliability-and-decarbonization",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/net-energy-metering-nem/nemrevisit/net-billing-tariff-fact-sheet.pdf",
+        "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs",
+        "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://law.justia.com/cases/california/court-of-appeal/2026/a167721a.html"
+      ],
+      "status": "done",
+      "note": "Retitled for 'nem 3.0 deadline' (was 44 chars, 'NEM 3.0 California Timeline: Confirmed Dates'). Rebuilt as a self-contained page from NetBillingGuide kind='timeline' (that kind is now unused). G10 merge held: Decision 14 default."
+    },
+    {
+      "path": "/blog/nem-3-export-rates-california",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/nem-3-export-rates-california/page.tsx",
+      "title": "NEM 3.0 Export Rates in California: 2026 Values by Hour",
+      "clusters": [487],
+      "sources": [
+        "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/solar-billing-plan",
+        "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/understanding-export-pricing",
+        "https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+      ],
+      "status": "done",
+      "note": "PG&E table values are Energy Produced + Energy Delivered read from PG&E's 2026 EEC price-sheet PDFs (inside the ZIP) for 2023–24 and 2025–26 application years; averages are simple means of the sheet cells, labeled as such."
+    },
+    {
+      "path": "/blog/nem-3-california-still-worth-it",
+      "action": "UPGRADE",
+      "hub": "nem",
+      "file": "src/app/blog/nem-3-california-still-worth-it/page.tsx",
+      "title": "Is Solar Still Worth It Under NEM 3.0? The Best Approach",
+      "clusters": [1836],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-modernizes-solar-tariff-to-support-reliability-and-decarbonization",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Retitled for 'best approach under nem 3.0' (was 'Is Solar Still Worth It Under California Net Billing?'). Rebuilt self-contained from NetBillingGuide kind='decision' (now unused). CPUC savings figures presented as the CPUC's Dec 2022 projections, not promises. G11 merge held: Decision 14 default."
+    },
+    {
+      "path": "/battery/add-powerwall-to-existing-solar",
+      "action": "CREATE",
+      "hub": "battery",
+      "file": "src/data/article-pages.battery.json",
+      "title": "Adding a Powerwall to Existing Solar in California",
+      "clusters": [498],
+      "sources": [
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/SystemDesign/en-us/GUID-23D242D1-8D65-47B9-9118-57002FFD84D2.html",
+        "https://tesla.com/support/energy/powerwall/learn/what-expect-powerwall-3",
+        "https://www.tesla.com/support/energy/powerwall/learn/combining-systems",
+        "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs",
+        "https://www.pge.com/assets/pge/docs/about/doing-business-with-pge/guide-to-energy-storage-charging-issues.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Title is 50 chars. Links to the reviews-owned /battery/tesla-powerwall-3-cost-california (not edited)."
+    },
+    {
+      "path": "/blog/net-billing-vs-net-metering-california",
+      "action": "UPGRADE",
+      "hub": "nem",
+      "file": "src/app/blog/net-billing-vs-net-metering-california/page.tsx",
+      "title": "Net Billing vs Net Metering: The CPUC NEM 3.0 Decision",
+      "clusters": [543],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.cpuc.ca.gov/nbt",
+        "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-modernizes-solar-tariff-to-support-reliability-and-decarbonization",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/net-energy-metering-nem/nemrevisit/net-billing-tariff-fact-sheet.pdf",
+        "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/solar-billing-plan",
+        "https://law.justia.com/cases/california/court-of-appeal/2026/a167721a.html"
+      ],
+      "status": "done",
+      "note": "Retitled for 'california nem 3.0 decision' (was 'Net Billing vs. Net Metering in California', 41 chars). Rebuilt self-contained from NetBillingGuide kind='billing' (now unused). Adds what D.22-12-056 adopted (ACC Plus Table 7, legacy tied to customer) and what the Dec 2021 PD proposed but dropped."
+    },
+    {
+      "path": "/blog/what-is-nem-true-up",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/what-is-nem-true-up/page.tsx",
+      "title": "What Is a NEM True-Up? How the Annual Solar Bill Works",
+      "clusters": [441],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.pge.com/assets/pge/transcripts/net-energy-metering-bill-explainer.pdf",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/solar-billing-plan",
+        "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs",
+        "https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill"
+      ],
+      "status": "done",
+      "note": "Definitional, cross-utility; links to the problems-agent page /solar-problems/true-up-bill-california-explained for utility examples rather than duplicating it."
+    },
+    {
+      "path": "/blog/when-does-nem-2-expire",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/when-does-nem-2-expire/page.tsx",
+      "title": "When Does NEM 2.0 Expire? The 20-Year Clock Explained",
+      "clusters": [465],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/net-energy-metering",
+        "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "https://tesla.com/support/energy/powerwall/learn/what-expect-powerwall-3"
+      ],
+      "status": "done",
+      "note": "AB 942 status deliberately not stated: leginfo blocks the fetch tool, so its current status could not be cited from a WebFetch'd primary page. PG&E's two pages differ on what an expiring NEM1 account moves to (solar-bill page says NEM2; SBP page lists expired 20-year NEM business accounts on SBP); page tells readers to get PG&E's answer in writing."
+    },
+    {
+      "path": "/blog/nem-pge",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/nem-pge/page.tsx",
+      "title": "What Does NEM Mean on a PG&E Bill? NEM Charges Explained",
+      "clusters": [493],
+      "sources": [
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.pge.com/assets/pge/transcripts/net-energy-metering-bill-explainer.pdf",
+        "https://www.pge.com/assets/pge/docs/account/billing-and-assistance/nem-monthly-transition-bill-base-services-charge.pdf",
+        "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "Kept distinct from why-are-my-nem-charges-so-high (causes) and what-is-nem-true-up (settlement): this one decodes the PG&E statements."
+    },
+    {
+      "path": "/battery/solar-and-storage-association-california",
+      "action": "CREATE",
+      "hub": "battery",
+      "file": "src/data/article-pages.battery.json",
+      "title": "California Solar & Storage Association (CALSSA) Explained",
+      "clusters": [569],
+      "sources": [
+        "https://www.cpuc.ca.gov/nbt",
+        "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/net-energy-metering-nem/nemrevisit/california-solar-and-storage-association-slides.pdf",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-modernizes-solar-tariff-to-support-reliability-and-decarbonization",
+        "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/net-energy-metering-nem/nemrevisit/net-billing-tariff-fact-sheet.pdf",
+        "https://cslb.ca.gov/Resources/BoardPackets/2022/CALSSALetter.pdf",
+        "https://www.cslb.ca.gov/About_Us/Library/Laws/Default.aspx",
+        "https://www.cslb.ca.gov/Resources/LawsAndRegulations/2024/BESS%20FINAL%20PACKAGE_(3)_Order%20of%20Adoption%20Final.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://law.justia.com/cases/california/court-of-appeal/2026/a167721a.html"
+      ],
+      "status": "done",
+      "note": "calssa.org blocks the fetch tool, so the page describes CALSSA only through the CPUC and CSLB record (its filings, the D.22-12-056 text, its 2022 CSLB letter). No membership counts or founding dates stated."
+    },
+    {
+      "path": "/battery/battery-backup-vs-generator-california",
+      "action": "UPGRADE",
+      "hub": "battery",
+      "file": "src/data/article-pages.battery.json",
+      "title": "Powerwall or Generator? California Outage Backup Compared",
+      "clusters": [560],
+      "sources": [
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/General/Warranty/en-us/Powerwall-Warranty-EN.pdf",
+        "https://www.generac.com/globalassets/products/residential/standby-generators/spec-sheets/20kw-guardian-standby-generator-specsheet.pdf",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/generator-and-battery-rebate-program.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.selfgenca.com/home/about/",
+        "https://www.cslb.ca.gov/About_Us/Library/Laws/Default.aspx",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Retitled for 'powerwall vs' (was 'Battery vs. Generator for California Power Outages'). Added Powerwall 3 vs Generac 20 kW spec comparison and PG&E outage rebates; corrected the Generac noise figure to the spec sheet (67 dB(A) normal load, 58 dB(A) exercise, was 63); removed unsourced dB ranges, lifespan hours, 48E, SunPower/Sunnova claims and the EIA propane source that backed nothing on the page."
+    }
+  ],
+  "other_changes": [
+    {
+      "path": "/battery",
+      "file": "src/app/battery/page.tsx",
+      "note": "Battery hub: new sections linking every new battery spoke (rebates, installers/retrofit, NEM cross-hub, grid capacity/CALSSA); SGIP status updated to 9/23/2026 (and removed the outdated demand-response requirement); HubSpokeLinks for hub='battery' and hub='nem' via a new optional ArticleHub `after` prop."
+    },
+    {
+      "path": "/battery/[slug] (all JSON battery guides)",
+      "file": "src/app/battery/[slug]/page.tsx, src/app/battery/[slug]/topic-links.ts",
+      "note": "Each JSON battery guide now renders a per-page RelatedGuides list (siblings + NEM/incentive/cost cross-hub links) and <HubSpokeLinks hub='battery'> under the article, through a new optional ArticleRoute `after` prop. This also applies to the reviews-owned tesla-powerwall-3-cost-california route (HubSpokeLinks only; its JSON entry was not touched)."
+    },
+    {
+      "path": "(shared) src/components/shared/ArticleRoute.tsx",
+      "file": "src/components/shared/ArticleRoute.tsx",
+      "note": "Added two optional props, ArticleRoute.after and ArticleHub.after (render-only, default unchanged). Other agents adding HubSpokeLinks to JSON routes may touch the same file; merge by keeping one `after` prop."
+    },
+    {
+      "path": "/blog/why-is-my-pge-bill-so-high",
+      "file": "src/app/blog/why-is-my-pge-bill-so-high/page.tsx",
+      "note": "One sentence + link added to section 7 pointing at /blog/why-are-my-nem-charges-so-high (CREATE_DEDICATED holder link). Nothing removed."
+    }
+  ],
+  "sitemap_add": [
+    "/blog/sce-nem-2",
+    "/blog/why-are-my-nem-charges-so-high",
+    "/blog/nem-3-lawsuit",
+    "/blog/nem-3-export-rates-california",
+    "/blog/what-is-nem-true-up",
+    "/blog/when-does-nem-2-expire",
+    "/blog/nem-pge"
+  ],
+  "blog_index_add": [
+    { "slug": "sce-nem-2", "title": "SCE NEM 2.0 vs Solar Billing Plan: Net Metering Rules", "hub": "nem" },
+    { "slug": "why-are-my-nem-charges-so-high", "title": "Why Are My NEM Charges So High? 7 Causes on a Solar Bill", "hub": "nem" },
+    { "slug": "nem-3-lawsuit", "title": "NEM 3.0 Lawsuit: What the Courts Decided (2026 Update)", "hub": "nem" },
+    { "slug": "nem-3-export-rates-california", "title": "NEM 3.0 Export Rates in California: 2026 Values by Hour", "hub": "nem" },
+    { "slug": "what-is-nem-true-up", "title": "What Is a NEM True-Up? How the Annual Solar Bill Works", "hub": "nem" },
+    { "slug": "when-does-nem-2-expire", "title": "When Does NEM 2.0 Expire? The 20-Year Clock Explained", "hub": "nem" },
+    { "slug": "nem-pge", "title": "What Does NEM Mean on a PG&E Bill? NEM Charges Explained", "hub": "nem" }
+  ],
+  "redirect_requests": [],
+  "hub_links": [
+    { "hub": "battery", "href": "/battery/pge-permanent-battery-storage-rebate", "label": "PG&E's $7,500 battery rebate, explained" },
+    { "hub": "battery", "href": "/battery/pge-solar-battery-rebate", "label": "PG&E solar battery incentives in 2026" },
+    { "hub": "battery", "href": "/battery/solar-battery-company", "label": "How to choose a battery company" },
+    { "hub": "battery", "href": "/battery/add-powerwall-to-existing-solar", "label": "Adding a Powerwall to existing solar" },
+    { "hub": "battery", "href": "/battery/battery-storage-capacity-california", "label": "California battery storage capacity" },
+    { "hub": "battery", "href": "/battery/solar-and-storage-association-california", "label": "What CALSSA is and argues" },
+    { "hub": "battery", "href": "/battery/battery-backup-vs-generator-california", "label": "Powerwall or generator for outages" },
+    { "hub": "nem", "href": "/blog/nem-3-export-rates-california", "label": "NEM 3.0 export rates by hour" },
+    { "hub": "nem", "href": "/blog/why-are-my-nem-charges-so-high", "label": "Why NEM charges run high" },
+    { "hub": "nem", "href": "/blog/what-is-nem-true-up", "label": "What a NEM true-up is" },
+    { "hub": "nem", "href": "/blog/nem-pge", "label": "NEM on a PG&E bill" },
+    { "hub": "nem", "href": "/blog/sce-nem-2", "label": "SCE NEM 2.0 and the Solar Billing Plan" },
+    { "hub": "nem", "href": "/blog/when-does-nem-2-expire", "label": "When NEM 2.0 expires" },
+    { "hub": "nem", "href": "/blog/nem-3-lawsuit", "label": "The NEM 3.0 lawsuit, explained" },
+    { "hub": "nem", "href": "/blog/net-billing-vs-net-metering-california", "label": "The CPUC's NEM 3.0 decision" }
+  ],
+  "link_requests": [
+    {
+      "from": "/solar-companies/los-angeles",
+      "to": "/battery/solar-battery-company",
+      "owner": "cities",
+      "why": "CREATE_DEDICATED holder: 'solar battery company' impressions (pos 66.2) land on the LA companies page. Add one contextual link, e.g. in the battery/storage paragraph: 'how to vet a solar battery company'."
+    },
+    {
+      "from": "/blog/nem-2-vs-nem-3-california",
+      "to": "the seven new NEM spokes (see hub_links, hub=nem)",
+      "owner": "none (NEM hub page, not in any CSV)",
+      "why": "Hub must link every spoke (SEO/24 §5.1). The hub renders from NetBillingGuide kind='comparison' and has no HubSpokeLinks; left untouched because it is not assigned. Suggest adding <HubSpokeLinks hub='nem'> at integration."
+    }
+  ],
+  "skipped": [
+    { "url": "/blog/nem-3-california-timeline -> /blog/what-is-nem-3-california (G10 merge)", "why": "held: Decision 14 default" },
+    { "url": "/blog/nem-3-california-still-worth-it -> /blog/are-solar-panels-worth-it-california (G11 merge)", "why": "held: Decision 14 default" }
+  ],
+  "gates": {
+    "tsc": "npx tsc --noEmit -p . clean (exit 0) on the final tree",
+    "qc-gate.mjs": "PASSED (51 JSON pages; new battery pages 1,344–1,839 words, max 8-gram overlap 5.4%)",
+    "qc-gate-tsx.mjs": "0 fail, 0 warn on all 11 blog routes created/upgraded here; no DUPLICATE flags against the full /blog set. /battery prefix shows 2 pre-existing FAILs on /battery/home-battery-cost-california (not changed)."
+  },
+  "integration_notes": [
+    "topic-hubs.ts labels contain HTML entities ('PG&amp;E', 'SDG&amp;E'); HubSpokeLinks renders them as literal '&amp;' text. Fix the data at integration.",
+    "Now-unused code left in place to avoid cross-agent conflicts: Guides.tsx definitions.battery / kind==='battery' branch, and NetBillingGuides.tsx kinds 'timeline', 'decision', 'billing' (only 'comparison' is still used, by the NEM hub).",
+    "qc-gate-tsx pre-existing FAILs on /battery/home-battery-cost-california (page.tsx wraps HomeBatteryCostGuide, so the gate cannot see its schema/CTA). Not in this CSV; not changed."
+  ]
+}
