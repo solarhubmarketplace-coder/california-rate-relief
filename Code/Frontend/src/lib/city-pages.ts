@@ -32,6 +32,7 @@ import {
 } from '../data/city-cost-data.ts';
 import { formatAverageRateCents, getUtilityRate } from '../data/utility-rate-tracker.ts';
 import { hasCompaniesCityPage, hasSavingsCityPage } from './canonical-redirects.ts';
+import { utilityOptions } from './calculator-context.ts';
 
 export type CityPageType = 'cost' | 'companies' | 'savings';
 
@@ -434,6 +435,18 @@ const GROWTH_UTILITY_LABEL: Record<string, string> = {
   gwp: 'Glendale Water & Power',
   redding: 'Redding Electric Utility',
 };
+
+/**
+ * The utility a growth companies page hands to its inquiry form. The form's
+ * select only lists the large utilities, and any other value is shown to the
+ * visitor as their typed "other" answer, so a city-utility code such as
+ * 'pwp' becomes the utility's name instead of the bare code.
+ */
+export function growthUtilityForForm(code: string): string {
+  if (!code || code === 'other') return code;
+  if (utilityOptions.some(([id]) => id === code)) return code;
+  return GROWTH_UTILITY_LABEL[code] ?? code;
+}
 
 /** /solar-cost/<city> */
 export function costPageSeo(row: CityCostRow): CitySeo {

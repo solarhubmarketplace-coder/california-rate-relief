@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { allLiveCityPages, cityQuickCheckUtility } from './city-pages.ts';
+import { allLiveCityPages, cityQuickCheckUtility, growthUtilityForForm } from './city-pages.ts';
+import { growthCities } from '../data/growth-cities.ts';
 import { utilityCodeFor } from './quick-start.ts';
 
 // HeroQuickCheck on a city page pre-selects the city's utility only when the
@@ -41,4 +42,18 @@ test('every live city page yields a known utility code or nothing', () => {
     assert.ok(code === '' || code !== 'other', `${page.path}: ${value}`);
     assert.notEqual(value, 'other', page.path);
   }
+});
+
+// The inquiry form shows any utility it does not list as the visitor's own
+// "other" answer, so a city-owned utility must reach it as a name, not a
+// bare code such as 'pwp' (2026-09-23).
+test('growth companies pages hand the inquiry form a listed code or a utility name', () => {
+  for (const [slug, city] of Object.entries(growthCities)) {
+    const value = growthUtilityForForm(city.utility);
+    if (!value || value === 'other') continue;
+    const listed = utilityCodeFor(value) !== '';
+    assert.ok(listed || /\s/.test(value), `${slug}: form would show the code '${value}'`);
+  }
+  assert.equal(growthUtilityForForm('pwp'), 'Pasadena Water and Power');
+  assert.equal(growthUtilityForForm('pge'), 'pge');
 });

@@ -12,7 +12,7 @@ import {
   CityQuestions,
 } from "./CityLocalDetails";
 import { CitySiblingLinks, NearbyCityPages } from "./NearbyCostCities";
-import { cityPageDates, cityQuickCheckUtility, companiesPageSeo, isLiveCityPage } from "@/lib/city-pages";
+import { cityPageDates, cityQuickCheckUtility, companiesPageSeo, growthUtilityForForm, isLiveCityPage } from "@/lib/city-pages";
 
 /**
  * The contract-risk guides a reader comparing installers needs. Until
@@ -61,7 +61,7 @@ export function CityComparison({ slug }: { slug: string }) {
       }
       path={path}
       sources={city.sources}
-      utility={city.utility}
+      utility={growthUtilityForForm(city.utility)}
       sourceCheckedDate={city.sourceCheckedDate}
       contentModifiedDate={modified}
       keyStats={city.keyFacts}
