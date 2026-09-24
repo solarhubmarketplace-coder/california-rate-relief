@@ -21,6 +21,11 @@ const metaDescription =
 const DOE_SOLAR_POOL = "https://www.energy.gov/energysaver/solar-swimming-pool-heaters";
 const DOE_HEAT_PUMP_POOL = "https://www.energy.gov/energysaver/heat-pump-swimming-pool-heaters";
 const IRS_5695 = "https://www.irs.gov/instructions/i5695";
+// 2026-09-23 Tier 2 (agent costfin): sources for the added sections below.
+const CPUC_CSI_THERMAL =
+  "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/california-solar-initiative/csi-thermal-program-solar-water-heating";
+const CPUC_GUIDE =
+  "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide";
 const CHECKED = "September 23, 2026";
 
 export const metadata: Metadata = {
@@ -43,6 +48,10 @@ export const metadata: Metadata = {
 // cost question directly; added inground-pool sizing arithmetic, a FAQ with
 // FAQPage schema, the cost hub link and HubSpokeLinks. DOE figures re-fetched
 // 2026-09-23. The permit paragraph no longer states a statute it did not cite.
+// 2026-09-23 Tier 2 (agent costfin): for the "pool solar" and "residential
+// solar pool heating systems" clusters, added system types and components,
+// SRCC OG400 comparison, Southern California sizing context, heat pump plus
+// solar panels, and the closed CSI-Thermal rebate (DOE, CPUC; re-fetched).
 const poolFaqs: FaqJsonLdItem[] = [
   {
     question: "How much does solar pool heating cost in California?",
@@ -58,6 +67,21 @@ const poolFaqs: FaqJsonLdItem[] = [
     question: "How long does a solar pool heater last?",
     answer:
       "DOE says solar pool heaters typically last longer than gas and heat pump pool heaters, and that proper maintenance keeps them running smoothly for 10 to 20 years.",
+  },
+  {
+    question: "What types of residential solar pool heating systems are there?",
+    answer:
+      "Two, by collector. DOE says unglazed collectors have no glass covering and are generally made of heavy-duty rubber or plastic treated to resist UV light; glazed collectors are generally copper tubing on an aluminum plate under tempered glass, which costs more. Either way the system has four parts: the collector, a filter, a pump and a flow control valve.",
+  },
+  {
+    question: "Is there a California rebate for solar pool heating?",
+    answer:
+      "Not a statewide one. The CPUC's CSI-Thermal program, which paid rebates for solar water heating and some non-water-heating technologies, closed to new applications on July 31, 2020. Ask your utility or city whether it runs a local program before counting on one.",
+  },
+  {
+    question: "Can solar panels run a heat-pump pool heater?",
+    answer:
+      "Yes, in the sense that a heat pump runs on electricity and solar panels make electricity. The CPUC says most solar bill savings come from using solar power in your home, so running the pool heat pump while the panels are producing uses your own power instead of exporting it. DOE says heat pump pool heaters work efficiently while outdoor air stays above the 45°F to 50°F range.",
   },
   {
     question: "Is a solar pool heater worth it in California?",
@@ -158,6 +182,43 @@ export default function SolarPoolHeatingCA() {
                 For a 15 × 30 foot inground pool (450 square feet), that works out to about 270 to 315 square feet of collector at the northern California ratio, or up to 450 square feet at 100%. Ask each bidder to state the collector area and price per square foot, so bids for different sizes compare. DOE also says solar pool heaters &ldquo;typically last longer than gas and heat pump pool heaters,&rdquo; and that proper maintenance keeps them running for 10 to 20 years (<a href={DOE_SOLAR_POOL} target="_blank" rel="noopener noreferrer" className="text-primary underline">DOE</a>, checked {CHECKED}).
               </p>
 
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Types of Residential Solar Pool Heating Systems</h2>
+              <p>
+                Residential systems differ mainly in the collector. DOE describes two kinds (<a href={DOE_SOLAR_POOL} target="_blank" rel="noopener noreferrer" className="text-primary underline">DOE</a>, checked {CHECKED}):
+              </p>
+              <ul className="space-y-2">
+                <li><strong>Unglazed collectors.</strong> &ldquo;Unglazed collectors don&apos;t include a glass covering (glazing). They are generally made of heavy-duty rubber or plastic treated with an ultraviolet (UV) light inhibitor to extend the life of the panels.&rdquo; DOE says they are &ldquo;usually less expensive than glazed collectors.&rdquo;</li>
+                <li><strong>Glazed collectors.</strong> &ldquo;Glazed collector systems are generally made of copper tubing on an aluminum plate with an iron-tempered glass covering, which increases their cost.&rdquo; DOE says that in colder weather they &ldquo;capture solar heat more efficiently than unglazed systems&rdquo; and &ldquo;can be used year-round in many climates.&rdquo;</li>
+              </ul>
+              <p>
+                Either kind runs on the same four parts DOE lists: a solar collector that pool water passes through, a filter that removes debris before the water reaches the collector, a pump that circulates the water, and &ldquo;a flow control valve,&rdquo; automatic or manual, that diverts pool water through the collector. For a system that heats in summer only, DOE says the collectors should ideally be &ldquo;tilted at an angle equal to your latitude minus 10º–15º.&rdquo;
+              </p>
+              <h3 className="text-xl font-bold text-foreground mt-8 mb-3">Comparing systems by rating, not brochure</h3>
+              <p>
+                DOE says the Solar Rating and Certification Corporation (SRCC) &ldquo;provides ratings for solar pool heaters under the OG400 standard and maintains a directory of certified solar pool heaters.&rdquo; To compare two bids, divide each system&apos;s rated Btu per day by its price: DOE&apos;s formula is &ldquo;Btu/day ÷ collector price = Btu/day per dollar spent.&rdquo; Ask each bidder for the SRCC listing of the collector they quote.
+              </p>
+
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Sizing for Southern California and the Desert</h2>
+              <p>
+                DOE gives two reference points, and California sits between them. For year-round use, &ldquo;a 15-by-30-foot outdoor swimming pool in Florida typically requires a collector that equals 100% of the pool&apos;s square footage.&rdquo; For a shorter season, &ldquo;In northern California, most people use outdoor pools 6–8 months per year, so they typically size their systems at 60%–70% of the pool&apos;s surface area&rdquo; (<a href={DOE_SOLAR_POOL} target="_blank" rel="noopener noreferrer" className="text-primary underline">DOE</a>, checked {CHECKED}). DOE does not publish a ratio for Los Angeles, Orange County or Palm Springs. The longer the season you want, the closer to 100% a bid should be; ask each installer what ratio they used and what pool temperature they expect by month.
+              </p>
+              <p>
+                A cover changes the math everywhere: DOE says it usually lets you use less collector area. Heating in cooler months is also where a heat pump or gas heater may still be needed as backup.
+              </p>
+
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Running a Heat-Pump Pool Heater on Solar Panels</h2>
+              <p>
+                Some homeowners pair solar electric panels with a heat-pump pool heater instead of solar thermal collectors. The two work together because the heat pump runs on electricity. DOE says heat pump pool heaters &ldquo;work efficiently as long as the outside temperature remains above the 45ºF–50ºF range,&rdquo; and that their efficiency is measured by coefficient of performance, with COPs that &ldquo;usually range from 3.0 to 7.0&rdquo; (<a href={DOE_HEAT_PUMP_POOL} target="_blank" rel="noopener noreferrer" className="text-primary underline">DOE</a>, checked {CHECKED}).
+              </p>
+              <p>
+                Timing matters under California&apos;s current solar billing. The CPUC says that if you install solar, &ldquo;the majority of your electric bill savings will come from using the solar energy in your home,&rdquo; with a smaller amount from credits for power you export (<a href={CPUC_GUIDE} target="_blank" rel="noopener noreferrer" className="text-primary underline">CPUC</a>, checked {CHECKED}). Running the pool heat pump and filter pump while the panels are producing uses that power at home. If you plan to add one, tell the solar designer, because it raises the use the system should be sized for; see <Link href="/blog/10-kw-solar-system-cost" className="text-primary underline">what a larger home system costs</Link>.
+              </p>
+
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Is There a California Rebate for Solar Pool Heating?</h2>
+              <p>
+                Not a statewide one. The CPUC&apos;s CSI-Thermal program paid rebates for solar water heating, and &ldquo;some non-water heating technologies also qualified,&rdquo; but it &ldquo;closed to new applications on July 31, 2020&rdquo; (<a href={CPUC_CSI_THERMAL} target="_blank" rel="noopener noreferrer" className="text-primary underline">CPUC</a>, checked {CHECKED}). Ask your electric or gas utility and your city whether a local program exists before a bid counts on one. The programs that remain for solar electric systems are in <Link href="/blog/california-solar-tax-credit-2026" className="text-primary underline">California solar incentives in 2026</Link>.
+              </p>
+
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Much Swim Season It Adds</h2>
               <p>
                 That depends on collector area, the pool cover, and how much sun and fog your roof gets. We did not find a primary source that gives added swim weeks by California region, so this page does not list them. Ask each bidder for a written estimate of pool temperature by month for your pool, with and without a cover.
@@ -231,6 +292,11 @@ export default function SolarPoolHeatingCA() {
                   <p>{f.answer}</p>
                 </div>
               ))}
+
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">A Referral Request Is Optional</h2>
+              <p>
+                California Rate Relief is a referral service. We are not a licensed contractor. We do not install pool heaters; get written bids from licensed contractors and check each one&apos;s license with the CSLB.
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
               <ul className="list-disc pl-6 space-y-2">

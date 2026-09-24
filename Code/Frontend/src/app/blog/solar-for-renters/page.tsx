@@ -20,8 +20,7 @@ const link = 'text-primary underline underline-offset-2';
 
 const CPUC_DAC =
   'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities';
-const PGE_SOLAR_CHOICE =
-  'https://www.pge.com/en_US/residential/solar-and-vehicles/options/solar/solar-choice/rate-calculator.page';
+const PGE_SOLAR_CHOICE = 'https://www.pge.com/en/clean-energy/solar/community-renewable-programs.html';
 const SCE_PROGRAMS =
   'https://www.sce.com/clean-energy-efficiency/solar-generation-storage/solar-billing-incentives';
 const SOMAH = 'https://calsomah.org/about';
@@ -31,12 +30,20 @@ const IRS_25D = 'https://www.irs.gov/credits-deductions/residential-clean-energy
 const CPUC_CRE =
   'https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-updates-existing-community-solar-programs';
 const SOMAH_OWNERS = 'https://www.calsomah.org/property-owners';
+// 2026-09-23 Tier 2 (agent costfin): PG&E Solar Choice enrollment is on hold
+// (D.21-12-036) and Green Saver is at capacity; both now say so. Added LADWP
+// Shared Solar, the one renter program in the largest city-owned utility.
+const PGE_GREEN_SAVER =
+  'https://www.pge.com/en/save-energy-and-money/energy-saving-programs/green-saver-program.html';
+const LADWP_SHARED = 'https://www.ladwp.com/residential-services/solar-programs/shared-solar';
 const BOE_FAQ =
   'https://boe.ca.gov/proptaxes/active-solar-energy-system/frequently-asked-questions.htm';
 
 const sources: Source[] = [
   { label: 'CPUC: Solar in Disadvantaged Communities (DAC-GT, CSGT, SOMAH)', url: CPUC_DAC },
-  { label: 'PG&E: Solar Choice and community renewable programs', url: PGE_SOLAR_CHOICE },
+  { label: 'PG&E: Solar Choice and community renewable programs (enrollment on hold)', url: PGE_SOLAR_CHOICE },
+  { label: 'PG&E: Green Saver program (at capacity)', url: PGE_GREEN_SAVER },
+  { label: 'LADWP: Shared Solar (2026 rates and eligibility)', url: LADWP_SHARED },
   { label: 'SCE: Solar billing and incentives (Community Renewables Program)', url: SCE_PROGRAMS },
   { label: 'SOMAH: Solar on Multifamily Affordable Housing, about the program', url: SOMAH },
   { label: 'SOMAH: property owner eligibility', url: SOMAH_OWNERS },
@@ -70,7 +77,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'Can renters get solar in California?',
     answer:
-      'Not on the roof, unless the owner installs it. What renters can do is join a program that credits or discounts their own electric bill: the CPUC’s DAC Green Tariff and Community Solar Green Tariff for income-qualified customers in disadvantaged communities, a utility community renewable program such as PG&E’s Solar Choice or SCE’s Community Renewables Program, or SOMAH bill credits if they live in affordable multifamily housing whose owner takes part.',
+      'Not on the roof, unless the owner installs it. What renters can do is join a program that credits or discounts their own electric bill: the CPUC’s DAC Green Tariff and Community Solar Green Tariff for income-qualified customers in disadvantaged communities, a utility program such as LADWP’s Shared Solar or SCE’s Community Renewables Program, or SOMAH bill credits in affordable multifamily housing whose owner takes part. PG&E’s Solar Choice enrollment is on hold, and its Green Saver discount is at capacity.',
   },
   {
     question: 'How much do the CPUC community solar programs save?',
@@ -211,6 +218,48 @@ export default function SolarForRentersPage() {
             A disadvantaged community is defined by census tract, not by city, so ask your
             utility to check your exact address.
           </p>
+          <p className="mt-3">
+            At PG&amp;E the bill-discount program is called Green Saver. PG&amp;E says it gives
+            &ldquo;a 20% discount on electricity bills,&rdquo; on top of any CARE or FERA discount,
+            for customers who are eligible for or enrolled in CARE or FERA and live in a disadvantaged
+            or tribal community, and that it is open to renters. It also says the program &ldquo;is
+            currently at capacity&rdquo;: PG&amp;E auto-enrolls eligible customers as space opens (
+            <a className={link} href={PGE_GREEN_SAVER}>
+              PG&amp;E
+            </a>
+            , checked September 23, 2026). The rest of PG&amp;E&rsquo;s programs are in{' '}
+            <Link className={link} href="/blog/pge-solar-program">
+              PG&amp;E solar programs
+            </Link>
+            .
+          </p>
+        </section>
+
+        <section>
+          <h2>Renting in Los Angeles: LADWP Shared Solar</h2>
+          <p>
+            LADWP runs a program built for apartment and condo households. Shared Solar lets
+            residential customers in multifamily dwellings &ldquo;fix a portion of their electric
+            bill against rising utility costs for 10 years.&rdquo; You subscribe to 50 or 100 kWh a
+            month from new solar plants in or near the LA basin, with no enrollment fees, and the
+            subscription moves with you to another multifamily unit in LADWP territory. For 2026
+            LADWP lists the Shared Solar rate at $0.29624 per kWh standard and $0.28124 discounted,
+            beside a Tier 1 rate of $0.26408 for July to September 2026 (
+            <a className={link} href={LADWP_SHARED}>
+              LADWP
+            </a>
+            , checked September 23, 2026).
+          </p>
+          <p className="mt-3">
+            Read the rates together: in the third quarter of 2026 the Shared Solar rate was above the
+            Tier 1 rate, so what you buy is a price fixed for 10 years, not a discount today. You need
+            an account in good standing on the R1A, R1D or R1E residential rate and no past
+            participation in LADWP&rsquo;s Solar Incentive program. LADWP&rsquo;s other programs are in{' '}
+            <Link className={link} href="/blog/ladwp-solar-program">
+              LADWP solar programs
+            </Link>
+            .
+          </p>
         </section>
 
         <section>
@@ -239,12 +288,14 @@ export default function SolarForRentersPage() {
           </p>
           <ul className="mt-3 list-disc space-y-3 pl-5">
             <li>
-              <strong>PG&amp;E Solar Choice.</strong> &ldquo;In the Solar Choice program, you
-              can elect to purchase solar energy to match either 50% or 100% of your energy
-              use.&rdquo; PG&amp;E says participation &ldquo;may result in either a bill premium
-              or discount depending on a customer&rsquo;s rate schedule and PCIA
-              vintage.&rdquo; Customers served by a community choice aggregator and customers
-              on net energy metering are not eligible (
+              <strong>PG&amp;E Solar Choice (enrollment on hold).</strong> &ldquo;In the Solar
+              Choice program, you can elect to purchase solar energy to match either 50% or 100% of
+              your energy use.&rdquo; PG&amp;E says participation &ldquo;may result in either a bill
+              premium or discount depending on a customer&rsquo;s rate schedule and PCIA
+              vintage.&rdquo; But enrollment &ldquo;is on hold per California Public Utility
+              Commission directive in Decision 21-12-036,&rdquo; and new applicants go on a
+              waitlist. Customers served by a community choice aggregator and customers on net
+              energy metering are not eligible (
               <a className={link} href={PGE_SOLAR_CHOICE}>
                 PG&amp;E
               </a>

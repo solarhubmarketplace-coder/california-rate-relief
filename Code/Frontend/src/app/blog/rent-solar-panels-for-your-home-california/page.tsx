@@ -7,6 +7,8 @@
 // carried without a primary source this session (SOMAH tenant credit amounts,
 // CCA counts, "lifetime cost is usually higher", a customer count for a
 // bankrupt provider) were removed. Every figure below was fetched 2026-09-23.
+// 2026-09-23 Tier 2 (agent costfin): added the roof-lease section ("lease roof
+// for solar panels" reaches this page), sourced to LADWP Solar Rooftops.
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -32,6 +34,7 @@ const S = {
   lbnlTpo: 'https://www.osti.gov/servlets/purl/1342946',
   sunnova8k: 'https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm',
   cpucCre: 'https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-updates-existing-community-solar-programs',
+  ladwpRooftops: 'https://www.ladwp.com/residential-services/solar-programs/solar-rooftops',
 } as const;
 
 const sources: Source[] = [
@@ -43,6 +46,7 @@ const sources: Source[] = [
   { label: 'Berkeley Lab: Leasing Into the Sun (LBNL-1007003, January 2017)', url: S.lbnlTpo },
   { label: 'Sunnova Energy International: Form 8-K (Item 1.03), filed 2025-06-09', url: S.sunnova8k },
   { label: 'CPUC: community solar program update (June 11, 2026)', url: S.cpucCre },
+  { label: 'LADWP: Solar Rooftops (utility-owned system, annual roof payments)', url: S.ladwpRooftops },
 ];
 
 const metaTitle = 'Rent Solar Panels for Your Home in California: Lease vs PPA';
@@ -382,6 +386,36 @@ export default function RentSolarPanels() {
               does solar increase home value
             </Link>
             .
+          </p>
+        </section>
+
+        <section>
+          <h2>The reverse deal: leasing your roof to a solar program</h2>
+          <p>
+            Some searches for renting solar mean the opposite arrangement: someone else owns the
+            panels and pays you for the roof space. In California the clearest example is a utility
+            program. LADWP&rsquo;s Solar Rooftops program installs a 1 to 10 kW system that LADWP
+            owns, takes all the power it produces, and pays owner-occupants &ldquo;fixed annual
+            payments between $360–$900 depending on system size, for up to 20 years, totaling
+            $7,200–$18,000&rdquo; (
+            <a className={link} href={S.ladwpRooftops}>
+              LADWP
+            </a>
+            , checked September 23, 2026). Your electric bill does not change; the payment is rent.
+          </p>
+          <p className="mt-3">
+            That is a different trade from a lease, where you pay the provider and use the power. It
+            suits a homeowner who wants income from an unused roof more than lower bills. LADWP says
+            the program is subject to change or termination without notice. The details are in{' '}
+            <Link className={link} href="/blog/ladwp-solar-rooftops-program">
+              the LADWP Solar Rooftops guide
+            </Link>
+            , and LADWP&rsquo;s other programs, including Shared Solar for apartments, in{' '}
+            <Link className={link} href="/blog/ladwp-solar-program">
+              LADWP solar programs
+            </Link>
+            . If a private company offers to rent your roof, read the agreement for the term, removal
+            at the end, roof repairs and what happens when you sell, just as you would a lease.
           </p>
         </section>
 

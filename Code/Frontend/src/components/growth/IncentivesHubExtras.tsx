@@ -30,6 +30,11 @@ export const INC = {
     'https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/family-electric-rate-assistance-program',
   smudBattery: 'https://www.smud.org/Going-Green/Battery-storage/Homeowner',
   sdgeConsidering: 'https://www.sdge.com/solar/considering-solar',
+  // 2026-09-23 Tier 2 (agent costfin): sources for the added FAQ entries.
+  us48e: 'https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A48E+edition%3Aprelim%29',
+  cecSfa: 'https://www.energy.ca.gov/programs-and-topics/programs/solar-all-program',
+  cpucGuide:
+    'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide',
 } as const;
 
 export const incentivesHubExtraSources = [
@@ -40,6 +45,9 @@ export const incentivesHubExtraSources = [
   { label: 'CPUC: Self-Generation Incentive Program', url: INC.cpucSgip },
   { label: 'SMUD: battery storage incentives for homeowners', url: INC.smudBattery },
   { label: 'SDG&E: considering solar (incentives and programs)', url: INC.sdgeConsidering },
+  { label: 'U.S. Code: 26 U.S.C. § 48E, clean electricity investment credit (business credit)', url: INC.us48e },
+  { label: 'California Energy Commission: Solar for All Program (status and August 2025 statement)', url: INC.cecSfa },
+  { label: 'CPUC: California Solar Consumer Protection Guide', url: INC.cpucGuide },
 ];
 
 /** The direct answer for the hub's head questions, placed first in the body. */
@@ -189,6 +197,26 @@ export function IncentivesTable() {
         flyer is not a reservation; check the administrator&rsquo;s current status for your
         address.
       </p>
+      <p className="mt-3">
+        What each utility runs itself is different enough to need its own page:{' '}
+        <Link className={link} href="/blog/pge-solar-program">
+          PG&amp;E&rsquo;s solar programs
+        </Link>{' '}
+        (two of its community solar options are full or on hold),{' '}
+        <Link className={link} href="/blog/smud-solar-program">
+          SMUD&rsquo;s export rate, SolarShares and battery incentive
+        </Link>
+        , and{' '}
+        <Link className={link} href="/blog/ladwp-solar-program">
+          LADWP&rsquo;s solar programs in Los Angeles
+        </Link>
+        . A business asking about incentives should start with{' '}
+        <Link className={link} href="/blog/commercial-solar-financing-california">
+          commercial solar financing in California
+        </Link>
+        , because the federal business credit follows different rules from the homeowner
+        credit.
+      </p>
     </section>
   );
 }
@@ -207,6 +235,15 @@ const groups: { heading: string; links: { href: string; label: string; note: str
       { href: '/blog/solar-rebates-by-california-utility', label: 'Solar and battery rebates by California utility', note: 'PG&E, SCE, SDG&E, SMUD, LADWP and Roseville.' },
       { href: '/battery/sgip-battery-rebate-california', label: 'SGIP battery rebate status', note: 'Category by category.' },
       { href: '/blog/tech-clean-california-heat-pump-rebate', label: 'TECH Clean California heat pump rebates', note: 'Electrification rebates that are not for solar.' },
+    ],
+  },
+  {
+    heading: 'Utility solar programs',
+    links: [
+      { href: '/blog/pge-solar-program', label: 'PG&E solar programs', note: 'What PG&E offers, what is closed and what is not a PG&E program.' },
+      { href: '/blog/smud-solar-program', label: 'SMUD solar programs', note: 'Export rate, SolarShares and the battery incentive.' },
+      { href: '/blog/ladwp-solar-program', label: 'LADWP solar programs', note: 'Solar Rooftops, Shared Solar and LADWP’s SGIP.' },
+      { href: '/blog/ladwp-solar-rooftops-program', label: 'LADWP Solar Rooftops in detail', note: 'LADWP pays rent for your roof.' },
     ],
   },
   {
@@ -293,6 +330,39 @@ const faqs: FaqJsonLdItem[] = [
     question: 'Does solar raise property taxes in California?',
     answer:
       'Not under the current exclusion. The Board of Equalization says installing a qualifying system will not increase the assessment, and the statute is scheduled to sunset on January 1, 2027.',
+  },
+  // 2026-09-23 Tier 2 (agent costfin): the remaining questions of the
+  // "california solar incentives" cluster. Sources fetched 2026-09-23: IRS,
+  // FTB, BOE, CPUC consumer guide, 26 U.S.C. § 48E and the CEC.
+  {
+    question: 'How much is the solar tax credit in California?',
+    answer:
+      'For a system installed now, nothing. California has no state solar credit, and the IRS says the federal Residential Clean Energy Credit is not available for property placed in service after December 31, 2025. For a home system installed from 2022 through 2025, the federal credit was 30% of qualified costs. It is nonrefundable, so it could not exceed the tax you owed, but unused credit carries forward to later years.',
+  },
+  {
+    question: 'How do I claim the solar tax credit in California?',
+    answer:
+      'Only for a system installed by December 31, 2025, and only on your federal return. The IRS says to file Form 5695 with your return and to claim the credit for the tax year the property is installed, not merely purchased. There is nothing to claim on your California return, because the Franchise Tax Board lists no solar credit. A contract or deposit signed in 2025 does not qualify a system finished in 2026.',
+  },
+  {
+    question: 'How can I get free solar panels in California?',
+    answer:
+      'Usually you cannot, and the CPUC says so: beware of a provider who tells you solar is free, because it is not. The real no-cost route is DAC-SASH, for income-qualified homeowners in disadvantaged communities. SOMAH pays toward solar on affordable apartment buildings, and the owner applies. An offer with no money down is a lease, PPA or loan, with the cost moved into monthly payments.',
+  },
+  {
+    question: 'Does California tax solar panels?',
+    answer:
+      'Not through your property tax while the exclusion lasts. The Board of Equalization says a qualifying system will not increase your assessment, whether it is leased or owned, and no form is needed. It is an exclusion, not an exemption, and the statute is scheduled to sunset on January 1, 2027.',
+  },
+  {
+    question: 'What solar incentives are there for California businesses?',
+    answer:
+      'Different ones from a homeowner’s. The federal business credit under 26 U.S.C. § 48E still exists, but the 2025 tax law added a cutoff: for solar facilities whose construction begins after July 4, 2026, it does not apply to property placed in service after December 31, 2027. Batteries at those sites are excepted from that cutoff. SGIP also has non-residential budget categories. Get tax advice before counting on either.',
+  },
+  {
+    question: 'Is there a Solar for All program in California?',
+    answer:
+      'Not one a household can apply to. The California Energy Commission says the California Solar for All program is in the planning stage. In August 2025 the CPUC, the Energy Commission and the Labor and Workforce Development Agency called the EPA’s termination of Solar for All funding unlawful and asked the EPA to reverse it. The Energy Commission’s page gives no date for households to apply.',
   },
 ];
 

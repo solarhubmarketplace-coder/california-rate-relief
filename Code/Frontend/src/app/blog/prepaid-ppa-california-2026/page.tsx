@@ -5,6 +5,10 @@
 // Removed the installer-marketing citations (Sunrun, Palmetto, Tesla): installer
 // pages are not sources on this site. Every remaining figure was re-fetched on
 // 2026-09-23. The prior body is in git history.
+// 2026-09-23 Tier 2 (agent costfin): added "Solar PPAs in California: the rules
+// that apply to any PPA" for the "ppa solar california" / "power purchase
+// agreement california" cluster (CPUC guide, DG Stats), linking the PPA
+// explainer, the PPA-company page and the commercial PPA page.
 import type { Metadata } from "next";
 import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 import Link from "next/link";
@@ -18,6 +22,9 @@ const CPUC_GUIDE =
   "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide";
 const CPUC_NEM = "https://www.cpuc.ca.gov/NEM/";
 const IRS_25D = "https://www.irs.gov/credits-deductions/residential-clean-energy-credit";
+const DG_STATS = "https://www.californiadgstats.ca.gov/charts/nem/";
+const SUNRUN_10K =
+  "https://www.sec.gov/Archives/edgar/data/1469367/000162828026012289/run-20251231.htm";
 const SUNNOVA_8K =
   "https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm";
 
@@ -33,11 +40,19 @@ const sources: Source[] = [
     label: "Sunnova Energy International: Form 8-K (Item 1.03), filed 2025-06-09",
     url: SUNNOVA_8K,
   },
+  {
+    label: "California Distributed Generation Statistics (CPUC-authorized): residential ownership by type, data through May 31, 2026",
+    url: DG_STATS,
+  },
+  {
+    label: "Sunrun Inc.: Form 10-K for fiscal year 2025, filed February 26, 2026 (prepaid production true-up)",
+    url: SUNRUN_10K,
+  },
 ];
 
 const metaTitle = "Prepaid Solar PPA in California (2026): 5 Terms to Check";
 const metaDescription =
-  "A prepaid PPA pays upfront for a system's electricity; the provider still owns it. What is still owed, buyout, sale transfer and the utility bill left.";
+  "Prepaid solar power, or a prepaid PPA, pays upfront for a system's power while the provider owns it. What is still owed, buyout, sale and the bill left.";
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -125,13 +140,75 @@ export default function PrepaidPpaCalifornia2026() {
       </section>
 
       <section>
+        <h2>Solar PPAs in California: the rules that apply to any PPA</h2>
+        <p>
+          Prepaid or monthly, a residential power purchase agreement in California comes with the
+          same state protections. PPAs are also the most common way Californians go solar without
+          buying: California Distributed Generation Statistics shows PPAs were about 42% of
+          residential solar projects at PG&amp;E, SCE and SDG&amp;E that received permission to
+          operate in 2025 (
+          <a className="underline" href={DG_STATS}>
+            DG Stats
+          </a>
+          , data through May 31, 2026, checked September 23, 2026). Before you sign any PPA, the
+          CPUC&rsquo;s consumer guide says (
+          <a className="underline" href={CPUC_GUIDE}>
+            CPUC
+          </a>
+          , checked September 23, 2026):
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            The provider&rsquo;s CSLB license &ldquo;must be active and in classification C-46 (Solar
+            Contractor), C-10 (Electrical Contractor), or B (General Building Contractor).&rdquo;
+          </li>
+          <li>
+            By law the provider must give you a completed Solar Energy System Disclosure Document: a
+            cover page showing the total costs and supporting information with a standardized bill
+            savings estimate.
+          </li>
+          <li>
+            Savings estimates may assume utility rates rise by no more than 10% a year, and
+            &ldquo;electricity bill savings estimates do not guarantee savings.&rdquo;
+          </li>
+          <li>
+            You have at least three business days to cancel for any reason, or five if you are 65 or
+            older.
+          </li>
+        </ul>
+        <p className="mt-3">
+          How a monthly PPA works from start to finish is in{" "}
+          <Link className="underline" href="/blog/solar-ppa-explained-california">
+            solar PPAs explained
+          </Link>
+          , and how to choose between providers in{" "}
+          <Link className="underline" href="/blog/solar-ppa-companies">
+            how to compare solar PPA companies
+          </Link>
+          . A business weighing a PPA should read{" "}
+          <Link className="underline" href="/commercial-solar/commercial-solar-ppa-vs-purchase-california">
+            commercial solar PPA vs purchase
+          </Link>
+          ; the rules and tax position differ.
+        </p>
+      </section>
+
+      <section>
         <h2>Prepaid PPA or prepaid lease?</h2>
         <p>
           Both move the payments to the start and both leave the provider owning the
           system. A prepaid lease pays ahead for scheduled lease payments. A prepaid
           PPA pays ahead for electricity at a per-kWh price, so ask what happens if the
           system produces more or less than the amount you prepaid for: is there a
-          true-up, a refund or a minimum energy guarantee? The lease version has{" "}
+          true-up, a refund or a minimum energy guarantee? One provider&apos;s annual report
+          shows what a written answer looks like: Sunrun says that if a prepaid system&apos;s
+          estimated production is less than actual production &ldquo;after the first full one to
+          two years of the agreement, prepaid customers are refunded the difference at the end of
+          each such year,&rdquo; and extra production is theirs at no charge (
+          <a className="underline" href={SUNRUN_10K}>
+            Sunrun Form 10-K, filed February 26, 2026
+          </a>
+          ). Other contracts differ. The lease version has{" "}
           <Link className="underline" href="/blog/prepaid-lease-solar">
             its own guide to prepaid solar leases
           </Link>
@@ -293,8 +370,8 @@ export default function PrepaidPpaCalifornia2026() {
       <section>
         <h2>A referral request does not select a payment model</h2>
         <p>
-          California Rate Relief is a private referral service. A request for a
-          review does not approve a PPA, determine a price or tax result, or
+          California Rate Relief is a referral service. We are not a licensed contractor. A
+          request for a review does not approve a PPA, determine a price or tax result, or
           promise a buyout, savings or provider availability. Review the written
           documents from any provider before choosing a payment structure.
         </p>
