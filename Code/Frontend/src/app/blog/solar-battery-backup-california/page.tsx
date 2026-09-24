@@ -199,7 +199,7 @@ export default function SolarBatteryBackupPage() {
               </p>
               <p>
                 Net billing, NEM 3.0, is different. The CPUC says export credits there are based on its Avoided Cost
-                Calculator and are usually lower than import rates, and it reports that nearly 70 percent of net
+                Calculator and are usually lower than the retail rate, and it reports that nearly 70 percent of net
                 billing customers had paired a battery with solar by the end of 2024. PG&amp;E’s price sheet for 2026
                 applicants shows about $0.0085 per kWh for a weekday noon export in April and about $1.15 at 7 p.m. on
                 an August weekday. A battery that charges from midday solar and covers your evening use avoids buying

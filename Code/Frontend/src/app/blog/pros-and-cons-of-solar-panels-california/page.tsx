@@ -227,7 +227,7 @@ export default function ProsAndConsOfSolarPanelsCalifornia() {
           <p className={p}>
             For PG&amp;E, SCE and SDG&amp;E customers who applied to connect on or after April 15,
             2023, the CPUC&rsquo;s Net Billing Tariff credits exported power at values from its Avoided
-            Cost Calculator, &ldquo;usually lower than import rates&rdquo; (CPUC, checked September 23,
+            Cost Calculator, &ldquo;usually lower than the retail rate&rdquo; (CPUC, checked September 24,
             2026). A system that sends most of its output to the grid earns much less than it would
             have under the older NEM 2.0 rules. The mechanics are in{' '}
             <Link href="/blog/nem-2-vs-nem-3-california" className={link}>

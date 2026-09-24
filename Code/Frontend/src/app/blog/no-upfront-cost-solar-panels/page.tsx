@@ -321,7 +321,7 @@ export default function NoUpfrontCostSolarPanelsPage() {
             <li>
               Add the utility bill each option leaves you with. On PG&amp;E, SCE and SDG&amp;E,
               exported solar is credited at values the CPUC says are &ldquo;usually lower than
-              import rates&rdquo; (
+              the retail rate&rdquo; (
               <a className={link} href={CPUC_NEM}>
                 CPUC
               </a>

@@ -42,7 +42,7 @@ const faqs = [
   {
     question: 'What is the solar tariff in California?',
     answer:
-      "For new rooftop solar at PG&E, SCE and SDG&E, it is the net billing tariff the CPUC adopted in Decision 22-12-056, which the utilities call the Solar Billing Plan. It has applied to customers applying for interconnection since April 15, 2023. It sets a required time-of-use rate for the power you buy and credits exports at values from the CPUC's Avoided Cost Calculator, usually lower than import prices.",
+      "For new rooftop solar at PG&E, SCE and SDG&E, it is the net billing tariff the CPUC adopted in Decision 22-12-056, which the utilities call the Solar Billing Plan. It has applied to customers applying for interconnection since April 15, 2023. It sets a required time-of-use rate for the power you buy and credits exports at values from the CPUC's Avoided Cost Calculator, which the CPUC says are usually lower than the retail rate.",
   },
   {
     question: 'What rate plan do solar customers pay?',
@@ -180,7 +180,7 @@ export default function SolarRatePage() {
               <h2>What exports earn under the solar tariff</h2>
               <p>
                 The CPUC says net billing credits exports at a rate reflecting the value of that power to the grid, based on its
-                Avoided Cost Calculator and usually lower than import rates. In practice the value swings by hour and month.
+                Avoided Cost Calculator and usually lower than the retail rate. In practice the value swings by hour and month.
                 SDG&amp;E&apos;s 2026 hourly export file, which we summed across its generation and delivery parts, shows how much.
               </p>
               <DataTable

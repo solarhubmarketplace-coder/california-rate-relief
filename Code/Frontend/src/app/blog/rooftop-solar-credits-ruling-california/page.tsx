@@ -228,7 +228,7 @@ export default function RooftopSolarCreditsRuling() {
             </li>
             <li>
               <strong>Buying solar now:</strong> you will be on net billing, where exports are credited at values
-              based on the CPUC’s Avoided Cost Calculator, “usually lower than import rates.” That makes using your
+              based on the CPUC’s Avoided Cost Calculator, “usually lower than the retail rate.” That makes using your
               own solar power, often with a battery, worth more than exporting it.
             </li>
           </ul>

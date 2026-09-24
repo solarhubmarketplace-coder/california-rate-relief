@@ -239,7 +239,7 @@ export default function RentSolarPanels() {
           </p>
           <p className="mt-3">
             Then add the utility bill you keep. Under the Net Billing Tariff, exported solar is
-            credited at values the CPUC says are &ldquo;usually lower than import rates&rdquo; (
+            credited at values the CPUC says are &ldquo;usually lower than the retail rate&rdquo; (
             <a className={link} href={S.cpucNem}>
               CPUC
             </a>

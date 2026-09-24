@@ -253,7 +253,7 @@ export default function ADUSolarCA() {
             pays the ADU’s electricity; a shared meter is simpler when the household pays one bill. Either way,
             adding panels or a new interconnection is your utility’s process. For PG&amp;E, SCE and SDG&amp;E
             customers, the CPUC says anyone applying for interconnection since April 15, 2023 takes service on
-            the net billing tariff, which credits exports at values “usually lower than import rates.”{' '}
+            the net billing tariff, which credits exports at values “usually lower than the retail rate.”{' '}
             <Cite publisher="CPUC" href={CPUC_NBT} date={UPDATED} /> How that changes the value of ADU solar is
             explained in <Link href="/blog/nem-2-vs-nem-3-california">NEM 2.0 vs NEM 3.0 in California</Link>.
           </p>

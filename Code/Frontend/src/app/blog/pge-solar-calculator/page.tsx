@@ -77,7 +77,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'Why does my solar estimate still show a PG&E bill?',
     answer:
-      'Because some charges stay. PG&E says its monthly Base Services Charge, about $24 for most customers, is not eligible to be offset by monthly generation credits, and exported solar under the Net Billing Tariff is credited at values the CPUC says are usually lower than import rates. PG&E settles the year in an annual True-Up statement.',
+      'Because some charges stay. PG&E says its monthly Base Services Charge, about $24 for most customers, is not eligible to be offset by monthly generation credits, and exported solar under the Net Billing Tariff is credited at values the CPUC says are usually lower than the retail rate. PG&E settles the year in an annual True-Up statement.',
   },
 ];
 
@@ -239,7 +239,7 @@ export default function PgeSolarCalculatorPage() {
           </p>
           <p className="mt-3">
             New PG&amp;E solar customers take service on the Net Billing Tariff, which credits
-            exports at values the CPUC says are &ldquo;usually lower than import rates&rdquo; (
+            exports at values the CPUC says are &ldquo;usually lower than the retail rate&rdquo; (
             <a className={link} href={CPUC_NEM}>
               CPUC
             </a>

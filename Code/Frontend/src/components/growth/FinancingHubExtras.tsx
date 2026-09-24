@@ -213,11 +213,11 @@ export function FinancingHubExtras() {
             systems that applied for interconnection since April 15, 2023 take
             service on the Net Billing Tariff, which credits exports at
             Avoided Cost Calculator values that the CPUC says are &ldquo;usually
-            lower than import rates&rdquo; (
+            lower than the retail rate&rdquo; (
             <a className={link} href={CPUC_NEM}>
               CPUC, net energy metering and net billing
             </a>
-            , checked September 23, 2026). A kWh you pay the PPA price for and then
+            , checked September 24, 2026). A kWh you pay the PPA price for and then
             export can earn back less than you paid for it. Ask the provider to
             show how much of the modeled production you use at home and how much is
             exported.
