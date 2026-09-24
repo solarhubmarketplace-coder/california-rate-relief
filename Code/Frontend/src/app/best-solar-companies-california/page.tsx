@@ -8,6 +8,16 @@
 // primary source on 2026-09-23 (CSLB, CPUC, DFPI). Installer marketing pages
 // and lead-generation sites are not used as sources. The page does not rank
 // installers and names no company as a partner.
+//
+// Tier 2 (claude/t2-installers-20260923): the page now also owns the head
+// terms "solar energy companies", "solar installers", "solar panel companies",
+// "top solar companies" and "solar power suppliers". Added: the state tools
+// that list installers by ZIP code (CPUC DGStats, CSLB), what separates a good
+// bid, the company-record check, what "accredited" and "certified" mean
+// (NABCEP, BBB, CSLB), solar-roof licensing (C-39 vs C-46), a short C&I
+// section that hands off to /commercial-solar, and a SolarCity FAQ (SEC 8-K).
+// The "accredited solar installers" and "solar city california" rows fold in
+// here instead of getting their own URLs. All fetched 2026-09-23.
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
@@ -62,6 +72,18 @@ const CPUC_GUIDE =
   'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide';
 const CPUC_NEM = 'https://www.cpuc.ca.gov/NEM/';
 const DFPI_PACE = 'https://dfpi.ca.gov/consumers/housing/pace/';
+const CPUC_DGSTATS = 'https://www.californiadgstats.ca.gov/find_installer/';
+const CSLB_C39 =
+  'https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C39';
+const NABCEP_CERTS = 'https://www.nabcep.org/certifications/nabcep-board-certifications/';
+const NABCEP_RECERT = 'https://www.nabcep.org/recertification-renewal/';
+const NABCEP_ACCREDITED = 'https://www.nabcep.org/accredited/';
+const BBB_STANDARDS = 'https://www.bbb.org/bbb-accreditation-standards';
+const CFPB_SOLAR =
+  'https://www.consumerfinance.gov/data-research/research-reports/issue-spotlight-solar-financing/';
+const SEC_SOLARCITY_8K =
+  'https://www.sec.gov/Archives/edgar/data/1408356/000119312516773728/d275338d8k.htm';
+const TESLA_SOLARCITY_ACCOUNT = 'https://www.tesla.com/support/using-your-account';
 
 const sources: Source[] = [
   { label: 'CSLB: Check a License (license, business, personnel and HIS search)', url: CSLB_CHECK },
@@ -82,6 +104,15 @@ const sources: Source[] = [
   { label: 'CPUC: California Solar Consumer Protection Guide (version 4, 2025)', url: CPUC_GUIDE },
   { label: 'CPUC: net energy metering and the Net Billing Tariff', url: CPUC_NEM },
   { label: 'California DFPI: PACE financing', url: DFPI_PACE },
+  { label: 'CPUC California DG Statistics: Find an Installer (projects by ZIP code, city or county)', url: CPUC_DGSTATS },
+  { label: 'CSLB: C-39 Roofing Contractor classification', url: CSLB_C39 },
+  { label: 'NABCEP: board certifications', url: NABCEP_CERTS },
+  { label: 'NABCEP: recertification and renewal', url: NABCEP_RECERT },
+  { label: 'NABCEP: company accreditation and accredited companies list', url: NABCEP_ACCREDITED },
+  { label: 'Better Business Bureau: BBB accreditation standards', url: BBB_STANDARDS },
+  { label: 'CFPB: Issue Spotlight, Solar Financing (August 7, 2024)', url: CFPB_SOLAR },
+  { label: 'SEC: SolarCity Corporation Form 8-K on completion of the Tesla merger (November 21, 2016)', url: SEC_SOLARCITY_8K },
+  { label: 'Tesla support: account access for former SolarCity customers', url: TESLA_SOLARCITY_ACCOUNT },
 ];
 
 // ---------------------------------------------------------------------------
@@ -315,6 +346,21 @@ const faqs: FaqJsonLdItem[] = [
       'Yes, in most cases. The CSLB says anyone who solicits, sells, negotiates or executes home improvement contracts for a licensed contractor must register as a Home Improvement Salesperson, and that selling home improvement goods and services without registering is a misdemeanor. A lead generator that only refers homeowners and sets appointments does not need to register, but it may not quote prices or negotiate contracts.',
   },
   {
+    question: 'Where can I see which solar companies work in my ZIP code?',
+    answer:
+      'The CPUC’s California DG Statistics site has a Find an Installer search. Enter a ZIP code, city or county and it lists solar and storage projects interconnected in the last 24 months in PG&E, SCE and SDG&E territory, with each project’s cost per watt. The costs are self-reported by applicants and not verified. Customers of city-run utilities such as LADWP or SMUD are not covered.',
+  },
+  {
+    question: 'Are there accredited solar installers in California?',
+    answer:
+      'No accreditation is required. What California requires is a CSLB contractor license in a class that covers solar, usually C-46, C-10 or B. Individual installers can hold a voluntary NABCEP board certification, which the CPUC’s consumer guide calls a good sign. NABCEP also accredits companies, but its accredited-company list on September 23, 2026 named companies in seven states and none in California.',
+  },
+  {
+    question: 'What happened to SolarCity?',
+    answer:
+      'Tesla bought it. SolarCity’s SEC filing states that on November 21, 2016 it became a wholly owned subsidiary of Tesla. Tesla’s support pages tell former SolarCity customers to sign in with a Tesla Account, which lease and PPA customers use to pay their bills. For service, cost and warranty on a system sold today, read the Tesla Solar review. If you meant California City, the Kern County town, see its solar cost guide.',
+  },
+  {
     question: 'Is California Rate Relief a solar company?',
     answer:
       'No. California Rate Relief is a referral service. We are not a licensed contractor. The company that designs, sells and installs your system is the one whose license belongs on the contract, and that license is the one to check.',
@@ -415,6 +461,53 @@ export default function BestSolarCompaniesCalifornia() {
         </p>
       </section>
 
+      <section id="near-me">
+        <h2 className={h2}>Solar installers near me: three state tools that list who works in your area</h2>
+        <p>
+          Search &ldquo;solar companies near me&rdquo; and Google usually leads with a map of
+          nearby businesses. The map gives you names, not whether a company holds the right
+          license or has finished jobs on your street. The CPUC&rsquo;s consumer guide points
+          homeowners to better starting lists, and each one takes a few minutes.
+        </p>
+        <ol className="mt-4 list-decimal space-y-3 pl-5">
+          <li>
+            <strong>Recent projects by ZIP code.</strong> The CPUC&rsquo;s California DG Statistics
+            site has a{' '}
+            <a href={CPUC_DGSTATS} className={link} target="_blank" rel="noopener noreferrer">
+              Find an Installer
+            </a>{' '}
+            search. Type a ZIP code, city or county and it returns solar and storage projects
+            interconnected in the last 24 months, with a cost per watt for each. Read the fine
+            print: it covers only PG&amp;E, SCE and SDG&amp;E territory, the costs are
+            &ldquo;self-reported by applicants&rdquo; with no further verification, and cost per
+            watt is figured on the system&rsquo;s AC capacity, while most quotes price the
+            panels&rsquo; DC rating (CPUC DGStats, checked September 23, 2026). Use it to see
+            which companies are active near you, not as a price you are owed.
+          </li>
+          <li>
+            <strong>Licensed contractors by city.</strong> The CPUC guide tells homeowners to use
+            the CSLB&rsquo;s contractor search, enter their city and pick one of three license
+            classifications: C-46 Solar, C-10 Electrical or B General Building (CPUC, checked
+            September 23, 2026). The CSLB&rsquo;s{' '}
+            <Link href="/solar-installers/licensed-solar-installer" className={link}>
+              county-by-county contractor list
+            </Link>{' '}
+            does the same as a spreadsheet.
+          </li>
+          <li>
+            <strong>Neighbors with a year of bills.</strong> The same guide suggests asking
+            friends and neighbors who had solar installed at least a year ago whether they would
+            use the company again, and why. A year covers a full cycle of summer surplus and
+            winter shortfall, which is when estimates meet reality.
+          </li>
+        </ol>
+        <p className="mt-3">
+          Take two or three names from any of these, run each through the license check below,
+          and ask each for a quote built on the same checklist. Star ratings on a map can suggest
+          questions to ask; they do not replace the contract or a current license lookup.
+        </p>
+      </section>
+
       <section id="how-to-choose">
         <h2 className={h2}>How to choose a solar company in California</h2>
         <p>
@@ -438,7 +531,11 @@ export default function BestSolarCompaniesCalifornia() {
             <strong>Collect three written bids.</strong> Ask every bidder for the same things:
             system size in kilowatts, panel and inverter models, a roof layout, monthly
             production after shading, the cash price, and the remaining utility bill. The
-            checklist further down lists every line to request.
+            checklist further down lists every line to request, and the guide to{' '}
+            <Link href="/blog/solar-system-quotes-california" className={link}>
+              getting and comparing solar quotes
+            </Link>{' '}
+            covers where to ask and what each quote must come with.
           </li>
           <li>
             <strong>Find out who will actually do the work.</strong> The company that knocks on
@@ -466,6 +563,93 @@ export default function BestSolarCompaniesCalifornia() {
             shows what changes with each.
           </li>
         </ol>
+      </section>
+
+      <section id="good-bid">
+        <h2 className={h2}>What separates a good solar bid from a weak one</h2>
+        <p>
+          Not the price by itself. The CPUC&rsquo;s guide says the cheapest bid is not
+          necessarily the best option, and that &ldquo;a very low bid may indicate that a solar
+          provider is trying to cut corners&rdquo; (CPUC, checked September 23, 2026). The
+          differences that matter show up in how the bid was built.
+        </p>
+        <div className="mt-4 overflow-x-auto rounded-xl border">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">Signs of a stronger and a weaker residential solar bid</caption>
+            <thead className="bg-muted">
+              <tr>
+                <th className="p-3">Part of the bid</th>
+                <th className="p-3">A stronger bid</th>
+                <th className="p-3">A weaker bid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">System size</th>
+                <td className="p-3 align-top">
+                  Built from your last 12 months of use. The CPUC notes systems are typically
+                  sized to around 80&ndash;85% of the previous year&rsquo;s use; on net billing,
+                  going above your history takes a signed attestation that your use will grow,
+                  with a ceiling of 150%.
+                </td>
+                <td className="p-3 align-top">Sized to &ldquo;cover your whole bill&rdquo; with no usage history attached.</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">Savings estimate</th>
+                <td className="p-3 align-top">
+                  Matches the standardized bill savings estimate on the state&rsquo;s Supporting
+                  Information form and shows the rate increase it assumes. The CPUC caps that
+                  assumption at 10% a year.
+                </td>
+                <td className="p-3 align-top">A verbal promise, or a projection whose rate assumption nobody will explain.</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">Price</th>
+                <td className="p-3 align-top">A cash price, with solar, battery, roof and electrical work listed separately.</td>
+                <td className="p-3 align-top">Only a monthly payment.</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">Who does the work</th>
+                <td className="p-3 align-top">
+                  Names the installing company and its license number, and any subcontractor
+                  with its own.
+                </td>
+                <td className="p-3 align-top">Vague about whether the seller installs, or who it would hire.</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">Payment schedule</th>
+                <td className="p-3 align-top">
+                  A down payment no larger than $1,000 or 10% of the price, whichever is less,
+                  and later payments that never run ahead of work done or materials delivered.
+                </td>
+                <td className="p-3 align-top">Large payments due before anything reaches your roof.</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">Schedule</th>
+                <td className="p-3 align-top">An approximate start date and an estimated completion date written into the contract.</td>
+                <td className="p-3 align-top">&ldquo;As soon as we can get a crew out.&rdquo;</td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">Warranties and service</th>
+                <td className="p-3 align-top">
+                  Separate terms for panels, inverters and labor, with the name of whoever
+                  honors each one.
+                </td>
+                <td className="p-3 align-top">A single &ldquo;full warranty&rdquo; line.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Sizing, savings-estimate and subcontractor points: CPUC Solar Consumer Protection Guide,
+          version 4. Payment and schedule rules: CSLB industry bulletin #20-22 (November 17,
+          2020). Both checked September 23, 2026.
+        </p>
+        <p className="mt-3">
+          One more test from the CPUC guide: ask each finalist for three customer references
+          whose systems have been running for at least a year, then ask those owners who showed
+          up when something needed fixing.
+        </p>
       </section>
 
       <section id="verify-license">
@@ -519,6 +703,128 @@ export default function BestSolarCompaniesCalifornia() {
         </p>
       </section>
 
+      <section id="track-record">
+        <h2 className={h2}>Checking a solar company&rsquo;s track record</h2>
+        <p>
+          A license check tells you a company may do the work. A record check tells you how it
+          has done it. The CPUC&rsquo;s guide suggests finding out how long a company has been in
+          business and how many systems it has installed, and reading reviews on more than one
+          site, &ldquo;since some websites may not be neutral&rdquo; (CPUC, checked September 23,
+          2026). Four places to look:
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            <strong>The CSLB record itself.</strong> The CSLB describes its lookup as a way to
+            verify license information &ldquo;including complaint disclosure,&rdquo; so read past
+            the word &ldquo;active&rdquo; (CSLB, checked September 23, 2026).
+          </li>
+          <li>
+            <strong>Court and bankruptcy filings.</strong> Several residential solar companies
+            have filed for bankruptcy in recent years. Our page on{' '}
+            <Link href="/solar-installers/worst-solar-companies-california" className={link}>
+              solar companies in bankruptcy court and on the CSLB record
+            </Link>{' '}
+            lists the federal cases and how to search for one yourself.
+          </li>
+          <li>
+            <strong>Better Business Bureau complaints, not the badge.</strong> Read the
+            complaints and how the company answered them. BBB accreditation is a program the
+            business pays for: the BBB states that it &ldquo;charges a fee for BBB
+            Accreditation&rdquo; (BBB, checked September 23, 2026).
+          </li>
+          <li>
+            <strong>Recent local jobs.</strong> The DGStats installer search above shows whether
+            a company has interconnected projects near you in the last two years.
+          </li>
+        </ul>
+        <p className="mt-3">
+          The bond, the complaint process and the cancellation statutes are covered step by step
+          in{' '}
+          <Link href="/solar-installers/how-to-verify-a-solar-contractor-california" className={link}>
+            the full contractor verification guide
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section id="accredited">
+        <h2 className={h2}>Accredited, certified or licensed: what each label means</h2>
+        <p>
+          Only one of these labels is required by law in California, and it is the license. The
+          others are voluntary, which does not make them worthless. It means you have to know
+          what each one measured.
+        </p>
+        <div className="mt-4 overflow-x-auto rounded-xl border">
+          <table className="w-full text-left text-sm">
+            <caption className="sr-only">Solar installer licenses, certifications and accreditations compared</caption>
+            <thead className="bg-muted">
+              <tr>
+                <th className="p-3">Label</th>
+                <th className="p-3">Who grants it</th>
+                <th className="p-3">What it tells you</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">Contractor license (C-46, C-10 or B)</th>
+                <td className="p-3 align-top">Contractors State License Board</td>
+                <td className="p-3 align-top">
+                  Required to install solar on a home. The CPUC guide says the license must be in
+                  one of these three classifications and that doing business without one is
+                  illegal.
+                </td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">NABCEP board certification</th>
+                <td className="p-3 align-top">North American Board of Certified Energy Practitioners</td>
+                <td className="p-3 align-top">
+                  A credential held by a person, not a company, earned by showing training and
+                  experience and passing an exam. It lasts three years, and renewing it takes 30
+                  hours of continuing education. The CPUC calls NABCEP certification &ldquo;a
+                  high standard in the industry.&rdquo;
+                </td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">NABCEP company accreditation</th>
+                <td className="p-3 align-top">NABCEP</td>
+                <td className="p-3 align-top">
+                  A company program with staffing and policy benchmarks and at least three
+                  randomly selected inspections of finished installations. NABCEP&rsquo;s list,
+                  checked September 23, 2026, named accredited companies in seven states and none
+                  in California.
+                </td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">BBB accreditation</th>
+                <td className="p-3 align-top">Better Business Bureau</td>
+                <td className="p-3 align-top">
+                  The business agrees to eight conduct standards, such as advertising honestly
+                  and honoring promises, and pays BBB a fee. It is not a license or a technical
+                  credential.
+                </td>
+              </tr>
+              <tr className="border-t">
+                <th scope="row" className="p-3 align-top">Equipment maker installer programs</th>
+                <td className="p-3 align-top">Panel, inverter and battery manufacturers</td>
+                <td className="p-3 align-top">
+                  Rules differ by maker. Ask what the program required and whether it changes the
+                  warranty you would get.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3">
+          So when a company calls itself an &ldquo;accredited solar installer&rdquo; in
+          California, ask which of these it means and who holds it. If the answer is NABCEP,
+          get the certified person&rsquo;s name and whether that person will design or install
+          your system; NABCEP publishes a directory of board-certified professionals. The CPUC
+          guide treats a company that employs NABCEP-certified installers as &ldquo;a good
+          sign.&rdquo; None of these labels replaces the license lookup (CPUC, NABCEP and BBB,
+          checked September 23, 2026).
+        </p>
+      </section>
+
       <section id="who-you-are-dealing-with">
         <h2 className={h2}>Installer, broker or lead generator: who are you dealing with?</h2>
         <p>
@@ -531,6 +837,20 @@ export default function BestSolarCompaniesCalifornia() {
           registration. The bulletin also states that installing a solar energy product is a
           &ldquo;home improvement,&rdquo; which only a licensed contractor can do (CSLB, checked
           September 23, 2026).
+        </p>
+        <p className="mt-3">
+          You will also meet &ldquo;solar dealers&rdquo; and &ldquo;solar power suppliers.&rdquo;
+          In solar lending, the dealer is the company that sells the system and arranges the
+          loan, whether or not its own crew puts it on the roof. The CFPB found that solar
+          salespeople, installers and lenders often have agreements with each other, so sales,
+          installation and financing can blend into one conversation (CFPB, Issue Spotlight:
+          Solar Financing, August 7, 2024). Two questions from the CPUC&rsquo;s list sort this out
+          quickly: is the salesperson your employee, and will you subcontract the installation to
+          another company? For what the arrangement can add to a loan, see{' '}
+          <Link href="/solar-problems/solar-dealer-fees-explained" className={link}>
+            how solar dealer fees work
+          </Link>
+          .
         </p>
         <p className="mt-3">
           This site sits on the referral side of that line. California Rate Relief is a referral
@@ -619,6 +939,70 @@ export default function BestSolarCompaniesCalifornia() {
         </p>
       </section>
 
+      <section id="top-rated">
+        <h2 className={h2}>Top-rated solar companies: how to read the lists and reviews</h2>
+        <p>
+          Lists of the &ldquo;top,&rdquo; &ldquo;best&rdquo; or &ldquo;top rated&rdquo; solar
+          companies measure different things, and none of them measures your roof. Before you
+          lean on one, ask three questions about it:
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            <strong>What was counted?</strong> Installation volume rewards the biggest sellers,
+            star averages reward whoever collects the most reviews, and editorial picks reflect
+            whatever the editor weighted. A company can top one list and miss another.
+          </li>
+          <li>
+            <strong>Who paid for it?</strong> Some publishers earn money from the companies they
+            list. Ask. This site is one of those businesses: California Rate Relief is
+            compensated by a solar provider when a homeowner we refer signs an agreement, which is
+            why the reviews here are alphabetical and unranked.
+          </li>
+          <li>
+            <strong>Where and when?</strong> A national ranking says little about the crew that
+            serves your county this year. The DGStats search above is the closest thing to a
+            neutral local view, because it comes from utility interconnection records rather than
+            marketing.
+          </li>
+        </ul>
+        <p className="mt-3">
+          For reviews, the CPUC&rsquo;s advice is to check several sites and look for a
+          consistent picture. Read the one- and two-star reviews from the last year and the
+          company&rsquo;s replies: slow service visits, roof leaks at mounting points and billing
+          surprises are the complaints that tell you what owning the system with that company
+          would be like.
+        </p>
+      </section>
+
+      <section id="solar-roof">
+        <h2 className={h2}>Solar roofing companies: who can do the roof and the panels?</h2>
+        <p>
+          A new roof and a solar system are two trades in California&rsquo;s license system. The
+          CSLB&rsquo;s C-39 Roofing classification covers products that &ldquo;seal, waterproof
+          and weatherproof structures&rdquo; and does not mention solar. The C-46 Solar
+          classification lets its holder do other building trades only &ldquo;when required to
+          install a thermal or photovoltaic solar energy system&rdquo; (CSLB, checked September
+          23, 2026). A general building contractor holding a B license can coordinate both
+          through licensed subcontractors. So when one company sells you &ldquo;roof plus
+          solar,&rdquo; ask which license covers each part of the job and look up both.
+        </p>
+        <p className="mt-3">
+          Order matters too. The CPUC&rsquo;s guide says that if you plan to replace your roof
+          soon, you should do it before the solar goes on, and it suggests asking who will do the
+          roof work, what their license number is, what roof warranty comes with it, and roughly
+          what it would cost to remove and reinstall the panels for a future roof job (CPUC,
+          checked September 23, 2026). Our guides to{' '}
+          <Link href="/blog/is-my-roof-good-for-solar-california" className={link}>
+            whether your roof is ready for solar
+          </Link>{' '}
+          and{' '}
+          <Link href="/blog/free-roof-replacement-with-solar-panels-california" className={link}>
+            &ldquo;free roof replacement&rdquo; solar offers
+          </Link>{' '}
+          cover the rest.
+        </p>
+      </section>
+
       <section id="company-reviews">
         <h2 className={h2}>Solar company reviews and comparisons on this site</h2>
         <p>
@@ -662,22 +1046,52 @@ export default function BestSolarCompaniesCalifornia() {
           </Link>{' '}
           covers storage sizing and incentives.
         </p>
+        <p className="mt-3">
+          Looking for SolarCity? It is part of Tesla. SolarCity&rsquo;s own SEC filing records
+          that it became a wholly owned subsidiary of Tesla on November 21, 2016, and
+          Tesla&rsquo;s support pages move former MySolarCity customers to a Tesla Account (SEC;
+          Tesla, checked September 23, 2026). The{' '}
+          <Link href="/solar-installers/tesla-solar-review" className={link}>
+            Tesla Solar review
+          </Link>{' '}
+          covers what that company sells and services today. If you were searching for solar in
+          California City, the Kern County town, the{' '}
+          <Link href="/solar-cost/california-city" className={link}>
+            California City solar cost guide
+          </Link>{' '}
+          covers its utility and permit office.
+        </p>
+      </section>
+
+      <section id="commercial">
+        <h2 className={h2}>Commercial and industrial (C&amp;I) solar companies</h2>
+        <p>
+          &ldquo;C&amp;I&rdquo; is industry shorthand for commercial and industrial customers:
+          offices, warehouses, farms, schools and other businesses. Those projects are bought
+          differently from a home system. Many run through an engineering, procurement and
+          construction (EPC) firm, or a developer that may own the system and sell you the power.
+          The license classes are the same (C-46, C-10 or B), but the home-sale rules on this
+          page, such as salesperson registration and the solar disclosure document required on a
+          residential solar contract, are written for homes (CSLB, checked September 23, 2026).
+        </p>
+        <p className="mt-3">
+          For a business project, start with{' '}
+          <Link href="/commercial-solar/companies-california" className={link}>
+            commercial solar companies and EPCs in California
+          </Link>
+          , then{' '}
+          <Link href="/commercial-solar/solar-developers" className={link}>
+            how a solar developer differs from an installer
+          </Link>{' '}
+          and{' '}
+          <Link href="/commercial-solar/cost-per-watt-california" className={link}>
+            what commercial systems cost per watt
+          </Link>
+          .
+        </p>
       </section>
 
       <QuoteChecklist />
-
-      <section id="near-me-map">
-        <h2 className={h2}>Why a &ldquo;near me&rdquo; search shows a map first</h2>
-        <p>
-          Search &ldquo;solar companies near me&rdquo; or &ldquo;local solar contractors&rdquo;
-          and Google usually leads with a map of nearby businesses before any article. The map
-          gives you names. It does not tell you whether a company holds the right license, who
-          would install the system or how its warranty treats a loan versus a lease. Take two or
-          three names from the map, run them through the license check above, and ask each for a
-          quote built on the same checklist. Reviews on the map can suggest questions to ask;
-          they do not replace the contract or a current license check.
-        </p>
-      </section>
 
       <section id="own-install">
         <h2 className={h2}>Can you install solar yourself in California?</h2>
@@ -768,9 +1182,9 @@ export default function BestSolarCompaniesCalifornia() {
             .
           </li>
           <li>
-            A business or farm project instead of a home:{' '}
-            <Link href="/commercial-solar/companies-california" className={link}>
-              commercial solar companies and EPCs
+            How to collect bids that line up:{' '}
+            <Link href="/blog/solar-system-quotes-california" className={link}>
+              getting three comparable solar quotes
             </Link>
             .
           </li>

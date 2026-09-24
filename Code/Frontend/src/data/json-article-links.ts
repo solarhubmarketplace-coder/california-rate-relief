@@ -44,4 +44,14 @@ export const JSON_ARTICLE_RELATED: Record<string, JsonArticleRelated> = {
       { href: '/solar-problems/solar-lawsuit-california', label: 'What solar lawsuits in California have been about' },
     ],
   },
+  // Tier 2 (claude/t2-installers-20260923): "solar dealers near me" lands here.
+  '/solar-problems/solar-dealer-fees-explained': {
+    heading: 'Finding and checking the company behind the loan',
+    links: [
+      { href: '/best-solar-companies-california', label: 'Find licensed solar installers near you and check their record' },
+      { href: '/blog/solar-system-quotes-california', label: 'Get three solar quotes you can compare line by line' },
+      { href: '/blog/solar-broker', label: 'What a solar broker can and cannot do' },
+      { href: '/blog/ppa-loan-vs-solar-lease-vs-cash-california', label: 'Cash, loan, lease or PPA: the terms side by side' },
+    ],
+  },
 };
