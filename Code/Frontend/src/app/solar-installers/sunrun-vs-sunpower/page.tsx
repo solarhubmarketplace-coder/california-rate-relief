@@ -8,6 +8,35 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
+
+// 2026-09-23 (topical-authority program, Tier 2): added the business-status
+// answer ("did Sunrun go out of business", "has Sunrun filed for bankruptcy")
+// from primary records only: Sunrun's Q2 2026 results release and the SunPower
+// Chapter 11 docket. Removed the unsourced "profitable ... no comparable
+// financial risk" line, which the Q2 release (operating cash outflow) does not
+// support.
+const sunrunQ2 =
+  'https://investors.sunrun.com/news-events/press-releases/detail/378/sunrun-reports-second-quarter-2026-financial-results';
+const sunpowerDocket = 'https://www.courtlistener.com/docket/69017070/sunpower-corporation/';
+
+const statusFaqs = [
+  {
+    question: 'Did Sunrun go out of business?',
+    answer:
+      'No. Sunrun reported its second-quarter 2026 results on August 5, 2026, with 1,034,738 subscribers at June 30, 2026, and the release does not mention bankruptcy or restructuring. It also reported $186 million of cash used in operating activities for the quarter and revised its 2026 guidance, so read the release if its finances matter to your decision.',
+  },
+  {
+    question: 'Has Sunrun filed for bankruptcy?',
+    answer:
+      'Not according to its own August 5, 2026 results release, which reports continuing operations and a revised full-year outlook. The company in this comparison that did file is SunPower Corporation, which filed for Chapter 11 in the U.S. Bankruptcy Court for the District of Delaware on August 5, 2024 (case 24-11649).',
+  },
+  {
+    question: 'Is SunPower still in business?',
+    answer:
+      'The brand is. SunPower Corporation filed for Chapter 11 in August 2024, and the SunPower name is now used by Complete Solaria’s business. Its site says the acquisition did not take on systems, leases or PPAs from the original company installed on or before September 30, 2024, so owners of those systems deal with their financier or SunStrong Management.',
+  },
+];
 
 const metaTitle = "Sunrun vs SunPower (2026): After SunPower's Bankruptcy";
 const metaDescription =
@@ -27,13 +56,14 @@ export const metadata: Metadata = {
   },
   twitter: crrTwitter(metaTitle, metaDescription),
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: "Sunrun vs. SunPower: How They Compare After SunPower's 2024 Bankruptcy", datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
+const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: "Sunrun vs. SunPower: How They Compare After SunPower's 2024 Bankruptcy", datePublished: '2026-04-24', dateModified: '2026-09-23', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function SunrunVsSunPower() {
   return (
     <PublicLayout>
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <FaqJsonLd items={statusFaqs} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
@@ -44,7 +74,7 @@ export default function SunrunVsSunPower() {
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Installer Comparison</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunrun vs. SunPower: How They Compare After SunPower&apos;s 2024 Bankruptcy</h1>
 
-              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-23" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <p className="text-lg text-muted-foreground">SunPower filed for Chapter 11 bankruptcy in 2024; Complete Solaria acquired the business and now runs it under the SunPower brand for California customers. That ownership change is the main thing to know before comparing the two companies on price, equipment and service. Here&apos;s how Sunrun and SunPower actually stack up now.</p>
             </header>
             <div className="prose prose-slate max-w-none">
@@ -58,8 +88,13 @@ export default function SunrunVsSunPower() {
                 <li><strong>SunPower = premium panels.</strong> Industry-leading 22%+ efficiency and up to 25 years of manufacturer warranty coverage on premium panels and microinverters (<a href="https://us.sunpower.com/warranty-and-resources" target="_blank" rel="noopener external" className="text-primary underline">SunPower Inc., warranty and resources</a>, checked 2026-09-22). Best-in-class panels if you care about maximum watts per square foot.</li>
                 <li><strong>Sunrun = broader panel options</strong>, mid-tier pricing, PPA/lease availability. No premium panel line.</li>
                 <li><strong>Post-bankruptcy SunPower</strong> (now under Complete Solaria) has reaffirmed warranty continuity for existing customers but remains smaller and less financially stable than pre-bankruptcy.</li>
-                <li><strong>Sunrun</strong> is publicly traded, profitable, and the largest residential solar company in the US with no comparable financial risk.</li>
+                <li><strong>Sunrun</strong> has not gone through a bankruptcy: it reported 1,034,738 subscribers at June 30, 2026 in its <a href={sunrunQ2} target="_blank" rel="noopener external" className="text-primary underline">second-quarter 2026 results</a> (August 5, 2026). The same release shows $186 million of cash used in operations for the quarter, so its finances are worth reading, not assuming.</li>
               </ul>
+
+              <h2 id="business-status" className="text-2xl font-bold text-foreground mt-10 mb-4">Did Sunrun Go Out of Business? Where Each Company Stands</h2>
+              <p><strong>Sunrun is still in business.</strong> It reported second-quarter 2026 results on August 5, 2026, counting 1,034,738 subscribers at June 30, 2026, and the release says nothing about bankruptcy or restructuring. It also reported $186 million of cash used in operating activities for the quarter and revised its full-year 2026 outlook (<a href={sunrunQ2} target="_blank" rel="noopener external" className="text-primary underline">Sunrun, Q2 2026 results</a>, checked 2026-09-23). Those are the company&apos;s own figures, not a forecast from us.</p>
+              <p><strong>SunPower Corporation did go bankrupt.</strong> It filed for Chapter 11 in the U.S. Bankruptcy Court for the District of Delaware on August 5, 2024, case 24-11649 (<a href={sunpowerDocket} target="_blank" rel="noopener external" className="text-primary underline">court docket</a>). The SunPower name now belongs to Complete Solaria&apos;s business, which is why the table below separates systems installed before and after September 30, 2024.</p>
+              <p>For the full record on Sunrun, including complaints and contract terms, see the <Link href="/solar-installers/sunrun-review" className="text-primary underline">Sunrun review</Link>. If you are asking because your own installer has stopped answering, <Link href="/solar-installers/solar-installer-bankruptcy-california" className="text-primary underline">what to do when a California solar installer goes bankrupt</Link> covers warranties, monitoring and who services an orphaned system.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Side by Side: Ownership, Warranty, Service and Licenses (Sourced Today)</h2>
               <div className="overflow-x-auto my-6">
@@ -142,6 +177,16 @@ export default function SunrunVsSunPower() {
                 <li><strong>If you want a single guarantee document that covers production, repairs, roof and battery together</strong>, that&apos;s how Sunrun structures its Subscription/Protection Plus guarantee. SunPower Inc.&apos;s new-install coverage is split across a workmanship warranty, a 2-year support window, a production-shortfall formula and separate manufacturer warranties.</li>
               </ul>
               <p>This isn&apos;t a ranking — read the full reviews for service history and complaint patterns before deciding: <Link href="/solar-installers/sunrun-review" className="text-primary underline">Full Sunrun Review</Link> · <Link href="/solar-installers/sunpower-review" className="text-primary underline">Full SunPower Review</Link>.</p>
+
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Business-Status Questions</h2>
+              <div className="space-y-5">
+                {statusFaqs.map((f) => (
+                  <div key={f.question}>
+                    <h3 className="text-lg font-bold text-foreground mb-2">{f.question}</h3>
+                    <p>{f.answer}</p>
+                  </div>
+                ))}
+              </div>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Bottom Line</h2>
               <p>For most California homeowners: <strong>Sunrun</strong> is the lower-risk pick in 2026, especially for PPA or lease buyers. <strong>SunPower (Complete Solaria)</strong> still makes sense for cash buyers who specifically want its premium-panel efficiency and warranty coverage — but verify warranty terms carefully at contract signing.</p>

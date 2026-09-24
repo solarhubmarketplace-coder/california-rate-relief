@@ -21,8 +21,8 @@
         "https://www.mcecleanenergy.org/feed-in-tariff/",
         "https://www.boe.ca.gov/proptaxes/pdf/lta26034.pdf"
       ],
-      "status": "partial",
-      "note": "Covers equipment leases and roof/site leases (the 'commercial roof lease for solar' intent), plus a section for commercial real-estate owners (absorbs the generic 'solar for commercial real estate' queries from row 17). Ownership counts are CRR's tabulation of the CPUC DGStats Interconnected Applications file (data through 2026-05-31): 2025-approved, Interconnected, PV, non-residential sectors. PARTIAL only because CREATE_DEDICATED also wants a link from the page holding the impressions (/blog/commercial-solar-financing-california); that link is added in this agent's financing-post upgrade later in this wave."
+      "status": "done",
+      "note": "Covers equipment leases and roof/site leases (the 'commercial roof lease for solar' intent), plus a section for commercial real-estate owners (absorbs the generic 'solar for commercial real estate' queries from row 17). Ownership counts are CRR's tabulation of the CPUC DGStats Interconnected Applications file (data through 2026-05-31): 2025-approved, Interconnected, PV, non-residential sectors. Linked from /blog/commercial-solar-financing-california (the page that held the impressions), companies-california, solar-developers#ppa-providers and the tax-credit page."
     },
     {
       "path": "/commercial-solar/commercial-solar-tax-credit",
@@ -49,8 +49,8 @@
         "https://www.ftb.ca.gov/forms/2025/2025-100-booklet.html",
         "https://www.californiadgstats.ca.gov/downloads/"
       ],
-      "status": "partial",
-      "note": "Statute-only treatment (Decision 11), matching cost-per-watt and church: OLRC text in effect 2026-09-23; says what §48E/§45/§45Y/§50/§168/§6417/§6418/§7701 say, never what a business can claim. PARTIAL until the financing post (holder of the impressions) links it, later in this wave."
+      "status": "done",
+      "note": "Statute-only treatment (Decision 11), matching cost-per-watt and church: OLRC text in effect 2026-09-23; says what §48E/§45/§45Y/§50/§168/§6417/§6418/§7701 say, never what a business can claim. Linked from /blog/commercial-solar-financing-california (the page that held the impressions), companies-california, industrial, lease and wattage pages."
     },
     {
       "path": "/commercial-solar/industrial-solar-california",
@@ -73,8 +73,8 @@
         "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf",
         "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim"
       ],
-      "status": "partial",
-      "note": "Also the natural owner of 'commercial solar for manufacturers' (row 18) and 'solar canopy for industrial facility'. Industrial figures are CRR's tabulation of CPUC DGStats (2025, Industrial sector, 51 systems). PARTIAL until companies-california (the page holding the impressions) links it, later in this wave."
+      "status": "done",
+      "note": "Also the natural owner of 'commercial solar for manufacturers' (row 18) and 'solar canopy for industrial facility'. Industrial figures are CRR's tabulation of CPUC DGStats (2025, Industrial sector, 51 systems). Linked from companies-california (the page that held the impressions), manufacturing section."
     },
     {
       "path": "/commercial-solar/average-wattage-of-a-commercial-solar-panel",
@@ -151,6 +151,64 @@
       ],
       "status": "done",
       "note": "Fold target for row 15 (cost of solar carports for auto dealerships): the FAQ already answered it; added a sourced body paragraph (#carport-cost) with the LBNL 2023 California commercial median and the per-watt / per-space pricing method, and added the missing LBNL Tracking the Sun source to the list. Not in any Tier 2 ownership list; edited per the lane's fold instruction."
+    },
+    {
+      "path": "/blog/commercial-solar-financing-california",
+      "action": "UPGRADE",
+      "hub": "commercial",
+      "file": "src/app/blog/commercial-solar-financing-california/page.tsx",
+      "title": "Commercial Solar Financing in California: 4 Options Compared",
+      "clusters": [
+        1812,
+        338
+      ],
+      "sources": [
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.treasurer.ca.gov/caeatfa/pace/background",
+        "https://www.sba.gov/funding-programs/loans/7a-loans",
+        "https://www.sba.gov/funding-programs/loans/504-loans",
+        "https://www.treasurer.ca.gov/caeatfa/gogreen/business/index.asp",
+        "https://www.rd.usda.gov/programs-services/energy-programs/rural-energy-america-program-renewable-energy-systems-energy-efficiency-improvement-guaranteed-loans",
+        "https://www.californiadgstats.ca.gov/downloads/",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45&num=0&edition=prelim"
+      ],
+      "status": "done",
+      "note": "Rows 12 and 21 (business solar financing; financing commercial solar projects). Meta title kept; H1 and opening answer now lead with the five ways to pay. Moved off DecisionPage to PublicLayout + ArticleJsonLd + FaqJsonLd (the gate cannot see DecisionPage's Article node; it failed SCHEMA before this change and passes now). Kept every original section and the inquiry wording. New: 2025 ownership mix from CPUC DGStats, SBA 7(a)/504 facts, USDA REAP (grant intake closed per its 2026-04-09 update) and CAEATFA GoGreen Business, 'is the ITC reduced by debt financing' (§48E(d)(2)/§45(b)(3)), five FAQs, breadcrumb parent /commercial-solar, HubSpokeLinks. Links the new lease and tax-credit pages, which completes their CREATE_DEDICATED. G08 merge with /commercial-solar/financing-options remains held (Decision 14 default)."
+    },
+    {
+      "path": "/blog/solar-carport-california-guide",
+      "action": "UPGRADE",
+      "hub": "commercial",
+      "file": "src/app/blog/solar-carport-california-guide/page.tsx",
+      "title": "Solar Carports in California: Cost, Permits and Design",
+      "clusters": [
+        1815,
+        262,
+        1803
+      ],
+      "sources": [
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "Rows 14 (solar powered carports) and 16 (solar canopy cost), and the fold of row 6 (carport solar installation). Added: 'solar canopy' and 'solar-powered carport' definitions, per-space canopy pricing with a link to the commercial carport cost page, a new #installation section (step-by-step install, CSLB C-46 building-trades limit quoted, NBT export note), FAQs 'How much does a solar canopy cost?' and 'How is a solar carport installed?'. Meta description updated; title and H1 kept. hub column in the CSV is roof_structures; the page's HubSpokeLinks stays on commercial (Tier 1 set it) — integration may also list it under roof_structures."
+    },
+    {
+      "path": "/solar-installers/sunrun-vs-sunpower",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/sunrun-vs-sunpower/page.tsx",
+      "title": "Sunrun vs SunPower (2026): After SunPower's Bankruptcy",
+      "clusters": [
+        1806
+      ],
+      "sources": [
+        "https://investors.sunrun.com/news-events/press-releases/detail/378/sunrun-reports-second-quarter-2026-financial-results",
+        "https://www.courtlistener.com/docket/69017070/sunpower-corporation/"
+      ],
+      "status": "done",
+      "note": "Row 11 (did Sunrun go out of business). New #business-status section and three FAQs with FAQPage schema: Sunrun status from its own Q2 2026 release (Aug 5, 2026: 1,034,738 subscribers, $186M operating cash outflow, no bankruptcy/restructuring mention); SunPower Corporation Chapter 11, Bankr. D. Del. No. 24-11649, filed 2024-08-05 (CourtListener docket). Removed the unsourced 'profitable ... largest ... no comparable financial risk' bullet, which the Q2 release contradicts. dateModified 2026-09-23. The Palmetto/Powur/Elevation 'still in business' sub-questions were not added: they belong on those companies' review pages (reviews lane), and /solar-installers/sunrun-review already answers the Sunrun question in depth (linked). No HubSpokeLinks added: the page is not a commercial-hub page and its hub (installer_reviews) is outside this lane."
     }
   ],
   "sitemap_add": [
@@ -208,6 +266,28 @@
     {
       "url": "/commercial-solar/cost-of-solar-carports-for-auto-dealerships",
       "why": "folded into /commercial-solar/car-dealerships-going-solar-california#carport-cost (Tier 1 page already answered it in an FAQ; body paragraph added)."
+    },
+    {
+      "url": "/commercial-solar/carport-solar-installation",
+      "why": "folded into /blog/solar-carport-california-guide (#installation; the guide holds the 'carport solar installation' impressions) with /commercial-solar/commercial-solar-carport-cost covering commercial pricing and who builds canopies; a third carport page would split them."
+    },
+    {
+      "url": "/commercial-solar/solar-performance-commercial-real-estate",
+      "why": "skipped: the 'solar performance / performance assurance ... commercial real estate / owners & operators / installers' queries are navigational labels for one company's product (Omnidian 'Performance Assurance'), not a topic. The generic 'solar for commercial real estate' and 'solar financing for commercial real estate' intent is answered in /commercial-solar/commercial-solar-lease-programs ('If you own commercial real estate') and the financing post."
+    }
+  ],
+  "blog_index_update": [
+    {
+      "slug": "commercial-solar-financing-california",
+      "title": "Commercial Solar Financing in California: Loans, SBA, Leases, PPAs and PACE",
+      "date": "2026-09-23",
+      "hub": "commercial"
+    },
+    {
+      "slug": "solar-carport-california-guide",
+      "title": "Solar Carports in California: Cost, Permits and Design",
+      "date": "2026-09-23",
+      "hub": "commercial"
     }
   ]
 }
