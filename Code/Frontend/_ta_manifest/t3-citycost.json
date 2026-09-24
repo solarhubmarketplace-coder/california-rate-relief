@@ -794,14 +794,27 @@
   "src/data/city-coordinates.ts: Census TIGERweb internal points added for new slugs that had none (nearby-city ordering only).",
   "src/lib/canonical-redirects.test.ts: new dated registry section T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added.",
   "src/data/city-cost-data.ts: the los-angeles row (not in this lane's assignment, not owned by any Tier 3 lane) gains two LA City Planning community-plan sources, the CEC layer source and one extra FAQ answering the van-nuys and wilmington topics. Its permit fields are unchanged.",
-  "src/data/utility-rate-tracker.ts: 'gwp' (Glendale Water & Power) record added as well; UTILITY_TYPE in solar-cost-index.ts gains gwp."
+  "src/data/utility-rate-tracker.ts: 'gwp' (Glendale Water & Power) record added as well; UTILITY_TYPE in solar-cost-index.ts gains gwp.",
+  "src/data/city-cost-data.ts: new optional, gated row field localRates (heading, paragraphs, faq, sources) for a short 'Electricity provider and rates in <city>' section; used only by anaheim and fresno.",
+  "src/components/growth/CityCostPage.tsx: renders localRates as an H2 after the utility section, adds its FAQ entry before 'Which utility serves' and its sources to the sources list. Rows without the field render exactly as before.",
+  "src/data/solar-cost-index.ts: OnlineFiling gains 'paused' ('Paused for now') for Cupertino; hollister's online value moves from 'not-yet' to 'not-stated' because the City's 'coming soon' line is gone.",
+  "src/lib/canonical-redirects.test.ts: T3 live-twin set gains san-ramon, redding, cupertino; new dated set T3_COST_PAGES_PENDING_COMPANIES_TWIN (clovis, elk-grove, mission-viejo, saratoga, gilroy, redwood-city) added to REINSTATED_COMPANIES_SLUGS so a companies twin landing at integration stays live. No redirect rows added."
  ],
  "integration_notes": [
   "/solar-cost/<city> pages enter the sitemap and the /solar-cost index automatically from getPublishableCityCostRows(); no sitemap_add needed.",
   "WebSearch budget for the session was exhausted early; city pages were found by navigating each city's own site. Sites that refuse direct requests (santaclaraca.gov, sanclemente.gov, siliconvalleypower.com, mcecleanenergy.org) were read with WebFetch or the r.jina.ai reader, which returns the publisher's own text.",
-  "Citycos (Tier 3) is creating /solar-companies pages for clovis, elk-grove and mission-viejo, which get new cost pages here. When both land, canonical-redirects.test.ts's cross-cutting check needs each of them in a reinstated registry; the citycos lane registers its own slugs. Also check the title owner: costPageSeo switches a cost page to the 'What Sets the Price' title once a live companies twin exists."
+  "Citycos (Tier 3) is creating /solar-companies pages for clovis, elk-grove and mission-viejo, which get new cost pages here. When both land, canonical-redirects.test.ts's cross-cutting check needs each of them in a reinstated registry; the citycos lane registers its own slugs. Also check the title owner: costPageSeo switches a cost page to the 'What Sets the Price' title once a live companies twin exists.",
+  "redwoodcity.org returns 403 to plain requests; its SolarAPP+ page was read through the r.jina.ai reader (raw HTML mode) and the FY 2026-27 fee schedule PDF was downloaded directly with browser headers. The City's linked 'SolarAPP+ Permitting Guide' PDF is a reused City of Modesto document, so the page relies only on the City's page text.",
+  "Hollister's current fee schedule is a scanned PDF; the $400.00 solar line was read by OCR at 300 and 400 dpi and checked against the page image.",
+  "anaheim.net put its DocumentCenter behind a bot check and 429s for most of the session; the TOU-2 sheet was read once through WebFetch, the Domestic Service sheet never.",
+  "The worktree still has two uncommitted lines in src/data/city-coordinates.ts (gilroy, san-ramon) left by the earlier run; they are deliberately not committed (see map_points)."
  ],
- "decisions_for_chad": [],
+ "decisions_for_chad": [
+  "Anaheim is partial: the Standard Domestic Rate is sourced to APU's rates page, which prints no effective date, and the Domestic Service schedule could not be read. The page says so. Also, APU's rates page shows 33.22¢ summer on-peak while the TOU-2 sheet prints 33.20¢; the page states the schedule figure and notes the other. OK to ship like that, or hold until the schedule is re-read by hand?",
+  "Cupertino's instant permit is paused 'due to an upgrade with Business License system' (checked 2026-09-24). The page states it with the date; re-check before deploy and flip permitOnline/index back if it has reopened.",
+  "city-coordinates.ts: this branch's earlier commits added clovis, elk-grove, mission-viejo, santa-clara and saratoga, against this wave's lane rule. My revert was refused by the session's permission check. At merge, keep one copy of each key (citycos adds some of the same). Redwood City, Cupertino, Gilroy and San Ramon have no map point on this branch (values in map_points).",
+  "Hollister and Cupertino state the CEC's self-reported SB 379 listing as-is (Hollister: without a platform, deadline Sept 2024), the same neutral approach Tier 2 used for Chico and Arcata."
+ ],
  "skipped": [
   {
    "url": "/solar-cost/wilmington",
