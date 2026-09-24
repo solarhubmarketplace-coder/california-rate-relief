@@ -1,0 +1,587 @@
+{
+  "agent": "int-crumbs",
+  "branch": "claude/int-crumbs-20260924",
+  "updated": "2026-09-24",
+  "source_requests": "_ta_manifest/t2-structure.json requests (installers crumbs, /blog crumbs, electric_bills hub block, installer_reviews hub lists)",
+  "rules": "STRUCTURE_AND_LINK_RULES.md section 5.6 (breadcrumbs), 5.1-5.2 (hub lists every spoke)",
+  "commits": [
+    "4337e4d",
+    "11cb6e2",
+    "10d8396",
+    "f15b513"
+  ],
+  "requests": [
+    {
+      "task": 1,
+      "from": "/solar-installers/ameco-solar-review",
+      "file": "src/app/solar-installers/ameco-solar-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/empire-solar-review",
+      "file": "src/app/solar-installers/empire-solar-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/enphase-vs-solaredge",
+      "file": "src/app/solar-installers/enphase-vs-solaredge/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section. Also breadcrumbLabel 'Enphase vs SolarEdge'."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/freedom-forever-review",
+      "file": "src/app/solar-installers/freedom-forever-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/la-solar-group-review",
+      "file": "src/app/solar-installers/la-solar-group-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section. Also breadcrumbLabel 'LA Solar Group Review'."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/new-day-solar-review",
+      "file": "src/app/solar-installers/new-day-solar-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/option-one-solar-review",
+      "file": "src/app/solar-installers/option-one-solar-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/powur-solar-review",
+      "file": "src/app/solar-installers/powur-solar-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/semper-solaris-review",
+      "file": "src/app/solar-installers/semper-solaris-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/solar-optimum-review",
+      "file": "src/app/solar-installers/solar-optimum-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/sullivan-solar-power-review",
+      "file": "src/app/solar-installers/sullivan-solar-power-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section. Also visible last crumb 'Sullivan Solar Power' -> 'Sullivan Solar Power Review' to match the schema."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/sunnova-review",
+      "file": "src/app/solar-installers/sunnova-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/sunnova-vs-sunrun",
+      "file": "src/app/solar-installers/sunnova-vs-sunrun/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/sunpower-review",
+      "file": "src/app/solar-installers/sunpower-review/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section. Also breadcrumbLabel 'SunPower Review'."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/sunrun-vs-sunpower",
+      "file": "src/app/solar-installers/sunrun-vs-sunpower/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible middle crumb changed from /best-solar-companies-california to /solar-installers 'Solar company reviews'; schema already derives the same crumb from the URL section. Also breadcrumbLabel 'Sunrun vs SunPower'."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/palmetto-solar-review",
+      "file": "src/app/solar-installers/palmetto-solar-review/page.tsx",
+      "status": "already_done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible trail already pointed at /solar-installers (changed by a Tier 3 agent); rendered visible trail and BreadcrumbList match."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/sunlux-solar-review",
+      "file": "src/app/solar-installers/sunlux-solar-review/page.tsx",
+      "status": "already_done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible trail already pointed at /solar-installers (changed by a Tier 3 agent); rendered visible trail and BreadcrumbList match."
+    },
+    {
+      "task": 1,
+      "from": "/solar-installers/sunrun-vs-tesla-solar",
+      "file": "src/app/solar-installers/sunrun-vs-tesla-solar/page.tsx",
+      "status": "already_done",
+      "trail": "Home / Solar company reviews (/solar-installers) / page",
+      "note": "Visible trail already pointed at /solar-installers (changed by a Tier 3 agent); rendered visible trail and BreadcrumbList match."
+    },
+    {
+      "task": 2,
+      "from": "/blog/ab-942-california-solar",
+      "file": "src/app/blog/ab-942-california-solar/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar problems and scams (/solar-problems) / AB 942 California Solar",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/california-24-dollar-fixed-charge-explained",
+      "file": "src/app/blog/california-24-dollar-fixed-charge-explained/page.tsx",
+      "status": "done",
+      "trail": "Home / Why California electric bills are high (/blog/why-is-my-california-electric-bill-so-high) / The $24 fixed charge explained",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/california-energy-commission",
+      "file": "src/app/blog/california-energy-commission/page.tsx",
+      "status": "done",
+      "trail": "Home / California utility rate tracker (/california-utility-rate-tracker) / California Energy Commission",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/california-public-utilities-commission",
+      "file": "src/app/blog/california-public-utilities-commission/page.tsx",
+      "status": "done",
+      "trail": "Home / California utility rate tracker (/california-utility-rate-tracker) / What is the CPUC?",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/can-solar-panels-power-a-whole-house-california",
+      "file": "src/app/blog/can-solar-panels-power-a-whole-house-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar cost and value (/solar-panels-california) / Can solar power a whole house?",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/do-solar-panels-work-at-night-california",
+      "file": "src/app/blog/do-solar-panels-work-at-night-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar cost and value (/solar-panels-california) / Do solar panels work at night?",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/do-solar-panels-work-on-cloudy-days-california",
+      "file": "src/app/blog/do-solar-panels-work-on-cloudy-days-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar cost and value (/solar-panels-california) / Do solar panels work on cloudy days?",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/hoa-solar-rights-california",
+      "file": "src/app/blog/hoa-solar-rights-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar problems and scams (/solar-problems) / HOA solar rights",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/how-big-of-a-solar-system-do-i-need-california",
+      "file": "src/app/blog/how-big-of-a-solar-system-do-i-need-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar companies in California (/best-solar-companies-california) / How big a solar system you need",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/how-does-net-metering-work",
+      "file": "src/app/blog/how-does-net-metering-work/page.tsx",
+      "status": "done",
+      "trail": "Home / NEM 3.0 and net billing (/blog/nem-2-vs-nem-3-california) / How Does Net Metering Work?",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/how-long-do-solar-panels-last",
+      "file": "src/app/blog/how-long-do-solar-panels-last/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar panel maintenance (/solar-panel-maintenance-california) / How long solar panels last",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/pge-vs-sce-vs-sdge-rates-compared",
+      "file": "src/app/blog/pge-vs-sce-vs-sdge-rates-compared/page.tsx",
+      "status": "done",
+      "trail": "Home / California utility rate tracker (/california-utility-rate-tracker) / PG&E vs. SCE vs. SDG&E rates",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/solar-during-psps-california",
+      "file": "src/app/blog/solar-during-psps-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Home batteries (/battery) / Solar During PSPS",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/solar-panel-bird-proofing",
+      "file": "src/app/blog/solar-panel-bird-proofing/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar panel maintenance (/solar-panel-maintenance-california) / Solar panel bird proofing",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/solar-panel-inspection-california",
+      "file": "src/app/blog/solar-panel-inspection-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar panel maintenance (/solar-panel-maintenance-california) / Solar panel inspection",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/solar-panels-for-ev-charging-california",
+      "file": "src/app/blog/solar-panels-for-ev-charging-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar cost and value (/solar-panels-california) / Solar for EV charging",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/solar-pool-heating-california",
+      "file": "src/app/blog/solar-pool-heating-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar cost and value (/solar-panels-california) / Solar Pool Heating California",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/solar-ppa-explained-california",
+      "file": "src/app/blog/solar-ppa-explained-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Leases, PPAs and financing (/blog/ppa-loan-vs-solar-lease-vs-cash-california) / Solar PPA explained",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/solar-system-quotes-california",
+      "file": "src/app/blog/solar-system-quotes-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar companies in California (/best-solar-companies-california) / Solar quotes",
+      "note": "Already pointed at its hub by hand ('California solar companies'); switched to defaultCrumbs so the label matches the hub's shared crumb name."
+    },
+    {
+      "task": 2,
+      "from": "/blog/string-inverter-vs-microinverter",
+      "file": "src/app/blog/string-inverter-vs-microinverter/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar panel maintenance (/solar-panel-maintenance-california) / String Inverter vs Microinverter",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/switch-to-solar-california",
+      "file": "src/app/blog/switch-to-solar-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar cost and value (/solar-panels-california) / Switching to solar",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/tech-clean-california-heat-pump-rebate",
+      "file": "src/app/blog/tech-clean-california-heat-pump-rebate/page.tsx",
+      "status": "done",
+      "trail": "Home / California solar incentives (/blog/california-solar-tax-credit-2026) / TECH Clean California",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/tesla-powerwall-installers-california",
+      "file": "src/app/blog/tesla-powerwall-installers-california/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar company reviews (/solar-installers) / Tesla Powerwall installers",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/what-happens-to-solar-panels-after-25-years",
+      "file": "src/app/blog/what-happens-to-solar-panels-after-25-years/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar panel maintenance (/solar-panel-maintenance-california) / Solar panels after 25 years",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/what-is-a-solar-inverter",
+      "file": "src/app/blog/what-is-a-solar-inverter/page.tsx",
+      "status": "done",
+      "trail": "Home / Solar panel maintenance (/solar-panel-maintenance-california) / What Is a Solar Inverter?",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/what-is-demand-charge-california",
+      "file": "src/app/blog/what-is-demand-charge-california/page.tsx",
+      "status": "done",
+      "trail": "Home / California utility rate tracker (/california-utility-rate-tracker) / What Is a Demand Charge?",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/why-is-my-ladwp-bill-so-high",
+      "file": "src/app/blog/why-is-my-ladwp-bill-so-high/page.tsx",
+      "status": "done",
+      "trail": "Home / Why California electric bills are high (/blog/why-is-my-california-electric-bill-so-high) / LADWP bill guide",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/why-is-my-pge-bill-so-high",
+      "file": "src/app/blog/why-is-my-pge-bill-so-high/page.tsx",
+      "status": "done",
+      "trail": "Home / Why California electric bills are high (/blog/why-is-my-california-electric-bill-so-high) / Why Is My PG&E Bill So High?",
+      "note": "Hand-written 'Blog' trail or 'Back to Blog' link replaced by BreadcrumbTrail; CRUMBS = defaultCrumbs(path) passed to both BreadcrumbTrail and PublicLayout breadcrumbParents, same breadcrumbLabel."
+    },
+    {
+      "task": 2,
+      "from": "/blog/why-is-my-sdge-bill-so-high",
+      "file": "src/app/blog/why-is-my-sdge-bill-so-high/page.tsx",
+      "status": "already_done",
+      "trail": "Home / Why California electric bills are high (/blog/why-is-my-california-electric-bill-so-high) / Why is my SDG&E bill so high?",
+      "note": "Already showed (GuideHeader parent) and emitted (breadcrumbParent) its hub crumb; unchanged."
+    },
+    {
+      "task": 3,
+      "from": "/blog/why-is-my-california-electric-bill-so-high",
+      "file": "src/app/blog/why-is-my-california-electric-bill-so-high/page.tsx",
+      "status": "done",
+      "note": "Added <HubSpokeLinks hub=\"electric_bills\" currentPath={path} title=\"More on electric bills\" /> ahead of the existing utility_rates block (kept). Rendered: all 22 electric_bills spokes linked, including the 5 /solar-problems bill pages."
+    },
+    {
+      "task": 3,
+      "from": "/blog/why-is-my-california-electric-bill-so-high",
+      "file": "same",
+      "status": "done",
+      "kind": "breadcrumb",
+      "note": "Extra, same page: visible crumb said Blog with label 'Why California electric bills are high' while the schema said Blog / 'Why is my California electric bill so high?'. As the electric_bills hub page it now tops its own trail per section 5.6 and lib/breadcrumbs.ts: Home / Why California electric bills are high, visible and schema from one list."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/panel-reviews/canadian-solar-panels-review",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "PROGRAMS",
+      "anchor": "Canadian Solar panels review",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/panel-reviews/rec-solar-panels-review",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "PROGRAMS",
+      "anchor": "REC solar panels review",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/panel-reviews/silfab-solar-panels-review",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "PROGRAMS",
+      "anchor": "Silfab solar panels review",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/panel-reviews/trina-solar-panels-review",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "PROGRAMS",
+      "anchor": "Trina Solar panels review",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/blog/tesla-powerwall-installers-california",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "PROGRAMS",
+      "anchor": "Who can install a Tesla Powerwall in California",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/battery/tesla-powerwall-alternatives",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "PROGRAMS",
+      "anchor": "Tesla Powerwall alternatives compared",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/battery/sgip-battery-rebate-california",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "PROGRAMS",
+      "anchor": "SGIP battery rebate status and who qualifies",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/blog/free-solar-panels-california",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "CHECKS",
+      "anchor": "Solar offers that claim to cost nothing",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description ('free' reworded)."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/blog/free-roof-replacement-with-solar-panels-california",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "CHECKS",
+      "anchor": "Roof replacement offers bundled with solar",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description ('free' reworded)."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/blog/solar-panel-removal-reinstall-cost",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "CHECKS",
+      "anchor": "Solar panel removal and reinstall cost for a new roof",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/solar-panels-california",
+      "file": "src/app/solar-installers/page.tsx",
+      "status": "done",
+      "list": "CHECKS",
+      "anchor": "What solar costs in California and whether it pays",
+      "note": "installer_reviews spoke not linked on its hub page; added to the list with a blurb from the target's meta description."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/solar-installers/freedom-forever-bankruptcy-what-to-do",
+      "status": "already_done",
+      "note": "Already linked: rendered by the JSON installer-guides list (articlesInCluster('installer'))."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/solar-installers/sunrun-lease-vs-ppa",
+      "status": "already_done",
+      "note": "Already linked: rendered by the JSON installer-guides list."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/solar-installers/sunrun-buyout-cost",
+      "status": "already_done",
+      "note": "Already linked: rendered by the JSON installer-guides list."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/solar-installers/sunrun-ppa-explained",
+      "status": "already_done",
+      "note": "Already linked: rendered by the JSON installer-guides list."
+    },
+    {
+      "task": 4,
+      "from": "/solar-installers",
+      "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+      "status": "already_done",
+      "note": "Already linked: hub link of the financing HubSpokeLinks block on the page."
+    }
+  ],
+  "counts": {
+    "task1_installer_crumbs": {
+      "done": 15,
+      "already_done": 3
+    },
+    "task2_blog_crumbs": {
+      "done": 28,
+      "already_done": 1
+    },
+    "task3_electric_bills_hub": {
+      "done": 1,
+      "extra_breadcrumb_fix": 1
+    },
+    "task4_installer_reviews_hub": {
+      "added": 11,
+      "already_linked": 5
+    }
+  },
+  "checks": {
+    "tsc": "flock /tmp/crr-tsc.lock npx tsc --noEmit -p . : pass (exit 0)",
+    "canonical_redirects_test": "node --experimental-strip-types --test src/lib/canonical-redirects.test.ts : 20/20 pass",
+    "render_check": "Each touched page bundled with esbuild (next/link and next/navigation shimmed) and rendered with react-dom/server renderToString; visible breadcrumb and BreadcrumbList compared. 18/18 installer pages and 29/29 blog posts match; electric-bill hub page matches and links 22/22 electric_bills spokes; /solar-installers links 50/50 installer_reviews spokes. Harness lives in the session scratchpad, not the repo."
+  },
+  "for_integration": [
+    "Blog crumbs follow topic-hubs.ts at render time (defaultCrumbs). If integration moves a post to another hub, its visible trail and schema move together; a post dropped from every hub falls back to Blog.",
+    "Not in scope, seen while checking: /blog/is-my-roof-good-for-solar-california is the roof_structures hub page but its BreadcrumbList still has a Blog crumb (derived from the URL) and it shows no visible trail. Passing breadcrumbParents={[]} (or defaultCrumbs(path)) would make it Home / page like the other hub pages.",
+    "Crumb assignments that follow topic-hubs.ts and may read oddly: string-inverter-vs-microinverter and what-is-a-solar-inverter sit under 'Solar panel maintenance'; how-big-of-a-solar-system-do-i-need-california under 'Solar companies in California' (PRIMARY_HUB installers)."
+  ],
+  "not_touched": [
+    "src/data/topic-hubs.ts",
+    "src/app/sitemap.ts",
+    "src/lib/growth-routes.ts",
+    "src/app/blog/page.tsx",
+    "bottom 'Back to Blog' / 'All Articles' links on post bodies",
+    "'Back to Best Solar Companies in California' links at the foot of the installer reviews (cross-hub link, not a crumb)"
+  ]
+}
