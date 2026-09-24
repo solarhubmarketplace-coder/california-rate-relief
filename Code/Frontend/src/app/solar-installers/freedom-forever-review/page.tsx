@@ -15,6 +15,7 @@ import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 
 export const metadata: Metadata = {
   title:
@@ -105,13 +106,28 @@ export default function FreedomForeverReview() {
                 <AlertTriangle className='h-6 w-6 text-red-400 flex-shrink-0 mt-0.5' />
                 <div>
                   <p className='text-xs font-bold uppercase tracking-widest text-red-300 mb-1'>
-                    Breaking, April 15, 2026
+                    Status update, September 23, 2026
                   </p>
                   <p className='text-foreground font-semibold leading-relaxed'>
-                    Freedom Forever filed for Chapter 11 bankruptcy
-                    protection on April 15, 2026. The company is continuing
-                    to operate under restructuring. This review was last
-                    updated April 22, 2026 with confirmed filing details.
+                    Freedom Forever LLC filed Chapter 11 in Delaware on April
+                    15, 2026, and the court signed an order converting the
+                    case to Chapter 7 liquidation on August 7, 2026 (Bankr. D.
+                    Del. No. 26-10522, Doc. 533;{' '}
+                    <a
+                      href='https://www.courtlistener.com/docket/73192534/freedom-forever-llc/'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='underline'
+                    >
+                      docket
+                    </a>
+                    , checked September 23, 2026). Sections below that describe
+                    a Chapter 11 reorganization describe the case before that
+                    order. For current steps, see{' '}
+                    <Link href='/solar-installers/freedom-forever-bankruptcy-what-to-do' className='underline'>
+                      what Freedom Forever customers should do now
+                    </Link>
+                    .
                   </p>
                 </div>
               </div>
@@ -160,9 +176,12 @@ export default function FreedomForeverReview() {
                 <li className='flex items-start gap-2'>
                   <span className='text-primary font-bold mt-1'>•</span>
                   <span>
-                    The company is still operating under restructuring and
-                    says it intends to continue honoring its 25-year
-                    production guarantee while the case proceeds.
+                    The case was converted to Chapter 7 liquidation by an
+                    order signed August 7, 2026 (Bankr. D. Del. No.
+                    26-10522). Promises made during the Chapter 11 period,
+                    including about the 25-year production guarantee, should
+                    not be relied on without written confirmation from
+                    whoever now holds your agreement.
                   </span>
                 </li>
                 <li className='flex items-start gap-2'>
@@ -197,6 +216,52 @@ export default function FreedomForeverReview() {
 
             {/* Body */}
             <div className='prose prose-slate max-w-none'>
+              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
+                Freedom Forever in California after the Chapter 7 conversion
+              </h2>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                If you have a Freedom Forever system or contract in California,
+                start from the court record rather than the company’s own site.
+                The Delaware bankruptcy docket shows the main case converted to
+                Chapter 7 by an order signed August 7, 2026, and lists Chapter 7
+                cases for two affiliates, Freedom Forever Procurement LLC (No.
+                26-10652) and Freedom Forever Pennsylvania, LLC (No. 26-10651),
+                both filed May 2, 2026. The same docket records a court order
+                approving a settlement between Freedom Forever LLC and Sunrun,
+                including the rejection of certain agreements between them, and
+                an order approving termination of an agreement between Freedom
+                Forever LLC and EverBright LLC (
+                <a
+                  href='https://www.courtlistener.com/docket/73192534/freedom-forever-llc/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-primary underline'
+                >
+                  CourtListener
+                </a>
+                , checked September 23, 2026).
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                What that means for you depends on who holds your paperwork. If
+                your lease, PPA or loan is with a financing company rather than
+                Freedom Forever itself, contact that company about your agreement
+                and payments. Equipment warranties come from the panel, inverter
+                and battery makers, so file equipment claims with them directly.
+                Workmanship and roof coverage came from Freedom Forever itself, so
+                document any problem in writing and ask how such claims are being
+                handled in the case. Our guide to{' '}
+                <Link href='/solar-installers/freedom-forever-bankruptcy-what-to-do' className='text-primary underline'>
+                  what Freedom Forever customers should do
+                </Link>{' '}
+                and the broader page on{' '}
+                <Link href='/solar-installers/solar-installer-bankruptcy-california' className='text-primary underline'>
+                  what survives a solar company bankruptcy in California
+                </Link>{' '}
+                walk through the steps.
+              </p>
+
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What the April 15 Chapter 11 Filing Actually Says
               </h2>
@@ -641,6 +706,8 @@ export default function FreedomForeverReview() {
               variant="review"
               topic="Freedom Forever review and quote comparison"
             />
+
+            <HubSpokeLinks hub='installer_reviews' currentPath='/solar-installers/freedom-forever-review' />
 
             {/* Related Reviews */}
             <div className='mt-10 pt-8 border-t border-border'>

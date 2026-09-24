@@ -20,7 +20,7 @@ const checked = '2026-09-23';
 
 const metaTitle = 'Trinity Solar Reviews (2026): Northeast Installer, Not CA';
 const metaDescription =
-  'Trinity Solar, founded in 1994, lists nine Northeast and Mid-Atlantic states, not California. Its BBB record, court dockets and warranty, checked Sept. 23, 2026.';
+  'Trinity Solar (founded 1994) lists nine eastern states and not California. Its BBB file, court dockets and warranty terms, checked Sept. 23, 2026.';
 
 export const metadata: Metadata = {
   title: metaTitle,

@@ -1,0 +1,354 @@
+{
+  "agent": "reviews",
+  "branch": "claude/ta-reviews-20260923",
+  "checked": "2026-09-23",
+  "pages": [
+    {
+      "path": "/battery/tesla-powerwall-3-cost-california",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/data/article-pages.battery.json",
+      "title": "Tesla Powerwall 3 Cost in California (2026): Installed Price",
+      "clusters": [4, 246],
+      "sources": [
+        "https://www.tesla.com/powerwall/design",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://investors.sunrun.com/news-events/press-releases/detail/381/sunrun-and-tesla-dispatch-580-megawatts-to-californias",
+        "https://www.energy.ca.gov/programs-and-topics/programs/demand-side-grid-support-program",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/demand-response-dr/emergency-load-reduction-program",
+        "https://www.courtlistener.com/docket/73192534/freedom-forever-llc/",
+        "https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/",
+        "https://www.courtlistener.com/docket/69017070/sunpower-corporation/"
+      ],
+      "status": "done",
+      "note": "Angle is installed cost (Decision 21). Tesla shows no price without an address (checked 9/23), so the cost answer rests on LBNL's $750-1,000/kWh storage premium (TTS 2024 p.33) plus the Aug 2026 LBNL update. Adds sizing, net billing (CPUC), SGIP as of 9/23/2026, VPP earnings, a short Powerwall 3 review section (cluster 246). Secondary sources (AICPA Tax Adviser, ICS Tax, Utility Dive, Bloomberg Law, Business Wire) removed; FEOC detail dropped because Treasury Notice 2026-15 was not fetched. JSON pattern: HubSpokeLinks and in-body links cannot be added without editing shared ArticleRoute.tsx; see integration_requests. Structure doc flags this URL as belonging to the battery hub."
+    },
+    {
+      "path": "/solar-installers/sunrun-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/sunrun-review/page.tsx",
+      "title": "Sunrun Reviews (2026): Is Sunrun Going Out of Business?",
+      "clusters": [10, 271],
+      "sources": [
+        "https://investors.sunrun.com/",
+        "https://investors.sunrun.com/news-events/press-releases/detail/378/sunrun-reports-second-quarter-2026-financial-results",
+        "https://investors.sunrun.com/news-events/press-releases/detail/381/sunrun-and-tesla-dispatch-580-megawatts-to-californias",
+        "https://investors.sunrun.com/news-events/press-releases/detail/216/sunrun-completes-acquisition-of-vivint-solar-to-accelerate",
+        "https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886/complaints",
+        "https://www.sunrun.com/why-sunrun/your-guarantee",
+        "https://www.sunrun.com/roofing",
+        "https://www.sunrun.com/solar-panels",
+        "https://www.sunrun.com/state-contractor-license-information",
+        "https://www.sunrun.com/lighthouse",
+        "https://www.sunrun.com/go-solar-center/solar-faq/what-happens-if-i-move",
+        "https://www.sunrun.com/go-solar-center/solar-articles/service-transfer-buying-a-sunrun-solar-home",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Title kept (ranks pos 8.2 for 'is sunrun going out of business 2026'). Answers bankrupt / owned by Tesla / cost / roof / panel maker / Vivint / PPA-vs-offers. Removed unsourced revenue, state count, 71% attach, 2-6 month timeline, $3.2B Vivint price, 100-150k legacy systems, 2.9-3.9% escalator. Exchange corrected to Nasdaq (was NYSE). VerifyInstallerBox BBB URL fixed (old one 404s); license number unchanged."
+    },
+    {
+      "path": "/solar-installers/momentum-solar-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/momentum-solar-review/page.tsx",
+      "title": "Momentum Solar Reviews (2026): Is It Legit in California?",
+      "clusters": [14],
+      "sources": [
+        "https://www.momentumsolar.com/",
+        "https://www.bbb.org/us/nj/south-plainfield/profile/solar-energy-design/momentum-solar-0221-90134444",
+        "https://www.bbb.org/us/nj/south-plainfield/profile/solar-energy-design/momentum-solar-0221-90134444/complaints",
+        "https://www.courtlistener.com/docket/55230567/amini-v-pro-custom-solar-llc-dba-momentum-solar/",
+        "https://www.courtlistener.com/docket/68446637/gordon-v-momentum-solar-llc/",
+        "https://www.courtlistener.com/docket/69512847/vianca-velasco-v-momentum-solar-llc/",
+        "https://investor.adt.com/News--Events/news/news-details/2024/ADT-Provides-Solar-Business-Update-and-Advances-Capital-Allocation-Strategy/default.aspx"
+      ],
+      "status": "done",
+      "note": "Retitled for 'reviews' + 'is momentum solar legit'. Site now lists NY too (7 states, no CA). Previous 'most dockets are TCPA' claim corrected: 23 party-name results include unrelated matters; several TCPA-coded. Unsourced 25/25 warranty removed. License #997872 unchanged (still unverified)."
+    },
+    {
+      "path": "/solar-installers/trinity-solar-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/trinity-solar-review/page.tsx",
+      "title": "Trinity Solar Reviews (2026): Northeast Installer, Not CA",
+      "clusters": [18],
+      "sources": [
+        "https://www.trinitysolar.com/",
+        "https://www.trinitysolar.com/about-us/",
+        "https://www.bbb.org/us/nj/wall-township/profile/solar-energy-design/trinity-solar-0221-16001220",
+        "https://www.bbb.org/us/nj/wall-township/profile/solar-energy-design/trinity-solar-0221-16001220/complaints",
+        "https://www.courtlistener.com/docket/60120033/charman-v-trinity-solar-inc/",
+        "https://www.courtlistener.com/docket/68411986/hanson-v-trinity-solar-llc/",
+        "https://www.courtlistener.com/docket/69314397/beason-v-trinity-solar-llc/"
+      ],
+      "status": "done",
+      "note": "Replaced unsourced 2,000-3,000 employees, revenue range, 'A+ / 214 complaints' (now 230, dated), 'no class actions', Sunnova partnership, 1-3 month timelines. Removed a partner-brand reference in an FAQ. 'Our take 3.4/5' block untouched."
+    },
+    {
+      "path": "/solar-installers",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/page.tsx",
+      "title": "Solar Reviews for California Homeowners (2026)",
+      "clusters": [28],
+      "sources": [
+        "https://www.sunrun.com/state-contractor-license-information",
+        "https://www.momentumsolar.com/",
+        "https://www.trinitysolar.com/",
+        "https://poweredbyelevation.com/locations/",
+        "https://www.sunergycorp.com/",
+        "https://investor.adt.com/News--Events/news/news-details/2024/ADT-Provides-Solar-Business-Update-and-Advances-Capital-Allocation-Strategy/default.aspx",
+        "https://investor.adt.com/News--Events/news/news-details/2025/ADT-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx",
+        "https://investors.sunrun.com/news-events/press-releases/detail/216/sunrun-completes-acquisition-of-vivint-solar-to-accelerate",
+        "https://www.courtlistener.com/docket/73192534/freedom-forever-llc/",
+        "https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/",
+        "https://www.courtlistener.com/docket/69017070/sunpower-corporation/"
+      ],
+      "status": "done",
+      "note": "Head term 'solar reviews'. Now a guide-first hub: how to read star ratings, BBB files, dockets and license/status; a dated 'which companies still list California' table; failures list. Emits Article + ItemList (was CollectionPage only, which failed qc-gate-tsx SCHEMA because /solar-installers is not in INDEX_ROUTES). Links the 5 new pages; cross-hub HubSpokeLinks to installers and financing."
+    },
+    {
+      "path": "/solar-installers/vivint-review",
+      "action": "CREATE_DEDICATED",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/vivint-review/page.tsx",
+      "title": "Vivint Solar Reviews (2026): Now Sunrun. What Owners Can Do",
+      "clusters": [61],
+      "sources": [
+        "https://investors.sunrun.com/news-events/press-releases/detail/216/sunrun-completes-acquisition-of-vivint-solar-to-accelerate",
+        "https://investors.nrg.com/news-releases/news-release-details/nrg-completes-acquisition-vivint-smart-home-inc-creating-leading",
+        "https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886/complaints",
+        "https://www.sunrun.com/go-solar-center/solar-faq/what-happens-if-i-move",
+        "https://www.courtlistener.com/docket/13556957/southern-california-edison-company-v-vivint-solar-inc/",
+        "https://www.courtlistener.com/docket/16542406/dekker-v-vivint-solar-inc/"
+      ],
+      "status": "done",
+      "note": "Linked from the current holder /solar-installers/sunrun-review. Separates Vivint Solar (Sunrun, 2020) from Vivint Smart Home (NRG, 2023)."
+    },
+    {
+      "path": "/panel-reviews/silfab-solar-panels-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/panel-reviews/silfab-solar-panels-review/page.tsx",
+      "title": "Silfab Solar Panels Review (2026): Made in USA, Warranty",
+      "clusters": [211],
+      "sources": [
+        "https://www.silfabsolar.com/",
+        "https://silfabsolar.com/our-story/",
+        "https://silfabsolar.com/support-overview/",
+        "https://silfabsolar.com/wp-content/uploads/2026/05/Silfab-SIL-430-QD-Data-Final.pdf",
+        "https://www.recgroup.com/en-us/rec-alpha-pure-rx",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Retitled: dropped a brand the project rules exclude from the title. Plants are Burlington WA and Fort Mill SC (old page said Washington + Canada). Key finding: SIL-430 QD product warranty is 12 yrs, 25 only with registration. Removed an implied installer tie-in."
+    },
+    {
+      "path": "/solar-installers/elevation-solar-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/elevation-solar-review/page.tsx",
+      "title": "Elevation Solar Reviews (2026): Legit? BBB and the Contract",
+      "clusters": [76],
+      "sources": [
+        "https://poweredbyelevation.com/locations/",
+        "https://poweredbyelevation.com/about/",
+        "https://poweredbyelevation.com/purchase-agreement-terms/",
+        "https://poweredbyelevation.com/solar-service/",
+        "https://www.bbb.org/us/az/chandler/profile/solar-energy-contractors/elevation-1126-1000035717/complaints",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Adds BBB file (69/3 yrs) and five-state list incl. CA. Removed Reddit-sourced 6-12 month PTO claims and 'Enphase-heavy'. Filled the empty FAQ heading with six sourced FAQs."
+    },
+    {
+      "path": "/panel-reviews/rec-solar-panels-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/panel-reviews/rec-solar-panels-review/page.tsx",
+      "title": "REC Solar Panels Review (2026): Alpha Pure-RX, Where Made",
+      "clusters": [221],
+      "sources": [
+        "https://www.recgroup.com/en-us/about-rec",
+        "https://www.recgroup.com/en-us/rec-alpha-pure-rx",
+        "https://www.ril.com/sites/default/files/2023-01/Media-Release-RIL-REC-10102021.pdf",
+        "https://silfabsolar.com/wp-content/uploads/2026/05/Silfab-SIL-430-QD-Data-Final.pdf",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim"
+      ],
+      "status": "done",
+      "note": "Answers where made / who makes / are they good. Base product warranty is 20 yrs (25 via ProTrust with certified installer + registration). Removed unsourced price comparisons naming other brands and installer-offering claims."
+    },
+    {
+      "path": "/solar-installers/sunrun-vs-trinity-solar",
+      "action": "CREATE_DEDICATED",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/sunrun-vs-trinity-solar/page.tsx",
+      "title": "Sunrun vs Trinity Solar (2026): Service Area, BBB, Contracts",
+      "clusters": [139],
+      "sources": [
+        "https://www.sunrun.com/state-contractor-license-information",
+        "https://investors.sunrun.com/news-events/press-releases/detail/378/sunrun-reports-second-quarter-2026-financial-results",
+        "https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886/complaints",
+        "https://www.sunrun.com/why-sunrun/your-guarantee",
+        "https://www.trinitysolar.com/",
+        "https://www.trinitysolar.com/about-us/",
+        "https://www.bbb.org/us/nj/wall-township/profile/solar-energy-design/trinity-solar-0221-16001220/complaints",
+        "https://www.courtlistener.com/docket/69017070/sunpower-corporation/"
+      ],
+      "status": "done",
+      "note": "Linked from the current holder /solar-installers/trinity-solar-review. Covers 'sunpower vs trinity solar' as an FAQ pointing to the SunPower review."
+    },
+    {
+      "path": "/solar-installers/tesla-solar-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/tesla-solar-review/page.tsx",
+      "title": "Tesla Solar Reviews (2026): Are Tesla Solar Panels Good?",
+      "clusters": [320, 589, 443, 41, 390],
+      "sources": [
+        "https://energylibrary.tesla.com/docs/Public/Solar/Retrofit/Datasheet/TeslaPanelMount/DatasheetTeslaSolarPanel.pdf",
+        "https://energylibrary.tesla.com/docs/Public/Solar/Inverter/Datasheet/SolarShutdownDevice/en-us/SolarInverter-Datasheet-SolarShutdownDevice.pdf",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://www.tesla.com/support/energy/solar-panels/learn/solar-service-warranty",
+        "https://www.tesla.com/solarpanels",
+        "https://www.tesla.com/powerwall/design",
+        "https://www.bbb.org/us/ca/san-diego/profile/solar-energy-contractors/tesla-1126-171985508",
+        "https://investors.sunrun.com/news-events/press-releases/detail/381/sunrun-and-tesla-dispatch-580-megawatts-to-californias",
+        "https://www.recgroup.com/en-us/rec-alpha-pure-rx",
+        "https://silfabsolar.com/wp-content/uploads/2026/05/Silfab-SIL-430-QD-Data-Final.pdf",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Retitled for 'are tesla solar panels good' / 'tesla solar review(s)'. Covers review, California cost (quoted by address only), inverter price (cluster 390 folded in: no published price), Sunrun/Tesla. Removed a partner-brand reference, unsourced 1,000-installer network, ~$6M settlement, 8-12 week timelines and market cap. 'Our take 3.1/5' block untouched; license #888104 unchanged."
+    },
+    {
+      "path": "/solar-installers/sunergy-solar-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/sunergy-solar-review/page.tsx",
+      "title": "Sunergy Solar Reviews (2026): Which Sunergy, BBB, Warranty",
+      "clusters": [132],
+      "sources": [
+        "https://www.sunergycorp.com/",
+        "https://www.bbb.org/us/ca/lake-forest/profile/solar-energy-contractors/sunergy-1126-1000170863",
+        "https://www.bbb.org/us/ca/mcclellan-park/profile/solar-energy-contractors/sunergy-california-llc-1156-90054574",
+        "https://sunergypacific.com/",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Entity disambiguation (Lake Forest vs Sunergy California LLC vs Sunergy Pacific). Old page placed the company in 'Ladera Ranch / LA' and named a lender; neither sourced, both removed. BBB for the Lake Forest company is F with 2 unanswered complaints. 'Our take 4.0/5' untouched (see decisions)."
+    },
+    {
+      "path": "/solar-installers/adt-solar-vs-momentum-solar",
+      "action": "CREATE_DEDICATED",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/adt-solar-vs-momentum-solar/page.tsx",
+      "title": "ADT Solar vs Momentum Solar: ADT Exited Solar in 2024",
+      "clusters": [136],
+      "sources": [
+        "https://investor.adt.com/News--Events/news/news-details/2024/ADT-Provides-Solar-Business-Update-and-Advances-Capital-Allocation-Strategy/default.aspx",
+        "https://investor.adt.com/News--Events/news/news-details/2025/ADT-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx",
+        "https://www.momentumsolar.com/",
+        "https://www.bbb.org/us/nj/south-plainfield/profile/solar-energy-design/momentum-solar-0221-90134444/complaints",
+        "https://www.sunrun.com/lighthouse",
+        "https://poweredbyelevation.com/solar-service/"
+      ],
+      "status": "done",
+      "note": "Linked from the current holder /solar-installers/momentum-solar-review. ADT help-center pages are JS-only and could not be read; the page says so and states no buyer for ADT Solar agreements."
+    },
+    {
+      "path": "/solar-installers/pge-and-sunrun",
+      "action": "CREATE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/pge-and-sunrun/page.tsx",
+      "title": "PG&E and Sunrun: Battery Programs, Payments, Who Qualifies",
+      "clusters": [224],
+      "sources": [
+        "https://www.pge.com/en/newsroom/currents/customer-service/articles-3649-sunrun-pge-collaborate-residential-battery-powered-virtual-power-plant-support-grid-reliability-electric-customers.html",
+        "https://www.pge.com/en/newsroom/currents/energy-savings/articles-3795-sunrun-pge-expand-collaboration-energy-efficiency-summer-reliability-program.html",
+        "https://investors.sunrun.com/news-events/press-releases/detail/302/sunrun-and-pge-complete-first-season-of-innovative",
+        "https://investor.pgecorp.com/news-events/press-releases/press-release-details/2025/PGE-Launches-Seasonal-Aggregation-of-Versatile-Energy-SAVE-Virtual-Power-Plant-Program/default.aspx",
+        "https://investors.sunrun.com/news-events/press-releases/detail/362/sunrun-and-pge-dispatch-energy-from-northern-california",
+        "https://investors.sunrun.com/news-events/press-releases/detail/381/sunrun-and-tesla-dispatch-580-megawatts-to-californias",
+        "https://www.energy.ca.gov/programs-and-topics/programs/demand-side-grid-support-program",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/demand-response-dr/emergency-load-reduction-program",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "Peak Power Rewards 2023 ($750 + thermostat), SAVE / Local PeakShift Power 2025 ($150 per battery), statewide DSGS/ELRP. No 2026 PG&E season confirmed as of 9/23."
+    },
+    {
+      "path": "/solar-installers/momentum-solar-vs-trinity-solar",
+      "action": "CREATE_DEDICATED",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/momentum-solar-vs-trinity-solar/page.tsx",
+      "title": "Momentum Solar vs Trinity Solar (2026): Records Compared",
+      "clusters": [258],
+      "sources": [
+        "https://www.momentumsolar.com/",
+        "https://www.bbb.org/us/nj/south-plainfield/profile/solar-energy-design/momentum-solar-0221-90134444",
+        "https://www.bbb.org/us/nj/south-plainfield/profile/solar-energy-design/momentum-solar-0221-90134444/complaints",
+        "https://www.trinitysolar.com/",
+        "https://www.trinitysolar.com/about-us/",
+        "https://www.bbb.org/us/nj/wall-township/profile/solar-energy-design/trinity-solar-0221-16001220",
+        "https://www.bbb.org/us/nj/wall-township/profile/solar-energy-design/trinity-solar-0221-16001220/complaints"
+      ],
+      "status": "done",
+      "note": "Linked from the current holder /solar-installers/momentum-solar-review. Percentages are arithmetic from BBB counts, labeled as such."
+    },
+    {
+      "path": "/solar-installers/freedom-forever-review",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/app/solar-installers/freedom-forever-review/page.tsx",
+      "title": "Freedom Forever Reviews (2026): Licenses & Financing",
+      "clusters": [566],
+      "sources": ["https://www.courtlistener.com/docket/73192534/freedom-forever-llc/"],
+      "status": "partial",
+      "note": "Not in the assignment; used instead of creating /solar-installers/freedom-forever-california (cluster 566, 10/mo). The live page still said Freedom Forever 'is continuing to operate under restructuring'. Replaced the April banner and one TL;DR bullet with the dated Chapter 7 conversion (order signed 8/7/2026, Doc. 533) and added a short 'Freedom Forever in California after the Chapter 7 conversion' section (affiliate Ch. 7 cases, Sunrun settlement order, EverBright termination order). The rest of the page is still written as of the Chapter 11 period and needs a full rewrite."
+    }
+  ],
+  "sitemap_add": [
+    "/solar-installers/vivint-review",
+    "/solar-installers/pge-and-sunrun",
+    "/solar-installers/sunrun-vs-trinity-solar",
+    "/solar-installers/adt-solar-vs-momentum-solar",
+    "/solar-installers/momentum-solar-vs-trinity-solar"
+  ],
+  "blog_index_add": [],
+  "redirect_requests": [],
+  "hub_links": [
+    {"hub": "installer_reviews", "href": "/solar-installers/vivint-review", "label": "Vivint Solar Reviews (2026): Now Sunrun. What Owners Can Do"},
+    {"hub": "installer_reviews", "href": "/solar-installers/pge-and-sunrun", "label": "PG&E and Sunrun: Battery Programs, Payments, Who Qualifies"},
+    {"hub": "installer_reviews", "href": "/solar-installers/sunrun-vs-trinity-solar", "label": "Sunrun vs Trinity Solar (2026): Service Area, BBB, Contracts"},
+    {"hub": "installer_reviews", "href": "/solar-installers/adt-solar-vs-momentum-solar", "label": "ADT Solar vs Momentum Solar: ADT Exited Solar in 2024"},
+    {"hub": "installer_reviews", "href": "/solar-installers/momentum-solar-vs-trinity-solar", "label": "Momentum Solar vs Trinity Solar (2026): Records Compared"},
+    {"hub": "installer_reviews", "href": "/battery/tesla-powerwall-3-cost-california", "label": "Tesla Powerwall 3 Cost in California (2026): Installed Price"},
+    {"hub": "installer_reviews", "href": "/solar-installers/momentum-solar-review", "label": "Momentum Solar Reviews (2026): Is It Legit in California?"},
+    {"hub": "installer_reviews", "href": "/solar-installers/tesla-solar-review", "label": "Tesla Solar Reviews (2026): Are Tesla Solar Panels Good?"},
+    {"hub": "installer_reviews", "href": "/solar-installers/elevation-solar-review", "label": "Elevation Solar Reviews (2026): Legit? BBB and the Contract"},
+    {"hub": "installer_reviews", "href": "/solar-installers/sunergy-solar-review", "label": "Sunergy Solar Reviews (2026): Which Sunergy, BBB, Warranty"},
+    {"hub": "installer_reviews", "href": "/panel-reviews/silfab-solar-panels-review", "label": "Silfab Solar Panels Review (2026): Made in USA, Warranty"},
+    {"hub": "installer_reviews", "href": "/panel-reviews/rec-solar-panels-review", "label": "REC Solar Panels Review (2026): Alpha Pure-RX, Where Made"},
+    {"hub": "battery", "href": "/battery/tesla-powerwall-3-cost-california", "label": "Tesla Powerwall 3 Cost in California (2026): Installed Price"}
+  ],
+  "integration_requests": [
+    {"file": "src/components/shared/ArticleRoute.tsx", "what": "Render <HubSpokeLinks hub=... currentPath=... /> for JSON article pages (keyed by cluster or slug). Needed for /battery/tesla-powerwall-3-cost-california (hub installer_reviews or battery) and every other JSON page; not done here to avoid conflicting edits to a shared file."},
+    {"file": "src/app/sitemap.ts", "what": "Add the five sitemap_add slugs to installerSlugs."},
+    {"file": "src/data/topic-hubs.ts", "what": "Add the hub_links entries; refresh labels for retitled pages."}
+  ],
+  "skipped": [
+    {"url": "/solar-installers/tesla-solar-inverter-price", "why": "CREATE_DEDICATED not built: Tesla publishes no standalone inverter price (datasheet dated 2024-10-25 lists none; quotes are by address), so a 'price' page would have no answer under Rule 4. The intent is answered as an H2 + FAQ on /solar-installers/tesla-solar-review, the page that already gets these impressions (cluster 390)."},
+    {"url": "/solar-installers/freedom-forever-california", "why": "CREATE not built: 10/mo, and /solar-installers/freedom-forever-review plus /solar-installers/freedom-forever-bankruptcy-what-to-do already cover the company; a third page would split the intent. Served instead by a dated Chapter 7 status correction and a California section on the review (see pages)."}
+  ]
+}
