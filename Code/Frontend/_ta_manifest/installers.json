@@ -231,6 +231,74 @@
    "clusters": [
     163
    ]
+  },
+  {
+   "path": "/blog/solar-resources",
+   "action": "CREATE_DEDICATED",
+   "hub": "installers",
+   "file": "src/app/blog/solar-resources/page.tsx",
+   "title": "California Solar Resources: Official Tools and Data (2026)",
+   "sources": [
+    "https://pvwatts.nrel.gov/",
+    "https://nsrdb.nrel.gov/",
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cslb.ca.gov/onlineservices/dataportal/ListByCounty",
+    "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://www.californiadgstats.ca.gov/",
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/low-income-solar-programs",
+    "https://www.energy.ca.gov/programs-and-topics/programs/inflation-reduction-act-residential-energy-rebate-programs",
+    "https://dfpi.ca.gov/consumers/housing/pace/",
+    "https://emp.lbl.gov/tracking-the-sun",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation",
+    "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-12"
+   ],
+   "status": "done",
+   "note": "Sourced directory of official tools, covering both senses of 'solar resource' (NREL sunlight data) and the agencies behind a solar decision. Holder /solar-cost/san-diego (cities agent): link request in link_requests; the page links /solar-cost/san-diego.",
+   "clusters": [
+    259
+   ]
+  },
+  {
+   "path": "/solar-installers/worst-solar-companies-california",
+   "action": "CREATE",
+   "hub": "installers",
+   "file": "src/app/solar-installers/worst-solar-companies-california/page.tsx",
+   "title": "Worst Solar Companies in California: How to Check a Record",
+   "sources": [
+    "https://www.courtlistener.com/docket/69017070/sunpower-corporation/",
+    "https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/",
+    "https://www.courtlistener.com/docket/73192534/freedom-forever-llc/",
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cslb.ca.gov/consumers/filing_a_complaint/how_the_complaint_process_works.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://dfpi.ca.gov/consumers/housing/pace/"
+   ],
+   "status": "done",
+   "note": "No ranking. Stated method on the page: a company appears only for an event on a public court or state record, linked to the record. Lists three residential solar bankruptcies read on CourtListener 2026-09-23 (SunPower 24-11649 D. Del.; Sunnova 25-90160 S.D. Tex.; Freedom Forever 26-10522 D. Del., now listed Ch. 7). Block 5 hub_page_map had this cluster as 'attach' to the hub; built as the CSV's CREATE and linked from the hub.",
+   "clusters": [
+    453
+   ]
+  },
+  {
+   "path": "/blog/solar-production-by-month-california",
+   "action": "CREATE",
+   "hub": "cost_value",
+   "file": "src/app/solar-panels-california/page.tsx",
+   "title": "(section) How solar production changes month by month",
+   "sources": [
+    "https://pvwatts.nrel.gov/"
+   ],
+   "status": "partial",
+   "note": "Built as a section, /solar-panels-california#production-by-month, not a standalone page: 20/mo and 0 GSC impressions is under the SEO/24 \u00a75.10 standalone threshold (Block 5 maps cluster 536 to a section). A month-by-month kWh table needs NREL PVWatts output, and the PVWatts API (developer.nrel.gov) is blocked from this environment (proxy CONNECT 502), so no monthly figures are stated. No URL created; nothing to add to the sitemap.",
+   "clusters": [
+    536
+   ]
   }
  ],
  "sitemap_add": [
@@ -239,7 +307,9 @@
   "/solar-installers/licensed-solar-installer",
   "/blog/what-percentage-of-california-power-is-solar",
   "/blog/inflation-reduction-act-solar-california",
-  "/blog/pros-and-cons-of-solar-panels-california"
+  "/blog/pros-and-cons-of-solar-panels-california",
+  "/blog/solar-resources",
+  "/solar-installers/worst-solar-companies-california"
  ],
  "blog_index_add": [
   {
@@ -266,6 +336,11 @@
    "slug": "pros-and-cons-of-solar-panels-california",
    "title": "Pros and cons of solar panels in California in 2026",
    "hub": "cost_value"
+  },
+  {
+   "slug": "solar-resources",
+   "title": "California solar resources: the official tools, data and rules worth bookmarking",
+   "hub": "installers"
   }
  ],
  "redirect_requests": [],
@@ -299,6 +374,21 @@
    "hub": "incentives",
    "href": "/blog/inflation-reduction-act-solar-california",
    "label": "The Inflation Reduction Act and solar: what's left"
+  },
+  {
+   "hub": "installers",
+   "href": "/blog/solar-resources",
+   "label": "Official California solar resources"
+  },
+  {
+   "hub": "installers",
+   "href": "/solar-installers/worst-solar-companies-california",
+   "label": "Checking a solar company's court and license record"
+  },
+  {
+   "hub": "installer_reviews",
+   "href": "/solar-installers/worst-solar-companies-california",
+   "label": "Solar bankruptcies on the court record"
   }
  ],
  "link_requests": [
@@ -319,8 +409,99 @@
    "to": "/blog/inflation-reduction-act-solar-california",
    "anchor": "what the Inflation Reduction Act changed for home solar",
    "why": "parent incentives hub should list the new spoke (owned by another agent)"
+  },
+  {
+   "from": "/solar-cost/san-diego",
+   "to": "/blog/solar-resources",
+   "anchor": "official California solar resources",
+   "why": "CREATE_DEDICATED: 'solar resources' impressions land on the San Diego cost page (cities agent)"
+  },
+  {
+   "from": "/solar-installers",
+   "to": "/solar-installers/licensed-solar-installer",
+   "anchor": "how to find a licensed solar installer",
+   "why": "section index must list every child (\u00a75.11); /solar-installers is owned by the reviews agent"
+  },
+  {
+   "from": "/solar-installers",
+   "to": "/solar-installers/worst-solar-companies-california",
+   "anchor": "checking a company's court and license record",
+   "why": "section index must list every child (\u00a75.11); /solar-installers is owned by the reviews agent"
+  },
+  {
+   "from": "/solar-installers/how-to-verify-a-solar-contractor-california",
+   "to": "/solar-installers/licensed-solar-installer",
+   "anchor": "finding licensed solar contractors in your county",
+   "why": "reciprocal sibling link (\u00a75.3); the JSON page was not in this assignment"
   }
  ],
- "skipped": [],
- "decisions_for_chad": []
+ "skipped": [
+  {
+   "url": "/solar-installers/solar-negotiators-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/pacific-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/solar-la-review",
+   "why": "Decision 22 default; the cluster's supporting queries ('la solar group reviews') belong to the live /solar-installers/la-solar-group-review, so a second page would cannibalize it"
+  },
+  {
+   "url": "/solar-installers/empower-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/california-window-and-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/mountain-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/treepublic-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/solar-gains-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/sun-city-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/infinity-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/simply-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/california-solar-guys-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/solar-panel-installation-inglwood-california",
+   "why": "City intent in the wrong URL family, with a misspelled slug. City pages live at /solar-companies/<city> (cities agent); propose /solar-companies/inglewood if Chad wants it (50/mo)"
+  },
+  {
+   "url": "/solar-installers/solar-companies-co",
+   "why": "Ambiguous navigational query: the SERP's small-site result is cosolarco.com (a brand / 'CO' = Colorado), no California residential intent to answer"
+  },
+  {
+   "url": "/blog/solar-panel-manufacturers-california",
+   "why": "20/mo, 0 impressions: under the \u00a75.10 standalone threshold (Block 5 maps it to a section); no primary-source list of California module factories could be fetched, and panel-manufacturer/product intent sits closer to the affiliate site under the relevance rule"
+  }
+ ],
+ "decisions_for_chad": [
+  "/solar-panels-california was retitled: its old '$3.30/W median' title figure is not in LBNL's text (re-checked 2026-09-23); the page now uses LBNL's stated $3.20-$5.50/W band. topic-hubs.ts hubPageLabel for cost_value (and the installer_reviews/installers spoke labels) still say '$3.30/W' and should change at integration.",
+  "/solar-installers/worst-solar-companies-california names SunPower, Sunnova and Freedom Forever for bankruptcy filings on the federal docket (no ranking, no opinions). Confirm you want a page with that framing live.",
+  "Inglewood: the queue proposed a misspelled /solar-installers/ city URL; if wanted, it belongs at /solar-companies/inglewood (cities agent).",
+  "components/growth/Guides.tsx 'companies' and 'panels' entries are now unused (both pages are hand-written); delete at integration or keep as fallback.",
+  "Three new pages sit under a different hub than the CSV's 'installers' because their topic fits better: what-percentage (cost_value), pros-and-cons (cost_value), inflation-reduction-act (incentives)."
+ ]
 }

@@ -611,7 +611,11 @@ export default function BestSolarCompaniesCalifornia() {
           <Link href="/solar-installers/solar-installer-bankruptcy-california" className={link}>
             what survives when a solar installer goes bankrupt
           </Link>{' '}
-          explains which warranties and contracts continue.
+          explains which warranties and contracts continue, and{' '}
+          <Link href="/solar-installers/worst-solar-companies-california" className={link}>
+            checking a company&rsquo;s court and license record
+          </Link>{' '}
+          lists the residential solar bankruptcies on the federal docket.
         </p>
       </section>
 
@@ -753,6 +757,13 @@ export default function BestSolarCompaniesCalifornia() {
             and{' '}
             <Link href="/solar-problems/solar-dealer-fees-explained" className={link}>
               dealer fees hidden in financing
+            </Link>
+            .
+          </li>
+          <li>
+            The official tools behind all of this, in one list:{' '}
+            <Link href="/blog/solar-resources" className={link}>
+              California solar resources
             </Link>
             .
           </li>

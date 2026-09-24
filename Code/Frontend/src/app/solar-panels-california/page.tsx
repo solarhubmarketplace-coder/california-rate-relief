@@ -55,6 +55,7 @@ const CEC_2025_CODE =
   'https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2025-building-energy-efficiency';
 const CEC_2025_PV =
   'https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-12';
+const NREL_PVWATTS = 'https://pvwatts.nrel.gov/';
 const CEC_2024_GEN =
   'https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation';
 
@@ -75,6 +76,7 @@ const sources: Source[] = [
   { label: 'California Energy Commission: 2025 Building Energy Efficiency Standards (effective date)', url: CEC_2025_CODE },
   { label: 'California Energy Commission: 2025 single-family solar PV requirements', url: CEC_2025_PV },
   { label: 'California Energy Commission: 2024 Total System Electric Generation', url: CEC_2024_GEN },
+  { label: 'NREL: PVWatts calculator (production estimates for grid-connected PV)', url: NREL_PVWATTS },
 ];
 
 const faqs: FaqJsonLdItem[] = [
@@ -250,6 +252,31 @@ export default function SolarPanelsCalifornia() {
           and{' '}
           <Link href="/solar-problems/do-i-still-get-a-utility-bill-with-solar" className={link}>
             why you still get a utility bill with solar
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section id="production-by-month">
+        <h2 className={h2}>How solar production changes month by month</h2>
+        <p>
+          A California system does not produce the same amount every month. Output peaks in the
+          long days of late spring and summer and drops in the short, low-sun weeks around December,
+          and coastal fog, shade and roof angle change the shape of that curve from one address to
+          the next. That matters because your bill is settled against what you use each month, and
+          under net billing a summer surplus exported to the grid is worth less than the winter power
+          you buy back.
+        </p>
+        <p className="mt-3">
+          Ask every proposal for a month-by-month production estimate, not just a yearly total, and
+          check it against NREL&rsquo;s{' '}
+          <a href={NREL_PVWATTS} className={link} target="_blank" rel="noopener noreferrer">
+            PVWatts calculator
+          </a>
+          , which estimates the output of grid-connected systems for any address (NREL, checked
+          September 23, 2026). For why December bills look different, see{' '}
+          <Link href="/solar-problems/solar-production-winter-california" className={link}>
+            solar production in a California winter
           </Link>
           .
         </p>

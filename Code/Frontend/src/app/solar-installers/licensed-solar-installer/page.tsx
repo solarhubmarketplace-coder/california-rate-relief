@@ -110,7 +110,7 @@ export default function LicensedSolarInstallerPage() {
   return (
     <PublicLayout
       breadcrumbLabel="Licensed solar installer"
-      breadcrumbParent={{ label: 'California solar companies', href: '/best-solar-companies-california' }}
+      breadcrumbParent={{ label: 'Solar company reviews', href: '/solar-installers' }}
     >
       <ArticleJsonLd
         variant="Article"
@@ -127,7 +127,7 @@ export default function LicensedSolarInstallerPage() {
         <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-primary">Home</Link>
           <span aria-hidden="true">/</span>
-          <Link href="/best-solar-companies-california" className="hover:text-primary">California solar companies</Link>
+          <Link href="/solar-installers" className="hover:text-primary">Solar company reviews</Link>
           <span aria-hidden="true">/</span>
           <span className="text-foreground">Licensed solar installer</span>
         </nav>
