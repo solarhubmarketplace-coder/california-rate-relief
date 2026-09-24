@@ -915,6 +915,14 @@
       {
         "question": "Does the federal tax credit lower my Sunrun lease or PPA payment?",
         "answer": "Indirectly, and not in a way you'll ever file for yourself. The residential credit (Section 25D) that homeowners used to claim on a cash or loan purchase ended December 31, 2025. Lease and PPA pricing instead runs through a separate commercial credit (Section 48E) that Sunrun, as the system's owner, claims on its own taxes, not you. Sunrun's 10-K states that credit phases out for projects placed in service after December 31, 2027 unless construction begins by July 4, 2026, but large owners commonly lock in eligibility years ahead through equipment safe-harboring, so don't treat that date as a deadline pressuring your signing decision. It's a mechanism behind Sunrun's pricing, not a countdown clock aimed at you."
+      },
+      {
+        "question": "What are my options for buying out a Sunrun lease in California?",
+        "answer": "Fewer than most people expect before the term ends. Sunrun's FAQ says that after installation, \"because of tax credit implications, purchase is only available at the specific times set out in your agreement,\" so the first step is the purchase-option section of your own contract. At the end of a lease, Sunrun lists three choices: buy the system at its fair market value at that time, renew the lease year to year, or have Sunrun remove it. If you are selling the house, Sunrun says the most common route is transferring the agreement to the buyer, who goes through a soft credit check. Get any buyout figure in writing, with the date it expires, before you rely on it in escrow."
+      },
+      {
+        "question": "Can I add a battery to an existing Sunrun lease?",
+        "answer": "Possibly, but on Sunrun's terms. Sunrun's FAQ invites current customers to add battery storage to their system and \"see if you qualify,\" and it says Sunrun does not add panels to an installed system because each system is contracted as a single unit, installing a second system under its own agreement instead. Expect the battery to come with its own paperwork, and ask whether it changes your monthly payment, term or escalator. The leased panels belong to Sunrun, so read your agreement's alterations section before hiring anyone else to connect a battery to them. For rebates, PG&E's $7,500 Permanent Battery Storage Rebate excludes batteries leased for less than five years, and on September 23, 2026 most SGIP residential budgets were closed or waitlisted."
       }
     ],
     "bottomLine": "The lease-versus-PPA choice comes down to one variable: does your payment track a dollar amount or a kWh count. Everything else, contract length, ownership, escalators, end-of-term options, is either identical between the two or a matter of degree, not kind. Both run 20 to 25 years with Sunrun owning the hardware; both can carry an annual escalator despite the \"flat lease\" branding; both hand you the same three exits at the end (renew at roughly a 10% discount, buy at fair market value, or have it removed). The real open question, unresolved by any source available as of September 5, 2026, is whether Sunrun is still writing new PPA contracts for California homeowners at all, given that its current site markets a \"Subscription Plan\" lease as the lead product and doesn't list PPA as a standalone offering. Confirm that directly with a Sunrun rep before treating this as a live choice. And regardless of which one you're offered, size the system to your actual consumption, not your roof space; NEM 3.0's 5 to 8 cent export credit punishes oversizing under either contract equally.",
@@ -922,7 +930,7 @@
       {
         "name": "Sunrun FAQ",
         "url": "https://www.sunrun.com/faq",
-        "supports": "Direct quote defining the lease (fixed rent) vs. PPA (fixed per-kWh price) mechanical difference"
+        "supports": "Direct quote defining the lease (fixed rent) vs. PPA (fixed per-kWh price) mechanical difference; purchase only at times set in the agreement, end-of-lease options, home-sale transfer, add-battery invitation and no added panels (re-checked 2026-09-23)"
       },
       {
         "name": "Sunrun Subscription Plan product page",
@@ -948,9 +956,19 @@
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
         "supports": "Net Billing Tariff since April 15, 2023; export credits usually lower than the retail rate but can rise above it on late summer evenings; nine-year guarantee; early-adopter export adder for residential PG&E and SCE customers applying before the end of 2027; approved rates E-ELEC (PG&E), TOU-D-PRIME (SCE), EV-TOU-5 (SDG&E)"
+      },
+      {
+        "name": "PG&E: Permanent Battery Storage Rebate (terms)",
+        "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "supports": "$7,500 rebate conditions (checked 2026-09-23)"
+      },
+      {
+        "name": "SGIP program metrics (selfgenca.com)",
+        "url": "https://www.selfgenca.com/home/program_metrics/",
+        "supports": "Residential budget status on September 23, 2026"
       }
     ],
-    "reviewedAt": "2026-09-05"
+    "reviewedAt": "2026-09-23"
   },
   {
     "slug": "sunrun-ppa-explained",

@@ -7,6 +7,16 @@
 // terms could not be confirmed from a primary source this session; LADWP's own
 // site refused automated retrieval, so its section states only what the CPUC
 // and the SGIP tracker confirm. Prior body is in git history.
+//
+// 2026-09-23 Tier 3 re-check (claude/t3-misc-20260923): every program below was
+// re-fetched from its source on 2026-09-23. Changes: the CPUC net billing quote
+// now matches the CPUC's wording ("usually lower than the retail rate"); SGIP's
+// scope and the AB 209 sub-category are stated precisely (the open sub-category
+// is only for customers of publicly owned utilities); SMUD's legacy-NEM
+// exceptions added; a community choice aggregator section added with Clean
+// Power Alliance's Sun Storage Rebate and 3CE's battery rebate, which closed to
+// new applications on March 19, 2026; Anaheim Public Utilities' battery rebate
+// added. LADWP's page still refused automated retrieval (403).
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
@@ -44,6 +54,9 @@ const S = {
   smudBattery: 'https://www.smud.org/Going-Green/Battery-storage/Homeowner',
   roseville: 'https://www.roseville.ca.gov/electric_utility/rates/roseville_solar_2_0/index.php',
   ladwp: 'https://www.ladwp.com/residential-services/solar-programs',
+  cpa: 'https://cleanpoweralliance.org/sun-storage-rebate/',
+  threeCe: 'https://3cenergy.org/rebates/residential-battery-rebate-program/',
+  anaheimBattery: 'https://www.anaheim.net/5730/Battery-Storage',
 } as const;
 
 const sources: Source[] = [
@@ -64,11 +77,14 @@ const sources: Source[] = [
   { label: 'SMUD: Solar and Storage Rate', url: S.smudSsr },
   { label: 'SMUD: battery storage incentives for homeowners', url: S.smudBattery },
   { label: 'Roseville Electric: Roseville Solar 2.0', url: S.roseville },
+  { label: 'Clean Power Alliance: Sun Storage Rebate', url: S.cpa },
+  { label: 'Central Coast Community Energy: Residential Battery Rebate Program (closed March 19, 2026)', url: S.threeCe },
+  { label: 'Anaheim Public Utilities: Battery Storage rebate', url: S.anaheimBattery },
 ];
 
 const metaTitle = 'Solar Rebates and Incentives by California Utility (2026)';
 const metaDescription =
-  'Solar and battery incentives by utility: PG&E, SCE, SDG&E, SMUD, LADWP and Roseville. What each pays in 2026, what is closed, and what ended.';
+  'Solar and battery incentives by utility and CCA: PG&E, SCE, SDG&E, SMUD, LADWP, Roseville and more. What each pays in 2026 and what has closed.';
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -95,12 +111,12 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'What is the solar rebate in California?',
     answer:
-      'For most homeowners there is no rebate on solar panels in 2026. The federal credit is not available for systems placed in service after December 31, 2025. The state program that remains, SGIP, pays toward batteries by budget category, and most residential categories were closed on September 23, 2026. Income-qualified homeowners in disadvantaged communities can apply to DAC-SASH, and some municipal utilities, such as SMUD, run their own battery incentives.',
+      'For most homeowners there is no rebate on solar panels in 2026. The federal credit is not available for systems placed in service after December 31, 2025. The state program that remains, SGIP, pays toward batteries by budget category, and most residential categories were closed or waitlisted on September 23, 2026. Income-qualified homeowners in disadvantaged communities can apply to DAC-SASH, and some municipal utilities and community choice aggregators, such as SMUD, San Diego Community Power and Clean Power Alliance, run their own battery incentives.',
   },
   {
     question: 'How do I find solar incentives near me?',
     answer:
-      'Start with the utility named on your electric bill, not your city. Investor-owned utilities (PG&E, SCE, SDG&E) share the state programs; city-owned utilities such as SMUD, LADWP and Roseville Electric set their own. If a community choice aggregator supplies your power, check it too: San Diego Community Power, for example, runs its own battery program.',
+      'Start with the utility named on your electric bill, not your city. Investor-owned utilities (PG&E, SCE, SDG&E) share the state programs; city-owned utilities such as SMUD, LADWP, Roseville Electric and Anaheim Public Utilities set their own. If a community choice aggregator supplies your power, check it too: San Diego Community Power and Clean Power Alliance run battery rebates, while Central Coast Community Energy closed its battery rebate to new applications on March 19, 2026.',
   },
   {
     question: 'How do I apply for a solar or battery rebate in California?',
@@ -110,7 +126,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'Is net metering a rebate?',
     answer:
-      'No. It is how exported electricity is credited on your bill. On PG&E, SCE and SDG&E, systems that applied since April 15, 2023 are on the Net Billing Tariff, with export credits the CPUC says are usually lower than import rates. SMUD credits exports at 9.6 cents per kWh from June 1, 2026, and Roseville Electric at $0.0691 per kWh for newer systems.',
+      'No. It is how exported electricity is credited on your bill. On PG&E, SCE and SDG&E, systems that applied since April 15, 2023 are on the Net Billing Tariff, with export credits the CPUC says are usually lower than the retail rate. SMUD credits exports at 9.6 cents per kWh from June 1, 2026, and Roseville Electric at $0.0691 per kWh for newer systems.',
   },
 ];
 
@@ -169,7 +185,7 @@ export default function SolarRebatesByCAUtility() {
           {
             label: 'SGIP residential budgets',
             value: 'Mostly closed',
-            note: 'One AB 209 equity sub-category open under PG&E and SCE; others closed or waitlisted.',
+            note: 'Only the AB 209 equity sub-category for publicly owned utility customers was open (through PG&E and SCE); the rest were closed or waitlisted.',
             source: { publisher: 'SGIP tracker', date: '2026-09-23', url: S.sgipTracker },
           },
           {
@@ -216,8 +232,10 @@ export default function SolarRebatesByCAUtility() {
             </li>
             <li>
               <strong>SGIP battery incentives.</strong> The CPUC&rsquo;s Self-Generation
-              Incentive Program serves customers of PG&amp;E, SCE, SoCalGas, SDG&amp;E, LADWP
-              and other publicly owned utilities and cooperatives (
+              Incentive Program serves customers of PG&amp;E, SCE, SoCalGas and SDG&amp;E, and
+              customers of publicly owned utilities and cooperatives can apply to its
+              Residential Solar and Storage Equity budget; LADWP runs its own SGIP
+              administration (
               <a className={link} href={S.cpucSgip}>
                 CPUC
               </a>
@@ -228,8 +246,10 @@ export default function SolarRebatesByCAUtility() {
               showed Small Residential Storage, Equity Resiliency and the ratepayer-funded
               Residential Solar and Storage Equity category closed at PG&amp;E, SCE, SoCalGas
               and the Center for Sustainable Energy (SDG&amp;E territory). The AB 209-funded
-              equity budget was waitlisted at most administrators, with one sub-category open
-              under PG&amp;E and SCE. The detail is in{' '}
+              equity budget was waitlisted at the Center for Sustainable Energy, SoCalGas and
+              LADWP. Under PG&amp;E and SCE, its sub-category for customers of publicly owned
+              utilities was open and the sub-category for everyone else was waitlisted. The
+              detail is in{' '}
               <Link className={link} href="/battery/sgip-battery-rebate-california">
                 the SGIP battery rebate status guide
               </Link>
@@ -275,7 +295,8 @@ export default function SolarRebatesByCAUtility() {
           <p className="mt-3">
             Net billing is not a rebate. Systems that applied for interconnection since April
             15, 2023 take service on the Net Billing Tariff, which credits exports at values
-            the CPUC says are &ldquo;usually lower than import rates&rdquo; (
+            the CPUC says are &ldquo;usually lower than the retail rate,&rdquo; though they
+            &ldquo;can rise above the retail rate on late summer evenings&rdquo; (
             <a className={link} href={S.cpucNem}>
               CPUC
             </a>
@@ -368,7 +389,10 @@ export default function SolarRebatesByCAUtility() {
               , checked September 23, 2026). That SDG&amp;E page still says residential
               customers &ldquo;may qualify for a 30% federal tax credit.&rdquo; The IRS says the
               credit is not available for systems placed in service after December 31, 2025;
-              go by the IRS.
+              go by the IRS. The same SDG&amp;E page says SGIP is &ldquo;currently offering
+              Energy Storage rebates for homes&rdquo;; the tracker showed the residential
+              categories in SDG&amp;E territory closed or waitlisted that day, so check the
+              tracker.
             </li>
             <li>
               <strong>San Diego Community Power battery incentive.</strong> For its residential
@@ -400,7 +424,8 @@ export default function SolarRebatesByCAUtility() {
               <strong>Export credit.</strong> Systems approved for interconnection on or after
               March 1, 2022 are on SMUD&rsquo;s Solar and Storage Rate, which credits exports at
               &ldquo;9.6¢/kWh&rdquo; effective June 1, 2026. Customers approved before March 1,
-              2022 can stay on their original net metering rate through December 31, 2030 (
+              2022 can stay on their original net metering rate through December 31, 2030,
+              unless they add battery storage with incentives, modify the system or move (
               <a className={link} href={S.smudSsr}>
                 SMUD
               </a>
@@ -460,11 +485,58 @@ export default function SolarRebatesByCAUtility() {
         </section>
 
         <section>
+          <h2>Community choice aggregators (CCAs)</h2>
+          <p>
+            If a community choice aggregator buys your electricity, PG&amp;E, SCE or SDG&amp;E
+            still delivers it and still handles solar billing, but the CCA may run its own
+            battery program. Three examples, each checked on its own page on September 23, 2026:
+          </p>
+          <ul className="mt-3 list-disc space-y-3 pl-5">
+            <li>
+              <strong>Clean Power Alliance (Los Angeles and Ventura counties).</strong> The Sun
+              Storage Rebate pays $2,000 for an eligible battery, $1,250 more in Public Safety
+              Power Shutoff areas, and $250 more for Medical Baseline or for CARE or FERA
+              customers (not both), up to $3,500. It is &ldquo;first-come first-served&rdquo;
+              with &ldquo;limited funding available,&rdquo; the installer must hold a CSLB
+              license, and you can apply before or up to three months after installation (
+              <a className={link} href={S.cpa}>
+                Clean Power Alliance
+              </a>
+              ).
+            </li>
+            <li>
+              <strong>San Diego Community Power.</strong> Its Solar Battery Savings rebate is in
+              the SDG&amp;E section above.
+            </li>
+            <li>
+              <strong>Central Coast Community Energy (3CE): closed.</strong> &ldquo;Effective
+              March 19, 2026, 3CE has closed the Residential Battery Rebate Program to new
+              applications.&rdquo; Applications filed before then are still processed, and 3CE
+              points later battery buyers to a virtual power plant program it says launches in
+              fall 2026 (
+              <a className={link} href={S.threeCe}>
+                3CE
+              </a>
+              ). Some installer and manufacturer incentive lists still showed the rebate after
+              it closed.
+            </li>
+          </ul>
+        </section>
+
+        <section>
           <h2>Other city-owned utilities</h2>
           <p>
             Anaheim, Modesto Irrigation District, Corona and other publicly owned utilities set
-            their own solar and rebate terms, and some change them mid-year. Ask the utility for
-            its current export credit and any rebate before comparing quotes. The{' '}
+            their own solar and rebate terms, and some change them mid-year. Anaheim Public
+            Utilities, for example, lists a battery rebate of &ldquo;up to $3,000 per
+            household&rdquo; for a UL-certified battery of at least 5 kWh, if you stay on a
+            time-of-use rate and in its MyPower Savings program for at least 12 months. Its page
+            does not say whether funds remain, so call before counting on it (
+            <a className={link} href={S.anaheimBattery}>
+              City of Anaheim
+            </a>
+            , checked September 23, 2026). Ask the utility for its current export credit and any
+            rebate before comparing quotes. The{' '}
             <Link className={link} href={RATE_TRACKER_PATH}>
               rate tracker
             </Link>{' '}

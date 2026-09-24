@@ -76,4 +76,45 @@ export const JSON_ARTICLE_RELATED: Record<string, JsonArticleRelated> = {
       { href: '/blog/average-utility-bill-california', label: 'The average California utility bill' },
     ],
   },
+  // Tier 3 (claude/t3-misc-20260923): pages in the misc lane. The Powerwall
+  // link on the rebate page is the t2-reviews link request.
+  '/battery/pge-permanent-battery-storage-rebate': {
+    heading: 'Put the rebate against a real price',
+    links: [
+      { href: '/battery/tesla-powerwall-3-cost-california', label: 'What a Powerwall 3 costs after the rebate' },
+      { href: '/battery/how-many-batteries-do-i-need-california', label: 'How many batteries your home actually needs' },
+      { href: '/battery/pge-solar-battery-rebate', label: 'Every PG&E battery incentive in one table' },
+      { href: '/battery/sgip-battery-rebate-california', label: 'SGIP budgets and waitlists by administrator' },
+    ],
+  },
+  '/battery/how-many-batteries-do-i-need-california': {
+    heading: 'After you know the size',
+    links: [
+      { href: '/blog/solar-battery-backup-california', label: 'Home battery backup in California: cost, savings and rebates' },
+      { href: '/battery/powerwall-vs-enphase-vs-franklinwh', label: 'Powerwall 3, Enphase 5P and FranklinWH specs side by side' },
+      { href: '/battery/add-powerwall-to-existing-solar', label: 'Adding a battery to solar you already own' },
+      { href: '/battery/pge-permanent-battery-storage-rebate', label: 'PG&E’s $7,500 rebate for outage-hit accounts' },
+      { href: '/battery/battery-payback-nem-3-california', label: 'Whether a battery pays back under NEM 3.0' },
+    ],
+  },
+  '/solar-installers/sunrun-lease-vs-ppa': {
+    heading: 'Getting out, buying out or adding on',
+    links: [
+      { href: '/solar-installers/sunrun-buyout-cost', label: 'How a Sunrun buyout price is calculated' },
+      { href: '/blog/what-happens-to-solar-lease-when-i-sell-california', label: 'Selling a home with a Sunrun lease or PPA' },
+      { href: '/solar-installers/pge-and-sunrun', label: 'PG&E and Sunrun battery programs' },
+      { href: '/solar-problems/solar-cancellation-california', label: 'How to get out of a solar contract in California' },
+    ],
+  },
+  '/solar-problems/solar-cancellation-california': {
+    heading: 'The detail for each way out',
+    links: [
+      { href: '/blog/can-you-cancel-solar-panel-contract-before-installation-california', label: 'Cancelling before installation: the statute, day by day' },
+      { href: '/blog/what-happens-to-solar-lease-when-i-sell-california', label: 'Selling a home with a solar lease or PPA' },
+      { href: '/solar-installers/sunrun-buyout-cost', label: 'How a Sunrun buyout price is calculated' },
+      { href: '/blog/what-happens-if-stop-paying-solar-lease-california', label: 'What happens if you stop paying a solar lease' },
+      { href: '/solar-problems/ucc-1-lien-solar-california', label: 'The UCC-1 filing a buyer’s title company will find' },
+      { href: '/solar-problems/attorney-to-sue-solar-company-california', label: 'Finding an attorney for a solar dispute' },
+    ],
+  },
 };
