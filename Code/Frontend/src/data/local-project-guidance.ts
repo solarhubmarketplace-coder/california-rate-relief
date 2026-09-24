@@ -1879,7 +1879,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
     ],
     related: [
       { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
-      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'Size a system from 12 months of use' },
       { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
       { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
     ],
@@ -1913,7 +1913,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
       { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
-      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'Size a system from 12 months of use' },
     ],
     sources: [sanMateoSolarApp, sanMateoFees2627, sanMateoCountyInstant, westlightHome],
   },
@@ -2044,7 +2044,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
     related: [
       { href: '/solar-savings/inland-empire', label: 'Inland Empire bill and project guide' },
       { href: '/blog/solar-rebates-by-california-utility', label: 'Rebates by California utility' },
-      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'Size a system from 12 months of use' },
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [riversideSolarApp, riversideFees, rpuSolarInfo, rpuFees2026, rpuServiceArea],
@@ -2115,7 +2115,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
     ],
     related: [
       { href: '/blog/solar-rebates-by-california-utility', label: 'Rebates by California utility' },
-      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'Size a system from 12 months of use' },
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [rosevilleSolarApp, rosevilleSolar2, rosevilleInterconnection, cecTerritory0923],
@@ -2246,7 +2246,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
     ],
     related: [
       { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
-      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'Size a system from 12 months of use' },
       { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
@@ -2415,7 +2415,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
     related: [
       { href: '/solar-savings/los-angeles-county', label: 'Los Angeles County bill guide' },
       { href: '/blog/solar-rebates-by-california-utility', label: 'Rebates by California utility' },
-      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'Size a system from 12 months of use' },
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [pwpSolar, pasadenaExpress, cecSb379],
@@ -2772,7 +2772,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
     related: [
       { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
       { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
-      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'Size a system from 12 months of use' },
     ],
     sources: [visaliaSolarApp, sceCcaList],
   },
@@ -2806,7 +2806,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
     ],
     related: [
       { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
-      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'Size a system from 12 months of use' },
       { href: '/blog/net-billing-vs-net-metering-california', label: 'Net metering versus net billing' },
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
@@ -4024,7 +4024,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
       },
     ],
     related: [
-      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/how-big-of-a-solar-system-do-i-need-california', label: 'Size a system from 12 months of use' },
       { href: '/blog/net-billing-vs-net-metering-california', label: 'Net metering versus net billing' },
       { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
