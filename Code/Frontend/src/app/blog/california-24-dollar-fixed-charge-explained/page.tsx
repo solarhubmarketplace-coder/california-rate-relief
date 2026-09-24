@@ -277,14 +277,15 @@ export default function FixedChargeExplained() {
                 required this; the CPUC decision is what actually set the
                 dollar amounts and the rollout dates. The two reduced tiers
                 above track the state&apos;s{' '}
-                <Link
-                  href='/programs/care-california'
+                <a
+                  href='https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program'
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='text-primary hover:underline'
                 >
-                  CARE and FERA program
-                </Link>{' '}
-                (publishing alongside this page — confirm both go live
-                together).
+                  CARE and FERA programs
+                </a>
+                .
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
