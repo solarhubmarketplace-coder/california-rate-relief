@@ -1,274 +1,304 @@
-import { SolarInquiry } from '@/components/growth/SolarInquiry';
-import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { RelatedGuides } from "@/components/shared/RelatedGuides";
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { GuideShell, Cite } from '@/components/growth/GuideShell';
+import type { Source } from '@/components/growth/DecisionPage';
+import type { KeyFact } from '@/components/trust/KeyFacts';
+
+const PATH = '/blog/are-solar-panels-a-scam';
+const UPDATED = '2026-09-23';
+const HUB = { label: 'Solar problems and scams', href: '/solar-problems' };
+const metaTitle = 'Are Solar Panels a Scam? California Solar Scams to Avoid';
+const metaDescription =
+  'Solar panels aren’t a scam; some sales are. The red flags California regulators list, your right to cancel, the down payment cap, and where to report.';
+
+const CPUC_GUIDE = 'https://www.cpuc.ca.gov/solarguide/';
+const CSLB_SOLAR = 'https://www.cslb.ca.gov/solar';
+const CSLB_LOOKUP = 'https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx';
+const SFDA = 'https://sfdistrictattorney.org/district-attorney-brooke-jenkins-announces-settlement-with-vivint-solar/';
+const FTC = 'https://consumer.ftc.gov/articles/solar-power-your-home';
+const AG = 'https://oag.ca.gov/contact/consumer-complaint-against-business-or-company';
+const LEG = (code: string, sec: string) =>
+  `https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=${code}&sectionNum=${sec}`;
+
+const sources: Source[] = [
+  { label: 'CPUC: California Solar Consumer Protection Guide (Version 4, published October 2025), red flags and rights', url: CPUC_GUIDE },
+  { label: 'CSLB: Solar Smart, consumer tips, salesperson registration and complaint statistics', url: CSLB_SOLAR },
+  { label: 'CSLB: License and home improvement salesperson lookup', url: CSLB_LOOKUP },
+  { label: 'Civil Code § 1689.7 (cancelling a home solicitation contract)', url: LEG('CIV', '1689.7') },
+  { label: 'Business and Professions Code § 7159.5 (down payment and payment schedule)', url: LEG('BPC', '7159.5') },
+  { label: 'Business and Professions Code § 7169 (solar energy system disclosure document)', url: LEG('BPC', '7169') },
+  { label: 'San Francisco District Attorney: Settlement with Vivint Solar (Feb. 19, 2026)', url: SFDA },
+  { label: 'Federal Trade Commission: Solar power for your home (updated Dec. 9, 2025)', url: FTC },
+  { label: 'California Attorney General: Consumer complaint against a business', url: AG },
+];
+
+const keyFacts: KeyFact[] = [
+  {
+    label: 'Cancel a contract signed at home',
+    value: '3 business days',
+    note: 'Five for senior citizens, until midnight of the last day.',
+    source: { publisher: 'Civ. Code § 1689.7', date: UPDATED, url: LEG('CIV', '1689.7') },
+  },
+  {
+    label: 'Largest legal down payment',
+    value: '$1,000 or 10%',
+    note: 'Whichever is less, on a home improvement contract.',
+    source: { publisher: 'B&P Code § 7159.5', date: UPDATED, url: LEG('BPC', '7159.5') },
+  },
+  {
+    label: 'Solar complaints to CSLB',
+    value: '2,263 in FY 2022/23',
+    note: '323 of those investigated were misrepresentation or fraud.',
+    source: { publisher: 'CSLB', date: UPDATED, url: CSLB_SOLAR },
+  },
+  {
+    label: 'Contractor complaints',
+    value: '800-321-2752',
+    note: 'CSLB’s line, as listed in the CPUC consumer guide.',
+    source: { publisher: 'CPUC', date: UPDATED, url: CPUC_GUIDE },
+  },
+];
+
+const faqs = [
+  {
+    question: 'Are solar panels a scam in California?',
+    answer:
+      'No. Panels generate real electricity that your utility meter records. What goes wrong is the sale: promises that can’t be kept, payments and escalators that weren’t explained, and contractors who take a deposit and don’t finish. CSLB received 2,263 solar complaints in fiscal year 2022/2023, and most of those investigated were about workmanship or abandoned jobs rather than the technology.',
+  },
+  {
+    question: 'Is free solar in California a scam?',
+    answer:
+      'The claim is a red flag. The CPUC’s consumer guide lists “You can get free solar energy at no cost to you” among the things a legitimate provider should not say. Offers with nothing due at signing are usually leases, power purchase agreements or loans, which you pay for over time.',
+  },
+  {
+    question: 'How do I know if a solar company is legit?',
+    answer:
+      'Check the contractor’s license and the salesperson’s home improvement salesperson registration on the CSLB lookup, get at least three written bids as CSLB recommends, and make sure every promise is in the contract. Compare the proposal with your own last 12 months of usage and your actual rate, not a salesperson’s estimate.',
+  },
+  {
+    question: 'Can I cancel a solar contract in California?',
+    answer:
+      'If you signed at home or away from the seller’s place of business, Civil Code § 1689.7 lets most buyers cancel until midnight of the third business day after signing, and senior citizens until the fifth. Cancel in writing and keep proof. After that window, your options depend on the contract; see our guide to cancelling before installation.',
+  },
+  {
+    question: 'Where do I report a solar scam in California?',
+    answer:
+      'Contractor and installer problems go to CSLB at 800-321-2752. Utility billing issues go to the CPUC, and PACE financing disputes to the Department of Financial Protection and Innovation, per the CPUC’s guide. You can also file with the California Attorney General and report fraud to the FTC at ReportFraud.ftc.gov.',
+  },
+];
 
 export const metadata: Metadata = {
-  title: "Are Solar Panels a Scam? What California Buyers Know",
-  description: "Are solar panels a scam? Separating legitimate electricity savings from misleading door-to-door sales tactics, hidden fees, and deceptive contracts.",
-  alternates: {
-    canonical: '/blog/are-solar-panels-a-scam',
-  },
+  title: metaTitle,
+  description: metaDescription,
+  alternates: { canonical: PATH },
   openGraph: {
-    title:
-      'Are Solar Panels a Scam? What California Homeowners Should Know (2026)',
-    description:
-      'Solar panels aren\'t a scam—but some solar companies are. Learn how to spot predatory tactics and verify installers.',
+    title: metaTitle,
+    description: metaDescription,
     type: 'article',
+    url: `https://ratereliefca.com${PATH}`,
     publishedTime: '2026-04-16T00:00:00Z',
+    modifiedTime: `${UPDATED}T00:00:00Z`,
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'Are Solar Panels a Scam? What California Homeowners Should Know (2026)',
-  description:
-    'Solar panels aren\'t a scam—but some companies are. Learn how to spot predatory tactics and protect yourself in California.',
-  datePublished: '2026-04-16',
-  dateModified: '2026-04-16',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/blog/are-solar-panels-a-scam',
-  },
-};
+const th = 'p-3 text-left align-top font-semibold';
+const td = 'p-3 align-top';
 
 export default function AreSolarPanelsAScam() {
   return (
-    <PublicLayout>
-      <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+    <PublicLayout breadcrumbLabel="Are solar panels a scam?" breadcrumbParent={HUB}>
+      <ArticleJsonLd
+        variant="Article"
+        domain="crr"
+        headline="Are solar panels a scam? How California solar scams work and how to avoid them"
+        url="https://ratereliefca.com/blog/are-solar-panels-a-scam"
+        datePublished="2026-04-16"
+        dateModified="2026-09-23"
+        description="Solar panels are real technology; some solar sales are not honest. The red flags California regulators list, the legal protections you have, how to check a company, and where to report."
       />
-      <main className='py-16 bg-background'>
-        <div className='container mx-auto px-4'>
-          <article className='max-w-3xl mx-auto'>
-            {/* Breadcrumb */}
-            <nav className='mb-8'>
-              <Link
-                href='/blog'
-                className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'
-              >
-                <ArrowLeft className='h-4 w-4' />
-                Back to Blog
-              </Link>
-            </nav>
+      <Header />
+      <GuideShell
+        title="Are solar panels a scam? How California solar scams work and how to avoid them"
+        eyebrow="Solar problems"
+        crumbs={[HUB]}
+        crumbLabel="Are solar panels a scam?"
+        updated={UPDATED}
+        sources={sources}
+        keyFacts={keyFacts}
+        faqs={faqs}
+        hub="rules_permits"
+        path={PATH}
+        quickCheckTopic="California solar legitimacy and quote comparison"
+        leadCount={2}
+        inquiry={<SolarInquiry topic="California solar legitimacy and quote comparison" />}
+      >
+        <p>
+          No. Solar panels are a real technology that produces real electricity. The scams are in how some
+          systems are sold: false promises of free power or government programs, pressure to sign quickly on a
+          tablet, and savings estimates you can’t check. California regulators publish the same red flags, and
+          state law gives you at least three business days to cancel a contract signed at home.
+        </p>
+        <p className="text-sm text-muted-foreground">
+          California Rate Relief is a referral service. We are not a licensed contractor.
+          California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
+          That is why this page sticks to what regulators and the law say.
+        </p>
 
-            {/* Article Header */}
-            <header className='mb-10'>
-              <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
-                Trust &amp; Transparency
-              </span>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Are Solar Panels a Scam? What California Homeowners Should Know (2026)
-              </h1>
-              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'>
-                  <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-16'>April 16, 2026</time>
-                </div>
-                <div className='flex items-center gap-1'>
-                  <Clock className='h-4 w-4' />
-                  <span>7 min read</span>
-                </div>
-              </div>
-            </header>
+        <section>
+          <h2>The red flags California regulators list</h2>
+          <p>
+            The CPUC’s California Solar Consumer Protection Guide (Version 4, published October 2025) tells
+            homeowners to walk away from a provider who says things like:
+          </p>
+          <ul>
+            <li>“You can get free solar energy at no cost to you.”</li>
+            <li>“You will never pay an electricity bill ever again.”</li>
+            <li>“Time is running out and you must quickly sign.”</li>
+          </ul>
+          <p>
+            It also warns that unscrupulous salespeople may “skip key parts of the contract and financial
+            information, especially on a tablet.” <Cite publisher="CPUC" href={CPUC_GUIDE} date={UPDATED} /> The
+            Federal Trade Commission’s advice points the same way: never deal with a company that pressures you
+            for a quick decision, tells you to sign without time to review, or asks you to pay in cash.{' '}
+            <Cite publisher="FTC" href={FTC} date={UPDATED} />
+          </p>
+        </section>
 
-            {/* Article Body */}
-            <div className='prose prose-slate max-w-none'>
-              <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Short answer: Solar panels themselves are not a scam. Rooftop solar is a mature, proven technology that has reduced electricity bills for millions of California homeowners over the past 15 years. However, some solar companies absolutely are scams. They use high-pressure sales tactics, hide contract terms, make false savings claims, and exploit homeowners&apos; trust in renewable energy. This article separates fact from fiction and gives you the tools to spot predatory solar companies before they lock you into a bad deal.
-              </p>
+        <section>
+          <h2>How solar scams usually work</h2>
+          <div className="overflow-x-auto rounded-xl border">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Common solar sales scams and how to check them</caption>
+              <thead className="bg-muted">
+                <tr>
+                  <th className={th}>The pitch</th>
+                  <th className={th}>What to check</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <th scope="row" className={th}>“Free” solar or a “government program”</th>
+                  <td className={td}>Who owns the system and what you pay over the full term. See <Link href="/solar-problems/free-solar-california-is-it-real">whether free solar in California is real</Link>.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>“We’re with your utility”</th>
+                  <td className={td}>The company’s legal name and license number, and any claimed utility connection checked with the utility directly.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>“Your bill goes to zero”</th>
+                  <td className={td}>The proposal’s production estimate against your last 12 months of use. See <Link href="/solar-problems/solar-bill-still-high-california">why solar bills can stay high</Link>.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>A low starting price per kWh</th>
+                  <td className={td}>The yearly escalator and the full payment schedule. See <Link href="/solar-problems/solar-escalator-clause-explained">how escalators compound</Link>.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>A cheap-looking loan payment</th>
+                  <td className={td}>Dealer fees folded into the price. See <Link href="/solar-problems/solar-dealer-fees-explained">how dealer fees work</Link>.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>A big deposit to “lock in” a price</th>
+                  <td className={td}>The legal cap on down payments, below.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>“Just sign here to see if you qualify”</th>
+                  <td className={td}>Whether you are signing a contract or a credit application, and what is on the whole document.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            These aren’t hypothetical. In February 2026, five California district attorneys announced a $4.3
+            million stipulated judgment with Vivint Solar over allegations that its power purchase agreement sales
+            mischaracterized ties to utilities, overstated savings and misrepresented cancellation rights; the
+            company agreed without admitting liability. <Cite publisher="SF District Attorney" href={SFDA} date={UPDATED} />{' '}
+            More on that case and others is in <Link href="/solar-problems/solar-lawsuit-california">solar lawsuits in California</Link>.
+          </p>
+        </section>
 
-              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
-              <div className='not-prose my-8'>
-                <HeroQuickCheck topic="California solar legitimacy and quote comparison" />
-              </div>
+        <section>
+          <h2>Protections California law gives you</h2>
+          <ul>
+            <li>
+              <strong>A right to cancel.</strong> For contracts signed at home, Civil Code § 1689.7 lets most buyers
+              cancel “at any time prior to midnight of the third business day,” and senior citizens until the
+              fifth. The contract must be in the same language as the sales presentation.{' '}
+              <Cite publisher="leginfo.legislature.ca.gov" href={LEG('CIV', '1689.7')} date={UPDATED} />
+            </li>
+            <li>
+              <strong>A cap on the down payment.</strong> Under Business and Professions Code § 7159.5, a down
+              payment “shall not exceed one thousand dollars ($1,000) or 10 percent of the contract amount,
+              whichever amount is less,” and after that the contractor may not take payment that exceeds the value
+              of work done or materials delivered.
+            </li>
+            <li>
+              <strong>A disclosure page up front.</strong> Section 7169 requires a solar energy system disclosure
+              document on the front page of every solar contract, in 16-point bold type, showing the total cost and
+              payments, how to complain, and your cancellation right.
+            </li>
+            <li>
+              <strong>Registered salespeople.</strong> CSLB says solar sellers generally must be registered as home
+              improvement salespersons. <Cite publisher="CSLB" href={CSLB_SOLAR} date={UPDATED} />
+            </li>
+          </ul>
+          <p>
+            The CPUC guide adds that you have the right to read it before signing without time pressure, to get
+            the contract and financing documents in the language of the sales pitch, and to receive printed
+            copies on request.
+          </p>
+        </section>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Let&apos;s Address This Head-On
-              </h2>
+        <section>
+          <h2>How to check a solar company before you sign</h2>
+          <ol>
+            <li>Look up the contractor’s license and the salesperson’s registration on the <a href={CSLB_LOOKUP} target="_blank" rel="noopener noreferrer">CSLB lookup</a>, which also shows complaint disclosure.</li>
+            <li>Get “competing bids from at least three contractors,” as CSLB advises, priced on the same system.</li>
+            <li>Bring your last 12 months of bills and your rate per kWh, so the savings claim can be checked.</li>
+            <li>Make sure “the contract you sign spells out everything you were promised” (CSLB’s words), including production estimates and warranties.</li>
+            <li>Read the CPUC guide and the solar disclosure page before signing, not after.</li>
+          </ol>
+          <p>
+            Our <Link href="/solar-installers/how-to-verify-a-solar-contractor-california">contractor verification walkthrough</Link>{' '}
+            shows each lookup, and <Link href="/solar-problems/solar-contract-red-flags-california">solar contract red flags</Link>{' '}
+            covers the clauses to question. If the pitch came to your door, read{' '}
+            <Link href="/solar-problems/solar-door-to-door-sales-california">your rights with door-to-door solar sales</Link>.
+          </p>
+        </section>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                There are approximately 2.33 million residential solar installations in California as of 2026. The vast majority of these installations work as promised — they produce electricity, homeowners save money, and the systems run reliably for 25+ years. Solar is not a scam. It&apos;s a real technology with real economics that makes sense for many homeowners, especially in California where utility rates are among the highest in the nation.
-              </p>
+        <section>
+          <h2>If you think you’ve been scammed</h2>
+          <ol>
+            <li>If you are inside the cancellation window, cancel in writing today and keep proof of delivery.</li>
+            <li>Gather the contract, disclosure document, proposal, payment records and messages.</li>
+            <li>File with CSLB at 800-321-2752 for contractor problems. Utility billing issues go to the CPUC; PACE financing disputes go to the DFPI, as the CPUC guide directs.</li>
+            <li>You can also file a complaint with the <a href={AG} target="_blank" rel="noopener noreferrer">California Attorney General</a> and report fraud at ReportFraud.ftc.gov.</li>
+            <li>For money you want back, see <Link href="/solar-problems/solar-company-took-my-money-california">what to do when a solar contractor took your money</Link> and <Link href="/solar-problems/attorney-to-sue-solar-company-california">when to hire an attorney</Link>.</li>
+          </ol>
+          <p>
+            If there is a lien or UCC-1 filing you didn’t expect, <Link href="/solar-problems/ucc-1-lien-solar-california">what a solar UCC-1 means</Link>{' '}
+            explains it.
+          </p>
+        </section>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                That said, the solar industry also has a well-documented problem with predatory actors. The California Contractors State License Board (CSLB) received approximately 177 solar-related complaints per month in 2025, down 18% from the 2024 peak but still substantial. Common complaints include misleading savings claims, hidden contract terms, poor installation quality, and companies that disappear after the sale.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Solar Panels Are Not a Scam (But Some Companies Are)
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                The technology works. How much a residential system produces, and how much of your usage it covers, depends on its size, the roof&apos;s orientation and shading; a proposal should state its production estimate in kWh. That production is real and measurable. Your utility company verifies the production through the meter. You either get credits on your bill or payments for excess power, depending on your utility and net metering agreement.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                The economics work too. In SCE territory where rates are 34.5 cents per kWh and rising, a solar system paying for itself in 9-12 years is a solid investment. In PG&E territory, the math is even better. The federal residential tax credit (which expired December 31, 2025) used to accelerate payback, but even without it, the long-term math holds up if you plan to stay in your home for 15+ years.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                What makes some solar sales a scam isn&apos;t the technology or the financing model — it&apos;s the predatory practices used to sell it.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                The Real Scam Tactics
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Misleading savings claims.</strong> A company promises a large lifetime savings figure built on inflated assumptions: utility rates rising faster every year than their history supports, your electricity use never changing, and the system producing more than a realistic model of your roof suggests. When the actual savings come in far lower, you feel scammed. Always ask for a detailed, itemized projection using conservative assumptions and your actual 12-month usage history, not estimates.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Hidden or poorly explained escalators.</strong> A lease or PPA contract says your rate is 10 cents per kWh, but buried on page 14 in footnote 7, there&apos;s a 2.5% annual escalator. In year 15, you&apos;re paying 13.2 cents — not the 10 cents you thought you were locking in. By year 25, it&apos;s 15.7 cents. Scammers bank on homeowners not reading 40+ page contracts. Always request a 25-year payment schedule broken down year by year.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Fake &quot;free&quot; or &quot;government-funded&quot; offers.</strong> Door-to-door reps claim the program is &quot;government-subsidized,&quot; &quot;utility-approved,&quot; or &quot;funded by federal grants.&quot; There is no single federal or state &quot;free solar program&quot; that covers all homeowners. California has rebates and financing assistance, but they&apos;re limited, require qualification, and don&apos;t make solar free. If someone claims their offer is government-funded, ask for official documentation and verify through the CPUC website or your utility.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Pressure to sign immediately.</strong> &quot;This offer expires tonight.&quot; &quot;We only have three slots left this month.&quot; &quot;If you don&apos;t sign today, the price goes up.&quot; These are classic high-pressure sales tactics. Legitimate solar companies have inventory and can accommodate you next week. Artificial urgency is a red flag. California law gives you three days to cancel a home improvement contract anyway, so there&apos;s no legitimate reason to rush.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Abandoned projects.</strong> A company installs your panels, collects the first few payments, then goes bankrupt. You&apos;re left with a system covered by a warranty issued by a defunct company — essentially worthless. You still owe on the loan or PPA but have no recourse. Check the company&apos;s financial stability and years in business. Companies less than three years old are higher risk.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                How to Verify Any Installer
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>CSLB license check.</strong> Every solar installer in California must hold a Contractor&apos;s State License Board (CSLB) license, either C-46 (Solar Contractor) or C-10 (Electrical Contractor). Go to{' '}
-                <a
-                  href='https://www.cslb.ca.gov/CheckLicenseStatus'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  cslb.ca.gov/CheckLicenseStatus
-                </a>{' '}
-                and search the company. Verify that the license is active, not suspended or revoked. Also check the company&apos;s complaint history — if there are multiple unresolved complaints, keep looking.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Online reviews and Better Business Bureau.</strong> Google the company name + &quot;reviews&quot; and &quot;complaints.&quot; Check the Better Business Bureau (bbb.org) for accreditation and complaint history. Be skeptical of companies with all five-star reviews (fake reviews are common) but also wary of those with numerous one-star complaints about billing, service, or unresponsive support.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Ask for references.</strong> Request three references from California homeowners who signed contracts more than two years ago. Call them. Ask whether the company delivered on promises, whether actual bills matched projections, whether the company responded to questions, and whether they&apos;d use the same company again. Honest companies provide references without hesitation.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Get everything in writing.</strong> Before signing any contract, you should have in writing: (1) system specifications (size in kW, panel brand, inverter, installation timeline), (2) total cost (for purchase) or monthly rate (for PPA/lease), (3) performance projections with your actual usage history as the basis, (4) the annual escalator if applicable, (5) warranty terms, and (6) cancellation or buyout options. If the company won&apos;t provide all of this before you sign, don&apos;t sign.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                The 3-Day Cooling-Off Period
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                California law mandates that any home improvement contract (including solar) must include a three-day cancellation period. This gives you three calendar days to cancel after signing without penalty. Use this time to review the contract with a lawyer, get a second opinion, or simply sleep on it. Many homeowners later realize they were pressured and regret signing. The three-day window is your escape hatch — use it if you have any doubts.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                When Solar Legitimately Doesn&apos;t Make Sense
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Not every home is a good fit for solar, and honest companies will tell you that upfront. Solar doesn&apos;t make financial sense if your roof has heavy shading from trees or neighboring buildings that can&apos;t be mitigated, if your monthly electricity bill is under $100 (savings may not justify complexity), if your roof needs replacement within the next 5 years (replace the roof first, then install solar), or if you&apos;re planning to move within 2-3 years (though PPAs can transfer to buyers, they make homes harder to sell).
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                If a company tells you that your home is a great fit for solar when the above factors clearly apply, that&apos;s a red flag. Honest companies are willing to say no.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Bottom Line
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Solar panels are not a scam. The technology is proven, the economics work in California&apos;s high-rate environment, and millions of homeowners benefit from solar systems every day. But the solar industry does have bad actors who use predatory sales tactics, hide contract terms, and exploit trust in renewable energy. Protect yourself by verifying the installer&apos;s CSLB license, getting all terms in writing, requesting a 25-year cost projection, asking for verifiable references, and using the three-day cooling-off period if you have doubts. If a company won&apos;t provide these basics, it&apos;s either incompetent or dishonest — either way, keep looking.
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>
-                Want Clarity on Your Options?
-              </h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                Get a straight assessment of whether solar (or another approach) makes sense for your home, based on your actual utility rates and usage.
-              </p>
-              <Link
-                href='#solar-inquiry'
-                className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-              >
-                Get Your Assessment
-                <ArrowRight className='h-4 w-4' />
-              </Link>
-            </div>
-
-            <div className='mt-8'>
-              <SolarInquiry topic="California solar legitimacy and quote comparison" />
-            </div>
-
-            {/* Navigation */}
-            <div className='mt-10 pt-8 border-t border-border flex justify-between items-center'>
-              <Link
-                href='/blog'
-                className='text-primary hover:underline font-medium inline-flex items-center gap-2'
-              >
-                <ArrowLeft className='h-4 w-4' />
-                All Articles
-              </Link>
-              <Link
-                href='/blog/why-is-my-pge-bill-so-high'
-                className='text-primary hover:underline font-medium inline-flex items-center gap-2'
-              >
-                Next Article
-                <ArrowRight className='h-4 w-4' />
-              </Link>
-            </div>
-            <RelatedGuides
-              heading="Where the complaints actually come from"
-              intro="Each of these is a specific practice, documented rather than characterised."
-              links={[
-                { href: "/solar-problems/why-solar-reps-get-a-bad-name", label: "Why the sales channel earns the reputation" },
-                { href: "/solar-problems/solar-sales-tactics-california", label: "What each common tactic obscures" },
-                { href: "/solar-problems/solar-door-to-door-sales-california", label: "What a door-to-door rep can legally do" },
-                { href: "/solar-problems/solar-company-took-my-money-california", label: "What to do if a contractor takes the money and stops" },
-                { href: "/solar-problems/does-solar-mean-free-electricity-california", label: "Why solar is not free electricity" },
-                { href: "/solar-problems", label: "All California solar problem guides" },
-              ]}
-            />
-          </article>
-        </div>
-      </main>
+        <section>
+          <h2>So is solar worth it?</h2>
+          <p>
+            Once the sales tactics are set aside, whether solar pays is a numbers question about your usage, your
+            utility and how you pay for the system. <Link href="/blog/are-solar-panels-worth-it-california">Are solar panels worth it in California?</Link>{' '}
+            works through it, and <Link href="/blog/ppa-loan-vs-solar-lease-vs-cash-california">cash vs loan vs lease vs PPA</Link>{' '}
+            compares the ways to pay. After installation, <Link href="/solar-panel-maintenance-california">our maintenance guide</Link>{' '}
+            covers what upkeep a system needs.
+          </p>
+        </section>
+      </GuideShell>
       <Footer />
     </PublicLayout>
   );
