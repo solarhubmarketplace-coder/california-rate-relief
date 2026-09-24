@@ -45,6 +45,7 @@ export const SRC = {
   paoPgeRequests: { label: "CPUC Public Advocates Office, The Full Bill Impact of PG&E's Expected Rate Requests (updated June 24, 2026)", url: `${PAO_BASE}/260305-public-advocates-office-pge-revenue-requests-fact-sheet.pdf` },
 
   // --- CPUC ----------------------------------------------------------------
+  cpucPgeGrc2023: { label: "CPUC: PG&E 2023 General Rate Case decision (press release, November 16, 2023)", url: 'https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-prioritizes-safety-reliability-and-affordability-in-pge-rate-case-2023' },
   cpucGrc: { label: 'CPUC: What is a General Rate Case?', url: 'https://www.cpuc.ca.gov/generalratecase' },
   cpucGrcProcess: { label: 'CPUC: Understanding How the CPUC Processes a General Rate Case (July 29, 2025)', url: 'https://www.cpuc.ca.gov/news-and-updates/all-news/understanding-how-the-cpuc-processes-a-general-rate-case' },
   cpucCareFera: { label: 'CPUC: CARE/FERA Program (income limits June 1, 2026 to May 31, 2027)', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program' },
@@ -89,6 +90,7 @@ export const SRC = {
   sceBsc: { label: 'SCE: Base Services Charge', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc' },
   sceRateOptions: { label: "SCE: Southern California Edison's Electric Rate Options (residential and nonresidential summary)", url: 'https://www.sce.com/sites/default/files/custom-files/Summary%20of%20Available%20Residential%20and%20Nonresidential%20Rate%20Options.pdf' },
   sceNemBill: { label: 'SCE: Guide to Your Net Energy Metering Bill', url: 'https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill' },
+  sceNsc: { label: 'SCE: Net Surplus Compensation Rate (monthly NSCR, 2022 to September 2026)', url: 'https://www.sce.com/regulatory/regulatory-information/ferc-Standards-conduct/tariff-books/rates-pricing-choices/net-surplus-compensation' },
   sceTariffBooks: { label: 'SCE: Rates & Pricing Choices (tariff books)', url: 'https://www.sce.com/regulatory/tariff-books/rates-pricing-choices' },
   sceRateCompare: { label: 'SCE: Rate Plan Comparison tool', url: 'https://www.sce.com/save-money/rates-financing/rate-plan-comparison' },
   dceSolar: { label: 'Desert Community Energy: Solar customers (true-up timing)', url: 'https://desertcommunityenergy.org/your-options/solar-customers/' },
@@ -132,6 +134,8 @@ export const SRC = {
   eiaGasVolumesCa: { label: 'U.S. EIA, Natural gas consumption by end use, California', url: 'https://www.eia.gov/dnav/ng/ng_cons_sum_dcu_SCA_a.htm' },
   eiaRecsWest: { label: 'U.S. EIA, 2020 Residential Energy Consumption Survey, Table CE2.5 (West region)', url: 'https://www.eia.gov/consumption/residential/data/2020/c&e/xls/ce2.5.xlsx' },
   cecTseg2024: { label: 'California Energy Commission, 2024 Total System Electric Generation', url: 'https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation' },
+  chargepointPricing: { label: 'ChargePoint: What are the pricing policies and fees? (updated June 16, 2026)', url: 'https://www.chargepoint.com/drivers/support/faqs/what-are-pricing-policies-and-fees-i-should-be-aware' },
+  chargepointServiceFee: { label: 'ChargePoint: What is the service fee? (updated June 16, 2026)', url: 'https://www.chargepoint.com/drivers/support/faqs/what-service-fee' },
   cdfaEvfsFaq: { label: 'CDFA Division of Measurement Standards, EV Fueling Systems FAQ', url: 'https://www.cdfa.ca.gov/dms/pdfs/EVFS_FAQ.pdf' },
 } as const satisfies Record<string, RateSource>;
 
