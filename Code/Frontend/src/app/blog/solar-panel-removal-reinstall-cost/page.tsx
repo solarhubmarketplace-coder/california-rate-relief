@@ -15,7 +15,7 @@ const UPDATED = '2026-09-23';
 const HUB = { label: 'Solar panel maintenance', href: '/solar-panel-maintenance-california' };
 const metaTitle = 'Solar Panel Removal and Reinstall Cost in California';
 const metaDescription =
-  'What sets the cost to remove and reinstall solar panels for a new roof in California, who may do the work, how leases handle it, and a quote checklist.';
+  'Solar panel removal in California: what sets the cost to remove and reinstall for a new roof, who may do it, removing panels for good, and disposal rules.';
 
 const CPUC_GUIDE = 'https://www.cpuc.ca.gov/solarguide/';
 const CPUC_NBT = 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing';
@@ -23,6 +23,10 @@ const CSLB_SOLAR = 'https://www.cslb.ca.gov/solar';
 const CSLB_LOOKUP = 'https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx';
 const DOE_ROOF = 'https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar';
 const LADWP_GUIDE = 'https://www.ladwp.com/sites/default/files/2026-01/Revised%20SRP%20Guidelines%20(BES%2011-3-25%20v.2).pdf';
+const CSLB_FIND = 'https://www2.cslb.ca.gov/Newsletter/2018-summer/Find_My_Licensed_Contractor.asp';
+const CSLB_ZIP = 'https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/ZipCodeSearch.aspx';
+const CCR_UW = 'https://www.law.cornell.edu/regulations/california/22-CCR-66261.9';
+const RIVCO = 'https://rcwaste.org/solar-panels';
 
 const sources: Source[] = [
   { label: 'CPUC: California Solar Consumer Protection Guide and buyer questions', url: CPUC_GUIDE },
@@ -31,6 +35,9 @@ const sources: Source[] = [
   { label: 'CSLB: License and salesperson lookup', url: CSLB_LOOKUP },
   { label: 'U.S. Department of Energy: Replacing your roof? It’s a great time to add solar', url: DOE_ROOF },
   { label: 'LADWP: Solar Rooftops Program guidelines (revised, posted January 2026)', url: LADWP_GUIDE },
+  { label: 'CSLB: Find My Licensed Contractor, search by classification and city or ZIP (Summer 2018 newsletter)', url: CSLB_FIND },
+  { label: 'Cal. Code of Regs., tit. 22, § 66261.9 (photovoltaic modules as universal waste, operative Jan. 1, 2021)', url: CCR_UW },
+  { label: 'Riverside County Department of Waste Resources: solar panels', url: RIVCO },
 ];
 
 const keyFacts: KeyFact[] = [
@@ -75,6 +82,16 @@ const faqs = [
     question: 'Can my roofer remove the solar panels?',
     answer:
       'Only if the company also holds a license class that covers solar work. Many roofers subcontract the solar part. Either way, ask who will disconnect, remove, store and reinstall the equipment, get that company’s license number, and check it on the CSLB lookup.',
+  },
+  {
+    question: 'Can I remove solar panels myself?',
+    answer:
+      'It isn’t a safe do-it-yourself job. Panels produce voltage whenever light hits them, and removal means disconnecting live circuits, lifting fragile glass on a roof and sealing the holes the mounts leave. CSLB tells consumers not to use anyone who is not licensed for solar work, and a leased system’s contract may allow only the owner’s crew to touch it.',
+  },
+  {
+    question: 'Can I throw old solar panels in the trash?',
+    answer:
+      'No. California lists photovoltaic modules as a universal waste, operative since January 1, 2021, so they go to a handler or recycler rather than a trash bin. Riverside County, for example, says it does not accept them at its landfills or household hazardous waste program and points residents to the state’s lists of universal waste handlers. Ask the removal contractor where the panels will go.',
   },
   {
     question: 'Do I need a permit to remove and reinstall solar panels?',
@@ -176,6 +193,22 @@ export default function SolarPanelRemovalReinstallCost() {
               or follow <Link href="/solar-installers/how-to-verify-a-solar-contractor-california">our contractor verification steps</Link>.
             </li>
           </ul>
+          <h3>Finding a company that removes and reinstalls solar panels</h3>
+          <p>
+            Start with the company that installed the system: it knows the layout, and doing the work itself keeps
+            its workmanship warranty simple. If it has closed or won’t take the job, CSLB’s{' '}
+            <a href={CSLB_ZIP} target="_blank" rel="noopener noreferrer">Find My Licensed Contractor</a> search
+            lists licensed contractors “by classification within a specific geographic area using either a city or
+            zip code.” <Cite publisher="CSLB" href={CSLB_FIND} date={UPDATED} /> Search the C-46 solar class, and
+            ask your roofer which solar contractor it works with so you can check that license too. Our page on{' '}
+            <Link href="/solar-installers/licensed-solar-installer">finding licensed solar installers by county</Link>{' '}
+            walks through the lookup.
+          </p>
+          <p>
+            A roof repair doesn’t always mean lifting the whole array. If the leak or damage sits under a few
+            panels, ask whether only that section can come off, and get the price for a partial removal as well as
+            a full one.
+          </p>
         </section>
 
         <section>
@@ -256,6 +289,28 @@ export default function SolarPanelRemovalReinstallCost() {
             <Cite publisher="CPUC" href={CPUC_NBT} date={UPDATED} /> If the system is leased, transferring the
             lease to the buyer is usually the path; see{' '}
             <Link href="/blog/what-happens-to-solar-lease-when-i-sell-california">what happens to a solar lease when you sell</Link>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Removing solar panels for good</h2>
+          <p>
+            Sometimes the panels are not going back up: the system has failed, you are replacing it with a new
+            one, or you want the roof clear. A permanent removal has its own checklist.
+          </p>
+          <ol>
+            <li><strong>Settle ownership first.</strong> If the system is leased or on a PPA, the contract decides whether and how it can come off, and what you owe. If a loan financed it, ask the lender whether removal affects the loan.</li>
+            <li><strong>Tell your utility.</strong> Your interconnection agreement and billing plan are tied to that system. Ask how to close it out, especially if a new system will follow.</li>
+            <li><strong>Hire a licensed solar contractor</strong> to disconnect and remove the equipment, and ask whether your building department needs a permit for the work.</li>
+            <li><strong>Seal the roof.</strong> Every mount leaves a penetration. Get the patching or re-roofing of those spots in the same contract, or book your roofer for the day the panels come off.</li>
+            <li><strong>Plan where the panels go.</strong> California lists photovoltaic modules as a universal waste, operative January 1, 2021, so they go to a permitted handler or recycler rather than the trash. <Cite publisher="22 CCR § 66261.9" href={CCR_UW} date={UPDATED} /> Riverside County, for example, does not accept them at its landfills or household hazardous waste program and points residents to the state’s lists of universal waste handlers. <Cite publisher="Riverside County" href={RIVCO} date={UPDATED} /></li>
+          </ol>
+          <p>
+            A removal-only quote should list disconnection, removal, roof patching, hauling and the recycling or
+            disposal fee as separate lines. If the system still works, ask whether it has resale value before you
+            pay to recycle it. And if a new system will replace it, ask the utility before you sign how the change affects your
+            billing plan; <Link href="/blog/adding-solar-panels-existing-system-california">adding panels to an existing system</Link>{' '}
+            covers the same question for expansions.
           </p>
         </section>
 
