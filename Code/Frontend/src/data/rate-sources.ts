@@ -137,6 +137,8 @@ export const SRC = {
   sdgeNetMeterSheet: { label: 'SDG&E: How to read your smart electric meter, for net metering customers (fact sheet)', url: 'https://www.sdge.com/sites/default/files/SDGE%20Net%20Meter%20Fact%20Sheet.pdf' },
   sdgeSmartMeter: { label: 'SDG&E: How to read your smart meter', url: 'https://www.sdge.com/residential/savings-center/smart-meters/your-smart-meter/how-to-read-your-smart-meter' },
   sdgeMyBill: { label: 'SDG&E: Understanding your SDG&E bill (bill features)', url: 'https://www.sdge.com/mybill/new-features' },
+  sdgeHowRatesSet: { label: 'SDG&E: How Rates Are Set (seasons, baseline, tiers)', url: 'https://www.sdge.com/residential/pricing-plans/how-pricing-plans-work/how-rates-are-set' },
+  sdgeExportPricing: { label: 'SDG&E: Solar Billing Plan export pricing (hourly 2026 export rate files, NBT00 and NBT26)', url: 'https://www.sdge.com/solar/solar-billing-plan/export-pricing' },
 
   // --- LADWP ---------------------------------------------------------------
   ladwpResRates: { label: 'LADWP: Residential Rates (R-1A and R-1B totals by period, 2025 and 2026)', url: 'https://www.ladwp.com/account/customer-service/electric-rates/residential-rates' },
