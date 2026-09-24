@@ -324,7 +324,8 @@ test('Tier 3 wave: vallejo is reinstated and renders from growthCities', () => {
 const T3_CITYCOS_COMPANIES_SLUGS = new Set([
   'brentwood', 'antioch', 'novato', 'san-rafael', 'napa', 'fairfield', 'vallejo',
   'tracy', 'davis', 'petaluma', 'elk-grove', 'galt', 'clovis', 'yuba-city', 'merced',
-  'hollister',
+  'hollister', 'la-mesa', 'poway', 'santee', 'fallbrook', 'westminster', 'la-habra',
+  'fullerton', 'newport-beach', 'aliso-viejo', 'mission-viejo', 'lake-forest', 'tustin',
 ]);
 for (const slug of T3_CITYCOS_COMPANIES_SLUGS) REINSTATED_COMPANIES_SLUGS.add(slug);
 
