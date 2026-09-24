@@ -1,261 +1,277 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { RelatedGuides } from "@/components/shared/RelatedGuides";
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { CheckCircle2, AlertTriangle } from 'lucide-react';
-import { TrustedSources } from '@/components/shared/TrustedSources';
-import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
-import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
+import { GuideShell, Cite } from '@/components/growth/GuideShell';
+import type { Source } from '@/components/growth/DecisionPage';
+import type { KeyFact } from '@/components/trust/KeyFacts';
+
+const PATH = '/blog/solar-panel-cleaning-california';
+const UPDATED = '2026-09-23';
+const HUB = { label: 'Solar panel maintenance', href: '/solar-panel-maintenance-california' };
+const metaTitle = 'Solar Panel Cleaning in California: Is It Worth It?';
+const metaDescription =
+  'Does cleaning solar panels pay in California? What a UC San Diego study of 186 sites found, when to clean, how to do it safely, and what to ask a cleaner.';
+
+const UCSD = 'https://jacobsschool.ucsd.edu/news/release/1393?id=1393';
+const PAPER = 'https://escholarship.org/uc/item/5kd297nm';
+const CPUC_GUIDE = 'https://www.cpuc.ca.gov/solarguide/';
+const CSLB_SOLAR = 'https://www.cslb.ca.gov/solar';
+const NREL_ATB = 'https://atb.nrel.gov/electricity/2024/residential_pv';
+
+const sources: Source[] = [
+  { label: 'UC San Diego Jacobs School of Engineering: cleaning solar panels often not worth the cost (July 31, 2013)', url: UCSD },
+  { label: 'Mejia and Kleissl, “Soiling losses for solar photovoltaic systems in California,” Solar Energy 95 (2013), 357–363', url: PAPER },
+  { label: 'CPUC: California Solar Consumer Protection Guide (maintenance responsibility)', url: CPUC_GUIDE },
+  { label: 'CSLB: Solar Smart, license classes for solar work', url: CSLB_SOLAR },
+  { label: 'NREL: Annual Technology Baseline 2024, residential PV operation and maintenance', url: NREL_ATB },
+];
+
+const keyFacts: KeyFact[] = [
+  {
+    label: 'Daily loss without rain',
+    value: 'Under 0.05%',
+    note: 'Average efficiency loss per dry day across 186 California sites (2010 data).',
+    source: { publisher: 'UC San Diego', date: UPDATED, url: UCSD },
+  },
+  {
+    label: 'After a 145-day drought',
+    value: '7.4% lost',
+    note: 'Panels that had not been washed or rained on all summer.',
+    source: { publisher: 'UC San Diego', date: UPDATED, url: UCSD },
+  },
+  {
+    label: 'Rain that resets panels',
+    value: 'Over 0.1 inch',
+    note: 'The study compared output after more than 0.1 inch of rain.',
+    source: { publisher: 'UC San Diego', date: UPDATED, url: UCSD },
+  },
+  {
+    label: 'Mid-summer wash, 5 kW home',
+    value: 'About $20',
+    note: 'Electricity gained before the drought ended, in about 2½ months.',
+    source: { publisher: 'UC San Diego', date: UPDATED, url: UCSD },
+  },
+];
+
+const faqs = [
+  {
+    question: 'Do solar panels need to be cleaned in California?',
+    answer:
+      'Most don’t need a regular cleaning. The UC San Diego study found rain of more than 0.1 inch restored panels to clean output, and that the loss built up over a whole dry summer was 7.4 percent after 145 days. The exceptions are bird droppings, panels tilted under five degrees, and homes right beside a highway, factory or farm operation.',
+  },
+  {
+    question: 'How often should I clean solar panels in California?',
+    answer:
+      'Let your monitoring decide rather than the calendar. If a late-summer month is clearly below the same month last year and the loss disappears after the first real rain, the dirt cost you that difference. Clean before the rains only if that difference is worth more than a cleaning, and clean bird droppings when you see them.',
+  },
+  {
+    question: 'Can I clean solar panels with a garden hose?',
+    answer:
+      'For ordinary dust, a gentle rinse from the ground is the lowest-risk option. Use normal hose pressure, rinse when the panels are cool, keep water away from wiring and junction boxes, and check the method against your panel maker’s manual. Don’t climb onto a roof to do it; a second-story or steep roof is a job for someone with fall protection.',
+  },
+  {
+    question: 'Is it safe to pressure wash solar panels?',
+    answer:
+      'Don’t, unless your panel maker’s manual says it is allowed. High-pressure water and hard scrubbing can damage seals and coatings, and a warranty claim is judged against the manufacturer’s own care instructions. Ask any cleaning company what pressure and tools it uses before it starts.',
+  },
+  {
+    question: 'Does my solar warranty cover cleaning?',
+    answer:
+      'No. Cleaning is maintenance. The CPUC’s consumer guide says owners are responsible for maintenance and repairs unless they buy a maintenance plan or the system comes with one. If you lease the system, the contract says whether cleaning is your job or the owner’s.',
+  },
+];
+
 export const metadata: Metadata = {
-  title: "Solar Panel Cleaning in California: Is It Worth It?",
-  description: "Does cleaning solar panels help in California? A UC San Diego study, when to clean, safe DIY steps, and what voids your panel warranty.",
-  alternates: { canonical: '/blog/solar-panel-cleaning-california' },
+  title: metaTitle,
+  description: metaDescription,
+  alternates: { canonical: PATH },
   openGraph: {
-    title: 'Solar Panel Cleaning California: 2026 Guide',
-    description: 'Cost, frequency, DIY risks, and when solar panel cleaning actually pays off in California.',
+    title: metaTitle,
+    description: metaDescription,
     type: 'article',
     publishedTime: '2026-04-24T00:00:00Z',
-    url: 'https://ratereliefca.com/blog/solar-panel-cleaning-california',
+    modifiedTime: `${UPDATED}T00:00:00Z`,
+    url: `https://ratereliefca.com${PATH}`,
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 export default function SolarPanelCleaningCA() {
   return (
-    <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Panel Cleaning in California: Cost, DIY Risks, and When It Actually Helps (2026)"} url="https://ratereliefca.com/blog/solar-panel-cleaning-california" datePublished="2026-04-24" dateModified="2026-09-22" description={"How much solar panel cleaning costs in California, when production loss justifies it, DIY vs pro, warranty traps, and the seasonal windows that matter most in wildfire country."} />
+    <PublicLayout breadcrumbLabel="Solar panel cleaning in California" breadcrumbParent={HUB}>
+      <ArticleJsonLd
+        variant="Article"
+        domain="crr"
+        headline="Solar panel cleaning in California: when it pays, and how to do it safely"
+        url="https://ratereliefca.com/blog/solar-panel-cleaning-california"
+        datePublished="2026-04-24"
+        dateModified="2026-09-23"
+        description="What California research says about dirty solar panels, when a cleaning is worth paying for, how to clean safely without risking the warranty, and what to ask a cleaning company."
+      />
       <Header />
-      <main className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <article className="max-w-3xl mx-auto">
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link>
-              <span>/</span>
-              <Link href="/blog" className="hover:text-primary">Blog</Link>
-              <span>/</span>
-              <span className="text-foreground">Solar Panel Cleaning California</span>
-            </nav>
+      <GuideShell
+        title="Solar panel cleaning in California: when it pays, and how to do it safely"
+        eyebrow="Solar panel maintenance"
+        crumbs={[HUB]}
+        crumbLabel="Solar panel cleaning"
+        updated={UPDATED}
+        sources={sources}
+        keyFacts={keyFacts}
+        faqs={faqs}
+        hub="maintenance"
+        path={PATH}
+        quickCheckTopic="California solar maintenance"
+        leadCount={2}
+        inquiry={<SolarInquiry topic="California solar maintenance" />}
+      >
+        <p>
+          Usually not on a schedule. In most of California, rain cleans panels well enough, and a UC San Diego
+          study found that washing a typical 5 kW home system in mid-summer recovered about $20 of electricity.
+          Clean when your monitoring shows a dry-season loss worth more than the cleaning, or promptly for bird
+          droppings, ash, or dust from a nearby road, factory or farm.
+        </p>
+        <p className="text-sm text-muted-foreground">
+          California Rate Relief is a referral service. We are not a licensed contractor.
+          We do not sell panel cleaning. Cleaning is one part of upkeep; the rest is in{' '}
+          <Link href="/solar-panel-maintenance-california">our solar panel maintenance guide</Link>.
+        </p>
 
-            <header className="mb-10">
-              <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Maintenance · California</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
-                Solar Panel Cleaning in California: Cost, DIY Risks, and When It Actually Helps
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                California&apos;s wildfire smoke, dry summers, and agricultural dust make panel cleaning a bigger deal here than in most of the country. Here&apos;s when it&apos;s worth paying for — and when pressure-washing your roof voids your warranty.
-              </p>
-            </header>
+        <section>
+          <h2>What California’s own soiling study found</h2>
+          <p>
+            Felipe Mejia and Jan Kleissl at UC San Diego used California Solar Initiative data from 186
+            residential and commercial systems, spread from the San Francisco Bay Area to the Mexican border,
+            covering 2010. They compared output right after more than 0.1 inch of rain with output during dry
+            spells. The paper appeared in the journal <em>Solar Energy</em> in 2013.{' '}
+            <Cite publisher="Solar Energy (2013)" href={PAPER} date={UPDATED} />
+          </p>
+          <p>
+            On average, panels lost a little under 0.05 percent of efficiency per day without rain. Panels left
+            unwashed through a 145-day summer drought lost 7.4 percent. The university’s release put the payoff
+            plainly: for a typical 5 kW home system, a wash halfway through summer would be worth “a mere $20”
+            of electricity before the drought ended, and “most homeowners won’t get their money back for hiring
+            someone to wash their rooftop panels.”{' '}
+            <Cite publisher="UC San Diego, July 2013" href={UCSD} date={UPDATED} />
+          </p>
+          <p>
+            Two details matter for where you live. The researchers found no statistically significant
+            difference between regions during the drought period, although sites in the Los Angeles basin and
+            the Central Valley had dirtier panels. And panels mounted at less than five degrees of tilt lost more,
+            because rain and gravity clear flat glass less well.
+          </p>
+        </section>
 
-            <div className="prose prose-slate max-w-none">
-              <p className="p-4 rounded-lg border border-border bg-card text-sm">
-                <strong>TL;DR:</strong> Professional solar panel cleaning in California runs $150–$450 per residential system, once or twice a year. Clean panels after wildfire smoke events, post-Santa Ana winds, or when production drops clearly below the prior year&apos;s same month. Do NOT pressure-wash. It voids most manufacturer warranties. DIY with a soft brush and deionized water is fine if the roof is safely accessible; otherwise pay a professional.
-              </p>
+        <section>
+          <h2>When cleaning is worth paying for</h2>
+          <p>The same researchers named the cases where washing makes sense:</p>
+          <ul>
+            <li><strong>Bird droppings.</strong> Heavy droppings block light on individual cells and don’t rinse off like dust. If birds nest under the array, see <Link href="/blog/solar-panel-bird-proofing">the bird-proofing guide</Link>.</li>
+            <li><strong>Very flat panels.</strong> Arrays tilted less than five degrees, common on low-slope roofs and carports.</li>
+            <li><strong>Heavy local dust.</strong> Homes directly beside a highway, factory or agricultural operation.</li>
+          </ul>
+          <p>
+            Ash from a nearby wildfire is not in the study, but it behaves the same way: a visible layer that
+            your output data will show. Whatever the cause, test it with numbers:
+          </p>
+          <ol>
+            <li>Compare a dry-season month in your monitoring app with the same month last year.</li>
+            <li>Estimate the kWh a cleaning would recover before the next real rain.</li>
+            <li>Multiply by what that power is worth to you: your rate per kWh if you would have used it, or your export credit if it would have gone to the grid.</li>
+            <li>Compare that with the cleaning quote. If the quote is bigger, wait for rain.</li>
+          </ol>
+          <p>
+            What cleaning quotes depend on, and NREL’s yearly upkeep benchmark, are in{' '}
+            <Link href="/blog/solar-panel-maintenance-cost">solar panel maintenance and cleaning costs</Link>.
+          </p>
+        </section>
 
-              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
-              <div className="not-prose my-8">
-                <HeroQuickCheck topic="California solar maintenance" />
-              </div>
+        <section>
+          <h2>How often to clean solar panels in California</h2>
+          <p>
+            There is no statewide schedule that fits every roof, and a fixed contract can pay for cleanings the
+            rain would have done. For most homes, the practical pattern is to check output at the end of the dry
+            season, clean only if the loss is worth it, and deal with droppings or ash when they appear. Homes in
+            the dustier cases above may find one cleaning before the rains pays; homes with steeply tilted panels
+            in a clean area may never need one.
+          </p>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Much Does Dirt Actually Cost You?</h2>
-              <p>
-                Studies of residential PV in the Southwest US generally find <strong>2–7% production loss</strong> from soiling in typical conditions, spiking to 10–25% after heavy wildfire ash, dust storms, or prolonged drought. California&apos;s Central Valley agricultural corridor and the fire-prone Sierra foothills see the higher end of that range.
-              </p>
-              <p>
-                For a 10 kW system producing roughly 14,000–16,000 kWh/year in California, a 5% soiling loss equals about 750 kWh. At PG&amp;E&apos;s average residential rate of 41¢/kWh, that&apos;s roughly $300/year, enough to justify one professional cleaning. At SMUD&apos;s 17¢/kWh, the same loss is $125/year, which changes the math.
-              </p>
+        <section>
+          <h2>How to clean panels yourself without damaging them</h2>
+          <p>If your panels are reachable from the ground and your manual allows it, this is what you need:</p>
+          <ul>
+            <li>A garden hose at normal pressure, or a soft brush or sponge on an extension pole.</li>
+            <li>Purified or deionized water if your tap water leaves spots.</li>
+            <li>Your panel maker’s manual, open to the cleaning section.</li>
+            <li>A cool time of day, such as early morning, so cold water doesn’t hit hot glass.</li>
+          </ul>
+          <p>And what to avoid:</p>
+          <ul>
+            <li>Walking or kneeling on panels, or working on a roof without fall protection.</li>
+            <li>Pressure washers, scrapers, abrasive pads and harsh detergents, unless the manual approves them.</li>
+            <li>Spraying water into junction boxes, connectors or under the array.</li>
+            <li>Forcing off ice or snow on mountain homes; let it melt.</li>
+          </ul>
+          <p>
+            Your panel maker’s manual is the standard a warranty claim is judged against, so follow its method
+            over any general advice, including this page’s.
+          </p>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What a California Soiling Study Actually Found</h2>
-              <p>
-                The clearest answer for California comes from a University of California San Diego study that tracked 186 grid-connected home and commercial PV sites across the state through 2010, comparing output during dry stretches against output right after rain (Mejia and Kleissl, &ldquo;Soiling Losses for Solar Photovoltaic Systems in California,&rdquo; <em>Solar Energy</em>, 2013). They measured an average efficiency loss of about 0.05% for every day without rain — roughly 7.4% lost after a 145-day dry stretch, which is close to a full Central Valley summer.
-              </p>
-              <p>
-                Two parts of that finding matter more than the headline number. First, rain does most of the cleaning for you: in the study, 0.1 inches of rain or more brought panels back to clean-panel output. That&apos;s why California&apos;s wet season needs little attention and the dry summer and fall are when soiling actually builds up. Second, the researchers found that washing a typical system halfway through a summer drought gained sites about 0.8% more energy for the year on average — for a typical 5 kW home system, they put that at roughly $20 of mid-summer electricity, and concluded most homeowners &ldquo;won&apos;t get their money back&rdquo; paying someone to wash their roof.
-              </p>
-              <p>
-                UC San Diego&apos;s own plain-language summary of the study calls out the exception by name: sites with heavy bird droppings, or downwind of a highway, factory, or agricultural field, where soiling runs heavier than ordinary dust and a cleaning is more likely to pay for itself — which is the same list under &ldquo;when to clean&rdquo; below. Sites in SCE&apos;s territory (more inland, drier) showed the highest average soiling in the study; SDG&amp;E&apos;s coastal territory showed the lowest, though the researchers noted that regional gap wasn&apos;t statistically significant.
-              </p>
-              <p>
-                So: are panels in California self-cleaning? Mostly, yes — outside the dry-season stretch and outside the bird-dropping/dust-corridor cases above, which is also the honest reason most homeowners don&apos;t need a standing cleaning contract.
-              </p>
+        <section>
+          <h2>Hiring a solar panel cleaner</h2>
+          <p>Ask before anyone gets on the roof:</p>
+          <ul>
+            <li>What water pressure, water type and tools will you use?</li>
+            <li>Can you show a certificate of liability insurance?</li>
+            <li>Who pays if a panel, tile or gutter is damaged?</li>
+            <li>Will you compare output before and after?</li>
+          </ul>
+          <p>
+            A cleaner should wash, not repair. Anything that touches wiring, connectors, mounts or panel
+            positions is solar work, and the Contractors State License Board’s advice is: “Do not use a
+            contractor who is not licensed to perform solar work.”{' '}
+            <Cite publisher="CSLB" href={CSLB_SOLAR} date={UPDATED} /> If a cleaner reports broken glass or loose
+            wiring, get it checked by a licensed contractor; <Link href="/blog/solar-panel-repair-cost">our repair cost guide</Link>{' '}
+            explains what drives that bill.
+          </p>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Professional Cleaning Cost in California</h2>
-              <div className="overflow-x-auto my-6">
-                <table className="w-full border-collapse text-sm">
-                  <thead>
-                    <tr className="border-b-2 border-border">
-                      <th className="text-left py-3 pr-4 font-bold text-foreground">System size</th>
-                      <th className="text-center py-3 px-3 font-bold text-foreground">Cost per cleaning</th>
-                      <th className="text-center py-3 px-3 font-bold text-foreground">Cost per panel</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-border">
-                      <td className="py-3 pr-4 font-medium">Small (4–6 kW, ~10–14 panels)</td>
-                      <td className="text-center py-3 px-3">$150–$225</td>
-                      <td className="text-center py-3 px-3">$12–$18</td>
-                    </tr>
-                    <tr className="border-b border-border">
-                      <td className="py-3 pr-4 font-medium">Medium (7–10 kW, ~16–24 panels)</td>
-                      <td className="text-center py-3 px-3">$225–$350</td>
-                      <td className="text-center py-3 px-3">$10–$15</td>
-                    </tr>
-                    <tr>
-                      <td className="py-3 pr-4 font-medium">Large (12–18 kW, 28–44 panels)</td>
-                      <td className="text-center py-3 px-3">$350–$500</td>
-                      <td className="text-center py-3 px-3">$9–$13</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p>Cost climbs for two-story homes, steep roofs, tile-roof access difficulty, or if the cleaner needs to deploy a boom lift. Confirm before booking.</p>
+        <section>
+          <h2>Cleaning, warranties and leases</h2>
+          <p>
+            Cleaning is maintenance, and the CPUC’s consumer guide says that “unless you purchase a maintenance
+            plan or your system comes with one, you will be responsible for any maintenance and repairs.”{' '}
+            <Cite publisher="CPUC" href={CPUC_GUIDE} date={UPDATED} /> If a company owns your system under a
+            lease or PPA, check the contract before hiring anyone: it says whether cleaning is your job, and a
+            third party on a leased array can start a dispute.
+          </p>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">When to Schedule Cleaning (California-Specific)</h2>
-              <ul className="space-y-3">
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>After wildfire smoke events.</strong> A thin layer of ash cuts production dramatically. Don&apos;t wait — book cleaning within 2–3 weeks of visible ash fall.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>End of summer / start of fall.</strong> Clean once before the first winter rains, especially in the Central Valley where summer dust accumulates.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>After Santa Ana winds.</strong> Southern California&apos;s fall dust-laden winds deposit significant grit that rain alone doesn&apos;t fully remove.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>When production drops 10%+ below the prior year&apos;s same month.</strong> Check your monitoring app (Enphase Enlighten, SolarEdge, Tesla, etc.) against the year-over-year baseline.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-status-warning flex-shrink-0 mt-0.5" />
-                  <div><strong>Winter rain often does the job.</strong> In coastal California, heavy winter rains can wash off most dust. Central Valley and inland Southern California do not reliably get enough winter rain for this.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div><strong>Bird droppings and heavy pollen.</strong> These don&apos;t behave like ordinary dust. The UC San Diego researchers specifically flagged bird droppings — from nesting or roosting near the array — as one of the cases where paying for a cleaning is worth it, because it doesn&apos;t rinse off the way dust does. Pollen is milder: it&apos;s part of the general soiling the study measured, and a normal spring rain usually clears it with everything else. If your home is near almond, walnut, or other orchard operations during bloom, treat heavy pollen like the agricultural-dust case above and check your production after the season rather than guessing.</div>
-                </li>
-              </ul>
-              <p className="mt-3">
-                One more read on your monitoring app: a production drop across your whole system that tracks the dry season points to soiling. A drop isolated to one panel or string, or a decline that doesn&apos;t recover after a rain or a cleaning, points to something else — see <Link href="/solar-problems/solar-panel-degradation-california" className="text-primary underline">how panel degradation differs from a temporary soiling loss</Link>.
-              </p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">DIY Risks (And What Kills Your Warranty)</h2>
-              <p>
-                Doing it yourself avoids a service fee, but several common mistakes void your panel manufacturer warranty.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <div><strong>Pressure washing is a warranty killer.</strong> High-pressure water damages panel seals and can delaminate glass/EVA. Every major Tier-1 manufacturer (Qcells, Silfab, REC, Canadian Solar, Panasonic/Maxeon, Longi, Jinko) explicitly disallows pressure washing in the warranty.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <div><strong>Hot water on hot panels can crack glass.</strong> Thermal shock is real. Clean early morning or on overcast days when panels are near ambient temp.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <div><strong>Abrasive pads scratch anti-reflective coatings.</strong> Only use soft microfiber, sheep&apos;s wool mops, or telescoping soft-bristle brushes designed for PV.</div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <AlertTriangle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <div><strong>Household detergents streak.</strong> Use deionized water alone, or a dilute dish-soap solution followed by clean-water rinse. Hard tap-water minerals leave spots that reduce light transmission.</div>
-                </li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How to Clean Solar Panels Safely — What the Manufacturers Say</h2>
-              <p>
-                Panel makers publish their own cleaning instructions. We checked two brands installed on California roofs — Tesla and Q CELLS — and their published guidance agrees on the same handful of rules.
-              </p>
-              <p className="font-semibold mt-4 mb-2">Do:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Rinse from ground level with a garden hose, or use lukewarm water and a soft sponge or cloth for anything stuck-on (Tesla owner&apos;s manual; Q CELLS Q.PRO installation manual).</li>
-                <li>Clean when the panels are cool — an overcast sky or early/late in the day. Both manuals warn that rinsing hot panels risks thermal shock to the glass.</li>
-                <li>For heavy soiling like bird droppings, both point homeowners toward hiring a cleaning service rather than scrubbing it off yourself. You don&apos;t need to get on the roof for a normal seasonal rinse — a hose from the ground covers most cases.</li>
-              </ul>
-              <p className="font-semibold mt-4 mb-2">Don&apos;t:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Use a pressure washer or a scraper. Q CELLS&apos; manual rules out both by name; Tesla&apos;s instructions never list pressure equipment as an approved method.</li>
-                <li>Use abrasive pads, cloths, or detergents — Q CELLS specifically excludes abrasive detergents and rough cloths.</li>
-                <li>Get water on the wiring or the area underneath the panels (Tesla).</li>
-                <li>Force ice or snow off. Q CELLS says remove it &ldquo;without force,&rdquo; and Tesla&apos;s manual tells owners not to shovel snow off panels at all. Most of California never sees this, but at elevation — Tahoe, the Sierra foothills — let it melt or call a professional instead of scraping; scraping risks cracking the glass or the frame seal.</li>
-              </ul>
-              <p className="mt-3">
-                Neither manual we reviewed used the words &ldquo;voids the warranty&rdquo; specifically for cleaning method — but both publish this as the accepted method in the same document that governs installation and care, which is the standard a damage claim gets measured against. If you hire a cleaning company, ask what water pressure and tools they use before they&apos;re on your roof.
-              </p>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Real Question: Is Cleaning Worth It for Your System?</h2>
-              <p>This depends on three variables:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Your utility rate.</strong> PG&amp;E (~41¢/kWh) makes cleaning easily worthwhile. SMUD or Roseville Electric (~17¢) may not justify pro cleaning annually.</li>
-                <li><strong>Your local soiling rate.</strong> Central Valley and SoCal desert communities accumulate dust fast. Bay Area and North Coast coastal homes don&apos;t.</li>
-                <li><strong>Roof accessibility.</strong> Single-story ranch homes with low-slope roofs = DIY is safe. Two-story homes with steep tile = pay a professional.</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Finding a Reputable Solar Cleaning Company</h2>
-              <p>
-                California doesn&apos;t require a specific contractor license for solar cleaning (unlike installation, which requires C-46 or C-10 through the Contractors State License Board). That means anyone can hang a shingle. Ask three questions before booking:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Do you carry liability insurance (and can you show a certificate of insurance)?</li>
-                <li>Do you use deionized water and soft-bristle brushes. Never pressure washing?</li>
-                <li>Do you provide before/after monitoring-app comparison to confirm production lift?</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">How often should I clean my solar panels in California?</h3>
-                  <p className="text-foreground/80">Once per year is enough in most California climates. Twice per year is warranted in Central Valley, fire-prone Sierra foothills, and agricultural corridors. Post-wildfire or post-Santa Ana event: clean promptly regardless of the schedule.</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">Does my warranty cover cleaning?</h3>
-                  <p className="text-foreground/80">No. Panel manufacturer warranties cover defects and degradation, not routine cleaning. Workmanship warranties from your installer also do not cover cleaning. It&apos;s a homeowner responsibility.</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">Do robotic cleaners work?</h3>
-                  <p className="text-foreground/80">Yes, and they&apos;re a growing category for commercial systems. For residential 10–20 panel systems, a consumer robotic cleaner (Solabot, iSolarCleaner) makes sense mainly with heavy soiling; compare its price with a professional cleaning quote over the years you expect to use it.</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">Should I wait for rain instead?</h3>
-                  <p className="text-foreground/80">Rain removes roughly 70% of soiling on flat panels and less on steeper tilts. In coastal California with reliable winter rains, waiting often works. In Central Valley or inland Southern California with drier winters, rain alone is insufficient.</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">What about snow on solar panels in California?</h3>
-                  <p className="text-foreground/80">Most California homes never see it. If you&apos;re at elevation and panels do get snow, don&apos;t shovel or scrape it — manufacturer guidance says to let it melt or clear it without force, since forcing it off risks cracking the glass or the frame seal.</p>
-                </div>
-              </div>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><Link href="/blog/what-happens-to-solar-panels-after-25-years" className="text-primary underline">What Happens to Solar Panels After 25 Years?</Link></li>
-                <li><Link href="/blog/is-my-roof-good-for-solar-california" className="text-primary underline">Is My Roof Good for Solar in California?</Link></li>
-                <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California</Link></li>
-              </ul>
-            </div>
-          <ArticleCTA />
-          <div className="mt-8">
-            <SolarInquiry topic="California solar maintenance" />
-          </div>
-             <RelatedGuides
-               heading="If output has dropped and cleaning did not fix it"
-               links={[
-                 { href: "/solar-problems/solar-panels-not-producing-enough", label: "The diagnostic order that finds the real cause" },
-                 { href: "/solar-problems/solar-production-winter-california", label: "When a winter drop is normal and when it is not" },
-               ]}
-             />
-
-          </article>
-        </div>
-      </main>
+        <section>
+          <h2>If cleaning doesn’t bring output back</h2>
+          <p>
+            A loss that stays after a rain or a wash is not dirt. A drop on one panel or one string points to
+            shade, damage or a failed microinverter; a sudden drop across the whole system points to the
+            inverter. Work through <Link href="/solar-problems/solar-panels-not-producing-enough">the checks for panels that under-produce</Link>,
+            and remember that a lower December is normal (see{' '}
+            <Link href="/solar-problems/solar-production-winter-california">winter production in California</Link>). A
+            small, steady decline over years is <Link href="/solar-problems/solar-panel-degradation-california">normal panel degradation</Link>,
+            which cleaning can’t reverse.
+          </p>
+          <p>
+            Planning a new roof? Cleaning is a poor reason to get on the roof, but a reroof is a good time to
+            deal with everything at once; see <Link href="/blog/is-my-roof-good-for-solar-california">our roof suitability guide</Link>.
+          </p>
+        </section>
+      </GuideShell>
       <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="premium" /></div>
     </PublicLayout>
   );
 }
