@@ -248,6 +248,12 @@
       "to": "/commercial-solar/average-wattage-of-a-commercial-solar-panel",
       "anchor": "what wattage commercial panels are",
       "why": "CREATE_DEDICATED: cost-per-watt holds the 'average wattage of a commercial solar panel' impressions. Suggested placement: the per-panel / cost-per-square-foot passage. Not in any Tier 2 lane's ownership list, so not edited here."
+    },
+    {
+      "from": "/commercial-solar/cost-per-watt-california",
+      "to": "/commercial-solar/commercial-solar-tax-credit",
+      "anchor": "what the §48E credit rules say in 2026",
+      "why": "cost-per-watt gets 'costs and incentives for commercial solar' queries and has its own tax block; one link lets readers reach the full statute summary. Optional."
     }
   ],
   "skipped": [
@@ -289,5 +295,48 @@
       "date": "2026-09-23",
       "hub": "commercial"
     }
-  ]
+  ],
+  "row_accounting": {
+    "rows_total": 22,
+    "urls_total": 14,
+    "done_rows": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      18,
+      20,
+      21
+    ],
+    "partial_rows": [
+      7
+    ],
+    "skipped_rows": {
+      "6": "folded into /blog/solar-carport-california-guide",
+      "9": "folded into /commercial-solar/companies-california",
+      "15": "folded into /commercial-solar/car-dealerships-going-solar-california",
+      "17": "navigational brand query; generic intent folded into lease page",
+      "19": "folded into /commercial-solar/solar-developers#ppa-providers",
+      "22": "folded into /commercial-solar/solar-developers"
+    },
+    "note": "Row numbers are rank_in_tier in assign_t2_commercial.csv."
+  },
+  "data_method": "CPUC DGStats Interconnected Applications zip (downloaded 2026-09-23, data through 2026-05-31; PG&E Jan2020-May2026, SCE Jan2020-May2026, SDG&E Historical-May2026 files). Filter: Technology Type contains 'Photovoltaic', Application Status 'Interconnected', App Approved Date in 2025; non-residential = Customer Sector in {Commercial, Industrial, Educational, Non-Profit, Other Government, Military} (3,607 systems). Watts/module = System Size DC*1000 / sum(Generator Quantity 1..11), kept if 150-800 W. CEC PV Module List full data ('Data has not changed since September 21, 2026'), non-BIPV, CEC Listing Date 2025-09-21..2026-09-21 (1,651 models); efficiency = Pmax/(A_c*1000).",
+  "gates": {
+    "tsc": "flock'd npx tsc --noEmit -p . clean (EXIT 0) after every batch, last after 49f07dd content",
+    "qc-gate.mjs": "PASSED (no JSON pages edited)",
+    "qc-gate-tsx.mjs --only commercial-solar": "0 fails on this agent's pages; no DUPLICATE warn (all under 25%). The 2 fails are the /commercial-solar hub route (SCHEMA, LINKS), pre-existing and reported in Tier 1: the gate reads src/app/commercial-solar/page.tsx, which renders DecisionPage.",
+    "qc-gate-tsx.mjs --only blog/commercial-solar-financing-california": "PASS (was SCHEMA fail before the move off DecisionPage)",
+    "qc-gate-tsx.mjs --only blog/solar-carport-california-guide": "PASS",
+    "qc-gate-tsx.mjs --only solar-installers/sunrun-vs-sunpower": "PASS",
+    "internal links": "all 47 internal hrefs in changed files resolve to app routes or JSON slugs"
+  }
 }
