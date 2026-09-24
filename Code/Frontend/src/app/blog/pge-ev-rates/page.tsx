@@ -37,6 +37,7 @@ const sources = rateSources(
   'pgeBsc',
   'pgeFinancialAssistance',
   'cpucNbt',
+  'pgeTariffIndex',
 );
 
 const faqs = [
@@ -49,6 +50,21 @@ const faqs = [
     question: 'What was the PG&E EV2-A off-peak rate in 2025?',
     answer:
       "30.339 cents per kWh from January 1, 2025, then 31.026 cents in summer and 31.027 cents in winter from March 1, and 30.036 cents from September 1 through December 31, 2025, per PG&E's rate tables for each period. It fell to 28.474 cents on January 1, 2026 and to 22.558 cents on March 1, 2026.",
+  },
+  {
+    question: 'Is the PG&E EV2-A off-peak rate still 30 cents per kWh?',
+    answer:
+      'No. The off-peak price was about 30 cents through 2025 (30.036 cents from September 1 to December 31, 2025) and fell to 28.474 cents on January 1, 2026. Since March 1, 2026 it has been 22.558 cents per kWh, summer and winter, with a daily Base Services Charge added to the bill.',
+  },
+  {
+    question: 'Where is the PG&E EV2-A rate schedule PDF for 2026?',
+    answer:
+      'EV2-A is Rate A of PG&E Electric Schedule EV2. The current tariff PDF is ELEC_SCHEDS_EV2 (Sch).pdf, linked from PG&E’s Tariffs page; its price sheets show the rates effective March 1, 2026. PG&E’s residential rate table spreadsheet has the same prices on its Electric Vehicle and Technology tab.',
+  },
+  {
+    question: 'How much does PG&E charge to charge an EV at home?',
+    answer:
+      'It depends on the plan and the hour. On EV2-A, off-peak charging (midnight to 3 p.m.) costs 22.558 cents per kWh, so 250 kWh a month comes to about $56.40. The same charging from 4 to 9 p.m. in summer would cost 53.809 cents per kWh. On the separately metered EV-B, off-peak is 26.465 cents in summer and 23.504 cents in winter.',
   },
   {
     question: 'What is the difference between EV2-A and EV-B?',
@@ -188,6 +204,10 @@ export default function PgeEvRatesPage() {
                 charge is counted. Earlier moves track PG&amp;E&apos;s overall rate changes, covered in{' '}
                 <Link href="/blog/did-pge-rates-go-up" className={guideLink}>
                   every PG&amp;E rate change since 2023
+                </Link>
+                , and the non-EV plans are listed in{' '}
+                <Link href="/blog/pge-rate-schedules" className={guideLink}>
+                  PG&amp;E&apos;s residential rate schedules
                 </Link>
                 .
               </p>

@@ -26,7 +26,9 @@ const hub = { label: 'California utility rate tracker', href: '/california-utili
 
 const sources = rateSources(
   'pgeResRatesCurrent',
+  'pgeTariffIndex',
   'pgeEtoucTariff',
+  'pgeEtoudTariff',
   'pgeEelecTariff',
   'pgeEv2Tariff',
   'pgeSolarBill',
@@ -72,6 +74,26 @@ const faqs = [
     question: 'What are PG&E off-peak hours?',
     answer:
       'On E-TOU-C, every hour outside 4 to 9 p.m. On E-TOU-D, every hour outside 5 to 8 p.m. on weekdays, plus weekends and holidays. On EV2-A and E-ELEC, midnight to 3 p.m. every day is off-peak, the cheapest period on those plans.',
+  },
+  {
+    question: 'What does PG&E charge during peak hours?',
+    answer:
+      'From March 1, 2026, the summer peak price is 52.240 cents per kWh on E-TOU-C, 47.708 cents on E-TOU-D, 53.809 cents on EV2-A and 55.214 cents on E-ELEC. Winter peak prices are lower: 39.757, 38.747, 41.099 and 32.063 cents. E-TOU-C customers get an 8.140-cent credit on usage within baseline.',
+  },
+  {
+    question: 'What are the PG&E E-TOU-D rates?',
+    answer:
+      'From March 1, 2026: 47.708 cents per kWh on summer peak (5 to 8 p.m. on non-holiday weekdays) and 34.212 cents off-peak; 38.747 cents on winter peak and 34.886 cents off-peak. E-TOU-D is opt-in, has no baseline credit, and adds the daily Base Services Charge.',
+  },
+  {
+    question: 'What is the PG&E Electric Home rate plan?',
+    answer:
+      'Electric Home is PG&E’s name for Schedule E-ELEC, a time-of-use plan for homes with an EV, battery storage or an electric heat pump. Peak is 4 to 9 p.m. every day, part-peak 3 to 4 p.m. and 9 p.m. to midnight, and off-peak midnight to 3 p.m. It is required for new Solar Billing Plan customers.',
+  },
+  {
+    question: 'Where can I find PG&E’s rate tariffs?',
+    answer:
+      'On PG&E’s Tariffs page, which links a PDF for every electric schedule and rule, for example ELEC_SCHEDS_E-TOU-C.pdf. PG&E’s residential rate table for March 1, 2026 to present puts every residential price on one spreadsheet. Our PG&E rate schedules guide lists each residential schedule and what it costs.',
   },
   {
     question: 'What is the PG&E EV2-A off-peak rate per kWh?',
@@ -158,8 +180,10 @@ export default function PGETimeOfUseRates2026() {
 
               <h2>PG&amp;E peak hours by plan</h2>
               <p>
-                Summer on these plans runs June 1 through September 30 and winter October 1 through May 31. The hours
-                themselves do not change with the season; the prices do.
+                PG&amp;E&apos;s own plan page describes the peak as the &quot;higher-priced&quot; hours: 4 to 9 p.m. on E-TOU-C,
+                and 5 to 8 p.m. on weekdays on E-TOU-D, with every other hour lower-priced. Summer on these plans runs June 1
+                through September 30 and winter October 1 through May 31. The hours themselves do not change with the season;
+                the prices do.
               </p>
               <DataTable
                 caption="PG&E residential time-of-use periods"
@@ -189,6 +213,19 @@ export default function PGETimeOfUseRates2026() {
                 ]}
                 note={<>Source: PG&amp;E residential rates table, March 1, 2026 to present (Advice Letter 7846-E), checked September 23, 2026. E-TOU-C prices are before its 8.140¢ baseline credit. All four plans add the daily Base Services Charge; CARE customers get 35% off usage charges.</>}
               />
+
+              <h2>The PG&amp;E rate tariffs behind these prices</h2>
+              <p>
+                Each plan is a CPUC-approved tariff in PG&amp;E&apos;s tariff book: Schedule E-TOU-C, Schedule E-TOU-D, Schedule EV2
+                (whose rate A is EV2-A) and Schedule E-ELEC. The prices above came into effect with Advice Letter 7846-E on
+                March 1, 2026. Each tariff PDF also carries the plan&apos;s eligibility rules, holidays and bill-protection terms,
+                which the rate table leaves out. Our{' '}
+                <Link href="/blog/pge-rate-schedules" className={guideLink}>
+                  guide to every PG&amp;E residential rate schedule
+                </Link>{' '}
+                lists the non-time-of-use schedules too, including tiered E-1 and the multifamily plans, and explains how to read
+                a tariff sheet.
+              </p>
 
               <h2>E-TOU-C: peak pricing 4 to 9 p.m. every day</h2>
               <p>

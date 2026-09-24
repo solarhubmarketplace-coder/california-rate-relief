@@ -170,6 +170,47 @@ export const SRC = {
   chargepointPricing: { label: 'ChargePoint: What are the pricing policies and fees? (updated June 16, 2026)', url: 'https://www.chargepoint.com/drivers/support/faqs/what-are-pricing-policies-and-fees-i-should-be-aware' },
   chargepointServiceFee: { label: 'ChargePoint: What is the service fee? (updated June 16, 2026)', url: 'https://www.chargepoint.com/drivers/support/faqs/what-service-fee' },
   cdfaEvfsFaq: { label: 'CDFA Division of Measurement Standards, EV Fueling Systems FAQ', url: 'https://www.cdfa.ca.gov/dms/pdfs/EVFS_FAQ.pdf' },
+
+  // --- Tier 3 additions (2026-09-23): each fetched and read on this date. ---
+  // Finding a utility and CCA by address, and statewide prices.
+  cecServiceAreas: { label: 'California Energy Commission: Electric Utility Service Areas map (dataset updated August 5, 2026)', url: 'https://data.ca.gov/dataset/electric-utility-service-areas' },
+  calccaMap: { label: 'California Community Choice Association: interactive CCA map and address lookup', url: 'https://cal-cca.org/cca-map/' },
+  openeiUrdb: { label: 'OpenEI: U.S. Utility Rate Database (rate lookup by ZIP code)', url: 'https://openei.org/wiki/Utility_Rate_Database' },
+  eiaEpmFeb2026: { label: 'U.S. EIA, Electric Power Monthly, February 2026, Table 5.6.B (full-year 2025, preliminary)', url: 'https://www.eia.gov/electricity/monthly/archive/february2026.pdf' },
+  cpucD2006003: { label: 'CPUC Decision 20-06-003 (June 11, 2020): residential deposits and reconnection fees', url: 'https://docs.cpuc.ca.gov/publisheddocs/published/g000/m340/k648/340648092.pdf' },
+  // PG&E tariff book, rules and bill pages.
+  pgeTariffIndex: { label: 'PG&E: Tariffs (electric rate schedules and rules, with PDF links)', url: 'https://www.pge.com/tariffs/en.html' },
+  pgeRatePlanPricing: { label: 'PG&E: Residential rate plan pricing (prices effective March 1, 2026)', url: 'https://www.pge.com/assets/pge/docs/account/rate-plans/residential-electric-rate-plan-pricing.pdf' },
+  pgeRatePlans: { label: 'PG&E: Rate plans (residential rate comparison)', url: 'https://www.pge.com/en/account/rate-plans.html' },
+  pgeE1Tariff: { label: 'PG&E: Electric Schedule E-1, Residential Services (tariff)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-1.pdf' },
+  pgeEtoudTariff: { label: 'PG&E: Electric Schedule E-TOU-D, peak pricing 5 to 8 p.m. non-holiday weekdays (tariff)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-D.pdf' },
+  pgeNem2Tariff: { label: 'PG&E: Electric Schedule NEM2, Net Energy Metering Service (tariff)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_NEM2.pdf' },
+  pgeRule7: { label: 'PG&E: Electric Rule 7, Deposits (effective July 16, 2020)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_7.pdf' },
+  pgeRule9: { label: 'PG&E: Electric Rule 9, Rendering and Payment of Bills', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_9.pdf' },
+  pgeRule10: { label: 'PG&E: Electric Rule 10, Disputed Bills', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_10.pdf' },
+  pgeRule17_1: { label: 'PG&E: Electric Rule 17.1, Adjustment of Bills for Billing Error', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_17.1.pdf' },
+  pgeRule21: { label: 'PG&E: Electric Rule 21, Generating Facility Interconnections', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_21.pdf' },
+  pgeRule30: { label: 'PG&E: Electric Rule 30, Retail Service Transmission Facilities (effective December 4, 2025)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_30.pdf' },
+  pgeNscRates: { label: 'PG&E: Net Surplus Compensation rates by true-up month, January 2025 to September 2026', url: 'https://www.pge.com/assets/pge/docs/clean-energy/solar/AB920-RateTable.pdf' },
+  pgeNscFaq: { label: 'PG&E: Net Surplus Compensation (NSC) FAQ', url: 'https://www.pge.com/en/clean-energy/solar/solar-incentives-and-programs/net-surplus-compensation.html' },
+  pgeNemBill: { label: 'PG&E: Net Energy Metering (NEM) bill', url: 'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/net-energy-metering-bill.html' },
+  pgeNemProgram: { label: 'PG&E: Net Energy Metering program (NEM2 application deadline April 15, 2026)', url: 'https://www.pge.com/en/about/doing-business-with-pge/interconnections/net-energy-metering-program.html' },
+  pgeGrc2027: { label: 'PG&E: 2027 General Rate Case (filed May 15, 2025)', url: 'https://www.pge.com/en/regulation/general-rate-case.html' },
+  pgeBscNews: { label: "PG&E Currents: PG&E's Restructured Electric Bill Debuts (March 1, 2026)", url: 'https://www.pge.com/en/newsroom/currents/energy-savings/pg-e-s-restructured-electric-bill-debuts-in-march-2026-.html' },
+  pgeBillsDownNews: { label: 'PG&E Currents: Electric Bills Down From Last Year (October 15, 2025)', url: 'https://www.pge.com/en/newsroom/currents/energy-savings/pg-e-electric-bills-down-from-last-year--expected-to-drop-again-.html' },
+  pgeDataCentersNews: { label: 'PG&E Currents: How Data Centers Like Amazon’s Can Lower Electricity Bills (January 5, 2026)', url: 'https://www.pge.com/en/newsroom/currents/future-of-energy/how-data-centers-like-amazon-s-can-lower-electricity-bills.html' },
+  pgeBillForecast: { label: 'PG&E: Bill Forecast Alert', url: 'https://www.pge.com/en/account/manage-my-account/online-account-preferences/bill-forecast-alert.html' },
+  pgeCompareBills: { label: 'PG&E: Compare bills and view energy usage', url: 'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/compare-bills-and-view-usage-history.html' },
+  // SCE, SDG&E, SMUD, LADWP and Los Angeles.
+  sceDeposit: { label: 'SCE: How is the amount of the deposit determined for starting service?', url: 'https://www.sce.com/customer-service-center/help-center/stop-start-move-service/faq/how-deposit-amount-is-determined' },
+  sdgeBaselineCalc: { label: 'SDG&E: Baseline allowance calculator (daily allowances by climate zone and season)', url: 'https://www.sdge.com/baseline-allowance-calculator' },
+  smudCompare: { label: 'SMUD: How our rates compare (750 kWh residential bills as of June 1, 2026)', url: 'https://www.smud.org/Rate-Information/Compare-rates' },
+  smudRtod: { label: 'SMUD: Rate Schedule R-TOD (prices effective May 1, 2025, January 1, 2026 and January 1, 2027)', url: 'https://www.smud.org/-/media/Documents/Rate-Information/Rates/1-R-TOD.ashx' },
+  smudEvRate: { label: 'SMUD: Electric vehicle rates', url: 'https://www.smud.org/Rate-Information/Residential-rates/Electric-vehicle-rates' },
+  smudSolarShares: { label: 'SMUD: Residential SolarShares', url: 'https://www.smud.org/Going-Green/Residential-SolarShares' },
+  smudFees: { label: 'SMUD: Fees and deposits schedule (effective June 1, 2026)', url: 'https://www.smud.org/fees' },
+  ladwpServiceRules: { label: 'LADWP: Rules Governing Water and Electric Service (Rules 3, 6 and 7)', url: 'https://www.ladwp.com/sites/default/files/2023-11/Rules%20Governing%20Water%20%20Electric%20Service%20Oct%202008%20reso%20010%20331%20%20010%20362%20%20011%20121%20%20013%20115%20%20013%20246%20%20017%20180%20%20019%20170%20019%20201%20024%20028%20WEB%20101623.pdf' },
+  laLifelineUut: { label: 'City of Los Angeles Office of Finance: Lifeline utility users tax exemption', url: 'https://finance.lacity.gov/tax-education/tax-exemptions/lifeline-utility-users-tax-exemption-seniors-and-individuals' },
 } as const satisfies Record<string, RateSource>;
 
 export type RateSourceKey = keyof typeof SRC;
