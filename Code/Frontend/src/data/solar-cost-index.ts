@@ -147,7 +147,11 @@ const FEES: Record<string, FeeEntry> = {
     }],
     extra: 'A system that needs full plan review adds a $154.20 plan-check fee.',
   },
-  escondido: { status: 'not-published', evidence: 'no dollar amount is published on the page' },
+  escondido: {
+    status: 'published',
+    components: [{ label: 'residential solar PV base fee, 15 kW or less', usd: 308, quote: '$308 for 15 kW or less' }],
+    extra: 'Other applicable fees are added per permit; battery storage and panel-upgrade permits are $176 each.',
+  },
   anaheim: {
     status: 'dated',
     extra: 'The only schedule found is dated 2009-2010 and lists a $136.73 minimum electrical permit fee.',
@@ -377,6 +381,17 @@ const FEES: Record<string, FeeEntry> = {
     components: [{ label: 'residential PV permit up to 10 kW, plan review included', usd: 250, quote: 'at $250 for a system up to 10 kW' }],
     extra: 'Above 10 kW: $450 plus $15 per kW above 15 kW.',
   },
+  chico: {
+    status: 'published',
+    components: [{ label: 'residential solar on an existing structure, 15 kW or less', usd: 450, quote: '$450 for residential solar mounted on an existing structure' }],
+    extra: 'Above 15 kW: $500 plus $15 per kW; a ground-mount racking permit is a separate $876.',
+  },
+  pasadena: { status: 'not-retrievable', evidence: "the City's fee schedule page could not be read when checked" },
+  'santa-clarita': {
+    status: 'published',
+    components: [{ label: 'residential rooftop photovoltaic system', usd: 450, quote: 'residential rooftop photovoltaic system at $450' }],
+    extra: 'A 10% record maintenance charge applies to related permit fees; a main panel upgrade is $44 plus staff charges.',
+  },
   oakland: {
     status: 'published',
     components: [
@@ -415,8 +430,12 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   temecula: { platform: 'solarapp', evidence: 'SolarAPP+ has been available since September 30, 2023' },
   murrieta: { platform: 'solarapp', evidence: 'must be submitted through SolarAPP+' },
   'san-diego': { platform: 'city-instant', evidence: 'Self-certified systems issue instantly' },
-  escondido: { platform: 'solarapp', evidence: 'SolarAPP+ for licensed contractors' },
-  anaheim: { platform: 'none-named', evidence: 'page does not name SolarAPP+' },
+  escondido: { platform: 'solarapp', evidence: 'use SolarAPP+ for residential rooftop systems' },
+  anaheim: {
+    platform: 'city-instant',
+    evidence: "lists Anaheim's platform as a custom one",
+    note: 'Solar Permit Online; the CEC SB 379 data (self-reported) lists a custom platform.',
+  },
   aptos: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   bakersfield: { platform: 'none-named', evidence: 'page does not name SolarAPP+ specifically' },
   'california-city': { platform: 'solarapp', evidence: 'Yes, via SolarAPP+' },
@@ -498,6 +517,13 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   fremont: { platform: 'solarapp', evidence: 'Contractors registered with SolarAPP+' },
   riverside: { platform: 'solarapp', evidence: 'under 38 kW through SolarAPP+' },
   pleasanton: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
+  chico: { platform: 'none-named', evidence: 'lists Chico as without a platform' },
+  pasadena: {
+    platform: 'city-instant',
+    evidence: "lists Pasadena's platform as a custom one",
+    note: 'Express Permit Portal; the CEC SB 379 data (self-reported) lists a custom platform.',
+  },
+  'santa-clarita': { platform: 'symbium', evidence: 'instantly online through Symbium' },
   oakland: { platform: 'solarapp', evidence: 'eligible rooftop systems on a permitted main dwelling through SolarAPP+' },
 };
 
@@ -518,6 +544,7 @@ export const ONLINE_LABEL: Record<OnlineFiling, string> = {
  */
 const ONLINE_EXCEPTIONS: Record<string, { value: Exclude<OnlineFiling, 'yes' | 'unclassified'> | 'yes'; evidence: string }> = {
   hollister: { value: 'not-yet', evidence: 'Online Permitting (Coming Soon)' },
+  chico: { value: 'general-portal', evidence: 'digitally through its eTRAKiT permit portal' },
   marina: { value: 'general-portal', evidence: 'Yes for general building permits' },
   napa: { value: 'in-person', evidence: 'described as in-person/walk-in submission' },
   // The row starts "No." about SolarAPP+, then names the City's own online portal.

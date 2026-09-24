@@ -246,6 +246,7 @@ test('topical-authority wave: new companies pages with a cost twin render and ar
 // table, so the table's row count does not change.
 const T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN = new Set([
   'san-mateo', 'irvine', 'fremont', 'riverside', 'oakland', 'pleasanton',
+  'chico', 'pasadena', 'santa-clarita',
 ]);
 for (const slug of T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
 

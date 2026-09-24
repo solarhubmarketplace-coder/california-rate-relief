@@ -224,6 +224,17 @@ export const CCE_MEMBERS: CityCostRowSource = {
   url: 'https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf',
   verifiedAt: CCA_VERIFIED_0923,
 };
+/**
+ * California Energy Commission, Residential Solar Permitting Program data
+ * (SB 379): each jurisdiction's self-reported automated-permitting platform.
+ * The CEC says it does not certify compliance. Downloaded 2026-09-23; the
+ * file states its data was last updated 2026-08-03.
+ */
+export const CEC_SB379_DATA: CityCostRowSource = {
+  label: 'California Energy Commission, Residential Solar Permitting Program data (SB 379 platform status as self-reported by each jurisdiction; data last updated August 3, 2026)',
+  url: 'https://www.energy.ca.gov/media/9247',
+  verifiedAt: '2026-09-23',
+};
 export const OCPA_HOME: CityCostRowSource = {
   label: 'Orange County Power Authority, member communities (Buena Park, Fullerton, Irvine, Fountain Valley)',
   url: 'https://www.ocpower.org/',
@@ -315,13 +326,24 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: 'Escondido',
     county: 'San Diego County',
     utilityKey: 'sdge',
-    cca: 'Clean Energy Alliance (generation, since 1 April); SDG&E remains the delivery utility',
+    // 2026-09-23: the CCA string used to carry its own clause, which broke the
+    // template sentence it is dropped into; the source now sits in ccaSource.
+    cca: 'Clean Energy Alliance',
+    ccaSource: SDGE_ACTIVE_CCAS,
     permitUrl: 'https://www.escondido.gov/1247/Solar-App-Plus',
     permitFeeNote:
-      'The City states a processing fee is charged by SolarAPP+ and that the permit issues once all applicable City fees are paid; no dollar amount is published on the page.',
-    permitFeeSource: 'City of Escondido, Solar App Plus (escondido.gov/1247)',
-    permitOnline: 'Yes. SolarAPP+ for licensed contractors (residential only); owner-builders file a regular building permit with plan check.',
-    sourcesFetchedAt: '2026-09-18',
+      "Escondido's Fee Guide for Development Projects (updated September 16, 2025) sets the base fee for a residential solar photovoltaic permit at $308 for 15 kW or less, and at $450 plus $15 per kW above 15 kW for a larger system, with other applicable fees added per permit. A battery backup storage permit and a residential service panel upgrade are $176 each. SolarAPP+ charges its own processing fee.",
+    permitFeeSource: 'City of Escondido, Solar App Plus',
+    permitSources: [
+      {
+        label: 'City of Escondido, Fee Guide for Development Projects (updated September 16, 2025): Commonly Requested Permit Types',
+        url: 'https://www.escondido.gov/DocumentCenter/View/8626/2025-Fee-Guide-Updated-9-16-25',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Licensed contractors with an active City of Escondido business license use SolarAPP+ for residential rooftop systems, then apply through the City's online portal, where the permit issues electronically once fees are paid; qualifying projects need no City plan review. Owner-builders and systems SolarAPP+ cannot approve need a regular building permit.",
+    sourcesFetchedAt: '2026-09-23',
   },
   // Added 2026-09-18 from the four-region research pass; ledger in
   // 02_Work_Management/Growth_200/city_data_parts/*.csv.
@@ -330,12 +352,16 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Anaheim",
     county: "Orange County",
     utilityKey: "anaheim",
+    // 2026-09-23: anaheim.net sat behind a bot check for every permit and
+    // fee page that day, so the permit fields keep their 2026-09-18
+    // verification. The platform line adds the CEC's SB 379 data.
     permitUrl: "https://www.anaheim.net/6015/Online-Permit-Center",
     permitFeeNote:
-      "Current online permit center page lists a \"Single Family Residential Small Rooftop Permit Online\" (Solar Permit Online) option but states no fee amount. The city's older Residential PV Self-Certification Program packet (Building Division, dated 2009/2010) attaches an electrical permit fee schedule listing a Minimum Permit Fee of $136.73 and Plan Check Service at $172.39/hour; this schedule is dated and may not reflect current fees.",
-    permitFeeSource: "City of Anaheim Online Permit Center page; City of Anaheim Residential PV Self-Certification Program packet (forms B722/B705, dated 2009-2010)",
+      "Anaheim's Online Permit Center lists a Single Family Residential Small Rooftop Permit Online (Solar Permit Online) option but states no fee. The City's older Residential PV Self-Certification Program packet, dated 2009-2010, attaches a fee schedule listing a minimum electrical permit fee of $136.73 and plan check at $172.39 an hour; this schedule is dated and may not reflect current fees.",
+    permitFeeSource: "City of Anaheim Online Permit Center; City of Anaheim Residential PV Self-Certification Program packet (forms B722/B705, dated 2009-2010)",
+    permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "Yes for small residential rooftop solar via the city's own Accela-based Online Permit Center (\"Solar Permit Online\"); page does not name SolarAPP+.",
+      "Yes, for small residential rooftop solar through the City's own Accela-based Online Permit Center (Solar Permit Online). The City's page does not name SolarAPP+, and the California Energy Commission's SB 379 data lists Anaheim's platform as a custom one.",
     sourcesFetchedAt: "2026-09-18",
   },
   {
@@ -1336,6 +1362,68 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     ],
     permitOnline:
       "Yes. Eligible single-family, roof-mounted retrofit systems go through SolarAPP+, and the City permit (Solar Permit with SolarAPP+) is applied for in Accela Citizen Access. An active City of Pleasanton business license is required.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'chico',
+    city: 'Chico',
+    county: 'Butte County',
+    utilityKey: 'pge',
+    permitUrl: 'https://chicoca.gov/Departments/Community-Development/Building-Division/index.html',
+    permitFeeNote:
+      "Chico's Master Fee Schedule for fiscal year 2026/2027, effective July 6, 2026, charges $450 for residential solar mounted on an existing structure at 15 kW or less, and $500 plus $15 per kW above 15 kW for a larger system. It notes that plan check and other fees may apply to systems over 40 pounds per square foot or on a conventionally framed roof, that supporting structures over 7 feet tall need a separate permit, and that a ground-mount solar racking permit is a separate $876.",
+    permitFeeSource: 'City of Chico, Building Division',
+    permitSources: [
+      {
+        label: 'City of Chico, FY 2026/2027 Master Fee Schedule, effective July 6, 2026 (Residential: Solar Mounted on Existing Structure; ground mount solar racking permit)',
+        url: 'https://catapultfilemanager-prod.s3.us-west-2.amazonaws.com/e12a7475-6d0d-4986-a8bb-538a9e5496e0/FY%202026-2027%20MASTER%20FEE%20SCHEDULE%20-%20Updated%2007-06-2026.pdf',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "The City's Building Division takes all applications and plans digitally through its eTRAKiT permit portal, but its pages do not describe an automated solar permit. The California Energy Commission's SB 379 data, which each city reports itself, lists Chico as without a platform.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'pasadena',
+    city: 'Pasadena',
+    county: 'Los Angeles County',
+    utilityKey: 'pasadena',
+    permitUrl: 'https://mypermits.cityofpasadena.net/Permit/Express',
+    permitFeeNote:
+      "Pasadena's Express Permit Portal does not show the solar permit fee before you apply, and the City's fee schedule page could not be read when checked. On the utility side, Pasadena Water and Power requires an AC disconnect switch, lockable in the open position, within eight feet and in line of sight of the PWP meter, which is equipment a quote should include.",
+    permitFeeSource: 'City of Pasadena, Express Permit Portal (Solar Photovoltaic, or Solar Photovoltaic & Energy Storage System)',
+    permitSources: [
+      {
+        label: 'Pasadena Water and Power, Solar Eligibility and Requirements',
+        url: 'https://pwp.cityofpasadena.net/solar-eligibility-and-requirements/',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. The City's Express Permit Portal offers a Solar Photovoltaic, or Solar Photovoltaic and Energy Storage System, express permit for residential properties through a Permit Center Online account. Pasadena Water and Power's initial review approval has to come before the building permit, and the California Energy Commission's SB 379 data lists Pasadena's platform as a custom one.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'santa-clarita',
+    city: 'Santa Clarita',
+    county: 'Los Angeles County',
+    utilityKey: 'sce',
+    permitUrl: 'https://santaclarita.gov/building-safety/instantpermits/',
+    permitFeeNote:
+      "Santa Clarita's Building and Safety fee brochure for 2026-2027, effective August 24, 2026, lists a residential rooftop photovoltaic system at $450, and a main panel upgrade or change-out up to 400 amps at $44 plus staff charges. The brochure also lists a record maintenance charge of 10 percent of all related permit fees.",
+    permitFeeSource: 'City of Santa Clarita, Instant Online Permits (Building & Safety)',
+    permitSources: [
+      {
+        label: 'City of Santa Clarita, Building & Safety Fee Brochure 2026-2027, effective August 24, 2026 (Electrical Permits: Residential Photo Voltaic System)',
+        url: 'https://santaclarita.gov/building-safety/wp-content/uploads/sites/12/2026/08/2026-2027-BS-Fee-Brochure.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Rooftop PV and energy storage systems are among the residential permits the City issues instantly online through Symbium, and inspections can be booked online or through the inspection hotline. Since May 1, 2026, the older PVA permits are being replaced by these Symbium permits.",
     sourcesFetchedAt: '2026-09-23',
   },
 ];

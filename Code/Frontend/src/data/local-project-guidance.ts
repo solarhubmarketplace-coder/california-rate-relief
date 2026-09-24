@@ -37,14 +37,6 @@ const sanDiegoPermit: LocalGuidanceSource = {
     'The May 2026 bulletin separates electrical, combination and building-permit paths by project scope. Its defined self-issued path applies only when every stated property, system and scope limit is met.',
 };
 
-const escondidoPermit: LocalGuidanceSource = {
-  label: 'City of Escondido — SolarAPP+',
-  url: 'https://www.escondido.gov/1247/Solar-App-Plus',
-  verifiedAt: verified20260920,
-  scope:
-    'Licensed contractors can use SolarAPP+ for eligible residential rooftop work. Other PV installations and owner-builder projects follow the regular permit route described by the City.',
-};
-
 const sdcpBill: LocalGuidanceSource = {
   label: 'San Diego Community Power — Understanding Your Bill',
   url: 'https://sdcommunitypower.org/understanding-your-bill/',
@@ -561,6 +553,82 @@ const cpaSolar: LocalGuidanceSource = {
     'Solar Billing Plan (approved after August 31, 2023): hourly Energy Export Credits from CPUC Avoided Cost Calculator prices; Energy Export Bonus Credit for systems installed before 2028; Net Surplus Compensation 10% above SCE’s; annual true-up in April; SCE applies delivery charges and credits.',
 };
 
+
+const cecSb379: LocalGuidanceSource = {
+  label: 'California Energy Commission — Residential Solar Permitting Program data (SB 379)',
+  url: 'https://www.energy.ca.gov/media/9247',
+  verifiedAt: verified20260923,
+  scope:
+    'Self-reported platform status per jurisdiction, data last updated August 3, 2026; the CEC says it does not certify compliance. Rows used: Chico (deadline Sept 2023, without platform); Pasadena, Anaheim (custom platform); Santa Clarita (Symbium); Escondido (SolarAPP+).',
+};
+
+const chicoBuilding: LocalGuidanceSource = {
+  label: 'City of Chico — Building Division',
+  url: 'https://chicoca.gov/Departments/Community-Development/Building-Division/index.html',
+  verifiedAt: verified20260923,
+  scope: 'All applications, plans and documents must be submitted digitally; eTRAKiT is the City’s permit portal. No solar-specific permit route described.',
+};
+
+const chicoFees2627: LocalGuidanceSource = {
+  label: 'City of Chico — FY 2026/2027 Master Fee Schedule (effective July 6, 2026)',
+  url: 'https://catapultfilemanager-prod.s3.us-west-2.amazonaws.com/e12a7475-6d0d-4986-a8bb-538a9e5496e0/FY%202026-2027%20MASTER%20FEE%20SCHEDULE%20-%20Updated%2007-06-2026.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential solar on an existing structure: $450 at 15 kW or less; $500 plus $15 per kW above 15 kW; plan check and fees may apply above 40 lb/sf or on a conventionally framed roof; separate permit for supporting structures over 7 feet; ground-mount solar racking permit $876, separate permit.',
+};
+
+const pwpSolar: LocalGuidanceSource = {
+  label: 'Pasadena Water and Power — Solar Eligibility and Requirements',
+  url: 'https://pwp.cityofpasadena.net/solar-eligibility-and-requirements/',
+  verifiedAt: verified20260923,
+  scope:
+    'All PWP electric customers eligible; system 1 kW to 1,000 kW AC and no more than 150% of average annual use; PWP initial review approval before the building permit; lockable AC disconnect within eight feet and line of sight of the meter; Net Surplus Compensation under Pasadena Municipal Code 13.04.177.',
+};
+
+const pasadenaExpress: LocalGuidanceSource = {
+  label: 'City of Pasadena — Express Permit Portal',
+  url: 'https://mypermits.cityofpasadena.net/Permit/Express',
+  verifiedAt: verified20260923,
+  scope: 'Offers a Solar Photovoltaic, or Solar Photovoltaic & Energy Storage System, express permit for residential properties through a Permit Center Online account. No fee shown before applying.',
+};
+
+const escondidoSolarApp0923: LocalGuidanceSource = {
+  label: 'City of Escondido — Solar App Plus',
+  url: 'https://www.escondido.gov/1247/Solar-App-Plus',
+  verifiedAt: verified20260923,
+  scope:
+    'Licensed contractors, residential rooftop only; active City business license required before submitting; qualifying projects need no City plan review; permit issues electronically once fees are paid; owner-builders and other PV installations need a regular building permit; printed permit, plans and inspection card on site.',
+};
+
+const escondidoFees: LocalGuidanceSource = {
+  label: 'City of Escondido — Fee Guide for Development Projects (updated September 16, 2025)',
+  url: 'https://www.escondido.gov/DocumentCenter/View/8626/2025-Fee-Guide-Updated-9-16-25',
+  verifiedAt: verified20260923,
+  scope:
+    'Base fees (Resolution 2024-72), other applicable fees additional: residential solar PV $308 at 15 kW or less, $450 plus $15 per kW above 15 kW; battery backup storage $176; residential service panel upgrade $176.',
+};
+
+const santaClaritaInstant: LocalGuidanceSource = {
+  label: 'City of Santa Clarita — Instant Online Permits',
+  url: 'https://santaclarita.gov/building-safety/instantpermits/',
+  verifiedAt: verified20260923,
+  scope: 'Rooftop PV and energy storage systems are instant online permits through Symbium; since May 1, 2026 PVA permits are being replaced by Symbium MEP permits, with existing PVA permits to be finaled by May 1, 2027; inspections online or by hotline.',
+};
+
+const santaClaritaFees: LocalGuidanceSource = {
+  label: 'City of Santa Clarita — Building & Safety Fee Brochure 2026-2027 (effective August 24, 2026)',
+  url: 'https://santaclarita.gov/building-safety/wp-content/uploads/sites/12/2026/08/2026-2027-BS-Fee-Brochure.pdf',
+  verifiedAt: verified20260923,
+  scope: 'Residential photovoltaic system, rooftop: $450; main panel upgrade or change-out up to 400 amps: $44 plus staff charges; record maintenance: 10% of all related permit fees.',
+};
+
+const anaheimNem: LocalGuidanceSource = {
+  label: 'City of Anaheim — Solar Energy and Net Metering',
+  url: 'https://www.anaheim.net/636/Solar-Energy-and-Net-Metering',
+  verifiedAt: verified20260923,
+  scope: 'Anaheim is not moving to NEM 3.0; its current NEM 2.0 program, for solar billing accounts set up after January 1, 2021, is a wholesale-based rate program. Solar Program phone 714-765-4182.',
+};
+
 export const LOCAL_PROJECT_GUIDANCE = {
   temecula: {
     city: 'Temecula',
@@ -663,22 +731,26 @@ export const LOCAL_PROJECT_GUIDANCE = {
   },
   escondido: {
     city: 'Escondido',
-    actionIds: ['CA05'],
+    actionIds: ['CA05', 'T2-CITYCOST'],
     intro:
-      'The useful installer comparison is the one that keeps the design constant and makes the permit, roof and battery responsibilities explicit.',
+      "Escondido publishes base fees for solar, battery and panel-upgrade permits, so a quote's permit lines can be checked item by item.",
     quoteQuestions: [
       'Did each bidder use the same bill history, roof planes, shade and monthly production assumptions?',
-      'Which licensed contractor is responsible for plans, corrections, inspection and utility interconnection?',
-      'Are battery, roof and main-panel work included, excluded or priced as separate options?',
+      'Does the contractor hold an active City of Escondido business license? The City requires one before it takes a SolarAPP+ permit.',
+      'Are battery, roof and main-panel work included, excluded or priced as separate options, each with its own permit?',
     ],
     localChecks: [
       {
-        title: 'SolarAPP+ is limited by applicant and project',
-        body: 'Escondido makes SolarAPP+ available to licensed contractors for eligible residential rooftop projects. Owner-builders and other PV installations use the regular permit route.',
+        title: 'Three permits, three base fees',
+        body: "Escondido's fee guide sets base fees of $308 for a residential solar permit up to 15 kW, $176 for battery backup storage and $176 for a residential service panel upgrade, with other applicable fees added per permit.",
       },
       {
-        title: 'Generation and delivery can appear separately',
-        body: 'Clean Energy Alliance identifies Escondido as a member city, while SDG&E continues delivery and billing. Confirm the generation line on the account instead of inferring enrollment from the city name.',
+        title: 'SolarAPP+ skips City plan review',
+        body: 'Qualifying SolarAPP+ projects need no City plan review, and the permit issues electronically once fees are paid. Owner-builders and installations SolarAPP+ cannot approve need a regular building permit.',
+      },
+      {
+        title: 'Generation and delivery appear separately',
+        body: 'SDG&E lists Escondido among the cities Clean Energy Alliance serves, while SDG&E continues delivery and billing. Confirm the generation line on the account instead of inferring enrollment from the city name.',
       },
     ],
     related: [
@@ -686,7 +758,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/blog/is-my-roof-good-for-solar-california', label: 'Check roof condition and usable planes' },
       { href: '/battery/home-battery-cost-california', label: 'Separate battery scope from the array' },
     ],
-    sources: [escondidoPermit, ceaBill],
+    sources: [escondidoSolarApp0923, escondidoFees, ceaBill, sdgeActiveCcas],
   },
   'chula-vista': {
     city: 'Chula Vista',
@@ -1336,6 +1408,133 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [thousandOaksSolar, sceCcaList, cpaSolar],
+  },
+  chico: {
+    city: 'Chico',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Chico charges the state-limit fee for a home solar permit, but the City does not describe an automated solar permit and the state's data lists it as having none. Plan for a regular review.",
+    quoteQuestions: [
+      "Is the system 15 kW or smaller? Above that, Chico's fee is $500 plus $15 per kW over 15.",
+      'Does the array weigh more than 40 pounds per square foot, or go on a conventionally framed roof? Either can add plan check and fees in Chico.',
+      'Is it a ground mount, or on a structure over 7 feet tall? Chico permits both separately.',
+    ],
+    localChecks: [
+      {
+        title: 'No automated permit listed',
+        body: "The California Energy Commission's SB 379 data, which cities report themselves and the CEC does not certify, lists Chico as without an automated platform although its deadline was September 2023. The City takes applications digitally through eTRAKiT, so ask the installer how long review has been taking.",
+      },
+      {
+        title: 'Ground mounts are a separate permit',
+        body: "Chico's 2026/2027 fee schedule lists a ground-mount solar racking permit as a separate $876 permit, and requires a separate permit for a supporting structure over 7 feet tall.",
+      },
+      {
+        title: 'PG&E supplies generation too',
+        body: "PG&E's list of the community choice aggregators in its territory does not include Chico or Butte County, so a Chico bill normally shows PG&E for generation and delivery.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/blog/solar-carport-california-guide', label: 'Solar carports and ground mounts' },
+      { href: '/blog/is-my-roof-good-for-solar-california', label: 'Check the roof before solar' },
+    ],
+    sources: [chicoBuilding, chicoFees2627, cecSb379, pgeCcaList],
+  },
+  pasadena: {
+    city: 'Pasadena',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Pasadena's electricity comes from the City's own utility, which has to approve a solar design before the building permit and sets its own sizing and equipment rules.",
+    quoteQuestions: [
+      'Has Pasadena Water and Power given its initial review approval? PWP requires it before the building permit is applied for.',
+      'Does the design include the lockable AC disconnect switch PWP requires within eight feet and line of sight of the meter?',
+      "Is the system sized to no more than 150 percent of the home's average annual use, as PWP requires?",
+    ],
+    localChecks: [
+      {
+        title: 'The utility reviews first',
+        body: 'Pasadena Water and Power requires its initial review approval before a building permit is applied for, and says every installation needs the appropriate building permit from the City.',
+      },
+      {
+        title: 'A disconnect switch is part of the job',
+        body: 'PWP requires an AC disconnect switch with visible, lockable contacts within eight feet and in line of sight of its meter. A quote that leaves it out is not the full scope.',
+      },
+      {
+        title: 'PWP caps system size',
+        body: "PWP accepts systems between 1 kW and 1,000 kW AC, sized to produce no more than 150 percent of the customer's average annual use, and credits surplus under its Net Surplus Compensation program.",
+      },
+      {
+        title: 'An express permit for home systems',
+        body: "The City's Express Permit Portal lists a residential Solar Photovoltaic, or Solar Photovoltaic and Energy Storage System, express permit. The CEC's SB 379 data lists Pasadena's platform as custom rather than SolarAPP+.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/los-angeles-county', label: 'Los Angeles County bill guide' },
+      { href: '/blog/solar-rebates-by-california-utility', label: 'Rebates by California utility' },
+      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [pwpSolar, pasadenaExpress, cecSb379],
+  },
+  'santa-clarita': {
+    city: 'Santa Clarita',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Santa Clarita issues rooftop solar and battery permits instantly online and publishes a flat rooftop fee. With no community choice provider, SCE's own rates set the value side.",
+    quoteQuestions: [
+      "Does the design fit Santa Clarita's instant Symbium permit for rooftop PV, and is any battery on its own instant permit?",
+      'If the main panel is being upgraded or changed out, is that permit (and its staff charges) in the quote?',
+      "Does the savings estimate use SCE's generation and delivery rates from your own bill?",
+    ],
+    localChecks: [
+      {
+        title: 'Flat fee, plus records charge',
+        body: "The City's 2026-2027 fee brochure lists a residential rooftop photovoltaic system at $450 and adds a record maintenance charge of 10 percent of all related permit fees.",
+      },
+      {
+        title: 'Permits moved to Symbium in 2026',
+        body: 'Since May 1, 2026, Santa Clarita has been replacing its older PVA permits with Symbium permits, and says existing PVA permits must be finaled by May 1, 2027. A job permitted the old way should not be left open.',
+      },
+      {
+        title: 'SCE supplies generation',
+        body: "SCE's list of community choice aggregators names Clean Power Alliance's member cities, and Santa Clarita is not among them, so a Santa Clarita bill normally shows SCE for generation and delivery.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/los-angeles-county', label: 'Los Angeles County bill guide' },
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [santaClaritaInstant, santaClaritaFees, sceCcaList, cecSb379],
+  },
+  anaheim: {
+    city: 'Anaheim',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Anaheim is served by its own city utility, which has kept its own net metering rules instead of moving to the state's newer tariff. That, more than the permit, is what separates an Anaheim quote from one in an SCE city.",
+    quoteQuestions: [
+      "Does the savings estimate use Anaheim Public Utilities' NEM 2.0 rules, which the utility describes as wholesale-based, rather than an SCE tariff?",
+      "Will the permit go through the City's Solar Permit Online option for small residential rooftop systems, and who files it?",
+      'Is the permit fee in the quote based on a current City figure? The fee schedule attached to the City’s solar self-certification packet is dated 2009-2010.',
+    ],
+    localChecks: [
+      {
+        title: "Anaheim's own net metering",
+        body: 'Anaheim Public Utilities says it is not moving to NEM 3.0, and that its current NEM 2.0 program, for solar billing accounts set up after January 1, 2021, is a wholesale-based rate program. Its Solar Program answers questions at 714-765-4182.',
+      },
+      {
+        title: 'A custom online permit',
+        body: "The City's Online Permit Center offers a Single Family Residential Small Rooftop Permit Online, and the California Energy Commission's SB 379 data lists Anaheim's platform as custom rather than SolarAPP+ or Symbium.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/orange-county', label: 'Orange County bill guide' },
+      { href: '/blog/solar-rebates-by-california-utility', label: 'Rebates by California utility' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing and net metering differ' },
+    ],
+    sources: [anaheimNem, cecSb379],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 

@@ -355,6 +355,93 @@
    ],
    "status": "done",
    "note": "Re-verified: SolarAPP+ limits (38.4 kW AC, roof-mounted, B/C-10/C-46), carports/ground mounts standard permit via TO/24; City fee not published; Clean Power Alliance Solar Billing Plan terms (bonus credit before 2028, NSC 10% above SCE, April true-up)."
+  },
+  {
+   "path": "/solar-cost/chico",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Chico, CA: What Sets the Price (2026)",
+   "clusters": [
+    616
+   ],
+   "sources": [
+    "https://chicoca.gov/Departments/Community-Development/Building-Division/index.html",
+    "https://catapultfilemanager-prod.s3.us-west-2.amazonaws.com/e12a7475-6d0d-4986-a8bb-538a9e5496e0/FY%202026-2027%20MASTER%20FEE%20SCHEDULE%20-%20Updated%2007-06-2026.pdf",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html"
+   ],
+   "status": "done",
+   "note": "New row: PG&E, no CCA (PG&E list); FY2026/27 fee ($450 up to 15 kW; $500+$15/kW; weight/framing plan check; $876 ground-mount permit); CEC SB 379 data lists Chico 'Without Platform' (self-reported; worded neutrally). Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/pasadena",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Pasadena, CA: What Sets the Price (2026)",
+   "clusters": [
+    633
+   ],
+   "sources": [
+    "https://mypermits.cityofpasadena.net/Permit/Express",
+    "https://pwp.cityofpasadena.net/solar-eligibility-and-requirements/",
+    "https://pwp.cityofpasadena.net/water-and-electric-rates/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: Pasadena Water and Power (new tracker key 'pasadena'); City Express Permit Portal (PV or PV+ESS); PWP initial review first, lockable AC disconnect within 8 ft of meter, 150% size cap; CEC SB 379 custom platform. City fee schedule page is behind a bot check, so no fee figure. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/escondido",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Escondido, CA: What Sets the Price (2026)",
+   "clusters": [
+    632
+   ],
+   "sources": [
+    "https://www.escondido.gov/1247/Solar-App-Plus",
+    "https://www.escondido.gov/DocumentCenter/View/8626/2025-Fee-Guide-Updated-9-16-25",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas"
+   ],
+   "status": "done",
+   "note": "Fee now published from the Sept 2025 Fee Guide ($308 up to 15 kW; battery and panel-upgrade permits $176 each); business-license and no-plan-review details (read via r.jina.ai); CCA string fixed (it broke the template sentence) and sourced to SDG&E's list."
+  },
+  {
+   "path": "/solar-cost/santa-clarita",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Santa Clarita, CA: What Sets the Price (2026)",
+   "clusters": [
+    639
+   ],
+   "sources": [
+    "https://santaclarita.gov/building-safety/instantpermits/",
+    "https://santaclarita.gov/building-safety/wp-content/uploads/sites/12/2026/08/2026-2027-BS-Fee-Brochure.pdf",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: SCE, not a Clean Power Alliance city (SCE CCA list; the CEC CCA layer wrongly shades it); $450 rooftop PV (fee brochure eff. 2026-08-24), 10% record maintenance; instant Symbium permits, PVA-to-Symbium transition. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/anaheim",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Anaheim, CA: What Sets the Price (2026)",
+   "clusters": [
+    631
+   ],
+   "sources": [
+    "https://www.anaheim.net/636/Solar-Energy-and-Net-Metering",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "partial",
+   "note": "anaheim.net permit and fee pages were behind a bot check all session, so permit fields keep their 2026-09-18 verification (dated 2009-2010 fee schedule). Added APU NEM 2.0 (wholesale-based, not NEM 3.0) and CEC SB 379 custom platform. A current Anaheim solar permit fee still needs a readable source."
   }
  ],
  "sitemap_add": [],
@@ -390,6 +477,21 @@
    "hub": "city_cost",
    "href": "/solar-cost/pleasanton",
    "label": "Solar panel cost in Pleasanton"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/chico",
+   "label": "Solar panel cost in Chico"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/pasadena",
+   "label": "Solar panel cost in Pasadena"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/santa-clarita",
+   "label": "Solar panel cost in Santa Clarita"
   }
  ],
  "link_requests": [],
@@ -400,7 +502,8 @@
   "src/lib/canonical-redirects.test.ts: new dated registry section T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added.",
   "src/data/solar-cost-index.ts (California Solar Cost Index, reads city-cost-data rows): FEES/PLATFORMS re-keyed to the rewritten notes and new rows added; UTILITY_TYPE gains riverside and pasadena; CCAS gains Ava members fremont/oakland, OCPA (irvine) and WestLight (san-mateo). solar-cost-index.test.ts passes.",
   "src/data/utility-rate-tracker.ts: two new publicly owned utility records, 'riverside' (RPU) and 'pasadena' (PWP), rate null with the utility's own rate page as source. The tracker page reads rows by name and does not render them.",
-  "src/lib/city-pages.test.ts: the single-utility example moved from temecula to murrieta (temecula now carries a sourced SCE/SDG&E split), and temecula added to the split-city list."
+  "src/lib/city-pages.test.ts: the single-utility example moved from temecula to murrieta (temecula now carries a sourced SCE/SDG&E split), and temecula added to the split-city list.",
+  "src/data/city-cost-data.ts: CEC_SB379_DATA constant (California Energy Commission SB 379 platform-status download, data of 2026-08-03) used where a city page does not name its permitting platform."
  ],
  "integration_notes": [
   "/solar-cost/<city> pages enter the sitemap automatically from getPublishableCityCostRows(); no sitemap_add needed.",
