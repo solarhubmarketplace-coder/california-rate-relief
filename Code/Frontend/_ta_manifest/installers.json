@@ -169,12 +169,77 @@
    "clusters": [
     531
    ]
+  },
+  {
+   "path": "/blog/what-percentage-of-california-power-is-solar",
+   "action": "CREATE",
+   "hub": "cost_value",
+   "file": "src/app/blog/what-percentage-of-california-power-is-solar/page.tsx",
+   "title": "What Percentage of California Power Is Solar? 2024 Data",
+   "sources": [
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/electric-generation-capacity-and-energy",
+    "https://ww2.energy.ca.gov/almanac/renewables_data/solar/index_cms.php",
+    "https://www.californiadgstats.ca.gov/faq/",
+    "https://www.cpuc.ca.gov/NEM/"
+   ],
+   "status": "done",
+   "note": "CSV hub is installers; filed under cost_value (parent /solar-panels-california) because the page is solar-market data, not company choice. Answers 'how many homes in california have solar' honestly: no CEC count; points to CPUC DGStats. EIA state pages did not render for WebFetch, so EIA is not cited.",
+   "clusters": [
+    478
+   ]
+  },
+  {
+   "path": "/blog/inflation-reduction-act-solar-california",
+   "action": "CREATE",
+   "hub": "incentives",
+   "file": "src/app/blog/inflation-reduction-act-solar-california/page.tsx",
+   "title": "Inflation Reduction Act and Solar in California: What's Left",
+   "sources": [
+    "https://www.irs.gov/pub/taxpros/fs-2022-40.pdf",
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+    "https://www.irs.gov/newsroom/one-big-beautiful-bill-provisions",
+    "https://www.energy.ca.gov/programs-and-topics/programs/inflation-reduction-act-residential-energy-rebate-programs",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/low-income-solar-programs"
+   ],
+   "status": "done",
+   "note": "CSV hub is installers; filed under incentives (breadcrumb /blog/california-solar-tax-credit-2026) because the topic is a tax credit. Leads with the credit ending for installs completed after 2025 (Public Law 119-21).",
+   "clusters": [
+    529
+   ]
+  },
+  {
+   "path": "/blog/pros-and-cons-of-solar-panels-california",
+   "action": "CREATE",
+   "hub": "cost_value",
+   "file": "src/app/blog/pros-and-cons-of-solar-panels-california/page.tsx",
+   "title": "Pros and Cons of Solar Panels in California (2026)",
+   "sources": [
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/low-income-solar-programs",
+    "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+    "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+    "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation"
+   ],
+   "status": "done",
+   "note": "CSV hub is installers; filed under cost_value (parent /solar-panels-california). Block 5 hub_page_map lists this cluster at /blog/pros-and-cons-of-solar-panels-in-california; the CSV URL (without 'in') was used.",
+   "clusters": [
+    163
+   ]
   }
  ],
  "sitemap_add": [
   "/blog/solar-broker",
   "/blog/solar-license-california",
-  "/solar-installers/licensed-solar-installer"
+  "/solar-installers/licensed-solar-installer",
+  "/blog/what-percentage-of-california-power-is-solar",
+  "/blog/inflation-reduction-act-solar-california",
+  "/blog/pros-and-cons-of-solar-panels-california"
  ],
  "blog_index_add": [
   {
@@ -186,6 +251,21 @@
    "slug": "solar-license-california",
    "title": "California solar license requirements: installing and selling solar",
    "hub": "installers"
+  },
+  {
+   "slug": "what-percentage-of-california-power-is-solar",
+   "title": "What percentage of California's power is solar?",
+   "hub": "cost_value"
+  },
+  {
+   "slug": "inflation-reduction-act-solar-california",
+   "title": "The Inflation Reduction Act and solar in California: what changed, and what is left",
+   "hub": "incentives"
+  },
+  {
+   "slug": "pros-and-cons-of-solar-panels-california",
+   "title": "Pros and cons of solar panels in California in 2026",
+   "hub": "cost_value"
   }
  ],
  "redirect_requests": [],
@@ -204,6 +284,21 @@
    "hub": "installers",
    "href": "/blog/solar-license-california",
    "label": "California solar contractor license requirements"
+  },
+  {
+   "hub": "cost_value",
+   "href": "/blog/pros-and-cons-of-solar-panels-california",
+   "label": "Pros and cons of solar panels in California"
+  },
+  {
+   "hub": "cost_value",
+   "href": "/blog/what-percentage-of-california-power-is-solar",
+   "label": "How much of California's power is solar"
+  },
+  {
+   "hub": "incentives",
+   "href": "/blog/inflation-reduction-act-solar-california",
+   "label": "The Inflation Reduction Act and solar: what's left"
   }
  ],
  "link_requests": [
@@ -218,6 +313,12 @@
    "to": "/blog/solar-broker",
    "anchor": "what a solar broker can legally do",
    "why": "CREATE_DEDICATED: 'solar broker' impressions (62) land on the LA companies page"
+  },
+  {
+   "from": "/blog/california-solar-tax-credit-2026",
+   "to": "/blog/inflation-reduction-act-solar-california",
+   "anchor": "what the Inflation Reduction Act changed for home solar",
+   "why": "parent incentives hub should list the new spoke (owned by another agent)"
   }
  ],
  "skipped": [],

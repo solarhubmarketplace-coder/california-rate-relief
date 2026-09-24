@@ -429,9 +429,9 @@ export default function SolarPanelsCalifornia() {
       <section id="state-picture">
         <h2 className={h2}>How much of California&rsquo;s power comes from solar?</h2>
         <p>
-          Utility-scale solar plants produced 50,666 gigawatt-hours in 2024, 23.44% of in-state
-          generation and 21.30% of California&rsquo;s total power mix including imports. Those
-          figures leave out rooftop systems; the CEC says more than 17,400 megawatts of
+          Solar power plants in California produced 50,666 gigawatt-hours in 2024, 23.44% of
+          in-state generation. Counting imported power as well, solar was 21.30% of the
+          state&rsquo;s total power mix. Those figures leave out rooftop systems; the CEC says more than 17,400 megawatts of
           behind-the-meter solar has displaced roughly 10% of the energy utilities would
           otherwise supply (CEC, 2024 Total System Electric Generation, checked September 23,
           2026). The full breakdown is in{' '}
