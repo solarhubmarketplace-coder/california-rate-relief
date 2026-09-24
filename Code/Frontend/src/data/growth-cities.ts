@@ -9254,8 +9254,8 @@ export const growthCities: Record<string, GrowthCity> = {
         "url": "https://www.paloalto.gov/Departments/Utilities/Electrification/Electrify-My-Home/Consider-Solar/Net-Energy-Metering"
       },
       {
-        "label": "City of Palo Alto: Utility Rate Schedule E-EEC-1, Export Electricity Compensation (effective July 1, 2021, PDF)",
-        "url": "https://www.cityofpaloalto.org/files/assets/public/v/2/agendas-minutes-reports/reports/city-manager-reports-cmrs/attachments/06-21-2021-id-12240-attachment-a2-electric-rates.pdf"
+        "label": "City of Palo Alto Utilities: Utility Rate Schedule E-EEC-1, Export Electricity Compensation (effective July 1, 2026, PDF)",
+        "url": "https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-eec-1_effective_2026-07-01.pdf"
       },
       {
         "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
@@ -9287,7 +9287,7 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
       [
         "What net metering program is Palo Alto on?",
-        "New solar customers have been served by the City's NEM 2 program since January 1, 2018, when CPAU's NEM 1 program had reached its 10.8 MW cap. NEM 2 customers are paid for exported electricity at the Export Electricity Compensation (EEC-1) rate; the version of that schedule effective July 1, 2021 set $0.107809 per kWh, so ask CPAU for the current figure."
+        "New solar customers have been served by the City's NEM 2 program since January 1, 2018, when CPAU's NEM 1 program had reached its 10.8 MW cap. NEM 2 customers are paid for exported electricity at the Export Electricity Compensation rate, Schedule E-EEC-1, which is $0.0990 per kWh from July 1, 2026 (checked September 24, 2026). CPAU revises it from time to time, so have each bidder cite the schedule in force when you sign."
       ],
       [
         "How do I get a SolarAPP+ permit in Palo Alto?",
@@ -9325,6 +9325,16 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       },
       {
+        "label": "Export credit",
+        "value": "$0.0990 per kWh",
+        "note": "Schedule E-EEC-1, effective July 1, 2026",
+        "source": {
+          "publisher": "City of Palo Alto Utilities",
+          "date": "2026-09-24",
+          "url": "https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-eec-1_effective_2026-07-01.pdf"
+        }
+      },
+      {
         "label": "Permission to operate",
         "value": "At final inspection",
         "note": "Issued by the Building Inspector",
@@ -9346,12 +9356,12 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "heading": "How CPAU credits solar",
         "paragraphs": [
-          "CPAU's original net metering program closed when it reached its cap of 10.8 MW of installed solar on December 31, 2017. NEM 1 customers are credited at retail rates for exports; everyone who went solar from January 1, 2018 on is on NEM 2 and paid for exports at the Export Electricity Compensation rate, Schedule E-EEC-1. The version of that schedule effective July 1, 2021 paid $0.107809 per kWh for all exported electricity. Rates change, so a proposal should cite the schedule in force when you sign.",
+          "CPAU's original net metering program closed when it reached its cap of 10.8 MW of installed solar on December 31, 2017. NEM 1 customers are credited at retail rates for exports; everyone who went solar from January 1, 2018 on is on NEM 2 and paid for exports at the Export Electricity Compensation rate, Schedule E-EEC-1. The schedule effective July 1, 2026 pays $0.0990 per kWh for all exported electricity (checked September 24, 2026). Rates change, so a proposal should cite the schedule in force when you sign.",
           "In Palo Alto the utility and the building department finish the job together. CPAU asks customers to schedule its electric meter inspection before the final building inspection, and the Building Inspector issues interconnection approval, permission to operate, at that final inspection. The City reported 155 residential solar permits for 2024 to the Energy Commission, 36% of them issued online."
         ]
       }
     ],
-    "contentModified": "2026-09-23"
+    "contentModified": "2026-09-24"
   },
   "chula-vista": {
     "name": "Chula Vista",
