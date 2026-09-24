@@ -14,6 +14,7 @@ import { ProviderComparison } from './ProviderComparison';
 import { SdgeRateTable } from './SdgeRateTable';
 import { HubSpokeLinks } from './HubSpokeLinks';
 import { FinancingHubExtras, financingHubExtraSources } from './FinancingHubExtras';
+import { CalculatorGuideExtras, calculatorExtraSources } from './CalculatorGuideExtras';
 const consumer: Source = {
   label: 'CPUC: solar consumer guide and financing comparison',
   url: 'https://www.cpuc.ca.gov/solarguide/',
@@ -58,11 +59,17 @@ const dfpiPace: Source = {
 };
 const link = 'text-primary underline underline-offset-2';
 const definitions = {
+  // 2026-09-23 (topical-authority wave, agent costfin): title and intro now
+  // carry the page's search intent ("solar cost calculator california").
+  // Previous title: "California solar bill and quote calculator".
   calculator: {
     path: '/tools/solar-panel-calculator',
-    title: 'California solar bill and quote calculator',
+    title: 'California solar cost calculator: check your bill and quote',
     intro:
-      'What does the quote actually change? Start with your bill, add the proposal’s numbers, and see the arithmetic before sharing any contact details.',
+      'This calculator checks a California solar quote against your own bill. Enter your monthly bill and, if you have a quote, its system size, cash price and remaining utility bill. It returns the price per watt, the yearly bill difference and a simple cash payback, with no contact details needed. It does not forecast production.',
+    metaTitle: 'California Solar Cost Calculator: Check Your Quote',
+    metaDescription:
+      'Check a California solar quote with your own numbers: price per watt, yearly bill difference and simple payback. How to read each result, and its limits.',
   },
   companies: {
     path: '/best-solar-companies-california',
@@ -132,7 +139,7 @@ export type GuideKey = keyof typeof definitions;
 export function guideMetadata(key: GuideKey): Metadata {
   const d = definitions[key];
   const modifiedTime =
-    key === 'financing'
+    key === 'financing' || key === 'calculator'
       ? '2026-09-23T00:00:00Z'
       : key === 'nem' || key === 'companies'
       ? '2026-09-22T00:00:00Z'
@@ -333,9 +340,15 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             address-specific assessment for that.
           </p>
         </section>
+        <CalculatorGuideExtras />
         <QuoteChecklist />
+        <HubSpokeLinks hub="cost_value" currentPath="/tools/solar-panel-calculator" />
       </>
     );
+  if (kind === 'calculator') {
+    sources = [consumer, nem, ...calculatorExtraSources];
+    sourceCheckedDate = '2026-09-23';
+  }
   if (kind === 'companies')
     content = (
       <>
