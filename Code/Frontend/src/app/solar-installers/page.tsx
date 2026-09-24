@@ -99,12 +99,23 @@ const COMPARISONS: Entry[] = [
 const CHECKS: Entry[] = [
   { href: '/solar-installers/licensed-solar-installer', anchor: 'How to find a licensed solar installer', blurb: 'Which CSLB license classes cover solar work, how to pull the list of licensed solar contractors in your county, and how to confirm the one on your contract.' },
   { href: '/solar-installers/worst-solar-companies-california', anchor: 'The worst solar companies in California: how to check a record', blurb: 'No agency ranks installers. The bankruptcy filings on the court record, and how to check any company yourself.' },
+  { href: '/blog/free-solar-panels-california', anchor: 'Solar offers that claim to cost nothing', blurb: 'The CPUC says solar is rarely without cost. What a no-cost solar ad can mean, the state program for income-qualified homeowners, and SOMAH.' },
+  { href: '/blog/free-roof-replacement-with-solar-panels-california', anchor: 'Roof replacement offers bundled with solar', blurb: 'No California or federal program pays for a new roof because solar goes on it. How a bundled roof offer is paid for, and what to get in writing first.' },
+  { href: '/blog/solar-panel-removal-reinstall-cost', anchor: 'Solar panel removal and reinstall cost for a new roof', blurb: 'What sets the cost to remove and reinstall panels for a new roof in California, who may do it, removing panels for good, and disposal rules.' },
+  { href: '/solar-panels-california', anchor: 'What solar costs in California and whether it pays', blurb: 'What home solar costs in California, how net billing credits your exports, which incentives still apply in 2026, and how to judge whether it pays.' },
 ];
 
 const PROGRAMS: Entry[] = [
   { href: '/solar-installers/pge-and-sunrun', anchor: 'PG&E and Sunrun battery programs', blurb: 'What PG&E’s programs with Sunrun paid enrolled customers, who could join and what to ask before enrolling.' },
   { href: '/battery/tesla-powerwall-3-cost-california', anchor: 'Tesla Powerwall 3 cost in California', blurb: 'The installed-cost benchmark, sizing, SGIP status and the net-billing case for a battery.' },
+  { href: '/blog/tesla-powerwall-installers-california', anchor: 'Who can install a Tesla Powerwall in California', blurb: 'Who can install a Tesla Powerwall in California, how Tesla’s certified installer program works, and what drives the installed price.' },
+  { href: '/battery/tesla-powerwall-alternatives', anchor: 'Tesla Powerwall alternatives compared', blurb: 'Enphase, FranklinWH and SolarEdge against the Powerwall 3: capacity, output, warranty, coupling and what drives installed price in California.' },
+  { href: '/battery/sgip-battery-rebate-california', anchor: 'SGIP battery rebate status and who qualifies', blurb: 'What SGIP pays for a home battery, who qualifies for the equity budget, which budgets were open or waitlisted on Sept. 23, 2026, and SCE’s own rules.' },
   { href: '/panel-reviews', anchor: 'Solar panel brand reviews', blurb: 'Where panels are made, what their warranties cover and what the datasheet says, brand by brand.' },
+  { href: '/panel-reviews/canadian-solar-panels-review', anchor: 'Canadian Solar panels review', blurb: 'Canadian Solar HiKu panels for California homes: efficiency ratings, temperature performance, 25-year warranties and pricing.' },
+  { href: '/panel-reviews/rec-solar-panels-review', anchor: 'REC solar panels review', blurb: 'Who makes REC panels, where they are made, and what the Alpha Pure-RX warranty covers, including the certified-installer ProTrust terms.' },
+  { href: '/panel-reviews/silfab-solar-panels-review', anchor: 'Silfab solar panels review', blurb: 'Silfab makes panels in Washington and South Carolina: the SIL-430 QD datasheet, why the product warranty depends on registration, and Silfab vs REC.' },
+  { href: '/panel-reviews/trina-solar-panels-review', anchor: 'Trina Solar panels review', blurb: 'A tier-1 manufacturer with a 25-year product and power warranty: what the Vertex S series offers and what to ask a California installer.' },
 ];
 
 const SRC = {
