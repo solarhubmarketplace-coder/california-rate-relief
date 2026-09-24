@@ -178,6 +178,95 @@
    ],
    "status": "done",
    "note": "New row: PG&E + Ava; FY2026-27 fee schedule ($450 solar electric inspection, $21.49 SolarApp+ filing, $268.64 battery permit); panel/subpanel/ESS on one permit; Fire Prevention Bureau battery thresholds. Fee PDF read through r.jina.ai (oaklandca.gov 403s). The row's current_page was /solar-companies/pleasanton (brand keyword), which gets its own /solar-cost/pleasanton link; /solar-companies/oakland links this page via CitySiblingLinks."
+  },
+  {
+   "path": "/solar-cost/roseville",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Roseville Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    646
+   ],
+   "sources": [
+    "https://www.roseville.ca.gov/development_services/building/solarapp.php",
+    "https://www.roseville.ca.gov/Documents/Development%20Services/Building/Development%20Impact%20Fees/Schedule%20of%20User%20and%20Regulatory%20Fees.pdf?t=202602270808160",
+    "https://www.roseville.ca.gov/electric_utility/rates/roseville_solar_2_0/index.php",
+    "https://www.roseville.ca.gov/electric_utility/rebates_and_energy_savings/your_trusted_solar_advisor/the_interconnection_process.php"
+   ],
+   "status": "done",
+   "note": "Re-verified: $1,349.49 City building permit fees (SolarAPP+ page), July 2026 schedule prices PV from a $19,000 set valuation (the FY25 $450 figure is superseded); SolarAPP+ conditions (Roseville Electric pre-approval, no panel upgrades, license classes); Roseville Solar 2.0 $0.0691/kWh; size cap. CEC shows ~2.5% of city area (northern edge) in PG&E territory: noted as a check, not recorded as a split."
+  },
+  {
+   "path": "/solar-cost/santa-rosa",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Santa Rosa, CA: What Sets the Price (2026)",
+   "clusters": [
+    622
+   ],
+   "sources": [
+    "https://www.srcity.org/3826/Solar-Panel-Installation",
+    "https://ecode360.com/42967322",
+    "https://sonomacleanpower.org/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "Re-verified permit page; added Santa Rosa City Code ch. 18-68 (3-business-day review, one inspection, re-inspection fees; read via r.jina.ai from ecode360); Sonoma Clean Power Solar Billing Plan payout rules. City fee schedule page is behind a bot check, so no fee figure."
+  },
+  {
+   "path": "/solar-cost/san-luis-obispo",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in San Luis Obispo, CA: What Sets the Price (2026)",
+   "clusters": [
+    625
+   ],
+   "sources": [
+    "https://www.slocity.org/government/department-directory/community-development/building-safety/permit-forms-and-applications/solar-documents",
+    "https://www.slocity.org/home/showpublisheddocument/39182/639177350208630000",
+    "https://www.slocity.org/government/department-directory/city-administration/office-of-sustainability-and-natural-resources/climate-action/community-choice-energy",
+    "https://3cenergy.org/solar-billing-plan/"
+   ],
+   "status": "done",
+   "note": "Fee now published: $332.50 residential roof-mount PV (2026-27 schedule incl. 3.05% IT surcharge; read via r.jina.ai); SolarAPP+ $35/$60; InfoSLO auto-issue; 3CE since Jan 2020 (City page) and 3CE Solar Billing Plan true-up/payout."
+  },
+  {
+   "path": "/solar-cost/walnut-creek",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Walnut Creek, CA: What Sets the Price (2026)",
+   "clusters": [
+    619
+   ],
+   "sources": [
+    "https://www.walnutcreekca.gov/government/community-development-department/permits/building-permits/building-and-land-use-regulations/solar-electrical-heating-and-plumbing",
+    "https://walnutcreek.granicus.com/MetaViewer.php?view_id=&clip_id=5201&meta_id=335345",
+    "https://www.walnutcreekca.gov/government/departments/e-c-o-sustainability/energy-innovation",
+    "https://mcecleanenergy.org/solar-billing-plan/"
+   ],
+   "status": "done",
+   "note": "Fee re-sourced to the FY26 & FY27 master fee schedule ($280 unified permit, no change proposed); City page names no automated platform; MCE since Sept 2016 (City page) and MCE Solar Billing Plan credits."
+  },
+  {
+   "path": "/solar-cost/pleasanton",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Pleasanton, CA: What Sets the Price (2026)",
+   "clusters": [
+    644
+   ],
+   "sources": [
+    "https://www.cityofpleasantonca.gov/our-government/community-and-economic-development/permits-forms-fees/",
+    "https://www.cityofpleasantonca.gov/assets/our-government/community-development/permits-forms-fees/Permit-Fees.pdf",
+    "https://www.cityofpleasantonca.gov/assets/our-government/community-development/handouts/photovoltaic-submittal-requirements.pdf",
+    "https://avaenergy.org/community/who-we-serve/"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + Ava; $250 up to 10 kW (Jan 2026 fee list), 5% technology fee; SolarAPP+ via Accela with business license; 2017 handout (no planning/fire review for flush arrays; 120% bus bar check). Companies twin registered."
   }
  ],
  "sitemap_add": [],
@@ -208,6 +297,11 @@
    "hub": "city_cost",
    "href": "/solar-cost/oakland",
    "label": "Solar panel cost in Oakland"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/pleasanton",
+   "label": "Solar panel cost in Pleasanton"
   }
  ],
  "link_requests": [],

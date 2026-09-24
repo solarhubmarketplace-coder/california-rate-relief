@@ -712,12 +712,22 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Placer County",
     utilityKey: "roseville",
     permitUrl: "https://www.roseville.ca.gov/development_services/building/solarapp.php",
+    // 2026-09-23: re-fetched. The FY25 schedule the 2026-09-18 row quoted is
+    // superseded; the schedule effective July 1, 2026 prices PV permits from a
+    // set valuation and states no flat solar fee.
     permitFeeNote:
-      "Page states: \"A $25 processing fee will be charged by the SolarAPP+ website\" and \"Pay applicable Building Permit fees (currently $1,349.49).\" Separately, the FY25 Master Fee Schedule lists Residential Rooftop Solar Energy Systems at \"$450 plus $15 per kilowatt (kW) for each kW above 15\" and notes photovoltaic permits use a set valuation of $18,000 for fee calculation purposes",
-    permitFeeSource: "City of Roseville SolarAPP+ page and FY25 Master Fee Schedule (civiclive.com-hosted PDF)",
+      "Roseville's SolarAPP+ page says the City's building permit fees are currently $1,349.49, on top of a $25 processing fee charged by SolarAPP+. The City's Schedule of User and Regulatory Fees, effective July 1, 2026, calculates photovoltaic permit fees from a set valuation of $19,000 rather than from the project's actual cost.",
+    permitFeeSource: "City of Roseville, SolarAPP+ (Development Services, Building)",
+    permitSources: [
+      {
+        label: "City of Roseville, Schedule of User and Regulatory Fees, effective July 1, 2026 (Building: photovoltaic set valuation)",
+        url: "https://www.roseville.ca.gov/Documents/Development%20Services/Building/Development%20Impact%20Fees/Schedule%20of%20User%20and%20Regulatory%20Fees.pdf?t=202602270808160",
+        verifiedAt: "2026-09-23",
+      },
+    ],
     permitOnline:
-      "yes \u2014 SolarAPP+ named; design submitted via SolarAPP+ (gosolarapp.org), then permit applied for via City's online portal (permitsonline.roseville.ca.us)",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. The design goes through SolarAPP+, then the permit is applied for as a SolarAPP+ Permit in the City's online portal. The route needs Roseville Electric pre-approval, excludes main panel upgrades, ballasted systems and homes in a City flood zone, and is open only to contractors with a C-10, C-46 or B license and a City business license.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "salinas",
@@ -753,13 +763,25 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "San Luis Obispo County",
     utilityKey: "pge",
     cca: "Central Coast Community Energy (3CE)",
+    ccaSource: {
+      label: "City of San Luis Obispo, Community Choice Energy (3CE service since January 2020)",
+      url: "https://www.slocity.org/government/department-directory/city-administration/office-of-sustainability-and-natural-resources/climate-action/community-choice-energy",
+      verifiedAt: "2026-09-23",
+    },
     permitUrl: "https://www.slocity.org/government/department-directory/community-development/building-safety/permit-forms-and-applications/solar-documents",
     permitFeeNote:
-      "Page requires SolarAPP+ automated review as the first step (submit at gosolarapp.org). SolarAPP+ review fee is $35 for solar-only applications and $60 for solar-plus-storage applications; additional city permit fees also apply, paid online before the permit auto-issues.",
-    permitFeeSource: "City of San Luis Obispo Solar Documents page (Building & Safety)",
+      "San Luis Obispo's Comprehensive Fee Schedule, effective July 1, 2026, lists a residential roof-mount photovoltaic system at $332.50, which includes the City's 3.05 percent information technology surcharge. SolarAPP+ separately charges $35 to review a solar-only application and $60 for solar plus storage.",
+    permitFeeSource: "City of San Luis Obispo, Solar Information (Building & Safety)",
+    permitSources: [
+      {
+        label: "City of San Luis Obispo, Comprehensive Fee Schedule, fiscal year 2026-2027, effective July 1, 2026 (Building fees: Photovoltaic Systems, residential roof mount)",
+        url: "https://www.slocity.org/home/showpublisheddocument/39182/639177350208630000",
+        verifiedAt: "2026-09-23",
+      },
+    ],
     permitOnline:
-      "Yes, fully online. SolarAPP+ automated review, then upload approval to the city's InfoSLO portal; permit is auto-issued within about a minute of fee payment.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. After SolarAPP+ review, the approval is uploaded to the City's InfoSLO portal under the Photovoltaic (SolarAPP) application, and the permit is auto-issued within about a minute of paying the invoice. Inspections are scheduled online.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "san-marcos",
@@ -795,13 +817,25 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Sonoma County",
     utilityKey: "pge",
     cca: "Sonoma Clean Power",
+    ccaSource: {
+      label: "Sonoma Clean Power, Solar Billing Plan (public power provider for Sonoma and Mendocino counties)",
+      url: "https://sonomacleanpower.org/solar-billing-plan",
+      verifiedAt: "2026-09-23",
+    },
     permitUrl: "https://www.srcity.org/3826/Solar-Panel-Installation",
     permitFeeNote:
-      "No dollar amount given. States: \"A processing fee will be charged by SolarAPP+... Once you have paid all applicable fees, the system will prompt you to upload the required documentation.\"",
-    permitFeeSource: "City of Santa Rosa Solar Panel Installation (SolarApp+) page",
+      "Santa Rosa's solar page does not state a dollar figure for the City's permit; it says SolarAPP+ charges its own processing fee. The City's code for small rooftop systems adds that resubmitted applications, and a re-inspection after a failed inspection, may carry additional fees. The City's fee schedule page could not be read when checked.",
+    permitFeeSource: "City of Santa Rosa, Solar Panel Installation",
+    permitSources: [
+      {
+        label: "Santa Rosa City Code, Chapter 18-68, Expedited Permit Process for Small Residential Rooftop Solar Energy Systems (section 18-68.060)",
+        url: "https://ecode360.com/42967322",
+        verifiedAt: "2026-09-23",
+      },
+    ],
     permitOnline:
-      "Yes, online. SolarAPP+ is explicitly named; licensed contractors register in SolarAPP+ then apply for the city permit via Accela Citizen's Access (ACA).",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Licensed contractors take eligible residential rooftop systems, including those with energy storage, through SolarAPP+ and then apply in the City's Accela Citizen Access portal. Inspections can be requested online, by phone or by text.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "stockton",
@@ -864,13 +898,25 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Contra Costa County",
     utilityKey: "pge",
     cca: "MCE (Marin Clean Energy)",
+    ccaSource: {
+      label: "City of Walnut Creek, MCE Clean Energy (MCE the default provider since September 2016; PG&E delivers and bills)",
+      url: "https://www.walnutcreekca.gov/government/departments/e-c-o-sustainability/energy-innovation",
+      verifiedAt: "2026-09-23",
+    },
     permitUrl: "https://www.walnutcreekca.gov/government/community-development-department/permits/building-permits/building-and-land-use-regulations/solar-electrical-heating-and-plumbing",
     permitFeeNote:
-      "Fee schedule lists a specific flat fee: \"Solar Photovoltaic - Single Family and Duplex Residential: $280.00\" (unified permit incl. plan check and inspection). Multi-family/non-residential uses formula $419.12 + $0.0832 x panel area in sq ft.",
-    permitFeeSource: "City of Walnut Creek Master Fee Schedule FY26 & FY27 (Community Development - Building Division fees PDF)",
+      "Walnut Creek's Master Fee Schedule for fiscal years 2026 and 2027 lists a solar photovoltaic permit for single-family and duplex homes at $280.00, a unified permit that covers plan check and inspection of all electrical, plumbing and related work, with no change proposed for either year.",
+    permitFeeSource: "City of Walnut Creek, Solar, Electrical, Heating, and Plumbing (Building)",
+    permitSources: [
+      {
+        label: "City of Walnut Creek, Master Fee Schedule FY26 & FY27 (Building: 4. Solar)",
+        url: "https://walnutcreek.granicus.com/MetaViewer.php?view_id=&clip_id=5201&meta_id=335345",
+        verifiedAt: "2026-09-23",
+      },
+    ],
     permitOnline:
-      "Not addressed on the city's solar-specific page. The city offers a general online permit portal (Accela Citizen Access, aca-prod.accela.com/WC), but SolarAPP+ is not named on the solar page found.",
-    sourcesFetchedAt: "2026-09-18",
+      "The City's solar page does not say whether solar permits go through SolarAPP+ or another automated platform. It lists submittal requirements for photovoltaic systems (Information Bulletin IB-025) and for batteries paired with solar, and the City takes building permit applications through its general online permit portal.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "watsonville",
@@ -1232,6 +1278,28 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     ],
     permitOnline:
       "Yes. Licensed contractors take eligible rooftop systems on a permitted main dwelling through SolarAPP+, then enter the approval number in the City's Online Permit Center. Batteries and related electrical work are allowed; ballasted systems and building-integrated PV are not.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'pleasanton',
+    city: 'Pleasanton',
+    county: 'Alameda County',
+    utilityKey: 'pge',
+    cca: 'Ava Community Energy',
+    ccaSource: AVA_COMMUNITIES,
+    permitUrl: 'https://www.cityofpleasantonca.gov/our-government/community-and-economic-development/permits-forms-fees/',
+    permitFeeNote:
+      "Pleasanton's Building Permit and Plan Review Fees, dated January 1, 2026, set a residential photovoltaic permit, plan review included, at $250 for a system up to 10 kW, and at $450 plus $15 for each kW above 15 kW for a larger one. The City adds a technology fee of 5 percent of total permit fees, and card payments carry a 2.5 percent convenience fee.",
+    permitFeeSource: 'City of Pleasanton, Permits, Forms & Fees',
+    permitSources: [
+      {
+        label: 'City of Pleasanton, Building Permit and Plan Review Fees, January 1, 2026 (Residential Photo-Voltaic Systems; Technology Fee)',
+        url: 'https://www.cityofpleasantonca.gov/assets/our-government/community-development/permits-forms-fees/Permit-Fees.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Eligible single-family, roof-mounted retrofit systems go through SolarAPP+, and the City permit (Solar Permit with SolarAPP+) is applied for in Accela Citizen Access. An active City of Pleasanton business license is required.",
     sourcesFetchedAt: '2026-09-23',
   },
 ];

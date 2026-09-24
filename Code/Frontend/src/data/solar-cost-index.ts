@@ -265,9 +265,9 @@ const FEES: Record<string, FeeEntry> = {
     extra: 'Each kW over 15 kW adds $12.',
   },
   roseville: {
-    status: 'conflicting',
-    extra: 'The FY25 Master Fee Schedule lists $450 plus $15 per kW above 15 kW; the City\'s SolarAPP+ page lists building permit fees of $1,349.49.',
-    evidence: 'Pay applicable Building Permit fees (currently $1,349.49)',
+    status: 'published',
+    components: [{ label: 'building permit fees, SolarAPP+ route (City page)', usd: 1349.49, quote: 'currently $1,349.49' }],
+    extra: 'SolarAPP+ adds a $25 processing fee; the July 2026 schedule prices PV permits from a $19,000 set valuation.',
   },
   salinas: {
     status: 'published',
@@ -278,9 +278,9 @@ const FEES: Record<string, FeeEntry> = {
   },
   'san-jose': { status: 'not-published', evidence: 'Page does not give a dollar amount' },
   'san-luis-obispo': {
-    status: 'not-published',
-    extra: 'The City states a SolarAPP+ review fee of $35 (solar only) or $60 (solar plus storage); City permit fees also apply.',
-    evidence: 'additional city permit fees also apply',
+    status: 'published',
+    components: [{ label: 'photovoltaic system, residential roof mount (IT surcharge included)', usd: 332.5, quote: 'at $332.50' }],
+    extra: 'SolarAPP+ review: $35 solar only, $60 solar plus storage.',
   },
   'san-marcos': { status: 'not-retrievable', evidence: 'did not return the document when checked' },
   'santa-cruz': {
@@ -292,7 +292,7 @@ const FEES: Record<string, FeeEntry> = {
     }],
     extra: 'Each kW above 15 kW adds $24.',
   },
-  'santa-rosa': { status: 'not-published', evidence: 'No dollar amount given' },
+  'santa-rosa': { status: 'not-published', evidence: 'does not state a dollar figure' },
   stockton: {
     status: 'published',
     components: [{
@@ -310,7 +310,7 @@ const FEES: Record<string, FeeEntry> = {
     components: [{
       label: 'solar PV, single-family and duplex, plan check and inspection included',
       usd: 280,
-      quote: 'Solar Photovoltaic - Single Family and Duplex Residential: $280.00',
+      quote: 'single-family and duplex homes at $280.00',
     }],
   },
   watsonville: {
@@ -371,6 +371,11 @@ const FEES: Record<string, FeeEntry> = {
       { label: 'permit issuance', usd: 39, quote: '$39 permit issuance fee' },
     ],
     extra: 'The regular route is $350 up to 15 kW plus $15 per additional kW; Riverside Public Utilities adds a $275 net metering review fee.',
+  },
+  pleasanton: {
+    status: 'published',
+    components: [{ label: 'residential PV permit up to 10 kW, plan review included', usd: 250, quote: 'at $250 for a system up to 10 kW' }],
+    extra: 'Above 10 kW: $450 plus $15 per kW above 15 kW.',
   },
   oakland: {
     status: 'published',
@@ -460,18 +465,18 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   petaluma: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   'rancho-cordova': { platform: 'solarapp', evidence: 'SolarAPP+ explicitly named' },
   'rancho-cucamonga': { platform: 'solarapp', evidence: 'SolarAPP+ named and available' },
-  roseville: { platform: 'solarapp', evidence: 'SolarAPP+ named' },
+  roseville: { platform: 'solarapp', evidence: 'The design goes through SolarAPP+' },
   salinas: { platform: 'solarapp', evidence: 'Yes, via SolarAPP+' },
   'san-jose': { platform: 'none-named', evidence: 'SolarAPP+ is not named on this page' },
-  'san-luis-obispo': { platform: 'solarapp', evidence: 'SolarAPP+ automated review' },
+  'san-luis-obispo': { platform: 'solarapp', evidence: 'After SolarAPP+ review' },
   'san-marcos': { platform: 'solarapp', evidence: 'contractors use SolarAPP+' },
   'santa-cruz': { platform: 'solarapp', evidence: 'Yes, via SolarAPP+' },
-  'santa-rosa': { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
+  'santa-rosa': { platform: 'solarapp', evidence: 'through SolarAPP+ and then apply' },
   stockton: { platform: 'solarapp', evidence: 'SolarAPP+ named' },
   'thousand-oaks': { platform: 'solarapp', evidence: 'via SolarAPP+' },
   tulare: { platform: 'solarapp', evidence: 'SolarAPP+ named on page' },
   ventura: { platform: 'symbium', evidence: 'Symbium (not SolarAPP+)' },
-  'walnut-creek': { platform: 'none-named', evidence: 'SolarAPP+ is not named on the solar page found' },
+  'walnut-creek': { platform: 'none-named', evidence: 'does not say whether solar permits go through SolarAPP+' },
   watsonville: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   winchester: { platform: 'solarapp', evidence: 'SolarAPP+ named' },
   yucaipa: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
@@ -492,6 +497,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   irvine: { platform: 'symbium', evidence: 'powered by Symbium' },
   fremont: { platform: 'solarapp', evidence: 'Contractors registered with SolarAPP+' },
   riverside: { platform: 'solarapp', evidence: 'under 38 kW through SolarAPP+' },
+  pleasanton: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
   oakland: { platform: 'solarapp', evidence: 'eligible rooftop systems on a permitted main dwelling through SolarAPP+' },
 };
 
@@ -516,7 +522,7 @@ const ONLINE_EXCEPTIONS: Record<string, { value: Exclude<OnlineFiling, 'yes' | '
   napa: { value: 'in-person', evidence: 'described as in-person/walk-in submission' },
   // The row starts "No." about SolarAPP+, then names the City's own online portal.
   'pacific-grove': { value: 'yes', evidence: "online Solar Permit Application portal" },
-  'walnut-creek': { value: 'general-portal', evidence: 'The city offers a general online permit portal' },
+  'walnut-creek': { value: 'general-portal', evidence: 'general online permit portal' },
   yucaipa: { value: 'general-portal', evidence: 'Yes for permits generally' },
   ontario: { value: 'not-stated', evidence: 'Could not be determined' },
   tracy: { value: 'not-stated', evidence: 'The page does not say whether solar permits specifically can be filed online' },
@@ -649,7 +655,7 @@ const CCAS: CcaEntry[] = [
   {
     name: 'Ava Community Energy',
     match: 'Ava Community Energy',
-    members: ['livermore', 'stockton', 'tracy', 'fremont', 'oakland'],
+    members: ['livermore', 'stockton', 'tracy', 'fremont', 'oakland', 'pleasanton'],
     source: {
       label: 'Ava Community Energy, Who We Serve',
       url: 'https://avaenergy.org/community/who-we-serve/',

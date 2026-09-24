@@ -363,6 +363,140 @@ const oaklandFees2627: LocalGuidanceSource = {
     'Solar electric, residential: $450 inspection plus $4.03 per kW above 15 kW; SolarApp+ filing fee $21.49 per permit; residential energy storage system up to 80 kW aggregate or 20 kW single: $268.64 per permit.',
 };
 
+
+const rosevilleSolarApp: LocalGuidanceSource = {
+  label: 'City of Roseville — SolarAPP+',
+  url: 'https://www.roseville.ca.gov/development_services/building/solarapp.php',
+  verifiedAt: verified20260923,
+  scope:
+    'Main-dwelling rooftop only, no ballasted systems, no main panel upgrades, not in a City flood zone; Roseville Electric pre-approval required; C-10, C-46 or B license plus City business license; no permit runners; $25 SolarAPP+ fee; building permit fees currently $1,349.49.',
+};
+
+const rosevilleSolar2: LocalGuidanceSource = {
+  label: 'Roseville Electric — Roseville Solar 2.0',
+  url: 'https://www.roseville.ca.gov/electric_utility/rates/roseville_solar_2_0/index.php',
+  verifiedAt: verified20260923,
+  scope: 'Customers interconnected on or after October 1, 2018 are on Solar 2.0; the surplus energy compensation rate is $0.0691 per kWh.',
+};
+
+const rosevilleInterconnection: LocalGuidanceSource = {
+  label: 'Roseville Electric — The Interconnection Process',
+  url: 'https://www.roseville.ca.gov/electric_utility/rebates_and_energy_savings/your_trusted_solar_advisor/the_interconnection_process.php',
+  verifiedAt: verified20260923,
+  scope:
+    'System size limit of 100% of the last 12 months of use, or conditioned square footage times 3 kWh; interconnection reservation valid 120 days; multi-register meter installed after City inspection; permission to operate requested by email.',
+};
+
+const santaRosaSolar: LocalGuidanceSource = {
+  label: 'City of Santa Rosa — Solar Panel Installation',
+  url: 'https://www.srcity.org/3826/Solar-Panel-Installation',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ for most residential roof-mounted retrofit PV, including systems with storage; permit through Accela Citizen Access; inspections by text, phone or online, requested by 2:30 p.m. the day before. No fee amount stated.',
+};
+
+const santaRosaCode1868: LocalGuidanceSource = {
+  label: 'Santa Rosa City Code, Chapter 18-68 (small residential rooftop solar), section 18-68.060',
+  url: 'https://ecode360.com/42967322',
+  verifiedAt: verified20260923,
+  scope:
+    'Applicant verifies, at its own cost, that existing wiring, main panel and subpanels can carry the new load; review within three business days, resubmittals too; City approval does not authorize grid connection; one inspection; re-inspections and further reviews may carry fees (Ord. 4048, 2015).',
+};
+
+const scpSolarBilling: LocalGuidanceSource = {
+  label: 'Sonoma Clean Power — Solar Billing Plan',
+  url: 'https://sonomacleanpower.org/solar-billing-plan',
+  verifiedAt: verified20260923,
+  scope:
+    'Public power provider for Sonoma and Mendocino counties; Solar Billing Plan customers move to PG&E’s E-ELEC rate; export credits vary by season, day and hour; surplus paid each spring at Net Surplus Compensation, up to $5,000 a year, by check above $200 and as a bill credit at or below it.',
+};
+
+const sloSolar: LocalGuidanceSource = {
+  label: 'City of San Luis Obispo — Solar Information',
+  url: 'https://www.slocity.org/government/department-directory/community-development/building-safety/permit-forms-and-applications/solar-documents',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ review: $35 solar, $60 solar plus storage; approval uploaded to InfoSLO (Photovoltaic (SolarAPP) application); permit auto-issued about a minute after the invoice is paid; inspection requests by 5 p.m. may be scheduled for the next business day.',
+};
+
+const sloFees2627: LocalGuidanceSource = {
+  label: 'City of San Luis Obispo — Comprehensive Fee Schedule 2026-2027 (effective July 1, 2026)',
+  url: 'https://www.slocity.org/home/showpublisheddocument/39182/639177350208630000',
+  verifiedAt: verified20260923,
+  scope:
+    'Photovoltaic Systems (residential roof mount) $332.50 total including a 3.05% information technology surcharge on work in the EnerGov system.',
+};
+
+const sloCce: LocalGuidanceSource = {
+  label: 'City of San Luis Obispo — Community Choice Energy',
+  url: 'https://www.slocity.org/government/department-directory/city-administration/office-of-sustainability-and-natural-resources/climate-action/community-choice-energy',
+  verifiedAt: verified20260923,
+  scope: 'The City began receiving 3CE service in January 2020.',
+};
+
+const cceSolarBilling: LocalGuidanceSource = {
+  label: 'Central Coast Community Energy (3CE) — Solar Billing Plan',
+  url: 'https://3cenergy.org/solar-billing-plan/',
+  verifiedAt: verified20260923,
+  scope:
+    'Exports credited at 3CE hourly Energy Export Credit rates; CARE/FERA adder of $0.00396 per kWh; generation true-up every December; residential customers with at least $200 of Net Surplus Compensation may request a check within 45 days of the true-up statement; separate delivery true-up with PG&E or SCE.',
+};
+
+const walnutCreekSolar: LocalGuidanceSource = {
+  label: 'City of Walnut Creek — Solar, Electrical, Heating, and Plumbing',
+  url: 'https://www.walnutcreekca.gov/government/community-development-department/permits/building-permits/building-and-land-use-regulations/solar-electrical-heating-and-plumbing',
+  verifiedAt: verified20260923,
+  scope:
+    'Lists submittal requirements for photovoltaic arrays (IB-025) and for batteries in one- and two-family dwellings with solar; does not name SolarAPP+ or any automated platform or state a fee.',
+};
+
+const walnutCreekFees: LocalGuidanceSource = {
+  label: 'City of Walnut Creek — Master Fee Schedule FY26 & FY27',
+  url: 'https://walnutcreek.granicus.com/MetaViewer.php?view_id=&clip_id=5201&meta_id=335345',
+  verifiedAt: verified20260923,
+  scope:
+    'Solar photovoltaic, single-family and duplex residential: $280.00, unified permit including plan check and inspection of all electrical, plumbing and related work; no change proposed for FY 2026 or FY 2027.',
+};
+
+const walnutCreekMce: LocalGuidanceSource = {
+  label: 'City of Walnut Creek — MCE Clean Energy',
+  url: 'https://www.walnutcreekca.gov/government/departments/e-c-o-sustainability/energy-innovation',
+  verifiedAt: verified20260923,
+  scope: 'MCE has been the default electricity provider for Walnut Creek since September 2016; PG&E transmits and distributes power, maintains infrastructure and bills customers.',
+};
+
+const mceSolarBilling: LocalGuidanceSource = {
+  label: 'MCE — Solar Billing Plan',
+  url: 'https://mcecleanenergy.org/solar-billing-plan/',
+  verifiedAt: verified20260923,
+  scope:
+    'Exports credited at the Energy Export Credit value plus an MCE Solar Bonus Credit of 10% of those credits; CARE/FERA solar credit of $0.05 per kWh; Solar Storage Credit of $10 to $20 a month for enrolled batteries; annual April-to-March cash-out at Net Surplus Compensation for balances over $200, up to $5,000.',
+};
+
+const pleasantonPermits: LocalGuidanceSource = {
+  label: 'City of Pleasanton — Permits, Forms & Fees (SolarAPP+)',
+  url: 'https://www.cityofpleasantonca.gov/our-government/community-and-economic-development/permits-forms-fees/',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ for eligible single-family roof-mounted retrofit PV, then a Solar Permit with SolarAPP+ in Accela Citizen Access; active City business license required; 2.5% convenience fee on card payments since January 1, 2025.',
+};
+
+const pleasantonFees2026: LocalGuidanceSource = {
+  label: 'City of Pleasanton — Building Permit and Plan Review Fees (January 1, 2026)',
+  url: 'https://www.cityofpleasantonca.gov/assets/our-government/community-development/permits-forms-fees/Permit-Fees.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential photovoltaic systems, plan review included: $250 up to 10 kW; over 10 kW $450 plus $15 per kW above 15; technology fee of 5% of total permit fees.',
+};
+
+const pleasantonPvHandout: LocalGuidanceSource = {
+  label: 'City of Pleasanton — Solar Photovoltaic (PV) Projects handout (dated 03/17)',
+  url: 'https://www.cityofpleasantonca.gov/assets/our-government/community-development/handouts/photovoltaic-submittal-requirements.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'For PV 10 kW or smaller: no Planning review for flush rooftop arrays (parallel, under 12 inches, not past ridge or hip); no Fire Department approval; inspection checks that the main and inverter breakers total no more than 120% of the bus bar rating.',
+};
+
 export const LOCAL_PROJECT_GUIDANCE = {
   temecula: {
     city: 'Temecula',
@@ -862,6 +996,173 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
     ],
     sources: [oaklandSolar, oaklandFees2627, avaSolarBilling, avaCommunities],
+  },
+  roseville: {
+    city: 'Roseville',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Roseville's electricity comes from the City's own utility, which has to pre-approve a solar system before the City permit and which buys surplus solar at a fixed rate. Both shape the value of a quote as much as its price.",
+    quoteQuestions: [
+      'Has Roseville Electric pre-approved the interconnection, and will the 120-day reservation still be valid when the permit is pulled?',
+      "Does the design need a main panel upgrade? Roseville's SolarAPP+ route does not allow one, so the permit would take another path.",
+      "Is the system within Roseville Electric's size limit, and does the savings estimate use the Solar 2.0 export rate?",
+    ],
+    localChecks: [
+      {
+        title: 'The utility approves first',
+        body: "Roseville's SolarAPP+ route requires pre-approval from Roseville Electric, whose interconnection reservation lasts 120 days. After the City inspection a meter technician installs a multi-register meter, and permission to operate follows.",
+      },
+      {
+        title: 'Who may file',
+        body: 'The City accepts SolarAPP+ applications only from California contractors with a C-10, C-46 or B license and a City of Roseville business license, not from permit runners or expediters. Homes in a City flood zone do not qualify.',
+      },
+      {
+        title: 'Exports earn a fixed rate',
+        body: 'Customers interconnected since October 1, 2018 are on Roseville Solar 2.0, which pays $0.0691 per kWh for surplus energy. Ask what export rate a savings estimate assumes.',
+      },
+      {
+        title: 'Size is capped by past use',
+        body: "Roseville Electric limits a system to 100 percent of the customer's last 12 months of use, or the home's conditioned square footage multiplied by 3 kWh when there is no such history. The California Energy Commission's map also puts a small area at the city's northern edge in PG&E territory, so check the utility on your bill.",
+      },
+    ],
+    related: [
+      { href: '/blog/solar-rebates-by-california-utility', label: 'Rebates by California utility' },
+      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [rosevilleSolarApp, rosevilleSolar2, rosevilleInterconnection, cecTerritory0923],
+  },
+  'santa-rosa': {
+    city: 'Santa Rosa',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Santa Rosa's own code promises a three-business-day review and a single inspection for a small rooftop system, which puts the weight on getting the application right the first time.",
+    quoteQuestions: [
+      "Is the design within SolarAPP+'s eligibility for a residential roof-mounted retrofit system, with or without a battery?",
+      "Has the installer checked that the main panel, subpanels and wiring can carry the new load? Santa Rosa's code puts that check, and its cost, on the applicant.",
+      "Does the savings estimate use Sonoma Clean Power's export credits and its spring payout rules?",
+    ],
+    localChecks: [
+      {
+        title: 'Three business days and one inspection',
+        body: 'Santa Rosa City Code chapter 18-68 requires a small residential rooftop solar application to be approved or rejected within three business days, resubmittals included, and calls for only one inspection. Resubmittals and a re-inspection after a failed inspection may cost extra.',
+      },
+      {
+        title: 'City approval is not permission to connect',
+        body: "The code says the City's approval does not authorize connecting the system to the grid; that permission comes separately from the utility.",
+      },
+      {
+        title: 'How Sonoma Clean Power pays for surplus',
+        body: "Sonoma Clean Power moves Solar Billing Plan customers to PG&E's E-ELEC rate, credits exports at values that change by season, day and hour, and each spring pays surplus at the Net Surplus Compensation rate, up to $5,000 a year: by check above $200, as a bill credit at or below it.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [santaRosaSolar, santaRosaCode1868, scpSolarBilling],
+  },
+  'san-luis-obispo': {
+    city: 'San Luis Obispo',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "San Luis Obispo publishes its solar permit fee and issues the permit online within minutes of a SolarAPP+ approval. The larger variable is how Central Coast Community Energy settles exports.",
+    quoteQuestions: [
+      "Will the design pass SolarAPP+ review, and does the quote include SolarAPP+'s $35 or $60 review fee along with the City's permit fee?",
+      'Is battery storage in the quote? SolarAPP+ charges more to review solar plus storage than solar alone.',
+      "Does the savings estimate use 3CE's hourly export credit rates and its December true-up?",
+    ],
+    localChecks: [
+      {
+        title: 'The published fee includes a surcharge',
+        body: "San Luis Obispo's 2026-27 schedule lists a residential roof-mount photovoltaic system at $332.50, which includes the 3.05 percent information technology surcharge the City adds to work handled in its EnerGov system.",
+      },
+      {
+        title: 'Issued in about a minute',
+        body: 'Once SolarAPP+ approves the design, the approval is uploaded to InfoSLO and the permit issues automatically about a minute after the invoice is paid. Inspection requests received by 5 p.m. may be scheduled for the next business day.',
+      },
+      {
+        title: 'How 3CE settles exports',
+        body: '3CE, which began serving the city in January 2020, credits Solar Billing Plan exports at its own hourly Energy Export Credit rates and trues up generation every December. Residential customers owed at least $200 in Net Surplus Compensation can request a check within 45 days of the true-up statement; PG&E runs a separate true-up for delivery.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/central-valley', label: 'Central Coast and Valley bill guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+    ],
+    sources: [sloSolar, sloFees2627, sloCce, cceSolarBilling],
+  },
+  'walnut-creek': {
+    city: 'Walnut Creek',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Walnut Creek charges one flat, unified fee for a home solar permit, so differences between bids come from the design and the contract rather than the City. Its generation provider, MCE, adds solar credits of its own.",
+    quoteQuestions: [
+      "Does the permit line match the City's $280 unified permit for a single-family or duplex home, and does the quote say who files it?",
+      "If a battery is included, does the plan set meet the City's separate submittal list for storage paired with solar?",
+      "Does the savings estimate include MCE's export and bonus credits and PG&E's delivery charges?",
+    ],
+    localChecks: [
+      {
+        title: 'One fee covers plan check and inspection',
+        body: "Walnut Creek's $280 solar permit for a single-family or duplex home is a unified permit that includes plan check and inspection of all electrical, plumbing and related work, and the City's fee schedule proposes no change for 2026 or 2027.",
+      },
+      {
+        title: 'No automated platform is named',
+        body: "The City's solar page lists submittal requirements, IB-025 for photovoltaic arrays and a separate list for batteries with solar, but does not say whether SolarAPP+ or another automated platform is used. Ask the installer which route it will file.",
+      },
+      {
+        title: "MCE's solar credits",
+        body: 'MCE, the default provider in Walnut Creek since September 2016, adds a Solar Bonus Credit of 10 percent of export credits each billing period, pays income-qualified CARE and FERA customers an extra $0.05 per kWh, offers a $10 to $20 monthly credit for enrolled batteries, and cashes out balances over $200 once a year, up to $5,000.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+      { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
+    ],
+    sources: [walnutCreekSolar, walnutCreekFees, walnutCreekMce, mceSolarBilling],
+  },
+  pleasanton: {
+    city: 'Pleasanton',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Pleasanton's permit fee for a home system up to 10 kW sits well under the state limit, and its rules skip planning and fire review for a flush rooftop array. Bids should differ on design and contract, not paperwork.",
+    quoteQuestions: [
+      "Is the system 10 kW or smaller? Pleasanton's permit fee steps up above that size.",
+      'Does the electrical design stay within the 120 percent bus bar rule the City inspects for, or does it need a panel upgrade or derate?',
+      "Does the bill model use Ava Community Energy's export credits and PG&E's delivery charges, with their separate true-ups?",
+    ],
+    localChecks: [
+      {
+        title: 'The permit fee depends on size',
+        body: "Pleasanton's January 2026 fee list charges $250, plan review included, for a residential system up to 10 kW and $450 plus $15 per kW above 15 kW for a larger one, plus a 5 percent technology fee on total permit fees.",
+      },
+      {
+        title: 'No planning or fire review for flush arrays',
+        body: "The City's photovoltaic handout says Planning review is not needed for rooftop panels mounted parallel to and less than 12 inches above the roof and not past any ridge or hip, and that Fire Department approval is not required for solar PV. The handout dates from 2017, so confirm with Building and Safety.",
+      },
+      {
+        title: 'Inspectors check the bus bar',
+        body: "Pleasanton's inspection checklist includes the rule that the main breaker and the inverter breaker together may not exceed 120 percent of the panel's bus bar rating. A design that breaks it needs a derate or a panel upgrade, which changes the scope and the price.",
+      },
+      {
+        title: 'Ava values exports by the hour',
+        body: "Ava's Solar Billing Plan prices each exported kWh by the hour it leaves the home. Customers not on CARE or FERA earn $0.025 per kWh more for exports between 3 and 8 pm, CARE and FERA customers earn $0.01 per kWh more on all exports, and balances over $100 at the April true-up are paid out.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [pleasantonPermits, pleasantonFees2026, pleasantonPvHandout, avaSolarBilling, avaCommunities],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 
