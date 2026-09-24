@@ -1,0 +1,507 @@
+{
+ "agent": "installers",
+ "pages": [
+  {
+   "path": "/best-solar-companies-california",
+   "action": "UPGRADE",
+   "hub": "installers",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "title": "Solar Installers in California: Compare and Verify (2026)",
+   "clusters": [
+    3,
+    22,
+    24,
+    35,
+    23,
+    30,
+    85,
+    43,
+    152,
+    57,
+    79,
+    58,
+    106,
+    200,
+    90,
+    219,
+    121,
+    265,
+    260,
+    252,
+    343,
+    5,
+    6,
+    13,
+    45
+   ],
+   "sources": [
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+    "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx",
+    "https://www.cslb.ca.gov/Contractors/Applicants/Home_Improvement_Registration/Before_Applying_For_HIS.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/experience_for_exam.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/Issuing_My_License.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/applying_for_license.aspx",
+    "https://cslb.ca.gov/onlineservices/dataportal/ListByClassification",
+    "https://www.cslb.ca.gov/consumers/building_officials/owner_builder_overview.aspx",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://dfpi.ca.gov/consumers/housing/pace/"
+   ],
+   "status": "done",
+   "note": "Statewide hub for choosing a solar company. Now links all 66 live /solar-companies/<city> pages grouped by 11 regions (was 15), every live installer review and comparison, the key sub-question pages and the cross-hub pages. Replaces GrowthGuide kind='companies'; the 'companies' and 'panels' entries in components/growth/Guides.tsx are now unused and can be deleted at integration. The old 4-company table sourced to company websites was dropped (installer sites are not sources); detail stays on the review pages."
+  },
+  {
+   "path": "/solar-panels-california",
+   "action": "UPGRADE",
+   "hub": "cost_value",
+   "file": "src/app/solar-panels-california/page.tsx",
+   "title": "Solar Panels in California (2026): Cost, Rules, Worth It",
+   "clusters": [
+    31,
+    19,
+    94,
+    46,
+    168
+   ],
+   "sources": [
+    "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+    "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/low-income-solar-programs",
+    "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+    "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2025-building-energy-efficiency",
+    "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-12",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation"
+   ],
+   "status": "done",
+   "note": "Statewide residential solar guide and cost_value hub. Retitled: the old title's '$3.30/W median' is not in LBNL's text (re-checked 2026-09-23), so the page now uses LBNL Tracking the Sun 2024's stated $3.20-$5.50/W band (same benchmark as src/data/solar-cost-benchmark.ts) plus the 2026 update's -$0.50/W change. Links cost, financing, incentives, NEM and battery hubs. topic-hubs.ts hubPageLabel for cost_value still says '$3.30/W Median Cost and Sizing' and should be updated at integration."
+  },
+  {
+   "path": "/solar-installers/licensed-solar-installer",
+   "action": "CREATE_DEDICATED",
+   "hub": "installers",
+   "file": "src/app/solar-installers/licensed-solar-installer/page.tsx",
+   "title": "How to Find a Licensed Solar Installer in California",
+   "sources": [
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+    "https://www.cslb.ca.gov/onlineservices/dataportal/ListByCounty",
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cslb.ca.gov/Resources/PressReleases/2024/AB2622.FINAL.pdf",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/Issuing_My_License.aspx",
+    "https://www.cslb.ca.gov/Contractors/Applicants/Home_Improvement_Registration/Before_Applying_For_HIS.aspx",
+    "https://www2.cslb.ca.gov/Consumers/Hire_A_Contractor/What_Kind_Of_Contractor.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf"
+   ],
+   "status": "done",
+   "note": "Finding a licensed installer (CSLB data portal list by classification and county) and what 'licensed' means; the lookup walkthrough stays on how-to-verify. CREATE_DEDICATED holder /solar-companies/los-angeles is owned by the cities agent: link request in link_requests.",
+   "clusters": [
+    358
+   ]
+  },
+  {
+   "path": "/solar-installers/baker-electric-solar-review",
+   "action": "UPGRADE",
+   "hub": "installer_reviews",
+   "file": "src/app/solar-installers/baker-electric-solar-review/page.tsx",
+   "title": "Baker Electric San Diego vs Baker Home Energy: Solar Review",
+   "sources": [
+    "https://bakerhomeenergy.com/",
+    "https://www.baker-electric.com/",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf"
+   ],
+   "status": "done",
+   "note": "Both Baker sites re-read 2026-09-23 and attributed as the companies' own statements. Removed unsourced claims (computed years, default equipment, install-day length, coverage beyond what the company states, 'light' complaint profile, mid-market pricing, unconfirmed 25-year workmanship warranty). Added FAQPage schema, 'baker solar' / 'baker electric california' answers, section breadcrumb (/solar-installers) and HubSpokeLinks. CSLB record lookups for #858088 and #161756 still return only the search form to automated fetches. No 'Our take' score on this page.",
+   "clusters": [
+    190,
+    308
+   ]
+  },
+  {
+   "path": "/blog/solar-broker",
+   "action": "CREATE_DEDICATED",
+   "hub": "installers",
+   "file": "src/app/blog/solar-broker/page.tsx",
+   "title": "Solar Broker in California: What They Can and Can't Do",
+   "sources": [
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cslb.ca.gov/resources/industrybulletins/online_marketplace_fast_facts.pdf",
+    "https://www.cslb.ca.gov/Contractors/Applicants/Home_Improvement_Registration/Before_Applying_For_HIS.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide"
+   ],
+   "status": "done",
+   "note": "States plainly that CRR is a referral service and links /how-we-make-money. Holder /solar-companies/los-angeles (cities agent): link request in link_requests.",
+   "clusters": [
+    244
+   ]
+  },
+  {
+   "path": "/blog/solar-license-california",
+   "action": "CREATE",
+   "hub": "installers",
+   "file": "src/app/blog/solar-license-california/page.tsx",
+   "title": "Solar License in California: C-46, HIS and How to Get One",
+   "sources": [
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+    "https://web.cslb.ca.gov/contractors/applicants/contractors_license/Exam_Application/Before_Applying_For_License.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/experience_for_exam.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/applying_for_license.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/Issuing_My_License.aspx",
+    "https://www.cslb.ca.gov/Contractors/Applicants/Home_Improvement_Registration/Before_Applying_For_HIS.aspx",
+    "https://cslb.ca.gov/Resources/FormsAndApplications/ApplicationForRegistrationAsAHomeImprovementSalesperson.pdf",
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+    "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx"
+   ],
+   "status": "done",
+   "note": "Also answers the hub's sub-questions 'how to become a solar contractor/installer' and 'how to start a solar company in california' (c2763, c2782).",
+   "clusters": [
+    531
+   ]
+  },
+  {
+   "path": "/blog/what-percentage-of-california-power-is-solar",
+   "action": "CREATE",
+   "hub": "cost_value",
+   "file": "src/app/blog/what-percentage-of-california-power-is-solar/page.tsx",
+   "title": "What Percentage of California Power Is Solar? 2024 Data",
+   "sources": [
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/electric-generation-capacity-and-energy",
+    "https://ww2.energy.ca.gov/almanac/renewables_data/solar/index_cms.php",
+    "https://www.californiadgstats.ca.gov/faq/",
+    "https://www.cpuc.ca.gov/NEM/"
+   ],
+   "status": "done",
+   "note": "CSV hub is installers; filed under cost_value (parent /solar-panels-california) because the page is solar-market data, not company choice. Answers 'how many homes in california have solar' honestly: no CEC count; points to CPUC DGStats. EIA state pages did not render for WebFetch, so EIA is not cited.",
+   "clusters": [
+    478
+   ]
+  },
+  {
+   "path": "/blog/inflation-reduction-act-solar-california",
+   "action": "CREATE",
+   "hub": "incentives",
+   "file": "src/app/blog/inflation-reduction-act-solar-california/page.tsx",
+   "title": "Inflation Reduction Act and Solar in California: What's Left",
+   "sources": [
+    "https://www.irs.gov/pub/taxpros/fs-2022-40.pdf",
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+    "https://www.irs.gov/newsroom/one-big-beautiful-bill-provisions",
+    "https://www.energy.ca.gov/programs-and-topics/programs/inflation-reduction-act-residential-energy-rebate-programs",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/low-income-solar-programs"
+   ],
+   "status": "done",
+   "note": "CSV hub is installers; filed under incentives (breadcrumb /blog/california-solar-tax-credit-2026) because the topic is a tax credit. Leads with the credit ending for installs completed after 2025 (Public Law 119-21).",
+   "clusters": [
+    529
+   ]
+  },
+  {
+   "path": "/blog/pros-and-cons-of-solar-panels-california",
+   "action": "CREATE",
+   "hub": "cost_value",
+   "file": "src/app/blog/pros-and-cons-of-solar-panels-california/page.tsx",
+   "title": "Pros and Cons of Solar Panels in California (2026)",
+   "sources": [
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/low-income-solar-programs",
+    "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+    "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+    "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation"
+   ],
+   "status": "done",
+   "note": "CSV hub is installers; filed under cost_value (parent /solar-panels-california). Block 5 hub_page_map lists this cluster at /blog/pros-and-cons-of-solar-panels-in-california; the CSV URL (without 'in') was used.",
+   "clusters": [
+    163
+   ]
+  },
+  {
+   "path": "/blog/solar-resources",
+   "action": "CREATE_DEDICATED",
+   "hub": "installers",
+   "file": "src/app/blog/solar-resources/page.tsx",
+   "title": "California Solar Resources: Official Tools and Data (2026)",
+   "sources": [
+    "https://pvwatts.nrel.gov/",
+    "https://nsrdb.nrel.gov/",
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cslb.ca.gov/onlineservices/dataportal/ListByCounty",
+    "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://www.californiadgstats.ca.gov/",
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/low-income-solar-programs",
+    "https://www.energy.ca.gov/programs-and-topics/programs/inflation-reduction-act-residential-energy-rebate-programs",
+    "https://dfpi.ca.gov/consumers/housing/pace/",
+    "https://emp.lbl.gov/tracking-the-sun",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation",
+    "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-12"
+   ],
+   "status": "done",
+   "note": "Sourced directory of official tools, covering both senses of 'solar resource' (NREL sunlight data) and the agencies behind a solar decision. Holder /solar-cost/san-diego (cities agent): link request in link_requests; the page links /solar-cost/san-diego.",
+   "clusters": [
+    259
+   ]
+  },
+  {
+   "path": "/solar-installers/worst-solar-companies-california",
+   "action": "CREATE",
+   "hub": "installers",
+   "file": "src/app/solar-installers/worst-solar-companies-california/page.tsx",
+   "title": "Worst Solar Companies in California: How to Check a Record",
+   "sources": [
+    "https://www.courtlistener.com/docket/69017070/sunpower-corporation/",
+    "https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/",
+    "https://www.courtlistener.com/docket/73192534/freedom-forever-llc/",
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cslb.ca.gov/consumers/filing_a_complaint/how_the_complaint_process_works.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://dfpi.ca.gov/consumers/housing/pace/"
+   ],
+   "status": "done",
+   "note": "No ranking. Stated method on the page: a company appears only for an event on a public court or state record, linked to the record. Lists three residential solar bankruptcies read on CourtListener 2026-09-23 (SunPower 24-11649 D. Del.; Sunnova 25-90160 S.D. Tex.; Freedom Forever 26-10522 D. Del., now listed Ch. 7). Block 5 hub_page_map had this cluster as 'attach' to the hub; built as the CSV's CREATE and linked from the hub.",
+   "clusters": [
+    453
+   ]
+  },
+  {
+   "path": "/blog/solar-production-by-month-california",
+   "action": "CREATE",
+   "hub": "cost_value",
+   "file": "src/app/solar-panels-california/page.tsx",
+   "title": "(section) How solar production changes month by month",
+   "sources": [
+    "https://pvwatts.nrel.gov/"
+   ],
+   "status": "partial",
+   "note": "Built as a section, /solar-panels-california#production-by-month, not a standalone page: 20/mo and 0 GSC impressions is under the SEO/24 \u00a75.10 standalone threshold (Block 5 maps cluster 536 to a section). A month-by-month kWh table needs NREL PVWatts output, and the PVWatts API (developer.nrel.gov) is blocked from this environment (proxy CONNECT 502), so no monthly figures are stated. No URL created; nothing to add to the sitemap.",
+   "clusters": [
+    536
+   ]
+  }
+ ],
+ "sitemap_add": [
+  "/blog/solar-broker",
+  "/blog/solar-license-california",
+  "/solar-installers/licensed-solar-installer",
+  "/blog/what-percentage-of-california-power-is-solar",
+  "/blog/inflation-reduction-act-solar-california",
+  "/blog/pros-and-cons-of-solar-panels-california",
+  "/blog/solar-resources",
+  "/solar-installers/worst-solar-companies-california"
+ ],
+ "blog_index_add": [
+  {
+   "slug": "solar-broker",
+   "title": "What a solar broker is, and what one can legally do in California",
+   "hub": "installers"
+  },
+  {
+   "slug": "solar-license-california",
+   "title": "California solar license requirements: installing and selling solar",
+   "hub": "installers"
+  },
+  {
+   "slug": "what-percentage-of-california-power-is-solar",
+   "title": "What percentage of California's power is solar?",
+   "hub": "cost_value"
+  },
+  {
+   "slug": "inflation-reduction-act-solar-california",
+   "title": "The Inflation Reduction Act and solar in California: what changed, and what is left",
+   "hub": "incentives"
+  },
+  {
+   "slug": "pros-and-cons-of-solar-panels-california",
+   "title": "Pros and cons of solar panels in California in 2026",
+   "hub": "cost_value"
+  },
+  {
+   "slug": "solar-resources",
+   "title": "California solar resources: the official tools, data and rules worth bookmarking",
+   "hub": "installers"
+  }
+ ],
+ "redirect_requests": [],
+ "hub_links": [
+  {
+   "hub": "installers",
+   "href": "/solar-installers/licensed-solar-installer",
+   "label": "How to find a licensed solar installer"
+  },
+  {
+   "hub": "installers",
+   "href": "/blog/solar-broker",
+   "label": "What a solar broker can and cannot do"
+  },
+  {
+   "hub": "installers",
+   "href": "/blog/solar-license-california",
+   "label": "California solar contractor license requirements"
+  },
+  {
+   "hub": "cost_value",
+   "href": "/blog/pros-and-cons-of-solar-panels-california",
+   "label": "Pros and cons of solar panels in California"
+  },
+  {
+   "hub": "cost_value",
+   "href": "/blog/what-percentage-of-california-power-is-solar",
+   "label": "How much of California's power is solar"
+  },
+  {
+   "hub": "incentives",
+   "href": "/blog/inflation-reduction-act-solar-california",
+   "label": "The Inflation Reduction Act and solar: what's left"
+  },
+  {
+   "hub": "installers",
+   "href": "/blog/solar-resources",
+   "label": "Official California solar resources"
+  },
+  {
+   "hub": "installers",
+   "href": "/solar-installers/worst-solar-companies-california",
+   "label": "Checking a solar company's court and license record"
+  },
+  {
+   "hub": "installer_reviews",
+   "href": "/solar-installers/worst-solar-companies-california",
+   "label": "Solar bankruptcies on the court record"
+  }
+ ],
+ "link_requests": [
+  {
+   "from": "/solar-companies/los-angeles",
+   "to": "/solar-installers/licensed-solar-installer",
+   "anchor": "finding a licensed solar installer",
+   "why": "CREATE_DEDICATED: 'licensed solar installer' impressions land on the LA companies page (cities agent owns the template/data)"
+  },
+  {
+   "from": "/solar-companies/los-angeles",
+   "to": "/blog/solar-broker",
+   "anchor": "what a solar broker can legally do",
+   "why": "CREATE_DEDICATED: 'solar broker' impressions (62) land on the LA companies page"
+  },
+  {
+   "from": "/blog/california-solar-tax-credit-2026",
+   "to": "/blog/inflation-reduction-act-solar-california",
+   "anchor": "what the Inflation Reduction Act changed for home solar",
+   "why": "parent incentives hub should list the new spoke (owned by another agent)"
+  },
+  {
+   "from": "/solar-cost/san-diego",
+   "to": "/blog/solar-resources",
+   "anchor": "official California solar resources",
+   "why": "CREATE_DEDICATED: 'solar resources' impressions land on the San Diego cost page (cities agent)"
+  },
+  {
+   "from": "/solar-installers",
+   "to": "/solar-installers/licensed-solar-installer",
+   "anchor": "how to find a licensed solar installer",
+   "why": "section index must list every child (\u00a75.11); /solar-installers is owned by the reviews agent"
+  },
+  {
+   "from": "/solar-installers",
+   "to": "/solar-installers/worst-solar-companies-california",
+   "anchor": "checking a company's court and license record",
+   "why": "section index must list every child (\u00a75.11); /solar-installers is owned by the reviews agent"
+  },
+  {
+   "from": "/solar-installers/how-to-verify-a-solar-contractor-california",
+   "to": "/solar-installers/licensed-solar-installer",
+   "anchor": "finding licensed solar contractors in your county",
+   "why": "reciprocal sibling link (\u00a75.3); the JSON page was not in this assignment"
+  }
+ ],
+ "skipped": [
+  {
+   "url": "/solar-installers/solar-negotiators-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/pacific-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/solar-la-review",
+   "why": "Decision 22 default; the cluster's supporting queries ('la solar group reviews') belong to the live /solar-installers/la-solar-group-review, so a second page would cannibalize it"
+  },
+  {
+   "url": "/solar-installers/empower-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/california-window-and-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/mountain-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/treepublic-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/solar-gains-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/sun-city-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/infinity-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/simply-solar-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/california-solar-guys-review",
+   "why": "Decision 22 default: small/obscure installer name with no live review page"
+  },
+  {
+   "url": "/solar-installers/solar-panel-installation-inglwood-california",
+   "why": "City intent in the wrong URL family, with a misspelled slug. City pages live at /solar-companies/<city> (cities agent); propose /solar-companies/inglewood if Chad wants it (50/mo)"
+  },
+  {
+   "url": "/solar-installers/solar-companies-co",
+   "why": "Ambiguous navigational query: the SERP's small-site result is cosolarco.com (a brand / 'CO' = Colorado), no California residential intent to answer"
+  },
+  {
+   "url": "/blog/solar-panel-manufacturers-california",
+   "why": "20/mo, 0 impressions: under the \u00a75.10 standalone threshold (Block 5 maps it to a section); no primary-source list of California module factories could be fetched, and panel-manufacturer/product intent sits closer to the affiliate site under the relevance rule"
+  }
+ ],
+ "decisions_for_chad": [
+  "/solar-panels-california was retitled: its old '$3.30/W median' title figure is not in LBNL's text (re-checked 2026-09-23); the page now uses LBNL's stated $3.20-$5.50/W band. topic-hubs.ts hubPageLabel for cost_value (and the installer_reviews/installers spoke labels) still say '$3.30/W' and should change at integration.",
+  "/solar-installers/worst-solar-companies-california names SunPower, Sunnova and Freedom Forever for bankruptcy filings on the federal docket (no ranking, no opinions). Confirm you want a page with that framing live.",
+  "Inglewood: the queue proposed a misspelled /solar-installers/ city URL; if wanted, it belongs at /solar-companies/inglewood (cities agent).",
+  "components/growth/Guides.tsx 'companies' and 'panels' entries are now unused (both pages are hand-written); delete at integration or keep as fallback.",
+  "Three new pages sit under a different hub than the CSV's 'installers' because their topic fits better: what-percentage (cost_value), pros-and-cons (cost_value), inflation-reduction-act (incentives)."
+ ]
+}
