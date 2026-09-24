@@ -247,7 +247,10 @@ test('topical-authority wave: new companies pages with a cost twin render and ar
 // the ones with a twin on this branch. No redirect rows are added.
 const T2_CITYCOS_COMPANIES_SLUGS = new Set([
   'corona', 'orange-county', 'huntington-beach', 'san-mateo-county', 'san-mateo',
-  'san-francisco', 'bay-area', 'simi-valley', 'scotts-valley',
+  'san-francisco', 'bay-area', 'simi-valley', 'scotts-valley', 'sunnyvale',
+  'cupertino', 'santa-clara', 'palo-alto', 'lake-elsinore', 'pasadena',
+  'chula-vista', 'san-ramon', 'santa-monica', 'ontario', 'riverside-county',
+  'temecula', 'murrieta',
 ]);
 for (const slug of T2_CITYCOS_COMPANIES_SLUGS) REINSTATED_COMPANIES_SLUGS.add(slug);
 

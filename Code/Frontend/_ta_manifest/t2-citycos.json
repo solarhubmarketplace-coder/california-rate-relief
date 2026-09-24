@@ -266,13 +266,348 @@
    ],
    "status": "done",
    "note": "New growth page: SolarAPP+ then OpenGov (City handout Oct 2024), 3CE founding member (Mar 1 2018) with December true-up and NSC terms. Impressions land on /solar-companies/santa-cruz."
+  },
+  {
+   "path": "/solar-companies/santa-clara",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Santa Clara, CA (2026)",
+   "clusters": [
+    656
+   ],
+   "sources": [
+    "https://www.santaclaraca.gov/our-city/departments-a-f/community-development/building-division/solarapp",
+    "https://www.siliconvalleypower.com/home/showpublisheddocument/58854/638718507400200000",
+    "https://www.siliconvalleypower.com/sustainability/solar/incentives-and-financing-options",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New page: Silicon Valley Power (city utility, ~98% of city area) Schedule NM effective Jan 1 2026 ($0.05366/kWh annual surplus), City SolarAPP+ limited to 15 kW and one 20 kWh battery with SVP pre-approval letter, SB 379 counts. Impressions landed on /solar-companies/san-jose."
+  },
+  {
+   "path": "/solar-companies/sunnyvale",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Sunnyvale, CA (2026)",
+   "clusters": [
+    670
+   ],
+   "sources": [
+    "https://www.sunnyvale.ca.gov/business-and-development/planning-and-building/solarapp-for-solar-installers",
+    "https://www.svcleanenergy.org/",
+    "https://www.svcleanenergy.org/solar/",
+    "https://www.svcleanenergy.org/residential-rates/",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Legacy page moved onto the sourced growth template (Tier 1 skipped: city site 403; fetched via WebFetch): SolarAPP+ with three free revisions, business license, E-OneStop; SVCE HQ and plan dates; 929 permits in 2023 all online."
+  },
+  {
+   "path": "/solar-savings/sunnyvale",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/data/cities-data.ts (bills block) + SAVINGS_BILLS_SEO in src/lib/city-pages.ts, rendered by src/app/solar-savings/[city]/page.tsx",
+   "title": "Sunnyvale Electricity Provider: SVCE & PG&E Bills",
+   "clusters": [
+    764
+   ],
+   "sources": [
+    "https://www.svcleanenergy.org/",
+    "https://www.svcleanenergy.org/residential-rates/",
+    "https://www.svcleanenergy.org/solar/",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+    "https://www.sunnyvale.ca.gov/business-and-development/planning-and-building/solarapp-for-solar-installers"
+   ],
+   "status": "done",
+   "note": "Re-scoped to the provider/bill question (Decision 18, URL kept): SVCE + PG&E, SVCE sample bill ($196.38 GreenStart vs $196.95 PG&E generation at 491 kWh), PG&E average rate and Base Services Charge, solar plan dates."
+  },
+  {
+   "path": "/solar-companies/cupertino",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Cupertino, CA (2026)",
+   "clusters": [
+    459
+   ],
+   "sources": [
+    "https://www.cupertino.gov/Your-City/Departments/Community-Development/Building/Permits/Instant-Solar-Permit-SolarAPP",
+    "https://www.svcleanenergy.org/",
+    "https://www.svcleanenergy.org/solar/",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New page: Instant Solar Permit via SolarAPP+ and Citizen Access, currently paused (business license system upgrade; permits by email), inspection fee rules, SVCE, SB 379 counts (504 in 2024, 57% storage)."
+  },
+  {
+   "path": "/solar-companies/palo-alto",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Palo Alto, CA (2026)",
+   "clusters": [
+    457
+   ],
+   "sources": [
+    "https://www.paloalto.gov/Departments/Planning-Development-Services/Development-Services/Apply-for-a-Permit/Apply-for-a-Residential-SolarAPP-Permit",
+    "https://www.paloalto.gov/Departments/Utilities/Electrification/Electrify-My-Home/Consider-Solar/Net-Energy-Metering",
+    "https://www.cityofpaloalto.org/files/assets/public/v/2/agendas-minutes-reports/reports/city-manager-reports-cmrs/attachments/06-21-2021-id-12240-attachment-a2-electric-rates.pdf",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New page: City of Palo Alto Utilities (NEM 1 cap 10.8 MW reached 2017; NEM 2 at EEC-1 rate since 2018), CPAU interconnection first in ACA, SolarAPP+ exclusions, Building Inspector issues PTO at final."
+  },
+  {
+   "path": "/solar-companies/lake-elsinore",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Lake Elsinore, CA (2026)",
+   "clusters": [
+    755
+   ],
+   "sources": [
+    "https://www.lake-elsinore.org/DocumentCenter/View/1488/Solar-Requirements-DOCX",
+    "https://www.lake-elsinore.org/446/Citizen-Self-Service-Portal",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Replaced a thin placeholder entry (Tier 1 not reached): Citizen Self-Service Portal, City solar requirements (36-inch clearances, 10 psf structural threshold, ground-mount rules), SB 379 counts (all online 2022-23), SCE; links pool heating guide for the solar heating queries."
+  },
+  {
+   "path": "/solar-savings/pasadena",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_bills",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    673
+   ],
+   "sources": [
+    "https://pwp.cityofpasadena.net/water-and-electric-rates",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "skipped",
+   "note": "folded into /solar-companies/pasadena: /solar-savings/pasadena is a 301 source (canonical-redirects.ts -> /solar-companies/pasadena). Added FAQs there for electricity rates pasadena (PWP July 1 2026 residential components) and compare electricity suppliers (no CCA)."
+  },
+  {
+   "path": "/solar-companies/pasadena",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Pasadena, CA (2026)",
+   "clusters": [
+    673
+   ],
+   "sources": [
+    "https://pwp.cityofpasadena.net/water-and-electric-rates"
+   ],
+   "status": "done",
+   "note": "Fold target for row /solar-savings/pasadena: two rate/provider FAQs added to the Tier 1 PWP page."
+  },
+  {
+   "path": "/solar-companies/chula-vista",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Chula Vista, CA (2026)",
+   "clusters": [
+    179
+   ],
+   "sources": [
+    "https://sdcommunitypower.org/net-energy-metering/",
+    "https://www.sdge.com/solar/solar-billing-plan",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf",
+    "https://www.hcd.ca.gov/manufactured-and-mobilehomes/modifying-mobilehome",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Legacy companies page moved onto the growth template: SDCP Solar Billing Plan (monthly billing, ACC credits, 9-year legacy), SDG&E EV-TOU-5, SB 379 counts, HCD permit for manufactured homes (GSC mobile home queries). City permit pages return 403, so the page names no City route details."
+  },
+  {
+   "path": "/solar-companies/san-ramon",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Ramon, CA (2026)",
+   "clusters": [
+    250
+   ],
+   "sources": [
+    "https://www.sanramon.ca.gov/our_city/departments_and_divisions/community_development/building_and_safety_services/solar_a_p_p_",
+    "https://www.sanramon.ca.gov/our_city/departments_and_divisions/community_development/building_and_safety_services/permit_and_plan_submittal_instructions/residential_solar_photovoltaic",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New page: SolarAPP+ with business license and eligibility list, CSS portal, regular-route submittal rules (5 psf structural threshold), SB 379 (694 in 2024 all online, 4% storage), MCE per CEC map."
+  },
+  {
+   "path": "/solar-companies/santa-monica",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Santa Monica, CA (2026)",
+   "clusters": [
+    809
+   ],
+   "sources": [
+    "https://www.santamonica.gov/process-explainers/how-to-submit-for-automated-solar-panel-permits",
+    "https://www.santamonica.gov/process-explainers/step-by-step-guide-to-going-solar",
+    "https://cleanpoweralliance.org/",
+    "https://cleanpoweralliance.org/solar/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New page: SolarAPP+ express permit (contractors only, no expeditors), Santa Monica business license, Solar Santa Monica program, CPA 100% Green Power default and Solar Billing Plan terms, panel recycling pilot."
+  },
+  {
+   "path": "/solar-companies/ontario",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Ontario, CA (2026)",
+   "clusters": [
+    385
+   ],
+   "sources": [
+    "https://www.ontarioca.gov/government/community-development/building/apply-residential-reroof-and-solar-permits",
+    "https://content.ontarioca.gov/sites/default/files/2025-01/Standard%20E-006%20Solar%20Photovoltaic%20Systems.pdf",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New page with a /solar-cost twin (registered in canonical-redirects.test.ts): Symbium instant review, Ontario Fire Department Standard E-006 (pathways, 50% roof plan review), SCE, SB 379 counts."
+  },
+  {
+   "path": "/solar-companies/riverside-county",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Riverside County, CA (2026)",
+   "clusters": [
+    767
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://riversideca.gov/utilities/residents/solar-info/self-generation-program",
+    "https://riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/Electric-Rate-Schedule-ACOE-Attachment-1--Effective-07-01-26.pdf",
+    "https://desertcommunityenergy.org/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf",
+    "https://www.hcd.ca.gov/manufactured-and-mobilehomes/modifying-mobilehome",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+   ],
+   "status": "done",
+   "note": "New county page: utility and CCA by city (SCE, RPU, IID, MVU, Banning, Corona, Anza co-op; SJP, DCE, RMEA), RPU Self-Gen credit, SB 379 counts by city, HCD permit for manufactured homes (county mobile home queries), link to commercial guide for the commercial head term."
+  },
+  {
+   "path": "/solar-savings/riverside",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/data/cities-data.ts (bills block) + SAVINGS_BILLS_SEO in src/lib/city-pages.ts, rendered by src/app/solar-savings/[city]/page.tsx",
+   "title": "Riverside Electricity Provider: RPU Rates & Bills (2026)",
+   "clusters": [
+    533
+   ],
+   "sources": [
+    "https://riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/2024/Electric%20Schedule%20D%20-%20Effective%2001-1-24%20Final.pdf",
+    "https://riversideca.gov/utilities/residents/solar-info/self-generation-program",
+    "https://riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/Electric-Rate-Schedule-ACOE-Attachment-1--Effective-07-01-26.pdf",
+    "https://riversideca.gov/utilities/residents/rates/electric-rules-rates"
+   ],
+   "status": "done",
+   "note": "Re-scoped to the provider/rates question (Decision 18, URL kept): RPU ~99.5% of city area, Schedule D 2026 charges and tiers, Self-Gen avoided-cost credit $0.0678/kWh (Jul 2026-Jun 2027)."
+  },
+  {
+   "path": "/solar-savings/murrieta",
+   "action": "UPGRADE",
+   "hub": "incentives",
+   "file": "src/data/cities-data.ts (faqs, rendered by src/app/solar-savings/[city]/page.tsx)",
+   "title": "Murrieta Solar Savings: SCE Rates & Costs (2026)",
+   "clusters": [
+    879
+   ],
+   "sources": [
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=73"
+   ],
+   "status": "done",
+   "note": "Added solar rebates and property-tax FAQs (no federal credit after 2025 per IRS; SCE bonus credit; SGIP equity rates; R&T 73 exclusion to Jan 1 2027). Companies page FAQ points here."
+  },
+  {
+   "path": "/solar-companies/temecula",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Temecula, CA (2026)",
+   "clusters": [
+    497
+   ],
+   "sources": [
+    "https://temeculaca.gov/304/Photovoltaic-Systems",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.cslb.ca.gov/solar",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "done",
+   "note": "Tier 1 page kept; added a best-companies FAQ with the 2024 SB 379 count (794, 41% online) and a link to the Riverside County page."
+  },
+  {
+   "path": "/solar-companies/murrieta",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Murrieta, CA (2026)",
+   "clusters": [
+    879
+   ],
+   "sources": [
+    "https://www.murrietaca.gov/DocumentCenter/View/2399/Solar-Permits-Residential-IB-125",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App",
+    "https://www.murrietaca.gov/1330/Permit-Center",
+    "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+    "https://www.newdaysolar.com/",
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=73"
+   ],
+   "status": "done",
+   "note": "Added a rebates FAQ (row /solar-savings/murrieta: impressions for solar rebates murrieta land here)."
   }
  ],
  "sitemap_add": [
   "/solar-companies/orange-county",
   "/solar-companies/san-mateo-county",
   "/solar-companies/bay-area",
-  "/solar-companies/scotts-valley"
+  "/solar-companies/scotts-valley",
+  "/solar-companies/santa-clara",
+  "/solar-companies/cupertino",
+  "/solar-companies/palo-alto",
+  "/solar-companies/san-ramon",
+  "/solar-companies/santa-monica",
+  "/solar-companies/ontario",
+  "/solar-companies/riverside-county"
  ],
  "blog_index_add": [],
  "redirect_requests": [],
@@ -296,6 +631,41 @@
    "hub": "city_installers",
    "href": "/solar-companies/scotts-valley",
    "label": "Scotts Valley solar companies"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/santa-clara",
+   "label": "Santa Clara solar companies (Silicon Valley Power)"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/cupertino",
+   "label": "Cupertino solar companies"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/palo-alto",
+   "label": "Palo Alto solar companies (City of Palo Alto Utilities)"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/san-ramon",
+   "label": "San Ramon solar companies"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/santa-monica",
+   "label": "Santa Monica solar companies"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/ontario",
+   "label": "Ontario solar companies"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/riverside-county",
+   "label": "Riverside County solar companies by utility"
   }
  ],
  "link_requests": [],
@@ -307,6 +677,10 @@
   {
    "url": "/solar-companies/marin-county",
    "why": "folded into /solar-companies/bay-area: a standalone Marin page could not carry enough sourced local content (MCE and County of Marin sites return 403); the Bay Area page has a Marin section with San Rafael's SolarAPP+/OpenGov route, MCE per the CEC map and SB 379 counts for San Rafael, Corte Madera and San Anselmo."
+  },
+  {
+   "url": "/solar-savings/pasadena",
+   "why": "folded into /solar-companies/pasadena: /solar-savings/pasadena is a 301 source (canonical-redirects.ts -> /solar-companies/pasadena). Added FAQs there for electricity rates pasadena (PWP July 1 2026 residential components) and compare electricity suppliers (no CCA)."
   }
  ]
 }

@@ -573,6 +573,21 @@ export const SAVINGS_BILLS_SEO: Readonly<Record<string, CitySeo & { modified: st
     h1: "Sacramento's Electricity Provider Is SMUD: Rates, Bills and Solar",
     modified: '2026-09-23',
   },
+  // 2026-09-23 (Tier 2, citycos)
+  riverside: {
+    title: 'Riverside Electricity Provider: RPU Rates & Bills (2026)',
+    description:
+      "Riverside's electricity comes from Riverside Public Utilities, not SCE: RPU's 2026 residential charges, tiered energy prices and what it pays for solar.",
+    h1: "Riverside's Electricity Provider Is Riverside Public Utilities: Rates and Bills",
+    modified: '2026-09-23',
+  },
+  sunnyvale: {
+    title: 'Sunnyvale Electricity Provider: SVCE & PG&E Bills',
+    description:
+      'Sunnyvale electricity: Silicon Valley Clean Energy generation and PG&E delivery on one bill, a typical $196 monthly bill, the $24 charge and solar rules.',
+    h1: "Sunnyvale's Electricity Providers: Silicon Valley Clean Energy and PG&E",
+    modified: '2026-09-23',
+  },
   'san-mateo': {
     title: 'San Mateo Electric Bills, Rates & Solar Savings (2026)',
     description:
