@@ -1,0 +1,93 @@
+{
+ "agent": "installers",
+ "pages": [
+  {
+   "path": "/best-solar-companies-california",
+   "action": "UPGRADE",
+   "hub": "installers",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "title": "Solar Installers in California: Compare and Verify (2026)",
+   "clusters": [
+    3,
+    22,
+    24,
+    35,
+    23,
+    30,
+    85,
+    43,
+    152,
+    57,
+    79,
+    58,
+    106,
+    200,
+    90,
+    219,
+    121,
+    265,
+    260,
+    252,
+    343,
+    5,
+    6,
+    13,
+    45
+   ],
+   "sources": [
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+    "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx",
+    "https://www.cslb.ca.gov/Contractors/Applicants/Home_Improvement_Registration/Before_Applying_For_HIS.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/experience_for_exam.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/Issuing_My_License.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/applying_for_license.aspx",
+    "https://cslb.ca.gov/onlineservices/dataportal/ListByClassification",
+    "https://www.cslb.ca.gov/consumers/building_officials/owner_builder_overview.aspx",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://dfpi.ca.gov/consumers/housing/pace/"
+   ],
+   "status": "done",
+   "note": "Statewide hub for choosing a solar company. Now links all 66 live /solar-companies/<city> pages grouped by 11 regions (was 15), every live installer review and comparison, the key sub-question pages and the cross-hub pages. Replaces GrowthGuide kind='companies'; the 'companies' and 'panels' entries in components/growth/Guides.tsx are now unused and can be deleted at integration. The old 4-company table sourced to company websites was dropped (installer sites are not sources); detail stays on the review pages."
+  },
+  {
+   "path": "/solar-panels-california",
+   "action": "UPGRADE",
+   "hub": "cost_value",
+   "file": "src/app/solar-panels-california/page.tsx",
+   "title": "Solar Panels in California (2026): Cost, Rules, Worth It",
+   "clusters": [
+    31,
+    19,
+    94,
+    46,
+    168
+   ],
+   "sources": [
+    "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+    "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/low-income-solar-programs",
+    "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+    "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2025-building-energy-efficiency",
+    "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-12",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation"
+   ],
+   "status": "done",
+   "note": "Statewide residential solar guide and cost_value hub. Retitled: the old title's '$3.30/W median' is not in LBNL's text (re-checked 2026-09-23), so the page now uses LBNL Tracking the Sun 2024's stated $3.20-$5.50/W band (same benchmark as src/data/solar-cost-benchmark.ts) plus the 2026 update's -$0.50/W change. Links cost, financing, incentives, NEM and battery hubs. topic-hubs.ts hubPageLabel for cost_value still says '$3.30/W Median Cost and Sizing' and should be updated at integration."
+  }
+ ],
+ "sitemap_add": [],
+ "blog_index_add": [],
+ "redirect_requests": [],
+ "hub_links": [],
+ "link_requests": [],
+ "skipped": [],
+ "decisions_for_chad": []
+}
