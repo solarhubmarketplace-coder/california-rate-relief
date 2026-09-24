@@ -14,9 +14,12 @@ import { TrustStrip } from "@/components/trust/TrustStrip";
 // Trimmed to 5 (redesign D.5, 2026-09-22). The four dropped links (Solar in
 // CA, Solar Problems, Batteries, About) are not orphaned — they have homes in
 // the footer (see Footer.tsx) and in cross-links from /blog and /battery.
+// 2026-09-23: "Bills & rates" added (topic map Block 5 §5.8, approved by
+// Chad), so the utility-rate hub has a sitewide entry point: 6 links.
 export const HEADER_GUIDE_LINKS = [
   { href: "/solar-cost", label: "Cost" },
   { href: "/best-solar-companies-california", label: "Companies" },
+  { href: "/california-utility-rate-tracker", label: "Bills & rates" },
   { href: "/blog", label: "Guides" },
   { href: "/commercial-solar", label: "Commercial" },
   { href: "/tools/solar-panel-calculator", label: "Tools" },
