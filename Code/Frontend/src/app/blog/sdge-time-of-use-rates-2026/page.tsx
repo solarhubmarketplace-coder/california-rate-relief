@@ -208,6 +208,10 @@ export default function SdgeTimeOfUseRates2026() {
                 <Link href="/blog/sdge-and-solar" className={guideLink}>
                   SDG&amp;E and solar: the Solar Billing Plan and EV-TOU-5
                 </Link>
+                , and the billing rules themselves, from NEM 2.0 to the true-up, are in{' '}
+                <Link href="/blog/sdge-net-metering" className={guideLink}>
+                  SDG&amp;E net metering and the EV-TOU-5 Solar Billing Plan rate
+                </Link>
                 .
               </p>
 

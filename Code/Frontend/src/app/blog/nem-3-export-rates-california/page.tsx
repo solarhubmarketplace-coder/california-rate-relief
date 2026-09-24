@@ -201,7 +201,9 @@ export default function Nem3ExportRatesPage() {
                 then; averaged over 10 a.m. to 3 p.m., April comes to about a cent or less. And the value
                 concentrates in a few late-summer evening hours: for 2023 and 2024 applicants, a September
                 weekday export at 7 p.m. is worth about $2.52 per kWh. Weekend middays in spring run lower
-                still, with some hours at or near zero on the sheet.
+                still, with some hours at or near zero on the sheet. The required E-ELEC rate, the export
+                bonus and the True-Up are covered in{' '}
+                <Link href="/blog/pge-solar-billing-plan" className={link}>PG&amp;E’s Solar Billing Plan rules</Link>.
               </p>
 
               <h2>SCE export values</h2>
@@ -214,9 +216,11 @@ export default function Nem3ExportRatesPage() {
               </p>
               <p>
                 At true-up, SCE says surplus exports beyond your annual use are paid at a net surplus
-                compensation rate of about $0.02 per kWh. Our{' '}
+                compensation rate of about $0.02 per kWh. The SCE Solar Billing Plan guide lists{' '}
+                <Link href="/blog/sce-solar-billing-plan" className={link}>SCE’s export rates by start year</Link>{' '}
+                along with the TOU-D-PRIME rate, and the{' '}
                 <Link href="/blog/sce-nem-2" className={link}>SCE NEM 2.0 and Solar Billing Plan guide</Link>{' '}
-                covers the rest of the SCE rules.
+                covers the older program.
               </p>
 
               <h2>SDG&amp;E: two kinds of credit</h2>
@@ -226,7 +230,9 @@ export default function Nem3ExportRatesPage() {
                 charges, including the Base Services Charge, customer and meter charges, non-bypassable charges
                 and fixed charges. At the annual true-up, if your exports exceeded your imports, SDG&amp;E
                 applies net surplus compensation rates to the excess instead, which it says prevents double
-                compensation for the same exports.
+                compensation for the same exports. For the rest of the SDG&amp;E rules, including the
+                EV-TOU-5 rate and batteries, see{' '}
+                <Link href="/blog/sdge-net-metering" className={link}>SDG&amp;E net metering and its Solar Billing Plan</Link>.
               </p>
 
               <h2>The export bonus, and its 2027 deadline</h2>

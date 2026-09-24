@@ -196,7 +196,12 @@ export default function SdgeAndSolarPage() {
               <p>
                 Legacy NEM customers are billed differently. SDG&amp;E&apos;s NEM statement tracks net charges and credits as a
                 running balance to the true-up date, and residential NEM customers may pay the full bill monthly or only part of
-                it. They also moved to the Base Services Charge, which export credits do not offset.
+                it. They also moved to the Base Services Charge, which export credits do not offset. How that plan
+                credits exports and how long it lasts are covered in{' '}
+                <Link href="/blog/sdge-net-metering" className={guideLink}>
+                  SDG&amp;E net metering (NEM 2.0) rules
+                </Link>
+                .
               </p>
 
               <h2>Solar credits and the 9-year lock-in</h2>

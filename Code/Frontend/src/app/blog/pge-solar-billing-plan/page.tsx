@@ -297,7 +297,9 @@ export default function PgeSolarBillingPlanPage() {
               <p>
                 The CPUC’s net billing decision kept an annual true-up but requires monthly billing, so you pay each
                 month. Credits still roll over for 12 months, and PG&amp;E sends a True-Up Statement at the end of
-                each 12-month cycle. PG&amp;E says credits left after they are applied roll into the new cycle.
+                each 12-month cycle. PG&amp;E says credits left after they are applied roll into the new cycle. Where
+                those credits and charges appear on the page is shown in the guide to{' '}
+                <Link href="/blog/how-to-read-pge-bill" className={link}>reading a PG&amp;E solar statement</Link>.
               </p>
               <p>
                 If you export more energy than you use over a whole year, the CPUC’s decision kept the existing net
