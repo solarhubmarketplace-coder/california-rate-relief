@@ -239,6 +239,30 @@ test('topical-authority wave: new companies pages with a cost twin render and ar
   }
 });
 
+// 2026-09-23, Tier 2 city-cost wave (citycost agent): new /solar-cost pages
+// for cities whose /solar-companies page is live and stays live (Decision 15).
+// The cost query for each city was landing on the companies or savings page;
+// the city now keeps one page per intent. No row is added to the redirect
+// table, so the table's row count does not change.
+const T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN = new Set([
+  'san-mateo', 'irvine', 'fremont', 'riverside', 'oakland', 'pleasanton',
+  'chico', 'pasadena', 'santa-clarita', 'long-beach', 'santa-ana',
+  'sacramento', 'sunnyvale', 'visalia', 'mountain-view', 'huntington-beach',
+]);
+for (const slug of T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
+
+test('Tier 2 city-cost wave: each new cost page renders and its companies twin stays live', () => {
+  const cost = new Set(getPublishableCityCostSlugs());
+  for (const slug of T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN) {
+    assert.ok(cost.has(slug), `${slug} must pass the city-cost-data gate`);
+    assert.equal(isRedirectedPath(`/solar-cost/${slug}`), false, `/solar-cost/${slug} must not redirect`);
+    assert.ok(COMPANIES_ROUTE_SLUGS.has(slug), `${slug} must be in the /solar-companies/[city] static params`);
+    assert.equal(canonicalRedirectFor(`/solar-companies/${slug}`), null, slug);
+    assert.equal(companiesCityHref(slug), `/solar-companies/${slug}`);
+    assert.equal(hasCompaniesCityPage(slug), true);
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Cross-cutting checks. These read the registries above.
 // ---------------------------------------------------------------------------

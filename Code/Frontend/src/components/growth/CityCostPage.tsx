@@ -16,6 +16,7 @@ import { RelatedGuides, type RelatedGuideLink } from '@/components/shared/Relate
 import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import {
+  CEC_SERVICE_TERRITORY_SOURCE_0923,
   COST_TEMPLATE_CSLB_VERIFIED,
   cityCostPath,
   type CityCostRow,
@@ -29,6 +30,10 @@ import { growthCities } from '@/data/growth-cities';
 import { getCityBySlug } from '@/data/cities-data';
 import { companiesCityHref, hasCompaniesCityPage } from '@/lib/canonical-redirects';
 import { cityQuickCheckUtility, costPageModified, costPageSeo } from '@/lib/city-pages';
+
+/** The City of Corona's own statement of whom its electric utility serves. */
+const CORONA_ELECTRIC_SERVICE_URL =
+  'https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service';
 
 // Per-city extra links where a city's cost page draws impressions for a query
 // another page answers (topical-authority wave 2026-09-23, CREATE_DEDICATED
@@ -87,9 +92,9 @@ const STATE_SOURCES: CityCostSource[] = [
     verifiedAt: '2026-09-17',
   },
   {
-    label: 'CPUC, California Solar Consumer Protection Guide',
+    label: 'CPUC, California Solar Consumer Protection Guide (lease, PPA, loan and cash compared; upfront costs)',
     url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide',
-    verifiedAt: '2026-09-17',
+    verifiedAt: '2026-09-23',
   },
   {
     label: 'California Business and Professions Code §7169 — solar energy system disclosure document',
@@ -121,7 +126,29 @@ const STATE_SOURCES: CityCostSource[] = [
     url: 'https://www.boe.ca.gov/proptaxes/pdf/lta24031.pdf',
     verifiedAt: '2026-09-17',
   },
+  // 2026-09-23: the signed guide itself (published October 2025). Its
+  // affirmation page is where the escalation rule for bill-savings estimates
+  // is stated; appended rather than inserted so the indexes above hold.
+  {
+    label: 'CPUC, California Solar Consumer Protection Guide, PDF published October 2025 ("Watch Out for False Claims"; customer affirmations, page 6)',
+    url: 'https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/solar-guide/2025-versions/2025-updates/solarguide26_040626_simple.pdf',
+    verifiedAt: '2026-09-23',
+  },
+  // 2026-09-23: the two state rules that bound every city's permit line.
+  {
+    label: 'California Government Code §66015 — residential solar permit fee limit (§66015(a), (e); amended by AB 1132, Stats. 2023, Ch. 357; in effect until January 1, 2034)',
+    url: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=66015',
+    verifiedAt: '2026-09-23',
+  },
+  {
+    label: 'California Government Code §65850.52 — online automated solar permitting such as SolarAPP+ (§65850.52(b), (c))',
+    url: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52',
+    verifiedAt: '2026-09-23',
+  },
 ];
+
+const GOV_66015 = STATE_SOURCES[STATE_SOURCES.length - 2];
+const GOV_65850_52 = STATE_SOURCES[STATE_SOURCES.length - 1];
 
 const link = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
 
@@ -186,6 +213,8 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       url: row.permitUrl,
       verifiedAt: row.sourcesFetchedAt,
     },
+    ...(row.permitSources ?? []),
+    ...(row.ccaSource ? [row.ccaSource] : []),
     {
       label: utility.sourceUrl
         ? `${utility.name} average residential rate — ${utility.sourceLabel}`
@@ -194,12 +223,17 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       verifiedAt: utility.fetchedAt,
     },
     ...(split ? split.sources : []),
+    // 2026-09-23: the City now calls its utility the Utilities Department;
+    // the CEC layer (re-queried that day) shows how its area sits inside SCE's.
     ...(hasAddressSpecificUtility
-      ? [{
-          label: 'City of Corona Department of Water and Power — Electric Service',
-          url: 'https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service',
-          verifiedAt: '2026-09-20',
-        }]
+      ? [
+          {
+            label: 'City of Corona Utilities Department — Electric Service',
+            url: CORONA_ELECTRIC_SERVICE_URL,
+            verifiedAt: '2026-09-23',
+          },
+          CEC_SERVICE_TERRITORY_SOURCE_0923,
+        ]
       : []),
     ...STATE_SOURCES,
   ];
@@ -213,9 +247,18 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
     },
     {
       question: `Is solar worth it in ${row.city}?`,
+      // 2026-09-23: rewritten against the October 2025 guide. It no longer
+      // states a fixed escalation cap; it says an estimate outside the
+      // disclosure document may use, at most, the CPUC's calculated average.
       answer:
-        `That depends on the bill the system would offset and on the contract you are offered, not on the city. The CPUC's California Solar Consumer Protection Guide requires a standardised bill savings estimate with the inputs and assumptions behind it, and caps any electricity rate escalation used in such a calculation at 10 percent. Compare ${hasAddressSpecificUtility || split ? 'the utility named on your bill' : `${utility.name}'s own`} billed usage history against that estimate, and check that the estimate's assumptions match your household.`,
+        `That depends on the bill the system would offset and on the contract you are offered, not on the city. The CPUC's California Solar Consumer Protection Guide says bill savings estimates do not guarantee savings, and a homeowner signing it affirms that any savings estimate outside the disclosure document used, at most, the average electricity rate escalation the CPUC calculates, and that the installer will say which rate it used. Compare ${hasAddressSpecificUtility || split ? 'the utility named on your bill' : `${utility.name}'s own`} billed usage history against that estimate, and check that the estimate's assumptions match your household.`,
     },
+    {
+      question: `Can I go solar in ${row.city} without paying upfront?`,
+      answer:
+        'Often, yes, but that is a payment structure, not a lower cost. The CPUC\'s Solar Consumer Protection Guide lists "little or no upfront costs" for leases, power purchase agreements and PACE financing, and for a purchase paid with a loan. Under a lease or PPA the solar provider owns the system on your roof and you make scheduled monthly payments, typically over a 20 to 25 year contract, and the CPUC says those payments typically rise 1 to 3 percent a year under an escalation clause. With a loan you own the system and repay it with interest. The same guide warns that "solar energy is rarely free." Compare the total cost and payments on each contract\'s disclosure cover page, not the first monthly figure.',
+    },
+    ...(row.extraFaqs ?? []),
     {
       question: `Do I need a permit for solar in ${row.city}?`,
       answer:
@@ -225,7 +268,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       question: `Which utility serves ${row.city}?`,
       answer:
         hasAddressSpecificUtility
-          ? 'The City of Corona Department of Water and Power states that its electric service is limited to its service area; some Corona addresses are served by Southern California Edison. Check the utility named on your actual bill or confirm the address with the utility before using a rate, a bill comparison, or a project estimate. Source: City of Corona Department of Water and Power, Electric Service, verified September 20, 2026.'
+          ? "The City of Corona's own electric utility, run by its Utilities Department, provides bundled service to residents and businesses within the City's electric service area, and its customers do not receive an electric bill from Southern California Edison. The California Energy Commission's service-territory map shows that area as a small part of Corona inside SCE's territory. Check the utility named on your actual bill before using a rate, a bill comparison, or a project estimate. Sources: City of Corona Utilities Department, Electric Service, and the CEC service-territory map, both verified September 23, 2026."
           : split
             ? `${split.note} ${utilityRateSentence(utility, rate, `Where ${utility.name} serves the address, `)}`
             : `${utility.longName} (${utility.name}). Its current average residential rate is ${rate}, as of ${utility.asOf}, per ${utility.sourceLabel}, fetched ${formatVerified(utility.fetchedAt)}. That rate is ${utility.basisNote}.`,
@@ -329,17 +372,24 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
               {hasAddressSpecificUtility ? (
                 <>
                   <p>
-                    The City of Corona Department of Water and Power says its electric service is
-                    limited to its service area. Some Corona addresses are served by Southern
-                    California Edison. Read the utility name on the actual bill before treating a
-                    DWP schedule, an SCE schedule, or an online estimate as yours.
+                    Corona runs its own electric utility. The City&apos;s Utilities Department
+                    provides bundled service to residents and businesses within the City&apos;s
+                    electric service area, and those customers do not get an electric bill from
+                    Southern California Edison. The California Energy Commission&apos;s
+                    service-territory map shows that area as a small part of Corona inside
+                    SCE&apos;s territory. Read the utility name on the actual bill before treating
+                    a City utility schedule, an SCE schedule, or an online estimate as yours.
                   </p>
                   <p className='text-foreground/60 text-sm'>
-                    Source:{' '}
-                    <a href='https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service' target='_blank' rel='noopener noreferrer' className={link}>
-                      City of Corona Department of Water and Power — Electric Service
+                    Sources:{' '}
+                    <a href={CORONA_ELECTRIC_SERVICE_URL} target='_blank' rel='noopener noreferrer' className={link}>
+                      City of Corona Utilities Department — Electric Service
                     </a>
-                    . Verified September 20, 2026.
+                    ;{' '}
+                    <a href={CEC_SERVICE_TERRITORY_SOURCE_0923.url} target='_blank' rel='noopener noreferrer' className={link}>
+                      {CEC_SERVICE_TERRITORY_SOURCE_0923.label}
+                    </a>
+                    . Verified September 23, 2026.
                   </p>
                 </>
               ) : split ? (
@@ -387,6 +437,15 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                   Generation for many addresses in {row.city} is supplied by {row.cca} rather than by
                   {' '}{utility.name}, while {utility.name} still bills the delivery side. Check which
                   generation line appears on your own bill before comparing any estimate.
+                  {row.ccaSource ? (
+                    <span className='text-foreground/60 text-sm'>
+                      {' '}Source:{' '}
+                      <a href={row.ccaSource.url} target='_blank' rel='noopener noreferrer' className={link}>
+                        {row.ccaSource.label}
+                      </a>
+                      , verified {formatVerified(row.ccaSource.verifiedAt)}.
+                    </span>
+                  ) : null}
                 </p>
               ) : null}
               {!hasAddressSpecificUtility && <p className='text-foreground/60 text-sm'>
@@ -431,8 +490,39 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                     {row.permitFeeSource}
                   </a>
                   . Fetched {formatVerified(row.sourcesFetchedAt)}.
+                  {(row.permitSources ?? []).map((source) => (
+                    <span key={source.url}>
+                      {' '}Also:{' '}
+                      <a href={source.url} target='_blank' rel='noopener noreferrer' className={link}>
+                        {source.label}
+                      </a>
+                      , fetched {formatVerified(source.verifiedAt)}.
+                    </span>
+                  ))}
                 </li>
               </ul>
+              {/* 2026-09-23: the state limits every figure above is measured
+                  against. Both statutes were read in full that day. */}
+              <p>
+                Two state rules sit behind whatever {row.city} publishes. Under{' '}
+                <a href={GOV_66015.url} target='_blank' rel='noopener noreferrer' className={link}>
+                  Government Code section 66015
+                </a>
+                , a city&apos;s residential permit fee &mdash; defined as the sum of all the charges
+                it levies for a solar application on a single- or two-family home &mdash; may not
+                exceed the reasonable cost of the service, and for a photovoltaic system may not
+                exceed $450 plus $15 for each kilowatt above 15 kW, unless the city adopts a written
+                finding with substantial evidence that its reasonable cost is higher. Under{' '}
+                <a href={GOV_65850_52.url} target='_blank' rel='noopener noreferrer' className={link}>
+                  Government Code section 65850.52
+                </a>
+                , cities with more than 50,000 people had to offer an online, automated permitting
+                platform such as SolarAPP+ by September 30, 2023, and smaller cities by September
+                30, 2024, for systems up to 38.4 kW AC and batteries paired with them. Cities under
+                5,000 people, and counties under 150,000 along with the cities inside them, are
+                exempt, and a design SolarAPP+ cannot process can still go through ordinary review.
+                Verified {formatVerified(GOV_66015.verifiedAt)}.
+              </p>
               <p>
                 Ask for the permit and inspection scope in writing, and ask who pulls the permit. A
                 quote that leaves permitting out of its scope is not the same quote as one that
@@ -532,9 +622,12 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 financing costs.
               </p>
               <p>
-                Three pages go further into the parts of that comparison people get caught by:{' '}
+                Four pages go further into the parts of that comparison people get caught by:{' '}
                 <Link href='/blog/is-it-better-to-buy-or-lease-solar-panels-california' className={link}>
                   buying versus leasing in California
+                </Link>,{' '}
+                <Link href='/blog/no-upfront-cost-solar-panels' className={link}>
+                  what a no-upfront-cost offer actually costs
                 </Link>,{' '}
                 <Link href='/solar-problems/solar-dealer-fees-explained' className={link}>
                   dealer fees
